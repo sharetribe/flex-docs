@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Sharetribe Flex documentation',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
