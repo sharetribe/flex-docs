@@ -1,11 +1,13 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import ThreeColumnLayout from '../layouts/ThreeColumnLayout.js';
 
-export default () => {
+const ReferencesPage = () => {
   return (
-    <Layout title="Reference">
+    <ThreeColumnLayout title="Reference">
       <h1>Reference</h1>
-    </Layout>
+    </ThreeColumnLayout>
   );
 };
+
+export default ReferencesPage;

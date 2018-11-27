@@ -1,11 +1,13 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import ThreeColumnLayout from '../layouts/ThreeColumnLayout.js';
 
-export default () => {
+const TutorialsPage = () => {
   return (
-    <Layout title="Tutorials">
+    <ThreeColumnLayout title="Tutorials">
       <h1>Tutorials</h1>
-    </Layout>
+    </ThreeColumnLayout>
   );
 };
+
+export default TutorialsPage;

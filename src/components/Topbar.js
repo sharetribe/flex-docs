@@ -18,7 +18,7 @@ const NavLink = props => {
   );
 };
 
-export default () => {
+const Topbar = () => {
   return (
     <div
       style={{
@@ -55,3 +55,5 @@ export default () => {
     </div>
   );
 };
+
+export default Topbar;

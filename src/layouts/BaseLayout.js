@@ -4,9 +4,9 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import 'sanitize.css/sanitize.css';
 
-import Topbar from './Topbar';
+import Topbar from '../components/Topbar.js';
 
-export default props => {
+const BaseLayout = props => {
   const { title, description, children } = props;
   return (
     <StaticQuery
@@ -40,3 +40,5 @@ export default props => {
     />
   );
 };
+
+export default BaseLayout;

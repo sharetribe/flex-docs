@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from '../components/layout';
+import SingleColumnLayout from '../layouts/SingleColumnLayout.js';
 
-export default () => {
+const IndexPage = () => {
   return (
-    <Layout>
+    <SingleColumnLayout>
       <h1>Sharetribe Flex developer documentation</h1>
       <p>Welcome to the docs. This is the intro.</p>
       <section>
@@ -63,6 +63,8 @@ export default () => {
           </li>
         </ul>
       </section>
-    </Layout>
+    </SingleColumnLayout>
   );
 };
+
+export default IndexPage;
