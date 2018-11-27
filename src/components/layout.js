@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import 'sanitize.css/sanitize.css';
 
-import Header from './header';
+import Topbar from './Topbar';
 
 export default props => {
   const { title, description, children } = props;
@@ -32,7 +32,7 @@ export default props => {
             >
               <html lang="en" />
             </Helmet>
-            <Header siteTitle={siteTitle} />
+            <Topbar siteTitle={siteTitle} />
             {children}
           </>
         );
