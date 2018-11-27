@@ -1,33 +1,57 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
+const NavLink = props => {
+  return (
+    <Link
+      getProps={({ isPartiallyCurrent }) => {
+        return isPartiallyCurrent
+          ? {
+              style: {
+                fontWeight: 'bold',
+              },
+            }
+          : null;
+      }}
+      {...props}
+    />
+  );
+};
+
+export default () => {
+  return (
     <div
       style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
+        backgroundColor: '#eee',
+        color: '#666',
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+      <nav>
+        <ul
           style={{
-            color: 'white',
-            textDecoration: 'none',
+            margin: 0,
+            padding: '2rem 0',
+            display: 'flex',
+            justifyContent: 'space-around',
           }}
         >
-          {siteTitle}
-        </Link>
-      </h1>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <NavLink to="/tutorials">Tutorials</NavLink>
+          </li>
+          <li>
+            <NavLink to="/guides">How-to Guides</NavLink>
+          </li>
+          <li>
+            <NavLink to="/references">Reference</NavLink>
+          </li>
+          <li>
+            <NavLink to="/background">Background</NavLink>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
-);
-
-export default Header;
+  );
+};
