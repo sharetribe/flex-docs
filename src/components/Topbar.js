@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+import { Ul, Li } from '../brand-components';
 
 const NavLink = props => {
   return (
@@ -18,41 +21,33 @@ const NavLink = props => {
   );
 };
 
+const NavUl = styled(Ul)`
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+`;
+
 const Topbar = () => {
   return (
-    <div
-      style={{
-        backgroundColor: '#eee',
-        color: '#666',
-      }}
-    >
-      <nav>
-        <ul
-          style={{
-            margin: 0,
-            padding: '2rem 0',
-            display: 'flex',
-            justifyContent: 'space-around',
-          }}
-        >
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <NavLink to="/tutorials">Tutorials</NavLink>
-          </li>
-          <li>
-            <NavLink to="/guides">How-to Guides</NavLink>
-          </li>
-          <li>
-            <NavLink to="/references">Reference</NavLink>
-          </li>
-          <li>
-            <NavLink to="/background">Background</NavLink>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <NavUl>
+        <Li>
+          <Link to="/">Home</Link>
+        </Li>
+        <Li>
+          <NavLink to="/tutorials">Tutorials</NavLink>
+        </Li>
+        <Li>
+          <NavLink to="/guides">How-to Guides</NavLink>
+        </Li>
+        <Li>
+          <NavLink to="/references">Reference</NavLink>
+        </Li>
+        <Li>
+          <NavLink to="/background">Background</NavLink>
+        </Li>
+      </NavUl>
+    </nav>
   );
 };
 

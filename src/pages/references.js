@@ -1,11 +1,12 @@
 import React from 'react';
 
-import ThreeColumnLayout from '../layouts/ThreeColumnLayout.js';
+import { H1 } from '../brand-components';
+import { ThreeColumnLayout } from '../layouts';
 
 const ReferencesPage = () => {
   return (
     <ThreeColumnLayout title="Reference">
-      <h1>Reference</h1>
+      <H1>Reference</H1>
     </ThreeColumnLayout>
   );
 };

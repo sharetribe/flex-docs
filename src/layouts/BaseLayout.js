@@ -4,7 +4,8 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import 'sanitize.css/sanitize.css';
 
-import Topbar from '../components/Topbar.js';
+import { BaselineDevGrid } from '../brand-components';
+import { Topbar } from '../components';
 
 const BaseLayout = props => {
   const { title, description, children } = props;
@@ -32,8 +33,10 @@ const BaseLayout = props => {
             >
               <html lang="en" />
             </Helmet>
-            <Topbar siteTitle={siteTitle} />
-            {children}
+            <BaselineDevGrid>
+              <Topbar siteTitle={siteTitle} />
+              {children}
+            </BaselineDevGrid>
           </>
         );
       }}

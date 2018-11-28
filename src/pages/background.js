@@ -1,11 +1,12 @@
 import React from 'react';
 
-import ThreeColumnLayout from '../layouts/ThreeColumnLayout.js';
+import { H1 } from '../brand-components';
+import { ThreeColumnLayout } from '../layouts';
 
 const BackgroundPage = () => {
   return (
     <ThreeColumnLayout title="Background">
-      <h1>Background information</h1>
+      <H1>Background information</H1>
     </ThreeColumnLayout>
   );
 };

@@ -1,11 +1,12 @@
 import React from 'react';
 
-import ThreeColumnLayout from '../layouts/ThreeColumnLayout.js';
+import { H1 } from '../brand-components';
+import { ThreeColumnLayout } from '../layouts';
 
 const TutorialsPage = () => {
   return (
     <ThreeColumnLayout title="Tutorials">
-      <h1>Tutorials</h1>
+      <H1>Tutorials</H1>
     </ThreeColumnLayout>
   );
 };
