@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import { baselineSmall, baselineLarge, baselineBreakpoint } from './config';
+
 const dev = process.env.NODE_ENV === 'development';
 
 const gridColor1 = 'rgba(0, 0, 0, 0.3)';
@@ -26,10 +28,10 @@ const BaselineGrid = styled.div`
     ${gridColor2} 50%,
     ${gridColor2}
   );
-  background-size: 100% ${props => 2 * props.baselineSmall}px;
+  background-size: 100% ${2 * baselineSmall}px;
 
-  @media (min-width: ${props => props.baselineBreakpoint}px) {
-    background-size: 100% ${props => 2 * props.baselineLarge}px;
+  @media (min-width: ${baselineBreakpoint}px) {
+    background-size: 100% ${2 * baselineLarge}px;
   }
 `;
 
@@ -71,12 +73,7 @@ class BaselineDevGrid extends Component {
     });
   }
   render() {
-    const {
-      children,
-      baselineSmall,
-      baselineLarge,
-      baselineBreakpoint,
-    } = this.props;
+    const { children } = this.props;
     if (!dev) {
       return <>{children}</>;
     }
@@ -86,9 +83,6 @@ class BaselineDevGrid extends Component {
         <BaselineGrid
           visible={this.state.visible}
           height={this.state.scrollHeight}
-          baselineSmall={baselineSmall}
-          baselineLarge={baselineLarge}
-          baselineBreakpoint={baselineBreakpoint}
         />
       </>
     );

@@ -1,18 +1,18 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { H1, H2, P, Ul, Li } from '../brand-components';
+import { baselineSpacing, H1, H2, P, Ul, Li } from '../brand-components';
 import { SingleColumnLayout } from '../layouts';
+import { Link } from '../components';
 
 const Paragraph = styled(P)`
-  margin: 8px 0;
+  margin: ${baselineSpacing}px 0;
 `;
 
 const LinksUl = styled(Ul).attrs({
   withBullets: true,
 })`
-  margin: 8px 0;
+  margin: ${baselineSpacing}px 0;
 `;
 
 const IndexPage = () => {
@@ -72,6 +72,9 @@ const IndexPage = () => {
           <Li>Sharetribe Flex architecture</Li>
           <Li>
             <Link to="/background">All background articles</Link>
+          </Li>
+          <Li>
+            <Link to="/styleguide">Styleguide</Link>
           </Li>
         </LinksUl>
       </section>

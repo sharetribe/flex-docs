@@ -1,8 +1,22 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { Ul, Li } from '../brand-components';
+import { baselineSpacing, Ul, Li } from '../brand-components';
+import { Link } from '../components';
+
+const Nav = styled.nav`
+  background-color: #eee;
+`;
+
+const NavUl = styled(Ul)`
+  padding: ${baselineSpacing}px 0;
+  display: flex;
+  justify-content: space-around;
+`;
+
+const NavLi = styled(Li)`
+  flex-shrink: 0;
+`;
 
 const NavLink = props => {
   return (
@@ -11,7 +25,7 @@ const NavLink = props => {
         return isPartiallyCurrent
           ? {
               style: {
-                fontWeight: 'bold',
+                textDecoration: 'underline',
               },
             }
           : null;
@@ -21,33 +35,27 @@ const NavLink = props => {
   );
 };
 
-const NavUl = styled(Ul)`
-  padding: 2rem 0;
-  display: flex;
-  justify-content: space-around;
-`;
-
 const Topbar = () => {
   return (
-    <nav>
+    <Nav>
       <NavUl>
-        <Li>
+        <NavLi>
           <Link to="/">Home</Link>
-        </Li>
-        <Li>
+        </NavLi>
+        <NavLi>
           <NavLink to="/tutorials">Tutorials</NavLink>
-        </Li>
-        <Li>
+        </NavLi>
+        <NavLi>
           <NavLink to="/guides">How-to Guides</NavLink>
-        </Li>
-        <Li>
+        </NavLi>
+        <NavLi>
           <NavLink to="/references">Reference</NavLink>
-        </Li>
-        <Li>
+        </NavLi>
+        <NavLi>
           <NavLink to="/background">Background</NavLink>
-        </Li>
+        </NavLi>
       </NavUl>
-    </nav>
+    </Nav>
   );
 };
 
