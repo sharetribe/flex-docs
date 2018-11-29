@@ -5,7 +5,7 @@ import { baselineSpacing, Ul, Li } from '../brand-components';
 import { Link } from '../components';
 
 const Nav = styled.nav`
-  background-color: #eee;
+  background-color: #eee; // TODO: change
 `;
 
 const NavUl = styled(Ul)`
@@ -21,6 +21,7 @@ const NavLi = styled(Li)`
 const NavLink = props => {
   return (
     <Link
+      neutral
       getProps={({ isPartiallyCurrent }) => {
         return isPartiallyCurrent
           ? {
@@ -40,7 +41,9 @@ const Topbar = () => {
     <Nav>
       <NavUl>
         <NavLi>
-          <Link to="/">Home</Link>
+          <Link neutral to="/">
+            Home
+          </Link>
         </NavLi>
         <NavLi>
           <NavLink to="/tutorials">Tutorials</NavLink>

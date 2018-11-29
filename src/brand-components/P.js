@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-import { baselineBreakpoint } from './config';
+import { foregroundColor, baselineBreakpoint } from './config';
 
 const P = styled.p`
   margin: 0;
   line-height: 24px;
   font-size: 16px;
+  color: ${foregroundColor};
 
   /* Baseline alignment */
   position: relative;

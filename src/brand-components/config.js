@@ -1,3 +1,5 @@
+export const brandColor = 'orange';
+export const foregroundColor = '#666';
 export const backgroundColor = '#fcfcfc';
 export const baselineSmall = 6;
 export const baselineLarge = 8;

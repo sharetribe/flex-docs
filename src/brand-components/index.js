@@ -1,4 +1,6 @@
 export {
+  brandColor,
+  foregroundColor,
   backgroundColor,
   baselineSmall,
   baselineLarge,

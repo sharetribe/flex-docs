@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-import { baselineBreakpoint } from './config';
+import { foregroundColor, baselineBreakpoint } from './config';
 
 const baseHeadingStyles = `
   margin: 0;
   font-weight: bold;
+  color: ${foregroundColor};
 `;
 
 export const H1 = styled.h1`

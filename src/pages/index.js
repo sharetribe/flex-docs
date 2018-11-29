@@ -22,7 +22,9 @@ const IndexPage = () => {
       <Paragraph>Welcome to the docs. This is the intro.</Paragraph>
       <section>
         <H2>
-          <Link to="/tutorials">Tutorials</Link>
+          <Link neutral to="/tutorials">
+            Tutorials
+          </Link>
         </H2>
         <Paragraph>
           Get started in learning about the product with hands-on tutorials for
@@ -37,7 +39,9 @@ const IndexPage = () => {
       </section>
       <section>
         <H2>
-          <Link to="/guides">How-to Guides</Link>
+          <Link neutral to="/guides">
+            How-to Guides
+          </Link>
         </H2>
         <Paragraph>Specific step-by-step guides for solving </Paragraph>
         <LinksUl>
@@ -49,7 +53,9 @@ const IndexPage = () => {
       </section>
       <section>
         <H2>
-          <Link to="/references">Reference</Link>
+          <Link neutral to="/references">
+            Reference
+          </Link>
         </H2>
         <Paragraph>Technical reference to the tooling.</Paragraph>
         <LinksUl>
@@ -61,7 +67,9 @@ const IndexPage = () => {
       </section>
       <section>
         <H2>
-          <Link to="/background">Background</Link>
+          <Link neutral to="/background">
+            Background
+          </Link>
         </H2>
         <Paragraph>
           Explanations and background information for important concepts and
