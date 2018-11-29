@@ -11,3 +11,4 @@ export { default as Link } from './Link';
 // dependencies.
 export { default as Menu, MenuItem } from './Menu';
 export { default as Topbar } from './Topbar';
+export { default as ArticleIndex } from './ArticleIndex';
