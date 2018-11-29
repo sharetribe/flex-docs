@@ -1,11 +1,14 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import { H1 } from '../brand-components';
+import { ThreeColumnLayout } from '../layouts';
 
-export default () => {
+const ReferencesPage = () => {
   return (
-    <Layout title="Reference">
-      <h1>Reference</h1>
-    </Layout>
+    <ThreeColumnLayout title="Reference">
+      <H1>Reference</H1>
+    </ThreeColumnLayout>
   );
 };
+
+export default ReferencesPage;

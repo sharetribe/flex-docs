@@ -1,11 +1,14 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import { H1 } from '../brand-components';
+import { ThreeColumnLayout } from '../layouts';
 
-export default () => {
+const GuidesPage = () => {
   return (
-    <Layout title="How-to Guides">
-      <h1>How-to Guides</h1>
-    </Layout>
+    <ThreeColumnLayout title="How-to Guides">
+      <H1>How-to Guides</H1>
+    </ThreeColumnLayout>
   );
 };
+
+export default GuidesPage;

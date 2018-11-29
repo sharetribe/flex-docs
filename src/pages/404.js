@@ -1,8 +1,12 @@
 import React from 'react';
-import Layout from '../components/layout';
 
-export default () => (
-  <Layout>
-    <h1>Oops, page not found</h1>
-  </Layout>
+import { H1 } from '../brand-components';
+import { SingleColumnLayout } from '../layouts';
+
+const NotFoundPage = () => (
+  <SingleColumnLayout title="Not found">
+    <H1>Oops, page not found</H1>
+  </SingleColumnLayout>
 );
+
+export default NotFoundPage;

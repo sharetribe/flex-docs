@@ -1,11 +1,14 @@
 import React from 'react';
 
-import Layout from '../components/layout';
+import { H1 } from '../brand-components';
+import { ThreeColumnLayout } from '../layouts';
 
-export default () => {
+const BackgroundPage = () => {
   return (
-    <Layout title="Background">
-      <h1>Background information</h1>
-    </Layout>
+    <ThreeColumnLayout title="Background">
+      <H1>Background information</H1>
+    </ThreeColumnLayout>
   );
 };
+
+export default BackgroundPage;

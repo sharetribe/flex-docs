@@ -4,9 +4,10 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import 'sanitize.css/sanitize.css';
 
-import Header from './header';
+import { BaselineDevGrid } from '../brand-components';
+import { Topbar } from '../components';
 
-export default props => {
+const BaseLayout = props => {
   const { title, description, children } = props;
   return (
     <StaticQuery
@@ -32,11 +33,15 @@ export default props => {
             >
               <html lang="en" />
             </Helmet>
-            <Header siteTitle={siteTitle} />
-            {children}
+            <BaselineDevGrid>
+              <Topbar siteTitle={siteTitle} />
+              {children}
+            </BaselineDevGrid>
           </>
         );
       }}
     />
   );
 };
+
+export default BaseLayout;

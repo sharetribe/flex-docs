@@ -4,4 +4,23 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+// Uncomment to warn about circular dependencies.
+//
+// const CircularDependencyPlugin = require('circular-dependency-plugin');
+
+// exports.onCreateWebpackConfig = ({
+//   stage,
+//   rules,
+//   loaders,
+//   plugins,
+//   actions,
+// }) => {
+//   actions.setWebpackConfig({
+//     plugins: [
+//       new CircularDependencyPlugin({
+//         exclude: /\.cache|node_modules/,
+//         cwd: process.cwd(),
+//       }),
+//     ],
+//   });
+// };
