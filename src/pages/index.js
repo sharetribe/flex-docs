@@ -50,7 +50,9 @@ const IndexPage = () => {
             for developers.
           </Paragraph>
           <Ul withBullets>
-            <Li>Getting Started</Li>
+            <Li>
+              <Link to="/tutorials/getting-started">Getting Started</Link>
+            </Li>
             <Li>
               <Link to="/tutorials">All tutorials</Link>
             </Li>
@@ -64,7 +66,9 @@ const IndexPage = () => {
           </H2>
           <Paragraph>Specific step-by-step guides for solving </Paragraph>
           <Ul withBullets>
-            <Li>How to...</Li>
+            <Li>
+              <Link to="/guides/how-to">How to...</Link>
+            </Li>
             <Li>
               <Link to="/guides">All guides</Link>
             </Li>
@@ -78,7 +82,9 @@ const IndexPage = () => {
           </H2>
           <Paragraph>Technical reference to the tooling.</Paragraph>
           <Ul withBullets>
-            <Li>API Reference</Li>
+            <Li>
+              <Link to="/references/api">API Reference</Link>
+            </Li>
             <Li>
               <Link to="/references">All reference</Link>
             </Li>
@@ -95,13 +101,19 @@ const IndexPage = () => {
             design decisions behind the product.
           </Paragraph>
           <Ul withBullets>
-            <Li>Important concepts</Li>
-            <Li>Sharetribe Flex architecture</Li>
             <Li>
-              <Link to="/background">All background articles</Link>
+              <Link to="/background/concepts">Important concepts</Link>
+            </Li>
+            <Li>
+              <Link to="/background/architecture">
+                Sharetribe Flex architecture
+              </Link>
             </Li>
             <Li>
               <Link to="/styleguide">Styleguide</Link>
+            </Li>
+            <Li>
+              <Link to="/background">All background articles</Link>
             </Li>
           </Ul>
         </section>
