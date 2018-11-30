@@ -3,6 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 // Uncomment to warn about circular dependencies.
 //
@@ -24,3 +26,60 @@
 //     ],
 //   });
 // };
+
+exports.onCreateNode = ({ node, getNode }) => {
+  if (node.internal.type === `MarkdownRemark`) {
+    const fileNode = getNode(node.parent);
+    console.log(`\n`, fileNode.relativePath);
+  }
+};
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+  return graphql(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            fileAbsolutePath
+            frontmatter {
+              slug
+              category
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    return new Promise((resolve, reject) => {
+      result.data.allMarkdownRemark.edges.forEach(edge => {
+        const { fileAbsolutePath, frontmatter } = edge.node;
+        const { slug, category } = frontmatter;
+        if (!slug) {
+          throw new Error(`slug missing from file: ${fileAbsolutePath}`);
+        }
+        if (!category) {
+          throw new Error(`category missing from file: ${fileAbsolutePath}`);
+        }
+        const templates = {
+          tutorials: 'TutorialPageTemplate.js',
+          guides: 'GuidePageTemplate.js',
+          references: 'ReferencePageTemplate.js',
+          background: 'BackgroundPageTemplate.js',
+        };
+        const template = templates[category];
+        if (!template) {
+          throw new Error(
+            `Unknown category: ${category} in file: ${fileAbsolutePath}`
+          );
+        }
+        createPage({
+          path: `${category}/${slug}`,
+          component: path.resolve(`./src/templates/${template}`),
+          context: { slug, category },
+        });
+        resolve();
+      });
+    });
+  });
+};
