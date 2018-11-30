@@ -61,10 +61,21 @@ exports.createPages = ({ graphql, actions }) => {
         if (!category) {
           throw new Error(`category missing from file: ${fileAbsolutePath}`);
         }
-        // TODO: validate category
+        const templates = {
+          tutorials: 'TutorialPageTemplate.js',
+          guides: 'GuidePageTemplate.js',
+          references: 'ReferencePageTemplate.js',
+          background: 'BackgroundPageTemplate.js',
+        };
+        const template = templates[category];
+        if (!template) {
+          throw new Error(
+            `Unknown category: ${category} in file: ${fileAbsolutePath}`
+          );
+        }
         createPage({
           path: `${category}/${slug}`,
-          component: path.resolve(`./src/templates/tutorial.js`),
+          component: path.resolve(`./src/templates/${template}`),
           context: { slug, category },
         });
         resolve();
