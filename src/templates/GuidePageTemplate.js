@@ -19,13 +19,13 @@ export const query = graphql`
   }
 `;
 
-const TutorialPage = props => {
+const GuidePageTemplate = props => {
   const { frontmatter, html } = props.data.markdownRemark;
   const { title, date } = frontmatter;
   return (
     <ThreeColumnLayout title={title}>
       <article>
-        <H1>{title}</H1>
+        <H1>Guide: {title}</H1>
         <P>Updated: {date}</P>
         <MarkdownHtml html={html} />
       </article>
@@ -33,4 +33,4 @@ const TutorialPage = props => {
   );
 };
 
-export default TutorialPage;
+export default GuidePageTemplate;
