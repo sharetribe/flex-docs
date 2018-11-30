@@ -29,7 +29,7 @@ const TutorialsPage = () => {
         }
       `}
       render={data => {
-        const tutorials = data.allMarkdownRemark.edges.map(edge => {
+        const articles = data.allMarkdownRemark.edges.map(edge => {
           const { id, frontmatter, excerpt } = edge.node;
           return {
             id,
@@ -40,7 +40,7 @@ const TutorialsPage = () => {
         return (
           <ThreeColumnLayout title="Tutorials">
             <H1>Tutorials</H1>
-            <ArticleIndex pathPrefix="/tutorials/" articles={tutorials} />
+            <ArticleIndex pathPrefix="/tutorials/" articles={articles} />
           </ThreeColumnLayout>
         );
       }}
