@@ -11,7 +11,9 @@ import {
   H6,
   P,
   Ul,
+  Ol,
   Li,
+  Hr,
 } from '../brand-components';
 import { SingleColumnLayout } from '../layouts';
 import { Link } from '../components';
@@ -40,6 +42,9 @@ const StyleguidePage = () => {
       </Example>
       <Example>
         <H6>H6 level heading</H6>
+      </Example>
+      <Example>
+        <Hr />
       </Example>
       <Example>
         <P>This is a paragraph</P>
@@ -87,7 +92,20 @@ const StyleguidePage = () => {
               a neutral link
             </Link>
           </Li>
+          <Li>
+            List item 3 with{' '}
+            <Link neutral to="/styleguide" css="color: red;">
+              a custom link
+            </Link>
+          </Li>
         </Ul>
+      </Example>
+      <Example>
+        <Ol withBullets>
+          <Li>Step a</Li>
+          <Li>Step b</Li>
+          <Li>Step c</Li>
+        </Ol>
       </Example>
     </SingleColumnLayout>
   );

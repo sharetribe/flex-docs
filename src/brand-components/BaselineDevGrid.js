@@ -65,6 +65,7 @@ class BaselineDevGrid extends Component {
       this.setState(prevState => ({
         visible: !prevState.visible,
       }));
+      this.onResize();
     }
   }
   onResize() {

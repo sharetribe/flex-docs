@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { brandColor } from './config';
 
-const A = styled.a`
+const styles = css`
   color: ${brandColor};
   text-decoration: none;
 
@@ -10,5 +10,10 @@ const A = styled.a`
     text-decoration: underline;
   }
 `;
+
+const A = styled.a`
+  ${styles}
+`;
+A.styles = styles;
 
 export default A;

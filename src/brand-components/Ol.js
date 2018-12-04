@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 
 const styles = css`
-  list-style: ${props => (props.withBullets ? 'disc' : 'none')};
+  list-style: ${props => (props.withBullets ? 'decimal' : 'none')};
   margin: 0;
   padding: ${props => (props.withBullets ? '0 0 0 24px' : '0')};
 `;
 
-const Ul = styled.ul`
+const Ol = styled.ol`
   ${styles}
 `;
-Ul.styles = styles;
+Ol.styles = styles;
 
-export default Ul;
+export default Ol;

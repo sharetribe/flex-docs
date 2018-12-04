@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { foregroundColor, baselineBreakpoint } from './config';
 
-const Li = styled.li`
+const styles = css`
   line-height: 24px;
   font-size: 16px;
   color: ${foregroundColor};
@@ -13,5 +13,10 @@ const Li = styled.li`
     bottom: 2px;
   }
 `;
+
+const Li = styled.li`
+  ${styles}
+`;
+Li.styles = styles;
 
 export default Li;
