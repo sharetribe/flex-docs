@@ -2,10 +2,24 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-import 'sanitize.css/sanitize.css';
-
-import { BaselineDevGrid } from '../brand-components';
+import { GlobalStyle, fonts, BaselineDevGrid } from '../brand-components';
 import { Topbar } from '../components';
+
+const fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
+
+const FontPreloadLink = font => {
+  const { name, format, url } = font;
+  return (
+    <link
+      key={name}
+      rel="preload"
+      as="font"
+      crossorigin="crossorigin"
+      type={`font/${format}`}
+      href={url}
+    />
+  );
+};
 
 const BaseLayout = props => {
   const { title, description, children } = props;
@@ -32,11 +46,15 @@ const BaseLayout = props => {
               ]}
             >
               <html lang="en" />
+              {fonts
+                .filter(f => fontsInUse.includes(f.name))
+                .map(FontPreloadLink)}
             </Helmet>
             <BaselineDevGrid>
               <Topbar siteTitle={siteTitle} />
               {children}
             </BaselineDevGrid>
+            <GlobalStyle fontNames={fontsInUse} />
           </>
         );
       }}
