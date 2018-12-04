@@ -3,7 +3,13 @@ module.exports = {
     title: 'Sharetribe Flex documentation',
   },
   plugins: [
+    // Header metadata
     'gatsby-plugin-react-helmet',
+
+    // Markdown and images
+    //
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -11,9 +17,25 @@ module.exports = {
         path: `${__dirname}/src/docs`,
       },
     },
-    'gatsby-transformer-remark',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              sizeByPixelDensity: true,
+              withWebp: true,
+            },
+          },
+        ],
+      },
+    },
+
+    // Styles
+    'gatsby-plugin-styled-components',
+
+    // Miscellaneous
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -29,6 +51,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-    'gatsby-plugin-styled-components',
   ],
 };
