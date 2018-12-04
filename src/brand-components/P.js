@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { foregroundColor, baselineBreakpoint } from './config';
 
-const P = styled.p`
+const styles = css`
   margin: 0;
   line-height: 24px;
   font-size: 16px;
@@ -14,5 +14,10 @@ const P = styled.p`
     bottom: 2px;
   }
 `;
+
+const P = styled.p`
+  ${styles}
+`;
+P.styles = styles;
 
 export default P;
