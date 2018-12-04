@@ -10,7 +10,6 @@ This is a reference article for the supported markdown syntax.
 ## TODO:
 
 - blockquote styles (plain + nested)
-- images
 - footnotes
 - code syntax highlight
 
@@ -161,12 +160,6 @@ Here's an internal link to the
 
 ---
 
-## Images
-
-TODO
-
----
-
 ## Block quotes
 
 Here is a simple quote:
@@ -194,6 +187,21 @@ This is a JavaScript code block:
 ```javascript
 console.log('this is a test:', { key: [1, 'str', false] });
 ```
+
+---
+
+## Images
+
+Images can be placed in the article directory and imported with a
+relative link. Responsive versions are automatically created with
+maximum width defined in the `gatsby-config.js` file.
+
+Here is an example screenshot of Saunatime with an alt text:
+
+![Saunatime screenshot alt text](./saunatime.png)
+
+Note that images also break the baseline alignment since the height is
+dynamic.
 
 ---
 

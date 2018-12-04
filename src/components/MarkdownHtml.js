@@ -3,9 +3,7 @@ import styled from 'styled-components';
 
 import {
   baselineSmall,
-  baselineLarge,
   baselineSpacing,
-  baselineBreakpoint,
   foregroundColor,
   H1,
   H2,
