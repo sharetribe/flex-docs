@@ -1,22 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { brandColor, baselineSpacing } from '../brand-components';
+import {
+  baselineSmall,
+  baselineLarge,
+  baselineSpacing,
+  baselineBreakpoint,
+} from '../brand-components';
 import { Link, Menu, MenuItem } from '../components';
 
 const Wrapper = styled.section`
   display: flex;
-  background-color: #eee; // TODO: change
+  background-color: ${props => props.theme.backgroundColorRaised};
 `;
 
 const LogoWrapper = styled(Link)`
   flex-shrink: 0;
-  width: ${3 * baselineSpacing}px;
-  height: ${3 * baselineSpacing}px;
-  background-color: ${brandColor};
+  width: ${12 * baselineSmall}px;
+  height: ${12 * baselineSmall}px;
+  background-color: orange;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    width: ${10 * baselineLarge}px;
+    height: ${10 * baselineLarge}px;
+  }
 `;
 
 const Logo = () => {
+  // TODO: use logo SVG
   return <LogoWrapper to="/" />;
 };
 

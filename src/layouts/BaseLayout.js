@@ -1,9 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, fonts, BaselineDevGrid } from '../brand-components';
 import { Topbar } from '../components';
+import { themeLight as theme } from '../theme';
 
 const fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
 
@@ -38,24 +40,26 @@ const BaseLayout = props => {
         const siteTitle = data.site.siteMetadata.title;
         const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
         return (
-          <>
-            <Helmet
-              title={pageTitle}
-              meta={[
-                { name: 'description', content: description || siteTitle },
-              ]}
-            >
-              <html lang="en" />
-              {fonts
-                .filter(f => fontsInUse.includes(f.name))
-                .map(FontPreloadLink)}
-            </Helmet>
-            <BaselineDevGrid>
-              <Topbar siteTitle={siteTitle} />
-              {children}
-            </BaselineDevGrid>
-            <GlobalStyle fontNames={fontsInUse} />
-          </>
+          <ThemeProvider theme={theme}>
+            <>
+              <Helmet
+                title={pageTitle}
+                meta={[
+                  { name: 'description', content: description || siteTitle },
+                ]}
+              >
+                <html lang="en" />
+                {fonts
+                  .filter(f => fontsInUse.includes(f.name))
+                  .map(FontPreloadLink)}
+              </Helmet>
+              <BaselineDevGrid>
+                <Topbar siteTitle={siteTitle} />
+                {children}
+              </BaselineDevGrid>
+              <GlobalStyle fontNames={fontsInUse} />
+            </>
+          </ThemeProvider>
         );
       }}
     />

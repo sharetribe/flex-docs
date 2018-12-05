@@ -1,12 +1,8 @@
 export {
-  brandColor,
-  foregroundColor,
-  backgroundColor,
   baselineSmall,
   baselineLarge,
   baselineSpacing,
   baselineBreakpoint,
-  pageMaxWidth,
 } from './config';
 
 export { default as GlobalStyle } from './GlobalStyle';

@@ -1,23 +1,43 @@
 import styled, { css } from 'styled-components';
 
-import { foregroundColor, baselineBreakpoint } from './config';
+import { baselineBreakpoint } from './config';
 
 const baseHeadingStyles = `
+  // Reset default styles
   margin: 0;
-  font-weight: bold;
-  color: ${foregroundColor};
+
+  // Font
+  font-family: CircularStd-Bold;
+
+  // Enable baseline offset
+  position: relative;
 `;
+
+const headingColor = props => {
+  return props.secondary
+    ? props.theme.headingColorSecondary
+    : props.theme.headingColor;
+};
 
 const h1Styles = css`
   ${baseHeadingStyles}
-  line-height: 48px;
-  font-size: 36px;
 
-  /* Baseline alignment */
-  position: relative;
-  top: 5px;
+  // Color
+  color: ${headingColor};
+
+  font-size: 60px;
+  line-height: 66px;
+  letter-spacing: -1.5px;
+
+  // Offset baseline
+  top: -1px;
+
   @media (min-width: ${baselineBreakpoint}px) {
-    top: 3px;
+    font-size: 60px;
+    line-height: 72px;
+
+    // Offset baseline
+    top: -2px;
   }
 `;
 
@@ -28,12 +48,24 @@ H1.styles = h1Styles;
 
 const h2Styles = css`
   ${baseHeadingStyles}
-  line-height: 24px;
-  font-size: 24px;
 
-  /* Baseline alignment */
-  position: relative;
-  top: 3px;
+  // Color
+  color: ${headingColor};
+
+  font-size: 48px;
+  line-height: 54px;
+  letter-spacing: -1.2px;
+
+  // Offset baseline
+  top: -2px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    font-size: 48px;
+    line-height: 56px;
+
+    // Offset baseline
+    top: 3px;
+  }
 `;
 
 export const H2 = styled.h2`
@@ -43,12 +75,24 @@ H2.styles = h2Styles;
 
 const h3Styles = css`
   ${baseHeadingStyles}
-  line-height: 24px;
-  font-size: 24px;
 
-  /* Baseline alignment */
-  position: relative;
-  top: 3px;
+  // Color
+  color: ${headingColor};
+
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: -0.8px;
+
+  // Offset baseline
+  top: 2px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    font-size: 36px;
+    line-height: 48px;
+
+    // Offset baseline
+    top: 3px;
+  }
 `;
 
 export const H3 = styled.h3`
@@ -58,12 +102,24 @@ H3.styles = h3Styles;
 
 const h4Styles = css`
   ${baseHeadingStyles}
-  line-height: 24px;
-  font-size: 24px;
 
-  /* Baseline alignment */
-  position: relative;
-  top: 3px;
+  // Color
+  color: ${headingColor};
+
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.5px;
+
+  // Offset baseline
+  top: 1px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    font-size: 30px;
+    line-height: 40px;
+
+    // Offset baseline
+    top: 1px;
+  }
 `;
 
 export const H4 = styled.h4`
@@ -73,12 +129,24 @@ H4.styles = h4Styles;
 
 const h5Styles = css`
   ${baseHeadingStyles}
-  line-height: 24px;
-  font-size: 24px;
 
-  /* Baseline alignment */
-  position: relative;
-  top: 3px;
+  // Color
+  color: ${headingColor};
+
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.2px;
+
+  // Offset baseline
+  top: 0px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    font-size: 24px;
+    line-height: 32px;
+
+    // Offset baseline
+    top: -1px;
+  }
 `;
 
 export const H5 = styled.h5`
@@ -88,12 +156,25 @@ H5.styles = h5Styles;
 
 const h6Styles = css`
   ${baseHeadingStyles}
-  line-height: 24px;
-  font-size: 24px;
 
-  /* Baseline alignment */
-  position: relative;
-  top: 3px;
+  // Color
+  color: ${headingColor};
+
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  // Offset baseline
+  top: -1px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    font-size: 12px;
+    line-height: 16px;
+
+    // Offset baseline
+    top: 4px;
+  }
 `;
 
 export const H6 = styled.h6`

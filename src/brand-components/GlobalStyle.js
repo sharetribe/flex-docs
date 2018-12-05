@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
   // Inject font faces only for fonts that have been specified in the
   // fontNames prop.
   ${props => fontFaces(props.fontNames)}
+
+  body {
+    background-color: ${props => props.theme.backgroundColor};
+  }
 `;
 
 export default GlobalStyle;

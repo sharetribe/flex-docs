@@ -1,11 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import {
-  foregroundColor,
-  baselineSmall,
-  baselineLarge,
-  baselineBreakpoint,
-} from './config';
+import { baselineSmall, baselineLarge, baselineBreakpoint } from './config';
 
 const styles = css`
   position: relative;
@@ -24,7 +19,7 @@ const styles = css`
     height: 1px;
     position: absolute;
     top: ${baselineSmall}px;
-    background-color: ${foregroundColor};
+    background-color: ${props => props.theme.lineColor};
 
     @media (min-width: ${baselineBreakpoint}px) {
       top: ${baselineLarge}px;

@@ -1,20 +1,16 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import styled from 'styled-components';
 
 import { A } from '../brand-components';
 
-const NeutralA = styled(A)`
-  color: inherit;
-`;
+const GatsbyLinkWithoutExtraProps = props => {
+  // Filter out A props that GatsbyLink isn't expecting
+  const { neutral, ...rest } = props;
+  return <GatsbyLink {...rest} />;
+};
 
 const Link = props => {
-  const { neutral, ...rest } = props;
-  return neutral ? (
-    <NeutralA as={GatsbyLink} {...rest} />
-  ) : (
-    <A as={GatsbyLink} {...rest} />
-  );
+  return <A as={GatsbyLinkWithoutExtraProps} {...props} />;
 };
 
 export default Link;

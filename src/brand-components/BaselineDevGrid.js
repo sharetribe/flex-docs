@@ -5,9 +5,6 @@ import { baselineSmall, baselineLarge, baselineBreakpoint } from './config';
 
 const dev = process.env.NODE_ENV === 'development';
 
-const gridColor1 = 'rgba(0, 0, 0, 0.3)';
-const gridColor2 = 'rgba(0, 0, 0, 0.1)';
-
 const BaselineGrid = styled.div`
   display: ${props => (props.visible ? 'block' : 'none')};
   position: absolute;
@@ -23,10 +20,10 @@ const BaselineGrid = styled.div`
 
   background: linear-gradient(
     to bottom,
-    ${gridColor1},
-    ${gridColor1} 50%,
-    ${gridColor2} 50%,
-    ${gridColor2}
+    ${props => props.theme.baselineDevColor1},
+    ${props => props.theme.baselineDevColor1} 50%,
+    ${props => props.theme.baselineDevColor2} 50%,
+    ${props => props.theme.baselineDevColor2}
   );
   background-size: 100% ${2 * baselineSmall}px;
 

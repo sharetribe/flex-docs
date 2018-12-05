@@ -1,13 +1,15 @@
 import styled, { css } from 'styled-components';
 
-import { brandColor } from './config';
-
 const styles = css`
-  color: ${brandColor};
+  color: ${props => (props.neutral ? 'inherit' : props.theme.linkColor)};
   text-decoration: none;
 
   :hover {
     text-decoration: underline;
+  }
+  :visited {
+    color: ${props =>
+      props.neutral ? 'inherit' : props.theme.linkColorVisited};
   }
 `;
 
