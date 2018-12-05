@@ -38,7 +38,7 @@ const GuidesPage = () => {
           };
         });
         return (
-          <ThreeColumnLayout title="How-to Guides">
+          <ThreeColumnLayout title="How-to Guides" activePath="/guides">
             <H1>How-to Guides</H1>
             <ArticleIndex pathPrefix="/guides/" articles={articles} />
           </ThreeColumnLayout>

@@ -9,7 +9,6 @@ export { default as Link } from './Link';
 // See the gatsby-node.js file to enable a Webpack plugin that warns
 // about circular dependencies to aid in finding problematic
 // dependencies.
-export { default as Menu, MenuItem } from './Menu';
-export { default as Topbar } from './Topbar';
+export { default as Topbar } from './Topbar/Topbar';
 export { default as ArticleIndex } from './ArticleIndex';
 export { default as MarkdownHtml } from './MarkdownHtml';
