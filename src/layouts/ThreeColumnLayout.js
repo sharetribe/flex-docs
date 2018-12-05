@@ -1,21 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineSpacing, pageMaxWidth } from '../brand-components';
+import { baselineSpacing } from '../brand-components';
 import BaseLayout from './BaseLayout';
 
-const Columns = styled.div`
+const Wrapper = styled.div`
   padding: ${baselineSpacing}px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: ${pageMaxWidth}px;
 `;
 
 const ThreeColumnLayout = props => {
   const { children, ...rest } = props;
   return (
     <BaseLayout {...rest}>
-      <Columns>{children}</Columns>
+      <Wrapper>{children}</Wrapper>
     </BaseLayout>
   );
 };

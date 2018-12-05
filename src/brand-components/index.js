@@ -1,14 +1,12 @@
 export {
-  brandColor,
-  foregroundColor,
-  backgroundColor,
   baselineSmall,
   baselineLarge,
   baselineSpacing,
   baselineBreakpoint,
-  pageMaxWidth,
 } from './config';
 
+export { default as GlobalStyle } from './GlobalStyle';
+export { default as fonts } from './fonts';
 export { H1, H2, H3, H4, H5, H6 } from './headings';
 export { default as P } from './P';
 export { default as Ul } from './Ul';

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import {
   baselineSmall,
   baselineSpacing,
-  foregroundColor,
   H1,
   H2,
   H3,
@@ -62,7 +61,7 @@ const Html = styled.div`
 
     p {
       ${P.styles}
-      color: #888;
+      color: ${props => props.theme.textColorQuoted};
     }
 
     // Two paragraphs are separated by a margin
@@ -77,6 +76,8 @@ const Html = styled.div`
     //
     // See: https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align
     line-height: 23px;
+
+    color: ${props => props.theme.textColorQuoted};
   }
   pre {
     margin: ${baselineSpacing}px 0;
@@ -119,17 +120,17 @@ const Html = styled.div`
   // but let's have some basic styles just in case.
   //
   table {
-    color: ${foregroundColor};
+    color: ${props => props.theme.textColor};
     font-size: 16px;
     line-height: 24px;
     margin: ${baselineSpacing}px 0;
   }
   th {
-    border: 1px solid ${foregroundColor};
+    border: 1px solid ${props => props.theme.lineColor};
     padding: ${baselineSmall}px ${baselineSpacing}px;
   }
   td {
-    border: 1px solid ${foregroundColor};
+    border: 1px solid ${props => props.theme.lineColor};
     padding: ${baselineSmall}px ${baselineSpacing}px;
   }
 `;

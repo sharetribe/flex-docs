@@ -22,6 +22,14 @@ const Example = styled.section`
   margin: ${baselineSpacing}px 0;
 `;
 
+const CustomLink = styled(Link)`
+  color: red;
+
+  :visited {
+    color: red;
+  }
+`;
+
 const StyleguidePage = () => {
   return (
     <SingleColumnLayout title="Styleguide">
@@ -94,8 +102,17 @@ const StyleguidePage = () => {
           </Li>
           <Li>
             List item 3 with{' '}
-            <Link neutral to="/styleguide" css="color: red;">
+            <CustomLink neutral to="/styleguide">
               a custom link
+            </CustomLink>
+          </Li>
+          <Li css="color: red;">
+            List item 3 with <Link to="/styleguide">a default link</Link>
+          </Li>
+          <Li css="color: red;">
+            List item 3 with{' '}
+            <Link neutral to="/styleguide">
+              a neutral link
             </Link>
           </Li>
         </Ul>

@@ -29,28 +29,27 @@ A Horizontal line can be added with `---` in its own line.
 
 ## Headings
 
-There are six levels of headings. H1 **should not be used within an
-article** since that is reserved for the article title defined in the
-metadata.
+There are six levels of headings. H1 **should not be used within an article**
+since that is reserved for the article title defined in the metadata.
 
-# H1
+# H1 level heading
 
-## H2
+## H2 level heading
 
-### H3
+### H3 level heading
 
-#### H4
+#### H4 level heading
 
-##### H5
+##### H5 level heading
 
-###### H6
+###### H6 level heading
 
 ---
 
 ## Text
 
-Paragraphs work as expected. You can add **bold**, *italic*, or
-~~strike through~~ emphasis for text and `quote` around inline code.
+Paragraphs work as expected. You can add **bold**, _italic_, or ~~strike
+through~~ emphasis for text and `quote` around inline code.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elit mi,
 tempus ac turpis vitae, interdum facilisis urna. Nulla euismod ante vitae velit
@@ -121,6 +120,7 @@ Unordered list with sub list:
   - sub item 2 1
   - sub item 2 2
   - sub item 2 2
+
 - list item 3
 
 Ordered list:
@@ -133,12 +133,12 @@ Ordered list:
 
 ## Literal HTML
 
-Using literal HTML within Markdown files should be minimized since the
-styles are most likely missing for uncommon elements.
+Using literal HTML within Markdown files should be minimized since the styles
+are most likely missing for uncommon elements.
 
-There is one clear case where literal links are useful, however. If
-you want to have sections that can be linked to, you can add a heading
-with an id and use that id in an internal link.
+There is one clear case where literal links are useful, however. If you want to
+have sections that can be linked to, you can add a heading with an id and use
+that id in an internal link.
 
 <h2 id="literal-h2-html-element">This is a h2 heading in HTML</h2>
 
@@ -151,7 +151,7 @@ with an id and use that id in an internal link.
 Here's a link: https://www.sharetribe.com/
 
 Here's a link with a separate text and a hover title:
-[sharetribe.com](https://www.sharetribe.com/ "click to open link")
+[sharetribe.com](https://www.sharetribe.com/ 'click to open link')
 
 Also an [internal link](/).
 
@@ -192,30 +192,29 @@ console.log('this is a test:', { key: [1, 'str', false] });
 
 ## Images
 
-Images can be placed in the article directory and imported with a
-relative link. Responsive versions are automatically created with
-maximum width defined in the `gatsby-config.js` file.
+Images can be placed in the article directory and imported with a relative link.
+Responsive versions are automatically created with maximum width defined in the
+`gatsby-config.js` file.
 
 Here is an example screenshot of Saunatime with an alt text:
 
 ![Saunatime screenshot alt text](./saunatime.png)
 
-Note that images also break the baseline alignment since the height is
-dynamic.
+Note that images also break the baseline alignment since the height is dynamic.
 
 ---
 
 ## Tables
 
-Tables should not be usually used since they don't work well on
-mobile. If you still insist, you can have them, but they won't quite
-be aligned to the baseline :(
+Tables should not be usually used since they don't work well on mobile. If you
+still insist, you can have them, but they won't quite be aligned to the baseline
+:(
 
-Header 1 | Header 2 | Header 3
---- | --- | ---
-don't | use | tables
-unless | you | know
-what | you're | doing
+| Header 1 | Header 2 | Header 3 |
+| -------- | -------- | -------- |
+| don't    | use      | tables   |
+| unless   | you      | know     |
+| what     | you're   | doing    |
 
 ---
 
