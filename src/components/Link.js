@@ -5,7 +5,7 @@ import { A } from '../brand-components';
 
 const GatsbyLinkWithoutExtraProps = props => {
   // Filter out A props that GatsbyLink isn't expecting
-  const { neutral, ...rest } = props;
+  const { neutral, active, ...rest } = props;
   return <GatsbyLink {...rest} />;
 };
 

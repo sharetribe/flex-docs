@@ -23,7 +23,7 @@ const GuidePageTemplate = props => {
   const { frontmatter, html } = props.data.markdownRemark;
   const { title, date } = frontmatter;
   return (
-    <ThreeColumnLayout title={title}>
+    <ThreeColumnLayout title={title} activePath="/guides">
       <article>
         <H1>Guide: {title}</H1>
         <P>Updated: {date}</P>

@@ -38,7 +38,7 @@ const ReferencesPage = () => {
           };
         });
         return (
-          <ThreeColumnLayout title="Reference">
+          <ThreeColumnLayout title="Reference" activePath="/references">
             <H1>Reference</H1>
             <ArticleIndex pathPrefix="/references/" articles={articles} />
           </ThreeColumnLayout>

@@ -8,8 +8,7 @@ const styles = css`
     text-decoration: underline;
   }
   :visited {
-    color: ${props =>
-      props.neutral ? 'inherit' : props.theme.linkColorVisited};
+    ${props => (props.neutral ? '' : `color: ${props.theme.linkColorVisited}`)};
   }
 `;
 

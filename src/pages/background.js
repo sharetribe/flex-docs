@@ -38,7 +38,10 @@ const BackgroundPage = () => {
           };
         });
         return (
-          <ThreeColumnLayout title="Background Information">
+          <ThreeColumnLayout
+            title="Background Information"
+            activePath="/background"
+          >
             <H1>Background Information</H1>
             <ArticleIndex pathPrefix="/background/" articles={articles} />
           </ThreeColumnLayout>
