@@ -3,14 +3,9 @@ import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../brand-components';
 import { Link } from '../../components';
-import Logo from './Logo';
 import Menu from './Menu';
-
-const logoHeight = 26;
-const logoWidth = 140;
-const logoWidthSmall = 23;
-const logoSidePaddingSmall = 23;
-const logoSidePaddingLarge = 36;
+import Logo from './Logo';
+import Search from './Search';
 
 const Wrapper = styled.section`
   display: flex;
@@ -18,50 +13,55 @@ const Wrapper = styled.section`
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 `;
 
+const TopbarMenu = styled(Menu)`
+  @media (min-width: ${baselineBreakpoint}px) {
+    // Align the menu in the center
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
 const HomeLink = styled(Link)`
-  flex-shrink: 0;
-  width: ${logoWidthSmall + 2 * logoSidePaddingSmall}px;
-  overflow: hidden;
+  // Align the logo in the center with only the logo being clickable
+  margin-left: auto;
+  margin-right: auto;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    width: ${logoWidth + 2 * logoSidePaddingLarge}px;
+    // Pull logo as the first item in desktop layout
+    order: -1;
+
+    margin-left: 36px;
+    margin-right: 0;
   }
 `;
 
 const TopbarLogo = styled(Logo)`
+  width: 140px;
+  height: 26px;
   margin-top: 17px;
   margin-bottom: 17px;
-  margin-left: ${logoSidePaddingSmall}px;
-  width: ${logoWidth}px;
-  height: ${logoHeight}px;
-
-  // Hide the "developers" text on mobile
-  path:nth-child(2) {
-    display: none;
-  }
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: 23px;
     margin-bottom: 23px;
-    margin-left: ${logoSidePaddingLarge}px;
-    path:nth-child(2) {
-      display: inline;
-    }
   }
 `;
 
-const TopbarMenu = styled(Menu)`
-  margin-left: auto;
+const TopbarSearch = styled(Search)`
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-right: 36px;
+  }
 `;
 
 const Topbar = props => {
   const { activePath, ...rest } = props;
   return (
     <Wrapper {...rest}>
+      <TopbarMenu activePath={activePath} />
       <HomeLink to="/">
         <TopbarLogo />
       </HomeLink>
-      <TopbarMenu activePath={activePath} />
+      <TopbarSearch />
     </Wrapper>
   );
 };

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { default as ReactModal } from 'react-modal';
 import styled from 'styled-components';
+import noScroll from 'no-scroll';
 
 import {
   baselineSmall,
   baselineLarge,
-  baselineSpacing,
   baselineBreakpoint,
   P,
 } from '../brand-components';
@@ -26,6 +26,19 @@ const CloseButton = styled.button`
 class Modal extends Component {
   componentDidMount() {
     ReactModal.setAppElement('#___gatsby');
+    if (this.props.isOpen) {
+      noScroll.on();
+    }
+  }
+  componentDidUpdate() {
+    if (this.props.isOpen) {
+      noScroll.on();
+    } else {
+      noScroll.off();
+    }
+  }
+  componentWillUnmount() {
+    noScroll.off();
   }
   render() {
     const { isOpen, contentLabel, onClose, children } = this.props;
