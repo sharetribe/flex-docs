@@ -1,7 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { baselineLarge, Ul, Li } from '../../brand-components';
+import {
+  baselineLarge,
+  baselineBreakpoint,
+  Ul,
+  Li,
+} from '../../brand-components';
 import { Link } from '../../components';
 
 const NavUl = styled(Ul)`
@@ -12,6 +17,10 @@ const NavUl = styled(Ul)`
 const NavLi = styled(Li)`
   flex-shrink: 0;
   position: static;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    font-size: 15px;
+  }
 `;
 
 const bottomBorderWidth = 4;

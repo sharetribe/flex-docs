@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import {
   baselineSmall,
   baselineLarge,
-  baselineSpacing,
   baselineBreakpoint,
   P,
 } from '../brand-components';

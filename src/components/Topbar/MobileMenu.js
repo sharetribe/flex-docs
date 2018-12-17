@@ -4,6 +4,18 @@ import styled from 'styled-components';
 import { baselineSpacing, Ul, Li } from '../../brand-components';
 import { Modal, Link } from '../../components';
 
+const Icon = () => {
+  return (
+    <svg width="18" height="12" viewBox="0 0 18 12">
+      <g fill="#4A4A4A" fillRule="evenodd">
+        <rect width="18" height="2" rx="1" />
+        <rect y="5" width="18" height="2" rx="1" />
+        <rect y="10" width="18" height="2" rx="1" />
+      </g>
+    </svg>
+  );
+};
+
 const Wrapper = styled.div`
   height: 100%;
 `;
@@ -23,13 +35,15 @@ const NavLink = styled(Link)`
   display: block;
   padding: ${baselineSpacing}px;
   text-align: center;
+
+  text-decoration: ${props => (props.active ? 'underline' : 'none')};
 `;
 
 const NavLi = props => {
   const { path, text, active } = props;
   return (
     <Li>
-      <NavLink neutral to={path}>
+      <NavLink neutral to={path} active={active}>
         {text}
       </NavLink>
     </Li>
@@ -53,7 +67,9 @@ class MobileMenu extends Component {
 
     return (
       <Wrapper {...rest}>
-        <MenuButton onClick={openModal}>Menu</MenuButton>
+        <MenuButton onClick={openModal}>
+          <Icon />
+        </MenuButton>
         <Modal
           isOpen={this.state.isOpen}
           contentLabel="Mobile navigation menu"
