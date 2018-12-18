@@ -119,11 +119,8 @@ const BoxLink = props => {
   );
 };
 
-const IndexPage = () => {
-  const tutorialCount = 1;
-  const guideCount = 1;
-  const referenceCount = 1;
-  const backgroundCount = 1;
+const LandingPage = props => {
+  const { articleCounts } = props;
   return (
     <SingleColumnLayout>
       <IntroWrapper>
@@ -151,7 +148,9 @@ const IndexPage = () => {
           </Description>
           <BoxLinks>
             <BoxLink to="/tutorials/getting-started">Getting Started</BoxLink>
-            <BoxLink to="/tutorials">All tutorials ({tutorialCount})</BoxLink>
+            <BoxLink to="/tutorials">
+              All tutorials ({articleCounts.tutorials})
+            </BoxLink>
           </BoxLinks>
         </SecondaryBox>
         <SecondaryBox>
@@ -163,7 +162,7 @@ const IndexPage = () => {
           <Description>Specific step-by-step guides for solving </Description>
           <BoxLinks>
             <BoxLink to="/guides/how-to">How to...</BoxLink>
-            <BoxLink to="/guides">All guides ({guideCount})</BoxLink>
+            <BoxLink to="/guides">All guides ({articleCounts.guides})</BoxLink>
           </BoxLinks>
         </SecondaryBox>
         <SecondaryBox>
@@ -175,7 +174,9 @@ const IndexPage = () => {
           <Description>Technical reference to the tooling.</Description>
           <BoxLinks>
             <BoxLink to="/references/api">API Reference</BoxLink>
-            <BoxLink to="/references">All reference ({referenceCount})</BoxLink>
+            <BoxLink to="/references">
+              All reference ({articleCounts.references})
+            </BoxLink>
           </BoxLinks>
         </SecondaryBox>
         <SecondaryBox>
@@ -196,7 +197,7 @@ const IndexPage = () => {
             <BoxLink to="/styleguide">Styleguide</BoxLink>
             <BoxLink to="/notfoundpage">Not Found Page</BoxLink>
             <BoxLink to="/background">
-              All background articles ({backgroundCount})
+              All background articles ({articleCounts.background})
             </BoxLink>
           </BoxLinks>
         </SecondaryBox>
@@ -205,4 +206,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default LandingPage;
