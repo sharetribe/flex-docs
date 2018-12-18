@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { default as ReactModal } from 'react-modal';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import noScroll from 'no-scroll';
 
 import {
@@ -20,6 +20,22 @@ const CloseButton = styled.button`
   @media (min-width: ${baselineBreakpoint}px) {
     width: ${10 * baselineLarge}px;
     height: ${10 * baselineLarge}px;
+  }
+`;
+
+const transitionDuration = 200;
+
+const GlobalModalStyle = createGlobalStyle`
+  .ReactModal__Overlay {
+    height: 0;
+    opacity: 1;
+    transition: height ${transitionDuration}ms ease-in-out;
+  }
+  .ReactModal__Overlay--after-open{
+    height: 100vh;
+  }
+  .ReactModal__Overlay--before-close{
+    height: 0;
   }
 `;
 
@@ -47,6 +63,7 @@ class Modal extends Component {
         isOpen={isOpen}
         contentLabel={contentLabel}
         onRequestClose={onClose}
+        closeTimeoutMS={transitionDuration}
         style={{
           content: {
             top: 0,
@@ -62,6 +79,7 @@ class Modal extends Component {
         <CloseButton onClick={onClose}>
           <P>Close</P>
         </CloseButton>
+        <GlobalModalStyle />
       </ReactModal>
     );
   }

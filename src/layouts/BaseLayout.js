@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, fonts, BaselineDevGrid } from '../brand-components';
-import { Topbar } from '../components';
+import { Topbar, Footer } from '../components';
 import { themeLight as theme } from '../theme';
 
 const fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
@@ -56,6 +56,7 @@ const BaseLayout = props => {
               <BaselineDevGrid>
                 <Topbar siteTitle={siteTitle} activePath={activePath} />
                 {children}
+                <Footer />
               </BaselineDevGrid>
               <GlobalStyle fontNames={fontsInUse} />
             </>

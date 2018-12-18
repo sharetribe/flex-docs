@@ -32,6 +32,7 @@ export const themeLight = {
 
   // Link colors
   linkColor: '#0074e8',
+  linkColorHover: '#0059b3',
   linkColorVisited: '#9013fe',
 
   // Button colors
@@ -41,6 +42,11 @@ export const themeLight = {
   // Baseline dev grid
   baselineDevColor1: 'rgba(0, 0, 0, 0.2)',
   baselineDevColor2: 'rgba(0, 0, 0, 0.1)',
+
+  // Content size and spacing
+  pageMaxWidth: 1135,
+  contentPaddingSmall: 24,
+  contentPaddingLarge: 48,
 };
 
 export const themeDark = {
@@ -77,6 +83,7 @@ export const themeDark = {
 
   // Link colors
   linkColor: '#489cff',
+  linkColorHover: '#489cff',
   linkColorVisited: '#9013fe',
 
   // Button colors
@@ -86,4 +93,9 @@ export const themeDark = {
   // Baseline dev grid
   baselineDevColor1: 'rgba(0, 0, 0, 0.2)',
   baselineDevColor2: 'rgba(0, 0, 0, 0.1)',
+
+  // Content size and spacing
+  pageMaxWidth: 1135,
+  contentPaddingSmall: 24,
+  contentPaddingLarge: 48,
 };

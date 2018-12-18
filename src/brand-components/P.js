@@ -8,9 +8,9 @@ const styles = css`
 
   // Font
   font-family: CircularStd-Book;
-  letter-spacing: -0.1px;
   line-height: 24px;
   font-size: 16px;
+  letter-spacing: -0.09px;
 
   // Color
   color: ${props =>
@@ -26,6 +26,7 @@ const styles = css`
     // Font
     font-size: 18px;
     line-height: 32px;
+    letter-spacing: -0.1px;
 
     // Offset baseline
     top: 2px;

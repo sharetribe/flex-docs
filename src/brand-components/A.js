@@ -4,11 +4,11 @@ const styles = css`
   color: ${props => (props.neutral ? 'inherit' : props.theme.linkColor)};
   text-decoration: none;
 
-  :hover {
-    text-decoration: underline;
-  }
   :visited {
     ${props => (props.neutral ? '' : `color: ${props.theme.linkColorVisited}`)};
+  }
+  :hover {
+    ${props => (props.neutral ? '' : `color: ${props.theme.linkColorHover}`)}
   }
 `;
 

@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineSpacing } from '../brand-components';
 import BaseLayout from './BaseLayout';
 
-const Wrapper = styled.div`
-  padding: ${baselineSpacing}px;
+const Content = styled.div`
+  max-width: ${props => props.theme.pageMaxWidth}px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const SingleColumnLayout = props => {
   const { children, ...rest } = props;
   return (
     <BaseLayout {...rest}>
-      <Wrapper>{children}</Wrapper>
+      <Content>{children}</Content>
     </BaseLayout>
   );
 };

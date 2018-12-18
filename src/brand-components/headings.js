@@ -25,19 +25,20 @@ const h1Styles = css`
   // Color
   color: ${headingColor};
 
-  font-size: 60px;
-  line-height: 66px;
-  letter-spacing: -1.5px;
+  font-size: 26px;
+  line-height: 36px;
+  letter-spacing: -0.65px;
 
   // Offset baseline
-  top: -1px;
+  top: 3px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 60px;
-    line-height: 72px;
+    line-height: 64px;
+    letter-spacing: -1.5px;
 
     // Offset baseline
-    top: -2px;
+    top: 2px;
   }
 `;
 
@@ -52,16 +53,17 @@ const h2Styles = css`
   // Color
   color: ${headingColor};
 
-  font-size: 48px;
-  line-height: 54px;
-  letter-spacing: -1.2px;
+  font-size: 26px;
+  line-height: 36px;
+  letter-spacing: -0.65px;
 
   // Offset baseline
-  top: -2px;
+  top: 3px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 48px;
     line-height: 56px;
+    letter-spacing: -1.2px;
 
     // Offset baseline
     top: 3px;
@@ -79,16 +81,17 @@ const h3Styles = css`
   // Color
   color: ${headingColor};
 
-  font-size: 36px;
-  line-height: 42px;
-  letter-spacing: -0.8px;
+  font-size: 26px;
+  line-height: 36px;
+  letter-spacing: -0.65px;
 
   // Offset baseline
-  top: 2px;
+  top: 3px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 36px;
     line-height: 48px;
+    letter-spacing: -0.8px;
 
     // Offset baseline
     top: 3px;
@@ -106,16 +109,17 @@ const h4Styles = css`
   // Color
   color: ${headingColor};
 
-  font-size: 30px;
+  font-size: 26px;
   line-height: 36px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.65px;
 
   // Offset baseline
-  top: 1px;
+  top: 3px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 30px;
     line-height: 40px;
+    letter-spacing: -0.5px;
 
     // Offset baseline
     top: 1px;
@@ -133,16 +137,17 @@ const h5Styles = css`
   // Color
   color: ${headingColor};
 
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: -0.2px;
+  font-size: 26px;
+  line-height: 36px;
+  letter-spacing: -0.65px;
 
   // Offset baseline
-  top: 0px;
+  top: 3px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 24px;
     line-height: 32px;
+    letter-spacing: -0.2px;
 
     // Offset baseline
     top: -1px;
@@ -160,17 +165,18 @@ const h6Styles = css`
   // Color
   color: ${headingColor};
 
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 26px;
+  line-height: 36px;
+  letter-spacing: -0.65px;
 
   // Offset baseline
-  top: -1px;
+  top: 3px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 12px;
     line-height: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
     // Offset baseline
     top: 4px;
