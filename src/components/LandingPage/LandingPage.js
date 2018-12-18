@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { SingleColumnLayout } from '../../layouts';
-import Intro, { IntroHeading, IntroDescription } from './Intro';
+import { IntroHeading, IntroDescription } from './Intro';
 import Grid, {
   GridBox,
   GridHeadingLink,
@@ -19,18 +19,16 @@ const LandingPage = props => {
   const { articleCounts } = props;
   return (
     <SingleColumnLayout>
-      <Intro>
-        <IntroHeading>
-          <Block>Sharetribe Flex</Block>
-          <Block>Developer documentation</Block>
-        </IntroHeading>
-        <IntroDescription>
-          Sharetribe Flex is the fastest and most affordable way to set up a
-          powerful marketplace platform that is uniquely yours. To see what
-          features we are building or planning to build, see the Updates page
-          and the Flex Roadmap.
-        </IntroDescription>
-      </Intro>
+      <IntroHeading>
+        <Block>Sharetribe Flex</Block>
+        <Block>Developer documentation</Block>
+      </IntroHeading>
+      <IntroDescription>
+        Sharetribe Flex is the fastest and most affordable way to set up a
+        powerful marketplace platform that is uniquely yours. To see what
+        features we are building or planning to build, see the Updates page and
+        the Flex Roadmap.
+      </IntroDescription>
       <Grid>
         <GridBox>
           <GridHeadingLink to="/tutorials">Tutorials</GridHeadingLink>
