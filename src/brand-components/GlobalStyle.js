@@ -29,7 +29,11 @@ const GlobalStyle = createGlobalStyle`
   // fontNames prop.
   ${props => fontFaces(props.fontNames)}
 
+  html {
+    height: 100%;
+  }
   body {
+    height: 100%;
     background-color: ${props => props.theme.backgroundColor};
   }
   button {
