@@ -3,6 +3,7 @@
 export { default as Link } from './Link';
 export { default as Modal } from './Modal';
 export { default as Footer } from './Footer';
+export { default as SecondaryBox } from './SecondaryBox';
 
 // Components that import other components from this index. These
 // might create circular dependencies. Changing the order of these
