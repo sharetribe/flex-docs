@@ -32,7 +32,10 @@ const ReferencesPage = () => {
     <StaticQuery
       query={query}
       render={data => {
-        const articles = data.allMarkdownRemark.edges.map(edge => {
+        const edges = data.allMarkdownRemark
+          ? data.allMarkdownRemark.edges
+          : [];
+        const articles = edges.map(edge => {
           const { id, frontmatter, excerpt } = edge.node;
           return {
             id,
