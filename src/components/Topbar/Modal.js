@@ -8,7 +8,7 @@ import {
   baselineLarge,
   baselineBreakpoint,
   P,
-} from '../brand-components';
+} from '../../brand-components';
 
 const CloseButton = styled.button`
   position: absolute;

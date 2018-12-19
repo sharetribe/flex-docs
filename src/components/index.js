@@ -1,7 +1,6 @@
 // Components that don't import other components from this
 // index. These should not create any circular dependencies.
 export { default as Link } from './Link';
-export { default as Modal } from './Modal';
 export { default as Footer } from './Footer';
 export { default as SecondaryBox } from './SecondaryBox';
 
@@ -16,7 +15,6 @@ export { default as BaseLayout } from './BaseLayout';
 export { default as SingleColumnLayout } from './SingleColumnLayout';
 export { default as ThreeColumnLayout } from './ThreeColumnLayout';
 export { default as Topbar } from './Topbar/Topbar';
-export { default as MarkdownHtml } from './MarkdownHtml';
 export {
   default as ArticleIndexPage,
 } from './ArticleIndexPage/ArticleIndexPage';
