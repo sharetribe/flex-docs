@@ -22,6 +22,7 @@ export const themeLight = {
 
   // Active navigation color
   textColorActive: '#000',
+  borderColorActive: '#0080ff',
 
   // Heading color
   headingColor: '#4a4a4a',
@@ -73,6 +74,7 @@ export const themeDark = {
 
   // Active navigation color
   textColorActive: '#fcfcfc',
+  borderColorActive: '#fcfcfc',
 
   // Heading color
   headingColor: 'rgba(252, 252, 252, 0.8)',
