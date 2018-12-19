@@ -12,6 +12,9 @@ export { default as SecondaryBox } from './SecondaryBox';
 // See the gatsby-node.js file to enable a Webpack plugin that warns
 // about circular dependencies to aid in finding problematic
 // dependencies.
+export { default as BaseLayout } from './BaseLayout';
+export { default as SingleColumnLayout } from './SingleColumnLayout';
+export { default as ThreeColumnLayout } from './ThreeColumnLayout';
 export { default as Topbar } from './Topbar/Topbar';
 export { default as MarkdownHtml } from './MarkdownHtml';
 export {

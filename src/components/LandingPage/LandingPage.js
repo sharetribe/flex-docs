@@ -9,7 +9,7 @@ import {
   A,
 } from '../../brand-components';
 import { grid } from '../../config';
-import { SingleColumnLayout } from '../../layouts';
+import { SingleColumnLayout } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
 import Grid, {
   GridBox,

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineSpacing, baselineBreakpoint, H1 } from '../brand-components';
-import { SingleColumnLayout } from '../layouts';
+import { SingleColumnLayout } from '../components';
 
 const Content = styled.div`
   padding-top: ${baselineSpacing}px;

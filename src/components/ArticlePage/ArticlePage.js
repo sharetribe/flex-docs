@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { H1, P } from '../../brand-components';
-import { ThreeColumnLayout } from '../../layouts';
-import { MarkdownHtml } from '../../components';
+import { ThreeColumnLayout, MarkdownHtml } from '../../components';
 
 const ArticlePage = props => {
   const { title, date, category, html } = props;

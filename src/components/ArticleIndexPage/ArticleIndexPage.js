@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { H1 } from '../../brand-components';
-import { ThreeColumnLayout } from '../../layouts';
+import { ThreeColumnLayout } from '../../components';
 import ArticleIndex from './ArticleIndex';
 
 const ArticleIndexPage = props => {
