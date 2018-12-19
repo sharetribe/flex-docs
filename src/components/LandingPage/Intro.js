@@ -8,7 +8,7 @@ import {
   H1,
   P,
 } from '../../brand-components';
-import { gridSideMargin } from './gridConfig';
+import { grid } from '../../config';
 
 export const IntroHeading = styled(H1)`
   margin-top: ${8 * baselineSmall}px;
@@ -17,10 +17,11 @@ export const IntroHeading = styled(H1)`
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${5 * baselineSpacing}px;
-    margin-left: ${props => props.theme.contentPaddingLarge + gridSideMargin}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
 
     // Leave less right margin to fit heading nicely viewport 768px wide.
-    margin-right: ${gridSideMargin}px;
+    margin-right: ${grid.sideMargin}px;
   }
 `;
 
@@ -31,8 +32,9 @@ export const IntroDescription = styled(P)`
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${3 * baselineLarge}px;
-    margin-left: ${props => props.theme.contentPaddingLarge + gridSideMargin}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
     margin-right: ${props =>
-      props.theme.contentPaddingLarge + gridSideMargin}px;
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
   }
 `;
