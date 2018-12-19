@@ -3,6 +3,20 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import { LandingPage } from '../components';
 
+const query = graphql`
+  query LandingPageArticleCountQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            category
+          }
+        }
+      }
+    }
+  }
+`;
+
 // Compute the number of articles for each category
 const counts = data => {
   return data.allMarkdownRemark.edges.reduce((result, edge) => {
@@ -19,19 +33,7 @@ const counts = data => {
 export default () => {
   return (
     <StaticQuery
-      query={graphql`
-        query LandingPageArticleCountQuery {
-          allMarkdownRemark {
-            edges {
-              node {
-                frontmatter {
-                  category
-                }
-              }
-            }
-          }
-        }
-      `}
+      query={query}
       render={data => {
         return <LandingPage articleCounts={counts(data)} />;
       }}

@@ -8,7 +8,8 @@ import {
   P,
   A,
 } from '../../brand-components';
-import { SingleColumnLayout } from '../../layouts';
+import { grid } from '../../config';
+import { SingleColumnLayout } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
 import Grid, {
   GridBox,
@@ -17,7 +18,6 @@ import Grid, {
   GridLinks,
   GridLink,
 } from './Grid';
-import { gridSideMargin } from './gridConfig';
 
 const Block = styled.span`
   display: block;
@@ -39,9 +39,10 @@ const Paragraph = styled(P)`
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${7 * baselineLarge}px;
     margin-bottom: ${13 * baselineLarge}px;
-    margin-left: ${props => props.theme.contentPaddingLarge + gridSideMargin}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
     margin-right: ${props =>
-      props.theme.contentPaddingLarge + gridSideMargin}px;
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
 
     font-size: 16px;
     line-height: 24px;
@@ -68,7 +69,7 @@ const LandingPage = props => {
       </IntroDescription>
       <Grid>
         <GridBox>
-          <GridHeadingLink to="/tutorials">Tutorials</GridHeadingLink>
+          <GridHeadingLink category="tutorials" />
           <GridDescription>
             Get started in learning about the product with hands-on tutorials
             for developers.
@@ -81,7 +82,7 @@ const LandingPage = props => {
           </GridLinks>
         </GridBox>
         <GridBox>
-          <GridHeadingLink to="/guides">How-to Guides</GridHeadingLink>
+          <GridHeadingLink category="guides" />
           <GridDescription>
             Specific step-by-step guides for solving{' '}
           </GridDescription>
@@ -93,7 +94,7 @@ const LandingPage = props => {
           </GridLinks>
         </GridBox>
         <GridBox>
-          <GridHeadingLink to="/references">Reference</GridHeadingLink>
+          <GridHeadingLink category="references" />
           <GridDescription>Technical reference to the tooling.</GridDescription>
           <GridLinks>
             <GridLink to="/references/api">API Reference</GridLink>
@@ -103,7 +104,7 @@ const LandingPage = props => {
           </GridLinks>
         </GridBox>
         <GridBox>
-          <GridHeadingLink to="/background">Background</GridHeadingLink>
+          <GridHeadingLink category="background" />
           <GridDescription>
             Explanations and background information for important concepts and
             design decisions behind the product.

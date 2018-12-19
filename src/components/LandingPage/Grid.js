@@ -11,13 +11,16 @@ import {
   Li,
   H4,
 } from '../../brand-components';
+import { categories, grid } from '../../config';
 import { Link, SecondaryBox } from '../../components';
-import { gapSmall, gapLarge } from './gridConfig';
 
 export const GridHeadingLink = props => {
+  const { category } = props;
   return (
     <H4 as="h2">
-      <Link neutral {...props} />
+      <Link neutral to={`/${category}`}>
+        {categories[category].label}
+      </Link>
     </H4>
   );
 };
@@ -74,16 +77,16 @@ export const GridBox = SecondaryBox;
 
 const Grid = styled.div`
   margin-top: ${7 * baselineSmall}px;
-  margin-left: ${gapSmall}px;
-  margin-right: ${gapSmall}px;
+  margin-left: ${grid.smallGap}px;
+  margin-right: ${grid.smallGap}px;
   display: grid;
-  grid-row-gap: ${gapSmall}px;
-  grid-column-gap: ${gapSmall}px;
+  grid-row-gap: ${grid.smallGap}px;
+  grid-column-gap: ${grid.smallGap}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${9 * baselineLarge}px;
-    grid-row-gap: ${gapLarge}px;
-    grid-column-gap: ${gapLarge}px;
+    grid-row-gap: ${grid.largeGap}px;
+    grid-column-gap: ${grid.largeGap}px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
   }

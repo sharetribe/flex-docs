@@ -2,27 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../brand-components';
+import { categories } from '../../config';
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
 
-const menuLinks = [
-  {
-    path: '/tutorials',
-    text: 'Tutorials',
-  },
-  {
-    path: '/guides',
-    text: 'How-to Guides',
-  },
-  {
-    path: '/references',
-    text: 'Reference',
-  },
-  {
-    path: '/background',
-    text: 'Background',
-  },
-];
+const menuCategories = ['tutorials', 'guides', 'references', 'background'];
 
 const MobileMenuWrapper = styled.div`
   height: 100%;
@@ -42,11 +26,14 @@ const DesktopMenuWrapper = styled.div`
 `;
 
 const Menu = props => {
-  const { activePath, ...rest } = props;
-  const links = menuLinks.map(link => ({
-    active: link.path === activePath,
-    ...link,
-  }));
+  const { activeCategory, ...rest } = props;
+  const links = menuCategories.map(category => {
+    return {
+      path: `/${category}`,
+      text: categories[category].label,
+      active: activeCategory === category,
+    };
+  });
   return (
     <nav {...rest}>
       <MobileMenuWrapper>

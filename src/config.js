@@ -1,3 +1,26 @@
+import { baselineSmall, baselineLarge } from './brand-components';
+
+export const categories = {
+  tutorials: {
+    label: 'Tutorials',
+  },
+  guides: {
+    label: 'How-to Guides',
+  },
+  references: {
+    label: 'Reference',
+  },
+  background: {
+    label: 'Background Information',
+  },
+};
+
+export const grid = {
+  smallGap: 2 * baselineSmall,
+  largeGap: 4 * baselineLarge,
+  sideMargin: 12,
+};
+
 export const themeLight = {
   // Main background color
   backgroundColor: '#f9f9fb',
@@ -51,6 +74,8 @@ export const themeLight = {
 };
 
 export const themeDark = {
+  ...themeLight,
+
   // Main background color
   backgroundColor: '#1e1e1e',
 
@@ -91,13 +116,4 @@ export const themeDark = {
   // Button colors
   primaryButtonColor: '#0080ff',
   primaryButtonColorHover: '#0059b3',
-
-  // Baseline dev grid
-  baselineDevColor1: 'rgba(0, 0, 0, 0.2)',
-  baselineDevColor2: 'rgba(0, 0, 0, 0.1)',
-
-  // Content size and spacing
-  pageMaxWidth: 1135,
-  contentPaddingSmall: 24,
-  contentPaddingLarge: 48,
 };

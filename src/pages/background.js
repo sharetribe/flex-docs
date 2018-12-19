@@ -1,35 +1,41 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { H1 } from '../brand-components';
-import { ThreeColumnLayout } from '../layouts';
-import { ArticleIndex } from '../components';
+import { categories } from '../config';
+import { ArticleIndexPage } from '../components';
+
+const query = graphql`
+  query BackgroundIndexQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "background" } } }
+      sort: { fields: fileAbsolutePath, order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            slug
+            date
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`;
+
+const category = 'background';
 
 const BackgroundPage = () => {
   return (
     <StaticQuery
-      query={graphql`
-        query BackgroundListQuery {
-          allMarkdownRemark(
-            filter: { frontmatter: { category: { eq: "background" } } }
-            sort: { fields: fileAbsolutePath, order: ASC }
-          ) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  title
-                  slug
-                  date
-                }
-                excerpt
-              }
-            }
-          }
-        }
-      `}
+      query={query}
       render={data => {
-        const articles = data.allMarkdownRemark.edges.map(edge => {
+        const edges = data.allMarkdownRemark
+          ? data.allMarkdownRemark.edges
+          : [];
+        const articles = edges.map(edge => {
           const { id, frontmatter, excerpt } = edge.node;
           return {
             id,
@@ -38,13 +44,11 @@ const BackgroundPage = () => {
           };
         });
         return (
-          <ThreeColumnLayout
-            title="Background Information"
-            activePath="/background"
-          >
-            <H1>Background Information</H1>
-            <ArticleIndex pathPrefix="/background/" articles={articles} />
-          </ThreeColumnLayout>
+          <ArticleIndexPage
+            title={categories[category].label}
+            category={category}
+            articles={articles}
+          />
         );
       }}
     />

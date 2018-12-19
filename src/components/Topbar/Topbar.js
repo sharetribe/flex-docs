@@ -54,10 +54,10 @@ const TopbarSearch = styled(Search)`
 `;
 
 const Topbar = props => {
-  const { activePath, ...rest } = props;
+  const { activeCategory, ...rest } = props;
   return (
     <Wrapper {...rest}>
-      <TopbarMenu activePath={activePath} />
+      <TopbarMenu activeCategory={activeCategory} />
       <HomeLink to="/">
         <TopbarLogo />
       </HomeLink>

@@ -16,7 +16,7 @@ import {
   Li,
   Hr,
   A,
-} from '../brand-components';
+} from '../../brand-components';
 
 const Html = styled.div`
   h1 {

@@ -16,8 +16,7 @@ import {
   Li,
   Hr,
 } from '../brand-components';
-import { SingleColumnLayout } from '../layouts';
-import { Link } from '../components';
+import { SingleColumnLayout, Link } from '../components';
 
 const Content = styled.div`
   margin-top: ${baselineSpacing}px;
