@@ -61,6 +61,7 @@ const Copyright = styled.p`
 `;
 
 const Footer = props => {
+  const currentYear = new Date().getFullYear();
   return (
     <Wrapper {...props}>
       <Content>
@@ -69,7 +70,7 @@ const Footer = props => {
           <A neutral href="https://www.sharetribe.com">
             Sharetribe
           </A>{' '}
-          2019.
+          {currentYear}.
         </Copyright>
       </Content>
     </Wrapper>
