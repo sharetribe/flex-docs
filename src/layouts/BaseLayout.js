@@ -24,7 +24,7 @@ const FontPreloadLink = font => {
 };
 
 const BaseLayout = props => {
-  const { title, description, activePath, children } = props;
+  const { title, description, activeCategory, children } = props;
   return (
     <StaticQuery
       query={graphql`
@@ -54,7 +54,7 @@ const BaseLayout = props => {
                   .map(FontPreloadLink)}
               </Helmet>
               <BaselineDevGrid>
-                <Topbar siteTitle={siteTitle} activePath={activePath} />
+                <Topbar siteTitle={siteTitle} activeCategory={activeCategory} />
                 {children}
                 <Footer />
               </BaselineDevGrid>

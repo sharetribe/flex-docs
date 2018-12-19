@@ -11,13 +11,17 @@ import {
   Li,
   H4,
 } from '../../brand-components';
+import { categories } from '../../config';
 import { Link, SecondaryBox } from '../../components';
 import { gapSmall, gapLarge } from './gridConfig';
 
 export const GridHeadingLink = props => {
+  const { category } = props;
   return (
     <H4 as="h2">
-      <Link neutral {...props} />
+      <Link neutral to={`/${category}`}>
+        {categories[category].label}
+      </Link>
     </H4>
   );
 };

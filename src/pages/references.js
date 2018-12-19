@@ -1,9 +1,8 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { H1 } from '../brand-components';
-import { ThreeColumnLayout } from '../layouts';
-import { ArticleIndex } from '../components';
+import { categories } from '../config';
+import { ArticleIndexPage } from '../components';
 
 const query = graphql`
   query ReferencesIndexQuery {
@@ -26,6 +25,8 @@ const query = graphql`
   }
 `;
 
+const category = 'references';
+
 const ReferencesPage = () => {
   return (
     <StaticQuery
@@ -40,10 +41,11 @@ const ReferencesPage = () => {
           };
         });
         return (
-          <ThreeColumnLayout title="Reference" activePath="/references">
-            <H1>Reference</H1>
-            <ArticleIndex pathPrefix="/references/" articles={articles} />
-          </ThreeColumnLayout>
+          <ArticleIndexPage
+            title={categories[category].label}
+            category={category}
+            articles={articles}
+          />
         );
       }}
     />
