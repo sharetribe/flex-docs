@@ -4,8 +4,8 @@ import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, fonts, BaselineDevGrid } from '../brand-components';
+import { themeLight as theme } from '../config';
 import { Topbar, Footer } from '../components';
-import { themeLight as theme } from '../theme';
 
 const fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
 
