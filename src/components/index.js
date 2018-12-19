@@ -16,3 +16,4 @@ export { default as Topbar } from './Topbar/Topbar';
 export { default as ArticleIndex } from './ArticleIndex';
 export { default as MarkdownHtml } from './MarkdownHtml';
 export { default as LandingPage } from './LandingPage/LandingPage';
+export { default as NotFoundPage } from './NotFoundPage';
