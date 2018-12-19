@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import {
+  baselineSmall,
+  baselineLarge,
+  baselineBreakpoint,
+  P,
+  A,
+} from '../../brand-components';
 import { SingleColumnLayout } from '../../layouts';
 import { IntroHeading, IntroDescription } from './Intro';
 import Grid, {
@@ -10,9 +17,39 @@ import Grid, {
   GridLinks,
   GridLink,
 } from './Grid';
+import { gridSideMargin } from './gridConfig';
 
 const Block = styled.span`
   display: block;
+`;
+
+const Paragraph = styled(P)`
+  margin-top: ${3 * baselineSmall}px;
+  margin-bottom: ${11 * baselineSmall}px;
+  margin-left: ${props => props.theme.contentPaddingSmall}px;
+  margin-right: ${props => props.theme.contentPaddingSmall}px;
+
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.08px;
+
+  // Offset baseline
+  top: 1px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${7 * baselineLarge}px;
+    margin-bottom: ${13 * baselineLarge}px;
+    margin-left: ${props => props.theme.contentPaddingLarge + gridSideMargin}px;
+    margin-right: ${props =>
+      props.theme.contentPaddingLarge + gridSideMargin}px;
+
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.09px;
+
+    // Offset baseline
+    top: -2px;
+  }
 `;
 
 const LandingPage = props => {
@@ -84,6 +121,9 @@ const LandingPage = props => {
           </GridLinks>
         </GridBox>
       </Grid>
+      <Paragraph>
+        Missing something important? <A href="#">Let us know.</A>
+      </Paragraph>
     </SingleColumnLayout>
   );
 };

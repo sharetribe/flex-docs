@@ -36,7 +36,6 @@ export const GridDescription = styled(P)`
 `;
 
 const ArrowIcon = props => {
-  // stroke="#0080FF"
   return (
     <svg width="17" height="10" viewBox="0 0 17 10" {...props}>
       <g
@@ -75,7 +74,6 @@ export const GridBox = SecondaryBox;
 
 const Grid = styled.div`
   margin-top: ${7 * baselineSmall}px;
-  margin-bottom: ${11 * baselineSmall}px;
   margin-left: ${gapSmall}px;
   margin-right: ${gapSmall}px;
   display: grid;
@@ -84,7 +82,6 @@ const Grid = styled.div`
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${9 * baselineLarge}px;
-    margin-bottom: ${13 * baselineLarge}px;
     grid-row-gap: ${gapLarge}px;
     grid-column-gap: ${gapLarge}px;
     grid-template-columns: 1fr 1fr;

@@ -1,22 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineBreakpoint, A } from '../brand-components';
+import {
+  baselineSmall,
+  baselineLarge,
+  baselineBreakpoint,
+  A,
+} from '../brand-components';
+
+const landingPageGridSideMargin = 12;
 
 const Wrapper = styled.div`
-  padding: 24px;
   background-color: ${props => props.theme.backgroundColorSecondary};
   color: ${props => props.theme.textColorSecondary};
-
-  @media (min-width: ${baselineBreakpoint}px) {
-    padding: 56px 24px 88px 24px;
-  }
 `;
 
 const Content = styled.div`
+  padding-top: ${4 * baselineSmall}px;
+  padding-bottom: ${4 * baselineSmall}px;
+  padding-left: ${props => props.theme.contentPaddingSmall}px;
+  padding-right: ${props => props.theme.contentPaddingSmall}px;
+
   max-width: ${props => props.theme.pageMaxWidth}px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    padding-top: ${7 * baselineLarge}px;
+    padding-bottom: ${11 * baselineLarge}px;
+    padding-left: ${props =>
+      props.theme.contentPaddingLarge + landingPageGridSideMargin}px;
+    padding-right: ${props =>
+      props.theme.contentPaddingLarge + landingPageGridSideMargin}px;
+  }
 `;
 
 const Copyright = styled.p`
@@ -36,7 +52,11 @@ const Copyright = styled.p`
   top: 1px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    top: -1px;
+    letter-spacing: -0.09px;
+    font-size: 16px;
+
+    // Offset baseline
+    top: -2px;
   }
 `;
 
