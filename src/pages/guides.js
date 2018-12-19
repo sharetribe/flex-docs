@@ -5,29 +5,31 @@ import { H1 } from '../brand-components';
 import { ThreeColumnLayout } from '../layouts';
 import { ArticleIndex } from '../components';
 
+const query = graphql`
+  query GuidesIndexQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "guides" } } }
+      sort: { fields: fileAbsolutePath, order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            slug
+            date
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`;
+
 const GuidesPage = () => {
   return (
     <StaticQuery
-      query={graphql`
-        query GuidesListQuery {
-          allMarkdownRemark(
-            filter: { frontmatter: { category: { eq: "guides" } } }
-            sort: { fields: fileAbsolutePath, order: ASC }
-          ) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  title
-                  slug
-                  date
-                }
-                excerpt
-              }
-            }
-          }
-        }
-      `}
+      query={query}
       render={data => {
         const articles = data.allMarkdownRemark.edges.map(edge => {
           const { id, frontmatter, excerpt } = edge.node;
