@@ -43,7 +43,9 @@ exports.createPages = ({ graphql, actions }) => {
           node {
             fileAbsolutePath
             frontmatter {
+              title
               slug
+              date
               category
             }
           }
@@ -54,28 +56,30 @@ exports.createPages = ({ graphql, actions }) => {
     return new Promise((resolve, reject) => {
       result.data.allMarkdownRemark.edges.forEach(edge => {
         const { fileAbsolutePath, frontmatter } = edge.node;
-        const { slug, category } = frontmatter;
+        const { title, slug, date, category } = frontmatter;
+        if (!title) {
+          throw new Error(`title missing from file: ${fileAbsolutePath}`);
+        }
         if (!slug) {
           throw new Error(`slug missing from file: ${fileAbsolutePath}`);
+        }
+        if (!date) {
+          throw new Error(`date missing from file: ${fileAbsolutePath}`);
         }
         if (!category) {
           throw new Error(`category missing from file: ${fileAbsolutePath}`);
         }
-        const templates = {
-          tutorials: 'TutorialPageTemplate.js',
-          guides: 'GuidePageTemplate.js',
-          references: 'ReferencePageTemplate.js',
-          background: 'BackgroundPageTemplate.js',
-        };
-        const template = templates[category];
-        if (!template) {
+        const categories = ['tutorials', 'guides', 'references', 'background'];
+        if (!categories.includes(category)) {
           throw new Error(
             `Unknown category: ${category} in file: ${fileAbsolutePath}`
           );
         }
         createPage({
           path: `${category}/${slug}`,
-          component: path.resolve(`./src/templates/${template}`),
+          component: path.resolve(`./src/templates/ArticlePageTemplate.js`),
+
+          // Context will be exposed as variables in the GraphQL query, e.g. $category
           context: { slug, category },
         });
         resolve();
