@@ -16,7 +16,7 @@ import {
   Li,
   Hr,
 } from '../brand-components';
-import { SingleColumnLayout, Link } from '../components';
+import { MainLayout, Link, SecondaryBox, Breadcrumb } from '../components';
 
 const Content = styled.div`
   margin-top: ${baselineSpacing}px;
@@ -47,7 +47,7 @@ const CustomLink = styled(Link)`
 
 const StyleguidePage = () => {
   return (
-    <SingleColumnLayout title="Styleguide">
+    <MainLayout title="Styleguide">
       <Content>
         <Example>
           <H1>H1 level heading</H1>
@@ -141,8 +141,33 @@ const StyleguidePage = () => {
             <Li>Step c</Li>
           </Ol>
         </Example>
+        <Example>
+          <Hr />
+        </Example>
+        <Example>
+          <SecondaryBox>
+            <P>Secondary box</P>
+          </SecondaryBox>
+        </Example>
+        <Example>
+          <Breadcrumb
+            links={[
+              {
+                path: '/',
+                label: 'Docs',
+              },
+              {
+                path: '/tutorials',
+                label: 'Tutorials',
+              },
+              {
+                label: 'Some tutorial',
+              },
+            ]}
+          />
+        </Example>
       </Content>
-    </SingleColumnLayout>
+    </MainLayout>
   );
 };
 

@@ -9,7 +9,7 @@ import {
   A,
 } from '../../brand-components';
 import { grid } from '../../config';
-import { SingleColumnLayout } from '../../components';
+import { MainLayout } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
 import Grid, {
   GridBox,
@@ -56,7 +56,7 @@ const Paragraph = styled(P)`
 const LandingPage = props => {
   const { articleCounts } = props;
   return (
-    <SingleColumnLayout>
+    <MainLayout>
       <IntroHeading>
         <Block>Sharetribe Flex</Block>
         <Block>Developer documentation</Block>
@@ -125,7 +125,7 @@ const LandingPage = props => {
       <Paragraph>
         Missing something important? <A href="#">Let us know.</A>
       </Paragraph>
-    </SingleColumnLayout>
+    </MainLayout>
   );
 };
 

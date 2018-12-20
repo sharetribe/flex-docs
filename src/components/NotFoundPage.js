@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineSpacing, baselineBreakpoint, H1 } from '../brand-components';
-import { SingleColumnLayout } from '../components';
+import { MainLayout } from '../components';
 
 const Content = styled.div`
   padding-top: ${baselineSpacing}px;
@@ -17,11 +17,11 @@ const Content = styled.div`
 `;
 
 const NotFoundPage = () => (
-  <SingleColumnLayout title="Not found">
+  <MainLayout title="Not found">
     <Content>
       <H1>Oops, page not found :/</H1>
     </Content>
-  </SingleColumnLayout>
+  </MainLayout>
 );
 
 export default NotFoundPage;
