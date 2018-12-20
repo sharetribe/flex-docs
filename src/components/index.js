@@ -13,8 +13,7 @@ export { default as Breadcrumb } from './Breadcrumb';
 // about circular dependencies to aid in finding problematic
 // dependencies.
 export { default as BaseLayout } from './BaseLayout';
-export { default as SingleColumnLayout } from './SingleColumnLayout';
-export { default as ThreeColumnLayout } from './ThreeColumnLayout';
+export { default as MainLayout } from './MainLayout';
 export { default as Topbar } from './Topbar/Topbar';
 export {
   default as ArticleIndexPage,

@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, fonts, BaselineDevGrid } from '../brand-components';
 import { themeLight as theme } from '../config';
-import { Topbar, Footer } from '../components';
 
 const fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
 
@@ -24,7 +23,7 @@ const FontPreloadLink = font => {
 };
 
 const BaseLayout = props => {
-  const { title, description, activeCategory, children } = props;
+  const { title, description, children } = props;
   return (
     <StaticQuery
       query={graphql`
@@ -53,11 +52,7 @@ const BaseLayout = props => {
                   .filter(f => fontsInUse.includes(f.name))
                   .map(FontPreloadLink)}
               </Helmet>
-              <BaselineDevGrid>
-                <Topbar siteTitle={siteTitle} activeCategory={activeCategory} />
-                {children}
-                <Footer />
-              </BaselineDevGrid>
+              <BaselineDevGrid>{children}</BaselineDevGrid>
               <GlobalStyle fontNames={fontsInUse} />
             </>
           </ThemeProvider>
