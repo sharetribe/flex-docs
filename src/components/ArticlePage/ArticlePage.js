@@ -5,7 +5,10 @@ import {
   baselineBreakpoint,
   baselineSmall,
   baselineLarge,
+  Ingress,
   H1,
+  H6,
+  Hr,
 } from '../../brand-components';
 import { categories } from '../../config';
 import { MainLayout, Breadcrumb } from '../../components';
@@ -72,10 +75,49 @@ const Heading = styled(H1)`
   }
 `;
 
+const ArticleIngress = styled(Ingress)`
+  margin-top: ${3 * baselineSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${4 * baselineLarge}px;
+  }
+`;
+
+const Info = styled.div`
+  margin-top: ${3 * baselineSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${3 * baselineLarge}px;
+  }
+`;
+
+const contentMaxWidth = 635;
+
+const SeparatorLine = styled(Hr)`
+  margin-top: ${3 * baselineSmall}px;
+  max-width: ${contentMaxWidth}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${4 * baselineLarge}px;
+  }
+`;
+
+const Markdown = styled(MarkdownHtml)`
+  margin-top: ${3 * baselineSmall}px;
+  margin-bottom: ${props => props.theme.contentPaddingSmall}px;
+  max-width: ${contentMaxWidth}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${4 * baselineLarge}px;
+    margin-bottom: ${props => props.theme.contentPaddingLarge}px;
+  }
+`;
+
 const ArticlePage = props => {
-  const { title, date, category, html } = props;
+  const { frontmatter, html } = props;
+  const { title, date, category, ingress } = frontmatter;
   return (
-    <MainLayout title={title} activeCategory={category}>
+    <MainLayout title={title} description={ingress} activeCategory={category}>
       <Content>
         <CrumbWrapper>
           <Crumb
@@ -88,7 +130,13 @@ const ArticlePage = props => {
           <Updated date={date} />
         </CrumbWrapper>
         <Heading>{title}</Heading>
-        <MarkdownHtml html={html} />
+        <ArticleIngress>{ingress}</ArticleIngress>
+        <Info>
+          <H6 as="p">Required skills: -</H6>
+          <H6 as="p">Reading time: -</H6>
+        </Info>
+        <SeparatorLine />
+        <Markdown html={html} />
       </Content>
     </MainLayout>
   );

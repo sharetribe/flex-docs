@@ -165,21 +165,21 @@ const h6Styles = css`
   // Color
   color: ${headingColor};
 
-  font-size: 26px;
-  line-height: 36px;
-  letter-spacing: -0.65px;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
   // Offset baseline
-  top: 3px;
+  top: 0px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 12px;
-    line-height: 16px;
+    line-height: 24px;
     letter-spacing: 1px;
-    text-transform: uppercase;
 
     // Offset baseline
-    top: 4px;
+    top: 0px;
   }
 `;
 

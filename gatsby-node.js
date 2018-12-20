@@ -47,6 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
               slug
               date
               category
+              ingress
             }
           }
         }
@@ -56,7 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
     return new Promise((resolve, reject) => {
       result.data.allMarkdownRemark.edges.forEach(edge => {
         const { fileAbsolutePath, frontmatter } = edge.node;
-        const { title, slug, date, category } = frontmatter;
+        const { title, slug, date, category, ingress } = frontmatter;
         if (!title) {
           throw new Error(`title missing from file: ${fileAbsolutePath}`);
         }
@@ -68,6 +69,9 @@ exports.createPages = ({ graphql, actions }) => {
         }
         if (!category) {
           throw new Error(`category missing from file: ${fileAbsolutePath}`);
+        }
+        if (!ingress) {
+          throw new Error(`ingress missing from file: ${fileAbsolutePath}`);
         }
         const categories = ['tutorials', 'guides', 'references', 'background'];
         if (!categories.includes(category)) {

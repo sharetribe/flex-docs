@@ -13,7 +13,7 @@ const ArticleLi = styled.li`
 `;
 
 const ArticleExcerpt = props => {
-  const { title, slug, date, excerpt, pathPrefix } = props;
+  const { pathPrefix, title, slug, date, ingress } = props;
   const path = `${pathPrefix}${slug}`;
   return (
     <ArticleLi>
@@ -26,7 +26,7 @@ const ArticleExcerpt = props => {
       <Paragraph>path: {path}</Paragraph>
       <Paragraph>
         <Link neutral to={path}>
-          {excerpt}
+          {ingress}
         </Link>
       </Paragraph>
       <Paragraph>
@@ -40,8 +40,12 @@ const ArticleIndex = props => {
   const { pathPrefix, articles, ...rest } = props;
   return (
     <Ul {...rest}>
-      {articles.map(a => (
-        <ArticleExcerpt pathPrefix={pathPrefix} key={a.id} {...a} />
+      {articles.map(article => (
+        <ArticleExcerpt
+          pathPrefix={pathPrefix}
+          key={article.slug}
+          {...article}
+        />
       ))}
     </Ul>
   );
