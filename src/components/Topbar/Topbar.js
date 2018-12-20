@@ -14,7 +14,14 @@ const Wrapper = styled.section`
 `;
 
 const TopbarMenu = styled(Menu)`
+  // Pull as the first item in mobile layout
+  order: -1;
+
   @media (min-width: ${baselineBreakpoint}px) {
+    // Apply to the DOM order in desktop layout to work nicely with
+    // the default tab index order.
+    order: 0;
+
     // Align the menu in the center
     margin-left: auto;
     margin-right: auto;
@@ -27,9 +34,6 @@ const HomeLink = styled(Link)`
   margin-right: auto;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    // Pull logo as the first item in desktop layout
-    order: -1;
-
     margin-left: 36px;
     margin-right: 0;
   }
@@ -57,10 +61,10 @@ const Topbar = props => {
   const { activeCategory, ...rest } = props;
   return (
     <Wrapper {...rest}>
-      <TopbarMenu activeCategory={activeCategory} />
       <HomeLink to="/">
         <TopbarLogo />
       </HomeLink>
+      <TopbarMenu activeCategory={activeCategory} />
       <TopbarSearch />
     </Wrapper>
   );
