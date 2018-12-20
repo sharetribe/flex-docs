@@ -11,7 +11,7 @@ export const categories = {
     label: 'Reference',
   },
   background: {
-    label: 'Background Information',
+    label: 'Background',
   },
 };
 
