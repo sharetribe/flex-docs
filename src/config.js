@@ -3,15 +3,22 @@ import { baselineSmall, baselineLarge } from './brand-components';
 export const categories = {
   tutorials: {
     label: 'Tutorials',
+    description:
+      'Get started in learning about the product with hands-on tutorials for developers.',
   },
   guides: {
     label: 'How-to Guides',
+    description:
+      'Specific step-by-step guides for customizing your marketplace.',
   },
   references: {
     label: 'Reference',
+    description: 'Technical reference to the tooling.',
   },
   background: {
     label: 'Background',
+    description:
+      'Explanations and background information for important concepts and design decisions behind the platform.',
   },
 };
 

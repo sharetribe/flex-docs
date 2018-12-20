@@ -8,7 +8,7 @@ import {
   P,
   A,
 } from '../../brand-components';
-import { grid } from '../../config';
+import { grid, categories } from '../../config';
 import { MainLayout } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
 import Grid, {
@@ -68,12 +68,10 @@ const LandingPage = props => {
         the Flex Roadmap.
       </IntroDescription>
       <Grid>
+        {/* TUTORIALS */}
         <GridBox>
           <GridHeadingLink category="tutorials" />
-          <GridDescription>
-            Get started in learning about the product with hands-on tutorials
-            for developers.
-          </GridDescription>
+          <GridDescription>{categories.tutorials.description}</GridDescription>
           <GridLinks>
             <GridLink to="/tutorials/getting-started">Getting Started</GridLink>
             <GridLink to="/tutorials">
@@ -81,11 +79,11 @@ const LandingPage = props => {
             </GridLink>
           </GridLinks>
         </GridBox>
+
+        {/* GUIDES */}
         <GridBox>
           <GridHeadingLink category="guides" />
-          <GridDescription>
-            Specific step-by-step guides for solving{' '}
-          </GridDescription>
+          <GridDescription>{categories.guides.description}</GridDescription>
           <GridLinks>
             <GridLink to="/guides/how-to">How to...</GridLink>
             <GridLink to="/guides">
@@ -93,9 +91,11 @@ const LandingPage = props => {
             </GridLink>
           </GridLinks>
         </GridBox>
+
+        {/* REFERENCES */}
         <GridBox>
           <GridHeadingLink category="references" />
-          <GridDescription>Technical reference to the tooling.</GridDescription>
+          <GridDescription>{categories.references.description}</GridDescription>
           <GridLinks>
             <GridLink to="/references/api">API Reference</GridLink>
             <GridLink to="/references">
@@ -103,12 +103,11 @@ const LandingPage = props => {
             </GridLink>
           </GridLinks>
         </GridBox>
+
+        {/* BACKGROUND */}
         <GridBox>
           <GridHeadingLink category="background" />
-          <GridDescription>
-            Explanations and background information for important concepts and
-            design decisions behind the product.
-          </GridDescription>
+          <GridDescription>{categories.background.description}</GridDescription>
           <GridLinks>
             <GridLink to="/background/concepts">Important concepts</GridLink>
             <GridLink to="/background/architecture">
