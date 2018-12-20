@@ -12,6 +12,7 @@ export const query = graphql`
         title
         date
         category
+        ingress
       }
       html
     }
@@ -20,10 +21,7 @@ export const query = graphql`
 
 const ArticlePageTemplate = props => {
   const { frontmatter, html } = props.data.markdownRemark;
-  const { title, date, category } = frontmatter;
-  return (
-    <ArticlePage title={title} date={date} category={category} html={html} />
-  );
+  return <ArticlePage frontmatter={frontmatter} html={html} />;
 };
 
 export default ArticlePageTemplate;

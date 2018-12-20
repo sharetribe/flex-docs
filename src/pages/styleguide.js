@@ -11,6 +11,7 @@ import {
   H5,
   H6,
   P,
+  Ingress,
   Ul,
   Ol,
   Li,
@@ -77,6 +78,14 @@ const StyleguidePage = () => {
           <P as="div">
             This is another paragraph, but rendered as a div element.
           </P>
+        </Example>
+        <Example>
+          <Ingress>
+            This is an ingress of an article. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Etiam aliquet id leo ut dictum.
+            Phasellus dictum porttitor placerat. Aenean id volutpat turpis.
+            Maecenas porta risus sed ex venenatis dictum.
+          </Ingress>
         </Example>
         <Example>
           <H2>

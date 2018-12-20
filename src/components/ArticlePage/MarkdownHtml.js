@@ -133,11 +133,18 @@ const Html = styled.div`
     border: 1px solid ${props => props.theme.lineColor};
     padding: ${baselineSmall}px ${baselineSpacing}px;
   }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+  & > :last-child {
+    margin-bottom: 0;
+  }
 `;
 
 const MarkdownHtml = props => {
-  const { html } = props;
-  return <Html dangerouslySetInnerHTML={{ __html: html }} />;
+  const { html, ...rest } = props;
+  return <Html {...rest} dangerouslySetInnerHTML={{ __html: html }} />;
 };
 
 export default MarkdownHtml;

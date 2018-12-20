@@ -12,13 +12,12 @@ const query = graphql`
     ) {
       edges {
         node {
-          id
           frontmatter {
             title
             slug
             date
+            ingress
           }
-          excerpt
         }
       }
     }
@@ -36,12 +35,7 @@ const GuidesPage = () => {
           ? data.allMarkdownRemark.edges
           : [];
         const articles = edges.map(edge => {
-          const { id, frontmatter, excerpt } = edge.node;
-          return {
-            id,
-            excerpt,
-            ...frontmatter,
-          };
+          return edge.node.frontmatter;
         });
         return (
           <ArticleIndexPage
