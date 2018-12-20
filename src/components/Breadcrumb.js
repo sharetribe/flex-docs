@@ -19,11 +19,16 @@ const Item = styled(Li)`
 
   // Font
   font-size: 12px;
-  line-height: 30px;
+
+  // This is a bit unorthodox, but make sure the ArticlePage looks
+  // good when the breadcrumb and the last updated text both take
+  // multiple lines.
+  line-height: 12px;
+
   letter-spacing: -0.07px;
 
   // Offset baseline
-  top: -1px;
+  top: -3px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 14px;
