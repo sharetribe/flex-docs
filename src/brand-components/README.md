@@ -25,3 +25,5 @@ branded components collection.
 ### Component should pass in extra props to the root component
 
 ### Export style as a static prop?
+
+## Prefer top margin when laying out components
