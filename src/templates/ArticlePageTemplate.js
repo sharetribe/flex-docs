@@ -15,13 +15,21 @@ export const query = graphql`
         ingress
       }
       html
+      fields {
+        readingTime {
+          minutes
+        }
+      }
     }
   }
 `;
 
 const ArticlePageTemplate = props => {
-  const { frontmatter, html } = props.data.markdownRemark;
-  return <ArticlePage frontmatter={frontmatter} html={html} />;
+  const { frontmatter, html, fields } = props.data.markdownRemark;
+  const { minutes } = fields.readingTime;
+  return (
+    <ArticlePage frontmatter={frontmatter} html={html} readingTime={minutes} />
+  );
 };
 
 export default ArticlePageTemplate;
