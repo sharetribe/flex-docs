@@ -28,6 +28,7 @@ module.exports = {
               withWebp: true,
             },
           },
+          'gatsby-remark-reading-time',
         ],
       },
     },
