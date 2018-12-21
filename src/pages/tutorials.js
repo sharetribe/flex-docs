@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { categories } from '../config';
+import { dev, categories } from '../config';
 import { ArticleIndexPage } from '../components';
 
 const query = graphql`
@@ -17,6 +17,7 @@ const query = graphql`
             slug
             date
             ingress
+            private
           }
         }
       }
@@ -34,9 +35,14 @@ const TutorialsPage = () => {
         const edges = data.allMarkdownRemark
           ? data.allMarkdownRemark.edges
           : [];
-        const articles = edges.map(edge => {
-          return edge.node.frontmatter;
-        });
+        const articles = edges.reduce((result, edge) => {
+          const { frontmatter } = edge.node;
+          if (dev || !frontmatter.private) {
+            return result.concat(frontmatter);
+          } else {
+            return result;
+          }
+        }, []);
         return (
           <ArticleIndexPage
             title={categories[category].label}

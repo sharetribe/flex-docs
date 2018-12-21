@@ -6,6 +6,8 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
+const dev = process.env.NODE_ENV === 'development';
+
 // Uncomment to warn about circular dependencies.
 //
 // const CircularDependencyPlugin = require('circular-dependency-plugin');
@@ -34,6 +36,43 @@ exports.onCreateNode = ({ node, getNode }) => {
   }
 };
 
+const createArticle = (createPage, edge) => {
+  const { fileAbsolutePath, frontmatter } = edge.node;
+  const { title, slug, date, category, ingress, private } = frontmatter;
+  if (!title) {
+    throw new Error(`title missing from file: ${fileAbsolutePath}`);
+  }
+  if (!slug) {
+    throw new Error(`slug missing from file: ${fileAbsolutePath}`);
+  }
+  if (!date) {
+    throw new Error(`date missing from file: ${fileAbsolutePath}`);
+  }
+  if (!category) {
+    throw new Error(`category missing from file: ${fileAbsolutePath}`);
+  }
+  if (!ingress) {
+    throw new Error(`ingress missing from file: ${fileAbsolutePath}`);
+  }
+  const categories = ['tutorials', 'guides', 'references', 'background'];
+  if (!categories.includes(category)) {
+    throw new Error(
+      `Unknown category: ${category} in file: ${fileAbsolutePath}`
+    );
+  }
+  if (!dev && private) {
+    console.log(`Ignoring private article: ${fileAbsolutePath}`);
+    return Promise.resolve(null);
+  }
+  return createPage({
+    path: `${category}/${slug}`,
+    component: path.resolve(`./src/templates/ArticlePageTemplate.js`),
+
+    // Context will be exposed as variables in the GraphQL query, e.g. $category
+    context: { slug, category },
+  });
+};
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return graphql(`
@@ -48,46 +87,15 @@ exports.createPages = ({ graphql, actions }) => {
               date
               category
               ingress
+              private
             }
           }
         }
       }
     }
   `).then(result => {
-    return new Promise((resolve, reject) => {
-      result.data.allMarkdownRemark.edges.forEach(edge => {
-        const { fileAbsolutePath, frontmatter } = edge.node;
-        const { title, slug, date, category, ingress } = frontmatter;
-        if (!title) {
-          throw new Error(`title missing from file: ${fileAbsolutePath}`);
-        }
-        if (!slug) {
-          throw new Error(`slug missing from file: ${fileAbsolutePath}`);
-        }
-        if (!date) {
-          throw new Error(`date missing from file: ${fileAbsolutePath}`);
-        }
-        if (!category) {
-          throw new Error(`category missing from file: ${fileAbsolutePath}`);
-        }
-        if (!ingress) {
-          throw new Error(`ingress missing from file: ${fileAbsolutePath}`);
-        }
-        const categories = ['tutorials', 'guides', 'references', 'background'];
-        if (!categories.includes(category)) {
-          throw new Error(
-            `Unknown category: ${category} in file: ${fileAbsolutePath}`
-          );
-        }
-        createPage({
-          path: `${category}/${slug}`,
-          component: path.resolve(`./src/templates/ArticlePageTemplate.js`),
-
-          // Context will be exposed as variables in the GraphQL query, e.g. $category
-          context: { slug, category },
-        });
-        resolve();
-      });
-    });
+    return Promise.all(
+      result.data.allMarkdownRemark.edges.map(e => createArticle(createPage, e))
+    );
   });
 };

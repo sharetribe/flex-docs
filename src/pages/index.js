@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
+import { dev } from '../config';
 import { LandingPage } from '../components';
 
 const query = graphql`
@@ -10,6 +11,7 @@ const query = graphql`
         node {
           frontmatter {
             category
+            private
           }
         }
       }
@@ -20,7 +22,10 @@ const query = graphql`
 // Compute the number of articles for each category
 const counts = data => {
   return data.allMarkdownRemark.edges.reduce((result, edge) => {
-    const { category } = edge.node.frontmatter;
+    const { category, private: priv } = edge.node.frontmatter;
+    if (!dev && priv) {
+      return result;
+    }
     if (!result[category]) {
       result[category] = 1;
     } else {
