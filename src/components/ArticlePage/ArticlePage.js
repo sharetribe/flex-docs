@@ -7,12 +7,12 @@ import {
   baselineLarge,
   Ingress,
   H1,
-  H6,
   Hr,
 } from '../../brand-components';
 import { categories } from '../../config';
 import { MainLayout, Breadcrumb } from '../../components';
 import LastUpdated from './LastUpdated';
+import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
 
 const Content = styled.article`
@@ -83,7 +83,7 @@ const ArticleIngress = styled(Ingress)`
   }
 `;
 
-const Info = styled.div`
+const Info = styled(InfoSection)`
   margin-top: ${3 * baselineSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
@@ -114,8 +114,8 @@ const Markdown = styled(MarkdownHtml)`
 `;
 
 const ArticlePage = props => {
-  const { frontmatter, html } = props;
-  const { title, date, category, ingress } = frontmatter;
+  const { frontmatter, html, readingTime } = props;
+  const { title, date, category, ingress, skills } = frontmatter;
   return (
     <MainLayout title={title} description={ingress} activeCategory={category}>
       <Content>
@@ -131,10 +131,7 @@ const ArticlePage = props => {
         </CrumbWrapper>
         <Heading>{title}</Heading>
         <ArticleIngress>{ingress}</ArticleIngress>
-        <Info>
-          <H6 as="p">Required skills: -</H6>
-          <H6 as="p">Reading time: -</H6>
-        </Info>
+        <Info skills={skills} readingTime={readingTime} />
         <SeparatorLine />
         <Markdown html={html} />
       </Content>

@@ -13,6 +13,7 @@ export const query = graphql`
         date
         category
         ingress
+        skills
       }
       html
       fields {
