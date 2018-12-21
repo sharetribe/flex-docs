@@ -7,15 +7,52 @@ import {
   baselineLarge,
   Ingress,
   H1,
+  P,
   Hr,
 } from '../../brand-components';
 import { categories } from '../../config';
-import { MainLayout, Breadcrumb } from '../../components';
+import { MainLayout, Breadcrumb, SecondaryBox } from '../../components';
 import LastUpdated from './LastUpdated';
 import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
 
-const Content = styled.article`
+const ColumnLayout = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const sideColumnWidth = 277;
+const mainColumnMinWidth = 740;
+
+const SideColumn = styled.div`
+  display: none;
+  flex-shrink: 0;
+
+  @media (min-width: ${sideColumnWidth + mainColumnMinWidth}px) {
+    display: block;
+    width: ${sideColumnWidth}px;
+    margin-right: 31px;
+  }
+`;
+
+const SideNavigation = styled(SecondaryBox)`
+  box-shadow: none;
+  position: sticky;
+
+  margin-left: 12px;
+
+  margin-top: ${2 * baselineSmall}px;
+  top: ${2 * baselineSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${6 * baselineLarge}px;
+    top: ${2 * baselineLarge}px;
+  }
+`;
+
+const MainColumn = styled.article`
+  flex-grow: 1;
+
   margin-left: ${props => props.theme.contentPaddingSmall}px;
   margin-right: ${props => props.theme.contentPaddingSmall}px;
 
@@ -118,23 +155,30 @@ const ArticlePage = props => {
   const { title, date, category, ingress, skills } = frontmatter;
   return (
     <MainLayout title={title} description={ingress} activeCategory={category}>
-      <Content>
-        <CrumbWrapper>
-          <Crumb
-            links={[
-              { path: '/', label: 'Docs' },
-              { path: `/${category}`, label: categories[category].label },
-              { label: title },
-            ]}
-          />
-          <Updated date={date} />
-        </CrumbWrapper>
-        <Heading>{title}</Heading>
-        <ArticleIngress>{ingress}</ArticleIngress>
-        <Info skills={skills} readingTime={readingTime} />
-        <SeparatorLine />
-        <Markdown html={html} />
-      </Content>
+      <ColumnLayout>
+        <SideColumn>
+          <SideNavigation>
+            <P>TODO: side navigation here</P>
+          </SideNavigation>
+        </SideColumn>
+        <MainColumn>
+          <CrumbWrapper>
+            <Crumb
+              links={[
+                { path: '/', label: 'Docs' },
+                { path: `/${category}`, label: categories[category].label },
+                { label: title },
+              ]}
+            />
+            <Updated date={date} />
+          </CrumbWrapper>
+          <Heading>{title}</Heading>
+          <ArticleIngress>{ingress}</ArticleIngress>
+          <Info skills={skills} readingTime={readingTime} />
+          <SeparatorLine />
+          <Markdown html={html} />
+        </MainColumn>
+      </ColumnLayout>
     </MainLayout>
   );
 };

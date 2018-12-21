@@ -7,20 +7,6 @@ ingress: This reference article showcases the supported Markdown syntax.
 skills: open mind, content editing, language
 ---
 
-## TODO:
-
-- blockquote styles (plain + nested)
-- footnotes
-- code syntax highlight
-
----
-
-## Metadata
-
-TODO
-
----
-
 ## Horizontal line
 
 A Horizontal line can be added with `---` in its own line.
