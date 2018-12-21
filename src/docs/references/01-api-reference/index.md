@@ -1,9 +1,11 @@
 ---
 title: API Reference
 slug: api
-date: 2018-11-30
+date: 2018-12-21
 category: references
-ingress: TODO
+ingress: Sharetribe Flex API reference documentation.
 ---
 
-TODO
+Sharetribe Flex API documentation is currently accessible at:
+
+https://flex-docs.sharetribe.com
