@@ -1,5 +1,7 @@
 import { baselineSmall, baselineLarge } from './brand-components';
 
+export const dev = process.env.NODE_ENV === 'development';
+
 export const categories = {
   tutorials: {
     label: 'Tutorials',

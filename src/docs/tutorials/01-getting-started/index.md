@@ -4,6 +4,7 @@ slug: getting-started
 date: 2018-11-29
 category: tutorials
 ingress: This tutorial is the place to start your journey with Sharetribe Flex.
+readingTime: estimate
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse

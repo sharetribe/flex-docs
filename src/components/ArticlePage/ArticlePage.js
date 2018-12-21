@@ -151,8 +151,8 @@ const Markdown = styled(MarkdownHtml)`
 `;
 
 const ArticlePage = props => {
-  const { frontmatter, html, readingTime } = props;
-  const { title, date, category, ingress, skills } = frontmatter;
+  const { frontmatter, html, estimatedReadingTime } = props;
+  const { title, date, category, ingress } = frontmatter;
   return (
     <MainLayout title={title} description={ingress} activeCategory={category}>
       <ColumnLayout>
@@ -174,7 +174,10 @@ const ArticlePage = props => {
           </CrumbWrapper>
           <Heading>{title}</Heading>
           <ArticleIngress>{ingress}</ArticleIngress>
-          <Info skills={skills} readingTime={readingTime} />
+          <Info
+            frontmatter={frontmatter}
+            estimatedReadingTime={estimatedReadingTime}
+          />
           <SeparatorLine />
           <Markdown html={html} />
         </MainColumn>

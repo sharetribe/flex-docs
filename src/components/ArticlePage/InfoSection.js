@@ -69,13 +69,17 @@ const Skills = props => {
   );
 };
 
-const formattedReadingTime = minutes => {
-  const mins = Math.ceil(minutes);
-  return `${mins} ${mins === 1 ? 'minute' : 'minutes'}`;
+const formattedReadingTime = (readingTimeText, minutes) => {
+  if (readingTimeText === 'estimate') {
+    const mins = Math.ceil(minutes);
+    return `${mins} ${mins === 1 ? 'minute' : 'minutes'}`;
+  }
+  return readingTimeText;
 };
 
 const InfoSection = props => {
-  const { skills, readingTime, ...rest } = props;
+  const { frontmatter, estimatedReadingTime, ...rest } = props;
+  const { skills, readingTime } = frontmatter;
   return (
     <div {...rest}>
       {skills ? (
@@ -83,11 +87,15 @@ const InfoSection = props => {
           <Skills skills={skills} />
         </Info>
       ) : null}
-      <Info label="Reading time">
-        <H6 as="p">
-          <HighlightedText>{formattedReadingTime(readingTime)}</HighlightedText>
-        </H6>
-      </Info>
+      {readingTime ? (
+        <Info label="Reading time">
+          <H6 as="p">
+            <HighlightedText>
+              {formattedReadingTime(readingTime, estimatedReadingTime)}
+            </HighlightedText>
+          </H6>
+        </Info>
+      ) : null}
     </div>
   );
 };

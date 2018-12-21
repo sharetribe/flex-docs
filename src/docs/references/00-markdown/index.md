@@ -5,6 +5,7 @@ date: 2018-12-04
 category: references
 ingress: This reference article showcases the supported Markdown syntax.
 skills: open mind, content editing, language
+readingTime: 5 mins at a time!
 ---
 
 ## Horizontal line

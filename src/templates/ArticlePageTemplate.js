@@ -14,6 +14,7 @@ export const query = graphql`
         category
         ingress
         skills
+        readingTime
       }
       html
       fields {
@@ -29,7 +30,11 @@ const ArticlePageTemplate = props => {
   const { frontmatter, html, fields } = props.data.markdownRemark;
   const { minutes } = fields.readingTime;
   return (
-    <ArticlePage frontmatter={frontmatter} html={html} readingTime={minutes} />
+    <ArticlePage
+      frontmatter={frontmatter}
+      html={html}
+      estimatedReadingTime={minutes}
+    />
   );
 };
 
