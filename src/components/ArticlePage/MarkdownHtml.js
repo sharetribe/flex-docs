@@ -81,6 +81,7 @@ const Html = styled.div`
   }
   pre {
     margin: ${baselineSpacing}px 0;
+    overflow-x: auto;
 
     code {
       line-height: 24px;
