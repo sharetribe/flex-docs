@@ -53,6 +53,9 @@ const SideNavigation = styled(SecondaryBox)`
 const MainColumn = styled.article`
   flex-grow: 1;
 
+  width: 100%;
+  overflow-x: hidden;
+
   margin-left: ${props => props.theme.contentPaddingSmall}px;
   margin-right: ${props => props.theme.contentPaddingSmall}px;
 
