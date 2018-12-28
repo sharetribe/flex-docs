@@ -22,19 +22,21 @@ const FontPreloadLink = font => {
   );
 };
 
+const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+
 const BaseLayout = props => {
   const { title, description, noIndex, children } = props;
   return (
     <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
+      query={query}
       render={data => {
         const siteTitle = data.site.siteMetadata.title;
         const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;

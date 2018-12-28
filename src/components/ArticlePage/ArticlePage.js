@@ -152,7 +152,25 @@ const Markdown = styled(MarkdownHtml)`
 
 const ArticlePage = props => {
   const { frontmatter, html, estimatedReadingTime } = props;
-  const { title, date, category, ingress } = frontmatter;
+  const { title, slug, date, category, ingress } = frontmatter;
+
+  // Structured metadata for the article page
+  //
+  // See: https://developers.google.com/search/docs/data-types/article
+  const ldJson = JSON.stringify({
+    '@context': 'http://schema.org',
+    '@type': 'TechArticle',
+    dateModified: date,
+    headline: title,
+    description: ingress,
+
+    // TODO: image is recommended, but we don't have a way to dig it at the moment
+    //
+    // image: [
+    //   'http://example.com/image.jpg'
+    // ]
+  });
+
   return (
     <MainLayout title={title} description={ingress} activeCategory={category}>
       <ColumnLayout>
@@ -162,12 +180,13 @@ const ArticlePage = props => {
           </SideNavigation>
         </SideColumn>
         <MainColumn>
+          <script type="application/ld+json">{ldJson}</script>
           <CrumbWrapper>
             <Crumb
               links={[
                 { path: '/', label: 'Docs' },
                 { path: `/${category}`, label: categories[category].label },
-                { label: title },
+                { path: `/${category}/${slug}`, label: title },
               ]}
             />
             <Updated date={date} />
