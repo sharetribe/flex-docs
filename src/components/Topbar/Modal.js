@@ -76,7 +76,7 @@ class Modal extends Component {
         }}
       >
         {children}
-        <CloseButton onClick={onClose}>
+        <CloseButton onClick={onClose} aria-label="Close">
           <P>Close</P>
         </CloseButton>
         <GlobalModalStyle />

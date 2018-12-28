@@ -18,7 +18,7 @@ export const GridHeadingLink = props => {
   const { category } = props;
   return (
     <H4 as="h2">
-      <Link neutral to={`/${category}`}>
+      <Link neutral to={`/${category}/`}>
         {categories[category].label}
       </Link>
     </H4>

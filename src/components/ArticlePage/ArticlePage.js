@@ -188,8 +188,8 @@ const ArticlePage = props => {
             <Crumb
               links={[
                 { path: '/', label: 'Docs' },
-                { path: `/${category}`, label: categories[category].label },
-                { path: `/${category}/${slug}`, label: title },
+                { path: `/${category}/`, label: categories[category].label },
+                { path: `/${category}/${slug}/`, label: title },
               ]}
             />
             <Updated date={date} />

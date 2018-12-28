@@ -78,7 +78,7 @@ const ArticleIndexPage = props => {
         <Crumb
           links={[
             { path: '/', label: 'Docs' },
-            { path: `/${category}`, label: categories[category].label },
+            { path: `/${category}/`, label: categories[category].label },
           ]}
         />
         <Heading>{title}</Heading>

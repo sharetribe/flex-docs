@@ -29,7 +29,7 @@ const Menu = props => {
   const { activeCategory, ...rest } = props;
   const links = menuCategories.map(category => {
     return {
-      path: `/${category}`,
+      path: `/${category}/`,
       text: categories[category].label,
       active: activeCategory === category,
     };
