@@ -37,7 +37,7 @@ const ArticleLi = styled.li`
 
 const ArticleExcerpt = props => {
   const { pathPrefix, title, slug, ingress } = props;
-  const path = `${pathPrefix}${slug}`;
+  const path = `${pathPrefix}${slug}/`;
   return (
     <ArticleLi>
       <H5 as="h2">

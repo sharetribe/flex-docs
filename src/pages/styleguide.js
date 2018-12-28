@@ -166,11 +166,12 @@ const StyleguidePage = () => {
                 label: 'Docs',
               },
               {
-                path: '/tutorials',
+                path: '/tutorials/',
                 label: 'Tutorials',
               },
               {
-                label: 'Some tutorial',
+                path: '/tutorials/getting-started/',
+                label: 'Getting started',
               },
             ]}
           />

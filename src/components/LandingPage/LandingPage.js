@@ -73,8 +73,10 @@ const LandingPage = props => {
           <GridHeadingLink category="tutorials" />
           <GridDescription>{categories.tutorials.description}</GridDescription>
           <GridLinks>
-            <GridLink to="/tutorials/getting-started">Getting Started</GridLink>
-            <GridLink to="/tutorials">
+            <GridLink to="/tutorials/getting-started/">
+              Getting Started
+            </GridLink>
+            <GridLink to="/tutorials/">
               All tutorials ({articleCounts.tutorials || 0})
             </GridLink>
           </GridLinks>
@@ -85,7 +87,7 @@ const LandingPage = props => {
           <GridHeadingLink category="guides" />
           <GridDescription>{categories.guides.description}</GridDescription>
           <GridLinks>
-            <GridLink to="/guides">
+            <GridLink to="/guides/">
               All guides ({articleCounts.guides || 0})
             </GridLink>
           </GridLinks>
@@ -96,10 +98,10 @@ const LandingPage = props => {
           <GridHeadingLink category="references" />
           <GridDescription>{categories.references.description}</GridDescription>
           <GridLinks>
-            <GridLink to="/references/api">API Reference</GridLink>
-            <GridLink to="/references/js-sdk">JS SDK Reference</GridLink>
-            <GridLink to="/references/ftw">FTW Reference</GridLink>
-            <GridLink to="/references">
+            <GridLink to="/references/api/">API Reference</GridLink>
+            <GridLink to="/references/js-sdk/">JS SDK Reference</GridLink>
+            <GridLink to="/references/ftw/">FTW Reference</GridLink>
+            <GridLink to="/references/">
               All reference ({articleCounts.references || 0})
             </GridLink>
           </GridLinks>
@@ -110,11 +112,11 @@ const LandingPage = props => {
           <GridHeadingLink category="background" />
           <GridDescription>{categories.background.description}</GridDescription>
           <GridLinks>
-            <GridLink to="/background/architecture">
+            <GridLink to="/background/architecture/">
               Sharetribe Flex overview
             </GridLink>
-            <GridLink to="/background/concepts">Important concepts</GridLink>
-            <GridLink to="/background">
+            <GridLink to="/background/concepts/">Important concepts</GridLink>
+            <GridLink to="/background/">
               All background articles ({articleCounts.background || 0})
             </GridLink>
           </GridLinks>
