@@ -5,9 +5,9 @@ import { baselineSpacing, Ul, Li } from '../../brand-components';
 import { Link } from '../../components';
 import Modal from './Modal';
 
-const Icon = () => {
+const Icon = props => {
   return (
-    <svg width="18" height="12" viewBox="0 0 18 12">
+    <svg width="18" height="12" viewBox="0 0 18 12" {...props}>
       <g fill="#4A4A4A" fillRule="evenodd">
         <rect width="18" height="2" rx="1" />
         <rect y="5" width="18" height="2" rx="1" />
@@ -68,8 +68,8 @@ class MobileMenu extends Component {
 
     return (
       <Wrapper {...rest}>
-        <MenuButton onClick={openModal}>
-          <Icon />
+        <MenuButton onClick={openModal} aria-label="Navigation menu">
+          <Icon alt="Menu icon" />
         </MenuButton>
         <Modal
           isOpen={this.state.isOpen}

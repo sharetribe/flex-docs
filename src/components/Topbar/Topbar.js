@@ -61,8 +61,8 @@ const Topbar = props => {
   const { activeCategory, ...rest } = props;
   return (
     <Wrapper {...rest}>
-      <HomeLink to="/">
-        <TopbarLogo />
+      <HomeLink to="/" aria-label="Home">
+        <TopbarLogo alt="Logo" />
       </HomeLink>
       <TopbarMenu activeCategory={activeCategory} />
       <TopbarSearch />
