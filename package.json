@@ -1,6 +1,6 @@
 {
   "name": "dev.sharetribe.com",
-  "description": "Sharetribe Flex developer documentation site",
+  "description": "Sharetribe Flex documentation site",
   "version": "1.0.0",
   "license": "MIT",
   "repository": {
@@ -12,8 +12,10 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "serve": "gatsby serve",
-    "prod": "yarn run build && yarn run serve",
-    "format": "prettier --write \"src/**/*.js\" \"gatsby-config.js\" \"gatsby-node.js\" \"gatsby-browser.js\"",
+    "prod": "export NODE_ENV=production && yarn run build && yarn run serve",
+    "format": "yarn run format-js && yarn run format-config",
+    "format-js": "prettier --write \"src/**/*.js\"",
+    "format-config": "prettier --write \"gatsby-config.js\" \"gatsby-node.js\" \"gatsby-browser.js\"",
     "format-docs": "prettier --write \"src/**/*.md\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
