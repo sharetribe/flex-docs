@@ -48,7 +48,7 @@ const CustomLink = styled(Link)`
 
 const StyleguidePage = () => {
   return (
-    <MainLayout title="Styleguide">
+    <MainLayout title="Styleguide" noIndex={true}>
       <Content>
         <Example>
           <H1>H1 level heading</H1>

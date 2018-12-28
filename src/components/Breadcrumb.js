@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
 
-import { baselineBreakpoint, Ul, Li } from '../brand-components';
+import { baselineBreakpoint, Ol, Li } from '../brand-components';
 import { Link } from '../components';
 
 const Item = styled(Li)`
@@ -55,14 +56,53 @@ const CrumbLi = props => {
   );
 };
 
+const query = graphql`
+  query SiteUrlQuery {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`;
+
 const Breadcrumb = props => {
   const { links, ...rest } = props;
   return (
-    <Ul {...rest}>
-      {links.map(link => (
-        <CrumbLi key={link.label} {...link} />
-      ))}
-    </Ul>
+    <StaticQuery
+      query={query}
+      render={data => {
+        const { siteUrl } = data.site.siteMetadata;
+
+        // Structured metadata for the breadcrumb
+        //
+        // See: https://developers.google.com/search/docs/data-types/breadcrumb
+        const ldJson = JSON.stringify({
+          '@context': 'http://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: links.map((link, i) => {
+            const { path, label } = link;
+            return {
+              '@type': 'ListItem',
+              position: i + 1,
+              name: label,
+              item: `${siteUrl}${path}`,
+            };
+          }),
+        });
+
+        return (
+          <>
+            <Ol {...rest}>
+              {links.map(link => (
+                <CrumbLi key={link.label} {...link} />
+              ))}
+            </Ol>
+            <script type="application/ld+json">{ldJson}</script>
+          </>
+        );
+      }}
+    />
   );
 };
 

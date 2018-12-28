@@ -67,17 +67,22 @@ const Index = styled(ArticleIndex)`
 
 const ArticleIndexPage = props => {
   const { title, category, articles } = props;
+  const description = categories[category].description;
   return (
-    <MainLayout title={title} activeCategory={category}>
+    <MainLayout
+      title={title}
+      description={description}
+      activeCategory={category}
+    >
       <Content>
         <Crumb
           links={[
             { path: '/', label: 'Docs' },
-            { label: categories[category].label },
+            { path: `/${category}`, label: categories[category].label },
           ]}
         />
         <Heading>{title}</Heading>
-        <Description>{categories[category].description}</Description>
+        <Description>{description}</Description>
         <Separator />
         <Index pathPrefix={`/${category}/`} articles={articles} />
       </Content>

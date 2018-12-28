@@ -10,6 +10,7 @@ export const query = graphql`
     ) {
       frontmatter {
         title
+        slug
         date
         category
         ingress

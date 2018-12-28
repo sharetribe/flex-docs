@@ -56,7 +56,7 @@ const Paragraph = styled(P)`
 const LandingPage = props => {
   const { articleCounts } = props;
   return (
-    <MainLayout>
+    <MainLayout description="Sharetribe Flex documentation">
       <IntroHeading>
         <Block>Sharetribe Flex</Block>
         <Block>Developer documentation</Block>
