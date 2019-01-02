@@ -129,7 +129,7 @@ that id in an internal link.
 
 <h2 id="literal-h2-html-element">This is a h2 heading in HTML</h2>
 
-**TODO:** make sections linkable automatically
+**NOTE:** With literal section headers, the header autolinking doesn't work.
 
 ---
 
@@ -194,8 +194,8 @@ const RelativeTime = props => {
 };
 ```
 
-Note that running `yarn run format-docs` to format Markdown files also
-formats the code blocks with Prettier.
+Note that running `yarn run format-docs` to format Markdown files also formats
+the code blocks with Prettier.
 
 ---
 
