@@ -16,6 +16,8 @@ import {
   Li,
   Hr,
   A,
+  Strong,
+  Em,
 } from '../../brand-components';
 
 require('prismjs/themes/prism-solarizedlight.css');
@@ -27,7 +29,6 @@ const HighlightStyle = createGlobalStyle`
     margin: ${baselineSpacing}px 0;;
     padding: 0;
     line-height: 24px;
-    overflow-x: auto;
   }
 `;
 
@@ -67,6 +68,8 @@ const Html = styled.div`
     ${P.styles}
     margin: ${baselineSpacing}px 0;
   }
+  strong {${Strong.styles}}
+  em {${Em.styles}}
   blockquote {
     margin: ${baselineSpacing}px 0;
     padding-left: 10px;

@@ -41,6 +41,8 @@ const Copyright = styled.p`
 
   // Font
   font-family: CircularStd-Book;
+  font-weight: 400;
+  font-style: normal;
   letter-spacing: -0.08px;
   line-height: 24px;
   font-size: 14px;

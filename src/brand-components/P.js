@@ -8,6 +8,8 @@ const styles = css`
 
   // Font
   font-family: CircularStd-Book;
+  font-weight: 400;
+  font-style: normal;
   line-height: 24px;
   font-size: 16px;
   letter-spacing: -0.09px;

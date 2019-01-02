@@ -8,6 +8,8 @@ const baseHeadingStyles = `
 
   // Font
   font-family: CircularStd-Bold;
+  font-weight: 600;
+  font-style: normal;
 
   // Enable baseline offset
   position: relative;
