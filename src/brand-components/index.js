@@ -15,4 +15,6 @@ export { default as Ol } from './Ol';
 export { default as Li } from './Li';
 export { default as A } from './A';
 export { default as Hr } from './Hr';
+export { default as Strong } from './Strong';
+export { default as Em } from './Em';
 export { default as BaselineDevGrid } from './BaselineDevGrid';
