@@ -20,6 +20,10 @@ console.log({
   siteUrl,
 });
 
+const withTrailingSlash = path => {
+  return path.endsWith('/') ? path : `${path}/`;
+};
+
 module.exports = {
   // ================ Site metadata ================
   //
@@ -86,6 +90,20 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         exclude: ['/styleguide'],
+        serialize: ({ site, allSitePage }) => {
+          return allSitePage.edges.map(edge => {
+            return {
+              url: `${site.siteMetadata.siteUrl}${withTrailingSlash(
+                edge.node.path
+              )}`,
+
+              // NOTE: These are optional and most likely ignored by Google et. al
+              //
+              // changefreq: 'daily',
+              // priority: 0.7,
+            };
+          });
+        },
       },
     },
 
