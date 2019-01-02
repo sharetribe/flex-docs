@@ -172,8 +172,30 @@ This is an indented code block:
 This is a JavaScript code block:
 
 ```javascript
-console.log('this is a test:', { key: [1, 'str', false] });
+const map = fn => xs => {
+  return xs.reduce((acc, x) => {
+    return acc.concat(fn(x));
+  }, []);
+};
 ```
+
+This is a JSX code block:
+
+```jsx
+const RelativeTime = props => {
+  const { date, ...rest } = props;
+  const { relativeTime } = useRelativeTime(date);
+  const isoString = date.toISOString();
+  return (
+    <time title={isoString} dateTime={isoString} {...rest}>
+      {relativeTime}
+    </time>
+  );
+};
+```
+
+Note that running `yarn run format-docs` to format Markdown files also
+formats the code blocks with Prettier.
 
 ---
 

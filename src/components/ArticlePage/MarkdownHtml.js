@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import {
   baselineSmall,
@@ -17,6 +17,19 @@ import {
   Hr,
   A,
 } from '../../brand-components';
+
+require('prismjs/themes/prism-solarizedlight.css');
+
+const HighlightStyle = createGlobalStyle`
+  // Remove theme default styles
+  .gatsby-highlight pre[class*="language-"] {
+    background-color: transparent;
+    margin: ${baselineSpacing}px 0;;
+    padding: 0;
+    line-height: 24px;
+    overflow-x: auto;
+  }
+`;
 
 const Html = styled.div`
   h1 {
@@ -79,14 +92,6 @@ const Html = styled.div`
 
     color: ${props => props.theme.textColorQuoted};
   }
-  pre {
-    margin: ${baselineSpacing}px 0;
-    overflow-x: auto;
-
-    code {
-      line-height: 24px;
-    }
-  }
   ul {
     ${Ul.styles}
     list-style: disc;
@@ -145,7 +150,12 @@ const Html = styled.div`
 
 const MarkdownHtml = props => {
   const { html, ...rest } = props;
-  return <Html {...rest} dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <>
+      <Html {...rest} dangerouslySetInnerHTML={{ __html: html }} />
+      <HighlightStyle />
+    </>
+  );
 };
 
 export default MarkdownHtml;

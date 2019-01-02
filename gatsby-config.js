@@ -59,6 +59,12 @@ module.exports = {
             },
           },
           'gatsby-remark-reading-time',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              noInlineHighlight: true,
+            },
+          },
         ],
       },
     },
