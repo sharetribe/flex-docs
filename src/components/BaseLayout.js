@@ -50,7 +50,7 @@ const BaseLayout = props => {
         // https://developers.google.com/search/reference/robots_meta_tag
         // https://moz.com/learn/seo/robots-meta-directives
         if (noIndex) {
-          meta.push({ name: 'robots', content: 'noindex' });
+          meta.push({ name: 'robots', content: 'noindex, follow' });
         }
 
         return (
