@@ -5,13 +5,11 @@ import fonts from './fonts';
 import 'sanitize.css/sanitize.css';
 
 const fontFace = font => {
-  const { name, url, format, weight, style } = font;
+  const { name, url, format } = font;
   return css`
     @font-face {
       font-family: ${name};
       src: url("${url}") format("${format}");
-      font-weight: ${weight};
-      font-style: ${style};
 
       // See: https://developers.google.com/web/updates/2016/02/font-display
       font-display: block;
