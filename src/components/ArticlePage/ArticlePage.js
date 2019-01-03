@@ -36,16 +36,14 @@ const SideColumn = styled.div`
 `;
 
 const SideNavigation = styled(SecondaryBox)`
-  box-shadow: none;
-  position: sticky;
-
-  margin-left: 12px;
-
-  margin-top: ${2 * baselineSmall}px;
-  top: ${2 * baselineSmall}px;
+  // SideColumn is hidden in small viewport
 
   @media (min-width: ${baselineBreakpoint}px) {
+    box-shadow: none;
+    position: sticky;
+    margin-left: 12px;
     margin-top: ${6 * baselineLarge}px;
+    margin-bottom: ${4 * baselineLarge}px;
     top: ${2 * baselineLarge}px;
   }
 `;
