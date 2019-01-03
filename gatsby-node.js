@@ -5,8 +5,11 @@
  */
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
+const { categories } = require('./src/config');
 
 const dev = process.env.NODE_ENV === 'development';
+
+const allowedCategories = Object.keys(categories);
 
 // Uncomment to warn about circular dependencies.
 //
@@ -54,10 +57,11 @@ const createArticle = (createPage, edge) => {
   if (!ingress) {
     throw new Error(`ingress missing from file: ${fileAbsolutePath}`);
   }
-  const categories = ['tutorials', 'guides', 'references', 'background'];
-  if (!categories.includes(category)) {
+  if (!allowedCategories.includes(category)) {
     throw new Error(
-      `Unknown category: ${category} in file: ${fileAbsolutePath}`
+      `Unknown category: ${category} in file: ${fileAbsolutePath}. Category should be one of: ${allowedCategories.join(
+        ', '
+      )}`
     );
   }
   if (!dev && private) {
