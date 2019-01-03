@@ -1,8 +1,6 @@
-import { baselineSmall, baselineLarge } from './brand-components';
+exports.dev = process.env.NODE_ENV === 'development';
 
-export const dev = process.env.NODE_ENV === 'development';
-
-export const categories = {
+exports.categories = {
   tutorials: {
     label: 'Tutorials',
     description:
@@ -24,13 +22,13 @@ export const categories = {
   },
 };
 
-export const grid = {
-  smallGap: 2 * baselineSmall,
-  largeGap: 4 * baselineLarge,
+exports.grid = {
+  smallGap: 12,
+  largeGap: 32,
   sideMargin: 12,
 };
 
-export const themeLight = {
+exports.themeLight = {
   // Main background color
   backgroundColor: '#f9f9fb',
 
@@ -77,13 +75,14 @@ export const themeLight = {
   baselineDevColor2: 'rgba(0, 0, 0, 0.1)',
 
   // Content size and spacing
-  pageMaxWidth: 1135,
+  pageMaxWidth: 1228,
+  contentMaxWidth: 635,
   contentPaddingSmall: 24,
   contentPaddingLarge: 48,
 };
 
-export const themeDark = {
-  ...themeLight,
+exports.themeDark = {
+  ...exports.themeLight,
 
   // Main background color
   backgroundColor: '#1e1e1e',

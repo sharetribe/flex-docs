@@ -14,14 +14,16 @@ import { MainLayout, Breadcrumb } from '../../components';
 import ArticleIndex from './ArticleIndex';
 
 const Content = styled.div`
-  margin-left: ${props => props.theme.contentPaddingSmall}px;
-  margin-right: ${props => props.theme.contentPaddingSmall}px;
-  margin-bottom: ${props => props.theme.contentPaddingSmall}px;
+  padding-left: ${props => props.theme.contentPaddingSmall}px;
+  padding-right: ${props => props.theme.contentPaddingSmall}px;
+  padding-bottom: ${props => props.theme.contentPaddingSmall}px;
+  margin: 0 auto;
+  max-width: 800px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-left: ${props => props.theme.contentPaddingLarge}px;
-    margin-right: ${props => props.theme.contentPaddingLarge}px;
-    margin-bottom: ${props => props.theme.contentPaddingLarge}px;
+    padding-left: ${props => props.theme.contentPaddingLarge}px;
+    padding-right: ${props => props.theme.contentPaddingLarge}px;
+    padding-bottom: ${props => props.theme.contentPaddingLarge}px;
   }
 `;
 

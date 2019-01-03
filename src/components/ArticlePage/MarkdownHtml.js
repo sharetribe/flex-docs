@@ -67,6 +67,7 @@ const Html = styled.div`
     // done. Margins are also handled separately in those components.
     ${P.styles}
     margin: ${baselineSpacing}px 0;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   strong {${Strong.styles}}
   em {${Em.styles}}
@@ -108,6 +109,7 @@ const Html = styled.div`
   > ul, > ol {
     // Only add margin to top-level lists, not sublists
     margin: ${baselineSpacing}px 0;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   li {
     ${Li.styles}
@@ -123,6 +125,7 @@ const Html = styled.div`
   }
   hr {
     ${Hr.styles}
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
 
   // Tables should be avoided since they don't work well on mobile,

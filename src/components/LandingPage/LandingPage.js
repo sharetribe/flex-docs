@@ -73,9 +73,7 @@ const LandingPage = props => {
           <GridHeadingLink category="tutorials" />
           <GridDescription>{categories.tutorials.description}</GridDescription>
           <GridLinks>
-            <GridLink to="/tutorials/getting-started/">
-              Getting Started
-            </GridLink>
+            {/*<GridLink to="/tutorials/getting-started/">Getting Started</GridLink>*/}
             <GridLink to="/tutorials/">
               All tutorials ({articleCounts.tutorials || 0})
             </GridLink>
@@ -112,10 +110,8 @@ const LandingPage = props => {
           <GridHeadingLink category="background" />
           <GridDescription>{categories.background.description}</GridDescription>
           <GridLinks>
-            <GridLink to="/background/architecture/">
-              Sharetribe Flex overview
-            </GridLink>
-            <GridLink to="/background/concepts/">Important concepts</GridLink>
+            {/*<GridLink to="/background/architecture/">Sharetribe Flex overview</GridLink>*/}
+            {/*<GridLink to="/background/concepts/">Important concepts</GridLink>*/}
             <GridLink to="/background/">
               All background articles ({articleCounts.background || 0})
             </GridLink>

@@ -15,6 +15,7 @@ import { MainLayout, Breadcrumb, SecondaryBox } from '../../components';
 import LastUpdated from './LastUpdated';
 import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
+import Toc from './Toc';
 
 const ColumnLayout = styled.div`
   display: flex;
@@ -59,8 +60,8 @@ const MainColumn = styled.article`
   padding-right: ${props => props.theme.contentPaddingSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-left: ${props => props.theme.contentPaddingLarge}px;
-    margin-right: ${props => props.theme.contentPaddingLarge}px;
+    padding-left: ${props => props.theme.contentPaddingLarge}px;
+    padding-right: ${props => props.theme.contentPaddingLarge}px;
   }
 `;
 
@@ -68,7 +69,7 @@ const CrumbWrapper = styled.div`
   margin-top: ${4 * baselineSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${9 * baselineLarge}px;
+    margin-top: ${10 * baselineLarge}px;
   }
 `;
 
@@ -130,11 +131,9 @@ const Info = styled(InfoSection)`
   }
 `;
 
-const contentMaxWidth = 635;
-
 const SeparatorLine = styled(Hr)`
   margin-top: ${3 * baselineSmall}px;
-  max-width: ${contentMaxWidth}px;
+  max-width: ${props => props.theme.contentMaxWidth}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${4 * baselineLarge}px;
@@ -144,7 +143,6 @@ const SeparatorLine = styled(Hr)`
 const Markdown = styled(MarkdownHtml)`
   margin-top: ${3 * baselineSmall}px;
   margin-bottom: ${props => props.theme.contentPaddingSmall}px;
-  max-width: ${contentMaxWidth}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${4 * baselineLarge}px;
@@ -152,8 +150,17 @@ const Markdown = styled(MarkdownHtml)`
   }
 `;
 
+const SideNavTitle = styled(P)`
+  // Side navigation hidden on small viewport
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    font-size: 16px;
+    letter-spacing: -0.09px;
+  }
+`;
+
 const ArticlePage = props => {
-  const { frontmatter, html, estimatedReadingTime } = props;
+  const { frontmatter, html, estimatedReadingTime, tableOfContents } = props;
   const { title, slug, date, category, ingress } = frontmatter;
 
   // Structured metadata for the article page
@@ -178,7 +185,8 @@ const ArticlePage = props => {
       <ColumnLayout>
         <SideColumn>
           <SideNavigation>
-            <P>TODO: side navigation here</P>
+            <SideNavTitle>{title}</SideNavTitle>
+            <Toc path={`/${category}/${slug}/`} headings={tableOfContents} />
           </SideNavigation>
         </SideColumn>
         <MainColumn>
