@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../brand-components';
-import { Link } from '../../components';
+import { Link, UiText } from '../../components';
 import Menu from './Menu';
 import Logo from './Logo';
 import Search from './Search';
@@ -61,8 +61,8 @@ const Topbar = props => {
   const { activeCategory, ...rest } = props;
   return (
     <Wrapper {...rest}>
-      <HomeLink to="/" aria-label="Home">
-        <TopbarLogo alt="Logo" />
+      <HomeLink to="/" aria-label={UiText.fn('Topbar.homeAriaLabel')}>
+        <TopbarLogo alt={UiText.fn('Topbar.logoAlt')} />
       </HomeLink>
       <TopbarMenu activeCategory={activeCategory} />
       <TopbarSearch />

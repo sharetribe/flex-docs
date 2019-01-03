@@ -10,8 +10,7 @@ import {
   P,
   Hr,
 } from '../../brand-components';
-import { categories } from '../../config';
-import { MainLayout, Breadcrumb, SecondaryBox } from '../../components';
+import { MainLayout, Breadcrumb, SecondaryBox, UiText } from '../../components';
 import LastUpdated from './LastUpdated';
 import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
@@ -195,7 +194,10 @@ const ArticlePage = props => {
             <Crumb
               links={[
                 { path: '/', label: 'Docs' },
-                { path: `/${category}/`, label: categories[category].label },
+                {
+                  path: `/${category}/`,
+                  label: UiText.fn(`ArticlePage.${category}.breadCrumbTitle`),
+                },
                 { path: `/${category}/${slug}/`, label: title },
               ]}
             />

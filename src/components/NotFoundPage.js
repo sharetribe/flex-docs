@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineSpacing, baselineBreakpoint, H1 } from '../brand-components';
-import { MainLayout } from '../components';
+import { MainLayout, UiText } from '../components';
 
 const Content = styled.div`
   padding-top: ${baselineSpacing}px;
@@ -17,9 +17,11 @@ const Content = styled.div`
 `;
 
 const NotFoundPage = () => (
-  <MainLayout title="Not found">
+  <MainLayout title={UiText.fn('NotFoundPage.title')}>
     <Content>
-      <H1>Oops, page not found :/</H1>
+      <H1>
+        <UiText id="NotFoundPage.heading" />
+      </H1>
     </Content>
   </MainLayout>
 );

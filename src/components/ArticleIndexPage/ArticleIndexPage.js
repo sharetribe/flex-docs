@@ -9,8 +9,7 @@ import {
   H1,
   Hr,
 } from '../../brand-components';
-import { categories } from '../../config';
-import { MainLayout, Breadcrumb } from '../../components';
+import { MainLayout, Breadcrumb, UiText } from '../../components';
 import ArticleIndex from './ArticleIndex';
 
 const Content = styled.div`
@@ -68,8 +67,9 @@ const Index = styled(ArticleIndex)`
 `;
 
 const ArticleIndexPage = props => {
-  const { title, category, articles } = props;
-  const description = categories[category].description;
+  const { category, articles } = props;
+  const title = UiText.fn(`ArticleIndexPage.${category}.title`);
+  const description = UiText.fn(`ArticleIndexPage.${category}.description`);
   return (
     <MainLayout
       title={title}
@@ -80,7 +80,7 @@ const ArticleIndexPage = props => {
         <Crumb
           links={[
             { path: '/', label: 'Docs' },
-            { path: `/${category}/`, label: categories[category].label },
+            { path: `/${category}/`, label: title },
           ]}
         />
         <Heading>{title}</Heading>

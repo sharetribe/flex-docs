@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import { baselineSpacing, Ul, Li } from '../../brand-components';
-import { Link } from '../../components';
+import { Link, UiText } from '../../components';
 import Modal from './Modal';
 
 const Icon = props => {
@@ -68,12 +68,15 @@ class MobileMenu extends Component {
 
     return (
       <Wrapper {...rest}>
-        <MenuButton onClick={openModal} aria-label="Navigation menu">
-          <Icon alt="Menu icon" />
+        <MenuButton
+          onClick={openModal}
+          aria-label={UiText.fn('Topbar.MobileMenu.arialLabel')}
+        >
+          <Icon alt={UiText.fn('Topbar.MobileMenu.iconAlt')} />
         </MenuButton>
         <Modal
           isOpen={this.state.isOpen}
-          contentLabel="Mobile navigation menu"
+          contentLabel={UiText.fn('Topbar.MobileMenu.contentLabel')}
           onClose={closeModal}
         >
           <NavUl>

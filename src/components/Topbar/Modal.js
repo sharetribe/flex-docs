@@ -9,6 +9,7 @@ import {
   baselineBreakpoint,
   P,
 } from '../../brand-components';
+import { UiText } from '../../components';
 
 const CloseButton = styled.button`
   position: absolute;
@@ -76,8 +77,10 @@ class Modal extends Component {
         }}
       >
         {children}
-        <CloseButton onClick={onClose} aria-label="Close">
-          <P>Close</P>
+        <CloseButton onClick={onClose}>
+          <P>
+            <UiText id="Topbar.Modal.close" />
+          </P>
         </CloseButton>
         <GlobalModalStyle />
       </ReactModal>

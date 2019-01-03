@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { H6 } from '../../brand-components';
+import { UiText } from '../../components';
 
 const InfoWrapper = styled.div`
   display: flex;
@@ -83,12 +84,12 @@ const InfoSection = props => {
   return (
     <div {...rest}>
       {skills ? (
-        <Info label="Required skills">
+        <Info label={UiText.fn('ArticlePage.InfoSection.requiredSkills')}>
           <Skills skills={skills} />
         </Info>
       ) : null}
       {readingTime ? (
-        <Info label="Reading time">
+        <Info label={UiText.fn('ArticlePage.InfoSection.readingTime')}>
           <H6 as="p">
             <HighlightedText>
               {formattedReadingTime(readingTime, estimatedReadingTime)}

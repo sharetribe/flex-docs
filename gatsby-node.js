@@ -9,7 +9,7 @@ const { categories } = require('./src/config');
 
 const dev = process.env.NODE_ENV === 'development';
 
-const allowedCategories = Object.keys(categories);
+const allowedCategoryIds = categories.map(c => c.id);
 
 // Uncomment to warn about circular dependencies.
 //
@@ -57,9 +57,9 @@ const createArticle = (createPage, edge) => {
   if (!ingress) {
     throw new Error(`ingress missing from file: ${fileAbsolutePath}`);
   }
-  if (!allowedCategories.includes(category)) {
+  if (!allowedCategoryIds.includes(category)) {
     throw new Error(
-      `Unknown category: ${category} in file: ${fileAbsolutePath}. Category should be one of: ${allowedCategories.join(
+      `Unknown category: ${category} in file: ${fileAbsolutePath}. Category should be one of: ${allowedCategoryIds.join(
         ', '
       )}`
     );

@@ -9,7 +9,7 @@ import {
   P,
   Ul,
 } from '../../brand-components';
-import { Link } from '../../components';
+import { Link, UiText } from '../../components';
 
 const Paragraph = styled(P)`
   margin-top: ${2 * baselineSmall}px;
@@ -59,6 +59,15 @@ const ArticleExcerpt = props => {
 
 const ArticleIndex = props => {
   const { pathPrefix, articles, ...rest } = props;
+
+  if (articles.length === 0) {
+    return (
+      <P {...rest}>
+        <UiText id="ArticleIndexPage.ArticleIndex.noArticlesFound" />
+      </P>
+    );
+  }
+
   return (
     <Ul {...rest}>
       {articles.map(article => (
