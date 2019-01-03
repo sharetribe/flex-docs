@@ -4,13 +4,14 @@ const {
   NODE_ENV,
   NODE_VERSION,
   PRODUCTION_SITE_URL,
-  PATH_PREFIX,
 
   // Env vars set by Netlify
   // See: https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
   CONTEXT,
   DEPLOY_PRIME_URL,
 } = process.env;
+
+const isNetlify = !!CONTEXT;
 
 /**
  * Get the current env.
@@ -24,7 +25,6 @@ const {
  * - 'netlify-branch-deploy': non-master branch deployment context in Netlify
  */
 const getEnv = () => {
-  const isNetlify = !!CONTEXT;
   if (isNetlify) {
     return `netlify-${CONTEXT}`;
   } else {
@@ -48,8 +48,13 @@ const getSiteUrl = env => {
   }
 };
 
+const getPathPrefix = env => {
+  return isNetlify || env === 'local-production' ? '/docs' : '';
+};
+
 const ENV = getEnv();
 const SITE_URL = getSiteUrl(ENV);
+const PATH_PREFIX = getPathPrefix(ENV);
 
 console.log({
   NODE_ENV,
