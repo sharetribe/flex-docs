@@ -4,6 +4,7 @@ const {
   NODE_ENV,
   NODE_VERSION,
   PRODUCTION_SITE_URL,
+  PRODUCTION_PATH_PREFIX,
 
   // Env vars set by Netlify
   // See: https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
@@ -47,13 +48,22 @@ const getSiteUrl = env => {
   }
 };
 
+const getPathPrefix = env => {
+  return env === 'local-production' || env === 'netlify-production'
+    ? PRODUCTION_PATH_PREFIX
+    : '';
+};
+
 const ENV = getEnv();
 const SITE_URL = getSiteUrl(ENV);
+const PATH_PREFIX = getPathPrefix(ENV);
 
 console.log({
   NODE_ENV,
   NODE_VERSION,
   PRODUCTION_SITE_URL,
+  PRODUCTION_PATH_PREFIX,
+  PATH_PREFIX,
   ENV,
   SITE_URL,
 });
@@ -138,9 +148,9 @@ module.exports = {
         serialize: ({ site, allSitePage }) => {
           return allSitePage.edges.map(edge => {
             return {
-              url: `${site.siteMetadata.siteUrl}${withTrailingSlash(
-                edge.node.path
-              )}`,
+              url: `${
+                site.siteMetadata.siteUrl
+              }${PATH_PREFIX}${withTrailingSlash(edge.node.path)}`,
 
               // NOTE: These are optional and most likely ignored by Google et. al
               //
@@ -154,44 +164,48 @@ module.exports = {
 
     // ================ Robots.txt ================
     //
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        resolveEnv: () => ENV,
-        env: {
+    // {
+    //   resolve: 'gatsby-plugin-robots-txt',
+    //   options: {
+    //     resolveEnv: () => ENV,
+    //     env: {
 
-          // NOTE: robots.txt file is NOT built with dev server
-          'local-development': {
-            policy: [{ userAgent: '*', disallow: [] }],
-          },
+    //       // NOTE: robots.txt file is NOT built with dev server
+    //       'local-development': {
+    //         policy: [{ userAgent: '*', disallow: [] }],
+    //       },
 
-          'local-production': {
-            policy: [{ userAgent: '*', disallow: [] }],
-          },
-          'netlify-production': {
-            policy: [{ userAgent: '*', disallow: [] }],
-          },
+    //       'local-production': {
+    //         policy: [{ userAgent: '*', disallow: [] }],
+    //       },
+    //       'netlify-production': {
+    //         policy: [{ userAgent: '*', disallow: [] }],
+    //       },
 
-          // Disallow indexing anything on branch deploys and deploy previews.
-          //
-          // See: https://github.com/mdreizin/gatsby-plugin-robots-txt/tree/v1.3.0#netlify
-          //
-          'netlify-branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null,
-          },
-          'netlify-deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null,
-          },
-        },
-      },
-    },
+    //       // Disallow indexing anything on branch deploys and deploy previews.
+    //       //
+    //       // See: https://github.com/mdreizin/gatsby-plugin-robots-txt/tree/v1.3.0#netlify
+    //       //
+    //       'netlify-branch-deploy': {
+    //         policy: [{ userAgent: '*', disallow: ['/'] }],
+    //         sitemap: null,
+    //         host: null,
+    //       },
+    //       'netlify-deploy-preview': {
+    //         policy: [{ userAgent: '*', disallow: ['/'] }],
+    //         sitemap: null,
+    //         host: null,
+    //       },
+    //     },
+    //   },
+    // },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
 };
+
+if (PATH_PREFIX) {
+  module.exports.pathPrefix = PATH_PREFIX;
+}
