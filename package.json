@@ -9,10 +9,10 @@
   },
   "private": true,
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "dev": "gatsby develop",
-    "serve": "gatsby serve",
-    "prod": "export NODE_ENV=production && yarn run build && yarn run serve",
+    "serve": "gatsby serve --prefix-paths",
+    "prod": "export NODE_ENV=production PRODUCTION_PATH_PREFIX=/docs && yarn run build && yarn run serve",
     "format": "yarn run format-js",
     "format-all": "yarn run format-js && yarn run format-config && yarn run format-docs",
     "format-js": "prettier --write \"src/**/*.js\"",
