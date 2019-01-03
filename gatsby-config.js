@@ -4,7 +4,7 @@ const {
   NODE_ENV,
   NODE_VERSION,
   PRODUCTION_SITE_URL,
-  PRODUCTION_PATH_PREFIX,
+  PATH_PREFIX,
 
   // Env vars set by Netlify
   // See: https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
@@ -48,21 +48,13 @@ const getSiteUrl = env => {
   }
 };
 
-const getPathPrefix = env => {
-  return env === 'local-production' || env === 'netlify-production'
-    ? PRODUCTION_PATH_PREFIX
-    : '';
-};
-
 const ENV = getEnv();
 const SITE_URL = getSiteUrl(ENV);
-const PATH_PREFIX = getPathPrefix(ENV);
 
 console.log({
   NODE_ENV,
   NODE_VERSION,
   PRODUCTION_SITE_URL,
-  PRODUCTION_PATH_PREFIX,
   PATH_PREFIX,
   ENV,
   SITE_URL,
