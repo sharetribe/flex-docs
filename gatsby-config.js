@@ -1,23 +1,61 @@
-const { NODE_ENV, NODE_VERSION } = process.env;
-const NETLIFY_SITE_URL =
-  process.env.URL ||
-  `http://localhost:${NODE_ENV === 'development' ? 8000 : 9000}`;
-const NETLIFY_DEPLOY_URL = process.env.DEPLOY_PRIME_URL || NETLIFY_SITE_URL;
-const NETLIFY_ENV = process.env.CONTEXT || NODE_ENV;
+const { siteTitle } = require('./src/ui-texts');
 
-const isNetlifyProduction = NETLIFY_ENV === 'production';
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+const {
+  NODE_ENV,
+  NODE_VERSION,
+  PRODUCTION_SITE_URL,
 
-const siteTitle = 'Sharetribe Flex documentation';
+  // Env vars set by Netlify
+  // See: https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
+  CONTEXT,
+  DEPLOY_PRIME_URL,
+} = process.env;
+
+/**
+ * Get the current env.
+ *
+ * Possible values:
+ *
+ * - 'local-development': local dev server
+ * - 'local-production': local prod server
+ * - 'netlify-production': production context in Netlify
+ * - 'netlify-deploy-preview': pull request preview context in Netlify
+ * - 'netlify-branch-deploy': non-master branch deployment context in Netlify
+ */
+const getEnv = () => {
+  const isNetlify = !!CONTEXT;
+  if (isNetlify) {
+    return `netlify-${CONTEXT}`;
+  } else {
+    return `local-${NODE_ENV}`;
+  }
+};
+
+const getSiteUrl = env => {
+  if (env === 'local-development') {
+    return 'http://localhost:8000';
+  } else if (env === 'local-production') {
+    return 'http://localhost:9000';
+  } else if (env === 'netlify-production') {
+    return PRODUCTION_SITE_URL;
+  } else if (env === 'netlify-deploy-preview') {
+    return DEPLOY_PRIME_URL;
+  } else if (env === 'netlify-branch-deploy') {
+    return DEPLOY_PRIME_URL;
+  } else {
+    throw new Error(`Cannot construct siteUrl for unknown env: ${env}`);
+  }
+};
+
+const ENV = getEnv();
+const SITE_URL = getSiteUrl(ENV);
 
 console.log({
   NODE_ENV,
   NODE_VERSION,
-  NETLIFY_SITE_URL,
-  NETLIFY_DEPLOY_URL,
-  NETLIFY_ENV,
-  isNetlifyProduction,
-  siteUrl,
+  PRODUCTION_SITE_URL,
+  ENV,
+  SITE_URL,
 });
 
 const withTrailingSlash = path => {
@@ -29,7 +67,7 @@ module.exports = {
   //
   siteMetadata: {
     title: siteTitle,
-    siteUrl,
+    siteUrl: SITE_URL,
   },
   plugins: [
     // ================ Header metadata ================
@@ -117,13 +155,20 @@ module.exports = {
     // ================ Robots.txt ================
     //
     {
-      // NOTE: robots.txt file is NOT built with dev server
-
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        resolveEnv: () => NETLIFY_ENV,
+        resolveEnv: () => ENV,
         env: {
-          production: {
+
+          // NOTE: robots.txt file is NOT built with dev server
+          'local-development': {
+            policy: [{ userAgent: '*', disallow: [] }],
+          },
+
+          'local-production': {
+            policy: [{ userAgent: '*', disallow: [] }],
+          },
+          'netlify-production': {
             policy: [{ userAgent: '*', disallow: [] }],
           },
 
@@ -131,12 +176,12 @@ module.exports = {
           //
           // See: https://github.com/mdreizin/gatsby-plugin-robots-txt/tree/v1.3.0#netlify
           //
-          'branch-deploy': {
+          'netlify-branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
             host: null,
           },
-          'deploy-preview': {
+          'netlify-deploy-preview': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
             host: null,

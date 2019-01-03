@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { dev } from '../config';
-import uiTexts from '../ui-texts.json';
+import uiTexts from '../ui-texts';
 
 const uiText = id => {
   if (dev && !uiTexts[id]) {
