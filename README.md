@@ -9,11 +9,11 @@ The site is running at: https://dev-sharetribe-com.netlify.com
 
 Clone the repository:
 
-    git clone git@github.com:sharetribe/dev.sharetribe.com.git
+    git clone git@github.com:sharetribe/flex-docs.git
 
 Change to the project directory:
 
-    cd dev.sharetribe.com/
+    cd flex-docs/
 
 Install packages:
 
