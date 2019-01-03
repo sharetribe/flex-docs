@@ -1,3 +1,3 @@
 # https://www.netlify.com/docs/redirects/
 
-/  /docs  302
+/  /docs/  302
