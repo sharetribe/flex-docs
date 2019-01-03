@@ -13,7 +13,7 @@
     "dev": "gatsby develop",
     "serve": "gatsby serve",
     "prod": "export NODE_ENV=production && yarn run build && yarn run serve",
-    "format": "yarn run format-js && yarn run format-config",
+    "format": "yarn run format-js",
     "format-all": "yarn run format-js && yarn run format-config && yarn run format-docs",
     "format-js": "prettier --write \"src/**/*.js\"",
     "format-config": "prettier --write \"gatsby-config.js\" \"gatsby-node.js\" \"gatsby-browser.js\"",
