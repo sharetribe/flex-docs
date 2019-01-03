@@ -77,7 +77,8 @@ export const themeLight = {
   baselineDevColor2: 'rgba(0, 0, 0, 0.1)',
 
   // Content size and spacing
-  pageMaxWidth: 1135,
+  pageMaxWidth: 1228,
+  contentMaxWidth: 635,
   contentPaddingSmall: 24,
   contentPaddingLarge: 48,
 };
