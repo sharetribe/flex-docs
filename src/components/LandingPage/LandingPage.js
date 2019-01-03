@@ -8,8 +8,8 @@ import {
   P,
   A,
 } from '../../brand-components';
-import { grid, categories } from '../../config';
-import { MainLayout } from '../../components';
+import { grid } from '../../config';
+import { MainLayout, UiText } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
 import Grid, {
   GridBox,
@@ -55,71 +55,102 @@ const Paragraph = styled(P)`
 
 const LandingPage = props => {
   const { articleCounts } = props;
+  const description = UiText.fn('LandingPage.meta.description');
   return (
-    <MainLayout description="Sharetribe Flex documentation">
+    <MainLayout description={description}>
       <IntroHeading>
-        <Block>Sharetribe Flex</Block>
-        <Block>Developer documentation</Block>
+        <Block>
+          <UiText id="LandingPage.heading" />
+        </Block>
+        <Block>
+          <UiText id="LandingPage.subHeading" />
+        </Block>
       </IntroHeading>
       <IntroDescription>
-        Sharetribe Flex is the fastest and most affordable way to set up a
-        powerful marketplace platform that is uniquely yours. To see what
-        features we are building or planning to build, see the Updates page and
-        the Flex Roadmap.
+        <UiText id="LandingPage.intro" />
       </IntroDescription>
       <Grid>
         {/* TUTORIALS */}
         <GridBox>
-          <GridHeadingLink category="tutorials" />
-          <GridDescription>{categories.tutorials.description}</GridDescription>
+          <GridHeadingLink category="tutorials">
+            <UiText id="LandingPage.tutorials.title" />
+          </GridHeadingLink>
+          <GridDescription>
+            <UiText id="LandingPage.tutorials.description" />
+          </GridDescription>
           <GridLinks>
             {/*<GridLink to="/tutorials/getting-started/">Getting Started</GridLink>*/}
             <GridLink to="/tutorials/">
-              All tutorials ({articleCounts.tutorials || 0})
+              <UiText id="LandingPage.tutorials.all" /> (
+              {articleCounts.tutorials || 0})
             </GridLink>
           </GridLinks>
         </GridBox>
 
         {/* GUIDES */}
         <GridBox>
-          <GridHeadingLink category="guides" />
-          <GridDescription>{categories.guides.description}</GridDescription>
+          <GridHeadingLink category="guides">
+            <UiText id="LandingPage.guides.title" />
+          </GridHeadingLink>
+          <GridDescription>
+            <UiText id="LandingPage.guides.description" />
+          </GridDescription>
           <GridLinks>
             <GridLink to="/guides/">
-              All guides ({articleCounts.guides || 0})
+              <UiText id="LandingPage.guides.all" /> (
+              {articleCounts.guides || 0})
             </GridLink>
           </GridLinks>
         </GridBox>
 
         {/* REFERENCES */}
         <GridBox>
-          <GridHeadingLink category="references" />
-          <GridDescription>{categories.references.description}</GridDescription>
+          <GridHeadingLink category="references">
+            <UiText id="LandingPage.references.title" />
+          </GridHeadingLink>
+          <GridDescription>
+            <UiText id="LandingPage.references.description" />
+          </GridDescription>
           <GridLinks>
-            <GridLink to="/references/api/">API Reference</GridLink>
-            <GridLink to="/references/js-sdk/">JS SDK Reference</GridLink>
-            <GridLink to="/references/ftw/">FTW Reference</GridLink>
+            <GridLink to="/references/api/">
+              <UiText id="LandingPage.references.api" />
+            </GridLink>
+            <GridLink to="/references/js-sdk/">
+              <UiText id="LandingPage.references.sdk" />
+            </GridLink>
+            <GridLink to="/references/ftw/">
+              <UiText id="LandingPage.references.ftw" />
+            </GridLink>
             <GridLink to="/references/">
-              All reference ({articleCounts.references || 0})
+              <UiText id="LandingPage.references.all" /> (
+              {articleCounts.references || 0})
             </GridLink>
           </GridLinks>
         </GridBox>
 
         {/* BACKGROUND */}
         <GridBox>
-          <GridHeadingLink category="background" />
-          <GridDescription>{categories.background.description}</GridDescription>
+          <GridHeadingLink category="background">
+            <UiText id="LandingPage.background.title" />
+          </GridHeadingLink>
+          <GridDescription>
+            <UiText id="LandingPage.background.description" />
+          </GridDescription>
           <GridLinks>
             {/*<GridLink to="/background/architecture/">Sharetribe Flex overview</GridLink>*/}
             {/*<GridLink to="/background/concepts/">Important concepts</GridLink>*/}
             <GridLink to="/background/">
-              All background articles ({articleCounts.background || 0})
+              <UiText id="LandingPage.background.all" /> (
+              {articleCounts.background || 0})
             </GridLink>
           </GridLinks>
         </GridBox>
       </Grid>
       <Paragraph>
-        Missing something important? <A href="#">Let us know.</A>
+        <UiText id="LandingPage.outro" />{' '}
+        <A href="#">
+          <UiText id="LandingPage.outroLink" />
+        </A>
       </Paragraph>
     </MainLayout>
   );

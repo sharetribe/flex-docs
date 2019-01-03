@@ -3,10 +3,9 @@ import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../brand-components';
 import { categories } from '../../config';
+import { UiText } from '../../components';
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
-
-const menuCategories = ['tutorials', 'guides', 'references', 'background'];
 
 const MobileMenuWrapper = styled.div`
   height: 100%;
@@ -27,11 +26,12 @@ const DesktopMenuWrapper = styled.div`
 
 const Menu = props => {
   const { activeCategory, ...rest } = props;
-  const links = menuCategories.map(category => {
+  const links = categories.map(category => {
+    const { id } = category;
     return {
-      path: `/${category}/`,
-      text: categories[category].label,
-      active: activeCategory === category,
+      path: `/${id}/`,
+      text: UiText.fn(`Topbar.Menu.${id}.label`),
+      active: activeCategory === id,
     };
   });
   return (

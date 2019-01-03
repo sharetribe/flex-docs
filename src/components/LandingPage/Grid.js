@@ -11,15 +11,15 @@ import {
   Li,
   H4,
 } from '../../brand-components';
-import { categories, grid } from '../../config';
+import { grid } from '../../config';
 import { Link, SecondaryBox } from '../../components';
 
 export const GridHeadingLink = props => {
-  const { category } = props;
+  const { category, children } = props;
   return (
     <H4 as="h2">
       <Link neutral to={`/${category}/`}>
-        {categories[category].label}
+        {children}
       </Link>
     </H4>
   );

@@ -1,27 +1,23 @@
+/**
+ * Global configuration file for the project.
+ *
+ * NOTE: Use Node-style exports to allow accessing this file in the
+ * gatsby-node.js config.
+ */
+
+// Dev mode flag
 exports.dev = process.env.NODE_ENV === 'development';
 
-exports.categories = {
-  tutorials: {
-    label: 'Tutorials',
-    description:
-      'Get started in learning about the product with hands-on tutorials for developers.',
-  },
-  guides: {
-    label: 'How-to Guides',
-    description:
-      'Specific step-by-step guides for customizing your marketplace.',
-  },
-  references: {
-    label: 'Reference',
-    description: 'Technical reference to the tooling.',
-  },
-  background: {
-    label: 'Background',
-    description:
-      'Explanations and background information for important concepts and design decisions behind the platform.',
-  },
-};
+// Categories allowed for articles. The order defines the order in the
+// Topbar navigation.
+exports.categories = [
+  { id: 'tutorials' },
+  { id: 'guides' },
+  { id: 'references' },
+  { id: 'background' },
+];
 
+// LandingPage grid config.
 exports.grid = {
   smallGap: 12,
   largeGap: 32,

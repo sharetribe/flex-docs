@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { dev, categories } from '../config';
+import { dev } from '../config';
 import { ArticleIndexPage } from '../components';
 
 const query = graphql`
@@ -43,13 +43,7 @@ const TutorialsPage = () => {
             return result;
           }
         }, []);
-        return (
-          <ArticleIndexPage
-            title={categories[category].label}
-            category={category}
-            articles={articles}
-          />
-        );
+        return <ArticleIndexPage category={category} articles={articles} />;
       }}
     />
   );

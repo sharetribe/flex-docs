@@ -10,8 +10,7 @@ import {
   P,
   Hr,
 } from '../../brand-components';
-import { categories } from '../../config';
-import { MainLayout, Breadcrumb, SecondaryBox } from '../../components';
+import { MainLayout, Breadcrumb, SecondaryBox, UiText } from '../../components';
 import LastUpdated from './LastUpdated';
 import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
@@ -37,16 +36,14 @@ const SideColumn = styled.div`
 `;
 
 const SideNavigation = styled(SecondaryBox)`
-  box-shadow: none;
-  position: sticky;
-
-  margin-left: 12px;
-
-  margin-top: ${2 * baselineSmall}px;
-  top: ${2 * baselineSmall}px;
+  // SideColumn is hidden in small viewport
 
   @media (min-width: ${baselineBreakpoint}px) {
+    box-shadow: none;
+    position: sticky;
+    margin-left: 12px;
     margin-top: ${6 * baselineLarge}px;
+    margin-bottom: ${4 * baselineLarge}px;
     top: ${2 * baselineLarge}px;
   }
 `;
@@ -195,7 +192,10 @@ const ArticlePage = props => {
             <Crumb
               links={[
                 { path: '/', label: 'Docs' },
-                { path: `/${category}/`, label: categories[category].label },
+                {
+                  path: `/${category}/`,
+                  label: UiText.fn(`ArticlePage.${category}.breadCrumbTitle`),
+                },
                 { path: `/${category}/${slug}/`, label: title },
               ]}
             />
