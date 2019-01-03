@@ -11,10 +11,10 @@
   "scripts": {
     "build": "gatsby build --prefix-paths",
     "netlify-build": "yarn run build && yarn run netlify-postbuild",
-    "netlify-postbuild": "mkdir netlify-tmp && mv public/* netlify-tmp/ && mkdir public/docs && mv netlify-tmp/* public/docs/ && rmdir netlify-tmp",
+    "netlify-postbuild": "./netlify-postbuild.sh",
     "dev": "gatsby develop",
     "serve": "gatsby serve --prefix-paths",
-    "prod": "export NODE_ENV=production PATH_PREFIX=/docs && yarn run build && yarn run serve",
+    "prod": "export NODE_ENV=production && yarn run build && yarn run serve",
     "format": "yarn run format-js",
     "format-all": "yarn run format-js && yarn run format-config && yarn run format-docs",
     "format-js": "prettier --write \"src/**/*.js\"",
