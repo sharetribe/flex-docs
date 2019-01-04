@@ -1,11 +1,11 @@
 {
-  "name": "dev.sharetribe.com",
+  "name": "flex-docs",
   "description": "Sharetribe Flex documentation site",
   "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sharetribe/dev.sharetribe.com"
+    "url": "https://github.com/sharetribe/flex-docs"
   },
   "private": true,
   "scripts": {
