@@ -4,6 +4,7 @@ const {
   NODE_ENV,
   NODE_VERSION,
   PRODUCTION_SITE_URL,
+  GOOGLE_TAGMANAGER_ID,
 
   // Env vars set by Netlify
   // See: https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
@@ -161,6 +162,18 @@ module.exports = {
     },
   ],
 };
+
+// ================ Analytics ================
+//
+if (ENV === 'netlify-production' && GOOGLE_TAGMANAGER_ID) {
+  console.log('Enabling Google Tag Manager plugin');
+  module.exports.plugins.push({
+    resolve: 'gatsby-plugin-google-tagmanager',
+    options: {
+      id: GOOGLE_TAGMANAGER_ID,
+    },
+  });
+}
 
 if (PATH_PREFIX) {
   module.exports.pathPrefix = PATH_PREFIX;
