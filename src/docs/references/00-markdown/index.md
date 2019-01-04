@@ -141,7 +141,7 @@ Here's a link: https://www.sharetribe.com/
 Here's a link with a separate text and a hover title:
 [sharetribe.com](https://www.sharetribe.com/ 'click to open link')
 
-Also an [internal link](/).
+Also an [internal link to another article](/background/concepts/#extended-data).
 
 Here's an internal link to the
 [#literal-h2-html-element](#literal-h2-html-element) in this document.

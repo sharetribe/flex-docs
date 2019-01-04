@@ -215,10 +215,14 @@ A Node.js + React/Redux based universal app that implements a marketplace UI
 backed by the Marketplace API. Intended to be customized per marketplace by the
 customers themselves.
 
+For more information, see the [FTW documentation](/references/ftw/).
+
 ##### Marketplace API
 
 API for marketplace applications. Supports authoring and discovering content,
 managing user accounts, and the purchasing flow.
+
+For more information, see the [API reference documentation](/references/api/).
 
 ##### Console
 
@@ -260,3 +264,5 @@ Marketplace API (and later Admin APIs).
 
 A JavaScript implementation of the Sharetribe SDK.library that makes it easy to
 correctly interact with the Sharetribe Marketplace API (and later Admin APIs).
+
+For more information, see the [JS SDK documentation](/references/js-sdk/).
