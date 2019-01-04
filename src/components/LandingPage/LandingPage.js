@@ -138,7 +138,9 @@ const LandingPage = props => {
           </GridDescription>
           <GridLinks>
             {/*<GridLink to="/background/architecture/">Sharetribe Flex overview</GridLink>*/}
-            {/*<GridLink to="/background/concepts/">Important concepts</GridLink>*/}
+            <GridLink to="/background/concepts/">
+              <UiText id="LandingPage.background.concepts" />
+            </GridLink>
             <GridLink to="/background/">
               <UiText id="LandingPage.background.all" /> (
               {articleCounts.background || 0})
