@@ -114,6 +114,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-catch-links',
 
     // ================ Styles ================
     //
