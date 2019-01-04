@@ -147,7 +147,7 @@ module.exports = {
             return {
               url: `${
                 site.siteMetadata.siteUrl
-              }${PATH_PREFIX}${withTrailingSlash(edge.node.path)}`,
+              }${withTrailingSlash(edge.node.path)}`,
 
               // NOTE: These are optional and most likely ignored by Google et. al
               //
