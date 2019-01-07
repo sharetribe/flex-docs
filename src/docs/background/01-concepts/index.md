@@ -4,6 +4,7 @@ slug: concepts
 date: 2019-01-04
 category: background
 ingress: 'TODO: ingress'
+private: true
 ---
 
 ## Domain concepts
