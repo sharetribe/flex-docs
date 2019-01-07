@@ -7,7 +7,7 @@ const styles = css`
   // needed. Remember to also add the font-face by prividing the font
   // name to the GlobalStyle component.
   //
-  // font-family: CircularStd-BookItalic;
+  // font-family: CircularStd-BookItalic, system-ui, sans-serif;
   font-weight: 400;
   font-style: italic;
 `;

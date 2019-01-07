@@ -40,7 +40,7 @@ const Copyright = styled.p`
   margin: 0;
 
   // Font
-  font-family: CircularStd-Book;
+  font-family: CircularStd-Book, system-ui, sans-serif;
   font-weight: 400;
   font-style: normal;
   letter-spacing: -0.08px;
