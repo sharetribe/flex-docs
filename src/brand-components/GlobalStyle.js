@@ -12,7 +12,7 @@ const fontFace = font => {
       src: url("${url}") format("${format}");
 
       // See: https://developers.google.com/web/updates/2016/02/font-display
-      font-display: block;
+      font-display: swap;
     }
   `;
 };
