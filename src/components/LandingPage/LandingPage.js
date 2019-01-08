@@ -100,9 +100,9 @@ const LandingPage = props => {
             <UiText id="LandingPage.guides.description" />
           </GridDescription>
           <GridLinks>
-            <GridLink to="/guides/how-to-customize-ftw/">
+            {/*<GridLink to="/guides/how-to-customize-ftw/">
               <UiText id="LandingPage.guides.ftw" />
-            </GridLink>
+            </GridLink>*/}
             <GridLink to="/guides/">
               <UiText id="LandingPage.guides.all" /> (
               {articleCounts.guides || 0})
