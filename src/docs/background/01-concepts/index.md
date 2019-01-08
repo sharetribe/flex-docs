@@ -89,12 +89,12 @@ Payin is the amount of money that is paid by the customer.
 
 ##### Payout
 
-Payout is the amount of money that is moved to the receiver.
+Payout is the amount of money that is moved to the provider.
 
 ##### Delayed Payout
 
 Delayed payout is a payment that is scheduled but not yet transferred
-to the final receiver.
+to the provider.
 
 ##### Commission
 
@@ -120,13 +120,9 @@ etc. Notifications are delivered via email.
 A message is a free form text attached to a transaction. Messages are
 exchanged between the customer and the provider in the transaction.
 
-##### Inbox
-
-Inbox is a place where User can see all notifications she has received.
-
 ##### Extended data
 
-Extended data is a set of key value pairs that can be attached to marketplace
+Extended data is a set of key-value pairs that can be attached to marketplace
 objects, such as users, listings and transactions. It can be used out of the box
 without prior configuration or schema definition.
 
