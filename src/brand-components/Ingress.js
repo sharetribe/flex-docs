@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import { fonts } from './index';
 import { baselineBreakpoint } from './config';
 
 const styles = css`
@@ -7,9 +8,7 @@ const styles = css`
   margin: 0;
 
   // Font
-  font-family: CircularStd-Bold;
-  font-weight: 600;
-  font-style: normal;
+  ${fonts['CircularStd-Bold'].styles}
   line-height: 24px;
   font-size: 18px;
   letter-spacing: -0.2px;

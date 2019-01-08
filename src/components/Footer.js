@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
+  fonts,
   baselineSmall,
   baselineLarge,
   baselineBreakpoint,
@@ -40,9 +41,7 @@ const Copyright = styled.p`
   margin: 0;
 
   // Font
-  font-family: CircularStd-Book;
-  font-weight: 400;
-  font-style: normal;
+  ${fonts['CircularStd-Book'].styles}
   letter-spacing: -0.08px;
   line-height: 24px;
   font-size: 14px;

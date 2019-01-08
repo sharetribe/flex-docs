@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 import CircularStdBlack from './font-files/circular-std/CircularStd-Black.woff2';
 import CircularStdBlackItalic from './font-files/circular-std/CircularStd-BlackItalic.woff2';
 import CircularStdBold from './font-files/circular-std/CircularStd-Bold.woff2';
@@ -7,63 +9,79 @@ import CircularStdMediumItalic from './font-files/circular-std/CircularStd-Mediu
 import CircularStdBook from './font-files/circular-std/CircularStd-Book.woff2';
 import CircularStdBookItalic from './font-files/circular-std/CircularStd-BookItalic.woff2';
 
-const fonts = [
-  {
-    name: 'CircularStd-Black',
+const fonts = {
+  'CircularStd-Black': {
     url: CircularStdBlack,
     format: 'woff2',
-    // weight: 800,
-    // style: 'normal',
+    styles: css`
+      font-family: CircularStd-Black, system-ui, sans-serif;
+      font-weight: 800;
+      font-style: normal;
+    `,
   },
-  {
-    name: 'CircularStd-BlackItalic',
+  'CircularStd-BlackItalic': {
     url: CircularStdBlackItalic,
     format: 'woff2',
-    // weight: 800,
-    // style: 'italic',
+    styles: css`
+      font-family: CircularStd-BlackItalic, system-ui, sans-serif;
+      font-weight: 800;
+      font-style: italic;
+    `,
   },
-  {
-    name: 'CircularStd-Bold',
+  'CircularStd-Bold': {
     url: CircularStdBold,
     format: 'woff2',
-    // weight: 600,
-    // style: 'normal',
+    styles: css`
+      font-family: CircularStd-Bold, system-ui, sans-serif;
+      font-weight: 600;
+      font-style: normal;
+    `,
   },
-  {
-    name: 'CircularStd-BoldItalic',
+  'CircularStd-BoldItalic': {
     url: CircularStdBoldItalic,
     format: 'woff2',
-    // weight: 600,
-    // style: 'italic',
+    styles: css`
+      font-family: CircularStd-BoldItalic, system-ui, sans-serif;
+      font-weight: 600;
+      font-style: italic;
+    `,
   },
-  {
-    name: 'CircularStd-Medium',
+  'CircularStd-Medium': {
     url: CircularStdMedium,
     format: 'woff2',
-    // weight: 500,
-    // style: 'normal',
+    styles: css`
+      font-family: CircularStd-Medium, system-ui, sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    `,
   },
-  {
-    name: 'CircularStd-MediumItalic',
+  'CircularStd-MediumItalic': {
     url: CircularStdMediumItalic,
     format: 'woff2',
-    // weight: 500,
-    // style: 'italic',
+    styles: css`
+      font-family: CircularStd-MediumItalic, system-ui, sans-serif;
+      font-weight: 500;
+      font-style: italic;
+    `,
   },
-  {
-    name: 'CircularStd-Book',
+  'CircularStd-Book': {
     url: CircularStdBook,
     format: 'woff2',
-    weight: 400,
-    style: 'normal',
+    styles: css`
+      font-family: CircularStd-Book, system-ui, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    `,
   },
-  {
-    name: 'CircularStd-BookItalic',
+  'CircularStd-BookItalic': {
     url: CircularStdBookItalic,
     format: 'woff2',
-    // weight: 400,
-    // style: 'italic',
+    styles: css`
+      font-family: CircularStd-BookItalic, system-ui, sans-serif;
+      font-weight: 400;
+      font-style: italic;
+    `,
   },
-];
+};
 
 export default fonts;

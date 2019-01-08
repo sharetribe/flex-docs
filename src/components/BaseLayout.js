@@ -1,26 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import { ThemeProvider } from 'styled-components';
-
-import { GlobalStyle, fonts, BaselineDevGrid } from '../brand-components';
-import { themeLight as theme } from '../config';
-
-const fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
-
-const FontPreloadLink = font => {
-  const { name, format, url } = font;
-  return (
-    <link
-      key={name}
-      rel="preload"
-      as="font"
-      crossorigin="crossorigin"
-      type={`font/${format}`}
-      href={url}
-    />
-  );
-};
 
 const query = graphql`
   query SiteTitleQuery {
@@ -54,18 +34,12 @@ const BaseLayout = props => {
         }
 
         return (
-          <ThemeProvider theme={theme}>
-            <>
-              <Helmet title={pageTitle} meta={meta}>
-                <html lang="en" />
-                {fonts
-                  .filter(f => fontsInUse.includes(f.name))
-                  .map(FontPreloadLink)}
-              </Helmet>
-              <BaselineDevGrid>{children}</BaselineDevGrid>
-              <GlobalStyle fontNames={fontsInUse} />
-            </>
-          </ThemeProvider>
+          <>
+            <Helmet title={pageTitle} meta={meta}>
+              <html lang="en" />
+            </Helmet>
+            {children}
+          </>
         );
       }}
     />

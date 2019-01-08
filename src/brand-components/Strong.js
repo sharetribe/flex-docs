@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
+import { fonts } from './index';
+
 const styles = css`
   // Font
-  font-family: CircularStd-Bold;
-  font-weight: 600;
-  font-style: normal;
+  ${fonts['CircularStd-Bold'].styles}
 `;
 
 const Strong = styled.strong`

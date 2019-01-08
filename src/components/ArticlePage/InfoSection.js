@@ -9,6 +9,7 @@ const InfoWrapper = styled.div`
 `;
 
 const InfoLabel = styled(H6)`
+  flex-shrink: 0;
   margin-right: 6px;
 `;
 

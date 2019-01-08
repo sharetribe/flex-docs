@@ -8,6 +8,9 @@
 // Dev mode flag
 exports.dev = process.env.NODE_ENV === 'development';
 
+// Fonts that are used from brand-components/fonts.js
+exports.fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
+
 // Categories allowed for articles. The order defines the order in the
 // Topbar navigation.
 exports.categories = [
