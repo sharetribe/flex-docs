@@ -6,7 +6,7 @@ import {
   baselineLarge,
   baselineBreakpoint,
   P,
-  // A,
+  A,
 } from '../../brand-components';
 import { grid } from '../../config';
 import { MainLayout, UiText } from '../../components';
@@ -67,7 +67,11 @@ const LandingPage = props => {
         </Block>
       </IntroHeading>
       <IntroDescription>
-        <UiText id="LandingPage.intro" />
+        <UiText id="LandingPage.intro" />{' '}
+        <A href="https://www.sharetribe.com/flex/roadmap">
+          <UiText id="LandingPage.introRoadmapLink" />
+        </A>
+        {'.'}
       </IntroDescription>
       <Grid>
         {/* TUTORIALS */}
