@@ -1,3 +1,9 @@
 # https://www.netlify.com/docs/redirects/
 
+# Redirect root to /docs/
+#
+# This is only applicable for preview URLs as the production root
+# doesn't end up to this site.
 /  /docs/  302
+
+/docs/*  /docs/404  404
