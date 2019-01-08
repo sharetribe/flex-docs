@@ -1,32 +1,24 @@
 ---
 title: Concepts
 slug: concepts
-date: 2019-01-04
+date: 2019-01-08
 category: background
-ingress: 'TODO: ingress'
+ingress: 'The main concepts of the Flex'
 private: true
 ---
 
 ## Domain concepts
 
-TODO: domain concepts description
+The key concepts in the Sharetribe Flex marketplace domain.
 
 ##### Marketplace
 
-Arena that connects providers and customers. Marketplace is the primary scope
-for all data like users, listings, orders, etc.
+A platform that connects providers and customers. Marketplace is the
+primary scope for all data like users, listings, orders, etc.
 
-##### Operator
+##### User
 
-The Sharetribe customer. A ‘superadmin’ account that has full access to the
-console for the marketplace, as well as to the billing & other information for
-the Sharetribe account.
-
-##### Admin
-
-Marketplace operator Account that allows access to console for the marketplace.
-This account is not a marketplace User and cannot be used to log in to the
-actual marketplace.
+A User is any registered user of a marketplace.
 
 ##### Provider (seller)
 
@@ -43,19 +35,16 @@ customers.
 The public facing information of a User. This can include things like avatar,
 bio, link to a webpage, reviews, and contact address.
 
-##### Storefront
+##### Operator / Admin
 
-A provider profile is called storefront when it describes an entity (store,
-studio, etc.) instead of the single person.
-
-##### User
-
-A User is any registered user of a marketplace.
+Marketplace operator account that allows access to Console for the marketplace.
+This account is not a marketplace User and cannot be used to log in to the
+actual marketplace.
 
 ##### Account
 
-Account is the technical identification information of a User that allow her
-access to the marketplace.
+Account is the technical identification information of a User that
+allow her to access a marketplace.
 
 ##### Role
 
@@ -67,33 +56,27 @@ marketplace.
 A listing is a description of a service that a provider provides in the
 marketplace. The provider of a listing is called the author of that listing.
 
-##### Need
-
-A thing that a customer wants or requests in the marketplace.
-
-##### Listing collection
-
-A collection of listings that is managed by the marketplace admin. A collection
-can be either a manually managed or an automatic one (e.g. 50 latest listings).
-A listing collection is useful when implementing things like landing pages and
-wanting to show featured listings.
-
 ##### Review
 
-A review is a description of the level of service a customer got from a provider
-and provider got from customer. It can take many forms like textual description,
-a star rating or a combination of those.
+A review is a description of an experience the customer had with the
+provider or a description of an experience that the provider had with
+the customer. A review includes a free text description and a numeric
+rating between 0-5.
 
 ##### Transaction
 
-Transaction is the process of providing a service described by a listing.
-Transaction has a predefined set of states. Transactions don’t always lead to
-completed orders.
+Transaction is an instance of the process where the customer and the
+provider exchange value. Transaction has a predefined set of states
+and transitions between the states defined by the Transaction process.
 
-##### Order
+##### Transaction process
 
-Order is a transaction where participants have an intention to exchange value
-(i.e. not just a conversation).
+Transaction process is the definition of the process where the
+customer and the provider exchange value. It defines the states and
+transitions between the states that a transaction can take. It also
+defines the actions, such as creating a payment, reserving a time slot
+or sending out a notification email, that happen as part of the
+transitions.
 
 ##### Payment
 
@@ -110,8 +93,8 @@ Payout is the amount of money that is moved to the receiver.
 
 ##### Delayed Payout
 
-Delayed payout is a payment that is paid but not yet transferred to final
-receiver.
+Delayed payout is a payment that is scheduled but not yet transferred
+to the final receiver.
 
 ##### Commission
 
@@ -120,21 +103,22 @@ through it. Commissions can be charged from providers, customer or both.
 
 ##### Booking
 
-Reservation of a bookable listing at a specific time.
+Reservation of a listing at a specific time.
 
 ##### Availability Calendar
 
-Description of the availability of a bookable listing.
+Description of the availability of a listing.
 
 ##### Notification
 
 Notification means contacting User about an event of interest at the
-marketplace, such as payment received, message received, etc. Notifications can
-be delivered via email, SMS, via Inbox, etc.
+marketplace, such as payment received, message received,
+etc. Notifications are delivered via email.
 
 ##### Message
 
-A message is a free form text attached to a transaction.
+A message is a free form text attached to a transaction. Messages are
+exchanged between the customer and the provider in the transaction.
 
 ##### Inbox
 
@@ -148,41 +132,28 @@ without prior configuration or schema definition.
 
 ##### Extended data schema
 
-Schema can be optionally defined for some extended data keys. When schema is
-defined, it can be used to index extended data properly and make those keys
-queriable via the API.
+Schema can be optionally defined for some types of extended data
+keys. When schema is defined, it can be used to make extended data
+values queriable via the Marketplace API.
 
-##### Category
+##### Draft listing
 
-Category is a hierarchy for classifying listings in marketplace.
-
-##### Tag
-
-Tag is a keyword that can be attached to marketplace objects (users, listings,
-transactions) for building ad hoc hierarchies and/or classifying objects. Tags
-can be indexed and searched by.
-
-##### Declining
-
-A provider declining a request to buy/book a listing. This doesn’t require a
-refund but only voiding a preauthorization of a payment.
-
-##### Cancelling
-
-Cancel can mean multiple things: provider or customer cancelling after an order
-has been paid, or customer cancelling before the provider has accepted.
+A listing that is created but not yet published. It is visible to the
+author and to the marketplace operators but not discoverable by any
+public API endpoints.
 
 ##### Listing pending approval
 
-A listing that has been created by its author when the marketplace requires
-listing approvals. It is visible only to its author or marketplace operator, but
-not discoverable by any public API endpoints.
+A listing that has been created by its author when the marketplace
+requires listing approvals. It is visible only to its author or
+marketplace operator, but not discoverable by any public API
+endpoints.
 
 ##### Published Listing
 
-A listing that is discoverable via public listing queries and search API
-endpoints. If the marketplace requires listing approvals, the listing is
-published only after it is approved by an operator.
+A listing that is discoverable via public listing queries and search
+API endpoints. If the marketplace requires listing approvals, the
+listing is published only after it is approved by an operator.
 
 ##### Closed Listing
 
@@ -201,27 +172,32 @@ id + deleted status.
 
 ##### Banned User
 
-Banning a user means removing the user and all of user’s listings from
+Banning a User means removing the user and all of user’s listings from
 marketplace because of bad behaviour. The email of banned user is no longer
 available for new accounts. The user data is not returned from APIs, except when
 it’s a linked resource (only id + banned status).
 
+##### Deleted User
+
+Deleting a User means completely removing all the personal data of the
+User.
+
 ## Application concepts
 
-TODO: application concepts description
+Applications and services that are part of the Flex offering.
 
-##### Template app
+##### Flex Template for Web
 
 A Node.js + React/Redux based universal app that implements a marketplace UI
 backed by the Marketplace API. Intended to be customized per marketplace by the
-customers themselves.
+marketplace builders.
 
 For more information, see the [FTW documentation](/references/ftw/).
 
 ##### Marketplace API
 
-API for marketplace applications. Supports authoring and discovering content,
-managing user accounts, and the purchasing flow.
+API for marketplace applications. Supports e.g. authoring and
+discovering content, managing user accounts, and the purchasing flow.
 
 For more information, see the [API reference documentation](/references/api/).
 
@@ -232,38 +208,28 @@ A UI for administrators to build, run and track their marketplaces.
 ##### Admin API
 
 An API for accessing admin functionality intended for integrations and custom
-Admin applications. Planned in the long term.
+Admin applications. Planned.
 
 ##### Webhooks
 
-A way to get notified about events of interest in the marketplace for external
-applications. In practice it’s JSON messages delivered via HTTPS to admin
-defined endpoints.
+A way to get notified about events of interest in the marketplace for
+external applications. In practice it’s JSON messages delivered via
+HTTPS to admin defined endpoints. Planned.
 
 ##### Integration
 
-An external application that reacts to marketplace events, and/or calls APIs to
-pull marketplace data and cause effects in marketplace. For example
-“automatically update a Mailchimp email list when new user joins”.
+An external application that reacts to marketplace events, and/or
+calls APIs to read and/or write marketplace data. For example
+“automatically update a Mailchimp email list when a new user joins”.
 
-##### Sharetribe custom core
+##### Sharetribe Flex
 
-A set of services that together provide the marketplace API, the Console, the
-Admin API and webhooks functionalities.
-
-##### Sharetribe custom
-
-Internal name for the whole offering consisting of starter app, core, marketing
-site, documentation, etc.
-
-##### Sharetribe SDK
-
-A library that makes it easy to correctly interact with the Sharetribe
-Marketplace API (and later Admin APIs).
+An umbrella name for the Sharetribe Flex offering.
 
 ##### Sharetribe SDK for JavaScript
 
-A JavaScript implementation of the Sharetribe SDK.library that makes it easy to
-correctly interact with the Sharetribe Marketplace API (and later Admin APIs).
+A JavaScript library that makes it easy to correctly interact with the
+Sharetribe Marketplace API (and later Admin APIs).
 
 For more information, see the [JS SDK documentation](/references/js-sdk/).
+
