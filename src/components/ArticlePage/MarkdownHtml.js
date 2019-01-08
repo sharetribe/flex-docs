@@ -23,12 +23,27 @@ import {
 require('prismjs/themes/prism-solarizedlight.css');
 
 const HighlightStyle = createGlobalStyle`
-  // Remove theme default styles
-  .gatsby-highlight pre[class*="language-"] {
-    background-color: transparent;
-    margin: ${baselineSpacing}px 0;;
-    padding: 0;
-    line-height: 24px;
+  .gatsby-highlight  {
+
+    // Remove theme default styles
+    pre[class*="language-"] {
+      background-color: transparent;
+      margin: ${baselineSpacing}px 0;;
+      padding: 0;
+      line-height: 24px;
+      border-radius: 0;
+    }
+
+    pre[class*="language-"],
+    code[class*="language-"],
+    .token {
+      &::selection {
+        // Use same selection styles as in sanitize.css
+        background-color: #b3d4fc;
+        color: #000;
+        text-shadow: none;
+      }
+    }
   }
 `;
 
