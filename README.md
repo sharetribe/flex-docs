@@ -3,7 +3,7 @@
 This repository contains the source code for the Sharetribe Flex
 documentation site.
 
-The site is running at: https://dev-sharetribe-com.netlify.com
+The site is running at: https://www.sharetribe.com/docs/
 
 # Quick start
 
