@@ -4,7 +4,7 @@ slug: concepts
 date: 2019-01-08
 category: background
 ingress: 'The main concepts of the Flex'
-private: true
+private: false
 ---
 
 ## Domain concepts
