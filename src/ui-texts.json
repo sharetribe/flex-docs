@@ -37,6 +37,10 @@
   "LandingPage.outro": "Missing something important?",
   "LandingPage.outroLink": "Let us know.",
 
+  "ThanksForTheFeedbackPage.title": "Thanks for the feedback!",
+  "ThanksForTheFeedbackPage.heading": "Thanks for letting us know!",
+  "ThanksForTheFeedbackPage.text": "We will continue improving our documentation.",
+
   "NotFoundPage.title": "Not found",
   "NotFoundPage.heading": "Oops, page not found :/",
 
