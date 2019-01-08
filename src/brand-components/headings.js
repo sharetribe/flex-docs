@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import { fonts } from './index';
 import { baselineBreakpoint } from './config';
 
 const baseHeadingStyles = `
@@ -7,9 +8,7 @@ const baseHeadingStyles = `
   margin: 0;
 
   // Font
-  font-family: CircularStd-Bold, system-ui, sans-serif;
-  font-weight: 600;
-  font-style: normal;
+  ${fonts['CircularStd-Bold'].styles}
 
   // Enable baseline offset
   position: relative;

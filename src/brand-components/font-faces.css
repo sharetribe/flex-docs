@@ -1,0 +1,58 @@
+/**
+ * All available font faces.
+ *
+ * NOTE: browsers only download font files if they are used in the
+ * page, so it's ok to define unused font faces here.
+ *
+ * For the fonts we do use, we trigger a preload of the fonts defined
+ * in `config.js`. Preload link is added in the `Root` component. This
+ * reduces wait time for fonts that we know we are using.
+ */
+
+@font-face {
+  font-family: CircularStd-Black;
+  src: url("./font-files/circular-std/CircularStd-Black.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CircularStd-BlackItalic;
+  src: url("./font-files/circular-std/CircularStd-BlackItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CircularStd-Bold;
+  src: url("./font-files/circular-std/CircularStd-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CircularStd-BoldItalic;
+  src: url("./font-files/circular-std/CircularStd-BoldItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CircularStd-Medium;
+  src: url("./font-files/circular-std/CircularStd-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CircularStd-MediumItalic;
+  src: url("./font-files/circular-std/CircularStd-MediumItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CircularStd-Book;
+  src: url("./font-files/circular-std/CircularStd-Book.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CircularStd-BookItalic;
+  src: url("./font-files/circular-std/CircularStd-BookItalic.woff2") format("woff2");
+  font-display: swap;
+}

@@ -1,32 +1,6 @@
-import { css, createGlobalStyle } from 'styled-components';
-
-import fonts from './fonts';
-
-import 'sanitize.css/sanitize.css';
-
-const fontFace = font => {
-  const { name, url, format } = font;
-  return css`
-    @font-face {
-      font-family: ${name};
-      src: url("${url}") format("${format}");
-
-      // See: https://developers.google.com/web/updates/2016/02/font-display
-      font-display: swap;
-    }
-  `;
-};
-
-const fontFaces = fontNames => {
-  return fonts.filter(f => fontNames.includes(f.name)).map(fontFace);
-};
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-
-  // Inject font faces only for fonts that have been specified in the
-  // fontNames prop.
-  ${props => fontFaces(props.fontNames)}
-
   body {
     background-color: ${props => props.theme.backgroundColor};
   }

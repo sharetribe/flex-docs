@@ -1,15 +1,13 @@
 import styled, { css } from 'styled-components';
 
+import { fonts } from './index';
+
+// NOTE: The CircularStd-BookItalic font isn't currently preloaded, so
+// rendering this element for the first time triggers a font file
+// download.
 const styles = css`
   // Font
-
-  // TODO: Enable proper italic font if that is really
-  // needed. Remember to also add the font-face by prividing the font
-  // name to the GlobalStyle component.
-  //
-  // font-family: CircularStd-BookItalic, system-ui, sans-serif;
-  font-weight: 400;
-  font-style: italic;
+  ${fonts['CircularStd-BookItalic'].styles}
 `;
 
 const Em = styled.em`
