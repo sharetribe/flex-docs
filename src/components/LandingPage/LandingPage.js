@@ -156,9 +156,10 @@ const LandingPage = props => {
         </GridBox>
       </Grid>
       <Paragraph>
-        <UiText id="LandingPage.outro" /> {/*<A href="#">*/}
-        <UiText id="LandingPage.outroLink" />
-        {/*</A>*/}
+        <UiText id="LandingPage.outro" />{' '}
+        <A href="https://sharetribe.typeform.com/to/CMiqus">
+          <UiText id="LandingPage.outroLink" />
+        </A>
       </Paragraph>
     </MainLayout>
   );
