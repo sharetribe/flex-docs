@@ -6,6 +6,7 @@ category: references
 ingress: JavaScript SDK documentation.
 ---
 
-Sharetribe Flex SDK for JavaScript documentation is currently accessible at:
+We are currently moving all the documentation to this documentation site.
+Meanwhile, you can access all the JS SDK documentation at:
 
 https://sharetribe.github.io/flex-sdk-js/

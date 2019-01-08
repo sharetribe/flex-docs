@@ -6,6 +6,7 @@ category: references
 ingress: Flex Template for Web documentation.
 ---
 
-Sharetribe Flex Template for Web (FTW) documentation is currently accessible at:
+We are currently moving all the documentation to this documentation site.
+Meanwhile, you can access all the FTW documentation at:
 
 https://github.com/sharetribe/flex-template-web
