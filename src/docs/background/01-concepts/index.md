@@ -3,7 +3,7 @@ title: Concepts
 slug: concepts
 date: 2019-01-08
 category: background
-ingress: 'The main concepts of the Flex'
+ingress: 'Definitions for the key concepts in Flex that are used in the API and elsewhere in the documentation.'
 private: false
 ---
 
@@ -105,9 +105,23 @@ through it. Commissions can be charged from providers, customer or both.
 
 Reservation of a listing at a specific time.
 
-##### Availability Calendar
+##### Availability plan
 
-Description of the availability of a listing.
+A recurring plan for a Listing that defines if the Listing can be by
+day or by time range and on which week days and times the Listing is
+available.
+
+##### Availability exception
+
+A deviation from the Availability plan that marks certain date or time
+for a Listing to have different availability than what the plan
+specifies.
+
+##### Time slot
+
+A day or a time range when Listing is available for booking taking
+into account the Listing's Availability plan, Availability exceptions
+and existing Bookings.
 
 ##### Notification
 
