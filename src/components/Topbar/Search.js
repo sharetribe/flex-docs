@@ -9,7 +9,7 @@ const Search = styled.div`
 
   @media (min-width: ${baselineBreakpoint}px) {
     // Same width as the logo in the left for symmetry
-    width: 140px;
+    width: 120px;
     height: 72px;
   }
 `;

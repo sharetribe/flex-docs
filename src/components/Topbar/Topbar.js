@@ -40,7 +40,7 @@ const HomeLink = styled(Link)`
 `;
 
 const TopbarLogo = styled(Logo)`
-  width: 140px;
+  width: 120px;
   height: 26px;
   margin-top: 17px;
   margin-bottom: 17px;
