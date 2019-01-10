@@ -104,6 +104,9 @@ const Html = styled.div`
       margin-top: ${baselineSpacing}px;
     }
   }
+  > blockquote {
+    max-width: ${props => props.theme.contentMaxWidth}px;
+  }
   code {
     // Having two fonts in a paragraph makes the line box grow out of
     // the baseline. Reducing the line height of the inline code
