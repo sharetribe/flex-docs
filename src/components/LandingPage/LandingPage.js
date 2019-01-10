@@ -83,7 +83,9 @@ const LandingPage = props => {
             <UiText id="LandingPage.tutorials.description" />
           </GridDescription>
           <GridLinks>
-            {/*<GridLink to="/tutorials/getting-started/">Getting Started</GridLink>*/}
+            <GridLink to="/tutorials/getting-started-with-ftw/">
+              <UiText id="LandingPage.tutorials.gettingStartedFtw" />
+            </GridLink>
             <GridLink to="/tutorials/">
               <UiText id="LandingPage.tutorials.all" /> (
               {articleCounts.tutorials || 0})
@@ -100,9 +102,6 @@ const LandingPage = props => {
             <UiText id="LandingPage.guides.description" />
           </GridDescription>
           <GridLinks>
-            {/*<GridLink to="/guides/how-to-customize-ftw/">
-              <UiText id="LandingPage.guides.ftw" />
-            </GridLink>*/}
             <GridLink to="/guides/">
               <UiText id="LandingPage.guides.all" /> (
               {articleCounts.guides || 0})
