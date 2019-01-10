@@ -28,10 +28,13 @@ const HighlightStyle = createGlobalStyle`
     // Remove theme default styles
     pre[class*="language-"] {
       background-color: transparent;
-      margin: ${baselineSpacing}px 0;;
+      margin: ${baselineSpacing}px 0;
       padding: 0;
       line-height: 24px;
       border-radius: 0;
+    }
+    code[class*="language-"] {
+      line-height: 24px;
     }
 
     pre[class*="language-"],
