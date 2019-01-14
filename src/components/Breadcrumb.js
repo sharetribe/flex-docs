@@ -36,6 +36,8 @@ const Item = styled(Li)`
     line-height: 32px;
     letter-spacing: -0.08px;
 
+    color: ${props => props.theme.textColorSecondary};
+
     // Offset baseline
     top: 3px;
   }

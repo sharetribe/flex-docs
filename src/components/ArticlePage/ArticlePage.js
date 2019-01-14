@@ -66,20 +66,18 @@ const MainColumn = styled.article`
 `;
 
 const CrumbWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-top: ${4 * baselineSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
+    flex-direction: row;
     margin-top: ${10 * baselineLarge}px;
   }
 `;
 
-const Crumb = styled(Breadcrumb)`
-  @media (min-width: ${baselineBreakpoint}px) {
-    display: inline;
-  }
-`;
-
 const Updated = styled(LastUpdated)`
+  flex-shrink: 0;
   color: ${props => props.theme.textColorSecondary};
 
   // Font
@@ -91,7 +89,6 @@ const Updated = styled(LastUpdated)`
   top: -1px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    display: inline;
     font-size: 14px;
     line-height: 32px;
     letter-spacing: -0.08px;
@@ -99,11 +96,8 @@ const Updated = styled(LastUpdated)`
     // Offset baseline
     top: 3px;
 
-    margin-left: 7px;
-    ::before {
-      content: '•';
-      margin-right: 7px;
-    }
+    padding-left: 7px;
+    margin-left: auto;
   }
 `;
 
@@ -193,7 +187,7 @@ const ArticlePage = props => {
         <MainColumn>
           <script type="application/ld+json">{ldJson}</script>
           <CrumbWrapper>
-            <Crumb
+            <Breadcrumb
               links={[
                 { path: '/', label: 'Docs' },
                 {
