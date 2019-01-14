@@ -13,11 +13,6 @@ const Content = styled.div`
   // Make sure that even with little content the element expands so
   // that the Wrapper takes at least the full viewport height.
   flex-grow: 1;
-
-  width: 100%;
-  max-width: ${props => props.theme.pageMaxWidth}px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 const MainLayout = props => {
