@@ -15,10 +15,13 @@ While you can create a marketplace purely on top of the API, it requires a lot
 of effort and we recommened using the template as a starting point for
 customizations.
 
-Depending on your customization needs, changing the template application can
-require some knowledge in frontend web development with React, but for this
-tutorial it is enough if you know how to open a terminal to run some commands
-and edit text files to change configuration and make a simple customization.
+Depending on your needs for customization, changing the template application
+requires varying levels of development knowledge. For this tutorial it is enough
+to know how to open a terminal to run some commands and edit text files to
+change configuration values.
+
+For more information on what skills are needed for customization, see the
+[What development skills are needed?](/background/development-skills/) article.
 
 ## Request API access
 
