@@ -9,7 +9,7 @@ private: false
 
 ## Introduction
 
-Sharetribe Flex is a total solution to build your own sharing economy platform. Flex provides all the necessary infrastucture to get you started fast. Because of it's headless architecture, Flex gives you total freedom to customize your user experience. As you grow, you don't have to worry about running and scaling your backend but can instead focus on the unique value of your platform.
+Sharetribe Flex is a complete solution for building your own sharing economy platform. Flex provides all the necessary infrastucture to get you started fast, without breaking your budget. Because of it's headless architecture, Flex gives you total freedom to customize your user experience. As you grow, you don't have to worry about running and scaling your backend but can instead focus on the unique value of your platform.
 
 ## Flex Components
 
@@ -19,7 +19,7 @@ Sharetribe Flex is a total solution to build your own sharing economy platform. 
 
 Your Marketplace UI is how your users interact with your platform. Here your users can sign up, post listings, and find services to book. Your Marketplace UI, whether that's a Web UI, a Mobile application or both, is the face your solution. That's why you have total control over it.
 
-We offer a full web template, [Flex Template for Web](/references/ftw/), to get you started with your Marketplace UI in no time but there's no limits for how much you can customize the template. You can freely alter the look and feel of your marketplace and design the user interactions. You can also integrate any web analytics or customer service solution directly into your UI. And if you're feeling adventurous, you can build the entire UI from scratch yourself.
+[Flex Template for Web](/references/ftw/), a fully functional web template, allows to get you started with your Marketplace UI in no time but there's no limits for how much you can customize the template. You can freely alter the look and feel of your marketplace and design the user interactions. You can also integrate any web analytics or customer service solution directly into your UI. And if you're feeling adventurous, you can build the entire UI from scratch yourself.
 
 ### The Marketplace API
 
