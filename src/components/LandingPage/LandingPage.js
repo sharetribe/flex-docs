@@ -174,6 +174,9 @@ const LandingPage = props => {
               {/*<GridLink to="/background/concepts/">
                  <UiText id="LandingPage.background.concepts" />
                  </GridLink>*/}
+              <GridLink to="/background/development-skills//">
+                <UiText id="LandingPage.background.developmentSkills" />
+              </GridLink>
               <GridLink to="/background/">
                 <UiText id="LandingPage.background.all" /> (
                 {articleCounts.background || 0})
