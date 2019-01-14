@@ -13,9 +13,10 @@
   "Topbar.Menu.background.label": "Background",
 
   "LandingPage.meta.description": "Sharetribe Flex documentation",
-  "LandingPage.heading": "Sharetribe Flex",
-  "LandingPage.subHeading": "Documentation",
-  "LandingPage.intro": "Sharetribe Flex is the fastest and most affordable way to set up a powerful marketplace platform that is uniquely yours. To see what features we are building or planning to build, see the",
+  "LandingPage.headingLine1": "Everything you need to know ",
+  "LandingPage.headingLine2": "about building with Sharetribe Flex.",
+  "LandingPage.introParagraph1": "Sharetribe Flex is the fastest and most affordable way to set up a powerful marketplace platform that is uniquely yours. ",
+  "LandingPage.introParagraph2": "To see what features we are building or planning to build, see the",
   "LandingPage.introRoadmapLink": "Flex Roadmap",
   "LandingPage.tutorials.title": "Tutorials",
   "LandingPage.tutorials.description": "Get started in learning about the product with hands-on tutorials for developers.",

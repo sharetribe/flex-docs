@@ -4,15 +4,12 @@ import styled from 'styled-components';
 import { baselineBreakpoint, Ul, Li } from '../../brand-components';
 import { Link } from '../../components';
 
-const TocUl = styled(Ul)`
-  margin-top: 24px; // TODO
-`;
-
 const TocLi = styled(Li)`
   // Side navigation hidden on small viewport
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 16px;
+    line-height: 32px;
     letter-spacing: -0.09px;
     color: ${props => props.theme.linkColor};
 
@@ -35,17 +32,17 @@ const TocItem = props => {
 };
 
 const Toc = props => {
-  const { path, headings } = props;
+  const { path, headings, ...rest } = props;
   const topLevelHeadings = headings.filter(heading => heading.depth < 3);
   if (topLevelHeadings.length === 0) {
     return null;
   }
   return (
-    <TocUl>
+    <Ul {...rest}>
       {topLevelHeadings.map(heading => (
         <TocItem key={heading.id} path={path} {...heading} />
       ))}
-    </TocUl>
+    </Ul>
   );
 };
 

@@ -19,8 +19,33 @@ import Grid, {
   GridLink,
 } from './Grid';
 
-const Block = styled.span`
-  display: block;
+const Content = styled.div`
+  max-width: ${props =>
+    props.theme.pageContentMaxWidth + 2 * grid.sideMargin}px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const HeadingBr = styled.br`
+  display: none;
+
+  @media (min-width: 470px) {
+    display: block;
+  }
+  @media (min-width: ${baselineBreakpoint}px) {
+    display: none;
+  }
+  @media (min-width: 900px) {
+    display: block;
+  }
+`;
+
+const IntroBr = styled.br`
+  display: none;
+
+  @media (min-width: 1070px) {
+    display: block;
+  }
 `;
 
 const Paragraph = styled(P)`
@@ -58,108 +83,111 @@ const LandingPage = props => {
   const description = UiText.fn('LandingPage.meta.description');
   return (
     <MainLayout description={description}>
-      <IntroHeading>
-        <Block>
-          <UiText id="LandingPage.heading" />
-        </Block>
-        <Block>
-          <UiText id="LandingPage.subHeading" />
-        </Block>
-      </IntroHeading>
-      <IntroDescription>
-        <UiText id="LandingPage.intro" />{' '}
-        <A href="https://www.sharetribe.com/flex/roadmap">
-          <UiText id="LandingPage.introRoadmapLink" />
-        </A>
-        {'.'}
-      </IntroDescription>
-      <Grid>
-        {/* TUTORIALS */}
-        <GridBox>
-          <GridHeadingLink category="tutorials">
-            <UiText id="LandingPage.tutorials.title" />
-          </GridHeadingLink>
-          <GridDescription>
-            <UiText id="LandingPage.tutorials.description" />
-          </GridDescription>
-          <GridLinks>
-            <GridLink to="/tutorials/getting-started-with-ftw/">
-              <UiText id="LandingPage.tutorials.gettingStartedFtw" />
-            </GridLink>
-            <GridLink to="/tutorials/">
-              <UiText id="LandingPage.tutorials.all" /> (
-              {articleCounts.tutorials || 0})
-            </GridLink>
-          </GridLinks>
-        </GridBox>
+      <Content>
+        <IntroHeading>
+          <UiText id="LandingPage.headingLine1" />
+          <HeadingBr />
+          <UiText id="LandingPage.headingLine2" />
+        </IntroHeading>
+        <IntroDescription>
+          <P>
+            <UiText id="LandingPage.introParagraph1" />
+            <IntroBr />
+            <UiText id="LandingPage.introParagraph2" />{' '}
+            <A href="https://www.sharetribe.com/flex/roadmap">
+              <UiText id="LandingPage.introRoadmapLink" />
+            </A>
+            {'.'}
+          </P>
+        </IntroDescription>
+        <Grid>
+          {/* TUTORIALS */}
+          <GridBox>
+            <GridHeadingLink category="tutorials">
+              <UiText id="LandingPage.tutorials.title" />
+            </GridHeadingLink>
+            <GridDescription>
+              <UiText id="LandingPage.tutorials.description" />
+            </GridDescription>
+            <GridLinks>
+              <GridLink to="/tutorials/getting-started-with-ftw/">
+                <UiText id="LandingPage.tutorials.gettingStartedFtw" />
+              </GridLink>
+              <GridLink to="/tutorials/">
+                <UiText id="LandingPage.tutorials.all" /> (
+                {articleCounts.tutorials || 0})
+              </GridLink>
+            </GridLinks>
+          </GridBox>
 
-        {/* GUIDES */}
-        <GridBox>
-          <GridHeadingLink category="guides">
-            <UiText id="LandingPage.guides.title" />
-          </GridHeadingLink>
-          <GridDescription>
-            <UiText id="LandingPage.guides.description" />
-          </GridDescription>
-          <GridLinks>
-            <GridLink to="/guides/">
-              <UiText id="LandingPage.guides.all" /> (
-              {articleCounts.guides || 0})
-            </GridLink>
-          </GridLinks>
-        </GridBox>
+          {/* GUIDES */}
+          <GridBox>
+            <GridHeadingLink category="guides">
+              <UiText id="LandingPage.guides.title" />
+            </GridHeadingLink>
+            <GridDescription>
+              <UiText id="LandingPage.guides.description" />
+            </GridDescription>
+            <GridLinks>
+              <GridLink to="/guides/">
+                <UiText id="LandingPage.guides.all" /> (
+                {articleCounts.guides || 0})
+              </GridLink>
+            </GridLinks>
+          </GridBox>
 
-        {/* REFERENCES */}
-        <GridBox>
-          <GridHeadingLink category="references">
-            <UiText id="LandingPage.references.title" />
-          </GridHeadingLink>
-          <GridDescription>
-            <UiText id="LandingPage.references.description" />
-          </GridDescription>
-          <GridLinks>
-            <GridLink to="/references/api/">
-              <UiText id="LandingPage.references.api" />
-            </GridLink>
-            <GridLink to="/references/js-sdk/">
-              <UiText id="LandingPage.references.sdk" />
-            </GridLink>
-            <GridLink to="/references/ftw/">
-              <UiText id="LandingPage.references.ftw" />
-            </GridLink>
-            <GridLink to="/references/">
-              <UiText id="LandingPage.references.all" /> (
-              {articleCounts.references || 0})
-            </GridLink>
-          </GridLinks>
-        </GridBox>
+          {/* REFERENCES */}
+          <GridBox>
+            <GridHeadingLink category="references">
+              <UiText id="LandingPage.references.title" />
+            </GridHeadingLink>
+            <GridDescription>
+              <UiText id="LandingPage.references.description" />
+            </GridDescription>
+            <GridLinks>
+              <GridLink to="/references/api/">
+                <UiText id="LandingPage.references.api" />
+              </GridLink>
+              <GridLink to="/references/js-sdk/">
+                <UiText id="LandingPage.references.sdk" />
+              </GridLink>
+              <GridLink to="/references/ftw/">
+                <UiText id="LandingPage.references.ftw" />
+              </GridLink>
+              <GridLink to="/references/">
+                <UiText id="LandingPage.references.all" /> (
+                {articleCounts.references || 0})
+              </GridLink>
+            </GridLinks>
+          </GridBox>
 
-        {/* BACKGROUND */}
-        <GridBox>
-          <GridHeadingLink category="background">
-            <UiText id="LandingPage.background.title" />
-          </GridHeadingLink>
-          <GridDescription>
-            <UiText id="LandingPage.background.description" />
-          </GridDescription>
-          <GridLinks>
-            {/*<GridLink to="/background/architecture/">Sharetribe Flex overview</GridLink>*/}
-            {/*<GridLink to="/background/concepts/">
-              <UiText id="LandingPage.background.concepts" />
-            </GridLink>*/}
-            <GridLink to="/background/">
-              <UiText id="LandingPage.background.all" /> (
-              {articleCounts.background || 0})
-            </GridLink>
-          </GridLinks>
-        </GridBox>
-      </Grid>
-      <Paragraph>
-        <UiText id="LandingPage.outro" />{' '}
-        <A href="https://sharetribe.typeform.com/to/CMiqus">
-          <UiText id="LandingPage.outroLink" />
-        </A>
-      </Paragraph>
+          {/* BACKGROUND */}
+          <GridBox>
+            <GridHeadingLink category="background">
+              <UiText id="LandingPage.background.title" />
+            </GridHeadingLink>
+            <GridDescription>
+              <UiText id="LandingPage.background.description" />
+            </GridDescription>
+            <GridLinks>
+              {/*<GridLink to="/background/architecture/">Sharetribe Flex overview</GridLink>*/}
+              {/*<GridLink to="/background/concepts/">
+                 <UiText id="LandingPage.background.concepts" />
+                 </GridLink>*/}
+              <GridLink to="/background/">
+                <UiText id="LandingPage.background.all" /> (
+                {articleCounts.background || 0})
+              </GridLink>
+            </GridLinks>
+          </GridBox>
+        </Grid>
+        <Paragraph>
+          <UiText id="LandingPage.outro" />{' '}
+          <A href="https://sharetribe.typeform.com/to/CMiqus">
+            <UiText id="LandingPage.outroLink" />
+          </A>
+        </Paragraph>
+      </Content>
     </MainLayout>
   );
 };

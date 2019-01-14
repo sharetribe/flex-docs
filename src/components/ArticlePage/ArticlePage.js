@@ -19,19 +19,19 @@ import Toc from './Toc';
 const ColumnLayout = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
 `;
 
+const articleContentMaxWidth = 884;
 const sideColumnWidth = 277;
-const mainColumnMinWidth = 740;
 
 const SideColumn = styled.div`
   display: none;
   flex-shrink: 0;
 
-  @media (min-width: ${sideColumnWidth + mainColumnMinWidth}px) {
+  @media (min-width: 1024px) {
     display: block;
     width: ${sideColumnWidth}px;
-    margin-right: 31px;
   }
 `;
 
@@ -55,6 +55,8 @@ const MainColumn = styled.article`
 
   padding-left: ${props => props.theme.contentPaddingSmall}px;
   padding-right: ${props => props.theme.contentPaddingSmall}px;
+
+  max-width: ${props => articleContentMaxWidth + 2 * props.theme.contentPaddingLarge}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     padding-left: ${props => props.theme.contentPaddingLarge}px;
@@ -152,6 +154,7 @@ const SideNavTitle = styled(P)`
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 16px;
+    line-height: 32px;
     letter-spacing: -0.09px;
   }
 `;

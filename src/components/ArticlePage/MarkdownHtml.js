@@ -54,26 +54,32 @@ const Html = styled.div`
   h1 {
     ${H1.styles}
     margin: ${baselineSpacing}px 0;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h2 {
     ${H2.styles}
     margin: ${baselineSpacing}px 0;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h3 {
     ${H3.styles}
     margin: ${baselineSpacing}px 0;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h4 {
     ${H4.styles}
     margin: ${baselineSpacing}px 0;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h5 {
     ${H5.styles}
     margin: ${baselineSpacing}px 0;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h6 {
     ${H6.styles}
     margin: ${baselineSpacing}px 0;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   a {${A.styles}}
   p {

@@ -102,6 +102,12 @@ module.exports = {
             options: {
               sizeByPixelDensity: true,
               withWebp: true,
+
+              // Same as `contentMaxWidth` in the theme. The image
+              // won't be rendered any bigger.
+              maxWidth: 635,
+
+              backgroundColor: 'transparent',
             },
           },
           'gatsby-remark-reading-time',
