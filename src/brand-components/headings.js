@@ -138,12 +138,12 @@ const h5Styles = css`
   // Color
   color: ${headingColor};
 
-  font-size: 26px;
+  font-size: 20px;
   line-height: 36px;
-  letter-spacing: -0.65px;
+  letter-spacing: -0.33px;
 
   // Offset baseline
-  top: 3px;
+  top: -1px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 24px;
