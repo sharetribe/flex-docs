@@ -56,7 +56,8 @@ const MainColumn = styled.article`
   padding-left: ${props => props.theme.contentPaddingSmall}px;
   padding-right: ${props => props.theme.contentPaddingSmall}px;
 
-  max-width: ${props => articleContentMaxWidth + 2 * props.theme.contentPaddingLarge}px;
+  max-width: ${props =>
+    articleContentMaxWidth + 2 * props.theme.contentPaddingLarge}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     padding-left: ${props => props.theme.contentPaddingLarge}px;

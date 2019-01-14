@@ -4,9 +4,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 import {
   baselineSmall,
   baselineSpacing,
-  H1,
-  H2,
-  H3,
   H4,
   H5,
   H6,
@@ -52,17 +49,17 @@ const HighlightStyle = createGlobalStyle`
 
 const Html = styled.div`
   h1 {
-    ${H1.styles}
+    ${H4.styles}
     margin: ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h2 {
-    ${H2.styles}
+    ${H4.styles}
     margin: ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h3 {
-    ${H3.styles}
+    ${H4.styles}
     margin: ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
