@@ -35,7 +35,7 @@ Learn more about the capabilities of the Marketplace API and Flex by reading the
 
 ### Console
 
-Console is a place for you to manage all your marketplace data such as users, listings and transactions. Console also offers tools to develop your marketplace. Console is accessed via a web UI that we provide out of the box. Think of it as an admin interface you never have to build!
+[Console](https://flex-console.sharetribe.com/) is a place for you to manage all your marketplace data such as users, listings and transactions. Console also offers tools to develop your marketplace. Console is accessed via a web UI that we provide out of the box. Think of it as an admin interface you never have to build!
 
 ## How you use Sharetribe Flex
 
