@@ -46,6 +46,10 @@ const Heading = styled(H1)`
   }
 `;
 
+const Count = styled.span`
+  color: #007dff;
+`;
+
 const Description = styled(P)`
   margin-top: ${3 * baselineSmall}px;
   margin-left: ${props => props.theme.contentPaddingSmall}px;
@@ -81,7 +85,9 @@ const ArticleIndexPage = props => {
       activeCategory={category}
     >
       <Content>
-        <Heading>{title}</Heading>
+        <Heading>
+          {title} <Count>{articles.length}</Count>
+        </Heading>
         <Description>{description}</Description>
         <Index pathPrefix={`/${category}/`} articles={articles} />
       </Content>
