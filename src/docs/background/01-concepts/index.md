@@ -3,7 +3,9 @@ title: Concepts
 slug: concepts
 date: 2019-01-08
 category: background
-ingress: Explanation of the key concepts we use when we talk about Sharetribe Flex. The concepts are used in the API and throughout the documentation.
+ingress:
+  Explanation of the key concepts we use when we talk about Sharetribe Flex. The
+  concepts are used in the API and throughout the documentation.
 private: false
 ---
 
@@ -13,7 +15,8 @@ Applications and services that are part of the Flex offering.
 
 ##### Admin API
 
-An API for accessing admin functionality intended for integrations and custom Admin applications. Planned.
+An API for accessing admin functionality intended for integrations and custom
+Admin applications. Planned.
 
 ##### Console
 
@@ -21,19 +24,22 @@ A UI for administrators to build, run and track their marketplaces.
 
 ##### Flex Template for Web
 
-A Node.js + React/Redux based universal app that implements a marketplace UI backed by the Marketplace API. Intended to be customized per marketplace by the marketplace builders.
+A Node.js + React/Redux based universal app that implements a marketplace UI
+backed by the Marketplace API. Intended to be customized per marketplace by the
+marketplace builders.
 
 For more information, see the [FTW documentation](/references/ftw/).
 
 ##### Integration
 
-An external application that reacts to marketplace events, and/or
-calls APIs to read and/or write marketplace data. For example
-“automatically update a Mailchimp email list when a new user joins”.
+An external application that reacts to marketplace events, and/or calls APIs to
+read and/or write marketplace data. For example “automatically update a
+Mailchimp email list when a new user joins”.
 
 ##### Marketplace API
 
-API for marketplace applications. Supports e.g. authoring and discovering content, managing user accounts, and the purchasing flow.
+API for marketplace applications. Supports e.g. authoring and discovering
+content, managing user accounts, and the purchasing flow.
 
 For more information, see the [API reference documentation](/references/api/).
 
@@ -43,14 +49,16 @@ An umbrella name for the Sharetribe Flex offering.
 
 ##### Sharetribe SDK for JavaScript
 
-A JavaScript library that makes it easy to correctly interact with the Sharetribe Marketplace API (and later Admin APIs).
+A JavaScript library that makes it easy to correctly interact with the
+Sharetribe Marketplace API (and later Admin APIs).
 
 For more information, see the [JS SDK documentation](/references/js-sdk/).
 
 ##### Webhooks
 
-A way to get notified about events of interest in the marketplace for external applications. In practice it’s JSON messages delivered via HTTPS to admin defined endpoints. Planned.
-
+A way to get notified about events of interest in the marketplace for external
+applications. In practice it’s JSON messages delivered via HTTPS to admin
+defined endpoints. Planned.
 
 ## Domain concepts
 
@@ -58,19 +66,25 @@ The key concepts in the Sharetribe Flex marketplace domain.
 
 ##### Account
 
-Account is the technical identification information of a User that allow her to access a marketplace.
+Account is the technical identification information of a User that allow her to
+access a marketplace.
 
 ##### Availability exception
 
-A deviation from the Availability plan that marks certain date or time for a Listing to have different availability than what the plan specifies.
+A deviation from the Availability plan that marks certain date or time for a
+Listing to have different availability than what the plan specifies.
 
 ##### Availability plan
 
-A recurring plan for a Listing that defines if the Listing can be by day or by time range and on which week days and times the Listing is available.
+A recurring plan for a Listing that defines if the Listing can be by day or by
+time range and on which week days and times the Listing is available.
 
 ##### Banned User
 
-Banning a User means removing the user and all of user’s listings from marketplace because of bad behaviour. The email of banned user is no longer available for new accounts. The user data is not returned from APIs, except when it’s a linked resource (only id + banned status).
+Banning a User means removing the user and all of user’s listings from
+marketplace because of bad behaviour. The email of banned user is no longer
+available for new accounts. The user data is not returned from APIs, except when
+it’s a linked resource (only id + banned status).
 
 ##### Booking
 
@@ -96,8 +110,8 @@ customers.
 
 ##### Delayed Payout
 
-Delayed payout is a payment that is scheduled but not yet transferred
-to the provider.
+Delayed payout is a payment that is scheduled but not yet transferred to the
+provider.
 
 ##### Deleted Listing
 
@@ -108,14 +122,12 @@ id + deleted status.
 
 ##### Deleted User
 
-Deleting a User means completely removing all the personal data of the
-User.
+Deleting a User means completely removing all the personal data of the User.
 
 ##### Draft listing
 
-A listing that is created but not yet published. It is visible to the
-author and to the marketplace operators but not discoverable by any
-public API endpoints.
+A listing that is created but not yet published. It is visible to the author and
+to the marketplace operators but not discoverable by any public API endpoints.
 
 ##### Extended data
 
@@ -125,9 +137,9 @@ without prior configuration or schema definition.
 
 ##### Extended data schema
 
-Schema can be optionally defined for some types of extended data
-keys. When schema is defined, it can be used to make extended data
-values queriable via the Marketplace API.
+Schema can be optionally defined for some types of extended data keys. When
+schema is defined, it can be used to make extended data values queriable via the
+Marketplace API.
 
 ##### Listing
 
@@ -136,26 +148,25 @@ marketplace. The provider of a listing is called the author of that listing.
 
 ##### Listing pending approval
 
-A listing that has been created by its author when the marketplace
-requires listing approvals. It is visible only to its author or
-marketplace operator, but not discoverable by any public API
-endpoints.
+A listing that has been created by its author when the marketplace requires
+listing approvals. It is visible only to its author or marketplace operator, but
+not discoverable by any public API endpoints.
 
 ##### Marketplace
 
-A platform that connects providers and customers. Marketplace is the
-primary scope for all data like users, listings, orders, etc.
+A platform that connects providers and customers. Marketplace is the primary
+scope for all data like users, listings, orders, etc.
 
 ##### Message
 
-A message is a free form text attached to a transaction. Messages are
-exchanged between the customer and the provider in the transaction.
+A message is a free form text attached to a transaction. Messages are exchanged
+between the customer and the provider in the transaction.
 
 ##### Notification
 
 Notification means contacting User about an event of interest at the
-marketplace, such as payment received, message received,
-etc. Notifications are delivered via email.
+marketplace, such as payment received, message received, etc. Notifications are
+delivered via email.
 
 ##### Operator / Admin
 
@@ -188,16 +199,15 @@ one listing to the marketplace.
 
 ##### Published Listing
 
-A listing that is discoverable via public listing queries and search
-API endpoints. If the marketplace requires listing approvals, the
-listing is published only after it is approved by an operator.
+A listing that is discoverable via public listing queries and search API
+endpoints. If the marketplace requires listing approvals, the listing is
+published only after it is approved by an operator.
 
 ##### Review
 
-A review is a description of an experience the customer had with the
-provider or a description of an experience that the provider had with
-the customer. A review includes a free text description and a numeric
-rating between 0-5.
+A review is a description of an experience the customer had with the provider or
+a description of an experience that the provider had with the customer. A review
+includes a free text description and a numeric rating between 0-5.
 
 ##### Role
 
@@ -206,26 +216,23 @@ marketplace.
 
 ##### Time slot
 
-A day or a time range when Listing is available for booking taking
-into account the Listing's Availability plan, Availability exceptions
-and existing Bookings.
+A day or a time range when Listing is available for booking taking into account
+the Listing's Availability plan, Availability exceptions and existing Bookings.
 
 ##### Transaction
 
-Transaction is an instance of the process where the customer and the
-provider exchange value. Transaction has a predefined set of states
-and transitions between the states defined by the Transaction process.
+Transaction is an instance of the process where the customer and the provider
+exchange value. Transaction has a predefined set of states and transitions
+between the states defined by the Transaction process.
 
 ##### Transaction process
 
-Transaction process is the definition of the process where the
-customer and the provider exchange value. It defines the states and
-transitions between the states that a transaction can take. It also
-defines the actions, such as creating a payment, reserving a time slot
-or sending out a notification email, that happen as part of the
-transitions.
+Transaction process is the definition of the process where the customer and the
+provider exchange value. It defines the states and transitions between the
+states that a transaction can take. It also defines the actions, such as
+creating a payment, reserving a time slot or sending out a notification email,
+that happen as part of the transitions.
 
 ##### User
 
 A User is any registered user of a marketplace.
-
