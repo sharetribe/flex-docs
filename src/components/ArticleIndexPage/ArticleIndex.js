@@ -2,44 +2,50 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
-  baselineSmall,
   baselineLarge,
   baselineBreakpoint,
   H5,
   P,
   Ul,
 } from '../../brand-components';
-import { Link, UiText } from '../../components';
+import { grid } from '../../config';
+import { Link, UiText, SecondaryBox } from '../../components';
+
+const Grid = styled(Ul)`
+  display: grid;
+  grid-row-gap: ${grid.smallGap}px;
+  grid-column-gap: ${grid.smallGap}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    grid-row-gap: ${grid.largeGap}px;
+    grid-column-gap: ${grid.largeGap}px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+`;
 
 const Paragraph = styled(P)`
-  margin-top: ${2 * baselineSmall}px;
-
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${2 * baselineLarge}px;
+
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.09px;
+
+    // Offset baseline
+    top: -2px;
   }
 `;
 
-const ArticleLi = styled.li`
-  margin-top: ${6 * baselineSmall}px;
-
-  :first-child {
-    margin-top: 0;
-  }
-
-  @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${6 * baselineLarge}px;
-
-    :first-child {
-      margin-top: 0;
-    }
-  }
-`;
-
-const ArticleExcerpt = props => {
+const GridItem = props => {
   const { pathPrefix, title, slug, ingress } = props;
   const path = `${pathPrefix}${slug}/`;
   return (
-    <ArticleLi>
+    <SecondaryBox as="li">
       <H5 as="h2">
         <Link neutral to={path}>
           {title}
@@ -50,10 +56,7 @@ const ArticleExcerpt = props => {
           {ingress}
         </Link>
       </Paragraph>
-      <Paragraph>
-        <Link to={path}>read more</Link>
-      </Paragraph>
-    </ArticleLi>
+    </SecondaryBox>
   );
 };
 
@@ -69,15 +72,11 @@ const ArticleIndex = props => {
   }
 
   return (
-    <Ul {...rest}>
+    <Grid {...rest}>
       {articles.map(article => (
-        <ArticleExcerpt
-          pathPrefix={pathPrefix}
-          key={article.slug}
-          {...article}
-        />
+        <GridItem pathPrefix={pathPrefix} key={article.slug} {...article} />
       ))}
-    </Ul>
+    </Grid>
   );
 };
 
