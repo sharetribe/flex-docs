@@ -59,12 +59,12 @@ const Html = styled.div`
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h3 {
-    ${H4.styles}
+    ${H5.styles}
     margin: ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h4 {
-    ${H4.styles}
+    ${H5.styles}
     margin: ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
