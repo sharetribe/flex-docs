@@ -38,9 +38,9 @@ Here are the main technologies the FTW uses:
 ## Customization
 
 Depending on what needs to be customized, the required skills might vary a lot.
-Making simple color and image changes doesn't require development skills, but
-basic familiarity with command line tooling is helpful. Many UI changes can be
-done with pure CSS knowlege.
+Simple color and image changes require only basic development skills, but
+familiarity with command line tooling is helpful. Many UI changes can be done
+with pure CSS knowlege.
 
 For anything more extensive than basic look-and-feel changes, familiarity with
 JavaScript, React, and crafting UIs with components is needed. Working knowledge
