@@ -74,7 +74,7 @@ exports.themeLight = {
   baselineDevColor2: 'rgba(0, 0, 0, 0.1)',
 
   // Content size and spacing
-  pageMaxWidth: 1228,
+  pageContentMaxWidth: 1135,
   contentMaxWidth: 635,
   contentPaddingSmall: 24,
   contentPaddingLarge: 48,

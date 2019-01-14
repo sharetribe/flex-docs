@@ -8,8 +8,7 @@ import {
   baselineBreakpoint,
   A,
 } from '../brand-components';
-
-const landingPageGridSideMargin = 12;
+import { grid } from '../config';
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.backgroundColorSecondary};
@@ -22,17 +21,19 @@ const Content = styled.div`
   padding-left: ${props => props.theme.contentPaddingSmall}px;
   padding-right: ${props => props.theme.contentPaddingSmall}px;
 
-  max-width: ${props => props.theme.pageMaxWidth}px;
   margin-left: auto;
   margin-right: auto;
+
+  max-width: ${props =>
+    props.theme.pageContentMaxWidth + 2 * grid.sideMargin}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     padding-top: ${7 * baselineLarge}px;
     padding-bottom: ${11 * baselineLarge}px;
     padding-left: ${props =>
-      props.theme.contentPaddingLarge + landingPageGridSideMargin}px;
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
     padding-right: ${props =>
-      props.theme.contentPaddingLarge + landingPageGridSideMargin}px;
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
   }
 `;
 
