@@ -46,13 +46,13 @@
   "NotFoundPage.heading": "Oops, page not found :/",
 
   "ArticleIndexPage.ArticleIndex.noArticlesFound": "No articles found.",
-  "ArticleIndexPage.tutorials.title": "Tutorials",
+  "ArticleIndexPage.tutorials.title": "All Tutorials",
   "ArticleIndexPage.tutorials.description": "Get started in learning about the product with hands-on tutorials for developers.",
-  "ArticleIndexPage.guides.title": "How-to Guides",
+  "ArticleIndexPage.guides.title": "All How-to Guides",
   "ArticleIndexPage.guides.description": "Specific step-by-step guides for customizing your marketplace.",
-  "ArticleIndexPage.references.title": "Reference",
+  "ArticleIndexPage.references.title": "All Reference articles",
   "ArticleIndexPage.references.description": "Technical reference to the tooling.",
-  "ArticleIndexPage.background.title": "Background",
+  "ArticleIndexPage.background.title": "All Background articles",
   "ArticleIndexPage.background.description": "Explanations and background information for important concepts and design decisions behind the platform.",
 
   "ArticlePage.tutorials.breadCrumbTitle": "Tutorials",
