@@ -69,7 +69,7 @@ const createArticle = (createPage, edge) => {
     return Promise.resolve(null);
   }
   return createPage({
-    path: `${category}/${slug}`,
+    path: `${category}/${slug}/`,
     component: path.resolve(`./src/templates/ArticlePageTemplate.js`),
 
     // Context will be exposed as variables in the GraphQL query, e.g. $category
