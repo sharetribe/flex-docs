@@ -9,14 +9,15 @@ ingress:
   platform.
 ---
 
-You can use any technology to build a marketplace on top of the Flex API.
-However, making a marketplace user interface (UI) from scratch requires a lot of
-effort. This is why we provide the Flex Template for Web (FTW). It is a polished
-marketplace web application that is ready for customization.
+You can use any technology to build a marketplace on top of the
+[Marketplace API](/background/concepts/#marketplace-api). However, making a
+marketplace user interface (UI) from scratch requires a lot of effort. This is
+why we provide Flex Template for Web (FTW). It is a polished marketplace web
+application that is ready for customization.
 
-FTW is a template web application that uses the Flex API. It is built using
-common and modern frontend tooling, so frontend developers should feel right at
-home and happy with all the technology.
+FTW is a template web application that uses the Marketplace API. It is built
+using common and modern frontend tooling, so frontend developers should feel
+right at home and happy with all the technology.
 
 ## Technologies
 
@@ -73,4 +74,5 @@ Flex, you can contact our support:
 not a developer or don't have access to one, we can also help you.
 
 For developers doing customizations, we have an active community in Slack. You
-will get access to the channel when you get an account to the Flex Console.
+will get access to the channel when you get an account to
+[Console](/background/concepts/#console).
