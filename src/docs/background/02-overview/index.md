@@ -41,7 +41,7 @@ To learn more about the capabilities of the Marketplace API and Flex, visit the 
 
 [Console](https://flex-console.sharetribe.com/) is where you to manage all your marketplace data, such as users, listings and transactions. Console also offers tools to develop your marketplace, for example, an editor for email templates. Console is accessed via a web UI that we provide out of the box. Think of it as an admin interface you never have to build!
 
-## How you use Sharetribe Flex
+## How to use Sharetribe Flex
 
 When building a platform with Flex, your task is to design and create a fantastic marketplace UI. We handle everything else for you. If your Marketplace UI is a web-based UI, you also need to host it somewhere. 
 
