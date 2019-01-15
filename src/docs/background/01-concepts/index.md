@@ -24,9 +24,7 @@ The user interface admins use to build their marketplace platform. Console is al
 
 ### Flex Template for Web (FTW)
 
-A template of a Flex marketplace user interface. All the features available in the Marketplace API have been implemented in Flex Template for Web.
-
-Sharetribe customers can customize FTW for their own marketplace, or build their own UI from scratch. Flex Template for Web is built with Node.js + React/Redux.
+A template of a Flex marketplace user interface. Sharetribe customers can customize FTW for their own marketplace, or build their own UI from scratch. Flex Template for Web is built with Node.js + React/Redux.
 
 Information about using Flex Template for Web can be found in the [FTW documentation](/references/ftw/).
 
