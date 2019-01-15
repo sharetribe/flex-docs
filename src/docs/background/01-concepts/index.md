@@ -10,7 +10,7 @@ ingress:
 
 ## Application concepts
 
-Applications and services that are part of the Flex offering.
+Description of the applications and services that are included in the Flex offering.
 
 ### Admin API
 
