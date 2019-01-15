@@ -10,228 +10,207 @@ ingress:
 
 ## Application concepts
 
-Applications and services that are part of the Flex offering.
+Description of the applications and services that are included in the Flex offering.
 
 ### Admin API
 
-An API for accessing admin functionality intended for integrations and custom
-Admin applications. Planned.
+The application programming interface for accessing admin functionality. The Admin API can be used to build integrations to third-party software. 
+
+Planned.
 
 ### Console
 
-A UI for administrators to build, run and track their marketplaces.
+The user interface admins use to build their marketplace platform. Console is also where the day-to-day management, such as overseeing users’ activity, monitoring listings and reviews, and managing notifications, takes place.
 
-### Flex Template for Web
+### Flex Template for Web (FTW)
 
-A Node.js + React/Redux based universal app that implements a marketplace UI
-backed by the Marketplace API. Intended to be customized per marketplace by the
-marketplace builders.
+A template of a Flex marketplace user interface. Sharetribe customers can customize FTW for their own marketplace, or build their own UI from scratch. Flex Template for Web is built with Node.js + React/Redux.
 
-For more information, see the [FTW documentation](/references/ftw/).
+Information about using Flex Template for Web can be found in the [FTW documentation](/references/ftw/).
 
 ### Integration
 
-An external application that reacts to marketplace events, and/or calls APIs to
-read and/or write marketplace data. For example “automatically update a
-Mailchimp email list when a new user joins”.
+An external application that communicates with the marketplace. This can mean reacting to marketplace events, pulling data from the marketplace, or triggering activity on the marketplace. For example, “automatically update a Mailchimp email list when a new user joins the marketplace”.
 
 ### Marketplace API
 
-API for marketplace applications. Supports e.g. authoring and discovering
-content, managing user accounts, and the purchasing flow.
+The application programming interface that provides the crucial features marketplaces need. For example, the Marketplace API allows for creating and searching content (like user profiles and listings), managing user accounts, and processing transactions.
 
-For more information, see the [API reference documentation](/references/api/).
+Sharetribe customers can create their own web-based and mobile UIs on top of the Marketplace API. 
+
+Information about working with the Marketplace API can be found in the [API reference documentation](/references/api/).
 
 ### Sharetribe Flex
 
-An umbrella name for the Sharetribe Flex offering.
+An umbrella name for the entire Sharetribe Flex offering that today consists of the Marketplace API, Console, Flex Template for Web, and the documentation.
 
 ### Sharetribe SDK for JavaScript
 
-A JavaScript library that makes it easy to correctly interact with the
-Sharetribe Marketplace API (and later Admin APIs).
+A JavaScript library that makes it easy to correctly interact with the Marketplace API (and later the Admin API).
 
-For more information, see the [JS SDK documentation](/references/js-sdk/).
+Information about using the JS SDK library can be found in the [JS SDK documentation](/references/js-sdk/).
 
 ### Webhooks
 
-A way to get notified about events of interest in the marketplace for external
-applications. In practice it’s JSON messages delivered via HTTPS to admin
-defined endpoints. Planned.
+A way to send automatic and/or manual messages to external applications (like email or SMS) to users when something important happens on the marketplace. In practice, this is done with JSON messages that are delivered via HTTPS to the endpoints the admin chooses.
 
-## Domain concepts
+Planned.
+
+## Marketplace concepts
 
 The key concepts in the Sharetribe Flex marketplace domain.
 
 ### Account
 
-Account is the technical identification information of a User that allow her to
-access a marketplace.
+The technical identification information of a user. Users can register to a marketplace by creating an account.
 
-### Availability exception
+### Admin/Operator
 
-A deviation from the Availability plan that marks certain date or time for a
-Listing to have different availability than what the plan specifies.
+A marketplace operator account allows access to Console, where the day-to-day management of the marketplace takes place.
+The admin is not a marketplace user, so this account can't be used to log in to the
+actual marketplace.
 
-### Availability plan
+### Availability plan & availability exception
 
-A recurring plan for a Listing that defines if the Listing can be by day or by
-time range and on which week days and times the Listing is available.
+An availability plan is a recurring plan for the dates and times when a listing is available. For example, a provider can mark their listing to be available by default on weekdays (Mon–Fri) from 8am to 8pm, and unavailable during night time and on weekends.
+
+An availability exception is a deviation from the availability plan. For example, the provider can make an exception and also mark selected Fridays unavailable, or make certain weekends available for overnight bookings.
 
 ### Banned User
 
-Banning a User means removing the user and all of user’s listings from
-marketplace because of bad behaviour. The email of banned user is no longer
-available for new accounts. The user data is not returned from APIs, except when
-it’s a linked resource (only id + banned status).
+Banning a user means removing the user and all of the user’s listings from a
+marketplace due to inappropriate behaviour. The email with which a banned user registered to the marketplace
+can't be used to create new accounts. The user data is only visible when
+it’s linked to (only ID + banned status are shown).
 
 ### Booking
 
-Reservation of a listing at a specific time.
+A reservation of a listing for a specific time.
 
 ### Closed Listing
 
-A published listing can be closed by its author or a marketplace operator.
-Closed listings are not returned in search results or public listing queries but
-they can still be accessed as own listings or with a direct url. The intention
-of closing a listing is not to delete it but to stop advertising it. A closed
-listing can be opened, which makes them published again.
+A published listing can be closed by its author or the marketplace admin.
+Closed listings are not returned in search results or public listing queries. This doesn't mean the listings are deleted:
+they can still be accessed as own listings or with a direct URL. 
+
+The motivation for closing a listing is not to delete it, but to (temporarily) stop advertising it. A closed
+listing can be opened, which makes it published again.
 
 ### Commission
 
-Commission is the amount that the marketplace charges from payments going
-through it. Commissions can be charged from providers, customer or both.
+The amount of money that a marketplace charges from payments going
+through it. Commissions can be charged from providers, customers, or both.
 
 ### Customer (buyer)
 
-Customer is any registered User of the marketplace. Providers are always also
-customers.
+A user who registers to a marketplace to make purchases. In general, any registered marketplace user can make purchases on the platform. So, all users are always (potential) customers – including the providers.
+
+We use the term “customer” instead of “buyer” because marketplace platforms can be used for much more than buying and selling products.
 
 ### Delayed Payout
 
-Delayed payout is a payment that is scheduled but not yet transferred to the
-provider.
+A payment that a customer has made but that hasn't been transferred to the provider yet.
 
 ### Deleted Listing
 
-When listing is deleted the intention is to completely remove it. It’s no longer
-returned from any API endpoints except when the listing is linked from some
-other resource (transaction). In that case listing’s info is not shown, only
-id + deleted status.
+Deleted listings are completely removed. They are only visible if they are linked to from a transaction. In that case, only the listing ID and the deleted status are shown, the listing’s information is not visible.
 
 ### Deleted User
 
-Deleting a User means completely removing all the personal data of the User.
+Deleting a user means completely removing all of the user's personal data. This includes all of the public-facing data like profile and listings as well as the user account information.
 
 ### Draft listing
 
-A listing that is created but not yet published. It is visible to the author and
-to the marketplace operators but not discoverable by any public API endpoints.
+A listing that is created but not yet published. A draft listing is visible to the author and
+to the marketplace admin but not discoverable by any public API endpoints.
 
 ### Extended data
 
-Extended data is a set of key-value pairs that can be attached to marketplace
-objects, such as users, listings and transactions. It can be used out of the box
-without prior configuration or schema definition.
+Additional data that can be attached to marketplace objects. Extended data is available out of the box and can be written and read via the Marketplace API without any prior configuration. There are different types of extended data available (e.g., public, protected, or private).
+
+In practice, extended data allows a marketplace operator to decide, for example, how much and what kind of information they want their users to fill in to their profiles. Extended data can also be attached to listings and transactions.
 
 ### Extended data schema
 
-Schema can be optionally defined for some types of extended data keys. When
-schema is defined, it can be used to make extended data values queriable via the
-Marketplace API.
+It's possible to define schemas for some extended data types. Defining a schema allows that data type to be indexed so that search queries can be made for that data.
 
 ### Listing
 
-A listing is a description of a service that a provider provides in the
+A description of a product or a service that a provider is offering on the
 marketplace. The provider of a listing is called the author of that listing.
 
 ### Listing pending approval
 
-A listing that has been created by its author when the marketplace requires
-listing approvals. It is visible only to its author or marketplace operator, but
-not discoverable by any public API endpoints.
+Marketplaces can require all listings to be approved before they are published on the marketplace. A listing that is pending approval is visible only to its author and the marketplace admin, but not discoverable by any public API endpoints.
 
 ### Marketplace
 
-A platform that connects providers and customers. Marketplace is the primary
-scope for all data like users, listings, orders, etc.
+A platform that connects providers and customers. The marketplace is the primary
+scope for all data, such as users, listings, orders, and so on.
 
 ### Message
 
-A message is a free form text attached to a transaction. Messages are exchanged
-between the customer and the provider in the transaction.
+Free form text attached to a transaction. Messages are exchanged
+between a customer and a provider when they engage in a transaction.
 
 ### Notification
 
-Notification means contacting User about an event of interest at the
-marketplace, such as payment received, message received, etc. Notifications are
-delivered via email.
-
-### Operator / Admin
-
-Marketplace operator account that allows access to Console for the marketplace.
-This account is not a marketplace User and cannot be used to log in to the
-actual marketplace.
+A message that a user gets when something important happens on the marketplace (e.g., the user has received a message or a payment on the platform). Notifications are delivered via email.
 
 ### Payin
 
-Payin is the amount of money that is paid by the customer.
+The amount of money paid by the customer.
 
 ### Payment
 
-Payment is the transfer of money from one party to another party (customer to
+The transfer of money from one party to another (customer to
 provider, provider to marketplace admin, etc.)
 
 ### Payout
 
-Payout is the amount of money that is moved to the provider.
+The amount of money that is moved to the provider.
+
+Typically, marketplaces take a commission from each payment. This means that often, the payin from a customer is a larger sum than the payout to a provider.
 
 ### Profile
 
-The public facing information of a User. This can include things like avatar,
+The public-facing information of a user. Profiles can include things like avatar,
 bio, link to a webpage, reviews, and contact address.
 
 ### Provider (seller)
 
-Provider is a User that is allowed to post a listing and/or has posted at least
-one listing to the marketplace.
+A user who sells or rents their products or services on a marketplace. Providers can post listings to the marketplace.
+
+We use the term “provider” instead of “seller” because marketplace platforms can be used for much more than buying and selling products.
 
 ### Published Listing
 
-A listing that is discoverable via public listing queries and search API
-endpoints. If the marketplace requires listing approvals, the listing is
-published only after it is approved by an operator.
+A listing that all registered users on the marketplace can see in search results or public listing queries.
 
 ### Review
 
-A review is a description of an experience the customer had with the provider or
-a description of an experience that the provider had with the customer. A review
-includes a free text description and a numeric rating between 0-5.
+After a customer and a provider have engaged in a transaction, they are asked to describe how the experience with the other party was. This description is called a review. A review includes a free text description and a numeric rating between 0-5.
 
 ### Role
 
-A role is a set of permissions that govern what a User is allowed to do in the
-marketplace.
+Determines what a user is able to do on a marketplace. For example, “Admin” and “Provider” are roles on a marketplace.
 
 ### Time slot
 
-A day or a time range when Listing is available for booking taking into account
-the Listing's Availability plan, Availability exceptions and existing Bookings.
+A day or a time range when a listing is available for booking (taking into account
+the listing's availability plan, availability exceptions, and existing bookings).
 
 ### Transaction
 
-Transaction is an instance of the process where the customer and the provider
-exchange value. Transaction has a predefined set of states and transitions
-between the states defined by the Transaction process.
+The process of providing the product or service that is listed on a marketplace.
+Transactions have a predefined set of states and transitions between states, which are defined in the transaction process.
 
 ### Transaction process
 
-Transaction process is the definition of the process where the customer and the
-provider exchange value. It defines the states and transitions between the
-states that a transaction can take. It also defines the actions, such as
-creating a payment, reserving a time slot or sending out a notification email,
-that happen as part of the transitions.
+The process where a customer and a provider exchange value. 
+
+The transaction process begins with the first interaction the customer and provider have with each other. It defines the states and transitions between the states that a transaction can take. It also defines the actions that happen as part of the transitions. Examples of actions are creating a payment, reserving a time slot, or sending out a notification email.
 
 ### User
 
-A User is any registered user of a marketplace.
+Anyone who registers to a marketplace is referred to as a user.
