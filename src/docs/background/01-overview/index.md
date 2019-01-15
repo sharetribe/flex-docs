@@ -63,8 +63,8 @@ To learn more about the capabilities of the Marketplace API and Flex, visit the
 
 ### Flex Javascript SDK
 
-[The Flex Javascript SDK](/references/js-sdk) is a small Javascript library that
-helps you with integrating the Marketplace API. It handles tasks like
+[The Flex Javascript SDK](/references/js-sdk/) is a small Javascript library
+that helps you with integrating the Marketplace API. It handles tasks like
 authentication and session management and makes it easy to use correct data
 types with the API. Using the Flex JS SDK is not required, but if you are
 working with Javascript, we strongly encourage you to have a look.
