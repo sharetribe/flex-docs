@@ -10,10 +10,10 @@ ingress:
 skills: basic command line, text editing
 ---
 
-FTW is a marketplace web application built on top of the Sharetribe Flex API.
-While you can create a marketplace purely on top of the API, it requires a lot
-of effort and we recommened using the template as a starting point for
-customizations.
+FTW is a marketplace web application built on top of the
+[Marketplace API](/background/concepts/#marketplace-api). While you can create a
+marketplace purely using just the API, it requires a lot of effort and we
+recommened using the template as a starting point for customizations.
 
 Depending on your needs for customization, changing the template application
 requires varying levels of development knowledge. For this tutorial it is enough
@@ -25,8 +25,8 @@ For more information on what skills are needed for customization, see the
 
 ## Request API access
 
-To use the Sharetribe Flex API, you will need an API key. You can request access
-at https://sharetribe.typeform.com/to/BI9M4O
+To use the Marketplace API, you will need an API key. You can request access at
+https://sharetribe.typeform.com/to/BI9M4O
 
 ## Install development tooling
 
@@ -126,8 +126,9 @@ This will automatically refresh the browser and show the updated styles:
 
 ## Summary
 
-In this tutorial, we used the Flex Template for Web to make our own customized
+In this tutorial, we used Flex Template for Web to make our own customized
 marketplace. As you see, FTW is a fully ready and polished marketplace
-application that is running on top of the Flex API. All of the customization is
-in your control, and you can change it to fit your marketplace needs. See our
-[Guides](/guides/) for instructions on how to do specific customizations.
+application that is running on top of the Marketplace API. All of the
+customization is in your control, and you can change it to fit your marketplace
+needs. See our [Guides](/guides/) for instructions on how to do specific
+customizations.
