@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, withPrefix } from 'gatsby';
 
 import { baselineBreakpoint, Ol, Li } from '../brand-components';
 import { Link } from '../components';
@@ -88,7 +88,7 @@ const Breadcrumb = props => {
               '@type': 'ListItem',
               position: i + 1,
               name: label,
-              item: `${siteUrl}${path}`,
+              item: `${siteUrl}${withPrefix(path)}`,
             };
           }),
         });
