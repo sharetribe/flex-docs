@@ -14,8 +14,7 @@ Description of the applications and services that are included in the Flex offer
 
 ### Admin API
 
-The application programming interface for accessing admin functionality. The Admin API can be used to customize
-admin applications (located in Console) and to build integrations to third-party software. 
+The application programming interface for accessing admin functionality. The Admin API can be used to build integrations to third-party software. 
 
 Planned.
 
