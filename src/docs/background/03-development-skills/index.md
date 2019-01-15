@@ -23,13 +23,13 @@ home and happy with all the technology.
 Here are the main technologies the FTW uses:
 
 - JavaScript: the programming language for the whole application
-- [React](https://reactjs.org/): library for creating user interfaces with
-  components
 - CSS: styling the user interface using
   [CSS Modules](https://github.com/css-modules/css-modules)
+- [React](https://reactjs.org/): library for creating user interfaces with
+  components
 - [Redux](https://redux.js.org/): state and data flow handling
-- [Final Form](https://github.com/final-form/final-form): forms
 - [React Router](https://reacttraining.com/react-router/): routing
+- [Final Form](https://github.com/final-form/final-form): forms
 - [Express](https://expressjs.com/): server side rendering of the React
   application
 - [Node.js](https://nodejs.org/): development tooling and running the Express
