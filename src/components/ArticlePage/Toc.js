@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineBreakpoint, Ul, Li } from '../../brand-components';
+import { Ul, Li } from '../../brand-components';
+import { baselineBreakpoint } from '../../config';
 import { Link } from '../../components';
 
 const TocLi = styled(Li)`

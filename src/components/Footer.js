@@ -1,13 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  fonts,
-  baselineSmall,
-  baselineLarge,
-  baselineBreakpoint,
-  A,
-} from '../brand-components';
+import { fonts, A } from '../brand-components';
+import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
 import { grid } from '../config';
 
 const Wrapper = styled.div`

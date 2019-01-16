@@ -1,17 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { H5, H6, P, A, Ul } from '../../brand-components';
 import {
   baselineSmall,
   baselineLarge,
   baselineBreakpoint,
-  H5,
-  H6,
-  P,
-  A,
-  Ul,
-} from '../../brand-components';
-import { grid } from '../../config';
+  grid,
+} from '../../config';
 import { MainLayout, UiText } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
 import Section, {

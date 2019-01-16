@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
-  baselineSpacing,
-  baselineBreakpoint,
   H1,
   H2,
   H3,
@@ -17,6 +15,7 @@ import {
   Li,
   Hr,
 } from '../brand-components';
+import { baselineSpacing, baselineBreakpoint } from '../config';
 import { MainLayout, Link, SecondaryBox, Breadcrumb } from '../components';
 
 const Content = styled.div`

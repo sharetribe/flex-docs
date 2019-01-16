@@ -1,15 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  baselineBreakpoint,
-  baselineSmall,
-  baselineLarge,
-  Ingress,
-  H1,
-  P,
-  Hr,
-} from '../../brand-components';
+import { Ingress, H1, P, Hr } from '../../brand-components';
+import { baselineBreakpoint, baselineSmall, baselineLarge } from '../../config';
 import { MainLayout, Breadcrumb, SecondaryBox, UiText } from '../../components';
 import LastUpdated from './LastUpdated';
 import InfoSection from './InfoSection';

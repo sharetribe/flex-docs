@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { fonts } from './index';
-import { baselineBreakpoint } from './config';
+import { baselineBreakpoint } from '../config';
 
 const baseHeadingStyles = `
   // Reset default styles

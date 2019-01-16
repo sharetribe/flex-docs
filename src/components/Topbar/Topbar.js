@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineBreakpoint } from '../../brand-components';
+import { baselineBreakpoint } from '../../config';
 import { Link, UiText } from '../../components';
 import Menu from './Menu';
 import Logo from './Logo';

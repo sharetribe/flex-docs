@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineSpacing, baselineBreakpoint, H1 } from '../brand-components';
+import { H1 } from '../brand-components';
+import { baselineSpacing, baselineBreakpoint } from '../config';
 import { MainLayout, UiText } from '../components';
 
 const Content = styled.div`

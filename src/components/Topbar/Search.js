@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { baselineBreakpoint } from '../../brand-components';
+import { baselineBreakpoint } from '../../config';
 
 // Temporary placeholder for search to align the Topbar items nicely
 const Search = styled.div`

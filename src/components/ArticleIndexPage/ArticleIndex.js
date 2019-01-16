@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  baselineLarge,
-  baselineBreakpoint,
-  H5,
-  P,
-  Ul,
-} from '../../brand-components';
-import { grid } from '../../config';
+import { H5, P, Ul } from '../../brand-components';
+import { baselineLarge, baselineBreakpoint, grid } from '../../config';
 import { Link, UiText, SecondaryBox } from '../../components';
 
 const Grid = styled(Ul)`

@@ -2,8 +2,6 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import {
-  baselineSmall,
-  baselineSpacing,
   H4,
   H5,
   H6,
@@ -16,6 +14,7 @@ import {
   Strong,
   Em,
 } from '../../brand-components';
+import { baselineSmall, baselineSpacing } from '../../config';
 
 require('prismjs/themes/prism-solarizedlight.css');
 
