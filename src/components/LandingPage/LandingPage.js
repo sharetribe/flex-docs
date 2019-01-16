@@ -11,13 +11,14 @@ import {
 import { grid } from '../../config';
 import { MainLayout, UiText } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
-import Grid, {
+import Grid from './Grid';
+import {
   GridBox,
   GridHeadingLink,
   GridDescription,
   GridLinks,
   GridLink,
-} from './Grid';
+} from './Section';
 
 const Content = styled.div`
   max-width: ${props =>
