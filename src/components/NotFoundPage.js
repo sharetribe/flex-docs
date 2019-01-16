@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { H1 } from '../brand-components';
 import { baselineSpacing, baselineBreakpoint } from '../config';
-import { MainLayout, UiText } from '../components';
+import { H1, MainLayout, UiText } from '../components';
 
 const Content = styled.div`
   padding-top: ${baselineSpacing}px;

@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { fonts, A } from '../brand-components';
-import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
-import { grid } from '../config';
+import {
+  baselineSmall,
+  baselineLarge,
+  baselineBreakpoint,
+  grid,
+} from '../config';
+import { fonts, A } from '../components';
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.backgroundColorSecondary};

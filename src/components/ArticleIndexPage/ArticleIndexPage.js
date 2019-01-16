@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { P, H1 } from '../../brand-components';
 import {
   baselineBreakpoint,
   baselineSmall,
   baselineLarge,
   grid,
 } from '../../config';
-import { MainLayout, UiText } from '../../components';
+import { P, H1, MainLayout, UiText } from '../../components';
 import ArticleIndex from './ArticleIndex';
 
 const Content = styled.div`

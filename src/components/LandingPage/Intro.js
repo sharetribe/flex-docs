@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import { H1 } from '../../brand-components';
 import {
   baselineSmall,
   baselineLarge,
   baselineBreakpoint,
   grid,
 } from '../../config';
+import { H1 } from '../../components';
 
 export const IntroHeading = styled(H1)`
   margin-top: ${7 * baselineSmall}px;

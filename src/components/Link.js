@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 
-import { A } from '../brand-components';
+import { A } from '../components';
 
 const GatsbyLinkWithoutExtraProps = props => {
   // Filter out A props that GatsbyLink isn't expecting

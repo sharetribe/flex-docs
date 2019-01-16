@@ -3,9 +3,8 @@ import { default as ReactModal } from 'react-modal';
 import styled, { createGlobalStyle } from 'styled-components';
 import noScroll from 'no-scroll';
 
-import { P } from '../../brand-components';
 import { baselineSmall, baselineLarge, baselineBreakpoint } from '../../config';
-import { UiText } from '../../components';
+import { P, UiText } from '../../components';
 
 const CloseButton = styled.button`
   position: absolute;

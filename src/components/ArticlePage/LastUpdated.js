@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { P } from '../../brand-components';
+import { P } from '../../components';
 
 const LastUpdated = props => {
   const { date, ...rest } = props;
