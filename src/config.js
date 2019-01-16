@@ -8,6 +8,12 @@
 // Dev mode flag
 exports.dev = process.env.NODE_ENV === 'development';
 
+// Baseline configuration
+exports.baselineSmall = 6;
+exports.baselineLarge = 8;
+exports.baselineSpacing = 24;
+exports.baselineBreakpoint = 768;
+
 // Fonts that are used from brand-components/fonts.js
 exports.fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
 
@@ -20,7 +26,7 @@ exports.categories = [
   { id: 'background' },
 ];
 
-// LandingPage grid config.
+// Generic grid config used in LandingPage and ArticleIndexPage
 exports.grid = {
   smallGap: 12,
   largeGap: 32,

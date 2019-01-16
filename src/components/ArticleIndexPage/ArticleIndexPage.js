@@ -5,11 +5,9 @@ import {
   baselineBreakpoint,
   baselineSmall,
   baselineLarge,
-  P,
-  H1,
-} from '../../brand-components';
-import { grid } from '../../config';
-import { MainLayout, UiText } from '../../components';
+  grid,
+} from '../../config';
+import { P, H1, MainLayout, UiText } from '../../components';
 import ArticleIndex from './ArticleIndex';
 
 const Content = styled.div`

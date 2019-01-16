@@ -4,9 +4,9 @@ import {
   baselineSmall,
   baselineLarge,
   baselineBreakpoint,
-  H1,
-} from '../../brand-components';
-import { grid } from '../../config';
+  grid,
+} from '../../config';
+import { H1 } from '../../components';
 
 export const IntroHeading = styled(H1)`
   margin-top: ${7 * baselineSmall}px;

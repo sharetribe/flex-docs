@@ -5,8 +5,8 @@ import { ThemeProvider } from 'styled-components';
 import 'sanitize.css/sanitize.css';
 import '../brand-components/font-faces.css';
 
-import { fonts, GlobalStyle, BaselineDevGrid } from '../brand-components';
 import { fontsInUse, themeLight as theme } from '../config';
+import { fonts, GlobalStyle, BaselineDevGrid } from '../components';
 
 const FontPreloadLink = font => {
   const { url, format } = font;

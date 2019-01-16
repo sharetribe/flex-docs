@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { baselineSpacing, Ul, Li } from '../../brand-components';
-import { Link, UiText } from '../../components';
+import { baselineSpacing } from '../../config';
+import { Ul, Li, Link, UiText } from '../../components';
 import Modal from './Modal';
 
 const Icon = props => {

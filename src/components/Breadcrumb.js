@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql, withPrefix } from 'gatsby';
 
-import { baselineBreakpoint, Ol, Li } from '../brand-components';
-import { Link } from '../components';
+import { baselineBreakpoint } from '../config';
+import { Ol, Li, Link } from '../components';
 
 const Item = styled(Li)`
   display: inline;

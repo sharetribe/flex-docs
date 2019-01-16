@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { baselineSmall, baselineLarge, baselineBreakpoint } from './config';
+import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
 
 const dev = process.env.NODE_ENV === 'development';
 

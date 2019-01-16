@@ -1,13 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import {
-  baselineLarge,
-  baselineBreakpoint,
-  Ul,
-  Li,
-} from '../../brand-components';
-import { Link } from '../../components';
+import { baselineLarge, baselineBreakpoint } from '../../config';
+import { Ul, Li, Link } from '../../components';
 
 const NavUl = styled(Ul)`
   display: flex;

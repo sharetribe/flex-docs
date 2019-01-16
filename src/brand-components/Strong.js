@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { fonts } from './index';
+import { fonts } from '../components';
 
 const styles = css`
   // Font

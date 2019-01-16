@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-import {
-  baselineSmall,
-  baselineLarge,
-  baselineBreakpoint,
-} from '../brand-components';
+import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
 
 const SecondaryBox = styled.section`
   padding-top: ${3 * baselineSmall}px;

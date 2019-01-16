@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { H6 } from '../../brand-components';
-import { UiText } from '../../components';
+import { H6, UiText } from '../../components';
 
 const InfoWrapper = styled.div`
   display: flex;

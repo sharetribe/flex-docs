@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { baselineSmall, baselineLarge, baselineBreakpoint } from './config';
+import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
 
 const styles = css`
   position: relative;

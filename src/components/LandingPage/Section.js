@@ -1,16 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  fonts,
-  baselineSmall,
-  baselineLarge,
-  baselineBreakpoint,
-  P,
-  Ul,
-  H5,
-} from '../../brand-components';
-import { Link, SecondaryBox } from '../../components';
+import { baselineSmall, baselineLarge, baselineBreakpoint } from '../../config';
+import { fonts, P, Ul, H5, Link, SecondaryBox } from '../../components';
 
 export const SectionHeadingLink = props => {
   const { to, children } = props;

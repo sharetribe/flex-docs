@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { fonts } from './index';
-import { baselineBreakpoint } from './config';
+import { fonts } from '../components';
+import { baselineBreakpoint } from '../config';
 
 const styles = css`
   // Font

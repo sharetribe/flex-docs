@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineBreakpoint, Ul, Li } from '../../brand-components';
-import { Link } from '../../components';
+import { baselineBreakpoint } from '../../config';
+import { Ul, Li, Link } from '../../components';
 
 const TocLi = styled(Li)`
   // Side navigation hidden on small viewport
