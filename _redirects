@@ -6,4 +6,10 @@
 # doesn't end up to this site.
 /  /docs/  302
 
+
+# Article title/slug renames
+/docs/background/overview/  /docs/background/introducing-flex/
+
+# Catchall for URL that are not found. Without this Netlify wouldn't
+# show the custom 404 page.
 /docs/*  /docs/404  404
