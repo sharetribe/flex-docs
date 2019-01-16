@@ -175,8 +175,8 @@ const LandingPage = props => {
             </SectionDescription>
           </div>
           <Ul>
-            <SectionLink to="/background/overview/">
-              <UiText id="LandingPage.gettingStarted.overview" />
+            <SectionLink to="/background/introducing-flex/">
+              <UiText id="LandingPage.gettingStarted.introducingFlex" />
             </SectionLink>
             <SectionLink to="/background/development-skills/">
               <UiText id="LandingPage.gettingStarted.devSkills" />
