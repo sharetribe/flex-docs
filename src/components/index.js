@@ -1,6 +1,11 @@
 // Components that don't import other components from this
 // index. These should not create any circular dependencies.
-export { H1, H2, H3, H4, H5, H6 } from './headings';
+export { default as H1 } from './H1';
+export { default as H2 } from './H2';
+export { default as H3 } from './H3';
+export { default as H4 } from './H4';
+export { default as H5 } from './H5';
+export { default as H6 } from './H6';
 export { default as P } from './P';
 export { default as Strong } from './Strong';
 export { default as Em } from './Em';
