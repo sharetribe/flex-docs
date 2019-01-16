@@ -5,19 +5,21 @@ import {
   baselineSmall,
   baselineLarge,
   baselineBreakpoint,
+  H5,
+  H6,
   P,
   A,
+  Ul,
 } from '../../brand-components';
 import { grid } from '../../config';
 import { MainLayout, UiText } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
-import Grid, {
-  GridBox,
-  GridHeadingLink,
-  GridDescription,
-  GridLinks,
-  GridLink,
-} from './Grid';
+import Section, {
+  SectionHeadingLink,
+  SectionDescription,
+  SectionLinks,
+  SectionLink,
+} from './Section';
 
 const Content = styled.div`
   max-width: ${props =>
@@ -78,6 +80,71 @@ const Paragraph = styled(P)`
   }
 `;
 
+const CollectionsHeading = styled(H6)`
+  color: #a2a6a9;
+
+  margin-top: ${4 * baselineSmall}px;
+  margin-left: ${props => props.theme.contentPaddingSmall}px;
+  margin-right: ${props => props.theme.contentPaddingSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${12 * baselineLarge}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-right: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+  }
+`;
+
+const GettingStartedSection = styled(Section)`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: ${2 * baselineSmall}px;
+
+  margin-top: ${2 * baselineSmall}px;
+  margin-left: ${grid.smallGap}px;
+  margin-right: ${grid.smallGap}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${3 * baselineLarge}px;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 139px;
+  }
+`;
+
+const CategoriesHeading = styled(H6)`
+  color: #a2a6a9;
+
+  margin-top: ${5 * baselineSmall}px;
+  margin-left: ${props => props.theme.contentPaddingSmall}px;
+  margin-right: ${props => props.theme.contentPaddingSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${10 * baselineLarge}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-right: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+  }
+`;
+
+const Grid = styled.div`
+  margin-top: ${2 * baselineSmall}px;
+  margin-left: ${grid.smallGap}px;
+  margin-right: ${grid.smallGap}px;
+  display: grid;
+  grid-row-gap: ${grid.smallGap}px;
+  grid-column-gap: ${grid.smallGap}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${3 * baselineLarge}px;
+    grid-row-gap: ${grid.largeGap}px;
+    grid-column-gap: ${grid.largeGap}px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+`;
+
 const LandingPage = props => {
   const { articleCounts } = props;
   const description = UiText.fn('LandingPage.meta.description');
@@ -100,91 +167,118 @@ const LandingPage = props => {
             {'.'}
           </P>
         </IntroDescription>
+        <CollectionsHeading as="h2">
+          <UiText id="LandingPage.collectionsHeading" />
+        </CollectionsHeading>
+        <GettingStartedSection>
+          <div>
+            <H5 as="h3">
+              <UiText id="LandingPage.gettingStarted.heading" />
+            </H5>
+            <SectionDescription>
+              <UiText id="LandingPage.gettingStarted.description" />
+            </SectionDescription>
+          </div>
+          <Ul>
+            <SectionLink to="/background/overview/">
+              <UiText id="LandingPage.gettingStarted.overview" />
+            </SectionLink>
+            <SectionLink to="/background/development-skills/">
+              <UiText id="LandingPage.gettingStarted.devSkills" />
+            </SectionLink>
+            <SectionLink to="/tutorials/getting-started-with-ftw/">
+              <UiText id="LandingPage.gettingStarted.ftwSetup" />
+            </SectionLink>
+          </Ul>
+        </GettingStartedSection>
+        <CategoriesHeading as="h2">
+          <UiText id="LandingPage.categoriesHeading" />
+        </CategoriesHeading>
         <Grid>
           {/* TUTORIALS */}
-          <GridBox>
-            <GridHeadingLink category="tutorials">
+          <Section>
+            <SectionHeadingLink to="/tutorials/">
               <UiText id="LandingPage.tutorials.title" />
-            </GridHeadingLink>
-            <GridDescription>
+            </SectionHeadingLink>
+            <SectionDescription>
               <UiText id="LandingPage.tutorials.description" />
-            </GridDescription>
-            <GridLinks>
-              <GridLink to="/tutorials/getting-started-with-ftw/">
+            </SectionDescription>
+            <SectionLinks>
+              <SectionLink to="/tutorials/getting-started-with-ftw/">
                 <UiText id="LandingPage.tutorials.gettingStartedFtw" />
-              </GridLink>
-              <GridLink to="/tutorials/">
+              </SectionLink>
+              <SectionLink to="/tutorials/">
                 <UiText id="LandingPage.tutorials.all" /> (
                 {articleCounts.tutorials || 0})
-              </GridLink>
-            </GridLinks>
-          </GridBox>
+              </SectionLink>
+            </SectionLinks>
+          </Section>
 
           {/* GUIDES */}
-          <GridBox>
-            <GridHeadingLink category="guides">
+          <Section>
+            <SectionHeadingLink to="/guides/">
               <UiText id="LandingPage.guides.title" />
-            </GridHeadingLink>
-            <GridDescription>
+            </SectionHeadingLink>
+            <SectionDescription>
               <UiText id="LandingPage.guides.description" />
-            </GridDescription>
-            <GridLinks>
-              <GridLink to="/guides/">
+            </SectionDescription>
+            <SectionLinks>
+              <SectionLink to="/guides/">
                 <UiText id="LandingPage.guides.all" /> (
                 {articleCounts.guides || 0})
-              </GridLink>
-            </GridLinks>
-          </GridBox>
+              </SectionLink>
+            </SectionLinks>
+          </Section>
 
           {/* REFERENCES */}
-          <GridBox>
-            <GridHeadingLink category="references">
+          <Section>
+            <SectionHeadingLink to="/references/">
               <UiText id="LandingPage.references.title" />
-            </GridHeadingLink>
-            <GridDescription>
+            </SectionHeadingLink>
+            <SectionDescription>
               <UiText id="LandingPage.references.description" />
-            </GridDescription>
-            <GridLinks>
-              <GridLink to="/references/api/">
+            </SectionDescription>
+            <SectionLinks>
+              <SectionLink to="/references/api/">
                 <UiText id="LandingPage.references.api" />
-              </GridLink>
-              <GridLink to="/references/js-sdk/">
+              </SectionLink>
+              <SectionLink to="/references/js-sdk/">
                 <UiText id="LandingPage.references.sdk" />
-              </GridLink>
-              <GridLink to="/references/ftw/">
+              </SectionLink>
+              <SectionLink to="/references/ftw/">
                 <UiText id="LandingPage.references.ftw" />
-              </GridLink>
-              <GridLink to="/references/">
+              </SectionLink>
+              <SectionLink to="/references/">
                 <UiText id="LandingPage.references.all" /> (
                 {articleCounts.references || 0})
-              </GridLink>
-            </GridLinks>
-          </GridBox>
+              </SectionLink>
+            </SectionLinks>
+          </Section>
 
           {/* BACKGROUND */}
-          <GridBox>
-            <GridHeadingLink category="background">
+          <Section>
+            <SectionHeadingLink to="/background/">
               <UiText id="LandingPage.background.title" />
-            </GridHeadingLink>
-            <GridDescription>
+            </SectionHeadingLink>
+            <SectionDescription>
               <UiText id="LandingPage.background.description" />
-            </GridDescription>
-            <GridLinks>
-              <GridLink to="/background/overview/">
+            </SectionDescription>
+            <SectionLinks>
+              <SectionLink to="/background/overview/">
                 <UiText id="LandingPage.background.overview" />
-              </GridLink>
-              <GridLink to="/background/concepts/">
+              </SectionLink>
+              <SectionLink to="/background/concepts/">
                 <UiText id="LandingPage.background.concepts" />
-              </GridLink>
-              <GridLink to="/background/development-skills//">
+              </SectionLink>
+              <SectionLink to="/background/development-skills//">
                 <UiText id="LandingPage.background.developmentSkills" />
-              </GridLink>
-              <GridLink to="/background/">
+              </SectionLink>
+              <SectionLink to="/background/">
                 <UiText id="LandingPage.background.all" /> (
                 {articleCounts.background || 0})
-              </GridLink>
-            </GridLinks>
-          </GridBox>
+              </SectionLink>
+            </SectionLinks>
+          </Section>
         </Grid>
         <Paragraph>
           <UiText id="LandingPage.outro" />{' '}

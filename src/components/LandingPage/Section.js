@@ -10,21 +10,20 @@ import {
   Ul,
   H5,
 } from '../../brand-components';
-import { grid } from '../../config';
 import { Link, SecondaryBox } from '../../components';
 
-export const GridHeadingLink = props => {
-  const { category, children } = props;
+export const SectionHeadingLink = props => {
+  const { to, children } = props;
   return (
-    <H5 as="h2">
-      <Link neutral to={`/${category}/`}>
+    <H5 as="h3">
+      <Link neutral to={to}>
         {children}
       </Link>
     </H5>
   );
 };
 
-export const GridDescription = styled(P)`
+export const SectionDescription = styled(P)`
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${2 * baselineLarge}px;
 
@@ -58,7 +57,7 @@ const Arrow = styled(ArrowIcon)`
   margin-right: 8px;
 `;
 
-const GridLi = styled.li`
+const SectionLi = styled.li`
   // Font
   ${fonts['CircularStd-Book'].styles}
   line-height: 30px;
@@ -82,19 +81,19 @@ const GridLi = styled.li`
   }
 `;
 
-export const GridLink = props => {
+export const SectionLink = props => {
   const { children, ...rest } = props;
   return (
-    <GridLi>
+    <SectionLi>
       <Link {...rest}>
         <Arrow />
         {children}
       </Link>
-    </GridLi>
+    </SectionLi>
   );
 };
 
-export const GridLinks = styled(Ul)`
+export const SectionLinks = styled(Ul)`
   margin-top: ${2 * baselineSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
@@ -102,23 +101,6 @@ export const GridLinks = styled(Ul)`
   }
 `;
 
-export const GridBox = SecondaryBox;
+export const Section = SecondaryBox;
 
-const Grid = styled.div`
-  margin-top: ${7 * baselineSmall}px;
-  margin-left: ${grid.smallGap}px;
-  margin-right: ${grid.smallGap}px;
-  display: grid;
-  grid-row-gap: ${grid.smallGap}px;
-  grid-column-gap: ${grid.smallGap}px;
-
-  @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${9 * baselineLarge}px;
-    grid-row-gap: ${grid.largeGap}px;
-    grid-column-gap: ${grid.largeGap}px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-  }
-`;
-
-export default Grid;
+export default Section;
