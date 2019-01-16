@@ -1,27 +1,27 @@
-// Brand components
-export { default as fonts } from '../brand-components/fonts';
-export { default as GlobalStyle } from '../brand-components/GlobalStyle';
-export { H1, H2, H3, H4, H5, H6 } from '../brand-components/headings';
-export { default as P } from '../brand-components/P';
-export { default as Ingress } from '../brand-components/Ingress';
-export { default as Ul } from '../brand-components/Ul';
-export { default as Ol } from '../brand-components/Ol';
-export { default as Li } from '../brand-components/Li';
-export { default as A } from '../brand-components/A';
-export { default as Hr } from '../brand-components/Hr';
-export { default as Strong } from '../brand-components/Strong';
-export { default as Em } from '../brand-components/Em';
-export {
-  default as BaselineDevGrid,
-} from '../brand-components/BaselineDevGrid';
-
 // Components that don't import other components from this
 // index. These should not create any circular dependencies.
+export { default as H1 } from './H1';
+export { default as H2 } from './H2';
+export { default as H3 } from './H3';
+export { default as H4 } from './H4';
+export { default as H5 } from './H5';
+export { default as H6 } from './H6';
+export { default as P } from './P';
+export { default as Strong } from './Strong';
+export { default as Em } from './Em';
+export { default as Hr } from './Hr';
+export { default as Ul } from './Ul';
+export { default as Ol } from './Ol';
+export { default as Li } from './Li';
+export { default as A } from './A';
 export { default as Link } from './Link';
+export { default as Ingress } from './Ingress';
 export { default as Footer } from './Footer';
 export { default as SecondaryBox } from './SecondaryBox';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as UiText } from './UiText';
+export { default as GlobalStyle } from './GlobalStyle';
+export { default as BaselineDevGrid } from './BaselineDevGrid';
 
 // Components that import other components from this index. These
 // might create circular dependencies. Changing the order of these

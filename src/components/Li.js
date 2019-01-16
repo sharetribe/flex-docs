@@ -1,12 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import { fonts } from '../components';
+import fonts from '../fonts';
 import { baselineBreakpoint } from '../config';
 
 const styles = css`
-  // Reset default styles
-  margin: 0;
-
   // Font
   ${fonts['CircularStd-Book'].styles}
   line-height: 24px;
@@ -34,11 +31,9 @@ const styles = css`
   }
 `;
 
-const P = styled.p`
+const Li = styled.li`
   ${styles}
 `;
+Li.styles = styles;
 
-// Expose styles
-P.styles = styles;
-
-export default P;
+export default Li;

@@ -1,18 +1,20 @@
 import styled, { css } from 'styled-components';
 
-import { fonts } from '../components';
+import fonts from '../fonts';
 import { baselineBreakpoint } from '../config';
 
 const styles = css`
+  // Reset default styles
+  margin: 0;
+
   // Font
-  ${fonts['CircularStd-Book'].styles}
+  ${fonts['CircularStd-Bold'].styles}
   line-height: 24px;
-  font-size: 16px;
-  letter-spacing: -0.09px;
+  font-size: 18px;
+  letter-spacing: -0.2px;
 
   // Color
-  color: ${props =>
-    props.secondary ? props.theme.textColorSecondary : props.theme.textColor};
+  color: ${props => props.theme.textColor};
 
   // Enable baseline offset
   position: relative;
@@ -22,18 +24,20 @@ const styles = css`
 
   @media (min-width: ${baselineBreakpoint}px) {
     // Font
-    font-size: 18px;
+    font-size: 24px;
     line-height: 32px;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.2px;
 
     // Offset baseline
-    top: 2px;
+    top: -1px;
   }
 `;
 
-const Li = styled.li`
+const Ingress = styled.p`
   ${styles}
 `;
-Li.styles = styles;
 
-export default Li;
+// Expose styles
+Ingress.styles = styles;
+
+export default Ingress;
