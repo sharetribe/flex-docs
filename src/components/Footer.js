@@ -7,7 +7,8 @@ import {
   baselineBreakpoint,
   grid,
 } from '../config';
-import { fonts, A } from '../components';
+import fonts from '../fonts';
+import { A } from '../components';
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.backgroundColorSecondary};

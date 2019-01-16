@@ -1,5 +1,4 @@
 // Brand components
-export { default as fonts } from '../brand-components/fonts';
 export { default as GlobalStyle } from '../brand-components/GlobalStyle';
 export { H1, H2, H3, H4, H5, H6 } from '../brand-components/headings';
 export { default as P } from '../brand-components/P';

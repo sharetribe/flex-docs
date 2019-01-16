@@ -14,7 +14,7 @@ exports.baselineLarge = 8;
 exports.baselineSpacing = 24;
 exports.baselineBreakpoint = 768;
 
-// Fonts that are used from brand-components/fonts.js
+// Fonts that are used from fonts.js
 exports.fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
 
 // Categories allowed for articles. The order defines the order in the

@@ -3,10 +3,11 @@ import Helmet from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 
 import 'sanitize.css/sanitize.css';
-import '../brand-components/font-faces.css';
+import '../font-faces.css';
 
 import { fontsInUse, themeLight as theme } from '../config';
-import { fonts, GlobalStyle, BaselineDevGrid } from '../components';
+import fonts from '../fonts';
+import { GlobalStyle, BaselineDevGrid } from '../components';
 
 const FontPreloadLink = font => {
   const { url, format } = font;
