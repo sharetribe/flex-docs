@@ -7,7 +7,7 @@ import {
   baselineBreakpoint,
   grid,
 } from '../../config';
-import { H5, H6, P, A, Ul, MainLayout, UiText } from '../../components';
+import { H6, P, A, Ul, MainLayout, UiText } from '../../components';
 import { IntroHeading, IntroDescription } from './Intro';
 import Section, {
   SectionHeadingLink,
@@ -167,9 +167,9 @@ const LandingPage = props => {
         </CollectionsHeading>
         <GettingStartedSection>
           <div>
-            <H5 as="h3">
+            <SectionHeadingLink to="/background/getting-started/">
               <UiText id="LandingPage.gettingStarted.heading" />
-            </H5>
+            </SectionHeadingLink>
             <SectionDescription>
               <UiText id="LandingPage.gettingStarted.description" />
             </SectionDescription>
