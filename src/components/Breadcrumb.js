@@ -94,14 +94,14 @@ const Breadcrumb = props => {
         });
 
         return (
-          <>
-            <Ol {...rest}>
+          <nav {...rest}>
+            <Ol>
               {links.map(link => (
                 <CrumbLi key={link.label} {...link} />
               ))}
             </Ol>
             <script type="application/ld+json">{ldJson}</script>
-          </>
+          </nav>
         );
       }}
     />

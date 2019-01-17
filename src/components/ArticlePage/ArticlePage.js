@@ -26,7 +26,7 @@ const ColumnLayout = styled.div`
 const articleContentMaxWidth = 884;
 const sideColumnWidth = 277;
 
-const SideColumn = styled.div`
+const SideColumn = styled.aside`
   display: none;
   flex-shrink: 0;
 
@@ -180,7 +180,7 @@ const ArticlePage = props => {
     <MainLayout title={title} description={ingress} activeCategory={category}>
       <ColumnLayout>
         <SideColumn>
-          <SideNavigation>
+          <SideNavigation as="nav">
             <SideNavTitle>{title}</SideNavTitle>
             <Toc path={`/${category}/${slug}/`} headings={tableOfContents} />
           </SideNavigation>

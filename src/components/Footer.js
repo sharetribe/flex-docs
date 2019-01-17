@@ -10,7 +10,7 @@ import {
 import fonts from '../fonts';
 import { A } from '../components';
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   background-color: ${props => props.theme.backgroundColorSecondary};
   color: ${props => props.theme.textColorSecondary};
 `;

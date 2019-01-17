@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
-const Content = styled.div`
+const Content = styled.main`
   // Make sure that even with little content the element expands so
   // that the Wrapper takes at least the full viewport height.
   flex-grow: 1;
