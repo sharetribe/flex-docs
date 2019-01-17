@@ -56,20 +56,35 @@ Go to the cloned directory:
 cd flex-template-web/
 ```
 
-Create an environment configuration file from the template:
+## Install dependencies
+
+Install all dependencies:
 
 ```sh
-cp .env-template .env
+yarn install
 ```
 
-When you open the `.env` file in a text editor, you can see that there are three
-required variables:
+## Configuration
+
+Start the configurations:
+
+```sh
+yarn run config
+```
+
+This command will create `.env` file and guide you through setting up the
+required environment variables. If the `.env` file doesn't exist the application
+won't start.
+
+There are three required variables for FTW to work correctly:
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
-  Client ID is the API key you will use to access the Flex API with the SDK.
+  Client ID is the API key you will use to access the Marketplace API with the
+  SDK.
 
-  The application won't start without a Client ID.
+  If you don't set the client ID, API calls to Marketplace API won't work in the
+  application.
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
@@ -91,12 +106,6 @@ required variables:
   application.
 
 ## Start the server
-
-Install all dependencies:
-
-```sh
-yarn install
-```
 
 Start the development server:
 
