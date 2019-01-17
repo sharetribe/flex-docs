@@ -1,24 +1,17 @@
-# Sharetribe Flex documentation site documentation
+# Flex Docs documentation
 
-TODO
+Welcome to the documentation of the Flex Docs site!
 
-## Guidelines
+Answer to yourself:
 
-Some common guidelines for components. Applies also to components outside this
-branded components collection.
+## Q: I want to write a documentation article for the Flex Docs site
 
-### Use sanitize.css
+A: Head on to the [src/docs/](../src/docs) directory.
 
-### Don't inject global styles
+TODO: guidelines for writing articles, metadata, etc.
 
-### Component should not define outside margins
+## Q: I want to develop the Flex Docs site
 
-### Component height should be a multiple of the baseline
+A: See the [Flex Docs coding conventions](./coding-conventions.md).
 
-### Component should align with the baseline without adjustment
-
-### Component should pass in extra props to the root component
-
-### Export style as a static prop?
-
-## Prefer top margin when laying out components
+TODO: overview of the project and its tech
