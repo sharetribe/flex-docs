@@ -152,15 +152,13 @@ const LandingPage = props => {
           <UiText id="LandingPage.headingLine2" />
         </IntroHeading>
         <IntroDescription>
-          <P>
-            <UiText id="LandingPage.introParagraph1" />
-            <IntroBr />
-            <UiText id="LandingPage.introParagraph2" />{' '}
-            <A href="https://www.sharetribe.com/flex/roadmap">
-              <UiText id="LandingPage.introRoadmapLink" />
-            </A>
-            {'.'}
-          </P>
+          <UiText id="LandingPage.introParagraph1" />
+          <IntroBr />
+          <UiText id="LandingPage.introParagraph2" />{' '}
+          <A href="https://www.sharetribe.com/flex/roadmap">
+            <UiText id="LandingPage.introRoadmapLink" />
+          </A>
+          {'.'}
         </IntroDescription>
         <CollectionsHeading as="h2">
           <UiText id="LandingPage.collectionsHeading" />

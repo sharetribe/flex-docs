@@ -6,7 +6,7 @@ import {
   baselineBreakpoint,
   grid,
 } from '../../config';
-import { H1 } from '../../components';
+import { H1, P } from '../../components';
 
 export const IntroHeading = styled(H1)`
   margin-top: ${7 * baselineSmall}px;
@@ -29,7 +29,7 @@ export const IntroHeading = styled(H1)`
   }
 `;
 
-export const IntroDescription = styled.div`
+export const IntroDescription = styled(P)`
   margin-top: ${3 * baselineSmall}px;
   margin-left: ${props => props.theme.contentPaddingSmall}px;
   margin-right: ${props => props.theme.contentPaddingSmall}px;

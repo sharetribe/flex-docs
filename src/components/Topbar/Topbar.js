@@ -7,7 +7,7 @@ import Menu from './Menu';
 import Logo from './Logo';
 import Search from './Search';
 
-const Wrapper = styled.section`
+const Wrapper = styled.header`
   display: flex;
   background-color: ${props => props.theme.backgroundColorRaised};
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);

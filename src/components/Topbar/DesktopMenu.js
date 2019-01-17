@@ -58,11 +58,13 @@ export const MenuItem = props => {
 const DesktopMenu = props => {
   const { links, ...rest } = props;
   return (
-    <NavUl {...rest}>
-      {links.map(link => (
-        <MenuItem key={link.path} {...link} />
-      ))}
-    </NavUl>
+    <nav {...rest}>
+      <NavUl>
+        {links.map(link => (
+          <MenuItem key={link.path} {...link} />
+        ))}
+      </NavUl>
+    </nav>
   );
 };
 

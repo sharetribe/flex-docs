@@ -34,14 +34,14 @@ const Menu = props => {
     };
   });
   return (
-    <nav {...rest}>
+    <div {...rest}>
       <MobileMenuWrapper>
         <MobileMenu links={links} />
       </MobileMenuWrapper>
       <DesktopMenuWrapper>
         <DesktopMenu links={links} />
       </DesktopMenuWrapper>
-    </nav>
+    </div>
   );
 };
 

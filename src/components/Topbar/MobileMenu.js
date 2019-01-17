@@ -26,7 +26,7 @@ const MenuButton = styled.button`
   width: 60px;
 `;
 
-const NavUl = styled(Ul)`
+const Nav = styled.nav`
   height: 100%;
   background-color: ${props => props.theme.backgroundColor};
   padding-top: ${4 * baselineSpacing}px;
@@ -79,11 +79,13 @@ class MobileMenu extends Component {
           contentLabel={UiText.fn('Topbar.MobileMenu.contentLabel')}
           onClose={closeModal}
         >
-          <NavUl>
-            {links.map(link => (
-              <NavLi key={link.path} {...link} />
-            ))}
-          </NavUl>
+          <Nav>
+            <Ul>
+              {links.map(link => (
+                <NavLi key={link.path} {...link} />
+              ))}
+            </Ul>
+          </Nav>
         </Modal>
       </Wrapper>
     );
