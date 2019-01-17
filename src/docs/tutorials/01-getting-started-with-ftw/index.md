@@ -1,7 +1,7 @@
 ---
 title: Getting started with FTW
 slug: getting-started-with-ftw
-date: 2019-01-10
+date: 2019-01-17
 category: tutorials
 ingress:
   This tutorial is the place to start your journey of getting hands-on with
@@ -83,8 +83,8 @@ There are three required variables for FTW to work correctly:
   Client ID is the API key you will use to access the Marketplace API with the
   SDK.
 
-  If you don't set the client ID, API calls to Marketplace API won't work in the
-  application.
+  If you don't set the client ID, API calls to the Marketplace API won't work in
+  the application.
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
