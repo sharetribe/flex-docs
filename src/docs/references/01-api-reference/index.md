@@ -4,6 +4,7 @@ slug: api
 updated: 2018-12-21
 category: references
 ingress: Sharetribe Flex API reference documentation.
+published: true
 ---
 
 We are currently moving all the documentation to this documentation site.

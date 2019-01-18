@@ -11,7 +11,7 @@ const query = graphql`
         node {
           frontmatter {
             category
-            private
+            published
           }
         }
       }
@@ -22,8 +22,8 @@ const query = graphql`
 // Compute the number of articles for each category
 const counts = data => {
   return data.allMarkdownRemark.edges.reduce((result, edge) => {
-    const { category, private: priv } = edge.node.frontmatter;
-    if (!dev && priv) {
+    const { category, published } = edge.node.frontmatter;
+    if (!dev && !published) {
       return result;
     }
     if (!result[category]) {

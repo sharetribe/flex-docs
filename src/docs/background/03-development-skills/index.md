@@ -7,6 +7,7 @@ ingress:
   Building a custom marketplace with Flex requires some software development
   skills. This article explains what you need to know when customizing the
   platform.
+published: true
 ---
 
 You can use any technology to build a marketplace on top of the

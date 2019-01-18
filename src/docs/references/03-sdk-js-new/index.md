@@ -10,7 +10,7 @@ and serializing and deserializing data to and from JavaScript data structures.
 
 This lets you to concentrate on building your marketplace front-end instead
 of setting up the necessary boilerplate to communicate with the API."
-private: true
+published: false
 ---
 
 ## Installation

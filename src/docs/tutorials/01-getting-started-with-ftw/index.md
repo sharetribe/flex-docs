@@ -8,6 +8,7 @@ ingress:
   Sharetribe Flex. You will learn the basic building blocks by creating an
   example marketplace with the Flex Template for Web (FTW).
 skills: basic command line, text editing
+published: true
 ---
 
 FTW is a marketplace web application built on top of the

@@ -6,7 +6,7 @@ category: background
 ingress:
   Overview of how Sharetribe Flex works, and how you can build your sharing
   economy platform using it.
-private: false
+published: true
 ---
 
 ## Introduction
