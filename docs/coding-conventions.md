@@ -23,7 +23,7 @@ There are a few reasons behind these guidelines:
   - [Component should align with the baseline without adjustment](#component-should-align-with-the-baseline-without-adjustment)
   - [Use the baseline checker tool](#use-the-baseline-checker-tool)
 - [Component should pass in extra props to the root component](#component-should-pass-in-extra-props-to-the-root-component)
-- [Export style as a static propperty of the component](#export-style-as-a-static-propperty-of-the-component)
+- [Export style as a static property of the component](#export-style-as-a-static-property-of-the-component)
 - [Prefer top margin when laying out components](#prefer-top-margin-when-laying-out-components)
 - [Use the component index file](#use-the-component-index-file)
 - [Use UI texts](#use-ui-texts)
@@ -216,7 +216,7 @@ const MyComponent = props => {
 
 Some internal components don't necessarily need to do this.
 
-## Export style as a static propperty of the component
+## Export style as a static property of the component
 
 This is a very specific case that shouldn't be used outside of its purpose. If
 you check some text component like [P](../src/components/P.js), you note that
