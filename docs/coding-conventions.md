@@ -13,6 +13,27 @@ There are a few reasons behind these guidelines:
   e.g. related to responsiveness
 - Components should be extendable without extra wrapper components
 
+## Table of contents
+
+- [Use sanitize.css](#use-sanitizecss)
+- [Don't inject global styles](#dont-inject-global-styles)
+- [Component should not define outside margins](#component-should-not-define-outside-margins)
+- [Component should obey the baseline](#component-should-obey-the-baseline)
+  - [Component height should be a multiple of the baseline](#component-height-should-be-a-multiple-of-the-baseline)
+  - [Component should align with the baseline without adjustment](#component-should-align-with-the-baseline-without-adjustment)
+  - [Use the baseline checker tool](#use-the-baseline-checker-tool)
+- [Component should pass in extra props to the root component](#component-should-pass-in-extra-props-to-the-root-component)
+- [Export style as a static propperty of the component](#export-style-as-a-static-propperty-of-the-component)
+- [Prefer top margin when laying out components](#prefer-top-margin-when-laying-out-components)
+- [Use the component index file](#use-the-component-index-file)
+- [Use UI texts](#use-ui-texts)
+- [Use the Styleguide](#use-the-styleguide)
+- [Be mindful of HTML semantics for SEO and accessibility](#be-mindful-of-html-semantics-for-seo-and-accessibility)
+  - [Use semantic HTML elements](#use-semantic-html-elements)
+  - [Ensure keyboard accessibility](#ensure-keyboard-accessibility)
+  - [Annotate document metadata](#annotate-document-metadata)
+  - [Make sure the sitemap works](#make-sure-the-sitemap-works)
+
 ## Use sanitize.css
 
 There are several options for resetting and normalizing browser default styles.
