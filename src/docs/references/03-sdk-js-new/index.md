@@ -1,7 +1,7 @@
 ---
 title: JavaScript SDK (new)
 slug: js-sdk-new
-date: 2019-01-02
+updated: 2019-01-02
 category: references
 ingress: "The SDK is the easiest way to interact with Sharetribe Flex Marketplace API.
 

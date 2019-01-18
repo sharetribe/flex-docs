@@ -12,7 +12,7 @@ export const query = graphql`
       frontmatter {
         title
         slug
-        date
+        updated
         category
         ingress
         skills

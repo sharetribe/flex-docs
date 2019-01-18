@@ -41,15 +41,15 @@ exports.onCreateNode = ({ node, getNode }) => {
 
 const createArticle = (createPage, edge) => {
   const { fileAbsolutePath, frontmatter } = edge.node;
-  const { title, slug, date, category, ingress, private } = frontmatter;
+  const { title, slug, updated, category, ingress, private } = frontmatter;
   if (!title) {
     throw new Error(`title missing from file: ${fileAbsolutePath}`);
   }
   if (!slug) {
     throw new Error(`slug missing from file: ${fileAbsolutePath}`);
   }
-  if (!date) {
-    throw new Error(`date missing from file: ${fileAbsolutePath}`);
+  if (!updated) {
+    throw new Error(`updated date missing from file: ${fileAbsolutePath}`);
   }
   if (!category) {
     throw new Error(`category missing from file: ${fileAbsolutePath}`);
@@ -88,7 +88,7 @@ exports.createPages = ({ graphql, actions }) => {
             frontmatter {
               title
               slug
-              date
+              updated
               category
               ingress
               private

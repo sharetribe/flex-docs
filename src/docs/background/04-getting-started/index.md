@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started
-date: 2019-01-18
+updated: 2019-01-18
 category: background
 ingress:
   This collection of articles is the starting point for your journey with

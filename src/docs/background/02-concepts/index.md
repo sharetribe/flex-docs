@@ -1,7 +1,7 @@
 ---
 title: Concepts
 slug: concepts
-date: 2019-01-08
+updated: 2019-01-08
 category: background
 ingress:
   Explanation of the key concepts we use when we talk about Sharetribe Flex. The

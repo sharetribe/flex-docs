@@ -157,7 +157,7 @@ const SideNavTitle = styled(P)`
 
 const ArticlePage = props => {
   const { frontmatter, html, estimatedReadingTime, tableOfContents } = props;
-  const { title, slug, date, category, ingress } = frontmatter;
+  const { title, slug, updated, category, ingress } = frontmatter;
 
   // Structured metadata for the article page
   //
@@ -165,7 +165,7 @@ const ArticlePage = props => {
   const ldJson = JSON.stringify({
     '@context': 'http://schema.org',
     '@type': 'TechArticle',
-    dateModified: date,
+    dateModified: updated,
     headline: title,
     description: ingress,
 
@@ -198,7 +198,7 @@ const ArticlePage = props => {
                 { path: `/${category}/${slug}/`, label: title },
               ]}
             />
-            <Updated date={date} />
+            <Updated date={updated} />
           </CrumbWrapper>
           <Heading>{title}</Heading>
           <ArticleIngress>{ingress}</ArticleIngress>
