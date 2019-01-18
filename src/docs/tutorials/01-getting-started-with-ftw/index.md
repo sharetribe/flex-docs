@@ -1,13 +1,14 @@
 ---
 title: Getting started with FTW
 slug: getting-started-with-ftw
-date: 2019-01-17
+updated: 2019-01-17
 category: tutorials
 ingress:
   This tutorial is the place to start your journey of getting hands-on with
   Sharetribe Flex. You will learn the basic building blocks by creating an
   example marketplace with the Flex Template for Web (FTW).
 skills: basic command line, text editing
+published: true
 ---
 
 FTW is a marketplace web application built on top of the

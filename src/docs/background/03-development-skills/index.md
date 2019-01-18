@@ -1,12 +1,13 @@
 ---
 title: What development skills are needed?
 slug: development-skills
-date: 2019-01-14
+updated: 2019-01-14
 category: background
 ingress:
   Building a custom marketplace with Flex requires some software development
   skills. This article explains what you need to know when customizing the
   platform.
+published: true
 ---
 
 You can use any technology to build a marketplace on top of the

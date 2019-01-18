@@ -1,12 +1,13 @@
 ---
 title: Getting started
 slug: getting-started
-date: 2019-01-18
+updated: 2019-01-18
 category: background
 ingress:
   This collection of articles is the starting point for your journey with
   Sharetribe Flex. These articles will walk you through the basics of building a
   marketplace platform and show you how you get the most out of Flex.
+published: true
 ---
 
 ## Introducing Flex

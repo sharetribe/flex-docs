@@ -1,11 +1,13 @@
 ---
 title: How to Customize FTW
 slug: how-to-customize-ftw
-date: 2019-01-08
+updated: 2019-01-08
 category: guides
-ingress: "So you've decided to build your own marketplace using the Flex Template for Web (FTW). That's awesome! This guide
-will help you in setting up your fork and describes the general workflow."
-private: true
+ingress:
+  So you've decided to build your own marketplace using the Flex Template for
+  Web (FTW). That's awesome! This guide will help you in setting up your fork
+  and describes the general workflow.
+published: false
 ---
 
 **NOTE:** If you cloned the repository like described in the Quick start section

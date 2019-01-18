@@ -1,12 +1,13 @@
 ---
 title: How to set up Mapbox for FTW
 slug: how-to-set-up-mapbox-for-ftw
-date: 2019-01-10
+updated: 2019-01-10
 category: guides
 ingress:
   By default, Flex Template for Web (FTW) uses Mapbox for showing interactive
   maps. This guide will help you in creating a Mapbox account and setting up an
   account token in the FTW environment configuration.
+published: true
 ---
 
 ## 1. Generate a Mapbox access token

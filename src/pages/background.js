@@ -15,9 +15,9 @@ const query = graphql`
           frontmatter {
             title
             slug
-            date
+            updated
             ingress
-            private
+            published
           }
         }
       }
@@ -37,7 +37,7 @@ const BackgroundPage = () => {
           : [];
         const articles = edges.reduce((result, edge) => {
           const { frontmatter } = edge.node;
-          if (dev || !frontmatter.private) {
+          if (dev || frontmatter.published) {
             return result.concat(frontmatter);
           } else {
             return result;

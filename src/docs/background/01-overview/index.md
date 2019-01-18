@@ -1,12 +1,12 @@
 ---
 title: Introducing Flex
 slug: introducing-flex
-date: 2019-01-16
+updated: 2019-01-16
 category: background
 ingress:
   Overview of how Sharetribe Flex works, and how you can build your sharing
   economy platform using it.
-private: false
+published: true
 ---
 
 ## Introduction
