@@ -1,7 +1,8 @@
 # Flex Docs coding conventions
 
-Here are some common guidelines for making components and styling them. There
-are a few reasons behind these guidelines:
+Here are some common guidelines for making components and styling them.
+
+There are a few reasons behind these guidelines:
 
 - We want to be consistent
 - We want to avoid unexpected behavior when context changes
@@ -11,6 +12,27 @@ are a few reasons behind these guidelines:
 - Components should be able to put in various places that behave differently
   e.g. related to responsiveness
 - Components should be extendable without extra wrapper components
+
+## Table of contents
+
+- [Use sanitize.css](#use-sanitizecss)
+- [Don't inject global styles](#dont-inject-global-styles)
+- [Component should not define outside margins](#component-should-not-define-outside-margins)
+- [Component should obey the baseline](#component-should-obey-the-baseline)
+  - [Component height should be a multiple of the baseline](#component-height-should-be-a-multiple-of-the-baseline)
+  - [Component should align with the baseline without adjustment](#component-should-align-with-the-baseline-without-adjustment)
+  - [Use the baseline checker tool](#use-the-baseline-checker-tool)
+- [Component should pass in extra props to the root component](#component-should-pass-in-extra-props-to-the-root-component)
+- [Export style as a static propperty of the component](#export-style-as-a-static-propperty-of-the-component)
+- [Prefer top margin when laying out components](#prefer-top-margin-when-laying-out-components)
+- [Use the component index file](#use-the-component-index-file)
+- [Use UI texts](#use-ui-texts)
+- [Use the Styleguide](#use-the-styleguide)
+- [Be mindful of HTML semantics for SEO and accessibility](#be-mindful-of-html-semantics-for-seo-and-accessibility)
+  - [Use semantic HTML elements](#use-semantic-html-elements)
+  - [Ensure keyboard accessibility](#ensure-keyboard-accessibility)
+  - [Annotate document metadata](#annotate-document-metadata)
+  - [Make sure the sitemap works](#make-sure-the-sitemap-works)
 
 ## Use sanitize.css
 
@@ -259,3 +281,57 @@ console.log(`My UI text is ${UiText.fn('MyComponent.someText')}.`);
 The [StyleguidePage](../src/pages/styleguide.js) is very useful in developing
 new components and checking that all the baselines work nicely. The Styleguide
 can be accessed from the `/styleguide` URL.
+
+## Be mindful of HTML semantics for SEO and accessibility
+
+SEO and accessibility are hugely valuable for a documentation site. Therefore we
+must put extra effort that everything is done in a sensible way and doesn't
+break the usability or findability of the whole site. Here are some things to
+consider.
+
+### Use semantic HTML elements
+
+Instead of just throwing a `<div>`, think if a more semantic HTML element like
+an [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+landmark would be more suitable. This includes elements like `<section>`,
+`<nav>`, `<main>`, `<header>`, `<footer>`, `<aside>` etc.
+
+### Ensure keyboard accessibility
+
+Always test that the site works nicely when tabbing links with a keyboard. The
+order should be sane and all clickable things should be highlighted. Make sure
+that both the mobile and the desktop layout work.
+
+**NOTE:** Especially don't hide the clickable area outline if it stays active
+when clicking with a mouse. That most likely removes the essential outline from
+the element when navigating with a keyboard. There are better ways to handle
+that situation: https://github.com/WICG/focus-visible
+
+Many accessibility problems can be tested using the Lighthouse tool in the
+"Audit" tab of Chrome dev tools.
+
+### Annotate document metadata
+
+The [BaseLayout](../src/components/BaseLayout.js) component takes a `title` and
+a `description` props that are put to the document metadata. Make sure those are
+used.
+
+For more specific metadata annotation, [schema.org](https://schema.org/) should
+be used. See examples in the
+[ArticlePage](../src/components/ArticlePage/ArticlePage.js) and
+[Breadcrumb](../src/components/Breadcrumb.js) components.
+
+### Make sure the sitemap works
+
+We use the
+[gatsby-plugin-sitemap](https://www.npmjs.com/package/gatsby-plugin-sitemap)
+plugin to generate a `sitemap.xml` file of all the pages. When adding new pages,
+make sure the sitemap still works correctly. Note that the file is not generated
+in the dev mode.
+
+If you add a page that shouldn't be indexed by search engines, you should
+exclude it from the sitemap by editing the plugin config in
+[gatsby-config.js](../gatsby-config.js) and add a `noIndex={true}` prop to the
+layout. See the
+[ThanksForTheFeedbackPage](../src/components/ThanksForTheFeedbackPage.js)
+component for an example.
