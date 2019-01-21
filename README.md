@@ -25,7 +25,7 @@ Start development server:
 
 Open browser at http://localhost:8000
 
-## Known problems
+## Known issues
 
 If you change Gatsby plugins, add articles, rename article URL slugs,
 or switch between dev and prod servers, sometimes you need to clear
