@@ -28,3 +28,6 @@ Open browser at http://localhost:8000
 # Documentation
 
 For more information, see the [internal documentation](docs/README.md).
+
+The documentation contains information for both writing articles for
+the site as well as developing the site itself.
