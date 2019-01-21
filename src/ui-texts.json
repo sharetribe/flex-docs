@@ -68,6 +68,7 @@
   "ArticlePage.guides.breadCrumbTitle": "How-to Guides",
   "ArticlePage.references.breadCrumbTitle": "Reference",
   "ArticlePage.background.breadCrumbTitle": "Background",
+  "ArticlePage.LastUpdated.lastUpdated": "Last updated ",
   "ArticlePage.InfoSection.requiredSkills": "Required skills",
   "ArticlePage.InfoSection.readingTime": "Reading time"
 }
