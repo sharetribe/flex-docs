@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { P } from '../../components';
+import { P, UiText } from '../../components';
 
 const LastUpdated = props => {
   const { date, ...rest } = props;
@@ -13,7 +13,8 @@ const LastUpdated = props => {
   });
   return (
     <P {...rest} title={isoString}>
-      Last updated <time dateTime={isoString}>{uiString}</time>
+      <UiText id="ArticlePage.LastUpdated.lastUpdated" />
+      <time dateTime={isoString}>{uiString}</time>
     </P>
   );
 };
