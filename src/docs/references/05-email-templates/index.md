@@ -26,11 +26,11 @@ how to configure the notification emails.
 
 The transaction email editing is still manual. We are working hard to build the
 necessary tools for customizing transaction email templates, but for now you
-should resort to the default templates in the
-[Flex template web](https://github.com/sharetribe/flex-template-web/tree/master/ext/default-mail-templates)
+should resort to the default templates in
+[Flex Template for Web](https://github.com/sharetribe/flex-template-web/tree/master/ext/default-mail-templates)
 and edit them to your needs. If you contact the
-[Sharetribe team](flex-support@sharetribe.com) at and provide us the edited
-templates, we will update them for you.
+[Sharetribe team](mailto:flex-support@sharetribe.com) at and provide us the
+edited templates, we will update them for you.
 
 ## Best practices
 
@@ -80,8 +80,9 @@ The helpers may support positional parameters, hash parameters or both.
 
 For example: `{{helper param-1 param-2 hash-param=value}}`.
 
-Some documentation on the syntax and how to use them can be found
-[here](http://handlebarsjs.com/expressions.html).
+Some documentation on the syntax and how to use them can be found in the
+documentation for
+[Handlebars expressions](http://handlebarsjs.com/expressions.html).
 
 ### Built-in helpers
 
@@ -104,17 +105,16 @@ In addition to those, we also support
 This paragraph lists all the custom helpers we provide, including the parameters
 they take and example how to use them:
 
-<aside class="notice">Can't find a helper you are looking for? Let us
-know!</aside>
+Can't find a helper you are looking for? Let us know!
 
 ### `contains`
 
 > Params:
-
+>
 > - collection
 > - value
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{#contains collection value}}true{{else}}false{{/contains}}
@@ -126,11 +126,11 @@ otherwise the else block is rendered (if specified).
 ### `eq`
 
 > Params:
-
+>
 > - value
 > - test
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{#eq value 1}}true{{else}}false{{/eq}}
@@ -142,12 +142,12 @@ block is specified it will be rendered when falsy.
 ### `inflect`
 
 > Params
-
+>
 > - count
 > - singular
 > - plural
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{inflect quantity "day" "days"}}
@@ -159,15 +159,15 @@ given `count`.
 ### `date`
 
 > Params:
-
+>
 > - time
-
+>
 > Hash:
-
+>
 > - format
 > - lang: optional, default: "en-US"
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{date d format="d. MMM, YYYY" lang="fi-FI"}}
@@ -180,22 +180,22 @@ The `format` supports
 [Joda-Time formatting](http://www.joda.org/joda-time/key_format.html).
 
 The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47) language
-tag strings. More info about language tags can be found
-[here](https://www.w3.org/International/articles/language-tags/#region). E.g.
-"en-US" is a valid string.
+tag strings. More info about language tags can be found in the
+[W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
+E.g. "en-US" is a valid string.
 
 ### `date-day-before`
 
 > Params:
-
+>
 > - time
-
+>
 > Hash:
-
+>
 > - format
 > - lang: optional, default `en-US`
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{date-day-before d format="d. MMM, YYYY" lang="fi-FI"}}
@@ -209,20 +209,20 @@ The `format` supports
 
 The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47) language
 tag strings. More info about language tags can be found
-[here](https://www.w3.org/International/articles/language-tags/#region). E.g.
-"en-US" is a valid string.
+[W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
+E.g. "en-US" is a valid string.
 
 ### `money-amount`
 
 > Params:
-
+>
 > - money
-
+>
 > Hash:
-
+>
 > - lang: optional, default "en-US"
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{money-amount m lang="fi-FI"}}
@@ -239,22 +239,22 @@ Does not output the currency code or symbol, only the amount.
 
 The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47) language
 tag strings. More info about language tags can be found
-[here](https://www.w3.org/International/articles/language-tags/#region). E.g.
-"en-US" is a valid string.
+[W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
+E.g. "en-US" is a valid string.
 
 ### `number`
 
 > Params:
-
+>
 > - number
-
+>
 > Hash:
-
+>
 > - lang: optional, default "en-US"
 > - max-fraction-digits: optional
 > - min-fraction-digits: optional
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{number n lang="fi-FI"}}
@@ -265,16 +265,16 @@ Formats the given `number`. `lang`, `max-fraction-digits` and
 
 The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47) language
 tag strings. More info about language tags can be found
-[here](https://www.w3.org/International/articles/language-tags/#region). E.g.
-"en-US" is a valid string.
+[W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
+E.g. "en-US" is a valid string.
 
 ### `url-encode`
 
 > Params:
-
+>
 > - str
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{url-encode "Share & Tribe"}}
@@ -286,10 +286,10 @@ link to user profile with the user name in the link should be encoded.
 ### `form-encode`
 
 > Params:
-
+>
 > - str
 
-> Example usage:
+Example usage:
 
 ```handlebars
 {{form-encode "Share & Tribe"}}
@@ -320,14 +320,14 @@ To make changes to your transaction emails:
 
 1. Go to the
    [Flex Template for Web repository](https://github.com/sharetribe/flex-template-web/tree/master/ext/default-mail-templates)
-2. Copy the templates to your own developmet computer and do the edits you need
+2. Copy the templates to your own development computer and do the edits you need
 3. Send the templates to the
    [Sharetribe support](mailto:flex-support@sharetribe.com) in a zip-package.
    Please don't change the filenames.
 
 ### Transaction email context
 
-> Context for transaction emails:
+Context for transaction emails:
 
 ```json
 {
