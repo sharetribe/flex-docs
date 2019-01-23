@@ -31,6 +31,11 @@ yarn run config
 
 Remember to restart the application after editing the environment variable!
 
+**Note:** If you have already created listings before changing the currency,
+listings using old currency will not show the price when a new currency is in
+use. Currently, FTW doesn't support changing the currency of the listing so the
+price cannot be edited after the currency used in the application is changed.
+
 ## 2. Edit listing minimum price
 
 In the `config.js` file, search for variable `listingMinimumPriceSubUnits` and
