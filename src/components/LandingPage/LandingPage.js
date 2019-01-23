@@ -241,6 +241,12 @@ const LandingPage = props => {
               <SectionLink to="/references/ftw/">
                 <UiText id="LandingPage.references.ftw" />
               </SectionLink>
+              <SectionLink to="/references/email-templates/">
+                <UiText id="LandingPage.references.emailTemplates" />
+              </SectionLink>
+              <SectionLink to="/references/extended-data/">
+                <UiText id="LandingPage.references.extendedData" />
+              </SectionLink>
               <SectionLink to="/references/">
                 <UiText id="LandingPage.references.all" /> (
                 {articleCounts.references || 0})
