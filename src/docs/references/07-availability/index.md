@@ -12,24 +12,25 @@ when (and when not) their listings are available for booking. There are two
 different concepts related to availability management that can be used in
 combination or separately:
 
-* An **availability plan** can be defined for each listing. It comprises of
+- An **availability plan** can be defined for each listing. It comprises of
   general availability rules for each day of the week. For instance "available
   on Mondays and Thursdays".
-* An **availability exception** overrides the availability plan for a concrete
+- An **availability exception** overrides the availability plan for a concrete
   period of time. For instance "Available on 2018-11-25 and 2018-11-26", "not
   available on 2018-11-30".
 
 The availability plan and exceptions, together with booking information can be
 combined to determine if a particular time range is available for booking or
-not. For instance, the [`/timeslots/query` API
-endpoint](index.html#query-timeslots) returns availability information for
-future dates, taking into account the listing's availability plan, exceptions
-and bookings. In addition, your [transaction process](transaction-engine.html)
-can automatically prevent bookings for unavailable time ranges.
+not. For instance, the
+[`/timeslots/query` API endpoint](index.html#query-timeslots) returns
+availability information for future dates, taking into account the listing's
+availability plan, exceptions and bookings. In addition, your
+[transaction process](transaction-engine.html) can automatically prevent
+bookings for unavailable time ranges.
 
 ## Seats
 
-Both availability plans and availability exceptions use the concept of *seats*
+Both availability plans and availability exceptions use the concept of _seats_
 to define whether a particular time is available or not. Currently Flex allows
 the number of seats to be only 0 or 1, meaning unavailable and available for
 single booking, respectively. Each booking currently consumes exactly one seat.
@@ -52,10 +53,10 @@ Creating availability exceptions with arbitrary time is allowed, but such
 exceptions are subject to the following interpretation rules in the context of a
 listing with day-based availability plan:
 
-* if the availability exception covers only partially a given date in UTC time
+- if the availability exception covers only partially a given date in UTC time
   zone, the availability exception is interpreted as **covering the entire
   date**
-* if multiple availability exceptions cover partially a given UTC date, the
+- if multiple availability exceptions cover partially a given UTC date, the
   **minimum number of seats** of all these availability exceptions is taken as
   the resulting number of available seats for that date, prior to taking any
   existing bookings into account.
@@ -82,7 +83,7 @@ with 0 seats.
 
 See the reference documentation for the following API endpoints for details:
 
-* [`/own_listings/create`](index.html#create-listing)
-* [`/own_listings/update`](index.html#update-listing)
-* [`/availability_exceptions/*`](index.html#availability-exceptions)
-* [`/timeslots/query`](index.html#query-time-slots)
+- [`/own_listings/create`](index.html#create-listing)
+- [`/own_listings/update`](index.html#update-listing)
+- [`/availability_exceptions/*`](index.html#availability-exceptions)
+- [`/timeslots/query`](index.html#query-time-slots)
