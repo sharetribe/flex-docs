@@ -22,11 +22,12 @@ combination or separately:
 The availability plan and exceptions, together with booking information can be
 combined to determine if a particular time range is available for booking or
 not. For instance, the
-[`/timeslots/query` API endpoint](index.html#query-timeslots) returns
-availability information for future dates, taking into account the listing's
-availability plan, exceptions and bookings. In addition, your
-[transaction process](transaction-engine.html) can automatically prevent
-bookings for unavailable time ranges.
+[/timeslots/query](https://flex-docs.sharetribe.com/index.html#query-time-slots)
+API endpoint returns availability information for future dates, taking into
+account the listing's availability plan, exceptions and bookings. In addition,
+your
+[transaction process](https://flex-docs.sharetribe.com/transaction-engine.html)
+can automatically prevent bookings for unavailable time ranges.
 
 ## Seats
 
@@ -63,15 +64,19 @@ listing with day-based availability plan:
 
 #### Examples
 
-Example 1: An exception with start `2018-11-26T12:30:00.000+01` and end
+**Example 1:**
+
+An exception with start `2018-11-26T12:30:00.000+01` and end
 `2018-11-27T10:25:00.000+01` is interpreted as if it were from
 `2018-11-26T00:00:00.000Z` to `2018-11-28T00:00:00.000Z`
 
-Example 2: An exception with start `2018-11-26T00:30.000+01:00` and end
+**Example 2:**
+
+An exception with start `2018-11-26T00:30.000+01:00` and end
 `2018-11-27T00:15:00.000+01:00` is interpreted as if it were from
 `2018-11-25T00:00:00.000Z` to `2018-11-27T00:00:00.000Z`.
 
-Example 3:
+**Example 3:**
 
 Given exception 1 from `2017-11-26T10:00:00.000Z` to `2018-11-26T12:00:00.000Z`
 with 1 seat and exception 2 from `2017-11-26T10:00:00.000Z` to
@@ -83,7 +88,7 @@ with 0 seats.
 
 See the reference documentation for the following API endpoints for details:
 
-- [`/own_listings/create`](index.html#create-listing)
-- [`/own_listings/update`](index.html#update-listing)
-- [`/availability_exceptions/*`](index.html#availability-exceptions)
-- [`/timeslots/query`](index.html#query-time-slots)
+- [/own_listings/create](https://flex-docs.sharetribe.com/index.html#create-listing)
+- [/own_listings/update](https://flex-docs.sharetribe.com/index.html#update-listing)
+- [/availability_exceptions/\*](https://flex-docs.sharetribe.com/index.html#availability-exceptions)
+- [/timeslots/query](https://flex-docs.sharetribe.com/index.html#query-time-slots)
