@@ -106,6 +106,9 @@ There are three required variables for FTW to work correctly:
   If you don't set the Mapbox key, the map components won't work in the
   application.
 
+See the [FTW Environment configuration variables](/references/ftw-env/) for more
+information on the environment variables.
+
 ## Start the server
 
 Start the development server:
