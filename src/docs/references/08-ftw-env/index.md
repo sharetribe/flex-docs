@@ -22,9 +22,9 @@ For production deploys most should be set.
 
 - **`REACT_APP_GOOGLE_MAPS_API_KEY`**
 
-  See:
-  [Google Maps API key](https://github.com/sharetribe/flex-template-web/blob/master/docs/google-maps.md)
-  (Alternative map provider)
+  See the
+  [How to use Google Maps in FTW](/guides/how-to-use-google-maps-in-ftw/) guide
+  for more information.
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
@@ -69,13 +69,15 @@ For production deploys most should be set.
 
 - **`REACT_APP_SENTRY_DSN`**
 
-  See:
-  [Error logging with Sentry](https://github.com/sharetribe/flex-template-web/blob/master/docs/sentry.md)
+  See the
+  [How to set up Sentry to log errors in FTW](/guides/how-to-set-up-sentry-to-log-errors-in-ftw/)
+  guide for more information.
 
 - **`REACT_APP_CSP`**
 
-  See:
-  [Content Security Policy (CSP)](https://github.com/sharetribe/flex-template-web/blob/master/docs/content-security-policy.md)
+  See the
+  [How to set up Content Security Policy (CSP) for FTW](/guides/how-to-set-up-csp-for-ftw/)
+  guide for more information.
 
 - **`BASIC_AUTH_USERNAME`**
 
@@ -87,8 +89,9 @@ For production deploys most should be set.
 
 - **`REACT_APP_GOOGLE_ANALYTICS_ID`**
 
-  See:
-  [Google Analytics](https://github.com/sharetribe/flex-template-web/blob/master/docs/analytics.md)
+  See the
+  [How to set up Analytics for FTW](/guides/how-to-set-up-analytics-for-ftw/)
+  guide for more information.
 
 - **`REACT_APP_AVAILABILITY_ENABLED`**
 

@@ -1,7 +1,7 @@
 ---
 title: How to set up Mapbox for FTW
 slug: how-to-set-up-mapbox-for-ftw
-updated: 2019-01-10
+updated: 2019-01-25
 category: guides
 ingress:
   By default, Flex Template for Web (FTW) uses Mapbox for showing interactive
@@ -32,20 +32,55 @@ Gitignored `.env` file in the project root:
 REACT_APP_MAPBOX_ACCESS_TOKEN=my-access-token-here
 ```
 
-### Optional: check rare default configurations
+## 3. Setup common locations to reduce typing
+
+The location autocomplete input in the landing page and the topbar can be
+configured to have specific locations shown by default when the user focuses on
+the input and hasn't yet typed in any searches. This reduces the typing required
+for common searches and also reduces the need to use Mapbox geolocation API that
+much.
+
+This is enabled by default but it can be changed via the environment variable:
+
+```
+REACT_APP_DEFAULT_SEARCHES_ENABLED=true
+```
+
+The default locations are described in
+[src/default-location-searches.js](https://github.com/sharetribe/flex-template-web/blob/master/src/default-location-searches.js).
+
+The same environment variable also shows "current location" suggestion, which
+will make the browser to ask user's current location. This is a fast way to
+search listings nearby. You can specify whether to use the current location from
+[src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js).
+Search for variables: `suggestCurrentLocation` and
+`currentLocationBoundsDistance`.
+
+## Optional: check rare default configurations
 
 Mapbox geocoding API doesn't always return bounding boxes for locations. Without
 bounding box SearchMap component can't adjust zoom level right for that
 particular place. Therefore there are default bounding boxes defined to
 different place types in the Mapbox specific geocoder:
 
-[src/components/LocationAutocompleteInput/GeocoderMapbox.js](https://github.com/sharetribe/flex-template-web/tree/master/src/components/LocationAutocompleteInput/GeocoderMapbox.js).
+[src/components/LocationAutocompleteInput/GeocoderMapbox.js](https://github.com/sharetribe/flex-template-web/blob/master/src/components/LocationAutocompleteInput/GeocoderMapbox.js).
+
+## Optional: Restrict location autocomplete to specific country or countries
+
+If your marketplace works only in a specific country or countries it might be a
+good idea to limit the location autocomplete to those countries. You can specify
+whether to use the limitation from
+[src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js).
+Search for variable `countryLimit` and uncomment the line to make it active.
+Provide the country or countries in an array using
+[ISO 3166 alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format (eg.
+GB, US, FI). If there are multiple values, separate them with commas.
 
 ## Changing the map providers
 
 It is possible to use Google Map instead of the default map provider. Read more
-from the
-[Google Maps setup guide](https://github.com/sharetribe/flex-template-web/blob/master/docs/google-maps.md).
+in the [How to use Google Maps in FTW](/guides/how-to-use-google-maps-in-ftw/)
+guide.
 
 ### How to use other map providers
 
