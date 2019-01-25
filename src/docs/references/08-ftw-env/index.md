@@ -75,8 +75,9 @@ For production deploys most should be set.
 
 - **`REACT_APP_CSP`**
 
-  See:
-  [Content Security Policy (CSP)](https://github.com/sharetribe/flex-template-web/blob/master/docs/content-security-policy.md)
+  See the
+  [How to set up Content Security Policy (CSP) for FTW](/guides/how-to-set-up-csp-for-ftw/)
+  guide for more information.
 
 - **`BASIC_AUTH_USERNAME`**
 
