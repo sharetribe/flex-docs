@@ -22,9 +22,9 @@ For production deploys most should be set.
 
 - **`REACT_APP_GOOGLE_MAPS_API_KEY`**
 
-  See:
-  [Google Maps API key](https://github.com/sharetribe/flex-template-web/blob/master/docs/google-maps.md)
-  (Alternative map provider)
+  See the
+  [How to use Google Maps in FTW](/guides/how-to-use-google-maps-in-ftw/) guide
+  for more information.
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 

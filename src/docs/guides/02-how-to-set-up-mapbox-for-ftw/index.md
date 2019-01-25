@@ -44,8 +44,8 @@ different place types in the Mapbox specific geocoder:
 ## Changing the map providers
 
 It is possible to use Google Map instead of the default map provider. Read more
-from the
-[Google Maps setup guide](https://github.com/sharetribe/flex-template-web/blob/master/docs/google-maps.md).
+in the [How to use Google Maps in FTW](/guides/how-to-use-google-maps-in-ftw/)
+guide.
 
 ### How to use other map providers
 
