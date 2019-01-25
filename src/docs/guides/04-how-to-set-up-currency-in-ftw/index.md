@@ -1,6 +1,6 @@
 ---
 title: How to set up currency in FTW
-slug: how-to-set-up-currency-in-FTW
+slug: how-to-set-up-currency-in-ftw
 updated: 2019-01-23
 category: guides
 ingress:
