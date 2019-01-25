@@ -89,8 +89,9 @@ For production deploys most should be set.
 
 - **`REACT_APP_GOOGLE_ANALYTICS_ID`**
 
-  See:
-  [Google Analytics](https://github.com/sharetribe/flex-template-web/blob/master/docs/analytics.md)
+  See the
+  [How to set up Analytics for FTW](/guides/how-to-set-up-analytics-for-ftw/)
+  guide for more information.
 
 - **`REACT_APP_AVAILABILITY_ENABLED`**
 
