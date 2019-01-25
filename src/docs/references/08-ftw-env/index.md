@@ -69,8 +69,9 @@ For production deploys most should be set.
 
 - **`REACT_APP_SENTRY_DSN`**
 
-  See:
-  [Error logging with Sentry](https://github.com/sharetribe/flex-template-web/blob/master/docs/sentry.md)
+  See the
+  [How to set up Sentry to log errors in FTW](/guides/how-to-set-up-sentry-to-log-errors-in-ftw/)
+  guide for more information.
 
 - **`REACT_APP_CSP`**
 
