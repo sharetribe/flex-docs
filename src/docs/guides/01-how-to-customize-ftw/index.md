@@ -158,8 +158,8 @@ To start the test watcher, run
 
     yarn test
 
-See more in the
-[testing documentation](https://github.com/sharetribe/flex-template-web/blob/master/docs/testing.md).
+For more information, see the [How to test FTW](/guides/how-to-test-ftw/)
+documentation.
 
 ## Customization
 
