@@ -42,13 +42,16 @@ sdk.listings
   })
   .catch(res => {
     // An error occurred
-    console.log(`Request failed with status: ${res.status} ${res.statusText}`);
+    console.log(
+      `Request failed with status: ${res.status} ${res.statusText}`
+    );
   });
 ```
 
 ## Examples
 
-See [examples/](https://github.com/sharetribe/flex-sdk-js/tree/master/examples/)
+See
+[examples/](https://github.com/sharetribe/flex-sdk-js/tree/master/examples/)
 directory in GitHub repository.
 
 ## Changelog

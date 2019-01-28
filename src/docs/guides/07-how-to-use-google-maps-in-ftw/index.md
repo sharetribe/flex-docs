@@ -4,39 +4,42 @@ slug: how-to-use-google-maps-in-ftw
 updated: 2019-01-25
 category: guides
 ingress:
-  Flex Template for Web (FTW) offers out of the box support for Google Maps API
-  for showing a map and searching locations with search autocompletion. This
-  guide describes how to set up the API key for the API requests to work
-  properly.
+  Flex Template for Web (FTW) offers out of the box support for Google
+  Maps API for showing a map and searching locations with search
+  autocompletion. This guide describes how to set up the API key for the
+  API requests to work properly.
 published: true
 ---
 
-> Note: before making the change to Google Maps, you should consider if you are
-> OK with their current pricing. There's a pricing calculator available in their
-> [pricing page](https://cloud.google.com/maps-platform/pricing/). FTW's default
-> map provider is Mapbox, which is often cheaper. To use Mapbox, see the
-> [How to set up Mapbox for FTW](/guides/how-to-set-up-mapbox-for-ftw/) guide.
+> Note: before making the change to Google Maps, you should consider if
+> you are OK with their current pricing. There's a pricing calculator
+> available in their
+> [pricing page](https://cloud.google.com/maps-platform/pricing/). FTW's
+> default map provider is Mapbox, which is often cheaper. To use Mapbox,
+> see the
+> [How to set up Mapbox for FTW](/guides/how-to-set-up-mapbox-for-ftw/)
+> guide.
 
 ## 1. Generate a Google Maps API key
 
 Go to the
 [Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference),
-click on the "GET A KEY" button in the top bar, and follow the instructions. You
-can copy the given key to your application now.
+click on the "GET A KEY" button in the top bar, and follow the
+instructions. You can copy the given key to your application now.
 
 ## 2. Enable Google Places API Web Service
 
 Follow the instructions in the
 [Getting started](https://developers.google.com/maps/documentation/javascript/places#GetStarted)
-section of the Places library documentation to enable using the Google Places
-API Web Service. Also Maps Static API and Maps Javascript API need to be
-enabled.
+section of the Places library documentation to enable using the Google
+Places API Web Service. Also Maps Static API and Maps Javascript API
+need to be enabled.
 
 ## 3. Setup the application to use the API key
 
-The application uses the `REACT_APP_GOOGLE_MAPS_API_KEY` environment variable
-for the key value. For local development, you can add the variable in the
-Gitignored `.env` file in the project root:
+The application uses the `REACT_APP_GOOGLE_MAPS_API_KEY` environment
+variable for the key value. For local development, you can add the
+variable in the Gitignored `.env` file in the project root:
 
 ```
 REACT_APP_GOOGLE_MAPS_API_KEY=my-key-here
@@ -44,11 +47,11 @@ REACT_APP_GOOGLE_MAPS_API_KEY=my-key-here
 
 ## 4. Setup common locations to reduce typing
 
-The location autocomplete-input in the landing page and the topbar can be
-configured to have specific locations shown by default when the user focuses on
-the input and hasn't yet typed in any searches. This reduces the typing required
-for common searches and also reduces the need to use Google Map Places API that
-much.
+The location autocomplete-input in the landing page and the topbar can
+be configured to have specific locations shown by default when the user
+focuses on the input and hasn't yet typed in any searches. This reduces
+the typing required for common searches and also reduces the need to use
+Google Map Places API that much.
 
 To use default searches, another environment variable needs to be set:
 
@@ -59,22 +62,23 @@ REACT_APP_DEFAULT_SEARCHES_ENABLED=true
 The default locations have been described in file:
 [src/default-location-searches.js](https://github.com/sharetribe/flex-template-web/blob/master/src/default-location-searches.js).
 
-The same environment variable also shows "current location" suggestion, which
-will make the browser to ask user's current location. This is a fast way to
-search listings nearby. You can specify whether to use the current location from
+The same environment variable also shows "current location" suggestion,
+which will make the browser to ask user's current location. This is a
+fast way to search listings nearby. You can specify whether to use the
+current location from
 [src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js).
 Search for variables: `suggestCurrentLocation` and
 `currentLocationBoundsDistance`.
 
 ## 4. Change components: use Google Map versions instead of Mapbox
 
-If you wish to use Google Maps instead of Mapbox, you need to make some changes
-to FTW default setup.
+If you wish to use Google Maps instead of Mapbox, you need to make some
+changes to FTW default setup.
 
 ### 4.1. Include Google Map script instead of Mapbox scripts
 
-Mapbox related scripts can be removed from index.html and instead use Google Map
-script described in comments.
+Mapbox related scripts can be removed from index.html and instead use
+Google Map script described in comments.
 
 _public/index.html:_
 
@@ -96,8 +100,8 @@ _public/index.html:_
 
 ### 4.2. Searching with Google's geocoding API
 
-Location search aka LocationAutocompleteInput should use Google Map specific
-geocoder. The correct import is written to the comments of
+Location search aka LocationAutocompleteInput should use Google Map
+specific geocoder. The correct import is written to the comments of
 LocationAutocompleteInput component.
 
 _src/components/LocationAutocompleteInput/LocationAutocompleteInputImpl.js:_
@@ -110,11 +114,11 @@ import Geocoder, {
 // import Geocoder, { GeocoderAttribution, CURRENT_LOCATION_ID } from './GeocoderGoogleMaps';
 ```
 
-Furthermore, Google Map states in their terms of service that Google logo needs
-to be visible when using their geocoding service. It is available as a
-background image below the autocomplete predictions. However, there needs to be
-enough padding for that logo. You can change the padding through
-`marketplace.css`.
+Furthermore, Google Map states in their terms of service that Google
+logo needs to be visible when using their geocoding service. It is
+available as a background image below the autocomplete predictions.
+However, there needs to be enough padding for that logo. You can change
+the padding through `marketplace.css`.
 
 _src/marketplace.css:_
 
@@ -125,8 +129,8 @@ _src/marketplace.css:_
 
 ### 4.3. Show correct map on ListingPage (Map component)
 
-Google Map version (containing both static and dynamic maps) can be taken into
-use by importing correct map subcomponent.
+Google Map version (containing both static and dynamic maps) can be
+taken into use by importing correct map subcomponent.
 
 _src/components/Map/Map.js:_
 
@@ -137,8 +141,8 @@ import { StaticMap, DynamicMap, isMapsLibLoaded } from './MapboxMap';
 
 ### 4.4. SearchMap.js
 
-The most complex change is happening in SearchPage. First, you need to import
-`SearchMapWithMapbox` instead of `SearchMapWithGoogleMap`.
+The most complex change is happening in SearchPage. First, you need to
+import `SearchMapWithMapbox` instead of `SearchMapWithGoogleMap`.
 
 _src/components/SearchMap/SearchMap.js:_
 
@@ -168,10 +172,10 @@ import SearchMapWithGoogleMap, {
 } from './SearchMapWithGoogleMap';
 ```
 
-Then, in `render` method, you need to put `SearchMapWithGoogleMap` component
-into use by replacing `SearchMapWithMapbox` which is defined inside
-`ReusableMapContainer`. The component with correct props is already there in the
-comments:
+Then, in `render` method, you need to put `SearchMapWithGoogleMap`
+component into use by replacing `SearchMapWithMapbox` which is defined
+inside `ReusableMapContainer`. The component with correct props is
+already there in the comments:
 
 ```js
 // When changing from default map provider to Google Maps, you should use the following
@@ -198,5 +202,5 @@ comments:
 // />
 ```
 
-The only extra step is to make `mapRootClassName` property available from
-`this.props` at the beginning of the `render` method.
+The only extra step is to make `mapRootClassName` property available
+from `this.props` at the beginning of the `render` method.

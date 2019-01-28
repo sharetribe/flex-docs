@@ -7,7 +7,7 @@ ingress: Flex Template for Web documentation.
 published: true
 ---
 
-We are currently moving all the documentation to this documentation site.
-Meanwhile, you can access all the FTW documentation at:
+We are currently moving all the documentation to this documentation
+site. Meanwhile, you can access all the FTW documentation at:
 
 https://github.com/sharetribe/flex-template-web/tree/master/docs
