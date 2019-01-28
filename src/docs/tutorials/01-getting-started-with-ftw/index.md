@@ -143,5 +143,5 @@ In this tutorial, we used Flex Template for Web to make our own customized
 marketplace. As you see, FTW is a fully ready and polished marketplace
 application that is running on top of the Marketplace API. All of the
 customization is in your control, and you can change it to fit your marketplace
-needs. See our [Guides](/guides/) for instructions on how to do specific
-customizations.
+needs. To start customizing FTW as you own marketplace, see the
+[How to Customize FTW ](/guides/how-to-customize-ftw/) guide.

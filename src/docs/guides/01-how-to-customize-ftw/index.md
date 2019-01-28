@@ -1,19 +1,29 @@
 ---
 title: How to Customize FTW
 slug: how-to-customize-ftw
-updated: 2019-01-08
+updated: 2019-01-28
 category: guides
 ingress:
-  So you've decided to build your own marketplace using the Flex Template for
-  Web (FTW). That's awesome! This guide will help you in setting up your fork
-  and describes the general workflow.
-published: false
+  So you've decided to build your own marketplace using Flex Template for Web
+  (FTW). That's awesome! This guide will help you in setting up your fork and
+  describes the general workflow.
+published: true
 ---
 
-**NOTE:** If you cloned the repository like described in the Quick start section
-of the FTW project README file, you probably don't want to make the
-customizations in that project. Forking the repository is the recommended way to
-proceed. Follow this guide for instructions.
+**Note:** If you cloned the repository like described in the
+[Getting started with FTW](/tutorials/getting-started-with-ftw/) tutorial, you
+probably don't want to make the customizations in that project. Forking the
+repository is the recommended way to proceed. Follow this guide for
+instructions.
+
+## Getting started
+
+If you are new to Sharetribe Flex or FTW, we recommend going through the
+[Getting started](/background/getting-started/) articles:
+
+- [Introducing Flex](/background/introducing-flex/)
+- [What development skills are needed?](/background/development-skills/)
+- [Getting started with FTW](/tutorials/getting-started-with-ftw/)
 
 ## Requirements
 
@@ -21,26 +31,6 @@ Install required tools:
 
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/)
-
-## Technologies
-
-Depending on what you want to change in the template, various skills help in
-achieving your goal. Some of the basic customizations don't require specific
-coding skills, but many customisations become technically involved. We've tried
-to keep the technology setup as simple as possible, and frontend developers with
-experience in widely used tooling should feel comfortable right from the get-go.
-
-Here are some main technologies that the template uses:
-
-- JavaScript: programming language for the whole application
-- CSS: styling the user interface using
-  [CSS Modules](https://github.com/css-modules/css-modules)
-- [React](https://reactjs.org/): library for creating user interfaces with
-  components
-- [Redux](https://redux.js.org/): state and data flow handling
-- [Final Form](https://github.com/final-form/final-form): forms
-- [React Router](https://reacttraining.com/react-router/): routing
-- [Express](https://expressjs.com/): server
 
 ## Setup
 
@@ -55,23 +45,16 @@ documentation for instructions for forking a repository in GitHub.
 
 In the directory you want to create the project in:
 
-1. clone your fork
+```sh
+# clone your fork
+git clone git@github.com:YOUR_USERNAME/YOUR_FORK.git
 
-   ```sh
-   git clone git@github.com:YOUR_USERNAME/YOUR_FORK.git
-   ```
+# change to the cloned directory
+cd YOUR_FORK
 
-1. changed to the cloned directory
-
-   ```sh
-   cd YOUR_FORK
-   ```
-
-1. add the template as the upstream remote
-
-   ```sh
-   git remote add upstream git@github.com:sharetribe/flex-template-web.git
-   ```
+# add FTW repository as the upstream remote
+git remote add upstream git@github.com:sharetribe/flex-template-web.git
+```
 
 See also the
 [Configuring a remote for a fork](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
@@ -79,13 +62,13 @@ documentation.
 
 ### Pull in latest upstream changes
 
-If you want to update your local customization project with changes in the
-template, you should pull in changes from the upstream remote.
+If you want to update your local customization project with changes in FTW, you
+should pull in changes from the upstream remote.
 
-**NOTE:** Depending on the changes you've made to the template, this might be
-hard/impossible depending on what has changed in the template. You should mainly
-think of the template being the starting point of your customization, not
-something that is constantly updated.
+**Note:** Depending on the changes you've made to the template, this might be
+hard/impossible depending on what has changed. You should mainly think of FTW as
+being the starting point of your customization, not something that is constantly
+updated as you make changes to it.
 
 In the `master` branch (or in the branch you want to merge in the upstream
 changes):
@@ -107,33 +90,36 @@ changes):
 See also the [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
 documentation.
 
+## Installing dependecies
+
+In your project root, install dependencies:
+
+    yarn install
+
 ## Configuration
 
 There are some mandatory configuration, and some configuration that you most
 likely want to at least go through.
 
-To get started, first copy the config template:
+To get started, run:
 
-    cp .env-template .env
+    yarn run config
 
-The `.env` file is the place to add your local configuration. It is ignored in
-Git, so you'll have to add the corresponding configuration also to your server
-environment.
+This command will create `.env` file and guide you trough setting up the
+required environment variables. The `.env` file is the place to add your local
+configuration. It is ignored in Git, so you'll have to add the corresponding
+configuration also to your server environment.
 
 There are some mandatory configuration variables that are defined in the
 template. See the
-[Environment configuration variables](https://github.com/sharetribe/flex-template-web/blob/master/docs/env.md)
-documentation for more information.
+[FTW Environment configuration variables](/references/ftw-env/) reference for
+more information.
 
 See also the
 [src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js)
 file for more configuration options.
 
 ## Development
-
-In your project root, install dependencies:
-
-    yarn install
 
 To develop the application and to see changes live, start the frontend
 development server:
@@ -156,8 +142,11 @@ rendering setup. To develop the server rendering setup locally, run:
     yarn run dev-server
 
 This runs the frontend production build and starts the Express.js server in
-`server/index.js` that renders the application routes in the server. The server
-is automatically restarted when there are changes in the `server/` directory.
+[server/index.js](https://github.com/sharetribe/flex-template-web/blob/master/server/index.js)
+that renders the application routes in the server. The server is automatically
+restarted when there are changes in the
+[server/](https://github.com/sharetribe/flex-template-web/tree/master/server)
+directory.
 
 **Note:** this server does **not** pick up changes in the frontend application
 code. For that you need to build the client bundle by restarting the server
@@ -169,14 +158,13 @@ To start the test watcher, run
 
     yarn test
 
-See more in the
-[testing documentation](https://github.com/sharetribe/flex-template-web/blob/master/docs/testing.md).
+For more information, see the [How to test FTW](/guides/how-to-test-ftw/)
+documentation.
 
 ## Customization
 
 There are many things that you should change in the default template, and many
-more that you can change. Read
-[more about FTW](https://github.com/sharetribe/flex-template-web/blob/master/docs/README.md)
-and check the
+more that you can change. Read [more about FTW](/references/ftw/) and check the
 [Customization checklist](https://github.com/sharetribe/flex-template-web/blob/master/docs/customization-checklist.md)
-documentation too before publishing your site.
+documentation too before publishing your site. See also
+[all our guides](/guides/) for instructions for specific customizations.

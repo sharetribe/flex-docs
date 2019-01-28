@@ -216,6 +216,15 @@ const LandingPage = props => {
               <UiText id="LandingPage.guides.description" />
             </SectionDescription>
             <SectionLinks>
+              <SectionLink to="/guides/how-to-customize-ftw/">
+                <UiText id="LandingPage.guides.ftw" />
+              </SectionLink>
+              <SectionLink to="/guides/how-to-set-up-mapbox-for-ftw/">
+                <UiText id="LandingPage.guides.mapbox" />
+              </SectionLink>
+              <SectionLink to="/guides/how-to-set-up-analytics-for-ftw/">
+                <UiText id="LandingPage.guides.analytics" />
+              </SectionLink>
               <SectionLink to="/guides/">
                 <UiText id="LandingPage.guides.all" /> (
                 {articleCounts.guides || 0})
