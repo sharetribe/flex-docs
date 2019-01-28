@@ -1,7 +1,7 @@
 ---
 title: FTW customization checklist
 slug: ftw-customization-checklist
-updated: 2019-01-25
+updated: 2019-01-28
 category: guides
 ingress:
   This guide lists the important things to go through when customizing
