@@ -163,8 +163,9 @@ the translations for these texts can easily be changed and maintained in
 the component files themselves.
 
 More information about adding static content to the application can be
-found from
-[the static pages documentation](https://github.com/sharetribe/flex-template-web/blob/master/docs/static-pages.md).
+found in the
+[How to add static pages in FTW](/guides/how-to-add-static-pages-in-ftw/)
+guide.
 
 ## Changing the language
 
