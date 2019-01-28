@@ -166,4 +166,5 @@ documentation.
 There are many things that you should change in the default template, and many
 more that you can change. Read [more about FTW](/references/ftw/) and check the
 [Customization checklist](https://github.com/sharetribe/flex-template-web/blob/master/docs/customization-checklist.md)
-documentation too before publishing your site.
+documentation too before publishing your site. See also
+[all our guides](/guides/) for instructions for specific customizations.
