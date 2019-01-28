@@ -1,7 +1,12 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import { baselineSmall, baselineSpacing } from '../../config';
+import {
+  baselineSmall,
+  baselineLarge,
+  baselineSpacing,
+  baselineBreakpoint,
+} from '../../config';
 import { H4, H5, H6, P, Ul, Ol, Li, Hr, A, Strong, Em } from '../../components';
 
 require('prismjs/themes/prism-solarizedlight.css');
@@ -12,10 +17,15 @@ const HighlightStyle = createGlobalStyle`
     // Remove theme default styles
     pre[class*="language-"] {
       background-color: transparent;
-      margin: ${baselineSpacing}px 0;
-      padding: 0;
+      margin: ${baselineSmall}px 0;
+      padding: ${2 * baselineSmall}px 0;
       line-height: 24px;
       border-radius: 0;
+
+      @media (min-width: ${baselineBreakpoint}px) {
+        margin: ${baselineLarge}px 0;
+        padding: ${2 * baselineLarge}px 0;
+      }
     }
     code[class*="language-"] {
       line-height: 24px;
