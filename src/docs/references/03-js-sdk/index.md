@@ -7,7 +7,7 @@ ingress: JavaScript SDK documentation.
 published: true
 ---
 
-We are currently moving all the documentation to this documentation site.
-Meanwhile, you can access all the JS SDK documentation at:
+We are currently moving all the documentation to this documentation
+site. Meanwhile, you can access all the JS SDK documentation at:
 
 https://sharetribe.github.io/flex-sdk-js/
