@@ -247,9 +247,6 @@ const LandingPage = props => {
               <SectionLink to="/references/js-sdk/">
                 <UiText id="LandingPage.references.sdk" />
               </SectionLink>
-              <SectionLink to="/references/ftw/">
-                <UiText id="LandingPage.references.ftw" />
-              </SectionLink>
               <SectionLink to="/references/email-templates/">
                 <UiText id="LandingPage.references.emailTemplates" />
               </SectionLink>

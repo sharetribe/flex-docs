@@ -168,8 +168,7 @@ For more information, see the
 ## Customization
 
 There are many things that you should change in the default template,
-and many more that you can change. Read
-[more about FTW](/references/ftw/) and check the
-[Customization checklist](https://github.com/sharetribe/flex-template-web/blob/master/docs/customization-checklist.md)
+and many more that you can change. For more information, check the
+[FTW customization checklist](/guides/ftw-customization-checklist/)
 documentation too before publishing your site. See also
 [all our guides](/guides/) for instructions for specific customizations.
