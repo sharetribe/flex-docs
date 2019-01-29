@@ -275,8 +275,14 @@ const LandingPage = props => {
               <SectionLink to="/background/concepts/">
                 <UiText id="LandingPage.background.concepts" />
               </SectionLink>
-              <SectionLink to="/background/development-skills//">
+              <SectionLink to="/background/development-skills/">
                 <UiText id="LandingPage.background.developmentSkills" />
+              </SectionLink>
+              <SectionLink to="/background/features/">
+                <UiText id="LandingPage.background.features" />
+              </SectionLink>
+              <SectionLink to="/background/transaction-engine/">
+                <UiText id="LandingPage.background.transactionEngine" />
               </SectionLink>
               <SectionLink to="/background/">
                 <UiText id="LandingPage.background.all" /> (
