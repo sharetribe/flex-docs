@@ -121,7 +121,7 @@ Start the development server:
 yarn run dev
 ```
 
-This will automatically open http://localhost:3000 in a browser:
+This will automatically open `http://localhost:3000` in a browser:
 
 ![Default marketplace screenshot](./saunatime-default.png)
 
