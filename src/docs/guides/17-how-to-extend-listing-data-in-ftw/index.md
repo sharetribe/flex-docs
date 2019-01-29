@@ -535,4 +535,5 @@ And voilà, we have listing capacity presented in the listing page!
 
 To see how the capacity attribute can be used to filter search results,
 please refer to the
-[search filters documentation](https://github.com/sharetribe/flex-template-web/blob/master/docs/search-filters.md).
+[How to change search filters in FTW](/guides/how-to-change-search-filters-in-ftw/)
+guide.
