@@ -43,11 +43,11 @@ decisions.
 _Protected data_ is writable and readable by whoever has write access to
 a resource. It is also readable by marketplace operators. Protected data
 can be revealed to all transaction parties via the marketplace
-[transaction process](https://flex-docs.sharetribe.com/transaction-engine.html).
+[transaction process](/background/transaction-engine/).
 
 Protected data can be used to store information about listings or users
 that is only made visible to a customer at a specific point in the
-[transaction process](https://flex-docs.sharetribe.com/transaction-engine.html).
+[transaction process](/background/transaction-engine/).
 
 ### Private data
 
@@ -63,7 +63,7 @@ _Public metadata_ is writable by marketplace operators and can be read
 via all API endpoints returning the corresponding resource. Public
 metadata is supported for listings and can also be used as filters when
 searching via
-[listings/query](https://flex-docs.sharetribe.com/#query-listings).
+[/listings/query](https://flex-docs.sharetribe.com/#query-listings).
 
 Public metadata is useful for example marking listings as promoted or
 for linking listings with external services.
