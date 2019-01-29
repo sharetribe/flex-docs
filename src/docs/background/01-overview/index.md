@@ -35,14 +35,15 @@ Whether a web-based UI, a mobile application, or both, the user
 interface is the face of your solution. That's why you have total
 control over it.
 
-[Flex Template for Web](/references/ftw/) (FTW) is a web template that
-implements a full-feature marketplace experience powered by Flex. With
-Flex Template for Web, you can get started with your marketplace UI
-straight away: just download the latest FTW version and start
-customizing it for your marketplace. There are no limits to how much you
-can customize the template. You can freely design the user interactions
-and alter the look and feel of your marketplace. You can also integrate
-any web analytics or customer service solutions directly into your UI.
+[Flex Template for Web](/tutorials/getting-started-with-ftw/) (FTW) is a
+web template that implements a full-feature marketplace experience
+powered by Flex. With Flex Template for Web, you can get started with
+your marketplace UI straight away: just download the latest FTW version
+and start customizing it for your marketplace. There are no limits to
+how much you can customize the template. You can freely design the user
+interactions and alter the look and feel of your marketplace. You can
+also integrate any web analytics or customer service solutions directly
+into your UI.
 
 If you prefer to start from scratch, you can build your own UI on top of
 Flex's Marketplace API yourself.
@@ -89,6 +90,7 @@ fantastic marketplace UI. We handle everything else for you. If your
 Marketplace UI is a web-based UI, you also need to host it somewhere.
 
 If you're new to Flex, we recommend starting out with
-[Flex Template for Web](/references/ftw/). The template comes with
-instructions on how to easily set it up on your local machine, as well
-as how to host it in the [Heroku](https://heroku.com/) PaaS platform.
+[Flex Template for Web](/tutorials/getting-started-with-ftw/). The
+template comes with instructions on how to easily set it up on your
+local machine, as well as how to host it in the
+[Heroku](https://heroku.com/) PaaS platform.

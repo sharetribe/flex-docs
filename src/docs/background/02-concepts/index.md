@@ -36,7 +36,8 @@ can customize FTW for their own marketplace, or build their own UI from
 scratch. Flex Template for Web is built with Node.js + React/Redux.
 
 Information about using Flex Template for Web can be found in the
-[FTW documentation](/references/ftw/).
+[Getting started with FTW](/tutorials/getting-started-with-ftw/)
+tutorial.
 
 ### Integration
 
