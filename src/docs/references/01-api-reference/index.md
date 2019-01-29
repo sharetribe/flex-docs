@@ -3,7 +3,7 @@ title: API Reference
 slug: api
 updated: 2018-12-21
 category: references
-ingress: Sharetribe Flex API reference documentation.
+ingress: Sharetribe Marketplace API reference documentation.
 published: true
 ---
 
