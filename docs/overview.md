@@ -224,11 +224,11 @@ to enable preview builds for PRs and automatically deploying the
 `master` branch.
 
 Seeing the build logs and doing rollbacks etc. can be done in the
-`sharetribe-flex-docs` Netlify site:
+`sharetribe-flex-docs-site` Netlify site:
 
-https://app.netlify.com/sites/sharetribe-flex-docs
+https://app.netlify.com/sites/sharetribe-flex-docs-site
+
+The credentials are in the company password manager.
 
 See the [Netlify documentation](https://www.netlify.com/docs/) for more
 information on how to use Netlify for various tasks.
-
-TODO: document auth when shared account is enabled for the site
