@@ -79,26 +79,11 @@ const CrumbWrapper = styled.div`
 
 const Updated = styled(LastUpdated)`
   flex-shrink: 0;
-  color: ${props => props.theme.textColorSecondary};
-
-  // Font
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.07px;
-
-  // Offset baseline
-  top: -1px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    font-size: 14px;
-    line-height: 32px;
-    letter-spacing: -0.08px;
-
-    // Offset baseline
-    top: 3px;
-
-    padding-left: 7px;
+    margin-top: ${baselineLarge}px;
     margin-left: auto;
+    padding-left: 7px;
   }
 `;
 

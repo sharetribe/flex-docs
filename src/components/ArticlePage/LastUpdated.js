@@ -12,7 +12,7 @@ const LastUpdated = props => {
     day: 'numeric',
   });
   return (
-    <P {...rest} title={isoString}>
+    <P {...rest} title={isoString} tiny>
       <UiText id="ArticlePage.LastUpdated.lastUpdated" />
       <time dateTime={isoString}>{uiString}</time>
     </P>

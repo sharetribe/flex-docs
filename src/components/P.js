@@ -50,7 +50,7 @@ const smallStyles = css`
   letter-spacing: 0px;
 
   // Color
-  color: #5c676d; //${props => props.theme.textColor};
+  color: ${props => props.theme.textColorSmall};
 
   // Enable baseline offset
   position: relative;
@@ -59,6 +59,10 @@ const smallStyles = css`
   top: 0px;
 
   @media (min-width: ${baselineBreakpoint}px) {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+
     // Offset baseline
     top: -2px;
   }
@@ -80,7 +84,7 @@ const tinyStyles = css`
   letter-spacing: -0.07px;
 
   // Color
-  color: ${props => props.theme.textColorSecondary};
+  color: ${props => props.theme.textColorTiny};
 
   // Enable baseline offset
   position: relative;
@@ -92,6 +96,9 @@ const tinyStyles = css`
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0px;
+
+    // Offset baseline
+    top: -1px;
   }
 `;
 

@@ -1,18 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  baselineSmall,
-  baselineLarge,
-  baselineBreakpoint,
-  grid,
-} from '../config';
+import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
 import fonts from '../fonts';
 import { A } from '../components';
 
 const Wrapper = styled.footer`
-  background-color: ${props => props.theme.backgroundColorSecondary};
-  color: ${props => props.theme.textColorSecondary};
+  background-color: ${props => props.theme.footerBackgroundColor};
 `;
 
 const Content = styled.div`
@@ -21,31 +15,28 @@ const Content = styled.div`
   padding-left: ${props => props.theme.contentPaddingSmall}px;
   padding-right: ${props => props.theme.contentPaddingSmall}px;
 
-  margin-left: auto;
-  margin-right: auto;
-
-  max-width: ${props =>
-    props.theme.pageContentMaxWidth + 2 * grid.sideMargin}px;
-
   @media (min-width: ${baselineBreakpoint}px) {
-    padding-top: ${7 * baselineLarge}px;
-    padding-bottom: ${11 * baselineLarge}px;
-    padding-left: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
-    padding-right: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    padding-top: ${6 * baselineLarge}px;
+    padding-bottom: ${6 * baselineLarge}px;
+    padding-left: ${props => props.theme.contentPaddingLarge}px;
+    padding-right: ${props => props.theme.contentPaddingLarge}px;
   }
 `;
 
+// NOTE: custom font size
 const Copyright = styled.p`
   // Reset default styles
   margin: 0;
 
   // Font
   ${fonts['CircularStd-Book'].styles}
-  letter-spacing: -0.08px;
-  line-height: 24px;
+
   font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.08px;
+
+  // Color
+  color: ${props => props.theme.footerColor};
 
   // Enable baseline offset
   position: relative;
@@ -54,8 +45,9 @@ const Copyright = styled.p`
   top: 1px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    letter-spacing: -0.09px;
     font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
 
     // Offset baseline
     top: -2px;

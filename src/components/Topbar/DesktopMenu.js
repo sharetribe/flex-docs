@@ -21,8 +21,8 @@ const NavLi = styled(Li)`
 const bottomBorderWidth = 4;
 
 const activeLinkStyles = css`
-  color: ${props => props.theme.textColorActive};
-  border-bottom-color: ${props => props.theme.borderColorActive};
+  color: ${props => props.theme.topbarNavColorActive};
+  border-bottom-color: ${props => props.theme.topbarNavBorderColorActive};
 `;
 
 const NavLink = styled(Link).attrs({
