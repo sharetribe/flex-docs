@@ -55,6 +55,18 @@ const Lists = () => {
           <Li>Step c</Li>
         </Ol>
       </Example>
+      <Example>
+        <Ul withBullets>
+          <Li small>Small step a</Li>
+          <Li small>Small step a</Li>
+        </Ul>
+      </Example>
+      <Example>
+        <Ul withBullets>
+          <Li tiny>Tiny step a</Li>
+          <Li tiny>Tiny step a</Li>
+        </Ul>
+      </Example>
     </>
   );
 };
