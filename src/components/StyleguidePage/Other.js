@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SecondaryBox, Breadcrumb, P, Hr } from '../../components';
+import { Box, Breadcrumb, P, Hr } from '../../components';
 
 import Example from './Example';
 
@@ -8,9 +8,9 @@ const Other = () => {
   return (
     <>
       <Example>
-        <SecondaryBox>
-          <P>Secondary box</P>
-        </SecondaryBox>
+        <Box>
+          <P>Box with a paragraph.</P>
+        </Box>
       </Example>
       <Example>
         <Breadcrumb

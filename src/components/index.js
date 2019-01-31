@@ -17,7 +17,7 @@ export { default as A } from './A';
 export { default as Link } from './Link';
 export { default as Ingress } from './Ingress';
 export { default as Footer } from './Footer';
-export { default as SecondaryBox } from './SecondaryBox';
+export { default as Box } from './Box';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as UiText } from './UiText';
 export { default as GlobalStyle } from './GlobalStyle';

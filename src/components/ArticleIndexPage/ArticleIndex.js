@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineLarge, baselineBreakpoint, grid } from '../../config';
-import { H5, P, Ul, Link, UiText, SecondaryBox } from '../../components';
+import { H5, P, Ul, Link, UiText, Box } from '../../components';
 
 const Grid = styled(Ul)`
   display: grid;
@@ -38,7 +38,7 @@ const GridItem = props => {
   const { pathPrefix, title, slug, ingress } = props;
   const path = `${pathPrefix}${slug}/`;
   return (
-    <SecondaryBox as="li">
+    <Box as="li">
       <H5 as="h2">
         <Link neutral to={path}>
           {title}
@@ -49,7 +49,7 @@ const GridItem = props => {
           {ingress}
         </Link>
       </Paragraph>
-    </SecondaryBox>
+    </Box>
   );
 };
 

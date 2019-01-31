@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
 
-const SecondaryBox = styled.section`
+const Box = styled.section`
   padding-top: ${3 * baselineSmall}px;
   padding-bottom: ${5 * baselineSmall}px;
   padding-left: ${props => props.theme.contentPaddingSmall}px;
@@ -20,4 +20,4 @@ const SecondaryBox = styled.section`
   }
 `;
 
-export default SecondaryBox;
+export default Box;

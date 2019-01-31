@@ -9,7 +9,7 @@ import {
   Hr,
   MainLayout,
   Breadcrumb,
-  SecondaryBox,
+  Box,
   UiText,
 } from '../../components';
 import LastUpdated from './LastUpdated';
@@ -36,7 +36,7 @@ const SideColumn = styled.aside`
   }
 `;
 
-const SideNavigation = styled(SecondaryBox)`
+const SideNavigation = styled(Box)`
   // SideColumn is hidden in small viewport
 
   @media (min-width: ${baselineBreakpoint}px) {

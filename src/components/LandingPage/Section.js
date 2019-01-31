@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { baselineSmall, baselineLarge, baselineBreakpoint } from '../../config';
 import fonts from '../../fonts';
-import { P, Ul, H5, Link, SecondaryBox } from '../../components';
+import { P, Ul, H5, Link, Box } from '../../components';
 
 export const SectionHeadingLink = props => {
   const { to, children } = props;
@@ -94,6 +94,6 @@ export const SectionLinks = styled(Ul)`
   }
 `;
 
-export const Section = SecondaryBox;
+export const Section = Box;
 
 export default Section;
