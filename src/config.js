@@ -61,7 +61,7 @@ exports.themeLight = {
 
   // Heading color
   headingColor: '#4a4a4a',
-  headingColorSecondary: '#4a4a4a',
+  headingColorSecondary: '#9aa6ac',
 
   // Horizontal Hr line color
   lineColor: '#ccc',

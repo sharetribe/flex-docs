@@ -14,15 +14,15 @@ const h6Styles = css`
   position: relative;
 
   // Color
-  color: ${props => props.theme.headingColor};
+  color: ${props => props.theme.headingColorSecondary};
 
-  font-size: 10px;
+  font-size: 12px;
   line-height: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
 
   // Offset baseline
-  top: 0px;
+  top: -1px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 12px;

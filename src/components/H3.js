@@ -10,26 +10,26 @@ const h3Styles = css`
   // Font
   ${fonts['CircularStd-Bold'].styles}
 
-  // Enable baseline offset
-  position: relative;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.3px;
 
   // Color
   color: ${props => props.theme.headingColor};
 
-  font-size: 26px;
-  line-height: 36px;
-  letter-spacing: -0.65px;
+  // Enable baseline offset
+  position: relative;
 
   // Offset baseline
-  top: 3px;
+  top: 0px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 36px;
-    line-height: 48px;
-    letter-spacing: -0.8px;
+    line-height: 40px;
+    letter-spacing: -0.7px;
 
     // Offset baseline
-    top: 3px;
+    top: -1px;
   }
 `;
 
