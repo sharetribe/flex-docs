@@ -42,4 +42,5 @@ export { default as NotFoundPage } from './NotFoundPage';
 export {
   default as ThanksForTheFeedbackPage,
 } from './ThanksForTheFeedbackPage';
+export { default as StyleguidePage } from './StyleguidePage/StyleguidePage';
 export { default as Root } from './Root';
