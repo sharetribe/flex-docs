@@ -106,8 +106,6 @@ const Paragraph = styled(P).attrs({
 `;
 
 const CollectionsHeading = styled(H6)`
-  color: #a2a6a9;
-
   margin-top: ${4 * baselineSmall}px;
   margin-left: ${props => props.theme.contentPaddingSmall}px;
   margin-right: ${props => props.theme.contentPaddingSmall}px;
@@ -138,8 +136,6 @@ const GettingStartedSection = styled(Section)`
 `;
 
 const CategoriesHeading = styled(H6)`
-  color: #a2a6a9;
-
   margin-top: ${5 * baselineSmall}px;
   margin-left: ${props => props.theme.contentPaddingSmall}px;
   margin-right: ${props => props.theme.contentPaddingSmall}px;
