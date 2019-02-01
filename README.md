@@ -5,7 +5,7 @@ documentation site a.k.a. Flex Docs.
 
 The site is running at: https://www.sharetribe.com/docs/
 
-# Quick start
+## Quick start
 
 Clone the repository:
 
@@ -33,9 +33,15 @@ the Gatsby cache directory:
 
     rm -rf .cache
 
-# Documentation
+## Documentation
 
 For more information, see the [internal documentation](docs/README.md).
 
 The documentation contains information for both writing articles for
 the site as well as developing the site itself.
+
+## License
+
+This project is licensed under the terms of Apache License, Version 2.0.
+
+See the [LICENSE](LICENSE) file.
