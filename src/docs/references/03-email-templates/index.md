@@ -426,7 +426,7 @@ when customizing the templates. What properties are available is email
 specific and the following data structure describes what resources are
 available for each email template.
 
-#### How to read the data structure
+### How to read the data structure
 
 - The type and content of the property can be deducted from the value of
   the property. E.g.
