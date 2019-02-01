@@ -5,7 +5,7 @@ import { baselineBreakpoint, baselineSmall, baselineLarge } from '../../config';
 import {
   Ingress,
   H1,
-  P,
+  H6,
   Hr,
   MainLayout,
   Breadcrumb,
@@ -73,7 +73,7 @@ const CrumbWrapper = styled.div`
 
   @media (min-width: ${baselineBreakpoint}px) {
     flex-direction: row;
-    margin-top: ${10 * baselineLarge}px;
+    margin-top: ${9 * baselineLarge}px;
   }
 `;
 
@@ -130,13 +130,9 @@ const Markdown = styled(MarkdownHtml)`
   }
 `;
 
-const SideNavTitle = styled(P)`
-  // Side navigation hidden on small viewport
-
+const SideToc = styled(Toc)`
   @media (min-width: ${baselineBreakpoint}px) {
-    font-size: 16px;
-    line-height: 32px;
-    letter-spacing: -0.09px;
+    margin-top: ${2 * baselineLarge}px;
   }
 `;
 
@@ -154,7 +150,7 @@ const ArticlePage = props => {
     headline: title,
     description: ingress,
 
-    // TODO: image is recommended, but we don't have a way to dig it at the moment
+    // NOTE: image is recommended, but we don't have a way to dig it at the moment
     //
     // image: [
     //   'http://example.com/image.jpg'
@@ -166,8 +162,11 @@ const ArticlePage = props => {
       <ColumnLayout>
         <SideColumn>
           <SideNavigation as="nav">
-            <SideNavTitle>{title}</SideNavTitle>
-            <Toc path={`/${category}/${slug}/`} headings={tableOfContents} />
+            <H6 as="p">{title}</H6>
+            <SideToc
+              path={`/${category}/${slug}/`}
+              headings={tableOfContents}
+            />
           </SideNavigation>
         </SideColumn>
         <MainColumn>

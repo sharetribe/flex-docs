@@ -5,8 +5,11 @@ import { StaticQuery, graphql, withPrefix } from 'gatsby';
 import { baselineBreakpoint } from '../config';
 import { Ol, Li, Link } from '../components';
 
+// NOTE: custom font size
 const Item = styled(Li)`
   display: inline;
+
+  color: ${props => props.theme.textColorSecondary};
 
   // Show a separator character between items
   :not(:last-child) {

@@ -4,13 +4,18 @@ import styled from 'styled-components';
 import { baselineBreakpoint } from '../../config';
 import { Ul, Li, Link } from '../../components';
 
-const TocLi = styled(Li)`
+// NOTE: custom line height
+const TocLi = styled(Li).attrs({
+  small: true,
+})`
   // Side navigation hidden on small viewport
 
   @media (min-width: ${baselineBreakpoint}px) {
-    font-size: 16px;
     line-height: 32px;
-    letter-spacing: -0.09px;
+
+    // Offset baseline
+    top: 2px;
+
     color: ${props => props.theme.linkColor};
 
     :hover {

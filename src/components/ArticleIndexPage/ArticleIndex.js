@@ -21,13 +21,23 @@ const Grid = styled(Ul)`
   }
 `;
 
-const Paragraph = styled(P)`
+// NOTE: custom font size
+const Paragraph = styled(P).attrs({
+  small: true,
+})`
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.08px;
+
+  // Offset baseline
+  top: 1px;
+
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${2 * baselineLarge}px;
 
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: -0.09px;
+    letter-spacing: 0px;
 
     // Offset baseline
     top: -2px;

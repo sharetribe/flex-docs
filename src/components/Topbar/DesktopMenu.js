@@ -9,12 +9,14 @@ const NavUl = styled(Ul)`
   justify-content: space-around;
 `;
 
+// NOTE: custom font size
 const NavLi = styled(Li)`
   flex-shrink: 0;
   position: static;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 15px;
+    letter-spacing: 0px;
   }
 `;
 

@@ -72,7 +72,10 @@ const IntroBr = styled.br`
   }
 `;
 
-const Paragraph = styled(P)`
+// NOTE: custom font size
+const Paragraph = styled(P).attrs({
+  small: true,
+})`
   margin-top: ${3 * baselineSmall}px;
   margin-bottom: ${11 * baselineSmall}px;
   margin-left: ${props => props.theme.contentPaddingSmall}px;
@@ -95,7 +98,7 @@ const Paragraph = styled(P)`
 
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: -0.09px;
+    letter-spacing: 0px;
 
     // Offset baseline
     top: -2px;
