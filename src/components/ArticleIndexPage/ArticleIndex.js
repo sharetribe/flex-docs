@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineLarge, baselineBreakpoint, grid } from '../../config';
-import { H5, P, Ul, Link, UiText, SecondaryBox } from '../../components';
+import { H5, P, Ul, Link, UiText, Box } from '../../components';
 
 const Grid = styled(Ul)`
   display: grid;
@@ -21,13 +21,23 @@ const Grid = styled(Ul)`
   }
 `;
 
-const Paragraph = styled(P)`
+// NOTE: custom font size
+const Paragraph = styled(P).attrs({
+  small: true,
+})`
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.08px;
+
+  // Offset baseline
+  top: 1px;
+
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${2 * baselineLarge}px;
 
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: -0.09px;
+    letter-spacing: 0px;
 
     // Offset baseline
     top: -2px;
@@ -38,7 +48,7 @@ const GridItem = props => {
   const { pathPrefix, title, slug, ingress } = props;
   const path = `${pathPrefix}${slug}/`;
   return (
-    <SecondaryBox as="li">
+    <Box as="li">
       <H5 as="h2">
         <Link neutral to={path}>
           {title}
@@ -49,7 +59,7 @@ const GridItem = props => {
           {ingress}
         </Link>
       </Paragraph>
-    </SecondaryBox>
+    </Box>
   );
 };
 

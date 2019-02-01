@@ -1,39 +1,15 @@
-import styled, { css } from 'styled-components';
+import React from 'react';
 
-import fonts from '../fonts';
-import { baselineBreakpoint } from '../config';
+import { P } from '../components';
 
-const styles = css`
-  // Font
-  ${fonts['CircularStd-Book'].styles}
-  line-height: 24px;
-  font-size: 16px;
-  letter-spacing: -0.09px;
-
-  // Color
-  color: ${props =>
-    props.secondary ? props.theme.textColorSecondary : props.theme.textColor};
-
-  // Enable baseline offset
-  position: relative;
-
-  // Offset baseline
-  top: 0px;
-
-  @media (min-width: ${baselineBreakpoint}px) {
-    // Font
-    font-size: 18px;
-    line-height: 32px;
-    letter-spacing: -0.1px;
-
-    // Offset baseline
-    top: 2px;
-  }
-`;
-
-const Li = styled.li`
-  ${styles}
-`;
-Li.styles = styles;
+/**
+ * List item with normal text: `<Li>Lorem ipsum</Li>`
+ * List item with small text:  `<Li small>Lorem ipsum</Li>`
+ * List item with tiny text:   `<Li tiny>Lorem ipsum</Li>`
+ */
+const Li = props => {
+  return <P {...props} as="li" />;
+};
+Li.styles = P.styles;
 
 export default Li;

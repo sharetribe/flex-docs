@@ -16,12 +16,12 @@ const h4Styles = css`
   // Color
   color: ${props => props.theme.headingColor};
 
-  font-size: 26px;
-  line-height: 36px;
-  letter-spacing: -0.65px;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.3px;
 
   // Offset baseline
-  top: 3px;
+  top: 0px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 30px;

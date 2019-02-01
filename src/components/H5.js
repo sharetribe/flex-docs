@@ -17,11 +17,11 @@ const h5Styles = css`
   color: ${props => props.theme.headingColor};
 
   font-size: 20px;
-  line-height: 36px;
-  letter-spacing: -0.33px;
+  line-height: 30px;
+  letter-spacing: -0.25px;
 
   // Offset baseline
-  top: -1px;
+  top: 2px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 24px;

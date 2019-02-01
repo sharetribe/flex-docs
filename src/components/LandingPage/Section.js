@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineSmall, baselineLarge, baselineBreakpoint } from '../../config';
-import fonts from '../../fonts';
-import { P, Ul, H5, Link, SecondaryBox } from '../../components';
+import { P, Ul, Li, H5, Link, Box } from '../../components';
 
 export const SectionHeadingLink = props => {
   const { to, children } = props;
@@ -16,13 +15,25 @@ export const SectionHeadingLink = props => {
   );
 };
 
-export const SectionDescription = styled(P)`
+// NOTE: custom font size
+export const SectionDescription = styled(P).attrs({
+  small: true,
+})`
+  margin-top: ${baselineSmall}px;
+
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.08px;
+
+  // Offset baseline
+  top: 1px;
+
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${2 * baselineLarge}px;
 
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: -0.09px;
+    letter-spacing: 0px;
 
     // Offset baseline
     top: -2px;
@@ -50,24 +61,17 @@ const Arrow = styled(ArrowIcon)`
   margin-right: 8px;
 `;
 
-const SectionLi = styled.li`
-  // Font
-  ${fonts['CircularStd-Book'].styles}
+// NOTE: custom line height
+const SectionLi = styled(Li).attrs({
+  small: true,
+})`
   line-height: 30px;
-  font-size: 16px;
-  letter-spacing: -0.09px;
-
-  // Enable baseline offset
-  position: relative;
 
   // Offset baseline
   top: 3px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    // Font
-    font-size: 16px;
     line-height: 32px;
-    letter-spacing: -0.09px;
 
     // Offset baseline
     top: 2px;
@@ -94,6 +98,6 @@ export const SectionLinks = styled(Ul)`
   }
 `;
 
-export const Section = SecondaryBox;
+export const Section = Box;
 
 export default Section;

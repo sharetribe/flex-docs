@@ -161,7 +161,7 @@ Read more from Heroku docs:
 In the _Settings tab_ you can manage your application's information, set
 it to maintenance mode and delete the app if needed.
 
-#### Update enviroment variables
+### Update enviroment variables
 
 In the _Settings tab_ click _"Reveal Config Vars"_ button to see the
 applications environment variables. Click edit to update them or add new
@@ -172,7 +172,7 @@ ones if needed.
 
 ![Heroku settings](./heroku-config-vars.png)
 
-#### Set up domains and certificates
+### Set up domains and certificates
 
 Heroku manages SSL certificates automatically for new applications. You
 can change your domain and SSH settings in the _Settings tab_.

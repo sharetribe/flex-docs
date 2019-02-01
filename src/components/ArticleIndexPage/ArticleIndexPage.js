@@ -29,18 +29,11 @@ const Heading = styled(H1)`
   margin-right: ${props => props.theme.contentPaddingSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    font-size: 48px;
-    line-height: 64px;
-    letter-spacing: -1.2px;
-
     margin-top: ${14 * baselineLarge}px;
     margin-left: ${props =>
       props.theme.contentPaddingLarge + grid.sideMargin}px;
     margin-right: ${props =>
       props.theme.contentPaddingLarge + grid.sideMargin}px;
-
-    // Offset baseline
-    top: -1px;
   }
 `;
 

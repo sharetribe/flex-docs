@@ -7,8 +7,7 @@ import {
   baselineBreakpoint,
   grid,
 } from '../../config';
-import { H6, P, A, Ul, MainLayout, UiText } from '../../components';
-import { IntroHeading, IntroDescription } from './Intro';
+import { H1, H6, P, A, Ul, MainLayout, UiText } from '../../components';
 import Section, {
   SectionHeadingLink,
   SectionDescription,
@@ -21,6 +20,34 @@ const Content = styled.div`
     props.theme.pageContentMaxWidth + 2 * grid.sideMargin}px;
   margin-left: auto;
   margin-right: auto;
+`;
+
+export const IntroHeading = styled(H1)`
+  margin-top: ${7 * baselineSmall}px;
+  margin-left: ${props => props.theme.contentPaddingSmall}px;
+  margin-right: ${props => props.theme.contentPaddingSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${14 * baselineLarge}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-right: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+  }
+`;
+
+export const IntroDescription = styled(P)`
+  margin-top: ${3 * baselineSmall}px;
+  margin-left: ${props => props.theme.contentPaddingSmall}px;
+  margin-right: ${props => props.theme.contentPaddingSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${2 * baselineLarge}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-right: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+  }
 `;
 
 const HeadingBr = styled.br`
@@ -45,7 +72,10 @@ const IntroBr = styled.br`
   }
 `;
 
-const Paragraph = styled(P)`
+// NOTE: custom font size
+const Paragraph = styled(P).attrs({
+  small: true,
+})`
   margin-top: ${3 * baselineSmall}px;
   margin-bottom: ${11 * baselineSmall}px;
   margin-left: ${props => props.theme.contentPaddingSmall}px;
@@ -68,7 +98,7 @@ const Paragraph = styled(P)`
 
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: -0.09px;
+    letter-spacing: 0px;
 
     // Offset baseline
     top: -2px;
@@ -76,8 +106,6 @@ const Paragraph = styled(P)`
 `;
 
 const CollectionsHeading = styled(H6)`
-  color: #a2a6a9;
-
   margin-top: ${4 * baselineSmall}px;
   margin-left: ${props => props.theme.contentPaddingSmall}px;
   margin-right: ${props => props.theme.contentPaddingSmall}px;
@@ -108,8 +136,6 @@ const GettingStartedSection = styled(Section)`
 `;
 
 const CategoriesHeading = styled(H6)`
-  color: #a2a6a9;
-
   margin-top: ${5 * baselineSmall}px;
   margin-left: ${props => props.theme.contentPaddingSmall}px;
   margin-right: ${props => props.theme.contentPaddingSmall}px;

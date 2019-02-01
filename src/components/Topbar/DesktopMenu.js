@@ -9,20 +9,22 @@ const NavUl = styled(Ul)`
   justify-content: space-around;
 `;
 
+// NOTE: custom font size
 const NavLi = styled(Li)`
   flex-shrink: 0;
   position: static;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 15px;
+    letter-spacing: 0px;
   }
 `;
 
 const bottomBorderWidth = 4;
 
 const activeLinkStyles = css`
-  color: ${props => props.theme.textColorActive};
-  border-bottom-color: ${props => props.theme.borderColorActive};
+  color: ${props => props.theme.topbarNavColorActive};
+  border-bottom-color: ${props => props.theme.topbarNavBorderColorActive};
 `;
 
 const NavLink = styled(Link).attrs({
