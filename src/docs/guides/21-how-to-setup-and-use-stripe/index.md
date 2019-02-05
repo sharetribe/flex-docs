@@ -15,14 +15,14 @@ published: true
 
 [Register to Stripe](https://dashboard.stripe.com/register). After
 filling the form you will be asked the question _"How do you want to get
-started with Stripe?"_. You can click _"Skip for now"_ link in the
+started with Stripe?"_. You can click _"Skip for now"_ link at the
 bottom of the page to get directly to Stripe dashboard. Remember to
 confirm your email address after the registration.
 
 As you will receive money from your users via your Stripe account, you
 have to provide some details such as your address and your bank account.
 In the Stripe dashboard, click the Activate your account link in the
-left menu and complete all the fields according to the instructions. The
+left menu and fill in all the fields according to the instructions. The
 activation form varies based on your country.
 
 ![Activate Stripe account](./activate-account.png)
@@ -32,10 +32,10 @@ activation form varies based on your country.
 Sharetribe uses the Stripe Connect features with
 [custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 
-- Click the Connect left menu item.
-- Click the Get started button.
+- Click the _"Connect"_ left menu item.
+- Click the _"Get started"_ button.
 - Now you should see your Connect dashboard. From the left sidebar, go
-  to Connect / Settings
+  to _"Connect"_ → _"Settings"_
 - Make sure that _"Custom accounts are available for your platform."_ is
   shown.
 
@@ -43,13 +43,14 @@ Sharetribe uses the Stripe Connect features with
 
 ## 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
-- Click _"Developers"_ → _"API Keys"_ in the left menu item.
+- Click the _"Developers"_ left menu item and go to _"Developers"_ →
+  _"API Keys"_.
 - In the section _"Standard API keys"_ you will see two keys:
   publishable key and secret key. The publishable key (with prefix
   **pk**) is one used in frontend application e.g. FTW and secret key
   (with prefix **sk**) is the one you need to add to Console. If you
   want to use test data make sure the value of the key is eg.
-  **pk*test***\<somethinghere\> and not **pk*live***\<somethinghere\>
+  **pk_test**\<somethinghere\> and not **pk_live**\<somethinghere\>
 
 **Note:** If you want to use test data in development make sure that
 "View test data" toggle is on. This way no real money will be used. In
@@ -59,39 +60,76 @@ production make sure that the toggle is off.
 
 ## 4. Add your Stripe secret API key to Console
 
-- Log in to Console and go to "Build" -> "Payments"
-- In the section "Stripe configuration" paste your secret key to "Stripe
-  secret key" field and save the changes
+- Log in to Console and go to _"Build"_ → _"Payments"_
+- In the section _"Stripe configuration"_ paste your secret key to
+  _"Stripe secret key"_ field and save the changes.
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
 
 ## 5. Add you Stripe publishable key to FTW
 
-In your client app, you need to use Stripe publishable key, when you create accountTokens or call other Stripe API endpoints. If you are using Flex Template for Web, calls to Stripe API are already there, but you need to add the Stripe publishable key to your `.env` file. You can do this by running
-`yarn run config` or editing the file directly in a text editor.
+In your client app, you need to use Stripe publishable key, when you
+create accountTokens or call other Stripe API endpoints. If you are
+using Flex Template for Web, calls to Stripe API are already there, but
+you need to add the Stripe publishable key to your `.env` file. You can
+do this by running `yarn run config` or editing the file directly in a
+text editor.
 
 Read more about configurations in FTW from
 [Getting started with FTW](/getting-started-with-ftw/#configuration)
 
-## 6. Testing the payments
+## 6. Test the Stripe account
 
 **Note:** When testing Stripe, make sure you are using the test API
-keys. To ensure that make sure the keys have prefix **sk_test** and **pk_test**.
-When checking the Stripe dashboard, make sure "View test data" toggle is
-on!
+keys. To ensure that make sure the keys have prefix **sk_test** and
+**pk_test**. When checking the Stripe dashboard, make sure "View test
+data" toggle is on!
 
-Stripe provides test numbers for bank accounts, credit cards etc.
-Specific numbers are also provided for triggering different conditions
-(e.g. card declined or expired) so testing different error scenarios is
-also possible. See Stripe documentation for
-[testing with Connect](https://stripe.com/docs/connect/testing).
+### Test checkout
 
-## 7. Optional: Adding new country to supported Stripe countries
+Stripe provides various
+[test card numbers](https://stripe.com/docs/testing#cards) for testing
+the checkout. There are also test numbers for
+[specific responses and errors](https://stripe.com/docs/testing#cards-responses)
+so e.g. testing different error scenarios is possible.
+
+![Checkout](checkout.png)
+
+### Test adding payout details
+
+Every provider needs to add payout details to their account before they
+are able to publish listings. Stripe provides test values for
+[identity verification](https://stripe.com/docs/connect/testing#identity-verification)
+and [bank numbers](https://stripe.com/docs/connect/testing#payouts). In
+FTW you can add payout details for the account in _"Account Settings"_ →
+_"Payments"_. After filling the form you should see a new account when
+you go to Stripe Dashboard and to _"Connect"_ → _"Accounts"_.
+
+**Note:** After payout details are saved they can not be edited directly
+from FTW so you might need to create multiple accounts for testing
+purposes.
+
+The form of the bank number and other required information depends on
+which country you have chosen. For example, most of the countries in
+Europe use IBAN form which is asked in one field. However, for example
+in Hong Kong clearing code, branch code and bank account number are all
+needed.
+
+![Hong Kong bank number](bank-number-hk.png)
+
+It's also good to know that in FTW these are all separate fields but in
+Stripe clearing code and branch code are mapped together as routing
+number.
+
+![Stripe bank numbers](stripe-bank-numbers.png)
+
+## 7. Advanced: Adding new country to supported Stripe countries
 
 By default FTW already supports most of the countries that are available
-when using Stripe custom accounts (linkki Stripen docs). If you are not
-sure if your country is already supported, please contact to Stripe
-support before proceeding.
+when using
+[Stripe custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
+If you are not sure if your country is already supported, please contact
+to Stripe support before proceeding.
 
 1. Add a new country to `stripe-config.js` file (use other country
    configurations as an example). See Stripe documentation for
