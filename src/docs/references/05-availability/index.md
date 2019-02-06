@@ -25,8 +25,9 @@ booking or not. For instance, the
 [/timeslots/query](https://flex-docs.sharetribe.com/index.html#query-time-slots)
 API endpoint returns availability information for future dates, taking
 into account the listing's availability plan, exceptions and bookings.
-In addition, your [transaction process](/background/transaction-engine/)
-can automatically prevent bookings for unavailable time ranges.
+In addition, your
+[transaction process](/background/transaction-process/) can
+automatically prevent bookings for unavailable time ranges.
 
 ## Seats
 

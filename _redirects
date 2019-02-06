@@ -10,6 +10,7 @@
 # Article title/slug renames and deletions
 /docs/background/overview/  /docs/background/introducing-flex/
 /docs/references/ftw/  /docs/tutorials/getting-started-with-ftw/
+/docs/background/transaction-engine/  /docs/background/transaction-process/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

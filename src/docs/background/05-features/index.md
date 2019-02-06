@@ -25,7 +25,7 @@ published: true
 
 ## Customizable transaction process
 
-- Can be [adapted](/background/transaction-engine/) to the needs of a
+- Can be [adapted](/background/transaction-process/) to the needs of a
   marketplace
 
 ## Online payments

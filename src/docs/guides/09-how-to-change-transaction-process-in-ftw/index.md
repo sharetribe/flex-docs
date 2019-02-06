@@ -15,7 +15,8 @@ states and transitions defined in that process. If you have changed the
 transaction process in your marketplace, you should check if your client
 app needs to be updated to match this different transaction process. You
 can read more about how these processes work from a background info
-article about [transaction engine](/background/transaction-engine/).
+article about the
+[transaction process](/background/transaction-process/).
 
 ## 1. Change the transaction process alias
 
@@ -129,7 +130,7 @@ export const txIsCanceledByCustomer = tx =>
 > Note: Only transitions are included to transaction entity since all
 > the actions that happen during the process are tied to transitions not
 > states. Read more about the
-> [transaction engine](/background/transaction-engine/).
+> [transaction process](/background/transaction-process/).
 
 ## 3. Update all the components that import util/transaction.js
 

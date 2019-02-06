@@ -307,8 +307,8 @@ const LandingPage = props => {
               <SectionLink to="/background/features/">
                 <UiText id="LandingPage.background.features" />
               </SectionLink>
-              <SectionLink to="/background/transaction-engine/">
-                <UiText id="LandingPage.background.transactionEngine" />
+              <SectionLink to="/background/transaction-process/">
+                <UiText id="LandingPage.background.transactionProcess" />
               </SectionLink>
               <SectionLink to="/background/">
                 <UiText id="LandingPage.background.all" /> (
