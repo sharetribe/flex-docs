@@ -43,11 +43,11 @@ decisions.
 _Protected data_ is writable and readable by whoever has write access to
 a resource. It is also readable by marketplace operators. Protected data
 can be revealed to all transaction parties via the marketplace
-[transaction process](/background/transaction-engine/).
+[transaction process](/background/transaction-process/).
 
 Protected data can be used to store information about listings or users
 that is only made visible to a customer at a specific point in the
-[transaction process](/background/transaction-engine/).
+[transaction process](/background/transaction-process/).
 
 ### Private data
 
