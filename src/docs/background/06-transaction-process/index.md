@@ -45,7 +45,7 @@ the customer of their upcoming booking.
 
 ## Sharetribe Flex default transaction process
 
-![Sharetribe Flex default transaction process](./default-tx-process.png)
+![Sharetribe Flex default transaction process](./tx-process-nightly-default.png)
 
 The Sharetribe Flex transaction engine allows each marketplace to define
 its own transaction processes within certain platform-supported
@@ -106,7 +106,7 @@ customer to cancel a booking or a booking request, changing the
 marketplace commission percentage or editing the contents of the email
 templates used for the notifications.
 
-![An example transaction process with instant booking and customer cancellation](./example-tx-process.png)
+![An example transaction process with instant booking and customer cancellation](./tx-process-instabook-customer-cancel.png)
 
 Another common example is to modify the process so that the provider has
 to manually mark the booking as completed and the rented goods as
