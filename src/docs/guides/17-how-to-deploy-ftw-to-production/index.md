@@ -180,7 +180,7 @@ can change your domain and SSH settings in the _Settings tab_.
 Read more from Heroku docs:
 
 - [Custom Domain Names for Apps](https://devcenter.heroku.com/articles/custom-domains)
-- [Manually Acquiring an SSL/TLS Certificate](https://devcenter.heroku.com/articles/acquiring-an-ssl-certificate)
+- [Automated Certificate Management](https://devcenter.heroku.com/articles/automated-certificate-management)
 
 ![Heroku settings](./heroku-domains.png)
 
