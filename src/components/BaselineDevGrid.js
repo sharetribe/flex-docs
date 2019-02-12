@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
@@ -34,57 +34,75 @@ const BaselineGrid = styled.div`
 
 const isCtrlB = e => e.key === 'b' && e.ctrlKey;
 
-class BaselineDevGrid extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { visible: false, scrollHeight: '100vh' };
-    this.onKeyUp = this.onKeyUp.bind(this);
-    this.onResize = this.onResize.bind(this);
-  }
-  componentDidMount() {
-    if (dev) {
-      window.addEventListener('keyup', this.onKeyUp);
-      window.addEventListener('resize', this.onResize);
-      this.onResize();
-      console.warn(
-        'Baseline development grid enabled, press CTLR+b to toggle visibility'
-      );
-    }
-  }
-  componentWillUnmount() {
-    if (dev) {
-      window.removeEventListener('keyup', this.onKeyUp);
-      window.removeEventListener('resize', this.onResize);
-    }
-  }
-  onKeyUp(e) {
+// Hook that runs console.warn with the message only once
+const useWarnOnce = message => {
+  useEffect(() => {
+    console.warn(message);
+  }, []);
+};
+
+// Hook that returns the current body scroll height
+const useBodyScrollHeight = () => {
+  const [scrollHeight, setScrollHeight] = useState('100vh');
+
+  const onResize = () => {
+    setScrollHeight(`${document.body.scrollHeight}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', onResize);
+
+    // Navigating an internal link changes the document height, but
+    // doesn't really trigger a global event we can listen to. This is
+    // why we have to resort to an interval to update the grid height
+    // continuously.
+    const intervalId = window.setInterval(onResize, 2000);
+
+    return () => {
+      window.removeEventListener('resize', onResize);
+      window.clearInterval(intervalId);
+    };
+  });
+  return scrollHeight;
+};
+
+// Hook that listens to keyboard events and returns the current
+// visibility of the grid
+const useGridVisible = () => {
+  const [visible, setVisible] = useState(false);
+
+  const onKeyUp = e => {
     if (isCtrlB(e)) {
-      this.setState(prevState => ({
-        visible: !prevState.visible,
-      }));
-      this.onResize();
+      setVisible(!visible);
     }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keyup', onKeyUp);
+    return () => {
+      window.removeEventListener('keyup', onKeyUp);
+    };
+  });
+
+  return visible;
+};
+
+const BaselineDevGrid = props => {
+  const { children } = props;
+  if (!dev) {
+    return <>{children}</>;
   }
-  onResize() {
-    this.setState({
-      scrollHeight: `${document.body.scrollHeight}px`,
-    });
-  }
-  render() {
-    const { children } = this.props;
-    if (!dev) {
-      return <>{children}</>;
-    }
-    return (
-      <>
-        {children}
-        <BaselineGrid
-          visible={this.state.visible}
-          height={this.state.scrollHeight}
-        />
-      </>
-    );
-  }
-}
+  useWarnOnce(
+    'Baseline development grid enabled, press CTLR+b to toggle visibility'
+  );
+  const scrollHeight = useBodyScrollHeight();
+  const visible = useGridVisible();
+  return (
+    <>
+      {children}
+      <BaselineGrid visible={visible} height={scrollHeight} />
+    </>
+  );
+};
 
 export default BaselineDevGrid;
