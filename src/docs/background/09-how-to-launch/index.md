@@ -37,7 +37,7 @@ Once you have FTW set up, you can create a few user accounts and test the featur
 
 Once you have the template up and running, the next step is to start working on the design of your marketplace: how should it look like, and what kind of user interface is required for your users to interact with each other.
 
-It might be that you have already worked this part out: perhaps you have hired a designer who has already built a design document describing the exact user interface of your platform. If this is the case, you can jump directly to the [Development section](#developing-your-marketplace).
+It might be that you have already worked this part out: perhaps you have hired a designer who has already built a design document describing the exact user interface of your platform. If this is the case, you can jump directly to the [Development section](#3-developing-your-marketplace-developing-your-marketplace).
 
 If you haven't yet done any thinking in terms of the design, it's often a good idea to start the design work from FTW.. A good approach is then to think about what changes are needed to the different pages of FTW to make it work with your concept. For example, you might want to adjust the booking page to allow your users to book per hour instead of per night. Perhaps some new pages should be added (like "FAQ" or "How it works") and others removed entirely (maybe you don't want your customers to have profile pages). Naturally you might also want to change the fonts, color scheme, and other elements of the general look & feel to make the marketplace look uniquely yours.
 
@@ -52,7 +52,7 @@ Once you have the wireframes ready and know what you want, the next step is to b
 Does all of this sound overwhelming to you? If you're don't want to do the design work yourself, you can always hire a designer to do it for you. If you don't know any designers, [contact Sharetribe support](mailto:flex-support@sharetribe.com) and we'll connect you to a designer who can help you out.
 
 
-# 3 Developing your marketplace {#developing-your-marketplace}
+# 3 Developing your marketplace
 
 In Flex, all the changes made to the user interface of your marketplace are done by editing the software code directly. Thus, once you have the design ready for your marketplace, it's time to start development work to make your marketplace look and work the way your designs describe.
 
