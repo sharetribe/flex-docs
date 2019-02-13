@@ -5,7 +5,7 @@ updated: 2019-02-13
 category: background
 ingress:
   This article describes what it takes to build and launch your marketplace with Sharetribe Flex. There are four main stages in this process, and we'll go through each one in detail.
-published: false
+published: true
 ---
 
 
