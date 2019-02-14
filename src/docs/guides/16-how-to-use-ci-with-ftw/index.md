@@ -1,7 +1,7 @@
 ---
 title: How to use CI with FTW
 slug: how-to-use-ci-with-ftw
-updated: 2019-01-29
+updated: 2019-02-05
 category: guides
 ingress:
   This guide describes how the Continuous Integration (CI) setup works
@@ -41,3 +41,15 @@ This command ensures that the build passes.
 ### Tests: `yarn run test-ci`
 
 This command runs the tests.
+
+### Security audit: `yarn run audit`
+
+This command runs the security audit using `yarn audit --json` and
+checks returned JSON against vulnerability exceptions defined in
+`.auditrc` file at the project root. The audit checks for installed
+packages with known vulnerabilities and warns about those.
+
+The scripts outputs information about the dependency path that added the
+package. If that information is not enough, `yarn why package-name` can
+be used to get more detailed information about why the package is
+installed.
