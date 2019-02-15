@@ -76,7 +76,7 @@ do this by running `yarn run config` or editing the file directly in a
 text editor.
 
 Read more about configurations in FTW from
-[Getting started with FTW](/getting-started-with-ftw/#configuration)
+[Getting started with FTW](/tutorials/getting-started-with-ftw/#configuration)
 
 ## 6. Test the Stripe account in Flex Template for Web
 
