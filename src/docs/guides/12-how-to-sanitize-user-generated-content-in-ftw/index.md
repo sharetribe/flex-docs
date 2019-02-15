@@ -66,7 +66,7 @@ to link outside of your web app. It adds a `noopener` handling for
 external links (since `target="_blank"` attribute is
 [vulnerable for XSS](https://mathiasbynens.github.io/rel-noopener/)).
 
-There is also Field\* components around <input> elements (e.g.
+There is also Field\* components around `<input>` elements (e.g.
 FieldTextInput) since FTW uses Final Form. Those could be used in a
 similar fashion to validate content or just format it before saving.
 
