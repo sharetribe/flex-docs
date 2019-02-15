@@ -1,7 +1,7 @@
 ---
 title: How to set up and use Stripe
 slug: how-to-set-up-and-use-stripe
-updated: 2019-02-04
+updated: 2019-02-15
 category: guides
 ingress:
   To enable payments and receive commissions in your marketplace, you
@@ -14,14 +14,14 @@ published: true
 ## 1. Create and confirm your free Stripe account
 
 [Register to Stripe](https://dashboard.stripe.com/register). After
-filling the form you will be asked the question _"How do you want to get
-started with Stripe?"_. You can click _"Skip for now"_ link at the
-bottom of the page to get directly to Stripe dashboard. Remember to
-confirm your email address after the registration.
+filling the form you will be asked the question "How do you want to get
+started with Stripe?". You can click "Skip for now" link at the bottom
+of the page to get directly to Stripe dashboard. Remember to confirm
+your email address after the registration.
 
 As you will receive money from your users via your Stripe account, you
 have to provide some details such as your address and your bank account.
-In the Stripe dashboard, click the Activate your account link in the
+In the Stripe dashboard, click the "Activate your account" link in the
 left menu and fill in all the fields according to the instructions. The
 activation form varies based on your country.
 
@@ -32,23 +32,23 @@ activation form varies based on your country.
 Sharetribe uses the Stripe Connect features with
 [custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 
-- Click the _"Connect"_ left menu item.
-- Click the _"Get started"_ button.
-- Now you should see your Connect dashboard. From the left sidebar, go
-  to _"Connect"_ → _"Settings"_
-- Make sure that _"Custom accounts are available for your platform."_ is
-  shown.
+- Click the _Connect_ left menu item.
+- Click the _Get started_ button.
+- Now you should see your _Connect dashboard_. From the left sidebar, go
+  to _Connect_ → _Settings_
+- Make sure "Custom accounts are available for your platform" text is in
+  the dashboard.
 
 ![Stripe Connect](./connect.png)
 
 ## 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
-- Click the _"Developers"_ left menu item and go to _"Developers"_ →
-  _"API Keys"_.
-- In the section _"Standard API keys"_ you will see two keys:
-  publishable key and secret key. The publishable key (with prefix
-  **pk**) is one used in frontend application e.g. FTW and secret key
-  (with prefix **sk**) is the one you need to add to Console. If you
+- Click the _Developers_ left menu item and go to _Developers_ → _API
+  Keys_.
+- In the section "Standard API keys" you will see two keys: publishable
+  key and secret key. The publishable key (with prefix **pk**) is one
+  used in frontend application (e.g. Flex Template for Web) and secret
+  key (with prefix **sk**) is the one you need to add to Console. If you
   want to use test data make sure the value of the key is eg.
   **pk_test**\<somethinghere\> and not **pk_live**\<somethinghere\>
 
@@ -60,16 +60,16 @@ production make sure that the toggle is off.
 
 ## 4. Add your Stripe secret API key to Console
 
-- Log in to Console and go to _"Build"_ → _"Payments"_
-- In the section _"Stripe configuration"_ paste your secret key to
-  _"Stripe secret key"_ field and save the changes.
+- Log in to Console and go to _Build_ → _Payments_
+- In the section _Stripe configuration_ paste your secret key to "Stripe
+  secret key" field and save the changes.
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
 
-## 5. Add you Stripe publishable key to FTW
+## 5. Add you Stripe publishable key to your client application
 
-In your client app, you need to use Stripe publishable key, when you
-create accountTokens or call other Stripe API endpoints. If you are
+In your client application, you need to use Stripe publishable key, when
+you create accountTokens or call other Stripe API endpoints. If you are
 using Flex Template for Web, calls to Stripe API are already there, but
 you need to add the Stripe publishable key to your `.env` file. You can
 do this by running `yarn run config` or editing the file directly in a
@@ -78,22 +78,15 @@ text editor.
 Read more about configurations in FTW from
 [Getting started with FTW](/getting-started-with-ftw/#configuration)
 
-## 6. Test the Stripe account
+## 6. Test the Stripe account in Flex Template for Web
+
+If you are using Flex Template for Web (FTW) here is some instructions
+how you can test you Stripe account.
 
 **Note:** When testing Stripe, make sure you are using the test API
 keys. To ensure that make sure the keys have prefix **sk_test** and
 **pk_test**. When checking the Stripe dashboard, make sure "View test
 data" toggle is on!
-
-### Test checkout
-
-Stripe provides various
-[test card numbers](https://stripe.com/docs/testing#cards) for testing
-the checkout. There are also test numbers for
-[specific responses and errors](https://stripe.com/docs/testing#cards-responses)
-so e.g. testing different error scenarios is possible.
-
-![Checkout](checkout.png)
 
 ### Test adding payout details
 
@@ -101,9 +94,9 @@ Every provider needs to add payout details to their account before they
 are able to publish listings. Stripe provides test values for
 [identity verification](https://stripe.com/docs/connect/testing#identity-verification)
 and [bank numbers](https://stripe.com/docs/connect/testing#payouts). In
-FTW you can add payout details for the account in _"Account Settings"_ →
-_"Payments"_. After filling the form you should see a new account when
-you go to Stripe Dashboard and to _"Connect"_ → _"Accounts"_.
+FTW you can add payout details for the account in _Account Settings_ →
+_Payments_. After filling the form you should see a new account when you
+go to Stripe Dashboard and to _Connect_ → _Accounts_.
 
 **Note:** After payout details are saved they can not be edited directly
 from FTW so you might need to create multiple accounts for testing
@@ -122,6 +115,16 @@ Stripe clearing code and branch code are mapped together as routing
 number.
 
 ![Stripe bank numbers](stripe-bank-numbers.png)
+
+### Test checkout
+
+Stripe provides various
+[test card numbers](https://stripe.com/docs/testing#cards) for testing
+the checkout. There are also test numbers for
+[specific responses and errors](https://stripe.com/docs/testing#cards-responses)
+so e.g. testing different error scenarios is possible.
+
+![Checkout](checkout.png)
 
 ## 7. Advanced: Adding new country to supported Stripe countries
 
