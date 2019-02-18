@@ -22,10 +22,11 @@ application requires varying levels of development knowledge. For this
 tutorial it is enough to know how to open a terminal to run some
 commands and edit text files to change configuration values.
 
-For more information on what skills are needed for customization, see
-the
-[What development skills are needed?](/background/development-skills/)
-article.
+FTW is available at the
+[sharetribe/flex-template-web](https://github.com/sharetribe/flex-template-web)
+GitHub repository. For more information on what skills are needed for
+customization, see the [What development skills are
+needed?](/background/development-skills/) article.
 
 ## Request API access
 
