@@ -25,8 +25,9 @@ commands and edit text files to change configuration values.
 FTW is available at the
 [sharetribe/flex-template-web](https://github.com/sharetribe/flex-template-web)
 GitHub repository. For more information on what skills are needed for
-customization, see the [What development skills are
-needed?](/background/development-skills/) article.
+customization, see the
+[What development skills are needed?](/background/development-skills/)
+article.
 
 ## Request API access
 

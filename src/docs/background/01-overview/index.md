@@ -50,11 +50,12 @@ Flex's Marketplace API yourself.
 
 ### The Marketplace API
 
-The Marketplace API is how your UI connects to the Flex services. It's an HTTP
-interface with a design influenced by the [JSON API
-specification](https://jsonapi.org/) and the [CQRS
-pattern](https://martinfowler.com/bliki/CQRS.html). The Marketplace API allows
-you to implement all the standard marketplace functionality that Flex supports.
+The Marketplace API is how your UI connects to the Flex services. It's
+an HTTP interface with a design influenced by the
+[JSON API specification](https://jsonapi.org/) and the
+[CQRS pattern](https://martinfowler.com/bliki/CQRS.html). The
+Marketplace API allows you to implement all the standard marketplace
+functionality that Flex supports.
 
 Sharetribe handles running and scaling the Marketplace API. To take full
 advantage of this, we suggest you design your Marketplace UI to point a

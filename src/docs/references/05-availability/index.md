@@ -22,7 +22,7 @@ can be used in combination or separately:
 The availability plan and exceptions, together with booking information
 can be combined to determine if a particular time range is available for
 booking or not. For instance, the
-[/timeslots/query](https://flex-docs.sharetribe.com/index.html#query-time-slots)
+[/timeslots/query](https://www.sharetribe.com/api-reference/index.html#query-time-slots)
 API endpoint returns availability information for future dates, taking
 into account the listing's availability plan, exceptions and bookings.
 In addition, your
@@ -89,7 +89,7 @@ this is interpreted as if single exception existed from
 See the reference documentation for the following API endpoints for
 details:
 
-- [/own_listings/create](https://flex-docs.sharetribe.com/index.html#create-listing)
-- [/own_listings/update](https://flex-docs.sharetribe.com/index.html#update-listing)
-- [/availability_exceptions/\*](https://flex-docs.sharetribe.com/index.html#availability-exceptions)
-- [/timeslots/query](https://flex-docs.sharetribe.com/index.html#query-time-slots)
+- [/own_listings/create](https://www.sharetribe.com/api-reference/index.html#create-listing)
+- [/own_listings/update](https://www.sharetribe.com/api-reference/index.html#update-listing)
+- [/availability_exceptions/\*](https://www.sharetribe.com/api-reference/index.html#availability-exceptions)
+- [/timeslots/query](https://www.sharetribe.com/api-reference/index.html#query-time-slots)

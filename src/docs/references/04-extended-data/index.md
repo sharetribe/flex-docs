@@ -63,7 +63,7 @@ _Public metadata_ is writable by marketplace operators and can be read
 via all API endpoints returning the corresponding resource. Public
 metadata is supported for listings and can also be used as filters when
 searching via
-[/listings/query](https://flex-docs.sharetribe.com/#query-listings).
+[/listings/query](https://www.sharetribe.com/api-reference/#query-listings).
 
 Public metadata is useful for example marking listings as promoted or
 for linking listings with external services.
@@ -83,5 +83,5 @@ may optionally be defined for some value types of extended data. When a
 schema is provided for a given extended data key, the API can use this
 information to make querying the extended data possible via some API
 endpoints. For instance
-[/listings/query](https://flex-docs.sharetribe.com/#query-listings)
+[/listings/query](https://www.sharetribe.com/api-reference/#query-listings)
 supports querying listings by public data.
