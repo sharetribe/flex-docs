@@ -100,7 +100,7 @@ Another way to reduce the amount of data that is fetched from API is
 sparse attributes. This is a feature FTW has not yet leveraged fully,
 but it is created to reduce unnecessary data and speed up rendering. You
 can read more from
-[Marketplace API reference for sparse attributes](https://flex-docs.sharetribe.com/#sparse-attributes).
+[Marketplace API reference for sparse attributes](https://www.sharetribe.com/api-reference/#sparse-attributes).
 
 ## About code-splitting
 
