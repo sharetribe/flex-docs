@@ -45,8 +45,8 @@ To deploy the application add at least the following variables:
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
-  Your Client ID (API key). It can found in the [Flex
-  Console](https://flex-console.sharetribe.com/).
+  Your Client ID (API key). It can found in the
+  [Flex Console](https://flex-console.sharetribe.com/).
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
