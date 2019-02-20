@@ -8,7 +8,6 @@ ingress:
 published: true
 ---
 
-
 To build and launch your marketplace with Flex, you need to go through the following stages:
 
 1. Getting access to Flex
@@ -28,9 +27,9 @@ If you're reading this article, the chances are that you already have access to 
 
 Once you log in to Console, you'll notice there's nothing there yet: you naturally don't yet have any users, listings, or transactions.
 
-The first step after logging in to Console is to set up the Flex Template for Web (FTW). FTW is a fully functional example of a marketplace website built with Flex: a fictional marketplace for renting home saunas from sauna owners. Setting up FTW should take no more than 5 minutes. The process is a bit technical but doesn't require actual development skills. You can find the step by step instructions for doing it [here](/tutorials/getting-started-with-ftw/). If you encounter any problems with the setup, [contact Sharetribe support](mailto:flex-support@sharetribe.com).
+The first step after logging in to Console is to set up the Flex Template for Web (FTW). FTW is a fully functional example of a marketplace website built with Flex: a fictional marketplace for renting home saunas from sauna owners. Setting up FTW should take no more than 5 minutes. The process is technical but doable even without development experience. The guide for [The guide for getting started with FTW](/tutorials/getting-started-with-ftw/) will give you step by step instructions for doing it. If you encounter any problems with the setup, [contact Sharetribe support](mailto:flex-support@sharetribe.com).
 
-Once you have FTW set up, you can create a few user accounts and test the features: posting listings, searching them, making bookings and payments (with a test credit card number provided by Stripe), sending messages between users, writing reviews, and so on. You can test them both on your desktop and on a mobile browser to see how it works on each device. On Console, you can then see how the users, listings and transactions you created in FTW appear there.
+Once you have FTW set up, you can create a few user accounts and test the features: posting listings, searching them, making bookings and payments (see how to use [test credit card number provided by Stripe](/guides/how-to-set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)), sending messages between users, writing reviews, and so on. You can test them both on your desktop and on a mobile browser to see how it works on each device. On Console, you can then see how the users, listings and transactions you created in FTW appear there.
 
 
 # 2 Designing your marketplace
@@ -39,9 +38,9 @@ Once you have the template up and running, the next step is to start working on 
 
 It might be that you have already worked this part out: perhaps you have hired a designer who has already built a design document describing the exact user interface of your platform. If this is the case, you can jump directly to the [Development section](#3-developing-your-marketplace).
 
-If you haven't yet done any thinking in terms of the design, it's often a good idea to start the design work from FTW.. A good approach is then to think about what changes are needed to the different pages of FTW to make it work with your concept. For example, you might want to adjust the booking page to allow your users to book per hour instead of per night. Perhaps some new pages should be added (like "FAQ" or "How it works") and others removed entirely (maybe you don't want your customers to have profile pages). Naturally you might also want to change the fonts, color scheme, and other elements of the general look & feel to make the marketplace look uniquely yours.
+If you haven't yet done any thinking in terms of the design, it's often a good idea to start the design work from FTW.. A good approach is to think about what changes are needed to the different pages of FTW to make it work with your concept. For example, you might want to adjust the booking page to allow your users to book per hour instead of per night. You can add pages (like "FAQ" or "How it works") or remove pages you find unnecessary (perhaps a user profile page is not needed). Naturally you might also want to change the fonts, color scheme, and other elements of the general look & feel to make the marketplace look uniquely yours.
 
-You might also come to the conclusion that the user interface of your marketplace is so different from the example presented in FTW that it doesn't offer a good basis for your design. Perhaps you want to build a mobile app instead of a website, or just have some other major differences in your approach. That's completely fine:  In case like this you can also start drafting the user interface completely from scratch. Typically, it makes sense to start by building [wireframes](https://en.wikipedia.org/wiki/Website_wireframe). Wireframes offer a quick way to describe how the design works without concentrating on the visual style. You can build wireframes by using pen and paper, or with a Powerpoint. A tool designed specifically for building wireframes, like [Whimsical](https://whimsical.co/) or [Balsamiq](https://balsamiq.com/), can speed up this process quite a bit.
+You might also come to the conclusion that the user interface of your marketplace is so different from the example presented in FTW that it doesn't offer a good basis for your design. Perhaps you want to build a mobile app instead of a website, or just have some other major differences in your approach. That's completely fine: you can also start drafting the user interface completely from scratch. Typically, it makes sense to start by building [wireframes](https://en.wikipedia.org/wiki/Website_wireframe). Wireframes offer a quick way to describe how the design works without concentrating on the visual style. You can build wireframes by using pen and paper, or Powerpoint. A tool designed specifically for building wireframes, like [Whimsical](https://whimsical.co/) or [Balsamiq](https://balsamiq.com/), can speed up this process quite a bit.
 
 Remember that design doesn't mean just the visual style of your marketplace, but also about how things should work. For example: when a customer makes a booking in your platform, you need to think about each possible interaction step between the customer and the provider. Can they send messages to each other? Does the provider need to approve the booking before money is charged? Can the customer cancel the booking and get a full refund? Can both parties review each other afterwards?
 
@@ -75,8 +74,12 @@ After people start using your platform, you can monitor what they're doing and t
 
 Once you've reached a point when you're ready to invite first real users to your marketplace, it's time to go live.
 
-At this point, you should let Sharetribe support know that you're planning to go live. We will then create a _production environment_ for you to complement your current _development environment_. This means that you actually have access to two different Flex instances. The development version of your marketplace is where you develop new features and test them with test user accounts and credit card numbers. The production environment is where the data of your actual users is located. This means that you can easily do development and testing of new features, without those affecting your actual users in any way.
+At this point, you should let Sharetribe support know that you're planning to go live. We will then create a _production environment_ for you to complement your current _development environment_. This means that you actually have access to two different Flex instances. The development version of your marketplace is where you develop new features and test them with test user accounts and [credit card numbers](/guides/how-to-set-up-and-use-stripe/). The production environment is where the data of your actual users is located. This means that you can easily do development and testing of new features, without those affecting your actual users in any way.
 
 This is also the point where you start paying the Flex minimum monthly fee (see more information about [Flex pricing](https://www.sharetribe.com/flex/#pricing)). The development phase is completely free for you, so you only need to pay when you start inviting your real users to your marketplace.
 
 Naturally, development doesn't stop once you've gone live: that's just the very beginning. It's highly likely that you want to keep improving your platform on a weekly basis after going live, based on the feedback from your users. The devil is in the details, and small changes can make a big difference. Every successful marketplace out there has started with a minimal set of features, and then continuously kept improving over the years.
+
+
+<!-- Docs to Markdown version 1.0β15 -->
+
