@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started
-updated: 2019-01-18
+updated: 2019-02-20
 category: background
 ingress:
   This collection of articles is the starting point for your journey
@@ -17,6 +17,13 @@ Introduction to the three main components of Flex: your marketplace user
 interface, the Marketplace API, and Console. We explain the role each of
 these components plays and how they help you to build a unique
 marketplace platform. [Read more »](/background/introducing-flex/)
+
+## How to build and launch your marketplace with Flex
+
+This article describes what it takes to build and launch your
+marketplace with Sharetribe Flex. There are four main stages in this
+process, and we'll go through each one in detail.
+[Read more »](/background/how-to-build-and-launch-with-flex/)
 
 ## What development skills are needed?
 
