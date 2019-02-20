@@ -5,20 +5,19 @@ updated: 2019-01-16
 category: background
 ingress:
   Overview of how Sharetribe Flex works, and how you can build your
-  sharing economy platform using it.
+  online marketplace platform using it.
 published: true
 ---
 
 ## Introduction
 
-Sharetribe Flex is a complete solution for building a powerful sharing
-economy platform. Flex provides you with all the necessary marketplace
-infrastructure out of the box. At the same time, because of it's
+Sharetribe Flex is a complete solution for building a powerful online marketplace for rentals, services, events or experiences. Flex provides you with all the necessary marketplace
+infrastructure out of the box. At the same time, because of its
 headless architecture, Flex gives you total freedom to customize your
 user experience.
 
 This makes Flex the fastest and most affordable way to build a unique
-platform that adapts to the entire life cycle of your business. As your
+platform that adapts to the entire lifecycle of your business. As your
 business grows, Flex takes care of running and scaling your backend —
 allowing you to focus on the unique value of your platform.
 
@@ -58,7 +57,7 @@ Marketplace API allows you to implement all the standard marketplace
 functionality that Flex supports.
 
 Sharetribe handles running and scaling the Marketplace API. To take full
-advantage of this, we suggest you design your Marketplace UI to point a
+advantage of this, you should design your Marketplace UI to point a
 majority of the traffic directly to the Marketplace API. For example,
 Flex Template for Web only handles the initial page load when a user
 opens their browser. After that, FTW lets the client application
@@ -86,14 +85,7 @@ editor for email templates. Console is accessed via a web UI that we
 provide out of the box. Think of it as an admin interface you never have
 to build!
 
-## How to use Sharetribe Flex
+## How to build your marketplace with Flex
 
 When building a platform with Flex, your task is to design and create a
-fantastic marketplace UI. We handle everything else for you. If your
-Marketplace UI is a web-based UI, you also need to host it somewhere.
-
-If you're new to Flex, we recommend starting out with
-[Flex Template for Web](/tutorials/getting-started-with-ftw/). The
-template comes with instructions on how to easily set it up on your
-local machine, as well as how to host it in the
-[Heroku](https://heroku.com/) PaaS platform.
+fantastic marketplace user interface. Sharetribe handles everything else for you. Next, it's time to learn [how to build and launch your marketplace with Flex](/background/how-to-build-and-launch-with-flex/).
