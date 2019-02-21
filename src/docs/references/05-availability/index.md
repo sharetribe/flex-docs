@@ -1,7 +1,7 @@
 ---
 title: Listing availability management
 slug: availability
-updated: 2019-01-23
+updated: 2019-02-20
 category: references
 ingress: Reference documentation for listing availability management.
 published: true
@@ -12,9 +12,10 @@ define when (and when not) their listings are available for booking.
 There are two different concepts related to availability management that
 can be used in combination or separately:
 
-- An **availability plan** can be defined for each listing. It comprises
-  of general availability rules for each day of the week. For instance
-  "available on Mondays and Thursdays".
+- An **availability plan** can be defined for each listing. It comprises of
+  general availability rules for each day of the week. For instance "available
+  on Mondays and Thursdays", or "available on Tuesday, Wednesday and Friday from
+  9 AM to 6 PM".
 - An **availability exception** overrides the availability plan for a
   concrete period of time. For instance "Available on 2018-11-25 and
   2018-11-26", "not available on 2018-11-30".
@@ -39,18 +40,16 @@ currently consumes exactly one seat.
 
 ## Day-based availability management
 
-Currently, day-based availability is supported, which works with both
-daily and nightly bookings. For instance, an availability plan can
-define that Mondays and Tuesdays are available for booking. For daily
-bookings this means that dates that are a Monday or Tuesday can be
-booked. For nightly bookings, this means that nights Monday-Tuesday and
+Day-based availability works with both daily and nightly bookings. For instance,
+an availability plan can define that Mondays and Tuesdays are available for
+booking. For daily bookings this means that dates that are a Monday or a Tuesday
+can be booked. For nightly bookings, this means that nights Monday-Tuesday and
 Tuesday-Wednesday can be booked.
 
-### Interpretation of availability exceptions
+### Interpretation of availability exceptions and bookings
 
-For day-based availability plans (currently the only supported type of
-availability plan), it is recommended to create availability exceptions
-with timestamps having 00:00:00 time in UTC.
+For day-based availability plans, it is recommended to create availability
+exceptions with timestamps having 00:00:00 time in UTC.
 
 Creating availability exceptions with arbitrary time is allowed, but
 such exceptions are subject to the following interpretation rules in the
@@ -63,6 +62,9 @@ context of a listing with day-based availability plan:
   the **minimum number of seats** of all these availability exceptions
   is taken as the resulting number of available seats for that date,
   prior to taking any existing bookings into account.
+
+If your transaction process uses time-based bookings, the bookings are also
+subject to the same interpretation rules.
 
 #### **Example 1:**
 
@@ -83,6 +85,20 @@ Given exception 1 from `2017-11-26T10:00:00.000Z` to
 `2017-11-26T10:00:00.000Z` to `2018-11-26T12:00:00.000Z` with 0 seats,
 this is interpreted as if single exception existed from
 `2018-11-26T00:00:00.0Z` to `2018-11-27T00:00:00.000Z` with 0 seats.
+
+## Time-based availability management
+
+Time-based availability can be used with time-based bookings. Time-based
+availability plans can specify one or more time intervals for each day of the
+week, and specify the time zone in which these times should be interpreted. For
+instance, with time-based availability it is possible to define that the listing
+is available on weekdays from 9 AM to 11AM and from 1 PM to 6 PM.
+
+### Interpretation of availability exceptions and bookings
+
+For time-based plans, both availability exceptions and bookings are interpreted
+literally, i.e. covering the exact time intervals determined by their start and
+end times.
 
 ## Related API endpoints
 
