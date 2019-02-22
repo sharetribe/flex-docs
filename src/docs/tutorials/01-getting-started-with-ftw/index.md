@@ -1,7 +1,7 @@
 ---
 title: Getting started with FTW
 slug: getting-started-with-ftw
-updated: 2019-01-17
+updated: 2019-02-22
 category: tutorials
 ingress:
   This tutorial is the place to start your journey of getting hands-on
@@ -95,10 +95,9 @@ There are three required variables for FTW to work correctly:
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
   Public Stripe key enables payments using Stripe. You can follow
-  [Stripe account set up guide for Sharetribe Go](https://help.sharetribe.com/sharetribe-go-payments-and-transactions/online-payments-with-stripe/how-to-configure-your-stripe-account-and-get-api-keys-for-your-marketplace)
-  to get the publishable key. As Sharetribe Go is a completely different
-  product, skip the parts with the admin panel and paste the key in the
-  `.env` configuration file.
+  [How to set up and use Stripe guide](/guides/how-to-set-up-and-use-stripe/)
+  to get the publishable key. You should also make sure you have enabled
+  Stripe Connect in your platform.
 
   If you don't set the Stripe key, payment's won't work in the
   application.

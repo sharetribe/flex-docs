@@ -11,10 +11,11 @@ published: true
 
 ## Introduction
 
-Sharetribe Flex is a complete solution for building a powerful online marketplace for rentals, services, events or experiences. Flex provides you with all the necessary marketplace
-infrastructure out of the box. At the same time, because of its
-headless architecture, Flex gives you total freedom to customize your
-user experience.
+Sharetribe Flex is a complete solution for building a powerful online
+marketplace for rentals, services, events or experiences. Flex provides
+you with all the necessary marketplace infrastructure out of the box. At
+the same time, because of its headless architecture, Flex gives you
+total freedom to customize your user experience.
 
 This makes Flex the fastest and most affordable way to build a unique
 platform that adapts to the entire lifecycle of your business. As your
@@ -88,4 +89,6 @@ to build!
 ## How to build your marketplace with Flex
 
 When building a platform with Flex, your task is to design and create a
-fantastic marketplace user interface. Sharetribe handles everything else for you. Next, it's time to learn [how to build and launch your marketplace with Flex](/background/how-to-build-and-launch-with-flex/).
+fantastic marketplace user interface. Sharetribe handles everything else
+for you. Next, it's time to learn
+[how to build and launch your marketplace with Flex](/background/how-to-build-and-launch-with-flex/).
