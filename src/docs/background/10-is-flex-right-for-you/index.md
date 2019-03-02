@@ -31,7 +31,7 @@ With Flex, you can build your own marketplace that is similar to, for example, o
 *   [Airbnb](https://www.airbnb.com/) – short term apartment rentals (C2C, B2C)
 *   [EatWith](https://www.eatwith.com/) – book seats to dinner parties organized by home cooks (C2C, B2C)
 *   [EquipmentShare](https://www.equipmentshare.com/) – rent construction equipment (B2B)
-*   [Fiverr](https://www.fiverr.com/) – hire freelance designers, developers, or other knowledge workers (B2C)
+*   [Fiverr](https://www.fiverr.com/) – hire freelance designers, developers, or other knowledge workers (B2C, B2B)
 *   [Getaround](https://www.getaround.com/) – rent cars from people around you (C2C)
 *   [Handy](https://www.handy.com) – find a home cleaner or a handyman (B2C)
 *   [Rover.com](https://www.rover.com/) – find a pet sitter or a dog walker (C2C, B2C)
