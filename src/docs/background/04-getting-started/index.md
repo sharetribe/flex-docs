@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started
-updated: 2019-02-20
+updated: 2019-03-04
 category: background
 ingress:
   This collection of articles is the starting point for your journey
@@ -17,6 +17,12 @@ Introduction to the three main components of Flex: your marketplace user
 interface, the Marketplace API, and Console. We explain the role each of
 these components plays and how they help you to build a unique
 marketplace platform. [Read more »](/background/introducing-flex/)
+
+## How to know if Flex is the right fit for your marketplace idea
+
+The purpose of this article is to give you a general overview of
+whether Flex is a good solution for building your specific marketplace
+idea. [Read more »](/background/is-flex-right-for-you/)
 
 ## How to build and launch your marketplace with Flex
 
