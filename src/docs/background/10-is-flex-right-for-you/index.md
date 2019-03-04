@@ -67,6 +67,6 @@ You need to do some custom development work to launch your marketplace with Flex
 
 If you're not ready to invest in hiring a developer, Flex is not the right solution for you. Instead, you could try out Sharetribe Go, which is free to test for the first 30 days, and after that its pricing starts at $79 per month. With Sharetribe Go, you can build your MVP in one day, without technical skills. It doesn't have the same flexibility than Flex, but in many situations, it can be a good way to get started quickly and to [validate your business idea.](https://www.sharetribe.com/academy/how-to-validate-your-marketplace-idea-before-building-the-platform/)
 
-If you have already tried Sharetribe Go and concluded that it's not enough for your needs, then it might be time to get started with Flex. In that case, you can continue by reading about [how to build and launch your marketplace with Flex](/docs/background/how-to-build-and-launch-with-flex/).
+If you have already tried Sharetribe Go and concluded that it's not enough for your needs, then it might be time to get started with Flex. In that case, you can continue by reading about [how to build and launch your marketplace with Flex](/background/how-to-build-and-launch-with-flex/).
 
 If you have more specific questions on whether Flex can support certain features or workflows before getting started, [contact Sharetribe support](mailto:flex-support@sharetribe.com) or [book a call with one of Sharetribe's founders](https://calendly.com/welcome-to-flex/first-call) to discuss your concept.
