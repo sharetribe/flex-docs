@@ -20,9 +20,9 @@ marketplace platform. [Read more »](/background/introducing-flex/)
 
 ## How to know if Flex is the right fit for your marketplace idea
 
-The purpose of this article is to give you a general overview of
-whether Flex is a good solution for building your specific marketplace
-idea. [Read more »](/background/is-flex-right-for-you/)
+The purpose of this article is to give you a general overview of whether
+Flex is a good solution for building your specific marketplace idea.
+[Read more »](/background/is-flex-right-for-you/)
 
 ## How to build and launch your marketplace with Flex
 
