@@ -86,9 +86,8 @@ editor for email templates. Console is accessed via a web UI that we
 provide out of the box. Think of it as an admin interface you never have
 to build!
 
-## How to build your marketplace with Flex
+## Is Flex the right fit for you?
 
-When building a platform with Flex, your task is to design and create a
-fantastic marketplace user interface. Sharetribe handles everything else
-for you. Next, it's time to learn
-[how to build and launch your marketplace with Flex](/background/how-to-build-and-launch-with-flex/).
+Now you know roughly what Flex is all about. Next, it's time to evaluate 
+[whether Flex is the right fit for your specific marketplace idea](/background/is-flex-right-for-you/).
+
