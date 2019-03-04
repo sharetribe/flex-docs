@@ -18,6 +18,10 @@ tracker ID to the environment variable `REACT_APP_GOOGLE_ANALYTICS_ID`;
 
 That's it! You're good to go.
 
+> Note: Google Analytics doesn't work in hot-loading environment! <br>
+> GA script is added in server-side setup. You can test it local
+> environment with `yarn run dev-server`.
+
 ## Optional: Use a custom analytics handler
 
 If you want to add a new analytics library, you can do as follows:
