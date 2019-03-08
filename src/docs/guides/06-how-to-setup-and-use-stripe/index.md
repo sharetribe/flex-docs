@@ -32,14 +32,25 @@ activation form varies based on your country.
 Sharetribe uses the Stripe Connect features with
 [custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 
+To enable Stripe Connect
 - Click the _Connect_ left menu item.
-- Click the _Get started_ button.
-- Now you should see your _Connect dashboard_. From the left sidebar, go
-  to _Connect_ → _Settings_
-- Make sure "Custom accounts are available for your platform" text is in
-  the dashboard.
 
-![Stripe Connect](./connect.png)
+![Stripe connect](./stripe-connect.png)
+
+- Click the _Get started_ button.
+
+![Get started](./stripe-get-started.png)
+
+- After a few seconds, you should see your Connect dashboard. From the left sidebar, go to _Settings_ then _Connect settings_,
+at https://dashboard.stripe.com/settings
+
+![Connect settings](./stripe-connect-settings.jpg)
+
+- Make sure that _Custom_ is enabled in the _Account types_ section
+
+![Custom enabled](./stripe-custom-enabled.jpg)
+
+Great! You now have to get your API keys and input them into your marketplace.
 
 ## 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
