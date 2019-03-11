@@ -1,7 +1,7 @@
 ---
 title: How to deploy FTW to production
 slug: how-to-deploy-ftw-to-production
-updated: 2019-01-29
+updated: 2019-03-11
 category: guides
 ingress:
   This guide describes how to set up a production deployment for Flex
@@ -191,3 +191,17 @@ dropdown. Logs can be useful if there are problems when deploying the
 app.
 
 ![Heroku logs](./heroku-logs.png)
+
+### Troubleshooting Heroku
+
+By default, Heroku will use latest Long-Term-Support (LTS) version of
+Node.js. So, you might want to specify that your dev and production
+environments use the same Node version as your local machine when you
+run `yarn run dev-server`.
+
+This can be done by adding an `engines` section to the `package.json`.
+Read more from Heroku's
+[Node.js Support guide](https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-version).
+
+You should also check that the _environment variables_ in your local
+environment matches with _Config Vars_ in Heroku app settings.
