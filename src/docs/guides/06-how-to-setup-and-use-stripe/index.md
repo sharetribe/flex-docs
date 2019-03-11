@@ -1,7 +1,7 @@
 ---
 title: How to set up and use Stripe
 slug: how-to-set-up-and-use-stripe
-updated: 2019-02-15
+updated: 2019-03-11
 category: guides
 ingress:
   To enable payments and receive commissions in your marketplace, you
