@@ -1,7 +1,7 @@
 ---
 title: Concepts
 slug: concepts
-updated: 2019-01-08
+updated: 2019-03-19
 category: background
 ingress:
   Explanation of the key concepts we use when we talk about Sharetribe
@@ -286,8 +286,7 @@ The transaction process begins with the first interaction the customer
 and provider have with each other. It defines the states and transitions
 between the states that a transaction can take. It also defines the
 actions that happen as part of the transitions. Examples of actions are
-creating a payment, reserving a time slot, or sending out a notification
-email.
+creating a payment, reserving a time slot, or publishing reviews.
 
 ### User
 
