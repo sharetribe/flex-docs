@@ -153,95 +153,96 @@ sdk.transactions
 
 With this query `response.data` looks as follows:
 
-```json
+<!-- prettier-ignore -->
+```js
 {
-  "data": {
-    "id": {
-      "uuid": "5c8f8dfe-2d54-48c7-b533-4da71196911a"
+  data: {
+    id: {
+      uuid: '5c8f8dfe-2d54-48c7-b533-4da71196911a',
     },
-    "type": "transaction",
-    "attributes": {
-      "processName": "preauth-with-custom-pricing",
-      "transitions": [
+    type: 'transaction',
+    attributes: {
+      processName: 'preauth-with-custom-pricing',
+      transitions: [
         {
-          "transition": "transition/request",
-          "createdAt": "2019-03-18T12:24:30.239Z",
-          "by": "customer"
-        }
+          transition: 'transition/request',
+          createdAt: new Date('2019-03-18T12:24:30.239Z'),
+          by: 'customer',
+        },
       ],
-      "payinTotal": {
-        "amount": 21675,
-        "currency": "USD"
+      payinTotal: {
+        amount: 21675,
+        currency: 'USD',
       },
-      "payoutTotal": {
-        "amount": 19507,
-        "currency": "USD"
+      payoutTotal: {
+        amount: 19507,
+        currency: 'USD',
       },
-      "processVersion": 6,
-      "createdAt": "2019-03-18T12:24:30.223Z",
-      "lastTransitionedAt": "2019-03-18T12:24:30.239Z",
-      "protectedData": {},
-      "lineItems": [
+      processVersion: 6,
+      createdAt: new Date('2019-03-18T12:24:30.223Z'),
+      lastTransitionedAt: new Date('2019-03-18T12:24:30.239Z'),
+      protectedData: {},
+      lineItems: [
         {
-          "code": "line-item/room-for-two",
-          "quantity": "3",
-          "reversal": false,
-          "unitPrice": {
-            "amount": 8000,
-            "currency": "USD"
+          code: 'line-item/room-for-two',
+          quantity: new Decimal(3),
+          reversal: false,
+          unitPrice: {
+            amount: 8000,
+            currency: 'USD',
           },
-          "lineTotal": {
-            "amount": 24000,
-            "currency": "USD"
+          lineTotal: {
+            amount: 24000,
+            currency: 'USD',
           },
-          "includeFor": ["customer", "provider"]
+          includeFor: ['customer', 'provider'],
         },
         {
-          "code": "line-item/baby-crib",
-          "quantity": "3",
-          "reversal": false,
-          "unitPrice": {
-            "amount": 500,
-            "currency": "USD"
+          code: 'line-item/baby-crib',
+          quantity: new Decimal(3),
+          reversal: false,
+          unitPrice: {
+            amount: 500,
+            currency: 'USD',
           },
-          "lineTotal": {
-            "amount": 1500,
-            "currency": "USD"
+          lineTotal: {
+            amount: 1500,
+            currency: 'USD',
           },
-          "includeFor": ["customer", "provider"]
+          includeFor: ['customer', 'provider'],
         },
         {
-          "code": "line-item/discount",
-          "percentage": "-15",
-          "reversal": false,
-          "unitPrice": {
-            "amount": 25500,
-            "currency": "USD"
+          code: 'line-item/discount',
+          percentage: new Decimal(-15),
+          reversal: false,
+          unitPrice: {
+            amount: 25500,
+            currency: 'USD',
           },
-          "lineTotal": {
-            "amount": -3825,
-            "currency": "USD"
+          lineTotal: {
+            amount: -3825,
+            currency: 'USD',
           },
-          "includeFor": ["customer", "provider"]
+          includeFor: ['customer', 'provider'],
         },
         {
-          "code": "line-item/provider-commission",
-          "percentage": "-10",
-          "reversal": false,
-          "unitPrice": {
-            "amount": 21675,
-            "currency": "USD"
+          code: 'line-item/provider-commission',
+          percentage: new Decimal(-10),
+          reversal: false,
+          unitPrice: {
+            amount: 21675,
+            currency: 'USD',
           },
-          "lineTotal": {
-            "amount": -2168,
-            "currency": "USD"
+          lineTotal: {
+            amount: -2168,
+            currency: 'USD',
           },
-          "includeFor": ["provider"]
-        }
+          includeFor: ['provider'],
+        },
       ],
-      "lastTransition": "transition/request"
-    }
-  }
+      lastTransition: 'transition/request',
+    },
+  },
 }
 ```
 
