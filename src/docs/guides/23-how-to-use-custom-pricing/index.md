@@ -640,7 +640,6 @@ import React from 'react';
 import Decimal from 'decimal.js';
 import {
   LINE_ITEM_NIGHT,
-  LINE_ITEM_CLEANING_FEE,
   LINE_ITEM_PROVIDER_COMMISSION,
 } from '../../util/types';
 import { nightsBetween, daysBetween } from '../../util/dates';
