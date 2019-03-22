@@ -629,7 +629,7 @@ marketplace user could make a direct API call to the Flex Marketplace
 API and start a transaction with modified line items. To guard against
 this, we recommend that you add a price validation component that will
 notify the provider on the transaction page in case it seems that the
-booking prices do not follow the listing pricing.
+total payout of the booking does not follow the listing pricing.
 
 Add the price validatio component by creating a new file named
 `InvalidPriceMessageMaybe.js` in the `src/componets/TransactionPanel`
@@ -641,6 +641,7 @@ import Decimal from 'decimal.js';
 import {
   LINE_ITEM_NIGHT,
   LINE_ITEM_CLEANING_FEE,
+  LINE_ITEM_PROVIDER_COMMISSION,
 } from '../../util/types';
 import { nightsBetween, daysBetween } from '../../util/dates';
 import { convertMoneyToNumber } from '../../util/currency';
@@ -671,7 +672,7 @@ const InvalidPriceMessageMaybe = props => {
     ? nightsBetween(start, end)
     : daysBetween(start, end);
 
-  // validate booking line item total
+  // expected booking total
   const listingUnitPrice = listing.attributes.price;
   const listingNumericUnitPrice = convertMoneyToNumber(
     listingUnitPrice
@@ -679,13 +680,8 @@ const InvalidPriceMessageMaybe = props => {
   const listingUnitTotal = new Decimal(listingNumericUnitPrice)
     .times(quantity)
     .toNumber();
-  const txUnitLineItem = transaction.attributes.lineItems.find(
-    item => item.code === unitType && !item.reversal
-  );
-  const txUnitTotal = convertMoneyToNumber(txUnitLineItem.lineTotal);
-  const unitTotalInvalid = listingUnitTotal !== txUnitTotal;
 
-  // validate cleaning fee line item total
+  // expected cleaning fee total
   const listingCleaningFeeData =
     listing.attributes.publicData.cleaningFee;
   const { amount: cleaningAmount, currency: cleaningCurrency } =
@@ -697,22 +693,31 @@ const InvalidPriceMessageMaybe = props => {
   const listingCleaningFeeTotal = listingCleaningFeePrice
     ? convertMoneyToNumber(listingCleaningFeePrice)
     : null;
-  const txCleaningFeeLineItem = transaction.attributes.lineItems.find(
-    item => item.code === LINE_ITEM_CLEANING_FEE && !item.reversal
+
+  // provider commission
+  const providerCommissionLineItem = transaction.attributes.lineItems.find(
+    item =>
+      item.code === LINE_ITEM_PROVIDER_COMMISSION && !item.reversal
   );
-  const txCleaningFeeTotal = txCleaningFeeLineItem
-    ? convertMoneyToNumber(txCleaningFeeLineItem.lineTotal)
-    : null;
-  const cleaningFeeTotalInvalid =
-    listingCleaningFeeTotal &&
-    txCleaningFeeTotal &&
-    listingCleaningFeeTotal !== txCleaningFeeTotal;
+  const providerCommissionTotal = providerCommissionLineItem
+    ? convertMoneyToNumber(providerCommissionLineItem.lineTotal)
+    : 0;
+
+  // check that the expected booking total + cleaning fee + provider commission
+  // match the payout total of the transaction
+  const payoutTotal = convertMoneyToNumber(
+    transaction.attributes.payoutTotal
+  );
+  const expectedPayoutTotal = new Decimal(listingUnitTotal)
+    .plus(listingCleaningFeeTotal)
+    .plus(providerCommissionTotal)
+    .toNumber();
+  const priceInvalid = expectedPayoutTotal !== payoutTotal;
 
   const message = intl.formatMessage({
     id: 'BookingBreakdown.invalidPrice',
   });
-  const showMessage =
-    isProvider && (unitTotalInvalid || cleaningFeeTotalInvalid);
+  const showMessage = isProvider && priceInvalid;
   return showMessage ? (
     <p className={css.invalidPriceMessage}>{message}</p>
   ) : null;
