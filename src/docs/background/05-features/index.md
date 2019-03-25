@@ -48,16 +48,8 @@ Here's a list of information you can store about a listing.
 *   Basic information (title, description)
 *   Geolocation
 *   Photos (unlimited amount)
-*   
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "Pricing"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-[Pricing](#heading=h.a6aok1rz90wy)
-*   
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: undefined internal link (link text: "Availability"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-[Availability](#heading=h.tzb2rmqpfi8e)
+*   [Pricing](#flexible-pricing)
+*   [Availability](#availability-management)
 *   **Public data._ _**Data to display publicly about the listing (category, custom data fields, etc).
 *   **Private data.** Data collected privately about a listing (can be used if the provider needs to provide some information to the operator for the listing approval process)
 *   **Metadata.** Metadata is visible to everyone publicly, but the provider can't edit it – only the operator can. A typical use case for metadata is that the operator can feature some listings to be displayed in the landing page of the marketplace, or at the top of search results in various categories.
