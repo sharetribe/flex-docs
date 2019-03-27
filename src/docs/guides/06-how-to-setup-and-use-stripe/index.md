@@ -1,7 +1,7 @@
 ---
 title: How to set up and use Stripe
 slug: how-to-set-up-and-use-stripe
-updated: 2019-03-11
+updated: 2019-03-27
 category: guides
 ingress:
   To enable payments and receive commissions in your marketplace, you
@@ -135,6 +135,18 @@ Stripe clearing code and branch code are mapped together as routing
 number.
 
 ![Stripe bank numbers](stripe-bank-numbers.png)
+
+With company accounts, Stripe might require information of every person
+that owns at least 25% of the company or exercise significant control
+over your company. This requirement is country specific. For more
+information, see
+[Stripe support](https://support.stripe.com/questions/owners-and-directors).
+
+> Note: if a company/provider doesn't include enough owners to cover
+> most of the shares, you might need to manually state that there are no
+> more persons that own 25% or more.
+
+![Add more owners alert](stripe-add-more-owners-alert.png)
 
 ### Test checkout
 
