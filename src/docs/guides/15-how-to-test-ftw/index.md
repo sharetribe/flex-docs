@@ -1,7 +1,7 @@
 ---
 title: How to test FTW
 slug: how-to-test-ftw
-updated: 2019-01-28
+updated: 2019-03-27
 category: guides
 ingress:
   This guide describes how to use the test setup in Flex Template for
@@ -27,6 +27,13 @@ If you want to run the tests once and not start the watcher, run
     CI=true yarn test
 
 Note that this also runs the linter.
+
+> Note: In some environments, alternative test watcher doesn't always
+> work and it can die unexpectedly. If that happens to you, you might
+> want to install
+> [Watchman](https://facebook.github.io/watchman/docs/install.html).
+> Read more about
+> [this issue](https://github.com/facebook/create-react-app/issues/871).
 
 ## Jest
 
