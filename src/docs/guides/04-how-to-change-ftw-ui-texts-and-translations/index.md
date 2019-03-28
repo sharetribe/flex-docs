@@ -1,7 +1,7 @@
 ---
 title: How to change FTW UI texts and translations
 slug: how-to-change-ftw-ui-texts-and-translations
-updated: 2019-01-28
+updated: 2019-03-28
 category: guides
 ingress:
   This guide describes how to change the User Interface (UI) texts and
@@ -166,6 +166,17 @@ More information about adding static content to the application can be
 found in the
 [How to add static pages in FTW](/guides/how-to-add-static-pages-in-ftw/)
 guide.
+
+There are two other cases where we haven't added translations directly
+to the translation files:
+
+- Labels for example filters (categories and amenities) can be found
+  from `src/marketplace-custom-config.js` By default,
+  [these filters are not in use](/guides/how-to-change-search-filters-in-ftw/#adding-a-new-search-filter)
+  since every marketplace has its own extended data and search filters
+  for them.
+- [Merchant Category Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/PayoutDetailsForm/merchantCategoryCodesUS.js).
+  Stripe requires this from US providers.
 
 ## Changing the language
 
