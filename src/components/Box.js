@@ -20,9 +20,9 @@ const Box = styled.section`
     padding-right: 40px;
   }
 
-  :hover {
-  	box-shadow: 0 16px 32px 0 rgba(0,0,0,0.1);
-  	transform: scale(1.01);
+	:hover {
+		box-shadow: 0 16px 32px 0 rgba(0,0,0,0.1);
+		transform: scale(1.01);
 	}
 `;
 
