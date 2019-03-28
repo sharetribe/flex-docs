@@ -94,7 +94,7 @@ export const SectionLinks = styled(Ul)`
   margin-top: ${2 * baselineSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${4 * baselineLarge}px;
+    margin-top: ${3 * baselineLarge}px;
   }
 `;
 

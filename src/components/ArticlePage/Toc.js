@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineBreakpoint } from '../../config';
+import { baselineBreakpoint, baselineLarge } from '../../config';
 import { Ul, Li, Link } from '../../components';
 
 // NOTE: custom line height
@@ -11,10 +11,9 @@ const TocLi = styled(Li).attrs({
   // Side navigation hidden on small viewport
 
   @media (min-width: ${baselineBreakpoint}px) {
-    line-height: 32px;
-
-    // Offset baseline
-    top: 2px;
+    line-height: 24px;
+    padding-bottom: ${baselineLarge}px;
+    font-size: 15px;
 
     color: ${props => props.theme.linkColor};
 

@@ -6,17 +6,17 @@ import { H5, P, Ul, Link, UiText, Box } from '../../components';
 
 const Grid = styled(Ul)`
   display: grid;
-  grid-row-gap: ${grid.smallGap}px;
+  grid-row-gap: ${2 * baselineLarge}px;
   grid-column-gap: ${grid.smallGap}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    grid-row-gap: ${grid.largeGap}px;
+    grid-row-gap: ${2 * baselineLarge}px;
     grid-column-gap: ${grid.largeGap}px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
   @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
   }
 `;
@@ -33,7 +33,7 @@ const Paragraph = styled(P).attrs({
   top: 1px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${2 * baselineLarge}px;
+    margin-top: ${baselineLarge}px;
 
     font-size: 16px;
     line-height: 24px;
@@ -48,18 +48,12 @@ const GridItem = props => {
   const { pathPrefix, title, slug, ingress } = props;
   const path = `${pathPrefix}${slug}/`;
   return (
-    <Box as="li">
-      <H5 as="h2">
-        <Link neutral to={path}>
-          {title}
-        </Link>
-      </H5>
-      <Paragraph>
-        <Link neutral to={path}>
-          {ingress}
-        </Link>
-      </Paragraph>
-    </Box>
+    <Link neutral to={path}>
+	    <Box as="li">
+	      <H5 as="h2">{title}</H5>
+	      <Paragraph>{ingress}</Paragraph>
+	    </Box>
+    </Link>
   );
 };
 

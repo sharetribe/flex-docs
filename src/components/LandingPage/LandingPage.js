@@ -28,11 +28,9 @@ export const IntroHeading = styled(H1)`
   margin-right: ${props => props.theme.contentPaddingSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${14 * baselineLarge}px;
-    margin-left: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
-    margin-right: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-top: ${10 * baselineLarge}px;
+    margin-left: ${5 * baselineLarge + grid.sideMargin}px;
+    margin-right: ${5 * baselineLarge + grid.sideMargin}px;
   }
 `;
 
@@ -43,10 +41,8 @@ export const IntroDescription = styled(P)`
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${2 * baselineLarge}px;
-    margin-left: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
-    margin-right: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-left: ${5 * baselineLarge + grid.sideMargin}px;
+    margin-right: ${5 * baselineLarge + grid.sideMargin}px;
   }
 `;
 
@@ -91,10 +87,8 @@ const Paragraph = styled(P).attrs({
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${7 * baselineLarge}px;
     margin-bottom: ${13 * baselineLarge}px;
-    margin-left: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
-    margin-right: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-left: ${5 * baselineLarge + grid.sideMargin}px;
+    margin-right: ${5 * baselineLarge + grid.sideMargin}px;
 
     font-size: 16px;
     line-height: 24px;
@@ -112,10 +106,8 @@ const CollectionsHeading = styled(H6)`
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${12 * baselineLarge}px;
-    margin-left: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
-    margin-right: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-left: ${5 * baselineLarge + grid.sideMargin}px;
+    margin-right: ${5 * baselineLarge + grid.sideMargin}px;
   }
 `;
 
@@ -142,10 +134,8 @@ const CategoriesHeading = styled(H6)`
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${10 * baselineLarge}px;
-    margin-left: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
-    margin-right: ${props =>
-      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-left: ${5 * baselineLarge + grid.sideMargin}px;
+    margin-right: ${5 * baselineLarge + grid.sideMargin}px;
   }
 `;
 

@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${props => props.theme.backgroundColor};
     overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
   }
   button {
     border: none;

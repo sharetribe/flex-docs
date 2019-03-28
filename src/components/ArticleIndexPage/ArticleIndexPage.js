@@ -29,7 +29,7 @@ const Heading = styled(H1)`
   margin-right: ${props => props.theme.contentPaddingSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${14 * baselineLarge}px;
+    margin-top: ${10 * baselineLarge}px;
     margin-left: ${props =>
       props.theme.contentPaddingLarge + grid.sideMargin}px;
     margin-right: ${props =>

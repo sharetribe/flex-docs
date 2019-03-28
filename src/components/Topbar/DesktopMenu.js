@@ -27,6 +27,10 @@ const activeLinkStyles = css`
   border-bottom-color: ${props => props.theme.topbarNavBorderColorActive};
 `;
 
+const hoverLinkStyles = css`
+  color: ${props => props.theme.topbarNavColorActive};
+`;
+
 const NavLink = styled(Link).attrs({
   neutral: true,
 })`
@@ -42,7 +46,7 @@ const NavLink = styled(Link).attrs({
   ${props => (props.active ? activeLinkStyles : '')}
 
   :hover {
-    ${activeLinkStyles}
+    ${hoverLinkStyles}
   }
 `;
 
