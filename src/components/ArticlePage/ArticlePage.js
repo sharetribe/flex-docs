@@ -51,8 +51,8 @@ const SideNavigation = styled(Box)`
   }
 
   :hover {
-	  transform: none;
-	  box-shadow: inherit;
+		transform: none;
+		box-shadow: inherit;
 `;
 
 const MainColumn = styled.article`
