@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineLarge, baselineSmall, baselineBreakpoint, grid } from '../../config';
+import {
+  baselineLarge,
+  baselineSmall,
+  baselineBreakpoint,
+  grid,
+} from '../../config';
 import { H5, P, Ul, Link, UiText, Box } from '../../components';
 
 const Grid = styled(Ul)`
@@ -46,8 +51,8 @@ const GridItem = props => {
   return (
     <Box as="li">
       <Link neutral to={path}>
-      <H5 as="h2">{title}</H5>
-      <Paragraph>{ingress}</Paragraph>
+        <H5 as="h2">{title}</H5>
+        <Paragraph>{ingress}</Paragraph>
       </Link>
     </Box>
   );

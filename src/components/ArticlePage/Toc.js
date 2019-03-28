@@ -15,7 +15,6 @@ const TocLi = styled(Li).attrs({
     padding-bottom: ${baselineLarge}px;
     font-size: 15px;
 
-
     // Offset baseline
     top: -1px;
 
