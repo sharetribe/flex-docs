@@ -303,7 +303,7 @@ or even personalize the templates based on who the recipient is.
 
 # Multiple languages and currencies
 
-You can use as many languages as you choose in your marketplace. Flex
+You can use as many languages as you want in your marketplace. Flex
 Template for Web includes default translations for English, Spanish,
 French and German, but you can easily translate it to the language of
 your choice. \
