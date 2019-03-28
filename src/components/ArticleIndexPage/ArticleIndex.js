@@ -1,23 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineLarge, baselineBreakpoint, grid } from '../../config';
+import { baselineLarge, baselineSmall, baselineBreakpoint, grid } from '../../config';
 import { H5, P, Ul, Link, UiText, Box } from '../../components';
 
 const Grid = styled(Ul)`
   display: grid;
-  grid-row-gap: ${2 * baselineLarge}px;
+  grid-row-gap: ${2 * baselineSmall}px;
   grid-column-gap: ${grid.smallGap}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     grid-row-gap: ${2 * baselineLarge}px;
     grid-column-gap: ${grid.largeGap}px;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto;
   }
 `;
 
@@ -48,12 +44,12 @@ const GridItem = props => {
   const { pathPrefix, title, slug, ingress } = props;
   const path = `${pathPrefix}${slug}/`;
   return (
-    <Link neutral to={path}>
-      <Box as="li">
-        <H5 as="h2">{title}</H5>
-        <Paragraph>{ingress}</Paragraph>
-      </Box>
-    </Link>
+    <Box as="li">
+      <Link neutral to={path}>
+      <H5 as="h2">{title}</H5>
+      <Paragraph>{ingress}</Paragraph>
+      </Link>
+    </Box>
   );
 };
 

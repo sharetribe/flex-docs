@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
+import { baselineSmall, baselineBreakpoint } from '../config';
 
 const Box = styled.section`
   padding-top: ${3 * baselineSmall}px;
@@ -14,15 +14,15 @@ const Box = styled.section`
   transition: all 0.05s ease-out;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    padding-top: ${4 * baselineLarge}px;
-    padding-bottom: ${5 * baselineLarge}px;
-    padding-left: ${5 * baselineLarge}px;
-    padding-right: ${5 * baselineLarge}px;
+    padding-top: 32px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   :hover {
-		box-shadow: 0 16px 32px 0 rgba(0,0,0,0.1);
-		transform: scale(1.01);
+  	box-shadow: 0 16px 32px 0 rgba(0,0,0,0.1);
+  	transform: scale(1.01);
 	}
 `;
 
