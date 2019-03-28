@@ -49,10 +49,10 @@ const GridItem = props => {
   const path = `${pathPrefix}${slug}/`;
   return (
     <Link neutral to={path}>
-	    <Box as="li">
-	      <H5 as="h2">{title}</H5>
-	      <Paragraph>{ingress}</Paragraph>
-	    </Box>
+      <Box as="li">
+        <H5 as="h2">{title}</H5>
+        <Paragraph>{ingress}</Paragraph>
+      </Box>
     </Link>
   );
 };

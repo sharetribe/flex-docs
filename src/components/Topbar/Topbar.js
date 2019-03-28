@@ -51,7 +51,7 @@ const TopbarLogo = styled(Logo)`
   }
 
   :hover {
-	  opacity: 0.8;
+    opacity: 0.8;
   }
 `;
 
