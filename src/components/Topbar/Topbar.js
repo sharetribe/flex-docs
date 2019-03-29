@@ -49,6 +49,10 @@ const TopbarLogo = styled(Logo)`
     margin-top: 23px;
     margin-bottom: 23px;
   }
+
+  :hover {
+    opacity: 0.8;
+  }
 `;
 
 const TopbarSearch = styled(Search)`

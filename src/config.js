@@ -78,7 +78,7 @@ exports.themeLight = {
 
   // Content size and spacing
   pageContentMaxWidth: 1135,
-  contentMaxWidth: 635,
+  contentMaxWidth: 720,
   contentPaddingSmall: 24,
   contentPaddingLarge: 48,
 };

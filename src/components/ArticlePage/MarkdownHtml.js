@@ -52,7 +52,7 @@ const Html = styled.div`
   }
   h2 {
     ${H4.styles}
-    margin: ${baselineSpacing}px 0;
+    margin: ${2 * baselineSpacing}px 0 ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h3 {

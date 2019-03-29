@@ -46,6 +46,13 @@ const SideNavigation = styled(Box)`
     margin-top: ${6 * baselineLarge}px;
     margin-bottom: ${4 * baselineLarge}px;
     top: ${2 * baselineLarge}px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  :hover {
+    transform: none;
+    box-shadow: none;
   }
 `;
 
