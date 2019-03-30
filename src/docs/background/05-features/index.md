@@ -63,7 +63,7 @@ Here's a list of information you can store about a listing.
 - Photos (unlimited amount)
 - [Pricing](#flexible-pricing)
 - [Availability](#availability-management)
-- **Public data.\_ \_**Data to display publicly about the listing
+- **Public data.** Data to display publicly about the listing
   (category, custom data fields, etc).
 - **Private data.** Data collected privately about a listing (can be
   used if the provider needs to provide some information to the operator
@@ -258,7 +258,7 @@ lots of helpful features. Here are some of them:
   to 6 months before releasing it to the provider.
 - **Refunds.** If something goes wrong with the booking or the customer
   wants to cancel, you can easily refund them.
-- **Charge your commission. **You can charge a commission from the
+- **Charge your commission.** You can charge a commission from the
   customer, the provider, or both parties.
 - **Automated payouts.** Your commission is automatically deposited to
   your bank account, while the rest is deposited to the bank account of
