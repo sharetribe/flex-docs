@@ -22,7 +22,26 @@ const HighlightStyle = createGlobalStyle`
     }
   }
 
+  li p + .gatsby-highlight {
+
+    // Baseline offsets
+    margin-top: 0px;
+    margin-bottom: 18px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+
+      // Baseline offsets
+      margin-top: -2px;
+      margin-bottom: 18px;
+    }
+  }
+
   .gatsby-highlight  {
+    margin-bottom: ${2 * baselineSmall}px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin-bottom: ${2 * baselineLarge}px;
+    }
 
     // Remove theme default styles
     pre[class*="language-"] {
@@ -73,7 +92,7 @@ const Html = styled.div`
   }
   h3 {
     ${H5.styles}
-    margin: ${baselineSpacing}px 0;
+    margin: ${5 * baselineLarge}px 0 ${baselineLarge}px;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h4 {
@@ -100,7 +119,7 @@ const Html = styled.div`
     // exist e.g. in lists where the baseline offset is already
     // done. Margins are also handled separately in those components.
     ${P.styles}
-    margin: ${baselineSpacing}px 0;
+    margin-bottom: ${baselineSpacing}px;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   strong {${Strong.styles}}
