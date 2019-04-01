@@ -23,25 +23,28 @@ const HighlightStyle = createGlobalStyle`
   }
 
   li p + .gatsby-highlight {
-
-    // Baseline offsets
     margin-top: 0;
-    margin-bottom: 18px;
+    margin-bottom: ${3 * baselineSmall}px;
 
     @media (min-width: ${baselineBreakpoint}px) {
       // Baseline offset
       top: -2px;
 
       position: relative;
-      margin-bottom: 16px;
+      margin-bottom: ${2 * baselineLarge}px;
     }
   }
 
   .gatsby-highlight  {
     margin-bottom: ${2 * baselineSmall}px;
+    line-height: 24px;
 
     @media (min-width: ${baselineBreakpoint}px) {
       margin-bottom: ${2 * baselineLarge}px;
+    }
+
+    pre {
+      font-size: 14px;
     }
 
     // Remove theme default styles
@@ -49,7 +52,7 @@ const HighlightStyle = createGlobalStyle`
       margin: ${baselineSmall}px 0;
 
       // Baseline offset
-      padding: ${2 * baselineSmall - 1}px 16px ${2 * baselineSmall}px 16px;
+      padding: ${2 * baselineSmall}px 16px;
       line-height: 24px;
       border-radius: 4px;
 
@@ -64,10 +67,6 @@ const HighlightStyle = createGlobalStyle`
       background: none;
       font-weight: 400;
       color: #ccc;
-
-      @media (min-width: ${baselineBreakpoint}px) {
-        font-size: 16px;
-      }
     }
 
     pre[class*="language-"],
