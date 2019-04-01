@@ -10,7 +10,7 @@ const BaselineGrid = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
 
   /* Height is calculated dynamically based on the document body scroll height */
   height: ${props => props.height};

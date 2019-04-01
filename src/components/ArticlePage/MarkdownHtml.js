@@ -25,14 +25,15 @@ const HighlightStyle = createGlobalStyle`
   li p + .gatsby-highlight {
 
     // Baseline offsets
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 18px;
 
     @media (min-width: ${baselineBreakpoint}px) {
+      // Baseline offset
+      top: -2px;
 
-      // Baseline offsets
-      margin-top: -2px;
-      margin-bottom: 18px;
+      position: relative;
+      margin-bottom: 16px;
     }
   }
 
@@ -46,7 +47,9 @@ const HighlightStyle = createGlobalStyle`
     // Remove theme default styles
     pre[class*="language-"] {
       margin: ${baselineSmall}px 0;
-      padding: ${2 * baselineSmall}px 16px;
+
+      // Baseline offset
+      padding: ${2 * baselineSmall - 1}px 16px ${2 * baselineSmall}px 16px;
       line-height: 24px;
       border-radius: 4px;
 
@@ -60,6 +63,7 @@ const HighlightStyle = createGlobalStyle`
       font-size: 14px;
       background: none;
       font-weight: 400;
+      color: #ccc;
 
       @media (min-width: ${baselineBreakpoint}px) {
         font-size: 16px;
@@ -70,7 +74,6 @@ const HighlightStyle = createGlobalStyle`
     code[class*="language-"],
     .token {
       &::selection {
-        // Use same selection styles as in sanitize.css
         background-color: rgba(255, 255, 255, 0.2);
         color: inherit;
         text-shadow: none;
@@ -92,11 +95,11 @@ const Html = styled.div`
   }
   h3 {
     ${H5.styles}
-    margin: ${5 * baselineSmall}px 0 ${baselineSmall}px;
+    margin: ${5 * baselineSmall}px 0 ${baselineSmall}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
 
     @media (min-width: ${baselineBreakpoint}px) {
-      margin: ${5 * baselineLarge}px 0 ${baselineLarge}px;
+      margin: ${5 * baselineLarge}px 0 ${baselineLarge}px 0;
     }
   }
   h4 {
