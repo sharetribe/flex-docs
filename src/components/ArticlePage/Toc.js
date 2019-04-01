@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import fonts from '../../fonts';
 
 import { baselineBreakpoint, baselineLarge } from '../../config';
 import { Ul, Li, Link } from '../../components';
@@ -11,6 +12,7 @@ const TocLi = styled(Li).attrs({
   // Side navigation hidden on small viewport
 
   @media (min-width: ${baselineBreakpoint}px) {
+    ${fonts['CircularStd-Medium'].styles}
     line-height: 24px;
     padding-bottom: ${baselineLarge}px;
     font-size: 15px;
@@ -18,7 +20,7 @@ const TocLi = styled(Li).attrs({
     // Offset baseline
     top: -1px;
 
-    color: ${props => props.theme.linkColor};
+    color: ${props => props.theme.textColor};
 
     :hover {
       color: ${props => props.theme.linkColorHover};

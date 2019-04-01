@@ -9,26 +9,42 @@ import {
 } from '../../config';
 import { H4, H5, H6, P, Ul, Ol, Li, Hr, A, Strong, Em } from '../../components';
 
-require('prismjs/themes/prism-solarizedlight.css');
+require('prismjs/themes/prism-tomorrow.css');
 
 const HighlightStyle = createGlobalStyle`
+
+  // Decrease the distance between p and the code block
+  p + .gatsby-highlight {
+    margin-top: -${2 * baselineSmall}px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin-top: -${2 * baselineLarge}px;
+    }
+  }
+
   .gatsby-highlight  {
 
     // Remove theme default styles
     pre[class*="language-"] {
-      background-color: transparent;
       margin: ${baselineSmall}px 0;
-      padding: ${2 * baselineSmall}px 0;
+      padding: ${2 * baselineSmall}px 16px;
       line-height: 24px;
-      border-radius: 0;
+      border-radius: 4px;
 
       @media (min-width: ${baselineBreakpoint}px) {
         margin: ${baselineLarge}px 0;
-        padding: ${2 * baselineLarge}px 0;
+        padding: ${2 * baselineLarge}px 24px;
       }
     }
     code[class*="language-"] {
       line-height: 24px;
+      font-size: 14px;
+      background: none;
+      font-weight: 400;
+
+      @media (min-width: ${baselineBreakpoint}px) {
+        font-size: 16px;
+      }
     }
 
     pre[class*="language-"],
@@ -36,8 +52,8 @@ const HighlightStyle = createGlobalStyle`
     .token {
       &::selection {
         // Use same selection styles as in sanitize.css
-        background-color: #b3d4fc;
-        color: #000;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: inherit;
         text-shadow: none;
       }
     }
@@ -114,6 +130,9 @@ const Html = styled.div`
     //
     // See: https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align
     line-height: 23px;
+    font-size: 16px;
+    background: rgba(255,229,100,0.35);
+    display: inline-block;
 
     color: ${props => props.theme.textColorQuoted};
   }
@@ -172,6 +191,14 @@ const Html = styled.div`
   }
   & > :last-child {
     margin-bottom: 0;
+  }
+
+  picture {
+    transition: all ease-out 0.1s;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 `;
 
