@@ -65,8 +65,8 @@ Here's a list of information you can store about a listing.
 - Photos (unlimited amount)
 - [Pricing](#flexible-pricing)
 - [Availability](#availability-management)
-- **Public data.** Data to display publicly about the listing
-  (category, custom data fields, etc).
+- **Public data.** Data to display publicly about the listing (category,
+  custom data fields, etc).
 - **Private data.** Data collected privately about a listing (can be
   used if the provider needs to provide some information to the operator
   for the listing approval process)
@@ -194,7 +194,7 @@ multiple criteria:
   certain numeric value in their public data. For example, you might
   want to build a slider filter for the skill level of the user, ranging
   from 0 to 10.
-  
+
 ---
 
 ## Transactions
@@ -275,7 +275,7 @@ lots of helpful features. Here are some of them:
 - **Automated payouts.** Your commission is automatically deposited to
   your bank account, while the rest is deposited to the bank account of
   the provider at the time of your choosing.
-  
+
 ---
 
 ## Reviews

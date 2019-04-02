@@ -103,7 +103,6 @@ In your project root, install dependencies:
 
     yarn install
 
-
 ---
 
 ## Configuration
@@ -145,7 +144,7 @@ development server:
   module existing in right path. Restarting the server doesn't help. To
   solve the issue, you need to make a change to the file where the error
   occurs.
-  
+
 ---
 
 ## Development Server
