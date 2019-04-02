@@ -103,10 +103,10 @@ const Heading = styled(H1)`
 `;
 
 const ArticleIngress = styled(Ingress)`
-  margin-top: ${3 * baselineSmall}px;
+  margin-top: ${2 * baselineSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${4 * baselineLarge}px;
+    margin-top: ${3 * baselineLarge}px;
   }
 `;
 

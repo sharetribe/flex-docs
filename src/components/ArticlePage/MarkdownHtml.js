@@ -154,10 +154,9 @@ const Html = styled.div`
     // element seems to fix this.
     //
     // See: https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align
-    line-height: 23px;
-    font-size: 16px;
+    line-height: 22px;
+    font-size: 15px;
     background: rgba(255,229,100,0.35);
-    display: inline-block;
 
     color: ${props => props.theme.textColorQuoted};
   }
@@ -181,7 +180,7 @@ const Html = styled.div`
 
     // Two paragraphs are separated by a margin
     p + p {
-      margin: ${baselineSpacing}px 0;
+      margin-bottom: ${baselineSpacing}px;
     }
     li {
       // Prevent offsetting the baseline twice in a sub list
