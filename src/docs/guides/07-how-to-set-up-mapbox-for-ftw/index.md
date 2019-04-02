@@ -24,6 +24,8 @@ copy its value.
 Read more about
 [access tokens and consider rotating them](https://www.mapbox.com/help/how-access-tokens-work/).
 
+---
+
 ## 2. Setup the application to use the access token
 
 The application uses the `REACT_APP_MAPBOX_ACCESS_TOKEN` environment
@@ -33,6 +35,8 @@ variable in the Gitignored `.env` file in the project root:
 ```
 REACT_APP_MAPBOX_ACCESS_TOKEN=my-access-token-here
 ```
+
+---
 
 ## 3. Setup common locations to reduce typing
 
@@ -60,6 +64,8 @@ current location from
 Search for variables: `suggestCurrentLocation` and
 `currentLocationBoundsDistance`.
 
+---
+
 ## Optional: check rare default configurations
 
 Mapbox geocoding API doesn't always return bounding boxes for locations.
@@ -68,6 +74,8 @@ for that particular place. Therefore there are default bounding boxes
 defined to different place types in the Mapbox specific geocoder:
 
 [src/components/LocationAutocompleteInput/GeocoderMapbox.js](https://github.com/sharetribe/flex-template-web/blob/master/src/components/LocationAutocompleteInput/GeocoderMapbox.js).
+
+---
 
 ## Optional: Restrict location autocomplete to specific country or countries
 
@@ -80,6 +88,8 @@ active. Provide the country or countries in an array using
 [ISO 3166 alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 format (eg. GB, US, FI). If there are multiple values, separate them
 with commas.
+
+---
 
 ## Changing the map providers
 

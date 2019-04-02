@@ -25,12 +25,16 @@ If you are new to Sharetribe Flex or FTW, we recommend going through the
 - [What development skills are needed?](/background/development-skills/)
 - [Getting started with FTW](/tutorials/getting-started-with-ftw/)
 
+---
+
 ## Requirements
 
 Install required tools:
 
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/)
+
+---
 
 ## Setup
 
@@ -91,11 +95,16 @@ See also the
 [Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
 documentation.
 
+---
+
 ## Installing dependecies
 
 In your project root, install dependencies:
 
     yarn install
+
+
+---
 
 ## Configuration
 
@@ -120,6 +129,8 @@ See also the
 [src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js)
 file for more configuration options.
 
+---
+
 ## Development
 
 To develop the application and to see changes live, start the frontend
@@ -134,6 +145,8 @@ development server:
   module existing in right path. Restarting the server doesn't help. To
   solve the issue, you need to make a change to the file where the error
   occurs.
+  
+---
 
 ## Development Server
 
@@ -156,6 +169,8 @@ directory.
 application code. For that you need to build the client bundle by
 restarting the server manually.
 
+---
+
 ## Tests
 
 To start the test watcher, run
@@ -164,6 +179,8 @@ To start the test watcher, run
 
 For more information, see the
 [How to test FTW](/guides/how-to-test-ftw/) documentation.
+
+---
 
 ## Customization
 

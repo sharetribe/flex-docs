@@ -166,6 +166,8 @@ available.
 This file provides default styles for plain elements like `<body>`,
 `<a>`, `<p>`, `<input>`, `<h1>`, `<h2>`, and so on.
 
+---
+
 ## Styling components
 
 Styling a web UI is traditionally quite a messy business due to the

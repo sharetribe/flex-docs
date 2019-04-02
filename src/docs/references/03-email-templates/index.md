@@ -54,6 +54,8 @@ these best practises for email branding to avoid spam folders:
 - One technical thing to do is to set up in your DNS records
   [a SPF record for Sendgrid](https://sendgrid.com/docs/Glossary/spf.html).
 
+---
+
 ## Handlebars
 
 The template language used to build the email templates is called
@@ -69,6 +71,8 @@ HTML that will be sent to your users.
 
 Please read through the [Handlebars](https://handlebarsjs.com/)
 documentation for more information about the templating language.
+
+---
 
 ## Helpers
 
@@ -302,6 +306,8 @@ Example usage:
 Encode the given string as application/x-www-form-urlencoded. Should be
 used for query string components.
 
+---
+
 ## Editing built-in emails
 
 The built-in emails can be customized using the
@@ -315,6 +321,8 @@ context that will be used with that particular email.
 
 The editor also let's you to see a **preview** of the email before and
 let's you **send test emails** to your own email address.
+
+---
 
 ## Editing transaction emails
 

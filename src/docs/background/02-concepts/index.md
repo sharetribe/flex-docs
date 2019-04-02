@@ -82,6 +82,8 @@ delivered via HTTPS to the endpoints the admin chooses.
 
 Planned.
 
+---
+
 ## Marketplace concepts
 
 The key concepts in the Sharetribe Flex marketplace domain.

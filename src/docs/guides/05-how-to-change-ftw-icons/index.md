@@ -79,6 +79,8 @@ those images.
     <!-- End Favicons -->
     ```
 
+---
+
 ## 2. Change map marker icon
 
 The map marker icon in the listing can be found in

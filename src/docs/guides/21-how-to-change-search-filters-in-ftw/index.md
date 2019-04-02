@@ -35,6 +35,8 @@ two different components:
 - Select single filter: `SelectSingleFilter`
 - Select multiple filter: `SelectMultipleFilter`
 
+---
+
 ## Adding a new search filter
 
 Next we'll guide you through the steps of adding a _capacity_ filter to
@@ -211,6 +213,8 @@ steps are required to add a mobile filter:
 - use the `SelectSingleFilter` and `SelectMultipleFilter` components
   inside the `<div className={css.filtersWrapper}>` element to render
   the filters.
+
+---
 
 ## Creating your own filter types
 

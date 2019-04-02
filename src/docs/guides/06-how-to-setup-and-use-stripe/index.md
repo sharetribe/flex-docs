@@ -27,6 +27,8 @@ activation form varies based on your country.
 
 ![Activate Stripe account](./activate-account.png)
 
+---
+
 ## 2. Enable Stripe Connect in your platform
 
 Sharetribe uses the Stripe Connect features with
@@ -61,6 +63,8 @@ Stripe Connect:
 Great! You now have to get your API keys and input them into your
 marketplace.
 
+---
+
 ## 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
 - Click the _Developers_ left menu item and go to _Developers_ → _API
@@ -78,6 +82,8 @@ production make sure that the toggle is off.
 
 ![Get API keys from Stripe](./api-keys.png)
 
+---
+
 ## 4. Add your Stripe secret API key to Console
 
 - Log in to Console and go to _Build_ → _Payments_
@@ -85,6 +91,8 @@ production make sure that the toggle is off.
   secret key" field and save the changes.
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
+
+---
 
 ## 5. Add you Stripe publishable key to your client application
 
@@ -97,6 +105,8 @@ text editor.
 
 Read more about configurations in FTW from
 [Getting started with FTW](/tutorials/getting-started-with-ftw/#configuration)
+
+---
 
 ## 6. Test the Stripe account in Flex Template for Web
 
@@ -157,6 +167,8 @@ the checkout. There are also test numbers for
 so e.g. testing different error scenarios is possible.
 
 ![Checkout](checkout.png)
+
+---
 
 ## 7. Advanced: Adding new country to supported Stripe countries
 

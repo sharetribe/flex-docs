@@ -38,6 +38,8 @@ Currently Flex allows the number of seats to be only 0 or 1, meaning
 unavailable and available for single booking, respectively. Each booking
 currently consumes exactly one seat.
 
+---
+
 ## Day-based availability management
 
 Day-based availability works with both daily and nightly bookings. For
@@ -86,6 +88,8 @@ Given exception 1 from `2017-11-26T10:00:00.000Z` to
 this is interpreted as if single exception existed from
 `2018-11-26T00:00:00.0Z` to `2018-11-27T00:00:00.000Z` with 0 seats.
 
+---
+
 ## Time-based availability management
 
 Time-based availability can be used with time-based bookings. Time-based
@@ -100,6 +104,8 @@ and from 1 PM to 6 PM.
 For time-based plans, both availability exceptions and bookings are
 interpreted literally, i.e. covering the exact time intervals determined
 by their start and end times.
+
+---
 
 ## Related API endpoints
 

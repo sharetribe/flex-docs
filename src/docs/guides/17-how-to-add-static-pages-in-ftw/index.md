@@ -17,15 +17,21 @@ need for data fetches, you can create a static page.
 Create a new folder under `src/containers/` with the name of your static
 page. E.g. "about" page should be named as `AboutPage`.
 
+---
+
 ## 2. Create a JavaScript file
 
 Create a new JavaScript file using the folder name. The path should look
 like `src/containers/AboutPage/AboutPage.js`.
 
+---
+
 ## 3. Create a CSS file
 
 Create a new CSS file using the folder name. The path should look like
 `src/containers/AboutPage/AboutPage.css`.
+
+---
 
 ## 4. Create the component
 
@@ -207,6 +213,8 @@ And as a final step we need to export the component.
 `export default AboutPage;`. See more from
 [babeljs.org](https://babeljs.io/learn-es2015/#ecmascript-2015-features-modules)
 
+---
+
 ## 5. Add some styles to the CSS file
 
 Here's an example what your AboutPage.css file could look like:
@@ -222,6 +230,8 @@ Here's an example what your AboutPage.css file could look like:
 }
 ```
 
+---
+
 ## 6. Add the component to the component directory
 
 New component needs to be added to `src/containers/index.js` file or if
@@ -232,6 +242,8 @@ Inside that index.js you need to add line
 `export { default as AboutPage } from './AboutPage/AboutPage';`. This
 helps other parts of the app to import new components easily with
 `import { AboutPage } from '../../components'`.
+
+---
 
 ## 7. Add a route to the page
 
@@ -263,6 +275,8 @@ path.)
   component: AboutPage,
 },
 ```
+
+---
 
 ## Read more
 

@@ -22,6 +22,8 @@ platform that adapts to the entire lifecycle of your business. As your
 business grows, Flex takes care of running and scaling your backend —
 allowing you to focus on the unique value of your platform.
 
+---
+
 ## Flex Components
 
 ![Flex customer architecture](./flex-customer-architecture.png)
@@ -85,6 +87,8 @@ Console also offers tools to develop your marketplace, for example, an
 editor for email templates. Console is accessed via a web UI that we
 provide out of the box. Think of it as an admin interface you never have
 to build!
+
+---
 
 ## Is Flex the right fit for you?
 

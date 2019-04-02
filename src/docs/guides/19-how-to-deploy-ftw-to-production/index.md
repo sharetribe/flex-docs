@@ -90,6 +90,8 @@ Start the server:
 
 `yarn start`
 
+---
+
 ## Deploying to Heroku
 
 - [Fork the repository](#fork-the-repository)

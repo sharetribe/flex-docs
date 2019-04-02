@@ -43,6 +43,8 @@ booking is automatically confirmed as soon as it is made (i.e. instant
 booking), or a change of wording in a notification email sent to remind
 the customer of their upcoming booking.
 
+---
+
 ## Sharetribe Flex default transaction process
 
 ![Sharetribe Flex default transaction process](./tx-process-nightly-default.png)
@@ -93,6 +95,8 @@ account, after the commission of the marketplace is deducted. When the
 booking has been completed, both the customer and the provider can
 _review_ each other.
 
+---
+
 ## What kind of transaction process customizations are possible?
 
 As all marketplaces’ have their own characteristics, it is common to
@@ -121,6 +125,8 @@ Apart from the order flow, customizations can also affect the money
 flow, storing
 [protected data](/references/extended-data/#protected-data) or sending
 notifications.
+
+---
 
 ## How to change your transaction process
 

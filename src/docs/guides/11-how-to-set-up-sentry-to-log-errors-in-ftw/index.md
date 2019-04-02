@@ -34,6 +34,8 @@ and
 so refer to those files to change the external logging service or the
 logging logic in general.
 
+---
+
 ## Optional: Configure source map retrieval
 
 By default Sentry fetches the source maps for minified javascript files.

@@ -44,6 +44,8 @@ multiple times in the translation file but it also emphasizes how all
 the components are independent, how a component can be used anywhere and
 how modifications to a single component do not affect other components.
 
+---
+
 ## Using the translations
 
 React Intl provides multiple ways to access the translation data but the
@@ -85,6 +87,8 @@ As for the `FormattedMessage` it just needs to be imported from
 
 Other functions and componets can be explored in the
 [React Intl documentation](https://github.com/yahoo/react-intl/wiki).
+
+---
 
 ## Formatting
 
@@ -153,6 +157,8 @@ intl.formatMessage(
 More formatting examples can be found from the
 [FormatJS message syntax documentation](https://formatjs.io/guides/message-syntax/).
 
+---
+
 ## Texts outside the translation file
 
 A few components in the template app contain texts that are not included
@@ -177,6 +183,8 @@ to the translation files:
   for them.
 - [Merchant Category Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/PayoutDetailsForm/merchantCategoryCodesUS.js).
   Stripe requires this from US providers.
+
+---
 
 ## Changing the language
 
@@ -242,6 +250,8 @@ to match your language in use, for example:
 ```js
 import messages from '../translations/it.json';
 ```
+
+---
 
 ## Managing translations
 

@@ -27,6 +27,8 @@ Go to the
 click on the "GET A KEY" button in the top bar, and follow the
 instructions. You can copy the given key to your application now.
 
+---
+
 ## 2. Enable Google Places API Web Service
 
 Follow the instructions in the
@@ -34,6 +36,8 @@ Follow the instructions in the
 section of the Places library documentation to enable using the Google
 Places API Web Service. Also Maps Static API and Maps Javascript API
 need to be enabled.
+
+---
 
 ## 3. Setup the application to use the API key
 
@@ -44,6 +48,8 @@ variable in the Gitignored `.env` file in the project root:
 ```
 REACT_APP_GOOGLE_MAPS_API_KEY=my-key-here
 ```
+
+---
 
 ## 4. Setup common locations to reduce typing
 
@@ -70,12 +76,14 @@ current location from
 Search for variables: `suggestCurrentLocation` and
 `currentLocationBoundsDistance`.
 
-## 4. Change components: use Google Map versions instead of Mapbox
+---
+
+## 5. Change components: use Google Map versions instead of Mapbox
 
 If you wish to use Google Maps instead of Mapbox, you need to make some
 changes to FTW default setup.
 
-### 4.1. Include Google Map script instead of Mapbox scripts
+### 5.1. Include Google Map script instead of Mapbox scripts
 
 Mapbox related scripts can be removed from index.html and instead use
 Google Map script described in comments.
@@ -98,7 +106,7 @@ _public/index.html:_
 -->
 ```
 
-### 4.2. Searching with Google's geocoding API
+### 5.2. Searching with Google's geocoding API
 
 Location search aka LocationAutocompleteInput should use Google Map
 specific geocoder. The correct import is written to the comments of
@@ -127,7 +135,7 @@ _src/marketplace.css:_
 --locationAutocompleteBottomPadding: 8px;
 ```
 
-### 4.3. Show correct map on ListingPage (Map component)
+### 5.3. Show correct map on ListingPage (Map component)
 
 Google Map version (containing both static and dynamic maps) can be
 taken into use by importing correct map subcomponent.
@@ -139,7 +147,7 @@ import { StaticMap, DynamicMap, isMapsLibLoaded } from './MapboxMap';
 // import { StaticMap, DynamicMap, isMapsLibLoaded } from './GoogleMap';
 ```
 
-### 4.4. SearchMap.js
+### 5.4. SearchMap.js
 
 The most complex change is happening in SearchPage. First, you need to
 import `SearchMapWithMapbox` instead of `SearchMapWithGoogleMap`.

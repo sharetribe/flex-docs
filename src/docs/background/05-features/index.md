@@ -16,7 +16,7 @@ build it yourself. If you don't spot the feature you need,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com) to
 learn more about how to get it built.
 
-# Users and authentication
+## Users and authentication
 
 You can allow visitors to browse products and services in your platform
 without signing up. However, at the point where they want to either make
@@ -49,7 +49,9 @@ You can store following information about each user:
 
 [Read more about storing data about users](/references/extended-data/).
 
-# Listings
+---
+
+## Listings
 
 A listing describes a product or a service that a provider (seller) is
 offering on your marketplace. (see
@@ -104,7 +106,9 @@ If your vendors are professionals with lots of listings, you can offer
 them a tool that allows them to import a large number of listings to
 their marketplace at once.
 
-# Flexible pricing
+---
+
+## Flexible pricing
 
 Flex allows lots of flexibility for your providers in terms of how they
 can set their pricing.
@@ -132,7 +136,9 @@ can set their pricing.
 
 [Read more about the Flex pricing engine](/background/custom-pricing/)
 
-# Availability management
+---
+
+## Availability management
 
 Each listing can have a calendar that determines when it's available. If
 you're building a service marketplace, the calendar of the listing acts
@@ -163,7 +169,9 @@ book the same slot.
 
 [Read more about listing availability management](/references/availability/)
 
-# Search engine
+---
+
+## Search engine
 
 Flex has a powerful search engine, which can find listings based on
 multiple criteria:
@@ -186,8 +194,10 @@ multiple criteria:
   certain numeric value in their public data. For example, you might
   want to build a slider filter for the skill level of the user, ranging
   from 0 to 10.
+  
+---
 
-# Transactions
+## Transactions
 
 The purpose of any marketplace is to facilitate transactions between its
 users. In Flex, any exchange of value between a customer and a provider
@@ -238,7 +248,9 @@ cases:
 
 [Read more about the Flex transaction engine](/background/transaction-process/)
 
-# Payments
+---
+
+## Payments
 
 Flex uses [Stripe Connect](https://stripe.com/connect) for processing
 online payments between your users. The Flex payment system offers you
@@ -263,8 +275,10 @@ lots of helpful features. Here are some of them:
 - **Automated payouts.** Your commission is automatically deposited to
   your bank account, while the rest is deposited to the bank account of
   the provider at the time of your choosing.
+  
+---
 
-# Reviews
+## Reviews
 
 As a part of the transaction process, you can allow one or both parties
 to review each other. A review consists of a five star rating and a text
@@ -277,7 +291,9 @@ if both parties are allowed to review each other, they will see the
 other party's review only once they've left a review themselves, or once
 the finite review period (you can decide its length) has ended.
 
-# Email notifications
+---
+
+## Email notifications
 
 Flex comes with a standard set of built-in email templates. These are
 related to automated emails sent from your marketplace: verification
@@ -301,7 +317,9 @@ or even personalize the templates based on who the recipient is.
 
 [Read more about customizing email templates](/references/email-templates/)
 
-# Multiple languages and currencies
+---
+
+## Multiple languages and currencies
 
 You can use as many languages as you want in your marketplace. Flex
 Template for Web includes default translations for English, Spanish,
@@ -314,7 +332,9 @@ Remember, though, that your platform and your providers who accept online
 payments need to be in a [country supported by Stripe](https://stripe.com/global)
 (countries in "Request an invite" mode are not yet supported).
 
-# Custom design
+---
+
+## Custom design
 
 You have full control over the user interface of your marketplace. You
 can decide fully things like which fonts and colors to use, what kind of
@@ -331,7 +351,9 @@ your own domain, the email notifications get sent from your email
 address, and the entire user experience is fully tailored to match your
 brand.
 
-# SEO
+---
+
+## SEO
 
 [Flex Template for Web](/tutorials/getting-started-with-ftw/) is
 optimized for search engines by default, and you have full control to
@@ -339,7 +361,9 @@ tailor the experience the way you wish. You can decide the exact URL
 structure, edit meta tags freely, and do any other optimizations you
 want.
 
-# Build a website or a mobile app
+---
+
+## Build a website or a mobile app
 
 Since Flex is a "headless" marketplace solution, you can use it to build
 either a website or a mobile application or both. Building a web app is
@@ -348,7 +372,9 @@ quicker today, because of
 offers a great starting point for development. A similar template
 doesn't exist yet for mobile.
 
-# Integrations
+---
+
+## Integrations
 
 A great way to extend your marketplace is to integrate third party
 services. You have full control over the code of your marketplace
@@ -376,7 +402,9 @@ Some examples of integrations you might want to add:
 - Do A/B testing with [Optimizely](https://www.optimizely.com/).
 - ...and a lot more!
 
-# Admin console
+---
+
+## Admin console
 
 Flex admin console allows you, the marketplace operator, to manage the
 content your users create in your marketplace. Here are the features it
