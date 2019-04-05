@@ -11,6 +11,11 @@ ingress:
 published: true
 ---
 
+**NOTE! In case the version of FTW you are using is _earlier_ than
+2.14.0, please refer to
+[an older version](https://5ca7544a073eba00098460b9--sharetribe-flex-docs-site.netlify.com/docs/guides/how-to-customize-pricing/)
+of this guide.**
+
 This guide walks you through the process of taking custom pricing into
 use by using the example of a common pricing adjustment: adding the
 ability to charge an optional cleaning fee on top of the regular nightly
@@ -152,28 +157,23 @@ publicData: {
 Begin with making a few changes to the `util/types.js` and `en.json`
 files (or some other transaltion file in case English is not the
 language of your marketplace). In `util/types.js`, add a new line item
-code and add it to the array of line items:
+code for the cleaning fee:
 
 ```js
 export const LINE_ITEM_CLEANING_FEE = 'line-item/cleaning-fee';
-
-const LINE_ITEMS = [
-  LINE_ITEM_NIGHT,
-  LINE_ITEM_DAY,
-  LINE_ITEM_UNITS,
-  LINE_ITEM_CUSTOMER_COMMISSION,
-  LINE_ITEM_PROVIDER_COMMISSION,
-  LINE_ITEM_CLEANING_FEE,
-];
 ```
 
+> When selecting a code for your custom line item, remember that Flex
+> requires the codes to be prefixed with _line-item/_ and the maximum
+> length including the prefix is 64 characters. Other than that there
+> are no restrictions but it's suggested that _kebab-case_ is used when
+> the code consists of multiple words.
+
 We'll be adding an "Add cleaning" checkbox to the booking section on
-listing page and a "Cleaning fee" line item to the booking breakdown.
-Therefore, add the following transalations to `en.json`:
+listing page. Therefore, add the following translation to `en.json`:
 
 ```json
 "BookingDatesForm.cleaningFee": "Add cleaning",
-"BookingBreakdown.cleaningFee": "Cleaning fee",
 ```
 
 In order to add the cleaning fee option to the booking form on listing
@@ -418,169 +418,26 @@ const lineItems = [
 ];
 ```
 
-Add the `lineItems` array to the object returned by the function.
+Finally add the `lineItems` array to the object returned by the
+function.
 
-Now that the estimated transaction is updated with the cleaning fee, the
-next thing to do is to add a corresponding line to the booking
-breakdown. You can achieve this by creating a new file called
-`LineItemCleaningFeeMaybe.js` in the `src/components/BookingBreakdown`
-directory:
+Now the estimated transaction is updated with the cleaning fee. FTW by
+default will render the added line item in the booking breakdown. It
+manages that by humanizing the line item code and printing the line
+total as the price on that row. The cleaning fee line item is also taken
+into account in the possibly rendered sub total and refund rows. In case
+you require a more complex handling for your line item in the booking
+breakdown, you can achieve that by creating a new component for it and
+placing it in the
+[BookingBreakdown](https://github.com/sharetribe/flex-template-web/blob/master/src/components/BookingBreakdown/BookingBreakdown.js)
+component. You can look for inspiration from the `LineItem*` component
+files in the same folder. If you decide to customize the way your line
+item is rendered in the breakdown, remember to add the line item code to
+the `LINE_ITEMS` array in `util/types.js` so FTW will not treat it with
+the default rendering.
 
-```js
-import React from 'react';
-import { FormattedMessage, intlShape } from 'react-intl';
-import { formatMoney } from '../../util/currency';
-import { LINE_ITEM_CLEANING_FEE, propTypes } from '../../util/types';
-
-import css from './BookingBreakdown.css';
-
-const LineItemCleaningFeeMaybe = props => {
-  const { transaction, intl } = props;
-
-  const cleaningFee = transaction.attributes.lineItems.find(
-    item => item.code === LINE_ITEM_CLEANING_FEE
-  );
-
-  return cleaningFee ? (
-    <div className={css.lineItem}>
-      <span className={css.itemLabel}>
-        <FormattedMessage id="BookingBreakdown.cleaningFee" />
-      </span>
-      <span className={css.itemValue}>
-        {formatMoney(intl, cleaningFee.lineTotal)}
-      </span>
-    </div>
-  ) : null;
-};
-
-LineItemCleaningFeeMaybe.propTypes = {
-  transaction: propTypes.transaction.isRequired,
-  intl: intlShape.isRequired,
-};
-
-export default LineItemCleaningFeeMaybe;
-```
-
-Now the `LineItemCleaningFeeMaybe` can be imported to `BookingBreakdown`
-and added to the top level `div` element, below `LineItemUnitsMaybe`:
-
-```js
-return (
-  <div className={classes}>
-    <LineItemUnitPrice transaction={transaction} unitType={unitType} intl={intl} />
-    <LineItemBookingPeriod transaction={transaction} booking={booking} unitType={unitType} />
-    <LineItemUnitsMaybe transaction={transaction} unitType={unitType} />
-    <LineItemCleaningFeeMaybe transaction={transaction} intl={intl} />
-    ...
-```
-
-While we're working on the booking breakdown, let's also modify the sub
-total and refund calculations so that the cleaning fee is taken into
-consideration. Sub total is shown to a user in the booking breakdown if
-the transaction process is configured to charge commission from the
-mentioned user's role in a given transaction. So if a provider
-commission is configured then providers will see a subtotal line in the
-booking breakdown.
-
-To take the cleaning fee into account when calculatin the subtotal, in
-the `LineItemSubTotalMaybe.js` file, import `LINE_ITEM_CLEANING_FEE`
-from `util/types.js` and add the following lines to the bottom of the
-imports:
-
-```js
-import Decimal from 'decimal.js';
-import { types as sdkTypes } from '../../util/sdkLoader';
-const { Money } = sdkTypes;
-```
-
-Modify the component so that `formattedSubTotal` is resolved as follows:
-
-```js
-const unitPurchase = transaction.attributes.lineItems.find(
-  item => item.code === unitType && !item.reversal
-);
-
-if (!unitPurchase) {
-  throw new Error(
-    `LineItemSubTotalMaybe: lineItem (${unitType}) missing`
-  );
-}
-
-const cleaningFeePurchase = transaction.attributes.lineItems.find(
-  item => item.code === LINE_ITEM_CLEANING_FEE && !item.reversal
-);
-
-const unitAmount = unitPurchase.lineTotal.amount;
-const cleaningFeeAmount = cleaningFeePurchase
-  ? cleaningFeePurchase.lineTotal.amount
-  : null;
-const totalAmount = cleaningFeeAmount
-  ? new Decimal(unitAmount).plus(cleaningFeeAmount).toNumber()
-  : new Decimal(unitAmount).toNumber();
-const currency = unitPurchase.lineTotal.currency;
-const subTotal = new Money(totalAmount, currency);
-
-const formattedSubTotal = formatMoney(intl, subTotal);
-```
-
-As for refund, it's shown in the booking breakdown in case a booking is,
-for example, canceled or declined in which case every line item in a
-transaction has a reversal counterpart. The states in which the reversal
-line items appear depends on the transaction process.
-
-To the `LineItemRefundMaybe.js` file add the following lines right below
-the imports:
-
-```js
-import Decimal from 'decimal.js';
-import { LINE_ITEM_CLEANING_FEE } from '../../util/types';
-import { types as sdkTypes } from '../../util/sdkLoader';
-const { Money } = sdkTypes;
-```
-
-Edit the component function as follows:
-
-<!-- prettier-ignore -->
-```js
-const LineItemRefundMaybe = props => {
-  const { transaction, unitType, intl } = props;
-
-  const unitRefundLineItem = transaction.attributes.lineItems.find(
-    item => item.code === unitType && item.reversal
-  );
-
-  if (!unitRefundLineItem) {
-    return null;
-  }
-
-  const cleaningFeeRefundLineItem = transaction.attributes.lineItems.find(
-    item => item.code === LINE_ITEM_CLEANING_FEE && item.reversal
-  );
-
-  const unitAmount = unitRefundLineItem.lineTotal.amount;
-  const cleaningFeeAmount = cleaningFeeRefundLineItem
-    ? cleaningFeeRefundLineItem.lineTotal.amount
-    : null;
-  const totalAmount = cleaningFeeAmount
-    ? new Decimal(unitAmount).plus(cleaningFeeAmount).toNumber()
-    : new Decimal(unitAmount).toNumber();
-  const currency = unitRefundLineItem.lineTotal.currency;
-  const refund = new Money(totalAmount, currency);
-
-  return (
-    <div className={css.lineItem}>
-      <span className={css.itemLabel}>
-        <FormattedMessage id="BookingBreakdown.refund" />
-      </span>
-      <span className={css.itemValue}>{formatMoney(intl, refund)}</span>
-    </div>
-  );
-};
-```
-
-Now also the refund line will take the possible reversal cleaning fee
-line item into account. The next step will be to pass the cleaning fee
-data to the transaction initiation request.
+The next step will be to pass the cleaning fee data to the transaction
+initiation request.
 
 ## 5. Add the cleaning fee to the transaction
 
