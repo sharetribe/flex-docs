@@ -63,8 +63,8 @@ Here's a list of information you can store about a listing.
 - Photos (unlimited amount)
 - [Pricing](#flexible-pricing)
 - [Availability](#availability-management)
-- **Public data.** Data to display publicly about the listing
-  (category, custom data fields, etc).
+- **Public data.** Data to display publicly about the listing (category,
+  custom data fields, etc).
 - **Private data.** Data collected privately about a listing (can be
   used if the provider needs to provide some information to the operator
   for the listing approval process)
