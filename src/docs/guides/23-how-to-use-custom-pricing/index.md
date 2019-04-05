@@ -475,11 +475,12 @@ return (
 ```
 
 While we're working on the booking breakdown, let's also modify the sub
-total calculations so that the cleaning fee is taken into consideration.
-Subtotal is shown to a user in the booking breakdown if the transaction
-process is configured to charge commission from the mentioned user's
-role in a given transaction. So if a provider commission is configured
-then providers will see a subtotal line in the booking breakdown.
+total and refund calculations so that the cleaning fee is taken into
+consideration. Sub total is shown to a user in the booking breakdown if
+the transaction process is configured to charge commission from the
+mentioned user's role in a given transaction. So if a provider
+commission is configured then providers will see a subtotal line in the
+booking breakdown.
 
 To take the cleaning fee into account when calculatin the subtotal, in
 the `LineItemSubTotalMaybe.js` file, import `LINE_ITEM_CLEANING_FEE`
@@ -487,13 +488,8 @@ from `util/types.js` and add the following lines to the bottom of the
 imports:
 
 ```js
-import { types as sdkTypes } from '../../util/sdkLoader';
 import Decimal from 'decimal.js';
-import {
-  unitDivisor,
-  convertMoneyToNumber,
-  convertUnitToSubUnit,
-} from '../../util/currency';
+import { types as sdkTypes } from '../../util/sdkLoader';
 const { Money } = sdkTypes;
 ```
 
@@ -514,24 +510,77 @@ const cleaningFeePurchase = transaction.attributes.lineItems.find(
   item => item.code === LINE_ITEM_CLEANING_FEE && !item.reversal
 );
 
-const unitNumeric = convertMoneyToNumber(unitPurchase.lineTotal);
-const cleaningFeeNumeric = cleaningFeePurchase
-  ? convertMoneyToNumber(cleaningFeePurchase.lineTotal)
+const unitAmount = unitPurchase.lineTotal.amount;
+const cleaningFeeAmount = cleaningFeePurchase
+  ? cleaningFeePurchase.lineTotal.amount
   : null;
-const numericTotalPrice = cleaningFeeNumeric
-  ? new Decimal(unitNumeric).plus(cleaningFeeNumeric).toNumber()
-  : new Decimal(unitNumeric).toNumber();
+const totalAmount = cleaningFeeAmount
+  ? new Decimal(unitAmount).plus(cleaningFeeAmount).toNumber()
+  : new Decimal(unitAmount).toNumber();
 const currency = unitPurchase.lineTotal.currency;
-const subTotal = new Money(
-  convertUnitToSubUnit(numericTotalPrice, unitDivisor(currency)),
-  currency
-);
+const subTotal = new Money(totalAmount, currency);
 
 const formattedSubTotal = formatMoney(intl, subTotal);
 ```
 
-The next step will be to pass the cleaning fee data to the transaction
-initiation request.
+As for refund, it's shown in the booking breakdown in case a booking is,
+for example, canceled or declined in which case every line item in a
+transaction has a reversal counterpart. The states in which the reversal
+line items appear depends on the transaction process.
+
+To the `LineItemRefundMaybe.js` file add the following lines right below
+the imports:
+
+```js
+import Decimal from 'decimal.js';
+import { LINE_ITEM_CLEANING_FEE } from '../../util/types';
+import { types as sdkTypes } from '../../util/sdkLoader';
+const { Money } = sdkTypes;
+```
+
+Edit the component function as follows:
+
+<!-- prettier-ignore -->
+```js
+const LineItemRefundMaybe = props => {
+  const { transaction, unitType, intl } = props;
+
+  const unitRefundLineItem = transaction.attributes.lineItems.find(
+    item => item.code === unitType && item.reversal
+  );
+
+  if (!unitRefundLineItem) {
+    return null;
+  }
+
+  const cleaningFeeRefundLineItem = transaction.attributes.lineItems.find(
+    item => item.code === LINE_ITEM_CLEANING_FEE && item.reversal
+  );
+
+  const unitAmount = unitRefundLineItem.lineTotal.amount;
+  const cleaningFeeAmount = cleaningFeeRefundLineItem
+    ? cleaningFeeRefundLineItem.lineTotal.amount
+    : null;
+  const totalAmount = cleaningFeeAmount
+    ? new Decimal(unitAmount).plus(cleaningFeeAmount).toNumber()
+    : new Decimal(unitAmount).toNumber();
+  const currency = unitRefundLineItem.lineTotal.currency;
+  const refund = new Money(totalAmount, currency);
+
+  return (
+    <div className={css.lineItem}>
+      <span className={css.itemLabel}>
+        <FormattedMessage id="BookingBreakdown.refund" />
+      </span>
+      <span className={css.itemValue}>{formatMoney(intl, refund)}</span>
+    </div>
+  );
+};
+```
+
+Now also the refund line will take the possible reversal cleaning fee
+line item into account. The next step will be to pass the cleaning fee
+data to the transaction initiation request.
 
 ## 5. Add the cleaning fee to the transaction
 
