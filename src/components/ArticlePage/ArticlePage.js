@@ -111,10 +111,10 @@ const ArticleIngress = styled(Ingress)`
 `;
 
 const Info = styled(InfoSection)`
-  margin-top: ${3 * baselineSmall}px;
+  margin-top: ${1 * baselineSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${3 * baselineLarge}px;
+    margin-top: ${1 * baselineLarge}px;
   }
 `;
 
@@ -192,12 +192,11 @@ const ArticlePage = props => {
             <Updated date={updated} />
           </CrumbWrapper>
           <Heading>{title}</Heading>
-          <ArticleIngress>{ingress}</ArticleIngress>
           <Info
             frontmatter={frontmatter}
             estimatedReadingTime={estimatedReadingTime}
           />
-          <SeparatorLine />
+          <ArticleIngress>{ingress}</ArticleIngress>
           <Markdown html={html} />
         </MainColumn>
       </ColumnLayout>
