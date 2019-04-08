@@ -1,12 +1,8 @@
 ---
-title: Transaction process
-slug: transaction-process
-updated: 2019-02-06
-category: background
-ingress:
-  This article introduces transaction processes and how they define
-  marketplace order flows.
-published: true
+
+title: Transaction process slug: transaction-process updated: 2019-02-06
+category: background ingress: This article introduces transaction
+processes and how they define marketplace order flows. published: true
 
 ## What is a transaction process?
 
@@ -41,7 +37,6 @@ to always accept the booking before it can be confirmed or if the
 booking is automatically confirmed as soon as it is made (i.e. instant
 booking), or a change of wording in a notification email sent to remind
 the customer of their upcoming booking.
-
 
 ## Sharetribe Flex default transaction process
 
@@ -93,7 +88,6 @@ account, after the commission of the marketplace is deducted. When the
 booking has been completed, both the customer and the provider can
 _review_ each other.
 
-
 ## What kind of transaction process customizations are possible?
 
 As all marketplaces’ have their own characteristics, it is common to
@@ -122,7 +116,6 @@ Apart from the order flow, customizations can also affect the money
 flow, storing
 [protected data](/references/extended-data/#protected-data) or sending
 notifications.
-
 
 ## How to change your transaction process
 

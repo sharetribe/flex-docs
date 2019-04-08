@@ -1,12 +1,8 @@
 ---
-title: How the Redux setup works in FTW
-slug: ftw-redux
-updated: 2019-01-29
-category: background
-ingress:
-  This article explains how the Redux setup works in Flex Template for
-  Web (FTW).
-published: true
+
+title: How the Redux setup works in FTW slug: ftw-redux updated:
+2019-01-29 category: background ingress: This article explains how the
+Redux setup works in Flex Template for Web (FTW). published: true
 
 ## What is Redux
 
@@ -24,7 +20,6 @@ start modifying queries to Flex API or creating new Page level elements
 
 In the following subtopics, we assume that you know the
 [basics of Redux](https://redux.js.org/basics) already.
-
 
 ## Containers: Pages + TopbarContainer
 
@@ -63,7 +58,6 @@ const TransactionPage = compose(
 )(TransactionPageComponent);
 ```
 
-
 ## Duck files
 
 Inside `src/containers/<ComponentName>` directory, we have also a
@@ -84,7 +78,6 @@ Some reducers are needed in several pages. These global reducers we have
 defined inside `src/ducks/` directory with their respective `*.duck.js`
 files. Most important global duck files are `user.duck.js` and
 `marketplaceData.duck.js`.
-
 
 ## Setting up Redux
 
@@ -116,7 +109,6 @@ module naming schema, this means that:
 - the state of the `ListingPage` can be found from `state.ListingPage`
   and
 - the state of the global `user` object can be found from `state.user`.
-
 
 ## Advanced Redux concepts: thunks
 

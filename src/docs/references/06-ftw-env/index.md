@@ -109,7 +109,6 @@ development environment. For production deploys most should be set.
   The base url to access the Sharetribe Flex Marketplace API. FTW uses
   the correct one by default so no need to set this.
 
-
 ## Defining configuration
 
 When the app is started locally with `yarn run dev` or

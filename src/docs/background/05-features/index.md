@@ -49,7 +49,6 @@ You can store following information about each user:
 
 [Read more about storing data about users](/references/extended-data/).
 
-
 ## Listings
 
 A listing describes a product or a service that a provider (seller) is
@@ -105,7 +104,6 @@ If your vendors are professionals with lots of listings, you can offer
 them a tool that allows them to import a large number of listings to
 their marketplace at once.
 
-
 ## Flexible pricing
 
 Flex allows lots of flexibility for your providers in terms of how they
@@ -133,7 +131,6 @@ can set their pricing.
 - …and a lot more!
 
 [Read more about the Flex pricing engine](/background/custom-pricing/)
-
 
 ## Availability management
 
@@ -166,7 +163,6 @@ book the same slot.
 
 [Read more about listing availability management](/references/availability/)
 
-
 ## Search engine
 
 Flex has a powerful search engine, which can find listings based on
@@ -190,7 +186,6 @@ multiple criteria:
   certain numeric value in their public data. For example, you might
   want to build a slider filter for the skill level of the user, ranging
   from 0 to 10.
-
 
 ## Transactions
 
@@ -243,7 +238,6 @@ cases:
 
 [Read more about the Flex transaction engine](/background/transaction-process/)
 
-
 ## Payments
 
 Flex uses [Stripe Connect](https://stripe.com/connect) for processing
@@ -270,7 +264,6 @@ lots of helpful features. Here are some of them:
   your bank account, while the rest is deposited to the bank account of
   the provider at the time of your choosing.
 
-
 ## Reviews
 
 As a part of the transaction process, you can allow one or both parties
@@ -283,7 +276,6 @@ By default, Flex uses a "double blind" review process. This means that
 if both parties are allowed to review each other, they will see the
 other party's review only once they've left a review themselves, or once
 the finite review period (you can decide its length) has ended.
-
 
 ## Email notifications
 
@@ -309,7 +301,6 @@ or even personalize the templates based on who the recipient is.
 
 [Read more about customizing email templates](/references/email-templates/)
 
-
 ## Multiple languages and currencies
 
 You can use as many languages as you want in your marketplace. Flex
@@ -322,7 +313,6 @@ of [100+ currencies supported by Stripe](https://stripe.com/docs/currencies).
 Remember, though, that your platform and your providers who accept online
 payments need to be in a [country supported by Stripe](https://stripe.com/global)
 (countries in "Request an invite" mode are not yet supported).
-
 
 ## Custom design
 
@@ -341,7 +331,6 @@ your own domain, the email notifications get sent from your email
 address, and the entire user experience is fully tailored to match your
 brand.
 
-
 ## SEO
 
 [Flex Template for Web](/tutorials/getting-started-with-ftw/) is
@@ -349,7 +338,6 @@ optimized for search engines by default, and you have full control to
 tailor the experience the way you wish. You can decide the exact URL
 structure, edit meta tags freely, and do any other optimizations you
 want.
-
 
 ## Build a website or a mobile app
 
@@ -359,7 +347,6 @@ quicker today, because of
 [Flex Template for Web](/tutorials/getting-started-with-ftw/), which
 offers a great starting point for development. A similar template
 doesn't exist yet for mobile.
-
 
 ## Integrations
 
@@ -388,7 +375,6 @@ Some examples of integrations you might want to add:
   [MailChimp](https://mailchimp.com/) to send beautiful newsletters.
 - Do A/B testing with [Optimizely](https://www.optimizely.com/).
 - ...and a lot more!
-
 
 ## Admin console
 

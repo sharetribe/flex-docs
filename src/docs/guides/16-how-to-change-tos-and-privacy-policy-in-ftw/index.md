@@ -18,7 +18,6 @@ Edit
 [src/components/TermsOfService/TermsOfService.js](https://github.com/sharetribe/flex-template-web/blob/master/src/components/TermsOfService/TermsOfService.js)
 file to customize the default dummy content.
 
-
 ## Privacy Policy
 
 Edit

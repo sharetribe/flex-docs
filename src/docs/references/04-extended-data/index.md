@@ -75,7 +75,6 @@ for linking listings with external services.
 _Private metadata_ is only readable and writable by marketplace
 operators.
 
-
 ## Data schema
 
 Extended data is available out of the box and can be written and read

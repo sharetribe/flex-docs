@@ -1,13 +1,9 @@
 ---
-title: Concepts
-slug: concepts
-updated: 2019-03-19
-category: background
-ingress:
-  Explanation of the key concepts we use when we talk about Sharetribe
-  Flex. The concepts are used in the API and throughout the
-  documentation.
-published: true
+
+title: Concepts slug: concepts updated: 2019-03-19 category: background
+ingress: Explanation of the key concepts we use when we talk about
+Sharetribe Flex. The concepts are used in the API and throughout the
+documentation. published: true
 
 ## Application concepts
 
@@ -80,7 +76,6 @@ marketplace. In practice, this is done with JSON messages that are
 delivered via HTTPS to the endpoints the admin chooses.
 
 Planned.
-
 
 ## Marketplace concepts
 

@@ -1,12 +1,9 @@
 ---
-title: Introducing Flex
-slug: introducing-flex
-updated: 2019-01-16
-category: background
-ingress:
-  Overview of how Sharetribe Flex works, and how you can build your
-  online marketplace platform using it.
-published: true
+
+title: Introducing Flex slug: introducing-flex updated: 2019-01-16
+category: background ingress: Overview of how Sharetribe Flex works, and
+how you can build your online marketplace platform using it. published:
+true
 
 ## Introduction
 
@@ -20,7 +17,6 @@ This makes Flex the fastest and most affordable way to build a unique
 platform that adapts to the entire lifecycle of your business. As your
 business grows, Flex takes care of running and scaling your backend —
 allowing you to focus on the unique value of your platform.
-
 
 ## Flex Components
 
@@ -85,7 +81,6 @@ Console also offers tools to develop your marketplace, for example, an
 editor for email templates. Console is accessed via a web UI that we
 provide out of the box. Think of it as an admin interface you never have
 to build!
-
 
 ## Is Flex the right fit for you?
 

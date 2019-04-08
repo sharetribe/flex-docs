@@ -438,7 +438,6 @@ information.
 The capacity data can now be added to new and existing listings. Next
 chapter describes how that data can be presented in the listing page.
 
-
 ## Show the attribute on listing page
 
 Next step in adding a new attribute to the listing is to present it in
@@ -531,7 +530,6 @@ not affect test results.
 And voilà, we have listing capacity presented in the listing page!
 
 ![Capacity on listing page](./capacity_listing_page.png)
-
 
 ## Use the attribute as a search filter
 

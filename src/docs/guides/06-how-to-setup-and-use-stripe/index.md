@@ -1,14 +1,10 @@
 ---
-title: How to set up and use Stripe
-slug: how-to-set-up-and-use-stripe
-updated: 2019-03-27
-category: guides
-ingress:
-  To enable payments and receive commissions in your marketplace, you
-  need a free Stripe account. This guide will help you in creating a
-  Stripe account and adding Stripe API keys to Console and Flex Template
-  for Web.
-published: true
+
+title: How to set up and use Stripe slug: how-to-set-up-and-use-stripe
+updated: 2019-03-27 category: guides ingress: To enable payments and
+receive commissions in your marketplace, you need a free Stripe account.
+This guide will help you in creating a Stripe account and adding Stripe
+API keys to Console and Flex Template for Web. published: true
 
 ## 1. Create and confirm your free Stripe account
 
@@ -25,7 +21,6 @@ left menu and fill in all the fields according to the instructions. The
 activation form varies based on your country.
 
 ![Activate Stripe account](./activate-account.png)
-
 
 ## 2. Enable Stripe Connect in your platform
 
@@ -61,7 +56,6 @@ Stripe Connect:
 Great! You now have to get your API keys and input them into your
 marketplace.
 
-
 ## 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
 - Click the _Developers_ left menu item and go to _Developers_ → _API
@@ -79,7 +73,6 @@ production make sure that the toggle is off.
 
 ![Get API keys from Stripe](./api-keys.png)
 
-
 ## 4. Add your Stripe secret API key to Console
 
 - Log in to Console and go to _Build_ → _Payments_
@@ -87,7 +80,6 @@ production make sure that the toggle is off.
   secret key" field and save the changes.
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
-
 
 ## 5. Add you Stripe publishable key to your client application
 
@@ -100,7 +92,6 @@ text editor.
 
 Read more about configurations in FTW from
 [Getting started with FTW](/tutorials/getting-started-with-ftw/#configuration)
-
 
 ## 6. Test the Stripe account in Flex Template for Web
 
@@ -161,7 +152,6 @@ the checkout. There are also test numbers for
 so e.g. testing different error scenarios is possible.
 
 ![Checkout](checkout.png)
-
 
 ## 7. Advanced: Adding new country to supported Stripe countries
 

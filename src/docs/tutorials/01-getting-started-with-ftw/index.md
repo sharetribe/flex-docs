@@ -34,7 +34,6 @@ article.
 To use the Marketplace API, you will need an API key. You can request
 access at https://sharetribe.typeform.com/to/BI9M4O
 
-
 ## Install development tooling
 
 To get FTW up and running, you will need to download and install some
@@ -43,7 +42,6 @@ basic development tooling:
 - [Git](https://git-scm.com/downloads)
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/docs/install)
-
 
 ## Setup FTW
 
@@ -64,7 +62,6 @@ Go to the cloned directory:
 cd flex-template-web/
 ```
 
-
 ## Install dependencies
 
 Install all dependencies:
@@ -72,7 +69,6 @@ Install all dependencies:
 ```sh
 yarn install
 ```
-
 
 ## Configuration
 
@@ -118,7 +114,6 @@ There are three required variables for FTW to work correctly:
 See the [FTW Environment configuration variables](/references/ftw-env/)
 for more information on the environment variables.
 
-
 ## Start the server
 
 Start the development server:
@@ -130,7 +125,6 @@ yarn run dev
 This will automatically open `http://localhost:3000` in a browser:
 
 ![Default marketplace screenshot](./saunatime-default.png)
-
 
 ## Make a customization
 
@@ -147,7 +141,6 @@ variable `--marketplaceColor` to have a different value:
 This will automatically refresh the browser and show the updated styles:
 
 ![Customized marketplace screenshot](./saunatime-customized.png)
-
 
 ## Summary
 

@@ -1,17 +1,13 @@
 ---
-title: Markdown reference
-slug: markdown
-updated: 2018-12-04
-category: references
-ingress: This reference article showcases the supported Markdown syntax.
-skills: open mind,content editing,language
-readingTime: 5 mins at a time!
-published: false
+
+title: Markdown reference slug: markdown updated: 2018-12-04 category:
+references ingress: This reference article showcases the supported
+Markdown syntax. skills: open mind,content editing,language readingTime:
+5 mins at a time! published: false
 
 ## Horizontal line
 
 A Horizontal line can be added with `---` in its own line.
-
 
 ## Headings
 
@@ -30,7 +26,6 @@ metadata.
 ##### H5 level heading
 
 ###### H6 level heading
-
 
 ## Text
 
@@ -67,7 +62,6 @@ dui. Pellentesque et sem nulla. Class aptent taciti sociosqu ad litora
 torquent per conubia nostra, per inceptos himenaeos. Suspendisse
 potenti. Integer vel elit commodo, volutpat erat eget, convallis ligula.
 Mauris ut porta dui.
-
 
 ## Lists
 
@@ -118,7 +112,6 @@ Ordered list:
 1. numbered item 2
 1. numbered item 3
 
-
 ## Literal HTML
 
 Using literal HTML within Markdown files should be minimized since the
@@ -133,7 +126,6 @@ an id and use that id in an internal link.
 **NOTE:** With literal section headers, the header autolinking doesn't
 work.
 
-
 ## Links
 
 Here's a link: https://www.sharetribe.com/
@@ -146,7 +138,6 @@ Also an
 
 Here's an internal link to the
 [#literal-h2-html-element](#literal-h2-html-element) in this document.
-
 
 ## Block quotes
 
@@ -161,7 +152,6 @@ Block quotes can have several lines or even nested block quotes.
 > block quote line 2 with **emphasis**
 >
 > > nested block quote
-
 
 ## Code blocks
 
@@ -197,7 +187,6 @@ const RelativeTime = props => {
 Note that running `yarn run format-docs` to format Markdown files also
 formats the code blocks with Prettier.
 
-
 ## Images
 
 Images can be placed in the article directory and imported with a
@@ -211,7 +200,6 @@ Here is an example screenshot of Saunatime with an alt text:
 Note that images also break the baseline alignment since the height is
 dynamic.
 
-
 ## Tables
 
 Tables should not be usually used since they don't work well on mobile.
@@ -223,7 +211,6 @@ to the baseline :(
 | don't    | use      | tables   |
 | unless   | you      | know     |
 | what     | you're   | doing    |
-
 
 ## Formatting Markdown files with Prettier
 

@@ -26,7 +26,6 @@ In this article, it is assumed that you've already read
 basic concepts of Flex. If you haven't done that yet, it's a good idea
 to do that now.
 
-
 ## 1. Getting access to Flex
 
 If you're reading this article, the chances are that you already have
@@ -60,7 +59,6 @@ sending messages between users, writing reviews, and so on. You can test
 them both on your desktop and on a mobile browser to see how it works on
 each device. On Console, you can then see how the users, listings and
 transactions you created in FTW appear there.
-
 
 ## 2. Designing your marketplace
 
@@ -128,7 +126,6 @@ you. If you don't know any designers,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com) and
 we'll connect you to a designer who can help you out.
 
-
 ## 3. Developing your marketplace
 
 In Flex, all the changes made to the user interface of your marketplace
@@ -190,7 +187,6 @@ to build next is not what you thought before launching your marketplace.
 Thus, the more features your initial Minimum Viable Platform contains, the
 higher is the likelihood that you end up wasting both money and time. So
 try to launch as quickly as you can, as that is where the true learning begins.
-
 
 ## 4. Going live
 

@@ -168,7 +168,6 @@ Inside `src/Routes.js`, we also have a component called
   [How to set up Analytics for FTW](/guides/how-to-set-up-analytics-for-ftw/)
   guide.
 
-
 ## Linking
 
 Linking is a special case in SPA. Using HTML `<a>` tags will cause
@@ -227,7 +226,6 @@ recommend that all the external links are created using
 JSX element accordinly:
 `<ExternalLink href="externalsite.com">External site</ExternalLink>`.)
 
-
 ## Loading data
 
 If a page component needs to fetch data, it can be done as a part of
@@ -256,7 +254,6 @@ export const loadData = (params, search) => dispatch => {
 > routeConfiguration.js as wrappers to prevent a premature call to these
 > static functions.
 
-
 ## Analytics
 
 It is possible to track page views to gather information about
@@ -269,7 +266,6 @@ changes and sends tracking events to configured services. For more
 information, see the
 [How to set up Analytics for FTW](/guides/how-to-set-up-analytics-for-ftw/)
 guide.
-
 
 ## A brief introduction to SSR
 
