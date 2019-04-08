@@ -89,14 +89,14 @@ const Html = styled.div`
   }
   h2 {
     ${H4.styles}
-    margin: ${1.5 * baselineSpacing}px 0 ${baselineSpacing}px 0;
+    margin: ${7 * baselineSmall}px 0 ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
     border-top: 1px solid #CCCCCC;
-    padding-top: 29px;
+    padding-top: ${5 * baselineSmall - 1}px; // padding - border width
 
     @media (min-width: ${baselineBreakpoint}px) {
-      margin: ${2 * baselineSpacing - 2}px 0 ${baselineSpacing}px 0;
-      padding-top: 41px;
+      margin: ${8 * baselineLarge - 2}px 0 ${baselineSpacing}px 0;
+      padding-top: ${5 * baselineLarge + 1}px; // padding + border width
     }
   }
   h3 {
@@ -220,8 +220,17 @@ const Html = styled.div`
   & > :first-child {
     margin-top: 0;
   }
+
   & > :last-child {
     margin-bottom: 0;
+  }
+
+  & > h2:first-child {
+    margin-top: 42px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin-top: 46px;
+    }
   }
 
   picture {
