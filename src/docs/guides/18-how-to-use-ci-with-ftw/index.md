@@ -24,7 +24,6 @@ Follow the
 [Setting up Your Build on CircleCI](https://circleci.com/docs/2.0/getting-started/#setting-up-your-build-on-circleci)
 instructions in the CircleCI documentation.
 
----
 
 ## 2. Understand how the setup works
 

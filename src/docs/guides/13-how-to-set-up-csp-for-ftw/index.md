@@ -40,7 +40,6 @@ If error logging with Sentry is enabled (See the
 guide), the reports are sent to Sentry. Otherwise the reports are just
 logged in the backend.
 
----
 
 ## Optional: Extend the policy
 
@@ -53,7 +52,6 @@ The easiest way to do this is to first turn on the policy in report mode
 and then see what policy violations are logged to the browser developer
 console or to the backend policy violation report URL.
 
----
 
 ## Resources
 

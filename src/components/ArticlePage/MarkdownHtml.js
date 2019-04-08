@@ -52,8 +52,15 @@ const Html = styled.div`
   }
   h2 {
     ${H4.styles}
-    margin: ${2 * baselineSpacing}px 0 ${baselineSpacing}px 0;
+    margin: ${1.5 * baselineSpacing}px 0 ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
+    border-top: 1px solid #CCCCCC;
+    padding-top: 29px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin: ${2 * baselineSpacing - 2}px 0 ${baselineSpacing}px 0;
+      padding-top: 41px;
+    }
   }
   h3 {
     ${H5.styles}

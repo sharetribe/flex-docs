@@ -166,7 +166,6 @@ available.
 This file provides default styles for plain elements like `<body>`,
 `<a>`, `<p>`, `<input>`, `<h1>`, `<h2>`, and so on.
 
----
 
 ## Styling components
 

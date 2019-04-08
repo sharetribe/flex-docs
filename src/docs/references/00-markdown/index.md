@@ -4,16 +4,14 @@ slug: markdown
 updated: 2018-12-04
 category: references
 ingress: This reference article showcases the supported Markdown syntax.
-skills: open mind, content editing, language
+skills: open mind,content editing,language
 readingTime: 5 mins at a time!
 published: false
----
 
 ## Horizontal line
 
 A Horizontal line can be added with `---` in its own line.
 
----
 
 ## Headings
 
@@ -33,7 +31,6 @@ metadata.
 
 ###### H6 level heading
 
----
 
 ## Text
 
@@ -71,7 +68,6 @@ torquent per conubia nostra, per inceptos himenaeos. Suspendisse
 potenti. Integer vel elit commodo, volutpat erat eget, convallis ligula.
 Mauris ut porta dui.
 
----
 
 ## Lists
 
@@ -122,7 +118,6 @@ Ordered list:
 1. numbered item 2
 1. numbered item 3
 
----
 
 ## Literal HTML
 
@@ -138,7 +133,6 @@ an id and use that id in an internal link.
 **NOTE:** With literal section headers, the header autolinking doesn't
 work.
 
----
 
 ## Links
 
@@ -153,7 +147,6 @@ Also an
 Here's an internal link to the
 [#literal-h2-html-element](#literal-h2-html-element) in this document.
 
----
 
 ## Block quotes
 
@@ -169,7 +162,6 @@ Block quotes can have several lines or even nested block quotes.
 >
 > > nested block quote
 
----
 
 ## Code blocks
 
@@ -205,7 +197,6 @@ const RelativeTime = props => {
 Note that running `yarn run format-docs` to format Markdown files also
 formats the code blocks with Prettier.
 
----
 
 ## Images
 
@@ -220,7 +211,6 @@ Here is an example screenshot of Saunatime with an alt text:
 Note that images also break the baseline alignment since the height is
 dynamic.
 
----
 
 ## Tables
 
@@ -234,7 +224,6 @@ to the baseline :(
 | unless   | you      | know     |
 | what     | you're   | doing    |
 
----
 
 ## Formatting Markdown files with Prettier
 

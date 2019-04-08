@@ -7,7 +7,6 @@ ingress:
   This article introduces you to the concept of custom pricing and how
   it differs from other pricing methods.
 published: true
----
 
 ## What kind of pricing can you achieve with Flex
 
@@ -42,7 +41,6 @@ affect how bookings are created. In this article we'll look at bit
 closer on how pricing works in Flex and how it can be extended with
 custom pricing.
 
----
 
 ## How pricing works in Flex
 
@@ -79,7 +77,6 @@ marketplace website or app does not need to concern how the line items
 are created but it can rely on the information they contain when
 presenting the transaction information in the UI.
 
----
 
 ## More complex pricing schemes with custom pricing
 
@@ -255,7 +252,6 @@ added to the line items and `payinTotal` and `payoutTotal` have been
 calculated based on the line items that where passed in the request and
 the provider commission line item that has been constructed in the API.
 
----
 
 ## Trying out custom pricing
 

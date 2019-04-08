@@ -37,7 +37,6 @@ transitions in the default transaction process.
 > using custom pricing. Commissions and price negatiation however don't
 > require any changes as they can be combined with custom pricing.
 
----
 
 ## 2. Listing extended data
 
@@ -47,7 +46,6 @@ listings. See the
 [How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
 guide to read how to extend the listing data model with extended data.
 
----
 
 ## 3. Change current booking model to use custom pricing
 
@@ -133,7 +131,6 @@ const requestParams = this.customPricingParams({
 });
 ```
 
----
 
 ## 4. Add cleaning fee to the listing page UI
 
@@ -539,7 +536,6 @@ const formattedSubTotal = formatMoney(intl, subTotal);
 The next step will be to pass the cleaning fee data to the transaction
 initiation request.
 
----
 
 ## 5. Add the cleaning fee to the transaction
 
@@ -627,7 +623,6 @@ const requestParams = this.customPricingParams({
 });
 ```
 
----
 
 ## 6. Validate booking price on transaction page
 

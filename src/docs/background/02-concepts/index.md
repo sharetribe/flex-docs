@@ -8,7 +8,6 @@ ingress:
   Flex. The concepts are used in the API and throughout the
   documentation.
 published: true
----
 
 ## Application concepts
 
@@ -82,7 +81,6 @@ delivered via HTTPS to the endpoints the admin chooses.
 
 Planned.
 
----
 
 ## Marketplace concepts
 

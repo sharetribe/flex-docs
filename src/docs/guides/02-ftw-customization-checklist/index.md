@@ -27,7 +27,6 @@ FTW.
 - [Default background image](https://github.com/sharetribe/flex-template-web/blob/master/src/assets/background-1440.jpg)
 - [Maps Marker icon](https://github.com/sharetribe/flex-template-web/blob/master/public/static/icons/map-marker-32x32.png)
 
----
 
 ## 2. Change text content
 
@@ -42,7 +41,6 @@ FTW.
 - Update Terms of Service and Privacy Policy:
   [How to change Terms of Service and Privacy Policy in FTW](/guides/how-to-change-tos-and-privacy-policy-in-ftw/)
 
----
 
 ## 3. Change configuration
 
@@ -55,7 +53,6 @@ FTW.
 - [Config: social media pages](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js)
 - [Marketplace custom config](https://github.com/sharetribe/flex-template-web/blob/master/src/marketplace-custom-config.js)
 
----
 
 ## 4. Other optional changes
 

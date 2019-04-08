@@ -8,7 +8,6 @@ ingress:
   guide will help you to change currency and edit other configurations
   related to it.
 published: true
----
 
 ## 1. Change the currency
 
@@ -41,7 +40,6 @@ currency is in use. Currently, FTW doesn't support changing the currency
 of the listing so the price cannot be edited after the currency used in
 the application is changed.
 
----
 
 ## 2. Edit listing minimum price
 
@@ -54,7 +52,6 @@ price should be at least the same amount as
 in the country you are operating. If the listing price is lower, Stripe
 will not process the payment and the booking fails.
 
----
 
 ## 3. Check the currencyConfig.js file
 
@@ -71,7 +68,6 @@ All API requests to Stripe expects amounts to be provided in a
 currency’s smallest unit. It's also better to calculate using integers
 than floats to avoid rounding errors.
 
----
 
 ## 4. Optional: Format values
 
@@ -82,7 +78,6 @@ the Money object to price attribute of a listing. `currencyConfig.js`
 file affects how prices are formatted by determining how the subunits
 are converted to the actual unit (e.g. from cents to USD).
 
----
 
 ## 5. Optional: Calculate the price in client app side
 

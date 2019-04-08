@@ -38,7 +38,6 @@ type: `line-item/night`, `line-item/day`, and `line-item/units`.
 
 > Note: You should revise other configuration options too.
 
----
 
 ## 2. Check if the transaction.js file needs to be updated
 
@@ -134,7 +133,6 @@ export const txIsCanceledByCustomer = tx =>
 > states. Read more about the
 > [transaction process](/background/transaction-process/).
 
----
 
 ## 3. Update all the components that import util/transaction.js
 

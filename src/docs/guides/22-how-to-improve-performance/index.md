@@ -48,7 +48,6 @@ improve both cases of page rendering.
 - [Use sparse attributes](#use-sparse-attributes)
 - [About code-splitting](#about-code-splitting)
 
----
 
 ## Check page performance
 
@@ -61,7 +60,6 @@ page, listing page, about page and other static pages).
 Lighthouse will give you some tips about how to improve performance and
 other aspects that website developers should think about.
 
----
 
 ## Optimize image sizes
 
@@ -90,7 +88,6 @@ Quick checklist:
 - Think about serving images and other static assets from some CDN.
   [Read more.](https://www.smashingmagazine.com/2017/04/content-delivery-network-optimize-images/)
 
----
 
 ## Lazy load off-screen images and other components
 
@@ -100,7 +97,6 @@ loading these off-screen images can be done with helper function:
 `lazyLoadWithDimensions` (from `util/contextHelpers/`). Check
 `SectionLocations` component for details.
 
----
 
 ## Use sparse attributes
 
@@ -110,7 +106,6 @@ but it is created to reduce unnecessary data and speed up rendering. You
 can read more from
 [Marketplace API reference for sparse attributes](https://www.sharetribe.com/api-reference/#sparse-attributes).
 
----
 
 ## About code-splitting
 

@@ -27,7 +27,6 @@ Go to the
 click on the "GET A KEY" button in the top bar, and follow the
 instructions. You can copy the given key to your application now.
 
----
 
 ## 2. Enable Google Places API Web Service
 
@@ -37,7 +36,6 @@ section of the Places library documentation to enable using the Google
 Places API Web Service. Also Maps Static API and Maps Javascript API
 need to be enabled.
 
----
 
 ## 3. Setup the application to use the API key
 
@@ -49,7 +47,6 @@ variable in the Gitignored `.env` file in the project root:
 REACT_APP_GOOGLE_MAPS_API_KEY=my-key-here
 ```
 
----
 
 ## 4. Setup common locations to reduce typing
 
@@ -76,7 +73,6 @@ current location from
 Search for variables: `suggestCurrentLocation` and
 `currentLocationBoundsDistance`.
 
----
 
 ## 5. Change components: use Google Map versions instead of Mapbox
 

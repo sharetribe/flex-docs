@@ -8,7 +8,6 @@ ingress:
   whether Flex is a good solution for building your specific marketplace
   idea.
 published: true
----
 
 ## Marketplaces
 
@@ -23,7 +22,6 @@ Flex is not the right solution if your idea is to build an e-commerce
 store for selling products. Flex is also not the right fit if your
 concept is a discussion forum or a social network.
 
----
 
 ## Flex focus: services, rentals, events
 
@@ -68,7 +66,6 @@ for retailers, or something like [eBay](https://www.ebay.com/) or
 [Etsy](https://www.etsy.com/) for individuals, Flex is not the right
 solution for you.
 
----
 
 ## Regular marketplaces and reverse marketplaces
 
@@ -101,7 +98,6 @@ To learn more about the differences between regular and reverse
 marketplaces, take a look at
 [an article on how to design the booking flow of your service marketplace](https://www.sharetribe.com/academy/design-booking-flow-service-marketplace/).
 
----
 
 ## Country support
 
@@ -116,7 +112,6 @@ platform, they have to be in a Stripe-supported country.
 In the future, it will likely be possible for you to integrate a payment
 gateway of your choice to Flex, but this is not possible yet.
 
----
 
 ## Are you ready for Flex?
 

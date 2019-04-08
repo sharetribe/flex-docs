@@ -9,7 +9,6 @@ ingress:
   Stripe account and adding Stripe API keys to Console and Flex Template
   for Web.
 published: true
----
 
 ## 1. Create and confirm your free Stripe account
 
@@ -27,7 +26,6 @@ activation form varies based on your country.
 
 ![Activate Stripe account](./activate-account.png)
 
----
 
 ## 2. Enable Stripe Connect in your platform
 
@@ -63,7 +61,6 @@ Stripe Connect:
 Great! You now have to get your API keys and input them into your
 marketplace.
 
----
 
 ## 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
@@ -82,7 +79,6 @@ production make sure that the toggle is off.
 
 ![Get API keys from Stripe](./api-keys.png)
 
----
 
 ## 4. Add your Stripe secret API key to Console
 
@@ -92,7 +88,6 @@ production make sure that the toggle is off.
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
 
----
 
 ## 5. Add you Stripe publishable key to your client application
 
@@ -106,7 +101,6 @@ text editor.
 Read more about configurations in FTW from
 [Getting started with FTW](/tutorials/getting-started-with-ftw/#configuration)
 
----
 
 ## 6. Test the Stripe account in Flex Template for Web
 
@@ -168,7 +162,6 @@ so e.g. testing different error scenarios is possible.
 
 ![Checkout](checkout.png)
 
----
 
 ## 7. Advanced: Adding new country to supported Stripe countries
 

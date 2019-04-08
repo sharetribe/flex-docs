@@ -35,7 +35,6 @@ two different components:
 - Select single filter: `SelectSingleFilter`
 - Select multiple filter: `SelectMultipleFilter`
 
----
 
 ## Adding a new search filter
 
@@ -214,7 +213,6 @@ steps are required to add a mobile filter:
   inside the `<div className={css.filtersWrapper}>` element to render
   the filters.
 
----
 
 ## Creating your own filter types
 

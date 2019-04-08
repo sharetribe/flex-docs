@@ -35,7 +35,6 @@ Note that this also runs the linter.
 > Read more about
 > [this issue](https://github.com/facebook/create-react-app/issues/871).
 
----
 
 ## Jest
 

@@ -7,7 +7,6 @@ ingress:
   This article introduces transaction processes and how they define
   marketplace order flows.
 published: true
----
 
 ## What is a transaction process?
 
@@ -43,7 +42,6 @@ booking is automatically confirmed as soon as it is made (i.e. instant
 booking), or a change of wording in a notification email sent to remind
 the customer of their upcoming booking.
 
----
 
 ## Sharetribe Flex default transaction process
 
@@ -95,7 +93,6 @@ account, after the commission of the marketplace is deducted. When the
 booking has been completed, both the customer and the provider can
 _review_ each other.
 
----
 
 ## What kind of transaction process customizations are possible?
 
@@ -126,7 +123,6 @@ flow, storing
 [protected data](/references/extended-data/#protected-data) or sending
 notifications.
 
----
 
 ## How to change your transaction process
 

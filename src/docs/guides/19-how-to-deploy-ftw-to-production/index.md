@@ -7,7 +7,6 @@ ingress:
   This guide describes how to set up a production deployment for Flex
   Template for Web (FTW).
 published: true
----
 
 ## Getting started
 
@@ -90,7 +89,6 @@ Start the server:
 
 `yarn start`
 
----
 
 ## Deploying to Heroku
 

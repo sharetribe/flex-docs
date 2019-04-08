@@ -31,7 +31,6 @@ certain types of attacks, including XSS and data injection attacks. Read
 more from our documentation on
 [how to set up Content Security Policy](/guides/how-to-set-up-csp-for-ftw/)
 
----
 
 ## Sanitize user-generated content when updating entities
 
@@ -58,7 +57,6 @@ In addition, you might also want to use sanitization directly in UI
 components - for example, you could sanitize `href` prop in
 `<ExternalLink>` component.
 
----
 
 ## Other things to consider
 
@@ -74,7 +72,6 @@ There is also Field\* components around `<input>` elements (e.g.
 FieldTextInput) since FTW uses Final Form. Those could be used in a
 similar fashion to validate content or just format it before saving.
 
----
 
 ## Resources
 

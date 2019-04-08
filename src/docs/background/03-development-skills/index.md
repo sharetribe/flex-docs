@@ -37,7 +37,6 @@ Here are the main technologies the FTW uses:
 - [Node.js](https://nodejs.org/): development tooling and running the
   Express server
 
----
 
 ## Customization
 
@@ -56,7 +55,6 @@ Check out the
 tutorial to see what it takes to get the template running with a small
 customization.
 
----
 
 ## Development tooling
 
@@ -73,7 +71,6 @@ amazing [Create React App](https://github.com/facebook/create-react-app)
 tool. We have added server side rendering and CSS modules, but otherwise
 all the nice things from `create-react-app` are still there.
 
----
 
 ## Getting help
 

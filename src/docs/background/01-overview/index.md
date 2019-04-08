@@ -7,7 +7,6 @@ ingress:
   Overview of how Sharetribe Flex works, and how you can build your
   online marketplace platform using it.
 published: true
----
 
 ## Introduction
 
@@ -22,7 +21,6 @@ platform that adapts to the entire lifecycle of your business. As your
 business grows, Flex takes care of running and scaling your backend —
 allowing you to focus on the unique value of your platform.
 
----
 
 ## Flex Components
 
@@ -88,7 +86,6 @@ editor for email templates. Console is accessed via a web UI that we
 provide out of the box. Think of it as an admin interface you never have
 to build!
 
----
 
 ## Is Flex the right fit for you?
 

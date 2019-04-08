@@ -7,7 +7,7 @@ ingress:
   This tutorial is the place to start your journey of getting hands-on
   with Sharetribe Flex. You will learn the basic building blocks by
   creating an example marketplace with the Flex Template for Web (FTW).
-skills: basic command line, text editing
+skills: basic command line,text editing
 published: true
 ---
 
@@ -34,7 +34,6 @@ article.
 To use the Marketplace API, you will need an API key. You can request
 access at https://sharetribe.typeform.com/to/BI9M4O
 
----
 
 ## Install development tooling
 
@@ -45,7 +44,6 @@ basic development tooling:
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/docs/install)
 
----
 
 ## Setup FTW
 
@@ -66,7 +64,6 @@ Go to the cloned directory:
 cd flex-template-web/
 ```
 
----
 
 ## Install dependencies
 
@@ -76,7 +73,6 @@ Install all dependencies:
 yarn install
 ```
 
----
 
 ## Configuration
 
@@ -122,7 +118,6 @@ There are three required variables for FTW to work correctly:
 See the [FTW Environment configuration variables](/references/ftw-env/)
 for more information on the environment variables.
 
----
 
 ## Start the server
 
@@ -136,7 +131,6 @@ This will automatically open `http://localhost:3000` in a browser:
 
 ![Default marketplace screenshot](./saunatime-default.png)
 
----
 
 ## Make a customization
 
@@ -154,7 +148,6 @@ This will automatically refresh the browser and show the updated styles:
 
 ![Customized marketplace screenshot](./saunatime-customized.png)
 
----
 
 ## Summary
 
