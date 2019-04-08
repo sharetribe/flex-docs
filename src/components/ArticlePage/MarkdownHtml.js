@@ -9,35 +9,72 @@ import {
 } from '../../config';
 import { H4, H5, H6, P, Ul, Ol, Li, Hr, A, Strong, Em } from '../../components';
 
-require('prismjs/themes/prism-solarizedlight.css');
+require('prismjs/themes/prism-tomorrow.css');
 
 const HighlightStyle = createGlobalStyle`
+
+  // Decrease the distance between p and the code block
+  p + .gatsby-highlight {
+    margin-top: -${2 * baselineSmall}px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin-top: -${2 * baselineLarge}px;
+    }
+  }
+
+  li p + .gatsby-highlight {
+    margin-top: 0;
+    margin-bottom: ${3 * baselineSmall}px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      // Baseline offset
+      top: -2px;
+
+      position: relative;
+      margin-bottom: ${2 * baselineLarge}px;
+    }
+  }
+
   .gatsby-highlight  {
+    margin-bottom: ${2 * baselineSmall}px;
+    line-height: 24px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin-bottom: ${2 * baselineLarge}px;
+    }
+
+    pre {
+      font-size: 14px;
+    }
 
     // Remove theme default styles
     pre[class*="language-"] {
-      background-color: transparent;
       margin: ${baselineSmall}px 0;
-      padding: ${2 * baselineSmall}px 0;
+
+      // Baseline offset
+      padding: ${2 * baselineSmall}px 16px;
       line-height: 24px;
-      border-radius: 0;
+      border-radius: 4px;
 
       @media (min-width: ${baselineBreakpoint}px) {
         margin: ${baselineLarge}px 0;
-        padding: ${2 * baselineLarge}px 0;
+        padding: ${2 * baselineLarge}px 24px;
       }
     }
     code[class*="language-"] {
       line-height: 24px;
+      font-size: 14px;
+      background: none;
+      font-weight: 400;
+      color: #ccc;
     }
 
     pre[class*="language-"],
     code[class*="language-"],
     .token {
       &::selection {
-        // Use same selection styles as in sanitize.css
-        background-color: #b3d4fc;
-        color: #000;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: inherit;
         text-shadow: none;
       }
     }
@@ -57,8 +94,12 @@ const Html = styled.div`
   }
   h3 {
     ${H5.styles}
-    margin: ${baselineSpacing}px 0;
+    margin: ${5 * baselineSmall}px 0 ${baselineSmall}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin: ${5 * baselineLarge}px 0 ${baselineLarge}px 0;
+    }
   }
   h4 {
     ${H6.styles}
@@ -84,7 +125,7 @@ const Html = styled.div`
     // exist e.g. in lists where the baseline offset is already
     // done. Margins are also handled separately in those components.
     ${P.styles}
-    margin: ${baselineSpacing}px 0;
+    margin-bottom: ${baselineSpacing}px;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   strong {${Strong.styles}}
@@ -113,7 +154,9 @@ const Html = styled.div`
     // element seems to fix this.
     //
     // See: https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align
-    line-height: 23px;
+    line-height: 22px;
+    font-size: 15px;
+    background: rgba(255,229,100,0.35);
 
     color: ${props => props.theme.textColorQuoted};
   }
@@ -137,7 +180,7 @@ const Html = styled.div`
 
     // Two paragraphs are separated by a margin
     p + p {
-      margin: ${baselineSpacing}px 0;
+      margin-bottom: ${baselineSpacing}px;
     }
     li {
       // Prevent offsetting the baseline twice in a sub list
@@ -172,6 +215,14 @@ const Html = styled.div`
   }
   & > :last-child {
     margin-bottom: 0;
+  }
+
+  picture {
+    transition: all ease-out 0.1s;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 `;
 

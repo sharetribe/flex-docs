@@ -42,6 +42,7 @@ const NavLink = styled(Link).attrs({
   padding-bottom: ${2.5 * baselineLarge - bottomBorderWidth}px;
   padding-left: 14px;
   padding-right: 14px;
+  line-height: 32px;
 
   ${props => (props.active ? activeLinkStyles : '')}
 

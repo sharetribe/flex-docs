@@ -25,12 +25,12 @@ const normalStyles = css`
   top: 0px;
 
   @media (min-width: ${baselineBreakpoint}px) {
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 24px;
     letter-spacing: -0.1px;
 
     // Offset baseline
-    top: 2px;
+    top: 6px;
   }
 `;
 

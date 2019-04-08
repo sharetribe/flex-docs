@@ -51,7 +51,7 @@ exports.themeLight = {
   textColorTiny: '#9b9b9b',
 
   // Quoted code etc. color
-  textColorQuoted: '#888',
+  textColorQuoted: '#282c34',
 
   // Hightlighted text color e.g. for skills list in article
   textColorHighlight: '#f74b00',
