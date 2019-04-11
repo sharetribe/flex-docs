@@ -1,7 +1,7 @@
 ---
 title: How to customize pricing
 slug: how-to-customize-pricing
-updated: 2019-03-19
+updated: 2019-04-05
 category: guides
 ingress:
   Flex allows lots of flexibility for your providers in terms of how
