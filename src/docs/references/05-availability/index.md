@@ -1,7 +1,7 @@
 ---
 title: Listing availability management
 slug: availability
-updated: 2019-02-20
+updated: 2019-04-11
 category: references
 ingress: Reference documentation for listing availability management.
 published: true
@@ -93,13 +93,49 @@ availability plans can specify one or more time intervals for each day
 of the week, and specify the time zone in which these times should be
 interpreted. For instance, with time-based availability it is possible
 to define that the listing is available on weekdays from 9 AM to 11AM
-and from 1 PM to 6 PM.
+and from 1 PM to 6 PM. More information on how to set a time-based
+availability plan for a listing can be found in the
+[time-based bookings guide](/guides/how-to-take-time-based-bookings-into-use).
 
 ### Interpretation of availability exceptions and bookings
 
 For time-based plans, both availability exceptions and bookings are
 interpreted literally, i.e. covering the exact time intervals determined
 by their start and end times.
+
+## Booking display times
+
+Booking display times are a handy tool for managing listing
+availability. You can use them by passing `bookingDisplayStart` and
+`bookingDisplayEnd` attributes when initiating a new transaction. This
+will set `displayStart` and `displayEnd` attributes correspondingly to
+the booking that is related to the initiated transaction. The display
+times are used alongside with the normal `start` and `end` attributes
+(defined by `bookingStart` and `bookingEnd` params in a transaction
+initiation request) of a booking and they can be used to present
+different start and end times to the customer than actully is booked.
+See
+[the booking resource format](https://www.sharetribe.com/api-reference/#booking-resource-format)
+for a full list of booking attributes.
+
+#### **Example:**
+
+A provider needs 10 minutes of preparation time before each booking.
+They can pass the following params regarding booking start when
+initiating a transaction:
+
+```
+bookingStart: "2018-04-20T12:20:00.000Z",
+bookingDisplayStart: "2018-04-20T12:30:00.000Z"
+```
+
+The `displayStart` attribute will now indicate that the booking starts
+at _12:30_ and this can be presented to the customer. However, the
+listing is booked already from _12:20_, denoted by booking's `start`
+attribute. Now the listing is not available for other bookings 10
+minutes before this booking starts. If another customer wishes to book
+this listing earlier, their booking will end at latest 10 minutes before
+this booking.
 
 ## Related API endpoints
 
@@ -110,3 +146,4 @@ details:
 - [/own_listings/update](https://www.sharetribe.com/api-reference/index.html#update-listing)
 - [/availability_exceptions/\*](https://www.sharetribe.com/api-reference/index.html#availability-exceptions)
 - [/timeslots/query](https://www.sharetribe.com/api-reference/index.html#query-time-slots)
+- [/transactions/initiate](https://www.sharetribe.com/api-reference/#initiate-transaction)
