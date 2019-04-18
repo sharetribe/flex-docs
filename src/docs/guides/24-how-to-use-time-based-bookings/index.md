@@ -1,7 +1,7 @@
 ---
 title: How to take time-based bookings into use
 slug: how-to-take-time-based-bookings-into-use
-updated: 2019-04-11
+updated: 2019-04-18
 category: guides
 ingress:
   Time-based bookings and availability management enable low level fine
@@ -19,6 +19,13 @@ based on the length of a time-based booking is not supported. In order
 to update your process to match these requirements,
 [contact the Sharetribe support](mailto:flex-support@sharetribe.com) and
 ask that this adjustment is made to your process.
+
+> Note that filtering a listings query by availability is not yet available when
+> using time-based bookings and availability. When taking time-based
+> availability into use, you should remove the date filter from search page. See
+> [the listings query endpoint reference
+> documentation](https://www.sharetribe.com/api-reference/#query-listings) for
+> more information.
 
 ## 2. Time-based availability plans
 
