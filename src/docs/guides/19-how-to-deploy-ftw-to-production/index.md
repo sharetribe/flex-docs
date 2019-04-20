@@ -30,7 +30,7 @@ After this you need to do the following steps:
 2.  [Build the app](#building-the-app)
 3.  [Run the node server](#starting-the-app)
 
-### Enviroment variables
+### Environment variables
 
 To deploy the application add at least the following variables:
 
