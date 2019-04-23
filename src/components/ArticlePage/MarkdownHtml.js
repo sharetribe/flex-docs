@@ -204,17 +204,21 @@ const Html = styled.div`
   //
   table {
     color: ${props => props.theme.textColor};
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
     margin: ${baselineSpacing}px 0;
+
+    width: 100%;
+    max-width: ${props => props.theme.contentMaxWidth}px;
   }
   th {
     border: 1px solid ${props => props.theme.lineColor};
-    padding: ${baselineSmall}px ${baselineSpacing}px;
+    padding: ${baselineSmall}px 8px;
+    white-space: nowrap;
   }
   td {
     border: 1px solid ${props => props.theme.lineColor};
-    padding: ${baselineSmall}px ${baselineSpacing}px;
+    padding: ${baselineSmall}px 8px;
   }
 
   & > :first-child {
