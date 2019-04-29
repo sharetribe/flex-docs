@@ -1,7 +1,7 @@
 ---
 title: How to extend listing data in FTW
 slug: how-to-extend-listing-data-in-ftw
-updated: 2019-01-29
+updated: 2019-04-29
 category: guides
 ingress:
   This guide describes how to use use extended data to expand the
@@ -303,11 +303,11 @@ export default compose(injectIntl)(EditListingCapacityFormComponent);
 
 The form component receives `capacityOptions` as a prop which are used
 to populate a `FieldSelect` component for selecting the capacity. The
-`EditListingCapacityForm` is also added to the `src/containers/index.js`
-file so that it can easilly be referenced from other components. To use
-the capacity editing form we'll add a panel component which is then used
-in `EditListingWizardTab` to render the wizard phase. This component
-we'll call `EditListingCapacityPanel`:
+`EditListingCapacityForm` is also added to the `src/forms/index.js` file
+so that it can easilly be referenced from other components. To use the
+capacity editing form we'll add a panel component which is then used in
+`EditListingWizardTab` to render the wizard phase. This component we'll
+call `EditListingCapacityPanel`:
 
 ```js
 import React from 'react';
@@ -409,13 +409,28 @@ file where the data updates are handled. Respectively
 `src/components/index.js` for easier access from other files.
 
 Now that we have the panel and the form all ready we can add the panel
-to the `EditListingWizardTab` component. This is done by adding a new
-block to the `switch` structure that handles rendering the correct
-panel:
+to the `EditListingWizardTab` component. This is done by importing
+`EditListingCapacityPanel` in the `EditListingWizardTab.js`:
+
+```js
+import {
+  EditListingAvailabilityPanel,
+  EditListingCapacityPanel,
+  EditListingDescriptionPanel,
+  EditListingFeaturesPanel,
+  EditListingLocationPanel,
+  EditListingPhotosPanel,
+  EditListingPoliciesPanel,
+  EditListingPricingPanel,
+} from '../../components';
+```
+
+and adding a new block to the `switch` structure that handles rendering
+the correct panel:
 
 ```js
 case CAPACITY: {
-  const submitButtonTranslationKey = isNew
+  const submitButtonTranslationKey = isNewListingFlow
     ? 'EditListingWizard.saveNewCapacity'
     : 'EditListingWizard.saveEditCapacity';
   return (
