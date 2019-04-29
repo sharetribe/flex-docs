@@ -20,12 +20,12 @@ to update your process to match these requirements,
 [contact the Sharetribe support](mailto:flex-support@sharetribe.com) and
 ask that this adjustment is made to your process.
 
-> Note that filtering a listings query by availability is not yet available when
-> using time-based bookings and availability. When taking time-based
-> availability into use, you should remove the date filter from search page. See
-> [the listings query endpoint reference
-> documentation](https://www.sharetribe.com/api-reference/#query-listings) for
-> more information.
+> Note that filtering a listings query by availability is not yet
+> available when using time-based bookings and availability. When taking
+> time-based availability into use, you should remove the date filter
+> from search page. See
+> [the listings query endpoint reference documentation](https://www.sharetribe.com/api-reference/#query-listings)
+> for more information.
 
 ## 2. Time-based availability plans
 
