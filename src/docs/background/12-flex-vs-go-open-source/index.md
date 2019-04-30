@@ -1,9 +1,11 @@
 ---
-title: Flex vs. Go Open Source
+title: What is the difference between Flex and Go Open Source?
 slug: flex-vs-go-open-source
 updated: 2019-04-29
 category: background
-ingress: Comparison of features in Flex and Go Open Source.
+ingress:
+  This table illustrates the essential differences between Sharetribe
+  Flex and Shartribe Go Open Source.
 published: true
 ---
 
@@ -14,7 +16,7 @@ published: true
 | Customer support                                     |         ✓         |    Not available    |
 | Tutorials, guides, and documentation                 |         ✓         |    Not available    |
 | Back-end hosting                                     |         ✓         |    Not included     |
-| Front-end hosting                                    |         ✓         |    Not included     |
+| Front-end hosting                                    |   Not included    |    Not included     |
 | Free sandbox environment for testing and development |         ✓         |    Not included     |
 | Backups                                              |         ✓         |    Not included     |
 | Software updates                                     |         ✓         |    Not included     |
@@ -34,6 +36,12 @@ published: true
 | Third-party integrations                             |         ✓         |    Not included     |
 | Customizable transaction process                     |         ✓         |    Not included     |
 | Possibility to build a mobile app                    |         ✓         |    Not included     |
+| **Marketplace type**                                 |                   |                     |
+| Renting products, vehicles, or spaces                |         ✓         |          ✓          |
+| Booking services                                     |         ✓         |          ✓          |
+| Selling tickets to events                            |         ✓         |          ✓          |
+| Selling physical products                            |         ✓         |          ✕          |
+| Free sharing of goods and services                   |         ✓         |          ✓          |
 | **Included SaaS services**                           |                   |                     |
 | Image CDN                                            |         ✓         |    Not included     |
 | Email notifications                                  |         ✓         |    Not included     |
