@@ -10,8 +10,8 @@ published: true
 ---
 
 The test setup is based on the `create-react-app` test setup and is
-using the [Jest testing framework](https://facebook.github.io/jest/).
-For reference, see the
+using the [Jest testing framework](https://jestjs.io/). For reference,
+see the
 [testing section](https://facebook.github.io/create-react-app/docs/running-tests)
 in the `create-react-app` documentation.
 
@@ -39,11 +39,10 @@ Note that this also runs the linter.
 
 To learn more about testing with Jest, read the following documentation:
 
-- [Getting Started](https://facebook.github.io/jest/docs/getting-started.html)
-- [Tutorial - React](https://facebook.github.io/jest/docs/tutorial-react.html)
-- [Tutorial - Async](https://facebook.github.io/jest/docs/tutorial-async.html)
-- [Snapshot Testing](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html)
+- [Getting Started](https://jestjs.io/docs/en/getting-started)
+- [Tutorial - React](https://jestjs.io/docs/en/tutorial-react)
+- [Tutorial - Async](https://jestjs.io/docs/en/tutorial-async)
+- [Snapshot Testing](https://jestjs.io/blog/2016/07/27/jest-14.html)
   blog post
-- [API Reference](https://facebook.github.io/jest/docs/api.html) lists
-  the global environment with the available functions and the assertion
-  matchers
+  - [API Reference](https://jestjs.io/docs/en/api) lists the global
+    environment with the available functions and the assertion matchers

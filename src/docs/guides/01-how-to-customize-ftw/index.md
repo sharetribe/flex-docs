@@ -40,7 +40,7 @@ from the main (upstream) repository to your custom repository.
 
 ### Fork the repository
 
-See the [Fork a repo](https://help.github.com/articles/fork-a-repo/)
+See the [Fork a repo](https://help.github.com/en/articles/fork-a-repo)
 documentation for instructions for forking a repository in GitHub.
 
 In the directory you want to create the project in:
@@ -57,7 +57,7 @@ git remote add upstream git@github.com:sharetribe/flex-template-web.git
 ```
 
 See also the
-[Configuring a remote for a fork](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
+[Configuring a remote for a fork](https://help.github.com/en/articles/configuring-a-remote-for-a-fork)
 documentation.
 
 ### Pull in latest upstream changes
@@ -88,7 +88,7 @@ upstream changes):
 1.  Fix possible merge conflicts, commit, and push/deploy.
 
 See also the
-[Syncing a fork](https://help.github.com/articles/syncing-a-fork/)
+[Syncing a fork](https://help.github.com/en/articles/syncing-a-fork)
 documentation.
 
 ## Installing dependecies

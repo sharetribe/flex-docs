@@ -114,7 +114,7 @@ what kind of user interface you need to accommodate the design.
 
 Once you have the wireframes ready and know what you want, the next step
 is to build the actual visual design. If you're comfortable with using a
-design tool like [Sketch](https://www.sketchapp.com/), you can
+design tool like [Sketch](https://www.sketch.com/), you can
 [download the Sketch design files of FTW](https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG)
 and build your own design by adjusting these files. This approach can
 dramatically speed up the design process, and it offers an easy starting

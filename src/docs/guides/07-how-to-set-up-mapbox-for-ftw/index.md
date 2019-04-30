@@ -13,8 +13,8 @@ published: true
 
 ## 1. Generate a Mapbox access token
 
-[Sign up to Mapbox](https://www.mapbox.com/signup/) and go to the
-[account page](https://www.mapbox.com/account/). Then copy the
+[Sign up to Mapbox](https://account.mapbox.com/auth/signup/) and go to
+the [account page](https://account.mapbox.com/). Then copy the
 `Default public token`.
 
 If you wish to create a new one, click `+ Create a token`, give it a
@@ -22,7 +22,7 @@ name and make sure all Public scopes are selected. Create the token and
 copy its value.
 
 Read more about
-[access tokens and consider rotating them](https://www.mapbox.com/help/how-access-tokens-work/).
+[access tokens and consider rotating them](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/).
 
 ## 2. Setup the application to use the access token
 
@@ -91,7 +91,7 @@ guide.
 ### How to use other map providers
 
 The default map setup of FTW uses library called
-[mapbox-gl-js](https://www.mapbox.com/mapbox-gl-js/api/). It supports
+[mapbox-gl-js](https://docs.mapbox.com/mapbox-gl-js/api/). It supports
 quite many other map providers too. Thus, if you wish to use a map
 provider other than Google Maps or Mapbox, first check if the map
 provider you are considering is supporting this library. If they are,

@@ -52,7 +52,7 @@ these best practises for email branding to avoid spam folders:
   marketplace and continue the actions there - we don't support e.g.
   responding to messages in the platform through email.
 - One technical thing to do is to set up in your DNS records
-  [a SPF record for Sendgrid](https://sendgrid.com/docs/Glossary/spf.html).
+  [a SPF record for Sendgrid](https://sendgrid.com/docs/glossary/spf/).
 
 ## Handlebars
 
@@ -180,7 +180,7 @@ Renders a properly localized `time` based on the `format` and `lang`
 hash parameters.
 
 The `format` supports
-[Joda-Time formatting](http://www.joda.org/joda-time/key_format.html).
+[Joda-Time formatting](https://www.joda.org/joda-time/key_format.html).
 
 The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47)
 language tag strings. More info about language tags can be found in the
