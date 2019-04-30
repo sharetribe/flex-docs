@@ -24,7 +24,9 @@ The DSN key can be aquired from the Sentry project settings. To test it
 in your local environment it can be passed for example to the
 `yarn run dev-server` command:
 
-    REACT_APP_SENTRY_DSN='<sentry-dsn>'  yarn run dev-server
+```bash
+REACT_APP_SENTRY_DSN='<sentry-dsn>'  yarn run dev-server
+```
 
 If the Sentry DSN key is not provided the template app will log errors
 to the console. The logging and Sentry setup is implemented in

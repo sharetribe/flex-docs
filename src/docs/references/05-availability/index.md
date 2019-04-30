@@ -124,7 +124,7 @@ A provider needs 10 minutes of preparation time before each booking.
 They can pass the following params regarding booking start when
 initiating a transaction:
 
-```
+```json
 bookingStart: "2018-04-20T12:20:00.000Z",
 bookingDisplayStart: "2018-04-20T12:30:00.000Z"
 ```

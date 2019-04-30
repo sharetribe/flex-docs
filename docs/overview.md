@@ -55,7 +55,7 @@ all dynamic interactivity is still possible in the client side UI.
 
 ## Project structure
 
-```sh
+```bash
 docs/                # Site internal documentation
 public/              # Build output
 src/                 # Site source code

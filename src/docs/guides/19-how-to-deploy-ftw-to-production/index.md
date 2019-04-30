@@ -80,7 +80,9 @@ Running the following command builds the app for production to the build
 folder. It correctly bundles React in production mode and optimizes the
 build for the best performance.
 
-`yarn build`
+```bash
+yarn build
+```
 
 After this, your app is ready to be deployed.
 
@@ -88,7 +90,9 @@ After this, your app is ready to be deployed.
 
 Start the server:
 
-`yarn start`
+```bash
+yarn start
+```
 
 ## Deploying to Heroku
 

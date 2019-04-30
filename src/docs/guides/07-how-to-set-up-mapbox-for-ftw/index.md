@@ -30,7 +30,7 @@ The application uses the `REACT_APP_MAPBOX_ACCESS_TOKEN` environment
 variable for the token value. For local development, you can add the
 variable in the Gitignored `.env` file in the project root:
 
-```
+```bash
 REACT_APP_MAPBOX_ACCESS_TOKEN=my-access-token-here
 ```
 
@@ -45,7 +45,7 @@ Mapbox geolocation API that much.
 This is enabled by default but it can be changed via the environment
 variable:
 
-```
+```bash
 REACT_APP_DEFAULT_SEARCHES_ENABLED=true
 ```
 

@@ -193,7 +193,7 @@ Next task is to add form and panel components that render the capacity
 tab. As for the form, let's create a `EditListingCapacityForm`
 component:
 
-```js
+```jsx
 import React from 'react';
 import { arrayOf, bool, func, shape, string } from 'prop-types';
 import { compose } from 'redux';
@@ -309,7 +309,7 @@ capacity editing form we'll add a panel component which is then used in
 `EditListingWizardTab` to render the wizard phase. This component we'll
 call `EditListingCapacityPanel`:
 
-```js
+```jsx
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -428,7 +428,7 @@ import {
 and adding a new block to the `switch` structure that handles rendering
 the correct panel:
 
-```js
+```jsx
 case CAPACITY: {
   const submitButtonTranslationKey = isNewListingFlow
     ? 'EditListingWizard.saveNewCapacity'
@@ -470,7 +470,7 @@ Flex web template repo easier as there's less chances for merge
 conflicts. So, let's create a `SectionCapacity` component in the
 `src/containers/ListingPage/` directory:
 
-```js
+```jsx
 import React from 'react';
 import { array, shape, string } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
@@ -513,7 +513,7 @@ it inside the `<div className={css.mainContent}>` element:
 import SectionCapacity from './SectionCapacity';
 ```
 
-```js
+```jsx
 <div className={css.mainContent}>
   {/* other sections */}
 

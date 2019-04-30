@@ -20,11 +20,15 @@ in the `create-react-app` documentation.
 To start the test watcher that automatically updates when files change,
 run
 
-    yarn test
+```bash
+yarn test
+```
 
 If you want to run the tests once and not start the watcher, run
 
-    CI=true yarn test
+```bash
+CI=true yarn test
+```
 
 Note that this also runs the linter.
 

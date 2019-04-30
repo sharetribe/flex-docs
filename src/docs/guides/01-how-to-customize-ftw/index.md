@@ -45,7 +45,7 @@ documentation for instructions for forking a repository in GitHub.
 
 In the directory you want to create the project in:
 
-```sh
+```bash
 # clone your fork
 git clone git@github.com:YOUR_USERNAME/YOUR_FORK.git
 
@@ -75,13 +75,13 @@ upstream changes):
 
 1.  Fetch the latest changes from the upstream repository:
 
-    ```sh
+    ```bash
     git fetch upstream
     ```
 
 1.  Merge the changes to your local branch
 
-    ```sh
+    ```bash
     git merge upstream/master
     ```
 
@@ -95,7 +95,9 @@ documentation.
 
 In your project root, install dependencies:
 
-    yarn install
+```bash
+yarn install
+```
 
 ## Configuration
 
@@ -104,7 +106,9 @@ most likely want to at least go through.
 
 To get started, run:
 
-    yarn run config
+```bash
+yarn run config
+```
 
 This command will create `.env` file and guide you trough setting up the
 required environment variables. The `.env` file is the place to add your
@@ -125,7 +129,9 @@ file for more configuration options.
 To develop the application and to see changes live, start the frontend
 development server:
 
-    yarn run dev
+```bash
+yarn run dev
+```
 
 **Known issues:**
 
@@ -142,7 +148,9 @@ development server (see above). However, in production you likely want
 to use the server rendering setup. To develop the server rendering setup
 locally, run:
 
-    yarn run dev-server
+```bash
+yarn run dev-server
+```
 
 This runs the frontend production build and starts the Express.js server
 in
@@ -160,7 +168,9 @@ restarting the server manually.
 
 To start the test watcher, run
 
-    yarn test
+```bash
+yarn test
+```
 
 For more information, see the
 [How to test FTW](/guides/how-to-test-ftw/) documentation.
