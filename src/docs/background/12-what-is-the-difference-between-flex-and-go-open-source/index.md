@@ -62,8 +62,8 @@ cost-effective to make.
 
 Secondly, the back end is built for flexibility from the ground up. For
 example, the [transaction processes](/background/transaction-process/)
-have been designed so that it is very quick and easy to adjust them. You can
-even create a completely new transaction process without coding
+have been designed so that it is very quick and easy to adjust them. You
+can even create a completely new transaction process without coding
 anything.
 
 With Go Open Source, every change needs to be coded from scratch.

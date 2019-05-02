@@ -1,7 +1,7 @@
 ---
 title: How to extend listing data in FTW
 slug: how-to-extend-listing-data-in-ftw
-updated: 2019-04-29
+updated: 2019-05-02
 category: guides
 ingress:
   This guide describes how to use use extended data to expand the
@@ -316,7 +316,7 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { ensureOwnListing } from '../../util/data';
 import { ListingLink } from '../../components';
-import { EditListingCapacityForm } from '../../containers';
+import { EditListingCapacityForm } from '../../forms';
 import config from '../../config.js';
 
 import css from './EditListingCapacityPanel.css';
@@ -545,6 +545,12 @@ not affect test results.
 And voilà, we have listing capacity presented in the listing page!
 
 ![Capacity on listing page](./capacity_listing_page.png)
+
+> Note: if there are existing listings, they don't get an update before
+> their extended data is updated by a provider. (Operator can also do
+> this one-by-one through Console.) So, you should assume that there are
+> listings without these new extended data fields and, therefore, there
+> should be some safeguards against undefined values.
 
 ## Use the attribute as a search filter
 
