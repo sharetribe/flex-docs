@@ -208,7 +208,7 @@ Renders a properly localized `time`, one day before the given date,
 based on the `format` and `lang` hash parameters.
 
 The `format` supports
-[Joda-Time formatting](http://www.joda.org/joda-time/key_format.html).
+[Joda-Time formatting](https://www.joda.org/joda-time/key_format.html).
 
 The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47)
 language tag strings. More info about language tags can be found

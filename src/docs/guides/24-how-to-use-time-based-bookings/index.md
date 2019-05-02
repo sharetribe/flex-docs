@@ -129,7 +129,7 @@ and day-based ones. This is the case especially if your marketplace
 operates on multiple timezones and there are listings that could be
 booked from a different timezone as the one in which the listing is
 located. In this case it could come in handy to store the listing's
-timezone into [public data](/references/extended-data). This way it is
+timezone into [public data](/references/extended-data/). This way it is
 possible to implement the booking so that when the booking takes place
 the customer and provider will have a shared understanding when the
 booking starts.

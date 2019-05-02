@@ -43,7 +43,8 @@ some CSS rule.
 }
 ```
 
-(Read more about CSS Properties from [cssnext](http://cssnext.io/))
+(Read more about CSS Properties from
+[cssnext](https://cssnext.github.io/))
 
 We have used this concept to create a marketplace-level "theming" that's
 defined in three files:

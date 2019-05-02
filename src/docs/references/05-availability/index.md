@@ -95,7 +95,7 @@ interpreted. For instance, with time-based availability it is possible
 to define that the listing is available on weekdays from 9 AM to 11AM
 and from 1 PM to 6 PM. More information on how to set a time-based
 availability plan for a listing can be found in the
-[time-based bookings guide](/guides/how-to-take-time-based-bookings-into-use).
+[time-based bookings guide](/guides/how-to-take-time-based-bookings-into-use/).
 
 ### Interpretation of availability exceptions and bookings
 

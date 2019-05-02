@@ -13,7 +13,7 @@ published: true
 
 The easiest way to get started is deploying the application to Heroku.
 Before creating the app you need three accounts:
-[Heroku](https://heroku.com/), [Stripe](https://stripe.com/) and
+[Heroku](https://www.heroku.com/), [Stripe](https://stripe.com/) and
 [Mapbox](https://www.mapbox.com/). Creating the accounts is free unless
 you start heavily using them.
 
@@ -105,7 +105,7 @@ yarn start
 - [Heroku logs](#heroku-logs)
 
 Before creating the app you need three accounts:
-[Heroku](https://heroku.com/), [Stripe](https://stripe.com/fi) and
+[Heroku](https://www.heroku.com/), [Stripe](https://stripe.com/) and
 [Mapbox](https://www.mapbox.com/). Creating the accounts is free unless
 you start heavily using them.
 
