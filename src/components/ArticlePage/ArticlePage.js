@@ -6,7 +6,6 @@ import {
   Ingress,
   H1,
   H6,
-  Hr,
   MainLayout,
   Breadcrumb,
   Box,
@@ -115,15 +114,6 @@ const Info = styled(InfoSection)`
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${1 * baselineLarge}px;
-  }
-`;
-
-const SeparatorLine = styled(Hr)`
-  margin-top: ${3 * baselineSmall}px;
-  max-width: ${props => props.theme.contentMaxWidth}px;
-
-  @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${4 * baselineLarge}px;
   }
 `;
 

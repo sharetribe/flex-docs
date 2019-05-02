@@ -47,7 +47,7 @@ basic development tooling:
 
 Clone the Git repository:
 
-```sh
+```bash
 git clone https://github.com/sharetribe/flex-template-web.git
 ```
 
@@ -58,7 +58,7 @@ cloning the repository is enough.
 
 Go to the cloned directory:
 
-```sh
+```bash
 cd flex-template-web/
 ```
 
@@ -66,7 +66,7 @@ cd flex-template-web/
 
 Install all dependencies:
 
-```sh
+```bash
 yarn install
 ```
 
@@ -74,7 +74,7 @@ yarn install
 
 Start the configurations:
 
-```sh
+```bash
 yarn run config
 ```
 
@@ -118,7 +118,7 @@ for more information on the environment variables.
 
 Start the development server:
 
-```sh
+```bash
 yarn run dev
 ```
 

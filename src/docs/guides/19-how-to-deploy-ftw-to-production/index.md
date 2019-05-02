@@ -13,7 +13,7 @@ published: true
 
 The easiest way to get started is deploying the application to Heroku.
 Before creating the app you need three accounts:
-[Heroku](https://heroku.com/), [Stripe](https://stripe.com/) and
+[Heroku](https://www.heroku.com/), [Stripe](https://stripe.com/) and
 [Mapbox](https://www.mapbox.com/). Creating the accounts is free unless
 you start heavily using them.
 
@@ -80,7 +80,9 @@ Running the following command builds the app for production to the build
 folder. It correctly bundles React in production mode and optimizes the
 build for the best performance.
 
-`yarn build`
+```bash
+yarn build
+```
 
 After this, your app is ready to be deployed.
 
@@ -88,7 +90,9 @@ After this, your app is ready to be deployed.
 
 Start the server:
 
-`yarn start`
+```bash
+yarn start
+```
 
 ## Deploying to Heroku
 
@@ -101,7 +105,7 @@ Start the server:
 - [Heroku logs](#heroku-logs)
 
 Before creating the app you need three accounts:
-[Heroku](https://heroku.com/), [Stripe](https://stripe.com/fi) and
+[Heroku](https://www.heroku.com/), [Stripe](https://stripe.com/) and
 [Mapbox](https://www.mapbox.com/). Creating the accounts is free unless
 you start heavily using them.
 

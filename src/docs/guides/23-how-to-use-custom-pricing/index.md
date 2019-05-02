@@ -221,7 +221,7 @@ const handleSubmit = values => {
 Pass `cleaningFee` and `handleSubmit` to the `BookingDatesForm`
 component as follows:
 
-```js
+```jsx
 <BookingDatesForm
   className={css.bookingForm}
   submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
@@ -301,7 +301,7 @@ booking, for example right after the `FieldDateRangeInput` inside the
 `Form` element:
 
 <!-- prettier-ignore -->
-```js
+```jsx
 {cleaningFee ? (
   <div className={css.cleaningFee}>
     <FieldCheckbox
@@ -541,7 +541,7 @@ Add the price validatio component by creating a new file named
 `InvalidPriceMessageMaybe.js` in the `src/componets/TransactionPanel`
 directory:
 
-```js
+```jsx
 import React from 'react';
 import Decimal from 'decimal.js';
 import {
@@ -660,7 +660,7 @@ Inside the `<div className={css.bookingDetailsMobile}>` element, below
 `BreakdownMaybe` for mobile screens:
 
 <!-- prettier-ignore -->
-```js
+```jsx
 <div className={css.bookingDetailsMobile}>
   <AddressLinkMaybe
     rootClassName={css.addressMobile}

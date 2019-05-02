@@ -21,14 +21,14 @@ Environment variable `REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY` is used
 for the currency. For local development you can add the variable in the
 Gitignored `.env` file in the project root:
 
-```
+```bash
 REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY=your-currency
 ```
 
 You can also change the configuration with the command line tool by
 running
 
-```
+```bash
 yarn run config
 ```
 

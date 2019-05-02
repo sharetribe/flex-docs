@@ -240,6 +240,8 @@ to the baseline :(
 
 Run
 
-    yarn run format-docs
+```bash
+yarn run format-docs
+```
 
 to format all Markdown files within `src/`.

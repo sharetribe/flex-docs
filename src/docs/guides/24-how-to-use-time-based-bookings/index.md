@@ -20,12 +20,12 @@ to update your process to match these requirements,
 [contact the Sharetribe support](mailto:flex-support@sharetribe.com) and
 ask that this adjustment is made to your process.
 
-> Note that filtering a listings query by availability is not yet available when
-> using time-based bookings and availability. When taking time-based
-> availability into use, you should remove the date filter from search page. See
-> [the listings query endpoint reference
-> documentation](https://www.sharetribe.com/api-reference/#query-listings) for
-> more information.
+> Note that filtering a listings query by availability is not yet
+> available when using time-based bookings and availability. When taking
+> time-based availability into use, you should remove the date filter
+> from search page. See
+> [the listings query endpoint reference documentation](https://www.sharetribe.com/api-reference/#query-listings)
+> for more information.
 
 ## 2. Time-based availability plans
 
@@ -129,7 +129,7 @@ and day-based ones. This is the case especially if your marketplace
 operates on multiple timezones and there are listings that could be
 booked from a different timezone as the one in which the listing is
 located. In this case it could come in handy to store the listing's
-timezone into [public data](/references/extended-data). This way it is
+timezone into [public data](/references/extended-data/). This way it is
 possible to implement the booking so that when the booking takes place
 the customer and provider will have a shared understanding when the
 booking starts.

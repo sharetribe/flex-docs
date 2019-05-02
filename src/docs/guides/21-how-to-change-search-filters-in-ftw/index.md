@@ -134,7 +134,7 @@ achieved by `primaryFilters` and `secondaryFilters` props that are
 passed to `MainPanel`. The configurations are passed as an object in the
 same form as the configuration object in `filters`.
 
-```js
+```jsx
 <MainPanel
   ...
   primaryFilters={{

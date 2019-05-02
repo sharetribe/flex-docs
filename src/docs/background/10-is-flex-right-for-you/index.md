@@ -80,7 +80,7 @@ listed above work. Flex has been built to support these use cases.
 Some marketplaces have another kind of workflow, which can be called a
 "reverse marketplace". Popular reverse marketplaces include
 [Thumbtack](https://www.thumbtack.com/) and
-[Upwork](https://upwork.com/).
+[Upwork](https://www.upwork.com/).
 
 In these marketplaces, it's the providers who do the searching. The
 customers start by creating a post that describes their requirements.

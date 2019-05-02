@@ -17,14 +17,14 @@ on user interaction. State management is essential for this process. FTW
 needs to know if a user has been authenticated, if it has received
 relevant data for the current page, and so on.
 
-We use [Redux](https://redux.js.org/introduction) for state management
-on the application level. You should read more about Redux before you
-start modifying queries to Flex API or creating new Page level elements
-(unless you are modifying
+We use [Redux](https://redux.js.org/introduction/getting-started) for
+state management on the application level. You should read more about
+Redux before you start modifying queries to Flex API or creating new
+Page level elements (unless you are modifying
 [a static page](/guides/how-to-add-static-pages-in-ftw/)).
 
 In the following subtopics, we assume that you know the
-[basics of Redux](https://redux.js.org/basics) already.
+[basics of Redux](https://redux.js.org/basics/basic-tutorial) already.
 
 ## Containers: Pages + TopbarContainer
 
@@ -119,7 +119,7 @@ module naming schema, this means that:
 
 One essential part of state management in FTW, is filling the Redux
 store with data fetched from the Flex API. This is done with
-[Redux Thunks](https://redux.js.org/advanced/asyncactions#async-action-creators),
+[Redux Thunks](https://redux.js.org/advanced/async-actions#async-action-creators),
 which is a Redux middleware to create asynchronous action creators.
 
 As with every other Redux store actions, we have defined Thunks inside

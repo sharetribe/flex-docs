@@ -41,7 +41,7 @@ The application uses the `REACT_APP_GOOGLE_MAPS_API_KEY` environment
 variable for the key value. For local development, you can add the
 variable in the Gitignored `.env` file in the project root:
 
-```
+```bash
 REACT_APP_GOOGLE_MAPS_API_KEY=my-key-here
 ```
 
@@ -55,7 +55,7 @@ Google Map Places API that much.
 
 To use default searches, another environment variable needs to be set:
 
-```
+```bash
 REACT_APP_DEFAULT_SEARCHES_ENABLED=true
 ```
 
@@ -122,7 +122,7 @@ the padding through `marketplace.css`.
 
 _src/marketplace.css:_
 
-```js
+```css
 /* Google Maps needs 72px bottom padding to accommodate logo, Mapbox doesn't have one */
 --locationAutocompleteBottomPadding: 8px;
 ```

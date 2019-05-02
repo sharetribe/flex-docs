@@ -28,7 +28,7 @@ new routes to static pages: `src/routeConfiguration.js`.
 There we have imported and configured all the page-level components that
 are currently used within FTW:
 
-```js
+```jsx
 import {
   AboutPage,
   AuthenticationPage,
@@ -76,15 +76,15 @@ There are a couple of extra configurations you can set. For example
 `/listings` path leads to a page that lists all the listings provided by
 the current user:
 
-```js
-    {
-      path: '/listings',
-      name: 'ManageListingsPage',
-      auth: true,
-      authPage: 'LoginPage', // default is 'SingupPage'
-      component: props => <ManageListingsPage {...props} />,
-      loadData: ManageListingsPage.loadData,
-    },
+```jsx
+{
+  path: '/listings',
+  name: 'ManageListingsPage',
+  auth: true,
+  authPage: 'LoginPage', // default is 'SingupPage'
+  component: props => <ManageListingsPage {...props} />,
+  loadData: ManageListingsPage.loadData,
+},
 ```
 
 Here we have set this route to be available only for authenticated user
@@ -101,14 +101,14 @@ concept in the [Loading data](#loading-data) section below.
 In addition to these configurations, there's also a rarely used
 `setInitialValues` function that could be defined and passed to a route:
 
-```js
-    {
-      path: '/l/:slug/:id/checkout',
-      name: 'CheckoutPage',
-      auth: true,
-      component: props => <CheckoutPage {...props} />,
-      setInitialValues: CheckoutPage.setInitialValues,
-    },
+```jsx
+{
+  path: '/l/:slug/:id/checkout',
+  name: 'CheckoutPage',
+  auth: true,
+  component: props => <CheckoutPage {...props} />,
+  setInitialValues: CheckoutPage.setInitialValues,
+},
 ```
 
 This function gets called when some page wants to pass forward some
@@ -124,7 +124,7 @@ Aforementioned route configuration is used in `src/app.js`. For example,
 
 Simplified `app.js` code that renders client-side FTW app:
 
-```js
+```jsx
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
 import routeConfiguration from './routeConfiguration';
@@ -141,7 +141,7 @@ export const ClientApp = props => {
 `src/Routes.js` renders the `Route` navigational components (`Switch`
 renders the first `Route` that matches the location):
 
-```js
+```jsx
 import { Switch, Route } from 'react-router-dom';
 //...
 
@@ -197,11 +197,13 @@ mapping.
 
 More complex example of `NamedLink`
 
-```js
+```jsx
 // Link to LoginPage:
 <NamedLink name="LoginPage" />log in</NamedLink>
+
 // Link to ListingPage with path `l/<listing-uuid>/<listing-title-as-url-slug>/`:
 <NamedLink name="ListingPage" params={{ id: '<listing-uuid>', slug: '<listing-title-as-url-slug>' }}>some listing</NamedLink>
+
 // Link to SearchPage with query parameter: bounds
 <NamedLink name="SearchPage" to={{ search: '?bounds=60.53,22.38,60.33,22.06' }}>Turku city</NamedLink>
 ```

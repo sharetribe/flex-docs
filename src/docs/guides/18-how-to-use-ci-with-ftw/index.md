@@ -28,21 +28,37 @@ instructions in the CircleCI documentation.
 
 Currently the CI runs the following scripts:
 
-### Code formatting: `yarn run format-ci`
+### Code formatting
+
+```bash
+yarn run format-ci
+```
 
 This command fails if there are changes in the formatting that are not
 committed. Run `yarn run format` to format the code and get rid of the
 error.
 
-### Build: `yarn run build`
+### Build
+
+```bash
+yarn run build
+```
 
 This command ensures that the build passes.
 
-### Tests: `yarn run test-ci`
+### Tests
+
+```bash
+yarn run test-ci
+```
 
 This command runs the tests.
 
-### Security audit: `yarn run audit`
+### Security audit
+
+```bash
+yarn run audit
+```
 
 This command runs the security audit using `yarn audit --json` and
 checks returned JSON against vulnerability exceptions defined in

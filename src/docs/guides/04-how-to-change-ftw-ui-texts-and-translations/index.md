@@ -27,13 +27,13 @@ translations as properties.
 
 The key - value syntax is as follows:
 
-```
+```json
 "<component name>.<translation key>": "<translation>"
 ```
 
 For example:
 
-```
+```json
 "ManageListingCard.viewListing": "View listing"
 ```
 
@@ -79,7 +79,7 @@ export default injectIntl(SomeComponent);
 As for the `FormattedMessage` it just needs to be imported from
 `react-intl` and it takes the id prop:
 
-```
+```jsx
 <FormattedMessage id="SomeCompoennt.someKey" />
 ```
 
@@ -97,13 +97,13 @@ examples on how to use FormatJS.
 Pass a named argument to the format function/component. For the
 following translation:
 
-```js
+```json
 "EnquiryForm.messageLabel": "Message to {authorDisplayName}",
 ```
 
 Pass the author data in the `FormattedMessage` component:
 
-```js
+```jsx
 <FormattedMessage
   id="EnquiryForm.messageLabel"
   values={{ authorDisplayName: 'Jane D' }}
@@ -124,7 +124,7 @@ intl.formatMessage(
 With pluralization a translation can be formatted to adapt to a number
 argument.
 
-```js
+```json
 "ManageListingsPage.youHaveListings":
   "You have {count} {count, plural, one {listing} other {listings}}",
 ```
@@ -134,7 +134,7 @@ and `other` keywords to format the last word of the translation to be
 _listing_ or _listings_ based on the `count`. The pluralized translation
 can be used with the `FormattedMessage` component:
 
-```js
+```jsx
 <FormattedMessage
   id="ManageListingsPage.youHaveListings"
   values={{ count: 3 }}
@@ -250,7 +250,7 @@ translation updates to `en.json` from the upstream repo there is a
 command line tool to help keeping the translation files in sync. Running
 the following command in the project root
 
-```
+```bash
 yarn run translate
 ```
 

@@ -175,7 +175,7 @@ attributes:
   section of the page. (That title is also used in OpenGraph meta tags).
   You could also add `description="This is about page description"`
 - Then we have `schema` tag that defines some data for search engines in
-  JSON-LD format. Check [schema.org](http://schema.org/docs/full.html)
+  JSON-LD format. Check [schema.org](https://schema.org/docs/full.html)
   for more information.
 
 Inside `StaticPage` component we define layout (`LayoutSingleColumn`)
@@ -205,7 +205,7 @@ layout is able to understand where to render those blocks.
 
 And as a final step we need to export the component.
 `export default AboutPage;`. See more from
-[babeljs.org](https://babeljs.io/learn-es2015/#ecmascript-2015-features-modules)
+[babeljs.org](https://babeljs.io/docs/en/learn/#modules)
 
 ## 5. Add some styles to the CSS file
 
@@ -269,7 +269,7 @@ path.)
 We are using several libraries in this example. If you want to read
 more, here's some pointers:
 
-- [ES2015](https://babeljs.io/learn-es2015/): imports, exports, arrow
+- [ES2015](https://babeljs.io/docs/en/learn/): imports, exports, arrow
   functions
 - [React](https://reactjs.org/): for creating components
 - [JSX](https://reactjs.org/docs/introducing-jsx.html): for getting
