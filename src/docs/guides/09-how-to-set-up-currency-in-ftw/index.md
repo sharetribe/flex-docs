@@ -1,7 +1,7 @@
 ---
 title: How to set up currency in FTW
 slug: how-to-set-up-currency-in-ftw
-updated: 2019-01-23
+updated: 2019-05-02
 category: guides
 ingress:
   Flex Template for Web (FTW) uses USD as the default currency. This
@@ -52,10 +52,10 @@ price should be at least the same amount as
 in the country you are operating. If the listing price is lower, Stripe
 will not process the payment and the booking fails.
 
-## 3. Check the currencyConfig.js file
+## 3. Check the currency-config.js file
 
 See the
-[currencyConfig.js](https://github.com/sharetribe/flex-template-web/blob/master/src/util/currencyConfig.js)
+[currency-config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/currency-config.js)
 file and make sure the currency is added to the `subUnitDivisors` array.
 Most common currencies are already added to the file. If the currency is
 [zero-decimal currency](https://stripe.com/docs/currencies#zero-decimal)
