@@ -53,7 +53,10 @@ const HighlightStyle = createGlobalStyle`
 
       // Baseline offset
       padding: ${2 * baselineSmall}px 16px;
-      line-height: 24px;
+
+      // Somehow this special value makes the baselines aligned ¯\_(ツ)_/¯
+      line-height: 23px;
+
       border-radius: 4px;
 
       @media (min-width: ${baselineBreakpoint}px) {

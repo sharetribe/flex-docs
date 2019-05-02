@@ -73,7 +73,7 @@ documentation for more information about the templating language.
 ## Helpers
 
 Sharetribe Flex email templating supports a subset of
-[Handlebars built in helpers](http://handlebarsjs.com/builtin_helpers.html).
+[Handlebars built in helpers](https://handlebarsjs.com/builtin_helpers.html).
 
 In addition to the built-in helpers, we have implemented a small set of
 custom helpers that make e.g. comparisons and number formatting
@@ -85,7 +85,7 @@ For example: `{{helper param-1 param-2 hash-param=value}}`.
 
 Some documentation on the syntax and how to use them can be found in the
 documentation for
-[Handlebars expressions](http://handlebarsjs.com/expressions.html).
+[Handlebars expressions](https://handlebarsjs.com/expressions.html).
 
 ### Built-in helpers
 
@@ -97,11 +97,11 @@ We support the following built-in helpers:
 - `unless`
 
 Have a look at the
-[Handlebars built-in helpers documentation](http://handlebarsjs.com/builtin_helpers.html)
+[Handlebars built-in helpers documentation](https://handlebarsjs.com/builtin_helpers.html)
 to see examples how to use them.
 
 In addition to those, we also support
-[inline partials](http://handlebarsjs.com/partials.html#inline-partials).
+[inline partials](https://handlebarsjs.com/partials.html#inline-partials).
 
 ### Custom helpers
 
