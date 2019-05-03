@@ -5,14 +5,14 @@ updated: 2019-04-29
 category: background
 ingress:
   This table illustrates the essential differences between Sharetribe
-  Flex and Shartribe Go Open Source.
+  Flex and Sharetribe Go Open Source.
 published: true
 ---
 
 |                                                      |       Flex        |        Go OS        |
 | ---------------------------------------------------- | :---------------: | :-----------------: |
 | **Basics**                                           |                   |                     |
-| Price of the software                                | Starting at \$329 | Starting at \$160\* |
+| Monthly price of the software                        | Starting at \$329 | Starting at \$160\* |
 | Customer support                                     |         ✓         |    Not available    |
 | Tutorials, guides, and documentation                 |         ✓         |    Not available    |
 | Back-end hosting                                     |         ✓         |    Not included     |
@@ -40,7 +40,7 @@ published: true
 | Renting products, vehicles, or spaces                |         ✓         |          ✓          |
 | Booking services                                     |         ✓         |          ✓          |
 | Selling tickets to events                            |         ✓         |          ✓          |
-| Selling physical products                            |         ✓         |          ✕          |
+| Selling physical products                            |         ✕         |          ✓          |
 | Free sharing of goods and services                   |         ✓         |          ✓          |
 | **Included SaaS services**                           |                   |                     |
 | Image CDN                                            |         ✓         |    Not included     |
