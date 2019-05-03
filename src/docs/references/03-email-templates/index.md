@@ -169,14 +169,15 @@ the given `count`.
 >
 > - format
 > - lang: optional, default: "en-US"
+> - tz: optional, default "UTC"
 
 Example usage:
 
 ```handlebars
-{{date d format="d. MMM, YYYY" lang="fi-FI"}}
+{{date d format="d. MMM, YYYY" lang="fi-FI" tz="Europe/Helsinki"}}
 ```
 
-Renders a properly localized `time` based on the `format` and `lang`
+Renders a properly localized `time` based on the `format`, `lang` and `tz`
 hash parameters.
 
 The `format` supports
@@ -186,6 +187,8 @@ The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47)
 language tag strings. More info about language tags can be found in the
 [W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
 E.g. "en-US" is a valid string.
+
+The `tz` supports [Joda-Time timezones](https://www.joda.org/joda-time/timezones.html).
 
 ### `date-day-before`
 
@@ -197,11 +200,12 @@ E.g. "en-US" is a valid string.
 >
 > - format
 > - lang: optional, default `en-US`
+> - tz: optional, default "UTC"
 
 Example usage:
 
 ```handlebars
-{{date-day-before d format="d. MMM, YYYY" lang="fi-FI"}}
+{{date-day-before d format="d. MMM, YYYY" lang="fi-FI" tz="Europe/Helsinki"}}
 ```
 
 Renders a properly localized `time`, one day before the given date,
@@ -214,6 +218,8 @@ The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47)
 language tag strings. More info about language tags can be found
 [W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
 E.g. "en-US" is a valid string.
+
+The `tz` supports [Joda-Time timezones](https://www.joda.org/joda-time/timezones.html).
 
 ### `money-amount`
 
