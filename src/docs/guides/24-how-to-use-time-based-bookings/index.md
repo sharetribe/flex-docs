@@ -36,7 +36,6 @@ to a day-based plan, which will not allow time-based
 bookings. Therefore, a time-based plan is required for time-based
 listings.
 
-
 The availability plan is passed as parameter to the API when a listing
 is created or updated. The following code passes a time-based
 availability plan to the API using the
