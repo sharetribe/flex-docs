@@ -30,10 +30,11 @@ ask that this adjustment is made to your process.
 ## 2. Time-based availability plans
 
 Listings that are intended to be booked using the time-based booking
-type need to have a time-based availability plan. If an availability
-plan is not provided for a listing, the Flex API defaults to a day-based
-plan that is always available. Therefore, a time-based plan is required
-for time-based listings.
+type need to have a time-based availability plan. If a time-based
+availability plan is not provided for a listing, the Flex API defaults
+to a day-based plan, which will not allow time-based
+bookings. Therefore, a time-based plan is required for time-based
+listings.
 
 The availability plan is passed as parameter to the API when a listing
 is created or updated. The following code passes a time-based
