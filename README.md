@@ -29,9 +29,9 @@ Open browser at http://localhost:8000
 
 If you change Gatsby plugins, add articles, rename article URL slugs,
 or switch between dev and prod servers, sometimes you need to clear
-the Gatsby cache directory:
+the Gatsby cache:
 
-    rm -rf .cache
+    yarn run clean
 
 ## Documentation
 

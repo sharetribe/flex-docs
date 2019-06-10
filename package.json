@@ -9,6 +9,7 @@
   },
   "private": true,
   "scripts": {
+    "clean": "rm -rf .cache public",
     "build": "gatsby build --prefix-paths",
     "netlify-build": "yarn run build && yarn run netlify-postbuild",
     "netlify-postbuild": "./netlify-postbuild.sh",
