@@ -125,9 +125,9 @@ the problem is.
 The URL to the article is constructed from the `category` and the `slug`
 in the article frontmatter. The final URL will be:
 
-```
-https://www.sharetribe.com /docs         /background / introducing-flex /
-| domain                   | path prefix | category  | slug             | trailing slash
+```bash
+https://www.sharetribe.com / docs        / background / introducing-flex /
+| domain                   | path prefix | category   | slug             | trailing slash
 ```
 
 Note that the path prefix will not be used when the application is

@@ -177,8 +177,8 @@ Example usage:
 {{date d format="d. MMM, YYYY" lang="fi-FI" tz="Europe/Helsinki"}}
 ```
 
-Renders a properly localized `time` based on the `format`, `lang` and `tz`
-hash parameters.
+Renders a properly localized `time` based on the `format`, `lang` and
+`tz` hash parameters.
 
 The `format` supports
 [Joda-Time formatting](https://www.joda.org/joda-time/key_format.html).
@@ -188,7 +188,8 @@ language tag strings. More info about language tags can be found in the
 [W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
 E.g. "en-US" is a valid string.
 
-The `tz` supports [Joda-Time timezones](https://www.joda.org/joda-time/timezones.html).
+The `tz` supports
+[Joda-Time timezones](https://www.joda.org/joda-time/timezones.html).
 
 ### `date-day-before`
 
@@ -219,7 +220,8 @@ language tag strings. More info about language tags can be found
 [W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
 E.g. "en-US" is a valid string.
 
-The `tz` supports [Joda-Time timezones](https://www.joda.org/joda-time/timezones.html).
+The `tz` supports
+[Joda-Time timezones](https://www.joda.org/joda-time/timezones.html).
 
 ### `money-amount`
 

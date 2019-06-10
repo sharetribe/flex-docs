@@ -100,7 +100,6 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              sizeByPixelDensity: true,
               withWebp: true,
 
               // Same as `contentMaxWidth` in the theme. The image
