@@ -50,8 +50,7 @@ On high level, the payment flow with PaymentIntents has the following steps:
 
 For technical implementation of PaymentIntents, Stripe offers two approaches -
 [manual or automatic confirmation
-flow](https://stripe.com/docs/payments/payment-intents#one-time-payments). We
-have implemented the support for the automatic flow. In practice, the Flex
+flow](https://stripe.com/docs/payments/payment-intents#one-time-payments). Flex uses the automatic flow. In practice, the Flex
 transaction engine models the automatic flow with two transitions. First transition
 creates the PaymentIntent (Step 1.) and second transition will validate and
 mark it confirmed in Flex (Step 3.). Between these steps, the automatic flow
@@ -173,7 +172,5 @@ transitions that have the `stripe-confirm-payment-intent` and
 
 ## Using PaymentIntents in Flex
 
-Flex support PaymentIntents by default. If you need to do changes or are an
-existing user that wants to take them into use, don't hesitate to [contact the
-Sharetribe support](mailto:flex-support@sharetribe.com). We'll help you set up
-the process and give you additional guidance in case you need that.
+The latest version of Flex Template for Web supports PaymentIntents by default. If you need to adjust the default implementation, or if you're currently using an older version of Flex Template for Web, don't hesitate to [contact the
+Sharetribe support](mailto:flex-support@sharetribe.com) to get guidance on how to proceed.
