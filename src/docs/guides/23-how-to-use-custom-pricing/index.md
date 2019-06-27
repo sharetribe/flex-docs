@@ -26,7 +26,7 @@ and pricing in Flex in general, refer to
 ## 1. Process change
 
 To get started, the transaction process needs to be updated to support
-custom pricing. The requierd change is to add the
+custom pricing. The required change is to add the
 `set-line-items-and-total` action to all the transitions that create a
 booking. For this, you need to
 [contact Sharetribe support](mailto:flex-support@sharetribe.com) and ask
