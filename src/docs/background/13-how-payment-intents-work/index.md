@@ -15,7 +15,7 @@ published: true
 [PaymentIntents](https://stripe.com/docs/payments/payment-intents) are a
 mechanism provided by Stripe to track the lifecycle of customer checkout
 flow. In addition, PaymentIntents provide tools for
-[Strong Customer Authentication (SCA)](https://stripe.com/gb/guides/strong-customer-authentication)
+[Strong Customer Authentication (SCA)](/background/strong-customer-authentication)
 where required. Flex has built-in support for PaymentIntents and Strong
 Customer Authentication.
 
@@ -186,7 +186,5 @@ with transition that has the `stripe-confirm-payment-intent` attached.
 
 The latest version of Flex Template for Web supports PaymentIntents by
 default. If you need to adjust the default implementation, or if you're
-currently using an older version of Flex Template for Web, don't
-hesitate to
-[contact the Sharetribe support](mailto:flex-support@sharetribe.com) to
-get guidance on how to proceed.
+currently using an older version of Flex Template for Web,
+[learn more about how to take PaymentIntents into use](/guides/how-to-take-payment-intents-into-use/).
