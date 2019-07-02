@@ -13,7 +13,7 @@ published: true
 [PaymentIntents](https://stripe.com/docs/payments/payment-intents) are a
 mechanism provided by Stripe to track the lifecycle of customer checkout flow.
 In addition, PaymentIntents provide tools for [Strong Customer Authentication
-(SCA)](https://stripe.com/en-fi/payments/strong-customer-authentication) where
+(SCA)](https://stripe.com/gb/guides/strong-customer-authentication) where
 required. Flex has built-in support for PaymentIntents and Strong Customer
 Authentication.
 
