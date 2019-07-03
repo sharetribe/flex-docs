@@ -11,8 +11,7 @@ published: true
 ---
 
 In September 14th, 2019,
-[new European regulation](https://stripe.com/gb/guides/strong-customer-authentication)
-will begin requiring Strong Customer Authentication (SCA) for online
+new European regulation will begin requiring [Strong Customer Authentication (SCA)](https://stripe.com/guides/strong-customer-authentication) for online
 payments from European customers.
 
 This means that customers are sometimes asked to verify their purchases
