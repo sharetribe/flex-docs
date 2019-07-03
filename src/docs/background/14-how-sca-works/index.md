@@ -6,11 +6,11 @@ category: background
 ingress:
   This article gives an overview of Strong Customer Authentication, a
   way to add additional security to online payments required by European
-  legislation starting from September 14th 2019.
+  legislation starting from September 14th, 2019.
 published: true
 ---
 
-In September 14th 2019,
+In September 14th, 2019,
 [new European regulation](https://stripe.com/gb/guides/strong-customer-authentication)
 will begin requiring Strong Customer Authentication (SCA) for online
 payments from European customers.
@@ -25,7 +25,7 @@ The default [transaction process](/background/transaction-process/) of
 Sharetribe Flex and the
 [Flex Template for Web](https://github.com/sharetribe/flex-template-web)
 (FTW) offer out-of-the-box support for SCA. This article helps you
-understand how exactly transactions using SCA will work using this
+understand how exactly transactions using SCA will work in the
 default process.
 
 _Remember that this is just a default:_ you can make adjustments to this
@@ -36,7 +36,7 @@ when dealing with payments by European customers.
 
 From the customer's perspective, most transactions are business as
 usual: they make the payment normally by entering their credit card
-details, and that's it. However, in some occasions, they are presented
+details, and that's it. However, on some occasions, they are presented
 with a popup that requires them to connect to their online bank to
 verify the transaction. The experience that follows depends on the bank
 of the customer. Each bank has their own user interface for this
@@ -47,14 +47,14 @@ process. The example below is from a Finnish bank Osuuspankki.
 At the point when the popup is presented, the transaction has already
 been initiated. If your marketplace is using availability management,
 the corresponding slots have been booked from the calendar of the
-provider, and the provider already see a transaction has been initiated
+provider, and the provider already sees that a transaction has been initiated
 if they go to their inbox. They also notice that it's still pending
 payment verification.
 
 ![Pending payment](sca_pending_payment.png 'Pending payment')
 
 By default, the provider doesn't get an email notification about the
-transaction yet at this point, since the payment has not yet been
+transaction yet at this point because the payment has not yet been
 completed.
 
 The customer now has 15 minutes to verify their transaction through
@@ -62,22 +62,22 @@ their online bank. If this is done successfully, their credit card is
 preauthorized normally, and the provider is notified of an incoming
 booking by email.
 
-If the customer fails to verify the transaction during the 15 minute
-timeframe, the transaction is automatically moved to a state "payment
-expired". At this point, the booking is cancelled and the booked dates
-or time slots are freed. If the customer would like to try the purchase
+If the customer fails to verify the transaction during the 15-minute
+timeframe, the transaction is automatically moved to the state "payment
+expired". At this point, the booking is canceled, and the booked dates
+or time slots are freed. If the customer wanted to try the purchase
 again, they'd have to initiate a new transaction. Both parties will
-continue to see the booking in their inboxes.
+continue to see the expired booking in their inboxes.
 
 ![Payment expired](sca_payment_expired.png 'Payment expired')
 
 ## What to do if SCA fails?
 
-If the customer fails to verify the transaction within the 15 minute
-timeframe, it's probably a good idea for you to contact the customer in
+If the customer fails to verify the transaction within the 15-minute
+timeframe, it's probably a good idea that you contact the customer in
 question to ask what went wrong. After all, they entered their credit
 card details and pressed the button to initiate the booking request, so
-they clearly want to go through with the booking. In Console you can
+they clearly want to go through with the booking. In Console, you can
 easily see all the transactions that failed because a payment expired.
 
 ![Expired payment in Console](sca_console.png 'Expired payment in Console')
@@ -90,11 +90,11 @@ booking.
 ## Should you use SCA in your marketplace?
 
 If you want to be able to accept payments from European customers in
-your marketplace, then your payment process must support SCA starting
-from September 14th 2019. After this date, payments done by European
+your marketplace, your payment process must support SCA starting
+from September 14th, 2019. After this date, payments done by European
 credit cards with a payment process that doesn't support SCA might fail.
 
-If you don't need to accept payments from European customers, it might
+Even if you don't need to accept payments from European customers, it might
 still make sense for you to enable SCA for all transactions happening in
 your marketplace. The reason for this is that payments that have been
 successfully authenticated using 3D Secure are covered by a _liability
