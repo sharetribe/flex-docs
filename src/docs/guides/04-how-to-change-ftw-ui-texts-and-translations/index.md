@@ -1,7 +1,7 @@
 ---
 title: How to change FTW UI texts and translations
 slug: how-to-change-ftw-ui-texts-and-translations
-updated: 2019-03-28
+updated: 2019-05-21
 category: guides
 ingress:
   This guide describes how to change the User Interface (UI) texts and
@@ -167,7 +167,7 @@ found in the
 [How to add static pages in FTW](/guides/how-to-add-static-pages-in-ftw/)
 guide.
 
-There are two other cases where we haven't added translations directly
+There are few other cases where we haven't added translations directly
 to the translation files:
 
 - Labels for example filters (categories and amenities) can be found
@@ -177,6 +177,11 @@ to the translation files:
   for them.
 - [Merchant Category Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/PayoutDetailsForm/merchantCategoryCodesUS.js).
   Stripe requires this from US providers.
+- [Country Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/countryCodes.js).
+  Stripe API requires country as
+  [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+  codes. These are used when billing address is asked in
+  `StripePaymenForm` on `CheckoutPage`.
 
 ## Changing the language
 
