@@ -62,7 +62,7 @@ it confirmed in Flex (Step 3.). Between these steps, the automatic flow
 pushes the responsibility of authenticating, authorizing and confirming
 the payment in Stripe to the client application (Step 2.). More
 information on the Step 2. can be found in this
-[section](#required-changes-in-the-client).
+[section](#required-actions-in-the-client).
 
 ## Actions related to PaymentIntents
 
