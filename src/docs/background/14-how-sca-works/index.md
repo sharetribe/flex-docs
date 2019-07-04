@@ -10,9 +10,9 @@ ingress:
 published: true
 ---
 
-In September 14th, 2019,
-new European regulation will begin requiring [Strong Customer Authentication (SCA)](https://stripe.com/guides/strong-customer-authentication) for online
-payments from European customers.
+In September 14th, 2019, new European regulation will begin requiring
+[Strong Customer Authentication (SCA)](https://stripe.com/guides/strong-customer-authentication)
+for online payments from European customers.
 
 This means that customers are sometimes asked to verify their purchases
 by an additional security layer called
@@ -24,8 +24,8 @@ The default [transaction process](/background/transaction-process/) of
 Sharetribe Flex and the
 [Flex Template for Web](https://github.com/sharetribe/flex-template-web)
 (FTW) offer out-of-the-box support for SCA. This article helps you
-understand how exactly transactions using SCA will work in the
-default process.
+understand how exactly transactions using SCA will work in the default
+process.
 
 _Remember that this is just a default:_ you can make adjustments to this
 process as you wish, as long as you comply with the SCA requirements
@@ -46,9 +46,9 @@ process. The example below is from a Finnish bank Osuuspankki.
 At the point when the popup is presented, the transaction has already
 been initiated. If your marketplace is using availability management,
 the corresponding slots have been booked from the calendar of the
-provider, and the provider already sees that a transaction has been initiated
-if they go to their inbox. They also notice that it's still pending
-payment verification.
+provider, and the provider already sees that a transaction has been
+initiated if they go to their inbox. They also notice that it's still
+pending payment verification.
 
 ![Pending payment](sca_pending_payment.png 'Pending payment')
 
@@ -89,15 +89,15 @@ booking.
 ## Should you use SCA in your marketplace?
 
 If you want to be able to accept payments from European customers in
-your marketplace, your payment process must support SCA starting
-from September 14th, 2019. After this date, payments done by European
-credit cards with a payment process that doesn't support SCA might fail.
+your marketplace, your payment process must support SCA starting from
+September 14th, 2019. After this date, payments done by European credit
+cards with a payment process that doesn't support SCA might fail.
 
-Even if you don't need to accept payments from European customers, it might
-still make sense for you to enable SCA for all transactions happening in
-your marketplace. The reason for this is that payments that have been
-successfully authenticated using 3D Secure are covered by a _liability
-shift_. From
+Even if you don't need to accept payments from European customers, it
+might still make sense for you to enable SCA for all transactions
+happening in your marketplace. The reason for this is that payments that
+have been successfully authenticated using 3D Secure are covered by a
+_liability shift_. From
 [Stripe documentation](https://stripe.com/docs/payments/3d-secure#disputed-payments):
 _"Should a 3D Secure payment be disputed as fraudulent by the
 cardholder, the liability shifts from you to the card issuer. These

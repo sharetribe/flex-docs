@@ -1,7 +1,7 @@
 ---
 title: How to set up Mapbox for FTW
 slug: how-to-set-up-mapbox-for-ftw
-updated: 2019-01-25
+updated: 2019-07-04
 category: guides
 ingress:
   By default, Flex Template for Web (FTW) uses Mapbox for showing
@@ -21,8 +21,11 @@ If you wish to create a new one, click `+ Create a token`, give it a
 name and make sure all Public scopes are selected. Create the token and
 copy its value.
 
-Read more about
-[access tokens and consider rotating them](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/).
+You can make access tokens in your web applications more secure by
+adding URL restrictions. When you add a URL restriction to a token, that
+token will only work for requests that originate from the URLs you
+specify. See the Mapbox documentation for
+[domain restrictions](https://docs.mapbox.com/help/account/tokens/#domain-restrictions).
 
 ## 2. Setup the application to use the access token
 
