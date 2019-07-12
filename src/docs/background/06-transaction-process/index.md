@@ -111,7 +111,7 @@ templates used for the notifications.
 Another common example is to modify the process so that the provider has
 to manually mark the booking as completed and the rented goods as
 returned in good condition. This might be useful in rental marketplaces
-where the good that are rented are of high value. In another case, the
+where the goods that are rented are of high value. In another case, the
 process could be modified so that the operator can close down the
 transaction process in case that there is trouble in the order flow.
 This could be done for example in cases where a customer has booked a
