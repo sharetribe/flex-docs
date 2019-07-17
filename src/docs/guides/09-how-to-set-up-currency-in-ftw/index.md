@@ -35,7 +35,7 @@ yarn run config
 Remember to restart the application after editing the environment
 variable!
 
-**Note:** If you have already created listings before changing the
+**Note:** If you already created listings before changing the
 currency, listings using old currency will not show the price when a new
 currency is in use. Currently, FTW doesn't support changing the currency
 of the listing so the price cannot be edited after the currency used in
@@ -84,3 +84,7 @@ there is one place in FTW where prices are calculated:
 `BookingDatesForm`. See the file
 [EstimatedBreakdownMaybe.js](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/BookingDatesForm/EstimatedBreakdownMaybe.js)
 to see how the Decimal.js library is used.
+
+## Your Saunatime demo listings 
+
+If you just started, you likely have a few demo Saunatime listings in your Console. These listings use EUR as their currency. Configuring a currency different than EUR will result in an error as the FTW cannot convert the currency of existing listings. You can ignore this error by closing these listings in your Console and creating new listings. Alternatively, you can use the [Marketplace API](https://www.sharetribe.com/api-reference/#update-listing) to change the currency of these listings. 
