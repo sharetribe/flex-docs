@@ -14,12 +14,13 @@ down the results. The filters rely on listing's indexed data.
 
 ## Filter types
 
-The Flex template for web has different filter types: _price_, _date
-range_, _select single_ and _select multiple_. Select single and select
-multiple filters are generic in a way that they can be used to filter
-search results using different kinds of data. The price and date range
-filters on the other hand are only used for filtering by price and date
-range.
+The Flex template for web has different filter types: _keyword_,
+_price_, _date range_, _select single_ and _select multiple_. Select
+single and select multiple filters are generic in a way that they can be
+used to filter search results using different kinds of data. The price
+and date range filters on the other hand are only used for filtering by
+price and date range. Keyword filter is a bit special case - there is
+more info about it later.
 
 > **Note:** price filter should be configured from
 > `src/marketplace-custom-config.js`. Current maximum value for the
@@ -34,6 +35,26 @@ two different components:
 
 - Select single filter: `SelectSingleFilter`
 - Select multiple filter: `SelectMultipleFilter`
+
+## Keyword filter
+
+Keyword filter works a bit differently than other filters. It does
+filter search results, but it also sorts those results according to
+strongly listing data (title, description, and possible extended data)
+correlates with the search string. Currently, there is no decay function
+that would map keyword match correlation with distance to `origin` and
+therefore, the _origin_ param can't be used at the same time as the
+_keyword_. You can read more about how the keyword search works from
+related [background article](/background/how-the-search-works/).
+
+![Desktop filters](./keyword-search.png)
+
+It is possible to remove location search from topbar and replace it with
+the keyword search or use them together (without origin param). Here's
+[a rough guide on how to do it](/guides/how-to-change-keyword-search-to-topbar).
+
+> Note: search strings with only 1 or 2 letters have a longer timeout
+> before the search query is made.
 
 ## Adding a new search filter
 
