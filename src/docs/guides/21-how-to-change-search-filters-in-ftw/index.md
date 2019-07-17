@@ -1,7 +1,7 @@
 ---
 title: How to change search filters in FTW
 slug: how-to-change-search-filters-in-ftw
-updated: 2019-01-29
+updated: 2019-07-17
 category: guides
 ingress:
   This guide describes how to change the search filters in Flex Template
@@ -51,7 +51,7 @@ related [background article](/background/how-the-search-works/).
 
 It is possible to remove location search from topbar and replace it with
 the keyword search or use them together (without origin param). Here's
-[a rough guide on how to do it](/guides/how-to-change-keyword-search-to-topbar).
+[a rough guide on how to do it](/guides/how-to-use-keyword-search-in-topbar).
 
 > Note: search strings with only 1 or 2 letters have a longer timeout
 > before the search query is made.
