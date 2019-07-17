@@ -1,7 +1,7 @@
 ---
 title: How to set up currency in FTW
 slug: how-to-set-up-currency-in-ftw
-updated: 2019-05-02
+updated: 2019-07-17
 category: guides
 ingress:
   Flex Template for Web (FTW) uses USD as the default currency. This
@@ -35,7 +35,7 @@ yarn run config
 Remember to restart the application after editing the environment
 variable!
 
-**Note:** If you have already created listings before changing the
+**Note:** If you already created listings before changing the
 currency, listings using old currency will not show the price when a new
 currency is in use. Currently, FTW doesn't support changing the currency
 of the listing so the price cannot be edited after the currency used in
@@ -84,3 +84,7 @@ there is one place in FTW where prices are calculated:
 `BookingDatesForm`. See the file
 [EstimatedBreakdownMaybe.js](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/BookingDatesForm/EstimatedBreakdownMaybe.js)
 to see how the Decimal.js library is used.
+
+## Your Saunatime demo listings 
+
+If you just started, you likely have a few demo Saunatime listings in your Console. These listings use EUR as their currency. Configuring a currency different than EUR will result in an error as the FTW cannot convert the currency of existing listings. You can ignore this error by closing these listings in your Console, which will remove them from the search page as well, and creating new listings.  
