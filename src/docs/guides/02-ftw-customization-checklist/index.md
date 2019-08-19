@@ -22,7 +22,10 @@ FTW.
   [Page](https://github.com/sharetribe/flex-template-web/blob/master/src/components/Page/Page.js)
   component
 - [Logo](https://github.com/sharetribe/flex-template-web/blob/master/src/components/Logo/Logo.js)
-  component change and check that it works on [Topbar](https://github.com/sharetribe/flex-template-web/tree/master/src/components/TopbarDesktop), [Footer](https://github.com/sharetribe/flex-template-web/tree/master/src/components/Footer), and
+  component change and check that it works on
+  [Topbar](https://github.com/sharetribe/flex-template-web/tree/master/src/components/TopbarDesktop),
+  [Footer](https://github.com/sharetribe/flex-template-web/tree/master/src/components/Footer),
+  and
   [CheckoutPage](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
 - [Default background image](https://github.com/sharetribe/flex-template-web/blob/master/src/assets/background-1440.jpg)
 - [Maps Marker icon](https://github.com/sharetribe/flex-template-web/blob/master/public/static/icons/map-marker-32x32.png)
