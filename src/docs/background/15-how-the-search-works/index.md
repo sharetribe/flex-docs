@@ -23,20 +23,21 @@ for a full list of search parameters.
 
 ## Keyword search
 
-The keyword search works so that it matches the `keywords` parameter to text
-content of a listing. The listing attributes that are matched in keyword search
-by default are _title_ and _description_. Listing public data fields can also be
-used in the keyword search by defining them to have type `text` in the
-marketplace's [listing public data
-schema](/references/extended-data/#data-schema). All `text` public data fields
-with defined schema are indexed for keyword search.
+The keyword search works so that it matches the `keywords` parameter to
+text content of a listing. The listing attributes that are matched in
+keyword search by default are _title_ and _description_. Listing public
+data fields can also be used in the keyword search by defining them to
+have type `text` in the marketplace's
+[listing public data schema](/references/extended-data/#data-schema).
+All `text` public data fields with defined schema are indexed for
+keyword search.
 
-When the listing text content is indexed, in addition to indexing the actual
-word, it is also broken into subwords, _n-grams_. For words longer than 3
-characters, n-grams of 3 and more characters are constructed from the beginning
-and end of the word. So if an indexed field contains the word _local_ in
-addition to the actual word the following n-grams are indexed: _loc_, _loca_,
-_ocal_, and _cal_.
+When the listing text content is indexed, in addition to indexing the
+actual word, it is also broken into subwords, _n-grams_. For words
+longer than 3 characters, n-grams of 3 and more characters are
+constructed from the beginning and end of the word. So if an indexed
+field contains the word _local_ in addition to the actual word the
+following n-grams are indexed: _loc_, _loca_, _ocal_, and _cal_.
 
 The search results are sorted so that a match with an actual word from
 the listing always weighs more than a match with an n-gram. The order in
@@ -48,10 +49,11 @@ listing and an n-gram. Listings that don't match the search keywords at
 all are not included in the results.
 
 The `keywords` parameter is a single string that is tokenized on
-non-alphanumeric characters. Therefore, passing _local attractions_ as a value
-for the parameter will conduct a search with two keywords: _local_ and
-_attractions_ and those are then matched against the listing content. A listing
-will be included in the results, in case any of the keywords match.
+non-alphanumeric characters. Therefore, passing _local attractions_ as a
+value for the parameter will conduct a search with two keywords: _local_
+and _attractions_ and those are then matched against the listing
+content. A listing will be included in the results, in case any of the
+keywords match.
 
 In order to take the keyword search into use in FTW, see the how-to
 guides on
