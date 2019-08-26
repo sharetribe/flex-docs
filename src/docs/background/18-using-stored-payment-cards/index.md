@@ -15,6 +15,7 @@ Flex Template for Web (FTW) includes a checkout workflow, which offers a box for
 In addition, each user has a page called "payment methods" in their account settings. From this page, the user can store a new credit card, delete a stored card, or replace a stored card with a new one.
 
 [Learn how storing payment card works in FTW](/background/save-payment-card/)
+
 [Read API documentation on storing credit cards](https://www.sharetribe.com/api-reference/#stripe-customer)
 
 
