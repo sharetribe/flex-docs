@@ -31,7 +31,7 @@ You can't edit the details of a stored payment card. Instead, you need to delete
 
 Sometimes you might want to store the payment card details of the customer when they make a booking, but initiate the actual charge only later. A typical example could be booking a venue for a wedding. The initial booking might be done a year in advance, but the charge might happen only a bit before the event, or even after it. \
  \
-It's possible for you to adjust your [transaction process](background/transaction-process/) to add a transition that attempts to automatically charge the card of the customer at a specific point in time. [A separate article](background/off-session-payments-in-transaction-process/) describes how you can build such a process.
+It's possible for you to adjust your [transaction process](/background/transaction-process/) to add a transition that attempts to automatically charge the card of the customer at a specific point in time. [A separate article](/background/off-session-payments-in-transaction-process/) describes how you can build such a process.
 
 **Can I create extra charges to the payment card of the customer?**
 
@@ -39,7 +39,7 @@ Sometimes you might want to create extra charges for a stored card after an init
 
 You can initiate additional charges directly from your Stripe dashboard. You should always notify the customer in question about why an extra charge was placed on their card. The additional charges won't get displayed in Flex Console. The money from the extra charges is placed to your platform's Stripe balance, from which it is moved to your bank account. If a payout to the provider (in this case the owner of the item) is needed, you will need to handle it manually from your own bank account.
 
-Also, it's important to remember that if your marketplace is accepting payments from European customers, starting from September 14th these customer will sometimes need to use [Strong Customer Authentication](background/strong-customer-authentication/) to verify credit card purchases. Thus, you can't necessarily create additional charges to their card without allowing them to approve the charge with Strong Customer Authentication.
+Also, it's important to remember that if your marketplace is accepting payments from European customers, starting from September 14th these customer will sometimes need to use [Strong Customer Authentication](/background/strong-customer-authentication/) to verify credit card purchases. Thus, you can't necessarily create additional charges to their card without allowing them to approve the charge with Strong Customer Authentication.
 
 **Can I enable recurring / subscription payments?**
 
