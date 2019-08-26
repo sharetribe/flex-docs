@@ -4,17 +4,18 @@ slug: using-stored-payment-cards
 updated: 2019-08-26
 category: background
 ingress:
-  This article gives you a brief overview on how the Flex functionality for storing credit and debit cards works and what you can do with it.
+  This article gives you a brief overview on how the Flex functionality for storing credit and debit cards works and what are the different use cases for it.
 published: true
 ---
 
 Sharetribe Flex allows you to store the payment card of a customer for future purchases. Doing this provides multiple benefits: it streamlines the checkout process for existing customers and allows you to place additional charges to the payment card of the customer.
 
-Flex Template for Web includes a checkout workflow, which offers a box for the customer to check if they want to store their card for future purchases. Once they've stored it, they are offered the option to use the same card for subsequent purchases without entering the details again. \
- \
+Flex Template for Web (FTW) includes a checkout workflow, which offers a box for the customer to check if they want to store their card for future purchases. Once they've stored it, they are offered the option to use the same card for subsequent purchases without entering the details again.
+
 In addition, each user has a page called "payment methods" in their account settings. From this page, the user can store a new credit card, delete a stored card, or replace a stored card with a new one.
 
-[See API documentation on storing credit cards](https://www.sharetribe.com/api-reference/#stripe-customer)
+[Learn how storing payment card works in FTW](/background/save-payment-card/)
+[Read API documentation on storing credit cards](https://www.sharetribe.com/api-reference/#stripe-customer)
 
 
 ## Frequently asked questions about storing payment cards
