@@ -39,7 +39,7 @@ FTW.
 - [Footer](https://github.com/sharetribe/flex-template-web/blob/master/src/components/Footer/Footer.js)
   component
 - [AboutPage](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/AboutPage/AboutPage.js)
-  compponent
+  component
 - Update Terms of Service and Privacy Policy:
   [How to change Terms of Service and Privacy Policy in FTW](/guides/how-to-change-tos-and-privacy-policy-in-ftw/)
 
