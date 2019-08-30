@@ -100,11 +100,12 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              withWebp: true,
+              withWebp: { quality: 85 },
 
               // Same as `contentMaxWidth` in the theme. The image
               // won't be rendered any bigger.
               maxWidth: 635,
+              quality: 85,
 
               backgroundColor: 'transparent',
             },

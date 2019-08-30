@@ -3,7 +3,9 @@ title: How saving payment card works in FTW
 slug: save-payment-card
 updated: 2019-08-22
 category: background
-ingress: An overview of how the Flex Template for Web functionality for storing payment cards works.
+ingress:
+  An overview of how the Flex Template for Web functionality for storing
+  payment cards works.
 published: true
 ---
 
