@@ -19,6 +19,18 @@ All the UI texts are in [src/ui-texts.json](../src/ui-texts.json). Make
 a PR with the change and check the preview as instructed in
 [Making a PR and previewing the content](./writing-articles.md#making-a-pr-and-previewing-the-content).
 
+## Q: I want to improve image quality
+
+A:
+
+To save bandwith, we have set the image quality to 85, which is what
+Google recommends. Furthermore, images are shown as 635px wide. This
+means that images you see are shrinked to that size. This process of
+compressing and shrinking has a tendency to bleed the colors on sharp
+edges. Therefore, it's recommended that you manually resize your images
+to 635 pixels wide - you can use tool of your choice: Preview,
+Pixelmator, Photoshop, etc.
+
 ## Q: I want to develop the Flex Docs site
 
 A:
