@@ -204,7 +204,7 @@ card details are saved at the same time: `setupPaymentMethodForSaving`
 => sdk.transactions.initiate({ processAlias, transition: 'transition/request-payment', params: { listingId, bookingStart, bookingEnd, setupPaymentMethodForSaving: true }})
 ```
 
-**When you use previously saved payment card**, the id of Stripe's
+**When you are using previously saved payment card**, the id of Stripe's
 payment method needs to be sent to Flex API as `paymentMethod`, when
 requesting payment.
 
