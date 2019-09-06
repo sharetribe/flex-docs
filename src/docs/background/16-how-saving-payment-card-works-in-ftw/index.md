@@ -258,7 +258,7 @@ message.
 
 #### Step 5.
 
-As a final ste, we need to save the payment method, if customer has
+As a final step, we need to save the payment method, if customer has
 selected the "Save for later use" checkbox. So, this is relevant if user
 has selected onetime payment - instead of making a charge from the
 previously saved credit card.
