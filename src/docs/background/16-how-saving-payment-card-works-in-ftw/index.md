@@ -264,7 +264,7 @@ has selected onetime payment - instead of making a charge from the
 previously saved credit card.
 
 On FTW, we call
-[avePaymentMethod function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L200)
+[savePaymentMethod function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L200)
 that creates stripe customer and adds updates default payment method.
 
 There are 3 different scenarios, which require different calls to Flex
