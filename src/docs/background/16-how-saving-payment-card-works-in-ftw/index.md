@@ -162,7 +162,9 @@ relationship. In FTW, we call a thunk function:
 Behind the scenes, this is essentially the following call:
 
 ```js
-=> sdk.currentUser.show({ include: ['stripeCustomer.defaultPaymentMethod'] })
+sdk.currentUser.show({
+  include: ['stripeCustomer.defaultPaymentMethod'],
+});
 ```
 
 ### StripePaymentForm changes - show correct form fields:
@@ -183,7 +185,8 @@ sequence (to Flex and Stripe APIs):
 #### Step 1.
 
 ```js
-=> sdk.transactions.initiate({ processAlias, transition: 'transition/request-payment', ...})
+sdk.transactions
+  .initiate({ processAlias, transition: 'transition/request-payment', ...})
 ```
 
 What happens behind the scene:
@@ -197,11 +200,21 @@ What happens behind the scene:
 - After this call, created transaction is saved to session storage in
   FTW (or existing enquiry tx is updated).
 
-**When you intend to save card details**, a new parameter needs to be passed if
-card details are saved at the same time: `setupPaymentMethodForSaving`
+**When you intend to save card details**, a new parameter needs to be
+passed if card details are saved at the same time:
+`setupPaymentMethodForSaving`
 
 ```js
-=> sdk.transactions.initiate({ processAlias, transition: 'transition/request-payment', params: { listingId, bookingStart, bookingEnd, setupPaymentMethodForSaving: true }})
+sdk.transactions.initiate({
+  processAlias,
+  transition: 'transition/request-payment',
+  params: {
+    listingId,
+    bookingStart,
+    bookingEnd,
+    setupPaymentMethodForSaving: true,
+  },
+});
 ```
 
 **When you are using previously saved payment card**, the id of Stripe's
@@ -209,7 +222,16 @@ payment method needs to be sent to Flex API as `paymentMethod`, when
 requesting payment.
 
 ```js
-=> sdk.transactions.initiate({ processAlias, transition: 'transition/request-payment', params: { listingId, bookingStart, bookingEnd, paymentMethod: stripePaymentMethodId }})
+sdk.transactions.initiate({
+  processAlias,
+  transition: 'transition/request-payment',
+  params: {
+    listingId,
+    bookingStart,
+    bookingEnd,
+    paymentMethod: stripePaymentMethodId,
+  },
+});
 ```
 
 > Note: params might be different in different transaction process
@@ -224,7 +246,10 @@ from FTW.
 #### Step 2.
 
 ```js
-=> stripe.handleCardPayment(stripePaymentIntentClientSecret, [card, paymentParams])
+stripe.handleCardPayment(stripePaymentIntentClientSecret, [
+  card,
+  paymentParams,
+]);
 ```
 
 > Note: card (StripeElement), and paymentParams are not needed when
@@ -239,7 +264,11 @@ issuers site, where 3D secure v2 authentication flow can be completed.
 #### Step 3.
 
 ```js
-=> sdk.transactions.transition({ id: transactionId, transition: 'transition/confirm-payment', params })
+sdk.transactions.transition({
+  id: transactionId,
+  transition: 'transition/confirm-payment',
+  params,
+});
 ```
 
 Inform Marketplace API, that PaymentIntent is ready to be captured after
@@ -250,7 +279,7 @@ in
 #### Step 4.
 
 ```js
-=> sdk.messages.send({ transactionId: orderId, content: message })
+sdk.messages.send({ transactionId: orderId, content: message });
 ```
 
 FTW sends an initial message to transaction if customer has added a
@@ -273,7 +302,10 @@ API:
 **1. No StripeCustomer entity connected to Flex API:**
 
 ```js
-=> sdk.stripeCustomer.create({ stripePaymentMethodId }, { expand: true, include: ['defaultPaymentMethod'] })
+sdk.stripeCustomer.create(
+  { stripePaymentMethodId },
+  { expand: true, include: ['defaultPaymentMethod'] }
+);
 ```
 
 FTW:
