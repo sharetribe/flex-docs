@@ -1,7 +1,7 @@
 ---
 title: How saving payment card works in FTW
 slug: save-payment-card
-updated: 2019-08-22
+updated: 2019-09-06
 category: background
 ingress:
   An overview of how the Flex Template for Web functionality for storing
@@ -142,3 +142,162 @@ book a listing, there are couple of changes needed:
   `paymentMethod`, when requesting payment.
 - `stripe.handleCardPayment`: Stripe Elements (card) is not needed if
   the default payment method is used.
+
+## Saving Payment Card with PaymentIntents payment flow
+
+Here's the description of complete call sequence on CheckoutPage.
+
+**Note: PaymentIntents flow needs transaction process change as
+described in doc:**
+
+[How to take Payment Intents into use](/guides/how-to-take-payment-intents-into-use/)
+
+### Initial data for Checkout:
+
+Check if the user has already saved a default payment method. Fetch
+currentUser entity with `stripeCustomer.defaultPaymentMethod`
+relationship. In FTW, we call a thunk function:
+[`fetchCurrentUser` in CheckoutPage.duck.js](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L302).
+
+Behind the scenes, this is essentially the following call:
+
+```js
+=> sdk.currentUser.show({ include: ['stripeCustomer.defaultPaymentMethod'] })
+```
+
+### StripePaymentForm changes - show correct form fields:
+
+If there's a default payment method saved: show SavedCardDetails
+component. That component allows you to also select one-time payment
+instead (and optionally replace the current default payment method with
+this new payment card). If there's no default payment method saved,
+one-time payment form is shown on its own. One-time payment needs card
+details, card holder's name etc. and optional permission to save card
+details for future bookings.
+
+### Submit StripePaymentForm
+
+After submitting `StripePaymentForm`, there are up to 5 calls in
+sequence (to Flex and Stripe APIs):
+
+#### Step 1.
+
+```js
+=> sdk.transactions.initiate({ processAlias, transition: 'transition/request-payment', ...})
+```
+
+What happens behind the scene:
+
+- API creates PaymentIntent against Stripe API and returns
+  stripePaymentIntentClientSecret inside transaction's protectedData.
+- Booking is created at this step - so, availability management will
+  block dates for conflicting bookings.
+- Automatic expiration happens in 15 minutes, if process is not
+  transitioned to 'transition/confirm-payment' before that.
+- After this call, created transaction is saved to session storage in
+  FTW (or existing enquiry tx is updated).
+
+**When you save card details**, a new parameter needs to be passed if
+card details are saved at the same time: `setupPaymentMethodForSaving`
+
+```js
+=> sdk.transactions.initiate({ processAlias, transition: 'transition/request-payment', params: { listingId, bookingStart, bookingEnd, setupPaymentMethodForSaving: true }})
+```
+
+**When you use previously saved payment card**, the id of Stripe's
+payment method needs to be sent to Flex API as `paymentMethod`, when
+requesting payment.
+
+```js
+=> sdk.transactions.initiate({ processAlias, transition: 'transition/request-payment', params: { listingId, bookingStart, bookingEnd, paymentMethod: stripePaymentMethodId }})
+```
+
+> Note: params might be different in different transaction process
+> graphs.
+
+Check
+[`initiateOrder` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L171)
+and related
+[`orderParams`](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.js#L373)
+from FTW.
+
+#### Step 2.
+
+```js
+=> stripe.handleCardPayment(stripePaymentIntentClientSecret, [card, paymentParams])
+```
+
+> Note: card (StripeElement), and paymentParams are not needed when
+> using previously saved payment card. FTW handles this in
+> [`handleCardPayment` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/stripe.duck.js#L657).
+
+Stripe's frontent script checks if PaymentIntent needs extra actions
+from customer. Some payments might need Strong Customer Authentication
+(SCA). In practice, Stripe's script creates a popup (iframe) to card
+issuers site, where 3D secure v2 authentication flow can be completed.
+
+#### Step 3.
+
+```js
+=> sdk.transactions.transition({ id: transactionId, transition: 'transition/confirm-payment', params })
+```
+
+Inform Marketplace API, that PaymentIntent is ready to be captured after
+possible SCA authentication has been requested from user. FTW does that
+in
+[`confirmPayment` thunk call](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L206)
+
+#### Step 4.
+
+```js
+=> sdk.messages.send({ transactionId: orderId, content: message })
+```
+
+FTW sends an initial message to transaction if customer has added a
+message.
+
+#### Step 5.
+
+As a final ste, we need to save the payment method, if customer has
+selected the "Save for later use" checkbox. So, this is relevant if user
+has selected onetime payment - instead of making a charge from the
+previously saved credit card.
+
+On FTW, we call
+[avePaymentMethod function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L200)
+that creates stripe customer and adds updates default payment method.
+
+There are 3 different scenarios, which require different calls to Flex
+API:
+
+**1. No StripeCustomer entity connected to Flex API:**
+
+```js
+=> sdk.stripeCustomer.create({ stripePaymentMethodId }, { expand: true, include: ['defaultPaymentMethod'] })
+```
+
+FTW:
+[`dispatch(createStripeCustomer(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L136)
+
+**2. Current user has already defaultPaymentMethod - 2 calls:**
+
+```js
+=> sdk.stripeCustomer.deletePaymentMethod({}, { expand: true })
+=> sdk.stripeCustomer.addPaymentMethod({ stripePaymentMethodId }, { expand: true })
+```
+
+FTW:
+[`dispatch(updatePaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L181)
+
+**3. Current user has StripeCustomer entity connected, but no
+defaultPaymentMethod:**
+
+```js
+=> sdk.stripeCustomer.addPaymentMethod({ stripePaymentMethodId }, { expand: true })
+```
+
+FTW:
+[`dispatch(addPaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L151)
+
+After these steps, customer is redirected to inbox and the ball is
+thrown to Provider to accept or decline the booking.
