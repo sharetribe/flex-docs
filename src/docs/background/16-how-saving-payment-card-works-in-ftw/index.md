@@ -197,7 +197,7 @@ What happens behind the scene:
 - After this call, created transaction is saved to session storage in
   FTW (or existing enquiry tx is updated).
 
-**When you save card details**, a new parameter needs to be passed if
+**When you intend to save card details**, a new parameter needs to be passed if
 card details are saved at the same time: `setupPaymentMethodForSaving`
 
 ```js
