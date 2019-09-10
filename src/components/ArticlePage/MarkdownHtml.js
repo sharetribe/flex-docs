@@ -164,7 +164,7 @@ const Html = styled.div`
     // element seems to fix this.
     //
     // See: https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align
-    line-height: 22px;
+    line-height: 21px;
     font-size: 15px;
     background: rgba(255,229,100,0.35);
 
