@@ -1,7 +1,7 @@
 ---
 title: How to take PaymentIntents into use
 slug: how-to-take-payment-intents-into-use
-updated: 2019-07-02
+updated: 2019-10-03
 category: guides
 ingress:
   Overview of how Stripe PaymentIntents work in FTW, and how you can
@@ -55,15 +55,25 @@ against Marketplace API, so that it can confirm the PaymentIntent and
 preauthorize the order. Transaction process continues normally after
 that - i.e. Provider has to accept or reject the order.
 
-Concrete steps here are requesting transaction process change from Flex
-support, then updating `bookingProcessAlias` in `config.js` and making
-necessary changes to `src/util/transaction.js` file. Remember, when
-transaction process is changed, you need to go through all the files
-that import transitions or utility functions from `util/transaction`. In
-practice, we made changes to _InboxPage_, _TransactionPage_,
-_TransactionPanel_, _ActivityFeed_, _BookingBreakdown_,
-_BookingDatesForm_, and _CheckoutPage_. The list might be different if
-you have customized your components or process.
+Concrete steps here are changing the transaction process, then updating
+`bookingProcessAlias` in `config.js` and making necessary changes to
+`src/util/transaction.js` file. Remember, when transaction process is
+changed, you need to go through all the files that import transitions or
+utility functions from `util/transaction`. In practice, we made changes
+to _InboxPage_, _TransactionPage_, _TransactionPanel_, _ActivityFeed_,
+_BookingBreakdown_, _BookingDatesForm_, and _CheckoutPage_. The list
+might be different if you have customized your components or process.
+
+The default transaction process supports SCA, but if you have an older
+process version without PaymentIntents, you can see our new example
+processes here:
+
+https://github.com/sharetribe/flex-example-processes
+
+All the example processes support SCA. If you need help with the
+concrete steps to customize your process to support SCA, contact Flex
+support from the support widget in Console and we'll guide you through
+the changes.
 
 ## 2. Add new thunk calls to stripe.duck.js
 

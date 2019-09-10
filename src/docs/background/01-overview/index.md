@@ -1,7 +1,7 @@
 ---
 title: Introducing Flex
 slug: introducing-flex
-updated: 2019-01-16
+updated: 2019-10-04
 category: background
 ingress:
   Overview of how Sharetribe Flex works, and how you can build your
@@ -85,6 +85,16 @@ Console also offers tools to develop your marketplace, for example, an
 editor for email templates. Console is accessed via a web UI that we
 provide out of the box. Think of it as an admin interface you never have
 to build!
+
+### Flex CLI
+
+Flex CLI (Command-line interface) is a tool for changing your
+marketplace's advanced configurations such as transaction processes and
+email templates.
+
+See the
+[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+tutorial for more information.
 
 ## Is Flex the right fit for you?
 

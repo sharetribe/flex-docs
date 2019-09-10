@@ -1,7 +1,7 @@
 ---
 title: Concepts
 slug: concepts
-updated: 2019-03-19
+updated: 2019-10-04
 category: background
 ingress:
   Explanation of the key concepts we use when we talk about Sharetribe
@@ -38,6 +38,16 @@ scratch. Flex Template for Web is built with Node.js + React/Redux.
 Information about using Flex Template for Web can be found in the
 [Getting started with FTW](/tutorials/getting-started-with-ftw/)
 tutorial.
+
+### Flex CLI
+
+Flex CLI (Command-line interface) is a tool for changing your
+marketplace's advanced configurations such as transaction processes and
+email templates.
+
+See the
+[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+tutorial for more information.
 
 ### Integration
 

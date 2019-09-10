@@ -221,21 +221,35 @@ const Html = styled.div`
   //
   table {
     color: ${props => props.theme.textColor};
-    font-size: 14px;
-    line-height: 24px;
     margin: ${baselineSpacing}px 0;
 
+    // Enable horizontal scrolling in narrow screens
+    display: block;
     width: 100%;
-    max-width: ${props => props.theme.contentMaxWidth}px;
+    overflow-x auto;
+
+    // Break words only at word breaks
+    word-break: normal;
   }
   th {
+    ${Strong.styles}
     border: 1px solid ${props => props.theme.lineColor};
     padding: ${baselineSmall}px 8px;
     white-space: nowrap;
   }
   td {
+    ${P.styles}
+    position: static;
+    font-size: 14px;
+    line-height: 24px;
+
     border: 1px solid ${props => props.theme.lineColor};
     padding: ${baselineSmall}px 8px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 
   & > :first-child {

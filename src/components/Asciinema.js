@@ -16,10 +16,10 @@ class Asciinema extends Component {
   componentDidMount() {
     const script = document.createElement('script');
 
-    script.setAttribute('id', 'asciicast-' + this.props["recording-id"]);
+    script.setAttribute('id', 'asciicast-' + this.props['recording-id']);
     script.setAttribute(
       'src',
-      'https://asciinema.org/a/' + this.props["recording-id"] + '.js'
+      'https://asciinema.org/a/' + this.props['recording-id'] + '.js'
     );
     script.setAttribute('async', 'true');
 
