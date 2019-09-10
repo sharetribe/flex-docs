@@ -38,7 +38,7 @@ const isCtrlB = e => e.key === 'b' && e.ctrlKey;
 const useWarnOnce = message => {
   useEffect(() => {
     console.warn(message);
-  }, []);
+  }, [message]);
 };
 
 // Hook that returns the current body scroll height
@@ -87,11 +87,8 @@ const useGridVisible = () => {
   return visible;
 };
 
-const BaselineDevGrid = props => {
+const DevGrid = props => {
   const { children } = props;
-  if (!dev) {
-    return <>{children}</>;
-  }
   useWarnOnce(
     'Baseline development grid enabled, press CTLR+b to toggle visibility'
   );
@@ -103,6 +100,11 @@ const BaselineDevGrid = props => {
       <BaselineGrid visible={visible} height={scrollHeight} />
     </>
   );
+};
+
+const BaselineDevGrid = props => {
+  const { children } = props;
+  return dev ? <DevGrid>{children}</DevGrid> : <>{children}</>;
 };
 
 export default BaselineDevGrid;
