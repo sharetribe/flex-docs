@@ -76,7 +76,15 @@ If there's a reason to doubt that a payout has failed, one place to start tracki
 
 ![Transactions CSV export](console-tx-csv.png 'Transactions CSV export')
 
-The transactions CSV file has a column called _PayoutState_ which indicates what is the status of the payout. Possible values for the PayoutState column are _pending_, _due_, _paid_, _cancelled_, and _failed_. The failed state indicates that some problems have occurred when paying out the associated transaction price. Another column to observe in the CSV file is _PayoutTotalConverted_. It is the payout total (in subunits) converted to the settlement currency of the connected account. This amount of money should be available in the connected account in order to successfully pay out the charge.
+The transactions CSV file has a column called _PayoutState_ which indicates what is the status of the payout. PayoutState can have five different values.
+
+1. Pending. This means that the customer has been charged, but your marketplace has not yet attempted to initiate a payout to the provider.
+2. Due. This means that a date for the payout has been assigned by Flex. You can see this date in the column PayoutDue. Flex will attempt a payout on this date.
+3. Paid. Flex has attempted to pay the money to the bank account of the provider. According to Stripe, it will then take between 1 and 7 days for the money to reach their bank account. However, it's still possible for the payout to fail, if there's something wrong with the account of the provider.
+4. Cancelled. This means that the payout won't be attempted, because the transaction was cancelled for one reason or another (by you, the customer, or the provider), and the money has been refunded to the customer.
+5. Failed. This means that something went wrong with the payout, and the provider didn't receive the money they were supposed to receive.
+
+Another column to pay attention to in the CSV file is _PayoutTotalConverted_. It is the payout total (in subunits) converted to the settlement currency of the connected account. This amount of money should be available in the connected account in order to successfully pay out the charge.
 
 If failed payouts are found in the transactions CSV export, the next step is to identify the corresponding failed payout events from Stripe. Log into the [Stripe Dashboard](https://dashboard.stripe.com) and look for the _Logs_ tab under _Developers_.
 
