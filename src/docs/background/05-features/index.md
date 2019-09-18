@@ -142,12 +142,16 @@ provider might have multiple listings, with each having their own
 calendar: apartment 1 is booked this weekend, but apartment 2 is still
 available.
 
+**Day-based and time-based availability**
+
 Availability comes in two variations: day-based availability and
 time-based availability. Day-based availability is simpler and
 recommended, if all the rentals or services in your marketplace happen
 "per day" or "per night". Time-based availability allows your providers
 to determine their availability on an hourly level, or even on a five
 minute level.
+
+**Weekly default schedule and exceptions**
 
 With both availability variations, providers can set both their weekly
 schedule and exceptions to this schedule. As an example, they could say
@@ -160,6 +164,8 @@ A listing can only be booked if it is fully available during the time
 range provided by the customer who is making the booking. If a booking
 is made, the calendar is updated automatically, so other users can't
 book the same slot.
+
+**Multiple seats per time slot**
 
 Both day-based and time-based availability support the ability to have multiple seats available during a specific time slot. For instance, if the marketplace is about booking seats for a yoga class with space for 10 people every Tuesday and Thursday, this can be accomplished by using seats. Seats can be added both to the weekly default schedule and to the exceptions. When seats are used, a customer can only book a certain slot if that slot has enough seats available.
 
