@@ -1,7 +1,7 @@
 ---
 title: Features
 slug: features
-updated: 2019-03-25
+updated: 2019-09-18
 category: background
 ingress:
   This article provides an overview of the most important features of
@@ -161,6 +161,8 @@ range provided by the customer who is making the booking. If a booking
 is made, the calendar is updated automatically, so other users can't
 book the same slot.
 
+Both day-based and time-based availability support the ability to have multiple seats available during a specific time slot. For instance, if the marketplace is about booking seats for a yoga class with space for 10 people every Tuesday and Thursday, this can be accomplished by using seats. Seats can be added both to the weekly default schedule and to the exceptions. When seats are used, a customer can only book a certain slot if that slot has enough seats available.
+
 [Read more about listing availability management](/references/availability/)
 
 ## Search engine
@@ -170,6 +172,7 @@ multiple criteria:
 
 - **Geolocation.** The search can be used to display only listings that
   are within a provided radius from certain coordinates.
+- **Free text.** The search can be used to find listings that have a certain keyword provided by the user. The search can find from listing title and description. You can also choose to index some public data fields (like listing category) so the search finds from them as well.
 - **Price.** It's possible to filter out listings with too high or too
   low price.
 - **Availability.** It's possible to filter out listings that are not
@@ -263,6 +266,8 @@ lots of helpful features. Here are some of them:
 - **Automated payouts.** Your commission is automatically deposited to
   your bank account, while the rest is deposited to the bank account of
   the provider at the time of your choosing.
+- **Storing credit cards and delayed charges.** You can store the credit card of the customer to make future purchases faster, or use the card to create delayed or additional charges.
+- **Strong Customer Authentication.** European regulation changed in 2019 to require support for [Strong customer authentication](https://stripe.com/en-fi/guides/strong-customer-authentication) (SCA) when European customers are making online payments. Flex supports SCA out of the box.
 
 ## Reviews
 
