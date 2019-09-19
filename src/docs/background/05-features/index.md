@@ -272,7 +272,7 @@ lots of helpful features. Here are some of them:
 - **Automated payouts.** Your commission is automatically deposited to
   your bank account, while the rest is deposited to the bank account of
   the provider at the time of your choosing.
-- **Storing credit cards and delayed charges.** You can store the credit card of the customer to make future purchases faster, or use the card to create delayed or additional charges.
+- **Storing payment cards and creating delayed charges.** You can store a payment card of the customer to make future purchases faster, or use the card to create delayed or additional charges. [Read more about using stored payment cards](/background/using-stored-payment-cards/)
 - **Strong Customer Authentication.** European regulation changed in 2019 to require support for [Strong customer authentication](https://stripe.com/en-fi/guides/strong-customer-authentication) (SCA) when European customers are making online payments. Flex supports SCA out of the box.
 
 ## Reviews
