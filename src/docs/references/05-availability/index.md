@@ -32,11 +32,11 @@ automatically prevent bookings for unavailable time ranges.
 
 ## Seats
 
-Both availability plans and availability exceptions use the concept of
-_seats_ to define whether a particular time is available or not.
-Currently Flex allows the number of seats to be only 0 or 1, meaning
-unavailable and available for single booking, respectively. Each booking
-currently consumes exactly one seat.
+Both availability plans and availability exceptions use the concept of _seats_
+to define whether a particular time is available or not. How many seats a
+booking consumes depends on the `seats` attribute of a booking. Having 0 seats
+in availability means that the listing is unavailable for bookings during that
+time.
 
 ## Day-based availability management
 
