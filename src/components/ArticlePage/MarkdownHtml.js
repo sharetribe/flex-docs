@@ -1,13 +1,27 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
+import rehypeReact from 'rehype-react';
 import {
   baselineSmall,
   baselineLarge,
   baselineSpacing,
   baselineBreakpoint,
 } from '../../config';
-import { H4, H5, H6, P, Ul, Ol, Li, Hr, A, Strong, Em } from '../../components';
+import {
+  H4,
+  H5,
+  H6,
+  P,
+  Ul,
+  Ol,
+  Li,
+  Hr,
+  A,
+  Strong,
+  Em,
+  Asciinema,
+} from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
 
@@ -249,11 +263,17 @@ const Html = styled.div`
   }
 `;
 
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  Fragment: React.Fragment,
+  components: { asciinema: Asciinema },
+}).Compiler;
+
 const MarkdownHtml = props => {
-  const { html, ...rest } = props;
+  const { htmlAst, ...rest } = props;
   return (
     <>
-      <Html {...rest} dangerouslySetInnerHTML={{ __html: html }} />
+      <Html {...rest}>{renderAst(htmlAst)}</Html>
       <HighlightStyle />
     </>
   );
