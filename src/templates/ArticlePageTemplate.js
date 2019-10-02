@@ -18,7 +18,7 @@ export const query = graphql`
         skills
         readingTime
       }
-      html
+      htmlAst
       fields {
         readingTime {
           minutes
@@ -35,7 +35,7 @@ export const query = graphql`
 const ArticlePageTemplate = props => {
   const {
     frontmatter,
-    html,
+    htmlAst,
     fields,
     headings = [],
   } = props.data.markdownRemark;
@@ -51,7 +51,7 @@ const ArticlePageTemplate = props => {
   return (
     <ArticlePage
       frontmatter={frontmatter}
-      html={html}
+      htmlAst={htmlAst}
       estimatedReadingTime={minutes}
       tableOfContents={tableOfContents}
     />

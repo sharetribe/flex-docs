@@ -134,7 +134,7 @@ const SideToc = styled(Toc)`
 `;
 
 const ArticlePage = props => {
-  const { frontmatter, html, estimatedReadingTime, tableOfContents } = props;
+  const { frontmatter, htmlAst, estimatedReadingTime, tableOfContents } = props;
   const { title, slug, updated, category, ingress } = frontmatter;
 
   // Structured metadata for the article page
@@ -187,7 +187,7 @@ const ArticlePage = props => {
             estimatedReadingTime={estimatedReadingTime}
           />
           <ArticleIngress>{ingress}</ArticleIngress>
-          <Markdown html={html} />
+          <Markdown htmlAst={htmlAst} />
         </MainColumn>
       </ColumnLayout>
     </MainLayout>

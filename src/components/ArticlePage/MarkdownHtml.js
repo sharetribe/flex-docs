@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
+import rehypeReact from "rehype-react";
 import {
   baselineSmall,
   baselineLarge,
@@ -249,11 +250,19 @@ const Html = styled.div`
   }
 `;
 
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  Fragment: React.Fragment,
+}).Compiler
+
 const MarkdownHtml = props => {
-  const { html, ...rest } = props;
+  const { htmlAst, ...rest } = props;
   return (
     <>
-      <Html {...rest} dangerouslySetInnerHTML={{ __html: html }} />
+    <Html {...rest}>
+      {renderAst(htmlAst)}
+    </Html>
       <HighlightStyle />
     </>
   );
