@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from 'react';
 
 // Custom component to render the embedded Asciinema player.
 //
@@ -16,19 +16,22 @@ class Asciinema extends Component {
   componentDidMount() {
     const script = document.createElement('script');
 
-    script.setAttribute('id', "asciicast-" + this.props.id)
-    script.setAttribute('src', 'https://asciinema.org/a/' + this.props.id + '.js');
+    script.setAttribute('id', 'asciicast-' + this.props.id);
+    script.setAttribute(
+      'src',
+      'https://asciinema.org/a/' + this.props.id + '.js'
+    );
     script.setAttribute('async', 'true');
 
-    script.dataset.autoplay = this.props.autoPlay || "true";
-    script.dataset.speed = this.props.speed || "1.5";
-    script.dataset.loop = this.props.loop || "1";
+    script.dataset.autoplay = this.props.autoPlay || 'true';
+    script.dataset.speed = this.props.speed || '1.5';
+    script.dataset.loop = this.props.loop || '1';
 
     this.ref.current.append(script);
   }
 
   render() {
-    return (<span ref={this.ref} />)
+    return <span ref={this.ref} />;
   }
 }
 
