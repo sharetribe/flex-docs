@@ -45,6 +45,8 @@ basic development tooling:
 
 ## Setup FTW
 
+<asciinema id="267480"></asciinema>
+
 Clone the Git repository:
 
 ```bash

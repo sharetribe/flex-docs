@@ -1,3 +1,5 @@
+import Asciinema from './Asciinema';
+
 // Components that don't import other components from this
 // index. These should not create any circular dependencies.
 export { default as H1 } from './H1';
@@ -44,3 +46,4 @@ export {
 } from './ThanksForTheFeedbackPage';
 export { default as StyleguidePage } from './StyleguidePage/StyleguidePage';
 export { default as Root } from './Root';
+export { Asciinema };
