@@ -168,6 +168,8 @@ const Html = styled.div`
     font-size: 15px;
     background: rgba(255,229,100,0.35);
 
+    white-space: nowrap;
+
     color: ${props => props.theme.textColorQuoted};
   }
   ul {
