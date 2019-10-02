@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 //
 // Usage:
 //
-// <asciinema id="267480"></asciinema>
+// <asciinema recording-id="267480"></asciinema>
 //
 
 class Asciinema extends Component {
@@ -16,10 +16,10 @@ class Asciinema extends Component {
   componentDidMount() {
     const script = document.createElement('script');
 
-    script.setAttribute('id', 'asciicast-' + this.props.id);
+    script.setAttribute('id', 'asciicast-' + this.props.recordingId);
     script.setAttribute(
       'src',
-      'https://asciinema.org/a/' + this.props.id + '.js'
+      'https://asciinema.org/a/' + this.props.recordingId + '.js'
     );
     script.setAttribute('async', 'true');
 
