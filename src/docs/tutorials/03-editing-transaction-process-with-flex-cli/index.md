@@ -260,7 +260,8 @@ file and pushed it back to Flex. Finally, we updated the alias to point
 to the new version.
 
 You know now how to make simple modifications to the process. Have a
-look at the [transaction process format](/transaction-process-format/)
+look at the
+[transaction process format](/references/transaction-process-format/)
 reference and the
 [transaction process actions](/references/transaction-process-actions/)
 reference to read about all the possibilities that transaction process
