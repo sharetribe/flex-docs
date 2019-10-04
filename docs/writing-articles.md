@@ -103,6 +103,9 @@ There are several frontmatter fields in use:
   article page.
 - `readingTime` (**optional**): When defined, a Medium-style reading
   time is shown in the article info section.
+- `toc` (**optional**): When defined, a full table of contents will be
+  shown in the content column. This is useful for articles with lots of
+  headers that don't fit in the side column.
 
   Possible values:
 
