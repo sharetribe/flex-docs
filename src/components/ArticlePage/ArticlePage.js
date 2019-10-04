@@ -163,6 +163,7 @@ const ArticlePage = props => {
             <SideToc
               path={`/${category}/${slug}/`}
               headings={tableOfContents}
+              maxDepth={2}
             />
           </SideNavigation>
         </SideColumn>
