@@ -15,6 +15,7 @@ import LastUpdated from './LastUpdated';
 import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
 import Toc from './Toc';
+import ArticleToc from './ArticleToc';
 
 const ColumnLayout = styled.div`
   display: flex;
@@ -133,9 +134,16 @@ const SideToc = styled(Toc)`
   }
 `;
 
+const ContentTocHeader = styled(H6)`
+  margin-top: ${3 * baselineSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${4 * baselineLarge}px;
+  }
+`;
 const ArticlePage = props => {
   const { frontmatter, htmlAst, estimatedReadingTime, tableOfContents } = props;
-  const { title, slug, updated, category, ingress } = frontmatter;
+  const { title, slug, updated, category, ingress, toc } = frontmatter;
 
   // Structured metadata for the article page
   //
@@ -188,6 +196,18 @@ const ArticlePage = props => {
             estimatedReadingTime={estimatedReadingTime}
           />
           <ArticleIngress>{ingress}</ArticleIngress>
+          {toc ? (
+            <>
+              <ContentTocHeader as="h2">
+                <UiText id="ArticlePage.tableOfContents" />
+              </ContentTocHeader>
+              <ArticleToc
+                path={`/${category}/${slug}/`}
+                headings={tableOfContents}
+                maxDepth={3}
+              />
+            </>
+          ) : null}
           <Markdown htmlAst={htmlAst} />
         </MainColumn>
       </ColumnLayout>
