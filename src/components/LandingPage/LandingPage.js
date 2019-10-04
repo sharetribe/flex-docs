@@ -204,6 +204,9 @@ const LandingPage = props => {
             <SectionLink to="/tutorials/getting-started-with-ftw/">
               <UiText id="LandingPage.gettingStarted.ftwSetup" />
             </SectionLink>
+            <SectionLink to="/tutorials/getting-started-with-flex-cli/">
+              <UiText id="LandingPage.gettingStarted.flexCli" />
+            </SectionLink>
           </Ul>
         </GettingStartedSection>
         <CategoriesHeading as="h2">
@@ -221,6 +224,9 @@ const LandingPage = props => {
             <SectionLinks>
               <SectionLink to="/tutorials/getting-started-with-ftw/">
                 <UiText id="LandingPage.tutorials.gettingStartedFtw" />
+              </SectionLink>
+              <SectionLink to="/tutorials/getting-started-with-flex-cli/">
+                <UiText id="LandingPage.tutorials.gettingStartedCli" />
               </SectionLink>
               <SectionLink to="/tutorials/">
                 <UiText id="LandingPage.tutorials.all" /> (
@@ -268,6 +274,9 @@ const LandingPage = props => {
               </SectionLink>
               <SectionLink to="/references/js-sdk/">
                 <UiText id="LandingPage.references.sdk" />
+              </SectionLink>
+              <SectionLink to="/references/transaction-process-format/">
+                <UiText id="LandingPage.references.txProcessFormat" />
               </SectionLink>
               <SectionLink to="/references/email-templates/">
                 <UiText id="LandingPage.references.emailTemplates" />

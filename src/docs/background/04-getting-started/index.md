@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started
-updated: 2019-03-04
+updated: 2019-10-04
 category: background
 ingress:
   This collection of articles is the starting point for your journey
@@ -47,3 +47,10 @@ you to start customizing your marketplace user interface immediately. In
 this tutorial, you get step-by-step instructions on how to set up Flex
 Template for Web and do your first customizations.
 [Read more »](/tutorials/getting-started-with-ftw/)
+
+## [Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+
+Flex CLI (Command-line interface) is a tool for changing your
+marketplace's advanced configurations such as transaction processes and
+email templates. This tutorial shows you how to get started with the
+tool. [Read more »](/tutorials/getting-started-with-flex-cli/)
