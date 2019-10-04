@@ -1,7 +1,7 @@
 ---
 title: How to take time-based bookings into use
 slug: how-to-take-time-based-bookings-into-use
-updated: 2019-04-18
+updated: 2019-10-03
 category: guides
 ingress:
   Time-based bookings and availability management enable low level fine
@@ -15,10 +15,39 @@ To get started, the transaction process needs to be updated to support
 time-based bookings. The required change is to add a `type` parameter
 with value `time` to the `create-booking` action. The process also needs
 to be a unit-based process as calculating the quantity of booked items
-based on the length of a time-based booking is not supported. In order
-to update your process to match these requirements,
-[contact the Sharetribe support](mailto:flex-support@sharetribe.com) and
-ask that this adjustment is made to your process.
+based on the length of a time-based booking is not supported.
+
+Using Flex CLI, you can customise your transaction process. You should
+have something like the following in your `process.edn` file:
+
+```clojure
+{:name :transition/request-payment,
+ :actor :actor.role/customer,
+ :actions
+ [{:name :action/create-booking,
+   :config {:observe-availability? true, :type :time}}
+  {:name :action/calculate-tx-unit-total-price}
+  {:name :action/calculate-tx-provider-commission,
+   :config {:commission 0.1M}}
+  {:name :action/stripe-create-payment-intent}],
+ :to :state/pending-payment}
+{:name :transition/request-payment-after-enquiry,
+ :actor :actor.role/customer,
+ :actions
+ [{:name :action/create-booking,
+   :config {:observe-availability? true, :type :time}}
+  {:name :action/calculate-tx-unit-total-price}
+  {:name :action/calculate-tx-provider-commission,
+   :config {:commission 0.1M}}
+  {:name :action/stripe-create-payment-intent}],
+ :from :state/enquiry,
+ :to :state/pending-payment}
+```
+
+To learn more about how to change the transaction process using Flex
+CLI, see the
+[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+tutorial.
 
 > Note that filtering a listings query by availability is not yet
 > available when using time-based bookings and availability. When taking

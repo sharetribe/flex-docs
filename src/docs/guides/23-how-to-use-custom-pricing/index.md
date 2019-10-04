@@ -1,7 +1,7 @@
 ---
 title: How to customize pricing
 slug: how-to-customize-pricing
-updated: 2019-04-05
+updated: 2019-10-03
 category: guides
 ingress:
   Flex allows lots of flexibility for your providers in terms of how
@@ -28,12 +28,42 @@ and pricing in Flex in general, refer to
 To get started, the transaction process needs to be updated to support
 custom pricing. The required change is to add the
 `set-line-items-and-total` action to all the transitions that create a
-booking. For this, you need to
-[contact Sharetribe support](mailto:flex-support@sharetribe.com) and ask
-them to make the process adjustment for you. In this guide, we're
-assuming that the `set-line-items-and-total` action has been added to
-the `transition/request` and `transition/request-after-enquiry`
-transitions in the default transaction process.
+booking. Using Flex CLI and the default nightly process, add the action
+to the `transition/request-payment` and
+`transition/request-payment-after-enquiry` transitions:
+
+```diff
+{:name :transition/request-payment,
+ :actor :actor.role/customer,
+ :actions
+ [{:name :action/create-booking,
+   :config {:observe-availability? true}}
+  {:name :action/calculate-tx-nightly-total-price}
+  {:name :action/calculate-tx-provider-commission,
+   :config {:commission 0.1M}}
+-  {:name :action/stripe-create-payment-intent}],
++  {:name :action/stripe-create-payment-intent},
++  {:name :action/set-line-items-and-total}],
+ :to :state/pending-payment}
+{:name :transition/request-payment-after-enquiry,
+ :actor :actor.role/customer,
+ :actions
+ [{:name :action/create-booking,
+   :config {:observe-availability? true}}
+  {:name :action/calculate-tx-nightly-total-price}
+  {:name :action/calculate-tx-provider-commission,
+   :config {:commission 0.1M}}
+-  {:name :action/stripe-create-payment-intent}],
++  {:name :action/stripe-create-payment-intent},
++  {:name :action/set-line-items-and-total}],
+ :from :state/enquiry,
+ :to :state/pending-payment}
+```
+
+To learn more about how to change the transaction process using Flex
+CLI, see the
+[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+tutorial.
 
 > Note: `set-line-items-and-total` cannot be combined with other pricing
 > actions that rely on the booking length or the quantity of units. In

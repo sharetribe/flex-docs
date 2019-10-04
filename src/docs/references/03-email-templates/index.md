@@ -1,7 +1,7 @@
 ---
 title: Email templates
 slug: email-templates
-updated: 2019-01-21
+updated: 2019-10-04
 category: references
 ingress: Reference documentation for editing email templates.
 published: true
@@ -21,18 +21,9 @@ The built-in emails can be customized using the
 in the Flex Console. You find the editor in the Console under Build
 section.
 
-There are default transaction emails configured as part of the default
-transaction process available in your marketplace.
-[Contact us](mailto:flex-support@sharetribe.com) if you want to know
-more about how to configure the notification emails.
-
-The transaction email editing is still manual. We are working hard to
-build the necessary tools for customizing transaction email templates,
-but for now you should resort to the default templates in
-[Flex Template for Web](https://github.com/sharetribe/flex-template-web/tree/master/ext/default-mail-templates)
-and edit them to your needs. If you contact the
-[Sharetribe team](mailto:flex-support@sharetribe.com) at and provide us
-the edited templates, we will update them for you.
+To change the transaction emails, follow the
+[Edit email templates with Flex CLI](/tutorials/edit-email-templates-with-flex-cli/)
+tutorial.
 
 ## Best practices
 
@@ -326,19 +317,9 @@ let's you **send test emails** to your own email address.
 
 ## Editing transaction emails
 
-Editing the transaction emails is not yet supported through the editor
-in Console. Meanwhile, we will help you with your changes to transaction
-emails.
-
-To make changes to your transaction emails:
-
-1. Go to the
-   [Flex Template for Web repository](https://github.com/sharetribe/flex-template-web/tree/master/ext/default-mail-templates)
-2. Copy the templates to your own development computer and do the edits
-   you need
-3. Send the templates to the
-   [Sharetribe support](mailto:flex-support@sharetribe.com) in a
-   zip-package. Please don't change the filenames.
+To understand how to change the transaction emails, see the
+[Edit email templates with Flex CLI](/tutorials/edit-email-templates-with-flex-cli/)
+tutorial.
 
 ### Transaction email context
 

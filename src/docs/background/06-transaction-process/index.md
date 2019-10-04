@@ -1,7 +1,7 @@
 ---
 title: Transaction process
 slug: transaction-process
-updated: 2019-02-06
+updated: 2019-10-04
 category: background
 ingress:
   This article introduces transaction processes and how they define
@@ -124,12 +124,13 @@ notifications.
 
 ## How to change your transaction process
 
-At the moment, you need to
-[contact Sharetribe support team](mailto:flex-support@sharetribe.com)
-and ask them to make changes to your transaction process(es). In the
-future it will be possible for you to make these adjustments yourself.
-
-You can change the transaction process in use in your marketplace by
-following the
+To customise the transaction processes of your marketplace, you can use
+Flex CLI (Command-line interface). To get up and running with the tool,
+see the
+[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+tutorial. For more details of the transaction process format, see the
+[Transaction process format](/references/transaction-process-format/)
+reference. To customise the UI of your marketplace to match your process
+changes, see the
 [How to change transaction process setup in FTW](/guides/how-to-change-transaction-process-in-ftw/)
 guide.

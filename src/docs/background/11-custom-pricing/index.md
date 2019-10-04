@@ -1,7 +1,7 @@
 ---
 title: Custom pricing
 slug: custom-pricing
-updated: 2019-03-19
+updated: 2019-10-04
 category: background
 ingress:
   This article introduces you to the concept of custom pricing and how
@@ -255,10 +255,9 @@ the provider commission line item that has been constructed in the API.
 
 In order to take custom pricing into use the custom pricing action,
 `set-line-items-and-total`, must be added to the transitions that create
-new transactions in your marketplace's transaction process.
-[Contact the Sharetribe support](mailto:flex-support@sharetribe.com) for
-the process adjustment for custom pricing. For guidance on how to change
-your marketplace website to use custom pricing refer to
+new transactions in your marketplace's transaction process. This change
+can be done using Flex CLI. For a full guide on how to change your
+marketplace website to use custom pricing refer to
 [the custom pricing how-to guide](/guides/how-to-customize-pricing/). It
-describes how the Flex Template for Web can be modified to use custom
+describes how Flex Template for Web can be modified to use custom
 pricing.
