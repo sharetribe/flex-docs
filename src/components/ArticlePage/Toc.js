@@ -41,8 +41,10 @@ const TocItem = props => {
 };
 
 const Toc = props => {
-  const { path, headings, ...rest } = props;
-  const topLevelHeadings = headings.filter(heading => heading.depth < 3);
+  const { path, headings, maxDepth, ...rest } = props;
+  const topLevelHeadings = headings.filter(
+    heading => heading.depth <= maxDepth
+  );
   if (topLevelHeadings.length === 0) {
     return null;
   }

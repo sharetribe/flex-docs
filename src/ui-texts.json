@@ -75,6 +75,7 @@
   "ArticleIndexPage.background.title": "All Background articles",
   "ArticleIndexPage.background.description": "Explanations and background information for important concepts and design decisions behind the platform.",
 
+  "ArticlePage.tableOfContents": "Table of Contents",
   "ArticlePage.tutorials.breadCrumbTitle": "Tutorials",
   "ArticlePage.guides.breadCrumbTitle": "How-to Guides",
   "ArticlePage.references.breadCrumbTitle": "Reference",

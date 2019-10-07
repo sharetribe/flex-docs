@@ -7,6 +7,7 @@ ingress:
   This reference article lists all the available actions and their
   configuration options.
 published: true
+toc: true
 ---
 
 A transaction process contains transitions and each transition defines

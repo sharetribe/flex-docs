@@ -17,6 +17,7 @@ export const query = graphql`
         ingress
         skills
         readingTime
+        toc
       }
       htmlAst
       fields {
