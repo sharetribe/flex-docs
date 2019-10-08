@@ -85,3 +85,8 @@ information to make querying the extended data possible via some API
 endpoints. For instance
 [/listings/query](https://www.sharetribe.com/api-reference/#query-listings)
 supports querying listings by public data.
+
+> **Note:** Only top-level values in extended data can have a schema.
+
+> **Note:** Please contact the Sharetribe support in order to update
+> data schema.
