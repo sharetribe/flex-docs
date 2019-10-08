@@ -77,6 +77,8 @@ Further reading on public data can be found in the
 [How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
 guide.
 
+> **Note:** Only top-level attributes can be indexed.
+
 > **Note:** Please contact the Sharetribe support in order to update
 > your listing index schema when planning to use new listing fields as
 > search filters.
