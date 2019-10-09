@@ -163,9 +163,14 @@ Variables within `{{ }}` are expanded and escaped, so that they are safe
 to place inside HTML content. As seen above, some variables have nested
 values, which can be accessed with dot `.` operator.
 
-The template syntax supports conditionals, loops, helpers and other
-constructs. For details see the
-[Email templates](/references/email-templates/) reference.
+In the example above, the `#with` block helper is used to access properties of
+the email context top level property `transaction`. So `customer.display-name`
+within the `{{#with transaction}}` block will refer to the value of
+`transaction.customer.display-name` in the email context.
+
+The template syntax supports conditionals, loops, helpers and other constructs.
+For details on the Handlebars constructs and a full description of the email
+context, see the [Email templates](/references/email-templates/) reference.
 
 ## Change a template
 
