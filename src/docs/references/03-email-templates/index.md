@@ -455,8 +455,11 @@ available for each email template.
   helpers described above to display dates.
 - Objects with the exact two propeties of `"amount"` and `"currency"`
   are of type money, and can be passed as is to `money-amount` helper.
+- Properties of type `"extended-data"` define an extended data object.
+  Properties in such an object can have any valid JSON values, including JSON
+  data structures.
 - Remember to traverse the context properly. For example, in
-  `"transaction-transition"` `"payin-total"` is nested under
-  `"transaction"`. This means that the correct way to refer to that is
-  `transaction.payin-total` or using the
-  [builtin **`with`** helper](https://handlebarsjs.com/builtin_helpers.html).
+  `"transaction-transition"` `"payin-total"` is nested under `"transaction"`.
+  This means that the correct way to refer to that is `transaction.payin-total`
+  or using the [builtin **`with`**
+  helper](https://handlebarsjs.com/builtin_helpers.html).
