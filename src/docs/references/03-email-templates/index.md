@@ -331,22 +331,28 @@ Context for transaction emails:
     "id": "uuid",
     "first-name": "string",
     "last-name": "string",
-    "display-name": "string"
+    "display-name": "string",
+    "private-data": "extended-data",
+    "public-data": "extended-data",
+    "protected-data": "extended-data"
   },
   "marketplace": {
     "name": "string",
-    "url" "string"
+    "url": "string"
   },
   "recipient-role": {"one-of": ["provider", "customer"]},
   "other-party": {
     "id": "uuid",
     "first-name": "string",
     "last-name": "string",
-    "display-name": "string"
+    "display-name": "string",
+    "private-data": "extended-data",
+    "public-data": "extended-data",
+    "protected-data": "extended-data"
   },
   "transaction": {
     "id": "uuid",
-    "line-items": [
+    "tx-line-items": [
       {
         "code": "string",
         "unit-price": {
@@ -368,15 +374,21 @@ Context for transaction emails:
     },
     "booking": {
       "start": "date",
-      "end": "date"},
-      "reviews": [
+      "end": "date",
+      "displayStart": "date",
+      "displayEnd": "date"
+    },
+    "reviews": [
       {
         "content": "string",
         "subject": {
           "id": "uuid",
           "first-name": "string",
           "last-name": "string",
-          "display-name": "string"
+          "display-name": "string",
+          "private-data": "extended-data",
+          "public-data": "extended-data",
+          "protected-data": "extended-data"
         }
       }
     ],
@@ -384,7 +396,10 @@ Context for transaction emails:
       "id": "uuid",
       "first-name": "string",
       "last-name": "string",
-      "display-name": "string"
+      "display-name": "string",
+      "private-data": "extended-data",
+      "public-data": "extended-data",
+      "protected-data": "extended-data"
     },
     "payin-total": {
       "amount": "decimal",
@@ -392,17 +407,24 @@ Context for transaction emails:
     },
     "listing": {
       "id": "uuid",
-      "title": "string"
+      "title": "string,"
+      "private-data": "extended-data",
+      "public-data": "extended-data",
+      "metadata": "extended-data"
     },
     "customer": {
       "id": "uuid",
       "first-name": "string",
       "last-name": "string",
-      "display-name": "string"
+      "display-name": "string",
+      "private-data": "extended-data",
+      "public-data": "extended-data",
+      "protected-data": "extended-data"
     },
     "delayed-transition": {
       "run-at": "date"
-    }
+    },
+    "protected-data": "extended-data"
   }
 }
 
