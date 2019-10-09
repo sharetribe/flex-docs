@@ -18,7 +18,7 @@ logged in with your API key. If not, it's recommended to first read the
 tutorial
 [Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/).
 
-We also recommend that you also go through the
+We also recommend that you go through the
 [Edit transaction process with Flex CLI](/tutorials/edit-transaction-process-with-flex-cli/)
 tutorial to understand process pulling, editing, pushing, and alias
 handling on a general level.
