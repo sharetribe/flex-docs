@@ -257,7 +257,7 @@ Optionally takes booking display start and end times as well as seats.
 - `observe-availability?`: boolean, defaults to `false`. If set to
   `true`, prevents creating new bookings if the booking time is not
   available.
-- `type?`: enum, one of `:day`, `:time`. Defaults to `:day`. If set to
+- `type`: enum, one of `:day`, `:time`. Defaults to `:day`. If set to
   `:day` normalizes `bookingStart` and `bookingEnd` values to midnight
   UTC.
 
