@@ -18,7 +18,7 @@ marketplace's advanced configurations such as transaction processes and
 email templates.
 
 For this tutorial you should have basic knowledge of command-line and
-how to run basic commands. If you haven't read [how transaction processes work in Flex](/background/transaction-process/), it's a good idea to do that before starting this tutorial.
+how to run basic commands.
 
 Now, let's get started!
 
