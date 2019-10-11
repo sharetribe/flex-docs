@@ -1,7 +1,7 @@
 ---
 title: Features
 slug: features
-updated: 2019-03-25
+updated: 2019-09-18
 category: background
 ingress:
   This article provides an overview of the most important features of
@@ -142,12 +142,16 @@ provider might have multiple listings, with each having their own
 calendar: apartment 1 is booked this weekend, but apartment 2 is still
 available.
 
+**Day-based and time-based availability**
+
 Availability comes in two variations: day-based availability and
 time-based availability. Day-based availability is simpler and
 recommended, if all the rentals or services in your marketplace happen
 "per day" or "per night". Time-based availability allows your providers
 to determine their availability on an hourly level, or even on a five
 minute level.
+
+**Weekly default schedule and exceptions**
 
 With both availability variations, providers can set both their weekly
 schedule and exceptions to this schedule. As an example, they could say
@@ -161,6 +165,10 @@ range provided by the customer who is making the booking. If a booking
 is made, the calendar is updated automatically, so other users can't
 book the same slot.
 
+**Multiple seats per time slot**
+
+Both day-based and time-based availability support the ability to have multiple seats available during a specific time slot. For instance, if the marketplace is about booking seats for a yoga class with space for 10 people every Tuesday and Thursday, this can be accomplished by using seats. Seats can be added both to the weekly default schedule and to the exceptions. When seats are used, a customer can only book a certain slot if that slot has enough seats available.
+
 [Read more about listing availability management](/references/availability/)
 
 ## Search engine
@@ -170,6 +178,7 @@ multiple criteria:
 
 - **Geolocation.** The search can be used to display only listings that
   are within a provided radius from certain coordinates.
+- **Free text.** The search can be used to find listings that have a certain keyword provided by the user. The search can find from listing title and description. You can also choose to index some public data fields (like listing category) so the search finds from them as well.
 - **Price.** It's possible to filter out listings with too high or too
   low price.
 - **Availability.** It's possible to filter out listings that are not
@@ -259,10 +268,12 @@ lots of helpful features. Here are some of them:
 - **Refunds.** If something goes wrong with the booking or the customer
   wants to cancel, you can easily refund them.
 - **Charge your commission.** You can charge a commission from the
-  customer, the provider, or both parties.
+  customer, the provider, or both parties. You can also set multiple different commission rates for different users or listing categories.
 - **Automated payouts.** Your commission is automatically deposited to
   your bank account, while the rest is deposited to the bank account of
   the provider at the time of your choosing.
+- **Storing payment cards and creating delayed charges.** You can store a payment card of the customer to make future purchases faster, or use the card to create delayed or additional charges. [Read more about using stored payment cards](/background/using-stored-payment-cards/)
+- **Strong Customer Authentication.** European regulation changed in 2019 to require support for [Strong customer authentication](https://stripe.com/en-fi/guides/strong-customer-authentication) (SCA) when European customers are making online payments. Flex supports SCA out of the box.
 
 ## Reviews
 
