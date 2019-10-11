@@ -268,7 +268,7 @@ lots of helpful features. Here are some of them:
 - **Refunds.** If something goes wrong with the booking or the customer
   wants to cancel, you can easily refund them.
 - **Charge your commission.** You can charge a commission from the
-  customer, the provider, or both parties.
+  customer, the provider, or both parties. You can also set multiple different commission rates for different users or listing categories.
 - **Automated payouts.** Your commission is automatically deposited to
   your bank account, while the rest is deposited to the bank account of
   the provider at the time of your choosing.
