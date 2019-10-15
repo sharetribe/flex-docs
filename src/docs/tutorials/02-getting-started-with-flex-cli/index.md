@@ -117,9 +117,9 @@ flex-cli help process list
 ```
 
 As you can see, the command requires `MARKETPLACE IDENT` option. You can
-use either the long form `--marketplace=<marketplace ident here>` or
+use either the long form `--marketplace <marketplace ident here>` or
 short form `-m <marketplace ident here>`. Optionally the command takes
-`--process=PROCESS NAME` parameter to get detailed information about a
+`--process PROCESS NAME` parameter to get detailed information about a
 single process.
 
 Let's list all the processes:
