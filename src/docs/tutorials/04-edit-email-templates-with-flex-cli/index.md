@@ -208,7 +208,7 @@ In the default process there is a `release-1` alias. Let's update that
 to point to the new process version:
 
 ```
-flex-cli process list --process=preauth-with-nightly-booking -m my-test-marketplace
+flex-cli process update-alias -m my-test-marketplace --process=preauth-with-nightly-booking --alias=release-1 --version=2
 ```
 
 To see the updated alias, run the `process list` command again:
