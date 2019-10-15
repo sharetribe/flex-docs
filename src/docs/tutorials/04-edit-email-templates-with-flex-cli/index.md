@@ -49,7 +49,7 @@ process, version 1.
 Let's pull that process version:
 
 ```
-flex-cli process pull --process=preauth-with-nightly-booking --version=1 --path=process -m my-test-marketplace
+flex-cli process pull --process preauth-with-nightly-booking --version 1 --path process -m my-test-marketplace
 ```
 
 This will create a `process/` directory that has all the process files
@@ -187,14 +187,14 @@ Now that you have edited the email templates, you need to push a new
 version of your process:
 
 ```
-flex-cli process push --path=process --process=preauth-with-nightly-booking -m my-test-marketplace
+flex-cli process push  -m my-test-marketplace --path process --process preauth-with-nightly-booking
 ```
 
 You can see the new version in Console or using the `process list`
 command:
 
 ```
-flex-cli process list -m my-test-marketplace --process=preauth-with-nightly-booking
+flex-cli process list -m my-test-marketplace --process preauth-with-nightly-booking
 ```
 
 ## Update alias
@@ -208,13 +208,13 @@ In the default process there is a `release-1` alias. Let's update that
 to point to the new process version:
 
 ```
-flex-cli process update-alias -m my-test-marketplace --process=preauth-with-nightly-booking --alias=release-1 --version=2
+flex-cli process update-alias -m my-test-marketplace --process preauth-with-nightly-booking --alias release-1 --version 2
 ```
 
 To see the updated alias, run the `process list` command again:
 
 ```
-flex-cli process list -m my-test-marketplace --process=preauth-with-nightly-booking
+flex-cli process list -m my-test-marketplace --process preauth-with-nightly-booking
 ```
 
 ## Test the new notification

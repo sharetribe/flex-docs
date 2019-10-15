@@ -33,7 +33,7 @@ The first thing to do is to list all the existing processes with CLI
 command `process list`.
 
 Remember to include your marketplace ident to the command with the
-`--marketplace=<marketplace ident here>` options or the short version
+`--marketplace <marketplace ident here>` options or the short version
 `-m <your marketplace ident here>`:
 
 ```bash
@@ -61,7 +61,7 @@ We can see that required options are:
 Pull the process and save it to `process` directory:
 
 ```bash
-flex-cli process pull --process=preauth-with-nightly-booking --version=1 --path=process -m my-test-marketplace
+flex-cli process pull --process preauth-with-nightly-booking --version 1 --path process -m my-test-marketplace
 ```
 
 See what's inside the `process` directory:
@@ -185,7 +185,7 @@ validate that the changes are correct. The CLI command `process` can do
 this:
 
 ```bash
-flex-cli process --path=process
+flex-cli process --path process
 ```
 
 In case the `process.edn` file is valid, you'll see a description of
@@ -196,7 +196,7 @@ Now that we have validated the `process.edn` file we are ready to push
 the changes to Flex:
 
 ```bash
-flex-cli process push --path=process --process=preauth-with-nightly-booking -m my-test-marketplace
+flex-cli process push --path process --process preauth-with-nightly-booking -m my-test-marketplace
 ```
 
 After the process is successfully pushed, you'll see a new process
@@ -218,7 +218,7 @@ First, let's see what aliases are pointing to which versions. We can do
 this by using the `process list` command with the `--process` option:
 
 ```bash
-flex-cli process list --process=preauth-with-nightly-booking -m my-test-marketplace
+flex-cli process list --process preauth-with-nightly-booking -m my-test-marketplace
 ```
 
 You'll see a list of process versions and aliases pointing to them. The
@@ -232,7 +232,7 @@ In the default process, the name of the existing alias is `release-1`.
 The command to update the alias is `process update-alias`:
 
 ```bash
-flex-cli process update-alias --process=preauth-with-nightly-booking --alias=release-1 --version 2 -m my-test-marketplace
+flex-cli process update-alias --process preauth-with-nightly-booking --alias release-1 --version 2 -m my-test-marketplace
 ```
 
 This command updates the alias `release-1` to point to
