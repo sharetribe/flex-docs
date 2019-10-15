@@ -340,7 +340,7 @@ Context for transaction emails:
     "name": "string",
     "url": "string"
   },
-  "recipient-role": {"one-of": ["provider", "customer"]},
+  "recipient-role": "string", // either "provider" or "customer"
   "other-party": {
     "id": "uuid",
     "first-name": "string",
@@ -443,9 +443,6 @@ available for each email template.
   the property. E.g.
   `{"marketplace": {"name": "string", "url": "string"}`, is an object
   with properties `name` and `url` that are strings.
-- An object with property `"one-of"` describe an enumeration with set
-  values. E.g. `{"one-of": ["provider", "customer"]}` has exactly two
-  possible values.
 - An object with property `"any-of"` describe an array of elements. For
   example, `{"any-of": ["customer", "provider"]}` is an array containing
   one of the values or both.
