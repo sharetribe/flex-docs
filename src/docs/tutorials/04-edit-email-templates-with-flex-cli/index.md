@@ -1,7 +1,7 @@
 ---
 title: Edit email templates with Flex CLI
 slug: edit-email-templates-with-flex-cli
-updated: 2019-10-02
+updated: 2019-10-15
 category: tutorials
 ingress:
   This tutorial shows you how to edit email templates with Flex CLI.
@@ -18,7 +18,7 @@ logged in with your API key. If not, it's recommended to first read the
 tutorial
 [Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/).
 
-We also recommend that you also go through the
+We also recommend that you go through the
 [Edit transaction process with Flex CLI](/tutorials/edit-transaction-process-with-flex-cli/)
 tutorial to understand process pulling, editing, pushing, and alias
 handling on a general level.
@@ -163,9 +163,14 @@ Variables within `{{ }}` are expanded and escaped, so that they are safe
 to place inside HTML content. As seen above, some variables have nested
 values, which can be accessed with dot `.` operator.
 
-The template syntax supports conditionals, loops, helpers and other
-constructs. For details see the
-[Email templates](/references/email-templates/) reference.
+In the example above, the `#with` block helper is used to access properties of
+the email context top level property `transaction`. So `customer.display-name`
+within the `{{#with transaction}}` block will refer to the value of
+`transaction.customer.display-name` in the email context.
+
+The template syntax supports conditionals, loops, helpers and other constructs.
+For details on the Handlebars constructs and a full description of the email
+context, see the [Email templates](/references/email-templates/) reference.
 
 ## Change a template
 

@@ -1,7 +1,7 @@
 ---
 title: Email templates
 slug: email-templates
-updated: 2019-10-04
+updated: 2019-10-15
 category: references
 ingress: Reference documentation for editing email templates.
 published: true
@@ -331,22 +331,28 @@ Context for transaction emails:
     "id": "uuid",
     "first-name": "string",
     "last-name": "string",
-    "display-name": "string"
+    "display-name": "string",
+    "private-data": "extended-data",
+    "public-data": "extended-data",
+    "protected-data": "extended-data"
   },
   "marketplace": {
     "name": "string",
-    "url" "string"
+    "url": "string"
   },
-  "recipient-role": {"one-of": ["provider", "customer"]},
+  "recipient-role": "string", // either "provider" or "customer"
   "other-party": {
     "id": "uuid",
     "first-name": "string",
     "last-name": "string",
-    "display-name": "string"
+    "display-name": "string",
+    "private-data": "extended-data",
+    "public-data": "extended-data",
+    "protected-data": "extended-data"
   },
   "transaction": {
     "id": "uuid",
-    "line-items": [
+    "tx-line-items": [
       {
         "code": "string",
         "unit-price": {
@@ -368,15 +374,21 @@ Context for transaction emails:
     },
     "booking": {
       "start": "date",
-      "end": "date"},
-      "reviews": [
+      "end": "date",
+      "displayStart": "date",
+      "displayEnd": "date"
+    },
+    "reviews": [
       {
         "content": "string",
         "subject": {
           "id": "uuid",
           "first-name": "string",
           "last-name": "string",
-          "display-name": "string"
+          "display-name": "string",
+          "private-data": "extended-data",
+          "public-data": "extended-data",
+          "protected-data": "extended-data"
         }
       }
     ],
@@ -384,7 +396,10 @@ Context for transaction emails:
       "id": "uuid",
       "first-name": "string",
       "last-name": "string",
-      "display-name": "string"
+      "display-name": "string",
+      "private-data": "extended-data",
+      "public-data": "extended-data",
+      "protected-data": "extended-data"
     },
     "payin-total": {
       "amount": "decimal",
@@ -392,17 +407,24 @@ Context for transaction emails:
     },
     "listing": {
       "id": "uuid",
-      "title": "string"
+      "title": "string,"
+      "private-data": "extended-data",
+      "public-data": "extended-data",
+      "metadata": "extended-data"
     },
     "customer": {
       "id": "uuid",
       "first-name": "string",
       "last-name": "string",
-      "display-name": "string"
+      "display-name": "string",
+      "private-data": "extended-data",
+      "public-data": "extended-data",
+      "protected-data": "extended-data"
     },
     "delayed-transition": {
       "run-at": "date"
-    }
+    },
+    "protected-data": "extended-data"
   }
 }
 
@@ -421,9 +443,6 @@ available for each email template.
   the property. E.g.
   `{"marketplace": {"name": "string", "url": "string"}`, is an object
   with properties `name` and `url` that are strings.
-- An object with property `"one-of"` describe an enumeration with set
-  values. E.g. `{"one-of": ["provider", "customer"]}` has exactly two
-  possible values.
 - An object with property `"any-of"` describe an array of elements. For
   example, `{"any-of": ["customer", "provider"]}` is an array containing
   one of the values or both.
@@ -433,8 +452,11 @@ available for each email template.
   helpers described above to display dates.
 - Objects with the exact two propeties of `"amount"` and `"currency"`
   are of type money, and can be passed as is to `money-amount` helper.
+- Properties of type `"extended-data"` define an extended data object.
+  Properties in such an object can have any valid JSON values, including JSON
+  data structures.
 - Remember to traverse the context properly. For example, in
-  `"transaction-transition"` `"payin-total"` is nested under
-  `"transaction"`. This means that the correct way to refer to that is
-  `transaction.payin-total` or using the
-  [builtin **`with`** helper](https://handlebarsjs.com/builtin_helpers.html).
+  `"transaction-transition"` `"payin-total"` is nested under `"transaction"`.
+  This means that the correct way to refer to that is `transaction.payin-total`
+  or using the [builtin **`with`**
+  helper](https://handlebarsjs.com/builtin_helpers.html).
