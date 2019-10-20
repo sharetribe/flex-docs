@@ -1,7 +1,7 @@
 ---
 title: Edit email templates with Flex CLI
 slug: edit-email-templates-with-flex-cli
-updated: 2019-10-15
+updated: 2019-10-23
 category: tutorials
 ingress:
   This tutorial shows you how to edit email templates with Flex CLI.
@@ -43,13 +43,13 @@ flex-cli process list -m my-test-marketplace
 
 The `process list` command prints out all the processes and their latest
 versions. You want to pick the correct process and version from this
-list. In this tutorial we will use the `preauth-with-nightly-booking`
+list. In this tutorial we will use the `preauth-nightly-booking`
 process, version 1.
 
 Let's pull that process version:
 
 ```
-flex-cli process pull --process preauth-with-nightly-booking --version 1 --path process -m my-test-marketplace
+flex-cli process pull --process preauth-nightly-booking --version 1 --path process -m my-test-marketplace
 ```
 
 This will create a `process/` directory that has all the process files
@@ -192,14 +192,14 @@ Now that you have edited the email templates, you need to push a new
 version of your process:
 
 ```
-flex-cli process push  -m my-test-marketplace --path process --process preauth-with-nightly-booking
+flex-cli process push  -m my-test-marketplace --path process --process preauth-nightly-booking
 ```
 
 You can see the new version in Console or using the `process list`
 command:
 
 ```
-flex-cli process list -m my-test-marketplace --process preauth-with-nightly-booking
+flex-cli process list -m my-test-marketplace --process preauth-nightly-booking
 ```
 
 ## Update alias
@@ -213,13 +213,13 @@ In the default process there is a `release-1` alias. Let's update that
 to point to the new process version:
 
 ```
-flex-cli process update-alias -m my-test-marketplace --process preauth-with-nightly-booking --alias release-1 --version 2
+flex-cli process update-alias -m my-test-marketplace --process preauth-nightly-booking --alias release-1 --version 2
 ```
 
 To see the updated alias, run the `process list` command again:
 
 ```
-flex-cli process list -m my-test-marketplace --process preauth-with-nightly-booking
+flex-cli process list -m my-test-marketplace --process preauth-nightly-booking
 ```
 
 ## Test the new notification
