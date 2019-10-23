@@ -1,7 +1,7 @@
 ---
 title: How to customize pricing
 slug: how-to-customize-pricing
-updated: 2019-10-03
+updated: 2019-10-24
 category: guides
 ingress:
   Flex allows lots of flexibility for your providers in terms of how
@@ -69,7 +69,7 @@ tutorial.
 > actions that rely on the booking length or the quantity of units. In
 > order to take custom pricing into use, price calculations that rely on
 > booking length or quantity of units also need to be converted into
-> using custom pricing. Commissions and price negatiation however don't
+> using custom pricing. Commissions and price negotiation however don't
 > require any changes as they can be combined with custom pricing.
 
 ## 2. Listing extended data
@@ -153,14 +153,15 @@ fetchSpeculatedTransaction(
 );
 ```
 
-And in `handleSubmit`:
+And in `orderParams`. Note that instead of listing id you should add the
+whole listing:
 
 ```js
-const requestParams = this.customPricingParams({
-  listing: this.state.pageData.listing,
-  cardToken,
-  bookingStart: speculatedTransaction.booking.attributes.start,
-  bookingEnd: speculatedTransaction.booking.attributes.end,
+const orderParams = this.customPricingParams({
+  listing: pageData.listing,
+  bookingStart: tx.booking.attributes.start,
+  bookingEnd: tx.booking.attributes.end,
+  ...optionalPaymentParams,
 });
 ```
 
@@ -176,7 +177,7 @@ This guide expects that the cleaning fee price is stored in listing
 public data in an object with two keys: `amount` and `currency`. The
 `amount` attribute holds the price in subunits whereas `currency` holds
 the currency code. For example, with a cleaning fee of 20€ the subunit
-amount is 2000 cents:
+amount is 2000 cents.
 
 ```js
 publicData: {
@@ -536,23 +537,22 @@ fetchSpeculatedTransaction(
 );
 ```
 
-In `handleSubmit`:
+Add the cleaning fee also to the `orderParams`:
 
 ```js
-const cleaningFeeLineItem = speculatedTransaction.attributes.lineItems.find(
-  item => item.code === LINE_ITEM_CLEANING_FEE
-);
-const cleaningFee = cleaningFeeLineItem
-  ? cleaningFeeLineItem.unitPrice
-  : null;
+  const cleaningFeeLineItem = speculatedTransaction.attributes.lineItems.find(
+      item => item.code === LINE_ITEM_CLEANING_FEE
+    );
+    const cleaningFee = cleaningFeeLineItem ? cleaningFeeLineItem.unitPrice : null;
 
-const requestParams = this.customPricingParams({
-  listing: this.state.pageData.listing,
-  cardToken,
-  bookingStart: speculatedTransaction.booking.attributes.start,
-  bookingEnd: speculatedTransaction.booking.attributes.end,
-  cleaningFee,
-});
+    const orderParams = this.customPricingParams({
+      listing: pageData.listing,
+      bookingStart: tx.booking.attributes.start,
+      bookingEnd: tx.booking.attributes.end,
+      ...optionalPaymentParams,
+      cleaningFee,
+    });
+};
 ```
 
 ## 6. Validate booking price on transaction page
