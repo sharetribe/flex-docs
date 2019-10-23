@@ -41,3 +41,7 @@ the [Flex Docs overview](./overview.md) documentation.
 To start coding, read the
 [Flex Docs coding conventions](./coding-conventions.md) to understand
 the philosophy of why and how things are done in a certain way.
+
+## Q: I want to add a terminal recording
+
+Check [How to record terminal session](./how-to-record-terminal-session.md).
