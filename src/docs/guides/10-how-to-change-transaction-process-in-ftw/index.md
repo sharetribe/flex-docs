@@ -1,7 +1,7 @@
 ---
 title: How to change transaction process setup in FTW
 slug: how-to-change-transaction-process-in-ftw
-updated: 2019-10-03
+updated: 2019-10-23
 category: guides
 ingress:
   This guide describes how to customize Flex Template for Web (FTW) to
@@ -10,7 +10,7 @@ published: true
 ---
 
 The default transaction process in FTW is
-`preauth-with-nightly-booking/release-1` and FTW is created to support
+`preauth-nightly-booking/release-1` and FTW is created to support
 states and transitions defined in that process.
 
 How the transaction process works behind the Marketplace API depends on
@@ -78,7 +78,7 @@ const stateDescription = {
   // id is defined only to support Xstate format.
   // However if you have multiple transaction processes defined,
   // it is best to keep them in sync with transaction process aliases.
-  id: 'preauth-with-nightly-booking/release-1',
+  id: 'preauth-nightly-booking/release-1',
 
    // This 'initial' state is a starting point for new transaction
   initial: STATE_INITIAL,
