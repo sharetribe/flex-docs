@@ -48,7 +48,12 @@ Initialize a new transaction from a listing.
 
 ### :action/calculate-tx-customer-commission
 
-Calculates customer commission and sets the transaction pay in amount.
+Calculates the customer commission, sets the transaction payin amount
+and adds a `:line-item/customer-commission` line-item.
+
+Please note that this action is meant to be executed only once.
+Subsequent executions will create new line items instead of modifying
+the existing one.
 
 **Preconditions**:
 
@@ -64,6 +69,13 @@ Calculates customer commission and sets the transaction pay in amount.
 ### :action/calculate-tx-provider-commission
 
 Calculates provider commission and sets the transaction pay out amount.
+
+Calculates the provider commission, sets the transaction payout amount
+and adds a `:line-item/provider-commission` line-item.
+
+Please note that this action is meant to be executed only once.
+Subsequent executions will create new line items instead of modifying
+the existing one.
 
 **Preconditions**:
 
@@ -248,8 +260,47 @@ Optionally takes booking display start and end times as well as seats.
 
 **Parameters**:
 
-- `bookingStart`, `bookingEnd`: timestamp, mandatory
-- `bookingDisplayStart`, `bookingDisplayEnd`: timestamp, optional
+- `bookingStart`: timestamp, mandatory.
+
+  Used as the booking start time if the `type` is set to `:time`
+
+  If the `type` is set to `:day`, the value is converted to UTC midnight
+  and used as the booking start date.
+
+  Marks the start of the timeslot that will be blocked from future
+  bookings if `observe-availability?` is set to `true`.
+
+  Available in transaction process as `:time/booking-start` timepoint.
+
+- `bookingEnd`: timestamp, mandatory
+
+  Used as the booking end time if the `type` is set to `:time`
+
+  If the `type` is set to `:day`, the value is converted to UTC midnight
+  and used as the booking end date. Please note that the `bookingEnd` is
+  exclusive.
+
+  Marks the end of the timeslot that will be blocked from future
+  bookings if `observe-availability?` is set to `true`.
+
+  Available in the transaction process as `:time/booking-end` timepoint.
+
+- `bookingDisplayStart`: timestamp, optional.
+
+  Moment of time that is displayed to a user as a booking start time.
+  Does not affect availability of the listing.
+
+  Available in the transaction process as `:time/booking-display-start`
+  timepoint.
+
+- `bookingDisplayStart`: timestamp, optional.
+
+  Moment of time that is displayed to a user as a booking end time. Does
+  not affect availability of the listing.
+
+  Available in the transaction process as `:time/booking-display-end`
+  timepoint.
+
 - `seats`, integer, optional, defaults to 1
 
 **Configuration options**:
