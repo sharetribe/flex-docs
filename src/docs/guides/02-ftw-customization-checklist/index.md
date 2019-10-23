@@ -1,7 +1,7 @@
 ---
 title: FTW customization checklist
 slug: ftw-customization-checklist
-updated: 2019-08-12
+updated: 2019-10-23
 category: guides
 ingress:
   This guide lists the important things to go through when customizing
@@ -68,12 +68,7 @@ FTW.
 - Update
   [routeConfiguration](https://github.com/sharetribe/flex-template-web/blob/master/src/routeConfiguration.js)
   if needed
-- Update all email templates in
-  [ext/default-mail-templates](https://github.com/sharetribe/flex-template-web/tree/master/ext/default-mail-templates):
-  .html, subject.txt, and text.txt
-  - See the
-    [Email template reference](https://www.sharetribe.com/docs/references/email-templates/)
-    for more information
+- Update transaction email templates. For more information, see [Edit email templates with Flex CLI](/tutorials/edit-email-templates-with-flex-cli/) tutorial and [Email templates](/references/email-templates/) reference article.
 - Update
   [config: bookingUnitType](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js)
   if needed
