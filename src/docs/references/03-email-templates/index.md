@@ -1,7 +1,7 @@
 ---
 title: Email templates
 slug: email-templates
-updated: 2019-10-15
+updated: 2019-10-23
 category: references
 ingress: Reference documentation for editing email templates.
 published: true
@@ -408,6 +408,10 @@ Context for transaction emails:
     "listing": {
       "id": "uuid",
       "title": "string,"
+      "availability-plan": {
+        "type": "string", // either availability-plan/time or availability-plan/day
+        "timezone": "string"
+      }
       "private-data": "extended-data",
       "public-data": "extended-data",
       "metadata": "extended-data"
@@ -455,6 +459,9 @@ available for each email template.
 - Properties of type `"extended-data"` define an extended data object.
   Properties in such an object can have any valid JSON values, including JSON
   data structures.
+- The listing `availability-plan` property `timezone` is in TZ time zone
+  database format, for example "Europe/Berlin". It is only available for plans
+  with type `availability-plan/time`.
 - Remember to traverse the context properly. For example, in
   `"transaction-transition"` `"payin-total"` is nested under `"transaction"`.
   This means that the correct way to refer to that is `transaction.payin-total`
