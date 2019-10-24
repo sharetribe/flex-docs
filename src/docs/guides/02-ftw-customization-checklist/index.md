@@ -68,7 +68,10 @@ FTW.
 - Update
   [routeConfiguration](https://github.com/sharetribe/flex-template-web/blob/master/src/routeConfiguration.js)
   if needed
-- Update transaction email templates. For more information, see [Edit email templates with Flex CLI](/tutorials/edit-email-templates-with-flex-cli/) tutorial and [Email templates](/references/email-templates/) reference article.
+- Update transaction email templates. For more information, see
+  [Edit email templates with Flex CLI](/tutorials/edit-email-templates-with-flex-cli/)
+  tutorial and [Email templates](/references/email-templates/) reference
+  article.
 - Update
   [config: bookingUnitType](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js)
   if needed

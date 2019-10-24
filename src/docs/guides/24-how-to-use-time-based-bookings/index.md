@@ -4,21 +4,21 @@ slug: how-to-take-time-based-bookings-into-use
 updated: 2019-10-24
 category: guides
 ingress:
-  Time-based bookings and availability management enable low level fine tuning
-  of possible booking models for listings.
+  Time-based bookings and availability management enable low level fine
+  tuning of possible booking models for listings.
 published: true
 ---
 
 ## 1. Process change
 
 To get started, the transaction process needs to be updated to support
-time-based bookings. The required change is to add a `type` parameter with value
-`time` to the `create-booking` action. The process also needs to be a unit-based
-process as calculating the quantity of booked items based on the length of a
-time-based booking is not supported.
+time-based bookings. The required change is to add a `type` parameter
+with value `time` to the `create-booking` action. The process also needs
+to be a unit-based process as calculating the quantity of booked items
+based on the length of a time-based booking is not supported.
 
-Using Flex CLI, you can customise your transaction process. You should have
-something like the following in your `process.edn` file:
+Using Flex CLI, you can customise your transaction process. You should
+have something like the following in your `process.edn` file:
 
 ```clojure
 {:name :transition/request-payment,
@@ -44,23 +44,26 @@ something like the following in your `process.edn` file:
  :to :state/pending-payment}
 ```
 
-To learn more about how to change the transaction process using Flex CLI, see
-the [Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+To learn more about how to change the transaction process using Flex
+CLI, see the
+[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
 tutorial.
 
-> Note that filtering a listings query by availability is not yet available when
-> using time-based bookings and availability. When taking time-based
-> availability into use, you should remove the date filter from search page. See
+> Note that filtering a listings query by availability is not yet
+> available when using time-based bookings and availability. When taking
+> time-based availability into use, you should remove the date filter
+> from search page. See
 > [the listings query endpoint reference documentation](https://www.sharetribe.com/api-reference/#query-listings)
 > for more information.
 
 ## Option 1: Use FTW-time beta version of the template
 
 With the time-based transaction process, you can use
-[FTW-time](https://github.com/sharetribe/ftw-time), a beta version of the
-template supporting time-based availability out of the box. See the background
-article about ([time-based template](/background/time-based-template/)) to learn
-more about what's new in FTW-time.
+[FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
+the template supporting time-based availability out of the box. See the
+background article about
+([time-based template](/background/time-based-template/)) to learn more
+about what's new in FTW-time.
 
 ## Option 2: Implement time-based availability in your own frontend application
 
@@ -70,15 +73,15 @@ consider.
 
 ### Time-based availability plans
 
-Listings that are intended to be booked using the time-based booking type need
-to have a time-based availability plan. If a time-based availability plan is not
-provided for a listing, the Flex API defaults to a day-based plan, which will
-not allow time-based bookings. Therefore, a time-based plan is required for
-time-based listings.
+Listings that are intended to be booked using the time-based booking
+type need to have a time-based availability plan. If a time-based
+availability plan is not provided for a listing, the Flex API defaults
+to a day-based plan, which will not allow time-based bookings.
+Therefore, a time-based plan is required for time-based listings.
 
-The availability plan is passed as parameter to the API when a listing is
-created or updated. The following code passes a time-based availability plan to
-the API using the
+The availability plan is passed as parameter to the API when a listing
+is created or updated. The following code passes a time-based
+availability plan to the API using the
 [Flex JavaScript SDK](https://github.com/sharetribe/flex-sdk-js):
 
 <!-- prettier-ignore -->
@@ -128,43 +131,47 @@ sdk.ownListings
 
 For more information about the plan attributes, see
 [the API documentation](https://www.sharetribe.com/api-reference/#ownlisting-availability-plan).
-By default the Flex Template for Web (FTW) defines a day-based plan for all
-listings in the
+By default the Flex Template for Web (FTW) defines a day-based plan for
+all listings in the
 [EditListingAvailabilityPanel](https://github.com/sharetribe/flex-template-web/blob/master/src/components/EditListingAvailabilityPanel/EditListingAvailabilityPanel.js)
 component.
 
-As for creating time-based bookings, they are created just like any other
-booking. The only limitations for start and end times are that the end needs to
-be after the start and they both need to be divisible by 5 minutes.
+As for creating time-based bookings, they are created just like any
+other booking. The only limitations for start and end times are that the
+end needs to be after the start and they both need to be divisible by 5
+minutes.
 
 ### Transaction processes and listing availability plans
 
-A time-based availability plan needs to be explicitly declared for a listing as
-the booking type depends on the transaction process like
-[section 1.](#1-process-change) mentioned. However, listings are not tied to any
-process so the availability plan needs to be defined in the listing itself.
+A time-based availability plan needs to be explicitly declared for a
+listing as the booking type depends on the transaction process like
+[section 1.](#1-process-change) mentioned. However, listings are not
+tied to any process so the availability plan needs to be defined in the
+listing itself.
 
 ### User interface changes for time-based bookings
 
 To effectively use time-based bookings, a user interface is required for
-managing the availability plan and exceptions of a listing and for defining the
-booking length.
+managing the availability plan and exceptions of a listing and for
+defining the booking length.
 
-At the moment, Flex Template for Web (FTW) does not provide an example user
-interface for initiating a booking shorter than one day or for managing
-time-based availability exceptions or plans. Thus, in order to use time-based
-bookings, you will need to implement these parts of the user interface yourself.
+At the moment, Flex Template for Web (FTW) does not provide an example
+user interface for initiating a booking shorter than one day or for
+managing time-based availability exceptions or plans. Thus, in order to
+use time-based bookings, you will need to implement these parts of the
+user interface yourself.
 
-In the future, we plan to ship a template app that covers time-based bookings
-too.
+In the future, we plan to ship a template app that covers time-based
+bookings too.
 
 ### Timezone
 
-With time-based bookings timezones play a larger role than with night- and
-day-based ones. This is the case especially if your marketplace operates on
-multiple timezones and there are listings that could be booked from a different
-timezone as the one in which the listing is located. In this case it could come
-in handy to store the listing's timezone into
-[public data](/references/extended-data/). This way it is possible to implement
-the booking so that when the booking takes place the customer and provider will
-have a shared understanding when the booking starts.
+With time-based bookings timezones play a larger role than with night-
+and day-based ones. This is the case especially if your marketplace
+operates on multiple timezones and there are listings that could be
+booked from a different timezone as the one in which the listing is
+located. In this case it could come in handy to store the listing's
+timezone into [public data](/references/extended-data/). This way it is
+possible to implement the booking so that when the booking takes place
+the customer and provider will have a shared understanding when the
+booking starts.
