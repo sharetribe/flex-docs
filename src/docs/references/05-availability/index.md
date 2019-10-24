@@ -98,9 +98,8 @@ availability plan for a listing can be found in the
 [time-based bookings guide](/guides/how-to-take-time-based-bookings-into-use/).
 
 > **Note:** By default,
-> [Flex Template for Web](https://github.com/sharetribe/flex-template-web/) uses
-> [day-based availability](https://www.sharetribe.com/docs/references/availability/#day-based-availability-management).
-> If you want to use in your marketplace instead, it's recommended that you start with
+> [Flex Template for Web](https://github.com/sharetribe/flex-template-web/) uses day-based availability.
+> If you want to use time-based availability in your marketplace instead, it's recommended that you start with
 > [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
 > a new Flex Template for Web, which supports time-based availability out of the box.
 
