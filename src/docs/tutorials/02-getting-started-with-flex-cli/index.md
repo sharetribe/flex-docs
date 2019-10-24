@@ -68,11 +68,7 @@ flex-cli help login
 
 ## Get an API key
 
-To log in you need to have an API key.
-
-API keys are per marketplace and user meaning that in case you have two
-different marketplace (e.g. test marketplace and production marketplace)
-you need to have two different API keys.
+To log in you need to have a personal API key.
 
 To get an API key, log in to Console go to
 [Account > API keys](https://flex-console.sharetribe.com/api-keys).
@@ -100,6 +96,9 @@ The command will prompt you your API key.
 
 After successful log in, you will be greeted by your admin email
 address.
+
+Once logged in, you can work with any marketplace that you have been granted
+access to.
 
 ## List processes and process versions
 
