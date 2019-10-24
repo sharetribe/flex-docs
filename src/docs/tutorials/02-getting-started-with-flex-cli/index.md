@@ -20,7 +20,7 @@ email templates.
 For this tutorial you should have basic knowledge of command-line and
 how to run basic commands.
 
-Let's get started!
+Now, let's get started!
 
 ## Install Flex CLI
 
