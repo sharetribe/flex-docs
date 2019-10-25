@@ -44,4 +44,5 @@ the philosophy of why and how things are done in a certain way.
 
 ## Q: I want to add a terminal recording
 
-Check [How to record terminal session](./how-to-record-terminal-session.md).
+Check
+[How to record terminal session](./how-to-record-terminal-session.md).

@@ -1,7 +1,7 @@
 ---
 title: How to Customize FTW
 slug: how-to-customize-ftw
-updated: 2019-01-28
+updated: 2019-10-24
 category: guides
 ingress:
   So you've decided to build your own marketplace using Flex Template
@@ -42,6 +42,15 @@ from the main (upstream) repository to your custom repository.
 
 See the [Fork a repo](https://help.github.com/en/articles/fork-a-repo)
 documentation for instructions for forking a repository in GitHub.
+
+> **Note:** By default,
+> [FTW](https://github.com/sharetribe/flex-template-web/) is using
+> [day-based availability](https://www.sharetribe.com/docs/references/availability/#day-based-availability-management).
+> If you are planning to use
+> [time-based availability](https://www.sharetribe.com/docs/references/availability/#time-based-availability-management)
+> in your marketplace, you can start with
+> [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
+> the template supporting time-based availability out of the box.
 
 In the directory you want to create the project in:
 

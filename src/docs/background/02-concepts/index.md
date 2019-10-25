@@ -1,7 +1,7 @@
 ---
 title: Concepts
 slug: concepts
-updated: 2019-10-04
+updated: 2019-10-24
 category: background
 ingress:
   Explanation of the key concepts we use when we talk about Sharetribe
@@ -38,6 +38,15 @@ scratch. Flex Template for Web is built with Node.js + React/Redux.
 Information about using Flex Template for Web can be found in the
 [Getting started with FTW](/tutorials/getting-started-with-ftw/)
 tutorial.
+
+> **Note:** By default,
+> [FTW](https://github.com/sharetribe/flex-template-web/) is using
+> [day-based availability](https://www.sharetribe.com/docs/references/availability/#day-based-availability-management).
+> If you are planning to use
+> [time-based availability](https://www.sharetribe.com/docs/references/availability/#time-based-availability-management)
+> in your marketplace, you can start with
+> [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
+> the template supporting time-based availability out of the box.
 
 ### Flex CLI
 

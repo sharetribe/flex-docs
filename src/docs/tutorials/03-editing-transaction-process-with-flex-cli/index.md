@@ -249,8 +249,7 @@ break your marketplace front-end if you haven't updated it to work with
 the new process.
 
 The commission is now changed! Next time you initiate a new transaction
-with the alias `preauth-with-booking/release-1` it uses 30%
-commission.
+with the alias `preauth-with-booking/release-1` it uses 30% commission.
 
 ## Summary
 

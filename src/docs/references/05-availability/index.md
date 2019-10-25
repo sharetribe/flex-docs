@@ -1,7 +1,7 @@
 ---
 title: Listing availability management
 slug: availability
-updated: 2019-04-11
+updated: 2019-10-24
 category: references
 ingress: Reference documentation for listing availability management.
 published: true
@@ -97,7 +97,30 @@ and from 1 PM to 6 PM. More information on how to set a time-based
 availability plan for a listing can be found in the
 [time-based bookings guide](/guides/how-to-take-time-based-bookings-into-use/).
 
-### Interpretation of availability exceptions and bookings
+> **Note:** By default,
+> [Flex Template for Web](https://github.com/sharetribe/flex-template-web/) uses day-based availability.
+> If you want to use time-based availability in your marketplace instead, it's recommended that you start with
+> [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
+> a new Flex Template for Web, which supports time-based availability out of the box.
+
+### Timeslots, availability plans and exceptions
+
+Timeslots are periods of time, which are available to be booked. E.g. if
+you have set a plan with 1 available seat from 7-22 on Mondays, that
+means that one person can book 5 minutes 07:00 - 07:05. Then the next
+customer can only book times within the range of 07:05 - 22:00 on the
+same day. So, the plan creates a weekly schedule, against which
+availability exceptions and bookings are making reservations.
+
+Exceptions can be used for restricting availability on a specific day.
+E.g. if you have set availability to 07 - 22 on Mondays and you add an
+exception 21-22 with seat 0 on Monday 28.10.2019, the timeslots query
+returns timeslot 07-21 on that day if there are no bookings.
+
+Exceptions can also be used for expanding the availability on a specific
+day. E.g. if you have set availability to 07 - 22 on Mondays and you add
+an exception 22-23 with seat 1 on Monday 28.10.2019, the timeslots query
+returns timeslot 07-23 on that day if there are no bookings.
 
 For time-based plans, both availability exceptions and bookings are
 interpreted literally, i.e. covering the exact time intervals determined

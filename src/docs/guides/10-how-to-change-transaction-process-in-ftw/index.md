@@ -1,7 +1,7 @@
 ---
 title: How to change transaction process setup in FTW
 slug: how-to-change-transaction-process-in-ftw
-updated: 2019-10-23
+updated: 2019-10-24
 category: guides
 ingress:
   This guide describes how to customize Flex Template for Web (FTW) to
@@ -10,8 +10,8 @@ published: true
 ---
 
 The default transaction process in FTW is
-`preauth-nightly-booking/release-1` and FTW is created to support
-states and transitions defined in that process.
+`preauth-nightly-booking/release-1` and FTW is created to support states
+and transitions defined in that process.
 
 How the transaction process works behind the Marketplace API depends on
 how you process is customised in our backend. To customise the
@@ -27,6 +27,15 @@ processes work from a background info article about the
 
 The following guide will help you to customise the process flow in FTW
 to match the process in our backend.
+
+> **Note:** By default,
+> [FTW](https://github.com/sharetribe/flex-template-web/) is using
+> [day-based availability](https://www.sharetribe.com/docs/references/availability/#day-based-availability-management).
+> If you are using
+> [time-based availability](https://www.sharetribe.com/docs/references/availability/#time-based-availability-management)
+> in your marketplace, you can start with
+> [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
+> the template supporting time-based availability out of the box.
 
 ## 1. Change the transaction process alias
 

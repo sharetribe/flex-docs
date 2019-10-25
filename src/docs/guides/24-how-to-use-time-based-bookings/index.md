@@ -1,7 +1,7 @@
 ---
 title: How to take time-based bookings into use
 slug: how-to-take-time-based-bookings-into-use
-updated: 2019-10-03
+updated: 2019-10-24
 category: guides
 ingress:
   Time-based bookings and availability management enable low level fine
@@ -56,7 +56,18 @@ tutorial.
 > [the listings query endpoint reference documentation](https://www.sharetribe.com/api-reference/#query-listings)
 > for more information.
 
-## 2. Time-based availability plans
+## Option 1: Use a new Flex template FTW-time (recommended)
+
+With the time-based transaction process, you can use
+[FTW-time](https://github.com/sharetribe/ftw-time), a new Flex Template that supports time-based availability out of the box. FTW-time is still in beta, so it might experience heavy changees, but it's already ready to be used. [Learn more about what's new in FTW-time](/background/time-based-template/).
+
+## Option 2: Implement time-based availability in your own frontend application
+
+If you choose to implement time-based availability in your own frontend
+application (like the original Flex Template for Web) there are couple of things you need to
+consider.
+
+### Time-based availability plans
 
 Listings that are intended to be booked using the time-based booking
 type need to have a time-based availability plan. If a time-based
@@ -125,8 +136,6 @@ As for creating time-based bookings, they are created just like any
 other booking. The only limitations for start and end times are that the
 end needs to be after the start and they both need to be divisible by 5
 minutes.
-
-## 3. A few things to consider
 
 ### Transaction processes and listing availability plans
 
