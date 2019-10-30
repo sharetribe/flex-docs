@@ -17,7 +17,10 @@ templates.
 
 This tutorial expects that you have already installed Flex CLI and are
 logged in with your API key. It's recommended to first read the tutorial
-[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/). If you haven't read [how transaction processes work in Flex](/background/transaction-process/), it's a good idea to do that before starting this tutorial.
+[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/).
+If you haven't read
+[how transaction processes work in Flex](/background/transaction-process/),
+it's a good idea to do that before starting this tutorial.
 
 In this tutorial we change the marketplace commission percantage. After
 we've made the change, we'll push the updated transaction process
