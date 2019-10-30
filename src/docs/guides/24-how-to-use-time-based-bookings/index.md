@@ -59,13 +59,17 @@ tutorial.
 ## Option 1: Use a new Flex template FTW-time (recommended)
 
 With the time-based transaction process, you can use
-[FTW-time](https://github.com/sharetribe/ftw-time), a new Flex Template that supports time-based availability out of the box. FTW-time is still in beta, so it might experience heavy changees, but it's already ready to be used. [Learn more about what's new in FTW-time](/background/time-based-template/).
+[FTW-time](https://github.com/sharetribe/ftw-time), a new Flex Template
+that supports time-based availability out of the box. FTW-time is still
+in beta, so it might experience heavy changees, but it's already ready
+to be used.
+[Learn more about what's new in FTW-time](/background/time-based-template/).
 
 ## Option 2: Implement time-based availability in your own frontend application
 
 If you choose to implement time-based availability in your own frontend
-application (like the original Flex Template for Web) there are couple of things you need to
-consider.
+application (like the original Flex Template for Web) there are couple
+of things you need to consider.
 
 ### Time-based availability plans
 

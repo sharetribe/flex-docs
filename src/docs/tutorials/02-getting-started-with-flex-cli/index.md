@@ -97,8 +97,8 @@ The command will prompt you your API key.
 After successful log in, you will be greeted by your admin email
 address.
 
-Once logged in, you can work with any marketplace that you have been granted
-access to.
+Once logged in, you can work with any marketplace that you have been
+granted access to.
 
 ## List processes and process versions
 
