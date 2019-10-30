@@ -65,6 +65,19 @@ the existing one.
 
 - `commission`: decimal, mandatory. Acts as a multiplier on the
   transaction total, e.g. `0.1M` for a 10% commission.
+- `min`: a map with keys `:amount` and `:currency`, optional. Acts as a
+  minimum commission, e.g. {:amount 2M, :currency "EUR"} for a 2EUR
+  minimum.
+- `max`: a map with keys `:amount` and `:currency`, optional. Acts as a
+  maximum commission, e.g. {:amount 20M, :currency "EUR"} for a 20EUR
+  maximum.
+
+Where:
+
+- `amount`, decimal, mandatory. The value of a monetary unit. A decimal
+  followed with a `M`, e.g. 10M.
+- `currency`, string, mandatory, The three letter currency code of a
+  monetary unit, e.g. "EUR".
 
 ### :action/calculate-tx-provider-commission
 
@@ -87,6 +100,19 @@ the existing one.
 
 - `commission`: decimal, mandatory. Acts as a multiplier on the
   transaction total, e.g. `0.1M` for a 10% commission.
+- `min`: a map with mandatory keys `:amount` and `:currency`, optional.
+  Acts as a minimum commission, e.g. {:amount 2M, :currency "EUR"} for a
+  2EUR minimum.
+- `max`: a map with keys `:amount` and `:currency`, optional. Acts as a
+  maximum commission, e.g. {:amount 20M, :currency "EUR"} for a 20EUR
+  minimum..
+
+Where:
+
+- `amount`, decimal, mandatory. The value of a monetary unit. A decimal
+  followed with a `M`, e.g. 10M.
+- `currency`, string, mandatory, The three letter currency code of a
+  monetary unit, e.g. "EUR".
 
 ### :action/calculate-tx-nightly-total
 
