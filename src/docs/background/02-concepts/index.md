@@ -202,11 +202,11 @@ example, how much and what kind of information they want their users to
 fill in to their profiles. Extended data can also be attached to
 listings and transactions.
 
-### Extended data schema
+### Extended data search schema
 
-It's possible to define schemas for some extended data types. Defining a
-schema allows that data type to be indexed so that search queries can be
-made for that data.
+It's possible to define search schemas for some extended data
+types. Defining a schema allows that data type to be indexed so that
+search queries can be made for that data.
 
 ### Listing
 

@@ -65,23 +65,23 @@ First step for adding a new filter is to make sure that the data being
 used for filtering is saved in the listing's `publicData` attribute. On
 how to achieve this, please refer to the
 [How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
-guide. Another aspect in search filters is that the public data needs to
-be indexed in the API. This is currently achieved with a manual
-operation done by the Sharetribe support. Once a public data attribute
-is added to the listings and the data attribute is indexed, the listing
-searches can be filtered by that attribute by adding a query parameter
-that consists of a preceding "pub\_" and the attribute name, so for the
-_capacity_ attribute the parameter would be "pub_capacity".
+guide. Another aspect in search filters is that a [search
+schema](/references/extended-data/#search-schema) needs to be added to
+the data in order for API to index it for search. Adding search schema
+can be done by the [Flex
+CLI](/tutorials/getting-started-with-flex-cli/).
+
+Once a public data attribute is added to the listings and the data
+attribute is indexed, the listing searches can be filtered by that
+attribute by adding a query parameter that consists of a preceding
+"pub\_" and the attribute name, so for the _capacity_ attribute the
+parameter would be "pub_capacity".
 
 Further reading on public data can be found in the
 [How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
 guide.
 
 > **Note:** Only top-level attributes can be indexed.
-
-> **Note:** Please contact the Sharetribe support in order to update
-> your listing index schema when planning to use new listing fields as
-> search filters.
 
 ### Common changes
 
