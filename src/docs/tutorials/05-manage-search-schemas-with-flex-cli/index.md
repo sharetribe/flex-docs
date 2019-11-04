@@ -91,23 +91,23 @@ stored in an array, so the schema type should be `multi-enum`.
 
 Let's first see what search schemas we have defined:
 
-```sh
+```shell
 flex-cli search -m my-marketplace
 ```
 
 Let's add the search schemas for the category and amenities:
 
-```sh
+```shell
 flex-cli search set --key category --type enum --scope public -m my-marketplace
 ```
 
-```sh
+```shell
 flex-cli search set --key amenities --type multi-enum --scope public -m my-marketplace
 ```
 
 We should now see the details of those schemas:
 
-```sh
+```shell
 flex-cli search -m my-marketplace
 ```
 
