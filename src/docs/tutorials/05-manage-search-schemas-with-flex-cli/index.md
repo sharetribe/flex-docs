@@ -20,26 +20,26 @@ logged in with your API key. If not, it's recommended to first read the
 tutorial
 [Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/).
 
-In this tutorial we will add data schemas for the `category` and
+In this tutorial, we will add data schemas for the `category` and
 `amenities` public data fields in listings. New marketplaces don't have
-any schemas in the backend by default since they are used in various
-ways. However, FTW (Flex Template for Web) does define filters for
+any schemas in the backend by default since the needs of marketplaces
+vary. However, FTW (Flex Template for Web) does define filters for
 category and amenities in its UI (user interface). This tutorial will
 make those filters work as expected.
 
 ## Extended data types and schema scopes
 
 There are various kinds of extended data. Listings support public data,
-private data, and metadata. All these are editable in Console by the
-operator, but only public data and metadata can be seen by other users.
-For this reason, search schemas can be scoped either to `public` or
-`metadata`. To see more details abour extended data, see the
+private data, and public metadata. All these are editable in Console by
+the operator, but only public data and metadata can be seen by other
+users. For this reason, search schemas can be scoped either to `public`
+or `metadata`. To see more details about extended data, see the
 [Extended data](/references/extended-data/) reference.
 
 You can store any JSON data in extended data, but only top-level keys of
 certain type can have search schemas. If there is a mismatch between the
-defined schema and what is stored to extended data, the indexing just
-skips those values.
+defined schema and what is stored to the extended data, the indexing
+just skips those values.
 
 ## Schema types and cardinalities
 
@@ -52,8 +52,8 @@ skips those values.
 | text       | one         | `stoveDescription: "Modern and powerful electric stove."` | `pub_stoveDescription=powerful%20modern` |
 
 Note that the scope in the examples above is `public`. If the value is
-store to metadata, the query parameter should start with `meta_` instead
-of `pub_`.
+stored to public metadata, the query parameter should start with `meta_`
+instead of `pub_`.
 
 ### Providing multiple query params for a single field
 
@@ -84,7 +84,7 @@ endpoint API reference.
 ## Adding schemas
 
 FTW defines two search filters in listing public data: category and
-amenities. Category is something that is selected from a drodown of
+amenities. A category is something that is selected from a drodown of
 options, so the schema type should be `enum`. A listing can have
 multiple amenities that are also selected from a set of options and
 stored in an array, so the schema type should be `multi-enum`.
@@ -115,7 +115,7 @@ If you wish to remove a schema, you can use the `search unset` command.
 
 ## Summary
 
-In this tutorial we used Flex CLI to define search schemas for our
+In this tutorial, we used Flex CLI to define search schemas for our
 marketplace. We used the category and amenities as examples as FTW
 expects those.
 
