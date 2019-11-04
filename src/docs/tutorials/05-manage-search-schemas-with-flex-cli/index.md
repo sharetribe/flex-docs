@@ -91,25 +91,21 @@ stored in an array, so the schema type should be `multi-enum`.
 
 Let's first see what search schemas we have defined:
 
-```shell
-flex-cli search -m my-marketplace
-```
+![Initial search schemas](./search-schemas-empty.png)
 
 Let's add the search schemas for the category and amenities:
 
 ```shell
-flex-cli search set --key category --type enum --scope public -m my-marketplace
+flex-cli search set --key category --type enum --scope public -m my-test-marketplace
 ```
 
 ```shell
-flex-cli search set --key amenities --type multi-enum --scope public -m my-marketplace
+flex-cli search set --key amenities --type multi-enum --scope public -m my-test-marketplace
 ```
 
 We should now see the details of those schemas:
 
-```shell
-flex-cli search -m my-marketplace
-```
+![Search schemas for category and amenities](./search-schemas-added.png)
 
 If you wish to remove a schema, you can use the `search unset` command.
 
