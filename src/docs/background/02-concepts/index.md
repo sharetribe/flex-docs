@@ -204,9 +204,9 @@ listings and transactions.
 
 ### Extended data search schema
 
-It's possible to define search schemas for some extended data
-types. Defining a schema allows that data type to be indexed so that
-search queries can be made for that data.
+It's possible to define search schemas for some extended data types.
+Defining a schema allows that data type to be indexed so that search
+queries can be made for that data.
 
 ### Listing
 
