@@ -28,7 +28,7 @@ text content of a listing. The listing attributes that are matched in
 keyword search by default are _title_ and _description_. Listing public
 data fields can also be used in the keyword search by defining them to
 have type `text` in the marketplace's
-[listing public data schema](/references/extended-data/#data-schema).
+[listing public search schema](/references/extended-data/#search-schema).
 All `text` public data fields with defined schema are indexed for
 keyword search.
 

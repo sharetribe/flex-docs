@@ -11,7 +11,7 @@ _Extended data_ is a set of arbitrary keys and values store with the API
 resources. The values for the keys can be any valid JSON values,
 including a JSON object (hash). This provides API clients with the
 capability to store arbitrary structured data for the supported resource
-types. Via data schema we also support querying/filtering by the
+types. Via search schema we also support querying/filtering by the
 extended data for some value types.
 
 ## Types of extended data
@@ -75,10 +75,10 @@ for linking listings with external services.
 _Private metadata_ is only readable and writable by marketplace
 operators.
 
-## Data schema
+## Search schema
 
 Extended data is available out of the box and can be written and read
-via the Marketplace API without any prior configuration. _Data schema_
+via the Marketplace API without any prior configuration. _Search schema_
 may optionally be defined for some value types of extended data. When a
 schema is provided for a given extended data key, the API can use this
 information to make querying the extended data possible via some API
@@ -86,7 +86,13 @@ endpoints. For instance
 [/listings/query](https://www.sharetribe.com/api-reference/#query-listings)
 supports querying listings by public data.
 
-> **Note:** Only top-level values in extended data can have a schema.
+Search schemas can be managed by [Flex
+CLI](/tutorials/getting-started-with-flex-cli/). With the CLI, you can
+list, set and unset search schemas to listing's Public data and Public
+metadata. The commands to manage search schemas are:
 
-> **Note:** Please contact the Sharetribe support in order to update
-> data schema.
+* `flex-cli search` List all defined data schemas
+* `flex-cli search set` Set (create or update) data schema
+* `flex-cli search unset` Unset data schema
+
+> **Note:** Only top-level values in extended data can have a schema.
