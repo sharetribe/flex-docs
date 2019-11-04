@@ -51,13 +51,18 @@ Initialize a new transaction from a listing.
 Calculates the customer commission, sets the transaction payin amount
 and adds a `:line-item/customer-commission` line-item.
 
-Please note that this action is meant to be executed only once.
 Subsequent executions will create new line items instead of modifying
-the existing one.
+the existing one. Commission calculations are based on
+transaction/totalPrice and will accumulate the payinTotal. For example,
+a total price of 100 EUR and two consequtive 10 % customer commissions
+will result in an 120 EUR payin.
 
 **Preconditions**:
 
 - Transaction must have a total price
+- All currencies must match the listing currency
+- Min and max commissions need to be in correct order, i.e, min needs to
+  be smaller than max
 
 **Parameters**: -
 
@@ -81,18 +86,23 @@ Where:
 
 ### :action/calculate-tx-provider-commission
 
-Calculates provider commission and sets the transaction pay out amount.
-
 Calculates the provider commission, sets the transaction payout amount
 and adds a `:line-item/provider-commission` line-item.
 
-Please note that this action is meant to be executed only once.
 Subsequent executions will create new line items instead of modifying
-the existing one.
+the existing one. Commission calculations are based on
+transaction/totalPrice and will accumulate the payoutTotal. For example,
+a total price of 100 EUR and two consequtive 10 % provider commissions
+will result in an 80 EUR payout.
+
+Too large commission (i.e. a negative payout) will cause an error.
 
 **Preconditions**:
 
 - Transaction must have a total price
+- All currencies must match the listing currency
+- Min and max commissions need to be in correct order, i.e, min needs to
+  be smaller than max
 
 **Parameters**: -
 
@@ -106,6 +116,68 @@ the existing one.
 - `max`: a map with keys `:amount` and `:currency`, optional. Acts as a
   maximum commission, e.g. {:amount 20M, :currency "EUR"} for a 20EUR
   minimum..
+
+Where:
+
+- `amount`, decimal, mandatory. The value of a monetary unit. A decimal
+  followed with a `M`, e.g. 10M.
+- `currency`, string, mandatory, The three letter currency code of a
+  monetary unit, e.g. "EUR".
+
+### :action/calculate-tx-customer-fixed-commission
+
+Calculates a fixed commission for customer, sets the transaction pay out
+amount and adds a `:line-item/customer-fixed-commission` line-item.
+
+Subsequent executions will create new line items instead of modifying
+the existing one and will accumulate the `payinTotal`. For example, a
+total price of 100 EUR and two consequtive 10 EUR customer fixed
+commissions will result in an 120 EUR payin.
+
+**Preconditions**:
+
+- Transaction must have a total price
+- Commission currency must match the listing currency
+
+**Parameters**: -
+
+**Configuration options**:
+
+- `commission`: a map with mandatory keys `:amount` and `:currency`,
+  mandatory. Acts as the fixed commission for a transaction, eg.
+  `{:amount 10M :currency "EUR"}`.
+
+Where:
+
+- `amount`, decimal, mandatory. The value of a monetary unit. A decimal
+  followed with a `M`, e.g. 10M.
+- `currency`, string, mandatory, The three letter currency code of a
+  monetary unit, e.g. "EUR".
+
+### :action/calculate-tx-provider-fixed-commission
+
+Calculates a fixed commission for provider, sets the transaction pay out
+amount and adds a `:line-item/provider-fixed-commission` line-item.
+
+Subsequent executions will create new line items instead of modifying
+the existing one and will accumulate the `payoutTotal`. For example, a
+total price of 100 EUR and two consequtive 10 EUR provider fixed
+commissions will result in an 80 EUR payout.
+
+Too large commission (i.e. a negative payout) will cause an error.
+
+**Preconditions**:
+
+- Transaction must have a total price
+- Commission currency must match the listing currency
+
+**Parameters**: -
+
+**Configuration options**:
+
+- `commission`: a map with mandatory keys `:amount` and `:currency`,
+  mandatory. Acts as the fixed commission for a transaction, eg.
+  `{:amount 10M :currency "EUR"}`.
 
 Where:
 
