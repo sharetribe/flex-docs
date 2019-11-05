@@ -131,7 +131,7 @@ actions you can implement a subscription-based model.
 One way to implement subscription-based marketplace would involve the
 following:
 
-1. Set listing approval on. Our support can turn on listing approval on
+1. Turn on listing approval. Our support can turn on listing approval
    after which all listing need to be approved by admins before they can
    be posted.
 2. Require all providers to subscribe through
