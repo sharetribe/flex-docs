@@ -11,6 +11,7 @@
 /docs/background/overview/  /docs/background/introducing-flex/
 /docs/references/ftw/  /docs/tutorials/getting-started-with-ftw/
 /docs/background/transaction-engine/  /docs/background/transaction-process/
+/docs/background/what-is-the-difference-between-flex-and-go-open-source/ /docs/background/what-is-the-difference-between-flex-and-go-source-available/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
