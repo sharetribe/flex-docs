@@ -5,7 +5,7 @@ updated: 2019-10-23
 category: background
 ingress:
   Flex provides configurable options for monetizing your platform. You
-  can collect commissions from providers, customers or both. This
+  can collect commissions from providers, customers, or both. This
   article will provide you with basic information on the mechanisms
   supported by Flex for monetizing your platform.
 published: true
@@ -13,8 +13,8 @@ published: true
 
 ## Introduction
 
-If you have a ready model for setting the pricing on your marketplace,
-this article will provide you with basic information on the options Flex
+If you have already defined a pricing model for your marketplace, this
+article will provide you with basic information on the options Flex
 provides and how to take them into use.
 
 If you need more information on how to decide the pricing, our
@@ -28,8 +28,8 @@ As a background, familiarizing with the
 [transaction process actions](/references/transaction-process-actions/),
 and
 [the tutorial for editing the process with flex-cli ](/tutorials/edit-transaction-process-with-flex-cli/)
-give you a good understanding of the concepts discussed in this
-article. In addition, the article describing
+give you a good understanding of the concepts discussed in this article.
+In addition, the article describing
 [how to solve payout problems](/background/solving-payout-problems)
 provides valuable information about how the payment flow in Flex works.
 
@@ -41,12 +41,12 @@ and `calculate-tx-customer-commission`. These actions will calculate a
 commission for your marketplace and charge them subsequently from either
 provider or customer.
 
-The percentage-based commission actions calculate the commissions from the
-total price of the transaction and therefore these actions should be
-last in the chain of actions calculating the price. The customer commission
-is counted as an additional cost for the customer, i.e. it is added to
-the payin. Consequently, the provider commission is deducted from the
-set price, i.e. it reduces the payout.
+The percentage-based commission actions calculate the commissions from
+the total price of the transaction and therefore these actions should be
+last in the chain of actions calculating the price. The customer
+commission is counted as an additional cost for the customer, i.e. it is
+added to the payin. Consequently, the provider commission is deducted
+from the set price, i.e. it reduces the payout.
 
 You can use both actions at the same time. This means that you can
 charge a part of the marketplace fees from the customer and a part from
@@ -100,8 +100,8 @@ commissions since the payout can't be negative.
 
 ## Fixed commissions
 
-Besides the percentage-based actions, Flex provides two actions
-for setting a fixed commission. You can use
+Besides the percentage-based actions, Flex provides two actions for
+setting a fixed commission. You can use
 `calculate-tx-provider-fixed-commission` and
 `calculate-tx-customer-fixed-commission` to set a fixed commission for
 both, customer and provider.
@@ -118,6 +118,11 @@ both, customer and provider.
 For a 100 EUR listing, this would result 110.5 EUR payin for the
 customer and a 85 EUR payout for the provider. The marketplace would
 receive 25.5 EUR minus Stripe fees.
+
+The currency and negative payout preconditions apply here as well. All
+the currencies of the transaction need to match and you need to make
+sure that the transaction total price will be above the minimum amount
+for provider commissions since the payout can't be negative.
 
 ## Subscription-based model
 
