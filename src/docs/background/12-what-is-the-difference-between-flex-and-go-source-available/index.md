@@ -1,5 +1,5 @@
 ---
-title: What is the difference between Flex and Go Open Source?
+title: What is the difference between Flex and Go Source Available?
 slug: what-is-the-difference-between-flex-and-go-source-available
 updated: 2019-11-05
 category: background
