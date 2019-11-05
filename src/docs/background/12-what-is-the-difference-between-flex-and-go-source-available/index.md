@@ -1,15 +1,15 @@
 ---
-title: What is the difference between Flex and Go Open Source?
-slug: what-is-the-difference-between-flex-and-go-open-source
-updated: 2019-04-29
+title: What is the difference between Flex and Go Source Available?
+slug: what-is-the-difference-between-flex-and-go-source-available
+updated: 2019-11-05
 category: background
 ingress:
   This table illustrates the essential differences between Sharetribe
-  Flex and Sharetribe Go Open Source.
+  Flex and Sharetribe Go Source-Available (Community Edition).
 published: true
 ---
 
-|                                                      |       Flex        |        Go OS        |
+|                                                      |       Flex        |        Go CE        |
 | ---------------------------------------------------- | :---------------: | :-----------------: |
 | **Basics**                                           |                   |                     |
 | Monthly price of the software                        | Starting at \$329 | Starting at \$160\* |
@@ -66,7 +66,7 @@ have been designed so that it is very quick and easy to adjust them. You
 can even create a completely new transaction process without coding
 anything.
 
-With Go Open Source, every change needs to be coded from scratch.
+With Go Community Edition, every change needs to be coded from scratch.
 Furthermore, you'll have to do a lot of refactoring to develop
 efficiently. This results in much more developer work needed and a worse
 developer experience.
