@@ -31,7 +31,7 @@ and
 give you a good understanding of the concepts discussed in this
 article. In addition, the article describing
 [how to solve payout problems](/background/solving-payout-problems)
-provides valuable information about how the payment Flow in Flex works.
+provides valuable information about how the payment flow in Flex works.
 
 ## Percentage-based commissions
 
