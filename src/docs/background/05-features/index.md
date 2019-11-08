@@ -331,16 +331,12 @@ or even personalize the templates based on who the recipient is.
 
 ## Multiple languages and currencies
 
-You can use as many languages as you want in your marketplace. Flex
-Template for Web includes default translations for English, Spanish,
+Flex Template for Web includes default translations for English, Spanish,
 French and German, but you can easily translate it to the language of
-your choice. \
- \
-You can also use any currencies you want, as long as they're in the list
-of [100+ currencies supported by Stripe](https://stripe.com/docs/currencies).
-Remember, though, that your platform and your providers who accept online
-payments need to be in a [country supported by Stripe](https://stripe.com/global)
-(countries in "Request an invite" mode are not yet supported).
+your choice. With some development work you can make your marketplace multilingual, allowing your users to use it in the language of their choice.
+
+You can also use any currency you want, as long as it's in the list
+of [100+ currencies supported by Stripe](https://stripe.com/docs/currencies). With some development work, you can have your marketplace work with multiple currencies. Remember, though, that if you're looking to process online payments in your marketplace, your platform should be based in one of the [countries supported by Stripe custom accounts](https://stripe.com/docs/connect/custom-accounts#requirements) and everyone receiving money through your marketplace should be based in one of the [countries supported by Stripe](https://stripe.com/global).
 
 ## Custom design
 
