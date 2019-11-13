@@ -1,7 +1,7 @@
 ---
 title: Edit email templates with Flex CLI
 slug: edit-email-templates-with-flex-cli
-updated: 2019-10-23
+updated: 2019-11-14
 category: tutorials
 ingress:
   This tutorial shows you how to edit email templates with Flex CLI.
@@ -37,7 +37,7 @@ To edit the transaction email templates, you need to pull an existing
 process with its templates. First, let's list all the processes of our
 `my-test-marketplace` marketplace:
 
-```
+```bash
 flex-cli process list -m my-test-marketplace
 ```
 
@@ -48,7 +48,7 @@ process, version 1.
 
 Let's pull that process version:
 
-```
+```bash
 flex-cli process pull --process preauth-nightly-booking --version 1 --path process -m my-test-marketplace
 ```
 
@@ -188,19 +188,88 @@ text editor and make a simple change:
 
 When you've made the change, save the file.
 
+## Preview your changes
+
+You can test your changes and templates by previewing or sending a test
+email using your local template files. To preview the change above:
+
+```bash
+flex-cli notifications preview -m my-test-marketplace --template preauth-nightly-booking/templates/new-booking-request
+```
+
+The command will render the given template and open a browser tab with
+the output HTML:
+
+![Email preview in a browser](./preview-browser.png)
+
+Note the subject in the tab title. It will also output the rendered text
+version to the terminal:
+
+![Email preview in terminal](./preview-terminal.png)
+
+You can now use your normal browser developer tooling to test changes to
+the template and verify how the responsiveness of the content works.
+
+If you want to verify the email in various email software, you can also
+send the test preview email:
+
+```bash
+flex-cli notifications send -m my-test-marketplace --template preauth-nightly-booking/templates/new-booking-request
+```
+
+The email is sent to the email address of the admin user that was used
+in logging in to the CLI:
+
+![Email preview in inbox](./preview-inbox.png)
+
+### Using custom context variables in templates
+
+As you see from the previews above, the templates are rendered with the
+fixed sample context. The `notifications preview` and
+`notifications send` commands also support an optional `--context`
+option that can be used to pass in a custom context JSON.
+
+You can see the default context JSON here:
+[sample-template-context.json](/sample-template-context.json)
+
+To change the data that is used for previews, download the sample JSON
+file and make edits to it:
+
+```diff
+    "customer" : {
+      "id" : "ef7f40d5-da66-489a-957b-641313b68204",
+      "first-name" : "Jane",
+      "last-name" : "Pritchett",
+-     "display-name" : "Jane P",
++     "display-name" : "Mary P",
+```
+
+You can then pass the changed context file to the preview command:
+
+```bash
+flex-cli notifications preview -m my-test-marketplace --template preauth-nightly-booking/templates/new-booking-request --context sample-template-context.json
+```
+
+Now you will see the preview with the context data that you edited:
+
+![Email preview with custom context](./preview-context.png)
+
+You can use the sample JSON file as a base and test how your templates
+behave with different content or custom extended data etc.
+
 ## Push new version
 
 Now that you have edited the email templates, you need to push a new
 version of your process:
 
-```
+```bash
 flex-cli process push  -m my-test-marketplace --path process --process preauth-nightly-booking
 ```
 
 You can see the new version in Console or using the `process list`
 command:
 
-```
+```bash
 flex-cli process list -m my-test-marketplace --process preauth-nightly-booking
 ```
 
@@ -214,24 +283,15 @@ you will need an alias to point to the version.
 In the default process there is a `release-1` alias. Let's update that
 to point to the new process version:
 
-```
+```bash
 flex-cli process update-alias -m my-test-marketplace --process preauth-nightly-booking --alias release-1 --version 2
 ```
 
 To see the updated alias, run the `process list` command again:
 
-```
+```bash
 flex-cli process list -m my-test-marketplace --process preauth-nightly-booking
 ```
-
-## Test the new notification
-
-To test the new notifications and updated templates, you will need to
-initiate new transactions with the new process version. Existing
-transactions keep using the process version they were initiated with.
-
-Therefore, create some test accounts and make new bookings to see the
-email notification in provider email inbox.
 
 ## Summary
 
