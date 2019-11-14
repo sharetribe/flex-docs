@@ -44,7 +44,7 @@ const NavLink = styled(Link).attrs({
   padding-right: 14px;
   line-height: 32px;
 
-  ${props => (props.active ? activeLinkStyles : '')}
+  ${props => (props.active ? activeLinkStyles : '')};
 
   :hover {
     ${hoverLinkStyles}

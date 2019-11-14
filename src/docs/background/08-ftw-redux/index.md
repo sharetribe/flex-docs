@@ -55,10 +55,7 @@ Redux store with `mapStateToProps` and `mapDispatchToProps` functions:
 
 ```js
 const TransactionPage = compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl
 )(TransactionPageComponent);
 ```
