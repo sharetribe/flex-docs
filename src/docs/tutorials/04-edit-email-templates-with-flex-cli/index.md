@@ -1,7 +1,7 @@
 ---
 title: Edit email templates with Flex CLI
 slug: edit-email-templates-with-flex-cli
-updated: 2019-11-14
+updated: 2019-11-18
 category: tutorials
 ingress:
   This tutorial shows you how to edit email templates with Flex CLI.
@@ -194,7 +194,7 @@ You can test your changes and templates by previewing or sending a test
 email using your local template files. To preview the change above:
 
 ```bash
-flex-cli notifications preview -m my-test-marketplace --template preauth-nightly-booking/templates/new-booking-request
+flex-cli notifications preview --template preauth-nightly-booking/templates/new-booking-request -m my-test-marketplace
 ```
 
 The command will render the given template and open a browser tab with
@@ -214,7 +214,7 @@ If you want to verify the email in various email software, you can also
 send the test preview email:
 
 ```bash
-flex-cli notifications send -m my-test-marketplace --template preauth-nightly-booking/templates/new-booking-request
+flex-cli notifications send --template preauth-nightly-booking/templates/new-booking-request -m my-test-marketplace
 ```
 
 The email is sent to the email address of the admin user that was used
@@ -247,7 +247,7 @@ file and make edits to it:
 You can then pass the changed context file to the preview command:
 
 ```bash
-flex-cli notifications preview -m my-test-marketplace --template preauth-nightly-booking/templates/new-booking-request --context sample-template-context.json
+flex-cli notifications preview --template preauth-nightly-booking/templates/new-booking-request --context sample-template-context.json -m my-test-marketplace
 ```
 
 Now you will see the preview with the context data that you edited:
@@ -263,14 +263,14 @@ Now that you have edited the email templates, you need to push a new
 version of your process:
 
 ```bash
-flex-cli process push  -m my-test-marketplace --path process --process preauth-nightly-booking
+flex-cli process push --path process --process preauth-nightly-booking -m my-test-marketplace
 ```
 
 You can see the new version in Console or using the `process list`
 command:
 
 ```bash
-flex-cli process list -m my-test-marketplace --process preauth-nightly-booking
+flex-cli process list --process preauth-nightly-booking -m my-test-marketplace
 ```
 
 ## Update alias
@@ -284,13 +284,13 @@ In the default process there is a `release-1` alias. Let's update that
 to point to the new process version:
 
 ```bash
-flex-cli process update-alias -m my-test-marketplace --process preauth-nightly-booking --alias release-1 --version 2
+flex-cli process update-alias --process preauth-nightly-booking --alias release-1 --version 2 -m my-test-marketplace
 ```
 
 To see the updated alias, run the `process list` command again:
 
 ```bash
-flex-cli process list -m my-test-marketplace --process preauth-nightly-booking
+flex-cli process list --process preauth-nightly-booking -m my-test-marketplace
 ```
 
 ## Summary
