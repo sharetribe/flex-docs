@@ -1,7 +1,7 @@
 ---
 title: Edit email templates with Flex CLI
 slug: edit-email-templates-with-flex-cli
-updated: 2019-11-18
+updated: 2019-11-22
 category: tutorials
 ingress:
   This tutorial shows you how to edit email templates with Flex CLI.
@@ -197,8 +197,9 @@ email using your local template files. To preview the change above:
 flex-cli notifications preview --template preauth-nightly-booking/templates/new-booking-request -m my-test-marketplace
 ```
 
-The command will render the given template and open a browser tab with
-the output HTML:
+The command will render the given template using
+[a sample data (context)](#sample-email-context) and open a browser tab
+with the output HTML:
 
 ![Email preview in a browser](./preview-browser.png)
 
@@ -209,9 +210,13 @@ version to the terminal:
 
 You can now use your normal browser developer tooling to test changes to
 the template and verify how the responsiveness of the content works.
+When you make changes to the template, you can just refresh the browser
+and see the updated preview.
 
-If you want to verify the email in various email software, you can also
-send the test preview email:
+## Sending a preview email
+
+If you want to verify the email in an email client software, you can
+also send the test preview email:
 
 ```bash
 flex-cli notifications send --template preauth-nightly-booking/templates/new-booking-request -m my-test-marketplace
@@ -222,7 +227,7 @@ in logging in to the CLI:
 
 ![Email preview in inbox](./preview-inbox.png)
 
-### Using custom context variables in templates
+## Sample email context
 
 As you see from the previews above, the templates are rendered with the
 fixed sample context. The `notifications preview` and
@@ -254,8 +259,10 @@ Now you will see the preview with the context data that you edited:
 
 ![Email preview with custom context](./preview-context.png)
 
-You can use the sample JSON file as a base and test how your templates
-behave with different content or custom extended data etc.
+You can use the
+[sample-template-context.json](/sample-template-context.json) file as a
+base and test how your templates behave with different content or custom
+extended data etc.
 
 ## Push new version
 
