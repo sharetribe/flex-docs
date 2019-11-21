@@ -1,7 +1,7 @@
 ---
 title: What development skills are needed?
 slug: development-skills
-updated: 2019-01-14
+updated: 2019-11-21
 category: background
 ingress:
   Building a custom marketplace with Flex requires some software
@@ -13,8 +13,8 @@ published: true
 You can use any technology to build a marketplace on top of the
 [Marketplace API](/background/concepts/#marketplace-api). However,
 making a marketplace user interface (UI) from scratch requires a lot of
-effort. This is why we provide Flex Template for Web (FTW). It is a
-polished marketplace web application that is ready for customization.
+effort. This is why we provide Flex Templates for Web (FTW). These are
+polished marketplace web applications that are ready for customization.
 
 FTW is a template web application that uses the Marketplace API. It is
 built using common and modern frontend tooling, so frontend developers

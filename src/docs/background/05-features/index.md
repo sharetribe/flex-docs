@@ -1,7 +1,7 @@
 ---
 title: Features
 slug: features
-updated: 2019-09-18
+updated: 2019-11-21
 category: background
 ingress:
   This article provides an overview of the most important features of
@@ -331,12 +331,21 @@ or even personalize the templates based on who the recipient is.
 
 ## Multiple languages and currencies
 
-Flex Template for Web includes default translations for English, Spanish,
-French and German, but you can easily translate it to the language of
-your choice. With some development work you can make your marketplace multilingual, allowing your users to use it in the language of their choice.
+Flex Template for Web includes default translations for English,
+Spanish, French and German, but you can easily translate it to the
+language of your choice. With some development work you can make your
+marketplace multilingual, allowing your users to use it in the language
+of their choice.
 
-You can also use any currency you want, as long as it's in the list
-of [100+ currencies supported by Stripe](https://stripe.com/docs/currencies). With some development work, you can have your marketplace work with multiple currencies. Remember, though, that if you're looking to process online payments in your marketplace, your platform should be based in one of the [countries supported by Stripe custom accounts](https://stripe.com/docs/connect/custom-accounts#requirements) and everyone receiving money through your marketplace should be based in one of the [countries supported by Stripe](https://stripe.com/global).
+You can also use any currency you want, as long as it's in the list of
+[100+ currencies supported by Stripe](https://stripe.com/docs/currencies).
+With some development work, you can have your marketplace work with
+multiple currencies. Remember, though, that if you're looking to process
+online payments in your marketplace, your platform should be based in
+one of the
+[countries supported by Stripe custom accounts](https://stripe.com/docs/connect/custom-accounts#requirements)
+and everyone receiving money through your marketplace should be based in
+one of the [countries supported by Stripe](https://stripe.com/global).
 
 ## Custom design
 
@@ -345,10 +354,10 @@ can decide fully things like which fonts and colors to use, what kind of
 pages or views there should be, and how those should be laid out. There
 are no limits to what you can do in terms of visual design.
 
-It's easy for you to get started with the design, since the beautiful
-[Flex Template for Web](/tutorials/getting-started-with-ftw/) offers an
-ideal starting point. The template is fully responsive so it looks great
-both on desktop and mobile devices.
+It's easy for you to get started with the design, since beautiful
+[Flex Templates for Web](/tutorials/getting-started-with-ftw/) offer an
+ideal starting point. The templates are fully responsive so they look
+great both on desktop and mobile devices.
 
 Your users won't see Sharetribe mentioned anywhere. The web address is
 your own domain, the email notifications get sent from your email
@@ -357,7 +366,7 @@ brand.
 
 ## SEO
 
-[Flex Template for Web](/tutorials/getting-started-with-ftw/) is
+[Flex Templates for Web](/tutorials/getting-started-with-ftw/) are
 optimized for search engines by default, and you have full control to
 tailor the experience the way you wish. You can decide the exact URL
 structure, edit meta tags freely, and do any other optimizations you
@@ -368,9 +377,9 @@ want.
 Since Flex is a "headless" marketplace solution, you can use it to build
 either a website or a mobile application or both. Building a web app is
 quicker today, because of
-[Flex Template for Web](/tutorials/getting-started-with-ftw/), which
-offers a great starting point for development. A similar template
-doesn't exist yet for mobile.
+[Flex Templates for Web](/tutorials/getting-started-with-ftw/), which
+offer a great starting point for development. A similar template doesn't
+exist yet for mobile.
 
 ## Integrations
 

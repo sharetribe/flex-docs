@@ -1,7 +1,7 @@
 ---
 title: How to Customize FTW
 slug: how-to-customize-ftw
-updated: 2019-10-24
+updated: 2019-11-21
 category: guides
 ingress:
   So you've decided to build your own marketplace using Flex Template
@@ -43,14 +43,19 @@ from the main (upstream) repository to your custom repository.
 See the [Fork a repo](https://help.github.com/en/articles/fork-a-repo)
 documentation for instructions for forking a repository in GitHub.
 
-> **Note:** By default,
-> [FTW](https://github.com/sharetribe/flex-template-web/) is using
-> [day-based availability](https://www.sharetribe.com/docs/references/availability/#day-based-availability-management).
-> If you are planning to use
-> [time-based availability](https://www.sharetribe.com/docs/references/availability/#time-based-availability-management)
-> in your marketplace, you can start with
-> [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
-> the template supporting time-based availability out of the box.
+Currently you can choose from two templates:
+
+- [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
+  rental marketplace with day-based bookings
+- [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime" - a
+  service marketplace with time-based bookings
+
+> **Note:** By default your Flex marketplace comes with day-based
+> [transaction process](https://www.sharetribe.com/docs/background/transaction-process/).
+> If you want to start working with FTW-hourly, you need to change to
+> the time-based process. See
+> [getting started with Flex CLI](https://www.sharetribe.com/docs/tutorials/getting-started-with-flex-cli/)
+> for more information.
 
 In the directory you want to create the project in:
 
@@ -62,7 +67,7 @@ git clone git@github.com:YOUR_USERNAME/YOUR_FORK.git
 cd YOUR_FORK
 
 # add FTW repository as the upstream remote
-git remote add upstream git@github.com:sharetribe/flex-template-web.git
+git remote add upstream git@github.com:sharetribe/ftw-daily.git
 ```
 
 See also the
@@ -130,7 +135,7 @@ template. See the
 reference for more information.
 
 See also the
-[src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js)
+[src/config.js](https://github.com/sharetribe/ftw-daily/blob/master/src/config.js)
 file for more configuration options.
 
 ## Development
@@ -163,10 +168,10 @@ yarn run dev-server
 
 This runs the frontend production build and starts the Express.js server
 in
-[server/index.js](https://github.com/sharetribe/flex-template-web/blob/master/server/index.js)
+[server/index.js](https://github.com/sharetribe/ftw-daily/blob/master/server/index.js)
 that renders the application routes in the server. The server is
 automatically restarted when there are changes in the
-[server/](https://github.com/sharetribe/flex-template-web/tree/master/server)
+[server/](https://github.com/sharetribe/ftw-daily/tree/master/server)
 directory.
 
 **Note:** this server does **not** pick up changes in the frontend

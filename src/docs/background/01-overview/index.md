@@ -1,7 +1,7 @@
 ---
 title: Introducing Flex
 slug: introducing-flex
-updated: 2019-10-04
+updated: 2019-11-21
 category: background
 ingress:
   Overview of how Sharetribe Flex works, and how you can build your
@@ -35,15 +35,20 @@ Whether a web-based UI, a mobile application, or both, the user
 interface is the face of your solution. That's why you have total
 control over it.
 
-[Flex Template for Web](/tutorials/getting-started-with-ftw/) (FTW) is a
-web template that implements a full-feature marketplace experience
-powered by Flex. With Flex Template for Web, you can get started with
-your marketplace UI straight away: just download the latest FTW version
-and start customizing it for your marketplace. There are no limits to
-how much you can customize the template. You can freely design the user
-interactions and alter the look and feel of your marketplace. You can
-also integrate any web analytics or customer service solutions directly
-into your UI.
+[Flex Templates for Web](/tutorials/getting-started-with-ftw/) (FTW) are
+web templates that implement a full-feature marketplace experiences
+powered by Flex. You can choose between
+[FTW-daily](https://github.com/sharetribe/ftw-daily), a rental
+marketplace with daily bookings or
+[FTW-hourly](https://github.com/sharetribe/ftw-hourly), a service
+marketplace with time-based bookings.
+
+With a Flex Template for Web, you can get started with your marketplace
+UI straight away: just download the latest FTW version and start
+customizing it for your marketplace. There are no limits to how much you
+can customize the template. You can freely design the user interactions
+and alter the look and feel of your marketplace. You can also integrate
+any web analytics or customer service solutions directly into your UI.
 
 If you prefer to start from scratch, you can build your own UI on top of
 Flex's Marketplace API yourself.
