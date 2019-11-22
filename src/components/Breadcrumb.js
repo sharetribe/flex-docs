@@ -32,7 +32,7 @@ const Item = styled(Li)`
   letter-spacing: -0.07px;
 
   // Offset baseline
-  top: -3px;
+  top: -5px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 14px;
