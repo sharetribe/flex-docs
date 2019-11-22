@@ -1,7 +1,7 @@
 ---
 title: How to build and launch your marketplace with Flex
 slug: how-to-build-and-launch-with-flex
-updated: 2019-02-13
+updated: 2019-11-21
 category: background
 ingress:
   This article describes what it takes to build and launch your
@@ -40,12 +40,18 @@ you have gotten access to Flex but have forgotten your credentials,
 Once you log in to Console, you'll notice there's nothing there yet: you
 naturally don't yet have any users, listings, or transactions.
 
-The first step after logging in to Console is to set up the Flex
-Template for Web (FTW). FTW is a fully functional example of a
-marketplace website built with Flex: a fictional marketplace for renting
-home saunas from sauna owners. Setting up FTW should take no more than 5
-minutes. The process is technical but doable even without development
-experience.
+The first step after logging in to Console is to set up a Flex Template
+for Web (FTW). FTW is a fully functional example of a marketplace
+website built with Flex. Currently we have two template options:
+
+- [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
+  fictional marketplace for renting home saunas from sauna owners.
+- [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime - a
+  fictional marketplace for booking yoga classes from various yoga
+  teachers.
+
+Setting up FTW should take no more than 5 minutes. The process is
+technical but doable even without development experience.
 [The guide for getting started with FTW](/tutorials/getting-started-with-ftw/)
 will give you step by step instructions for doing it. If you encounter
 any problems with the setup,
@@ -134,7 +140,7 @@ design ready for your marketplace, it's time to start development work
 to make your marketplace look and work the way your designs describe.
 
 Typically, the development work is done by downloading the
-[open source codebase of FTW](https://github.com/sharetribe/flex-template-web)
+[open source codebase of FTW](https://github.com/sharetribe/ftw-daily)
 and customizing it according your needs. If you're a developer, you can
 proceed to do this and
 [start development right away](/guides/how-to-customize-ftw/).

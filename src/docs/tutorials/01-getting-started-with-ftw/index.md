@@ -1,31 +1,44 @@
 ---
 title: Getting started with FTW
 slug: getting-started-with-ftw
-updated: 2019-02-22
+updated: 2019-11-21
 category: tutorials
 ingress:
   This tutorial is the place to start your journey of getting hands-on
   with Sharetribe Flex. You will learn the basic building blocks by
-  creating an example marketplace with the Flex Template for Web (FTW).
+  creating an example marketplace with on of the Flex Templates for Web
+  (FTW).
 skills: basic command line, text editing
 published: true
 ---
 
-FTW is a marketplace web application built on top of the
-[Marketplace API](/background/concepts/#marketplace-api). While you can
-create a marketplace purely using just the API, it requires a lot of
-effort and we recommened using the template as a starting point for
-customizations.
+Flex Templates for Web (FTW) are marketplace web applications built on
+top of the [Marketplace API](/background/concepts/#marketplace-api).
+While you can create a marketplace purely using just the API, it
+requires a lot of effort and we recommened using the template as a
+starting point for customizations.
+
+Currently we have two templates is available:
+
+- [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
+  rental marketplace with day-based bookings
+- [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime" - a
+  service marketplace with time-based bookings
+
+> **Note:** By default your Flex marketplace comes with day-based
+> [transaction process](https://www.sharetribe.com/docs/background/transaction-process/).
+> If you want to start working with FTW-hourly, you need to change to
+> the time-based process. See
+> [getting started with Flex CLI](https://www.sharetribe.com/docs/tutorials/getting-started-with-flex-cli/)
+> for more information.
 
 Depending on your needs for customization, changing the template
 application requires varying levels of development knowledge. For this
 tutorial it is enough to know how to open a terminal to run some
 commands and edit text files to change configuration values.
 
-FTW is available at the
-[sharetribe/flex-template-web](https://github.com/sharetribe/flex-template-web)
-GitHub repository. For more information on what skills are needed for
-customization, see the
+For more information on what skills are needed for customization, see
+the
 [What development skills are needed?](/background/development-skills/)
 article.
 
@@ -43,12 +56,12 @@ basic development tooling:
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/docs/install)
 
-## Setup FTW
+## Setup FTW-daily
 
 Clone the Git repository:
 
 ```bash
-git clone https://github.com/sharetribe/flex-template-web.git
+git clone https://github.com/sharetribe/ftw-daily.git
 ```
 
 **NOTE:** When starting an actual customization project, we recommend
@@ -59,7 +72,7 @@ cloning the repository is enough.
 Go to the cloned directory:
 
 ```bash
-cd flex-template-web/
+cd ftw-daily/
 ```
 
 ## Install dependencies
@@ -144,10 +157,9 @@ This will automatically refresh the browser and show the updated styles:
 
 ## Summary
 
-In this tutorial, we used Flex Template for Web to make our own
-customized marketplace. As you see, FTW is a fully ready and polished
-marketplace application that is running on top of the Marketplace API.
-All of the customization is in your control, and you can change it to
-fit your marketplace needs. To start customizing FTW as you own
-marketplace, see the
-[How to Customize FTW ](/guides/how-to-customize-ftw/) guide.
+In this tutorial, we used FTW-hourly to make our own customized
+marketplace. As you see, FTW is a fully ready and polished marketplace
+application that is running on top of the Marketplace API. All of the
+customization is in your control, and you can change it to fit your
+marketplace needs. To start customizing FTW as you own marketplace, see
+the [How to Customize FTW ](/guides/how-to-customize-ftw/) guide.

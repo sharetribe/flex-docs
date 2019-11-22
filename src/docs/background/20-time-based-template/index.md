@@ -1,20 +1,21 @@
 ---
 title: Time-based template
 slug: time-based-template
-updated: 2019-10-21
+updated: 2019-11-21
 category: background
 ingress:
-  This article introduces Flex Template for Web Time (FTW-time) and
-  what's different compared to the regular Flex Template for Web (FTW).
+  This article introduces FTW-hourly and what's different compared to
+  FTW-daily.
 published: true
 ---
 
-[FTW-time](https://github.com/sharetribe/ftw-time) is a Flex Template
-for Web with support for time-based availability and bookings. It is
-currently in beta, and might still go through heavy changes before the
-final release.
+[FTW-hourly](https://github.com/sharetribe/ftw-hourly) is a Flex
+Template for Web with support for time-based bookings and it's build
+with service marketplaces in mind. This template introduces Yogatime - a
+fictional marketplace for booking yoga classes from various yoga
+teachers.
 
-By default, FTW-time uses a transaction process
+By default, FTW-hourly uses a transaction process
 [preauth-unit-time-booking](https://github.com/sharetribe/flex-example-processes/tree/master/preauth-unit-time-booking)
 which is a unit-based process and has value `time` in `create-booking`
 booking action.
@@ -83,8 +84,23 @@ Saving the default schedule is handled with the new
 There is also a new component `FieldTimeZoneSelect` for saving the time
 zone of the listing to availability plan.
 
-> Note: adding and removing availability exceptions is not yet
-> implemented in the time-based template. They will be added in a future
-> release.
-
 ![Availability plan](availabilityPlan.png 'Availability plan')
+
+## Each provider can have only one listing
+
+Because FTW-hourly has been build keeping the service marketplaces each
+user can have only one listing by default. In Yogatime's context the
+listing is handled as teacher profile. There are some changeds you need
+to do to template if you want to enable multiple listings:
+
+- Remove `allowOnlyOneListing` prop routing to `EditListingPage`
+- Add link to `NewListingPage` e.g. to `Topbar`
+- Add `ManageListingsPage` to routing and add link to that page e.g. to
+  `UserNav`
+- Change `OwnListingLink` to the link to user profile. Note that with
+  `Avatar` component you can enable the profile link by removing
+  `disableProfileLink` flag.
+
+You can see all the changes we did when changing the Saunatime to
+Yogatime form this
+[pull request](https://github.com/sharetribe/ftw-time/pull/56).

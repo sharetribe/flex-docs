@@ -1,7 +1,7 @@
 ---
 title: Concepts
 slug: concepts
-updated: 2019-10-24
+updated: 2019-11-21
 category: background
 ingress:
   Explanation of the key concepts we use when we talk about Sharetribe
@@ -29,24 +29,22 @@ Console is also where the day-to-day management, such as overseeing
 users’ activity, monitoring listings and reviews, and managing
 notifications, takes place.
 
-### Flex Template for Web (FTW)
+### Flex Templates for Web (FTW)
 
 A template of a Flex marketplace user interface. Sharetribe customers
 can customize FTW for their own marketplace, or build their own UI from
 scratch. Flex Template for Web is built with Node.js + React/Redux.
 
+Currently we have two different template options:
+
+- [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
+  rental marketplace with day-based bookings
+- [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime" - a
+  service marketplace with time-based bookings
+
 Information about using Flex Template for Web can be found in the
 [Getting started with FTW](/tutorials/getting-started-with-ftw/)
 tutorial.
-
-> **Note:** By default,
-> [FTW](https://github.com/sharetribe/flex-template-web/) is using
-> [day-based availability](https://www.sharetribe.com/docs/references/availability/#day-based-availability-management).
-> If you are planning to use
-> [time-based availability](https://www.sharetribe.com/docs/references/availability/#time-based-availability-management)
-> in your marketplace, you can start with
-> [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
-> the template supporting time-based availability out of the box.
 
 ### Flex CLI
 
