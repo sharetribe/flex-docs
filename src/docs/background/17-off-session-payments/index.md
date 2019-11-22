@@ -20,7 +20,7 @@ advance is limited, if your transaction process follows this payment
 pattern.
 
 Flex API now has capabilities for
-[saving payment card details for future use](https://www.sharetribe.com/api-reference/#stripe-customer).
+[saving payment card details for future use](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer).
 In addition, it is now possible to configure your transaction process in
 such a way, that the customer is charged automatically off-session at
 certain point in time (i.e. when they are not present and interacting

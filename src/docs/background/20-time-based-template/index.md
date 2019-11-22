@@ -44,7 +44,7 @@ ListingPage the start and end of the month should have time zone so that
 the moment-timezone library can handle e.g daylight savings.
 
 The time zone of the listing will be saved to the listing's
-[availability plan](https://www.sharetribe.com/api-reference/#ownlisting-availability-plan).
+[availability plan](https://www.sharetribe.com/api-reference/marketplace.html#ownlisting-availability-plan).
 For that, we have a new component `FieldTimeZoneSelect` where the
 provider can choose the time zone of the listing. By default, the
 component will select browser's time zone.

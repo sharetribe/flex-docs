@@ -78,7 +78,7 @@ With the `long` type, you can provide minimum and/or maximum values for
 the filtering.
 
 For the full query reference, see the
-[/listings/query](https://www.sharetribe.com/api-reference/#query-listings)
+[/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 endpoint API reference.
 
 ## Adding schemas
@@ -120,7 +120,7 @@ For more information, see the following resources:
 - [How the search works](/background/how-the-search-works/) background
   article
 - [Extended data reference](/references/extended-data/)
-- [/listings/query](https://www.sharetribe.com/api-reference/#query-listings)
+- [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
   endpoint API reference
 - [How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
 - [How to change search filters in FTW](/guides/how-to-change-search-filters-in-ftw/)

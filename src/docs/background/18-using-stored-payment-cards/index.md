@@ -27,7 +27,7 @@ delete a stored card, or replace a stored card with a new one.
 
 [Learn how storing payment card works in FTW](/background/save-payment-card/)
 
-[Read API documentation on storing credit cards](https://www.sharetribe.com/api-reference/#stripe-customer)
+[Read API documentation on storing credit cards](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer)
 
 ## Frequently asked questions about storing payment cards
 

@@ -23,7 +23,7 @@ can be used in combination or separately:
 The availability plan and exceptions, together with booking information
 can be combined to determine if a particular time range is available for
 booking or not. For instance, the
-[/timeslots/query](https://www.sharetribe.com/api-reference/index.html#query-time-slots)
+[/timeslots/query](https://www.sharetribe.com/api-reference/marketplace.html#query-time-slots)
 API endpoint returns availability information for future dates, taking
 into account the listing's availability plan, exceptions and bookings.
 In addition, your
@@ -140,7 +140,7 @@ times are used alongside with the normal `start` and `end` attributes
 initiation request) of a booking and they can be used to present
 different start and end times to the customer than actully is booked.
 See
-[the booking resource format](https://www.sharetribe.com/api-reference/#booking-resource-format)
+[the booking resource format](https://www.sharetribe.com/api-reference/marketplace.html#booking-resource-format)
 for a full list of booking attributes.
 
 #### **Example:**
@@ -167,8 +167,8 @@ this booking.
 See the reference documentation for the following API endpoints for
 details:
 
-- [/own_listings/create](https://www.sharetribe.com/api-reference/index.html#create-listing)
-- [/own_listings/update](https://www.sharetribe.com/api-reference/index.html#update-listing)
-- [/availability_exceptions/\*](https://www.sharetribe.com/api-reference/index.html#availability-exceptions)
-- [/timeslots/query](https://www.sharetribe.com/api-reference/index.html#query-time-slots)
-- [/transactions/initiate](https://www.sharetribe.com/api-reference/#initiate-transaction)
+- [/own_listings/create](https://www.sharetribe.com/api-reference/marketplace.html#create-listing)
+- [/own_listings/update](https://www.sharetribe.com/api-reference/marketplace.html#update-listing)
+- [/availability_exceptions/\*](https://www.sharetribe.com/api-reference/marketplace.html#availability-exceptions)
+- [/timeslots/query](https://www.sharetribe.com/api-reference/marketplace.html#query-time-slots)
+- [/transactions/initiate](https://www.sharetribe.com/api-reference/marketplace.html#initiate-transaction)
