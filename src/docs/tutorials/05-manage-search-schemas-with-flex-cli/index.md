@@ -1,7 +1,7 @@
 ---
 title: Manage search schemas with Flex CLI
 slug: manage-search-schemas-with-flex-cli
-updated: 2019-11-01
+updated: 2019-11-27
 category: tutorials
 ingress:
   This tutorial shows you how to manage listing extended data search
@@ -58,15 +58,19 @@ instead of `pub_`.
 ### Providing multiple query params for a single field
 
 You can provide multiple values in the query parameter by separating
-those with a comma. However, the matching behavior changed based on the
-schema type.
+those with a comma. The matching behavior is different for different
+schema types.
 
 With the `enum` type like the category above, when you query
 `pub_category=electric,wood`, you will match listings with either
-"electric" OR "wood" as the category. However, with the `multi-enum`
-type like amenities above, a query like `pub_amenities=towels,bathroom`
-with only match listings with "towels" AND "bathroom" in the amenities
-array.
+"electric" OR "wood" as the category. With the `multi-enum`, you can
+control the matching mode explicitly. The query
+`pub_amenities=has_all:towels,bathroom` will match listings with
+"towels" AND "bathroom" in the amenities whereas the query
+`pub_amenities=has_any:towels,bathroom` will match listings with
+either "towels" OR "bathroom" (or both). If you don't specify the
+match mode in the query (i.e. `pub_amenities=towels,bathroom`), by
+default we use the has_all mathing mode (AND) for multi enums.
 
 With the `text` type, you provide a search query, so splitting values
 with a comma doesn't make sense. You will just provide a string of text
