@@ -1,7 +1,7 @@
 ---
 title: Email templates
 slug: email-templates
-updated: 2019-10-23
+updated: 2019-12-03
 category: references
 ingress: Reference documentation for editing email templates.
 published: true
@@ -64,7 +64,7 @@ documentation for more information about the templating language.
 ## Helpers
 
 Sharetribe Flex email templating supports a subset of
-[Handlebars built in helpers](https://handlebarsjs.com/builtin_helpers.html).
+[Handlebars built in helpers](https://handlebarsjs.com/guide/builtin-helpers.html).
 
 In addition to the built-in helpers, we have implemented a small set of
 custom helpers that make e.g. comparisons and number formatting
@@ -76,7 +76,7 @@ For example: `{{helper param-1 param-2 hash-param=value}}`.
 
 Some documentation on the syntax and how to use them can be found in the
 documentation for
-[Handlebars expressions](https://handlebarsjs.com/expressions.html).
+[Handlebars expressions](https://handlebarsjs.com/guide/expressions.html).
 
 ### Built-in helpers
 
@@ -88,11 +88,11 @@ We support the following built-in helpers:
 - `unless`
 
 Have a look at the
-[Handlebars built-in helpers documentation](https://handlebarsjs.com/builtin_helpers.html)
+[Handlebars built-in helpers documentation](https://handlebarsjs.com/guide/builtin-helpers.html)
 to see examples how to use them.
 
 In addition to those, we also support
-[inline partials](https://handlebarsjs.com/partials.html#inline-partials).
+[inline partials](https://handlebarsjs.com/guide/partials.html#inline-partials).
 
 ### Custom helpers
 
@@ -466,4 +466,4 @@ available for each email template.
   `"transaction-transition"` `"payin-total"` is nested under
   `"transaction"`. This means that the correct way to refer to that is
   `transaction.payin-total` or using the
-  [builtin **`with`** helper](https://handlebarsjs.com/builtin_helpers.html).
+  [builtin **`with`** helper](https://handlebarsjs.com/guide/builtin-helpers.html#with).
