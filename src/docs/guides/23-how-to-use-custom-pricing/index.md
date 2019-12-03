@@ -1,7 +1,7 @@
 ---
 title: How to customize pricing
 slug: how-to-customize-pricing
-updated: 2019-10-24
+updated: 2019-12-03
 category: guides
 ingress:
   Flex allows lots of flexibility for your providers in terms of how
@@ -38,24 +38,22 @@ to the `transition/request-payment` and
  :actions
  [{:name :action/create-booking,
    :config {:observe-availability? true}}
-  {:name :action/calculate-tx-nightly-total-price}
+- {:name :action/calculate-tx-nightly-total-price}
++ {:name :action/set-line-items-and-total}
   {:name :action/calculate-tx-provider-commission,
    :config {:commission 0.1M}}
--  {:name :action/stripe-create-payment-intent}],
-+  {:name :action/stripe-create-payment-intent},
-+  {:name :action/set-line-items-and-total}],
+  {:name :action/stripe-create-payment-intent}],
  :to :state/pending-payment}
 {:name :transition/request-payment-after-enquiry,
  :actor :actor.role/customer,
  :actions
  [{:name :action/create-booking,
    :config {:observe-availability? true}}
-  {:name :action/calculate-tx-nightly-total-price}
+- {:name :action/calculate-tx-nightly-total-price}
++ {:name :action/set-line-items-and-total}
   {:name :action/calculate-tx-provider-commission,
    :config {:commission 0.1M}}
--  {:name :action/stripe-create-payment-intent}],
-+  {:name :action/stripe-create-payment-intent},
-+  {:name :action/set-line-items-and-total}],
+  {:name :action/stripe-create-payment-intent}],
  :from :state/enquiry,
  :to :state/pending-payment}
 ```
