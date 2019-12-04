@@ -54,3 +54,12 @@ Flex CLI (Command-line interface) is a tool for changing your
 marketplace's advanced configurations such as transaction processes and
 email templates. This tutorial shows you how to get started with the
 tool. [Read more »](/tutorials/getting-started-with-flex-cli/)
+
+## [Getting started with Flex Integration API](/tutorials/getting-started-with-integration-api/)
+
+The Flex Integration API is an application programming interface that provides
+full access to your marketplace's data. It can be used to build applications
+that integrate different own or 3rd party systems with the Flex marketplace.
+This tutorial shows you how to set up an Integration API application and run an
+example marketplace report. [Read more
+»](/tutorials/getting-started-with-integration-api/)
