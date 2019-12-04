@@ -29,7 +29,8 @@ development environment. For production deploys most should be set.
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
-  Client ID (API key). You can get this from the Flex Console.
+  Your application's client ID. You can get this from [Flex
+  Console](https://flex-console.sharetribe.com/applications).
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
