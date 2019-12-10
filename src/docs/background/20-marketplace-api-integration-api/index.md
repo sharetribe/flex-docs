@@ -48,8 +48,9 @@ marketplace data: all users, listings, transactions, messages, etc. Such trusted
 applications are for example applications that run in your own backend systems
 or applications meant to be executed by authorized marketplace operators.
 
-> **IMPORTANT** Never expose your Integration API application credentials to an
-> untrusted device or application, such as end user's browser or mobile app.
+> **IMPORTANT** Never expose your Integration API
+> [application](/background/applications/) credentials to an untrusted device or
+> application, such as end user's browser or mobile app.
 
 The Integration API is well suited for building the following types of
 applications:

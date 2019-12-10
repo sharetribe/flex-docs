@@ -57,7 +57,7 @@ yarn install
 The example scripts use the Flex Integration SDK for JavaScript. In order for
 the SDK to be able to authenticate to the Integration API, it requires two
 values: a client ID and a client secret. You can obtain both by creating a new
-Integration API application in Flex Console.
+[Integration API application](/background/applications/) in Flex Console.
 
 Log in to your marketplace in [Flex
 Console](https://flex-console.sharetribe.com/) and navigate to [Build >
