@@ -52,7 +52,7 @@ tutorial for more information.
 ### Marketplace API
 
 The application programming interface (API) that provides the crucial features
-marketplaces need. For example, the Marketplace API allows for creating and
+marketplaces need. For example, the Marketplace API allows creating and
 searching content (like user profiles and listings), managing user accounts, and
 processing transactions.
 

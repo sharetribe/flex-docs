@@ -44,8 +44,8 @@ article.
 
 ## Request API access
 
-To use the Marketplace API, you will need an API key. You can request
-access at https://sharetribe.typeform.com/to/BI9M4O
+To use the Marketplace API, you will need a client ID. You can request access at
+https://sharetribe.typeform.com/to/BI9M4O
 
 ## Install development tooling
 
@@ -99,8 +99,9 @@ There are three required variables for FTW to work correctly:
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
-  Client ID is the API key you will use to access the Marketplace API
-  with the SDK.
+  Your application's client ID. You need this in order to access the Marketplace
+  API with the SDK. You can find out what your application's client ID is in
+  [Flex Console](https://flex-console.sharetribe.com/applications).
 
   If you don't set the client ID, API calls to the Marketplace API won't
   work in the application.

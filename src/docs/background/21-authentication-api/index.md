@@ -13,8 +13,8 @@ published: true
 
 Both the [Marketplace API and the Integration
 API](/background/marketplace-api-integration-api/) require valid *access tokens*
-to be passed in every API request. Applications obtain those access tokens from
-the Authentication API.
+to be passed in every API request. [Applications](/background/applications/)
+obtain those access tokens from the Authentication API.
 
 As a general rule, applications that access the Marketplace API do so by
 authenticating an end user of the marketplace (via the user' username and
