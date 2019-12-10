@@ -15,13 +15,6 @@ published: true
 Description of the applications and services that are included in the
 Flex offering.
 
-### Admin API
-
-The application programming interface for accessing admin functionality.
-The Admin API can be used to build integrations to third-party software.
-
-Planned.
-
 ### Console
 
 The user interface admins use to build their marketplace platform.
@@ -56,25 +49,32 @@ See the
 [Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
 tutorial for more information.
 
-### Integration
-
-An external application that communicates with the marketplace. This can
-mean reacting to marketplace events, pulling data from the marketplace,
-or triggering activity on the marketplace. For example, “automatically
-update a Mailchimp email list when a new user joins the marketplace”.
-
 ### Marketplace API
 
-The application programming interface that provides the crucial features
-marketplaces need. For example, the Marketplace API allows for creating
-and searching content (like user profiles and listings), managing user
-accounts, and processing transactions.
+The application programming interface (API) that provides the crucial features
+marketplaces need. For example, the Marketplace API allows for creating and
+searching content (like user profiles and listings), managing user accounts, and
+processing transactions.
 
 Sharetribe customers can create their own web-based and mobile UIs on
 top of the Marketplace API.
 
 Information about working with the Marketplace API can be found in the
 [API reference documentation](/references/api/).
+
+### Integration API
+
+The application programming interface (API) that provides full access to
+marketplace's data. It can be used to build applications that integrate
+different own or 3rd party systems with the Flex marketplace.
+
+### Integration
+
+An external application that communicates with the marketplace (typically via
+the [Integration API](#integration-api)). This can mean reacting to marketplace
+events, pulling data from the marketplace, or triggering activity on the
+marketplace. For example, “automatically update a Mailchimp email list when a
+new user joins the marketplace”.
 
 ### Sharetribe Flex
 
@@ -85,7 +85,15 @@ documentation.
 ### Sharetribe SDK for JavaScript
 
 A JavaScript library that makes it easy to correctly interact with the
-Marketplace API (and later the Admin API).
+Marketplace API.
+
+Information about using the JS SDK library can be found in the
+[JS SDK documentation](/references/js-sdk/).
+
+### Sharetribe Integration SDK for JavaScript
+
+A JavaScript library that makes it easy to correctly interact with the
+Integration API.
 
 Information about using the JS SDK library can be found in the
 [JS SDK documentation](/references/js-sdk/).
