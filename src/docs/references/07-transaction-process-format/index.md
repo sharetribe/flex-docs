@@ -177,15 +177,15 @@ show a synthetic state `state/initial` but this is not a state that is
 or should be defined in the process description.
 
 In Marketplace API initial transitions are invoked via the
-[transactions/initiate](https://www.sharetribe.com/api-reference/#initiate-transaction)
+[transactions/initiate](https://www.sharetribe.com/api-reference/marketplace.html#initiate-transaction)
 endpoint and subsequent transitions via the
-[transactions/transition](https://www.sharetribe.com/api-reference/#transition-transaction)
+[transactions/transition](https://www.sharetribe.com/api-reference/marketplace.html#transition-transaction)
 endpoint.
 
 The API also provides endpoints for invoking transitions speculatively:
-[transitions/initiate_speculative](https://www.sharetribe.com/api-reference/#speculatively-initiate-transaction)
+[transitions/initiate_speculative](https://www.sharetribe.com/api-reference/marketplace.html#speculatively-initiate-transaction)
 and
-[transactions/transition_speculative](https://www.sharetribe.com/api-reference/#speculatively-transition-transaction).
+[transactions/transition_speculative](https://www.sharetribe.com/api-reference/marketplace.html#speculatively-transition-transaction).
 Speculative operations take the same parameters that the real initiate
 and transition endpoints take but only simulate the effects. In other
 words, no state is changed, Stripe is not really called, etc.. However,
@@ -242,7 +242,7 @@ opportunities with composing actions.
 
 Every action can define zero or more parameters. The action parameters
 are passed via
-[the Marketplace API](https://www.sharetribe.com/api-reference/#transactions)
+[the Marketplace API](https://www.sharetribe.com/api-reference/marketplace.html#transactions)
 when a transition is invoked. Some of the action parameters are
 mandatory and some are optional. All the mandatory and optional
 parameters of the actions together define the parameters of the

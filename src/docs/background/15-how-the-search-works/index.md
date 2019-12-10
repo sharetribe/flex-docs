@@ -13,12 +13,12 @@ published: true
 ## Listings search in Flex
 
 In Flex listings are searched by using the
-[/listings/query](https://www.sharetribe.com/api-reference/#query-listings)
+[/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 endpoint. This article approaches the search from two different
 prespectives: keywords and location. In addition to them other search
 parameters can be used to filter the search results in order to provide
 relevant search content. See the API
-[reference documentation](https://www.sharetribe.com/api-reference/#query-listings)
+[reference documentation](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 for a full list of search parameters.
 
 ## Keyword search

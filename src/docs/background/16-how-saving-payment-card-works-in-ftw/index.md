@@ -70,7 +70,7 @@ Under the hood, saving a new payment method needs to complete following
 steps:
 
 - Create Stripe
-  [Setup Intent](https://www.sharetribe.com/api-reference/index.html#stripe-setup-intents)
+  [Setup Intent](https://www.sharetribe.com/api-reference/marketplace.html#stripe-setup-intents)
   through Flex API to obtain the client secret.
 - Call `stripe.handleCardSetup` with the client secret
   - `stripe.handleCardSetup` will handle user actions like 3D Secure

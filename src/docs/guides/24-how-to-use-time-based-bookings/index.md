@@ -53,7 +53,7 @@ tutorial.
 > available when using time-based bookings and availability. When taking
 > time-based availability into use, you should remove the date filter
 > from search page. See
-> [the listings query endpoint reference documentation](https://www.sharetribe.com/api-reference/#query-listings)
+> [the listings query endpoint reference documentation](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 > for more information.
 
 ## Option 1: Use a new Flex template FTW-time (recommended)
@@ -130,7 +130,7 @@ sdk.ownListings
 ```
 
 For more information about the plan attributes, see
-[the API documentation](https://www.sharetribe.com/api-reference/#ownlisting-availability-plan).
+[the API documentation](https://www.sharetribe.com/api-reference/marketplace.html#ownlisting-availability-plan).
 By default the Flex Template for Web (FTW) defines a day-based plan for
 all listings in the
 [EditListingAvailabilityPanel](https://github.com/sharetribe/flex-template-web/blob/master/src/components/EditListingAvailabilityPanel/EditListingAvailabilityPanel.js)
