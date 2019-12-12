@@ -191,7 +191,9 @@ multiple criteria:
 - **Price.** It's possible to filter out listings with too high or too
   low price.
 - **Availability.** It's possible to filter out listings that are not
-  available during a given day or a date range.
+  available during a given day or a date range. Works together with
+  seats so that you can filter for availability with minimum number of
+  seats.
 - **Custom filter: any value.** Any number of custom filters can be
   added. "Any value" filters out listings that don't have the given
   value (or any of a set of given values) in their public data. A
