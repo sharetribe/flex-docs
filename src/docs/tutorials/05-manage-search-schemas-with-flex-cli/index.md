@@ -43,13 +43,13 @@ just skips those values.
 
 ## Schema types and cardinalities
 
-| Type       | Cardinality | Example data                                              | Example query                            |
-| ---------- | ----------- | --------------------------------------------------------- | ---------------------------------------- |
-| enum       | one         | `category: "electric"`                                    | `pub_category=electric`                  |
-| multi-enum | many        | `amenities: ["towels", "bathroom"]`                       | `pub_amenities=towels`                   |
-| boolean    | one         | `hasLakeNearby: true`                                     | `pub_hasLakeNearby=true`                 |
-| long       | one         | `distanceToLake: 30`                                      | `pub_distanceToLake=5,40`                |
-| text       | one         | `stoveDescription: "Modern and powerful electric stove."` | `keywords=powerful%20modern`             |
+| Type       | Cardinality | Example data                                              | Example query                                                                      |
+| ---------- | ----------- | --------------------------------------------------------- | ----------------------------------------                                           |
+| enum       | one         | `category: "electric"`                                    | `pub_category=electric,wood`                                                       |
+| multi-enum | many        | `amenities: ["towels", "bathroom"]`                       | `pub_amenities=has_all:towels,bathroom` or `pub_amenities=has_any:towels,bathroom` |
+| boolean    | one         | `hasLakeNearby: true`                                     | `pub_hasLakeNearby=true`                                                           |
+| long       | one         | `distanceToLake: 30`                                      | `pub_distanceToLake=5,40`                                                          |
+| text       | one         | `stoveDescription: "Modern and powerful electric stove."` | `keywords=powerful%20modern`                                                       |
 
 Note that the scope in the examples above is `public`. If the value is stored to
 public metadata, the query parameter should start with `meta_` instead of
