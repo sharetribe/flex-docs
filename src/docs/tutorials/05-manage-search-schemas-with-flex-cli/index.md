@@ -1,7 +1,7 @@
 ---
 title: Manage search schemas with Flex CLI
 slug: manage-search-schemas-with-flex-cli
-updated: 2019-11-27
+updated: 2019-12-16
 category: tutorials
 ingress:
   This tutorial shows you how to manage listing extended data search
@@ -43,17 +43,20 @@ just skips those values.
 
 ## Schema types and cardinalities
 
-| Type       | Cardinality | Example data                                              | Example query                            |
-| ---------- | ----------- | --------------------------------------------------------- | ---------------------------------------- |
-| enum       | one         | `category: "electric"`                                    | `pub_category=electric`                  |
-| multi-enum | many        | `amenities: ["towels", "bathroom"]`                       | `pub_amenities=towels`                   |
-| boolean    | one         | `hasLakeNearby: true`                                     | `pub_hasLakeNearby=true`                 |
-| long       | one         | `distanceToLake: 30`                                      | `pub_distanceToLake=5,40`                |
-| text       | one         | `stoveDescription: "Modern and powerful electric stove."` | `pub_stoveDescription=powerful%20modern` |
+| Type       | Cardinality | Example data                                              | Example query                                                                      |
+| ---------- | ----------- | --------------------------------------------------------- | ----------------------------------------                                           |
+| enum       | one         | `category: "electric"`                                    | `pub_category=electric,wood`                                                       |
+| multi-enum | many        | `amenities: ["towels", "bathroom"]`                       | `pub_amenities=has_all:towels,bathroom` or `pub_amenities=has_any:towels,bathroom` |
+| boolean    | one         | `hasLakeNearby: true`                                     | `pub_hasLakeNearby=true`                                                           |
+| long       | one         | `distanceToLake: 30`                                      | `pub_distanceToLake=5,40`                                                          |
+| text       | one         | `stoveDescription: "Modern and powerful electric stove."` | `keywords=powerful%20modern`                                                       |
 
-Note that the scope in the examples above is `public`. If the value is
-stored to public metadata, the query parameter should start with `meta_`
-instead of `pub_`.
+Note that the scope in the examples above is `public`. If the value is stored to
+public metadata, the query parameter should start with `meta_` instead of
+`pub_`. Also, it's worth noting that the query parameter with a `text` schema is
+`keywords` which also targets the `title` and `description` attributes of a
+listing. See [Keyword search](/background/how-the-search-works/#keyword-search)
+for more information.
 
 ### Providing multiple query params for a single field
 
