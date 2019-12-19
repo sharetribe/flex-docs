@@ -69,7 +69,7 @@ Object](https://stripe.com/docs/api/accounts/object) where the fields
 
 How to implement these changes depends on when you have subscribed to Flex.
 
-### Before 19th of December 2019
+### Instructions for Flex subscriptions started before 19th of December 2019
 
 If you have subscribed to Flex before 19th of December you need to
 react to the changes. We at Sharetribe have worked hard so that you
@@ -104,7 +104,7 @@ Before deploying these changes to production, we recommend that you
 wait for the migration on 8th of January. The migration will make
 implementing things simpler regarding your existing provider accounts.
 
-### After 19th of December 2019
+### Instructions for Flex subscriptions started after 19th of December 2019
 
 Your marketplace by default supports and is ready for the changes to
 the Capabilities framework. In practice:
