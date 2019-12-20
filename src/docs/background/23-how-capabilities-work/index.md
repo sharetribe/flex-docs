@@ -59,7 +59,7 @@ verification information to Stripe either by using [Stripe Connect
 Onboarding](https://stripe.com/en-fi/connect/onboarding), or [account
 tokens](https://stripe.com/docs/connect/account-tokens)
 during the create and update calls. What information is required for
-Capability activation is dependent on provider account and activity.
+Capability activation is dependent on the provider's account and activity.
 The specific information can be determined from `stripeAccountData` in
 [Stripe
 Account](https://www.sharetribe.com/api-reference/marketplace.html#stripe-account)
