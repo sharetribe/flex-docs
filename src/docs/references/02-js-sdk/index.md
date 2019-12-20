@@ -18,8 +18,8 @@ https://sharetribe.github.io/flex-sdk-js/
 
 ## Flex Integration SDK for JavaScript
 
-The Flex Integration SDK for JavaScript is the easiest way to interact with the
-Flex Integration API.
+The Flex Integration SDK for JavaScript is the easiest way to interact
+with the Flex Integration API.
 
 You can access all the JS SDK documentation at:
 

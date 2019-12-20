@@ -44,19 +44,20 @@ just skips those values.
 ## Schema types and cardinalities
 
 | Type       | Cardinality | Example data                                              | Example query                                                                      |
-| ---------- | ----------- | --------------------------------------------------------- | ----------------------------------------                                           |
+| ---------- | ----------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | enum       | one         | `category: "electric"`                                    | `pub_category=electric,wood`                                                       |
 | multi-enum | many        | `amenities: ["towels", "bathroom"]`                       | `pub_amenities=has_all:towels,bathroom` or `pub_amenities=has_any:towels,bathroom` |
 | boolean    | one         | `hasLakeNearby: true`                                     | `pub_hasLakeNearby=true`                                                           |
 | long       | one         | `distanceToLake: 30`                                      | `pub_distanceToLake=5,40`                                                          |
 | text       | one         | `stoveDescription: "Modern and powerful electric stove."` | `keywords=powerful%20modern`                                                       |
 
-Note that the scope in the examples above is `public`. If the value is stored to
-public metadata, the query parameter should start with `meta_` instead of
-`pub_`. Also, it's worth noting that the query parameter with a `text` schema is
-`keywords` which also targets the `title` and `description` attributes of a
-listing. See [Keyword search](/background/how-the-search-works/#keyword-search)
-for more information.
+Note that the scope in the examples above is `public`. If the value is
+stored to public metadata, the query parameter should start with `meta_`
+instead of `pub_`. Also, it's worth noting that the query parameter with
+a `text` schema is `keywords` which also targets the `title` and
+`description` attributes of a listing. See
+[Keyword search](/background/how-the-search-works/#keyword-search) for
+more information.
 
 ### Providing multiple query params for a single field
 
@@ -70,10 +71,10 @@ With the `enum` type like the category above, when you query
 control the matching mode explicitly. The query
 `pub_amenities=has_all:towels,bathroom` will match listings with
 "towels" AND "bathroom" in the amenities whereas the query
-`pub_amenities=has_any:towels,bathroom` will match listings with
-either "towels" OR "bathroom" (or both). If you don't specify the
-match mode in the query (i.e. `pub_amenities=towels,bathroom`), by
-default we use the has_all mathing mode (AND) for multi enums.
+`pub_amenities=has_any:towels,bathroom` will match listings with either
+"towels" OR "bathroom" (or both). If you don't specify the match mode in
+the query (i.e. `pub_amenities=towels,bathroom`), by default we use the
+has_all mathing mode (AND) for multi enums.
 
 With the `text` type, you provide a search query, so splitting values
 with a comma doesn't make sense. You will just provide a string of text
