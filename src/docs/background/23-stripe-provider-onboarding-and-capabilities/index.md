@@ -1,5 +1,5 @@
 ---
-title: Changes to Stripe provider onboarding and Stripe capabilities framework
+title: Changes to Stripe provider onboarding and Stripe Capabilities framework
 slug: stripe-provider-onboarding-and-capabilities
 updated: 2019-12-19
 category: background
@@ -25,7 +25,7 @@ each provider. What Capabilities are required determines what
 information Stripe requires to be collected from the providers.
 
 Currently, marketplaces located in the United States have used
-`card_payments` capability for their providers. Rest of the
+`card_payments` Capability for their providers. Rest of the
 world has `legacy_payments` enabled.
 
 ## Changes to Capabilities framework
@@ -52,7 +52,7 @@ For Flex payments to operate smoothly, your accounts need to have the
 `card_payments` will enable the providers to accept payments by
 card and `transfers` will allow the platform account to move money
 to connected accounts. Requesting `card_payments` will enforce also
-requesting `transfers` capability. Requesting Capabilities can be done during Stripe Account
+requesting `transfers` Capability. Requesting Capabilities can be done during Stripe Account
 [create](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account)
 and
 [update](https://www.sharetribe.com/api-reference/marketplace.html#update-stripe-account)
@@ -90,11 +90,11 @@ react to the changes.
 **Migration on January 8th 2020**
 
 We will perform a migration on January 8th 2020 requiring
-`card_payments`, `transfers` and `legacy_payments` capabilities for
+`card_payments`, `transfers` and `legacy_payments` Capabilities for
 all of your provider accounts and update your marketplace's Stripe
 API version to `2019-12-03`. `card_payments` and `transfers`
-capabilities are required for payments to work after the above
-deadline. `legacy_payments` is a capability allowing your current
+Capabilities are required for payments to work after the above
+deadline. `legacy_payments` is a Capability allowing your current
 implementation to work until the deadline.
 
 **Your actions**
@@ -126,17 +126,16 @@ utilize that to send appropriate information to them.
 If you don't react to the changes, your marketplace will continue
 functioning as is until the deadline. After that, the payments will
 start failing for providers in your marketplace whose `card_payments`
-and `transfers` capabilities haven't been activated by providing
+and `transfers` Capabilities haven't been activated by providing
 enough identity verification information to Stripe.
 
 ---
 
-You can already start working, implementing and testing the provider
+You can already start implementing and testing the provider
 onboarding and updating processes in your marketplace application.
 Before deploying these changes to production, we recommend that you
-wait for the migration on 8th of January. The migration will make
+wait for the migration on January 8th. The migration will make
 implementing things simpler regarding your existing provider accounts.
-
 
 ### Instructions for Flex subscriptions started after December 20th 2019
 
