@@ -51,10 +51,10 @@ tutorial for more information.
 
 ### Marketplace API
 
-The application programming interface (API) that provides the crucial features
-marketplaces need. For example, the Marketplace API allows creating and
-searching content (like user profiles and listings), managing user accounts, and
-processing transactions.
+The application programming interface (API) that provides the crucial
+features marketplaces need. For example, the Marketplace API allows
+creating and searching content (like user profiles and listings),
+managing user accounts, and processing transactions.
 
 Sharetribe customers can create their own web-based and mobile UIs on
 top of the Marketplace API.
@@ -70,11 +70,11 @@ different own or 3rd party systems with the Flex marketplace.
 
 ### Integration
 
-An external application that communicates with the marketplace (typically via
-the [Integration API](#integration-api)). This can mean reacting to marketplace
-events, pulling data from the marketplace, or triggering activity on the
-marketplace. For example, “automatically update a Mailchimp email list when a
-new user joins the marketplace”.
+An external application that communicates with the marketplace
+(typically via the [Integration API](#integration-api)). This can mean
+reacting to marketplace events, pulling data from the marketplace, or
+triggering activity on the marketplace. For example, “automatically
+update a Mailchimp email list when a new user joins the marketplace”.
 
 ### Sharetribe Flex
 
