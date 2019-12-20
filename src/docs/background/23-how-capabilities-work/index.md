@@ -14,7 +14,7 @@ published: true
 ## Introduction
 
 Coping with regulatory environment regarding provider onboarding can
-be a complex and daunting endeavour. Fulfilling these requirements
+be a complex and daunting task. Fulfilling these requirements
 means that you need to be collecting a variety of information from
 your providers in order to be able to process payments. Stripe has a
 mechanism for controlling the amount of information collected from providers called
