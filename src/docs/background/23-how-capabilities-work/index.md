@@ -64,7 +64,7 @@ The specific information can be determined from `stripeAccountData` in
 [Stripe
 Account](https://www.sharetribe.com/api-reference/marketplace.html#stripe-account)
 resource. The `stripeAccountData` attribute contains the related [Stripe Account
-Object](https://stripe.com/docs/api/accounts/object) where the fields
+Object](https://stripe.com/docs/api/accounts/object), as returned by Stripe's API, where the fields
 `payouts_enabled` and `requirements` can provide you with valuable information.
 
 How to implement these changes depends on when you have subscribed to Flex.
