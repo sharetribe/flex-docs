@@ -3,7 +3,7 @@ title:
   Changes to Stripe provider onboarding and Stripe Capabilities
   framework
 slug: stripe-provider-onboarding-and-capabilities
-updated: 2019-12-19
+updated: 2019-12-20
 category: background
 ingress:
   Capabilities framework offers tools to manage regulatory aspects of
