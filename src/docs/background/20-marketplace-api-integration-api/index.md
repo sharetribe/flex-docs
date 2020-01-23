@@ -70,10 +70,6 @@ The easiest way to access the Integration API is to use the
 See also the
 [Integration API reference documentation](https://www.sharetribe.com/api-reference/integration.html).
 
-> **NOTE** At present, the Integration API provides API endpoints only
-> for reading data. In the future, new capabilities will be added to the
-> API that enable applications to create or update resources as well.
-
 ## Authentication
 
 Both the Marketplace API and the Integration API require valid _access
