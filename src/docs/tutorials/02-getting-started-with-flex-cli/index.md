@@ -30,7 +30,7 @@ from npmjs, you will need to download and install Node.js development
 environment:
 
 - [Node.js](https://nodejs.org/)
-- [Yarn](https://yarnpkg.com/docs/install)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
 When you have installed Node.js and Yarn, type the following command to
 install Flex CLI:
