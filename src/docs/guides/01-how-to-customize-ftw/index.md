@@ -57,11 +57,11 @@ Currently you can choose from two templates:
 > [getting started with Flex CLI](https://www.sharetribe.com/docs/tutorials/getting-started-with-flex-cli/)
 > for more information.
 
-> **Note:** This guide assumes you'll connect to Github over SSH. If you have
-> not generated an SSH key for Github and don't wish to do so you can also
-> connect over HTTPS. You can read more about which URL to use with each option
-> from the [Github
-> documentation](https://help.github.com/en/github/using-git/which-remote-url-should-i-use).
+> **Note:** This guide assumes you'll connect to Github over SSH. If you
+> have not generated an SSH key for Github and don't wish to do so you
+> can also connect over HTTPS. You can read more about which URL to use
+> with each option from the
+> [Github documentation](https://help.github.com/en/github/using-git/which-remote-url-should-i-use).
 
 In the directory you want to create the project in:
 
