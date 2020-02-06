@@ -54,7 +54,7 @@ basic development tooling:
 
 - [Git](https://git-scm.com/downloads)
 - [Node.js](https://nodejs.org/)
-- [Yarn](https://yarnpkg.com/docs/install)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
 ## Setup FTW-daily
 
