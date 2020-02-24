@@ -20,6 +20,7 @@ exports.fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
 // Categories allowed for articles. The order defines the order in the
 // Topbar navigation.
 exports.categories = [
+  { id: 'tutorial' },
   { id: 'tutorials' },
   { id: 'guides' },
   { id: 'references' },
