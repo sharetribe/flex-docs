@@ -10,31 +10,33 @@ ingress:
 published: true
 ---
 
-The _Login as user_ feature allows marketplace operators to log into their
-marketplace as a specific user of the marketplace. This helps operators to
-experience their marketplace as their users do and to find out what is wrong
-when their users are reporting problems. The feature also comes in handy when a
-marketplace user asks for help with managing their data and listings. However,
-note that when logged in as another user __it is not possible to modify Stripe
-account details, send messages, or initiate or transition transactions__.
+The _Login as user_ feature allows marketplace operators to log into
+their marketplace as a specific user of the marketplace. This helps
+operators to experience their marketplace as their users do and to find
+out what is wrong when their users are reporting problems. The feature
+also comes in handy when a marketplace user asks for help with managing
+their data and listings. However, note that when logged in as another
+user **it is not possible to modify Stripe account details, send
+messages, or initiate or transition transactions**.
 
-__NOTE:__ In order to enable the Login as user feature you will need to be
-running at least version 4.2.0 of ftw-daily or 6.2.0 of ftw-hourly.
-Alternatively you will need to perform the modifications described in this guide
-to your marketplace website.
+**NOTE:** In order to enable the Login as user feature you will need to
+be running at least version 4.2.0 of ftw-daily or 6.2.0 of ftw-hourly.
+Alternatively you will need to perform the modifications described in
+this guide to your marketplace website.
 
 ## How the Login as user feature works
 
-As context, here's a quick description of the technical implementation of how
-the Login as user works to make it easier to understand the changes it requires.
-The authentication flow uses the _authorization code_ grant type defined in the
-OAuth2. Console works as an _authorization server_ that issues an authorization
-code for FTW. FTW then uses this code to obtain an access token from Auth API.
-The access token is valid for 30 minutes and it does not come with a refresh
-token. The token can be used as a normal token obtained with a password login
-excluding updating payment information, sending messages, and initiating or
-transitioning transactions. The image below describes the authentication flow in
-more detail.
+As context, here's a quick description of the technical implementation
+of how the Login as user works to make it easier to understand the
+changes it requires. The authentication flow uses the _authorization
+code_ grant type defined in the OAuth2. Console works as an
+_authorization server_ that issues an authorization code for FTW. FTW
+then uses this code to obtain an access token from Auth API. The access
+token is valid for 30 minutes and it does not come with a refresh token.
+The token can be used as a normal token obtained with a password login
+excluding updating payment information, sending messages, and initiating
+or transitioning transactions. The image below describes the
+authentication flow in more detail.
 
 ![Authentication flow](authentication-flow.png)
 
@@ -97,16 +99,21 @@ const Decimal = require('decimal.js');
 const CLIENT_ID = process.env.REACT_APP_SHARETRIBE_SDK_CLIENT_ID;
 const ROOT_URL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 const CONSOLE_URL =
-  process.env.SERVER_SHARETRIBE_CONSOLE_URL || 'https://flex-console.sharetribe.com';
+  process.env.SERVER_SHARETRIBE_CONSOLE_URL ||
+  'https://flex-console.sharetribe.com';
 const BASE_URL = process.env.REACT_APP_SHARETRIBE_SDK_BASE_URL;
-const TRANSIT_VERBOSE = process.env.REACT_APP_SHARETRIBE_SDK_TRANSIT_VERBOSE === 'true';
+const TRANSIT_VERBOSE =
+  process.env.REACT_APP_SHARETRIBE_SDK_TRANSIT_VERBOSE === 'true';
 const USING_SSL = process.env.REACT_APP_SHARETRIBE_USING_SSL === 'true';
 
 const router = express.Router();
 
 // redirect_uri param used when initiating a login as authentication flow and
 // when requesting a token using an authorization code
-const loginAsRedirectUri = `${ROOT_URL.replace(/\/$/, '')}/api/login-as`;
+const loginAsRedirectUri = `${ROOT_URL.replace(
+  /\/$/,
+  ''
+)}/api/login-as`;
 
 // Instantiate HTTP(S) Agents with keepAlive set to true.
 // This will reduce the request time for consecutive requests by
@@ -147,11 +154,15 @@ router.get('/initiate-login-as', (req, res) => {
     return res.status(400).send('Missing query parameter: user_id.');
   }
   if (!ROOT_URL) {
-    return res.status(409).send('Marketplace canonical root URL is missing.');
+    return res
+      .status(409)
+      .send('Marketplace canonical root URL is missing.');
   }
 
   const state = urlifyBase64(crypto.randomBytes(32).toString('base64'));
-  const codeVerifier = urlifyBase64(crypto.randomBytes(32).toString('base64'));
+  const codeVerifier = urlifyBase64(
+    crypto.randomBytes(32).toString('base64')
+  );
   const hash = crypto
     .createHash('sha256')
     .update(codeVerifier)
@@ -190,7 +201,9 @@ router.get('/login-as', (req, res) => {
   }
 
   if (error) {
-    return res.status(401).send(`Failed to authorize as a user, error: ${error}.`);
+    return res
+      .status(401)
+      .send(`Failed to authorize as a user, error: ${error}.`);
   }
 
   const codeVerifier = req.cookies[codeVerifierKey];
@@ -231,7 +244,9 @@ router.get('/login-as', (req, res) => {
       code_verifier: codeVerifier,
     })
     .then(() => res.redirect('/'))
-    .catch(() => res.status(401).send('Unable to authenticate as a user'));
+    .catch(() =>
+      res.status(401).send('Unable to authenticate as a user')
+    );
 });
 
 module.exports = router;
@@ -248,16 +263,17 @@ Now you can log into the marketplace from Console's user view.
 
 ### Show a banner when logged in as a user
 
-The endpoints of the previous section enable the Login as user feature. However,
-this will not notify the operator in any way that they are logged in as a user
-and have a limited set of actions in their use. The Flex template applications
-ftw-daily and ftw-hourly provide such a banner. The changes for showing the
-banner are a bit more complex what is required for adding the endpoints
-described above so in order to show a notification to an operator it is advised
-to pull upstream updates. However, in case that is not a viable option the
-notification banner changes to the FTWs are in [this
-PR](https://github.com/sharetribe/ftw-daily/pull/1259) and can be applied from
-there as one sees best.
+The endpoints of the previous section enable the Login as user feature.
+However, this will not notify the operator in any way that they are
+logged in as a user and have a limited set of actions in their use. The
+Flex template applications ftw-daily and ftw-hourly provide such a
+banner. The changes for showing the banner are a bit more complex what
+is required for adding the endpoints described above so in order to show
+a notification to an operator it is advised to pull upstream updates.
+However, in case that is not a viable option the notification banner
+changes to the FTWs are in
+[this PR](https://github.com/sharetribe/ftw-daily/pull/1259) and can be
+applied from there as one sees best.
 
 ## Troubleshooting
 
@@ -276,6 +292,6 @@ Have you updated the SDK to the latest version?
 
 ### Login session drops unexpectedly
 
-The access token obtained with the Login as user authentication flow is valid
-only for 30 minutes. If you could not finish what you had in mind during that
-time you can always login as the user again.
+The access token obtained with the Login as user authentication flow is
+valid only for 30 minutes. If you could not finish what you had in mind
+during that time you can always login as the user again.
