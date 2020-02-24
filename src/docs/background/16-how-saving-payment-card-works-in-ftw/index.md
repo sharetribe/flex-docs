@@ -182,7 +182,7 @@ details for future bookings.
 After submitting `StripePaymentForm`, there are up to 5 calls in
 sequence (to Flex and Stripe APIs):
 
-#### Step 1.
+###### Step 1.
 
 ```js
 sdk.transactions
@@ -243,7 +243,7 @@ and related
 [`orderParams`](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.js#L373)
 from FTW.
 
-#### Step 2.
+###### Step 2.
 
 ```js
 stripe.handleCardPayment(stripePaymentIntentClientSecret, [
@@ -261,7 +261,7 @@ from customer. Some payments might need Strong Customer Authentication
 (SCA). In practice, Stripe's script creates a popup (iframe) to card
 issuers site, where 3D secure v2 authentication flow can be completed.
 
-#### Step 3.
+###### Step 3.
 
 ```js
 sdk.transactions.transition({
@@ -276,7 +276,7 @@ possible SCA authentication has been requested from user. FTW does that
 in
 [`confirmPayment` thunk call](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L206)
 
-#### Step 4.
+###### Step 4.
 
 ```js
 sdk.messages.send({ transactionId: orderId, content: message });
@@ -285,7 +285,7 @@ sdk.messages.send({ transactionId: orderId, content: message });
 FTW sends an initial message to transaction if customer has added a
 message.
 
-#### Step 5.
+###### Step 5.
 
 As a final step, we need to save the payment method, if customer has
 selected the "Save for later use" checkbox. So, this is relevant if user

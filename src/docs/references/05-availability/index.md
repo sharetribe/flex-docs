@@ -66,19 +66,19 @@ context of a listing with day-based availability plan:
 If your transaction process uses time-based bookings, the bookings are
 also subject to the same interpretation rules.
 
-#### **Example 1:**
+###### **Example 1:**
 
 An exception with start `2018-11-26T12:30:00.000+01` and end
 `2018-11-27T10:25:00.000+01` is interpreted as if it were from
 `2018-11-26T00:00:00.000Z` to `2018-11-28T00:00:00.000Z`
 
-#### **Example 2:**
+###### **Example 2:**
 
 An exception with start `2018-11-26T00:30.000+01:00` and end
 `2018-11-27T00:15:00.000+01:00` is interpreted as if it were from
 `2018-11-25T00:00:00.000Z` to `2018-11-27T00:00:00.000Z`.
 
-#### **Example 3:**
+###### **Example 3:**
 
 Given exception 1 from `2017-11-26T10:00:00.000Z` to
 `2018-11-26T12:00:00.000Z` with 1 seat and exception 2 from
@@ -143,7 +143,7 @@ See
 [the booking resource format](https://www.sharetribe.com/api-reference/marketplace.html#booking-resource-format)
 for a full list of booking attributes.
 
-#### **Example:**
+###### **Example:**
 
 A provider needs 10 minutes of preparation time before each booking.
 They can pass the following params regarding booking start when

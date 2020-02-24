@@ -9,6 +9,7 @@ import {
   baselineBreakpoint,
 } from '../../config';
 import {
+  H3,
   H4,
   H5,
   H6,
@@ -100,12 +101,12 @@ const HighlightStyle = createGlobalStyle`
 
 const Html = styled.div`
   h1 {
-    ${H4.styles}
+    ${H3.styles}
     margin: ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h2 {
-    ${H4.styles}
+    ${H3.styles}
     margin: ${7 * baselineSmall}px 0 ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
     border-top: 1px solid #CCCCCC;
@@ -117,7 +118,7 @@ const Html = styled.div`
     }
   }
   h3 {
-    ${H5.styles}
+    ${H4.styles}
     margin: ${5 * baselineSmall}px 0 ${baselineSmall}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
 
@@ -126,7 +127,7 @@ const Html = styled.div`
     }
   }
   h4 {
-    ${H6.styles}
+    ${H5.styles}
     margin: ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
