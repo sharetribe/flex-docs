@@ -26,7 +26,7 @@ const query = graphql`
   }
 `;
 
-const category = 'tutorials';
+const category = 'tutorial';
 
 const byArrayOfSlugs = sortingArray => (a, b) => {
   const indexA = sortingArray.indexOf(a.slug);

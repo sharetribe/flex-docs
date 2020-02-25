@@ -128,8 +128,12 @@ const Html = styled.div`
   }
   h4 {
     ${H5.styles}
-    margin: ${baselineSpacing}px 0;
+    margin: ${5 * baselineSmall}px 0 ${baselineSmall}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin: ${5 * baselineLarge}px 0 ${baselineLarge}px 0;
+    }
   }
   h5 {
     ${H6.styles}
