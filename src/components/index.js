@@ -24,6 +24,7 @@ export { default as Breadcrumb } from './Breadcrumb';
 export { default as UiText } from './UiText';
 export { default as GlobalStyle } from './GlobalStyle';
 export { default as BaselineDevGrid } from './BaselineDevGrid';
+export { default as ExtraInfo } from './ExtraInfo';
 
 // Components that import other components from this index. These
 // might create circular dependencies. Changing the order of these

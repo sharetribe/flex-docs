@@ -22,6 +22,7 @@ import {
   Strong,
   Em,
   Asciinema,
+  ExtraInfo,
 } from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
@@ -285,7 +286,7 @@ const Html = styled.div`
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   Fragment: React.Fragment,
-  components: { asciinema: Asciinema },
+  components: { asciinema: Asciinema, extrainfo: ExtraInfo },
 }).Compiler;
 
 const MarkdownHtml = props => {
