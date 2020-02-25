@@ -7,6 +7,7 @@
   "Topbar.MobileMenu.iconAlt": "Menu icon",
   "Topbar.MobileMenu.contentLabel": "Mobile navigation menu content",
   "Topbar.Modal.close": "Close",
+  "Topbar.Menu.introduction.label": "Introduction",
   "Topbar.Menu.tutorial.label": "Tutorial",
   "Topbar.Menu.tutorials.label": "Tutorials",
   "Topbar.Menu.guides.label": "How-to Guides",
@@ -67,6 +68,8 @@
   "NotFoundPage.heading": "Oops, page not found :/",
 
   "ArticleIndexPage.ArticleIndex.noArticlesFound": "No articles found.",
+  "ArticleIndexPage.introduction.title": "Introduction to Flex",
+  "ArticleIndexPage.introduction.description": "Get started in learning about Sharetribe Flex",
   "ArticleIndexPage.tutorials.title": "All Tutorials",
   "ArticleIndexPage.tutorials.description": "Get started in learning about the product with hands-on tutorials for developers.",
   "ArticleIndexPage.guides.title": "All How-to Guides",
