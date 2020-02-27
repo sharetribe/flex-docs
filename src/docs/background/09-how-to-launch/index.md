@@ -1,7 +1,7 @@
 ---
 title: How to build and launch your marketplace with Flex
 slug: how-to-build-and-launch-with-flex
-updated: 2019-11-21
+updated: 2020-03-12
 category: background
 ingress:
   This article describes what it takes to build and launch your
@@ -29,12 +29,13 @@ to do that now.
 ## 1. Getting access to Flex
 
 If you're reading this article, the chances are that you already have
-access to Flex. This means that you've received the credentials to log
-in to [Flex Console](https://flex-console.sharetribe.com) (the "admin
-section" of your Flex marketplace). If you don't have access yet, you
-can request access by
-[filling out this form](https://sharetribe.typeform.com/to/BI9M4O). If
-you have gotten access to Flex but have forgotten your credentials,
+access a Flex marketplace. This means that you have an account in
+[Flex Console](https://flex-console.sharetribe.com) (the "admin section"
+of your Flex marketplace). If you don't have an account yet, you can
+create one in
+[the Sharetribe Flex website](https://www.sharetribe.com/#start-building-with-flex).
+If you have got a Flex marketplace but have forgotten your Console login
+credentials,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com).
 
 Once you log in to Console, you'll notice there's nothing there yet: you
