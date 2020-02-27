@@ -32,10 +32,10 @@ activation form varies based on your country.
 Sharetribe uses the Stripe Connect features with
 [custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 
-Note! If you're based in The United States, Stripe will need to review
-your platform account before you get access. See
-[this article](https://help.sharetribe.com/sharetribe-go-payments-and-transactions/online-payments-with-stripe/how-to-apply-for-stripe-connect-review-us-accounts-only)
-to learn how to apply for Stripe Connect review.
+> **Note!** Stripe might need to review your platform account before you
+> get access. <br /> Check
+> [this article](/guides/stripe-connect-platform-review) to learn how to
+> apply for Stripe Connect review.
 
 If you're in any another country, follow these instructions to enable
 Stripe Connect:
