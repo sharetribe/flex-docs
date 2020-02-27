@@ -1,9 +1,11 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { dev } from '../config';
-import tutorialsSortingArray from '../docs/tutorial/order-config';
+import { dev, categories } from '../config';
 import { ArticleIndexPage } from '../components';
+
+const categoryConfig = categories.find(c => c.id === 'tutorial') || {};
+const sortingArray = categoryConfig.sortingArray || [];
 
 const query = graphql`
   query TutorialIndexQuery {
@@ -58,7 +60,7 @@ const TutorialPage = () => {
               return result;
             }
           }, [])
-          .sort(byArrayOfSlugs(tutorialsSortingArray));
+          .sort(byArrayOfSlugs(sortingArray));
         return <ArticleIndexPage category={category} articles={articles} />;
       }}
     />

@@ -17,11 +17,21 @@ exports.baselineBreakpoint = 768;
 // Fonts that are used from fonts.js
 exports.fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
 
+// Arrange tutorial articles according to this configuration.
+// This sorting order is used to provide next-page link
+// for the listed articles.
+const tutorialsSortingArray = [
+  'introduction',
+  'first-edit',
+  'change-image-assets',
+  'change-logo',
+];
+
 // Categories allowed for articles. The order defines the order in the
 // Topbar navigation.
 exports.categories = [
   { id: 'introduction' },
-  { id: 'tutorial' },
+  { id: 'tutorial', sortingArray: tutorialsSortingArray },
   { id: 'tutorials' },
   { id: 'guides' },
   { id: 'references' },

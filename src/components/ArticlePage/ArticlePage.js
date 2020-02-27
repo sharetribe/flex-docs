@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import fonts from '../../fonts';
 
-import { baselineBreakpoint, baselineSmall, baselineLarge } from '../../config';
 import {
+  baselineBreakpoint,
+  baselineSmall,
+  baselineLarge,
+  categories,
+} from '../../config';
+import {
+  A,
   Ingress,
   H1,
   H6,
@@ -141,9 +148,53 @@ const ContentTocHeader = styled(H6)`
     margin-top: ${4 * baselineLarge}px;
   }
 `;
+
+const Pagination = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 78px;
+  border-top: solid 1px ${props => props.theme.lineColor};
+  padding: 24px 0;
+`;
+
+const Prev = styled(A)`
+  ${fonts['CircularStd-Medium'].styles}
+  font-size: 18px;
+  text-decoration: none;
+`;
+const Next = styled(A)`
+  ${fonts['CircularStd-Medium'].styles}
+  font-size: 18px;
+  text-decoration: none;
+`;
+
+const nextAndPrev = (slug, category, categories) => {
+  const categoryConfig = categories.find(cat => cat.id === category);
+  const sortingArray =
+    categoryConfig && categoryConfig.sortingArray
+      ? categoryConfig.sortingArray
+      : [];
+  const slugIndex = sortingArray.findIndex(s => s === slug);
+  const lastSlugIndex = sortingArray.length - 1;
+
+  return {
+    nextArticleSlug:
+      slugIndex > -1 && slugIndex < lastSlugIndex
+        ? sortingArray[slugIndex + 1]
+        : null,
+    prevArticleSlug:
+      slugIndex > -1 && slugIndex > 0 ? sortingArray[slugIndex - 1] : null,
+  };
+};
+
 const ArticlePage = props => {
   const { frontmatter, htmlAst, estimatedReadingTime, tableOfContents } = props;
   const { title, slug, updated, category, ingress, toc } = frontmatter;
+  const { nextArticleSlug, prevArticleSlug } = nextAndPrev(
+    slug,
+    category,
+    categories
+  );
 
   // Structured metadata for the article page
   //
@@ -209,6 +260,25 @@ const ArticlePage = props => {
             </>
           ) : null}
           <Markdown htmlAst={htmlAst} />
+          {prevArticleSlug || nextArticleSlug ? (
+            <Pagination>
+              {prevArticleSlug ? (
+                <Prev href={`/${category}/${prevArticleSlug}`}>
+                  {'<'} Previous article
+                </Prev>
+              ) : (
+                <span />
+              )}
+              {nextArticleSlug ? (
+                <Next href={`/${category}/${nextArticleSlug}`}>
+                  Next article {'>'}
+                </Next>
+              ) : (
+                <span />
+              )}
+            </Pagination>
+          ) : null}
+          {}
         </MainColumn>
       </ColumnLayout>
     </MainLayout>
