@@ -7,7 +7,7 @@ ingress: Reference documentation for extended data.
 published: true
 ---
 
-_Extended data_ is a set of arbitrary keys and values store with the API
+_Extended data_ is a set of arbitrary keys and values stored with the API
 resources. The values for the keys can be any valid JSON values,
 including a JSON object (hash). This provides API clients with the
 capability to store arbitrary structured data for the supported resource
@@ -61,7 +61,7 @@ a corresponding id in an external service.
 
 _Public metadata_ is writable by marketplace operators and can be read
 via all API endpoints returning the corresponding resource. Public
-metadata is supported for listings and can also be used as filters when
+metadata is supported for users and listings. It can also be used as filters when
 searching via
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings).
 
