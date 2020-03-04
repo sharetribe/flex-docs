@@ -9,10 +9,10 @@ import {
   categories,
 } from '../../config';
 import {
-  A,
   Ingress,
   H1,
   H6,
+  Link,
   MainLayout,
   Breadcrumb,
   Box,
@@ -157,12 +157,12 @@ const Pagination = styled.div`
   padding: 24px 0;
 `;
 
-const Prev = styled(A)`
+const Prev = styled(Link)`
   ${fonts['CircularStd-Medium'].styles}
   font-size: 18px;
   text-decoration: none;
 `;
-const Next = styled(A)`
+const Next = styled(Link)`
   ${fonts['CircularStd-Medium'].styles}
   font-size: 18px;
   text-decoration: none;
@@ -263,14 +263,14 @@ const ArticlePage = props => {
           {prevArticleSlug || nextArticleSlug ? (
             <Pagination>
               {prevArticleSlug ? (
-                <Prev href={`/${category}/${prevArticleSlug}`}>
+                <Prev to={`/${category}/${prevArticleSlug}`}>
                   {'<'} Previous article
                 </Prev>
               ) : (
                 <span />
               )}
               {nextArticleSlug ? (
-                <Next href={`/${category}/${nextArticleSlug}`}>
+                <Next to={`/${category}/${nextArticleSlug}`}>
                   Next article {'>'}
                 </Next>
               ) : (
