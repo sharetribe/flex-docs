@@ -174,6 +174,16 @@ const Html = styled.div`
     p + p {
       margin-top: ${baselineSpacing}px;
     }
+
+    // Increase the distance between p and the code block inside blockquote
+    p + .gatsby-highlight {
+      margin-top: ${2 * baselineSmall}px;
+
+      @media (min-width: ${baselineBreakpoint}px) {
+        margin-top: ${2 * baselineLarge}px;
+      }
+    }
+
   }
   > blockquote {
     max-width: ${props => props.theme.contentMaxWidth}px;
