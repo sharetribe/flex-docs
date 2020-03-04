@@ -29,6 +29,7 @@ const tutorialsSortingArray = [
   'configurations',
   'change-default-locations',
   'customize-amenities-filter',
+  'deploy-to-heroku',
 ];
 
 // Categories allowed for articles. The order defines the order in the
