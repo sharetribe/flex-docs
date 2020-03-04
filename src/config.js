@@ -27,6 +27,7 @@ const tutorialsSortingArray = [
   'change-logo',
   'working-with-translations',
   'configurations',
+  'change-default-locations',
 ];
 
 // Categories allowed for articles. The order defines the order in the
