@@ -1,5 +1,5 @@
 ---
-title: Create staging server
+title: Create a testing environment
 slug: deploy-to-heroku
 updated: 2020-03-03
 category: tutorial
@@ -41,7 +41,7 @@ Then test that the application works on different pages.
 <extrainfo title="Extra: troubleshooting">
 
 If the server-side rendering doesn't work, it is likely that you have
-called functions that belong to "**window**" object/scope. In server
+called functions that belong to "**window**" object/scope. In the server
 environment, "window" object is not available.
 
 </extrainfo>

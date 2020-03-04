@@ -23,10 +23,10 @@ Most of the translations can be found from this _en.json_ file:
         └── en.json
 ```
 
-On top of that file, there are also couple components that contain a
+On top of that file, there are also a couple components that contain a
 huge amount of text content (e.g. **AboutPage**, **PrivacyPolicy**, and
-**TermsOfService**). The content of those components is not included to
-the translation file, since they need a free-form structure and styling.
+**TermsOfService**). The content of those components is not included in
+the translation file since they need a free-form structure and styling.
 It is easier to achieve that with a markup language (like HTML and JSX)
 than key-value mapping you see in _en.json_ file:
 
@@ -44,11 +44,11 @@ The content of translation file has a format, where the "key" contains a
 dot notation:<br />
 _`"<ComponentName>.<translationKey>": "<translation>"`_
 
-So, there are couple of ways to find the correct translation for UI
+So, there are a couple of ways to find the correct translation for UI
 components:
 
 - You could search for a translation text
-- You could check the name of the component and search it form
+- You could check the name of the component and search it from the
   translation file.
 
 The latter option becomes easier if you use browser extension: **React
@@ -66,8 +66,8 @@ check the **props** section on the _Components_ tab of Web Inspector
 `id: "SectionHero.title"`.
 
 So, the translation can be found from _en.json_ file under the
-translation key: _SectionHero.title_. There's also 2 other translations
-that SectionHero component uses. Let's change all of them:
+translation key: _SectionHero.title_. There are also 2 other
+translations that SectionHero component uses. Let's change all of them:
 
 ```json
   "SectionHero.browseButton": "Browse cottages",
@@ -75,8 +75,8 @@ that SectionHero component uses. Let's change all of them:
   "SectionHero.title": "Choose Cottage Days",
 ```
 
-When you save the file, you should see the changes in hero section on
-landing page:
+When you save the file, you should see the changes in the hero section
+on the landing page:
 
 ![Hero section with updated translations](./hero-with-updated-translations.png)
 

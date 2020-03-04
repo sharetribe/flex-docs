@@ -17,8 +17,8 @@ same approach works with category filter too.
 
 ## Update Amenities filter
 
-The configuration for the default filters on search page can be found
-from file: _marketplace-custom-config.js_
+The configuration for the default filters on the search page can be
+found from file: _marketplace-custom-config.js_
 
 ```shell
 └── src
@@ -41,19 +41,19 @@ export const amenities = [
 
 - **key**:
 
-  Key is saved to listing's public data, when the listing is created.
+  Key is saved to listing's public data when the listing is created.
 
   ![Console: amenities in public data](./console-amenities-public-data.png)
 
 - **label**:
 
-  Label is just a hard-coded string that is shown in the UI. So, there's
-  no translations for these in _en.json_ file. It's easier to modify
+  Label is just a hard-coded string that is shown in the UI. So, there
+  are no translations for these in _en.json_ file. It's easier to modify
   options this way - just change the content of
   _marketplace-custom-config.js_.
 
-We want amenities to be related to cottage rental marketplace. We'll use
-the following options:
+We want amenities to be related to our cottage-rental marketplace. We'll
+use the following options:
 
 ```js
 export const amenities = [
@@ -92,7 +92,7 @@ export const amenities = [
 ];
 ```
 
-After you have saved the file, you should see the following options in
+After you have saved the file, you should see the following options on
 the search page:
 
 ![Amenities filter with CottageDays content](./updated-amenities-filter.png)
@@ -126,12 +126,12 @@ selected.
 
 ## How to take the filter into use?
 
-Amenities filter is just an example filter component for web app, since
-quite many marketplaces would need something like that. However, it is
-not added to search engine by default, because it might be that the
-relevant key is not actually called _amenities_ but something different.
-(E.g. _kitchenware_ could be similar multi-enum filter for
-cottage-rental marketplace.)
+Amenities filter is just an example filter component since quite many
+marketplaces would need something like that. However, it is not added to
+the search engine by default, because it might be that the relevant key
+is not actually called _amenities_ but something different. (E.g.
+_kitchenware_ could be a similar multi-enum filter for a cottage-rental
+marketplace.)
 
 If we want to make `sdk.listing.query` endpoint to understand that
 listings have a new public data field, we need to add search schema for
@@ -170,7 +170,7 @@ search engine:
 - `--key amenities`: key for this new searchable data is _amenities_.
 - `--type multi-enum`: the type is an enumeration with an array of
   choices.
-- `--scope public`: key can be found from public data section of a
+- `--scope public`: key can be found from the public data section of a
   listing entity.
 
   Read more about [public data](/references/extended-data/).

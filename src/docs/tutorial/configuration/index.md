@@ -3,13 +3,14 @@ title: Changing configurations
 slug: configurations
 updated: 2020-02-28
 category: tutorial
-ingress: Change marketplace configurations - change currency to euro.
+ingress:
+  Change marketplace configurations - change the currency to euro.
 published: true
 ---
 
-There are several files that affect to the configuration of FTW
-templates. The bottom layer consists of _environment variables_ and
-_src/config.js_ file.
+There are several files that affect the configuration of FTW templates.
+The bottom layer consists of _environment variables_ and _src/config.js_
+file.
 
 ## Environment variables
 
@@ -28,15 +29,15 @@ That happened, when you executed command:
 yarn run config
 ```
 
-That config script just asked couple of mandatory variables from you and
-then created a new hidden file: "**.env**". You can just open that file
-with your preferred text editor:
+That config script just asked a couple of mandatory variables from you
+and then created a new hidden file: "**.env**". You can just open that
+file with your preferred text editor:
 
 ```shell
 └── .env
 ```
 
-Full list of configuration variables can be found from here:
+Full list of configuration variables can be found here:
 [FTW environment variables](/references/ftw-env/). You can change any of
 these variables _locally_ by just editing the **.env** file. Then you
 need to restart the server by running `yarn run dev` again.
@@ -85,7 +86,7 @@ REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY=EUR
 
 Restart your development server: **ctrl+c** and `yarn run dev`.
 
-<extrainfo title="Why my old listings have wrong currency?">
+<extrainfo title="Why my old listings have a wrong currency?">
 
 If you already created listings before changing the currency, listings
 using the old currency will not be bookable anymore. FTW templates don't
@@ -100,7 +101,7 @@ You can just close those listings from Console.
 
 </extrainfo>
 
-> **Note**: you can also change the currency by using config script:
+> **Note**: you can also change the currency by using the config script:
 >
 > ```shell
 > yarn run config
@@ -113,9 +114,8 @@ You can just close those listings from Console.
     └── config.js
 ```
 
-Most of the environment variables are just included into _config.js_
-file, which is then imported into those components that use those
-variables.
+Most of the environment variables are just included in _config.js_ file,
+which is then imported into those components that use those variables.
 
 However, config.js file contains also other variables that are just
 hard-coded there. For example, **siteTitle** is set in config.js - and
@@ -133,7 +133,7 @@ all the variables that reference Saunatime or Sharetribe.
 ### Task: _Set listing's minimum price_
 
 Let's continue our task of changing currency to euros. In the previous
-chapter we changed the currency to EUR and it is already in use, when a
+chapter, we changed the currency to EUR and it is already in use when a
 new listing is created.
 
 <extrainfo title="Extra: how to import currency on component file?">
@@ -175,13 +175,13 @@ const currencyConfig = currencyConfiguration(currency);
 const listingMinimumPriceSubUnits = 0;
 ```
 
-We can ignore the **currencyConfig** since our currency is euro. If you
-are using some other currency, you can read more about currencyConfig
-from
+We can ignore the **currencyConfig** since our currency is the euro. If
+you are using some other currency, you can read more about
+currencyConfig from
 [this document](/guides/how-to-set-up-currency-in-ftw/#3-check-the-currency-configjs-file).
 
 The third variable, **listingMinimumPriceSubUnits**, is more relevant.
-Stripe (the payment processor used by Flex) has
+Stripe (the payment processor used by Flex) has a
 [minimum (and maximum) charge amounts per currency](https://stripe.com/docs/currencies#minimum-and-maximum-charge-amounts).
 For euros, the minimum charge amount is 50 cents at the time when this
 article was written.
@@ -198,7 +198,8 @@ get something. In this tutorial, we use €5 aka 500 cents:
 const listingMinimumPriceSubUnits = 500;
 ```
 
-Error message, when creating a new listing (_EditListingPricingForm_):
+The error message, when creating a new listing
+(_EditListingPricingForm_):
 
 ![EditListingPricingForm: validation for minimum price](./minimum-price.png)
 

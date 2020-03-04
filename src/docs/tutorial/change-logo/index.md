@@ -16,7 +16,7 @@ Components can be found from one of the three directories:
 - **forms**: Form components. (These use Final Form.)
 - **components**: Other presentational components.
 
-Logo is presentational component and it can be found from components
+Logo is a presentational component and it can be found from components
 directory:
 
 ```shell
@@ -40,16 +40,17 @@ import IconLogo from './IconLogo';
 import LogoImage from './saunatime-logo.png';
 ```
 
-The first one (_IconLogo_) doesn't have file extension, which means that
-it's referring to **IconLogo.js** file. If you open it, you see that it
-contains Scalable Vector Graphics (SVG) content inside React component.
+The first one (_IconLogo_) doesn't have a file extension, which means
+that it's referring to **IconLogo.js** file. If you open it, you see
+that it contains Scalable Vector Graphics (SVG) content inside React
+component.
 
 The other import (_LogoImage_) is referring to a normal PNG image.
 
-_IconLogo_ is used for mobile layout and and PNG is for desktop layout.
+_IconLogo_ is used for mobile layout and PNG is for desktop layout.
 There's no real reason behind this double format setup - it is just
-there to show 2 different ways create graphics. Although, the SVG format
-is a bit better choice for logo, since it stays sharp when scaled
+there to show 2 different ways to create graphics. Although, the SVG
+format is a bit better choice for logo since it stays sharp when scaled
 bigger.
 
 However, in this tutorial, we'll use raster images (PNGs):
@@ -64,7 +65,7 @@ import MobileLogoImage from './cottagedays-logo-small.png';
 import DesktopLogoImage from './cottagedays-logo.png';
 ```
 
-You also need to change the places where the previous imported logos
+You also need to change the places where the previously imported logos
 were used. Since we use PNGs in this tutorial, we just need plain
 `<img>` elements. Therefore, we can simplify the function component a
 bit.
@@ -148,7 +149,7 @@ After those changes, you should see the updated Logo:
 ![Updated logo](updated-logo.png)
 
 Logo component is used in several places. Check these locations to
-verify that your changes doesn't break anything:
+verify that your changes don't break anything:
 
 - **Topbar** - Both desktop and mobile layout. The breakpoint is at
   768px.
@@ -159,11 +160,12 @@ verify that your changes doesn't break anything:
 
 If your logo has a completely different aspect ratio, you might need to
 change the paddings and other styles that are used to style the parent
-component of the Logo. E.g. you might need to adjust the _paddings_, so
+component of the Logo. E.g. you might need to adjust the _paddings_ so
 that the component doesn't overflow from the area reserved for Topbar.
 
 The easiest way to figure out styles related to any component is to use
-browser's Web Inspector and check the classes that affect the component.
+the browser's Web Inspector and check the classes that affect the
+component.
 
 ![Web Inspector: hover on top of the markup of Logo component](web-inspector-hovering-on-logo.png)
 
@@ -186,4 +188,4 @@ to customize FTW styles_**: <br />
 
 Especially, you should check
 [the best practices topic](/guides/how-to-customize-ftw-styles/#styling-guidelines-and-good-practices)
-to check the philosophy how the existing components are styled.
+to check the philosophy of how the existing components are styled.

@@ -12,8 +12,9 @@ published: true
 In the [previous step](/tutorial/first-edit/), you made changes to the
 marketplace.css file. You might have noticed that the there was
 **`--backgroundImage`** property set mentioned. That variable is used to
-provide background image for Hero component on landing page as well as
-some of the other pages: sing-up and log-in, email verification etc.
+provide a background image for Hero component on the landing page as
+well as some of the other pages: sing-up and log-in, email verification
+etc.
 
 ```shell
 └── src
@@ -47,7 +48,7 @@ some of the other pages: sing-up and log-in, email verification etc.
 ```
 
 That **background** styling-rule refers to _background-1440.jpg_ image
-in _assets_ directory:
+in the _assets_ directory:
 
 ```shell
 └── src
@@ -58,7 +59,7 @@ in _assets_ directory:
 So, to change it, we could just save a different image as
 'background-1440.jpg' to replace the default background image (or you
 can add a new image and then change the filename in `--backgroundImage`
-property set). The image should be 1440 pixels wide, so that it doesn't
+property set). The image should be 1440 pixels wide so that it doesn't
 look bad on retina displays.
 
 Here's an image, we used in this tutorial:<br />
@@ -81,7 +82,7 @@ you should also pay attention to:
 
 These images (**saunatimeFacebook-1200x630.jpg** and
 **saunatimeTwitter-600x314.jpg**) are used by social media sites to
-generate previews, when your marketplace is shared in their platforms.
+generate previews when your marketplace is shared in their platforms.
 
 The default content is Saunatime branded so these images should be
 changed too:
@@ -95,12 +96,12 @@ Here are two image files you could use in the context of this tutorial:
 
 **Steps to follow**:
 
-1. Save those files to assets directory
+1. Save those files to the assets directory
 1. Find all the modules where _saunatimeFacebook-1200x630.jpg_ and
    _saunatimeTwitter-600x314.jpg_ are imported. There should be 2 files:
    - _src/components/Page/Page.js_
    - _src/containers/LandingPage/LandingPage.js_<br /> (This is an
-     example how to overwrite default sharing images per page)
+     example of how to overwrite default sharing images per page.)
 1. Change the imported asset files
 
 <extrainfo title="Extra: how to test social media sharing?">

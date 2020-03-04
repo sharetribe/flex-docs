@@ -3,14 +3,14 @@ title: First customization
 slug: first-edit
 updated: 2020-02-28
 category: tutorial
-ingress: Change marketplace color
+ingress: Change the marketplace color.
 published: true
 ---
 
 ## Marketplace styles
 
 Custom styling is a good starting point to introduce your own branding
-and remove design choises made for example marketplace, Saunatime.
+and remove design choices made for example marketplace, Saunatime.
 
 FTW templates have most of the styling tied to component directories,
 but there are a couple of files that define global CSS Properties and
@@ -46,7 +46,7 @@ branding, so we'll change these color codes a bit:
 ```
 
 The darker and lighter color variants are mainly used for effects like
-color change, when cursor is hovering on top of a button.
+color change when the cursor is hovering on top of a button.
 
 After you save the file, the development server will compile the modules
 and serve the updated app on your local development environment

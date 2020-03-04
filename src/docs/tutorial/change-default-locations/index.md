@@ -12,11 +12,11 @@ locations suggested:
 
 ![Default search locations component rendered](./default-search-locations.png)
 
-These default locations improve UX, since users don't need to type
-anything and they guide users to most popular locations in your
+These default locations improve UX since users don't need to type
+anything and they guide users to the most popular locations in your
 marketplace.
 
-We want to change those, since our CottageDays marketplace operates in
+We want to change those since our CottageDays marketplace operates in
 different locations than Saunatime. Let's change the first suggestion:
 _"Helsinki, Finland"_ to _"Auckland, New Zealand"_.
 
@@ -52,9 +52,9 @@ export default [
 ```
 
 There are two strings (_id_ and _address_) that are pretty easy to
-change, but it also contains _bounds_ object. Bounds contains two LatLng
-coordinates (NE, and SW) which create a bounding box for the area that
-will be shown on the _SearchMap_ component.
+change, but it also contains a _bounds_ object. This bounds object
+contains two LatLng coordinates (NE, and SW) which create a bounding box
+for the area that will be shown on the _SearchMap_ component.
 
 ![Find bounds for Auckland](find-bounds-for-auckland.png)
 
@@ -72,7 +72,7 @@ bigger area than what the bounding box states.
 
 In the next screenshot, the search map has a narrow aspect ratio.
 Therefore, the bounding box for Auckland takes the whole width, but not
-the the whole height:
+the whole height:
 
 ![Bounding box vs the viewport of map](corners-of-bounding-box.png)
 
@@ -98,7 +98,7 @@ The result should look like this:
 
 You can change the other locations in a similar fashion.
 
-## Other hard-coded links with location search
+## Other hard-coded links with a location search
 
 There are hard-coded links to search page from other components too.
 Check at least these:
@@ -114,7 +114,7 @@ Check at least these:
               └── Footer.js
   ```
 
-  _Footer_ has hard-coded links to search page. These links use
+  _Footer_ has hard-coded links to the search page. These links use
   _NamedLink_ component, which just gets the full list of _search_
   params:
 
@@ -131,7 +131,7 @@ Check at least these:
   </NamedLink>
   ```
 
-  > **Note**: origin is unnecessary search parameter in default
+  > **Note**: origin is an unnecessary search parameter with the default
   > configuration of FTW templates.
 
   You also need to create a new translation key. E.g.
@@ -150,7 +150,7 @@ Check at least these:
               └── SectionLocations.js
   ```
 
-  _SectionLocations_ component has hard-coded links to search page.
+  _SectionLocations_ component has hard-coded links to the search page.
   These links use _NamedLink_ component through a helper function
   (_locationLink_):
 
