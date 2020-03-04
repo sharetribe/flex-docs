@@ -28,6 +28,7 @@ const tutorialsSortingArray = [
   'working-with-translations',
   'configurations',
   'change-default-locations',
+  'customize-amenities-filter',
 ];
 
 // Categories allowed for articles. The order defines the order in the
