@@ -95,4 +95,6 @@ Public metadata. The commands to manage search schemas are:
 - `flex-cli search set` Set (create or update) data schema
 - `flex-cli search unset` Unset data schema
 
+You can also check out our tutorial for [managing search schemas with Flex CLI](https://www.sharetribe.com/docs/tutorials/manage-search-schemas-with-flex-cli/).
+
 > **Note:** Only top-level values in extended data can have a schema.
