@@ -33,7 +33,7 @@ access a Flex marketplace. This means that you have an account in
 [Flex Console](https://flex-console.sharetribe.com) (the "admin section"
 of your Flex marketplace). If you don't have an account yet, you can
 create one in
-[the Sharetribe Flex website](https://www.sharetribe.com/#start-building-with-flex).
+[the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).
 If you have got a Flex marketplace but have forgotten your Console login
 credentials,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com).

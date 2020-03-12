@@ -46,7 +46,7 @@ article.
 
 To use the Marketplace API, you will need a client ID. You can obtain
 one by creating a new Flex marketplace at
-[the Sharetribe Flex website](https://www.sharetribe.com/#start-building-with-flex).
+[the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).
 
 ## Install development tooling
 
