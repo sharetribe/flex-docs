@@ -1,7 +1,7 @@
 ---
 title: Getting started with FTW
 slug: getting-started-with-ftw
-updated: 2019-11-21
+updated: 2020-03-12
 category: tutorials
 ingress:
   This tutorial is the place to start your journey of getting hands-on
@@ -42,10 +42,11 @@ the
 [What development skills are needed?](/background/development-skills/)
 article.
 
-## Request API access
+## Create a marketplace
 
-To use the Marketplace API, you will need a client ID. You can request
-access at https://sharetribe.typeform.com/to/BI9M4O
+To use the Marketplace API, you will need a client ID. You can obtain
+one by creating a new Flex marketplace at
+[the Sharetribe Flex website](https://www.sharetribe.com/#start-building-with-flex).
 
 ## Install development tooling
 
