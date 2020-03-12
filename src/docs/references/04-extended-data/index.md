@@ -7,8 +7,8 @@ ingress: Reference documentation for extended data.
 published: true
 ---
 
-_Extended data_ is a set of arbitrary keys and values stored with the API
-resources. The values for the keys can be any valid JSON values,
+_Extended data_ is a set of arbitrary keys and values stored with the
+API resources. The values for the keys can be any valid JSON values,
 including a JSON object (hash). This provides API clients with the
 capability to store arbitrary structured data for the supported resource
 types. Via search schema we also support querying/filtering by the
@@ -61,8 +61,8 @@ a corresponding id in an external service.
 
 _Public metadata_ is writable by marketplace operators and can be read
 via all API endpoints returning the corresponding resource. Public
-metadata is supported for users and listings. It can also be used as filters when
-searching via
+metadata is supported for users and listings. It can also be used as
+filters when searching via
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings).
 
 Public metadata is useful for example marking listings as promoted or
@@ -95,6 +95,7 @@ Public metadata. The commands to manage search schemas are:
 - `flex-cli search set` Set (create or update) data schema
 - `flex-cli search unset` Unset data schema
 
-You can also check out our tutorial for [managing search schemas with Flex CLI](https://www.sharetribe.com/docs/tutorials/manage-search-schemas-with-flex-cli/).
+You can also check out our tutorial for
+[managing search schemas with Flex CLI](https://www.sharetribe.com/docs/tutorials/manage-search-schemas-with-flex-cli/).
 
 > **Note:** Only top-level values in extended data can have a schema.
