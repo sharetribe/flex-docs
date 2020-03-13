@@ -2,36 +2,41 @@ import React from 'react';
 import styled from 'styled-components';
 import fonts from '../../fonts';
 
-import { baselineBreakpoint, baselineLarge } from '../../config';
+import { baselineBreakpoint } from '../../config';
 import { Ul, Li, Link } from '../../components';
 
 // NOTE: custom line height
 const TocLi = styled(Li).attrs({
   small: true,
 })`
-  // Side navigation hidden on small viewport
+  ${fonts['CircularStd-Book'].styles}
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: ${props => (props.depth === 2 ? 6 : 0)}px;
+  margin-left: ${props => (props.depth > 2 ? 8 : 0)}px;
+
+  color: ${props => props.theme.tocColorLink};
+
+  // Offset baseline
+  top: 1px;
+
+  :hover {
+    color: ${props => props.theme.tocColorLinkHover};
+  }
 
   @media (min-width: ${baselineBreakpoint}px) {
-    ${fonts['CircularStd-Medium'].styles}
-    line-height: 24px;
-    padding-bottom: ${baselineLarge}px;
-    font-size: 15px;
+    margin-top: ${props => (props.depth === 2 ? 8 : 0)}px;
+    margin-left: ${props => (props.depth > 2 ? 8 : 0)}px;
 
     // Offset baseline
     top: -1px;
-
-    color: ${props => props.theme.textColor};
-
-    :hover {
-      color: ${props => props.theme.linkColorHover};
-    }
   }
 `;
 
 const TocItem = props => {
   const { path, value, depth, id, ...rest } = props;
   return (
-    <TocLi {...rest}>
+    <TocLi depth={depth} {...rest}>
       <Link neutral to={`${path}#${id}`}>
         {' › '}
         {value}

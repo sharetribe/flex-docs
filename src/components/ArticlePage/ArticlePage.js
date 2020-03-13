@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import fonts from '../../fonts';
 
 import {
   baselineBreakpoint,
   baselineSmall,
   baselineLarge,
-  categories,
+  siteStructure,
 } from '../../config';
+import { findParentCategories } from '../../util/navigation';
 import {
   Ingress,
   H1,
   H6,
-  Link,
   MainLayout,
   Breadcrumb,
   Box,
@@ -22,7 +21,10 @@ import LastUpdated from './LastUpdated';
 import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
 import Toc from './Toc';
-import ArticleToc from './ArticleToc';
+import NextAndPrevArticles from './NextAndPrevArticles';
+
+// Removed this second ToC component
+// import ArticleToc from './ArticleToc';
 
 const ColumnLayout = styled.div`
   display: flex;
@@ -135,66 +137,51 @@ const Markdown = styled(MarkdownHtml)`
   }
 `;
 
-const SideToc = styled(Toc)`
+const MobileTocWrapper = styled.section`
+  margin-top: ${2 * baselineSmall}px;
+
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${2 * baselineLarge}px;
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
+
+const MobileToc = styled(Toc)`
+  display: inline-block;
+  text-indent: -8px;
+  margin-left: 8px;
+  margin-top: ${baselineSmall}px;
+`;
+
+const SideToc = styled(Toc)`
+  @media (min-width: ${baselineBreakpoint}px) {
+    display: inline-block;
+    text-indent: -8px;
+    margin-left: 8px;
+    margin-top: ${baselineLarge}px;
   }
 `;
 
 const ContentTocHeader = styled(H6)`
-  margin-top: ${3 * baselineSmall}px;
+  margin-top: 0;
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${4 * baselineLarge}px;
   }
 `;
 
-const Pagination = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 78px;
-  border-top: solid 1px ${props => props.theme.lineColor};
-  padding: 24px 0;
-`;
-
-const Prev = styled(Link)`
-  ${fonts['CircularStd-Medium'].styles}
-  font-size: 18px;
-  text-decoration: none;
-`;
-const Next = styled(Link)`
-  ${fonts['CircularStd-Medium'].styles}
-  font-size: 18px;
-  text-decoration: none;
-`;
-
-const nextAndPrev = (slug, category, categories) => {
-  const categoryConfig = categories.find(cat => cat.id === category);
-  const sortingArray =
-    categoryConfig && categoryConfig.sortingArray
-      ? categoryConfig.sortingArray
-      : [];
-  const slugIndex = sortingArray.findIndex(s => s === slug);
-  const lastSlugIndex = sortingArray.length - 1;
-
-  return {
-    nextArticleSlug:
-      slugIndex > -1 && slugIndex < lastSlugIndex
-        ? sortingArray[slugIndex + 1]
-        : null,
-    prevArticleSlug:
-      slugIndex > -1 && slugIndex > 0 ? sortingArray[slugIndex - 1] : null,
-  };
+const findMainCategory = category => {
+  const path = findParentCategories(category, siteStructure) || [];
+  return path.length > 0 ? path[path.length - 1] : null;
 };
 
 const ArticlePage = props => {
   const { frontmatter, htmlAst, estimatedReadingTime, tableOfContents } = props;
-  const { title, slug, updated, category, ingress, toc } = frontmatter;
-  const { nextArticleSlug, prevArticleSlug } = nextAndPrev(
-    slug,
-    category,
-    categories
-  );
+  const { title, slug, updated, category, ingress } = frontmatter;
+  const mainCategory = findMainCategory(category) || category;
 
   // Structured metadata for the article page
   //
@@ -214,18 +201,12 @@ const ArticlePage = props => {
   });
 
   return (
-    <MainLayout title={title} description={ingress} activeCategory={category}>
+    <MainLayout
+      title={title}
+      description={ingress}
+      activeArticle={{ category, slug }}
+    >
       <ColumnLayout>
-        <SideColumn>
-          <SideNavigation as="nav">
-            <H6 as="p">{title}</H6>
-            <SideToc
-              path={`/${category}/${slug}/`}
-              headings={tableOfContents}
-              maxDepth={2}
-            />
-          </SideNavigation>
-        </SideColumn>
         <MainColumn>
           <script type="application/ld+json">{ldJson}</script>
           <CrumbWrapper>
@@ -233,8 +214,10 @@ const ArticlePage = props => {
               links={[
                 { path: '/', label: 'Docs' },
                 {
-                  path: `/${category}/`,
-                  label: UiText.fn(`ArticlePage.${category}.breadCrumbTitle`),
+                  path: `/${mainCategory}/`,
+                  label: UiText.fn(
+                    `ArticlePage.${mainCategory}.breadCrumbTitle`
+                  ),
                 },
                 { path: `/${category}/${slug}/`, label: title },
               ]}
@@ -242,44 +225,36 @@ const ArticlePage = props => {
             <Updated date={updated} />
           </CrumbWrapper>
           <Heading>{title}</Heading>
+          <ArticleIngress>{ingress}</ArticleIngress>
           <Info
             frontmatter={frontmatter}
             estimatedReadingTime={estimatedReadingTime}
           />
-          <ArticleIngress>{ingress}</ArticleIngress>
-          {toc ? (
-            <>
-              <ContentTocHeader as="h2">
-                <UiText id="ArticlePage.tableOfContents" />
-              </ContentTocHeader>
-              <ArticleToc
-                path={`/${category}/${slug}/`}
-                headings={tableOfContents}
-                maxDepth={3}
-              />
-            </>
-          ) : null}
+          <MobileTocWrapper>
+            <ContentTocHeader as="h2">
+              <UiText id="ArticlePage.tableOfContents" />
+            </ContentTocHeader>
+            <MobileToc
+              path={`/${category}/${slug}/`}
+              headings={tableOfContents}
+              maxDepth={3}
+            />
+          </MobileTocWrapper>
           <Markdown htmlAst={htmlAst} />
-          {prevArticleSlug || nextArticleSlug ? (
-            <Pagination>
-              {prevArticleSlug ? (
-                <Prev to={`/${category}/${prevArticleSlug}`}>
-                  {'<'} Previous article
-                </Prev>
-              ) : (
-                <span />
-              )}
-              {nextArticleSlug ? (
-                <Next to={`/${category}/${nextArticleSlug}`}>
-                  Next article {'>'}
-                </Next>
-              ) : (
-                <span />
-              )}
-            </Pagination>
-          ) : null}
-          {}
+          <NextAndPrevArticles slug={slug} category={category} />
         </MainColumn>
+        <SideColumn>
+          <SideNavigation as="nav">
+            <H6 as="p">
+              <UiText id="ArticlePage.tableOfContents" />
+            </H6>
+            <SideToc
+              path={`/${category}/${slug}/`}
+              headings={tableOfContents}
+              maxDepth={3}
+            />
+          </SideNavigation>
+        </SideColumn>
       </ColumnLayout>
     </MainLayout>
   );

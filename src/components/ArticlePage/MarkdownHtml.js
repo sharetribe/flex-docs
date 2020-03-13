@@ -163,6 +163,7 @@ const Html = styled.div`
   blockquote {
     margin: ${baselineSpacing}px 0;
     padding-left: 10px;
+    padding-bottom: ${baselineSmall}px;
     border-left: 10px solid #eee;
 
     p {
@@ -182,6 +183,10 @@ const Html = styled.div`
       @media (min-width: ${baselineBreakpoint}px) {
         margin-top: ${2 * baselineLarge}px;
       }
+    }
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      padding-bottom: ${baselineLarge}px;
     }
 
   }
