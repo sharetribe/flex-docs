@@ -83,12 +83,68 @@
   "ArticleIndexPage.background.description": "Explanations and background information for important concepts and design decisions behind the platform.",
 
   "ArticlePage.tableOfContents": "Table of Contents",
+  "ArticlePage.introduction.breadCrumbTitle": "Introduction",
   "ArticlePage.tutorial.breadCrumbTitle": "Tutorial",
+  "ArticlePage.tutorial-introduction.breadCrumbTitle": "Introduction",
+  "ArticlePage.tutorial-branding.breadCrumbTitle": "Tutorial",
+
   "ArticlePage.tutorials.breadCrumbTitle": "Tutorials",
   "ArticlePage.guides.breadCrumbTitle": "How-to Guides",
-  "ArticlePage.references.breadCrumbTitle": "Reference",
+  "ArticlePage.references.breadCrumbTitle": "References",
   "ArticlePage.background.breadCrumbTitle": "Background",
   "ArticlePage.LastUpdated.lastUpdated": "Last updated ",
   "ArticlePage.InfoSection.requiredSkills": "Required skills",
-  "ArticlePage.InfoSection.readingTime": "Reading time"
+  "ArticlePage.InfoSection.readingTime": "Reading time",
+
+  "ArticlePage.next": "Next ›",
+  "ArticlePage.previous": "‹ Previous",
+
+  "Sidebar.introduction": "Introduction",
+
+  "Sidebar.tutorial": "Tutorial",
+  "Sidebar.tutorialAdvanced": "Part 2: beyond FTW",
+  "Sidebar.tutorialBranding": "Part 1: branding",
+  "Sidebar.tutorialIntroduction": "Introduction",
+
+  "Sidebar.concepts": "Concepts",
+  "Sidebar.conceptsAvailability": "Availability",
+  "Sidebar.conceptsDataModel": "Data model",
+  "Sidebar.conceptsEmailTemplates": "Email templates",
+  "Sidebar.conceptsPayments": "Payments",
+  "Sidebar.conceptsSearch": "Search",
+  "Sidebar.conceptsTransactionProcess": "Transaction process",
+
+  "Sidebar.cookbook": "Cookbook",
+  "Sidebar.cookbookAvailability": "Availability",
+  "Sidebar.cookbookDataModel": "Data model",
+  "Sidebar.cookbookEmailTemplates": "Email templates",
+  "Sidebar.cookbookPayments": "Payments",
+  "Sidebar.cookbookSearch": "Search",
+  "Sidebar.cookbookTransactionProcess": "Transaction process",
+
+  "Sidebar.ftw": "Flex Templates for Web",
+  "Sidebar.ftwAnalytics": "Analytics",
+  "Sidebar.ftwConfiguration": "Configuration and Environment Variables",
+  "Sidebar.ftwDataflow": "Data flow and Redux",
+  "Sidebar.ftwHosting": "Hosting",
+  "Sidebar.ftwPerformance": "Performance",
+  "Sidebar.ftwRouting": "Routing",
+  "Sidebar.ftwSearch": "Search",
+  "Sidebar.ftwSecurity": "Security",
+  "Sidebar.ftwServer": "Server",
+  "Sidebar.ftwStyling": "Styling",
+  "Sidebar.ftwTesting": "Testing",
+
+  "Sidebar.development": "Development resources",
+  "Sidebar.developmentFlexCli": "Flex CLI",
+  "Sidebar.developmentFtwTemplates": "FTW templates",
+  "Sidebar.developmentIntegrations": "Integrations",
+  "Sidebar.developmentResources": "Development resources",
+
+  "Sidebar.references": "References",
+  "Sidebar.designToolkit": "Flex design toolkit",
+
+  "Sidebar.guides": "OLD: How-to guides",
+  "Sidebar.background": "OLD: Background articles"
+
 }
