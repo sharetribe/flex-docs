@@ -4,8 +4,8 @@ slug: getting-started-with-ftw-daily
 updated: 2020-02-20
 category: introduction
 ingress:
-  Learn the how to install one of the Flex Templates for Web (FTW) to
-  your local development environment.
+  Learn how to install one of the Flex Templates for Web (FTW) to your
+  local development environment.
 skills: basic command line, text editing
 published: true
 ---
@@ -15,6 +15,17 @@ top of the [Marketplace API](/background/concepts/#marketplace-api).
 While you can create a marketplace purely using just the API, it
 requires a significant amount of effort (both money and time) and we
 recommened using the template as a starting point for customizations.
+
+FTW-daily is built with [React](https://reactjs.org/),
+[Redux](https://redux.js.org/), and
+[CSS Modules](https://github.com/css-modules/css-modules). It also
+contains a small [Node.js](https://nodejs.org/en/) server, which
+provides server-side rendering (SSR) for the production site.
+
+The purpose of this guide is to clone and configure FTW-daily to your
+local development environment - and then get it up and running. This
+guide also helps you to create accounts to Stripe and Mapbox. Those
+services are needed to run the FTW-daily template app.
 
 ## Setup development environment
 
@@ -117,10 +128,14 @@ basic development tooling:
 
 FTW templates have 3 mandatory integrations that you need to configure
 before the app is fully functional. The app obviously needs to discuss
-with Flex Marketplace API, but client app also makes direct calls to
-Stripe to save sensitive payment information. Location search and maps
-also need integration to a map provider. The default map provider is
-Mapbox.
+with Flex Marketplace API, but the client app also makes direct calls to
+[Stripe](https://stripe.com/en-fi). Flex uses Stripe as a payment
+processor. And FTW-daily saves sensitive payment information directly to
+it.
+
+The third default integration is to a map provider.
+[Mapbox](https://www.mapbox.com) provides location search (geocoding)
+and maps for the web app.
 
 ![Mandatory integrations: Flex Marketplace API, Stripe, Map provider](FTW-integrations@2x.png)
 
@@ -174,8 +189,19 @@ activation form varies based on your country.
 
 #### 2. Enable Stripe Connect in your platform
 
-Sharetribe uses the Stripe Connect features with
-[custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
+Sharetribe uses the [Stripe Connect](https://stripe.com/docs/connect)
+features with
+[Custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
+
+[Stripe Connect](https://stripe.com/docs/connect) is used to route
+payments between customers, providers (sellers), and marketplace, which
+is taking a commission from transactions.
+
+[Stripe Custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts)
+are created to hold the provider's account information (e.g. payout
+details) on Stripe's side. A Custom Stripe account is almost completely
+invisible to the account holder, but marketplace operators see those on
+their Stripe dashboard.
 
 **United States**<br /> If you're based in The United States, Stripe
 will need to review your platform account before you get access. See
@@ -269,7 +295,8 @@ you collected in previous step.
 
 After that, it will create `.env` file to your local repository and
 guide you through setting up the required environment variables. If the
-`.env` file doesn't exist the application won't start.
+`.env` file doesn't exist the application won't start. _This `.env` file
+is only created for local development environment_.
 
 > See the
 > [FTW Environment configuration variables](/references/ftw-env/) for

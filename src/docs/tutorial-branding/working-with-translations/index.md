@@ -3,7 +3,7 @@ title: Working with translations
 slug: working-with-translations
 updated: 2020-02-28
 category: tutorial-branding
-ingress: Write text content for your marketplace.
+ingress: Write text content for your marketplace
 published: true
 ---
 
@@ -84,3 +84,9 @@ To get more insight into translation syntax, different language files,
 and localization of dates and money values, you should check the
 article:
 [How to change FTW UI texts and translations](/guides/how-to-change-ftw-ui-texts-and-translations/).
+
+<br />
+
+In the next article, you learn how to configure FTW-daily and change the
+default currency.<br />
+[› Go to the next article](/tutorial-branding/configurations/)

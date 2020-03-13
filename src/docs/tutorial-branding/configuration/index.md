@@ -1,13 +1,12 @@
 ---
-title: Changing configurations
+title: Change configurations
 slug: configurations
 updated: 2020-02-28
 category: tutorial-branding
 ingress:
-  Change marketplace configurations - change the currency to euro.
+  Change marketplace configurations - change the marketplace currency to
+  euro.
 published: true
-toc: true
-readingTime: 5 mins at a time!
 ---
 
 There are several files that affect the configuration of FTW templates.
@@ -206,4 +205,12 @@ The error message, when creating a new listing
 ![EditListingPricingForm: validation for minimum price](./minimum-price.png)
 
 > **Note**: copy-text, "_euros_", come from translation file
-> (_en.json_):<br/> > `EditListingPricingForm.pricePerNight`
+> (_en.json_):<br/>
+>
+> ```
+> "EditListingPricingForm.pricePerNight": "Price per night in euros",
+> ```
+
+In the next article, we change the default suggestions for search
+locations.<br />
+[› Go to the next article](/tutorial-branding/change-default-locations/)

@@ -195,3 +195,9 @@ flex-cli search set --key category --type enum --scope public -m my-marketplace-
 ```
 
 </extrainfo>
+
+After all these changes, the client app starts to look like CottageDays
+marketplace. It's time to get it online and share it with people who
+could give you some feedback. In the next article, we'll deploy the app
+to Heroku.<br />
+[› Go to the next article](/tutorial-branding/deploy-to-heroku/)

@@ -1,5 +1,5 @@
 ---
-title: Create a testing environment
+title: Create test environment
 slug: deploy-to-heroku
 updated: 2020-03-03
 category: tutorial-branding
@@ -7,9 +7,9 @@ ingress: Deploy the app to Heroku to share it online with other testers.
 published: true
 ---
 
-Now we have branded FTW-daily template to CottageDays marketplace. It's
-time to deploy the web app to some hosting service. After all, we want
-to get some feedback from colleagues and friends.
+Now we have branded FTW-daily template to _CottageDays_ marketplace.
+It's time to deploy the web app to some hosting service. After all, we
+want to get some feedback from colleagues and friends.
 
 **Note**: if you have removed all the Saunatime related content from
 your client app and your marketplace doesn't need more advanced
@@ -98,13 +98,16 @@ Then add the following environment variables as Config Vars:
 
 - `NODE_ENV`
 
-  Node env. Use 'development' for development and 'production' for
-  production.
+  Node environment is used to build the app. Use 'development' for
+  development and 'production' for production.<br/> Use value:
+  'production'
 
 - `REACT_APP_ENV`
 
-  A more fine-grained env definition than NODE_ENV. Is used for example
-  to differentiate envs in logging.
+  A more fine-grained env definition than `NODE_ENV`. For example, this
+  is used to send environment info to logging service: Sentry. (If you
+  have enabled it with `REACT_APP_SENTRY_DSN`).<br/> For this setup, use
+  value: 'development'
 
 - `REACT_APP_SHARETRIBE_USING_SSL`
 
@@ -123,11 +126,15 @@ Then add the following environment variables as Config Vars:
 
 - `REACT_APP_AVAILABILITY_ENABLED`
 
-  Possible values: true/false
+  Possible values: true/false<br/> Use value: true
 
 - `REACT_APP_DEFAULT_SEARCHES_ENABLED`
 
-  Possible values: true/false
+  Possible values: true/false<br/> Use value: true
+
+If you change these values later on, _you need to deploy the app again_.
+Environment variables are baked into the static build files of the
+webapp - so, a new build is needed.
 
 **Step 4: Add Node.js buildpack**
 
@@ -145,3 +152,32 @@ Go to the Deploy page of your new app and
 
 After that, you can deploy the app manually or enable automatic deploy
 from your master branch.
+
+If everything works, your app should be available in URL that looks a
+bit like this: `https://<your-app-name>.herokuapp.com`
+
+## What you should do next?
+
+You should test the app fully with both desktop layout and mobile
+layout:
+
+- Create new users
+- Create new listings
+- Book listings
+- Test social sharing
+  - [Facebook sharing debugger](https://developers.facebook.com/tools/debug/)
+  - [Twitter card validator](https://cards-dev.twitter.com/validator)
+- Save payment card
+
+  Use [test card numbers](https://stripe.com/docs/testing).
+
+If your marketplace concept needs advanced features, you need to
+continue with customizations. You could:
+
+- [Extend listings](/guides/how-to-extend-listing-data-in-ftw/) with
+  your own data
+- [Edit email templates](/tutorials/edit-email-templates-with-flex-cli/)
+- Add more
+  [search filters](/guides/how-to-change-search-filters-in-ftw/)
+- [Customize pricing](/background/custom-pricing/)
+- [Customize the transaction process](background/transaction-process/)

@@ -175,3 +175,7 @@ Check at least these:
   ```
 
     </extrainfo>
+
+On search page, you can use different kind of filters. In the next
+article you learn how to update the options for amenities filter.<br />
+[› Go to the next article](/tutorial-branding/configurations/)

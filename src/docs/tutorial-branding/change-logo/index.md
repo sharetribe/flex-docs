@@ -189,3 +189,10 @@ to customize FTW styles_**: <br />
 Especially, you should check
 [the best practices topic](/guides/how-to-customize-ftw-styles/#styling-guidelines-and-good-practices)
 to check the philosophy of how the existing components are styled.
+
+<br />
+
+While you are styling components, you also need to change some
+copy-texts in them. In the next article, we'll change the copy-texts of
+Hero component.<br />
+[› Go to the next article](/tutorial-branding/working-with-translations/)

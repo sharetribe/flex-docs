@@ -3,7 +3,7 @@ title: Change image assets
 slug: change-image-assets
 updated: 2020-02-28
 category: tutorial-branding
-ingress: learn how to update image assets
+ingress: Learn how to update image assets
 published: true
 ---
 
@@ -162,3 +162,7 @@ _favicon\*_ files with the new ones. After those files have been saved,
 you should see a new favicon in the browser's tab:
 
 ![Favicon for CottageDays](./cottagedays-favicon.png)
+
+There's one obvious Saunatime image still visible on top bar: Logo. It's
+time to change that.<br />
+[› Go to the next article](/tutorial-branding/change-logo/)

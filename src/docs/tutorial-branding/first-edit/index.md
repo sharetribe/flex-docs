@@ -59,3 +59,6 @@ green.
 ![Hero section after changing the marketplace color](./marketplace-color-changed.png)
 
 **Congratulations!** You have made your first customization.
+
+It's time to change the Saunatime image on the landing page.<br />
+[› Go to the next article](/tutorial-branding/change-image-assets/)
