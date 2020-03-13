@@ -5,6 +5,10 @@
  * gatsby-node.js config.
  */
 
+const structure = require('./config-site-structure');
+exports.siteStructure = structure.siteStructure;
+exports.categories = structure.categories;
+
 // Dev mode flag
 exports.dev = process.env.NODE_ENV === 'development';
 
@@ -16,32 +20,6 @@ exports.baselineBreakpoint = 768;
 
 // Fonts that are used from fonts.js
 exports.fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
-
-// Arrange tutorial articles according to this configuration.
-// This sorting order is used to provide next-page link
-// for the listed articles.
-const tutorialsSortingArray = [
-  'introduction',
-  'first-edit',
-  'change-image-assets',
-  'change-logo',
-  'working-with-translations',
-  'configurations',
-  'change-default-locations',
-  'customize-amenities-filter',
-  'deploy-to-heroku',
-];
-
-// Categories allowed for articles. The order defines the order in the
-// Topbar navigation.
-exports.categories = [
-  { id: 'introduction' },
-  { id: 'tutorial', sortingArray: tutorialsSortingArray },
-  { id: 'tutorials' },
-  { id: 'guides' },
-  { id: 'references' },
-  { id: 'background' },
-];
 
 // Generic grid config used in LandingPage and ArticleIndexPage
 exports.grid = {
@@ -76,6 +54,20 @@ exports.themeLight = {
   // Topbar colors
   topbarNavColorActive: '#000',
   topbarNavBorderColorActive: '#0080ff',
+
+  // Sidebar colors
+  sidebarNavColorTitle: '#4a4a4a',
+  sidebarNavColorTitleHover: '#000',
+  sidebarNavColorTitleActive: '#000',
+  sidebarNavColorLink: '#0080ff',
+  sidebarNavColorLinkHover: '#0066cc',
+  sidebarNavColorLinkActive: '#000',
+  sidebarNavColorLinkVisited: '#0080ff',
+  sidebarNavBorderColorActive: '#000',
+  sidebarNavBorderColorHover: '#0066cc',
+
+  tocColorLink: '#0080ff',
+  tocColorLinkHover: '#0066cc',
 
   // Heading color
   headingColor: '#4a4a4a',
