@@ -1,16 +1,23 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { dev, categories } from '../config';
+import { dev, siteStructure } from '../config';
+import { findSortingArrays } from '../util/navigation';
 import { ArticleIndexPage } from '../components';
 
-const categoryConfig = categories.find(c => c.id === 'tutorial') || {};
-const sortingArray = categoryConfig.sortingArray || [];
+const category = 'tutorial';
+const sortingArray = findSortingArrays(category, siteStructure);
 
 const query = graphql`
   query TutorialIndexQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "tutorial" } } }
+      filter: {
+        frontmatter: {
+          category: {
+            in: ["tutorial", "tutorial-branding", "tutorial-advanced"]
+          }
+        }
+      }
       sort: { fields: fileAbsolutePath, order: ASC }
     ) {
       edges {
@@ -18,6 +25,7 @@ const query = graphql`
           frontmatter {
             title
             slug
+            category
             updated
             ingress
             published
@@ -27,8 +35,6 @@ const query = graphql`
     }
   }
 `;
-
-const category = 'tutorial';
 
 const byArrayOfSlugs = sortingArray => (a, b) => {
   const indexA = sortingArray.indexOf(a.slug);
@@ -61,7 +67,9 @@ const TutorialPage = () => {
             }
           }, [])
           .sort(byArrayOfSlugs(sortingArray));
-        return <ArticleIndexPage category={category} articles={articles} />;
+        return (
+          <ArticleIndexPage category={category} noPrefix articles={articles} />
+        );
       }}
     />
   );

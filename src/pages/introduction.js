@@ -1,14 +1,17 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { dev } from '../config';
-import introductionSortingArray from '../docs/introduction/order-config';
+import { dev, siteStructure } from '../config';
+import { findSortingArrays } from '../util/navigation';
 import { ArticleIndexPage } from '../components';
+
+const category = 'introduction';
+const sortingArray = findSortingArrays(category, siteStructure);
 
 const query = graphql`
   query IntroductionIndexQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "introduction" } } }
+      filter: { frontmatter: { category: { in: ["introduction"] } } }
       sort: { fields: fileAbsolutePath, order: ASC }
     ) {
       edges {
@@ -16,6 +19,7 @@ const query = graphql`
           frontmatter {
             title
             slug
+            category
             updated
             ingress
             published
@@ -25,8 +29,6 @@ const query = graphql`
     }
   }
 `;
-
-const category = 'introduction';
 
 const byArrayOfSlugs = sortingArray => (a, b) => {
   const indexA = sortingArray.indexOf(a.slug);
@@ -58,8 +60,10 @@ const IntroductionPage = () => {
               return result;
             }
           }, [])
-          .sort(byArrayOfSlugs(introductionSortingArray));
-        return <ArticleIndexPage category={category} articles={articles} />;
+          .sort(byArrayOfSlugs(sortingArray));
+        return (
+          <ArticleIndexPage category={category} noPrefix articles={articles} />
+        );
       }}
     />
   );
