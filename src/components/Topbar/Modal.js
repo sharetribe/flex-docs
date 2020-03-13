@@ -1,3 +1,5 @@
+// TODO: This is not used atm.
+
 import React, { Component } from 'react';
 import { default as ReactModal } from 'react-modal';
 import styled, { createGlobalStyle } from 'styled-components';
