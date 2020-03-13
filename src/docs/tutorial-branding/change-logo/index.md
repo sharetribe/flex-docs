@@ -2,7 +2,7 @@
 title: Change Logo
 slug: change-logo
 updated: 2020-02-28
-category: tutorial
+category: tutorial-branding
 ingress: Learn how to change logo and styles of a component.
 published: true
 ---

@@ -2,7 +2,7 @@
 title: Customize amenities filter
 slug: customize-amenities-filter
 updated: 2020-03-03
-category: tutorial
+category: tutorial-branding
 ingress: Change the options for amenities filter.
 published: true
 ---

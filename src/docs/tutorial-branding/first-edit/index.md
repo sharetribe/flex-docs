@@ -2,7 +2,7 @@
 title: First customization
 slug: first-edit
 updated: 2020-02-28
-category: tutorial
+category: tutorial-branding
 ingress: Change the marketplace color.
 published: true
 ---

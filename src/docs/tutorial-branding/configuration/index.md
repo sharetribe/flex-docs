@@ -2,10 +2,12 @@
 title: Changing configurations
 slug: configurations
 updated: 2020-02-28
-category: tutorial
+category: tutorial-branding
 ingress:
   Change marketplace configurations - change the currency to euro.
 published: true
+toc: true
+readingTime: 5 mins at a time!
 ---
 
 There are several files that affect the configuration of FTW templates.

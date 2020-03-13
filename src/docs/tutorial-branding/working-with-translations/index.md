@@ -2,7 +2,7 @@
 title: Working with translations
 slug: working-with-translations
 updated: 2020-02-28
-category: tutorial
+category: tutorial-branding
 ingress: Write text content for your marketplace.
 published: true
 ---

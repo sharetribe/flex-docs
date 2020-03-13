@@ -2,7 +2,7 @@
 title: Create a testing environment
 slug: deploy-to-heroku
 updated: 2020-03-03
-category: tutorial
+category: tutorial-branding
 ingress: Deploy the app to Heroku to share it online with other testers.
 published: true
 ---

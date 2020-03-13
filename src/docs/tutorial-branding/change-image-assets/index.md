@@ -2,7 +2,7 @@
 title: Change image assets
 slug: change-image-assets
 updated: 2020-02-28
-category: tutorial
+category: tutorial-branding
 ingress: learn how to update image assets
 published: true
 ---
