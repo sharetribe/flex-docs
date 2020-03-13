@@ -36,6 +36,7 @@ export { default as ExtraInfo } from './ExtraInfo';
 export { default as BaseLayout } from './BaseLayout';
 export { default as MainLayout } from './MainLayout';
 export { default as Topbar } from './Topbar/Topbar';
+export { default as Sidebar } from './Sidebar';
 export { default as ArticleIndexPage } from './ArticleIndexPage/ArticleIndexPage';
 export { default as ArticlePage } from './ArticlePage/ArticlePage';
 export { default as LandingPage } from './LandingPage/LandingPage';
