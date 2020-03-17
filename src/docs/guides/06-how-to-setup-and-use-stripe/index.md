@@ -58,10 +58,20 @@ Stripe Connect:
 
 ![Custom enabled](./stripe-custom-enabled.jpg)
 
+## 3. Enable Stripe Connect Onboarding in your platform
+
+For enabling [Stripe Connect Onboarding](/guides/provider-onboarding-and-identity-verification
+), you need to navigate to
+[Connect settings page](https://dashboard.stripe.com/account/applications/settings)
+in your Stripe Dashboard. For the Connect onboarding to work, you need
+to provide `name`, `color`, and `icon` for your marketplace.
+
+![Stripe dashboard](./stripeDashboard.png)
+
 Great! You now have to get your API keys and input them into your
 marketplace.
 
-## 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
+## 4. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
 - Click the _Developers_ left menu item and go to _Developers_ → _API
   Keys_.
@@ -78,7 +88,7 @@ production make sure that the toggle is off.
 
 ![Get API keys from Stripe](./api-keys.png)
 
-## 4. Add your Stripe secret API key to Console
+## 5. Add your Stripe secret API key to Console
 
 - Log in to Console and go to _Build_ → _Payments_
 - In the section _Stripe configuration_ paste your secret key to "Stripe
@@ -86,7 +96,7 @@ production make sure that the toggle is off.
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
 
-## 5. Add you Stripe publishable key to your client application
+## 6. Add you Stripe publishable key to your client application
 
 In your client application, you need to use Stripe publishable key, when
 you create accountTokens or call other Stripe API endpoints. If you are
@@ -98,7 +108,7 @@ text editor.
 Read more about configurations in FTW from
 [Getting started with FTW](/tutorials/getting-started-with-ftw/#configuration)
 
-## 6. Test the Stripe account in Flex Template for Web
+## 7. Test the Stripe account in Flex Template for Web
 
 If you are using Flex Template for Web (FTW) here is some instructions
 how you can test you Stripe account.
@@ -158,7 +168,7 @@ so e.g. testing different error scenarios is possible.
 
 ![Checkout](checkout.png)
 
-## 7. Advanced: Adding new country to supported Stripe countries
+## 8. Advanced: Adding new country to supported Stripe countries
 
 By default FTW already supports most of the countries that are available
 when using
