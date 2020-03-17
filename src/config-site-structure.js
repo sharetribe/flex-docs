@@ -47,11 +47,12 @@ exports.siteStructure = [
     id: 'cookbook',
     subcategories: [
       { id: 'cookbook-data-model' },
-      { id: 'cookbook-availability' },
       { id: 'cookbook-search' },
       { id: 'cookbook-transaction-process' },
-      { id: 'cookbook-email-templates' },
       { id: 'cookbook-payments' },
+      { id: 'cookbook-manage' },
+      { id: 'cookbook-email-templates' },
+      { id: 'cookbook-availability' },
     ],
   },
 

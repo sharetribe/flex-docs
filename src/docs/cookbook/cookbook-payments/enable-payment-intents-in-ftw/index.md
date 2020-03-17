@@ -1,8 +1,8 @@
 ---
-title: How to take PaymentIntents into use
-slug: how-to-take-payment-intents-into-use
+title: Enable PaymentIntents
+slug: enable-payment-intents
 updated: 2019-10-03
-category: guides
+category: cookbook-payments
 ingress:
   Overview of how Stripe PaymentIntents work in FTW, and how you can
   change older FTW version to support for Strong Customer Authentication

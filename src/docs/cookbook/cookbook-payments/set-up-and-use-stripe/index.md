@@ -1,8 +1,8 @@
 ---
-title: How to set up and use Stripe
-slug: how-to-set-up-and-use-stripe
+title: Set up and use Stripe
+slug: set-up-and-use-stripe
 updated: 2019-03-27
-category: guides
+category: cookbook-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you
   need a free Stripe account. This guide will help you in creating a

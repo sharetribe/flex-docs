@@ -1,8 +1,8 @@
 ---
-title: How to change transaction process setup in FTW
-slug: how-to-change-transaction-process-in-ftw
+title: Change transaction process setup in FTW
+slug: change-transaction-process-in-ftw
 updated: 2019-10-24
-category: guides
+category: cookbook-transaction-process
 ingress:
   This guide describes how to customize Flex Template for Web (FTW) to
   use another transaction process.

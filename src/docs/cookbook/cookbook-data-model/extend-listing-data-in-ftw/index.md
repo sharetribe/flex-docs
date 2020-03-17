@@ -1,8 +1,8 @@
 ---
-title: How to extend listing data in FTW
-slug: how-to-extend-listing-data-in-ftw
+title: Extend listing data in FTW
+slug: extend-listing-data-in-ftw
 updated: 2019-05-02
-category: guides
+category: cookbook-data-model
 ingress:
   This guide describes how to use use extended data to expand the
   listing data model in Flex Template for Web (FTW).
@@ -556,5 +556,5 @@ And voilà, we have listing capacity presented in the listing page!
 
 To see how the capacity attribute can be used to filter search results,
 please refer to the
-[How to change search filters in FTW](/guides/how-to-change-search-filters-in-ftw/)
-guide.
+[Change search filters in FTW](/cookbook-search/change-search-filters-in-ftw/)
+cookbook.

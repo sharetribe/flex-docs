@@ -1,8 +1,8 @@
 ---
-title: How to change search filters in FTW
-slug: how-to-change-search-filters-in-ftw
+title: Change search filters in FTW
+slug: change-search-filters-in-ftw
 updated: 2019-07-17
-category: guides
+category: cookbook-search
 ingress:
   This guide describes how to change the search filters in Flex Template
   for Web (FTW).
@@ -51,7 +51,7 @@ related [background article](/background/how-the-search-works/).
 
 It is possible to remove location search from topbar and replace it with
 the keyword search or use them together (without origin param). Here's
-[a rough guide on how to do it](/guides/how-to-use-keyword-search-in-topbar).
+[a rough guide on how to do it](/cookbook-search/use-keyword-search-in-topbar/).
 
 > Note: search strings with only 1 or 2 letters have a longer timeout
 > before the search query is made.
@@ -64,8 +64,8 @@ the marketplace.
 First step for adding a new filter is to make sure that the data being
 used for filtering is saved in the listing's `publicData` attribute. On
 how to achieve this, please refer to the
-[How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
-guide. Another aspect in search filters is that a
+[Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
+cookbook. Another aspect in search filters is that a
 [search schema](/references/extended-data/#search-schema) needs to be
 added to the data in order for API to index it for search. Adding search
 schema can be done by the
@@ -78,8 +78,8 @@ attribute by adding a query parameter that consists of a preceding
 parameter would be "pub_capacity".
 
 Further reading on public data can be found in the
-[How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
-guide.
+[Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
+cookbook.
 
 > **Note:** Only top-level attributes can be indexed.
 

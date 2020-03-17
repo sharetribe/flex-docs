@@ -1,8 +1,8 @@
 ---
-title: How to customize pricing
-slug: how-to-customize-pricing
+title: Customize pricing
+slug: customize-pricing
 updated: 2019-12-03
-category: guides
+category: cookbook-payments
 ingress:
   Flex allows lots of flexibility for your providers in terms of how
   they can set their pricing. This guide walks you through customizing
@@ -75,8 +75,8 @@ tutorial.
 Custom pricing can be based on a lot of variables but one practical way
 to build it is to base it on information stored as extended data in
 listings. See the
-[How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
-guide to read how to extend the listing data model with extended data.
+[Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
+cookbook to read how to extend the listing data model with extended data.
 
 ## 3. Change current booking model to use custom pricing
 

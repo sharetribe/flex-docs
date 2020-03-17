@@ -1,8 +1,8 @@
 ---
-title: How to enable Login as user
-slug: how-to-enable-login-as-user
+title: Enable Login as user
+slug: enable-login-as-user
 updated: 2020-02-18
-category: guides
+category: cookbook-manage
 ingress:
   This article guides you how to take into use the Login as user feature
   that allows an operator to log into their marketplace as one of the
