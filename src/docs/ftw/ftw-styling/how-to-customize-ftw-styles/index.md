@@ -2,7 +2,7 @@
 title: How to customize FTW styles
 slug: how-to-customize-ftw-styles
 updated: 2019-01-28
-category: guides
+category: ftw-styling
 ingress:
   This guide describes how to change the styles of the Flex Template for
   Web (FTW) using CSS.

@@ -2,7 +2,7 @@
 title: How to change FTW UI texts and translations
 slug: how-to-change-ftw-ui-texts-and-translations
 updated: 2019-05-21
-category: guides
+category: ftw-styling
 ingress:
   This guide describes how to change the User Interface (UI) texts and
   translations in Flex Template for Web (FTW).

@@ -1,8 +1,8 @@
 ---
-title: Time-based template
-slug: time-based-template
+title: FTW hourly
+slug: ftw-hourly
 updated: 2019-11-21
-category: background
+category: ftw-templates
 ingress:
   This article introduces FTW-hourly and what's different compared to
   FTW-daily.

@@ -2,7 +2,7 @@
 title: How to change FTW icons
 slug: how-to-change-ftw-icons
 updated: 2019-01-28
-category: guides
+category: ftw-styling
 ingress:
   This guide describes how to change the favicon and application icons
   in Flex Template for Web (FTW).

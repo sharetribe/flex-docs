@@ -2,7 +2,7 @@
 title: How to improve performance
 slug: how-to-improve-performance
 updated: 2019-01-29
-category: guides
+category: ftw-styling
 ingress:
   This guide describes ways to improve the loading and rendering
   performance of your marketplace.
