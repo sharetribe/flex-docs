@@ -76,7 +76,8 @@ Custom pricing can be based on a lot of variables but one practical way
 to build it is to base it on information stored as extended data in
 listings. See the
 [Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
-cookbook to read how to extend the listing data model with extended data.
+cookbook to read how to extend the listing data model with extended
+data.
 
 ## 3. Change current booking model to use custom pricing
 

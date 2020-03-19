@@ -60,8 +60,9 @@ Stripe Connect:
 
 ## 3. Enable Stripe Connect Onboarding in your platform
 
-For enabling [Stripe Connect Onboarding](/guides/provider-onboarding-and-identity-verification
-), you need to navigate to
+For enabling
+[Stripe Connect Onboarding](/guides/provider-onboarding-and-identity-verification),
+you need to navigate to
 [Connect settings page](https://dashboard.stripe.com/account/applications/settings)
 in your Stripe Dashboard. For the Connect onboarding to work, you need
 to provide `name`, `color`, and `icon` for your marketplace.

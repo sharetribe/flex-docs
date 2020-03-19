@@ -2,7 +2,7 @@
 title: How to set up currency in FTW
 slug: how-to-set-up-currency-in-ftw
 updated: 2019-07-17
-category: guides
+category: ftw-configuration
 ingress:
   Flex Template for Web (FTW) uses USD as the default currency. This
   guide will help you to change currency and edit other configurations
