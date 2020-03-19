@@ -1,8 +1,8 @@
 ---
-title: How to use keyword search in Topbar component in FTW
-slug: how-to-use-keyword-search-in-topbar
+title: Use keyword search in Topbar component in FTW
+slug: use-keyword-search-in-topbar
 updated: 2019-07-17
-category: guides
+category: cookbook-search
 ingress:
   This guide describes how to change the Topbar search from location
   search to keyword search in Flex Template for Web (FTW).

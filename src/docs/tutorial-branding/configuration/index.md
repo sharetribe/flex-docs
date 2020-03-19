@@ -179,7 +179,7 @@ const listingMinimumPriceSubUnits = 0;
 We can ignore the **currencyConfig** since our currency is the euro. If
 you are using some other currency, you can read more about
 currencyConfig from
-[this document](/guides/how-to-set-up-currency-in-ftw/#3-check-the-currency-configjs-file).
+[this document](/ftw-configuration/how-to-set-up-currency-in-ftw/#3-check-the-currency-configjs-file).
 
 The third variable, **listingMinimumPriceSubUnits**, is more relevant.
 Stripe (the payment processor used by Flex) has a

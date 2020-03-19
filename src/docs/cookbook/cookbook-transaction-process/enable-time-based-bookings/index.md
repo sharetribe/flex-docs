@@ -1,8 +1,8 @@
 ---
-title: How to take time-based bookings into use
-slug: how-to-take-time-based-bookings-into-use
+title: Enable time-based bookings into use
+slug: enable-time-based-bookings-into-use
 updated: 2019-10-24
-category: guides
+category: cookbook-transaction-process
 ingress:
   Time-based bookings and availability management enable low level fine
   tuning of possible booking models for listings.

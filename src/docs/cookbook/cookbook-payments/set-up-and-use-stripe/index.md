@@ -1,8 +1,8 @@
 ---
-title: How to set up and use Stripe
-slug: how-to-set-up-and-use-stripe
+title: Set up and use Stripe
+slug: set-up-and-use-stripe
 updated: 2019-03-27
-category: guides
+category: cookbook-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you
   need a free Stripe account. This guide will help you in creating a
@@ -60,8 +60,9 @@ Stripe Connect:
 
 ## 3. Enable Stripe Connect Onboarding in your platform
 
-For enabling [Stripe Connect Onboarding](/guides/provider-onboarding-and-identity-verification
-), you need to navigate to
+For enabling
+[Stripe Connect Onboarding](/guides/provider-onboarding-and-identity-verification),
+you need to navigate to
 [Connect settings page](https://dashboard.stripe.com/account/applications/settings)
 in your Stripe Dashboard. For the Connect onboarding to work, you need
 to provide `name`, `color`, and `icon` for your marketplace.

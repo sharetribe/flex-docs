@@ -20,6 +20,33 @@ const sortingArrayTutorialBranding = [
   'deploy-to-heroku',
 ];
 
+const sortingArrayBackground = [
+  'introducing-flex',
+  'concepts',
+  'development-skills',
+  'getting-started',
+  'features',
+  'transaction-process',
+  'ftw-routing',
+  'ftw-redux',
+  'how-to-build-and-launch-with-flex',
+  'is-flex-right-for-you',
+  'custom-pricing',
+  'what-is-the-difference-between-flex-and-go-source-available',
+  'payment-intents',
+  'strong-customer-authentication',
+  'how-the-search-works',
+  'off-session-payments-in-transaction-process',
+  'using-stored-payment-cards',
+  'solving-payout-problems',
+  'marketplace-api-integration-api',
+  'time-based-template',
+  'authentication-api',
+  'commissions-and-monetizing-your-platform',
+  'applications',
+  'stripe-provider-onboarding-and-capabilities',
+];
+
 exports.siteStructure = [
   { id: 'introduction' },
   {
@@ -32,26 +59,22 @@ exports.siteStructure = [
     ],
   },
   {
-    id: 'concepts',
-    subcategories: [
-      { id: 'concepts-data-model' },
-      { id: 'concepts-availability' },
-      { id: 'concepts-search' },
-      { id: 'concepts-transaction-process' },
-      { id: 'concepts-email-templates' },
-      { id: 'concepts-payments' },
-    ],
+    id: 'background',
+    isOpen: false,
+    sortingArray: sortingArrayBackground,
   },
 
   {
     id: 'cookbook',
+    isOpen: false,
     subcategories: [
       { id: 'cookbook-data-model' },
-      { id: 'cookbook-availability' },
       { id: 'cookbook-search' },
       { id: 'cookbook-transaction-process' },
-      { id: 'cookbook-email-templates' },
       { id: 'cookbook-payments' },
+      { id: 'cookbook-manage' },
+      { id: 'cookbook-email-templates' },
+      { id: 'cookbook-availability' },
     ],
   },
 
@@ -69,15 +92,16 @@ exports.siteStructure = [
     id: 'ftw',
     isOpen: false,
     subcategories: [
+      { id: 'ftw-templates' },
       { id: 'ftw-configuration' },
       { id: 'ftw-styling' },
       { id: 'ftw-routing' },
-      { id: 'ftw-dataflow' },
+      { id: 'ftw-data-flow' },
       { id: 'ftw-search' },
       { id: 'ftw-security' },
       { id: 'ftw-server' },
-      { id: 'ftw-hosting' },
       { id: 'ftw-analytics' },
+      { id: 'ftw-hosting' },
       { id: 'ftw-performance' },
       { id: 'ftw-testing' },
     ],
@@ -87,5 +111,4 @@ exports.siteStructure = [
 
   { id: 'guides', isOpen: false },
   // { id: 'references', isOpen: false },
-  { id: 'background', isOpen: false },
 ];

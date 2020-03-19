@@ -1,8 +1,8 @@
 ---
-title: How saving payment card works in FTW
+title: How saving a payment card works in FTW
 slug: save-payment-card
 updated: 2019-09-06
-category: background
+category: cookbook-payments
 ingress:
   An overview of how the Flex Template for Web functionality for storing
   payment cards works.
@@ -150,7 +150,7 @@ Here's the description of complete call sequence on CheckoutPage.
 **Note: PaymentIntents flow needs transaction process change as
 described in doc:**
 
-[How to take Payment Intents into use](/guides/how-to-take-payment-intents-into-use/)
+[Enable Payment Intents into use](/cookbook-payments/enable-payment-intents-into-use/)
 
 ### Initial data for Checkout:
 
