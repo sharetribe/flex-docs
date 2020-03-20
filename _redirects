@@ -33,6 +33,8 @@
 /background/ftw-redux/ /ftw-data-flow/ftw-redux/
 /guides/how-to-set-up-mapbox-for-ftw/ /ftw-search/how-to-set-up-mapbox-for-ftw/
 /guides/how-to-use-google-maps-in-ftw/ /ftw-search/how-to-use-google-maps-in-ftw/
+/guides/how-to-sanitize-user-generated-content-in-ftw/ /ftw-security/how-to-sanitize-user-generated-content-in-ftw/
+/guides/how-to-set-up-csp-for-ftw/ /ftw-security/how-to-set-up-csp-for-ftw/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

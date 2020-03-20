@@ -2,7 +2,7 @@
 title: How to sanitize user-generated content in FTW
 slug: how-to-sanitize-user-generated-content-in-ftw
 updated: 2019-04-04
-category: guides
+category: ftw-security
 ingress:
   This guide describes how to sanitize user-generated content on Flex
   Template for Web (FTW).
