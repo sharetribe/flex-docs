@@ -12,6 +12,23 @@
 /docs/references/ftw/  /docs/tutorials/getting-started-with-ftw/
 /docs/background/transaction-engine/  /docs/background/transaction-process/
 /docs/background/what-is-the-difference-between-flex-and-go-open-source/ /docs/background/what-is-the-difference-between-flex-and-go-source-available/
+/guides/how-to-extend-listing-data-in-ftw/ /cookbook-data-model/extend-listing-data-in-ftw/
+/guides/how-to-enable-login-as-user/ /cookbook-manage/enable-login-as-user/
+/guides/how-to-customize-pricing/ /cookbook-payments/customize-pricing/
+/guides/how-to-take-payment-intents-into-use/ /cookbook-payments/enable-payment-intents/
+/background/save-payment-card/ /cookbook-payments/save-payment-card/
+/guides/how-to-set-up-and-use-stripe/ /cookbook-payments/set-up-and-use-stripe/
+/guides/how-to-change-search-filters-in-ftw/ /cookbook-search/change-search-filters-in-ftw/
+/guides/how-to-use-keyword-search-in-topbar/ /cookbook-search/use-keyword-search-in-topbar/
+/guides/how-to-change-transaction-process-in-ftw/ /cookbook-transaction-process/change-transaction-process-in-ftw/
+/guides/how-to-take-time-based-bookings-into-use/ /cookbook-transaction-process/enable-time-based-bookings-into-use/
+/guides/how-to-set-up-currency-in-ftw/ /ftw-configuration/how-to-set-up-currency-in-ftw/
+/guides/how-to-add-static-pages-in-ftw/ /ftw-styling/how-to-add-static-pages-in-ftw/
+/guides/how-to-change-ftw-icons/ /ftw-styling/how-to-change-ftw-icons/
+/guides/how-to-change-ftw-ui-texts-and-translations/ /ftw-styling/how-to-change-ftw-ui-texts-and-translations/
+/guides/how-to-customize-ftw-styles/ /ftw-styling/how-to-customize-ftw-styles/
+/guides/how-to-improve-performance/ /ftw-styling/how-to-improve-performance/
+/background/time-based-template/ /ftw-templates/ftw-hourly/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
