@@ -123,9 +123,10 @@
   "Sidebar.cookbookTransactionProcess": "Transaction process",
 
   "Sidebar.ftw": "Flex Templates for Web",
+  "Sidebar.ftwTemplates": "FTW templates",
   "Sidebar.ftwAnalytics": "Analytics",
   "Sidebar.ftwConfiguration": "Configuration and Environment Variables",
-  "Sidebar.ftwDataflow": "Data flow and Redux",
+  "Sidebar.ftwDataFlow": "Data flow and Redux",
   "Sidebar.ftwHosting": "Hosting",
   "Sidebar.ftwPerformance": "Performance",
   "Sidebar.ftwRouting": "Routing",
@@ -137,7 +138,6 @@
 
   "Sidebar.development": "Development resources",
   "Sidebar.developmentFlexCli": "Flex CLI",
-  "Sidebar.developmentFtwTemplates": "FTW templates",
   "Sidebar.developmentIntegrations": "Integrations",
   "Sidebar.developmentResources": "Development resources",
 
