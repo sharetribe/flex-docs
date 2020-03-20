@@ -2,7 +2,7 @@
 title: How to set up Mapbox for FTW
 slug: how-to-set-up-mapbox-for-ftw
 updated: 2019-07-04
-category: guides
+category: ftw-search
 ingress:
   By default, Flex Template for Web (FTW) uses Mapbox for showing
   interactive maps. This guide will help you in creating a Mapbox

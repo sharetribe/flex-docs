@@ -2,7 +2,7 @@
 title: How to use Google Maps in FTW
 slug: how-to-use-google-maps-in-ftw
 updated: 2019-01-25
-category: guides
+category: ftw-search
 ingress:
   Flex Template for Web (FTW) offers out of the box support for Google
   Maps API for showing a map and searching locations with search
