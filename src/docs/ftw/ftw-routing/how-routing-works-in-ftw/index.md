@@ -1,8 +1,8 @@
 ---
 title: How routing works in FTW
-slug: ftw-routing
+slug: how-routing-works-in-ftw
 updated: 2019-01-29
-category: background
+category: ftw-routing
 ingress:
   This article explains how the routing setup works in Flex Template for
   Web (FTW).

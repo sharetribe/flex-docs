@@ -2,7 +2,7 @@
 title: How the Redux setup works in FTW
 slug: ftw-redux
 updated: 2019-01-29
-category: background
+category: ftw-data-flow
 ingress:
   This article explains how the Redux setup works in Flex Template for
   Web (FTW).

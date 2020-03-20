@@ -29,6 +29,8 @@
 /guides/how-to-customize-ftw-styles/ /ftw-styling/how-to-customize-ftw-styles/
 /guides/how-to-improve-performance/ /ftw-styling/how-to-improve-performance/
 /background/time-based-template/ /ftw-templates/ftw-hourly/
+/background/ftw-routing/ /ftw-routing/how-routing-works-in-ftw/
+/background/ftw-redux/ /ftw-data-flow/ftw-redux/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
