@@ -2,7 +2,7 @@
 title: How to deploy FTW to production
 slug: how-to-deploy-ftw-to-production
 updated: 2019-03-11
-category: guides
+category: ftw-hosting
 ingress:
   This guide describes how to set up a production deployment for Flex
   Template for Web (FTW).

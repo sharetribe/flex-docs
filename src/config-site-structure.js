@@ -100,7 +100,7 @@ exports.siteStructure = [
       { id: 'ftw-search' },
       { id: 'ftw-security' },
       { id: 'ftw-testing-error-handling' },
-      { id: 'ftw-server' },
+      { id: 'ftw-hosting' },
       { id: 'ftw-analytics' },
       { id: 'ftw-hosting' },
       { id: 'ftw-performance' },
