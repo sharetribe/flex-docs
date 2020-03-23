@@ -2,7 +2,7 @@
 title: How to use CI with FTW
 slug: how-to-use-ci-with-ftw
 updated: 2019-02-05
-category: guides
+category: ftw-testing-error-handling
 ingress:
   This guide describes how the Continuous Integration (CI) setup works
   in Flex Template for Web (FTW) and how to enable it.

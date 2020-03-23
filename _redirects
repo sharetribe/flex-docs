@@ -35,6 +35,9 @@
 /guides/how-to-use-google-maps-in-ftw/ /ftw-search/how-to-use-google-maps-in-ftw/
 /guides/how-to-sanitize-user-generated-content-in-ftw/ /ftw-security/how-to-sanitize-user-generated-content-in-ftw/
 /guides/how-to-set-up-csp-for-ftw/ /ftw-security/how-to-set-up-csp-for-ftw/
+/guides/how-to-set-up-sentry-to-log-errors-in-ftw/ /ftw-testing-error-handling/how-to-set-up-sentry/
+/guides/how-to-test-ftw/ /ftw-testing-error-handling/how-to-test-ftw/
+/guides/how-to-use-ci-with-ftw/ /ftw-testing-error-handling/how-to-use-ci-with-ftw/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

@@ -2,7 +2,7 @@
 title: How to set up Content Security Policy (CSP) for FTW
 slug: how-to-set-up-csp-for-ftw
 updated: 2019-01-25
-category: guides
+category: ftw-security
 ingress:
   This guide describes how to set up CSP for Flex Template for Web
   (FTW).

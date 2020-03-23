@@ -1,8 +1,8 @@
 ---
 title: How to set up Sentry to log errors in FTW
-slug: how-to-set-up-sentry-to-log-errors-in-ftw
+slug: how-to-set-up-sentry
 updated: 2019-01-25
-category: guides
+category: ftw-testing-error-handling
 ingress:
   This guide documents how to use Sentry to log errors in Flex Template
   for Web (FTW).

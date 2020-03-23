@@ -2,7 +2,7 @@
 title: How to test FTW
 slug: how-to-test-ftw
 updated: 2019-03-27
-category: guides
+category: ftw-testing-error-handling
 ingress:
   This guide describes how to use the test setup in Flex Template for
   Web (FTW).
