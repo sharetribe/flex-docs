@@ -2,7 +2,7 @@
 title: How to set up Analytics for FTW
 slug: how-to-set-up-analytics-for-ftw
 updated: 2019-01-25
-category: guides
+category: ftw-analytics
 ingress:
   This guide describes how to set up analytics for Flex Template for Web
   (FTW).

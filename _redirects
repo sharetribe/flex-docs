@@ -38,6 +38,8 @@
 /guides/how-to-set-up-sentry-to-log-errors-in-ftw/ /ftw-testing-error-handling/how-to-set-up-sentry/
 /guides/how-to-test-ftw/ /ftw-testing-error-handling/how-to-test-ftw/
 /guides/how-to-use-ci-with-ftw/ /ftw-testing-error-handling/how-to-use-ci-with-ftw/
+/guides/how-to-set-up-analytics-for-ftw/ /ftw-analytics/how-to-set-up-analytics-for-ftw/
+
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
