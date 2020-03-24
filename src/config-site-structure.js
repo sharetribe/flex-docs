@@ -106,6 +106,10 @@ exports.siteStructure = [
       { id: 'ftw-performance' },
     ],
   },
+  {
+    id: 'integrations',
+    isOpen: false,
+  },
   { id: 'design-toolkit', isOpen: false },
   { id: 'references', isOpen: false },
 
