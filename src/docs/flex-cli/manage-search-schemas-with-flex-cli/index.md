@@ -2,7 +2,7 @@
 title: Manage search schemas with Flex CLI
 slug: manage-search-schemas-with-flex-cli
 updated: 2019-12-16
-category: tutorials
+category: flex-cli
 ingress:
   This tutorial shows you how to manage listing extended data search
   schemas with Flex CLI. With search schemas in place, you can use

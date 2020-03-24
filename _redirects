@@ -41,6 +41,10 @@ docs/guides/how-to-use-ci-with-ftw/ /docs/ftw-testing-error-handling/how-to-use-
 docs/guides/how-to-set-up-analytics-for-ftw/ /docs/ftw-analytics/how-to-set-up-analytics-for-ftw/
 docs/guides/how-to-deploy-ftw-to-production/ /docs/ftw-hosting/how-to-deploy-ftw-to-production/
 docs/tutorials/getting-started-with-integration-api/ /docs/integrations/getting-started-with-integration-api/
+docs/tutorials/getting-started-with-flex-cli/ /docs/flex-cli/getting-started-with-flex-cli/
+docs/tutorials/edit-transaction-process-with-flex-cli/ /docs/flex-cli/edit-transaction-process-with-flex-cli/
+docs/tutorials/edit-email-templates-with-flex-cli/ /docs/flex-cli/edit-email-templates-with-flex-cli/
+docs/tutorials/manage-search-schemas-with-flex-cli/ /docs/flex-cli/manage-search-schemas-with-flex-cli/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

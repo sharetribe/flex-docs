@@ -47,6 +47,13 @@ const sortingArrayBackground = [
   'stripe-provider-onboarding-and-capabilities',
 ];
 
+const sortingArrayFlexCLI = [
+  'getting-started-with-flex-cli',
+  'edit-transaction-process-with-flex-cli',
+  'edit-email-templates-with-flex-cli',
+  'manage-search-schemas-with-flex-cli',
+];
+
 exports.siteStructure = [
   { id: 'introduction' },
   {
@@ -106,9 +113,11 @@ exports.siteStructure = [
       { id: 'ftw-performance' },
     ],
   },
+  {id: 'integrations', isOpen: false,},
   {
-    id: 'integrations',
+    id: 'flex-cli',
     isOpen: false,
+    sortingArray: sortingArrayFlexCLI,
   },
   { id: 'design-toolkit', isOpen: false },
   { id: 'references', isOpen: false },
