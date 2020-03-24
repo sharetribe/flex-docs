@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import fonts from '../../fonts';
 
@@ -46,7 +46,8 @@ const StyledCategoryTitle = styled(CategoryTitle)`
   margin: 0;
   width: 100%;
   text-align: left;
-  padding: 0 16px 0 24px;
+  padding: ${props =>
+    props.depth && props.depth === 1 ? '0 16px 6px 24px' : '0 16px 6px 36px'};
 
   // Font
   // Note: with this font,
@@ -77,7 +78,10 @@ const StyledCategoryTitle = styled(CategoryTitle)`
     font-size: 16px;
     line-height: 24px;
 
-    padding: 6px 16px 2px 36px;
+    padding: ${props =>
+      props.depth && props.depth === 1
+        ? '6px 16px 10px 36px'
+        : '6px 16px 10px 48px'};
 
     // Offset baseline
     top: 0px;
@@ -86,6 +90,22 @@ const StyledCategoryTitle = styled(CategoryTitle)`
 
 const StyledMainCategoryTitle = styled(StyledCategoryTitle)`
   ${fonts['CircularStd-Bold'].styles}
+`;
+
+// Create the keyframes
+const enterAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+`;
+const StyledChildren = styled.div`
+  animation: ${enterAnimation} 0.3s linear;
 `;
 
 const Category = props => {
@@ -124,7 +144,7 @@ const Category = props => {
       <TitleComponent onClick={() => setCategoryOpen(!isOpen)} depth={depth}>
         <UiText id={`Sidebar.${camelize(category)}`} />
       </TitleComponent>
-      {isOpen ? children : null}
+      {isOpen ? <StyledChildren>{children}</StyledChildren> : null}
     </li>
   );
 };
@@ -165,6 +185,7 @@ const CategoryList = props => {
             <ArticleLinkList
               articleGroup={articleGroup}
               activeArticle={activeArticle}
+              depth={depth + 1}
             />
             {hasSubcategories ? (
               <CategoryList
