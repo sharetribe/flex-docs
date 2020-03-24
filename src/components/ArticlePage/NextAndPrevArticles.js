@@ -30,14 +30,17 @@ const nextAndPrev = (slug, category, siteStructure) => {
 
   const sortingArray =
     pageCategory && pageCategory.sortingArray ? pageCategory.sortingArray : [];
+  const showNextAndPrev = !!(pageCategory && pageCategory.showNextAndPrev);
 
   const slugIndex = sortingArray.findIndex(s => s === slug);
   const lastSlugIndex = sortingArray.length - 1;
   const hasNext = slugIndex > -1 && slugIndex < lastSlugIndex;
   const hasPrev = slugIndex > -1 && slugIndex > 0;
   return {
-    nextArticleSlug: hasNext ? sortingArray[slugIndex + 1] : null,
-    prevArticleSlug: hasPrev ? sortingArray[slugIndex - 1] : null,
+    nextArticleSlug:
+      showNextAndPrev && hasNext ? sortingArray[slugIndex + 1] : null,
+    prevArticleSlug:
+      showNextAndPrev && hasPrev ? sortingArray[slugIndex - 1] : null,
   };
 };
 

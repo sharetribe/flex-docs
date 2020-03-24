@@ -61,7 +61,11 @@ exports.siteStructure = [
     isOpen: false,
     sortingArray: sortingArrayTutorial,
     subcategories: [
-      { id: 'tutorial-branding', sortingArray: sortingArrayTutorialBranding },
+      {
+        id: 'tutorial-branding',
+        sortingArray: sortingArrayTutorialBranding,
+        showNextAndPrev: true,
+      },
       // { id: 'tutorial-advanced' },
     ],
   },
