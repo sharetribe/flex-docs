@@ -13,7 +13,7 @@ const TocLi = styled(Li).attrs({
   font-size: 15px;
   line-height: 24px;
   margin-top: ${props => (props.depth === 2 ? 6 : 0)}px;
-  margin-left: ${props => (props.depth > 2 ? 8 : 0)}px;
+  margin-left: ${props => (props.depth > 2 ? 12 : 0)}px;
 
   color: ${props => props.theme.tocColorLink};
 
@@ -26,7 +26,7 @@ const TocLi = styled(Li).attrs({
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${props => (props.depth === 2 ? 8 : 0)}px;
-    margin-left: ${props => (props.depth > 2 ? 8 : 0)}px;
+    margin-left: ${props => (props.depth > 2 ? 12 : 0)}px;
 
     // Offset baseline
     top: -1px;
@@ -38,7 +38,6 @@ const TocItem = props => {
   return (
     <TocLi depth={depth} {...rest}>
       <Link neutral to={`${path}#${id}`}>
-        {' › '}
         {value}
       </Link>
     </TocLi>
