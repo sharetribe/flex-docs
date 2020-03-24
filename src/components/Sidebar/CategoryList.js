@@ -92,20 +92,11 @@ const StyledMainCategoryTitle = styled(StyledCategoryTitle)`
   ${fonts['CircularStd-Bold'].styles}
 `;
 
-// Create the keyframes
-const enterAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-`;
 const StyledChildren = styled.div`
-  animation: ${enterAnimation} 0.3s linear;
+  opacity: ${props => (props.isOpen ? '1' : '0')};
+  transform: ${props =>
+    props.isOpen ? 'translateY(0px)' : 'translateY(-8px)'};
+  transition: all 0.3s ease-in-out;
 `;
 
 const Category = props => {
@@ -144,7 +135,11 @@ const Category = props => {
       <TitleComponent onClick={() => setCategoryOpen(!isOpen)} depth={depth}>
         <UiText id={`Sidebar.${camelize(category)}`} />
       </TitleComponent>
-      {isOpen ? <StyledChildren>{children}</StyledChildren> : null}
+      {isOpen ? (
+        <StyledChildren isOpen={isOpen}>{children}</StyledChildren>
+      ) : (
+        <StyledChildren />
+      )}
     </li>
   );
 };
