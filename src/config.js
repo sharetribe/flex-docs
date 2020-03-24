@@ -58,12 +58,11 @@ exports.themeLight = {
   // Sidebar colors
   sidebarNavColorTitle: '#4a4a4a',
   sidebarNavColorTitleHover: '#000',
-  sidebarNavColorTitleActive: '#000',
   sidebarNavColorLink: '#0080ff',
   sidebarNavColorLinkHover: '#0066cc',
-  sidebarNavColorLinkActive: '#000',
+  sidebarNavColorLinkActive: '#004c99',
   sidebarNavColorLinkVisited: '#0080ff',
-  sidebarNavBorderColorActive: '#000',
+  sidebarNavBorderColorActive: '#004c99',
   sidebarNavBorderColorHover: '#0066cc',
 
   tocColorLink: '#0080ff',
