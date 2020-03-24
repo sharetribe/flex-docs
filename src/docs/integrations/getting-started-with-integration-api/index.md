@@ -2,7 +2,7 @@
 title: Getting started with the Integration API
 slug: getting-started-with-integration-api
 updated: 2019-12-04
-category: tutorials
+category: integrations
 ingress:
   This tutorial is the place to start your journey building custom
   integrations using the Flex Integration API.
