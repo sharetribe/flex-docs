@@ -28,14 +28,13 @@ const ArticleLink = props => {
   return (
     <Link className={className} neutral to={`/${path}`}>
       <Bar active={active} />
-      <span>{'› '}</span>
       {children}
     </Link>
   );
 };
 
 const activeLinkStyles = css`
-  color: ${props => props.theme.topbarNavColorActive};
+  color: ${props => props.theme.sidebarNavColorLinkActive};
 `;
 
 const hoverLinkStyles = css`
@@ -52,11 +51,11 @@ const StyledArticleLink = styled(ArticleLink)`
   display: block;
   font-size: 15px;
   line-height: 24px;
-  text-indent: -8px;
 
   color: ${props => props.theme.sidebarNavColorLink};
 
-  padding-left: 40px;
+  padding-left: ${props =>
+    props.depth && props.depth === 2 ? '36px' : '48px'};
   padding-right: 24px;
 
   ${props => (props.active ? activeLinkStyles : '')};
@@ -65,7 +64,7 @@ const StyledArticleLink = styled(ArticleLink)`
     > span {
       color: ${props =>
         props.active
-          ? props.theme.topbarNavColorActive
+          ? props.theme.sidebarNavColorLinkActive
           : props.theme.sidebarNavColorLinkVisited};
     }
   }
@@ -79,7 +78,7 @@ const StyledArticleLink = styled(ArticleLink)`
     ${hoverLinkStyles}
     color: ${props =>
       props.active
-        ? props.theme.topbarNavColorActive
+        ? props.theme.sidebarNavColorLinkActive
         : props.theme.sidebarNavColorLinkHover};
     > div {
       background-color: ${props =>
@@ -92,7 +91,8 @@ const StyledArticleLink = styled(ArticleLink)`
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 15px;
     line-height: 24px;
-    padding-left: 52px;
+    padding-left: ${props =>
+      props.depth && props.depth === 2 ? '48px' : '60px'};
   }
 
   @media (min-width: 1024px) {
@@ -135,7 +135,7 @@ const ArticleListItem = props => {
 };
 
 const ArticleList = props => {
-  const { articleGroup, activeArticle } = props;
+  const { articleGroup, activeArticle, depth } = props;
   const articles =
     articleGroup && articleGroup.articles ? articleGroup.articles : [];
   const hasArticles = articles.length > 0;
@@ -159,6 +159,7 @@ const ArticleList = props => {
             title={title}
             slug={slug}
             active={active}
+            depth={depth}
           />
         );
       })}
