@@ -118,6 +118,7 @@
   "Sidebar.cookbookAvailability": "Availability",
   "Sidebar.cookbookDataModel": "Data model",
   "Sidebar.cookbookEmailTemplates": "Email templates",
+  "Sidebar.cookbookManage": "Manage",
   "Sidebar.cookbookPayments": "Payments",
   "Sidebar.cookbookSearch": "Search",
   "Sidebar.cookbookTransactionProcess": "Transaction process",
@@ -133,7 +134,7 @@
   "Sidebar.ftwSearch": "Search",
   "Sidebar.ftwSecurity": "Security",
   "Sidebar.ftwStyling": "Styling",
-  "Sidebar.ftwTesting": "Testing",
+  "Sidebar.ftwTestingErrorHandling": "Testing",
 
   "Sidebar.development": "Development resources",
   "Sidebar.developmentFlexCli": "Flex CLI",
