@@ -51,7 +51,7 @@ const SideNavigation = styled(Box)`
   @media (min-width: ${baselineBreakpoint}px) {
     box-shadow: none;
     position: sticky;
-    margin-left: 12px;
+    margin-right: 12px;
     margin-top: ${6 * baselineLarge}px;
     margin-bottom: ${4 * baselineLarge}px;
     top: ${2 * baselineLarge}px;
@@ -151,16 +151,12 @@ const MobileTocWrapper = styled.section`
 
 const MobileToc = styled(Toc)`
   display: inline-block;
-  text-indent: -8px;
-  margin-left: 8px;
   margin-top: ${baselineSmall}px;
 `;
 
 const SideToc = styled(Toc)`
   @media (min-width: ${baselineBreakpoint}px) {
     display: inline-block;
-    text-indent: -8px;
-    margin-left: 8px;
     margin-top: ${baselineLarge}px;
   }
 `;

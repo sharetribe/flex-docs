@@ -55,14 +55,14 @@ const sortingArrayFlexCLI = [
 ];
 
 exports.siteStructure = [
-  { id: 'introduction' },
+  { id: 'introduction', isOpen: false },
   {
     id: 'tutorial',
-    isOpen: true,
+    isOpen: false,
     sortingArray: sortingArrayTutorial,
     subcategories: [
       { id: 'tutorial-branding', sortingArray: sortingArrayTutorialBranding },
-      { id: 'tutorial-advanced' },
+      // { id: 'tutorial-advanced' },
     ],
   },
   {
@@ -113,7 +113,7 @@ exports.siteStructure = [
       { id: 'ftw-performance' },
     ],
   },
-  {id: 'integrations', isOpen: false,},
+  { id: 'integrations', isOpen: false },
   {
     id: 'flex-cli',
     isOpen: false,

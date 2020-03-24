@@ -86,11 +86,15 @@ const getArticles = (edges, category, siteStructure) => {
     const { frontmatter } = edge.node;
     return dev || frontmatter.published ? result.concat(frontmatter) : result;
   }, []);
-  return sortingArray.length > 0 ? articles.sort(byArrayOfSlugs(sortingArray)) : articles;
+  return sortingArray.length > 0
+    ? articles.sort(byArrayOfSlugs(sortingArray))
+    : articles;
 };
 
 const getGroupedArticles = data => {
-  const groups = data.allMarkdownRemark ? [...data.allMarkdownRemark.group] : [];
+  const groups = data.allMarkdownRemark
+    ? [...data.allMarkdownRemark.group]
+    : [];
   return groups.map(group => {
     const { fieldValue: category, totalCount: articleCount, edges } = group;
     return {
