@@ -54,6 +54,17 @@ const sortingArrayFlexCLI = [
   'manage-search-schemas-with-flex-cli',
 ];
 
+const sortingArrayReferences = [
+  'api',
+  'js-sdk',
+  'extended-data',
+  'email-templates',
+  'availability',
+  'transaction-process-format',
+  'transaction-process-actions',
+  'transaction-process-time-expressions',
+];
+
 exports.siteStructure = [
   { id: 'introduction', isOpen: false },
   {
@@ -124,8 +135,11 @@ exports.siteStructure = [
     sortingArray: sortingArrayFlexCLI,
   },
   { id: 'design-toolkit', isOpen: false },
-  { id: 'references', isOpen: false },
+  {
+    id: 'references',
+    isOpen: false,
+    sortingArray: sortingArrayReferences,
+  },
 
   { id: 'guides', isOpen: false },
-  // { id: 'references', isOpen: false },
 ];
