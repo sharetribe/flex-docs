@@ -58,7 +58,10 @@ const StyledCategoryTitle = styled(CategoryTitle)`
   letter-spacing: 1px;
 
   // Color
-  color: ${props => props.theme.sidebarNavColorTitle};
+  color: ${props =>
+    props.depth && props.depth === 1
+      ? props.theme.sidebarNavColorMainCategory
+      : props.theme.sidebarNavColorSubcategory};
 
   // Enable baseline offset
   position: relative;
