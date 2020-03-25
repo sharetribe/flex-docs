@@ -2,7 +2,7 @@
 title: FTW Environment configuration variables
 slug: ftw-env
 updated: 2019-01-25
-category: references
+category: ftw-configuration
 ingress:
   Reference documentation for environment variables in Flex Template for
   Web (FTW).
