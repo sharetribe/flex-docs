@@ -1,7 +1,7 @@
 ---
 title: Introduction
 slug: introduction
-updated: 2019-01-28
+updated: 2019-03-25
 category: tutorial
 ingress: This guide describes how to customize the FTW-daily template.
 published: true
@@ -12,19 +12,13 @@ published: true
 In this tutorial, we start to customize FTW-daily template and turn it
 into a cottage-rental marketplace called CottageDays.
 
-There will be two major parts in this tutorial:
+The first part of this tutorial is about branding the template. However,
+we will add new articles later about features that go beyond FTW-daily
+template and its default behaviour.
 
-**Part 1: Branding**<br /> Learn to make changes that are necessary turn
-Saunatime marketplace to CottageDays marketplace. At the end of this
-part, we deploy CottageDays marketplace to Heroku.
-
-**Part 2: Beyond FTW-daily template**<br /> Part 2 will go beyond
-initial features of FTW-daily repository. You learn how to extend
-listing entities with your own data, modify email templates and modify
-the transaction process.
-
-> **Note**: Unfortunately, Part 2 is missing at the moment. We'll write
-> the articles to that section later.
+**Part 1: Branding**<br /> Learn to make changes that are necessary to
+turn Saunatime marketplace to CottageDays marketplace. At the end of
+this part, we deploy CottageDays marketplace to Heroku.
 
 ## Prerequisites
 
