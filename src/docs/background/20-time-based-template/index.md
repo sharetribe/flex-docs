@@ -25,10 +25,6 @@ booking action.
 > related to the day-based process. If you have started with FTW and you
 > are planning to move to FTW-time, you should check if you have done
 > any customization to these components.
->
-> You should also note that `DateRangeFilter` is not in use in the
-> FTW-time because Flex Marketplace API does not yet support filtering
-> search by time-based availability.
 
 ## Handling time zones
 
