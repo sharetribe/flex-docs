@@ -190,10 +190,11 @@ multiple criteria:
   fields (like listing category) so the search finds from them as well.
 - **Price.** It's possible to filter out listings with too high or too
   low price.
-- **Availability.** It's possible to filter out listings that are not
-  available during a given day or a date range. Works together with
-  seats so that you can filter for availability with minimum number of
-  seats.
+- **Availability.** It's possible to filter out listings that have insufficient
+  availability during a given time range. Works together with seats so that you
+  can filter for availability with minimum number of seats. It is also possible
+  to filter by required minimum duration of availability for the given time
+  range.
 - **Custom filter: any value.** Any number of custom filters can be
   added. "Any value" filters out listings that don't have the given
   value (or any of a set of given values) in their public data. A
@@ -206,6 +207,9 @@ multiple criteria:
   certain numeric value in their public data. For example, you might
   want to build a slider filter for the skill level of the user, ranging
   from 0 to 10.
+- **Sorting.** Listing sorting order can be customized per query. Sorting is
+  supported by one or more of: listing price, listing creation time, or any
+  numeric attribute in the listing's public data or metadata.
 
 ## Transactions
 
