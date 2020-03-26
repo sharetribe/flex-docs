@@ -101,16 +101,6 @@ exports.siteStructure = [
   },
 
   {
-    id: 'development',
-    isOpen: false,
-    subcategories: [
-      { id: 'development-flex-cli' },
-      { id: 'development-ftw-templates' },
-      { id: 'development-integrations' },
-    ],
-  },
-
-  {
     id: 'ftw',
     isOpen: false,
     subcategories: [
@@ -134,7 +124,6 @@ exports.siteStructure = [
     isOpen: false,
     sortingArray: sortingArrayFlexCLI,
   },
-  { id: 'design-toolkit', isOpen: false },
   {
     id: 'references',
     isOpen: false,

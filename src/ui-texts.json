@@ -138,17 +138,10 @@
   "Sidebar.ftwStyling": "Styling",
   "Sidebar.ftwTestingErrorHandling": "Testing",
 
-  "Sidebar.development": "Development resources",
-  "Sidebar.developmentFlexCli": "Flex CLI",
-  "Sidebar.developmentIntegrations": "Integrations",
-  "Sidebar.developmentResources": "Development resources",
-
   "Sidebar.integrations": "Integrations",
 
   "Sidebar.references": "References",
-  "Sidebar.designToolkit": "Flex design toolkit",
 
   "Sidebar.guides": "OLD: How-to guides",
   "Sidebar.background": "Background"
-
 }
