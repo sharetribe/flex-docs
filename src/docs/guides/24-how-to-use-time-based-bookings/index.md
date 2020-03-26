@@ -49,21 +49,12 @@ CLI, see the
 [Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
 tutorial.
 
-> Note that filtering a listings query by availability is not yet
-> available when using time-based bookings and availability. When taking
-> time-based availability into use, you should remove the date filter
-> from search page. See
-> [the listings query endpoint reference documentation](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
-> for more information.
-
 ## Option 1: Use a new Flex template FTW-time (recommended)
 
 With the time-based transaction process, you can use
-[FTW-time](https://github.com/sharetribe/ftw-time), a new Flex Template
-that supports time-based availability out of the box. FTW-time is still
-in beta, so it might experience heavy changees, but it's already ready
-to be used.
-[Learn more about what's new in FTW-time](/background/time-based-template/).
+[FTW-hourly](https://github.com/sharetribe/ftw-hourly), a new Flex Template that
+supports time-based availability out of the box. [Learn more about what's new in
+FTW-hourly](/background/time-based-template/).
 
 ## Option 2: Implement time-based availability in your own frontend application
 
@@ -161,17 +152,17 @@ managing time-based availability exceptions or plans. Thus, in order to
 use time-based bookings, you will need to implement these parts of the
 user interface yourself.
 
-In the future, we plan to ship a template app that covers time-based
-bookings too.
+For inspiration, see also the [FTW-time](https://github.com/sharetribe/ftw-time)
+implementation.
 
-### Timezone
+### Time zone
 
-With time-based bookings timezones play a larger role than with night-
-and day-based ones. This is the case especially if your marketplace
-operates on multiple timezones and there are listings that could be
-booked from a different timezone as the one in which the listing is
-located. In this case it could come in handy to store the listing's
-timezone into [public data](/references/extended-data/). This way it is
-possible to implement the booking so that when the booking takes place
-the customer and provider will have a shared understanding when the
+With time-based bookings time zones play a larger role than with night- and
+day-based ones. This is the case especially if your marketplace operates on
+multiple time zones and there are listings that could be booked from a different
+time zone as the one in which the listing is located. In this case it could come
+in handy to take into account the listing's [availability plan time
+zone](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format).
+This way it is possible to implement the booking so that when the booking takes
+place the customer and provider will have a shared understanding when the
 booking starts.
