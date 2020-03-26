@@ -165,7 +165,7 @@ Inside `src/Routes.js`, we also have a component called
 - Dispatch location changed actions to Redux store. This makes it
   possible for analytics Redux middleware to listen location changes.
   For more information, see the
-  [How to set up Analytics for FTW](/guides/how-to-set-up-analytics-for-ftw/)
+  [How to set up Analytics for FTW](/ftw-analytics/how-to-set-up-analytics-for-ftw/)
   guide.
 
 ## Linking
@@ -266,7 +266,7 @@ reducer (`src/ducks/Routing.duck.js`), but more importantly,
 `src/analytics/analytics.js` (a Redux middleware) listens to these
 changes and sends tracking events to configured services. For more
 information, see the
-[How to set up Analytics for FTW](/guides/how-to-set-up-analytics-for-ftw/)
+[How to set up Analytics for FTW](/ftw-analytics/how-to-set-up-analytics-for-ftw/)
 guide.
 
 ## A brief introduction to SSR

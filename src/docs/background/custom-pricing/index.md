@@ -258,6 +258,6 @@ In order to take custom pricing into use the custom pricing action,
 new transactions in your marketplace's transaction process. This change
 can be done using Flex CLI. For a full guide on how to change your
 marketplace website to use custom pricing refer to
-[the custom pricing how-to guide](/guides/how-to-customize-pricing/). It
+[the custom pricing cookbook](/cookbook-payments/customize-pricing/). It
 describes how Flex Template for Web can be modified to use custom
 pricing.

@@ -27,7 +27,7 @@ As a background, familiarizing with the
 [transaction process](/background/transaction-process/),
 [transaction process actions](/references/transaction-process-actions/),
 and
-[the tutorial for editing the process with flex-cli ](/tutorials/edit-transaction-process-with-flex-cli/)
+[the tutorial for editing the process with flex-cli ](/flex-cli/edit-transaction-process-with-flex-cli/)
 give you a good understanding of the concepts discussed in this article.
 In addition, the article describing
 [how to solve payout problems](/background/solving-payout-problems)

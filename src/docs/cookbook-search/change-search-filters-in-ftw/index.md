@@ -69,7 +69,7 @@ cookbook. Another aspect in search filters is that a
 [search schema](/references/extended-data/#search-schema) needs to be
 added to the data in order for API to index it for search. Adding search
 schema can be done by the
-[Flex CLI](/tutorials/getting-started-with-flex-cli/).
+[Flex CLI](/flex-cli/getting-started-with-flex-cli/).
 
 Once a public data attribute is added to the listings and the data
 attribute is indexed, the listing searches can be filtered by that

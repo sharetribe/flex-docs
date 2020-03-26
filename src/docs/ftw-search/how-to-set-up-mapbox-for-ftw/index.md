@@ -88,7 +88,7 @@ with commas.
 
 It is possible to use Google Map instead of the default map provider.
 Read more in the
-[How to use Google Maps in FTW](/guides/how-to-use-google-maps-in-ftw/)
+[How to use Google Maps in FTW](/ftw-search/how-to-use-google-maps-in-ftw/)
 guide.
 
 ### How to use other map providers

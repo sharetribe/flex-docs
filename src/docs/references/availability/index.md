@@ -95,7 +95,7 @@ interpreted. For instance, with time-based availability it is possible
 to define that the listing is available on weekdays from 9 AM to 11AM
 and from 1 PM to 6 PM. More information on how to set a time-based
 availability plan for a listing can be found in the
-[time-based bookings guide](/guides/how-to-take-time-based-bookings-into-use/).
+[time-based bookings cookbook](/cookbook-transaction-process/enable-time-based-bookings-into-use/).
 
 > **Note:** By default,
 > [Flex Template for Web](https://github.com/sharetribe/flex-template-web/)

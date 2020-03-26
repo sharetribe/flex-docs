@@ -164,7 +164,7 @@ the component files themselves.
 
 More information about adding static content to the application can be
 found in the
-[How to add static pages in FTW](/guides/how-to-add-static-pages-in-ftw/)
+[How to add static pages in FTW](/ftw-styling/how-to-add-static-pages-in-ftw/)
 guide.
 
 There are few other cases where we haven't added translations directly
@@ -172,7 +172,7 @@ to the translation files:
 
 - Labels for example filters (categories and amenities) can be found
   from `src/marketplace-custom-config.js` By default,
-  [these filters are not in use](/guides/how-to-change-search-filters-in-ftw/#adding-a-new-search-filter)
+  [these filters are not in use](/cookbook-search/change-search-filters-in-ftw/#adding-a-new-search-filter)
   since every marketplace has its own extended data and search filters
   for them.
 - [Merchant Category Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/PayoutDetailsForm/merchantCategoryCodesUS.js).

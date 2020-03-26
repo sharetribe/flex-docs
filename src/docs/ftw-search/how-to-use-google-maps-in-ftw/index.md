@@ -17,7 +17,7 @@ published: true
 > [pricing page](https://cloud.google.com/maps-platform/pricing/). FTW's
 > default map provider is Mapbox, which is often cheaper. To use Mapbox,
 > see the
-> [How to set up Mapbox for FTW](/guides/how-to-set-up-mapbox-for-ftw/)
+> [How to set up Mapbox for FTW](/ftw-search/how-to-set-up-mapbox-for-ftw/)
 > guide.
 
 ## 1. Generate a Google Maps API key

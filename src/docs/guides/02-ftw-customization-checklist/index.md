@@ -15,9 +15,9 @@ FTW.
 ## 1. Customize visual styles
 
 - Marketplace colors:
-  [How to customize FTW styles](/guides/how-to-customize-ftw-styles/)
+  [How to customize FTW styles](/ftw-styling/how-to-customize-ftw-styles/)
 - Favicon and application icons:
-  [How to change FTW icons](/guides/how-to-change-ftw-icons/)
+  [How to change FTW icons](/ftw-styling/how-to-change-ftw-icons/)
 - Social media sharing graphics in the
   [Page](https://github.com/sharetribe/flex-template-web/blob/master/src/components/Page/Page.js)
   component
@@ -33,7 +33,7 @@ FTW.
 ## 2. Change text content
 
 - Update UI texts or change the language:
-  [How to change FTW UI texts and translations](/guides/how-to-change-ftw-ui-texts-and-translations/)
+  [How to change FTW UI texts and translations](/ftw-styling/how-to-change-ftw-ui-texts-and-translations/)
 - [LandingPage](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/LandingPage/LandingPage.js)
   component: update and create branded sections
 - [Footer](https://github.com/sharetribe/flex-template-web/blob/master/src/components/Footer/Footer.js)
@@ -46,7 +46,7 @@ FTW.
 ## 3. Change configuration
 
 - Go through the
-  [FTW Environment configuration variables](/references/ftw-env/)
+  [FTW Environment configuration variables](/ftw-configuration/ftw-env/)
 - [Config: siteTitle](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js)
   for page schema (SEO)
 - [Config: marketplace address](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js):
@@ -69,7 +69,7 @@ FTW.
   [routeConfiguration](https://github.com/sharetribe/flex-template-web/blob/master/src/routeConfiguration.js)
   if needed
 - Update transaction email templates. For more information, see
-  [Edit email templates with Flex CLI](/tutorials/edit-email-templates-with-flex-cli/)
+  [Edit email templates with Flex CLI](/flex-cli/edit-email-templates-with-flex-cli/)
   tutorial and [Email templates](/references/email-templates/) reference
   article.
 - Update
@@ -80,6 +80,6 @@ FTW.
   [ListingPage](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/ListingPage/ListingPage.js),
   [CheckoutPage](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
 - Add more static pages:
-  [How to add static pages in FTW](/guides/how-to-add-static-pages-in-ftw/)
+  [How to add static pages in FTW](/ftw-styling/how-to-add-static-pages-in-ftw/)
 - Changes to existing pages
 - Changes to transaction process (API + Web app)

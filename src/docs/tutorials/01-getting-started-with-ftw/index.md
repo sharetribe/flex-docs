@@ -29,7 +29,7 @@ Currently we have two templates is available:
 > [transaction process](https://www.sharetribe.com/docs/background/transaction-process/).
 > If you want to start working with FTW-hourly, you need to change to
 > the time-based process. See
-> [getting started with Flex CLI](https://www.sharetribe.com/docs/tutorials/getting-started-with-flex-cli/)
+> [getting started with Flex CLI](https://www.sharetribe.com/docs/flex-cli/getting-started-with-flex-cli/)
 > for more information.
 
 Depending on your needs for customization, changing the template
@@ -111,7 +111,7 @@ There are three required variables for FTW to work correctly:
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
   Public Stripe key enables payments using Stripe. You can follow
-  [How to set up and use Stripe guide](/guides/how-to-set-up-and-use-stripe/)
+  [Set up and use Stripe cookbook](/cookbook-payments/set-up-and-use-stripe/)
   to get the publishable key. You should also make sure you have enabled
   Stripe Connect in your platform.
 
@@ -121,13 +121,13 @@ There are three required variables for FTW to work correctly:
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
   Mapbox access token is used for the maps in the marketplace. Follow
-  the [Mapbox set up guide](/guides/how-to-set-up-mapbox-for-ftw/) to
+  the [Mapbox set up guide](/ftw-search/how-to-set-up-mapbox-for-ftw/) to
   get your access token.
 
   If you don't set the Mapbox key, the map components won't work in the
   application.
 
-See the [FTW Environment configuration variables](/references/ftw-env/)
+See the [FTW Environment configuration variables](/ftw-configuration/ftw-env/)
 for more information on the environment variables.
 
 ## Start the server

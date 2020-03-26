@@ -39,7 +39,7 @@ file with your preferred text editor:
 ```
 
 Full list of configuration variables can be found here:
-[FTW environment variables](/references/ftw-env/). You can change any of
+[FTW environment variables](/ftw-configuration/ftw-env/). You can change any of
 these variables _locally_ by just editing the **.env** file. Then you
 need to restart the server by running `yarn run dev` again.
 
@@ -66,7 +66,7 @@ In the `.env` file, you should see these environment variables:
 
 > **Note**: You should take _Content Security Policy_ (CSP) into use
 > (block mode) before going to production. Read more about it from
-> [this article](/guides/how-to-set-up-csp-for-ftw/).
+> [this article](/ftw-security/how-to-set-up-csp-for-ftw/).
 
 </extrainfo>
 

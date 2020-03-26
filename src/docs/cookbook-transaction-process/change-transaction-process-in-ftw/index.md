@@ -16,7 +16,7 @@ and transitions defined in that process.
 How the transaction process works behind the Marketplace API depends on
 how you process is customised in our backend. To customise the
 transaction process in the backend, you should use Flex CLI. See the
-[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 tutorial to get familiar with the tool.
 
 If you have changed the transaction process in your marketplace, you

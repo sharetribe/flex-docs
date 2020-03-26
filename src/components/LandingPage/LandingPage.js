@@ -204,7 +204,7 @@ const LandingPage = props => {
             <SectionLink to="/tutorials/getting-started-with-ftw/">
               <UiText id="LandingPage.gettingStarted.ftwSetup" />
             </SectionLink>
-            <SectionLink to="/tutorials/getting-started-with-flex-cli/">
+            <SectionLink to="/flex-cli/getting-started-with-flex-cli/">
               <UiText id="LandingPage.gettingStarted.flexCli" />
             </SectionLink>
           </Ul>
@@ -225,7 +225,7 @@ const LandingPage = props => {
               <SectionLink to="/tutorials/getting-started-with-ftw/">
                 <UiText id="LandingPage.tutorials.gettingStartedFtw" />
               </SectionLink>
-              <SectionLink to="/tutorials/getting-started-with-flex-cli/">
+              <SectionLink to="/flex-cli/getting-started-with-flex-cli/">
                 <UiText id="LandingPage.tutorials.gettingStartedCli" />
               </SectionLink>
               <SectionLink to="/tutorials/">
@@ -247,10 +247,10 @@ const LandingPage = props => {
               <SectionLink to="/guides/how-to-customize-ftw/">
                 <UiText id="LandingPage.guides.ftw" />
               </SectionLink>
-              <SectionLink to="/guides/how-to-set-up-mapbox-for-ftw/">
+              <SectionLink to="/ftw-search/how-to-set-up-mapbox-for-ftw/">
                 <UiText id="LandingPage.guides.mapbox" />
               </SectionLink>
-              <SectionLink to="/guides/how-to-set-up-analytics-for-ftw/">
+              <SectionLink to="/ftw-analytics/how-to-set-up-analytics-for-ftw/">
                 <UiText id="LandingPage.guides.analytics" />
               </SectionLink>
               <SectionLink to="/guides/">

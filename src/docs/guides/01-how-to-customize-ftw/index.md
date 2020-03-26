@@ -54,7 +54,7 @@ Currently you can choose from two templates:
 > [transaction process](https://www.sharetribe.com/docs/background/transaction-process/).
 > If you want to start working with FTW-hourly, you need to change to
 > the time-based process. See
-> [getting started with Flex CLI](https://www.sharetribe.com/docs/tutorials/getting-started-with-flex-cli/)
+> [getting started with Flex CLI](https://www.sharetribe.com/docs/flex-cli/getting-started-with-flex-cli/)
 > for more information.
 
 > **Note:** This guide assumes you'll connect to Github over SSH. If you
@@ -137,7 +137,7 @@ corresponding configuration also to your server environment.
 
 There are some mandatory configuration variables that are defined in the
 template. See the
-[FTW Environment configuration variables](/references/ftw-env/)
+[FTW Environment configuration variables](/ftw-configuration/ftw-env/)
 reference for more information.
 
 See also the
@@ -193,7 +193,7 @@ yarn test
 ```
 
 For more information, see the
-[How to test FTW](/guides/how-to-test-ftw/) documentation.
+[How to test FTW](/ftw-testing-error-handling/how-to-test-ftw/) documentation.
 
 ## Customization
 

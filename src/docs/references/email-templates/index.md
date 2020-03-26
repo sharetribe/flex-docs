@@ -22,7 +22,7 @@ in the Flex Console. You find the editor in the Console under Build
 section.
 
 To change the transaction emails, follow the
-[Edit email templates with Flex CLI](/tutorials/edit-email-templates-with-flex-cli/)
+[Edit email templates with Flex CLI](/flex-cli/edit-email-templates-with-flex-cli/)
 tutorial.
 
 ## Best practices
@@ -318,7 +318,7 @@ let's you **send test emails** to your own email address.
 ## Editing transaction emails
 
 To understand how to change the transaction emails, see the
-[Edit email templates with Flex CLI](/tutorials/edit-email-templates-with-flex-cli/)
+[Edit email templates with Flex CLI](/flex-cli/edit-email-templates-with-flex-cli/)
 tutorial.
 
 ### Transaction email context

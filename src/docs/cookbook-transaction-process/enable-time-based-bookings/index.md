@@ -46,15 +46,15 @@ have something like the following in your `process.edn` file:
 
 To learn more about how to change the transaction process using Flex
 CLI, see the
-[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 tutorial.
 
 ## Option 1: Use a new Flex template FTW-time (recommended)
 
 With the time-based transaction process, you can use
-[FTW-hourly](https://github.com/sharetribe/ftw-hourly), a new Flex Template that
-supports time-based availability out of the box. [Learn more about what's new in
-FTW-hourly](/background/time-based-template/).
+[FTW-hourly](https://github.com/sharetribe/ftw-hourly), a Flex Template that
+supports time-based availability out of the box. [Learn more about
+FTW-hourly](/ftw-templates/ftw-hourly/).
 
 ## Option 2: Implement time-based availability in your own frontend application
 

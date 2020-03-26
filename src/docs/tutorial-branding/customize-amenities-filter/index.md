@@ -152,7 +152,7 @@ in Flex Console
 (_[Account > API keys](https://flex-console.sharetribe.com/api-keys)_).
 
 Read more about
-[how to install Flex CLI](/tutorials/getting-started-with-flex-cli/).
+[how to install Flex CLI](/flex-cli/getting-started-with-flex-cli/).
 
 ### Set search schema with Flex CLI
 
@@ -181,7 +181,7 @@ search engine:
   can check your marketplace ID from Flex Console (Build section).
 
 Read more about
-[setting search schemas with Flex CLI](http://localhost:8000/tutorials/manage-search-schemas-with-flex-cli/).
+[setting search schemas with Flex CLI](/flex-cli/manage-search-schemas-with-flex-cli/).
 
 <extrainfo title="Extra: what about category filter?">
 

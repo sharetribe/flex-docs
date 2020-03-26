@@ -46,7 +46,7 @@ marketplace's advanced configurations such as transaction processes and
 email templates.
 
 See the
-[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 tutorial for more information.
 
 ### Marketplace API

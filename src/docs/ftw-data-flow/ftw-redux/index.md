@@ -21,7 +21,7 @@ We use [Redux](https://redux.js.org/introduction/getting-started) for
 state management on the application level. You should read more about
 Redux before you start modifying queries to Flex API or creating new
 Page level elements (unless you are modifying
-[a static page](/guides/how-to-add-static-pages-in-ftw/)).
+[a static page](/ftw-styling/how-to-add-static-pages-in-ftw/)).
 
 In the following subtopics, we assume that you know the
 [basics of Redux](https://redux.js.org/basics/basic-tutorial) already.

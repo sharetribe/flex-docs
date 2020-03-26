@@ -187,4 +187,4 @@ with transition that has the `stripe-confirm-payment-intent` attached.
 The latest version of Flex Template for Web supports PaymentIntents by
 default. If you need to adjust the default implementation, or if you're
 currently using an older version of Flex Template for Web,
-[learn more about how to take PaymentIntents into use](/guides/how-to-take-payment-intents-into-use/).
+[learn more about how to take PaymentIntents into use](/cookbook-payments/enable-payment-intents/).

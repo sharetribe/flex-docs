@@ -97,8 +97,8 @@ In FTW the Stripe Account is fetched in
 [`loadData`](https://github.com/sharetribe/ftw-daily/blob/a107a7eae19cfc9196de81816af2c5ca5a676770/src/containers/StripePayoutPage/StripePayoutPage.duck.js#L73)
 function on `StripePayoutPage.duck.js`. Quite similar `loadData`
 funciton is also used on `EditListingPage`. More information about data
-loading you can find from article
-[How routing works in FTW](/background/ftw-routing/#loading-data).
+loading you can find from the article
+[How routing works in FTW](/ftw-routing/how-routing-works-in-ftw/).
 
 After the Stripe Account has been fetched we need to check
 `requirements` of the `stripeAccountData` attribute which contains the

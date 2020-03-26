@@ -60,7 +60,7 @@ to the `transition/request-payment` and
 
 To learn more about how to change the transaction process using Flex
 CLI, see the
-[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 tutorial.
 
 > Note: `set-line-items-and-total` cannot be combined with other pricing

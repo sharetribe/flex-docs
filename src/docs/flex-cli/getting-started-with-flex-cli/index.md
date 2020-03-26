@@ -138,4 +138,4 @@ the `help` command that is the main source of documentation for the Flex
 CLI.
 
 Now that we know how to list processes, the next this is to
-[make a small change to the existing process](/tutorials/edit-transaction-process-with-flex-cli/).
+[make a small change to the existing process](/flex-cli/edit-transaction-process-with-flex-cli/).

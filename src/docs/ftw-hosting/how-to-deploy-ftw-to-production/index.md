@@ -61,7 +61,7 @@ To deploy the application add at least the following variables:
   Sign up for Mapbox and go to
   [account page](https://www.mapbox.com/account/access-tokens). Then
   click `Create access token`. See the
-  [How to set up Mapbox for FTW](/guides/how-to-set-up-mapbox-for-ftw/)
+  [How to set up Mapbox for FTW](/ftw-search/how-to-set-up-mapbox-for-ftw/)
   guide for more information.
 
 - **`REACT_APP_CANONICAL_ROOT_URL`**
@@ -71,7 +71,7 @@ To deploy the application add at least the following variables:
   This is needed for social media sharing and SEO optimization.
 
 There are also some other variables that can be used. See the
-[FTW Environment configuration variables](/references/ftw-env/)
+[FTW Environment configuration variables](/ftw-configuration/ftw-env/)
 reference for more information.
 
 ### Building the app

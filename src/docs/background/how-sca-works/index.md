@@ -121,7 +121,7 @@ If you're basing your development on Flex Template for Web version 3 or
 later, your user interface already supports SCA, but if you're using an
 earlier version of Flex Template for Web, you will also need to update
 your checkout user interface.
-[Learn more about how to take SCA and Payment Intents into use](/guides/how-to-take-payment-intents-into-use/).
+[Learn more about how to take SCA and Payment Intents into use](/cookbook-payments/enable-payment-intents/).
 
 If your marketplace has been processing transactions without SCA in the
 past, it's a good idea to make a couple of test payments with a real

@@ -18,7 +18,7 @@ email templates.
 This tutorial expects that you have already installed Flex CLI and are
 logged in with your API key. If not, it's recommended to first read the
 tutorial
-[Getting started with Flex CLI](/tutorials/getting-started-with-flex-cli/).
+[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/).
 
 In this tutorial, we will add data schemas for the `category` and
 `amenities` public data fields in listings. New marketplaces don't have
@@ -130,5 +130,5 @@ For more information, see the following resources:
 - [Extended data reference](/references/extended-data/)
 - [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
   endpoint API reference
-- [How to extend listing data in FTW](/guides/how-to-extend-listing-data-in-ftw/)
-- [How to change search filters in FTW](/guides/how-to-change-search-filters-in-ftw/)
+- [Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
+- [Change search filters in FTW](/cookbook-search/change-search-filters-in-ftw/)
