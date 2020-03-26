@@ -47,13 +47,15 @@ const StyledCategoryTitle = styled(CategoryTitle)`
   width: 100%;
   text-align: left;
   padding: ${props =>
-    props.depth && props.depth === 1 ? '0 16px 6px 24px' : '0 16px 6px 36px'};
+    props.depth && props.depth === 1
+      ? '1px 16px 5px 24px'
+      : '5px 16px 1px 24px'};
 
   // Font
   // Note: with this font,
   // 16px font-size starts to bleed with line-height 24px;
   ${fonts['CircularStd-Book'].styles}
-  font-size: 15px;
+  font-size: ${props => (props.depth && props.depth === 1 ? 12 : 16)}px;
   line-height: 24px;
   letter-spacing: 1px;
 
@@ -62,6 +64,9 @@ const StyledCategoryTitle = styled(CategoryTitle)`
     props.depth && props.depth === 1
       ? props.theme.sidebarNavColorMainCategory
       : props.theme.sidebarNavColorSubcategory};
+
+  text-transform: ${props =>
+    props.depth && props.depth === 1 ? 'uppercase' : 'none'};
 
   // Enable baseline offset
   position: relative;
@@ -78,13 +83,13 @@ const StyledCategoryTitle = styled(CategoryTitle)`
   }
 
   @media (min-width: ${baselineBreakpoint}px) {
-    font-size: 16px;
+    font-size: ${props => (props.depth && props.depth === 1 ? 12 : 16)}px;
     line-height: 24px;
 
     padding: ${props =>
       props.depth && props.depth === 1
-        ? '6px 16px 10px 36px'
-        : '6px 16px 10px 48px'};
+        ? '8px 16px 8px 36px'
+        : '6px 16px 10px 36px'};
 
     // Offset baseline
     top: 0px;
@@ -100,6 +105,11 @@ const StyledChildren = styled.div`
   transform: ${props =>
     props.isOpen ? 'translateY(0px)' : 'translateY(-8px)'};
   transition: all 0.3s ease-in-out;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    padding: ${props =>
+      props.depth && props.depth === 1 ? '0 0 8px 0' : '0 0 0 0'};
+  }
 `;
 
 const Category = props => {
@@ -139,20 +149,22 @@ const Category = props => {
         <UiText id={`Sidebar.${camelize(category)}`} />
       </TitleComponent>
       {isOpen ? (
-        <StyledChildren isOpen={isOpen}>{children}</StyledChildren>
+        <StyledChildren isOpen={isOpen} depth={depth}>
+          {children}
+        </StyledChildren>
       ) : (
-        <StyledChildren />
+        <StyledChildren depth={depth} />
       )}
     </li>
   );
 };
 
 const StyledCategory = styled(Category)`
-  margin-bottom: ${props => (props.depth && props.depth === 1 ? '12px' : '0')};
+  padding: ${props =>
+    props.depth && props.depth === 1 ? '0 0 12px 0' : '0 0 0 0'};
 
   @media (min-width: ${baselineBreakpoint}px) {
-    margin-bottom: ${props =>
-      props.depth && props.depth === 1 ? '16px' : '0'};
+    padding: 0;
   }
 `;
 

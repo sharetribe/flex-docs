@@ -51,12 +51,9 @@ const StyledArticleLink = styled(ArticleLink)`
   display: block;
   font-size: 15px;
   line-height: 24px;
+  padding: 5px 24px 1px 36px;
 
   color: ${props => props.theme.sidebarNavColorLink};
-
-  padding-left: ${props =>
-    props.depth && props.depth === 2 ? '36px' : '48px'};
-  padding-right: 24px;
 
   ${props => (props.active ? activeLinkStyles : '')};
 
@@ -91,8 +88,7 @@ const StyledArticleLink = styled(ArticleLink)`
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 15px;
     line-height: 24px;
-    padding-left: ${props =>
-      props.depth && props.depth === 2 ? '48px' : '60px'};
+    padding: 0px 24px 0px 48px;
   }
 
   @media (min-width: 1024px) {
@@ -134,6 +130,13 @@ const ArticleListItem = props => {
   );
 };
 
+const StyledUL = styled.ul`
+  @media (min-width: ${baselineBreakpoint}px) {
+    padding: ${props =>
+      props.depth && props.depth === 2 ? '8px 0 0 0' : '0 0 0 0'};
+  }
+`;
+
 const ArticleList = props => {
   const { articleGroup, activeArticle, depth } = props;
   const articles =
@@ -141,7 +144,7 @@ const ArticleList = props => {
   const hasArticles = articles.length > 0;
 
   return hasArticles ? (
-    <ul>
+    <StyledUL depth={depth}>
       {articles.map(article => {
         const { title, slug } = article;
         const category = articleGroup.category;
@@ -163,7 +166,7 @@ const ArticleList = props => {
           />
         );
       })}
-    </ul>
+    </StyledUL>
   ) : null;
 };
 
