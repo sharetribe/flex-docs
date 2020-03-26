@@ -1,5 +1,3 @@
-// TODO: This is not used atm.
-
 import React, { Component } from 'react';
 import styled from 'styled-components';
 

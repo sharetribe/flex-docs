@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 
@@ -7,7 +7,7 @@ import '../font-faces.css';
 
 import { fontsInUse, themeLight as theme } from '../config';
 import fonts from '../fonts';
-import { GlobalStyle, BaselineDevGrid, Sidebar } from '../components';
+import { GlobalStyle, BaselineDevGrid } from '../components';
 
 const FontPreloadLink = font => {
   const { url, format } = font;
@@ -41,31 +41,19 @@ const FontPreloadLink = font => {
  * render this component.
  */
 const Root = props => {
-  const [sidebarNavsIsOpen, setSidebarNavsOpen] = useState({});
-  const setSidebarNavsIsOpen = category => isOpen => {
-    setSidebarNavsOpen({
-      ...sidebarNavsIsOpen,
-      [category]: isOpen,
-    });
-  };
-
+  const { children } = props;
   return (
-    <Sidebar.StateProvider
-      value={{
-        sidebarNavsIsOpen,
-        setSidebarNavsIsOpen,
-      }}
-    >
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <>
         <Helmet>
           {fontsInUse.map(fontName => (
             <FontPreloadLink key={fontName} {...fonts[fontName]} />
           ))}
         </Helmet>
-        <BaselineDevGrid>{props.children}</BaselineDevGrid>
+        <BaselineDevGrid>{children}</BaselineDevGrid>
         <GlobalStyle fontNames={fontsInUse} />
-      </ThemeProvider>
-    </Sidebar.StateProvider>
+      </>
+    </ThemeProvider>
   );
 };
 

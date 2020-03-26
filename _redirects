@@ -12,40 +12,6 @@
 /docs/references/ftw/  /docs/tutorials/getting-started-with-ftw/
 /docs/background/transaction-engine/  /docs/background/transaction-process/
 /docs/background/what-is-the-difference-between-flex-and-go-open-source/ /docs/background/what-is-the-difference-between-flex-and-go-source-available/
-docs/guides/how-to-extend-listing-data-in-ftw/ /docs/cookbook-data-model/extend-listing-data-in-ftw/
-docs/guides/how-to-enable-login-as-user/ /docs/cookbook-manage/enable-login-as-user/
-docs/guides/how-to-customize-pricing/ /docs/cookbook-payments/customize-pricing/
-docs/guides/how-to-take-payment-intents-into-use/ /docs/cookbook-payments/enable-payment-intents/
-docs/background/save-payment-card/ /docs/cookbook-payments/save-payment-card/
-docs/guides/how-to-set-up-and-use-stripe/ /docs/cookbook-payments/set-up-and-use-stripe/
-docs/guides/how-to-change-search-filters-in-ftw/ /docs/cookbook-search/change-search-filters-in-ftw/
-docs/guides/how-to-use-keyword-search-in-topbar/ /docs/cookbook-search/use-keyword-search-in-topbar/
-docs/guides/how-to-change-transaction-process-in-ftw/ /docs/cookbook-transaction-process/change-transaction-process-in-ftw/
-docs/guides/how-to-take-time-based-bookings-into-use/ /docs/cookbook-transaction-process/enable-time-based-bookings-into-use/
-docs/guides/how-to-set-up-currency-in-ftw/ /docs/ftw-configuration/how-to-set-up-currency-in-ftw/
-docs/guides/how-to-add-static-pages-in-ftw/ /docs/ftw-styling/how-to-add-static-pages-in-ftw/
-docs/guides/how-to-change-ftw-icons/ /docs/ftw-styling/how-to-change-ftw-icons/
-docs/guides/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw-styling/how-to-change-ftw-ui-texts-and-translations/
-docs/guides/how-to-customize-ftw-styles/ /docs/ftw-styling/how-to-customize-ftw-styles/
-docs/guides/how-to-improve-performance/ /docs/ftw-styling/how-to-improve-performance/
-docs/background/time-based-template/ /docs/ftw-templates/ftw-hourly/
-docs/background/ftw-routing/ /docs/ftw-routing/how-routing-works-in-ftw/
-docs/background/ftw-redux/ /docs/ftw-data-flow/ftw-redux/
-docs/guides/how-to-set-up-mapbox-for-ftw/ /docs/ftw-search/how-to-set-up-mapbox-for-ftw/
-docs/guides/how-to-use-google-maps-in-ftw/ /docs/ftw-search/how-to-use-google-maps-in-ftw/
-docs/guides/how-to-sanitize-user-generated-content-in-ftw/ /docs/ftw-security/how-to-sanitize-user-generated-content-in-ftw/
-docs/guides/how-to-set-up-csp-for-ftw/ /docs/ftw-security/how-to-set-up-csp-for-ftw/
-docs/guides/how-to-set-up-sentry-to-log-errors-in-ftw/ /docs/ftw-testing-error-handling/how-to-set-up-sentry/
-docs/guides/how-to-test-ftw/ /docs/ftw-testing-error-handling/how-to-test-ftw/
-docs/guides/how-to-use-ci-with-ftw/ /docs/ftw-testing-error-handling/how-to-use-ci-with-ftw/
-docs/guides/how-to-set-up-analytics-for-ftw/ /docs/ftw-analytics/how-to-set-up-analytics-for-ftw/
-docs/guides/how-to-deploy-ftw-to-production/ /docs/ftw-hosting/how-to-deploy-ftw-to-production/
-docs/tutorials/getting-started-with-integration-api/ /docs/integrations/getting-started-with-integration-api/
-docs/tutorials/getting-started-with-flex-cli/ /docs/flex-cli/getting-started-with-flex-cli/
-docs/tutorials/edit-transaction-process-with-flex-cli/ /docs/flex-cli/edit-transaction-process-with-flex-cli/
-docs/tutorials/edit-email-templates-with-flex-cli/ /docs/flex-cli/edit-email-templates-with-flex-cli/
-docs/tutorials/manage-search-schemas-with-flex-cli/ /docs/flex-cli/manage-search-schemas-with-flex-cli/
-docs/references/ftw-env/ /docs/ftw-configuration/ftw-env/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
