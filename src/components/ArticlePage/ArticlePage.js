@@ -1,13 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  baselineBreakpoint,
-  baselineSmall,
-  baselineLarge,
-  siteStructure,
-} from '../../config';
-import { findParentCategories } from '../../util/navigation';
+import { baselineBreakpoint, baselineSmall, baselineLarge } from '../../config';
 import {
   Ingress,
   H1,
@@ -21,10 +15,7 @@ import LastUpdated from './LastUpdated';
 import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
 import Toc from './Toc';
-import NextAndPrevArticles from './NextAndPrevArticles';
-
-// Removed this second ToC component
-// import ArticleToc from './ArticleToc';
+import ArticleToc from './ArticleToc';
 
 const ColumnLayout = styled.div`
   display: flex;
@@ -51,7 +42,7 @@ const SideNavigation = styled(Box)`
   @media (min-width: ${baselineBreakpoint}px) {
     box-shadow: none;
     position: sticky;
-    margin-right: 12px;
+    margin-left: 12px;
     margin-top: ${6 * baselineLarge}px;
     margin-bottom: ${4 * baselineLarge}px;
     top: ${2 * baselineLarge}px;
@@ -137,47 +128,22 @@ const Markdown = styled(MarkdownHtml)`
   }
 `;
 
-const MobileTocWrapper = styled.section`
-  margin-top: ${2 * baselineSmall}px;
-
-  @media (min-width: ${baselineBreakpoint}px) {
-    margin-top: ${2 * baselineLarge}px;
-  }
-
-  @media (min-width: 1024px) {
-    display: none;
-  }
-`;
-
-const MobileToc = styled(Toc)`
-  display: inline-block;
-  margin-top: ${baselineSmall}px;
-`;
-
 const SideToc = styled(Toc)`
   @media (min-width: ${baselineBreakpoint}px) {
-    display: inline-block;
-    margin-top: ${baselineLarge}px;
+    margin-top: ${2 * baselineLarge}px;
   }
 `;
 
 const ContentTocHeader = styled(H6)`
-  margin-top: 0;
+  margin-top: ${3 * baselineSmall}px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${4 * baselineLarge}px;
   }
 `;
-
-const findMainCategory = category => {
-  const path = findParentCategories(category, siteStructure) || [];
-  return path.length > 0 ? path[path.length - 1] : null;
-};
-
 const ArticlePage = props => {
   const { frontmatter, htmlAst, estimatedReadingTime, tableOfContents } = props;
-  const { title, slug, updated, category, ingress } = frontmatter;
-  const mainCategory = findMainCategory(category) || category;
+  const { title, slug, updated, category, ingress, toc } = frontmatter;
 
   // Structured metadata for the article page
   //
@@ -197,12 +163,18 @@ const ArticlePage = props => {
   });
 
   return (
-    <MainLayout
-      title={title}
-      description={ingress}
-      activeArticle={{ category, slug }}
-    >
+    <MainLayout title={title} description={ingress} activeCategory={category}>
       <ColumnLayout>
+        <SideColumn>
+          <SideNavigation as="nav">
+            <H6 as="p">{title}</H6>
+            <SideToc
+              path={`/${category}/${slug}/`}
+              headings={tableOfContents}
+              maxDepth={2}
+            />
+          </SideNavigation>
+        </SideColumn>
         <MainColumn>
           <script type="application/ld+json">{ldJson}</script>
           <CrumbWrapper>
@@ -210,10 +182,8 @@ const ArticlePage = props => {
               links={[
                 { path: '/', label: 'Docs' },
                 {
-                  path: `/${mainCategory}/`,
-                  label: UiText.fn(
-                    `ArticlePage.${mainCategory}.breadCrumbTitle`
-                  ),
+                  path: `/${category}/`,
+                  label: UiText.fn(`ArticlePage.${category}.breadCrumbTitle`),
                 },
                 { path: `/${category}/${slug}/`, label: title },
               ]}
@@ -221,36 +191,25 @@ const ArticlePage = props => {
             <Updated date={updated} />
           </CrumbWrapper>
           <Heading>{title}</Heading>
-          <ArticleIngress>{ingress}</ArticleIngress>
           <Info
             frontmatter={frontmatter}
             estimatedReadingTime={estimatedReadingTime}
           />
-          <MobileTocWrapper>
-            <ContentTocHeader as="h2">
-              <UiText id="ArticlePage.tableOfContents" />
-            </ContentTocHeader>
-            <MobileToc
-              path={`/${category}/${slug}/`}
-              headings={tableOfContents}
-              maxDepth={3}
-            />
-          </MobileTocWrapper>
+          <ArticleIngress>{ingress}</ArticleIngress>
+          {toc ? (
+            <>
+              <ContentTocHeader as="h2">
+                <UiText id="ArticlePage.tableOfContents" />
+              </ContentTocHeader>
+              <ArticleToc
+                path={`/${category}/${slug}/`}
+                headings={tableOfContents}
+                maxDepth={3}
+              />
+            </>
+          ) : null}
           <Markdown htmlAst={htmlAst} />
-          <NextAndPrevArticles slug={slug} category={category} />
         </MainColumn>
-        <SideColumn>
-          <SideNavigation as="nav">
-            <H6 as="p">
-              <UiText id="ArticlePage.tableOfContents" />
-            </H6>
-            <SideToc
-              path={`/${category}/${slug}/`}
-              headings={tableOfContents}
-              maxDepth={3}
-            />
-          </SideNavigation>
-        </SideColumn>
       </ColumnLayout>
     </MainLayout>
   );

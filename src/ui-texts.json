@@ -7,8 +7,6 @@
   "Topbar.MobileMenu.iconAlt": "Menu icon",
   "Topbar.MobileMenu.contentLabel": "Mobile navigation menu content",
   "Topbar.Modal.close": "Close",
-  "Topbar.Menu.introduction.label": "Introduction",
-  "Topbar.Menu.tutorial.label": "Tutorial",
   "Topbar.Menu.tutorials.label": "Tutorials",
   "Topbar.Menu.guides.label": "How-to Guides",
   "Topbar.Menu.references.label": "Reference",
@@ -68,11 +66,6 @@
   "NotFoundPage.heading": "Oops, page not found :/",
 
   "ArticleIndexPage.ArticleIndex.noArticlesFound": "No articles found.",
-  "ArticleIndexPage.introduction.title": "Introduction to Flex",
-  "ArticleIndexPage.introduction.description": "Get started in learning about Sharetribe Flex",
-  "ArticleIndexPage.tutorial.title": "Tutorial",
-  "ArticleIndexPage.tutorial.description": "This tutorial is designed for people who prefer to learn by doing. We start customizing FTW-daily Git repository, which is a template app to build your own client app that can interact with Flex APIs.",
-
   "ArticleIndexPage.tutorials.title": "All Tutorials",
   "ArticleIndexPage.tutorials.description": "Get started in learning about the product with hands-on tutorials for developers.",
   "ArticleIndexPage.guides.title": "All How-to Guides",
@@ -83,65 +76,11 @@
   "ArticleIndexPage.background.description": "Explanations and background information for important concepts and design decisions behind the platform.",
 
   "ArticlePage.tableOfContents": "Table of Contents",
-  "ArticlePage.introduction.breadCrumbTitle": "Introduction",
-  "ArticlePage.tutorial.breadCrumbTitle": "Tutorial",
-  "ArticlePage.tutorial-introduction.breadCrumbTitle": "Introduction",
-  "ArticlePage.tutorial-branding.breadCrumbTitle": "Tutorial",
-
   "ArticlePage.tutorials.breadCrumbTitle": "Tutorials",
   "ArticlePage.guides.breadCrumbTitle": "How-to Guides",
-  "ArticlePage.references.breadCrumbTitle": "References",
+  "ArticlePage.references.breadCrumbTitle": "Reference",
   "ArticlePage.background.breadCrumbTitle": "Background",
   "ArticlePage.LastUpdated.lastUpdated": "Last updated ",
   "ArticlePage.InfoSection.requiredSkills": "Required skills",
-  "ArticlePage.InfoSection.readingTime": "Reading time",
-
-  "ArticlePage.next": "Next ›",
-  "ArticlePage.previous": "‹ Previous",
-
-  "Sidebar.introduction": "Introduction",
-
-  "Sidebar.tutorial": "Tutorial",
-  "Sidebar.tutorialAdvanced": "Part 2: Beyond FTW",
-  "Sidebar.tutorialBranding": "Part 1: Branding",
-  "Sidebar.tutorialIntroduction": "Introduction",
-
-  "Sidebar.concepts": "Concepts",
-  "Sidebar.conceptsAvailability": "Availability",
-  "Sidebar.conceptsDataModel": "Data model",
-  "Sidebar.conceptsEmailTemplates": "Email templates",
-  "Sidebar.conceptsPayments": "Payments",
-  "Sidebar.conceptsSearch": "Search",
-  "Sidebar.conceptsTransactionProcess": "Transaction process",
-
-  "Sidebar.cookbook": "Cookbook",
-  "Sidebar.cookbookAvailability": "Availability",
-  "Sidebar.cookbookDataModel": "Data model",
-  "Sidebar.cookbookEmailTemplates": "Email templates",
-  "Sidebar.cookbookManage": "Manage",
-  "Sidebar.cookbookPayments": "Payments",
-  "Sidebar.cookbookSearch": "Search",
-  "Sidebar.cookbookTransactionProcess": "Transaction process",
-
-  "Sidebar.flexCli": "Flex CLI",
-
-  "Sidebar.ftw": "Flex Templates for Web",
-  "Sidebar.ftwTemplates": "FTW templates",
-  "Sidebar.ftwAnalytics": "Analytics",
-  "Sidebar.ftwConfiguration": "Configuration and Environment Variables",
-  "Sidebar.ftwDataFlow": "Data flow and Redux",
-  "Sidebar.ftwHosting": "Hosting",
-  "Sidebar.ftwPerformance": "Performance",
-  "Sidebar.ftwRouting": "Routing",
-  "Sidebar.ftwSearch": "Search",
-  "Sidebar.ftwSecurity": "Security",
-  "Sidebar.ftwStyling": "Styling",
-  "Sidebar.ftwTestingErrorHandling": "Testing",
-
-  "Sidebar.integrations": "Integrations",
-
-  "Sidebar.references": "References",
-
-  "Sidebar.guides": "OLD: How-to guides",
-  "Sidebar.background": "Background"
+  "ArticlePage.InfoSection.readingTime": "Reading time"
 }
