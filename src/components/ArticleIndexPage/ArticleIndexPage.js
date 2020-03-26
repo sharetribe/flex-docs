@@ -69,7 +69,7 @@ const ArticleIndexPage = props => {
   const { category, articles, noPrefix } = props;
   const title = UiText.fn(`ArticleIndexPage.${category}.title`);
   const description = UiText.fn(`ArticleIndexPage.${category}.description`);
-  const pathPrefixMaybe = noPrefix ? { pathPrefix: `/${category}/` } : {};
+  const pathPrefixMaybe = noPrefix ? {} : { pathPrefix: `/${category}/` };
   return (
     <MainLayout
       title={title}
