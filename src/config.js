@@ -5,6 +5,10 @@
  * gatsby-node.js config.
  */
 
+const structure = require('./config-site-structure');
+exports.siteStructure = structure.siteStructure;
+exports.categories = structure.categories;
+
 // Dev mode flag
 exports.dev = process.env.NODE_ENV === 'development';
 
@@ -16,15 +20,6 @@ exports.baselineBreakpoint = 768;
 
 // Fonts that are used from fonts.js
 exports.fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
-
-// Categories allowed for articles. The order defines the order in the
-// Topbar navigation.
-exports.categories = [
-  { id: 'tutorials' },
-  { id: 'guides' },
-  { id: 'references' },
-  { id: 'background' },
-];
 
 // Generic grid config used in LandingPage and ArticleIndexPage
 exports.grid = {
@@ -59,6 +54,19 @@ exports.themeLight = {
   // Topbar colors
   topbarNavColorActive: '#000',
   topbarNavBorderColorActive: '#0080ff',
+
+  // Sidebar colors
+  sidebarNavColorTitle: '#4a4a4a',
+  sidebarNavColorTitleHover: '#000',
+  sidebarNavColorLink: '#0080ff',
+  sidebarNavColorLinkHover: '#0066cc',
+  sidebarNavColorLinkActive: '#004c99',
+  sidebarNavColorLinkVisited: '#0080ff',
+  sidebarNavBorderColorActive: '#004c99',
+  sidebarNavBorderColorHover: '#0066cc',
+
+  tocColorLink: '#0080ff',
+  tocColorLinkHover: '#0066cc',
 
   // Heading color
   headingColor: '#4a4a4a',
