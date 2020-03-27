@@ -24,12 +24,12 @@ The purpose of this article is to give you a general overview of whether
 Flex is a good solution for building your specific marketplace idea.
 [Read more »](/background/is-flex-right-for-you/)
 
-## [How to build and launch your marketplace with Flex](/background/how-to-build-and-launch-with-flex/)
+## [How to build and launch your marketplace with Flex](/introduction/how-to-build-and-launch-with-flex/)
 
 This article describes what it takes to build and launch your
 marketplace with Sharetribe Flex. There are four main stages in this
 process, and we'll go through each one in detail.
-[Read more »](/background/how-to-build-and-launch-with-flex/)
+[Read more »](/introduction/how-to-build-and-launch-with-flex/)
 
 ## [What development skills are needed?](/background/development-skills/)
 

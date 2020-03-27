@@ -2,7 +2,7 @@
 title: How to build and launch your marketplace with Flex
 slug: how-to-build-and-launch-with-flex
 updated: 2020-03-12
-category: background
+category: introduction
 ingress:
   This article describes what it takes to build and launch your
   marketplace with Sharetribe Flex. There are four main stages in this

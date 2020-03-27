@@ -136,7 +136,7 @@ quickly and to
 If you have already tried Sharetribe Go and concluded that it's not
 enough for your needs, then it might be time to get started with Flex.
 In that case, you can continue by reading about
-[how to build and launch your marketplace with Flex](/background/how-to-build-and-launch-with-flex/).
+[how to build and launch your marketplace with Flex](/introduction/how-to-build-and-launch-with-flex/).
 
 If you have more specific questions on whether Flex can support certain
 features or workflows before getting started,
