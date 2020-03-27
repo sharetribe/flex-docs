@@ -299,8 +299,8 @@ guide you through setting up the required environment variables. If the
 is only created for local development environment_.
 
 > See the
-> [FTW Environment configuration variables](/ftw-configuration/ftw-env/) for
-> more information on the environment variables.
+> [FTW Environment configuration variables](/ftw-configuration/ftw-env/)
+> for more information on the environment variables.
 
 ## Start the server
 

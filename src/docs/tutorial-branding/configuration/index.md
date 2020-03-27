@@ -39,9 +39,9 @@ file with your preferred text editor:
 ```
 
 Full list of configuration variables can be found here:
-[FTW environment variables](/ftw-configuration/ftw-env/). You can change any of
-these variables _locally_ by just editing the **.env** file. Then you
-need to restart the server by running `yarn run dev` again.
+[FTW environment variables](/ftw-configuration/ftw-env/). You can change
+any of these variables _locally_ by just editing the **.env** file. Then
+you need to restart the server by running `yarn run dev` again.
 
 <extrainfo title="What you should see inside .env file?">
 

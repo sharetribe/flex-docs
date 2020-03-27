@@ -147,8 +147,8 @@ The default favicon of FTW-daily template, Saunatime, is a flame icon:
 
 To change it, we need to have favicon files - or if you have a square
 logo available, you can follow
-[this guide article](/ftw-styling/how-to-change-ftw-icons/) to generate those
-icons.
+[this guide article](/ftw-styling/how-to-change-ftw-icons/) to generate
+those icons.
 
 In the context of this tutorial, we just show how to change the
 favicons. You can use these files:

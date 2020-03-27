@@ -121,8 +121,9 @@ Then add the following environment variables as Config Vars:
 - `REACT_APP_CSP`
 
   Content Security Policy (CSP). Read more from
-  [this article](/ftw-security/how-to-set-up-csp-for-ftw/).<br /> Accepts
-  values: _block_ and _report_. The recommended value is _block_.
+  [this article](/ftw-security/how-to-set-up-csp-for-ftw/).<br />
+  Accepts values: _block_ and _report_. The recommended value is
+  _block_.
 
 - `REACT_APP_AVAILABILITY_ENABLED`
 
@@ -174,8 +175,8 @@ layout:
 If your marketplace concept needs advanced features, you need to
 continue with customizations. You could:
 
-- [Extend listings](/cookbook-data-model/extend-listing-data-in-ftw/) with
-  your own data
+- [Extend listings](/cookbook-data-model/extend-listing-data-in-ftw/)
+  with your own data
 - [Edit email templates](/flex-cli/edit-email-templates-with-flex-cli/)
 - Add more
   [search filters](/cookbook-search/change-search-filters-in-ftw/)

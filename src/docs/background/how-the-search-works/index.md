@@ -55,7 +55,8 @@ and _attractions_ and those are then matched against the listing
 content. A listing will be included in the results, in case any of the
 keywords match.
 
-In order to take the keyword search into use in FTW, see the cookbooks on
+In order to take the keyword search into use in FTW, see the cookbooks
+on
 [adding keyword search to the top bar](/cookbook-search/use-keyword-search-in-topbar/)
 and [modifying filters](/cookbook-search/change-search-filters-in-ftw/).
 

@@ -26,9 +26,9 @@ Currently we have two templates is available:
   service marketplace with time-based bookings
 
 > **Note:** By default your Flex marketplace comes with day-based
-> [transaction process](/background/transaction-process/).
-> If you want to start working with FTW-hourly, you need to change to
-> the time-based process. See
+> [transaction process](/background/transaction-process/). If you want
+> to start working with FTW-hourly, you need to change to the time-based
+> process. See
 > [getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 > for more information.
 
@@ -121,13 +121,14 @@ There are three required variables for FTW to work correctly:
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
   Mapbox access token is used for the maps in the marketplace. Follow
-  the [Mapbox set up guide](/ftw-search/how-to-set-up-mapbox-for-ftw/) to
-  get your access token.
+  the [Mapbox set up guide](/ftw-search/how-to-set-up-mapbox-for-ftw/)
+  to get your access token.
 
   If you don't set the Mapbox key, the map components won't work in the
   application.
 
-See the [FTW Environment configuration variables](/ftw-configuration/ftw-env/)
+See the
+[FTW Environment configuration variables](/ftw-configuration/ftw-env/)
 for more information on the environment variables.
 
 ## Start the server

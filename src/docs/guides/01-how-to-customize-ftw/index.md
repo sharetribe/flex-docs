@@ -51,9 +51,9 @@ Currently you can choose from two templates:
   service marketplace with time-based bookings
 
 > **Note:** By default your Flex marketplace comes with day-based
-> [transaction process](/background/transaction-process/).
-> If you want to start working with FTW-hourly, you need to change to
-> the time-based process. See
+> [transaction process](/background/transaction-process/). If you want
+> to start working with FTW-hourly, you need to change to the time-based
+> process. See
 > [getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 > for more information.
 
@@ -193,7 +193,8 @@ yarn test
 ```
 
 For more information, see the
-[How to test FTW](/ftw-testing-error-handling/how-to-test-ftw/) documentation.
+[How to test FTW](/ftw-testing-error-handling/how-to-test-ftw/)
+documentation.
 
 ## Customization
 
