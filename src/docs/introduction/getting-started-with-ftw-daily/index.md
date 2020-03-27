@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Quick start (Getting started with FTW)
 slug: getting-started-with-ftw-daily
 updated: 2020-02-20
 category: introduction
