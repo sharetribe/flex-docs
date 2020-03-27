@@ -118,17 +118,18 @@ exports.siteStructure = [
       { id: 'ftw-performance' },
     ],
   },
+
   { id: 'integrations', isOpen: false },
+
   {
     id: 'flex-cli',
     isOpen: false,
     sortingArray: sortingArrayFlexCLI,
   },
+
   {
     id: 'references',
     isOpen: false,
     sortingArray: sortingArrayReferences,
   },
-
-  { id: 'guides', isOpen: false },
 ];
