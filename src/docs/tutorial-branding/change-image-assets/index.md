@@ -9,8 +9,8 @@ published: true
 
 ## Default background image
 
-In the [previous step](/tutorial/first-edit/), you made changes to the
-marketplace.css file. You might have noticed that the there was
+In the [previous step](/tutorial-branding/first-edit/), you made changes
+to the marketplace.css file. You might have noticed that the there was
 **`--backgroundImage`** property set mentioned. That variable is used to
 provide a background image for Hero component on the landing page as
 well as some of the other pages: sing-up and log-in, email verification
