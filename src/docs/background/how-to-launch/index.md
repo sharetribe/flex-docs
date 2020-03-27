@@ -22,7 +22,7 @@ the following stages:
 4. Going live
 
 In this article, it is assumed that you've already read
-[Introducing Flex](/background/introducing-flex/), which explains the
+[Introducing Flex](/introduction/introducing-flex/), which explains the
 basic concepts of Flex. If you haven't done that yet, it's a good idea
 to do that now.
 

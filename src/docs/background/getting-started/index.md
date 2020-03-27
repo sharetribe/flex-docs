@@ -11,12 +11,12 @@ ingress:
 published: true
 ---
 
-## [Introducing Flex](/background/introducing-flex/)
+## [Introducing Flex](/introduction/introducing-flex/)
 
 Introduction to the three main components of Flex: your marketplace user
 interface, the Marketplace API, and Console. We explain the role each of
 these components plays and how they help you to build a unique
-marketplace platform. [Read more »](/background/introducing-flex/)
+marketplace platform. [Read more »](/introduction/introducing-flex/)
 
 ## [How to know if Flex is the right fit for your marketplace idea](/background/is-flex-right-for-you/)
 

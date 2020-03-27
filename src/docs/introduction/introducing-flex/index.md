@@ -2,7 +2,7 @@
 title: Introducing Flex
 slug: introducing-flex
 updated: 2019-11-21
-category: background
+category: introduction
 ingress:
   Overview of how Sharetribe Flex works, and how you can build your
   online marketplace platform using it.

@@ -46,6 +46,7 @@
 /docs/tutorials/edit-email-templates-with-flex-cli/ /docs/flex-cli/edit-email-templates-with-flex-cli/
 /docs/tutorials/manage-search-schemas-with-flex-cli/ /docs/flex-cli/manage-search-schemas-with-flex-cli/
 /docs/references/ftw-env/ /docs/ftw-configuration/ftw-env/
+/docs/background/introducing-flex/ /docs/introduction/introducing-flex/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

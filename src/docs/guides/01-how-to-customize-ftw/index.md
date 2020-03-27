@@ -21,7 +21,7 @@ Follow this guide for instructions.
 If you are new to Sharetribe Flex or FTW, we recommend going through the
 [Getting started](/background/getting-started/) articles:
 
-- [Introducing Flex](/background/introducing-flex/)
+- [Introducing Flex](/introduction/introducing-flex/)
 - [What development skills are needed?](/background/development-skills/)
 - [Getting started with FTW](/tutorials/getting-started-with-ftw/)
 
