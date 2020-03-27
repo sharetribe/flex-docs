@@ -30,9 +30,9 @@ to match the process in our backend.
 
 > **Note:** By default,
 > [FTW](https://github.com/sharetribe/flex-template-web/) is using
-> [day-based availability](https://www.sharetribe.com/docs/references/availability/#day-based-availability-management).
+> [day-based availability](/references/availability/#day-based-availability-management).
 > If you are using
-> [time-based availability](https://www.sharetribe.com/docs/references/availability/#time-based-availability-management)
+> [time-based availability](/references/availability/#time-based-availability-management)
 > in your marketplace, you can start with
 > [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
 > the template supporting time-based availability out of the box.
