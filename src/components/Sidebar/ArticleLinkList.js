@@ -51,7 +51,10 @@ const StyledArticleLink = styled(ArticleLink)`
   display: block;
   font-size: 15px;
   line-height: 24px;
-  padding: 5px 24px 1px 36px;
+  padding: ${props =>
+    props.depth && props.depth === 2
+      ? '5px 24px 1px 36px'
+      : '5px 24px 1px 48px'};
 
   color: ${props => props.theme.sidebarNavColorLink};
 
@@ -88,7 +91,10 @@ const StyledArticleLink = styled(ArticleLink)`
   @media (min-width: ${baselineBreakpoint}px) {
     font-size: 15px;
     line-height: 24px;
-    padding: 0px 24px 0px 48px;
+    padding: ${props =>
+      props.depth && props.depth === 2
+        ? '0px 24px 0px 48px'
+        : '0px 24px 0px 60px'};
   }
 
   @media (min-width: 1024px) {

@@ -49,7 +49,7 @@ const StyledCategoryTitle = styled(CategoryTitle)`
   padding: ${props =>
     props.depth && props.depth === 1
       ? '1px 16px 5px 24px'
-      : '5px 16px 1px 24px'};
+      : '5px 16px 1px 36px'};
 
   // Font
   // Note: with this font,
@@ -89,7 +89,7 @@ const StyledCategoryTitle = styled(CategoryTitle)`
     padding: ${props =>
       props.depth && props.depth === 1
         ? '8px 16px 8px 36px'
-        : '6px 16px 10px 36px'};
+        : '6px 16px 10px 48px'};
 
     // Offset baseline
     top: 0px;
@@ -101,6 +101,8 @@ const StyledMainCategoryTitle = styled(StyledCategoryTitle)`
 `;
 
 const StyledChildren = styled.div`
+  padding: ${props =>
+    props.depth && props.depth === 1 && props.isOpen ? '0 0 6px 0' : '0 0 0 0'};
   opacity: ${props => (props.isOpen ? '1' : '0')};
   transform: ${props =>
     props.isOpen ? 'translateY(0px)' : 'translateY(-8px)'};
@@ -108,7 +110,11 @@ const StyledChildren = styled.div`
 
   @media (min-width: ${baselineBreakpoint}px) {
     padding: ${props =>
-      props.depth && props.depth === 1 ? '0 0 8px 0' : '0 0 0 0'};
+      props.depth && props.depth === 1 && props.isOpen
+        ? '0 0 16px 0'
+        : props.depth && props.depth === 1
+        ? '0 0 8px 0'
+        : '0 0 0 0'};
   }
 `;
 
