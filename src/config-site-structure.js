@@ -5,6 +5,14 @@
  * gatsby-node.js config.
  */
 
+const sortingArrayIntroduction = [
+  'introducing-flex',
+  'getting-started-with-ftw-daily',
+  'how-to-build-and-launch-with-flex',
+  'is-flex-right-for-you',
+  'development-skills',
+];
+
 // Arrange tutorial articles according to this configuration.
 // This sorting order is used to provide next-page link
 // for the listed articles.
@@ -66,7 +74,11 @@ const sortingArrayReferences = [
 ];
 
 exports.siteStructure = [
-  { id: 'introduction', isOpen: false },
+  {
+    id: 'introduction',
+    isOpen: false,
+    sortingArray: sortingArrayIntroduction,
+  },
   {
     id: 'tutorial',
     isOpen: false,
