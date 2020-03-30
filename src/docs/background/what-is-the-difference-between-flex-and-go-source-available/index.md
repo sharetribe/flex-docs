@@ -56,8 +56,8 @@ running cost calculated by
 
 \*\* Sharetribe Flex is specifically built to be adapted. First of all,
 it comes with
-[a complete website template](/introduction/getting-started-with-ftw-daily/) that
-is easily customizable, so front-end changes are quick and
+[a complete website template](/introduction/getting-started-with-ftw-daily/)
+that is easily customizable, so front-end changes are quick and
 cost-effective to make.
 
 Secondly, the back end is built for flexibility from the ground up. For
