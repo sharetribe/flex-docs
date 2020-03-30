@@ -28,7 +28,8 @@
 /docs/guides/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw-styling/how-to-change-ftw-ui-texts-and-translations/
 /docs/guides/how-to-customize-ftw-styles/ /docs/ftw-styling/how-to-customize-ftw-styles/
 /docs/guides/how-to-improve-performance/ /docs/ftw-styling/how-to-improve-performance/
-/docs/background/time-based-template/ /docs/ftw-templates/ftw-hourly/
+/docs/guides/how-to-customize-ftw/ /docs/ftw-introduction/how-to-customize-ftw/
+/docs/background/time-based-template/ /docs/ftw-introduction/ftw-hourly/
 /docs/background/ftw-routing/ /docs/ftw-routing/how-routing-works-in-ftw/
 /docs/background/ftw-redux/ /docs/ftw-data-flow/ftw-redux/
 /docs/guides/how-to-set-up-mapbox-for-ftw/ /docs/ftw-search/how-to-set-up-mapbox-for-ftw/

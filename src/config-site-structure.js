@@ -107,8 +107,6 @@ exports.siteStructure = [
       { id: 'cookbook-transaction-process' },
       { id: 'cookbook-payments' },
       { id: 'cookbook-manage' },
-      { id: 'cookbook-email-templates' },
-      { id: 'cookbook-availability' },
     ],
   },
 
@@ -116,7 +114,7 @@ exports.siteStructure = [
     id: 'ftw',
     isOpen: false,
     subcategories: [
-      { id: 'ftw-templates' },
+      { id: 'ftw-introduction' },
       { id: 'ftw-configuration' },
       { id: 'ftw-styling' },
       { id: 'ftw-routing' },
@@ -127,7 +125,6 @@ exports.siteStructure = [
       { id: 'ftw-hosting' },
       { id: 'ftw-analytics' },
       { id: 'ftw-hosting' },
-      { id: 'ftw-performance' },
     ],
   },
 

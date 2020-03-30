@@ -121,7 +121,7 @@ button on the top-right corner of the page:
 <img width="300" src="./fork_button.png" />
 
 For more information, see the
-[How to Customize FTW](/guides/how-to-customize-ftw/) guide.
+[How to Customize FTW](/ftw-introduction/how-to-customize-ftw/) guide.
 
 ### Create a new app
 

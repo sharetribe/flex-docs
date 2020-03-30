@@ -134,7 +134,7 @@
   "Sidebar.flexCli": "Flex CLI",
 
   "Sidebar.ftw": "Flex Templates for Web",
-  "Sidebar.ftwTemplates": "FTW templates",
+  "Sidebar.ftwIntroduction": "Introduction",
   "Sidebar.ftwAnalytics": "Analytics",
   "Sidebar.ftwConfiguration": "Configuration and Environment Variables",
   "Sidebar.ftwDataFlow": "Data flow and Redux",
