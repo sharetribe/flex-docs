@@ -1,8 +1,8 @@
 ---
-title: FTW customization checklist
-slug: ftw-customization-checklist
+title: Customization checklist
+slug: customization-checklist
 updated: 2019-10-23
-category: guides
+category: ftw-introduction
 ingress:
   This guide lists the important things to go through when customizing
   Flex Template for Web (FTW).
