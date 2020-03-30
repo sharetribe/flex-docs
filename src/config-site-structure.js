@@ -89,7 +89,6 @@ exports.siteStructure = [
         sortingArray: sortingArrayTutorialBranding,
         showNextAndPrev: true,
       },
-      // { id: 'tutorial-advanced' },
     ],
   },
   {
@@ -124,7 +123,6 @@ exports.siteStructure = [
       { id: 'ftw-testing-error-handling' },
       { id: 'ftw-hosting' },
       { id: 'ftw-analytics' },
-      { id: 'ftw-hosting' },
     ],
   },
 
