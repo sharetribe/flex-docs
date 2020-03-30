@@ -104,4 +104,4 @@ tutorial for more information.
 ## Is Flex the right fit for you?
 
 Now you know roughly what Flex is all about. Next, it's time to evaluate
-[whether Flex is the right fit for your specific marketplace idea](/background/is-flex-right-for-you/).
+[whether Flex is the right fit for your specific marketplace idea](/introduction/is-flex-right-for-you/).

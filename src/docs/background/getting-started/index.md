@@ -18,11 +18,11 @@ interface, the Marketplace API, and Console. We explain the role each of
 these components plays and how they help you to build a unique
 marketplace platform. [Read more »](/introduction/introducing-flex/)
 
-## [How to know if Flex is the right fit for your marketplace idea](/background/is-flex-right-for-you/)
+## [How to know if Flex is the right fit for your marketplace idea](/introduction/is-flex-right-for-you/)
 
 The purpose of this article is to give you a general overview of whether
 Flex is a good solution for building your specific marketplace idea.
-[Read more »](/background/is-flex-right-for-you/)
+[Read more »](/introduction/is-flex-right-for-you/)
 
 ## [How to build and launch your marketplace with Flex](/introduction/how-to-build-and-launch-with-flex/)
 

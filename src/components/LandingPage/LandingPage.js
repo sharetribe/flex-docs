@@ -192,7 +192,7 @@ const LandingPage = props => {
             <SectionLink to="/introduction/introducing-flex/">
               <UiText id="LandingPage.gettingStarted.introducingFlex" />
             </SectionLink>
-            <SectionLink to="/background/is-flex-right-for-you/">
+            <SectionLink to="/introduction/is-flex-right-for-you/">
               <UiText id="LandingPage.gettingStarted.isFlexFit" />
             </SectionLink>
             <SectionLink to="/introduction/how-to-build-and-launch-with-flex/">

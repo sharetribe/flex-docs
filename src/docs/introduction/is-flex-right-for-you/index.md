@@ -1,8 +1,8 @@
 ---
-title: How to know if Flex is the right fit for your marketplace idea
+title: Is Flex the right fit for you?
 slug: is-flex-right-for-you
 updated: 2019-03-01
-category: background
+category: introduction
 ingress:
   The purpose of this article is to give you a general overview of
   whether Flex is a good solution for building your specific marketplace
