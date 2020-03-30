@@ -36,7 +36,7 @@ Currently we have two different template options:
   service marketplace with time-based bookings
 
 Information about using Flex Template for Web can be found in the
-[Getting started with FTW](/tutorials/getting-started-with-ftw/)
+[Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
 tutorial.
 
 ### Flex CLI

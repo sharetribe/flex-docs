@@ -40,13 +40,13 @@ developer or to contact one through us, here you can find information on
 the expertise you should look for.
 [Read more »](/background/development-skills/)
 
-## [Getting started with Flex Templates for Web](/tutorials/getting-started-with-ftw/)
+## [Getting started with Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
 
 Flex Templates for Web (FTW) are marketplace web applications that allow
 you to start customizing your marketplace user interface immediately. In
 this tutorial, you get step-by-step instructions on how to set up a Flex
 Template for Web and do your first customizations.
-[Read more »](/tutorials/getting-started-with-ftw/)
+[Read more »](/introduction/getting-started-with-ftw-daily/)
 
 ## [Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 

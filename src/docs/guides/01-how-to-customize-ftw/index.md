@@ -11,7 +11,7 @@ published: true
 ---
 
 **Note:** If you cloned the repository like described in the
-[Getting started with FTW](/tutorials/getting-started-with-ftw/)
+[Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
 tutorial, you probably don't want to make the customizations in that
 project. Forking the repository is the recommended way to proceed.
 Follow this guide for instructions.
@@ -23,7 +23,7 @@ If you are new to Sharetribe Flex or FTW, we recommend going through the
 
 - [Introducing Flex](/introduction/introducing-flex/)
 - [What development skills are needed?](/background/development-skills/)
-- [Getting started with FTW](/tutorials/getting-started-with-ftw/)
+- [Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
 
 ## Requirements
 

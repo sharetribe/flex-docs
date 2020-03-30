@@ -50,7 +50,7 @@ needed. Working knowledge of frontend web development and JavaScript is
 a good starting point in learning the technologies.
 
 Check out the
-[Getting started with FTW](/tutorials/getting-started-with-ftw/)
+[Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
 tutorial to see what it takes to get the template running with a small
 customization.
 

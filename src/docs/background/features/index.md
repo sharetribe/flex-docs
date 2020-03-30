@@ -361,7 +361,7 @@ pages or views there should be, and how those should be laid out. There
 are no limits to what you can do in terms of visual design.
 
 It's easy for you to get started with the design, since beautiful
-[Flex Templates for Web](/tutorials/getting-started-with-ftw/) offer an
+[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/) offer an
 ideal starting point. The templates are fully responsive so they look
 great both on desktop and mobile devices.
 
@@ -372,7 +372,7 @@ brand.
 
 ## SEO
 
-[Flex Templates for Web](/tutorials/getting-started-with-ftw/) are
+[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/) are
 optimized for search engines by default, and you have full control to
 tailor the experience the way you wish. You can decide the exact URL
 structure, edit meta tags freely, and do any other optimizations you
@@ -383,7 +383,7 @@ want.
 Since Flex is a "headless" marketplace solution, you can use it to build
 either a website or a mobile application or both. Building a web app is
 quicker today, because of
-[Flex Templates for Web](/tutorials/getting-started-with-ftw/), which
+[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/), which
 offer a great starting point for development. A similar template doesn't
 exist yet for mobile.
 

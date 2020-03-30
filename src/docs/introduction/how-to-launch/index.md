@@ -50,7 +50,7 @@ website built with Flex. Currently we have two template options:
 
 Setting up FTW should take no more than 5 minutes. The process is
 technical but doable even without development experience.
-[The guide for getting started with FTW](/tutorials/getting-started-with-ftw/)
+[The guide for getting started with FTW](/introduction/getting-started-with-ftw-daily/)
 will give you step by step instructions for doing it. If you encounter
 any problems with the setup,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com).
