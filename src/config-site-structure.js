@@ -131,13 +131,13 @@ exports.siteStructure = [
     ],
   },
 
-  { id: 'integrations', isOpen: false },
-
   {
     id: 'flex-cli',
     isOpen: false,
     sortingArray: sortingArrayFlexCLI,
   },
+
+  { id: 'integrations', isOpen: false },
 
   {
     id: 'references',
