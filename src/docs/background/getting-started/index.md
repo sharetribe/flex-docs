@@ -31,14 +31,14 @@ marketplace with Sharetribe Flex. There are four main stages in this
 process, and we'll go through each one in detail.
 [Read more »](/introduction/how-to-build-and-launch-with-flex/)
 
-## [What development skills are needed?](/background/development-skills/)
+## [What development skills are needed?](/introduction/development-skills/)
 
 In this article, we explain what skills are needed to successfully build
 a marketplace with Flex. This article helps you to evaluate your own
 skill set and what you need to learn. In case you are planning to hire a
 developer or to contact one through us, here you can find information on
 the expertise you should look for.
-[Read more »](/background/development-skills/)
+[Read more »](/introduction/development-skills/)
 
 ## [Getting started with Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
 

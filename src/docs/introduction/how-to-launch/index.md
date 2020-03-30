@@ -146,7 +146,7 @@ proceed to do this and
 If you're not a developer yourself and don't have one in your team,
 you'll need to contract or hire a developer to do this work for you.
 Before talking to developers, it's a good idea to read more about
-[what development skills are needed to work with Flex](/background/development-skills/).
+[what development skills are needed to work with Flex](/introduction/development-skills/).
 
 If you don't have previous experience hiring a developer, worry not: we
 can help you out! Just

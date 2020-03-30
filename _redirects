@@ -50,6 +50,7 @@
 /docs/background/how-to-build-and-launch-with-flex/ /docs/introduction/how-to-build-and-launch-with-flex/
 /docs/tutorials/getting-started-with-ftw/ /docs/introduction/getting-started-with-ftw-daily/
 /docs/background/is-flex-right-for-you/ /docs/introduction/is-flex-right-for-you/
+/docs/background/development-skills/ /docs/introduction/development-skills/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

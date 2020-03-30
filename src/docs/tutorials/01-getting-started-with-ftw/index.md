@@ -39,7 +39,7 @@ commands and edit text files to change configuration values.
 
 For more information on what skills are needed for customization, see
 the
-[What development skills are needed?](/background/development-skills/)
+[What development skills are needed?](/introduction/development-skills/)
 article.
 
 ## Create a marketplace

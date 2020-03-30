@@ -22,7 +22,7 @@ If you are new to Sharetribe Flex or FTW, we recommend going through the
 [Getting started](/background/getting-started/) articles:
 
 - [Introducing Flex](/introduction/introducing-flex/)
-- [What development skills are needed?](/background/development-skills/)
+- [What development skills are needed?](/introduction/development-skills/)
 - [Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
 
 ## Requirements

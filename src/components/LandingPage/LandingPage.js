@@ -198,7 +198,7 @@ const LandingPage = props => {
             <SectionLink to="/introduction/how-to-build-and-launch-with-flex/">
               <UiText id="LandingPage.gettingStarted.howToLaunch" />
             </SectionLink>
-            <SectionLink to="/background/development-skills/">
+            <SectionLink to="/introduction/development-skills/">
               <UiText id="LandingPage.gettingStarted.devSkills" />
             </SectionLink>
             <SectionLink to="/introduction/getting-started-with-ftw-daily/">
@@ -306,7 +306,7 @@ const LandingPage = props => {
               <SectionLink to="/background/concepts/">
                 <UiText id="LandingPage.background.concepts" />
               </SectionLink>
-              <SectionLink to="/background/development-skills/">
+              <SectionLink to="/introduction/development-skills/">
                 <UiText id="LandingPage.background.developmentSkills" />
               </SectionLink>
               <SectionLink to="/background/features/">
