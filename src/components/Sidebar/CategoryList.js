@@ -139,11 +139,11 @@ const Category = props => {
   const isOpenFromAppState = sidebarNavsIsOpen[category];
 
   const isOpen =
-    typeof isOpenFromAppState !== 'undefined'
+    typeof isOpenFromAppState === 'boolean'
       ? isOpenFromAppState
       : parentCategories.includes(category)
       ? true
-      : typeof isOpenConfig !== 'undefined'
+      : typeof isOpenConfig === 'boolean'
       ? isOpenConfig
       : true;
 

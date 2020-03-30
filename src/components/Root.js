@@ -43,10 +43,10 @@ const FontPreloadLink = font => {
 const Root = props => {
   const [sidebarNavsIsOpen, setSidebarNavsOpen] = useState({});
   const setSidebarNavsIsOpen = category => isOpen => {
-    setSidebarNavsOpen({
-      ...sidebarNavsIsOpen,
+    setSidebarNavsOpen(prev => ({
+      ...prev,
       [category]: isOpen,
-    });
+    }));
   };
 
   return (

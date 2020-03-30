@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-import { findCategory } from '../../util/navigation';
+import { findCategory, findParentCategories } from '../../util/navigation';
 import { siteStructure, dev } from '../../config';
 
 import CategoryList from './CategoryList';
@@ -106,6 +106,27 @@ const getGroupedArticles = data => {
 };
 
 const SideBarStaticQuery = props => {
+  const { sidebarNavsIsOpen, setSidebarNavsIsOpen } = useContext(
+    SidebarContext
+  );
+
+  useEffect(() => {
+    const category = props.activeArticle && props.activeArticle.category;
+
+    if (category) {
+      const parentCategories = findParentCategories(category, siteStructure);
+      parentCategories.forEach(p => {
+        if (sidebarNavsIsOpen[p] === false) {
+          const setCategoryOpen = setSidebarNavsIsOpen(p);
+
+          // Navigating to article, which was previously closed manually by user.
+          // Overwrite the setting.
+          setCategoryOpen(null);
+        }
+      });
+    }
+  }, [props.activeArticle]);
+
   return (
     <StaticQuery
       query={query}
