@@ -10,6 +10,8 @@ const {
   // See: https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
   CONTEXT,
   DEPLOY_PRIME_URL,
+  ALGOLIA_DOCSEARCH_API_KEY,
+  ALGOLIA_DOCSEARCH_INDEX_NAME,
 } = process.env;
 
 const isNetlify = !!CONTEXT;
@@ -166,6 +168,18 @@ module.exports = {
         },
       },
     },
+
+    // ================ Algolia Docsearch ================
+    //
+    {
+      resolve: `gatsby-plugin-algolia-docsearch`,
+      options: {
+        apiKey: ALGOLIA_DOCSEARCH_API_KEY,
+        indexName: ALGOLIA_DOCSEARCH_INDEX_NAME,
+        inputSelector: '#algolia-doc-search',
+        debug: false,
+      }
+    }
   ],
 };
 
