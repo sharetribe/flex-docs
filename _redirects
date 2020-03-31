@@ -55,6 +55,7 @@
 /docs/background/development-skills/ /docs/introduction/development-skills/
 /docs/tutorials/getting-started-with-ftw/ /docs/introduction/getting-started-with-ftw-daily/
 /docs/guides/provider-onboarding-and-identity-verification/ /docs/cookbook-payments/provider-onboarding-and-identity-verification/
+/docs/guides/stripe-connect-platform-review/ /docs/cookbook-payments/stripe-connect-platform-review/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

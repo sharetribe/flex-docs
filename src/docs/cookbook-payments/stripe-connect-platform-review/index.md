@@ -2,7 +2,7 @@
 title: How to apply for Stripe Connect review
 slug: stripe-connect-platform-review
 updated: 2020-02-27
-category: guides
+category: cookbook-payments
 ingress:
   If you create a new Stripe Platform, Stripe most likely will ask to
   review it. Here are details about the requirements and process.
