@@ -40,8 +40,18 @@ FTW.
   component
 - [AboutPage](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/AboutPage/AboutPage.js)
   component
-- Update Terms of Service and Privacy Policy:
-  [How to change Terms of Service and Privacy Policy in FTW](/guides/how-to-change-tos-and-privacy-policy-in-ftw/)
+- Update [Terms of Service](https://github.com/sharetribe/flex-template-web/blob/master/src/components/TermsOfService/TermsOfService.js) and [Privacy Policy](https://github.com/sharetribe/flex-template-web/blob/master/src/components/PrivacyPolicy/PrivacyPolicy.js)
+
+    <extrainfo title="Locate Terms of Service and Privacy Policy">
+
+      ```shell
+      └── src
+          └── components
+              ├── TermsOfService
+              └── PrivacyPolicy
+      ```
+
+    </extrainfo>
 
 ## 3. Change configuration
 
