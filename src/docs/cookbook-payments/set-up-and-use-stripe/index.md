@@ -67,7 +67,7 @@ you need to navigate to
 in your Stripe Dashboard. For the Connect onboarding to work, you need
 to provide `name`, `color`, and `icon` for your marketplace.
 
-![Stripe dashboard](./stripeDashboard.png)
+![Stripe dashboard](./stripe-dashboard.png)
 
 Great! You now have to get your API keys and input them into your
 marketplace.
