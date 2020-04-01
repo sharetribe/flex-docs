@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import noScroll from 'no-scroll';
 
 import { findCategory, findParentCategories } from '../../util/navigation';
 import { siteStructure, dev } from '../../config';
@@ -113,6 +114,13 @@ const SideBarStaticQuery = props => {
   useEffect(() => {
     const category = props.activeArticle && props.activeArticle.category;
 
+    const hasWindow = typeof window !== 'undefined';
+    if (hasWindow) {
+      // If activeArticle has changed, remove possible noScroll.
+      // On small layouts, it is set to prevent scrolling when Sidebar is open.
+      noScroll.off();
+    }
+
     if (category) {
       const parentCategories = findParentCategories(category, siteStructure);
       parentCategories.forEach(p => {
@@ -125,6 +133,9 @@ const SideBarStaticQuery = props => {
         }
       });
     }
+    // We don't want to rerender every time sidebarNavsIsOpen changes.
+    // So, for now, the exhaustive-deps warning is disabled.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.activeArticle]);
 
   return (
