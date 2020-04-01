@@ -34,8 +34,8 @@ Sharetribe uses the Stripe Connect features with
 
 > **Note!** Stripe might need to review your platform account before you
 > get access. <br /> Check
-> [this article](/cookbook-payments/stripe-connect-platform-review) to learn how to
-> apply for Stripe Connect review.
+> [this article](/cookbook-payments/stripe-connect-platform-review) to
+> learn how to apply for Stripe Connect review.
 
 If you're in any another country, follow these instructions to enable
 Stripe Connect:

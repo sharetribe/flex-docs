@@ -40,7 +40,10 @@ FTW.
   component
 - [AboutPage](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/AboutPage/AboutPage.js)
   component
-- Update [Terms of Service](https://github.com/sharetribe/flex-template-web/blob/master/src/components/TermsOfService/TermsOfService.js) and [Privacy Policy](https://github.com/sharetribe/flex-template-web/blob/master/src/components/PrivacyPolicy/PrivacyPolicy.js)
+- Update
+  [Terms of Service](https://github.com/sharetribe/flex-template-web/blob/master/src/components/TermsOfService/TermsOfService.js)
+  and
+  [Privacy Policy](https://github.com/sharetribe/flex-template-web/blob/master/src/components/PrivacyPolicy/PrivacyPolicy.js)
 
     <extrainfo title="Locate Terms of Service and Privacy Policy">
 
