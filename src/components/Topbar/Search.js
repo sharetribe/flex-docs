@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const Input = styled.input`
   width: 220px;
   height: 40px;
-  border: 1px solid ${props => props.theme.searchBorderColor};
+  border: 1px solid ${props => props.theme.searchInputBorderColor};
   border-radius: 20px;
   padding: 0 10px 4px 36px;
 

@@ -16,8 +16,20 @@ const GlobalStyle = createGlobalStyle`
   .algolia-autocomplete {
     ${fonts['CircularStd-Book'].styles}
 
+    & a {
+      text-decoration: none;
+    }
+
+    & .algolia-docsearch-suggestion--category-header {
+      ${fonts['CircularStd-Bold'].styles}
+    }
+
     & .algolia-docsearch-suggestion--title {
       ${fonts['CircularStd-Bold'].styles}
+    }
+
+    & .algolia-docsearch-suggestion--highlight {
+      color: ${props => props.theme.searchResultsHighlightColor};
     }
   }
 `;
