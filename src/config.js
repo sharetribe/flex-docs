@@ -57,6 +57,8 @@ exports.themeLight = {
 
   // Search
   searchInputBorderColor: '#d1d1d1',
+  searchResultsPrimaryColor: '#4a4a4a',
+  searchResultsSecondaryColor: '#5c676d',
   searchResultsHighlightColor: '#0080ff',
 
   // Sidebar colors
