@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import fonts from '../fonts';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -12,25 +11,6 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     padding: 0;
     background-color: transparent;
-  }
-  .algolia-autocomplete {
-    ${fonts['CircularStd-Book'].styles}
-
-    & a {
-      text-decoration: none;
-    }
-
-    & .algolia-docsearch-suggestion--category-header {
-      ${fonts['CircularStd-Bold'].styles}
-    }
-
-    & .algolia-docsearch-suggestion--title {
-      ${fonts['CircularStd-Bold'].styles}
-    }
-
-    & .algolia-docsearch-suggestion--highlight {
-      color: ${props => props.theme.searchResultsHighlightColor};
-    }
   }
 `;
 

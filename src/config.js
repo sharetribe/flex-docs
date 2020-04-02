@@ -55,10 +55,6 @@ exports.themeLight = {
   topbarNavColorActive: '#000',
   topbarNavBorderColorActive: '#0080ff',
 
-  // Search
-  searchInputBorderColor: '#d1d1d1',
-  searchResultsHighlightColor: '#0080ff',
-
   // Sidebar colors
   sidebarNavColorTitle: '#4a4a4a',
   sidebarNavColorTitleHover: '#000',
