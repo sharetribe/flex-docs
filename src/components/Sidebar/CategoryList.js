@@ -221,8 +221,8 @@ const CategoryList = props => {
 
 const StyledCategoryList = styled(CategoryList)`
   margin: 0;
-  padding-top: 2px;
-  padding-bottom: 96px;
+  padding-top: 14px;
+  padding-bottom: 102px;
 
   @media (min-width: ${baselineBreakpoint}px) {
     padding-top: 40px;

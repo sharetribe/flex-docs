@@ -19,6 +19,12 @@ const StyledBurger = styled.button`
     outline: none;
   }
 
+  &:hover {
+    & div {
+      background-color: ${props => props.theme.topbarNavColorActive};
+    }
+  }
+
   div {
     width: 18px;
     height: 2px;
