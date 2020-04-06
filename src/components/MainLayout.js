@@ -53,7 +53,6 @@ const SidebarArea = styled.div`
   width: 100vw;
   height: calc(100vh - 60px);
   margin: 0;
-  overflow-y: scroll;
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(0)' : 'translateX(-100%)'};
   transition: transform 0.3s ease-in-out;

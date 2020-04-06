@@ -45,6 +45,9 @@ const SideNavigation = styled(Navigation)`
   background-color ${props => props.theme.backgroundColorRaised};
   transition: all 0.05s ease-out;
   min-height: 100%;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 
   @media (min-width: ${baselineBreakpoint}px) {
     padding-bottom: 72px;
@@ -58,9 +61,6 @@ const SideNavigation = styled(Navigation)`
     margin-top: 0;
     margin-bottom: 0;
     top: 0;
-    height: 100%;
-    width: 100%;
-    overflow-y: scroll;
   }
 
   :hover {
