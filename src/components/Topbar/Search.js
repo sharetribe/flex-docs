@@ -115,6 +115,12 @@ const Search = props => {
           indexName: 'sharetribe',
           inputSelector: '#algolia-doc-search',
           debug: false, // Set debug to true if you want to inspect the dropdown
+          autocompleteOptions: {
+            openOnFocus: true,
+            autoselect: true,
+            hint: false,
+            keyboardShortcuts: [`s`],
+          },
         });
       });
     }
