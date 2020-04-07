@@ -89,7 +89,7 @@ const CrumbWrapper = styled.div`
 
   @media (min-width: ${baselineBreakpoint}px) {
     flex-direction: row;
-    margin-top: ${9 * baselineLarge}px;
+    margin-top: ${5 * baselineLarge}px;
   }
 `;
 
