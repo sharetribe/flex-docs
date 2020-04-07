@@ -73,7 +73,7 @@ const InputWrapper = styled.div`
   right: 0px;
   width: 100%;
   padding: 6px 24px;
-  z-index: 10;
+  z-index: 11;
   background-color: #ccc;
   opacity: ${props => (props.isOpen ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
