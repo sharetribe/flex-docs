@@ -128,9 +128,9 @@ const StyledListItem = styled(ListItem)`
 // Sidebar's article title is a link
 // If you click it, you are redirected to that article.
 const ArticleListItem = props => {
-  const { slug, title, active } = props;
+  const { id, slug, title, active } = props;
   return (
-    <StyledListItem key={slug} active={active}>
+    <StyledListItem key={slug} active={active} id={id}>
       <StyledArticleLink {...props}>{title}</StyledArticleLink>
     </StyledListItem>
   );
@@ -164,6 +164,7 @@ const ArticleList = props => {
         return (
           <ArticleListItem
             key={slug}
+            id={`li_${category}_${slug}`}
             path={path}
             title={title}
             slug={slug}

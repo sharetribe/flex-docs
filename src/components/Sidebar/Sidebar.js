@@ -8,6 +8,8 @@ import { baselineBreakpoint, siteStructure, dev } from '../../config';
 
 import CategoryList from './CategoryList';
 
+const DESKTOP_LAYOUT_WIDTH = 768;
+
 const query = graphql`
   query SidebarIndexQuery {
     allMarkdownRemark(sort: { fields: fileAbsolutePath, order: ASC }) {
@@ -135,6 +137,15 @@ const SideBarStaticQuery = props => {
           setCategoryOpen(null);
         }
       });
+
+      // Reposition Sidebar to the correct article
+      // Sidebar list-item has id with format: li_<category>_<slug>
+      const slug = props.activeArticle.slug;
+      const currentArticleId = `li_${category}_${slug}`;
+      const currentArticleLinkItem = document.getElementById(currentArticleId);
+      if (hasWindow && window.innerWidth > DESKTOP_LAYOUT_WIDTH && currentArticleLinkItem) {
+        currentArticleLinkItem.scrollIntoView({ block: 'center' })
+      }
     }
     // We don't want to rerender every time sidebarNavsIsOpen changes.
     // So, for now, the exhaustive-deps warning is disabled.
