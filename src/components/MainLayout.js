@@ -29,6 +29,14 @@ const WrapperTopbar = styled.div`
   min-height: 100vh;
 `;
 
+const TopbarArea = styled.div`
+  width: 100vw;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    z-index: 10;
+  }
+`;
+
 const WrapperSidebar = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,7 +66,7 @@ const SidebarArea = styled.div`
     width: 255px;
     height: 100vh;
     transform: unset;
-    z-index: unset;
+    z-index: 9;
     box-shadow: 6px 0px 16px -10px rgba(0, 0, 0, 0.05);
   }
   @media (min-width: 1024px) {
@@ -103,7 +111,9 @@ const MainLayout = props => {
   return (
     <BaseLayout {...rest}>
       <WrapperTopbar>
-        <Topbar manageSidebar={{ isOpen, setIsOpen: setOpen }} />
+        <TopbarArea>
+          <Topbar manageSidebar={{ isOpen, setIsOpen: setOpen }} />
+        </TopbarArea>
 
         <WrapperSidebar>
           <SidebarArea isOpen={isOpen}>

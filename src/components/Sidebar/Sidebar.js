@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import noScroll from 'no-scroll';
 
 import { findCategory, findParentCategories } from '../../util/navigation';
-import { siteStructure, dev } from '../../config';
+import { baselineBreakpoint, siteStructure, dev } from '../../config';
 
 import CategoryList from './CategoryList';
 
@@ -43,9 +43,12 @@ const Navigation = props => {
 
 const SideNavigation = styled(Navigation)`
   background-color ${props => props.theme.backgroundColorRaised};
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.05);
   transition: all 0.05s ease-out;
   min-height: 100%;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    padding-bottom: 72px;
+  }
 
   @media (min-width: 1024px) {
     flex-shrink: 0;
@@ -55,7 +58,7 @@ const SideNavigation = styled(Navigation)`
     margin-top: 0;
     margin-bottom: 0;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     overflow-y: scroll;
   }
