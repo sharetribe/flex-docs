@@ -143,8 +143,12 @@ const SideBarStaticQuery = props => {
       const slug = props.activeArticle.slug;
       const currentArticleId = `li_${category}_${slug}`;
       const currentArticleLinkItem = document.getElementById(currentArticleId);
-      if (hasWindow && window.innerWidth > DESKTOP_LAYOUT_WIDTH && currentArticleLinkItem) {
-        currentArticleLinkItem.scrollIntoView({ block: 'center' })
+      if (
+        hasWindow &&
+        window.innerWidth > DESKTOP_LAYOUT_WIDTH &&
+        currentArticleLinkItem
+      ) {
+        currentArticleLinkItem.scrollIntoView({ block: 'center' });
       }
     }
     // We don't want to rerender every time sidebarNavsIsOpen changes.

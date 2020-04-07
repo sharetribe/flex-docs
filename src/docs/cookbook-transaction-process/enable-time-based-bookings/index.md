@@ -52,9 +52,9 @@ tutorial.
 ## Option 1: Use a new Flex template FTW-time (recommended)
 
 With the time-based transaction process, you can use
-[FTW-hourly](https://github.com/sharetribe/ftw-hourly), a Flex Template that
-supports time-based availability out of the box. [Learn more about
-FTW-hourly](/ftw-templates/ftw-hourly/).
+[FTW-hourly](https://github.com/sharetribe/ftw-hourly), a Flex Template
+that supports time-based availability out of the box.
+[Learn more about FTW-hourly](/ftw-templates/ftw-hourly/).
 
 ## Option 2: Implement time-based availability in your own frontend application
 
@@ -152,17 +152,18 @@ managing time-based availability exceptions or plans. Thus, in order to
 use time-based bookings, you will need to implement these parts of the
 user interface yourself.
 
-For inspiration, see also the [FTW-time](https://github.com/sharetribe/ftw-time)
-implementation.
+For inspiration, see also the
+[FTW-time](https://github.com/sharetribe/ftw-time) implementation.
 
 ### Time zone
 
-With time-based bookings time zones play a larger role than with night- and
-day-based ones. This is the case especially if your marketplace operates on
-multiple time zones and there are listings that could be booked from a different
-time zone as the one in which the listing is located. In this case it could come
-in handy to take into account the listing's [availability plan time
-zone](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format).
-This way it is possible to implement the booking so that when the booking takes
-place the customer and provider will have a shared understanding when the
-booking starts.
+With time-based bookings time zones play a larger role than with night-
+and day-based ones. This is the case especially if your marketplace
+operates on multiple time zones and there are listings that could be
+booked from a different time zone as the one in which the listing is
+located. In this case it could come in handy to take into account the
+listing's
+[availability plan time zone](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format).
+This way it is possible to implement the booking so that when the
+booking takes place the customer and provider will have a shared
+understanding when the booking starts.
