@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../config';
@@ -105,7 +105,17 @@ const StyledIconSearch = styled(IconSearch)`
   }
 `;
 
+const useFocus = () => {
+  const elRef = useRef(null);
+  const setFocus = () => {
+    elRef.current && elRef.current.focus();
+  };
+  return [elRef, setFocus];
+};
+
 const Search = props => {
+  const [searchInputRef, setFocusToSearchInput] = useFocus();
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       // This follows a setup that styled-components use.
@@ -127,10 +137,16 @@ const Search = props => {
   }, []);
 
   const { isOpen, setIsOpen, ...rest } = props;
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+    if (!isOpen) {
+      setFocusToSearchInput();
+    }
+  };
 
   return (
     <Wrapper {...rest}>
-      <MobileButton onClick={() => setIsOpen(!isOpen)}>
+      <MobileButton onClick={handleClick}>
         <IconSearch stroke="#666" />
       </MobileButton>
       <InputWrapper isOpen={isOpen}>
@@ -139,6 +155,7 @@ const Search = props => {
           id="algolia-doc-search"
           type="search"
           placeholder="Search docs..."
+          ref={searchInputRef}
         />
       </InputWrapper>
     </Wrapper>
