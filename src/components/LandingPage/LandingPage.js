@@ -289,7 +289,7 @@ const LandingPage = props => {
             <SectionLink to="/flex-cli/getting-started-with-flex-cli/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFlexCLi" />
             </SectionLink>
-            <SectionLink to="/integrations/getting-started-with-integrations-api/">
+            <SectionLink to="/integrations/getting-started-with-integration-api/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithIntegrationsAPI" />
             </SectionLink>
 

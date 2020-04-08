@@ -114,8 +114,8 @@ public internet before you can use these tools:
 - [Twitter card validator](https://cards-dev.twitter.com/validator)
 
 > **Note**: You could deploy the app to Heroku to test these tools. We
-> will cover [Heroku deploys](/tutorial/deploy-to-heroku) later in this
-> tutorial.
+> will cover [Heroku deploys](/tutorial-branding/deploy-to-heroku) later
+> in this tutorial.
 
 </extrainfo>
 
