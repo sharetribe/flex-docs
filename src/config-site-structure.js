@@ -32,7 +32,6 @@ const sortingArrayBackground = [
   'introducing-flex',
   'concepts',
   'development-skills',
-  'getting-started',
   'features',
   'transaction-process',
   'ftw-routing',

@@ -57,6 +57,7 @@
 /docs/guides/provider-onboarding-and-identity-verification/ /docs/cookbook-payments/provider-onboarding-and-identity-verification/
 /docs/guides/stripe-connect-platform-review/ /docs/cookbook-payments/stripe-connect-platform-review/
 /docs/guides/how-to-change-tos-and-privacy-policy-in-ftw/ /docs/ftw-introduction/customization-checklist/
+/docs/background/getting-started/ /docs/introduction/introducing-flex/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
