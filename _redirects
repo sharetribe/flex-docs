@@ -15,7 +15,7 @@
 /docs/background/how-to-build-and-launch-with-flex/ /docs/introduction/how-to-build-and-launch-with-flex/
 /docs/background/introducing-flex/ /docs/introduction/introducing-flex/
 /docs/background/is-flex-right-for-you/ /docs/introduction/is-flex-right-for-you/
-/docs/background/overview/  /docs/background/introducing-flex/
+/docs/background/overview/ /docs/introduction/introducing-flex/
 /docs/background/save-payment-card/ /docs/cookbook-payments/save-payment-card/
 /docs/background/time-based-template/ /docs/ftw-introduction/ftw-hourly/
 /docs/background/transaction-engine/  /docs/background/transaction-process/
@@ -50,7 +50,7 @@
 /docs/guides/provider-onboarding-and-identity-verification/ /docs/cookbook-payments/provider-onboarding-and-identity-verification/
 /docs/guides/stripe-connect-platform-review/ /docs/cookbook-payments/stripe-connect-platform-review/
 /docs/references/ftw-env/ /docs/ftw-configuration/ftw-env/
-/docs/references/ftw/  /docs/tutorials/getting-started-with-ftw/
+/docs/references/ftw/ /docs/introduction/getting-started-with-ftw-daily/
 /docs/tutorials/edit-email-templates-with-flex-cli/ /docs/flex-cli/edit-email-templates-with-flex-cli/
 /docs/tutorials/edit-transaction-process-with-flex-cli/ /docs/flex-cli/edit-transaction-process-with-flex-cli/
 /docs/tutorials/getting-started-with-flex-cli/ /docs/flex-cli/getting-started-with-flex-cli/
