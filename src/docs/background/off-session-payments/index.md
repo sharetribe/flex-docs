@@ -19,9 +19,9 @@ is 90 days. Therefore, the maximum amount of time customers can book in
 advance is limited, if your transaction process follows this payment
 pattern.
 
-Flex API now has capabilities for
+Flex API has capabilities for
 [saving payment card details for future use](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer).
-In addition, it is now possible to configure your transaction process in
+In addition, it is possible to configure your transaction process in
 such a way, that the customer is charged automatically off-session at
 certain point in time (i.e. when they are not present and interacting
 with your web site or app), provided that they have saved a payment card
