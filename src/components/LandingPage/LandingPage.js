@@ -9,7 +9,7 @@ import {
 } from '../../config';
 import { H1, H6, P, A, Ul, MainLayout, UiText } from '../../components';
 import Section, {
-  SectionHeadingLink,
+  SectionHeading,
   SectionDescription,
   SectionLinks,
   SectionLink,
@@ -193,9 +193,9 @@ const LandingPage = props => {
         <Grid>
           {/* INTRODUCTION */}
           <StyledSection>
-            <SectionHeadingLink to="/introduction/">
+            <SectionHeading>
               <UiText id="LandingPage.introduction.title" />
-            </SectionHeadingLink>
+            </SectionHeading>
             <StyledSectionDescription>
               <UiText id="LandingPage.introduction.description" />
             </StyledSectionDescription>
@@ -211,9 +211,9 @@ const LandingPage = props => {
 
           {/* TUTORIAL */}
           <StyledSection>
-            <SectionHeadingLink to="/tutorial/">
+            <SectionHeading>
               <UiText id="LandingPage.tutorial.title" />
-            </SectionHeadingLink>
+            </SectionHeading>
             <StyledSectionDescription>
               <UiText id="LandingPage.tutorial.description" />
             </StyledSectionDescription>
@@ -226,9 +226,9 @@ const LandingPage = props => {
 
           {/* BACKGROUND */}
           <StyledSection>
-            <SectionHeadingLink to="/background/">
+            <SectionHeading>
               <UiText id="LandingPage.background.title" />
-            </SectionHeadingLink>
+            </SectionHeading>
             <StyledSectionDescription>
               <UiText id="LandingPage.background.description" />
             </StyledSectionDescription>
@@ -247,9 +247,9 @@ const LandingPage = props => {
 
           {/* COOKBOOK */}
           <StyledSection>
-            <SectionHeadingLink to="/cookbook/">
+            <SectionHeading>
               <UiText id="LandingPage.cookbook.title" />
-            </SectionHeadingLink>
+            </SectionHeading>
             <StyledSectionDescription>
               <UiText id="LandingPage.cookbook.description" />
             </StyledSectionDescription>
@@ -272,9 +272,9 @@ const LandingPage = props => {
         </CollectionsHeading>
         <GettingStartedSection>
           <div>
-            <SectionHeadingLink to="/background/getting-started/">
+            <SectionHeading>
               <UiText id="LandingPage.bestPicks.heading" />
-            </SectionHeadingLink>
+            </SectionHeading>
             <SectionDescription>
               <UiText id="LandingPage.bestPicks.description" />
             </SectionDescription>

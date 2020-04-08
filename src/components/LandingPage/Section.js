@@ -15,6 +15,11 @@ export const SectionHeadingLink = props => {
   );
 };
 
+export const SectionHeading = props => {
+  const { to, children } = props;
+  return <H5 as="h3">{children}</H5>;
+};
+
 // NOTE: custom font size
 export const SectionDescription = styled(P).attrs({
   small: true,
