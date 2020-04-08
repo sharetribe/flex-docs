@@ -150,7 +150,7 @@ Here's the description of complete call sequence on CheckoutPage.
 **Note: PaymentIntents flow needs transaction process change as
 described in doc:**
 
-[Enable Payment Intents into use](/cookbook-payments/enable-payment-intents-into-use/)
+[Enable Payment Intents if you are using an old version of FTW](/cookbook-payments/enable-payment-intents/)
 
 ### Initial data for Checkout:
 

@@ -35,8 +35,8 @@ Note that this also runs the linter.
 > Note: In some environments, alternative test watcher doesn't always
 > work and it can die unexpectedly. If that happens to you, you might
 > want to install
-> [Watchman](https://facebook.github.io/watchman/docs/install.html).
-> Read more about
+> [Watchman](https://facebook.github.io/watchman/docs/install). Read
+> more about
 > [this issue](https://github.com/facebook/create-react-app/issues/871).
 
 ## Jest

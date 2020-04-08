@@ -181,4 +181,4 @@ continue with customizations. You could:
 - Add more
   [search filters](/cookbook-search/change-search-filters-in-ftw/)
 - [Customize pricing](/background/custom-pricing/)
-- [Customize the transaction process](background/transaction-process/)
+- [Customize the transaction process](/background/transaction-process/)
