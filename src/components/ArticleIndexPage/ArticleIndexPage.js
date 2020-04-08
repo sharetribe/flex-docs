@@ -66,9 +66,10 @@ const Index = styled(ArticleIndex)`
 `;
 
 const ArticleIndexPage = props => {
-  const { category, articles } = props;
+  const { category, articles, noPrefix } = props;
   const title = UiText.fn(`ArticleIndexPage.${category}.title`);
   const description = UiText.fn(`ArticleIndexPage.${category}.description`);
+  const pathPrefixMaybe = noPrefix ? {} : { pathPrefix: `/${category}/` };
   return (
     <MainLayout
       title={title}
@@ -80,7 +81,7 @@ const ArticleIndexPage = props => {
           {title} <Count>{articles.length}</Count>
         </Heading>
         <Description>{description}</Description>
-        <Index pathPrefix={`/${category}/`} articles={articles} />
+        <Index {...pathPrefixMaybe} articles={articles} />
       </Content>
     </MainLayout>
   );

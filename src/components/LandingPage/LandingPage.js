@@ -9,10 +9,11 @@ import {
 } from '../../config';
 import { H1, H6, P, A, Ul, MainLayout, UiText } from '../../components';
 import Section, {
-  SectionHeadingLink,
+  SectionHeading,
   SectionDescription,
   SectionLinks,
   SectionLink,
+  SectionExternalLink,
 } from './Section';
 
 const Content = styled.div`
@@ -123,7 +124,18 @@ const GettingStartedSection = styled(Section)`
   @media (min-width: ${baselineBreakpoint}px) {
     margin-top: ${3 * baselineLarge}px;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 139px;
+    grid-column-gap: 112px;
+  }
+`;
+
+const StyledSection = styled(Section)`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledSectionDescription = styled(SectionDescription)`
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-bottom: auto;
   }
 `;
 
@@ -157,7 +169,6 @@ const Grid = styled.div`
 `;
 
 const LandingPage = props => {
-  const { articleCounts } = props;
   const description = UiText.fn('LandingPage.meta.description');
   return (
     <MainLayout description={description}>
@@ -176,138 +187,54 @@ const LandingPage = props => {
           </A>
           {'.'}
         </IntroDescription>
-        <CollectionsHeading as="h2">
-          <UiText id="LandingPage.collectionsHeading" />
-        </CollectionsHeading>
-        <GettingStartedSection>
-          <div>
-            <SectionHeadingLink to="/background/getting-started/">
-              <UiText id="LandingPage.gettingStarted.heading" />
-            </SectionHeadingLink>
-            <SectionDescription>
-              <UiText id="LandingPage.gettingStarted.description" />
-            </SectionDescription>
-          </div>
-          <Ul>
-            <SectionLink to="/background/introducing-flex/">
-              <UiText id="LandingPage.gettingStarted.introducingFlex" />
-            </SectionLink>
-            <SectionLink to="/background/is-flex-right-for-you/">
-              <UiText id="LandingPage.gettingStarted.isFlexFit" />
-            </SectionLink>
-            <SectionLink to="/background/how-to-build-and-launch-with-flex/">
-              <UiText id="LandingPage.gettingStarted.howToLaunch" />
-            </SectionLink>
-            <SectionLink to="/background/development-skills/">
-              <UiText id="LandingPage.gettingStarted.devSkills" />
-            </SectionLink>
-            <SectionLink to="/tutorials/getting-started-with-ftw/">
-              <UiText id="LandingPage.gettingStarted.ftwSetup" />
-            </SectionLink>
-            <SectionLink to="/tutorials/getting-started-with-flex-cli/">
-              <UiText id="LandingPage.gettingStarted.flexCli" />
-            </SectionLink>
-          </Ul>
-        </GettingStartedSection>
         <CategoriesHeading as="h2">
           <UiText id="LandingPage.categoriesHeading" />
         </CategoriesHeading>
         <Grid>
-          {/* TUTORIALS */}
-          <Section>
-            <SectionHeadingLink to="/tutorials/">
-              <UiText id="LandingPage.tutorials.title" />
-            </SectionHeadingLink>
-            <SectionDescription>
-              <UiText id="LandingPage.tutorials.description" />
-            </SectionDescription>
+          {/* INTRODUCTION */}
+          <StyledSection>
+            <SectionHeading>
+              <UiText id="LandingPage.introduction.title" />
+            </SectionHeading>
+            <StyledSectionDescription>
+              <UiText id="LandingPage.introduction.description" />
+            </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/tutorials/getting-started-with-ftw/">
-                <UiText id="LandingPage.tutorials.gettingStartedFtw" />
+              <SectionLink to="/introduction/introducing-flex/">
+                <UiText id="LandingPage.introduction.introductionFlex" />
               </SectionLink>
-              <SectionLink to="/tutorials/getting-started-with-flex-cli/">
-                <UiText id="LandingPage.tutorials.gettingStartedCli" />
-              </SectionLink>
-              <SectionLink to="/tutorials/">
-                <UiText id="LandingPage.tutorials.all" /> (
-                {articleCounts.tutorials || 0})
+              <SectionLink to="/introduction/getting-started-with-ftw-daily/">
+                <UiText id="LandingPage.introduction.gettingStarted" />
               </SectionLink>
             </SectionLinks>
-          </Section>
+          </StyledSection>
 
-          {/* GUIDES */}
-          <Section>
-            <SectionHeadingLink to="/guides/">
-              <UiText id="LandingPage.guides.title" />
-            </SectionHeadingLink>
-            <SectionDescription>
-              <UiText id="LandingPage.guides.description" />
-            </SectionDescription>
+          {/* TUTORIAL */}
+          <StyledSection>
+            <SectionHeading>
+              <UiText id="LandingPage.tutorial.title" />
+            </SectionHeading>
+            <StyledSectionDescription>
+              <UiText id="LandingPage.tutorial.description" />
+            </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/guides/how-to-customize-ftw/">
-                <UiText id="LandingPage.guides.ftw" />
-              </SectionLink>
-              <SectionLink to="/guides/how-to-set-up-mapbox-for-ftw/">
-                <UiText id="LandingPage.guides.mapbox" />
-              </SectionLink>
-              <SectionLink to="/guides/how-to-set-up-analytics-for-ftw/">
-                <UiText id="LandingPage.guides.analytics" />
-              </SectionLink>
-              <SectionLink to="/guides/">
-                <UiText id="LandingPage.guides.all" /> (
-                {articleCounts.guides || 0})
+              <SectionLink to="/tutorial/introduction/">
+                <UiText id="LandingPage.tutorial.introduction" />
               </SectionLink>
             </SectionLinks>
-          </Section>
-
-          {/* REFERENCES */}
-          <Section>
-            <SectionHeadingLink to="/references/">
-              <UiText id="LandingPage.references.title" />
-            </SectionHeadingLink>
-            <SectionDescription>
-              <UiText id="LandingPage.references.description" />
-            </SectionDescription>
-            <SectionLinks>
-              <SectionLink to="/references/api/">
-                <UiText id="LandingPage.references.api" />
-              </SectionLink>
-              <SectionLink to="/references/js-sdk/">
-                <UiText id="LandingPage.references.sdk" />
-              </SectionLink>
-              <SectionLink to="/references/transaction-process-format/">
-                <UiText id="LandingPage.references.txProcessFormat" />
-              </SectionLink>
-              <SectionLink to="/references/email-templates/">
-                <UiText id="LandingPage.references.emailTemplates" />
-              </SectionLink>
-              <SectionLink to="/references/extended-data/">
-                <UiText id="LandingPage.references.extendedData" />
-              </SectionLink>
-              <SectionLink to="/references/">
-                <UiText id="LandingPage.references.all" /> (
-                {articleCounts.references || 0})
-              </SectionLink>
-            </SectionLinks>
-          </Section>
+          </StyledSection>
 
           {/* BACKGROUND */}
-          <Section>
-            <SectionHeadingLink to="/background/">
+          <StyledSection>
+            <SectionHeading>
               <UiText id="LandingPage.background.title" />
-            </SectionHeadingLink>
-            <SectionDescription>
+            </SectionHeading>
+            <StyledSectionDescription>
               <UiText id="LandingPage.background.description" />
-            </SectionDescription>
+            </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/background/introducing-flex/">
-                <UiText id="LandingPage.background.introducingFlex" />
-              </SectionLink>
               <SectionLink to="/background/concepts/">
                 <UiText id="LandingPage.background.concepts" />
-              </SectionLink>
-              <SectionLink to="/background/development-skills/">
-                <UiText id="LandingPage.background.developmentSkills" />
               </SectionLink>
               <SectionLink to="/background/features/">
                 <UiText id="LandingPage.background.features" />
@@ -315,13 +242,63 @@ const LandingPage = props => {
               <SectionLink to="/background/transaction-process/">
                 <UiText id="LandingPage.background.transactionProcess" />
               </SectionLink>
-              <SectionLink to="/background/">
-                <UiText id="LandingPage.background.all" /> (
-                {articleCounts.background || 0})
+            </SectionLinks>
+          </StyledSection>
+
+          {/* COOKBOOK */}
+          <StyledSection>
+            <SectionHeading>
+              <UiText id="LandingPage.cookbook.title" />
+            </SectionHeading>
+            <StyledSectionDescription>
+              <UiText id="LandingPage.cookbook.description" />
+            </StyledSectionDescription>
+            <SectionLinks>
+              <SectionLink to="/cookbook-data-model/extend-listing-data-in-ftw/">
+                <UiText id="LandingPage.cookbook.extendListingData" />
+              </SectionLink>
+              <SectionLink to="/cookbook-payments/customize-pricing/">
+                <UiText id="LandingPage.cookbook.customizePricing" />
+              </SectionLink>
+              <SectionLink to="/cookbook-transaction-process/change-transaction-process-in-ftw/">
+                <UiText id="LandingPage.cookbook.changeTransactionProcess" />
               </SectionLink>
             </SectionLinks>
-          </Section>
+          </StyledSection>
         </Grid>
+
+        <CollectionsHeading as="h2">
+          <UiText id="LandingPage.collectionsHeading" />
+        </CollectionsHeading>
+        <GettingStartedSection>
+          <div>
+            <SectionHeading>
+              <UiText id="LandingPage.bestPicks.heading" />
+            </SectionHeading>
+            <SectionDescription>
+              <UiText id="LandingPage.bestPicks.description" />
+            </SectionDescription>
+          </div>
+          <Ul>
+            <SectionLink to="/ftw-introduction/how-to-customize-ftw/">
+              <UiText id="LandingPage.bestPicks.gettingStartedWithFTW" />
+            </SectionLink>
+            <SectionLink to="/ftw-introduction/customization-checklist/">
+              <UiText id="LandingPage.bestPicks.ftwCustomizationChecklist" />
+            </SectionLink>
+            <SectionLink to="/flex-cli/getting-started-with-flex-cli/">
+              <UiText id="LandingPage.bestPicks.gettingStartedWithFlexCLi" />
+            </SectionLink>
+            <SectionLink to="/integrations/getting-started-with-integrations-api/">
+              <UiText id="LandingPage.bestPicks.gettingStartedWithIntegrationsAPI" />
+            </SectionLink>
+
+            <SectionExternalLink href="https://www.sharetribe.com/api-reference/">
+              <UiText id="LandingPage.bestPicks.apiReference" />
+            </SectionExternalLink>
+          </Ul>
+        </GettingStartedSection>
+
         <Paragraph>
           <UiText id="LandingPage.outro" />{' '}
           <A href="https://sharetribe.typeform.com/to/CMiqus">

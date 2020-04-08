@@ -7,7 +7,6 @@ import { A } from '../components';
 
 const Wrapper = styled.footer`
   background-color: ${props => props.theme.footerBackgroundColor};
-  margin-top: ${9 * baselineLarge}px;
 `;
 
 const Content = styled.div`

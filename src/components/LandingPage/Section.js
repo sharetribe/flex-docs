@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineSmall, baselineLarge, baselineBreakpoint } from '../../config';
-import { P, Ul, Li, H5, Link, Box } from '../../components';
+import { A, P, Ul, Li, H5, Link, Box } from '../../components';
 
 export const SectionHeadingLink = props => {
   const { to, children } = props;
@@ -13,6 +13,11 @@ export const SectionHeadingLink = props => {
       </Link>
     </H5>
   );
+};
+
+export const SectionHeading = props => {
+  const { children } = props;
+  return <H5 as="h3">{children}</H5>;
 };
 
 // NOTE: custom font size
@@ -86,6 +91,18 @@ export const SectionLink = props => {
         <Arrow />
         {children}
       </Link>
+    </SectionLi>
+  );
+};
+
+export const SectionExternalLink = props => {
+  const { children, ...rest } = props;
+  return (
+    <SectionLi>
+      <A {...rest} target="_blank" rel="noopener noreferrer">
+        <Arrow />
+        {children}
+      </A>
     </SectionLi>
   );
 };

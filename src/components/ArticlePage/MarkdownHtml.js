@@ -9,6 +9,7 @@ import {
   baselineBreakpoint,
 } from '../../config';
 import {
+  H3,
   H4,
   H5,
   H6,
@@ -21,6 +22,7 @@ import {
   Strong,
   Em,
   Asciinema,
+  ExtraInfo,
 } from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
@@ -100,12 +102,12 @@ const HighlightStyle = createGlobalStyle`
 
 const Html = styled.div`
   h1 {
-    ${H4.styles}
+    ${H3.styles}
     margin: ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
   }
   h2 {
-    ${H4.styles}
+    ${H3.styles}
     margin: ${7 * baselineSmall}px 0 ${baselineSpacing}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
     border-top: 1px solid #CCCCCC;
@@ -117,7 +119,7 @@ const Html = styled.div`
     }
   }
   h3 {
-    ${H5.styles}
+    ${H4.styles}
     margin: ${5 * baselineSmall}px 0 ${baselineSmall}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
 
@@ -126,9 +128,13 @@ const Html = styled.div`
     }
   }
   h4 {
-    ${H6.styles}
-    margin: ${baselineSpacing}px 0;
+    ${H5.styles}
+    margin: ${5 * baselineSmall}px 0 ${baselineSmall}px 0;
     max-width: ${props => props.theme.contentMaxWidth}px;
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      margin: ${5 * baselineLarge}px 0 ${baselineLarge}px 0;
+    }
   }
   h5 {
     ${H6.styles}
@@ -157,6 +163,7 @@ const Html = styled.div`
   blockquote {
     margin: ${baselineSpacing}px 0;
     padding-left: 10px;
+    padding-bottom: ${baselineSmall}px;
     border-left: 10px solid #eee;
 
     p {
@@ -168,6 +175,20 @@ const Html = styled.div`
     p + p {
       margin-top: ${baselineSpacing}px;
     }
+
+    // Increase the distance between p and the code block inside blockquote
+    p + .gatsby-highlight {
+      margin-top: ${2 * baselineSmall}px;
+
+      @media (min-width: ${baselineBreakpoint}px) {
+        margin-top: ${2 * baselineLarge}px;
+      }
+    }
+
+    @media (min-width: ${baselineBreakpoint}px) {
+      padding-bottom: ${baselineLarge}px;
+    }
+
   }
   > blockquote {
     max-width: ${props => props.theme.contentMaxWidth}px;
@@ -280,7 +301,7 @@ const Html = styled.div`
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   Fragment: React.Fragment,
-  components: { asciinema: Asciinema },
+  components: { asciinema: Asciinema, extrainfo: ExtraInfo },
 }).Compiler;
 
 const MarkdownHtml = props => {

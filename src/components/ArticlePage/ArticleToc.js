@@ -1,17 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { baselineBreakpoint } from '../../config';
 import { Ul, Li, Link } from '../../components';
 
 const TocLi = styled(Li)`
   margin-left: ${props => (props.depth - 1) * 12}px;
+  margin-top: ${props => (props.depth === 2 ? 6 : 0)}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${props => (props.depth === 2 ? 8 : 0)}px;
+  }
 `;
 
 const TocItem = props => {
   const { path, value, id, ...rest } = props;
   return (
     <TocLi {...rest}>
-      <Link to={`${path}#${id}`}>{value}</Link>
+      <Link to={`${path}#${id}`}>
+        {'›'} {value}
+      </Link>
     </TocLi>
   );
 };

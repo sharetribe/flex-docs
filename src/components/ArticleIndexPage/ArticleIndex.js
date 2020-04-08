@@ -46,8 +46,9 @@ const Paragraph = styled(P).attrs({
 `;
 
 const GridItem = props => {
-  const { pathPrefix, title, slug, ingress } = props;
-  const path = `${pathPrefix}${slug}/`;
+  const { pathPrefix, title, slug, category, ingress } = props;
+  const pathToArticle = pathPrefix || `${category}/`;
+  const path = `${pathToArticle}${slug}/`;
   return (
     <Box as="li">
       <Link neutral to={path}>

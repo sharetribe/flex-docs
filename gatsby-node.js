@@ -5,11 +5,34 @@
  */
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
-const { categories } = require('./src/config');
+const { categories, siteStructure } = require('./src/config');
 
 const dev = process.env.NODE_ENV === 'development';
 
-const allowedCategoryIds = categories.map(c => c.id);
+const flattenSubcategories = ({ id, subcategories = [] }) => {
+  const subcategoryReducer = (acc, cat) => [
+    ...acc,
+    ...flattenSubcategories(cat),
+  ];
+  return subcategories.reduce(subcategoryReducer, [id]);
+};
+
+// Netlify didn't know about Array.prototype.flat()
+const flatten = (array, depth = 1) => {
+  const f = (acc, cur) => {
+    if (Array.isArray(cur)) {
+      return [...acc, ...flatten(cur, depth - 1)];
+    } else {
+      return [...acc, cur];
+    }
+  };
+
+  return depth > 0 ? array.reduce(f, []) : array;
+};
+
+const allowedCategoryIds = flatten(
+  siteStructure.map(flattenSubcategories)
+).concat('background', 'guides', 'tutorials');
 
 // Uncomment to warn about circular dependencies.
 //
