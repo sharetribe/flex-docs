@@ -14,7 +14,7 @@ const fonts = {
     url: CircularStdBlack,
     format: 'woff2',
     styles: css`
-      font-family: CircularStd-Black, system-ui, sans-serif;
+      font-family: CircularStd, system-ui, sans-serif;
       font-weight: 800;
       font-style: normal;
     `,
@@ -23,7 +23,7 @@ const fonts = {
     url: CircularStdBlackItalic,
     format: 'woff2',
     styles: css`
-      font-family: CircularStd-BlackItalic, system-ui, sans-serif;
+      font-family: CircularStd, system-ui, sans-serif;
       font-weight: 800;
       font-style: italic;
     `,
@@ -32,7 +32,7 @@ const fonts = {
     url: CircularStdBold,
     format: 'woff2',
     styles: css`
-      font-family: CircularStd-Bold, system-ui, sans-serif;
+      font-family: CircularStd, system-ui, sans-serif;
       font-weight: 600;
       font-style: normal;
     `,
@@ -41,7 +41,7 @@ const fonts = {
     url: CircularStdBoldItalic,
     format: 'woff2',
     styles: css`
-      font-family: CircularStd-BoldItalic, system-ui, sans-serif;
+      font-family: CircularStd, system-ui, sans-serif;
       font-weight: 600;
       font-style: italic;
     `,
@@ -50,7 +50,7 @@ const fonts = {
     url: CircularStdMedium,
     format: 'woff2',
     styles: css`
-      font-family: CircularStd-Medium, system-ui, sans-serif;
+      font-family: CircularStd, system-ui, sans-serif;
       font-weight: 500;
       font-style: normal;
     `,
@@ -59,7 +59,7 @@ const fonts = {
     url: CircularStdMediumItalic,
     format: 'woff2',
     styles: css`
-      font-family: CircularStd-MediumItalic, system-ui, sans-serif;
+      font-family: CircularStd, system-ui, sans-serif;
       font-weight: 500;
       font-style: italic;
     `,
@@ -68,7 +68,7 @@ const fonts = {
     url: CircularStdBook,
     format: 'woff2',
     styles: css`
-      font-family: CircularStd-Book, system-ui, sans-serif;
+      font-family: CircularStd, system-ui, sans-serif;
       font-weight: 400;
       font-style: normal;
     `,
@@ -77,7 +77,7 @@ const fonts = {
     url: CircularStdBookItalic,
     format: 'woff2',
     styles: css`
-      font-family: CircularStd-BookItalic, system-ui, sans-serif;
+      font-family: CircularStd, system-ui, sans-serif;
       font-weight: 400;
       font-style: italic;
     `,
