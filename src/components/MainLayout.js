@@ -56,7 +56,7 @@ const SidebarArea = styled.div`
   transform: ${({ isOpen }) =>
     isOpen ? 'translateX(0)' : 'translateX(-100%)'};
   transition: transform 0.3s ease-in-out;
-  z-index: 10;
+  z-index: 9;
 
   @media (min-width: ${baselineBreakpoint}px) {
     display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
@@ -65,7 +65,6 @@ const SidebarArea = styled.div`
     width: 255px;
     height: 100vh;
     transform: unset;
-    z-index: 9;
     box-shadow: 6px 0px 16px -10px rgba(0, 0, 0, 0.05);
   }
   @media (min-width: 1024px) {
