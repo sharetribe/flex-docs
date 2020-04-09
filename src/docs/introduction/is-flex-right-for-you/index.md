@@ -23,11 +23,12 @@ Flex is not the right solution if your idea is to build an e-commerce
 store for selling products. Flex is also not the right fit if your
 concept is a discussion forum or a social network.
 
-## Flex focus: services, rentals, events
+Some marketplace types are faster to build with Flex than others. We're going to look into this next.
 
-**Flex has been built specifically for marketplace ideas focused on
-selling services, renting products or spaces, or buying tickets to
-events and experiences.**
+## Marketplaces for services, rentals and experiences
+
+**Flex functionality has been built with specific focus on for marketplaces for
+selling services, renting products or spaces, or offering various experiences.**
 
 These marketplaces can be either C2C ("Customer-to-Customer", also
 called peer-to-peer – individuals selling to other individuals), B2C
@@ -59,12 +60,13 @@ example, one of these popular platforms:
   hairdressers and beauty professionals (B2C)
 - [UrbanSitter](https://www.urbansitter.com/) – find a babysitter (B2C)
 
-For now, Flex is not a good solution for building a marketplace to sell
-physical products. So, if you're building the next
-[Amazon](https://www.amazon.com/) or [Alibaba](https://www.alibaba.com)
-for retailers, or something like [eBay](https://www.ebay.com/) or
-[Etsy](https://www.etsy.com/) for individuals, Flex is not the right
-solution for you.
+Building such a platform with Flex is very fast, as you can start from example templates – either from [FTW-daily](https://github.com/sharetribe/ftw-daily), an example of a rental marketplace, or from [FTW-hourly](https://github.com/sharetribe/ftw-hourly), an example of a service marketplace.
+
+## Marketplaces for selling physical or digital products
+
+You can use Flex for building a marketplace for selling physical products today, but it will probably take a bit longer for you to get your marketplace running, as Flex has less product marketplace specific functionality. For example, there are example templates for rentals and services, but no template for selling products yet. If you're building a marketplace for selling products, we recommend you to use [FTW-daily](https://github.com/sharetribe/ftw-daily) as a starting point.
+
+Features specific to marketplaces for selling physical products, like shopping cart, multiple shipping options, inventory management and product variations, can all be achieved with Flex, but you need to do some custom development to build these. Similarly, it's possible to build a marketplace that sells digital products, but you will need to do some custom devleopment to integrate a system for storing these files.
 
 ## Regular marketplaces and reverse marketplaces
 
@@ -75,7 +77,7 @@ compare different providers, choose the one they like, book a slot from
 their calendar, and pay. Alternatively, the customer might contact one
 of the providers (or several of them) and start a negotiation process to
 determine the final price. This is how all the 10 popular marketplaces
-listed above work. Flex has been built to support these use cases.
+listed above work. Flex works great for all these use cases.
 
 Some marketplaces have another kind of workflow, which can be called a
 "reverse marketplace". Popular reverse marketplaces include
@@ -89,9 +91,7 @@ customer then chooses one of the bids and starts working with the
 provider in question, eventually making a payment based on the invoice
 they provide.
 
-**If you're building a reverse marketplace, Flex is not (yet) the right
-fit for you.** This workflow is quite different from the regular
-marketplace, and it affects the entire design of your platform.
+**If you're building a reverse marketplace, it's possible to achieve it with Flex, but it takes a lot more custom development work, compared to building a regular marketplace.** The reverse workflow is quite different from the regular flow, and it affects the entire design of your platform.
 
 To learn more about the differences between regular and reverse
 marketplaces, take a look at
@@ -99,16 +99,13 @@ marketplaces, take a look at
 
 ## Country support
 
-You can use Flex in any country around the world. However, **if you want
-Flex to process online payments your platform and all your providers
+You can use Flex in any country around the world. However, **if you want to use the Flex default payment system to process online payments, your platform and all your providers
 need to be in one of the
-[countries supported by Stripe](https://stripe.com/global)** (excluding
-"invite only" countries). You can have customers in countries that
+[countries supported by Stripe Platform Accounts](https://stripe.com/docs/connect/custom-accounts#requirements)**. You can have customers in countries that
 Stripe doesn't support, but if providers need to receive money from your
 platform, they have to be in a Stripe-supported country.
 
-In the future, it will likely be possible for you to integrate a payment
-gateway of your choice to Flex, but this is not possible yet.
+If you or some of your providers are not in a Stripe-supported country, it's possible for you to integrate your own payment gateway to Flex. However, this requires quite a lot of custom development work.
 
 ## Are you ready for Flex?
 
@@ -121,8 +118,7 @@ with Flex. If you're a developer or have one in your team, you can do
 this yourself. If that's not the case, you need to hire a developer to
 do this work. In this case, the minimum budget for building your MVP
 (Minimum Viable Platform) with Flex is around \$5,000 (and depending on
-your exact requirements, the cost could be a lot more). Typically, it
-takes 1–2 months from the day you start development to launch your MVP.
+your exact requirements, the cost could be a lot more – for instance, for product or reverse marketplaces the minimum is probably closer to $10,000). Typically, it takes 1–2 months from the day you start development to launch your MVP.
 
 If you're not ready to invest in hiring a developer, Flex is not the
 right solution for you. Instead, you could try out Sharetribe Go, which
