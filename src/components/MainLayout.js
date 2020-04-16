@@ -30,8 +30,6 @@ const WrapperTopbar = styled.div`
 `;
 
 const TopbarArea = styled.div`
-  width: 100vw;
-
   @media (min-width: ${baselineBreakpoint}px) {
     z-index: 10;
   }
