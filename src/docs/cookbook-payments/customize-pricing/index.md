@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing
-updated: 2019-12-03
+updated: 2020-04-16
 category: cookbook-payments
 ingress:
   Flex allows lots of flexibility for your providers in terms of how
@@ -63,12 +63,13 @@ CLI, see the
 [Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 tutorial.
 
-> Note: `set-line-items-and-total` cannot be combined with other pricing
-> actions that rely on the booking length or the quantity of units. In
-> order to take custom pricing into use, price calculations that rely on
-> booking length or quantity of units also need to be converted into
-> using custom pricing. Commissions and price negotiation however don't
-> require any changes as they can be combined with custom pricing.
+> **Note**: `set-line-items-and-total` cannot be combined with other
+> pricing actions that rely on the booking length or the quantity of
+> units. In order to take custom pricing into use, price calculations
+> that rely on booking length or quantity of units also need to be
+> converted into using custom pricing. Commissions and price negotiation
+> however don't require any changes as they can be combined with custom
+> pricing.
 
 ## 2. Listing extended data
 
@@ -78,6 +79,37 @@ listings. See the
 [Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
 cookbook to read how to extend the listing data model with extended
 data.
+
+For the sake of being able to follow this guide, you could add
+hard-coded cleaningFee to EditListingPricingPanel:
+
+```shell
+└── src
+    └── components
+        └── EditListingPricingPanel
+            └── EditListingPricingPanel.js
+```
+
+On submit, save price and cleaningFee:
+
+```diff
+   const form = priceCurrencyValid ? (
+     <EditListingPricingForm
+       className={css.form}
+       initialValues={{ price }}
+-      onSubmit={onSubmit}
++      onSubmit={values => {
++        const { price } = values;
++        const updatedValues = {
++          price,
++          publicData: { cleaningFee: { amount: 2000, currency: 'USD' } },
++        };
++        onSubmit(updatedValues);
++      }}
+       onChange={onChange}
+       saveActionMsg={submitButtonText}
+       disabled={disabled}
+```
 
 ## 3. Change current booking model to use custom pricing
 
@@ -89,8 +121,16 @@ client sends in the booking initiation request.
 
 Instead of the just listing ID, now we're going to pass the actual line
 items in the transaction initiate request. To achieve this
-`CheckoutPage` has to be modified a bit. Add the following lines to the
-current imports at the top of the `CheckoutPage.js` file:
+`CheckoutPage` has to be modified a bit.
+
+```shell
+└── src
+    └── containers
+        └── CheckoutPage
+            └── CheckoutPage.js
+```
+
+Add the following lines to the current imports at the top of the file:
 
 ```js
 import { nightsBetween, daysBetween } from '../../util/dates';
@@ -137,8 +177,8 @@ customPricingParams(params) {
 
 ```
 
-When it's in place the method can be used to resolve new kind of request
-params.
+When it's in place and the method is bind to `this` in constructor, it
+can be used to resolve new kind of request params.
 
 In the `loadInitialData` method:
 
@@ -175,32 +215,55 @@ listing page in your marketplace looks like this:
 This guide expects that the cleaning fee price is stored in listing
 public data in an object with two keys: `amount` and `currency`. The
 `amount` attribute holds the price in subunits whereas `currency` holds
-the currency code. For example, with a cleaning fee of 20€ the subunit
+the currency code. For example, with a cleaning fee of \$20 the subunit
 amount is 2000 cents.
 
 ```js
 publicData: {
-  cleaningFee: { amount: 2000, currency: 'EUR' }
+  cleaningFee: { amount: 2000, currency: 'USD' }
 }
 ```
 
 Begin with making a few changes to the `util/types.js` and `en.json`
 files (or some other transaltion file in case English is not the
-language of your marketplace). In `util/types.js`, add a new line item
+language of your marketplace). In `util/types.js`, add a new line-item
 code for the cleaning fee:
+
+```shell
+└── src
+    └── util
+        └── types.js
+```
 
 ```js
 export const LINE_ITEM_CLEANING_FEE = 'line-item/cleaning-fee';
 ```
 
-> When selecting a code for your custom line item, remember that Flex
-> requires the codes to be prefixed with _line-item/_ and the maximum
-> length including the prefix is 64 characters. Other than that there
-> are no restrictions but it's suggested that _kebab-case_ is used when
-> the code consists of multiple words.
+> **Note**: When selecting a code for your custom line-item, remember
+> that Flex requires the codes to be prefixed with _line-item/_ and the
+> maximum length including the prefix is 64 characters. Other than that
+> there are no restrictions but it's suggested that _kebab-case_ is used
+> when the code consists of multiple words.
+
+<extrainfo title="Should I add the LINE_ITEM_CLEANING_FEE to LINE_ITEMS array?">
+
+If the line-item isn't included to the LINE_ITEMS array, it will be
+rendered with `LineItemUnknownItemsMaybe` component in the
+`BookingBreakdown` component. If you add the new line-item to the list,
+it is considered as known item. In that case, you need to create your
+own presentational component for it inside the `BookingBreakdown`
+component.
+
+</extrainfo>
 
 We'll be adding an "Add cleaning" checkbox to the booking section on
 listing page. Therefore, add the following translation to `en.json`:
+
+```shell
+└── src
+    └── translations
+        └── en.json
+```
 
 ```json
 "BookingDatesForm.cleaningFee": "Add cleaning",
@@ -209,6 +272,13 @@ listing page. Therefore, add the following translation to `en.json`:
 In order to add the cleaning fee option to the booking form on listing
 page, first add the following lines to the bottom of the imports in the
 `BookingPanel` component:
+
+```shell
+└── src
+    └── components
+        └── BookingPanel
+            └── BookingPanel.js
+```
 
 ```js
 import { types as sdkTypes } from '../../util/sdkLoader';
@@ -221,7 +291,9 @@ will resolve the the price of the cleaning fee if one is defined for the
 current listing:
 
 ```js
-const cleaningFeeData = listing.attributes.publicData.cleaningFee;
+const cleaningFeeData = listing.attributes.publicData
+  ? listing.attributes.publicData.cleaningFee
+  : null;
 const { amount: cleaningAmount, currency: cleaningCurrency } =
   cleaningFeeData || {};
 const cleaningFee =
@@ -251,31 +323,43 @@ const handleSubmit = values => {
 Pass `cleaningFee` and `handleSubmit` to the `BookingDatesForm`
 component as follows:
 
-```jsx
-<BookingDatesForm
-  className={css.bookingForm}
-  submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
-  unitType={unitType}
-  onSubmit={handleSubmit}
-  price={price}
-  isOwnListing={isOwnListing}
-  timeSlots={timeSlots}
-  fetchTimeSlotsError={fetchTimeSlotsError}
-  cleaningFee={cleaningFee}
-/>
+```diff
+    <BookingDatesForm
+      className={css.bookingForm}
+      formId="BookingPanel"
+      submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
+      unitType={unitType}
+-     onSubmit={onSubmit}
++     onSubmit={handleSubmit}
+      price={price}
+      isOwnListing={isOwnListing}
+      timeSlots={timeSlots}
+      fetchTimeSlotsError={fetchTimeSlotsError}
++     cleaningFee={cleaningFee}
+    />
 ```
 
 In the `BookingDatesForm` component file import the `FieldCheckbox`
 component and the `formatMoney` utility function:
 
-```js
-import {
-  Form,
-  PrimaryButton,
-  FieldDateRangeInput,
-  FieldCheckbox,
-} from '../../components';
-import { formatMoney } from '../../util/currency';
+```shell
+└── src
+    └── forms
+        └── BookingDatesForm
+            └── BookingDatesForm.js
+```
+
+```diff
+ import config from '../../config';
+-import { Form, PrimaryButton, FieldDateRangeInput } from '../../components';
++import {
++  Form,
++  PrimaryButton,
++  FieldDateRangeInput,
++  FieldCheckbox,
++} from '../../components';
++import { formatMoney } from '../../util/currency';
+ import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 ```
 
 Add a new entry to the component props map: `cleaningFee`. It holds the
@@ -283,6 +367,14 @@ price of the listing's cleaning fee in a `Money` object. Also we need to
 resolve the current value for an `additionalItems` input in the form and
 a label from the translations so that we can add an input for cleaning
 fee to the form.
+
+```diff
+      timeSlots,
+      fetchTimeSlotsError,
++     cleaningFee,
+    } = fieldRenderProps;
+    const { startDate, endDate } = values && values.bookingDates ? values.bookingDates : {};
+```
 
 To resolve the cleaning fee input's value from the form's value object,
 add the following lines to the `render` function of the `FinalForm`
@@ -300,7 +392,7 @@ const selectedCleaningFee =
 Add the resolved `selectedCleaningFee` as a `cleaningFee` attribute to
 the bookingData object:
 
-```js
+```diff
 const bookingData =
   startDate && endDate
     ? {
@@ -312,7 +404,7 @@ const bookingData =
         // NOTE: If unitType is `line-item/units`, a new picker
         // for the quantity should be added to the form.
         quantity: 1,
-        cleaningFee: selectedCleaningFee,
++       cleaningFee: selectedCleaningFee,
       }
     : null;
 ```
@@ -336,7 +428,7 @@ booking, for example right after the `FieldDateRangeInput` inside the
   <div className={css.cleaningFee}>
     <FieldCheckbox
       className={css.cleaningFeeLabel}
-      id={`${form}.cleaningFee`}
+      id={`${formId}.cleaningFee`}
       label={cleaningFeeLabel}
       name={'additionalItems'}
       value={'cleaningFee'}
@@ -374,17 +466,52 @@ The input can be styled by adding the following style definitions to
 }
 ```
 
-The next task is to modify the
-[EstimatedBreakdownMaybe](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/BookingDatesForm/EstimatedBreakdownMaybe.js)
-component to support the cleaning fee and add a new line item type to
-the booking breakdown. In the `EstimatedBreakdownMaybe` component:
+The next task is to modify the `EstimatedBreakdownMaybe` component to
+support the cleaning fee and add a new line item type to the booking
+breakdown.
+
+```shell
+└── src
+    └── forms
+        └── BookingDatesForm
+            └── EstimatedBreakdownMaybe.js
+```
+
+In the `EstimatedBreakdownMaybe` component:
 
 - Import `LINE_ITEM_CLEANING_FEE` from `util/types.js`
-- Add a new property to the component: `cleaningFee`
+- Spread the `cleaningFee` out of `props.bookingData`:
+
+  ```js
+    const EstimatedBreakdownMaybe = props => {
+      const { unitType, unitPrice, startDate, endDate, quantity, cleaningFee } = props.bookingData;
+  ```
+
 - Add `cleaningFee` to the parameter list in the `estimatedTransaction`
   function definition and invocation.
 
-Now the `estimatedTotalPrice` function can be written as follows:
+  <!-- prettier-ignore -->
+  ```js
+  const tx = estimatedTransaction(unitType, startDate, endDate, unitPrice, quantity, cleaningFee);
+  ```
+
+Now the `estimatedTotalPrice` function can be renamed as
+_"estimatedRentalPrice"_:
+
+```diff
+- const estimatedTotalPrice = (unitPrice, unitCount) => {
++ const estimatedRentalPrice = (unitPrice, unitCount) => {
+    const numericPrice = convertMoneyToNumber(unitPrice);
+    const numericTotalPrice = new Decimal(numericPrice).times(unitCount).toNumber();
+    return new Money(
+      convertUnitToSubUnit(numericTotalPrice, unitDivisor(unitPrice.currency)),
+      unitPrice.currency
+    );
+  };
+```
+
+Then create a new `estimatedTotalPrice` function that includes
+`cleaningFee`:
 
 ```js
 const estimatedTotalPrice = (unitPrice, unitCount, cleaningFee) => {
@@ -430,7 +557,6 @@ const cleaningFeeLineItem = {
   lineTotal: cleaningFee,
   reversal: false,
 };
-
 const cleaningFeeLineItemMaybe = cleaningFee
   ? [cleaningFeeLineItem]
   : [];
@@ -442,7 +568,7 @@ const lineItems = [
     includeFor: ['customer', 'provider'],
     unitPrice: unitPrice,
     quantity: new Decimal(unitCount),
-    lineTotal: totalPrice,
+    lineTotal: estimatedRentalPrice(unitPrice, unitCount),
     reversal: false,
   },
 ];
@@ -450,6 +576,23 @@ const lineItems = [
 
 Finally add the `lineItems` array to the object returned by the
 function.
+
+```diff
+  payoutTotal: totalPrice,
+- lineItems: [
+-   {
+-     code: unitType,
+-     includeFor: ['customer', 'provider'],
+-     unitPrice: unitPrice,
+-     quantity: new Decimal(unitCount),
+-     lineTotal: totalPrice,
+-     reversal: false,
+-    },
+-  ],
++  lineItems,
+   transitions: [
+
+```
 
 Now the estimated transaction is updated with the cleaning fee. FTW by
 default will render the added line item in the booking breakdown. It
@@ -480,6 +623,13 @@ added in step 3. to resolve the cleaning fee line item based on a
 `cleaningFee` value passed in the method params:
 
 ```js
+/**
+ * Constructs a request params object that can be used when creating bookings
+ * using custom pricing.
+ * @param {} params An object that contains bookingStart, bookingEnd and listing
+ * @return a params object for custom pricing bookings
+ */
+
 customPricingParams(params) {
   const { bookingStart, bookingEnd, listing, cleaningFee, ...rest } = params;
   const { amount, currency } = listing.attributes.price;
@@ -539,19 +689,20 @@ fetchSpeculatedTransaction(
 Add the cleaning fee also to the `orderParams`:
 
 ```js
-  const cleaningFeeLineItem = speculatedTransaction.attributes.lineItems.find(
-      item => item.code === LINE_ITEM_CLEANING_FEE
-    );
-    const cleaningFee = cleaningFeeLineItem ? cleaningFeeLineItem.unitPrice : null;
+const cleaningFeeLineItem = speculatedTransaction.attributes.lineItems.find(
+  item => item.code === LINE_ITEM_CLEANING_FEE
+);
+const cleaningFee = cleaningFeeLineItem
+  ? cleaningFeeLineItem.unitPrice
+  : null;
 
-    const orderParams = this.customPricingParams({
-      listing: pageData.listing,
-      bookingStart: tx.booking.attributes.start,
-      bookingEnd: tx.booking.attributes.end,
-      ...optionalPaymentParams,
-      cleaningFee,
-    });
-};
+const orderParams = this.customPricingParams({
+  listing: pageData.listing,
+  bookingStart: tx.booking.attributes.start,
+  bookingEnd: tx.booking.attributes.end,
+  ...optionalPaymentParams,
+  cleaningFee,
+});
 ```
 
 ## 6. Validate booking price on transaction page
@@ -569,6 +720,13 @@ total payout of the booking does not follow the listing pricing.
 Add the price validatio component by creating a new file named
 `InvalidPriceMessageMaybe.js` in the `src/componets/TransactionPanel`
 directory:
+
+```shell
+└── src
+    └── componets
+        └── TransactionPanel
+            └── InvalidPriceMessageMaybe.js
+```
 
 ```jsx
 import React from 'react';
@@ -707,8 +865,9 @@ Inside the `<div className={css.bookingDetailsMobile}>` element, below
 </div>
 ```
 
-And the same snippet again under `BreakdownMaybe` inside the
-`<div className={css.asideDesktop}>` element for larger viewports.
+And the same snippet again under the second `BreakdownMaybe` inside the
+<br />**`<div className={css.asideDesktop}>`** element for larger
+viewports.
 
 And that's it! Now the a cleaning fee line item can be added to a
 transaction and it is treated just like the other line items when it
