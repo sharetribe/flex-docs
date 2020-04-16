@@ -34,7 +34,7 @@ other components and forms are purely
 This makes it easier to customize UI components - you don't need to be
 aware of the complexity related to Redux setup when you just want to
 touch the behavior of some visual component. In those cases, you can
-just head to `scr/components/` or `src/forms/` directory and you can see
+just head to `src/components/` or `src/forms/` directory and you can see
 from there what props are available for each component when they are
 rendered.
 
