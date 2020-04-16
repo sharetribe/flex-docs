@@ -1,7 +1,7 @@
 ---
 title: Extend listing data in FTW
 slug: extend-listing-data-in-ftw
-updated: 2019-05-02
+updated: 2020-04-16
 category: cookbook-data-model
 ingress:
   This guide describes how to use use extended data to expand the
@@ -74,7 +74,15 @@ between the _amenities_ and _policy_ tabs.
 
 First lets declare the tab in `EditListingWizardTab`:
 
+```shell
+└── src
+    └── components
+        └── EditListingWizard
+            └── EditListingWizardTab.js
+```
+
 ```js
+export const AVAILABILITY = 'availability';
 export const DESCRIPTION = 'description';
 export const FEATURES = 'features';
 export const CAPACITY = 'capacity';
@@ -91,6 +99,7 @@ export const SUPPORTED_TABS = [
   POLICY,
   LOCATION,
   PRICING,
+  AVAILABILITY,
   PHOTOS,
 ];
 ```
@@ -98,6 +107,13 @@ export const SUPPORTED_TABS = [
 Now in `EditListingWizard` we can take that tab declaration into use.
 Import the tab name variable from `EditListingWizardTab` and add it to
 the `TABS` array.
+
+```shell
+└── src
+    └── components
+        └── EditListingWizard
+            └── EditListingWizard.js
+```
 
 ```js
 export const TABS = [
@@ -107,6 +123,7 @@ export const TABS = [
   POLICY,
   LOCATION,
   PRICING,
+  ...availabilityMaybe,
   PHOTOS,
 ];
 ```
@@ -128,6 +145,8 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelLocation';
   } else if (tab === PRICING) {
     key = 'EditListingWizard.tabLabelPricing';
+  } else if (tab === AVAILABILITY) {
+    key = 'EditListingWizard.tabLabelAvailability';
   } else if (tab === PHOTOS) {
     key = 'EditListingWizard.tabLabelPhotos';
   }
@@ -155,6 +174,7 @@ completed or not:
  */
 const tabCompleted = (tab, listing) => {
   const {
+    availabilityPlan,
     description,
     geolocation,
     price,
@@ -181,6 +201,8 @@ const tabCompleted = (tab, listing) => {
       );
     case PRICING:
       return !!price;
+    case AVAILABILITY:
+      return !!availabilityPlan;
     case PHOTOS:
       return images && images.length > 0;
     default:
@@ -193,17 +215,32 @@ Next task is to add form and panel components that render the capacity
 tab. As for the form, let's create a `EditListingCapacityForm`
 component:
 
+```shell
+└── src
+    └── forms
+        ├── index.js
+        └── EditListingCapacityForm
+            ├── EditListingCapacityForm.js
+            └── EditListingCapacityForm.css
+```
+
 ```jsx
 import React from 'react';
 import { arrayOf, bool, func, shape, string } from 'prop-types';
 import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
-import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
+import {
+  intlShape,
+  injectIntl,
+  FormattedMessage,
+} from '../../util/reactIntl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import { Form, Button, FieldSelect } from '../../components';
 import { required } from '../../util/validators';
 
+// Create this file using EditListingFeaturesForm.css
+// as a template.
 import css from './EditListingCapacityForm.css';
 
 export const EditListingCapacityFormComponent = props => (
@@ -309,6 +346,15 @@ capacity editing form we'll add a panel component which is then used in
 `EditListingWizardTab` to render the wizard phase. This component we'll
 call `EditListingCapacityPanel`:
 
+```shell
+└── src
+    └── components
+        ├── index.js
+        └── EditListingCapacityForm
+            ├── EditListingCapacityPanel.js
+            └── EditListingCapacityPanel.css
+```
+
 ```jsx
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -319,6 +365,8 @@ import { ListingLink } from '../../components';
 import { EditListingCapacityForm } from '../../forms';
 import config from '../../config.js';
 
+// Create this file using EditListingDescriptionPanel.css
+// as a template.
 import css from './EditListingCapacityPanel.css';
 
 const EditListingCapacityPanel = props => {
@@ -400,7 +448,7 @@ export default EditListingCapacityPanel;
 ```
 
 In the panel component we check for an initial capacity value from the
-`public_data` property of the listing. In the submit handler the new
+`publicData` property of the listing. In the submit handler the new
 capacity value is stored in the same property. The updated listing
 object is eventually passed to the `updateListingDraft` and
 `requestUpdateListing` functions in the `EditListingDetails.duck.js`
@@ -470,6 +518,15 @@ Flex web template repo easier as there's less chances for merge
 conflicts. So, let's create a `SectionCapacity` component in the
 `src/containers/ListingPage/` directory:
 
+```shell
+└── src
+    └── containers
+        └── ListingPage
+            ├── SectionCapacity.js
+            ├── ListingPage.js
+            └── ListingPage.css
+```
+
 ```jsx
 import React from 'react';
 import { array, shape, string } from 'prop-types';
@@ -517,7 +574,10 @@ import SectionCapacity from './SectionCapacity';
 <div className={css.mainContent}>
   {/* other sections */}
 
-  <SectionCapacity publicData={publicData} options={capacityOptions} />
+  <SectionCapacity
+    publicData={publicData}
+    options={capacityOptionsConfig}
+  />
 
   {/* other sections */}
 </div>
@@ -526,12 +586,12 @@ import SectionCapacity from './SectionCapacity';
 ```js
 ListingPageComponent.defaultProps = {
   // other default props
-  capacityOptions: config.custom.capacityOptions,
+  capacityOptionsConfig: config.custom.capacityOptions,
 };
 
 ListingPageComponent.propTypes = {
   // other props
-  capacityOptions: array,
+  capacityOptionsConfig: array,
 };
 ```
 
@@ -541,6 +601,15 @@ options from the custom config (`marketplace-custom-config.js`). This
 way the listing page test can define it's own capacity options that are
 in line with test data used in the test and custom config changes will
 not affect test results.
+
+So, you can just spread the `capacityOptionsConfig` property out of
+props of ListingPage component:
+
+```diff
+    amenitiesConfig,
++   capacityOptionsConfig,
+  } = this.props;
+```
 
 And voilà, we have listing capacity presented in the listing page!
 
