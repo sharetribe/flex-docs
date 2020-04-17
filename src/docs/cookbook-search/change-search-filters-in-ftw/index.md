@@ -1,7 +1,7 @@
 ---
 title: Change search filters in FTW
 slug: change-search-filters-in-ftw
-updated: 2019-07-17
+updated: 2020-04-17
 category: cookbook-search
 ingress:
   This guide describes how to change the search filters in Flex Template
@@ -19,8 +19,10 @@ _price_, _date range_, _select single_ and _select multiple_. Select
 single and select multiple filters are generic in a way that they can be
 used to filter search results using different kinds of data. The price
 and date range filters on the other hand are only used for filtering by
-price and date range. Keyword filter is a bit special case - there is
-more info about it later.
+price and date range. Listings with hourly bookings can also be filtered
+by their availability in a date range with an optional minimum duration.
+Keyword filter is a bit special case - there is more info about it
+later.
 
 > **Note:** price filter should be configured from
 > `src/marketplace-custom-config.js`. Current maximum value for the
