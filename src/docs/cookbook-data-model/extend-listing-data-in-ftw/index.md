@@ -35,7 +35,7 @@ So, you have come up with a great new extension to the listing data
 model, fantastic! Depending of the type of data the new attribute is
 going to be used for it might make sense to define and store the
 possible values for the attribute. In case the data will be free form
-text there might not be use for this but in our case we wan't to fix the
+text there might not be use for this but in our case we want to fix the
 possible values that can be used for the capacity. Also if the attribute
 will be used as a search filter it helps to keep track of the possible
 values somewhere.
@@ -160,7 +160,7 @@ already provided in order to tell which tabs are completed. As we will
 be storing the capacity information in the listing's _public data_
 property (see the [Extended data](/references/extended-data/) reference
 for more info on different extended data types) we shall look into that
-property when resolving whether the capacity tab has alerady been
+property when resolving whether the capacity tab has already been
 completed or not:
 
 ```js
@@ -341,7 +341,7 @@ export default compose(injectIntl)(EditListingCapacityFormComponent);
 The form component receives `capacityOptions` as a prop which are used
 to populate a `FieldSelect` component for selecting the capacity. The
 `EditListingCapacityForm` is also added to the `src/forms/index.js` file
-so that it can easilly be referenced from other components. To use the
+so that it can easily be referenced from other components. To use the
 capacity editing form we'll add a panel component which is then used in
 `EditListingWizardTab` to render the wizard phase. This component we'll
 call `EditListingCapacityPanel`:
