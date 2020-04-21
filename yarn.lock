@@ -5859,11 +5859,11 @@ gatsby-plugin-catch-links@^2.1.21:
     escape-string-regexp "^1.0.5"
 
 gatsby-plugin-google-tagmanager@^2.1.20:
-  version "2.1.20"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-2.1.20.tgz#3d79de1c79005a2a5fa36fc6f6e5e92a6176a585"
-  integrity sha512-q0gOIIjsQYtuaNsRkwrD+ivXE6FA20Fgs6C77m97QMswet2xEZt+hUn3snHb84jjenRk9kac5Df8cpTlZ3kBCA==
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-2.2.3.tgz#57ef1b6762a7d346689e12e33958df5c3ba4c9fa"
+  integrity sha512-Hru8lCnLbolwsex/pzL5XMHch8kcWoi5lxHxdx3mTvogXAfTs14pG9LRbfkOe5jxeJV9Lm899if08AiNB5M8Sg==
   dependencies:
-    "@babel/runtime" "^7.7.6"
+    "@babel/runtime" "^7.8.7"
 
 gatsby-plugin-manifest@^2.2.33:
   version "2.2.33"
