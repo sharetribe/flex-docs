@@ -40,6 +40,8 @@ journeys in detail.
 
 ## Content Creation Journey
 
+![Content Creation Journey](./content-creation-journey.png)
+
 A marketplace is defined by its content: the types of users and listings
 communicate what your marketplace is all about. Listings, in particular,
 are crucial. They are the description of the product or service that a
@@ -47,6 +49,10 @@ provider offers on the marketplace and, ultimately, serve as the
 initiation point for a transaction on your marketplace. Listings can
 take many forms, such as the storefront of a service provider, an
 experience itinerary, or a product page.
+
+<userjourneycarousel title="Content creation Journey">
+
+</userjourneycarousel>
 
 ## Discovery Journey
 
@@ -84,6 +90,9 @@ Use those images as
 ![Alt text for the image (for the screen readers)](./the-name-of-the-image.png)
 ```
 
+Note: the column width is max 635px, so, ideally images should be that
+wide.
+
 Provide a link to the assets file (in directory: `static/*`):
 
 ```
@@ -113,3 +122,13 @@ Content that is only visible if the title is clicked.
 Content that is only visible if the title is clicked.
 
 </extrainfo>
+
+I had to add userjourneycarousel with following syntax since single line
+component were treated as inline (i.e. they were wrapped inside `<p>`
+element.)
+
+```
+<userjourneycarousel title="Content creation Journey">
+
+</userjourneycarousel>
+```
