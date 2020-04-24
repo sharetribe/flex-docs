@@ -100,10 +100,6 @@ multiple listings, you can allow each provider to also have a profile
 page, which acts as their storefront, listing all their listings. You
 can allow each provider to have as many listings as you want.
 
-If your vendors are professionals with lots of listings, you can offer
-them a tool that allows them to import a large number of listings to
-their marketplace at once.
-
 ## Flexible pricing
 
 Flex allows lots of flexibility for your providers in terms of how they
