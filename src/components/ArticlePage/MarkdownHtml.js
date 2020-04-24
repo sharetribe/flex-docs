@@ -23,6 +23,7 @@ import {
   Em,
   Asciinema,
   ExtraInfo,
+  CarouselUserJourney,
 } from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
@@ -304,6 +305,7 @@ const renderAst = new rehypeReact({
   components: {
     asciinema: Asciinema,
     extrainfo: ExtraInfo,
+    userjourneycarousel: CarouselUserJourney,
   },
 }).Compiler;
 
