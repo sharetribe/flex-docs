@@ -301,7 +301,10 @@ const Html = styled.div`
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   Fragment: React.Fragment,
-  components: { asciinema: Asciinema, extrainfo: ExtraInfo },
+  components: {
+    asciinema: Asciinema,
+    extrainfo: ExtraInfo,
+  },
 }).Compiler;
 
 const MarkdownHtml = props => {

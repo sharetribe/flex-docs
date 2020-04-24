@@ -92,6 +92,13 @@ exports.themeLight = {
   baselineDevColor1: 'rgba(0, 0, 0, 0.2)',
   baselineDevColor2: 'rgba(0, 0, 0, 0.1)',
 
+  // Carousel
+  dot: '#d8d8d8',
+  activeDot: '#0080ff',
+  arrow: '#9b9b9b',
+  arrowDisabled: '#ccc',
+  slideImgBorderColor: '#dedede',
+
   // Content size and spacing
   pageContentMaxWidth: 1135,
   contentMaxWidth: 720,
