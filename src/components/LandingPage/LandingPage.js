@@ -245,23 +245,17 @@ const LandingPage = props => {
             </SectionLinks>
           </StyledSection>
 
-          {/* COOKBOOK */}
+          {/* FLEX DESIGN TOOLKIT */}
           <StyledSection>
             <SectionHeading>
-              <UiText id="LandingPage.cookbook.title" />
+              <UiText id="LandingPage.designToolkit.title" />
             </SectionHeading>
             <StyledSectionDescription>
-              <UiText id="LandingPage.cookbook.description" />
+              <UiText id="LandingPage.designToolkit.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/cookbook-data-model/extend-listing-data-in-ftw/">
-                <UiText id="LandingPage.cookbook.extendListingData" />
-              </SectionLink>
-              <SectionLink to="/cookbook-payments/customize-pricing/">
-                <UiText id="LandingPage.cookbook.customizePricing" />
-              </SectionLink>
-              <SectionLink to="/cookbook-transaction-process/change-transaction-process-in-ftw/">
-                <UiText id="LandingPage.cookbook.changeTransactionProcess" />
+              <SectionLink to="/design-toolkit/user-journey/">
+                <UiText id="LandingPage.designToolkit.userJourney" />
               </SectionLink>
             </SectionLinks>
           </StyledSection>
@@ -285,6 +279,15 @@ const LandingPage = props => {
             </SectionLink>
             <SectionLink to="/ftw-introduction/customization-checklist/">
               <UiText id="LandingPage.bestPicks.ftwCustomizationChecklist" />
+            </SectionLink>
+            <SectionLink to="/cookbook-data-model/extend-listing-data-in-ftw/">
+              <UiText id="LandingPage.bestPicks.extendListingData" />
+            </SectionLink>
+            <SectionLink to="/cookbook-payments/customize-pricing/">
+              <UiText id="LandingPage.bestPicks.customizePricing" />
+            </SectionLink>
+            <SectionLink to="/cookbook-transaction-process/change-transaction-process-in-ftw/">
+              <UiText id="LandingPage.bestPicks.changeTransactionProcess" />
             </SectionLink>
             <SectionLink to="/flex-cli/getting-started-with-flex-cli/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFlexCLi" />
