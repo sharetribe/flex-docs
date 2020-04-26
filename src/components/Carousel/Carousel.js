@@ -53,7 +53,7 @@ const Carousel = props => {
   const [state, setState] = useState({
     activeSlide: 0,
   });
-  const { title, children, ...restProps } = props;
+  const { title, children, maxWidth, ...restProps } = props;
   const { activeSlide } = state;
   const slideCount = React.Children.count(children);
   const slideWidth = `${100 / slideCount}%`;
@@ -75,10 +75,13 @@ const Carousel = props => {
       activeSlide: activeSlide === 0 ? lastSlide : activeSlide - 1,
     });
 
+  const slideMaxWidth = maxWidth
+    ? { style: { maxWidth, margin: '0 auto' } }
+    : {};
   return (
     <CarouselSection {...restProps}>
       <Title>{title}</Title>
-      <SlideViewport>
+      <SlideViewport {...slideMaxWidth}>
         <Slides slideCount={slideCount} translateX={translateX}>
           {React.Children.map(children, child => {
             return React.cloneElement(child, { width: slideWidth });

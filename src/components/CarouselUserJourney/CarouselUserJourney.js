@@ -5,7 +5,7 @@ import IMG1 from './user-journey-landingpage.png';
 
 const CarouselUserJourney = props => {
   return (
-    <Carousel {...props}>
+    <Carousel {...props} maxWidth="375px">
       <Slide imgSrc={IMG1} imgAlt="asdf">
         <h3>Testing1</h3>
         <p>Lorem ipsum1</p>
