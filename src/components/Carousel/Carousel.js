@@ -75,12 +75,15 @@ const Carousel = props => {
       activeSlide: activeSlide === 0 ? lastSlide : activeSlide - 1,
     });
 
+  const slideNumber = state.activeSlide + 1;
   const slideMaxWidth = maxWidth
     ? { style: { maxWidth, margin: '0 auto' } }
     : {};
   return (
     <CarouselSection {...restProps}>
-      <Title>{title}</Title>
+      <Title>
+        {title} {slideNumber}/{slideCount}
+      </Title>
       <SlideViewport {...slideMaxWidth}>
         <Slides slideCount={slideCount} translateX={translateX}>
           {React.Children.map(children, child => {
