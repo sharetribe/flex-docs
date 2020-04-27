@@ -35,6 +35,7 @@ export { Carousel, CarouselSlide } from './Carousel';
 // about circular dependencies to aid in finding problematic
 // dependencies.
 export { default as BaseLayout } from './BaseLayout';
+export { default as CarouselContentCreation } from './CarouselContentCreation';
 export { default as CarouselUserJourney } from './CarouselUserJourney';
 export { default as MainLayout } from './MainLayout';
 export { default as Topbar } from './Topbar/Topbar';

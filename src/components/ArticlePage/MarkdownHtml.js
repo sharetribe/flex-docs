@@ -23,6 +23,7 @@ import {
   Em,
   Asciinema,
   ExtraInfo,
+  CarouselContentCreation,
   CarouselUserJourney,
 } from '../../components';
 
@@ -305,6 +306,7 @@ const renderAst = new rehypeReact({
   components: {
     asciinema: Asciinema,
     extrainfo: ExtraInfo,
+    contentcreationcarousel: CarouselContentCreation,
     userjourneycarousel: CarouselUserJourney,
   },
 }).Compiler;

@@ -50,9 +50,9 @@ initiation point for a transaction on your marketplace. Listings can
 take many forms, such as the storefront of a service provider, an
 experience itinerary, or a product page.
 
-<userjourneycarousel title="Content creation Journey">
+<contentcreationcarousel title="Content creation journey">
 
-</userjourneycarousel>
+</contentcreationcarousel>
 
 ## Discovery Journey
 
