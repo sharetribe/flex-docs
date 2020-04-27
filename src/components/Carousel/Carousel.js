@@ -41,12 +41,11 @@ const Slides = styled.div`
 
 const ArrowContainer = styled.div`
   position: absolute;
-  right: 24px;
-  bottom: 22px;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 36px;
 `;
 
 const Carousel = props => {

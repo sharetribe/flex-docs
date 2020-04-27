@@ -97,6 +97,7 @@ exports.themeLight = {
   activeDot: '#0080ff',
   arrow: '#9b9b9b',
   arrowDisabled: '#ccc',
+  arrowHoverColor: '#0080ff',
   slideImgBorderColor: '#dedede',
 
   // Content size and spacing

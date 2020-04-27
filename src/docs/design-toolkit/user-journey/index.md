@@ -50,9 +50,9 @@ initiation point for a transaction on your marketplace. Listings can
 take many forms, such as the storefront of a service provider, an
 experience itinerary, or a product page.
 
-<userjourneycarousel title="Content creation Journey">
+<contentcreationcarousel title="Content creation journey">
 
-</userjourneycarousel>
+</contentcreationcarousel>
 
 ## Discovery Journey
 
@@ -61,6 +61,10 @@ marketplace. Starting on the landing page, users progressively narrow
 their search to find the service, rental, or product they need. Users
 might find what they need by searching nearby locations or via keywords.
 Results should be filtered by relevant criteria, like price or category.
+
+<discoverycarousel title="Discovery journey">
+
+</discoverycarousel>
 
 ## Transaction process
 
@@ -71,6 +75,10 @@ your transaction process to govern how providers and customers
 capitalize on your marketplace.
 [Saunatime’s default process](https://www.sharetribe.com/docs/background/transaction-process/)
 mimics an Airbnb-style daily booking rental.
+
+<transactionprocesscarousel title="Transaction process">
+
+</transactionprocesscarousel>
 
 ## Designing your marketplace’s user journey
 

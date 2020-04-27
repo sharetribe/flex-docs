@@ -18,6 +18,8 @@ const ArrowLeftComponent = props => (
 );
 
 const ArrowLeft = styled(ArrowLeftComponent)`
+  padding: 24px 12px 22px 24px;
+
   &:focus {
     outline: none;
   }
@@ -29,6 +31,11 @@ const ArrowLeft = styled(ArrowLeftComponent)`
 
   &:focus svg {
     stroke: black;
+  }
+
+  &:hover svg {
+    stroke: ${props =>
+      props.disabled ? props.theme.arrowDisabled : props.theme.arrowHoverColor};
   }
 `;
 
@@ -49,6 +56,8 @@ const ArrowRightComponent = props => (
 );
 
 const ArrowRight = styled(ArrowRightComponent)`
+  padding: 24px 24px 22px 12px;
+
   &:focus {
     outline: none;
   }
@@ -60,6 +69,11 @@ const ArrowRight = styled(ArrowRightComponent)`
 
   &:focus svg {
     stroke: black;
+  }
+
+  &:hover svg {
+    stroke: ${props =>
+      props.disabled ? props.theme.arrowDisabled : props.theme.arrowHoverColor};
   }
 `;
 
