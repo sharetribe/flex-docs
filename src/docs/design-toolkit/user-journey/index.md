@@ -38,6 +38,20 @@ understand your Flex starting point and how to customize it, let’s look
 at Saunatime’s content creation, content discovery, and transaction
 journeys in detail.
 
+## Discovery Journey
+
+![Content Creation Journey](./discovery-journey.png)
+
+The discovery journey depicts how users search and find listings in your
+marketplace. Starting on the landing page, users progressively narrow
+their search to find the service, rental, or product they need. Users
+might find what they need by searching nearby locations or via keywords.
+Results should be filtered by relevant criteria, like price or category.
+
+<discoverycarousel title="Discovery journey">
+
+</discoverycarousel>
+
 ## Content Creation Journey
 
 ![Content Creation Journey](./content-creation-journey.png)
@@ -54,19 +68,9 @@ experience itinerary, or a product page.
 
 </contentcreationcarousel>
 
-## Discovery Journey
-
-The discovery journey depicts how users search and find listings in your
-marketplace. Starting on the landing page, users progressively narrow
-their search to find the service, rental, or product they need. Users
-might find what they need by searching nearby locations or via keywords.
-Results should be filtered by relevant criteria, like price or category.
-
-<discoverycarousel title="Discovery journey">
-
-</discoverycarousel>
-
 ## Transaction process
+
+![Content Creation Journey](./transaction-process.png)
 
 The transaction process concerns the booking or buying event that
 happens between the listing provider and the purchasing customer.
