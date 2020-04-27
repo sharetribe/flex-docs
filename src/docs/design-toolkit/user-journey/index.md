@@ -76,6 +76,10 @@ capitalize on your marketplace.
 [Saunatime’s default process](https://www.sharetribe.com/docs/background/transaction-process/)
 mimics an Airbnb-style daily booking rental.
 
+<transactionprocesscarousel title="Transaction process">
+
+</transactionprocesscarousel>
+
 ## Designing your marketplace’s user journey
 
 As the development starting point, Saunatime’s user journeys are the

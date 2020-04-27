@@ -25,6 +25,7 @@ import {
   ExtraInfo,
   CarouselContentCreation,
   CarouselDiscovery,
+  CarouselTransactionProcess,
   CarouselUserJourney,
 } from '../../components';
 
@@ -309,6 +310,7 @@ const renderAst = new rehypeReact({
     extrainfo: ExtraInfo,
     contentcreationcarousel: CarouselContentCreation,
     discoverycarousel: CarouselDiscovery,
+    transactionprocesscarousel: CarouselTransactionProcess,
     userjourneycarousel: CarouselUserJourney,
   },
 }).Compiler;
