@@ -62,6 +62,10 @@ their search to find the service, rental, or product they need. Users
 might find what they need by searching nearby locations or via keywords.
 Results should be filtered by relevant criteria, like price or category.
 
+<discoverycarousel title="Discovery journey">
+
+</discoverycarousel>
+
 ## Transaction process
 
 The transaction process concerns the booking or buying event that
