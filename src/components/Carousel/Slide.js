@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Description = styled.div`
   width: 100%;
+  user-select: none;
 `;
 
 const SlideContainer = styled.div`
@@ -10,6 +11,7 @@ const SlideContainer = styled.div`
   flex-direction: column;
   width: ${props => props.width};
   padding-bottom: 24px;
+  padding-right: 24px;
 
   & > img {
     width: 100%;
