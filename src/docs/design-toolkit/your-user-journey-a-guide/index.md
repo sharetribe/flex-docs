@@ -1,5 +1,5 @@
 ---
-title: 'Your user journey: a guide'
+title: 'How to design your user journey'
 slug: your-user-journey-a-guide
 updated: 2020-04-24
 category: design-toolkit
