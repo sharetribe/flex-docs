@@ -33,7 +33,7 @@ const CarouselUserJourney = props => {
         <h3>Listing creation wizard - Photos and payout details</h3>
         <p>The final step to publishing a listing in Saunatime is uploading photos. Providers must also enter their bank account information in their user profile to process online payments. Once their account is verified by Stripe, providers can process payment card payments and receive payouts on the marketplace.</p>
       </Slide>
-      <Slide imgSrc={IMG_WIZARD_AVAILABILITY} imgAlt="asdf">
+      <Slide imgSrc={IMG_OWN_LISTING} imgAlt="asdf">
         <h3>Own listing</h3>
         <p>A user can access their published and draft listings from "My listings" in their profile. The listing page displays the information they entered. They can edit the listing following a link on top of the listing image. </p>
       </Slide>
