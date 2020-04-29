@@ -45,7 +45,7 @@ const CarouselTransactionProcess = props => {
         <p>The transaction page can be accessed from the user's Inbox. </p>
       </Slide>
       <Slide imgSrc={IMG_INBOX} imgAlt="Inbox page">
-        <h3>IMG_INBOX</h3>
+        <h3>Inbox</h3>
         <p>
           The Inbox is clicked into via the top bar. Every received booking
           appears in the "Hosting" inbox, while every made booking appears in
