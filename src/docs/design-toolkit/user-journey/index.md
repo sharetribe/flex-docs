@@ -4,9 +4,7 @@ slug: user-journey
 updated: 2020-04-22
 category: design-toolkit
 ingress:
-  A user journey map illustrates the step by step process that users
-  take to complete a task. A Flex user journey answers the question "How
-  do users use the marketplace?"
+  A user journey shows the step by step process to complete a task. A Flex user journey communicates how users will use your marketplace.
 published: true
 ---
 
@@ -22,8 +20,9 @@ service. Content discovery concentrates on how customers find what they
 need. Finally, the transaction process stipulates how a customer and
 provider interact through a listing on the marketplace.
 
-Customer (buyer) - A user who registers to a marketplace to make
-purchases. Provider (seller) - A user who sells or rents their products
+*Customer (buyer)* - A user who registers to a marketplace to make
+purchases.
+*Provider (seller)* - A user who sells or rents their products
 or services on a marketplace.
 
 [Flex Templates for Web](/background/concepts/#flex-templates-for-web-ftw)
@@ -92,55 +91,3 @@ transact in Flex. Designing your marketplace’s journeys helps developers
 understand how to modify the template code to build your custom
 marketplace. The next article guides you in creating your own user
 journey.
-
----
-
-Add image files to directory: `src/docs/design-toolkit/user-journey`.
-Use those images as
-
-```md
-![Alt text for the image (for the screen readers)](./the-name-of-the-image.png)
-```
-
-Note: the column width is max 635px, so, ideally images should be that
-wide.
-
-Provide a link to the assets file (in directory: `static/*`):
-
-```
-- [sample-template-context.json](/sample-template-context.json)
-- [CottageDays mobile logo](/tutorial-assets/cottagedays-logo-small.png)
-```
-
-- [sample-template-context.json](/sample-template-context.json)
-- [CottageDays mobile logo](/tutorial-assets/cottagedays-logo-small.png)
-
-**Read more about Markdown syntax**:<br />
-https://www.gatsbyjs.org/docs/mdx/markdown-syntax/
-
-**extrainfo** component provides one additional syntax option on top of
-markdown:
-
-```md
-<extrainfo title="Some title?">
-
-Content that is only visible if the title is clicked.
-
-</extrainfo>
-```
-
-<extrainfo title="Some title?">
-
-Content that is only visible if the title is clicked.
-
-</extrainfo>
-
-I had to add userjourneycarousel with following syntax since single line
-component were treated as inline (i.e. they were wrapped inside `<p>`
-element.)
-
-```
-<userjourneycarousel title="Content creation Journey">
-
-</userjourneycarousel>
-```
