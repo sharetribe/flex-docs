@@ -20,9 +20,9 @@ service. Content discovery concentrates on how customers find what they
 need. Finally, the transaction process stipulates how a customer and
 provider interact through a listing on the marketplace.
 
-*Customer (buyer)* - A user who registers to a marketplace to make
+> *Customer (buyer)* - A user who registers to a marketplace to make
 purchases.
-*Provider (seller)* - A user who sells or rents their products
+> *Provider (seller)* - A user who sells or rents their products
 or services on a marketplace.
 
 [Flex Templates for Web](/background/concepts/#flex-templates-for-web-ftw)
