@@ -23,6 +23,10 @@ import {
   Em,
   Asciinema,
   ExtraInfo,
+  CarouselContentCreation,
+  CarouselDiscovery,
+  CarouselTransactionProcess,
+  CarouselUserJourney,
 } from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
@@ -301,7 +305,14 @@ const Html = styled.div`
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   Fragment: React.Fragment,
-  components: { asciinema: Asciinema, extrainfo: ExtraInfo },
+  components: {
+    asciinema: Asciinema,
+    extrainfo: ExtraInfo,
+    contentcreationcarousel: CarouselContentCreation,
+    discoverycarousel: CarouselDiscovery,
+    transactionprocesscarousel: CarouselTransactionProcess,
+    userjourneycarousel: CarouselUserJourney,
+  },
 }).Compiler;
 
 const MarkdownHtml = props => {

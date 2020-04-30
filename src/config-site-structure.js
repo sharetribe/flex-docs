@@ -131,6 +131,11 @@ exports.siteStructure = [
     sortingArray: sortingArrayFlexCLI,
   },
 
+  {
+    id: 'design-toolkit',
+    isOpen: false,
+  },
+
   { id: 'integrations', isOpen: false },
 
   {
