@@ -27,7 +27,7 @@ transaction process) to start with. Think through all the steps that
 your users need to go through while using your marketplace in this
 journey.
 
-# Content creation
+#### Content creation
 
 Focus on defining how users signup and create listings on your
 marketplace. Consider these questions:
@@ -45,7 +45,7 @@ marketplace. Consider these questions:
 - Does the listing need to be approved by the operator before being
   published?
 
-# Discovery process
+#### Discovery process
 
 Focus on illustrating how users search and find listings. Consider these
 questions:
@@ -59,7 +59,7 @@ questions:
 - What information is shown for each listing in the search view? How
   about in the listing view?
 
-# Transaction process
+#### Transaction process
 
 Focus on defining how your users transact on the marketplace. Starting
 from the listing page, depict the steps from request to successful
