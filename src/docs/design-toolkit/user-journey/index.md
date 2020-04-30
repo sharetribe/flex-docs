@@ -21,7 +21,7 @@ need. Finally, the transaction process stipulates how a customer and
 provider interact through a listing on the marketplace.
 
 > *Customer (buyer)* - A user who registers to a marketplace to make
-purchases.
+purchases. <br />
 > *Provider (seller)* - A user who sells or rents their products
 or services on a marketplace.
 
@@ -89,5 +89,4 @@ As the development starting point, Saunatime’s user journeys are the
 default ways in which users create content, discover listings, and
 transact in Flex. Designing your marketplace’s journeys helps developers
 understand how to modify the template code to build your custom
-marketplace. The next article guides you in creating your own user
-journey.
+marketplace. [The next article](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/) guides you in creating your own user journey.
