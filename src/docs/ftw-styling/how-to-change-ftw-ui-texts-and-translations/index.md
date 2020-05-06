@@ -151,7 +151,7 @@ intl.formatMessage(
 ```
 
 More formatting examples can be found from the
-[FormatJS message syntax documentation](https://formatjs.io/guides/message-syntax/).
+[FormatJS message syntax documentation](https://formatjs.io/docs/icu-syntax).
 
 ## Texts outside the translation file
 
