@@ -15,7 +15,7 @@ during a transaction lets you receive more accurate estimates of the
 budget required to build your custom marketplace with Flex.
 
 In
-[the previous article](/src/docs/design-toolkit/user-journey/index.md),
+[the previous article](/design-toolkit/user-journey/),
 you learned how content creation, listing discovery, and the transaction
 process works in Saunatime. Now it is time to define how users complete
 these critical journeys on your marketplace.
