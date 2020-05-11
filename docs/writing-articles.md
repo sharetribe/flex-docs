@@ -101,20 +101,9 @@ There are several frontmatter fields in use:
   required to achieve the goal of the article. When this is defined, the
   skills are shown in the article info section in the beginning of the
   article page.
-- `readingTime` (**optional**): When defined, a Medium-style reading
-  time is shown in the article info section.
-- `toc` (**optional**): When defined, a full table of contents will be
-  shown in the content column. This is useful for articles with lots of
-  headers that don't fit in the side column.
-
-  Possible values:
-
-  - empty/missing: nothing is shown
-  - predefined text: that text is shown
-  - `estimate`: the
-    [reading-time](https://github.com/ngryman/reading-time) library is
-    used to estimate a reading time in minutes
-
+- `toc` (**optional** **currently ignored**): When defined, a full table
+  of contents will be shown in the content column. This is useful for
+  articles with lots of headers that don't fit in the side column.
 - `published` (**optional**, `true` or `false`): by default articles are
   **not** published. They need to be explicitly published to show up in
   the site. In dev mode also unpublished articles are shown.

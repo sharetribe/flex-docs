@@ -110,7 +110,6 @@ module.exports = {
               backgroundColor: 'transparent',
             },
           },
-          'gatsby-remark-reading-time',
           'gatsby-remark-autolink-headers',
           {
             resolve: 'gatsby-remark-prismjs',
