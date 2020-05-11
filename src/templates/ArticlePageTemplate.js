@@ -16,15 +16,8 @@ export const query = graphql`
         category
         ingress
         skills
-        readingTime
-        toc
       }
       htmlAst
-      fields {
-        readingTime {
-          minutes
-        }
-      }
       headings {
         value
         depth
@@ -34,13 +27,7 @@ export const query = graphql`
 `;
 
 const ArticlePageTemplate = props => {
-  const {
-    frontmatter,
-    htmlAst,
-    fields,
-    headings = [],
-  } = props.data.markdownRemark;
-  const { minutes } = fields.readingTime;
+  const { frontmatter, htmlAst, headings = [] } = props.data.markdownRemark;
   const slugs = slugger();
   slugs.reset();
   const tableOfContents = headings.map(heading => {
@@ -53,7 +40,6 @@ const ArticlePageTemplate = props => {
     <ArticlePage
       frontmatter={frontmatter}
       htmlAst={htmlAst}
-      estimatedReadingTime={minutes}
       tableOfContents={tableOfContents}
     />
   );

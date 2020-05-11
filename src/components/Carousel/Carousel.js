@@ -36,9 +36,12 @@ const Slides = styled.div`
   display: flex;
   flex-direction: row;
   backface-visibility: hidden;
-  width: calc(${props => props.slideCount * 100}% + ${props => props.slideCount * 24}px);
+  width: calc(
+    ${props => props.slideCount * 100}% + ${props => props.slideCount * 24}px
+  );
 
-  transition: ${props => props.useTransition ? 'transform ease-out 300ms' : 'unset'};
+  transition: ${props =>
+    props.useTransition ? 'transform ease-out 300ms' : 'unset'};
 `;
 
 const ArrowContainer = styled.div`
@@ -51,13 +54,13 @@ const ArrowContainer = styled.div`
 `;
 
 const isMouseMoveEvent = e => {
-  return "clientX" && "clientY" in e;
+  return 'clientX' && 'clientY' in e;
 };
 
 const getNextSlide = (activeSlide, slideCount, initialX, clientX) => {
   const isMovingRight = initialX > clientX;
   const isMovingLeft = clientX > initialX;
-  const isLastSlide = activeSlide === (slideCount - 1);
+  const isLastSlide = activeSlide === slideCount - 1;
   const isFirstSlide = activeSlide === 0;
 
   return isMovingRight && !isLastSlide
@@ -80,7 +83,6 @@ const getNextSlide = (activeSlide, slideCount, initialX, clientX) => {
 };
 
 class Carousel extends Component {
-
   constructor(props) {
     super(props);
 
@@ -108,26 +110,26 @@ class Carousel extends Component {
   }
 
   componentDidMount() {
-
-    window.addEventListener("mousemove", this.handleMove);
-    window.addEventListener("mouseup", this.handleMoveEnd);
-    window.addEventListener("mouseleave", this.handleMoveEnd);
-    window.addEventListener("touchmove", this.handleMove);
-    window.addEventListener("touchend", this.handleMoveEnd);
+    window.addEventListener('mousemove', this.handleMove);
+    window.addEventListener('mouseup', this.handleMoveEnd);
+    window.addEventListener('mouseleave', this.handleMoveEnd);
+    window.addEventListener('touchmove', this.handleMove);
+    window.addEventListener('touchend', this.handleMoveEnd);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousemove", this.handleMove);
-    window.removeEventListener("mouseup", this.handleMoveEnd);
-    window.removeEventListener("mouseleave", this.handleMoveEnd);
-    window.removeEventListener("touchmove", this.handleMove);
-    window.removeEventListener("touchend", this.handleMoveEnd);
+    window.removeEventListener('mousemove', this.handleMove);
+    window.removeEventListener('mouseup', this.handleMoveEnd);
+    window.removeEventListener('mouseleave', this.handleMoveEnd);
+    window.removeEventListener('touchmove', this.handleMove);
+    window.removeEventListener('touchend', this.handleMoveEnd);
   }
 
   nextSlide(nextIndex) {
     const slideCount = React.Children.count(this.props.children);
     const lastSlide = slideCount - 1;
-    const shouldShowLastSlide = activeSlide => activeSlide === lastSlide || nextIndex >= lastSlide
+    const shouldShowLastSlide = activeSlide =>
+      activeSlide === lastSlide || nextIndex >= lastSlide;
 
     this.setState(prevState => ({
       activeSlide: shouldShowLastSlide(prevState.activeSlide)
@@ -139,7 +141,8 @@ class Carousel extends Component {
   }
 
   prevSlide(prevIndex) {
-    const shouldShowFirstSlide = activeSlide => activeSlide === 0 || prevIndex <= 0;
+    const shouldShowFirstSlide = activeSlide =>
+      activeSlide === 0 || prevIndex <= 0;
     this.setState(prevState => ({
       activeSlide: shouldShowFirstSlide(prevState.activeSlide)
         ? 0
@@ -161,7 +164,7 @@ class Carousel extends Component {
 
   handleMoveStart(e) {
     const isMouseMoveE = isMouseMoveEvent(e);
-    const isTouchStart = e.type === "touchstart";
+    const isTouchStart = e.type === 'touchstart';
 
     if (!this.swipeState.onMove && (isMouseMoveE || isTouchStart)) {
       const { clientX, clientY } = isMouseMoveE ? e : e.touches[0];
@@ -193,15 +196,23 @@ class Carousel extends Component {
 
       const { activeSlide } = this.state;
       const slideCount = React.Children.count(this.props.children);
-      const { direction, hasNextSlide } =
-        getNextSlide(activeSlide, slideCount, initialX, clientX);
+      const { direction, hasNextSlide } = getNextSlide(
+        activeSlide,
+        slideCount,
+        initialX,
+        clientX
+      );
 
       if (direction) {
         this.swipeState.direction = direction;
 
         if (hasNextSlide) {
-          const itemWidth = this.slideContainerEl.current.offsetWidth / slideCount;
-          this.slideContainerEl.current.style.transform = `translateX(${-1 * itemWidth * activeSlide - diffX}px)`;
+          const itemWidth =
+            this.slideContainerEl.current.offsetWidth / slideCount;
+          this.slideContainerEl.current.style.transform = `translateX(${-1 *
+            itemWidth *
+            activeSlide -
+            diffX}px)`;
         }
       }
       this.swipeState.lastX = clientX;
@@ -209,11 +220,11 @@ class Carousel extends Component {
   }
 
   handleMoveEnd(e) {
-    const { direction, initialX, lastX, onMove, } = this.swipeState;
+    const { direction, initialX, lastX, onMove } = this.swipeState;
     const absMovement = Math.abs(initialX - lastX);
 
-    const isTouchEnd = e.type === "touchend";
-    const isMouseEnd = (e.type === "mouseleave" || e.type === "mouseup");
+    const isTouchEnd = e.type === 'touchend';
+    const isMouseEnd = e.type === 'mouseleave' || e.type === 'mouseup';
     if (!(isTouchEnd || isMouseEnd)) {
       return;
     }
@@ -233,30 +244,40 @@ class Carousel extends Component {
       // (absMovement is calculated already.)
       this.resetMoveStatus();
 
-      if (direction === "right") {
-        const canSlide = activeIndex < (slideCount - 1);
+      if (direction === 'right') {
+        const canSlide = activeIndex < slideCount - 1;
 
         if (canSlide) {
-          const nextIndex = absMovement > (itemWidth/4) ? activeIndex + 1 : activeIndex;
+          const nextIndex =
+            absMovement > itemWidth / 4 ? activeIndex + 1 : activeIndex;
           this.nextSlide(nextIndex);
           // If the props don't change, call for nextSlide doesn't create rerendering.
           // We'll enforce that the correct position is set
-          this.slideContainerEl.current.style.transform = `translateX(${nextIndex * itemWidth * -1}px)`
+          this.slideContainerEl.current.style.transform = `translateX(${nextIndex *
+            itemWidth *
+            -1}px)`;
         } else {
-          this.slideContainerEl.current.style.transform = `translateX(${activeIndex * itemWidth * -1}px)`
+          this.slideContainerEl.current.style.transform = `translateX(${activeIndex *
+            itemWidth *
+            -1}px)`;
         }
       }
-      if (direction === "left") {
+      if (direction === 'left') {
         const canSlide = activeIndex >= 0;
 
         if (canSlide) {
-          const prevIndex = absMovement > (itemWidth/4) ? activeIndex - 1 : activeIndex;
+          const prevIndex =
+            absMovement > itemWidth / 4 ? activeIndex - 1 : activeIndex;
           this.prevSlide(prevIndex);
           // If the props don't change, call for prevSlide doesn't create rerendering.
           // We'll enforce that the correct position is set
-          this.slideContainerEl.current.style.transform = `translateX(${prevIndex * itemWidth * -1}px)`;
+          this.slideContainerEl.current.style.transform = `translateX(${prevIndex *
+            itemWidth *
+            -1}px)`;
         } else {
-          this.slideContainerEl.current.style.transform = `translateX(${activeIndex * itemWidth * -1}px)`;
+          this.slideContainerEl.current.style.transform = `translateX(${activeIndex *
+            itemWidth *
+            -1}px)`;
         }
       }
       // Since we render this component outside of React's normal rendering cycle,
@@ -276,15 +297,20 @@ class Carousel extends Component {
     // Note: the reason is that mixing pixels with percentage positioning
     // causes flickering bug in Safari. (This initial percentage-based translate
     // didn't seem to cause noticeable problems.)
-    const hasSlideContainerRendered = this.slideContainerEl && this.slideContainerEl.current;
+    const hasSlideContainerRendered =
+      this.slideContainerEl && this.slideContainerEl.current;
     const slideWidth = hasSlideContainerRendered
       ? `${this.slideContainerEl.current.offsetWidth / slideCount}px`
       : `${100 / slideCount}%`;
     const translateX = hasSlideContainerRendered
-      ? `${activeSlide * (this.slideContainerEl.current.offsetWidth / slideCount) * -1}px`
+      ? `${activeSlide *
+          (this.slideContainerEl.current.offsetWidth / slideCount) *
+          -1}px`
       : `${activeSlide * (100 / slideCount) * -1}%`;
 
-    const slideTranslateXMaybe = this.swipeState.onMove ? {} : { style: { transform: `translateX(${translateX})` } };
+    const slideTranslateXMaybe = this.swipeState.onMove
+      ? {}
+      : { style: { transform: `translateX(${translateX})` } };
 
     // If max-width is given, the slide is positioned
     // in the middle of the article column.
@@ -301,7 +327,7 @@ class Carousel extends Component {
         <Title>
           {title} {slideNumber}/{slideCount}
         </Title>
-        <SlideViewport {...slideMaxWidthMaybe} >
+        <SlideViewport {...slideMaxWidthMaybe}>
           <Slides
             ref={this.slideContainerEl}
             slideCount={slideCount}
@@ -321,12 +347,18 @@ class Carousel extends Component {
           onClick={handleClick}
         />
         <ArrowContainer>
-          <ArrowLeft onClick={() => this.prevSlide()} disabled={activeSlide === 0} />
-          <ArrowRight onClick={() => this.nextSlide()} disabled={activeSlide === lastSlide} />
+          <ArrowLeft
+            onClick={() => this.prevSlide()}
+            disabled={activeSlide === 0}
+          />
+          <ArrowRight
+            onClick={() => this.nextSlide()}
+            disabled={activeSlide === lastSlide}
+          />
         </ArrowContainer>
       </CarouselSection>
     );
   }
-};
+}
 
 export default Carousel;

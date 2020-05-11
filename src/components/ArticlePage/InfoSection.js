@@ -70,31 +70,14 @@ const Skills = props => {
   );
 };
 
-const formattedReadingTime = (readingTimeText, minutes) => {
-  if (readingTimeText === 'estimate') {
-    const mins = Math.ceil(minutes);
-    return `${mins} ${mins === 1 ? 'minute' : 'minutes'}`;
-  }
-  return readingTimeText;
-};
-
 const InfoSection = props => {
-  const { frontmatter, estimatedReadingTime, ...rest } = props;
-  const { skills, readingTime } = frontmatter;
+  const { frontmatter, ...rest } = props;
+  const { skills } = frontmatter;
   return (
     <div {...rest}>
       {skills ? (
         <Info label={UiText.fn('ArticlePage.InfoSection.requiredSkills')}>
           <Skills skills={skills} />
-        </Info>
-      ) : null}
-      {readingTime ? (
-        <Info label={UiText.fn('ArticlePage.InfoSection.readingTime')}>
-          <H6 as="p">
-            <HighlightedText>
-              {formattedReadingTime(readingTime, estimatedReadingTime)}
-            </HighlightedText>
-          </H6>
         </Info>
       ) : null}
     </div>

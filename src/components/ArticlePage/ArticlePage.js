@@ -175,7 +175,7 @@ const findMainCategory = category => {
 };
 
 const ArticlePage = props => {
-  const { frontmatter, htmlAst, estimatedReadingTime, tableOfContents } = props;
+  const { frontmatter, htmlAst, tableOfContents } = props;
   const { title, slug, updated, category, ingress } = frontmatter;
   const mainCategory = findMainCategory(category) || category;
 
@@ -222,10 +222,7 @@ const ArticlePage = props => {
           </CrumbWrapper>
           <Heading>{title}</Heading>
           <ArticleIngress>{ingress}</ArticleIngress>
-          <Info
-            frontmatter={frontmatter}
-            estimatedReadingTime={estimatedReadingTime}
-          />
+          <Info frontmatter={frontmatter} />
           <MobileTocWrapper>
             <ContentTocHeader as="h2">
               <UiText id="ArticlePage.tableOfContents" />

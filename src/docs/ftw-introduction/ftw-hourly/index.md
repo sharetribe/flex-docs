@@ -97,6 +97,5 @@ to do to template if you want to enable multiple listings:
   `Avatar` component you can enable the profile link by removing
   `disableProfileLink` flag.
 
-You can see all the changes we did when changing Saunatime to
-Yogatime in this
-[pull request](https://github.com/sharetribe/ftw-time/pull/56).
+You can see all the changes we did when changing Saunatime to Yogatime
+in this [pull request](https://github.com/sharetribe/ftw-time/pull/56).

@@ -4,7 +4,8 @@ slug: user-journey
 updated: 2020-04-22
 category: design-toolkit
 ingress:
-  A user journey shows the step by step process to complete a task. A Flex user journey communicates how users will use your marketplace.
+  A user journey shows the step by step process to complete a task. A
+  Flex user journey communicates how users will use your marketplace.
 published: true
 ---
 
@@ -20,10 +21,9 @@ service. Content discovery concentrates on how customers find what they
 need. Finally, the transaction process stipulates how a customer and
 provider interact through a listing on the marketplace.
 
-> *Customer (buyer)* - A user who registers to a marketplace to make
-purchases. <br />
-> *Provider (seller)* - A user who sells or rents their products
-or services on a marketplace.
+> _Customer (buyer)_ - A user who registers to a marketplace to make
+> purchases. <br /> > _Provider (seller)_ - A user who sells or rents
+> their products or services on a marketplace.
 
 [Flex Templates for Web](/background/concepts/#flex-templates-for-web-ftw)
 are an efficient starting point for building your custom marketplace
@@ -89,4 +89,6 @@ As the development starting point, Saunatime’s user journeys are the
 default ways in which users create content, discover listings, and
 transact in Flex. Designing your marketplace’s journeys helps developers
 understand how to modify the template code to build your custom
-marketplace. [The next article](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/) guides you in creating your own user journey.
+marketplace.
+[The next article](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/)
+guides you in creating your own user journey.

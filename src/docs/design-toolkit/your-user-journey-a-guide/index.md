@@ -14,11 +14,10 @@ create listings, how users find listings, and how they interact together
 during a transaction lets you receive more accurate estimates of the
 budget required to build your custom marketplace with Flex.
 
-In
-[the previous article](/design-toolkit/user-journey/),
-you learned how content creation, listing discovery, and the transaction
-process works in Saunatime. Now it is time to define how users complete
-these critical journeys on your marketplace.
+In [the previous article](/design-toolkit/user-journey/), you learned
+how content creation, listing discovery, and the transaction process
+works in Saunatime. Now it is time to define how users complete these
+critical journeys on your marketplace.
 
 ## 1. Background work
 
