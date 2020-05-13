@@ -34,7 +34,7 @@ Sharetribe uses the Stripe Connect features with
 
 > **Note!** Stripe might need to review your platform account before you
 > get access. <br /> Check
-> [this article](/cookbook-payments/stripe-connect-platform-review) to
+> [this article](/cookbook-payments/stripe-connect-platform-review/) to
 > learn how to apply for Stripe Connect review.
 
 If you're in any another country, follow these instructions to enable
@@ -61,7 +61,7 @@ Stripe Connect:
 ## 3. Enable Stripe Connect Onboarding in your platform
 
 For enabling
-[Stripe Connect Onboarding](/cookbook-payments/provider-onboarding-and-identity-verification),
+[Stripe Connect Onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/),
 you need to navigate to
 [Connect settings page](https://dashboard.stripe.com/account/applications/settings)
 in your Stripe Dashboard. For the Connect onboarding to work, you need
@@ -151,7 +151,7 @@ With company accounts, Stripe might require information of every person
 that owns at least 25% of the company or exercise significant control
 over your company. This requirement is country specific. For more
 information, see
-[Stripe support](https://support.stripe.com/questions/owners-and-directors).
+[Stripe support](https://support.stripe.com/questions/company-ownership-and-director-requirement).
 
 > Note: if a company/provider doesn't include enough owners to cover
 > most of the shares, you might need to manually state that there are no

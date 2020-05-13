@@ -23,7 +23,7 @@ of your Flex test-environment on localhost and on your staging server
 
 You already have set up a couple of those environment variables, when
 you completed the
-[Getting started with FTW-daily guide](/introduction/getting-started-with-ftw-daily).
+[Getting started with FTW-daily guide](/introduction/getting-started-with-ftw-daily/).
 That happened, when you executed command:
 
 ```shell

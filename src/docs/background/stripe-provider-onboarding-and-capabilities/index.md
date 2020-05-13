@@ -108,7 +108,7 @@ above deadline, you need to perform the following actions:
   [Stripe Dashboard](https://dashboard.stripe.com/account/applications/settings)
 - Make sure that your marketplace application is ready for the changes
   by following our
-  [how to guide for provider onboarding](/cookbook-payments/provider-onboarding-and-identity-verification)
+  [how to guide for provider onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/)
 - Inform your providers that they need to provide additional information
   to Stripe. See below for instructions on how to do this.
 

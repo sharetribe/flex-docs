@@ -30,7 +30,7 @@ and
 [the tutorial for editing the process with flex-cli ](/flex-cli/edit-transaction-process-with-flex-cli/)
 give you a good understanding of the concepts discussed in this article.
 In addition, the article describing
-[how to solve payout problems](/background/solving-payout-problems)
+[how to solve payout problems](/background/solving-payout-problems/)
 provides valuable information about how the payment flow in Flex works.
 
 ## Percentage-based commissions

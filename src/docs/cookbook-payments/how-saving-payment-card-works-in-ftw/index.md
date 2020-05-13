@@ -33,7 +33,7 @@ Payment card needs also be saved for off-session payments if those are
 in use. They are automatic one-time payments that happen when the user
 is not interacting with your application. You can read more about
 off-session payments from a separate
-[article](/background/off-session-payments-in-transaction-process).
+[article](/background/off-session-payments-in-transaction-process/).
 
 > Note: saving payment card was added to FTW in version v3.3.0.
 

@@ -12,8 +12,8 @@ published: true
 The test setup is based on the `create-react-app` test setup and is
 using the [Jest testing framework](https://jestjs.io/). For reference,
 see the
-[testing section](https://facebook.github.io/create-react-app/docs/running-tests)
-in the `create-react-app` documentation.
+[testing section](https://create-react-app.dev/docs/running-tests) in
+the `create-react-app` documentation.
 
 ## Running tests
 
@@ -35,7 +35,7 @@ Note that this also runs the linter.
 > Note: In some environments, alternative test watcher doesn't always
 > work and it can die unexpectedly. If that happens to you, you might
 > want to install
-> [Watchman](https://facebook.github.io/watchman/docs/install). Read
+> [Watchman](https://facebook.github.io/watchman/docs/install/). Read
 > more about
 > [this issue](https://github.com/facebook/create-react-app/issues/871).
 

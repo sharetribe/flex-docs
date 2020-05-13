@@ -91,7 +91,7 @@ upstream changes):
 1.  Fix possible merge conflicts, commit, and push/deploy.
 
 See also the
-[Syncing a fork](https://help.github.com/en/articles/syncing-a-fork)
+[Syncing a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
 documentation.
 
 ## Installing dependecies

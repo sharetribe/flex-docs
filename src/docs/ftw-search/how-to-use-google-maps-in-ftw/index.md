@@ -32,7 +32,7 @@ instructions. You can copy the given key to your application now.
 Follow the instructions in the
 [Getting started](https://developers.google.com/maps/documentation/javascript/places#GetStarted)
 section of the Places library documentation to enable using the Google
-Places API Web Service. Also Maps Static API and Maps Javascript API
+Places API Web Service. Also Maps Static API and Maps JavaScript API
 need to be enabled.
 
 ## 3. Setup the application to use the API key

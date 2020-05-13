@@ -13,7 +13,7 @@ published: true
 
 **NOTE! In case the version of FTW you are using is _earlier_ than
 2.14.0, please refer to
-[an older version](https://5ca7544a073eba00098460b9--sharetribe-flex-docs-site.netlify.com/docs/guides/how-to-customize-pricing/)
+[an older version](https://5ca7544a073eba00098460b9--sharetribe-flex-docs-site.netlify.app/docs/guides/how-to-customize-pricing/)
 of this guide.**
 
 This guide walks you through the process of taking custom pricing into

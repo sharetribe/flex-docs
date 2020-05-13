@@ -72,8 +72,7 @@ Quick checklist:
 - Check that the actual dimensions of an image match with DOM element's
   dimensions.
 - Lighthouse suggests that image compression level should be 85% or
-  lower.
-  [Read more](https://developers.google.com/web/tools/lighthouse/audits/optimize-images)
+  lower. [Read more](https://web.dev/uses-optimized-images/)
 - Good rule-of-thumb is that use JPEG for images and photos, where PNG
   is better for graphics, such as logos, graphs and illustrations.
 - If you are using JPEG images, think about saving them as progressive

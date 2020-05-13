@@ -25,7 +25,7 @@ In addition, each user has a page called "payment methods" in their
 account settings. From this page, the user can store a new credit card,
 delete a stored card, or replace a stored card with a new one.
 
-[Learn how storing payment card works in FTW](/background/save-payment-card/)
+[Learn how storing payment card works in FTW](/cookbook-payments/save-payment-card/)
 
 [Read API documentation on storing credit cards](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer)
 
