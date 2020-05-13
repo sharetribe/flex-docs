@@ -26,7 +26,7 @@ installed. You will also need accounts to Stripe and Mapbox.
 
 After this you need to do the following steps:
 
-1.  [Set environment variables](#enviroment-variables)
+1.  [Set environment variables](#environment-variables)
 2.  [Build the app](#building-the-app)
 3.  [Run the node server](#starting-the-app)
 

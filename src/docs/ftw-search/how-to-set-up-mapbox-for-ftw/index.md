@@ -25,7 +25,7 @@ You can make access tokens in your web applications more secure by
 adding URL restrictions. When you add a URL restriction to a token, that
 token will only work for requests that originate from the URLs you
 specify. See the Mapbox documentation for
-[domain restrictions](https://docs.mapbox.com/help/account/tokens/#domain-restrictions).
+[URL restrictions](https://docs.mapbox.com/accounts/overview/tokens/#url-restrictions).
 
 ## 2. Setup the application to use the access token
 

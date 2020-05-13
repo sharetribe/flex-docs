@@ -93,7 +93,7 @@ development environment. For production deploys most should be set.
 - **`REACT_APP_GOOGLE_ANALYTICS_ID`**
 
   See the
-  [How to set up Analytics for FTW](/guides/how-to-set-up-analytics-for-ftw/)
+  [How to set up Analytics for FTW](/ftw-analytics/how-to-set-up-analytics-for-ftw/)
   guide for more information.
 
 - **`REACT_APP_AVAILABILITY_ENABLED`**

@@ -402,8 +402,9 @@ Some examples of integrations you might want to add:
   or [Amplitude](https://amplitude.com/)
 - Add Facebook pixels and other tools that help with paid acquisition
 - Add a live chat tool like [Intercom](https://www.intercom.com),
-  [Olark](https://www.olark.com/), [Zopim](https://www.zopim.com/) to
-  talk directly to your users.
+  [Olark](https://www.olark.com/),
+  [Zendesk Chat](https://www.zendesk.com/chat/) to talk directly to your
+  users.
 - Add social media sharing buttons to your favorite platforms like
   Facebook, Twitter, Instagram, Pinterest, and so on.
 - Link a blog, a help center, or a community forum to your site.
