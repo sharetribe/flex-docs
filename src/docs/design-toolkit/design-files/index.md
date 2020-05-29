@@ -14,9 +14,9 @@ Saunatime Flex Template for Web (WTF) designs are available as Sketch files. The
 
 [Access design files in Google Drive](https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG?usp=sharing).
 
-Or download directly:
-[Sharetribe-FLEX_Desktop.sketch](https://drive.google.com/uc?export=download&id=1YkHvv-Fq9EgaIQIMEMJGh2DU9lUPHPmS)
-[Sharetribe-FLEX_Mobile.sketch](https://drive.google.com/uc?export=download&id=1H-I8r418hMeAhkyXBbiHJxu20bBREo-w)
+Or download directly: <br />
+[Sharetribe-FLEX_Desktop.sketch](https://drive.google.com/uc?export=download&id=1YkHvv-Fq9EgaIQIMEMJGh2DU9lUPHPmS)<br />
+[Sharetribe-FLEX_Mobile.sketch](https://drive.google.com/uc?export=download&id=1H-I8r418hMeAhkyXBbiHJxu20bBREo-w)<br />
 [Sharetribe-FLEX_Wireframes.sketch](https://drive.google.com/uc?export=download&id=1__BvrIbpx1-C8EHT6nJdxjDrq8XomlrI)
 
 
