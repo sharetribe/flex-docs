@@ -22,4 +22,4 @@ Or download directly: <br />
 
 The design files can be used according to [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/). The files can also be opened with Adobe XD and Figma. The font used is Sofia Pro, which can be downloaded through [Adobe Fonts](https://fonts.adobe.com/fonts/sofia).
 
-We are glad to receive ideas and improvements at hello@sharetribe.com
+We are glad to receive ideas and improvements at [flex-support@sharetribe.com](mailto:flex-support@sharetribe.com).
