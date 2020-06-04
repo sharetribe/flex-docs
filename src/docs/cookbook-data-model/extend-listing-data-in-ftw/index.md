@@ -1,7 +1,7 @@
 ---
 title: Extend listing data in FTW
 slug: extend-listing-data-in-ftw
-updated: 2020-04-16
+updated: 2020-06-04
 category: cookbook-data-model
 ingress:
   This guide describes how to use use extended data to expand the
@@ -40,28 +40,63 @@ possible values that can be used for the capacity. Also if the attribute
 will be used as a search filter it helps to keep track of the possible
 values somewhere.
 
-A commonly used way of storing the possible values for a listing
-attribute is to declare them in the
-[src/marketplace-custom-config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/marketplace-custom-config.js)
-file. Place the values in an array and export the variable containing
-the array. The exports from that file are included in the
-`src/config.js` file and are available as properties in `config.custom`.
-Search filters and some components used to edit and present the data
-rely on a data model of an array of objects that contain `key` and
-`label` properties.
+If you want to use extended data field as a filter on search page, you
+need to store the possible values for the field to
+[marketplace-custom-config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/marketplace-custom-config.js)
+file.
 
-For the capacity attribute we'll define a set of values that describe
+```shell
+└── src
+    └── marketplace-custom-config.js
+```
+
+There we need to create a new filter config to the `filters` array:
+
+```js
+  {
+    id: 'capacity',
+    label: 'Capacity',
+    type: 'SelectSingleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_capacity'],
+    config: {
+      options: [
+        { key: '1to3', label: '1 to 3' },
+        { key: '4to6', label: '4 to 6' },
+        { key: '7to9', label: '7 to 9' },
+        { key: '10plus', label: '10 plus' },
+      ],
+    },
+  },
+```
+
+The exports from that file are included in the `src/config.js` file and
+are available as properties in `config.custom`. Search filters and some
+components used to edit and present the data rely on a data model of an
+array of objects that contain `key` and `label` properties.
+
+In the configuration above, we'll define a set of values that describe
 the capacity in a few ranges of how many people can fit into a given
 sauna:
 
 ```js
-export const capacityOptions = [
   { key: '1to3', label: '1 to 3' },
   { key: '4to6', label: '4 to 6' },
   { key: '7to9', label: '7 to 9' },
   { key: '10plus', label: '10 plus' },
-];
 ```
+
+That list of options is relevant when we add a new public data field to
+the listing through the EditListingWizard component. If you want to know
+more about those other keys in that configuration (e.g. `type`, `group`,
+`queryParamNames`), you should read the
+[Change search filters](/cookbook-search/change-search-filters-in-ftw/)
+article.
+
+> **Note**: it's entirely possible to add extended data without creating
+> search filters for it. In that case, you could just hard-code
+> configurations to the EditListingWizard's form or use
+> marketplace-custom-config.js with separately exported variable.
 
 ### Edit the listing wizard
 
@@ -229,15 +264,15 @@ import React from 'react';
 import { arrayOf, bool, func, shape, string } from 'prop-types';
 import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
+import classNames from 'classnames';
 import {
   intlShape,
   injectIntl,
   FormattedMessage,
 } from '../../util/reactIntl';
-import classNames from 'classnames';
 import { propTypes } from '../../util/types';
-import { Form, Button, FieldSelect } from '../../components';
 import { required } from '../../util/validators';
+import { Form, Button, FieldSelect } from '../../components';
 
 // Create this file using EditListingFeaturesForm.css
 // as a template.
@@ -361,6 +396,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { ensureOwnListing } from '../../util/data';
+import { findOptionsForSelectFilter } from '../../util/search';
 import { ListingLink } from '../../components';
 import { EditListingCapacityForm } from '../../forms';
 import config from '../../config.js';
@@ -394,6 +430,10 @@ const EditListingCapacityPanel = props => {
   ) : (
     <FormattedMessage id="EditListingCapacityPanel.createListingTitle" />
   );
+  const capacityOptions = findOptionsForSelectFilter(
+    'amenities',
+    config.custom.filters
+  );
 
   return (
     <div className={classes}>
@@ -415,7 +455,7 @@ const EditListingCapacityPanel = props => {
         updated={panelUpdated}
         updateError={errors.updateListingError}
         updateInProgress={updateInProgress}
-        capacityOptions={config.custom.capacityOptions}
+        capacityOptions={capacityOptions}
       />
     </div>
   );
@@ -447,8 +487,8 @@ EditListingCapacityPanel.propTypes = {
 export default EditListingCapacityPanel;
 ```
 
-In the panel component we check for an initial capacity value from the
-`publicData` property of the listing. In the submit handler the new
+In the panel component, we check for an initial capacity value from the
+`publicData` property of the listing. In the submit handler, the new
 capacity value is stored in the same property. The updated listing
 object is eventually passed to the `updateListingDraft` and
 `requestUpdateListing` functions in the `EditListingDetails.duck.js`
@@ -570,56 +610,48 @@ it inside the `<div className={css.mainContent}>` element:
 import SectionCapacity from './SectionCapacity';
 ```
 
+In the render function, you need to retrieve capacity options:
+
+```js
+const capacityOptions = findOptionsForSelectFilter(
+  'capacity',
+  filterConfig
+);
+```
+
+and use those to render the actual `SectionCapacity` component:
+
 ```jsx
 <div className={css.mainContent}>
   {/* other sections */}
 
-  <SectionCapacity
-    publicData={publicData}
-    options={capacityOptionsConfig}
-  />
+  <SectionCapacity publicData={publicData} options={capacityOptions} />
 
   {/* other sections */}
 </div>
 ```
 
-```js
-ListingPageComponent.defaultProps = {
-  // other default props
-  capacityOptionsConfig: config.custom.capacityOptions,
-};
-
-ListingPageComponent.propTypes = {
-  // other props
-  capacityOptionsConfig: array,
-};
-```
-
-In the snippet above, the capacity options are passed to the
-`ListingPage` as a property, with the default property value pulling the
-options from the custom config (`marketplace-custom-config.js`). This
-way the listing page test can define it's own capacity options that are
-in line with test data used in the test and custom config changes will
-not affect test results.
-
-So, you can just spread the `capacityOptionsConfig` property out of
-props of ListingPage component:
-
-```diff
-    amenitiesConfig,
-+   capacityOptionsConfig,
-  } = this.props;
-```
-
 And voilà, we have listing capacity presented in the listing page!
+
+<extrainfo title="Where did the filterConfig come from?">
+
+In the snippet above, the filterConfig (containing capacity options too)
+are passed to the `ListingPage` as a property, with the default property
+value pulling the options from the custom config
+(`marketplace-custom-config.js`). This way the listing page test can
+define it's own filter configuration that are in line with test data
+used in the test and custom config changes will not affect test results.
+
+</extrainfo>
 
 ![Capacity on listing page](./capacity_listing_page.png)
 
-> Note: if there are existing listings, they don't get an update before
-> their extended data is updated by a provider. (Operator can also do
-> this one-by-one through Console.) So, you should assume that there are
-> listings without these new extended data fields and, therefore, there
-> should be some safeguards against undefined values.
+> **Note**: if there are existing listings, they don't get an update
+> before their extended data is updated by a provider. (Operator can
+> also do this one-by-one through Console or through Integration API.)
+> So, you should assume that there are listings without these new
+> extended data fields and, therefore, there should be some safeguards
+> against undefined values.
 
 ## Use the attribute as a search filter
 

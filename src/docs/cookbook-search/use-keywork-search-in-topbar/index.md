@@ -98,9 +98,9 @@ pass-in an `onSubmit` function.
 
 You should note that there's one essential functionality missing: you
 need to prefill keyword search input with
-[initial value](https://github.com/sharetribe/flex-template-web/blob/master/src/components/SearchFilters/SearchFilters.js#L113),
+[initial value](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/SearchPage/FilterComponent.js#L92),
 which you get from
-[URL params](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/SearchPage/SearchPage.js#L151).
+[URL params](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/SearchPage/SearchPage.js#L161).
 
 You also need to style the component for both mobile and desktop
 layouts.

@@ -1,7 +1,7 @@
 ---
 title: Customize amenities filter
 slug: customize-amenities-filter
-updated: 2020-03-03
+updated: 2020-06-04
 category: tutorial-branding
 ingress: Change the options for amenities filter.
 published: true
@@ -25,16 +25,46 @@ found from file: _marketplace-custom-config.js_
     └── marketplace-custom-config.js
 ```
 
-In that file, the amenities options are listed in an array:
+In that file, the filters and their configs are listed in an array:
 
 ```js
-export const amenities = [
-  {
-    key: 'towels',
-    label: 'Towels',
+export const filters = [
+```
+
+If you find amenities from that list, you should see some basic info.
+E.g. 'amenities' filter is actually of type `SelectMultipleFilter`,
+which is the component that actually renders the amenities filter on
+search page. In the config section, you can find `options`:
+
+```js
+{
+  id: 'amenities',
+  label: 'Amenities',
+  type: 'SelectMultipleFilter',
+  group: 'secondary',
+  queryParamNames: ['pub_amenities'],
+  config: {
+    // Optional modes: 'has_all', 'has_any'
+    // https://www.sharetribe.com/api-reference/marketplace.html#extended-data-filtering
+    searchMode: 'has_all',
+
+    // "key" is the option you see in Flex Console.
+    // "label" is set here for this web app's UI only.
+    // Note: label is not added through the translation files
+    // to make filter customizations a bit easier.
+    options: [
+      {
+        key: 'towels',
+        label: 'Towels',
+      },
+      {
+        key: 'bathroom',
+        label: 'Bathroom',
+      },
+      // other options
+    ],
   },
-  // other options
-];
+},
 ```
 
 **This _option_ syntax has two properties:**
@@ -56,7 +86,7 @@ We want amenities to be related to our cottage-rental marketplace. We'll
 use the following options:
 
 ```js
-export const amenities = [
+options: [
   {
     key: 'terrace',
     label: 'Terrace',
@@ -97,27 +127,42 @@ the search page:
 
 ![Amenities filter with CottageDays content](./updated-amenities-filter.png)
 
-<extrainfo title="Extra: how to remove Amenities filter from search page?">
+<extrainfo title="Extra: how to remove Amenities filter?">
 
-This is not polished customization experience at the moment, but
-basically there are three places you need to check:
+The answer is simple: just remove the object literal from the `filters`
+array.
 
-- _[SearchPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/SearchPage/SearchPage.js#L230)_:
-  don't pass amenitiesFilter among primaryFilters prop.
+If you want to add more filters (of type: _enum_), you can just add more
+filters configurations that use `SelectSingleFilter` or
+`SelectMultipleFilter`.
 
-  ```js
-    primaryFilters={{
-      categoryFilter: filters.categoryFilter,
-      //amenitiesFilter: filters.amenitiesFilter,
-      priceFilter: filters.priceFilter,
-      dateRangeFilter: filters.dateRangeFilter,
-      keywordFilter: filters.keywordFilter,
-    }}
-  ```
+For example, you could add filter for public data field `view`:
 
-- _SearchFiltersMobile_ component: remove references to
-  _amentiesFilter_.
-- _SearchFilters_ component: remove references to _amentiesFilter_.
+```js
+  {
+    id: 'view',
+    label: 'View',
+    type: 'SelectSingleFilter',
+    group: 'secondary',
+    queryParamNames: ['pub_view'],
+    config: {
+      options: [
+        { key: 'sea', label: 'Sea' },
+        { key: 'lake', label: 'Lake' },
+        { key: 'forest', label: 'Forest' },
+        { key: 'garden', label: 'Garden' },
+        { key: 'other', label: 'Other' },
+      ],
+    },
+  },
+```
+
+Note: this assumes that you have added 'view' to the
+[extended data](https://www.sharetribe.com/docs/references/extended-data/)
+of the listing entity through the `EditListingFeaturesPanel` component.
+
+Read more from the article:
+[Change search filters in FTW](/cookbook-search/change-search-filters-in-ftw/)
 
 </extrainfo>
 
