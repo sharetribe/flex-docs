@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import fonts from '../../fonts';
 import { siteStructure } from '../../config';
 import { findCategory } from '../../util/navigation';
 import { Link, UiText } from '../../components';
@@ -15,12 +14,10 @@ const Pagination = styled.div`
 `;
 
 const Prev = styled(Link)`
-  ${fonts['CircularStd-Medium'].styles}
   font-size: 18px;
   text-decoration: none;
 `;
 const Next = styled(Link)`
-  ${fonts['CircularStd-Medium'].styles}
   font-size: 18px;
   text-decoration: none;
 `;

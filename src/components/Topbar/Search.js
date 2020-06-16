@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../config';
-import fonts from '../../fonts';
 
 import IconSearch from './IconSearch';
 
@@ -19,7 +18,6 @@ const Wrapper = styled.div`
 `;
 
 const SearchInput = styled.input`
-  ${fonts['CircularStd-Book'].styles}
   font-size: 16px;
   color: ${props => props.theme.textColor};
 

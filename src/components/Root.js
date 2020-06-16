@@ -5,10 +5,10 @@ import { ThemeProvider } from 'styled-components';
 import 'sanitize.css/sanitize.css';
 import '../font-faces.css';
 
-import { fontsInUse, themeLight as theme } from '../config';
-import fonts from '../fonts';
+import { themeLight as theme } from '../config';
 import { GlobalStyle, BaselineDevGrid, Sidebar } from '../components';
 
+/*
 const FontPreloadLink = font => {
   const { url, format } = font;
   return (
@@ -21,6 +21,7 @@ const FontPreloadLink = font => {
     />
   );
 };
+*/
 
 /**
  * Root component of the application.
@@ -57,13 +58,9 @@ const Root = props => {
       }}
     >
       <ThemeProvider theme={theme}>
-        <Helmet>
-          {fontsInUse.map(fontName => (
-            <FontPreloadLink key={fontName} {...fonts[fontName]} />
-          ))}
-        </Helmet>
+        <Helmet></Helmet>
         <BaselineDevGrid>{props.children}</BaselineDevGrid>
-        <GlobalStyle fontNames={fontsInUse} />
+        <GlobalStyle />
       </ThemeProvider>
     </Sidebar.StateProvider>
   );

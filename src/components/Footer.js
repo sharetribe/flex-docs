@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { baselineSmall, baselineLarge, baselineBreakpoint } from '../config';
-import fonts from '../fonts';
+
 import { A } from '../components';
 
 const Wrapper = styled.footer`
@@ -29,7 +29,6 @@ const Copyright = styled.p`
   margin: 0;
 
   // Font
-  ${fonts['CircularStd-Book'].styles}
 
   font-size: 14px;
   line-height: 24px;

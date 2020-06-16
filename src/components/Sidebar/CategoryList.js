@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 
-import fonts from '../../fonts';
-
 import { baselineBreakpoint, siteStructure } from '../../config';
 
 import { findParentCategories } from '../../util/navigation';
@@ -54,7 +52,6 @@ const StyledCategoryTitle = styled(CategoryTitle)`
   // Font
   // Note: with this font,
   // 16px font-size starts to bleed with line-height 24px;
-  ${fonts['CircularStd-Book'].styles}
   font-size: ${props => (props.depth && props.depth === 1 ? 12 : 16)}px;
   line-height: 24px;
   letter-spacing: 1px;
@@ -96,9 +93,7 @@ const StyledCategoryTitle = styled(CategoryTitle)`
   }
 `;
 
-const StyledMainCategoryTitle = styled(StyledCategoryTitle)`
-  ${fonts['CircularStd-Bold'].styles}
-`;
+const StyledMainCategoryTitle = styled(StyledCategoryTitle)``;
 
 const StyledChildren = styled.div`
   padding: ${props =>

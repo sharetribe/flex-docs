@@ -1,3 +1,4 @@
+/*
 import { css } from 'styled-components';
 
 import CircularStdBlack from './font-files/circular-std/CircularStd-Black.woff2';
@@ -85,3 +86,4 @@ const fonts = {
 };
 
 export default fonts;
+*/
