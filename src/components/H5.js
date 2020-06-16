@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import fonts from '../fonts';
 import { baselineBreakpoint } from '../config';
 
 const h5Styles = css`
@@ -8,7 +7,6 @@ const h5Styles = css`
   margin: 0;
 
   // Font
-  ${fonts['CircularStd-Bold'].styles}
 
   // Enable baseline offset
   position: relative;

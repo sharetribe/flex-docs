@@ -18,8 +18,10 @@ exports.baselineLarge = 8;
 exports.baselineSpacing = 24;
 exports.baselineBreakpoint = 768;
 
+/*
 // Fonts that are used from fonts.js
 exports.fontsInUse = ['CircularStd-Book', 'CircularStd-Bold'];
+*/
 
 // Generic grid config used in LandingPage and ArticleIndexPage
 exports.grid = {

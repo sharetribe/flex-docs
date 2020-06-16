@@ -1,13 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { baselineBreakpoint } from '../config';
-import fonts from '../fonts';
 
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${props => props.theme.backgroundColor};
     overflow-y: scroll;
     -webkit-font-smoothing: antialiased;
+    font-family: Helvetica, Arial, sans-serif;
   }
   button {
     border: none;
@@ -17,18 +17,15 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .algolia-autocomplete {
-    ${fonts['CircularStd-Book'].styles}
 
     & a {
       text-decoration: none;
     }
 
     & .algolia-docsearch-suggestion--category-header {
-      ${fonts['CircularStd-Bold'].styles}
     }
 
     & .algolia-docsearch-suggestion--title {
-      ${fonts['CircularStd-Bold'].styles}
       color: ${props => props.theme.searchResultsSecondaryColor};
 
       @media (min-width: ${baselineBreakpoint}px) {

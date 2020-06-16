@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import fonts from '../fonts';
 import { baselineBreakpoint } from '../config';
 
 const h2Styles = css`
@@ -8,7 +7,6 @@ const h2Styles = css`
   margin: 0;
 
   // Font
-  ${fonts['CircularStd-Bold'].styles}
 
   font-size: 30px;
   line-height: 36px;

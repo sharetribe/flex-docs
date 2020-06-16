@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import fonts from '../../fonts';
 
 import { baselineBreakpoint } from '../../config';
 import { Ul, Li, Link } from '../../components';
@@ -9,7 +8,6 @@ import { Ul, Li, Link } from '../../components';
 const TocLi = styled(Li).attrs({
   small: true,
 })`
-  ${fonts['CircularStd-Book'].styles}
   font-size: 15px;
   line-height: 24px;
   margin-top: ${props => (props.depth === 2 ? 6 : 0)}px;

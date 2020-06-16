@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import fonts from '../../fonts';
-
 import { baselineBreakpoint, baselineSmall, baselineLarge } from '../../config';
 
 import { Link } from '../../components';
@@ -47,7 +45,6 @@ const hoverLinkStyles = css`
 `;
 
 const StyledArticleLink = styled(ArticleLink)`
-  ${fonts['CircularStd-Book'].styles}
   display: block;
   font-size: 15px;
   line-height: 24px;

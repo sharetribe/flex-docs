@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import fonts from '../fonts';
 import { baselineBreakpoint } from '../config';
 
 const normalStyles = css`
@@ -9,7 +8,6 @@ const normalStyles = css`
   margin: 0;
 
   // Font
-  ${fonts['CircularStd-Book'].styles}
 
   font-size: 16px;
   line-height: 24px;
@@ -43,7 +41,6 @@ const smallStyles = css`
   margin: 0;
 
   // Font
-  ${fonts['CircularStd-Book'].styles}
 
   font-size: 16px;
   line-height: 24px;
@@ -77,7 +74,6 @@ const tinyStyles = css`
   margin: 0;
 
   // Font
-  ${fonts['CircularStd-Book'].styles}
 
   font-size: 12px;
   line-height: 18px;
