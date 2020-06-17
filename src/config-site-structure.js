@@ -42,6 +42,7 @@ const sortingArrayBackground = [
   'what-is-the-difference-between-flex-and-go-source-available',
   'payment-intents',
   'strong-customer-authentication',
+  'privileged-transitions',
   'how-the-search-works',
   'off-session-payments-in-transaction-process',
   'using-stored-payment-cards',
