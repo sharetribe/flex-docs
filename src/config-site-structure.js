@@ -39,6 +39,7 @@ const sortingArrayBackground = [
   'how-to-build-and-launch-with-flex',
   'is-flex-right-for-you',
   'custom-pricing',
+  'pricing',
   'what-is-the-difference-between-flex-and-go-source-available',
   'payment-intents',
   'strong-customer-authentication',
