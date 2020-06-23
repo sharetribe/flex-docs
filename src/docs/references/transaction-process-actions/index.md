@@ -45,7 +45,67 @@ Initialize a new transaction from a listing.
 
 **Configuration options**: -
 
+### :action/privileged-set-line-items
+
+Defines transaction price and breakdown. Sets given line items and
+calculates totals for each line item and for the entire transaction.
+
+Existing line items will be removed.
+
+**Preconditions**: -
+
+**Parameters**:
+
+- `lineItems`: Collection of line items (max 50). Each line items has
+  following fields:
+  - `code`: string, mandatory, indentifies line item type (e.g.
+    "line-item/cleaning-fee"), maximum length 64 characters.
+  - `unitPrice`: money, mandatory
+  - `lineTotal`: money
+  - `quantity`: number
+  - `percentage`: number (e.g. 15.5 for 15.5%)
+  - `seats`: number
+  - `units`: number
+  - `includeFor`: array containing strings "customer" or "provider",
+    default ["customer" ":provider" ]
+
+Line item must have either `quantity` or `percentage` or both `seats`
+and `units`.
+
+`lineTotal` is calculated by the following rules:
+
+- If `quantity` is provided, the line total will be
+  `unitPrice * quantity`.
+- If `percentage` is provided, the line total will be
+  `unitPrice * (percentage / 100)`.
+- If `seats` and `units` are provided the line item will contain
+  `quantity` as a product of `seats` and `units` and the line total will
+  be `unitPrice * units * seats`.
+
+`lineTotal` can be optionally passed in. Will be validated against
+calculated line total.
+
+`includeFor` defines commissions. Customer commission is added by
+defining `includeFor` array `["customer"]` and provider commission by
+`["provider"]`.
+
+`payinTotal` is calculated by the action and added to the transaction.
+`payinTotal` equals to the sum of customer commission line totals and
+other non-commission line totals. Must be positive and larger than
+`payoutTotal`
+
+`payoutTotal` is calculated by the action and added to the transaction.
+`payoutTotal` equals to the sum of provider commission line totals and
+other non-commission line totals. Must be zero or positive.
+
+Only one currency is allowed accross all fields defining money.
+
+**Configuration options**: -
+
 ### :action/calculate-tx-customer-commission
+
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items
 
 Calculates the customer commission, sets the transaction payin amount
 and adds a `:line-item/customer-commission` line-item.
@@ -84,6 +144,9 @@ Where:
   monetary unit, e.g. "EUR".
 
 ### :action/calculate-tx-provider-commission
+
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items
 
 Calculates the provider commission, sets the transaction payout amount
 and adds a `:line-item/provider-commission` line-item.
@@ -125,6 +188,9 @@ Where:
 
 ### :action/calculate-tx-customer-fixed-commission
 
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items.
+
 Calculates a fixed commission for customer, sets the transaction pay out
 amount and adds a `:line-item/customer-fixed-commission` line-item.
 
@@ -154,6 +220,9 @@ Where:
   monetary unit, e.g. "EUR".
 
 ### :action/calculate-tx-provider-fixed-commission
+
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items.
 
 Calculates a fixed commission for provider, sets the transaction pay out
 amount and adds a `:line-item/provider-fixed-commission` line-item.
@@ -187,26 +256,32 @@ Where:
 
 ### :action/calculate-tx-nightly-total
 
-**DEPRECATED**: use `:action/calculate-tx-nightly-total-price` instead
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items.
 
 Calculates transaction total and provider commission from a nightly
 booking.
 
 ### :action/calculate-tx-total
 
-**DEPRECATED**: use `:action/calculate-tx-nightly-total-price` instead
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items.
 
 Same as `:action/calculate-tx-nightly-total`, kept for backward
 compatibility.
 
 ### :action/calculate-tx-daily-total
 
-**DEPRECATED**: use `:action/calculate-tx-daily-total-price` instead
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items.
 
 Calculates transaction total and provider commission from a daily
 booking.
 
 ### :action/calculate-tx-daily-total-price
+
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items
 
 Calculates transaction total from a daily booking.
 
@@ -221,6 +296,9 @@ Calculates transaction total from a daily booking.
 
 ### :action/calculate-tx-nightly-total-price
 
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items
+
 Calculates transaction total from a nightly booking.
 
 **Preconditions**:
@@ -233,6 +311,9 @@ Calculates transaction total from a nightly booking.
 **Configuration options**: -
 
 ### :action/calculate-tx-total-daily-booking-exclude-start
+
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items
 
 Calculates transaction total from daily booking without start and end
 dates. Can be used for price calculation of bookings where the boundary
@@ -251,8 +332,8 @@ dates are used for delivery and pickup.
 
 ### :action/calculate-tx-two-units-total-price
 
-**Deprecated**: use `:action/set-line-items-and-total` instead to have
-full control of the calculation and the line items
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items.
 
 Calculates transaction total from the quantity params and the price
 multiplier configuration options.
@@ -274,6 +355,9 @@ multiplier configuration options.
 - `quantity2-price-multiplier`: decimal, defaults to 1.0M
 
 ### :action/calculate-tx-unit-total-price
+
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items
 
 Calculates transaction total from given quantity and listing price.
 
@@ -317,6 +401,9 @@ offer.
 **Configuration options**: -
 
 ### :action/set-line-items-and-total
+
+**Deprecated**: use `:privileged-set-line-items` to have full control of
+the calculation and the line items.
 
 Enables custom pricing. Sets given line items and calculates totals for
 each line item and for the transaction.
