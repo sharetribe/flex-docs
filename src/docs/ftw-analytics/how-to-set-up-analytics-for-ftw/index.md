@@ -30,7 +30,7 @@ If you want to add a new analytics library, you can do as follows:
 
 If the analytics library has an external script, add the library script
 tag to the
-[src/public/index.html](https://github.com/sharetribe/flex-template-web/blob/master/public/index.html)
+[public/index.html](https://github.com/sharetribe/flex-template-web/blob/master/public/index.html)
 file. If you need more control, see how the GA script is added in
 [server/renderer.js](https://github.com/sharetribe/flex-template-web/blob/master/server/renderer.js).
 
