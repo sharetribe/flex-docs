@@ -47,7 +47,7 @@ listing page it doesn't have the dynamic title slug in the middle. This
 allows unified analytics and correct tracking of pages that can be
 accessed from multiple different URLs.
 
-If you analytics library takes the page URL from the browser, you might
+If your analytics library takes the page URL from the browser, you might
 need to override that behavior to use the canonical URL that is given to
 the method.
 
