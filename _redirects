@@ -58,6 +58,7 @@
 /docs/tutorials/getting-started-with-ftw/ /docs/introduction/getting-started-with-ftw-daily/
 /docs/tutorials/getting-started-with-integration-api/ /docs/integrations/getting-started-with-integration-api/
 /docs/tutorials/manage-search-schemas-with-flex-cli/ /docs/flex-cli/manage-search-schemas-with-flex-cli/
+/docs/background/custom-pricing/ /docs/background/pricing/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
