@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started-with-ftw-daily
-updated: 2020-02-20
+updated: 2020-06-25
 category: introduction
 ingress:
   Learn how to install one of the Flex Templates for Web (FTW) to your
@@ -139,20 +139,27 @@ and maps for the web app.
 
 ![Mandatory integrations: Flex Marketplace API, Stripe, Map provider](FTW-integrations@2x.png)
 
-FTW templates just need 3 environment variables to make these
+FTW templates just need 4 environment variables to make these
 integrations work.
 
-- **[`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`](#sharetribe-flex-client-id)**
+- **[`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`](#sharetribe-flex-client-id-and-client-secret)**
+- **[`SHARETRIBE_SDK_CLIENT_SECRET`](#sharetribe-flex-client-id-and-client-secret)**
 - **[`REACT_APP_STRIPE_PUBLISHABLE_KEY`](#stripe-keys)**
 - **[`REACT_APP_MAPBOX_ACCESS_TOKEN`](#mapbox-access-token)**
 
-### Sharetribe Flex Client ID
+### Sharetribe Flex client ID and client secret
 
-To use the Marketplace API, you will need a Client ID. You can request
-access at https://www.sharetribe.com/products/flex/
+To use the Marketplace API, you will need a **client ID**. You can
+request access at https://www.sharetribe.com/products/flex/
 
 When you get access, you will be able to log into Flex Console and check
-the Client ID.<br /> Flex Console: _Build > Applications_
+the client ID.<br /> Flex Console: _Build > Applications_
+
+In addition, FTW templates use a transaction process that includes a
+privileged transition. That makes it possible to customize pricing on
+the small server that's included to the template. **Client secret** is
+needed to make this secure call from the template's own server to Flex
+API.
 
 ![Flex Console: Applications tab](./console-build-application.png)
 
