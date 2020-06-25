@@ -17,7 +17,7 @@ file.
 
 FTW templates have a couple of environment variables. Those variables
 are more or less specific to a runtime environment. For example,
-`REACT_APP_SHARETRIBE_SDK_CLIENT_ID` might be pointing to the client id
+`REACT_APP_SHARETRIBE_SDK_CLIENT_ID` might be pointing to the client ID
 of your Flex test-environment on localhost and on your staging server
 (if you have one).
 
