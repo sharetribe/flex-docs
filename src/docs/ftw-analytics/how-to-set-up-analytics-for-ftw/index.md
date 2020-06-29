@@ -30,7 +30,7 @@ If you want to add a new analytics library, you can do as follows:
 
 If the analytics library has an external script, add the library script
 tag to the
-[src/public/index.html](https://github.com/sharetribe/flex-template-web/blob/master/public/index.html)
+[public/index.html](https://github.com/sharetribe/flex-template-web/blob/master/public/index.html)
 file. If you need more control, see how the GA script is added in
 [server/renderer.js](https://github.com/sharetribe/flex-template-web/blob/master/server/renderer.js).
 
@@ -47,7 +47,7 @@ listing page it doesn't have the dynamic title slug in the middle. This
 allows unified analytics and correct tracking of pages that can be
 accessed from multiple different URLs.
 
-If you analytics library takes the page URL from the browser, you might
+If your analytics library takes the page URL from the browser, you might
 need to override that behavior to use the canonical URL that is given to
 the method.
 
