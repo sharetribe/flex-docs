@@ -1,7 +1,7 @@
 ---
 title: Edit transaction process with Flex CLI
 slug: edit-transaction-process-with-flex-cli
-updated: 2019-10-23
+updated: 2020-06-30
 category: flex-cli
 ingress:
   This tutorial shows you how to edit transaction process with Flex CLI.
@@ -44,7 +44,12 @@ flex-cli process list -m my-test-marketplace
 ```
 
 From the list of processes, pick the one that you want to edit. In this
-tutorial we'll use process `preauth-nightly-booking`, version 1.
+tutorial we'll use process `preauth-nightly-booking`, version 1. You
+probably have different processes in your marketplace, you could use
+those. However, you can check the content of this "nightly booking"
+example process online from
+[Flex example processes](https://github.com/sharetribe/flex-example-processes)
+Github repository.
 
 We can pull the process with the `process pull` command. Let's see the
 options that the command needs:
@@ -139,7 +144,7 @@ to find the transaction where the commission is calculated. The
 commission is calculated by an action named
 `:action/calculate-tx-provider-commission` (or
 `:action/calculate-tx-customer-commission` if customer commission is in
-use). In a default `:preauth-nightly-booking` process, the commission in
+use). In a `:preauth-nightly-booking` process, the commission in
 calculated in transitions `:transition/request-payment` and
 `:transition/request-payment-after-enquiry`.
 
