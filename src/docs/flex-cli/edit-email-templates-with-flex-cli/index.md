@@ -1,7 +1,7 @@
 ---
 title: Edit email templates with Flex CLI
 slug: edit-email-templates-with-flex-cli
-updated: 2019-11-22
+updated: 2020-06-30
 category: flex-cli
 ingress:
   This tutorial shows you how to edit email templates with Flex CLI.
@@ -44,7 +44,8 @@ flex-cli process list -m my-test-marketplace
 The `process list` command prints out all the processes and their latest
 versions. You want to pick the correct process and version from this
 list. In this tutorial we will use the `preauth-nightly-booking`
-process, version 1.
+process, version 1. You probably have different transaction processes in
+your marketplace - so, you need to adjust this guide accordingly.
 
 Let's pull that process version:
 
@@ -287,8 +288,8 @@ isn't an alias pointing to the latest process version. To allow FTW or
 other apps to use the new process version through the Marketplace API,
 you will need an alias to point to the version.
 
-In the default process there is a `release-1` alias. Let's update that
-to point to the new process version:
+In our `preauth-nightly-booking` example process there is a `release-1`
+alias. Let's update that to point to the new process version:
 
 ```bash
 flex-cli process update-alias --process preauth-nightly-booking --alias release-1 --version 2 -m my-test-marketplace
