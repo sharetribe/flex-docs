@@ -1,7 +1,7 @@
 ---
 title: Change transaction process setup in FTW
 slug: change-transaction-process-in-ftw
-updated: 2019-10-24
+updated: 2020-06-29
 category: cookbook-transaction-process
 ingress:
   This guide describes how to customize Flex Template for Web (FTW) to
@@ -9,12 +9,12 @@ ingress:
 published: true
 ---
 
-The default transaction process in FTW is
-`preauth-nightly-booking/release-1` and FTW is created to support states
-and transitions defined in that process.
+The default transaction process in FTW is a nightly booking process
+called `flex-default-process/release-1` and FTW is created to support
+states and transitions defined in that process.
 
 How the transaction process works behind the Marketplace API depends on
-how you process is customised in our backend. To customise the
+how your process is customised in our backend. To customise the
 transaction process in the backend, you should use Flex CLI. See the
 [Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 tutorial to get familiar with the tool.
@@ -51,11 +51,15 @@ from
 [Build section](https://flex-console.sharetribe.com/transaction-processes)
 in Console.
 
-`bookingUnitType` specifies what kind of bookable units the client app
-is dealing with. Currently, there are 3 possible values for the unit
-type: `line-item/night`, `line-item/day`, and `line-item/units`.
+`bookingUnitType` specifies what kind of bookable units the web app is
+dealing with. Currently, there are 3 possible values for the unit type:
+`line-item/night`, `line-item/day`, and `line-item/units`.
 
-> Note: You should revise other configuration options too.
+> Note 1: If you change bookingUnitType from config.js, you should
+> change it also for pricing of privileged transtions at client app's
+> server: server/api-util/lineItems.js
+
+> Note 2: You should revise other configuration options too.
 
 ## 2. Check if the transaction.js file needs to be updated
 
@@ -87,7 +91,7 @@ const stateDescription = {
   // id is defined only to support Xstate format.
   // However if you have multiple transaction processes defined,
   // it is best to keep them in sync with transaction process aliases.
-  id: 'preauth-nightly-booking/release-1',
+  id: 'flex-default-process/release-1',
 
    // This 'initial' state is a starting point for new transaction
   initial: STATE_INITIAL,
