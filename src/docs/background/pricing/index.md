@@ -141,7 +141,7 @@ percentage of some other (sub)total.
 | "line-item/customer-commission" | new Money(50000, "USD") | 15         | new Money(7500, "USD")  | ["customer"]             |
 | "line-item/provider-commission" | new Money(50000, "USD") | -15        | new Money(-7500, "USD") | ["provider"]             |
 
-`lineTotal` is calculated as `unitPrice \* percentage / 100\*\*.
+`lineTotal` is calculated as `unitPrice * percentage / 100`.
 
 ## Refunds
 
