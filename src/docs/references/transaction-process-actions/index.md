@@ -633,6 +633,19 @@ Merge given data to the protected data of the transaction.
 
 **Configuration options**: -
 
+### :action/privileged-update-metadata
+
+Merge given data into the metadata of the transaction. This action
+requires that the transition is made from a trusted context.
+
+**Preconditions**: -
+
+**Parameters**:
+
+- `metadata`: JSON object, max 50KB, optional
+
+**Configuration options**: -
+
 ### :action/stripe-create-payment-intent
 
 Action for creating a Stripe Payment Intent for the transaction.
