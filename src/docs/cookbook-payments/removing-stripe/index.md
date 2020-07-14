@@ -13,10 +13,13 @@ published: true
 # Removing Stripe
 
 In this guide, we will go through the minimum changes needed to make the booking
-flow work without Stripe. Most likely you need to customize some parts (e.g.
+flow work without Stripe. This is not an easy customization project. FTW
+templates are made for a specific transaction process and payments are a core
+feature: its ubiquitous nature means that you need to touch quite many
+components and files. Most likely you need to customize some parts (e.g.
 transaction process, email templates, checkout page) more depending on your
-marketplace idea. You might also want to remove e.g. unused Stripe components
-from your project to clean up the code.
+marketplace idea. For example, you might also want to remove unused Stripe
+components from your project to clean up the code.
 
 ###1. Update the transaction process and remove Stripe related actions
 
@@ -33,10 +36,11 @@ If you are using the FTW default process with strong customer authentication
 (e.g. flex-default-process) you need to remove confirming the payment.
 Otherwise, the transaction will get stuck. The simplest way to do this is to
 remove `pending-payment` and `expire-payment` states and point `request-payment`
-and `equest-payment-after-enquiry` directly to `preauthorized` state. However,
+and `request-payment-after-enquiry` directly to `preauthorized` state. However,
 when you are building the transaction process to your marketplace it might make
-sense to rename some of the states and transitions (e.g. preauthorized) so that
-they make more sense in your use-case.
+sense to rename some of the states and transitions so that they make more sense
+in your use-case. E.g. _preauthorized_ state refers to the state of payment - it
+is preauthorized to be captured.
 
 #### Edit util/transaction.js to reflect the changes in your transaction process
 
@@ -88,8 +92,7 @@ information before we allow them to publish listings. This check is done in the
 
 ```js
   handlePublishListing(id) {
-    const { onPublishListingDraft} = this.props;
-    onPublishListingDraft(id);
+    this.props.onPublishListingDraft(id);
   }
 ```
 
@@ -110,15 +113,16 @@ code from the component.
 Removing Stripe from `CheckoutPage` is probably the most complicated task in
 this list because the Strong Customer Authentication (SCA) and ability to save
 payment method have added a lot of logic to the current page. We can use the
-[edited version of CheckoutPage from FTW 2.17.1](/tutorial-assets/SimpleCheckoutPage.js)
-as a simpler starting point.
+edited version of CheckoutPage from FTW 2.17.1 as a simpler starting point:
+
+- [SimpleCheckoutPage.js](/tutorial-assets/SimpleCheckoutPage.js)
 
 Some of the functions on later versions of CheckoutPage.duck.js has changed so
 here are the main changes done in the edited code:
 
 - In `handleSubmit` function we only call onInitiateOrder function which
   internally decides if the transaction should be initiated or transitioned. We
-  also need to handle sending the possible inital message after that.
+  also need to handle sending the possible initial message after that.
 
 ```js
   handleSubmit(values) {
@@ -311,7 +315,7 @@ Remember also to update email templates which contain pricing information.
 
 ### Edit API calls in FTW backend
 
-If you are using FTW-daily v6.0.0 or higher or FTW-hourly v8.0.0 or higher you
+If you are using FTW-daily v6.0.0 or higher (or FTW-hourly v8.0.0 or higher) you
 need to edit the API calls in your FTW-backend. If there are no payments used
 there is most likely no need for calculating the line items so we can remove
 `transactionLineItems` function calls from API endpoints. It depends on your
