@@ -241,8 +241,10 @@ flex-cli search set --key category --type enum --scope public -m my-marketplace-
 
 </extrainfo>
 
-After all these changes, the client app starts to look like CottageDays
-marketplace. It's time to get it online and share it with people who
-could give you some feedback. In the next article, we'll deploy the app
-to Heroku.<br />
-[› Go to the next article](/tutorial-branding/deploy-to-heroku/)
+---
+
+In the next article, we add FAQ page. With that article, you learn how
+to add static pages. Quite often there's a need to add more info about
+how the marketplace works and adding a static page is the easiest way to
+do that. <br />
+[› Go to the next article](/tutorial-branding/add-faq-page/)
