@@ -28,7 +28,9 @@ const sortingArrayTutorialBranding = [
   'add-faq-page',
   'deploy-to-heroku',
 ];
-const sortingArrayTutorialExtendedData = [];
+const sortingArrayTutorialExtendedData = [
+  'add-extended-data',
+];
 
 const sortingArrayBackground = [
   'introducing-flex',
