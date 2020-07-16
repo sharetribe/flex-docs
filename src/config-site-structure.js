@@ -30,6 +30,7 @@ const sortingArrayTutorialBranding = [
 ];
 const sortingArrayTutorialExtendedData = [
   'add-extended-data',
+  'show-extended-data',
 ];
 
 const sortingArrayBackground = [
