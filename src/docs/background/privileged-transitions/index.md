@@ -5,7 +5,7 @@ updated: 2020-06-25
 category: background
 ingress:
   This article introduces you to the concept of privileged transitions
-  and how Flex uses them to invoke actions from a secure context.
+  and how Flex uses them to invoke actions from a trusted context.
 published: true
 ---
 
@@ -33,7 +33,7 @@ technically able to invoke a pricing related transition with discounted
 price parameters.
 
 This is where privileged transitions come into play. They are
-transaction process transitions that can be invoked only from a secure
+transaction process transitions that can be invoked only from a trusted
 context. In other words, this means that you can build your own server
 side validation that sits between your marketplace UI and the Flex
 Marketplace API. In the discount coupon example, this means that the
@@ -80,11 +80,24 @@ to `true` for the given transition in a transaction process as follows:
  :privileged? true}
 ```
 
-Privileged transitions are be configured just like a normal transitions.
+Privileged transitions are configured just like a normal transitions.
 However, what's special about privileged transitions is that, unlike
 normal transitions, they can contain _privileged actions_. Privileged
-actions validate that they are always tied to a privileged transition
-and usually handle sensitive information. An example of such action is
+actions validate that they are always used in a _trusted context_ and
+usually handle sensitive information. An example of such action is
 [privileged-set-line-items](/references/transaction-process-actions/#actionprivileged-set-line-items)
 which allows full control over the price of a transaction, including the
 commission.
+
+## Operator transitions in the Integration API
+
+The Integration API
+[makes it possible to invoke transitions](https://www.sharetribe.com/api-reference/integration.html#transition-transaction)
+for which the `:actor` is set to `:actor.role/operator`. As the
+Integration API authentication requires knowledge of the integration
+application's client secret and is meant to be used only from your own
+backend implementation, it is considered a trusted source for invoking
+transitions. As a consequence, the operator transitions can utilize any
+privileged actions. For instance,
+[privileged-update-metadata](/references/transaction-process-actions/#actionprivileged-update-metadata)
+action can be used to update the transaction's metadata.

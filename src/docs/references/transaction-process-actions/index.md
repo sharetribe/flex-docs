@@ -25,7 +25,9 @@ reference article.
 
 ## Actions
 
-### :action.initializer/init-listing-tx
+### Transaction initialization
+
+#### :action.initializer/init-listing-tx
 
 **NOTE**: this action is implicit and must not be in the process
 description.
@@ -45,7 +47,9 @@ Initialize a new transaction from a listing.
 
 **Configuration options**: -
 
-### :action/privileged-set-line-items
+### Pricing
+
+#### :action/privileged-set-line-items
 
 Defines transaction price and breakdown. Sets given line items and
 calculates totals for each line item and for the entire transaction.
@@ -102,7 +106,7 @@ Only one currency is allowed accross all fields defining money.
 
 **Configuration options**: -
 
-### :action/calculate-tx-customer-commission
+#### :action/calculate-tx-customer-commission
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items
@@ -143,7 +147,7 @@ Where:
 - `currency`, string, mandatory, The three letter currency code of a
   monetary unit, e.g. "EUR".
 
-### :action/calculate-tx-provider-commission
+#### :action/calculate-tx-provider-commission
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items
@@ -186,7 +190,7 @@ Where:
 - `currency`, string, mandatory, The three letter currency code of a
   monetary unit, e.g. "EUR".
 
-### :action/calculate-tx-customer-fixed-commission
+#### :action/calculate-tx-customer-fixed-commission
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items.
@@ -219,7 +223,7 @@ Where:
 - `currency`, string, mandatory, The three letter currency code of a
   monetary unit, e.g. "EUR".
 
-### :action/calculate-tx-provider-fixed-commission
+#### :action/calculate-tx-provider-fixed-commission
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items.
@@ -254,7 +258,7 @@ Where:
 - `currency`, string, mandatory, The three letter currency code of a
   monetary unit, e.g. "EUR".
 
-### :action/calculate-tx-nightly-total
+#### :action/calculate-tx-nightly-total
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items.
@@ -262,7 +266,7 @@ the calculation and the line items.
 Calculates transaction total and provider commission from a nightly
 booking.
 
-### :action/calculate-tx-total
+#### :action/calculate-tx-total
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items.
@@ -270,7 +274,7 @@ the calculation and the line items.
 Same as `:action/calculate-tx-nightly-total`, kept for backward
 compatibility.
 
-### :action/calculate-tx-daily-total
+#### :action/calculate-tx-daily-total
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items.
@@ -278,7 +282,7 @@ the calculation and the line items.
 Calculates transaction total and provider commission from a daily
 booking.
 
-### :action/calculate-tx-daily-total-price
+#### :action/calculate-tx-daily-total-price
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items
@@ -294,7 +298,7 @@ Calculates transaction total from a daily booking.
 
 **Configuration options**: -
 
-### :action/calculate-tx-nightly-total-price
+#### :action/calculate-tx-nightly-total-price
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items
@@ -310,7 +314,7 @@ Calculates transaction total from a nightly booking.
 
 **Configuration options**: -
 
-### :action/calculate-tx-total-daily-booking-exclude-start
+#### :action/calculate-tx-total-daily-booking-exclude-start
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items
@@ -330,7 +334,7 @@ dates are used for delivery and pickup.
 
 **Configuration options**: -
 
-### :action/calculate-tx-two-units-total-price
+#### :action/calculate-tx-two-units-total-price
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items.
@@ -354,7 +358,7 @@ multiplier configuration options.
 - `quantity1-price-multiplier`: decimal, defaults to 1.0M
 - `quantity2-price-multiplier`: decimal, defaults to 1.0M
 
-### :action/calculate-tx-unit-total-price
+#### :action/calculate-tx-unit-total-price
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items
@@ -371,7 +375,7 @@ Calculates transaction total from given quantity and listing price.
 
 **Configuration options**: -
 
-### :action/calculate-full-refund
+#### :action/calculate-full-refund
 
 Calculates full refund for provider. Sets transaction pay in and pay out
 amounts to zero and creates reverse line items that undo all the
@@ -385,7 +389,7 @@ This action must not be run more than once.
 
 **Configuration options**: -
 
-### :action/set-negotiated-total-price
+#### :action/set-negotiated-total-price
 
 Enables price negotiation. When the action is run for the first time it
 adds a new line item that makes the transaction total to match with the
@@ -400,7 +404,7 @@ offer.
 
 **Configuration options**: -
 
-### :action/set-line-items-and-total
+#### :action/set-line-items-and-total
 
 **Deprecated**: use `:privileged-set-line-items` to have full control of
 the calculation and the line items.
@@ -435,7 +439,9 @@ the line item will contain `quantity` as a product of `seats` and
 
 **Configuration options**: -
 
-### :action/create-booking
+### Bookings
+
+#### :action/create-booking
 
 Creates a new booking in state pending with given start and end time.
 Optionally takes booking display start and end times as well as seats.
@@ -496,7 +502,7 @@ Optionally takes booking display start and end times as well as seats.
   `:day` normalizes `bookingStart` and `bookingEnd` values to midnight
   UTC.
 
-### :action/accept-booking
+#### :action/accept-booking
 
 Marks booking as accepted.
 
@@ -509,7 +515,7 @@ Marks booking as accepted.
 
 **Configuration options**: -
 
-### :action/cancel-booking
+#### :action/cancel-booking
 
 Cancel an accepted booking.
 
@@ -522,7 +528,7 @@ Cancel an accepted booking.
 
 **Configuration options**: -
 
-### :action/decline-booking
+#### :action/decline-booking
 
 Decline a pending booking.
 
@@ -535,7 +541,9 @@ Decline a pending booking.
 
 **Configuration options**: -
 
-### :action/post-review-by-customer
+### Reviews
+
+#### :action/post-review-by-customer
 
 Action for customer to post a review of provider.
 
@@ -553,7 +561,7 @@ will make them publicly available.
 
 **Configuration options**: -
 
-### :action/post-review-by-provider
+#### :action/post-review-by-provider
 
 Action for provider to post a review of customer.
 
@@ -571,7 +579,7 @@ will make them publicly available.
 
 **Configuration options**: -
 
-### :action/publish-reviews
+#### :action/publish-reviews
 
 Action to publish any reviews in the transaction.
 
@@ -581,7 +589,9 @@ Action to publish any reviews in the transaction.
 
 **Configuration options**: -
 
-### :action/reveal-customer-protected-data
+### Extended data
+
+#### :action/reveal-customer-protected-data
 
 Merge customer protected data into transaction protected data.
 
@@ -601,7 +611,7 @@ Merge customer protected data into transaction protected data.
 
   {:key-mapping {:phoneNumber :customerPhoneNumber}}
 
-### :action/reveal-provider-protected-data
+#### :action/reveal-provider-protected-data
 
 Merge provider protected data into transaction protected data.
 
@@ -621,7 +631,7 @@ Merge provider protected data into transaction protected data.
 
   {:key-mapping {:phoneNumber :providerPhoneNumber}}
 
-### :action/update-protected-data
+#### :action/update-protected-data
 
 Merge given data to the protected data of the transaction.
 
@@ -633,7 +643,22 @@ Merge given data to the protected data of the transaction.
 
 **Configuration options**: -
 
-### :action/stripe-create-payment-intent
+#### :action/privileged-update-metadata
+
+Merge given data into the metadata of the transaction. This action
+requires that the transition is made from a trusted context.
+
+**Preconditions**: -
+
+**Parameters**:
+
+- `metadata`: JSON object, max 50KB, optional
+
+**Configuration options**: -
+
+### Stripe integration
+
+#### :action/stripe-create-payment-intent
 
 Action for creating a Stripe Payment Intent for the transaction.
 
@@ -680,7 +705,7 @@ SCA-compatible.
   `:action/stripe-confirm-payment-intent` must not be included in this
   or subsequent transitions.
 
-### :action/stripe-capture-payment-intent
+#### :action/stripe-capture-payment-intent
 
 Action for capturing a confirmed Stripe PaymentIntent.
 
@@ -692,7 +717,7 @@ Action for capturing a confirmed Stripe PaymentIntent.
 
 **Parameters:** - **Configurations:** -
 
-### :action/stripe-confirm-payment-intent
+#### :action/stripe-confirm-payment-intent
 
 Action for confirming payment intent that is in pending state.
 
@@ -703,7 +728,7 @@ Action for confirming payment intent that is in pending state.
 
 **Parameters:** - **Configurations:** -
 
-### :action/stripe-create-payout
+#### :action/stripe-create-payout
 
 Create pay out to external bank account. The managed account must have
 sufficient available balance.
@@ -717,12 +742,12 @@ sufficient available balance.
 
 **Configuration options**: -
 
-### :action/stripe-refund-charge
+#### :action/stripe-refund-charge
 
 **DEPRECATED**: same as `:action/stripe-refund-payment`, use that
 instead
 
-### :action/stripe-refund-payment
+#### :action/stripe-refund-payment
 
 Refund (in full) a Stripe payment. Supports both cancelling a
 PaymentIntent that has not yet been captured, as well as issuing a
@@ -742,7 +767,9 @@ was created directly without using a PaymentIntent.
 
 **Configuration options**: -
 
-### :action/fail
+### Testing
+
+#### :action/fail
 
 Action that always fails. Useful for testing.
 
