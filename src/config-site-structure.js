@@ -31,6 +31,7 @@ const sortingArrayTutorialBranding = [
 const sortingArrayTutorialExtendedData = [
   'add-extended-data',
   'show-extended-data',
+  'filter-with-extended-data',
 ];
 
 const sortingArrayBackground = [
