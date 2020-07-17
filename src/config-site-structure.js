@@ -28,6 +28,11 @@ const sortingArrayTutorialBranding = [
   'add-faq-page',
   'deploy-to-heroku',
 ];
+const sortingArrayTutorialExtendedData = [
+  'add-extended-data',
+  'show-extended-data',
+  'filter-with-extended-data',
+];
 
 const sortingArrayBackground = [
   'introducing-flex',
@@ -89,6 +94,11 @@ exports.siteStructure = [
       {
         id: 'tutorial-branding',
         sortingArray: sortingArrayTutorialBranding,
+        showNextAndPrev: true,
+      },
+      {
+        id: 'tutorial-extended-data',
+        sortingArray: sortingArrayTutorialExtendedData,
         showNextAndPrev: true,
       },
     ],
