@@ -1,7 +1,7 @@
 ---
 title: Create test environment
 slug: deploy-to-heroku
-updated: 2020-03-03
+updated: 2020-07-17
 category: tutorial-branding
 ingress: Deploy the app to Heroku to share it online with other testers.
 published: true
@@ -178,12 +178,8 @@ layout:
   Use [test card numbers](https://stripe.com/docs/testing).
 
 If your marketplace concept needs advanced features, you need to
-continue with customizations. You could:
+continue with customizations. In
+[the next part of this tutorial](/tutorial-extended-data/add-extended-data/),
+we'll go through how to extend listing entity with extended data.
 
-- [Extend listings](/cookbook-data-model/extend-listing-data-in-ftw/)
-  with your own data
-- [Edit email templates](/flex-cli/edit-email-templates-with-flex-cli/)
-- Add more
-  [search filters](/cookbook-search/change-search-filters-in-ftw/)
-- [Customize pricing](/background/custom-pricing/)
-- [Customize the transaction process](/background/transaction-process/)
+[› Go to the next article](/tutorial-extended-data/add-extended-data/)
