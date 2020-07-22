@@ -34,7 +34,10 @@ const sortingArrayTutorialExtendedData = [
   'filter-with-extended-data',
 ];
 
-const sortingArrayTutorialTransactionProcess = [];
+const sortingArrayTutorialTransactionProcess = [
+  'customize-pricing-tutorial',
+  'create-transaction-process',
+];
 
 const sortingArrayBackground = [
   'introducing-flex',
