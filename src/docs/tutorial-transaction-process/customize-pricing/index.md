@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-# Store cleaning fee price in listing's public data
+# Store cleaning fee into listing
 
 Pricing can be based on a lot of variables but one practical way to build it is
 to base it on information stored as extended data in listings. In this example,
@@ -28,7 +28,7 @@ Here we will only list the required changes. See the
 [Add extended data to listing entity tutorial](/tutorial-extended-data/add-extended-data/)
 for step-by-step instructions on how to add public data field for listing.
 
-### Save new field to public data
+### Save to public data
 
 In _EditListingPricingPanel_ we need to edit the `onSubmit` function to save the
 new public data field `cleaningFee`. Because we are using `FieldCurrencyInput`
@@ -55,7 +55,7 @@ which needs to be under the `publicData` key.
       }}
 ```
 
-### Pass initial values for the EditListingPriceForm
+### Initialize the form
 
 Next we want to pass inital values for `price` and `cleaningFee`. For this we
 need to get the `cleaningFee` from listing attributes under the `publicData`
@@ -70,7 +70,7 @@ const cleaningFeeAsMoney = new Money(cleaningFee.amount, cleaningFee.currency);
 const initialValues = { price, cleaningFeeAsMoney };
 ```
 
-### Add FieldCurrencyInput input to the form
+### Add input component
 
 We want to be able to save the amount of listing's cleaning fee so we add new
 `FieldCurrencyInput` to the _EditListingPricingForm_. The id and name of this
@@ -116,7 +116,7 @@ file, the EditListingPricingPanel should look something like this:
 
 ![EditListingPricePanel](./editlistingpricepanel.png)
 
-# Update BookingDatesForm to have the option for cleaning fee
+# Update BookingDatesForm
 
 In our example the cleaning fee is optional and users can select that as an
 add-on to their booking. In this section, we will add the UI component for
@@ -128,7 +128,7 @@ booking, you don't need to add the UI component for selecting the cleaning fee
 and you can move forward to the next section: Add a transaction line item for
 the cleaning fee.
 
-### Pass cleaning fee from BookingPanel to BookingDatesForm
+### Prepare props
 
 The cleaning fee is now saved to listing's public data so we can find it under
 the `publicData` key from listing's attributes. Because we decided that adding a
@@ -168,7 +168,7 @@ form will be used when creating the transaction lineItems. We will pass the
   />
 ```
 
-### Add FieldCheckbox for cleaning fee
+### Add cleaning fee checkbox
 
 Next, we need to add a new field to _BookingDatesForm_ for selecting the
 possible cleaning fee. For this, we will use the `FieldCheckbox` component
@@ -283,7 +283,7 @@ though we added the new checkbox.
 
 ![Cleaning fee checkbox](./cleaningFeeCheckbox.png)
 
-### Add the cleaningFee to the bookingData
+### Update the bookingData
 
 Next, we want to pass the value of the cleaning fee checkbox forward as part of
 the `bookingData`. This is needed so that we can show the selected cleaning fee
@@ -345,7 +345,7 @@ then we should check which items were selected.
   }
 ```
 
-# Add a new line item for cleaning fee
+# Add a new line-item for the cleaning fee
 
 Finally, we need to edit the FTW-backend and add new line item for cleaning fee
 so that it will be included in pricing. Flex uses privileged transitions to
@@ -385,7 +385,7 @@ pricing logic in the `/server/api-util/lineItems.js` file:
         └── lineItems.js
 ```
 
-### Add a helper function for resolving cleaning fee
+### Resolve the cleaning fee
 
 First, we will add a new helper function for resolving the cleaning fee line
 item. This function will take the listing as a parameter and then get the
@@ -410,7 +410,7 @@ const resolveCleaningFeePrice = listing => {
 };
 ```
 
-### Add cleaning fee line item to transactionLineItems function
+### Add line-item
 
 Now the transactionLineItems function can be updated to also provide the
 cleaning fee line item in case the listing has a cleaning fee configured.
