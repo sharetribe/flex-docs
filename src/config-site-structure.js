@@ -34,6 +34,8 @@ const sortingArrayTutorialExtendedData = [
   'filter-with-extended-data',
 ];
 
+const sortingArrayTutorialTransactionProcess = [];
+
 const sortingArrayBackground = [
   'introducing-flex',
   'concepts',
@@ -99,6 +101,11 @@ exports.siteStructure = [
       {
         id: 'tutorial-extended-data',
         sortingArray: sortingArrayTutorialExtendedData,
+        showNextAndPrev: true,
+      },
+      {
+        id: 'tutorial-transaction-process',
+        sortingArray: sortingArrayTutorialTransactionProcess,
         showNextAndPrev: true,
       },
     ],
