@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-# Store cleaning fee into listing
+## Store cleaning fee into listing
 
 Pricing can be based on a lot of variables but one practical way to build it is
 to base it on information stored as extended data in listings. In this example,
@@ -37,9 +37,9 @@ that from `values`. Money object can't be used directly as public data so we
 need to create a JSON object with keys `amount` and `currency` and use the JSON
 object in the API call.
 
-_Note:_ `price` attribute is one of the listing's default attributes so it's
-passed to Marketplace API directly unlike the new public data `cleaningFee`
-which needs to be under the `publicData` key.
+> **Note:** `price` attribute is one of the listing's default attributes so it's
+> passed to Marketplace API directly unlike the new public data `cleaningFee`
+> which needs to be under the `publicData` key.
 
 ```jsx
       onSubmit={values => {
@@ -116,24 +116,37 @@ file, the EditListingPricingPanel should look something like this:
 
 ![EditListingPricePanel](./editlistingpricepanel.png)
 
-# Update BookingDatesForm
+## Update BookingDatesForm
 
 In our example the cleaning fee is optional and users can select that as an
 add-on to their booking. In this section, we will add the UI component for
 selecting the cleaning fee and pass the information about the user's choice to
 the FTW-backend.
 
-_Note_: In case you would like to add the cleaning fee automatically to every
-booking, you don't need to add the UI component for selecting the cleaning fee
-and you can move forward to the next section: Add a transaction line item for
-the cleaning fee.
+> **Note**: In case you would like to add the cleaning fee automatically to
+> every booking, you don't need to add the UI component for selecting the
+> cleaning fee and you can move forward to the next section: Add a transaction
+> line item for the cleaning fee.
 
 ### Prepare props
 
-The cleaning fee is now saved to listing's public data so we can find it under
-the `publicData` key from listing's attributes. Because we decided that adding a
-cleaning fee to listing's information is optional, we need to check if the
-cleaningFee exists in public data or not.
+In order to be able to use the information about cleaning fee inside the
+`BookingDatesForm` we need to pass some new information from _BookingPanel_ to
+the form. BookingPanel is component that is used on _ListingPage_ and
+_TransactionPage_ to show the booking breakdown.
+
+```shell
+└── src
+    └── components
+        └── BookingPanel
+            └── BookingPanel.js
+```
+
+_BookingPanel_ gets `listing` as a prop. The cleaning fee is now saved to
+listing's public data so we can find it under the `publicData` key from
+listing's attributes. Because we decided that adding a cleaning fee to listing's
+information is optional, we need to check if the cleaningFee exists in public
+data or not.
 
 ```jsx
 const cleaningFee =
@@ -345,7 +358,7 @@ then we should check which items were selected.
   }
 ```
 
-# Add a new line-item for the cleaning fee
+## Add a new line-item for the cleaning fee
 
 Finally, we need to edit the FTW-backend and add new line item for cleaning fee
 so that it will be included in pricing. Flex uses privileged transitions to
