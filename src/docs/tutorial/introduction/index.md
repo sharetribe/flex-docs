@@ -24,6 +24,10 @@ this part, we deploy CottageDays marketplace to Heroku.
 entity with marketplace specific data. Then we show the new info on
 listing page and we also add a search filter for it.
 
+**Part 3: Modifying the transaction process**<br /> Here, we start by
+showing how to customize the pricing. Then the rest of the articles are
+more focused on making modifications to the transaction process.
+
 ## Prerequisites
 
 FTW-daily is created on top of [React](https://reactjs.org/),
