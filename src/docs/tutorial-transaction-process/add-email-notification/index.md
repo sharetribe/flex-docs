@@ -65,8 +65,8 @@ We need to rename these files to:
 - _new-booking-request-for-customer-subject.txt_.
 
 Remember to follow the naming convention where the file ends with
-\*-html.html or \*-subject.txt. Otherwise, the notification files will
-not work.
+_\*-html.html_ or _\*-subject.txt_. Otherwise, the notification files
+will not work.
 
 ### Edit the notification
 
@@ -96,7 +96,7 @@ format follows a structure of a standard HTML document. You can add
 styles with CSS, edit the structure with HTML, and add transaction
 details by using variables within `{{}}`.
 
-<extraInfo title="See the example notification content">
+For example, the notification code could look like this:
 
 ```html
 {{~#*inline "format-money"~}}
@@ -112,31 +112,16 @@ d,YYYY" tz="Etc/UTC"}}
 <html>
   <head>
     <style type="text/css">
-      table {
-        border-collapse: collapse;
-      }
-      .left {
-        text-align: left;
-      }
-      .right {
-        text-align: right;
-        padding-left: 20px;
-      }
-      .bottom-row > td {
-        padding-bottom: 5px;
-      }
-      .top-row {
-        border-top: 1px solid #ccc;
-      }
-      .top-row > td,
-      .top-row > th {
-        padding-top: 5px;
+      .email-title {
+        color: #2f880a;
       }
     </style>
   </head>
   <body>
     {{#with transaction}}
-    <h1>You have requested to book {{listing.title}}</h1>
+    <h1 class="email-title">
+      You have requested to book {{listing.title}}
+    </h1>
 
     <p>
       Your booking request for {{listing.title}} from {{> format-date
@@ -169,8 +154,6 @@ d,YYYY" tz="Etc/UTC"}}
   </body>
 </html>
 ```
-
-</extraInfo>
 
 ## Preview your changes
 
