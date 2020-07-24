@@ -30,16 +30,17 @@ for step-by-step instructions on how to add public data field for listing.
 
 ### Save to public data
 
-In _EditListingPricingPanel_ we need to edit the `onSubmit` function to save the
-new public data field `cleaningFee`. Because we are using `FieldCurrencyInput`
-in this example as the input, the `cleaningFee` will be Money object when we get
-that from `values`. Money object can't be used directly as public data so we
-need to create a JSON object with keys `amount` and `currency` and use the JSON
-object in the API call.
+In _EditListingPricingPanel_, we need to edit the _onSubmit_ function to save
+the new public data field called **cleaningFee**. Because we are using
+_FieldCurrencyInput_ component in this example as the input of choice, the
+_cleaningFee_ variable will be Money object when we get that from the submitted
+_values_. Money object can't be used directly as public data so we need to
+create a JSON object with keys **amount** and **currency** and use it in the
+underlying API call.
 
-> **Note:** `price` attribute is one of the listing's default attributes so it's
-> passed to Marketplace API directly unlike the new public data `cleaningFee`
-> which needs to be under the `publicData` key.
+> **Note:** _price_ attribute is one of the listing's default attributes so it's
+> passed to Marketplace API directly unlike the new public data _cleaningFee_
+> which needs to be under the _publicData_ key.
 
 ```jsx
       onSubmit={values => {
@@ -57,9 +58,9 @@ object in the API call.
 
 ### Initialize the form
 
-Next we want to pass inital values for `price` and `cleaningFee`. For this we
-need to get the `cleaningFee` from listing attributes under the `publicData`
-key. Also, because `FieldCurrencyInput` expects the value to be Money object we
+Next we want to pass inital values for _price_ and _cleaningFee_. For this we
+need to get the _cleaningFee_ from listing attributes under the _publicData_
+key. Also, because _FieldCurrencyInput_ expects the value to be Money object we
 need to convert the value we get from Marketplace API back to instance of Money.
 
 ```jsx
@@ -73,10 +74,10 @@ const initialValues = { price, cleaningFeeAsMoney };
 ### Add input component
 
 We want to be able to save the amount of listing's cleaning fee so we add new
-`FieldCurrencyInput` to the _EditListingPricingForm_. The id and name of this
-field will be `cleaningFee`. Adding this fee will be optional so we don't want
-to add any `validate` param to the `FieldCurrencyInput` like there is in the
-`price` input.
+_FieldCurrencyInput_ to the _EditListingPricingForm_. The id and name of this
+field will be _cleaningFee_. Adding this fee will be optional so we don't want
+to add any _validate_ param to the _FieldCurrencyInput_ like there is in the
+_price_ input.
 
 ```shell
 └── src
@@ -121,7 +122,7 @@ file, the EditListingPricingPanel should look something like this:
 In our example the cleaning fee is optional and users can select that as an
 add-on to their booking. In this section, we will add the UI component for
 selecting the cleaning fee and pass the information about the user's choice to
-the FTW-backend.
+the the backend of our client app.
 
 > **Note**: In case you would like to add the cleaning fee automatically to
 > every booking, you don't need to add the UI component for selecting the
@@ -131,7 +132,7 @@ the FTW-backend.
 ### Prepare props
 
 In order to be able to use the information about cleaning fee inside the
-`BookingDatesForm` we need to pass some new information from _BookingPanel_ to
+_BookingDatesForm_ we need to pass some new information from _BookingPanel_ to
 the form. BookingPanel is component that is used on _ListingPage_ and
 _TransactionPage_ to show the booking breakdown.
 
@@ -142,8 +143,8 @@ _TransactionPage_ to show the booking breakdown.
             └── BookingPanel.js
 ```
 
-_BookingPanel_ gets `listing` as a prop. The cleaning fee is now saved to
-listing's public data so we can find it under the `publicData` key from
+_BookingPanel_ gets **listing** as a prop. The cleaning fee is now saved to
+listing's public data so we can find it under the _publicData_ key from
 listing's attributes. Because we decided that adding a cleaning fee to listing's
 information is optional, we need to check if the cleaningFee exists in public
 data or not.
@@ -156,10 +157,10 @@ const cleaningFee =
 ```
 
 Once we have saved the information about the cleaning fee to variable
-`cleaningFee` we need to pass that forward to `BookingDatesForm`. This form is
+_cleaningFee_ we need to pass that forward to _BookingDatesForm_. This form is
 used for collecting the booking data (e.g. booking dates) and values from this
 form will be used when creating the transaction lineItems. We will pass the
-`cleaningFee` to this form as a new prop.
+_cleaningFee_ to this form as a new prop.
 
 ```diff
   <BookingDatesForm
@@ -184,7 +185,7 @@ form will be used when creating the transaction lineItems. We will pass the
 ### Add cleaning fee checkbox
 
 Next, we need to add a new field to _BookingDatesForm_ for selecting the
-possible cleaning fee. For this, we will use the `FieldCheckbox` component
+possible cleaning fee. For this, we will use the **FieldCheckbox** component
 because want the cleaning fee to be optional.
 
 ```shell
@@ -197,7 +198,7 @@ because want the cleaning fee to be optional.
 In _BookingDatesForm_ we need to import a couple of new resources we will need
 for adding the cleaning fee. These will be some helper functions needed to
 handle the cleaningFee price information and the checkbox component
-`FieldCheckbox`.
+_FieldCheckbox_.
 
 ```diff
   import { propTypes } from '../../util/types';
@@ -219,7 +220,7 @@ handle the cleaningFee price information and the checkbox component
 
 When we have imported these files, we will add the component for showing the
 checkbox for selecting the cleaning fee. For this, we need to extract the
-cleaningFee from `fieldRenderProps`.
+cleaningFee from **fieldRenderProps**.
 
 ```diff
     ...
@@ -230,9 +231,9 @@ cleaningFee from `fieldRenderProps`.
   } = fieldRenderProps;
 ```
 
-We want show the amount of cleaning fee to the user in the checkbox label so we
-need to format the cleaningFee to printable form. For this we want to use
-`formatMoney` function which will use localized formatting. This function
+We want to show the amount of cleaning fee to the user in the checkbox label so
+we need to format the cleaningFee to printable form. For this we want to use
+_formatMoney_ function which will use localized formatting. This function
 expects Money object as parameter so we need to do the conversion.
 
 ```jsx
@@ -246,15 +247,15 @@ const cleaningFeeLabel = intl.formatMessage(
 );
 ```
 
-We will also add new translation key `BookingDatesForm.cleaningFeeLabel` to
-en.json file where we can use `fee` variable to show the price.
+We will also add new translation key _BookingDatesForm.cleaningFeeLabel_ to
+**_en.json_** file where we can use **_fee_** variable to show the price.
 
 ```js
   "BookingDatesForm.cleaningFeeLabel": "Cleaning fee: {fee}",
 ```
 
 Because there might be listing's without cleaning fee, we want to show the
-checkbox only when needed. This is why we will create the `cleaningFeeMaybe`
+checkbox only when needed. This is why we will create the **cleaningFeeMaybe**
 component which is rendered only if the listing has the cleaning fee saved to
 the public data.
 
@@ -269,7 +270,7 @@ const cleaningFeeMaybe = cleaningFee ? (
 ) : null;
 ```
 
-Then we can add the `cleaningFeeMaybe` to the `Form` component
+Then we can add the **cleaningFeeMaybe** to the returned `<Form>` component
 
 ```diff
 ...
@@ -299,11 +300,11 @@ though we added the new checkbox.
 ### Update the bookingData
 
 Next, we want to pass the value of the cleaning fee checkbox forward as part of
-the `bookingData`. This is needed so that we can show the selected cleaning fee
-as a new row on the booking breakdown. To achieve this, we need to edit the
-`handleOnChange` function which takes the values from the form and calls the
-`onFetchTransactionLineItems` function for constructing the transaction line
-items. These line itemas are shown inside the `bookingInfoMaybe` component under
+the **bookingData**. This is needed so that we can show the selected cleaning
+fee as a new row on the booking breakdown. To achieve this, we need to edit the
+_handleOnChange_ function which takes the values from the form and calls the
+_onFetchTransactionLineItems_ function for constructing the transaction line
+items. These line items are shown inside the _bookingInfoMaybe_ component under
 the form fields.
 
 <extraInfo title="What are line items?">
@@ -326,15 +327,15 @@ You can read more about line items and pricing from
 
 </extraInfo>
 
-In the `bookingData` object, we will have all the information about the user's
+In the **bookingData** object, we will have all the information about the user's
 choices. In this case, it means booking dates and if they selected the cleaning
 fee or not. We only need the information if the cleaning fee was selected. We
-will fetch the cleaning fee details from Marketplace API later in the
-FTW-backend to make sure this information can't be manipulated.
+will fetch the cleaning fee details from Marketplace API later in the the
+backend of our client app to make sure this information can't be manipulated.
 
 In our case, because there is just one checkbox, it's enough to check the length
 of that array to determine if any items are selected. If the length of the
-cleaningFee array inside values is bigger than 0, the `hasCleaningFee` param is
+cleaningFee array inside values is bigger than 0, the _hasCleaningFee_ param is
 true and otherwise false. If we hade more than one item in the checkbox group
 then we should check which items were selected.
 
@@ -360,29 +361,30 @@ then we should check which items were selected.
 
 ## Add a new line-item for the cleaning fee
 
-Finally, we need to edit the FTW-backend and add new line item for cleaning fee
-so that it will be included in pricing. Flex uses privileged transitions to
-ensure that the pricing logic is handled in a secure environment. This means
-that constructing line items and transitioning requests of privileged
+Finally, we need to edit the the backend of our client app and add new line item
+for cleaning fee so that it will be included in pricing. Flex uses privileged
+transitions to ensure that the pricing logic is handled in a secure environment.
+This means that constructing line items and transitioning requests of privileged
 transitions are made from the server-side.
 
 <extraInfo title="What are privileged transitions and why we use them?">
 
 Privileged transitions are transaction process transitions that can be invoked
 only from a secure context. For example, when using Flex Templates for Web this
-secure context is FTW-backend. You can also build your own server-side
-validation that sits between your marketplace UI and the Flex Marketplace API to
-invoke privileged transitions.
+secure context is the backend of our client app. You can also build your own
+server-side validation that sits between your marketplace UI and the Flex
+Marketplace API to invoke privileged transitions.
 
-We are using privileged transitions and FTW-backend for constructing line items
-because we want to make sure this is done in a secure context. If the
-client-side code (FTW-frontend) could freely construct the line items, we
-couldn't fully trust that the price calculation follows the model intended in
-the marketplace. In theory, a marketplace user could make a direct API call to
-the Flex Marketplace API and start a transaction with modified line items (e.g.
-change the amount of cleaning fee). When we use the privileged transitions and
-fetch the pricing information like the cleaning fee amount directly from
-Marketplace API in FTW-backend, we can avoid this security risk.
+We are using privileged transitions and the backend of our client app for
+constructing line items because we want to make sure this is done in a secure
+context. If the client-side code (FTW-frontend) could freely construct the line
+items, we couldn't fully trust that the price calculation follows the model
+intended in the marketplace. In theory, a marketplace user could make a direct
+API call to the Flex Marketplace API and start a transaction with modified line
+items (e.g. change the amount of cleaning fee). When we use the privileged
+transitions and fetch the pricing information like the cleaning fee amount
+directly from Marketplace API in the backend of our client app, we can avoid
+this security risk.
 
 You can read more about privileged transitions from
 [privileged transitions background article](/background/privileged-transitions/).
@@ -390,12 +392,13 @@ You can read more about privileged transitions from
 </extraInfo>
 
 When we want to add a new line item for cleaning fee, we'll need to update the
-pricing logic in the `/server/api-util/lineItems.js` file:
+pricing logic in the _lineItems.js_ file:
 
 ```shell
 └── server
     └── api-util
-        └── lineItems.js
+        ├── lineItems.js
+        └── lineItemHelpers.js
 ```
 
 ### Resolve the cleaning fee
@@ -406,8 +409,8 @@ cleaning fee from its public data. We don't want to pass this data from
 FTW-frontend directly so it' can be not manipulated. Instead, we check it from
 the listing that was fetched from Marketplace API.
 
-If you have many helper functions you might want to add the to
-`/server/api-utli/lineItemHelpers.js` file instead.
+If you have many helper functions you might want to add this function to the
+`lineItemHelpers.js` file instead.
 
 ```jsx
 const resolveCleaningFeePrice = listing => {
@@ -429,12 +432,12 @@ Now the transactionLineItems function can be updated to also provide the
 cleaning fee line item in case the listing has a cleaning fee configured.
 
 In this example, we decided that the provider commission is calculated from the
-total of booking and cleaning fees. That's why we need to add the `cleaningFee`
-item also to `calculateTotalFromLineItems(...)` function on providerCommission
+total of booking and cleaning fees. That's why we need to add the _cleaningFee_
+item also to _calculateTotalFromLineItems(...)_ function on providerCommission
 line item. If we don't add the cleaning fee there the provider commission is
 calculated only based on the booking fee.
 
-Remember also to add cleaning fee to `lineItems` array which is returned in the
+Remember also to add cleaning fee to _lineItems_ array which is returned in the
 end of the function.
 
 ```diff
@@ -475,8 +478,8 @@ exports.transactionLineItems = (listing, bookingData) => {
 };
 ```
 
-Once we have done the changes to FTW-backend we can check the booking breakdown
-again. Now if you choose the cleaning fee, you should see the cleaning fee also
-in the booking breakdown:
+Once we have done the changes to the backend of our client app we can check the
+booking breakdown again. Now if you choose the cleaning fee, you should see the
+cleaning fee also in the booking breakdown:
 
 ![Cleaning fee in booking breakdown](./cleaningFeeBookingBreakdown.png)
