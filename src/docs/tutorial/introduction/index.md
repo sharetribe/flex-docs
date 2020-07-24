@@ -26,7 +26,8 @@ listing page and we also add a search filter for it.
 
 **Part 3: Modifying the transaction process**<br /> Here, we start by
 showing how to customize the pricing. Then the rest of the articles are
-more focused on making modifications to the transaction process.
+more focused on making modifications to the transaction process and
+email notifications.
 
 ## Prerequisites
 
