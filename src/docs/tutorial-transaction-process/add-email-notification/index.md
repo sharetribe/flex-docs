@@ -1,6 +1,6 @@
 ---
 title: Add a new email notification
-slug: add-new-emai-notification
+slug: add-new-email-notification
 updated: 2020-07-21
 category: tutorial-transaction-process
 ingress:
