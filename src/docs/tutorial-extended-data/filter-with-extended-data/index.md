@@ -1,5 +1,5 @@
 ---
-title: Filter listings with extended data.
+title: Filter listings with extended data
 slug: filter-with-extended-data
 updated: 2020-07-14
 category: tutorial-extended-data
