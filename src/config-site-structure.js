@@ -37,7 +37,8 @@ const sortingArrayTutorialExtendedData = [
 const sortingArrayTutorialTransactionProcess = [
   'customize-pricing-tutorial',
   'create-transaction-process',
-  'add-new-email-notification'
+  'use-protected-data-in-emails',
+  'add-new-email-notification',
 ];
 
 const sortingArrayBackground = [
