@@ -109,6 +109,16 @@ section.
 
 ![Phone number in Flex Console](./phone-number-in-protected-data.png)
 
+This is possible, because all the extra fields that are added to
+SignupForm component are saved as protected data to user entity. This
+happens in **_signup_** function at _Auth.duck.js_.
+
+```shell
+└── src
+    └── ducks
+        └── Auth.duck.js
+```
+
 ## Reveal protected data
 
 There are a couple of ways to reveal the phone number to the other party
