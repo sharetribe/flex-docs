@@ -98,6 +98,7 @@ details by using variables within `{{}}`.
 
 For example, the notification code could look like this:
 
+<!-- prettier-ignore -->
 ```html
 {{~#*inline "format-money"~}}
 {{money-amount money}}
