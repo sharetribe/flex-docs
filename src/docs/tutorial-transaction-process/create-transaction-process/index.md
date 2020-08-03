@@ -180,7 +180,7 @@ using _:action/decline-booking_ instead of _:action/cancel-booking_.
 Otherwise, the actions are the same as in _:transition/cancel_. We
 calculate refunds and refund the payment through Stripe. If you want to
 check all the possible actions, you should read this document:
-[Transaction process actions](references/transaction-process-actions/).
+[Transaction process actions](/references/transaction-process-actions/).
 
 <extrainfo title="What happens to the money in refunds?" id="refund-extra-info">
 
