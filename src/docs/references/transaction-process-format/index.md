@@ -201,7 +201,7 @@ operation.
 ## Transitions in the Integration API
 
 It is possible to use the
-[Integration API](background/marketplace-api-integration-api/) to invoke
+[Integration API](/background/marketplace-api-integration-api/) to invoke
 transitions, which are defined as having `:actor.role/operator` as the
 `:actor`. This is done via the
 [transactions/transition](https://www.sharetribe.com/api-reference/integration.html#transition-transaction)
