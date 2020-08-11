@@ -1,7 +1,7 @@
 ---
 title: Enable PaymentIntents
 slug: enable-payment-intents
-updated: 2019-10-03
+updated: 2020-08-11
 category: cookbook-payments
 ingress:
   Overview of how Stripe PaymentIntents work in FTW, and how you can
@@ -36,12 +36,12 @@ Stripe's Payment Intents API is a new way to build dynamic payment
 flows. Its
 [automatic confirmation flow](https://stripe.com/docs/payments/payment-intents/quickstart#automatic-confirmation-flow)
 helps a lot since all the authentication actions for a customer are
-included in a single call: `stripe.handleCardPayment`. When called,
+included in a single call: `stripe.confirmCardPayment`. When called,
 Stripe's SDK checks if there's a need for Strong Customer Authentication
 (SCA) and creates a popup to card issuer's website.
 
-However, to be able to call `handleCardPayment`, there needs to be a new
-state to the transaction process. Because of this, we have split the
+However, to be able to call `confirmCardPayment`, there needs to be a
+new state to the transaction process. Because of this, we have split the
 previous transition (Initial - request -> Preauthorized) into two:
 
 ![PaymentIntents flow needs a process change](./paymentintent-process-change.png)
@@ -50,7 +50,7 @@ So, after transitions (`request-payment` or
 `request-payment-after-enquiry`), API returns
 `stripePaymentIntentClientSecret` among the protected data of the
 current transaction. This client-secret is used for the call to
-`stripe.handleCardPayment`. Then there is another transition made
+`stripe.confirmCardPayment`. Then there is another transition made
 against Marketplace API, so that it can confirm the PaymentIntent and
 preauthorize the order. Transaction process continues normally after
 that - i.e. Provider has to accept or reject the order.
@@ -79,15 +79,21 @@ the changes.
 
 When using PaymentIntent flow, we don't need `stripe.createToken`
 anymore, but we need to add two new thunk calls:
-`stripe.handleCardPayment` and `stripe.retrievePaymentIntent`.
+`stripe.confirmCardPayment` and `stripe.retrievePaymentIntent`.
 
-`stripe.handleCardPayment` is needed to provide SCA as mentioned
+`stripe.confirmCardPayment` is needed to provide SCA as mentioned
 earlier. However, since customers are making several AJAX calls on
 `CheckoutPage`, it is possible that there is a network error or
 something else happening between those calls. Even the whole page, might
 be reloaded at some point. We need to retrieve up-to-date PaymentIntent
 from Stripe API and check its status to be able to continue the payment
 process. This can be done with `stripe.retrievePaymentIntent`.
+
+> Note: previously `stripe.confirmCardPayment` was called
+> `stripe.handleCardPayment` which is now deprecated. Basically,
+> handleCardPayment has been renamed to confirmCardPayment. In addition
+> to the rename, Stripe has slightly modified the arguments. These
+> changes should not affect the behavior of the method.
 
 ## 3. CheckoutPage: add new API calls and call them in sequence
 
@@ -112,9 +118,9 @@ address) and then 4 thunk-calls/Promises need to be made in sequence:
 - Created transaction is saved to session storage or existing enquiry tx
   is updated. (There is more about this step later.)
 
-### Step 2. _onHandleCardPayment_
+### Step 2. _onConfirmCardPayment_
 
-- This is a call `stripe.handleCardPayment`
+- This is a call `stripe.confirmCardPayment`
 - If the customer must perform additional steps to complete the payment,
   such as authentication, Stripe.js walks them through that process.
 
@@ -131,8 +137,8 @@ address) and then 4 thunk-calls/Promises need to be made in sequence:
 
 ![Stripe.js: PaymentIntents authentication modal](./stripe-paymentintents-authentication-modal.png)
 
-> Note: `stripe.handleCardPayment` needs an instance of Stripe to be
-> passed from StripePaymentForm. `stripe.handleCardPayment` will check
+> Note: `stripe.confirmCardPayment` needs an instance of Stripe to be
+> passed from StripePaymentForm. `stripe.confirmCardPayment` will check
 > card details from connected Stripe Elements input.
 
 ## 4. CheckoutPage: save updated transaction
@@ -173,7 +179,7 @@ to UX reasons. That can be made just by not adding
 `StripePaymentAddress` sub-component.
 
 > Note: if the page is reloaded after successful call to
-> `stripe.handleCardPayment` billing details should not be shown to the
+> `stripe.confirmCardPayment` billing details should not be shown to the
 > user since credit card number and other billing details are already
 > sent to Stripe.
 
