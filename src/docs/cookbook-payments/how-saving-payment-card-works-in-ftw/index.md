@@ -1,7 +1,7 @@
 ---
 title: How saving a payment card works in FTW
 slug: save-payment-card
-updated: 2019-09-06
+updated: 2020-08-11
 category: cookbook-payments
 ingress:
   An overview of how the Flex Template for Web functionality for storing
@@ -113,7 +113,7 @@ checkout flow:**
     optional permission to save card details for future bookings.
 - In `request-payment` transition, a new parameter needs to be passed if
   card details are saved at the same time: `setupPaymentMethodForSaving`
-- `stripe.handleCardPayment` call, `confirm-payment` transition and the
+- `stripe.confirmCardPayment` call, `confirm-payment` transition and the
   call to send initial message are handled as before
 - Save the payment method if user has given permission to do that:
   - Create a `stripeCustomer` entity for the current user if needed.
@@ -140,7 +140,7 @@ book a listing, there are couple of changes needed:
 
 - The id of Stripe's payment method needs to be sent to Flex API as
   `paymentMethod`, when requesting payment.
-- `stripe.handleCardPayment`: Stripe Elements (card) is not needed if
+- `stripe.confirmCardPayment`: Stripe Elements (card) is not needed if
   the default payment method is used.
 
 ## Saving Payment Card with PaymentIntents payment flow
@@ -246,15 +246,18 @@ from FTW.
 ###### Step 2.
 
 ```js
-stripe.handleCardPayment(stripePaymentIntentClientSecret, [
-  card,
-  paymentParams,
-]);
+stripe.confirmCardPayment(
+  stripePaymentIntentClientSecret,
+  paymentParams
+);
 ```
 
-> Note: card (StripeElement), and paymentParams are not needed when
-> using previously saved payment card. FTW handles this in
-> [`handleCardPayment` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/stripe.duck.js#L657).
+`paymentParams` should include card element and billing details. See
+[stripe.confirmCardPayment documentation](https://stripe.com/docs/js/payment_intents/confirm_card_payment)..
+
+> Note: paymentParams are not needed when using previously saved payment
+> card. FTW handles this in
+> [`confirmCardPayment` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/stripe.duck.js#L657).
 
 Stripe's frontent script checks if PaymentIntent needs extra actions
 from customer. Some payments might need Strong Customer Authentication
