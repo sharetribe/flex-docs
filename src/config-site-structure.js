@@ -126,6 +126,7 @@ exports.siteStructure = [
     isOpen: false,
     subcategories: [
       { id: 'cookbook-data-model' },
+      { id: 'cookbook-design' },
       { id: 'cookbook-search' },
       { id: 'cookbook-transaction-process' },
       { id: 'cookbook-payments' },
