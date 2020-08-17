@@ -1,7 +1,7 @@
 ---
 title: Email templates
 slug: email-templates
-updated: 2019-12-03
+updated: 2020-08-17
 category: references
 ingress: Reference documentation for editing email templates.
 published: true
@@ -428,7 +428,8 @@ Context for transaction emails:
     "delayed-transition": {
       "run-at": "date"
     },
-    "protected-data": "extended-data"
+    "protected-data": "extended-data",
+    "metadata": "extended-data"
   }
 }
 

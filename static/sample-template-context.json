@@ -219,6 +219,12 @@
       "private-data" : {
         "language" : "en"
       }
+    },
+    "protected-data": {
+      "customerPhoneNumber": "123456"
+    },
+    "metadata": {
+      "discountCode": "abc-123"
     }
   }
 }
