@@ -20,7 +20,7 @@ Sharetribe offers two templates: one for daily bookings (e.g. booking saunas or 
 
 [Access design files in Google Drive](https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG?usp=sharing).
 
-Or download directly: <br />
+Or download directly: <br /><br />
 <b>FTW daily</b><br />
 [Sharetribe-Flex-DAILY_Desktop.sketch](https://drive.google.com/uc?export=download&id=1YkHvv-Fq9EgaIQIMEMJGh2DU9lUPHPmS)<br />
 [Sharetribe-Flex-DAILY_Mobile.sketch](https://drive.google.com/uc?export=download&id=1H-I8r418hMeAhkyXBbiHJxu20bBREo-w)<br />
