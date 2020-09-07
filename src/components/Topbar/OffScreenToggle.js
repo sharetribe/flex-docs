@@ -29,7 +29,7 @@ const StyledBurger = styled.button`
     height: 2px;
     background: ${({ isOpen }) => (isOpen ? '#0D0C1D' : '#666')};
     border-radius: 1px;
-    transition: all 0.3s linear;
+    transition: all 0.1s linear;
     position: relative;
     transform-origin: 1px;
 

@@ -55,6 +55,7 @@ const StyledCategoryTitle = styled(CategoryTitle)`
   font-size: ${props => (props.depth && props.depth === 1 ? 12 : 16)}px;
   line-height: 24px;
   letter-spacing: 1px;
+  font-weight: 600;
 
   // Color
   color: ${props =>
