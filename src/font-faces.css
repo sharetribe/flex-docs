@@ -69,6 +69,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ThinSubset.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -76,6 +77,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ThinItalicSubset.woff") format("woff");
   font-weight: 100;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -83,6 +85,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ThinItalicSubset.woff2") format("woff2");
   font-weight: 100;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -90,6 +93,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-LightSubset.woff") format("woff");
   font-weight: 200;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -97,6 +101,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-LightSubset.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -104,6 +109,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-LightItalicSubset.woff") format("woff");
   font-weight: 200;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -111,6 +117,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-LightItalicSubset.woff2") format("woff2");
   font-weight: 200;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -118,6 +125,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-RegularSubset.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -125,6 +133,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-RegularSubset.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -132,6 +141,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ItalicSubset.woff") format("woff");
   font-weight: 300;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -139,6 +149,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ItalicSubset.woff2") format("woff2");
   font-weight: 300;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -146,6 +157,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BookSubset.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -153,6 +165,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BookSubset.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -160,6 +173,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BookItalicSubset.woff") format("woff");
   font-weight: 400;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -167,6 +181,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BookItalicSubset.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -174,6 +189,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-MediumSubset.woff") format("woff");
   font-weight: 500;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -181,6 +197,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-MediumSubset.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -188,6 +205,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-MediumItalicSubset.woff") format("woff");
   font-weight: 500;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -195,6 +213,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-MediumItalicSubset.woff2") format("woff2");
   font-weight: 500;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -202,6 +221,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BoldSubset.woff") format("woff");
   font-weight: 700;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -209,6 +229,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BoldSubset.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -216,6 +237,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BoldItalicSubset.woff") format("woff");
   font-weight: 700;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -223,6 +245,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BoldItalicSubset.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -230,6 +253,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BlackSubset.woff") format("woff");
   font-weight: 900;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -237,6 +261,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BlackSubset.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -244,6 +269,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BlackItalicSubset.woff") format("woff");
   font-weight: 900;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -251,6 +277,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BlackItalicSubset.woff2") format("woff2");
   font-weight: 900;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -258,6 +285,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ExtraBlackSubset.woff") format("woff");
   font-weight: 950;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -265,6 +293,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ExtraBlackSubset.woff2") format("woff2");
   font-weight: 950;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -272,6 +301,7 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ExtraBlackItalicSubset.woff") format("woff");
   font-weight: 950;
   font-style: italic;
+  font-display: fallback;
 }
 
 @font-face {
@@ -279,4 +309,5 @@ EULA          https://lineto.com/assets/pdf/EULA.pdf
   src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ExtraBlackItalicSubset.woff2") format("woff2");
   font-weight: 950;
   font-style: italic;
+  font-display: fallback;
 }
