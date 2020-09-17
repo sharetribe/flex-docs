@@ -22,13 +22,13 @@ Sharetribe offers two templates: one for daily bookings (e.g. booking saunas or 
 
 Or download directly: <br /><br />
 <b>FTW daily</b><br />
-[Sharetribe-Flex-DAILY_Desktop.sketch](https://drive.google.com/uc?export=download&id=1YkHvv-Fq9EgaIQIMEMJGh2DU9lUPHPmS)<br />
-[Sharetribe-Flex-DAILY_Mobile.sketch](https://drive.google.com/uc?export=download&id=1H-I8r418hMeAhkyXBbiHJxu20bBREo-w)<br />
+[Sharetribe-Flex-DAILY_Desktop.sketch](https://drive.google.com/uc?export=download&id=1YFDgF7OXwFUdgqVFSAct1mNBSffRX4Zi)<br />
+[Sharetribe-Flex-DAILY_Mobile.sketch](https://drive.google.com/uc?export=download&id=1P4JM3zlU6TJBNV19wO_2pJd9_IP1_mtd)<br />
 [Sharetribe-Flex-DAILY_Wireframes.sketch](https://drive.google.com/uc?export=download&id=1__BvrIbpx1-C8EHT6nJdxjDrq8XomlrI)
 
 <b>FTW hourly</b><br />
-[Sharetribe-Flex-HOURLY_Desktop.sketch](https://drive.google.com/uc?export=download&id=1C9y8PQconrHoPho5fuFcLT0IHvdhRG1p)<br />
-[Sharetribe-Flex-HOURLY_Mobile.sketch](https://drive.google.com/uc?export=download&id=1kz6hnC20P7lX3YXE4YdiIATlijEbRe_B)<br />
+[Sharetribe-Flex-HOURLY_Desktop.sketch](https://drive.google.com/uc?export=download&id=1FU_3vVVOGiQkkPs7sZe4iM0CAGG78TGX)<br />
+[Sharetribe-Flex-HOURLY_Mobile.sketch](https://drive.google.com/uc?export=download&id=1TlJ4ylEVBJla4JPWc2PB_b1fF7L_crv2)<br />
 
 The design files can be used according to
 [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
