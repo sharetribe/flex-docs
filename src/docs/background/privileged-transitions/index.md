@@ -72,8 +72,7 @@ to `true` for the given transition in a transaction process as follows:
 ```
 {:name :transition/request-payment
  :actor :actor.role/customer
- :actions [{:name :action/create-booking
-            :config {:observe-availability? true}}
+ :actions [{:name :action/create-pending-booking}
            {:name :action/privileged-set-line-items}
            {:name :action/stripe-create-payment-intent}]
  :to :state/pending-payment

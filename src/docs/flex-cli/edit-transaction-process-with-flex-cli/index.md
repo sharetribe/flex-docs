@@ -161,8 +161,7 @@ means 30%):
     :to :state/enquiry}
    {:name :transition/request-payment
     :actor :actor.role/customer
-    :actions [{:name :action/create-booking
-               :config {:observe-availability? true}}
+    :actions [{:name :action/create-pending-booking}
               {:name :action/calculate-tx-nightly-total-price}
               {:name :action/calculate-tx-provider-commission
 -              :config {:commission 0.1M}}
@@ -171,8 +170,7 @@ means 30%):
     :to :state/pending-payment}
    {:name :transition/request-payment-after-enquiry
     :actor :actor.role/customer
-    :actions [{:name :action/create-booking
-               :config {:observe-availability? true}}
+    :actions [{:name :action/create-pending-booking}
               {:name :action/calculate-tx-nightly-total-price}
               {:name :action/calculate-tx-provider-commission
 -              :config {:commission 0.1M}}

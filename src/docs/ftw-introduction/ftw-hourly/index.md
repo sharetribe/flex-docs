@@ -17,8 +17,8 @@ teachers.
 
 By default, FTW-hourly uses a transaction process
 [preauth-unit-time-booking](https://github.com/sharetribe/flex-example-processes/tree/master/preauth-unit-time-booking)
-which is a unit-based process and has value `time` in `create-booking`
-booking action.
+which is a unit-based process and has value `time` in
+`create-pending-booking` booking action.
 
 > **Note:** `BookingDatesForm` and `EditListingAvailabilityForm`
 > components have been removed from the template as they are heavily

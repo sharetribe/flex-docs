@@ -44,8 +44,8 @@ The annotated process description for this process is as follows:
                 :privileged? true
 
                 ;; The actions that the transaction engine executes when the transition is taken.
-                :actions [{:name :action/create-booking
-                           :config {:observe-availability? true}}
+                :actions [{:name :action/create-pending-booking
+                           :config {:type :day}}
                           {:name :privileged-set-line-items}
                           {:name :action/stripe-create-payment-intent}]
 
@@ -254,10 +254,10 @@ will fail which in turn fails the transition. In our example above, the
 `:action/cancel-booking` has a precondition that the process must
 contain a booking and that booking must be in state accepted. This means
 that at some earlier point in the process we must have invoked the
-actions `:action/create-booking` followed by `:action/accept-booking`.
-However, these could all happen during a single transition. That's a bit
-contrived example but should help to understand the limits and
-opportunities with composing actions.
+actions `:action/create-pending-booking` followed by
+`:action/accept-booking`. However, these could all happen during a
+single transition. That's a bit contrived example but should help to
+understand the limits and opportunities with composing actions.
 
 ### Parameters
 
@@ -270,12 +270,12 @@ parameters of the actions together define the parameters of the
 transition.
 
 In our example process, the `:transition/request-payment` defines the
-actions `action/create-booking`,
+actions `action/create-pending-booking`,
 `action/calculate-tx-nightly-total-price`,
 `action/calculate-tx-provider-commission` and
 `action/stripe-create-payment-intent`. This means the transition
 requires and accepts the following parameters defined by the
-`action/create-booking`:
+`action/create-pending-booking`:
 
 - `bookingStart`, `bookingEnd`: timestamp, mandatory
 - `bookingDisplayStart`, `bookingDisplayEnd`: timestamp, optional
@@ -293,10 +293,10 @@ The other two actions, `action/calculate-tx-nightly-total-price` and
 ### Configuration options
 
 Some actions support configuration options that alter their behaviour.
-For example, the `action/create-booking` can optionally check if the
-timeslot for the booking is available and fail in case it's not. Other
-examples are the commission calculation actions that take the commission
-percentage as a configuration option.
+For example, the `action/create-pending-booking` takes configuration
+parameter for the type of the booking being created. Other examples are
+the commission calculation actions that take the commission percentage
+as a configuration option.
 
 The configuration options for an action are set in the process
 description via the `:config` key in the action definition:
@@ -393,7 +393,7 @@ Actions
 
 Name                                      Config
 :action.initializer/init-listing-tx
-:action/create-booking                    {:observe-availability? true}
+:action/create-pending-booking            {:type :day}
 :action/calculate-tx-nightly-total-price
 :action/calculate-tx-provider-commission  {:commission 0.1}
 :action/stripe-create-payment-intent
@@ -422,15 +422,15 @@ requires and accepts.
 
 ### Transition
 
-| Key            | Type            | Description                                                                                                                                                                                                                                                  | Example                                    |
-| -------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------ |
-| `:name`        | Keyword         | Unique name for the transition. Used when invoking the transition via Marketplace API.                                                                                                                                                                       | `:transition/request-payment`              |
-| `:actor`       | Keyword         | Defines who has the permission to invoke the transition. Must be one of: `:actor.role/customer`, `:actor.role/provider`, `:actor.role/operator`                                                                                                              | `:actor.role/customer`                     |
-| `:actions`     | Vector          | An ordered list of actions to take when the transition is executed.                                                                                                                                                                                          | `[{:name :action/create-booking ...} ...]` |
-| `:from`        | Keyword         | Name of the state from which the transition can be taken from. Left out for initial transitions.                                                                                                                                                             | `:state/pending-payment`                   |
-| `:to`          | Keyword         | Name of the state to which this transition leads.                                                                                                                                                                                                            | `:state/pending-payment`                   |
-| `:at`          | Time expression | Optional time expression that when given, turns the transition to a delayed transition. When using `:at` do not specify `:actor`                                                                                                                             | `{:fn/timepoint [:time/booking-end]}`      |
-| `:privileged?` | Boolean         | Optionally mark the transition as [privileged](/background/privileged-transitions/). Privileged transitions can only be invoked from a trusted context and are useful when you need to ensure the transition parameters are correct or have specific values. | `true`                                     |
+| Key            | Type            | Description                                                                                                                                                                                                                                                  | Example                                            |
+| -------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------- |
+| `:name`        | Keyword         | Unique name for the transition. Used when invoking the transition via Marketplace API.                                                                                                                                                                       | `:transition/request-payment`                      |
+| `:actor`       | Keyword         | Defines who has the permission to invoke the transition. Must be one of: `:actor.role/customer`, `:actor.role/provider`, `:actor.role/operator`                                                                                                              | `:actor.role/customer`                             |
+| `:actions`     | Vector          | An ordered list of actions to take when the transition is executed.                                                                                                                                                                                          | `[{:name :action/create-pending-booking ...} ...]` |
+| `:from`        | Keyword         | Name of the state from which the transition can be taken from. Left out for initial transitions.                                                                                                                                                             | `:state/pending-payment`                           |
+| `:to`          | Keyword         | Name of the state to which this transition leads.                                                                                                                                                                                                            | `:state/pending-payment`                           |
+| `:at`          | Time expression | Optional time expression that when given, turns the transition to a delayed transition. When using `:at` do not specify `:actor`                                                                                                                             | `{:fn/timepoint [:time/booking-end]}`              |
+| `:privileged?` | Boolean         | Optionally mark the transition as [privileged](/background/privileged-transitions/). Privileged transitions can only be invoked from a trusted context and are useful when you need to ensure the transition parameters are correct or have specific values. | `true`                                             |
 
 **Example**:
 

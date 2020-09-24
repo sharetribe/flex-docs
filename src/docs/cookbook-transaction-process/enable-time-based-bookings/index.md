@@ -13,9 +13,10 @@ published: true
 
 To get started, the transaction process needs to be updated to support
 time-based bookings. The required change is to add a `type` parameter
-with value `time` to the `create-booking` action. The process also needs
-to be a unit-based process as calculating the quantity of booked items
-based on the length of a time-based booking is not supported.
+with value `time` to the `create-pending-booking` action. The process
+also needs to be a unit-based process as calculating the quantity of
+booked items based on the length of a time-based booking is not
+supported.
 
 Using Flex CLI, you can customise your transaction process. You should
 have something like the following in your `process.edn` file:
@@ -24,8 +25,8 @@ have something like the following in your `process.edn` file:
 {:name :transition/request-payment,
  :actor :actor.role/customer,
  :actions
- [{:name :action/create-booking,
-   :config {:observe-availability? true, :type :time}}
+ [{:name :action/create-pending-booking,
+   :config {:type :time}}
   {:name :action/calculate-tx-unit-total-price}
   {:name :action/calculate-tx-provider-commission,
    :config {:commission 0.1M}}
@@ -34,8 +35,8 @@ have something like the following in your `process.edn` file:
 {:name :transition/request-payment-after-enquiry,
  :actor :actor.role/customer,
  :actions
- [{:name :action/create-booking,
-   :config {:observe-availability? true, :type :time}}
+ [{:name :action/create-pending-booking,
+   :config {:type :time}}
   {:name :action/calculate-tx-unit-total-price}
   {:name :action/calculate-tx-provider-commission,
    :config {:commission 0.1M}}
