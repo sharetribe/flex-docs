@@ -441,9 +441,164 @@ the line item will contain `quantity` as a product of `seats` and
 
 ### Bookings
 
+#### :action/create-pending-booking
+
+Creates a new booking in `pending` state with given start and end time,
+as long as the listing's availability for the given time range permits
+the booking to be created. Optionally takes booking display start and
+end times as well as seats.
+
+Bookings in `pending` state make a reservation against the listing's
+availability for the corresponding time slot with the given number of
+seats.
+
+**Preconditions**:
+
+The listing must have sufficient availability for the time slot between
+`bookingStart` and `bookingEnd` (exclusive).
+
+**Parameters**:
+
+- `bookingStart`: timestamp, mandatory.
+
+  Used as the booking start time if the `type` is set to `:time`
+
+  If the `type` is set to `:day`, the value is converted to UTC midnight
+  and used as the booking start date.
+
+  Marks the start of the timeslot that will be reserved in the listing's
+  availability.
+
+  Available in transaction process as `:time/booking-start` timepoint.
+
+- `bookingEnd`: timestamp, mandatory
+
+  Used as the booking end time if the `type` is set to `:time`
+
+  If the `type` is set to `:day`, the value is converted to UTC midnight
+  and used as the booking end date. Please note that the `bookingEnd` is
+  exclusive.
+
+  Marks the end of the timeslot that will be reserved in the listing's
+  availability.
+
+  Available in the transaction process as `:time/booking-end` timepoint.
+
+- `bookingDisplayStart`: timestamp, optional.
+
+  Moment of time that is displayed to a user as a booking start time.
+  Does not affect availability of the listing.
+
+  If not given, defaults to the value of `bookingStart` (normalized to
+  UTC midnight, when `type` is `:day`).
+
+  Available in the transaction process as `:time/booking-display-start`
+  timepoint.
+
+- `bookingDisplayEnd`: timestamp, optional.
+
+  Moment of time that is displayed to a user as a booking end time. Does
+  not affect availability of the listing.
+
+  If not given, defaults to the value of `bookingEnd` (normalized to UTC
+  midnight, when `type` is `:day`).
+
+  Available in the transaction process as `:time/booking-display-end`
+  timepoint.
+
+- `seats`, integer, optional, defaults to 1
+
+  The number of seats that the booking reserves in the listing's
+  availability.
+
+**Configuration options**:
+
+- `type`: enum, one of `:day`, `:time`. Defaults to `:day`. If set to
+  `:day` normalizes `bookingStart` and `bookingEnd` values to midnight
+  UTC.
+
+#### :action/create-proposed-booking
+
+Creates a new booking in `proposed` state with given start and end time,
+as long as the listing's availability for the given time range permits
+the booking to be created. Optionally takes booking display start and
+end times as well as seats.
+
+Bookings in `proposed` state do not affect the listing's availability,
+i.e. they do not reserve the time slot, until they are accepted using
+the `:action/accept-booking`.
+
+**Preconditions**:
+
+The listing must have sufficient availability for the time slot between
+`bookingStart` and `bookingEnd` (exclusive).
+
+**Parameters**:
+
+- `bookingStart`: timestamp, mandatory.
+
+  Used as the booking start time if the `type` is set to `:time`
+
+  If the `type` is set to `:day`, the value is converted to UTC midnight
+  and used as the booking start date.
+
+  Marks the start of the timeslot that will be reserved in the listing's
+  availability, if the booking is subsequently accepted.
+
+  Available in transaction process as `:time/booking-start` timepoint.
+
+- `bookingEnd`: timestamp, mandatory
+
+  Used as the booking end time if the `type` is set to `:time`
+
+  If the `type` is set to `:day`, the value is converted to UTC midnight
+  and used as the booking end date. Please note that the `bookingEnd` is
+  exclusive.
+
+  Marks the end of the timeslot that will be reserved in the listing's
+  availability, if the booking is subsequently accepted.
+
+  Available in the transaction process as `:time/booking-end` timepoint.
+
+- `bookingDisplayStart`: timestamp, optional.
+
+  Moment of time that is displayed to a user as a booking start time.
+  Does not affect availability of the listing.
+
+  If not given, defaults to the value of `bookingStart` (normalized to
+  UTC midnight, when `type` is `:day`).
+
+  Available in the transaction process as `:time/booking-display-start`
+  timepoint.
+
+- `bookingDisplayEnd`: timestamp, optional.
+
+  Moment of time that is displayed to a user as a booking end time. Does
+  not affect availability of the listing.
+
+  If not given, defaults to the value of `bookingEnd` (normalized to UTC
+  midnight, when `type` is `:day`).
+
+  Available in the transaction process as `:time/booking-display-end`
+  timepoint.
+
+- `seats`, integer, optional, defaults to 1
+
+  The number of seats that the booking reserves in the listing's
+  availability.
+
+**Configuration options**:
+
+- `type`: enum, one of `:day`, `:time`. Defaults to `:day`. If set to
+  `:day` normalizes `bookingStart` and `bookingEnd` values to midnight
+  UTC.
+
 #### :action/create-booking
 
-Creates a new booking in state pending with given start and end time.
+**DEPRECATED**: use `:action/create-pending-booking` or
+`:action/create-proposed-booking` instead.
+
+Creates a new booking in `pending` state with given start and end time.
 Optionally takes booking display start and end times as well as seats.
 
 **Preconditions**: -
@@ -457,8 +612,8 @@ Optionally takes booking display start and end times as well as seats.
   If the `type` is set to `:day`, the value is converted to UTC midnight
   and used as the booking start date.
 
-  Marks the start of the timeslot that will be blocked from future
-  bookings if `observe-availability?` is set to `true`.
+  Marks the start of the timeslot that will be reserved in the listing's
+  availability.
 
   Available in transaction process as `:time/booking-start` timepoint.
 
@@ -470,8 +625,8 @@ Optionally takes booking display start and end times as well as seats.
   and used as the booking end date. Please note that the `bookingEnd` is
   exclusive.
 
-  Marks the end of the timeslot that will be blocked from future
-  bookings if `observe-availability?` is set to `true`.
+  Marks the end of the timeslot that will be reserved in the listing's
+  availability.
 
   Available in the transaction process as `:time/booking-end` timepoint.
 
@@ -480,24 +635,34 @@ Optionally takes booking display start and end times as well as seats.
   Moment of time that is displayed to a user as a booking start time.
   Does not affect availability of the listing.
 
+  If not given, defaults to the value of `bookingStart` (normalized to
+  UTC midnight, when `type` is `:day`).
+
   Available in the transaction process as `:time/booking-display-start`
   timepoint.
 
-- `bookingDisplayStart`: timestamp, optional.
+- `bookingDisplayEnd`: timestamp, optional.
 
   Moment of time that is displayed to a user as a booking end time. Does
   not affect availability of the listing.
+
+  If not given, defaults to the value of `bookingEnd` (normalized to UTC
+  midnight, when `type` is `:day`).
 
   Available in the transaction process as `:time/booking-display-end`
   timepoint.
 
 - `seats`, integer, optional, defaults to 1
 
+  The number of seats that the booking reserves in the listing's
+  availability.
+
 **Configuration options**:
 
 - `observe-availability?`: boolean, defaults to `false`. If set to
   `true`, prevents creating new bookings if the booking time is not
   available.
+
 - `type`: enum, one of `:day`, `:time`. Defaults to `:day`. If set to
   `:day` normalizes `bookingStart` and `bookingEnd` values to midnight
   UTC.
@@ -506,14 +671,104 @@ Optionally takes booking display start and end times as well as seats.
 
 Marks booking as accepted.
 
+Bookings in `accepted` state make a reservation against the listing's
+availability for the corresponding time slot and number of seats.
+
 **Preconditions**:
 
 - Transaction must have a booking
-- Booking must be in the pending state
+- Booking must be in either `proposed` or `pending` state
+- If the booking is in proposed state, the listing must have sufficient
+  availability for the time slot defined by the booking.
 
 **Parameters**: -
 
 **Configuration options**: -
+
+#### :action/update-booking
+
+Update the details of a booking - start and end times, start and end
+display times and seats. If one end of a time range is given, so must be
+the other.
+
+When updated, the booking remains in the same state it was before the
+update.
+
+Note that only the given attributes are updated and ones that are left
+our remain unchanged. In particular, the booking display times are NOT
+updated automatically when the booking start/end time is updated.
+
+**Preconditions**:
+
+- Transaction must have a booking
+- Booking must be in either `proposed`, `pending` or `accepted` state
+- The listing must have sufficient availability for the new (updated)
+  time slot defined by the booking.
+
+**Parameters**:
+
+- `bookingStart`: timestamp, optional, must be given if `bookingEnd` is
+  given
+
+  Used as the booking start time if the booking `type` is `:time`.
+
+  If the booking `type` is `:day`, the value is converted to UTC
+  midnight and used as the booking start date.
+
+  Marks the start of the timeslot that will be reserved in the listing's
+  availability.
+
+  Available in transaction process as `:time/booking-start` timepoint.
+
+- `bookingEnd`: timestamp, optional, must be given if `bookingStart` is
+  given
+
+  Used as the booking end time if the booking `type` is `:time`.
+
+  If the booking `type` is `:day`, the value is converted to UTC
+  midnight and used as the booking end date. Please note that the
+  `bookingEnd` is exclusive.
+
+  Marks the end of the timeslot that will be reserved in the listing's
+  availability.
+
+  Available in the transaction process as `:time/booking-end` timepoint.
+
+- `bookingDisplayStart`: timestamp, optional, must be given if
+  `bookingDisplayEnd` is given
+
+  Moment of time that is displayed to a user as a booking start time.
+  Does not affect availability of the listing.
+
+  If not given, defaults to the value of `bookingStart` (normalized to
+  UTC midnight, when `type` is `:day`).
+
+  Available in the transaction process as `:time/booking-display-start`
+  timepoint.
+
+- `bookingDisplayEnd`: timestamp, optional, must be given if
+  `bookingDisplayStart` is given
+
+  Moment of time that is displayed to a user as a booking end time. Does
+  not affect availability of the listing.
+
+  If not given, defaults to the value of `bookingEnd` (normalized to UTC
+  midnight, when `type` is `:day`).
+
+  Available in the transaction process as `:time/booking-display-end`
+  timepoint.
+
+- `seats`, integer, optional
+
+  The number of seats that the booking reserves in the listing's
+  availability.
+
+**Configuration options**:
+
+- `type`: enum, one of `:day`, `:time`. Defaults to `:day`. If set to
+  `:day` normalizes `bookingStart` and `bookingEnd` values to midnight
+  UTC. The value here should match the booking type set for the action
+  that created the booking earlier in the transaction process.
 
 #### :action/cancel-booking
 
@@ -530,12 +785,12 @@ Cancel an accepted booking.
 
 #### :action/decline-booking
 
-Decline a pending booking.
+Decline a pending or proposed booking.
 
 **Preconditions**:
 
 - Transaction must have a booking
-- Booking must be in the pending state
+- Booking must be in either `pending` or `proposed` state
 
 **Parameters**: -
 

@@ -16,12 +16,15 @@ as the basis for your own designs. This approach can dramatically speed
 up the design process, and it offers an easy starting point for the
 developers.
 
-Sharetribe offers two templates: one for daily bookings (e.g. booking saunas or hiking tours) and one for hourly bookings (e.g. booking yoga lessons or renting kayaks). The main difference between these templates is in the booking calendar, but also the outlooks differ to show some of the flexibility that Flex offers. 
+Sharetribe offers two templates: one for daily bookings (e.g. booking
+saunas or hiking tours) and one for hourly bookings (e.g. booking yoga
+lessons or renting kayaks). The main difference between these templates
+is in the booking calendar, but also the outlooks differ to show some of
+the flexibility that Flex offers.
 
 [Access design files in Google Drive](https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG?usp=sharing).
 
-Or download directly: <br /><br />
-<b>FTW daily</b><br />
+Or download directly: <br /><br /> <b>FTW daily</b><br />
 [Sharetribe-Flex-DAILY_Desktop.sketch](https://drive.google.com/uc?export=download&id=1YFDgF7OXwFUdgqVFSAct1mNBSffRX4Zi)<br />
 [Sharetribe-Flex-DAILY_Mobile.sketch](https://drive.google.com/uc?export=download&id=1P4JM3zlU6TJBNV19wO_2pJd9_IP1_mtd)<br />
 [Sharetribe-Flex-DAILY_Wireframes.sketch](https://drive.google.com/uc?export=download&id=1__BvrIbpx1-C8EHT6nJdxjDrq8XomlrI)
