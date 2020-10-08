@@ -116,14 +116,6 @@ development environment. For production deploys most should be set.
   The base url to access the Sharetribe Flex Marketplace API. FTW uses
   the correct one by default so no need to set this.
 
-- **`REACT_APP_FACEBOOK_APP_ID`**
-
-  App ID of a Facebook App when Facebook login is used.
-
-- **`FACEBOOK_APP_SECRET`**
-
-  App secret of a Facebook App when Facebook login is used.
-
 ## Defining configuration
 
 When the app is started locally with `yarn run dev` or
