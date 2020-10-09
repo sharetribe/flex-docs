@@ -32,7 +32,7 @@ const flatten = (array, depth = 1) => {
 
 const allowedCategoryIds = flatten(
   siteStructure.map(flattenSubcategories)
-).concat('background', 'guides', 'tutorials');
+).concat('operator-guides');
 
 // Uncomment to warn about circular dependencies.
 //
