@@ -126,7 +126,7 @@ can set their pricing.
   Parties can negotiate until a consensus is reached.
 - …and a lot more!
 
-[Read more about the Flex pricing engine](/background/custom-pricing/)
+[Read more about the Flex pricing engine](/background/pricing/)
 
 ## Availability management
 
