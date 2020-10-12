@@ -1,23 +1,33 @@
 ---
 title: Enable Facebook login
 slug: enable-facebook-login
-updated: 2020-10-07
+updated: 2020-10-13
 category: cookbook-social-logins-and-sso
 ingress:
-  This article describes the process of setting up Facebook login for
-  your marketplace. It will allow your users to sign and log in by using
-  their Facebook accounts.
+  In this cookbook we'll take a look at the process of setting up
+  Facebook login for your marketplace. It will allow your users to sign
+  and log in by using their Facebook accounts.
 published: true
 ---
 
-A _Facebook App_ is what connects your marketplace to Facebook and let's
-Facebook know that users from your marketplace are allowed to
-authenticate themselves using the Facebook login.
+Enabling Facebook login consists of three main steps:
 
-## Configure a Facebook App
+- **Create a Facebook app** Facebook app is what connects your
+  marketplace to Facebook and let's Facebook know that users from your
+  marketplace are allowed to authenticate themselves using the Facebook
+  login.
+- **Create an identity provider client in Flex Console** Identity
+  provider (IdP) client is what let's Flex know that the users of your
+  marketplace are allowed to use the Facebook app you created to log
+  into your marketplace.
+- **Configure FTW** A few attributes from the Facebook app will need to
+  be configured to FTW so that FTW can perform the login flow via
+  Facebook.
 
-First thing to do is to create a Facebook App for your marketplace.
-Create a Facebook App by following these steps:
+## Configure a Facebook app
+
+First thing to do is to create a Facebook app for your marketplace.
+Create a Facebook app by following these steps:
 
 1. Go to https://developers.facebook.com/.
 2. Log in. In case you do not have a Facebook account you will need to
@@ -48,7 +58,7 @@ Create a Facebook App by following these steps:
 
 Now your app basic setting should look like this:
 
-![Facebook App settings](fb-app-settings.png 'Facebook App settings')
+![Facebook app settings](fb-app-settings.png 'Facebook app settings')
 ![Facebook Website settings](fb-website-settings.png 'Facebook Website settings')
 
 15. In the left hand menu, click "PRODUCTS +".
@@ -78,7 +88,7 @@ Your Facebook login settings should now look like this:
 ![Facebook login settings](fb-login-settings.png 'Facebook login settings')
 
 23. Click "Save Changes".
-24. Your Facebook App is now ready for development. Note that while the
+24. Your Facebook app is now ready for development. Note that while the
     app is in development mode only you and other app admins can use it
     to log in. When you are ready to take the app live, turn the top
     switch from "In development" to "Live" in the top bar. Confirm the
@@ -88,12 +98,40 @@ Your Facebook login settings should now look like this:
     hand menu, click "Dashboard". Your app should be public and a green
     dot should be displayed.
 
-Your Facebook App is now created and configured. The next step is to set
+Your Facebook app is now created and configured. The next step is to set
 up an identity provider client in Flex Console.
 
 ## Configure an identity provider client in Console
 
-TODO: Configure IdP client in Console
+Now that your Facebook app is all set up, a corresponding _identity
+provider client_ will need to be configured for your marketplace. This
+will tell Flex that your users will be allowed to log into your
+marketplace using the Facebook app you just created. The information
+stored in an IdP client is used to verify a token obtained from Facebook
+when a user logs in.
+
+An identity provider client can be configure with the following steps:
+
+1. Go to [Console](https://flex-console.sharetribe.com/) and select
+   _Identity providers_ under _Build_.
+2. Click "+ Add new".
+3. Set "Client name". This can be anything you choose, for example,
+   "Facebook login". In case you need to create multiple Facebook apps,
+   this will help you make a distinction between the corresponding IdP
+   clients.
+4. Set the _Client ID_. This value is the App ID from your Facebook app.
+   You can see the value under _Settings > Basic_ in the Facebook app
+   view.
+5. Set the _Client secret_. This value is the App secret in your
+   Facebook app. You can see the value under _Settings > Basic_ in the
+   Facebook app view. You will need to authenticate to reveal the secret
+   value.
+
+The IdP client config should now look something like this:
+
+![Add identity provider client](add-idp-client.png 'Add identity provider client')
+
+6. Click "Add client" and your identity provider client is ready.
 
 ## Configure FTW
 
@@ -101,9 +139,9 @@ Last step to enabling Facebook login is to configure FTW with the values
 that you used to add an identity provider client in Console. Add the
 following environment variables to FTW:
 
-- **`REACT_APP_FACEBOOK_APP_ID`** The App ID of your Facebook App.
+- **`REACT_APP_FACEBOOK_APP_ID`** The App ID of your Facebook app.
   Corresponds to _client ID_ of the identity provider in Console.
-- **`FACEBOOK_APP_SECRET`** The App Secret of your Facebook App.
+- **`FACEBOOK_APP_SECRET`** The App Secret of your Facebook app.
   Corresponds to _client secret_ of the identity provider in Console.
 
 For more information on FTW environment variables, see the

@@ -1,7 +1,7 @@
 ---
 title: Social logins
 slug: social-logins-and-sso
-updated: 2020-10-06
+updated: 2020-10-13
 category: background
 ingress:
   Flex allows your users to authenticate themselves using a 3rd party
@@ -15,10 +15,10 @@ Flex. We're working on releasing other login methods in the future.**
 ## Using a third party identity provider
 
 In addition to username and password based authentication, Flex allows
-marketplace users to authenticate using a third party identity
-provider. An identity provider can be used to authenticate the user when
-a new user account is created or when a user logs into the marketplace
-to a previously created account.
+marketplace users to authenticate using a third party identity provider.
+An identity provider can be used to authenticate the user when a new
+user account is created or when a user logs into the marketplace to a
+previously created account.
 
 A general overview of using a third party identity provider when logging
 in or creating a user is as follows:
