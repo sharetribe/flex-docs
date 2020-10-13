@@ -48,6 +48,8 @@ flex-cli
 This command should show you the CLI version and list available
 commands.
 
+Didn't work? Have a look at the [Troubleshooting](#troubleshooting).
+
 ## Help
 
 <asciinema recording-id="267479"></asciinema>
@@ -139,3 +141,15 @@ CLI.
 
 Now that we know how to list processes, the next this is to
 [make a small change to the existing process](/flex-cli/edit-transaction-process-with-flex-cli/).
+
+## Troubleshooting
+
+### flex-cli: command not found (on Windows)
+
+If you're seeing `flex-cli: command not found` error on Windows and you installed Flex CLI with Yarn, you need to add Yarn global bin path to the PATH environment varible.
+
+1. Run `yarn global bin` to see the global bin path
+2. Add it to PATH environment variable
+3. Restart command line
+
+For a step-by-step guide with screenshots, have a look at this blog post: ['yarn global add' command does not work on Windows](https://sung.codes/blog/2017/12/30/yarn-global-add-command-not-work-windows/)
