@@ -1,7 +1,7 @@
 ---
 title: Social logins
 slug: social-logins-and-sso
-updated: 2020-10-13
+updated: 2020-10-15
 category: background
 ingress:
   Flex allows your users to authenticate themselves using a 3rd party

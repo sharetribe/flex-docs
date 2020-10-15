@@ -1,7 +1,7 @@
 ---
 title: Enable Facebook login
 slug: enable-facebook-login
-updated: 2020-10-13
+updated: 2020-10-15
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook we'll take a look at the process of setting up
@@ -9,6 +9,8 @@ ingress:
   and log in by using their Facebook accounts.
 published: true
 ---
+
+**Note, that Facebook login requires ftw-daily version [6.4.0](https://github.com/sharetribe/ftw-daily/releases/tag/v6.4.0) or ftw-hourly version [8.4.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v8.4.0).**
 
 Enabling Facebook login consists of three main steps:
 
