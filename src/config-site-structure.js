@@ -64,6 +64,7 @@ const sortingArrayBackground = [
   'marketplace-api-integration-api',
   'time-based-template',
   'authentication-api',
+  'social-logins-and-sso',
   'commissions-and-monetizing-your-platform',
   'applications',
   'stripe-provider-onboarding-and-capabilities',
@@ -131,6 +132,7 @@ exports.siteStructure = [
       { id: 'cookbook-transaction-process' },
       { id: 'cookbook-payments' },
       { id: 'cookbook-manage' },
+      { id: 'cookbook-social-logins-and-sso' },
     ],
   },
 
