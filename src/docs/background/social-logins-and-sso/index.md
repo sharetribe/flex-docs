@@ -59,4 +59,4 @@ request to the identity provider.
 
 See the following cookbook for details on taking Facebook login into
 use:
-[enabling Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/).
+[Enable Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/).
