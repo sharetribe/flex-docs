@@ -23,7 +23,7 @@ previously created account.
 A general overview of using a third party identity provider when logging
 in or creating a user is as follows:
 
-![Auth flow using a 3rd party identity provider](auth-flow.png 'Auth flow using a 3rd party identity provider')
+[![Auth flow using a 3rd party identity provider](auth-flow.png 'Auth flow using a 3rd party identity provider')](/background-assets/sso-auth-flow-large.png)
 
 The different actors in the diagram above are:
 
