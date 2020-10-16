@@ -1,7 +1,7 @@
 ---
 title: Use protected data in an email notification
 slug: use-protected-data-in-emails
-updated: 2020-07-28
+updated: 2020-10-16
 category: tutorial-transaction-process
 ingress: Learn how to use protected data in an email notification.
 published: true
@@ -36,6 +36,11 @@ field to collect phone numbers. It's called **FieldPhoneNumberInput**.
             ├── SignupForm.js
             └── SignupForm.css
 ```
+
+> **Note**: If you have enabled social logins in your marketplace, you
+> might want to add a similar _FieldPhoneNumberInput_ also to
+> _ConfirmSignupForm_ This way users who are signing up with e.g.
+> Facebook can also add their phone number.
 
 We need to **_import_** _FieldPhoneNumberInput_ component and then add
 it to the form. We'll add the following JSX code after the
