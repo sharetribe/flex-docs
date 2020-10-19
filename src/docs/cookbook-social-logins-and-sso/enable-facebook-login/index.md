@@ -1,7 +1,7 @@
 ---
 title: Enable Facebook login
 slug: enable-facebook-login
-updated: 2020-10-15
+updated: 2020-10-19
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook we'll take a look at the process of setting up
@@ -10,7 +10,10 @@ ingress:
 published: true
 ---
 
-**Note, that Facebook login requires ftw-daily version [6.4.0](https://github.com/sharetribe/ftw-daily/releases/tag/v6.4.0) or ftw-hourly version [8.4.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v8.4.0).**
+**Note, that Facebook login requires ftw-daily version
+[6.4.0](https://github.com/sharetribe/ftw-daily/releases/tag/v6.4.0) or
+ftw-hourly version
+[8.4.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v8.4.0).**
 
 Enabling Facebook login consists of three main steps:
 
@@ -56,21 +59,27 @@ Create a Facebook app by following these steps:
     https://www.mymarketplace.com. Note that the Site URL needs to have
     the same domain that you added to App Domains, or one of them if you
     added many.
-14. Click "Save Changes" at the bottom right.
+14. You might also need to add your privacy policy URL (in some cases
+    this is not needed). If so please add it by typing the URL to your
+    privacy policy into the "Privacy Policy URL" field. In FTW the
+    policy is by default located in the `/privacy-policy` path, so the
+    URL could then be for example
+    https://www.mymarketplace.com/privacy-policy.
+15. Click "Save Changes" at the bottom right.
 
 Now your app basic setting should look like this:
 
 ![Facebook app settings](fb-app-settings.png 'Facebook app settings')
 ![Facebook Website settings](fb-website-settings.png 'Facebook Website settings')
 
-15. In the left hand menu, click "PRODUCTS +".
-16. Look up "Facebook Login" form the products list and click "Set up".
-17. Select "Web" (www) in the list of options.
-18. Verify that your "Site URL" is correct and click "Save" then
+16. In the left hand menu, click "PRODUCTS +".
+17. Look up "Facebook Login" form the products list and click "Set up".
+18. Select "Web" (www) in the list of options.
+19. Verify that your "Site URL" is correct and click "Save" then
     "Continue".
-19. You can leave the 2nd step after setting the site URL as it is and
+20. You can leave the 2nd step after setting the site URL as it is and
     in the left hand menu, click "Facebook Login" then "Settings".
-20. Under "Client OAuth Settings" check that the following settings are
+21. Under "Client OAuth Settings" check that the following settings are
     correct:
     - Client OAuth Login: Yes
     - Web OAuth Login: Yes
@@ -79,7 +88,7 @@ Now your app basic setting should look like this:
     - Enforce HTTPS: Yes
     - Embedded Browser OAuth Login: Yes
     - Login from devices: No
-21. In the "Valid OAuth redirect URIs" field add your marketplace
+22. In the "Valid OAuth redirect URIs" field add your marketplace
     address followed by `/api/auth/facebook/callback`, for example:
     https://www.mymarketplace.com/api/auth/facebook/callback. This
     endpoint can be different if you have modified the `/api` endpoints
@@ -114,7 +123,8 @@ when a user logs in.
 
 An identity provider client can be configure with the following steps:
 
-1. Go to [Social logins & SSO in Console](https://flex-console.sharetribe.com/social-logins-and-sso).
+1. Go to
+   [Social logins & SSO in Console](https://flex-console.sharetribe.com/social-logins-and-sso).
 2. Under _Identity provider clients_ click "+ Add new".
 3. Set "Client name". This can be anything you choose, for example,
    "Facebook login". In case you need to create multiple Facebook apps,

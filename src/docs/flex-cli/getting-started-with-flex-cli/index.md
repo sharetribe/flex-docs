@@ -146,10 +146,14 @@ Now that we know how to list processes, the next this is to
 
 ### flex-cli: command not found (on Windows)
 
-If you're seeing `flex-cli: command not found` error on Windows and you installed Flex CLI with Yarn, you need to add Yarn global bin path to the PATH environment varible.
+If you're seeing `flex-cli: command not found` error on Windows and you
+installed Flex CLI with Yarn, you need to add Yarn global bin path to
+the PATH environment varible.
 
 1. Run `yarn global bin` to see the global bin path
 2. Add it to PATH environment variable
 3. Restart command line
 
-For a step-by-step guide with screenshots, have a look at this blog post: ['yarn global add' command does not work on Windows](https://sung.codes/blog/2017/12/30/yarn-global-add-command-not-work-windows/)
+For a step-by-step guide with screenshots, have a look at this blog
+post:
+['yarn global add' command does not work on Windows](https://sung.codes/blog/2017/12/30/yarn-global-add-command-not-work-windows/)
