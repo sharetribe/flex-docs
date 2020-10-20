@@ -25,19 +25,19 @@ the flexibility that Flex offers.
 [Access design files in Google Drive](https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG?usp=sharing).
 
 Or download directly: <br /><br /> <b>FTW daily</b><br />
-[Sharetribe-Flex-DAILY_Desktop.sketch](https://drive.google.com/uc?export=download&id=1YFDgF7OXwFUdgqVFSAct1mNBSffRX4Zi)<br />
-[Sharetribe-Flex-DAILY_Mobile.sketch](https://drive.google.com/uc?export=download&id=1P4JM3zlU6TJBNV19wO_2pJd9_IP1_mtd)<br />
-[Sharetribe-Flex-DAILY_Wireframes.sketch](https://drive.google.com/uc?export=download&id=1__BvrIbpx1-C8EHT6nJdxjDrq8XomlrI)
+[Sharetribe_Flex-DAILY-Desktop.sketch](https://drive.google.com/uc?export=download&id=1jAfTwARA6AFWFlR6AAKafc9i3PsOdc_l)<br />
+[Sharetribe_Flex-DAILY-Mobile.sketch](https://drive.google.com/uc?export=download&id=1ZZ6pvfHrL3KJOqspzRnlsH-BPXbXW5Lm)<br />
+[Sharetribe_Flex-DAILY-Wireframes.sketch](https://drive.google.com/uc?export=download&id=1__BvrIbpx1-C8EHT6nJdxjDrq8XomlrI)
 
 <b>FTW hourly</b><br />
-[Sharetribe-Flex-HOURLY_Desktop.sketch](https://drive.google.com/uc?export=download&id=1FU_3vVVOGiQkkPs7sZe4iM0CAGG78TGX)<br />
-[Sharetribe-Flex-HOURLY_Mobile.sketch](https://drive.google.com/uc?export=download&id=1TlJ4ylEVBJla4JPWc2PB_b1fF7L_crv2)<br />
+[Sharetribe_Flex-HOURLY-Desktop.sketch](https://drive.google.com/uc?export=download&id=1_YLy1K-cKTA8YC2p8WLbiRbq_1oLwfhW)<br />
+[Sharetribe_Flex-HOURLY-Mobile.sketch](https://drive.google.com/uc?export=download&id=1ANKzCiBs2jlQFe5Mp4C2qVKBWM-7Qi2F)<br />
 
 The design files can be used according to
 [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
 The files can also be opened with Adobe XD and Figma. The font used is
-Sofia Pro, which can be downloaded through
-[Adobe Fonts](https://fonts.adobe.com/fonts/sofia).
+Poppins, which can be downloaded through
+[Adobe Fonts](https://fonts.adobe.com/fonts/poppins).
 
 We are glad to receive ideas and improvements at
 [flex-support@sharetribe.com](mailto:flex-support@sharetribe.com).
