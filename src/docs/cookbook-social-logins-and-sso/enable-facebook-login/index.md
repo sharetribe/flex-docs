@@ -1,7 +1,7 @@
 ---
 title: Enable Facebook login
 slug: enable-facebook-login
-updated: 2020-10-19
+updated: 2020-10-29
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook we'll take a look at the process of setting up
@@ -85,7 +85,7 @@ Now your app basic setting should look like this:
     - Force Web OAuth Reauthentication: No
     - Use Strict Mode for Redirect URIs: Yes
     - Enforce HTTPS: Yes
-    - Embedded Browser OAuth Login: Yes
+    - Embedded Browser OAuth Login: No
     - Login from devices: No
 22. In the "Valid OAuth redirect URIs" field add your marketplace
     address followed by `/api/auth/facebook/callback`, for example:
