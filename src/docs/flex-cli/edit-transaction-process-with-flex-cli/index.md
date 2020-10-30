@@ -1,7 +1,7 @@
 ---
 title: Edit transaction process with Flex CLI
 slug: edit-transaction-process-with-flex-cli
-updated: 2020-06-30
+updated: 2020-10-29
 category: flex-cli
 ingress:
   This tutorial shows you how to edit transaction process with Flex CLI.
@@ -44,7 +44,7 @@ flex-cli process list -m my-test-marketplace
 ```
 
 From the list of processes, pick the one that you want to edit. In this
-tutorial we'll use process `preauth-nightly-booking`, version 1. You
+tutorial we'll use process `preauth-with-nightly-booking`, version 1. You
 probably have different processes in your marketplace, you could use
 those. However, you can check the content of this "nightly booking"
 example process online from
@@ -69,7 +69,7 @@ We can see that required options are:
 Pull the process and save it to `process` directory:
 
 ```bash
-flex-cli process pull --process preauth-nightly-booking --version 1 --path process -m my-test-marketplace
+flex-cli process pull --process preauth-with-nightly-booking --version 1 --path process -m my-test-marketplace
 ```
 
 See what's inside the `process` directory:
@@ -144,7 +144,7 @@ to find the transaction where the commission is calculated. The
 commission is calculated by an action named
 `:action/calculate-tx-provider-commission` (or
 `:action/calculate-tx-customer-commission` if customer commission is in
-use). In a `:preauth-nightly-booking` process, the commission in
+use). In the `preauth-with-nightly-booking` process, the commission in
 calculated in transitions `:transition/request-payment` and
 `:transition/request-payment-after-enquiry`.
 
@@ -202,7 +202,7 @@ Now that we have validated the `process.edn` file we are ready to push
 the changes to Flex:
 
 ```bash
-flex-cli process push --path process --process preauth-nightly-booking -m my-test-marketplace
+flex-cli process push --path process --process preauth-with-nightly-booking -m my-test-marketplace
 ```
 
 After the process is successfully pushed, you'll see a new process
@@ -224,7 +224,7 @@ First, let's see what aliases are pointing to which versions. We can do
 this by using the `process list` command with the `--process` option:
 
 ```bash
-flex-cli process list --process preauth-nightly-booking -m my-test-marketplace
+flex-cli process list --process preauth-with-nightly-booking -m my-test-marketplace
 ```
 
 You'll see a list of process versions and aliases pointing to them. The
@@ -238,11 +238,11 @@ In the default process, the name of the existing alias is `release-1`.
 The command to update the alias is `process update-alias`:
 
 ```bash
-flex-cli process update-alias --process preauth-nightly-booking --alias release-1 --version 2 -m my-test-marketplace
+flex-cli process update-alias --process preauth-with-nightly-booking --alias release-1 --version 2 -m my-test-marketplace
 ```
 
 This command updates the alias `release-1` to point to
-`preauth-nightly-booking` process version `2`.
+`preauth-with-nightly-booking` process version `2`.
 
 To verify that the change was successful, you can rerun the
 `process list` command and see that the `release-1` alias is now

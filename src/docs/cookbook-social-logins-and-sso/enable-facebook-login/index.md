@@ -1,7 +1,7 @@
 ---
 title: Enable Facebook login
 slug: enable-facebook-login
-updated: 2020-10-19
+updated: 2020-10-29
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook we'll take a look at the process of setting up
@@ -60,11 +60,10 @@ Create a Facebook app by following these steps:
     the same domain that you added to App Domains, or one of them if you
     added many.
 14. You might also need to add your privacy policy URL (in some cases
-    this is not needed). If so please add it by typing the URL to your
+    this is not needed). If so, please add it by typing the URL to your
     privacy policy into the "Privacy Policy URL" field. In FTW the
     policy is by default located in the `/privacy-policy` path, so the
-    URL could then be for example
-    https://www.mymarketplace.com/privacy-policy.
+    URL could then be https://www.mymarketplace.com/privacy-policy.
 15. Click "Save Changes" at the bottom right.
 
 Now your app basic setting should look like this:
@@ -86,7 +85,7 @@ Now your app basic setting should look like this:
     - Force Web OAuth Reauthentication: No
     - Use Strict Mode for Redirect URIs: Yes
     - Enforce HTTPS: Yes
-    - Embedded Browser OAuth Login: Yes
+    - Embedded Browser OAuth Login: No
     - Login from devices: No
 22. In the "Valid OAuth redirect URIs" field add your marketplace
     address followed by `/api/auth/facebook/callback`, for example:
