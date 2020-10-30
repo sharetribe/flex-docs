@@ -44,8 +44,8 @@ flex-cli process list -m my-test-marketplace
 ```
 
 From the list of processes, pick the one that you want to edit. In this
-tutorial we'll use process `preauth-with-nightly-booking`, version 1. You
-probably have different processes in your marketplace, you could use
+tutorial we'll use process `preauth-with-nightly-booking`, version 1.
+You probably have different processes in your marketplace, you could use
 those. However, you can check the content of this "nightly booking"
 example process online from
 [Flex example processes](https://github.com/sharetribe/flex-example-processes)
