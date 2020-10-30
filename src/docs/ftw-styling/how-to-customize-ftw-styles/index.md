@@ -1,7 +1,7 @@
 ---
 title: How to customize FTW styles
 slug: how-to-customize-ftw-styles
-updated: 2019-01-28
+updated: 2020-11-17
 category: ftw-styling
 ingress:
   This guide describes how to change the styles of the Flex Template for
@@ -16,44 +16,42 @@ along with globally defined cascading behavior that CSS is all about.
 To tackle this goal, we have split the styling into two levels in this
 template application:
 
-- [Marketplace level styling](#marketplace-level-styling) through
-  _marketplace.css_ (a kind of global theme)
+- [Marketplace level styling](#marketplace-level-styling) with 2 global
+  stylesheets:
+  - _src/styles/marketplaceDefaults.css_ (contains CSS variables and
+    element styles)
+  - _src/styles/propertySets.css_ (contains CSS Property Sets aka @apply
+    rules)
 - [Component level styling](#styling-components) using
   [CSS Modules](https://github.com/css-modules/css-modules)
 
 ## Marketplace level styling
 
-On top of functionalities provided by Create React App, we have
-[added a couple of extra libraries](https://www.npmjs.com/package/sharetribe-scripts#differences-to-react-scripts)
-to help to design consistent UIs faster. CSS Properties and CSS Property
-Sets are very useful for all kind of style sharing purposes, and we have
-created marketplace-level styling variables with them.
+We have created marketplace-level styling variables with CSS Properties
+(vars) and CSS Property Sets (@apply rules).
 
 The concept behind CSS Properties is quite straightforward - they are
-variables that can be defined in root-element level and then used inside
-some CSS rule.
+variables that can be defined in root-element level (`<html>`) and then
+used inside some CSS rule.
 
 ```css
+/* in src/styles/marketplaceDefaults.css */
 :root {
   --marketplaceColor: #ffff00;
 }
+```
 
+```css
+/* in component.module.css */
 .linkToHomePage {
   color: var(--marketplaceColor);
 }
 ```
 
 (Read more about CSS Properties from
-[cssnext](https://cssnext.github.io/))
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties))
 
-We have used this concept to create a marketplace-level "theming" that's
-defined in three files:
-[src/marketplace.css](https://github.com/sharetribe/flex-template-web/blob/master/src/marketplace.css),
-[src/marketplaceFonts.css](https://github.com/sharetribe/flex-template-web/blob/master/src/marketplaceFonts.css),
-and
-[src/marketplaceIndex.css](https://github.com/sharetribe/flex-template-web/blob/master/src/marketplaceIndex.css).
-
-### `src/marketplace.css`
+### `src/styles/marketplaceDefaults.css`
 
 This is a good place to start customizing marketplace styles. For
 example, we define our color scheme here using CSS Property variables:
@@ -116,7 +114,10 @@ Breakpoints for media queries are also defined in this file:
 @custom-media --viewportXLarge (min-width: 1921px);
 ```
 
-### `src/marketplaceFonts.css`
+In addition, this file provides default styles for plain elements like
+`<body>`, `<a>`, `<p>`, `<input>`, `<h1>`, `<h2>`, and so on.
+
+### `src/styles/propertySets.css`
 
 Fonts are specified in this files using CSS Property Sets. They provide
 us a solid way of creating a fixed set of CSS rules for a specific font.
@@ -124,8 +125,6 @@ us a solid way of creating a fixed set of CSS rules for a specific font.
 For example, our default font is defined as:
 
 ```css
---fontWeightMedium: 500;
-
 --marketplaceDefaultFontStyles: {
   font-family: 'sofiapro', Helvetica, Arial, sans-serif;
   font-weight: var(--fontWeightMedium);
@@ -148,10 +147,6 @@ p {
 }
 ```
 
-_marketplaceFonts.css_ are included to _marketplace.css_, so you don't
-need to import this file on new components (importing _marketplace.css_
-is enough).
-
 ⚠️ NOTE: template app is following a pattern where the height of an
 element should be divisible by `6px` on mobile layout and `8px` on
 bigger layouts. This affects line-heights of font styles too.
@@ -161,11 +156,6 @@ get any more support from browser vendors as the spec is yet considered
 deprecated and alternative solutions are being discussed. However,
 template app will use these until a good enough alternative is
 available.
-
-### `src/marketplaceIndex.css`
-
-This file provides default styles for plain elements like `<body>`,
-`<a>`, `<p>`, `<input>`, `<h1>`, `<h2>`, and so on.
 
 ## Styling components
 
@@ -182,13 +172,13 @@ achieve this, we have used
 the syntax close to plain CSS, but it actually creates unique class
 names to remove the problems caused by the global nature of CSS. In
 practice, this means that a class with name `card` is actually renamed
-as `ComponentName__card__3kj4h5`.
+as `ComponentName_card__3kj4h5`.
 
-To use styles defined in SectionHero.css, we need to import the .css
+To use styles defined in SectionHero.module.css, we need to import the
 file into the component:
 
 ```jsx
-import css from './SectionHero.css';
+import css from './SectionHero.module.css';
 ```
 
 and then select the correct class from imported style object (in this
@@ -210,18 +200,18 @@ from the context menu.)
 ![Mobile LandingPage hero title](./styling-find-component.png)
 
 Here we have opened title on LandingPage and the styles for
-`<h1 class="SectionHero__heroMainTitle__3mVNg"><span>Book saunas everywhere.</span></h1>`
-are defined in a "class" called `SectionHero__heroMainTitle__3mVNg`. As
+`<h1 class="SectionHero_heroMainTitle__3mVNg"><span>Book saunas everywhere.</span></h1>`
+are defined in a "class" called `SectionHero_heroMainTitle__3mVNg`. As
 stated before, the first part of a class name is actually giving us a
 hint about what component is defining that style - in this case, it's
 _SectionHero_ and its styles can be found from the file:
-`src/components/SectionHero/SectionHero.css`.
+`src/components/SectionHero/SectionHero.module.css`.
 
 There's only two groups of components that break that rule:
 
-- _src/containers_ (These components are connected to Redux store: Pages
-  and TopbarContainer)
-- _src/forms_
+- **src/containers** (These components are connected to Redux store:
+  Pages and TopbarContainer)
+- **src/forms**
 
 ### Styling guidelines and good practices
 
@@ -235,27 +225,27 @@ structure needed, additional classes are named semantically.
 
 Some guidelines we have tried to follow:
 
-- **Use semantic class names** (They improve readability and decouples
-  style changes from DOM changes.)
-- **Use CSS Properties defined in marketplace.css** and create new ones
-  when it makes sense.
-- **Use classes**, don't style DOM elements directly. (Element styles
-  are global even with CSS Modules.)
-- **Avoid nesting styles**. (CSS Modules makes specificity rules
-  unnecessary.)
+- **Use semantic class names**<br/> They improve readability and
+  decouples style changes from DOM changes.
+- **Use CSS Properties defined in marketplaceDefaults.css**<br/> and
+  create new ones when it makes sense.
+- **Use classes**, don't style DOM elements directly.<br/> Element
+  styles are global even with CSS Modules.
+- **Avoid nesting styles**.<br/> CSS Modules makes specificity rules
+  unnecessary.
 - **Group and comment style rules** inside declaration block if that
   improves readability.
 - **Parent component is responsible for allocating space** for a child
   component (i.e. dimensions and margins).
-- **Define `@apply` rules early enough** inside declaration block (since
-  rules inside those property sets might overwrite rules written above
-  the line where the set is applied).
+- **Define `@apply` rules early enough** inside declaration block.<br/>
+  Rules inside those property sets might overwrite rules written above
+  the line where the set is applied.
 - **Align text and components** to horizontal baselines. I.e. they
   should be a multiple of `6px` on mobile layout and `8px` on bigger
   screens.
-- **Component height should follow baselines too**. I.e. they should be
-  a multiple of `6px` on mobile layout and `8px` on bigger screens.
-  _(Unfortunately, we haven't been strict with this one.)_
+- **Component height should follow baselines too**.<br/> I.e. they
+  should be a multiple of `6px` on mobile layout and `8px` on bigger
+  screens. _(Unfortunately, we haven't been strict with this one.)_
 
 ### Styling responsibility: parent component and its children
 
@@ -279,8 +269,15 @@ Style definitions of the (`<Circle />`) child component:
 }
 ```
 
-Parent component renders
-(`<div className={css.root}><Circle className={css.circleDimensions} /></div>`):
+Parent component could render something like:
+
+```jsx
+<div className={css.root}>
+  <Circle className={css.circleDimensions} />
+</div>
+```
+
+and it uses classes:
 
 ```css
 .root {
@@ -317,9 +314,45 @@ generated in an import order, therefore we want to avoid situations
 where `<Component className="classA classB"/>` could end up overwriting
 each others depending on the order they are imported.)
 
+```jsx
+import React from 'react';
+import css from './MyComponent.module.css';
+
+export const MyComponent = props => {
+  const { className, rootClassName } = props;
+  const classes = classNames(rootClassName || css.root, className);
+  return <div className={classes}>Hello World</div>;
+};
+```
+
 In some complex cases, we have also created props for overwriting some
 inner classes of child components. In these cases, child component is
 also replacing its own styling class with the class passed-in through
 props. For example, `<LocationAutocompleteInput>` can take a prop called
 `iconClassName`, which (if given) replaces `.icon` class defined inside
-`LocationAutocompleteInput.css`.
+`LocationAutocompleteInput.module.css`.
+
+## Using vanilla CSS
+
+FTW templates don't use vanilla CSS, but it is possible to take vanilla
+CSS into use just by creating CSS file that doesn't use `*.module.css`
+pattern in its file name.
+
+Read more about using vanilla CSS from Create React App's docs:<br/>
+https://create-react-app.dev/docs/adding-a-stylesheet
+
+<extrainfo title="Before FTW-daily@v7.0.0 or FTW-hourly@v9.0.0">
+
+Old template version before FTW-daily@v7.0.0 or FTW-hourly@v9.0.0 are
+expecting all `*.css` files to contain CSS Modules markup. Adding
+vanilla CSS in those setups required that the file was uploaded outside
+of the build process.
+
+In practice, the files using plain CSS could be added to
+_public/static/_ directory and then linked them inside _index.html_:
+
+```html
+<link rel="stylesheet" href="%PUBLIC_URL%/static/myStylesheet.css" />
+```
+
+</extrainfo>

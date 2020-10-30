@@ -118,9 +118,9 @@ Furthermore, Google Map states in their terms of service that Google
 logo needs to be visible when using their geocoding service. It is
 available as a background image below the autocomplete predictions.
 However, there needs to be enough padding for that logo. You can change
-the padding through `marketplace.css`.
+the padding through `marketplaceDefaults.css`.
 
-_src/marketplace.css:_
+_src/styles/marketplaceIndex.css:_
 
 ```css
 /* Google Maps needs 72px bottom padding to accommodate logo, Mapbox doesn't have one */

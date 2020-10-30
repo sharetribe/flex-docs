@@ -177,7 +177,7 @@ import {
   Footer,
 } from '../../components';
 
-import css from './FAQPage.css';
+import css from './FAQPage.module.css';
 
 const FAQPage = () => {
   // prettier-ignore
@@ -220,12 +220,10 @@ component - so, it's imported from _components_ directory.
 
 The main content is added as a child to _LayoutWrapperMain_ component.
 
-In addition, we have imported "css" object from FAQPage.css file. You
-can create that file with the following content:
+In addition, we have imported "css" object from FAQPage.module.css file.
+You can create that file with the following content:
 
 ```css
-@import '../../marketplace.css';
-
 .mainWrapper {
   width: calc(100% - 48px);
   max-width: 720px;
