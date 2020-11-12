@@ -288,8 +288,9 @@ isn't an alias pointing to the latest process version. To allow FTW or
 other apps to use the new process version through the Marketplace API,
 you will need an alias to point to the version.
 
-In our `preauth-with-nightly-booking` example process there is a `release-1`
-alias. Let's update that to point to the new process version:
+In our `preauth-with-nightly-booking` example process there is a
+`release-1` alias. Let's update that to point to the new process
+version:
 
 ```bash
 flex-cli process update-alias --process preauth-with-nightly-booking --alias release-1 --version 2 -m my-test-marketplace
