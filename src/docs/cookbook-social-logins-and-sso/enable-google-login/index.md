@@ -74,19 +74,26 @@ An identity provider client can be configure with the following steps:
 2. Under _Identity provider clients_ click "+ Add new".
 3. Set "Client name". This can be anything you choose, for example, "Google
    login"
-4. Set the _Client ID_. This value is the Client ID from your Google Sign-In
-   project. You can see the value under _Credentials > OAuth 2.0 client IDs_ .
-   Make sure you have project you just created selected from the top bar.
-5. Set the _Client secret_. This value is the Client secret in your Google
-   Sign-In. You can see the value under _Credentials > OAuth 2.0 client IDs_ in
-   the Google project view. You will need to authenticate to reveal the secret
-   value.
+4. Under "Select identity provider", pick "Google"
+5. Set the _Client ID_. This value is the Client ID from your Google Sign-In
+   project. You can see the value under _Credentials > OAuth 2.0 client IDs_. Make sure you have the project you just
+   created selected from the top bar in Google developer console. In
+   case you have multiple clients configured in Google Sign-In, use the client
+   ID of your _Web application_ client here. See below for more information.
 
 The IdP client config should now look something like this:
 
-TODO ADD IMAGE
+![Add Google identity provider client](add-google-idp-client.png 'Add Google identity provider client')
 
-6. Click "Add client" and your identity provider client is ready.
+6. If you have more than one client configured in your Google Sign-In project,
+   mobile clients for example, add the additional client IDs to the same
+   identity provider client under "Trusted client IDs" by clicking "+ Add new
+   trusted client". In case you are using two distinct Google Sign-In projects,
+   configure those as distinct clients in Console but always bundle all the
+   client IDs of a single project into one identity provider client in Flex
+   Console.
+
+7. Click "Add client" and your identity provider client is ready.
 
 ## Configure FTW
 
@@ -95,9 +102,8 @@ used to add an identity provider client in Console. Add the following
 environment variables to FTW:
 
 - **`REACT_APP_GOOGLE_CLIENT_ID`** The Client ID of your Google Sing-In.
-  Corresponds to _client ID_ of the identity provider in Console.
+  Corresponds to _client ID_ of the identity provider client in Console.
 - **`GOOGLE_CLIENT_SECRET`** The Client Secret of your Google Sign-In.
-  Corresponds to _client secret_ of the identity provider in Console.
 
 For more information on FTW environment variables, see the
 [FTW Environment configuration variables](/ftw-configuration/ftw-env/) article.
