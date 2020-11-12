@@ -1,16 +1,13 @@
 ---
 title: Social logins
 slug: social-logins-and-sso
-updated: 2020-10-15
+updated: 2020-11-16
 category: background
 ingress:
   Flex allows your users to authenticate themselves using a 3rd party
   identity provider.
 published: true
 ---
-
-**Note! A the moment Facebook is the only identity provider supported by
-Flex. We're working on releasing other login methods in the future.**
 
 ## Using a third party identity provider
 
@@ -57,6 +54,7 @@ request to the identity provider.
 
 ## Taking social logins into use
 
-See the following cookbook for details on taking Facebook login into
-use:
-[Enable Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/).
+See the following cookbooks for details on enabling login to your marketplace
+using different identity providers:
+- [Enable Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/).
+- [Enable Google login](/cookbook-social-logins-and-sso/enable-google-login/).
