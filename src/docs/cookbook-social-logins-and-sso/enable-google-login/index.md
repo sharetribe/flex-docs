@@ -15,6 +15,20 @@ published: true
 ftw-hourly version
 [8.5.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v8.5.0).**
 
+<extrainfo title="Updating from upstream not an option?">
+
+Has your marketplace UI application diverged from ftw-daily or
+ftw-hourly so much that pulling upstream updates to enable Google login
+is not a feasible option? In that case, take a look at the following
+change sets in ftw-daily for reference on how to implement Google login
+in the front end:
+
+- [Facebook login changes](https://github.com/sharetribe/ftw-daily/pull/1366)
+  (contains many updates regarding social logins in general)
+- [Google login changes](https://github.com/sharetribe/ftw-daily/pull/1376)
+
+</extrainfo>
+
 Enabling Google login consists of three main steps:
 
 - **Create a Google Sign-In Project** Google Sign-In Project is what

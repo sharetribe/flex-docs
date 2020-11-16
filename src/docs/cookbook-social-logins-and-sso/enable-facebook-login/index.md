@@ -1,7 +1,7 @@
 ---
 title: Enable Facebook login
 slug: enable-facebook-login
-updated: 2020-10-29
+updated: 2020-11-16
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook we'll take a look at the process of setting up
@@ -14,6 +14,17 @@ published: true
 [6.4.0](https://github.com/sharetribe/ftw-daily/releases/tag/v6.4.0) or
 ftw-hourly version
 [8.4.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v8.4.0).**
+
+<extrainfo title="Updating from upstream not an option?">
+
+Has your marketplace UI application diverged from ftw-daily or
+ftw-hourly so much that pulling upstream updates to enable Facebook
+login is not a feasible option? In that case, take a look at the
+following change set in ftw-daily for reference on how to implement
+Facebook login in the front end:
+[Facebook login in Github](https://github.com/sharetribe/ftw-daily/pull/1366).
+
+</extrainfo>
 
 Enabling Facebook login consists of three main steps:
 
