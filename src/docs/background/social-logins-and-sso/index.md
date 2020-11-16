@@ -57,5 +57,5 @@ request to the identity provider.
 See the following cookbooks for details on enabling login to your
 marketplace using different identity providers:
 
-- [Enable Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/).
-- [Enable Google login](/cookbook-social-logins-and-sso/enable-google-login/).
+- [Enable Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/)
+- [Enable Google login](/cookbook-social-logins-and-sso/enable-google-login/)
