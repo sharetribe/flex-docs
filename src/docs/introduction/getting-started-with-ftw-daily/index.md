@@ -75,6 +75,10 @@ basic development tooling:
    │   ├── config.js
    │   └── translations.js
    ├── server
+   │   ├── api
+   │   ├── api-util
+   │   ├── apiRouter.js
+   │   ├── apiServer.js
    │   ├── auth.js
    │   ├── csp.js
    │   ├── dataLoader.js
@@ -91,6 +95,9 @@ basic development tooling:
    │   ├── containers
    │   ├── ducks
    │   ├── forms
+   │   ├── styles
+   │   │   ├── marketplaceDefaults.css
+   │   │   └── propertySets.css
    │   ├── translations
    │   ├── util
    │   ├── Routes.js
@@ -101,9 +108,6 @@ basic development tooling:
    │   ├── examples.js
    │   ├── index.js
    │   ├── marketplace-custom-config.js
-   │   ├── marketplace.css
-   │   ├── marketplaceFonts.css
-   │   ├── marketplaceIndex.css
    │   ├── reducers.js
    │   ├── routeConfiguration.js
    │   ├── store.js

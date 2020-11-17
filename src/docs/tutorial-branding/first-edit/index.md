@@ -18,15 +18,15 @@ property sets:
 
 ```shell
 └── src
-    ├── marketplace.css
-    ├── marketplaceFonts.css
-    └── marketplaceIndex.css
+    └── styles
+        ├── propertySets.css
+        └── marketplaceDefaults.css
 ```
 
 ## Changing CSS variables
 
-The most important file is **marketplace.css**, where you can find CSS
-variable `--marketplaceColor` and its two variants.
+The most important file is **marketplaceDefaults.css**, where you can
+find CSS variable `--marketplaceColor` and its two variants.
 
 ```css
 /* ================ Colors ================ */

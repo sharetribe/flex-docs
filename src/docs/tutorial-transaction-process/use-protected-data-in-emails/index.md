@@ -34,7 +34,7 @@ field to collect phone numbers. It's called **FieldPhoneNumberInput**.
     └── forms
         └── SignupForm
             ├── SignupForm.js
-            └── SignupForm.css
+            └── SignupForm.module.css
 ```
 
 We need to **_import_** _FieldPhoneNumberInput_ component and then add
@@ -74,7 +74,7 @@ const phoneRequired = validators.required(phoneRequiredMessage);
 > validator just checks that the input is not empty.
 
 We also need to add style-rules for **css.phone**. You can add the
-following style-rules to _SignupForm.css_:
+following style-rules to _SignupForm.module.css_:
 
 ```css
 .phone {

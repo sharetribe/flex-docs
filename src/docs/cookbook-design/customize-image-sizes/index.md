@@ -151,7 +151,7 @@ defined image variants. In `ListingCard` perform the following change:
     └── components
         └── ListingCard
             └── ListingCard.js
-            └── ListingCard.css
+            └── ListingCard.module.css
 ```
 
 ```diff
@@ -165,7 +165,7 @@ defined image variants. In `ListingCard` perform the following change:
 />
 ```
 
-Finally, update the aspect ratio in `ListingCard.css`:
+Finally, update the aspect ratio in `ListingCard.module.css`:
 
 ```diff
 .aspectWrapper {

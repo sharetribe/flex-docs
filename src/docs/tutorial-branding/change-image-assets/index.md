@@ -10,15 +10,16 @@ published: true
 ## Default background image
 
 In the [previous step](/tutorial-branding/first-edit/), you made changes
-to the marketplace.css file. You might have noticed that the there was
-**`--backgroundImage`** property set mentioned. That variable is used to
-provide a background image for Hero component on the landing page as
-well as some of the other pages: sing-up and log-in, email verification
-etc.
+to the marketplaceDefaults.css file. This time you make changes to
+propertySets.css. **`--backgroundImage`** variable can be found from
+there. It is used to provide a background image for Hero component on
+the landing page as well as some of the other pages: sing-up and log-in,
+email verification etc.
 
 ```shell
 └── src
-    └── marketplace.css
+    └── styles
+        └── propertySets.css
 ```
 
 ```css

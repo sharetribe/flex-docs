@@ -33,7 +33,7 @@ import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
 
 // Import css from existing CSS Modules file:
-import css from './ListingPage.css';
+import css from './ListingPage.module.css';
 
 // Create new React component
 const SectionViewMaybe = props => {

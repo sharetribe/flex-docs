@@ -222,7 +222,7 @@ checkbox component _FieldCheckbox_.
 } from '../../components';
  import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
- import css from './BookingDatesForm.css';
+ import css from './BookingDatesForm.module.css';
 + const { Money } = sdkTypes;
 ```
 

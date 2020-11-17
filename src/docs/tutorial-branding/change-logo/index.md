@@ -24,7 +24,7 @@ directory:
     ├── components
     │   └── Logo
     │       ├── IconLogo.js
-    │       ├── Logo.css
+    │       ├── Logo.module.css
     │       ├── Logo.js
     │       └── saunatime-logo.png
     ├── containers
@@ -111,7 +111,7 @@ import classNames from 'classnames';
 import config from '../../config';
 import MobileLogoImage from './cottagedays-logo-small.png';
 import DesktopLogoImage from './cottagedays-logo.png';
-import css from './Logo.css';
+import css from './Logo.module.css';
 
 const Logo = props => {
   const { className, format, ...rest } = props;

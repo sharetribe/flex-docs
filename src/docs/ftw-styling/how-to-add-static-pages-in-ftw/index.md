@@ -25,7 +25,7 @@ like `src/containers/AboutPage/AboutPage.js`.
 ## 3. Create a CSS file
 
 Create a new CSS file using the folder name. The path should look like
-`src/containers/AboutPage/AboutPage.css`.
+`src/containers/AboutPage/AboutPage.module.css`.
 
 ## 4. Create the component
 
@@ -45,7 +45,7 @@ import {
   ExternalLink,
 } from '../../components';
 
-import css from './AboutPage.css';
+import css from './AboutPage.module.css';
 import image from './path/to/image.png';
 
 const AboutPage = () => {
@@ -138,7 +138,7 @@ folder. With CSS we are using
 possible clashes of different class names.
 
 ```jsx
-import css from './AboutPage.css';
+import css from './AboutPage.module.css';
 ```
 
 Then we also import an image which is used later
@@ -209,15 +209,13 @@ And as a final step we need to export the component.
 
 ## 5. Add some styles to the CSS file
 
-Here's an example what your AboutPage.css file could look like:
+Here's an example what your AboutPage.module.css file could look like:
 
 ```css
-@import '../../marketplace.css';
-
 .root {
   padding: 24px;
 
-  /* Use CSS variable imported from marketplace.css */
+  /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
   background-color: var(--marketplaceColor);
 }
 ```

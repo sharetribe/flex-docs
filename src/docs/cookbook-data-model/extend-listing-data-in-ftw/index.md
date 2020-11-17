@@ -256,7 +256,7 @@ component:
         ├── index.js
         └── EditListingCapacityForm
             ├── EditListingCapacityForm.js
-            └── EditListingCapacityForm.css
+            └── EditListingCapacityForm.module.css
 ```
 
 ```jsx
@@ -274,9 +274,9 @@ import { propTypes } from '../../util/types';
 import { required } from '../../util/validators';
 import { Form, Button, FieldSelect } from '../../components';
 
-// Create this file using EditListingFeaturesForm.css
+// Create this file using EditListingFeaturesForm.module.css
 // as a template.
-import css from './EditListingCapacityForm.css';
+import css from './EditListingCapacityForm.module.css';
 
 export const EditListingCapacityFormComponent = props => (
   <FinalForm
@@ -387,7 +387,7 @@ call `EditListingCapacityPanel`:
         ├── index.js
         └── EditListingCapacityForm
             ├── EditListingCapacityPanel.js
-            └── EditListingCapacityPanel.css
+            └── EditListingCapacityPanel.module.css
 ```
 
 ```jsx
@@ -401,9 +401,9 @@ import { ListingLink } from '../../components';
 import { EditListingCapacityForm } from '../../forms';
 import config from '../../config.js';
 
-// Create this file using EditListingDescriptionPanel.css
+// Create this file using EditListingDescriptionPanel.module.css
 // as a template.
-import css from './EditListingCapacityPanel.css';
+import css from './EditListingCapacityPanel.module.css';
 
 const EditListingCapacityPanel = props => {
   const {
@@ -564,7 +564,7 @@ conflicts. So, let's create a `SectionCapacity` component in the
         └── ListingPage
             ├── SectionCapacity.js
             ├── ListingPage.js
-            └── ListingPage.css
+            └── ListingPage.module.css
 ```
 
 ```jsx
@@ -572,7 +572,7 @@ import React from 'react';
 import { array, shape, string } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import css from './ListingPage.css';
+import css from './ListingPage.module.css';
 
 const SectionCapacity = props => {
   const { publicData, options } = props;
@@ -602,9 +602,10 @@ SectionCapacity.propTypes = {
 export default SectionCapacity;
 ```
 
-Remember to add corresponding css definitions to `ListingPage.css` to
-get the styling right. Import the component into `ListingPage` and place
-it inside the `<div className={css.mainContent}>` element:
+Remember to add corresponding css definitions to
+`ListingPage.module.css` to get the styling right. Import the component
+into `ListingPage` and place it inside the
+`<div className={css.mainContent}>` element:
 
 ```js
 import SectionCapacity from './SectionCapacity';
