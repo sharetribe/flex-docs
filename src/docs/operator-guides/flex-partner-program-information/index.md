@@ -14,9 +14,9 @@ We appreciate your interest in the Flex Partner Program. Please review the requi
 
 Flex offers a more efficient way to build marketplace platforms without sacrificing quality or user experience. It offers a generic [management console](https://www.sharetribe.com/docs/background/concepts/#console) and backend that work out of the box for any type of marketplace (in our target segment of location and scheduling based service and rental marketplaces), and don't require per-marketplace changes.
 
-In addition, we provide templates for the client side apps. These should be customized per customer, as each marketplace business is unique, but we estimate that typically the template covers 75% of a marketplace's needs out of the box.
+In addition, [we provide templates](https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw) for the client side apps. These should be customized per customer, as each marketplace business is unique, but we estimate that typically the template covers 75% of a marketplace's needs out of the box.
 
-If there are needs for custom backend functionality (a typical example could be a third party payment gateway or an integration to marketplace operator's own IT systems), these can be built as customization projects. Our architecture makes it easy to integrate third party software.
+If there are needs for custom backend functionality (a typical example could be a third party payment gateway or an integration to marketplace operator's own IT systems), these can be built as customization projects. [Our architecture](https://www.sharetribe.com/docs/introduction/introducing-flex/) makes it easy to integrate third party software.
 
 Review these articles to learn more:
 

@@ -26,32 +26,36 @@ You should request a migration when:
 You will work with Sharetribe’s engineers to complete your migration, starting with the test migration. Once you are ready, please email flex-support@sharetribe.com with the subject: “Go to Flex migration”. Please include your Go marketplace URL and your Flex organization (your organization is displayed in your [Console](https://flex-console.sharetribe.com/) in the top right corner)
 
 ### What data is migrated?
-- Listings:
+#### Listings:
   - Title, description
   - Location
   - Images
   - Custom fields (as listing [public data](https://www.sharetribe.com/docs/references/extended-data/))
   - Categories (as listing [public data](https://www.sharetribe.com/docs/references/extended-data/))
-/* Migrated listings do not include order types or comments. In Flex, the [transaction process](https://www.sharetribe.com/docs/background/transaction-process/) determines how price is calculated. Your development should include adding data to listings that specifies the appropriate pricing actions from your Flex application if you use multiple order types in Go.
 
-- User profiles:
+*Migrated listings do not include order types or comments. In Flex, the [transaction process](https://www.sharetribe.com/docs/background/transaction-process/) determines how price is calculated. Your development should include adding data to listings that specifies the appropriate pricing actions from your Flex application if you use multiple order types in Go.*
+
+#### User profiles:
   - Names, display name
   - Primary email address
   - Password hashes (so user can use same credentials to login)
   - Profile images
   - Phone numbers (as user [protected data](https://www.sharetribe.com/docs/references/extended-data/))
   - Stripe accounts
-/* Migrated profiles do not include followers, email preferences or social login credentials.
 
-- Reviews:
+*Migrated profiles do not include followers, email preferences or social login credentials.*
+
+#### Reviews:
   - Grade (thumbs up/down) converted to 5 point scale (stars)
   - Text
 
-- Transactions:
-/* Transactions and messages are not migrated currently.
+#### Transactions:
 
-- Static page content
-/* Content and styles of the different static pages are not automatically migrated. However, you can manually copy content like your terms and privacy policy and insert them in your new Flex site.
+*Transactions and messages are not migrated currently.*
+
+#### Static page content
+
+*Content and styles of the different static pages are not automatically migrated. However, you can manually copy content like your terms and privacy policy and insert them in your new Flex site.*
 
 ### Test Migration
 
