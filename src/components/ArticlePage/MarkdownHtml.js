@@ -27,6 +27,8 @@ import {
   CarouselDiscovery,
   CarouselTransactionProcess,
   CarouselUserJourney,
+  CarouselTransactionProcessComponents,
+  CarouselTxnProcessUX,
 } from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
@@ -312,6 +314,8 @@ const renderAst = new rehypeReact({
     discoverycarousel: CarouselDiscovery,
     transactionprocesscarousel: CarouselTransactionProcess,
     userjourneycarousel: CarouselUserJourney,
+    transactionprocesscomponentscarousel: CarouselTransactionProcessComponents,
+    txnprocessuxcarousel: CarouselTxnProcessUX,
   },
 }).Compiler;
 
