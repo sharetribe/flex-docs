@@ -38,6 +38,8 @@ export { default as BaseLayout } from './BaseLayout';
 export { default as CarouselContentCreation } from './CarouselContentCreation';
 export { default as CarouselDiscovery } from './CarouselDiscovery';
 export { default as CarouselTransactionProcess } from './CarouselTransactionProcess';
+export { default as CarouselTransactionProcessComponents } from './CarouselTransactionProcessComponents';
+export { default as CarouselTxnProcessUX } from './CarouselTxnProcessUX';
 export { default as CarouselUserJourney } from './CarouselUserJourney';
 export { default as MainLayout } from './MainLayout';
 export { default as Topbar } from './Topbar/Topbar';
