@@ -9,19 +9,25 @@ import IMG_TRANSACTION_ACTIONS from './transaction-actions.png';
 const CarouselTransactionProcessComponents = props => {
   return (
     <Carousel {...props} maxWidth="480px">
-      <Slide imgSrc={IMG_FULL_TRANSACTION_PROCESS} imgAlt="asdf">
+      <Slide imgSrc={IMG_FULL_TRANSACTION_PROCESS} imgAlt="Full transaction process">
         <h3>Transaction process</h3>
         <p>
-          The graph above visualizes one of the default Flex transaction processes.{' '}
+          The graph above visualizes a transaction process called the “flex-default-process.” It closely mimics how a customer and provider transact on AirBnB. From a listing, customers can message a provider or book directly, entering their payment details and authorizing the charge on their card. Providers must then accept the request, reject the request, or let it expire. 
+        </p>
+        <p>
+          After accepted bookings are completed, the customer and provider may review each other for a period of time. Then, the reviews are published, concluding the transaction.{' '}
         </p>
       </Slide>
-      <Slide imgSrc={IMG_TRANSACTION_STATES} imgAlt="asdf">
+      <Slide imgSrc={IMG_TRANSACTION_STATES} imgAlt="Transaction states">
         <h3>Transaction States</h3>
         <p>
-          A transaction process utilizes guides how your users interact within your marketplace using a few different pieces. First of all, each milestone on the journey is known as a state. States describe where the users are along their interaction. For instance, at this stage, the transaction process may move from the preauthorized state to the declined state or to the accepted state. Transaction in the accepted state can transition to cancelled or delivered state. {''}
+          Each milestone in a transaction is known as a state. States describe where the users are in their transaction and clarify what steps have been completed. 
+        </p>
+        <p>
+          The Flex default process, for example, has a state called preauthorized. It signifies that a customer has requested to book a time from the provider’s calendar and a charge on their credit card has been preauthorized.{''}
         </p>
       </Slide>
-      <Slide imgSrc={IMG_TRANSACTION_TRANSITIONS} imgAlt="asdf">
+      <Slide imgSrc={IMG_TRANSACTION_TRANSITIONS} imgAlt="Transaction transitions">
         <h3>Transaction Transitions</h3>
         <p>
           Transitions move the transaction from one state to another. They are the steps between milestones.
@@ -33,7 +39,7 @@ const CarouselTransactionProcessComponents = props => {
           Transitions describe the only possible next steps, as well as who must take them, from a particular milestone. No possible transitions from a state signify the transaction’s end point.
         </p>
       </Slide>
-      <Slide imgSrc={IMG_TRANSACTION_ACTIONS} imgAlt="asdf">
+      <Slide imgSrc={IMG_TRANSACTION_ACTIONS} imgAlt="Transaction actions">
         <h3>Transaction Actions</h3>
         <p>
           Actions describe what happens as part of transition. For example, the transaction process allows users to transition to an delivered or cancelled state here; they may “complete” or “cancel” the transactions with the respective transition. “Complete” actions include creating payout to the provider via Stripe, the payment gateway. “Cancel” actions, on the other hand, include cancelling the booking and issuing a refund. 
