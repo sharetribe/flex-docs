@@ -5,79 +5,18 @@ in the Flex Docs site.
 
 ## Choosing the correct category
 
-The category hierarchy of the Flex Docs site is heavily based on the
-great
-[What nobody tells you about documentation](https://www.divio.com/blog/documentation/)
-article. The article divides a documentation site to four categories:
-
-- **Tutorials**
-
-  > A tutorial:
-  >
-  > - is **learning-oriented**
-  > - allows the newcomer to get started
-  > - is a lesson
-  >
-  > _Analogy: teaching a small child how to cook_
-
-- **How-to Guides**
-
-  > A how-to guide:
-  >
-  > - is **goal-oriented**
-  > - shows how to solve a specific problem
-  > - is a series of steps
-  >
-  > _Analogy: a recipe in a cookery book_
-
-- **Explanation** (Background)
-
-  > An explanation:
-  >
-  > - is **understanding-oriented**
-  > - explains
-  > - provides background and context
-  >
-  > _Analogy: an article on culinary social history_
-
-- **Reference**
-
-  > A reference guide:
-  >
-  > - is **information-oriented**
-  > - describes the machinery
-  > - is accurate and complete
-  >
-  > _Analogy: a reference encyclopaedia article_
-
-Another way to visualize the separation from the article:
-
-![Categories](./images/categories.png)
-
-It is important to understand the difference between these categories
-(especially between tutorials and guides), so at least glancing through
-the article is strongly recommended when adding articles to the Flex
-Docs site.
-
-The important things to remember are:
-
-- What is the goal of the article?
-- What is the target audience of the article?
-- What should be included in the article?
-- What should **not** be included in the article?
-- How should the article be structured?
+Check the most direct category from sidebar and use that as the
+basis for define, where you should add your article in `src/docs/`
+subdirectory. 
 
 ## Adding the article file
 
 The articles are located in [src/docs](../src/docs). There is a
-directory for each category, and a directory for each article. The order
-of the article directories in the category defines the order of the
-articles in the category page of the site.
+directory for each category, and a directory for each article. 
 
 By convention, the article directories are named as
-`<number>-article-slug` where the number defines the alphanumeric order
-of the directories. Feel free to rename the article directories if the
-order needs to change in the site.
+`article-slug`. The order of the articles defaults to alphabetical
+order, but that can be overwritten in `src/config-site-structure.js`.
 
 Within an article directory there should be a `index.md` file that has
 the article content. There can be other files that the index file
