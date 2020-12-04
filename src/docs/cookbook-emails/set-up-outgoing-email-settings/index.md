@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-Settings up reliable email delivery is crucial for your marketplace to
+Setting up reliable email delivery is crucial for your marketplace to
 work properly. It is also important to brand your email sending name and
 address to look professional and polished.
 
@@ -39,19 +39,19 @@ with DNS information:
 
 ![Outgoing email settings 3/3](./email-settings-3of3.png)
 
-At this point we have created a SendGrid subuser for you, stored the
+At this point, we have created a SendGrid subuser for you, stored the
 information, and authenticated the given sender domain to SendGrid. This
 means that you have allowed this SendGrid subuser to send emails from
 this domain.
 
 ## 2. Configure DNS
 
-Next you need to point your DNS entries from your DNS provider to
+Next, you need to point your DNS entries from your DNS provider to
 SendGrid. This is an important step for your sender reputation and your
 email deliverability. You should add all the records in the table
 visible in Console.
 
-If you have troubles adding the records for your DNS provider, see the
+If you have trouble adding the records for your DNS provider, see the
 SendGrid article on
 [Troubleshooting Sender Authentication](https://sendgrid.com/docs/ui/account-and-settings/troubleshooting-sender-authentication/).
 
@@ -74,8 +74,8 @@ can guide you to ensure that no emails are lost in the domain change.
 
 ## Summary
 
-In this article we went through the setup to configure a custom email
-address for you production marketplace. It is important to get all the
+In this article, we went through the setup to configure a custom email
+address for your production marketplace. It is important to get all the
 steps done and validated to ensure that emails are working reliably.
 
 If you have any questions or need a more advanced setup, you can
