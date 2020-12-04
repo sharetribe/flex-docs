@@ -19,8 +19,8 @@ and the costs are included in your Flex subscription.
 
 When you have your production environment created and you have bought
 your custom domain for it, you should set up and validate the outgoing
-email settings. Follow the steps below, and you can be sure that your
-emails will be delivered reliably.
+email settings. Follow the steps below to enable email sending and
+increase the chances that your emails will be delivered reliably.
 
 ## 1. Add sender name and address
 
@@ -51,8 +51,12 @@ SendGrid. This is an important step for your sender reputation and your
 email deliverability. You should add all the records in the table
 visible in Console.
 
-If you have trouble adding the records for your DNS provider, see the
-SendGrid article on
+[These DNS provider video tutorials](https://sendgrid.com/docs/ui/account-and-settings/dns-providers/)
+by SendGrid might be useful if you are not sure how to configure the DNS
+records for your specific DNS provider.
+
+If you still have trouble adding the records, see the SendGrid article
+on
 [Troubleshooting Sender Authentication](https://sendgrid.com/docs/ui/account-and-settings/troubleshooting-sender-authentication/).
 
 ## 3. Validate DNS
@@ -67,10 +71,24 @@ should see a success message in Console:
 Whenever you change your DNS records, you can revalidate to check that
 everything is set up correctly.
 
-**NOTE:** If you want to change the domain and already have an existing
-domain in an active marketplace, you can
-[contact Sharetribe support](mailto:flex-support@sharetribe.com) and we
-can guide you to ensure that no emails are lost in the domain change.
+### Troubleshooting failing validation
+
+Note that when you make changes to your DNS, the changes might take a
+while to propagate. SendGrid recommends that you
+[give up to 48 hours](https://sendgrid.com/docs/ui/account-and-settings/troubleshooting-sender-authentication/#allow-your-dns-records-to-propagate)
+to make sure your latest changes are in use. Some of the records might
+propagate faster than others, so be patient.
+
+Some DNS providers append your top-level domain automatically to your
+DNS records. For example, if you are using GoDaddy, Amazon Route 53, or
+Namecheap, make sure that your domain isn't duplicated in the DNS
+entries. For more information see
+[the tip at the end of this section](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-domain-authentication/#before-you-begin)
+in the SendGrid documentation.
+
+For more information, see SendGrid's
+[Troubleshooting Sender Authentication](https://sendgrid.com/docs/ui/account-and-settings/troubleshooting-sender-authentication/)
+documentation.
 
 ## Summary
 
