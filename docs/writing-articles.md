@@ -5,18 +5,18 @@ in the Flex Docs site.
 
 ## Choosing the correct category
 
-Check the most direct category from sidebar and use that as the
-basis for define, where you should add your article in `src/docs/`
-subdirectory. 
+Check the most direct category from sidebar and use that as the basis
+for define, where you should add your article in `src/docs/`
+subdirectory.
 
 ## Adding the article file
 
 The articles are located in [src/docs](../src/docs). There is a
-directory for each category, and a directory for each article. 
+directory for each category, and a directory for each article.
 
-By convention, the article directories are named as
-`article-slug`. The order of the articles defaults to alphabetical
-order, but that can be overwritten in `src/config-site-structure.js`.
+By convention, the article directories are named as `article-slug`. The
+order of the articles defaults to alphabetical order, but that can be
+overwritten in `src/config-site-structure.js`.
 
 Within an article directory there should be a `index.md` file that has
 the article content. There can be other files that the index file

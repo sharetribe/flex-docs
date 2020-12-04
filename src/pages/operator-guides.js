@@ -52,16 +52,15 @@ const OperatorGuidesPage = () => {
         const edges = data.allMarkdownRemark
           ? data.allMarkdownRemark.edges
           : [];
-        const articles = edges
-          .reduce((result, edge) => {
-            const { frontmatter } = edge.node;
-            if (dev || frontmatter.published) {
-              return result.concat(frontmatter);
-            } else {
-              return result;
-            }
-          }, []);
-          // TODO .sort(byArrayOfSlugs(sortingArray));
+        const articles = edges.reduce((result, edge) => {
+          const { frontmatter } = edge.node;
+          if (dev || frontmatter.published) {
+            return result.concat(frontmatter);
+          } else {
+            return result;
+          }
+        }, []);
+        // TODO .sort(byArrayOfSlugs(sortingArray));
 
         return (
           <ArticleIndexPage category={category} noPrefix articles={articles} />
