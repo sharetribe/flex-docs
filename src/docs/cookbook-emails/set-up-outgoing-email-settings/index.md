@@ -59,7 +59,7 @@ SendGrid article on
 
 When you have configured your DNS, you still need to validate the
 records for your emails to work. You can do that by clicking on the "3/3
-Validate" button in Console. If everything is set up corre tly, you
+Validate" button in Console. If everything is set up correctly, you
 should see a success message in Console:
 
 ![Outgoing email settings valid](./email-settings-valid.png)
