@@ -1,7 +1,7 @@
 ---
 title: Enable Google login
 slug: enable-google-login
-updated: 2020-11-16
+updated: 2020-12-04
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook we'll take a look at the process of setting up Google
@@ -65,7 +65,7 @@ marketplace by following these steps:
 6. Go to the "OAuth consent screen" page e.g. from the left side menu.
 7. Once there, select "External" as a User type and click "Create".
 8. Fill in at least the required fields in this next page. You need to
-   add e.g the name and the logo of your marketplace.
+   add e.g the name and user support email for your app.
 9. From the left sidebar go to the "Credentials" page.
 10. Click "+ Create credentials" from the top of the page.
 11. Select "OAuth Client ID"
