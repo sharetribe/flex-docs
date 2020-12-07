@@ -132,6 +132,7 @@ exports.siteStructure = [
       { id: 'cookbook-transaction-process' },
       { id: 'cookbook-payments' },
       { id: 'cookbook-manage' },
+      { id: 'cookbook-emails' },
       { id: 'cookbook-social-logins-and-sso' },
     ],
   },

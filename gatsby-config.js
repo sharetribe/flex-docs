@@ -148,7 +148,11 @@ module.exports = {
 
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        exclude: ['/styleguide', '/thanks-for-the-feedback', `/operator-guides/*`],
+        exclude: [
+          '/styleguide',
+          '/thanks-for-the-feedback',
+          `/operator-guides/*`,
+        ],
         serialize: ({ site, allSitePage }) => {
           return allSitePage.edges.map(edge => {
             return {
