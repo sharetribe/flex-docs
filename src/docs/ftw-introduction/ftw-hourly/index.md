@@ -16,7 +16,7 @@ fictional marketplace for booking yoga classes from various yoga
 teachers.
 
 By default, FTW-hourly uses a transaction process
-[preauth-unit-time-booking](https://github.com/sharetribe/flex-example-processes/tree/master/preauth-unit-time-booking)
+[flex-hourly-default-process](https://github.com/sharetribe/flex-example-processes#flex-hourly-default-process)
 which is a unit-based process and has value `time` in
 `create-pending-booking` booking action.
 
