@@ -21,7 +21,7 @@ const CarouselTransactionProcessComponents = props => {
       <Slide imgSrc={IMG_TRANSACTION_STATES} imgAlt="Transaction states">
         <h3>Transaction States</h3>
         <p>
-          Each milestone in a transaction is known as a state. States describe where the users are in their transaction and clarify what steps have been completed. 
+          States mark varying milestones in a transaction. In the default transaction process, for example, a transaction in the preauthorized state signifies that a customer has made a booking request and authorized a charge on their credit card. 
         </p>
         <p>
           The Flex default process, for example, has a state called preauthorized. It signifies that a customer has requested to book a time from the provider’s calendar and a charge on their credit card has been preauthorized.{''}
@@ -30,7 +30,10 @@ const CarouselTransactionProcessComponents = props => {
       <Slide imgSrc={IMG_TRANSACTION_TRANSITIONS} imgAlt="Transaction transitions">
         <h3>Transaction Transitions</h3>
         <p>
-          Transitions move the transaction from one state to another. They are the steps between milestones.
+        Transitions move the transaction from one state to another. They are the steps between milestones.
+        </p>
+        <p>
+        Transitions change the state of a transaction. They are initiated by certain actors (customers, providers, operators, or the system).
         </p>
         <p>
           A transition is triggered by one or multiple actors: the customer, the provider, the operator, or time (this is known as an “automatic” actor in Flex). At this state in the transaction, the provider can transition the transaction to an accepted state. Or, the operator may cancel the booking.
@@ -42,7 +45,7 @@ const CarouselTransactionProcessComponents = props => {
       <Slide imgSrc={IMG_TRANSACTION_ACTIONS} imgAlt="Transaction actions">
         <h3>Transaction Actions</h3>
         <p>
-          Actions describe what happens as part of transition. For example, the transaction process allows users to transition to an delivered or cancelled state here; they may “complete” or “cancel” the transactions with the respective transition. “Complete” actions include creating payout to the provider via Stripe, the payment gateway. “Cancel” actions, on the other hand, include cancelling the booking and issuing a refund. 
+          Actions define what happens during a transition. For instance, a transaction transitioning to the cancelled state in the default process involves three actions: **cancel** the booking reservation, **calculate** the full refund amount and **trigger** the payment refund in full. 
         </p>
       </Slide>
     </Carousel>
