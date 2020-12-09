@@ -75,6 +75,7 @@ const sortingArrayFlexCLI = [
   'edit-transaction-process-with-flex-cli',
   'edit-email-templates-with-flex-cli',
   'manage-search-schemas-with-flex-cli',
+  'view-events-with-flex-cli',
 ];
 
 const sortingArrayReferences = [
