@@ -48,43 +48,7 @@ about the Flex resource which the event is about (`listing`, `user`,
 `message`, etc), including how the resource changed.
 
 The exact shape of the event data differ, depending on which means it is
-accessed with, but the information contained is the same, regardless. For
-instance, when accessed via the Integration API, the event and associated
-resource data is formatted in the same way all Integration API resources are
-(with `id`, `type` top-level attributes and with `relationships` object
-containing the IDs of related resources). On the other hand, if the event is
-viewed via Flex CLI, the event and resource data is not normalized in that way
-and is inlined in a simplified form. We will refer to this as *native* event
-data format below. For details on the difference, see [Native and Integration
-API event data format](#native-and-integration-api-data-format) below.
-
-Here is an abbreviated example of event data in the native format, including all
-top-level event attributes. For a full example, including `resource` and
-`previousValues`, see [Resource data and previous
-values](#resource-data-and-previous-values) below. For an example of event data
-in the Integration API format, see the [Integration API reference for
-events](https://www.sharetribe.com/api-reference/integration.html#events).
-
-```json
-{
-  "id": "70d0f2b5-b10a-4a13-8728-22fadd063d4d",
-  "eventType": "listing/updated",
-  "sequenceId": 12345678,
-  "createdAt": "2020-11-27T12:30:02.000Z",
-  "marketplaceId": "9deec37c-b59c-4884-8f60-e4944335c327",
-  "source": "source/marketplace-api",
-  "resourceId": "5bbb2f6f-568f-470a-9949-a655e3f6ac46",
-  "resourceType": "listing",
-  "resource": {...},
-  "previousValues": {...},
-  "auditData": {
-    "userId": "5cf4c0eb-513f-419b-a8be-bdb6c14be10a",
-    "adminId": null,
-    "clientId": "69ea8198-201c-48c4-a3bb-78b38e4059b0",
-    "requestId": "4b66e510-22cb-47ca-953f-8a8377af2ed0"
-  }
-}
-```
+accessed with, but the information contained is the same, regardless.
 
 ### Event attributes
 
@@ -108,6 +72,8 @@ auditData.adminId | (uuid) The ID of the Flex Console admin user that caused the
 auditData.requestId | (uuid) The ID of the API request that caused the event. Can be `null`. Currently this information is meaningless but might have future uses.
 auditData.clientId | (uuid) The client ID of the Flex [Application](/background/applications/) that caused the event. This attribute is set if the event was caused by an API call from a Flex Marketplace API or Integration API application and is `null` otherwise.
 
+Note: these attributes are not necessarily top-level keys. Event object data structure depends on [event's data format](#event-data-formats).
+
 ### Event sequence IDs
 
 The event sequence IDs are guaranteed to uniquely identify an
@@ -130,10 +96,90 @@ that have the exact same `createdAt` timestamp, so applications should
 not use the timestamp as a strict criteria to determining event
 ordering or to decide which events are processed and which are not.
 
+### Event data formats
+
+There are two data formats for events: **native** and **Integration API** event data formats.
+
+If the event is viewed via Flex CLI, the event and resource data is not normalized. Instead, it is inlined in a simplified form. We will refer to this as *native* event data format. On the other hand, when accessed via the Integration API, the event and associated resource data is formatted in the same way all Integration API resources are.
+
+The Integration API event data format differs from the native one as follows:
+
+* The event object itself is structured as an API resource (with `id`, `type`
+  and `attributes` keys)
+* The `resource` object is structured itself as an Integration API resource with
+  `id`, `attributes` and optional `relationships` keys, each containing the
+  corresponding portion of resource data
+* The value of relationships attributes follows the same format as
+  [relationships normally do in the Integration
+  API](https://www.sharetribe.com/api-reference/index.html#including-related-resources)
+
+In both formats, the `previousValues` object always has the same shape as the
+`resource` object.
+
+Here are two abbreviated examples (assuming that listing's title is updated):
+
+#### Native event data format
+
+```json
+{
+  "id": "ef98e897-5b81-49a5-aca6-01d9759df075",
+  // other event keys: "eventType", "sequenceId", "createdAt", "marketplaceId", "source", "resourceId", "resourceType", "auditData"
+  "resource": {
+    "id": "5bbb2f6f-568f-470a-9949-a655e3f6ac46",
+    ...
+    "title": "Listing title",
+    "author": {"id": "5cf4c0eb-513f-419b-a8be-bdb6c14be10a"},
+    ...
+  },
+  "previousValues": {
+    "title": "old title"
+  }
+}
+```
+
+#### Integration API event data format
+
+```json
+{
+  "id": "ef98e897-5b81-49a5-aca6-01d9759df075",
+  "type": "event",
+  "attributes": {
+    // other event keys: "eventType", "sequenceId", "createdAt", "marketplaceId", "source", "resourceId", "resourceType", "auditData"
+    "resource": {
+      "id": "5bbb2f6f-568f-470a-9949-a655e3f6ac46",
+      "type": "listing",
+      "attributes": {
+        "title": "Listing title",
+        ...
+      },
+      "relationships": {
+        "author": {"data": {"id": "5cf4c0eb-513f-419b-a8be-bdb6c14be10a", "type": "user"}},
+        ...
+      }
+    },
+    "previousValues": {
+      "attributes": {
+        "title": "old title"
+      }
+    }
+  }
+}
+```
+
 ### Resource data and previous values
 
-The following is a full example event data for a `listing/updated` event. The
-data is in native format. For examples in the Integration API event data format,
+The following example event data is for a `listing/updated` event produced
+as a result of an API call in the Marketplace API. The
+data is in native format and its
+`previousValues` field indicate that the following occurred:
+
+1. The listing `title` was updated
+2. The listing `availabilityPlan` was updated
+3. The `address` key in the listing's `publicData` was updated
+4. The `rules` key was added to the listing's `publicData`
+5. The set of listing images was updated, where 2 new images were added and one was removed
+
+For examples of the Integration API event data format,
 see the [Integration API
 reference](https://www.sharetribe.com/api-reference/integration.html#events).
 
@@ -282,89 +328,11 @@ relationships of the resource prior to the event, subject to the following rules
     given in the `previousValues` object, including when the value is a nested
     data structure.
 
-The example event data above is for a `listing/updated` event produced
-as a result of an API call in the Marketplace API. Example event's
-`previousValues` field indicate that the following occurred:
-
-1. The listing `title` was updated
-2. The listing `availabilityPlan` was updated
-3. The `address` key in the listing's `publicData` was updated
-4. The `rules` key was added to the listing's `publicData`
-5. The set of listing images was updated, where 2 new images were added and one was removed
-
 Note that for all `*/deleted` events, some of the resources' attributes may
 occasionally have `null` values in the `previousValues` object, due to stricter
 data deletion requirements.
 
-### Native and Integration API event data format
-
-The Integration API event data format differs from the native one as follows:
-
-* the event object itself is structured as an API resource (with `id`, `type`
-  and `attributes` keys)
-* the `resource` object is structured itself as an Integration API resource with
-  `id`, `attributes` and optional `relationships` keys, each containing the
-  corresponding portion of resource data
-* the value of relationships attributes follows the same format as
-  [relationships normally do in the Integration
-  API](https://www.sharetribe.com/api-reference/index.html#including-related-resources)
-
-In both formats, the `previousValues` object always has the same shape as the
-`resource` object.
-
-Here are two abbreviated examples:
-
-#### Native event data format
-
-```json
-{
-  "id": "ef98e897-5b81-49a5-aca6-01d9759df075",
-  ...
-  "resource": {
-    "id": "5bbb2f6f-568f-470a-9949-a655e3f6ac46",
-    ...
-    "title": "Listing title",
-    "author": {"id": "5cf4c0eb-513f-419b-a8be-bdb6c14be10a"},
-    ...
-  },
-  "previousValues": {
-    "title": "old title"
-  }
-  ...
-}
-```
-
-#### Integration API event data format
-
-```json
-{
-  "id": "ef98e897-5b81-49a5-aca6-01d9759df075",
-  "type": "event",
-  "attributes": {
-    ...
-    "resource": {
-      "id": "5bbb2f6f-568f-470a-9949-a655e3f6ac46",
-      "type": "listing",
-      "attributes": {
-        "title": "Listing title",
-        ...
-      },
-      "relationships": {
-        "author": {"data": {"id": "5cf4c0eb-513f-419b-a8be-bdb6c14be10a", "type": "user"}},
-        ...
-      }
-    },
-    "previousValues": {
-      "attributes": {
-        "title": "old title"
-      }
-    }
-    ...
-  }
-}
-```
-
-### Event sources
+## Event sources
 
 The following table lists all possible event sources:
 
