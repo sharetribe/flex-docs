@@ -103,13 +103,13 @@ also strategy for Linkedin which we are going to use in this example.
 
 #### Environment variables
 
-First up, we'll need to defined some a few environment variables.
+First up, we'll need to define some new environment variables.
 
-**REACT_APP_LINKEDIN_CLIENT_ID** and **LINKEDIN_CLIENT_SECRET**
+`REACT_APP_LINKEDIN_CLIENT_ID` and `LINKEDIN_CLIENT_SECRET`
 
 Set these as the client ID and client secret of your LinkedIn app.
 
-**RSA_SECRET_KEY** and **RSA_PUBLIC_KEY**
+`RSA_SECRET_KEY` and `RSA_PUBLIC_KEY`
 
 The ID token is signed with RSA keys. You can, for example, use a
 command line tool like _ssh-keygen_ to generate the keys. Note, that
@@ -117,23 +117,21 @@ when you save the keys to your environment variables you should replace
 any line brakes with '\n'. You should also make sure that the key size
 is big enough. By default we are using RS256 algorithm to sign the keys.
 
-**CUSTOM_OIDC_CLIENT_ID**
+`CUSTOM_OIDC_CLIENT_ID`
 
 This is the identifier of your identity provider client that you
 configure to Flex. It identifies your OIDC proxy as an identity provider
 in your marketplace. This value can be anything you want and it is not a
 secret.
 
-**KEY_ID**
+`KEY_ID`
 
-The `KEY_ID` variable will be used as the `kid` header in ID tokens that
-are passed to Flex when a user logs in with LinkedIn. It is also used as
-the `kid` attribute of the JSON Web key that the proxy serves in an
-endpoint. Even though using a _kid_ value in your keys is not
-compulsory, we heavily recommend using it with your token and the JWK.
-For example, key caching in the Flex API relies heavily on it.
-`CUSTOM_OIDC_CLIENT_ID`, this value can be anything and it is not a
-secret.
+The value will be used as the `kid` header in ID tokens that are passed
+to Flex when a user logs in with LinkedIn. It is also used as the `kid`
+attribute of the JSON Web key that the proxy serves in an endpoint. Even
+though using a _kid_ value in your keys is not compulsory, we heavily
+recommend using it with your token and the JWK. For example, key caching
+in the Flex API relies heavily on it.
 
 #### Passport module dependency
 
@@ -145,8 +143,8 @@ Add the following entry to the `dependencies` map in `package.json`:
 
 #### LinkedIn login flow
 
-Next, let's a new file to FTW that handles authentication to LinkedIn.
-You can find the file here:
+Next, let's add a new file to FTW that handles authentication to
+LinkedIn. You can find the complete file here:
 
 - [linkedin.js](/tutorial-assets/linkedin.js)
 
@@ -157,6 +155,29 @@ Place the file in `server/api/auth` folder inside FTW:
     └── api
         └── auth
             └── linkedin.js
+```
+
+The biggest difference between LinkedIn login and e.g. Facebook login
+which hass first class support in Flex is that we need to use
+_createIdToken_ helper function to create the id token from the
+information we fetched from LinkedIn. This new id token is then passed
+forward to Flex as _idpToken_ parameter.
+
+```js
+createIdToken(idpClientId, rsaSecretKey, keyId, user)
+  .then(idpToken => {
+    const userData = {
+      email,
+      firstName,
+      lastName,
+      idpToken,
+      from,
+      defaultReturn,
+      defaultConfirm,
+    };
+    done(null, userData);
+  })
+  .catch(e => console.error(e));
 ```
 
 Now we'll need to expose login endpoints that invoke functions provided
