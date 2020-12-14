@@ -49,12 +49,10 @@ const verifyCallback = (req, accessToken, refreshToken, profile, done) => {
 
   const user = {
     userId: profile.id,
-    profile: {
-      firstName,
-      lastName,
-      email,
-      emailVerified: true,
-    },
+    firstName,
+    lastName,
+    email,
+    emailVerified: true,
   };
 
   const state = req.query.state;
@@ -66,10 +64,10 @@ const verifyCallback = (req, accessToken, refreshToken, profile, done) => {
   // When you store them to environment variables you should replace
   // any line brakes with '\n'.
   // You should also make sure that the key size is big enough.
-  const rsaSecretKey = process.env.RSA_SECRET_KEY;
-  const keyId = proceaa.env.KEY_ID;
+  const rsaPrivateKey = process.env.RSA_SECRET_KEY;
+  const keyId = process.env.KEY_ID;
 
-  createIdToken(idpClientId, rsaSecretKey, keyId, user)
+  createIdToken(idpClientId, user, { signingAlg: 'RS256', rsaPrivateKey, keyId })
     .then(idpToken => {
       const userData = {
         email,

@@ -27,11 +27,11 @@ OIDC proxy to Flex. The main steps to take to achieve this are:
    format
 1. Configure a new identity provider and client in Flex Console
 
-**Note, that using FWT as an OpenID Connect proxy requires ftw-daily
+**Note, that using FTW as an OpenID Connect proxy requires ftw-daily
 version
-[7.1.0](https://github.com/sharetribe/ftw-daily/releases/tag/v7.1.0) or
+[7.2.0](https://github.com/sharetribe/ftw-daily/releases/tag/v7.2.0) or
 ftw-hourly version
-[9.1.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v9.1.0).**
+[9.2.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v9.2.0).**
 
 ## Create a login app in Linkedin
 
@@ -79,6 +79,21 @@ file in your server:
 
 Turns information fetched from a 3rd party identity provider (e.g.
 LinkedIn) info a signed JSON Web Token (JWT).
+
+This function expects three parameters: _idpClientId_, _user_ and
+_options_.
+
+- _idpClientId_ is the client id of your custom indentity provider you
+  have set up in Console:
+- _user_ object should contain at least _firstName_, _lastName_, _email_
+  and _emailVerified_ fields.
+- _options_ object contains information about how the id token should be
+  signed and the keys required for that. Currently, Flex supports only
+  RS256 signing algorithm so the _options_ object should look like this:
+
+```
+{ signingAlg: 'RS256', rsaPrivateKey, keyId }
+```
 
 **`openIdConfiguration`** and **`jwksUri`**
 
@@ -164,20 +179,21 @@ information we fetched from LinkedIn. This new id token is then passed
 forward to Flex as _idpToken_ parameter.
 
 ```js
-createIdToken(idpClientId, rsaSecretKey, keyId, user)
-  .then(idpToken => {
-    const userData = {
-      email,
-      firstName,
-      lastName,
-      idpToken,
-      from,
-      defaultReturn,
-      defaultConfirm,
-    };
-    done(null, userData);
-  })
-  .catch(e => console.error(e));
+  createIdToken(idpClientId, user, { signingAlg: 'RS256', rsaPrivateKey, keyId })
+    .then(idpToken => {
+      const userData = {
+        email,
+        firstName,
+        lastName,
+        idpToken,
+        from,
+        defaultReturn,
+        defaultConfirm,
+      };
+      done(null, userData);
+    })
+    .catch(e => console.error(e));
+};
 ```
 
 Now we'll need to expose login endpoints that invoke functions provided
