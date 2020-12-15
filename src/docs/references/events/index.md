@@ -394,5 +394,10 @@ of the event would be `source/admin`.
 
 - [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
 - [Using Flex CLI to view event data](/flex-cli/view-events-with-flex-cli/)
-- TODO Example application using the Integration API to access event
-  data
+- [Reacting to events](/cookbook-events/reacting-to-events) cookbook
+  guide
+- A
+  [full example](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js)
+  Integration API application is available
+  [in the Integration API examples](https://github.com/sharetribe/flex-integration-api-examples/)
+  repository
