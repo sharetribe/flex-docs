@@ -4,8 +4,8 @@ slug: setup-open-id-connect-proxy
 updated: 2020-12-14
 category: cookbook-social-logins-and-sso
 ingress:
-  In this cookbook we'll take a look at the process of setting up OpenID
-  Connect (OIDC) proxy to FTW. This allows you to add support for
+  In this cookbook, we'll take a look at the process of setting up
+  OpenID Connect (OIDC) proxy to FTW. This allows you to add support for
   identity providers that Flex doesn't natively support. In this
   example, we are building the proxy implementation for LinkedIn.
 published: true
@@ -18,7 +18,7 @@ into an OpenID Connect ID token that can be used to validate user login
 in Flex. With this approach, FTW will serve as an identity provider
 towards Flex.
 
-In this guide we'll integrate LinkedIn login to Flex by using FTW as an
+In this guide, we'll integrate LinkedIn login to Flex by using FTW as an
 OIDC proxy to Flex. The main steps to take to achieve this are:
 
 1. Create a login app in Linkedin
@@ -83,7 +83,7 @@ LinkedIn) info a signed JSON Web Token (JWT).
 This function expects three parameters: _idpClientId_, _user_ and
 _options_.
 
-- _idpClientId_ is the client id of your custom indentity provider you
+- _idpClientId_ is the client id of your custom identity provider you
   have set up in Console:
 - _user_ object should contain at least _firstName_, _lastName_, _email_
   and _emailVerified_ fields.
@@ -114,7 +114,7 @@ We are using [Passport.js ](http://www.passportjs.org/) library for
 handling the authentication with different identity providers like with
 Facebook and Google. The library offers
 [multiple strategies](http://www.passportjs.org/packages/) and there's
-also strategy for Linkedin which we are going to use in this example.
+also a strategy for Linkedin which we are going to use in this example.
 
 #### Environment variables
 
@@ -130,7 +130,8 @@ The ID token is signed with RSA keys. You can, for example, use a
 command line tool like _ssh-keygen_ to generate the keys. Note, that
 when you save the keys to your environment variables you should replace
 any line brakes with '\n'. You should also make sure that the key size
-is big enough. By default we are using RS256 algorithm to sign the keys.
+is big enough. By default, we are using RS256 algorithm to sign the
+keys.
 
 `CUSTOM_OIDC_CLIENT_ID`
 
@@ -173,7 +174,7 @@ Place the file in `server/api/auth` folder inside FTW:
 ```
 
 The biggest difference between LinkedIn login and e.g. Facebook login
-which hass first class support in Flex is that we need to use
+which has first-class support in Flex is that we need to use
 _createIdToken_ helper function to create the id token from the
 information we fetched from LinkedIn. This new id token is then passed
 forward to Flex as _idpToken_ parameter.
@@ -211,7 +212,7 @@ const {
 And after all the `router.*` invocations, add LinkedIn login routes:
 
 ```js
-// This endpoint is called when user wants to initiate authenticaiton with Linkedin
+// This endpoint is called when the user wants to initiate authentication with Linkedin
 router.get('/auth/linkedin', authenticateLinkedin);
 
 // This is the route for callback URL the user is redirected after authenticating
@@ -223,7 +224,7 @@ router.get('/auth/linkedin/callback', authenticateLinkedinCallback);
 #### Add LinkedIn-button to FTW
 
 Once we have added the authentication endpoints to the FTW server, we
-need to add button for LinkedIn login to the AuthenticationPage.
+need to add a button for LinkedIn login to the AuthenticationPage.
 
 ```shell
 └── src
@@ -231,9 +232,9 @@ need to add button for LinkedIn login to the AuthenticationPage.
         └── AuthenticationPage
 ```
 
-We can once more use existing Google and Facebook login code as an
-example an create a similar _authWithLinikedin_ function, which adds the
-default URL prameters to the API call and then redirects user to the
+We can once more use the existing Google and Facebook login code as an
+example an create a similar _authWithLinkedin_ function, which adds the
+default URL parameters to the API call and then redirects user to the
 authentication endpoint.
 
 ```js
@@ -250,8 +251,8 @@ const authWithLinkedin = () => {
 ```
 
 Then we can use the _SocialLoginButton_ component to show the option to
-login with LinkedIn to the users. Remember to add the LinkedIn related
-translation keys as well as LinikedIn logo too! Usually different
+log in with LinkedIn to the users. Remember to add the LinkedIn related
+translation keys as well as LinkedIn logo too! Usually, different
 identity providers have brand centers where you can find the logos and
 guidelines how to use them. You can download LinkedIn logo from
 [LinkedIn brand center](https://brand.linkedin.com/downloads).
