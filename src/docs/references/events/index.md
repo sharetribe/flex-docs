@@ -31,12 +31,12 @@ For example, setting a field in user metadata can trigger an integration
 to publish the user's listings.
 
 Currently, Flex exposes events by allowing them to be queried via the
-[Integration
-API](https://www.sharetribe.com/api-reference/integration.html#query-events) or
-viewed via [Flex CLI](/flex-cli/view-events-with-flex-cli/). Integration API
-supports implementing efficient polling where only events that have happened
-since last poll query are returned. This makes it possible to keep the polling
-interval short enough to react to events shortly after they occur.
+[Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
+or viewed via [Flex CLI](/flex-cli/view-events-with-flex-cli/).
+Integration API supports implementing efficient polling where only
+events that have happened since last poll query are returned. This makes
+it possible to keep the polling interval short enough to react to events
+shortly after they occur.
 
 Flex does not retain event data forever. Flex maintains a history of all
 marketplace events for 90 days in production marketplaces and for 7 days
@@ -83,15 +83,15 @@ They are also strictly increasing, meaning that events that happen later
 always have larger sequence ID values than those that happened before
 them.
 
-These properties make the event sequence IDs the most accurate way to keep track
-of which events have been already seen or processed in an application. The query
-interface supports requesting events that have happened after the given sequence
-ID, making the sequence ID a perfect tool for loading subsequent events in
-comparison to a known ID. When querying events synchronously (e.g. via the
-[Integration
-API](https://www.sharetribe.com/api-reference/integration.html#query-events) or
-[Flex CLI](/flex-cli/view-events-with-flex-cli/)), events are always returned in
-order of their sequence IDs.
+These properties make the event sequence IDs the most accurate way to
+keep track of which events have been already seen or processed in an
+application. The query interface supports requesting events that have
+happened after the given sequence ID, making the sequence ID a perfect
+tool for loading subsequent events in comparison to a known ID. When
+querying events synchronously (e.g. via the
+[Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
+or [Flex CLI](/flex-cli/view-events-with-flex-cli/)), events are always
+returned in order of their sequence IDs.
 
 Note that, in contrast to sequence IDs, there can be multiple events
 that have the exact same `createdAt` timestamp, so applications should
@@ -392,8 +392,7 @@ of the event would be `source/admin`.
 
 ## Further reading
 
-* [Integration API reference for
-  events](https://www.sharetribe.com/api-reference/integration.html#events)
-* [Using Flex CLI to view event
-  data](/flex-cli/view-events-with-flex-cli/)
-* TODO Example application using the Integration API to access event data
+- [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
+- [Using Flex CLI to view event data](/flex-cli/view-events-with-flex-cli/)
+- TODO Example application using the Integration API to access event
+  data

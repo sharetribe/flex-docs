@@ -4,15 +4,17 @@ slug: view-events-with-flex-cli
 updated: 2020-12-09
 category: flex-cli
 ingress:
-  This guide shows you how to query and view events data using Flex CLI. Events tell you the change history of marketplace data resources and allow observing noteworthy events.
+  This guide shows you how to query and view events data using Flex CLI.
+  Events tell you the change history of marketplace data resources and
+  allow observing noteworthy events.
 
 skills: basic command line, text editing
 published: true
 ---
 
 Flex CLI (Command-line interface) is a tool for examing and changing
-your marketplace's advanced configurations such as transaction
-processes and email templates.
+your marketplace's advanced configurations such as transaction processes
+and email templates.
 
 This guide expects that you have already installed Flex CLI and are
 logged in with your API key. If not, it's recommended to first read the
@@ -20,19 +22,17 @@ tutorial
 [Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/).
 
 In this guide, we will learn how the events of a marketplace can be
-queried using Flex CLI, how we can inspect events in more detail
-as well as combine Flex CLI with other tools to further process the
-event data.
+queried using Flex CLI, how we can inspect events in more detail as well
+as combine Flex CLI with other tools to further process the event data.
 
-In Flex, events represent changes in marketplace data resources such
-as listings, users and transactions. An event captures a single change
-in marketplace data, e.g. a user being created or a listing being
-updated. Events can be further analyzed to interpret them as logical
-actions such as a listing being published, a message being sent or a
-user having changed their email address by looking into what were the
-changed data fields. To learn more about events, have a look at the
+In Flex, events represent changes in marketplace data resources such as
+listings, users and transactions. An event captures a single change in
+marketplace data, e.g. a user being created or a listing being updated.
+Events can be further analyzed to interpret them as logical actions such
+as a listing being published, a message being sent or a user having
+changed their email address by looking into what were the changed data
+fields. To learn more about events, have a look at the
 [Events](/references/events/) reference.
-
 
 ## Querying events
 
@@ -86,9 +86,9 @@ Seq ID   Resource ID                           Event type                     Cr
 ...
 ```
 
-The default table output mode lists a few key [event
-attributes](/references/events/#event-attributes). It also shows an
-email address of the actor, i.e. the person who took the action that
+The default table output mode lists a few key
+[event attributes](/references/events/#event-attributes). It also shows
+an email address of the actor, i.e. the person who took the action that
 caused the event.
 
 By adding the `--limit` (short version `-l`) parameter we can limit the
@@ -102,7 +102,8 @@ Seq ID   Resource ID                           Event type                     Cr
 3391590  5fca1e5c-eda8-4f54-ac30-ee7fe1010d11  availabilityException/created  2020-12-04 1:32:44 PM   marketplace-api  thomas.rocca@sharetribe.com
 ```
 
-We can look at only certain type of events using the `--filter` parameter:
+We can look at only certain type of events using the `--filter`
+parameter:
 
 ```bash
 $ flex-cli events --filter user/created,listing -m sauna-demo-1
@@ -116,9 +117,9 @@ Seq ID   Resource ID                           Event type       Created at local
 
 Filtering accepts multiple event types separated with commas. Event
 types are of the form `RESOURCE_TYPE/EVENT_SUBTYPE`. You can filter with
-full event type name or by only the resource type. For more
-information about supported event types, see reference for [supported
-event types](/references/events/#supported-event-types).
+full event type name or by only the resource type. For more information
+about supported event types, see reference for
+[supported event types](/references/events/#supported-event-types).
 
 Using the `--resource` parameter we can query events that are related to
 a certain known resource only:
@@ -141,13 +142,13 @@ In this case the resource ID we passed in was a listing ID. This is
 useful when we want to investigate the change history of a specific
 resource.
 
-Flex CLI supports two different ways to look at events from the
-past. We can either use the sequence ID to define a query range or we
-can use timestamps matching event's created at. Sequence IDs are
-unique and strictly increasing, meaning that events that occurred
-later in time always have a larger sequence ID. With both options we
-can query either events after a known sequence ID / time or events
-right before a sequence id / time.
+Flex CLI supports two different ways to look at events from the past. We
+can either use the sequence ID to define a query range or we can use
+timestamps matching event's created at. Sequence IDs are unique and
+strictly increasing, meaning that events that occurred later in time
+always have a larger sequence ID. With both options we can query either
+events after a known sequence ID / time or events right before a
+sequence id / time.
 
 ```bash
 $ flex-cli events --after-seqid 3391593 -M sauna-demo-1
@@ -164,10 +165,10 @@ $ flex-cli events --before-ts 2020-12-05T10:00.000Z  -m sauna-demo-1
 
 Timestamps can be given with date only or with the time component
 included using the ISO 8601 standard format. If the time component is
-omitted, it defaults to UTC midnight. Ranges are exclusive meaning
-that event with sequence ID 3391593 is not included in the output
-produced by the first command above but instead the output starts with
-the first event after that sequence ID.
+omitted, it defaults to UTC midnight. Ranges are exclusive meaning that
+event with sequence ID 3391593 is not included in the output produced by
+the first command above but instead the output starts with the first
+event after that sequence ID.
 
 The `--filter`, `--resource` and `--limit` parameters can also be
 combined with time range queries. For example, we can get the next 100
@@ -179,13 +180,12 @@ $ flex-cli events --after-ts 2020-12-07 --filter user,listing -m sauna-demo-1
 
 ## Output modes and examining events in detail
 
-In addition to the default table output mode, Flex CLI supports
-`--json` and `--json-pretty` modes. In the table output mode the CLI
-prints only summary information about the events. This is useful when
-wanting to see the big picture, which events happened and when. When
-you want to look into the details of an event, you need to use a json
-mode. With the filtering parameter `--seqid` we can target a single
-event:
+In addition to the default table output mode, Flex CLI supports `--json`
+and `--json-pretty` modes. In the table output mode the CLI prints only
+summary information about the events. This is useful when wanting to see
+the big picture, which events happened and when. When you want to look
+into the details of an event, you need to use a json mode. With the
+filtering parameter `--seqid` we can target a single event:
 
 ```bash
 $ flex-cli events --seqid 3471843 -m sauna-demo-1 --json-pretty
@@ -248,13 +248,13 @@ $ flex-cli events --seqid 3471843 -m sauna-demo-1 --json-pretty
 The event details reveal that this user update changed the `bio`,
 `firstName`, `displayName` and `abbreviatedName` for a user. For more
 information about how `previousValues` records changes, see event
-reference for [resource data and previous
-values](/references/events/#resource-data-and-previous-values).
+reference for
+[resource data and previous values](/references/events/#resource-data-and-previous-values).
 
 While `--json-pretty` is a good mode for examining the event details
-manually, `--json` is the mode you want when needing to
-programmatically parse the output. In `--json` mode Flex CLI prints
-the events as one line JSON objects.
+manually, `--json` is the mode you want when needing to programmatically
+parse the output. In `--json` mode Flex CLI prints the events as one
+line JSON objects.
 
 ```bash
 $ flex-cli events -m sauna-demo-1 --json | less
@@ -343,8 +343,8 @@ $ flex-cli events --filter listing -m sauna-demo-1 --json | jq '{sequenceId, eve
 
 ## Live tailing events
 
-Flex CLI also offers a way to follow events live as they happen,
-a.k.a. live tail them. The command to do this is `events tail`
+Flex CLI also offers a way to follow events live as they happen, a.k.a.
+live tail them. The command to do this is `events tail`
 
 ```bash
 $ flex-cli help events tail
@@ -362,11 +362,11 @@ OPTIONS
   -m, --marketplace=MARKETPLACE_ID  marketplace identifier
 ```
 
-Live tailing accepts the same filtering parameters as the events
-query, `--filter` and `--resource`. You can also pass in `--limit` to
-control how many events from the past are shown before starting the
-live tail. Live tailing supports all the same output modes (default
-table output, `--json` and `--json-pretty`) as the events query does.
+Live tailing accepts the same filtering parameters as the events query,
+`--filter` and `--resource`. You can also pass in `--limit` to control
+how many events from the past are shown before starting the live tail.
+Live tailing supports all the same output modes (default table output,
+`--json` and `--json-pretty`) as the events query does.
 
 ```bash
 $ flex-cli events tail -m sauna-demo-1
@@ -392,15 +392,17 @@ marketplace. It supports querying events in a few different ways based
 on event types, affected resource or time. It also supports following
 events that happen in your marketlpace live.
 
-Using Flex CLI to examine events is a great way to see what's
-happening in your marketplace and how the marketplace data has gotten
-to it's current state. Looking at the events using Flex CLI is also a
-great way to get started with planning how to build an integration
-that reacts to events as it allows you to see what kind of events
-happen when, and what's the data that's recorded for each event.
+Using Flex CLI to examine events is a great way to see what's happening
+in your marketplace and how the marketplace data has gotten to it's
+current state. Looking at the events using Flex CLI is also a great way
+to get started with planning how to build an integration that reacts to
+events as it allows you to see what kind of events happen when, and
+what's the data that's recorded for each event.
 
 For more information about events, see the following resources:
 
-- [Events reference](/references/events/) for a detailed description on how events work and how they are defined.
-- [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events) about how to query events via the Integration API.
+- [Events reference](/references/events/) for a detailed description on
+  how events work and how they are defined.
+- [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
+  about how to query events via the Integration API.
 - TODO link to integration example
