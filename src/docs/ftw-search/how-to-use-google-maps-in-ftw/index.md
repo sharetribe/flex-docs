@@ -1,7 +1,7 @@
 ---
 title: How to use Google Maps in FTW
 slug: how-to-use-google-maps-in-ftw
-updated: 2019-01-25
+updated: 2020-12-15
 category: ftw-search
 ingress:
   Flex Template for Web (FTW) offers out of the box support for Google
@@ -51,7 +51,7 @@ The location autocomplete-input in the landing page and the topbar can
 be configured to have specific locations shown by default when the user
 focuses on the input and hasn't yet typed in any searches. This reduces
 the typing required for common searches and also reduces the need to use
-Google Map Places API that much.
+Google Maps Places API that much.
 
 To use default searches, another environment variable needs to be set:
 
@@ -70,15 +70,15 @@ current location from
 Search for variables: `suggestCurrentLocation` and
 `currentLocationBoundsDistance`.
 
-## 5. Change components: use Google Map versions instead of Mapbox
+## 5. Change components: use Google Maps versions instead of Mapbox
 
 If you wish to use Google Maps instead of Mapbox, you need to make some
 changes to FTW default setup.
 
-### 5.1. Include Google Map script instead of Mapbox scripts
+### 5.1. Include Google Maps script instead of Mapbox scripts
 
 Mapbox related scripts can be removed from index.html and instead use
-Google Map script described in comments.
+Google Maps script described in comments.
 
 _public/index.html:_
 
@@ -114,7 +114,7 @@ import Geocoder, {
 // import Geocoder, { GeocoderAttribution, CURRENT_LOCATION_ID } from './GeocoderGoogleMaps';
 ```
 
-Furthermore, Google Map states in their terms of service that Google
+Furthermore, Google Maps states in their terms of service that Google
 logo needs to be visible when using their geocoding service. It is
 available as a background image below the autocomplete predictions.
 However, there needs to be enough padding for that logo. You can change
@@ -129,7 +129,7 @@ _src/styles/marketplaceIndex.css:_
 
 ### 5.3. Show correct map on ListingPage (Map component)
 
-Google Map version (containing both static and dynamic maps) can be
+Google Maps version (containing both static and dynamic maps) can be
 taken into use by importing correct map subcomponent.
 
 _src/components/Map/Map.js:_
@@ -142,7 +142,7 @@ import { StaticMap, DynamicMap, isMapsLibLoaded } from './MapboxMap';
 ### 5.4. SearchMap.js
 
 The most complex change is happening in SearchPage. First, you need to
-import `SearchMapWithMapbox` instead of `SearchMapWithGoogleMap`.
+import `SearchMapWithMapbox` instead of `SearchMapWithGoogleMaps`.
 
 _src/components/SearchMap/SearchMap.js:_
 
@@ -162,17 +162,17 @@ import SearchMapWithMapbox, {
 And add this instead:
 
 ```js
-import SearchMapWithGoogleMap, {
+import SearchMapWithGoogleMaps, {
   LABEL_HANDLE,
   INFO_CARD_HANDLE,
   getMapBounds,
   getMapCenter,
   fitMapToBounds,
   isMapsLibLoaded,
-} from './SearchMapWithGoogleMap';
+} from './SearchMapWithGoogleMaps';
 ```
 
-Then, in `render` method, you need to put `SearchMapWithGoogleMap`
+Then, in `render` method, you need to put `SearchMapWithGoogleMaps`
 component into use by replacing `SearchMapWithMapbox` which is defined
 inside `ReusableMapContainer`. The component with correct props is
 already there in the comments:
@@ -181,11 +181,9 @@ already there in the comments:
 // When changing from default map provider to Google Maps, you should use the following
 // component instead of SearchMapWithMapbox:
 //
-// <SearchMapWithGoogleMap
-//   containerElement={
-//     <div id="search-map-container" className={classes} onClick={this.onMapClicked} />
-//   }
-//   mapElement={<div className={mapRootClassName || css.mapRoot} />}
+// <SearchMapWithGoogleMaps
+//   id={id}
+//   className={classes}
 //   bounds={bounds}
 //   center={center}
 //   location={location}
@@ -194,13 +192,14 @@ already there in the comments:
 //   activeListingId={activeListingId}
 //   mapComponentRefreshToken={this.state.mapReattachmentCount}
 //   createURLToListing={this.createURLToListing}
+//   onClick={this.onMapClicked}
 //   onListingClicked={this.onListingClicked}
 //   onListingInfoCardClicked={this.onListingInfoCardClicked}
 //   onMapLoad={this.onMapLoadHandler}
 //   onMapMoveEnd={onMapMoveEnd}
+//   reusableMapHiddenHandle={REUSABLE_MAP_HIDDEN_HANDLE}
 //   zoom={zoom}
 // />
 ```
 
-The only extra step is to make `mapRootClassName` property available
-from `this.props` at the beginning of the `render` method.
+**Note:** Before FTW-daily@v7.1.0 and FTW-hourly@v9.1.0, FTW templates used _react-google-maps_ wrapper library. That library was not maintained for a long time, so we removed it from dependencies. Instead, Google Maps API is now used directly.
