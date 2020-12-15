@@ -202,4 +202,7 @@ already there in the comments:
 // />
 ```
 
-**Note:** Before FTW-daily@v7.1.0 and FTW-hourly@v9.1.0, FTW templates used _react-google-maps_ wrapper library. That library was not maintained for a long time, so we removed it from dependencies. Instead, Google Maps API is now used directly.
+**Note:** Before FTW-daily@v7.1.0 and FTW-hourly@v9.1.0, FTW templates
+used _react-google-maps_ wrapper library. That library was not
+maintained for a long time, so we removed it from dependencies. Instead,
+Google Maps API is now used directly.
