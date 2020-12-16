@@ -53,7 +53,7 @@ provider client in Flex Console.
 1. Go to the [Social logins & SSO]() page in Console and click "+ Add
    new" to add a new identity provider client.
 2. Fill in a name for the client.
-3. In the identity provider drowdown, select "Add a new identity
+3. In the identity provider dropdown, select "+ Add a new identity
    provider..."
 
 ![Add OpenID Connect client](oidc-client-1.png)
