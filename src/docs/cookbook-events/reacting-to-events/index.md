@@ -12,10 +12,10 @@ published: true
 
 One of the main purposes of [events](/references/events/) in Flex is to
 allow building integrations that programatically react to changes and
-logical actions in a marketplace. In this guide, we will show how to use
-the Flex Integration API to continuously query events efficiently. We
-will also demonstrate how to interpret the event data to detect logical
-changes, using publishing a listing as an example.
+actions in a marketplace. In this guide, we will show how to use the
+Flex Integration API to continuously query events efficiently. We will
+also demonstrate how to interpret the event data to detect actions,
+using publishing a listing as an example.
 
 This guide assumes that you have already set up a Flex Integration API
 application and have a Node.js app with the
