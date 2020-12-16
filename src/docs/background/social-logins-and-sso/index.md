@@ -9,9 +9,9 @@ ingress:
 published: true
 ---
 
-This document gives an overview of how different login solutions work with Flex.
-To find guidance on how to implement login using a specific service, refer to
-the following cookbooks:
+This document gives an overview of how different login solutions work
+with Flex. To find guidance on how to implement login using a specific
+service, refer to the following cookbooks:
 
 - [Enable Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/)
 - [Enable Google login](/cookbook-social-logins-and-sso/enable-google-login/)
