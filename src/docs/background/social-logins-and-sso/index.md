@@ -1,13 +1,22 @@
 ---
-title: Social logins
+title: Social logins & SSO
 slug: social-logins-and-sso
-updated: 2020-11-16
+updated: 2020-12-16
 category: background
 ingress:
   Flex allows your users to authenticate themselves using a 3rd party
   identity provider.
 published: true
 ---
+
+This document gives an overview of how different login solutions work
+with Flex. To find guidance on how to implement login using a specific
+service, refer to the following cookbooks:
+
+- [Enable Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/)
+- [Enable Google login](/cookbook-social-logins-and-sso/enable-google-login/)
+- [Enable OpenID Connect login](/cookbook-social-logins-and-sso/enable-open-id-connect-login/)
+- [How to set up OpenID Connect proxy in FTW](/cookbook-social-logins-and-sso/setup-open-id-connect-proxy/)
 
 ## Using a third party identity provider
 
@@ -51,11 +60,3 @@ Returns access and refresh tokens.
 **6.** Validates the token passed in as a parameter in 5.1 or 5.2.
 Depending on the identity provider in use, this may or may not include a
 request to the identity provider.
-
-## Taking social logins into use
-
-See the following cookbooks for details on enabling login to your
-marketplace using different identity providers:
-
-- [Enable Facebook login](/cookbook-social-logins-and-sso/enable-facebook-login/)
-- [Enable Google login](/cookbook-social-logins-and-sso/enable-google-login/)
