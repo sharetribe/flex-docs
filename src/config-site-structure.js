@@ -135,6 +135,7 @@ exports.siteStructure = [
       { id: 'cookbook-manage' },
       { id: 'cookbook-emails' },
       { id: 'cookbook-social-logins-and-sso' },
+      { id: 'cookbook-events' },
     ],
   },
 
