@@ -1,6 +1,6 @@
 ---
-title: Enable login using OpenID Connect
-slug: open-id-connect-login
+title: Enable OpenID Connect login
+slug: enable-open-id-connect-login
 updated: 2020-12-16
 category: cookbook-social-logins-and-sso
 ingress:
