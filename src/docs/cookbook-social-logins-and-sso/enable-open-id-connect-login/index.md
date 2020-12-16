@@ -38,7 +38,7 @@ mentioned above.
 ### Rotating signing keys
 
 Flex relies heavily on the `kid` attribute of a JSON Web Key when
-caching signing keys. We advice that every OpenID Connect identity
+caching signing keys. We advise that every OpenID Connect identity
 provider includes the `kid` attribute in signing keys and in ID token
 header. Especially, when signing keys are rotated, it is critical to
 have the `kid` attribute in JWKs and a corresponding `kid` header in the
