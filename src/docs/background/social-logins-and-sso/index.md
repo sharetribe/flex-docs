@@ -1,5 +1,5 @@
 ---
-title: Social logins
+title: Social logins & SSO
 slug: social-logins-and-sso
 updated: 2020-11-16
 category: background
