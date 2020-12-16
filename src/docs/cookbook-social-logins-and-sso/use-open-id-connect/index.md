@@ -1,7 +1,7 @@
 ---
 title: Enable login using OpenID Connect
 slug: open-id-connect-login
-updated: 2020-12-14
+updated: 2020-12-16
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook we'll take at how to use an OpenID Connect login
