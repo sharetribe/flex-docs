@@ -301,8 +301,8 @@ API reference for each resource type (e.g.
 etc).
 
 In addition, when the resource has one or more 1-to-1
-[TODO relationships]() with other Integration API resources (for
-instance,
+[relationships](https://www.sharetribe.com/api-reference/#including-related-resources)
+with other Integration API resources (for instance,
 [listing author](https://www.sharetribe.com/api-reference/integration.html#listing-relationships)
 or
 [user profileImage](https://www.sharetribe.com/api-reference/integration.html#user-relationships)),
