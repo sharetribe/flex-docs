@@ -131,15 +131,11 @@ const handleListingPublished = event => {
 
 const analyzeEvent = event => {
   const {
-    resourceId,
     resource: listing,
     previousValues,
     eventType,
   } = event.attributes;
-  const listingId = resourceId.uuid;
-  const authorId = listing.relationships.author.data.id.uuid;
   const listingState = listing.attributes.state;
-  const listingDetails = `listing ID ${listingId}, author ID: ${authorId}`;
   const { state: previousState } = previousValues.attributes || {};
 
   const isPublished = listingState === 'published';
