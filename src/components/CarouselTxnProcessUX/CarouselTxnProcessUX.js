@@ -10,7 +10,7 @@ const CarouselTxnProcessUX = props => {
   return (
     <Carousel {...props} maxWidth="480px">
       <Slide imgSrc={IMG_TRANSACTION_PROCESS_PREAUTH} imgAlt="A transaction where the customer has paid">
-        <h3>A transaction where the customer has already added their payment details</h3>
+        <h3>A paid transaction waiting approval</h3>
         <p>
           According to the graph, this user interaction, or transaction, has reached the preauthorized state. The next possible steps are to accept or decline the transaction. If nothing is done, the transaction will expire automatically.The transaction can transition to an accepted or declined state. 
         </p>
@@ -33,7 +33,7 @@ const CarouselTxnProcessUX = props => {
       <Slide imgSrc={IMG_NOTIFICATION} imgAlt="Notification sent">
         <h3>Notification sent</h3>
         <p>
-          When the transaction transitions to the preauthorized state, the provider gets a notification email, to let them know that there is a transaction pending approval or rejection.  
+          When the transaction transitions to the preauthorized state, the provider gets a notification email, to let them know that there is a transaction pending approval or rejection. This email template can be modified to suit your needs.  
         </p>
       </Slide>
     </Carousel>
