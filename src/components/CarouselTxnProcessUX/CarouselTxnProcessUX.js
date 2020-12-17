@@ -1,17 +1,18 @@
 import React from 'react';
 import { Carousel, CarouselSlide as Slide } from '../../components';
 
-import IMG_TRANSACTION_STATES from './transaction-states.png';
+import IMG_TRANSACTION_PROCESS_PREAUTH from './txn-process-preauthorized.png';
 import IMG_REQUESTED from './transaction-page-requested.png';
 import IMG_REQUEST from './transaction-page-request.png';
+import IMG_NOTIFICATION from './txn-preauthorized-notification.png';
 
 const CarouselTxnProcessUX = props => {
   return (
     <Carousel {...props} maxWidth="480px">
-      <Slide imgSrc={IMG_TRANSACTION_STATES} imgAlt="A transaction where the customer has paid">
-        <h3>A transaction where the customer has paid</h3>
+      <Slide imgSrc={IMG_TRANSACTION_PROCESS_PREAUTH} imgAlt="A transaction where the customer has paid">
+        <h3>A transaction where the customer has already added their payment details</h3>
         <p>
-          According to the graph, this user interaction, or transaction, has reached the preauthorized state. The next possible steps are to an accepted or declined state.{''}
+          According to the graph, this user interaction, or transaction, has reached the preauthorized state. The next possible steps are to accept or decline the transaction. If nothing is done, the transaction will expire automatically.The transaction can transition to an accepted or declined state. 
         </p>
       </Slide>
       <Slide imgSrc={IMG_REQUESTED} imgAlt="Provider view">
@@ -27,6 +28,12 @@ const CarouselTxnProcessUX = props => {
         <h3>What the customer sees</h3>
         <p>
           This is what the customer’s inbox looks like at the same time. The buyer can message the provider, but they have no way to transition the transaction. Our graph clarifies why this is: preauthorized state does not expect any customer initiated transitions. 
+        </p>
+      </Slide>
+      <Slide imgSrc={IMG_NOTIFICATION} imgAlt="Notification sent">
+        <h3>Notification sent</h3>
+        <p>
+          When the transaction transitions to the preauthorized state, the provider gets a notification email, to let them know that there is a transaction pending approval or rejection.  
         </p>
       </Slide>
     </Carousel>
