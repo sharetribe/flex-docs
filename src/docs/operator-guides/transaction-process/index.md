@@ -1,10 +1,10 @@
 ---
 title: Transaction process
 slug: transaction-process
-updated: 2020-11-20
+updated: 2020-12-20
 category: operator-guides
 ingress:
-  Explanation about the transaction process concept and parts
+  This article introduces transaction processes as a concept, its parts, and how they define user interactions and order flows in your marketplace.
 published: true
 ---
 
@@ -89,7 +89,8 @@ The transaction process determines how your users transact on your marketplace. 
 
 Now that you understand more about how the transaction process works, it’s time to create your own. Flex provides a few default processes, but you’ll likely want to modify these to capture the unique way your users will transact.
 
-If you’re a developer building with Flex, you can build your transaction process using the Flex CLI. [Here is a guide](https://www.sharetribe.com/docs/tutorial-transaction-process/create-transaction-process/) for creating your own transaction process.
+If you’re a developer building with Flex, you can build your transaction process using the Flex CLI. [Here is a guide](https://www.sharetribe.com/docs/tutorial-transaction-process/create-transaction-process/) for creating your own transaction process. To get up and running with the tool,
+see the [Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/) tutorial. For more details of the transaction process format, albeit way more technical, see the [Transaction process format](/references/transaction-process-format/) reference. To customise the UI of your marketplace to match your process changes, see the [Change transaction process setup in FTW](/cookbook-transaction-process/change-transaction-process-in-ftw/) cookbook.
 
 If you’re working with a developer, then you need to communicate how you would like transactions to work so your developer can implement the necessary steps, transitions, and actions to build your transaction process. The next article shares a few principles to keep in mind when making changes to your transaction process as a non-developer.
  
