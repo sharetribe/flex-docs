@@ -1,5 +1,5 @@
 ---
-title: Understanding the transaction process
+title: Transaction process
 slug: transaction-process
 updated: 2020-11-20
 category: operator-guides
@@ -8,7 +8,7 @@ ingress:
 published: true
 ---
 
-Your marketplace exists to connect supply and demand. You have a unique vision of how this connection should happen. This article explains how to bring your desired user experience during a connection to life using the Flex transaction process. 
+Your marketplace exists to connect supply and demand. You have a unique vision of how this connection should happen. Flex makes this custom vision possible using its composable transaction process. 
 
 ## Users interact through transactions 
 
@@ -83,7 +83,7 @@ Let’s revisit our Flex default transaction process, this time in conjunction w
 
 </txnprocessuxcarousel>
 
-## Next: start creating your own transaction process
+## Start creating your own transaction process
 
 The transaction process determines how your users transact on your marketplace. It maps where your users are in a transaction, what possible next steps they have, and how those steps are taken. The transaction process plays out in your marketplace application where your users transact. 
 
