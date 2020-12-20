@@ -15,9 +15,9 @@ Understanding how the transaction process works will help you be on the same pag
 
 This article continues the general overview of the transaction process offered [hereCHANGEMECHANGEMECHANGEME](CHANGEMECHANGEME) and [here](https://www.sharetribe.com/docs/background/transaction-process/) by suggesting a few principles to keep in mind when designing how your users will transact.
 
-## Transaction process, what’s included?
+## What to think about in designing your own transaction process
 
-When you’re designing your transaction process, you should be thinking of how you want your users to interact between each other and with the platform. There are a few key elements you’ll want to consider for each step in the process.  
+When you’re designing your transaction process, you should be thinking of how you want your users to interact between each other and with the platform. Most marketplace transactions contain at least some of the following elements.  
 
 ### Pricing
 
@@ -31,17 +31,17 @@ As you think about pricing, you may find [our article on setting pricing](https:
 
 Payments are a typical component of online marketplaces. Flex already has an integration with Stripe Connect using Custom Accounts, a payment gateway specifically designed for marketplaces allowing credit and debit card payments, commissions and delayed payouts. 
 
-Note that Stripe Connect offers these functionalities in only certain countries; your platform *and* your providers must be located in [these supported countries](https://stripe.com/docs/connect/custom-accounts#requirements) in order to process payments with Stripe. If you’re not sure whether your country or the country your providers are in is supported, don’t hesitate to get in touch with us at hello@sharetribe.com
-
-If your marketplace will process payments, answer how you would like that to happen. Consider what you would like to happen and when. For instance, if refunds happen on your marketplace, define at what point customers are eligible to receive them and when not. 
+Note that Stripe Connect offers these functionalities in only certain countries; your platform *and* your providers must be located in [these supported countries](https://stripe.com/docs/connect/custom-accounts#requirements) in order to process payments with Stripe. If your marketplace will process payments, answer how you would like that to happen. Consider what you would like to happen and when. For instance, if refunds happen on your marketplace, define at what point customers are eligible to receive them and when not. 
 
 ### Bookings
 
 Booking is a process specific to reserving a time slot from a provider’s availability calendar. If your marketplace includes bookings, then be sure to outline how they will work. The most important detail to specify is the time-units used to make reservations: hours, days, weeks, or something else? 
 
+You most likely will not use booking functionality if your marketplace is for selling products.
+
 ### Shared information
 
-Sometimes, additional information needs to be shared between a customer and provider during a transaction. Messaging is a common feature in marketplace for this reason, and comes included in Flex. Will that be all your users need to share additional information, or does your marketplaces require something more? 
+Sometimes, additional information needs to be shared between a customer and provider during a transaction. Messaging is a common feature in marketplaces for this reason, and comes included in Flex. Will that be all your users need to share additional information, or does your marketplaces require something more? 
 
 ### Email notifications 
 
@@ -60,7 +60,7 @@ To further think about the user experience on your marketplace in addition to tr
 
 ## Draw it out
 
-It’s time to put the pieces of a transaction—payments, bookings, emails, and reviews—into a coherent journey. Drawing a graph is the best way to illustrate this journey. 
+It’s time to put the pieces of your marketplace transaction into a coherent journey. Drawing a graph is the best way to illustrate this journey. 
 
 Start by identifying the various states of a transaction and mapping the possibilities users have to move through them. You’re trying to show how customers and providers transact on your platform from start to finish. 
 
@@ -92,7 +92,7 @@ If you’re working with a developer to build your marketplace, share the outlin
 
 ## We’re here to help 
 
-Building with a technical solution may be new to you. If you have any questions or concerns, need some feedback, or something is unclear, don’t hesitate to reach out to our team. We’re glad to facilitate you building with Flex. 
+Building with a technical solution may be new to you. If you have any questions or concerns, need some feedback, or something is unclear, don’t hesitate to reach out to our team at hello@sharetribe.com. We’re glad to facilitate you building with Flex. 
 
 ## Start designing
 
