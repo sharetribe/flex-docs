@@ -1,7 +1,7 @@
 ---
 title: Changing your transaction process
 slug: change-transaction-process
-updated: 2020-12-17
+updated: 2020-12-20
 category: operator-guides
 ingress: How to create and communicate a new transaction processes or make changes to an existing one
 published: true
@@ -13,7 +13,7 @@ Even if you’re not the one developing your marketplace, you still have work to
 
 Understanding how the transaction process works will help you be on the same page with your developer on what and how to build. 
 
-This article continues the general overview of the transaction process offered [hereCHANGEMECHANGEMECHANGEME](CHANGEMECHANGEME) and [here](https://www.sharetribe.com/docs/background/transaction-process/) by suggesting a few principles to keep in mind when designing how your users will transact.
+This article continues the general overview of the transaction process offered [here](https://www.sharetribe.com/docs/operator-guides/transaction-process/) and [here](https://www.sharetribe.com/docs/background/transaction-process/) by suggesting a few principles to keep in mind when designing how your users will transact.
 
 ## What to think about in designing your own transaction process
 
@@ -66,7 +66,7 @@ Start by identifying the various states of a transaction and mapping the possibi
 
 Keep it high level, focus on just the states and possible next steps. Later, you’ll flesh out the details, such as the particular actions each user can take as part of moving from state to state. 
 
-You can draw out your transaction process with a pen and paper or online using a tool like [WhimsicalCHANGEMECHANGEME](CHANGEMECHANGEME). 
+You can draw out your transaction process with a pen and paper or online using a tool like [Whimsical](https://www.sharetribe.com/docs/operator-guides/design-txn-process-with-whimsical/). 
 
 ## Modify an existing process, if you can
 
@@ -96,5 +96,5 @@ Building with a technical solution may be new to you. If you have any questions 
 
 ## Start designing
 
-Follow [the instructions in this article]() if you want to start visually designing your process already.
+Follow [the instructions in this article](https://www.sharetribe.com/docs/operator-guides/design-txn-process-with-whimsical/) if you want to start visually designing your process already.
 
