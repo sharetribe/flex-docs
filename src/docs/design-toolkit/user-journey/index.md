@@ -76,7 +76,7 @@ happens between the listing provider and the purchasing customer.
 Sharetribe Flex lets you extensively customize the rules and steps of
 your transaction process to govern how providers and customers
 capitalize on your marketplace.
-[Saunatime’s default process](https://www.sharetribe.com/docs/background/transaction-process/)
+[Saunatime’s default process](https://www.sharetribe.com/docs/operator-guides/transaction-process/)
 mimics an Airbnb-style daily booking rental.
 
 <transactionprocesscarousel title="Transaction process">
