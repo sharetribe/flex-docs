@@ -120,31 +120,6 @@
       "currency" : "USD"
     },
     "id" : "d8893061-c860-4e44-8d4d-61587a497e6e",
-    "line-items" : [ {
-      "code" : "night",
-      "unit-price" : {
-        "amount" : 300,
-        "currency" : "USD"
-      },
-      "line-total" : {
-        "amount" : 900,
-        "currency" : "USD"
-      },
-      "include-for" : [ "customer", "provider" ],
-      "quantity" : 3
-    }, {
-      "code" : "provider-commission",
-      "unit-price" : {
-        "amount" : 900,
-        "currency" : "USD"
-      },
-      "line-total" : {
-        "amount" : -90,
-        "currency" : "USD"
-      },
-      "include-for" : [ "provider" ],
-      "percentage" : -10
-    } ],
     "reviews" : [ {
       "subject" : {
         "id" : "ef7f40d5-da66-489a-957b-641313b68204",
