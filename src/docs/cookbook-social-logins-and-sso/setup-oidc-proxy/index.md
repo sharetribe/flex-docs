@@ -285,5 +285,13 @@ configured for your marketplace in Flex Console. See the
 on for information on how to add a new identity provider for your
 marketplace.
 
-When configuring a new identity provider, use your marketplace's URL as
-the identity provider URL.
+When configuring a new identity provider, make sure you use the correct
+identity provider URL. Based on this URL, Flex determines the path to
+OpenID Connect discovery document (_[identity provider
+URL]/.well-known/openid-configuration_). With the default setup, when
+you are developing in _localhost_, this URL should be
+_http://localhost:3500/api_ (or whichever port you are running the FTW
+server). And if you are using e.g. Heroku, the URL should be something
+like _https://MYEXAMPLEAPP.herokuapp.com/api_. Note that in this case,
+you need to configure separate identity providers in Console for your
+localhost and Heroku apps.
