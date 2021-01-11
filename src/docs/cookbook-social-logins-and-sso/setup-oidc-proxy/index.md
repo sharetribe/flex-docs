@@ -1,7 +1,7 @@
 ---
 title: How to set up OpenID Connect proxy in FTW
 slug: setup-open-id-connect-proxy
-updated: 2020-12-16
+updated: 2021-01-11
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook, we'll take a look at the process of setting up
@@ -17,6 +17,15 @@ to build a suitable login flow in FTW and wrap that login information
 into an OpenID Connect ID token that can be used to validate user login
 in Flex. With this approach, FTW will serve as an identity provider
 towards Flex.
+
+Flex verifies the ID token by fetching the JSON Web Key that is hosted
+by your FTW server and using that to unsign the token. A consequence of
+this is, that the JSON Web Key needs to be publicly available. This
+means that the proxy setup will not work in localhost. To test out the
+LinkedIn login, you should e.g.
+[deploy your FTW changes to Heroku](/tutorial-branding/deploy-to-heroku/)
+so that the .well-known endpoints are publicly reachable. You can read
+more about
 
 In this guide, we'll integrate LinkedIn login to Flex by using FTW as an
 OIDC proxy to Flex. The main steps to take to achieve this are:
@@ -288,10 +297,6 @@ marketplace.
 When configuring a new identity provider, make sure you use the correct
 identity provider URL. Based on this URL, Flex determines the path to
 OpenID Connect discovery document (_[identity provider
-URL]/.well-known/openid-configuration_). With the default setup, when
-you are developing in _localhost_, this URL should be
-_http://localhost:3500/api_ (or whichever port you are running the FTW
-server). And if you are using e.g. Heroku, the URL should be something
-like _https://MYEXAMPLEAPP.herokuapp.com/api_. Note that in this case,
-you need to configure separate identity providers in Console for your
-localhost and Heroku apps.
+URL]/.well-known/openid-configuration_). If you are using e.g. Heroku,
+the URL should be something like
+_https://MYEXAMPLEAPP.herokuapp.com/api_.
