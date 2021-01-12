@@ -149,7 +149,7 @@ First up, we'll need to define some new environment variables.
 
 Set these as the client ID and client secret of your LinkedIn app.
 
-`RSA_SECRET_KEY` and `RSA_PUBLIC_KEY`
+`RSA_PRIVATE_KEY` and `RSA_PUBLIC_KEY`
 
 The ID token is signed with RSA keys. You can, for example, use a
 command line tool like _ssh-keygen_ to generate the keys. Note, that

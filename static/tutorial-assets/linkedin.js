@@ -64,7 +64,7 @@ const verifyCallback = (req, accessToken, refreshToken, profile, done) => {
   // When you store them to environment variables you should replace
   // any line brakes with '\n'.
   // You should also make sure that the key size is big enough.
-  const rsaPrivateKey = process.env.RSA_SECRET_KEY;
+  const rsaPrivateKey = process.env.RSA_PRIVATE_KEY;
   const keyId = process.env.KEY_ID;
 
   createIdToken(idpClientId, user, { signingAlg: 'RS256', rsaPrivateKey, keyId })
