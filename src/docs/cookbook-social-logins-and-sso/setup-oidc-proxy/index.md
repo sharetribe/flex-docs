@@ -36,9 +36,9 @@ OIDC proxy to Flex. The main steps to take to achieve this are:
 
 **Note, that using FTW as an OpenID Connect proxy requires ftw-daily
 version
-[7.2.0](https://github.com/sharetribe/ftw-daily/releases/tag/v7.2.0) or
+[7.3.0](https://github.com/sharetribe/ftw-daily/releases/tag/v7.3.0) or
 ftw-hourly version
-[9.2.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v9.2.0).**
+[9.3.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v9.3.0).**
 
 ## Create a login app in Linkedin
 
