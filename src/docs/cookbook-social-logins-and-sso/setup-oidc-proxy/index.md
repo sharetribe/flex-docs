@@ -252,12 +252,17 @@ router.get('/auth/linkedin', authenticateLinkedin);
 router.get('/auth/linkedin/callback', authenticateLinkedinCallback);
 ```
 
-Finally on the server side we need to do small addition to
-`server/api/auth/createUserWithIdp.js`. We need to add LinkedIn to the
-code where we resolve the idpClientId. `LINKEDIN_IDP_ID` should be the
-IdP ID of the identity provider client in Console.
-`CUSTOM_OIDC_CLIENT_ID` is the Client ID of the identity provider client
-in Console.
+Finally, on the server side we need to update
+`server/api/auth/createUserWithIdp.js` so that a correct IdP client ID
+is passed to the Flex API. In the beginning of the file resolve the
+following environment variables:
+
+```js
+const OIDC_PROXY_CLIENT_ID = process.env.OIDC_PROXY_CLIENT_ID;
+const OIDC_PROXY_IDP_ID = process.env.OIDC_PROXY_IDP_ID;
+```
+
+And update the logic that resolves the `idpClientId` variable:
 
 ```js
 const idpClientId =
@@ -265,8 +270,8 @@ const idpClientId =
     ? FACBOOK_APP_ID
     : idpId === GOOGLE_IDP_ID
     ? GOOGLE_CLIENT_ID
-    : idpId === LINKEDIN_IDP_ID
-    ? CUSTOM_OIDC_CLIENT_ID
+    : idpId === OIDC_PROXY_IDP_ID
+    ? OIDC_PROXY_CLIENT_ID
     : null;
 ```
 
