@@ -1,7 +1,7 @@
 ---
 title: How to set up OpenID Connect proxy in FTW
 slug: setup-open-id-connect-proxy
-updated: 2020-12-16
+updated: 2021-01-12
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook, we'll take a look at the process of setting up
@@ -18,14 +18,21 @@ into an OpenID Connect ID token that can be used to validate user login
 in Flex. With this approach, FTW will serve as an identity provider
 towards Flex.
 
+Flex verifies the ID token by fetching the JSON Web Key that is hosted
+by your FTW server and using that to unsign the token. A consequence of
+this is, that the JSON Web Key needs to be publicly available. This
+means that the proxy setup will not work directly in localhost. To test
+out the LinkedIn login, you should e.g.
+[deploy your FTW changes to Heroku](/tutorial-branding/deploy-to-heroku/).
+
 In this guide, we'll integrate LinkedIn login to Flex by using FTW as an
 OIDC proxy to Flex. The main steps to take to achieve this are:
 
 1. Create a login app in Linkedin
+1. Configure a new identity provider and client in Flex Console
 1. Build LinkedIn login flow in FTW
 1. Proxy the successful LinkedIn login information to Flex in OIDC
    format
-1. Configure a new identity provider and client in Flex Console
 
 **Note, that using FTW as an OpenID Connect proxy requires ftw-daily
 version
@@ -56,6 +63,24 @@ ftw-hourly version
    clicking "Select" by the product.
 1. It takes a few moments for LinkedIn to validate your app for the
    _Sign In_ product.
+
+## Configure a new identity provider and client in Flex Console
+
+With this proxy implementation, your FTW works as the identity provider
+that Flex uses to validate the ID token that wraps the LinkedIn login
+information. To enable logins in Flex using the OIDC proxy, a
+corresponding identity provider and identity provider client need to be
+configured for your marketplace in Flex Console. See the
+[OpenID Connect cookbook](/cookbook-social-logins-and-sso/enable-open-id-connect-login/)
+on for information on how to add a new identity provider for your
+marketplace.
+
+When configuring a new identity provider, make sure you use the correct
+identity provider URL. Based on this URL, Flex determines the path to
+OpenID Connect discovery document (_[identity provider
+URL]/.well-known/openid-configuration_). If you are using e.g. Heroku,
+the URL should be something like
+_https://MYEXAMPLEAPP.herokuapp.com/api_.
 
 ## Build LinkedIn login flow in FTW
 
@@ -221,6 +246,24 @@ router.get('/auth/linkedin', authenticateLinkedin);
 router.get('/auth/linkedin/callback', authenticateLinkedinCallback);
 ```
 
+Finally on the server side we need to do small addition to
+`server/api/auth/createUserWithIdp.js`. We need to add LinkedIn to the
+code where we resolve the idpClientId. `LINKEDIN_IDP_ID` should be the
+IdP ID of the identity provider client in Console.
+`CUSTOM_OIDC_CLIENT_ID` is the Client ID of the identity provider client
+in Console.
+
+```js
+const idpClientId =
+  idpId === FACEBOOK_IDP_ID
+    ? FACBOOK_APP_ID
+    : idpId === GOOGLE_IDP_ID
+    ? GOOGLE_CLIENT_ID
+    : idpId === LINKEDIN_IDP_ID
+    ? CUSTOM_OIDC_CLIENT_ID
+    : null;
+```
+
 #### Add LinkedIn-button to FTW
 
 Once we have added the authentication endpoints to the FTW server, we
@@ -273,25 +316,3 @@ const linkedinButtonText = isLogin ? (
   </SocialLoginButton>
 </div>
 ```
-
-## Configure a new identity provider and client in Flex Console
-
-With this proxy implementation, your FTW works as the identity provider
-that Flex uses to validate the ID token that wraps the LinkedIn login
-information. To enable logins in Flex using the OIDC proxy, a
-corresponding identity provider and identity provider client need to be
-configured for your marketplace in Flex Console. See the
-[OpenID Connect cookbook](/cookbook-social-logins-and-sso/enable-open-id-connect-login/)
-on for information on how to add a new identity provider for your
-marketplace.
-
-When configuring a new identity provider, make sure you use the correct
-identity provider URL. Based on this URL, Flex determines the path to
-OpenID Connect discovery document (_[identity provider
-URL]/.well-known/openid-configuration_). With the default setup, when
-you are developing in _localhost_, this URL should be
-_http://localhost:3500/api_ (or whichever port you are running the FTW
-server). And if you are using e.g. Heroku, the URL should be something
-like _https://MYEXAMPLEAPP.herokuapp.com/api_. Note that in this case,
-you need to configure separate identity providers in Console for your
-localhost and Heroku apps.
