@@ -158,12 +158,18 @@ any line brakes with '\n'. You should also make sure that the key size
 is big enough. By default, we are using RS256 algorithm to sign the
 keys.
 
-`CUSTOM_OIDC_CLIENT_ID`
+`OIDC_PROXY_IDP_ID`
 
-This is the identifier of your identity provider client that you
-configure to Flex. It identifies your OIDC proxy as an identity provider
-in your marketplace. This value can be anything you want and it is not a
-secret.
+The identifier of your identity provider that you configure to
+Flex. It declares that you are using your FTW OpenID Connect proxy as an
+identity provider. Use the "IdP ID" value of an identity provider client
+in Console for this variable.
+
+`OIDC_PROXY_CLIENT_ID`
+
+The client ID of your identity provider client that you
+configure to Flex. Use the "Client ID" value of an identity provider client
+in Console for this variable.
 
 `KEY_ID`
 
