@@ -79,8 +79,13 @@ When configuring a new identity provider, make sure you use the correct
 identity provider URL. Based on this URL, Flex determines the path to
 OpenID Connect discovery document (_[identity provider
 URL]/.well-known/openid-configuration_). If you are using e.g. Heroku,
-the URL should be something like
-_https://MYEXAMPLEAPP.herokuapp.com/_ or your custom domain.
+the URL should be something like _https://MYEXAMPLEAPP.herokuapp.com/_
+or your custom domain.
+
+Regarding the identity provider client values, the "Client ID" can be a
+randomly generated string. After creating an identity provider and a
+client, make a note of the "Client ID" and the "IdP ID" as you will be
+needing them later on.
 
 ## Build LinkedIn login flow in FTW
 
@@ -128,11 +133,6 @@ token written by your proxy implementation. FTW will automatically use
 these functions to expose correct endpoints when JWT signing keys are
 configured.
 
-```js
-router.get('/.well-known/openid-configuration', openIdConfiguration);
-router.get('/.well-known/jwks.json', jwksUri);
-```
-
 ### Build LinkedIn signup flow to FTW’s backend (using passport.js)
 
 We are using [Passport.js ](http://www.passportjs.org/) library for
@@ -151,25 +151,24 @@ Set these as the client ID and client secret of your LinkedIn app.
 
 `RSA_PRIVATE_KEY` and `RSA_PUBLIC_KEY`
 
-The ID token is signed with RSA keys. You can, for example, use a
-command line tool like _ssh-keygen_ to generate the keys. Note, that
-when you save the keys to your environment variables you should replace
-any line brakes with '\n'. You should also make sure that the key size
-is big enough. By default, we are using RS256 algorithm to sign the
-keys.
+The ID token is signed with an RSA key. You can, for example, use a command line
+tool like _ssh-keygen_ to generate the keys. Note, that when storing the keys in
+an environment variable file, you should replace any line brakes with `\n`.
+However, for example in Heroku, the environment variables should include all
+line breaks. You should also make sure that the key size is big enough.
 
 `OIDC_PROXY_IDP_ID`
 
-The identifier of your identity provider that you configure to
-Flex. It declares that you are using your FTW OpenID Connect proxy as an
-identity provider. Use the "IdP ID" value of an identity provider client
-in Console for this variable.
+The identifier of your identity provider that you configure to Flex. It
+declares that you are using your FTW OpenID Connect proxy as an identity
+provider. Use the "IdP ID" value of an identity provider client in
+Console for this variable.
 
 `OIDC_PROXY_CLIENT_ID`
 
-The client ID of your identity provider client that you
-configure to Flex. Use the "Client ID" value of an identity provider client
-in Console for this variable.
+The client ID of your identity provider client that you configure to
+Flex. Use the "Client ID" value of an identity provider client in
+Console for this variable.
 
 `KEY_ID`
 
@@ -182,7 +181,7 @@ in the Flex API relies heavily on it.
 
 #### Passport module dependency
 
-Add the following entry to the `dependencies` map in `package.json`:
+Add the following entry to the `dependencies` map in `package.json` and run `yarn install`:
 
 ```js
 "passport-linkedin-oauth2": "^2.0.0",
@@ -327,3 +326,9 @@ const linkedinButtonText = isLogin ? (
   </SocialLoginButton>
 </div>
 ```
+
+That's it! In order to integrate some other identity provider, implement
+their authentication flow using Passport.js or some other method and use
+the utility functions in `api-util/idToken.js` accordingly to wrap the
+login information into an OpenID Connect ID token that can be used to
+log in to a Flex marketplace.
