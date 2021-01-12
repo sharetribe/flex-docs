@@ -80,7 +80,7 @@ identity provider URL. Based on this URL, Flex determines the path to
 OpenID Connect discovery document (_[identity provider
 URL]/.well-known/openid-configuration_). If you are using e.g. Heroku,
 the URL should be something like
-_https://MYEXAMPLEAPP.herokuapp.com/api_.
+_https://MYEXAMPLEAPP.herokuapp.com/_ or your custom domain.
 
 ## Build LinkedIn login flow in FTW
 
