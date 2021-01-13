@@ -157,14 +157,14 @@ an environment variable file, you should replace any line brakes with `\n`.
 However, for example in Heroku, the environment variables should include all
 line breaks. You should also make sure that the key size is big enough.
 
-`OIDC_PROXY_IDP_ID`
+`LINKEDIN_PROXY_IDP_ID`
 
 The identifier of your identity provider that you configure to Flex. It
 declares that you are using your FTW OpenID Connect proxy as an identity
 provider. Use the "IdP ID" value of an identity provider client in
 Console for this variable.
 
-`OIDC_PROXY_CLIENT_ID`
+`LINKEDIN_PROXY_CLIENT_ID`
 
 The client ID of your identity provider client that you configure to
 Flex. Use the "Client ID" value of an identity provider client in
@@ -257,8 +257,8 @@ is passed to the Flex API. In the beginning of the file resolve the
 following environment variables:
 
 ```js
-const OIDC_PROXY_CLIENT_ID = process.env.OIDC_PROXY_CLIENT_ID;
-const OIDC_PROXY_IDP_ID = process.env.OIDC_PROXY_IDP_ID;
+const LINKEDIN_PROXY_CLIENT_ID = process.env.LINKEDIN_PROXY_CLIENT_ID;
+const LINKEDIN_PROXY_IDP_ID = process.env.LINKEDIN_PROXY_IDP_ID;
 ```
 
 And update the logic that resolves the `idpClientId` variable:
@@ -269,8 +269,8 @@ const idpClientId =
     ? FACBOOK_APP_ID
     : idpId === GOOGLE_IDP_ID
     ? GOOGLE_CLIENT_ID
-    : idpId === OIDC_PROXY_IDP_ID
-    ? OIDC_PROXY_CLIENT_ID
+    : idpId === LINKEDIN_PROXY_IDP_ID
+    ? LINKEDIN_PROXY_CLIENT_ID
     : null;
 ```
 
