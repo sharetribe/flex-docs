@@ -40,6 +40,23 @@ version
 ftw-hourly version
 [9.3.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v9.3.0).**
 
+## A note about development environments
+
+For OpenID Connect (OIDC) identity providers, Flex supports RSA signed
+ID tokens. RSA is an asymmetric signing function. Therefore, all OIDC
+identity providers will need to provide their URL (also known as _issuer
+location_) to Flex so that public signing keys can be fetched for ID
+token validation. When using FTW as an OIDC proxy, FTW should be served
+publicly, so that Flex can fetch the public signing key used to sign ID
+tokens used with authentication. This means that when developing OIDC
+proxy capabilities, by default, an FTW application running in
+`localhost` can not be used as an OIDC proxy but the application should
+be deployed, for example, to a staging environment. If you desire to
+develop this functionality complete locally, take a look at tools like
+[Ngrok](https://ngrok.com/) or
+[Localtunnel](https://localtunnel.github.io/www/) that allow exposing
+your local ports publicly.
+
 ## Create a login app in LinkedIn
 
 1. Head to
