@@ -9,10 +9,10 @@ const rootUrl = process.env.REACT_APP_CANONICAL_ROOT_URL;
 const clientID = process.env.REACT_APP_LINKEDIN_CLIENT_ID;
 const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
 
-// This is the client id you set in Console for your custom identity provider
-// It can be e.g. same as LinkedIn client id but it can also be value you generate
-// by yourself
-const idpClientId = process.env.CUSTOM_OIDC_CLIENT_ID;
+// Identity provider and identity provider client information. They should
+// match to an identity provider client "Client ID" and "IdP ID" in Console.
+const idpClientId = process.env.OIDC_PROXY_CLIENT_ID;
+const idpId = process.env.OIDC_PROXY_IDP_ID;
 
 let callbackURL = null;
 
@@ -64,7 +64,7 @@ const verifyCallback = (req, accessToken, refreshToken, profile, done) => {
   // When you store them to environment variables you should replace
   // any line brakes with '\n'.
   // You should also make sure that the key size is big enough.
-  const rsaPrivateKey = process.env.RSA_SECRET_KEY;
+  const rsaPrivateKey = process.env.RSA_PRIVATE_KEY;
   const keyId = process.env.KEY_ID;
 
   createIdToken(idpClientId, user, { signingAlg: 'RS256', rsaPrivateKey, keyId })
@@ -110,6 +110,6 @@ exports.authenticateLinkedin = (req, res, next) => {
 // to log in the user to Flex with the data from Linkedin
 exports.authenticateLinkedinCallback = (req, res, next) => {
   passport.authenticate('linkedin', function(err, user) {
-    loginWithIdp(err, user, req, res, idpClientId, 'linkedin');
+    loginWithIdp(err, user, req, res, idpClientId, idpId);
   })(req, res, next);
 };
