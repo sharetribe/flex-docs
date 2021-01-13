@@ -345,6 +345,14 @@ const linkedinButtonText = isLogin ? (
 </div>
 ```
 
+In the `AuthenticationPage` component, the `idp` const defines what is
+presented as the name of the identity provider in the sign up confirm
+page. By default, it uses the IdP ID stored in a cookie with a
+capitalized first letter. In case that is not sufficient approach given
+the IdP ID in use, a custom name for the identity provider can be used
+by, for example, by comparing the IdP ID in the cookie to the one used
+by your proxy IdP and overriding the default when suitable.
+
 That's it! In order to integrate some other identity provider, implement
 their authentication flow using Passport.js or some other method and use
 the utility functions in `api-util/idToken.js` accordingly to wrap the
