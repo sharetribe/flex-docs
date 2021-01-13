@@ -1,7 +1,7 @@
 ---
 title: How to set up OpenID Connect proxy in FTW
 slug: setup-open-id-connect-proxy
-updated: 2021-01-12
+updated: 2021-01-13
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook, we'll take a look at the process of setting up
