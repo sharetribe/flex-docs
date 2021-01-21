@@ -1,7 +1,7 @@
 ---
 title: How to deploy FTW to production
 slug: how-to-deploy-ftw-to-production
-updated: 2020-01-21
+updated: 2021-01-21
 category: ftw-hosting
 ingress:
   This guide describes how to set up a production deployment for Flex
@@ -181,7 +181,6 @@ applications environment variables. Click edit to update them or add new
 ones if needed.
 
 Check at least these variables:
-
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
