@@ -1,7 +1,7 @@
 ---
 title: How to deploy FTW to production
 slug: how-to-deploy-ftw-to-production
-updated: 2019-03-11
+updated: 2021-01-21
 category: ftw-hosting
 ingress:
   This guide describes how to set up a production deployment for Flex
@@ -74,6 +74,11 @@ To deploy the application add at least the following variables:
   Canonical root URL of the marketplace. E.g.
   `https://the-name-of-your-app.herokuapp.com` or your actual domain.
   This is needed for social media sharing and SEO optimization.
+
+- **`REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY`**
+
+  The currency used in the Marketplace as ISO 4217 currency code. For
+  example USD, EUR, CAD, AUD, etc.
 
 There are also some other variables that can be used. See the
 [FTW Environment configuration variables](/ftw-configuration/ftw-env/)
@@ -174,6 +179,72 @@ it to maintenance mode and delete the app if needed.
 In the _Settings tab_ click _"Reveal Config Vars"_ button to see the
 applications environment variables. Click edit to update them or add new
 ones if needed.
+
+Check at least these variables:
+
+- **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
+
+  Flex client ID. Check this from
+  [Console](https://flex-console.sharetribe.com/applications).
+
+- **`SHARETRIBE_SDK_CLIENT_SECRET`**
+
+  Flex client secret. Check this from
+  [Console](https://flex-console.sharetribe.com/applications).
+
+- **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
+
+  Stripe publishable API key for generating tokens with Stripe API. Use
+  the test key (prefix `pk_test`) for development.
+
+- **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
+
+  If you are using Mapbox instead of Google Maps
+
+- **`REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY`**
+
+  The currency used in the Marketplace as ISO 4217 currency code. For
+  example USD, EUR, CAD, AUD, etc.
+
+- **`REACT_APP_CANONICAL_ROOT_URL`**
+
+  Canonical root URL of the marketplace. Remove trailing slash from the
+  domain.<br />E.g. _`https://your.domain.com`_
+
+- **`NODE_ENV`**
+
+  Node environment is used to build the app. Use 'development' for
+  development and 'production' for production.<br/> Use value:
+  'production'
+
+- **`REACT_APP_ENV`**
+
+  A more fine-grained env definition than `NODE_ENV`. For example, this
+  is used to send environment info to logging service: Sentry. (If you
+  have enabled it with `REACT_APP_SENTRY_DSN`).<br/> Use value: 'production'
+
+- **`REACT_APP_SHARETRIBE_USING_SSL`**
+
+  Redirect HTTP to HTTPS?<br/> Use value: true
+
+- **`SERVER_SHARETRIBE_TRUST_PROXY`**
+
+  Set this when running the app behind a reverse proxy, which is how
+  Heroku works.<br/> Use value: true
+
+- **`REACT_APP_CSP`**
+
+  Content Security Policy (CSP). Read more from
+  [this article](/ftw-security/how-to-set-up-csp-for-ftw/).<br />
+  Accepts values: _block_ and _report_. <br/> Use value: _block_.
+
+- **`REACT_APP_AVAILABILITY_ENABLED`**
+
+  Possible values: true/false
+
+- **`REACT_APP_DEFAULT_SEARCHES_ENABLED`**
+
+  Possible values: true/false
 
 > **NOTE:** If you change these variables, you need to deploy the app
 > again.
