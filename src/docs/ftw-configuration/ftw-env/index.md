@@ -1,7 +1,7 @@
 ---
 title: FTW Environment configuration variables
 slug: ftw-env
-updated: 2019-01-25
+updated: 2021-01-21
 category: ftw-configuration
 ingress:
   Reference documentation for environment variables in Flex Template for
@@ -51,8 +51,9 @@ development environment. For production deploys most should be set.
 
 - **`REACT_APP_CANONICAL_ROOT_URL`**
 
-  Canonical root url of the marketplace. Needed for social media sharing
-  and SEO optimization.
+  Canonical root url of the marketplace. Needed for social media
+  sharing, SEO optimization, and social logins. Note, that the value
+  should not include a trailing slash.
 
 - **`NODE_ENV`**
 
