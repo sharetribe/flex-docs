@@ -80,7 +80,8 @@ completion. Consider these questions:
 - What email notifications are sent as part of the transaction process?
   When are they sent?
 
-You can learn more about the transaction process functionality in Flex [in this overview article](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
+You can learn more about the transaction process functionality in Flex
+[in this overview article](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
 
 ## 2. Create maps for content creation journey, discovery journey and transaction process.
 

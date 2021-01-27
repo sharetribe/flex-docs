@@ -106,8 +106,8 @@ In addition to using the managed email sending, you have the option to
 choose to use your own SendGrid account by integrating it with Flex. You
 might want to do this because:
 
-- You want to see exactly what emails are sent from your marketplace
-  and fix problems (like bounces) with users' email addresses.
+- You want to see exactly what emails are sent from your marketplace and
+  fix problems (like bounces) with users' email addresses.
 - You want to see open rates and other statistics about the email
   notifications that were sent.
 - You are also using SendGrid for your newsletters and other marketing
