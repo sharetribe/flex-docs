@@ -7,13 +7,14 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.backgroundColor};
     overflow-y: scroll;
     -webkit-font-smoothing: antialiased;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Circular", Helvetica, Arial, sans-serif;
   }
   button {
     border: none;
     cursor: pointer;
     padding: 0;
     background-color: transparent;
+    font-family: "Circular", Helvetica, Arial, sans-serif;
   }
 
   .algolia-autocomplete {

@@ -9,68 +9,305 @@
  * reduces wait time for fonts that we know we are using.
  */
 
-/*
-@font-face {
-  font-family: CircularStd;
-  src: url("./font-files/circular-std/CircularStd-Black.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: fallback;
-}
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+Font: Circular
+Cuts: Thin, Thin Italic, Light, Light Italic, Regular, Italic, Book, Book Italic, Medium, Medium Italic, Bold, Bold Italic, Black, Black Italic, ExtraBlack, ExtraBlack Italic
+Format: woff, woff2
 
-@font-face {
-  font-family: CircularStd;
-  src: url("./font-files/circular-std/CircularStd-BlackItalic.woff2") format("woff2");
-  font-weight: 800;
-  font-style: italic;
-  font-display: fallback;
-}
+Purchase Date: November 5, 2019
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@font-face {
-  font-family: CircularStd;
-  src: url("./font-files/circular-std/CircularStd-Bold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: fallback;
-}
+Legal Disclaimer for Web licence
 
-@font-face {
-  font-family: CircularStd;
-  src: url("./font-files/circular-std/CircularStd-BoldItalic.woff2") format("woff2");
-  font-weight: 600;
-  font-style: italic;
-  font-display: fallback;
-}
+Licence to use self-hosted webfonts for displaying dynamic text on specified website domains. Our package includes WOFF and WOFF2 font formats.
 
-@font-face {
-  font-family: CircularStd;
-  src: url("./font-files/circular-std/CircularStd-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: fallback;
-}
+Should the license page views limit be exceeded the license holder will be required to contact Lineto.com for an upgrade.
 
-@font-face {
-  font-family: CircularStd;
-  src: url("./font-files/circular-std/CircularStd-MediumItalic.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
-  font-display: fallback;
-}
+It is strictly prohibited to rename the font and to download or use these fonts in any other media.
 
-@font-face {
-  font-family: CircularStd;
-  src: url("./font-files/circular-std/CircularStd-Book.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: fallback;
-}
+These Web fonts are licensed exclusively for the use on the following domain(s) and their subdomains:
 
-@font-face {
-  font-family: CircularStd;
-  src: url("./font-files/circular-std/CircularStd-BookItalic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: fallback;
-}
+sharetribe.com (Monthly Pageviews: <250K)
+
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+INSTRUCTIONS
+
+The Web Font delivery folder contains all purchased Web Fonts, example CSS
+file containing @font-face feature statements, and HTML Sample Pages.
+You are only allowed to use the cuts listed above for the licensed
+application.
+
+We recommend using the @font-face statements from the example CSS file.
+Depending on your application structure, you may need to adjust the
+paths to the fonts. It is prohibited to change font/file names.
+
+Please see the HTML Sample Page in the font delivery package for further
+information about Character Groups, Language Support and
+OpenType features etc.
+
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+Manufacturer  Lineto GmbH
+
+Vendor URL    https://lineto.com
+
+Copyright     Copyright © 2019 by Lineto GmbH.
+              https://lineto.com
+              All rights reserved
+
+Designer
+              https://lineto.com/designers
+
+EULA          https://lineto.com/assets/pdf/EULA.pdf
+
 */
+
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ThinSubset.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ThinItalicSubset.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ThinItalicSubset.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-LightSubset.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-LightSubset.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-LightItalicSubset.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-LightItalicSubset.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-RegularSubset.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-RegularSubset.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ItalicSubset.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ItalicSubset.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BookSubset.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BookSubset.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BookItalicSubset.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BookItalicSubset.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-MediumSubset.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-MediumSubset.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-MediumItalicSubset.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-MediumItalicSubset.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BoldSubset.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BoldSubset.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BoldItalicSubset.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BoldItalicSubset.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BlackSubset.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BlackSubset.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BlackItalicSubset.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-BlackItalicSubset.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ExtraBlackSubset.woff") format("woff");
+  font-weight: 950;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ExtraBlackSubset.woff2") format("woff2");
+  font-weight: 950;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ExtraBlackItalicSubset.woff") format("woff");
+  font-weight: 950;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("https://assets-sharetribecom.sharetribe.com/webfonts/circular/CircularXXSub-ExtraBlackItalicSubset.woff2") format("woff2");
+  font-weight: 950;
+  font-style: italic;
+  font-display: fallback;
+}
