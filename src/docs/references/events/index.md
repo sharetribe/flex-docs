@@ -1,7 +1,7 @@
 ---
 title: Events
 slug: events
-updated: 2020-12-01
+updated: 2021-01-12
 category: references
 ingress: Reference documentation for Flex marketplace events.
 published: true
@@ -351,32 +351,43 @@ to stricter data deletion requirements.
 
 The following table lists all possible event sources:
 
-| Source                 | Description                                                                               |
-| ---------------------- | ----------------------------------------------------------------------------------------- |
-| source/marketplace-api | The event happened through the Marketplace API.                                           |
-| source/integration-api | The event happened through the Integration API.                                           |
-| source/console         | The event happened through Flex Console.                                                  |
-| source/admin           | The event happened as a result of a Sharetribe Flex team member action (product support). |
+| Source                 | Description                                                                                                                                |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| source/marketplace-api | The event happened through the Marketplace API.                                                                                            |
+| source/integration-api | The event happened through the Integration API.                                                                                            |
+| source/transaction     | The event happened as part of a transaction transition, regardless of whether the transition was invoked via some API call or via Console. |
+| source/console         | The event happened through Flex Console.                                                                                                   |
+| source/admin           | The event happened as a result of a Sharetribe Flex team member action (product support).                                                  |
 
 ## Supported event types
 
 The currently supported event types and their corresponding Integration
 API resource types are:
 
-| Event type                    | Integration API resource                                                                                   | Description                                                                           |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| listing/created               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | A new listing was created.                                                            |
-| listing/updated               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | An existing listing was updated, including when the set of listing images is updated. |
-| listing/deleted               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | A listing was deleted.                                                                |
-| user/created                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | A new Flex marketplace user was created.                                              |
-| user/updated                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | An existing user was updated.                                                         |
-| user/deleted                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | A user was deleted.                                                                   |
-| availabilityException/created | [availabilityException](https://www.sharetribe.com/api-reference/integration.html#availability-exceptions) | A new availability exception was created for a listing.                               |
-| availabilityException/updated | [availabilityException](https://www.sharetribe.com/api-reference/integration.html#availability-exceptions) | An existing availability exception was updated.                                       |
-| availabilityException/deleted | [availabilityException](https://www.sharetribe.com/api-reference/integration.html#availability-exceptions) | An availability exception was deleted.                                                |
-| message/created               | [message](https://www.sharetribe.com/api-reference/integration.html#messages)                              | A new message was sent for a transaction.                                             |
-| message/updated               | [message](https://www.sharetribe.com/api-reference/integration.html#messages)                              | An existing message was updated.                                                      |
-| message/deleted               | [message](https://www.sharetribe.com/api-reference/integration.html#messages)                              | A message was deleted.                                                                |
+| Event type                    | Integration API resource                                                                                   | Description                                                                                                                                                                               |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| listing/created               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | A new listing was created.                                                                                                                                                                |
+| listing/updated               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | An existing listing was updated, including when the set of listing images is updated.                                                                                                     |
+| listing/deleted               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | A listing was deleted.                                                                                                                                                                    |
+| user/created                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | A new Flex marketplace user was created.                                                                                                                                                  |
+| user/updated                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | An existing user was updated.                                                                                                                                                             |
+| user/deleted                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | A user was deleted.                                                                                                                                                                       |
+| availabilityException/created | [availabilityException](https://www.sharetribe.com/api-reference/integration.html#availability-exceptions) | A new availability exception was created for a listing.                                                                                                                                   |
+| availabilityException/updated | [availabilityException](https://www.sharetribe.com/api-reference/integration.html#availability-exceptions) | An existing availability exception was updated.                                                                                                                                           |
+| availabilityException/deleted | [availabilityException](https://www.sharetribe.com/api-reference/integration.html#availability-exceptions) | An availability exception was deleted.                                                                                                                                                    |
+| message/created               | [message](https://www.sharetribe.com/api-reference/integration.html#messages)                              | A new message was sent for a transaction.                                                                                                                                                 |
+| message/updated               | [message](https://www.sharetribe.com/api-reference/integration.html#messages)                              | An existing message was updated.                                                                                                                                                          |
+| message/deleted               | [message](https://www.sharetribe.com/api-reference/integration.html#messages)                              | A message was deleted.                                                                                                                                                                    |
+| transaction/initiated         | [transaction](https://www.sharetribe.com/api-reference/integration.html#transactions)                      | A new transaction was initiated.                                                                                                                                                          |
+| transaction/transitioned      | [transaction](https://www.sharetribe.com/api-reference/integration.html#transactions)                      | An existing transaction transitioned to a new state.                                                                                                                                      |
+| transaction/updated           | [transaction](https://www.sharetribe.com/api-reference/integration.html#transactions)                      | An existing transaction was updated without a transition (e.g. via API call to [update metatada](https://www.sharetribe.com/api-reference/integration.html#update-transaction-metadata)). |
+| transaction/deleted           | [transaction](https://www.sharetribe.com/api-reference/integration.html#transactions)                      | An existing transaction was deleted.                                                                                                                                                      |
+| booking/created               | [booking](https://www.sharetribe.com/api-reference/integration.html#bookings)                              | A new booking was created.                                                                                                                                                                |
+| booking/updated               | [booking](https://www.sharetribe.com/api-reference/integration.html#bookings)                              | An existing booking was updated.                                                                                                                                                          |
+| booking/deleted               | [booking](https://www.sharetribe.com/api-reference/integration.html#bookings)                              | A booking was deleted.                                                                                                                                                                    |
+| review/created                | [review](https://www.sharetribe.com/api-reference/integration.html#reviews)                                | A new review was posted.                                                                                                                                                                  |
+| review/updated                | [review](https://www.sharetribe.com/api-reference/integration.html#reviews)                                | An existing review was updated.                                                                                                                                                           |
+| review/deleted                | [review](https://www.sharetribe.com/api-reference/integration.html#reviews)                                | A review was deleted.                                                                                                                                                                     |
 
 The event type follows the format `RESOURCE_TYPE/EVENT_SUBTYPE`.
 
@@ -389,6 +400,29 @@ support for the corresponding functionality in the Flex APIs or Flex
 Console. Typically this can happen when the event was caused internally
 by an administrative action of the Flex team, in which case the `source`
 of the event would be `source/admin`.
+
+## Transaction process actions and booking and review events
+
+In Flex, bookings and reviews are primarily managed through the
+transaction process using the
+[booking-](/references/transaction-process-actions/#bookings) and
+[review-related](/references/transaction-process-actions/#reviews)
+actions. Flex emits events separately when each booking or review action
+takes effect, even if multiple actions occur within the same transaction
+transition. For instance, if a transition includes both
+`:action/create-pending-booking` and `:action/accept-booking`, Flex
+generates at least three events as a result. First, there is a
+`:booking/created` event, followed by a `:booking/updated` event
+reflecting the state change of the booking and finally a
+`:transaction/initialized` or a `:transaction/transitioned` event for
+the transaction itself.
+
+Note that this does not apply to the `:transaction/*` events and the
+actions that manipulate the transaction data itself (such as
+`:action/privileged-set-line-items`). For the transaction resource
+itself, there is a single event emitted that corresponds to the entire
+transition. The corresponding `previousValues` for the transaction will
+reflect data before the transition.
 
 ## Further reading
 
