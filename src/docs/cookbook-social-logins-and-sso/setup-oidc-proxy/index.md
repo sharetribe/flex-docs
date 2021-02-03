@@ -1,7 +1,7 @@
 ---
 title: How to set up OpenID Connect proxy in FTW
 slug: setup-open-id-connect-proxy
-updated: 2021-01-13
+updated: 2021-02-03
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook, we'll take a look at the process of setting up
@@ -168,11 +168,11 @@ configured.
 
 ### Build LinkedIn signup flow to FTW’s backend (using passport.js)
 
-We are using [Passport.js ](http://www.passportjs.org/) library for
+We are using [Passport.js](http://www.passportjs.org) library for
 handling the authentication with different identity providers like with
-Facebook and Google. The library offers
-[multiple strategies](http://www.passportjs.org/packages/) and there's
-also a strategy for Linkedin which we are going to use in this example.
+Facebook and Google. The library offers multiple authentication
+strategies and there's also a strategy for Linkedin which we are going
+to use in this example.
 
 #### Environment variables
 
