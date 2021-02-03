@@ -1,7 +1,7 @@
 ---
 title: Enable OpenID Connect login
 slug: enable-open-id-connect-login
-updated: 2020-12-16
+updated: 2021-02-03
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook we'll take at how to use an OpenID Connect login
@@ -93,9 +93,9 @@ from the dropdown when creating a new client.
 
 OpenID Connect login flow can be added to FTW in multiple ways. One good
 starting point is to take a look at OpenID Connect implementations in
-[the passport.js packages](http://www.passportjs.org/packages/). Keep in
-mind that you should get a hold of the ID token that is returned from
-the identity provider so that you can pass it along to Flex's
+[the Passport.js strategies](http://www.passportjs.org). Keep in mind
+that you should get a hold of the ID token that is returned from the
+identity provider so that you can pass it along to Flex's
 [`/auth/auth_with_idp`](https://www.sharetribe.com/api-reference/authentication.html#issuing-tokens-with-an-identity-provider)
 and
 [`current_user/create_with_idp`](https://www.sharetribe.com/api-reference/marketplace.html#create-user-with-an-identity-provider)
