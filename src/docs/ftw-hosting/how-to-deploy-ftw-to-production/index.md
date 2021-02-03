@@ -221,7 +221,8 @@ Check at least these variables:
 
   A more fine-grained env definition than `NODE_ENV`. For example, this
   is used to send environment info to logging service: Sentry. (If you
-  have enabled it with `REACT_APP_SENTRY_DSN`).<br/> Use value: 'production'
+  have enabled it with `REACT_APP_SENTRY_DSN`).<br/> Use value:
+  'production'
 
 - **`REACT_APP_SHARETRIBE_USING_SSL`**
 
