@@ -68,22 +68,22 @@ marketplace:
 $ flex-cli events -m sauna-demo-1
 
 Seq ID   Resource ID                           Event type                     Created at local time   Source           Actor
-3391589  5fca1e5b-2004-4479-a68c-dfc8a03083b8  availabilityException/created  2020-12-04 1:32:43 PM   marketplace-api  thomas.rocca@sharetribe.com
-3391590  5fca1e5c-eda8-4f54-ac30-ee7fe1010d11  availabilityException/created  2020-12-04 1:32:44 PM   marketplace-api  thomas.rocca@sharetribe.com
-3462923  5dfb4a42-8937-47b5-b482-44679828939c  user/updated                   2020-12-07 3:17:30 PM   console          olli+foobar10@sharetribe.com
-3471843  5fce8536-61f5-4c85-8160-61b1799d256f  user/updated                   2020-12-07 9:45:38 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created                2020-12-07 9:47:19 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471857  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:28 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471858  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:38 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471859  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:53 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471860  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:56 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471863  5fce8728-0f15-46e4-8ee2-c4955e0cc079  availabilityException/created  2020-12-07 9:48:56 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471864  5fce872f-4081-4ca7-a40d-6eb2b003dcc2  availabilityException/created  2020-12-07 9:49:03 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471865  5fce8730-c750-4427-bc58-09f685cc0b03  availabilityException/created  2020-12-07 9:49:04 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471866  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:49:11 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471873  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:50:35 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471875  5fce8536-61f5-4c85-8160-61b1799d256f  user/updated                   2020-12-07 9:50:52 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471890  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:53:15 PM   marketplace-api  olli+foobar5@sharetribe.com
+3391589  5fca1e5b-2004-4479-a68c-dfc8a03083b8  availabilityException/created  2020-12-04 1:32:43 PM   marketplace-api  jane@example.com
+3391590  5fca1e5c-eda8-4f54-ac30-ee7fe1010d11  availabilityException/created  2020-12-04 1:32:44 PM   marketplace-api  jane@example.com
+3462923  5dfb4a42-8937-47b5-b482-44679828939c  user/updated                   2020-12-07 3:17:30 PM   console          joe@example.com
+3471843  5fce8536-61f5-4c85-8160-61b1799d256f  user/updated                   2020-12-07 9:45:38 PM   marketplace-api  joe@example.com
+3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created                2020-12-07 9:47:19 PM   marketplace-api  joe@example.com
+3471857  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:28 PM   marketplace-api  joe@example.com
+3471858  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:38 PM   marketplace-api  joe@example.com
+3471859  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:53 PM   marketplace-api  joe@example.com
+3471860  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:56 PM   marketplace-api  joe@example.com
+3471863  5fce8728-0f15-46e4-8ee2-c4955e0cc079  availabilityException/created  2020-12-07 9:48:56 PM   marketplace-api  joe@example.com
+3471864  5fce872f-4081-4ca7-a40d-6eb2b003dcc2  availabilityException/created  2020-12-07 9:49:03 PM   marketplace-api  joe@example.com
+3471865  5fce8730-c750-4427-bc58-09f685cc0b03  availabilityException/created  2020-12-07 9:49:04 PM   marketplace-api  joe@example.com
+3471866  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:49:11 PM   marketplace-api  joe@example.com
+3471873  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:50:35 PM   marketplace-api  joe@example.com
+3471875  5fce8536-61f5-4c85-8160-61b1799d256f  user/updated                   2020-12-07 9:50:52 PM   marketplace-api  joe@example.com
+3471890  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:53:15 PM   marketplace-api  joe@example.com
 ...
 ```
 
@@ -99,8 +99,8 @@ output to given number of events:
 $ flex-cli events -l 2 -m sauna-demo-1
 
 Seq ID   Resource ID                           Event type                     Created at local time   Source           Actor
-3391589  5fca1e5b-2004-4479-a68c-dfc8a03083b8  availabilityException/created  2020-12-04 1:32:43 PM   marketplace-api  thomas.rocca@sharetribe.com
-3391590  5fca1e5c-eda8-4f54-ac30-ee7fe1010d11  availabilityException/created  2020-12-04 1:32:44 PM   marketplace-api  thomas.rocca@sharetribe.com
+3391589  5fca1e5b-2004-4479-a68c-dfc8a03083b8  availabilityException/created  2020-12-04 1:32:43 PM   marketplace-api  jane@example.com
+3391590  5fca1e5c-eda8-4f54-ac30-ee7fe1010d11  availabilityException/created  2020-12-04 1:32:44 PM   marketplace-api  jane@example.com
 ```
 
 We can look at only certain type of events using the `--filter`
@@ -111,8 +111,8 @@ $ flex-cli events --filter user/created,listing -m sauna-demo-1
 
 Seq ID   Resource ID                           Event type       Created at local time   Source           Actor
 3471813  5fce8536-61f5-4c85-8160-61b1799d256f  user/created     2020-12-07 9:40:38 PM   marketplace-api
-3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created  2020-12-07 9:47:19 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471857  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:28 PM   marketplace-api  olli+foobar5@sharetribe.com
+3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created  2020-12-07 9:47:19 PM   marketplace-api  joe@example.com
+3471857  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:28 PM   marketplace-api  joe@example.com
 ...
 ```
 
@@ -129,14 +129,14 @@ certain known resource:
 $ flex-cli events --resource 5fce86c7-e435-4047-ab3b-dc4fee02d51d -m sauna-demo-1
 
 Seq ID   Resource ID                           Event type       Created at local time   Source           Actor
-3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created  2020-12-07 9:47:19 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471857  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:28 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471858  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:38 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471859  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:53 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471860  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:56 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471866  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:49:11 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471873  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:50:35 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471890  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:53:15 PM   marketplace-api  olli+foobar5@sharetribe.com
+3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created  2020-12-07 9:47:19 PM   marketplace-api  joe@example.com
+3471857  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:28 PM   marketplace-api  joe@example.com
+3471858  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:38 PM   marketplace-api  joe@example.com
+3471859  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:53 PM   marketplace-api  joe@example.com
+3471860  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:47:56 PM   marketplace-api  joe@example.com
+3471866  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:49:11 PM   marketplace-api  joe@example.com
+3471873  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:50:35 PM   marketplace-api  joe@example.com
+3471890  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated  2020-12-07 9:53:15 PM   marketplace-api  joe@example.com
 ```
 
 In this case the resource ID we passed in was a listing ID. This is
@@ -151,17 +151,17 @@ possible using the `--related-resource` parameter:
 $ flex-cli events --related-resource 5fce86c7-e435-4047-ab3b-dc4fee02d51d -m sauna-demo-1
 
 Seq ID   Resource ID                           Event type                     Created at local time   Source           Actor
-3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created                2020-12-07 9:47:19 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471857  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:28 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471858  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:38 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471859  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:53 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471860  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:56 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471863  5fce8728-0f15-46e4-8ee2-c4955e0cc079  availabilityException/created  2020-12-07 9:48:56 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471864  5fce872f-4081-4ca7-a40d-6eb2b003dcc2  availabilityException/created  2020-12-07 9:49:03 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471865  5fce8730-c750-4427-bc58-09f685cc0b03  availabilityException/created  2020-12-07 9:49:04 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471866  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:49:11 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471873  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:50:35 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471890  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:53:15 PM   marketplace-api  olli+foobar5@sharetribe.com
+3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created                2020-12-07 9:47:19 PM   marketplace-api  joe@example.com
+3471857  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:28 PM   marketplace-api  joe@example.com
+3471858  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:38 PM   marketplace-api  joe@example.com
+3471859  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:53 PM   marketplace-api  joe@example.com
+3471860  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:56 PM   marketplace-api  joe@example.com
+3471863  5fce8728-0f15-46e4-8ee2-c4955e0cc079  availabilityException/created  2020-12-07 9:48:56 PM   marketplace-api  joe@example.com
+3471864  5fce872f-4081-4ca7-a40d-6eb2b003dcc2  availabilityException/created  2020-12-07 9:49:03 PM   marketplace-api  joe@example.com
+3471865  5fce8730-c750-4427-bc58-09f685cc0b03  availabilityException/created  2020-12-07 9:49:04 PM   marketplace-api  joe@example.com
+3471866  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:49:11 PM   marketplace-api  joe@example.com
+3471873  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:50:35 PM   marketplace-api  joe@example.com
+3471890  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:53:15 PM   marketplace-api  joe@example.com
 ```
 
 In this case the resource ID is again a listing ID. The returned events
@@ -229,7 +229,7 @@ $ flex-cli events --seqid 3471843 -m sauna-demo-1 --json-pretty
   "resource": {
     "deleted": false,
     "banned": false,
-    "email": "olli+foobar5@sharetribe.com",
+    "email": "joe@example.com",
     "profileImage": {
       "id": "5fce865b-dbc7-432a-85cc-ddb3a993eede"
     },
@@ -403,16 +403,16 @@ $ flex-cli events tail -m sauna-demo-1
 Starting live tail of events. Type <Ctrl>+C to quit.
 
 Seq ID   Resource ID                           Event type                     Created at local time   Source           Actor
-3471858  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:38 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471859  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:53 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471860  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:56 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471863  5fce8728-0f15-46e4-8ee2-c4955e0cc079  availabilityException/created  2020-12-07 9:48:56 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471864  5fce872f-4081-4ca7-a40d-6eb2b003dcc2  availabilityException/created  2020-12-07 9:49:03 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471865  5fce8730-c750-4427-bc58-09f685cc0b03  availabilityException/created  2020-12-07 9:49:04 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471866  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:49:11 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471873  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:50:35 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471875  5fce8536-61f5-4c85-8160-61b1799d256f  user/updated                   2020-12-07 9:50:52 PM   marketplace-api  olli+foobar5@sharetribe.com
-3471890  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:53:15 PM   marketplace-api  olli+foobar5@sharetribe.com
+3471858  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:38 PM   marketplace-api  joe@example.com
+3471859  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:53 PM   marketplace-api  joe@example.com
+3471860  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:47:56 PM   marketplace-api  joe@example.com
+3471863  5fce8728-0f15-46e4-8ee2-c4955e0cc079  availabilityException/created  2020-12-07 9:48:56 PM   marketplace-api  joe@example.com
+3471864  5fce872f-4081-4ca7-a40d-6eb2b003dcc2  availabilityException/created  2020-12-07 9:49:03 PM   marketplace-api  joe@example.com
+3471865  5fce8730-c750-4427-bc58-09f685cc0b03  availabilityException/created  2020-12-07 9:49:04 PM   marketplace-api  joe@example.com
+3471866  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:49:11 PM   marketplace-api  joe@example.com
+3471873  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:50:35 PM   marketplace-api  joe@example.com
+3471875  5fce8536-61f5-4c85-8160-61b1799d256f  user/updated                   2020-12-07 9:50:52 PM   marketplace-api  joe@example.com
+3471890  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/updated                2020-12-07 9:53:15 PM   marketplace-api  joe@example.com
 ```
 
 ## Summary
