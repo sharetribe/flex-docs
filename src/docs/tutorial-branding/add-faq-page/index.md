@@ -1,7 +1,7 @@
 ---
 title: Add FAQ page
 slug: add-faq-page
-updated: 2020-06-14
+updated: 2020-02-12
 category: tutorial-branding
 ingress: Add a new static page and configure routing.
 published: true
@@ -57,25 +57,7 @@ export default FAQPage;
 
 So, the _FAQPage_ component is exported there and could be imported
 directly from that file:
-`import FAQPage from '../../containers/FAQPage/FAQPage.js'`.
-
-However, FTW templates import _components_, _forms_, and _containers_
-from the directory where they are defined (e.g.
-`import FAQPage from '../../containers/';`). To make this possible, we
-need to add _FAQPage_ to the _index.js_ file:
-
-```shell
-└── src
-    └── containers
-        └── index.js
-```
-
-You can add the following code to the end of that file:
-
-```js
-// Custom pages for CottageDays
-export { default as FAQPage } from './FAQPage/FAQPage';
-```
+`import FAQPage from '../../containers/FAQPage/FAQPage'`.
 
 ## Routing
 
@@ -91,14 +73,10 @@ _routeConfiguration.js_:
     └── routeConfiguration.js
 ```
 
-First we need to import _FAQPage_ from containers directory:
+First we need to import _FAQPage_:
 
 ```js
-import {
-  AboutPage,
-  FAQPage,
-  // [all the other pages should be listed here]
-} from './containers';
+const FAQPage = loadable(() => import(/* webpackChunkName: "FAQPage" */ './containers/FAQPage/FAQPage'));
 ```
 
 And then we need to add the actual configuration. Find
@@ -121,7 +99,7 @@ const routeConfiguration = () => {
     {
       path: '/',
       name: 'LandingPage',
-      component: props => <LandingPage {...props} />,
+      component: LandingPage,
     },
     {
       path: '/about',
