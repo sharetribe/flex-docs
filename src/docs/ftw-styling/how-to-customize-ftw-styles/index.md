@@ -1,7 +1,7 @@
 ---
 title: How to customize FTW styles
 slug: how-to-customize-ftw-styles
-updated: 2020-11-17
+updated: 2021-02-12
 category: ftw-styling
 ingress:
   This guide describes how to change the styles of the Flex Template for
@@ -16,16 +16,26 @@ along with globally defined cascading behavior that CSS is all about.
 To tackle this goal, we have split the styling into two levels in this
 template application:
 
-- [Marketplace level styling](#marketplace-level-styling) with 2 global
+- [Marketplace level styling](#marketplace-level-styling) with 3 global
   stylesheets:
-  - _src/styles/marketplaceDefaults.css_ (contains CSS variables and
+  - _src/styles/**marketplaceDefaults.css**_ (contains CSS variables and
     element styles)
-  - _src/styles/propertySets.css_ (contains CSS Property Sets aka @apply
-    rules)
+  - _src/styles/**customMediaQueries.css**_ (contains breakpoints for
+    responsive layout)
+  - _src/styles/**propertySets.css**_ (contains CSS Property Sets aka
+    @apply rules)
 - [Component level styling](#styling-components) using
   [CSS Modules](https://github.com/css-modules/css-modules)
 
 ## Marketplace level styling
+
+```shell
+└── src
+    └── styles
+        ├── propertySets.css
+        ├── customMediaQueries.css
+        └── marketplaceDefaults.css
+```
 
 We have created marketplace-level styling variables with CSS Properties
 (vars) and CSS Property Sets (@apply rules).
@@ -51,7 +61,7 @@ used inside some CSS rule.
 (Read more about CSS Properties from
 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties))
 
-### `src/styles/marketplaceDefaults.css`
+### marketplaceDefaults.css
 
 This is a good place to start customizing marketplace styles. For
 example, we define our color scheme here using CSS Property variables:
@@ -104,20 +114,39 @@ providing variables for box-shadows, border-radiuses, transitions, and
 so on. Our current plan is to parameterize styling even more using this
 concept.
 
-Breakpoints for media queries are also defined in this file:
-
-```css
-/* ================ Custom media queries ================ */
-
-@custom-media --viewportMedium (min-width: 768px);
-@custom-media --viewportLarge (min-width: 1024px);
-@custom-media --viewportXLarge (min-width: 1921px);
-```
-
 In addition, this file provides default styles for plain elements like
 `<body>`, `<a>`, `<p>`, `<input>`, `<h1>`, `<h2>`, and so on.
 
-### `src/styles/propertySets.css`
+### customMediaQueries.css
+
+Breakpoints for media queries are defined in separate file.
+
+```css
+@custom-media --viewportSmall (min-width: 550px);
+@custom-media --viewportMedium (min-width: 768px);
+@custom-media --viewportLarge (min-width: 1024px);
+// etc.
+```
+
+These custom media query breakpoints can be used in a similar way as CSS
+Properties. However, these variable are converted to real media queries
+on build-time.
+
+```css
+@media (--viewportMedium) {
+  /* CSS classes */
+}
+```
+
+On a live site, the CSS file contains:
+
+```css
+@media (min-width: 768px) {
+  /* CSS classes */
+}
+```
+
+### propertySets.css
 
 Fonts are specified in this files using CSS Property Sets. They provide
 us a solid way of creating a fixed set of CSS rules for a specific font.
@@ -147,23 +176,21 @@ p {
 }
 ```
 
-⚠️ NOTE: template app is following a pattern where the height of an
-element should be divisible by `6px` on mobile layout and `8px` on
-bigger layouts. This affects line-heights of font styles too.
+> ⚠️ **Note**: template app is following a pattern where the height of
+> an element should be divisible by **6px** on mobile layout and **8px**
+> on bigger layouts. This affects line-heights of font styles too.
 
-⚠️ NOTE: the `@apply` rule and custom property sets most likely won't
-get any more support from browser vendors as the spec is yet considered
-deprecated and alternative solutions are being discussed. However,
-template app will use these until a good enough alternative is
-available.
+> ⚠️ **Note**: the **@apply** rule and custom property sets most likely
+> won't get any more support from browser vendors as the spec is yet
+> considered deprecated and alternative solutions are being discussed.
 
 ## Styling components
 
 Styling a web UI is traditionally quite a messy business due to the
 global nature of stylesheets and especially their cascading specificity
 rule. `.card {/*...*/}` will affect every element on a web page that has
-a class `card` - even if the different UI context would like to use a
-different set of rules.
+a class **"card"** - even if the different UI context would like to use
+a different set of rules.
 
 Our goal has been to create independent components that can be reused in
 the UI without paying too much attention to the global CSS context. To
@@ -171,8 +198,8 @@ achieve this, we have used
 [CSS Modules](https://github.com/css-modules/css-modules), which keeps
 the syntax close to plain CSS, but it actually creates unique class
 names to remove the problems caused by the global nature of CSS. In
-practice, this means that a class with name `card` is actually renamed
-as `ComponentName_card__3kj4h5`.
+practice, this means that a class with name **card** is actually renamed
+as **_ComponentName_card\_\_3kj4h5_**.
 
 To use styles defined in SectionHero.module.css, we need to import the
 file into the component:
@@ -182,13 +209,13 @@ import css from './SectionHero.module.css';
 ```
 
 and then select the correct class from imported style object (in this
-case `heroMainTitle`):
+case **heroMainTitle**):
 
 ```jsx
 <h1 className={css.heroMainTitle}>Book saunas everywhere</h1>
 ```
 
-### Find the component to change its styles
+### Find the component
 
 Quite often one needs to find a component that is responsible for
 certain UI partial in order to change the styles. In this case, the
@@ -199,29 +226,46 @@ from the context menu.)
 
 ![Mobile LandingPage hero title](./styling-find-component.png)
 
-Here we have opened title on LandingPage and the styles for
-`<h1 class="SectionHero_heroMainTitle__3mVNg"><span>Book saunas everywhere.</span></h1>`
-are defined in a "class" called `SectionHero_heroMainTitle__3mVNg`. As
-stated before, the first part of a class name is actually giving us a
-hint about what component is defining that style - in this case, it's
-_SectionHero_ and its styles can be found from the file:
-`src/components/SectionHero/SectionHero.module.css`.
+Here we have opened title on LandingPage and the styles for the
+**heroMainTitle** heading:
+
+```html
+<h1 class="SectionHero_heroMainTitle__3mVNg">
+  <span>Book saunas everywhere.</span>
+</h1>
+```
+
+Styles are defined in a "class" called
+**`SectionHero_heroMainTitle__3mVNg`**. As stated before, the first part
+of a class name is actually giving us a hint about what component is
+defining that style - in this case, it's _SectionHero_ and its styles
+can be found from the file: **SectionHero.module.css**.
+
+```shell
+└── src
+    └── components
+        └── SectionHero
+            └── SectionHero.module.css
+```
 
 There's only two groups of components that break that rule:
 
-- **src/containers** (These components are connected to Redux store:
-  Pages and TopbarContainer)
+- **src/containers**
+
+  These components are connected to Redux store: Pages and
+  TopbarContainer
+
 - **src/forms**
 
-### Styling guidelines and good practices
+### Styling guidelines
 
 We have a practice of naming the outermost class of a component as
 `.root { /* styles */ }`. So, if the component is just rendering single
-element it only has `.root` class, and if there's more complex inner DOM
-structure needed, additional classes are named semantically.
+element it only has **.root** class, and if there's more complex inner
+DOM structure needed, additional classes are named semantically.
 
-`<SectionHero>` could contain classes named as `.root`,
-`.heroMainTitle`, `.heroSubtitle`.
+`<SectionHero>` could contain classes named as **.root**,
+**.heroMainTitle**, **.heroSubtitle**.
 
 Some guidelines we have tried to follow:
 
@@ -241,13 +285,14 @@ Some guidelines we have tried to follow:
   Rules inside those property sets might overwrite rules written above
   the line where the set is applied.
 - **Align text and components** to horizontal baselines. I.e. they
-  should be a multiple of `6px` on mobile layout and `8px` on bigger
-  screens.
+  should be a multiple of **_6px_** on mobile layout and **_8px_** on
+  bigger screens.
 - **Component height should follow baselines too**.<br/> I.e. they
-  should be a multiple of `6px` on mobile layout and `8px` on bigger
-  screens. _(Unfortunately, we haven't been strict with this one.)_
+  should be a multiple of **_6px_** on mobile layout and **_8px_** on
+  bigger screens. _(Unfortunately, we haven't been strict with this
+  one.)_
 
-### Styling responsibility: parent component and its children
+### Parent vs child
 
 One important aspect of a component-based UI is the fact that a
 component is usually only responsible for what happens inside its
@@ -256,9 +301,9 @@ parent component is responsible for its own layout and therefore it
 usually needs to be able to give some dimensions to its child components
 (and naturally margins between them).
 
-This creates a need for the parent to have means to pass `className` to
-its child as props. One example could be a component that shows a circle
-component inside itself and makes it 50px wide.
+This creates a need for the parent to have means to pass **className**
+to its child as props. One example could be a component that shows a
+circle component inside itself and makes it 50px wide.
 
 Style definitions of the (`<Circle />`) child component:
 
@@ -302,13 +347,13 @@ theme of child component there are generally two concepts available:
 
 - Create themed components (e.g. `<PrimaryButton>`, `<SecondaryButton>`,
   `<InlineButton>`)
-- Pass in a `class` property that is able to overwrite original styling
-  rules.
+- Pass in a **class** property that is able to overwrite original
+  styling rules.
 
 For the latter option, we have created a prop type concept called
-`rootClassName`. If you pass `rootClassName` through props to a
+**_rootClassName_**. If you pass **rootClassName** through props to a
 component, it will use that instead of component's own style rules
-defined in `.root`. This ensures that the order of style declarations
+defined in **.root**. This ensures that the order of style declarations
 inside final CSS bundle doesn't affect the final styles. (CSS bundle is
 generated in an import order, therefore we want to avoid situations
 where `<Component className="classA classB"/>` could end up overwriting
@@ -329,8 +374,8 @@ In some complex cases, we have also created props for overwriting some
 inner classes of child components. In these cases, child component is
 also replacing its own styling class with the class passed-in through
 props. For example, `<LocationAutocompleteInput>` can take a prop called
-`iconClassName`, which (if given) replaces `.icon` class defined inside
-`LocationAutocompleteInput.module.css`.
+**iconClassName**, which (if given) replaces **.icon** class defined
+inside _LocationAutocompleteInput.module.css_.
 
 ## Using vanilla CSS
 
