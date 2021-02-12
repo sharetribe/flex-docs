@@ -1,7 +1,7 @@
 ---
 title: Customize image sizes
 slug: customize-image-sizes
-updated: 2020-08-12
+updated: 2021-02-12
 category: cookbook-design
 ingress:
   Flex's custom image variants functionality allows you to fine-tune
@@ -93,13 +93,13 @@ Next up, we'll need to define new image variants. The component that
 shows the image in the search page uses a source set of two images so
 let's replace the current 3:2 variants with two 2:3 ones:
 `portrait-crop` and `portrait-crop2x`. This is done by updating the
-`SearchPage` component:
+`SearchPage.duck.js` file:
 
 ```shell
 └── src
     └── containers
         └── SearchPage
-            └── SearchPage.js
+            └── SearchPage.duck.js
 ```
 
 Import the `sdkLoader` in the top of the file:
@@ -111,7 +111,7 @@ import { util as sdkUtil } from '../../util/sdkLoader';
 And update the `loadData` function to define the new image variants:
 
 ```diff
-SearchPage.loadData = (params, search) => {
+export const loadData = (params, search) => {
   const queryParams = parse(search, {
     latlng: ['origin'],
     latlngBounds: ['bounds'],
