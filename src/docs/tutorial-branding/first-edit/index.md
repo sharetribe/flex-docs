@@ -1,7 +1,7 @@
 ---
 title: First customization
 slug: first-edit
-updated: 2020-02-28
+updated: 2021-02-12
 category: tutorial-branding
 ingress: Change the marketplace color.
 published: true
@@ -13,13 +13,14 @@ Custom styling is a good starting point to introduce your own branding
 and remove design choices made for example marketplace, Saunatime.
 
 FTW templates have most of the styling tied to component directories,
-but there are a couple of files that define global CSS Properties and
-property sets:
+but there are 3 files that define custom media queries, default CSS
+Properties, and property sets:
 
 ```shell
 └── src
     └── styles
         ├── propertySets.css
+        ├── customMediaQueries.css
         └── marketplaceDefaults.css
 ```
 
