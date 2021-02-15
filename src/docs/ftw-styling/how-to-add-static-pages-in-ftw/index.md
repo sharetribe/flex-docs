@@ -1,7 +1,7 @@
 ---
 title: How to add static pages in FTW
 slug: how-to-add-static-pages-in-ftw
-updated: 2019-01-28
+updated: 2021-02-15
 category: ftw-styling
 ingress:
   This guide describes how to add pages with static content in Flex
@@ -220,18 +220,7 @@ Here's an example what your AboutPage.module.css file could look like:
 }
 ```
 
-## 6. Add the component to the component directory
-
-New component needs to be added to `src/containers/index.js` file or if
-it's a presentational component (not page or form) it should be inside
-components folder and therefore added to `src/components/index.js`
-
-Inside that index.js you need to add line
-`export { default as AboutPage } from './AboutPage/AboutPage';`. This
-helps other parts of the app to import new components easily with
-`import { AboutPage } from '../../components'`.
-
-## 7. Add a route to the page
+## 6. Add a route to the page
 
 As a last step you need to add the newly created static page to the
 routing. This can be done in `src/routeConfiguration.js`.
@@ -240,14 +229,11 @@ Inside routeConfiguration function you should add a URL path, a page
 name (it should not conflicting with other pages), and the component
 itself.
 
-Add it as first to the list of imported pages in alphabetical order (2nd
-line):
+Add a new asynchronous import for the page in the beginning of the
+file with other page imports:
 
-```jsx
-import {
-  AboutPage,
-  AuthenticationPage,
-  CheckoutPage,
+```js
+const AboutPage = loadable(() => import(/* webpackChunkName: "AboutPage" */ './containers/AboutPage/AboutPage'));
 ```
 
 and after that add the route configuration to your newly created page:
