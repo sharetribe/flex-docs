@@ -212,6 +212,14 @@ And as a final step we need to export the component.
 Here's an example what your AboutPage.module.css file could look like:
 
 ```css
+/**
+ * Import custom media queries for the new page.
+ * FTW-template use route-based code-splitting, every page create their own CSS files.
+ * This import ensures that the page and components inside will get correct media queries,
+ * when the app is build.
+ */
+@import '../../styles/customMediaQueries.css';
+
 .root {
   padding: 24px;
 

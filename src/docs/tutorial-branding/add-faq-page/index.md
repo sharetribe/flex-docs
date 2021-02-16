@@ -57,7 +57,10 @@ export default FAQPage;
 
 So, the _FAQPage_ component is exported there and could be imported
 directly from that file:
-`import FAQPage from '../../containers/FAQPage/FAQPage'`.
+
+```js
+import FAQPage from '../../containers/FAQPage/FAQPage';
+```
 
 ## Routing
 

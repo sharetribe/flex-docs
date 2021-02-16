@@ -95,3 +95,15 @@ sparse attributes. This is a feature FTW has not yet leveraged fully,
 but it is created to reduce unnecessary data and speed up rendering. You
 can read more from
 [Marketplace API reference for sparse attributes](https://www.sharetribe.com/api-reference/#sparse-attributes).
+
+## Use code splitting
+
+Code splitting is enabled with Loadable Components and by default
+route-based splits are made through `src/routeConfiguration.js`. If
+you want to improve performance, you should prefer subcomponents
+inside page-directories instead of adding more code to shared
+components directory. Those components end up to main chunk file that
+is downloaded on each page (when full page-load is requested).
+
+You can read more [in the code splitting
+article](/ftw-routing/how-code-splitting-works-in-ftw/).
