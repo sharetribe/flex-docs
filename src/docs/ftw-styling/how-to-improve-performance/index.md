@@ -1,7 +1,7 @@
 ---
 title: How to improve performance
 slug: how-to-improve-performance
-updated: 2019-01-29
+updated: 2021-02-15
 category: ftw-styling
 ingress:
   This guide describes ways to improve the loading and rendering
@@ -38,15 +38,10 @@ your page rank.
 Read more about
 [website performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters/).
 
-We haven't yet implemented code splitting to reduce initial page
-rendering time, but there're other improvements that could be done to
-improve both cases of page rendering.
-
 - [Check page performance](#check-page-performance)
 - [Optimize image sizes](#optimize-image-sizes)
 - [Lazy load off-screen images and other components](#lazy-load-off-screen-images-and-other-components)
 - [Use sparse attributes](#use-sparse-attributes)
-- [About code-splitting](#about-code-splitting)
 
 ## Check page performance
 
@@ -101,25 +96,14 @@ but it is created to reduce unnecessary data and speed up rendering. You
 can read more from
 [Marketplace API reference for sparse attributes](https://www.sharetribe.com/api-reference/#sparse-attributes).
 
-## About code-splitting
+## Use code splitting
 
-We haven't yet implemented code-splitting to template app. Our current
-setup is creating one UMD bundle file that is used on both client-side
-and server-side rendering (SSR). Unfortunately, Webpack (a bundling tool
-used by `sharetribe-scripts` dependency) has
-[a bug](https://github.com/webpack/webpack/issues/2471) that prevents
-using code-splitting. This means that there need to be separate builds
-for browser and SSR for code-splitting to work.
+Code splitting is enabled with Loadable Components and by default
+route-based splits are made through `src/routeConfiguration.js`. If
+you want to improve performance, you should prefer subcomponents
+inside page-directories instead of adding more code to shared
+components directory. Those components end up to main chunk file that
+is downloaded on each page (when full page-load is requested).
 
-In practice, it is probably best to add another Webpack build
-configuration for the server in Create React App (CRA) fork
-(`sharetribe-scripts` is a fork of CRA repo). That will also mean some
-refactoring in `server/` folder as well as in `app.js` file.
-
-Furthermore, if you are considering code-splitting, you should also be
-aware that there might be a problem with a "back" navigation button. (If
-the page loads asynchronously, a browser might not be able to return the
-user to the correct scrolling position on the previous page.) We would
-also like to be aware if users of the template app are considering
-code-splitting - if there's more demand for this feature, we should
-prioritize it accordingly.
+You can read more [in the code splitting
+article](/ftw-routing/how-code-splitting-works-in-ftw/).
