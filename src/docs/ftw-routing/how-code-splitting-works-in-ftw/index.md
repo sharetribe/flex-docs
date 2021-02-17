@@ -154,7 +154,8 @@ Then those files can be connected with routing through route
 configuration.
 
 ```js
-    // import pageDataLoadingAPI from './containers/pageDataLoadingAPI';
+    // import getPageDataLoadingAPI from './containers/pageDataLoadingAPI';
+    // const pageDataLoadingAPI = getPageDataLoadingAPI();
     {
       path: '/l/:slug/:id',
       name: 'ListingPage',
