@@ -187,7 +187,7 @@ to customize FTW styles_**: <br />
 [How to customize FTW styles](/ftw-styling/how-to-customize-ftw-styles/)
 
 Especially, you should check
-[the best practices topic](/ftw-styling/how-to-customize-ftw-styles/#styling-guidelines-and-good-practices)
+[the best practices topic](/ftw-styling/how-to-customize-ftw-styles/#styling-guidelines)
 to check the philosophy of how the existing components are styled.
 
 <br />
