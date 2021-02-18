@@ -26,7 +26,7 @@ const SearchInput = styled.input`
   padding: 2px 10px 2px 36px;
   border: 1px solid ${props => props.theme.searchInputBorderColor};
   border-radius: 20px;
-  font-family: "Circular", Helvetica, Arial, sans-serif;
+  font-family: 'Circular', Helvetica, Arial, sans-serif;
 
   &:focus {
     outline: none;

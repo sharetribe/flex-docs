@@ -79,7 +79,11 @@ _routeConfiguration.js_:
 First we need to import _FAQPage_:
 
 ```js
-const FAQPage = loadable(() => import(/* webpackChunkName: "FAQPage" */ './containers/FAQPage/FAQPage'));
+const FAQPage = loadable(() =>
+  import(
+    /* webpackChunkName: "FAQPage" */ './containers/FAQPage/FAQPage'
+  )
+);
 ```
 
 And then we need to add the actual configuration. Find

@@ -194,32 +194,32 @@ try to launch as quickly as you can, as that is where the true learning begins.
 
 ## 4. Going live
 
-Once you've reached a point when you're ready to invite first real
-users to your marketplace, it's time to go live.
+Once you've reached a point when you're ready to invite first real users
+to your marketplace, it's time to go live.
 
-At this point, you should subscribe to Sharetribe Flex. You can do
-this from Flex Console. Open the Environment dropdown and click the
-Set up production item to subscribe.
+At this point, you should subscribe to Sharetribe Flex. You can do this
+from Flex Console. Open the Environment dropdown and click the Set up
+production item to subscribe.
 
 ![Click Set up production to subscribe](./set-up-production.png)
 
 This is when you start paying the Flex minimum monthly fee (see more
-information about [Flex
-pricing](https://www.sharetribe.com/flex/#pricing)). The development
-phase is completely free. You only need to pay when you start inviting
-your real users to your marketplace.
+information about
+[Flex pricing](https://www.sharetribe.com/flex/#pricing)). The
+development phase is completely free. You only need to pay when you
+start inviting your real users to your marketplace.
 
 After you've subscribed, we will create a _production environment_ to
-complement your current _development_ and _demo_ environments.  This
+complement your current _development_ and _demo_ environments. This
 means that you can easily do development and testing of new features,
 without those affecting your actual users in any way.
 
 Naturally, development doesn't stop once you've gone live: that's just
 the very beginning. It's highly likely that you want to keep improving
-your platform on a weekly basis after going live, based on the
-feedback from your users. The devil is in the details, and small
-changes can make a big difference. Every successful marketplace out
-there has started with a minimal set of features, and then
-continuously kept improving over the years.
+your platform on a weekly basis after going live, based on the feedback
+from your users. The devil is in the details, and small changes can make
+a big difference. Every successful marketplace out there has started
+with a minimal set of features, and then continuously kept improving
+over the years.
 
 <!-- Docs to Markdown version 1.0β15 -->
