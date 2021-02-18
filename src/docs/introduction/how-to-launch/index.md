@@ -209,10 +209,10 @@ pricing](https://www.sharetribe.com/flex/#pricing)). The development
 phase is completely free. You only need to pay when you start inviting
 your real users to your marketplace.
 
-After you've subscribed, we will create a _production environment_ for
-you to complement your current _development_ and _demo_ environments.
-This means that you can easily do development and testing of new
-features, without those affecting your actual users in any way.
+After you've subscribed, we will create a _production environment_ to
+complement your current _development_ and _demo_ environments.  This
+means that you can easily do development and testing of new features,
+without those affecting your actual users in any way.
 
 Naturally, development doesn't stop once you've gone live: that's just
 the very beginning. It's highly likely that you want to keep improving
