@@ -99,11 +99,11 @@ can read more from
 ## Use code splitting
 
 Code splitting is enabled with Loadable Components and by default
-route-based splits are made through `src/routeConfiguration.js`. If
-you want to improve performance, you should prefer subcomponents
-inside page-directories instead of adding more code to shared
-components directory. Those components end up to main chunk file that
-is downloaded on each page (when full page-load is requested).
+route-based splits are made through `src/routeConfiguration.js`. If you
+want to improve performance, you should prefer subcomponents inside
+page-directories instead of adding more code to shared components
+directory. Those components end up to main chunk file that is downloaded
+on each page (when full page-load is requested).
 
-You can read more [in the code splitting
-article](/ftw-routing/how-code-splitting-works-in-ftw/).
+You can read more
+[in the code splitting article](/ftw-routing/how-code-splitting-works-in-ftw/).

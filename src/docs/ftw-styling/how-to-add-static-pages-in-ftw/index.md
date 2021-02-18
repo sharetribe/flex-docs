@@ -237,11 +237,15 @@ Inside routeConfiguration function you should add a URL path, a page
 name (it should not conflicting with other pages), and the component
 itself.
 
-Add a new asynchronous import for the page in the beginning of the
-file with other page imports:
+Add a new asynchronous import for the page in the beginning of the file
+with other page imports:
 
 ```js
-const AboutPage = loadable(() => import(/* webpackChunkName: "AboutPage" */ './containers/AboutPage/AboutPage'));
+const AboutPage = loadable(() =>
+  import(
+    /* webpackChunkName: "AboutPage" */ './containers/AboutPage/AboutPage'
+  )
+);
 ```
 
 and after that add the route configuration to your newly created page:

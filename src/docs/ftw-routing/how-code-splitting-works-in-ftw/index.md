@@ -9,10 +9,15 @@ ingress:
 published: true
 ---
 
+## Background info
+
+FTW-daily started using code-splitting from version _8.0.0_ and
+FTW-hourly from _10.0.0_.
+
 Previously, _sharetribe-scripts_ created one
 [UMD](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
 build that was used on both server and frontend. I.e. all the code used
-in the app was bundled into a single main.bundle.js file and that was
+in the app was bundled into a single _main.bundle.js_ file and that was
 used in the web app and server.
 
 Unfortunately, this has meant that code-splitting was not supported: it
@@ -27,13 +32,10 @@ However, this setup makes code-splitting possible. To make this easier,
 we have added [Loadable Components](https://loadable-components.com/)
 library to the setup.
 
-> **Note:** FTW-daily started using code-splitting from version _8.0.0_
-> and FTW-hourly from _10.0.0_.
-
 ## What is code splitting
 
 Instead of downloading the entire app before users can use it, code
-splitting allows us to split the code from one main.bundle.js file into
+splitting allows us to split code away from one main.bundle.js file into
 smaller chunks which you can then load on demand. To familiarize
 yourself with the subject, you could read about code splitting from
 [reactjs.org](https://reactjs.org/docs/code-splitting.html).
@@ -63,13 +65,16 @@ a template app and any page inside it. Loading a single file takes time
 and also browsers had to evaluate the entire JS-file before it was ready
 to make the app fully functional.
 
-So, the main benefit of code splitting is to reduce the code that is
-loaded for any single page. That improves the performance, but even more
+### Why you should use it?
+
+The main benefit of code splitting is to reduce the code that is loaded
+for any single page. That improves the performance, but even more
 importantly, it makes it possible to add more navigational paths and
 page-variants to the codebase. For example, adding different kinds of
 ListingPages for different types of listings makes more sense with
-code-splitting. Otherwise, new pages would have a performance impact on
-the initial page load and therefore SEO performance would drop too.
+code-splitting. Without code splitting, new pages, features, and
+libraries would have a performance impact on the initial page load of
+the app and therefore SEO performance would drop too.
 
 > Note: currently, most of the code is in shared _src/components/_
 > directory and this reduces the benefits that come from code-splitting.
@@ -103,7 +108,7 @@ things that the app needs to load: **data** that the next page needs and
 **code chunk** that it needs to render the data. The latter is not
 needed if the page-specific chunk is already loaded earlier.
 
-## Preloading code chunks
+### Preloading code chunks
 
 Route-based code splitting means that there might be a fast flickering
 of a blank page when navigation happens for the first time to a new
@@ -116,7 +121,7 @@ when the mouse is over **NamedLink**. In addition, **Form** and
 loaded before the user has actually clicked the button or executed form
 submit.
 
-## Route configuration
+### Route configuration
 
 To make the aforementioned preloading possible, the loadable component
 is directly set to "component" conf in routeConfigurations.js file:
@@ -136,7 +141,7 @@ is directly set to "component" conf in routeConfigurations.js file:
     },
 ```
 
-### Data loading
+#### Data loading
 
 FTW templates collects _loadData_ and _setInitialValues_ Redux functions
 from
@@ -164,7 +169,7 @@ configuration.
     },
 ```
 
-## CSS chunk changes
+### CSS chunk changes
 
 To ensure that every page-level CSS chunk has custom media queries
 included, those breakpoints are included through a separate file
