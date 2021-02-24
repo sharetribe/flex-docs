@@ -28,7 +28,6 @@ FTW.
   and
   [CheckoutPage](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
 - [Default background image](https://github.com/sharetribe/flex-template-web/blob/master/src/assets/background-1440.jpg)
-- [Maps Marker icon](https://github.com/sharetribe/flex-template-web/blob/master/public/static/icons/map-marker-32x32.png)
 
 ## 2. Change text content
 
