@@ -11,8 +11,11 @@ Flex environments are instances of your own marketplace, but with different func
 
 The environment can be changed from the dropdown in the left corner of the topbar.
 
-> _Organization_:  An entity that is created when you first create an account. This is where you can invite other admin users to work with. An organization can include multiple environments for different purposes, but only one live environment which is called production. <br /> 
-> _Environment_:  A marketplace instance within your organization which can be created for different purposes. There are three different types of environments: demo, development and production. You can access them all with the same Flex account. 
+![Flex environment and organization dropdowns](./environment-and-organization-dropdowns.png)
+
+> **Organization**:  An entity that is created when you first create an account. This is where you can invite other admin users to work with. An organization can include multiple environments for different purposes, but only one live environment which is called production. 
+
+> **Environment**:  A marketplace instance within your organization which can be created for different purposes. There are three different types of environments: demo, development and production. You can access them all with the same Flex account. 
 
 ## Environment types
 
