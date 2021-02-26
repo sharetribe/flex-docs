@@ -9,9 +9,11 @@ published: true
 
 Flex environments are instances of your own marketplace, but with different functions. When you first create a Flex account, you have two environments: Demo and Development. When you are ready to go live, we will create you a third environment: Production.
 
-The environment can be changed from the dropdown in the left corner of the topbar.
+The environment can be changed from the dropdown in the left corner of the topbar. Those who have access to multiple organizations can see the organization dropdown on the right.
 
 ![Flex environment and organization dropdowns](./environment-and-organization-dropdowns.png)
+
+Organization and environment are terms that are used to communicate what Flex marketplace you are looking at in Console. 
 
 > **Organization**:  An entity that is created when you first create an account. This is where you can invite other admin users to work with. An organization can include multiple environments for different purposes, but only one live environment which is called production. 
 
