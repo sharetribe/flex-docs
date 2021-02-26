@@ -1,7 +1,7 @@
 ---
 title: Hiring a developer to build your Flex marketplace
 slug: how-to-hire-developer
-updated: 2021-02-25 <!---set the date of today---> 
+updated: 2021-02-25
 category: operator-guides
 ingress:
   Tips to help you hire a developer to build a marketplace with Sharetribe Flex
@@ -47,4 +47,3 @@ Building a marketplace platform is a process, not a project. As a general rule, 
 Once you start receiving feedback from your first users, it's a lot easier to decide what to build next. As you grow, you should be prepared to constantly adjust your platform and release new improvements to it. Our recommendation is to reserve at least half of your development budget for changes you're going to make during the first 12 months after launching, instead of spending your entire budget pre-launch.
 
 Check out our [practical guide to building an online marketplace](https://www.sharetribe.com/academy/guide) for more strategies on how to build, launch, and scale your marketplace. 
-
