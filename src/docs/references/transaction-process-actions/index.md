@@ -95,8 +95,8 @@ defining `includeFor` array `["customer"]` and provider commission by
 
 `payinTotal` is calculated by the action and added to the transaction.
 `payinTotal` equals to the sum of customer commission line totals and
-other non-commission line totals. Must be positive and larger than
-`payoutTotal`
+other non-commission line totals. Must be zero or positive and larger
+than `payoutTotal`
 
 `payoutTotal` is calculated by the action and added to the transaction.
 `payoutTotal` equals to the sum of provider commission line totals and
@@ -915,11 +915,31 @@ requires that the transition is made from a trusted context.
 
 #### :action/stripe-create-payment-intent
 
-Action for creating a Stripe Payment Intent for the transaction.
+Action for creating a Stripe PaymentIntent for the transaction. This
+action supports card payments or equivalent (such as using wallets like
+Google Pay and Apple Pay).
 
 Payment Intents are the main supported way to collect payments.
 Transaction processes need to use them especially if they want to be
 SCA-compatible.
+
+After the PaymentIntent is created, it's ID and client secret are
+temporarily accessible in the Flex transaction protected data under the
+`stripePaymentIntents` key in the following form:
+
+```json
+{
+  "default": {
+    "stripePaymentIntentId": "pi_1EXSEzLSea1GQQ9x5PnNTeuS",
+    "stripePaymentIntentClientSecret": "pi_1EXSEzLSea1GQQ9x5PnNTeuS_secret_xxxxxxxxxxxxxxxxxxxxxxxxx"
+  }
+}
+```
+
+Client applications can use the PaymentIntent client secret in order to
+handle payment and confirm the PaymentIntent client-side. The
+`stripePaymentIntents` key is removed from the protected data once the
+`:action/stripe-confirm-payment-intent` is used.
 
 **Preconditions**:
 
@@ -960,26 +980,120 @@ SCA-compatible.
   `:action/stripe-confirm-payment-intent` must not be included in this
   or subsequent transitions.
 
+#### :action/stripe-create-payment-intent-push
+
+Action for creating a Stripe Payment Intent for use with synchronous
+push payment methods. The following payment methods are supported:
+
+- Alipay
+- Bancontact
+- EPS
+- giropay
+- iDEAL
+- Przelewy24
+
+After the PaymentIntent is created, it's ID and client secret are
+temporarily accessible in the Flex transaction protected data under the
+`stripePaymentIntents` key in the following form:
+
+```json
+{
+  "default": {
+    "stripePaymentIntentId": "pi_1EXSEzLSea1GQQ9x5PnNTeuS",
+    "stripePaymentIntentClientSecret": "pi_1EXSEzLSea1GQQ9x5PnNTeuS_secret_xxxxxxxxxxxxxxxxxxxxxxxxx"
+  }
+}
+```
+
+Client applications can use the PaymentIntent client secret in order to
+handle payment client-side. Typically that involes using Stripe.js SDK
+to attach a payment method and handle the bank redirect where the
+customer confirms the payment. The `stripePaymentIntents` is removed
+from the protected data once the `:action/stripe-confirm-payment-intent`
+is used.
+
+**IMPORTANT** Payments with synchronous push payment methods are
+captured and made in full immediately when confirmed by the customer via
+their bank or app and unlike card payments there is no preauthorization
+stage. After the payment is made, it can only be reversed with a full
+refund using the `:action/stripe-refund-payment`. Unlike cancelling a
+preauthorization, creating a full refund does not refund Stripe's own
+payment processing fees to the Stripe platform account. Therefore, it is
+recommended that the transaction process takes that into account.
+Typically, this means that the transaction process is some form of
+"instant booking" where provider does not need to accept the booking at
+all, or alternatively a process where the provider accepts the booking
+before the payment is made.
+
+**Preconditions**:
+
+- The transaction must already have pricing information (i.e. pay-in and
+  pay-out totals) calculated.
+
+**Parameters:**
+
+- `paymentMethodTypes`, array of strings, mandatory. List of payment
+  method types that are allowed to be used to complete this payment
+  intent. Must be one or more of the following: `alipay`, `bancontact`,
+  `eps`, `giropay`, `ideal`, `p24`.
+- `paymentMethod`, string, optional. Stripe PaymentMethod ID of payment
+  method to be used in the payment. If not given, client is responsible
+  for attaching a PaymentMethod to the PaymentIntent via e.g. Stripe.js
+  SDK.
+
+**Note** that the allowed payment method types are passed as transition
+parameters. If implementations wish to strictly validate which payment
+methods are allowed to fulfill a payment, use a privileged transition
+and validate the set of allowed payment methods in your server.
+
+**Configurations:** -
+
+#### :action/stripe-confirm-payment-intent
+
+Action for confirming payment intent that is in pending state.
+
+If the payment intent was created with
+`:action/stripe-create-payment-intent` (a card payment), a
+preauthorization is placed on the card. The payment then can be captured
+in full by using `:action/stripe-capture-payment-intent` or the
+preauthorization can be released by using
+`:action/stripe-refund-payment`.
+
+**IMPORTANT** On the other hand, payments with synchronous push payment
+methods (created with `:action/stripe-create-payment-intent-push`) are
+captured and made in full immediately when confirmed by the customer via
+their bank or app and unlike card payments there is no preauthorization
+stage. After the payment is made, it can only be reversed with a full
+refund using `:action/stripe-refund-payment`. Unlike cancelling a
+preauthorization, creating a full refund does not refund Stripe's own
+payment processing fees to the Stripe platform account. Therefore, it is
+recommended that the transaction process takes that into account.
+Typically, this means that the transaction process is some form of
+"instant booking" where provider does not need to accept the booking at
+all, or alternatively a process where the provider accepts the booking
+before the payment is made.
+
+**Preconditions**:
+
+- Transaction must have a payment created with
+  `:action/stripe-create-payment-intent` or
+  `:action/stripe-create-payment-intent-push`.
+
+**Parameters:** - **Configurations:** -
+
 #### :action/stripe-capture-payment-intent
 
-Action for capturing a confirmed Stripe PaymentIntent.
+Action for capturing a confirmed Stripe PaymentIntent. If the
+PaymentIntent was created with
+`:action/stripe-create-payment-intent-push`, the PaymentIntent is
+captured automatically already when the payment is confirmed and this
+action will have no effect.
 
 **Preconditions:**
 
 - Transaction must have a payment that has been confirmed with
   `:action/stripe-confirm-payment-intent`
 - Provider must have connected Stripe account
-
-**Parameters:** - **Configurations:** -
-
-#### :action/stripe-confirm-payment-intent
-
-Action for confirming payment intent that is in pending state.
-
-**Preconditions**:
-
-- Transaction must have a payment created with
-  `:action/stripe-create-payment-intent`.
 
 **Parameters:** - **Configurations:** -
 
@@ -1006,17 +1120,15 @@ instead
 
 Refund (in full) a Stripe payment. Supports both cancelling a
 PaymentIntent that has not yet been captured, as well as issuing a
-Stripe refund for a charge if the charge was captured or if the charge
-was created directly without using a PaymentIntent.
+Stripe refund for the charge if the PaymentIntent was captured.
 
 **Preconditions**:
 
-- Transaction must have a pay in
-- Transaction must have the required Stripe payment data
-- Pay in must be in one of the following states: payment.in/pending,
-  payment.in/preauthorized, payment.in/paid
-- Transaction must have a pay out
-- Pay out must not be already paid
+- The transaction must have a payment created with either
+  `:action/stripe-create-payment-intent` or
+  `:action/stripe-create-payment-intent-push`
+- The transaction must not yet have passed through a transition using
+  `:action/stripe-create-payout`
 
 **Parameters**: -
 

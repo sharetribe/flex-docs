@@ -1,7 +1,7 @@
 ---
-title: How PaymentIntents work?
+title: How PaymentIntents work
 slug: payment-intents
-updated: 2019-06-19
+updated: 2021-02-25
 category: background
 ingress:
   Overview of how Stripe PaymentIntents work with Sharetribe Flex, and
@@ -32,6 +32,10 @@ outside Europe. And if needed, they can provide fraud prevention with
 things like
 [3D Secure Card Payments](https://stripe.com/docs/payments/3d-secure).
 
+PaymentIntents also allow a variety of payment methods to be used when
+making a payment in Flex. See the
+[overview of supported payment methods in Flex](/background/payment-methods-overview).
+
 This article will describe how PaymentIntents relate to Flex transaction
 processes and the general principles of implementing a checkout flow
 with PaymentIntents.
@@ -47,8 +51,13 @@ steps:
    to authenticate and authorize the payment.
 3. The transaction can proceed only after customer has authorized (if
    required) the payment. The PaymentIntent is confirmed, resulting in a
-   Charge being preauthorized.
+   Charge being preauthorized (in the case of
+   [card payments](/background/payment-methods-overview#card-payment-flow))
+   or fully captured (in the case of
+   [push payment methods](/background/payment-methods-overview#push-payment-flow)).
 4. Transaction flow continues as usual onwards.
+
+### Example transaction process with card payments
 
 ![Automatic PaymentIntent flow](./automatic_confirmation_flow.png)
 
@@ -64,6 +73,15 @@ the payment in Stripe to the client application (Step 2.). More
 information on the Step 2. can be found in this
 [section](#required-actions-in-the-client).
 
+### Example transaction process with both card and push payments
+
+![PaymentIntent process with card and push payments](push-payment-process.png)
+
+Since push payments
+[do not have a preauthorization stage](/background/payment-methods-overview#push-payment-flow),
+this process allows an instant-booking type of flow, where the booking
+does not need acceptance from the provider.
+
 ## Actions related to PaymentIntents
 
 The following actions can be attached to a transaction process in order
@@ -72,31 +90,69 @@ flows.
 
 ### stripe-create-payment-intent
 
-> Transition parameter: - paymentMethod: optional, the Stripe ID of
-> paymentMethod
-
-Creates a PaymentIntent. You can optionally pass in a
-[paymentMethod](https://stripe.com/docs/payments/payment-methods) ID, or
-attach a paymentMethod later to the transaction during the validation
+Creates a PaymentIntent for use with card payments (or payment methods
+that are similar, such as Google Pay or Apple Pay). You can optionally
+pass in a
+[PaymentMethod](https://stripe.com/docs/payments/payment-methods) ID, or
+attach a PaymentMethod later to the transaction during the validation
 and confirmation in the client by using Stripe Elements. The latter is
 the recommended way and is covered in the
-[implementation guide](#implementing-the-automatic-paymentintent-flow).
+[implementation guide](#implementing-the-paymentintent-flow).
+
+For detailed reference, see
+[here](/references/transaction-process-actions/#actionstripe-create-payment-intent).
+
+### stripe-create-payment-intent-push
+
+Creates a PaymentIntent for use with push payments. You can optionally
+pass in a
+[PaymentMethod](https://stripe.com/docs/payments/payment-methods) ID, or
+attach a PaymentMethod later to the transaction during the validation
+and confirmation in the client by using Stripe Elements. The latter is
+the recommended way and is covered in the
+[implementation guide](#implementing-the-paymentintent-flow).
+
+For detailed reference, see
+[here](/references/transaction-process-actions/#actionstripe-create-payment-intent-push).
 
 ### stripe-confirm-payment-intent
 
 Validates that the transaction has a PaymentIntent created and verifies
-via Stripe API that the PaymentIntent status is `requires_capture` or
-`requires_confirmation`. Confirms the PaymentIntent in Stripe, if
-needed, and marks the payment as preauthorized in Flex.
+via Stripe API that the PaymentIntent status is `requires_capture`,
+`requires_confirmation` or `succeeded` (only allowed for push payment
+methods). Confirms the PaymentIntent in Stripe, if needed.
+
+If the payment intent was created with `stripe-create-payment-intent` (a
+card payment), a preauthorization is placed on the card. The payment
+then can be captured in full by using `stripe-capture-payment-intent` or
+the preauthorization can be released by using `stripe-refund-payment`.
+
+On the other hand, if the payment intent was created with
+`stripe-create-payment-intent-push`, there is no preauthorization, the
+payment is captured in full and there is no need to use the
+`stripe-capture-payment-intent` action. The payment can be refunded in
+full using the `stripe-refund-payment`.
+
+For detailed reference, see
+[here](/references/transaction-process-actions/#actionstripe-confirm-payment-intent).
 
 ### stripe-capture-payment-intent
 
-Captures a confirmed PaymentIntent.
+Captures a confirmed PaymentIntent. In case of PaymentIntents created
+through `stripe-create-payment-intent-push`, the PaymentIntent is
+automatically captured already when confirmed and this action has no
+effect.
+
+For detailed reference, see
+[here](/references/transaction-process-actions/#actionstripe-capture-payment-intent).
 
 ### stripe-refund-payment
 
 Either cancels an unconfirmed PaymentIntent or refunds the related
 captured charge.
+
+For detailed reference, see
+[here](/references/transaction-process-actions/#actionstripe-refund-payment).
 
 ## Required actions in the client
 
@@ -117,8 +173,8 @@ authentication in your client app, you may need to update your
 
 [Strong Customer Authentication](https://stripe.com/en-fi/payments/strong-customer-authentication)
 is a potential step enforced by governmental regulation. Not every
-PaymentIntent will require customer authentication. For instance,
-authentication may not be required for:
+PaymentIntent for card payments will require customer authentication.
+For instance, authentication may not be required for:
 
 - transactions out of scope of SCA
 - e.g. when card issuing bank is outside of EEA
@@ -127,6 +183,11 @@ authentication may not be required for:
 - low value or low risk transactions
 - recurring payments for fixed amount
 - other
+
+In addition, PaymentIntents for push payment methods also require
+customer action. Typically, the customer needs to be redirected to their
+bank website or app where they can complete the payment, after which
+they get redirected back to the marketplace.
 
 This means that Flex implementation of PaymentIntents supports payment
 flows that require authentication and those that do not. When
@@ -142,26 +203,60 @@ that can provide you with ready modals for handling e.g. 3D Secure Card
 Payments. The next section will provide high level instructions on how
 to do this in the client.
 
-### Implementing the automatic PaymentIntent flow
+### Implementing the PaymentIntent flow
 
-[Stripe Elements](https://stripe.com/docs/payments/payment-intents/quickstart)
-provides ready tools and a reference for implementing the automatic
-PaymentIntent flow. It's the recommended way to support PaymentIntents
-in the client and handle the authentication steps.
+For implementing the PaymentIntent flow, you can use the following
+guides as a reference:
 
-For implementing the PaymentIntent flow, you need to follow the steps in
-[Automatic confirmation quickstart](https://stripe.com/docs/payments/payment-intents/quickstart#automatic-confirmation-flow).
-With Flex, the first step in handled by the transaction engine when a
-process transition with the `stripe-create-payment-intent` action is
-transitioned. To complete the first step, you initiate (or transition)
-the transaction so that a PaymentIntent is created.
+- [card payments](https://stripe.com/docs/payments/accept-a-payment)
+- push payment methods:
+  - [Alipay](https://stripe.com/docs/payments/alipay/accept-a-payment)
+  - [Bancontact](https://stripe.com/docs/payments/bancontact/accept-a-payment)
+  - [EPS](https://stripe.com/docs/payments/eps/accept-a-payment)
+  - [giropay](https://stripe.com/docs/payments/giropay/accept-a-payment)
+  - [iDEAL](https://stripe.com/docs/payments/ideal/accept-a-payment)
+  - [Przelewy24](https://stripe.com/docs/payments/p24/accept-a-payment)
 
-For handling the next steps, you need to
-[pass in a client secret](https://stripe.com/docs/payments/payment-intents/quickstart#passing-to-client).
+Below we outline the concrete steps and how they work in combination
+with the Flex transaction process.
 
-The client secret is exposed in the transaction's protectedData map
-under a key `stripePaymentIntents` after the PaymentIntent has been
-created. The value of `stripePaymentIntents` is a map in the form of:
+#### Step 1: Initiate or transition a Flex transaction
+
+With Flex, the step to create a PaymentIntent in handled by the
+transaction engine when a transaction transitions with a transition
+using one of the following actions:
+
+- [stripe-create-payment-intent](#stripe-create-payment-intent) - use
+  this action for card payments
+- [stripe-create-payment-intent-push](#stripe-create-payment-intent-push) -
+  use this action for payments with push payment methods
+
+If we assume that your transaction process follows
+[this example](#example-transaction-process-with-both-card-and-push-payments),
+you would use the `request-card-payment` transition for card payments
+and the `request-push-payment` transition for push payments.
+
+#### Step 2: Collect payment information and handle customer actions
+
+[Stripe Elements](https://stripe.com/docs/stripe-js) provides ready
+tools and a reference for implementing the automatic PaymentIntent
+flow. It is useful for both collecting payment details, attaching the
+PaymentMethod to the PaymentIntent, as well as handling any customer
+payment authentication or confirmation steps. It's the recommended way
+to support PaymentIntents in the client.
+
+For card payments, your implementation will typically invoke a call to
+Stripe.js
+[stripe.confirmCardPayment](https://stripe.com/docs/js/payment_intents/confirm_card_payment).
+
+For push payments, the correct Stripe.js method depends on the concrete
+payment system. See [here](https://stripe.com/docs/js/payment_intents)
+for a full list of Stripe.js methods.
+
+In either case, you need the PaymentIntent's ID and client secret. Both
+of those values are exposed in the transaction's protectedData map under
+a key `stripePaymentIntents` after the PaymentIntent has been created.
+The value of `stripePaymentIntents` is an object in the form of:
 
 ```json
 {
@@ -173,18 +268,35 @@ created. The value of `stripePaymentIntents` is a map in the form of:
 ```
 
 This data is only exposed to the customer in the transaction. The
-provider can not access the PaymentIntent ID nor the client secret.
+provider can not access neither the PaymentIntent ID nor the client
+secret.
 
-After handling the client secret, you can continue with the next steps
-of collecting payment information, completing the payment and handling
-the authentication steps.
+#### Step 3: Transition the Flex transaction further
 
-The final step is to transition the transaction process forward in Flex
-with transition that has the `stripe-confirm-payment-intent` attached.
+Once any customer authentication or payment confirmation is handled in
+the UI, you need to transition the Flex transaction further in order for
+Flex to record the payment details correctly. Make sure that the
+transition includes the
+[stripe-confirm-payment-intent](#stripe-confirm-payment-intent) action.
+
+If we assume that your transaction process follows
+[this example](#example-transaction-process-with-both-card-and-push-payments),
+you would use the `confirm-payment` transition for card payments and the
+`confirm-payment-instant-booking` transition for push payments.
 
 ## Using PaymentIntents in Flex
 
-The latest version of Flex Template for Web supports PaymentIntents by
-default. If you need to adjust the default implementation, or if you're
-currently using an older version of Flex Template for Web,
+The latest version of Flex Template for Web supports card payments with
+PaymentIntents by default. If you need to adjust the default
+implementation, or if you're currently using an older version of Flex
+Template for Web,
 [learn more about how to take PaymentIntents into use](/cookbook-payments/enable-payment-intents/).
+
+## Further reading
+
+- [Payment methods overview](/background/payment-methods-overview)
+
+* [Transaction process](/background/transaction-process)
+* [Action reference for Stripe integration](/references/transaction-process-actions/#stripe-integration)
+* [Editing transaction process](/flex-cli/edit-transaction-process-with-flex-cli/)
+* [Changing transaction process setup in FTW](/cookbook-transaction-process/change-transaction-process-in-ftw/)
