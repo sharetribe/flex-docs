@@ -11,15 +11,15 @@ published: true
 ---
 
 This guide walks you through the process of taking
-[PaymentIntents](https://stripe.com/docs/payments/payment-intents)
-into use. This article covers how PaymentIntents can be used with card
+[PaymentIntents](https://stripe.com/docs/payments/payment-intents) into
+use. This article covers how PaymentIntents can be used with card
 payments. On general level, the steps are the same for other payment
-methods. See [background article on payment
-methods](/background/payment-methods-overview) and [payment
-intents](/background/payment-intents) for more information. Stripe's
-PaymentIntent is a new way to handle Strong Customer Authentication
-(SCA) by using frictionless [3D Secure
-2](https://stripe.com/gb/guides/3d-secure-2) authentication.
+methods. See
+[background article on payment methods](/background/payment-methods-overview)
+and [payment intents](/background/payment-intents) for more information.
+Stripe's PaymentIntent is a new way to handle Strong Customer
+Authentication (SCA) by using frictionless
+[3D Secure 2](https://stripe.com/gb/guides/3d-secure-2) authentication.
 
 Before starting to read this article, you probably want to get familiar
 with
