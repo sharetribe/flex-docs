@@ -111,7 +111,7 @@ to build your unique marketplace is to get in touch with developers.
 With your requirements prepared, Sharetribe’s Flex partners can prepare
 a high-level estimate for you fast. To get in touch with them, go to
 your
-[Flex Console](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/)
+[Flex Console](https://flex-console.sharetribe.com/)
 and either submit your requirements through a form provided there, or
 book a free consultation call with one of Sharetribe's experts to
 discuss your requirements.
