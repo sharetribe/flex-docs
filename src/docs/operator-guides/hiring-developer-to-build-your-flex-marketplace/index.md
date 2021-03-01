@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-## Hiring a developer to build your Flex marketplace.
-
 Sharetribe Flex allows you to build a unique marketplace fast with
 custom development. Unless you have
 [these development skills](https://www.sharetribe.com/docs/background/development-skills/),
