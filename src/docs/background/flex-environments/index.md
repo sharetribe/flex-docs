@@ -30,7 +30,7 @@ In this environment, you can explore the connection between the marketplace fron
 
 ### Development environment
 
-Development environment is for development and testing purposes. This is where building your marketplace happens and where you can test the build functionalities in peace by using test users and test credit cards with Stripe. 
+Development environment is for development and testing purposes. This is where building your marketplace happens and where you can test the build functionalities in peace by using test users and [test credit cards with Stripe](https://www.sharetribe.com/docs/cookbook-payments/set-up-and-use-stripe/). 
 
 Even after launch you can continue building new features in the development environment without causing disruptions to your live marketplace. Note that you should not onboard real users or listings to the development environment, as they cannot be moved into the production environment. 
 
@@ -39,4 +39,4 @@ Even after launch you can continue building new features in the development envi
 
 Production environment is where the business happens: here you can onboard your real customers and listings and your customers can make real money transactions. 
 
-When the necessary development has been done and your marketplace is ready for onboarding real users, you can initiate the production environment setup from Console. This is also the point when you start paying the Flex subscriptions (see more information about Flex pricing). 
+When the necessary development has been done and your marketplace is ready for onboarding real users, you can initiate the production environment setup from Console. This is also the point when you start paying the Flex subscriptions (see more information about [Flex pricing](https://www.sharetribe.com/products/flex/#pricing)). 
