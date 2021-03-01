@@ -118,11 +118,17 @@ action. Further, because push payments do not have a preauthorization
 phase, it is recommended to avoid that in the transaction process and
 use an _instant booking_ type of flow. The example below describes the
 minimum recommended changes in the two transitions:
-`request-push-payment` and `confirm-payment-instant-booking`. The example
-illustrates how you can still use the preauthorization step for card
-payments.
+`request-push-payment` and `confirm-payment-instant-booking`. The
+example illustrates how you can still use the preauthorization step for
+card payments.
 
 ![Push payment process](push-payment-process.png 'Push payment process example.')
+
+You can find another example process with only an _instant booking_ flow
+and support for both card and push payments in the
+[Instant booking process](https://github.com/sharetribe/flex-example-processes#instant-booking)
+in the
+[Flex example transaction processes repository](https://github.com/sharetribe/flex-example-processes).
 
 ### Handling payment methods in the client app
 

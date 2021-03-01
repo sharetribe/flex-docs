@@ -82,6 +82,12 @@ Since push payments
 this process allows an instant-booking type of flow, where the booking
 does not need acceptance from the provider.
 
+You can find another example process with only an _instant booking_ flow
+and support for both card and push payments in the
+[Instant booking process](https://github.com/sharetribe/flex-example-processes#instant-booking)
+in the
+[Flex example transaction processes repository](https://github.com/sharetribe/flex-example-processes).
+
 ## Actions related to PaymentIntents
 
 The following actions can be attached to a transaction process in order
@@ -239,8 +245,8 @@ and the `request-push-payment` transition for push payments.
 #### Step 2: Collect payment information and handle customer actions
 
 [Stripe Elements](https://stripe.com/docs/stripe-js) provides ready
-tools and a reference for implementing the automatic PaymentIntent
-flow. It is useful for both collecting payment details, attaching the
+tools and a reference for implementing the automatic PaymentIntent flow.
+It is useful for both collecting payment details, attaching the
 PaymentMethod to the PaymentIntent, as well as handling any customer
 payment authentication or confirmation steps. It's the recommended way
 to support PaymentIntents in the client.
