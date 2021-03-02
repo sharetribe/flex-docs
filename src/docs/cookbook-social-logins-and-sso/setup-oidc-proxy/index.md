@@ -1,7 +1,7 @@
 ---
 title: How to set up OpenID Connect proxy in FTW
 slug: setup-open-id-connect-proxy
-updated: 2021-02-03
+updated: 2021-03-02
 category: cookbook-social-logins-and-sso
 ingress:
   In this cookbook, we'll take a look at the process of setting up
@@ -30,9 +30,7 @@ OIDC proxy to Flex. The main steps to take to achieve this are:
 
 1. Create a login app in Linkedin
 1. Configure a new identity provider and client in Flex Console
-1. Build LinkedIn login flow in FTW
-1. Proxy the successful LinkedIn login information to Flex in OIDC
-   format
+1. Build LinkedIn auth flow in FTW
 
 **Note, that using FTW as an OpenID Connect proxy requires ftw-daily
 version
@@ -120,7 +118,7 @@ client to be used as a proxy for LinkedIn:
   charge of generating a client ID. The value can be any randomly
   generated string.
 
-## Build LinkedIn login flow in FTW
+## Build LinkedIn auth flow in FTW
 
 ### FTW as an OpenID Connect identity provider
 
@@ -166,17 +164,66 @@ token written by your proxy implementation. FTW will automatically use
 these functions to expose correct endpoints when JWT signing keys are
 configured.
 
-### Build LinkedIn signup flow to FTW’s backend (using passport.js)
+### Generate an RSA key pair
 
-We are using [Passport.js](http://www.passportjs.org) library for
-handling the authentication with different identity providers like with
-Facebook and Google. The library offers multiple authentication
-strategies and there's also a strategy for Linkedin which we are going
-to use in this example.
+A RSA public and private key pair is used to sign and validate an ID
+token that is passed from FTW to Flex during the login/signup flow. When
+a user successfully logs into LinkedIn, FTW wraps the user information
+to an ID token that is signed with a private key. The corresponding
+public key is served by FTW in `/.well-known/jwks.json` and it is
+fetched by Flex when an ID token is validated.
 
-#### Environment variables
+In order for the FTW to operate as an OpenID Connect identity provider,
+you will need to generate a RSA key pair. Both keys need to be in PEM
+format.
 
-First up, we'll need to define some new environment variables.
+The keys can be generated with `ssh-keygen` command line tool by running
+the following commands. The first one will generate a key pair, with the
+private key in PEM format and the public key in SSH public key format.
+The second command will create a public key in PEM format based on the
+public key file from the first command.
+
+```
+# create an RSA key pair, you can leave out the passphrase when prompted
+ssh-keygen -f ftw_rsa -t rsa -m PEM
+
+# now you have two files
+# ftw_rsa: private key in PEM format
+# ftw_rsa.pub: public key in SSH public key format
+
+# convert the public key from previous command to PEM format
+ssh-keygen -f ftw_rsa.pub -e -m PEM > ftw_rsa_pub
+```
+
+Now you have two files: `ftw_rsa` and `ftw_rsa_pub` (also you have
+`ftw_rsa.pub` but that one you don't need). The content of the files
+should look like the following:
+
+```
+# ftw_rsa
+
+-----BEGIN RSA PRIVATE KEY-----
+private key
+value
+here
+-----END RSA PRIVATE KEY-----
+
+
+# ftw_rsa_pub
+
+-----BEGIN RSA PUBLIC KEY-----
+public key
+value
+here
+-----END RSA PUBLIC KEY-----
+```
+
+We will use these key values to configure your application in the next
+section.
+
+### Configure FTW
+
+Add the following environment variables:
 
 `REACT_APP_LINKEDIN_CLIENT_ID` and `LINKEDIN_CLIENT_SECRET`
 
@@ -184,12 +231,14 @@ Set these as the client ID and client secret of your LinkedIn app.
 
 `RSA_PRIVATE_KEY` and `RSA_PUBLIC_KEY`
 
-The ID token is signed with an RSA key. You can, for example, use a
-command line tool like _ssh-keygen_ to generate the keys. Note, that
-when storing the keys in an environment variable file, you should
-replace any line brakes with `\n`. However, for example in Heroku, the
-environment variables should include all line breaks. You should also
-make sure that the key size is big enough.
+The RSA key pair we created in the previous section
+
+The keys are multi-line strings but Heroku is fine with that so you can
+paste the keys in config vars as they are.
+
+In case your FTW runtime environment requires to declare environment
+variables in a file, wrap the keys with `"`s, escape line breaks with
+`\n`s and join the lines to a single line.
 
 `LINKEDIN_PROXY_IDP_ID`
 
@@ -213,7 +262,13 @@ though using a _kid_ value in your keys is not compulsory, we heavily
 recommend using it with your token and the JWK. For example, key caching
 in the Flex API relies heavily on it.
 
-#### Passport module dependency
+### Add Passport module dependency
+
+We are using [Passport.js](http://www.passportjs.org) library for
+handling the authentication with different identity providers like with
+Facebook and Google. The library offers multiple authentication
+strategies and there's also a strategy for Linkedin which we are going
+to use in this example.
 
 Add the following entry to the `dependencies` map in `package.json` and
 run `yarn install`:
@@ -222,7 +277,7 @@ run `yarn install`:
 "passport-linkedin-oauth2": "^2.0.0",
 ```
 
-#### LinkedIn login flow
+### Implement the LinkedIn login flow in FTW backend
 
 Next, let's add a new file to FTW that handles authentication to
 LinkedIn. You can find the complete file here:
@@ -309,7 +364,7 @@ const idpClientId =
     : null;
 ```
 
-#### Add LinkedIn-button to FTW
+### Add a LinkedIn login button to FTW
 
 Once we have added the authentication endpoints to the FTW server, we
 need to add a button for LinkedIn login to the AuthenticationPage.
