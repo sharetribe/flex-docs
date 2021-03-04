@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Tutorial introduction
 slug: introduction
 updated: 2019-03-25
 category: tutorial
