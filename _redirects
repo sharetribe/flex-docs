@@ -29,7 +29,7 @@
 /docs/guides/how-to-change-transaction-process-in-ftw/ /docs/cookbook-transaction-process/change-transaction-process-in-ftw/
 /docs/guides/how-to-customize-ftw-styles/ /docs/ftw-styling/how-to-customize-ftw-styles/
 /docs/guides/how-to-customize-ftw/ /docs/ftw-introduction/how-to-customize-ftw/
-/docs/guides/how-to-customize-pricing/ /docs/cookbook-payments/customize-pricing/
+/docs/guides/how-to-customize-pricing/ /docs/cookbook-payments/how-to-customize-pricing/
 /docs/guides/how-to-deploy-ftw-to-production/ /docs/ftw-hosting/how-to-deploy-ftw-to-production/
 /docs/guides/how-to-enable-login-as-user/ /docs/cookbook-manage/enable-login-as-user/
 /docs/guides/how-to-extend-listing-data-in-ftw/ /docs/cookbook-data-model/extend-listing-data-in-ftw/
@@ -59,6 +59,7 @@
 /docs/tutorials/getting-started-with-integration-api/ /docs/integrations/getting-started-with-integration-api/
 /docs/tutorials/manage-search-schemas-with-flex-cli/ /docs/flex-cli/manage-search-schemas-with-flex-cli/
 /docs/background/custom-pricing/ /docs/background/pricing/
+/docs/cookbook-payments/customize-pricing/ /docs/cookbook-payments/how-to-customize-pricing/
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

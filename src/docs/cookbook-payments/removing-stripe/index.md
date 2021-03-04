@@ -10,7 +10,7 @@ ingress:
 published: true
 ---
 
-# Removing Stripe
+## Removing Stripe
 
 In this guide, we will go through the minimum changes needed to make the
 booking flow work without Stripe. This is not an easy customization

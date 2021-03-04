@@ -26,13 +26,13 @@ These articles will help you get an overview of what is Flex and its
 components and what you need to customize your Flex marketplace.
 
 - Flex Overview:
-  https://www.sharetribe.com/docs/background/introducing-flex/
+  https://www.sharetribe.com/docs/introduction/introducing-flex/
 - How to build a marketplace with Flex:
-  https://www.sharetribe.com/docs/background/how-to-build-and-launch-with-flex/
+  https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/
 - What development skills are needed to customize Flex:
-  https://www.sharetribe.com/docs/background/development-skills/
+  https://www.sharetribe.com/docs/introduction/development-skills/
 - Flex Templates for Web (FTW):
-  https://www.sharetribe.com/docs/background/concepts/#flex-template-for-web-ftw
+  https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw
 
 ## Flex Template for Web
 
@@ -41,9 +41,9 @@ have made available for you. Though, bear in mind that you don't need to
 use it, if you have different front end plans.
 
 - Getting started with FTW:
-  https://www.sharetribe.com/docs/tutorials/getting-started-with-ftw/
+  https://www.sharetribe.com/docs/introduction/getting-started-with-ftw-daily/
 - Customization checklist:
-  https://www.sharetribe.com/docs/guides/ftw-customization-checklist/
+  https://www.sharetribe.com/docs/ftw-introduction/customization-checklist/
 
 ## Transaction Process
 
@@ -53,11 +53,11 @@ transaction process.
 - Transaction Process information:
   https://www.sharetribe.com/docs/background/transaction-process/
 - Flex CLI:
-  https://www.sharetribe.com/docs/tutorials/getting-started-with-flex-cli/
+  https://www.sharetribe.com/docs/flex-cli/getting-started-with-flex-cli/
 - Custom Pricing:
-  https://www.sharetribe.com/docs/guides/how-to-customize-pricing/
+  https://www.sharetribe.com/docs/cookbook-payments/how-to-customize-pricing/
 - Time-based bookings:
-  https://www.sharetribe.com/docs/guides/how-to-take-time-based-bookings-into-use/
+  https://www.sharetribe.com/docs/cookbook-transaction-process/enable-time-based-bookings-into-use/
 
 ## Extended data
 
@@ -68,9 +68,9 @@ create filters in your search page.
 - Extended data information:
   https://www.sharetribe.com/docs/references/extended-data/
 - How to extend listing data in FTW:
-  https://www.sharetribe.com/docs/guides/how-to-extend-listing-data-in-ftw/
+  https://www.sharetribe.com/docs/cookbook-data-model/extend-listing-data-in-ftw/
 - How to setup search filters in FTW:
-  https://www.sharetribe.com/docs/guides/how-to-change-search-filters-in-ftw/
+  https://www.sharetribe.com/docs/cookbook-search/change-search-filters-in-ftw/
 
 ## Stripe
 
@@ -83,18 +83,19 @@ it up with Sharetribe Flex.
   https://stripe.com/docs/connect/custom-accounts
 - Stripe Connect with Custom accounts works only when the marketplace
   operator and providers have accounts located in the following
-  countries: https://stripe.com/docs/connect#availability
+  countries:
+  https://stripe.com/docs/connect/custom-accounts#requirements
 - How to setup and use Stripe in Flex:
-  https://www.sharetribe.com/docs/guides/how-to-set-up-and-use-stripe/
+  https://www.sharetribe.com/docs/cookbook-payments/set-up-and-use-stripe/
 
 ## Launch
 
 Ready to launch? Consider these articles.
 
 - Going live process:
-  https://www.sharetribe.com/docs/background/how-to-build-and-launch-with-flex/#4-going-live
+  https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/#4-going-live
 - How to deploy FTW to production:
-  https://www.sharetribe.com/docs/guides/how-to-deploy-ftw-to-production/
+  https://www.sharetribe.com/docs/ftw-hosting/how-to-deploy-ftw-to-production/
 
 ## Developer Resources
 
@@ -103,7 +104,7 @@ move forward with your project, check out this content.
 
 - Flex Documentation: https://www.sharetribe.com/docs/
 - Flex API Reference: https://www.sharetribe.com/api-reference/
-- FTW-daily Repo: https://github.com/sharetribe/flex-template-web
+- FTW-daily Repo: https://github.com/sharetribe/ftw-daily
 - FTW-hourly Repo: https://github.com/sharetribe/ftw-hourly
 - Flex Developer Slack Channel: https://www.sharetribe.com/flex-slack
 - Flex Support Email: flex-support@sharetribe.com
@@ -114,8 +115,8 @@ You need a push in the right direction for designing your marketplace?
 Check out the following design articles.
 
 - Designing your marketplace in Flex:
-  https://www.sharetribe.com/docs/background/how-to-build-and-launch-with-flex/#2-designing-your-marketplace
-- FTW-daily Sketch file:
+  https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/#2-designing-your-marketplace
+- FTW-daily and FTW-hourly Sketch files:
   https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG
 - Customer Journey Map Toolkit:
   https://drive.google.com/drive/folders/1kI8-PDF6gi926AqlnXaMH66bJhmJbmvI?usp=sharing
