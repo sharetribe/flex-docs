@@ -1,6 +1,6 @@
 ---
-title: Customize pricing
-slug: customize-pricing
+title: How to customize pricing
+slug: how-to-customize-pricing
 updated: 2020-06-25
 category: cookbook-payments
 ingress:

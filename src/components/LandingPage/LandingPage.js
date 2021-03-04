@@ -283,7 +283,7 @@ const LandingPage = props => {
             <SectionLink to="/cookbook-data-model/extend-listing-data-in-ftw/">
               <UiText id="LandingPage.bestPicks.extendListingData" />
             </SectionLink>
-            <SectionLink to="/cookbook-payments/customize-pricing/">
+            <SectionLink to="/cookbook-payments/how-to-customize-pricing/">
               <UiText id="LandingPage.bestPicks.customizePricing" />
             </SectionLink>
             <SectionLink to="/cookbook-transaction-process/change-transaction-process-in-ftw/">
