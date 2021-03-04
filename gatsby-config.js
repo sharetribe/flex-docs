@@ -151,6 +151,7 @@ module.exports = {
         exclude: [
           '/styleguide',
           '/thanks-for-the-feedback',
+          `/operator-guides`,
           `/operator-guides/*`,
         ],
         serialize: ({ site, allSitePage }) => {
