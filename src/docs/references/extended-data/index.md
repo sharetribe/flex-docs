@@ -1,7 +1,7 @@
 ---
 title: Extended data
 slug: extended-data
-updated: 2019-01-23
+updated: 2020-06-26
 category: references
 ingress: Reference documentation for extended data.
 published: true
@@ -16,9 +16,9 @@ extended data for some value types.
 
 ## Types of extended data
 
-**Note:** Extended data support in API resources is work in progress.
-See the [API reference](/references/api/) for each resource for
-information on supported extended data.
+**Note:** Some API resources don't have all extended data fields
+implemented. See the [API reference](/references/api/) for each resource
+for information on supported extended data.
 
 There are five types of extended data, which can be divided into two
 groups - _data_ and _metadata_. _Data_ is written by users via the
