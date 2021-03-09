@@ -19,7 +19,7 @@ best in by your marketplace.
 
 ## Image variants in Flex
 
-A quick reap on how to request image variants: Image variants are
+A quick recap on how to request image variants: Image variants are
 defined using a Flex concept called
 [sparse attributes](https://www.sharetribe.com/api-reference/index.html#sparse-attributes).
 They can be used to declare what attributes of a given resource is
