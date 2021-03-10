@@ -108,11 +108,10 @@ The best way to get an accurate estimate of the time and budget required
 to build your unique marketplace is to get in touch with developers.
 With your requirements prepared, Sharetribe’s Flex partners can prepare
 a high-level estimate for you fast. To get in touch with them, go to
-your
-[Flex Console](https://flex-console.sharetribe.com/)
-and either submit your requirements through a form provided there, or
-book a free consultation call with one of Sharetribe's experts to
-discuss your requirements.
+your [Flex Console](https://flex-console.sharetribe.com/) and either
+submit your requirements through a form provided there, or book a free
+consultation call with one of Sharetribe's experts to discuss your
+requirements.
 
 ### Building a marketplace the Sharetribe way
 
