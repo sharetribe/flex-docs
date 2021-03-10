@@ -157,7 +157,7 @@ Go to the Deploy page of your new app and
 ![Heroku: Connect the app with Github repository](./heroku-connect-to-github.png)
 
 After that, you can deploy the app manually or enable automatic deploy
-from your master branch.
+from your default branch (usually named as _main_ or _master_).
 
 If everything works, your app should be available in URL that looks a
 bit like this: `https://<your-app-name>.herokuapp.com`

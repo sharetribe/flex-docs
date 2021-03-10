@@ -57,6 +57,9 @@ up:
 1. Create a
    [Github repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
 
+   > **Note**: do not initialize the repo with anything. You are
+   > importing an existing repository.
+
 1. On the command line, check your remote repositories:
 
    ```shell
@@ -118,11 +121,38 @@ up:
 
    </extrainfo>
 
-1. Push an existing repository from the command line
+1. Rename your local default branch as **main**
+
+   If you have cloned FTW-daily or FTW-hourly repository, the default
+   branch is following an old Github naming pattern.
 
    ```shell
-   git push -u origin master
+   git checkout master
+   git branch -m master main
    ```
+
+1) Push an existing repository from the command line
+
+   ```shell
+   git push -u origin main
+   ```
+
+   <extrainfo title="What's the difference between master and main?">
+
+   [Git](https://git-scm.com/about) is one of the most popular version
+   control systems. It creates a tree structure where each **commit**
+   (of code changes) creates a new node in that tree. The default branch
+   (trunk) has been traditionally called as **master**, but
+   [Github](https://github.com/about) has moved away from that naming
+   convention and has started to call the default branch as **main**.
+
+   FTW-daily and FTW-hourly have been created long time before that
+   naming convention changed, so they still use **master** as the name
+   of the default branch. However, Github is pushing the new naming
+   convention into use throughout their service and it's better if new
+   repositories follow that naming pattern.
+
+   </extrainfo>
 
 > **Note**: the examples above, used HTTPS remote URLs instead of SSH
 > remote URLs.<br /> Read more about

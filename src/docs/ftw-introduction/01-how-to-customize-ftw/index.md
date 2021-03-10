@@ -73,22 +73,30 @@ FTW, you should pull in changes from the upstream remote.
 > mainly think of FTW as being the starting point of your customization,
 > not something that is constantly updated as you make changes to it.
 
-In the `master` branch (or in the branch you want to merge in the
-upstream changes):
+Run the following commands in a feature branch
 
-1.  Fetch the latest changes from the upstream repository:
+1. Create a new feature branch and switch into that branch:
 
-    ```shell
-    git fetch upstream
-    ```
+   ```shell
+   git checkout -b updates-from-upstream
+   ```
 
-1.  Merge the changes to your local branch
+1. Fetch the latest changes from the upstream repository:
 
-    ```shell
-    git merge upstream/master
-    ```
+   ```shell
+   git fetch upstream
+   ```
 
-1.  Fix possible merge conflicts, commit, and push/deploy.
+1. Merge the changes to your local branch
+
+   ```shell
+   git merge upstream/master
+   ```
+
+   > FTW-daily and FTW-hourly still follow old Github convention to name
+   > the default branch as **master** instead of **main**.
+
+1. Fix possible merge conflicts, commit, and push/deploy.
 
 See also the
 [Syncing a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
