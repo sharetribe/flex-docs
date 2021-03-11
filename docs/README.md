@@ -11,7 +11,9 @@ A:
 Read the [Writing articles for Flex Docs](./writing-articles.md)
 documentation and head on to the [src/docs/](../src/docs) directory.
 
-If you're unsure under which category the article should go, have a look at the [Docs site structure Whimsical board](https://whimsical.com/flex-docs-PEaMXJE9MB3vHXtP2VsgFX)
+If you're unsure under which category the article should go, have a look
+at the
+[Docs site structure Whimsical board](https://whimsical.com/flex-docs-PEaMXJE9MB3vHXtP2VsgFX)
 
 ## Q: I want to change some UI text on the Flex Docs site
 
