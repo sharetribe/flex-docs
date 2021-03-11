@@ -1,12 +1,12 @@
 ---
 title: Commissions and monetizing your platform
 slug: commissions-and-monetizing-your-platform
-updated: 2019-10-23
+updated: 2021-03-11
 category: background
 ingress:
   Flex provides configurable options for monetizing your platform. You
   can collect commissions from providers, customers, or both. This
-  article will provide you with basic information on the mechanisms
+  article provides you with basic information on the mechanisms
   supported by Flex for monetizing your platform.
 published: true
 ---
@@ -23,13 +23,13 @@ Marketplace Academy has
 describing different pricing models and the tradeoffs behind different
 options.
 
-As a background, familiarizing with the
+As background, familiarizing yourself with the
 [transaction process](/background/transaction-process/),
 [transaction process actions](/references/transaction-process-actions/),
 and
 [the tutorial for editing the process with flex-cli ](/flex-cli/edit-transaction-process-with-flex-cli/)
-give you a good understanding of the concepts discussed in this article.
-In addition, the article describing
+gives you a good understanding of the concepts discussed in this article.
+In addition, the article that describes
 [how to solve payout problems](/background/solving-payout-problems/)
 provides valuable information about how the payment flow in Flex works.
 
@@ -54,8 +54,8 @@ the provider.
 
 ### Example
 
-A marketplace willing to charge 10 % from the customer and 12 % from the
-provider, would configure the actions like this:
+A marketplace that charges 10 % from the customer and 12 % from the
+provider would configure the actions like this:
 
 ```
 :actions
@@ -127,20 +127,12 @@ for provider commissions since the payout can't be negative.
 ## Subscription-based model
 
 The commission actions are the most straightforward way of monetizing
-your marketplace and directly supported by Flex. However, you might want
-to experience with other models depending on your business idea. For
-example, subscriptions might be a good way of monetizing your
-marketplace. With some tools provided by Flex combined with some manual
-actions you can implement a subscription-based model.
-
-One way to implement subscription-based marketplace would involve the
-following:
-
-1. Turn on listing approval. Our support can turn on listing approval
-   after which all listing need to be approved by admins before they can
-   be posted.
-2. Require all providers to subscribe through
-   [Chargebee](https://www.chargebee.com/),
-   [Stripe billing](https://stripe.com/en-fi/billing) or similar
-   service. This requires currently manual follow-ups and listing
-   approvals after subscription.
+your marketplace and are directly supported by Flex. However, you might 
+want to experiment with other monetization models depending on your 
+business idea. For example, subscriptions might be a good way of 
+monetizing your marketplace. With the 
+[Integration API](https://www.sharetribe.com/docs/background/marketplace-api-integration-api/#when-to-use-the-integration-api), 
+you can integrate a third-party service such as 
+[Chargebee](https://www.chargebee.com/) or [Stripe billing](https://stripe.com/en-fi/billing) 
+to process subscription payments from users who want access to your
+marketplace.
