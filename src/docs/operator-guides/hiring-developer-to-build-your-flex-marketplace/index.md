@@ -12,9 +12,9 @@ published: true
 Sharetribe Flex allows you to build a unique marketplace fast with
 custom development. Unless you have
 [these development skills](https://www.sharetribe.com/docs/background/development-skills/),
-you need to hire someone who does. Any developer will do, but we
+you need to hire someone who does. Though any developer will do, we
 recommend hiring a vetted developer from Sharetribe's official Flex
-Partner Network to ensure a great price/quality ratio.
+Partner Network for great quality work. 
 
 Hiring a developer to build your marketplace with Flex requires two
 things. First communicating your requirements to the developer. Second,
@@ -104,19 +104,11 @@ heavily on your specific requirements in terms of features and budget.
 What you are building and who you hire to build it are the biggest
 determinants of the budget needed to build your marketplace.
 
-The best way to get an accurate estimate of the time and budget required
-to build your unique marketplace is to get in touch with developers.
-With your requirements prepared, Sharetribe’s Flex partners can prepare
-a high-level estimate for you fast. To get in touch with them, go to
-your [Flex Console](https://flex-console.sharetribe.com/) and either
-submit your requirements through a form provided there, or book a free
-consultation call with one of Sharetribe's experts to discuss your
-requirements.
+### Connecting to the Flex Partner Network
 
-### Building a marketplace the Sharetribe way
+You can connect with developer from the Flex Partner Network through [Console](https://flex-console.sharetribe.com/). Either book a call with a Sharetribe expert to discuss your project and questions, or submit your requirements [through this form](https://sharetribe.typeform.com/to/M06EuLzx). Flex partners can prepare a high-level estimate for building your marketplace fast.   
 
-Building a marketplace platform is a process, not a project. As a
-general rule, we recommend you to launch your first version (the
+As a general rule, we recommend you to launch your first version (the
 ["Minimum Viable Platform"](https://www.sharetribe.com/academy/how-to-build-a-minimum-viable-platform/))
 with as minimal a feature set as possible, in order to be able to launch
 faster and validate your concept. We call this the Lean Marketplace
