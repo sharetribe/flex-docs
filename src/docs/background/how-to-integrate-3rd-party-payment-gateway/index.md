@@ -5,7 +5,7 @@ updated: 2021-03-19
 category: background
 ingress:
   This guide describes, on a high-level, how to integrate any 3rd-party payment gateway with your Flex-powered marketplace.
-published: false
+published: true
 ---
 
 Sharetribe Flex provides out-of-the-box integration with Stripe. To reach markets not supported by Stripe, relying on another payment gateway can be crucial. This guide describes on a high-level, without going into the details of specific payment gateways, how to integrate any 3rd-party payment gateway (such as [PayPal Commerce Platform](https://www.paypal.com/us/business/platforms-and-marketplaces), [MANGOPAY](https://www.mangopay.com/marketplaces/), or [Adyen for Platforms](https://www.adyen.com/our-solution/marketplaces-and-platforms)) with Sharetribe Flex.
