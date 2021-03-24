@@ -52,6 +52,18 @@ Customer refund usually happens during the delayed payment period. There are man
 
 If everything in the transaction went right and the customer received the agreed service, the money from the payment gateway will be eventually paid out to the provider.
 
+## Can I just accept all payments to my own bank account and pay my providers manually?
+
+You might be wondering if it would be easier for you to just accept the entire payment to your own bank account, and handle refunds to customers payouts to providers separately, outside the main platform functionality.
+
+In terms of development work required to build the integration, this is indeed a lot easier. Any online payment service provider in the world supports such a simple checkout flow.
+
+However, this can lead to a myriad of issues in terms of regulation, accounting, and liability. You could be considered as holding other people's money, which is a heavily regulated area. In many countries, you need to acquire an expensive license for this purpose, and holding money without such a license is considered a crime. You might also be considered to be responsible for providing the goods or services your providers are selling, which is not always desirable. Finally, handling the payouts to the providers correctly can be quite a lot of manual, error-prone labor. You also still need to ensure the Know Your Customer process has been done correctly for them.
+
+Because of these challenges, we recommend you to only consider building a flow where the entire payment goes to your account only if you're absolutely sure that you're aware of all the consequences, and have gotten your approach greenlighted by your accountant and a lawyer familiar with the matter.
+
+From now on, this article focuses on integrating with a marketplace-specific payment solution, which handles the issues described above for you. [Learn more about choosing the right payment service provider][academy-payment-service-providers].
+
 ## Before you start the integration
 
 Before you start coding the integration, we strongly advise you to contact the payment provider's customer support team.
@@ -61,6 +73,7 @@ Keep in mind that while many payment providers give you access to their sandbox 
 Contact the support and make sure that:
 
 - They are available in the country where you operate your business
+- They support a marketplace-specific payment flow, handling Know Your Customer process for your providers and splitting payments
 - They can process the currencies of your marketplace
 - They can do payouts to your providers' country/countries
 - You are eligible to get access to the live environment
@@ -339,6 +352,8 @@ We discussed the integration and what are the options to communicate with paymen
 * [Platforms quick start by Adyen][adyen-platforms-quick-start]
 * [PayPal Commerce Platform for Marketplaces and Platforms developer documentation][paypal-commerce-platform-docs]
 * [MANGOPAY API Documentation][mangopay-api-docs]
+
+[academy-payment-service-providers]: https://www.sharetribe.com/academy/payment-service-providers-1/
 
 [paypal-commerce-platform]: https://www.paypal.com/us/business/platforms-and-marketplaces
 [paypal-commerce-platform-docs]: https://developer.paypal.com/docs/platforms/
