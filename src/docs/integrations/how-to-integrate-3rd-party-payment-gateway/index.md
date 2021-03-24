@@ -92,13 +92,13 @@ There are two main types of onboarding and payment experiences the payment gatew
 
 Payment gateways such as [MANGOPAY][mangopay-marketplaces] and [Adyen][adyen-for-platforms] offer a so-called white-label experience. This experience is closest to the default [Stripe Connect][stripe-connect] integration in Flex.
 
-A white-label experience means that you build the payment flow inside your marketplace application. This way, you have control over the user-interface and branding. The downside is that the integration requires more coding to build, most likely requires more maintenance, too. The regulations concerning online payments may change, which means you’ll need to update your integration accordingly.
+A white-label experience means that you build the payment flow inside your marketplace application. This way, you have control over the user-interface and branding. The downside is that the integration requires more coding to build, most likely requires more maintenance, too. The regulations concerning online payments may change, which means you'll need to update your integration accordingly.
 
 When using white-label experience, you may also need to do some work regarding PCI-compliance, but more on that later.
 
 ### Hosted onboarding and payments
 
-Some payment gateways, such as PayPal, offer a hosted experience. In this case, the seller onboarding and customer payments happen by redirecting your user to the payment provider's website. After the customer completes the payment, the payment gateway redirects them to your application to the return URL you provided. This is also the case with seller onboarding: they’ll interact with the branded user interface of the payment gateway.
+Some payment gateways, such as PayPal, offer a hosted experience. In this case, the seller onboarding and customer payments happen by redirecting your user to the payment provider's website. After the customer completes the payment, the payment gateway redirects them to your application to the return URL you provided. This is also the case with seller onboarding: they'll interact with the branded user interface of the payment gateway.
 
 With this model, you have limited control over the user-interface on the payment provider's website. However, there is also less coding required from you: The payment provider has already implemented the required forms and hosts them for you. In the case of a well-known payment gateway, their branded payment experience can also increase the perceived security of the payment experience.
 
@@ -108,7 +108,7 @@ In case of regulatory changes, the payment provider updates their user-interface
 
 White-label payment gateways usually offer an option to use hosted pages in some stages of the payment flow. We offer this approach by default with the Stripe integration in Flex, where we use [hosted pages for provider onboarding][stripe-connect-onboarding] and a white-label experience for customer checkout.
 
-Using hosted pages for some parts of the payment flow and white-label experience for other parts provides a good balance between the work required from you and the ability to customize the user experience. For example, we’ve chosen to use Stripe-hosted pages for Flex’s provider onboarding because in this step, compliance with the _Know Your Customer_ (KYC) guidelines is critical and may include uploading identity documents or utility bills. Implementing all that in a white-label fashion would require an undesirable  amount of work.
+Using hosted pages for some parts of the payment flow and white-label experience for other parts provides a good balance between the work required from you and the ability to customize the user experience. For example, we've chosen to use Stripe-hosted pages for Flex's provider onboarding because in this step, compliance with the _Know Your Customer_ (KYC) guidelines is critical and may include uploading identity documents or utility bills. Implementing all that in a white-label fashion would require an undesirable  amount of work.
 
 ## Do you need to be PCI DSS compliant to integrate with a 3rd-party payment gateway?
 
@@ -128,7 +128,7 @@ The only requirement for becoming Level 4 PCI DSS compliant is to perform a Self
 
 ### Self-Assessment Questionnaire (SAQ)
 
-The PCI Security Standards Council offers several SAQ questionnaire documents. The one you should choose depends ons your payment integration.
+The PCI Security Standards Council offers several SAQ questionnaire documents. The one you should choose depends on your payment integration.
 
 If you outsource credit card information processing to a PCI-compliant 3rd-party payment gateway, the required questionnaire is [Self-Assessment Questionnaire A (SAQ A)][pci-saq-a-pdf]. The SAQ A is relatively short (24 yes/no questions).
 
@@ -140,13 +140,13 @@ Most likely, your payment gateway will contact you and ask you to upload the Sel
 
 #### Example: Stripe
 
-* If you use Stripe Checkout/Elements, Mobile SDK, or Connect, Stripe pre-fills the SAQ A for you.
+* If you use [Stripe Checkout/Elements, Mobile SDK, or Connect][stripe-integration-security], Stripe pre-fills the SAQ A for you.
 * Stripe monitors your transaction volume and notifies if a [growing transaction volume will require a change in how you validate compliance][stripe-how-helps-pci].
 
 #### Example: Adyen
 
-* If you use Pay by Link (hosted experience), Adyen doesn't require you to submit SAQ A.
-* If you use Drop-in or Components (white-label), Adyen requires you to assess your compliance with SAQ A and submit the filled questionnaire.
+* If you use [Pay by Link][adyen-pay-by-link] (hosted experience), Adyen doesn't require you to submit SAQ A.
+* If you use [Drop-in or Components][adyen-drop-in-or-components] (white-label), Adyen requires you to assess your compliance with SAQ A and submit the filled questionnaire.
 
 ### Conclusion about marketplace PCI DSS compliance
 
@@ -188,7 +188,7 @@ When the user returns from the hosted page, the payment gateway redirects them t
 
 The payment gateway appends data about the onboarding or payment result to the return URL query parameters. When it redirects the user to your application, you can read this data from the URL and store it for later use. You can use [the Marketplace API's update current user endpoint][marketplace-api-update-user-profile] to store seller's onboarding status to current user's private data or the [Integration API to store payment status to transaction's metadata][integration-api-update-transaction-metadata].
 
-#### **Example:** PayPal redirect after seller onboarding
+#### Example: PayPal redirect after seller onboarding
 
 After successful seller onboarding, PayPal redirects the seller to the return URL and [loads the URL with the following query parameters][paypal-redirect-seller]:
 
@@ -212,6 +212,8 @@ You may want to listen to these notifications in a case where customer onboardin
 
 #### Example: PayPal onboarding
 
+[PayPal seller onboarding][paypal-track-seller-onboarding] is complete when the following requirements are met:
+
 1. Seller creates a PayPal account.
 2. Seller grants you permission for the [features][paypal-rest-endpoint-feature] you set.
 3. Seller confirms the email address of the account.
@@ -220,7 +222,7 @@ The marketplace can track the onboarding status by listening to the webhook noti
 
 #### Backend endpoint to listen to webhook notifications
 
-To listen to webhooks, you’ll need to implement a new endpoint to your backend and configure the payment gateway to send the notifications to that URL. The endpoint should read the notifications and decide what to do with them and where to store the information. If a notification is, for example, about the user's onboarding status, you can use [the Integration API to store the information in the user's private data][integration-api-update-user-profile]. On the other hand, if the notification is about a payment related to a transaction, you may want to store the information in the [transaction's metadata][integration-api-update-transaction-metadata] or [transition the transaction][integration-api-transition-transaction].
+To listen to webhooks, you'll need to implement a new endpoint to your backend and configure the payment gateway to send the notifications to that URL. The endpoint should read the notifications and decide what to do with them and where to store the information. If a notification is, for example, about the user's onboarding status, you can use [the Integration API to store the information in the user's private data][integration-api-update-user-profile]. On the other hand, if the notification is about a payment related to a transaction, you may want to store the information in the [transaction's metadata][integration-api-update-transaction-metadata] or [transition the transaction][integration-api-transition-transaction].
 
 If you use Flex Template for Web, you can add a new endpoint by adding it to the [API router][ftw-daily-api-router].
 
@@ -237,19 +239,19 @@ For some payment flow stages you can use either method to build the integration,
 
 ### Using privileged transitions
 
-With privileged transitions, you need to make a new endpoint to your backend server. Your marketplace front-end should call this new backend endpoint and not the Flex API directly.
+To use privileged transitions, you need to make a new endpoint to your backend server. Your marketplace front-end should call this new backend endpoint and not the Flex API directly.
 
 If you use Flex Template for Web, you can add a new endpoint by adding it to the [API router][ftw-daily-api-router].
 
 The new server endpoint should call the payment gateway API to do the payment action and the Flex Marketplace API to transition the transaction.
 
-The following diagram shows the call sequence between the marketplace and the APIs. First, a user makes a transaction request using the marketplace front end, after which the backend calls the Flex Marketplace API to initiate the transaction. Next, the marketplace backend calls the payment gateway’s API, and finally the Flex Marketplace API is called again after the payment action is completed.
+The following diagram shows the call sequence between the marketplace and the APIs. First, a user makes a transaction request using the marketplace front end, after which the backend calls the Flex Marketplace API to initiate the transaction. Next, the marketplace backend calls the payment gateway's API, and finally the Flex Marketplace API is called again after the payment action is completed.
 
 ![Privileged transitions call sequence](privileged-transitions-sequence.png)
 
 [comment]: # (Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS)
 
-Error handling in this model is simple. Because all the calls to the Flex Marketplace API and the payment gateway’s API are triggered by the request of the end-user, your marketplace front-end can immediately return a failure response and show an error message to the user when things go wrong.
+Error handling in this model is simple. Because all the calls to the Flex Marketplace API and the payment gateway's API are triggered by the request of the end-user, your marketplace front-end can immediately return a failure response and show an error message to the user when things go wrong.
 
 ### Using Events
 
@@ -288,7 +290,7 @@ If you're using a payment gateway that provides hosted onboarding, you need to r
 
 ### Step 2: Customer checkout
 
-Customer checkout happens during transaction initialization, and it’s an essential part of your marketplace payment flow. It's also the step that requires the most integration work.
+Customer checkout happens during transaction initialization, and it's an essential part of your marketplace payment flow. It's also the step that requires the most integration work.
 
 Before you start implementation, consider what payment methods you are about to integrate and where your customers are located. Does the payment method have separate authorization and capture actions, or are the funds immediately captured during the payment? Are your customers located in countries that require 3D Security?
 
@@ -320,7 +322,7 @@ The steps to implement this stage are:
 
 Depending on the payment method, the payment may happen in one or two steps. The two steps are:
 
-* Authorization (payment gateway reserved the money from the buyer’s credit card)
+* Authorization (payment gateway reserves the money from the buyer's credit card)
 * Capture (payment gateway transfers the money from the buyer)
 
 Credit card payments use these two steps, whereas some payment methods like [giropay][giropay] or [iDEAL][ideal] have only one step where the payment is authorized and captured in one go.
@@ -329,7 +331,7 @@ If you're using a payment method where authorization and capturing happens in on
 
 Even if you're using payment method with separate authorization and capture steps, it's worth considering whether you could streamline the transaction process by implementing an instant book flow.
 
-In case you decide to add the provider accept state to your transaction process, you should do the payment authorization on customer checkout and capture the payment on provider accept. After the money is captured, you most likely need to pay the payment gateway’s processing fees, even if the provider ends up declining the customer's request.
+In case you decide to have the provider accept state to your transaction process, you should do the payment authorization on customer checkout and capture the payment on provider accept. After the money is captured, you most likely need to pay the payment gateway's processing fees, even if the provider ends up declining the customer's request.
 
 If the provider declines the request, or if it expires due to a lack of answer from the provider, the payment should be voided.
 
@@ -347,7 +349,7 @@ Customer refund usually happens during this period.
 
 At some point, it's time to release the money to the provider and do the payout.
 
-Depending on the provider's bank, there’s usually a delay between when the payout is issued and when the money reaches the provider's bank account. The delay is on a scale of days, but not weeks.
+Depending on the provider's bank, there's usually a delay between when the payout is issued and when the money reaches the provider's bank account. The delay is on a scale of days, but not weeks.
 
 **Recommendation:** Use **events** for this step. Poll the transaction/transition events and react on transitions where the payout is needed by calling the payment gateway API.
 
@@ -369,16 +371,20 @@ We discussed the integration and what are the options to communicate with paymen
 [paypal-commerce-platform-docs]: https://developer.paypal.com/docs/platforms/
 [paypal-redirect-seller]: https://developer.paypal.com/docs/platforms/seller-onboarding/before-payment/#4-redirect-seller
 [paypal-rest-endpoint-feature]: https://developer.paypal.com/docs/api/partner-referrals/v2/#definition-rest_endpoint_feature
+[paypal-track-seller-onboarding]: https://developer.paypal.com/docs/platforms/seller-onboarding/before-payment/#5-track-seller-onboarding-status
 
 [mangopay-marketplaces]: https://www.mangopay.com/marketplaces/
 [mangopay-api-docs]: https://docs.mangopay.com/
 
 [adyen-for-platforms]: https://www.adyen.com/our-solution/marketplaces-and-platforms
 [adyen-platforms-quick-start]: https://docs.adyen.com/platforms/quick-start
+[adyen-pay-by-link]: https://docs.adyen.com/development-resources/pci-dss-compliance-guide?tab=pay_by_link_1#online-payments
+[adyen-drop-in-or-components]: https://docs.adyen.com/development-resources/pci-dss-compliance-guide?tab=drop_in_or_components_2#online-payments
 
 [stripe-connect]: https://stripe.com/connect
 [stripe-connect-onboarding]: https://stripe.com/connect/onboarding
 [stripe-how-helps-pci]: https://stripe.com/en-fi/guides/pci-compliance#how-stripe-helps-organizations-achieve-and-maintain-pci-compliance
+[stripe-integration-security]: https://stripe.com/docs/security/guide#validating-pci-compliance
 
 [giropay]: https://www.giropay.de/en/
 [ideal]: https://www.ideal.nl/en/
