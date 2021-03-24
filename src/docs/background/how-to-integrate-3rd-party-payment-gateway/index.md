@@ -15,10 +15,10 @@ Sharetribe Flex provides out-of-the-box integration with Stripe. To reach market
 
 Before reading this guide, you should be familiar with the following Sharetribe Flex features:
 
-* [Privileged transitions][privileged-transitions-background]
-* [Events][events-reference]
-* [Reacting to events][reacting-to-events-cookbook]
-* [Extended data][extended-data-reference]
+* [Privileged transitions][flex-docs-privileged-transitions-background]
+* [Events][flex-docs-events-reference]
+* [Reacting to events][flex-docs-reacting-to-events-cookbook]
+* [Extended data][flex-docs-extended-data-reference]
 
 ## Marketplace payment flow
 
@@ -26,7 +26,7 @@ In this section we illustrate a marketplace payment flow in high-level and brief
 
 In a nutshell, a payment flow in a marketplace contains five significant steps. The following diagram illustrates a timeline of these steps:
 
-![alt_text](payment-flow.png "Marketplace payment flow")
+![Marketplace payment flow](payment-flow.png)
 
 ### Step 1: Provider onboarding
 
@@ -167,7 +167,7 @@ Before redirecting your user to the hosted page, your marketplace makes an API c
 
 When the user returns from the hosted page, the payment gateway redirects them to one of the return URLs depending on the payment status.
 
-![alt_text](redirect-url-sequence.png "Redirect and return URL call sequence")
+![Redirect and return URL call sequence](redirect-url-sequence.png)
 
 The payment gateway appends data about the onboarding or payment result to the return URL query parameters. When it redirects the user to your application, you can read this data from the URL and store it for later use. You can use [the Marketplace API's update current user endpoint][marketplace-api-update-user-profile] to store seller's onboarding status to current user's private data or the [Integration API to store payment status to transaction's metadata][integration-api-update-transaction-metadata].
 
@@ -213,8 +213,8 @@ We recommend securing the endpoint with Basic Authentication if the payment gate
 
 There are two main options for integrating Flex with a 3rd-party payment gateway:
 
-* [Privileged transitions][privileged-transitions-background]
-* [Events][events-reference].
+* [Privileged transitions][flex-docs-privileged-transitions-background]
+* [Events][flex-docs-events-reference].
 
 For some payment flow stages you can use either method to build the integration, but for some stages using exactly one of the two is required. In the next chapter, we'll give our recommendations on which option to use in each step. First, a quick introduction to how each method works in practice.
 
@@ -228,7 +228,7 @@ The new server endpoint should call the payment gateway API to do the payment ac
 
 The following diagram shows the call sequence between the marketplace and the APIs. First, a user makes a transaction request using the marketplace front end, after which the backend calls the Flex Marketplace API to initiate the transaction.Next, the marketplace backend calls the payment gateway’s API, and finally the Flex Marketplace API is called again after the payment action is completed.
 
-![alt_text](privileged-transitions-sequence.png "Privileged transitions call sequence")
+![Privileged transitions call sequence](privileged-transitions-sequence.png)
 
 Error handling in this model is simple. Because all the calls to the Flex Marketplace API and the payment gateway’s API are triggered by the request of the end-user, your marketplace front-end can immediately return a failure response and show an error message to the user when things go wrong.
 
@@ -238,7 +238,7 @@ You can also use Events for your payment gateway integration.
 
 In this model, the transaction transition is done as usual. Your backend polls the events and reacts to transaction transition events by calling the payment gateway API.
 
-![alt_text](events-sequence.png "Events call sequence")
+![Events call sequence](events-sequence.png)
 
 Error handling in this model needs more attention than in the privileged transition model. If the payment action fails, the transaction is in a state where the transaction and payment are out of sync.
 
@@ -283,7 +283,7 @@ The transaction should be in a "pending-payment" state at this point. After the 
 
 The transaction process should look something like this:
 
-![alt_text](checkout-transaction-process.png "Customer checkout transaction process")
+![Customer checkout transaction process](checkout-transaction-process.png)
 
 The steps to implement this stage are:
 
@@ -358,10 +358,10 @@ We discussed the integration and what are the options to communicate with paymen
 [giropay]: https://www.giropay.de/en/
 [ideal]: https://www.ideal.nl/en/
 
-[privileged-transitions-background]: /background/privileged-transitions/
-[events-reference]: /references/events/
-[reacting-to-events-cookbook]: /cookbook-events/reacting-to-events/
-[extended-data-reference]: /references/extended-data/
+[flex-docs-privileged-transitions-background]: /background/privileged-transitions/
+[flex-docs-events-reference]: /references/events/
+[flex-docs-reacting-to-events-cookbook]: /cookbook-events/reacting-to-events/
+[flex-docs-extended-data-reference]: /references/extended-data/
 
 [pci-saq-a-pdf]: https://www.pcisecuritystandards.org/documents/PCI-DSS-v3_2_1-SAQ-A.pdf
 
