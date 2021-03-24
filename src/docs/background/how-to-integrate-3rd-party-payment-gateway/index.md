@@ -8,16 +8,17 @@ ingress:
 published: true
 ---
 
-Sharetribe Flex provides out-of-the-box integration with Stripe. To reach markets not supported by Stripe, relying on another payment gateway can be crucial. This guide describes on a high-level, without going into the details of specific payment gateways, how to integrate any 3rd-party payment gateway (such as [PayPal Commerce Platform](https://www.paypal.com/us/business/platforms-and-marketplaces), [MANGOPAY](https://www.mangopay.com/marketplaces/), or [Adyen for Platforms](https://www.adyen.com/our-solution/marketplaces-and-platforms)) with Sharetribe Flex.
+Sharetribe Flex provides out-of-the-box integration with Stripe. To reach markets not supported by Stripe, relying on another payment gateway can be crucial. This guide describes on a high-level, without going into the details of specific payment gateways, how to integrate any 3rd-party payment gateway (such as [PayPal Commerce Platform][paypal-commerce-platform], [MANGOPAY][mangopay-marketplaces], or [Adyen for Platforms][adyen-for-platforms]) with Sharetribe Flex.
+
 
 ## Prerequisites
 
 Before reading this guide, you should be familiar with the following Sharetribe Flex features:
 
-* [Privileged transitions](https://www.sharetribe.com/docs/background/privileged-transitions/)
-* [Events](https://www.sharetribe.com/docs/references/events/)
-* [Reacting to events](https://www.sharetribe.com/docs/cookbook-events/reacting-to-events/)
-* [Extended data](https://www.sharetribe.com/docs/references/extended-data/)
+* [Privileged transitions][privileged-transitions-background]
+* [Events][events-reference]
+* [Reacting to events][reacting-to-events-cookbook]
+* [Extended data][extended-data-reference]
 
 ## Marketplace payment flow
 
@@ -74,7 +75,7 @@ There are two main types of onboarding and payment experiences the payment gatew
 
 ### White-label onboarding and payments
 
-Payment gateways such as [MANGOPAY](https://www.mangopay.com/marketplaces/) and [Adyen](https://www.adyen.com/our-solution/marketplaces-and-platforms) offer a so-called white-label experience. This experience is closest to the default [Stripe Connect](https://stripe.com/connect) integration in Flex.
+Payment gateways such as [MANGOPAY][mangopay-marketplaces] and [Adyen][adyen-for-platforms] offer a so-called white-label experience. This experience is closest to the default [Stripe Connect][stripe-connect] integration in Flex.
 
 A white-label experience means that you build the payment flow inside your marketplace application. This way, you have control over the user-interface and branding. The downside is that the integration requires more coding to build, most likely requires more maintenance, too. The regulations concerning online payments may change, which means you’ll need to update your integration accordingly.
 
@@ -90,7 +91,7 @@ In case of regulatory changes, the payment provider updates their user-interface
 
 ### Hosted onboarding and white-label payments
 
-White-label payment gateways usually offer an option to use hosted pages in some stages of the payment flow. We offer this approach by default with the Stripe integration in Flex, where we use [hosted pages for provider onboarding](https://stripe.com/connect/onboarding) and a white-label experience for customer checkout.
+White-label payment gateways usually offer an option to use hosted pages in some stages of the payment flow. We offer this approach by default with the Stripe integration in Flex, where we use [hosted pages for provider onboarding][stripe-connect-onboarding] and a white-label experience for customer checkout.
 
 Using hosted pages for some parts of the payment flow and white-label experience for other parts provides a good balance between the work required from you and the ability to customize the user experience. For example, we’ve chosen to use Stripe-hosted pages for Flex’s provider onboarding because in this step, compliance with the _Know Your Customer_ (KYC) guidelines is critical and may include uploading identity documents or utility bills. Implementing all that in a white-label fashion would require an undesirable  amount of work.
 
@@ -100,7 +101,7 @@ PCI DSS stands for Payment Card Industry Data Security Standards. It is a set of
 
 Since you are operating a marketplace business that accepts payment by credit card, you have to be PCI DSS compliant. However, there are different levels to PCI DSS compliance. You can reduce your required level of compliance significantly by using a payment gateway that offers tools like hosted pages and components or client-side encryption of the credit card information.
 
-All of the payment gateways listed in this article (Adyen, PayPal, MANGOPAY, and Stripe) offer such tools.
+All of the payment gateways listed in this article ([Adyen][adyen-for-platforms], [PayPal][paypal-commerce-platform], [MANGOPAY][mangopay-marketplaces], and [Stripe][stripe-connect]) offer such tools.
 
 ### PCI DSS compliance levels
 
@@ -114,9 +115,9 @@ The only requirement for becoming Level 4 PCI DSS compliant is to perform a Self
 
 The PCI Security Standards Council offers several SAQ questionnaire documents. The one you should choose depends ons your payment integration.
 
-If you outsource credit card information processing to a PCI-compliant 3rd-party payment gateway, the required questionnaire is [Self-Assessment Questionnaire A (SAQ A)](https://www.pcisecuritystandards.org/documents/PCI-DSS-v3_2_1-SAQ-A.pdf). The SAQ A is relatively short (24 yes/no questions).
+If you outsource credit card information processing to a PCI-compliant 3rd-party payment gateway, the required questionnaire is [Self-Assessment Questionnaire A (SAQ A)][pci-saq-a-pdf]. The SAQ A is relatively short (24 yes/no questions).
 
-Some payment gateways prefill the questionnaire for you. [This is, for example, what Stripe does.](https://stripe.com/en-fi/guides/pci-compliance#how-stripe-helps-organizations-achieve-and-maintain-pci-compliance)
+Some payment gateways prefill the questionnaire for you. [This is, for example, what Stripe does.][stripe-how-helps-pci]
 
 ### When and where do I submit the Self-Assessment Questionnaire?
 
@@ -125,7 +126,7 @@ Most likely, your payment gateway will contact you and ask you to upload the Sel
 #### Example: Stripe
 
 * If you use Stripe Checkout/Elements, Mobile SDK, or Connect, Stripe pre-fills the SAQ A for you.
-* Stripe monitors your transaction volume and notifies if a [growing transaction volume will require a change in how you validate compliance](https://stripe.com/en-fi/guides/pci-compliance#how-stripe-helps-organizations-achieve-and-maintain-pci-compliance).
+* Stripe monitors your transaction volume and notifies if a [growing transaction volume will require a change in how you validate compliance][stripe-how-helps-pci].
 
 #### Example: Adyen
 
@@ -168,11 +169,11 @@ When the user returns from the hosted page, the payment gateway redirects them t
 
 ![alt_text](redirect-url-sequence.png "Redirect and return URL call sequence")
 
-The payment gateway appends data about the onboarding or payment result to the return URL query parameters. When it redirects the user to your application, you can read this data from the URL and store it for later use. You can use [the Marketplace API's update current user endpoint](https://www.sharetribe.com/api-reference/marketplace.html#update-user-profile) to store seller's onboarding status to current user's private data or the [Integration API to store payment status to transaction's metadata](https://www.sharetribe.com/api-reference/integration.html#update-transaction-metadata).
+The payment gateway appends data about the onboarding or payment result to the return URL query parameters. When it redirects the user to your application, you can read this data from the URL and store it for later use. You can use [the Marketplace API's update current user endpoint][marketplace-api-update-user-profile] to store seller's onboarding status to current user's private data or the [Integration API to store payment status to transaction's metadata][integration-api-update-transaction-metadata].
 
 #### **Example:** PayPal redirect after seller onboarding
 
-After successful seller onboarding, PayPal redirects the seller to the return URL and [loads the URL with the following query parameters](https://developer.paypal.com/docs/platforms/seller-onboarding/before-payment/#4-redirect-seller):
+After successful seller onboarding, PayPal redirects the seller to the return URL and [loads the URL with the following query parameters][paypal-redirect-seller]:
 
 * `merchantId`
 * `merchantIdInPayPal`
@@ -195,16 +196,16 @@ You may want to listen to these notifications in a case where customer onboardin
 #### Example: PayPal onboarding
 
 1. Seller creates a PayPal account.
-2. Seller grants you permission for the [features](https://developer.paypal.com/docs/api/partner-referrals/v2/#definition-rest_endpoint_feature) you set.
+2. Seller grants you permission for the [features][paypal-rest-endpoint-feature] you set.
 3. Seller confirms the email address of the account.
 
 The marketplace can track the onboarding status by listening to the webhook notifications. When the marketplace knows the onboarding status, it can be used to provide the seller a useful message in the marketplace user-interface, should as "PayPal account created, but the email address is not yet confirmed. Please confirm the email address in order to complete the onboarding".
 
 #### Backend endpoint to listen to webhook notifications
 
-To listen to webhooks, you’ll need to implement a new endpoint to your backend and configure the payment gateway to send the notifications to that URL. The endpoint should read the notifications and decide what to do with them and where to store the information. If a notification is, for example, about the user's onboarding status, you can use [the Integration API to store the information in the user's private data](https://www.sharetribe.com/api-reference/integration.html#update-user-profile). On the other hand, if the notification is about a payment related to a transaction, you may want to store the information in the [transaction's metadata](https://www.sharetribe.com/api-reference/integration.html#update-transaction-metadata) or [transition the transaction](https://www.sharetribe.com/api-reference/integration.html#transition-transaction).
+To listen to webhooks, you’ll need to implement a new endpoint to your backend and configure the payment gateway to send the notifications to that URL. The endpoint should read the notifications and decide what to do with them and where to store the information. If a notification is, for example, about the user's onboarding status, you can use [the Integration API to store the information in the user's private data][integration-api-update-user-profile]. On the other hand, if the notification is about a payment related to a transaction, you may want to store the information in the [transaction's metadata][integration-api-update-transaction-metadata] or [transition the transaction][integration-api-transition-transaction].
 
-If you use Flex Template for Web, you can add a new endpoint by adding it to the [API router](https://github.com/sharetribe/ftw-daily/blob/master/server/apiRouter.js).
+If you use Flex Template for Web, you can add a new endpoint by adding it to the [API router][ftw-daily-api-router].
 
 We recommend securing the endpoint with Basic Authentication if the payment gateway supports that.
 
@@ -212,8 +213,8 @@ We recommend securing the endpoint with Basic Authentication if the payment gate
 
 There are two main options for integrating Flex with a 3rd-party payment gateway:
 
-* [Privileged transitions](https://www.sharetribe.com/docs/background/privileged-transitions/)
-* [Events](https://www.sharetribe.com/docs/references/events/).
+* [Privileged transitions][privileged-transitions-background]
+* [Events][events-reference].
 
 For some payment flow stages you can use either method to build the integration, but for some stages using exactly one of the two is required. In the next chapter, we'll give our recommendations on which option to use in each step. First, a quick introduction to how each method works in practice.
 
@@ -221,7 +222,7 @@ For some payment flow stages you can use either method to build the integration,
 
 With privileged transitions, you need to make a new endpoint to your backend server. Your marketplace front-end should call this new backend endpoint and not the Flex API directly.
 
-If you use Flex Template for Web, you can add a new endpoint by adding it to the [API router](https://github.com/sharetribe/ftw-daily/blob/master/server/apiRouter.js).
+If you use Flex Template for Web, you can add a new endpoint by adding it to the [API router][ftw-daily-api-router].
 
 The new server endpoint should call the payment gateway API to do the payment action and the Flex Marketplace API to transition the transaction.
 
@@ -260,10 +261,9 @@ The provider onboarding step usually needs to happen before the customer starts 
 
 If you choose white-label onboarding, you need to build the necessary forms in your marketplace to ask for the required customer details. Also, to comply with the _Know Your Customer_ (KYC) requirements, the customer may need to upload certain documents such as an identity document or a utility bill to prove their identity.
 
-If you're using a payment gateway that provides hosted onboarding, you need to redirect the user to the onboarding page hosted by the payment provider. When the user returns from the hosted page, you receive information about the newly created merchant account (e.g., a merchant ID) in the return URL. You should store this information in the user's private data. You can use [the Marketplace API's update current user endpoint for this](https://www.sharetribe.com/api-reference/marketplace.html#update-user-profile).
+If you're using a payment gateway that provides hosted onboarding, you need to redirect the user to the onboarding page hosted by the payment provider. When the user returns from the hosted page, you receive information about the newly created merchant account (e.g., a merchant ID) in the return URL. You should store this information in the user's private data. You can use [the Marketplace API's update current user endpoint for this][marketplace-api-update-user-profile].
 
 **Recommendation:** Use hosted pages for onboarding if they are available. Building the necessary forms, including the file upload forms, can be avoided using hosted pages. Besides, the KYC requirements tend to change over time. By using hosted pages, you avoid the need to change your application when the requirements change. The payment provider will keep the hosted pages up to date with the regulatory requirements.
-
 
 ### Step 2: Customer checkout
 
@@ -287,7 +287,7 @@ The transaction process should look something like this:
 
 The steps to implement this stage are:
 
-1. Add ([or modify existing](https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js)) server endpoint for initiating a transaction.
+1. Add ([or modify existing][ftw-daily-initiate-privileged]) server endpoint for initiating a transaction.
 2. Initiate the transaction.
 3. Make the payment after the transaction is initiated.
 4. Ensure that the payment went through.
@@ -300,7 +300,7 @@ Depending on the payment method, the payment may happen in one or two steps. The
 * Authorization (payment gateway reserved the money from the buyer’s credit card)
 * Capture (payment gateway transfers the money from the buyer)
 
-Credit card payments use these two steps, whereas some payment methods like [giropay](https://www.giropay.de/en/) or [iDEAL](https://www.ideal.nl/en/) have only one step where the payment is authorized and captured in one go.
+Credit card payments use these two steps, whereas some payment methods like [giropay][giropay] or [iDEAL][ideal] have only one step where the payment is authorized and captured in one go.
 
 If you're using a payment method where authorization and capturing happens in one step, you should skip the provider accept stage, and implement a so-called "instant booking" flow. In this flow, the provider is expected to be able to provide the service to the customer, thus, no separate accept stage is needed. For this to happen, the providers must keep their availability calendar up-to-date.
 
@@ -336,6 +336,39 @@ We discussed the integration and what are the options to communicate with paymen
 
 ## Further reading
 
-* [Platforms quick start by Adyen](https://docs.adyen.com/platforms/quick-start)
-* [PayPal Commerce Platform for Marketplaces and Platforms developer documentation](https://developer.paypal.com/docs/platforms/)
-* [MANGOPAY API Docs](https://docs.mangopay.com/)
+* [Platforms quick start by Adyen][adyen-platforms-quick-start]
+* [PayPal Commerce Platform for Marketplaces and Platforms developer documentation][paypal-commerce-platform-docs]
+* [MANGOPAY API Documentation][mangopay-api-docs]
+
+[paypal-commerce-platform]: https://www.paypal.com/us/business/platforms-and-marketplaces
+[paypal-commerce-platform-docs]: https://developer.paypal.com/docs/platforms/
+[paypal-redirect-seller]: https://developer.paypal.com/docs/platforms/seller-onboarding/before-payment/#4-redirect-seller
+[paypal-rest-endpoint-feature]: https://developer.paypal.com/docs/api/partner-referrals/v2/#definition-rest_endpoint_feature
+
+[mangopay-marketplaces]: https://www.mangopay.com/marketplaces/
+[mangopay-api-docs]: https://docs.mangopay.com/
+
+[adyen-for-platforms]: https://www.adyen.com/our-solution/marketplaces-and-platforms
+[adyen-platforms-quick-start]: https://docs.adyen.com/platforms/quick-start
+
+[stripe-connect]: https://stripe.com/connect
+[stripe-connect-onboarding]: https://stripe.com/connect/onboarding
+[stripe-how-helps-pci]: https://stripe.com/en-fi/guides/pci-compliance#how-stripe-helps-organizations-achieve-and-maintain-pci-compliance
+
+[giropay]: https://www.giropay.de/en/
+[ideal]: https://www.ideal.nl/en/
+
+[privileged-transitions-background]: /background/privileged-transitions/
+[events-reference]: /references/events/
+[reacting-to-events-cookbook]: /cookbook-events/reacting-to-events/
+[extended-data-reference]: /references/extended-data/
+
+[pci-saq-a-pdf]: https://www.pcisecuritystandards.org/documents/PCI-DSS-v3_2_1-SAQ-A.pdf
+
+[marketplace-api-update-user-profile]: https://www.sharetribe.com/api-reference/marketplace.html#update-user-profile
+[integration-api-update-transaction-metadata]: https://www.sharetribe.com/api-reference/integration.html#update-transaction-metadata
+[integration-api-update-user-profile]: https://www.sharetribe.com/api-reference/integration.html#update-user-profile
+[integration-api-transition-transaction]: https://www.sharetribe.com/api-reference/integration.html#transition-transaction
+
+[ftw-daily-api-router]: https://github.com/sharetribe/ftw-daily/blob/master/server/apiRouter.js
+[ftw-daily-initiate-privileged]: https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js
