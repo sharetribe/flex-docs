@@ -243,7 +243,7 @@ If you use Flex Template for Web, you can add a new endpoint by adding it to the
 
 The new server endpoint should call the payment gateway API to do the payment action and the Flex Marketplace API to transition the transaction.
 
-The following diagram shows the call sequence between the marketplace and the APIs. First, a user makes a transaction request using the marketplace front end, after which the backend calls the Flex Marketplace API to initiate the transaction.Next, the marketplace backend calls the payment gateway’s API, and finally the Flex Marketplace API is called again after the payment action is completed.
+The following diagram shows the call sequence between the marketplace and the APIs. First, a user makes a transaction request using the marketplace front end, after which the backend calls the Flex Marketplace API to initiate the transaction. Next, the marketplace backend calls the payment gateway’s API, and finally the Flex Marketplace API is called again after the payment action is completed.
 
 ![Privileged transitions call sequence](privileged-transitions-sequence.png)
 
