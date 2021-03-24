@@ -28,6 +28,8 @@ In a nutshell, a payment flow in a marketplace contains five significant steps. 
 
 ![Marketplace payment flow](payment-flow.png)
 
+[comment]: # (Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS)
+
 ### Step 1: Provider onboarding
 
 In this step, the provider connects their Flex account with the payment gateway. This is the step when they provide the bank details where the money from the customers will be transferred to. In addition, in this step, they provide the necessary information and documents for the identity verification and _Know Your Customer (KYC)_ requirements.
@@ -182,6 +184,8 @@ When the user returns from the hosted page, the payment gateway redirects them t
 
 ![Redirect and return URL call sequence](redirect-url-sequence.png)
 
+[comment]: # (Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS)
+
 The payment gateway appends data about the onboarding or payment result to the return URL query parameters. When it redirects the user to your application, you can read this data from the URL and store it for later use. You can use [the Marketplace API's update current user endpoint][marketplace-api-update-user-profile] to store seller's onboarding status to current user's private data or the [Integration API to store payment status to transaction's metadata][integration-api-update-transaction-metadata].
 
 #### **Example:** PayPal redirect after seller onboarding
@@ -243,6 +247,8 @@ The following diagram shows the call sequence between the marketplace and the AP
 
 ![Privileged transitions call sequence](privileged-transitions-sequence.png)
 
+[comment]: # (Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS)
+
 Error handling in this model is simple. Because all the calls to the Flex Marketplace API and the payment gateway’s API are triggered by the request of the end-user, your marketplace front-end can immediately return a failure response and show an error message to the user when things go wrong.
 
 ### Using Events
@@ -252,6 +258,8 @@ You can also use Events for your payment gateway integration.
 In this model, the transaction transition is done as usual. Your backend polls the events and reacts to transaction transition events by calling the payment gateway API.
 
 ![Events call sequence](events-sequence.png)
+
+[comment]: # (Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS)
 
 Error handling in this model needs more attention than in the privileged transition model. If the payment action fails, the transaction is in a state where the transaction and payment are out of sync.
 
@@ -297,6 +305,8 @@ The transaction should be in a "pending-payment" state at this point. After the 
 The transaction process should look something like this:
 
 ![Customer checkout transaction process](checkout-transaction-process.png)
+
+[comment]: # (Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS)
 
 The steps to implement this stage are:
 
