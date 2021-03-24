@@ -2,7 +2,7 @@
 title: How to integrate a 3rd-party payment gateway with your marketplace
 slug: how-to-integrate-3rd-party-payment-gateway
 updated: 2021-03-19
-category: background
+category: integrations
 ingress:
   This guide describes, on a high-level, how to integrate any 3rd-party payment gateway with your Flex-powered marketplace.
 published: true
