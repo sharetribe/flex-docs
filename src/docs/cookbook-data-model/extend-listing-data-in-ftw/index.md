@@ -281,7 +281,7 @@ import css from './EditListingCapacityForm.module.css';
 export const EditListingCapacityFormComponent = props => (
   <FinalForm
     {...props}
-    render={fieldRenderProps => {
+    render={formRenderProps => {
       const {
         className,
         disabled,
@@ -294,7 +294,7 @@ export const EditListingCapacityFormComponent = props => (
         updateError,
         updateInProgress,
         capacityOptions,
-      } = fieldRenderProps;
+      } = formRenderProps;
 
       const capacityPlaceholder = intl.formatMessage({
         id: 'EditListingCapacityForm.capacityPlaceholder',
