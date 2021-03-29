@@ -51,7 +51,16 @@ directory structure:
 - **src/routing**: Route configuration and UI components related to
   routing are moved to this directory
 - UI components that are only used in a single page or within a more
-  complex component are nested within that page or component
+  complex component are nested within that page or component. For
+  example:
+  - _EditListinWizard_ is moved under _EditListinPage_
+  - Search map and filters are moved under _SearchPage_
+  - _TransactionPage_ got subcomponents like _ActivityFeed_,
+    _ReviewModal_, _ReviewForm_, _SendMessageForm_, and
+    _TransactionPanel_.
+- **src/forms**: this directory was removed as there was only one form
+  that was truly shared between pages: _StripeConnectAccountForm_. It's
+  moved to _src/components/_.
 
 TODO: add other notable changes here
 
