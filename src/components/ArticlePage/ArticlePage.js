@@ -196,11 +196,14 @@ const ArticlePage = props => {
     // ]
   });
 
+  // Currently, operator-guides should not be indexed
+  const noIndexMaybe = category && category === 'operator-guides' ? { noIndex: true } : {};
   return (
     <MainLayout
       title={title}
       description={ingress}
       activeArticle={{ category, slug }}
+      {...noIndexMaybe}
     >
       <ColumnLayout>
         <MainColumn>
