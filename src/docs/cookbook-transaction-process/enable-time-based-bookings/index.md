@@ -50,7 +50,7 @@ CLI, see the
 [Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 tutorial.
 
-## Option 1: Use a new Flex template FTW-time (recommended)
+## Option 1: Use a new Flex template FTW-hourly (recommended)
 
 With the time-based transaction process, you can use
 [FTW-hourly](https://github.com/sharetribe/ftw-hourly), a Flex Template
@@ -154,7 +154,7 @@ use time-based bookings, you will need to implement these parts of the
 user interface yourself.
 
 For inspiration, see also the
-[FTW-time](https://github.com/sharetribe/ftw-time) implementation.
+[FTW-hourly](https://github.com/sharetribe/ftw-hourly) implementation.
 
 ### Time zone
 
