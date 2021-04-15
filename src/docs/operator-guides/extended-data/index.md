@@ -61,7 +61,9 @@ Public data is information that is visible to all users of your marketplace and 
 
 Let’s look at listing public data in action. Here is a listing from Saunatime, the Flex demo marketplace. 
 
--------- CAROUSEL HERE ----------
+<publicextendeddatacarousel title="Public extended data views">
+
+</publicextendeddatacarousel>
 
 Further public data you might want to collect could be website links or relevant social media handles in user profiles. Public data can be any type of information you believe will be important for your buyers to have or your sellers to share to get the most out of your marketplace.
 
