@@ -24,7 +24,7 @@ To interact and see data in your development environment’s Console, you first 
 
 It is easy to change environments from the topbar.
 
-![Change environments](./env-gif.gif)
+![Change environments](./env-change.png)
 
 ## Sections
 
