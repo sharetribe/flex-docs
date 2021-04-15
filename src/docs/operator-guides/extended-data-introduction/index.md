@@ -34,7 +34,7 @@ If you’ve used Sharetribe Go, you might be familiar with custom listing
 and user fields, which are fields with limited customizability. Extended
 data is the Flex-equivalent, but without the constraints of
 predetermined functionality: it’s listing and user fields on steroids.
-Extended can be customized to different use-cases to fit your exact
+Extended data can be customized to different use-cases to fit your exact
 needs: in addition to collecting the information you need from your
 users in the form you choose, it allows you to display featured
 listings, have different user types, build custom search functionality…
