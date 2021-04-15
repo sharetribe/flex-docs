@@ -1,6 +1,6 @@
 ---
-title: Extended data
-slug: extended-data
+title: Extended data introduction
+slug: extended-data-introduction
 updated: 2021-04-15
 category: operator-guides
 ingress:
