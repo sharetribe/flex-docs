@@ -1,5 +1,5 @@
----
-title: Extended data introduction
+--- 
+title: Introduction to extended data
 slug: extended-data-introduction
 updated: 2021-04-15
 category: operator-guides
@@ -111,7 +111,7 @@ your needs exactly!
 Let’s look at listing public data in action. Here is a listing from
 Saunatime, the Flex demo marketplace.
 
-<publicextendeddatacarousel title="Public extended data views">
+<publicextendeddatacarousel title="Examples of public extended data">
 
 </publicextendeddatacarousel>
 

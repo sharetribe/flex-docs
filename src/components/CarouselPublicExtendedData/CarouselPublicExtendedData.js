@@ -23,7 +23,7 @@ const CarouselPublicExtendedData = props => {
       </Slide>
 
       <Slide imgSrc={IMG_EXTENDED_DATA_SAUNA_TYPE} imgAlt="Listing creation">
-        <h3>Listing Creation</h3>
+        <h3>Listing creation: Sauna type</h3>
         <p>
           You can define when in the listing creation process which extended
           data is collected. In Saunatime, the sauna type is a part of the
@@ -31,7 +31,7 @@ const CarouselPublicExtendedData = props => {
         </p>
       </Slide>
       <Slide imgSrc={IMG_EXTENDED_DATA_AMENTIES} imgAlt="Listing creation">
-        <h3>Listing creation</h3>
+        <h3>Listing creation: Amenities</h3>
         <p>
           The amenities and sauna rules are their own steps in the listing
           creation process. In amenities, providers choose multiple options from
@@ -39,7 +39,7 @@ const CarouselPublicExtendedData = props => {
         </p>
       </Slide>
       <Slide imgSrc={IMG_EXTENDED_DATA_RULES} imgAlt="Listing creation">
-        <h3>Listing creation</h3>
+        <h3>Listing creation: Sauna rules</h3>
         <p>In sauna rules, provides can write in free text.</p>
       </Slide>
       <Slide
