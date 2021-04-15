@@ -43,7 +43,6 @@ const CarouselPublicExtendedData = props => {
         process. In amenities, providers choose multiple options from a predetermined set.
       </p>
     </Slide>
- 
     <Slide
       imgSrc={IMG_EXTENDED_DATA_RULES}
       imgAlt="Listing creation">
@@ -53,8 +52,7 @@ const CarouselPublicExtendedData = props => {
         In sauna rules, provides can write in free text.
       </p>
     </Slide>
- 
-   <Slide
+    <Slide
       imgSrc={IMG_EXTENDED_DATA_CONSOLE}
       imgAlt="Listing public data in Console">
     
