@@ -14,7 +14,7 @@ custom development. Unless you have
 [these development skills](https://www.sharetribe.com/docs/background/development-skills/),
 you need to hire someone who does. Though any developer will do, we
 recommend hiring a vetted developer from Sharetribe's official Flex
-Partner Network for great quality work. 
+Partner Network for great quality work.
 
 Hiring a developer to build your marketplace with Flex requires two
 things. First communicating your requirements to the developer. Second,
@@ -106,7 +106,13 @@ determinants of the budget needed to build your marketplace.
 
 ### Connecting to the Flex Partner Network
 
-You can connect with developer from the Flex Partner Network through [Console](https://flex-console.sharetribe.com/). Either book a call with a Sharetribe expert to discuss your project and questions, or submit your requirements [through this form](https://sharetribe.typeform.com/to/M06EuLzx). Flex partners can prepare a high-level estimate for building your marketplace fast.   
+You can connect with developer from the Flex Partner Network through
+[Console](https://flex-console.sharetribe.com/). Either book a call with
+a Sharetribe expert to discuss your project and questions, or submit
+your requirements
+[through this form](https://sharetribe.typeform.com/to/M06EuLzx). Flex
+partners can prepare a high-level estimate for building your marketplace
+fast.
 
 As a general rule, we recommend you to launch your first version (the
 ["Minimum Viable Platform"](https://www.sharetribe.com/academy/how-to-build-a-minimum-viable-platform/))
