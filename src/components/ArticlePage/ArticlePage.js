@@ -197,7 +197,8 @@ const ArticlePage = props => {
   });
 
   // Currently, operator-guides should not be indexed
-  const noIndexMaybe = category && category === 'operator-guides' ? { noIndex: true } : {};
+  const noIndexMaybe =
+    category && category === 'operator-guides' ? { noIndex: true } : {};
   return (
     <MainLayout
       title={title}

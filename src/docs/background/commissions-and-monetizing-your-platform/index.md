@@ -28,8 +28,8 @@ As background, familiarizing yourself with the
 [transaction process actions](/references/transaction-process-actions/),
 and
 [the tutorial for editing the process with flex-cli ](/flex-cli/edit-transaction-process-with-flex-cli/)
-gives you a good understanding of the concepts discussed in this article.
-In addition, the article that describes
+gives you a good understanding of the concepts discussed in this
+article. In addition, the article that describes
 [how to solve payout problems](/background/solving-payout-problems/)
 provides valuable information about how the payment flow in Flex works.
 
@@ -127,12 +127,12 @@ for provider commissions since the payout can't be negative.
 ## Subscription-based model
 
 The commission actions are the most straightforward way of monetizing
-your marketplace and are directly supported by Flex. However, you might 
-want to experiment with other monetization models depending on your 
-business idea. For example, subscriptions might be a good way of 
-monetizing your marketplace. With the 
-[Integration API](https://www.sharetribe.com/docs/background/marketplace-api-integration-api/#when-to-use-the-integration-api), 
-you can integrate a third-party service such as 
-[Chargebee](https://www.chargebee.com/) or [Stripe billing](https://stripe.com/en-fi/billing) 
-to process subscription payments from users who want access to your
-marketplace.
+your marketplace and are directly supported by Flex. However, you might
+want to experiment with other monetization models depending on your
+business idea. For example, subscriptions might be a good way of
+monetizing your marketplace. With the
+[Integration API](https://www.sharetribe.com/docs/background/marketplace-api-integration-api/#when-to-use-the-integration-api),
+you can integrate a third-party service such as
+[Chargebee](https://www.chargebee.com/) or
+[Stripe billing](https://stripe.com/en-fi/billing) to process
+subscription payments from users who want access to your marketplace.
