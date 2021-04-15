@@ -4,7 +4,9 @@ slug: extended-data-introduction
 updated: 2021-04-15
 category: operator-guides
 ingress:
-Extended data allows you to fully customize the information you want to collect about users, listings, and transactions on your marketplace.
+  Extended data allows you to fully customize the information you want
+  to collect about users, listings, and transactions on your
+  marketplace.
 published: true
 ---
 
