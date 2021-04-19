@@ -125,6 +125,13 @@ development environment. For production deploys most should be set.
 
   App secret of a Facebook App when Facebook login is used.
 
+> **NOTE**: FTW templates are built on top of Create React App (CRA). 
+> CRA uses WebpackDevServer for providing Hot Module Reloading feature.
+> In some environments, WebpackDevServer might need some extra configurations.
+> You should also check CRA's advanced configurations if you experience
+> problems with socket ports.
+> https://create-react-app.dev/docs/advanced-configuration
+
 ## Defining configuration
 
 When the app is started locally with `yarn run dev` or
