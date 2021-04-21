@@ -32,18 +32,15 @@ You should request a migration when:
   a migration is not needed.
 - You have started developing with Flex
 
-You will work with Sharetribe’s engineers to complete your migration,
-starting with the test migration. Once you are ready, please email
-flex-support@sharetribe.com with the subject: “Go to Flex migration”.
-Please include your Go marketplace URL and your Flex organization (your
-organization is displayed in your
-[Console](https://flex-console.sharetribe.com/) in the top right corner)
+You will work with Sharetribe’s engineers to complete your migration. If you're planning to migrate your data from Go to Flex, you should always start the process with a test migration to your development environment, and ensure everything looks correct there, before doing a live migration. If you want to initiate the (test or live) migration process, you should email flex-support@sharetribe.com with the subject “Go to Flex migration”. Please include your Go marketplace URL and your Flex organization (your organization is displayed in your [Console](https://flex-console.sharetribe.com/) in the top right corner)
 
 ### What data is migrated?
 
 #### Listings:
 
-- Title, description
+- Title
+- Description
+- Price (as an number amount)
 - Location
 - Images
 - Custom fields (as listing
@@ -51,24 +48,22 @@ organization is displayed in your
 - Categories (as listing
   [public data](https://www.sharetribe.com/docs/references/extended-data/))
 
-_Migrated listings do not include order types or comments. In Flex, the
-[transaction process](https://www.sharetribe.com/docs/background/transaction-process/)
-determines how price is calculated. Your development should include
-adding data to listings that specifies the appropriate pricing actions
-from your Flex application if you use multiple order types in Go._
+_What is not migrated automatically: order type data, shipping price, comments, and availability calendar data. In Flex, the
+[transaction process](https://www.sharetribe.com/docs/background/transaction-process/) determines how price is calculated and how the order flow works. If you have enabled multiple order types or shipping price in Go and want to migrate the data from these over to Flex, you need to do custom development to ensure the data is transferred and displayed correctly. application._
 
 #### User profiles:
 
-- Names, display name
+- First name
+- Last name
+- Display name
 - Primary email address
 - Password hashes (so user can use same credentials to login)
-- Profile images
-- Phone numbers (as user
+- Profile image
+- Phone number (as user
   [protected data](https://www.sharetribe.com/docs/references/extended-data/))
 - Stripe accounts
 
-_Migrated profiles do not include followers, email preferences or social
-login credentials._
+_Migrated profiles do not include username, custom user field data, followers, email preferences or social login credentials. If your users used Facebook, Google or LinkedIn to sign up in your Go marketplace, they will still be able to log in to their existing accounts with these in your Flex-powered marketplace, if their Facebook, Google or LinkedIn email address matches the email address in your marketplace. The first time they log in to their existing account in your Flex marketplace with a social login, the login provider will ask them for the same permissions it asked when they originally signed up._
 
 #### Reviews:
 
@@ -77,7 +72,7 @@ login credentials._
 
 #### Transactions:
 
-_Transactions and messages are not migrated currently._
+_Past transactions and messages are not migrated currently._
 
 #### Static page content
 
@@ -87,7 +82,7 @@ privacy policy and insert them in your new Flex site._
 
 ### Test Migration
 
-A test migration sets the stage for a successful transition.Having your
+A test migration sets the stage for a successful transition. Having your
 Go data during Flex development gives you ample time to understand the
 data transformation occurring during the migration. You will further
 leverage this data to adapt your customization, including adapting your
@@ -101,9 +96,6 @@ and locations are removed or anonymized.
 A live migration happens when you launch your Flex marketplace.. Please
 contact us five business days in advance of your planned launch date to
 ensure all required steps are completed.
-
-You can read about the technical nitty gritty of a migration
-[here](https://github.com/sharetribe/turnkey2im#supported-data).
 
 ## Subscription
 
