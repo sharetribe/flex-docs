@@ -32,7 +32,15 @@ You should request a migration when:
   a migration is not needed.
 - You have started developing with Flex
 
-You will work with Sharetribe’s engineers to complete your migration. If you're planning to migrate your data from Go to Flex, you should always start the process with a test migration to your development environment, and ensure everything looks correct there, before doing a live migration. If you want to initiate the (test or live) migration process, you should email flex-support@sharetribe.com with the subject “Go to Flex migration”. Please include your Go marketplace URL and your Flex organization (your organization is displayed in your [Console](https://flex-console.sharetribe.com/) in the top right corner)
+You will work with Sharetribe’s engineers to complete your migration. If
+you're planning to migrate your data from Go to Flex, you should always
+start the process with a test migration to your development environment,
+and ensure everything looks correct there, before doing a live
+migration. If you want to initiate the (test or live) migration process,
+you should email flex-support@sharetribe.com with the subject “Go to
+Flex migration”. Please include your Go marketplace URL and your Flex
+organization (your organization is displayed in your
+[Console](https://flex-console.sharetribe.com/) in the top right corner)
 
 ### What data is migrated?
 
@@ -48,8 +56,14 @@ You will work with Sharetribe’s engineers to complete your migration. If you'r
 - Categories (as listing
   [public data](https://www.sharetribe.com/docs/references/extended-data/))
 
-_What is not migrated automatically: order type data, shipping price, comments, and availability calendar data. In Flex, the
-[transaction process](https://www.sharetribe.com/docs/background/transaction-process/) determines how price is calculated and how the order flow works. If you have enabled multiple order types or shipping price in Go and want to migrate the data from these over to Flex, you need to do custom development to ensure the data is transferred and displayed correctly. application._
+_What is not migrated automatically: order type data, shipping price,
+comments, and availability calendar data. In Flex, the
+[transaction process](https://www.sharetribe.com/docs/background/transaction-process/)
+determines how price is calculated and how the order flow works. If you
+have enabled multiple order types or shipping price in Go and want to
+migrate the data from these over to Flex, you need to do custom
+development to ensure the data is transferred and displayed correctly.
+application._
 
 #### User profiles:
 
@@ -63,7 +77,15 @@ _What is not migrated automatically: order type data, shipping price, comments, 
   [protected data](https://www.sharetribe.com/docs/references/extended-data/))
 - Stripe accounts
 
-_Migrated profiles do not include username, custom user field data, followers, email preferences or social login credentials. If your users used Facebook, Google or LinkedIn to sign up in your Go marketplace, they will still be able to log in to their existing accounts with these in your Flex-powered marketplace, if their Facebook, Google or LinkedIn email address matches the email address in your marketplace. The first time they log in to their existing account in your Flex marketplace with a social login, the login provider will ask them for the same permissions it asked when they originally signed up._
+_Migrated profiles do not include username, custom user field data,
+followers, email preferences or social login credentials. If your users
+used Facebook, Google or LinkedIn to sign up in your Go marketplace,
+they will still be able to log in to their existing accounts with these
+in your Flex-powered marketplace, if their Facebook, Google or LinkedIn
+email address matches the email address in your marketplace. The first
+time they log in to their existing account in your Flex marketplace with
+a social login, the login provider will ask them for the same
+permissions it asked when they originally signed up._
 
 #### Reviews:
 

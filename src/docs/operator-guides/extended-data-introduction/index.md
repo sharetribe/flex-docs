@@ -1,4 +1,4 @@
---- 
+---
 title: Introduction to extended data
 slug: extended-data-introduction
 updated: 2021-04-15

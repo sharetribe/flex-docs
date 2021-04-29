@@ -200,7 +200,6 @@ read more about font-loading strategies, check these links:
 - https://www.zachleat.com/web/comprehensive-webfonts/
 - https://css-tricks.com/the-best-font-loading-strategies-and-how-to-execute-them/
 
-
 ## Styling components
 
 Styling a web UI is traditionally quite a messy business due to the
