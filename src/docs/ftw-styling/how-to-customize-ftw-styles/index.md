@@ -155,15 +155,16 @@ For example, our default font is defined as:
 
 ```css
 --marketplaceDefaultFontStyles: {
-  font-family: 'sofiapro', Helvetica, Arial, sans-serif;
+  font-family: var(--fontFamily);
   font-weight: var(--fontWeightMedium);
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.1px;
+  /* No margins for default font */
 
   @media (--viewportMedium) {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 32px;
   }
 }
 ```
@@ -183,6 +184,22 @@ p {
 > ⚠️ **Note**: the **@apply** rule and custom property sets most likely
 > won't get any more support from browser vendors as the spec is yet
 > considered deprecated and alternative solutions are being discussed.
+
+## Fonts
+
+**marketplaceDefaults.css** and **propertySets.css** files are mostly
+responsible of what font styles are used. The font-family itself is
+defined in CSS Property `--fontFamily` and by default, FTW templates use
+Poppins. This is a Google Font, but for performance reasons we have
+served them from Sharetribe's CDN.
+
+The actual font files are loaded in _public/index.html_. If you want to
+change the font or loading strategy, you need to edit those 3 files. To
+read more about font-loading strategies, check these links:
+
+- https://www.zachleat.com/web/comprehensive-webfonts/
+- https://css-tricks.com/the-best-font-loading-strategies-and-how-to-execute-them/
+
 
 ## Styling components
 
