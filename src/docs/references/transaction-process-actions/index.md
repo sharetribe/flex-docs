@@ -864,7 +864,23 @@ Merge customer protected data into transaction protected data.
   following config will reveal customer's phoneNumber attribute to the
   transaction and rename it to customerPhoneNumber:
 
+  ```
   {:key-mapping {:phoneNumber :customerPhoneNumber}}
+  ```
+
+  More than one key can be revealed at the same time:
+
+  ```
+  {:key-mapping {:phoneNumber :customerPhoneNumber
+                 :address :customerAddress}}
+  ```
+
+  Renaming is optional. If you wish to keep the same key, you can repeat
+  it as the value:
+
+  ```
+  {:key-mapping {:address :address}}
+  ```
 
 #### :action/reveal-provider-protected-data
 
@@ -884,7 +900,23 @@ Merge provider protected data into transaction protected data.
   following config will reveal provider's phoneNumber attribute to the
   transaction and rename it to providerPhoneNumber:
 
+  ```
   {:key-mapping {:phoneNumber :providerPhoneNumber}}
+  ```
+
+  More than one key can be revealed at the same time:
+
+  ```
+  {:key-mapping {:phoneNumber :providerPhoneNumber
+                 :address :providerAddress}}
+  ```
+
+  Renaming is optional. If you wish to keep the same key, you can repeat
+  it as the value:
+
+  ```
+  {:key-mapping {:address :address}}
+  ```
 
 #### :action/update-protected-data
 
