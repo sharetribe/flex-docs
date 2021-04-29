@@ -50,7 +50,7 @@ CLI, see the
 [Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 tutorial.
 
-## Option 1: Use a new Flex template FTW-time (recommended)
+## Option 1: Use a new Flex template FTW-hourly (recommended)
 
 With the time-based transaction process, you can use
 [FTW-hourly](https://github.com/sharetribe/ftw-hourly), a Flex Template
@@ -60,7 +60,7 @@ that supports time-based availability out of the box.
 ## Option 2: Implement time-based availability in your own frontend application
 
 If you choose to implement time-based availability in your own frontend
-application (like the original Flex Template for Web) there are couple
+application (e.g. if your client app is created on top of FTW-daily) there are couple
 of things you need to consider.
 
 ### Time-based availability plans
@@ -123,10 +123,10 @@ sdk.ownListings
 
 For more information about the plan attributes, see
 [the API documentation](https://www.sharetribe.com/api-reference/marketplace.html#ownlisting-availability-plan).
-By default the Flex Template for Web (FTW) defines a day-based plan for
-all listings in the
+
+**Note**: FTW-daily uses a day-based booking process and its availability plan is not made editable. All the schedule-entries in the
 [EditListingAvailabilityPanel](https://github.com/sharetribe/flex-template-web/blob/master/src/components/EditListingAvailabilityPanel/EditListingAvailabilityPanel.js)
-component.
+component is set to "available" (`seats: 1`). FTW-hourly has edistable availability plan.
 
 As for creating time-based bookings, they are created just like any
 other booking. The only limitations for start and end times are that the
@@ -154,7 +154,7 @@ use time-based bookings, you will need to implement these parts of the
 user interface yourself.
 
 For inspiration, see also the
-[FTW-time](https://github.com/sharetribe/ftw-time) implementation.
+[FTW-hourly](https://github.com/sharetribe/ftw-hourly) implementation.
 
 ### Time zone
 
