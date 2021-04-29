@@ -152,7 +152,7 @@ connect it to services such as SMS notifications with Twilio or sync the
 provider’s schedule with Google Calendar!
 
 I’ll present a few more examples of how private data can work in
-practice. For instance, though you may now want your customers and
+practice. For instance, though you may not want your customers and
 providers to be able to contact each other outside of your platform, you
 might still want to be able to call them yourself. A user’s phone number
 can be saved in their private data for these situations.
