@@ -394,12 +394,14 @@ call `EditListingCapacityPanel`:
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage } from 'react-intl';
+
+import config from '../../config.js';
+import { FormattedMessage } from '../../util/reactIntl';
 import { ensureOwnListing } from '../../util/data';
 import { findOptionsForSelectFilter } from '../../util/search';
+
 import { ListingLink } from '../../components';
 import { EditListingCapacityForm } from '../../forms';
-import config from '../../config.js';
 
 // Create this file using EditListingDescriptionPanel.module.css
 // as a template.
