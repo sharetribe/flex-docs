@@ -1,7 +1,7 @@
 ---
 title: How to set up Analytics for FTW
 slug: how-to-set-up-analytics-for-ftw
-updated: 2019-01-25
+updated: 2021-04-29
 category: ftw-analytics
 ingress:
   This guide describes how to set up analytics for Flex Template for Web
@@ -13,8 +13,12 @@ FTW supports tracking page views with pluggable analytics handlers.
 
 ## Configure Google Analytics ID
 
-Google Analytics (GA) is supported by default. The enable GA, set the GA
+Google Analytics (GA) is supported by default. To enable GA, set the GA
 tracker ID to the environment variable `REACT_APP_GOOGLE_ANALYTICS_ID`;
+
+Note that the current script expects a *Universal Analytics property only*
+tracking ID. If you want to use GA4, you should update the Google
+Analytics scripts first.
 
 That's it! You're good to go.
 
