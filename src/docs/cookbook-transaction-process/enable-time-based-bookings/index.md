@@ -60,8 +60,8 @@ that supports time-based availability out of the box.
 ## Option 2: Implement time-based availability in your own frontend application
 
 If you choose to implement time-based availability in your own frontend
-application (e.g. if your client app is created on top of FTW-daily) there are couple
-of things you need to consider.
+application (e.g. if your client app is created on top of FTW-daily)
+there are couple of things you need to consider.
 
 ### Time-based availability plans
 
@@ -124,9 +124,11 @@ sdk.ownListings
 For more information about the plan attributes, see
 [the API documentation](https://www.sharetribe.com/api-reference/marketplace.html#ownlisting-availability-plan).
 
-**Note**: FTW-daily uses a day-based booking process and its availability plan is not made editable. All the schedule-entries in the
+**Note**: FTW-daily uses a day-based booking process and its
+availability plan is not made editable. All the schedule-entries in the
 [EditListingAvailabilityPanel](https://github.com/sharetribe/flex-template-web/blob/master/src/components/EditListingAvailabilityPanel/EditListingAvailabilityPanel.js)
-component is set to "available" (`seats: 1`). FTW-hourly has edistable availability plan.
+component is set to "available" (`seats: 1`). FTW-hourly has edistable
+availability plan.
 
 As for creating time-based bookings, they are created just like any
 other booking. The only limitations for start and end times are that the
