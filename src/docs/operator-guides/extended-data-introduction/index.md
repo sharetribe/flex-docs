@@ -1,7 +1,7 @@
 ---
 title: Introduction to extended data
 slug: extended-data-introduction
-updated: 2021-04-15
+updated: 2021-04-30
 category: operator-guides
 ingress:
   Extended data allows you to fully customize the information you want
@@ -191,6 +191,35 @@ transaction metadata could be a unique Zoom link to where an online
 service will take place. This metadata can be written into the
 transaction by the Integration API at a specific point of the
 transaction.
+
+## Search and filtering
+
+How users search and filter listings is a vital part of their experience 
+in your marketplace. A smooth search experience allows them to find the 
+listings they’re interested in effortlessly, and the right filters help 
+them narrow down results to a selection that best fits their needs. Extended 
+data helps you build the custom search and filtering experience your 
+marketplace needs. 
+
+Listings can be searched by keyword or location using Flex’s 
+[powerful built-in search feature](https://www.sharetribe.com/docs/background/how-the-search-works/). 
+In addition to this, you can use listing public extended data and metadata 
+to create a variety of different types of filters; for example, a filter 
+can be a slider with a range of values or a checkbox group. You can also 
+specify how listings are prioritized and sorted in the results.
+
+When planning your search experience, think about the following questions:
+Do you want the extended data in any given field to be searchable?
+Do you want it to be a filter as well as a search parameter? What kind of 
+filter should it be?
+Which data should be prioritized in search results?
+
+Maybe your marketplace charges a membership fee, and you want listings 
+from sellers in your highest subscription tier to be displayed first. Or 
+perhaps your marketplace is for selling preowned clothing, and you want 
+your users to be able to filter by size to find the best fit. The 
+possibilities are numerous! 
+
 
 ## Getting started with extended data
 
