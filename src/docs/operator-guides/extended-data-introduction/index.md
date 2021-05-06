@@ -55,7 +55,7 @@ offer examples of what they can be used for.
 
 There are six possible types of extended data, defined by who can edit
 and view them. Four out of these are available in Flex at this time.
-They are public data, protected data, private data, and public metadata.
+They are *public data*, *protected data*, *private data*, and *public metadata*.
 
 In the following sections, “author” means the user who created the
 listing or profile in question. “Operator” refers to both the
@@ -64,8 +64,8 @@ the Integration API have access to view and edit all of the data types.
 
 ### Access to edit
 
-Data can be written and edited by listing or user profile authors in
-your frontend application. Metadata can be written and edited only by
+Extended *data* can be written and edited by listing or user profile authors in
+your frontend application. *Metadata* can be written and edited only by
 marketplace operators.
 
 ### Access to view
@@ -84,7 +84,7 @@ We can also organize the data types by placing them in a table.
 | Protected | editing: author, operator – viewing: transaction members | not available                          |
 | Private   | editing: author, operator – viewing: author, operator    | not available                          |
 
-In order to determine what type of data you want to collect on your
+In order to determine what type of extended data you want to collect on your
 marketplace, you need to answer the following questions:
 
 - What information do you want to collect about your users and listings
@@ -92,7 +92,7 @@ marketplace, you need to answer the following questions:
 - Who can write and edit that information?
 - What information do you want to display and to whom?
 
-In the next section, we’ll explore how different types of data are shown
+In the next section, we’ll explore how different types of extended data are shown
 on your marketplace and Console and offer examples of the possibilities
 the different types of extended data provide.
 
@@ -206,13 +206,15 @@ Listings can be searched by keyword or location using Flex’s
 In addition to this, you can use listing public extended data and metadata 
 to create a variety of different types of filters; for example, a filter 
 can be a slider with a range of values or a checkbox group. You can also 
-specify how listings are prioritized and sorted in the results.
+specify how listings are prioritized and sorted in the results. Extended
+data is not available for search or sorting by default, which means you are
+in control of building your own, unique search experience.
 
 When planning your search experience, think about the following questions:
 Do you want the extended data in any given field to be searchable?
 Do you want it to be a filter as well as a search parameter? What kind of 
 filter should it be?
-Which data should be prioritized in search results?
+Which extended data should be prioritized in search results?
 
 Maybe your marketplace charges a membership fee, and you want listings 
 from sellers in your highest subscription tier to be displayed first. Or 
