@@ -25,7 +25,7 @@ the flexibility that Flex offers.
 [Access design files in Google Drive](https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG?usp=sharing).
 
 Or download directly: <br /><br /> <b>FTW daily</b><br />
-[Sharetribe_Flex-DAILY-Desktop.sketch](https://drive.google.com/uc?export=download&id=15C2EliJ-2VObgJinSoQRHCUxYkSOaZmf)<br />
+[Sharetribe_Flex-DAILY-Desktop.sketch](https://drive.google.com/uc?export=download&id=1Lm7hVHB_i5mLDO5mtCuziyIJA1ZPNl4b)<br />
 [Sharetribe_Flex-DAILY-Mobile.sketch](https://drive.google.com/uc?export=download&id=1FOVyXpNdt9eRM_hLMG8-lSZ-VdxJZv_k)<br />
 [Sharetribe_Flex-DAILY-Wireframes.sketch](https://drive.google.com/uc?export=download&id=1__BvrIbpx1-C8EHT6nJdxjDrq8XomlrI)
 
