@@ -26,7 +26,7 @@ done on the sign-up page:
 
 ### Add input component
 
-To make this change, we need to update SingupForm. There's an existing
+To make this change, we need to update SignupForm. There's an existing
 field to collect phone numbers. It's called **FieldPhoneNumberInput**.
 
 ```shell
