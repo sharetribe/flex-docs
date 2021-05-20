@@ -1,7 +1,7 @@
 ---
 title: Hiring a developer to build your Flex marketplace
 slug: how-to-hire-developer
-updated: 2021-02-25
+updated: 2021-05-20
 category: operator-guides
 ingress:
   Tips to help you hire a developer to build a marketplace with
@@ -14,7 +14,7 @@ custom development. Unless you have
 [these development skills](https://www.sharetribe.com/docs/background/development-skills/),
 you need to hire someone who does. Though any developer will do, we
 recommend hiring a vetted developer from Sharetribe's official Flex
-Partner Network for great quality work.
+Expert Network for great quality work.
 
 Hiring a developer to build your marketplace with Flex requires two
 things. First communicating your requirements to the developer. Second,
@@ -77,7 +77,7 @@ visually. The fastest option is to follow the visual style of the Flex
 Template. However, you might have a completely unique visual style in
 mind. In this case, you either need to adjust the design files yourself
 to communicate the visual style you want, or hire a designer to do this
-work for you. Many Flex partners also offer design services you can
+work for you. Many Flex Experts also offer design services you can
 hire.
 
 ### The required budget
@@ -87,7 +87,7 @@ marketplace concept typically requires at least 100 hours of
 development.
 
 At a rate of
-$30 per hour (the hourly rates of Flex partners vary from $15 to
+$30 per hour (the hourly rates of Flex Experts vary from $15 to
 $100), this means building the first version of your marketplace would cost $3,000.
 This is the absolute minimum budget you need to be prepared for.
 However, in this scenario, your concept would need to require only
@@ -104,14 +104,13 @@ heavily on your specific requirements in terms of features and budget.
 What you are building and who you hire to build it are the biggest
 determinants of the budget needed to build your marketplace.
 
-### Connecting to the Flex Partner Network
+### Connecting to the Flex Expert Network
 
-You can connect with developer from the Flex Partner Network through
+You can connect with developer from the Flex Expert Network through
 [Console](https://flex-console.sharetribe.com/). Either book a call with
 a Sharetribe expert to discuss your project and questions, or submit
 your requirements
-[through this form](https://sharetribe.typeform.com/to/M06EuLzx). Flex
-partners can prepare a high-level estimate for building your marketplace
+through the form. Flex Experts can prepare a high-level estimate for building your marketplace
 fast.
 
 As a general rule, we recommend you to launch your first version (the
