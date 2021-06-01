@@ -14,7 +14,7 @@ Your Flex marketplace is built on top of APIs, which makes it possible for your 
 
 With Zapier, you can connect your Flex marketplace with more than 3,000 other web apps with just a few clicks. You can then build "Zaps", which are automated workflows or sequences of actions that get kicked off by a trigger. An event in one app can set in motion an action in a second app and another action in a third app etc.
 
-Once you’ve created a Zapier account and connected your Flex marketplace account, you can use nine different events in your marketplace as a trigger for actions in other apps. Zapier can also perform "search actions" in your marketplace data about users, listings or bookings.
+Once you’ve created a Zapier account and connected your Flex marketplace account, you can use nine different events in your marketplace as a trigger for actions in other apps. Zapier can also perform "search actions" in your marketplace data about users, listings or transactions.
 
 Together this allows you to create complex workflows based on things happening in your marketplace. A new booking can trigger the sending of a text message with Twilio. A new user sign-up can set into action a campaign of drip emails in Mailchimp. A new listing can be automatically posted to any of your marketplace’s social accounts. And so much more. 
 
@@ -55,7 +55,7 @@ Currently the integration supports nine different events across three categories
 ### Listing events
 
 - `Listing created`: sent each time a listing is created
-- `Listing updated`: sent each time a listing is updated. **Please note that in the default transaction flow a new listing goes already through several (seven) updates between the first draft and eventual publishing**. Be sure to check out Zapier's own [Filter app](https://zapier.com/apps/filter/integrations) to filter out the relevant ones.
+- `Listing updated`: sent each time a listing is updated. **Please note that in the default listing creation flow in FTW a new listing goes already through several (seven) updates between the first draft and eventual publishing**. Be sure to check out Zapier's own [Filter app](https://zapier.com/apps/filter/integrations) to filter out the relevant ones.
 - `Listing deleted`: sent each time a listing is deleted
 
 ### User events
@@ -68,7 +68,7 @@ Currently the integration supports nine different events across three categories
 
 - `Transaction initiated`: sent each time a transaction is initiated
 - `Transaction transitioned`: sent each time a transaction transitions from one state to the next. What this means depends a lot on your own transaction flow.
-- `Transaction updated`: sent each time a transaction is updated
+- `Transaction updated`: sent each time a transaction is updated without a transition taking place.
 
 ### Which information is sent with each event?
 
