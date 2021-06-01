@@ -92,4 +92,13 @@ Additionally, each of these has so-called relationships with other data, which y
 
 All of the information can again be used in the rest of the Zap, for example to insert in an email, or a Tweet etc.
 
+## Some examples of what you can do with Zapier and Flex
 
+The above might all sound a bit dry and theoretical, so what does this mean in practice? Here are some ideas:
+
+- You can build a Zap with Twilio that sends a text message to the provider everytime a booking is made of their listing, containing information about who booked it and when. 
+- You can automatically send each transaction to a Google Sheet
+- You can expand on the existing email notifications by building your own email automation for certain actions
+- You can automatically post all new listings on your marketplace to your social channels
+
+We will update this document with video tutorials soon.
