@@ -1,7 +1,7 @@
 ---
 title: Set up and use Zapier
 slug: set-up-and-use-zapier
-updated: 2021-05-31
+updated: 2021-06-02
 category: cookbook-events
 ingress:
   This guide demonstrates how to connect Flex to Zapier, gives a brief overview of the events and information made available to Zapier, and finally the possibilities a working Zapier integration holds.
@@ -103,8 +103,8 @@ The above might all sound a bit dry and theoretical, so what does this mean in p
 
 ## Video tutorials
 
-- [How to connect Flex to Zapier](https://youtu.be/KkYNNJCio-M)
-- [How to send information from Flex to Google Sheets using Zapier](https://youtu.be/C8rdoLSsxiY) (the example uses sending first name, last name & email address of each new user)
+1. [How to connect Flex to Zapier](https://youtu.be/KkYNNJCio-M)
+2. [How to send information from Flex to Google Sheets using Zapier](https://youtu.be/C8rdoLSsxiY) (the example uses sending first name, last name & email address of each new user)
 
 
-We will update this document with video tutorials soon.
+Further video tutorials will be added.
