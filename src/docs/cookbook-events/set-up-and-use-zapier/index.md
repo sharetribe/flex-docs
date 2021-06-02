@@ -108,3 +108,9 @@ The above might all sound a bit dry and theoretical, so what does this mean in p
 
 
 Further video tutorials will be added.
+
+## Zap templates
+
+Zap templates are ready-made Zaps with the starting trigger and the actions already defined, which you can then take into use. It does still require you to sign in to all the services involved in the Zap and test the different steps.
+
+- [Send a text message to the provider for each new booking in a Flex marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
