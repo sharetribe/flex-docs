@@ -17,6 +17,8 @@ you with all the necessary marketplace infrastructure out of the box. At
 the same time, because of its headless architecture, Flex gives you
 total freedom to customize your user experience.
 
+<iframe width="800" height="400" src="https://www.youtube.com/embed/UffchBUUIoI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 This makes Flex the fastest and most affordable way to build a unique
 platform that adapts to the entire lifecycle of your business. As your
 business grows, Flex takes care of running and scaling your backend —
