@@ -21,6 +21,9 @@ Together this allows you to create complex workflows based on things happening i
 
 ## Connecting Zapier to Flex
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KkYNNJCio-M?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 To take Zapier into use and connect it to Flex, you need:
 - **An account at Zapier**. There is a free trial, but eventually, based on your usage, you may need a paid plan at Zapier.
 - **A Client ID and a Client Secret for the Integration API**,  which you need to authorize Zapier to connect to your Flex account. You can create a Client ID and a Client Secret by adding a new application in Console > Build > Applications.
@@ -101,16 +104,22 @@ The above might all sound a bit dry and theoretical, so what does this mean in p
 - You can expand on the existing email notifications by building your own email automation for certain actions
 - You can automatically post all new listings on your marketplace to your social channels
 
-## Video tutorials
-
-1. [How to connect Flex to Zapier](https://youtu.be/KkYNNJCio-M)
-2. [How to send information from Flex to Google Sheets using Zapier](https://youtu.be/C8rdoLSsxiY) (the example uses sending first name, last name & email address of each new user)
-
-
-Further video tutorials will be added.
-
 ## Zap templates
 
 Zap templates are ready-made Zaps with the starting trigger and the actions already defined, which you can then take into use. It does still require you to sign in to all the services involved in the Zap and test the different steps.
 
 - [Send a text message to the provider for each new booking in a Flex marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
+
+## Video tutorials
+
+### How to connect Flex to Zapier
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KkYNNJCio-M?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### How to send information from Flex to Google Sheets using Zapier
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C8rdoLSsxiY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+Further video tutorials will be added.
