@@ -21,7 +21,7 @@ Together this allows you to create complex workflows based on things happening i
 
 ## Connecting Zapier to Flex
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KkYNNJCio-M?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zUp4eZufKsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 To take Zapier into use and connect it to Flex, you need:
@@ -114,12 +114,16 @@ Zap templates are ready-made Zaps with the starting trigger and the actions alre
 
 ### How to connect Flex to Zapier
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KkYNNJCio-M?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zUp4eZufKsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ### How to send information from Flex to Google Sheets using Zapier
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C8rdoLSsxiY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C8rdoLSsxiY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### How to build a text message integration in Sharetribe Flex using Twilio and Zapier
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w2Dmw1x0c3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Further video tutorials will be added.
