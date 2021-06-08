@@ -100,6 +100,7 @@ All of the information can again be used in the rest of the Zap, for example to 
 The above might all sound a bit dry and theoretical, so what does this mean in practice? Here are some ideas:
 
 - You can build a Zap with Twilio that sends a text message to the provider everytime a booking is made of their listing, containing information about who booked it and when. [Here's a Zap template](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf) that you can use and adjust.
+- You can add a new marketplace user to a Mailchimp audience. ([Zap template](https://zapier.com/shared/412d7744a23855ce00941567a619c7ffb7652335))
 - You can automatically send each transaction to a Google Sheet
 - You can expand on the existing email notifications by building your own email automation for certain actions
 - You can automatically post all new listings on your marketplace to your social channels
@@ -109,6 +110,7 @@ The above might all sound a bit dry and theoretical, so what does this mean in p
 Zap templates are ready-made Zaps with the starting trigger and the actions already defined, which you can then take into use. It does still require you to sign in to all the services involved in the Zap and test the different steps.
 
 - [Send a text message to the provider for each new booking in a Flex marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
+- [Add a new user in your marketplace to a Mailchip audience](https://zapier.com/shared/412d7744a23855ce00941567a619c7ffb7652335)
 
 ## Video tutorials
 
