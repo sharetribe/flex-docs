@@ -111,6 +111,7 @@ Zap templates are ready-made Zaps with the starting trigger and the actions alre
 
 - [Send a text message to the provider for each new booking in a Flex marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
 - [Add a new user in your marketplace to a Mailchip audience](https://zapier.com/shared/412d7744a23855ce00941567a619c7ffb7652335)
+- [Send a tweet for each new listing with name & listing URL](https://zapier.com/shared/967732338e072db4edc8332e0de182deb0feef6b)
 
 ## Video tutorials
 
