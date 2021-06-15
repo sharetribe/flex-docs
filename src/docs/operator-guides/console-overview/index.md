@@ -1,7 +1,7 @@
 ---
 title: Understanding Console
 slug: console-overview
-updated: 2021-04-15
+updated: 2021-06-15
 category: operator-guides
 ingress: This article will help you understand how to navigate Console.
 published: true
@@ -119,6 +119,10 @@ with HTML directly in this tab of the Build section.
 APIs through your marketplace. At minimum, this tab includes your
 frontend application, but can also have applications for integrated
 services.
+
+**Events** has a summary of what the Events feature is about as well as
+some quick links to the relevant documentation. It also mentions the 
+Zapier integration and shows the main command to view events with Flex CLI.
 
 **Social logins & SSO** contains all identity provider clients, that is,
 the third-party solutions your users can sign up with on your
