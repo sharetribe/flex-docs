@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing-tutorial
-updated: 2020-07-21
+updated: 2021-06-17
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an
@@ -45,17 +45,17 @@ public data so we need to create a JSON object with keys **amount** and
 > _cleaningFee_ which needs to be under the _publicData_ key.
 
 ```jsx
-      onSubmit={values => {
-        const { price, cleaningFee = null } = values;
+onSubmit={values => {
+  const { price, cleaningFee = null } = values;
 
-        const updatedValues = {
-          price,
-          publicData: {
-            cleaningFee: { amount: cleaningFee.amount, currency: cleaningFee.currency },
-          },
-        };
-        onSubmit(updatedValues);
-      }}
+  const updatedValues = {
+    price,
+    publicData: {
+      cleaningFee: { amount: cleaningFee.amount, currency: cleaningFee.currency },
+    },
+  };
+  onSubmit(updatedValues);
+}}
 ```
 
 ### Initialize the form
@@ -70,12 +70,17 @@ API back to instance of Money.
 const { price, publicData } = currentListing.attributes;
 const cleaningFee =
   publicData && publicData.cleaningFee ? publicData.cleaningFee : null;
-const cleaningFeeAsMoney = new Money(
+
+const cleaningFeeAsMoney = cleaningFee ? new Money(
   cleaningFee.amount,
   cleaningFee.currency
-);
-const initialValues = { price, cleaningFeeAsMoney };
+) : null;
+
+const initialValues = { price, cleaningFee: cleaningFeeAsMoney };
 ```
+
+Now pass the whole `initialValues` map in the corresponding prop to
+_EditListingPricingForm_.
 
 ### Add input component
 
