@@ -1,7 +1,7 @@
 ---
 title: Hiring a developer to build your Flex marketplace
 slug: how-to-hire-developer
-updated: 2021-05-20
+updated: 2021-06-22
 category: operator-guides
 ingress:
   Tips to help you hire a developer to build a marketplace with
@@ -110,7 +110,7 @@ You can connect with developer from the Flex Expert Network through
 [Console](https://flex-console.sharetribe.com/). Either book a call with
 a Sharetribe expert to discuss your project and questions, or submit
 your requirements
-through the form. Flex Experts can prepare a high-level estimate for building your marketplace
+through the form. If you prefer, you can review Expert profiles and contact them directly in the [Expert directory](https://www.sharetribe.com/experts/).  Flex Experts can prepare a high-level estimate for building your marketplace
 fast.
 
 As a general rule, we recommend you to launch your first version (the
