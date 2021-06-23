@@ -37,7 +37,7 @@ The design files can be used according to
 [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
 The files can also be opened with Adobe XD and Figma. The font used is
 Poppins, which can be downloaded through
-[Adobe Fonts](https://fonts.adobe.com/fonts/poppins).
+[Adobe Fonts](https://fonts.adobe.com/fonts/poppins) or through [Google Fonts](https://fonts.google.com/specimen/Poppins).
 
 We are glad to receive ideas and improvements at
 [flex-support@sharetribe.com](mailto:flex-support@sharetribe.com).
