@@ -95,8 +95,11 @@ defining `includeFor` array `["customer"]` and provider commission by
 
 `payinTotal` is calculated by the action and added to the transaction.
 `payinTotal` equals to the sum of customer commission line totals and
-other non-commission line totals. Must be zero or positive and larger
-than `payoutTotal`
+other non-commission line totals. Must be zero or positive. _Note:_ Some
+line-item configurations are not supported by the default Stripe payment
+actions. If you use Stripe payment actions, payinTotal needs to be
+greater than zero, and greater than or equal to payoutTotal. For more
+details, refer to Stripe action documentation.
 
 `payoutTotal` is calculated by the action and added to the transaction.
 `payoutTotal` equals to the sum of provider commission line totals and
@@ -975,8 +978,10 @@ handle payment and confirm the PaymentIntent client-side. The
 
 **Preconditions**:
 
-- The transaction must already have pricing information (i.e. pay-in and
-  pay-out totals) calculated.
+- The transaction must already have pricing information (i.e. payin and
+  payout totals) calculated.
+- The calculated payin must be greater than zero
+- The calculated payin must be greater than or equal to the payout
 - If `:use-customer-default-payment-method?` is set `true`, customer
   must have Stripe Customer and default payment method set.
 
@@ -1059,8 +1064,10 @@ before the payment is made.
 
 **Preconditions**:
 
-- The transaction must already have pricing information (i.e. pay-in and
-  pay-out totals) calculated.
+- The transaction must already have pricing information (i.e. payin and
+  payout totals) calculated.
+- The calculated payin must be greater than zero
+- The calculated payin must be greater than or equal to the payout
 
 **Parameters:**
 
