@@ -20,7 +20,7 @@ you can encode data into Intermediary format, give you a syntax example
 of Intermediary file and provide instructions on the migration process.
 
 The tooling for these migrations is still in it's infancy and will
-require some technical knowledge and a lot's of patience.
+require some technical knowledge and a lots of patience.
 
 ## Intermediary data
 
