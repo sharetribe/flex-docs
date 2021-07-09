@@ -7,7 +7,7 @@ ingress: How to import data from outside Sharetribe ecosystem
 published: true
 ---
 
-An existing marketplace data can be migrated to Sharetribe Flex. If your
+Data from an existing marketplace can be migrated to Sharetribe Flex. If your
 marketplace is running in Sharetribe Go, there is a ready migration path
 that will be handled by us. We will handle the migration in this case
 and you can find the outline for this process
@@ -78,7 +78,8 @@ This means that the Intermediary supports importing:
 - Stripe accounts - You need to use the same Stripe keys in Flex as in
   your current service
 - Reviews
-- Supported references between the different types are:
+
+Supported references between the different types are:
 
 ```
 - #im.userProfile/avatar -> #im.image
@@ -90,15 +91,15 @@ This means that the Intermediary supports importing:
 ```
 
 The attributes that are supported for each resource are described in the
-Flex API documentation.
+[Flex API documentation](https://www.sharetribe.com/api-reference/).
 
 For example, for the User resource, the supported fields can be found
-here: https://flex-api-docs-preview.sharetribe.com/#current-user. This
-means that importing extended data is also supported if it's listed
+[here](https://www.sharetribe.com/api-reference/marketplace.html#current-user).
+This means that importing extended data is also supported if it's listed
 under the resource attributes.
 
 Inside the user resource, the email resource differs a bit from the
-documentation. The email resource is referenced under :primaryEmail key
+documentation. The email resource is referenced under `:primaryEmail` key
 like this:
 
 ```
