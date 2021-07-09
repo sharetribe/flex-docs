@@ -71,10 +71,9 @@ const { price, publicData } = currentListing.attributes;
 const cleaningFee =
   publicData && publicData.cleaningFee ? publicData.cleaningFee : null;
 
-const cleaningFeeAsMoney = cleaningFee ? new Money(
-  cleaningFee.amount,
-  cleaningFee.currency
-) : null;
+const cleaningFeeAsMoney = cleaningFee
+  ? new Money(cleaningFee.amount, cleaningFee.currency)
+  : null;
 
 const initialValues = { price, cleaningFee: cleaningFeeAsMoney };
 ```

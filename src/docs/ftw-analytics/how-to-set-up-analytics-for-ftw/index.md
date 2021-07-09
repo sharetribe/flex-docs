@@ -16,8 +16,8 @@ FTW supports tracking page views with pluggable analytics handlers.
 Google Analytics (GA) is supported by default. To enable GA, set the GA
 tracker ID to the environment variable `REACT_APP_GOOGLE_ANALYTICS_ID`;
 
-Note that the current script expects a *Universal Analytics property only*
-tracking ID. If you want to use GA4, you should update the Google
+Note that the current script expects a _Universal Analytics property
+only_ tracking ID. If you want to use GA4, you should update the Google
 Analytics scripts first.
 
 That's it! You're good to go.
