@@ -415,12 +415,22 @@ Some examples of integrations you might want to add:
 
 ## Zapier integration
 
-With our Zapier integration, you can connect your Flex marketplace with more than 3,000 other web apps with just a few clicks. You can then build "Zaps", which are automated workflows or sequences of actions that get kicked off by a trigger. An event in one app can set in motion an action in a second app and another action in a third app etc.
+With our Zapier integration, you can connect your Flex marketplace with
+more than 3,000 other web apps with just a few clicks. You can then
+build "Zaps", which are automated workflows or sequences of actions that
+get kicked off by a trigger. An event in one app can set in motion an
+action in a second app and another action in a third app etc.
 
-Once you’ve created a Zapier account and connected your Flex marketplace account, you can use nine different events in your marketplace as a trigger for actions in other apps. Zapier can also perform "search actions" in your marketplace data about users, listings or transactions.
+Once you’ve created a Zapier account and connected your Flex marketplace
+account, you can use nine different events in your marketplace as a
+trigger for actions in other apps. Zapier can also perform "search
+actions" in your marketplace data about users, listings or transactions.
 
-Together this allows you to create complex workflows based on things happening in your marketplace. A new booking can trigger the sending of a text message with Twilio. A new user sign-up can set into action a campaign of drip emails in Mailchimp. A new listing can be automatically posted to any of your marketplace’s social accounts. And so much more. 
-
+Together this allows you to create complex workflows based on things
+happening in your marketplace. A new booking can trigger the sending of
+a text message with Twilio. A new user sign-up can set into action a
+campaign of drip emails in Mailchimp. A new listing can be automatically
+posted to any of your marketplace’s social accounts. And so much more.
 
 ## Admin console
 

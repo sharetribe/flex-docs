@@ -121,8 +121,9 @@ frontend application, but can also have applications for integrated
 services.
 
 **Events** has a summary of what the Events feature is about as well as
-some quick links to the relevant documentation. It also mentions the 
-Zapier integration and shows the main command to view events with Flex CLI.
+some quick links to the relevant documentation. It also mentions the
+Zapier integration and shows the main command to view events with Flex
+CLI.
 
 **Social logins & SSO** contains all identity provider clients, that is,
 the third-party solutions your users can sign up with on your

@@ -77,8 +77,7 @@ visually. The fastest option is to follow the visual style of the Flex
 Template. However, you might have a completely unique visual style in
 mind. In this case, you either need to adjust the design files yourself
 to communicate the visual style you want, or hire a designer to do this
-work for you. Many Flex Experts also offer design services you can
-hire.
+work for you. Many Flex Experts also offer design services you can hire.
 
 ### The required budget
 
@@ -109,9 +108,10 @@ determinants of the budget needed to build your marketplace.
 You can connect with developer from the Flex Expert Network through
 [Console](https://flex-console.sharetribe.com/). Either book a call with
 a Sharetribe expert to discuss your project and questions, or submit
-your requirements
-through the form. If you prefer, you can review Expert profiles and contact them directly in the [Expert directory](https://www.sharetribe.com/experts/).  Flex Experts can prepare a high-level estimate for building your marketplace
-fast.
+your requirements through the form. If you prefer, you can review Expert
+profiles and contact them directly in the
+[Expert directory](https://www.sharetribe.com/experts/). Flex Experts
+can prepare a high-level estimate for building your marketplace fast.
 
 As a general rule, we recommend you to launch your first version (the
 ["Minimum Viable Platform"](https://www.sharetribe.com/academy/how-to-build-a-minimum-viable-platform/))
