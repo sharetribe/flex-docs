@@ -39,7 +39,7 @@ following keys:
   and content.
 
 The id part of row 2-tuple is specified as a tuple of 1 to 3 elements.
-The first element is always an id attr and identifies the row type. The
+The first element is always an id attribute and identifies the row type. The
 second element can be an alias or an import id. A 3 element version has
 id attr, import id and an alias.
 
