@@ -5,12 +5,17 @@ updated: 2019-07-17
 category: cookbook-search
 ingress:
   This guide describes how to change the Topbar search from location
-  search to keyword search in Flex Template for Web (FTW).
+  search to keyword search in FTW-daily and FTW-hourly.
 published: true
 ---
 
-If your marketplace is not location-oriented, you might want to use the
-keyword search in the Topbar component instead of location search.
+If your marketplace is not location-oriented, but you are using
+FTW-daily or FTW-hourly, you might want to use the keyword search in the
+Topbar component instead of location search.
+
+> **Note:** FTW-product use Keyword search by default and it's
+> configurable through _src/config/config.js_. You can skip this
+> cookbook article.
 
 ## How to use the keyword search in Topbar
 

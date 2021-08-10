@@ -23,12 +23,29 @@ and let the app define what page gets rendered.
 
 FTW has a quite straightforward routing setup - there's just one file
 you need to check before you link to existing routes or start creating
-new routes to static pages: _src/routeConfiguration.js_.
+new routes to static pages: _routeConfiguration.js_.
 
 There we have imported all the page-level components dynamically using
 [Loadable Components](https://loadable-components.com/). In addition,
 there's a configuration that specifies all the pages that are currently
 used within FTW:
+
+```shell
+└── src
+    ├── routeConfiguration.js
+    └── Routes.js
+```
+
+<extrainfo title="FTW-product has routeConfiguration.js and Routes.js files in a different location">
+
+```shell
+└── src
+    └── routing
+        ├── routeConfiguration.js
+        └── Routes.js
+```
+
+</extrainfo>
 
 ```js
 const AboutPage = loadable(() =>
@@ -150,9 +167,8 @@ export const ClientApp = props => {
 };
 ```
 
-_src/Routes.js_ renders the navigational **Route** components.
-**Switch** component renders the first _Route_ that matches the
-location.
+_Routes.js_ renders the navigational **Route** components. **Switch**
+component renders the first _Route_ that matches the location.
 
 ```jsx
 import { Switch, Route } from 'react-router-dom';
@@ -168,7 +184,7 @@ const Routes = (props, context) => {
   );
 ```
 
-Inside _src/Routes.js_, we also have a component called
+Inside _Routes.js_, we also have a component called
 _RouteComponentRenderer_, which has four important jobs:
 
 - Calling loadData function, if those have been defined in
@@ -320,6 +336,20 @@ changes and sends tracking events to configured services.
     └── ducks
         └── Routing.duck.js
 ```
+
+<extrainfo title="FTW-product has moved Routes.js under routing directory">
+
+```shell
+└── src
+    ├── routing
+    |  └── Routes.js
+    ├──analytics
+    |  └── analytics.js
+    └── ducks
+        └── Routing.duck.js
+```
+
+</extrainfo>
 
 For more information, see the
 [How to set up Analytics for FTW](/ftw-analytics/how-to-set-up-analytics-for-ftw/)

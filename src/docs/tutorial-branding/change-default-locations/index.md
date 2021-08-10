@@ -32,6 +32,16 @@ _default-location-searches.js_:
     └── default-location-searches.js
 ```
 
+<extrainfo title="FTW-product has moved config files into a different location">
+
+```shell
+└── src
+    └── config
+        └── marketplace-custom-config.js
+```
+
+</extrainfo>
+
 In that file use see those locations listed inside an array returned as
 default export:
 

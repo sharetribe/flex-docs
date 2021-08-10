@@ -50,6 +50,16 @@ file.
     └── marketplace-custom-config.js
 ```
 
+<extrainfo title="FTW-product has moved config files into a different location">
+
+```shell
+└── src
+    └── config
+        └── marketplace-custom-config.js
+```
+
+</extrainfo>
+
 There we need to create a new filter config to the `filters` array:
 
 ```js
@@ -60,6 +70,8 @@ There we need to create a new filter config to the `filters` array:
     group: 'secondary',
     queryParamNames: ['pub_capacity'],
     config: {
+      // Schema type is enum for SelectSingleFilter
+      schemaType: 'enum',
       options: [
         { key: '1to3', label: '1 to 3' },
         { key: '4to6', label: '4 to 6' },
@@ -70,8 +82,8 @@ There we need to create a new filter config to the `filters` array:
   },
 ```
 
-The exports from that file are included in the `src/config.js` file and
-are available as properties in `config.custom`. Search filters and some
+The exports from that file are included in the _config.js_ file and are
+available as properties in `config.custom`. Search filters and some
 components used to edit and present the data rely on a data model of an
 array of objects that contain `key` and `label` properties.
 
@@ -101,13 +113,13 @@ article.
 ### Edit the listing wizard
 
 Next step is to add means for modifying the attribute data in listings.
-This is achieved by adding proper inputs to the `EditListingWizard`. It
-could probably make sense to add the input to the _description_ tab or
-modify the _amenities_ tab to also include capacity but for the sake of
-clarity let's add a new tab to the wizard. The new tab will be placed
+This is achieved by adding proper inputs to the **EditListingWizard**.
+It could probably make sense to add the input to the _description_ tab
+or modify the _amenities_ tab to also include capacity but for the sake
+of clarity let's add a new tab to the wizard. The new tab will be placed
 between the _amenities_ and _policy_ tabs.
 
-First lets declare the tab in `EditListingWizardTab`:
+First lets declare the tab in **EditListingWizardTab**:
 
 ```shell
 └── src
@@ -115,6 +127,18 @@ First lets declare the tab in `EditListingWizardTab`:
         └── EditListingWizard
             └── EditListingWizardTab.js
 ```
+
+<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
+
+```shell
+└── src
+    └── containers
+        └── EditListingPage
+            └── EditListingWizard
+                └── EditListingWizardTab.js
+```
+
+</extrainfo>
 
 ```js
 export const AVAILABILITY = 'availability';
@@ -139,18 +163,33 @@ export const SUPPORTED_TABS = [
 ];
 ```
 
-Now in `EditListingWizard` we can take that tab declaration into use.
-Import the tab name variable from `EditListingWizardTab` and add it to
-the `TABS` array.
-
-```shell
-└── src
-    └── components
-        └── EditListingWizard
-            └── EditListingWizard.js
-```
+<extrainfo title="FTW-product has a bit different panels in EditListingWizard">
 
 ```js
+export const CAPACITY = 'capacity';
+export const DETAILS = 'details';
+export const DELIVERY = 'delivery';
+export const PRICING = 'pricing';
+export const PHOTOS = 'photos';
+
+// EditListingWizardTab component supports these tabs
+export const SUPPORTED_TABS = [
+  CAPACITY,
+  DETAILS,
+  DELIVERY,
+  PRICING,
+  PHOTOS,
+];
+```
+
+</extrainfo>
+
+Now in **EditListingWizard** we can take that tab declaration into use.
+_Import_ the tab name variable (_CAPACITY_) from
+**EditListingWizardTab** and add it to the `TABS` array.
+
+```js
+// in EditListingWizard.js
 export const TABS = [
   DESCRIPTION,
   FEATURES,
@@ -247,7 +286,7 @@ const tabCompleted = (tab, listing) => {
 ```
 
 Next task is to add form and panel components that render the capacity
-tab. As for the form, let's create a `EditListingCapacityForm`
+tab. As for the form, let's create a **EditListingCapacityForm**
 component:
 
 ```shell
@@ -259,12 +298,31 @@ component:
             └── EditListingCapacityForm.module.css
 ```
 
+<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
+
+```shell
+└── src
+    └── containers
+        └── EditListingPage
+            └── EditListingWizard
+                ├── EditListingWizardTab.js
+                └── EditListingCapacityPanel
+                    ├── EditListingCapacityForm.js
+                    └── EditListingCapacityForm.module.css
+```
+
+Also relative _imports_ need to be updated accordingly.
+
+</extrainfo>
+
 ```jsx
 import React from 'react';
 import { arrayOf, bool, func, shape, string } from 'prop-types';
 import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
+
+// These relative imports need to point to correct directories
 import {
   intlShape,
   injectIntl,
@@ -374,21 +432,37 @@ export default compose(injectIntl)(EditListingCapacityFormComponent);
 ```
 
 The form component receives `capacityOptions` as a prop which are used
-to populate a `FieldSelect` component for selecting the capacity. The
-`EditListingCapacityForm` is also added to the `src/forms/index.js` file
-so that it can easily be referenced from other components. To use the
-capacity editing form we'll add a panel component which is then used in
-`EditListingWizardTab` to render the wizard phase. This component we'll
-call `EditListingCapacityPanel`:
+to populate a **FieldSelect** component for selecting the capacity. The
+**EditListingCapacityForm** is also added to the _src/forms/index.js_
+file so that it can easily be referenced from other components.
+(FTW-product doesn't use _src/forms/index.js_) To use the capacity
+editing form we'll add a panel component which is then used in
+**EditListingWizardTab** to render the wizard phase. This component
+we'll call **EditListingCapacityPanel**:
 
 ```shell
 └── src
     └── components
         ├── index.js
-        └── EditListingCapacityForm
+        └── EditListingCapacityPanel
             ├── EditListingCapacityPanel.js
             └── EditListingCapacityPanel.module.css
 ```
+
+<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
+
+```shell
+└── src
+    └── containers
+        └── EditListingPage
+            └── EditListingWizard
+                ├── EditListingWizardTab.js
+                └── EditListingCapacityPanel
+                    ├── EditListingCapacityPanel.js
+                    └── EditListingCapacityPanel.module.css
+```
+
+</extrainfo>
 
 ```jsx
 import React from 'react';
@@ -489,23 +563,130 @@ EditListingCapacityPanel.propTypes = {
 export default EditListingCapacityPanel;
 ```
 
+<extrainfo title="FTW-product would need few modifications">
+
+Relative imports are deeper and **EditListingCapacityForm** is in the
+same directory.
+
+```jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+import config from '../../../../config.js';
+import { FormattedMessage } from '../../../../util/reactIntl';
+import { ensureOwnListing } from '../../../../util/data';
+import { findOptionsForSelectFilter } from '../../../../util/search';
+
+import { ListingLink } from '../../../../components';
+
+import EditListingCapacityForm from './EditListingCapacityForm';
+
+// Create this file using EditListingDescriptionPanel.module.css
+// as a template.
+import css from './EditListingCapacityPanel.module.css';
+
+const EditListingCapacityPanel = props => {
+  const {
+    className,
+    rootClassName,
+    listing,
+    onSubmit,
+    onChange,
+    submitButtonText,
+    panelUpdated,
+    updateInProgress,
+    errors,
+  } = props;
+
+  const classes = classNames(rootClassName || css.root, className);
+  const currentListing = ensureOwnListing(listing);
+  const { publicData } = currentListing.attributes;
+
+  const panelTitle = currentListing.id ? (
+    <FormattedMessage
+      id="EditListingCapacityPanel.title"
+      values={{ listingTitle: <ListingLink listing={listing} /> }}
+    />
+  ) : (
+    <FormattedMessage id="EditListingCapacityPanel.createListingTitle" />
+  );
+  const capacityOptions = findOptionsForSelectFilter(
+    'amenities',
+    config.custom.filters
+  );
+
+  return (
+    <div className={classes}>
+      <h1 className={css.title}>{panelTitle}</h1>
+      <EditListingCapacityForm
+        className={css.form}
+        initialValues={{ capacity: publicData.capacity }}
+        onSubmit={values => {
+          const { capacity } = values;
+          const updateValues = {
+            publicData: {
+              capacity,
+            },
+          };
+          onSubmit(updateValues);
+        }}
+        onChange={onChange}
+        saveActionMsg={submitButtonText}
+        updated={panelUpdated}
+        updateError={errors.updateListingError}
+        updateInProgress={updateInProgress}
+        capacityOptions={capacityOptions}
+      />
+    </div>
+  );
+};
+
+const { func, object, string, bool } = PropTypes;
+
+EditListingCapacityPanel.defaultProps = {
+  className: null,
+  rootClassName: null,
+  listing: null,
+};
+
+EditListingCapacityPanel.propTypes = {
+  className: string,
+  rootClassName: string,
+
+  // We cannot use propTypes.listing since the listing might be a draft.
+  listing: object,
+
+  onSubmit: func.isRequired,
+  onChange: func.isRequired,
+  submitButtonText: string.isRequired,
+  panelUpdated: bool.isRequired,
+  updateInProgress: bool.isRequired,
+  errors: object.isRequired,
+};
+
+export default EditListingCapacityPanel;
+```
+
+</extrainfo>
+
 In the panel component, we check for an initial capacity value from the
 `publicData` property of the listing. In the submit handler, the new
 capacity value is stored in the same property. The updated listing
 object is eventually passed to the `updateListingDraft` and
-`requestUpdateListing` functions in the `EditListingDetails.duck.js`
-file where the data updates are handled. Respectively
-`EditListingCapacityPanel` needs to be exported from
-`src/components/index.js` for easier access from other files.
+`requestUpdateListing` functions in the _EditListingPage.duck.js_ file
+where the data updates are handled. In FTW-daily and FTW-hourly
+templates, **EditListingCapacityPanel** needs to be exported from
+_src/components/index.js_ for easier access from other files.
 
 Now that we have the panel and the form all ready we can add the panel
-to the `EditListingWizardTab` component. This is done by importing
-`EditListingCapacityPanel` in the `EditListingWizardTab.js`:
+to the **EditListingWizardTab** component. This is done by importing
+**EditListingCapacityPanel** in the **_EditListingWizardTab.js_**:
 
-```js
+```diff
 import {
   EditListingAvailabilityPanel,
-  EditListingCapacityPanel,
++  EditListingCapacityPanel,
   EditListingDescriptionPanel,
   EditListingFeaturesPanel,
   EditListingLocationPanel,
@@ -514,6 +695,19 @@ import {
   EditListingPricingPanel,
 } from '../../components';
 ```
+
+<extrainfo title="FTW-product would import the panels a bit differently">
+
+```diff
+// Import modules from this directory
++ import EditListingCapacityPanel from './EditListingCapacityPanel/EditListingCapacityPanel';
+import EditListingDetailsPanel from './EditListingDetailsPanel/EditListingDetailsPanel';
+import EditListingDeliveryPanel from './EditListingDeliveryPanel/EditListingDeliveryPanel';
+import EditListingPhotosPanel from './EditListingPhotosPanel/EditListingPhotosPanel';
+import EditListingPricingPanel from './EditListingPricingPanel/EditListingPricingPanel';
+```
+
+</extrainfo>
 
 and adding a new block to the `switch` structure that handles rendering
 the correct panel:
@@ -552,13 +746,13 @@ the capacity information we want to show the added attribute in the
 listing page for potential customers.
 
 To show the capacity attribute in the listing page, let's create a
-specific component for it and place it in the `ListingPage` container.
-Desired outcome could also be achieved just by editing the `ListingPage`
-but extracting the capacity UI parts into a separate component will
-simplify the `ListingPage` and make possible upstream updates from the
-Flex web template repo easier as there's less chances for merge
-conflicts. So, let's create a `SectionCapacity` component in the
-`src/containers/ListingPage/` directory:
+specific component for it and place it in the **ListingPage** container.
+Desired outcome could also be achieved just by editing the
+**ListingPage** but extracting the capacity UI parts into a separate
+component will simplify the **ListingPage** and make possible upstream
+updates from the Flex web template repo easier as there's less chances
+for merge conflicts. So, let's create a **SectionCapacity** component in
+the _src/containers/ListingPage/_ directory:
 
 ```shell
 └── src
@@ -605,8 +799,8 @@ export default SectionCapacity;
 ```
 
 Remember to add corresponding css definitions to
-`ListingPage.module.css` to get the styling right. Import the component
-into `ListingPage` and place it inside the
+_ListingPage.module.css_ to get the styling right. Import the component
+into **ListingPage** and place it inside the
 `<div className={css.mainContent}>` element:
 
 ```js
@@ -639,9 +833,9 @@ And voilà, we have listing capacity presented in the listing page!
 <extrainfo title="Where did the filterConfig come from?">
 
 In the snippet above, the filterConfig (containing capacity options too)
-are passed to the `ListingPage` as a property, with the default property
-value pulling the options from the custom config
-(`marketplace-custom-config.js`). This way the listing page test can
+are passed to the **ListingPage** as a property, with the default
+property value pulling the options from the custom config
+(_marketplace-custom-config.js_). This way the listing page test can
 define it's own filter configuration that are in line with test data
 used in the test and custom config changes will not affect test results.
 

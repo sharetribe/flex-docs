@@ -37,11 +37,14 @@ control over it.
 
 [Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
 (FTW) are web templates that implement a full-feature marketplace
-experiences powered by Flex. You can choose between
-[FTW-daily](https://github.com/sharetribe/ftw-daily), a rental
-marketplace with daily bookings or
-[FTW-hourly](https://github.com/sharetribe/ftw-hourly), a service
-marketplace with time-based bookings.
+experiences powered by Flex. You can choose between three templates:
+
+- [FTW-daily](https://github.com/sharetribe/ftw-daily): a rental
+  marketplace with daily bookings
+- [FTW-hourly](https://github.com/sharetribe/ftw-hourly): a service
+  marketplace with time-based bookings
+- [FTW-product](https://github.com/sharetribe/ftw-product): a product
+  marketplace with stock management
 
 With a Flex Template for Web, you can get started with your marketplace
 UI straight away: just download the latest FTW version and start

@@ -175,13 +175,21 @@ to the translation files:
   [these filters are not in use](/cookbook-search/change-search-filters-in-ftw/#adding-a-new-search-filter)
   since every marketplace has its own extended data and search filters
   for them.
-- [Merchant Category Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/PayoutDetailsForm/merchantCategoryCodesUS.js).
-  Stripe requires this from US providers.
 - [Country Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/countryCodes.js).
   Stripe API requires country as
   [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
   codes. These are used when billing address is asked in
   `StripePaymenForm` on `CheckoutPage`.
+
+<extrainfo title="FTW-product has moved the location of some components">
+
+```shell
+└── src
+    └── config
+        └── marketplace-custom-config.js
+```
+
+</extrainfo>
 
 ## Changing the language
 

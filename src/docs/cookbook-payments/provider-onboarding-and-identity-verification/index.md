@@ -43,7 +43,7 @@ to provide `name`, `color`, and `icon` for your marketplace.
 ![Stripe dashboard](stripeDashboard-updated.png)
 
 **Following steps are already implemented in FTW-daily v4.0.0 and
-FTW-hourly v5.0.0 or later**
+FTW-hourly v5.0.0 or later - and in FTW-product**
 
 In FTW there are new components
 [StripePayoutPage](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/StripePayoutPage),

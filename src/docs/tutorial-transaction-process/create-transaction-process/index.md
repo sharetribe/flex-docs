@@ -251,6 +251,19 @@ the version of the process that was in use at that time. Therefore, you
 might need to update your client app, so that it supports several
 different process versions.
 
+<extrainfo title="FTW-product has different transaction process, configs, and dir structure.">
+
+FTW-product's config.js has been moved into _src/config/config.js_ and
+some of the process related configs have been changed. E.g.
+bookingProcessAlias is renamed as _transactionProcessAlias_ and
+bookingUnitType is renamed as _lineItemUnitType_.
+
+FTW-product has a different transaction process graph compared to
+FTW-daily. This means that rest of this tutorial is not really
+applicable on top of FTW-product.
+
+</extrainfo>
+
 ### Update config.js
 
 ```shell

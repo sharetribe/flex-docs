@@ -76,6 +76,16 @@ _routeConfiguration.js_:
     └── routeConfiguration.js
 ```
 
+<extrainfo title="FTW-product has routeConfiguration.js file in a different location">
+
+```shell
+└── src
+    └── routing
+        └── routeConfiguration.js
+```
+
+</extrainfo>
+
 First we need to import _FAQPage_:
 
 ```js
@@ -153,7 +163,6 @@ Let's add some more content to the FAQPage:
 
 ```jsx
 import React from 'react';
-import { StaticPage, TopbarContainer } from '../../containers';
 import {
   LayoutSingleColumn,
   LayoutWrapperTopbar,
@@ -161,6 +170,9 @@ import {
   LayoutWrapperFooter,
   Footer,
 } from '../../components';
+
+import StaticPage from '../../containers/StaticPage/StaticPage';
+import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 
 import css from './FAQPage.module.css';
 

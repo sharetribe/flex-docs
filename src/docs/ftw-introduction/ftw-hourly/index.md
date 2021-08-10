@@ -22,9 +22,9 @@ which is a unit-based process and has value `time` in
 
 > **Note:** `BookingDatesForm` and `EditListingAvailabilityForm`
 > components have been removed from the template as they are heavily
-> related to the day-based process. If you have started with FTW and you
-> are planning to move to FTW-time, you should check if you have done
-> any customization to these components.
+> related to the day-based process. If you have started with FTW-daily
+> and you are planning to move to FTW-hourly, you should check if you
+> have done any customization to these components.
 
 ## Handling time zones
 

@@ -40,13 +40,15 @@ naturally don't yet have any users, listings, or transactions.
 
 The first step after logging in to Console is to set up a Flex Template
 for Web (FTW). FTW is a fully functional example of a marketplace
-website built with Flex. Currently we have two template options:
+website built with Flex. Currently we have three template options:
 
 - [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
   fictional marketplace for renting home saunas from sauna owners.
 - [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime - a
   fictional marketplace for booking yoga classes from various yoga
   teachers.
+- [FTW-product](https://github.com/sharetribe/ftw-product)
+  "Sneakertime" - a product marketplace with stock management
 
 Setting up FTW should take no more than 5 minutes. The process is
 technical but doable even without development experience.

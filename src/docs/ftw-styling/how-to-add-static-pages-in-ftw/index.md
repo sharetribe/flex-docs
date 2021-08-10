@@ -14,18 +14,18 @@ need for data fetches, you can create a static page.
 
 ## 1. Create a new folder
 
-Create a new folder under `src/containers/` with the name of your static
-page. E.g. "about" page should be named as `AboutPage`.
+Create a new folder under _src/containers/_ with the name of your static
+page. E.g. "about" page should be named as **AboutPage**.
 
 ## 2. Create a JavaScript file
 
 Create a new JavaScript file using the folder name. The path should look
-like `src/containers/AboutPage/AboutPage.js`.
+like _src/containers/AboutPage/AboutPage.js_.
 
 ## 3. Create a CSS file
 
 Create a new CSS file using the folder name. The path should look like
-`src/containers/AboutPage/AboutPage.module.css`.
+_src/containers/AboutPage/AboutPage.module.css_.
 
 ## 4. Create the component
 
@@ -34,7 +34,6 @@ through this line-by-line below.)
 
 ```jsx
 import React from 'react';
-import { StaticPage, TopbarContainer } from '../../containers';
 import {
   LayoutSingleColumn,
   LayoutWrapperTopbar,
@@ -44,6 +43,9 @@ import {
   NamedLink,
   ExternalLink,
 } from '../../components';
+
+import StaticPage from '../../containers/StaticPage/StaticPage';
+import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 
 import css from './AboutPage.module.css';
 import image from './path/to/image.png';
@@ -94,31 +96,22 @@ component which is done in the first line.
 import React from 'react';
 ```
 
-In the second line we are importing two containers:
+In the second line we import some components:
 
-- `StaticPage`: helps in creating static pages
-- `TopbarContainer`: creates our Topbar component and fetches the data
-  it needs.
-
-```jsx
-import { StaticPage, TopbarContainer } from '../../containers';
-```
-
-After that we need to import some components:
-
-- `LayoutSingleColumn` and wrappers that it needs to position content
-- `Footer` component (to be added inside LayoutWrapperFooter)
-- `NamedLink` makes it easier to point to different pages inside the
+- **LayoutSingleColumn** and wrappers that it needs to position content
+- **Footer** component (to be added inside LayoutWrapperFooter)
+- **NamedLink** makes it easier to point to different pages inside the
   application
-- `ExternalLink` can be used to link outside the application. It creates
-  a normal `<a>`link with extra attributes
+- **ExternalLink** can be used to link outside the application. It
+  creates a normal `<a>`link with extra attributes
   `target="_blank" rel="noopener noreferrer"` that add some security to
   these outbound links.
 
-`LayoutSingleColumn` (and other layouts like LayoutSideNavigation) need
-to understand what the content is about. Therefore, different parts of
-the page need to be wrapped with specific components - in this case:
-`LayoutWrapperTopbar`, `LayoutWrapperMain`, and `LayoutWrapperFooter`.
+**LayoutSingleColumn** (and other layouts like LayoutSideNavigation)
+need to understand what the content is about. Therefore, different parts
+of the page need to be wrapped with specific components - in this case:
+**LayoutWrapperTopbar**, **LayoutWrapperMain**, and
+**LayoutWrapperFooter**.
 
 ```jsx
 import {
@@ -130,6 +123,17 @@ import {
   NamedLink,
   ExternalLink,
 } from '../../components';
+```
+
+After that we are importing two containers:
+
+- **StaticPage**: helps in creating static pages
+- **TopbarContainer**: creates our Topbar component and fetches the data
+  it needs.
+
+```jsx
+import StaticPage from '../../containers/StaticPage/StaticPage';
+import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 ```
 
 Then we need to import styles and possible other files from current
@@ -178,9 +182,10 @@ attributes:
   JSON-LD format. Check [schema.org](https://schema.org/docs/full.html)
   for more information.
 
-Inside `StaticPage` component we define layout (`LayoutSingleColumn`)
-and add other components inside semantic content wrappers so that the
-layout is able to understand where to render those blocks.
+Inside **StaticPage** component we define layout
+(**LayoutSingleColumn**) and add other components inside semantic
+content wrappers so that the layout is able to understand where to
+render those blocks.
 
 ```jsx
 <LayoutSingleColumn>
@@ -209,7 +214,7 @@ And as a final step we need to export the component.
 
 ## 5. Add some styles to the CSS file
 
-Here's an example what your AboutPage.module.css file could look like:
+Here's an example what your _AboutPage.module.css_ file could look like:
 
 ```css
 /**
@@ -231,7 +236,8 @@ Here's an example what your AboutPage.module.css file could look like:
 ## 6. Add a route to the page
 
 As a last step you need to add the newly created static page to the
-routing. This can be done in `src/routeConfiguration.js`.
+routing. This can be done in _src/routeConfiguration.js_. (In
+FTW-product the file is moved to _src/routing/routeConfiguration.js_.)
 
 Inside routeConfiguration function you should add a URL path, a page
 name (it should not conflicting with other pages), and the component

@@ -55,11 +55,22 @@ will not process the payment and the booking fails.
 ## 3. Check the currency-config.js file
 
 See the
-[currency-config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/currency-config.js)
+[currency-config.js](https://github.com/sharetribe/ftw-daily/blob/master/src/currency-config.js)
 file and make sure the currency is added to the `subUnitDivisors` array.
 Most common currencies are already added to the file. If the currency is
 [zero-decimal currency](https://stripe.com/docs/currencies#zero-decimal)
 (e.g. JPY) use value 1. Otherwise, the value is usually 100.
+
+<extrainfo title="FTW-product has moved config files into a different location">
+
+```shell
+└── src
+    └── config
+        ├── config.js
+        └── currency-config.js
+```
+
+</extrainfo>
 
 ### Why subunits?
 
@@ -72,7 +83,7 @@ than floats to avoid rounding errors.
 Formatting money is done by using
 [React Intl](https://github.com/yahoo/react-intl). Component
 `FieldCurrencyInput` converts user input to a formatted message and adds
-the Money object to price attribute of a listing. `currencyConfig.js`
+the Money object to price attribute of a listing. `currency-config.js`
 file affects how prices are formatted by determining how the subunits
 are converted to the actual unit (e.g. from cents to USD).
 
@@ -80,10 +91,13 @@ are converted to the actual unit (e.g. from cents to USD).
 
 If you need to calculate the price on client app side use
 [Decimal.js](https://github.com/MikeMcl/decimal.js/) library. Currently,
-there is one place in FTW where prices are calculated:
-`BookingDatesForm`. See the file
-[EstimatedBreakdownMaybe.js](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/BookingDatesForm/EstimatedBreakdownMaybe.js)
-to see how the Decimal.js library is used.
+there are two places in FTW where prices are calculated:
+
+- [server/api-util/lineItemHelpers.js](https://github.com/sharetribe/ftw-daily/blob/master/server/api-util/lineItemHelpers.js)
+- [EstimatedBreakdownMaybe.js](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/BookingDatesForm/EstimatedBreakdownMaybe.js)
+  (which is refactored as
+  [EstimatedCustomerBreakdownMaybe.js](https://github.com/sharetribe/flex-template-web/blob/master/src/components/OrderPanel/EstimatedCustomerBreakdownMaybe.js)
+  on FTW-product)
 
 ## Your Saunatime demo listings
 
