@@ -167,5 +167,5 @@ In that case, you can continue by reading about
 If you have more specific questions on whether Flex can support certain
 features or workflows before getting started,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com) or
-[book a call with one of Sharetribe's founders](https://calendly.com/welcome-to-flex/first-call)
+[book a call with one of Customer Success Experts](https://calendly.com/welcome-to-flex/welcome-call?utm_campaign=ifrfy&utm_source=flex-docs)
 to discuss your concept.
