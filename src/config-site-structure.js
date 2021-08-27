@@ -42,6 +42,7 @@ const sortingArrayTutorialTransactionProcess = [
 ];
 
 const sortingArrayBackground = [
+  'hello-world',
   'introducing-flex',
   'concepts',
   'development-skills',
