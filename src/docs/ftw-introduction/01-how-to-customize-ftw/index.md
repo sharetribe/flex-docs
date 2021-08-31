@@ -35,11 +35,10 @@ couple of articles first:
 
 - [Introducing Flex](/introduction/introducing-flex/)
 - [What development skills are needed?](/introduction/development-skills/)
-- [Getting started](/tutorial/introduction/)
+- [Getting started](/introduction/getting-started-with-ftw-daily/)
 
-In the last link (Getting started), you can see a rough guide how to
-setup a Github account:
-[Prerequisites for tutorial](http://localhost:8000/tutorial/introduction/#prerequisites).
+The [Tutorial introduction](/tutorial/introduction/#prerequisites) will
+also walk you through creating a Github repository.
 
 ### Choose a template
 
