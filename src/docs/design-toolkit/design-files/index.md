@@ -9,7 +9,7 @@ published: true
 
 ![FTW in Sketch](./FTW-in-Sketch.png)
 
-Saunatime Flex Template for Web (WTF) designs are available as Sketch
+Saunatime Flex Template for Web (FTW) designs are available as Sketch
 files. The design files include complete designs for FTW desktop and
 mobile, as well as wireframes for FTW desktop. You can use these files
 as the basis for your own designs. This approach can dramatically speed
