@@ -13127,9 +13127,9 @@ tar-stream@^2.0.0:
     readable-stream "^3.1.1"
 
 tar@^5.0.5:
-  version "5.0.8"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-5.0.8.tgz#8cbddead599d7335aa2be551bfb18521dea488a2"
-  integrity sha512-v71KDHvYI+EJ8+o6W44fzuiTDcfHrlVjtvn4ITF1ClH5GbU6H9InNX1XNG07YwZSkloNQQxAJabkjEdHyqjn1g==
+  version "5.0.11"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-5.0.11.tgz#f6e972e26960f71387c88e4313b202889be09292"
+  integrity sha512-E6q48d5y4XSCD+Xmwc0yc8lXuyDK38E0FB8N4S/drQRtXOMUhfhDxbB0xr2KKDhNfO51CFmoa6Oz00nAkWsjnA==
   dependencies:
     chownr "^1.1.4"
     fs-minipass "^2.1.0"
