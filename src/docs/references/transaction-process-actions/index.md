@@ -1,7 +1,7 @@
 ---
 title: Transaction process actions
 slug: transaction-process-actions
-updated: 2019-10-02
+updated: 2021-09-16
 category: references
 ingress:
   This reference article lists all the available actions and their
@@ -799,6 +799,121 @@ Decline a pending or proposed booking.
 
 **Configuration options**: -
 
+### Stock reservations
+
+#### :action/create-pending-stock-reservation
+
+Creates a new stock reservation in `pending` state with given stock, as
+long as the listing's current stock permits the reservation to be
+created.
+
+A stock reservation in `pending` state decreases the listing's stock - a
+stock adjustment is created having the given `stockReservationQuantity`
+(with a negative sign).
+
+There can be at most one stock reservation per transaction.
+
+**Preconditions**:
+
+- The transaction must not already have a stock reservation.
+- The listing must have sufficient stock available.
+
+**Parameters**:
+
+- `stockReservationQuantity`: positive integer, mandatory.
+
+  The quantity of stock that is reserved from a listing's stock.
+
+**Configuration options**: -
+
+#### :action/create-proposed-stock-reservation
+
+Creates a new stock reservation in `proposed` state with given stock, as
+long as the listing's stock permits the reservation to be created.
+
+A stock reservation in `proposed` state does not affect the listing's
+available stock, i.e. the listing's stock is not decreased by the
+proposed reservation quantity until the reservation is accepted using
+the `:action/accept-stock-reservation` action.
+
+There can be at most one stock reservation per transaction.
+
+**Preconditions**:
+
+- The transaction must not already have a stock reservation.
+- The listing must have sufficient stock available.
+
+**Parameters**:
+
+- `stockReservationQuantity`: positive integer, mandatory.
+
+  The quantity of stock for the reservation.
+
+**Configuration options**: -
+
+#### :action/accept-stock-reservation
+
+Mark stock reservation as accepted.
+
+A stock reservation in `accepted` state decreases the listing's stock.
+That means that if the stock reservation was previously in a `proposed`
+state, a new stock adjustment is created with the quantity of the stock
+reservation (with a negative sign).
+
+**Preconditions**:
+
+- The transaction must have a stock reservation
+- The stock reservation must be in either `proposed` or `pending` state
+- If the stock reservation is in `proposed` state, the listing must have
+  sufficient stock so that the stock reservation can be accepted.
+
+**Parameters**:
+
+**Configuration options**: -
+
+#### :action/decline-stock-reservation
+
+Decline a pending or proposed stock reservation.
+
+If the stock reservation was previously in a `pending` state, a new
+stock adjustment is created for the listing, reversing the adjustment
+that resulted from the stock reservation being created. As a result, the
+stock reservation will have no net impact on the listing's available
+stock.
+
+Note: It is recommended to place this action last in the transition's
+action list whenever possible.
+
+**Preconditions**:
+
+- The transaction must have a stock reservation
+- The stock reservation must be in either `proposed` or `pending` state
+
+**Parameters**:
+
+**Configuration options**: -
+
+#### :action/cancel-stock-reservation
+
+Cancel an accepted stock reservation.
+
+A new stock adjustment is created for the listing, reversing the
+adjustment that resulted from the stock reservation being created or
+accepted. As a result, the stock reservation will have no net impact on
+the listing's available stock.
+
+Note: It is recommended to place this action last in the transition's
+action list whenever possible.
+
+**Preconditions**:
+
+- The transaction must have a stock reservation
+- The stock reservation must be in `accepted` state
+
+**Parameters**:
+
+**Configuration options**: -
+
 ### Reviews
 
 #### :action/post-review-by-customer
@@ -1001,7 +1116,7 @@ handle payment and confirm the PaymentIntent client-side. The
   attach the payment method to a Customer or create a new Customer if
   one didn't exist.
 
-**Configurations:**
+**Configuration options:**
 
 - `:use-customer-default-payment-method?`, boolean, optional. If set to
   `true`, the payment intent is created using the Customer's default
@@ -1085,7 +1200,7 @@ parameters. If implementations wish to strictly validate which payment
 methods are allowed to fulfill a payment, use a privileged transition
 and validate the set of allowed payment methods in your server.
 
-**Configurations:** -
+**Configuration options:** -
 
 #### :action/stripe-confirm-payment-intent
 
@@ -1118,7 +1233,9 @@ before the payment is made.
   `:action/stripe-create-payment-intent` or
   `:action/stripe-create-payment-intent-push`.
 
-**Parameters:** - **Configurations:** -
+**Parameters:** -
+
+**Configuration options:** -
 
 #### :action/stripe-capture-payment-intent
 
@@ -1134,7 +1251,9 @@ action will have no effect.
   `:action/stripe-confirm-payment-intent`
 - Provider must have connected Stripe account
 
-**Parameters:** - **Configurations:** -
+**Parameters:** -
+
+**Configuration options:** -
 
 #### :action/stripe-create-payout
 

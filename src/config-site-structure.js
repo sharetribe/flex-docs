@@ -84,6 +84,7 @@ const sortingArrayReferences = [
   'extended-data',
   'email-templates',
   'availability',
+  'stock',
   'transaction-process-format',
   'transaction-process-actions',
   'transaction-process-time-expressions',

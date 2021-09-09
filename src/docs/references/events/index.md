@@ -388,6 +388,12 @@ API resource types are:
 | review/created                | [review](https://www.sharetribe.com/api-reference/integration.html#reviews)                                | A new review was posted.                                                                                                                                                                  |
 | review/updated                | [review](https://www.sharetribe.com/api-reference/integration.html#reviews)                                | An existing review was updated.                                                                                                                                                           |
 | review/deleted                | [review](https://www.sharetribe.com/api-reference/integration.html#reviews)                                | A review was deleted.                                                                                                                                                                     |
+| stockAdjustment/created       | [stockAdjustment](https://www.sharetribe.com/api-reference/integration.html#stock-adjustments)             | A new stock adjustment was created.                                                                                                                                                       |
+| stockAdjustment/updated       | [stockAdjustment](https://www.sharetribe.com/api-reference/integration.html#stock-adjustments)             | An existing stock adjustment was updated.                                                                                                                                                 |
+| stockAdjustment/deleted       | [stockAdjustment](https://www.sharetribe.com/api-reference/integration.html#stock-adjustments)             | A stock adjustment was deleted.                                                                                                                                                           |
+| stockReservation/created      | [stockReservation](https://www.sharetribe.com/api-reference/integration.html#stock-reservations)           | A new stock reservation was created.                                                                                                                                                      |
+| stockReservation/updated      | [stockReservation](https://www.sharetribe.com/api-reference/integration.html#stock-reservations)           | An existing stock reservation was updated.                                                                                                                                                |
+| stockReservation/deleted      | [stockReservation](https://www.sharetribe.com/api-reference/integration.html#stock-reservations)           | A stock reservation was deleted.                                                                                                                                                          |
 
 The event type follows the format `RESOURCE_TYPE/EVENT_SUBTYPE`.
 
@@ -401,14 +407,15 @@ Console. Typically this can happen when the event was caused internally
 by an administrative action of the Flex team, in which case the `source`
 of the event would be `source/admin`.
 
-## Transaction process actions and booking and review events
+## Transaction process actions and booking, stock reservation and review events
 
-In Flex, bookings and reviews are primarily managed through the
-transaction process using the
-[booking-](/references/transaction-process-actions/#bookings) and
-[review-related](/references/transaction-process-actions/#reviews)
-actions. Flex emits events separately when each booking or review action
-takes effect, even if multiple actions occur within the same transaction
+In Flex, bookings, stock reservations and reviews are primarily managed
+through the transaction process using the
+[booking-](/references/transaction-process-actions/#bookings),
+[stock reservations-](/references/transaction-process-actions/#stock-reservations)
+and [review-related](/references/transaction-process-actions/#reviews)
+actions. Flex emits events separately when each of these actions takes
+effect, even if multiple actions occur within the same transaction
 transition. For instance, if a transition includes both
 `:action/create-pending-booking` and `:action/accept-booking`, Flex
 generates at least three events as a result. First, there is a

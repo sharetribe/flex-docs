@@ -63,6 +63,7 @@ Here's a list of information you can store about a listing.
 - Photos (unlimited amount)
 - [Pricing](#flexible-pricing)
 - [Availability](#availability-management)
+- [Stock](#stock-management)
 - **Public data.** Data to display publicly about the listing (category,
   custom data fields, etc).
 - **Private data.** Data collected privately about a listing (can be
@@ -172,6 +173,17 @@ exceptions. When seats are used, a customer can only book a certain slot
 if that slot has enough seats available.
 
 [Read more about listing availability management](/references/availability/)
+
+## Stock management
+
+Each listing can have a quantity of available units associated with it.
+If you're building a product marketplace, the stock quantity is
+typically the number of items available for purchase for each listing.
+When stock management is incorporated in a transaction process, a
+purchase for certain quantity of units can happen only if the listing's
+available stock is sufficient.
+
+[Read more about listing stock management](/references/stock/)
 
 ## Search engine
 

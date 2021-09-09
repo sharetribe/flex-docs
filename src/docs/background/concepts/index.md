@@ -290,6 +290,21 @@ description and a numeric rating between 0-5.
 Determines what a user is able to do on a marketplace. For example,
 “Admin” and “Provider” are roles on a marketplace.
 
+### Stock
+
+The quantity of available units for a certain listing.
+
+### Stock adjustment
+
+A record of change in the quantity of stock for a given listing. For
+example, a positive stock adjustment represents an increase in stock
+quantity, while a negative stock adjustment represents a decrease.
+
+### Stock reservation
+
+A reservation of some quantity of stock. The reservation is typically
+created as part of a [transaction](#transaction).
+
 ### Time slot
 
 A day or a time range when a listing is available for booking (taking
