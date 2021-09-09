@@ -35,11 +35,10 @@ couple of articles first:
 
 - [Introducing Flex](/introduction/introducing-flex/)
 - [What development skills are needed?](/introduction/development-skills/)
-- [Getting started](/tutorial/introduction/)
+- [Getting started](/introduction/getting-started-with-ftw-daily/)
 
-In the last link (Getting started), you can see a rough guide how to
-setup a Github account:
-[Prerequisites for tutorial](http://localhost:8000/tutorial/introduction/#prerequisites).
+The [Tutorial introduction](/tutorial/introduction/#prerequisites) will
+also walk you through creating a GitHub repository.
 
 ### Choose a template
 
@@ -61,7 +60,7 @@ choose from two templates:
 > for more information.
 
 You should follow the [tutorial](/tutorial/introduction/) to set up
-local development environment and connect it to Github.
+local development environment and connect it to GitHub.
 
 ### Pull in the latest upstream changes
 
@@ -93,7 +92,7 @@ Run the following commands in a feature branch
    git merge upstream/master
    ```
 
-   > FTW-daily and FTW-hourly still follow old Github convention to name
+   > FTW-daily and FTW-hourly still follow old GitHub convention to name
    > the default branch as **master** instead of **main**.
 
 1. Fix possible merge conflicts, commit, and push/deploy.
