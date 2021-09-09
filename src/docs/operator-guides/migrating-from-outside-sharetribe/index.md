@@ -7,10 +7,10 @@ ingress: How to import data from outside Sharetribe ecosystem
 published: true
 ---
 
-Data from an existing marketplace can be migrated to Sharetribe Flex. If your
-marketplace is running in Sharetribe Go, there is a ready migration path
-that will be handled by us. We will handle the migration in this case
-and you can find the outline for this process
+Data from an existing marketplace can be migrated to Sharetribe Flex. If
+your marketplace is running in Sharetribe Go, there is a ready migration
+path that will be handled by us. We will handle the migration in this
+case and you can find the outline for this process
 [here](https://www.sharetribe.com/docs/operator-guides/go-to-flex-migration/).
 
 If you are running a marketplace outside the Sharetribe ecosystem, and
@@ -39,9 +39,9 @@ following keys:
   and content.
 
 The id part of row 2-tuple is specified as a tuple of 1 to 3 elements.
-The first element is always an id attribute and identifies the row type. The
-second element can be an alias or an import id. A 3 element version has
-id attr, import id and an alias.
+The first element is always an id attribute and identifies the row type.
+The second element can be an alias or an import id. A 3 element version
+has id attr, import id and an alias.
 
 Import ids can be given to rows and they should be unique for the
 marketplace and they are of type UUID. Aliases can be used to reference
@@ -99,8 +99,8 @@ This means that importing extended data is also supported if it's listed
 under the resource attributes.
 
 Inside the user resource, the email resource differs a bit from the
-documentation. The email resource is referenced under `:primaryEmail` key
-like this:
+documentation. The email resource is referenced under `:primaryEmail`
+key like this:
 
 ```
 :primaryEmail {:im.email/address "foo@sharetribe.com"
