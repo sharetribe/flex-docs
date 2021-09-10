@@ -14,7 +14,7 @@ in the process of building your marketplace. This index contains many
 links to information you will need: from resources with Flex information
 and explanation of how different aspects of the Flex environment work,
 to resources about building a marketplace business in general from our
-[Marketplace Academy](https://www.sharetribe.com/academy).
+[Marketplace Academy](https://www.sharetribe.com/academy/).
 
 Feel free to dive deep into all the Flex documentation as well as the
 Marketplace Academy if you need to. Remember that the Sharetribe team is

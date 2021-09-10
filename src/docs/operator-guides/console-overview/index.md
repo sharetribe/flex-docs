@@ -81,7 +81,7 @@ information. You can also export all this information into a CSV file to
 use as you see fit. Perhaps most important of all, you can add and
 modify the extended data of your marketplace elements in the Manage
 section. You can read more about extended data
-[in this article](https://www.sharetribe.com/docs/operator-guides/extended-data-introduction).
+[in this article](https://www.sharetribe.com/docs/operator-guides/extended-data-introduction/).
 
 ### Build
 
@@ -102,7 +102,7 @@ toggle between the different processes in the left-side selection and
 see how many transactions have used each process. You can also inspect
 the components of the transaction processes. You can read more about
 transaction processes in Flex in
-[this article](https://www.sharetribe.com/docs/operator-guides/transaction-process).
+[this article](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
 
 **Payments** has information about your Stripe configuration. Your
 Stripe secret key is added here. The public key is configured within the
