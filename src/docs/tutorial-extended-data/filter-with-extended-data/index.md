@@ -130,5 +130,5 @@ After this tutorial, you could explore other articles in here. At least
 the following articles might interest you:
 
 - [Edit email templates](/flex-cli/edit-email-templates-with-flex-cli/)
-- [Customize pricing](/background/custom-pricing/)
+- [Customize pricing](/background/pricing/)
 - [Customize the transaction process](/background/transaction-process/)

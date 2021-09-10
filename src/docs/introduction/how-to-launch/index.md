@@ -205,7 +205,7 @@ production item to subscribe.
 
 This is when you start paying the Flex minimum monthly fee (see more
 information about
-[Flex pricing](https://www.sharetribe.com/flex/#pricing)). The
+[Flex pricing](https://www.sharetribe.com/products/flex/#pricing)). The
 development phase is completely free. You only need to pay when you
 start inviting your real users to your marketplace.
 

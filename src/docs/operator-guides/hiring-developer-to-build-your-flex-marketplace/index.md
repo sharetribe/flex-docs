@@ -11,7 +11,7 @@ published: true
 
 Sharetribe Flex allows you to build a unique marketplace fast with
 custom development. Unless you have
-[these development skills](https://www.sharetribe.com/docs/background/development-skills/),
+[these development skills](https://www.sharetribe.com/docs/introduction/development-skills/),
 you need to hire someone who does. Though any developer will do, we
 recommend hiring a vetted developer from Sharetribe's official Flex
 Expert Network for great quality work.
@@ -127,5 +127,5 @@ budget for changes you're going to make during the first 12 months after
 launching, instead of spending your entire budget pre-launch.
 
 Check out our
-[practical guide to building an online marketplace](https://www.sharetribe.com/academy/guide)
+[practical guide to building an online marketplace](https://www.sharetribe.com/academy/guide/)
 for more strategies on how to build, launch, and scale your marketplace.

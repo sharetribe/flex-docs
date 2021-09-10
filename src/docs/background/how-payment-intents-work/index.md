@@ -34,7 +34,7 @@ things like
 
 PaymentIntents also allow a variety of payment methods to be used when
 making a payment in Flex. See the
-[overview of supported payment methods in Flex](/background/payment-methods-overview).
+[overview of supported payment methods in Flex](/background/payment-methods-overview/).
 
 This article will describe how PaymentIntents relate to Flex transaction
 processes and the general principles of implementing a checkout flow
@@ -52,9 +52,9 @@ steps:
 3. The transaction can proceed only after customer has authorized (if
    required) the payment. The PaymentIntent is confirmed, resulting in a
    Charge being preauthorized (in the case of
-   [card payments](/background/payment-methods-overview#card-payment-flow))
+   [card payments](/background/payment-methods-overview/#card-payment-flow))
    or fully captured (in the case of
-   [push payment methods](/background/payment-methods-overview#push-payment-flow)).
+   [push payment methods](/background/payment-methods-overview/#push-payment-flow)).
 4. Transaction flow continues as usual onwards.
 
 ### Example transaction process with card payments
@@ -78,7 +78,7 @@ information on the Step 2. can be found in this
 ![PaymentIntent process with card and push payments](push-payment-process.png)
 
 Since push payments
-[do not have a preauthorization stage](/background/payment-methods-overview#push-payment-flow),
+[do not have a preauthorization stage](/background/payment-methods-overview/#push-payment-flow),
 this process allows an instant-booking type of flow, where the booking
 does not need acceptance from the provider.
 
@@ -300,9 +300,9 @@ Template for Web,
 
 ## Further reading
 
-- [Payment methods overview](/background/payment-methods-overview)
+- [Payment methods overview](/background/payment-methods-overview/)
 
-* [Transaction process](/background/transaction-process)
+* [Transaction process](/background/transaction-process/)
 * [Action reference for Stripe integration](/references/transaction-process-actions/#stripe-integration)
 * [Editing transaction process](/flex-cli/edit-transaction-process-with-flex-cli/)
 * [Changing transaction process setup in FTW](/cookbook-transaction-process/change-transaction-process-in-ftw/)

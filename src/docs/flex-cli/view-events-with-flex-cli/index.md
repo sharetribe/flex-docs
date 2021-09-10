@@ -435,5 +435,5 @@ For more information about events, see the following resources:
   how events work and how they are defined.
 - [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
   about how to query events via the Integration API.
-- [Reacting to events](/cookbook-events/reacting-to-events) cookbook
+- [Reacting to events](/cookbook-events/reacting-to-events/) cookbook
   guide
