@@ -135,7 +135,7 @@ example, the provider can make an exception and also mark selected
 Fridays unavailable, or make certain weekends available for overnight
 bookings.
 
-### Banned User
+### Banned user
 
 Banning a user means removing the user and all of the user’s listings
 from a marketplace due to inappropriate behaviour. The email with which
@@ -147,7 +147,7 @@ banned status are shown).
 
 A reservation of a listing for a specific time.
 
-### Closed Listing
+### Closed listing
 
 A published listing can be closed by its author or the marketplace
 admin. Closed listings are not returned in search results or public
@@ -173,18 +173,18 @@ users are always (potential) customers – including the providers.
 We use the term “customer” instead of “buyer” because marketplace
 platforms can be used for much more than buying and selling products.
 
-### Delayed Payout
+### Delayed payout
 
 A payment that a customer has made but that hasn't been transferred to
 the provider yet.
 
-### Deleted Listing
+### Deleted listing
 
 Deleted listings are completely removed. They are only visible if they
 are linked to from a transaction. In that case, only the listing ID and
 the deleted status are shown, the listing’s information is not visible.
 
-### Deleted User
+### Deleted user
 
 Deleting a user means completely removing all of the user's personal
 data. This includes all of the public-facing data like profile and
@@ -273,7 +273,7 @@ Providers can post listings to the marketplace.
 We use the term “provider” instead of “seller” because marketplace
 platforms can be used for much more than buying and selling products.
 
-### Published Listing
+### Published listing
 
 A listing that all registered users on the marketplace can see in search
 results or public listing queries.
