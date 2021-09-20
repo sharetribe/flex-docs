@@ -40,7 +40,7 @@ You need to navigate to
 in your Stripe Dashboard. For the Connect onboarding to work, you need
 to provide `name`, `color`, and `icon` for your marketplace.
 
-![Stripe dashboard](stripeDashboard.png)
+![Stripe dashboard](stripeDashboard-updated.png)
 
 **Following steps are already implemented in FTW-daily v4.0.0 and
 FTW-hourly v5.0.0 or later**
@@ -120,7 +120,7 @@ and provide the return URLs for success and failure cases. After
 creating an account link the user will be redirecet to Connect
 onboarding.
 
-![Connect onboarding](connectOnboarding.png)
+![Connect onboarding](connectOnboarding-updated.png)
 
 If there are any requirements missing from the Stripe Account we will
 create a `custom_account_verification` link. Otherwise, we will create a
