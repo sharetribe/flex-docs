@@ -1,7 +1,7 @@
 ---
 title: What is the difference between Flex and Go Source Available?
 slug: what-is-the-difference-between-flex-and-go-source-available
-updated: 2019-11-05
+updated: 2021-09-21
 category: background
 ingress:
   This table illustrates the essential differences between Sharetribe
@@ -40,7 +40,7 @@ published: true
 | Renting products, vehicles, or spaces                |         ✓         |          ✓          |
 | Booking services                                     |         ✓         |          ✓          |
 | Selling tickets to events                            |         ✓         |          ✓          |
-| Selling physical products                            |         ✕         |          ✓          |
+| Selling physical products                            |         ✓         |          ✓          |
 | Free sharing of goods and services                   |         ✓         |          ✓          |
 | **Included SaaS services**                           |                   |                     |
 | Image CDN                                            |         ✓         |    Not included     |
