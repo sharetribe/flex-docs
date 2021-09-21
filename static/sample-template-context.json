@@ -71,7 +71,13 @@
         "minutes" : 0,
         "seconds" : 0,
         "milliseconds" : 0
-      }
+      },
+      "seats": 2,
+      "state": "accepted"
+    },
+    "stock-reservation": {
+      "state": "accepted",
+      "quantity": 2
     },
     "listing" : {
       "id" : "d892dfe6-9407-4400-9e81-8100d7a87b7f",
@@ -82,6 +88,9 @@
       "availability-plan" : {
         "type" : "availability-plan/time",
         "timezone" : "Europe/Helsinki"
+      },
+      "current-stock": {
+        "quantity": 10
       }
     },
     "delayed-transition" : {

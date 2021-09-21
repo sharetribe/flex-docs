@@ -148,13 +148,15 @@ which you can choose to include:
   `profile image` (url to the user's profile image) and `stripe account`
   (of the user).
 - `Show listing`: can include `marketplace`, `author` (owner of the
-  listing), `images` the ordered list of listing images, if any.
+  listing), `currentStock`, `images` the ordered list of listing images,
+  if any.
 - `Show transaction`: can include `marketplace`, `listing` (that the
   transaction is about), `provider` (of the listing), `customer` (who
   initiated the transaction), `booking` (created by the transaction, if
-  any), `reviews` (of the parties in the transaction), `messages`
-  (messages that the parties have sent to one another as part of the
-  transaction, if any)
+  any), `stockReservation`, (created by the transaction, if any),
+  `reviews`(of the parties in the transaction), `messages` (messages
+  that the parties have sent to one another as part of the transaction,
+  if any)
 
 All of the information can again be used in the rest of the Zap, for
 example to insert in an email, or a Tweet etc.

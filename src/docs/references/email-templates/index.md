@@ -376,7 +376,13 @@ Context for transaction emails:
       "start": "date",
       "end": "date",
       "displayStart": "date",
-      "displayEnd": "date"
+      "displayEnd": "date",
+      "seats": "integer",
+      "state": "string"
+    },
+    "stock-reservation": {
+      "quantity": "integer",
+      "state": "string"
     },
     "reviews": [
       {
@@ -411,7 +417,10 @@ Context for transaction emails:
       "availability-plan": {
         "type": "string", // either availability-plan/time or availability-plan/day
         "timezone": "string"
-      }
+      },
+      "current-stock": {
+        "quantity": "integer"
+      },
       "private-data": "extended-data",
       "public-data": "extended-data",
       "metadata": "extended-data"
