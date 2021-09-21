@@ -1,7 +1,7 @@
 ---
 title: Is Flex the right fit for you?
 slug: is-flex-right-for-you
-updated: 2019-03-01
+updated: 2021-09-21
 category: introduction
 ingress:
   The purpose of this article is to give you a general overview of
@@ -72,20 +72,19 @@ service marketplace.
 ## Marketplaces for selling physical or digital products
 
 You can use Flex for building a marketplace for selling physical
-products today, but it will probably take a bit longer for you to get
-your marketplace running, as Flex has less product marketplace specific
-functionality. For example, there are example templates for rentals and
-services, but no template for selling products yet. If you're building a
-marketplace for selling products, we recommend you to use
+products today, as Flex support listing stock management. However, even
+if there are example templates for rentals and services, there is no
+template for selling products yet. If you're building a marketplace for
+selling products, we recommend you to use
 [FTW-daily](https://github.com/sharetribe/ftw-daily) as a starting
 point.
 
-Features specific to marketplaces for selling physical products, like
-shopping cart, multiple shipping options, inventory management and
-product variations, can all be achieved with Flex, but you need to do
-some custom development to build these. Similarly, it's possible to
-build a marketplace that sells digital products, but you will need to do
-some custom devleopment to integrate a system for storing these files.
+Aside from stock, features specific to marketplaces for selling physical
+products, like shopping cart, multiple shipping options, and product
+variations, can all be achieved with Flex, but you need to do some
+custom development to build these. Similarly, it's possible to build a
+marketplace that sells digital products, but you will need to do some
+custom devleopment to integrate a system for storing these files.
 
 ## Regular marketplaces and reverse marketplaces
 
@@ -146,9 +145,9 @@ this yourself. If that's not the case, you need to hire a developer to
 do this work. In this case, the minimum budget for building your MVP
 (Minimum Viable Platform) with Flex is around \$5,000 (and depending on
 your exact requirements, the cost could be a lot more – for instance,
-for product or reverse marketplaces the minimum is probably closer to
-\$10,000). Typically, it takes 1–2 months from the day you start
-development to launch your MVP.
+for reverse marketplaces the minimum is probably closer to \$10,000).
+Typically, it takes 1–2 months from the day you start development to
+launch your MVP.
 
 If you're not ready to invest in hiring a developer, Flex is not the
 right solution for you. Instead, you could try out Sharetribe Go, which
