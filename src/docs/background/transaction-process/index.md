@@ -1,7 +1,7 @@
 ---
 title: Transaction process
 slug: transaction-process
-updated: 2019-10-04
+updated: 2021-09-21
 category: background
 ingress:
   This article introduces transaction processes and how they define
@@ -54,11 +54,15 @@ between a set of _states_ and a list of _notifications_.
 
 _Transitions_ define what happens at each step of the process as a list
 of _actions_ (e.g. create booking, calculate transaction price, create
-charge or payout, post a review or make a refund, etc), what parameters
+charge or payout, post a review or make a refund, etc). Each action
+within a transition may or may not have certain parameters that
 need to be provided for each action (e.g. what is the commission
-percentage of the platform), and who can perform the given transition
-(the customer, the provider, the operator or the platform itself in case
-of delayed transitions).
+percentage of the platform). Each action also has an actor i.e. the role who
+can perform the given transition - the customer, the provider, the operator,
+or the platform itself in case of delayed transitions. For the first three
+actors, the transition is triggered by their activity in Flex.
+Delayed transitions can be scheduled by [time expressions](/references/transaction-process-format/#time-expressions-and-delayed-transitions). However, only one
+delayed transition can be triggered from each state.
 
 _States_ define the next possible transitions.
 
