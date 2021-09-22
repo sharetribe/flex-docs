@@ -62,7 +62,7 @@
   "ArticleIndexPage.introduction.title": "Introduction to Flex",
   "ArticleIndexPage.introduction.description": "Get started in learning about Sharetribe Flex",
   "ArticleIndexPage.tutorial.title": "Tutorial",
-  "ArticleIndexPage.tutorial.description": "This tutorial is designed for people who prefer to learn by doing. We start customizing FTW-daily Git repository, which is a template app to build your own client app that can interact with Flex APIs.",
+  "ArticleIndexPage.tutorial.description": "We provide a series of step-by-step tutorials that cover the key features needed to begin customizing your Flex marketplace. You learn how to make changes to branding, extend the data model and customize the transaction process. These tutorials are designed for those who learn by doing.",
   "ArticleIndexPage.background.title": "All Background articles",
   "ArticleIndexPage.background.description": "Explanations and background information for important concepts and design decisions behind the platform.",
   "ArticleIndexPage.cookbook.title": "All Cookbook articles",
