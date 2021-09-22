@@ -1,7 +1,7 @@
 ---
 title: Automatic off-session payments in transaction process
 slug: off-session-payments-in-transaction-process
-updated: 2021-09-21
+updated: 2021-09-22
 category: background
 ingress:
   With off-session payments you can automatically charge your customers
@@ -60,9 +60,9 @@ customer (this can easily occur with European payment cards when
 [Strong Customer Authentication regulation](/background/strong-customer-authentication/)
 kicks in), the payment card might have expired, etc. It is therefore
 always important to allow for a fall-back payment path in your
-transaction process. Since only one transition from a state can be triggered 
-automatically, this fall-back payment path must be defined to trigger
-upon a user action.
+transaction process. Since only one transition from a state can be
+triggered automatically, this fall-back payment path must be defined to
+trigger upon a user action.
 
 You can build upon this example and extend it to make the payment
 process more robust. For instance, in case the customer fails to pay for
