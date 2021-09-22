@@ -72,7 +72,7 @@
   "ArticleIndexPage.ftw.title": "Flex Templates for Web articles",
   "ArticleIndexPage.ftw.description": "Articles that help you to understand how Flex Templates for Web (FTW) works.",
   "ArticleIndexPage.integrations.title": "Integrations",
-  "ArticleIndexPage.integrations.description": "Articles that help you to understand how to deal with integrations.",
+  "ArticleIndexPage.integrations.description": "Flex provides support for custom integrations through the Integration API. The Integration API is an application programming interface that provides full access to your marketplace’s data. Access can be granted to for example 3rd-party integrations or applications that run in your own backend systems. This selection of articles provide detailed examples on how integrations can be used to customize your marketplace.",
   "ArticleIndexPage.flex-cli.title": "Flex CLI",
   "ArticleIndexPage.flex-cli.description": "Flex CLI (Command-line interface) is a tool for changing your marketplace's advanced configurations such as transaction processes and email templates. Flex CLI should not be mistaken for Flex Console. Flex CLI provides the tools for more technical configurations and process customization, whereas Flex Console provides an interface to manage marketplace assets and basic marketplace configuration. This selection of articles provides an overview of the features of Flex CLI and how it can be used to make advanced configurations to your marketplace.",
   "ArticleIndexPage.references.title": "All Reference articles",
