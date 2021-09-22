@@ -74,7 +74,7 @@
   "ArticleIndexPage.integrations.title": "Integrations",
   "ArticleIndexPage.integrations.description": "Articles that help you to understand how to deal with integrations.",
   "ArticleIndexPage.flex-cli.title": "Flex CLI",
-  "ArticleIndexPage.flex-cli.description": "Articles that help you to understand how Flex CLI works.",
+  "ArticleIndexPage.flex-cli.description": "Flex CLI (Command-line interface) is a tool for changing your marketplace's advanced configurations such as transaction processes and email templates. Flex CLI should not be mistaken for Flex Console. Flex CLI provides the tools for more technical configurations and process customization, whereas Flex Console provides an interface to manage marketplace assets and basic marketplace configuration. This selection of articles provides an overview of the features of Flex CLI and how it can be used to make advanced configurations to your marketplace.",
   "ArticleIndexPage.references.title": "All Reference articles",
   "ArticleIndexPage.references.description": "Technical reference to the tooling.",
 
