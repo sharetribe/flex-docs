@@ -39,6 +39,17 @@ const Heading = styled(H1)`
 
 const Count = styled.span`
   color: #007dff;
+  margin-top: ${3 * baselineSmall}px;
+  margin-left: ${props => props.theme.contentPaddingSmall}px;
+  margin-right: ${props => props.theme.contentPaddingSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${2 * baselineLarge}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-right: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+  }
 `;
 
 const Description = styled(P)`
@@ -78,8 +89,9 @@ const ArticleIndexPage = props => {
     >
       <Content>
         <Heading>
-          {title} <Count>{articles.length}</Count>
+          {title} 
         </Heading>
+        <Count>{articles.length} articles</Count>
         <Description>{description}</Description>
         <Index {...pathPrefixMaybe} articles={articles} />
       </Content>
