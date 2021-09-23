@@ -1,26 +1,29 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, withPrefix } from 'gatsby';
 
 const query = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
   }
 `;
 
 const BaseLayout = props => {
-  const { title, description, noIndex, children } = props;
+  const { title, description, noIndex, children, activeArticle, activeCategory } = props;
   return (
     <StaticQuery
       query={query}
       render={data => {
         const siteTitle = data.site.siteMetadata.title;
         const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+        const siteUrl = data.site.siteMetadata.siteUrl;
         const meta = [];
+        const path = activeArticle ? `/${activeArticle.category}/${activeArticle.slug}/` : activeCategory;
 
         // https://moz.com/learn/seo/meta-description
         if (description) {
@@ -37,6 +40,7 @@ const BaseLayout = props => {
           <>
             <Helmet title={pageTitle} meta={meta}>
               <html lang="en" />
+              <link rel="canonical" href={`${siteUrl}${withPrefix(path)}`}/>
             </Helmet>
             {children}
           </>

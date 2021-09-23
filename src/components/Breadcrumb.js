@@ -103,7 +103,10 @@ const Breadcrumb = props => {
                 <CrumbLi key={link.label} {...link} />
               ))}
             </Ol>
-            <script type="application/ld+json">{ldJson}</script>
+            <script 
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: ldJson }}
+            />
           </nav>
         );
       }}

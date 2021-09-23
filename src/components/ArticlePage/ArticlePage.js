@@ -208,7 +208,12 @@ const ArticlePage = props => {
     >
       <ColumnLayout>
         <MainColumn>
-          <script type="application/ld+json">{ldJson}</script>
+          {/* json schema won't validate if not set through dangerouslySetInnerHTML
+          https://stackoverflow.com/questions/49018148/react-json-schema-double-quotes-encoding */}
+          <script 
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: ldJson }}
+          />
           <CrumbWrapper>
             <Breadcrumb
               links={[
