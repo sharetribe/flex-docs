@@ -118,10 +118,12 @@ flex-cli help process list
 ```
 
 As you can see, the command requires `MARKETPLACE_ID` option. You can
-use either the long form `--marketplace <marketplace id here>` or
-short form `-m <marketplace id here>`. You can find the Marketplace ID from [Flex Console](https://flex-console.sharetribe.com/) on the [Build > General](https://flex-console.sharetribe.com/general) page. Optionally the command takes
-`--process PROCESS NAME` parameter to get detailed information about a
-single process.
+use either the long form `--marketplace <marketplace id here>` or short
+form `-m <marketplace id here>`. You can find the Marketplace ID from
+[Flex Console](https://flex-console.sharetribe.com/) on the
+[Build > General](https://flex-console.sharetribe.com/general) page.
+Optionally the command takes `--process PROCESS NAME` parameter to get
+detailed information about a single process.
 
 Let's list all the processes:
 
