@@ -301,7 +301,7 @@ Stripe related components:
 You can also remove Stripe script form
 [public/index.html](https://github.com/sharetribe/ftw-daily/blob/master/public/index.html#L169).
 
-# Removing payments
+### Removing payments
 
 If you want to remove payments completely from your marketplace, there
 are even more things to consider. Again it depends a lot on your
