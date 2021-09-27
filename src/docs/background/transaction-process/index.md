@@ -1,7 +1,7 @@
 ---
 title: Transaction process
 slug: transaction-process
-updated: 2021-09-22
+updated: 2021-09-27
 category: background
 ingress:
   This article introduces transaction processes and how they define
