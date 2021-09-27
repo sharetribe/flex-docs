@@ -3,7 +3,7 @@ title: Change image assets
 slug: change-image-assets
 updated: 2020-02-28
 category: tutorial-branding
-ingress: Learn how to update image assets
+ingress: Learn how to update image assets such as the default background image, favicon and app icons.
 published: true
 ---
 

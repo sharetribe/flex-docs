@@ -3,7 +3,7 @@ title: Change default locations
 slug: change-default-locations
 updated: 2020-03-03
 category: tutorial-branding
-ingress: Change default locations on location search component.
+ingress: Change the list of default locations that show up when using the location search component.
 published: true
 ---
 

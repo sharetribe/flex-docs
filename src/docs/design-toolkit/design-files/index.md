@@ -3,7 +3,7 @@ title: Design files
 slug: design-files
 updated: 2020-05-28
 category: design-toolkit
-ingress: Wireframes and complete design files for Flex Template for Web.
+ingress: Wireframes and complete design files in mobile and desktop layout for Flex Template for Web.
 published: true
 ---
 

@@ -3,7 +3,7 @@ title: Change Logo
 slug: change-logo
 updated: 2020-02-28
 category: tutorial-branding
-ingress: Learn how to change logo and styles of a component.
+ingress: Learn how to change the logo and how components in Flex Template for Web are styled.
 published: true
 ---
 

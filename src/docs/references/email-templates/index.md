@@ -3,7 +3,7 @@ title: Email templates
 slug: email-templates
 updated: 2020-08-17
 category: references
-ingress: Reference documentation for editing email templates.
+ingress: Reference documentation for editing built-in or transaction email templates.
 published: true
 ---
 

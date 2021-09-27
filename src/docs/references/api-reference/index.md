@@ -3,7 +3,7 @@ title: API Reference
 slug: api
 updated: 2021-09-22
 category: references
-ingress: Sharetribe Marketplace API reference documentation.
+ingress: Introduction to the Sharetribe Marketplace API reference documentation.
 published: true
 ---
 

@@ -14,7 +14,7 @@
   "Topbar.Menu.references.label": "Reference",
   "Topbar.Menu.background.label": "Background",
 
-  "LandingPage.meta.description": "Sharetribe Flex documentation",
+  "LandingPage.meta.description": "Everything you need to know about building a marketplace with Sharetribe Flex.",
   "LandingPage.headingLine1": "Everything you need to know ",
   "LandingPage.headingLine2": "about building with Sharetribe Flex",
   "LandingPage.introParagraph1": "Sharetribe Flex is the fastest and most affordable way to set up a powerful marketplace platform that is uniquely yours. ",
@@ -66,7 +66,7 @@
   "ArticleIndexPage.background.title": "All Background articles",
   "ArticleIndexPage.background.description": "Explanations and background information for important concepts and design decisions behind the platform.",
   "ArticleIndexPage.cookbook.title": "All Cookbook articles",
-  "ArticleIndexPage.cookbook.description": "Articles that help you to create custom features on top of Flex APIs.",
+  "ArticleIndexPage.cookbook.description": "A collection of articles that help you to create custom features on top of theFlex APIs.",
   "ArticleIndexPage.design-toolkit.title": "Design Toolkit",
   "ArticleIndexPage.design-toolkit.description": "The Design Toolkit provides you with the tools to plan and design your custom marketplace. All Flex Templates for Web (FTW) designs and wireframes are included as Sketch files in both mobile and web layouts. The Toolkit also includes a comprehensive guide to understanding your users’ needs through user journeys. These resources provide an excellent starting point for building your unique marketplace on top of Sharetribe Flex.",
   "ArticleIndexPage.ftw.title": "Flex Templates for Web articles",
