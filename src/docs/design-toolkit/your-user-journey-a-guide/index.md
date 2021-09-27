@@ -3,7 +3,9 @@ title: 'How to design your user journey'
 slug: your-user-journey-a-guide
 updated: 2020-04-24
 category: design-toolkit
-ingress: Learn how to design your marketplace's user journey. Understanding your user needs will help you design a functional marketplace.
+ingress:
+  Learn how to design your marketplace's user journey. Understanding
+  your user needs will help you design a functional marketplace.
 published: true
 ---
 

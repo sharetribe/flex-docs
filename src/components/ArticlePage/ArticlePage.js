@@ -211,7 +211,7 @@ const ArticlePage = props => {
         <MainColumn>
           {/* json schema won't validate if not set through dangerouslySetInnerHTML
           https://stackoverflow.com/questions/49018148/react-json-schema-double-quotes-encoding */}
-          <script 
+          <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: ldJson }}
           />

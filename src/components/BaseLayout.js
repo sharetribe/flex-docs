@@ -14,7 +14,14 @@ const query = graphql`
 `;
 
 const BaseLayout = props => {
-  const { title, description, noIndex, children, activeArticle, activeCategory } = props;
+  const {
+    title,
+    description,
+    noIndex,
+    children,
+    activeArticle,
+    activeCategory,
+  } = props;
   return (
     <StaticQuery
       query={query}
@@ -23,7 +30,9 @@ const BaseLayout = props => {
         const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
         const siteUrl = data.site.siteMetadata.siteUrl;
         const meta = [];
-        const path = activeArticle ? `/${activeArticle.category}/${activeArticle.slug}/` : activeCategory;
+        const path = activeArticle
+          ? `/${activeArticle.category}/${activeArticle.slug}/`
+          : activeCategory;
 
         // https://moz.com/learn/seo/meta-description
         if (description) {
@@ -40,7 +49,7 @@ const BaseLayout = props => {
           <>
             <Helmet title={pageTitle} meta={meta}>
               <html lang="en" />
-              <link rel="canonical" href={`${siteUrl}${withPrefix(path)}`}/>
+              <link rel="canonical" href={`${siteUrl}${withPrefix(path)}`} />
             </Helmet>
             {children}
           </>

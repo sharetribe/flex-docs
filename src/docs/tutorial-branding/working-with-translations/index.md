@@ -3,7 +3,9 @@ title: Working with translations
 slug: working-with-translations
 updated: 2020-02-28
 category: tutorial-branding
-ingress: A tutorial for changing the UI copy-texts and implementing new translations.
+ingress:
+  A tutorial for changing the UI copy-texts and implementing new
+  translations.
 published: true
 ---
 

@@ -3,7 +3,9 @@ title: Filter listings with extended data
 slug: filter-with-extended-data
 updated: 2020-07-14
 category: tutorial-extended-data
-ingress: Make the most of extended data and learn how to filter and query listings using the public data key.
+ingress:
+  Make the most of extended data and learn how to filter and query
+  listings using the public data key.
 published: true
 ---
 

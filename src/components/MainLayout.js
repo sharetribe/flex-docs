@@ -104,7 +104,11 @@ const MainLayout = props => {
 
   const { activeArticle, activeCategory, children, ...rest } = props;
   return (
-    <BaseLayout activeArticle={activeArticle} activeCategory={activeCategory} {...rest}>
+    <BaseLayout
+      activeArticle={activeArticle}
+      activeCategory={activeCategory}
+      {...rest}
+    >
       <WrapperTopbar>
         <TopbarArea>
           <Topbar manageSidebar={{ isOpen, setIsOpen: setOpen }} />

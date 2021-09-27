@@ -3,7 +3,9 @@ title: Tutorial introduction
 slug: introduction
 updated: 2019-03-25
 category: tutorial
-ingress: This guide is designed to help you get started with customizing the FTW-daily template.
+ingress:
+  This guide is designed to help you get started with customizing the
+  FTW-daily template.
 published: true
 ---
 

@@ -14,7 +14,12 @@ const query = graphql`
       filter: {
         frontmatter: {
           category: {
-            in: ["tutorial", "tutorial-branding", "tutorial-extended-data", "tutorial-transaction-process"]
+            in: [
+              "tutorial"
+              "tutorial-branding"
+              "tutorial-extended-data"
+              "tutorial-transaction-process"
+            ]
           }
         }
       }

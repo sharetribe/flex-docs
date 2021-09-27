@@ -88,9 +88,7 @@ const ArticleIndexPage = props => {
       activeCategory={category}
     >
       <Content>
-        <Heading>
-          {title} 
-        </Heading>
+        <Heading>{title}</Heading>
         <Count>{articles.length} articles</Count>
         <Description>{description}</Description>
         <Index {...pathPrefixMaybe} articles={articles} />
