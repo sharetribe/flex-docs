@@ -41,7 +41,7 @@ what it offers. There are a few ways to gain this understanding:
 1. Access the Saunatime demo via your
    [Flex Console](https://flex-console.sharetribe.com/). Saunatime is
    one of the Flex Templates. The demo allows you to try out all the
-   features of theFlex Template: searching, signing up as a new user,
+   features of the Flex Template: searching, signing up as a new user,
    adding listings, making bookings and payments, sending messages,
    leaving reviews, and so on.
 2. Study
