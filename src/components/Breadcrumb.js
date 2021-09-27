@@ -95,12 +95,11 @@ const Breadcrumb = props => {
             };
           }),
         });
-
         return (
           <nav {...rest}>
             <Ol>
-              {links.map(link => (
-                <CrumbLi key={link.label} {...link} />
+              {links.map((link, i, arr) => (
+                <CrumbLi key={link.label} {...link} path={(arr.length - 1 === i) ? null : link.path} /> 
               ))}
             </Ol>
             <script 
