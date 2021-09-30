@@ -22,7 +22,7 @@ pattern.
 Flex API has capabilities for
 [saving payment card details for future use](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer).
 In addition, it is possible to configure your transaction process in
-such a way, that the customer is charged automatically off-session at
+such a way that the customer is charged automatically off-session at
 certain point in time (i.e. when they are not present and interacting
 with your web site or app), provided that they have saved a payment card
 to their account. This allows you to charge customers closer to their
@@ -32,9 +32,9 @@ booking period.
 ## Transaction process example
 
 Suppose your sauna rentals marketplace should allow customers to book
-saunas up to a year in advance, but the customer is charged only a
-certain time in advance before the booking. The figure below illustrates
-how a part of your transaction process might look like. The
+saunas up to a year in advance, but the customer is only charged at a
+specified moment before the booking. The figure below illustrates how a
+part of your transaction process might look like. The
 [flex-example-processes Github repository](https://github.com/sharetribe/flex-example-processes)
 contains an example transaction process corresponding to the flow
 described.
@@ -48,14 +48,16 @@ In this example, a transaction goes as follows:
    payment is made at this point.
 2. The provider verifies the request and accepts the booking.
 3. At a later point in time (1 month before the booking start time in
-   the example), an attempt is made to automatically charge the
-   customer's stored payment card. If the charge succeeds, the
-   transaction continues onwards.
+   this example, and 1 day before the booking start in the
+   [example process](https://github.com/sharetribe/flex-example-processes)),
+   an attempt is made to automatically charge the customer's stored
+   payment card. If the charge succeeds, the transaction continues
+   onwards.
 4. The automatic charge can fail for multiple reasons. If the charge
-   fails, the customer and provider receive an email notification and
-   the customer is asked to visit the marketplace web site in order to
-   pay manually.
-   
+   fails, the customer (and optionally also the provider) receives an
+   email notification and the customer is asked to visit the marketplace
+   web site in order to pay manually.
+
 <extrainfo title="How does creating and capturing an off-session payment work?">
 In the auto-payment transition, the payment intent creation needs to be configured to use the customer's saved payment information, if it exists. When the action is configured like this, it both creates and confirms the payment intent. Therefore, only capturing the payment intent remains necessary.
 
@@ -68,10 +70,11 @@ In the auto-payment transition, the payment intent creation needs to be configur
     [{:fn/timepoint [:time/first-entered-state :state/pending-payment]}
      {:fn/period ["PT5M"]}]},
    :actions
-   [{:name :action/stripe-create-payment-intent, 
+   [{:name :action/stripe-create-payment-intent,
      :config { :use-customer-default-payment-method? :true }}
     {:name :action/stripe-capture-payment-intent}]}
 ```
+
 </extrainfo>
 
 It is important to note that an off-session payment can fail for various
@@ -82,8 +85,8 @@ customer (this can easily occur with European payment cards when
 kicks in), the payment card might have expired, etc. It is therefore
 always important to allow for a fall-back payment path in your
 transaction process. Since only one transition from a state can be
-triggered automatically, this fall-back payment path must be defined to
-trigger upon a user action, as in the example.
+triggered automatically, this fall-back payment path must trigger upon a
+user action, as in the example.
 
 You can build upon this example and extend it to make the payment
 process more robust. For instance, in case the customer fails to pay for
