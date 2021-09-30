@@ -215,3 +215,13 @@ FTW-product doesn't really need to print dates and times, but we have
 refactored `src/util/dates.js` so that it uses "moment-timezone" library
 and it is, therefore, ready to convert and render timestamps in
 different time zones if needed.
+
+## Summary
+
+This template works as a starting point for marketplaces that need to
+use stock management instead of booking. We have added more
+configuration options to this template, but naturally, everything is not
+configurable. You can think of this as a starting point for your
+customization journey - a starting point to get your
+[Minimum Viable Product](https://www.sharetribe.com/academy/how-to-build-a-minimum-viable-platform/)
+(MVP) up and running.
