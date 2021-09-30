@@ -34,8 +34,8 @@ to match the process in our backend.
 > If you are using
 > [time-based availability](/references/availability/#time-based-availability-management)
 > in your marketplace, you can start with
-> [FTW-time](https://github.com/sharetribe/ftw-time), a beta version of
-> the template supporting time-based availability out of the box.
+> [FTW-hourly](https://github.com/sharetribe/ftw-hourly), the template
+> supporting time-based availability out of the box.
 
 ## 1. Change the transaction process alias
 

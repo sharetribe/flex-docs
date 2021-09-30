@@ -105,9 +105,9 @@ availability plan for a listing can be found in the
 > [Flex Template for Web](https://github.com/sharetribe/flex-template-web/)
 > uses day-based availability. If you want to use time-based
 > availability in your marketplace instead, it's recommended that you
-> start with [FTW-time](https://github.com/sharetribe/ftw-time), a beta
-> version of a new Flex Template for Web, which supports time-based
-> availability out of the box.
+> start with [FTW-hourly](https://github.com/sharetribe/ftw-hourly), the
+> Flex Template for Web that supports time-based availability out of the
+> box.
 
 ### Timeslots, availability plans and exceptions
 
