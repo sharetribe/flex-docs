@@ -34,7 +34,10 @@ booking period.
 Suppose your sauna rentals marketplace should allow customers to book
 saunas up to a year in advance, but the customer is charged only a
 certain time in advance before the booking. The figure below illustrates
-how a part of your transaction process might look like.
+how a part of your transaction process might look like. The
+[flex-example-processes Github repository](https://github.com/sharetribe/flex-example-processes)
+contains an example transaction process corresponding to the flow
+described.
 
 ![Example transaction process with delayed payment](tx-delayed-payments.png 'Example transaction process with delayed payment')
 
@@ -62,7 +65,7 @@ kicks in), the payment card might have expired, etc. It is therefore
 always important to allow for a fall-back payment path in your
 transaction process. Since only one transition from a state can be
 triggered automatically, this fall-back payment path must be defined to
-trigger upon a user action.
+trigger upon a user action, as in the example.
 
 You can build upon this example and extend it to make the payment
 process more robust. For instance, in case the customer fails to pay for
