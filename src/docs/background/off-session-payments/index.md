@@ -55,6 +55,24 @@ In this example, a transaction goes as follows:
    fails, the customer and provider receive an email notification and
    the customer is asked to visit the marketplace web site in order to
    pay manually.
+   
+<extrainfo title="How does creating and capturing an off-session payment work?">
+In the auto-payment transition, the payment intent creation needs to be configured to use the customer's saved payment information, if it exists. When the action is configured like this, it both creates and confirms the payment intent. Therefore, only capturing the payment intent remains necessary.
+
+```clojure
+ {:name :transition/auto-payment,
+   :from :state/pending-payment,
+   :to :state/paid,
+   :at
+   {:fn/plus
+    [{:fn/timepoint [:time/first-entered-state :state/pending-payment]}
+     {:fn/period ["PT5M"]}]},
+   :actions
+   [{:name :action/stripe-create-payment-intent, 
+     :config { :use-customer-default-payment-method? :true }}
+    {:name :action/stripe-capture-payment-intent}]}
+```
+</extrainfo>
 
 It is important to note that an off-session payment can fail for various
 reasons. For instance, the card could be denied due to insufficient
