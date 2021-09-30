@@ -106,6 +106,7 @@ move forward with your project, check out this content.
 - Flex API Reference: https://www.sharetribe.com/api-reference/
 - FTW-daily Repo: https://github.com/sharetribe/ftw-daily
 - FTW-hourly Repo: https://github.com/sharetribe/ftw-hourly
+- FTW-product Repo: https://github.com/sharetribe/ftw-product
 - Flex Developer Slack Channel: https://www.sharetribe.com/flex-slack
 - Flex Support Email: flex-support@sharetribe.com
 

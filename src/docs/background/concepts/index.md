@@ -28,12 +28,14 @@ A template of a Flex marketplace user interface. Sharetribe customers
 can customize FTW for their own marketplace, or build their own UI from
 scratch. Flex Template for Web is built with Node.js + React/Redux.
 
-Currently we have two different template options:
+Currently we have three different template options:
 
 - [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
   rental marketplace with day-based bookings
 - [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime" - a
   service marketplace with time-based bookings
+- [FTW-product](https://github.com/sharetribe/ftw-product)
+  "Sneakertime" - a product marketplace with stock management
 
 Information about using Flex Template for Web can be found in the
 [Getting started with FTW](/introduction/getting-started-with-ftw-daily/)

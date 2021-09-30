@@ -123,12 +123,19 @@ up:
 
 1. Rename your local default branch as **main**
 
-   If you have cloned FTW-daily or FTW-hourly repository, the default
-   branch is following an old Github naming pattern.
+   If you have cloned _FTW-daily_ or _FTW-hourly_ repository, the
+   default branch is following an old Github naming pattern.
 
    ```shell
    git checkout master
    git branch -m master main
+   ```
+
+   _FTW-product_ uses the new naming pattern - you just need to checkout
+   the correct branch.
+
+   ```shell
+   git checkout main
    ```
 
 1) Push an existing repository from the command line

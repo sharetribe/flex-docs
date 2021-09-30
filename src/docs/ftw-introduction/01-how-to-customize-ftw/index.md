@@ -50,11 +50,13 @@ choose from two templates:
   rental marketplace with day-based bookings
 - [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime" - a
   service marketplace with time-based bookings
+- [FTW-product](https://github.com/sharetribe/ftw-product)
+  "Sneakertime" - a service marketplace with stock management.
 
 > **Note:** By default your Flex marketplace comes with day-based
 > [transaction process](/background/transaction-process/). If you want
 > to start working with FTW-hourly, you need to change to the
-> [time-based process](https://github.com/sharetribe/flex-example-processes/tree/master/preauth-unit-time-booking).
+> [time-based process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-hourly-default-process).
 > See
 > [getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
 > for more information.
@@ -88,12 +90,18 @@ Run the following commands in a feature branch
 
 1. Merge the changes to your local branch
 
+   > FTW-daily and FTW-hourly still follow old Github convention to name
+   > the default branch as **master** instead of **main**.
+
    ```shell
    git merge upstream/master
    ```
 
-   > FTW-daily and FTW-hourly still follow old GitHub convention to name
-   > the default branch as **master** instead of **main**.
+   FTW-product uses _main_ as main branch.
+
+   ```shell
+   git merge upstream/main
+   ```
 
 1. Fix possible merge conflicts, commit, and push/deploy.
 
@@ -147,6 +155,16 @@ file for more configuration options.
 └── src
     └── config.js
 ```
+
+<extrainfo title="FTW-product has config.js file in different location">
+
+```shell
+└── src
+    └── config
+        └── config.js
+```
+
+</extrainfo>
 
 ## Development
 

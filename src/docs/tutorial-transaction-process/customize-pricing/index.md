@@ -25,6 +25,19 @@ information about the cleaning fee. We start by doing some changes to
             └── EditListingPricingPanel.js
 ```
 
+<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
+
+```shell
+└── src
+    └── containers
+        └── EditListingPage
+            └── EditListingWizard
+                └── EditListingPricingPanel
+                    └── EditListingPricingPanel.js
+```
+
+</extrainfo>
+
 Here we will only list the required changes. See the
 [Add extended data to listing entity tutorial](/tutorial-extended-data/add-extended-data/)
 for step-by-step instructions on how to add public data field for
@@ -96,6 +109,19 @@ _FieldCurrencyInput_ like there is in the _price_ input.
             └── EditListingPricingForm.js
 ```
 
+<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
+
+```shell
+└── src
+    └── containers
+        └── EditListingPage
+            └── EditListingWizard
+                └── EditListingPricingPanel
+                    └── EditListingPricingForm.js
+```
+
+</extrainfo>
+
 ```jsx
 ...
 
@@ -140,6 +166,19 @@ the user's choice to the the backend of our client app.
 > the cleaning fee and you can move forward to the next section: Add a
 > transaction line item for the cleaning fee.
 
+> **Note 2**: This tutorial handles changes on top of _FTW-daily_.
+> _FTW-hourly_ is pretty close to it, but **_FTW-product_** has major
+> differences since that template is not about bookings but product
+> orders. With FTW-product, you should make changes to
+>
+> - _OrderPanel_ (instead of BookingPanel)
+> - _ProductOrderForm_ (instead of BookingDatesForm), which is moved
+>   under OrderPanel
+> - _OrderBreakdown_ (instead of BookingBreakdown)
+> - _EstimatedCustomerBreakdownMaybe_ (instead of
+>   EstimatedBreakdownMaybe)
+> - bookingData is refactored as **orderData**
+
 ### Prepare props
 
 In order to be able to use the information about cleaning fee inside the
@@ -153,6 +192,12 @@ _ListingPage_ and _TransactionPage_ to show the booking breakdown.
         └── BookingPanel
             └── BookingPanel.js
 ```
+
+This part of the tutorial is also otherwise changed.
+**BookingDatesForm** is not in use, but instead there's
+**ProductOrderForm**.
+
+</extrainfo>
 
 _BookingPanel_ gets **listing** as a prop. The cleaning fee is now saved
 to listing's public data so we can find it under the _publicData_ key

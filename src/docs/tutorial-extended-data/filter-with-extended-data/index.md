@@ -80,6 +80,16 @@ _marketplace-custom-config.js_.
     └── marketplace-custom-config.js
 ```
 
+<extrainfo title="FTW-product has moved config files into a different location">
+
+```shell
+└── src
+    └── config
+        └── marketplace-custom-config.js
+```
+
+</extrainfo>
+
 However, we actually have done that already in the
 [Add extended data to listing entity](/tutorial-extended-data/add-extended-data/)
 article.
@@ -95,6 +105,8 @@ array:
     group: 'secondary',
     queryParamNames: ['pub_view'],
     config: {
+      // Schema type is enum for SelectSingleFilter
+      schemaType: 'enum',
       options: [
         { key: 'sea', label: 'Sea view' },
         { key: 'lake', label: 'Lake view' },

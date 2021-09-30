@@ -107,6 +107,16 @@ First of all, filter configurations need to be defined in the
     └── marketplace-custom-config.js
 ```
 
+<extrainfo title="FTW-product has moved config files into a different location">
+
+```shell
+└── src
+    └── config
+        └── marketplace-custom-config.js
+```
+
+</extrainfo>
+
 There you need to add the capacity filter's configurations to the
 `filters` array:
 
@@ -118,6 +128,9 @@ There you need to add the capacity filter's configurations to the
     group: 'secondary',
     queryParamNames: ['pub_capacity'],
     config: {
+      // Schema type is enum for SelectSingleFilter
+      schemaType: 'enum',
+
       options: [
         { key: '1to3', label: '1 to 3' },
         { key: '4to6', label: '4 to 6' },

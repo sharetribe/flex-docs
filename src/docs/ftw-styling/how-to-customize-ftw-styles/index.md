@@ -273,6 +273,20 @@ There's only two groups of components that break that rule:
 
 - **src/forms**
 
+<extrainfo title="FTW-product has moved components and removed 'src/forms/' directory">
+
+FTW-product has moved most of the components that are only used in a
+single page, inside the directory of that page-level component. In
+addition, _src/forms_ directory became obsolete and it was removed
+altogether.
+
+This was done to reduce the size of code-chunks (JavaScript files
+containing part of the source code) that are shared between different
+pages. It improves performance since individual pages need to load less
+code before they can render themselves.
+
+</extrainfo>
+
 ### Styling guidelines
 
 We have a practice of naming the outermost class of a component as

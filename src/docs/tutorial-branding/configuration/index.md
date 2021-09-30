@@ -115,6 +115,16 @@ You can just close those listings from Console.
     └── config.js
 ```
 
+<extrainfo title="FTW-product has moved config files into a different location">
+
+```shell
+└── src
+    └── config
+        └── config.js
+```
+
+</extrainfo>
+
 Most of the environment variables are just included in _config.js_ file,
 which is then imported into those components that use those variables.
 

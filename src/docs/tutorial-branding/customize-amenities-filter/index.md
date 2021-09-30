@@ -25,6 +25,16 @@ found from file: _marketplace-custom-config.js_
     └── marketplace-custom-config.js
 ```
 
+<extrainfo title="FTW-product has moved config files into a different location">
+
+```shell
+└── src
+    └── config
+        └── marketplace-custom-config.js
+```
+
+</extrainfo>
+
 In that file, the filters and their configs are listed in an array:
 
 ```js
@@ -44,7 +54,14 @@ search page. In the config section, you can find `options`:
   group: 'secondary',
   queryParamNames: ['pub_amenities'],
   config: {
+    // Schema type options: 'enum', 'multi-enum'
+    // Both types can work so that user selects multiple values when filtering search results.
+    // With "enum" the functionality will be OR-semantics (Nike OR Adidas OR Salomon)
+    // With "multi-enum" it's possible to use both AND and OR semantics with searchMode config.
+    schemaType: 'enum',
+
     // Optional modes: 'has_all', 'has_any'
+    // Note: this is relevant only for schema type 'multi-enum'
     // https://www.sharetribe.com/api-reference/marketplace.html#extended-data-filtering
     searchMode: 'has_all',
 
@@ -146,6 +163,8 @@ For example, you could add filter for public data field `view`:
     group: 'secondary',
     queryParamNames: ['pub_view'],
     config: {
+      // Schema type is enum for SelectSingleFilter
+      schemaType: 'enum',
       options: [
         { key: 'sea', label: 'Sea' },
         { key: 'lake', label: 'Lake' },

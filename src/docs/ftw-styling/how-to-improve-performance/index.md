@@ -85,7 +85,7 @@ Quick checklist:
 Another way of dealing with images is to lazy load those images that are
 not visible inside an initially rendered part of the screen. Lazy
 loading these off-screen images can be done with helper function:
-`lazyLoadWithDimensions` (from `util/contextHelpers/`). Check
+`lazyLoadWithDimensions` (from _util/contextHelpers/_). Check
 `SectionLocations` component for details.
 
 ## Use sparse attributes
@@ -99,9 +99,10 @@ can read more from
 ## Use code splitting
 
 Code splitting is enabled with Loadable Components and by default
-route-based splits are made through `src/routeConfiguration.js`. If you
-want to improve performance, you should prefer subcomponents inside
-page-directories instead of adding more code to shared components
+route-based splits are made through _src/routeConfiguration.js_. (In
+FTW-product the file is moved to _src/routing/routeConfiguration.js_.)
+If you want to improve performance, you should prefer subcomponents
+inside page-directories instead of adding more code to shared components
 directory. Those components end up to main chunk file that is downloaded
 on each page (when full page-load is requested).
 

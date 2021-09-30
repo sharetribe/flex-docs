@@ -131,6 +131,16 @@ is directly set to "component" conf in routeConfigurations.js file:
     └── routeConfiguration.js
 ```
 
+<extrainfo title="FTW-product has routeConfiguration.js file in a different location">
+
+```shell
+└── src
+    └── routing
+        └── routeConfiguration.js
+```
+
+</extrainfo>
+
 ```js
     // const AuthenticationPage = loadable(() => import(/* webpackChunkName: "AuthenticationPage" */ './containers/AuthenticationPage/AuthenticationPage'));
     {

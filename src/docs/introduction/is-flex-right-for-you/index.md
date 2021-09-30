@@ -71,20 +71,15 @@ service marketplace.
 
 ## Marketplaces for selling physical or digital products
 
-You can use Flex for building a marketplace for selling physical
-products today, as Flex support listing stock management. However, even
-if there are example templates for rentals and services, there is no
-template for selling products yet. If you're building a marketplace for
-selling products, we recommend you to use
-[FTW-daily](https://github.com/sharetribe/ftw-daily) as a starting
-point.
+You can use [FTW-product](https://github.com/sharetribe/ftw-product) for
+building a marketplace for selling physical products. It has stock
+management included and it asks shipping address from customer and shows
+that to provider. However, it doesn't include shopping cart feature by
+default. Shopping cart would require changes to payment process.
 
-Aside from stock, features specific to marketplaces for selling physical
-products, like shopping cart, multiple shipping options, and product
-variations, can all be achieved with Flex, but you need to do some
-custom development to build these. Similarly, it's possible to build a
-marketplace that sells digital products, but you will need to do some
-custom devleopment to integrate a system for storing these files.
+It's possible to build a marketplace that sells digital products, but
+you will need to do some custom development to integrate a system for
+storing these files.
 
 ## Regular marketplaces and reverse marketplaces
 

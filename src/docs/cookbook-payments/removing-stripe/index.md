@@ -322,16 +322,16 @@ commission etc. Read more about actions from
 Remember also to update email templates which contain pricing
 information.
 
-### Edit API calls in FTW backend
+### Edit API calls in client app's server
 
 If you are using FTW-daily v6.0.0 or higher (or FTW-hourly v8.0.0 or
-higher) you need to edit the API calls in your FTW-backend. If there are
-no payments used there is most likely no need for calculating the line
-items so we can remove `transactionLineItems` function calls from API
-endpoints. It depends on your use-case if you want to use the privileged
-transitions at all but in case you are updating e.g. transaction
-protected data, it's a good practice to do that safely in the
-FTW-backend.
+higher) you need to edit the API calls in your client app's server. If
+there are no payments used there is most likely no need for calculating
+the line items so we can remove `transactionLineItems` function calls
+from API endpoints. It depends on your use-case if you want to use the
+privileged transitions at all but in case you are updating e.g.
+transaction protected data, it's a good practice to do that safely in
+the FTW-backend.
 
 ### Other code changes
 

@@ -34,9 +34,9 @@ other components and forms are purely
 This makes it easier to customize UI components - you don't need to be
 aware of the complexity related to Redux setup when you just want to
 touch the behavior of some visual component. In those cases, you can
-just head to `src/components/` or `src/forms/` directory and you can see
-from there what props are available for each component when they are
-rendered.
+just head to `src/components/` directory and you can see from there what
+props are available for each component when they are rendered.
+(FTW-daily and FTW-hourly use also `src/forms/` directory.)
 
 Naturally, there is a need for higher level components which fetch new
 data and define what props are passed down to presentational components.

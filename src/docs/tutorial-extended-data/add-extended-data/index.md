@@ -44,6 +44,23 @@ EditListingFeaturesPanel and EditListingFeaturesForm.
             └── EditListingFeaturesForm.js
 ```
 
+<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage container">
+
+FTW-product doesn't use EditListingFeaturesPanel, but you can use
+EditListingDetailsPanel instead:
+
+```shell
+└── src
+    └── containers
+        └── EditListingPage
+            └── EditListingWizard
+                └── EditListingDetailsPanel
+                    ├── EditListingDetailsPanel.js
+                    └── EditListingFeaturesForm.js
+```
+
+</extrainfo>
+
 > **Tip**: if you want to add a new panel to the _EditListingWizard_,
 > you should check
 > [this Cookbook article](/cookbook-data-model/extend-listing-data-in-ftw/)
@@ -125,6 +142,16 @@ config to the same file, where the amenities filter has its options:
     └── marketplace-custom-config.js
 ```
 
+<extrainfo title="FTW-product has moved config files into a different location">
+
+```shell
+└── src
+    └── config
+        └── marketplace-custom-config.js
+```
+
+</extrainfo>
+
 We'll add new single-select filter config after Amenities filter:
 
 ```js
@@ -135,6 +162,8 @@ We'll add new single-select filter config after Amenities filter:
     group: 'secondary',
     queryParamNames: ['pub_view'],
     config: {
+      // Schema type is enum for SelectSingleFilter
+      schemaType: 'enum',
       options: [
         { key: 'sea', label: 'Sea view' },
         { key: 'lake', label: 'Lake view' },

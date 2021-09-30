@@ -60,20 +60,34 @@ REACT_APP_DEFAULT_SEARCHES_ENABLED=true
 ```
 
 The default locations have been described in file:
-[src/default-location-searches.js](https://github.com/sharetribe/flex-template-web/blob/master/src/default-location-searches.js).
+[src/default-location-searches.js](https://github.com/sharetribe/ftw-daily/blob/master/src/default-location-searches.js).
 
 The same environment variable also shows "current location" suggestion,
 which will make the browser to ask user's current location. This is a
 fast way to search listings nearby. You can specify whether to use the
 current location from
-[src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js).
+[src/config.js](https://github.com/sharetribe/ftw-daily/blob/master/src/config.js).
 Search for variables: `suggestCurrentLocation` and
 `currentLocationBoundsDistance`.
 
-## 5. Change components: use Google Maps versions instead of Mapbox
+<extrainfo title="FTW-product has default-location-searches.js and config.js files in a different location">
+
+```shell
+└── src
+    └── config
+        ├── config.js
+        └── default-location-searches.js
+```
+
+</extrainfo>
+
+## 5. FTW-daily & FTW-hourly: use Google Maps
 
 If you wish to use Google Maps instead of Mapbox, you need to make some
-changes to FTW default setup.
+changes to the default setup of FTW-daily and FTW-hourly.
+
+> **Note:** FTW-product has a different setup. If you are using it, you
+> can skip this chapter.
 
 ### 5.1. Include Google Maps script instead of Mapbox scripts
 
@@ -206,3 +220,45 @@ already there in the comments:
 used _react-google-maps_ wrapper library. That library was not
 maintained for a long time, so we removed it from dependencies. Instead,
 Google Maps API is now used directly.
+
+## 6. FTW-product: use Google Maps
+
+Even though, FTW-product doesn't use maps by default, we have included
+SearchPage variant with Map: SearchPageWithMap.js It's possible to take
+that into use by changing configuration.
+
+```shell
+└── src
+    └── config
+        └── config.js
+```
+
+There you can set the main search type and which layout variant search
+page uses:
+
+```js
+// Main search used in Topbar.
+// This can be either 'keywords' or 'location'.
+const mainSearchType = 'keywords';
+
+// There are 2 SearchPage variants that can be used:
+// 'map' & 'list'
+const searchPageVariant = 'list';
+```
+
+In addition, there are more map-related configs, where the map provider
+is set:
+
+```js
+const maps = {
+  mapboxAccessToken: process.env.REACT_APP_MAPBOX_ACCESS_TOKEN,
+  googleMapsAPIKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+
+  // SearchPage variant in use: 'MAPBOX', 'GOOGLE_MAPS'
+  // Note: you need to have REACT_APP_MAPBOX_ACCESS_TOKEN or REACT_APP_GOOGLE_MAPS_API_KEY
+  //       set depending on which one you use in this config.
+  mapProvider: 'MAPBOX',
+  //...
+```
+
+That's it!
