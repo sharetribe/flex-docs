@@ -16,6 +16,9 @@ While FTW daily was about renting saunas and FTW hourly was about
 booking Yoga teachers, FTW product is a conceptual marketplace called
 Sneakertime to buy sneakers.
 
+You can find the repository from here:<br />
+https://github.com/sharetribe/ftw-product
+
 ## Differences in directory structure
 
 With this template, we decided to take advantage of the possibilities
