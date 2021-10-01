@@ -22,7 +22,7 @@ pattern.
 Flex API has capabilities for
 [saving payment card details for future use](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer).
 In addition, it is possible to configure your transaction process in
-such a way that the customer is charged automatically off-session at
+such a way that the customer is charged automatically off-session at a
 certain point in time (i.e. when they are not present and interacting
 with your web site or app), provided that they have saved a payment card
 to their account. This allows you to charge customers closer to their
@@ -96,3 +96,56 @@ provider to post a review of the customer. In addition, you may consider
 disallowing customers to remove their stored payment card in your UI
 implementation, if they have ongoing transactions for which they have
 not yet been charged.
+
+## Considerations about implementation in FTW templates
+
+If you want to implement
+[the example process](https://github.com/sharetribe/flex-example-processes)
+in your user interface, there are multiple ways to do so. If your user
+interface is based on one of the FTW templates, here are a few things
+worth considering.
+
+### Transitions and states
+
+[Transitions and states](https://www.sharetribe.com/docs/tutorial-transaction-process/create-transaction-process/#update-client-app)
+are used in the template as conditions for several behaviors, including
+redirects and displayed content. The
+[transaction resource](https://www.sharetribe.com/api-reference/marketplace.html#transaction-resource-format)
+contains information about the transaction's last transition and its
+timestamp.
+
+### Separating order from payment
+
+In the default transaction process and default FTW flow, the order is
+initiated and processed on
+[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/6e856692d0b7f3a7a1110894967a229a70ae0ce0/src/containers/CheckoutPage/CheckoutPage.js#L355)
+using
+[initial values from ListingPage.js](https://github.com/sharetribe/ftw-daily/blob/6e856692d0b7f3a7a1110894967a229a70ae0ce0/src/containers/ListingPage/ListingPage.js#L122).
+Since the off-session payment process separates initiating the order
+(i.e. creating a booking, setting line items in a privileged transition)
+from payment (creating and further processing Stripe payment intent), it
+is important to pay attention to the way you want to handle that
+separation.
+
+- What happens when user clicks 'Request to book' on ListingPage.js?
+- Where is the API call made to create a booking and set line items?
+
+### Handling delayed manual payment
+
+If the automatic payment succeeds, the customer does not need to take
+further action on the transaction before the review process. Manual
+payment, on the other hand, does require a new user flow in the FTW
+template. CheckoutPage.js is set up to
+[handle payments toward Stripe](https://github.com/sharetribe/ftw-daily/blob/6e856692d0b7f3a7a1110894967a229a70ae0ce0/src/containers/CheckoutPage/CheckoutPage.js#L795),
+so the simplest option is that once the customer has confirmed the
+booking and triggered the transition to create a payment intent, they
+are
+[redirected to CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/6e856692d0b7f3a7a1110894967a229a70ae0ce0/src/containers/TransactionPage/TransactionPage.js#L91)
+to continue the process.
+
+Pay attention to the following points when designing your user flow:
+
+- What action does the customer take in the UI to initiate manual
+  payment?
+- Does the provider see whether or not the customer has paid for the
+  booking?
