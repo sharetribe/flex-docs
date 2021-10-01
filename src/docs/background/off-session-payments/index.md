@@ -107,7 +107,7 @@ worth considering.
 
 ### Transitions and states
 
-[Transitions and states](https://www.sharetribe.com/docs/tutorial-transaction-process/create-transaction-process/#update-client-app)
+[Transitions and states](/tutorial-transaction-process/create-transaction-process/#update-client-app)
 are used in the template as conditions for several behaviors, including
 redirects and displayed content. The
 [transaction resource](https://www.sharetribe.com/api-reference/marketplace.html#transaction-resource-format)
