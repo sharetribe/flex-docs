@@ -9,8 +9,8 @@ ingress:
 published: true
 ---
 
-The default transaction process in FTW is a nightly booking process
-called `flex-default-process/release-1` and FTW is created to support
+The default transaction process in FTW-daily is a nightly booking process
+called `flex-default-process/release-1` and FTW-daily is created to support
 states and transitions defined in that process.
 
 How the transaction process works behind the Marketplace API depends on
@@ -29,7 +29,7 @@ The following guide will help you to customise the process flow in FTW
 to match the process in our backend.
 
 > **Note:** By default,
-> [FTW](https://github.com/sharetribe/flex-template-web/) is using
+> [FTW-daily](https://github.com/sharetribe/ftw-daily/) is using
 > [day-based availability](/references/availability/#day-based-availability-management).
 > If you are using
 > [time-based availability](/references/availability/#time-based-availability-management)

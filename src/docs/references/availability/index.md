@@ -102,7 +102,7 @@ availability plan for a listing can be found in the
 [time-based bookings cookbook](/cookbook-transaction-process/enable-time-based-bookings-into-use/).
 
 > **Note:** By default,
-> [Flex Template for Web](https://github.com/sharetribe/flex-template-web/)
+> [FTW-daily](https://github.com/sharetribe/ftw-daily/)
 > uses day-based availability. If you want to use time-based
 > availability in your marketplace instead, it's recommended that you
 > start with [FTW-hourly](https://github.com/sharetribe/ftw-hourly), the

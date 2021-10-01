@@ -15,7 +15,7 @@ future purchases. Doing this provides multiple benefits: it streamlines
 the checkout process for existing customers and allows you to place
 additional charges to the payment card of the customer.
 
-Flex Template for Web (FTW) includes a checkout workflow, which offers a
+Flex Templates for Web (FTW) include a checkout workflow, which offers a
 box for the customer to check if they want to store their card for
 future purchases. Once they've stored it, they are offered the option to
 use the same card for subsequent purchases without entering the details
