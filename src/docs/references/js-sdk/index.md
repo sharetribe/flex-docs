@@ -1,7 +1,7 @@
 ---
 title: JavaScript SDKs
 slug: js-sdk
-updated: 2021-09-24
+updated: 2021-10-05
 category: references
 ingress: Information on our SDKs and where to find our SDK documentation
 published: true

@@ -1,7 +1,7 @@
 ---
 title: How to test FTW
 slug: how-to-test-ftw
-updated: 2021-09-22
+updated: 2021-10-05
 category: ftw-testing-error-handling
 ingress:
   This guide describes how to use the test setup in Flex Template for
@@ -51,7 +51,7 @@ Most tests included in Flex Template for Web are
 > needs to be updated to the new version of the UI component.”
 
 Failing snapshots can be updated through the
-[Jest watch mode.](https://jestjs.io/docs/snapshot-testing#interactive-snapshot-mode)
+[Jest watch mode](https://jestjs.io/docs/snapshot-testing#interactive-snapshot-mode).
 Even though most tests in Flex Template for Web are UI-focused,
 [some tests](https://github.com/sharetribe/ftw-daily/blob/master/server/api-util/currency.test.js)
 are written with unit-testing in mind.
@@ -85,7 +85,7 @@ in a Node environment. The test runner accesses the DOM using the
 [`jsdom`](https://github.com/jsdom/jsdom) library. As the tests are run
 in a Node environment, they are not exact portrayals of real browser
 behaviour. This provides good iteration speed and a well-adjusted
-balance between accuracy, simplicity and performance.
+balance between accuracy, simplicity, and performance.
 
 Jest provides detailed documentation on their testing framework. If you
 are interested in extending the in-built tests provided with Flex

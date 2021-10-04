@@ -101,7 +101,7 @@ const Breadcrumb = props => {
               {links.map((link, i, arr) => (
                 <CrumbLi
                   key={link.label}
-                  {...link}
+                  label={link.label}
                   path={arr.length - 1 === i ? null : link.path}
                 />
               ))}

@@ -4,7 +4,7 @@ slug: extended-data
 updated: 2019-01-23
 category: references
 ingress:
-  Reference documentation providing informaton on all the different
+  Reference documentation providing information on all the different
   types of extended data.
 published: true
 ---
