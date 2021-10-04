@@ -1,7 +1,7 @@
 ---
 title: Features
 slug: features
-updated: 2021-09-30
+updated: 2021-10-04
 category: background
 ingress:
   This article provides an overview of the most important features of

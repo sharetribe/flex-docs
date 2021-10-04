@@ -1,7 +1,7 @@
 ---
 title: Getting started with Flex CLI
 slug: getting-started-with-flex-cli
-updated: 2021-09-30
+updated: 2021-10-04
 category: flex-cli
 ingress:
   This tutorial shows you how to get started with the Flex CLI. You will
