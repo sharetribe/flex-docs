@@ -1,7 +1,7 @@
 ---
 title: How Strong Customer Authentication works
 slug: strong-customer-authentication
-updated: 2019-07-02
+updated: 2021-10-04
 category: background
 ingress:
   This article gives an overview of Strong Customer Authentication, a
@@ -21,9 +21,9 @@ means that an online payment has to be verified via a customer’s online
 bank or mobile verification when conducting the payment.
 
 The default [transaction process](/background/transaction-process/) of
-Sharetribe Flex and the
-[Flex Template for Web](https://github.com/sharetribe/flex-template-web)
-(FTW) offer out-of-the-box support for SCA. This article helps you
+Sharetribe Flex and the Flex Templates for Web (
+[FTW daily](https://github.com/sharetribe/ftw-daily), [FTW hourly](https://github.com/sharetribe/ftw-hourly), [FTW product](https://github.com/sharetribe/ftw-product)
+) offer out-of-the-box support for SCA. This article helps you
 understand how exactly transactions using SCA will work in the default
 process.
 

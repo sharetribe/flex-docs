@@ -1,7 +1,7 @@
 ---
 title: Features
 slug: features
-updated: 2019-11-21
+updated: 2021-10-04
 category: background
 ingress:
   This article provides an overview of the most important features of
@@ -88,7 +88,9 @@ A listing can have several different states:
 - **_Pending approval._** The listing is ready, but this marketplace
   requires the operator to approve each listing before they are
   published, so the listing is waiting for operator's approval before it
-  is published.
+  is published. You can enable or disable the listing approval
+  functionality for your marketplace in
+  [Flex CLI](/flex-cli/getting-started-with-flex-cli/#enable-and-disable-listing-approval-functionality).
 - **Closed.** The listing used to be published, but has since been
   closed, either by the provider or by the operator. The listing is
   still visible to the provider, but not discoverable via search.

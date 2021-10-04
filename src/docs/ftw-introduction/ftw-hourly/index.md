@@ -33,7 +33,7 @@ and day-based ones. This is the case especially if your marketplace
 operates on multiple time zones and some listings could be booked from a
 different time zone as the one in which the listing is located.
 
-FTW-time introduces a new library `moment-timezone` for handling the
+FTW-hourly introduces a new library `moment-timezone` for handling the
 time zones when operating with dates. You need to use the
 moment-timezone whenever you create new date objects. E.g. on
 ListingPage the start and end of the month should have time zone so that
@@ -47,13 +47,13 @@ component will select browser's time zone.
 
 ## Booking the listing
 
-In FTW-time, the default minimum duration of the booking is 1 hour and
+In FTW-hourly, the default minimum duration of the booking is 1 hour and
 the available booking times are starting on sharp hours (e.g. 9:00,
 10:00, etc). Since the minimum duration of a timeslot is 5 minutes and
 starting times can be customized to support different use-cases, you
 might want to change the duration or timing of your timeslot-units.
 Start this process from
-[util/dates.js](https://github.com/sharetribe/ftw-time/blob/master/src/util/dates.js)
+[util/dates.js](https://github.com/sharetribe/ftw-hourly/blob/master/src/util/dates.js)
 file. You should edit at least the `findNextBoundary`, `getSharpHours`
 and `calculateQuantityFromHours` functions.
 
@@ -98,4 +98,5 @@ to do to template if you want to enable multiple listings:
   `disableProfileLink` flag.
 
 You can see all the changes we did when changing Saunatime to Yogatime
-in this [pull request](https://github.com/sharetribe/ftw-time/pull/56).
+in this
+[pull request](https://github.com/sharetribe/ftw-hourly/pull/56).
