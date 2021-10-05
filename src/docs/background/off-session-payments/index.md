@@ -138,11 +138,11 @@ If the automatic payment succeeds, the customer does not need to take
 further action on the transaction before the review process. Manual
 payment, on the other hand, does require a new user flow in the FTW
 template.
-[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js#L795)
+[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
 is set up to handle payments toward Stripe, so the simplest option is
 that after an automatic payment has not succeeded and the customer has
-manually triggered the transition to create a payment intent, they are
-[redirected to CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TransactionPage/TransactionPage.js#L91)
+manually triggered the transition to create a payment intent, they are redirected to CheckoutPage.js
+(cf. [TransactionPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TransactionPage/TransactionPage.js) `redirectToCheckoutPageWithInitialValues()`)
 to continue the process.
 
 Pay attention to the following points when designing your user flow:
