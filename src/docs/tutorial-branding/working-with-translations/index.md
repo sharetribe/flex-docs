@@ -3,7 +3,7 @@ title: Working with translations
 slug: working-with-translations
 updated: 2020-02-28
 category: tutorial-branding
-ingress: Write text content for your marketplace
+ingress: Change the UI copy-texts and implement new translations.
 published: true
 ---
 

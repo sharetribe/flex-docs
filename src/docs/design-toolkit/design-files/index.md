@@ -1,9 +1,11 @@
 ---
 title: Design files
 slug: design-files
-updated: 2020-05-28
+updated: 2020-10-05
 category: design-toolkit
-ingress: Wireframes and complete design files for Flex Template for Web.
+ingress:
+  Wireframes and complete design files in mobile and desktop layout for
+  Flex Template for Web.
 published: true
 ---
 
@@ -16,11 +18,40 @@ as the basis for your own designs. This approach can dramatically speed
 up the design process, and it offers an easy starting point for the
 developers.
 
-Sharetribe offers two templates: one for daily bookings (e.g. booking
-saunas or hiking tours) and one for hourly bookings (e.g. booking yoga
-lessons or renting kayaks). The main difference between these templates
-is in the booking calendar, but also the outlooks differ to show some of
-the flexibility that Flex offers.
+## Wireframes
+
+Wireframes are an excellent tool to design your marketplace at the
+structural level. They are most often used to arrange content and
+functionality and establish the basic structure of a page before moving
+on to designing visual elements. Wireframes for our desktop layout are
+available as Sketch files below.
+
+## Design files
+
+Sharetribe offers three templates: one for daily bookings (e.g. booking
+saunas or hiking tours), one for hourly bookings (e.g. booking yoga
+lessons or renting kayaks), and one for product marketplaces (e.g.
+selling and buying sneakers). The main difference between the daily and
+hourly templates is the booking calendar, but also the outlooks differ
+to show some of the flexibility that Flex offers. Both the hourly and
+daily templates are provided in desktop and mobile layouts. The designs
+are provided as .sketch files, which can be opened using the
+[Sketch vector graphics editor](https://www.sketch.com/). Some other
+design tools such as Adobe XD and Photoshop also offer support for
+designs in the .sketch file format.
+
+Once you have the design files installed, you can start working on
+customizing the design to match the visual identity of your marketplace.
+Not only should you concentrate on how your marketplace should look
+like, but also on what kind of user interfaces are required for your
+users to interact with each other.
+
+If you don't want to do the design work yourself, you can always hire a
+designer to do it for you. If you don't know any designers,
+[contact Sharetribe support](mailto:flex-support@sharetribe.com) and
+we'll connect you to a designer who can help you out.
+
+## Assets
 
 [Access design files in Google Drive](https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG?usp=sharing).
 

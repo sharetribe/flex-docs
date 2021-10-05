@@ -3,7 +3,9 @@ title: Add FAQ page
 slug: add-faq-page
 updated: 2020-02-12
 category: tutorial-branding
-ingress: Add a new static page and configure routing.
+ingress:
+  Add a new static page to Flex Template for Web and configure routing
+  to point to the page.
 published: true
 ---
 

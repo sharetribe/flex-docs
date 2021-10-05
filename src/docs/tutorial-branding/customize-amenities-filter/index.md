@@ -3,7 +3,8 @@ title: Customize amenities filter
 slug: customize-amenities-filter
 updated: 2020-06-04
 category: tutorial-branding
-ingress: Change the options for amenities filter.
+ingress:
+  Change the options for amenities filter and update the search schema.
 published: true
 ---
 

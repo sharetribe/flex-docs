@@ -196,19 +196,20 @@ const ArticlePage = props => {
     // ]
   });
 
-  // Currently, operator-guides should not be indexed
-  const noIndexMaybe =
-    category && category === 'operator-guides' ? { noIndex: true } : {};
   return (
     <MainLayout
       title={title}
       description={ingress}
       activeArticle={{ category, slug }}
-      {...noIndexMaybe}
     >
       <ColumnLayout>
         <MainColumn>
-          <script type="application/ld+json">{ldJson}</script>
+          {/* json schema won't validate if not set through dangerouslySetInnerHTML
+          https://stackoverflow.com/questions/49018148/react-json-schema-double-quotes-encoding */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: ldJson }}
+          />
           <CrumbWrapper>
             <Breadcrumb
               links={[

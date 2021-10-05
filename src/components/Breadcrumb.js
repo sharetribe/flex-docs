@@ -95,15 +95,21 @@ const Breadcrumb = props => {
             };
           }),
         });
-
         return (
           <nav {...rest}>
             <Ol>
-              {links.map(link => (
-                <CrumbLi key={link.label} {...link} />
+              {links.map((link, i, arr) => (
+                <CrumbLi
+                  key={link.label}
+                  label={link.label}
+                  path={arr.length - 1 === i ? null : link.path}
+                />
               ))}
             </Ol>
-            <script type="application/ld+json">{ldJson}</script>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: ldJson }}
+            />
           </nav>
         );
       }}

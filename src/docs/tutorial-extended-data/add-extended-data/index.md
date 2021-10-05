@@ -4,7 +4,8 @@ slug: add-extended-data
 updated: 2020-07-14
 category: tutorial-extended-data
 ingress:
-  Learn how to add marketplace specific data to the listing entity.
+  Learn how to add marketplace specific data to the listing entity by
+  using extended data.
 published: true
 ---
 

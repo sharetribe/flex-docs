@@ -4,7 +4,8 @@ slug: edit-email-templates-with-flex-cli
 updated: 2020-10-29
 category: flex-cli
 ingress:
-  This tutorial shows you how to edit email templates with Flex CLI.
+  This tutorial shows you how to edit email templates using the Flex
+  Command-line interface.
 skills: basic command line, text editing
 published: true
 ---

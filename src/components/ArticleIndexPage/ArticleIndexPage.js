@@ -39,6 +39,17 @@ const Heading = styled(H1)`
 
 const Count = styled.span`
   color: #007dff;
+  margin-top: ${3 * baselineSmall}px;
+  margin-left: ${props => props.theme.contentPaddingSmall}px;
+  margin-right: ${props => props.theme.contentPaddingSmall}px;
+
+  @media (min-width: ${baselineBreakpoint}px) {
+    margin-top: ${2 * baselineLarge}px;
+    margin-left: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+    margin-right: ${props =>
+      props.theme.contentPaddingLarge + grid.sideMargin}px;
+  }
 `;
 
 const Description = styled(P)`
@@ -69,6 +80,7 @@ const ArticleIndexPage = props => {
   const { category, articles, noPrefix } = props;
   const title = UiText.fn(`ArticleIndexPage.${category}.title`);
   const description = UiText.fn(`ArticleIndexPage.${category}.description`);
+  const articleCountDescriptor = UiText.fn(`ArticleIndexPage.articleCount`);
   const pathPrefixMaybe = noPrefix ? {} : { pathPrefix: `/${category}/` };
   return (
     <MainLayout
@@ -77,9 +89,8 @@ const ArticleIndexPage = props => {
       activeCategory={category}
     >
       <Content>
-        <Heading>
-          {title} <Count>{articles.length}</Count>
-        </Heading>
+        <Heading>{title}</Heading>
+        <Count>{articles.length} {articleCountDescriptor}</Count>
         <Description>{description}</Description>
         <Index {...pathPrefixMaybe} articles={articles} />
       </Content>

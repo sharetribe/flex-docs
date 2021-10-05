@@ -3,7 +3,9 @@ title: First customization
 slug: first-edit
 updated: 2021-02-12
 category: tutorial-branding
-ingress: Change the marketplace color.
+ingress:
+  Begin customizing your marketplace by custom styling and introducing
+  your own branding.
 published: true
 ---
 

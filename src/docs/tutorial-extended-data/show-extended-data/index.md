@@ -3,7 +3,9 @@ title: Show extended data on listing page
 slug: show-extended-data
 updated: 2020-07-14
 category: tutorial-extended-data
-ingress: Learn how to show extended data on listing page.
+ingress:
+  Learn how to show extended data on the listing page using the public
+  data key.
 published: true
 ---
 
