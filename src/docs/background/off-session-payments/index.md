@@ -1,7 +1,7 @@
 ---
 title: Automatic off-session payments in transaction process
 slug: off-session-payments-in-transaction-process
-updated: 2021-09-30
+updated: 2021-10-05
 category: background
 ingress:
   With off-session payments you can automatically charge your customers
@@ -118,29 +118,31 @@ timestamp.
 
 In the default transaction process and default FTW flow, the order is
 initiated and processed on
-[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/6e856692d0b7f3a7a1110894967a229a70ae0ce0/src/containers/CheckoutPage/CheckoutPage.js#L355)
-using
-[initial values from ListingPage.js](https://github.com/sharetribe/ftw-daily/blob/6e856692d0b7f3a7a1110894967a229a70ae0ce0/src/containers/ListingPage/ListingPage.js#L122).
-Since the off-session payment process separates initiating the order
-(i.e. creating a booking, setting line items in a privileged transition)
-from payment (creating and further processing Stripe payment intent), it
-is important to pay attention to the way you want to handle that
+[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
+in `handlePaymentIntent()`, using
+[initial values from ListingPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/ListingPage/ListingPage.js)
+set in `handleSubmit()` with `callSetInitialValues()`. Since the
+off-session payment process separates initiating the order (i.e.
+creating a booking, setting line items in a privileged transition) from
+payment (creating and further processing Stripe payment intent), it is
+important to pay attention to the way you want to handle that
 separation.
 
 - What happens when user clicks 'Request to book' on ListingPage.js?
-- Where is the API call made to create a booking and set line items?
+- Where is the API call made to invoke the initial process transition
+  that creates a booking and sets line items?
 
 ### Handling delayed manual payment
 
 If the automatic payment succeeds, the customer does not need to take
 further action on the transaction before the review process. Manual
 payment, on the other hand, does require a new user flow in the FTW
-template. CheckoutPage.js is set up to
-[handle payments toward Stripe](https://github.com/sharetribe/ftw-daily/blob/6e856692d0b7f3a7a1110894967a229a70ae0ce0/src/containers/CheckoutPage/CheckoutPage.js#L795),
-so the simplest option is that once the customer has confirmed the
-booking and triggered the transition to create a payment intent, they
-are
-[redirected to CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/6e856692d0b7f3a7a1110894967a229a70ae0ce0/src/containers/TransactionPage/TransactionPage.js#L91)
+template.
+[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js#L795)
+is set up to handle payments toward Stripe, so the simplest option is
+that after an automatic payment has not succeeded and the customer has
+manually triggered the transition to create a payment intent, they are
+[redirected to CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TransactionPage/TransactionPage.js#L91)
 to continue the process.
 
 Pay attention to the following points when designing your user flow:
