@@ -80,6 +80,7 @@ const ArticleIndexPage = props => {
   const { category, articles, noPrefix } = props;
   const title = UiText.fn(`ArticleIndexPage.${category}.title`);
   const description = UiText.fn(`ArticleIndexPage.${category}.description`);
+  const articleCountDescriptor = UiText.fn(`ArticleIndexPage.articleCount`);
   const pathPrefixMaybe = noPrefix ? {} : { pathPrefix: `/${category}/` };
   return (
     <MainLayout
@@ -89,7 +90,7 @@ const ArticleIndexPage = props => {
     >
       <Content>
         <Heading>{title}</Heading>
-        <Count>{articles.length} articles</Count>
+        <Count>{articles.length} {articleCountDescriptor}</Count>
         <Description>{description}</Description>
         <Index {...pathPrefixMaybe} articles={articles} />
       </Content>
