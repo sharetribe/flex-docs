@@ -27,8 +27,8 @@ Flex allows an unlimited number of users to create user accounts to your
 marketplace. Here are some examples of what you can do with Flex user account
 functionality:
 
-- Sign up with email and password
-- Log in with email and password
+- Sign up with email and password or Open ID Connect (Facebook, Google, ...)
+- Log in with email and password or Open ID Connect (Facebook, Google, ...)
 - Verify email address after signup
 - Change email and password
 - Reset password if it's forgotten
@@ -120,8 +120,9 @@ can set their pricing.
   hairdresser offers both haircuts and hair dying.
 - **Seasonal pricing.** Examples: weekends cost more than weekdays,
   summers cost more than winters, and so on.
-- **Quantity discount.** An example: booking a room for two people costs
-  $100, and after that each additional person costs $20 extra.
+- **Quantity discount.** For example: booking a room for two people costs
+  $100, and after that each additional person costs $20 extra. Another
+  example: after 5 items, additional items are $2 cheaper each.
 - **Different pricing for different groups.** An example: price per
   adult is $50/day and price per child $25/day.
 - **Price negotiation.** Customer can propose a discounted price or ask
@@ -129,7 +130,7 @@ can set their pricing.
   Parties can negotiate until a consensus is reached.
 - …and a lot more!
 
-[Read more about the Flex pricing engine](/background/pricing/)
+[Read more about the Flex pricing engine](/background/pricing/).
 
 ## Availability management
 
@@ -174,7 +175,7 @@ seats. Seats can be added both to the weekly default schedule and to the
 exceptions. When seats are used, a customer can only book a certain slot
 if that slot has enough seats available.
 
-[Read more about listing availability management](/references/availability/)
+[Read more about listing availability management](/references/availability/).
 
 ## Stock management
 
@@ -185,7 +186,7 @@ When stock management is incorporated in a transaction process, a
 purchase for certain quantity of units can happen only if the listing's
 available stock is sufficient.
 
-[Read more about listing stock management](/references/stock/)
+[Read more about listing stock management](/references/stock/).
 
 ## Search engine
 
@@ -205,6 +206,7 @@ multiple criteria:
   with seats so that you can filter for availability with minimum number
   of seats. It is also possible to filter by required minimum duration
   of availability for the given time range.
+- **Stock.** It's possible to show all listings or only listings with positive stock.
 - **Custom filter: any value.** Any number of custom filters can be
   added. "Any value" filters out listings that don't have the given
   value (or any of a set of given values) in their public data. A
@@ -232,7 +234,7 @@ and a provider), and it's always related to a listing.
 A transaction doesn't necessarily involve a payment. In its simplest
 form, a transaction could mean simply a thread of free messages between
 a customer and a provider. However, quite often a transaction involves a
-booking (a specific slot is reserved from the calendar of a listing),
+booking (a specific slot is reserved from the calendar of a listing) or order (an item is removed from the stock of a listing),
 price calculation (the customer and provider agree on how much the
 customer should pay for the service provided by the provider), and a
 credit card payment. In addition, you can store _protected data_ to each
@@ -243,7 +245,7 @@ In Flex, a transaction can involve any number of steps, called
 _transitions_. Each transition can be performed either by the customer,
 by the provider, by the operator (for example, the operator could choose
 to cancel a transaction and refund a customer if the provider doesn't
-show up), or automatically at a specific point in time (for instance,
+show up or hasn't sent the items), or automatically at a specific point in time (for instance,
 payouts to providers are done automatically after a booking period has
 been completed).
 
@@ -253,13 +255,14 @@ cases:
 
 - **Different types of bookings.** Book a date range, a number of hours
   on a given date, or a seat at an event.
+- **Manage listing stock.** When an item is ordered, the listing stock changes.
 - **Allow instant booking or require provider approval.** Either require
   each provider to accept a booking before charging the credit card, or
   allow _instant booking_, charging the credit card immediately when a
   customer makes a booking.
-- **Collect custom data when making a booking.** An example: request
+- **Collect custom data when making an order.** For example: request
   information on food allergies for each participant when booking a seat
-  for a dinner party event.
+  for a dinner party event, or ask if an item should be wrapped as a gift.
 - **Collect custom data during the booking period.** An example: require
   the customer to provide photos of the rented vehicle before and after
   the rental period.
@@ -267,11 +270,11 @@ cases:
   cancels 7 days before the booking period starts, they get a full
   refund, but if they cancel later, they won't get a refund. You can
   also allow your providers to choose from multiple different policies.
-- **Decide who can book.** An example: require the customer to verify
-  their identity before their first booking.
+- **Decide who can order.** An example: require the customer to verify
+  their identity before their first order.
 - ...and a lot more!
 
-[Read more about the Flex transaction engine](/background/transaction-process/)
+[Read more about the Flex transaction engine](/background/transaction-process/).
 
 ## Payments
 
@@ -291,7 +294,7 @@ lots of helpful features. Here are some of them:
   is over, and release it to the provider's bank account only after that
   (after automatically deducting your commission). You can hold money up
   to 6 months before releasing it to the provider.
-- **Refunds.** If something goes wrong with the booking or the customer
+- **Refunds.** If something goes wrong with the order or the customer
   wants to cancel, you can easily refund them.
 - **Charge your commission.** You can charge a commission from the
   customer, the provider, or both parties. You can also set multiple
@@ -332,19 +335,19 @@ changed, and a notification when a user sends a message to another.
 
 You can also use the transaction engine to send any email notifications
 to the users. These could include invoices, notifications of new
-bookings, or reminders about the booking period starting. Flex offers a
+orders, or reminders about the booking period starting. Flex offers a
 set of default transactional emails out of the box, but you can easily
 add any number of additional email notifications and time them exactly
 the way you want. You can give multiple conditions for when each
 notification is sent: for instance, you might want to send a reminder
-about leaving a review 7 days after the booking period ended, but only
+about leaving a review 7 days after the order was delivered or the booking period ended, but only
 if the user hasn't left a review yet.
 
 You can customize the design and contents of all email notifications
 freely. You can use smart variables to include user generated content,
 or even personalize the templates based on who the recipient is.
 
-[Read more about customizing email templates](/references/email-templates/)
+[Read more about customizing email templates](/references/email-templates/).
 
 ## Multiple languages and currencies
 
@@ -441,7 +444,7 @@ trigger for actions in other apps. Zapier can also perform "search
 actions" in your marketplace data about users, listings or transactions.
 
 Together this allows you to create complex workflows based on things
-happening in your marketplace. A new booking can trigger the sending of
+happening in your marketplace. A new booking or order can trigger the sending of
 a text message with Twilio. A new user sign-up can set into action a
 campaign of drip emails in Mailchimp. A new listing can be automatically
 posted to any of your marketplace’s social accounts. And so much more.

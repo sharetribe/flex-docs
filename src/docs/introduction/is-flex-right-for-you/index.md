@@ -1,7 +1,7 @@
 ---
 title: Is Flex the right fit for you?
 slug: is-flex-right-for-you
-updated: 2021-09-21
+updated: 2021-10-07
 category: introduction
 ingress:
   The purpose of this article is to give you a general overview of
@@ -20,24 +20,26 @@ providers to offer their services to their customers through the
 marketplace.
 
 Flex is not the right solution if your idea is to build an e-commerce
-store for selling products. Flex is also not the right fit if your
-concept is a discussion forum or a social network.
+store for selling products yourself. Flex is also not the right fit if
+your concept is a discussion forum or a social network.
 
-Some marketplace types are faster to build with Flex than others. We're
-going to look into this next.
+Flex functionality has been built with specific focus on for
+marketplaces for:
 
-## Marketplaces for services, rentals and experiences
-
-**Flex functionality has been built with specific focus on for
-marketplaces for selling services, renting products or spaces, or
-offering various experiences.**
+- selling services
+- renting products or spaces
+- booking experiences
+- selling products
 
 These marketplaces can be either C2C ("Customer-to-Customer", also
 called peer-to-peer – individuals selling to other individuals), B2C
 ("Business-to-Customer", businesses selling to individuals) or B2B
 ("Business-to-Business", businesses selling to other businesses), or any
-combination of them. Your Flex marketplace can be a website or a mobile
-app or even have both.
+combination of them.
+
+Your Flex marketplace can be a website or a mobile app or even have both.
+
+## Marketplaces for services, rentals and experiences
 
 With Flex, you can build your own marketplace that is similar to, for
 example, one of these popular platforms:
@@ -71,13 +73,21 @@ service marketplace.
 
 ## Marketplaces for selling physical or digital products
 
-You can use [FTW-product](https://github.com/sharetribe/ftw-product) for
-building a marketplace for selling physical products. It has stock
-management included and it asks shipping address from customer and shows
-that to provider. However, it doesn't include shopping cart feature by
-default. Shopping cart would require changes to payment process.
+Flex also supports product marketplaces similar to, for example, one of
+these popular platforms:
 
-It's possible to build a marketplace that sells digital products, but
+- [Vinted](https://www.vinted.com) - selling and exchanging new or secondhand items, mainly clothing and accessories (C2C)
+- [Poshmark](https://www.poshmark.com) - selling new or used clothing, shoes, and accessories (C2C)
+- [eBay](https://www.ebay.com) - selling a wide variety of goods and services (C2C, B2C, B2B)
+- [Etsy](https://www.etsy.com) - selling handmade or vintage items and craft supplies (C2C, B2C)
+
+You can use [FTW-product](https://github.com/sharetribe/ftw-product) to
+start building a marketplace for selling physical products fast. It has stock
+management included and it asks shipping address from customer and shows
+that to provider. However, it doesn't include a shopping cart feature by
+default. A shopping cart would require changes to the payment process.
+
+It's possible to build a marketplace that sells digital products, and
 you will need to do some custom development to integrate a system for
 storing these files.
 
@@ -89,7 +99,7 @@ their service offerings. The customers search the site, browse and
 compare different providers, choose the one they like, book a slot from
 their calendar, and pay. Alternatively, the customer might contact one
 of the providers (or several of them) and start a negotiation process to
-determine the final price. This is how all the 10 popular marketplaces
+determine the final price. This is how all the popular marketplaces
 listed above work. Flex works great for all these use cases.
 
 Some marketplaces have another kind of workflow, which can be called a
