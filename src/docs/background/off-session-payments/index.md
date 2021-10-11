@@ -1,7 +1,7 @@
 ---
 title: Automatic off-session payments in transaction process
 slug: off-session-payments-in-transaction-process
-updated: 2021-10-05
+updated: 2021-10-11
 category: background
 ingress:
   With off-session payments you can automatically charge your customers
@@ -28,6 +28,15 @@ with your web site or app), provided that they have saved a payment card
 to their account. This allows you to charge customers closer to their
 booking dates, so that the money can be held in Stripe throughout the
 booking period.
+
+Another way to use the off-session payment logic might be to create a
+pre-order functionality for a product marketplace. In a pre-order
+transaction flow, the provider could put their future offerings for sale
+and include a delivery date well into the future. Customers could then
+pre-order the items, and their card would only be charged once the
+provider marks the orders as being in progress or shipped. Again, this
+would allow the pre-order time to be longer than the Stripe limitation
+of 90 days.
 
 ## Transaction process example
 
@@ -141,9 +150,10 @@ template.
 [CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
 is set up to handle payments toward Stripe, so the simplest option is
 that after an automatic payment has not succeeded and the customer has
-manually triggered the transition to create a payment intent, they are redirected to CheckoutPage.js
-(cf. [TransactionPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TransactionPage/TransactionPage.js) `redirectToCheckoutPageWithInitialValues()`)
-to continue the process.
+manually triggered the transition to create a payment intent, they are
+redirected to CheckoutPage.js (cf.
+[TransactionPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TransactionPage/TransactionPage.js)
+`redirectToCheckoutPageWithInitialValues()`) to continue the process.
 
 Pay attention to the following points when designing your user flow:
 
