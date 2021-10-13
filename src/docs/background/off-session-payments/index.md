@@ -1,7 +1,7 @@
 ---
 title: Automatic off-session payments in transaction process
 slug: off-session-payments-in-transaction-process
-updated: 2021-10-11
+updated: 2021-10-13
 category: background
 ingress:
   With off-session payments you can automatically charge your customers
