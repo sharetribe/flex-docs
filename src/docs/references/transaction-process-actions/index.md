@@ -1,7 +1,7 @@
 ---
 title: Transaction process actions
 slug: transaction-process-actions
-updated: 2021-09-16
+updated: 2021-10-13
 category: references
 ingress:
   This reference article lists all the available actions and their
@@ -1209,9 +1209,9 @@ Action for confirming payment intent that is in pending state.
 If the payment intent was created with
 `:action/stripe-create-payment-intent` (a card payment), a
 preauthorization is placed on the card. The payment then can be captured
-in full by using `:action/stripe-capture-payment-intent` or the
-preauthorization can be released by using
-`:action/stripe-refund-payment`.
+in full by using `:action/stripe-capture-payment-intent` within 7 days
+of creating the payment intent, or the preauthorization can be released
+by using `:action/stripe-refund-payment`.
 
 **IMPORTANT** On the other hand, payments with synchronous push payment
 methods (created with `:action/stripe-create-payment-intent-push`) are
@@ -1243,7 +1243,8 @@ Action for capturing a confirmed Stripe PaymentIntent. If the
 PaymentIntent was created with
 `:action/stripe-create-payment-intent-push`, the PaymentIntent is
 captured automatically already when the payment is confirmed and this
-action will have no effect.
+action will have no effect. Uncaptured payment intents are valid for
+seven days, after which they are automatically canceled by Stripe.
 
 **Preconditions:**
 

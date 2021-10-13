@@ -55,7 +55,7 @@ In this example, a transaction goes as follows:
 
 1. The customer picks the desired booking dates and initiates a
    transaction. The price of the transaction is calculated, but no
-   payment is made at this point.
+   preauthorization or payment is made at this point.
 2. The provider verifies the request and accepts the booking.
 3. At a later point in time (1 month before the booking start time in
    this example, and 1 day before the booking start in the

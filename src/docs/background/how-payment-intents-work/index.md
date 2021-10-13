@@ -1,7 +1,7 @@
 ---
 title: How PaymentIntents work
 slug: payment-intents
-updated: 2021-02-25
+updated: 2021-10-13
 category: background
 ingress:
   Overview of how Stripe PaymentIntents work with Sharetribe Flex, and
@@ -130,8 +130,9 @@ methods). Confirms the PaymentIntent in Stripe, if needed.
 
 If the payment intent was created with `stripe-create-payment-intent` (a
 card payment), a preauthorization is placed on the card. The payment
-then can be captured in full by using `stripe-capture-payment-intent` or
-the preauthorization can be released by using `stripe-refund-payment`.
+then can be captured in full by using `stripe-capture-payment-intent`
+within 7 days of creating the payment intent, or the preauthorization can
+be released by using `stripe-refund-payment`.
 
 On the other hand, if the payment intent was created with
 `stripe-create-payment-intent-push`, there is no preauthorization, the
@@ -147,7 +148,8 @@ For detailed reference, see
 Captures a confirmed PaymentIntent. In case of PaymentIntents created
 through `stripe-create-payment-intent-push`, the PaymentIntent is
 automatically captured already when confirmed and this action has no
-effect.
+effect. Note that uncaptured payment intents are valid for seven days,
+after which they are automatically canceled by Stripe.
 
 For detailed reference, see
 [here](/references/transaction-process-actions/#actionstripe-capture-payment-intent).
