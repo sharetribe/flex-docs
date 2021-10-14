@@ -1,16 +1,16 @@
 ---
 title: Inventory management
 slug: inventory-management
-updated: 2021-10-01
+updated: 2021-10-15
 category: operator-guides
 ingress:
-  Overview of how to use the stock related features from the Flex APIs to manage your listings' stock or inventory
+  Inventory or stock management is a key feature of many product marketplaces. Here’s how Flex’s stock management works.
 published: true
 ---
 
 In Flex, you can manage the available stock or inventory of a listing via the stock-related features in the Marketplace API and the Integration API. With those APIs, you can determine the available stock (quantity) of any given listing as well as add to and subtract from it. Additions to stock will mostly be determined by providers, as they restock the items they sell. Stock subtractions, on the other hand, will mostly happen as part of transactions, as buyers on your marketplace make purchases.
 
-This article describes the stock management features of Flex on a high level. If you want to read a more technical article about the feature, [click here](https://www.sharetribe.com/docs/references/stock/)
+This article describes the stock management features of Flex on a high level. If you want to read a more technical article about the feature, [click here](https://www.sharetribe.com/docs/references/stock/). 
 
 ## How do you determine the initial available stock or increase the available stock of a listing?
 
@@ -26,10 +26,10 @@ You can also connect your Flex marketplace with third-party systems to further m
 
 Finally, providers could manually adjust their inventory directly from the marketplace interface. Similar to how they would add inventory.  
 
-## Can listings be closed automatically when there is no stock left?
+## Can listings be closed automatically if there is no stock left?
 
 Yes! This feature can be built into your Flex marketplace app with relative ease, even though it is not part of the default template. Furthermore, even if you don’t have a system in place that would close the listings automatically, users will not be able to purchase more units than are available, giving you peace of mind that no double-purchases of the same stock will happen. 
 
 ## How to manage the number of seats or spaces for an event or a class?
 
-If you are looking to manage the number of spaces in an event, you should take a look at our seats feature. With seats, you can manage the number of available spaces in a given event at a given time. Seats are tied to booking availability. You can learn more about the feature [here](https://www.sharetribe.com/docs/operator-guides/manage-seats).
+If you are looking to manage the number of spaces in an event, you should take a look at the   seats feature. With seats, you can manage the number of available spaces in a given event at a given time. Seats are tied to booking availability managment. You can learn more about the feature [here](https://www.sharetribe.com/docs/docs/operator-guides/manage-seats).s
