@@ -223,8 +223,9 @@ different time zones if needed.
 
 This template works as a starting point for marketplaces that need to
 use stock management instead of booking. We have added more
-configuration options to this template, but naturally, everything is not
-configurable. You can think of this as a starting point for your
-customization journey - a starting point to get your
+configuration options to this template, but naturally, not everything has a
+configuration option. You can however change anything you want by making
+changes to the code directly. You should think of this as a starting point
+for your customization journey - a starting point to get your
 [Minimum Viable Product](https://www.sharetribe.com/academy/how-to-build-a-minimum-viable-platform/)
 (MVP) up and running.
