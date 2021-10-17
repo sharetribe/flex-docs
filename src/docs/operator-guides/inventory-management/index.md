@@ -32,4 +32,4 @@ Yes! This feature can be built into your Flex marketplace app with relative ease
 
 ## How to manage the number of seats or spaces for an event or a class?
 
-If you are looking to manage the number of spaces in an event, you should take a look at the   seats feature. With seats, you can manage the number of available spaces in a given event at a given time. Seats are tied to booking availability managment. You can learn more about the feature [here](https://www.sharetribe.com/docs/docs/operator-guides/manage-seats).
+If you are looking to manage the number of spaces in an event, you should take a look at the   seats feature. With seats, you can manage the number of available spaces in a given event at a given time. Seats are tied to booking availability managment. You can learn more about the feature [here](https://www.sharetribe.com/docs/operator-guides/manage-seats).

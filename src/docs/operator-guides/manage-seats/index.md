@@ -1,7 +1,7 @@
 ---
 title: Manage seats
 slug: manage-seats
-updated: 2021-10-15
+updated: 2021-10-18
 category: operator-guides
 ingress:
   You can manage the capacity of an event or a rental space within a specific time frame with seats.
@@ -49,4 +49,4 @@ If a marketplace uses availability-based listing search, then listings that don�
 
 ## Can I manage stock or inventory of a listing with seats?
 
-If you are looking to manage the stock or inventory of a listing, you should take a look at Flex’s stock management. You can learn more about the feature [here](https://www.sharetribe.com/docs/docs/operator-guides/inventory-management/).
+If you are looking to manage the stock or inventory of a listing, you should take a look at Flex’s stock management. You can learn more about the feature [here](https://www.sharetribe.com/docs/operator-guides/inventory-management/).
