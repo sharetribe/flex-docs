@@ -47,7 +47,7 @@ what it offers. There are a few ways to gain this understanding:
 2. Study
    [how listing search, listing creation, and transactions work](https://www.sharetribe.com/docs/design-toolkit/user-journey/)
    specifically.
-3. Install one of the template applications (Saunatime or Yogatime)
+3. Install one of the template applications (Saunatime, Yogatime, or Sneakertime)
    yourself following
    [this guide](https://www.sharetribe.com/docs/introduction/getting-started-with-ftw-daily/),
    or ask a developer to do it for you.
