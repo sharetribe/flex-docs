@@ -1,7 +1,7 @@
 ---
 title: Manage seats
 slug: manage-seats
-updated: 2021-10-15
+updated: 2021-10-18
 category: operator-guides
 ingress:
   You can manage the capacity of an event or a rental space within a specific time frame with seats.
@@ -21,9 +21,9 @@ You define the available seats for any given time slot of a listing via the  [av
 In our templates, FTW-daily and FTW-hourly, the default seat availability of any particular listing is one. Providers set the availability plan and exceptions of their listing during the listing creation. Users determine when their listing is available and when it’s not within the timeframes your marketplace offers: hourly, daily, or custom length. When modifying the template, you or your developers can enable more than one seat per time slot, either in general or for specific dates and times.
 
 Some examples:
-- You can set multiple available spaces for the same sauna.
+- You can set multiple available spaces for the same sauna for every night.
 - You can set available beds in a hostel room.
-- You can set the maximum number of people that can participate in a yoga class.
+- You can set the maximum number of people that can participate in a yoga class depending on the day.
 - You can determine the number of screens that can participate in an online cooking class.
 
 ## How do you decrease the available seats of a listing?
@@ -45,8 +45,8 @@ Yes! Listing search can be modified so that available seats are taken into accou
 - Find listings that have 2 seats available on next Friday.
 - Find listings that have 5 seats available for two hours some time next week.
 
-If a marketplace uses availability-based listing search, then listings that are don’t have enough spots available will be automatically filtered out, even though they are available for less people.
+If a marketplace uses availability-based listing search, then listings that don’t have enough spots available will be automatically filtered out, even though they are available for a lower number of people in the same timeframe.
 
 ## Can I manage stock or inventory of a listing with seats?
 
-If you are looking to manage the stock or inventory of a listing, you should take a look at Flex’s stock management. You can learn more about the feature [here](https://www.sharetribe.com/docs/docs/operator-guides/inventory-management/).
+If you are looking to manage the stock or inventory of a listing, you should take a look at Flex’s stock management. You can learn more about the feature [here](https://www.sharetribe.com/docs/operator-guides/inventory-management/).
