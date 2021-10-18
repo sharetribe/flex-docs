@@ -1,7 +1,7 @@
 ---
 title: Introducing Yogatime
 slug: introducing-yogatime
-updated: 2021-08-06
+updated: 2021-10-18
 category: operator-guides
 ingress:
   If you’re building a service marketplace or are looking for
@@ -25,7 +25,7 @@ in the video below. If you prefer reading, scroll past the video, and
 read on instead! For more technical information on Yogatime, check out
 [this article](https://www.sharetribe.com/docs/ftw-introduction/ftw-hourly/).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jzyH8LzfPhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vbw6_wm9E4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Hourly bookings
 
