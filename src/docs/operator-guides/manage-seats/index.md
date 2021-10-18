@@ -38,7 +38,7 @@ Finally, providers could manually reduce the number of seats or block their avai
 
 Finally, providers could manually adjust their inventory directly from the marketplace interface. Similar to how they would add inventory.  
 
-## Can listings be searced by available spots?
+## Can listings be searched by available spots?
 
 Yes! Listing search can be modified so that available seats are taken into account. It's possible to search for listings that have desired number of seats available on specific dates or times. For example: 
 
