@@ -1,7 +1,7 @@
 ---
 title: How to Customize FTW
 slug: how-to-customize-ftw
-updated: 2019-11-21
+updated: 2021-10-19
 category: ftw-introduction
 ingress:
   So you've decided to build your own marketplace using Flex Template
@@ -44,7 +44,7 @@ also walk you through creating a GitHub repository.
 
 [Tutorial](/tutorial/introduction/) goes through one of the FTW
 templates (FTW-daily), but that's not the only one. Currently, you can
-choose from two templates:
+choose from three templates:
 
 - [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
   rental marketplace with day-based bookings
