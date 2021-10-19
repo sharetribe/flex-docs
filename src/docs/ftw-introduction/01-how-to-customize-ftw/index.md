@@ -51,7 +51,7 @@ choose from three templates:
 - [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime" - a
   service marketplace with time-based bookings
 - [FTW-product](https://github.com/sharetribe/ftw-product)
-  "Sneakertime" - a service marketplace with stock management.
+  "Sneakertime" - a product marketplace with stock management.
 
 > **Note:** By default your Flex marketplace comes with day-based
 > [transaction process](/background/transaction-process/). If you want
