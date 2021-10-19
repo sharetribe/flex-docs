@@ -22,15 +22,21 @@ Sneakertime’s layout is designed with product marketplaces in mind. As with ou
 
 Sneakertime’s browse view consists of listing thumbnails and filters on the left side. The filters live-update the listings that are displayed. Potential buyers do not need to update the view separately but can choose and change attributes in real-time.
 
+![Sneakertime browse view with filters and listings](./search-filters.png)
+
 ### Listing thumbnails and images
 
 Default listing thumbnails in Sneakertime are square-shaped. The template code has an easy configuration to change the aspect ratio of the thumbnails.
 
 On the listing page, images are presented in a carousel. They also retain their original aspect ratio.
 
+![Listing image carousel on the listing page](./images-carousel.png)
+
 ### Location features
 
 By default, Sneakertime does not have a location search or a map view. If you're building a local product marketplace, these are easy to add, as Sneakertime’s code has components to enable both the map and location search with a simple configuration change.
+
+![Sneakertime browser view with a map next to listings](./local-marketplace.png)
 
 ## Inventory management
 
