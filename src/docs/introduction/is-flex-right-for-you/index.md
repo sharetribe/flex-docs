@@ -37,7 +37,8 @@ called peer-to-peer – individuals selling to other individuals), B2C
 ("Business-to-Business", businesses selling to other businesses), or any
 combination of them.
 
-Your Flex marketplace can be a website or a mobile app or even have both.
+Your Flex marketplace can be a website or a mobile app or even have
+both.
 
 ## Marketplaces for services, rentals and experiences
 
@@ -76,16 +77,21 @@ service marketplace.
 Flex also supports product marketplaces similar to, for example, one of
 these popular platforms:
 
-- [Vinted](https://www.vinted.com) - selling and exchanging new or secondhand items, mainly clothing and accessories (C2C)
-- [Poshmark](https://www.poshmark.com) - selling new or used clothing, shoes, and accessories (C2C)
-- [eBay](https://www.ebay.com) - selling a wide variety of goods and services (C2C, B2C, B2B)
-- [Etsy](https://www.etsy.com) - selling handmade or vintage items and craft supplies (C2C, B2C)
+- [Vinted](https://www.vinted.com) - selling and exchanging new or
+  secondhand items, mainly clothing and accessories (C2C)
+- [Poshmark](https://www.poshmark.com) - selling new or used clothing,
+  shoes, and accessories (C2C)
+- [eBay](https://www.ebay.com) - selling a wide variety of goods and
+  services (C2C, B2C, B2B)
+- [Etsy](https://www.etsy.com) - selling handmade or vintage items and
+  craft supplies (C2C, B2C)
 
 You can use [FTW-product](https://github.com/sharetribe/ftw-product) to
-start building a marketplace for selling physical products fast. It has stock
-management included and it asks shipping address from customer and shows
-that to provider. However, it doesn't include a shopping cart feature by
-default. A shopping cart would require changes to the payment process.
+start building a marketplace for selling physical products fast. It has
+stock management included and it asks shipping address from customer and
+shows that to provider. However, it doesn't include a shopping cart
+feature by default. A shopping cart would require changes to the payment
+process.
 
 It's possible to build a marketplace that sells digital products, and
 you will need to do some custom development to integrate a system for

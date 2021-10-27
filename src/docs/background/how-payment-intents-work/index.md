@@ -131,8 +131,8 @@ methods). Confirms the PaymentIntent in Stripe, if needed.
 If the payment intent was created with `stripe-create-payment-intent` (a
 card payment), a preauthorization is placed on the card. The payment
 then can be captured in full by using `stripe-capture-payment-intent`
-within 7 days of creating the payment intent, or the preauthorization can
-be released by using `stripe-refund-payment`.
+within 7 days of creating the payment intent, or the preauthorization
+can be released by using `stripe-refund-payment`.
 
 On the other hand, if the payment intent was created with
 `stripe-create-payment-intent-push`, there is no preauthorization, the

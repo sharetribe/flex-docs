@@ -53,16 +53,19 @@ we'll connect you to a designer who can help you out.
 
 ## Assets
 
-[Access design files in Google Drive](https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG?usp=sharing).
+[Access design files in Google Drive](https://bit.ly/3miruCr).
 
 Or download directly: <br /><br /> <b>FTW daily</b><br />
-[Sharetribe_Flex-DAILY-Desktop.sketch](https://drive.google.com/uc?export=download&id=1Lm7hVHB_i5mLDO5mtCuziyIJA1ZPNl4b)<br />
-[Sharetribe_Flex-DAILY-Mobile.sketch](https://drive.google.com/uc?export=download&id=1FOVyXpNdt9eRM_hLMG8-lSZ-VdxJZv_k)<br />
-[Sharetribe_Flex-DAILY-Wireframes.sketch](https://drive.google.com/uc?export=download&id=1__BvrIbpx1-C8EHT6nJdxjDrq8XomlrI)
+[Sharetribe_Flex-DAILY-Desktop.sketch](https://bit.ly/3bfeKGb)<br />
+[Sharetribe_Flex-DAILY-Mobile.sketch](https://bit.ly/3pKFbfl)<br />
+[Sharetribe_Flex-DAILY-Wireframes.sketch](https://bit.ly/3vOZ1aB)
 
 <b>FTW hourly</b><br />
-[Sharetribe_Flex-HOURLY-Desktop.sketch](https://drive.google.com/uc?export=download&id=1OMPRdIypI3aIFzs5d9Vbx7EwVfz6B-Xu)<br />
-[Sharetribe_Flex-HOURLY-Mobile.sketch](https://drive.google.com/uc?export=download&id=1ulr10ibQ60QUxLA6w62kS9hEx1Vgf8Y8)<br />
+[Sharetribe_Flex-HOURLY-Desktop.sketch](https://bit.ly/2Zuw5bv)<br />
+[Sharetribe_Flex-HOURLY-Mobile.sketch](https://bit.ly/3pGbZ9u)<br />
+
+<b>FTW product</b><br />
+[Sharetribe_Flex-PRODUCT-Desktop.sketch](https://bit.ly/3BfN3aY)<br />
 
 The design files can be used according to
 [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).

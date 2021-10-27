@@ -90,7 +90,9 @@ const ArticleIndexPage = props => {
     >
       <Content>
         <Heading>{title}</Heading>
-        <Count>{articles.length} {articleCountDescriptor}</Count>
+        <Count>
+          {articles.length} {articleCountDescriptor}
+        </Count>
         <Description>{description}</Description>
         <Index {...pathPrefixMaybe} articles={articles} />
       </Content>
