@@ -117,8 +117,8 @@ Check out the following design articles.
 
 - Designing your marketplace in Flex:
   https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/#2-designing-your-marketplace
-- FTW-daily and FTW-hourly Sketch files:
-  https://drive.google.com/drive/folders/171T-lYUGJURrAF5qCtTZ0298WPhhG0SG
+- FTW-daily, FTW-hourly and FTW-product Sketch files:
+  https://www.sharetribe.com/docs/design-toolkit/design-files/#assets
 - Customer Journey Map Toolkit:
   https://drive.google.com/drive/folders/1kI8-PDF6gi926AqlnXaMH66bJhmJbmvI?usp=sharing
 - Partner Toolkit:
