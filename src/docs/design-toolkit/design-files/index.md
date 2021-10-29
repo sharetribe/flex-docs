@@ -61,8 +61,8 @@ Or download directly: <br /><br /> <b>FTW daily</b><br />
 [Sharetribe_Flex-DAILY-Wireframes.sketch](https://bit.ly/3vOZ1aB)
 
 <b>FTW hourly</b><br />
-[Sharetribe_Flex-HOURLY-Desktop.sketch](https://bit.ly/2Zuw5bv)<br />
-[Sharetribe_Flex-HOURLY-Mobile.sketch](https://bit.ly/3pGbZ9u)<br />
+[Sharetribe_Flex-HOURLY-Desktop.sketch](https://bit.ly/3bnFX9U)<br />
+[Sharetribe_Flex-HOURLY-Mobile.sketch](https://bit.ly/3jLLYSc)<br />
 
 <b>FTW product</b><br />
 [Sharetribe_Flex-PRODUCT-Desktop.sketch](https://bit.ly/3bj3N6K)<br />
