@@ -65,7 +65,7 @@ Or download directly: <br /><br /> <b>FTW daily</b><br />
 [Sharetribe_Flex-HOURLY-Mobile.sketch](https://bit.ly/3pGbZ9u)<br />
 
 <b>FTW product</b><br />
-[Sharetribe_Flex-PRODUCT-Desktop.sketch](https://bit.ly/3BfN3aY)<br />
+[Sharetribe_Flex-PRODUCT-Desktop.sketch](https://bit.ly/3bj3N6K)<br />
 
 The design files can be used according to
 [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
