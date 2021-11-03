@@ -10,7 +10,7 @@ published: true
 ---
 
 [FTW-hourly](https://github.com/sharetribe/ftw-hourly) is a Flex
-Template for Web with support for time-based bookings and it's build
+Template for Web with support for time-based bookings and it's built
 with service marketplaces in mind. This template introduces Yogatime - a
 fictional marketplace for booking yoga classes from various yoga
 teachers.
