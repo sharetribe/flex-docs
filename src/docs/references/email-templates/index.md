@@ -336,7 +336,8 @@ Context for transaction emails:
     "display-name": "string",
     "private-data": "extended-data",
     "public-data": "extended-data",
-    "protected-data": "extended-data"
+    "protected-data": "extended-data",
+    "metadata": "extended-data"
   },
   "marketplace": {
     "name": "string",
@@ -350,7 +351,8 @@ Context for transaction emails:
     "display-name": "string",
     "private-data": "extended-data",
     "public-data": "extended-data",
-    "protected-data": "extended-data"
+    "protected-data": "extended-data",
+    "metadata": "extended-data"
   },
   "transaction": {
     "id": "uuid",
@@ -396,7 +398,8 @@ Context for transaction emails:
           "display-name": "string",
           "private-data": "extended-data",
           "public-data": "extended-data",
-          "protected-data": "extended-data"
+          "protected-data": "extended-data",
+          "metadata": "extended-data"
         }
       }
     ],
@@ -407,7 +410,8 @@ Context for transaction emails:
       "display-name": "string",
       "private-data": "extended-data",
       "public-data": "extended-data",
-      "protected-data": "extended-data"
+      "protected-data": "extended-data",
+      "metadata": "extended-data"
     },
     "payin-total": {
       "amount": "decimal",
@@ -434,7 +438,8 @@ Context for transaction emails:
       "display-name": "string",
       "private-data": "extended-data",
       "public-data": "extended-data",
-      "protected-data": "extended-data"
+      "protected-data": "extended-data",
+      "metadata": "extended-data"
     },
     "delayed-transition": {
       "run-at": "date"

@@ -12,6 +12,9 @@
     },
     "private-data" : {
       "language" : "en"
+    },
+    "metadata" : {
+      "membership" : "premium"
     }
   },
   "recipient-role" : "provider",
@@ -28,6 +31,9 @@
     },
     "private-data" : {
       "language" : "fr"
+    },
+    "metadata" : {
+      "membership" : "standard"
     }
   },
   "marketplace" : {
@@ -122,6 +128,9 @@
       },
       "private-data" : {
         "language" : "fr"
+      },
+      "metadata" : {
+        "membership" : "standard"
       }
     },
     "payin-total" : {
@@ -143,6 +152,9 @@
         },
         "private-data" : {
           "language" : "fr"
+        },
+        "metadata" : {
+          "membership" : "standard"
         }
       },
       "content" : "Well done, customer Jane P!"
@@ -160,6 +172,9 @@
         },
         "private-data" : {
           "language" : "en"
+        },
+        "metadata" : {
+          "membership" : "premium"
         }
       },
       "content" : "Good job, provider Joe D!"
@@ -202,6 +217,9 @@
       },
       "private-data" : {
         "language" : "en"
+      },
+      "metadata" : {
+        "membership" : "premium"
       }
     },
     "protected-data": {
