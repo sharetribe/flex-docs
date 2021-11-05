@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing-tutorial
-updated: 2021-06-17
+updated: 2021-11-05
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an
@@ -426,12 +426,12 @@ selected.
 
 ## Add a new line-item for the cleaning fee
 
-Finally, we need to edit the the backend of our client app and add new
-line item for cleaning fee so that it will be included in pricing. Flex
-uses privileged transitions to ensure that the pricing logic is handled
-in a secure environment. This means that constructing line items and
-transitioning requests of privileged transitions are made from the
-server-side.
+We are almost there! Next, we need to edit the the backend of our client
+app and add a new line item for cleaning fee so that it will be included
+in pricing. Flex uses privileged transitions to ensure that the pricing
+logic is handled in a secure environment. This means that constructing
+line items and transitioning requests of privileged transitions are made
+from the server-side.
 
 <extraInfo title="What are privileged transitions and why we use them?">
 
@@ -553,3 +553,104 @@ check the booking breakdown again. Now if you choose the cleaning fee,
 you should see the cleaning fee also in the booking breakdown:
 
 ![Cleaning fee in booking breakdown](./cleaningFeeBookingBreakdown.png)
+
+## Update CheckoutPage to handle cleaning fee
+
+Finally, we want to update the Checkout Page so that it takes the
+cleaning fee selection into account when the customer actually pays for
+the booking.
+
+### Fetch speculated transaction complete with cleaning fee
+
+When a user clicks "Request to book", `ListingPage.js` sends the booking
+details as initial values to `CheckoutPage.js`, which then fetches the
+possible transaction information, including pricing, to be shown on the
+checkout page. In FTW language, this is known as "speculating" the
+transaction - the booking has not been made, but the line items are
+calculated as if it were.
+
+This means that we need to pass the cleaning fee information to the
+function that speculatively fetches the transaction in `CheckoutPage.js`,
+and conversely receive it in `CheckoutPage.duck.js`. First, on CheckoutPage.js
+`loadInitialData()` does some data processing and, if necessary, calls
+`fetchSpeculatedTransaction()`.
+
+```diff
+      fetchSpeculatedTransaction(
+        {
+          listingId,
+          bookingStart: bookingStartForAPI,
+          bookingEnd: bookingEndForAPI,
++         hasCleaningFee: bookingData.cleaningFee?.length > 0,
+        },
+        transactionId
+      );
+
+```
+
+This function call dispatches a `speculateTransaction` action in
+`CheckoutPage.duck.js`, which in turn calls the FTW server using the
+correct endpoint. To pass the cleaning fee selection to the API call, we
+add it to `bookingData` within the `speculateTransaction` action.
+
+```diff
+  const bookingData = {
+    startDate: orderParams.bookingStart,
+    endDate: orderParams.bookingEnd,
++   hasCleaningFee: orderParams.hasCleaningFee,
+  };
+```
+
+Now when the customer selects cleaning fee on the listing page and
+clicks "Request to book", we see the correct price and breakdown on the
+checkout page.
+
+![Cleaning fee in booking breakdown on checkout page](./checkoutPageBreakdown.png)
+
+### Include cleaning fee in the final transaction price
+
+The final step is to add the same logic to the flow that eventually sets
+the price for the transaction. In `CheckoutPage.js`, the function that
+does the heavy lifting in handling the payment processing is
+`handlePaymentIntent()`. In short, it first creates five functions to
+handle the transaction payment process, then composes them into a single
+function `handlePaymentIntentCreation()`, and then calls that function
+with parameter `orderParams`. 
+
+To add the cleaning fee information into this
+process, we want to include it in `orderParams`, which is defined
+towards the very end of `handlePaymentIntent()` function.
+
+```diff
+    const orderParams = {
+      listingId: pageData.listing.id,
+      bookingStart: tx.booking.attributes.start,
+      bookingEnd: tx.booking.attributes.end,
++     hasCleaningFee: pageData.bookingData?.cleaningFee?.length > 0,
+      ...optionalPaymentParams,
+    };
+```
+
+Then, we still need to add the cleaning fee information to the correct
+action in `CheckoutPage.duck.js`. The first function in the
+`handlePaymentIntentCreation()` composition is `fnRequestPayment`. It
+initiates the order if there is no existing paymentIntent, and in
+practice it dispatches the `initiateOrder` action that calls the FTW
+server. So similarly to the `speculateTransaction` action, we just need
+to add the cleaning fee selection to `bookingData` in `initiateOrder`.
+
+```diff
+  const bookingData = {
+    startDate: orderParams.bookingStart,
+    endDate: orderParams.bookingEnd,
++   hasCleaningFee: orderParams.hasCleaningFee,
+  };
+```
+
+Now you can try it out! You may have to refresh your application first,
+so that the Redux changes take effect. When you complete a booking on a
+listing that has a cleaning fee specified, you can see the cleaning fee
+included in the price on the booking page. In addition, the Flex Console
+transaction price breakdown also shows the cleaning fee.
+
+![Cleaning fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
