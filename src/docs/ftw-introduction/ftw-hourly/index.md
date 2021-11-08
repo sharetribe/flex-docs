@@ -84,15 +84,16 @@ zone of the listing to availability plan.
 
 ## Each provider can have only one listing
 
-Because FTW-hourly has been built with a focus on service marketplaces, each
-user can only have one listing by default. In Yogatime's context, the
-listing is set up as a teacher profile. There are some changes you need
-to make to the template if you want to enable multiple listings:
+Because FTW-hourly has been built with a focus on service marketplaces,
+each user can only have one listing by default. In Yogatime's context,
+the listing is set up as a teacher profile. There are some changes you
+need to make to the template if you want to enable multiple listings:
 
-- Remove `allowOnlyOneListing` prop from `EditListingPage` routing in `routeConfiguration.js`
+- Remove `allowOnlyOneListing` prop from `EditListingPage` routing in
+  `routeConfiguration.js`
 - Add a link to `NewListingPage` e.g. to `Topbar`
-- Add `ManageListingsPage` to routing, and add a link to that page e.g. in
-  `UserNav`
+- Add `ManageListingsPage` to routing, and add a link to that page e.g.
+  in `UserNav`
 - Change `OwnListingLink` to direct to user profile. Note that in the
   `Avatar` component you can enable the profile link by removing the
   `disableProfileLink` flag.
