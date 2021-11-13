@@ -62,7 +62,7 @@ search with a simple configuration change.
 Inventory management is vital for product marketplaces, and Sneakertime
 uses Flex’s listing stock management features to enable it. You can read
 more about inventory management in Flex
-[in this article](https://www.sharetribe.com/docs/operator-guides/inventory-management).
+[in this article](https://www.sharetribe.com/docs/operator-guides/inventory-management/).
 
 In Sneakertime, the seller adds the number of items they have in stock
 during listing creation. When a buyer makes a purchase, that number is
@@ -122,7 +122,7 @@ With Flex, you can modify your marketplace’s transaction flow to your
 specifications. For example, you could add a step for the seller to
 confirm the order or only have the buyer review the purchase. Read more
 about transaction processes in Flex
-[here](https://www.sharetribe.com/docs/operator-guides/transaction-process).
+[here](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
 
 ## How to get started
 

@@ -11,7 +11,7 @@ published: true
 
 ## Introduction
 
-**[Access the Sharetribe Flex API reference here](https://www.sharetribe.com/api-reference)**
+**[Access the Sharetribe Flex API reference here](https://www.sharetribe.com/api-reference/)**
 
 The Sharetribe Flex API consists of three individual APIs:
 
