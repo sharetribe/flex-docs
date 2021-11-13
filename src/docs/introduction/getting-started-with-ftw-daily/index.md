@@ -216,7 +216,7 @@ their Stripe dashboard.
 
 **United States**<br /> If you're based in The United States, Stripe
 will need to review your platform account before you get access. See
-[this article](https://help.sharetribe.com/sharetribe-go-payments-and-transactions/online-payments-with-stripe/how-to-apply-for-stripe-connect-review-us-accounts-only)
+[this article](https://help.sharetribe.com/en/articles/2815555-apply-for-stripe-connect-review)
 to learn how to apply for Stripe Connect review.
 
 **Other countries**<br /> If you're in any another country, follow these
