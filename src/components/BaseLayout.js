@@ -49,7 +49,6 @@ const BaseLayout = props => {
           <>
             <Helmet title={pageTitle} meta={meta}>
               <html lang="en" />
-              {console.log(path)}
               <link rel="canonical" href={`${siteUrl}${withPrefix(path)}`} />
             </Helmet>
             {children}
