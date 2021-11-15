@@ -32,7 +32,7 @@ const BaseLayout = props => {
         const meta = [];
         const path = activeArticle
           ? `/${activeArticle.category}/${activeArticle.slug}/`
-          : `${activeCategory}/`;
+          : activeCategory ? `${activeCategory}/` : '';
 
         // https://moz.com/learn/seo/meta-description
         if (description) {
@@ -49,6 +49,7 @@ const BaseLayout = props => {
           <>
             <Helmet title={pageTitle} meta={meta}>
               <html lang="en" />
+              {console.log(path)}
               <link rel="canonical" href={`${siteUrl}${withPrefix(path)}`} />
             </Helmet>
             {children}
