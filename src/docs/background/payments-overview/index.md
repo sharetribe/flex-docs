@@ -19,8 +19,7 @@ alternatives in case you decide to not use Stripe on your marketplace.
 In a nutshell, a basic payment flow in a marketplace contains five
 significant steps:
 
-_//TODO: In the original context, this has a graph => should it have a
-graph here as well?_
+![Payment gateway logic](./payment-flow.png)
 
 ### Step 1: Provider onboarding
 
@@ -28,8 +27,10 @@ In this step, the provider connects their Flex account with the payment
 gateway. This is where they provide the bank details that eventually
 receive money from the customers. In addition, in this step, they
 provide the necessary information and documents for the identity
-verification and Know Your Customer [(KYC)](https://en.wikipedia.org/wiki/Know_your_customer) requirements. [These
-requirements vary](https://stripe.com/docs/connect/required-verification-information) depending on the user’s country of residence.
+verification and Know Your Customer
+[(KYC)](https://en.wikipedia.org/wiki/Know_your_customer) requirements.
+[These requirements vary](https://stripe.com/docs/connect/required-verification-information)
+depending on the user’s country of residence.
 
 ### Step 2: Customer checkout
 
@@ -72,8 +73,7 @@ eventually paid out to the provider.
 ## Stripe default integration
 
 In the default Flex implementation, the process described above is
-implemented using Stripe. The integration uses (Stripe Custom Connect
-accounts)[https://stripe.com/docs/connect/custom-accounts] as the
+implemented using Stripe. The integration uses [Stripe Custom Connect accounts](https://stripe.com/docs/connect/custom-accounts) as the
 provider’s payout account. The customer can checkout using a payment
 card, and they can also save their payment method for future use. The
 integration uses
@@ -219,8 +219,10 @@ receiving the product or service they purchased.
 - TODO: default is card payments, but you can hook up other payment
   methods as well (link to payment methods) => chat with someone from
   Flex team to understand the payment methods article
-- Saving a payment method is possible, and it is also required for the
-  off-session payment pattern to work
+
+Saving a payment method is possible, and it is also required for the
+off-session payment pattern to work
+
 - Currencies handled in minor units
 -
 
@@ -230,33 +232,94 @@ The default Stripe integration in Flex works from any client
 application. However, the FTW templates are further configured to work
 hand in hand with Stripe:
 
-- [Provider onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/) is handled with Stripe Connect Onboarding. A provider cannot create listings (i.e. receive money from customers) unless they have verified their identity with Stripe, thereby making sure that the platform is always KYC compliant.
-- CheckoutPage.js handles all Stripe actions related to customer checkout, including creating and confirming the payment intent, with a single button click.
-- The customer can save their payment method to Flex either when purchasing a listing, or on a separate Payment Methods page.
-
+- [Provider onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/)
+  is handled with Stripe Connect Onboarding. A provider cannot create
+  listings (i.e. receive money from customers) unless they have verified
+  their identity with Stripe, thereby making sure that the platform is
+  always KYC compliant.
+- CheckoutPage.js handles all Stripe actions related to customer
+  checkout, including creating and confirming the payment intent, with a
+  single button click.
+- The customer can save their payment method to Flex either when
+  purchasing a listing, or on a separate Payment Methods page.
 
 ## Frequently asked questions
 
 ### Where can I use Stripe?
 
-- Stripe countries
-- Special cases
+In order to use Stripe on your marketplace, your platform needs to be in
+a Stripe-supported country. The platform country then determines in
+which countries the platform can create Connect accounts, i.e. where
+your marketplace's users can be from. Check
+[Stripe's own documentation](https://stripe.com/docs/connect/custom-accounts#requirements)
+for the most up-to-date requirements for your marketplace country.
 
 ### I'm having problems with the Stripe integration!
 
-Stripe errors Configs in order Payout problems
+Sometimes it takes a while to get Stripe to work. Here are some ideas
+for your troubleshooting to try and solve the problem.
+
+- Double check that you have followed the
+  [Stripe setup instructions](/cookbook-payments/set-up-and-use-stripe/).
+  Also pay attention that in test environment, you need to use the
+  Stripe keys starting with `sk_test` and `pk_test`, and you will also
+  need to use
+  [Stripe's test payout details](https://stripe.com/docs/connect/testing#payouts)
+  and
+  [test payment methods](https://stripe.com/docs/testing#payment-intents-api)
+  with those test keys. In production with real payment methods, you
+  will need to use the keys starting with `sk_live` and `pk_live`.
+
+- If you get your Stripe integration working to the point that you get
+  an error message from Stripe, it is useful to take a moment to check
+  [what the error code means](https://stripe.com/docs/error-codes). It
+  is also often useful to put the error code into a search engine and
+  check if someone has already solved a similar problem.
+
+- In case of payout problem issues, you can check out our article about
+  [Stripe payout issues](/background/solving-payout-problems/) for
+  advice or ideas.
+
+If nothing seems to work, you can always contact Flex technical support
+through the chat widget in your
+[Flex Console](https://flex-console.sharetribe.com/) or
+[by email](mailto:flex-support@sharetribe.com) for further
+troubleshooting.
 
 ### Can I use Flex and not use Stripe?
 
-Reasons: no need for payments, or not a Stripe country etc. You can
-remove Stripe It is possible to create separate payment integrations as
-well
+You can absolutely use Flex without using Stripe. You might not use
+payments at all in your marketplace, or your platform operates in a
+non-Stripe supported country, or you may have some other reason.
+
+Using the Flex backend without the Stripe integration is fairly simple.
+You will need to remove references to all
+[Stripe-related transaction process actions](/references/transaction-process-actions/#stripe-integration)
+from your transaction processes, and avoid using
+[Stripe-related endpoints](https://www.sharetribe.com/api-reference/marketplace.html).
+For clarity, all references to Stripe's backend elements (endpoints,
+transaction process actions etc.) are named with the prefix `stripe`.
+
+If you want to modify a FTW template to work without Stripe, the effort
+is more extensive, since each template is built around a logic that uses
+Stripe actions and endpoints. You can use
+[this article](/cookbook-payments/removing-stripe-and-payments/) as your
+starting point.
+
+When removing the Stripe integration, you will want to consider whether
+or not you want to implement some other payment gateway in your
+marketplace to handle payments. You can refer to our high-level
+instructions on
+[how to integrate a 3rd-party payment gateway](integrations/how-to-integrate-3rd-party-payment-gateway/)
+when making the decision and when implementing any changes.
 
 ### Can I partially refund the transaction price?
 
-- The default Flex / Stripe integration only supports fully refunding
-  PaymentIntents. If you have a use case where you would need to
-  implement partial refunds, it is advisable to look into partially or
-  completely handling payments outside the default Stripe integration.
-  You can also contact Flex Support and let us know your specific use
-  case, and we may be able to recommend some avenues for you to explore!
+The default Stripe integration in Flex only supports fully refunding
+PaymentIntents. If you have a use case where you would need to implement
+partial refunds, it is advisable to look into partially or completely
+handling payments outside the default Stripe integration. You can also
+contact Flex Support and let us know your specific use case, and we may
+be able to recommend some avenues for you to explore.
+
+// TODO: ASK BOYAN ABOUT WHAT TO RECOMMEND HERE!
