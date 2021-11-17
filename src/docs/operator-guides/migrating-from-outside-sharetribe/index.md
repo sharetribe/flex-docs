@@ -1,7 +1,7 @@
 ---
 title: Migrating from outside Sharetribe ecosystem
 slug: migrating-from-outside-sharetribe
-updated: 2021-07-09
+updated: 2021-11-05
 category: operator-guides
 ingress: How to import data from outside Sharetribe ecosystem
 published: true
@@ -46,9 +46,11 @@ has id attr, import id and an alias.
 Import ids can be given to rows and they should be unique for the
 marketplace and they are of type UUID. Aliases can be used to reference
 rows from other rows. Aliases are useful when the data is written by
-hand. Import ids are useful for both upsert and programmatically
-generated / exported data. Content part of row 2-tuple is a map that is
-processed by tuple expansion function registered for the content type.
+hand. Import ids are useful for programmatically generated / exported
+data. However, note that import ids are only used in the import phase
+and they can not be mapped to existing resource ids. Content part of row
+2-tuple is a map that is processed by tuple expansion function
+registered for the content type.
 
 If you are not generating data by hand, it is highly recommended that
 you use the 2 element form of the id tuple. This means that you don't

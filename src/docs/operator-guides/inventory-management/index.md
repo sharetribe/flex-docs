@@ -72,4 +72,4 @@ should take a look at the seats feature. With seats, you can manage the
 number of available spaces in a given event at a given time. Seats are
 tied to booking availability managment. You can learn more about the
 feature
-[here](https://www.sharetribe.com/docs/operator-guides/manage-seats).
+[here](https://www.sharetribe.com/docs/operator-guides/manage-seats/).
