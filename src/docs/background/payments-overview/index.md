@@ -27,7 +27,7 @@ In this step, the provider connects their Flex account with the payment
 gateway. This is where they provide the bank details that eventually
 receive money from the customers. In addition, in this step, they
 provide the necessary information and documents for the identity
-verification and Know Your Customer
+verification and _Know Your Customer_
 [(KYC)](https://en.wikipedia.org/wiki/Know_your_customer) requirements.
 [These requirements vary](https://stripe.com/docs/connect/required-verification-information)
 depending on the user’s country of residence.
@@ -49,7 +49,7 @@ from the customer's credit card to the payment gateway.
 
 This is a step that you can combine with the customer checkout. The flow
 where the “provider accept” happens instantly after customer checkout is
-called "instant booking"[link to lower in the article] flow.
+called [instant booking](#instant-booking) flow.
 
 ### Step 4: Customer refund
 
@@ -73,10 +73,11 @@ eventually paid out to the provider.
 ## Stripe default integration
 
 In the default Flex implementation, the process described above is
-implemented using Stripe. The integration uses [Stripe Custom Connect accounts](https://stripe.com/docs/connect/custom-accounts) as the
-provider’s payout account. The customer can checkout using a payment
-card, and they can also save their payment method for future use. The
-integration uses
+implemented using Stripe. The integration uses
+[Stripe Custom Connect accounts](https://stripe.com/docs/connect/custom-accounts)
+as the provider’s payout account. The customer can checkout using a
+payment card, and they can also save their payment method for future
+use. The integration uses
 [Stripe destination charges](https://stripe.com/docs/connect/destination-charges)
 to collect the payment to the platform’s account first. Once the
 transaction is successfully over, the provider’s share of the payment is
@@ -214,14 +215,51 @@ listings or purchase preorder products further in the future than the 90
 day Stripe limitation, and they will be charged closer to the moment of
 receiving the product or service they purchased.
 
-### Payment methods
+### Payment methods and currencies
 
 - TODO: default is card payments, but you can hook up other payment
   methods as well (link to payment methods) => chat with someone from
   Flex team to understand the payment methods article
 
-Saving a payment method is possible, and it is also required for the
-off-session payment pattern to work
+The user can save a default payment method in Flex. If your marketplace
+uses the
+[automatic off-session payment flow](#automatic-off-session-payments),
+the customer must save their payment method so that the transaction
+process can try to automatically charge them at the specified moment.
+
+Flex does not determine the currency of the listings as such. Each
+listing needs to have a `price`, which is specified with the `currency`
+of the price, and the `amount` in the currency's minor unit (e.g. cents
+for USD). Flex Console displays the prices based on the listing's
+specified currency. The FTW templates have a single currency defined by
+default, to facilitate e.g. price filtering and sorting, as well as to
+simplify creating Stripe charges, since the charge currency is
+determined by the country of the platform account.
+
+As the transaction progresses, the payment intent is created and charged
+from the customer in the listing's currency (TODO FIGURE OUT IF THIS IS
+ALSO THE PLATFORM ACCOUNT COUNTRY CURRENCY!)
+[if available in Stripe](https://stripe.com/docs/currencies). The payout
+currency is determined by the... TODO: FIND OUT!! e.g. if platform is in
+Finland (EUR), provider is in Sweden (SEK) and customer is in Norway
+(NOK), the charge is made in NOK and the payout is in which currency? In
+addition, if the marketplace supports EUR and SEK and the provider has
+created the listing in SEK, does the charge still get made in EUR?
+
+<extrainfo title="Stripe currency terminology">
+In Stripe terminology, the <b>presentment currency</b> is the currency
+of the charge, i.e. the currency at which the listing price leaves the
+customer's card. The customer's card provider may charge a conversion
+fee if the presentment currency differs from the customer's card currency,
+or if the credit card and the marketplace platform are registered in
+different countries regardless of the currency.<br/><br/>
+The <b>settlement currency</b> is the currency of the payout, i.e.
+the currency at which the provider's payout is paid to their bank account.
+If the presentment currency differs from the settlement currency, Stripe
+converts the charge to the settlement currency.<br/><br/>
+See <a href="https://stripe.com/docs/currencies">Stripe's own documentation</a>
+for country-specific details on supported currencies.
+</extrainfo>
 
 - Currencies handled in minor units
 -
@@ -268,7 +306,11 @@ for your troubleshooting to try and solve the problem.
   and
   [test payment methods](https://stripe.com/docs/testing#payment-intents-api)
   with those test keys. In production with real payment methods, you
-  will need to use the keys starting with `sk_live` and `pk_live`.
+  will need to use the keys starting with `sk_live` and `pk_live`. Also
+  check that the keys you are using match the keys in the Stripe
+  Console. You can "roll" i.e. refresh the keys if necessary and enter
+  the new keys - they will still be connected to the same Stripe
+  platform account.
 
 - If you get your Stripe integration working to the point that you get
   an error message from Stripe, it is useful to take a moment to check
@@ -310,7 +352,7 @@ When removing the Stripe integration, you will want to consider whether
 or not you want to implement some other payment gateway in your
 marketplace to handle payments. You can refer to our high-level
 instructions on
-[how to integrate a 3rd-party payment gateway](integrations/how-to-integrate-3rd-party-payment-gateway/)
+[how to integrate a 3rd-party payment gateway](/integrations/how-to-integrate-3rd-party-payment-gateway/)
 when making the decision and when implementing any changes.
 
 ### Can I partially refund the transaction price?
