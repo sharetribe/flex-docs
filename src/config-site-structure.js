@@ -91,6 +91,16 @@ const sortingArrayReferences = [
   'transaction-process-time-expressions',
 ];
 
+const sortingArrayPaymentCookbooks = [
+  'how-to-customize-pricing',
+  'set-up-and-use-stripe',
+  'provider-onboarding-and-identity-verification',
+  'enable-payment-intents',
+  'save-payment-card',
+  'stripe-connect-platform-review',
+  'removing-stripe',
+]
+
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -133,7 +143,10 @@ exports.siteStructure = [
       { id: 'cookbook-design' },
       { id: 'cookbook-search' },
       { id: 'cookbook-transaction-process' },
-      { id: 'cookbook-payments' },
+      { 
+        id: 'cookbook-payments',
+        sortingArray: sortingArrayPaymentCookbooks
+      },
       { id: 'cookbook-manage' },
       { id: 'cookbook-emails' },
       { id: 'cookbook-social-logins-and-sso' },
