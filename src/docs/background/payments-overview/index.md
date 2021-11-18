@@ -113,11 +113,18 @@ transaction processes, Flex creates a
 transaction. Once the PaymentIntent is confirmed, Stripe preauthorizes
 the sum from the customer's payment method. In other words, the sum does
 not leave the customer's account, but it is still reserved and not
-available to be used by the customer. The preauthorization is valid for
-7 days, after which the preauthorization is automatically released by
-Stripe, and the funds are again available to the customer. In the FTW
-templates, creating and confirming the PaymentIntent are triggered at
-the same customer action for the default process.
+available to be used by the customer.
+
+The preauthorization is valid for 7 days, after which the
+preauthorization is automatically released by Stripe, and the funds are
+again available to the customer. In the FTW templates, creating and
+confirming the PaymentIntent are triggered at the same customer action
+for the default process.
+
+**Related Stripe actions:**
+
+- [:action/stripe-create-payment-intent](/references/transaction-process-actions/#actionstripe-create-payment-intent)
+- [:action/stripe-confirm-payment-intent](/references/transaction-process-actions/#actionstripe-confirm-payment-intent)
 
 #### 3. Provider acceptance
 
@@ -134,6 +141,10 @@ In the
 template, the default process combines customer checkout and provider
 acceptance to all be triggered at the same customer action.
 
+**Related Stripe actions:**
+
+- [:action/stripe-capture-payment-intent](/references/transaction-process-actions/#actionstripe-capture-payment-intent)
+
 #### 4. Customer refund
 
 If the customer requests a refund for one reason or another, the
@@ -141,6 +152,10 @@ operator can refund the PaymentIntent. The Flex integration with Stripe
 only supports full refunds. The default integration takes into account
 whether or not the PaymentIntent has already been captured from the
 customer's account.
+
+**Related Stripe actions:**
+
+- [:action/stripe-refund-payment](/references/transaction-process-actions/#actionstripe-refund-payment)
 
 #### 5. Provider payout
 
@@ -160,6 +175,21 @@ for up to 90 days - for exceptions see the linked Stripe documentation.
 In other words, the payout must be triggered no more than 90 days after
 the PaymentIntent is created. This means that for booking times
 exceeding 90 days, the process needs to be modified.
+
+<extrainfo title="Manual or automatic payout?">
+In Stripe terms, the Flex integration uses manual payouts. This means
+that Stripe does not automatically pay out the funds on the platform
+account e.g. daily or weekly, and instead the platform controls the payout
+schedule. Since the payouts are triggered by the transaction process,
+however, from the marketplace operator's point of view they happen
+automatically. In other words, the operator should not pay out funds
+manually through the Stripe Console if the marketplace transaction
+process is using the Stripe payout action.
+</extrainfo>
+
+**Related Stripe actions:**
+
+- [:action/stripe-create-payout](/references/transaction-process-actions/#actionstripe-create-payout)
 
 ### Modifications to the default process
 
