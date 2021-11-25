@@ -92,7 +92,7 @@ endpoint API reference.
 ## Adding schemas
 
 FTW defines two search filters in listing public data: category and
-amenities. A category is something that is selected from a drodown of
+amenities. A category is something that is selected from a dropdown of
 options, so the schema type should be `enum`. A listing can have
 multiple amenities that are also selected from a set of options and
 stored in an array, so the schema type should be `multi-enum`.
