@@ -1,7 +1,7 @@
 ---
 title: Payments in Flex
 slug: payments-overview
-updated: 2021-11-03
+updated: 2021-11-18
 category: background
 ingress:
   This article introduces how payments work in Flex in general, and
@@ -72,17 +72,29 @@ eventually paid out to the provider.
 
 ## Stripe default integration
 
-In the default Flex implementation, the process described above is
-implemented using Stripe. The integration uses
+In the default Flex transaction process and FTW templates, the process
+described above is implemented using Stripe. The integration uses
 [Stripe Custom Connect accounts](https://stripe.com/docs/connect/custom-accounts)
-as the provider’s payout account. The customer can checkout using a
-payment card, and they can also save their payment method for future
-use. The integration uses
+as the provider’s account. The customer can checkout using a payment
+card or [other supported method](#payment-methods-and-currencies), and
+they can also save their payment method for future use. The integration
+uses
 [Stripe destination charges](https://stripe.com/docs/connect/destination-charges)
-to collect the payment to the platform’s account first. Once the
-transaction is successfully over, the provider’s share of the payment is
-paid through the provider’s Custom Connect account to the bank account
-they provided upon onboarding.
+([on behalf of the provider](https://stripe.com/docs/payments/connected-accounts))
+to collect the payment from the customer to the provider's Custom
+Connect account first. Once the transaction is successfully over, the
+possible commission is paid to the platform account using application
+fees, and the remainder is paid out to the bank account the provider
+gave upon onboarding.
+
+<extrainfo title="What does &quot;on behalf of&quot; mean?">
+The Stripe on_behalf_of destination charge means that when the charge is created,
+the money goes directly to the provider's Custom Connect account in Stripe, and
+the provider's information is e.g. shown on the customer's payment method receipt.
+This also means that a listing cannot be booked or purchased if the provider has
+not onboarded to Stripe, because the charge cannot be created in Stripe without
+the provider's Custom Connect account information.
+</extrainfo>
 
 ### Default payment process with Stripe
 
@@ -111,8 +123,8 @@ When the customer initiates a transaction in the Flex default
 transaction processes, Flex creates a
 [PaymentIntent](/background/payment-intents/) for the total price of the
 transaction. Once the PaymentIntent is confirmed, Stripe preauthorizes
-the sum from the customer's payment method. In other words, the sum does
-not leave the customer's account, but it is still reserved and not
+the sum from the customer's payment method. In other words, the sum is
+not paid out from the customer's card, but it is still reserved and not
 available to be used by the customer.
 
 The preauthorization is valid for 7 days, after which the
@@ -133,8 +145,11 @@ to accept the booking until it expires automatically. This timeline
 ensures that the Stripe preauthorization does not expire before the
 provider has the opportunity to accept or reject the booking. Once the
 provider accepts the booking, the PaymentIntent is captured and the
-transaction sum is transferred from the customer's account to the
-platform account.
+transaction sum is transferred from the customer's card to the
+provider's Custom Connect account. If the transaction has any
+commissions, those are then paid from the provider's Connect account to
+the platform's account as
+[application fees](https://stripe.com/docs/api/application_fees).
 
 In the
 [FTW Product (Sneakertime)](https://github.com/sharetribe/ftw-product)
@@ -149,9 +164,9 @@ acceptance to all be triggered at the same customer action.
 
 If the customer requests a refund for one reason or another, the
 operator can refund the PaymentIntent. The Flex integration with Stripe
-only supports full refunds. The default integration takes into account
-whether or not the PaymentIntent has already been captured from the
-customer's account.
+only supports full refunds. The default transaction process takes into
+account whether or not the PaymentIntent has already been captured from
+the customer's account.
 
 **Related Stripe actions:**
 
@@ -169,8 +184,8 @@ paying all [Stripe fees](https://stripe.com/en-fi/connect/pricing)
 related to the Custom Connect account usage, so the commissions must be
 defined to cover those expenses as well.
 
-It is important to note that the platform can
-[hold funds on their Stripe account](https://stripe.com/docs/connect/account-balances#holding-funds)
+It is important to note that Stripe can
+[hold funds](https://stripe.com/docs/connect/account-balances#holding-funds)
 for up to 90 days - for exceptions see the linked Stripe documentation.
 In other words, the payout must be triggered no more than 90 days after
 the PaymentIntent is created. This means that for booking times
@@ -178,12 +193,12 @@ exceeding 90 days, the process needs to be modified.
 
 <extrainfo title="Manual or automatic payout?">
 In Stripe terms, the Flex integration uses manual payouts. This means
-that Stripe does not automatically pay out the funds on the platform
-account e.g. daily or weekly, and instead the platform controls the payout
+that Stripe does not automatically pay out the funds from the Connect 
+accounts e.g. daily or weekly, and instead the platform controls the payout
 schedule. Since the payouts are triggered by the transaction process,
 however, from the marketplace operator's point of view they happen
 automatically. In other words, the operator should not pay out funds
-manually through the Stripe Console if the marketplace transaction
+manually through the Stripe Dashboard if the marketplace transaction
 process is using the Stripe payout action.
 </extrainfo>
 
@@ -239,17 +254,19 @@ Another notable approach to modifying the payment timeline in Flex is
 the
 [off-session payment pattern](/background/off-session-payments-in-transaction-process/).
 In an off-session payment, the customer checkout and provider acceptance
-happen when the customer books the listing, but the payment takes place
-closer to the booking start time. That way, customers can e.g. book
+happen when the customer books or purchases the listing, but the payment
+takes place at a later date. That way, customers can, for instance, book
 listings or purchase preorder products further in the future than the 90
 day Stripe limitation, and they will be charged closer to the moment of
 receiving the product or service they purchased.
 
 ### Payment methods and currencies
 
-- TODO: default is card payments, but you can hook up other payment
-  methods as well (link to payment methods) => chat with someone from
-  Flex team to understand the payment methods article
+Flex supports multiple payment methods as a part of its Stripe
+integration. The default payment method is a payment card, which is what
+the FTW templates use. However, you can enable
+[other payment methods](/background/payment-methods-overview/) as well
+with moderate custom development work.
 
 The user can save a default payment method in Flex. If your marketplace
 uses the
@@ -257,24 +274,19 @@ uses the
 the customer must save their payment method so that the transaction
 process can try to automatically charge them at the specified moment.
 
-Flex does not determine the currency of the listings as such. Each
-listing needs to have a `price`, which is specified with the `currency`
-of the price, and the `amount` in the currency's minor unit (e.g. cents
-for USD). Flex Console displays the prices based on the listing's
-specified currency. The FTW templates have a single currency defined by
-default, to facilitate e.g. price filtering and sorting, as well as to
-simplify creating Stripe charges, since the charge currency is
-determined by the country of the platform account.
+Flex does not determine a currency for listings. However, each listing
+needs to have a currency specified in its `price` attribute. The value
+for `price.amount` is given in the minor unit of `price.currency` (e.g.
+cents for USD). Flex Console displays listing prices based on the
+listing's currency. The FTW templates have a single currency defined by
+default, to facilitate e.g. price filtering and sorting.
 
 As the transaction progresses, the payment intent is created and charged
-from the customer in the listing's currency (TODO FIGURE OUT IF THIS IS
-ALSO THE PLATFORM ACCOUNT COUNTRY CURRENCY!)
-[if available in Stripe](https://stripe.com/docs/currencies). The payout
-currency is determined by the... TODO: FIND OUT!! e.g. if platform is in
-Finland (EUR), provider is in Sweden (SEK) and customer is in Norway
-(NOK), the charge is made in NOK and the payout is in which currency? In
-addition, if the marketplace supports EUR and SEK and the provider has
-created the listing in SEK, does the charge still get made in EUR?
+from the customer's payment method in the listing's currency, or
+alternatively the
+[currency of the line items](/background/pricing/#line-items) if
+different from the listing currency. The payout currency is determined
+by the provider's bank account currency.
 
 <extrainfo title="Stripe currency terminology">
 In Stripe terminology, the <b>presentment currency</b> is the currency
@@ -290,9 +302,6 @@ converts the charge to the settlement currency.<br/><br/>
 See <a href="https://stripe.com/docs/currencies">Stripe's own documentation</a>
 for country-specific details on supported currencies.
 </extrainfo>
-
-- Currencies handled in minor units
--
 
 ## FTW and Stripe
 
@@ -315,10 +324,10 @@ hand in hand with Stripe:
 
 ### Where can I use Stripe?
 
-In order to use Stripe on your marketplace, your platform needs to be in
-a Stripe-supported country. The platform country then determines in
-which countries the platform can create Connect accounts, i.e. where
-your marketplace's users can be from. Check
+In order to use Stripe on your marketplace, your platform account needs
+to be in a Stripe-supported country. The platform country then
+determines in which countries the platform can create Connect accounts,
+i.e. where your marketplace's users can be from. Check
 [Stripe's own documentation](https://stripe.com/docs/connect/custom-accounts#requirements)
 for the most up-to-date requirements for your marketplace country.
 
@@ -329,16 +338,15 @@ for your troubleshooting to try and solve the problem.
 
 - Double check that you have followed the
   [Stripe setup instructions](/cookbook-payments/set-up-and-use-stripe/).
-  Also pay attention that in test environment, you need to use the
-  Stripe keys starting with `sk_test` and `pk_test`, and you will also
-  need to use
+  Note that in test environment, you need to use the Stripe keys
+  starting with `sk_test` and `pk_test`, and you will also need to use
   [Stripe's test payout details](https://stripe.com/docs/connect/testing#payouts)
   and
   [test payment methods](https://stripe.com/docs/testing#payment-intents-api)
   with those test keys. In production with real payment methods, you
   will need to use the keys starting with `sk_live` and `pk_live`. Also
   check that the keys you are using match the keys in the Stripe
-  Console. You can "roll" i.e. refresh the keys if necessary and enter
+  Dashboard. You can "roll" i.e. refresh the keys if necessary and enter
   the new keys - they will still be connected to the same Stripe
   platform account.
 
@@ -357,6 +365,57 @@ through the chat widget in your
 [Flex Console](https://flex-console.sharetribe.com/) or
 [by email](mailto:flex-support@sharetribe.com) for further
 troubleshooting.
+
+### Can I partially refund transactions in my Flex marketplace?
+
+The default Stripe integration in Flex only supports fully refunding
+PaymentIntents. If you have a use case where you would need to implement
+partial refunds, here are some options you can consider. All of these
+require some degree of custom development effort.
+
+- **Multiple transactions for one purchase.** If you want to keep using
+  the default Flex Stripe integration, you can look into triggering two
+  transactions in Flex for a single purchase - one for the main price,
+  and one for the refundable part of the price. You would need to create
+  separate transaction processes for each type of transaction, and the
+  payments would show up as two different charges on the customer's
+  account, because each transaction would operate with its own
+  PaymentIntent towards Stripe. Furthermore, you would need to
+  coordinate the possibility of a full refund, e.g. if the booking is
+  cancelled by the provider for one reason or another. Also bear in mind
+  that if you trigger two transactions for the same payment method in
+  quick succession, some card providers may flag this as suspect
+  behavior, so you will need to consider the timing of the transactions
+  carefully.
+- **Partial third party payment integration.** In this option, you would
+  use the Flex default payment integration up to the point where the
+  payment gets captured onto the platform account. You would then handle
+  all payouts and refunds manually, i.e. outside the Flex transaction
+  process -- either in Stripe dashboard, or through the Stripe API with
+  your own integration. This would require you to keep track of the
+  correct sums to be paid out for each transaction yourself. This option
+  poses the risk of causing payout issues for completely unrelated
+  transactions; Stripe does not separate funds on the platform account
+  by PaymentIntent, so a miscalculated excessive refund on a transaction
+  between customers A and B may cause payout to fail for customer C on a
+  different transaction. You can read more on
+  [payout issues on manual refunds](/background/solving-payout-problems/#why-payouts-fail)
+  to figure out what you would need to consider with this option.
+- **Full third party payment integration.** Of course, you can create a
+  fully separate third party payment integration to handle creating and
+  capturing the payments as well as managing payouts and refunds. This
+  gives you the greatest flexibility with your setup, and conversely it
+  requires more customization and development. You can refer to our
+  high-level suggestions on
+  [integrating a 3rd-party payment gateway](/integrations/how-to-integrate-3rd-party-payment-gateway/)
+  to find out whether this option would best suit your needs.
+
+If you are contemplating partial refunds for your marketplace, you can
+also contact Flex technical support through the chat widget in your
+[Flex Console](https://flex-console.sharetribe.com/) or
+[by email](mailto:flex-support@sharetribe.com). Let us know your
+specific use case, and we may be able to recommend some avenues for you
+to explore.
 
 ### Can I use Flex and not use Stripe?
 
@@ -384,14 +443,3 @@ marketplace to handle payments. You can refer to our high-level
 instructions on
 [how to integrate a 3rd-party payment gateway](/integrations/how-to-integrate-3rd-party-payment-gateway/)
 when making the decision and when implementing any changes.
-
-### Can I partially refund the transaction price?
-
-The default Stripe integration in Flex only supports fully refunding
-PaymentIntents. If you have a use case where you would need to implement
-partial refunds, it is advisable to look into partially or completely
-handling payments outside the default Stripe integration. You can also
-contact Flex Support and let us know your specific use case, and we may
-be able to recommend some avenues for you to explore.
-
-// TODO: ASK BOYAN ABOUT WHAT TO RECOMMEND HERE!

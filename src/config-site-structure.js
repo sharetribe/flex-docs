@@ -55,6 +55,7 @@ const sortingArrayBackground = [
   'pricing',
   'what-is-the-difference-between-flex-and-go-source-available',
   'payments-overview',
+  'payment-methods-overview',
   'payment-intents',
   'strong-customer-authentication',
   'privileged-transitions',
