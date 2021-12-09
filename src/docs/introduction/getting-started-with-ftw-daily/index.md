@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started-with-ftw-daily
-updated: 2020-06-25
+updated: 2021-12-09
 category: introduction
 ingress:
   Learn how to install one of the Flex Templates for Web (FTW) to your
@@ -229,7 +229,7 @@ confirm your email address after the registration.
 As you will receive money from your users via your Stripe account, you
 have to provide some details such as your address and your bank account.
 In the Stripe dashboard, click the _"Activate your account"_ link in the
-left menu and fill in all the fields according to the instructions. The
+top bar and fill in all the fields according to the instructions. The
 activation form varies based on your country.
 
 ![Activate Stripe account](./stripe-activate-account.png)
@@ -258,32 +258,34 @@ to learn how to apply for Stripe Connect review.
 **Other countries**<br /> If you're in any another country, follow these
 instructions to enable Stripe Connect:
 
-1. Click the **Connect** left menu item.
+1. Click the **Connect** top menu item, and then click the **Get
+   Started** button.
 
    ![Stripe connect](./stripe-connect.png)
 
-1. Click the **Get started** button.
+2. Once a modal opens, select **Platform or marketplace** and click
+   **Continue**.
 
-   ![Get started](./stripe-get-started.png)
+   ![Activate Stripe Connect](./stripe-connect-activate.png)
 
-1. After a few seconds, you should see your Connect dashboard. From the
-   left sidebar, go to **Settings** then **Connect settings**, at
-   https://dashboard.stripe.com/settings
+3. Now when you click the gear icon on the top bar to go to **Settings**
+   at https://dashboard.stripe.com/settings, you will see a new
+   **Connect** section. Click **Settings** in that section.
 
-   ![Connect settings](./stripe-connect-settings.jpg)
+![Connect settings](./stripe-connect-settings.png)
 
-1. Make sure that **Custom** is enabled in the **Account types** section
+3. Make sure that **Custom** is enabled in the **Account types** section
 
-   ![Custom enabled](./stripe-custom-enabled.jpg)
+   ![Custom enabled](./stripe-custom-enabled.png)
 
 Great! You now have to get your API keys and input them into your
 marketplace.
 
 #### 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
-- Click the _Developers_ left menu item and go to _Developers_ → _API
+- Click the _Developers_ top menu item and go to _Developers_ → _API
   Keys_.
-- In the section _"Standard API keys"_ you will see two keys:
+- In the section _"Standard keys"_ you will see two keys:
   - Publishable key
   - Secret key
 
@@ -308,7 +310,7 @@ and not **pk_live**\<somethinghere\>
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
 
 > **Note**: secret key and publishable key needs to match with each
-> others. You can't use publishable key from different Stripe account
+> other. You can't use a publishable key from a different Stripe account
 > than the secret key - or mix test keys and live keys.
 
 ### Mapbox Access Token
