@@ -325,9 +325,10 @@ hand in hand with Stripe:
 ### Where can I use Stripe?
 
 In order to use Stripe on your marketplace, your platform account needs
-to be in a Stripe-supported country. The platform country then
-determines in which countries the platform can create Connect accounts,
-i.e. where your marketplace's users can be from. Check
+to be in a Stripe-supported country. (You can define your country in
+Stripe Dashboard Account Settings.) The platform country then determines
+in which countries the platform can create Connect accounts, i.e. where
+your marketplace's users can be from. Check
 [Stripe's own documentation](https://stripe.com/docs/connect/custom-accounts#requirements)
 for the most up-to-date requirements for your marketplace country.
 
