@@ -27,6 +27,11 @@ local development environment - and then get it up and running. This
 guide also helps you to create accounts to Stripe and Mapbox. Those
 services are needed to run the FTW-daily template app.
 
+If you want to FTW-hourly or FTW-product as your starting point, you can
+find the relevant options in this tutorial as well. However, if you are
+intending to start working through the tutorial steps, we recommend
+starting with FTW-daily, as it is the basis for the tutorials.
+
 ## Setup development environment
 
 ### Prerequisities
@@ -49,6 +54,21 @@ basic development tooling:
    git clone https://github.com/sharetribe/ftw-daily.git
    ```
 
+   <extrainfo title="FTW-hourly and FTW-product">
+   To clone FTW-hourly, use the command
+
+   ```bash
+   git clone https://github.com/sharetribe/ftw-hourly.git
+   ```
+
+   To clone FTW-Product, use the command
+
+   ```bash
+   git clone https://github.com/sharetribe/ftw-product.git
+   ```
+
+   </extrainfo>
+
 1. Go to the cloned directory:
 
    ```bash
@@ -58,7 +78,7 @@ basic development tooling:
     <extrainfo title="Check how the directory structure should look like">
 
    After these steps you should have a directory structure that looks
-   like this:
+   like this for FTW-daily:
 
    ```bash
    ├── ext
@@ -122,6 +142,21 @@ basic development tooling:
 
     </extrainfo>
 
+   <extrainfo title="FTW-hourly and FTW-product">
+   If you cloned FTW-hourly:
+
+   ```bash
+   cd ftw-hourly/
+   ```
+
+   If you cloned FTW-product:
+
+   ```bash
+   cd ftw-product/
+   ```
+
+   </extrainfo>
+
 1) Install dependency libraries:
 
    ```bash
@@ -153,15 +188,16 @@ integrations work.
 
 ### Sharetribe Flex client ID and client secret
 
-To use the Marketplace API, you will need a **client ID**. You can
-request access at https://www.sharetribe.com/products/flex/
+To use the Marketplace API, you will need a **client ID**. You can sign
+up for your free Flex account at
+https://www.sharetribe.com/products/flex/
 
 When you get access, you will be able to log into Flex Console and check
 the client ID.<br /> Flex Console: _Build > Applications_
 
 In addition, FTW templates use a transaction process that includes a
 privileged transition. That makes it possible to customize pricing on
-the small server that's included to the template. **Client secret** is
+the small server that's included in the template. **Client secret** is
 needed to make this secure call from the template's own server to Flex
 API.
 
@@ -178,9 +214,9 @@ API. Stripe has two different keys:
 Flex API uses Stripe secret key to make payment-related requests when
 transaction moves forward. The client app needs to use Stripe
 publishable key to run stripe.js script. That script has two main
-functions, it has fraud detection build in and it is also used to save
-sensitive information directly to Stripe. E.g. credit card number is
-saved directly to Stripe.
+functions: it has fraud detection built in, and it is also used to save
+sensitive information directly to Stripe. For instance a customer's
+credit card number is saved directly to Stripe.
 
 #### 1. Create and confirm your free Stripe account
 
@@ -324,6 +360,14 @@ yarn run dev
 This will automatically open `http://localhost:3000` in a browser:
 
 ![Default marketplace screenshot](./saunatime-default.png)
+
+> **Note:** As you browse your marketplace and create listings, you may
+> notice that the search filters do not work. You can activate the
+> filters by creating a
+> [search schema](/flex-cli/manage-search-schemas-with-flex-cli/) that
+> corresponds to your FTW template.
+> [This tutorial](/tutorial-branding/customize-amenities-filter) deals
+> with modifying filters and search schemas in FTW-daily.
 
 ## Summary
 
