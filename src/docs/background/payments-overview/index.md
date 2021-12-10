@@ -11,8 +11,9 @@ published: true
 
 Flex is a full-fledged marketplace solution, complete with payment
 capabilities. In this article, you will learn about the Flex default
-payment integration, implemented with Stripe, as well as the
-alternatives in case you decide to not use Stripe on your marketplace.
+payment integration, implemented with Stripe, as well as some
+alternatives in case the default integration does not fully serve your
+marketplace needs.
 
 ## Marketplace payment flow
 
@@ -57,35 +58,35 @@ Typically, the marketplace payment flow contains a delayed payment
 period. This is the time between when the money is captured from the
 customer's credit card and when it is transferred to the provider's bank
 account. The payout in marketplaces usually happens after the provider
-has successfully provided the agreed service.
+has successfully provided the agreed product or service.
 
 Customer refund usually happens during this delayed payment period.
 There are many reasons why a refund may be necessary. For example, the
-provider or customer may not be able to make it, or the provided service
-was not what was agreed.
+provider or customer may not be able to make it to a booked event, or
+the provided product or service was not what was agreed.
 
 ### Step 5: Provider payout
 
 If everything in the transaction went right and the customer received
-the agreed service, the money from the payment gateway will be
-eventually paid out to the provider.
+the agreed product or service, the money from the payment gateway will
+be eventually paid out to the provider.
 
 ## Stripe default integration
 
-In the default Flex transaction process and FTW templates, the process
-described above is implemented using Stripe. The integration uses
+In the default Flex transaction process and FTW templates, the steps
+described above are implemented using Stripe. The integration uses
 [Stripe Custom Connect accounts](https://stripe.com/docs/connect/custom-accounts)
-as the provider’s account. The customer can checkout using a payment
-card or [other supported method](#payment-methods-and-currencies), and
-they can also save their payment method for future use. The integration
-uses
+for providers. The customer can check out using a payment card or
+[another supported method](#payment-methods-and-currencies), and they
+can also save their payment method for future use. The integration uses
 [Stripe destination charges](https://stripe.com/docs/connect/destination-charges)
 ([on behalf of the provider](https://stripe.com/docs/payments/connected-accounts))
 to collect the payment from the customer to the provider's Custom
-Connect account first. Once the transaction is successfully over, the
-possible commission is paid to the platform account using application
-fees, and the remainder is paid out to the bank account the provider
-gave upon onboarding.
+Connect account first, and the possible commission is then transferred
+to the platform account as an
+[application fee](https://stripe.com/docs/connect/destination-charges#application-fee).
+Once the transaction is successfully over, the provider's share is paid
+out to the bank account that the provider gave upon onboarding.
 
 <extrainfo title="What does &quot;destination charge&quot; mean?">
 The Stripe on_behalf_of destination charge means that when the charge is created,
@@ -123,7 +124,7 @@ When the customer initiates a transaction in the Flex default
 transaction processes, Flex creates a
 [PaymentIntent](/background/payment-intents/) for the total price of the
 transaction. Once the PaymentIntent is confirmed, Stripe preauthorizes
-the sum from the customer's payment method. In other words even though
+the sum from the customer's payment method. In other words, even though
 the sum is not paid out from the customer's card, it is reserved and not
 available to be used by the customer.
 
@@ -131,8 +132,8 @@ The preauthorization is valid for 7 days, after which the
 preauthorization is automatically released by Stripe, and the funds are
 again available to the customer.
 
-In the FTW templates, creating and confirming the PaymentIntent are
-triggered at the same customer action for the default process.
+In the FTW templates, creating and confirming the PaymentIntent are both
+triggered at the same customer action.
 
 **Related Stripe actions:**
 
@@ -149,8 +150,18 @@ provider accepts the booking, the PaymentIntent is captured and the
 transaction sum is transferred from the customer's card to the
 provider's Custom Connect account. If the transaction has any
 commissions, those are then paid from the provider's Connect account to
-the platform's account as
-[application fees](https://stripe.com/docs/api/application_fees).
+the platform's account as an
+[application fee](https://stripe.com/docs/api/application_fees).
+
+Depending on how the
+[transaction's line items](/background/pricing/#line-items) have been
+defined, the platform can take a
+[commission of the price](/background/commissions-and-monetizing-your-platform/)
+from either the provider, the customer, or both. The platform is also
+responsible for paying all
+[Stripe fees](https://stripe.com/en-fi/connect/pricing) related to the
+Custom Connect account usage, so the commissions must be defined to
+cover those expenses as well.
 
 In the
 [FTW Product (Sneakertime)](https://github.com/sharetribe/ftw-product)
@@ -178,30 +189,19 @@ PaymentIntent has already been captured from the customer's account.
 
 Once the booking has completed successfully, the provider's payout is
 paid to the bank account that is linked to their Custom Connect account.
-Depending on how the
-[transaction's line items](/background/pricing/#line-items) have been
-defined, the platform can take a
-[commission of the price](/background/commissions-and-monetizing-your-platform/)
-from either the provider, the customer, or both. The platform is also
-responsible for paying all
-[Stripe fees](https://stripe.com/en-fi/connect/pricing) related to the
-Custom Connect account usage, so the commissions must be defined to
-cover those expenses as well.
 
 It is important to note that Stripe can
-[hold funds](https://stripe.com/docs/connect/account-balances#holding-funds)
-for up to 90 days &mdash; for exceptions see the linked Stripe
-documentation. In other words, the payout must be triggered no more than
-90 days after the PaymentIntent is created. This means that for booking
+[hold funds for up to 90 days (with some exceptions)](https://stripe.com/docs/connect/account-balances#holding-funds).
+In other words, the payout must be triggered no more than 90 days after
+the PaymentIntent is created. This means that for booking or purchase
 times exceeding 90 days, the process needs to be modified.
 
 <extrainfo title="Manual or automatic payout?">
 In Stripe terms, the Flex integration uses manual payouts. This means
 that Stripe does not automatically pay out the funds from the Connect 
 accounts e.g. daily or weekly, and instead the platform controls the payout
-schedule. Since the payouts are triggered by the transaction process,
-however, from the marketplace operator's point of view they happen
-automatically. In other words, the operator should not pay out funds
+schedule. Since the payouts are triggered by the transaction process, they happen
+automatically from the marketplace operator's point of view. In other words, the operator should not pay out funds
 manually through the Stripe Dashboard if the marketplace transaction
 process is using the Stripe payout action.
 </extrainfo>
@@ -219,7 +219,7 @@ of different actions to suit your marketplace.
 
 You can edit the transaction processes on your marketplace with
 [Flex CLI](/flex-cli/edit-transaction-process-with-flex-cli/). If you
-use the FTW templates, you will also need to make some
+use one of the FTW templates, you will also need to make some
 [changes in the template](cookbook-transaction-process/change-transaction-process-in-ftw/)
 to enable it to use a different process. If you do make changes to a
 transaction process when you already have transactions in your
@@ -298,7 +298,7 @@ of the charge, i.e. the currency at which the listing price is charged from the
 customer's card. The customer's card provider may charge a conversion
 fee if the presentment currency differs from the customer's card currency,
 or if the credit card and the marketplace platform are registered in
-different countries regardless of the currency.<br/><br/>
+different countries regardless of currency.<br/><br/>
 The <b>settlement currency</b> is the currency of the payout, i.e.
 the currency at which the provider's payout is paid to their bank account.
 If the presentment currency differs from the settlement currency, Stripe
@@ -316,7 +316,7 @@ hand in hand with Stripe:
 - [Provider onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/)
   is handled with Stripe Connect Onboarding. A provider cannot create
   listings (i.e. receive money from customers) unless they have verified
-  their identity with Stripe, thereby making sure that the platform is
+  their identity with Stripe &mdash; this ensures that the platform is
   always KYC compliant.
 - CheckoutPage.js handles all Stripe actions related to customer
   checkout, including creating and confirming the payment intent, with a
@@ -328,7 +328,7 @@ hand in hand with Stripe:
 
 ### Where can I use Stripe?
 
-In order to use Stripe on your marketplace, your platform account needs
+In order to use Stripe for your marketplace, your platform account needs
 to be in a Stripe-supported country. (You can define your country in
 Stripe Dashboard Account Settings.) The platform country then determines
 in which countries the platform can create Connect accounts, i.e. where
@@ -336,10 +336,10 @@ your marketplace's users can be from. Check
 [Stripe's own documentation](https://stripe.com/docs/connect/custom-accounts#requirements)
 for the most up-to-date requirements for your marketplace country.
 
-### I'm having problems with the Stripe integration!
+### I'm having problems with the Stripe integration, how do I fix it?
 
-Sometimes it takes a while to get Stripe to work. Here are some ideas
-for your troubleshooting to try and solve the problem.
+Sometimes it takes a while to get Stripe to work. Here are some ideas to
+troubleshoot the problem.
 
 - Double check that you have followed the
   [Stripe setup instructions](/cookbook-payments/set-up-and-use-stripe/).
@@ -350,10 +350,10 @@ for your troubleshooting to try and solve the problem.
   [test payment methods](https://stripe.com/docs/testing#payment-intents-api)
   with those test keys. In production with real payment methods, you
   will need to use the keys starting with `sk_live` and `pk_live`. Also
-  check that the keys you are using match the keys in the Stripe
-  Dashboard. You can "roll" i.e. refresh the keys if necessary and enter
-  the new keys &mdash; they will still be connected to the same Stripe
-  platform account.
+  check that the keys you are using match the keys in Stripe Dashboard.
+  You can "roll" i.e. refresh the keys if necessary and enter the new
+  keys &mdash; they will still be connected to the same Stripe platform
+  account.
 
 - If you get your Stripe integration working to the point that you get
   an error message from Stripe, it is useful to take a moment to check
@@ -371,7 +371,7 @@ through the chat widget in your
 [by email](mailto:flex-support@sharetribe.com) for further
 troubleshooting.
 
-### Can I partially refund transactions in my Flex marketplace?
+### How can I partially refund transactions in my Flex marketplace?
 
 The default Stripe integration in Flex only supports fully refunding
 PaymentIntents. If you have a use case where you would need to implement
@@ -387,12 +387,12 @@ price. Each transaction would have its own PaymentIntent towards Stripe,
 so you would need to implement separate transaction processes for each
 type of transaction to handle the PaymentIntents, and the payments would
 show up as two different charges on the customer's account. Furthermore,
-you would need to coordinate the possibility of a full refund, e.g. if
-the booking is cancelled by the provider for one reason or another. Also
-bear in mind that if you trigger two transactions for the same payment
-method in quick succession, some card providers may flag this as suspect
-behavior, so you will need to consider the timing of the transactions
-carefully.
+you would need to coordinate commission amounts, as well as the
+possibility of a full refund, e.g. if the booking is cancelled by the
+provider for one reason or another. Also bear in mind that if you
+trigger two transactions for the same payment method in quick
+succession, some card providers may flag this as suspect behavior, so
+you will need to consider the timing of the transactions carefully.
 
 #### Partial third party payment integration
 
@@ -417,7 +417,7 @@ Of course, you can create a fully separate third party payment
 integration to handle creating and capturing the payments as well as
 managing payouts and refunds. This gives you the greatest flexibility
 with your setup, and conversely it requires more customization and
-development. You can refer to our high-level suggestions on
+development. You can refer to our high-level instructions on
 [integrating a 3rd-party payment gateway](/integrations/how-to-integrate-3rd-party-payment-gateway/)
 to find out whether this option would best suit your needs.
 
@@ -442,9 +442,9 @@ from your transaction processes, and avoid using
 For clarity, all references to Stripe's backend elements (endpoints,
 transaction process actions etc.) are named with the prefix `stripe`.
 
-If you want to modify a FTW template to work without Stripe, the effort
-is more extensive, since each template is built around a logic that uses
-Stripe actions and endpoints. You can use
+If you want to modify your FTW template to work without Stripe, the
+effort is more extensive, since each template is built around a logic
+that uses Stripe actions and endpoints. You can use
 [this article](/cookbook-payments/removing-stripe-and-payments/) as your
 starting point.
 

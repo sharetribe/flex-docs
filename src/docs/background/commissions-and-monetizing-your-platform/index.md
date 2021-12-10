@@ -83,7 +83,7 @@ const customerCommission = {
 const lineItems = [booking, providerCommission, customerCommission];
 ```
 
-For a 100 EUR listing, this would result 110 EUR payin for the customer
+For a 100 EUR listing, this would result in a 110 EUR payin for the customer
 and a 88 EUR payout for the provider. The marketplace would receive 22
 EUR minus Stripe fees.
 
@@ -139,7 +139,7 @@ const customerCommission = {
 const lineItems = [booking, providerCommission, customerCommission];
 ```
 
-For a 100 EUR listing, this would result 110.5 EUR payin for the
+For a 100 EUR listing, this would result in a 110.5 EUR payin for the
 customer and a 85 EUR payout for the provider. The marketplace would
 receive 25.5 EUR minus Stripe fees.
 
