@@ -1,7 +1,7 @@
 ---
 title: Commissions and monetizing your platform
 slug: commissions-and-monetizing-your-platform
-updated: 2021-03-11
+updated: 2021-12-10
 category: background
 ingress:
   Flex provides configurable options for monetizing your platform. You
@@ -10,6 +10,11 @@ ingress:
   supported by Flex for monetizing your platform.
 published: true
 ---
+
+_**NOTE! The current default method for setting commissions has
+deprecated our old commission setting actions. If you are looking for
+the old commissions and monetization background article, it can be found
+[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/background/commissions-and-monetizing-your-platform/).**_
 
 ## Introduction
 
@@ -23,110 +28,187 @@ Marketplace Academy has
 describing different pricing models and the tradeoffs behind different
 options.
 
-As background, familiarizing yourself with the
-[transaction process](/background/transaction-process/),
-[transaction process actions](/references/transaction-process-actions/),
-and
-[the tutorial for editing the process with flex-cli ](/flex-cli/edit-transaction-process-with-flex-cli/)
-gives you a good understanding of the concepts discussed in this
-article. In addition, the article that describes
-[how to solve payout problems](/background/solving-payout-problems/)
-provides valuable information about how the payment flow in Flex works.
+As background, familiarizing yourself with
+[line items](/background/pricing/#line-items) and
+[privileged transitions](/background/privileged-transitions/) gives you
+a good understanding of the concepts discussed in this article. In
+addition, the article that describes
+[payments in Flex](/background/payments-overview/) provides valuable
+information about how the payment flow in Flex works.
+
+Configuring commissions happens with the
+[privileged-set-line-items](/references/transaction-process-actions/#actionprivileged-set-line-items)
+transaction process action. In the FTW templates, this is done
+[on the server side](https://github.com/sharetribe/ftw-daily/blob/master/server/api-util/lineItems.js)
+because of the privileged nature of this action. If you are developing a
+client application that is not based on one of the FTW templates, you
+can apply a similar logic.
 
 ## Percentage-based commissions
 
-Sharetribe Flex offers two actions for setting percentage-based
-commissions. These actions are called `calculate-tx-provider-commission`
-and `calculate-tx-customer-commission`. These actions will calculate a
-commission for your marketplace and charge them subsequently from either
-provider or customer.
-
-The percentage-based commission actions calculate the commissions from
-the total price of the transaction and therefore these actions should be
-last in the chain of actions calculating the price. The customer
-commission is counted as an additional cost for the customer, i.e. it is
-added to the payin. Consequently, the provider commission is deducted
-from the set price, i.e. it reduces the payout.
-
-You can use both actions at the same time. This means that you can
-charge a part of the marketplace fees from the customer and a part from
-the provider.
+One of the simplest ways to configure commissions is to define a
+percentage of the listing price as a commission. Commissions can be
+charged from the provider, the customer, or both.
 
 ### Example
 
 A marketplace that charges 10 % from the customer and 12 % from the
-provider would configure the actions like this:
+provider would configure the commissions like this:
 
 ```
-:actions
-[{:name :action/calculate-tx-nightly-total-price}
- {:name :action/calculate-tx-customer-commission :config {:commission 0.10M}}
- {:name :action/calculate-tx-provider-commission :config {:commission 0.12M}}]
+const PROVIDER_COMMISSION_PERCENTAGE = -12; // Provider commission is negative
+const CUSTOMER_COMMISSION_PERCENTAGE = 10; // Customer commission is positive
+
+const booking = {
+  code: bookingUnitType,
+  unitPrice,
+  quantity: calculateQuantityFromDates(startDate, endDate, bookingUnitType),
+  includeFor: ['customer', 'provider'],
+};
+
+const providerCommission = {
+  code: 'line-item/provider-commission',
+  unitPrice: calculateTotalFromLineItems([booking]),
+  percentage: PROVIDER_COMMISSION_PERCENTAGE,
+  includeFor: ['provider'],
+};
+
+const customerCommission = {
+  code: 'line-item/customer-commission',
+  unitPrice: calculateTotalFromLineItems([booking]),
+  percentage: CUSTOMER_COMMISSION_PERCENTAGE,
+  includeFor: ['customer'],
+};
+
+const lineItems = [booking, providerCommission, customerCommission];
 ```
 
-For a 100 EUR listing, this would result 110 EUR payin for the customer
+For a 100 EUR listing, this would result in a 110 EUR payin for the customer
 and a 88 EUR payout for the provider. The marketplace would receive 22
 EUR minus Stripe fees.
 
-## Limiting commissions
-
-In addition to setting a percentage based commission, you can limit the
-minimum and maximum amount for the commissions. For both of the customer
-and provider actions, you can set a minimum and a maximum commission fee
-with config options `min` and `max`.
-
-### Example
-
-```
-:actions
-[{:name :action/calculate-tx-nightly-total-price}
- {:name :action/calculate-tx-customer-commission :config {:commission 0.10M
-                                                          :min {:amount 2M :currency "EUR"}
-                                                          :max {:amount 8M :currency "EUR"}}
- {:name :action/calculate-tx-provider-commission :config {:commission 0.02M
-                                                          :min {:amount 5M :currency "EUR"}
-                                                          :max {:amount 10M :currency "EUR"}}}]
-```
-
-For a 100 EUR listing, this would result 108 EUR payin for the customer
-and a 98 EUR payout for the provider. The marketplace would receive 10
-EUR minus Stripe fees.
-
-Since the `min` and `max` configuration options introduce the dependency
-to money, they also bring certain preconditions. All the currencies of
-the transaction need to match and you need to make sure that the
-transaction total price will be above the minimum amount for provider
-commissions since the payout can't be negative.
+<extrainfo title="Negative or positive commission?">
+Commission line items are defined as either positive or negative depending on the transaction
+party. 
+<ul>
+<li> Provider commission is defined as <b>negative</b>, since the provider's total is the listing price minus the provider commission.
+<img src="./provider_commission.png"/>
+<li> Customer commission is defined as <b>positive</b>, since the customer's total is the listing price plus the customer commission.
+<img src="./customer_commission.png"/>
+</ul>
+</extrainfo>
 
 ## Fixed commissions
 
-Besides the percentage-based actions, Flex provides two actions for
-setting a fixed commission. You can use
-`calculate-tx-provider-fixed-commission` and
-`calculate-tx-customer-fixed-commission` to set a fixed commission for
-both, customer and provider.
+In addition to percentages, you can define commissions with fixed sums
+as the `unitPrice` of the line item using `quantity` instead of
+`percentage`. In the following example, both the provider and customer
+pay a fixed commission regardless of the listing price or quantity.
 
 ### Example
 
 ```
-:actions
-[{:name :action/calculate-tx-nightly-total-price}
- {:name :action/calculate-tx-customer-commission :config {:commission {:amount 10.5M :currency "EUR"}}
- {:name :action/calculate-tx-provider-commission :config {:commission {:amount 15M :currency "EUR"}}]
+const FIXED_PROVIDER_COMMISSION = -1500; // Provider commission is negative
+const FIXED_CUSTOMER_COMMISSION = 1050; // Customer commission is positive
+
+const calculateCommission = (unitPrice, amount) => {
+  return new Money(amount, unitPrice.currency);
+};
+
+const booking = {
+  code: bookingUnitType,
+  unitPrice,
+  quantity: calculateQuantityFromDates(startDate, endDate, bookingUnitType),
+  includeFor: ['customer', 'provider'],
+};
+
+const providerCommission = {
+  code: 'line-item/provider-commission',
+  unitPrice: calculateCommission(unitPrice, FIXED_PROVIDER_COMMISSION),
+  quantity: 1,
+  includeFor: ['provider'],
+};
+
+const customerCommission = {
+  code: 'line-item/customer-commission',
+  unitPrice: calculateCommission(unitPrice, FIXED_CUSTOMER_COMMISSION),
+  quantity: 1,
+  includeFor: ['customer'],
+};
+
+const lineItems = [booking, providerCommission, customerCommission];
 ```
 
-For a 100 EUR listing, this would result 110.5 EUR payin for the
+For a 100 EUR listing, this would result in a 110.5 EUR payin for the
 customer and a 85 EUR payout for the provider. The marketplace would
 receive 25.5 EUR minus Stripe fees.
 
-The currency and negative payout preconditions apply here as well. All
-the currencies of the transaction need to match and you need to make
-sure that the transaction total price will be above the minimum amount
-for provider commissions since the payout can't be negative.
+## Dynamically calculated commissions
+
+You can also calculate the commissions with more complex logic. You can
+set the result of the calculation as either the `unitPrice` or the
+`percentage` of the line item.
+
+In this example, the customer's commission percentage gets reduced when
+they buy over 5 items. The provider's commission is percentage based,
+but always at least 10 dollars.
+
+### Example
+
+```
+const PROVIDER_COMMISSION_PERCENTAGE = -12; // Provider commission is negative
+const MINIMUM_PROVIDER_COMMISSION = -1000; // Negative commission in minor units, i.e. in USD cents
+
+const CUSTOMER_COMMISSION_PERCENTAGE = 10;
+const REDUCED_CUSTOMER_COMMISSION_PERCENTAGE = 7;
+
+const calculateProviderCommission = (booking) => {
+  // Use existing helper functions to calculate totals and percentages
+  const price = calculateTotalFromLineItems([booking]);
+  const commission = calculateTotalPriceFromPercentage(price, PROVIDER_COMMISSION_PERCENTAGE);
+
+  // Since provider commissions are negative, comparison must be negative as well
+  if (commission.amount < MINIMUM_PROVIDER_COMMISSION) {
+    return commission;
+  }
+
+  return new Money(MINIMUM_PROVIDER_COMMISSION, price.currency);
+};
+
+```
+
+```
+const booking = {
+  code: bookingUnitType,
+  unitPrice,
+  quantity: calculateQuantityFromDates(startDate, endDate, bookingUnitType),
+  includeFor: ['customer', 'provider'],
+};
+
+const providerCommission = {
+  code: 'line-item/provider-commission',
+  unitPrice: calculateProviderCommission(booking),
+  quantity: 1,
+  includeFor: ['provider'],
+};
+
+const customerPercentage = booking.quantity > 5
+  ? REDUCED_CUSTOMER_COMMISSION_PERCENTAGE
+  : CUSTOMER_COMMISSION_PERCENTAGE;
+
+const customerCommission = {
+  code: 'line-item/customer-commission',
+  unitPrice: calculateTotalFromLineItems([booking]),
+  percentage: customerPercentage,
+  includeFor: ['customer'],
+};
+
+const lineItems = [booking, providerCommission, customerCommission];
+```
 
 ## Subscription-based model
 
-The commission actions are the most straightforward way of monetizing
+The line item commissions are the most straightforward way of monetizing
 your marketplace and are directly supported by Flex. However, you might
 want to experiment with other monetization models depending on your
 business idea. For example, subscriptions might be a good way of
