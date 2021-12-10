@@ -165,7 +165,7 @@ acceptance to all be triggered at the same customer action.
 
 If the customer requests a refund for one reason or another, the
 operator can refund the PaymentIntent. The Flex integration with Stripe
-only supports full refunds. (Handling refunds are discussed
+only supports full refunds. (Handling partial refunds is discussed
 [later in this article](/background/payments-overview/#can-i-partially-refund-transactions-in-my-flex-marketplace).)
 The default transaction process takes into account whether or not the
 PaymentIntent has already been captured from the customer's account.
