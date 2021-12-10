@@ -1,7 +1,7 @@
 ---
 title: Commissions and monetizing your platform
 slug: commissions-and-monetizing-your-platform
-updated: 2021-03-11
+updated: 2021-12-10
 category: background
 ingress:
   Flex provides configurable options for monetizing your platform. You
@@ -98,11 +98,56 @@ party.
 </ul>
 </extrainfo>
 
+## Fixed commissions
+
+In addition to percentages, you can define commissions with fixed sums
+as the `unitPrice` of the line item using `quantity` instead of
+`percentage`. In the following example, both the provider and customer
+pay a fixed commission regardless of the listing price or quantity.
+
+### Example
+
+```
+const FIXED_PROVIDER_COMMISSION = -1500; // Provider commission is negative
+const FIXED_CUSTOMER_COMMISSION = 1050; // Customer commission is positive
+
+const calculateCommission = (unitPrice, amount) => {
+  return new Money(amount, unitPrice.currency);
+};
+
+const booking = {
+  code: bookingUnitType,
+  unitPrice,
+  quantity: calculateQuantityFromDates(startDate, endDate, bookingUnitType),
+  includeFor: ['customer', 'provider'],
+};
+
+const providerCommission = {
+  code: 'line-item/provider-commission',
+  unitPrice: calculateCommission(unitPrice, FIXED_PROVIDER_COMMISSION),
+  quantity: 1,
+  includeFor: ['provider'],
+};
+
+const customerCommission = {
+  code: 'line-item/customer-commission',
+  unitPrice: calculateCommission(unitPrice, FIXED_CUSTOMER_COMMISSION),
+  quantity: 1,
+  includeFor: ['customer'],
+};
+
+const lineItems = [booking, providerCommission, customerCommission];
+```
+
+For a 100 EUR listing, this would result 110.5 EUR payin for the
+customer and a 85 EUR payout for the provider. The marketplace would
+receive 25.5 EUR minus Stripe fees.
+
 ## Dynamically calculated commissions
 
-In addition to percentages, you can calculate the commission amount with
-more complex logic, and set the result of the calculation as the
-`unitPrice` of the line item using `quantity` instead of `percentage`.
+You can also calculate the commissions with more complex logic. You can
+set the result of the calculation as either the `unitPrice` or the
+`percentage` of the line item.
 
 In this example, the customer's commission percentage gets reduced when
 they buy over 5 items. The provider's commission is percentage based,
@@ -120,11 +165,11 @@ const REDUCED_CUSTOMER_COMMISSION_PERCENTAGE = 7;
 const calculateProviderCommission = (booking) => {
   // Use existing helper functions to calculate totals and percentages
   const price = calculateTotalFromLineItems([booking]);
-  const defaultCommission = calculateTotalPriceFromPercentage(price, PROVIDER_COMMISSION_PERCENTAGE);
+  const commission = calculateTotalPriceFromPercentage(price, PROVIDER_COMMISSION_PERCENTAGE);
 
   // Since provider commissions are negative, comparison must be negative as well
-  if (defaultCommission.amount < MINIMUM_PROVIDER_COMMISSION) {
-    return defaultCommission;
+  if (commission.amount < MINIMUM_PROVIDER_COMMISSION) {
+    return commission;
   }
 
   return new Money(MINIMUM_PROVIDER_COMMISSION, price.currency);
@@ -161,53 +206,9 @@ const customerCommission = {
 const lineItems = [booking, providerCommission, customerCommission];
 ```
 
-## Fixed commissions
-
-Defining a fixed commission is also straightforward with the line item
-logic. In the following example, both the provider and customer pay a
-fixed commission regardless of the listing price or quantity.
-
-### Example
-
-```
-const FIXED_PROVIDER_COMMISSION = -1500; // Provider commission is negative
-const FIXED_CUSTOMER_COMMISSION = 1050; // Customer commission is positive
-
-const calculateCommission = (booking, amount) => {
-  return new Money(amount, booking.unitPrice.currency);
-};
-
-const booking = {
-  code: bookingUnitType,
-  unitPrice,
-  quantity: calculateQuantityFromDates(startDate, endDate, bookingUnitType),
-  includeFor: ['customer', 'provider'],
-};
-
-const providerCommission = {
-  code: 'line-item/provider-commission',
-  unitPrice: calculateCommission(booking, FIXED_PROVIDER_COMMISSION),
-  quantity: 1,
-  includeFor: ['provider'],
-};
-
-const customerCommission = {
-  code: 'line-item/customer-commission',
-  unitPrice: calculateCommission(booking, FIXED_CUSTOMER_COMMISSION),
-  quantity: 1,
-  includeFor: ['customer'],
-};
-
-const lineItems = [booking, providerCommission, customerCommission];
-```
-
-For a 100 EUR listing, this would result 110.5 EUR payin for the
-customer and a 85 EUR payout for the provider. The marketplace would
-receive 25.5 EUR minus Stripe fees.
-
 ## Subscription-based model
 
-The commission actions are the most straightforward way of monetizing
+The line item commissions are the most straightforward way of monetizing
 your marketplace and are directly supported by Flex. However, you might
 want to experiment with other monetization models depending on your
 business idea. For example, subscriptions might be a good way of
