@@ -61,7 +61,7 @@ basic development tooling:
    git clone https://github.com/sharetribe/ftw-hourly.git
    ```
 
-   To clone FTW-Product, use the command
+   To clone FTW-product, use the command
 
    ```bash
    git clone https://github.com/sharetribe/ftw-product.git
