@@ -432,6 +432,22 @@ _bookingUnitType_ there too:
 const bookingUnitType = 'line-item/day';
 ```
 
+<extrainfo title="Update your email notifications">
+If you want to show the line items on your email notifications, you will need to replace
+
+```html
+{{#eq "line-item/night" code}}
+``` 
+
+with 
+
+```html
+{{#eq "line-item/day" code}}
+```
+in your email notification templates as well to show the correct line items. The next step in the tutorial deals with updating email notifications.
+
+</extrainfo>
+
 ---
 
 And that's it. We have created a new process, added a new transition

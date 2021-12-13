@@ -654,3 +654,25 @@ included in the price on the booking page. In addition, the Flex Console
 transaction price breakdown also shows the cleaning fee.
 
 ![Cleaning fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
+
+<extrainfo title="Bonus: Add cleaning fee to email notifications">
+If you want to add the cleaning fee to your email notifications, you will need to add it to the email templates.
+
+```diff
+      {{#each tx-line-items}}
+        {{#contains include-for "provider"}}
+          {{#eq "line-item/day" code}} ...
+
++          {{#eq "line-item/cleaning-fee" code}}
++            <tr class="bottom-row">
++              <td>Cleaning fee</td>
++              <td class="right">{{> format-money money=line-total}}</td>
++            </tr>
++          {{/eq}}
+
+          {{#eq "line-item/provider-commission" code}} ...
+        {{/contains}}
+      {{/each}}
+```
+
+</extrainfo>
