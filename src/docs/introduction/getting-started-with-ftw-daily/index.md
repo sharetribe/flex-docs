@@ -197,7 +197,7 @@ the client ID.<br /> Flex Console: _Build > Applications_
 
 In addition, FTW templates use a transaction process that includes a
 privileged transition. That makes it possible to customize pricing on
-the small server that's included in the template. **Client secret** is
+the Node server that's included in the template. **Client secret** is
 needed to make this secure call from the template's own server to Flex
 API.
 
@@ -263,18 +263,18 @@ instructions to enable Stripe Connect:
 
    ![Stripe connect](./stripe-connect.png)
 
-2. Once a modal opens, select **Platform or marketplace** and click
+1. Once a modal opens, select **Platform or marketplace** and click
    **Continue**.
 
    ![Activate Stripe Connect](./stripe-connect-activate.png)
 
-3. Now when you click the gear icon on the top bar to go to **Settings**
+1. Now when you click the gear icon on the top bar to go to **Settings**
    at https://dashboard.stripe.com/settings, you will see a new
    **Connect** section. Click **Settings** in that section.
 
-![Connect settings](./stripe-connect-settings.png)
+   ![Connect settings](./stripe-connect-settings.png)
 
-3. Make sure that **Custom** is enabled in the **Account types** section
+1. Make sure that **Custom** is enabled in the **Account types** section
 
    ![Custom enabled](./stripe-custom-enabled.png)
 
@@ -309,7 +309,7 @@ and not **pk_live**\<somethinghere\>
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
 
-> **Note**: secret key and publishable key needs to match with each
+> **Note**: The secret key and publishable key need to match with each
 > other. You can't use a publishable key from a different Stripe account
 > than the secret key - or mix test keys and live keys.
 
