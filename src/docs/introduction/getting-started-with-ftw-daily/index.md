@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started-with-ftw-daily
-updated: 2021-12-09
+updated: 2021-12-14
 category: introduction
 ingress:
   Learn how to install one of the Flex Templates for Web (FTW) to your
