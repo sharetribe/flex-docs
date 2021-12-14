@@ -448,6 +448,11 @@ with
 in your email notification templates. The next step in the tutorial
 deals with updating email notifications.
 
+The email templates that list the full line items in the default transaction process are
+- `new-booking-request` (to provider)
+- `booking-request-accepted` (to customer)
+- `money-paid` (to provider)
+
 </extrainfo>
 
 ---

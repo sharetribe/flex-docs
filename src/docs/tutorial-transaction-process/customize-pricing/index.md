@@ -675,4 +675,9 @@ If you want to add the cleaning fee to your email notifications, you will need t
       {{/each}}
 ```
 
+The email templates that list the full line items in the default transaction process are
+- `new-booking-request` (to provider)
+- `booking-request-accepted` (to customer)
+- `money-paid` (to provider)
+
 </extrainfo>
