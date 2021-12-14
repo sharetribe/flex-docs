@@ -570,10 +570,10 @@ transaction - the booking has not been made, but the line items are
 calculated as if it were.
 
 This means that we need to pass the cleaning fee information to the
-function that speculatively fetches the transaction in
-`CheckoutPage.js`, and conversely receive it in `CheckoutPage.duck.js`.
-First, on CheckoutPage.js `loadInitialData()` does some data processing
-and, if necessary, calls `fetchSpeculatedTransaction()`.
+function that speculatively fetches the transaction in `CheckoutPage.js`,
+and conversely receive it in `CheckoutPage.duck.js`. First, on CheckoutPage.js
+`loadInitialData()` does some data processing and, if necessary, calls
+`fetchSpeculatedTransaction()`.
 
 ```diff
       fetchSpeculatedTransaction(
@@ -615,11 +615,11 @@ does the heavy lifting in handling the payment processing is
 `handlePaymentIntent()`. In short, it first creates five functions to
 handle the transaction payment process, then composes them into a single
 function `handlePaymentIntentCreation()`, and then calls that function
-with parameter `orderParams`.
+with parameter `orderParams`. 
 
-To add the cleaning fee information into this process, we want to
-include it in `orderParams`, which is defined towards the very end of
-`handlePaymentIntent()` function.
+To add the cleaning fee information into this
+process, we want to include it in `orderParams`, which is defined
+towards the very end of `handlePaymentIntent()` function.
 
 ```diff
     const orderParams = {

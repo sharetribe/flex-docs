@@ -54,22 +54,20 @@ const sortingArrayBackground = [
   'custom-pricing',
   'pricing',
   'what-is-the-difference-between-flex-and-go-source-available',
-  'payments-overview',
-  'payment-methods-overview',
   'payment-intents',
   'strong-customer-authentication',
   'privileged-transitions',
+  'how-the-search-works',
   'off-session-payments-in-transaction-process',
   'using-stored-payment-cards',
   'solving-payout-problems',
-  'commissions-and-monetizing-your-platform',
-  'stripe-provider-onboarding-and-capabilities',
-  'how-the-search-works',
   'marketplace-api-integration-api',
   'time-based-template',
   'authentication-api',
   'social-logins-and-sso',
+  'commissions-and-monetizing-your-platform',
   'applications',
+  'stripe-provider-onboarding-and-capabilities',
 ];
 
 const sortingArrayFlexCLI = [
@@ -91,16 +89,6 @@ const sortingArrayReferences = [
   'transaction-process-actions',
   'transaction-process-time-expressions',
 ];
-
-const sortingArrayPaymentCookbooks = [
-  'how-to-customize-pricing',
-  'set-up-and-use-stripe',
-  'provider-onboarding-and-identity-verification',
-  'enable-payment-intents',
-  'save-payment-card',
-  'stripe-connect-platform-review',
-  'removing-stripe',
-]
 
 exports.siteStructure = [
   {
@@ -144,10 +132,7 @@ exports.siteStructure = [
       { id: 'cookbook-design' },
       { id: 'cookbook-search' },
       { id: 'cookbook-transaction-process' },
-      { 
-        id: 'cookbook-payments',
-        sortingArray: sortingArrayPaymentCookbooks
-      },
+      { id: 'cookbook-payments' },
       { id: 'cookbook-manage' },
       { id: 'cookbook-emails' },
       { id: 'cookbook-social-logins-and-sso' },
