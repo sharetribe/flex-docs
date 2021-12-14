@@ -220,7 +220,7 @@ of different actions to suit your marketplace.
 You can edit the transaction processes on your marketplace with
 [Flex CLI](/flex-cli/edit-transaction-process-with-flex-cli/). If you
 use one of the FTW templates, you will also need to make some
-[changes in the template](/cookbook-transaction-process/change-transaction-process-in-ftw/)
+[changes in the template](cookbook-transaction-process/change-transaction-process-in-ftw/)
 to enable it to use a different process. If you do make changes to a
 transaction process when you already have transactions in your
 environment, it is good to note that a transaction will proceed with the
@@ -231,7 +231,7 @@ transaction process related to each transaction in
 Transactions.
 
 The transaction process also controls the automatic
-[email notifications](/references/email-templates/) sent at different
+[email notifications](references/email-templates/) sent at different
 stages of the transaction flow. When you make changes to the transaction
 process, be sure to also update the wording and logic of the
 notifications for a consistent user experience for your marketplace
