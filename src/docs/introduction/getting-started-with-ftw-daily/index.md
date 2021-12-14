@@ -27,10 +27,10 @@ local development environment - and then get it up and running. This
 guide also helps you to create accounts to Stripe and Mapbox. Those
 services are needed to run the FTW-daily template app.
 
-If you want to FTW-hourly or FTW-product as your starting point, you can
-find the relevant options in this tutorial as well. However, if you are
-intending to start working through the tutorial steps, we recommend
-starting with FTW-daily, as it is the basis for the tutorials.
+If you want to use FTW-hourly or FTW-product as your starting point, you
+can find the relevant options in this tutorial as well. However, if you
+are intending to work through the tutorial steps, we recommend starting
+with FTW-daily, as it is the basis for the tutorials.
 
 ## Setup development environment
 
@@ -169,7 +169,7 @@ FTW templates have 3 mandatory integrations that you need to configure
 before the app is fully functional. The app obviously needs to discuss
 with Flex Marketplace API, but the client app also makes direct calls to
 [Stripe](https://stripe.com/en-fi). Flex uses Stripe as a payment
-processor. And FTW-daily saves sensitive payment information directly to
+processor, and FTW-daily saves sensitive payment information directly to
 it.
 
 The third default integration is to a map provider.
@@ -195,11 +195,11 @@ https://www.sharetribe.com/products/flex/
 When you get access, you will be able to log into Flex Console and check
 the client ID.<br /> Flex Console: _Build > Applications_
 
-In addition, FTW templates use a transaction process that includes a
-privileged transition. That makes it possible to customize pricing on
-the Node server that's included in the template. **Client secret** is
-needed to make this secure call from the template's own server to Flex
-API.
+In addition, FTW templates use transaction processes that include
+privileged transitions. This makes it possible to customize pricing on
+the Node server that's included in the template. The **client secret**
+is needed to make this secure call from the template's own server to
+Flex API.
 
 ![Flex Console: Applications tab](./console-build-application.png)
 
@@ -211,19 +211,16 @@ API. Stripe has two different keys:
 - _Secret key_ for server-side requests
 - _Publishable key_ for calls from web browser
 
-Flex API uses Stripe secret key to make payment-related requests when
-transaction moves forward. The client app needs to use Stripe
-publishable key to run stripe.js script. That script has two main
+Flex API uses the Stripe secret key to make payment-related requests
+when a transaction moves forward. The client app needs to use the Stripe
+publishable key to run the `stripe.js` script. The script has two main
 functions: it has fraud detection built in, and it is also used to save
-sensitive information directly to Stripe. For instance a customer's
+sensitive information directly to Stripe. For instance, a customer's
 credit card number is saved directly to Stripe.
 
 #### 1. Create and confirm your free Stripe account
 
-[Register to Stripe](https://dashboard.stripe.com/register). After
-filling the form you will be asked the question _"How do you want to get
-started with Stripe?"_. You can click _"Skip for now"_ link at the
-bottom of the page to get directly to Stripe dashboard. Remember to
+[Register to Stripe](https://dashboard.stripe.com/register). Remember to
 confirm your email address after the registration.
 
 As you will receive money from your users via your Stripe account, you
@@ -241,14 +238,14 @@ features with
 [Custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 
 [Stripe Connect](https://stripe.com/docs/connect) is used to route
-payments between customers, providers (sellers), and marketplace, which
-is taking a commission from transactions.
+payments between customers, providers (sellers), and the marketplace,
+which can take a commission from transactions.
 
 [Stripe Custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts)
 are created to hold the provider's account information (e.g. payout
 details) on Stripe's side. A Custom Stripe account is almost completely
-invisible to the account holder, but marketplace operators see those on
-their Stripe dashboard.
+invisible to the account holder, but marketplace operators see the
+accounts on their Stripe dashboard.
 
 **United States**<br /> If you're based in The United States, Stripe
 will need to review your platform account before you get access. See
@@ -339,13 +336,13 @@ Start the config script:
 yarn run config
 ```
 
-This command will ask the three required environment variables that you
-you collected in previous step.
+This command will prompt you to enter the three required environment
+variables that you you collected in the previous step.
 
 After that, it will create `.env` file to your local repository and
-guide you through setting up the required environment variables. If the
-`.env` file doesn't exist the application won't start. _This `.env` file
-is only created for local development environment_.
+guide you through setting up the rest of the required environment
+variables. If the `.env` file doesn't exist the application won't start.
+_This `.env` file is only created for local development environment_.
 
 > See the
 > [FTW Environment configuration variables](/ftw-configuration/ftw-env/)
@@ -366,15 +363,13 @@ This will automatically open `http://localhost:3000` in a browser:
 > **Note:** As you browse your marketplace and create listings, you may
 > notice that the search filters do not work. You can activate the
 > filters by creating a
-> [search schema](/flex-cli/manage-search-schemas-with-flex-cli/) that
-> corresponds to your FTW template.
-> [This tutorial](/tutorial-branding/customize-amenities-filter) deals
-> with modifying filters and search schemas in FTW-daily.
+> [search schema](/flex-cli/manage-search-schemas-with-flex-cli/#adding-schemas)
+> that corresponds to your FTW template.
 
 ## Summary
 
-In this tutorial, we used FTW-daily template to make our own customized
-marketplace. Here's a summary of those installation steps:
+In this tutorial, we used the FTW-daily template to get a marketplace
+running. Here's a summary of those installation steps:
 
 ```bash
 git clone https://github.com/sharetribe/ftw-daily.git
