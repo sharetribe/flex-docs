@@ -444,7 +444,7 @@ with
 ```html
 {{#eq "line-item/day" code}}
 ```
-in your email notification templates as well to show the correct line items. The next step in the tutorial deals with updating email notifications.
+in your email notification templates to show the correct line items. The next step in the tutorial deals with updating email notifications.
 
 </extrainfo>
 
