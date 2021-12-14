@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started-with-ftw-daily
-updated: 2020-06-25
+updated: 2021-12-14
 category: introduction
 ingress:
   Learn how to install one of the Flex Templates for Web (FTW) to your
@@ -27,6 +27,11 @@ local development environment - and then get it up and running. This
 guide also helps you to create accounts to Stripe and Mapbox. Those
 services are needed to run the FTW-daily template app.
 
+If you want to use FTW-hourly or FTW-product as your starting point, you
+can find the relevant options in this tutorial as well. However, if you
+are intending to work through the tutorial steps, we recommend starting
+with FTW-daily, as it is the basis for the tutorials.
+
 ## Setup development environment
 
 ### Prerequisities
@@ -49,6 +54,21 @@ basic development tooling:
    git clone https://github.com/sharetribe/ftw-daily.git
    ```
 
+   <extrainfo title="FTW-hourly and FTW-product">
+   To clone FTW-hourly, use the command
+
+   ```bash
+   git clone https://github.com/sharetribe/ftw-hourly.git
+   ```
+
+   To clone FTW-product, use the command
+
+   ```bash
+   git clone https://github.com/sharetribe/ftw-product.git
+   ```
+
+   </extrainfo>
+
 1. Go to the cloned directory:
 
    ```bash
@@ -58,7 +78,7 @@ basic development tooling:
     <extrainfo title="Check how the directory structure should look like">
 
    After these steps you should have a directory structure that looks
-   like this:
+   like this for FTW-daily:
 
    ```bash
    ├── ext
@@ -122,6 +142,21 @@ basic development tooling:
 
     </extrainfo>
 
+   <extrainfo title="FTW-hourly and FTW-product">
+   If you cloned FTW-hourly:
+
+   ```bash
+   cd ftw-hourly/
+   ```
+
+   If you cloned FTW-product:
+
+   ```bash
+   cd ftw-product/
+   ```
+
+   </extrainfo>
+
 1) Install dependency libraries:
 
    ```bash
@@ -134,7 +169,7 @@ FTW templates have 3 mandatory integrations that you need to configure
 before the app is fully functional. The app obviously needs to discuss
 with Flex Marketplace API, but the client app also makes direct calls to
 [Stripe](https://stripe.com/en-fi). Flex uses Stripe as a payment
-processor. And FTW-daily saves sensitive payment information directly to
+processor, and FTW-daily saves sensitive payment information directly to
 it.
 
 The third default integration is to a map provider.
@@ -153,17 +188,18 @@ integrations work.
 
 ### Sharetribe Flex client ID and client secret
 
-To use the Marketplace API, you will need a **client ID**. You can
-request access at https://www.sharetribe.com/products/flex/
+To use the Marketplace API, you will need a **client ID**. You can sign
+up for your free Flex account at
+https://www.sharetribe.com/products/flex/
 
 When you get access, you will be able to log into Flex Console and check
 the client ID.<br /> Flex Console: _Build > Applications_
 
-In addition, FTW templates use a transaction process that includes a
-privileged transition. That makes it possible to customize pricing on
-the small server that's included to the template. **Client secret** is
-needed to make this secure call from the template's own server to Flex
-API.
+In addition, FTW templates use transaction processes that include
+privileged transitions. This makes it possible to customize pricing on
+the Node server that's included in the template. The **client secret**
+is needed to make this secure call from the template's own server to
+Flex API.
 
 ![Flex Console: Applications tab](./console-build-application.png)
 
@@ -175,25 +211,22 @@ API. Stripe has two different keys:
 - _Secret key_ for server-side requests
 - _Publishable key_ for calls from web browser
 
-Flex API uses Stripe secret key to make payment-related requests when
-transaction moves forward. The client app needs to use Stripe
-publishable key to run stripe.js script. That script has two main
-functions, it has fraud detection build in and it is also used to save
-sensitive information directly to Stripe. E.g. credit card number is
-saved directly to Stripe.
+Flex API uses the Stripe secret key to make payment-related requests
+when a transaction moves forward. The client app needs to use the Stripe
+publishable key to run the `stripe.js` script. The script has two main
+functions: it has fraud detection built in, and it is also used to save
+sensitive information directly to Stripe. For instance, a customer's
+credit card number is saved directly to Stripe.
 
 #### 1. Create and confirm your free Stripe account
 
-[Register to Stripe](https://dashboard.stripe.com/register). After
-filling the form you will be asked the question _"How do you want to get
-started with Stripe?"_. You can click _"Skip for now"_ link at the
-bottom of the page to get directly to Stripe dashboard. Remember to
+[Register to Stripe](https://dashboard.stripe.com/register). Remember to
 confirm your email address after the registration.
 
 As you will receive money from your users via your Stripe account, you
 have to provide some details such as your address and your bank account.
 In the Stripe dashboard, click the _"Activate your account"_ link in the
-left menu and fill in all the fields according to the instructions. The
+top bar and fill in all the fields according to the instructions. The
 activation form varies based on your country.
 
 ![Activate Stripe account](./stripe-activate-account.png)
@@ -205,14 +238,14 @@ features with
 [Custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 
 [Stripe Connect](https://stripe.com/docs/connect) is used to route
-payments between customers, providers (sellers), and marketplace, which
-is taking a commission from transactions.
+payments between customers, providers (sellers), and the marketplace,
+which can take a commission from transactions.
 
 [Stripe Custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts)
 are created to hold the provider's account information (e.g. payout
 details) on Stripe's side. A Custom Stripe account is almost completely
-invisible to the account holder, but marketplace operators see those on
-their Stripe dashboard.
+invisible to the account holder, but marketplace operators see the
+accounts on their Stripe dashboard.
 
 **United States**<br /> If you're based in The United States, Stripe
 will need to review your platform account before you get access. See
@@ -222,32 +255,34 @@ to learn how to apply for Stripe Connect review.
 **Other countries**<br /> If you're in any another country, follow these
 instructions to enable Stripe Connect:
 
-1. Click the **Connect** left menu item.
+1. Click the **Connect** top menu item, and then click the **Get
+   Started** button.
 
    ![Stripe connect](./stripe-connect.png)
 
-1. Click the **Get started** button.
+1. Once a modal opens, select **Platform or marketplace** and click
+   **Continue**.
 
-   ![Get started](./stripe-get-started.png)
+   ![Activate Stripe Connect](./stripe-connect-activate.png)
 
-1. After a few seconds, you should see your Connect dashboard. From the
-   left sidebar, go to **Settings** then **Connect settings**, at
-   https://dashboard.stripe.com/settings
+1. Now when you click the gear icon on the top bar to go to **Settings**
+   at https://dashboard.stripe.com/settings, you will see a new
+   **Connect** section. Click **Settings** in that section.
 
-   ![Connect settings](./stripe-connect-settings.jpg)
+   ![Connect settings](./stripe-connect-settings.png)
 
 1. Make sure that **Custom** is enabled in the **Account types** section
 
-   ![Custom enabled](./stripe-custom-enabled.jpg)
+   ![Custom enabled](./stripe-custom-enabled.png)
 
 Great! You now have to get your API keys and input them into your
 marketplace.
 
 #### 3. Get your API keys from Stripe and add them to your Sharetribe marketplace
 
-- Click the _Developers_ left menu item and go to _Developers_ → _API
+- Click the _Developers_ top menu item and go to _Developers_ → _API
   Keys_.
-- In the section _"Standard API keys"_ you will see two keys:
+- In the section _"Standard keys"_ you will see two keys:
   - Publishable key
   - Secret key
 
@@ -271,8 +306,8 @@ and not **pk_live**\<somethinghere\>
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
 
-> **Note**: secret key and publishable key needs to match with each
-> others. You can't use publishable key from different Stripe account
+> **Note**: The secret key and publishable key need to match with each
+> other. You can't use a publishable key from a different Stripe account
 > than the secret key - or mix test keys and live keys.
 
 ### Mapbox Access Token
@@ -301,13 +336,13 @@ Start the config script:
 yarn run config
 ```
 
-This command will ask the three required environment variables that you
-you collected in previous step.
+This command will prompt you to enter the three required environment
+variables that you you collected in the previous step.
 
 After that, it will create `.env` file to your local repository and
-guide you through setting up the required environment variables. If the
-`.env` file doesn't exist the application won't start. _This `.env` file
-is only created for local development environment_.
+guide you through setting up the rest of the required environment
+variables. If the `.env` file doesn't exist the application won't start.
+_This `.env` file is only created for local development environment_.
 
 > See the
 > [FTW Environment configuration variables](/ftw-configuration/ftw-env/)
@@ -325,10 +360,16 @@ This will automatically open `http://localhost:3000` in a browser:
 
 ![Default marketplace screenshot](./saunatime-default.png)
 
+> **Note:** As you browse your marketplace and create listings, you may
+> notice that the search filters do not work. You can activate the
+> filters by creating a
+> [search schema](/flex-cli/manage-search-schemas-with-flex-cli/#adding-schemas)
+> that corresponds to your FTW template.
+
 ## Summary
 
-In this tutorial, we used FTW-daily template to make our own customized
-marketplace. Here's a summary of those installation steps:
+In this tutorial, we used the FTW-daily template to get a marketplace
+running. Here's a summary of those installation steps:
 
 ```bash
 git clone https://github.com/sharetribe/ftw-daily.git
