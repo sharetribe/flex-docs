@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing-tutorial
-updated: 2021-11-05
+updated: 2021-12-16
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an
@@ -656,7 +656,7 @@ transaction price breakdown also shows the cleaning fee.
 ![Cleaning fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
 
 <extrainfo title="Add cleaning fee to email notifications">
-If you want to add the cleaning fee to your email notifications, you will need to add it to the email templates.
+To add the cleaning fee into your email notifications, you will need to add it to the email templates. Instructions for editing email templates <a href="/flex-cli/edit-email-templates-with-flex-cli/">can be found here</a>.
 
 ```diff
       {{#each tx-line-items}}
