@@ -1,7 +1,7 @@
 ---
 title: Create a new transaction process
 slug: create-transaction-process
-updated: 2021-12-15
+updated: 2021-12-16
 category: tutorial-transaction-process
 ingress:
   This guide describes how to create a new transaction process and how
