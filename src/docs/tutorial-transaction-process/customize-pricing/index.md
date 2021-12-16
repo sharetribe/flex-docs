@@ -656,7 +656,8 @@ transaction price breakdown also shows the cleaning fee.
 ![Cleaning fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
 
 <extrainfo title="Add cleaning fee to email notifications">
-To add the cleaning fee into your email notifications, you will need to add it to the email templates. Instructions for editing email templates <a href="/flex-cli/edit-email-templates-with-flex-cli/">can be found here</a>.
+To add the cleaning fee into your email notifications, you will need to add it to the email templates.
+The <a href="/tutorial-transaction-process/use-protected-data-in-emails/">third step of this tutorial</a> deals with updating email notifications.
 
 ```diff
       {{#each tx-line-items}}
