@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing-tutorial
-updated: 2021-11-05
+updated: 2021-12-16
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an
@@ -654,3 +654,31 @@ included in the price on the booking page. In addition, the Flex Console
 transaction price breakdown also shows the cleaning fee.
 
 ![Cleaning fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
+
+<extrainfo title="Add cleaning fee to email notifications">
+To add the cleaning fee into your email notifications, you will need to add it to the email templates.
+The <a href="/tutorial-transaction-process/use-protected-data-in-emails/">third step of this tutorial</a> deals with updating email notifications.
+
+```diff
+      {{#each tx-line-items}}
+        {{#contains include-for "provider"}}
+          {{#eq "line-item/day" code}} ...
+
++          {{#eq "line-item/cleaning-fee" code}}
++            <tr class="bottom-row">
++              <td>Cleaning fee</td>
++              <td class="right">{{> format-money money=line-total}}</td>
++            </tr>
++          {{/eq}}
+
+          {{#eq "line-item/provider-commission" code}} ...
+        {{/contains}}
+      {{/each}}
+```
+
+The email templates that list the full line items in the default transaction process are
+- `new-booking-request` (to provider)
+- `booking-request-accepted` (to customer)
+- `money-paid` (to provider)
+
+</extrainfo>

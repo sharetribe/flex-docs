@@ -1,7 +1,7 @@
 ---
 title: Create a new transaction process
 slug: create-transaction-process
-updated: 2020-07-22
+updated: 2021-12-16
 category: tutorial-transaction-process
 ingress:
   This guide describes how to create a new transaction process and how
@@ -431,6 +431,29 @@ _bookingUnitType_ there too:
 // line-item/night, line-item/day or line-item/units
 const bookingUnitType = 'line-item/day';
 ```
+
+<extrainfo title="Update your email notifications">
+To keep showing the line items on your email notifications, you will need to replace
+
+```html
+{{#eq "line-item/night" code}}
+```
+
+with
+
+```html
+{{#eq "line-item/day" code}}
+```
+
+in your email notification templates. The next step in the tutorial
+deals with updating email notifications.
+
+The email templates that list the full line items in the default transaction process are
+- `new-booking-request` (to provider)
+- `booking-request-accepted` (to customer)
+- `money-paid` (to provider)
+
+</extrainfo>
 
 ---
 
