@@ -22,9 +22,9 @@ If you haven't read
 [how transaction processes work in Flex](/background/transaction-process/),
 it's a good idea to do that before starting this tutorial.
 
-In this tutorial we change the marketplace commission percantage. After
-we've made the change, we'll push the updated transaction process
-version and update the existing alias.
+In this tutorial we extend the marketplace review period. After we've
+made the change, we'll push the updated transaction process version and
+update the existing alias.
 
 Let's get started!
 
@@ -155,7 +155,7 @@ review period to 10 days.
 ```diff
  {:format :v3
   :transitions
-  [{:name :transition/enquire, 
+  [{:name :transition/enquire,
     ...
   {:name :transition/expire-review-period,
    :at
@@ -257,13 +257,14 @@ add/remove/rename states or transitions, updating alias may potentially
 break your marketplace front-end if you haven't updated it to work with
 the new process.
 
-The commission is now changed! Next time you initiate a new transaction
-with the alias `preauth-with-booking/release-1` it uses 30% commission.
+The review period has now been changed! Next time you initiate a new
+transaction with the alias `preauth-with-booking/release-1` the review
+period is 10 days.
 
 ## Summary
 
 In this tutorial we pulled an existing process definition with the Flex
-CLI. We changed the commission percentage to 30%, validated the process
+CLI. We extended the review period to 10 days, validated the process
 file and pushed it back to Flex. Finally, we updated the alias to point
 to the new version.
 
