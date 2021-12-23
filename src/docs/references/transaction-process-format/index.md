@@ -1,7 +1,7 @@
 ---
 title: Transaction process format
 slug: transaction-process-format
-updated: 2019-10-02
+updated: 2021-12-23
 category: references
 ingress:
   This reference article describes the format of the process.edn file
@@ -45,7 +45,7 @@ The annotated process description for this process is as follows:
 
                 ;; The actions that the transaction engine executes when the transition is taken.
                 :actions [{:name :action/create-pending-booking
-                           :config {:type :day}}
+                           :config {:type :time}}
                           {:name :privileged-set-line-items}
                           {:name :action/stripe-create-payment-intent}]
 
@@ -271,8 +271,7 @@ transition.
 
 In our example process, the `:transition/request-payment` defines the
 actions `action/create-pending-booking`,
-`action/calculate-tx-nightly-total-price`,
-`action/calculate-tx-provider-commission` and
+`action/privileged-set-line-items` and
 `action/stripe-create-payment-intent`. This means the transition
 requires and accepts the following parameters defined by the
 `action/create-pending-booking`:
@@ -280,15 +279,18 @@ requires and accepts the following parameters defined by the
 - `bookingStart`, `bookingEnd`: timestamp, mandatory
 - `bookingDisplayStart`, `bookingDisplayEnd`: timestamp, optional
 
+as well as the following parameters defined by the
+`action/privileged-set-line-items`:
+
+- `lineItems`,
+  [line item array](/references/transaction-process-actions/#pricing),
+  mandatory
+
 plus the following parameters defined by the
 `action/stripe-create-payment-intent`:
 
 - `paymentMethod`: string, mandatory
 - `setupPaymentMethodForSaving`: boolean, optional, defaults to `false`
-
-The other two actions, `action/calculate-tx-nightly-total-price` and
-`action/calculate-tx-provider-commission`, do not define any parameters
-(but they do have preconditions).
 
 ### Configuration options
 
@@ -304,11 +306,11 @@ description via the `:config` key in the action definition:
 ```clojure
 {
  ;; Name of the action.
- :name :action/calculate-tx-provider-commission
+ :name :action/create-pending-booking
 
  ;; The configuration options map.
  ;; Can be omitted if no options need to be passed.
- :config {:commission 0.1M}}
+ :config {:type :time}}
 ```
 
 You can see all the preconditions, action parameters and configuration
@@ -393,9 +395,8 @@ Actions
 
 Name                                      Config
 :action.initializer/init-listing-tx
-:action/create-pending-booking            {:type :day}
-:action/calculate-tx-nightly-total-price
-:action/calculate-tx-provider-commission  {:commission 0.1}
+:action/create-pending-booking            {:type :time}
+:action/privileged-set-line-items
 :action/stripe-create-payment-intent
 
 Notifications
@@ -444,16 +445,16 @@ requires and accepts.
 
 ### Action
 
-| Key       | Type    | Description                                              | Example                                    |
-| --------- | ------- | -------------------------------------------------------- | ------------------------------------------ |
-| `:name`   | Keyword | Reference to an action to use.                           | `:action/calculate-tx-provider-commission` |
-| `:config` | Map     | A map from action configuration options to their values. | `{:commission 0.1M}`                       |
+| Key       | Type    | Description                                              | Example                          |
+| --------- | ------- | -------------------------------------------------------- | -------------------------------- |
+| `:name`   | Keyword | Reference to an action to use.                           | `:action/create-pending-booking` |
+| `:config` | Map     | A map from action configuration options to their values. | `{:type :time}`                  |
 
 **Example**:
 
 ```clojure
-{:name :action/calculate-tx-provider-commission
- :config {:commission 0.15M}}
+{:name :action/create-pending-booking
+ :config {:type :time}}
 ```
 
 ### Notification

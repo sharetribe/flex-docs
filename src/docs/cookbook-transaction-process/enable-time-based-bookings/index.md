@@ -1,7 +1,7 @@
 ---
 title: Enable time-based bookings into use
 slug: enable-time-based-bookings-into-use
-updated: 2019-10-24
+updated: 2021-12-23
 category: cookbook-transaction-process
 ingress:
   Time-based bookings and availability management enable low level fine
@@ -27,9 +27,7 @@ have something like the following in your `process.edn` file:
  :actions
  [{:name :action/create-pending-booking,
    :config {:type :time}}
-  {:name :action/calculate-tx-unit-total-price}
-  {:name :action/calculate-tx-provider-commission,
-   :config {:commission 0.1M}}
+ {:name :action/privileged-set-line-items}
   {:name :action/stripe-create-payment-intent}],
  :to :state/pending-payment}
 {:name :transition/request-payment-after-enquiry,
@@ -37,9 +35,7 @@ have something like the following in your `process.edn` file:
  :actions
  [{:name :action/create-pending-booking,
    :config {:type :time}}
-  {:name :action/calculate-tx-unit-total-price}
-  {:name :action/calculate-tx-provider-commission,
-   :config {:commission 0.1M}}
+ {:name :action/privileged-set-line-items}
   {:name :action/stripe-create-payment-intent}],
  :from :state/enquiry,
  :to :state/pending-payment}

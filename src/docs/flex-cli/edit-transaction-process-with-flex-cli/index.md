@@ -1,7 +1,7 @@
 ---
 title: Edit transaction process with Flex CLI
 slug: edit-transaction-process-with-flex-cli
-updated: 2020-10-29
+updated: 2021-12-23
 category: flex-cli
 ingress:
   This tutorial shows you how to edit transaction process with Flex CLI.
@@ -22,9 +22,9 @@ If you haven't read
 [how transaction processes work in Flex](/background/transaction-process/),
 it's a good idea to do that before starting this tutorial.
 
-In this tutorial we change the marketplace commission percantage. After
-we've made the change, we'll push the updated transaction process
-version and update the existing alias.
+In this tutorial we extend the marketplace review period. After we've
+made the change, we'll push the updated transaction process version and
+update the existing alias.
 
 Let's get started!
 
@@ -126,7 +126,7 @@ clarity.
 Now that you know the basics of the edn format, let's edit the
 `process.edn` file!
 
-## Change the commission
+## Extend the review period
 
 Open the `process.edn` in your favorite editor.
 
@@ -139,45 +139,48 @@ From the `process.edn` file, you'll find a map with a key
 transition in your marketplace. Each transition contains values for keys
 like `:name`, `:actor`, `:actions`, `:to` and `:from`.
 
-To change the commission percentage of the transaction process, we need
-to find the transaction where the commission is calculated. The
-commission is calculated by an action named
-`:action/calculate-tx-provider-commission` (or
-`:action/calculate-tx-customer-commission` if customer commission is in
-use). In the `preauth-with-nightly-booking` process, the commission in
-calculated in transitions `:transition/request-payment` and
-`:transition/request-payment-after-enquiry`.
+To extend the review period in the transaction process, we need to find
+the transition where the review periods are defined. In the Flex default
+processes, the review period length is defined in the transition
+`:transition/expire-review-period`, and if one participant has already
+reviewed the other, in either
+`:transition/expire-provider-review-period` or
+`:transition/expire-customer-review-period`. By default, the review
+periods are defined as 7 days.
 
-When you have found the actions that calculate commission, change the
-value of the `:commission` in the action `:config` to `0.3M` (which
-means 30%):
+When you have found the transitions, change the value of the
+`:fn/period` in the `:at` time expression to `["P10D"]` to extend the
+review period to 10 days.
 
 ```diff
  {:format :v3
   :transitions
-  [{:name :transition/enquire
-    :actor :actor.role/customer
-    :actions []
-    :to :state/enquiry}
-   {:name :transition/request-payment
-    :actor :actor.role/customer
-    :actions [{:name :action/create-pending-booking}
-              {:name :action/calculate-tx-nightly-total-price}
-              {:name :action/calculate-tx-provider-commission
--              :config {:commission 0.1M}}
-+              :config {:commission 0.3M}}
-              {:name :action/stripe-create-payment-intent}]
-    :to :state/pending-payment}
-   {:name :transition/request-payment-after-enquiry
-    :actor :actor.role/customer
-    :actions [{:name :action/create-pending-booking}
-              {:name :action/calculate-tx-nightly-total-price}
-              {:name :action/calculate-tx-provider-commission
--              :config {:commission 0.1M}}
-+              :config {:commission 0.3M}}
-              {:name :action/stripe-create-payment-intent}]
-    :from :state/enquiry
-    :to :state/pending-payment}
+  [{:name :transition/enquire,
+    ...
+  {:name :transition/expire-review-period,
+   :at
+   {:fn/plus
+-    [{:fn/timepoint [:time/booking-end]} {:fn/period ["P7D"]}]},
++    [{:fn/timepoint [:time/booking-end]} {:fn/period ["P10D"]}]},
+   :actions [],
+   :from :state/delivered,
+   :to :state/reviewed}
+  {:name :transition/expire-provider-review-period,
+   :at
+   {:fn/plus
+-    [{:fn/timepoint [:time/booking-end]} {:fn/period ["P7D"]}]},
++    [{:fn/timepoint [:time/booking-end]} {:fn/period ["P10D"]}]},
+   :actions [{:name :action/publish-reviews}],
+   :from :state/reviewed-by-customer,
+   :to :state/reviewed}
+  {:name :transition/expire-customer-review-period,
+   :at
+   {:fn/plus
+-    [{:fn/timepoint [:time/booking-end]} {:fn/period ["P7D"]}]},
++    [{:fn/timepoint [:time/booking-end]} {:fn/period ["P10D"]}]},
+   :actions [{:name :action/publish-reviews}],
+   :from :state/reviewed-by-provider,
+   :to :state/reviewed}
 ```
 
 Save the changes you've made to `process.edn` file.
@@ -254,13 +257,14 @@ add/remove/rename states or transitions, updating alias may potentially
 break your marketplace front-end if you haven't updated it to work with
 the new process.
 
-The commission is now changed! Next time you initiate a new transaction
-with the alias `preauth-with-booking/release-1` it uses 30% commission.
+The review period has now been changed! Next time you initiate a new
+transaction with the alias `preauth-with-booking/release-1` the review
+period is 10 days.
 
 ## Summary
 
 In this tutorial we pulled an existing process definition with the Flex
-CLI. We changed the commission percentage to 30%, validated the process
+CLI. We extended the review period to 10 days, validated the process
 file and pushed it back to Flex. Finally, we updated the alias to point
 to the new version.
 

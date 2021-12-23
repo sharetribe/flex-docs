@@ -676,7 +676,9 @@ The <a href="/tutorial-transaction-process/use-protected-data-in-emails/">third 
       {{/each}}
 ```
 
-The email templates that list the full line items in the default transaction process are
+The email templates that list the full line items in the default
+transaction process are
+
 - `new-booking-request` (to provider)
 - `booking-request-accepted` (to customer)
 - `money-paid` (to provider)

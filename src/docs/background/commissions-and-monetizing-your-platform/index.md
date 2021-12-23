@@ -83,9 +83,9 @@ const customerCommission = {
 const lineItems = [booking, providerCommission, customerCommission];
 ```
 
-For a 100 EUR listing, this would result in a 110 EUR payin for the customer
-and a 88 EUR payout for the provider. The marketplace would receive 22
-EUR minus Stripe fees.
+For a 100 EUR listing, this would result in a 110 EUR payin for the
+customer and a 88 EUR payout for the provider. The marketplace would
+receive 22 EUR minus Stripe fees.
 
 <extrainfo title="Negative or positive commission?">
 Commission line items are defined as either positive or negative depending on the transaction
