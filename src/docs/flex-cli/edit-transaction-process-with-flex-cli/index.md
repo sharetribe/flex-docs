@@ -1,7 +1,7 @@
 ---
 title: Edit transaction process with Flex CLI
 slug: edit-transaction-process-with-flex-cli
-updated: 2021-12-16
+updated: 2021-12-23
 category: flex-cli
 ingress:
   This tutorial shows you how to edit transaction process with Flex CLI.

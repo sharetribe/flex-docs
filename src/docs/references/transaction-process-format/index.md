@@ -1,7 +1,7 @@
 ---
 title: Transaction process format
 slug: transaction-process-format
-updated: 2021-12-16
+updated: 2021-12-23
 category: references
 ingress:
   This reference article describes the format of the process.edn file

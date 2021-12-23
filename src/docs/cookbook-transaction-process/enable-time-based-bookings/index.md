@@ -1,7 +1,7 @@
 ---
 title: Enable time-based bookings into use
 slug: enable-time-based-bookings-into-use
-updated: 2021-12-16
+updated: 2021-12-23
 category: cookbook-transaction-process
 ingress:
   Time-based bookings and availability management enable low level fine
