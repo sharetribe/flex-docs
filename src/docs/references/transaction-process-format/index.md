@@ -344,6 +344,13 @@ in the
 [Transaction process time expressions](/references/transaction-process-time-expressions/)
 reference article.
 
+Note that your transaction process can have several automatic
+transitions _scheduled_ for a state, but only one automatic transition
+_executed_ for a state. You may have e.g. one automatic transition
+scheduled to execute 1 day after first entering the state, and another
+scheduled to execute 7 days before a booking starts. The transaction
+that gets executed is the one whose time point is matched first.
+
 ## Notifications
 
 Notifications are emails that are sent as part of the transaction
