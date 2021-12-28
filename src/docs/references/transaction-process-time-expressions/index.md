@@ -1,7 +1,7 @@
 ---
 title: Transaction process time expressions
 slug: transaction-process-time-expressions
-updated: 2019-10-02
+updated: 2021-12-28
 category: references
 ingress:
   This reference article describes the time expressions used in the
@@ -27,6 +27,13 @@ the case that nobody takes action before that. Also, if the scheduled
 time is in the past the operation will execute immediately. By wrapping
 the time expression with `:fn/ignore-if-past` you can instead ignore
 operations when the scheduled time is in the past.
+
+Note that your transaction process can have several automatic
+transitions _scheduled_ for a state, but only one automatic transition
+_executed_ for a state. You may have e.g. one automatic transition
+scheduled to execute 1 day after first entering the state, and another
+scheduled to execute 7 days before a booking starts. The transaction
+that gets executed is the one whose time point is matched first.
 
 To learn more how to use time expression in the transaction process, see
 the
