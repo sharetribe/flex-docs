@@ -39,10 +39,10 @@ support differs depending on whether the schema is defined for listings
 or user profiles. The following table summarizes the supported search
 schema scopes.
 
-| schema-for  | Supported scopes                 |
-| ----------- | -------------------------------- |
-| listing     | public, meta                     |
-| userProfile | public, meta, private, protected |
+| schema-for  | Supported scopes                     |
+| ----------- | ------------------------------------ |
+| listing     | public, metadata                     |
+| userProfile | public, private, protected, metadata |
 
 > There is no API endpoint for querying users in the Marketplace API, so
 > `userProfile` search schema applies only to the
