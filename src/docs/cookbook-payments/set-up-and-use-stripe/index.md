@@ -1,7 +1,7 @@
 ---
 title: Set up and use Stripe
 slug: set-up-and-use-stripe
-updated: 2019-03-27
+updated: 2021-12-29
 category: cookbook-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you
@@ -194,3 +194,15 @@ to Stripe support before proceeding.
    to enable personal ID number field you need to add the new country in
    `forms/PayoutDetailsForm/PayoutDetailsPersonalDetails.js` file where
    showing the ID number field is handled.
+
+<extrainfo title="Why are Brazil, India and Hungary not supported by default?">
+The current FTW templates do not support Brazil (BR), India (IN) and Hungary (HU),
+even though all three countries are mentioned as available Stripe countries in <a href="https://stripe.com/docs/connect/accounts#custom-accounts">Stripe's
+documentation</a>. If you want to support one of these three regions, you will
+need to do a fair amount of customization on top of the default Flex setup.
+<ul>
+  <li> The Flex transaction engine uses manual payouts, which are <a href="https://stripe.com/docs/payouts#manual-payouts">not supported for Brazil and India</a>.</li>
+  <li>India has restrictions on <a href="https://support.stripe.com/questions/stripe-india-support-for-marketplaces">cross-border payments</a>.</li>
+  <li>Stripe treats the Hungarian currency HUF as a <a href="https://stripe.com/docs/currencies#special-cases">zero-decimal currency for payouts</a>. This means that even though the Flex engine can create charges in two-decimal amounts (e.g. HUF 20.38), payouts can only be created in integer amounts evenly divisible by 100 (e.g. HUF 20.00). Additionally, if Stripe needs to do currency conversions from another currency to HUF, the resulting amount may have decimals which can cause the payout to fail.</li>
+</ul>
+</extrainfo>
