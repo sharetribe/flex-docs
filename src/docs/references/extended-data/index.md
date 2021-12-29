@@ -54,8 +54,7 @@ that is only made visible to a customer at a specific point in the
 _Private data_ is similar to protected data, but is not intended to be
 revealed via the transaction process. For instance, it can be used to
 collect and store information about users or listings for marketplace
-operators. It can also be used with integrations that want to store e.g.
-a corresponding id in an external service.
+operators.
 
 ### Metadata
 
@@ -68,17 +67,19 @@ searching via
 or
 [/users/query in Integration API](https://www.sharetribe.com/api-reference/integration.html#query-users).
 
-Metadata is useful for example marking listings as promoted or for
-linking listings with external services.
+Metadata can be used to store data about listings and users that must
+only be writable by marketplace operators or through integrations to
+other systems built around the Integration API and that the users
+themselves must not be able to modify.
 
 ## Search schema
 
 Extended data is available out of the box and can be written and read
-via the Marketplace API without any prior configuration. _Search schema_
-may optionally be defined for some value types of extended data. When a
-schema is provided for a given extended data key, the API can use this
-information to make querying the extended data possible via some API
-endpoints. For instance
+via the Marketplace API, Integration API and Console without any prior
+configuration. _Search schema_ may optionally be defined for some value
+types of extended data. When a schema is provided for a given extended
+data key, the API can use this information to make querying the extended
+data possible via some API endpoints. For instance
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 supports querying listings by public data or metadata.
 
