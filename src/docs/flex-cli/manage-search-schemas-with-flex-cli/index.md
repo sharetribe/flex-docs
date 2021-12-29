@@ -49,11 +49,8 @@ schema scopes.
 > [/users/query endpoint in the Integration API](https://www.sharetribe.com/api-reference/integration.html#query-users).
 
 All types of extended data are editable in Console by the operator, but
-only public data and metadata can be seen by other marketplace users.
-Currently, listing search schemas can be scoped either to public or
-metadata. User search schemas are currently only available through an
-Integration API endpoint, so they can also be scoped to private and
-protected. To see more details about extended data, see the
+only public data and metadata can be seen by other marketplace users. To
+see more details about extended data, see the
 [Extended data](/references/extended-data/) reference.
 
 You can store any JSON data in extended data, but only top-level keys of
