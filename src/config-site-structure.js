@@ -100,7 +100,7 @@ const sortingArrayPaymentCookbooks = [
   'save-payment-card',
   'stripe-connect-platform-review',
   'removing-stripe',
-]
+];
 
 exports.siteStructure = [
   {
@@ -144,9 +144,9 @@ exports.siteStructure = [
       { id: 'cookbook-design' },
       { id: 'cookbook-search' },
       { id: 'cookbook-transaction-process' },
-      { 
+      {
         id: 'cookbook-payments',
-        sortingArray: sortingArrayPaymentCookbooks
+        sortingArray: sortingArrayPaymentCookbooks,
       },
       { id: 'cookbook-manage' },
       { id: 'cookbook-emails' },

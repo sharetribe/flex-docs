@@ -13,8 +13,8 @@ _Extended data_ is a set of arbitrary keys and values stored with the
 API resources. The values for the keys can be any valid JSON values,
 including a JSON object (hash). This provides API clients with the
 capability to store arbitrary structured data for the supported resource
-types. Via search schema we also support querying, filtering, and sorting by
-extended data for some value types.
+types. Via search schema we also support querying, filtering, and
+sorting by extended data for some value types.
 
 ## Types of extended data
 
@@ -22,9 +22,9 @@ extended data for some value types.
 See the [API reference](/references/api/) for each resource for
 information on supported extended data.
 
-There are four types of extended data: _metadata_, _private data_, _protected
-data_ and _public data_. Each type has different access semantics (i.e. who is
-allowed to read or write the data).
+There are four types of extended data: _metadata_, _private data_,
+_protected data_ and _public data_. Each type has different access
+semantics (i.e. who is allowed to read or write the data).
 
 ### Public data
 
@@ -59,16 +59,17 @@ a corresponding id in an external service.
 
 ### Metadata
 
-_Metadata_ is writable by marketplace operators and can be read
-via all API endpoints returning the corresponding resource. Metadata
-is supported for users and listings. It can also be used as
-filters when searching via
+_Metadata_ is writable by marketplace operators and can be read via all
+API endpoints returning the corresponding resource. Metadata is
+supported for users and listings. It can also be used as filters when
+searching via
 [/listings/query in Marketplace API](https://www.sharetribe.com/api-reference/marketplace.html#query-listings),
-[/listings/query in Integration API](https://www.sharetribe.com/api-reference/integration.html#query-listings) or
+[/listings/query in Integration API](https://www.sharetribe.com/api-reference/integration.html#query-listings)
+or
 [/users/query in Integration API](https://www.sharetribe.com/api-reference/integration.html#query-users).
 
-Metadata is useful for example marking listings as promoted or
-for linking listings with external services.
+Metadata is useful for example marking listings as promoted or for
+linking listings with external services.
 
 ## Search schema
 
@@ -81,11 +82,11 @@ endpoints. For instance
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 supports querying listings by public data or metadata.
 
-Search schemas can be managed with [Flex
-CLI](/flex-cli/getting-started-with-flex-cli/). With the CLI, you can list, set
-and unset search schemas for listing's public data and metadata as well as for
-user profile's metadata, private, protected and public data. The commands to
-manage search schemas are:
+Search schemas can be managed with
+[Flex CLI](/flex-cli/getting-started-with-flex-cli/). With the CLI, you
+can list, set and unset search schemas for listing's public data and
+metadata as well as for user profile's metadata, private, protected and
+public data. The commands to manage search schemas are:
 
 - `flex-cli search` List all defined data schemas
 - `flex-cli search set` Set (create or update) data schema
