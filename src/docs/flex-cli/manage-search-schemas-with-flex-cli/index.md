@@ -41,7 +41,7 @@ schema scopes.
 
 | schema-for  | Supported scopes                 |
 | ----------- | -------------------------------- |
-| listing     | public, meta, keyword            |
+| listing     | public, meta                     |
 | userProfile | public, meta, private, protected |
 
 > There is no API endpoint for querying users in the Marketplace API, so
@@ -71,12 +71,15 @@ just skips those values.
 | long       | one         | `distanceToLake: 30`                                      | `pub_distanceToLake=5,40`                                                          |
 | text       | one         | `stoveDescription: "Modern and powerful electric stove."` | `keywords=powerful%20modern`                                                       |
 
+> Data schema of type `text` is currently only supported for listings.
+
 Note that the scope in the examples above is `public`. Please use the
 correct prefix depending on the scope of the data (`meta_` for metadata,
 `priv_` for private data, `prot_` for protected data and `pub_` for
 public data). Also, it's worth noting that the query parameter with a
 `text` schema is `keywords` which also targets the `title` and
-`description` attributes of a listing. See
+`description` attributes of a listing. This query parameter is only
+supported in listing queries. See
 [Keyword search](/background/how-the-search-works/#keyword-search) for
 more information.
 
