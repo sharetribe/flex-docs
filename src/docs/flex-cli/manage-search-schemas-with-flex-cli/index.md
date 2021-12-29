@@ -21,9 +21,15 @@ tutorial
 [Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/).
 
 In this tutorial, we will add data schemas for the `category` and
-`amenities` public data fields for listings. And then `age` protected
-data for users. New marketplaces don't have any schemas in the backend
-by default since the needs of marketplaces vary.
+`amenities` public data fields in listings. New marketplaces don't have
+any schemas in the backend by default since the needs of marketplaces
+vary. However, FTW (Flex Template for Web) does define filters for
+category and amenities in its UI (user interface). This tutorial will
+make those filters work as expected.
+
+We will also see how to manage data schema for user profiles. Those
+schemas are not required for FTW to work, but can be useful when
+building own integrations via the Flex Integration API.
 
 ## Extended data types and schema scopes
 
@@ -151,7 +157,7 @@ If you wish to remove a schema, you can use the `search unset` command.
 User profile search schema can be useful, if you have an Integration API
 application that needs to query different sets of users, depending on
 some value in the user profile's extended data. For instance, if users
-have age attribute stored in their protected data, you can use the
+have `age` attribute stored in their protected data, you can use the
 [/users/query endpoint in the Integration API](https://www.sharetribe.com/docs/references/extended-data/)
 to find users of a certain age range.
 
