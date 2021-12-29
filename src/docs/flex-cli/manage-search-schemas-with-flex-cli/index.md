@@ -187,15 +187,22 @@ If you wish to remove a schema, you can use the `search unset` command.
 ## Summary
 
 In this tutorial, we used Flex CLI to define search schemas for our
-marketplace. We used the category and amenities as examples as FTW
-expects those.
+marketplace. We used the listing category and amenities as examples as
+FTW expects those.
 
 For more information, see the following resources:
 
 - [How the search works](/background/how-the-search-works/) background
   article
 - [Extended data reference](/references/extended-data/)
-- [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
-  endpoint API reference
+- API reference for the
+  [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
+  endpoint in the Marketplace API
+- API reference for the
+  [/listings/query](https://www.sharetribe.com/api-reference/integration.html#query-listings)
+  endpoint in the Integration API
+- API reference for the
+  [/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
+  endpoint in the Integration API
 - [Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
 - [Change search filters in FTW](/cookbook-search/change-search-filters-in-ftw/)
