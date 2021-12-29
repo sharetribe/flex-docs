@@ -32,7 +32,9 @@ const BaseLayout = props => {
         const meta = [];
         const path = activeArticle
           ? `/${activeArticle.category}/${activeArticle.slug}/`
-          : activeCategory ? `${activeCategory}/` : '';
+          : activeCategory
+          ? `${activeCategory}/`
+          : '';
 
         // https://moz.com/learn/seo/meta-description
         if (description) {

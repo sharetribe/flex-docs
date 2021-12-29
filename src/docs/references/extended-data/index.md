@@ -1,7 +1,7 @@
 ---
 title: Extended data
 slug: extended-data
-updated: 2019-01-23
+updated: 2021-12-15
 category: references
 ingress:
   Reference documentation providing information on all the different
@@ -13,8 +13,8 @@ _Extended data_ is a set of arbitrary keys and values stored with the
 API resources. The values for the keys can be any valid JSON values,
 including a JSON object (hash). This provides API clients with the
 capability to store arbitrary structured data for the supported resource
-types. Via search schema we also support querying/filtering by the
-extended data for some value types.
+types. Via search schema we also support querying, filtering, and
+sorting by extended data for some value types.
 
 ## Types of extended data
 
@@ -22,11 +22,9 @@ extended data for some value types.
 See the [API reference](/references/api/) for each resource for
 information on supported extended data.
 
-There are five types of extended data, which can be divided into two
-groups - _data_ and _metadata_. _Data_ is written by users via the
-Marketplace API, while _metadata_ is written by operators via the Flex
-Console. Each type has different access semantics (i.e. who is allowed
-to read or write the data).
+There are four types of extended data: _metadata_, _private data_,
+_protected data_ and _public data_. Each type has different access
+semantics (i.e. who is allowed to read or write the data).
 
 ### Public data
 
@@ -56,42 +54,40 @@ that is only made visible to a customer at a specific point in the
 _Private data_ is similar to protected data, but is not intended to be
 revealed via the transaction process. For instance, it can be used to
 collect and store information about users or listings for marketplace
-operators. It can also be used with integrations that want to store e.g.
-a corresponding id in an external service.
-
-### Public metadata
-
-_Public metadata_ is writable by marketplace operators and can be read
-via all API endpoints returning the corresponding resource. Public
-metadata is supported for users and listings. It can also be used as
-filters when searching via
-[/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings).
-
-Public metadata is useful for example marking listings as promoted or
-for linking listings with external services.
-
-### Private metadata
-
-**Note:** This feature is not yet supported by the Marketplace API.
-
-_Private metadata_ is only readable and writable by marketplace
 operators.
+
+### Metadata
+
+_Metadata_ is writable by marketplace operators and can be read via all
+API endpoints returning the corresponding resource. Metadata is
+supported for users and listings. It can also be used as filters when
+searching via
+[/listings/query in Marketplace API](https://www.sharetribe.com/api-reference/marketplace.html#query-listings),
+[/listings/query in Integration API](https://www.sharetribe.com/api-reference/integration.html#query-listings)
+or
+[/users/query in Integration API](https://www.sharetribe.com/api-reference/integration.html#query-users).
+
+Metadata can be used to store data about listings and users that must
+only be writable by marketplace operators or through integrations to
+other systems built around the Integration API and that the users
+themselves must not be able to modify.
 
 ## Search schema
 
 Extended data is available out of the box and can be written and read
-via the Marketplace API without any prior configuration. _Search schema_
-may optionally be defined for some value types of extended data. When a
-schema is provided for a given extended data key, the API can use this
-information to make querying the extended data possible via some API
-endpoints. For instance
+via the Marketplace API, Integration API and Console without any prior
+configuration. _Search schema_ may optionally be defined for some value
+types of extended data. When a schema is provided for a given extended
+data key, the API can use this information to make querying the extended
+data possible via some API endpoints. For instance
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
-supports querying listings by public data.
+supports querying listings by public data or metadata.
 
-Search schemas can be managed by
+Search schemas can be managed with
 [Flex CLI](/flex-cli/getting-started-with-flex-cli/). With the CLI, you
-can list, set and unset search schemas to listing's Public data and
-Public metadata. The commands to manage search schemas are:
+can list, set and unset search schemas for listing's public data and
+metadata as well as for user profile's metadata, private, protected and
+public data. The commands to manage search schemas are:
 
 - `flex-cli search` List all defined data schemas
 - `flex-cli search set` Set (create or update) data schema
