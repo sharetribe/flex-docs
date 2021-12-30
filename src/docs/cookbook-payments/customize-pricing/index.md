@@ -186,7 +186,7 @@ let's next update the provider commission based on the booking length.
 
 The idea is to keep the 10% commission for bookings of 5 or less nights.
 For bookings of more than 5 nights, we'll set the provider commission to
-7%. Update the `trnsactionLineItems` function in `lineItems.js` as
+7%. Update the `transactionLineItems` function in `lineItems.js` as
 follows:
 
 ```diff
