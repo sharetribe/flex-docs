@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing-tutorial
-updated: 2021-12-16
+updated: 2022-01-01
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an
@@ -657,7 +657,7 @@ transaction price breakdown also shows the cleaning fee.
 
 <extrainfo title="Add cleaning fee to email notifications">
 To add the cleaning fee into your email notifications, you will need to add it to the email templates.
-The <a href="/tutorial-transaction-process/use-protected-data-in-emails/">third step of this tutorial</a> deals with updating email notifications.
+The <a href="/docs/tutorial-transaction-process/use-protected-data-in-emails/">third step of this tutorial</a> deals with updating email notifications.
 
 ```diff
       {{#each tx-line-items}}
