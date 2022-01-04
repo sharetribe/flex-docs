@@ -1,7 +1,7 @@
 ---
 title: Set up and use Stripe
 slug: set-up-and-use-stripe
-updated: 2021-12-29
+updated: 2022-01-04
 category: cookbook-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you
