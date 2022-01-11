@@ -26,6 +26,7 @@ export { default as GlobalStyle } from './GlobalStyle';
 export { default as BaselineDevGrid } from './BaselineDevGrid';
 export { default as ExtraInfo } from './ExtraInfo';
 export { Carousel, CarouselSlide } from './Carousel';
+export { default as CookieConsent } from './CookieConsent';
 
 // Components that import other components from this index. These
 // might create circular dependencies. Changing the order of these
