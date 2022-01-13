@@ -15,7 +15,6 @@ const useCookieConsent = () => {
 
   const updateConsent = () => {
     if (window?.Cookiebot?.consent) {
-      console.log('Update consent to:', window.Cookiebot.consent);
       // For reference, see: https://www.cookiebot.com/en/developer/
       const {
         necessary,
@@ -25,7 +24,6 @@ const useCookieConsent = () => {
       } = window.Cookiebot.consent;
       setConsent({ necessary, preferences, statistics, marketing });
     } else {
-      console.log('Update consent to initial values');
       setConsent(initialConsent);
     }
   };
