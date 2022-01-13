@@ -307,6 +307,7 @@ const Html = styled.div`
 `;
 
 const ConsentIframe = props => {
+  const { title, ...rest } = props;
   const fallback = (
     <p>
       <a href={props.src}>{props.src}</a>
@@ -314,7 +315,7 @@ const ConsentIframe = props => {
   );
   return (
     <CookieConsent category="marketing" fallback={fallback}>
-      <iframe {...props} />
+      <iframe title={title} {...rest} />
     </CookieConsent>
   );
 };
