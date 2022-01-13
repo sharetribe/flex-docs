@@ -5,9 +5,11 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const initialConsent = {
   necessary: true,
-  preferences: isDev || false,
-  statistics: isDev || false,
-  marketing: isDev || false,
+
+  // Default to full consent in dev mode to avoid hiding content
+  preferences: isDev,
+  statistics: isDev,
+  marketing: isDev,
 };
 
 const useCookieConsent = () => {
