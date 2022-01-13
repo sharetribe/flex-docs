@@ -14,6 +14,7 @@ User journey mapping is a simple but powerful tool that helps you understand and
 Building your custom marketplace starts with defining the user journey through your marketplace; how providers and customers use your marketplace illustrates the platform you’re building. 
 
 *Customer (buyer) - A user who registers to a marketplace to make purchases.*
+
 *Provider (seller) - A user who sells or rents their products or services on a marketplace.*
 
 
