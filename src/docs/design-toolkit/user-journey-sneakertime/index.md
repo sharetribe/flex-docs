@@ -2,7 +2,7 @@
 title: User Journey - Sneakertime
 slug: user-journey-sneakertime
 updated: 2022-01-13
-category: design-toolkit
+category: design-files
 ingress:
   User journey for Sneakertime, the Flex template for selling products
 published: true
