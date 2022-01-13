@@ -1,7 +1,7 @@
 ---
 title: User Journey - Yogatime
 slug: same-as-the-folder-directory-name
-updated: 2021-01-13 <!---set the date of today---> 
+updated: 2021-01-13 
 category: design-files
 ingress:
   User journey for Yogatime, the Flex template for booking services or renting products by the hour
