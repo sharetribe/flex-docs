@@ -1,7 +1,7 @@
 ---
 title: How to build and launch your marketplace with Flex
 slug: how-to-build-and-launch-with-flex
-updated: 2020-03-12
+updated: 2022-01-13
 category: introduction
 ingress:
   This article describes what it takes to build and launch your
@@ -147,17 +147,10 @@ proceed to do this and
 
 If you're not a developer yourself and don't have one in your team,
 you'll need to contract or hire a developer to do this work for you.
-Before talking to developers, it's a good idea to read more about
-[what development skills are needed to work with Flex](/introduction/development-skills/).
+You can work with any developer of your choice, but we highly recommend the developers in the [Flex Expert Network](https://www.sharetribe.com/experts/). The network consists of experienced agencies and freelancers around the world, all vetted by Sharetribe for their Flex skills. They will be happy to guide you through the process of defining your exact requirements and completing your marketplace based on them.
 
-If you don't have previous experience hiring a developer, worry not: we
-can help you out! Just
-[contact Sharetribe support](mailto:flex-support@sharetribe.com). We'll
-schedule a conference call with you to learn more about your needs, and
-based on that give you recommendations of development companies that can
-build what you need. These companies already have experience with Flex,
-so they are able to give you a relatively accurate quote on how much it
-will cost to build what you need.
+If you'd like to receive a quote from a Flex Expert for building your marketplace, you can head to the [Flex Expert Directory](https://www.sharetribe.com/experts/) and contact some developers directly from there. If you'd like to get help choosing the right developer or learn more about the process for hiring, you can [book a free consultation call])https://calendly.com/welcome-to-flex_ with a Sharetribe team member, and we'll guide you through the process.
+
 
 When you're hiring a developer, it helps a lot if you have already done
 some work on the design, as that makes it easier for you to describe
