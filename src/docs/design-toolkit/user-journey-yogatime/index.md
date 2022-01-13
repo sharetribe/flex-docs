@@ -23,7 +23,7 @@ The search journey defines how users search and find listings in your marketplac
 
 Click through the slideshow below to see the search steps and capabilities that come with Flex out of the box with the Yogatime template.
 
-<SLIDESHOW>
+### CAROUSEL
 
 
 ## Listing Creation Journey 
@@ -32,7 +32,7 @@ Sellers create listings to show what they are offering on the marketplace. Listi
 
 Click through the slideshow below to see how providers create their Yoga teacher profiles in the Yogatime template, including listing availability and pricing. 
 
- <SLIDESHOW>
+### CAROUSEL
 
 ## Transaction Process 
 
@@ -42,7 +42,7 @@ The transaction process defines how booking or buying events happen between the 
 Click through the slideshow below to see how customers reserve hours from Yoga teachers’ calendars, how they pay, and how both providers and customers leave reviews after a successful transaction. 
 
 
-<SLIDESHOW>
+### CAROUSEL
 
 ## Designing your marketplace’s user journey 
 
