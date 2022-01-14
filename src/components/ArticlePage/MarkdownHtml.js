@@ -30,6 +30,7 @@ import {
   CarouselUserJourney,
   CarouselTransactionProcessComponents,
   CarouselTxnProcessUX,
+  CookieConsent,
 } from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
@@ -305,10 +306,25 @@ const Html = styled.div`
   }
 `;
 
+const ConsentIframe = props => {
+  const { title, ...rest } = props;
+  const fallback = (
+    <p>
+      <a href={props.src}>{props.src}</a>
+    </p>
+  );
+  return (
+    <CookieConsent category="marketing" fallback={fallback}>
+      <iframe title={title} {...rest} />
+    </CookieConsent>
+  );
+};
+
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   Fragment: React.Fragment,
   components: {
+    iframe: ConsentIframe,
     asciinema: Asciinema,
     extrainfo: ExtraInfo,
     contentcreationcarousel: CarouselContentCreation,
