@@ -20,29 +20,40 @@ In this article we’ll explore in depth how search, listing creation, and trans
 
 ## Search Journey 
 
+![Sneakertime Search Journey](./sneakertime_search_journey.png)
+
 The search journey defines how users search and find product listings in your marketplace. Starting on the landing page, users progressively narrow their search to find the service, rental, or product they need. Users might find what they need by searching nearby locations or via keywords. Results should be filtered by relevant criteria, like price or category.
 
 Click through the slideshow below to see the search steps and capabilities that come for product marketplaces out of the box with the Sneakertime template.
 
-### Carousel
+<sneakersearchcarousel title="Search journey">
+
+</sneakersearchcarousel>
 
 
 ## Listing Creation Journey 
 
-Sellers create listings to show what they are offering on the marketplace.. Listings can advertise services, products, or rentals, or, in reverse marketplaces, they are jobs providers apply to. The information collected in a listing typically influences what parameters are available during the search journey. The unit of value that is listed also influences how a transaction journey should progress. 
+![Sneakertime Listing Creation Journey](./sneakertime_listing_creation_journey.png)
+
+Sellers create listings to show what they are offering on the marketplace. Listings can advertise services, products, or rentals, or, in reverse marketplaces, they are jobs providers apply to. The information collected in a listing typically influences what parameters are available during the search journey. The unit of value that is listed also influences how a transaction journey should progress. 
 
 Click through the slideshow below to see how sellers add their sneaker listings to the Sneakertime, adding details like delivery and stock. 
 
-### Carousel
+<sneakercreationcarousel title="Listing Creation journey">
+
+</sneakercreationcarousel>
 
 ## Transaction Process 
 
-The transaction process defines how booking or buying events happen between the listing provider and the purchasing customer. Sharetribe Flex lets you extensively customize the rules and steps of your transaction process to govern how providers and customers capitalize on your marketplace. 
+![Sneakertime Transaction Process](./sneakertime_transaction_journey.png)
 
+The transaction process defines how booking or buying events happen between the listing provider and the purchasing customer. Sharetribe Flex lets you extensively customize the rules and steps of your transaction process to govern how providers and customers capitalize on your marketplace.
 
 Click through the slideshow below to see how customers purchase sneakers on the Sneakertime template.
 
-### Carousel
+<sneakertransactioncarousel title="Transaction Process">
+
+</sneakertransactioncarousel>
 
 ## Designing your marketplace’s user journey 
 

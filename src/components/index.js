@@ -42,6 +42,12 @@ export { default as CarouselTransactionProcess } from './CarouselTransactionProc
 export { default as CarouselTransactionProcessComponents } from './CarouselTransactionProcessComponents';
 export { default as CarouselTxnProcessUX } from './CarouselTxnProcessUX';
 export { default as CarouselUserJourney } from './CarouselUserJourney';
+export { default as CarouselSneakertimeCreationJourney } from './CarouselSneakertimeCreationJourney';
+export { default as CarouselSneakertimeSearchJourney } from './CarouselSneakertimeSearchJourney';
+export { default as CarouselSneakertimeTransactionProcess } from './CarouselSneakertimeTransactionProcess';
+export { default as CarouselYogatimeTransactionProcess } from './CarouselYogatimeTransactionProcess';
+export { default as CarouselYogatimeSearchJourney } from './CarouselYogatimeSearchJourney';
+export { default as CarouselYogatimeCreationJourney } from './CarouselYogatimeCreationJourney';
 export { default as MainLayout } from './MainLayout';
 export { default as Topbar } from './Topbar/Topbar';
 export { default as Sidebar } from './Sidebar';
