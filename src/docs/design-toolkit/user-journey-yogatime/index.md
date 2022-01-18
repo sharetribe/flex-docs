@@ -2,7 +2,7 @@
 title: User Journey - Yogatime
 slug: user-journey-yogatime
 updated: 2021-01-13 
-category: design-files
+category: design-toolkit
 ingress:
   User journey for Yogatime, the Flex template for booking services or renting products by the hour
 published: true
@@ -19,7 +19,7 @@ In this article we’ll explore in depth how search, listing creation, and trans
 
 ## Search Journey 
 
-![Yogatime Search Journey](./Yogatime_Search_Journey.png)
+![Yogatime Search Journey](Yogatime_Search_Journey.png)
 
 The search journey defines how users search and find listings in your marketplace. Starting on the landing page, users progressively narrow their search to find the service, rental, or product they need. Users might find what they need by searching nearby locations or via keywords. Results should be filtered by relevant criteria, like price or category.
 
@@ -32,19 +32,19 @@ Click through the slideshow below to see the search steps and capabilities that 
 
 ## Listing Creation Journey 
 
-![Yogatime Listing Creation Journey](./Yogatime_Listing_Creation_Journey.png)
+![Yogatime Listing Creation Journey](Yogatime_Listing_Creation_Journey.png)
 
 Sellers create listings to show what they are offering on the marketplace. Listings can advertise services, products, or rentals, or, in reverse marketplaces, they are jobs providers apply to. The information collected in a listing typically influences what parameters are available during the search journey. The unit of value that is listed also influences how a transaction journey should progress. 
 
 Click through the slideshow below to see how providers create their Yoga teacher profiles in the Yogatime template, including listing availability and pricing. 
 
-<yogasearchcarousel title="Listing Creation Journey">
+<yogacreationcarousel title="Listing Creation Journey">
 
-</yogasearchcarousel>
+</yogacreationcarousel>
 
 ## Transaction Process 
 
-![Yogatime Transaction Process](./Yogatime_Transaction_Journey.png)
+![Yogatime Transaction Process](Yogatime_Transaction_Journey.png)
 
 The transaction process defines how booking or buying events happen between the listing provider and the purchasing customer. Sharetribe Flex lets you extensively customize the rules and steps of your transaction process to govern how providers and customers capitalize on your marketplace. 
 

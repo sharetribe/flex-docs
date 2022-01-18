@@ -50,7 +50,7 @@ const CarouselSneakertimeCreation = props => {
         </p>
       </Slide>
       <Slide imgSrc={IMG_MANAGE_LISTINGS} imgAlt="Sneakertime manage listings page">
-        <h3>Listing page - Manage Listings Page</h3>
+        <h3>Manage Listings Page</h3>
         <p>
           The user can view their own listings in the “Your listings” meni, where they can see all the listings they’ve added. From this page they can see how much stock each product has, and manage stock and edit listing details.
         </p>
