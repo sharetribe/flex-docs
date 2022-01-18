@@ -1,6 +1,6 @@
 ---
 title: User Journey - Saunatime
-slug: user-journey
+slug: user-journey-saunatime
 updated: 2020-04-22
 category: design-toolkit
 ingress:
