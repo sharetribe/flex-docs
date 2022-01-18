@@ -314,7 +314,7 @@ const ConsentIframe = props => {
     </p>
   );
   return (
-    <CookieConsent category="marketing" fallback={fallback}>
+    <CookieConsent category="statistics" fallback={fallback}>
       <iframe title={title} {...rest} />
     </CookieConsent>
   );
