@@ -8,7 +8,7 @@ ingress:
 published: true
 ---
 
-[Yogatime template is one of the Flex Templates for Web](https://www.sharetribe.com/docs/operator-guides/introducing-yogatime/). It is a marketplace for service providers–in this example case Yoga teachers–to create profile listings advertising their teaching practice. Customers can book hourly sessions from these teachers’ availability calendars. Since Yogatime uses time based availability rather than day based availability like Saunatime, it is also a good starting point for marketplaces where bookings are made with time units smaller than days. 
+[Yogatime template is one of the Flex Templates for Web](https://www.youtube.com/watch?v=vbw6_wm9E4g). It is a marketplace for service providers–in this example case Yoga teachers–to create profile listings advertising their teaching practice. Customers can book hourly sessions from these teachers’ availability calendars. Since Yogatime uses time based availability rather than day based availability like Saunatime, it is also a good starting point for marketplaces where bookings are made with time units smaller than days. 
 
 Yogatime, as any typical marketplace has three distinct user journeys: 
 - **Search**: Search happens when customers search for listings on the marketplace using some combination of keywords, availability, filters, and sorting.
