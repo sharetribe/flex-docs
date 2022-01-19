@@ -17,7 +17,7 @@ const CarouselSneakertimeSearch = props => {
       <Slide imgSrc={IMG_SEARCH} imgAlt="Sneakertime search page">
         <h3>Search Page</h3>
         <p>
-          CCustomers browse listings on the search page. Listings are visible as cards in the center of the screen. Listings can be sorted by parameters such as price. A menu of different filters, like category (choose one) or size (choose many), lets buyers narrow down results. The listing results update automatically when a new filter option is selected. 
+          Customers browse listings on the search page. Listings are visible as cards in the center of the screen. Listings can be sorted by parameters such as price. A menu of different filters, like category (choose one) or size (choose many), lets buyers narrow down results. The listing results update automatically when a new filter option is selected. 
         </p>
       </Slide>
       <Slide imgSrc={IMG_LISTING} imgAlt="'Sneakertime listing page">
