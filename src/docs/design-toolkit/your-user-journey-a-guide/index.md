@@ -16,19 +16,19 @@ create listings, how users find listings, and how they interact together
 during a transaction lets you receive more accurate estimates of the
 budget required to build your custom marketplace with Flex.
 
-In [the previous article](/design-toolkit/user-journey/), you learned
-how content creation, listing discovery, and the transaction process
-works in Saunatime. Now it is time to define how users complete these
+In [the previous article](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates), you learned
+how listing creation, listing discovery, and the transaction process
+works in one of the Flex Templates. Now it is time to define how users complete these
 critical journeys on your marketplace.
 
 ## 1. Background work
 
-Pick one of the three processes (content creation, discovery process,
+Pick one of the three processes (listing creation, discovery process,
 transaction process) to start with. Think through all the steps that
 your users need to go through while using your marketplace in this
 journey.
 
-#### Content creation
+#### Listing creation
 
 Focus on defining how users signup and create listings on your
 marketplace. Consider these questions:
@@ -85,7 +85,7 @@ completion. Consider these questions:
 You can learn more about the transaction process functionality in Flex
 [in this overview article](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
 
-## 2. Create maps for content creation journey, discovery journey and transaction process.
+## 2. Create maps for listing creation journey, discovery journey and transaction process.
 
 There are many ways to illustrate user journeys. You can draft using pen
 and paper, a mind map software like Whimsical or Miro, or by simply
@@ -103,8 +103,5 @@ you can see the default User Journeys for Saunatime in this article.
 
 ## 3. Share the journey maps with developers
 
-If you would like to hire experienced developers from our Flex partner
-network, start by [booking a call](https://calendly.com/welcome-to-flex)
-with our team of Flex experts. We can walk through your user journey
-maps together, evaluate Flex’s fit to your custom needs, and connect you
-to suitable development partners.
+If you would like to hire vetted Flex developers, start either by [booking a call](https://calendly.com/welcome-to-flex)
+with our team or connect directly with Flex Experts through the [Expert Directory](http://sharetribe.com/experts).
