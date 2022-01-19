@@ -14,7 +14,7 @@ const CarouselDiscovery = props => {
           The landing page is designed for users to quickly learn what the
           marketplace is all about. Users search for their sauna by location,
           either in top bar or by predefined locations below the hero image.
-          Users can also see all saunas through the main call to action "Browse
+          Users can also see all saunas through the main call to action button "Browse
           saunas".
         </p>
       </Slide>

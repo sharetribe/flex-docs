@@ -16,7 +16,7 @@ const CarouselUserJourney = props => {
         <p>
           Providers in the Saunatime marketplace list their saunas through a
           listing creation wizard. The wizard is accessed from the top bar's
-          "Add your sauna" call to action.{' '}
+          "Add your sauna" call to action button.{' '}
         </p>
       </Slide>
       <Slide imgSrc={IMG_AUTHENTICATION} imgAlt="asdf">

@@ -31,6 +31,12 @@ import {
   CarouselTransactionProcessComponents,
   CarouselTxnProcessUX,
   CookieConsent,
+  CarouselSneakertimeCreationJourney,
+  CarouselSneakertimeSearchJourney,
+  CarouselSneakertimeTransactionProcess,
+  CarouselYogatimeCreationJourney,
+  CarouselYogatimeSearchJourney,
+  CarouselYogatimeTransactionProcess,
 } from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
@@ -334,6 +340,12 @@ const renderAst = new rehypeReact({
     userjourneycarousel: CarouselUserJourney,
     transactionprocesscomponentscarousel: CarouselTransactionProcessComponents,
     txnprocessuxcarousel: CarouselTxnProcessUX,
+    sneakercreationcarousel: CarouselSneakertimeCreationJourney,
+    sneakersearchcarousel: CarouselSneakertimeSearchJourney,
+    sneakertransactioncarousel: CarouselSneakertimeTransactionProcess,
+    yogacreationcarousel: CarouselYogatimeCreationJourney,
+    yogasearchcarousel: CarouselYogatimeSearchJourney,
+    yogatransactioncarousel: CarouselYogatimeTransactionProcess,
   },
 }).Compiler;
 
