@@ -45,7 +45,7 @@ what it offers. There are a few ways to gain this understanding:
    adding listings, making bookings and payments, sending messages,
    leaving reviews, and so on.
 2. Study
-   [how listing search, listing creation, and transactions work](https://www.sharetribe.com/docs/design-toolkit/user-journey/)
+   [how listing search, listing creation, and transactions work](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates)
    specifically.
 3. Install one of the template applications (Saunatime, Yogatime, or
    Sneakertime) yourself following
