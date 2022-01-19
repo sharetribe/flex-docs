@@ -1,7 +1,7 @@
 ---
 title: 'How to design your user journey'
 slug: your-user-journey-a-guide
-updated: 2020-04-24
+updated: 2021-01-19
 category: design-toolkit
 ingress:
   Learn how to design your marketplace's user journey. Understanding
