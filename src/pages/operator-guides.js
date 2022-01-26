@@ -13,7 +13,7 @@ const query = graphql`
   query OperatorGuidesIndexQuery {
     allMarkdownRemark(
       filter: { frontmatter: { category: { in: ["operator-guides"] } } }
-      sort: { fields: fileAbsolutePath, order: ASC }
+      sort: { fields: [frontmatter___category, frontmatter___slug], order: [ASC, ASC] }
     ) {
       edges {
         node {

@@ -12,7 +12,7 @@ const query = graphql`
   query FlexCLIIndexQuery {
     allMarkdownRemark(
       filter: { frontmatter: { category: { in: ["flex-cli"] } } }
-      sort: { fields: fileAbsolutePath, order: ASC }
+      sort: { fields: [frontmatter___category, frontmatter___slug], order: [ASC, ASC] }
     ) {
       edges {
         node {
