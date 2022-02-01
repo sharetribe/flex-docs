@@ -110,7 +110,7 @@ about the following.
 
 To further think about the user experience on your marketplace in
 addition to transactions,
-[consult our guide](https://www.sharetribe.com/docs/design-toolkit/user-journey/)
+[consult our guide](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/)
 on defining the discovery and listing creating process in your
 marketplace. You can see the default user experience provided by
 [Flex’s Templates for Web](https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw)
@@ -175,7 +175,7 @@ to guide your developer on how you want this to work.
 You can review everything included in the Flex Template by exploring the
 demo marketplace in your Console. You can specifically review the
 screens that are part of a transaction
-[here](https://www.sharetribe.com/docs/design-toolkit/user-journey/#transaction-process).
+[here](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/#transaction-process).
 
 ## Share your transaction process with your developer
 

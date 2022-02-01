@@ -108,7 +108,7 @@ with a bank account set up before others can initiate transactions with
 them successfully. This is done by
 [creating a Stripe account](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account)
 for the authenticated user. The
-[FTW templates](http://localhost:8000/cookbook-payments/provider-onboarding-and-identity-verification/)
+[FTW templates](https://www.sharetribe.com/cookbook-payments/provider-onboarding-and-identity-verification/)
 are configured to do this step out-of-the-box using
 [Stripe Connect Onboarding](https://stripe.com/en-fi/connect/onboarding).
 
