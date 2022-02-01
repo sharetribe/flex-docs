@@ -254,7 +254,7 @@ const LandingPage = props => {
               <UiText id="LandingPage.designToolkit.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/design-toolkit/user-journey/">
+              <SectionLink to="/design-toolkit/what-are-user-journeys/">
                 <UiText id="LandingPage.designToolkit.userJourney" />
               </SectionLink>
             </SectionLinks>
