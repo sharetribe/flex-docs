@@ -37,7 +37,7 @@ that gets executed is the one whose time point is matched first.
 However, if the first transition fails for some reason, no further
 automatic transitions get executed from the state.
 
-To learn more how to use time expression in the transaction process, see
+To learn more how to use time expressions in the transaction process, see
 the
 [Transaction process format](/references/transaction-process-format/)
 reference article.
