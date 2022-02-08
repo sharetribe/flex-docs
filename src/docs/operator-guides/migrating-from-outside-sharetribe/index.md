@@ -15,16 +15,13 @@ case and you can find the outline for this process
 
 If you are running a marketplace outside the Sharetribe ecosystem, and
 would like to import data to Flex, it is possible. You will need to
-extract your data from its existing storage and transform it into a data
-format called Intermediary. Sharetribe will then validate the
-transformed data and load it into Flex.
+extract your data from its existing storage and transform it into
+Sharetribe's proprietary data format called Intermediary. Sharetribe
+will then validate the transformed data and load it into Flex.
 
 This article will outline how you can encode data into Intermediary
 format, give you syntax examples of the format, and provide instructions
 on the migration process.
-
-The tooling for these migrations is still in it's infancy and will
-require some technical knowledge and a lots of patience.
 
 ## Intermediary data
 
@@ -42,18 +39,19 @@ Intermediary is specified as
 following keys:
 
 - :ident - identifies the target marketplace by marketplace ID,
-- :data - a seq of marketplace data rows. Each row is a 2-tuple of id
-  and content.
+- :data - a [seq](https://clojure.org/reference/sequences) of
+  marketplace data rows. Each row is a 2-tuple (an array with two
+  elements) of id and content.
 
 You can find your marketplace ID in Flex Console > Build > General. Note
 that the anonymised test file needs to specify your test environment
 marketplace ID and your production data file needs to specify your
 production environment marketplace ID.
 
-The id part of row 2-tuple is specified as a tuple of 1 to 3 elements.
-The first element is always an id attribute and identifies the row type.
-The second element can be an alias or an import id. A 3 element version
-has id attr, import id and an alias.
+The id part of the data row 2-tuple is specified as a tuple of 1 to 3
+elements. The first element is always an id attribute and identifies the
+row type. The second element can be an alias or an import id. A 3
+element version has id attr, import id and an alias.
 
 ```
 ;; 1 element tuple
@@ -76,19 +74,21 @@ written by hand. Import ids are useful for programmatically generated /
 exported data.
 
 Note that import ids are only used in the import phase and they can not
-be mapped to existing resource ids. TODO: EXPLAIN BETTER! Content part
-of row 2-tuple is a map that is processed by tuple expansion function
-registered for the content type.
+be mapped to existing resource ids, because the final resource id is not
+created based on the import id. In other words, if e.g. your test
+marketplace already has data rows, you cannot reference those rows from
+the Intermediary file by the import ids. This means that all the data
+being referenced needs to be in the same Intermediary file.
 
-If you are not generating data by hand (TODO WHAT IS THE JUSTIFICATION
-HERE?), it is highly recommended that you use the 2 element form of the
-id tuple. This means that you don't use aliases but unique uuid's
-throughout the file to reference entities. You can read more about
-[generating UUIDs for your data here](https://www.uuidgenerator.net/api).
+If you are not generating data by hand, it is recommended that you use
+the 2 element form of the id tuple. This means that you use unique
+uuid's throughout the file to reference entities. You can read more
+about
+[generating UUIDs for your data here](https://www.uuidgenerator.net/dev-corner).
 
 #### Aliases
 
-If you currently use non-UUID ids in your data, you can use them to
+If you currently use non-UUID ids in your data, you can also use them to
 generate aliases for the data. Aliases must be unique across the file,
 and they cannot contain spaces.
 
@@ -109,11 +109,11 @@ return ':{type}/{type1stletter}{id}'
 When you already have data that is dependent on each other, such as
 listings related to users and reviews related to listings, you can
 reference the data within the import file. You can refer to resources by
-either alias or UUID with the `#im/ref` syntax. The supported references
-for each type, if any, are listed in the type description in the
-[Supported types](#supported-types) section below. Note that referencing
-data with an id or alias that does not exist in the same file causes a
-validation error.
+either alias or UUID with the `#im/ref` tagged element. The supported
+references for each type, if any, are listed in the type description in
+the [Supported types](#supported-types) section below. Note that
+referencing data with an id or alias that does not exist in the same
+file causes a validation error.
 
 ```
 ;; Referencing a listing by alias
@@ -165,22 +165,22 @@ Supported fields to migrate:
 [API reference listing resource](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format)
 
 - Required attributes
-  - `:im.listing/createdAt`
-  - `:im.listing/title`
-  - `:im.listing/closed` OR `:im.listing/state`
+  - `:im.listing/createdAt` ([#inst](#timestamp))
+  - `:im.listing/title` (string)
+  - `:im.listing/closed` (boolean) OR `:im.listing/state`
   - accepted values for `:im.listing/state`
     - `:listing.state/published`
     - `:listing.state/closed`
     - `:listing.state/draft`
     - `:listing.state/pendingApproval`
 - Optional attributes - only include the key if it has a non-empty value
-  - `:im.listing/description`
-  - `:im.listing/location`
-  - `:im.listing/price`
-  - `:im.listing/author`
-  - `:im.listing/publicData`
-  - `:im.listing/privateData`
-  - `:im.listing/metadata`
+  - `:im.listing/description` (string)
+  - `:im.listing/location` ([#location](#location))
+  - `:im.listing/price` ([#money](#money))
+  - `:im.listing/author` (#im/ref)
+  - `:im.listing/publicData` (JSON)
+  - `:im.listing/privateData` (JSON)
+  - `:im.listing/metadata` (JSON)
 
 Supported references
 
@@ -193,7 +193,7 @@ Example syntax:
          #:im.listing{:createdAt #inst "2018-04-17T06:55:04.291-00:00"
                       :title "A solid rock sauna"
                       :description "A very nice solid rock sauna built solely of wood.\nHere's some more sensible stuff."
-                      :closed false
+                      :state :listing.state/pendingApproval
                       :location #im/location [23.12 21.21]
                       :price #im/money [12.12M "EUR"]
                       :publicData {:category "rock"
@@ -218,24 +218,39 @@ key like this:
 The Intermediary file validation also checks that the email address
 format is valid.
 
+At the moment, all users created within Flex are defined with both
+`:user.role/customer` and `:user.role/provider`. The user roles cannot
+be configured after the import, so we recommend that you add both roles
+for all users and determine any distinction between user groups in your
+client application.
+
 - Required attributes for `:im.user`
   - `:im.user/primaryEmail`
-  - `:im.user/role`
-  - `:im.user/createdAt`
+    - `:im.email/address`
+      ([validated](https://www.regular-expressions.info/email.html)
+      email string)
+    - `:im.email/verified` (boolean)
+  - `:im.user/role` (array)
+  - accepted values for `:im.user/role`
+    - `:user.role/customer`
+    - `:user.role/provider`
+  - `:im.user/createdAt` ([#inst](#timestamp))
   - `:im.user/profile`
     - Required attributes for `:im.user/profile`
-      - `:im.userProfile/firstName`
-      - `:im.userProfile/lastName`
+      - `:im.userProfile/firstName` (string)
+      - `:im.userProfile/lastName` (string)
     - Optional attributes - only include the key if it has a non-empty
       value
-      - `:im.userProfile/displayName`
-      - `:im.userProfile/bio`
-      - `:im.userProfile/publicData`
-      - `:im.userProfile/protectedData`
-      - `:im.userProfile/privateData`
-      - `:im.userProfile/metadata`
+      - `:im.userProfile/displayName` (string)
+      - `:im.userProfile/bio` (string)
+      - `:im.userProfile/publicData` (JSON)
+      - `:im.userProfile/protectedData` (JSON)
+      - `:im.userProfile/privateData` (JSON)
+      - `:im.userProfile/metadata` (JSON)
+      - `:im.userProfile/avatar` (#im/ref)
 - Optional attributes - only include the key if it has a non-empty value
-  - `:im.user/passwordHash`
+  - `:im.user/passwordHash` (validated password hash) TODO how to
+    express the validation logic here?
 
 Supported references
 
@@ -263,10 +278,10 @@ Image urls need to be public and properly encoded URLs, so that we can
 access the imported images while importing the data.
 
 - Required attributes
-  - `:im.image/url`
+  - `:im.image/url` (URL-encoded string)
 - Optional attributes - only include the key if it has a non-empty value
-  - `:im.image/listing`
-  - `:im.image/sortOrder`
+  - `:im.image/listing` (#im/ref)
+  - `:im.image/sortOrder` (integer)
 
 Supported references
 
@@ -287,9 +302,11 @@ Example syntax
 #### Stripe account
 
 - Required attributes
-  - `:im.stripeAccount/stripeAccountId`
-  - `:im.stripeAccount/user` TODO: how about chargesEnabled and
+  - `:im.stripeAccount/stripeAccountId` (string)
+  - `:im.stripeAccount/user`(#im/ref) TODO: how about chargesEnabled and
     payoutsEnabled?
+  - `:chargesEnabled` (boolean)
+  - `:payoutsEnabled` (boolean)
 
 Example syntax
 
@@ -312,14 +329,20 @@ reference to a listing and `ofCustomer` don't.
 
 - Required attributes
   - `:im.review/type`
+  - accepted values for `:im.review/type`
+    - `:review.type/ofCustomer`
+    - `:review.type/ofProvider`
   - `:im.review/state`
-  - `:im.review/rating`
-  - `:im.review/createdAt`
-  - `:im.review/author`
-  - `:im.review/subject`
-  - `:im.review/content`
+  - accepted values for `:im.review/state`
+    - `:review.state/pending`
+    - `:review.state/public`
+  - `:im.review/rating` (integer between 1-5)
+  - `:im.review/createdAt` ([#inst](#timestamp))
+  - `:im.review/author` (#im/ref)
+  - `:im.review/subject` (#im/ref)
+  - `:im.review/content` (string)
 - Optional attributes - only include the key if it has a non-empty value
-  - `:im.review/listing`
+  - `:im.review/listing` (#im/ref)
 
 Supported references
 
@@ -399,7 +422,7 @@ can be used to identify resources within the migration file using type
 
 #### Timestamp
 
-Timestamp values are given with type `#inst`.
+In Intermediary, a timestamp is an `#inst` tagged element.
 
 ```
 :createdAt #inst "2018-04-17T06:55:04.291-00:00"
