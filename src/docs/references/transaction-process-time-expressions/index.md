@@ -1,7 +1,7 @@
 ---
 title: Transaction process time expressions
 slug: transaction-process-time-expressions
-updated: 2021-12-28
+updated: 2022-02-08
 category: references
 ingress:
   This reference article describes the time expressions used in the
@@ -34,6 +34,8 @@ _executed_ for a state. You may have e.g. one automatic transition
 scheduled to execute 1 day after first entering the state, and another
 scheduled to execute 7 days before a booking starts. The transaction
 that gets executed is the one whose time point is matched first.
+However, if the first transition fails for some reason, no further
+automatic transitions get executed from the state.
 
 To learn more how to use time expression in the transaction process, see
 the
