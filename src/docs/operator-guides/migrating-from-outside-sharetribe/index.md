@@ -77,8 +77,7 @@ Note that import ids are only used in the import phase and they can not
 be mapped to existing resource ids, because the final resource id is not
 created based on the import id. In other words, if e.g. your test
 marketplace already has data rows, you cannot reference those rows from
-the Intermediary file by the import ids. This means that all the data
-being referenced needs to be in the same Intermediary file.
+the Intermediary file by the import ids.
 
 If you are not generating data by hand, it is recommended that you use
 the 2 element form of the id tuple. This means that you use unique
@@ -159,15 +158,20 @@ the Intermediary file. Optional keys must have non-empty values, and if
 an optional key does not have a value, the key must be omitted for that
 resource. Empty strings are validated as empty values.
 
+For listings, users, and reviews, the corresponding Flex API resource
+reference is linked under their type description. It is good to note
+that the shape of the Intermediary data corresponds to the API
+reference, however there may be differences in e.g. attribute naming.
+
 #### Listing
 
 Supported fields to migrate:
-[API reference listing resource](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format)
+[API reference listing resource](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format).
 
 - Required attributes
   - `:im.listing/createdAt` ([#inst](#timestamp))
   - `:im.listing/title` (string)
-  - `:im.listing/closed` (boolean) OR `:im.listing/state`
+  - `:im.listing/state`
   - accepted values for `:im.listing/state`
     - `:listing.state/published`
     - `:listing.state/closed`
@@ -179,7 +183,6 @@ Supported fields to migrate:
   - `:im.listing/price` ([#money](#money))
   - `:im.listing/author` (#im/ref)
   - `:im.listing/publicData` (JSON)
-  - `:im.listing/privateData` (JSON)
   - `:im.listing/metadata` (JSON)
 
 Supported references
@@ -203,7 +206,7 @@ Example syntax:
 
 #### User
 
-Supported fields for migration:
+Supported fields to migrate:
 [API reference current user resource](https://www.sharetribe.com/api-reference/marketplace.html#currentuser-resource-format).
 
 Inside the user resource, the email resource differs a bit from the
@@ -248,9 +251,6 @@ client application.
       - `:im.userProfile/privateData` (JSON)
       - `:im.userProfile/metadata` (JSON)
       - `:im.userProfile/avatar` (#im/ref)
-- Optional attributes - only include the key if it has a non-empty value
-  - `:im.user/passwordHash` (validated password hash) TODO how to
-    express the validation logic here?
 
 Supported references
 
@@ -303,18 +303,13 @@ Example syntax
 
 - Required attributes
   - `:im.stripeAccount/stripeAccountId` (string)
-  - `:im.stripeAccount/user`(#im/ref) TODO: how about chargesEnabled and
-    payoutsEnabled?
-  - `:chargesEnabled` (boolean)
-  - `:payoutsEnabled` (boolean)
+  - `:im.stripeAccount/user`(#im/ref)
 
 Example syntax
 
 ```
 [[:im.stripeAccount/id]
   #:im.stripeAccount{:stripeAccountId "a_stripe_id"
-                    :chargesEnabled true
-                    :payoutsEnabled false
                     :user #im/ref :user/john}]
 ```
 
@@ -375,20 +370,19 @@ Intermediary format uses some notable value types:
 
 #### Location
 
-Location is given as
-[LatLng type](https://docs.mapbox.com/android/maps/api/9.6.0/com/mapbox/mapboxsdk/geometry/LatLng.html)
-representing the latitude and longitude of the location. Both latitude
-and longitude are 32 bit floats. The `location` attribute is used in the
-FTW template to provide listing location coordinates through either
-Mapbox or Google maps.
+Location is an Intermediary-specific type specified as a 2-tuple of
+latitude and longitude. Both latitude and longitude are 32 bit floats.
+The `location` attribute is used in the FTW template to provide listing
+location coordinates through either Mapbox or Google maps.
 
 If your source data has addresses specified, and you would like to use
-them to determine locations, you can use e.g. the Mapbox
-[forwardGeoCode](https://github.com/sharetribe/ftw-daily/blob/01cdf40368380d64d90136efb37948c1da79ee0e/src/components/LocationAutocompleteInput/GeocoderMapbox.js#L106)
-API call in your data transformation setup. We recommend that you
-provide a valid location attribute if your marketplace uses maps in some
-way, whether or not you provide an address attribute in e.g. public
-data.
+them to determine coordinate information, you can use a 3rd party
+geocoding api such as
+[Mapbox](https://docs.mapbox.com/api/search/geocoding/) or
+[Google](https://developers.google.com/maps/documentation/geocoding/overview)
+in your data transformation setup. We recommend that you provide a valid
+location attribute if your marketplace uses maps in some way, whether or
+not you provide an address attribute in e.g. public data.
 
 ```
 #:im.listing{...
@@ -398,9 +392,13 @@ data.
 
 #### Money
 
-Money type is defined as [ amount, currency ]. _TODO What's the
-reasoning that price in Intermediary is given as decimals but Flex
-handles prices in minor units?_
+Money is an Intermediary-specific type and it is defined as [ amount,
+currency ]. Note that in the
+[Flex API reference for listings](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format),
+the `money` type differs somewhat from the Intermediary `#im/money` type
+– the `#im/money` type uses decimals for the amount whereas the API
+`money` type amount is given as an integer representing the currency's
+minor unit.
 
 ```
 #:im.listing{...
@@ -411,9 +409,10 @@ handles prices in minor units?_
 #### UUID
 
 A
-[Universally Unique identifiers (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-can be used to identify resources within the migration file using type
-`#uuid`. If your data already uses UUIDs, make sure their format matches
+[Universally Unique identifier (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+can be used to identify resources within the migration file using .edn's
+built-in `#uuid` tagged element. If your data already uses UUIDs, make
+sure their format matches
 [the canonical representation](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
 
 ```
@@ -422,7 +421,7 @@ can be used to identify resources within the migration file using type
 
 #### Timestamp
 
-In Intermediary, a timestamp is an `#inst` tagged element.
+Timestamp in .edn is given as an `#inst` tagged element.
 
 ```
 :createdAt #inst "2018-04-17T06:55:04.291-00:00"
@@ -433,16 +432,17 @@ In Intermediary, a timestamp is an `#inst` tagged element.
 ### No updates are supported
 
 The import is loaded only once to the production environment and
-currently updates with multiple imports are not supported.
+currently updates with multiple production data imports are not
+supported.
 
 ### Test import
 
 We can perform multiple imports to test environment, with the caveat
 that no data deletion in this situation is possible. This might lead to
-double information being uploaded to the test site.
+duplicate information being uploaded to the test environment.
 
 Also, anonymizing test import data by hiding sensitive information like
-names, addresses, email addresses and stripe keys is highly recommended.
+names, addresses, email addresses and Stripe keys is highly recommended.
 
 We recommend that you only use a subset of your data for the test
 import. The purpose of the test migration is to confirm that your
@@ -480,7 +480,7 @@ ids and aliases.
          #:im.listing{:createdAt #inst "2018-04-17T06:55:04.291-00:00"
                       :title "A solid rock sauna"
                       :description "A very nice solid rock sauna built solely of wood.\nHere's some more sensible stuff."
-                      :closed false
+                      :state :listing.state/pendingApproval
                       :location #im/location [23.12 21.21]
                       :price #im/money [12.12M "EUR"]
                       :publicData {:category "rock"
@@ -504,8 +504,6 @@ ids and aliases.
 
         [[:im.stripeAccount/id]
          #:im.stripeAccount{:stripeAccountId "a_stripe_id"
-                            :chargesEnabled true
-                            :payoutsEnabled false
                             :user #im/ref :user/john}]
 
         [[:im.image/id #uuid "58afd8e1-e336-4ca4-a1e7-ff1d91856a6c"]
