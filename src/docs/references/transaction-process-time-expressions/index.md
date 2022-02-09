@@ -32,9 +32,9 @@ Note that your transaction process can have several automatic
 transitions _scheduled_ for a state, but only one automatic transition
 _executed_ for a state. You may have e.g. one automatic transition
 scheduled to execute 1 day after first entering the state, and another
-scheduled to execute 7 days before a booking starts. The transaction
+scheduled to execute 7 days before a booking starts. The transition
 that gets executed is the one whose time point is matched first.
-However, if the first transition fails for some reason, no further
+However, if the first automatic transition fails for some reason, no further
 automatic transitions get executed from the state.
 
 To learn more how to use time expressions in the transaction process, see
