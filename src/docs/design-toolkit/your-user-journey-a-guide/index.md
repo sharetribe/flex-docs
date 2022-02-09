@@ -104,4 +104,4 @@ you can see the default User Journeys for Saunatime in this article.
 ## 3. Share the journey maps with developers
 
 If you would like to hire vetted Flex developers, start either by [booking a call](https://calendly.com/welcome-to-flex)
-with our team or connect directly with Flex Experts through the [Expert Directory](http://sharetribe.com/experts).
+with our team or connect directly with Flex Experts through the [Expert Directory](https://www.sharetribe.com/experts/).
