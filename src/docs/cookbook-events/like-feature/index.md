@@ -57,7 +57,7 @@ const SectionLikes = props => {
 
   return (
     <span className={css.heartIcon}> 
-      <IconHeart /> <FormattedMessage id="ListingPage.likes" values={{ likes: likes }} />
+      <IconHeart /> { likes }
     </span>
   )
 };
@@ -125,16 +125,9 @@ const SectionHeading = props => {
   );
 ```
 
-We'll need to add the new translation keys to translation file you are using, for example `translations/en.json`.
-
-###### Step 5: Add the new translation key
-```jsx
-"ListingPage.likes": "{likes}", 
-```
-
 Finally, let's style our new component by adding the following CSS rules in ListingPage.module.css:
 
-###### Step 6: Update ListingPage.module.css
+###### Step 5: Update ListingPage.module.css
 ```css
 .heartIcon {
   border-radius: 11px;
@@ -524,6 +517,6 @@ const SectionLikes = props => {
         }
       }}> 
 
--     <IconHeart /> <FormattedMessage id="ListingPage.likes" values={{ likes: likes }} />
-+     <IconHeart /> <FormattedMessage id="ListingPage.likes" values={{ likes: likes + likesOffset }} />
+-     <IconHeart /> { likes }
++     <IconHeart /> { likes + likesOffset }
 ```
