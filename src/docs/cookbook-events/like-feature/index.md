@@ -197,11 +197,11 @@ const initialState = {
 ###### Step 4: Update the reducer:
 ```jsx
 case UPDATE_LIKES_REQUEST:
-    return { ...state, updateLikesInProgress: true, updateLikesError: null };
-  case UPDATE_LIKES_SUCCESS:
-    return { ...state, updateLikesInProgress: false };
-  case UPDATE_LIKES_ERROR:
-    return { ...state, updateLikesInProgress: false, updateLikesError: payload };  
+  return { ...state, updateLikesInProgress: true, updateLikesError: null };
+case UPDATE_LIKES_SUCCESS:
+  return { ...state, updateLikesInProgress: false };
+case UPDATE_LIKES_ERROR:
+  return { ...state, updateLikesInProgress: false, updateLikesError: payload };  
 ```
 
 ##### Step 5: Add new action creators:
