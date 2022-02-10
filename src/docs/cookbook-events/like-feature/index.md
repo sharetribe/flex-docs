@@ -371,14 +371,18 @@ Next, we'll add a function that updates the 'likes' value in listing extended da
 
 ###### Step 2: Add a function that updates the 'likes' value:
 ```js
-  const updateListing = (listingId, likeCount) => {
+  /** 
+  * @param {string} listingId
+  * @param {number} likeAddition – A value representing a like or a dislike that is either added to or subtracted from currentLikes
+  */
+  const updateListing = (listingId, likeAddition) => {
     return integrationSdk.listings.query({
       ids: listingId,
     })
     .then(listings => {
       const listing = listings.data.data[0];
       const currentLikes = listing.attributes.publicData.likes || 0;
-      const updatedLikes = currentLikes + likeCount;
+      const updatedLikes = currentLikes + likeAddition;
       return integrationSdk.listings.update({
         id: listingId,
         publicData: {
