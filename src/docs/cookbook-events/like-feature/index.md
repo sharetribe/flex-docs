@@ -32,8 +32,8 @@ We start by creating an icon that users can interact with to like or dislike a l
             └── ListingPage.module.css
 ```
 
-We'll create a new component that renders an svg and the amount of likes:
 ###### Step 2: Add the new subcomponent
+We'll create a new component that renders an svg and the amount of likes:
 ```jsx
 import React from 'react';
 import { FormattedMessage } from '../../util/reactIntl';
@@ -65,15 +65,16 @@ const SectionLikes = props => {
 export default SectionLikes;
 ```
 
-Next, let's include the new component in SectionHeading.js
 ##### Step 3: Import the component
+Next, let's import the new component in SectionHeading.js:
 
 ```jsx
 import SectionLikes from './SectionLikes';
 ```
 
-##### Step 4: Spread the rest of the props to `rest`
 
+##### Step 4: Spread the rest of the props to `rest`
+In order to access publicData in our new component, we have to pass it as a prop to SectionHeading and from there on to SectionLikes:
 ```diff
 const SectionHeading = props => {
   const {
@@ -89,6 +90,7 @@ const SectionHeading = props => {
 ```
 
 ##### Step 5: Add the component to the render method
+We've created the new component SectionLikes.js but it still needs to be included in the render method of SectionHeading.js:
 ```diff
   return (
     <div className={css.sectionHeading}>
@@ -125,9 +127,9 @@ const SectionHeading = props => {
   );
 ```
 
-Finally, let's style our new component by adding the following CSS rules in ListingPage.module.css:
+###### Step 6: Update ListingPage.module.css
 
-###### Step 5: Update ListingPage.module.css
+Finally, let's style our new component by adding the following CSS rules in ListingPage.module.css:
 ```css
 .heartIcon {
   border-radius: 11px;
@@ -160,14 +162,14 @@ Now, you should be able to see a heart-shaped icon with a like counter next to i
 
 
 ## Update user extended data
-To update the user extended data, we'll need to make some changes to ListingPage.duck.js. We'll need to import the currentUserShowSuccess function from `user.duck.js` to update the current user. In addition, we'll be adding a new action type, action creator and reducer to the file. For more information on how Redux is setup in FTW, refer to our [article on Redux]('/ftw-data-flow/ftw-redux').
+To update the user extended data, we'll need to make some changes to ListingPage.duck.js. We'll need to import the currentUserShowSuccess function from `user.duck.js` to update the current user. In addition, we'll be adding a new action type, action creator and reducer to the file. For more information on how Redux is setup in FTW, refer to our [article on Redux](/ftw-data-flow/ftw-redux).
 
 ###### Step 1: Import currentUserShowSuccess
 ```jsx
 import { fetchCurrentUser, fetchCurrentUserHasOrdersSuccess, currentUserShowSuccess } from '../../ducks/user.duck';
 ```
 
-###### Step 2: Add new action types
+###### Step 2: Add new action types 
 ```jsx
 export const UPDATE_LIKES_REQUEST = 'app/ListingPage/UPDATE_LIKES_REQUEST';
 export const UPDATE_LIKES_SUCCESS = 'app/ListingPage/UPDATE_LIKES_SUCCESS';
@@ -223,6 +225,7 @@ export const updateLikesError = error => ({
 ```
 
 ###### Step 6: Add new thunk
+Thunks are used to call action creators that return functions instead of action objects:
 ```jsx
 export const updateLikes = (listingId, currentLikes) => (dispatch, getState, sdk) => {
   dispatch(updateLikesRequest());
@@ -259,11 +262,13 @@ export const updateLikes = (listingId, currentLikes) => (dispatch, getState, sdk
 }
 ```
 ###### Step 7: Import updateLikes to ListingPage.js
+We need to import the new thunk we defined in the `ListingPage.duck.js` file into `ListingPage.js` in order to connect to the Redux store through `mapDispatchToProps`:
 ```jsx
 import { sendEnquiry, fetchTransactionLineItems, setInitialValues, updateLikes } from './ListingPage.duck';
 ```
 
 ###### Step 8: Initialise new props in ListingPage component
+We need to initialise the props that are connected to the Redux store:
 ```diff
   render() {
     const {
@@ -281,6 +286,7 @@ import { sendEnquiry, fetchTransactionLineItems, setInitialValues, updateLikes }
 ```
 
 ###### Step 9: Update ListingPageComponent propTypes
+FTW uses `propTypes` to validate that the data we receive is valid:
 ```diff
   lineItems: array,
   fetchLineItemsInProgress: bool.isRequired,
@@ -367,9 +373,8 @@ const queryEvents = (args) => {
 
 ```
 
-Next, we'll add a function that updates the 'likes' value in listing extended data by calling the Integration API listings/update endpoint.
-
 ###### Step 2: Add a function that updates the 'likes' value:
+Next, we'll add a function that updates the 'likes' value in listing extended data by calling the Integration API listings/update endpoint:
 ```js
   /** 
   * @param {string} listingId
@@ -393,9 +398,9 @@ Next, we'll add a function that updates the 'likes' value in listing extended da
 };
 ```
 
-We'll no longer need the `analyzeEvent` or `isPublished` functions found in the boilerplate code. Instead, let's add a few new functions. These functions will help us determine if the event we've received is a like or dislike, and reduce multiple likes to a single API call. 
-
 ###### Step 3: Add helper functions:
+
+We'll no longer need the `analyzeEvent` or `isPublished` functions found in the boilerplate code. Instead, let's add a few new functions. These functions will help us determine if the event we've received is a like or dislike, and reduce multiple likes to a single API call:
 
 ```js
 // Get the difference between two arrays
