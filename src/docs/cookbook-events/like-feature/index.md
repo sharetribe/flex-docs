@@ -463,7 +463,9 @@ const pollLoop = (sequenceId) => {
 You can now run the script locally following the instructions [here](https://github.com/sharetribe/flex-integration-api-examples#getting-started).
 
 ## Increment the counter in the UI
-You can now click on the likes button and the amount of likes will be updated to listing extended data. However, the like counter doesn't get updated immediately due to the slight latency in our events listener. We can add a increment the counter using React state. In addition, we'll add conditional styling to reflect has the listing been liked or not.
+You can now click on the likes button, and the number of likes is updated by the script polling the events endpoint. However, the like count doesn't get updated immediately due to the slight latency in our events listener. 
+
+Using React state, we can temporarily increment the counter. Adding a temporary increment isn't mandatory as the number of likes shown to the user will eventually be consistent with the value in extended data. However, we can provide the user with instant feedback by updating the like count in the front-end, even though our event listener updates the actual like count.
  
  ###### Step 1: Add new state to ListingPage.js
  ```diff
