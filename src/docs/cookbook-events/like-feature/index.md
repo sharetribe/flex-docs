@@ -402,6 +402,7 @@ We'll no longer need the `analyzeEvent` or `isPublished` functions found in the 
 const getDifference = (arr1, arr2) => {
   return arr1.filter(x => !arr2.includes(x))
 }
+
 // Compare the amount of likes in the previous event to the current one to
 // determine which listing was liked or disliked
 const getLikedListingId = (previousLikes, currentLikes) => {
@@ -409,9 +410,11 @@ const getLikedListingId = (previousLikes, currentLikes) => {
   if (currentLikes === null) return previousLikes;
   else return previousLikes.length < currentLikes.length ? getDifference(currentLikes, previousLikes) : getDifference(previousLikes, currentLikes);
 }
+
 const getLikeCount = (previousLikes, currentLikes) => {
   return previousLikes === null || previousLikes.length < currentLikes.length ? 1 : -1;
 }
+
 // Reducer returns an object with listing ID's as keys and amount of likes as values
 const sortEvents = events => {
   return likesToBeUpdated = events.reduce((likes, event) => {
