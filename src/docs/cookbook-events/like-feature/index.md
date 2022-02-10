@@ -351,7 +351,7 @@ const currentLikes = currentUser?.attributes?.profile?.privateData?.likedListing
 Now, clicking on the icon will either add or remove the listing to the user exteneded data with the key `likedListings`. However, as liked listings are only saved into user extended data at the moment, the number of likes still remains at zero. 
 
 ## Listening to events
-Using events we can react to changes in users' extended data. To do this we'll listen to the /events/query endpoint, filter out relevant events and finally update listing extended data. We'll use the [`notify-new-listings.js`](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js) script in the integration-api-examples as a basis for our new script. Make sure to follow the instructions at the [root of the repository](https://github.com/sharetribe/flex-integration-api-examples#getting-started) if you're unsure how to run the script locally.
+Using events we can react to changes in users' extended data. To do this we'll listen to the [/events/query](https://www.sharetribe.com/api-reference/integration.html#query-events) endpoint, filter out relevant events and finally update listing extended data. We'll use the [`notify-new-listings.js`](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js) script in the integration-api-examples as a basis for our new script. Make sure to follow the instructions at the [root of the repository](https://github.com/sharetribe/flex-integration-api-examples#getting-started) if you're unsure how to run the script locally.
 
 First off, we'll need to change what event type we want to filter. In our case, it's `user/updated`.
 
