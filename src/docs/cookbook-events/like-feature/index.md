@@ -10,11 +10,13 @@ published: true
 
 Events represent changes in marketplace data resources. In this guide, we use events to listen to changes in user extended data. We react to these events by updating a 'likes' value in listing extended data. In addition, we display the number of likes on the listing page and allow users to interact by clicking on a 'like' -button. 
 
-You might be wondering why we don't we just store the 'likes' directly to listing extended data. There are two reasons for that: saving likes in user extended data tells us what listings a user has liked. In addition, we avoid a race condition caused by two users liking a listing simultaneously.
+## Approaches to updating extended data
 
-A downside to using events is that the like count may take a moment to update. In this guide, we temporarily increment the like value in the UI to hide the delay. 
+[Extended data](/references/extended-data/) is a practical feature that can be used to store structured data associated with either listings, users or transactions.
 
-You can download the files used in this guide from our example repository here, or follow along using the embedded code snippets.
+When implementing a like-counter, it's logical to store the number of likes associated with a listing in the listing's extended data. We can easily access the number of likes by querying the [query-listings](https://www.sharetribe.com/api-reference/marketplace.html#query-listings) endpoint and passing the relevant listing ID as a query parameter. However, merely storing the number of likes in the listing's extended data doesn't provide information about which user has liked the listing. If we can associate likes with users, we can build a dislike feature and show the user a list of listings they have liked. A naive approach would be to store the user ID in the listing's extended data each time they like a listing. However, to render a list of liked listings, we would need to loop through all listings to find all occurrences of the user ID. That is why in this guide, in addition to storing the number of likes in the listing's extended data, we choose to save the listing ID in the user's extended data.
+
+To allow users to like listings, we introduce a UI-element users' can interact with to like a listing. However, when we update a listing's extended data as a reaction to user input, we are prone to a race condition. Fortunately, Flex provides a powerful feature called [events](references/events/) that we can use to solve the problem. We can listen to events using a script that polls the [events endpoint](https://www.sharetribe.com/api-reference/integration.html#query-events). As events are handled sequentially, the script can update the listing's extended data while avoiding race conditions. A downside to using events is that the like count may take a moment to update. We can mask this delay by temporarily incrementintg the like value in the UI.
 
 ## Create a UI component the user can interact with
 We start by creating an icon that users can interact with to like or dislike a listing. Next to the icon, we'll display the number of likes. For the UI component, we'll create a new subcomponent `SectionLikes.js` in the ListingPage directory. 
