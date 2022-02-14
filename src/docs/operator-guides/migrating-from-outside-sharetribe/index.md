@@ -76,13 +76,12 @@ exported data.
 Note that import ids are only used in the import phase and they can not
 be mapped to existing resource ids, because the final resource id is not
 created based on the import id. In other words, if e.g. your test
-marketplace already has data rows, you cannot reference those rows from
-the Intermediary file by the import ids.
+marketplace already has data rows, you cannot reference those rows by
+import ids in the Intermediary file.
 
 If you are not generating data by hand, it is recommended that you use
-the 2 element form of the id tuple. This means that you use unique
-uuid's throughout the file to reference entities. You can read more
-about
+the 2 element form of the id tuple. This means using unique UUIDs
+throughout the file to reference entities. You can read more about
 [generating UUIDs for your data here](https://www.uuidgenerator.net/dev-corner).
 
 #### Aliases
@@ -93,8 +92,8 @@ and they cannot contain spaces.
 
 Since aliases are namespaced keywords (e.g. `:user/jane` in the
 example), the unique part cannot begin with a number. If your unique ids
-begin with a number, you can generate the aliases e.g. in the following
-pattern:
+begin with a number, you can generate the aliases for instance in the
+following pattern:
 
 ```
 // type: 'user', id: 123
@@ -105,14 +104,14 @@ return ':{type}/{type1stletter}{id}'
 
 #### Referencing
 
-When you already have data that is dependent on each other, such as
-listings related to users and reviews related to listings, you can
-reference the data within the import file. You can refer to resources by
-either alias or UUID with the `#im/ref` tagged element. The supported
-references for each type, if any, are listed in the type description in
-the [Supported types](#supported-types) section below. Note that
-referencing data with an id or alias that does not exist in the same
-file causes a validation error.
+When you have data that is dependent on each other, such as listings
+related to users and reviews related to listings, you can reference the
+data within the import file. You can refer to resources by either alias
+or UUID with the `#im/ref` tagged element. The supported references for
+each type, if any, are listed in the type description in the
+[Supported types](#supported-types) section below. Note that referencing
+data with an id or alias that does not exist in the same file causes a
+validation error.
 
 ```
 ;; Referencing a listing by alias
@@ -154,7 +153,7 @@ This means that the Intermediary supports importing:
 - [Reviews](#review)
 
 The migration process has some built-in validation for the types within
-the Intermediary file. Optional keys must have non-empty values, and if
+an Intermediary file. Optional keys must have non-empty values, and if
 an optional key does not have a value, the key must be omitted for that
 resource. Empty strings are validated as empty values.
 
@@ -168,22 +167,25 @@ reference, however there may be differences in e.g. attribute naming.
 Supported fields to migrate:
 [API reference listing resource](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format).
 
-- Required attributes
-  - `:im.listing/createdAt` ([#inst](#timestamp))
-  - `:im.listing/title` (string)
-  - `:im.listing/state`
-  - accepted values for `:im.listing/state`
-    - `:listing.state/published`
-    - `:listing.state/closed`
-    - `:listing.state/draft`
-    - `:listing.state/pendingApproval`
-- Optional attributes - only include the key if it has a non-empty value
-  - `:im.listing/description` (string)
-  - `:im.listing/location` ([#location](#location))
-  - `:im.listing/price` ([#money](#money))
-  - `:im.listing/author` (#im/ref)
-  - `:im.listing/publicData` (JSON)
-  - `:im.listing/metadata` (JSON)
+Required attributes
+
+- `:im.listing/createdAt` ([#inst](#timestamp))
+- `:im.listing/title` (string)
+- `:im.listing/state`
+- accepted values for `:im.listing/state`
+  - `:listing.state/published`
+  - `:listing.state/closed`
+  - `:listing.state/draft`
+  - `:listing.state/pendingApproval`
+
+Optional attributes - only include the key if it has a non-empty value
+
+- `:im.listing/description` (string)
+- `:im.listing/location` ([#location](#location))
+- `:im.listing/price` ([#money](#money))
+- `:im.listing/author` (#im/ref)
+- `:im.listing/publicData` (JSON)
+- `:im.listing/metadata` (JSON)
 
 Supported references
 
@@ -227,30 +229,34 @@ be configured after the import, so we recommend that you add both roles
 for all users and determine any distinction between user groups in your
 client application.
 
-- Required attributes for `:im.user`
-  - `:im.user/primaryEmail`
-    - `:im.email/address`
-      ([validated](https://www.regular-expressions.info/email.html)
-      email string)
-    - `:im.email/verified` (boolean)
-  - `:im.user/role` (array)
-  - accepted values for `:im.user/role`
-    - `:user.role/customer`
-    - `:user.role/provider`
-  - `:im.user/createdAt` ([#inst](#timestamp))
-  - `:im.user/profile`
-    - Required attributes for `:im.user/profile`
-      - `:im.userProfile/firstName` (string)
-      - `:im.userProfile/lastName` (string)
-    - Optional attributes - only include the key if it has a non-empty
-      value
-      - `:im.userProfile/displayName` (string)
-      - `:im.userProfile/bio` (string)
-      - `:im.userProfile/publicData` (JSON)
-      - `:im.userProfile/protectedData` (JSON)
-      - `:im.userProfile/privateData` (JSON)
-      - `:im.userProfile/metadata` (JSON)
-      - `:im.userProfile/avatar` (#im/ref)
+Required attributes for `:im.user`
+
+- `:im.user/primaryEmail`
+  - `:im.email/address`
+    ([validated](https://www.regular-expressions.info/email.html) email
+    string)
+  - `:im.email/verified` (boolean)
+- `:im.user/role` (array)
+- accepted values for `:im.user/role`
+  - `:user.role/customer`
+  - `:user.role/provider`
+- `:im.user/createdAt` ([#inst](#timestamp))
+- `:im.user/profile`
+
+Required attributes for `:im.user/profile`
+
+- `:im.userProfile/firstName` (string)
+- `:im.userProfile/lastName` (string)
+
+Optional attributes for
+  `:im.user/profile` - only include the key if it has a non-empty value
+- `:im.userProfile/displayName` (string)
+- `:im.userProfile/bio` (string)
+- `:im.userProfile/publicData` (JSON)
+- `:im.userProfile/protectedData` (JSON)
+- `:im.userProfile/privateData` (JSON)
+- `:im.userProfile/metadata` (JSON)
+- `:im.userProfile/avatar` (#im/ref)
 
 Supported references
 
@@ -277,11 +283,14 @@ Example syntax
 Image urls need to be public and properly encoded URLs, so that we can
 access the imported images while importing the data.
 
-- Required attributes
-  - `:im.image/url` (URL-encoded string)
-- Optional attributes - only include the key if it has a non-empty value
-  - `:im.image/listing` (#im/ref)
-  - `:im.image/sortOrder` (integer)
+Required attributes
+
+- `:im.image/url` (URL-encoded string) 
+
+Optional attributes - only
+  include the key if it has a non-empty value
+- `:im.image/listing` (#im/ref)
+- `:im.image/sortOrder` (integer)
 
 Supported references
 
@@ -301,9 +310,10 @@ Example syntax
 
 #### Stripe account
 
-- Required attributes
-  - `:im.stripeAccount/stripeAccountId` (string)
-  - `:im.stripeAccount/user`(#im/ref)
+Required attributes
+
+- `:im.stripeAccount/stripeAccountId` (string)
+- `:im.stripeAccount/user`(#im/ref)
 
 Example syntax
 
@@ -322,22 +332,26 @@ There are two types of reviews: `ofCustomer` and `ofProvider`. They
 differ in the reference to listing, as `ofProvider` reviews have a
 reference to a listing and `ofCustomer` don't.
 
-- Required attributes
-  - `:im.review/type`
-  - accepted values for `:im.review/type`
-    - `:review.type/ofCustomer`
-    - `:review.type/ofProvider`
-  - `:im.review/state`
-  - accepted values for `:im.review/state`
-    - `:review.state/pending`
-    - `:review.state/public`
-  - `:im.review/rating` (integer between 1-5)
-  - `:im.review/createdAt` ([#inst](#timestamp))
-  - `:im.review/author` (#im/ref)
-  - `:im.review/subject` (#im/ref)
-  - `:im.review/content` (string)
-- Optional attributes - only include the key if it has a non-empty value
-  - `:im.review/listing` (#im/ref)
+Required attributes
+
+- `:im.review/type`
+- accepted values for `:im.review/type`
+  - `:review.type/ofCustomer`
+  - `:review.type/ofProvider`
+- `:im.review/state`
+- accepted values for `:im.review/state`
+  - `:review.state/pending`
+  - `:review.state/public`
+- `:im.review/rating` (integer between 1-5)
+- `:im.review/createdAt` ([#inst](#timestamp))
+- `:im.review/author` (#im/ref)
+- `:im.review/subject` (#im/ref)
+- `:im.review/content` (string) 
+
+
+Optional attributes - only include the
+  key if it has a non-empty value
+- `:im.review/listing` (#im/ref)
 
 Supported references
 
