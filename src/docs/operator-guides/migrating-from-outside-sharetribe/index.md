@@ -1,7 +1,7 @@
 ---
 title: Migrating from outside Sharetribe ecosystem
 slug: migrating-from-outside-sharetribe
-updated: 2022-01-31
+updated: 2022-02-14
 category: operator-guides
 ingress: How to import data from outside Sharetribe ecosystem
 published: true
