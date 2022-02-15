@@ -421,7 +421,7 @@ const getLikeCount = (previousLikes, currentLikes) => {
 }
 
 // Reducer returns an object with listing ID's as keys and amount of likes as values
-const sortEvents = events => {
+const groupEvents = events => {
   return likesToBeUpdated = events.reduce((likes, event) => {
     const { resource: user, previousValues } = event.attributes;
     const { likedListings: previouslyLikedListings} = previousValues.attributes.profile.privateData || {};
@@ -450,7 +450,7 @@ const pollLoop = (sequenceId) => {
 -     });
 -      if (lastEvent) saveLastEventSequenceId(lastEvent.attributes.sequenceId);	
 -     setTimeout(() => {pollLoop(lastSequenceId);}, delay);
-+     const likesToUpdate = sortEvents(events);
++     const likesToUpdate = groupEvents(events);
 +     const actions = Object.keys(likesToUpdate).map(key => updateListing(key, likesToUpdate[key]));
 +     const results = Promise.all(actions);
 +     results.then(result => {
