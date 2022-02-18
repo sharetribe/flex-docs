@@ -227,9 +227,13 @@ export const updateLikesError = error => ({
 ###### Step 6: Add new thunk
 Thunks are used to call action creators that return functions instead of action objects:
 ```jsx
-export const updateLikes = (listingId, currentLikes) => (dispatch, getState, sdk) => {
+export const updateLikes = (listingId) => (dispatch, getState, sdk) => {
   dispatch(updateLikesRequest());
-  dispatch(fetchCurrentUser());
+
+  return dispatch(fetchCurrentUser()).then(() => {
+
+    const currentUser = getState().user.currentUser;
+    const currentLikes = currentUser?.attributes?.profile?.privateData?.likedListings;
 
     const queryParams = {
       expand: true,
@@ -237,28 +241,29 @@ export const updateLikes = (listingId, currentLikes) => (dispatch, getState, sdk
       'fields.image': ['variants.square-small', 'variants.square-small2x'],
     };
 
-    // If listingId already exists in currentLikes, it should be removed from currentLikes
-    // If user has current likes, merge listingId into current likes
+    // if listingId already exists in currentLikes, it should be removed from currentLikes
+    // if user has current likes, merge listingId into current likes
     const ifDislike = !!currentLikes?.includes(listingId);
     const likedListings = ifDislike ? currentLikes.filter(id => id !== listingId) : currentLikes ? [ ...currentLikes, listingId ] : [ listingId ]
 
     return sdk.currentUser
-      .updateProfile({ privateData: { likedListings } }, queryParams)
-      .then(response => {
-        dispatch(updateLikesSuccess(response));
+    .updateProfile({ privateData: { likedListings } }, queryParams)
+    .then(response => {
+      dispatch(updateLikesSuccess(response));
 
-        const entities = denormalisedResponseEntities(response);
-        if (entities.length !== 1) {
-          throw new Error('Expected a resource in the sdk.currentUser.updateProfile response');
-        }
-        const currentUser = entities[0];
+      const entities = denormalisedResponseEntities(response);
+      if (entities.length !== 1) {
+        throw new Error('Expected a resource in the sdk.currentUser.updateProfile response');
+      }
+      const currentUser = entities[0];
 
-        // Update current user in state.user.currentUser through user.duck.js
-        dispatch(currentUserShowSuccess(currentUser));
-      })
-      .catch(e => {
-        dispatch(updateLikesError(storableError(e)))
-      });
+      // Update current user in state.user.currentUser through user.duck.js
+      dispatch(currentUserShowSuccess(currentUser));
+    })
+    .catch(e => {
+      dispatch(updateLikesError(storableError(e)))
+    });
+  })
 }
 ```
 ###### Step 7: Import updateLikes to ListingPage.js
@@ -299,7 +304,7 @@ FTW uses `propTypes` to validate that the data we receive is valid:
 const mapDispatchToProps = dispatch => ({
   onManageDisableScrolling: (componentId, disableScrolling) =>
     dispatch(manageDisableScrolling(componentId, disableScrolling)),
-+  onUpdateLikes: (listingId, currentLikes) => dispatch(updateLikes(listingId, currentLikes)),
++  onUpdateLikes: (listingId) => dispatch(updateLikes(listingId)),
   callSetInitialValues: (setInitialValues, values, saveToSessionStorage) =>
     dispatch(setInitialValues(values, saveToSessionStorage)),
   onFetchTransactionLineItems: (bookingData, listingId, isOwnListing) =>
@@ -349,7 +354,7 @@ const currentLikes = currentUser?.attributes?.profile?.privateData?.likedListing
 <span className={css.heartIcon} 
 + onClick={() => {
 +   if (!updateLikesInProgress && currentUser) {
-+     onUpdateLikes(listingId, currentLikes);
++     onUpdateLikes(listingId);
 +    }
 +  }}>
 ```
@@ -525,7 +530,7 @@ const SectionLikes = props => {
 +   <span className={classes} 
       onClick={() => {
         if (!updateLikesInProgress && currentUser) {
-          onUpdateLikes(listingId, currentLikes);
+          onUpdateLikes(listingId);
 +         if (alreadyLiked) {
 +           onSubtractLike();
 +         }
