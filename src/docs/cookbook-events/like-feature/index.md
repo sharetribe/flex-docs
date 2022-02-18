@@ -424,6 +424,10 @@ const getLikeCount = (previousLikes, currentLikes) => {
 const groupEvents = events => {
   return likesToBeUpdated = events.reduce((likes, event) => {
     const { resource: user, previousValues } = event.attributes;
+    // we might have a user/updated event that doesn't target likedListings
+    if (!previousValues.attributes?.profile?.privateData?.likedListings) {
+      return {}
+    }
     const { likedListings: previouslyLikedListings} = previousValues.attributes.profile.privateData || {};
     const likedListings = user.attributes.profile?.privateData?.likedListings; 
     const likeCount = getLikeCount(previouslyLikedListings, likedListings); 
