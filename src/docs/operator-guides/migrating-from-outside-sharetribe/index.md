@@ -1,7 +1,7 @@
 ---
 title: Migrating from outside Sharetribe ecosystem
 slug: migrating-from-outside-sharetribe
-updated: 2022-02-14
+updated: 2022-02-18
 category: operator-guides
 ingress: How to import data from outside Sharetribe ecosystem
 published: true
@@ -183,6 +183,7 @@ Optional attributes - only include the key if it has a non-empty value
 - `:im.listing/description` (string)
 - `:im.listing/location` ([#location](#location))
 - `:im.listing/price` ([#money](#money))
+- `:im.listing/currentStock` (non-negative integer)
 - `:im.listing/author` (#im/ref)
 - `:im.listing/publicData` (JSON)
 - `:im.listing/metadata` (JSON)
@@ -201,6 +202,7 @@ Example syntax:
                       :state :listing.state/pendingApproval
                       :location #im/location [23.12 21.21]
                       :price #im/money [12.12M "EUR"]
+                      :currentStock 5
                       :publicData {:category "rock"
                                    :amenities ["sauna" "pool"]}
                       :author #im/ref :user/john}]
@@ -285,7 +287,7 @@ access the imported images while importing the data.
 
 Required attributes
 
-- `:im.image/url` (URL-encoded string) 
+- `:im.image/url` (URL-encoded string)
 
 Optional attributes - only
   include the key if it has a non-empty value
@@ -346,7 +348,7 @@ Required attributes
 - `:im.review/createdAt` ([#inst](#timestamp))
 - `:im.review/author` (#im/ref)
 - `:im.review/subject` (#im/ref)
-- `:im.review/content` (string) 
+- `:im.review/content` (string)
 
 
 Optional attributes - only include the
@@ -497,6 +499,7 @@ ids and aliases.
                       :state :listing.state/pendingApproval
                       :location #im/location [23.12 21.21]
                       :price #im/money [12.12M "EUR"]
+                      :currentStock 5
                       :publicData {:category "rock"
                                    :amenities ["sauna" "pool"]}
                       :author #im/ref :user/john}]
