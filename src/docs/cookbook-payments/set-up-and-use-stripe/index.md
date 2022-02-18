@@ -22,7 +22,7 @@ your email address after the registration.
 As you will receive money from your users via your Stripe account, you
 have to provide some details such as your address and your bank account.
 In the Stripe dashboard, click the "Activate your account" link in the
-left menu and fill in all the fields according to the instructions. The
+top bar and fill in all the fields according to the instructions. The
 activation form varies based on your country.
 
 ![Activate Stripe account](./activate-account.png)
