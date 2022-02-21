@@ -46,27 +46,17 @@ Sharetribe uses the Stripe Connect features with
 If you're in any another country, follow these instructions to enable
 Stripe Connect:
 
-- Click the _Connect_ left menu item.
+- Click the _Connect_ left menu item, and the _Get started_ button.
 
 ![Stripe connect](./stripe-connect.png)
 
-- Click the _Get started_ button.
+- This will prompt a popup. Click the _Continue_ button.
 
-![Get started](./stripe-get-started.png)
+![Get started](./get-started-with-connect.png)
 
-- After a few seconds, you should see your Connect dashboard. From the
-  left sidebar, go to _Settings_ then _Connect settings_, at
-  https://dashboard.stripe.com/settings
+## 3. Account types and connect onboarding settings
 
-![Connect settings](./stripe-connect-settings.jpg)
-
-- Make sure that _Custom_ is enabled in the _Account types_ section
-
-![Custom enabled](./stripe-custom-enabled.jpg)
-
-## 3. Enable Stripe Connect Onboarding in your platform
-
-For enabling
+To enable
 [Stripe Connect Onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/),
 you need to navigate to
 [Connect settings page](https://dashboard.stripe.com/account/applications/settings)
