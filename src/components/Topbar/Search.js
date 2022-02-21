@@ -120,7 +120,8 @@ const Search = props => {
       // This follows a setup that styled-components use.
       import('docsearch.js').then(ds => {
         ds.default({
-          apiKey: 'e272798af798eb03d48ade033168068c',
+          appId: 'IPOXPQ3KFI',
+          apiKey: '48fd5d7d401d024a0b034f9e62b1cd34',
           indexName: 'sharetribe',
           inputSelector: '#algolia-doc-search',
           debug: false, // Set debug to true if you want to inspect the dropdown
