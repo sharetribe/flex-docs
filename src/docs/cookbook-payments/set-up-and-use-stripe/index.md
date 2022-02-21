@@ -51,11 +51,11 @@ Sharetribe uses the Stripe Connect features with
 If you're in any another country, follow these instructions to enable
 Stripe Connect:
 
-- Click the _Connect_ left menu item, and the _Get started_ button.
+- Click the _Connect_ menu item, and the _Get started_ button.
 
 ![Stripe connect](./stripe-connect.png)
 
-- This will prompt a popup. Click the _Continue_ button.
+- This will open a popup. Click the _Continue_ button.
 
 ![Get started](./get-started-with-connect.png)
 
