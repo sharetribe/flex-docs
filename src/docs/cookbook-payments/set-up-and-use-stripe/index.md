@@ -27,6 +27,12 @@ activation form varies based on your country.
 
 ![Activate Stripe account](./activate-account.png)
 
+Once activated, your dashboard should display the message "Your account is now active":
+
+![Active Stripe account](./account-active.png)
+
+> Note: Stripe requires US accounts to add their EIN for their accounts to be fully activated. If you don't have an EIN, it's okay to use your personal name and SSN. Read more about signing up without a tax ID or employer ID number [here](https://support.stripe.com/questions/signing-up-for-a-us-stripe-account-without-a-tax-id-or-employer-id-number).
+
 ## 2. Enable Stripe Connect in your platform
 
 Sharetribe uses the Stripe Connect features with
