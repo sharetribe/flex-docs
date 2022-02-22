@@ -18,10 +18,12 @@ enable your Stripe Platform within one business day.
 
 ## How to apply for Connect review at Stripe
 
-You should first follow the regular instructions to setup Stripe in your
-Sharetribe marketplace. When enabling Stripe Connect and registering
-your Platform, you may be prompted with some additional questions. Here
-they are.
+You should first
+[follow the regular instructions](/cookbook-payments/set-up-and-use-stripe/)
+to setup Stripe in your Sharetribe marketplace. When enabling Stripe
+Connect and registering your Platform, you may be prompted with some
+additional questions. The steps 1-4 show examples of what kind of
+questions you may be asked during the registration process.
 
 Note that there may be some variations based on your country or
 industry. Stripe advise to contact their support team however their
@@ -31,45 +33,39 @@ any issue, we'll be here to help.
 You can reply easily: there is no character limit and no need for
 attachments.
 
-### 1. Intro with some explanations about the process
+To get started with the Connect review, click on "Complete your platform
+profile" on the Connect page:
 
-![Stripe review step 1 - Connect platform](sharetribe_go-stripe_review_connect_us-1.png)
+![Get started with Stripe Connect](get-started-connect.png)
 
-### 2. Which of these categories best matches the kind of products or services you plan to sell?
+### 1. Select the industry that best matches your business
 
-![Stripe review step 2 - Connect platform](sharetribe_go-stripe_review_connect_us-2.png)
+Pick the answer most suitable to your business.
 
-### 3. Tell us more about your platform's product or services, <br/>Tell us about the sellers, services providers, or contractors your platform plans to manage payments and payouts for.
+![Stripe review step 1 - Select industry](connect-question1.png)
 
-You can mention that your marketplace website is running on Sharetribe
-Flex.
+### 2. Whose name is listed with the transaction on a customer’s credit card?
 
-![Stripe review step 3 - Connect platform](sharetribe_go-stripe_review_connect_us-3.png)
+You should pick "Your platform's name".
 
-### 4. Questions about your customers
+![Stripe review step 2 - Select industry](connect-question2.png)
 
-1. Where will end customers pay for your products or services?
+### 3. Who should customers contact if they have a dispute or complaint?
 
-   Select "On the platform’s website, app, or store".
+You should pick "Your platform".
 
-1. Whose name will appear on a customer's card or bank statement?
+![Stripe review step 3 - Select industry](connect-question3.png)
 
-   Select "Only the platform's".
+### 4. Provide more details
 
-1. Who is the best contact for customer in case of a dispute or
-   complaint?
+Stripe may ask specific questions about your particular industry and
+business model. In this example, we've selected product/exommerce and
+received questions about the sale of products. Another industry
+selection may prompt different questions.
 
-   Select "The platform".
+An example of a question that Stripe might ask about your marketplace:
 
-![Stripe review step 4 - Connect platform](sharetribe_go-stripe_review_connect_us-4.png)
-
-### 5. Review your answers and send them.
-
-Stripe promise they will approve your account within one business day
-and you'll be able to run online payments in your Sharetribe
-marketplace!
-
-![Stripe review step 5 - Connect platform](sharetribe_go-stripe_review_connect_us-5.png)
+![Stripe review step 4 - Example question](connect-question4.png)
 
 #### I haven't heard from Stripe after one business day, what's next?
 
