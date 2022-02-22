@@ -1,7 +1,7 @@
 ---
 title: Set up and use Stripe
 slug: set-up-and-use-stripe
-updated: 2022-01-10
+updated: 2022-02-22
 category: cookbook-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you
@@ -22,10 +22,21 @@ your email address after the registration.
 As you will receive money from your users via your Stripe account, you
 have to provide some details such as your address and your bank account.
 In the Stripe dashboard, click the "Activate your account" link in the
-left menu and fill in all the fields according to the instructions. The
+top bar and fill in all the fields according to the instructions. The
 activation form varies based on your country.
 
 ![Activate Stripe account](./activate-account.png)
+
+Once activated, your dashboard should display the message "Your account
+is now active":
+
+![Active Stripe account](./account-active.png)
+
+> Note: Stripe requires US accounts to add their EIN for their accounts
+> to be fully activated. If you don't have an EIN, it's okay to use your
+> personal name and SSN. Read more about signing up without a tax ID or
+> employer ID number
+> [here](https://support.stripe.com/questions/signing-up-for-a-us-stripe-account-without-a-tax-id-or-employer-id-number).
 
 ## 2. Enable Stripe Connect in your platform
 
@@ -40,27 +51,17 @@ Sharetribe uses the Stripe Connect features with
 If you're in any another country, follow these instructions to enable
 Stripe Connect:
 
-- Click the _Connect_ left menu item.
+- Click the _Connect_ menu item, and the _Get started_ button.
 
 ![Stripe connect](./stripe-connect.png)
 
-- Click the _Get started_ button.
+- This will open a popup. Click the _Continue_ button.
 
-![Get started](./stripe-get-started.png)
+![Get started](./get-started-with-connect.png)
 
-- After a few seconds, you should see your Connect dashboard. From the
-  left sidebar, go to _Settings_ then _Connect settings_, at
-  https://dashboard.stripe.com/settings
+## 3. Account types and connect onboarding settings
 
-![Connect settings](./stripe-connect-settings.jpg)
-
-- Make sure that _Custom_ is enabled in the _Account types_ section
-
-![Custom enabled](./stripe-custom-enabled.jpg)
-
-## 3. Enable Stripe Connect Onboarding in your platform
-
-For enabling
+To enable
 [Stripe Connect Onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/),
 you need to navigate to
 [Connect settings page](https://dashboard.stripe.com/account/applications/settings)
