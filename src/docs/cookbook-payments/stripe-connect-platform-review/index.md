@@ -18,9 +18,12 @@ enable your Stripe Platform within one business day.
 
 ## How to apply for Connect review at Stripe
 
-You should first [follow the regular instructions](/cookbook-payments/set-up-and-use-stripe/) to setup Stripe in your
-Sharetribe marketplace. When enabling Stripe Connect and registering
-your Platform, you may be prompted with some additional questions. The steps 1-4 show examples of what kind of questions you may be asked during the registration process.
+You should first
+[follow the regular instructions](/cookbook-payments/set-up-and-use-stripe/)
+to setup Stripe in your Sharetribe marketplace. When enabling Stripe
+Connect and registering your Platform, you may be prompted with some
+additional questions. The steps 1-4 show examples of what kind of
+questions you may be asked during the registration process.
 
 Note that there may be some variations based on your country or
 industry. Stripe advise to contact their support team however their
@@ -30,10 +33,10 @@ any issue, we'll be here to help.
 You can reply easily: there is no character limit and no need for
 attachments.
 
-To get started with the Connect review, click on "Complete your platform profile" on the Connect page:
+To get started with the Connect review, click on "Complete your platform
+profile" on the Connect page:
 
 ![Get started with Stripe Connect](get-started-connect.png)
-
 
 ### 1. Select the industry that best matches your business
 
@@ -41,12 +44,11 @@ Pick the answer most suitable to your business.
 
 ![Stripe review step 1 - Select industry](connect-question1.png)
 
-### 2. Whose name is listed with the transaction on a customer’s credit card? 
+### 2. Whose name is listed with the transaction on a customer’s credit card?
 
 You should pick "Your platform's name".
 
 ![Stripe review step 2 - Select industry](connect-question2.png)
-
 
 ### 3. Who should customers contact if they have a dispute or complaint?
 
@@ -56,7 +58,10 @@ You should pick "Your platform".
 
 ### 4. Provide more details
 
-Stripe may ask specific questions about your particular industry and business model. In this example, we've selected product/exommerce and received questions about the sale of products. Another industry selection may prompt different questions.
+Stripe may ask specific questions about your particular industry and
+business model. In this example, we've selected product/exommerce and
+received questions about the sale of products. Another industry
+selection may prompt different questions.
 
 An example of a question that Stripe might ask about your marketplace:
 
