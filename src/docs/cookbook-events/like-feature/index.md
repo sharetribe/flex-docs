@@ -115,7 +115,7 @@ Next, let's import the new component in SectionHeading.js:
 import SectionLikes from './SectionLikes';
 ```
 
-##### Step 4: Spread the rest of the props to *rest*
+##### Step 4: Spread the rest of the props to _rest_
 
 In order to access publicData in our new component, we have to pass it
 as a prop to SectionHeading and from there on to SectionLikes:
@@ -350,7 +350,7 @@ export const updateLikes = listingId => (dispatch, getState, sdk) => {
 
 We need to import the new thunk we defined in the _ListingPage.duck.js_
 file into _ListingPage.js_ in order to connect to the Redux store
-through *mapDispatchToProps*:
+through _mapDispatchToProps_:
 
 ```jsx
 import {
@@ -383,7 +383,7 @@ We need to initialise the props that are connected to the Redux store:
 
 ###### Step 9: Update ListingPageComponent propTypes
 
-FTW uses *propTypes* to validate that the data we receive is valid:
+FTW uses _propTypes_ to validate that the data we receive is valid:
 
 ```diff
   lineItems: array,
@@ -412,7 +412,7 @@ extended data. First, we'll need to pass props down through
 SectionHeading to SectionLikes. Then we'll add an onClick event handler
 to the React component in SectionLikes.
 
-###### Step 1: Pass *SectionHeading* the correct props in _ListingPage.js_
+###### Step 1: Pass _SectionHeading_ the correct props in _ListingPage.js_
 
 ```diff
 <SectionHeading
@@ -463,7 +463,7 @@ const currentLikes =
 ```
 
 Now, clicking on the icon will either add or remove the listing to the
-user exteneded data with the key *likedListings*. However, as liked
+user exteneded data with the key _likedListings_. However, as liked
 listings are only saved into user extended data at the moment, the
 number of likes still remains at zero.
 
@@ -481,9 +481,9 @@ Make sure to follow the instructions at the
 if you're unsure how to run the script locally.
 
 First off, we'll need to change what event type we want to filter. In
-our case, it's *user/updated*.
+our case, it's _user/updated_.
 
-###### Step 1: Filter events by *user/updated*
+###### Step 1: Filter events by _user/updated_
 
 ```diff
 const queryEvents = (args) => {
@@ -530,7 +530,7 @@ const updateListing = (listingId, likeAddition) => {
 
 ###### Step 3: Add helper functions:
 
-We'll no longer need the *analyzeEvent* or *isPublished* functions found
+We'll no longer need the _analyzeEvent_ or _isPublished_ functions found
 in the boilerplate code. Instead, let's add a few new functions. These
 functions will help us determine if the event we've received is a like
 or dislike, and reduce multiple likes to a single API call:
@@ -590,7 +590,7 @@ const groupEvents = events => {
 ```
 
 Finally, to call the right functions, let's make a few changes to the
-*pollLoop* function:
+_pollLoop_ function:
 
 ```diff
 const pollLoop = (sequenceId) => {
