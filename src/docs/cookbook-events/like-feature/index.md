@@ -1,7 +1,7 @@
 ---
 title: How to implement a like feature using events
 slug: like-feature
-updated: 2021-01-20
+updated: 2021-02-25
 category: cookbook-events
 ingress:
   Following this guide, you'll be able to build a feature that allows
