@@ -182,7 +182,7 @@ const LandingPage = props => {
           <UiText id="LandingPage.introParagraph1" />
           <IntroBr />
           <UiText id="LandingPage.introParagraph2" />{' '}
-          <A href="https://www.sharetribe.com/flex/roadmap">
+          <A href="https://www.sharetribe.com/flex/roadmap/">
             <UiText id="LandingPage.introRoadmapLink" />
           </A>
           {'.'}

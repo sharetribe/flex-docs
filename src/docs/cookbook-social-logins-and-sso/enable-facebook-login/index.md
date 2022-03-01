@@ -61,20 +61,20 @@ Create a Facebook app by following these steps:
 10. In "App Domains", add all the domains from which you want the
     Facebook login to work, i.e. all your marketplace domains. Add the
     domains without any subdomain, for example www, so if your
-    marketplace runs in https://www.mymarketplace.com, add
-    mymarketplace.com.
+    marketplace runs in https://www.example.com, add
+    example.com.
 11. Scroll all the way to the bottom and click "+ Add Platform".
 12. Select "Website".
 13. In "Site URL", add your full marketplace's URL with https and
     possibly www or the subdomain, for example:
-    https://www.mymarketplace.com. Note that the Site URL needs to have
+    https://www.example.com. Note that the Site URL needs to have
     the same domain that you added to App Domains, or one of them if you
     added many.
 14. You might also need to add your privacy policy URL (in some cases
     this is not needed). If so, please add it by typing the URL to your
     privacy policy into the "Privacy Policy URL" field. In FTW the
     policy is by default located in the `/privacy-policy` path, so the
-    URL could then be https://www.mymarketplace.com/privacy-policy.
+    URL could then be https://www.example.com/privacy-policy.
 15. Click "Save Changes" at the bottom right.
 
 Now your app basic setting should look like this:
@@ -100,7 +100,7 @@ Now your app basic setting should look like this:
     - Login from devices: No
 22. In the "Valid OAuth redirect URIs" field add your marketplace
     address followed by `/api/auth/facebook/callback`, for example:
-    https://www.mymarketplace.com/api/auth/facebook/callback. This
+    https://www.example.com/api/auth/facebook/callback. This
     endpoint can be different if you have modified the `/api` endpoints
     in FTW.
 
