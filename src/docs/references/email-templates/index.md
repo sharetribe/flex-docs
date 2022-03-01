@@ -19,7 +19,7 @@ The platform sends two types of emails:
   process.
 
 The built-in emails can be customized using the
-[Built-in email template editor](https://flex-console.sharetribe.com/email-templates/)
+[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
 in the Flex Console. You find the editor in the Console under Build
 section.
 
@@ -306,7 +306,7 @@ used for query string components.
 ## Editing built-in emails
 
 The built-in emails can be customized using the
-[Built-in email template editor](https://flex-console.sharetribe.com/email-templates/)
+[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
 in the Flex Console. You find the editor in the Console under Build
 section.
 
