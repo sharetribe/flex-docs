@@ -21,6 +21,7 @@ const query = graphql`
               "concepts-transaction-process"
               "concepts-payments"
               "concepts-pricing-and-commissions"
+              "concepts-availability"
             ] 
           } 
         } 

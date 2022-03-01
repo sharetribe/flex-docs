@@ -2,7 +2,7 @@
 title: Inventory management
 slug: inventory-management
 updated: 2021-10-15
-category: operator-guides
+category: concepts-availability
 ingress:
   Inventory or stock management is a key feature of many product
   marketplaces. Here’s how Flex’s stock management works.
