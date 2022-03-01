@@ -2,7 +2,7 @@
 title: Authentication API
 slug: authentication-api
 updated: 2019-11-27
-category: background
+category: concepts-api-sdk
 ingress:
   Description of the Flex Authentication API and how the Marketplace API
   and Integration API applications use it

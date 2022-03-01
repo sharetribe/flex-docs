@@ -142,6 +142,7 @@ exports.siteStructure = [
       { id: 'concepts-availability' },
       { id: 'concepts-development' },
       { id: 'concepts-extended-data' },
+      { id: 'concepts-api-sdk' },
     ]
     // sortingArray: sortingArrayConcepts,
   },

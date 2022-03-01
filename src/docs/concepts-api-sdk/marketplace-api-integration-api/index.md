@@ -2,7 +2,7 @@
 title: Flex Marketplace API and Integration API
 slug: marketplace-api-integration-api
 updated: 2019-11-27
-category: background
+category: concepts-api-sdk
 ingress:
   Description of the different Flex APIs and how to choose which one to
   use

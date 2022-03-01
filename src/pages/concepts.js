@@ -24,6 +24,7 @@ const query = graphql`
               "concepts-availability"
               "concepts-development"
               "concepts-extended-data"
+              "concepts-api-sdk"
             ] 
           } 
         } 
