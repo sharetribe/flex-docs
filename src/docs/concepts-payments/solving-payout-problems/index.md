@@ -2,7 +2,7 @@
 title: Solving payout problems
 slug: solving-payout-problems
 updated: 2019-09-10
-category: background
+category: concepts-payments
 ingress:
   A payout is the part of the payment process where the price of a
   booking is paid to the provider's bank account. This article gives you

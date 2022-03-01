@@ -2,7 +2,7 @@
 title: How PaymentIntents work
 slug: payment-intents
 updated: 2021-10-14
-category: background
+category: concepts-payments
 ingress:
   Overview of how Stripe PaymentIntents work with Sharetribe Flex, and
   how you can build your transaction process with support for Strong

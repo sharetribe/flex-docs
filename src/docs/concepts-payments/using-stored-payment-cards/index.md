@@ -2,7 +2,7 @@
 title: Using stored payment cards
 slug: using-stored-payment-cards
 updated: 2019-08-26
-category: background
+category: concepts-payments
 ingress:
   This article gives you a brief overview on how the Flex functionality
   for storing credit and debit cards works and what are the different

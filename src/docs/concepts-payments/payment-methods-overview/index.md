@@ -2,7 +2,7 @@
 title: Payment methods overview
 slug: payment-methods-overview
 updated: 2021-02-01
-category: background
+category: concepts-payments
 ingress:
   This article provides an overview of different payment methods in
   Flex.

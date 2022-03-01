@@ -2,7 +2,7 @@
 title: How Strong Customer Authentication works
 slug: strong-customer-authentication
 updated: 2021-10-04
-category: background
+category: concepts-payments
 ingress:
   This article gives an overview of Strong Customer Authentication, a
   way to add additional security to online payments required by European

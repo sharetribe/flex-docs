@@ -2,7 +2,7 @@
 title: Automatic off-session payments in transaction process
 slug: off-session-payments-in-transaction-process
 updated: 2021-10-14
-category: background
+category: concepts-payments
 ingress:
   With off-session payments you can automatically charge your customers
   closer to their booking times. This allows for money to be held in
