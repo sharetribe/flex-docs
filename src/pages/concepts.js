@@ -5,13 +5,25 @@ import { dev, siteStructure } from '../config';
 import { findSortingArrays } from '../util/navigation';
 import { ArticleIndexPage } from '../components';
 
-const category = 'background';
+const category = 'concepts';
 const sortingArray = findSortingArrays(category, siteStructure);
 
 const query = graphql`
-  query BackgroundIndexQuery {
+  query ConceptsIndexQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { in: ["background"] } } }
+      filter: { 
+        frontmatter: { 
+          category: { 
+            in: [
+              "concepts"
+              "concepts-users-and-authentication"
+              "concepts-listings"
+              "concepts-transaction-process"
+              "concepts-payments"
+            ] 
+          } 
+        } 
+      }
       sort: { fields: fileAbsolutePath, order: ASC }
     ) {
       edges {
@@ -43,7 +55,7 @@ const byArrayOfSlugs = sortingArray => (a, b) => {
   return i1 - i2;
 };
 
-const BackgroundPage = () => {
+const ConceptsPage = () => {
   return (
     <StaticQuery
       query={query}
@@ -69,4 +81,4 @@ const BackgroundPage = () => {
   );
 };
 
-export default BackgroundPage;
+export default ConceptsPage;
