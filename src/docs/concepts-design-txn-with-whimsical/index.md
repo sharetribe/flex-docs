@@ -2,7 +2,7 @@
 title: Design your transaction process with Whimsical
 slug: design-txn-process-with-whimsical
 updated: 2020-12-20
-category: operator-guides
+category: concepts-transaction-process
 ingress:
   You can use this easy and intuitive tool to design and communicate
   your transaction process with other members of your team.
