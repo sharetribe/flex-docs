@@ -2,7 +2,7 @@
 title: Pricing
 slug: pricing
 updated: 2020-06-25
-category: background
+category: concepts-pricing-and-commissions
 ingress:
   Flex allows lots of flexibility for your providers in terms of how
   they can set their pricing. This guide walks you through how price is

@@ -2,7 +2,7 @@
 title: Commissions and monetizing your platform
 slug: commissions-and-monetizing-your-platform
 updated: 2021-12-10
-category: background
+category: concepts-pricing-and-commissions
 ingress:
   Flex provides configurable options for monetizing your platform. You
   can collect commissions from providers, customers, or both. This

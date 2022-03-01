@@ -20,6 +20,7 @@ const query = graphql`
               "concepts-listings"
               "concepts-transaction-process"
               "concepts-payments"
+              "concepts-pricing-and-commissions"
             ] 
           } 
         } 

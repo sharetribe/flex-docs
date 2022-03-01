@@ -138,6 +138,7 @@ exports.siteStructure = [
       { id: 'concepts-listings' },
       { id: 'concepts-transaction-process' },
       { id: 'concepts-payments' },
+      { id: 'concepts-pricing-and-commissions' },
     ]
     // sortingArray: sortingArrayConcepts,
   },
