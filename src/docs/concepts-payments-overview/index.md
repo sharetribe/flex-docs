@@ -2,7 +2,7 @@
 title: Payments in Flex
 slug: payments-overview
 updated: 2021-12-10
-category: background
+category:  concepts-payments
 ingress:
   This article introduces how payments work in Flex in general, and
   describes the default Stripe payment gateway integration

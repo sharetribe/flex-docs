@@ -2,7 +2,7 @@
 title: Social logins & SSO
 slug: social-logins-and-sso
 updated: 2020-12-16
-category: background
+category: concepts-users-and-authentication
 ingress:
   Flex allows your users to authenticate themselves using a 3rd party
   identity provider.
