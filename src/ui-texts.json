@@ -110,12 +110,14 @@
   "Sidebar.tutorialTransactionProcess": "Part 3: Modifying the transaction process",
 
   "Sidebar.concepts": "Concepts",
+  "Sidebar.conceptsUsersAndAuthentication": "Users and Authentication",
+  "Sidebar.conceptsListings": "Listings",
+  "Sidebar.conceptsTransactionProcess": "Transactions and transaction process",
   "Sidebar.conceptsAvailability": "Availability",
   "Sidebar.conceptsDataModel": "Data model",
   "Sidebar.conceptsEmailTemplates": "Email templates",
   "Sidebar.conceptsPayments": "Payments",
   "Sidebar.conceptsSearch": "Search",
-  "Sidebar.conceptsTransactionProcess": "Transaction process",
 
   "Sidebar.cookbook": "Cookbook",
   "Sidebar.cookbookAvailability": "Availability",
