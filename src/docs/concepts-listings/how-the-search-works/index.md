@@ -2,7 +2,7 @@
 title: How the search works
 slug: how-the-search-works
 updated: 2019-07-17
-category: background
+category: concepts-listings
 ingress:
   Listings search can be crucial for your marketplace to thrive.
   Providing people with the right kind of search parameters and filters
