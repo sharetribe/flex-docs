@@ -23,6 +23,7 @@ const query = graphql`
               "concepts-pricing-and-commissions"
               "concepts-availability"
               "concepts-development"
+              "concepts-extended-data"
             ] 
           } 
         } 

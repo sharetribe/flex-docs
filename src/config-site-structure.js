@@ -141,6 +141,7 @@ exports.siteStructure = [
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
       { id: 'concepts-development' },
+      { id: 'concepts-extended-data' },
     ]
     // sortingArray: sortingArrayConcepts,
   },

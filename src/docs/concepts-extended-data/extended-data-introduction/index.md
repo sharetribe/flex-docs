@@ -2,7 +2,7 @@
 title: Introduction to extended data
 slug: extended-data-introduction
 updated: 2021-04-30
-category: operator-guides
+category: concepts-extended-data
 ingress:
   Extended data allows you to fully customize the information you want
   to collect about users, listings, and transactions on your
