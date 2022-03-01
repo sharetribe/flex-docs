@@ -41,7 +41,7 @@ To allow users to like listings, we introduce a UI-element users can
 interact with to like a listing. However, when we update a listing's
 extended data as a reaction to user input, we are prone to a race
 condition. Fortunately, Flex provides a powerful feature called
-[events](references/events/) that we can use to solve the problem. We
+[events](/references/events/) that we can use to solve the problem. We
 can listen to events using a script that polls the
 [events endpoint](https://www.sharetribe.com/api-reference/integration.html#query-events).
 As events are handled sequentially, the script can update the listing's
