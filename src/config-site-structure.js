@@ -151,6 +151,7 @@ exports.siteStructure = [
     id: 'cookbook',
     isOpen: false,
     subcategories: [
+      { id: 'howto-users-and-authentication' },
       { id: 'cookbook-data-model' },
       { id: 'cookbook-design' },
       { id: 'cookbook-search' },
@@ -161,7 +162,6 @@ exports.siteStructure = [
       },
       { id: 'cookbook-manage' },
       { id: 'cookbook-emails' },
-      { id: 'cookbook-social-logins-and-sso' },
       { id: 'cookbook-events' },
     ],
   },

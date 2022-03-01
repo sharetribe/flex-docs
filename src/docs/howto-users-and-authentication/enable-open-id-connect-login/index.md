@@ -2,7 +2,7 @@
 title: Enable OpenID Connect login
 slug: enable-open-id-connect-login
 updated: 2021-02-03
-category: cookbook-social-logins-and-sso
+category: howto-users-and-authentication
 ingress:
   In this cookbook we'll take at how to use an OpenID Connect login
   solution with a Flex marketplace.

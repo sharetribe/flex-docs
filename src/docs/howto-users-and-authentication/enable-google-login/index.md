@@ -2,7 +2,7 @@
 title: Enable Google login
 slug: enable-google-login
 updated: 2020-12-04
-category: cookbook-social-logins-and-sso
+category: howto-users-and-authentication
 ingress:
   In this cookbook we'll take a look at the process of setting up Google
   login for your marketplace. It will allow your users to sign and log
