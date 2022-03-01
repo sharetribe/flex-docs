@@ -2,7 +2,7 @@
 title: Applications
 slug: applications
 updated: 2019-12-10
-category: background
+category: concepts-development
 ingress:
   Flex Applications are the entities that authenticate to and access the
   Flex APIs.

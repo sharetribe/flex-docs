@@ -2,7 +2,7 @@
 title: Flex environments
 slug: flex-environments
 updated: 2021-02-26
-category: background
+category: concepts-development
 ingress:
   What are Flex environments and the differences the three types have.
 published: true
