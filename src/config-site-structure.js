@@ -51,6 +51,7 @@ const sortingArrayBackground = [
   'ftw-redux',
   'how-to-build-and-launch-with-flex',
   'is-flex-right-for-you',
+  'requiring-approval',
   'custom-pricing',
   'pricing',
   'what-is-the-difference-between-flex-and-go-source-available',
