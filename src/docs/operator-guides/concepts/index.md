@@ -2,7 +2,7 @@
 title: Concepts
 slug: concepts
 updated: 2019-11-21
-category: background
+category: operator-guides
 ingress:
   Explanation of the key concepts we use when we talk about Sharetribe
   Flex. The concepts are used in the API and throughout the

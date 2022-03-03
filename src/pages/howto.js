@@ -9,20 +9,23 @@ const category = 'howto';
 const sortingArray = findSortingArrays(category, siteStructure);
 
 const query = graphql`
-  query CookbookIndexQuery {
+  query HowtoIndexQuery {
     allMarkdownRemark(
       filter: {
         frontmatter: {
           category: {
             in: [
-              "cookbook"
-              "cookbook-data-model"
-              "cookbook-search"
-              "cookbook-transaction-process"
-              "cookbook-payments"
-              "cookbook-manage"
-              "cookbook-email-templates"
-              "cookbook-availability"
+              "howto"
+              "howto-users-and-authentication"
+              "howto-listing"
+              "howto-transaction-process"
+              "howto-payments"
+              "howto-migrations"
+              "howto-messaging"
+              "howto-design"
+              "howto-events"
+              "howto-search"
+              "howto-manage"
             ]
           }
         }
@@ -58,7 +61,7 @@ const byArrayOfSlugs = sortingArray => (a, b) => {
   return i1 - i2;
 };
 
-const CookbookPage = () => {
+const HowtoPage = () => {
   return (
     <StaticQuery
       query={query}
@@ -84,4 +87,4 @@ const CookbookPage = () => {
   );
 };
 
-export default CookbookPage;
+export default HowtoPage;
