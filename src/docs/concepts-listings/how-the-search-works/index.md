@@ -1,6 +1,6 @@
 ---
-title: How the search works
-slug: how-the-search-works
+title: How the listing search works
+slug: how-the-listing-search-works
 updated: 2019-07-17
 category: concepts-listings
 ingress:

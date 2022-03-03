@@ -95,6 +95,22 @@ const sortingArrayPaymentCookbooks = [
   'removing-stripe',
 ];
 
+const sortingArrayTransactionProcess = [
+  'transaction-process',
+  'privileged-transitions',
+  'change-transaction-process'
+]
+
+const sortingArrayPayments = [
+  'payments-overview',
+  'payment-methods-overview',
+  'using-stored-payment-cards',
+  'off-session-payments-in-transaction-process',
+  'payment-intents',
+  'solving-payout-problems',
+  'strong-customer-authentication'
+]
+
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -129,8 +145,12 @@ exports.siteStructure = [
     subcategories: [
       { id: 'concepts-users-and-authentication' },
       { id: 'concepts-listings' },
-      { id: 'concepts-transaction-process' },
-      { id: 'concepts-payments' },
+      { id: 'concepts-transaction-process',
+        sortingArray: sortingArrayTransactionProcess,
+      },
+      { id: 'concepts-payments',
+        sortingArray: sortingArrayPayments,
+      },
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
       { id: 'concepts-development' },
@@ -181,8 +201,6 @@ exports.siteStructure = [
     id: 'design-toolkit',
     isOpen: false,
   },
-
-  { id: 'integrations', isOpen: false },
 
   {
     id: 'references',
