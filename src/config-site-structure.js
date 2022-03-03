@@ -72,13 +72,6 @@ const sortingArrayTutorialTransactionProcess = [
 //   'applications',
 // ];
 
-const sortingArrayFlexCLI = [
-  'getting-started-with-flex-cli',
-  'edit-transaction-process-with-flex-cli',
-  'edit-email-templates-with-flex-cli',
-  'manage-search-schemas-with-flex-cli',
-  'view-events-with-flex-cli',
-];
 
 const sortingArrayReferences = [
   'api',
@@ -148,21 +141,22 @@ exports.siteStructure = [
   },
 
   {
-    id: 'cookbook',
+    id: 'howto',
     isOpen: false,
     subcategories: [
       { id: 'howto-users-and-authentication' },
-      { id: 'cookbook-data-model' },
-      { id: 'cookbook-design' },
-      { id: 'cookbook-search' },
-      { id: 'cookbook-transaction-process' },
+      { id: 'howto-listing' },
+      { id: 'howto-transaction-process' },
       {
-        id: 'cookbook-payments',
+        id: 'howto-payments',
         sortingArray: sortingArrayPaymentCookbooks,
       },
-      { id: 'cookbook-manage' },
-      { id: 'cookbook-emails' },
-      { id: 'cookbook-events' },
+      { id: 'howto-migrations' },
+      { id: 'howto-messaging' },
+      { id: 'howto-design' },
+      { id: 'howto-events' },
+      { id: 'howto-search' },
+      { id: 'howto-manage' },
     ],
   },
 
@@ -181,12 +175,6 @@ exports.siteStructure = [
       { id: 'ftw-hosting' },
       { id: 'ftw-analytics' },
     ],
-  },
-
-  {
-    id: 'flex-cli',
-    isOpen: false,
-    sortingArray: sortingArrayFlexCLI,
   },
 
   {

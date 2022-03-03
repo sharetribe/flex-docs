@@ -5,7 +5,7 @@ import { dev, siteStructure } from '../config';
 import { findSortingArrays } from '../util/navigation';
 import { ArticleIndexPage } from '../components';
 
-const category = 'cookbook';
+const category = 'howto';
 const sortingArray = findSortingArrays(category, siteStructure);
 
 const query = graphql`
