@@ -84,11 +84,12 @@
 
   "ArticlePage.tableOfContents": "Table of Contents",
   "ArticlePage.introduction.breadCrumbTitle": "Introduction",
+  "ArticlePage.concepts.breadCrumbTitle": "Concepts",
   "ArticlePage.tutorial.breadCrumbTitle": "Tutorial",
   "ArticlePage.tutorial-introduction.breadCrumbTitle": "Introduction",
   "ArticlePage.tutorial-branding.breadCrumbTitle": "Tutorial",
   "ArticlePage.background.breadCrumbTitle": "Background",
-  "ArticlePage.cookbook.breadCrumbTitle": "Cookbook",
+  "ArticlePage.howto.breadCrumbTitle": "How-tos",
   "ArticlePage.ftw.breadCrumbTitle": "FTW",
   "ArticlePage.design-toolkit.breadCrumbTitle": "Design Toolkit",
   "ArticlePage.integrations.breadCrumbTitle": "Integrations",
