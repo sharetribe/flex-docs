@@ -103,6 +103,8 @@
   "ArticlePage.previous": "‹ Previous",
 
   "Sidebar.introduction": "Introduction",
+  "Sidebar.introductionGettingStarted": "Getting started guides",
+  "Sidebar.introductionTemplates": "Flex & Templates",
 
   "Sidebar.tutorial": "Tutorial",
   "Sidebar.tutorialExtendedData": "Part 2: Extend the data model",

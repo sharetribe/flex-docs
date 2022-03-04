@@ -2,7 +2,7 @@
 title: Getting started with Flex CLI
 slug: getting-started-with-flex-cli
 updated: 2021-10-04
-category: introduction
+category: introduction-getting-started
 ingress:
   This tutorial shows you how to get started with the Flex CLI. You will
   learn how to log in with your API key, how to use the help command and

@@ -85,6 +85,10 @@ exports.siteStructure = [
     id: 'introduction',
     isOpen: false,
     sortingArray: sortingArrayIntroduction,
+    subcategories: [
+      { id: 'introduction-getting-started' },
+      { id: 'introduction-templates' },
+    ]
   },
   {
     id: 'tutorial',

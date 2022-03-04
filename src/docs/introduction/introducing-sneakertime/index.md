@@ -2,7 +2,7 @@
 title: Introducing Sneakertime
 slug: introducing-sneakertime
 updated: 2021-19-10
-category: introduction
+category: introduction-templates
 ingress:
   From inventory management to transaction processes and more, Flex’s
   product marketplace template Sneakertime offers the functionality you
