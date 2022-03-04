@@ -41,37 +41,6 @@ const sortingArrayTutorialTransactionProcess = [
   'add-new-email-notification',
 ];
 
-// const sortingArrayConcepts = [
-//   'introducing-flex',
-//   'concepts',
-//   'development-skills',
-//   'features',
-//   'transaction-process',
-//   'ftw-routing',
-//   'ftw-redux',
-//   'how-to-build-and-launch-with-flex',
-//   'is-flex-right-for-you',
-//   'custom-pricing',
-//   'pricing',
-//   'what-is-the-difference-between-flex-and-go-source-available',
-//   'payments-overview',
-//   'payment-methods-overview',
-//   'payment-intents',
-//   'strong-customer-authentication',
-//   'privileged-transitions',
-//   'off-session-payments-in-transaction-process',
-//   'using-stored-payment-cards',
-//   'solving-payout-problems',
-//   'commissions-and-monetizing-your-platform',
-//   'stripe-provider-onboarding-and-capabilities',
-//   'how-the-search-works',
-//   'marketplace-api-integration-api',
-//   'time-based-template',
-//   'authentication-api',
-//   'social-logins-and-sso',
-//   'applications',
-// ];
-
 
 const sortingArrayReferences = [
   'api',
@@ -176,7 +145,6 @@ exports.siteStructure = [
       { id: 'howto-design' },
       { id: 'howto-events' },
       { id: 'howto-search' },
-      { id: 'howto-manage' },
     ],
   },
 
