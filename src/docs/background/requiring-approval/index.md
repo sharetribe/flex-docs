@@ -59,6 +59,30 @@ button to approve the listing.
 
 ![Listing approval button](pending-approval-button.png 'Operator can approve listings in Flex Console')
 
+## Approving listings through Integration API
+
+In addition to Flex Console, an operator can also create an integration to approve listings through the [Integration API](/integrations/getting-started-with-integration-api/) through the endpoint [integration_api/listings/approve](https://www.sharetribe.com/api-reference/integration.html#approve-listing). 
+
+If, for instance, your marketplace allows non-premium users to post two listings and premium users to post five listings, you could create an Integration API script that automatically approves the listing if the user has unused listing quota.
+
+## Enabling and disabling listing approval in Flex CLI
+
+In addition to the Flex Console, you can also use
+[Flex CLI](/flex-cli/getting-started-with-flex-cli/) to enable and
+disable listing approval on your marketplace.
+
+```bash
+#To see whether your marketplace requires listings to be approved
+flex-cli listing-approval -m [your-marketplace]
+
+#To enable listing approval for your marketplace
+flex-cli listing-approval enable -m [your-marketplace]
+
+#To disable listing approval for your marketplace
+flex-cli listing-approval disable -m [your-marketplace]
+
+```
+
 ## Elements indicating listing approval in FTW templates
 
 All three FTW templates show UI elements related to pending listings by
@@ -78,20 +102,3 @@ state.
 
 ![Listing card overlay](pending-approval-your-listings.png 'Listings pending approval are shown with an informative overlay')
 
-## Enable and disable listing approval in Flex CLI
-
-In addition to the Flex Console, you can also use
-[Flex CLI](/flex-cli/getting-started-with-flex-cli/) to enable and
-disable listing approval.
-
-```bash
-#To see whether your marketplace requires listings to be approved
-flex-cli listing-approval -m [your-marketplace]
-
-#To enable listing approval for your marketplace
-flex-cli listing-approval enable -m [your-marketplace]
-
-#To disable listing approval for your marketplace
-flex-cli listing-approval disable -m [your-marketplace]
-
-```
