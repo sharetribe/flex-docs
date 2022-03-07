@@ -110,9 +110,9 @@ client to be used as a proxy for LinkedIn:
   to an OpenID Connect discovery document (_[identity provider
   URL]/.well-known/openid-configuration_) and from there on to an ID
   token signing key. By default this should be the root address of your
-  application, for example, _https://example.com_ or, for default
-  Heroku URLs, _https://EXAMPLE.herokuapp.com_. Note, that this URL
-  needs to be publicly hosted so a `localhost` URL will not work.
+  application, for example, _https://example.com_ or, for default Heroku
+  URLs, _https://EXAMPLE.herokuapp.com_. Note, that this URL needs to be
+  publicly hosted so a `localhost` URL will not work.
 
 - **Client ID** When using FTW as on OpenID Connect proxy, you are in
   charge of generating a client ID. The value can be any randomly

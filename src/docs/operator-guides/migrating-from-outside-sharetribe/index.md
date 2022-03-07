@@ -250,8 +250,9 @@ Required attributes for `:im.user/profile`
 - `:im.userProfile/firstName` (string)
 - `:im.userProfile/lastName` (string)
 
-Optional attributes for
-  `:im.user/profile` - only include the key if it has a non-empty value
+Optional attributes for `:im.user/profile` - only include the key if it
+has a non-empty value
+
 - `:im.userProfile/displayName` (string)
 - `:im.userProfile/bio` (string)
 - `:im.userProfile/publicData` (JSON)
@@ -289,8 +290,8 @@ Required attributes
 
 - `:im.image/url` (URL-encoded string)
 
-Optional attributes - only
-  include the key if it has a non-empty value
+Optional attributes - only include the key if it has a non-empty value
+
 - `:im.image/listing` (#im/ref)
 - `:im.image/sortOrder` (integer)
 
@@ -350,9 +351,8 @@ Required attributes
 - `:im.review/subject` (#im/ref)
 - `:im.review/content` (string)
 
+Optional attributes - only include the key if it has a non-empty value
 
-Optional attributes - only include the
-  key if it has a non-empty value
 - `:im.review/listing` (#im/ref)
 
 Supported references

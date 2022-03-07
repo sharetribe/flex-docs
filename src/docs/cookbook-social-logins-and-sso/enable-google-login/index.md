@@ -72,8 +72,7 @@ marketplace by following these steps:
 12. Application type is "Web application". You can give it any name.
 13. In "Authorized JavaScript origins", add your full marketplace's URL
     with https and possibly www or the subdomain, without the trailing
-    slash, e.g. "https://www.example.com",
-    "https://example.com", or
+    slash, e.g. "https://www.example.com", "https://example.com", or
     "https://something.example.com".
 14. In the "Authorized redirect URIs", add your marketplace address
     followed by `/api/auth/google/callback`.
