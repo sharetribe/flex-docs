@@ -43,7 +43,7 @@ have something like the following in your `process.edn` file:
 
 To learn more about how to change the transaction process using Flex
 CLI, see the
-[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)
 tutorial.
 
 ## Option 1: Use a new Flex template FTW-hourly (recommended)

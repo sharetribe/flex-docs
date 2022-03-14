@@ -30,7 +30,7 @@ API endpoint returns availability information for future dates, taking
 into account the listing's availability plan, exceptions and bookings.
 
 All bookings are created through transactions, governed by your
-[transaction process](/background/transaction-process/). The transaction
+[transaction process](/concepts-transaction-process/transaction-process/). The transaction
 process ensures that bookings are only created for available time
 ranges.
 
@@ -105,7 +105,7 @@ interpreted. For instance, with time-based availability it is possible
 to define that the listing is available on weekdays from 9 AM to 11AM
 and from 1 PM to 6 PM. More information on how to set a time-based
 availability plan for a listing can be found in the
-[time-based bookings cookbook](/cookbook-transaction-process/enable-time-based-bookings-into-use/).
+[time-based bookings cookbook](/howto-transaction-process/enable-time-based-bookings-into-use/).
 
 > **Note:** By default,
 > [FTW-daily](https://github.com/sharetribe/ftw-daily/) uses day-based

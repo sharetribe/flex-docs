@@ -29,14 +29,14 @@ to make are as follows:
    length
 
 For more information about pricing in Flex, see the
-[Pricing background article](/background/pricing/).
+[Pricing background article](/concepts-pricing-and-commissions/pricing/).
 
 ## 1. Listing extended data
 
 Pricing can be based on a lot of variables but one practical way to
 build it is to base it on information stored as extended data in
 listings. See the
-[Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
+[Extend listing data in FTW](/howto-listing/extend-listing-data-in-ftw/)
 cookbook to read how to extend the listing data model with extended
 data. See the aforementioned cookbook for instructions how to add inputs
 for new attributes in the listing wizard. Alternatively, in order to try
@@ -86,7 +86,7 @@ publicData: {
 ```
 
 Flex pricing uses
-[privileged transitions](/background/privileged-transitions/) to ensure
+[privileged transitions](/concepts-transaction-process/privileged-transitions/) to ensure
 flexible pricing models while keeping control of the pricing logic in a
 secure environment. Transitioning requests of privileged transitions are
 made from the server-side. Thus we'll need to update the pricing logic

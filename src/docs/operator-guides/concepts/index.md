@@ -48,7 +48,7 @@ marketplace's advanced configurations such as transaction processes and
 email templates.
 
 See the
-[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)
 tutorial for more information.
 
 ### Marketplace API
@@ -62,7 +62,7 @@ Sharetribe customers can create their own web-based and mobile UIs on
 top of the Marketplace API.
 
 Information about working with the Marketplace API can be found in the
-[API reference documentation](/references/api/).
+[API reference documentation](/concepts-api-sdk/api/).
 
 ### Integration API
 
@@ -90,7 +90,7 @@ A JavaScript library that makes it easy to correctly interact with the
 Marketplace API.
 
 Information about using the JS SDK library can be found in the
-[JS SDK documentation](/references/js-sdk/).
+[JS SDK documentation](/concepts-api-sdk/js-sdk/).
 
 ### Sharetribe Integration SDK for JavaScript
 
@@ -98,7 +98,7 @@ A JavaScript library that makes it easy to correctly interact with the
 Integration API.
 
 Information about using the JS SDK library can be found in the
-[JS SDK documentation](/references/js-sdk/).
+[JS SDK documentation](/concepts-api-sdk/js-sdk/).
 
 ### Webhooks
 

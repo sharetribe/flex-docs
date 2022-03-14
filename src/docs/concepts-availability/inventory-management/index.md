@@ -26,7 +26,7 @@ level. If you want to read a more technical article about the feature,
 
 With the stock-related APIs, you add to the available stock of a listing
 by creating a
-[stock adjustment](https://www.sharetribe.com/docs/background/concepts/#stock-adjustment).
+[stock adjustment](https://www.sharetribe.com/docs/operator-guides/concepts/#stock-adjustment).
 This is an API call that you make through one of our APIs that lets your
 Flex marketplace know that you have increased the quantity of available
 stock for one of your listings. This adjustment could be done directly
@@ -72,4 +72,4 @@ should take a look at the seats feature. With seats, you can manage the
 number of available spaces in a given event at a given time. Seats are
 tied to booking availability managment. You can learn more about the
 feature
-[here](https://www.sharetribe.com/docs/operator-guides/manage-seats/).
+[here](https://www.sharetribe.com/docs/concepts-availability/manage-seats/).

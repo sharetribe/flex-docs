@@ -12,9 +12,9 @@ published: true
 ## Authentication API
 
 Both the
-[Marketplace API and the Integration API](/background/marketplace-api-integration-api/)
+[Marketplace API and the Integration API](/concepts-api-sdk/marketplace-api-integration-api/)
 require valid _access tokens_ to be passed in every API request.
-[Applications](/background/applications/) obtain those access tokens
+[Applications](/concepts-development/applications/) obtain those access tokens
 from the Authentication API.
 
 As a general rule, applications that access the Marketplace API do so by
@@ -28,7 +28,7 @@ Application has a _client ID_. In addition, applications that access the
 Integration API also have a corresponding _client secret_.
 
 > **NOTE** The easiest way to interact with both the Marketplace API and
-> the Integration API is to use our [SDKs](/references/js-sdk/). The
+> the Integration API is to use our [SDKs](/concepts-api-sdk/js-sdk/). The
 > SDKs handle most of the complexity regarding authentication, access,
 > and refresh tokens. Below we discuss some of the underlying mechanisms
 > and principles in the Authentication API.

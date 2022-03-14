@@ -42,7 +42,7 @@ remember from the earlier tutorial article:
 There need to be listings with first-level keys in extended data (nested
 JSON data is not supported by the Flex search engine) - and you need to
 add schema to that extended data field using
-[Flex CLI](/flex-cli/manage-search-schemas-with-flex-cli/).
+[Flex CLI](/howto-search/manage-search-schemas-with-flex-cli/).
 
 In one of the previous
 [tutorial article](/tutorial-extended-data/add-extended-data/), we added
@@ -133,16 +133,16 @@ In addition to this tutorial, there are a couple of extra articles that
 you could check to read more about Extended data:
 
 - [Extended data](/references/extended-data/)
-- [Manage search schemas with Flex CLI](/flex-cli/manage-search-schemas-with-flex-cli/)
-- [Extend listings](/cookbook-data-model/extend-listing-data-in-ftw/)
+- [Manage search schemas with Flex CLI](/howto-search/manage-search-schemas-with-flex-cli/)
+- [Extend listings](/howto-listing/extend-listing-data-in-ftw/)
   with your own data.
-- [Search filters in FTW](/cookbook-search/change-search-filters-in-ftw/)
+- [Search filters in FTW](/howto-search/change-search-filters-in-ftw/)
 
 ## What you should do next?
 
 After this tutorial, you could explore other articles in here. At least
 the following articles might interest you:
 
-- [Edit email templates](/flex-cli/edit-email-templates-with-flex-cli/)
-- [Customize pricing](/background/pricing/)
-- [Customize the transaction process](/background/transaction-process/)
+- [Edit email templates](/howto-messaging/edit-email-templates-with-flex-cli/)
+- [Customize pricing](/concepts-pricing-and-commissions/pricing/)
+- [Customize the transaction process](/concepts-transaction-process/transaction-process/)

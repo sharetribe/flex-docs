@@ -91,7 +91,7 @@ It is important to note that an off-session payment can fail for various
 reasons. For instance, the card could be denied due to insufficient
 funds, the issuing bank may require additional authentication from the
 customer (this can easily occur with European payment cards when
-[Strong Customer Authentication regulation](/background/strong-customer-authentication/)
+[Strong Customer Authentication regulation](/concepts-payments/strong-customer-authentication/)
 kicks in), the payment card might have expired, etc. It is therefore
 always important to allow for a fall-back payment path in your
 transaction process. Since only one transition from a state can be

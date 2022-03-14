@@ -108,7 +108,7 @@ with a bank account set up before others can initiate transactions with
 them successfully. This is done by
 [creating a Stripe account](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account)
 for the authenticated user. The
-[FTW templates](https://www.sharetribe.com/docs/cookbook-payments/provider-onboarding-and-identity-verification/)
+[FTW templates](https://www.sharetribe.com/docs/howto-payments/provider-onboarding-and-identity-verification/)
 are configured to do this step out-of-the-box using
 [Stripe Connect Onboarding](https://stripe.com/en-fi/connect/onboarding).
 
@@ -122,7 +122,7 @@ your most likely marketplace provider demographics in
 
 When the customer initiates a transaction in the Flex default
 transaction processes, Flex creates a
-[PaymentIntent](/background/payment-intents/) for the total price of the
+[PaymentIntent](/concepts-payments/payment-intents/) for the total price of the
 transaction. Once the PaymentIntent is confirmed, Stripe preauthorizes
 the sum from the customer's payment method. In other words, even though
 the sum is not paid out from the customer's card, it is reserved and not
@@ -154,9 +154,9 @@ the platform's account as an
 [application fee](https://stripe.com/docs/api/application_fees).
 
 Depending on how the
-[transaction's line items](/background/pricing/#line-items) have been
+[transaction's line items](/concepts-pricing-and-commissions/pricing/#line-items) have been
 defined, the platform can take a
-[commission of the price](/background/commissions-and-monetizing-your-platform/)
+[commission of the price](/concepts-pricing-and-commissions/commissions-and-monetizing-your-platform/)
 from either the provider, the customer, or both. The platform is also
 responsible for paying all
 [Stripe fees](https://stripe.com/en-fi/connect/pricing) related to the
@@ -177,7 +177,7 @@ acceptance to all be triggered at the same customer action.
 If the customer requests a refund for one reason or another, the
 operator can refund the PaymentIntent. The Flex integration with Stripe
 only supports full refunds. (Handling partial refunds is discussed
-[later in this article](/background/payments-overview/#can-i-partially-refund-transactions-in-my-flex-marketplace).)
+[later in this article](/concepts-payments/payments-overview/#can-i-partially-refund-transactions-in-my-flex-marketplace).)
 The default transaction process takes into account whether or not the
 PaymentIntent has already been captured from the customer's account.
 
@@ -218,9 +218,9 @@ depending on your payment strategy, and you can fine-tune the timeline
 of different actions to suit your marketplace.
 
 You can edit the transaction processes on your marketplace with
-[Flex CLI](/flex-cli/edit-transaction-process-with-flex-cli/). If you
+[Flex CLI](/howto-transaction-process/edit-transaction-process-with-flex-cli/). If you
 use one of the FTW templates, you will also need to make some
-[changes in the template](/cookbook-transaction-process/change-transaction-process-in-ftw/)
+[changes in the template](/howto-transaction-process/change-transaction-process-in-ftw/)
 to enable it to use a different process. If you do make changes to a
 transaction process when you already have transactions in your
 environment, it is good to note that a transaction will proceed with the
@@ -256,7 +256,7 @@ well as any custom client application you may be using.
 
 Another notable approach to modifying the payment timeline in Flex is
 the
-[off-session payment pattern](/background/off-session-payments-in-transaction-process/).
+[off-session payment pattern](/concepts-payments/off-session-payments-in-transaction-process/).
 In an off-session payment, the customer checkout and provider acceptance
 happen when the customer books or purchases the listing, but the payment
 takes place at a later date. That way, customers can, for instance, book
@@ -269,7 +269,7 @@ receiving the product or service they purchased.
 Flex supports multiple payment methods as a part of its Stripe
 integration. The default payment method is a payment card, which is what
 the FTW templates use. However, you can enable
-[other payment methods](/background/payment-methods-overview/) as well
+[other payment methods](/concepts-payments/payment-methods-overview/) as well
 with moderate custom development work.
 
 The user can save a default payment method in Flex. If your marketplace
@@ -288,7 +288,7 @@ default, to facilitate e.g. price filtering and sorting.
 As the transaction progresses, the payment intent is created and charged
 from the customer's payment method in the listing's currency, or
 alternatively the
-[currency of the line items](/background/pricing/#line-items) if
+[currency of the line items](/concepts-pricing-and-commissions/pricing/#line-items) if
 different from the listing currency. The payout currency is determined
 by the provider's bank account currency.
 
@@ -313,7 +313,7 @@ The default Stripe integration in Flex works with any client
 application. However, the FTW templates are further configured to work
 hand in hand with Stripe:
 
-- [Provider onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/)
+- [Provider onboarding](/howto-payments/provider-onboarding-and-identity-verification/)
   is handled with Stripe Connect Onboarding. A provider cannot create
   listings (i.e. receive money from customers) unless they have verified
   their identity with Stripe &mdash; this ensures that the platform is
@@ -342,7 +342,7 @@ Sometimes it takes a while to get Stripe to work. Here are some ideas to
 troubleshoot the problem.
 
 - Double check that you have followed the
-  [Stripe setup instructions](/cookbook-payments/set-up-and-use-stripe/).
+  [Stripe setup instructions](/howto-payments/set-up-and-use-stripe/).
   Note that in your test environment, you need to use the Stripe keys
   starting with `sk_test` and `pk_test`, and you will also need to use
   [Stripe's test payout details](https://stripe.com/docs/connect/testing#payouts)
@@ -362,7 +362,7 @@ troubleshoot the problem.
   check if someone has already solved a similar problem.
 
 - In case of payout problem issues, you can check out our article about
-  [Stripe payout issues](/background/solving-payout-problems/) for
+  [Stripe payout issues](/concepts-payments/solving-payout-problems/) for
   advice or ideas.
 
 If nothing seems to work, you can always contact Flex technical support
@@ -407,7 +407,7 @@ issues for completely unrelated transactions; Stripe does not separate
 funds by PaymentIntent, so a miscalculated excessive refund on a
 transaction between provider A and customer B may cause payout to fail
 for customer C on a different transaction. You can read more on
-[payout issues on manual refunds](/background/solving-payout-problems/#why-payouts-fail)
+[payout issues on manual refunds](/concepts-payments/solving-payout-problems/#why-payouts-fail)
 to figure out what you would need to consider to implement this option
 successfully.
 
@@ -418,7 +418,7 @@ integration to handle creating and capturing the payments as well as
 managing payouts and refunds. This gives you the greatest flexibility
 with your setup, and conversely it requires more customization and
 development. You can refer to our high-level instructions on
-[integrating a 3rd-party payment gateway](/integrations/how-to-integrate-3rd-party-payment-gateway/)
+[integrating a 3rd-party payment gateway](/howto-payments/how-to-integrate-3rd-party-payment-gateway/)
 to find out whether this option would best suit your needs.
 
 If you are contemplating partial refunds for your marketplace, you can
@@ -445,12 +445,12 @@ transaction process actions etc.) are named with the prefix `stripe`.
 If you want to modify your FTW template to work without Stripe, the
 effort is more extensive, since each template is built around a logic
 that uses Stripe actions and endpoints. You can use
-[this article](/cookbook-payments/removing-stripe-and-payments/) as your
+[this article](/howto-payments/removing-stripe-and-payments/) as your
 starting point.
 
 When removing the Stripe integration, you will want to consider whether
 or not you want to implement some other payment gateway in your
 marketplace to handle payments. You can refer to our high-level
 instructions on
-[how to integrate a 3rd-party payment gateway](/integrations/how-to-integrate-3rd-party-payment-gateway/)
+[how to integrate a 3rd-party payment gateway](/howto-payments/how-to-integrate-3rd-party-payment-gateway/)
 when making the decision and when implementing any changes.

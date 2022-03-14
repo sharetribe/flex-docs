@@ -32,7 +32,7 @@ API allows access to the individual user's own data and any publicly
 available data. This allows the Marketplace API to be directly called
 from a user-controlled device or web browser, which is the case if you
 are using one of the open source
-[template applications](/background/concepts/#flex-templates-for-web-ftw)
+[template applications](/operator-guides/concepts/#flex-templates-for-web-ftw)
 provided by Sharetribe.
 
 The Marketplace API does not provide access to any data that an
@@ -40,7 +40,7 @@ individual user should not access, such as other users' private data,
 transactions, or messages.
 
 The easiest way to access the Marketplace API is to use the
-[Flex SDK for JavaScript](/references/js-sdk/#flex-sdk-for-javascript).
+[Flex SDK for JavaScript](/concepts-api-sdk/js-sdk/#flex-sdk-for-javascript).
 See also the
 [Marketplace API reference documentation](https://www.sharetribe.com/api-reference/marketplace.html).
 
@@ -53,7 +53,7 @@ your own backend systems or applications meant to be executed by
 authorized marketplace operators.
 
 > **IMPORTANT** Never expose your Integration API
-> [application](/background/applications/) credentials to an untrusted
+> [application](/concepts-development/applications/) credentials to an untrusted
 > device or application, such as end user's browser or mobile app.
 
 The Integration API is well suited for building the following types of
@@ -66,7 +66,7 @@ applications:
 - Custom tooling for operators managing the marketplace
 
 The easiest way to access the Integration API is to use the
-[Flex Integration SDK for JavaScript](/references/js-sdk/#flex-integration-sdk-for-javascript).
+[Flex Integration SDK for JavaScript](/concepts-api-sdk/js-sdk/#flex-integration-sdk-for-javascript).
 See also the
 [Integration API reference documentation](https://www.sharetribe.com/api-reference/integration.html).
 
@@ -82,5 +82,5 @@ and password), while Integration API applications authenticate using
 their own credentials.
 
 For more details see the
-[Authentication API](/background/authentication-api/) article and the
+[Authentication API](/concepts-api-sdk/authentication-api/) article and the
 [API reference documentation](https://www.sharetribe.com/api-reference/authentication.html).

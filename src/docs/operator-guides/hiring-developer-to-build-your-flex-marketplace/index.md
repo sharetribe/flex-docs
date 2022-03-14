@@ -28,7 +28,7 @@ marketplace. This means the developers you hire need guidance on how
 exactly you want the marketplace to work.
 
 We recommend using one of
-[Flex Templates for Web](https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw)
+[Flex Templates for Web](https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw)
 as a basis for the development work, especially if you're launching a
 marketplace for the first time. The Flex Templates are examples of fully
 functional marketplace applications. Typically the Templates have
@@ -49,7 +49,7 @@ what it offers. There are a few ways to gain this understanding:
    specifically.
 3. Install one of the template applications (Saunatime, Yogatime, or
    Sneakertime) yourself following
-   [this guide](https://www.sharetribe.com/docs/introduction/getting-started-with-ftw-daily/),
+   [this guide](https://www.sharetribe.com/docs/introduction-getting-started/getting-started-with-ftw-daily/),
    or ask a developer to do it for you.
 4. If you're comfortable working with design software like Sketch, Adobe
    XD or Figma, you can download the complete

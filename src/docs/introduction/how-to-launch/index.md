@@ -60,7 +60,7 @@ any problems with the setup,
 Once you have FTW set up, you can create a few user accounts and test
 the features: posting listings, searching them, making bookings and
 payments (see how to use
-[test credit card numbers provided by Stripe](/cookbook-payments/set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)),
+[test credit card numbers provided by Stripe](/howto-payments/set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)),
 sending messages between users, writing reviews, and so on. You can test
 them both on your desktop and on a mobile browser to see how it works on
 each device. On Console, you can then see how the users, listings and

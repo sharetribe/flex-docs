@@ -16,14 +16,14 @@ to support states and transitions defined in that process.
 How the transaction process works behind the Marketplace API depends on
 how your process is customised in our backend. To customise the
 transaction process in the backend, you should use Flex CLI. See the
-[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)
 tutorial to get familiar with the tool.
 
 If you have changed the transaction process in your marketplace, you
 should check if your client app needs to be updated to match this
 different transaction process. You can read more about how these
 processes work from a background info article about the
-[transaction process](/background/transaction-process/).
+[transaction process](/concepts-transaction-process/transaction-process/).
 
 The following guide will help you to customise the process flow in FTW
 to match the process in our backend.
@@ -153,7 +153,7 @@ export const txIsCanceledByCustomer = tx =>
 > Note: Only transitions are included to transaction entity since all
 > the actions that happen during the process are tied to transitions not
 > states. Read more about the
-> [transaction process](/background/transaction-process/).
+> [transaction process](/concepts-transaction-process/transaction-process/).
 
 ## 3. Update all the components that import util/transaction.js
 

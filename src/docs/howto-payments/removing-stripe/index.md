@@ -51,7 +51,7 @@ In
 file, there are lots of helper functions that are used to determine
 which state the transaction is. This file should be updated to match the
 new transaction process.
-[Read more about editing transaction.js](/cookbook-transaction-process/change-transaction-process-in-ftw/#2-check-if-the-transactionjs-file-needs-to-be-updated)
+[Read more about editing transaction.js](/howto-transaction-process/change-transaction-process-in-ftw/#2-check-if-the-transactionjs-file-needs-to-be-updated)
 
 Example:
 

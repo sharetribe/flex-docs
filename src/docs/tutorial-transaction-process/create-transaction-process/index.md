@@ -58,7 +58,7 @@ booking.
 ### Create a new process
 
 To get up and running with Flex CLI, see the
-[Getting started with Flex CLI](https://www.sharetribe.com/docs/flex-cli/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](https://www.sharetribe.com/docs/introduction-getting-started/getting-started-with-flex-cli/)
 guide in Flex Docs.
 
 Let's see what the subcommand `help` gives us about `process create`:

@@ -45,7 +45,7 @@ Sharetribe uses the Stripe Connect features with
 
 > **Note!** Stripe might need to review your platform account before you
 > get access. <br /> Check
-> [this article](/cookbook-payments/stripe-connect-platform-review/) to
+> [this article](/howto-payments/stripe-connect-platform-review/) to
 > learn how to apply for Stripe Connect review.
 
 If you're in any another country, follow these instructions to enable
@@ -62,7 +62,7 @@ Stripe Connect:
 ## 3. Account types and connect onboarding settings
 
 To enable
-[Stripe Connect Onboarding](/cookbook-payments/provider-onboarding-and-identity-verification/),
+[Stripe Connect Onboarding](/howto-payments/provider-onboarding-and-identity-verification/),
 you need to navigate to
 [Connect settings page](https://dashboard.stripe.com/account/applications/settings)
 in your Stripe Dashboard. For the Connect onboarding to work, you need

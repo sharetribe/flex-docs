@@ -26,7 +26,7 @@ This article continues the general overview of the transaction process
 offered
 [here](https://www.sharetribe.com/docs/operator-guides/transaction-process/)
 and
-[here](https://www.sharetribe.com/docs/background/transaction-process/)
+[here](https://www.sharetribe.com/docs/concepts-transaction-process/transaction-process/)
 by suggesting a few principles to keep in mind when designing how your
 users will transact.
 
@@ -113,7 +113,7 @@ addition to transactions,
 [consult our guide](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/)
 on defining the discovery and listing creating process in your
 marketplace. You can see the default user experience provided by
-[Flex’s Templates for Web](https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw)
+[Flex’s Templates for Web](https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw)
 there too.
 
 ## Draw it out
@@ -132,7 +132,7 @@ user can take as part of moving from state to state.
 
 You can draw out your transaction process with a pen and paper or online
 using a tool like
-[Whimsical](https://www.sharetribe.com/docs/operator-guides/design-txn-process-with-whimsical/).
+[Whimsical](https://www.sharetribe.com/docs/concepts-transaction-process/change-transaction-process/#start-designing).
 
 ## Modify an existing process, if you can
 

@@ -19,7 +19,7 @@ sorting by extended data for some value types.
 ## Types of extended data
 
 **Note:** Extended data support in API resources is work in progress.
-See the [API reference](/references/api/) for each resource for
+See the [API reference](/concepts-api-sdk/api/) for each resource for
 information on supported extended data.
 
 There are four types of extended data: _metadata_, _private data_,
@@ -43,11 +43,11 @@ decisions.
 _Protected data_ is writable and readable by whoever has write access to
 a resource. It is also readable by marketplace operators. Protected data
 can be revealed to all transaction parties via the marketplace
-[transaction process](/background/transaction-process/).
+[transaction process](/concepts-transaction-process/transaction-process/).
 
 Protected data can be used to store information about listings or users
 that is only made visible to a customer at a specific point in the
-[transaction process](/background/transaction-process/).
+[transaction process](/concepts-transaction-process/transaction-process/).
 
 ### Private data
 
@@ -84,7 +84,7 @@ data possible via some API endpoints. For instance
 supports querying listings by public data or metadata.
 
 Search schemas can be managed with
-[Flex CLI](/flex-cli/getting-started-with-flex-cli/). With the CLI, you
+[Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/). With the CLI, you
 can list, set and unset search schemas for listing's public data and
 metadata as well as for user profile's metadata, private, protected and
 public data. The commands to manage search schemas are:
@@ -94,6 +94,6 @@ public data. The commands to manage search schemas are:
 - `flex-cli search unset` Unset data schema
 
 You can also check out our tutorial for
-[managing search schemas with Flex CLI](/flex-cli/manage-search-schemas-with-flex-cli/).
+[managing search schemas with Flex CLI](/howto-search/manage-search-schemas-with-flex-cli/).
 
 > **Note:** Only top-level values in extended data can have a schema.

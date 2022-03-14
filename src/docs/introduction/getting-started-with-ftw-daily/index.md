@@ -11,7 +11,7 @@ published: true
 ---
 
 Flex Templates for Web (FTW) are marketplace web applications built on
-top of the [Marketplace API](/background/concepts/#marketplace-api).
+top of the [Marketplace API](/operator-guides/concepts/#marketplace-api).
 While you can create a marketplace purely using just the API, it
 requires a significant amount of effort (both money and time) and we
 recommened using the template as a starting point for customizations.
@@ -363,7 +363,7 @@ This will automatically open `http://localhost:3000` in a browser:
 > **Note:** As you browse your marketplace and create listings, you may
 > notice that the search filters do not work. You can activate the
 > filters by creating a
-> [search schema](/flex-cli/manage-search-schemas-with-flex-cli/#adding-schemas)
+> [search schema](/howto-search/manage-search-schemas-with-flex-cli/#adding-schemas)
 > that corresponds to your FTW template.
 
 ## Summary

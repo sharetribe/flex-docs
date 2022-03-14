@@ -36,7 +36,7 @@ listing.
 
 Approving a listing does not trigger an automatic email notification.
 However, you can for instance
-[set up Zapier](/cookbook-events/set-up-and-use-zapier/) to listen to
+[set up Zapier](/howto-events/set-up-and-use-zapier/) to listen to
 events where a listing's state goes from `pendingApproval` to
 `published` and send a message.
 
@@ -61,14 +61,14 @@ button to approve the listing.
 
 ## Approving listings through Integration API
 
-In addition to Flex Console, an operator can also create an integration to approve listings through the [Integration API](/integrations/getting-started-with-integration-api/) through the endpoint [integration_api/listings/approve](https://www.sharetribe.com/api-reference/integration.html#approve-listing). 
+In addition to Flex Console, an operator can also create an integration to approve listings through the [Integration API](/introduction-getting-started/getting-started-with-integration-api/) through the endpoint [integration_api/listings/approve](https://www.sharetribe.com/api-reference/integration.html#approve-listing). 
 
 If, for instance, your marketplace allows non-premium users to post two listings and premium users to post five listings, you could create an Integration API script that automatically approves the listing if the user has unused listing quota.
 
 ## Enabling and disabling listing approval in Flex CLI
 
 In addition to the Flex Console, you can also use
-[Flex CLI](/flex-cli/getting-started-with-flex-cli/) to enable and
+[Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/) to enable and
 disable listing approval on your marketplace.
 
 ```bash

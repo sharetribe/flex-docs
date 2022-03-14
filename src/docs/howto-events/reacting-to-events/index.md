@@ -19,9 +19,9 @@ using publishing a listing as an example.
 
 This guide assumes that you have already set up a Flex Integration API
 application and have a Node.js app with the
-[Integration API SDK](/references/js-sdk/) ready. If you have not yet
+[Integration API SDK](/concepts-api-sdk/js-sdk/) ready. If you have not yet
 used the Flex Integration API, follow the
-[Getting started with the Integration API](/integrations/getting-started-with-integration-api/)
+[Getting started with the Integration API](/introduction-getting-started/getting-started-with-integration-api/)
 guide first and you will be ready to proceed with this guide.
 
 In this guide we will cover the following main topics:

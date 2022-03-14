@@ -15,7 +15,7 @@ provides full access to the marketplace's data. It can be used to build
 applications that integrate different own or 3rd party systems with the
 Flex marketplace. For an overview of the different APIs that Flex
 provides, read
-[this article](/background/marketplace-api-integration-api/).
+[this article](/concepts-api-sdk/marketplace-api-integration-api/).
 
 In this tutorial, you will download, set up and run an
 [example Integration API command line script](https://github.com/sharetribe/flex-integration-api-examples)
@@ -58,7 +58,7 @@ The example scripts use the Flex Integration SDK for JavaScript. In
 order for the SDK to be able to authenticate to the Integration API, it
 requires two values: a client ID and a client secret. You can obtain
 both by creating a new
-[Integration API application](/background/applications/) in Flex
+[Integration API application](/concepts-development/applications/) in Flex
 Console.
 
 Log in to your marketplace in

@@ -172,7 +172,7 @@ to the translation files:
 
 - Labels for example filters (categories and amenities) can be found
   from `src/marketplace-custom-config.js` By default,
-  [these filters are not in use](/cookbook-search/change-search-filters-in-ftw/#adding-a-new-search-filter)
+  [these filters are not in use](/howto-search/change-search-filters-in-ftw/#adding-a-new-search-filter)
   since every marketplace has its own extended data and search filters
   for them.
 - [Country Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/countryCodes.js).

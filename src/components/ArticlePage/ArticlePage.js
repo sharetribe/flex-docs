@@ -239,6 +239,7 @@ const ArticlePage = props => {
             />
           </MobileTocWrapper>
           <Markdown htmlAst={htmlAst} />
+
           <NextAndPrevArticles slug={slug} category={category} />
         </MainColumn>
         <SideColumn>

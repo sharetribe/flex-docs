@@ -14,7 +14,7 @@ published: true
 _**NOTE! The current default method for setting commissions has
 deprecated our old commission setting actions. If you are looking for
 the old commissions and monetization background article, it can be found
-[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/background/commissions-and-monetizing-your-platform/).**_
+[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/concepts-pricing-and-commissions/commissions-and-monetizing-your-platform/).**_
 
 ## Introduction
 
@@ -29,11 +29,11 @@ describing different pricing models and the tradeoffs behind different
 options.
 
 As background, familiarizing yourself with
-[line items](/background/pricing/#line-items) and
-[privileged transitions](/background/privileged-transitions/) gives you
+[line items](/concepts-pricing-and-commissions/pricing/#line-items) and
+[privileged transitions](/concepts-transaction-process/privileged-transitions/) gives you
 a good understanding of the concepts discussed in this article. In
 addition, the article that describes
-[payments in Flex](/background/payments-overview/) provides valuable
+[payments in Flex](/concepts-payments/payments-overview/) provides valuable
 information about how the payment flow in Flex works.
 
 Configuring commissions happens with the
@@ -213,7 +213,7 @@ your marketplace and are directly supported by Flex. However, you might
 want to experiment with other monetization models depending on your
 business idea. For example, subscriptions might be a good way of
 monetizing your marketplace. With the
-[Integration API](https://www.sharetribe.com/docs/background/marketplace-api-integration-api/#when-to-use-the-integration-api),
+[Integration API](https://www.sharetribe.com/docs/concepts-api-sdk/marketplace-api-integration-api/#when-to-use-the-integration-api),
 you can integrate a third-party service such as
 [Chargebee](https://www.chargebee.com/) or
 [Stripe billing](https://stripe.com/en-fi/billing) to process

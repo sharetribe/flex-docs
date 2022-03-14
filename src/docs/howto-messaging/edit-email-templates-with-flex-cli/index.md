@@ -17,10 +17,10 @@ email templates.
 This tutorial expects that you have already installed Flex CLI and are
 logged in with your API key. If not, it's recommended to first read the
 tutorial
-[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/).
+[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
 
 We also recommend that you go through the
-[Edit transaction process with Flex CLI](/flex-cli/edit-transaction-process-with-flex-cli/)
+[Edit transaction process with Flex CLI](/howto-transaction-process/edit-transaction-process-with-flex-cli/)
 tutorial to understand process pulling, editing, pushing, and alias
 handling on a general level.
 
@@ -313,7 +313,7 @@ This is the generic workflow to update the notification email contents
 that are part of the transaction process of your marketplace.
 
 With this and the
-[Edit transaction process with Flex CLI](/flex-cli/edit-transaction-process-with-flex-cli/)
+[Edit transaction process with Flex CLI](/howto-transaction-process/edit-transaction-process-with-flex-cli/)
 tutorial, you now know how to change the transaction process and its
 email templates. As a next step, you might want to read the
 [Transaction process format](/references/transaction-process-format/)

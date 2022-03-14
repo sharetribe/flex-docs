@@ -18,7 +18,7 @@ email templates.
 This tutorial expects that you have already installed Flex CLI and are
 logged in with your API key. If not, it's recommended to first read the
 tutorial
-[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/).
+[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
 
 In this tutorial, we will add data schemas for the `category` and
 `amenities` public data fields in listings. New marketplaces don't have
@@ -77,7 +77,7 @@ public data). Also, it's worth noting that the query parameter with a
 `text` schema is `keywords` which also targets the `title` and
 `description` attributes of a listing. This query parameter is only
 supported in listing queries. See
-[Keyword search](/background/how-the-search-works/#keyword-search) for
+[Keyword search](/concepts-listings/how-the-listing-search-works/#keyword-search) for
 more information.
 
 ### Providing multiple query params for a single field
@@ -100,7 +100,7 @@ has_all mathing mode (AND) for multi enums.
 With the `text` type, you provide a search query, so splitting values
 with a comma doesn't make sense. You will just provide a string of text
 as the search query, and the query will be used as described
-[in the keyword search explanation](/background/how-the-search-works/#keyword-search)
+[in the keyword search explanation](/concepts-listings/how-the-listing-search-works/#keyword-search)
 section.
 
 With the `long` type, you can provide minimum and/or maximum values for
@@ -192,7 +192,7 @@ FTW expects those.
 
 For more information, see the following resources:
 
-- [How the search works](/background/how-the-search-works/) background
+- [How the search works](/concepts-listings/how-the-listing-search-works/) background
   article
 - [Extended data reference](/references/extended-data/)
 - API reference for the
@@ -204,5 +204,5 @@ For more information, see the following resources:
 - API reference for the
   [/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
   endpoint in the Integration API
-- [Extend listing data in FTW](/cookbook-data-model/extend-listing-data-in-ftw/)
-- [Change search filters in FTW](/cookbook-search/change-search-filters-in-ftw/)
+- [Extend listing data in FTW](/howto-listing/extend-listing-data-in-ftw/)
+- [Change search filters in FTW](/howto-search/change-search-filters-in-ftw/)

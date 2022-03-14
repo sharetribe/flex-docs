@@ -31,7 +31,7 @@ or
 
 You define the available seats for any given time slot of a listing via
 the
-[availability plan or availability exceptions](https://www.sharetribe.com/docs/background/concepts/#availability-plan--availability-exception)
+[availability plan or availability exceptions](https://www.sharetribe.com/docs/operator-guides/concepts/#availability-plan--availability-exception)
 of a listing. If the number of seats is set to 0, the listing will not
 be available at that time.
 
@@ -102,4 +102,4 @@ same timeframe.
 If you are looking to manage the stock or inventory of a listing, you
 should take a look at Flex’s stock management. You can learn more about
 the feature
-[here](https://www.sharetribe.com/docs/operator-guides/inventory-management/).
+[here](https://www.sharetribe.com/docs/concepts-availability/inventory-management/).

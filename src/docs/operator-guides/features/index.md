@@ -55,7 +55,7 @@ You can store following information about each user:
 
 A listing describes a product or a service that a provider (seller) is
 offering on your marketplace. (see
-[concepts article](/background/concepts/#listing) for more information
+[concepts article](/operator-guides/concepts/#listing) for more information
 on terminology used in Flex).
 
 Here's a list of information you can store about a listing.
@@ -92,7 +92,7 @@ A listing can have several different states:
   published, so the listing is waiting for operator's approval before it
   is published. You can enable or disable the listing approval
   functionality for your marketplace in
-  [Flex CLI](/flex-cli/getting-started-with-flex-cli/#enable-and-disable-listing-approval-functionality).
+  [Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/#enable-and-disable-listing-approval-functionality).
 - **Closed.** The listing used to be published, but has since been
   closed, either by the provider or by the operator. The listing is
   still visible to the provider, but not discoverable via search.
@@ -132,7 +132,7 @@ can set their pricing.
   Parties can negotiate until a consensus is reached.
 - …and a lot more!
 
-[Read more about the Flex pricing engine](/background/pricing/).
+[Read more about the Flex pricing engine](/concepts-pricing-and-commissions/pricing/).
 
 ## Availability management
 
@@ -280,7 +280,7 @@ cases:
   their identity before their first order.
 - ...and a lot more!
 
-[Read more about the Flex transaction engine](/background/transaction-process/).
+[Read more about the Flex transaction engine](/concepts-transaction-process/transaction-process/).
 
 ## Payments
 
@@ -311,7 +311,7 @@ lots of helpful features. Here are some of them:
 - **Storing payment cards and creating delayed charges.** You can store
   a payment card of the customer to make future purchases faster, or use
   the card to create delayed or additional charges.
-  [Read more about using stored payment cards](/background/using-stored-payment-cards/)
+  [Read more about using stored payment cards](/concepts-transaction-process/privileged-transitions/)
 - **Strong Customer Authentication.** European regulation changed in
   2019 to require support for
   [Strong customer authentication](https://stripe.com/en-fi/guides/strong-customer-authentication)
@@ -508,7 +508,7 @@ Here are the features it offers:
 
 - **General settings.** Change things like marketplace name and URL.
 - **Transaction processes.** See a list of your
-  [transaction processes](/background/transaction-process/) and view the
+  [transaction processes](/concepts-transaction-process/transaction-process/) and view the
   details of each process.
 - **Payments.** Add your Stripe keys to be able to accept online
   payments.

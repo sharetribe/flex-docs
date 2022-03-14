@@ -33,7 +33,7 @@ flex-cli process pull --process=cottagedays-daily-booking --alias=release-1 --pa
 
 When the latest version of the transaction process is pulled, we can
 navigate to the
-[_templates_ directory](/flex-cli/edit-email-templates-with-flex-cli/#templates-directory).
+[_templates_ directory](/howto-messaging/edit-email-templates-with-flex-cli/#templates-directory).
 We want to add a new directory for the new notification there. Because
 the new notification will be somewhat similar to the existing
 **new-booking-request** notification, we can use that directory as a
@@ -213,7 +213,7 @@ Now that you have edited the email templates, you need to push a new
 version of your process. If you have done the earlier parts of the
 tutorial this process should be already quite familiar to you. If you
 need more detailed information take a look at the
-[Edit transaction process with Flex CLI tutorial](/flex-cli/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
+[Edit transaction process with Flex CLI tutorial](/howto-transaction-process/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
 
 Push the updated process:
 

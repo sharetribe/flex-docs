@@ -17,9 +17,9 @@ templates.
 
 This tutorial expects that you have already installed Flex CLI and are
 logged in with your API key. It's recommended to first read the tutorial
-[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/).
+[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
 If you haven't read
-[how transaction processes work in Flex](/background/transaction-process/),
+[how transaction processes work in Flex](/concepts-transaction-process/transaction-process/),
 it's a good idea to do that before starting this tutorial.
 
 In this tutorial we extend the marketplace review period. After we've
@@ -277,5 +277,5 @@ reference to read about all the possibilities that transaction process
 engine gives to you.
 
 As a next step, you may also to edit the transaction email templates.
-[Editing email templates with Flex CLI](/flex-cli/edit-email-templates-with-flex-cli/)
+[Editing email templates with Flex CLI](/howto-messaging/edit-email-templates-with-flex-cli/)
 tutorial guides you through this process.

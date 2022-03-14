@@ -26,13 +26,13 @@ These articles will help you get an overview of what is Flex and its
 components and what you need to customize your Flex marketplace.
 
 - Flex Overview:
-  https://www.sharetribe.com/docs/introduction/introducing-flex/
+  https://www.sharetribe.com/docs/introduction-templates/introducing-flex/
 - How to build a marketplace with Flex:
   https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/
 - What development skills are needed to customize Flex:
   https://www.sharetribe.com/docs/introduction/development-skills/
 - Flex Templates for Web (FTW):
-  https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw
+  https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw
 
 ## Flex Template for Web
 
@@ -41,7 +41,7 @@ have made available for you. Though, bear in mind that you don't need to
 use it, if you have different front end plans.
 
 - Getting started with FTW:
-  https://www.sharetribe.com/docs/introduction/getting-started-with-ftw-daily/
+  https://www.sharetribe.com/docs/introduction-getting-started/getting-started-with-ftw-daily/
 - Customization checklist:
   https://www.sharetribe.com/docs/ftw-introduction/customization-checklist/
 
@@ -51,13 +51,13 @@ These articles contain a primer on how to understand and customize your
 transaction process.
 
 - Transaction Process information:
-  https://www.sharetribe.com/docs/background/transaction-process/
+  https://www.sharetribe.com/docs/concepts-transaction-process/transaction-process/
 - Flex CLI:
-  https://www.sharetribe.com/docs/flex-cli/getting-started-with-flex-cli/
+  https://www.sharetribe.com/docs/introduction-getting-started/getting-started-with-flex-cli/
 - Custom Pricing:
-  https://www.sharetribe.com/docs/cookbook-payments/how-to-customize-pricing/
+  https://www.sharetribe.com/docs/howto-payments/how-to-customize-pricing/
 - Time-based bookings:
-  https://www.sharetribe.com/docs/cookbook-transaction-process/enable-time-based-bookings-into-use/
+  https://www.sharetribe.com/docs/howto-transaction-process/enable-time-based-bookings-into-use/
 
 ## Extended data
 
@@ -68,9 +68,9 @@ create filters in your search page.
 - Extended data information:
   https://www.sharetribe.com/docs/references/extended-data/
 - How to extend listing data in FTW:
-  https://www.sharetribe.com/docs/cookbook-data-model/extend-listing-data-in-ftw/
+  https://www.sharetribe.com/docs/howto-listing/extend-listing-data-in-ftw/
 - How to setup search filters in FTW:
-  https://www.sharetribe.com/docs/cookbook-search/change-search-filters-in-ftw/
+  https://www.sharetribe.com/docs/howto-search/change-search-filters-in-ftw/
 
 ## Stripe
 
@@ -86,7 +86,7 @@ it up with Sharetribe Flex.
   countries:
   https://stripe.com/docs/connect/custom-accounts#requirements
 - How to setup and use Stripe in Flex:
-  https://www.sharetribe.com/docs/cookbook-payments/set-up-and-use-stripe/
+  https://www.sharetribe.com/docs/howto-payments/set-up-and-use-stripe/
 
 ## Launch
 

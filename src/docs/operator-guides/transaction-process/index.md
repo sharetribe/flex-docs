@@ -135,7 +135,7 @@ receives an email notification to review the provider.
 
 To review what notifications are sent as part of the Flex default
 process, visit your
-[Flex Console](https://www.sharetribe.com/docs/background/concepts/#console)
+[Flex Console](https://www.sharetribe.com/docs/operator-guides/concepts/#console)
 Build tab. Each included
 [email notification has a template](https://www.sharetribe.com/docs/references/email-templates/#editing-transaction-emails)
 that can be customized using the Flex CLI.
@@ -167,7 +167,7 @@ conjunction with Flex Template for Web, to illustrate this. You’ll see
 how a transaction process state looks for providers and customers in
 Saunatime, a Flex demo marketplace. If you’re not sure what is meant by
 the “Flex Template”, you can read more about it
-[here](https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw).
+[here](https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw).
 
 <txnprocessuxcarousel title="Transaction process and user experience">
 
@@ -190,18 +190,18 @@ If you’re a developer building with Flex, you can build your transaction
 process using the Flex CLI.
 [Here is a guide](https://www.sharetribe.com/docs/tutorial-transaction-process/create-transaction-process/)
 for creating your own transaction process and for
-[getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/).
+[getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
 For more details of the transaction process format, see the
 [Transaction process format](/references/transaction-process-format/)
 reference. To customise the UI of your marketplace to match your process
 changes, see the
-[Change transaction process setup in FTW](/cookbook-transaction-process/change-transaction-process-in-ftw/)
+[Change transaction process setup in FTW](/howto-transaction-process/change-transaction-process-in-ftw/)
 cookbook.
 
 If you’re working with a developer, then you need to communicate how you
 would like transactions to work so your developer can implement the
 necessary steps, transitions, and actions to build your transaction
 process.
-[Our guide for changing your transaction process](https://www.sharetribe.com/docs/operator-guides/change-transaction-process/)
+[Our guide for changing your transaction process](https://www.sharetribe.com/docs/concepts-transaction-process/change-transaction-process/)
 shares a few principles to keep in mind when making changes as a
 non-developer.

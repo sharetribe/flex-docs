@@ -386,7 +386,7 @@ attributes a line total is calculated for each line item. Line totals
 then define the total payin and payout sums of the transaction.
 
 You can read more about line items and pricing from
-[pricing background article](https://www.sharetribe.com/docs/background/pricing/).
+[pricing background article](https://www.sharetribe.com/docs/concepts-pricing-and-commissions/pricing/).
 
 </extraInfo>
 
@@ -455,7 +455,7 @@ Marketplace API in the backend of our client app, we can avoid this
 security risk.
 
 You can read more about privileged transitions from
-[privileged transitions background article](/background/privileged-transitions/).
+[privileged transitions background article](/concepts-transaction-process/privileged-transitions/).
 
 </extraInfo>
 

@@ -711,5 +711,5 @@ const SectionLikes = props => {
 Now while running the event listener script you should have a fully
 functional like button. If you're interested in reading more about
 events, you can read our articles on
-[reacting to events](/cookbook-events/reacting-to-events/) and
-[setting up Zapier](/cookbook-events/set-up-and-use-zapier/).
+[reacting to events](/howto-events/reacting-to-events/) and
+[setting up Zapier](/howto-events/set-up-and-use-zapier/).

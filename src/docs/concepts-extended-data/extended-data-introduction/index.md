@@ -203,7 +203,7 @@ Extended data helps you build the custom search and filtering experience
 your marketplace needs.
 
 Listings can be searched by keyword or location using Flex’s
-[powerful built-in search feature](https://www.sharetribe.com/docs/background/how-the-search-works/).
+[powerful built-in search feature](https://www.sharetribe.com/docs/concepts-listings/how-the-listing-search-works/).
 In addition to this, you can use listing public extended data and
 metadata to create a variety of different types of filters; for example,
 a filter can be a slider with a range of values or a checkbox group. You

@@ -25,7 +25,7 @@ In addition, each user has a page called "payment methods" in their
 account settings. From this page, the user can store a new credit card,
 delete a stored card, or replace a stored card with a new one.
 
-[Learn how storing payment card works in FTW](/cookbook-payments/save-payment-card/)
+[Learn how storing payment card works in FTW](/howto-payments/save-payment-card/)
 
 [Read API documentation on storing credit cards](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer)
 
@@ -49,9 +49,9 @@ later. A typical example could be booking a venue for a wedding. The
 initial booking might be done a year in advance, but the charge might
 happen only a bit before the event, or even after it. \
  \
-It's possible for you to adjust your [transaction process](/background/transaction-process/)
+It's possible for you to adjust your [transaction process](/concepts-transaction-process/transaction-process/)
 to add a transition that attempts to automatically charge the card of the
-customer at a specific point in time. [A separate article](/background/off-session-payments-in-transaction-process/)
+customer at a specific point in time. [A separate article](/concepts-payments/off-session-payments-in-transaction-process/)
 describes how you can build such a process.
 
 **Can I create extra charges to the payment card of the customer?**
@@ -73,7 +73,7 @@ account.
 Also, it's important to remember that if your marketplace is accepting
 payments from European customers, starting from September 14th these
 customer will sometimes need to use
-[Strong Customer Authentication](/background/strong-customer-authentication/)
+[Strong Customer Authentication](/concepts-payments/strong-customer-authentication/)
 to verify credit card purchases. Thus, you can't necessarily create
 additional charges to their card without allowing them to approve the
 charge with Strong Customer Authentication.

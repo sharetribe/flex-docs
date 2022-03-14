@@ -81,7 +81,7 @@ information. You can also export all this information into a CSV file to
 use as you see fit. Perhaps most important of all, you can add and
 modify the extended data of your marketplace elements in the Manage
 section. You can read more about extended data
-[in this article](https://www.sharetribe.com/docs/operator-guides/extended-data-introduction/).
+[in this article](https://www.sharetribe.com/docs/concepts-extended-data/extended-data-introduction/).
 
 ### Build
 

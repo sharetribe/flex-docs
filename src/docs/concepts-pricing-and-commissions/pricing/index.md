@@ -70,7 +70,7 @@ A transaction gets its price from the
 [privileged-set-line-items](/references/transaction-process-actions/#actionprivileged-set-line-items)
 action . The action takes a list of line items as a parameter. Remember,
 that the `privileged-set-line-items` action needs to be placed in
-[a privileged transition](/background/privileged-transitions/).
+[a privileged transition](/concepts-transaction-process/privileged-transitions/).
 
 Every line item has a unit price and one of the following attributes:
 _quantity_ or _percentage_. The quantity attribute can be used to denote

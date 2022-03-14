@@ -57,8 +57,8 @@ keywords match.
 
 In order to take the keyword search into use in FTW, see the cookbooks
 on
-[adding keyword search to the top bar](/cookbook-search/use-keyword-search-in-topbar/)
-and [modifying filters](/cookbook-search/change-search-filters-in-ftw/).
+[adding keyword search to the top bar](/howto-search/use-keyword-search-in-topbar/)
+and [modifying filters](/howto-search/change-search-filters-in-ftw/).
 
 ## Location search
 

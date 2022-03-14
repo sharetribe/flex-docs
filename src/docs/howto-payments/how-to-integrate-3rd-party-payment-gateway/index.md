@@ -709,10 +709,10 @@ payment gateway to each step.
 [giropay]: https://www.giropay.de/en/
 [ideal]: https://www.ideal.nl/en/
 [flex-docs-privileged-transitions-background]:
-  /background/privileged-transitions/
+  /concepts-transaction-process/privileged-transitions/
 [flex-docs-events-reference]: /references/events/
 [flex-docs-reacting-to-events-cookbook]:
-  /cookbook-events/reacting-to-events/
+  /howto-events/reacting-to-events/
 [flex-docs-extended-data-reference]: /references/extended-data/
 [pci-saq-a-pdf]:
   https://www.pcisecuritystandards.org/documents/PCI-DSS-v3_2_1-SAQ-A.pdf

@@ -31,6 +31,6 @@ documentation on the
 
 If you are interested in reading more about the Marketplace and
 Integration API, refer to our background article on
-[Marketplace and Integration API](/background/marketplace-api-integration-api/).
+[Marketplace and Integration API](/concepts-api-sdk/marketplace-api-integration-api/).
 For more information on our Authentication API, refer to our background
-article on the [Authentication API](/background/authentication-api/).
+article on the [Authentication API](/concepts-api-sdk/authentication-api/).

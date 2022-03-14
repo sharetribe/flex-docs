@@ -19,7 +19,7 @@ and email templates.
 This guide expects that you have already installed Flex CLI and are
 logged in with your API key. If not, it's recommended to first read the
 tutorial
-[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/).
+[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
 
 In this guide, we will learn how the events of a marketplace can be
 queried using Flex CLI, how we can inspect events in more detail as well
@@ -435,5 +435,5 @@ For more information about events, see the following resources:
   how events work and how they are defined.
 - [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
   about how to query events via the Integration API.
-- [Reacting to events](/cookbook-events/reacting-to-events/) cookbook
+- [Reacting to events](/howto-events/reacting-to-events/) cookbook
   guide

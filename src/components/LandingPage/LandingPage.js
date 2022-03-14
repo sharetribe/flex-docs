@@ -233,13 +233,13 @@ const LandingPage = props => {
               <UiText id="LandingPage.background.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/background/concepts/">
+              <SectionLink to="/operator-guides/concepts/">
                 <UiText id="LandingPage.background.concepts" />
               </SectionLink>
-              <SectionLink to="/background/features/">
+              <SectionLink to="/operator-guides/features/">
                 <UiText id="LandingPage.background.features" />
               </SectionLink>
-              <SectionLink to="/background/transaction-process/">
+              <SectionLink to="/concepts-transaction-process/transaction-process/">
                 <UiText id="LandingPage.background.transactionProcess" />
               </SectionLink>
             </SectionLinks>
@@ -280,19 +280,19 @@ const LandingPage = props => {
             <SectionLink to="/ftw-introduction/customization-checklist/">
               <UiText id="LandingPage.bestPicks.ftwCustomizationChecklist" />
             </SectionLink>
-            <SectionLink to="/cookbook-data-model/extend-listing-data-in-ftw/">
+            <SectionLink to="/howto-listing/extend-listing-data-in-ftw/">
               <UiText id="LandingPage.bestPicks.extendListingData" />
             </SectionLink>
-            <SectionLink to="/cookbook-payments/how-to-customize-pricing/">
+            <SectionLink to="/howto-payments/how-to-customize-pricing/">
               <UiText id="LandingPage.bestPicks.customizePricing" />
             </SectionLink>
-            <SectionLink to="/cookbook-transaction-process/change-transaction-process-in-ftw/">
+            <SectionLink to="/howto-transaction-process/change-transaction-process-in-ftw/">
               <UiText id="LandingPage.bestPicks.changeTransactionProcess" />
             </SectionLink>
-            <SectionLink to="/flex-cli/getting-started-with-flex-cli/">
+            <SectionLink to="/introduction-getting-started/getting-started-with-flex-cli/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFlexCLi" />
             </SectionLink>
-            <SectionLink to="/integrations/getting-started-with-integration-api/">
+            <SectionLink to="/introduction-getting-started/getting-started-with-integration-api/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithIntegrationsAPI" />
             </SectionLink>
 

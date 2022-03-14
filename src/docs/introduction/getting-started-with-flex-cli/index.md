@@ -143,7 +143,7 @@ CLI. We also learned how to disable and enable the listing approval
 functionality for our marketplace.
 
 Now that we know how to list processes, the next this is to
-[make a small change to the existing process](/flex-cli/edit-transaction-process-with-flex-cli/).
+[make a small change to the existing process](/howto-transaction-process/edit-transaction-process-with-flex-cli/).
 
 ## Troubleshooting
 

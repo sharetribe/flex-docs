@@ -90,7 +90,7 @@ FTW.
   - FTW-daily and FTW-hourly has it in _src/_ directory and
   - FTW-product has it inside _src/routing/_ directory
 - **Update transaction email templates**. For more information, see
-  [Edit email templates with Flex CLI](/flex-cli/edit-email-templates-with-flex-cli/)
+  [Edit email templates with Flex CLI](/howto-messaging/edit-email-templates-with-flex-cli/)
   tutorial and [Email templates](/references/email-templates/) reference
   article.
 - **Update unit type for order line-items**, if order's main unit
