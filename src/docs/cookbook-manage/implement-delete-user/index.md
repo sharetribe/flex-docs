@@ -7,7 +7,7 @@ ingress:
   This article guides you to implement a feature where a user can delete
   their own profile through the FTW template Profile page. TODO - update
   "published"!
-published: false
+published: true
 ---
 
 Starting from XXXX-XX, Sharetribe Flex Marketplace API has an endpoint
