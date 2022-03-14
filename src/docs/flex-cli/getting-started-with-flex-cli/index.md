@@ -134,24 +134,6 @@ flex-cli process list -m my-test-marketplace
 This command shows you a list of transaction processes in your
 marketplace.
 
-## Enable and disable listing approval functionality
-
-Flex has a functionality to require operator approval for listings
-before publishing them. This listing approval feature can be disabled
-and enabled using Flex CLI.
-
-```bash
-#To see whether your marketplace requires listings to be approved
-flex-cli listing-approval -m [your-marketplace]
-
-#To enable listing approval for your marketplace
-flex-cli listing-approval enable -m [your-marketplace]
-
-#To disable listing approval for your marketplace
-flex-cli listing-approval disable -m [your-marketplace]
-
-```
-
 ## Summary
 
 In this tutorial, we installed Flex CLI, logged in using an API key and
