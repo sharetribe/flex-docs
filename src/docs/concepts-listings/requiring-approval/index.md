@@ -2,7 +2,7 @@
 title: Requiring approval for new listings
 slug: requiring-approval
 updated: 2022-03-07
-category: background
+category: concepts-listings
 ingress:
   Flex allows you to require operator approval for new listings before
   they are published. This article explains the feature and describes
