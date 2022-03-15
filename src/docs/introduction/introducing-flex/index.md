@@ -35,7 +35,7 @@ Whether a web-based UI, a mobile application, or both, the user
 interface is the face of your solution. That's why you have total
 control over it.
 
-[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
+[Flex Templates for Web](/introduction-getting-started/getting-started-with-ftw-daily/)
 (FTW) are web templates that implement a full-feature marketplace
 experiences powered by Flex. You can choose between three templates:
 

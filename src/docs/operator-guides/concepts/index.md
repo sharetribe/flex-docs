@@ -38,7 +38,7 @@ Currently we have three different template options:
   "Sneakertime" - a product marketplace with stock management
 
 Information about using Flex Template for Web can be found in the
-[Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
+[Getting started with FTW](/introduction-getting-started/getting-started-with-ftw-daily/)
 tutorial.
 
 ### Flex CLI

@@ -33,9 +33,9 @@ from the main (upstream) repository to your custom repository.
 If you are new to Sharetribe Flex or FTW, we recommend going through
 couple of articles first:
 
-- [Introducing Flex](/introduction/introducing-flex/)
+- [Introducing Flex](/introduction-templates/introducing-flex/)
 - [What development skills are needed?](/introduction/development-skills/)
-- [Getting started](/introduction/getting-started-with-ftw-daily/)
+- [Getting started](/introduction-getting-started/getting-started-with-ftw-daily/)
 
 The [Tutorial introduction](/tutorial/introduction/#prerequisites) will
 also walk you through creating a GitHub repository.

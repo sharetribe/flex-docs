@@ -22,7 +22,7 @@ the following stages:
 4. Going live
 
 In this article, it is assumed that you've already read
-[Introducing Flex](/introduction/introducing-flex/), which explains the
+[Introducing Flex](/introduction-templates/introducing-flex/), which explains the
 basic concepts of Flex. If you haven't done that yet, it's a good idea
 to do that now.
 
@@ -52,7 +52,7 @@ website built with Flex. Currently we have three template options:
 
 Setting up FTW should take no more than 5 minutes. The process is
 technical but doable even without development experience.
-[The guide for getting started with FTW](/introduction/getting-started-with-ftw-daily/)
+[The guide for getting started with FTW](/introduction-getting-started/getting-started-with-ftw-daily/)
 will give you step by step instructions for doing it. If you encounter
 any problems with the setup,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com).

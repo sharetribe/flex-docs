@@ -200,10 +200,10 @@ const LandingPage = props => {
               <UiText id="LandingPage.introduction.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/introduction/introducing-flex/">
+              <SectionLink to="/introduction-templates/introducing-flex/">
                 <UiText id="LandingPage.introduction.introductionFlex" />
               </SectionLink>
-              <SectionLink to="/introduction/getting-started-with-ftw-daily/">
+              <SectionLink to="/introduction-getting-started/getting-started-with-ftw-daily/">
                 <UiText id="LandingPage.introduction.gettingStarted" />
               </SectionLink>
             </SectionLinks>
