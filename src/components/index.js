@@ -25,6 +25,7 @@ export { default as UiText } from './UiText';
 export { default as GlobalStyle } from './GlobalStyle';
 export { default as BaselineDevGrid } from './BaselineDevGrid';
 export { default as ExtraInfo } from './ExtraInfo';
+export { default as Video } from './Video';
 export { Carousel, CarouselSlide } from './Carousel';
 export { default as CookieConsent } from './CookieConsent';
 
