@@ -11,9 +11,9 @@ const sortingArray = findSortingArrays(category, siteStructure);
 const query = graphql`
   query ConceptsIndexQuery {
     allMarkdownRemark(
-      filter: { 
-        frontmatter: { 
-          category: { 
+      filter: {
+        frontmatter: {
+          category: {
             in: [
               "concepts"
               "concepts-users-and-authentication"
@@ -25,9 +25,9 @@ const query = graphql`
               "concepts-development"
               "concepts-extended-data"
               "concepts-api-sdk"
-            ] 
-          } 
-        } 
+            ]
+          }
+        }
       }
       sort: { fields: fileAbsolutePath, order: ASC }
     ) {

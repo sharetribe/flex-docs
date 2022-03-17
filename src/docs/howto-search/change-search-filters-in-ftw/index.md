@@ -54,7 +54,8 @@ correlates with the search string. Currently, there is no decay function
 that would map keyword match correlation with distance to `origin` and
 therefore, the _origin_ param can't be used at the same time as the
 _keyword_. You can read more about how the keyword search works from
-related [background article](/concepts-listings/how-the-listing-search-works/).
+related
+[background article](/concepts-listings/how-the-listing-search-works/).
 
 ![Desktop filters](./keyword-search.png)
 

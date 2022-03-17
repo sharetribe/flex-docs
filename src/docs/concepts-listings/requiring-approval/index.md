@@ -61,15 +61,22 @@ button to approve the listing.
 
 ## Approving listings through Integration API
 
-In addition to Flex Console, an operator can also create an integration to approve listings through the [Integration API](/introduction-getting-started/getting-started-with-integration-api/) through the endpoint [integration_api/listings/approve](https://www.sharetribe.com/api-reference/integration.html#approve-listing). 
+In addition to Flex Console, an operator can also create an integration
+to approve listings through the
+[Integration API](/introduction-getting-started/getting-started-with-integration-api/)
+through the endpoint
+[integration_api/listings/approve](https://www.sharetribe.com/api-reference/integration.html#approve-listing).
 
-If, for instance, your marketplace allows non-premium users to post two listings and premium users to post five listings, you could create an Integration API script that automatically approves the listing if the user has unused listing quota.
+If, for instance, your marketplace allows non-premium users to post two
+listings and premium users to post five listings, you could create an
+Integration API script that automatically approves the listing if the
+user has unused listing quota.
 
 ## Enabling and disabling listing approval in Flex CLI
 
 In addition to the Flex Console, you can also use
-[Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/) to enable and
-disable listing approval on your marketplace.
+[Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)
+to enable and disable listing approval on your marketplace.
 
 ```bash
 #To see whether your marketplace requires listings to be approved
@@ -101,4 +108,3 @@ pending approval are shown with an overlay indicating the listing's
 state.
 
 ![Listing card overlay](pending-approval-your-listings.png 'Listings pending approval are shown with an informative overlay')
-

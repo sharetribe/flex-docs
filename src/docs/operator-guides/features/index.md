@@ -55,8 +55,8 @@ You can store following information about each user:
 
 A listing describes a product or a service that a provider (seller) is
 offering on your marketplace. (see
-[concepts article](/operator-guides/concepts/#listing) for more information
-on terminology used in Flex).
+[concepts article](/operator-guides/concepts/#listing) for more
+information on terminology used in Flex).
 
 Here's a list of information you can store about a listing.
 
@@ -508,8 +508,8 @@ Here are the features it offers:
 
 - **General settings.** Change things like marketplace name and URL.
 - **Transaction processes.** See a list of your
-  [transaction processes](/concepts-transaction-process/transaction-process/) and view the
-  details of each process.
+  [transaction processes](/concepts-transaction-process/transaction-process/)
+  and view the details of each process.
 - **Payments.** Add your Stripe keys to be able to accept online
   payments.
 - **Built-in email templates.** Edit and preview the contents of your

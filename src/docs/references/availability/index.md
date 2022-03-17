@@ -30,9 +30,9 @@ API endpoint returns availability information for future dates, taking
 into account the listing's availability plan, exceptions and bookings.
 
 All bookings are created through transactions, governed by your
-[transaction process](/concepts-transaction-process/transaction-process/). The transaction
-process ensures that bookings are only created for available time
-ranges.
+[transaction process](/concepts-transaction-process/transaction-process/).
+The transaction process ensures that bookings are only created for
+available time ranges.
 
 ## Seats
 

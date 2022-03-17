@@ -24,8 +24,8 @@ Customer Authentication (SCA) by using frictionless
 Before starting to read this article, you probably want to get familiar
 with
 [Strong Customer Authentication](/concepts-payments/strong-customer-authentication/)
-and [how PaymentIntent flow works](/concepts-payments/payment-intents/) by
-reading related background articles.
+and [how PaymentIntent flow works](/concepts-payments/payment-intents/)
+by reading related background articles.
 
 > Note: Taking Stripe PaymentIntent flow into use, is a big change for
 > CheckoutPage and includes process change. You should carefully check

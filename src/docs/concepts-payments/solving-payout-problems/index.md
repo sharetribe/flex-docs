@@ -69,7 +69,8 @@ as follows.
    yet have access to the money. It stays in Stripe and is earmarked to
    be paid to the provider. In the default processes this happens when
    the provider accepts a booking request. See also the background
-   article on [PaymentIntents in Flex](/concepts-payments/payment-intents/).
+   article on
+   [PaymentIntents in Flex](/concepts-payments/payment-intents/).
 1. **Pay commissions** Once a charge is captured and the money is in the
    provider's connected account, commissions are moved to the
    marketplaces Stripe account (the platform account). In our case both

@@ -13,10 +13,11 @@ published: true
 ## Create a marketplace environment
 
 Flex Templates for Web (FTW) are marketplace web applications built on
-top of the [Marketplace API](/operator-guides/concepts/#marketplace-api).
-While you can create a marketplace client application from scratch using
-just the API, it requires a lot of effort and we recommend that you use
-a template as a starting point for customizations.
+top of the
+[Marketplace API](/operator-guides/concepts/#marketplace-api). While you
+can create a marketplace client application from scratch using just the
+API, it requires a lot of effort and we recommend that you use a
+template as a starting point for customizations.
 
 To use the Marketplace API, you will need a client ID. You can obtain
 one by creating a new Flex marketplace at
@@ -54,8 +55,9 @@ choose from three templates:
   "Sneakertime" - a product marketplace with stock management.
 
 > **Note:** By default your Flex marketplace comes with day-based
-> [transaction process](/concepts-transaction-process/transaction-process/). If you want
-> to start working with FTW-hourly, you need to change to the
+> [transaction process](/concepts-transaction-process/transaction-process/).
+> If you want to start working with FTW-hourly, you need to change to
+> the
 > [time-based process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-hourly-default-process).
 > See
 > [getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)

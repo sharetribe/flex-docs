@@ -41,7 +41,6 @@ const sortingArrayTutorialTransactionProcess = [
   'add-new-email-notification',
 ];
 
-
 const sortingArrayReferences = [
   'api',
   'js-sdk',
@@ -67,8 +66,8 @@ const sortingArrayPaymentCookbooks = [
 const sortingArrayTransactionProcess = [
   'transaction-process',
   'privileged-transitions',
-  'change-transaction-process'
-]
+  'change-transaction-process',
+];
 
 const sortingArrayPayments = [
   'payments-overview',
@@ -77,8 +76,8 @@ const sortingArrayPayments = [
   'off-session-payments-in-transaction-process',
   'payment-intents',
   'solving-payout-problems',
-  'strong-customer-authentication'
-]
+  'strong-customer-authentication',
+];
 
 exports.siteStructure = [
   {
@@ -88,7 +87,7 @@ exports.siteStructure = [
     subcategories: [
       { id: 'introduction-getting-started' },
       { id: 'introduction-templates' },
-    ]
+    ],
   },
   {
     id: 'tutorial',
@@ -118,18 +117,17 @@ exports.siteStructure = [
     subcategories: [
       { id: 'concepts-users-and-authentication' },
       { id: 'concepts-listings' },
-      { id: 'concepts-transaction-process',
+      {
+        id: 'concepts-transaction-process',
         sortingArray: sortingArrayTransactionProcess,
       },
-      { id: 'concepts-payments',
-        sortingArray: sortingArrayPayments,
-      },
+      { id: 'concepts-payments', sortingArray: sortingArrayPayments },
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
       { id: 'concepts-development' },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },
-    ]
+    ],
     // sortingArray: sortingArrayConcepts,
   },
 

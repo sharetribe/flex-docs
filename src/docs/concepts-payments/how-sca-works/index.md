@@ -20,8 +20,9 @@ by an additional security layer called
 means that an online payment has to be verified via a customer’s online
 bank or mobile verification when conducting the payment.
 
-The default [transaction process](/concepts-transaction-process/transaction-process/) of
-Sharetribe Flex and the Flex Templates for Web (
+The default
+[transaction process](/concepts-transaction-process/transaction-process/)
+of Sharetribe Flex and the Flex Templates for Web (
 [FTW daily](https://github.com/sharetribe/ftw-daily),
 [FTW hourly](https://github.com/sharetribe/ftw-hourly),
 [FTW product](https://github.com/sharetribe/ftw-product) ) offer

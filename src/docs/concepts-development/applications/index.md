@@ -14,8 +14,9 @@ In Flex, accessing the
 starts with creating an
 [_application_](https://flex-console.sharetribe.com/applications). Each
 application has the necessary credentials (client ID and optional client
-secret) that are used to [authenticate](/concepts-api-sdk/authentication-api/)
-your application to the Flex APIs.
+secret) that are used to
+[authenticate](/concepts-api-sdk/authentication-api/) your application
+to the Flex APIs.
 
 Applications come in two types: Marketplace API applications and
 Integration API applications. Marketplace API applications have only a

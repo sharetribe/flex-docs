@@ -61,7 +61,8 @@ that is easily customizable, so front-end changes are quick and
 cost-effective to make.
 
 Secondly, the back end is built for flexibility from the ground up. For
-example, the [transaction processes](/concepts-transaction-process/transaction-process/)
+example, the
+[transaction processes](/concepts-transaction-process/transaction-process/)
 have been designed so that it is very quick and easy to adjust them. You
 can even create a completely new transaction process without coding
 anything.

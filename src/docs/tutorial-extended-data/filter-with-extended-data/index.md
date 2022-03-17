@@ -134,8 +134,8 @@ you could check to read more about Extended data:
 
 - [Extended data](/references/extended-data/)
 - [Manage search schemas with Flex CLI](/howto-search/manage-search-schemas-with-flex-cli/)
-- [Extend listings](/howto-listing/extend-listing-data-in-ftw/)
-  with your own data.
+- [Extend listings](/howto-listing/extend-listing-data-in-ftw/) with
+  your own data.
 - [Search filters in FTW](/howto-search/change-search-filters-in-ftw/)
 
 ## What you should do next?

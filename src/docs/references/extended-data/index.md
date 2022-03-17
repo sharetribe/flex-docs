@@ -84,10 +84,11 @@ data possible via some API endpoints. For instance
 supports querying listings by public data or metadata.
 
 Search schemas can be managed with
-[Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/). With the CLI, you
-can list, set and unset search schemas for listing's public data and
-metadata as well as for user profile's metadata, private, protected and
-public data. The commands to manage search schemas are:
+[Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
+With the CLI, you can list, set and unset search schemas for listing's
+public data and metadata as well as for user profile's metadata,
+private, protected and public data. The commands to manage search
+schemas are:
 
 - `flex-cli search` List all defined data schemas
 - `flex-cli search set` Set (create or update) data schema

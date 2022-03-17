@@ -86,11 +86,11 @@ publicData: {
 ```
 
 Flex pricing uses
-[privileged transitions](/concepts-transaction-process/privileged-transitions/) to ensure
-flexible pricing models while keeping control of the pricing logic in a
-secure environment. Transitioning requests of privileged transitions are
-made from the server-side. Thus we'll need to update the pricing logic
-in the `/server/api-util/lineItems.js` file:
+[privileged transitions](/concepts-transaction-process/privileged-transitions/)
+to ensure flexible pricing models while keeping control of the pricing
+logic in a secure environment. Transitioning requests of privileged
+transitions are made from the server-side. Thus we'll need to update the
+pricing logic in the `/server/api-util/lineItems.js` file:
 
 ```shell
 └── server

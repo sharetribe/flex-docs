@@ -78,12 +78,12 @@ visit the [API reference documentation](/concepts-api-sdk/api/).
 
 ### Flex JavaScript SDK
 
-[The Flex JavaScript SDK](/concepts-api-sdk/js-sdk/) is a small JavaScript
-library that helps you with integrating the Marketplace API. It handles
-tasks like authentication and session management and makes it easy to
-use correct data types with the API. Using the Flex JS SDK is not
-required, but if you are working with JavaScript, we strongly encourage
-you to have a look.
+[The Flex JavaScript SDK](/concepts-api-sdk/js-sdk/) is a small
+JavaScript library that helps you with integrating the Marketplace API.
+It handles tasks like authentication and session management and makes it
+easy to use correct data types with the API. Using the Flex JS SDK is
+not required, but if you are working with JavaScript, we strongly
+encourage you to have a look.
 
 ### Console
 

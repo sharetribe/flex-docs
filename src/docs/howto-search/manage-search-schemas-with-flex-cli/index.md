@@ -77,8 +77,8 @@ public data). Also, it's worth noting that the query parameter with a
 `text` schema is `keywords` which also targets the `title` and
 `description` attributes of a listing. This query parameter is only
 supported in listing queries. See
-[Keyword search](/concepts-listings/how-the-listing-search-works/#keyword-search) for
-more information.
+[Keyword search](/concepts-listings/how-the-listing-search-works/#keyword-search)
+for more information.
 
 ### Providing multiple query params for a single field
 
@@ -192,8 +192,8 @@ FTW expects those.
 
 For more information, see the following resources:
 
-- [How the search works](/concepts-listings/how-the-listing-search-works/) background
-  article
+- [How the search works](/concepts-listings/how-the-listing-search-works/)
+  background article
 - [Extended data reference](/references/extended-data/)
 - API reference for the
   [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)

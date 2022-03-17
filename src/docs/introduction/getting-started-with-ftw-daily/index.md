@@ -11,10 +11,11 @@ published: true
 ---
 
 Flex Templates for Web (FTW) are marketplace web applications built on
-top of the [Marketplace API](/operator-guides/concepts/#marketplace-api).
-While you can create a marketplace purely using just the API, it
-requires a significant amount of effort (both money and time) and we
-recommened using the template as a starting point for customizations.
+top of the
+[Marketplace API](/operator-guides/concepts/#marketplace-api). While you
+can create a marketplace purely using just the API, it requires a
+significant amount of effort (both money and time) and we recommened
+using the template as a starting point for customizations.
 
 FTW-daily is built with [React](https://reactjs.org/),
 [Redux](https://redux.js.org/), and
