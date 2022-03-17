@@ -12,7 +12,7 @@ const query = graphql`
   query BackgroundIndexQuery {
     allMarkdownRemark(
       filter: { frontmatter: { category: { in: ["background"] } } }
-      sort: { fields: fileAbsolutePath, order: ASC }
+      sort: { fields: [frontmatter___category, frontmatter___slug], order: [ASC, ASC] }
     ) {
       edges {
         node {

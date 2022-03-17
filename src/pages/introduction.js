@@ -12,7 +12,7 @@ const query = graphql`
   query IntroductionIndexQuery {
     allMarkdownRemark(
       filter: { frontmatter: { category: { in: ["introduction"] } } }
-      sort: { fields: fileAbsolutePath, order: ASC }
+      sort: { fields: [frontmatter___category, frontmatter___slug], order: [ASC, ASC] }
     ) {
       edges {
         node {

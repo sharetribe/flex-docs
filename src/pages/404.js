@@ -2,6 +2,7 @@ import React from 'react';
 
 import { NotFoundPage } from '../components';
 
-export default () => {
+const Page404 = () => {
   return <NotFoundPage />;
 };
+export default Page404;

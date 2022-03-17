@@ -61,6 +61,9 @@
 /docs/background/custom-pricing/ /docs/background/pricing/
 /docs/cookbook-payments/customize-pricing/ /docs/cookbook-payments/how-to-customize-pricing/
 
+# New Gatsby update changed sitemap location
+/docs/sitemap.xml /docs/sitemap/sitemap-index.xml 
+
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
 /docs/*  /docs/404  404
