@@ -229,7 +229,7 @@ const ArticlePage = props => {
           <ArticleIngress>{ingress}</ArticleIngress>
           <Info frontmatter={frontmatter} />
           <MobileTocWrapper>
-            <ContentTocHeader as="h2">
+            <ContentTocHeader>
               <UiText id="ArticlePage.tableOfContents" />
             </ContentTocHeader>
             <MobileToc
