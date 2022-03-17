@@ -221,6 +221,29 @@ dynamic.
 
 ---
 
+## Videos
+
+Videos can be placed in the article directory and embedded using the
+`<video>` tags. Use an online converter and include the video as an
+.mp4, .ogg and .webm for optimal cross-browser support. The HTML5 video
+tag supports the .mp4, .ogg and .webm media types. Read more about video
+formats and cross-browser support
+[here](https://www.w3schools.com/html/html5_video.asp).
+
+```
+<video>
+  <source src='sample.mp4' type='video/mp4'>
+  <source src='sample.ogg' type='video/ogg'>
+  <source src='sample.webm' type='video/webm'>
+</video>
+```
+
+The relative path of the video should be provided for `src` attribute in
+the `<source>` tag. It is important to define the video `type` in each
+source tag.
+
+---
+
 ## Tables
 
 Tables should not be usually used since they don't work well on mobile.
