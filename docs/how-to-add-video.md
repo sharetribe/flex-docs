@@ -38,8 +38,8 @@ You can add the video to the .md file using the following syntax:
 
 ```
 <video>
-    <source src='output.mp4' type='video/mp4'>
-    <source src='output.webm' type='video/webm'>
-    <source src='output.ogv' type='video/ogg'>
+    <source src='./output.mp4' type='video/mp4'>
+    <source src='./output.webm' type='video/webm'>
+    <source src='./output.ogv' type='video/ogg'>
 </video>
 ```
