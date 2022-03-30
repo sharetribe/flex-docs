@@ -232,9 +232,9 @@ formats and cross-browser support
 
 ```
 <video>
-  <source src='sample.mp4' type='video/mp4'>
-  <source src='sample.ogg' type='video/ogg'>
-  <source src='sample.webm' type='video/webm'>
+  <source src='./sample.mp4' type='video/mp4'>
+  <source src='./sample.ogg' type='video/ogg'>
+  <source src='./sample.webm' type='video/webm'>
 </video>
 ```
 
