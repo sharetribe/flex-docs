@@ -1,5 +1,5 @@
 ---
-title: Getting started with FTW-daily
+title: Getting started with Flex Template for Web
 slug: getting-started-with-ftw-daily
 updated: 2021-12-14
 category: introduction-getting-started

@@ -13,6 +13,12 @@ const sortingArrayIntroduction = [
   'development-skills',
 ];
 
+const sortingArrayIntroductionGettingStarted = [
+  'getting-started-with-ftw-daily',
+  'getting-started-with-flex-cli',
+  'getting-started-with-integration-api'
+];
+
 // Arrange tutorial articles according to this configuration.
 // This sorting order is used to provide next-page link
 // for the listed articles.
@@ -85,7 +91,9 @@ exports.siteStructure = [
     isOpen: false,
     sortingArray: sortingArrayIntroduction,
     subcategories: [
-      { id: 'introduction-getting-started' },
+      { id: 'introduction-getting-started',
+        sortingArray: sortingArrayIntroductionGettingStarted
+      },
       { id: 'introduction-templates' },
     ],
   },

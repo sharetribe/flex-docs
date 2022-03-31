@@ -4,7 +4,7 @@ title:
   framework
 slug: stripe-provider-onboarding-and-capabilities
 updated: 2019-12-20
-category: background
+category: operator-guides
 ingress:
   Capabilities framework offers tools to manage regulatory aspects of
   provider onboarding. This article outlines mandatory changes to the
