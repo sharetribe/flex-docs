@@ -5,7 +5,7 @@ import { dev, siteStructure } from '../config';
 import { findSortingArrays } from '../util/navigation';
 import { ArticleIndexPage } from '../components';
 
-const category = 'howto';
+const category = 'how-to';
 const sortingArray = findSortingArrays(category, siteStructure);
 
 const query = graphql`
@@ -15,17 +15,17 @@ const query = graphql`
         frontmatter: {
           category: {
             in: [
-              "howto"
-              "howto-users-and-authentication"
-              "howto-listing"
-              "howto-transaction-process"
-              "howto-payments"
-              "howto-migrations"
-              "howto-messaging"
-              "howto-design"
-              "howto-events"
-              "howto-search"
-              "howto-manage"
+              "how-to"
+              "how-to-users-and-authentication"
+              "how-to-listing"
+              "how-to-transaction-process"
+              "how-to-payments"
+              "how-to-migrations"
+              "how-to-messaging"
+              "how-to-design"
+              "how-to-events"
+              "how-to-search"
+              "how-to-manage"
             ]
           }
         }

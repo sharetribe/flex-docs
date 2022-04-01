@@ -200,10 +200,10 @@ const LandingPage = props => {
               <UiText id="LandingPage.introduction.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/introduction-templates/introducing-flex/">
+              <SectionLink to="/introduction/introducing-flex/">
                 <UiText id="LandingPage.introduction.introductionFlex" />
               </SectionLink>
-              <SectionLink to="/introduction-getting-started/getting-started-with-ftw-daily/">
+              <SectionLink to="/introduction/getting-started-with-ftw-daily/">
                 <UiText id="LandingPage.introduction.gettingStarted" />
               </SectionLink>
             </SectionLinks>
@@ -239,7 +239,7 @@ const LandingPage = props => {
               <SectionLink to="/operator-guides/features/">
                 <UiText id="LandingPage.background.features" />
               </SectionLink>
-              <SectionLink to="/concepts-transaction-process/transaction-process/">
+              <SectionLink to="/concepts/transaction-process/">
                 <UiText id="LandingPage.background.transactionProcess" />
               </SectionLink>
             </SectionLinks>
@@ -280,19 +280,19 @@ const LandingPage = props => {
             <SectionLink to="/ftw-introduction/customization-checklist/">
               <UiText id="LandingPage.bestPicks.ftwCustomizationChecklist" />
             </SectionLink>
-            <SectionLink to="/howto-listing/extend-listing-data-in-ftw/">
+            <SectionLink to="/how-to/extend-listing-data-in-ftw/">
               <UiText id="LandingPage.bestPicks.extendListingData" />
             </SectionLink>
-            <SectionLink to="/howto-payments/how-to-customize-pricing/">
+            <SectionLink to="/how-to/how-to-customize-pricing/">
               <UiText id="LandingPage.bestPicks.customizePricing" />
             </SectionLink>
-            <SectionLink to="/howto-transaction-process/change-transaction-process-in-ftw/">
+            <SectionLink to="/how-to/change-transaction-process-in-ftw/">
               <UiText id="LandingPage.bestPicks.changeTransactionProcess" />
             </SectionLink>
-            <SectionLink to="/introduction-getting-started/getting-started-with-flex-cli/">
+            <SectionLink to="/introduction/getting-started-with-flex-cli/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFlexCLi" />
             </SectionLink>
-            <SectionLink to="/introduction-getting-started/getting-started-with-integration-api/">
+            <SectionLink to="/introduction/getting-started-with-integration-api/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithIntegrationsAPI" />
             </SectionLink>
 
