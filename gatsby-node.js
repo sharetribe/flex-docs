@@ -114,6 +114,7 @@ const createArticle = (createPage, edge) => {
       )}`
     );
   }
+  console.log(fileAbsolutePath)
   if (!dev && !published) {
     console.log(`Ignoring private article: ${fileAbsolutePath}`);
     return Promise.resolve(null);

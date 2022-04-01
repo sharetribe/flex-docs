@@ -140,7 +140,7 @@ exports.siteStructure = [
   },
 
   {
-    id: 'howto',
+    id: 'how-to',
     isOpen: false,
     subcategories: [
       { id: 'howto-users-and-authentication' },
