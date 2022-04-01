@@ -17,6 +17,31 @@ const flattenSubcategories = ({ id, subcategories = [] }) => {
   return subcategories.reduce(subcategoryReducer, [id]);
 };
 
+const findParentCategories = categoryId => {
+  const find = (subStructure, idToFind) => {
+    const { subcategories = [], id } = subStructure;
+    let result;
+
+    if (id === idToFind) return [id];
+
+    const categoryContainsId = subcategories.some(c => {
+      result = find(c, idToFind);
+      return result.length > 0;
+    });
+
+    return categoryContainsId ? [...result, id] : [];
+  };
+
+  return find({ id: null, subcategories: siteStructure }, categoryId).filter(
+    c => c !== null
+  );
+};
+
+const findMainCategory = category => {
+  const path = findParentCategories(category) || [];
+  return path.length > 0 ? path[path.length - 1] : null;
+};
+
 // Netlify didn't know about Array.prototype.flat()
 const flatten = (array, depth = 1) => {
   const f = (acc, cur) => {
@@ -64,7 +89,9 @@ exports.onCreateNode = ({ node, getNode }) => {
 
 const createArticle = (createPage, edge) => {
   const { fileAbsolutePath, frontmatter } = edge.node;
+
   const { title, slug, updated, category, ingress, published } = frontmatter;
+  const parent = findMainCategory(category);
   if (!title) {
     throw new Error(`title missing from file: ${fileAbsolutePath}`);
   }
@@ -92,7 +119,7 @@ const createArticle = (createPage, edge) => {
     return Promise.resolve(null);
   }
   return createPage({
-    path: `${category}/${slug}/`,
+    path: `${parent}/${slug}/`,
     component: path.resolve(`./src/templates/ArticlePageTemplate.js`),
 
     // Context will be exposed as variables in the GraphQL query, e.g. $category

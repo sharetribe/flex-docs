@@ -42,24 +42,25 @@ const nextAndPrev = (slug, category, siteStructure) => {
 };
 
 const nextAndPrevArticles = props => {
-  const { slug, category, ...rest } = props;
+  const { slug, category, mainCategory, ...rest } = props;
   const { nextArticleSlug, prevArticleSlug } = nextAndPrev(
     slug,
     category,
     siteStructure
   );
+  
 
   return prevArticleSlug || nextArticleSlug ? (
     <Pagination {...rest}>
       {prevArticleSlug ? (
-        <Prev to={`/${category}/${prevArticleSlug}/`}>
+        <Prev to={`/${mainCategory}/${prevArticleSlug}/`}>
           <UiText id="ArticlePage.previous" />
         </Prev>
       ) : (
         <span />
       )}
       {nextArticleSlug ? (
-        <Next to={`/${category}/${nextArticleSlug}/`}>
+        <Next to={`/${mainCategory}/${nextArticleSlug}/`}>
           <UiText id="ArticlePage.next" />
         </Next>
       ) : (
