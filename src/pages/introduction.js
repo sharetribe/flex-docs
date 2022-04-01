@@ -11,18 +11,8 @@ const sortingArray = findSortingArrays(category, siteStructure);
 const query = graphql`
   query IntroductionIndexQuery {
     allMarkdownRemark(
-      filter: {
-        frontmatter: {
-          category: {
-            in: [
-              "introduction"
-              "introduction-getting-started"
-              "introduction-templates"
-            ]
-          }
-        }
-      }
-      sort: { fields: fileAbsolutePath, order: ASC }
+      filter: { frontmatter: { category: { in: ["introduction"] } } }
+      sort: { fields: [frontmatter___category, frontmatter___slug], order: [ASC, ASC] }
     ) {
       edges {
         node {

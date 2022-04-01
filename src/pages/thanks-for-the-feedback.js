@@ -8,6 +8,7 @@ import { ThanksForTheFeedbackPage } from '../components';
  *
  * NOTE: Do not change the page URL!
  */
-export default () => {
+const FeedbackFeedback = () => {
   return <ThanksForTheFeedbackPage />;
 };
+export default FeedbackFeedback;

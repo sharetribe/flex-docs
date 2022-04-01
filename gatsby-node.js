@@ -91,7 +91,7 @@ const createArticle = (createPage, edge) => {
   const { fileAbsolutePath, frontmatter } = edge.node;
 
   const { title, slug, updated, category, ingress, published } = frontmatter;
-  const parent = findMainCategory(category);
+  const parent = findMainCategory(category) || category;
   if (!title) {
     throw new Error(`title missing from file: ${fileAbsolutePath}`);
   }

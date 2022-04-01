@@ -111,6 +111,7 @@ module.exports = {
               backgroundColor: 'transparent',
             },
           },
+          'gatsby-remark-copy-linked-files',
           'gatsby-remark-autolink-headers',
           {
             resolve: 'gatsby-remark-prismjs',
@@ -149,25 +150,35 @@ module.exports = {
 
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        exclude: [
+        excludes: [
           '/styleguide',
           '/thanks-for-the-feedback',
           `/operator-guides`,
           `/operator-guides/*`,
         ],
-        serialize: ({ site, allSitePage }) => {
-          return allSitePage.edges.map(edge => {
-            return {
-              url: `${site.siteMetadata.siteUrl}${withTrailingSlash(
-                edge.node.path
-              )}`,
-
-              // NOTE: These are optional and most likely ignored by Google et. al
-              //
-              // changefreq: 'daily',
-              // priority: 0.7,
-            };
-          });
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => SITE_URL,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+        }) => {
+          return allPages;
+        },
+        serialize: ({ path }) => {
+          return {
+            url: path,
+            // NOTE: These are optional and most likely ignored by Google et. al
+            //
+            // changefreq: 'daily',
+            // priority: 0.7,
+          }
         },
       },
     },
