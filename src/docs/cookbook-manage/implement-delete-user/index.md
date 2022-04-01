@@ -168,7 +168,8 @@ export const ACCOUNT_SETTINGS_PAGES = [
       path: '/terms-of-service',
 ```
 
-Finally, add the necessary translation rows into en.js
+Finally, add the necessary translation rows into en.json
+
 
 ```shell
 └── src
