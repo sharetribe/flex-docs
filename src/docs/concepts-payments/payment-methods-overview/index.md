@@ -100,7 +100,7 @@ same features and capabilities.
 The
 [default transaction process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-default-process)
 in Flex supports card payments. The general article on
-[the transaction process](/concepts-transaction-process/transaction-process/)
+[the transaction process](/concepts/transaction-process/)
 describes the process in more detail.
 
 > **A note on Google Pay, Apple Pay, and Microsoft Pay**
@@ -133,15 +133,15 @@ in the
 ### Handling payment methods in the client app
 
 See
-[this section in the PaymentIntents guide](/concepts-payments/payment-intents/#required-actions-in-the-client).
+[this section in the PaymentIntents guide](/concepts/payment-intents/#required-actions-in-the-client).
 
 ## Further reading
 
 For further reading on the subject, see the following articles that
 describe how to edit the transaction process:
 
-- [How PaymentIntents work](/concepts-payments/payment-intents/)
-- [Transaction process](/concepts-transaction-process/transaction-process/)
+- [How PaymentIntents work](/concepts/payment-intents/)
+- [Transaction process](/concepts/transaction-process/)
 - [Action reference for Stripe integration](/references/transaction-process-actions/#stripe-integration)
-- [Editing transaction process](/howto-transaction-process/edit-transaction-process-with-flex-cli/)
-- [Changing transaction process setup in FTW](/howto-transaction-process/change-transaction-process-in-ftw/)
+- [Editing transaction process](/how-to/edit-transaction-process-with-flex-cli/)
+- [Changing transaction process setup in FTW](/how-to/change-transaction-process-in-ftw/)

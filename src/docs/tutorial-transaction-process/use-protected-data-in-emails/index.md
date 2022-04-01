@@ -206,7 +206,7 @@ To test the protected data using Flex CLI's built-in preview
 functionality, you need to use custom sample-template-context.json.
 
 You can read more from the Flex CLI article:
-[Edit email templates with Flex CLI](https://www.sharetribe.com/docs/howto-messaging/edit-email-templates-with-flex-cli/#sample-email-context)
+[Edit email templates with Flex CLI](https://www.sharetribe.com/docs/how-to/edit-email-templates-with-flex-cli/#sample-email-context)
 
 The short guide of the necessary steps:
 
@@ -229,7 +229,7 @@ we need to push a new version of _cottagedays-daily-booking_ process. If
 you have done the earlier parts of the tutorial this process should be
 already quite familiar to you. If you need more detailed information
 take a look at the
-[Edit transaction process with Flex CLI tutorial](/howto-transaction-process/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
+[Edit transaction process with Flex CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
 
 Push the updated process:
 

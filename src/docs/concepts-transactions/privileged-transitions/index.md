@@ -57,7 +57,7 @@ trusted source, i.e. your own backend implementation.
 ![Authentication flow with a trusted access token](auth-flow.png)
 
 The client secret is tied to a Marketplace API
-[application](/concepts-development/applications/). When exchanging an
+[application](/concepts/applications/). When exchanging an
 access token to a trusted one, the client secret needs to be from the
 same application as the client ID that was used to obtain the access
 token.

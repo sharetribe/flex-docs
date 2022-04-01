@@ -2,7 +2,7 @@
 title: Manage search schemas with Flex CLI
 slug: manage-search-schemas-with-flex-cli
 updated: 2021-11-30
-category: howto-search
+category: how-to-search
 ingress:
   This tutorial shows you how to manage extended data search schemas
   with Flex CLI. With search schemas in place, you can use custom
@@ -18,7 +18,7 @@ email templates.
 This tutorial expects that you have already installed Flex CLI and are
 logged in with your API key. If not, it's recommended to first read the
 tutorial
-[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
+[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
 
 In this tutorial, we will add data schemas for the `category` and
 `amenities` public data fields in listings. New marketplaces don't have
@@ -77,7 +77,7 @@ public data). Also, it's worth noting that the query parameter with a
 `text` schema is `keywords` which also targets the `title` and
 `description` attributes of a listing. This query parameter is only
 supported in listing queries. See
-[Keyword search](/concepts-listings/how-the-listing-search-works/#keyword-search)
+[Keyword search](/concepts/how-the-listing-search-works/#keyword-search)
 for more information.
 
 ### Providing multiple query params for a single field
@@ -100,7 +100,7 @@ has_all mathing mode (AND) for multi enums.
 With the `text` type, you provide a search query, so splitting values
 with a comma doesn't make sense. You will just provide a string of text
 as the search query, and the query will be used as described
-[in the keyword search explanation](/concepts-listings/how-the-listing-search-works/#keyword-search)
+[in the keyword search explanation](/concepts/how-the-listing-search-works/#keyword-search)
 section.
 
 With the `long` type, you can provide minimum and/or maximum values for
@@ -192,7 +192,7 @@ FTW expects those.
 
 For more information, see the following resources:
 
-- [How the search works](/concepts-listings/how-the-listing-search-works/)
+- [How the search works](/concepts/how-the-listing-search-works/)
   background article
 - [Extended data reference](/references/extended-data/)
 - API reference for the
@@ -204,5 +204,5 @@ For more information, see the following resources:
 - API reference for the
   [/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
   endpoint in the Integration API
-- [Extend listing data in FTW](/howto-listing/extend-listing-data-in-ftw/)
-- [Change search filters in FTW](/howto-search/change-search-filters-in-ftw/)
+- [Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
+- [Change search filters in FTW](/how-to/change-search-filters-in-ftw/)

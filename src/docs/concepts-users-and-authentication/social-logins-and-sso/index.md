@@ -13,10 +13,10 @@ This document gives an overview of how different login solutions work
 with Flex. To find guidance on how to implement login using a specific
 service, refer to the following cookbooks:
 
-- [Enable Facebook login](/howto-users-and-authentication/enable-facebook-login/)
-- [Enable Google login](/howto-users-and-authentication/enable-google-login/)
-- [Enable OpenID Connect login](/howto-users-and-authentication/enable-open-id-connect-login/)
-- [How to set up OpenID Connect proxy in FTW](/howto-users-and-authentication/setup-open-id-connect-proxy/)
+- [Enable Facebook login](/how-to/enable-facebook-login/)
+- [Enable Google login](/how-to/enable-google-login/)
+- [Enable OpenID Connect login](/how-to/enable-open-id-connect-login/)
+- [How to set up OpenID Connect proxy in FTW](/how-to/setup-open-id-connect-proxy/)
 
 ## Using a third party identity provider
 

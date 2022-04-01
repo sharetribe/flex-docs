@@ -10,12 +10,12 @@ published: true
 ---
 
 In Flex, accessing the
-[Marketplace API or the Integration API](/concepts-api-sdk/marketplace-api-integration-api/)
+[Marketplace API or the Integration API](/concepts/marketplace-api-integration-api/)
 starts with creating an
 [_application_](https://flex-console.sharetribe.com/applications). Each
 application has the necessary credentials (client ID and optional client
 secret) that are used to
-[authenticate](/concepts-api-sdk/authentication-api/) your application
+[authenticate](/concepts/authentication-api/) your application
 to the Flex APIs.
 
 Applications come in two types: Marketplace API applications and

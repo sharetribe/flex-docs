@@ -39,7 +39,7 @@ FTW-daily is created on top of [React](https://reactjs.org/),
 familiar with those libraries.
 
 You should also have completed the
-[Getting started guide](/introduction-getting-started/getting-started-with-ftw-daily/)
+[Getting started guide](/introduction/getting-started-with-ftw-daily/)
 and as a result, you have the FTW-daily repository cloned to your local
 development environment and the app is available in
 http://localhost:3000.
@@ -170,4 +170,4 @@ up:
 Now you are ready to make code changes and save those to Github!
 
 The first part of this tutorial starts with changing the marketplace
-color.<br /> [› Go to the next article](/tutorial-branding/first-edit/)
+color.<br /> [› Go to the next article](/tutorial/first-edit/)

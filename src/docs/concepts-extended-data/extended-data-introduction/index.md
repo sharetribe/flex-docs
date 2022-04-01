@@ -14,7 +14,7 @@ This article explains the basics of extended data. If you want to get
 technical instead, check out the
 [Extended data API Reference](https://www.sharetribe.com/docs/references/extended-data/)
 or learn how to add extended data in
-[part two](https://www.sharetribe.com/docs/tutorial-extended-data/add-extended-data/)
+[part two](https://www.sharetribe.com/docs/tutorial/add-extended-data/)
 of the Flex tutorial.
 
 ## Why extended data?
@@ -203,7 +203,7 @@ Extended data helps you build the custom search and filtering experience
 your marketplace needs.
 
 Listings can be searched by keyword or location using Flex’s
-[powerful built-in search feature](https://www.sharetribe.com/docs/concepts-listings/how-the-listing-search-works/).
+[powerful built-in search feature](https://www.sharetribe.com/docs/concepts/how-the-listing-search-works/).
 In addition to this, you can use listing public extended data and
 metadata to create a variety of different types of filters; for example,
 a filter can be a slider with a range of values or a checkbox group. You

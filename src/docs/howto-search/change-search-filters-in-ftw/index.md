@@ -2,7 +2,7 @@
 title: Change search filters in FTW
 slug: change-search-filters-in-ftw
 updated: 2020-06-04
-category: howto-search
+category: how-to-search
 ingress:
   This guide describes how to change the search filters in Flex Template
   for Web (FTW).
@@ -55,13 +55,13 @@ that would map keyword match correlation with distance to `origin` and
 therefore, the _origin_ param can't be used at the same time as the
 _keyword_. You can read more about how the keyword search works from
 related
-[background article](/concepts-listings/how-the-listing-search-works/).
+[background article](/concepts/how-the-listing-search-works/).
 
 ![Desktop filters](./keyword-search.png)
 
 It is possible to remove location search from topbar and replace it with
 the keyword search or use them together (without origin param). Here's
-[a rough guide on how to do it](/howto-search/use-keyword-search-in-topbar/).
+[a rough guide on how to do it](/how-to/use-keyword-search-in-topbar/).
 
 > Note: search strings with only 1 or 2 letters have a longer timeout
 > before the search query is made.
@@ -74,12 +74,12 @@ the marketplace.
 First step for adding a new filter is to make sure that the data being
 used for filtering is saved in the listing's `publicData` attribute. On
 how to achieve this, please refer to the
-[Extend listing data in FTW](/howto-listing/extend-listing-data-in-ftw/)
+[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
 cookbook. Another aspect in search filters is that a
 [search schema](/references/extended-data/#search-schema) needs to be
 added to the data in order for API to index it for search. Adding search
 schema can be done by the
-[Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
+[Flex CLI](/introduction/getting-started-with-flex-cli/).
 
 Once a public data attribute is added to the listings and the data
 attribute is indexed, the listing searches can be filtered by that
@@ -90,7 +90,7 @@ refers to public data, "meta\_" would refer to \_metadata*, which is
 another type of extended data.
 
 Further reading on public data can be found in the
-[Extend listing data in FTW](/howto-listing/extend-listing-data-in-ftw/)
+[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
 cookbook.
 
 > **Note:** Only top-level attributes can be indexed.
@@ -143,7 +143,7 @@ There you need to add the capacity filter's configurations to the
 ```
 
 > **Note**: you might have done this already if you followed the
-> [Extend listing data in FTW](/howto-listing/extend-listing-data-in-ftw/)
+> [Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
 > cookbook article.
 
 In the above configuration, we defined filter's `id` and `label`. The
@@ -175,7 +175,7 @@ As a summary, that new filter configuration in `filters` array, is
 enough to render _capacity_ filter on search page. That is, if you have
 _capacity_ field defined in listing's public data and that public data
 has correct schema added to the search engine using
-[Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
+[Flex CLI](/introduction/getting-started-with-flex-cli/).
 
 ## Creating your own filter types
 

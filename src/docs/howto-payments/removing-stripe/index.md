@@ -2,7 +2,7 @@
 title: How to remove Stripe and payments
 slug: removing-stripe-and-payments
 updated: 2020-07-06
-category: howto-payments
+category: how-to-payments
 ingress:
   In some cases, you might want to remove Stripe integrations or even
   all the payments from FTW. This article gives you a starting point for
@@ -51,7 +51,7 @@ In
 file, there are lots of helper functions that are used to determine
 which state the transaction is. This file should be updated to match the
 new transaction process.
-[Read more about editing transaction.js](/howto-transaction-process/change-transaction-process-in-ftw/#2-check-if-the-transactionjs-file-needs-to-be-updated)
+[Read more about editing transaction.js](/how-to/change-transaction-process-in-ftw/#2-check-if-the-transactionjs-file-needs-to-be-updated)
 
 Example:
 

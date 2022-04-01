@@ -102,4 +102,4 @@ same timeframe.
 If you are looking to manage the stock or inventory of a listing, you
 should take a look at Flex’s stock management. You can learn more about
 the feature
-[here](https://www.sharetribe.com/docs/concepts-availability/inventory-management/).
+[here](https://www.sharetribe.com/docs/concepts/inventory-management/).

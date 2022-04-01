@@ -51,7 +51,7 @@ the activity in Console.
 Development environment is for development and testing purposes. This is
 where building your marketplace happens and where you can test the build
 functionalities in peace by using test users and
-[test credit cards with Stripe](https://www.sharetribe.com/docs/howto-payments/set-up-and-use-stripe/).
+[test credit cards with Stripe](https://www.sharetribe.com/docs/how-to/set-up-and-use-stripe/).
 
 Even after launch you can continue building new features in the
 development environment without causing disruptions to your live

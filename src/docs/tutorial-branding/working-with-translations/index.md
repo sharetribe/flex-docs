@@ -89,4 +89,4 @@ article:
 
 In the next article, you learn how to configure FTW-daily and change the
 default currency.<br />
-[› Go to the next article](/tutorial-branding/configurations/)
+[› Go to the next article](/tutorial/configurations/)

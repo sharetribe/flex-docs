@@ -2,7 +2,7 @@
 title: How to set up OpenID Connect proxy in FTW
 slug: setup-open-id-connect-proxy
 updated: 2021-03-02
-category: howto-users-and-authentication
+category: how-to-users-and-authentication
 ingress:
   In this cookbook, we'll take a look at the process of setting up
   OpenID Connect (OIDC) proxy to FTW. This allows you to add support for
@@ -23,7 +23,7 @@ by your FTW server and using that to unsign the token. A consequence of
 this is, that the JSON Web Key needs to be publicly available. This
 means that the proxy setup will not work directly in localhost. To test
 out the LinkedIn login, you should e.g.
-[deploy your FTW changes to Heroku](/tutorial-branding/deploy-to-heroku/).
+[deploy your FTW changes to Heroku](/tutorial/deploy-to-heroku/).
 
 In this guide, we'll integrate LinkedIn login to Flex by using FTW as an
 OIDC proxy to Flex. The main steps to take to achieve this are:
@@ -86,7 +86,7 @@ that Flex uses to validate the ID token that wraps the LinkedIn login
 information. To enable logins in Flex using the OIDC proxy, a
 corresponding identity provider and identity provider client need to be
 configured for your marketplace in Flex Console. See the
-[OpenID Connect cookbook](/howto-users-and-authentication/enable-open-id-connect-login/)
+[OpenID Connect cookbook](/how-to/enable-open-id-connect-login/)
 on for information on how to add a new identity provider for your
 marketplace.
 

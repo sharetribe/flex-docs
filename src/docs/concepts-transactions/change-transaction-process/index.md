@@ -26,7 +26,7 @@ This article continues the general overview of the transaction process
 offered
 [here](https://www.sharetribe.com/docs/operator-guides/transaction-process/)
 and
-[here](https://www.sharetribe.com/docs/concepts-transaction-process/transaction-process/)
+[here](https://www.sharetribe.com/docs/concepts/transaction-process/)
 by suggesting a few principles to keep in mind when designing how your
 users will transact.
 
@@ -132,7 +132,7 @@ user can take as part of moving from state to state.
 
 You can draw out your transaction process with a pen and paper or online
 using a tool like
-[Whimsical](https://www.sharetribe.com/docs/concepts-transaction-process/change-transaction-process/#start-designing).
+[Whimsical](https://www.sharetribe.com/docs/concepts/change-transaction-process/#start-designing).
 
 ## Modify an existing process, if you can
 

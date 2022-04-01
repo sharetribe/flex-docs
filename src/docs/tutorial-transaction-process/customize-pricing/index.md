@@ -39,7 +39,7 @@ information about the cleaning fee. We start by doing some changes to
 </extrainfo>
 
 Here we will only list the required changes. See the
-[Add extended data to listing entity tutorial](/tutorial-extended-data/add-extended-data/)
+[Add extended data to listing entity tutorial](/tutorial/add-extended-data/)
 for step-by-step instructions on how to add public data field for
 listing.
 
@@ -386,7 +386,7 @@ attributes a line total is calculated for each line item. Line totals
 then define the total payin and payout sums of the transaction.
 
 You can read more about line items and pricing from
-[pricing background article](https://www.sharetribe.com/docs/concepts-pricing-and-commissions/pricing/).
+[pricing background article](https://www.sharetribe.com/docs/concepts/pricing/).
 
 </extraInfo>
 
@@ -455,7 +455,7 @@ Marketplace API in the backend of our client app, we can avoid this
 security risk.
 
 You can read more about privileged transitions from
-[privileged transitions background article](/concepts-transaction-process/privileged-transitions/).
+[privileged transitions background article](/concepts/privileged-transitions/).
 
 </extraInfo>
 
@@ -657,7 +657,7 @@ transaction price breakdown also shows the cleaning fee.
 
 <extrainfo title="Add cleaning fee to email notifications">
 To add the cleaning fee into your email notifications, you will need to add it to the email templates.
-The <a href="/docs/tutorial-transaction-process/use-protected-data-in-emails/">third step of this tutorial</a> deals with updating email notifications.
+The <a href="/docs/tutorial/use-protected-data-in-emails/">third step of this tutorial</a> deals with updating email notifications.
 
 ```diff
       {{#each tx-line-items}}

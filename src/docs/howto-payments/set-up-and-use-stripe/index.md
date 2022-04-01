@@ -2,7 +2,7 @@
 title: Set up and use Stripe
 slug: set-up-and-use-stripe
 updated: 2022-02-22
-category: howto-payments
+category: how-to-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you
   need a free Stripe account. This guide will help you in creating a
@@ -45,7 +45,7 @@ Sharetribe uses the Stripe Connect features with
 
 > **Note!** Stripe might need to review your platform account before you
 > get access. <br /> Check
-> [this article](/howto-payments/stripe-connect-platform-review/) to
+> [this article](/how-to/stripe-connect-platform-review/) to
 > learn how to apply for Stripe Connect review.
 
 If you're in any another country, follow these instructions to enable
@@ -62,7 +62,7 @@ Stripe Connect:
 ## 3. Account types and connect onboarding settings
 
 To enable
-[Stripe Connect Onboarding](/howto-payments/provider-onboarding-and-identity-verification/),
+[Stripe Connect Onboarding](/how-to/provider-onboarding-and-identity-verification/),
 you need to navigate to
 [Connect settings page](https://dashboard.stripe.com/account/applications/settings)
 in your Stripe Dashboard. For the Connect onboarding to work, you need
@@ -108,7 +108,7 @@ do this by running `yarn run config` or editing the file directly in a
 text editor.
 
 Read more about configurations in FTW from
-[Getting started with FTW](/introduction-getting-started/getting-started-with-ftw-daily/#add-environment-variables)
+[Getting started with FTW](/introduction/getting-started-with-ftw-daily/#add-environment-variables)
 
 ## 7. Test the Stripe account in Flex Template for Web
 

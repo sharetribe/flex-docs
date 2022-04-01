@@ -2,7 +2,7 @@
 title: Edit transaction process with Flex CLI
 slug: edit-transaction-process-with-flex-cli
 updated: 2021-12-23
-category: howto-transaction-process
+category: how-to-transaction-process
 ingress:
   This tutorial shows you how to edit transaction process with Flex CLI.
   You will learn how to pull process definition, make a small change to
@@ -17,9 +17,9 @@ templates.
 
 This tutorial expects that you have already installed Flex CLI and are
 logged in with your API key. It's recommended to first read the tutorial
-[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/).
+[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
 If you haven't read
-[how transaction processes work in Flex](/concepts-transaction-process/transaction-process/),
+[how transaction processes work in Flex](/concepts/transaction-process/),
 it's a good idea to do that before starting this tutorial.
 
 In this tutorial we extend the marketplace review period. After we've
@@ -277,5 +277,5 @@ reference to read about all the possibilities that transaction process
 engine gives to you.
 
 As a next step, you may also to edit the transaction email templates.
-[Editing email templates with Flex CLI](/howto-messaging/edit-email-templates-with-flex-cli/)
+[Editing email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
 tutorial guides you through this process.

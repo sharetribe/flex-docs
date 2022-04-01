@@ -2,7 +2,7 @@
 title: How to implement a like feature using events
 slug: like-feature
 updated: 2021-02-25
-category: howto-events
+category: how-to-events
 ingress:
   Following this guide, you'll be able to build a feature that allows
   users to like listings using events and user extended data
@@ -711,5 +711,5 @@ const SectionLikes = props => {
 Now while running the event listener script you should have a fully
 functional like button. If you're interested in reading more about
 events, you can read our articles on
-[reacting to events](/howto-events/reacting-to-events/) and
-[setting up Zapier](/howto-events/set-up-and-use-zapier/).
+[reacting to events](/how-to/reacting-to-events/) and
+[setting up Zapier](/how-to/set-up-and-use-zapier/).

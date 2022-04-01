@@ -134,10 +134,10 @@ notifications.
 To customise the transaction processes of your marketplace, you can use
 Flex CLI (Command-line interface). To get up and running with the tool,
 see the
-[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 tutorial. For more details of the transaction process format, see the
 [Transaction process format](/references/transaction-process-format/)
 reference. To customise the UI of your marketplace to match your process
 changes, see the
-[Change transaction process setup in FTW](/howto-transaction-process/change-transaction-process-in-ftw/)
+[Change transaction process setup in FTW](/how-to/change-transaction-process-in-ftw/)
 cookbook.

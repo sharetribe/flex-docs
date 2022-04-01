@@ -56,13 +56,13 @@ running cost calculated by
 
 \*\* Sharetribe Flex is specifically built to be adapted. First of all,
 it comes with
-[a complete website template](/introduction-getting-started/getting-started-with-ftw-daily/)
+[a complete website template](/introduction/getting-started-with-ftw-daily/)
 that is easily customizable, so front-end changes are quick and
 cost-effective to make.
 
 Secondly, the back end is built for flexibility from the ground up. For
 example, the
-[transaction processes](/concepts-transaction-process/transaction-process/)
+[transaction processes](/concepts/transaction-process/)
 have been designed so that it is very quick and easy to adjust them. You
 can even create a completely new transaction process without coding
 anything.

@@ -92,7 +92,7 @@ A listing can have several different states:
   published, so the listing is waiting for operator's approval before it
   is published. You can enable or disable the listing approval
   functionality for your marketplace in
-  [Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/#enable-and-disable-listing-approval-functionality).
+  [Flex CLI](/introduction/getting-started-with-flex-cli/#enable-and-disable-listing-approval-functionality).
 - **Closed.** The listing used to be published, but has since been
   closed, either by the provider or by the operator. The listing is
   still visible to the provider, but not discoverable via search.
@@ -132,7 +132,7 @@ can set their pricing.
   Parties can negotiate until a consensus is reached.
 - …and a lot more!
 
-[Read more about the Flex pricing engine](/concepts-pricing-and-commissions/pricing/).
+[Read more about the Flex pricing engine](/concepts/pricing/).
 
 ## Availability management
 
@@ -280,7 +280,7 @@ cases:
   their identity before their first order.
 - ...and a lot more!
 
-[Read more about the Flex transaction engine](/concepts-transaction-process/transaction-process/).
+[Read more about the Flex transaction engine](/concepts/transaction-process/).
 
 ## Payments
 
@@ -311,7 +311,7 @@ lots of helpful features. Here are some of them:
 - **Storing payment cards and creating delayed charges.** You can store
   a payment card of the customer to make future purchases faster, or use
   the card to create delayed or additional charges.
-  [Read more about using stored payment cards](/concepts-transaction-process/privileged-transitions/)
+  [Read more about using stored payment cards](/concepts/privileged-transitions/)
 - **Strong Customer Authentication.** European regulation changed in
   2019 to require support for
   [Strong customer authentication](https://stripe.com/en-fi/guides/strong-customer-authentication)
@@ -381,7 +381,7 @@ pages or views there should be, and how those should be laid out. There
 are no limits to what you can do in terms of visual design.
 
 It's easy for you to get started with the design, since beautiful
-[Flex Templates for Web](/introduction-getting-started/getting-started-with-ftw-daily/)
+[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
 offer an ideal starting point. The templates are fully responsive so
 they look great both on desktop and mobile devices.
 
@@ -392,7 +392,7 @@ brand.
 
 ## SEO
 
-[Flex Templates for Web](/introduction-getting-started/getting-started-with-ftw-daily/)
+[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
 are optimized for search engines by default, and you have full control
 to tailor the experience the way you wish. You can decide the exact URL
 structure, edit meta tags freely, and do any other optimizations you
@@ -403,7 +403,7 @@ want.
 Since Flex is a "headless" marketplace solution, you can use it to build
 either a website or a mobile application or both. Building a web app is
 quicker today, because of
-[Flex Templates for Web](/introduction-getting-started/getting-started-with-ftw-daily/),
+[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/),
 which offer a great starting point for development. A similar template
 doesn't exist yet for mobile.
 
@@ -508,7 +508,7 @@ Here are the features it offers:
 
 - **General settings.** Change things like marketplace name and URL.
 - **Transaction processes.** See a list of your
-  [transaction processes](/concepts-transaction-process/transaction-process/)
+  [transaction processes](/concepts/transaction-process/)
   and view the details of each process.
 - **Payments.** Add your Stripe keys to be able to accept online
   payments.

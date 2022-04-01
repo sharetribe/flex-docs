@@ -2,7 +2,7 @@
 title: Migrating from Go to Flex
 slug: go-to-flex-migration
 updated: 2020-11-17
-category: howto-migrations
+category: how-to-migrations
 ingress: Basic information to consider when migrating from Go to Flex
 published: true
 ---
@@ -58,7 +58,7 @@ organization (your organization is displayed in your
 
 _What is not migrated automatically: order type data, shipping price,
 comments, and availability calendar data. In Flex, the
-[transaction process](https://www.sharetribe.com/docs/concepts-transaction-process/transaction-process/)
+[transaction process](https://www.sharetribe.com/docs/concepts/transaction-process/)
 determines how price is calculated and how the order flow works. If you
 have enabled multiple order types or shipping price in Go and want to
 migrate the data from these over to Flex, you need to do custom

@@ -2,7 +2,7 @@
 title: Enable Login as user
 slug: enable-login-as-user
 updated: 2020-06-01
-category: howto-users-and-authentication
+category: how-to-users-and-authentication
 ingress:
   This article guides you how to take into use the Login as user feature
   that allows an operator to log into their marketplace as one of the

@@ -38,7 +38,7 @@ Currently we have three different template options:
   "Sneakertime" - a product marketplace with stock management
 
 Information about using Flex Template for Web can be found in the
-[Getting started with FTW](/introduction-getting-started/getting-started-with-ftw-daily/)
+[Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
 tutorial.
 
 ### Flex CLI
@@ -48,7 +48,7 @@ marketplace's advanced configurations such as transaction processes and
 email templates.
 
 See the
-[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 tutorial for more information.
 
 ### Marketplace API
@@ -62,7 +62,7 @@ Sharetribe customers can create their own web-based and mobile UIs on
 top of the Marketplace API.
 
 Information about working with the Marketplace API can be found in the
-[API reference documentation](/concepts-api-sdk/api/).
+[API reference documentation](/concepts/api/).
 
 ### Integration API
 
@@ -90,7 +90,7 @@ A JavaScript library that makes it easy to correctly interact with the
 Marketplace API.
 
 Information about using the JS SDK library can be found in the
-[JS SDK documentation](/concepts-api-sdk/js-sdk/).
+[JS SDK documentation](/concepts/js-sdk/).
 
 ### Sharetribe Integration SDK for JavaScript
 
@@ -98,7 +98,7 @@ A JavaScript library that makes it easy to correctly interact with the
 Integration API.
 
 Information about using the JS SDK library can be found in the
-[JS SDK documentation](/concepts-api-sdk/js-sdk/).
+[JS SDK documentation](/concepts/js-sdk/).
 
 ### Webhooks
 

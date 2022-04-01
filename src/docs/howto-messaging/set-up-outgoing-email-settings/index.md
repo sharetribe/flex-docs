@@ -2,7 +2,7 @@
 title: Set up outgoing email settings
 slug: set-up-outgoing-email-settings
 updated: 2020-12-21
-category: howto-messaging
+category: how-to-messaging
 ingress:
   This article describes how to set up a custom email sender address for
   your production marketplace.

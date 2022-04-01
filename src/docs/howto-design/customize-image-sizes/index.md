@@ -2,7 +2,7 @@
 title: Customize image sizes
 slug: customize-image-sizes
 updated: 2021-02-12
-category: howto-design
+category: how-to-design
 ingress:
   Flex's custom image variants functionality allows you to fine-tune
   image sizes to your marketplace's needs.

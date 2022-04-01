@@ -2,7 +2,7 @@
 title: Use keyword search in Topbar component in FTW
 slug: use-keyword-search-in-topbar
 updated: 2019-07-17
-category: howto-search
+category: how-to-search
 ingress:
   This guide describes how to change the Topbar search from location
   search to keyword search in FTW-daily and FTW-hourly.

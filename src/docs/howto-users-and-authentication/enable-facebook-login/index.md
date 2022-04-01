@@ -2,7 +2,7 @@
 title: Enable Facebook login
 slug: enable-facebook-login
 updated: 2020-11-16
-category: howto-users-and-authentication
+category: how-to-users-and-authentication
 ingress:
   In this cookbook we'll take a look at the process of setting up
   Facebook login for your marketplace. It will allow your users to sign

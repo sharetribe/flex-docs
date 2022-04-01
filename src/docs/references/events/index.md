@@ -32,7 +32,7 @@ to publish the user's listings.
 
 Currently, Flex exposes events by allowing them to be queried via the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
-or viewed via [Flex CLI](/howto-events/view-events-with-flex-cli/).
+or viewed via [Flex CLI](/how-to/view-events-with-flex-cli/).
 Integration API supports implementing efficient polling where only
 events that have happened since last poll query are returned. This makes
 it possible to keep the polling interval short enough to react to events
@@ -69,9 +69,9 @@ Each event has the following attributes:
 | previousValues      | (object) An object describing the previous values for the event's changed resource attributes and relationships. Note that for `*/deleted` events, some of the attributes may be `null`, due to stricter data deletion requirements. For details see the [reference for event data and previous values](#resource-data-and-previous-values).         |
 | auditData           | (object) Data about the actor that caused the event.                                                                                                                                                                                                                                                                                                 |
 | auditData.userId    | (uuid) The ID of the Flex marketplace user that caused the event, if any. This attribute is set for most events that occurr in the Marketplace API and is `null` otherwise.                                                                                                                                                                          |
-| auditData.adminId   | (uuid) The ID of the Flex Console admin user that caused the event. Typically set for events that occur in Console, but can be set in combination with `userId` when an admin has used the ["login as"](/howto-users-and-authentication/enable-login-as-user/) Console feature and acted on behalf of a marketplace user though the Marketplace API. |
+| auditData.adminId   | (uuid) The ID of the Flex Console admin user that caused the event. Typically set for events that occur in Console, but can be set in combination with `userId` when an admin has used the ["login as"](/how-to/enable-login-as-user/) Console feature and acted on behalf of a marketplace user though the Marketplace API. |
 | auditData.requestId | (uuid) The ID of the API request that caused the event. Can be `null`. Currently this information is meaningless but might have future uses.                                                                                                                                                                                                         |
-| auditData.clientId  | (uuid) The client ID of the Flex [Application](/concepts-development/applications/) that caused the event. This attribute is set if the event was caused by an API call from a Flex Marketplace API or Integration API application and is `null` otherwise.                                                                                          |
+| auditData.clientId  | (uuid) The client ID of the Flex [Application](/concepts/applications/) that caused the event. This attribute is set if the event was caused by an API call from a Flex Marketplace API or Integration API application and is `null` otherwise.                                                                                          |
 
 Note: these attributes are not necessarily top-level keys. Event object
 data structure depends on [event's data format](#event-data-formats).
@@ -90,7 +90,7 @@ happened after the given sequence ID, making the sequence ID a perfect
 tool for loading subsequent events in comparison to a known ID. When
 querying events synchronously (e.g. via the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
-or [Flex CLI](/howto-events/view-events-with-flex-cli/)), events are
+or [Flex CLI](/how-to/view-events-with-flex-cli/)), events are
 always returned in order of their sequence IDs.
 
 Note that, in contrast to sequence IDs, there can be multiple events
@@ -434,8 +434,8 @@ reflect data before the transition.
 ## Further reading
 
 - [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
-- [Using Flex CLI to view event data](/howto-events/view-events-with-flex-cli/)
-- [Reacting to events](/howto-events/reacting-to-events/) cookbook guide
+- [Using Flex CLI to view event data](/how-to/view-events-with-flex-cli/)
+- [Reacting to events](/how-to/reacting-to-events/) cookbook guide
 - A
   [full example](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js)
   Integration API application is available

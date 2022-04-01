@@ -179,7 +179,7 @@ layout:
 
 If your marketplace concept needs advanced features, you need to
 continue with customizations. In
-[the next part of this tutorial](/tutorial-extended-data/add-extended-data/),
+[the next part of this tutorial](/tutorial/add-extended-data/),
 we'll go through how to extend listing entity with extended data.
 
-[› Go to the next article](/tutorial-extended-data/add-extended-data/)
+[› Go to the next article](/tutorial/add-extended-data/)

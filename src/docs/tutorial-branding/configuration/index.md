@@ -23,7 +23,7 @@ of your Flex test-environment on localhost and on your staging server
 
 You already have set up a couple of those environment variables, when
 you completed the
-[Getting started with FTW-daily guide](/introduction-getting-started/getting-started-with-ftw-daily/).
+[Getting started with FTW-daily guide](/introduction/getting-started-with-ftw-daily/).
 That happened, when you executed command:
 
 ```shell
@@ -223,4 +223,4 @@ The error message, when creating a new listing
 
 In the next article, we change the default suggestions for search
 locations.<br />
-[› Go to the next article](/tutorial-branding/change-default-locations/)
+[› Go to the next article](/tutorial/change-default-locations/)

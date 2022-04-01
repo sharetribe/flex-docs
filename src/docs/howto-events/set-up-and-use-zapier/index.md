@@ -2,7 +2,7 @@
 title: Set up and use Zapier
 slug: set-up-and-use-zapier
 updated: 2021-06-02
-category: howto-events
+category: how-to-events
 ingress:
   This guide demonstrates how to connect Flex to Zapier, gives a brief
   overview of the events and information made available to Zapier, and

@@ -91,7 +91,7 @@ It is important to note that an off-session payment can fail for various
 reasons. For instance, the card could be denied due to insufficient
 funds, the issuing bank may require additional authentication from the
 customer (this can easily occur with European payment cards when
-[Strong Customer Authentication regulation](/concepts-payments/strong-customer-authentication/)
+[Strong Customer Authentication regulation](/concepts/strong-customer-authentication/)
 kicks in), the payment card might have expired, etc. It is therefore
 always important to allow for a fall-back payment path in your
 transaction process. Since only one transition from a state can be
@@ -117,7 +117,7 @@ worth considering.
 
 ### Transitions and states
 
-[Transitions and states](/tutorial-transaction-process/create-transaction-process/#update-client-app)
+[Transitions and states](/tutorial/create-transaction-process/#update-client-app)
 are used in the template as conditions for several behaviors, including
 redirects and displayed content. The
 [transaction resource](https://www.sharetribe.com/api-reference/marketplace.html#transaction-resource-format)

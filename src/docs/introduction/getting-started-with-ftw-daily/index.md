@@ -364,7 +364,7 @@ This will automatically open `http://localhost:3000` in a browser:
 > **Note:** As you browse your marketplace and create listings, you may
 > notice that the search filters do not work. You can activate the
 > filters by creating a
-> [search schema](/howto-search/manage-search-schemas-with-flex-cli/#adding-schemas)
+> [search schema](/how-to/manage-search-schemas-with-flex-cli/#adding-schemas)
 > that corresponds to your FTW template.
 
 ## Summary

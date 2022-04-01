@@ -49,7 +49,7 @@ what it offers. There are a few ways to gain this understanding:
    specifically.
 3. Install one of the template applications (Saunatime, Yogatime, or
    Sneakertime) yourself following
-   [this guide](https://www.sharetribe.com/docs/introduction-getting-started/getting-started-with-ftw-daily/),
+   [this guide](https://www.sharetribe.com/docs/introduction/getting-started-with-ftw-daily/),
    or ask a developer to do it for you.
 4. If you're comfortable working with design software like Sketch, Adobe
    XD or Figma, you can download the complete

@@ -34,9 +34,9 @@ from the main (upstream) repository to your custom repository.
 If you are new to Sharetribe Flex or FTW, we recommend going through
 couple of articles first:
 
-- [Introducing Flex](/introduction-templates/introducing-flex/)
+- [Introducing Flex](/introduction/introducing-flex/)
 - [What development skills are needed?](/introduction/development-skills/)
-- [Getting started](/introduction-getting-started/getting-started-with-ftw-daily/)
+- [Getting started](/introduction/getting-started-with-ftw-daily/)
 
 The [Tutorial introduction](/tutorial/introduction/#prerequisites) will
 also walk you through creating a GitHub repository.
@@ -55,12 +55,12 @@ choose from three templates:
   "Sneakertime" - a product marketplace with stock management.
 
 > **Note:** By default your Flex marketplace comes with day-based
-> [transaction process](/concepts-transaction-process/transaction-process/).
+> [transaction process](/concepts/transaction-process/).
 > If you want to start working with FTW-hourly, you need to change to
 > the
 > [time-based process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-hourly-default-process).
 > See
-> [getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)
+> [getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 > for more information.
 
 You should follow the [tutorial](/tutorial/introduction/) to set up
@@ -140,7 +140,7 @@ required environment variables.
 The `.env` file is the place to add your _local_ configuration. It is
 ignored in Git, so you'll have to add the corresponding configuration
 also to your server environment. Check this
-[Heroku config setup](/tutorial-branding/deploy-to-heroku/#deploy-to-heroku)
+[Heroku config setup](/tutorial/deploy-to-heroku/#deploy-to-heroku)
 article - and there's also a generic article about
 [deploying to production](/ftw-hosting/how-to-deploy-ftw-to-production/).
 

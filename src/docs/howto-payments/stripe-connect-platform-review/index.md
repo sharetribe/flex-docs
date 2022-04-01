@@ -2,7 +2,7 @@
 title: How to apply for Stripe Connect review
 slug: stripe-connect-platform-review
 updated: 2020-02-27
-category: howto-payments
+category: how-to-payments
 ingress:
   If you create a new Stripe Platform, Stripe most likely will ask to
   review it. Here are details about the requirements and process.
@@ -19,7 +19,7 @@ enable your Stripe Platform within one business day.
 ## How to apply for Connect review at Stripe
 
 You should first
-[follow the regular instructions](/howto-payments/set-up-and-use-stripe/)
+[follow the regular instructions](/how-to/set-up-and-use-stripe/)
 to setup Stripe in your Sharetribe marketplace. When enabling Stripe
 Connect and registering your Platform, you may be prompted with some
 additional questions. The steps 1-4 show examples of what kind of

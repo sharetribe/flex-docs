@@ -2,7 +2,7 @@
 title: Extend listing data in FTW
 slug: extend-listing-data-in-ftw
 updated: 2020-06-04
-category: howto-listing
+category: how-to-listing
 ingress:
   This guide describes how to use use extended data to expand the
   listing data model in Flex Template for Web (FTW).
@@ -102,7 +102,7 @@ That list of options is relevant when we add a new public data field to
 the listing through the EditListingWizard component. If you want to know
 more about those other keys in that configuration (e.g. `type`, `group`,
 `queryParamNames`), you should read the
-[Change search filters](/howto-search/change-search-filters-in-ftw/)
+[Change search filters](/how-to/change-search-filters-in-ftw/)
 article.
 
 > **Note**: it's entirely possible to add extended data without creating
@@ -854,5 +854,5 @@ used in the test and custom config changes will not affect test results.
 
 To see how the capacity attribute can be used to filter search results,
 please refer to the
-[Change search filters in FTW](/howto-search/change-search-filters-in-ftw/)
+[Change search filters in FTW](/how-to/change-search-filters-in-ftw/)
 cookbook.

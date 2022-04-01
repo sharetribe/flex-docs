@@ -2,7 +2,7 @@
 title: Enable PaymentIntents
 slug: enable-payment-intents
 updated: 2020-08-11
-category: howto-payments
+category: how-to-payments
 ingress:
   Overview of how Stripe PaymentIntents work in FTW, and how you can
   change older FTW version to support for Strong Customer Authentication
@@ -15,16 +15,16 @@ This guide walks you through the process of taking
 use. This article covers how PaymentIntents can be used with card
 payments. On general level, the steps are the same for other payment
 methods. See
-[background article on payment methods](/concepts-payments/payment-methods-overview/)
-and [payment intents](/concepts-payments/payment-intents/) for more
+[background article on payment methods](/concepts/payment-methods-overview/)
+and [payment intents](/concepts/payment-intents/) for more
 information. Stripe's PaymentIntent is a new way to handle Strong
 Customer Authentication (SCA) by using frictionless
 [3D Secure 2](https://stripe.com/gb/guides/3d-secure-2) authentication.
 
 Before starting to read this article, you probably want to get familiar
 with
-[Strong Customer Authentication](/concepts-payments/strong-customer-authentication/)
-and [how PaymentIntent flow works](/concepts-payments/payment-intents/)
+[Strong Customer Authentication](/concepts/strong-customer-authentication/)
+and [how PaymentIntent flow works](/concepts/payment-intents/)
 by reading related background articles.
 
 > Note: Taking Stripe PaymentIntent flow into use, is a big change for

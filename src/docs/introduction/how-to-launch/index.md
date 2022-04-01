@@ -22,7 +22,7 @@ the following stages:
 4. Going live
 
 In this article, it is assumed that you've already read
-[Introducing Flex](/introduction-templates/introducing-flex/), which
+[Introducing Flex](/introduction/introducing-flex/), which
 explains the basic concepts of Flex. If you haven't done that yet, it's
 a good idea to do that now.
 
@@ -52,7 +52,7 @@ website built with Flex. Currently we have three template options:
 
 Setting up FTW should take no more than 5 minutes. The process is
 technical but doable even without development experience.
-[The guide for getting started with FTW](/introduction-getting-started/getting-started-with-ftw-daily/)
+[The guide for getting started with FTW](/introduction/getting-started-with-ftw-daily/)
 will give you step by step instructions for doing it. If you encounter
 any problems with the setup,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com).
@@ -60,7 +60,7 @@ any problems with the setup,
 Once you have FTW set up, you can create a few user accounts and test
 the features: posting listings, searching them, making bookings and
 payments (see how to use
-[test credit card numbers provided by Stripe](/howto-payments/set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)),
+[test credit card numbers provided by Stripe](/how-to/set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)),
 sending messages between users, writing reviews, and so on. You can test
 them both on your desktop and on a mobile browser to see how it works on
 each device. On Console, you can then see how the users, listings and

@@ -3,7 +3,7 @@ title:
   How to integrate a 3rd-party payment gateway with your marketplace
 slug: how-to-integrate-3rd-party-payment-gateway
 updated: 2021-03-19
-category: howto-payments
+category: how-to-payments
 ingress:
   This guide describes, on a high-level, how to integrate any 3rd-party
   payment gateway with your Flex-powered marketplace.
@@ -709,10 +709,10 @@ payment gateway to each step.
 [giropay]: https://www.giropay.de/en/
 [ideal]: https://www.ideal.nl/en/
 [flex-docs-privileged-transitions-background]:
-  /concepts-transaction-process/privileged-transitions/
+  /concepts/privileged-transitions/
 [flex-docs-events-reference]: /references/events/
 [flex-docs-reacting-to-events-cookbook]:
-  /howto-events/reacting-to-events/
+  /how-to/reacting-to-events/
 [flex-docs-extended-data-reference]: /references/extended-data/
 [pci-saq-a-pdf]:
   https://www.pcisecuritystandards.org/documents/PCI-DSS-v3_2_1-SAQ-A.pdf

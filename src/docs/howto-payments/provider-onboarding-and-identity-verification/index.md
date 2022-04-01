@@ -3,7 +3,7 @@ title:
   How to handle provider onboarding and identity verification on FTW
 slug: provider-onboarding-and-identity-verification
 updated: 2019-12-19
-category: howto-payments
+category: how-to-payments
 ingress:
   This article describes how to take Stripe Connect Onboarding into use
   in your frontend application or how to implement your own flow.

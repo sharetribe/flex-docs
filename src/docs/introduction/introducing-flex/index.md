@@ -35,7 +35,7 @@ Whether a web-based UI, a mobile application, or both, the user
 interface is the face of your solution. That's why you have total
 control over it.
 
-[Flex Templates for Web](/introduction-getting-started/getting-started-with-ftw-daily/)
+[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
 (FTW) are web templates that implement a full-feature marketplace
 experiences powered by Flex. You can choose between three templates:
 
@@ -74,11 +74,11 @@ opens their browser. After that, FTW lets the client application
 the API powers all further interactions.
 
 To learn more about the capabilities of the Marketplace API and Flex,
-visit the [API reference documentation](/concepts-api-sdk/api/).
+visit the [API reference documentation](/concepts/api/).
 
 ### Flex JavaScript SDK
 
-[The Flex JavaScript SDK](/concepts-api-sdk/js-sdk/) is a small
+[The Flex JavaScript SDK](/concepts/js-sdk/) is a small
 JavaScript library that helps you with integrating the Marketplace API.
 It handles tasks like authentication and session management and makes it
 easy to use correct data types with the API. Using the Flex JS SDK is
@@ -101,7 +101,7 @@ marketplace's advanced configurations such as transaction processes and
 email templates.
 
 See the
-[Getting started with Flex CLI](/introduction-getting-started/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 tutorial for more information.
 
 ## Is Flex the right fit for you?
