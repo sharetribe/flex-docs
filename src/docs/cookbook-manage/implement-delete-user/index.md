@@ -174,7 +174,7 @@ Finally, add the necessary translation rows into en.json
 ```shell
 └── src
     └── translations
-         └── en.js
+         └── en.json
 ```
 
 Feel free to modify the texts to suit your marketplace.
@@ -186,6 +186,10 @@ Feel free to modify the texts to suit your marketplace.
 + "DeleteAccountPage.title": "Delete your account",
 + "DeleteAccountPage.error": "Cannot delete user profile. You have {errorCause} Please contact Saunatime support or complete the unfinished issues and try again.",
   "EditListingAvailabilityForm.fetchMonthDataFailed": "Oops, couldn't load data for {month}, please try again.",
+...
+  "LayoutWrapperAccountSettingsSideNav.contactDetailsTabTitle": "Contact details",
++ "LayoutWrapperAccountSettingsSideNav.deleteAccountTabTitle": "Delete account",
+  "LayoutWrapperAccountSettingsSideNav.passwordTabTitle": "Password",
 ```
 
 If you now navigate to Account Settings, you can see the "Delete
@@ -283,7 +287,7 @@ You still need to add some translations related to the form.
 ```shell
 └── src
     └── translations
-         └── en.js
+         └── en.json
 ```
 
 The DeleteAccountForm template file has validations for password length
@@ -404,6 +408,15 @@ defined. We will add the endpoint to the Redux action next.
 
 The next step is to add the logic that calls the server endpoint, which
 then calls the Marketplace API endpoint if the user can be deleted.
+
+### Update SDK
+
+First of all, to get access to the new endpoint, you will need to update the SDK package.
+
+```shell
+  yarn upgrade sharetribe-sdk
+```
+After updating the SDK, you can start adding the endpoint and logic.
 
 ### Add endpoint to client side
 
