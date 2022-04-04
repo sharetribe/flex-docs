@@ -100,9 +100,9 @@ example files directly, or modify them for your use case.
               └── DeleteAccountPage.module.css
 ```
 
-- [DeleteAccountPage.js](/cookbook-assets/DeleteAccountPage.js)
-- [DeleteAccountPage.duck.js](/cookbook-assets/DeleteAccountPage.duck.js)
-- [DeleteAccountPage.module.css](/cookbook-assets/DeleteAccountPage.module.css)
+- [DeleteAccountPage.js](cookbook-assets/DeleteAccountPage.js)
+- [DeleteAccountPage.duck.js](cookbook-assets/DeleteAccountPage.duck.js)
+- [DeleteAccountPage.module.css](cookbook-assets/DeleteAccountPage.module.css)
 
 Once the DeleteAccountPage component and corresponding Redux store DeleteAccountPage.duck.js exist in the project, import the Redux
 file reducer to a combined reducer.
@@ -213,8 +213,8 @@ experience.
                └── DeleteAccountForm.module.css
 ```
 
-- [DeleteAccountForm.js](/cookbook-assets/DeleteAccountForm.js)
-- [DeleteAccountForm.module.css](/cookbook-assets/DeleteAccountForm.module.css)
+- [DeleteAccountForm.js](cookbook-assets/DeleteAccountForm.js)
+- [DeleteAccountForm.module.css](cookbook-assets/DeleteAccountForm.module.css)
 
 You can either use the files directly, or use them as a template for
 modification. You can, for instance, add a feedback field if you need
@@ -476,7 +476,7 @@ Save the file in the `server/api` folder.
   ...
 ```
 
-- [delete-account.js](/cookbook-assets/delete-account.js)
+- [delete-account.js](cookbook-assets/delete-account.js)
 
 Each transaction process has its own logic and flow. Determine the
 points at which you want to prevent the user from deleting their own
