@@ -12,7 +12,7 @@ const DESKTOP_LAYOUT_WIDTH = 768;
 
 const query = graphql`
   query SidebarIndexQuery {
-    allMarkdownRemark(sort: { fields: fileAbsolutePath, order: ASC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___category, frontmatter___slug], order: [ASC, ASC] }) {
       group(field: frontmatter___category) {
         fieldValue
         totalCount

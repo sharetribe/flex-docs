@@ -47,7 +47,7 @@ const Paragraph = styled(P).attrs({
 
 const GridItem = props => {
   const { pathPrefix, title, slug, category, ingress } = props;
-  const pathToArticle = pathPrefix || `${category}/`;
+  const pathToArticle = pathPrefix || `/${category}/`;
   const path = `${pathToArticle}${slug}/`;
   return (
     <Box as="li">

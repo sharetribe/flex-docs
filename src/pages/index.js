@@ -2,4 +2,5 @@ import React from 'react';
 
 import { LandingPage } from '../components';
 
-export default () => <LandingPage />;
+const Home = () => <LandingPage />;
+export default Home;
