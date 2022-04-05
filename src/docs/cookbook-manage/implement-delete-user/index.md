@@ -1,7 +1,7 @@
 ---
-title: Implement "Delete account" functionality
+title: Implement user deletion in FTW template
 slug: implement-delete-user
-updated: 2022-03-25
+updated: 2022-04-05
 category: cookbook-manage
 ingress:
   This article guides you in implementing a feature where a user can delete
