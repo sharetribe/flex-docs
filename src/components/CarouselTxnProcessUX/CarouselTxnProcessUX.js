@@ -13,7 +13,7 @@ const CarouselTxnProcessUX = props => {
         imgSrc={IMG_TRANSACTION_PROCESS_PREAUTH}
         imgAlt="A transaction where the customer has paid"
       >
-        <h3>A paid transaction waiting approval</h3>
+        <h3>A paid transaction waiting for approval</h3>
         <p>
           According to the graph, this user interaction, or transaction, has
           reached the preauthorized state. The next possible steps are to accept
