@@ -1,5 +1,5 @@
 ---
-title: Implement user deletion in FTW template
+title: Implement user deletion
 slug: implement-delete-user
 updated: 2022-04-05
 category: cookbook-manage

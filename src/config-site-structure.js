@@ -85,6 +85,15 @@ const sortingArrayPayments = [
   'strong-customer-authentication',
 ];
 
+const sortingArrayHowToUsers = [
+  'enable-facebook-login',
+  'enable-google-login',
+  'enable-open-id-connect-login',
+  'setup-open-id-connect-proxy',
+  'enable-login-as-user',
+  'implement-delete-user',
+];
+
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -143,7 +152,10 @@ exports.siteStructure = [
     id: 'how-to',
     isOpen: false,
     subcategories: [
-      { id: 'how-to-users-and-authentication' },
+      { 
+        id: 'how-to-users-and-authentication',
+        sortingArray: sortingArrayHowToUsers,
+      },
       { id: 'how-to-listing' },
       { id: 'how-to-transaction-process' },
       {
