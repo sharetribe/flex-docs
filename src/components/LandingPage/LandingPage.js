@@ -224,23 +224,23 @@ const LandingPage = props => {
             </SectionLinks>
           </StyledSection>
 
-          {/* BACKGROUND */}
+          {/* CONCEPTS */}
           <StyledSection>
             <SectionHeading>
-              <UiText id="LandingPage.background.title" />
+              <UiText id="LandingPage.concepts.title" />
             </SectionHeading>
             <StyledSectionDescription>
-              <UiText id="LandingPage.background.description" />
+              <UiText id="LandingPage.concepts.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/operator-guides/concepts/">
-                <UiText id="LandingPage.background.concepts" />
+              <SectionLink to="/concepts/how-the-listing-search-works/">
+                <UiText id="LandingPage.concepts.search" />
               </SectionLink>
-              <SectionLink to="/operator-guides/features/">
-                <UiText id="LandingPage.background.features" />
+              <SectionLink to="/concepts/payments-overview/">
+                <UiText id="LandingPage.concepts.payments" />
               </SectionLink>
               <SectionLink to="/concepts/transaction-process/">
-                <UiText id="LandingPage.background.transactionProcess" />
+                <UiText id="LandingPage.concepts.transactionProcess" />
               </SectionLink>
             </SectionLinks>
           </StyledSection>
