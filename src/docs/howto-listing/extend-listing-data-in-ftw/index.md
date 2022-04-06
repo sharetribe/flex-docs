@@ -102,8 +102,7 @@ That list of options is relevant when we add a new public data field to
 the listing through the EditListingWizard component. If you want to know
 more about those other keys in that configuration (e.g. `type`, `group`,
 `queryParamNames`), you should read the
-[Change search filters](/how-to/change-search-filters-in-ftw/)
-article.
+[Change search filters](/how-to/change-search-filters-in-ftw/) article.
 
 > **Note**: it's entirely possible to add extended data without creating
 > search filters for it. In that case, you could just hard-code

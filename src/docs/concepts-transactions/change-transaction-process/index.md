@@ -26,8 +26,8 @@ This article continues the general overview of the transaction process
 offered
 [here](https://www.sharetribe.com/docs/operator-guides/transaction-process/)
 and
-[here](https://www.sharetribe.com/docs/concepts/transaction-process/)
-by suggesting a few principles to keep in mind when designing how your
+[here](https://www.sharetribe.com/docs/concepts/transaction-process/) by
+suggesting a few principles to keep in mind when designing how your
 users will transact.
 
 ## What to think about in designing your own transaction process

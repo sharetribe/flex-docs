@@ -86,9 +86,8 @@ that Flex uses to validate the ID token that wraps the LinkedIn login
 information. To enable logins in Flex using the OIDC proxy, a
 corresponding identity provider and identity provider client need to be
 configured for your marketplace in Flex Console. See the
-[OpenID Connect cookbook](/how-to/enable-open-id-connect-login/)
-on for information on how to add a new identity provider for your
-marketplace.
+[OpenID Connect cookbook](/how-to/enable-open-id-connect-login/) on for
+information on how to add a new identity provider for your marketplace.
 
 Here's some guidance for configuring a new identity provider and a
 client to be used as a proxy for LinkedIn:

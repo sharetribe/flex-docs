@@ -53,9 +53,8 @@ your own backend systems or applications meant to be executed by
 authorized marketplace operators.
 
 > **IMPORTANT** Never expose your Integration API
-> [application](/concepts/applications/) credentials to an
-> untrusted device or application, such as end user's browser or mobile
-> app.
+> [application](/concepts/applications/) credentials to an untrusted
+> device or application, such as end user's browser or mobile app.
 
 The Integration API is well suited for building the following types of
 applications:
@@ -83,6 +82,5 @@ and password), while Integration API applications authenticate using
 their own credentials.
 
 For more details see the
-[Authentication API](/concepts/authentication-api/) article and
-the
+[Authentication API](/concepts/authentication-api/) article and the
 [API reference documentation](https://www.sharetribe.com/api-reference/authentication.html).

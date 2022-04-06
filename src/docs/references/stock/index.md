@@ -36,10 +36,9 @@ consistently, given an expected current total stock quantity for a
 listing.
 
 All stock reservations are created through transactions, governed by
-your
-[transaction process](/concepts/transaction-process/).
-An appropriately constructed transaction process ensures that
-reservations can only be placed for available quantities of stock.
+your [transaction process](/concepts/transaction-process/). An
+appropriately constructed transaction process ensures that reservations
+can only be placed for available quantities of stock.
 
 ## Stock reservation states
 
@@ -80,9 +79,9 @@ Generally, the total available stock of a listing cannot be a negative
 number. However, in some rare cases, it is possible that the total stock
 becomes negative. This should be considered an error case and is an
 indication that at least some
-[transaction transition](/concepts/transaction-process/)
-failed to execute properly. Such a transaction transition would include
-some of the actions that _release_ some reserved stock (such as
+[transaction transition](/concepts/transaction-process/) failed to
+execute properly. Such a transaction transition would include some of
+the actions that _release_ some reserved stock (such as
 [`:action/decline-stock-reservation`](/references/transaction-process-actions/#actiondecline-stock-reservation)
 or
 [`:action/cancel-stock-reservation`](/references/transaction-process-actions/#actioncancel-stock-reservation)),

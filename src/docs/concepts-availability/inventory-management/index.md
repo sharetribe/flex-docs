@@ -71,5 +71,4 @@ If you are looking to manage the number of spaces in an event, you
 should take a look at the seats feature. With seats, you can manage the
 number of available spaces in a given event at a given time. Seats are
 tied to booking availability managment. You can learn more about the
-feature
-[here](https://www.sharetribe.com/docs/concepts/manage-seats/).
+feature [here](https://www.sharetribe.com/docs/concepts/manage-seats/).

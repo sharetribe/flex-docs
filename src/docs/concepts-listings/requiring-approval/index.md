@@ -36,9 +36,9 @@ listing.
 
 Approving a listing does not trigger an automatic email notification.
 However, you can for instance
-[set up Zapier](/how-to/set-up-and-use-zapier/) to listen to
-events where a listing's state goes from `pendingApproval` to
-`published` and send a message.
+[set up Zapier](/how-to/set-up-and-use-zapier/) to listen to events
+where a listing's state goes from `pendingApproval` to `published` and
+send a message.
 
 ## Managing listing approval in Flex Console
 
@@ -75,8 +75,8 @@ user has unused listing quota.
 ## Enabling and disabling listing approval in Flex CLI
 
 In addition to the Flex Console, you can also use
-[Flex CLI](/introduction/getting-started-with-flex-cli/)
-to enable and disable listing approval on your marketplace.
+[Flex CLI](/introduction/getting-started-with-flex-cli/) to enable and
+disable listing approval on your marketplace.
 
 ```bash
 #To see whether your marketplace requires listings to be approved

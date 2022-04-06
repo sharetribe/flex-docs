@@ -55,9 +55,8 @@ choose from three templates:
   "Sneakertime" - a product marketplace with stock management.
 
 > **Note:** By default your Flex marketplace comes with day-based
-> [transaction process](/concepts/transaction-process/).
-> If you want to start working with FTW-hourly, you need to change to
-> the
+> [transaction process](/concepts/transaction-process/). If you want to
+> start working with FTW-hourly, you need to change to the
 > [time-based process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-hourly-default-process).
 > See
 > [getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)

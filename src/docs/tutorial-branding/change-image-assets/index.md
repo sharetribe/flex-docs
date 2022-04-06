@@ -11,8 +11,8 @@ published: true
 
 ## Default background image
 
-In the [previous step](/tutorial/first-edit/), you made changes
-to the marketplaceDefaults.css file. This time you make changes to
+In the [previous step](/tutorial/first-edit/), you made changes to the
+marketplaceDefaults.css file. This time you make changes to
 propertySets.css. **`--backgroundImage`** variable can be found from
 there. It is used to provide a background image for Hero component on
 the landing page as well as some of the other pages: sing-up and log-in,
@@ -117,8 +117,8 @@ public internet before you can use these tools:
 - [Twitter card validator](https://cards-dev.twitter.com/validator)
 
 > **Note**: You could deploy the app to Heroku to test these tools. We
-> will cover [Heroku deploys](/tutorial/deploy-to-heroku/)
-> later in this tutorial.
+> will cover [Heroku deploys](/tutorial/deploy-to-heroku/) later in this
+> tutorial.
 
 </extrainfo>
 

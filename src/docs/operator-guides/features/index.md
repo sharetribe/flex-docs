@@ -508,8 +508,8 @@ Here are the features it offers:
 
 - **General settings.** Change things like marketplace name and URL.
 - **Transaction processes.** See a list of your
-  [transaction processes](/concepts/transaction-process/)
-  and view the details of each process.
+  [transaction processes](/concepts/transaction-process/) and view the
+  details of each process.
 - **Payments.** Add your Stripe keys to be able to accept online
   payments.
 - **Built-in email templates.** Edit and preview the contents of your

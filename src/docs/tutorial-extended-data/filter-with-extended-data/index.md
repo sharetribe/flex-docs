@@ -44,10 +44,9 @@ JSON data is not supported by the Flex search engine) - and you need to
 add schema to that extended data field using
 [Flex CLI](/how-to/manage-search-schemas-with-flex-cli/).
 
-In one of the previous
-[tutorial article](/tutorial/add-extended-data/), we added
-_"view"_ key to the listing's extended data - so the first prerequisite
-is already covered. Now we add the schema for it.
+In one of the previous [tutorial article](/tutorial/add-extended-data/),
+we added _"view"_ key to the listing's extended data - so the first
+prerequisite is already covered. Now we add the schema for it.
 
 ```shell
 flex-cli search set --key view --type enum --scope public -m my-test-marketplace
@@ -134,8 +133,8 @@ you could check to read more about Extended data:
 
 - [Extended data](/references/extended-data/)
 - [Manage search schemas with Flex CLI](/how-to/manage-search-schemas-with-flex-cli/)
-- [Extend listings](/how-to/extend-listing-data-in-ftw/) with
-  your own data.
+- [Extend listings](/how-to/extend-listing-data-in-ftw/) with your own
+  data.
 - [Search filters in FTW](/how-to/change-search-filters-in-ftw/)
 
 ## What you should do next?

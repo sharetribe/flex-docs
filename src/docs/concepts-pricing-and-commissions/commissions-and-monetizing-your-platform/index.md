@@ -30,11 +30,11 @@ options.
 
 As background, familiarizing yourself with
 [line items](/concepts/pricing/#line-items) and
-[privileged transitions](/concepts/privileged-transitions/)
-gives you a good understanding of the concepts discussed in this
-article. In addition, the article that describes
-[payments in Flex](/concepts/payments-overview/) provides
-valuable information about how the payment flow in Flex works.
+[privileged transitions](/concepts/privileged-transitions/) gives you a
+good understanding of the concepts discussed in this article. In
+addition, the article that describes
+[payments in Flex](/concepts/payments-overview/) provides valuable
+information about how the payment flow in Flex works.
 
 Configuring commissions happens with the
 [privileged-set-line-items](/references/transaction-process-actions/#actionprivileged-set-line-items)

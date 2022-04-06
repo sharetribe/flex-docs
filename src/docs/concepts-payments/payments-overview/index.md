@@ -122,11 +122,11 @@ your most likely marketplace provider demographics in
 
 When the customer initiates a transaction in the Flex default
 transaction processes, Flex creates a
-[PaymentIntent](/concepts/payment-intents/) for the total price
-of the transaction. Once the PaymentIntent is confirmed, Stripe
-preauthorizes the sum from the customer's payment method. In other
-words, even though the sum is not paid out from the customer's card, it
-is reserved and not available to be used by the customer.
+[PaymentIntent](/concepts/payment-intents/) for the total price of the
+transaction. Once the PaymentIntent is confirmed, Stripe preauthorizes
+the sum from the customer's payment method. In other words, even though
+the sum is not paid out from the customer's card, it is reserved and not
+available to be used by the customer.
 
 The preauthorization is valid for 7 days, after which the
 preauthorization is automatically released by Stripe, and the funds are
@@ -154,8 +154,8 @@ the platform's account as an
 [application fee](https://stripe.com/docs/api/application_fees).
 
 Depending on how the
-[transaction's line items](/concepts/pricing/#line-items)
-have been defined, the platform can take a
+[transaction's line items](/concepts/pricing/#line-items) have been
+defined, the platform can take a
 [commission of the price](/concepts/commissions-and-monetizing-your-platform/)
 from either the provider, the customer, or both. The platform is also
 responsible for paying all
@@ -218,10 +218,10 @@ depending on your payment strategy, and you can fine-tune the timeline
 of different actions to suit your marketplace.
 
 You can edit the transaction processes on your marketplace with
-[Flex CLI](/how-to/edit-transaction-process-with-flex-cli/).
-If you use one of the FTW templates, you will also need to make some
-[changes in the template](/how-to/change-transaction-process-in-ftw/)
-to enable it to use a different process. If you do make changes to a
+[Flex CLI](/how-to/edit-transaction-process-with-flex-cli/). If you use
+one of the FTW templates, you will also need to make some
+[changes in the template](/how-to/change-transaction-process-in-ftw/) to
+enable it to use a different process. If you do make changes to a
 transaction process when you already have transactions in your
 environment, it is good to note that a transaction will proceed with the
 transaction process it was initiated with, and changing the transaction
@@ -269,8 +269,8 @@ receiving the product or service they purchased.
 Flex supports multiple payment methods as a part of its Stripe
 integration. The default payment method is a payment card, which is what
 the FTW templates use. However, you can enable
-[other payment methods](/concepts/payment-methods-overview/) as
-well with moderate custom development work.
+[other payment methods](/concepts/payment-methods-overview/) as well
+with moderate custom development work.
 
 The user can save a default payment method in Flex. If your marketplace
 uses the
@@ -288,9 +288,9 @@ default, to facilitate e.g. price filtering and sorting.
 As the transaction progresses, the payment intent is created and charged
 from the customer's payment method in the listing's currency, or
 alternatively the
-[currency of the line items](/concepts/pricing/#line-items)
-if different from the listing currency. The payout currency is
-determined by the provider's bank account currency.
+[currency of the line items](/concepts/pricing/#line-items) if different
+from the listing currency. The payout currency is determined by the
+provider's bank account currency.
 
 <extrainfo title="Stripe currency terminology">
 In Stripe terminology, the <b>presentment currency</b> is the currency
@@ -342,9 +342,9 @@ Sometimes it takes a while to get Stripe to work. Here are some ideas to
 troubleshoot the problem.
 
 - Double check that you have followed the
-  [Stripe setup instructions](/how-to/set-up-and-use-stripe/).
-  Note that in your test environment, you need to use the Stripe keys
-  starting with `sk_test` and `pk_test`, and you will also need to use
+  [Stripe setup instructions](/how-to/set-up-and-use-stripe/). Note that
+  in your test environment, you need to use the Stripe keys starting
+  with `sk_test` and `pk_test`, and you will also need to use
   [Stripe's test payout details](https://stripe.com/docs/connect/testing#payouts)
   and
   [test payment methods](https://stripe.com/docs/testing#payment-intents-api)
@@ -362,8 +362,8 @@ troubleshoot the problem.
   check if someone has already solved a similar problem.
 
 - In case of payout problem issues, you can check out our article about
-  [Stripe payout issues](/concepts/solving-payout-problems/)
-  for advice or ideas.
+  [Stripe payout issues](/concepts/solving-payout-problems/) for advice
+  or ideas.
 
 If nothing seems to work, you can always contact Flex technical support
 through the chat widget in your
@@ -445,8 +445,8 @@ transaction process actions etc.) are named with the prefix `stripe`.
 If you want to modify your FTW template to work without Stripe, the
 effort is more extensive, since each template is built around a logic
 that uses Stripe actions and endpoints. You can use
-[this article](/how-to/removing-stripe-and-payments/) as your
-starting point.
+[this article](/how-to/removing-stripe-and-payments/) as your starting
+point.
 
 When removing the Stripe integration, you will want to consider whether
 or not you want to implement some other payment gateway in your

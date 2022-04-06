@@ -33,5 +33,4 @@ If you are interested in reading more about the Marketplace and
 Integration API, refer to our background article on
 [Marketplace and Integration API](/concepts/marketplace-api-integration-api/).
 For more information on our Authentication API, refer to our background
-article on the
-[Authentication API](/concepts/authentication-api/).
+article on the [Authentication API](/concepts/authentication-api/).

@@ -64,8 +64,7 @@ EditListingDetailsPanel instead:
 
 > **Tip**: if you want to add a new panel to the _EditListingWizard_,
 > you should check
-> [this Cookbook article](/how-to/extend-listing-data-in-ftw/)
-> first.
+> [this Cookbook article](/how-to/extend-listing-data-in-ftw/) first.
 
 ### Save new field to public data
 
