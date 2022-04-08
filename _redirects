@@ -118,6 +118,7 @@
 /docs/cookbook-payments/stripe-connect-platform-review/ /docs/how-to/stripe-connect-platform-review/
 /docs/cookbook-payments/removing-stripe-and-payments/ /docs/how-to/removing-stripe-and-payments/
 /docs/cookbook-manage/enable-login-as-user/ /docs/how-to/enable-login-as-user/
+/docs/cookbook-manage/implement-delete-user/ /docs/how-to/implement-delete-user/
 /docs/cookbook-emails/set-up-outgoing-email-settings/ /docs/how-to/set-up-outgoing-email-settings/
 /docs/cookbook-social-logins-and-sso/enable-facebook-login/ /docs/how-to/enable-facebook-login/
 /docs/cookbook-social-logins-and-sso/enable-google-login/ /docs/how-to/enable-google-login/

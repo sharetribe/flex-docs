@@ -2,7 +2,7 @@
 title: Implement user deletion
 slug: implement-delete-user
 updated: 2022-04-05
-category: cookbook-manage
+category: how-to-users-and-authentication
 ingress:
   This article guides you in implementing a feature where a user can delete
   their own account through the FTW template Account settings section.
