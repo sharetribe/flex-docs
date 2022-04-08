@@ -7,7 +7,7 @@ import {
   baselineLarge,
   siteStructure,
 } from '../../config';
-                          import { findParentCategories } from '../../util/navigation';
+import { findParentCategories } from '../../util/navigation';
 import {
   Ingress,
   H1,
@@ -169,15 +169,15 @@ const ContentTocHeader = styled(H6)`
   }
 `;
 
-                              const findMainCategory = category => {
-                                const path = findParentCategories(category, siteStructure) || [];
-                                return path.length > 0 ? path[path.length - 1] : null;
-                              };
+const findMainCategory = category => {
+  const path = findParentCategories(category, siteStructure) || [];
+  return path.length > 0 ? path[path.length - 1] : null;
+};
 
 const ArticlePage = props => {
   const { frontmatter, htmlAst, tableOfContents } = props;
   const { title, slug, updated, category, ingress } = frontmatter;
-                                const mainCategory = findMainCategory(category) || category;
+  const mainCategory = findMainCategory(category) || category;
 
   // Structured metadata for the article page
   //
@@ -240,7 +240,11 @@ const ArticlePage = props => {
           </MobileTocWrapper>
           <Markdown htmlAst={htmlAst} />
 
-          <NextAndPrevArticles slug={slug} category={category} mainCategory={mainCategory}/>
+          <NextAndPrevArticles
+            slug={slug}
+            category={category}
+            mainCategory={mainCategory}
+          />
         </MainColumn>
         <SideColumn>
           <SideNavigation as="nav">

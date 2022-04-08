@@ -44,7 +44,7 @@ JSON data is not supported by the Flex search engine) - and you need to
 add schema to that extended data field using
 [Flex CLI](/how-to/manage-search-schemas-with-flex-cli/).
 
-In one of the previous [tutorial article](/tutorial/add-extended-data/),
+In one of the previous [tutorial articles](/tutorial/add-extended-data/),
 we added _"view"_ key to the listing's extended data - so the first
 prerequisite is already covered. Now we add the schema for it.
 
