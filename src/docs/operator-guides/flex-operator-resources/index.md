@@ -32,7 +32,7 @@ components and what you need to customize your Flex marketplace.
 - What development skills are needed to customize Flex:
   https://www.sharetribe.com/docs/introduction/development-skills/
 - Flex Templates for Web (FTW):
-  https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw
+  https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw
 
 ## Flex Template for Web
 
@@ -51,13 +51,13 @@ These articles contain a primer on how to understand and customize your
 transaction process.
 
 - Transaction Process information:
-  https://www.sharetribe.com/docs/background/transaction-process/
+  https://www.sharetribe.com/docs/concepts/transaction-process/
 - Flex CLI:
-  https://www.sharetribe.com/docs/flex-cli/getting-started-with-flex-cli/
+  https://www.sharetribe.com/docs/introduction/getting-started-with-flex-cli/
 - Custom Pricing:
-  https://www.sharetribe.com/docs/cookbook-payments/how-to-customize-pricing/
+  https://www.sharetribe.com/docs/how-to/how-to-customize-pricing/
 - Time-based bookings:
-  https://www.sharetribe.com/docs/cookbook-transaction-process/enable-time-based-bookings-into-use/
+  https://www.sharetribe.com/docs/how-to/enable-time-based-bookings-into-use/
 
 ## Extended data
 
@@ -68,9 +68,9 @@ create filters in your search page.
 - Extended data information:
   https://www.sharetribe.com/docs/references/extended-data/
 - How to extend listing data in FTW:
-  https://www.sharetribe.com/docs/cookbook-data-model/extend-listing-data-in-ftw/
+  https://www.sharetribe.com/docs/how-to/extend-listing-data-in-ftw/
 - How to setup search filters in FTW:
-  https://www.sharetribe.com/docs/cookbook-search/change-search-filters-in-ftw/
+  https://www.sharetribe.com/docs/how-to/change-search-filters-in-ftw/
 
 ## Stripe
 
@@ -86,7 +86,7 @@ it up with Sharetribe Flex.
   countries:
   https://stripe.com/docs/connect/custom-accounts#requirements
 - How to setup and use Stripe in Flex:
-  https://www.sharetribe.com/docs/cookbook-payments/set-up-and-use-stripe/
+  https://www.sharetribe.com/docs/how-to/set-up-and-use-stripe/
 
 ## Launch
 

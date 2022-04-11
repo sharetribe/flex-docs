@@ -220,7 +220,7 @@ const ArticlePage = props => {
                     `ArticlePage.${mainCategory}.breadCrumbTitle`
                   ),
                 },
-                { path: `/${category}/${slug}/`, label: title },
+                { path: `/${mainCategory}/${slug}/`, label: title },
               ]}
             />
             <Updated date={updated} />
@@ -233,13 +233,18 @@ const ArticlePage = props => {
               <UiText id="ArticlePage.tableOfContents" />
             </ContentTocHeader>
             <MobileToc
-              path={`/${category}/${slug}/`}
+              path={`/${mainCategory}/${slug}/`}
               headings={tableOfContents}
               maxDepth={3}
             />
           </MobileTocWrapper>
           <Markdown htmlAst={htmlAst} />
-          <NextAndPrevArticles slug={slug} category={category} />
+
+          <NextAndPrevArticles
+            slug={slug}
+            category={category}
+            mainCategory={mainCategory}
+          />
         </MainColumn>
         <SideColumn>
           <SideNavigation as="nav">
@@ -247,7 +252,7 @@ const ArticlePage = props => {
               <UiText id="ArticlePage.tableOfContents" />
             </H6>
             <SideToc
-              path={`/${category}/${slug}/`}
+              path={`/${mainCategory}/${slug}/`}
               headings={tableOfContents}
               maxDepth={3}
             />

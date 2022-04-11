@@ -13,7 +13,7 @@ published: true
 This reference guide assumes you know the basic idea and concepts, such
 as states, transitions and actions, of the Flex transaction process. If
 you don't, please check this
-[background article about Transaction process](/background/transaction-process/)
+[background article about Transaction process](/concepts/transaction-process/)
 first.
 
 ## Example process
@@ -201,9 +201,9 @@ operation.
 ## Transitions in the Integration API
 
 It is possible to use the
-[Integration API](/background/marketplace-api-integration-api/) to
-invoke transitions, which are defined as having `:actor.role/operator`
-as the `:actor`. This is done via the
+[Integration API](/concepts/marketplace-api-integration-api/) to invoke
+transitions, which are defined as having `:actor.role/operator` as the
+`:actor`. This is done via the
 [transactions/transition](https://www.sharetribe.com/api-reference/integration.html#transition-transaction)
 endpoint. Unlike the Marketplace API, the Integration API currently does
 not provide an endpoint for initiating transactions.
@@ -214,7 +214,7 @@ endpoint to
 
 _**The Integration API provides a trusted context for invoking
 transitions. This means that these transitions are considered
-[privileged](/background/privileged-transitions/) and can utilize any of
+[privileged](/concepts/privileged-transitions/) and can utilize any of
 the actions that require a trusted context.**_
 
 ## Action composition
@@ -432,15 +432,15 @@ requires and accepts.
 
 ### Transition
 
-| Key            | Type            | Description                                                                                                                                                                                                                                                  | Example                                            |
-| -------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------- |
-| `:name`        | Keyword         | Unique name for the transition. Used when invoking the transition via Marketplace API.                                                                                                                                                                       | `:transition/request-payment`                      |
-| `:actor`       | Keyword         | Defines who has the permission to invoke the transition. Must be one of: `:actor.role/customer`, `:actor.role/provider`, `:actor.role/operator`                                                                                                              | `:actor.role/customer`                             |
-| `:actions`     | Vector          | An ordered list of actions to take when the transition is executed.                                                                                                                                                                                          | `[{:name :action/create-pending-booking ...} ...]` |
-| `:from`        | Keyword         | Name of the state from which the transition can be taken from. Left out for initial transitions.                                                                                                                                                             | `:state/pending-payment`                           |
-| `:to`          | Keyword         | Name of the state to which this transition leads.                                                                                                                                                                                                            | `:state/pending-payment`                           |
-| `:at`          | Time expression | Optional time expression that when given, turns the transition to a delayed transition. When using `:at` do not specify `:actor`                                                                                                                             | `{:fn/timepoint [:time/booking-end]}`              |
-| `:privileged?` | Boolean         | Optionally mark the transition as [privileged](/background/privileged-transitions/). Privileged transitions can only be invoked from a trusted context and are useful when you need to ensure the transition parameters are correct or have specific values. | `true`                                             |
+| Key            | Type            | Description                                                                                                                                                                                                                                                | Example                                            |
+| -------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| `:name`        | Keyword         | Unique name for the transition. Used when invoking the transition via Marketplace API.                                                                                                                                                                     | `:transition/request-payment`                      |
+| `:actor`       | Keyword         | Defines who has the permission to invoke the transition. Must be one of: `:actor.role/customer`, `:actor.role/provider`, `:actor.role/operator`                                                                                                            | `:actor.role/customer`                             |
+| `:actions`     | Vector          | An ordered list of actions to take when the transition is executed.                                                                                                                                                                                        | `[{:name :action/create-pending-booking ...} ...]` |
+| `:from`        | Keyword         | Name of the state from which the transition can be taken from. Left out for initial transitions.                                                                                                                                                           | `:state/pending-payment`                           |
+| `:to`          | Keyword         | Name of the state to which this transition leads.                                                                                                                                                                                                          | `:state/pending-payment`                           |
+| `:at`          | Time expression | Optional time expression that when given, turns the transition to a delayed transition. When using `:at` do not specify `:actor`                                                                                                                           | `{:fn/timepoint [:time/booking-end]}`              |
+| `:privileged?` | Boolean         | Optionally mark the transition as [privileged](/concepts/privileged-transitions/). Privileged transitions can only be invoked from a trusted context and are useful when you need to ensure the transition parameters are correct or have specific values. | `true`                                             |
 
 **Example**:
 

@@ -64,8 +64,7 @@ EditListingDetailsPanel instead:
 
 > **Tip**: if you want to add a new panel to the _EditListingWizard_,
 > you should check
-> [this Cookbook article](/cookbook-data-model/extend-listing-data-in-ftw/)
-> first.
+> [this Cookbook article](/how-to/extend-listing-data-in-ftw/) first.
 
 ### Save new field to public data
 
@@ -236,4 +235,4 @@ Updated EditListingFeaturesPanel should look like this:
 
 In then next article, we'll use this _"view"_ public data field on
 listing page.<br />
-[› Go to the next article](/tutorial-extended-data/show-extended-data/)
+[› Go to the next article](/tutorial/show-extended-data/)

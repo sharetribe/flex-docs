@@ -11,7 +11,7 @@ published: true
 ---
 
 You can use any technology to build a marketplace on top of the
-[Marketplace API](/background/concepts/#marketplace-api). However,
+[Marketplace API](/operator-guides/concepts/#marketplace-api). However,
 making a marketplace user interface (UI) from scratch requires a lot of
 effort. This is why we provide Flex Templates for Web (FTW). These are
 polished marketplace web applications that are ready for customization.
@@ -79,4 +79,4 @@ you.
 
 For developers doing customizations, we have an active community in
 Slack. You will get access to the channel when you get an account to
-[Console](/background/concepts/#console).
+[Console](/operator-guides/concepts/#console).

@@ -13,6 +13,12 @@ const sortingArrayIntroduction = [
   'development-skills',
 ];
 
+const sortingArrayIntroductionGettingStarted = [
+  'getting-started-with-ftw-daily',
+  'getting-started-with-flex-cli',
+  'getting-started-with-integration-api'
+];
+
 // Arrange tutorial articles according to this configuration.
 // This sorting order is used to provide next-page link
 // for the listed articles.
@@ -41,46 +47,6 @@ const sortingArrayTutorialTransactionProcess = [
   'add-new-email-notification',
 ];
 
-const sortingArrayBackground = [
-  'introducing-flex',
-  'concepts',
-  'development-skills',
-  'features',
-  'transaction-process',
-  'ftw-routing',
-  'ftw-redux',
-  'how-to-build-and-launch-with-flex',
-  'is-flex-right-for-you',
-  'requiring-approval',
-  'custom-pricing',
-  'pricing',
-  'what-is-the-difference-between-flex-and-go-source-available',
-  'payments-overview',
-  'payment-methods-overview',
-  'payment-intents',
-  'strong-customer-authentication',
-  'privileged-transitions',
-  'off-session-payments-in-transaction-process',
-  'using-stored-payment-cards',
-  'solving-payout-problems',
-  'commissions-and-monetizing-your-platform',
-  'stripe-provider-onboarding-and-capabilities',
-  'how-the-search-works',
-  'marketplace-api-integration-api',
-  'time-based-template',
-  'authentication-api',
-  'social-logins-and-sso',
-  'applications',
-];
-
-const sortingArrayFlexCLI = [
-  'getting-started-with-flex-cli',
-  'edit-transaction-process-with-flex-cli',
-  'edit-email-templates-with-flex-cli',
-  'manage-search-schemas-with-flex-cli',
-  'view-events-with-flex-cli',
-];
-
 const sortingArrayReferences = [
   'api',
   'js-sdk',
@@ -103,11 +69,42 @@ const sortingArrayPaymentCookbooks = [
   'removing-stripe',
 ];
 
+const sortingArrayTransactionProcess = [
+  'transaction-process',
+  'privileged-transitions',
+  'change-transaction-process',
+];
+
+const sortingArrayPayments = [
+  'payments-overview',
+  'payment-methods-overview',
+  'using-stored-payment-cards',
+  'off-session-payments-in-transaction-process',
+  'payment-intents',
+  'solving-payout-problems',
+  'strong-customer-authentication',
+];
+
+const sortingArrayHowToUsers = [
+  'enable-facebook-login',
+  'enable-google-login',
+  'enable-open-id-connect-login',
+  'setup-open-id-connect-proxy',
+  'enable-login-as-user',
+  'implement-delete-user',
+];
+
 exports.siteStructure = [
   {
     id: 'introduction',
     isOpen: false,
     sortingArray: sortingArrayIntroduction,
+    subcategories: [
+      { id: 'introduction-getting-started',
+        sortingArray: sortingArrayIntroductionGettingStarted
+      },
+      { id: 'introduction-templates' },
+    ],
   },
   {
     id: 'tutorial',
@@ -132,27 +129,44 @@ exports.siteStructure = [
     ],
   },
   {
-    id: 'background',
+    id: 'concepts',
     isOpen: false,
-    sortingArray: sortingArrayBackground,
+    subcategories: [
+      { id: 'concepts-users-and-authentication' },
+      { id: 'concepts-listings' },
+      {
+        id: 'concepts-transaction-process',
+        sortingArray: sortingArrayTransactionProcess,
+      },
+      { id: 'concepts-payments', sortingArray: sortingArrayPayments },
+      { id: 'concepts-pricing-and-commissions' },
+      { id: 'concepts-availability' },
+      { id: 'concepts-development' },
+      { id: 'concepts-extended-data' },
+      { id: 'concepts-api-sdk' },
+    ],
+    // sortingArray: sortingArrayConcepts,
   },
 
   {
-    id: 'cookbook',
+    id: 'how-to',
     isOpen: false,
     subcategories: [
-      { id: 'cookbook-data-model' },
-      { id: 'cookbook-design' },
-      { id: 'cookbook-search' },
-      { id: 'cookbook-transaction-process' },
+      { 
+        id: 'how-to-users-and-authentication',
+        sortingArray: sortingArrayHowToUsers,
+      },
+      { id: 'how-to-listing' },
+      { id: 'how-to-transaction-process' },
       {
-        id: 'cookbook-payments',
+        id: 'how-to-payments',
         sortingArray: sortingArrayPaymentCookbooks,
       },
-      { id: 'cookbook-manage' },
-      { id: 'cookbook-emails' },
-      { id: 'cookbook-social-logins-and-sso' },
-      { id: 'cookbook-events' },
+      { id: 'how-to-migrations' },
+      { id: 'how-to-messaging' },
+      { id: 'how-to-design' },
+      { id: 'how-to-events' },
+      { id: 'how-to-search' },
     ],
   },
 
@@ -174,17 +188,9 @@ exports.siteStructure = [
   },
 
   {
-    id: 'flex-cli',
-    isOpen: false,
-    sortingArray: sortingArrayFlexCLI,
-  },
-
-  {
     id: 'design-toolkit',
     isOpen: false,
   },
-
-  { id: 'integrations', isOpen: false },
 
   {
     id: 'references',

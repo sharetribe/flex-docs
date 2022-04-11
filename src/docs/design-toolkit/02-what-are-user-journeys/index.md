@@ -34,7 +34,7 @@ The Flex User Journeys will introduce you to the three different
 marketplace templates - Saunatime, Yogatime and Sneakertime - and their
 User Journeys.
 
-[Flex Templates for Web](/background/concepts/#flex-templates-for-web-ftw)
+[Flex Templates for Web](/operator-guides/concepts/#flex-templates-for-web-ftw)
 are the starting point for building your custom marketplace with Flex.
 There are three templates from which you can choose the one closest to
 your marketplace idea. The templates are open-sourced website

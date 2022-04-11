@@ -223,4 +223,4 @@ The error message, when creating a new listing
 
 In the next article, we change the default suggestions for search
 locations.<br />
-[› Go to the next article](/tutorial-branding/change-default-locations/)
+[› Go to the next article](/tutorial/change-default-locations/)

@@ -197,4 +197,4 @@ to check the philosophy of how the existing components are styled.
 While you are styling components, you also need to change some
 copy-texts in them. In the next article, we'll change the copy-texts of
 Hero component.<br />
-[› Go to the next article](/tutorial-branding/working-with-translations/)
+[› Go to the next article](/tutorial/working-with-translations/)

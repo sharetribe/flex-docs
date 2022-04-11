@@ -38,16 +38,15 @@ actual query on the search page.
 
 Before filtering is possible, there are some prerequisites as you might
 remember from the earlier tutorial article:
-[Customize amenities filter](/tutorial-branding/customize-amenities-filter/#how-to-take-the-filter-into-use).
+[Customize amenities filter](/tutorial/customize-amenities-filter/#how-to-take-the-filter-into-use).
 There need to be listings with first-level keys in extended data (nested
 JSON data is not supported by the Flex search engine) - and you need to
 add schema to that extended data field using
-[Flex CLI](/flex-cli/manage-search-schemas-with-flex-cli/).
+[Flex CLI](/how-to/manage-search-schemas-with-flex-cli/).
 
-In one of the previous
-[tutorial article](/tutorial-extended-data/add-extended-data/), we added
-_"view"_ key to the listing's extended data - so the first prerequisite
-is already covered. Now we add the schema for it.
+In one of the previous [tutorial articles](/tutorial/add-extended-data/),
+we added _"view"_ key to the listing's extended data - so the first
+prerequisite is already covered. Now we add the schema for it.
 
 ```shell
 flex-cli search set --key view --type enum --scope public -m my-test-marketplace
@@ -93,7 +92,7 @@ _marketplace-custom-config.js_.
 </extrainfo>
 
 However, we actually have done that already in the
-[Add extended data to listing entity](/tutorial-extended-data/add-extended-data/)
+[Add extended data to listing entity](/tutorial/add-extended-data/)
 article.
 
 Just to recap, we added the following configuration to the _filters_
@@ -133,16 +132,16 @@ In addition to this tutorial, there are a couple of extra articles that
 you could check to read more about Extended data:
 
 - [Extended data](/references/extended-data/)
-- [Manage search schemas with Flex CLI](/flex-cli/manage-search-schemas-with-flex-cli/)
-- [Extend listings](/cookbook-data-model/extend-listing-data-in-ftw/)
-  with your own data.
-- [Search filters in FTW](/cookbook-search/change-search-filters-in-ftw/)
+- [Manage search schemas with Flex CLI](/how-to/manage-search-schemas-with-flex-cli/)
+- [Extend listings](/how-to/extend-listing-data-in-ftw/) with your own
+  data.
+- [Search filters in FTW](/how-to/change-search-filters-in-ftw/)
 
 ## What you should do next?
 
 After this tutorial, you could explore other articles in here. At least
 the following articles might interest you:
 
-- [Edit email templates](/flex-cli/edit-email-templates-with-flex-cli/)
-- [Customize pricing](/background/pricing/)
-- [Customize the transaction process](/background/transaction-process/)
+- [Edit email templates](/how-to/edit-email-templates-with-flex-cli/)
+- [Customize pricing](/concepts/pricing/)
+- [Customize the transaction process](/concepts/transaction-process/)

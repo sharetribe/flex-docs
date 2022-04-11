@@ -74,7 +74,7 @@ FTW.
 ## 4. Other optional changes
 
 - **Update
-  [page schema](https://www.sharetribe.com/docs/tutorial-branding/add-faq-page/#page-schema)**
+  [page schema](https://www.sharetribe.com/docs/tutorial/add-faq-page/#page-schema)**
   to improve Search Engine Optimization (SEO)
 - **Update ListingPage** to show extended data (aka publicData
   attribute).
@@ -90,7 +90,7 @@ FTW.
   - FTW-daily and FTW-hourly has it in _src/_ directory and
   - FTW-product has it inside _src/routing/_ directory
 - **Update transaction email templates**. For more information, see
-  [Edit email templates with Flex CLI](/flex-cli/edit-email-templates-with-flex-cli/)
+  [Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
   tutorial and [Email templates](/references/email-templates/) reference
   article.
 - **Update unit type for order line-items**, if order's main unit
@@ -100,7 +100,7 @@ FTW.
     and
   - FTW-product has that config named as
     [lineItemUnitType](https://github.com/sharetribe/ftw-product/blob/master/src/config/config.js)
-- **[Customize pricing](/tutorial-transaction-process/customize-pricing-tutorial/)**
+- **[Customize pricing](/tutorial/customize-pricing-tutorial/)**
 - **Add more static pages**:
   [How to add static pages in FTW](/ftw-styling/how-to-add-static-pages-in-ftw/)
 - **Update other existing pages**
