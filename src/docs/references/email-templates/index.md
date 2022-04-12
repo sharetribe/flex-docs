@@ -45,7 +45,7 @@ these best practises for email branding to avoid spam folders:
   marketplace and continue the actions there - we don't support e.g.
   responding to messages in the platform through email.
 - One technical thing to do is to set up in your DNS records
-  [a SPF record for Sendgrid](https://sendgrid.com/docs/glossary/spf/).
+  [a SPF record for Sendgrid](https://docs.sendgrid.com/glossary/spf).
 
 ## Handlebars
 
