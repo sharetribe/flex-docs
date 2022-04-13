@@ -85,6 +85,14 @@ const sortingArrayPayments = [
   'strong-customer-authentication',
 ];
 
+const sortingArrayManageConsole = [
+  'console-manage-overview',
+  'console-manage-users',
+  'console-manage-listings',
+  'console-manage-transactions',
+  'console-manage-reviews',
+];
+
 const sortingArrayHowToUsers = [
   'enable-facebook-login',
   'enable-google-login',
@@ -142,7 +150,7 @@ exports.siteStructure = [
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
       { id: 'concepts-development' },
-      { id: 'concepts-management' },
+      { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },
     ],

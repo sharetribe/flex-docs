@@ -8,7 +8,7 @@ ingress:
 published: true
 ---
 
-Reviews, as [other elements of your marketplace Console](CONSOLE OVERVIEW LINK), are displayed in cards. 
+Reviews, as [other elements of your marketplace Console](https://www.sharetribe.com/docs/concepts/console-manage-overview/), are displayed in cards. 
 
 ![Review card](./review-card.png)
 

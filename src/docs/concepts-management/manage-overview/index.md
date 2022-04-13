@@ -1,5 +1,5 @@
 ---
-title: Managing your data in Console overview
+title: Managing all your data in Console
 slug: console-manage-overview
 updated: 2022-04-09
 category: concepts-management
@@ -10,10 +10,10 @@ published: true
 
 The Manage section of Console is for the management of your marketplace’s day-to-day operations. The section consists of four pages: 
 
-[Manage users](CHANGELINK)
-[Manage listings](CHANGELINK)
-[Manage transactions](CHANGELINK)
-[Manage reviews](CHANGELINK)
+[Manage users](https://www.sharetribe.com/docs/concepts/console-manage-users/)
+[Manage listings](https://www.sharetribe.com/docs/concepts/console-manage-listings/)
+[Manage transactions](https://www.sharetribe.com/docs/concepts/console-manage-transactions/)
+[Manage reviews](https://www.sharetribe.com/docs/concepts/console-manage-reviews/)
 
 On these pages, you can manage, add, and edit your user, listing, transaction, and review data. The information you can add and edit depends on the data type. For more detailed information on each section, check out the corresponding article.
 
