@@ -122,7 +122,7 @@ With Flex, you can modify your marketplace’s transaction flow to your
 specifications. For example, you could add a step for the seller to
 confirm the order or only have the buyer review the purchase. Read more
 about transaction processes in Flex
-[here](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
+[here](https://www.sharetribe.com/concepts/transaction-process/).
 
 ## How to get started
 
