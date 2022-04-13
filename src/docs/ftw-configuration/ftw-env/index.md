@@ -18,13 +18,13 @@ development environment. For production deploys most should be set.
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
   See the
-  [How to set up Mapbox for FTW](/ftw-search/how-to-set-up-mapbox-for-ftw/)
+  [How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/)
   guide for more information.
 
 - **`REACT_APP_GOOGLE_MAPS_API_KEY`**
 
   See the
-  [How to use Google Maps in FTW](/ftw-search/how-to-use-google-maps-in-ftw/)
+  [How to use Google Maps in FTW](/ftw/how-to-use-google-maps-in-ftw/)
   guide for more information.
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
@@ -80,13 +80,13 @@ development environment. For production deploys most should be set.
 - **`REACT_APP_SENTRY_DSN`**
 
   See the
-  [How to set up Sentry to log errors in FTW](/ftw-testing-error-handling/how-to-set-up-sentry/)
+  [How to set up Sentry to log errors in FTW](/ftw/how-to-set-up-sentry/)
   guide for more information.
 
 - **`REACT_APP_CSP`**
 
   See the
-  [How to set up Content Security Policy (CSP) for FTW](/ftw-security/how-to-set-up-csp-for-ftw/)
+  [How to set up Content Security Policy (CSP) for FTW](/ftw/how-to-set-up-csp-for-ftw/)
   guide for more information.
 
 - **`BASIC_AUTH_USERNAME`**
@@ -100,7 +100,7 @@ development environment. For production deploys most should be set.
 - **`REACT_APP_GOOGLE_ANALYTICS_ID`**
 
   See the
-  [How to set up Analytics for FTW](/ftw-analytics/how-to-set-up-analytics-for-ftw/)
+  [How to set up Analytics for FTW](/ftw/how-to-set-up-analytics-for-ftw/)
   guide for more information.
 
 - **`REACT_APP_AVAILABILITY_ENABLED`**

@@ -29,7 +29,7 @@ One of the most advanced safety measures in modern browsers is Content
 Security Policy (CSP). When it is used, it helps to detect and mitigate
 certain types of attacks, including XSS and data injection attacks. Read
 more from our documentation on
-[how to set up Content Security Policy](/ftw-security/how-to-set-up-csp-for-ftw/)
+[how to set up Content Security Policy](/ftw/how-to-set-up-csp-for-ftw/)
 
 ## Sanitize user-generated content when updating entities
 
@@ -72,7 +72,7 @@ similar fashion to validate content or just format it before saving.
 
 ## Resources
 
-- [How to set up Content Security Policy](/ftw-security/how-to-set-up-csp-for-ftw/)
+- [How to set up Content Security Policy](/ftw/how-to-set-up-csp-for-ftw/)
 - [JSX prevents injection attacks](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
 - [OWASP XSS prevention cheat sheet](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md)
 - https://mathiasbynens.github.io/rel-noopener/

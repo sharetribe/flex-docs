@@ -103,5 +103,5 @@ actions of a transition**.
 - [Transaction process actions for stock reservations](/references/transaction-process-actions/#stock-reservations)
 - [Example transaction process definition](https://github.com/sharetribe/flex-example-processes#flex-product-default-process)
   for selling products using stock
-- The [FTW product](/ftw-introduction/ftw-product/) is an example
+- The [FTW product](/ftw/ftw-product/) is an example
   implementation of stock management.

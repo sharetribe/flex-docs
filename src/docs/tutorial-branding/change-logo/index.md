@@ -186,10 +186,10 @@ _TopbarDesktop_.
 Creating a new visual brand needs a lot of changes to existing
 components. You should read the following article to understand **_how
 to customize FTW styles_**: <br />
-[How to customize FTW styles](/ftw-styling/how-to-customize-ftw-styles/)
+[How to customize FTW styles](/ftw/how-to-customize-ftw-styles/)
 
 Especially, you should check
-[the best practices topic](/ftw-styling/how-to-customize-ftw-styles/#styling-guidelines)
+[the best practices topic](/ftw/how-to-customize-ftw-styles/#styling-guidelines)
 to check the philosophy of how the existing components are styled.
 
 <br />

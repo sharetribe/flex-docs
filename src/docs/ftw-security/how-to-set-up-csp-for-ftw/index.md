@@ -36,7 +36,7 @@ Possible values:
   requests that violate the policy are blocked
 
 If error logging with Sentry is enabled (See the
-[How to set up Sentry to log errors in FTW ](/ftw-testing-error-handling/how-to-set-up-sentry/)
+[How to set up Sentry to log errors in FTW ](/ftw/how-to-set-up-sentry/)
 guide), the reports are sent to Sentry. Otherwise the reports are just
 logged in the backend.
 

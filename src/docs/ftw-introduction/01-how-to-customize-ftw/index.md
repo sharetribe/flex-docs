@@ -141,11 +141,11 @@ ignored in Git, so you'll have to add the corresponding configuration
 also to your server environment. Check this
 [Heroku config setup](/tutorial/deploy-to-heroku/#deploy-to-heroku)
 article - and there's also a generic article about
-[deploying to production](/ftw-hosting/how-to-deploy-ftw-to-production/).
+[deploying to production](/ftw/how-to-deploy-ftw-to-production/).
 
 There are some mandatory configuration variables that are defined in the
 template. See the
-[FTW Environment configuration variables](/ftw-configuration/ftw-env/)
+[FTW Environment configuration variables](/ftw/ftw-env/)
 reference for more information.
 
 See also the
@@ -225,7 +225,7 @@ yarn test
 ```
 
 For more information, see the
-[How to test FTW](/ftw-testing-error-handling/how-to-test-ftw/)
+[How to test FTW](/ftw/how-to-test-ftw/)
 documentation.
 
 ## Customization

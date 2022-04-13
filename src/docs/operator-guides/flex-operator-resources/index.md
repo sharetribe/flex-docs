@@ -95,7 +95,7 @@ Ready to launch? Consider these articles.
 - Going live process:
   https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/#4-going-live
 - How to deploy FTW to production:
-  https://www.sharetribe.com/docs/ftw-hosting/how-to-deploy-ftw-to-production/
+  https://www.sharetribe.com/docs/ftw/how-to-deploy-ftw-to-production/
 
 ## Developer Resources
 

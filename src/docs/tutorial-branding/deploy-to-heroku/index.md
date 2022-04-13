@@ -126,7 +126,7 @@ Then add the following environment variables as Config Vars:
 - `REACT_APP_CSP`
 
   Content Security Policy (CSP). Read more from
-  [this article](/ftw-security/how-to-set-up-csp-for-ftw/).<br />
+  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br />
   Accepts values: _block_ and _report_. The recommended value is
   _block_.
 

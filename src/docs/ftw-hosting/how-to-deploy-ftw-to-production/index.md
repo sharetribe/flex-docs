@@ -66,7 +66,7 @@ To deploy the application add at least the following variables:
   Sign up for Mapbox and go to
   [account page](https://www.mapbox.com/account/access-tokens). Then
   click `Create access token`. See the
-  [How to set up Mapbox for FTW](/ftw-search/how-to-set-up-mapbox-for-ftw/)
+  [How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/)
   guide for more information.
 
 - **`REACT_APP_CANONICAL_ROOT_URL`**
@@ -81,7 +81,7 @@ To deploy the application add at least the following variables:
   example USD, EUR, CAD, AUD, etc.
 
 There are also some other variables that can be used. See the
-[FTW Environment configuration variables](/ftw-configuration/ftw-env/)
+[FTW Environment configuration variables](/ftw/ftw-env/)
 reference for more information.
 
 ### Building the app
@@ -131,7 +131,7 @@ button on the top-right corner of the page:
 <img width="300" src="./fork_button.png" />
 
 For more information, see the
-[How to Customize FTW](/ftw-introduction/how-to-customize-ftw/) guide.
+[How to Customize FTW](/ftw/how-to-customize-ftw/) guide.
 
 ### Create a new app
 
@@ -236,7 +236,7 @@ Check at least these variables:
 - **`REACT_APP_CSP`**
 
   Content Security Policy (CSP). Read more from
-  [this article](/ftw-security/how-to-set-up-csp-for-ftw/).<br />
+  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br />
   Accepts values: _block_ and _report_. <br/> Use value: _block_.
 
 - **`REACT_APP_AVAILABILITY_ENABLED`**
