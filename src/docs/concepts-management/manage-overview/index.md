@@ -10,10 +10,10 @@ published: true
 
 The Manage section of Console is for the management of your marketplace’s day-to-day operations. The section consists of four pages: 
 
-[Manage users](https://www.sharetribe.com/docs/concepts/console-manage-users/)
-[Manage listings](https://www.sharetribe.com/docs/concepts/console-manage-listings/)
-[Manage transactions](https://www.sharetribe.com/docs/concepts/console-manage-transactions/)
-[Manage reviews](https://www.sharetribe.com/docs/concepts/console-manage-reviews/)
+- [Manage users](https://www.sharetribe.com/docs/concepts/console-manage-users/)
+- [Manage listings](https://www.sharetribe.com/docs/concepts/console-manage-listings/)
+- [Manage transactions](https://www.sharetribe.com/docs/concepts/console-manage-transactions/)
+- [Manage reviews](https://www.sharetribe.com/docs/concepts/console-manage-reviews/)
 
 On these pages, you can manage, add, and edit your user, listing, transaction, and review data. The information you can add and edit depends on the data type. For more detailed information on each section, check out the corresponding article.
 

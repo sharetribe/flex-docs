@@ -26,7 +26,7 @@ The summary includes most of the information about the transaction.
 - Booking status: If your transaction process uses availability, the transaction will be in one of [the different booking statuses](https://www.sharetribe.com/docs/references/transaction-process-actions/#bookings). The booking status is different from the transaction status. 
 - Booking period: If your transaction uses availability, the booking period will be the timeframe of this transaction. In case of a rental marketplace, it will be the rental period of a sauna, for example.
 - Seats: If your listing has a specific number of [seats](https://www.sharetribe.com/docs/references/availability/#seats) available, you will see how many seats were booked as a part of this transaction. 
-- Stock reservation status: If your transaction process uses stock, the stock reservation can be in one of the different [stock reservations states](https://www.sharetribe.com/docs/references/stock/#stock-reservation-states)
+- Stock reservation status: If your transaction process uses stock, the stock reservation can be in one of the different [stock reservations states](https://www.sharetribe.com/docs/references/stock/#stock-reservation-states).
 - Stock reservation quantity: The amount of stock reserved in this transaction.
 - Transaction ID: Unique ID of the transaction in the Flex database.
 - Transaction process: You can have multiple [transaction processes](https://www.sharetribe.com/docs/concepts/transaction-process/) active in your marketplace and each transaction process can have multiple versions. This field specifies which process and which version the transaction uses. 
