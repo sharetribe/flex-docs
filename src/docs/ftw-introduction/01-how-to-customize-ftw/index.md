@@ -232,7 +232,7 @@ documentation.
 
 There are many things that you should change in the default template,
 and many more that you can change. For more information, check the
-[FTW customization checklist](/ftw-introduction/customization-checklist/)
+[FTW customization checklist](/ftw/customization-checklist/)
 documentation too before publishing your site. See also
 [tutorial](/tutorial/introduction/) and other articles in _Flex
 Templates for Web_ and _Cookbook_ categories.

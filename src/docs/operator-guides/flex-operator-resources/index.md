@@ -43,7 +43,7 @@ use it, if you have different front end plans.
 - Getting started with FTW:
   https://www.sharetribe.com/docs/introduction/getting-started-with-ftw-daily/
 - Customization checklist:
-  https://www.sharetribe.com/docs/ftw-introduction/customization-checklist/
+  https://www.sharetribe.com/docs/ftw/customization-checklist/
 
 ## Transaction Process
 

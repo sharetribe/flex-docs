@@ -71,6 +71,6 @@ The fastest way to get started with modifying the Saunatime template is
 to check out our [tutorial](/tutorial/introduction). The tutorial starts
 with the Saunatime template, and it guides you through visual and
 functional modifications. You can also check out our other FTW
-templates, [Yogatime](/introduction-templates/introducing-yogatime) and
-[Sneakertime](/introduction-templates/introducing-sneakertime), to see
+templates, [Yogatime](/introduction/introducing-yogatime/) and
+[Sneakertime](/introduction/introducing-sneakertime/), to see
 which template has features that best suit your unique marketplace idea.
