@@ -142,6 +142,7 @@ exports.siteStructure = [
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
       { id: 'concepts-development' },
+      { id: 'concepts-management' },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },
     ],
