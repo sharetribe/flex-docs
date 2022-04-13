@@ -194,7 +194,7 @@ _RouteComponentRenderer_, which has four important jobs:
 - Dispatch location changed actions to Redux store. This makes it
   possible for analytics Redux middleware to listen to location changes.
   For more information, see the
-  [How to set up Analytics for FTW](/ftw-analytics/how-to-set-up-analytics-for-ftw/)
+  [How to set up Analytics for FTW](/ftw/how-to-set-up-analytics-for-ftw/)
   guide.
 - Rendering of the page-level component that the Route is connected
   through the configuration. Those page-level components are Loadable
@@ -317,7 +317,7 @@ loaded before the user has actually clicked the button or executed form
 submit.
 
 Read more about
-[code-splitting](/ftw-routing/how-code-splitting-works-in-ftw/).
+[code-splitting](/ftw/how-code-splitting-works-in-ftw/).
 
 ## Analytics
 
@@ -352,7 +352,7 @@ changes and sends tracking events to configured services.
 </extrainfo>
 
 For more information, see the
-[How to set up Analytics for FTW](/ftw-analytics/how-to-set-up-analytics-for-ftw/)
+[How to set up Analytics for FTW](/ftw/how-to-set-up-analytics-for-ftw/)
 guide.
 
 ## A brief introduction to SSR

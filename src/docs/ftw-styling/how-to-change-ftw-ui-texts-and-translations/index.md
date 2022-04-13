@@ -164,7 +164,7 @@ the component files themselves.
 
 More information about adding static content to the application can be
 found in the
-[How to add static pages in FTW](/ftw-styling/how-to-add-static-pages-in-ftw/)
+[How to add static pages in FTW](/ftw/how-to-add-static-pages-in-ftw/)
 guide.
 
 There are few other cases where we haven't added translations directly

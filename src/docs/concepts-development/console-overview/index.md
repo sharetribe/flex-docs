@@ -102,7 +102,7 @@ toggle between the different processes in the left-side selection and
 see how many transactions have used each process. You can also inspect
 the components of the transaction processes. You can read more about
 transaction processes in Flex in
-[this article](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
+[this article](https://www.sharetribe.com/docs/concepts/transaction-process/).
 
 **Payments** has information about your Stripe configuration. Your
 Stripe secret key is added here. The public key is configured within the

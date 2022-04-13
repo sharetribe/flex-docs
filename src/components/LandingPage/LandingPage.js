@@ -274,10 +274,10 @@ const LandingPage = props => {
             </SectionDescription>
           </div>
           <Ul>
-            <SectionLink to="/ftw-introduction/how-to-customize-ftw/">
+            <SectionLink to="/ftw/how-to-customize-ftw/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFTW" />
             </SectionLink>
-            <SectionLink to="/ftw-introduction/customization-checklist/">
+            <SectionLink to="/ftw/customization-checklist/">
               <UiText id="LandingPage.bestPicks.ftwCustomizationChecklist" />
             </SectionLink>
             <SectionLink to="/how-to/extend-listing-data-in-ftw/">

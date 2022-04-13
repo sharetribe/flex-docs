@@ -142,7 +142,7 @@ cancelling the booking and issuing a refund.
 
 Possible actions are defined by the capacity of the Flex API. The list
 of all transaction process actions can be found
-[in the transaction process actions reference documentation](https://www.sharetribe.com/docs/references/transaction-process-actions).
+[in the transaction process actions reference documentation](https://www.sharetribe.com/docs/references/transaction-process-actions/).
 Creating custom transaction process actions is not possible in Flex.
 
 ### Notifications

@@ -15,9 +15,9 @@ FTW.
 ## 1. Customize visual styles
 
 - Marketplace colors:
-  [How to customize FTW styles](/ftw-styling/how-to-customize-ftw-styles/)
+  [How to customize FTW styles](/ftw/how-to-customize-ftw-styles/)
 - Favicon and application icons:
-  [How to change FTW icons](/ftw-styling/how-to-change-ftw-icons/)
+  [How to change FTW icons](/ftw/how-to-change-ftw-icons/)
 - Social media sharing graphics in the
   [Page](https://github.com/sharetribe/ftw-daily/blob/master/src/components/Page/Page.js)
   component
@@ -32,7 +32,7 @@ FTW.
 ## 2. Change text content
 
 - Update UI texts or change the language:
-  [How to change FTW UI texts and translations](/ftw-styling/how-to-change-ftw-ui-texts-and-translations/)
+  [How to change FTW UI texts and translations](/ftw/how-to-change-ftw-ui-texts-and-translations/)
 - [LandingPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/LandingPage/LandingPage.js)
   component: update and create branded sections
 - [Footer](https://github.com/sharetribe/ftw-daily/blob/master/src/components/Footer/Footer.js)
@@ -58,7 +58,7 @@ FTW.
 ## 3. Change configuration
 
 - Go through the
-  [FTW Environment configuration variables](/ftw-configuration/ftw-env/)
+  [FTW Environment configuration variables](/ftw/ftw-env/)
 - **Update config.js**
   - FTW-daily & FTW-hourly: _src/config.js_
   - FTW-product: _src/config/config.js_
@@ -102,6 +102,6 @@ FTW.
     [lineItemUnitType](https://github.com/sharetribe/ftw-product/blob/master/src/config/config.js)
 - **[Customize pricing](/tutorial/customize-pricing-tutorial/)**
 - **Add more static pages**:
-  [How to add static pages in FTW](/ftw-styling/how-to-add-static-pages-in-ftw/)
+  [How to add static pages in FTW](/ftw/how-to-add-static-pages-in-ftw/)
 - **Update other existing pages**
 - **Update transaction process** (API + Web app)

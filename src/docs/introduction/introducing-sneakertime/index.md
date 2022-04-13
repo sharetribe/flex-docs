@@ -17,7 +17,7 @@ customized to fit your marketplace’s unique workflows and design.
 
 To learn more, check out the video below or read on. For more technical
 information on Sneakertime, check out
-[this article](https://www.sharetribe.com/docs/ftw-introduction/ftw-product/)
+[this article](https://www.sharetribe.com/docs/ftw/ftw-product/)
 in our developer documentation.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XUpxn_K4Mm8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -122,7 +122,7 @@ With Flex, you can modify your marketplace’s transaction flow to your
 specifications. For example, you could add a step for the seller to
 confirm the order or only have the buyer review the purchase. Read more
 about transaction processes in Flex
-[here](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
+[here](https://www.sharetribe.com/concepts/transaction-process/).
 
 ## How to get started
 

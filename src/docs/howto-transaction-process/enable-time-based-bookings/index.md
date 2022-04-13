@@ -51,7 +51,7 @@ tutorial.
 With the time-based transaction process, you can use
 [FTW-hourly](https://github.com/sharetribe/ftw-hourly), a Flex Template
 that supports time-based availability out of the box.
-[Learn more about FTW-hourly](/ftw-introduction/ftw-hourly/).
+[Learn more about FTW-hourly](/ftw/ftw-hourly/).
 
 ## Option 2: Implement time-based availability in your own frontend application
 
