@@ -59,7 +59,7 @@ or visit the
 ### Listing approval
 
 If you have
-[the listing approval feature](https://www.sharetribe.com/docs/background/concepts/#listing-pending-approval)
+[the listing approval feature](https://www.sharetribe.com/docs/operator-guides/concepts/#listing-pending-approval)
 enabled in your marketplace, you will find the “approve listing” button
 at the bottom of the displayed section of the listing card.
 
