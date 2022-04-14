@@ -16,25 +16,24 @@ import css from './DeleteAccountForm.module.css';
 const RESET_TIMEOUT = 800;
 
 export const DeleteAccountFormComponent = props => {
-  const {
-    currentUser,
-    onResetPassword,
-  } = props;
+  const { currentUser, onResetPassword } = props;
 
-  const [showResetPasswordMessage, setShowResetPasswordMessage ] = useState(false);
+  const [showResetPasswordMessage, setShowResetPasswordMessage] = useState(
+    false
+  );
   let submittedValues = {};
   let resetTimeoutId = null;
 
   useEffect(() => {
     return window.clearTimeout(resetTimeoutId);
-  }, [])
+  }, []);
 
   const handleResetPassword = () => {
     setShowResetPasswordMessage(true);
     const email = currentUser.attributes.email;
 
     onResetPassword(email);
-  }
+  };
 
   return (
     <FinalForm
@@ -98,39 +97,57 @@ export const DeleteAccountFormComponent = props => {
           id: 'DeleteAccountForm.passwordRequired',
         });
 
-        const passwordRequired = validators.requiredStringNoTrim(passwordRequiredMessage);
+        const passwordRequired = validators.requiredStringNoTrim(
+          passwordRequiredMessage
+        );
 
         const passwordFailedMessage = intl.formatMessage({
           id: 'DeleteAccountForm.passwordFailed',
         });
 
-        const passwordTried = !!values.currentPassword && (submittedValues.currentPassword === values.currentPassword);
-        const passwordErrorText = isChangePasswordWrongPassword(deleteAccountError)
+        const passwordTried =
+          !!values.currentPassword &&
+          submittedValues.currentPassword === values.currentPassword;
+        const passwordErrorText = isChangePasswordWrongPassword(
+          deleteAccountError
+        )
           ? passwordFailedMessage
           : null;
 
-        const confirmClasses = classNames(css.confirmChangesSection, css.confirmChangesSectionVisible);
+        const confirmClasses = classNames(
+          css.confirmChangesSection,
+          css.confirmChangesSectionVisible
+        );
 
         const genericFailure =
-          (deleteAccountError && !passwordErrorText) ? (
+          deleteAccountError && !passwordErrorText ? (
             <span className={css.error}>
               <FormattedMessage id="DeleteAccountForm.genericFailure" />
             </span>
           ) : null;
 
         const submittedOnce = Object.keys(submittedValues).length > 0;
-        const pristineSinceLastSubmit = submittedOnce && isEqual(values, submittedValues);
+        const pristineSinceLastSubmit =
+          submittedOnce && isEqual(values, submittedValues);
         const classes = classNames(rootClassName || css.root, className);
         const submitDisabled = invalid || pristineSinceLastSubmit || inProgress;
 
         const sendPasswordLink = (
-          <span className={css.helperLink} onClick={handleResetPassword} role="button">
+          <span
+            className={css.helperLink}
+            onClick={handleResetPassword}
+            role="button"
+          >
             <FormattedMessage id="DeleteAccountForm.resetPasswordLinkText" />
           </span>
         );
 
         const resendPasswordLink = (
-          <span className={css.helperLink} onClick={handleResetPassword} role="button">
+          <span
+            className={css.helperLink}
+            onClick={handleResetPassword}
+            role="button"
+          >
             <FormattedMessage id="DeleteAccountForm.resendPasswordLinkText" />
           </span>
         );
@@ -141,7 +158,11 @@ export const DeleteAccountFormComponent = props => {
               <FormattedMessage
                 id="DeleteAccountForm.resetPasswordLinkSent"
                 values={{
-                  email: <span className={css.emailStyle}>{currentUser.attributes.email}</span>,
+                  email: (
+                    <span className={css.emailStyle}>
+                      {currentUser.attributes.email}
+                    </span>
+                  ),
                 }}
               />{' '}
               {resendPasswordLink}
@@ -195,7 +216,7 @@ export const DeleteAccountFormComponent = props => {
             </div>
             <div className={css.bottomWrapper}>
               {genericFailure}
-              <Button 
+              <Button
                 type="submit"
                 inProgress={inProgress}
                 ready={ready}
@@ -209,7 +230,7 @@ export const DeleteAccountFormComponent = props => {
       }}
     />
   );
-}
+};
 
 DeleteAccountFormComponent.defaultProps = {
   rootClassName: null,

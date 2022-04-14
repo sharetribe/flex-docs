@@ -17,7 +17,11 @@ import {
 } from '../../components';
 import { TopbarContainer } from '..';
 
-import { deleteAccount, deleteAccountClear, resetPassword } from './DeleteAccountPage.duck';
+import {
+  deleteAccount,
+  deleteAccountClear,
+  resetPassword,
+} from './DeleteAccountPage.duck';
 import { logout } from '../../ducks/Auth.duck';
 import css from './DeleteAccountPage.module.css';
 
@@ -37,20 +41,24 @@ export const DeleteAccountPageComponent = props => {
     intl,
   } = props;
 
-  const handleDeleteAccount = (values) => {
+  const handleDeleteAccount = values => {
     return onSubmitDeleteAccount(values).then(() => {
       onLogout();
-    })
-  }
+    });
+  };
 
   useEffect(() => {
     return onChange();
-  }, [])
+  }, []);
 
   const pageDetails = (
     <div className={css.details}>
       <FormattedMessage
-        id={deleteAccountError?.status == 409 ? "DeleteAccountPage.error" : "DeleteAccountPage.details"}
+        id={
+          deleteAccountError?.status == 409
+            ? 'DeleteAccountPage.error'
+            : 'DeleteAccountPage.details'
+        }
         values={{ errorCause: deleteAccountError?.message }}
       />
     </div>
@@ -139,10 +147,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const DeleteAccountPage = compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   injectIntl
 )(DeleteAccountPageComponent);
 

@@ -1,7 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { baselineBreakpoint, baselineSmall, baselineLarge, siteStructure } from '../../config';
+import {
+  baselineBreakpoint,
+  baselineSmall,
+  baselineLarge,
+  siteStructure,
+} from '../../config';
 import { findParentCategories } from '../../util/navigation';
 
 import { Link } from '../../components';

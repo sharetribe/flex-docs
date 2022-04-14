@@ -16,7 +16,7 @@ const sortingArrayIntroduction = [
 const sortingArrayIntroductionGettingStarted = [
   'getting-started-with-ftw-daily',
   'getting-started-with-flex-cli',
-  'getting-started-with-integration-api'
+  'getting-started-with-integration-api',
 ];
 
 // Arrange tutorial articles according to this configuration.
@@ -108,8 +108,9 @@ exports.siteStructure = [
     isOpen: false,
     sortingArray: sortingArrayIntroduction,
     subcategories: [
-      { id: 'introduction-getting-started',
-        sortingArray: sortingArrayIntroductionGettingStarted
+      {
+        id: 'introduction-getting-started',
+        sortingArray: sortingArrayIntroductionGettingStarted,
       },
       { id: 'introduction-templates' },
     ],
@@ -161,7 +162,7 @@ exports.siteStructure = [
     id: 'how-to',
     isOpen: false,
     subcategories: [
-      { 
+      {
         id: 'how-to-users-and-authentication',
         sortingArray: sortingArrayHowToUsers,
       },

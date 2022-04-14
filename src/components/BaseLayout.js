@@ -39,7 +39,8 @@ const BaseLayout = props => {
         const siteUrl = data.site.siteMetadata.siteUrl;
         const meta = [];
         const path = activeArticle
-          ? `/${findMainCategory(activeArticle.category) || activeArticle.category}/${activeArticle.slug}/`
+          ? `/${findMainCategory(activeArticle.category) ||
+              activeArticle.category}/${activeArticle.slug}/`
           : activeCategory
           ? `${activeCategory}/`
           : '';

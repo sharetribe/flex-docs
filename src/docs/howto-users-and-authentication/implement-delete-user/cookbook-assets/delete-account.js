@@ -11,7 +11,7 @@ const nonFinalTransitions = [
   'transition/accept',
   'transition/complete',
   'transition/review-1-by-customer',
-  'transition/review-1-by-provider'
+  'transition/review-1-by-provider',
 ];
 
 module.exports = (req, res) => {
@@ -22,7 +22,8 @@ module.exports = (req, res) => {
   let incompleteTransactions = null;
   let deletable = false;
 
-  sdk.transactions.query({ lastTransitions: nonFinalTransitions })
+  sdk.transactions
+    .query({ lastTransitions: nonFinalTransitions })
     .then(resp => {
       // Determine whether user has transactions that are in a non-final
       // state.
@@ -31,7 +32,6 @@ module.exports = (req, res) => {
       return getTrustedSdk(req);
     })
     .then(trustedSdk => {
-      
       // If the user has incomplete transactions, send a 409 Conflict response
       // indicating the number of unfinished transactions.
       if (!deletable) {
@@ -53,17 +53,17 @@ module.exports = (req, res) => {
       //   })
       //   // If deleting fails, use the built-in handler to pass the error as a response
       //   .catch(e => handleError(res, e))
-    }).catch(e => handleError(res, e))
+    })
+    .catch(e => handleError(res, e));
 };
 
 // Construct a 409 Conflict response with a message indicating the number of
 // incomplete transactions.  If you want, you can also include the full list
 // of transactions as 'data' in the response body.
 const sendConflictResponse = (incompleteTransactions, res) => {
-  const txLabel = incompleteTransactions.length === 1 ? 'transaction' : 'transactions';
+  const txLabel =
+    incompleteTransactions.length === 1 ? 'transaction' : 'transactions';
   const message = `${incompleteTransactions.length} unfinished ${txLabel}.`;
 
-  res
-    .status(409)
-    .send({ status: 409, statusText: 'Conflict', message });
-}
+  res.status(409).send({ status: 409, statusText: 'Conflict', message });
+};

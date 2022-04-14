@@ -12,7 +12,10 @@ const query = graphql`
   query ReferencesIndexQuery {
     allMarkdownRemark(
       filter: { frontmatter: { category: { in: ["references"] } } }
-      sort: { fields: [frontmatter___category, frontmatter___slug], order: [ASC, ASC] }
+      sort: {
+        fields: [frontmatter___category, frontmatter___slug]
+        order: [ASC, ASC]
+      }
     ) {
       edges {
         node {

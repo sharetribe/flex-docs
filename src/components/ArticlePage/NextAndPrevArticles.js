@@ -48,7 +48,6 @@ const nextAndPrevArticles = props => {
     category,
     siteStructure
   );
-  
 
   return prevArticleSlug || nextArticleSlug ? (
     <Pagination {...rest}>
