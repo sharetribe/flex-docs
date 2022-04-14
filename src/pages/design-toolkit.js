@@ -12,7 +12,10 @@ const query = graphql`
   query DesignToolkitIndexQuery {
     allMarkdownRemark(
       filter: { frontmatter: { category: { in: ["design-toolkit"] } } }
-      sort: { fields: [frontmatter___category, frontmatter___slug], order: [ASC, ASC] }
+      sort: {
+        fields: [frontmatter___category, frontmatter___slug]
+        order: [ASC, ASC]
+      }
     ) {
       edges {
         node {

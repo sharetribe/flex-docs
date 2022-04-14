@@ -4,8 +4,8 @@ slug: transaction-process
 updated: 2022-04-06
 category: concepts-transaction-process
 ingress:
-  This article introduces transaction processes as a concept, their parts,
-  and how they define user interactions and order flows in your
+  This article introduces transaction processes as a concept, their
+  parts, and how they define user interactions and order flows in your
   marketplace.
 published: true
 ---

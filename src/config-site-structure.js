@@ -16,7 +16,7 @@ const sortingArrayIntroduction = [
 const sortingArrayIntroductionGettingStarted = [
   'getting-started-with-ftw-daily',
   'getting-started-with-flex-cli',
-  'getting-started-with-integration-api'
+  'getting-started-with-integration-api',
 ];
 
 // Arrange tutorial articles according to this configuration.
@@ -85,6 +85,14 @@ const sortingArrayPayments = [
   'strong-customer-authentication',
 ];
 
+const sortingArrayManageConsole = [
+  'console-manage-overview',
+  'console-manage-users',
+  'console-manage-listings',
+  'console-manage-transactions',
+  'console-manage-reviews',
+];
+
 const sortingArrayHowToUsers = [
   'enable-facebook-login',
   'enable-google-login',
@@ -100,8 +108,9 @@ exports.siteStructure = [
     isOpen: false,
     sortingArray: sortingArrayIntroduction,
     subcategories: [
-      { id: 'introduction-getting-started',
-        sortingArray: sortingArrayIntroductionGettingStarted
+      {
+        id: 'introduction-getting-started',
+        sortingArray: sortingArrayIntroductionGettingStarted,
       },
       { id: 'introduction-templates' },
     ],
@@ -142,6 +151,7 @@ exports.siteStructure = [
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
       { id: 'concepts-development' },
+      { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },
     ],
@@ -152,7 +162,7 @@ exports.siteStructure = [
     id: 'how-to',
     isOpen: false,
     subcategories: [
-      { 
+      {
         id: 'how-to-users-and-authentication',
         sortingArray: sortingArrayHowToUsers,
       },

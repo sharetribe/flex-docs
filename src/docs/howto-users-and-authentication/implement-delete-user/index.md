@@ -4,8 +4,9 @@ slug: implement-delete-user
 updated: 2022-04-05
 category: how-to-users-and-authentication
 ingress:
-  This article guides you in implementing a feature where a user can delete
-  their own account through the FTW template Account settings section.
+  This article guides you in implementing a feature where a user can
+  delete their own account through the FTW template Account settings
+  section.
 published: true
 ---
 
@@ -104,14 +105,16 @@ example files directly, or modify them for your use case.
 - [DeleteAccountPage.duck.js](cookbook-assets/DeleteAccountPage.duck.js)
 - [DeleteAccountPage.module.css](cookbook-assets/DeleteAccountPage.module.css)
 
-Once the DeleteAccountPage component and corresponding Redux store DeleteAccountPage.duck.js exist in the project, import the Redux
-file reducer to a combined reducer.
+Once the DeleteAccountPage component and corresponding Redux store
+DeleteAccountPage.duck.js exist in the project, import the Redux file
+reducer to a combined reducer.
 
 ```shell
 └── src
     └── containers
          └── reducers.js
 ```
+
 For more info on the Redux structure, you can read about
 [the Ducks modular Redux proposal](https://github.com/erikras/ducks-modular-redux),
 which is the proposal of Redux usage followed in the FTW templates.
@@ -169,7 +172,6 @@ export const ACCOUNT_SETTINGS_PAGES = [
 ```
 
 Finally, add the necessary translation rows into en.json
-
 
 ```shell
 └── src
@@ -236,8 +238,8 @@ importing in other components.
   export { default as EditListingAvailabilityForm } from './EditListingAvailabilityForm/EditListingAvailabilityForm';
 ```
 
-Now that the DeleteAccountForm component exists, implement it
-into the DeleteAccountPage template you downloaded earlier.
+Now that the DeleteAccountForm component exists, implement it into the
+DeleteAccountPage template you downloaded earlier.
 
 ```shell
 └── src
@@ -392,6 +394,7 @@ button on DeleteAccountPage to open the modal.
 + onManageDisableScrolling: () => dispatch(manageDisableScrolling()),
   onSubmitDeleteAccount: values => dispatch(deleteAccount(values)),
 ```
+
 </extrainfo>
 
 If you now enter the password for the account you used to log in, the
@@ -411,11 +414,13 @@ then calls the Marketplace API endpoint if the user can be deleted.
 
 ### Update SDK
 
-First of all, to get access to the new endpoint, you will need to update the SDK package.
+First of all, to get access to the new endpoint, you will need to update
+the SDK package.
 
 ```shell
   yarn upgrade sharetribe-sdk
 ```
+
 After updating the SDK, you can start adding the endpoint and logic.
 
 ### Add endpoint to client side
@@ -423,7 +428,7 @@ After updating the SDK, you can start adding the endpoint and logic.
 When you click the button to delete the user account,
 DeleteAccountPage.js dispatches a
 [thunk](https://redux.js.org/usage/writing-logic-thunks) called
-`deleteAccount`, which in turn calls endpoint `deleteUserAccount`. 
+`deleteAccount`, which in turn calls endpoint `deleteUserAccount`.
 
 First, create the endpoint in the client-side API file.
 
@@ -433,6 +438,7 @@ First, create the endpoint in the client-side API file.
         └── api.js
           ...
 ```
+
 ```diff
 +  // Check if user can be deleted and then delete the user. Endpoint logic
 +  // must be modified to accommodate the transaction processes used in
@@ -448,11 +454,10 @@ Then, import the endpoint in DeleteAccountPage.duck.js.
 + import { deleteUserAccount } from '../../util/api';
 ```
 
-Now, clicking the delete button should show a 404 error in
-the dev tools console, since the endpoint does not yet exist on the
-server side. You will also see a generic error (_"Whoops, something went
-wrong. Please refresh the page and try again."_) above the delete
-button.
+Now, clicking the delete button should show a 404 error in the dev tools
+console, since the endpoint does not yet exist on the server side. You
+will also see a generic error (_"Whoops, something went wrong. Please
+refresh the page and try again."_) above the delete button.
 
 Finally, in the server endpoint, you need to check whether the user has
 any transactions that have not finished and would thus prevent deleting
@@ -460,12 +465,12 @@ their account.
 
 ### Add endpoint logic
 
-First, set up the endpoint logic. You can use the
-`delete-account.js` file below as your starting point. However, you will
-need to modify the logic to correspond to your own transaction
-processes. For convenience, we've commented out the code that calls the
-SDK, so you can test the actual flow of the user interface first, before
-accidentally deleting any of your test users.
+First, set up the endpoint logic. You can use the `delete-account.js`
+file below as your starting point. However, you will need to modify the
+logic to correspond to your own transaction processes. For convenience,
+we've commented out the code that calls the SDK, so you can test the
+actual flow of the user interface first, before accidentally deleting
+any of your test users.
 
 Save the file in the `server/api` folder.
 
@@ -497,6 +502,7 @@ const nonFinalTransitions = [
   'transition/review-1-by-provider',
 ];
 ```
+
 <extrainfo title="Check pending payouts">
 If your transaction process has other limitations related to deleting
 users, e.g. payouts are often scheduled immediately after creating and
@@ -525,6 +531,7 @@ starting point for such logic.
 +  })
 +
 ```
+
 </extrainfo>
 
 Finally, add the endpoint to apiRouter in the server.
@@ -534,6 +541,7 @@ Finally, add the endpoint to apiRouter in the server.
     └── apiRouter.js
   ...
 ```
+
 ```diff
   const transitionPrivileged = require('./api/transition-privileged');
 + const deleteAccount = require('./api/delete-account');
@@ -544,7 +552,7 @@ Finally, add the endpoint to apiRouter in the server.
 
 If you want to hide the password field and delete button when the user
 has unfinished transactions, you can check the `status` of
-`deleteAccountError` on DeleteAccountPage.js and only show the fields 
+`deleteAccountError` on DeleteAccountPage.js and only show the fields
 when the user has not already received a 409 Conflict error.
 
 ```diff
