@@ -38,7 +38,7 @@ The summary includes most of the information about the transaction.
 In the timeline, you see all the transitions that have been triggered so far in the transaction as well as the time when they took place and [the actor who initiated each transition](https://www.sharetribe.com/docs/operator-guides/transaction-process/#transitions). You also see the possible next transitions. If the actor of the next possible transition is the Operator (you), you will be able to initiate that transition in the timeline section. 
 
 ### Activity 
-[All customer interactions in your marketplace](https://www.sharetribe.com/docs/operator-guides/transaction-process/#users-interact-through-transactions) are considered transactions in Flex. In the activity section, you will see the history of the transaction. This includes all the transitions that have occurred already, similar to the Timeline section, interwoven with the communication that has happened within the transaction. 
+[All customer interactions in your marketplace](https://www.sharetribe.com/docs/concepts/transaction-process/#users-interact-through-transactions) are considered transactions in Flex. In the activity section, you will see the history of the transaction. This includes all the transitions that have occurred already, similar to the Timeline section, interwoven with the communication that has happened within the transaction. 
 
 The communication includes all the [notifications that have been sent](https://www.sharetribe.com/docs/references/transaction-process-format/#notifications) as a part of the transaction process, the written messages between users, and the reviews given at the end of the transaction, if available. 
 
