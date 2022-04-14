@@ -50,7 +50,7 @@ const GridItem = props => {
   const path = `${slug}/`;
   return (
     <Box as="li">
-      <Link neutral to={path}>
+      <Link neutral to={`${pathPrefix}${path}`}>
         <H5 as="h2">{title}</H5>
         <Paragraph>{ingress}</Paragraph>
       </Link>
@@ -60,7 +60,6 @@ const GridItem = props => {
 
 const ArticleIndex = props => {
   const { pathPrefix, articles, ...rest } = props;
-
   if (articles.length === 0) {
     return (
       <P {...rest}>

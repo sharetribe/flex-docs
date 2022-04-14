@@ -66,7 +66,7 @@ const ReferencesPage = () => {
           .sort(byArrayOfSlugs(sortingArray));
 
         return (
-          <ArticleIndexPage category={category} noPrefix articles={articles} />
+          <ArticleIndexPage category={category} articles={articles} />
         );
       }}
     />
