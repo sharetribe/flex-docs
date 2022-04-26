@@ -96,6 +96,10 @@ your marketplace ID, URL and name. Here, you can also configure an
 outgoing email address, where all notifications to your marketplace’s
 users will be sent from.
 
+**Content** is where you can modify your marketplace texts. TODO:
+EXPAND! Read more about
+[modifying translations in Console](../translations).
+
 **Transaction processes** is quite self-explanatory: it shows the
 different kinds of transaction processes your marketplace has. You can
 toggle between the different processes in the left-side selection and
