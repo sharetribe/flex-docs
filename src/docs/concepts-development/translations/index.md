@@ -24,7 +24,8 @@ words, not the variable itself.
   // The wording of the message is defined separately
   "ListingPage.bookingSubTitle": "Start by choosing your dates.",
 ...
-  // This makes it possible to have several translations for a single variable
+  // This makes it possible to have several translations for a single variable,
+  // so that you can start developing your marketplace in any language, not just English
   "ListingPage.bookingSubTitle": "Empieza escogiendo las fechas.",
 
 ```
@@ -61,16 +62,13 @@ you will use `sdk.assetByVersion`, and if not, you will use
 ## Translation format for editing translations in Console.
 
 A translation using the
-[ICU message syntax](https://unicode-org.github.io/icu/userguide/format_parse/messages/)
+[React Intl formatMessage formatting](https://formatjs.io/docs/intl#formatmessage) 
 can, at its simplest, consist of a phrase.
 
 ```js
 const translations = {
   en: {
     "ListingPage.bookingSubTitle": "Start by choosing your dates."
-  },
-  es: {
-   "ListingPage.bookingSubTitle": "Empieza escogiendo las fechas.",
   }
 }
 ...
@@ -87,23 +85,23 @@ allows showing context-specific information as a part of the translation
 string.
 
 ```js
+// The parameter {title} will be replaced with whatever the listing's title is
 const translations = {
   en: {
     "ListingPage.bookingTitle": "Book {title}",
-  },
-  es: {
-    "ListingPage.bookingTitle": "Reservar {title}",
   }
 }
 ...
-// For a listing titled "Small cottage", the message will read "Book Small cottage" in English
-// and "Reservar Small cottage" in Spanish.
+// When we pass the listing's title in 'values' to the message, 
+// for a listing titled "Small cottage" the message will read "Book Small cottage"
 const bookingTitle = intl.formatMessage({
   id="ListingPage.bookingTitle"
   values={{ title: listing.title }}
 });
 
 ```
+Do note that even if the translation message uses a simple argument, you can choose to not use it. For instance, you could replace the translation in the previous example with `"ListingPage.bookingTitle": "Book this listing"`. However, if you later decide you do want to use the title, it is recommended to double check the original translation file in your client application to see the names of the attributes available in the message.
+
 
 ### plural
 
@@ -121,9 +119,6 @@ different wordings for singular and plural options.
 const translations = {
   en: {
     "ManageListingsPage.youHaveListings": "You have {count} {count, plural, one {listing} other {listings}}",
-  },
-  es: {
-    "ManageListingsPage.youHaveListings": "Tienes {count} {count, plural, one {anuncio} other {anuncios}}",
   }
 }
 ...
@@ -183,8 +178,8 @@ options you will encounter that require different translation strings.
 
 - Technically, having several translation files does enable using a
   single application for multiple languages
-- Translations in Console only support one language, however you can
-  create other translation assets through Flex CLI
+- Editing translations in Console only supports one language at a time, however you can
+  create other translation assets through Flex CLI.
 - However, listings will most likely have only one language, unless you
   require that providers enter the listing information in multiple
   languages
