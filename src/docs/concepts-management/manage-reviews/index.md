@@ -7,6 +7,8 @@ ingress: Manage, edit, and browse review information in Console
 published: true
 ---
 
+## Review card
+
 Reviews, as
 [other elements of your marketplace Console](https://www.sharetribe.com/docs/concepts/console-manage-overview/),
 are displayed in cards.

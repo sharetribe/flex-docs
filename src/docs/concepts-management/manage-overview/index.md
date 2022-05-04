@@ -11,7 +11,11 @@ published: true
 ---
 
 The Manage section of Console is for the management of your
-marketplace’s day-to-day operations. The section consists of four pages:
+marketplace’s day-to-day operations. 
+
+## Management pages
+
+The section consists of four pages:
 
 - [Manage users](https://www.sharetribe.com/docs/concepts/console-manage-users/)
 - [Manage listings](https://www.sharetribe.com/docs/concepts/console-manage-listings/)
