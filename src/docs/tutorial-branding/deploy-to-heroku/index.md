@@ -48,6 +48,13 @@ environment, "window" object is not available.
 
 ## Deploy to Heroku
 
+**Note: Heroku has been having some
+[security issues](https://status.heroku.com/incidents/2413), and until
+they are resolved, we recommend caution when using Heroku. Furthermore,
+the Heroku integration with Github is currently not available. We are
+looking into alternative deployment recommendations while the situation
+continues.**
+
 Generic Heroku deployment has the following steps:
 
 **Step 1: Create a Heroku account**
@@ -126,9 +133,8 @@ Then add the following environment variables as Config Vars:
 - `REACT_APP_CSP`
 
   Content Security Policy (CSP). Read more from
-  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br />
-  Accepts values: _block_ and _report_. The recommended value is
-  _block_.
+  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br /> Accepts values:
+  _block_ and _report_. The recommended value is _block_.
 
 - `REACT_APP_AVAILABILITY_ENABLED`
 
@@ -150,6 +156,13 @@ _heroku/nodejs_
 ![Add buildpack](./heroku-add-buildpack.png)
 
 **Step 5: Connect the Heroku app to Github**
+
+_Note: The Heroku Github integration is currently unavailable. You can
+connect your app as a
+[remote repository on your local codebase](https://devcenter.heroku.com/articles/git#create-a-heroku-remote)
+and
+[pushing your changes to the remote](https://devcenter.heroku.com/articles/git#deploy-your-code)
+for deployment._
 
 Go to the Deploy page of your new app and
 [connect the app with Github](https://devcenter.heroku.com/articles/github-integration#enabling-github-integration).
