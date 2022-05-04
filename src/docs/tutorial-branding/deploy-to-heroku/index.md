@@ -161,7 +161,7 @@ _Note: The Heroku Github integration is currently unavailable. You can
 connect your app as a
 [remote repository on your local codebase](https://devcenter.heroku.com/articles/git#create-a-heroku-remote)
 and
-[pushing your changes to the remote](https://devcenter.heroku.com/articles/git#deploy-your-code)
+[push your changes to the remote](https://devcenter.heroku.com/articles/git#deploy-your-code)
 for deployment._
 
 Go to the Deploy page of your new app and
