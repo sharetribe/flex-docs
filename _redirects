@@ -176,6 +176,9 @@
 /docs/operator-guides/manage-seats/ /docs/concepts/manage-seats/
 /docs/operator-guides/migrating-from-outside-sharetribe/ /docs/how-to/migrating-from-outside-sharetribe/
 
+/docs/cookbook/ /docs/how-to/
+/docs/background/ /docs/concepts/
+
 /docs/sitemap.xml /docs/sitemap/sitemap-index.xml 
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
