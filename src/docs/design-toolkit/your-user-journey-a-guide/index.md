@@ -84,7 +84,7 @@ completion. Consider these questions:
   When are they sent?
 
 You can learn more about the transaction process functionality in Flex
-[in this overview article](https://www.sharetribe.com/concepts/transaction-process/).
+[in this overview article](https://www.sharetribe.com/docs/concepts/transaction-process/).
 
 ## 2. Create maps for listing creation journey, discovery journey and transaction process.
 
