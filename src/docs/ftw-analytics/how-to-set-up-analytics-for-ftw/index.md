@@ -1,7 +1,7 @@
 ---
 title: How to set up Analytics for FTW
 slug: how-to-set-up-analytics-for-ftw
-updated: 2021-04-29
+updated: 2021-05-09
 category: ftw-analytics
 ingress:
   This guide describes how to set up analytics for Flex Template for Web
@@ -9,37 +9,40 @@ ingress:
 published: true
 ---
 
-FTW supports tracking page views with pluggable analytics handlers.
+FTW comes with built-in support for Google Analytics, and also supports tracking page views with customisable analytics handlers. This article explains how to enable Google Analytics and how to use and create custom analytics handlers.
 
-## Configure Google Analytics ID
+## Configure Google Analytics
 
-Google Analytics (GA) is supported by default. To enable GA, set the GA
-tracker ID to the environment variable `REACT_APP_GOOGLE_ANALYTICS_ID`;
+FTW has built-in support for Google Analytics. All you need to do is assign your Google Analytics Tracking ID to the environment variable `REACT_APP_GOOGLE_ANALYTICS_ID`.
 
-Note that the current script expects a _Universal Analytics property
-only_ tracking ID. If you want to use GA4, you should update the Google
-Analytics scripts first.
+> Google Analytics doesn't work in a hot-loading environment!
+> The analytics script is added server-side. You can test it in your local environment by using the command `yarn run dev-server`.
 
-That's it! You're good to go.
+### Google Analytics 4
+Google recently released their new analytics service Google Analytics 4. Support for Google Universal Analytics will end on October 1, 2023. New versions of FTW provide out-of-the-box support for Google Analytics 4. 
 
-> Note: Google Analytics doesn't work in hot-loading environment! <br>
-> GA script is added in server-side setup. You can test it local
-> environment with `yarn run dev-server`.
+If you're starting development on a new version of FTW and prefer to use Universal Analytics, you should see how it has been implemented in earlier versions of FTW. On the contrary, if your marketplace is built on top of an older version of FTW and you want to start using Google Analytics 4, you'll need to implement the changes introduced in this commit.
 
-## Optional: Use a custom analytics handler
+New versions of FTW will expect a Tracking ID compatible with Google Analytics 4. The ID is expected to begin with the "G-" prefix. 
 
-If you want to add a new analytics library, you can do as follows:
+It is not recommended to use the Enhanced Measurements feature introduced in Google Analytics 4, which is enabled by default. The Enhanced Measurements feature injects code into link tags which can break in-app navigation in FTW. Therefore, we strongly recommend disabling the Enhanced Measurements feature. 
 
-### 1. Add the analytics library script
+If that's not an option, you can continue to use Enhanced Measurements if you disable the Outbound clicks and page changes based on browser history events features. 
 
+### Built-in handlers
+
+
+## Custom analytics libraries
+
+
+### Add the analytics library script
 If the analytics library has an external script, add the library script
 tag to the
 [public/index.html](https://github.com/sharetribe/flex-template-web/blob/master/public/index.html)
 file. If you need more control, see how the GA script is added in
 [server/renderer.js](https://github.com/sharetribe/flex-template-web/blob/master/server/renderer.js).
 
-### 2. Create a handler
-
+### Create a handler
 To track page views, create a custom handler e.g. in
 [src/analytics/handlers.js](https://github.com/sharetribe/flex-template-web/blob/master/src/analytics/handlers.js).
 The handler should be a class that implements a `trackPageView(url)`
@@ -47,7 +50,7 @@ method.
 
 Note that the `url` parameter might not be the same as in the URL bar of
 the browser. It is the canonical form of the URL. For example, in the
-listing page it doesn't have the dynamic title slug in the middle. This
+listing page, it doesn't have the dynamic title slug in the middle. This
 allows unified analytics and correct tracking of pages that can be
 accessed from multiple different URLs.
 
@@ -55,7 +58,7 @@ If your analytics library takes the page URL from the browser, you might
 need to override that behavior to use the canonical URL that is given to
 the method.
 
-### 3. Initialise the handler
+### Initialise the handler
 
 Initialise the handler in the `setupAnalyticsHandlers()` function in
 [src/index.js](https://github.com/sharetribe/flex-template-web/blob/master/src/index.js).
