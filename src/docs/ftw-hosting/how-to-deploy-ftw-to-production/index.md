@@ -11,6 +11,13 @@ published: true
 
 ## Getting started
 
+**Note: Heroku has been having some
+[security issues](https://status.heroku.com/incidents/2413), and until
+they are resolved, we recommend caution when using Heroku. Furthermore,
+the Heroku integration with Github is currently not available. We are
+looking into alternative deployment recommendations while the situation
+continues.**
+
 The easiest way to get started is deploying the application to Heroku.
 Before creating the app you need three accounts:
 [Heroku](https://www.heroku.com/), [Stripe](https://stripe.com/) and
@@ -105,6 +112,13 @@ yarn start
 ```
 
 ## Deploying to Heroku
+
+_Note: The Heroku Github integration is currently unavailable. You can
+connect your app as a
+[remote repository on your local codebase](https://devcenter.heroku.com/articles/git#create-a-heroku-remote)
+and
+[push your changes to the remote](https://devcenter.heroku.com/articles/git#deploy-your-code)
+for deployment._
 
 - [Fork the repository](#fork-the-repository)
 - [Create a new app](#create-a-new-app)
