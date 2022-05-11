@@ -186,6 +186,7 @@ exports.siteStructure = [
     subcategories: [
       { id: 'ftw-introduction' },
       { id: 'ftw-configuration' },
+      { id: 'ftw-content' },
       { id: 'ftw-styling' },
       { id: 'ftw-routing' },
       { id: 'ftw-data-flow' },
