@@ -1,7 +1,7 @@
 ---
 title: Working with translations
 slug: working-with-translations
-updated: 2020-02-28
+updated: 2022-05-15
 category: tutorial-branding
 ingress: Change the UI copy-texts and implement new translations.
 published: true
@@ -9,13 +9,30 @@ published: true
 
 ## Where to find copy-texts
 
-One of the biggest mandatory tasks for customization project is to
+One of the biggest mandatory tasks for a customization project is to
 change the UI texts. FTW-daily is a rental marketplace for saunas - so,
 there are quite many components and pages that need to change the
-copy-texts. We refer to copy-text as translations, since there could be
-different translation files used instead of the default one: _en.json_.
+copy-texts.
 
-Most of the translations can be found from this _en.json_ file:
+The easiest way to modify the copy texts is through Flex Console, in
+Build > Content.
+
+![Modify marketplace texts](./translation_start.png)
+
+When you first start building your marketplace, the JSON field in
+Marketplace texts is empty, and all marketplace texts come from built-in
+translation files in the template. (We refer to copy-text as
+translations, since there could be different translation files used
+instead of the default one: _en.json_.)
+
+In the Marketplace texts section, you can see links that lead to the
+translation folders for each FTW template repository, if you want to
+[copy the relevant translations to Flex Console](/concepts/translations/#how-translations-are-handled-in-flex).
+In this tutorial, we will not copy the full texts – instead, we will
+enter only the translations we want to modify.
+
+The built-in default translations for the FTW template can be found in
+this _en.json_ file:
 
 ```shell
 └── src
@@ -23,7 +40,7 @@ Most of the translations can be found from this _en.json_ file:
         └── en.json
 ```
 
-On top of that file, there are also a couple components that contain a
+In addition to translations, there are also a couple of components that contain a
 huge amount of text content (e.g. **AboutPage**, **PrivacyPolicy**, and
 **TermsOfService**). The content of those components is not included in
 the translation file since they need a free-form structure and styling.
@@ -47,8 +64,8 @@ _`"<ComponentName>.<translationKey>": "<translation>"`_
 So, there are a couple of ways to find the correct translation for UI
 components:
 
-- You could search for a translation text
-- You could check the name of the component and search it from the
+- You could search for a translation text in the translation file
+- You could check the name of the component and search for the component name in the
   translation file.
 
 The latter option becomes easier if you use browser extension: **React
@@ -70,12 +87,18 @@ translation key: _SectionHero.title_. There are also 2 other
 translations that SectionHero component uses. Let's change all of them:
 
 ```json
+{
   "SectionHero.browseButton": "Browse cottages",
   "SectionHero.subTitle": "Book a cottage and take a break from busy city life",
-  "SectionHero.title": "Choose Cottage Days",
+  "SectionHero.title": "Choose Cottage Days"
+}
 ```
 
-When you save the file, you should see the changes in the hero section
+Copy and paste the above rows, complete with the curly brackets, to the Marketplace texts JSON field. 
+
+![Modified SectionHero translations in Console](./tutorial_translations.png)
+
+When you save the file, you should soon see the changes in the hero section
 on the landing page:
 
 ![Hero section with updated translations](./hero-with-updated-translations.png)
@@ -84,6 +107,8 @@ To get more insight into translation syntax, different language files,
 and localization of dates and money values, you should check the
 article:
 [How to change FTW UI texts and translations](/ftw/how-to-change-ftw-ui-texts-and-translations/).
+
+To read more about how translations can be modified in Flex Console, check out the article about [translations in Flex](/concepts/translations/)
 
 <br />
 
