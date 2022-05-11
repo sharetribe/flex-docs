@@ -187,6 +187,7 @@ exports.siteStructure = [
       { id: 'ftw-introduction' },
       { id: 'ftw-configuration' },
       { id: 'ftw-styling' },
+      { id: 'ftw-content' },
       { id: 'ftw-routing' },
       { id: 'ftw-data-flow' },
       { id: 'ftw-search' },
