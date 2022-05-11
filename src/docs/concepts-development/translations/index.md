@@ -49,10 +49,9 @@ client applications, making it easier to make centralized changes.
 ## How translations are handled in Flex
 
 With Console-editable translations, Flex introduces a concept of
-[assets](/references/) TODO: ADD LINK ONCE REFERENCE EXISTS. Assets
-provide a way to define marketplace content and configurations using
-JSON files without needing to include the actual content in the client
-application codebase.
+[assets](/references/assets/). Assets provide a way to define
+marketplace content and configurations using JSON files without needing
+to include the actual content in the client application codebase.
 
 For the translation version being edited in Flex Console, the asset in
 question is `content/translations.json`. In other words, Flex Console
