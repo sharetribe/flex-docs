@@ -5,17 +5,17 @@ updated: 2022-04-26
 category: concepts-development
 ingress:
   This article introduces translations in Flex and how they are modified
-  and edited in Flex Console and the API
+  and edited in Flex Console
 published: true
 ---
 
 In the FTW templates, user-facing content is not written directly into
 the source code. Instead, the source code uses the
-[ICU message syntax](https://unicode-org.github.io/icu/userguide/format_parse/messages/)
-that defines variables for each meaningful piece of content, and a
-translator or a content creator can define the specific words for the
-variable in their language. The end user only sees the translator's
-words, not the variable itself.
+[React Intl formatMessage formatting](https://formatjs.io/docs/intl#formatmessage)
+that defines variables (i.e. keys) for each meaningful piece of content, and a
+translator or a content creator can then define the specific words for the
+variable (i.e. the value) in their language. The end user only sees the translator's
+words, not the key itself.
 
 The key - value syntax is as follows:
 
@@ -29,7 +29,7 @@ For example:
 "ManageListingCard.editListing": "Edit listing"
 ```
 
-The key can then be used in the code, so that the code does not need to
+The key is then used in the code, so that the code does not need to
 be changed even if the value ends up changing.
 
 ```js
@@ -37,7 +37,7 @@ be changed even if the value ends up changing.
 <FormattedMessage id="ManageListingCard.editListing" />
 ```
 
-Starting from XXXX-XX, marketplace operators can modify the wording of
+Starting from 2022-05, marketplace operators can modify the wording of
 the translations in Flex Console. This means that operators can make
 changes to the marketplace texts without the need for code changes. In
 addition, the same translations can now be used from several different
@@ -47,11 +47,9 @@ client applications, making it easier to make centralized changes.
 
 ## How translations are handled in Flex
 
-- What is an asset?
-
 With Console-editable translations, Flex introduces a concept of assets.
-Assets are ways to define marketplace content and configurations with
-JSON files without needing to include them in the client application
+Assets provide a way to define marketplace content and configurations using
+JSON files without needing to include the actual content in the client application
 codebase.
 
 For the translation version being edited in Flex Console, the asset in
@@ -68,21 +66,23 @@ transaction resources in the FTW templates.
 ![Add translation key-value pairs](./translation_edit.png)
 
 When the asset has been created, you will need to fetch the translations
-to the client application. If you already have versions of your asset,
-you will use `sdk.assetByVersion`, and if not, you will use
-`sdk.assetByAlias`. TODO: CLARIFY!!
+to the client application. Assets are fetched through a new AssetDeliveryAPI as a JSON asset. Assets can be retrieved by the latest version, or by a specific version. Read more about [asset caching and versioning](/)TODO: ADD LINK ONCE REFERENCES EXIST!.
 
 Read more about
 [handling hosted asset translations in the FTW templates](/ftw/how-to-change-ftw-ui-texts-and-translations/).
 TODO: UPDATE LINK ONCE ARTICLE IS SPLIT!
 
-## Translation format for editing translations in Console.
+## Translation format for editing translations in Console
 
 A translation using the
 [React Intl formatMessage formatting](https://formatjs.io/docs/intl#formatmessage)
 can, at its simplest, consist of a phrase.
 
-![Simple translation phrase](./translation_simple.png)
+```json
+{
+  "ManageListingCard.editListing": "Edit listing"
+}
+```
 
 In the FTW template, the phrase is then passed to the UI element that
 shows the value. Read more about
@@ -98,7 +98,11 @@ translation string. Passing a
 allows showing context-specific information as a part of the translation
 string.
 
-![Translation phrase with parameter](./translation_parameter.png)
+```json
+{
+  "ManageListingCard.pendingApproval": "{listingTitle} is pending admin approval and can't be booked."
+}
+```
 
 Using the translation then requires that the code passes parameter
 `listingTitle` to the element that renders the value.
@@ -113,13 +117,17 @@ However, if you later decide you do want to use the title, it is
 recommended to double check the original translation file in your client
 application to see the names of the attributes available in the message.
 
-### plural
+### Pluralization
 
 One important factor in creating natural translations is handling
 pluralization in a text. The ICU format makes it possible to define
 different wordings for singular and plural options.
 
-![Translation phrase with pluralization defined](./translation_plural.png)
+```json
+{
+  "ManageListingsPage.youHaveListings": "You have {count} {count, plural, one {listing} other {listings}}",
+}
+```
 
 When you use plural in the translation string, you will need to specify
 
@@ -136,6 +144,38 @@ Since different languages have different pluralization rules,
 pluralization is defined per language. You can see the full list of
 pluralization arguments (`zero`, `one`, `two`, `few` etc.) in the
 [ICU syntax documentation](https://formatjs.io/docs/core-concepts/icu-syntax/#plural-format).
+
+### Selection
+
+In addition to pluralization options, you can build logic to the
+translation strings using
+[select formatting](https://formatjs.io/docs/core-concepts/icu-syntax/#select-format). The current FTW template translations do not have an existing example of this pattern, however you can of course modify your code to include this formatting as well.
+
+```js
+/* When you use `select` in the translation string, you will need to specify
+- the variable determining which option to use (here: 'actor')
+- the pattern we are following (here: 'select')
+- the options matching each alternative you want to specify (here: 'you' – there could be several options specified)
+- an 'other' option that gets used when none of the specified alternatives matches
+*/
+const translations = {
+  en: {
+    "TransactionPage.bookingAccepted": "{actor, select, you {You accepted the booking request.} other {{otherUsersName} accepted the booking request.}}",
+  }
+}
+...
+// actor: 'you', 'system', 'operator', or display name of the other party
+const actor = 'you';
+// For { actor: 'you', otherUsersName: 'Riley' }, the message will read "You accepted the booking request.".
+// For any other values of 'actor', the message would read "Riley accepted the booking request."
+const bookingAccepted = intl.formatMessage(
+  { id="TransactionPage.bookingAccepted" },
+  { actor, otherUsersName }
+);
+```
+
+You can use select for cases where you have a predetermined list of
+options you will encounter that require different translation strings.
 
 ## Can I have a multilanguage marketplace?
 

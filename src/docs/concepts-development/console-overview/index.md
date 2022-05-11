@@ -96,8 +96,7 @@ your marketplace ID, URL and name. Here, you can also configure an
 outgoing email address, where all notifications to your marketplace’s
 users will be sent from.
 
-**Content** is where you can modify your marketplace texts. TODO:
-EXPAND! Read more about
+**Content** is where you can modify your marketplace texts. You can add your existing translation file content from your Flex Template, or copy and paste the default translations from the featured links, and modify the texts to suit your marketplace. You can read more about
 [modifying translations in Console](../translations).
 
 **Transaction processes** is quite self-explanatory: it shows the
