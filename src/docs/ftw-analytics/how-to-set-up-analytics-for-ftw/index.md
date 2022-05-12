@@ -21,7 +21,7 @@ FTW has built-in support for Google Analytics. All you need to do is assign your
 ### Google Analytics 4
 Google recently released their new analytics service Google Analytics 4. Support for Google Universal Analytics will end on October 1, 2023. New versions of FTW provide out-of-the-box support for Google Analytics 4. 
 
-If you're starting development on a new version of FTW and prefer to use Universal Analytics, you should see implementation in earlier versions of FTW. If you have built your marketplace on top of an older version of FTW and you want to start using Google Analytics 4, you'll need to implement the changes introduced in this commit.
+If you're starting development on a new version of FTW and prefer to use Universal Analytics, you should look into how Analytics was implemented before [this pull request](https://github.com/sharetribe/ftw-daily/pull/1508). If you have built your marketplace on top of an older version of FTW and you want to start using Google Analytics 4, you'll need to implement the changes introduced in [this pull request](https://github.com/sharetribe/ftw-daily/pull/1508).
 
 > New versions of FTW will expect a Tracking ID compatible with Google 
 > Analytics 4. FTW expects the ID to begin with the "G-" prefix. 
@@ -35,7 +35,7 @@ It is not recommended to use the Enhanced Measurements feature introduced in Goo
     <source src='./turn-off-enhanced-measurements.ogv' type='video/ogg'>
 </video>
 
-If that's not an option, you can continue to use Enhanced Measurements if you disable the *Outbound clicks* and page changes based on browser history events features. 
+If that's not an option, you can continue to use Enhanced Measurements if you disable the *Outbound clicks* and *page changes based on browser history events* features. 
 
 ![Disable Outbound clicks](./disable.png)
 
@@ -58,18 +58,21 @@ file.
 In some cases, you might want to import the script during server-side rendering (SSR). That allows you to start tracking events as early as possible. To inject the script during SSR, see how the `googleAnalyticsScript` is imported in the [server/renderer.js](https://github.com/sharetribe/flex-template-web/blob/master/server/renderer.js) file. Importing the script during SSR also allows you to conditionally import the script, depending on, e.g. certain environment variables.
 
 ### Create a handler
-To track page views, create a custom handler e.g. in
+You can create a custom handler e.g. in
 [src/analytics/handlers.js](https://github.com/sharetribe/flex-template-web/blob/master/src/analytics/handlers.js).
-The handler should be a class that implements a `trackPageView(url)`
+If you want to track page views, you could create a class that implements a `trackPageView(url)`
 method.
 
-Note that the `url` parameter might not be the same as in the URL bar of
-the browser. It is the canonical form of the URL. For example, in the
-listing page, it doesn't have the dynamic title slug in the middle. This
-allows unified analytics and correct tracking of pages that can be
-accessed from multiple different URLs.
+Note that the `url` parameter passed to the function might not be the same as in the URL bar of
+the browser. It is the canonical form of the URL. 
 
-If your analytics library takes the page URL from the browser, you might
+> Example: the listing page URL is constructed dynamically: `l/{listing-name}/{listing-slug}`.
+> The canonical from of that URL would be: `l/{listing-slug}`
+
+This approach allows unified analytics and correct tracking of pages that can be
+accessed from multiple URLs.
+
+If your analytics library tries to access the page URL directly through the browser, you might
 need to override that behavior to use the canonical URL that is given to
 the method.
 
@@ -77,6 +80,3 @@ the method.
 
 Finally, you only need to initialise the handler in the `setupAnalyticsHandlers()` function in
 [src/index.js](https://github.com/sharetribe/flex-template-web/blob/master/src/index.js).
-
-### Troubleshooting
-
