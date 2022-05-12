@@ -1,10 +1,10 @@
 ---
-title: How to change FTW UI texts and translations
-slug: how-to-change-ftw-ui-texts-and-translations
-updated: 2019-05-21
-category: ftw-styling
+title: How to change FTW bundled UI translations
+slug: how-to-change-ftw-bundled-ui-translations
+updated: 2022-05-21
+category: ftw-content
 ingress:
-  This guide describes how to change the User Interface (UI) texts and
+  This guide describes how to change the bundled User Interface (UI)
   translations in Flex Template for Web (FTW).
 published: true
 ---
@@ -12,15 +12,19 @@ published: true
 The Flex Template for Web supports having a single language for the UI.
 Supported languages are English, French and Spanish, English being used
 by default. For information about changing the language, see the
-[Changing the language](#changing-the-language) section below.
+[Changing the language](/ftw/how-to-change-ftw-language) article.
 
 We are using the [React Intl](https://github.com/yahoo/react-intl)
 library to translate UI texts and to format dates, numbers, and money
 values.
 
+_**Note:** Starting in 2022-05, FTW template translations can also be modified in Flex Console. If you want to implement this feature into your pre-version XX.XX FTW template, you can see the necessary modifications in the PRs for [ftw-daily](), [ftw-hourly](), and [ftw-product]() todo: links. Read more:_
+- _[Translations in Flex Console](/concepts/translations/)_
+- _[How dynamic translations work in the FTW templates]() todo: link_
+
 ## The translation file
 
-All the text translations can be found in the
+All the bundled text translations can be found in the
 [src/translations/en.json](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/en.json)
 file. The translation data is formatted as one JSON object with all the
 translations as properties.
@@ -150,6 +154,42 @@ intl.formatMessage(
 );
 ```
 
+### Select an option
+
+If you have two or more options that the translation needs to show depending on another argument, you can use the `select` keyword to pass the necessary information for the message.
+
+When you use `select` in the translation string, you will need to specify
+- the variable determining which option to use (here: `mode`)
+- the pattern we are following (here: `select`)
+- the options matching each alternative you want to specify (here: `class` – there could be several options specified)
+- an `other` option that gets used when none of the specified alternatives matches
+
+
+```json
+ "BookingBreakdown.description": "{mode, select, day {You are booking the following days:} night {You are booking the following nights:} other {You are booking the following {unitType}:}}"
+```
+
+You can then use the translation message in the code with the `formatMessage` function: 
+
+```js
+// mode: the types of bookings or products available on the listing page, e.g. class, package, day, night
+const mode = 'class';
+const unitType = 'yoga class'
+// For { mode: 'class', unitType: 'yoga class' }, the message will read "You are booking the following yoga class.".
+const description = intl.formatMessage(
+  { id="BookingBreakdown.description" },
+  { mode, unitType }
+);
+```
+
+You can also use the translation with the `FormatMessage` component
+ ```jsx
+    <FormattedMessage
+    id="BookingBreakdown.description"
+    values={{mode: "day"}}
+  />
+ ```
+
 More formatting examples can be found from the
 [FormatJS message syntax documentation](https://formatjs.io/docs/core-concepts/icu-syntax/).
 
@@ -167,6 +207,7 @@ yarn run translate
 will start a command line application:
 
 ![Translations CLI](./translations-cli.png)
+
 
 The command line application can be used to match a translation file
 against the English translations. If your new translations file follows

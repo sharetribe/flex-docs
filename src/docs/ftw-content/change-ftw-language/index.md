@@ -70,3 +70,29 @@ to match your language in use, for example:
 ```js
 import messages from '../translations/it.json';
 ```
+
+## Developing FTW into a multilanguage marketplace
+
+If you intend to modify the FTW template to handle multiple languages,
+it is good to note that the FTW templates are by default configured to
+run in single language mode, so a multilanguage marketplace requires
+custom development. For multiple languages, you basically have two
+approaches for that custom development.
+
+The first option is to create two versions of the client app, one for
+Language 1 and one for Language 2. They can both point to the same
+Marketplace API i.e. share the same listings, users, transaction
+processes etc. If you have a very location-specific marketplace with
+different locations mainly in different languages, this might be a good
+approach, because you can then target your UI, branding and localization
+more closely to the target area.
+
+Another option is to customize a single client app to provide multiple
+languages. For instance, you could import several language files in
+`src/app.json` and select which one you are going to use by modifying
+`src/routeConfiguration.js`, so that all the paths include a ”locale”
+variable. E.g. `/about` could be changed to `/:locale/about` to capture
+paths like `/fr/about`. In this case, it is useful to save the
+user's language preference to the extended data.
+
+Read more about having [a multilanguage marketplace on top of Flex](/concepts/translations/#can-i-have-a-multilanguage-marketplace).

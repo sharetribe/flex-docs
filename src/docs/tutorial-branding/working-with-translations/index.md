@@ -98,6 +98,7 @@ Copy and paste the above rows, complete with the curly brackets, to the Marketpl
 
 ![Modified SectionHero translations in Console](./tutorial_translations.png)
 
+
 When you save the file, you should soon see the changes in the hero section
 on the landing page:
 

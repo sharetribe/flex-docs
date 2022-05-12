@@ -151,19 +151,20 @@ In addition to pluralization options, you can build logic to the
 translation strings using
 [select formatting](https://formatjs.io/docs/core-concepts/icu-syntax/#select-format). The current FTW template translations do not have an existing example of this pattern, however you can of course modify your code to include this formatting as well.
 
-```js
-/* When you use `select` in the translation string, you will need to specify
-- the variable determining which option to use (here: 'actor')
-- the pattern we are following (here: 'select')
-- the options matching each alternative you want to specify (here: 'you' – there could be several options specified)
-- an 'other' option that gets used when none of the specified alternatives matches
-*/
-const translations = {
-  en: {
-    "TransactionPage.bookingAccepted": "{actor, select, you {You accepted the booking request.} other {{otherUsersName} accepted the booking request.}}",
-  }
+When you use `select` in the translation string, you will need to specify
+- the variable determining which option to use (here: `actor`)
+- the pattern we are following (here: `select`)
+- the options matching each alternative you want to specify (here: `you` – there could be several options specified)
+- an `other` option that gets used when none of the specified alternatives matches
+
+```json
+{
+  "TransactionPage.bookingAccepted": "{actor, select, you {You accepted the booking request.} other {{otherUsersName} accepted the booking request.}}"
 }
-...
+```
+You can then use the translation message in the code e.g. as follows: 
+
+```js
 // actor: 'you', 'system', 'operator', or display name of the other party
 const actor = 'you';
 // For { actor: 'you', otherUsersName: 'Riley' }, the message will read "You accepted the booking request.".
@@ -179,36 +180,13 @@ options you will encounter that require different translation strings.
 
 ## Can I have a multilanguage marketplace?
 
-Technically, having several translation files does enable using a single
+Having several translation files enables using a single
 application for multiple languages. However, editing translations in
 Console only supports one language at a time, so you will need to modify
-any other languages using the bundled translation files.
+any other languages using bundled translation files within your client application.
 
-_TODO: SHOULD THIS SECTION GO TO THE FTW ARTICLE ON TRANSLATIONS?? A SEPARATE ARTICLE? ORIGINALLY A MACRO IN IC_
-
-If you intend to modify the FTW template to handle multiple languages,
-it is good to note that the FTW templates are by default configured to
-run in single language mode, so a multilanguage marketplace requires
-custom development. For multiple languages, you basically have two
-approaches for that custom development.
-
-The first option is to create two versions of the client app, one for
-Language 1 and one for Language 2. They can both point to the same
-Marketplace API i.e. share the same listings, users, transaction
-processes etc. If you have a very location-specific marketplace with
-different locations mainly in different languages, this might be a good
-approach, because you can then target your UI, branding and localization
-more closely to the target area.
-
-Another option is to customize a single client app to provide multiple
-languages. For instance, you could import several language files in
-`src/app.json` and select which one you are going to use by modifying
-`src/routeConfiguration.js`, so that all the paths include a ”locale”
-variable. E.g. `/about` could be changed to `/:locale/about` to capture
-paths like `/fr/about`. In this case, you probably need to save the
-user's language preference to the extended data.
-
-The problem here is user-generated content. Even though listings and
+Having multiple languages in a single marketplace may, however, cause a problem
+in terms of user-generated content. Even though listings and
 user profiles could include both language versions by saving the content
 of language-specific input fields to a listing's extended data, users
 are rarely capable of providing content for several languages.
@@ -220,3 +198,5 @@ shows the correct language, for example:
 ```js
 {{#eq recipient.private-data.language "en"}}Hello{{else}}Bonjour{{/eq}}
 ```
+
+Read more about what to consider when [building a multilanguage Flex marketplace on top of a FTW template](/ftw/how-to-change-ftw-language/#developing-ftw-into-a-multilanguage-marketplace).
