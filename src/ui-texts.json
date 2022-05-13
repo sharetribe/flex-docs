@@ -145,7 +145,7 @@
   "Sidebar.ftwIntroduction": "Introduction",
   "Sidebar.ftwAnalytics": "Analytics",
   "Sidebar.ftwConfiguration": "Configuration and Environment Variables",
-  "Sidebar.ftwContent": "Content",
+  "Sidebar.ftwContent": "Content Management",
   "Sidebar.ftwDataFlow": "Data flow and Redux",
   "Sidebar.ftwHosting": "Hosting",
   "Sidebar.ftwPerformance": "Performance",
