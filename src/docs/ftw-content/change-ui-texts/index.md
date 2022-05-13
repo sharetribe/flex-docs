@@ -34,6 +34,8 @@ translations. Read more about how to
 and
 [how hosted translations work in the FTW templates](/ftw/hosted-translations).
 
+You may also want to change the language of the user interface entirely. Read more about [changing the language used in FTW](/ftw/how-to-change-ftw-language/).
+
 In addition to translations, there are other forms of content in the FTW
 applications that operators may need to manage.
 

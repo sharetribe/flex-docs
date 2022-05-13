@@ -53,7 +53,7 @@ than key-value mapping you see in _en.json_ file:
 
 In this tutorial, we change the translations of Hero component, but we
 have another document that dives deeper into this topic:
-[How to change FTW UI texts and translations](/ftw/how-to-change-ftw-ui-texts-and-translations/)
+[How to change FTW bundled translations](/ftw/how-to-change-ftw-bundled-translations/)
 
 ## Change the translations for Hero component
 
@@ -107,7 +107,7 @@ on the landing page:
 To get more insight into translation syntax, different language files,
 and localization of dates and money values, you should check the
 article:
-[How to change FTW UI texts and translations](/ftw/how-to-change-ftw-ui-texts-and-translations/).
+[How to change FTW bundled translations](/ftw/how-to-change-ftw-bundled-translations/).
 
 To read more about how translations can be modified in Flex Console, check out the article about [translations in Flex](/concepts/translations/)
 

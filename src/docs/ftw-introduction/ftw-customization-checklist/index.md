@@ -32,7 +32,7 @@ FTW.
 ## 2. Change text content
 
 - Update UI texts or change the language:
-  [How to change FTW UI texts and translations](/ftw/how-to-change-ftw-ui-texts-and-translations/)
+  [How to change FTW UI texts](/ftw/how-to-change-ftw-ui-texts/)
 - [LandingPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/LandingPage/LandingPage.js)
   component: update and create branded sections
 - [Footer](https://github.com/sharetribe/ftw-daily/blob/master/src/components/Footer/Footer.js)
