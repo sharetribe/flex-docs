@@ -1,10 +1,11 @@
 ---
 title: How to change FTW translation language
 slug: how-to-change-ftw-language
-updated: 2022-05-15
+updated: 2022-05-13
 category: ftw-content
 ingress:
-  This guide describes how to change the language used in the Flex Template for Web (FTW) application
+  This guide describes how to change the language used in the Flex
+  Template for Web (FTW) application
 published: true
 ---
 
@@ -23,6 +24,12 @@ need to be translated:
 > Note: we already have a few other language files available in
 > [src/translations/](https://github.com/sharetribe/flex-template-web/tree/master/src/translations)
 > directory for you to start customizing translations.
+
+Even if you use [hosted translations](/ftw/hosted-translations/) to
+manage your marketplace texts, it is still important to have a built-in
+translation file in FTW as well, so that the application can show
+meaningful messages for any keys missing from the Flex Console
+translation asset.
 
 ## Changing the translations used in FTW
 
@@ -73,11 +80,11 @@ import messages from '../translations/it.json';
 
 ## Developing FTW into a multilanguage marketplace
 
-If you intend to modify the FTW template to handle multiple languages,
-it is good to note that the FTW templates are by default configured to
-run in single language mode, so a multilanguage marketplace requires
-custom development. For multiple languages, you basically have two
-approaches for that custom development.
+If you intend to modify a FTW template to handle multiple languages, it
+is good to note that the FTW templates are by default configured to run
+in single language mode, so a multilanguage marketplace requires custom
+development. For multiple languages, you basically have two approaches
+for that custom development.
 
 The first option is to create two versions of the client app, one for
 Language 1 and one for Language 2. They can both point to the same
@@ -92,7 +99,8 @@ languages. For instance, you could import several language files in
 `src/app.json` and select which one you are going to use by modifying
 `src/routeConfiguration.js`, so that all the paths include a ”locale”
 variable. E.g. `/about` could be changed to `/:locale/about` to capture
-paths like `/fr/about`. In this case, it is useful to save the
-user's language preference to the extended data.
+paths like `/fr/about`. In this case, it is useful to save the user's
+language preference to the extended data.
 
-Read more about having [a multilanguage marketplace on top of Flex](/concepts/translations/#can-i-have-a-multilanguage-marketplace).
+Read more about having
+[a multilanguage marketplace on top of Flex](/concepts/translations/#can-i-have-a-multilanguage-marketplace).

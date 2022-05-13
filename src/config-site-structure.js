@@ -102,6 +102,14 @@ const sortingArrayHowToUsers = [
   'implement-delete-user',
 ];
 
+const sortingArrayFTWContent = [
+  'how-to-change-ftw-ui-texts',
+  'how-to-change-ftw-bundled-translations',
+  'hosted-translations',
+  'how-to-change-ftw-language',
+  'how-to-add-static-pages-in-ftw',
+]
+
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -186,7 +194,10 @@ exports.siteStructure = [
     subcategories: [
       { id: 'ftw-introduction' },
       { id: 'ftw-configuration' },
-      { id: 'ftw-content' },
+      {
+        id: 'ftw-content',
+        sortingArray: sortingArrayFTWContent,
+      },
       { id: 'ftw-styling' },
       { id: 'ftw-routing' },
       { id: 'ftw-data-flow' },

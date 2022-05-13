@@ -1,11 +1,11 @@
 ---
-title: How to change FTW bundled UI translations
-slug: how-to-change-ftw-bundled-ui-translations
-updated: 2022-05-21
+title: How to change FTW bundled translations
+slug: how-to-change-ftw-bundled-translations
+updated: 2022-05-13
 category: ftw-content
 ingress:
-  This guide describes how to change the bundled User Interface (UI)
-  translations in Flex Template for Web (FTW).
+  This guide describes how to change the bundled translations in Flex
+  Template for Web (FTW).
 published: true
 ---
 
@@ -18,9 +18,14 @@ We are using the [React Intl](https://github.com/yahoo/react-intl)
 library to translate UI texts and to format dates, numbers, and money
 values.
 
-_**Note:** Starting in 2022-05, FTW template translations can also be modified in Flex Console. If you want to implement this feature into your pre-version XX.XX FTW template, you can see the necessary modifications in the PRs for [ftw-daily](), [ftw-hourly](), and [ftw-product]() todo: links. Read more:_
+_**Note:** Starting in 2022-05, FTW template translations can also be
+modified in Flex Console. If you want to implement this feature into
+your pre-version XX.XX FTW template, you can see the necessary
+modifications in the PRs for [ftw-daily](), [ftw-hourly](), and
+[ftw-product]() todo: links. Read more:_
+
 - _[Translations in Flex Console](/concepts/translations/)_
-- _[How dynamic translations work in the FTW templates]() todo: link_
+- _[How hosted translations work in the FTW templates]() todo: link_
 
 ## The translation file
 
@@ -84,7 +89,7 @@ As for the `FormattedMessage` it just needs to be imported from
 `react-intl` and it takes the id prop:
 
 ```jsx
-<FormattedMessage id="SomeCompoennt.someKey" />
+<FormattedMessage id="SomeComponent.someKey" />
 ```
 
 Other functions and componets can be explored in the
@@ -156,20 +161,26 @@ intl.formatMessage(
 
 ### Select an option
 
-If you have two or more options that the translation needs to show depending on another argument, you can use the `select` keyword to pass the necessary information for the message.
+If you have two or more options that the translation needs to show
+depending on another argument, you can use the `select` keyword to pass
+the necessary information for the message.
 
-When you use `select` in the translation string, you will need to specify
+When you use `select` in the translation string, you will need to
+specify
+
 - the variable determining which option to use (here: `mode`)
 - the pattern we are following (here: `select`)
-- the options matching each alternative you want to specify (here: `class` – there could be several options specified)
-- an `other` option that gets used when none of the specified alternatives matches
-
+- the options matching each alternative you want to specify (here:
+  `class` – there could be several options specified)
+- an `other` option that gets used when none of the specified
+  alternatives matches
 
 ```json
  "BookingBreakdown.description": "{mode, select, day {You are booking the following days:} night {You are booking the following nights:} other {You are booking the following {unitType}:}}"
 ```
 
-You can then use the translation message in the code with the `formatMessage` function: 
+You can then use the translation message in the code with the
+`formatMessage` function:
 
 ```js
 // mode: the types of bookings or products available on the listing page, e.g. class, package, day, night
@@ -183,12 +194,13 @@ const description = intl.formatMessage(
 ```
 
 You can also use the translation with the `FormatMessage` component
- ```jsx
-    <FormattedMessage
-    id="BookingBreakdown.description"
-    values={{mode: "day"}}
-  />
- ```
+
+```jsx
+<FormattedMessage
+  id="BookingBreakdown.description"
+  values={{ mode: 'day' }}
+/>
+```
 
 More formatting examples can be found from the
 [FormatJS message syntax documentation](https://formatjs.io/docs/core-concepts/icu-syntax/).
@@ -207,7 +219,6 @@ yarn run translate
 will start a command line application:
 
 ![Translations CLI](./translations-cli.png)
-
 
 The command line application can be used to match a translation file
 against the English translations. If your new translations file follows
