@@ -16,7 +16,7 @@ them with the built-in translations
 
 _**Note:** If you want to implement this feature into your pre-version
 XX.XX FTW template, you can see the necessary modifications in the PRs
-for [ftw-daily](), [ftw-hourly](), and [ftw-product]() todo: links. Read
+for [ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
 more:_
 
 - _[Translations in Flex Console](/concepts/translations/)_
