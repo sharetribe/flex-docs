@@ -83,10 +83,10 @@ example.
 
 ## Custom analytics libraries
 
-If you choose to go with another analytics provider, you can follow
-these steps to import the third-party script and create a custom
-handler. In some cases, it might also be worth looking into npm packages
-instead of manually appending a third-party script.
+If you choose to add another analytics provider (e.g. Facebook Pixel),
+you can follow these steps to import the third-party script and create a
+custom handler. In some cases, it might also be worth looking into npm
+packages instead of manually appending a third-party script.
 
 ### Add the analytics library script
 
@@ -96,27 +96,33 @@ script tag to the
 file.
 
 In some cases, you might want to import the script during server-side
-rendering (SSR). That allows you to start tracking events as early as
-possible. To inject the script during SSR, see how the
+rendering (SSR). Importing the script during SSR also allows you to
+conditionally import the script, depending on, e.g. certain environment
+variables. To inject the script during SSR, see how the
 `googleAnalyticsScript` is imported in the
 [server/renderer.js](https://github.com/sharetribe/flex-template-web/blob/master/server/renderer.js)
-file. Importing the script during SSR also allows you to conditionally
-import the script, depending on, e.g. certain environment variables.
+file.
 
 ### Create a handler
 
 You can create a custom handler e.g. in
 [src/analytics/handlers.js](https://github.com/sharetribe/flex-template-web/blob/master/src/analytics/handlers.js).
 If you want to track page views, you could create a class that
-implements a `trackPageView(url)` method.
+implements a `trackPageView(canonicalPath, previousPath)` method.
 
-Note that the `url` parameter passed to the function might not be the
-same as in the URL bar of the browser. It is the canonical form of the
-URL.
+Note that the `canonicalPath` parameter passed to the function might not
+be the same path as in the URL bar of the browser. It is the canonical
+form of the URL.
 
-> Example: the listing page URL is constructed dynamically:
-> `l/{listing-name}/{listing-slug}`. The canonical from of that URL
-> would be: `l/{listing-slug}`
+**For example**: the listing page URL is constructed dynamically:
+`l/{listing-slug}/{listing-id}`. The canonical form of that URL would
+be: `l/{listing-id}`.
+
+> A "_slug_" is a web development term for a short, user-friendly
+> string. In the example above, FTW generates the slug from the
+> listing's title, which is prone to frequent changes. Therefore, a
+> canonical form of that URL is needed to maintain a stable link which
+> doesn't change every time the name of the listing changes.
 
 This approach allows unified analytics and correct tracking of pages
 that can be accessed from multiple URLs.
