@@ -1,7 +1,7 @@
 ---
 title: Working with translations
 slug: working-with-translations
-updated: 2022-05-15
+updated: 2022-05-13
 category: tutorial-branding
 ingress: Change the UI copy-texts and implement new translations.
 published: true
