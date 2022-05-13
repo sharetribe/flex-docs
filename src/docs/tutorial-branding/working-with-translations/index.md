@@ -19,6 +19,12 @@ Build > Content.
 
 ![Modify marketplace texts](./translation_start.png)
 
+_**Note:** Hosted assets are available in Flex and the FTW templates
+starting from version XX.XX. If you have an earlier version and want to
+implement the feature in your template, you can see the necessary
+modifications in the PRs for [ftw-daily](), [ftw-hourly](), and
+[ftw-product](). todo: links_
+
 When you first start building your marketplace, the JSON field in
 Marketplace texts is empty, and all marketplace texts come from built-in
 translation files in the template. (We refer to copy-text as
@@ -40,12 +46,13 @@ this _en.json_ file:
         └── en.json
 ```
 
-In addition to translations, there are also a couple of components that contain a
-huge amount of text content (e.g. **AboutPage**, **PrivacyPolicy**, and
-**TermsOfService**). The content of those components is not included in
-the translation file since they need a free-form structure and styling.
-It is easier to achieve that with a markup language (like HTML and JSX)
-than key-value mapping you see in _en.json_ file:
+In addition to translations, there are also a couple of components that
+contain a huge amount of text content (e.g. **AboutPage**,
+**PrivacyPolicy**, and **TermsOfService**). The content of those
+components is not included in the translation file since they need a
+free-form structure and styling. It is easier to achieve that with a
+markup language (like HTML and JSX) than key-value mapping you see in
+_en.json_ file:
 
 ```json
   "LocationSearchForm.placeholder": "Search saunas…",
@@ -65,8 +72,8 @@ So, there are a couple of ways to find the correct translation for UI
 components:
 
 - You could search for a translation text in the translation file
-- You could check the name of the component and search for the component name in the
-  translation file.
+- You could check the name of the component and search for the component
+  name in the translation file.
 
 The latter option becomes easier if you use browser extension: **React
 Developer Tools**.<br /> Here's a link to
@@ -94,13 +101,13 @@ translations that SectionHero component uses. Let's change all of them:
 }
 ```
 
-Copy and paste the above rows, complete with the curly brackets, to the Marketplace texts JSON field. 
+Copy and paste the above rows, complete with the curly brackets, to the
+Marketplace texts JSON field.
 
 ![Modified SectionHero translations in Console](./tutorial_translations.png)
 
-
-When you save the file, you should soon see the changes in the hero section
-on the landing page:
+When you save the file, you should soon see the changes in the hero
+section on the landing page:
 
 ![Hero section with updated translations](./hero-with-updated-translations.png)
 
@@ -109,7 +116,12 @@ and localization of dates and money values, you should check the
 article:
 [How to change FTW bundled translations](/ftw/how-to-change-ftw-bundled-translations/).
 
-To read more about how translations can be modified in Flex Console, check out the article about [translations in Flex](/concepts/translations/)
+To learn more about how the hosted translations work in FTW templates,
+read the article on [hosted assets in FTW](/ftw/hosted-translations/).
+
+To read more about how translations can be modified in Flex Console,
+check out the article about
+[translations in Flex](/concepts/translations/).
 
 <br />
 
