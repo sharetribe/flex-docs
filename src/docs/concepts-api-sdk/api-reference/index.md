@@ -13,13 +13,14 @@ published: true
 
 **[Access the Sharetribe Flex API reference here](https://www.sharetribe.com/api-reference/)**
 
-The Sharetribe Flex API consists of three individual APIs:
+The Sharetribe Flex API consists of the following individual APIs:
 
 - [Marketplace API](https://www.sharetribe.com/api-reference/marketplace.html)
 - [Integration API](https://www.sharetribe.com/api-reference/integration.html)
 - [Authentication API](https://www.sharetribe.com/api-reference/authentication.html)
+- [Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 
-All three are HTTP APIs and both the Integration API and Marketplace API
+All these are HTTP APIs and both the Integration API and Marketplace API
 support [JSON](https://www.ietf.org/rfc/rfc7159.txt) and
 [Transit](https://github.com/cognitect/transit-format) formats. The
 Authentication API is based on OAuth2. Our API documentation provides
@@ -33,4 +34,6 @@ If you are interested in reading more about the Marketplace and
 Integration API, refer to our background article on
 [Marketplace and Integration API](/concepts/marketplace-api-integration-api/).
 For more information on our Authentication API, refer to our background
-article on the [Authentication API](/concepts/authentication-api/).
+article on the [Authentication API](/concepts/authentication-api/). For
+more information on the Asset Delivery API, refer to the
+[asset reference](/references/marketplace-assets/) article.
