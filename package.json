@@ -23,6 +23,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@docsearch/react": "3",
     "babel-plugin-styled-components": "^1.13.3",
     "docsearch.js": "2.6.3",
     "gatsby": "^4.6.0",
@@ -50,6 +51,7 @@
     "react-modal": "^3.11.1",
     "rehype-react": "^4.0.1",
     "sanitize.css": "^11.0.0",
+    "sharp": "^0.30.4",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
