@@ -49,8 +49,8 @@ const appCdnAssets = {
 ```
 
 In addition, FTW templates have added a new global Redux file
-(_src/ducks/hostedAssets.duck.js_), which exports Redux Thunk function
-called _fetchAppAssets_. This function actually makes the calls to the
+(_src/ducks/hostedAssets.duck.js_), which exports a Redux Thunk function
+called **fetchAppAssets**. This is the function that actually makes the calls to the
 Asset Delivery API.
 
 There are two ways to fetch translation assets using Asset Delivery API:
@@ -87,7 +87,7 @@ sdk.assetByVersion({
 
 In addition to fetching assets by version, you can fetch them by a
 specific alias instead of a version. Currently, translations can be
-fetched with the alias _"latest"_, which returns the most recently
+fetched with the alias _latest_, which returns the most recently
 updated version of the translations. The response also contains the
 version information for the most recent asset, so that subsequent
 fetches can be done based on asset version.
@@ -125,11 +125,11 @@ environment or **_yarn run dev-server_** on your local machine.
    ```
 
 3. SSR: **fetchAppAssets** thunk fetches the latest version of
-   `content/translations.json` asset by using _"latest"_ alias with
-   `sdk.assetByAlias`
+   _content/translations.json_ asset by using _latest_ alias with
+   **sdk.assetByAlias**
    - This ensures that the server-side rendering has the most recent
      version of asset to render the page
-4. SSR: make a _loadData_ call if the route specifies it and
+4. SSR: make a **loadData** call if the route specifies it and
 
    ```js
      .then(fetchedAssets => {
@@ -139,7 +139,7 @@ environment or **_yarn run dev-server_** on your local machine.
    ```
 
 5. SSR: asset **version** is saved to the store and passed to the
-   browser through the _"preloadedState"_.
+   browser through the _preloadedState_.
 
    - Server-side rendering must match with client-side rendering when
      browser hydrates the server-side rendered content.
@@ -158,11 +158,11 @@ environment or **_yarn run dev-server_** on your local machine.
      })
    ```
 
-6. SSR: call `renderApp` function, which renders the `<ServerApp>` in
+6. SSR: call **renderApp** function, which renders the <_ServerApp>_ in
    _src/app.js_
 
    - Hosted translations from Asset Delivery API are passed as props to
-     `ServerApp`.
+     _ServerApp_.
 
    ```shell
    └── server
@@ -196,7 +196,7 @@ environment or **_yarn run dev-server_** on your local machine.
    ```
 
 - Hosted translations are then merged with the default translations in
-  `ServerApp` component.
+  _ServerApp_ component.
   ```jsx
   export const ServerApp = props => {
     const { url, context, helmetContext, store, hostedTranslations = {} } = props;
@@ -215,12 +215,12 @@ environment or **_yarn run dev-server_** on your local machine.
    - The asset version that the SSR used, is included in that preloaded
      state
 8. Browser: **fetchAppAssets** thunk fetch assets using asset version:
-   calls `sdk.assetByVersion`.
-9. Browser: make _loadData_ call
-10. Browser: hydrate the `<ClientApp>` and pass translations as props.
+   calls **sdk.assetByVersion**.
+9. Browser: make **loadData** call
+10. Browser: hydrate the _<ClientApp>_ and pass translations as props.
 
 - Hosted translations are merged with default translations in
-  `ClientApp` component.
+  _ClientApp_ component.
   ```js
   <ClientApp store={store} hostedTranslations={translations} />
   ```
@@ -230,11 +230,11 @@ environment or **_yarn run dev-server_** on your local machine.
 This is setup is in use if you run **_yarn run dev_** on local machine.
 
 1. Browser: initialize the store
-2. Browser: **fetchAppAssets** thunk fetches assets using 'latest'
-   alias: calls `sdk.assetByAlias`
+2. Browser: **fetchAppAssets** thunk fetches assets using _latest_
+   alias by calling **sdk.assetByAlias**
    - Because SSR is not available to fetch the latest version of the
      asset files, this call needs to be made from browser.
-3. Browser: make _loadData_ call
+3. Browser: make **loadData** call
 4. Browser: render the `<ClientApp>` and pass translations as props.
 
 ## Read more
