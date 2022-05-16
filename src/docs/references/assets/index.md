@@ -33,16 +33,17 @@ store secret or otherwise sensitive information.
 For example, a marketplace may have assets with the following assets:
 
 ```shell
-└── config
-    ├── client-config.json
+├── config
+│   └── client.json
+└── content
     └── translations.json
 ```
 
-where `config/config.json` could contain configuration data (for
+where `config/client.json` could contain configuration data (for
 instance, UI colors, marketplace pricing settings, etc) and
-`config/translations.json` could contain string translation data for use
-in a marketplace client application (such as one based on one of the FTW
-templates).
+`content/translations.json` could contain string translation data for
+use in a marketplace client application (such as one based on one of the
+FTW templates).
 
 ## Asset versioning
 
