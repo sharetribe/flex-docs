@@ -1,7 +1,7 @@
 ---
 title: How to change FTW bundled translations
 slug: how-to-change-ftw-bundled-translations
-updated: 2022-05-13
+updated: 2022-05-16
 category: ftw-content
 ingress:
   This guide describes how to change the bundled translations in Flex
@@ -20,12 +20,17 @@ values.
 
 _**Note:** Starting in 2022-05, FTW template translations can also be
 modified in Flex Console. If you want to implement this feature into
-your pre-version XX.XX FTW template, you can see the necessary
-modifications in the PRs for [ftw-daily](), [ftw-hourly](), and
-[ftw-product]() todo: links. Read more:_
+your pre-v8.5 FTW-daily template, you can see the necessary
+modifications in the PR for
+[ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
+more:_
 
 - _[Translations in Flex Console](/concepts/translations/)_
-- _[How hosted translations work in the FTW templates]() todo: link_
+- _[How hosted translations work in the FTW templates](/ftw/hosted-translations/)_
+
+<extrainfo title="FTW-hourly and FTW-product versions with hosted translations">
+In FTW-hourly, hosted translations are available in v10.5. In FTW-product, they are available in v9.2.
+</extrainfo>
 
 ## The translation file
 
@@ -183,10 +188,12 @@ You can then use the translation message in the code with the
 `formatMessage` function:
 
 ```js
-// mode: the types of bookings or products available on the listing page, e.g. class, package, day, night
+// mode: the types of bookings or products available 
+// on the listing page, e.g. class, package, day, night
 const mode = 'class';
 const unitType = 'yoga class'
-// For { mode: 'class', unitType: 'yoga class' }, the message will read "You are booking the following yoga class.".
+// For { mode: 'class', unitType: 'yoga class' },
+// the message will read "You are booking the following yoga class.".
 const description = intl.formatMessage(
   { id="BookingBreakdown.description" },
   { mode, unitType }

@@ -1,7 +1,7 @@
 ---
 title: Hosted translations with Asset Delivery API
 slug: hosted-translations
-updated: 2022-05-13
+updated: 2022-05-16
 category: ftw-content
 ingress:
   This article describes how hosted translations work in Flex Template
@@ -14,13 +14,17 @@ the built-in translation files and in Flex Console. This article
 describes how the FTW template uses the hosted translations and merges
 them with the built-in translations
 
-_**Note:** If you want to implement this feature into your pre-version
-XX.XX FTW template, you can see the necessary modifications in the PRs
+_**Note:** If you want to implement this feature into your pre-v8.5
+FTW-daily template, you can see the necessary modifications in the PRs
 for [ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
 more:_
 
 - _[Translations in Flex Console](/concepts/translations/)_
 - _[How built-in translations work in the FTW templates](ftw/how-to-change-ftw-bundled-ui-translations/)_
+
+<extrainfo title="FTW-hourly and FTW-product versions with hosted translations">
+In FTW-hourly, hosted translations are available in v10.5. In FTW-product, they are available in v9.2.
+</extrainfo>
 
 ## Hosted translations
 
@@ -34,6 +38,21 @@ built-in translation file for the translation keys that do not have a
 value in the hosted asset. That way, the UI can still render something
 meaningful for the parts of the page that the operator has not modified.
 
+FTW templates have specified hosted translations as part of the app-wide configuration in _src/config.js_
+
+```js
+// CDN assets for the app. Configurable through Flex Console.
+// Currently, only translation.json is available.
+const appCdnAssets = {
+  translations: 'content/translations.json',
+};
+```
+
+In addition, FTW templates have added a new global Redux file
+(_src/ducks/hostedAssets.duck.js_), which exports Redux Thunk function
+called _fetchAppAssets_. This function actually makes the calls to the
+Asset Delivery API.
+
 There are two ways to fetch translation assets using Asset Delivery API:
 by version or by alias.
 
@@ -41,15 +60,21 @@ by version or by alias.
 
 All assets are identifiable by their version, and versions are
 immutable. Therefore if you fetch assets by version, they can be cached
-for an extended period of time. Read more about [caching assets]() TODO:
-LINK. When fetching translations by version, they are cached for an
-extended period of time, which helps to avoid unnecessary data loading.
+for an extended period of time. Read more about
+[caching assets](/references/assets/#asset-data-caching). When fetching
+translations by version, they are cached for an extended period of time,
+which helps to avoid unnecessary data loading. Since Asset Delivery API
+sets Cache-Control header for these responses, the browser knows to
+cache these responses on its own.
 
+Hosted assets are versioned as a
+[whole asset tree](/references/assets/#asset-versioning) - a bit similar
+to how Git works. Individual asset files might have not changed when the
+whole version has changed and this might cause
+[HTTP redirects](https://www.sharetribe.com/api-reference/asset-delivery-api.html#http-redirects).
 Since FTW templates use Flex SDK, the response always contains the data
 for the requested asset, even if the asset has not changed in the
-specified version. However, when using the API endpoint without SDK, it
-is important to take into account the API's [asset redirect behavior]()
-TODO: LINK.
+specified version.
 
 ```js
 sdk.assetByVersion({
@@ -62,12 +87,12 @@ sdk.assetByVersion({
 
 In addition to fetching assets by version, you can fetch them by a
 specific alias instead of a version. Currently, translations can be
-fetched with the alias `latest`, which returns the most recently updated
-version of the translations. The response also contains the version
-information for the most recent asset, so that subsequent fetches can be
-done based on asset version.
+fetched with the alias _"latest"_, which returns the most recently
+updated version of the translations. The response also contains the
+version information for the most recent asset, so that subsequent
+fetches can be done based on asset version.
 
-When fetching by alias, the cache time is 5 seconds for development
+When fetching by alias, the cache time is a few seconds for development
 environment and up to 5 minutes for production environment. In other
 words, it can take up to 5 minutes for translation updates to be visible
 in a production environment. These cache times are subject to change.
@@ -77,22 +102,6 @@ sdk.assetByAlias({
   path: 'content/translations.json',
   alias: 'latest',
 });
-```
-
-We have added a new global Redux file
-(_src/ducks/hostedAssets.duck.js_), which exports Redux Thunk function
-called _fetchAppAssets_. This function actually makes the calls to the
-Asset Delivery API.
-
-Translations are part of app-wide hosted assets that have configuration
-in _src/config.js_
-
-```js
-// CDN assets for the app. Configurable through Flex Console.
-// Currently, only translation.json is available.
-const appCdnAssets = {
-  translations: 'content/translations.json',
-};
 ```
 
 ## How production build works with hosted translations
@@ -116,7 +125,7 @@ environment or **_yarn run dev-server_** on your local machine.
    ```
 
 3. SSR: **fetchAppAssets** thunk fetches the latest version of
-   `content/translations.json` asset by using `latest` alias with
+   `content/translations.json` asset by using _"latest"_ alias with
    `sdk.assetByAlias`
    - This ensures that the server-side rendering has the most recent
      version of asset to render the page
@@ -232,5 +241,5 @@ This is setup is in use if you run **_yarn run dev_** on local machine.
 
 If you want to read more, here are some pointers:
 
-- [Asset Delivery API](/references/<the-correct-link-here>/)
-- [Short intro to SSR](https://deploy-preview-565--sharetribe-flex-docs-site.netlify.app/docs/ftw/how-routing-works-in-ftw/#a-brief-introduction-to-ssr)
+- [Asset Delivery API](/references/assets/)
+- [Short intro to SSR](/ftw/how-routing-works-in-ftw/#a-brief-introduction-to-ssr)

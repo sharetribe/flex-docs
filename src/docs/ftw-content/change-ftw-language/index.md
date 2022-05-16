@@ -1,7 +1,7 @@
 ---
 title: How to change FTW translation language
 slug: how-to-change-ftw-language
-updated: 2022-05-13
+updated: 2022-05-16
 category: ftw-content
 ingress:
   This guide describes how to change the language used in the Flex

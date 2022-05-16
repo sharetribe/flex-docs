@@ -1,7 +1,7 @@
 ---
 title: Translations in Flex
 slug: translations
-updated: 2022-05-13
+updated: 2022-05-16
 category: concepts-development
 ingress:
   This article introduces translations in Flex and how they are modified
@@ -49,10 +49,9 @@ client applications, making it easier to make centralized changes.
 ## How translations are handled in Flex
 
 With Console-editable translations, Flex introduces a concept of
-[assets](/references/) TODO: ADD LINK ONCE REFERENCE EXISTS. Assets
-provide a way to define marketplace content and configurations using
-JSON files without needing to include the actual content in the client
-application codebase.
+[assets](/references/assets/). Assets provide a way to define
+marketplace content and configurations using JSON files without needing
+to include the actual content in the client application codebase.
 
 For the translation version being edited in Flex Console, the asset in
 question is `content/translations.json`. In other words, Flex Console
@@ -73,8 +72,7 @@ to the client application. Translations are fetched through Asset
 Delivery API in JSON format. Assets can be retrieved by the latest
 version, or by a specific version. Read more:
 
-- [Marketplace assets](/references/) TODO: ADD LINK ONCE REFERENCES
-  EXIST!.
+- [Marketplace assets](/references/assets/)
 - [Handling hosted asset translations in the FTW templates](/ftw/hosted-translations/)
 
 ## Translation format for editing translations in Console
