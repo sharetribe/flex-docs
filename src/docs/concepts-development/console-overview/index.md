@@ -1,7 +1,7 @@
 ---
 title: Understanding Console
 slug: console-overview
-updated: 2021-06-15
+updated: 2022-05-16
 category: concepts-development
 ingress: This article will help you understand how to navigate Console.
 published: true
@@ -96,13 +96,18 @@ your marketplace ID, URL and name. Here, you can also configure an
 outgoing email address, where all notifications to your marketplace’s
 users will be sent from.
 
+**Content** is where you can modify your marketplace texts. You can add
+your existing translation file content from your Flex Template, or copy
+and paste the default translations from the featured links, and modify
+the texts to suit your marketplace. Read more about
+[modifying translations in Console](/concepts/translations/).
+
 **Transaction processes** is quite self-explanatory: it shows the
 different kinds of transaction processes your marketplace has. You can
 toggle between the different processes in the left-side selection and
 see how many transactions have used each process. You can also inspect
-the components of the transaction processes. You can read more about
-transaction processes in Flex in
-[this article](https://www.sharetribe.com/docs/concepts/transaction-process/).
+the components of the transaction processes. Read more about
+[transaction processes in Flex](https://www.sharetribe.com/docs/concepts/transaction-process/).
 
 **Payments** has information about your Stripe configuration. Your
 Stripe secret key is added here. The public key is configured within the

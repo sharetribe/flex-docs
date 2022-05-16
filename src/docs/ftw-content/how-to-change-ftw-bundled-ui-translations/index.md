@@ -1,26 +1,40 @@
 ---
-title: How to change FTW UI texts and translations
-slug: how-to-change-ftw-ui-texts-and-translations
-updated: 2019-05-21
-category: ftw-styling
+title: How to change FTW bundled translations
+slug: how-to-change-ftw-bundled-translations
+updated: 2022-05-16
+category: ftw-content
 ingress:
-  This guide describes how to change the User Interface (UI) texts and
-  translations in Flex Template for Web (FTW).
+  This guide describes how to change the bundled translations in Flex
+  Template for Web (FTW).
 published: true
 ---
 
 The Flex Template for Web supports having a single language for the UI.
 Supported languages are English, French and Spanish, English being used
 by default. For information about changing the language, see the
-[Changing the language](#changing-the-language) section below.
+[Changing the language](/ftw/how-to-change-ftw-language) article.
 
 We are using the [React Intl](https://github.com/yahoo/react-intl)
 library to translate UI texts and to format dates, numbers, and money
 values.
 
+_**Note:** Starting in 2022-05, FTW template translations can also be
+modified in Flex Console. If you want to implement this feature into
+your pre-v8.5 FTW-daily template, you can see the necessary
+modifications in the PR for
+[ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
+more:_
+
+- _[Translations in Flex Console](/concepts/translations/)_
+- _[How hosted translations work in the FTW templates](/ftw/hosted-translations/)_
+
+<extrainfo title="FTW-hourly and FTW-product versions with hosted translations">
+In FTW-hourly, hosted translations are available in v10.5. In FTW-product, they are available in v9.2.
+</extrainfo>
+
 ## The translation file
 
-All the text translations can be found in the
+All the bundled text translations can be found in the
 [src/translations/en.json](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/en.json)
 file. The translation data is formatted as one JSON object with all the
 translations as properties.
@@ -80,7 +94,7 @@ As for the `FormattedMessage` it just needs to be imported from
 `react-intl` and it takes the id prop:
 
 ```jsx
-<FormattedMessage id="SomeCompoennt.someKey" />
+<FormattedMessage id="SomeComponent.someKey" />
 ```
 
 Other functions and componets can be explored in the
@@ -150,111 +164,53 @@ intl.formatMessage(
 );
 ```
 
+### Select an option
+
+If you have two or more options that the translation needs to show
+depending on another argument, you can use the `select` keyword to pass
+the necessary information for the message.
+
+When you use `select` in the translation string, you will need to
+specify
+
+- the variable determining which option to use (here: `mode`)
+- the pattern we are following (here: `select`)
+- the options matching each alternative you want to specify (here:
+  `class` – there could be several options specified)
+- an `other` option that gets used when none of the specified
+  alternatives matches
+
+```json
+ "BookingBreakdown.description": "{mode, select, day {You are booking the following days:} night {You are booking the following nights:} other {You are booking the following {unitType}:}}"
+```
+
+You can then use the translation message in the code with the
+`formatMessage` function:
+
+```js
+// mode: the types of bookings or products available 
+// on the listing page, e.g. class, package, day, night
+const mode = 'class';
+const unitType = 'yoga class'
+// For { mode: 'class', unitType: 'yoga class' },
+// the message will read "You are booking the following yoga class.".
+const description = intl.formatMessage(
+  { id="BookingBreakdown.description" },
+  { mode, unitType }
+);
+```
+
+You can also use the translation with the `FormatMessage` component
+
+```jsx
+<FormattedMessage
+  id="BookingBreakdown.description"
+  values={{ mode: 'day' }}
+/>
+```
+
 More formatting examples can be found from the
 [FormatJS message syntax documentation](https://formatjs.io/docs/core-concepts/icu-syntax/).
-
-## Texts outside the translation file
-
-A few components in the template app contain texts that are not included
-in the `en.json` file, namely `AboutPage`, `PrivacyPolicy`, and
-`TermsOfService`. The reason behind this is that these components only
-contain static content that is laid out in more of a document format so
-the translations for these texts can easily be changed and maintained in
-the component files themselves.
-
-More information about adding static content to the application can be
-found in the
-[How to add static pages in FTW](/ftw/how-to-add-static-pages-in-ftw/)
-guide.
-
-There are few other cases where we haven't added translations directly
-to the translation files:
-
-- Labels for example filters (categories and amenities) can be found
-  from `src/marketplace-custom-config.js` By default,
-  [these filters are not in use](/how-to/change-search-filters-in-ftw/#adding-a-new-search-filter)
-  since every marketplace has its own extended data and search filters
-  for them.
-- [Country Codes](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/countryCodes.js).
-  Stripe API requires country as
-  [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-  codes. These are used when billing address is asked in
-  `StripePaymenForm` on `CheckoutPage`.
-
-<extrainfo title="FTW-product has moved the location of some components">
-
-```shell
-└── src
-    └── config
-        └── marketplace-custom-config.js
-```
-
-</extrainfo>
-
-## Changing the language
-
-If you want the template to use a language that is not supported by
-default a new translation file needs to be added and the messages in it
-need to be translated:
-
-### Creating a new translation file
-
-1. Copy the default `src/translations/en.json` English translations file
-   into some other file, for example `it.json` for Italian.
-
-2. Change the messages in the new translations file to the desired
-   language.
-
-> Note: we already have a few other language files available in
-> [src/translations/](https://github.com/sharetribe/flex-template-web/tree/master/src/translations)
-> directory for you to start customizing translations.
-
-### Changing the translations used in FTW
-
-Once you have the translations file in place:
-
-1. In `src/config.js`, change the `locale` variable value to match the
-   new locale (the name of the new translations file, without the
-   extension), for example:
-
-```js
-const locale = 'it';
-```
-
-2. In `src/app.js`, change the React Intl import to point to the correct
-   `react-intl` locale, for example:
-
-```js
-import localeData from 'react-intl/locale-data/it';
-```
-
-3. If you are using a non-english locale with moment library, you should
-   also import time specific formatting rules for that locale:
-
-```js
-import 'moment/locale/it';
-```
-
-4.  Point `messagesInLocale` to correct .json file, for example:
-
-```js
-import messagesInLocale from './translations/it.json';
-```
-
-### Changing the translation used in tests
-
-Also, in case you will translate the application and develop it forward
-it is wise to change the translations file that the tests use. Normally
-tests are language agnostic as they use translation keys as values.
-However, when adding new translations you can end up with missing
-translation keys in tests. To change the translation file used in tests
-change the `messages` variable in
-[src/util/test-helpers.js](https://github.com/sharetribe/flex-template-web/blob/master/src/util/test-helpers.js)
-to match your language in use, for example:
-
-```js
-import messages from '../translations/it.json';
-```
 
 ## Managing translations
 

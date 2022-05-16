@@ -18,6 +18,7 @@ const query = graphql`
               "ftw"
               "ftw-templates"
               "ftw-configuration"
+              "ftw-content"
               "ftw-styling"
               "ftw-routing"
               "ftw-data-flow"

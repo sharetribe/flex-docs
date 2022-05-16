@@ -23,7 +23,7 @@
 /docs/guides/ftw-customization-checklist/ /docs/ftw/customization-checklist/
 /docs/guides/how-to-add-static-pages-in-ftw/ /docs/ftw/how-to-add-static-pages-in-ftw/
 /docs/guides/how-to-change-ftw-icons/ /docs/ftw/how-to-change-ftw-icons/
-/docs/guides/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw/how-to-change-ftw-ui-texts-and-translations/
+/docs/guides/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw/how-to-change-ftw-ui-texts/
 /docs/guides/how-to-change-search-filters-in-ftw/ /docs/how-to/change-search-filters-in-ftw/
 /docs/guides/how-to-change-tos-and-privacy-policy-in-ftw/ /docs/ftw/customization-checklist/
 /docs/guides/how-to-change-transaction-process-in-ftw/ /docs/how-to/change-transaction-process-in-ftw/
@@ -60,6 +60,7 @@
 /docs/tutorials/manage-search-schemas-with-flex-cli/ /docs/how-to/manage-search-schemas-with-flex-cli/
 /docs/background/custom-pricing/ /docs/concepts/pricing/
 /docs/cookbook-payments/customize-pricing/ /docs/how-to/how-to-customize-pricing/
+/docs/ftw/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw/how-to-change-ftw-ui-texts/
 
 # Redirects introduced in the Flex Docs reorganisation project
 
@@ -131,7 +132,7 @@
 
 /docs/ftw-testing-error-handling/how-to-use-ci-with-ftw/ /docs/ftw/how-to-use-ci-with-ftw/
 /docs/ftw-styling/how-to-change-ftw-icons/ /docs/ftw/how-to-change-ftw-icons/
-/docs/ftw-styling/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw/how-to-change-ftw-ui-texts-and-translations/
+/docs/ftw-styling/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw/how-to-change-ftw-ui-texts/
 /docs/ftw-testing-error-handling/how-to-set-up-sentry/ /docs/ftw/how-to-set-up-sentry/
 /docs/ftw-styling/how-to-improve-performance/ /docs/ftw/how-to-improve-performance/
 /docs/ftw-styling/how-to-customize-ftw-styles/ /docs/ftw/how-to-customize-ftw-styles/

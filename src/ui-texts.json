@@ -145,6 +145,7 @@
   "Sidebar.ftwIntroduction": "Introduction",
   "Sidebar.ftwAnalytics": "Analytics",
   "Sidebar.ftwConfiguration": "Configuration and Environment Variables",
+  "Sidebar.ftwContent": "Content Management",
   "Sidebar.ftwDataFlow": "Data flow and Redux",
   "Sidebar.ftwHosting": "Hosting",
   "Sidebar.ftwPerformance": "Performance",
@@ -152,6 +153,7 @@
   "Sidebar.ftwSearch": "Search",
   "Sidebar.ftwSecurity": "Security",
   "Sidebar.ftwStyling": "Styling",
+
   "Sidebar.ftwTestingErrorHandling": "Testing",
 
   "Sidebar.designToolkit": "Design Toolkit",
