@@ -20,7 +20,7 @@ for [ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
 more:_
 
 - _[Translations in Flex Console](/concepts/translations/)_
-- _[How built-in translations work in the FTW templates](/ftw/how-to-change-ftw-bundled-ui-translations/)_
+- _[How built-in translations work in the FTW templates](/ftw/how-to-change-ftw-bundled-translations/)_
 
 <extrainfo title="FTW-hourly and FTW-product versions with hosted translations">
 In FTW-hourly, hosted translations are available in v10.5. In FTW-product, they are available in v9.2.
