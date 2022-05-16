@@ -149,7 +149,7 @@ environment or **_yarn run dev-server_** on your local machine.
    - Note: FTW does not pass the translations themselves from the server
      to browser. The reason is that if browser fetches the versioned
      asset file directly, it can leverage browser's cache. So, every
-     page load, after the initial one, will use the `translation.json`
+     page load, after the initial one, will use the _translation.json_
      file from browsers local cache.
 
    ```js
