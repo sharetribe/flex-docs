@@ -1,7 +1,7 @@
 ---
 title: Understanding Console
 slug: console-overview
-updated: 2022-05-13
+updated: 2022-05-16
 category: concepts-development
 ingress: This article will help you understand how to navigate Console.
 published: true
