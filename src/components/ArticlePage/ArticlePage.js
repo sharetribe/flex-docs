@@ -225,8 +225,8 @@ const ArticlePage = props => {
             />
             <Updated date={updated} />
           </CrumbWrapper>
-          <Heading>{title}</Heading>
-          <ArticleIngress>{ingress}</ArticleIngress>
+          <Heading className='docSearch-h1'>{title}</Heading>
+          <ArticleIngress className='docSearch-ingress'>{ingress}</ArticleIngress>
           <Info frontmatter={frontmatter} />
           <MobileTocWrapper>
             <ContentTocHeader>
@@ -238,7 +238,7 @@ const ArticlePage = props => {
               maxDepth={3}
             />
           </MobileTocWrapper>
-          <Markdown htmlAst={htmlAst} />
+          <Markdown className='docSearch-content' htmlAst={htmlAst} />
 
           <NextAndPrevArticles
             slug={slug}
