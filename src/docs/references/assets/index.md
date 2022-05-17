@@ -21,8 +21,8 @@ At present, Flex supports only JSON data as assets. Support for images
 The assets are typically edited by a marketplace operator though Flex
 Console.
 
-**IMPORTANT** All assets are considered public and must not be used to
-store secret or otherwise sensitive information.
+> **IMPORTANT** All assets are considered public and must not be used to
+> store secret or otherwise sensitive information.
 
 > **Note:** Assets are in early development. At present, Console allows
 > only limited ability to manage the content of a single asset - the
