@@ -51,7 +51,6 @@
     "react-modal": "^3.11.1",
     "rehype-react": "^4.0.1",
     "sanitize.css": "^11.0.0",
-    "sharp": "^0.30.4",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
