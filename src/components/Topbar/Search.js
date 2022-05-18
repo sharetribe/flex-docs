@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../config';
@@ -22,40 +22,9 @@ const Wrapper = styled.div`
   }
 `;
 
-
-const useFocus = () => {
-  const elRef = useRef(null);
-  const setFocus = () => {
-    elRef.current && elRef.current.focus();
-  };
-  return [elRef, setFocus];
-};
-
 const Search = props => {
-  const [searchInputRef, setFocusToSearchInput] = useFocus();
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // This follows a setup that styled-components use.
-      // import('docsearch.js').then(ds => {
-      //   ds.default({
-      //     appId: 'IPOXPQ3KFI',
-      //     apiKey: '48fd5d7d401d024a0b034f9e62b1cd34',
-      //     indexName: 'sharetribe',
-      //     inputSelector: '#algolia-doc-search',
-      //     debug: false, // Set debug to true if you want to inspect the dropdown
-      //     autocompleteOptions: {
-      //       openOnFocus: true,
-      //       autoselect: true,
-      //       hint: false,
-      //       keyboardShortcuts: [`s`],
-      //     },
-      //   });
-      // });
-    }
-  }, []);
-
-  const { isOpen, setIsOpen, ...rest } = props;
+  const { ...rest } = props;
 
   return (
     <Wrapper {...rest}>
