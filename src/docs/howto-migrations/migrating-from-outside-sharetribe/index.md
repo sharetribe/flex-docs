@@ -29,8 +29,91 @@ Intermediary is an edn (https://github.com/edn-format/edn) data format
 that allows defining data rows for marketplaces. It supports creating
 links between rows via references.
 
-We recommend that you use an .edn library to generate the data and
+We recommend that you use an edn library to generate the data and
 validate the .edn syntax to ensure that the file is up to standard.
+
+<extrainfo title="How to generate edn using a library?">
+
+edn libraries exist for multiple languages, for example
+[JavaSript](https://www.npmjs.com/search?q=edn),
+[Python](https://pypi.org/search/?q=edn), and
+[Ruby](https://rubygems.org/search?query=edn). Clojure has built-in
+support for edn. Usually these libraries support encoding data
+structures to edn and creating custom tagged elements.
+
+Here's an example of how to write a bit of intermediary data in edn
+format using JavaScript libraries
+[jsedn](https://www.npmjs.com/package/jsedn) and
+[uuid](https://www.npmjs.com/package/uuid) to represent a user and a
+listing:
+
+```javascript
+const edn = require('jsedn');
+const { v4: uuidv4 } = require('uuid');
+
+const tagged = (tag, value) => new edn.Tagged(new edn.Tag(tag), value);
+const uuid = () => tagged("uuid", uuidv4());
+const price = (amount, currency) => tagged("im/money", [amount, currency]);
+
+const email = data => {
+  const { emailAddress } = data;
+  return new edn.Map([edn.kw(":im.email/address"), emailAddress,
+                      edn.kw(":im.email/verified"), true]);
+};
+
+const profile = data => {
+  const { firstName, lastName } = data;
+  return new edn.Map([edn.kw(":im.userProfile/firstName"), firstName,
+                      edn.kw(":im.userProfile/lastName"), lastName]);
+};
+
+const user = data => {
+  const { alias, emailAddress, firstName, lastName } = data;
+  const role = new edn.Vector([edn.kw(":user.role/customer"), edn.kw(":user.role/provider")]);
+
+  return new edn.Vector([new edn.Vector([edn.kw(":im.user/id"), uuid(), alias]),
+                         new edn.Map([
+                           edn.kw(":im.user/primaryEmail"), email(data),
+                           edn.kw(":im.user/createdAt"), tagged("inst", new Date().toISOString()),
+                           edn.kw(":im.user/role"), role,
+                           edn.kw(":im.user/profile"), profile(data)
+                         ])
+                        ]);
+};
+
+const listing = data => {
+  const { alias, title, priceAmount, author } = data;
+  return new edn.Vector([new edn.Vector([edn.kw(":im.listing/id"), uuid(), alias]),
+                         new edn.Map([
+                           edn.kw(":im.listing/title"), title,
+                           edn.kw(":im.listing/createdAt"), tagged("inst", new Date().toISOString()),
+                           edn.kw(":im.listing/state"), edn.kw(":listing.state/published"),
+                           edn.kw(":im.listing/price"), price(priceAmount, "EUR"),
+                           edn.kw(":im.listing/author"), tagged("im/ref", author)
+                         ])
+                        ]);
+
+const userAlias = edn.kw(":user/john");
+const e = new edn.Map([edn.kw(":ident"), edn.kw(":mymarketplace"),
+                       edn.kw(":data"), new edn.Vector([
+                         listing({
+                           alias: edn.kw(":listing/rock-sauna"),
+                           title: "A solid rock sauna",
+                           priceAmount: 12.20,
+                           author: userAlias}),
+                         user({
+                           alias: userAlias,
+                           emailAddress: "foo@sharetribe.com",
+                           firstName: "John",
+                           lastName: "Doe"
+                         })
+                       ])
+                      ]);
+
+console.log(edn.encode(e)); // or save to file
+```
+
+</extrainfo>
 
 ### Format
 
