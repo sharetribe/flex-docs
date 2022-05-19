@@ -64,4 +64,4 @@ green.
 **Congratulations!** You have made your first customization.
 
 It's time to change the Saunatime image on the landing page.<br />
-[› Go to the next article](/tutorial-branding/change-image-assets/)
+[› Go to the next article](/tutorial/change-image-assets/)

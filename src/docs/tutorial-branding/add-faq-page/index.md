@@ -141,7 +141,7 @@ So, the **path** to that page will be `/faq`, **name** is used for
 in-app linking, and then we tell the app to render **component** called
 _FAQPage_, when the path is accessed. You can read more about routing
 from the article:
-[How routing works in FTW](/ftw-routing/how-routing-works-in-ftw/)
+[How routing works in FTW](/ftw/how-routing-works-in-ftw/)
 
 After the routeConfiguration.js has been updated, you should see plain
 "Hello World" heading on that page:
@@ -343,5 +343,4 @@ page:
 After all these changes, the client app starts to look like CottageDays
 marketplace. It's time to get it online and share it with people who
 could give you some feedback. In the next article, we'll deploy the app
-to Heroku.<br />
-[› Go to the next article](/tutorial-branding/deploy-to-heroku/)
+to Heroku.<br /> [› Go to the next article](/tutorial/deploy-to-heroku/)

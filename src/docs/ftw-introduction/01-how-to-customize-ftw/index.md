@@ -13,10 +13,11 @@ published: true
 ## Create a marketplace environment
 
 Flex Templates for Web (FTW) are marketplace web applications built on
-top of the [Marketplace API](/background/concepts/#marketplace-api).
-While you can create a marketplace client application from scratch using
-just the API, it requires a lot of effort and we recommend that you use
-a template as a starting point for customizations.
+top of the
+[Marketplace API](/operator-guides/concepts/#marketplace-api). While you
+can create a marketplace client application from scratch using just the
+API, it requires a lot of effort and we recommend that you use a
+template as a starting point for customizations.
 
 To use the Marketplace API, you will need a client ID. You can obtain
 one by creating a new Flex marketplace at
@@ -54,11 +55,11 @@ choose from three templates:
   "Sneakertime" - a product marketplace with stock management.
 
 > **Note:** By default your Flex marketplace comes with day-based
-> [transaction process](/background/transaction-process/). If you want
-> to start working with FTW-hourly, you need to change to the
+> [transaction process](/concepts/transaction-process/). If you want to
+> start working with FTW-hourly, you need to change to the
 > [time-based process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-hourly-default-process).
 > See
-> [getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
+> [getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 > for more information.
 
 You should follow the [tutorial](/tutorial/introduction/) to set up
@@ -138,13 +139,13 @@ required environment variables.
 The `.env` file is the place to add your _local_ configuration. It is
 ignored in Git, so you'll have to add the corresponding configuration
 also to your server environment. Check this
-[Heroku config setup](/tutorial-branding/deploy-to-heroku/#deploy-to-heroku)
+[Heroku config setup](/tutorial/deploy-to-heroku/#deploy-to-heroku)
 article - and there's also a generic article about
-[deploying to production](/ftw-hosting/how-to-deploy-ftw-to-production/).
+[deploying to production](/ftw/how-to-deploy-ftw-to-production/).
 
 There are some mandatory configuration variables that are defined in the
 template. See the
-[FTW Environment configuration variables](/ftw-configuration/ftw-env/)
+[FTW Environment configuration variables](/ftw/ftw-env/)
 reference for more information.
 
 See also the
@@ -224,14 +225,14 @@ yarn test
 ```
 
 For more information, see the
-[How to test FTW](/ftw-testing-error-handling/how-to-test-ftw/)
+[How to test FTW](/ftw/how-to-test-ftw/)
 documentation.
 
 ## Customization
 
 There are many things that you should change in the default template,
 and many more that you can change. For more information, check the
-[FTW customization checklist](/ftw-introduction/customization-checklist/)
+[FTW customization checklist](/ftw/customization-checklist/)
 documentation too before publishing your site. See also
 [tutorial](/tutorial/introduction/) and other articles in _Flex
 Templates for Web_ and _Cookbook_ categories.

@@ -170,4 +170,4 @@ up:
 Now you are ready to make code changes and save those to Github!
 
 The first part of this tutorial starts with changing the marketplace
-color.<br /> [› Go to the next article](/tutorial-branding/first-edit/)
+color.<br /> [› Go to the next article](/tutorial/first-edit/)

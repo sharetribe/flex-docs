@@ -11,6 +11,13 @@ published: true
 
 ## Getting started
 
+**Note: Heroku has been having some
+[security issues](https://status.heroku.com/incidents/2413), and until
+they are resolved, we recommend caution when using Heroku. Furthermore,
+the Heroku integration with Github is currently not available. We are
+looking into alternative deployment recommendations while the situation
+continues.**
+
 The easiest way to get started is deploying the application to Heroku.
 Before creating the app you need three accounts:
 [Heroku](https://www.heroku.com/), [Stripe](https://stripe.com/) and
@@ -66,7 +73,7 @@ To deploy the application add at least the following variables:
   Sign up for Mapbox and go to
   [account page](https://www.mapbox.com/account/access-tokens). Then
   click `Create access token`. See the
-  [How to set up Mapbox for FTW](/ftw-search/how-to-set-up-mapbox-for-ftw/)
+  [How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/)
   guide for more information.
 
 - **`REACT_APP_CANONICAL_ROOT_URL`**
@@ -81,7 +88,7 @@ To deploy the application add at least the following variables:
   example USD, EUR, CAD, AUD, etc.
 
 There are also some other variables that can be used. See the
-[FTW Environment configuration variables](/ftw-configuration/ftw-env/)
+[FTW Environment configuration variables](/ftw/ftw-env/)
 reference for more information.
 
 ### Building the app
@@ -105,6 +112,13 @@ yarn start
 ```
 
 ## Deploying to Heroku
+
+_Note: The Heroku Github integration is currently unavailable. You can
+connect your app as a
+[remote repository on your local codebase](https://devcenter.heroku.com/articles/git#create-a-heroku-remote)
+and
+[push your changes to the remote](https://devcenter.heroku.com/articles/git#deploy-your-code)
+for deployment._
 
 - [Fork the repository](#fork-the-repository)
 - [Create a new app](#create-a-new-app)
@@ -131,7 +145,7 @@ button on the top-right corner of the page:
 <img width="300" src="./fork_button.png" />
 
 For more information, see the
-[How to Customize FTW](/ftw-introduction/how-to-customize-ftw/) guide.
+[How to Customize FTW](/ftw/how-to-customize-ftw/) guide.
 
 ### Create a new app
 
@@ -236,7 +250,7 @@ Check at least these variables:
 - **`REACT_APP_CSP`**
 
   Content Security Policy (CSP). Read more from
-  [this article](/ftw-security/how-to-set-up-csp-for-ftw/).<br />
+  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br />
   Accepts values: _block_ and _report_. <br/> Use value: _block_.
 
 - **`REACT_APP_AVAILABILITY_ENABLED`**

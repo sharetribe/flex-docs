@@ -74,11 +74,11 @@ opens their browser. After that, FTW lets the client application
 the API powers all further interactions.
 
 To learn more about the capabilities of the Marketplace API and Flex,
-visit the [API reference documentation](/references/api/).
+visit the [API reference documentation](/concepts/api/).
 
 ### Flex JavaScript SDK
 
-[The Flex JavaScript SDK](/references/js-sdk/) is a small JavaScript
+[The Flex JavaScript SDK](/concepts/js-sdk/) is a small JavaScript
 library that helps you with integrating the Marketplace API. It handles
 tasks like authentication and session management and makes it easy to
 use correct data types with the API. Using the Flex JS SDK is not
@@ -101,7 +101,7 @@ marketplace's advanced configurations such as transaction processes and
 email templates.
 
 See the
-[Getting started with Flex CLI](/flex-cli/getting-started-with-flex-cli/)
+[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 tutorial for more information.
 
 ## Is Flex the right fit for you?

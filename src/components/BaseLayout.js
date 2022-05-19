@@ -1,6 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql, withPrefix } from 'gatsby';
+import { findParentCategories } from '../util/navigation';
+import { siteStructure } from '../config';
 
 const query = graphql`
   query SiteTitleQuery {
@@ -22,6 +24,12 @@ const BaseLayout = props => {
     activeArticle,
     activeCategory,
   } = props;
+
+  const findMainCategory = category => {
+    const path = findParentCategories(category, siteStructure) || [];
+    return path.length > 0 ? path[path.length - 1] : null;
+  };
+
   return (
     <StaticQuery
       query={query}
@@ -31,7 +39,8 @@ const BaseLayout = props => {
         const siteUrl = data.site.siteMetadata.siteUrl;
         const meta = [];
         const path = activeArticle
-          ? `/${activeArticle.category}/${activeArticle.slug}/`
+          ? `/${findMainCategory(activeArticle.category) ||
+              activeArticle.category}/${activeArticle.slug}/`
           : activeCategory
           ? `${activeCategory}/`
           : '';
@@ -51,7 +60,6 @@ const BaseLayout = props => {
           <>
             <Helmet title={pageTitle} meta={meta}>
               <html lang="en" />
-              {console.log(path)}
               <link rel="canonical" href={`${siteUrl}${withPrefix(path)}`} />
             </Helmet>
             {children}
