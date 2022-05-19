@@ -34,10 +34,10 @@ If you're starting development on a new version of FTW and prefer to use
 Universal Analytics, you should look into how Analytics was implemented
 before
 [this pull request](https://github.com/sharetribe/ftw-daily/pull/1508).
-If you have built your marketplace on top of an older version of FTW and
-you want to start using Google Analytics 4, you'll need to implement the
-changes introduced in
-[this pull request](https://github.com/sharetribe/ftw-daily/pull/1508).
+If, on the other hand, you're working on an older version of FTW, and
+you want to start using GA4, you'll need to implement the changes
+introduced in that
+[pull request](https://github.com/sharetribe/ftw-daily/pull/1508).
 
 > New versions of FTW will expect a Tracking ID compatible with Google
 > Analytics 4. FTW expects the ID to begin with the "G-" prefix.
