@@ -39,7 +39,7 @@ file with your preferred text editor:
 ```
 
 Full list of configuration variables can be found here:
-[FTW environment variables](/ftw-configuration/ftw-env/). You can change
+[FTW environment variables](/ftw/ftw-env/). You can change
 any of these variables _locally_ by just editing the **.env** file. Then
 you need to restart the server by running `yarn run dev` again.
 
@@ -66,7 +66,7 @@ In the `.env` file, you should see these environment variables:
 
 > **Note**: You should take _Content Security Policy_ (CSP) into use
 > (block mode) before going to production. Read more about it from
-> [this article](/ftw-security/how-to-set-up-csp-for-ftw/).
+> [this article](/ftw/how-to-set-up-csp-for-ftw/).
 
 </extrainfo>
 
@@ -189,7 +189,7 @@ const listingMinimumPriceSubUnits = 0;
 We can ignore the **currencyConfig** since our currency is the euro. If
 you are using some other currency, you can read more about
 currencyConfig from
-[this document](/ftw-configuration/how-to-set-up-currency-in-ftw/#3-check-the-currency-configjs-file).
+[this document](/ftw/how-to-set-up-currency-in-ftw/#3-check-the-currency-configjs-file).
 
 The third variable, **listingMinimumPriceSubUnits**, is more relevant.
 Stripe (the payment processor used by Flex) has a
@@ -223,4 +223,4 @@ The error message, when creating a new listing
 
 In the next article, we change the default suggestions for search
 locations.<br />
-[› Go to the next article](/tutorial-branding/change-default-locations/)
+[› Go to the next article](/tutorial/change-default-locations/)

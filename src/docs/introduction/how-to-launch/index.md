@@ -60,7 +60,7 @@ any problems with the setup,
 Once you have FTW set up, you can create a few user accounts and test
 the features: posting listings, searching them, making bookings and
 payments (see how to use
-[test credit card numbers provided by Stripe](/cookbook-payments/set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)),
+[test credit card numbers provided by Stripe](/how-to/set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)),
 sending messages between users, writing reviews, and so on. You can test
 them both on your desktop and on a mobile browser to see how it works on
 each device. On Console, you can then see how the users, listings and
@@ -143,14 +143,25 @@ Typically, the development work is done by downloading the
 [open source codebase of FTW](https://github.com/sharetribe/ftw-daily)
 and customizing it according your needs. If you're a developer, you can
 proceed to do this and
-[start development right away](/ftw-introduction/how-to-customize-ftw/).
+[start development right away](/ftw/how-to-customize-ftw/).
 
 If you're not a developer yourself and don't have one in your team,
-you'll need to contract or hire a developer to do this work for you.
-You can work with any developer of your choice, but we highly recommend the developers in the [Flex Expert Network](https://www.sharetribe.com/experts/). The network consists of experienced agencies and freelancers around the world, all vetted by Sharetribe for their Flex skills. They will be happy to guide you through the process of defining your exact requirements and completing your marketplace based on them.
+you'll need to contract or hire a developer to do this work for you. You
+can work with any developer of your choice, but we highly recommend the
+developers in the
+[Flex Expert Network](https://www.sharetribe.com/experts/). The network
+consists of experienced agencies and freelancers around the world, all
+vetted by Sharetribe for their Flex skills. They will be happy to guide
+you through the process of defining your exact requirements and
+completing your marketplace based on them.
 
-If you'd like to receive a quote from a Flex Expert for building your marketplace, you can head to the [Flex Expert Directory](https://www.sharetribe.com/experts/) and contact some developers directly from there. If you'd like to get help choosing the right developer or learn more about the process for hiring, you can [book a free consultation call](https://calendly.com/welcome-to-flex) with a Sharetribe team member, and we'll guide you through the process.
-
+If you'd like to receive a quote from a Flex Expert for building your
+marketplace, you can head to the
+[Flex Expert Directory](https://www.sharetribe.com/experts/) and contact
+some developers directly from there. If you'd like to get help choosing
+the right developer or learn more about the process for hiring, you can
+[book a free consultation call](https://calendly.com/welcome-to-flex)
+with a Sharetribe team member, and we'll guide you through the process.
 
 When you're hiring a developer, it helps a lot if you have already done
 some work on the design, as that makes it easier for you to describe

@@ -1,7 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { baselineBreakpoint, baselineSmall, baselineLarge } from '../../config';
+import {
+  baselineBreakpoint,
+  baselineSmall,
+  baselineLarge,
+  siteStructure,
+} from '../../config';
+import { findParentCategories } from '../../util/navigation';
 
 import { Link } from '../../components';
 
@@ -140,6 +146,11 @@ const StyledUL = styled.ul`
   }
 `;
 
+const findMainCategory = category => {
+  const path = findParentCategories(category, siteStructure) || [];
+  return path.length > 0 ? path[path.length - 1] : null;
+};
+
 const ArticleList = props => {
   const { articleGroup, activeArticle, depth } = props;
   const articles =
@@ -151,8 +162,8 @@ const ArticleList = props => {
       {articles.map(article => {
         const { title, slug } = article;
         const category = articleGroup.category;
-        const path = `${category}/${slug}/`;
-
+        const mainCategory = findMainCategory(category) || category;
+        const path = `${mainCategory}/${slug}/`;
         const active =
           activeArticle &&
           activeArticle.category === category &&

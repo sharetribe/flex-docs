@@ -23,7 +23,10 @@ const query = graphql`
           }
         }
       }
-      sort: { fields: fileAbsolutePath, order: ASC }
+      sort: {
+        fields: [frontmatter___category, frontmatter___slug]
+        order: [ASC, ASC]
+      }
     ) {
       edges {
         node {
@@ -73,7 +76,7 @@ const TutorialPage = () => {
           }, [])
           .sort(byArrayOfSlugs(sortingArray));
         return (
-          <ArticleIndexPage category={category} noPrefix articles={articles} />
+          <ArticleIndexPage category={category} articles={articles} />
         );
       }}
     />

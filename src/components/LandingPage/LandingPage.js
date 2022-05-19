@@ -182,7 +182,7 @@ const LandingPage = props => {
           <UiText id="LandingPage.introParagraph1" />
           <IntroBr />
           <UiText id="LandingPage.introParagraph2" />{' '}
-          <A href="https://www.sharetribe.com/flex/roadmap">
+          <A href="https://www.sharetribe.com/products/flex/roadmap/">
             <UiText id="LandingPage.introRoadmapLink" />
           </A>
           {'.'}
@@ -224,23 +224,23 @@ const LandingPage = props => {
             </SectionLinks>
           </StyledSection>
 
-          {/* BACKGROUND */}
+          {/* CONCEPTS */}
           <StyledSection>
             <SectionHeading>
-              <UiText id="LandingPage.background.title" />
+              <UiText id="LandingPage.concepts.title" />
             </SectionHeading>
             <StyledSectionDescription>
-              <UiText id="LandingPage.background.description" />
+              <UiText id="LandingPage.concepts.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/background/concepts/">
-                <UiText id="LandingPage.background.concepts" />
+              <SectionLink to="/concepts/how-the-listing-search-works/">
+                <UiText id="LandingPage.concepts.search" />
               </SectionLink>
-              <SectionLink to="/background/features/">
-                <UiText id="LandingPage.background.features" />
+              <SectionLink to="/concepts/payments-overview/">
+                <UiText id="LandingPage.concepts.payments" />
               </SectionLink>
-              <SectionLink to="/background/transaction-process/">
-                <UiText id="LandingPage.background.transactionProcess" />
+              <SectionLink to="/concepts/transaction-process/">
+                <UiText id="LandingPage.concepts.transactionProcess" />
               </SectionLink>
             </SectionLinks>
           </StyledSection>
@@ -274,25 +274,25 @@ const LandingPage = props => {
             </SectionDescription>
           </div>
           <Ul>
-            <SectionLink to="/ftw-introduction/how-to-customize-ftw/">
+            <SectionLink to="/ftw/how-to-customize-ftw/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFTW" />
             </SectionLink>
-            <SectionLink to="/ftw-introduction/customization-checklist/">
+            <SectionLink to="/ftw/customization-checklist/">
               <UiText id="LandingPage.bestPicks.ftwCustomizationChecklist" />
             </SectionLink>
-            <SectionLink to="/cookbook-data-model/extend-listing-data-in-ftw/">
+            <SectionLink to="/how-to/extend-listing-data-in-ftw/">
               <UiText id="LandingPage.bestPicks.extendListingData" />
             </SectionLink>
-            <SectionLink to="/cookbook-payments/how-to-customize-pricing/">
+            <SectionLink to="/how-to/how-to-customize-pricing/">
               <UiText id="LandingPage.bestPicks.customizePricing" />
             </SectionLink>
-            <SectionLink to="/cookbook-transaction-process/change-transaction-process-in-ftw/">
+            <SectionLink to="/how-to/change-transaction-process-in-ftw/">
               <UiText id="LandingPage.bestPicks.changeTransactionProcess" />
             </SectionLink>
-            <SectionLink to="/flex-cli/getting-started-with-flex-cli/">
+            <SectionLink to="/introduction/getting-started-with-flex-cli/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFlexCLi" />
             </SectionLink>
-            <SectionLink to="/integrations/getting-started-with-integration-api/">
+            <SectionLink to="/introduction/getting-started-with-integration-api/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithIntegrationsAPI" />
             </SectionLink>
 

@@ -220,26 +220,31 @@ const ArticlePage = props => {
                     `ArticlePage.${mainCategory}.breadCrumbTitle`
                   ),
                 },
-                { path: `/${category}/${slug}/`, label: title },
+                { path: `/${mainCategory}/${slug}/`, label: title },
               ]}
             />
             <Updated date={updated} />
           </CrumbWrapper>
-          <Heading>{title}</Heading>
-          <ArticleIngress>{ingress}</ArticleIngress>
+          <Heading className='docSearch-h1'>{title}</Heading>
+          <ArticleIngress className='docSearch-ingress'>{ingress}</ArticleIngress>
           <Info frontmatter={frontmatter} />
           <MobileTocWrapper>
-            <ContentTocHeader as="h2">
+            <ContentTocHeader>
               <UiText id="ArticlePage.tableOfContents" />
             </ContentTocHeader>
             <MobileToc
-              path={`/${category}/${slug}/`}
+              path={`/${mainCategory}/${slug}/`}
               headings={tableOfContents}
               maxDepth={3}
             />
           </MobileTocWrapper>
-          <Markdown htmlAst={htmlAst} />
-          <NextAndPrevArticles slug={slug} category={category} />
+          <Markdown className='docSearch-content' htmlAst={htmlAst} />
+
+          <NextAndPrevArticles
+            slug={slug}
+            category={category}
+            mainCategory={mainCategory}
+          />
         </MainColumn>
         <SideColumn>
           <SideNavigation as="nav">
@@ -247,7 +252,7 @@ const ArticlePage = props => {
               <UiText id="ArticlePage.tableOfContents" />
             </H6>
             <SideToc
-              path={`/${category}/${slug}/`}
+              path={`/${mainCategory}/${slug}/`}
               headings={tableOfContents}
               maxDepth={3}
             />

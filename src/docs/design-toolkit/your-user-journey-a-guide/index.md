@@ -16,10 +16,11 @@ create listings, how users find listings, and how they interact together
 during a transaction lets you receive more accurate estimates of the
 budget required to build your custom marketplace with Flex.
 
-In [the previous article](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates), you learned
-how listing creation, listing discovery, and the transaction process
-works in one of the Flex Templates. Now it is time to define how users complete these
-critical journeys on your marketplace.
+In
+[the previous article](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates),
+you learned how listing creation, listing discovery, and the transaction
+process works in one of the Flex Templates. Now it is time to define how
+users complete these critical journeys on your marketplace.
 
 ## 1. Background work
 
@@ -83,7 +84,7 @@ completion. Consider these questions:
   When are they sent?
 
 You can learn more about the transaction process functionality in Flex
-[in this overview article](https://www.sharetribe.com/docs/operator-guides/transaction-process/).
+[in this overview article](https://www.sharetribe.com/docs/concepts/transaction-process/).
 
 ## 2. Create maps for listing creation journey, discovery journey and transaction process.
 
@@ -103,5 +104,7 @@ you can see the default User Journeys for Saunatime in this article.
 
 ## 3. Share the journey maps with developers
 
-If you would like to hire vetted Flex developers, start either by [booking a call](https://calendly.com/welcome-to-flex)
-with our team or connect directly with Flex Experts through the [Expert Directory](https://www.sharetribe.com/experts/).
+If you would like to hire vetted Flex developers, start either by
+[booking a call](https://calendly.com/welcome-to-flex) with our team or
+connect directly with Flex Experts through the
+[Expert Directory](https://www.sharetribe.com/experts/).

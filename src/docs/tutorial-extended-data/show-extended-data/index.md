@@ -128,4 +128,4 @@ have "view" key set:
 
 In the next article, we'll use this _"view"_ public data field on
 listing page.<br />
-[› Go to the next article](/tutorial-extended-data/filter-with-extended-data/)
+[› Go to the next article](/tutorial/filter-with-extended-data/)

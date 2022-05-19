@@ -28,7 +28,7 @@ marketplace. This means the developers you hire need guidance on how
 exactly you want the marketplace to work.
 
 We recommend using one of
-[Flex Templates for Web](https://www.sharetribe.com/docs/background/concepts/#flex-templates-for-web-ftw)
+[Flex Templates for Web](https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw)
 as a basis for the development work, especially if you're launching a
 marketplace for the first time. The Flex Templates are examples of fully
 functional marketplace applications. Typically the Templates have

@@ -186,10 +186,10 @@ _TopbarDesktop_.
 Creating a new visual brand needs a lot of changes to existing
 components. You should read the following article to understand **_how
 to customize FTW styles_**: <br />
-[How to customize FTW styles](/ftw-styling/how-to-customize-ftw-styles/)
+[How to customize FTW styles](/ftw/how-to-customize-ftw-styles/)
 
 Especially, you should check
-[the best practices topic](/ftw-styling/how-to-customize-ftw-styles/#styling-guidelines)
+[the best practices topic](/ftw/how-to-customize-ftw-styles/#styling-guidelines)
 to check the philosophy of how the existing components are styled.
 
 <br />
@@ -197,4 +197,4 @@ to check the philosophy of how the existing components are styled.
 While you are styling components, you also need to change some
 copy-texts in them. In the next article, we'll change the copy-texts of
 Hero component.<br />
-[› Go to the next article](/tutorial-branding/working-with-translations/)
+[› Go to the next article](/tutorial/working-with-translations/)

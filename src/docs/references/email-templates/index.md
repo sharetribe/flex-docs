@@ -19,12 +19,12 @@ The platform sends two types of emails:
   process.
 
 The built-in emails can be customized using the
-[Built-in email template editor](https://flex-console.sharetribe.com/email-templates/)
+[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
 in the Flex Console. You find the editor in the Console under Build
 section.
 
 To change the transaction emails, follow the
-[Edit email templates with Flex CLI](/flex-cli/edit-email-templates-with-flex-cli/)
+[Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
 tutorial.
 
 ## Best practices
@@ -45,7 +45,7 @@ these best practises for email branding to avoid spam folders:
   marketplace and continue the actions there - we don't support e.g.
   responding to messages in the platform through email.
 - One technical thing to do is to set up in your DNS records
-  [a SPF record for Sendgrid](https://sendgrid.com/docs/glossary/spf/).
+  [a SPF record for Sendgrid](https://docs.sendgrid.com/glossary/spf).
 
 ## Handlebars
 
@@ -306,7 +306,7 @@ used for query string components.
 ## Editing built-in emails
 
 The built-in emails can be customized using the
-[Built-in email template editor](https://flex-console.sharetribe.com/email-templates/)
+[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
 in the Flex Console. You find the editor in the Console under Build
 section.
 
@@ -320,7 +320,7 @@ let's you **send test emails** to your own email address.
 ## Editing transaction emails
 
 To understand how to change the transaction emails, see the
-[Edit email templates with Flex CLI](/flex-cli/edit-email-templates-with-flex-cli/)
+[Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
 tutorial.
 
 ### Transaction email context

@@ -107,4 +107,4 @@ directory. Those components end up to main chunk file that is downloaded
 on each page (when full page-load is requested).
 
 You can read more
-[in the code splitting article](/ftw-routing/how-code-splitting-works-in-ftw/).
+[in the code splitting article](/ftw/how-code-splitting-works-in-ftw/).

@@ -182,7 +182,7 @@ Note: this assumes that you have added 'view' to the
 of the listing entity through the `EditListingFeaturesPanel` component.
 
 Read more from the article:
-[Change search filters in FTW](/cookbook-search/change-search-filters-in-ftw/)
+[Change search filters in FTW](/how-to/change-search-filters-in-ftw/)
 
 </extrainfo>
 
@@ -217,7 +217,7 @@ in Flex Console
 (_[Account > API keys](https://flex-console.sharetribe.com/api-keys)_).
 
 Read more about
-[how to install Flex CLI](/flex-cli/getting-started-with-flex-cli/).
+[how to install Flex CLI](/introduction/getting-started-with-flex-cli/).
 
 ### Set search schema with Flex CLI
 
@@ -246,7 +246,7 @@ search engine:
   can check your marketplace ID from Flex Console (Build section).
 
 Read more about
-[setting search schemas with Flex CLI](/flex-cli/manage-search-schemas-with-flex-cli/).
+[setting search schemas with Flex CLI](/how-to/manage-search-schemas-with-flex-cli/).
 
 <extrainfo title="Extra: what about category filter?">
 
@@ -266,5 +266,4 @@ flex-cli search set --key category --type enum --scope public -m my-marketplace-
 In the next article, we add FAQ page. With that article, you learn how
 to add static pages. Quite often there's a need to add more info about
 how the marketplace works and adding a static page is the easiest way to
-do that. <br />
-[› Go to the next article](/tutorial-branding/add-faq-page/)
+do that. <br /> [› Go to the next article](/tutorial/add-faq-page/)

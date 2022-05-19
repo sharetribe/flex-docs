@@ -11,8 +11,8 @@ published: true
 
 ## Default background image
 
-In the [previous step](/tutorial-branding/first-edit/), you made changes
-to the marketplaceDefaults.css file. This time you make changes to
+In the [previous step](/tutorial/first-edit/), you made changes to the
+marketplaceDefaults.css file. This time you make changes to
 propertySets.css. **`--backgroundImage`** variable can be found from
 there. It is used to provide a background image for Hero component on
 the landing page as well as some of the other pages: sing-up and log-in,
@@ -117,8 +117,8 @@ public internet before you can use these tools:
 - [Twitter card validator](https://cards-dev.twitter.com/validator)
 
 > **Note**: You could deploy the app to Heroku to test these tools. We
-> will cover [Heroku deploys](/tutorial-branding/deploy-to-heroku/)
-> later in this tutorial.
+> will cover [Heroku deploys](/tutorial/deploy-to-heroku/) later in this
+> tutorial.
 
 </extrainfo>
 
@@ -150,7 +150,7 @@ The default favicon of FTW-daily template, Saunatime, is a flame icon:
 
 To change it, we need to have favicon files - or if you have a square
 logo available, you can follow
-[this guide article](/ftw-styling/how-to-change-ftw-icons/) to generate
+[this guide article](/ftw/how-to-change-ftw-icons/) to generate
 those icons.
 
 In the context of this tutorial, we just show how to change the
@@ -168,4 +168,4 @@ you should see a new favicon in the browser's tab:
 
 There's one obvious Saunatime image still visible on top bar: Logo. It's
 time to change that.<br />
-[› Go to the next article](/tutorial-branding/change-logo/)
+[› Go to the next article](/tutorial/change-logo/)
