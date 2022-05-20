@@ -20,10 +20,13 @@ Build > Content.
 ![Modify marketplace texts](./translation_start.png)
 
 _**Note:** Hosted assets are available in Flex and the FTW templates
-starting from version XX.XX. If you have an earlier version and want to
+starting from version v8.5. If you have an earlier version and want to
 implement the feature in your template, you can see the necessary
-modifications in the PRs for [ftw-daily](), [ftw-hourly](), and
-[ftw-product](). todo: links_
+modifications in the PR for [ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510)._
+
+<extrainfo title="FTW-hourly and FTW-product versions with hosted translations">
+In FTW-hourly, hosted translations are available in v10.5. In FTW-product, they are available in v9.2.
+</extrainfo>
 
 When you first start building your marketplace, the JSON field in
 Marketplace texts is empty, and all marketplace texts come from built-in
