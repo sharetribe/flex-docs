@@ -108,7 +108,14 @@ const sortingArrayFTWContent = [
   'hosted-translations',
   'how-to-change-ftw-language',
   'how-to-add-static-pages-in-ftw',
-]
+];
+
+const sortingArrayFTWIntroduction = [
+  'how-to-customize-ftw',
+  'ftw-hourly',
+  'ftw-product',
+  'customization-checklist'
+];
 
 exports.siteStructure = [
   {
@@ -192,7 +199,10 @@ exports.siteStructure = [
     id: 'ftw',
     isOpen: false,
     subcategories: [
-      { id: 'ftw-introduction' },
+      {
+        id: 'ftw-introduction',
+        sortingArray: sortingArrayFTWIntroduction,
+      },
       { id: 'ftw-configuration' },
       {
         id: 'ftw-content',
