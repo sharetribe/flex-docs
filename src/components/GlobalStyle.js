@@ -26,44 +26,95 @@ const GlobalStyle = createGlobalStyle`
 
   .DocSearch {
 
-    .DocSearch-Button-Container svg {
-      height: 15px;
+    .DocSearch-input {
+      font-size: 1em;
     }
 
-    .DocSearch-MagnifierLabel {
-      color: ${props => props.theme.searchResultsSecondaryColor};
+    .DocSearch-Modal {
+      background-color: #ffffff;
+    }
+
+    .DocSearch-Footer {
+      box-shadow: none;
+    }
+
+    .DocSearch-Logo svg {
+      color: #9a9a9a;
+    }
+
+    .DocSearch-SearchBar {
+      border-bottom: 1px solid #9a9a9a;
+      padding-top: 7px;
+    }
+
+    .DocSearch-Form {
+      box-shadow: none;
+    }
+
+    .DocSearch-MagnifierLabel svg {
+      height: 18px;
+      color: #9a9a9a;
+    }
+
+    .DocSearch-Hit-source {
+      background-color: #ffffff;
+      color: var(--docsearch-hit-color);
+      font-size: 1em;
+      margin-top: 5px;
+      margin-bottom: 6px; 
+    }
+
+    .DocSearch-Hit a {
+      box-shadow: none;
+      border: 1px solid #e3e3e3;
+    }
+
+    .DocSearch-Dropdown {
+      padding: 0 20px;
+    }
+
+    .DocSearch-Hits mark {
+      color: ${props => props.theme.searchResultsHighlightColor};
+    }
+
+    .DocSearch-Hit-Select-Icon {
+      color: var(--docsearch-muted-color) !important;
+    }
+
+   .DocSearch-Hit[aria-selected=true] a {
+      background-color: #f4f9ff;
+
+      .DocSearch-Hit-title {
+        color: var(--docsearch-hit-color) !important;
+      }
+      .DocSearch-Hit-action {
+        color: var(--docsearch-hit-color) !important;
+      }
+      .DocSearch-Hit-icon {
+        color: var(--docsearch-muted-color) !important;
+      }
+      .DocSearch-Hit-path {
+        color: var(--docsearch-muted-color) !important;
+      }
+      .DocSearch-Hit-Tree {
+        color: var(--docsearch-muted-color) !important;
+      }
+      mark {
+        color: ${props => props.theme.searchResultsHighlightColor} !important;
+        text-decoration: none;
+      }
+    }
+    
+    .DocSearch-Button-Container svg {
+      height: 15px;
     }
 
     .DocSearch-Prefill {
       color: ${props => props.theme.searchResultsHighlightColor};
     }
-    .DocSearch-Form {
-      box-shadow: inset 0 0 0 1px ${props => props.theme.searchInputBorderColor};
-    }
 
     .DocSearch-Cancel {
       color: ${props => props.theme.searchResultsSecondaryColor};
-    }
-
-
-    .DocSearch-Dropdown {
-      overflow-x: hidden;
-      padding: 0;
-    }
-
-    .DocSearch-MagnifierLabel svg {
-      height: 18px;
-    }
-
-    .DocSearch-Hit {
-      padding-bottom: 0;
-      border-radius: 0;
-
-      border-bottom: 1px solid ${props => props.theme.searchInputBorderColor};
-    }
-
-    .DocSearch-Hits mark {
-      color: ${props => props.theme.searchResultsHighlightColor};
     }
 
     .DocSearch-Hit-icon {
@@ -71,23 +122,7 @@ const GlobalStyle = createGlobalStyle`
       width: 20px;
     }
 
-    .DocSearch-Hit a {
-      border-radius: 0;
-      box-shadow: none;
-    }
-
-    .DocSearch-Hit[aria-selected=true] a {
-      background-color: ${props => props.theme.searchResultsSecondaryColor};
-    }
-
-    .DocSearch-Hit-source {
-      padding-left: 18px;
-      padding-bottom: 9px;
-      margin-bottom: 1px;
-      box-shadow: 0px 2px 4px 0px rgb(126 126 126 / 19%);
-      color: ${props => props.theme.searchResultsSecondaryColor};
-    }
-}
+  }
 
   a#CybotCookiebotDialogPoweredbyCybot,
   div#CybotCookiebotDialogPoweredByText {
