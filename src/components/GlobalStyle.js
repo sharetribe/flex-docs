@@ -83,6 +83,7 @@ const GlobalStyle = createGlobalStyle`
 
    .DocSearch-Hit[aria-selected=true] a {
       background-color: #f4f9ff;
+      border: 1px solid #f4f9ff;
 
       .DocSearch-Hit-title {
         color: var(--docsearch-hit-color) !important;
