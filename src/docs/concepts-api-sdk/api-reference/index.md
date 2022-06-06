@@ -36,4 +36,4 @@ Integration API, refer to our background article on
 For more information on our Authentication API, refer to our background
 article on the [Authentication API](/concepts/authentication-api/). For
 more information on the Asset Delivery API, refer to the
-[asset reference](/references/marketplace-assets/) article.
+[asset reference](/references/assets/) article.
