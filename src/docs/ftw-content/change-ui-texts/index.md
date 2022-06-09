@@ -10,9 +10,9 @@ published: true
 ---
 
 The FTW templates have several types of texts that can be read in the
-user interface. The most extensive group of UI texts are microcopy,
-but FTW templates also have static pages, as well as some other groups
-of content that can be configured in the code base.
+user interface. The most extensive group of UI texts are microcopy, but
+FTW templates also have static pages, as well as some other groups of
+content that can be configured in the code base.
 
 ## microcopy
 
@@ -27,9 +27,9 @@ each key in their language. Read more about how
 By default, FTW templates use built-in translation files to show
 translation messages in the UI. However, starting in 2022-05, operators
 can also modify microcopy in Flex Console using hosted translation
-assets. The built-in microcopy are merged with the hosted
-microcopy in the template, so you can use both ways of managing
-microcopy. Read more about how to
+assets. The built-in microcopy are merged with the hosted microcopy in
+the template, so you can use both ways of managing microcopy. Read more
+about how to
 [modify built-in microcopy in FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/)
 and
 [how hosted microcopy work in the FTW templates](/ftw/hosted-microcopy/).
@@ -57,8 +57,8 @@ guide.
 
 ## Other cases: labels and countries
 
-There are few other cases where we haven't added microcopy directly
-to the translation files.
+There are few other cases where we haven't added microcopy directly to
+the translation files.
 
 Labels for filters (e.g. _categories_ and _amenities_ in FTW-daily) can
 be found in _src/marketplace-custom-config.js._ By default,

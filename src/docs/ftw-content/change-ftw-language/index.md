@@ -25,8 +25,8 @@ need to be translated:
 > [src/translations/](https://github.com/sharetribe/flex-template-web/tree/master/src/translations)
 > directory for you to start customizing microcopy.
 
-Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to
-manage your marketplace texts, it is still important to have a built-in
+Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to manage
+your marketplace texts, it is still important to have a built-in
 translation file in FTW as well, so that the application can show
 meaningful messages for any keys missing from the Flex Console
 translation asset.

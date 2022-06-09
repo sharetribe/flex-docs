@@ -146,10 +146,10 @@ There you need to add the capacity filter's configurations to the
 > cookbook article.
 
 In the above configuration, we defined filter's `id` and `label`. The
-label is not going through microcopy file (en.json), because we
-thought that having it here would make customizations easier. However,
-you could use `<FormattedMessage id="some.translation.key.here" />`
-component instead of plain string if you want.
+label is not going through microcopy file (en.json), because we thought
+that having it here would make customizations easier. However, you could
+use `<FormattedMessage id="some.translation.key.here" />` component
+instead of plain string if you want.
 
 `type` configuration refers to existing filter component. The current
 filters that can deal with extended data are: SelectSingleFilter, and

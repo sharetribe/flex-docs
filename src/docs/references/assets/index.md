@@ -27,8 +27,8 @@ Console.
 > **Note:** Assets are in early development. At present, Console allows
 > only limited ability to manage the content of a single asset - the
 > JSON document describing the
-> [translation strings](/concepts/microcopy/) for a client
-> application. Stay tuned for more later on!
+> [translation strings](/concepts/microcopy/) for a client application.
+> Stay tuned for more later on!
 
 For example, a marketplace may have assets with the following assets:
 

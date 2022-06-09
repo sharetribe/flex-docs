@@ -15,8 +15,8 @@ by default. For information about changing the language, see the
 [Changing the language](/ftw/how-to-change-ftw-language) article.
 
 We are using the [React Intl](https://github.com/yahoo/react-intl)
-library to translate UI texts and to format dates, numbers, and money
-values.
+library to represent UI microcopy and to format dates, numbers, and
+money values.
 
 _**Note:** Starting in 2022-05, FTW template microcopy can also be
 modified in Flex Console. If you want to implement this feature into
@@ -26,23 +26,23 @@ modifications in the PR for
 more:_
 
 - _[Microcopy in Flex](/concepts/microcopy/)_
-- _[How hosted microcopy work in the FTW templates](/ftw/hosted-microcopy/)_
+- _[How hosted microcopy works in the FTW templates](/ftw/hosted-microcopy/)_
 
 <extrainfo title="FTW-hourly and FTW-product versions with hosted microcopy">
-In FTW-hourly, hosted microcopy are available in v10.5. In FTW-product, they are available in v9.2.
+In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is available in v9.2.
 </extrainfo>
 
-## The translation file
+## The microcopy file
 
 All the bundled text microcopy can be found in the
 [src/translations/en.json](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/en.json)
-file. The translation data is formatted as one JSON object with all the
-microcopy as properties.
+file. The microcopy data is formatted as one JSON object with all the
+microcopy messages as properties.
 
 The key - value syntax is as follows:
 
 ```json
-"<component name>.<translation key>": "<translation>"
+"<component name>.<microcopy key>": "<message>"
 ```
 
 For example:
@@ -53,14 +53,15 @@ For example:
 
 The keys are namespaced to the corresponding component. This is aligned
 with the component driven paradigm that the application follows. It
-might introduce duplication with same translation texts occurring
-multiple times in the translation file but it also emphasizes how all
-the components are independent, how a component can be used anywhere and
-how modifications to a single component do not affect other components.
+might introduce duplication with same microcopy messages occurring
+multiple times in the microcopy file. On the other hand, it also
+emphasizes how all the components are independent, how a component can
+be used anywhere, and how modifications to a single component do not
+affect other components.
 
-## Using the microcopy
+## Using the marketplace microcopy
 
-React Intl provides multiple ways to access the translation data but the
+React Intl provides multiple ways to access the microcopy data but the
 most commonly used are the `formatMessage` function and the
 `FormattedMessage` tag provided by React Intl.
 
@@ -103,13 +104,13 @@ Other functions and componets can be explored in the
 ## Formatting
 
 React Intl uses the [FormatJS](https://formatjs.io/) formatters for
-shaping the translation texts based on given arguments. Here are a few
+shaping the microcopy messages based on given arguments. Here are a few
 examples on how to use FormatJS.
 
 ### Arguments
 
 Pass a named argument to the format function/component. For the
-following translation:
+following microcopy message:
 
 ```json
 "EnquiryForm.messageLabel": "Message to {authorDisplayName}",
@@ -135,18 +136,18 @@ intl.formatMessage(
 
 ### Pluralization
 
-With pluralization a translation can be formatted to adapt to a number
-argument.
+With pluralization, a microcopy message can be formatted to adapt to a
+number argument.
 
 ```json
 "ManageListingsPage.youHaveListings":
   "You have {count} {count, plural, one {listing} other {listings}}",
 ```
 
-This translation takes the `count` argument and uses the `plural`, `one`
-and `other` keywords to format the last word of the translation to be
-_listing_ or _listings_ based on the `count`. The pluralized translation
-can be used with the `FormattedMessage` component:
+This message takes the `count` argument and uses the `plural`, `one` and
+`other` keywords to format the last word of the microcopy message to be
+_listing_ or _listings_ based on the `count`. The pluralized message can
+be used with the `FormattedMessage` component:
 
 ```jsx
 <FormattedMessage
@@ -166,12 +167,11 @@ intl.formatMessage(
 
 ### Select an option
 
-If you have two or more options that the translation needs to show
+If you have two or more options that the microcopy message needs to show
 depending on another argument, you can use the `select` keyword to pass
-the necessary information for the message.
+the necessary information to the message.
 
-When you use `select` in the translation string, you will need to
-specify
+When you use `select` in the microcopy message, you will need to specify
 
 - the variable determining which option to use (here: `mode`)
 - the pattern we are following (here: `select`)
@@ -184,7 +184,7 @@ specify
  "BookingBreakdown.description": "{mode, select, day {You are booking the following days:} night {You are booking the following nights:} other {You are booking the following {unitType}:}}"
 ```
 
-You can then use the translation message in the code with the
+You can then use the microcopy message in the code with the
 `formatMessage` function:
 
 ```js
@@ -200,7 +200,7 @@ const description = intl.formatMessage(
 );
 ```
 
-You can also use the translation with the `FormatMessage` component
+You can also use the message with the `FormatMessage` component
 
 ```jsx
 <FormattedMessage
@@ -214,10 +214,10 @@ More formatting examples can be found from the
 
 ## Managing microcopy
 
-In case you have added a new language translation file and are pulling
-translation updates to `en.json` from the upstream repo there is a
-command line tool to help keeping the translation files in sync. Running
-the following command in the project root
+In case you have added a new language microcopy file and are pulling
+microcopy updates to `en.json` from the upstream repo there is a command
+line tool to help keeping the microcopy files in sync. Running the
+following command in the project root
 
 ```bash
 yarn run translate
@@ -225,10 +225,10 @@ yarn run translate
 
 will start a command line application:
 
-![microcopy CLI](./translations-cli.png)
+![Microcopy CLI](./translations-cli.png)
 
-The command line application can be used to match a translation file
-against the English microcopy. If your new microcopy file follows
+The command line application can be used to match a microcopy file
+against the English microcopy file. If your new microcopy file follows
 the `<LANG CODE>.json` naming, the CLI will pick it up automatically. In
 order to improve readability, you can add the language name to the
 `TARGET_LANG_NAMES` map in `scripts/translations.js` if it is not yet in

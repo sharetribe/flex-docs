@@ -98,8 +98,8 @@ users will be sent from.
 
 **Content** is where you can modify your marketplace texts. You can add
 your existing translation file content from your Flex Template, or copy
-and paste the default microcopy from the featured links, and modify
-the texts to suit your marketplace. Read more about
+and paste the default microcopy from the featured links, and modify the
+texts to suit your marketplace. Read more about
 [modifying microcopy in Console](/concepts/microcopy/).
 
 **Transaction processes** is quite self-explanatory: it shows the

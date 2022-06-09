@@ -31,8 +31,10 @@ In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is ava
 
 When you first start building your marketplace, the JSON field in
 Marketplace texts is empty, and all marketplace texts come from built-in
-microcopy files in the template. (We refer to copy-text as
-microcopy, but in the template they are in the _translations_ folder. In addition to the default _en.json_ file, there are other languages available, which is why the folder is titled _translations_.)
+microcopy files in the template. (We refer to copy-text as microcopy,
+but in the template they are in the _translations_ folder. In addition
+to the default _en.json_ file, there are other languages available,
+which is why the folder is titled _translations_.)
 
 In the Marketplace texts section, you can see links that lead to the
 microcopy folders for each FTW template repository, if you want to
@@ -40,8 +42,8 @@ microcopy folders for each FTW template repository, if you want to
 In this tutorial, we will not copy the full texts – instead, we will
 enter only the microcopy we want to modify.
 
-The built-in default microcopy for the FTW template can be found in
-this _en.json_ file:
+The built-in default microcopy for the FTW template can be found in this
+_en.json_ file:
 
 ```shell
 └── src
@@ -61,8 +63,8 @@ _en.json_ file:
   "LocationSearchForm.placeholder": "Search saunas…",
 ```
 
-In this tutorial, we change the microcopy of Hero component, but we
-have another document that dives deeper into this topic:
+In this tutorial, we change the microcopy of Hero component, but we have
+another document that dives deeper into this topic:
 [How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/)
 
 ## Change the microcopy for Hero component
@@ -93,8 +95,8 @@ check the **props** section on the _Components_ tab of Web Inspector
 `id: "SectionHero.title"`.
 
 So, the translation can be found from _en.json_ file under the
-translation key: _SectionHero.title_. There are also 2 other
-microcopy that SectionHero component uses. Let's change all of them:
+translation key: _SectionHero.title_. There are also 2 other microcopy
+that SectionHero component uses. Let's change all of them:
 
 ```json
 {
@@ -119,12 +121,11 @@ and localization of dates and money values, you should check the
 article:
 [How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/).
 
-To learn more about how the hosted microcopy work in FTW templates,
-read the article on [hosted assets in FTW](/ftw/hosted-microcopy/).
+To learn more about how the hosted microcopy work in FTW templates, read
+the article on [hosted assets in FTW](/ftw/hosted-microcopy/).
 
-To read more about how microcopy can be modified in Flex Console,
-check out the article about
-[microcopy in Flex](/concepts/microcopy/).
+To read more about how microcopy can be modified in Flex Console, check
+out the article about [microcopy in Flex](/concepts/microcopy/).
 
 <br />
 
