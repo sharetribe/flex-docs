@@ -145,8 +145,8 @@ article - and there's also a generic article about
 
 There are some mandatory configuration variables that are defined in the
 template. See the
-[FTW Environment configuration variables](/ftw/ftw-env/)
-reference for more information.
+[FTW Environment configuration variables](/ftw/ftw-env/) reference for
+more information.
 
 See also the
 [src/config.js](https://github.com/sharetribe/ftw-daily/blob/master/src/config.js)
@@ -224,8 +224,7 @@ To start the test watcher, run
 yarn test
 ```
 
-For more information, see the
-[How to test FTW](/ftw/how-to-test-ftw/)
+For more information, see the [How to test FTW](/ftw/how-to-test-ftw/)
 documentation.
 
 ## Customization

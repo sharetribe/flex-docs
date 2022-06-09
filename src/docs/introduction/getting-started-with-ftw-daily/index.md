@@ -345,9 +345,8 @@ guide you through setting up the rest of the required environment
 variables. If the `.env` file doesn't exist the application won't start.
 _This `.env` file is only created for local development environment_.
 
-> See the
-> [FTW Environment configuration variables](/ftw/ftw-env/)
-> for more information on the environment variables.
+> See the [FTW Environment configuration variables](/ftw/ftw-env/) for
+> more information on the environment variables.
 
 ## Start the server
 

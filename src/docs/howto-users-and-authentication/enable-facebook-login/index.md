@@ -163,8 +163,7 @@ following environment variables to FTW:
   Corresponds to _client secret_ of the identity provider in Console.
 
 For more information on FTW environment variables, see the
-[FTW Environment configuration variables](/ftw/ftw-env/)
-article.
+[FTW Environment configuration variables](/ftw/ftw-env/) article.
 
 That is it. Setting these environment variables will make FTW render the
 Facebook login button in signup and login forms.

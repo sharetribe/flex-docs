@@ -22,7 +22,8 @@ Build > Content.
 _**Note:** Hosted assets are available in Flex and the FTW templates
 starting from version v8.5. If you have an earlier version and want to
 implement the feature in your template, you can see the necessary
-modifications in the PR for [ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510)._
+modifications in the PR for
+[ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510)._
 
 <extrainfo title="FTW-hourly and FTW-product versions with hosted translations">
 In FTW-hourly, hosted translations are available in v10.5. In FTW-product, they are available in v9.2.

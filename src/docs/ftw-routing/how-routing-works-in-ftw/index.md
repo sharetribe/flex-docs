@@ -316,8 +316,7 @@ when the mouse is over **NamedLink**. In addition, **Form** and
 loaded before the user has actually clicked the button or executed form
 submit.
 
-Read more about
-[code-splitting](/ftw/how-code-splitting-works-in-ftw/).
+Read more about [code-splitting](/ftw/how-code-splitting-works-in-ftw/).
 
 ## Analytics
 
