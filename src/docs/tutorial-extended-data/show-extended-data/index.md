@@ -104,7 +104,7 @@ const amenityOptions = findOptionsForSelectFilter(
 ### Add translation
 
 In addition, we need to add the new translation key
-(_"ListingPage.viewType"_) to translations:
+(_"ListingPage.viewType"_) to microcopy:
 
 ```shell
 └── src

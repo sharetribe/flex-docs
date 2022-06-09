@@ -284,7 +284,7 @@ Set DeleteAccountPage to only show the form for authenticated users.
   );
 ```
 
-You still need to add some translations related to the form.
+You still need to add some microcopy related to the form.
 
 ```shell
 └── src

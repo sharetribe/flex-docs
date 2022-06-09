@@ -10,11 +10,11 @@ published: true
 ---
 
 The FTW templates have several types of texts that can be read in the
-user interface. The most extensive group of UI texts are translations,
+user interface. The most extensive group of UI texts are microcopy,
 but FTW templates also have static pages, as well as some other groups
 of content that can be configured in the code base.
 
-## Translations
+## microcopy
 
 In the FTW templates, user-facing content is not written directly into
 the source code. Instead, the source code uses
@@ -22,23 +22,23 @@ the source code. Instead, the source code uses
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
 each key in their language. Read more about how
-[Flex handles translations](/concepts/translations/).
+[Flex handles microcopy](/concepts/microcopy/).
 
 By default, FTW templates use built-in translation files to show
 translation messages in the UI. However, starting in 2022-05, operators
-can also modify translations in Flex Console using hosted translation
-assets. The built-in translations are merged with the hosted
-translations in the template, so you can use both ways of managing
-translations. Read more about how to
-[modify built-in translations in FTW templates](/ftw/how-to-change-ftw-bundled-translations/)
+can also modify microcopy in Flex Console using hosted translation
+assets. The built-in microcopy are merged with the hosted
+microcopy in the template, so you can use both ways of managing
+microcopy. Read more about how to
+[modify built-in microcopy in FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/)
 and
-[how hosted translations work in the FTW templates](/ftw/hosted-translations/).
+[how hosted microcopy work in the FTW templates](/ftw/hosted-microcopy/).
 
 You may also want to change the language of the user interface entirely.
 Read more about
 [changing the language used in FTW](/ftw/how-to-change-ftw-language/).
 
-In addition to translations, there are other forms of content in the FTW
+In addition to microcopy, there are other forms of content in the FTW
 applications that operators may need to manage.
 
 ## Static pages
@@ -47,7 +47,7 @@ A few components in the FTW template app contain texts that are not
 included in the `en.json` file, namely _AboutPage_, _PrivacyPolicy_, and
 _TermsOfService_. The reason behind this is that these components only
 contain static content that is laid out in more of a document format so
-the translations for these texts can easily be changed and maintained in
+the microcopy for these texts can easily be changed and maintained in
 the component files themselves.
 
 More information about adding static content to the application can be
@@ -57,7 +57,7 @@ guide.
 
 ## Other cases: labels and countries
 
-There are few other cases where we haven't added translations directly
+There are few other cases where we haven't added microcopy directly
 to the translation files.
 
 Labels for filters (e.g. _categories_ and _amenities_ in FTW-daily) can

@@ -1,15 +1,18 @@
 ---
-title: Translations in Flex
-slug: translations
+title: Microcopy in Flex
+slug: microcopy
 updated: 2022-05-16
 category: concepts-development
 ingress:
-  This article introduces translations in Flex and how they are modified
+  This article introduces microcopy in Flex and how it is modified
   and edited in Flex Console
 published: true
 ---
 
-In the FTW templates, user-facing content is not written directly into
+Microcopy refers to all the small pieces of text in your marketplace's dynamic pages – button labels, error messages, and help texts are all examples of microcopy. Modifying microcopy to match your marketplace's theme and tone of voice is a key task in customizing any marketplace.
+[Read more about marketplace microcopy](/operator-guides).
+
+In the FTW templates, microcopy is not written directly into
 the source code. Instead, the source code uses
 [React Intl message formatting](https://formatjs.io/docs/intl#formatmessage)
 that defines keys for each meaningful piece of content, and a translator
@@ -39,16 +42,16 @@ changed even if the value ends up changing.
 ```
 
 Starting from 2022-05, marketplace operators can modify the wording of
-the translations in Flex Console. This means that operators can make
+the microcopy in Flex Console. This means that operators can make
 changes to the marketplace texts without the need for code changes. In
-addition, the same translations can now be used from several different
+addition, the same microcopy can now be used from several different
 client applications, making it easier to make centralized changes.
 
 ![Simple Console translation](./translation_simple.png)
 
-## How translations are handled in Flex
+## How microcopy are handled in Flex
 
-With Console-editable translations, Flex introduces a concept of
+With Console-editable microcopy, Flex introduces a concept of
 [assets](/references/assets/). Assets provide a way to define
 marketplace content and configurations using JSON files without needing
 to include the actual content in the client application codebase.
@@ -58,7 +61,7 @@ question is `content/translations.json`. In other words, Flex Console
 has a dedicated view – "Build" > "Content" – for modifying the
 `content/translations.json` asset.
 
-![Content view for editing translations](./translation_start.png)
+![Content view for editing microcopy](./translation_start.png)
 
 You can add one or more translation key-value pairs in JSON format into
 the Marketplace texts field. You can copy them from the linked
@@ -67,15 +70,15 @@ translation file.
 
 ![Add translation key-value pairs](./translation_edit.png)
 
-When the asset has been created, you will need to fetch the translations
-to the client application. Translations are fetched through Asset
+When the asset has been created, you will need to fetch the microcopy
+to the client application. microcopy are fetched through Asset
 Delivery API in JSON format. Assets can be retrieved by the latest
 version, or by a specific version. Read more:
 
 - [Marketplace assets](/references/assets/)
-- [Handling hosted asset translations in the FTW templates](/ftw/hosted-translations/)
+- [Handling hosted asset microcopy in the FTW templates](/ftw/hosted-microcopy/)
 
-## Translation format for editing translations in Console
+## Translation format for editing microcopy in Console
 
 A translation using the
 [React Intl formatMessage formatting](https://formatjs.io/docs/intl#formatmessage)
@@ -98,7 +101,7 @@ shows the value.
 ![Simple translation phrase in UI](./translations_UI_simple.png)
 
 Read more about
-[using translations in the FTW templates](/ftw/how-to-change-ftw-bundled-translations/#using-the-translations).
+[using microcopy in the FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/#using-the-microcopy).
 
 ### Simple argument
 
@@ -128,7 +131,7 @@ listing's title is.
 />
 ```
 
-![Translation phrase with parameter in UI](./translations_UI_parameter.png)
+![Translation phrase with parameter in UI](./microcopy_UI_parameter.png)
 
 Do note that even if the translation message uses a simple argument, you
 can choose to not use it. For instance, you could replace the
@@ -140,7 +143,7 @@ application to see the names of the attributes available in the message.
 
 ### Pluralization
 
-One important factor in creating natural translations is handling
+One important factor in creating natural microcopy is handling
 pluralization in a text. The ICU format makes it possible to define
 different wordings for singular and plural options.
 
@@ -178,7 +181,7 @@ pluralization arguments (`zero`, `one`, `two`, `few` etc.) in the
 In addition to pluralization options, you can build logic to the
 translation strings using
 [select formatting](https://formatjs.io/docs/core-concepts/icu-syntax/#select-format).
-The current FTW template translations do not have an existing example of
+The current FTW template microcopy do not have an existing example of
 this pattern, however you can of course modify your code to include this
 formatting as well.
 
@@ -218,7 +221,7 @@ options you will encounter that require different translation strings.
 ## Can I have a multilanguage marketplace?
 
 Having several translation files enables using a single application for
-multiple languages. However, editing translations in Console only
+multiple languages. However, editing microcopy in Console only
 supports one language at a time, so you will need to modify any other
 languages using bundled translation files within your client
 application.

@@ -148,7 +148,7 @@ _FieldCurrencyInput_ like there is in the _price_ input.
 ...
 ```
 
-After adding the new translations keys and some padding to price input
+After adding the new microcopy keys and some padding to price input
 in CSS file, the EditListingPricingPanel should look something like
 this:
 

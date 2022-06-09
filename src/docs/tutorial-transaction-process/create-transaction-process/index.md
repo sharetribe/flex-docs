@@ -281,7 +281,7 @@ const bookingProcessAlias = 'cottagedays-daily-booking/release-1';
 ```
 
 In the same file, we need to also update variable: **bookingUnitType**.
-It defines some UI changes (mostly about translations) - i.e. is this
+It defines some UI changes (mostly about microcopy) - i.e. is this
 booking about _nights_, _days_, or some other _units_.
 
 ```js

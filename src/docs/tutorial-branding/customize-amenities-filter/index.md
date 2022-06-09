@@ -96,7 +96,7 @@ search page. In the config section, you can find `options`:
 - **label**:
 
   Label is just a hard-coded string that is shown in the UI. So, there
-  are no translations for these in _en.json_ file. It's easier to modify
+  are no microcopy for these in _en.json_ file. It's easier to modify
   options this way - just change the content of
   _marketplace-custom-config.js_.
 

@@ -357,7 +357,7 @@ or even personalize the templates based on who the recipient is.
 
 ## Multiple languages and currencies
 
-Flex Template for Web includes default translations for English,
+Flex Template for Web includes default microcopy for English,
 Spanish, French and German, but you can easily translate it to the
 language of your choice. With some development work you can make your
 marketplace multilingual, allowing your users to use it in the language

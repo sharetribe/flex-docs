@@ -200,7 +200,7 @@ follows:
    const { startDate, endDate } = bookingData;
 
    /**
-    * If you want to use pre-defined component and translations for printing the lineItems base price for booking,
+    * If you want to use pre-defined component and microcopy for printing the lineItems base price for booking,
     * you should use one of the codes:
     * line-item/night, line-item/day or line-item/units (translated to persons).
     *

@@ -1,51 +1,50 @@
 ---
-title: Hosted translations with Asset Delivery API
-slug: hosted-translations
+title: Hosted microcopy with Asset Delivery API
+slug: hosted-microcopy
 updated: 2022-05-16
 category: ftw-content
 ingress:
-  This article describes how hosted translations work in Flex Template
+  This article describes how hosted microcopy work in Flex Template
   for Web (FTW).
 published: true
 ---
 
-Starting from 2022-05, FTW template translations can be managed both in
+Starting from 2022-05, FTW template microcopy can be managed both in
 the built-in translation files and in Flex Console. This article
-describes how the FTW template uses the hosted translations and merges
-them with the built-in translations
+describes how the FTW template uses the hosted microcopy and merges
+them with the built-in microcopy
 
 _**Note:** If you want to implement this feature into your pre-v8.5
 FTW-daily template, you can see the necessary modifications in the PRs
 for [ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
 more:_
 
-- _[Translations in Flex Console](/concepts/translations/)_
-- _[How built-in translations work in the FTW templates](/ftw/how-to-change-ftw-bundled-translations/)_
+- _[microcopy in Flex Console](/concepts/microcopy/)_
+- _[How built-in microcopy work in the FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/)_
 
-<extrainfo title="FTW-hourly and FTW-product versions with hosted translations">
-In FTW-hourly, hosted translations are available in v10.5. In FTW-product, they are available in v9.2.
+<extrainfo title="FTW-hourly and FTW-product versions with hosted microcopy">
+In FTW-hourly, hosted microcopy are available in v10.5. In FTW-product, they are available in v9.2.
 </extrainfo>
 
-## Hosted translations
+## Hosted microcopy
 
-**Hosted translations** are translations that the marketplace operator
+**Hosted microcopy** are microcopy that the marketplace operator
 can edit in Flex Console. The client app then needs to fetch them using
 the Asset Delivery API.
 
 It is good to note that even if the operator adds some hosted
-translations using Flex Console, the FTW template still needs to have a
+microcopy using Flex Console, the FTW template still needs to have a
 built-in translation file for the translation keys that do not have a
 value in the hosted asset. That way, the UI can still render something
 meaningful for the parts of the page that the operator has not modified.
 
-FTW templates have specified hosted translations as part of the app-wide
-configuration in _src/config.js_
+FTW templates have specified hosted microcopy as part of the app-wide configuration in _src/config.js_
 
 ```js
 // CDN assets for the app. Configurable through Flex Console.
 // Currently, only translation.json is available.
 const appCdnAssets = {
-  translations: 'content/translations.json',
+  microcopy: 'content/translations.json',
 };
 ```
 
@@ -57,13 +56,13 @@ calls to the Asset Delivery API.
 There are two ways to fetch translation assets using Asset Delivery API:
 by version or by alias.
 
-#### Fetching translations by version
+#### Fetching microcopy by version
 
 All assets are identifiable by their version, and versions are
 immutable. Therefore if you fetch assets by version, they can be cached
 for an extended period of time. Read more about
 [caching assets](/references/assets/#asset-data-caching). When fetching
-translations by version, they are cached for an extended period of time,
+microcopy by version, they are cached for an extended period of time,
 which helps to avoid unnecessary data loading. Since Asset Delivery API
 sets Cache-Control header for these responses, the browser knows to
 cache these responses on its own.
@@ -84,14 +83,14 @@ sdk.assetByVersion({
 });
 ```
 
-#### Fetching translations by alias
+#### Fetching microcopy by alias
 
 In addition to fetching assets by version, you can fetch them by a
-specific alias instead of a version. Currently, translations can be
-fetched with the alias _latest_, which returns the most recently updated
-version of the translations. The response also contains the version
-information for the most recent asset, so that subsequent fetches can be
-done based on asset version.
+specific alias instead of a version. Currently, microcopy can be
+fetched with the alias _latest_, which returns the most recently
+updated version of the microcopy. The response also contains the
+version information for the most recent asset, so that subsequent
+fetches can be done based on asset version.
 
 When fetching by alias, the cache time is a few seconds for development
 environment and up to 5 minutes for production environment. In other
@@ -105,7 +104,7 @@ sdk.assetByAlias({
 });
 ```
 
-## How production build works with hosted translations
+## How production build works with hosted microcopy
 
 This setup is in use if you run **_yarn start_** in your host
 environment or **_yarn run dev-server_** on your local machine.
@@ -120,7 +119,7 @@ environment or **_yarn run dev-server_** on your local machine.
    ```
 
    ```js
-   let translations = {};
+   let microcopy = {};
    const store = configureStore({}, sdk);
    return store.dispatch(fetchAppAssets(config.appCdnAssets));
    ```
@@ -145,9 +144,9 @@ environment or **_yarn run dev-server_** on your local machine.
    - Server-side rendering must match with client-side rendering when
      browser hydrates the server-side rendered content.
    - To ensure that client-side rendering has the same version of
-     translations, the asset version is passed (through preloaded state)
+     microcopy, the asset version is passed (through preloaded state)
      to front end.
-   - Note: FTW does not pass the translations themselves from the server
+   - Note: FTW does not pass the microcopy themselves from the server
      to browser. The reason is that if browser fetches the versioned
      asset file directly, it can leverage browser's cache. So, every
      page load, after the initial one, will use the _translation.json_
@@ -162,7 +161,7 @@ environment or **_yarn run dev-server_** on your local machine.
 6. SSR: call **renderApp** function, which renders the <_ServerApp>_ in
    _src/app.js_
 
-   - Hosted translations from Asset Delivery API are passed as props to
+   - Hosted microcopy from Asset Delivery API are passed as props to
      _ServerApp_.
 
    ```shell
@@ -171,12 +170,12 @@ environment or **_yarn run dev-server_** on your local machine.
    ```
 
    ```js
-   // Render the app with given route, preloaded state, hosted translations.
+   // Render the app with given route, preloaded state, hosted microcopy.
    const { head, body } = renderApp(
      requestUrl,
      context,
      preloadedState,
-     translations,
+     microcopy,
      collectWebChunks
    );
    ```
@@ -196,7 +195,7 @@ environment or **_yarn run dev-server_** on your local machine.
    />
    ```
 
-- Hosted translations are then merged with the default translations in
+- Hosted microcopy are then merged with the default microcopy in
   _ServerApp_ component.
   ```jsx
   export const ServerApp = props => {
@@ -220,13 +219,13 @@ environment or **_yarn run dev-server_** on your local machine.
 9. Browser: make **loadData** call
 10. Browser: hydrate the _<ClientApp>_ and pass translations as props.
 
-- Hosted translations are merged with default translations in
+- Hosted microcopy are merged with default microcopy in
   _ClientApp_ component.
   ```js
   <ClientApp store={store} hostedTranslations={translations} />
   ```
 
-## How development build works with hosted translations
+## How development build works with hosted microcopy
 
 This is setup is in use if you run **_yarn run dev_** on local machine.
 
@@ -236,7 +235,7 @@ This is setup is in use if you run **_yarn run dev_** on local machine.
    - Because SSR is not available to fetch the latest version of the
      asset files, this call needs to be made from browser.
 3. Browser: make **loadData** call
-4. Browser: render the `<ClientApp>` and pass translations as props.
+4. Browser: render the `<ClientApp>` and pass microcopy as props.
 
 ## Read more
 

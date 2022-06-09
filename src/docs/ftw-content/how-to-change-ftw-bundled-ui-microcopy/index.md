@@ -1,10 +1,10 @@
 ---
-title: How to change FTW bundled translations
-slug: how-to-change-ftw-bundled-translations
+title: How to change FTW bundled microcopy
+slug: how-to-change-ftw-bundled-microcopy
 updated: 2022-05-16
 category: ftw-content
 ingress:
-  This guide describes how to change the bundled translations in Flex
+  This guide describes how to change the bundled microcopy in Flex
   Template for Web (FTW).
 published: true
 ---
@@ -18,26 +18,26 @@ We are using the [React Intl](https://github.com/yahoo/react-intl)
 library to translate UI texts and to format dates, numbers, and money
 values.
 
-_**Note:** Starting in 2022-05, FTW template translations can also be
+_**Note:** Starting in 2022-05, FTW template microcopy can also be
 modified in Flex Console. If you want to implement this feature into
 your pre-v8.5 FTW-daily template, you can see the necessary
 modifications in the PR for
 [ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
 more:_
 
-- _[Translations in Flex Console](/concepts/translations/)_
-- _[How hosted translations work in the FTW templates](/ftw/hosted-translations/)_
+- _[Microcopy in Flex](/concepts/microcopy/)_
+- _[How hosted microcopy work in the FTW templates](/ftw/hosted-microcopy/)_
 
-<extrainfo title="FTW-hourly and FTW-product versions with hosted translations">
-In FTW-hourly, hosted translations are available in v10.5. In FTW-product, they are available in v9.2.
+<extrainfo title="FTW-hourly and FTW-product versions with hosted microcopy">
+In FTW-hourly, hosted microcopy are available in v10.5. In FTW-product, they are available in v9.2.
 </extrainfo>
 
 ## The translation file
 
-All the bundled text translations can be found in the
+All the bundled text microcopy can be found in the
 [src/translations/en.json](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/en.json)
 file. The translation data is formatted as one JSON object with all the
-translations as properties.
+microcopy as properties.
 
 The key - value syntax is as follows:
 
@@ -58,7 +58,7 @@ multiple times in the translation file but it also emphasizes how all
 the components are independent, how a component can be used anywhere and
 how modifications to a single component do not affect other components.
 
-## Using the translations
+## Using the microcopy
 
 React Intl provides multiple ways to access the translation data but the
 most commonly used are the `formatMessage` function and the
@@ -212,7 +212,7 @@ You can also use the translation with the `FormatMessage` component
 More formatting examples can be found from the
 [FormatJS message syntax documentation](https://formatjs.io/docs/core-concepts/icu-syntax/).
 
-## Managing translations
+## Managing microcopy
 
 In case you have added a new language translation file and are pulling
 translation updates to `en.json` from the upstream repo there is a
@@ -225,15 +225,15 @@ yarn run translate
 
 will start a command line application:
 
-![Translations CLI](./translations-cli.png)
+![microcopy CLI](./translations-cli.png)
 
 The command line application can be used to match a translation file
-against the English translations. If your new translations file follows
+against the English microcopy. If your new microcopy file follows
 the `<LANG CODE>.json` naming, the CLI will pick it up automatically. In
 order to improve readability, you can add the language name to the
 `TARGET_LANG_NAMES` map in `scripts/translations.js` if it is not yet in
 there and the CLI will use the correct name for your language instead of
-the language code when prompting about translations.
+the language code when prompting about microcopy.
 
 In case you wish to use something else than English as the source
 language, modify the `SOURCE_LANG` object in `scripts/translations.js`
