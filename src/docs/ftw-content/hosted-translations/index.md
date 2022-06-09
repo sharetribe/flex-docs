@@ -38,7 +38,8 @@ built-in translation file for the translation keys that do not have a
 value in the hosted asset. That way, the UI can still render something
 meaningful for the parts of the page that the operator has not modified.
 
-FTW templates have specified hosted translations as part of the app-wide configuration in _src/config.js_
+FTW templates have specified hosted translations as part of the app-wide
+configuration in _src/config.js_
 
 ```js
 // CDN assets for the app. Configurable through Flex Console.
@@ -50,8 +51,8 @@ const appCdnAssets = {
 
 In addition, FTW templates have added a new global Redux file
 (_src/ducks/hostedAssets.duck.js_), which exports a Redux Thunk function
-called **fetchAppAssets**. This is the function that actually makes the calls to the
-Asset Delivery API.
+called **fetchAppAssets**. This is the function that actually makes the
+calls to the Asset Delivery API.
 
 There are two ways to fetch translation assets using Asset Delivery API:
 by version or by alias.
@@ -87,10 +88,10 @@ sdk.assetByVersion({
 
 In addition to fetching assets by version, you can fetch them by a
 specific alias instead of a version. Currently, translations can be
-fetched with the alias _latest_, which returns the most recently
-updated version of the translations. The response also contains the
-version information for the most recent asset, so that subsequent
-fetches can be done based on asset version.
+fetched with the alias _latest_, which returns the most recently updated
+version of the translations. The response also contains the version
+information for the most recent asset, so that subsequent fetches can be
+done based on asset version.
 
 When fetching by alias, the cache time is a few seconds for development
 environment and up to 5 minutes for production environment. In other
@@ -230,8 +231,8 @@ environment or **_yarn run dev-server_** on your local machine.
 This is setup is in use if you run **_yarn run dev_** on local machine.
 
 1. Browser: initialize the store
-2. Browser: **fetchAppAssets** thunk fetches assets using _latest_
-   alias by calling **sdk.assetByAlias**
+2. Browser: **fetchAppAssets** thunk fetches assets using _latest_ alias
+   by calling **sdk.assetByAlias**
    - Because SSR is not available to fetch the latest version of the
      asset files, this call needs to be made from browser.
 3. Browser: make **loadData** call

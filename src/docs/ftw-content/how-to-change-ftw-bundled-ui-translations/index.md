@@ -188,7 +188,7 @@ You can then use the translation message in the code with the
 `formatMessage` function:
 
 ```js
-// mode: the types of bookings or products available 
+// mode: the types of bookings or products available
 // on the listing page, e.g. class, package, day, night
 const mode = 'class';
 const unitType = 'yoga class'

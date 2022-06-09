@@ -81,8 +81,8 @@ To deploy the application add at least the following variables:
   example USD, EUR, CAD, AUD, etc.
 
 There are also some other variables that can be used. See the
-[FTW Environment configuration variables](/ftw/ftw-env/)
-reference for more information.
+[FTW Environment configuration variables](/ftw/ftw-env/) reference for
+more information.
 
 ### Building the app
 
@@ -236,8 +236,8 @@ Check at least these variables:
 - **`REACT_APP_CSP`**
 
   Content Security Policy (CSP). Read more from
-  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br />
-  Accepts values: _block_ and _report_. <br/> Use value: _block_.
+  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br /> Accepts values:
+  _block_ and _report_. <br/> Use value: _block_.
 
 - **`REACT_APP_AVAILABILITY_ENABLED`**
 
