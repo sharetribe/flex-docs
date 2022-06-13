@@ -1,5 +1,5 @@
 ---
-title: How to change FTW translation language
+title: How to change FTW microcopy language
 slug: how-to-change-ftw-language
 updated: 2022-05-16
 category: ftw-content
@@ -10,10 +10,10 @@ published: true
 ---
 
 If you want the template to use a language that is not supported by
-default, a new translation file needs to be added and the messages in it
+default, a new microcopy file needs to be added and the messages in it
 need to be translated:
 
-## Creating a new translation file
+## Creating a new microcopy file
 
 1. Copy the default `src/translations/en.json` English microcopy file
    into some other file, for example `it.json` for Italian.
@@ -27,9 +27,9 @@ need to be translated:
 
 Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to manage
 your marketplace texts, it is still important to have a built-in
-translation file in FTW as well, so that the application can show
-meaningful messages for any keys missing from the Flex Console
-translation asset.
+microcopy file in FTW as well, so that the application can show
+meaningful messages for any keys missing from the Flex Console microcopy
+asset.
 
 ## Changing the microcopy used in FTW
 
@@ -63,14 +63,14 @@ import 'moment/locale/it';
 import messagesInLocale from './translations/it.json';
 ```
 
-## Changing the translation used in tests
+## Changing the microcopy used in tests
 
 Also, in case you will translate the application and develop it forward
 it is wise to change the microcopy file that the tests use. Normally
-tests are language agnostic as they use translation keys as values.
-However, when adding new microcopy you can end up with missing
-translation keys in tests. To change the translation file used in tests
-change the `messages` variable in
+tests are language agnostic as they use microcopy keys as values.
+However, when adding new microcopy you can end up with missing microcopy
+keys in tests. To change the microcopy file used in tests change the
+`messages` variable in
 [src/util/test-helpers.js](https://github.com/sharetribe/flex-template-web/blob/master/src/util/test-helpers.js)
 to match your language in use, for example:
 

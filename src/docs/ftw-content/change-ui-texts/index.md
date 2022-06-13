@@ -24,12 +24,11 @@ or a content creator can then define the message (i.e. the value) for
 each key in their language. Read more about how
 [Flex handles microcopy](/concepts/microcopy/).
 
-By default, FTW templates use built-in translation files to show
-translation messages in the UI. However, starting in 2022-05, operators
-can also modify microcopy in Flex Console using hosted translation
-assets. The built-in microcopy are merged with the hosted microcopy in
-the template, so you can use both ways of managing microcopy. Read more
-about how to
+By default, FTW templates use built-in microcopy files to show microcopy
+messages in the UI. However, starting in 2022-05, operators can also
+modify microcopy in Flex Console using hosted microcopy assets. The
+built-in microcopy are merged with the hosted microcopy in the template,
+so you can use both ways of managing microcopy. Read more about how to
 [modify built-in microcopy in FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/)
 and
 [how hosted microcopy work in the FTW templates](/ftw/hosted-microcopy/).
@@ -58,7 +57,7 @@ guide.
 ## Other cases: labels and countries
 
 There are few other cases where we haven't added microcopy directly to
-the translation files.
+the microcopy files.
 
 Labels for filters (e.g. _categories_ and _amenities_ in FTW-daily) can
 be found in _src/marketplace-custom-config.js._ By default,

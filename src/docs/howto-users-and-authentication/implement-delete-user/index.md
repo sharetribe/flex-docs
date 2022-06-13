@@ -171,7 +171,7 @@ export const ACCOUNT_SETTINGS_PAGES = [
       path: '/terms-of-service',
 ```
 
-Finally, add the necessary translation rows into en.json
+Finally, add the necessary microcopy rows into en.json
 
 ```shell
 └── src
@@ -293,7 +293,7 @@ You still need to add some microcopy related to the form.
 ```
 
 The DeleteAccountForm template file has validations for password length
-and requirements, so those validation error messages require translation
+and requirements, so those validation error messages require microcopy
 strings. The file also has the capability to send a password reset link
 to the user if they have forgotten their password.
 

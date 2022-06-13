@@ -214,7 +214,7 @@ The error message, when creating a new listing
 
 ![EditListingPricingForm: validation for minimum price](./minimum-price.png)
 
-> **Note**: copy-text, "_euros_", come from translation file
+> **Note**: copy-text, "_euros_", comes from microcopy file
 > (_en.json_):<br/>
 >
 > ```

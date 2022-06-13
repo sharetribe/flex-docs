@@ -307,7 +307,7 @@ const cleaningFeeLabel = intl.formatMessage(
 );
 ```
 
-We will also add new translation key _BookingDatesForm.cleaningFeeLabel_
+We will also add new microcopy key _BookingDatesForm.cleaningFeeLabel_
 to **_en.json_** file where we can use **_fee_** variable to show the
 price.
 

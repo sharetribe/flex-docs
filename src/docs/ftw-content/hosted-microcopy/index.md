@@ -10,8 +10,8 @@ published: true
 ---
 
 Starting from 2022-05, FTW template microcopy can be managed both in the
-built-in translation files and in Flex Console. This article describes
-how the FTW template uses the hosted microcopy and merges it with the
+built-in microcopy files and in Flex Console. This article describes how
+the FTW template uses the hosted microcopy and merges it with the
 built-in microcopy
 
 _**Note:** If you want to implement this feature into your pre-v8.5

@@ -15,9 +15,9 @@ there are quite many components and pages that need to change the
 copy-texts.
 
 The easiest way to modify the copy texts is through Flex Console, in
-Build > Content. This page helps you modify what in Flex is known as _microcopy_ –
-button labels, help texts, and other small messages that help your user
-find their way around the marketplace.
+Build > Content. This page helps you modify what in Flex is known as
+_microcopy_ – button labels, help texts, and other small messages that
+help your user find their way around the marketplace.
 
 ![Modify marketplace texts](./microcopy_start.png)
 
@@ -31,15 +31,15 @@ modifications in the PR for
 In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is available in v9.2.
 </extrainfo>
 
-When you first start building your marketplace, the JSON field in
-the Microcopy section is empty, and all microcopy comes from built-in
+When you first start building your marketplace, the JSON field in the
+Microcopy section is empty, and all microcopy comes from built-in
 microcopy files in the template. (We refer to these texts as microcopy,
 but in the template they are in the _translations_ folder. In addition
 to the default _en.json_ file, there are other languages available,
 which is why the folder is titled _translations_.)
 
-In the Microcopy section, you can see links that lead to the
-microcopy folders for each FTW template repository, if you want to
+In the Microcopy section, you can see links that lead to the microcopy
+folders for each FTW template repository, if you want to
 [copy the relevant microcopy to Flex Console](/concepts/microcopy/#how-microcopy-are-handled-in-flex).
 In this tutorial, we will not copy the full texts – instead, we will
 enter only the microcopy we want to modify.
@@ -69,7 +69,7 @@ In this tutorial, we change the microcopy of Hero component, but we have
 another document that dives deeper into this topic:
 [How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/)
 
-## Change the microcopy for Hero component
+## Change the microcopy for Topbar component
 
 The content of microcopy file has a format, where the "key" contains a
 dot notation:<br />
@@ -86,41 +86,43 @@ The latter option becomes easier if you use browser extension: **React
 Developer Tools**.<br /> Here's a link to
 [Chrome extension](https://chrome.google.com/webstore/search/React%20Developer%20Tools?hl=en).
 
-![Hero title selected with React Developer Tools](./react_devtools_microcopy.png)
+![Topbar component selected with React Developer Tools](./react_devtools_microcopy.png)
 
-In the screenshot, the highlighted text (listing creation link) comes from a component
-called **FormattedMessage**. This is a component from
+In the screenshot, the highlighted text (listing creation link) comes
+from a component called **FormattedMessage**. This is a component from
 [React Intl](https://github.com/formatjs/react-intl) library which FTW
-templates use to embed microcopy messages to correct microcopy keys. If you
-check the **props** section on the _Components_ tab of Web Inspector
+templates use to embed microcopy messages to correct microcopy keys. If
+you check the **props** section on the _Components_ tab of Web Inspector
 (when React Developer Tools is installed), you see a row:
 `id: "TopbarDesktop.createListing"`.
 
 So, the microcopy message can be found from _en.json_ file under the
-microcopy key: _TopbarDesktop.createListing_. There is also another microcopy
-message that TopbarDesktop component uses. Let's change all of them:
+microcopy key: _TopbarDesktop.createListing_. There are also a few other
+messages you can see in the top bar without signing in – some in the
+_TopbarDesktop_ component and one in _TopbarSearchForm_. Let's change
+all of them:
 
 ```json
 {
-  "SectionHero.browseButton": "Browse cottages",
-  "SectionHero.subTitle": "Book a cottage and take a break from busy city life",
-  "SectionHero.title": "Choose Cottage Days"
+  "TopbarDesktop.createListing": "+ Add your cottage",
+  "TopbarDesktop.login": "Log back in",
+  "TopbarDesktop.signup": "Create an account",
+  "TopbarSearchForm.placeholder": "Search cottages..."
 }
 ```
 
 Copy and paste the above rows, complete with the curly brackets, to the
-Marketplace texts JSON field.
+Microcopy JSON field.
 
-![Modified SectionHero microcopy in Console](./tutorial_translations.png)
+![Modified Topbar microcopy in Console](./microcopy_editor_updates.png)
 
-When you save the file, you should soon see the changes in the hero
-section on the landing page:
+When you save the file, you should soon see the changes in the top bar
+on the search page:
 
-![Hero section with updated microcopy](./hero-with-updated-translations.png)
+![Topbar with updated microcopy](./updated_topbar_microcopy.png)
 
-To get more insight into translation syntax, different language files,
-and localization of dates and money values, you should check the
-article:
+To get more insight into microcopy syntax, different language files, and
+localization of dates and money values, you should check the article:
 [How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/).
 
 To learn more about how the hosted microcopy work in FTW templates, read

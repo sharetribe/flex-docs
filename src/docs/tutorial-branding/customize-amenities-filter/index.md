@@ -68,7 +68,7 @@ search page. In the config section, you can find `options`:
 
     // "key" is the option you see in Flex Console.
     // "label" is set here for this web app's UI only.
-    // Note: label is not added through the translation files
+    // Note: label is not added through the microcopy files
     // to make filter customizations a bit easier.
     options: [
       {
