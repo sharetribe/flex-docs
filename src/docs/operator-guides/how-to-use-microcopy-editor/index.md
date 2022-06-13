@@ -138,7 +138,11 @@ the same place it resided in the Template. Click “src” folder→ click
 “translations” folder→ open “en.json” file→ copy content. Then paste the
 data into the Console Microcopy editor.
 
-TODO add video microcopyeditor
+<video>
+    <source src='./microcopyeditor.mp4' type='video/mp4'>
+    <source src='./microcopyeditor.webm' type='video/webm'>
+    <source src='./microcopyeditor.ogv' type='video/ogg'>
+</video>
 
 If the language of your choice is not available, you can take one of
 these default files as a basis and translate your marketplace by
