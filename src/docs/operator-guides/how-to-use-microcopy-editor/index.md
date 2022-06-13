@@ -1,5 +1,5 @@
 ---
-title: How to use the microcopy editor
+title: How to use the Microcopy editor
 slug: how-to-use-microcopy-editor
 updated: 2022-06-13
 category: operator-guides
