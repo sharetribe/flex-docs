@@ -138,11 +138,7 @@ the same place it resided in the Template. Click “src” folder→ click
 “translations” folder→ open “en.json” file→ copy content. Then paste the
 data into the Console Microcopy editor.
 
-<video>
-    <source src='./microcopyeditor.mp4' type='video/mp4'>
-    <source src='./microcopyeditor.webm' type='video/webm'>
-    <source src='./microcopyeditor.ogv' type='video/ogg'>
-</video>
+TODO add video microcopyeditor
 
 If the language of your choice is not available, you can take one of
 these default files as a basis and translate your marketplace by
@@ -210,11 +206,7 @@ way to find the copy-texts that need changing. Press “CMD+F” on a Mac or
 marketplace in the translation file you are editing in the Microcopy
 editor.
 
-<video>
-    <source src='./changeTexts.mp4' type='video/mp4'>
-    <source src='./changeTexts.webm' type='video/webm'>
-    <source src='./changeTexts.ogv' type='video/ogg'>
-</video>
+todo add video changeTexts
 
 You can also inspect your marketplace application and learn the name and
 location of its different keys. This is a more advanced technique
