@@ -196,5 +196,5 @@ to check the philosophy of how the existing components are styled.
 
 While you are styling components, you also need to change some
 copy-texts in them. In the next article, we'll change the copy-texts of
-Hero component.<br />
+Topbar component.<br />
 [› Go to the next article](/tutorial/working-with-microcopy/)

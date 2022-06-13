@@ -15,9 +15,11 @@ there are quite many components and pages that need to change the
 copy-texts.
 
 The easiest way to modify the copy texts is through Flex Console, in
-Build > Content.
+Build > Content. This page helps you modify what in Flex is known as _microcopy_ –
+button labels, help texts, and other small messages that help your user
+find their way around the marketplace.
 
-![Modify marketplace texts](./translation_start.png)
+![Modify marketplace texts](./microcopy_start.png)
 
 _**Note:** Hosted assets are available in Flex and the FTW templates
 starting from version v8.5. If you have an earlier version and want to
@@ -30,13 +32,13 @@ In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is ava
 </extrainfo>
 
 When you first start building your marketplace, the JSON field in
-Marketplace texts is empty, and all marketplace texts come from built-in
-microcopy files in the template. (We refer to copy-text as microcopy,
+the Microcopy section is empty, and all microcopy comes from built-in
+microcopy files in the template. (We refer to these texts as microcopy,
 but in the template they are in the _translations_ folder. In addition
 to the default _en.json_ file, there are other languages available,
 which is why the folder is titled _translations_.)
 
-In the Marketplace texts section, you can see links that lead to the
+In the Microcopy section, you can see links that lead to the
 microcopy folders for each FTW template repository, if you want to
 [copy the relevant microcopy to Flex Console](/concepts/microcopy/#how-microcopy-are-handled-in-flex).
 In this tutorial, we will not copy the full texts – instead, we will
@@ -71,32 +73,32 @@ another document that dives deeper into this topic:
 
 The content of microcopy file has a format, where the "key" contains a
 dot notation:<br />
-_`"<ComponentName>.<translationKey>": "<translation>"`_
+_`"<ComponentName>.<microcopyKey>": "<microcopyMessage>"`_
 
-So, there are a couple of ways to find the correct translation for UI
+So, there are a couple of ways to find the correct microcopy key for UI
 components:
 
-- You could search for a translation text in the translation file
+- You could search for a microcopy message in the microcopy file
 - You could check the name of the component and search for the component
-  name in the translation file.
+  name in the microcopy file.
 
 The latter option becomes easier if you use browser extension: **React
 Developer Tools**.<br /> Here's a link to
 [Chrome extension](https://chrome.google.com/webstore/search/React%20Developer%20Tools?hl=en).
 
-![Hero title selected with React Developer Tools](./react-devtools.png)
+![Hero title selected with React Developer Tools](./react_devtools_microcopy.png)
 
-In the screenshot, the highlighted text (title) comes from a component
+In the screenshot, the highlighted text (listing creation link) comes from a component
 called **FormattedMessage**. This is a component from
 [React Intl](https://github.com/formatjs/react-intl) library which FTW
-templates use to embed microcopy to correct translation keys. If you
+templates use to embed microcopy messages to correct microcopy keys. If you
 check the **props** section on the _Components_ tab of Web Inspector
 (when React Developer Tools is installed), you see a row:
-`id: "SectionHero.title"`.
+`id: "TopbarDesktop.createListing"`.
 
-So, the translation can be found from _en.json_ file under the
-translation key: _SectionHero.title_. There are also 2 other microcopy
-that SectionHero component uses. Let's change all of them:
+So, the microcopy message can be found from _en.json_ file under the
+microcopy key: _TopbarDesktop.createListing_. There is also another microcopy
+message that TopbarDesktop component uses. Let's change all of them:
 
 ```json
 {
