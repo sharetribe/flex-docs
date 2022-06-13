@@ -210,7 +210,12 @@ way to find the copy-texts that need changing. Press “CMD+F” on a Mac or
 marketplace in the translation file you are editing in the Microcopy
 editor.
 
-todo add video changeTexts
+<video>
+    <source src='./changeTexts.mp4' type='video/mp4'>
+    <source src='./changeTexts.webm' type='video/webm'>
+    <source src='./changeTexts.ogv' type='video/ogg'>
+</video>
+
 
 You can also inspect your marketplace application and learn the name and
 location of its different keys. This is a more advanced technique
