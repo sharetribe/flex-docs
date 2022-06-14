@@ -1,7 +1,7 @@
 ---
 title: Microcopy in Flex
 slug: microcopy
-updated: 2022-05-16
+updated: 2022-06-14
 category: concepts-development
 ingress:
   This article introduces microcopy in Flex and how it is modified and
@@ -59,10 +59,12 @@ With Console-editable microcopy, Flex introduces a concept of
 marketplace content and configurations using JSON files without needing
 to include the actual content in the client application codebase.
 
-For the microcopy version being edited in Flex Console, the asset in
-question is `content/translations.json`. In other words, Flex Console
+For the microcopy file version being edited in Flex Console, the asset
+in question is `content/translations.json`. In other words, Flex Console
 has a dedicated view – "Build" > "Content" – for modifying the
-`content/translations.json` asset.
+`content/translations.json` asset. The asset refers to translations
+because the language-specific microcopy files allow the marketplace to
+fairly easily be translated to languages other than English.
 
 ![Content view for editing microcopy](./microcopy_start.png)
 
@@ -74,7 +76,7 @@ file.
 ![Add microcopy key-value pairs](./microcopy_console.png)
 
 When the asset has been created, you will need to fetch the microcopy to
-the client application. microcopy are fetched through Asset Delivery API
+the client application. Microcopy is fetched through Asset Delivery API
 in JSON format. Assets can be retrieved by the latest version, or by a
 specific version. Read more:
 
@@ -120,7 +122,7 @@ string.
 }
 ```
 
-Using the microcopy then requires that the code passes parameter
+Using the microcopy message then requires that the code passes parameter
 `listingTitle` to the element that renders the value. The
 `{ listingTitle }` parameter will then be replaced with whatever the
 listing's title is.
@@ -138,7 +140,7 @@ listing's title is.
 
 Do note that even if the microcopy message uses a simple argument, you
 can choose to not use it. For instance, you could replace the microcopy
-phrase in the previous example with
+message in the previous example with
 `"ManageListingCard.pendingApproval": "This listing is pending admin approval and can't be booked."`.
 However, if you later decide you do want to use the title, it is
 recommended to double check the original microcopy file in your client
@@ -172,7 +174,7 @@ When you use plural in the microcopy string, you will need to specify
 />
 ```
 
-![Microcopy phrase with pluralization in UI](./microcopy_UI_plural.png)
+![Microcopy message with pluralization in UI](./microcopy_UI_plural.png)
 
 Since different languages have different pluralization rules,
 pluralization is defined per language. You can see the full list of
@@ -184,7 +186,7 @@ pluralization arguments (`zero`, `one`, `two`, `few` etc.) in the
 In addition to pluralization options, you can build logic to the
 microcopy strings using
 [select formatting](https://formatjs.io/docs/core-concepts/icu-syntax/#select-format).
-The current FTW template microcopy do not have an existing example of
+The current FTW template microcopy does not have an existing example of
 this pattern, however you can of course modify your code to include this
 formatting as well.
 
@@ -222,10 +224,11 @@ options you will encounter that require different microcopy strings.
 
 ## Can I have a multilanguage marketplace?
 
-Having several microcopy files enables using a single application for
-multiple languages. However, editing microcopy in Console only supports
-one language at a time, so you will need to modify any other languages
-using bundled microcopy files within your client application.
+Having several language-specific microcopy files enables using a single
+application for multiple languages. However, editing microcopy in
+Console only supports one language at a time, so you will need to modify
+any other languages using bundled microcopy files within your client
+application.
 
 Having multiple languages in a single marketplace may, however, cause a
 problem in terms of user-generated content. Even though listings and

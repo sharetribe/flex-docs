@@ -1,7 +1,7 @@
 ---
 title: Hosted microcopy with Asset Delivery API
 slug: hosted-microcopy
-updated: 2022-05-16
+updated: 2022-06-14
 category: ftw-content
 ingress:
   This article describes how hosted microcopy work in Flex Template for
@@ -39,7 +39,10 @@ hosted asset. That way, the UI can still render something meaningful for
 the parts of the page that the operator has not modified.
 
 FTW templates have specified hosted microcopy as part of the app-wide
-configuration in _src/config.js_
+configuration in _src/config.js_. This hosted microcopy lives in a file
+called `content/translations.js`, since language-specific microcopy
+files make it fairly easy to translate the FTW template to languages
+other than the default English.
 
 ```js
 // CDN assets for the app. Configurable through Flex Console.
@@ -89,9 +92,9 @@ sdk.assetByVersion({
 In addition to fetching assets by version, you can fetch them by a
 specific alias instead of a version. Currently, microcopy can be fetched
 with the alias _latest_, which returns the most recently updated version
-of the microcopy. The response also contains the version information for
-the most recent asset, so that subsequent fetches can be done based on
-asset version.
+of the microcopy file. The response also contains the version
+information for the most recent asset, so that subsequent fetches can be
+done based on asset version.
 
 When fetching by alias, the cache time is a few seconds for development
 environment and up to 5 minutes for production environment. In other
@@ -196,7 +199,7 @@ environment or **_yarn run dev-server_** on your local machine.
    />
    ```
 
-- Hosted microcopy are then merged with the default microcopy in
+- Hosted microcopy is then merged with the default microcopy in
   _ServerApp_ component.
   ```jsx
   export const ServerApp = props => {

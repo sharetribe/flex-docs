@@ -1,7 +1,7 @@
 ---
 title: Understanding Console
 slug: console-overview
-updated: 2022-05-16
+updated: 2022-06-14
 category: concepts-development
 ingress: This article will help you understand how to navigate Console.
 published: true
@@ -98,9 +98,9 @@ users will be sent from.
 
 **Content** is where you can modify your marketplace microcopy. You can
 add your existing microcopy file content from your Flex Template, or
-copy and paste the default microcopy from the featured links, and modify
-the texts to suit your marketplace. Read more about
-[modifying microcopy in Console](/concepts/microcopy/).
+copy and paste the default language-specific microcopy file from the
+featured links, and modify the texts to suit your marketplace. Read more
+about [modifying microcopy in Console](/concepts/microcopy/).
 
 **Transaction processes** is quite self-explanatory: it shows the
 different kinds of transaction processes your marketplace has. You can

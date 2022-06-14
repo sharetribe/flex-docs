@@ -1,7 +1,7 @@
 ---
 title: How to use the microcopy editor
 slug: how-to-use-microcopy-editor
-updated: 2022-06-13
+updated: 2022-06-14
 category: operator-guides
 ingress:
   The Microcopy editor lets you modify your marketplace’s microcopy in
@@ -72,8 +72,8 @@ _When you first start building your marketplace, the JSON field in
 Microcopy is empty, and all microcopy comes from built-in microcopy
 files in the template. (We refer to these texts as microcopy, but in the
 template they are in the **translations** folder. In addition to the
-default \_en.json_ file, there are other languages available, which is
-why the folder is titled **translations**.)\_
+default **en.json** file, there are other languages available, which is
+why the folder is titled **translations**.)_
 
 Next, load the Saunatime microcopy into the editor. You can follow
 [the same steps](#2-load-your-microcopy-into-the-editor) you would
@@ -122,11 +122,12 @@ After you and your developer set up a Flex Template for development, you
 can use the editor to start modifying your microcopy.
 
 First, you must load the default microcopy into the editor. You can do
-this by copy and pasting the microcopy file which contains all the
-microcopy in your marketplace. In the template, we refer to it as a
-“translation” file because this file is used as the basis for
-translating your marketplace into another language There is a Spanish,
-French, German, and English version of this file available to start.
+this by copy and pasting the language-specific microcopy file that
+contains all the microcopy in your marketplace. In the marketplace
+template, we refer to it as a “translation” file because this file is
+used as the basis for translating your marketplace into another language
+There is a Spanish, French, German, and English version of this file
+available to start.
 
 You should use (copy and paste) the microcopy file directly from your
 marketplace’s repository, or database where your code is being modified
@@ -134,10 +135,10 @@ by a developer. If you’re unsure where your repository is or how to
 navigate it, you can request that they add the correct file to the
 editor for you or that they share it with you.
 
-In your repository, you will most likely find the microcopy file in the
-same place it resided in the Template. Click “src” folder→ click
-“translations” folder→ open “en.json” file→ copy content. Then paste the
-data into the Console Microcopy editor.
+In your repository, you will most likely find the language-specific
+microcopy file in the same place it resided in the Template. Click “src”
+folder→ click “translations” folder→ open “en.json” file→ copy content.
+Then paste the data into the Console Microcopy editor.
 
 <video>
     <source src='./microcopyeditor.mp4' type='video/mp4'>

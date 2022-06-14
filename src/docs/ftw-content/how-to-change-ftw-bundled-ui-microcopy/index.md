@@ -1,7 +1,7 @@
 ---
 title: How to change FTW bundled microcopy
 slug: how-to-change-ftw-bundled-microcopy
-updated: 2022-05-16
+updated: 2022-06-14
 category: ftw-content
 ingress:
   This guide describes how to change the bundled microcopy in Flex
@@ -14,9 +14,8 @@ Supported languages are English, French and Spanish, English being used
 by default. For information about changing the language, see the
 [Changing the language](/ftw/how-to-change-ftw-language) article.
 
-We are using the [React Intl](https://github.com/yahoo/react-intl)
-library to represent UI microcopy and to format dates, numbers, and
-money values.
+We use the [React Intl](https://github.com/yahoo/react-intl) library to
+represent UI microcopy and to format dates, numbers, and money values.
 
 _**Note:** Starting in 2022-05, FTW template microcopy can also be
 modified in Flex Console. If you want to implement this feature into
@@ -34,10 +33,10 @@ In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is ava
 
 ## The microcopy file
 
-All the bundled text microcopy can be found in the
-[src/translations/en.json](https://github.com/sharetribe/flex-template-web/blob/master/src/translations/en.json)
+All the bundled microcopy can be found in the
+[src/translations/en.json](https://github.com/sharetribe/ftw-daily/blob/master/src/translations/en.json)
 file. The microcopy data is formatted as one JSON object with all the
-microcopy messages as properties.
+microcopy key-value pairs as properties.
 
 The key - value syntax is as follows:
 
@@ -211,30 +210,3 @@ You can also use the message with the `FormatMessage` component
 
 More formatting examples can be found from the
 [FormatJS message syntax documentation](https://formatjs.io/docs/core-concepts/icu-syntax/).
-
-## Managing microcopy
-
-In case you have added a new language microcopy file and are pulling
-microcopy updates to `en.json` from the upstream repo there is a command
-line tool to help keeping the microcopy files in sync. Running the
-following command in the project root
-
-```bash
-yarn run translate
-```
-
-will start a command line application:
-
-![Microcopy CLI](./translations-cli.png)
-
-The command line application can be used to match a microcopy file
-against the English microcopy file. If your new microcopy file follows
-the `<LANG CODE>.json` naming, the CLI will pick it up automatically. In
-order to improve readability, you can add the language name to the
-`TARGET_LANG_NAMES` map in `scripts/translations.js` if it is not yet in
-there and the CLI will use the correct name for your language instead of
-the language code when prompting about microcopy.
-
-In case you wish to use something else than English as the source
-language, modify the `SOURCE_LANG` object in `scripts/translations.js`
-to match your needs.

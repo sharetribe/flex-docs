@@ -1,7 +1,7 @@
 ---
 title: How to change FTW microcopy language
 slug: how-to-change-ftw-language
-updated: 2022-05-16
+updated: 2022-06-14
 category: ftw-content
 ingress:
   This guide describes how to change the language used in the Flex
@@ -10,8 +10,8 @@ published: true
 ---
 
 If you want the template to use a language that is not supported by
-default, a new microcopy file needs to be added and the messages in it
-need to be translated:
+default, a new language-specific microcopy file needs to be added and
+the messages in it need to be translated:
 
 ## Creating a new microcopy file
 
@@ -22,14 +22,14 @@ need to be translated:
    language.
 
 > Note: we already have a few other language files available in
-> [src/translations/](https://github.com/sharetribe/flex-template-web/tree/master/src/translations)
+> [src/translations/](https://github.com/sharetribe/ftw-daily/tree/master/src/translations)
 > directory for you to start customizing microcopy.
 
 Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to manage
 your marketplace texts, it is still important to have a built-in
-microcopy file in FTW as well, so that the application can show
-meaningful messages for any keys missing from the Flex Console microcopy
-asset.
+language-specific microcopy file in FTW as well, so that the application
+can show meaningful messages for any keys missing from the Flex Console
+microcopy asset.
 
 ## Changing the microcopy used in FTW
 
@@ -71,7 +71,7 @@ tests are language agnostic as they use microcopy keys as values.
 However, when adding new microcopy you can end up with missing microcopy
 keys in tests. To change the microcopy file used in tests change the
 `messages` variable in
-[src/util/test-helpers.js](https://github.com/sharetribe/flex-template-web/blob/master/src/util/test-helpers.js)
+[src/util/test-helpers.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/test-helpers.js)
 to match your language in use, for example:
 
 ```js
