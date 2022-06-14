@@ -1,7 +1,7 @@
 ---
 title: How to use the Microcopy editor
 slug: how-to-use-microcopy-editor
-updated: 2022-06-13
+updated: 2022-06-14
 category: operator-guides
 ingress:
   The Microcopy editor lets you modify your marketplace’s microcopy in
@@ -69,14 +69,15 @@ section. The Microcopy editor is here.
 ![Microcopy editor](./microcopy_editor.png)
 
 _When you first start building your marketplace, the JSON field in
-Marketplace texts is empty, and all microcopy comes from built-in
-translation files in the template. (We refer to copy-text as
-translations, since there could be different translation files used
-instead of the default one: en.json.)_
+Microcopy is empty, and all microcopy comes from built-in microcopy
+files in the template. (We refer to these texts as microcopy, but in the
+template they are in the **translations** folder. In addition to the
+default **en.json** file, there are other languages available, which is
+why the folder is titled **translations**.)_
 
-Next, load the Saunatime microcopy into the editor. You can follow [the
-same steps](#2-load-your-microcopy-into-the-editor) you would eventually use
-to modify your own marketplace’s microcopy.
+Next, load the Saunatime microcopy into the editor. You can follow
+[the same steps](#2-load-your-microcopy-into-the-editor) you would
+eventually use to modify your own marketplace’s microcopy.
 
 Select the “Daily-bookings / Saunatime” link, which takes you to the
 Saunatime code repository. Click “src” folder→ click “translations”
@@ -121,22 +122,23 @@ After you and your developer set up a Flex Template for development, you
 can use the editor to start modifying your microcopy.
 
 First, you must load the default microcopy into the editor. You can do
-this by copy and pasting the translation file which contains all the
-microcopy in your marketplace. It is called a “translation” file because
-this file is used as the basis for translating your marketplace into
-another language There is a Spanish, French, German, and English version
-of this file available to start.
+this by copy and pasting the language-specific microcopy file that
+contains all the microcopy in your marketplace. In the marketplace
+template, we refer to it as a “translation” file because this file is
+used as the basis for translating your marketplace into another language
+There is a Spanish, French, German, and English version of this file
+available to start.
 
-You should use (copy and paste) the translation file directly from your
+You should use (copy and paste) the microcopy file directly from your
 marketplace’s repository, or database where your code is being modified
 by a developer. If you’re unsure where your repository is or how to
 navigate it, you can request that they add the correct file to the
 editor for you or that they share it with you.
 
-In your repository, you will most likely find the translation file in
-the same place it resided in the Template. Click “src” folder→ click
-“translations” folder→ open “en.json” file→ copy content. Then paste the
-data into the Console Microcopy editor.
+In your repository, you will most likely find the language-specific
+microcopy file in the same place it resided in the Template. Click “src”
+folder→ click “translations” folder→ open “en.json” file→ copy content.
+Then paste the data into the Console Microcopy editor.
 
 <video>
     <source src='./microcopyeditor.mp4' type='video/mp4'>
@@ -152,7 +154,7 @@ texts.
 
 ![Microcopy editor with data added](./microcopy_data.png)
 
-_The Microcopy editor loaded with the en.json translation file. We’re
+_The Microcopy editor loaded with the en.json microcopy file. We’re
 ready to roll!_
 
 Here is a brief description of the file you are looking at:
@@ -180,10 +182,10 @@ Here is a brief description of the file you are looking at:
   incorporate contextual variables like a listing title or booking
   length into your copy-texts. You can learn more about these advanced
   techniques
-  [here](/concepts/translations/#translation-format-for-editing-translations-in-console).
+  [here](/concepts/microcopy/#format-for-editing-microcopy-in-console).
 - You can only modify values in the editor. You cannot modify keys. Keys
-  must be modified by [modifying the code of your marketplace
-  application](#4-how-to-add-or-remove-pieces-of-microcopy).
+  must be modified by
+  [modifying the code of your marketplace application](#4-how-to-add-or-remove-pieces-of-microcopy).
 
 ![Example of a microcopy key-value pair](./microcopy_key_value.png)
 
@@ -193,10 +195,10 @@ key-value pair, followed by a line break._
 
 ### 3. Modify frequently used pieces of microcopy
 
-With your marketplace’s translation file copied into the editor, you can
+With your marketplace’s microcopy file copied into the editor, you can
 use the editor to modify your marketplace’s copy-texts.
 
-To start, we suggest going through the translation file in the editor.
+To start, we suggest going through the microcopy file in the editor.
 Look at the values and see how they compare to the terminology you
 decided to use in step 1. The most frequently modified pieces of
 microcopy use language specific to each Template’s imagined example. For
@@ -207,7 +209,7 @@ teachers.”
 Using the search functionality in the Microcopy editor is the easiest
 way to find the copy-texts that need changing. Press “CMD+F” on a Mac or
 “Ctrl+F” on a Windows computer to search for specific phrases from your
-marketplace in the translation file you are editing in the Microcopy
+marketplace in the microcopy file you are editing in the Microcopy
 editor.
 
 <video>
@@ -216,12 +218,11 @@ editor.
     <source src='./changeTexts.ogv' type='video/ogg'>
 </video>
 
-
 You can also inspect your marketplace application and learn the name and
 location of its different keys. This is a more advanced technique
 requiring installation of developer tooling in your browser. You can
 learn more about it in
-[our developer documentation](/tutorial/working-with-translations/#change-the-translations-for-hero-component).
+[our developer documentation](/tutorial/working-with-microcopy/#change-the-microcopy-for-topbar-component).
 
 As you work, remember to save your changes frequently. Everytime you
 save, any changed copy-texts will be uploaded to your marketplace.
@@ -241,9 +242,9 @@ Adding new microcopy happens with your developer, who must first add the
 corresponding new key directly to your marketplace code. Your developer
 will code the element, situation, or place where the microcopy will
 exist (like a new button, for example), define its key, and then add it
-to the translation file edited by the Microcopy editor. Once the key
-exists in the translation file, you can copy the new key-value pair into
-the Microcopy editor.
+to the microcopy file edited by the Microcopy editor. Once the key
+exists in the template microcopy file, you can copy the new key-value
+pair into the Microcopy editor.
 
 Supporting multiple languages in your marketplace is a special case of
 adding microcopy. Because the Microcopy editor only works with a single
@@ -306,5 +307,5 @@ Template, or to change any additional microcopy added during building
 your site.
 
 To learn more about microcopy in Flex through technical details, consult
-[our guide](/concepts/translations/) on how Microcopy works in the
-Template code.
+[our guide](/concepts/microcopy/) on how Microcopy works in the Template
+code.

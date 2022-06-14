@@ -1,27 +1,33 @@
 ---
-title: Translations in Flex
-slug: translations
-updated: 2022-05-16
+title: Microcopy in Flex
+slug: microcopy
+updated: 2022-06-14
 category: concepts-development
 ingress:
-  This article introduces translations in Flex and how they are modified
-  and edited in Flex Console
+  This article introduces microcopy in Flex and how it is modified and
+  edited in Flex Console
 published: true
 ---
 
-In the FTW templates, user-facing content is not written directly into
-the source code. Instead, the source code uses
+Microcopy refers to all the small pieces of text in your marketplace's
+dynamic pages – button labels, error messages, and help texts are all
+examples of microcopy. Modifying microcopy to match your marketplace's
+theme and tone of voice is a key task in customizing any marketplace.
+[Read more about marketplace microcopy](/operator-guides).
+
+In the FTW templates, microcopy is not written directly into the source
+code. Instead, the source code uses
 [React Intl message formatting](https://formatjs.io/docs/intl#formatmessage)
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
-each key in their language. The end user only sees the translator's
+each key in their language. The end user only sees the content creator's
 words, not the key itself, unless the key is missing a value in the
 selected language.
 
 The key - value syntax is as follows:
 
 ```json
-"<component name>.<translation key>": "<translation>"
+"<component name>.<microcopy key>": "<microcopy>"
 ```
 
 For example:
@@ -39,45 +45,47 @@ changed even if the value ends up changing.
 ```
 
 Starting from 2022-05, marketplace operators can modify the wording of
-the translations in Flex Console. This means that operators can make
-changes to the marketplace texts without the need for code changes. In
-addition, the same translations can now be used from several different
-client applications, making it easier to make centralized changes.
+microcopy in Flex Console. This means that operators can make changes to
+the marketplace texts without the need for code changes. In addition,
+the same microcopy can now be used from several different client
+applications, making it easier to make centralized changes.
 
-![Simple Console translation](./translation_simple.png)
+![Simple Console microcopy](./microcopy_simple.png)
 
-## How translations are handled in Flex
+## How microcopy is handled in Flex
 
-With Console-editable translations, Flex introduces a concept of
+With Console-editable microcopy, Flex introduces a concept of
 [assets](/references/assets/). Assets provide a way to define
 marketplace content and configurations using JSON files without needing
 to include the actual content in the client application codebase.
 
-For the translation version being edited in Flex Console, the asset in
-question is `content/translations.json`. In other words, Flex Console
+For the microcopy file version being edited in Flex Console, the asset
+in question is `content/translations.json`. In other words, Flex Console
 has a dedicated view – "Build" > "Content" – for modifying the
-`content/translations.json` asset.
+`content/translations.json` asset. The asset refers to translations
+because the language-specific microcopy files allow the marketplace to
+fairly easily be translated to languages other than English.
 
-![Content view for editing translations](./translation_start.png)
+![Content view for editing microcopy](./microcopy_start.png)
 
-You can add one or more translation key-value pairs in JSON format into
-the Marketplace texts field. You can copy them from the linked
-transaction resources in the FTW templates, or your existing marketplace
-translation file.
+You can add one or more microcopy key-value pairs in JSON format into
+the Microcopy field. You can copy them from the linked microcopy
+resources in the FTW templates, or your existing marketplace microcopy
+file.
 
-![Add translation key-value pairs](./translation_edit.png)
+![Add microcopy key-value pairs](./microcopy_console.png)
 
-When the asset has been created, you will need to fetch the translations
-to the client application. Translations are fetched through Asset
-Delivery API in JSON format. Assets can be retrieved by the latest
-version, or by a specific version. Read more:
+When the asset has been created, you will need to fetch the microcopy to
+the client application. Microcopy is fetched through Asset Delivery API
+in JSON format. Assets can be retrieved by the latest version, or by a
+specific version. Read more:
 
 - [Marketplace assets](/references/assets/)
-- [Handling hosted asset translations in the FTW templates](/ftw/hosted-translations/)
+- [Handling hosted asset microcopy in the FTW templates](/ftw/hosted-microcopy/)
 
-## Translation format for editing translations in Console
+## Format for editing microcopy in Console
 
-A translation using the
+A piece of microcopy using the
 [React Intl formatMessage formatting](https://formatjs.io/docs/intl#formatmessage)
 can, at its simplest, consist of a phrase.
 
@@ -95,17 +103,17 @@ shows the value.
 <FormattedMessage id="ManageListingCard.editListing" />
 ```
 
-![Simple translation phrase in UI](./translations_UI_simple.png)
+![Simple microcopy phrase in UI](./microcopy_UI_simple.png)
 
 Read more about
-[using translations in the FTW templates](/ftw/how-to-change-ftw-bundled-translations/#using-the-translations).
+[using microcopy in the FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/#using-the-microcopy).
 
 ### Simple argument
 
 In addition, the format supports passing parameters as arguments to the
-translation string. Passing a
+microcopy string. Passing a
 [simple argument](https://formatjs.io/docs/core-concepts/icu-syntax/#simple-argument)
-allows showing context-specific information as a part of the translation
+allows showing context-specific information as a part of the microcopy
 string.
 
 ```json
@@ -114,7 +122,7 @@ string.
 }
 ```
 
-Using the translation then requires that the code passes parameter
+Using the microcopy message then requires that the code passes parameter
 `listingTitle` to the element that renders the value. The
 `{ listingTitle }` parameter will then be replaced with whatever the
 listing's title is.
@@ -128,19 +136,19 @@ listing's title is.
 />
 ```
 
-![Translation phrase with parameter in UI](./translations_UI_parameter.png)
+![Microcopy phrase with parameter in UI](./microcopy_UI_parameter.png)
 
-Do note that even if the translation message uses a simple argument, you
-can choose to not use it. For instance, you could replace the
-translation in the previous example with
+Do note that even if the microcopy message uses a simple argument, you
+can choose to not use it. For instance, you could replace the microcopy
+message in the previous example with
 `"ManageListingCard.pendingApproval": "This listing is pending admin approval and can't be booked."`.
 However, if you later decide you do want to use the title, it is
-recommended to double check the original translation file in your client
+recommended to double check the original microcopy file in your client
 application to see the names of the attributes available in the message.
 
 ### Pluralization
 
-One important factor in creating natural translations is handling
+One important factor in creating natural microcopy is handling
 pluralization in a text. The ICU format makes it possible to define
 different wordings for singular and plural options.
 
@@ -150,7 +158,7 @@ different wordings for singular and plural options.
 }
 ```
 
-When you use plural in the translation string, you will need to specify
+When you use plural in the microcopy string, you will need to specify
 
 - the variable determining which option to use (here: `count`)
 - the pattern we are following (here: `plural`)
@@ -166,7 +174,7 @@ When you use plural in the translation string, you will need to specify
 />
 ```
 
-![Translation phrase with pluralization in UI](./translations_UI_plural.png)
+![Microcopy message with pluralization in UI](./microcopy_UI_plural.png)
 
 Since different languages have different pluralization rules,
 pluralization is defined per language. You can see the full list of
@@ -176,14 +184,13 @@ pluralization arguments (`zero`, `one`, `two`, `few` etc.) in the
 ### Selection
 
 In addition to pluralization options, you can build logic to the
-translation strings using
+microcopy strings using
 [select formatting](https://formatjs.io/docs/core-concepts/icu-syntax/#select-format).
-The current FTW template translations do not have an existing example of
+The current FTW template microcopy does not have an existing example of
 this pattern, however you can of course modify your code to include this
 formatting as well.
 
-When you use `select` in the translation string, you will need to
-specify
+When you use `select` in the microcopy string, you will need to specify
 
 - the variable determining which option to use (here: `mode`)
 - the pattern we are following (here: `select`)
@@ -198,7 +205,7 @@ specify
 }
 ```
 
-You can then use the translation message in the code e.g. with the
+You can then use the microcopy message in the code e.g. with the
 `formatMessage` function:
 
 ```js
@@ -213,14 +220,14 @@ const description = intl.formatMessage(
 ```
 
 You can use select for cases where you have a predetermined list of
-options you will encounter that require different translation strings.
+options you will encounter that require different microcopy strings.
 
 ## Can I have a multilanguage marketplace?
 
-Having several translation files enables using a single application for
-multiple languages. However, editing translations in Console only
-supports one language at a time, so you will need to modify any other
-languages using bundled translation files within your client
+Having several language-specific microcopy files enables using a single
+application for multiple languages. However, editing microcopy in
+Console only supports one language at a time, so you will need to modify
+any other languages using bundled microcopy files within your client
 application.
 
 Having multiple languages in a single marketplace may, however, cause a

@@ -182,6 +182,12 @@
 
 /docs/sitemap.xml /docs/sitemap/sitemap-index.xml 
 
+# Redirects from the translations => microcopy change
+
+/docs/tutorial/working-with-translations/ /docs/tutorial/working-with-microcopy/
+/docs/ftw/how-to-change-ftw-bundled-translations/ /docs/ftw/how-to-change-ftw-bundled-microcopy/
+/docs/ftw/hosted-translations/ /docs/ftw/hosted-microcopy/
+
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
 /docs/*  /docs/404  404

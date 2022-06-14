@@ -184,7 +184,7 @@ to Stripe support before proceeding.
    and
    [bank account format](https://stripe.com/docs/connect/payouts#formats).
 
-2. Add new translation keys to translation file you are using (e.g.
+2. Add new microcopy keys to the microcopy file you are using (e.g.
    `translations/en.json`). Add at least
    `PayoutDetailsForm.countryNames.COUNTRYCODE` and
    `PayoutDetailsForm.companyTaxIdLabel.COUNTRYCODE` keys but there

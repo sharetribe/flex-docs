@@ -281,7 +281,7 @@ const bookingProcessAlias = 'cottagedays-daily-booking/release-1';
 ```
 
 In the same file, we need to also update variable: **bookingUnitType**.
-It defines some UI changes (mostly about translations) - i.e. is this
+It defines some UI changes (mostly about microcopy) - i.e. is this
 booking about _nights_, _days_, or some other _units_.
 
 ```js
@@ -396,15 +396,16 @@ shown on the transaction page.
             └── ActivityFeed.js
 ```
 
-The new transition needs to be _imported_ there and then a new
-translation should be added into **resolveTransitionMessage** function:
+The new transition needs to be _imported_ there and then a new microcopy
+key should be added into **resolveTransitionMessage** function:
 
 ```js
     case TRANSITION_DECLINE_BY_OPERATOR:
       return <FormattedMessage id="ActivityFeed.operatorDecline" />;
 ```
 
-We'll add the translation to _src/translations/en.json_ file:
+We'll add the microcopy key and value to _src/translations/en.json_
+file:
 
 ```json
 "ActivityFeed.operatorDecline": "The booking was cancelled.",

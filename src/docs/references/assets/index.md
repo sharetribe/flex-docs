@@ -26,9 +26,8 @@ Console.
 
 > **Note:** Assets are in early development. At present, Console allows
 > only limited ability to manage the content of a single asset - the
-> JSON document describing the
-> [translation strings](/concepts/translations/) for a client
-> application. Stay tuned for more later on!
+> JSON document describing the [microcopy strings](/concepts/microcopy/)
+> for a client application. Stay tuned for more later on!
 
 For example, a marketplace may have assets with the following assets:
 
@@ -41,9 +40,9 @@ For example, a marketplace may have assets with the following assets:
 
 where `config/client.json` could contain configuration data (for
 instance, UI colors, marketplace pricing settings, etc) and
-`content/translations.json` could contain string translation data for
-use in a marketplace client application (such as one based on one of the
-FTW templates).
+`content/translations.json` could contain string microcopy data to be
+used in a marketplace client application (such as one based on one of
+the FTW templates).
 
 ## Asset versioning
 
@@ -114,5 +113,5 @@ custom caching is being implemented.
 
 ## Further reading
 
-- [Editing client application translations](/concepts/translations/)
+- [Editing client application microcopy](/concepts/microcopy/)
 - [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
