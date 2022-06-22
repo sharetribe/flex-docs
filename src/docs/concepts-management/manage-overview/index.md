@@ -11,7 +11,7 @@ published: true
 ---
 
 The Manage section of Console is for the management of your
-marketplace’s day-to-day operations. 
+marketplace’s day-to-day operations.
 
 ## Management pages
 

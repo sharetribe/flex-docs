@@ -93,9 +93,9 @@ following style-rules to _SignupForm.module.css_:
 }
 ```
 
-### Update translations
+### Update microcopy
 
-Add the required translations to the en.json file.
+Add the required microcopy to the en.json file.
 
 ```shell
 └── src

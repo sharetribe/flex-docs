@@ -1,7 +1,7 @@
 ---
 title: Change search filters in FTW
 slug: change-search-filters-in-ftw
-updated: 2020-06-04
+updated: 2022-06-14
 category: how-to-search
 ingress:
   This guide describes how to change the search filters in Flex Template
@@ -146,10 +146,11 @@ There you need to add the capacity filter's configurations to the
 > cookbook article.
 
 In the above configuration, we defined filter's `id` and `label`. The
-label is not going through translations file (en.json), because we
-thought that having it here would make customizations easier. However,
-you could use `<FormattedMessage id="some.translation.key.here" />`
-component instead of plain string if you want.
+label is not modified through the microcopy file (e.g. _en.json_),
+because we thought that having it here would make customizations easier.
+However, you could use
+`<FormattedMessage id="some.microcopy.key.here" />` component instead of
+plain string if you want.
 
 `type` configuration refers to existing filter component. The current
 filters that can deal with extended data are: SelectSingleFilter, and

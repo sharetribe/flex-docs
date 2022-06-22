@@ -101,10 +101,10 @@ const amenityOptions = findOptionsForSelectFilter(
 > **Note**: _publicData_ is already spread out of
 > _currentListing.attributes_ on ListingPage.
 
-### Add translation
+### Add microcopy
 
-In addition, we need to add the new translation key
-(_"ListingPage.viewType"_) to translations:
+In addition, we need to add the new microcopy key
+(_"ListingPage.viewType"_) to microcopy:
 
 ```shell
 └── src
@@ -112,7 +112,7 @@ In addition, we need to add the new translation key
         └── en.json
 ```
 
-The translation we use contains a variable _"view"_.
+The microcopy message we use contains a variable _"view"_.
 
 ```json
   "ListingPage.viewType": "Cottage with {view}",

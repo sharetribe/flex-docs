@@ -39,9 +39,9 @@ file with your preferred text editor:
 ```
 
 Full list of configuration variables can be found here:
-[FTW environment variables](/ftw/ftw-env/). You can change
-any of these variables _locally_ by just editing the **.env** file. Then
-you need to restart the server by running `yarn run dev` again.
+[FTW environment variables](/ftw/ftw-env/). You can change any of these
+variables _locally_ by just editing the **.env** file. Then you need to
+restart the server by running `yarn run dev` again.
 
 <extrainfo title="What you should see inside .env file?">
 
@@ -214,7 +214,7 @@ The error message, when creating a new listing
 
 ![EditListingPricingForm: validation for minimum price](./minimum-price.png)
 
-> **Note**: copy-text, "_euros_", come from translation file
+> **Note**: copy-text, "_euros_", comes from microcopy file
 > (_en.json_):<br/>
 >
 > ```

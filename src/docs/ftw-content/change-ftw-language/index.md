@@ -1,7 +1,7 @@
 ---
-title: How to change FTW translation language
+title: How to change FTW microcopy language
 slug: how-to-change-ftw-language
-updated: 2022-05-16
+updated: 2022-06-14
 category: ftw-content
 ingress:
   This guide describes how to change the language used in the Flex
@@ -10,33 +10,33 @@ published: true
 ---
 
 If you want the template to use a language that is not supported by
-default, a new translation file needs to be added and the messages in it
-need to be translated:
+default, a new language-specific microcopy file needs to be added and
+the messages in it need to be translated:
 
-## Creating a new translation file
+## Creating a new microcopy file
 
-1. Copy the default `src/translations/en.json` English translations file
+1. Copy the default `src/translations/en.json` English microcopy file
    into some other file, for example `it.json` for Italian.
 
-2. Change the messages in the new translations file to the desired
+2. Change the messages in the new microcopy file to the desired
    language.
 
 > Note: we already have a few other language files available in
-> [src/translations/](https://github.com/sharetribe/flex-template-web/tree/master/src/translations)
-> directory for you to start customizing translations.
+> [src/translations/](https://github.com/sharetribe/ftw-daily/tree/master/src/translations)
+> directory for you to start customizing microcopy.
 
-Even if you use [hosted translations](/ftw/hosted-translations/) to
-manage your marketplace texts, it is still important to have a built-in
-translation file in FTW as well, so that the application can show
-meaningful messages for any keys missing from the Flex Console
-translation asset.
+Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to manage
+your marketplace texts, it is still important to have a built-in
+language-specific microcopy file in FTW as well, so that the application
+can show meaningful messages for any keys missing from the Flex Console
+microcopy asset.
 
-## Changing the translations used in FTW
+## Changing the microcopy used in FTW
 
-Once you have the translations file in place:
+Once you have the microcopy file in place:
 
 1. In `src/config.js`, change the `locale` variable value to match the
-   new locale (the name of the new translations file, without the
+   new locale (the name of the new microcopy file, without the
    extension), for example:
 
 ```js
@@ -63,15 +63,15 @@ import 'moment/locale/it';
 import messagesInLocale from './translations/it.json';
 ```
 
-## Changing the translation used in tests
+## Changing the microcopy used in tests
 
 Also, in case you will translate the application and develop it forward
-it is wise to change the translations file that the tests use. Normally
-tests are language agnostic as they use translation keys as values.
-However, when adding new translations you can end up with missing
-translation keys in tests. To change the translation file used in tests
-change the `messages` variable in
-[src/util/test-helpers.js](https://github.com/sharetribe/flex-template-web/blob/master/src/util/test-helpers.js)
+it is wise to change the microcopy file that the tests use. Normally
+tests are language agnostic as they use microcopy keys as values.
+However, when adding new microcopy you can end up with missing microcopy
+keys in tests. To change the microcopy file used in tests change the
+`messages` variable in
+[src/util/test-helpers.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/test-helpers.js)
 to match your language in use, for example:
 
 ```js
@@ -103,4 +103,4 @@ paths like `/fr/about`. In this case, it is useful to save the user's
 language preference to the extended data.
 
 Read more about having
-[a multilanguage marketplace on top of Flex](/concepts/translations/#can-i-have-a-multilanguage-marketplace).
+[a multilanguage marketplace on top of Flex](/concepts/microcopy/#can-i-have-a-multilanguage-marketplace).
