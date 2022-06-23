@@ -17,8 +17,8 @@ customized to fit your marketplace’s unique workflows and design.
 
 To learn more, check out the video below or read on. For more technical
 information on Sneakertime, check out
-[this article](https://www.sharetribe.com/docs/ftw/ftw-product/)
-in our developer documentation.
+[this article](https://www.sharetribe.com/docs/ftw/ftw-product/) in our
+developer documentation.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XUpxn_K4Mm8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

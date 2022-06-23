@@ -27,7 +27,7 @@ const sortingArrayTutorialBranding = [
   'first-edit',
   'change-image-assets',
   'change-logo',
-  'working-with-translations',
+  'working-with-microcopy',
   'configurations',
   'change-default-locations',
   'customize-amenities-filter',
@@ -104,11 +104,18 @@ const sortingArrayHowToUsers = [
 
 const sortingArrayFTWContent = [
   'how-to-change-ftw-ui-texts',
-  'how-to-change-ftw-bundled-translations',
-  'hosted-translations',
+  'how-to-change-ftw-bundled-microcopy',
+  'hosted-microcopy',
   'how-to-change-ftw-language',
   'how-to-add-static-pages-in-ftw',
-]
+];
+
+const sortingArrayFTWIntroduction = [
+  'how-to-customize-ftw',
+  'ftw-hourly',
+  'ftw-product',
+  'customization-checklist'
+];
 
 exports.siteStructure = [
   {
@@ -192,7 +199,10 @@ exports.siteStructure = [
     id: 'ftw',
     isOpen: false,
     subcategories: [
-      { id: 'ftw-introduction' },
+      {
+        id: 'ftw-introduction',
+        sortingArray: sortingArrayFTWIntroduction,
+      },
       { id: 'ftw-configuration' },
       {
         id: 'ftw-content',

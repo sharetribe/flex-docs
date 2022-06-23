@@ -126,8 +126,7 @@ following environment variables to FTW:
 - **`GOOGLE_CLIENT_SECRET`** The Client Secret of your Google Sign-In.
 
 For more information on FTW environment variables, see the
-[FTW Environment configuration variables](/ftw/ftw-env/)
-article.
+[FTW Environment configuration variables](/ftw/ftw-env/) article.
 
 That is it. Setting these environment variables will make FTW render the
 Google login button in signup and login forms.

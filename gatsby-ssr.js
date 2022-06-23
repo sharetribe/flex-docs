@@ -13,10 +13,15 @@ export const onRenderBody = (
   {}
 ) => {
   setHeadComponents([
+    <link 
+      rel="preconnect" 
+      href="https://IPOXPQ3KFI-dsn.algolia.net" 
+      crossOrigin="true"
+      />,
     <link
       key="plugin-docsearch-css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
     />
   ]);
 };
