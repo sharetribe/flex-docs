@@ -1,7 +1,7 @@
 ---
 title: Listings in Flex
 slug: listings-overview
-updated: 2022-06-06
+updated: 2022-06-27
 category: concepts-listings
 ingress:
   Flex powers online marketplaces, and listings are at the core of any
