@@ -154,6 +154,72 @@ functionality for users to delete their own accounts. We have a how-to
 guide on
 [implementing a _Delete user_ feature](/how-to/implement-delete-user/).
 
+## Levels of authentication in Flex
+
+The Flex APIs limit visibility to certain data based on the
+authentication level of the user. Marketplace API has three different
+levels of access, whereas Integration API only has full access or no
+access. This means that when using any Integration API endpoints, it is
+crucial to only use them from a secure context i.e. from server code,
+never from browser code.
+
+Regardless of the level of access, each API endpoint requires an access
+token that can be acquired through Flex
+[Authentication API](https://www.sharetribe.com/api-reference/authentication.html).
+When using the [Flex Javascript SDKs](/concepts/js-sdk/), authentication
+is handled with
+[specific SDK methods for Marketplace API](https://sharetribe.github.io/flex-sdk-js/authentication.html)
+and
+[upon instantiation in Integration API](https://sharetribe.github.io/flex-integration-sdk-js/authentication.html).
+
+### Anonymous access to Marketplace API
+
+Some endpoints can be accessed without signing in to Flex. These include
+viewing published listings, bookings and reviews, as well as public user
+data.
+
+In addition, the user creation endpoints and password reset request
+endpoint can be called with an anonymous access token. Password reset
+endpoint requires a `passwordResetToken` that is sent as a response to
+the password reset request command, and the token is sent directly to
+the email specified in the request.
+
+### User access to Marketplace API
+
+Only authenticated users can access endpoints that deal with updating
+user information, creating and updating listings, and initiating and
+transitioning transactions.
+
+Through initiating and transitioning transactions, authenticated users
+have access to functionalities that do not have specific endpoints. For
+instance creating and accepting bookings and reviewing transaction
+counterparties are actions that can only happen within the context of a
+transaction process.
+
+### Trusted access to Marketplace API
+
+Some transitions within a transaction process can include privileged
+actions that require a trusted context i.e. they are
+[privileged transitions](/concepts/privileged-transitions/). Privileged
+actions include
+[setting the transaction line items](/references/transaction-process-actions/#actionprivileged-set-line-items)
+and
+[updating the transaction metadata](/references/transaction-process-actions/#actionprivileged-update-metadata).
+
+These transitions require a trusted token or a trusted SDK method, both
+of which are obtained using the Flex application client secret. In
+practice, the trusted context is a server environment. With the FTW
+templates, the client application server has default implementations of
+trusted endpoints for
+[initiating](https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js)
+and
+[transitioning](https://github.com/sharetribe/ftw-daily/blob/master/server/api/transition-privileged.js)
+transactions.
+
+### Full access to Integration API
+
+
+
 - API and authentication (what can you see through the API with
   different levels of authentication)
 - Introduce how authentication works and link to
