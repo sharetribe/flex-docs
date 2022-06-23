@@ -28,7 +28,7 @@ solving use cases such as synchronizing changes in marketplace data into
 external places, e.g. a CRM, a spreadsheet or a calendar. It also allows
 programs to react to logical actions as part of the marketplace flows.
 For example, setting a field in user metadata can trigger an integration
-to publish the user's listings. Using events, it is possible to cover many of the use cases where other applications use webhooks.
+to publish the user's listings. Using events makes it possible to cover many of the use cases where other applications use webhooks.
 
 Currently, Flex exposes events by allowing them to be queried via the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
