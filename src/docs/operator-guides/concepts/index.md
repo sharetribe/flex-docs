@@ -107,7 +107,9 @@ A way to send automatic and/or manual messages to external applications
 marketplace. In practice, this is done with JSON messages that are
 delivered via HTTPS to the endpoints the admin chooses.
 
-Planned.
+Flex does not offer webhooks. Instead, Flex exposes
+[events](/references/events/) that allow you to achieve many of the use
+cases where webhooks would be used.
 
 ## Marketplace concepts
 
