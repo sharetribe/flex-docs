@@ -22,20 +22,25 @@ states. Depending on the listing's state, they are either returned with
 the public Listing endpoints or they are only available to the listing's
 author.
 
-When tracking [listing events](TODO) through the
-[Integration API](TODO), it is important to also pay attention to the
-state of the listing. For instance, in the default FTW template
-implementation the listing is created as draft and then goes through
-several updates in the draft state before it is published. In other
-words, to catch the correct listing event, it is useful to filter by
-both event type and listing state.
+When tracking
+[listing events](https://www.sharetribe.com/docs/references/events/#supported-event-types)
+through the
+[Integration API](https://www.sharetribe.com/api-reference/integration.html),
+it is important to also pay attention to the state of the listing. For
+instance, in the default FTW template implementation the listing is
+created as draft and then goes through several updates in the draft
+state before it is published. In other words, to catch the correct
+listing event, it is useful to filter by both event type and listing
+state.
 
 ### Draft
 
 When a listing is first created, it is created in **state: draft**.
-Draft listings are not returned by the [listings/query](TODO) endpoint,
-but they are visible to the author and through Flex Console. Draft
-listings can be published using the [own_listings/publish_draft](TODO)
+Draft listings are not returned by the
+[listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
+endpoint, but they are visible to the author and through Flex Console.
+Draft listings can be published using the
+[own_listings/publish_draft](https://www.sharetribe.com/api-reference/marketplace.html#publish-draft-listing)
 endpoint.
 
 ### Pending approval
@@ -43,10 +48,10 @@ endpoint.
 If the marketplace
 [requires listing approval for new listings](/concepts/requiring-approval/),
 a draft listing does not get published directly when the
-[own_listings/publish_draft](TODO) is called. Instead, it moves into
-**state: pendingApproval**. The operator can then approve the listing in
-Flex Console or, if the approval is dependent on e.g. an extended data
-attribute, through the
+[own_listings/publish_draft](https://www.sharetribe.com/api-reference/marketplace.html#publish-draft-listing)
+is called. Instead, it moves into **state: pendingApproval**. The
+operator can then approve the listing in Flex Console or, if the
+approval is dependent on e.g. an extended data attribute, through the
 [listing approval Integration API endpoint](https://www.sharetribe.com/api-reference/integration.html#approve-listing).
 A use case for this would be e.g. a marketplace where non-paid members
 can publish one listing and paid members can publish unlimited listings
@@ -55,8 +60,11 @@ in their metadata and approve the listing accordingly.
 
 ### Published
 
-Published listings are returned by [listings/query](TODO) and
-[listings/show](TODO) endpoints.
+Published listings are returned by
+[listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
+and
+[listings/show](https://www.sharetribe.com/api-reference/marketplace.html#show-listing)
+endpoints.
 
 After a listing has been published, it can still be modified by the
 author. Even if the marketplace has listing approval enabled, modifying
@@ -68,12 +76,18 @@ number of listings each user has active on the marketplace.
 ### Closed
 
 A listing can be closed by both the author and the marketplace operator.
-A closed listing is not returned by the [listings/query](TODO) and
-[listings/show](TODO) endpoints, but it is still returned by the
-[own_listings/query](TODO) and [own_listings/show](TODO) endpoints, i.e.
-it is visible to the author. Both author and marketplace operator can
-also [open the listing](TODO) after it has been closed i.e. set its
-state back to published.
+A closed listing is not returned by the
+[listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
+and
+[listings/show](https://www.sharetribe.com/api-reference/marketplace.html#show-listing)
+endpoints, but it is still returned by the
+[own_listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-own-listings)
+and
+[own_listings/show](https://www.sharetribe.com/api-reference/marketplace.html#show-own-listing)
+endpoints, i.e. it is visible to the author. Both author and marketplace
+operator can also
+[open the listing](https://www.sharetribe.com/api-reference/marketplace.html#open-listing)
+after it has been closed i.e. set its state back to published.
 
 ### Deleted
 
