@@ -75,6 +75,11 @@ const sortingArrayTransactionProcess = [
   'change-transaction-process',
 ];
 
+const sortingArrayUsersAndAuthentication = [
+  'users-and-authentication-in-flex',
+  'social-logins-and-sso'
+]
+
 const sortingArrayPayments = [
   'payments-overview',
   'payment-methods-overview',
@@ -114,7 +119,7 @@ const sortingArrayFTWIntroduction = [
   'how-to-customize-ftw',
   'ftw-hourly',
   'ftw-product',
-  'customization-checklist'
+  'customization-checklist',
 ];
 
 const sortingArrayListings = [
@@ -162,7 +167,9 @@ exports.siteStructure = [
     id: 'concepts',
     isOpen: false,
     subcategories: [
-      { id: 'concepts-users-and-authentication' },
+      { id: 'concepts-users-and-authentication',
+        sortingArray: sortingArrayUsersAndAuthentication,
+      },
       { 
         id: 'concepts-listings',
         sortingArray: sortingArrayListings,
