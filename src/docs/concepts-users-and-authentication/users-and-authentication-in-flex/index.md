@@ -1,9 +1,11 @@
 ---
-title: Users in Flex
-slug: users-in-flex
+title: Users and authentication in Flex
+slug: users-and-authentication-in-flex
 updated: 2022-05-16
 category: concepts-users-and-authentication
-ingress: This article explains how users are managed in Flex.
+ingress:
+  This article explains how users managed in Flex and what different
+  levels of authorization can be granted.
 published: true
 ---
 
@@ -99,6 +101,9 @@ marketplace as a registered user and take limited actions on their
 behalf. When using the Login as user feature, operators cannot initiate
 or transition transactions or modify the user's payout information.
 However, they can e.g. create and update listings on behalf of the user.
+The login as user feature can be accessed through the Flex Console, by
+navigating to a user profile and clicking on the three dots next to the
+profile image of the user.
 
 ### Integration API
 
@@ -154,7 +159,7 @@ functionality for users to delete their own accounts. We have a how-to
 guide on
 [implementing a _Delete user_ feature](/how-to/implement-delete-user/).
 
-## Levels of authentication in Flex
+## Authentication in Flex
 
 The Flex APIs limit visibility to certain data based on the
 authentication level of the user. Marketplace API has three different
@@ -218,9 +223,21 @@ transactions.
 
 ### Full access to Integration API
 
+The Integration API offers access to the entire marketplace data. This
+includes all users, listings, transactions, and messages. To see what
+endpoints you can access using the Integration API, refer to the
+[Integration API reference](https://www.sharetribe.com/api-reference/integration.html).
 
+To access the Integration API you need a valid access token obtained
+through
+[the Authentication API](https://www.sharetribe.com/docs/concepts/authentication-api/#authentication-api)
+or the
+[Sharetribe Flex Integration SDK](https://sharetribe.github.io/flex-integration-sdk-js/authentication.html).
+You should only grant access to trusted applications, such as ones that
+run in your own backend systems or applications only authorized
+marketplace operators can execute.
 
-- API and authentication (what can you see through the API with
-  different levels of authentication)
-- Introduce how authentication works and link to
-  https://www.sharetribe.com/docs/concepts/authentication-api/#authentication-api
+In order to gain authorisation you need to authenticate using the client
+ID and client secret of your Integration API application. Read more on
+how to authenticate from the
+[Authentication API reference](https://www.sharetribe.com/api-reference/authentication.html).
