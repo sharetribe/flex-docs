@@ -122,6 +122,12 @@ const sortingArrayFTWIntroduction = [
   'customization-checklist',
 ];
 
+const sortingArrayListings = [
+  'listings-overview',
+  'how-the-listing-search-works',
+  'requiring-approval'
+];
+
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -164,7 +170,10 @@ exports.siteStructure = [
       { id: 'concepts-users-and-authentication',
         sortingArray: sortingArrayUsersAndAuthentication,
       },
-      { id: 'concepts-listings' },
+      { 
+        id: 'concepts-listings',
+        sortingArray: sortingArrayListings,
+      },
       {
         id: 'concepts-transaction-process',
         sortingArray: sortingArrayTransactionProcess,
