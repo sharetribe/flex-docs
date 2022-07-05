@@ -176,6 +176,9 @@
 /docs/operator-guides/inventory-management/ /docs/concepts/inventory-management/
 /docs/operator-guides/manage-seats/ /docs/concepts/manage-seats/
 /docs/operator-guides/migrating-from-outside-sharetribe/ /docs/how-to/migrating-from-outside-sharetribe/
+/docs/operator-guides/transaction-process/ /docs/concepts/transaction-process/
+
+/docs/design-toolkit/user-journey/ /docs/design-toolkit/user-journey-saunatime/
 
 /docs/cookbook/ /docs/how-to/
 /docs/background/ /docs/concepts/
