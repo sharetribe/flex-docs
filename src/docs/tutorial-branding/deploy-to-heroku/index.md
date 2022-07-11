@@ -169,7 +169,7 @@ _heroku/nodejs_
 Go to the Deploy page of your new app and
 [connect the app with Github](https://devcenter.heroku.com/articles/github-integration#enabling-github-integration).
 
-![Heroku: Connect the app with Github repository](./heroku-connect-to-GitHub.png)
+![Heroku: Connect the app with Github repository](./heroku-connect-to-github.png)
 
 After that, you can deploy the app manually or enable automatic deploy
 from your default branch (usually named as _main_ or _master_).
