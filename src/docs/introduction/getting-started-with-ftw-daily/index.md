@@ -118,7 +118,7 @@ basic development tooling:
    │   ├── forms
    │   ├── styles
    │   │   ├── marketplaceDefaults.css
-   │   │   └── propertySets.css
+   │   │   └── customMediaQueries.css
    │   ├── translations
    │   ├── util
    │   ├── Routes.js

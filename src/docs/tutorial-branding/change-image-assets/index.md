@@ -1,7 +1,7 @@
 ---
 title: Change image assets
 slug: change-image-assets
-updated: 2020-02-28
+updated: 2022-07-11
 category: tutorial-branding
 ingress:
   Learn how to update image assets such as the default background image,
@@ -12,17 +12,54 @@ published: true
 ## Default background image
 
 In the [previous step](/tutorial/first-edit/), you made changes to the
-marketplaceDefaults.css file. This time you make changes to
-propertySets.css. **`--backgroundImage`** variable can be found from
-there. It is used to provide a background image for Hero component on
-the landing page as well as some of the other pages: sing-up and log-in,
-email verification etc.
+CSS Properties on marketplaceDefaults.css file. This time you make
+changes to global CSS classes. **`.defaultBackgroundImage`** class can
+be found from there too. It is used to provide a background image for
+the Hero component on the landing page.
+
+```shell
+└── src
+    └── styles
+        └── marketplaceDefaults.css
+```
+
+```css
+/* ================ Plain global CSS glasses ================ */
+
+/* Full screen Background image located in root-folder/src/assets */
+.defaultBackgroundImage {
+  /* Gradient direction and overlaying the black color on top of the image for better readability */
+  background: linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.6)
+    ), url('../assets/background-1440.jpg');
+
+  /* Add loading color for the div */
+  background-color: var(--matterColor);
+
+  /* Cover the whole screen with the background image */
+  background-size: cover;
+
+  /* Align the image within the container */
+  background-position: center center;
+
+  @media (--viewportLarge) {
+    border-radius: 40px;
+    border: solid 36px var(--matterColorBright);
+  }
+}
+```
+
+<extrainfo title="I can't find it, but I have something similar in a file called propertySets.css. What is that?">
 
 ```shell
 └── src
     └── styles
         └── propertySets.css
 ```
+
+There you might find something like:
 
 ```css
 /* Full screen Background image located in root-folder/src/assets */
@@ -50,6 +87,23 @@ email verification etc.
 }
 ```
 
+In the previous versions of FTW templates, there has been also a third
+file: propertySets.css. This file contained CSS Property Sets that could
+be applied to component styles with `@apply` syntax. However, W3C
+decided not to include that feature in future CSS syntax and the
+postcss-apply plugin was deprecated in the process.
+
+So, if you have an older FTW template (earlier than FTW-daily v9,
+FTW-hourly v11, or FTW-product v10), you might have this file in your
+codebase. If you start using sharetribe-scripts v6.0.0 you need to
+consider migrating away from that since it contains code that is
+deprecated in v6.0.0 of sharetribe-scripts.
+
+Read more from the pull request in FTW-daily:
+https://github.com/sharetribe/ftw-daily/pull/1531
+
+</extrainfo>
+
 That **background** styling-rule refers to _background-1440.jpg_ image
 in the _assets_ directory:
 
@@ -61,9 +115,9 @@ in the _assets_ directory:
 
 So, to change it, we could just save a different image as
 'background-1440.jpg' to replace the default background image (or you
-can add a new image and then change the filename in `--backgroundImage`
-property set). The image should be 1440 pixels wide so that it doesn't
-look bad on retina displays.
+can add a new image and then change the filename in
+`.defaultBackgroundImage` class). The image should be 1440 pixels wide
+so that it doesn't look bad on retina displays.
 
 Here's an image, we used in this tutorial:<br />
 [Summer house by Markus Spiske (cropped)](/tutorial-assets/markus-spiske-summer-house-unsplash.jpg)

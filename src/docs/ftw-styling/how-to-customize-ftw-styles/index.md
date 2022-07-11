@@ -1,7 +1,7 @@
 ---
 title: How to customize FTW styles
 slug: how-to-customize-ftw-styles
-updated: 2021-02-12
+updated: 2022-07-11
 category: ftw-styling
 ingress:
   This guide describes how to change the styles of the Flex Template for
@@ -18,27 +18,49 @@ template application:
 
 - [Marketplace level styling](#marketplace-level-styling) with 3 global
   stylesheets:
-  - _src/styles/**marketplaceDefaults.css**_ (contains CSS variables and
-    element styles)
+  - _src/styles/**marketplaceDefaults.css**_ (contains CSS variables,
+    element styles, and global CSS classes)
   - _src/styles/**customMediaQueries.css**_ (contains breakpoints for
     responsive layout)
-  - _src/styles/**propertySets.css**_ (contains CSS Property Sets aka
-    @apply rules)
 - [Component level styling](#styling-components) using
   [CSS Modules](https://github.com/css-modules/css-modules)
+
+<extrainfo title="I have a propertySets.css file. What is that?">
+
+```shell
+└── src
+    └── styles
+        └── propertySets.css
+```
+
+In the previous versions of FTW templates, there has been also a third
+file: propertySets.css. This file contained CSS Property Sets that could
+be applied to component styles with `@apply` syntax. However, W3C
+decided not to include that feature in future CSS syntax and the
+postcss-apply plugin was deprecated in the process.
+
+So, if you have an older FTW template (earlier than FTW-daily v9,
+FTW-hourly v11, or FTW-product v10), you might have this file in your
+codebase. If you start using sharetribe-scripts v6.0.0 you need to
+consider migrating away from that since it contains code that is
+deprecated in v6.0.0 of sharetribe-scripts.
+
+Read more from the pull request in FTW-daily:
+https://github.com/sharetribe/ftw-daily/pull/1531
+
+</extrainfo>
 
 ## Marketplace level styling
 
 ```shell
 └── src
     └── styles
-        ├── propertySets.css
         ├── customMediaQueries.css
         └── marketplaceDefaults.css
 ```
 
 We have created marketplace-level styling variables with CSS Properties
-(vars) and CSS Property Sets (@apply rules).
+(vars) and a few global CSS classes.
 
 The concept behind CSS Properties is quite straightforward - they are
 variables that can be defined in root-element level (`<html>`) and then
@@ -60,6 +82,35 @@ used inside some CSS rule.
 
 (Read more about CSS Properties from
 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties))
+
+### customMediaQueries.css
+
+Breakpoints for media queries are defined in separate file.
+
+```css
+@custom-media --viewportSmall (min-width: 550px);
+@custom-media --viewportMedium (min-width: 768px);
+@custom-media --viewportLarge (min-width: 1024px);
+// etc.
+```
+
+These custom media query breakpoints can be used in a similar way as CSS
+Properties. However, these variable are converted to real media queries
+on build-time.
+
+```css
+@media (--viewportMedium) {
+  /* CSS classes */
+}
+```
+
+On a live site, the CSS file contains:
+
+```css
+@media (min-width: 768px) {
+  /* CSS classes */
+}
+```
 
 ### marketplaceDefaults.css
 
@@ -115,43 +166,60 @@ so on. Our current plan is to parameterize styling even more using this
 concept.
 
 In addition, this file provides default styles for plain elements like
-`<body>`, `<a>`, `<p>`, `<input>`, `<h1>`, `<h2>`, and so on.
+`<body>`, `<a>`, `<p>`, `<input>`, `<h1>`, `<h2>`, and so on. There are
+also some global CSS classes that components can use.
 
-### customMediaQueries.css
+### Global CSS classes
 
-Breakpoints for media queries are defined in separate file.
-
-```css
-@custom-media --viewportSmall (min-width: 550px);
-@custom-media --viewportMedium (min-width: 768px);
-@custom-media --viewportLarge (min-width: 1024px);
-// etc.
-```
-
-These custom media query breakpoints can be used in a similar way as CSS
-Properties. However, these variable are converted to real media queries
-on build-time.
-
-```css
-@media (--viewportMedium) {
-  /* CSS classes */
-}
-```
-
-On a live site, the CSS file contains:
-
-```css
-@media (min-width: 768px) {
-  /* CSS classes */
-}
-```
-
-### propertySets.css
-
-Fonts are specified in this files using CSS Property Sets. They provide
-us a solid way of creating a fixed set of CSS rules for a specific font.
+Fonts and some other shared styles are specified in
+customMediaQueries.css file using global (vanilla) CSS classes. They
+provide us a way to share some generic styles between components.
 
 For example, our default font is defined as:
+
+```css
+.marketplaceDefaultFontStyles {
+  font-family: var(--fontFamily);
+  font-weight: var(--fontWeightMedium);
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  /* No margins for default font */
+
+  @media (--viewportMedium) {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+```
+
+And created class can be used inside a component's
+[CSS Module syntax](#styling-components) as:
+
+```css
+.tip {
+  composes: marketplaceDefaultFontStyles from global;
+}
+```
+
+<extrainfo title="I don't have classes in customMediaQueries.css but I have a propertySets.css file. What is that?">
+
+In the previous versions of FTW templates, there has been also a third
+file: propertySets.css. This file contained CSS Property Sets that could
+be applied to component styles with `@apply` syntax. However, W3C
+decided not to include that feature in future CSS syntax and the
+postcss-apply plugin was deprecated in the process.
+
+So, if you have an older FTW template (earlier than FTW-daily v9,
+FTW-hourly v11, or FTW-product v10), you might have this file in your
+codebase. If you start using sharetribe-scripts v6.0.0 you need to
+consider migrating away from that since it contains code that is
+deprecated in v6.0.0 of sharetribe-scripts.
+
+Previously, fonts and other shared sets of CSS rules were specified in
+propertySets.css.
+
+For example, our default font was defined as:
 
 ```css
 --marketplaceDefaultFontStyles: {
@@ -169,7 +237,7 @@ For example, our default font is defined as:
 }
 ```
 
-And created property set can be used as:
+And created property set were used as:
 
 ```css
 p {
@@ -177,21 +245,19 @@ p {
 }
 ```
 
+</extrainfo>
+
 > ⚠️ **Note**: template app is following a pattern where the height of
 > an element should be divisible by **6px** on mobile layout and **8px**
 > on bigger layouts. This affects line-heights of font styles too.
 
-> ⚠️ **Note**: the **@apply** rule and custom property sets most likely
-> won't get any more support from browser vendors as the spec is yet
-> considered deprecated and alternative solutions are being discussed.
-
 ## Fonts
 
-**marketplaceDefaults.css** and **propertySets.css** files are mostly
-responsible of what font styles are used. The font-family itself is
-defined in CSS Property `--fontFamily` and by default, FTW templates use
-Poppins. This is a Google Font, but for performance reasons we have
-served them from Sharetribe's CDN.
+**marketplaceDefaults.css** file is mostly responsible of what font
+styles are used. The font-family itself is defined in CSS Property
+`--fontFamily` and by default, FTW templates use Poppins. This is a
+Google Font, but for performance reasons we have served them from
+Sharetribe's CDN.
 
 The actual font files are loaded in _public/index.html_. If you want to
 change the font or loading strategy, you need to edit those 3 files. To
@@ -311,9 +377,10 @@ Some guidelines we have tried to follow:
   improves readability.
 - **Parent component is responsible for allocating space** for a child
   component (i.e. dimensions and margins).
-- **Define `@apply` rules early enough** inside declaration block.<br/>
-  Rules inside those property sets might overwrite rules written above
-  the line where the set is applied.
+- **Define `composes` declarations early enough** inside the declaration
+  block.<br/> Be careful: rules inside those global CSS declarations
+  might overwrite rules written inside the component's own class. This
+  depends on the specificity given in the global (vanilla) CSS file.
 - **Align text and components** to horizontal baselines. I.e. they
   should be a multiple of **_6px_** on mobile layout and **_8px_** on
   bigger screens.
