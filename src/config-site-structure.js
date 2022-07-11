@@ -77,8 +77,8 @@ const sortingArrayTransactionProcess = [
 
 const sortingArrayUsersAndAuthentication = [
   'users-and-authentication-in-flex',
-  'social-logins-and-sso'
-]
+  'social-logins-and-sso',
+];
 
 const sortingArrayPayments = [
   'payments-overview',
@@ -125,7 +125,7 @@ const sortingArrayFTWIntroduction = [
 const sortingArrayListings = [
   'listings-overview',
   'how-the-listing-search-works',
-  'requiring-approval'
+  'requiring-approval',
 ];
 
 exports.siteStructure = [
@@ -167,10 +167,11 @@ exports.siteStructure = [
     id: 'concepts',
     isOpen: false,
     subcategories: [
-      { id: 'concepts-users-and-authentication',
+      {
+        id: 'concepts-users-and-authentication',
         sortingArray: sortingArrayUsersAndAuthentication,
       },
-      { 
+      {
         id: 'concepts-listings',
         sortingArray: sortingArrayListings,
       },

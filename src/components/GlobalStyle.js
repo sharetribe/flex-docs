@@ -20,7 +20,8 @@ const GlobalStyle = createGlobalStyle`
   .DocSearch.DocSearch-Button {
     background-color: #f9f9f9;
     &:hover {
-      box-shadow: inset 0 0 0 1px ${props => props.theme.searchInputBorderColor};
+      box-shadow: inset 0 0 0 1px ${props =>
+        props.theme.searchInputBorderColor};
     }
   }
 

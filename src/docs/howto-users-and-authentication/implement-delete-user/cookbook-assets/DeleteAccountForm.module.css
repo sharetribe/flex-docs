@@ -1,4 +1,6 @@
-@import '../../styles/propertySets.css';
+@import '../../styles/customMediaQueries.css';
+/* Older versions of template should import deprecated file: */
+/* @import '../../styles/propertySets.css'; */
 
 .root {
 }
@@ -60,7 +62,9 @@
 }
 
 .error {
-  @apply --marketplaceH4FontStyles;
+  /* Older versions of template should use '@apply' instead of 'composes' */
+  /* @apply --marketplaceH4FontStyles; */
+  composes: h4 from global;
   color: var(--failColor);
   text-align: center;
   display: inline-block;
@@ -73,7 +77,9 @@
 }
 
 .helperLink {
-  @apply --marketplaceLinkStyles;
+  /* Older versions of template should use '@apply' instead of 'composes' */
+  /* @apply --marketplaceLinkStyles; */
+  composes: marketplaceLinkStyles from global;
   color: var(--matterColor);
   font-weight: var(--fontWeightMedium);
   text-decoration: underline;

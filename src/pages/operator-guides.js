@@ -65,9 +65,7 @@ const OperatorGuidesPage = () => {
         }, []);
         // TODO .sort(byArrayOfSlugs(sortingArray));
 
-        return (
-          <ArticleIndexPage category={category} articles={articles} />
-        );
+        return <ArticleIndexPage category={category} articles={articles} />;
       }}
     />
   );

@@ -1,7 +1,7 @@
 ---
 title: First customization
 slug: first-edit
-updated: 2021-02-12
+updated: 2022-07-11
 category: tutorial-branding
 ingress:
   Begin customizing your marketplace by custom styling and introducing
@@ -15,16 +15,44 @@ Custom styling is a good starting point to introduce your own branding
 and remove design choices made for example marketplace, Saunatime.
 
 FTW templates have most of the styling tied to component directories,
-but there are 3 files that define custom media queries, default CSS
-Properties, and property sets:
+but there are 2 files that define custom media queries, default CSS (CSS
+Properties, element styles, and global css classes):
 
 ```shell
 └── src
     └── styles
-        ├── propertySets.css
         ├── customMediaQueries.css
         └── marketplaceDefaults.css
 ```
+
+<extrainfo title="I have a propertySets.css file. What is that?">
+
+```shell
+└── src
+    └── styles
+        └── propertySets.css
+```
+
+In previous versions of FTW, there has been a third CSS file:
+propertySets.css. This file contains
+[CSS Property Sets](https://chromestatus.com/feature/5753701012602880)
+that can be applied to component styles using the `@apply`syntax.
+However, W3C decided not to include that feature in future CSS syntax,
+and the
+[postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got
+deprecated in the process.
+
+If you have an older FTW template (earlier than FTW-daily v9, FTW-hourly
+v11 or FTW-product v10), you might have this file in your codebase. If
+you start using sharetribe-scripts v6.0.0, you need to consider
+migrating away from that since it contains code that is deprecated in
+v6.0.0 of sharetribe-scripts.
+
+Read more from
+[this pull request](https://github.com/sharetribe/ftw-daily/pull/1531)
+in FTW-Daily.
+
+</extrainfo>
 
 ## Changing CSS variables
 
