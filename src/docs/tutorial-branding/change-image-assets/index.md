@@ -87,20 +87,18 @@ There you might find something like:
 }
 ```
 
-In the previous versions of FTW templates, there has been also a third
-file: propertySets.css. This file contained CSS Property Sets that could
-be applied to component styles with `@apply` syntax. However, W3C
-decided not to include that feature in future CSS syntax and the
-postcss-apply plugin was deprecated in the process.
+In previous versions of FTW, there has been a third CSS
+file: propertySets.css. This file contains [CSS Property Sets](https://chromestatus.com/feature/5753701012602880) that can be applied to component styles using the `@apply`syntax.
+However, W3C decided not to include that feature in future CSS syntax, and the [postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got deprecated in the process.
 
-So, if you have an older FTW template (earlier than FTW-daily v9,
-FTW-hourly v11, or FTW-product v10), you might have this file in your
-codebase. If you start using sharetribe-scripts v6.0.0 you need to
+If you have an older FTW template (earlier than FTW-daily v9,
+FTW-hourly v11 or FTW-product v10), you might have this file in your
+codebase. If you start using sharetribe-scripts v6.0.0, you need to
 consider migrating away from that since it contains code that is
 deprecated in v6.0.0 of sharetribe-scripts.
 
-Read more from the pull request in FTW-daily:
-https://github.com/sharetribe/ftw-daily/pull/1531
+Read more from [this pull request](https://github.com/sharetribe/ftw-daily/pull/1531) in FTW-Daily.
+
 
 </extrainfo>
 
