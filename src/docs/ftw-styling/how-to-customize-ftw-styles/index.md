@@ -33,17 +33,24 @@ template application:
         └── propertySets.css
 ```
 
-In previous versions of FTW, there has been a third CSS
-file: propertySets.css. This file contains [CSS Property Sets](https://chromestatus.com/feature/5753701012602880) that can be applied to component styles using the `@apply`syntax.
-However, W3C decided not to include that feature in future CSS syntax, and the [postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got deprecated in the process.
+In previous versions of FTW, there has been a third CSS file:
+propertySets.css. This file contains
+[CSS Property Sets](https://chromestatus.com/feature/5753701012602880)
+that can be applied to component styles using the `@apply`syntax.
+However, W3C decided not to include that feature in future CSS syntax,
+and the
+[postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got
+deprecated in the process.
 
-If you have an older FTW template (earlier than FTW-daily v9,
-FTW-hourly v11 or FTW-product v10), you might have this file in your
-codebase. If you start using sharetribe-scripts v6.0.0, you need to
-consider migrating away from that since it contains code that is
-deprecated in v6.0.0 of sharetribe-scripts.
+If you have an older FTW template (earlier than FTW-daily v9, FTW-hourly
+v11 or FTW-product v10), you might have this file in your codebase. If
+you start using sharetribe-scripts v6.0.0, you need to consider
+migrating away from that since it contains code that is deprecated in
+v6.0.0 of sharetribe-scripts.
 
-Read more from [this pull request](https://github.com/sharetribe/ftw-daily/pull/1531) in FTW-Daily.
+Read more from
+[this pull request](https://github.com/sharetribe/ftw-daily/pull/1531)
+in FTW-Daily.
 
 </extrainfo>
 
@@ -56,12 +63,14 @@ Read more from [this pull request](https://github.com/sharetribe/ftw-daily/pull/
         └── marketplaceDefaults.css
 ```
 
-We have created marketplace-level styling variables with [CSS Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+We have created marketplace-level styling variables with
+[CSS Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
 (vars) and a few global CSS classes.
 
-The concept behind [CSS Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) is quite straightforward - they are
-variables that can be defined in root-element level (`<html>`) and then
-used inside some CSS rule.
+The concept behind
+[CSS Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+is quite straightforward - they are variables that can be defined in
+root-element level (`<html>`) and then used inside some CSS rule.
 
 ```css
 /* in src/styles/marketplaceDefaults.css */
@@ -112,7 +121,9 @@ On a live site, the CSS file contains:
 ### marketplaceDefaults.css
 
 This is a good place to start customizing marketplace styles. For
-example, we define our color scheme here using [CSS Property](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) variables:
+example, we define our color scheme here using
+[CSS Property](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+variables:
 
 ```css
 /* ================ Colors ================ */
@@ -251,7 +262,8 @@ p {
 ## Fonts
 
 **marketplaceDefaults.css** file is mostly responsible of what font
-styles are used. The font-family itself is defined in the [CSS Property](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+styles are used. The font-family itself is defined in the
+[CSS Property](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
 `--fontFamily` and by default, FTW templates use Poppins. This is a
 Google Font, but for performance reasons we have served them from
 Sharetribe's CDN.
@@ -364,8 +376,10 @@ Some guidelines we have tried to follow:
 
 - **Use semantic class names**<br/> They improve readability and
   decouples style changes from DOM changes.
-- **Use the [CSS Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) defined in marketplaceDefaults.css**<br/> and
-  create new ones when it makes sense.
+- **Use the
+  [CSS Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+  defined in marketplaceDefaults.css**<br/> and create new ones when it
+  makes sense.
 - **Use classes**, don't style DOM elements directly.<br/> Element
   styles are global even with CSS Modules.
 - **Avoid nesting styles**.<br/> CSS Modules makes specificity rules
