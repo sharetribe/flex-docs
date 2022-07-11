@@ -4,7 +4,8 @@ slug: users-and-authentication-in-flex
 updated: 2022-05-16
 category: concepts-users-and-authentication
 ingress:
-  This article explains how users are managed and how authentication and authorization works in Flex.
+  This article explains how users are managed and how authentication and
+  authorization works in Flex.
 published: true
 ---
 

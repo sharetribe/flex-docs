@@ -75,9 +75,7 @@ const TutorialPage = () => {
             }
           }, [])
           .sort(byArrayOfSlugs(sortingArray));
-        return (
-          <ArticleIndexPage category={category} articles={articles} />
-        );
+        return <ArticleIndexPage category={category} articles={articles} />;
       }}
     />
   );

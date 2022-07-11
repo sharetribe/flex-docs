@@ -18,21 +18,19 @@ const Wrapper = styled.div`
     padding: 16px 0;
     margin-left: auto;
     margin-right: 40px;
-
   }
 `;
 
 const Search = props => {
-
   const { ...rest } = props;
 
   return (
     <Wrapper {...rest}>
-        <DocSearch
-          appId="IPOXPQ3KFI"
-          apiKey="48fd5d7d401d024a0b034f9e62b1cd34"
-          indexName="sharetribe"
-/>
+      <DocSearch
+        appId="IPOXPQ3KFI"
+        apiKey="48fd5d7d401d024a0b034f9e62b1cd34"
+        indexName="sharetribe"
+      />
     </Wrapper>
   );
 };
