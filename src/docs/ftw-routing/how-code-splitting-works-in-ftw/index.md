@@ -93,11 +93,6 @@ files loaded:
 - [**Vendor chunk**](https://twitter.com/wSokra/status/969633336732905474)
   (Currently, it's an unnamed chunk file. e.g. _24.230845cc.chunk.js_)
 - **Page-specific chunk** (e.g. _AboutPage.dc3102d3.chunk.js_)
-- **Runtime chunk** (e.g. _runtime-main.818a6866.js_) This one takes
-  care of loading correct JS & CSS files when you navigate to another
-  page inside the web app. (e.g. it loads
-  _LandingPage.6fa732d5.chunk.js_ && _LandingPage.40c0bf91.chunk.css_,
-  when a user navigates to the landing page.)
 
 So, there are several chunk files that can be loaded parallel in the
 first page-load and also page-specific chunks that can be loaded in
