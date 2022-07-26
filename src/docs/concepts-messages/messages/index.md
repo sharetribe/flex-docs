@@ -81,7 +81,7 @@ Listening to
 [events](https://www.sharetribe.com/docs/cookbook-events/reacting-to-events/)
 through the
 [Integration API](https://www.sharetribe.com/docs/introduction/getting-started-with-integration-api/)
-is the most versatile way to react to what's happening in your
+is the most versatile way to react to what is happening in your
 marketplace. As sending new messages does not affect transaction state
 or transitions, you can’t use Zapier to detect new messages as it can
 only react to transactions, listing and user events. Events allow you to
@@ -105,10 +105,10 @@ This is how the default logic works:
 
 1.  A
     [query is made](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L300)
-    that retrieves all sale (transactions where the current user is the
+    that retrieves all sales transactions (i.e. transactions where the current user is the
     provider) transactions that are in the
     [confirm payment state](https://github.com/sharetribe/ftw-daily/blob/85e9291a3078c54d6531ad465276f03847882911/src/util/transaction.js#L214)
-2.  The amount of sale transactions determines the
+2.  The amount of sales transactions determines the
     [notification count](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L104)
     shown
     [in the badge](https://github.com/sharetribe/ftw-daily/blob/master/src/components/TopbarDesktop/TopbarDesktop.js#L55).
