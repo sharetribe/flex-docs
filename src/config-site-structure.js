@@ -185,6 +185,7 @@ exports.siteStructure = [
       { id: 'concepts-development' },
       { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
+      { id: 'concepts-messages' },
       { id: 'concepts-api-sdk' },
     ],
     // sortingArray: sortingArrayConcepts,
