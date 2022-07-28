@@ -114,4 +114,5 @@ custom caching is being implemented.
 ## Further reading
 
 - [Editing client application microcopy](/concepts/microcopy/)
+- [Managing static page content](/concepts/content-management)
 - [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
