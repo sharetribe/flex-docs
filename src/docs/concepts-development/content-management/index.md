@@ -1,7 +1,7 @@
 ---
 title: Content management in Flex
 slug: content-management
-updated: 2022-07-28
+updated: 2022-08-02
 category: concepts-development
 ingress:
   This article introduces the Flex content management system and how
@@ -14,48 +14,34 @@ pages in Flex. Initially, the feature allows operators to modify their
 landing pages without code. Going forward, it will be possible to create
 new pages as well.
 
-## Content modeling
-
-When managing content, it is useful to distinguish content modeling from
-content. A **content model** means the different elements that can
-comprise e.g. a single page – headings, text blocks, buttons, images and
-so forth. A single content model that features a heading, a text block,
-an image and a button, can be used to create several different pages
-with different **content**.
-
-The benefit of content modeling is that when you have a set of distinct
-content models, the content creator can choose the one that best suits
-their needs without needing to worry how the content will look on the
-page. The designer, on the other hand, can design e.g. article pages or
-feature pages without needing to have the specific pieces of content
-already written. Instead, the content model provides the designer with
-the necessary information to create a layout that looks great and covers
-each part of the model.
-
-A content model also facilitates using the same content in different
-channels – your mobile application can have one design and your website
-can have another, but they can both use the same content models.
-
-In Flex, the content modeling is currently done for you. Each **page**
-can have a selection of pre-determined **sections**, which in turn can
-have several **blocks**. Depending on which kinds of sections and blocks
-you choose for your page, you can create a wide range of content. In the
-future, it will also be possible to create custom sections.
-
-TODO: IS THE LEVEL OF TECHNICALITY OK FOR A FLEX DOCS ARTICLE CF
-OPERATOR GUIDE?
-
-## Flex Content modeling glossary
+## Flex Content management glossary
 
 _TODO: A better place for this section?_
 
-Before diving deeper into the different content model types in Flex,
-here is a short glossary of the most central content related terms.
+Before diving deeper into content management in Flex, here is a short
+glossary of the most central content related terms.
+
+**Content management**: The way in which operator-created content is
+handled within Flex. Before Console-operated content management,
+operators could either add the content directly in the FTW codebase, or
+use the [microcopy](/concepts/microcopy) files for static content, or
+integrate an external content management system. Currently, we recommend
+managing content using the assets-based Pages feature in Flex Console.
+
+**Content modeling**: The process of structuring patterns of content in
+a way that allows operators to create content using existing building
+blocks, and that allows designers and developers to create ways of
+showing the content in a systematic way.
 
 **Page**: The collection of different content elements under a specific
 URL. Pages can have fields, sections, or blocks within them. A page can
 be fetched as [an asset](/references/assets) from the Flex Asset
 Delivery API. Example: `landing-page`.
+
+**Page asset**: As the operator adds and edits the elements of the page
+in Flex Console, a page asset is created under the hood. The page asset
+uses a **page schema** to describe the different content elements in a
+way that the client application can then understand and render.
 
 **Section**: The main element of a page. In Flex, each section has a
 specific content model that determines the information that the section
@@ -70,6 +56,38 @@ fields within them. Example: default block.
 
 **Field**: The simplest content element in Flex. Conveys a single piece
 of information. Example: text field, button, image.
+
+## Content models
+
+When managing content, it is useful to distinguish content modeling from
+content. A **content model** means the different elements that can
+comprise e.g. a single page – headings, text blocks, buttons, images and
+so forth. A single content model that features a heading, a text block,
+an image and a button, can be used to create several different pages
+with different **content**.
+
+The benefit of content modeling is that when you have a set of distinct
+content models, the content creator can choose the one that best suits
+their needs without needing to worry how the content will look on the
+page. The designer and developer, on the other hand, can design e.g.
+article pages or feature pages without needing to have the specific
+pieces of content already written. Instead, the content model provides
+the designer with the necessary information to create a layout that
+looks great and covers each part of the model.
+
+A content model also facilitates using the same content in different
+channels – your mobile application can have one design and your website
+can have another, but they can both use the same content models.
+
+In Flex, the content modeling step is currently done for you. Each
+**page** can have a selection of pre-determined **sections**, which in
+turn can have several **blocks**. Depending on which kinds of sections
+and blocks you choose for your page, you can create a wide range of
+content. In the future, it will also be possible to create custom
+sections.
+
+TODO: IS THE LEVEL OF TECHNICALITY OK FOR A FLEX DOCS ARTICLE CF
+OPERATOR GUIDE?
 
 ![Example page with levels of content modeling elements](./content_modeling.png)
 
@@ -114,10 +132,13 @@ and bolding, subheadings, links, and code snippets.
 
 ## Content delivery
 
-Once the page has been created, it is delivered as an
-[asset](/references/assets) to the client application. For the landing
-page, the asset being modified in Flex is `content/landing-page.js`.
-Assets can be fetched by the latest version, or a specific version.
+Once the page has been created, it is fetched as an
+[asset](/references/assets) to the client application using the
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
+For the landing page, the asset being modified in Flex is
+`content/landing-page.js`. Assets can be fetched by the latest version,
+or a specific version. The client application then shows the page
+content it has fetched.
 
 TODO: EXPLAIN PUBLICATION FLOW
 
@@ -126,8 +147,8 @@ TODO: EXPLAIN PUBLICATION FLOW
 Content modeling does not, by default, contain information how the
 content should be laid out in the client application. The FTW templates
 do have components corresponding to the different content sections.
-However, the Flex content management assets can be used in any client
-application, and even in the FTW templates you have full freedom as to
-how the different sections get displayed. This means that even with the
+However, the Flex content assets can be used in any client application,
+and even in the FTW templates you have full freedom as to how the
+different sections get displayed. This means that even with the
 pre-defined options, you can create a page setup that is entirely your
 own.
