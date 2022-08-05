@@ -33,7 +33,7 @@ The structure outlined above is hierarchical: Blocks are always nested within Se
 When read from the Page Asset Data, a Field has two key value pairs, type and content.
 For example:
 
-```
+```js
 "title": {
   "type": "heading1",
   "content": "Hello World"
@@ -42,7 +42,7 @@ For example:
 
 Section and block data:
 
-```
+```js
 sections={[
     {
       sectionType: 'article',
@@ -92,14 +92,13 @@ The corresponding Section component is selected using the getComponent function 
 
 The getComponent function uses the defaultSectionComponents object to select the correct component:
 
-```
+```js
 const defaultSectionComponents = {
   article: { component: SectionArticle },
   carousel: { component: SectionCarousel },
   columns: { component: SectionColumns },
   features: { component: SectionFeatures },
 };
-
 ```
 
 Each section component is wrapped in a SectionContainer. You can use it to apply styling that should be present in each component.
