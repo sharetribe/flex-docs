@@ -1,102 +1,119 @@
 ---
-title: Page builder
+title: How FTW renders static pages using the PageBuilder
 slug: page-builder
 updated: 2022-08-01
 category: ftw-content
 ingress:
-  This article introduces how FTW uses the new content management system
-  to generate static pages.
+  This article introduces how FTW uses the Pages feature to generate static pages.
 published: true
 ---
 
-Flex's new page builder feature allows users to add and edit content
-through Flex Console. Once you have created content through the Console,
-you can query it through the Asset Delivery API, which returns the data
-structured as JSON. Version X of FTW introduces new features that create
-static pages from these page data assets.
+The Pages feature allows users to add, edit and manage content through Flex Console. Once you have created content through the Console, you can query it through the Asset Delivery API, which returns the data structured as JSON. Version X of FTW introduces features that render static pages from these page data assets.
 
-Note: Currently, this feature is only available for the landing page.
+## What are static pages
 
-## Page asset data structure
+Static pages are pages that are generated dynamically using Page Asset Data retrieved from the Asset Delivery API. Page Asset Data contains all the information needed to render the content on a static page. It is a machine-readable format of the data entered through the Page Editor in Console, and it reflects the structure and formatting of the content. Page Asset Data is returned in JSON through the Asset Delivery API.
 
-The default asset schema has the following levels of information (in the
-first release of this feature, page schemas can't be modified) :
+It is up to the client application how it renders the data received through the Asset Delivery API. Identical Page Asset Data can, for example, be rendered using entirely different presentational components on two different pages. 
 
-- The page asset (the whole piece of JSON data retrieved from the Asset
-  Delivery API)
-- Sections (a page asset contains an array of sections)
-- Block (sections may contain an array of blocks)
+[illustration with example of how identical data can be rendered differently using different presentational components]
 
-TODO: Example of page asset data JSON with sections and blocks
+## Page Asset Data
 
-## Fetching page asset data
+Page Asset Data always represents an individual page, i.e. to render your landing page and your FAQ page, the client will need to make two calls to the Asset Delivery API and will receive two separate JSON files. 
 
-The page asset file stores the content and structure of the data that is
-used to render static pages. FTW retrieves the page asset data through
-the Asset Delivery API, using the fetchPageAssets function. Asset names
-and loadData calls are defined in page-specific duck files (see
-LandingPage.duck.js).
+Page Asset Data nests 3 levels of information:
 
-TODO: Code blocks
+The Page Asset, which represents all data associated with an individual page
+The Page Asset can contain an array of Sections. Sections can have a type, and there are 4 different types available by default.
+Sections can contain an array of Blocks. There is only one type of Block and Blocks can include text formatted in markdown.
 
-## How data flows in FTW / PageBuilder
+The structure outlined above is hierarchical: Blocks are always nested within Sections and Sections are always nested within the Page Asset. Both Sections and Blocks may include Fields, which are key value pairs encoding data such as title, ingress and background colour.
 
-In version X, FTW introduces a new component called the PageBuilder. The
-PageBuilder reads the page asset data and uses it to generate a static
-content page. The prop pageAssetsData gets passed to the PageBuilder
-component in page-level files, which contains instructions on rendering
-the page content.
+When read from the Page Asset Data, a Field has two key value pairs, type and content.
+For example:
 
-The pageAssetsData is a denormalized JSON asset containing an array of
-sections. If sections are present, the pageBuilder calls the
-SectionBuilder to render the content of the sections.
+```
+"title": {
+  "type": "heading1",
+  "content": "Hello World"
+}
+```
 
-Sections may also include arrays of blocks. If blocks are present, the
-SectionBuilder component will use the BlockBuilder component to render
-the block content.
+Section and block data:
 
-TODO: Graph that shows data flow(?)
+```
+sections={[
+    {
+      sectionType: 'article',
+      sectionId: 'my-article-section',
+      title: {
+        type: 'heading1',
+        content: 'Hello World!',
+      },
+      blocks: [
+        {
+          blockType: 'default-block',
+          blockId: 'cms-article-section-block-1',
+          text: {
+            type: 'markdown',
+            content: 'My article content. _Lorem ipsum_ consectetur adepisci velit',
+          },
+        },
+      ],
+    },
+  ]}
 
-Data is finally passed to the Field component, which validates and
-sanitizes any data. The Field component uses the Primitive components to
-render the data. Most primitives are just wrappers for built-in React
-elements. They make it easy to style and add extra features to similar
-components.
+```
 
-The MarkdownProcessor component is used to render fields with type:
-markdown.
+## How FTW renders Pages
 
-TODO: Code blocks
+FTW uses a component called the PageBuilder to dynamically generate static pages using Page Asset Data. The PageBuilder component is a wrapper that receives the Page Asset Data as a prop, and passes data on to the SectionBuilder if sections are present in the data. Subsequently, the SectionBuilder will pass data on to the BlockBuilder if an array of Blocks are present. FTW also includes a Field component, which validates and sanitizes any data before it is rendered. The Field component uses the Primitive component to actually render the data. Most primitives are wrappers for built-in React elements, which make styling and adding extra features easier. The MarkdownProcessor component is used to render fields with type markdown.
 
-## Section and block builder
+## CMS Page TODO
 
-There are multiple sections:
+Asset names and loadData calls are defined in page-specific duck files (see LandingPage.duck.js).
 
-- Article, carousel, columns, features
-- Section builder renders the correct component based on the sectionType
-- How to add a new section component
-- Block builder only includes one block type at the moment
+FTW retrieves the page asset data through the Asset Delivery API, using the fetchPageAssets function. 
 
-## Fallback pages
+## Section and Block types
 
-FTW allows you to define fallback data if loading the page asset data
-fails. You can specify a fallback page in page-level components, e.g. in
-the LandingPage.js file.
+Using the Page Editor in Console, you can define a section type. FTW recognises all four section types and renders each using a different presentational component. 
 
-TODO: code example of fallback page
+There are four Section types:
+- Articles, meant for copy text and uses a narrow one colum layout optimized for reading
+- Carousel, an image carousel consisting from images uploaded through Console
+- Columns, content blocks rendered in a 1, 2, 3 or 4 column grid
+- Features, text and media displayed side by side in alternating order
 
-## Options
+The corresponding Section component is selected using the getComponent function in the SectionBuilder:
 
-You can use the options prop to extend built-in sections, blocks and
-fields.
+```const Section = getComponent(section.sectionType);```
 
-Todo: ask Vesa for more details on this and add examples
+The getComponent function uses the defaultSectionComponents object to select the correct component:
 
-## Extending the pageBuilder
+```
+const defaultSectionComponents = {
+  article: { component: SectionArticle },
+  carousel: { component: SectionCarousel },
+  columns: { component: SectionColumns },
+  features: { component: SectionFeatures },
+};
 
-It's also possible to create custom section types, block types and
-fields. You might want to do so if you are using the pageBuilder to
-create custom pages that get their content from somewhere else than the
-Asset Delivery API.
+```
 
-TODO: Example on how to extend
+Each section component is wrapped in a SectionContainer. You can use it to apply styling that should be present in each component.
+
+Default components can be overridden and edited. Keep in mind that the changes will be global and reflected on each static page. If you want to make changes to a Section component on a specific page, you can use the options prop to override a page-level component [link to how-to].
+
+Blocks also have a type property. Currently, Page Asset Data only supports a single Block type. More Block types will be introduced in the near future.
+// pageschema-update
+
+## Define a fallback page
+
+FTW allows you to define fallback data if loading the Page Asset Data fails. You can specify a fallback page in page-level components, e.g. in the LandingPage.js file.
+
+A fallback page is constructed similarly to how a dynamic content page is. You need to structure it using the PageBuilder component, but instead of dynamically retrieving Page Asset Data, you pass the pageAssetsData prop a static JSON asset, which can be defined inline or in a separate file. 
+
+TODO: code example of fallback page implementation
+
