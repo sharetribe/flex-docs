@@ -1,0 +1,26 @@
+{
+    "src/**/*.js": [
+        "prettier --write",
+        "git add"
+    ],
+    "gatsby-config.js": [
+        "prettier --write",
+        "git add"
+    ],
+    "gatsby-node.js": [
+        "prettier --write",
+        "git add"
+    ],
+    "gatsby-browser.js": [
+        "prettier --write",
+        "git add"
+    ],
+    "src/**/*.md": [
+        "prettier --print-width=72 --write",
+        "git add"
+    ],
+    "docs/**/*.md": [
+        "prettier --print-width=72 --write",
+        "git add"
+    ]
+}
