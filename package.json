@@ -20,7 +20,8 @@
     "format-js": "prettier --write \"src/**/*.js\"",
     "format-config": "prettier --write \"gatsby-config.js\" \"gatsby-node.js\" \"gatsby-browser.js\"",
     "format-docs": "prettier --print-width=72 --write \"src/**/*.md\" \"docs/**/*.md\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@docsearch/react": "3",
@@ -54,6 +55,8 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "lint-staged": "^13.0.3",
+    "prettier": "^1.19.1",
+    "husky": "^8.0.0"
   }
 }
