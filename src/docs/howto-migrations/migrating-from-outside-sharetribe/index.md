@@ -23,6 +23,27 @@ This article will outline how you can encode data into Intermediary
 format, give you syntax examples of the format, and provide instructions
 on the migration process.
 
+## When to request a migration?
+
+You should request a migration when:
+
+- You have a marketplace operating outside the Sharetribe ecosystem
+- You know you want to transfer your marketplace users and listings to
+  your Flex marketplace. If you’d prefer to re-start your community in
+  Flex, then a migration is not needed.
+- You have started developing with Flex
+
+You will work with Sharetribe’s engineers to complete your migration. If
+you're planning to migrate your data to Flex, you should always start
+the process with a test migration to your development environment, and
+ensure everything looks correct there, before doing a live migration. If
+you want to initiate the (test or live) migration process, you should
+email flex-support@sharetribe.com with the subject “Migrating from
+outside Sharetribe”. Please include your Flex organization (your
+organization is displayed in your
+[Console](https://flex-console.sharetribe.com/) in the top right
+corner).
+
 ## Intermediary data
 
 Intermediary is an edn (https://github.com/edn-format/edn) data format
