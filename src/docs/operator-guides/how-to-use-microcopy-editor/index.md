@@ -96,7 +96,7 @@ set up the Flex Template you will use as the basis for your custom
 marketplace. Setting up a Flex Template for customization is a
 development process. If you are not a developer or do not yet have a
 developer on your team, you should hire a
-[Flex Expert to help you build your marketplace](http://sharetribe.com/experts).
+[Flex Expert to help you build your marketplace](http://sharetribe.com/experts/).
 
 Each Flex Template has default microcopy vocabulary included, reflecting
 its starting theme. [Saunatime](/design-toolkit/user-journey-saunatime/)
