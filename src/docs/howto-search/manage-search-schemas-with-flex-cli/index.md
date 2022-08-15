@@ -154,6 +154,11 @@ If you wish to remove a schema, you can use the `search unset` command.
 
 ## Adding user search schema
 
+> Adding user search schemas is only supported in Flex CLI versions
+> 1.10.0 and above. Use yarn to update Flex CLI by running
+> `yarn global upgrade flex-cli` or `npm update -g flex-cli` if you are
+> using npm.
+
 User profile search schema can be useful, if you have an Integration API
 application that needs to query different sets of users, depending on
 some value in the user profile's extended data. For instance, if users
