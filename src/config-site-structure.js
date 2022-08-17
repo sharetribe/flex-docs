@@ -73,6 +73,7 @@ const sortingArrayTransactionProcess = [
   'transaction-process',
   'privileged-transitions',
   'change-transaction-process',
+  'reviews'
 ];
 
 const sortingArrayUsersAndAuthentication = [
