@@ -28,10 +28,10 @@ However, in your production marketplace, you must
 [configure outgoing email settings](https://www.sharetribe.com/docs/how-to/set-up-outgoing-email-settings/)
 for email notifications to work.
 
-Users will not receive email notifications until they have verified their
-email address. Sharetribe does not send emails to unconfirmed addresses
-to avoid people flagging those as spam emails, as that can hurt your
-marketplace's ability to send mail to legitimate users.
+Users will not receive email notifications until they have verified
+their email address. Sharetribe does not send emails to unconfirmed
+addresses to avoid people flagging those as spam emails, as that can
+hurt your marketplace's ability to send mail to legitimate users.
 
 Do note that built-in email notifications can not be disabled.
 
@@ -97,9 +97,9 @@ Sometimes the built-in and transaction notifications are not enough, and
 you might need more control over what triggers an email. Examples
 include notifying your marketplace operators when a user submits a
 listing for review or sending a provider an email once their listing is
-published. As neither of these actions is transaction related, you can not
-trigger them as transaction notifications. Instead, you must listen to
-events and trigger an email to respond to the correct event.
+published. As neither of these actions is transaction related, you can
+not trigger them as transaction notifications. Instead, you must listen
+to events and trigger an email to respond to the correct event.
 
 For building custom email notifications, we recommend connecting your
 app to Zapier. You can use Zapier to listen for events in your
@@ -108,8 +108,8 @@ supports sending text messages instead of emails. Read more about Zapier
 in our
 [guide on how to set up and use Zapier](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/).
 
-If you are unsure how to approach a Zapier integration, do not hesitate to
-reach out to our support team through one of our
-[official support channels](https://www.sharetribe.com/support/). We will
-be happy to help you figure out your specific use case and give you some
-suggestions for implementation.
+If you are unsure how to approach a Zapier integration, do not hesitate
+to reach out to our support team through one of our
+[official support channels](https://www.sharetribe.com/support/). We
+will be happy to help you figure out your specific use case and give you
+some suggestions for implementation.

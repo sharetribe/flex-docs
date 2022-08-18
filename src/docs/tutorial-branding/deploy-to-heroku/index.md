@@ -48,10 +48,10 @@ environment, the "window" object is not available.
 
 ## Enable HTTP basic access authentication
 
-You can enforce access control in your web application by enabling HTTP 
-basic access authentication. It's a good idea to restrict access to your 
-web application while still testing your marketplace: it prevents your 
-site from being indexed in search engines and users from accidentally 
+You can enforce access control in your web application by enabling HTTP
+basic access authentication. It's a good idea to restrict access to your
+web application while still testing your marketplace: it prevents your
+site from being indexed in search engines and users from accidentally
 signing up in a marketplace still under development.
 
 FTW exposes two environment variables with which you can set a username
@@ -121,9 +121,9 @@ Then add the following environment variables as Config Vars:
 
 - `NODE_ENV`
 
-  Defines whether the application is run in production or development mode. Use
-  'development' for development and 'production' for production.<br/>
-  Use value: 'production'
+  Defines whether the application is run in production or development
+  mode. Use 'development' for development and 'production' for
+  production.<br/> Use value: 'production'
 
 - `REACT_APP_ENV`
 
