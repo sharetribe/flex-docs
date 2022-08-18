@@ -15,7 +15,7 @@ marketplaces. Provider reviews encourage customers to order well-rated
 listings, and customer reviews encourage providers to accept business
 from well-rated customers.
 
-In Flex, reviews can have a rating between 1-5 and text content. By
+In Flex, reviews can have a rating between 1-5, as well as text content. By
 default, reviews are given at the end of a transaction.
 
 The customer reviews the transaction's listing. Since providers can have
