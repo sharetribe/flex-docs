@@ -105,8 +105,8 @@ This is how the default logic works:
 
 1.  A
     [query is made](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L300)
-    that retrieves all sales transactions (i.e. transactions where the current user is the
-    provider) transactions that are in the
+    that retrieves all sales transactions (i.e. transactions where the
+    current user is the provider) transactions that are in the
     [confirm payment state](https://github.com/sharetribe/ftw-daily/blob/85e9291a3078c54d6531ad465276f03847882911/src/util/transaction.js#L214)
 2.  The amount of sales transactions determines the
     [notification count](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L104)
