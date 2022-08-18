@@ -62,7 +62,7 @@ parties does not submit a review, the other review does get published.
 ### Can reviews be removed?
 
 Once published, reviews cannot be removed. They can, however, be
-modified by the operator in Flex Console > Manage > Reviews.
+modified by the operator in Flex Console > Manage > [Reviews](https://flex-console.sharetribe.com/reviews).
 
 ### Can I add a review after the review period has expired?
 
@@ -70,7 +70,7 @@ Sometimes, transaction participants want to add missing reviews after
 the review period has expired. If the marketplace operators decide that
 the review is relevant and honest, you can reach out to us at
 [Flex Support](mailto:flex-support@sharetribe.com) with the issue and we
-can look into the issue.
+can look into it.
 
 ### How can I add an average rating attribute to my listings?
 
@@ -84,5 +84,5 @@ the reviewed listing.
 
 You can create a logic that stores the number of reviews and their
 previous average in the listing's metadata, and updates these when a new
-review is added. That way, you can e.g. display the average rating on
+review is added. That way, you can, for instance, display the average rating on
 the listing page, or use it to sort listings.
