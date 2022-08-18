@@ -130,11 +130,11 @@ able to collect.
 It is good to note that any extended data attributes only show up in
 Zapier if they are present in the resource you are testing with. For
 example, if you are testing phone number handling in a user event, you
-can check in Flex Console to see whether the user has a phone number
-defined in the first place. Since Zapier listens to events, it is useful
-to start any Zapier development work by triggering an event with the
-specific test data you need, so you know that your data has the
-necessary attributes.
+can check in [Flex Console](https://flex-console.sharetribe.com/users)
+to see whether the user has a phone number defined in the first place.
+Since Zapier listens to events, it is useful to start any Zapier
+development work by triggering an event with the specific test data you
+need, so you know that your data has the necessary attributes.
 
 ## Which actions can Zapier take in my marketplace?
 
