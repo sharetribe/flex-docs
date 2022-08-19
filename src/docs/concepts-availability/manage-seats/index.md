@@ -44,6 +44,14 @@ custom length. When modifying the template, you or your developers can
 enable more than one seat per time slot, either in general or for
 specific dates and times.
 
+If your marketplace listings happen at a specific time or place instead
+of at a repeated interval (e.g. concerts or events), you can set the
+listing availability to be blocked by default. Providers can then create
+availability exceptions to open availability for the day(s) of their
+event and the desired number of seats. To set availability as blocked by
+default, you need to set an availability plan with 0 seats across the
+board.
+
 Some examples:
 
 - You can set multiple available spaces for the same sauna for every
