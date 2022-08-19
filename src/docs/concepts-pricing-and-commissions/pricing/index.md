@@ -146,7 +146,7 @@ percentage of some other (sub)total.
 ## Refunds
 
 Refunds are created with the
-[calculate-full-refund](https://www.sharetribe.com/docs/references/transaction-process-actions/#actioncalculate-full-refund)
+[calculate-full-refund](/references/transaction-process-actions/#actioncalculate-full-refund)
 action. It sets transaction pay in and pay out amounts to zero and
 creates reverse line items that undo all the previous line items. Note,
 that the `calculate-full-refund` action can be run only once during a

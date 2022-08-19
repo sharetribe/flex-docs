@@ -74,8 +74,8 @@ happens between the listing provider and the purchasing customer.
 Sharetribe Flex lets you extensively customize the rules and steps of
 your transaction process to govern how providers and customers
 capitalize on your marketplace.
-[Saunatime’s default process](https://www.sharetribe.com/docs/concepts/transaction-process/)
-mimics an Airbnb-style daily booking rental.
+[Saunatime’s default process](/concepts/transaction-process/) mimics an
+Airbnb-style daily booking rental.
 
 <transactionprocesscarousel title="Transaction process">
 
@@ -87,6 +87,5 @@ As the development starting point, Saunatime’s user journeys are the
 default ways in which users create content, discover listings, and
 transact in Flex. Designing your marketplace’s journeys helps developers
 understand how to modify the template code to build your custom
-marketplace.
-[The next article](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/)
-guides you in creating your own user journey.
+marketplace. The next article guides you in
+[creating your own user journey](/design-toolkit/your-user-journey-a-guide/).

@@ -213,7 +213,7 @@ your marketplace and are directly supported by Flex. However, you might
 want to experiment with other monetization models depending on your
 business idea. For example, subscriptions might be a good way of
 monetizing your marketplace. With the
-[Integration API](https://www.sharetribe.com/docs/concepts/marketplace-api-integration-api/#when-to-use-the-integration-api),
+[Integration API](/concepts/marketplace-api-integration-api/#when-to-use-the-integration-api),
 you can integrate a third-party service such as
 [Chargebee](https://www.chargebee.com/) or
 [Stripe billing](https://stripe.com/en-fi/billing) to process

@@ -19,8 +19,7 @@ to be associated with a transaction and can not be sent outside of one.
 The default
 [transaction process](https://github.com/sharetribe/flex-example-processes/blob/master/flex-default-process/process.edn)
 includes an enquiry transition, which initiates a transaction without
-running any
-[actions](https://www.sharetribe.com/docs/references/transaction-process-actions/#actions),
+running any [actions](/references/transaction-process-actions/#actions),
 allowing the provider and customer to send messages to each other. Note
 that messages do not alter the transaction or transition state.
 
@@ -29,7 +28,7 @@ that messages do not alter the transaction or transition state.
 You can send messages using the
 [send message endpoint](https://www.sharetribe.com/api-reference/marketplace.html#send-message),
 which requires an authenticated user’s access token to call. The
-[Integration API](https://www.sharetribe.com/docs/introduction/getting-started-with-integration-api/)
+[Integration API](/introduction/getting-started-with-integration-api/)
 does not offer an endpoint to send messages, and therefore, only
 authenticated users can send messages through the Marketplace API.
 
@@ -43,20 +42,18 @@ included as a relationship when
 ### Email notifications
 
 New messages trigger a
-[built-in email notification](https://www.sharetribe.com/docs/concepts/email-notifications/)
-sent to the receiving party of the message. You can edit built-in email
+[built-in email notification](/concepts/email-notifications/) sent to
+the receiving party of the message. You can edit built-in email
 notifications through
 [Console](https://flex-console.sharetribe.com/email-templates/new-message).
 
 ## Zapier, events and messages
 
-Using
-[Zapier](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/)
-you can connect your marketplace with other web applications and create
-automated workflows. Even though you can’t listen for new messages
-through Zapier, messages can easily be retrieved as a transaction
-relationship. For more complex customisations, you can use events to
-listen to new or deleted messages.
+Using [Zapier](/how-to/set-up-and-use-zapier/) you can connect your
+marketplace with other web applications and create automated workflows.
+Even though you can’t listen for new messages through Zapier, messages
+can easily be retrieved as a transaction relationship. For more complex
+customisations, you can use events to listen to new or deleted messages.
 
 ### How to retrieve messages in Zapier
 
@@ -77,19 +74,15 @@ to use the message content in your Zap.
 
 ### Events and messages
 
-Listening to
-[events](https://www.sharetribe.com/docs/cookbook-events/reacting-to-events/)
-through the
-[Integration API](https://www.sharetribe.com/docs/introduction/getting-started-with-integration-api/)
+Listening to [events](/cookbook-events/reacting-to-events/) through the
+[Integration API](/introduction/getting-started-with-integration-api/)
 is the most versatile way to react to what is happening in your
 marketplace. As sending new messages does not affect transaction state
 or transitions, you can’t use Zapier to detect new messages as it can
 only react to transactions, listing and user events. Events allow you to
-listen to
-[created messages](https://www.sharetribe.com/docs/references/events/#supported-event-types)
+listen to [created messages](/references/events/#supported-event-types)
 and react directly to them. See how to
-[react to events](https://www.sharetribe.com/docs/how-to/reacting-to-events/)
-and the
+[react to events](/how-to/reacting-to-events/) and the
 [Integration API example script repository](https://github.com/sharetribe/flex-integration-api-examples)
 if you’re unsure where to start building your integration.
 
@@ -124,4 +117,4 @@ new message. To achieve this, you could change the logic behind
 to display a number stored in extended data. The data attribute would
 represent the number of unread messages, and could be updated every time
 a new message is detected using
-[events](https://www.sharetribe.com/docs/cookbook-events/reacting-to-events/).
+[events](/cookbook-events/reacting-to-events/).

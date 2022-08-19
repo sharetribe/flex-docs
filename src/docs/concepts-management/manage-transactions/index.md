@@ -39,26 +39,25 @@ The summary includes most of the information about the transaction.
 
 - Booking status: If your transaction process uses availability, the
   transaction will be in one of
-  [the different booking statuses](https://www.sharetribe.com/docs/references/transaction-process-actions/#bookings).
+  [the different booking statuses](/references/transaction-process-actions/#bookings).
   The booking status is different from the transaction status.
 - Booking period: If your transaction uses availability, the booking
   period will be the timeframe of this transaction. In case of a rental
   marketplace, it will be the rental period of a sauna, for example.
 - Seats: If your listing has a specific number of
-  [seats](https://www.sharetribe.com/docs/references/availability/#seats)
-  available, you will see how many seats were booked as a part of this
-  transaction.
+  [seats](/references/availability/#seats) available, you will see how
+  many seats were booked as a part of this transaction.
 - Stock reservation status: If your transaction process uses stock, the
   stock reservation can be in one of the different
-  [stock reservations states](https://www.sharetribe.com/docs/references/stock/#stock-reservation-states).
+  [stock reservations states](/references/stock/#stock-reservation-states).
 - Stock reservation quantity: The amount of stock reserved in this
   transaction.
 - Transaction ID: Unique ID of the transaction in the Flex database.
 - Transaction process: You can have multiple
-  [transaction processes](https://www.sharetribe.com/docs/concepts/transaction-process/)
-  active in your marketplace and each transaction process can have
-  multiple versions. This field specifies which process and which
-  version the transaction uses.
+  [transaction processes](/concepts/transaction-process/) active in your
+  marketplace and each transaction process can have multiple versions.
+  This field specifies which process and which version the transaction
+  uses.
 - Customer paid: This field shows how much money the customer paid. It
   also includes a breakdown of the line items and the fee that your
   marketplace collects from the buyer.
@@ -75,21 +74,21 @@ The summary includes most of the information about the transaction.
 
 In the timeline, you see all the transitions that have been triggered so
 far in the transaction as well as the time when they took place and
-[the actor who initiated each transition](https://www.sharetribe.com/docs/concepts/transaction-process/#transitions).
+[the actor who initiated each transition](/concepts/transaction-process/#transitions).
 You also see the possible next transitions. If the actor of the next
 possible transition is the Operator (you), you will be able to initiate
 that transition in the timeline section.
 
 ### Activity
 
-[All customer interactions in your marketplace](https://www.sharetribe.com/docs/concepts/transaction-process/#users-interact-through-transactions)
+[All customer interactions in your marketplace](/concepts/transaction-process/#users-interact-through-transactions)
 are considered transactions in Flex. In the activity section, you will
 see the history of the transaction. This includes all the transitions
 that have occurred already, similar to the Timeline section, interwoven
 with the communication that has happened within the transaction.
 
 The communication includes all the
-[notifications that have been sent](https://www.sharetribe.com/docs/references/transaction-process-format/#notifications)
+[notifications that have been sent](/references/transaction-process-format/#notifications)
 as a part of the transaction process, the written messages between
 users, and the reviews given at the end of the transaction, if
 available.
@@ -98,23 +97,21 @@ available.
 
 There are two separate sections for each type of extended data supported
 by transactions: protected data and metadata. You can read
-[an introduction to Extended data](https://www.sharetribe.com/docs/concepts/extended-data-introduction/)
+[an introduction to Extended data](/concepts/extended-data-introduction/)
 to learn more about different types of Extended Data. Unlike with
-[user cards](https://www.sharetribe.com/docs/concepts/console-manage-users/)
-and
-[listing cards](https://www.sharetribe.com/docs/concepts/console-manage-listings/),
-transaction public extended data cannot be edited directly through
-Console. You can change existing field values or even add new fields for
-the metadata, but, since protected data is captured at specific points
-of the transaction, it is seared in the transaction information.
-Transaction related protected data cannot be changed through Console.
+[user cards](/concepts/console-manage-users/) and
+[listing cards](/concepts/console-manage-listings/), transaction public
+extended data cannot be edited directly through Console. You can change
+existing field values or even add new fields for the metadata, but,
+since protected data is captured at specific points of the transaction,
+it is seared in the transaction information. Transaction related
+protected data cannot be changed through Console.
 
 At the bottom of the transaction card, you find the Events section. It
 contains a Flex CLI command that you can use to view all the events
 related to this transaction. Read more about
-[viewing events with Flex CLI](https://www.sharetribe.com/docs/how-to/view-events-with-flex-cli/)
-or visit the
-[Events reference in our Docs site](https://www.sharetribe.com/docs/references/events/).
+[viewing events with Flex CLI](/how-to/view-events-with-flex-cli/) or
+visit the [Events reference in our Docs site](/references/events/).
 
 ## Browse and Search transactions
 

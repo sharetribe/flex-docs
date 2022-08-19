@@ -80,8 +80,8 @@ delete users or listings, ban users, and edit default listing and user
 information. You can also export all this information into a CSV file to
 use as you see fit. Perhaps most important of all, you can add and
 modify the extended data of your marketplace elements in the Manage
-section. You can read more about extended data
-[in this article](https://www.sharetribe.com/docs/concepts/extended-data-introduction/).
+section. You can
+[read more about extended data](/concepts/extended-data-introduction/).
 
 ### Build
 
@@ -107,7 +107,7 @@ different kinds of transaction processes your marketplace has. You can
 toggle between the different processes in the left-side selection and
 see how many transactions have used each process. You can also inspect
 the components of the transaction processes. Read more about
-[transaction processes in Flex](https://www.sharetribe.com/docs/concepts/transaction-process/).
+[transaction processes in Flex](/concepts/transaction-process/).
 
 **Payments** has information about your Stripe configuration. Your
 Stripe secret key is added here. The public key is configured within the

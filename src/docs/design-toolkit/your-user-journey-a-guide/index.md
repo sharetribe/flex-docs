@@ -17,7 +17,7 @@ during a transaction lets you receive more accurate estimates of the
 budget required to build your custom marketplace with Flex.
 
 In
-[the previous article](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates),
+[the previous article](/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates),
 you learned how listing creation, listing discovery, and the transaction
 process works in one of the Flex Templates. Now it is time to define how
 users complete these critical journeys on your marketplace.
@@ -83,8 +83,8 @@ completion. Consider these questions:
 - What email notifications are sent as part of the transaction process?
   When are they sent?
 
-You can learn more about the transaction process functionality in Flex
-[in this overview article](https://www.sharetribe.com/docs/concepts/transaction-process/).
+Learn more about
+[the transaction process functionality in Flex](/concepts/transaction-process/).
 
 ## 2. Create maps for listing creation journey, discovery journey and transaction process.
 

@@ -11,10 +11,10 @@ published: true
 
 Sharetribe Flex allows you to build a unique marketplace fast with
 custom development. Unless you have
-[these development skills](https://www.sharetribe.com/docs/introduction/development-skills/),
-you need to hire someone who does. Though any developer will do, we
-recommend hiring a vetted developer from Sharetribe's official Flex
-Expert Network for great quality work.
+[these development skills](/introduction/development-skills/), you need
+to hire someone who does. Though any developer will do, we recommend
+hiring a vetted developer from Sharetribe's official Flex Expert Network
+for great quality work.
 
 Hiring a developer to build your marketplace with Flex requires two
 things. First communicating your requirements to the developer. Second,
@@ -28,7 +28,7 @@ marketplace. This means the developers you hire need guidance on how
 exactly you want the marketplace to work.
 
 We recommend using one of
-[Flex Templates for Web](https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw)
+[Flex Templates for Web](/operator-guides/concepts/#flex-templates-for-web-ftw)
 as a basis for the development work, especially if you're launching a
 marketplace for the first time. The Flex Templates are examples of fully
 functional marketplace applications. Typically the Templates have
@@ -45,16 +45,15 @@ what it offers. There are a few ways to gain this understanding:
    adding listings, making bookings and payments, sending messages,
    leaving reviews, and so on.
 2. Study
-   [how listing search, listing creation, and transactions work](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates)
+   [how listing search, listing creation, and transactions work](/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates)
    specifically.
-3. Install one of the template applications (Saunatime, Yogatime, or
-   Sneakertime) yourself following
-   [this guide](https://www.sharetribe.com/docs/introduction/getting-started-with-ftw-daily/),
+3. Install one of the
+   [template applications (Saunatime, Yogatime, or Sneakertime) yourself](/introduction/getting-started-with-ftw-daily/),
    or ask a developer to do it for you.
 4. If you're comfortable working with design software like Sketch, Adobe
    XD or Figma, you can download the complete
-   [design files](https://www.sharetribe.com/docs/design-toolkit/design-files/)
-   of the two templates to explore all their pages and views.
+   [design files](/design-toolkit/design-files/) of the two templates to
+   explore all their pages and views.
 
 Your developer’s job is to customize the Flex Template (how it looks and
 how it works) to meet your unique requirements. Your responsibility is
@@ -69,7 +68,7 @@ and so on), and how buyers and sellers transact (is there an online
 payment, messaging, reviews, and so on). Whenever there's a difference
 in what you see in the template and how you want your marketplace to
 work, you need to communicate this to the developer. You can follow
-[this guide](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/)
+[this user journey guide](/design-toolkit/your-user-journey-a-guide/)
 for help.
 
 You also need to communicate to the developers how the marketplace looks

@@ -23,8 +23,7 @@ the public Listing endpoints or they are only available to the listing's
 author.
 
 When tracking
-[listing events](https://www.sharetribe.com/docs/references/events/#supported-event-types)
-through the
+[listing events](/references/events/#supported-event-types) through the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html),
 it is important to also pay attention to the state of the listing. For
 instance, in the default FTW template implementation the listing is

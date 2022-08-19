@@ -95,6 +95,5 @@ Yogatime offers a starting point for how users create listing profiles,
 discover providers, and transact on your custom service booking
 marketplace. Designing your own marketplace’s journeys helps developers
 understand how to modify this template starting point to build your
-custom marketplace.
-[The next article](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/)
-guides you in creating your own user journey.
+custom marketplace. The next article guides you in
+[creating your own user journey](/design-toolkit/your-user-journey-a-guide/).

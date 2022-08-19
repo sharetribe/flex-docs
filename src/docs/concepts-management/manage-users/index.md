@@ -56,7 +56,7 @@ Below the overview, you have separate sections for each type of extended
 data. Extended data is a Flex feature that allows you to customize and
 collect user, listing, and transaction data specific to your
 marketplace. You can read
-[an introduction to extended data](https://www.sharetribe.com/docs/concepts/extended-data-introduction/)
+[an introduction to extended data](/concepts/extended-data-introduction/)
 to learn more. All extended data can be edited directly through Console.
 You can change existing field values or even add new extended data
 fields.
@@ -64,9 +64,8 @@ fields.
 At the bottom of the user card, you have the Events section. It contains
 a Flex CLI command that you can use to view all the events related to
 this user. Read more about
-[viewing events with Flex CLI](https://www.sharetribe.com/docs/how-to/view-events-with-flex-cli/)
-or visit the
-[Events reference in our Docs site](https://www.sharetribe.com/docs/references/events/).
+[viewing events with Flex CLI](/how-to/view-events-with-flex-cli/) or
+visit the [Events reference in our Docs site](/references/events/).
 
 ## Browse and search users
 

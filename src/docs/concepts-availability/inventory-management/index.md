@@ -1,7 +1,7 @@
 ---
 title: Inventory management
 slug: inventory-management
-updated: 2021-10-15
+updated: 2022-08-18
 category: concepts-availability
 ingress:
   Inventory or stock management is a key feature of many product
@@ -19,19 +19,19 @@ mostly happen as part of transactions, as buyers on your marketplace
 make purchases.
 
 This article describes the stock management features of Flex on a high
-level. If you want to read a more technical article about the feature,
-[click here](https://www.sharetribe.com/docs/references/stock/).
+level. We also have
+[a more technical article about stock management](/references/stock/).
 
 ## How do you determine the initial available stock or increase the available stock of a listing?
 
 With the stock-related APIs, you add to the available stock of a listing
 by creating a
-[stock adjustment](https://www.sharetribe.com/docs/operator-guides/concepts/#stock-adjustment).
-This is an API call that you make through one of our APIs that lets your
-Flex marketplace know that you have increased the quantity of available
-stock for one of your listings. This adjustment could be done directly
-through the marketplace UI or a third-party integration using the
-corresponding API calls.
+[stock adjustment](/operator-guides/concepts/#stock-adjustment). This is
+an API call that you make through one of our APIs that lets your Flex
+marketplace know that you have increased the quantity of available stock
+for one of your listings. This adjustment could be done directly through
+the marketplace UI or a third-party integration using the corresponding
+API calls.
 
 ## How do you remove or decrease the available stock of a listing?
 
@@ -45,8 +45,8 @@ available.
 If the transaction completes, the purchased units are removed from the
 inventory permanently. If the transaction is cancelled, the units are
 released back to the inventory and other users will be able to purchase
-them. Find out more about transactions actions
-[here](https://www.sharetribe.com/docs/references/transaction-process-actions/#stock-reservations).
+them. Find out more about
+[transaction process actions related to stock reservations](/references/transaction-process-actions/#stock-reservations).
 
 You can also connect your Flex marketplace with third-party systems to
 further manage stock. If units are bought through another site or
@@ -70,5 +70,4 @@ double-purchases of the same stock will happen.
 If you are looking to manage the number of spaces in an event, you
 should take a look at the seats feature. With seats, you can manage the
 number of available spaces in a given event at a given time. Seats are
-tied to booking availability managment. You can learn more about the
-feature [here](https://www.sharetribe.com/docs/concepts/manage-seats/).
+tied to [booking availability management](/concepts/manage-seats/).
