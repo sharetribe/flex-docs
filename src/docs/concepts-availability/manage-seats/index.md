@@ -31,7 +31,7 @@ or
 
 You define the available seats for any given time slot of a listing via
 the
-[availability plan or availability exceptions](https://www.sharetribe.com/docs/operator-guides/concepts/#availability-plan--availability-exception)
+[availability plan or availability exceptions](/operator-guides/concepts/#availability-plan--availability-exception)
 of a listing. If the number of seats is set to 0, the listing will not
 be available at that time.
 
@@ -58,7 +58,7 @@ Some examples:
 
 Most of the time, a listing's available seats will decrease through
 bookings via transactions. The
-[booking-related transaction process actions](https://www.sharetribe.com/docs/references/transaction-process-actions/#bookings)
+[booking-related transaction process actions](/references/transaction-process-actions/#bookings)
 allow defining your transaction process so that when a transaction is
 initiated, a seat reservation is made as well. This prevents your users
 from booking more seats than are available.
@@ -66,8 +66,8 @@ from booking more seats than are available.
 If the transaction completes, the seats are removed from the listing’s
 or timeslot’s availability. If the transaction is cancelled, the seats
 are released and other users will be able to book them. Find out more
-about transactions actions
-[here](https://www.sharetribe.com/docs/references/transaction-process-actions/#bookings).
+about
+[availability related transaction actions](/references/transaction-process-actions/#bookings).
 
 You can also connect your Flex marketplace with third-party systems to
 further manage seats. If bookings are made through another system, you
@@ -100,6 +100,5 @@ same timeframe.
 ## Can I manage stock or inventory of a listing with seats?
 
 If you are looking to manage the stock or inventory of a listing, you
-should take a look at Flex’s stock management. You can learn more about
-the feature
-[here](https://www.sharetribe.com/docs/concepts/inventory-management/).
+should take a look at
+[stock management in Flex](/concepts/inventory-management/).

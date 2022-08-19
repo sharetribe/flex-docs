@@ -385,7 +385,7 @@ attributes a line total is calculated for each line item. Line totals
 then define the total payin and payout sums of the transaction.
 
 You can read more about line items and pricing from
-[pricing background article](https://www.sharetribe.com/docs/concepts/pricing/).
+[pricing background article](/concepts/pricing/).
 
 </extraInfo>
 

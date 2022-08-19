@@ -163,7 +163,7 @@ User profile search schema can be useful, if you have an Integration API
 application that needs to query different sets of users, depending on
 some value in the user profile's extended data. For instance, if users
 have `age` attribute stored in their protected data, you can use the
-[/users/query endpoint in the Integration API](https://www.sharetribe.com/docs/references/extended-data/)
+[/users/query endpoint in the Integration API](/references/extended-data/)
 to find users of a certain age range.
 
 Search schema for user profiles can be added as follows:

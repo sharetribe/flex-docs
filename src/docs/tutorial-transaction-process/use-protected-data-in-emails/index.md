@@ -156,7 +156,7 @@ we should be able to find configuration for the _transition/accept_.
 
 To reveal the provider's protected data, we add a new action to that
 transition:
-<br/>[action/reveal-provider-protected-data](https://www.sharetribe.com/docs/references/transaction-process-actions/#actionreveal-provider-protected-data)
+<br/>[action/reveal-provider-protected-data](/references/transaction-process-actions/#actionreveal-provider-protected-data)
 
 In addition, we add configuration to that action. The **key-mapping**
 means that we just take _:phoneNumber_ from the provider's protected
@@ -206,7 +206,7 @@ To test the protected data using Flex CLI's built-in preview
 functionality, you need to use custom sample-template-context.json.
 
 You can read more from the Flex CLI article:
-[Edit email templates with Flex CLI](https://www.sharetribe.com/docs/how-to/edit-email-templates-with-flex-cli/#sample-email-context)
+[Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/#sample-email-context)
 
 The short guide of the necessary steps:
 

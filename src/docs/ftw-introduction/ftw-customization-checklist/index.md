@@ -73,9 +73,8 @@ FTW.
 
 ## 4. Other optional changes
 
-- **Update
-  [page schema](https://www.sharetribe.com/docs/tutorial/add-faq-page/#page-schema)**
-  to improve Search Engine Optimization (SEO)
+- **Update [page schema](/tutorial/add-faq-page/#page-schema)** to
+  improve Search Engine Optimization (SEO)
 - **Update ListingPage** to show extended data (aka publicData
   attribute).
   - It's inside _src/containers_ directory

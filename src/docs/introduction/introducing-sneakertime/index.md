@@ -15,10 +15,9 @@ point for the development of product marketplaces. It offers basic
 product marketplace functionality out of the box and can be further
 customized to fit your marketplace’s unique workflows and design.
 
-To learn more, check out the video below or read on. For more technical
-information on Sneakertime, check out
-[this article](https://www.sharetribe.com/docs/ftw/ftw-product/) in our
-developer documentation.
+To learn more, check out the video below or read on. For
+[more technical information on Sneakertime](/ftw/ftw-product/), check
+out our developer documentation.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XUpxn_K4Mm8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -60,9 +59,8 @@ search with a simple configuration change.
 ## Inventory management
 
 Inventory management is vital for product marketplaces, and Sneakertime
-uses Flex’s listing stock management features to enable it. You can read
-more about inventory management in Flex
-[in this article](https://www.sharetribe.com/docs/concepts/inventory-management/).
+uses Flex’s listing stock management features to enable it. Read more
+about [inventory management in Flex](/concepts/inventory-management/).
 
 In Sneakertime, the seller adds the number of items they have in stock
 during listing creation. When a buyer makes a purchase, that number is
@@ -121,8 +119,7 @@ each other.
 With Flex, you can modify your marketplace’s transaction flow to your
 specifications. For example, you could add a step for the seller to
 confirm the order or only have the buyer review the purchase. Read more
-about transaction processes in Flex
-[here](https://www.sharetribe.com/docs/concepts/transaction-process/).
+about [transaction processes in Flex](/concepts/transaction-process/).
 
 ## How to get started
 
@@ -135,5 +132,5 @@ If you’re a developer or have one in your team, head over to Github,
 download the Sneakertime code, and start developing your unique product
 marketplace. If you’re looking to hire a developer from Sharetribe’s
 [Expert Partner Network](https://www.sharetribe.com/experts/), check out
-[this article](https://www.sharetribe.com/docs/operator-guides/how-to-hire-developer/)
-for more information on the process.
+[this article](/operator-guides/how-to-hire-developer/) for more
+information on the process.

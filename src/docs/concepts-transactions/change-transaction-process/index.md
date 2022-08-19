@@ -23,10 +23,8 @@ Understanding how the transaction process works will help you be on the
 same page with your developer on what and how to build.
 
 This article continues the general overview of the transaction process
-offered
-[here](https://www.sharetribe.com/docs/concepts/transaction-process/) by
-suggesting a few principles to keep in mind when designing how your
-users will transact.
+offered [here](/concepts/transaction-process/) by suggesting a few
+principles to keep in mind when designing how your users will transact.
 
 ## What to think about in designing your own transaction process
 
@@ -108,10 +106,10 @@ about the following.
 
 To further think about the user experience on your marketplace in
 addition to transactions,
-[consult our guide](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/)
-on defining the discovery and listing creating process in your
-marketplace. You can see the default user experience provided by
-[Flex’s Templates for Web](https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw)
+[consult our guide](/design-toolkit/what-are-user-journeys/) on defining
+the discovery and listing creating process in your marketplace. You can
+see the default user experience provided by
+[Flex’s Templates for Web](/operator-guides/concepts/#flex-templates-for-web-ftw)
 there too.
 
 ## Draw it out
@@ -130,7 +128,7 @@ user can take as part of moving from state to state.
 
 You can draw out your transaction process with a pen and paper or online
 using a tool like
-[Whimsical](https://www.sharetribe.com/docs/concepts/change-transaction-process/#start-designing).
+[Whimsical](/concepts/change-transaction-process/#start-designing).
 
 ## Modify an existing process, if you can
 
@@ -166,14 +164,12 @@ offers. Your users will need an interface to complete these actions.
 
 Since the Flex Template does not contain such an interface out of the
 box, a developer will need to customize it into the application. You can
-use the
-[Flex design files](https://www.sharetribe.com/docs/design-toolkit/design-files/)
-to guide your developer on how you want this to work.
+use the [Flex design files](/design-toolkit/design-files/) to guide your
+developer on how you want this to work.
 
 You can review everything included in the Flex Template by exploring the
-demo marketplace in your Console. You can specifically review the
-screens that are part of a transaction
-[here](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/#transaction-process).
+demo marketplace in your Console. You can refer to this article to
+[review the screens that are part of a transaction](/design-toolkit/your-user-journey-a-guide/#transaction-process).
 
 ## Share your transaction process with your developer
 

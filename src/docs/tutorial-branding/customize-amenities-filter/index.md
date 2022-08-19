@@ -178,8 +178,8 @@ For example, you could add filter for public data field `view`:
 ```
 
 Note: this assumes that you have added 'view' to the
-[extended data](https://www.sharetribe.com/docs/references/extended-data/)
-of the listing entity through the `EditListingFeaturesPanel` component.
+[extended data](/references/extended-data/) of the listing entity
+through the `EditListingFeaturesPanel` component.
 
 Read more from the article:
 [Change search filters in FTW](/how-to/change-search-filters-in-ftw/)

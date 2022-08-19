@@ -51,19 +51,16 @@ organization (your organization is displayed in your
 - Price (as an number amount)
 - Location
 - Images
-- Custom fields (as listing
-  [public data](https://www.sharetribe.com/docs/references/extended-data/))
-- Categories (as listing
-  [public data](https://www.sharetribe.com/docs/references/extended-data/))
+- Custom fields (as listing [public data](/references/extended-data/))
+- Categories (as listing [public data](/references/extended-data/))
 
 _What is not migrated automatically: order type data, shipping price,
 comments, and availability calendar data. In Flex, the
-[transaction process](https://www.sharetribe.com/docs/concepts/transaction-process/)
-determines how price is calculated and how the order flow works. If you
-have enabled multiple order types or shipping price in Go and want to
-migrate the data from these over to Flex, you need to do custom
-development to ensure the data is transferred and displayed correctly.
-application._
+[transaction process](/concepts/transaction-process/) determines how
+price is calculated and how the order flow works. If you have enabled
+multiple order types or shipping price in Go and want to migrate the
+data from these over to Flex, you need to do custom development to
+ensure the data is transferred and displayed correctly. application._
 
 #### User profiles:
 
@@ -73,8 +70,7 @@ application._
 - Primary email address
 - Password hashes (so user can use same credentials to login)
 - Profile image
-- Phone number (as user
-  [protected data](https://www.sharetribe.com/docs/references/extended-data/))
+- Phone number (as user [protected data](/references/extended-data/))
 - Stripe accounts
 
 _Migrated profiles do not include username, custom user field data,

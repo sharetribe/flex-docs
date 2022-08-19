@@ -17,10 +17,10 @@ marketplace’s day-to-day operations.
 
 The section consists of four pages:
 
-- [Manage users](https://www.sharetribe.com/docs/concepts/console-manage-users/)
-- [Manage listings](https://www.sharetribe.com/docs/concepts/console-manage-listings/)
-- [Manage transactions](https://www.sharetribe.com/docs/concepts/console-manage-transactions/)
-- [Manage reviews](https://www.sharetribe.com/docs/concepts/console-manage-reviews/)
+- [Manage users](/concepts/console-manage-users/)
+- [Manage listings](/concepts/console-manage-listings/)
+- [Manage transactions](/concepts/console-manage-transactions/)
+- [Manage reviews](/concepts/console-manage-reviews/)
 
 On these pages, you can manage, add, and edit your user, listing,
 transaction, and review data. The information you can add and edit
@@ -40,5 +40,4 @@ You can also perform marketplace admin actions on the Manage pages.
 On each page, you can download the data in CSV format.
 
 If you’d like to learn more about operating a marketplace in Console, we
-recommend this
-[overview of Flex Console](https://www.sharetribe.com/docs/concepts/console-overview/).
+recommend this [overview of Flex Console](/concepts/console-overview/).

@@ -25,13 +25,13 @@ request.
 
 Email notifications are automatically enabled in your test marketplace.
 However, in your production marketplace, you must
-[configure outgoing email settings](https://www.sharetribe.com/docs/how-to/set-up-outgoing-email-settings/)
+[configure outgoing email settings](/how-to/set-up-outgoing-email-settings/)
 for email notifications to work.
 
-Users will not receive email notifications until they have verified their
-email address. Sharetribe does not send emails to unconfirmed addresses
-to avoid people flagging those as spam emails, as that can hurt your
-marketplace's ability to send mail to legitimate users.
+Users will not receive email notifications until they have verified
+their email address. Sharetribe does not send emails to unconfirmed
+addresses to avoid people flagging those as spam emails, as that can
+hurt your marketplace's ability to send mail to legitimate users.
 
 Do note that built-in email notifications can not be disabled.
 
@@ -46,7 +46,7 @@ in the Flex Console. You can find the editor in the Console under the
 Build section.
 
 The email templates use the
-[Handlebars template language](https://www.sharetribe.com/docs/references/email-templates/#handlebars).
+[Handlebars template language](/references/email-templates/#handlebars).
 In each template, you can use a set of predefined context variables
 (such as the name and email of the recipient). You can find all context
 variables to the right of the built-in email template editor. You can
@@ -62,34 +62,34 @@ clicking on "preview" and pressing on the "Send a test email" button.
 
 For more information on how to use the Handlebars to customise email
 templates, see our
-[reference article on email templates](https://www.sharetribe.com/docs/references/email-templates/#handlebars).
+[reference article on email templates](/references/email-templates/#handlebars).
 
 ## Transaction notifications
 
 Transaction notifications inform the user of events related to the
-[transaction process](https://www.sharetribe.com/docs/concepts/transaction-process/).
-These notifications usually relate to information about bookings and
-payments, in contrast to built-in email notifications, which are
-typically actionable and related to account management.
+[transaction process](/concepts/transaction-process/). These
+notifications usually relate to information about bookings and payments,
+in contrast to built-in email notifications, which are typically
+actionable and related to account management.
 
 You can update, add, or delete transaction notifications by
-[editing the transaction process](https://www.sharetribe.com/docs/how-to/edit-transaction-process-with-flex-cli/).
+[editing the transaction process](/how-to/edit-transaction-process-with-flex-cli/).
 The
 [template sub-directory](https://github.com/sharetribe/flex-example-processes/tree/master/flex-default-process/templates)
 in the transaction process directory contains all the transaction
 notification email templates. All transaction notifications use the
-[Handlebars templating language](https://www.sharetribe.com/docs/references/email-templates/#handlebars)
+[Handlebars templating language](/references/email-templates/#handlebars)
 and can be edited similarly to built-in email templates.
 
 In addition to making changes to the content of the transaction
 notifications, you can change
-[when email notifications get sent](https://www.sharetribe.com/docs/references/transaction-process-time-expressions/).
+[when email notifications get sent](/references/transaction-process-time-expressions/).
 A transaction notification must always be associated with a specific
 transition. When a specific transition transitions, the transaction
 notification associated with it is triggered.
 
 Read more about transaction notifications in our
-[tutorial on how to add new email notifications](https://www.sharetribe.com/docs/tutorial/add-new-email-notification/).
+[tutorial on how to add new email notifications](/tutorial/add-new-email-notification/).
 
 ## Custom notifications through Zapier
 
@@ -97,19 +97,19 @@ Sometimes the built-in and transaction notifications are not enough, and
 you might need more control over what triggers an email. Examples
 include notifying your marketplace operators when a user submits a
 listing for review or sending a provider an email once their listing is
-published. As neither of these actions is transaction related, you can not
-trigger them as transaction notifications. Instead, you must listen to
-events and trigger an email to respond to the correct event.
+published. As neither of these actions is transaction related, you can
+not trigger them as transaction notifications. Instead, you must listen
+to events and trigger an email to respond to the correct event.
 
 For building custom email notifications, we recommend connecting your
 app to Zapier. You can use Zapier to listen for events in your
 marketplace and react to them using different actions. Zapier also
 supports sending text messages instead of emails. Read more about Zapier
 in our
-[guide on how to set up and use Zapier](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/).
+[guide on how to set up and use Zapier](/how-to/set-up-and-use-zapier/).
 
-If you are unsure how to approach a Zapier integration, do not hesitate to
-reach out to our support team through one of our
-[official support channels](https://www.sharetribe.com/support/). We will
-be happy to help you figure out your specific use case and give you some
-suggestions for implementation.
+If you are unsure how to approach a Zapier integration, do not hesitate
+to reach out to our support team through one of our
+[official support channels](https://www.sharetribe.com/support/). We
+will be happy to help you figure out your specific use case and give you
+some suggestions for implementation.

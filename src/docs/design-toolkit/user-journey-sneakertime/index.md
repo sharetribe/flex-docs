@@ -93,5 +93,5 @@ discover listings, and transact on your custom product selling
 marketplace. Designing your own marketplace’s journeys helps developers
 understand how to modify this template starting point to build your
 custom marketplace.
-[The next article](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/)
-guides you in creating your own user journey.
+[The next article](/design-toolkit/your-user-journey-a-guide/) guides
+you in creating your own user journey.

@@ -128,7 +128,7 @@ Technically, transitions can be considered the main building block of
 Flex transaction process. They define, implicitly or explicitly, all the
 other elements of a transaction process. We will not go to into more
 detail in this article, but you can find more information
-[in the transaction process format reference documentation.](https://www.sharetribe.com/docs/references/transaction-process-format/)
+[in the transaction process format reference documentation.](/references/transaction-process-format/)
 
 ### Actions
 
@@ -142,7 +142,7 @@ cancelling the booking and issuing a refund.
 
 Possible actions are defined by the capacity of the Flex API. The list
 of all transaction process actions can be found
-[in the transaction process actions reference documentation](https://www.sharetribe.com/docs/references/transaction-process-actions/).
+[in the transaction process actions reference documentation](/references/transaction-process-actions/).
 Creating custom transaction process actions is not possible in Flex.
 
 ### Notifications
@@ -162,10 +162,9 @@ notification prompting them to review the customer. The customer
 receives an email notification to review the provider.
 
 To review what notifications are sent as part of the Flex default
-process, visit your
-[Flex Console](https://www.sharetribe.com/docs/operator-guides/concepts/#console)
+process, visit your [Flex Console](/operator-guides/concepts/#console)
 Build tab. Each included
-[email notification has a template](https://www.sharetribe.com/docs/references/email-templates/#editing-transaction-emails)
+[email notification has a template](/references/email-templates/#editing-transaction-emails)
 that can be customized using the Flex CLI.
 
 <transactionprocesscomponentscarousel title="Transaction process components">
@@ -244,9 +243,9 @@ you’ll likely want to modify these to capture the unique way your users
 will transact.
 
 If you’re a developer building with Flex, you can build your transaction
-process using the Flex CLI.
-[Here is a guide](https://www.sharetribe.com/docs/tutorial/create-transaction-process/)
-for creating your own transaction process and for
+process using the Flex CLI. Here are guides for
+[creating your own transaction process](/tutorial/create-transaction-process/)
+and for
 [getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
 For more details of the transaction process format, see the
 [Transaction process format](/references/transaction-process-format/)
@@ -259,6 +258,6 @@ If you’re working with a developer, then you need to communicate how you
 would like transactions to work so your developer can implement the
 necessary steps, transitions, and actions to build your transaction
 process.
-[Our guide for changing your transaction process](https://www.sharetribe.com/docs/concepts/change-transaction-process/)
+[Our guide for changing your transaction process](/concepts/change-transaction-process/)
 shares a few principles to keep in mind when making changes as a
 non-developer.

@@ -117,18 +117,14 @@ for custom marketplace dashboards.
 
 Flex marketplace users need to sign up with their email address to
 create listings and participate in transactions. Alternatively, they can
-use
-[social logins](https://www.sharetribe.com/docs/concepts/social-logins-and-sso/)
-to sign up, or to login with an email address that already has a user
-within Flex.
+use [social logins](/concepts/social-logins-and-sso/) to sign up, or to
+login with an email address that already has a user within Flex.
 
-Flex has a separate
-[Authentication API](https://www.sharetribe.com/docs/concepts/authentication-api/)
+Flex has a separate [Authentication API](/concepts/authentication-api/)
 that handles authentication to other Flex APIs. Both Marketplace API and
 Integration API require valid access tokens to be passed in every API
-request. If you use the
-[Javascript SDKs](https://www.sharetribe.com/docs/concepts/js-sdk/) in
-your marketplace client application, they handle authenticating the user
+request. If you use the [Javascript SDKs](/concepts/js-sdk/) in your
+marketplace client application, they handle authenticating the user
 automatically when they enter their credentials.
 
 ## Banned and deleted users
@@ -230,7 +226,7 @@ endpoints you can access using the Integration API, refer to the
 
 To access the Integration API you need a valid access token obtained
 through
-[the Authentication API](https://www.sharetribe.com/docs/concepts/authentication-api/#authentication-api)
+[the Authentication API](/concepts/authentication-api/#authentication-api)
 or the
 [Sharetribe Flex Integration SDK](https://sharetribe.github.io/flex-integration-sdk-js/authentication.html).
 You should only grant access to trusted applications, such as ones that
