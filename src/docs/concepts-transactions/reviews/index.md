@@ -15,8 +15,8 @@ marketplaces. Provider reviews encourage customers to order well-rated
 listings, and customer reviews encourage providers to accept business
 from well-rated customers.
 
-In Flex, reviews can have a rating between 1-5, as well as text content. By
-default, reviews are given at the end of a transaction.
+In Flex, reviews can have a rating between 1-5, as well as text content.
+By default, reviews are given at the end of a transaction.
 
 The customer reviews the transaction's listing. Since providers can have
 several different listings, this way the review targets the actual
@@ -62,7 +62,8 @@ parties does not submit a review, the other review does get published.
 ### Can reviews be removed?
 
 Once published, reviews cannot be removed. They can, however, be
-modified by the operator in Flex Console > Manage > [Reviews](https://flex-console.sharetribe.com/reviews).
+modified by the operator in Flex Console > Manage >
+[Reviews](https://flex-console.sharetribe.com/reviews).
 
 ### Can I add a review after the review period has expired?
 
@@ -84,5 +85,5 @@ the reviewed listing.
 
 You can create a logic that stores the number of reviews and their
 previous average in the listing's metadata, and updates these when a new
-review is added. That way, you can, for instance, display the average rating on
-the listing page, or use it to sort listings.
+review is added. That way, you can, for instance, display the average
+rating on the listing page, or use it to sort listings.
