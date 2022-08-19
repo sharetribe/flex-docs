@@ -36,8 +36,7 @@ The marketplace operator can set a discount by determining a certain
 percentage or a fixed sum off of the customer's final price. A simple
 percentage or sum can be defined within the line item calculation file.
 However, the more complex the discount logic, the more it makes sense to
-integrate a third party discount code tool such as
-[Voucherify](https://docs.voucherify.io/docs).
+integrate a [third party discount code tool](#which-tool-to-integrate)
 
 In addition, the operator can allow a provider to offer a discount as
 well. In that case, the discount details can e.g. be saved in the
@@ -75,3 +74,20 @@ certain discounts. Here, too, simple discount codes can be implemented
 within the Flex pricing system. The more complex the discount code logic
 – for instance, if you want to have individual coupon codes per customer
 – the more we recommend integrating a third party discount code tool.
+
+## Which tool to integrate?
+
+If you decide to use a third party discount code and promotion tool, it
+makes sense to do some research into different choices. Some options
+include
+
+- [Voucherify](https://docs.voucherify.io/docs)
+- [Vouchery](https://www.vouchery.io/)
+- [Stripe](https://stripe.com/docs/api/coupons) (if you are not using
+  the default Flex Stripe payment integration)
+
+The benefit of a third-party tool is that you can create complex
+discount code logic and, depending on the tool, other promotions such as
+gift cards and loyalty programs. The third party tools handle the
+validation and redeeming of the code, so you just need to communicate
+the discount to your line item calculation within the transaction.
