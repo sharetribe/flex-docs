@@ -24,7 +24,9 @@ it's a good idea to do that before starting this tutorial.
 
 In this tutorial we extend the marketplace review period. After we've
 made the change, we'll push the updated transaction process version and
-update the existing alias.
+update the existing alias. If you want to create a new transaction
+process based on an existing one instead, you can follow these
+[instructions to create a new transaction process and alias](/tutorial/create-transaction-process/#create-a-new-process)
 
 Let's get started!
 
