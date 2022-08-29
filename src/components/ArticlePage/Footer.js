@@ -39,7 +39,8 @@ const Footer = props => {
         <Link to="https://www.sharetribe.com/flex-slack">
           Sharetribe's Flex development Slack Channel
         </Link>
-        .
+        . You can also contact our support team through the chat widget in Flex
+        Console.
       </Paragraph>
     </Container>
   );
