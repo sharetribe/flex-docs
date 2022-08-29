@@ -37,7 +37,7 @@ const Footer = props => {
         <A href="mailto:flex-support@sharetribe.com">email</A>, or consult the
         Sharetribe Developer Community at{' '}
         <Link to="https://www.sharetribe.com/flex-slack">
-          Sharetribe's development Slack Channel
+          Sharetribe's Flex development Slack Channel
         </Link>
         .
       </Paragraph>
