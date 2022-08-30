@@ -22,6 +22,7 @@ import InfoSection from './InfoSection';
 import MarkdownHtml from './MarkdownHtml';
 import Toc from './Toc';
 import NextAndPrevArticles from './NextAndPrevArticles';
+import Footer from './Footer';
 
 // Removed this second ToC component
 // import ArticleToc from './ArticleToc';
@@ -241,6 +242,7 @@ const ArticlePage = props => {
             />
           </MobileTocWrapper>
           <Markdown className="docSearch-content" htmlAst={htmlAst} />
+          <Footer />
 
           <NextAndPrevArticles
             slug={slug}
