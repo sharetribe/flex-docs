@@ -61,14 +61,19 @@ export const findNextBoundary = (timeZone, currentMomentOrDate) =>
      .toDate();
 ```
 
-## Add separate handling for first timeslot
+For listings with an hourly price, the function
+calculateQuantityFromHours determines the correct quantity as a decimal
+of full hours. However, if you want to set a price per minute, you will
+need to modify calculateQuantityFromHours as well.
 
-- Sometimes, there are cases where you want to have a basic length for a
-  booking and then different lengths for subsequent time slots. For
-  instance, a 75 minute private yoga class with the option to extend it
-  for 30 minutes at a time. In those cases, you need to create different
-  handling for the first time slot, i.e. the first start and end
-  boundaries.
+## Use a time slot longer than 30 minutes
+
+If your Flex application has longer time slots than 30 minutes, you will
+need to extend the previous steps to a more complex approach to make
+sure the time slots show up correctly
+
+- calculate rounding with the time slot and a full hour i.e. 60 minutes
+  to get time slots aligning with sharp hours
 
 - previous example contains the variable 'rounding' => let's add that
 - since using the timeslotminutes value might cause issues in rounding,
@@ -78,6 +83,9 @@ export const findNextBoundary = (timeZone, currentMomentOrDate) =>
   rounding factorial is 15.
 
 ```js
+const timeSlotMinutes = 45;
+const hourMinutes = 60;
+
 /**
  * Calculate the greatest common divisor (gcd) of first timeslot length
  * and general timeslot length to determine rounding value using
@@ -92,64 +100,103 @@ const gcd = (a, b) => {
  * If the first time slot is shorter than general time slot,
  * swap the parameters around so that the first parameter is the shorter one
  */
+const rounding = gcd(timeSlotMinutes, hourMinutes);
+```
+
+- add isFirst param to findNextBoundary, and use the default time slot
+  to all cases except isFirst to accommodate for rounding.
+
+```diff
+- export const findNextBoundary = (timeZone, currentMomentOrDate) =>
+-   moment(currentMomentOrDate)
++ export const findNextBoundary = (
++   timeZone,
++   currentMomentOrDate,
++   isFirst = false
++ ) => {
++   const increment = isFirst ? 0 : timeSlotMinutes;
++   return moment(currentMomentOrDate)
+      .clone()
+      .tz(timeZone)
+-     .add(timeSlotMinutes, 'minutes')
+-     .startOfDuration(timeSlotMinutes, 'minutes')
++     .add(increment, 'minutes')
++     .startOfDuration(rounding, 'minutes')
+      .toDate();
++ }
+```
+
+- pass `isFirst` params to the first findNextBoundary function so it's
+  used to determine the correct time increments for the time slots. Also
+  use millisecondAfterStartTime to account for rounding.
+
+```diff
+-   const millisecondBeforeStartTime = new Date(startTime.getTime() - 1);
++   const millisecondAfterStartTime = new Date(startTime.getTime() + 1)
+
+    return findBookingUnitBoundaries({
+-     currentBoundary: findNextBoundary(timeZone, millisecondBeforeStartTime),
++     // add isFirst param to determine first time slot handling
++     currentBoundary: findNextBoundary(timeZone, millisecondAfterStartTime, true),
+      startMoment: moment(startTime),
+      endMoment: moment(endTime),
+```
+
+## Add separate handling for first timeslot
+
+- Sometimes, there are cases where you want to have a basic length for a
+  booking and then different lengths for subsequent time slots. For
+  instance, a 75 minute private yoga class with the option to extend it
+  for 45 minutes at a time. In those cases, you need to create different
+  handling for the first time slot, i.e. the first start and end
+  boundaries.
+
+```js
+const timeSlotMinutes = 45;
+const firstSlotMinutes = 75;
+
+/**
+ * Define the rounding value.
+ * If the first time slot is shorter than general time slot,
+ * swap the parameters around so that the first parameter is the shorter one
+ */
 const rounding = gcd(timeSlotMinutes, firstSlotMinutes);
 ```
 
 - determine the increment to add based on isStart and isFirst
 
-```js
+```diff
 export const findNextBoundary = (
   timeZone,
   currentMomentOrDate,
-  isStart,
-  isFirst
+  isFirst = false,
++ isStart = false
 ) => {
-  // Increment the time slot:
-  const increment = !isFirst
-    ? // - for non-first boundaries, use default time slot
-      timeSlotMinutes
-    : !isStart
-    ? // - for the first end boundary, use firstSlotMinutes,
-      // - and for the first start boundary, use 0 i.e. don't increment the start time value
-      firstSlotMinutes
-    : 0;
+- const increment = isFirst ? 0 : timeSlotMinutes;
++ const increment = !isFirst
++   ? timeSlotMinutes   // Use the default booking length for non-first slots
++   : !isStart
++   ? firstSlotMinutes  // Use the first booking length for first end boundary
++   : 0;                // Use 0 for first start boundary
   return moment(currentMomentOrDate)
     .clone()
-    .tz(timeZone)
-    .add(increment, 'minutes')
-    .startOfDuration(rounding, 'minutes')
-    .toDate();
+    ...
 };
 ```
 
-- pass `isStart` and `isFirst` params wherever the findNextBoundary
-  function is used to determine the correct time increments for the time
-  slots
+- Pass isStart from getStartHours to getSharpHours
 
 ```diff
-// You can rename getSharpHours to getTimeSlotBoundaries for clarity,
-// since it's no longer dealing with sharp hours. Also add the 'isStart' parameter.
 - export const getSharpHours = (intl, timeZone, startTime, endTime) => {
-+ export const getTimeSlotBoundaries = (intl, timeZone, startTime, endTime, isStart = false) => {
-```
++ export const getSharpHours = (intl, timeZone, startTime, endTime, isStart = false) => {
+    if (!moment.tz.zone(timeZone)) {
+...
+    return findBookingUnitBoundaries({
+-     currentBoundary: findNextBoundary(timeZone, millisecondAfterStartTime, true)
++     // add isFirst and isStart params to determine first time slot handling
++     currentBoundary: findNextBoundary(timeZone, millisecondAfterStartTime, true, isStart),
+      startMoment: moment(startTime),
 
-- remove the millisecondBeforeStartTime handling so that the increments
-  and roundings get done correctly
-
-```diff
-- const millisecondBeforeStartTime = new Date(startTime.getTime() - 1);
-  return findBookingUnitBoundaries({
-+   // add isStart and isFirst params to determine first time slot handling
-+   currentBoundary: findNextBoundary(timeZone, startTime, isStart, true),
-    startMoment: moment(startTime),
-    endMoment: moment(endTime),
-    nextBoundaryFn: findNextBoundary,
-```
-
-```js
-export const getStartHours = (intl, timeZone, startTime, endTime) => {
-  // add isStart param to determine first boundary handling
-  const hours = getTimeSlotBoundaries(intl, timeZone, startTime, endTime, true);
 ```
 
 - by default, getStartHours and getEndHours basically retrieve the same
@@ -177,12 +224,7 @@ export const getStartHours = (intl, timeZone, startTime, endTime) => {
 
 ```diff
   export const getEndHours = (intl, timeZone, startTime, endTime) => {
-    const hours = getTimeSlotBoundaries(intl, timeZone, startTime, endTime);
--   return hours.length < 2 ? [] : hours.slice(1);
-+   return hours.length < 1 ? [] : hours;
+-   const hours = getSharpHours(intl, timeZone, startTime, endTime);
++   return getSharpHours(intl, timeZone, startTime, endTime);
   };
 ```
-
-## Use a single time slot longer than one hour
-
-If your Flex application only has time slots beyond one hour, TODO
