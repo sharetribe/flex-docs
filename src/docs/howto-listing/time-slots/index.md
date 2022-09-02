@@ -36,7 +36,7 @@ src/util/dates.js
 ```shell
 └── src
     └── util
-        ├── dates.js
+        └── dates.js
 ```
 
 - _getStartHours_ and _getEndHours_ use a helper function
@@ -270,7 +270,7 @@ _findNextBoundary_.
 
 By default, _getStartHours_ and _getEndHours_ basically retrieve the
 same list, but _getStartHours_ removes the last entry and _getEndHours_
-removes the first entry. Since we have custom handling in
+removes the first entry. Since we have custom start and end handling in
 _findNextBoundary_, we also need to modify the start and end hour lists.
 
 To get correct start times, we need to first pass _true_ as the
@@ -290,7 +290,7 @@ export const getStartHours = (intl, timeZone, startTime, endTime) => {
 + // Remove enough start times so that the first slot length can successfully be
 + // booked also from the last start time
 + const removeCount = Math.ceil(firstSlotMinutes / timeSlotMinutes)
-+ return hours.length < 2 ? hours : hours.slice(0, -removeCount);
++ return hours.length < removeCount ? [] : hours.slice(0, -removeCount);
 };
 ```
 
