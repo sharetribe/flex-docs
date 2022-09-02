@@ -31,6 +31,8 @@ booking's display time attribute.
             └── CheckoutPage.duck.js
 ```
 
+### Add display end time handling
+
 The user can select one hour booking slots on the listing page. When an
 order gets initiated, we want to set the selected end time as the
 display time, and a new buffered end time as the actual booking time.
@@ -39,8 +41,11 @@ the buffer, so that other customers can not book over the buffer.
 
 ```diff
 + import moment from 'moment';
- ---
+ ...
 
+export const initiateOrder = (orderParams, transactionId) => (dispatch, getState, sdk) => {
+   dispatch(initiateOrderRequest());
+ ...
 +  const bufferEnd = moment(orderParams.bookingEnd).add(15, 'minutes').toDate();
 +
 +  const bufferedParams = {
@@ -93,9 +98,7 @@ exports.transactionLineItems = (listing, bookingData) => {
   const unitPrice = listing.attributes.price;
 - const { startDate, endDate } = bookingData;
 + const { startDate, endDate, displayEnd } = bookingData;
-
- ---
-
+ ...
   const booking = {
     code: bookingUnitType,
     unitPrice,
@@ -104,6 +107,8 @@ exports.transactionLineItems = (listing, bookingData) => {
     includeFor: ['customer', 'provider'],
   };
 ```
+
+### Set getStartHours to return correct available start times
 
 Finally, we need to make sure that the start time slots only show valid
 start times including the buffer – if someone has booked 6pm to 7pm,
@@ -137,7 +142,7 @@ It makes sense to also use bufferMinutes constant in CheckoutPage.duck.js, so yo
   import moment from 'moment';
 + import { bufferMinutes } from '../../util/dates';
 
-  ---
+  ...
 -   const bufferEnd = moment(orderParams.bookingEnd).add(15, 'minutes').toDate();
 +   const bufferEnd = moment(orderParams.bookingEnd).add(bufferMinutes, 'minutes').toDate();
 ```
@@ -292,7 +297,7 @@ const findBookingUnitBoundaries = params => {
   } = params;
 
   if (moment(currentBoundary).isBetween(startMoment, endMoment, null, '[]')) {
-  ---
+  ...
     return findBookingUnitBoundaries({
       ...params,
       cumulatedResults: [...cumulatedResults, ...newBoundary],
@@ -317,7 +322,7 @@ time to the beginning of the available time slot.
 - export const getSharpHours = (intl, timeZone, startTime, endTime) => {
 + export const getSharpHours = (intl, timeZone, startTime, endTime, isStart = false) => {
     if (!moment.tz.zone(timeZone)) {
-  ---
+  ...
 
 -   const millisecondBeforeStartTime = new Date(startTime.getTime() - 1);
 +   // For the first currentBoundary, we pass isFirst as true
@@ -338,7 +343,7 @@ time to the beginning of the available time slot.
 
 ```
 
-### Fix getStartHour and getEndHour handling
+### Fix getStartHours and getEndHours handling
 
 To get correct start times, we need to first pass _true_ as the
 _isStart_ parameter from _getStartHours_ to _getSharpHours_.
@@ -360,7 +365,7 @@ export const getStartHours = (intl, timeZone, startTime, endTime) => {
 ```
 
 Finally, we can simplify the end hour handling. Since the first entry is
-determined in the findNextBoundary function, we do not need to remove
+determined in the _findNextBoundary_ function, we do not need to remove
 it. Instead, we can just return the full list from _getSharpHours_.
 
 ```diff
