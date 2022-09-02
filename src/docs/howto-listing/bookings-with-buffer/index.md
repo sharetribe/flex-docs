@@ -1,7 +1,7 @@
 ---
-title: Add buffer time to the end of bookings
+title: Add buffer time to bookings in FTW-hourly
 slug: bookings-with-buffer
-updated: 2022-09-01
+updated: 2022-09-02
 category: how-to-listing
 ingress:
   This guide describes how to modify booking times in FTW-hourly to have
