@@ -81,7 +81,8 @@ in your Flex-powered marketplace, if their Facebook, Google or LinkedIn
 email address matches the email address in your marketplace. The first
 time they log in to their existing account in your Flex marketplace with
 a social login, the login provider will ask them for the same
-permissions it asked when they originally signed up._
+permissions it asked when they originally signed up. Also note that Flex 
+does not support PayPal out of the box, so no PayPal information is migrated._
 
 #### Reviews:
 
