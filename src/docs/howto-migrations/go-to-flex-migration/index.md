@@ -60,7 +60,7 @@ comments, and availability calendar data. In Flex, the
 price is calculated and how the order flow works. If you have enabled
 multiple order types or shipping price in Go and want to migrate the
 data from these over to Flex, you need to do custom development to
-ensure the data is transferred and displayed correctly. application._
+ensure the data is transferred and displayed correctly._
 
 #### User profiles:
 
