@@ -60,7 +60,7 @@ comments, and availability calendar data. In Flex, the
 price is calculated and how the order flow works. If you have enabled
 multiple order types or shipping price in Go and want to migrate the
 data from these over to Flex, you need to do custom development to
-ensure the data is transferred and displayed correctly. application._
+ensure the data is transferred and displayed correctly._
 
 #### User profiles:
 
@@ -74,14 +74,17 @@ ensure the data is transferred and displayed correctly. application._
 - Stripe accounts
 
 _Migrated profiles do not include username, custom user field data,
-followers, email preferences or social login credentials. If your users
-used Facebook, Google or LinkedIn to sign up in your Go marketplace,
-they will still be able to log in to their existing accounts with these
-in your Flex-powered marketplace, if their Facebook, Google or LinkedIn
-email address matches the email address in your marketplace. The first
-time they log in to their existing account in your Flex marketplace with
-a social login, the login provider will ask them for the same
-permissions it asked when they originally signed up._
+followers, email preferences or social login credentials. Also note that
+since Flex does not support PayPal out of the box, no PayPal information
+is migrated._
+
+_If your users used Facebook, Google or LinkedIn to sign up in your Go
+marketplace, they will still be able to log in to their existing
+accounts with these in your Flex-powered marketplace, if their Facebook,
+Google or LinkedIn email address matches the email address in your
+marketplace. The first time they log in to their existing account in
+your Flex marketplace with a social login, the login provider will ask
+them for the same permissions it asked when they originally signed up._
 
 #### Reviews:
 
