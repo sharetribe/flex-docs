@@ -227,7 +227,7 @@ export const findNextBoundary = (timeZone, currentMomentOrDate) =>
     .toDate();
 ```
 
-### Custom rounding function for moment.js
+### Add a custom rounding function for moment.js
 
 FTW-hourly uses the [moment-timezone](https://momentjs.com/timezone/)
 library to modify times and dates and convert them between the listing's
