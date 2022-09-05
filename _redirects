@@ -72,7 +72,7 @@
 /docs/tutorial-branding/change-default-locations/ /docs/tutorial/change-default-locations/ 
 /docs/tutorial-branding/customize-amenities-filter/ /docs/tutorial/customize-amenities-filter/ 
 /docs/tutorial-branding/add-faq-page/ /docs/tutorial/add-faq-page/ 
-/docs/tutorial-branding/deploy-to-heroku/ /docs/tutorial/deploy-to-heroku/ 
+/docs/tutorial-branding/deploy-to-heroku/ /docs/tutorial/deploy-to-render/ 
 
 /docs/tutorial-extended-data/add-extended-data/ /docs/tutorial/add-extended-data/
 /docs/tutorial-extended-data/show-extended-data/ /docs/tutorial/show-extended-data/
@@ -191,6 +191,10 @@
 /docs/ftw/how-to-change-ftw-bundled-translations/ /docs/ftw/how-to-change-ftw-bundled-microcopy/
 /docs/ftw/hosted-translations/ /docs/ftw/hosted-microcopy/
 /docs/concepts/translations/ /docs/concepts/microcopy/
+
+# Add new redirects below:
+
+/docs/tutorial/deploy-to-heroku/ /docs/tutorial/deploy-to-render/ 
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.

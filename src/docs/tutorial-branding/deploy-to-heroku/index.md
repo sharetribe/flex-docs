@@ -1,52 +1,73 @@
 ---
-title: Create test environment
-slug: deploy-to-heroku
-updated: 2020-07-17
+title: Create a test environment
+slug: deploy-to-render
+updated: 2022-09-12
 category: tutorial-branding
-ingress: Deploy the app to Heroku to share it online with other testers.
+ingress:
+  Deploy your marketplace to a cloud hosting platform to share it with
+  other people.
 published: true
 ---
 
-Now we have branded FTW-daily template to _CottageDays_ marketplace.
-It's time to deploy the web app to some hosting service. After all, we
-want to get some feedback from colleagues and friends.
+Now that you have customised your marketplace's styling, it is time to
+deploy the web application to a public web server. After all, you want
+your marketplace to be accessed by your colleagues and friends over the
+Internet. This tutorial will provide an overview of how to deploy a test
+environment to a public server, such as [Render](https://www.render.com)
+or [Heroku](https://www.heroku.com/).
 
-**Note**: if you have removed all the Saunatime-related content from
-your client app and your marketplace doesn't need more advanced
-functionality to work, you should consider launching your marketplace.
-If you want to read more, there's a Marketplace Academy article about
+If you do not need to develop any advanced functionality for your
+marketplace and are ready to deploy, you should consider launching
+directly to production. Read our Marketplace Academy article on
 [why you should launch your marketplace early](https://www.sharetribe.com/academy/why-you-should-launch-your-marketplace-early/).
 
-## Test server-side rendering locally
+## What is a test environment?
 
-Before we push the code to Heroku or another hosting service, we need to
-make sure that the server-side rendering (SSR) works.
+So far, you have been developing your marketplace in a development
+environment on your local machine. At some point during the development
+process, you will want to start testing features in an environment where
+a server exposes your website to the public Internet. Using a cloud
+hosting service like [Render](https://www.render.com) or
+[Heroku](https://www.heroku.com/) you can deploy your application to a
+server, after which your marketplace will be accessible through a public
+URL.
 
-FTW templates come with a small Node/Express server that renders the
-public pages on the server. The server renders pages faster, but even
-more importantly, it allows search engines to access them (in case they
-don't execute JavaScript).
+## Prepare to publish your marketplace
 
-The previously used command, **yarn run dev**, doesn't start this
-Node.js server but uses Webpack's dev-server with hot module replacement
-functionality. There's a different package.json script that starts the
-actual server:
+Before deploying your test environment, you want to make sure
+Server-Side Rendering (SSR) works. In addition, password-protecting your
+test environment is a good idea to prevent it from being accessed by
+unauthorized users.
+
+### Test server-side rendering locally
+
+Before you deploy your marketplace to Render or another hosting service,
+you should first ensure that your client application runs without error
+when using SSR.
+
+The FTW templates have a small [Node/Express](https://expressjs.com/)
+server that enables SSR. It allows pages to be rendered faster than on
+the client, but even more importantly, it makes it easier for search
+engines to index your website (in case they don't execute JavaScript).
+
+To start up the server locally, you will need to run the command:
 
 ```shell
 yarn run dev-server
 ```
 
-Then test that the application works on different pages.
+This command will use
+[Webpack's dev-server](https://webpack.js.org/configuration/dev-server/)
+with
+[Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/)
+to run a development server, which simulates how the client application
+would run in a production environment.
 
-<extrainfo title="Extra: troubleshooting">
+> **Note:** If you have issues with SSR, you have likely called
+> functions that belong to the **window** object/scope. In the server
+> environment, the **window** object is not available.
 
-If the server-side rendering doesn't work, you have likely called
-functions that belong to "**window**" object/scope. In the server
-environment, the "window" object is not available.
-
-</extrainfo>
-
-## Enable HTTP basic access authentication
+### Enable HTTP basic access authentication
 
 You can enforce access control in your web application by enabling HTTP
 basic access authentication. It's a good idea to restrict access to your
@@ -56,39 +77,67 @@ signing up in a marketplace still under development.
 
 FTW exposes two environment variables with which you can set a username
 and password that limit access to your web application. When you deploy
-your application to Heroku, remember to define the following environment
-variables in the "Config Vars" section:
+your application to Render, remember to define the following environment
+variables:
 
 `BASIC_AUTH_USERNAME` and `BASIC_AUTH_PASSWORD`
 
 This will prevent anybody without the correct password and username from
 accessing your test marketplace.
 
-## Deploy to Heroku
+## Deploy to Render
 
-Generic Heroku deployment has the following steps:
+This section provides a step-by-step guide on how to deploy your
+marketplace to Render. You can also deploy your marketplace on another
+cloud hosting platform, but we suggest using Render as it provides a
+[free tier](https://render.com/pricing) and is quick and easy to set up.
 
-**Step 1: Create a Heroku account**
+> **Note:** Make sure you have completed the
+> [Tutorial introduction](https://www.sharetribe.com/docs/tutorial/introduction/)
+> as this step requires having your code hosted in a git repository.
 
-Go to Heroku and create a new account if you don't have one. There's a
-[free plan available](https://www.heroku.com/pricing).
+### Create an account on Render
 
-**Step 2: Create a new app**
+Go to Render and
+[create a new account](https://dashboard.render.com/register) if you do
+not have one already.
 
-Create a new app in the Heroku dashboard.
+### Create a new app
 
-![Create new app button in Heroku](./heroku-create-new-app.png)
+Go to the [Render dashboard](https://dashboard.render.com) and create a
+new application. Select "web service":
 
-**Step 3: Change environment variables**
+![Create new app in Render](./render-create-new-app.png)
 
-In Heroku, you can configure environment variables from the
-[Heroku dashboard](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard).
+### Connect Render with a GitHub repository
 
-Go to the Settings page of your new app and reveal Config Vars:
+Log in using your GitHub account and give Render permission to access
+the repository you want to deploy.
 
-![Heroku: reveal Config Vars](./heroku-config-vars.png)
+![Connect GitHub to Render](./render-connect-git.png)
 
-Then add the following environment variables as Config Vars:
+### Configure settings and environment variables
+
+Give your web service a name. You do not need to touch any other
+settings (such as environment, branch, build command and start command),
+and select the free plan. Before clicking on "create web service", click
+on "Advanced" to enter the required environment variables.
+
+Give your web service a name. You do not need to touch any other
+settings (such as environment, branch, build command and start command)
+and select the free plan. Before clicking on "create web service", click
+on "Advanced" to enter the required environment variables.
+
+You can choose to enter the environment variables one-by-one through the
+browser interface:
+
+![Render environment variables](./render-env-var-1.png)
+
+Or by creating a secret file that contains all environment variables:
+
+![Render secret file](./render-env-var-2.png)
+
+You then need to add the following environment variables:
 
 - `REACT_APP_SHARETRIBE_SDK_CLIENT_ID`
 
@@ -155,34 +204,22 @@ Then add the following environment variables as Config Vars:
 
   Possible values: true/false<br/> Use value: true
 
-If you change these values later on, _you need to deploy the app again_.
+If you change these values later on, _you need to redeploy the app_.
 Environment variables are baked into the static build files of the web
-app - so a new build is required.
+app, so a new build is required.
 
-**Step 4: Add Node.js buildpack**
+### Create web service
 
-Go to the Settings page of your new app and add the official buildpack:
-_heroku/nodejs_
-
-![Add buildpack](./heroku-add-buildpack.png)
-
-**Step 5: Connect the Heroku app to Github**
-
-Go to the Deploy page of your new app and
-[connect the app with Github](https://devcenter.heroku.com/articles/github-integration#enabling-github-integration).
-
-![Heroku: Connect the app with Github repository](./heroku-connect-to-github.png)
-
-After that, you can deploy the app manually or enable automatic deploy
-from your default branch (usually named as _main_ or _master_).
-
-If everything works, your app should be available in a URL that looks a
-bit like this: `HTTPS://<your-app-name>.herokuapp.com`
+Once you are ready, click on the "create web service" button and wait
+for your build to be deployed. Once the build is complete, you will be
+able to access your marketplace through the URL displayed in the Render
+dashboard.
 
 ## What next?
 
-You should test the app thoroughly with both desktop layout and mobile
-layout. In addition, you should try to:
+Now that your marketplace is running in a test environment, you should
+test the app thoroughly using both desktop and mobile layouts. In
+addition, you should try to:
 
 - Create new users
 - Create new listings
@@ -197,6 +234,6 @@ layout. In addition, you should try to:
 If your marketplace concept needs advanced features, you need to
 continue with customizations. In
 [the next part of this tutorial](/tutorial/add-extended-data/), we'll go
-through how to extend listing entity with extended data.
+through how to extend listing entities with extended data.
 
 [› Go to the next article](/tutorial/add-extended-data/)
