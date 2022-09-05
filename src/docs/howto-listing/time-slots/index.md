@@ -30,7 +30,7 @@ Start with adding a constant for the booking length in minutes.
 const timeSlotMinutes = 30;
 ```
 
-The time slot handling is done using a few helper functions in
+Time slot handling is done using a few helper functions in
 src/util/dates.js
 
 ```shell
@@ -39,14 +39,26 @@ src/util/dates.js
         └── dates.js
 ```
 
-- _getStartHours_ and _getEndHours_ use a helper function
-  _getSharpHours_
-- _getSharpHours_, in turn, uses _findBookingUnitBoundaries_, which is a
-  recursive function that takes a _nextBoundaryFn_ parameter that it
-  uses to determine the correct booking time boundaries
+- _getStartHours_ and _getEndHours_ return a list of timepoints that are
+  displayed as the booking's possible start and end moments,
+  respectively. They both use the same helper function _getSharpHours_
+- _getSharpHours_, in turn, by default retrieves the sharp hours that
+  exist within the availability time slot. It uses the
+  _findBookingUnitBoundaries_ function, which is a recursive function
+  that checks whether the current boundary (e.g. sharp hour) passed to
+  it falls within the availability time slot.
+  - If the current boundary is within the availability time slot, the
+    function calls itself with the next boundary and cumulates the
+    boundary results into an array.
+  - If the current boundary does not fall within the availability time
+    slot, the function returns the cumulated results from the previous
+    iterations.
+- _findBookingUnitBoundaries_ takes a _nextBoundaryFn_ parameter that it
+  uses to determine the next boundary value to pass to itself.
 - the function passed to _findBookingUnitBoundaries_ as _nextBoundaryFn_
   by default is _findNextBoundary_, which is what we need to modify
-  first.
+  first. The _findNextBoundary_ function increments the current boundary
+  by a predefined value.
 
 ```js
 export const findNextBoundary = (timeZone, currentMomentOrDate) =>
@@ -58,12 +70,19 @@ export const findNextBoundary = (timeZone, currentMomentOrDate) =>
     .toDate();
 ```
 
-### Custom rounding extension function for moment.js
+### Custom rounding function for moment.js
 
-The default version uses _moment.startOf('hour')_ to round the booking
-slots to the top of each hour. However, since we're dealing with
-minutes, we'll need to replace the _startOf('hour')_ function call with
-a custom rounding extension function
+FTW-hourly uses the [moment-timezone](https://momentjs.com/timezone/)
+library to modify times and dates and convert them between the listing's
+time zone and the user's time zone.
+
+By default, the _findNextBoundary_ function uses
+_moment.startOf('hour')_ to round the booking slots to the top of each
+hour. However, since we are now dealing with minutes, we need to create
+a custom rounding function to replace the _startOf('hour')_ function
+call. When we add it to _moment.js_ using the prototype exposed through
+_moment.fn_, we can chain it in the same place as the default
+_startOf('hour')_ function.
 
 This rounding function rounds to sharp hours when the time slot minutes
 value is a factor of an hour, e.g. 15, 20 or 30 minutes. For other time
@@ -72,7 +91,7 @@ slot minutes, see
 
 ```js
 /**
- * Rounding extension function for moment.js. Rounds the Moment provided by the context
+ * Rounding function for moment.js. Rounds the Moment provided by the context
  * to the start of the specified time value in the specified units.
  * @param {*} value the rounding value
  * @param {*} unit time units to specify the value
@@ -84,9 +103,9 @@ moment.fn.startOfDuration = function(value, unit) {
 };
 ```
 
-You will then need to use the new extension function to replace the
-built-in _startOf()_ function, and pass the _timeSlotMinutes_ value as
-the addition and rounding duration values.
+You will then need to use the new function to replace the built-in
+_startOf()_ function, and pass the _timeSlotMinutes_ value as the
+addition and rounding duration values.
 
 ```diff
 export const findNextBoundary = (timeZone, currentMomentOrDate) =>
@@ -103,7 +122,8 @@ export const findNextBoundary = (timeZone, currentMomentOrDate) =>
 For listings with an hourly price, the function
 _calculateQuantityFromHours_ determines the correct quantity as a
 decimal of full hours. However, if you want to set a price per minute,
-you will need to modify _calculateQuantityFromHours_ as well.
+or e.g. a price per non-hour session, you will need to modify
+_calculateQuantityFromHours_ as well.
 
 ![Booking breakdown with half hour booking](./30_minute_booking.png)
 
