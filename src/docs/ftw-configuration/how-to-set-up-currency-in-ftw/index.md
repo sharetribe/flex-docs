@@ -107,3 +107,29 @@ currency different than EUR will result in an error as the FTW cannot
 convert the currency of existing listings. You can ignore this error by
 closing these listings in your Console, which will remove them from the
 search page as well, and creating new listings.
+
+## FTW and multiple currencies
+
+You can have multiple currencies inside a single marketplace, since Flex
+itself is currency agnostic. There are, however, some caveats that you
+need to take into account. The default FTW template implementation
+limits currency to a single currency because of the caveats listed
+below. This just made things simpler to develop. You can of course
+change currency handling in your marketplace if you take these caveats
+into account.
+
+First, a single listing can have only a single price. If you wish to
+offer the same listing in two different currencies, you need to create
+two listings with the same content but different currency and price,
+which means storing the secondary currency price in e.g. public data.
+
+Second, filtering by price becomes problematic. The price filtering is
+based on the amount only and does not take the currency into account.
+This can lead into problems if you want to compare prices. You might,
+for example, have dollars and yens in the same marketplace. One USD is
+110 Yen, so the default price filtering will not easily find equally
+priced items if they are in different currencies.
+
+Third, currency conversions may cause complexity. If most of your users
+have a credit card in one currency but listings are in a different
+currency, some conversion costs will take effect.
