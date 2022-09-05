@@ -12,10 +12,45 @@ published: true
 
 ## Listings search in Flex
 
-In Flex listings are searched by using the
+Flex has a powerful listing search engine, which can find listings based
+on multiple criteria:
+
+- **Geolocation.** The search can be used to display only listings that
+  are within a provided radius from certain coordinates.
+- **Free text.** The search can be used to find listings that have a
+  certain keyword provided by the user. The search can find from listing
+  title and description. You can also choose to index some public data
+  fields (like listing category) so the search finds from them as well.
+- **Price.** It's possible to filter out listings with too high or too
+  low price.
+- **Availability.** It's possible to filter out listings that have
+  insufficient availability during a given time range. Works together
+  with seats so that you can filter for availability with minimum number
+  of seats. It is also possible to filter by required minimum duration
+  of availability for the given time range.
+- **Stock.** It's possible to show all listings or only listings with
+  positive stock.
+- **Custom filter: any value.** Any number of custom filters can be
+  added. "Any value" filters out listings that don't have the given
+  value (or any of a set of given values) in their public data. A
+  typical use case is filtering by category or subcategory.
+- **Custom filter: all values**. Filters out listings that don't have
+  all values in a given set. A typical use case is choosing among
+  "amenities": an apartment must have both balcony and floor heating in
+  their public data to be displayed in the search.
+- **Custom numeric filter.** Filters out listings that don't have a
+  certain numeric value in their public data. For example, you might
+  want to build a slider filter for the skill level of the user, ranging
+  from 0 to 10.
+- **Sorting.** Listing sorting order can be customized per query.
+  Sorting is supported by one or more of: listing price, listing
+  creation time, or any numeric attribute in the listing's public data
+  or metadata.
+
+In Flex, listings are searched by using the
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 endpoint. This article approaches the search from two different
-prespectives: keywords and location. In addition to them other search
+perspectives: keywords and location. In addition to these, other search
 parameters can be used to filter the search results in order to provide
 relevant search content. See the API
 [reference documentation](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
@@ -73,3 +108,37 @@ can be used. It takes north-east and south-west corners of a bounding
 box that limits the returned results to that area. It does not affect
 the sorting of results. The bounds can then conviniently be used to
 match search results to a map view.
+
+## How about user search?
+
+The Flex Marketplace API does not have an endpoint for querying users.
+This is because listings are modeled as the focus of the marketplace. If
+you do, however, want to implement a search functionality for users, you
+have a few options.
+
+### Users as listings
+
+The FTW-hourly template has modeled
+[providers as listings](/introduction/introducing-yogatime/#profiles-as-bookable-listings)
+by default. This means that the user entity is distinct from the user's
+service provider entity. You can then use the default listing search to
+query the service provider profiles with all the query options described
+above.
+
+### Custom user search endpoint in the FTW server
+
+The Flex Integration API does have an endpoint for querying users.
+However, using the Integration API is only safe to use from a trusted
+context, such as the FTW application server. In addition, the
+Integration API
+[/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
+endpoint returns not only public user information but also non-public
+information.
+
+This means that if you do want to use the Integration API user query,
+you will need to create a server endpoint in the FTW template's server
+that calls the Integration API endpoint and only returns the user's
+public information back to the browser. The Integration API query has
+fewer filtering and sorting options than the Marketplace API listing
+query, however, so for any level of complexity in your user search it is
+recommended to use the "users as listings" approach.
