@@ -96,7 +96,7 @@ more closely to the target area.
 
 Another option is to customize a single client app to provide multiple
 languages. For instance, you could import several language files in
-`src/app.json` and select which one you are going to use by modifying
+`src/app.js` and select which one you are going to use by modifying
 `src/routeConfiguration.js`, so that all the paths include a ”locale”
 variable. E.g. `/about` could be changed to `/:locale/about` to capture
 paths like `/fr/about`. In this case, it is useful to save the user's
