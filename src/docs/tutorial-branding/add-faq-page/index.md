@@ -295,7 +295,7 @@ for more information about this.
 <extrainfo title="How can I test page schema?">
 
 The next article describes how you can get the site available online
-through Heroku. After that, you can test if Google's
+through Render. After that, you can test if Google's
 [schema debugger](https://search.google.com/structured-data/testing-tool)
 finds any schema errors from your page.
 
@@ -343,4 +343,4 @@ page:
 After all these changes, the client app starts to look like CottageDays
 marketplace. It's time to get it online and share it with people who
 could give you some feedback. In the next article, we'll deploy the app
-to Heroku.<br /> [› Go to the next article](/tutorial/deploy-to-heroku/)
+to Render.<br /> [› Go to the next article](/tutorial/deploy-to-render/)

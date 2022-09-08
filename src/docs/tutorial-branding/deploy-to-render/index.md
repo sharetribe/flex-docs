@@ -166,7 +166,7 @@ You then need to add the following environment variables:
 - `REACT_APP_CANONICAL_ROOT_URL`
 
   Canonical root URL of the marketplace. Remove trailing slash from the
-  domain.<br />E.g. _`https://<the-name-of-your-app>.herokuapp.com`_
+  domain.<br />E.g. _`https://<the-name-of-your-app>.onrender.com`_
 
 - `NODE_ENV`
 

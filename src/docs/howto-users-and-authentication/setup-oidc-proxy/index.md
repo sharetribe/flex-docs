@@ -23,7 +23,7 @@ by your FTW server and using that to unsign the token. A consequence of
 this is, that the JSON Web Key needs to be publicly available. This
 means that the proxy setup will not work directly in localhost. To test
 out the LinkedIn login, you should e.g.
-[deploy your FTW changes to Heroku](/tutorial/deploy-to-heroku/).
+[deploy your FTW changes to Render](/tutorial/deploy-to-render/).
 
 In this guide, we'll integrate LinkedIn login to Flex by using FTW as an
 OIDC proxy to Flex. The main steps to take to achieve this are:
@@ -109,8 +109,8 @@ client to be used as a proxy for LinkedIn:
   to an OpenID Connect discovery document (_[identity provider
   URL]/.well-known/openid-configuration_) and from there on to an ID
   token signing key. By default this should be the root address of your
-  application, for example, _https://example.com_ or, for default Heroku
-  URLs, _https://EXAMPLE.herokuapp.com_. Note, that this URL needs to be
+  application, for example, _https://example.com_ or, for default Render
+  URLs, _https://EXAMPLE.onrender.com_. Note, that this URL needs to be
   publicly hosted so a `localhost` URL will not work.
 
 - **Client ID** When using FTW as on OpenID Connect proxy, you are in

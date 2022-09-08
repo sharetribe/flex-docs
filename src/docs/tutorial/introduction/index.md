@@ -20,7 +20,7 @@ template and its default behaviour.
 
 **Part 1: Branding**<br /> Learn to make changes that are necessary to
 turn Saunatime marketplace to CottageDays marketplace. At the end of
-this part, we deploy CottageDays marketplace to Heroku.
+this part, we deploy CottageDays marketplace to Render.
 
 **Part 2: Extend the data model**<br /> Learn how to extend listing
 entity with marketplace specific data. Then we show the new info on
