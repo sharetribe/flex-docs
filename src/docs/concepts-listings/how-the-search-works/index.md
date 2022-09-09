@@ -12,15 +12,19 @@ published: true
 
 ## Listings search in Flex
 
-Flex has a powerful listing search engine, which can find listings based
-on multiple criteria:
+In Flex, listings are searched by using the
+[/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
+endpoint. Flex has a powerful listing search engine, which can find
+listings based on multiple criteria:
 
 - **Geolocation.** The search can be used to display only listings that
-  are within a provided radius from certain coordinates.
+  are within a provided radius from certain coordinates. Read more about
+  [location search below](#location-search).
 - **Free text.** The search can be used to find listings that have a
-  certain keyword provided by the user. The search can find from listing
-  title and description. You can also choose to index some public data
-  fields (like listing category) so the search finds from them as well.
+  [certain keyword](#keyword-search) provided by the user. The search
+  can find from listing title and description. You can also choose to
+  index some public data fields (like listing category) so the search
+  finds from them as well.
 - **Price.** It's possible to filter out listings with too high or too
   low price.
   - e.g. show only listings between $20 and $100:
@@ -61,12 +65,8 @@ on multiple criteria:
   - e.g. sort listings for user skill level:
     `sdk.listings.query({ ...params, sort: "pub_userSkillLevel" })`
 
-In Flex, listings are searched by using the
-[/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
-endpoint. This article approaches the search from two different
-perspectives: keywords and location. In addition to these, other search
-parameters can be used to filter the search results in order to provide
-relevant search content. See the API
+This article approaches the search from two different perspectives:
+keywords and location. See the API
 [reference documentation](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 for a full list of search parameters. Do note that for all search
 parameters, you will need to create a
@@ -145,15 +145,15 @@ above.
 ### Custom user search endpoint in the FTW server
 
 The Flex Integration API does have an endpoint for querying users.
-However, using the Integration API is only safe to use from a trusted
-context, such as the FTW application server. In addition, the
-Integration API
+However,
+[using the Integration API safely requires a trusted context](/concepts/marketplace-api-integration-api/#when-to-use-the-integration-api),
+such as the FTW application server. In addition, the Integration API
 [/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
 endpoint returns not only public user information but also non-public
 information.
 
 This means that if you do want to use the Integration API user query,
-you will need to create a server endpoint in the FTW template's server
+you need to create a custom server endpoint in the FTW template's server
 that calls the Integration API endpoint and only returns the user's
 public information back to the browser. The Integration API query has
 fewer filtering and sorting options than the Marketplace API listing
