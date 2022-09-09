@@ -189,11 +189,47 @@ userProfile  protected  age        long
 
 If you wish to remove a schema, you can use the `search unset` command.
 
+## Adding a search schema with a default value
+
+Sometimes, you may want to query listings that do not have a certain
+attibute set. For instance, you may have promoted listings on your
+marketplace, labelled with a metadata attribute `isPromoted: true`. If
+you only have a handful of promoted listings, you likely do not want to
+tag all other listings with `isPromoted: false`.
+
+Instead, Flex allows you to set a default value for the search schema –
+all listings that do not have the attribute get returned when querying
+the default value.
+
+You can set the default value for a search schema simply by passing a
+`--default` flag with the desired default value. To create the search
+schema described above, the Flex CLI command is as follows:
+
+```
+$ flex-cli search set --key isPromoted --type boolean --scope metadata --default false -m my-test-marketplace
+```
+
+Now, if we query all the search schemas on the marketplace, we can see
+the default value for the `isPromoted` schema in the corresponding
+column.
+
+```
+$ flex-cli search -m my-test-marketplace
+
+Schema for   Scope      Key         Type         Default value   Doc
+listing      metadata   isPromoted  boolean      false
+listing      public     amenities   multi-enum
+listing      public     category    enum
+userProfile  protected  age         long
+```
+
 ## Summary
 
-In this tutorial, we used Flex CLI to define search schemas for our
-marketplace. We used the listing category and amenities as examples as
-FTW expects those.
+In this guide, we used Flex CLI to define search schemas for our
+marketplace. We used the listing category and amenities as examples, as
+FTW-daily expects those. In addition, we looked at adding user search
+schemas for Integration API as well as adding a listing schema with a
+default value.
 
 For more information, see the following resources:
 
