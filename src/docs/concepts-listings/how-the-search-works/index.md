@@ -23,29 +23,43 @@ on multiple criteria:
   fields (like listing category) so the search finds from them as well.
 - **Price.** It's possible to filter out listings with too high or too
   low price.
+  - e.g. show only listings between $20 and $100:
+    `sdk.listings.query({ price: "2000,10000" })`
 - **Availability.** It's possible to filter out listings that have
   insufficient availability during a given time range. Works together
   with seats so that you can filter for availability with minimum number
   of seats. It is also possible to filter by required minimum duration
   of availability for the given time range.
+  - e.g. show only listings available for October 22-29, 2022:
+    `sdk.listings.query({ availability: "full", start: "Sat Oct 22 2022 01:00:00 GMT+0100", end: "Sat Oct 29 2022 01:00:00 GMT+0100" })`
 - **Stock.** It's possible to show all listings or only listings with
   positive stock.
+  - e.g. show only listings with at least one item in stock:
+    `sdk.listings.query({ minStock: 1 })`
 - **Custom filter: any value.** Any number of custom filters can be
   added. "Any value" filters out listings that don't have the given
   value (or any of a set of given values) in their public data. A
   typical use case is filtering by category or subcategory.
+  - e.g. show only listings from public data category 'used':
+    `sdk.listings.query({ pub_category: "used" })`
 - **Custom filter: all values**. Filters out listings that don't have
   all values in a given set. A typical use case is choosing among
   "amenities": an apartment must have both balcony and floor heating in
   their public data to be displayed in the search.
+  - e.g. show only listings that have both balcony and floor heating:
+    `sdk.listings.query({ pub_amenities: "has_all:swimming_pool,bathroom" })`
 - **Custom numeric filter.** Filters out listings that don't have a
   certain numeric value in their public data. For example, you might
   want to build a slider filter for the skill level of the user, ranging
   from 0 to 10.
+  - e.g. show only listings for user skill levels 4-7:
+    `sdk.listings.query({ pub_userSkillLevel: "4,7" })`
 - **Sorting.** Listing sorting order can be customized per query.
   Sorting is supported by one or more of: listing price, listing
   creation time, or any numeric attribute in the listing's public data
   or metadata.
+  - e.g. sort listings for user skill level:
+    `sdk.listings.query({ ...params, sort: "pub_userSkillLevel" })`
 
 In Flex, listings are searched by using the
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
@@ -54,7 +68,10 @@ perspectives: keywords and location. In addition to these, other search
 parameters can be used to filter the search results in order to provide
 relevant search content. See the API
 [reference documentation](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
-for a full list of search parameters.
+for a full list of search parameters. Do note that for all search
+parameters, you will need to create a
+[search schema](/how-to/manage-search-schemas-with-flex-cli/) so that
+the data is indexed correctly for search.
 
 ## Keyword search
 
@@ -106,7 +123,7 @@ parameter can not be combined with `keywords`.
 In order to combine location and keyword search, the `bounds` parameter
 can be used. It takes north-east and south-west corners of a bounding
 box that limits the returned results to that area. It does not affect
-the sorting of results. The bounds can then conviniently be used to
+the sorting of results. The bounds can then conveniently be used to
 match search results to a map view.
 
 ## How about user search?
