@@ -51,7 +51,7 @@ listings based on multiple criteria:
   "amenities": an apartment must have both balcony and floor heating in
   their public data to be displayed in the search.
   - e.g. show only listings that have both balcony and floor heating:
-    `sdk.listings.query({ pub_amenities: "has_all:balcony,floor_heating" })`
+    `sdk.listings.query({ pub_amenities: "has_all:balcony,floorHeating" })`
 - **Custom numeric filter.** Filters out listings that don't have a
   certain numeric value in their public data. For example, you might
   want to build a slider filter for the skill level of the user, ranging
