@@ -235,9 +235,10 @@ The RSA key pair we created in the previous section
 The keys are multi-line strings but Heroku is fine with that so you can
 paste the keys in config vars as they are.
 
-In case your FTW runtime environment requires to declare environment
-variables in a file, wrap the keys with `"`s, escape line breaks with
-`\n`s and join the lines to a single line.
+> If you are using Render or some other environment that requires you to
+> declare environment variables through a file, wrap the RSA keys with
+> quotation marks `"` and escape line breaks with the newline character
+> `/n`. Make sure that the RSA key is defined on a single line.
 
 `LINKEDIN_PROXY_IDP_ID`
 

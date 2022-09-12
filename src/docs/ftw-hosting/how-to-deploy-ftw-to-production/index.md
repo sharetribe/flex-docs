@@ -109,17 +109,20 @@ find it on the Stripe
 [API keys](https://dashboard.stripe.com/account/apikeys) page. You will
 also need to add the secret key in Flex Console.
 
-- **`REACT_APP_MAPBOX_ACCESS_TOKEN`** If using Mapbox, you will need to
-  define this environment variable. Sign up for Mapbox and go to the
-  [account page](https://www.mapbox.com/account/access-tokens). Then
-  click on `Create access token`. See the
-  [How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/)
-  guide for more information.
+- **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
-* **`REACT_APP_CANONICAL_ROOT_URL`** This is the canonical root URL of
-  the marketplace. For example:
-  `https://the-name-of-your-app.herokuapp.com`. FTW uses the canonical
-  root URL for social media sharing and SEO optimization.
+If using Mapbox, you will need to define this environment variable. Sign
+up for Mapbox and go to the
+[account page](https://www.mapbox.com/account/access-tokens). Then click
+on `Create access token`. See the
+[How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/) guide
+for more information.
+
+- **`REACT_APP_CANONICAL_ROOT_URL`**
+
+This is the canonical root URL of the marketplace. For example:
+`https://the-name-of-your-app.herokuapp.com`. FTW uses the canonical
+root URL for social media sharing and SEO optimization.
 
 - **`REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY`**
 
