@@ -215,6 +215,13 @@ for your build to be deployed. Once the build is complete, you will be
 able to access your marketplace through the URL displayed in the Render
 dashboard.
 
+### Domains and certificates
+
+Render manages TLS certificates
+[automatically](https://render.com/docs/tls) for new applications. You
+can enable a custom domain through the _Settings tab_. Read more through
+[Render's documentation](https://render.com/docs/custom-domains).
+
 ## What next?
 
 Now that your marketplace is running in a test environment, you should
