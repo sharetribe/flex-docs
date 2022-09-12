@@ -26,8 +26,8 @@ accounts:
 
 **Step 1: Create a Heroku account**
 
-Go to Heroku and create a new account if you don't have one. There's a
-[free plan available](https://www.heroku.com/pricing).
+Go to [Heroku](https://www.heroku.com/pricing) and create a new account
+if you do not have one.
 
 **Step 2: Create a new app**
 
