@@ -706,7 +706,7 @@ payment gateway to each step.
   https://stripe.com/en-fi/guides/pci-compliance#how-stripe-helps-organizations-achieve-and-maintain-pci-compliance
 [stripe-integration-security]:
   https://stripe.com/docs/security/guide#validating-pci-compliance
-[giropay]: https://www.giropay.de/en/
+[giropay]: https://www.giropay.de/
 [ideal]: https://www.ideal.nl/en/
 [flex-docs-privileged-transitions-background]:
   /concepts/privileged-transitions/

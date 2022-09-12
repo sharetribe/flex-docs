@@ -74,7 +74,7 @@ to use the message content in your Zap.
 
 ### Events and messages
 
-Listening to [events](/cookbook-events/reacting-to-events/) through the
+Listening to [events](/how-to/reacting-to-events/) through the
 [Integration API](/introduction/getting-started-with-integration-api/)
 is the most versatile way to react to what is happening in your
 marketplace. As sending new messages does not affect transaction state
@@ -116,5 +116,4 @@ new message. To achieve this, you could change the logic behind
 [currentUserNotificationCount](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L63)
 to display a number stored in extended data. The data attribute would
 represent the number of unread messages, and could be updated every time
-a new message is detected using
-[events](/cookbook-events/reacting-to-events/).
+a new message is detected using [events](/how-to/reacting-to-events/).
