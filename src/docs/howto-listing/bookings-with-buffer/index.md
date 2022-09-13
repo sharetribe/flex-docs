@@ -261,10 +261,10 @@ boundary, i.e. how long are the stretches of time delineated by the
 boundaries. To do that, we need an _isStart_ attribute, i.e. whether
 we're dealing with start times or end times.
 
-We also need isFirst, i.e. whether the boundary in question is the very
-first one in the list. Since we're rounding to the buffer time (here: 15
-minutes), we'll need to manually set the first time slot to correspond
-to the start of the available time slot.
+In addition we need _isFirst_, i.e. whether the boundary in question is
+the very first one in the list. Since we're rounding to the buffer time
+(here: 15 minutes), we'll need to manually set the first time slot to
+correspond to the start of the available time slot.
 
 ```diff
 - export const findNextBoundary = (timeZone, currentMomentOrDate) =>
@@ -275,9 +275,17 @@ to the start of the available time slot.
 +   isFirst,
 +   isStart
 + ) => {
-+   const increment = !isStart ? hourMinutes // For end time slots, add a full hour
-+     : isFirst ? 0             // For the first start slot, use the actual start time
-+     : bufferMinutes;          // For other start slots, use the buffer time
++
++   const isEndTimeSlot = !isStart;
++
++   // For end time slots, add a full hour.
++   // For the first start slot, use the actual start time.
++   // For other start slots, use the buffer time.
++   const increment = isEndTimeSlot
++     ? hourMinutes
++     : isFirst
++     ? 0
++     : bufferMinutes;
 +
 +   return moment(currentMomentOrDate)
       .clone()
@@ -289,6 +297,39 @@ to the start of the available time slot.
       .toDate();
 +  };
 ```
+
+<extrainfo title="Fetching time slots for the same day">
+The start of the time slot is in fact determined with the same <i>findNextBoundary</i> function in <i>ListingPage.duck.js</i>.
+
+```shell
+└── src
+    └── containers
+        └── ListingPage
+            └── ListingPage.duck.js
+```
+
+If we don't make any changes to this function call, the time slots for
+the current day get fetched with the logic of the end hours, i.e. adding
+one hour and rounding back to the previous 15 minutes. This would mean
+that providers would have at least 45 minutes of warning in case someone
+books an appointment for the same day. If you want to fetch the time
+slot based on the start time cadence i.e. on the next 15 minutes, you
+will need to pass the correct <i>isFirst</i> and <i>isStart</i>
+parameters.
+
+```js
+// Helper function for loadData call.
+const fetchMonthlyTimeSlots = (dispatch, listing) => {
+  ...
+    const tz = listing.attributes.availabilityPlan.timezone;
+    const nextBoundary = findNextBoundary(tz, new Date());
+    ...
+    return Promise.all([
+      dispatch(fetchTimeSlots(listing.id, nextBoundary, nextMonth, tz)),
+      ...
+```
+
+</extrainfo>
 
 ### Add new parameters to helper functions
 
