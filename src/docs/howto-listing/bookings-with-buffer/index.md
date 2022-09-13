@@ -34,7 +34,7 @@ the correct buffer time.
 ```
 
 ```diff
-+ export const bufferMinutes = 15;
++ const bufferMinutes = 15;
 
 + export const addBuffer = (date) => moment(date).add(bufferMinutes, 'minutes').toDate();
 ```
@@ -140,7 +140,7 @@ availability for both the time slot and the buffer.
 First, add a constant for a full hour in addition to the buffer time.
 
 ```diff
-  export const bufferMinutes = 15;
+  const bufferMinutes = 15;
 + const hourMinutes = 60;
 ```
 
