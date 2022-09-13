@@ -1,7 +1,7 @@
 ---
 title: Add buffer time to bookings in FTW-hourly
 slug: bookings-with-buffer
-updated: 2022-09-02
+updated: 2022-09-13
 category: how-to-listing
 ingress:
   This guide describes how to modify booking times in FTW-hourly to have
@@ -24,11 +24,19 @@ that are bookable at the top of the hour, and adding 15 minutes
 unbookable time after each slot. To achieve that, we will use the
 booking's display time attribute.
 
+First, we will add a helper function in _src/util/dates.js_ file to add
+the correct buffer time.
+
 ```shell
 └── src
-    └── containers
-        └── CheckoutPage
-            └── CheckoutPage.duck.js
+    └── util
+        └── dates.js
+```
+
+```diff
++ export const bufferMinutes = 15;
+
++ export const addBuffer = (date) => moment(date).add(bufferMinutes, 'minutes').toDate();
 ```
 
 ### Add display end time handling
@@ -37,16 +45,24 @@ The user can select one hour booking slots on the listing page. When an
 order gets initiated, we want to set the selected end time as the
 display time, and a new buffered end time as the actual booking time.
 This way, the booking extends over both the customer's booking time and
-the buffer, so that other customers can not book over the buffer.
+the buffer, so that other customers can not book over the buffer. We use
+the newly created _addBuffer_ function to extend the display end time.
+
+```shell
+└── src
+    └── containers
+        └── CheckoutPage
+            └── CheckoutPage.duck.js
+```
 
 ```diff
-+ import moment from 'moment';
++ import { addBuffer } from '../../util/dates';
  ...
 
 export const initiateOrder = (orderParams, transactionId) => (dispatch, getState, sdk) => {
    dispatch(initiateOrderRequest());
  ...
-+  const bufferEnd = moment(orderParams.bookingEnd).add(15, 'minutes').toDate();
++  const bufferEnd = addBuffer(orderParams.bookingEnd);
 +
 +  const bufferedParams = {
 +    ...orderParams,
@@ -121,33 +137,12 @@ availability for both the time slot and the buffer.
         └── dates.js
 ```
 
-First, add a constant for the buffer time and a full hour.
+First, add a constant for a full hour in addition to the buffer time.
 
 ```diff
-+ export const bufferMinutes = 15;
+  export const bufferMinutes = 15;
 + const hourMinutes = 60;
 ```
-
-<extrainfo title="Also use bufferMinutes constant on CheckoutPage.duck.js">
-It makes sense to also use bufferMinutes constant in CheckoutPage.duck.js, so you don't have to rely on hard-coded values.
-
-```shell
-└── src
-    └── containers
-        └── CheckoutPage
-            └── CheckoutPage.duck.js
-```
-
-```diff
-  import moment from 'moment';
-+ import { bufferMinutes } from '../../util/dates';
-
-  ...
--   const bufferEnd = moment(orderParams.bookingEnd).add(15, 'minutes').toDate();
-+   const bufferEnd = moment(orderParams.bookingEnd).add(bufferMinutes, 'minutes').toDate();
-```
-
-</extrainfo>
 
 Then, fix _getStartHours_ handling. By default, start hours and end
 hours are determined from the same list, so _getStartHours_ removes the
