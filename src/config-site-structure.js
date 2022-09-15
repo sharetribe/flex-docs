@@ -73,7 +73,7 @@ const sortingArrayTransactionProcess = [
   'transaction-process',
   'privileged-transitions',
   'change-transaction-process',
-  'reviews'
+  'reviews',
 ];
 
 const sortingArrayUsersAndAuthentication = [
@@ -127,6 +127,12 @@ const sortingArrayListings = [
   'listings-overview',
   'how-the-listing-search-works',
   'requiring-approval',
+];
+
+const sortingArrayHowToListings = [
+  'extend-listing-data-in-ftw',
+  'modify-time-intervals',
+  'bookings-with-buffer',
 ];
 
 exports.siteStructure = [
@@ -200,7 +206,10 @@ exports.siteStructure = [
         id: 'how-to-users-and-authentication',
         sortingArray: sortingArrayHowToUsers,
       },
-      { id: 'how-to-listing' },
+      {
+        id: 'how-to-listing',
+        sortingArray: sortingArrayHowToListings,
+      },
       { id: 'how-to-transaction-process' },
       {
         id: 'how-to-payments',
