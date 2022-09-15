@@ -94,12 +94,17 @@ slot minutes, see
  * Rounding function for moment.js. Rounds the Moment provided by the context
  * to the start of the specified time value in the specified units.
  * @param {*} value the rounding value
- * @param {*} unit time units to specify the value
+ * @param {*} timeUnit time units to specify the value
  * @returns Moment rounded to the start of the specified time value
  */
-moment.fn.startOfDuration = function(value, unit) {
-  const ms = moment.duration(value, unit)._milliseconds;
-  return moment(Math.floor(this / ms) * ms);
+moment.fn.startOfDuration = function(value, timeUnit) {
+  const getMs = (val, unit) => moment.duration(val, unit)._milliseconds;
+  const ms = getMs(value, timeUnit);
+
+  // Get UTC offset to account for potential time zone difference between
+  // customer and listing
+  const offsetMs = this._isUTC ? 0 : getMs(this.utcOffset(), 'minute');
+  return moment(Math.floor((this + offsetMs) / ms) * ms);
 };
 ```
 
@@ -258,11 +263,14 @@ export const findNextBoundary = (
 + isStart = false
 ) => {
 - const increment = isFirst ? 0 : timeSlotMinutes;
++ // Use the default booking length for non-first slots
++ // Use the first booking length for first end boundary
++ // Use 0 for first start boundary
 + const increment = !isFirst
-+   ? timeSlotMinutes   // Use the default booking length for non-first slots
++   ? timeSlotMinutes
 +   : !isStart
-+   ? firstSlotMinutes  // Use the first booking length for first end boundary
-+   : 0;                // Use 0 for first start boundary
++   ? firstSlotMinutes
++   : 0;
   return moment(currentMomentOrDate)
     .clone()
     ...

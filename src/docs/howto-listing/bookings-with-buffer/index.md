@@ -244,12 +244,17 @@ value is a factor of an hour, e.g. 15, 20 or 30 minutes.
  * Rounding function for moment.js. Rounds the Moment provided by the context
  * to the start of the specified time value in the specified units.
  * @param {*} value the rounding value
- * @param {*} unit time units to specify the value
+ * @param {*} timeUnit time units to specify the value
  * @returns Moment rounded to the start of the specified time value
  */
-moment.fn.startOfDuration = function(value, unit) {
-  const ms = moment.duration(value, unit)._milliseconds;
-  return moment(Math.floor(this / ms) * ms);
+moment.fn.startOfDuration = function(value, timeUnit) {
+  const getMs = (val, unit) => moment.duration(val, unit)._milliseconds;
+  const ms = getMs(value, timeUnit);
+
+  // Get UTC offset to account for potential time zone difference between
+  // customer and listing
+  const offsetMs = this._isUTC ? 0 : getMs(this.utcOffset(), 'minute');
+  return moment(Math.floor((this + offsetMs) / ms) * ms);
 };
 ```
 
