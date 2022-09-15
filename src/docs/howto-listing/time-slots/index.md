@@ -104,7 +104,7 @@ moment.fn.startOfDuration = function(value, timeUnit) {
   // Get UTC offset to account for potential time zone difference between
   // customer and listing
   const offsetMs = this._isUTC ? 0 : getMs(this.utcOffset(), 'minute');
-  return moment(Math.floor((this + offsetMs) / ms) * ms);
+  return moment(Math.floor((this.valueOf() + offsetMs) / ms) * ms);
 };
 ```
 
