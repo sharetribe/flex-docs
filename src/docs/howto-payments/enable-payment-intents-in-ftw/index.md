@@ -194,12 +194,13 @@ Since 3D Secure authentication flow is different between different
 credit card issuers, you should test at least some credit cards how they
 work in a live environment.
 
-This can be done by creating another Heroku instance (or some other
-production environment) that uses your production Client Id for Flex
-with live Stripe keys (both publishable and secret). Then create a new
-Git branch that takes PaymentIntents flow into use and adds
+This can be done by creating another
+[production environment](/ftw/how-to-deploy-ftw-to-production/) FTW
+instance that uses your production Client Id for Flex with live Stripe
+keys (both publishable and secret). Then create a new Git branch that
+takes PaymentIntents flow into use and adds
 [Basic Authentication configuration](https://github.com/sharetribe/flex-template-web/blob/master/.env-template#L32)
 into environment variables. After that, you could deploy your
-payment-intent branch into Heroku (or your alternative production
-environment). Then you can just book some existing listing and maybe
-reject it to get refund to your live card account.
+payment-intent branch into your production environment. Then you can
+just book some existing listing and maybe reject it to get refund to
+your live card account.

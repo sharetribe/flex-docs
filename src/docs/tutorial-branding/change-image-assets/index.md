@@ -174,8 +174,8 @@ public internet before you can use these tools:
 - [Facebook sharing debugger](https://developers.facebook.com/tools/debug/)
 - [Twitter card validator](https://cards-dev.twitter.com/validator)
 
-> **Note**: You could deploy the app to Heroku to test these tools. We
-> will cover [Heroku deploys](/tutorial/deploy-to-heroku/) later in this
+> **Note**: You could deploy the app to Render to test these tools. We
+> will cover [Render deploys](/tutorial/deploy-to-render/) later in this
 > tutorial.
 
 </extrainfo>
