@@ -238,7 +238,7 @@ paste the keys in config vars as they are.
 > If you are using Render or some other environment that requires you to
 > declare environment variables through a file, wrap the RSA keys with
 > quotation marks `"` and escape line breaks with the newline character
-> `/n`. Make sure that the RSA key is defined on a single line.
+> `\n`. Make sure that the RSA key is defined on a single line.
 
 `LINKEDIN_PROXY_IDP_ID`
 
