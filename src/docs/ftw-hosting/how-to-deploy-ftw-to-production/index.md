@@ -70,7 +70,7 @@ look into include [AWS](https://aws.amazon.com/),
 > [Heroku](/ftw/how-to-deploy-ftw-to-heroku/) and
 > [Render](/tutorial/deploy-to-render/#deploy-to-render).
 
-Deployinh your marketplace to production is a three-step process:
+Deploying your marketplace to production is a three-step process:
 
 1. [Set environment variables](#environment-variables)
 2. [Build the app](#building-the-app)
