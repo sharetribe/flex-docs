@@ -30,7 +30,7 @@ Sharetribe Flex offers
 You should connect your client application with the corresponding
 marketplace environment, i.e. your client environment intended for
 testing should use environment variables that point to your test
-environment in Flex-
+environment in Flex.
 
 ## Where to host your application?
 
