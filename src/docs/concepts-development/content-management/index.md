@@ -16,46 +16,58 @@ new pages as well.
 
 ## Flex Content management glossary
 
-_TODO: A better place for this section?_
-
 Before diving deeper into content management in Flex, here is a short
 glossary of the most central content related terms.
 
-**Content management**: The way in which operator-created content is
-handled within Flex. Before Console-operated content management,
-operators could either add the content directly in the FTW codebase, or
-use the [microcopy](/concepts/microcopy) files for static content, or
-integrate an external content management system. Currently, we recommend
-managing content using the assets-based Pages feature in Flex Console.
+### Content management
 
-**Content modeling**: The process of structuring patterns of content in
-a way that allows operators to create content using existing building
-blocks, and that allows designers and developers to create ways of
-showing the content in a systematic way.
+The way in which operator-created content is handled within Flex. Before
+Console-operated content management, operators could either add the
+content directly in the FTW codebase, or use the
+[microcopy](/concepts/microcopy) files for static content, or integrate
+an external content management system. Currently, we recommend managing
+content using the assets-based Pages feature in Flex Console.
 
-**Page**: The collection of different content elements under a specific
-URL. Pages can have fields, sections, or blocks within them. A page can
-be fetched as [an asset](/references/assets) from the Flex Asset
-Delivery API. Example: `landing-page`.
+### Content modeling
 
-**Page asset**: As the operator adds and edits the elements of the page
-in Flex Console, a page asset is created under the hood. The page asset
-uses a **page schema** to describe the different content elements in a
-way that the client application can then understand and render.
+The process of structuring patterns of content in a way that allows
+operators to create content using existing building blocks, and that
+allows designers and developers to create ways of showing the content in
+a systematic way.
 
-**Section**: The main element of a page. In Flex, each section has a
-specific content model that determines the information that the section
-must have to function properly. Sections can have fields and blocks
-within them. In Flex, sections are the main way to distinguish pages
-from each other. Example: article, feature, columns.
+### Page
 
-**Block**: Blocks are optional, but they are very useful for more
-extensive pieces of content. Different section content models can show
-blocks in different ways, depending on the design. Blocks can have
-fields within them. Example: default block.
+The collection of different content elements under a specific URL. Pages
+can have fields, sections, or blocks within them. A page can be fetched
+as [an asset](/references/assets) from the Flex Asset Delivery API.
+Example: `landing-page`.
 
-**Field**: The simplest content element in Flex. Conveys a single piece
-of information. Example: text field, button, image.
+### Page asset
+
+As the operator adds and edits the elements of the page in Flex Console,
+a page asset is created under the hood. The page asset uses a **page
+schema** to describe the different content elements in a way that the
+client application can then understand and render.
+
+### Section
+
+The main element of a page. In Flex, each section has a specific content
+model that determines the information that the section must have to
+function properly. Sections can have fields and blocks within them. In
+Flex, sections are the main way to distinguish pages from each other.
+Example: article, feature, columns.
+
+### Block
+
+Blocks are optional, but they are very useful for more extensive pieces
+of content. Different section content models can show blocks in
+different ways, depending on the design. Blocks can have fields within
+them. Example: default block.
+
+### Field
+
+The simplest content element in Flex. Conveys a single piece of
+information. Example: text field, button, image.
 
 ## Content models
 
