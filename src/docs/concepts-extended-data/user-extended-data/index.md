@@ -16,9 +16,24 @@ data, private data, and public metadata. A user's extended data is
 nested in the user's _profile_ attribute, not a direct attribute of the
 user resource.
 
+## Viewing and modifying user extended data
+
 User public and metadata are visible through the
 [users/show](https://www.sharetribe.com/api-reference/marketplace.html#show-user)
-endpoint in Integration API.
+endpoint in Marketplace API. In addition, the authenticated user can
+view their own extended data through the
+[current_user/show](https://www.sharetribe.com/api-reference/marketplace.html#show-current-user)
+endpoint. Operators can see all user extended data through the
+[user retrieval endpoints](https://www.sharetribe.com/api-reference/integration.html#users)
+in Integration API.
+
+Authenticated users are able to modify their own public, protected and
+private extended data through the
+[current user creation and update endpoints](https://www.sharetribe.com/api-reference/marketplace.html#current-user)
+in Marketplace API. Operators can modify all user extended data using
+the
+[users/update_profile](https://www.sharetribe.com/api-reference/integration.html#update-user-profile)
+in Integration API.
 
 ## Types of users
 

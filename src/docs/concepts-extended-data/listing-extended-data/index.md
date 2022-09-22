@@ -10,8 +10,13 @@ published: true
 ---
 
 Listings can have three types of extended data: public, private, and
-metadata. Public data and metadata are visible to everyone – in other
-words, they are available when querying listings through the
+metadata. This article gives an overview of using these different
+extended data types.
+
+## Viewing and modifying listing extended data
+
+Public data and metadata are visible to everyone – in other words, they
+are available when querying listings through the
 [public listing endpoints](https://www.sharetribe.com/api-reference/marketplace.html#listings)
 in Marketplace API. Public data and metadata can be used, for instance,
 to distinguish different types of listings from each other, or to allow
@@ -64,3 +69,11 @@ from sellers in your highest subscription tier to be displayed first. Or
 perhaps your marketplace is for selling preowned clothing, and you want
 your users to be able to filter by size to find the best fit. The
 possibilities are numerous!
+
+## Different types of listings
+
+A marketplace can have several types of listings – rentals and sales,
+events and facilities. Listing extended data is a powerful way to
+distinguish different listing types. Read more about the possibilities
+for
+[different listing types in Flex](/concepts/listings-overview/#different-types-of-listings).
