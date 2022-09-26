@@ -217,6 +217,7 @@ exports.siteStructure = [
         sortingArray: sortingArrayPaymentCookbooks,
       },
       { id: 'how-to-migrations' },
+      { id: 'how-to-content' },
       { id: 'how-to-messaging' },
       { id: 'how-to-design' },
       { id: 'how-to-events' },
