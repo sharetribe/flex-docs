@@ -1,11 +1,11 @@
 ---
-title: Change image assets
-slug: change-image-assets
+title: Change template images
+slug: change-images
 updated: 2022-07-11
 category: tutorial-branding
 ingress:
-  Learn how to update image assets such as the default background image,
-  favicon and app icons.
+  Learn how to update template images such as the default background
+  image, favicon and app icons.
 published: true
 ---
 
@@ -127,6 +127,22 @@ Here's an image, we used in this tutorial:<br />
 [Summer house by Markus Spiske (cropped)](/tutorial-assets/markus-spiske-summer-house-unsplash.jpg)
 
 ![CottageDays example with updated Hero image](./cottagedays-background-image.png)
+
+### Images in 'assets' or Image Assets?
+
+The FTW templates use two types of assets:
+
+- bundled assets and
+- hosted assets
+
+Bundled assets are a part of the client application. For images, they
+live in the _src/assets_ folder of the client codebase. Hosted assets,
+on the other hand, are fetched from the
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
+This tutorial only focuses on bundled assets. You can
+[read more about hosted assets](/references/assets/).
+
+</extrainfo>
 
 ## Images for social media
 

@@ -25,7 +25,7 @@ const sortingArrayIntroductionGettingStarted = [
 const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
   'first-edit',
-  'change-image-assets',
+  'change-images',
   'change-logo',
   'working-with-microcopy',
   'configurations',
