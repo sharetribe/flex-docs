@@ -35,7 +35,7 @@ Whether a web-based UI, a mobile application, or both, the user
 interface is the face of your solution. That's why you have total
 control over it.
 
-You can decide fully things like which fonts and colors to use in your
+You can fully choose things like which fonts and colors to use in your
 user interface, what kind of pages or views there should be, and how
 those should be laid out. There are no limits to what you can do in
 terms of visual design.
