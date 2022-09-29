@@ -5,8 +5,8 @@ updated: 2022-10-05
 category: concepts-integrations
 ingress:
   Flex allows integrations to a vast range of third party tools and
-  solutions. These tools can be integrated to Flex either using Zapier
-  or the Flex Integration API.
+  solutions. These tools can be integrated to Flex by using Zapier, the
+  Flex Integration API, or the client application.
 published: true
 ---
 
@@ -18,66 +18,134 @@ your marketplace solution with varying degrees of complexity.
 
 [Integrations](https://www.sharetribe.com/docs/operator-guides/features/#integrations)
 
-- Examples of integrations
-- Integration tools (integration API, events & zapier)
-  - Integration API allows operators to modify all marketplace data
-  - One aspect of Integration API is events – everything that happens in
-    a Flex marketplace triggers an event, and you can create very
-    complex integrations by reacting to those events in a reasonable way
-- High-level portrayals of specific integrations
-  - Hotjar: add tracking script and modify csp
-  - [Sendbird](https://sendbird.com/) user-to-user chat app: add their
+## Flex integration tools
+
+There are several ways to approach integrating third party tools to your
+Flex marketplace. The simplest integration tool is your client
+application. Since you have full control over your marketplace client
+app, you can for instance add analytics and tracking tools such as
+Hotjar directly into your client app code.
+
+If you want to create an integration where the third party solution
+listens to, or takes action on, the Flex marketplace data, you will
+likely need to use the Integration API. Where Marketplace API is meant
+for everyday marketplace interactions, Integration API provides
+operators powerful access to all marketplace data and activity. Through
+Integration API, operators can enable third party tools to create and
+update listings, update users, and manage transactions, bookings and
+stock reservations.
+
+Due to its powerful nature, Integration API should only ever be used
+from a secure context, such as your client application server or a
+separate backend application. The FTW templates include a
+Node.js/Express server, which is an excellent place to build your
+Integration API logic without revealing sensitive information to the
+public web in your browser client code.
+
+In addition to direct endpoints to marketplace resources, Integration
+API also exposes events. The majority of activity on your marketplace
+triggers events – users and listings created and updated, transactions
+transitioned, and so forth. You can review
+[the full list of supported event types](/references/events/#supported-event-types).
+By listening to events, you can build flows where third party solutions
+take action either in Flex or within the solutions themselves.
+
+Sharetribe has also built a
+[Zapier integration](/how-to/set-up-and-use-zapier/) to facilitate
+integrating third-party tools to Flex. The Zapier integration works by
+harnessing a subset of Flex events and allowing operators to connect any
+of the other 5000+ tools and solutions that also have a Zapier
+integration. The Flex Zapier integration makes it easier to take action
+in your favorite business tools, e.g. Hubspot, MailChimp and others,
+based on your Flex marketplace activity. If you need to take action in
+Flex based on activity in other solutions, however, you will need to use
+the Integration API since Zapier cannot currently perform operations
+within Flex.
+
+## Levels of integration
+
+The complexity of a Flex integration to a third party tool can range
+from very simple to highly complex. One aspect determining the
+complexity is how intertwined the two tools need to be. On the simple
+end, adding a script to the client application for a tracking tool is a
+trivial change, and on the complex end a full third party payment
+gateway integration will likely take several weeks to implement.
+
+The full complexity of the feature depends on the different use cases
+you need to cover on each side of the integration. If you are using the
+Zapier integration to listen to user events and passing the information
+to Hubspot, you may still need to build complex workflows on Hubspot
+side for the integration to cover your use case. Or if you want to
+integrate your Flex marketplace with Shopify and synchronize listing
+stock between the two platforms, you may need to cover several use cases
+on both sides – adding, updating and removing listings, and handling
+purchases, returns and disputes.
+
+For illustration, here are some examples of types of integrations with
+increasing levels of complexity:
+
+### Examples of simple integrations
+
+- Calling third party APIs and SDKs from your client application
+  - use cases: uploading files to external storage, adding a messaging
+    tool
+- Adding a third-party script to your client application
+  - use cases: integrating analytics providers
+- Adding a custom endpoint in your client app server that calls a third
+  party API and then updates information in Flex using Marketplace API
+  or Integration API
+  - use cases: enabling downloadable content in listings
+- Listening to Flex events using Zapier and taking action in another
+  Zapier-connected application
+  - use cases: sending a text message of a new booking to providers
+    using Twilio
+
+### Examples of more complex integrations
+
+- Listening to Flex events using your own polling tool and taking action
+  within Flex
+  - use cases: partial or complete payment gateway integrations
+- Synchronizing Flex and a parallel system to update each other when any
+  changes happen in either solution
+  - use cases: calendar integration, Shopify
+
+## Examples of specific integrations
+
+- Hotjar:
+  - add tracking script and modify csp
+  - complexity: very simple
+- Add your marketplace users to a Mailchimp mailing list:
+  - [Zapier template](https://zapier.com/shared/add-a-new-user-in-your-marketplace-to-a-mailchimp-audience/412d7744a23855ce00941567a619c7ffb7652335)
+  - complexity: fairly simple
+- Send SMS to providers when they have a pending booking request:
+  - [Zapier template](https://zapier.com/shared/send-a-text-message-to-the-provider-for-each-new-booking-in-a-flex-marketplace/10df518e77541354c78dd1c524cf28f59c774aaf)
+  - complexity: fairly simple
+- [Sendbird](https://sendbird.com/) user-to-user chat app:
+  - add their
     [UI kit](https://sendbird.com/docs/uikit/v3/react/overview) and
     [SDK](https://sendbird.com/docs/chat/v4/javascript/overview),
     implement a component, initialise a user id for the user when they
     first use the chat and save it in the user's private data, stylise
     the UI component
-  - Add your marketplace users to a Mailchimp mailing list and connect
-    with your community:
-    [Zapier template](https://zapier.com/shared/add-a-new-user-in-your-marketplace-to-a-mailchimp-audience/412d7744a23855ce00941567a619c7ffb7652335)
-  - Send SMS to providers when they have a pending booking request:
-    [Zapier template](https://zapier.com/shared/send-a-text-message-to-the-provider-for-each-new-booking-in-a-flex-marketplace/10df518e77541354c78dd1c524cf28f59c774aaf)
-  - Voucherify – TODO create a proof of concept with line item handling
-    (cooldown?)
-  - Payment gateway integration –
-    [how-to article](/how-to/how-to-integrate-3rd-party-payment-gateway/)
-- Levels of integration ⇒ how intertwined will your systems be – the
-  full complexity depends on both the Flex side and the other tool side
-  i.e. something can be fairly easy to add to Flex but complex to build
-  on the 3rd party tool side.
-  - Very simple: calling 3rd party APIs and SDKs from your client
-    application, e.g. uploading files to external storage and attaching
-    their URLs to listing extended data, or adding a messaging tool;
-    adding a script to your client app cf Hotjar analytics
-  - Fairly simple: adding an endpoint to your client app server that
-    calls a 3rd party API, then calls Integration API to take action in
-    Flex, and returns certain information (e.g. enabling downloadable
-    products)
-  - Very to fairly simple: listening to Flex events using Zapier and
-    taking action in another Zapier-connected application
-  - Fairly simple to complex: Listening to Flex events using your own
-    polling tool and taking action within Flex, e.g. payment gateway
-    integrations.
-  - Complex: Synchronizing Flex and a parallel system to update each
-    other when any changes happen in either solution (e.g. calendar
-    integration, Shopify)
-
-## Zapier integrations
-
-With our Zapier integration, you can connect your Flex marketplace with
-more than 3,000 other web apps with just a few clicks. You can then
-build "Zaps", which are automated workflows or sequences of actions that
-get kicked off by a trigger. An event in one app can set in motion an
-action in a second app and another action in a third app etc.
-
-Once you’ve created a Zapier account and connected your Flex marketplace
-account, you can use nine different events in your marketplace as a
-trigger for actions in other apps. Zapier can also perform "search
-actions" in your marketplace data about users, listings or transactions.
-
-Together this allows you to create complex workflows based on things
-happening in your marketplace. A new booking or order can trigger the
-sending of a text message with Twilio. A new user sign-up can set into
-action a campaign of drip emails in Mailchimp. A new listing can be
-automatically posted to any of your marketplace’s social accounts. And
-so much more.
+  - complexity: fairly simple to moderate – the initial integration is
+    easy to implement, and then the eventual complexity depends on the
+    use cases you want to cover
+- Voucherify – TODO create a proof of concept with line item handling
+  (cooldown?)
+- Google Calendar to Flex availability calendar two-way integration
+  - Google providers
+    [Calendar API](https://developers.google.com/calendar/api) to modify
+    calendar events
+  - You can set up
+    [push notifications](https://developers.google.com/calendar/api/guides/push)
+    to track changes on the Google side
+  - Authenticate your Flex app to get information and make changes on
+    behalf of the user in Google Calendar
+  - Whenever a booking gets created or updated in Flex, update the
+    Google Calendar accordingly
+  - Whenever an event is created in Google Calendar, create an
+    availability exception in Flex
+  - Complexity: complex
+- Payment gateway integration
+  - [how-to article](/how-to/how-to-integrate-3rd-party-payment-gateway/)
+  - complexity: complex
