@@ -55,7 +55,7 @@ can be linked to at least two or three other articles within your
 article base. You can start with e.g. half a dozen article topics, and
 then build your content library as you go.
 
-## Build your pages
+## Build your article pages
 
 [TODO: Add explanation and screenshots]
 
@@ -72,6 +72,16 @@ We have now built three pages with the page urls
 - /p/history
 - /p/packing-list
 - /p/amenities
+
+It also makes sense to build a library contents page where you link all
+your articles
+
+- /p/library
+
+You can add different sections for possible different categories your
+content naturally falls into. If you have resources on other sites, e.g.
+guest posts or news stories, this is a good place to link to those as
+well => external links
 
 [TODO: text segments for linking:]
 
