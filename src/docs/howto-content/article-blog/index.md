@@ -46,7 +46,7 @@ articles on
 - Reasons to rent out your cottage to others
 - Reasons to hire a cottage for your vacation
 - Cottage rental etiquette
-- Woollen socks and mosquito spray i.e. what to pack for a cottage trip
+- Knit socks and mosquito spray i.e. what to pack for a cottage trip
 - Cottage cooking favorites, such as grilled sausages and fireside
   s'mores ... and so forth
 
