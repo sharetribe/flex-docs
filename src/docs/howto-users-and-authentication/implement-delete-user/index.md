@@ -17,12 +17,13 @@ After the user has been deleted, any transactions where they are a
 participant cannot transition forward, and no payouts will be made to
 the user – even if the payouts have already been scheduled.
 
-This cookbook guides you in implementing an account deleting feature in
-the FTW template "Account settings" section. When the signed-in user
-navigates to the account deletion page, they need to enter their
-password to confirm that they do in fact want to delete their account.
-An endpoint in the FTW application's server then gets called, and that
-endpoint checks whether the user has incomplete transactions.
+This how-to article guides you in implementing an account deleting
+feature in the FTW template "Account settings" section. When the
+signed-in user navigates to the account deletion page, they need to
+enter their password to confirm that they do in fact want to delete
+their account. An endpoint in the FTW application's server then gets
+called, and that endpoint checks whether the user has incomplete
+transactions.
 
 Depending on the result the endpoint then either returns the count of
 incomplete transactions, or deletes the user's account through the
@@ -30,8 +31,8 @@ incomplete transactions, or deletes the user's account through the
 shows the count of unfinished transactions, and if the user is deleted,
 they are immediately logged out.
 
-This cookbook is based on the FTW-daily template and
-`flex-default-process`. As you implement the cookbook, you will need to
+This how-to guide is based on the FTW-daily template and
+`flex-default-process`. As you implement the guide, you will need to
 review the transaction processes used on your marketplace to see which
 transitions count as non-final transitions, i.e. ones where you do not
 want to allow the user to delete their profile.

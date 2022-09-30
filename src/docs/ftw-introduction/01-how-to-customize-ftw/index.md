@@ -234,4 +234,4 @@ and many more that you can change. For more information, check the
 [FTW customization checklist](/ftw/customization-checklist/)
 documentation too before publishing your site. See also
 [tutorial](/tutorial/introduction/) and other articles in _Flex
-Templates for Web_ and _Cookbook_ categories.
+Templates for Web_ and _How-to_ categories.

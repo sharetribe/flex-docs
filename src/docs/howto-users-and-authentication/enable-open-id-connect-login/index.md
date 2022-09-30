@@ -4,7 +4,7 @@ slug: enable-open-id-connect-login
 updated: 2021-02-03
 category: how-to-users-and-authentication
 ingress:
-  In this cookbook we'll take at how to use an OpenID Connect login
+  In this guide we'll take at how to use an OpenID Connect login
   solution with a Flex marketplace.
 published: true
 ---
@@ -14,9 +14,9 @@ published: true
 [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html)
 is a specification built on OAuth2 that describes how a user
 authenticated at an identity provider can be authorized to resources in
-another service. This cookbook assumes that you already have an OpenID
-Connect solution available and intend to use that as a login option in
-your Flex marketplace.
+another service. This how-to guide assumes that you already have an
+OpenID Connect solution available and intend to use that as a login
+option in your Flex marketplace.
 
 ## Identity provider requirements
 
