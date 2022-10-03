@@ -252,7 +252,7 @@ For more details of the transaction process format, see the
 reference. To customise the UI of your marketplace to match your process
 changes, see the
 [Change transaction process setup in FTW](/how-to/change-transaction-process-in-ftw/)
-cookbook.
+how-to guide.
 
 If you’re working with a developer, then you need to communicate how you
 would like transactions to work so your developer can implement the

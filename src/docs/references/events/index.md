@@ -436,7 +436,7 @@ reflect data before the transition.
 
 - [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
 - [Using Flex CLI to view event data](/how-to/view-events-with-flex-cli/)
-- [Reacting to events](/how-to/reacting-to-events/) cookbook guide
+- [Reacting to events](/how-to/reacting-to-events/) how-to guide
 - A
   [full example](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js)
   Integration API application is available

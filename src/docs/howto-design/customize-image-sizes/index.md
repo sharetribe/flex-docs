@@ -12,10 +12,10 @@ published: true
 Flex provides a selection of predefined image sizes, or _variants_ as
 they are called, to be used in your marketplace website. However, when
 none of the predefined variants suits your needs, a custom variant can
-be requested. In this cookbook, we'll recap how to fetch different image
-variants. We'll also take a look at how to define custom image variants
-when Flex's predefined variants don't offer the dimensions that work
-best in by your marketplace.
+be requested. In this how-to guide, we'll recap how to fetch different
+image variants. We'll also take a look at how to define custom image
+variants when Flex's predefined variants don't offer the dimensions that
+work best in by your marketplace.
 
 ## Image variants in Flex
 
@@ -182,6 +182,7 @@ Now we have images that suit the content of the marketplace:
 In order to make sure that the `ListingCard` component renders correctly
 everywhere, make sure to fetch the 2:3 image variants we used here on
 every page where the `ListingCard` component is used. Furthermore, the
-changes listed in this cookbook can be applied to other components that
-view listing images too. The `.aspectWrapper` class name is usually a
-good search keyword when finding all components that need to be updated.
+changes listed in this how-to guide can be applied to other components
+that view listing images too. The `.aspectWrapper` class name is usually
+a good search keyword when finding all components that need to be
+updated.

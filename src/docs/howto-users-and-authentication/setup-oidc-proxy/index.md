@@ -4,8 +4,8 @@ slug: setup-open-id-connect-proxy
 updated: 2021-03-02
 category: how-to-users-and-authentication
 ingress:
-  In this cookbook, we'll take a look at the process of setting up
-  OpenID Connect (OIDC) proxy to FTW. This allows you to add support for
+  In this guide, we'll take a look at the process of setting up OpenID
+  Connect (OIDC) proxy to FTW. This allows you to add support for
   identity providers that Flex doesn't natively support. In this
   example, we are building the proxy implementation for LinkedIn.
 published: true
@@ -86,7 +86,7 @@ that Flex uses to validate the ID token that wraps the LinkedIn login
 information. To enable logins in Flex using the OIDC proxy, a
 corresponding identity provider and identity provider client need to be
 configured for your marketplace in Flex Console. See the
-[OpenID Connect cookbook](/how-to/enable-open-id-connect-login/) on for
+[OpenID Connect how-to guide](/how-to/enable-open-id-connect-login/) for
 information on how to add a new identity provider for your marketplace.
 
 Here's some guidance for configuring a new identity provider and a

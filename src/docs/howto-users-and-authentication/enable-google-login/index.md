@@ -4,9 +4,9 @@ slug: enable-google-login
 updated: 2020-12-04
 category: how-to-users-and-authentication
 ingress:
-  In this cookbook we'll take a look at the process of setting up Google
-  login for your marketplace. It will allow your users to sign and log
-  in by using their Google accounts.
+  In this how-to guide we'll take a look at the process of setting up
+  Google login for your marketplace. It will allow your users to sign
+  and log in by using their Google accounts.
 published: true
 ---
 
