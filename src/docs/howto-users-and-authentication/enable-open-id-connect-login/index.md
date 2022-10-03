@@ -18,6 +18,21 @@ another service. This cookbook assumes that you already have an OpenID
 Connect solution available and intend to use that as a login option in
 your Flex marketplace.
 
+<extrainfo title="Is Apple Sign-in OpenID Connect compliant?">
+Apple Sign-in has several features that resemble the OpenID Connect specification. However, the Apple Sign-in implementation has some differences to the Open ID Connect spec that render it not fully compliant.
+
+One feature that our Flex developers have discovered is that the
+<i>email_verified</i> claim is returned as string from Apple, whereas
+the
+<a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">Open
+ID Connect spec</a> determines that it needs to be boolean. This means
+that simply integrating Apple Sign-in as an Open ID Connect IdP in Flex
+is not possible. Instead, you will need to use the
+<a href="/how-to/setup-open-id-connect-proxy/">OIDC proxy</a> approach
+to integrate Apple Sign-in into your marketplace.
+
+</extrainfo>
+
 ## Identity provider requirements
 
 ### Discovery document and JSON Web keys
