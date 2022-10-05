@@ -28,7 +28,7 @@ the
 ID Connect spec</a> determines that it needs to be boolean. This means
 that simply integrating Apple Sign-in as an Open ID Connect IdP in Flex
 is not possible. Instead, you will need to use the
-<a href="/how-to/setup-open-id-connect-proxy/">OIDC proxy</a> approach
+<a href="/docs/how-to/setup-open-id-connect-proxy/">OIDC proxy</a> approach
 to integrate Apple Sign-in into your marketplace.
 
 </extrainfo>
