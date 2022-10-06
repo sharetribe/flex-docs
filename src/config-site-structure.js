@@ -32,7 +32,7 @@ const sortingArrayTutorialBranding = [
   'change-default-locations',
   'customize-amenities-filter',
   'add-faq-page',
-  'deploy-to-heroku',
+  'deploy-to-render',
 ];
 const sortingArrayTutorialExtendedData = [
   'add-extended-data',
