@@ -130,8 +130,23 @@ increasing levels of complexity:
   - complexity: fairly simple to moderate – the initial integration is
     easy to implement, and then the eventual complexity depends on the
     use cases you want to cover
-- Voucherify – TODO create a proof of concept with line item handling
-  (cooldown?)
+- Voucherify
+  - Create an account in [Voucherify](https://www.voucherify.io/) and
+    create your own codes or use the existing ones
+  - Add [Voucherify SDK](https://docs.voucherify.io/docs/sdks)
+  - Create a helper file in the server that contains functions to
+    validate and redeem a code using the Voucherify SDK
+  - Add an input element to ListingPage.js for the discount code
+  - Pass the discount code to line item calculation and to CheckoutPage
+    (in a similar way to
+    [this pricing tutorial](/tutorial/customize-pricing-tutorial/))
+  - Add a logic to lineItems.js that adds a discount line item with the
+    correct percentage or amount if the code is valid
+  - Validate the code in endpoints for transaction-line-items,
+    initiate-privileged and transition-privileged and pass the
+    validation result to lineItems function
+  - Only redeem the code when initiating or transitioning the
+    transaction without speculation
 - Google Calendar to Flex availability calendar two-way integration
   - Google providers
     [Calendar API](https://developers.google.com/calendar/api) to modify
