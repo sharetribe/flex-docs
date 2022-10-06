@@ -91,3 +91,8 @@ discount code logic and, depending on the tool, other promotions such as
 gift cards and loyalty programs. The third party tools handle the
 validation and redeeming of the code, so you just need to communicate
 the discount to your line item calculation within the transaction.
+
+- things to note for the Voucherify how-to
+  - validate code several times, redeem only once => what happens to a
+    single-use code if it gets redeemed upon payment but the provider
+    declines the booking?
