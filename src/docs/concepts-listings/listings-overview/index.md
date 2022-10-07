@@ -141,7 +141,10 @@ You can for instance create service listings with
 [availability and bookings](/references/availability/), as well as
 product listings with [stock](/references/stock/), in the same
 marketplace, and differentiate them with a **listingType** attribute in
-listing extended data.
+listing extended data. With both availability and stock listings in the
+same marketplace, you likely want to have separate
+[transaction processes](/concepts/transaction-process/), whose
+information is also saved in the listing extended data.
 
 By passing listing type as a query parameter to the endpoint, you can
 then create differentiated views for the two types of listings. Again,

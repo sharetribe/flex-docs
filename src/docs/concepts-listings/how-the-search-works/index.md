@@ -155,7 +155,11 @@ information.
 This means that if you do want to use the Integration API user query,
 you need to create a custom server endpoint in the FTW template's server
 that calls the Integration API endpoint and only returns the user's
-public information back to the browser. The Integration API query has
-fewer filtering and sorting options than the Marketplace API listing
-query, however, so for any level of complexity in your user search it is
-recommended to use the "users as listings" approach.
+public information – public data and metadata – back to the browser.
+Otherwise, you risk revealing sensitive user information to everyone who
+visits your marketplace site.
+
+That said, the Integration API query has fewer filtering and sorting
+options than the Marketplace API listing query, so for any level of
+complexity in your user search it is recommended to use the "users as
+listings" approach.

@@ -192,36 +192,6 @@ service will take place. This metadata can be written into the
 transaction by the Integration API at a specific point of the
 transaction.
 
-## Search and filtering
-
-How users search and filter listings is a vital part of their experience
-in your marketplace. A smooth search experience allows them to find the
-listings they’re interested in effortlessly, and the right filters help
-them narrow down results to a selection that best fits their needs.
-Extended data helps you build the custom search and filtering experience
-your marketplace needs.
-
-Listings can be searched by keyword or location using Flex’s
-[powerful built-in search feature](/concepts/how-the-listing-search-works/).
-In addition to this, you can use listing public extended data and
-metadata to create a variety of different types of filters; for example,
-a filter can be a slider with a range of values or a checkbox group. You
-can also specify how listings are prioritized and sorted in the results.
-Extended data is not available for search or sorting by default, which
-means you are in control of building your own, unique search experience.
-
-When planning your search experience, think about the following
-questions: Do you want the extended data in any given field to be
-searchable? Do you want it to be a filter as well as a search parameter?
-What kind of filter should it be? Which extended data should be
-prioritized in search results?
-
-Maybe your marketplace charges a membership fee, and you want listings
-from sellers in your highest subscription tier to be displayed first. Or
-perhaps your marketplace is for selling preowned clothing, and you want
-your users to be able to filter by size to find the best fit. The
-possibilities are numerous!
-
 ## Getting started with extended data
 
 Extended data is a powerful feature that allows you to customize your
