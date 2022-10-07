@@ -35,6 +35,11 @@ Whether a web-based UI, a mobile application, or both, the user
 interface is the face of your solution. That's why you have total
 control over it.
 
+You can fully choose things like which fonts and colors to use in your
+user interface, what kind of pages or views there should be, and how
+those should be laid out. There are no limits to what you can do in
+terms of visual design.
+
 [Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
 (FTW) are web templates that implement a full-feature marketplace
 experiences powered by Flex. You can choose between three templates:
@@ -53,8 +58,17 @@ can customize the template. You can freely design the user interactions
 and alter the look and feel of your marketplace. You can also integrate
 any web analytics or customer service solutions directly into your UI.
 
+Your users won't see Sharetribe mentioned anywhere. The web address is
+your own domain, the email notifications get sent from your email
+address, and the entire user experience is fully tailored to match your
+brand.
+
 If you prefer to start from scratch, you can build your own UI on top of
-Flex's Marketplace API yourself.
+Flex's Marketplace API yourself. For instance, if you want to build a
+mobile application for your marketplace, you will need to build a fully
+custom user interface. You can also have several UI applications for the
+same marketplace, so the user can manage their listings and transactions
+on a native mobile app as well as on the web.
 
 ### The Marketplace API
 
