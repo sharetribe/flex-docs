@@ -102,7 +102,7 @@ on both sides – adding, updating and removing listings, and handling
 purchases, returns and disputes.
 
 For illustration, here are some examples of types of integrations with
-increasing levels of complexity:
+different levels of complexity:
 
 **Simple integrations:**
 
