@@ -141,9 +141,9 @@ different levels of complexity:
 
 ### Hotjar analytics
 
-Hotjar is an analytics tool for websites that allows you to collect user
-activity heatmaps, feedback, and user behavior recordings, among other
-features.
+[Hotjar](https://www.hotjar.com/) is an analytics tool for websites that
+allows you to collect user activity heatmaps, feedback, and user
+behavior recordings, among other features.
 
 - Add a
   [tracking script to the client application](/ftw/how-to-set-up-analytics-for-ftw/#custom-analytics-libraries)
@@ -152,9 +152,10 @@ features.
 
 ### Mailchimp email list
 
-Mailchimp is an email marketing and automations tool that you can use to
-communicate directly with your marketplace users. Since Mailchimp uses
-Zapier, integrating Flex and Mailchimp is straightforward:
+[Mailchimp](https://mailchimp.com/) is an email marketing and
+automations tool that you can use to communicate directly with your
+marketplace users. Since Mailchimp uses Zapier, integrating Flex and
+Mailchimp is straightforward:
 
 - Use the
   [sample Zapier template](https://zapier.com/shared/add-a-new-user-in-your-marketplace-to-a-mailchimp-audience/412d7744a23855ce00941567a619c7ffb7652335)
@@ -162,10 +163,11 @@ Zapier, integrating Flex and Mailchimp is straightforward:
 
 ### Twilio SMS
 
-Twilio is a communications platform that offers multiple channels of
-communicating with your marketplace users, including SMS and WhatsApp
-messages, calls and video. Twilio has a Zapier integration, so you can
-use Zapier to trigger actions in Twilio tools with no coding.
+[Twilio](https://www.twilio.com/) is a communications platform that
+offers multiple channels of communicating with your marketplace users,
+including SMS and WhatsApp messages, calls and video. Twilio has a
+Zapier integration, so you can use Zapier to trigger actions in Twilio
+tools with no coding.
 
 - Follow the
   [Flex video guide](/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-flex-using-twilio-and-zapier)
@@ -189,14 +191,14 @@ cases you want to cover.
 
 ### Voucherify discount coupons
 
-Voucherify is a promotions tool that allows you to create, validate and
-redeem discount coupons, gift cards, automatic discounts and other
-promotional offers. The initial integration is fairly straightforward to
-implement, and the eventual complexity depends on the use cases you want
-to cover.
+[Voucherify](https://www.voucherify.io/) is a promotions tool that
+allows you to create, validate and redeem discount coupons, gift cards,
+automatic discounts and other promotional offers. The initial
+integration is fairly straightforward to implement, and the eventual
+complexity depends on the use cases you want to cover.
 
-- Create an account in [Voucherify](https://www.voucherify.io/) and
-  create your own codes or use the existing ones
+- Create an account in Voucherify and create your own codes or use the
+  existing ones
 - Add [Voucherify SDK](https://docs.voucherify.io/docs/sdks)
 - Create a helper file in the server that contains functions to validate
   and redeem a code using the Voucherify SDK
@@ -219,10 +221,11 @@ to cover.
 ### Google Calendar synchronised with Flex availability calendar
 
 If you run a booking marketplace, you may want to allow providers to
-synchronize their own Google Calendar to their listing's Flex
-availability calendar. That way, providers do not need to add
-availability exceptions manually to Flex, and they will be able to see
-any bookings in their own calendar without needing to visit the
+synchronize their own
+[Google Calendar](https://developers.google.com/calendar) to their
+listing's Flex availability calendar. That way, providers do not need to
+add availability exceptions manually to Flex, and they will be able to
+see any bookings in their own calendar without needing to visit the
 marketplace. Like all two-way integrations, this is a complex one, and
 you will need to specify the use cases you want to cover to determine
 the full complexity of the integration.
