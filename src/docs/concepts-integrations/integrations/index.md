@@ -40,14 +40,14 @@ logic in a secure way.
 
 If you want to create an integration where the third party solution
 listens to, or takes action on, the Flex marketplace data, you will
-likely need to use the Integration API. Where Marketplace API is meant
-for everyday marketplace interactions, Integration API provides
-operators powerful access to all marketplace data and activity. Through
-Integration API, operators can enable third party tools to create and
-update listings, update users, and manage transactions, bookings and
-stock reservations.
+likely need to use the Integration API. Where the Marketplace API is
+meant for everyday marketplace interactions, the Integration API
+provides operators powerful access to all marketplace data and activity.
+Through the Integration API, operators can enable third party tools to
+create and update listings, update users, and manage transactions,
+bookings and stock reservations.
 
-Due to its powerful nature, Integration API should only ever be used
+Due to its powerful nature, the Integration API should only ever be used
 from a secure context, such as your client application server or a
 separate backend application. Here, too, the FTW server is an excellent
 place to build your Integration API logic without revealing sensitive
@@ -116,8 +116,8 @@ different levels of complexity:
   - use cases: integrating analytics providers
 
 - Adding a custom endpoint in your client app server that calls a third
-  party API and then updates information in Flex using Marketplace API
-  or Integration API
+  party API and then updates information in Flex using the Marketplace
+  API or the Integration API
 
   - use cases: enabling downloadable content in listings
 
