@@ -1,57 +1,64 @@
 ---
 title: Introduction to integrations in Flex
 slug: integrations-introduction
-updated: 2022-10-05
+updated: 2022-10-11
 category: concepts-integrations
 ingress:
-  Flex allows integrations to a vast range of third party tools and
-  solutions. These tools can be integrated to Flex by using Zapier, the
-  Flex Integration API, or the client application.
+  Flex allows integrations with a vast range of third party tools and
+  solutions. These tools can be integrated with Flex by using Zapier,
+  the Flex Integration API, or the client application.
 published: true
 ---
 
 Integrations in Flex refer to third-party solutions and tools that
 communicate with the Flex marketplace to either retrieve information and
 take action outside Flex, or trigger actions within Flex. A lot of
-features that are not natively available in Flex can be integrated to
+features that are not natively available in Flex can be integrated with
 your marketplace solution with varying degrees of complexity.
 
 ## Flex integration tools
 
-There are several ways to approach integrating third party tools to your
-Flex marketplace. Which tool you choose within Flex depends on the
-requirements of the third party tool you choose, and on the complexity
-of the integration you are looking to create.
+There are several ways to approach integrating third party tools with
+your Flex marketplace. Your integration options within Flex depend on
+the requirements of the third party tool you are integrating, and on the
+complexity of the integration you are looking to create.
 
 ### Client application
 
 The simplest integration tool is your client application. Since you have
 full control over your marketplace client app, you can add analytics and
-tracking tools such as Hotjar, or messaging tools such as Sendbird or
-Intercom, directly into your client app code.
+tracking tools such as [Hotjar](#hotjar-analytics) or
+[Goole Analytics](/ftw/how-to-set-up-analytics-for-ftw/#configure-google-analytics),
+or messaging tools such as [Sendbird](#sendbird-user-to-user-chat-app)
+or
+[Intercom](https://www.intercom.com/help/en/articles/168-install-intercom-on-your-website-to-support-and-onboard-logged-in-users),
+directly into your client app code.
 
 The FTW templates include a Node.js/Express server by default. Some
-third party integrations require a secure context, or influence pricing,
-such as Voucherify or other promotion integrations. For these types of
-integrations, you can use the FTW server to create endpoints or other
-logic in a secure way.
+third party integrations may require a secure context, such as
+[Voucherify](#voucherify-discount-coupons) or other promotion
+integrations. For these types of integrations, you can use the FTW
+server to create endpoints or other logic in a secure way.
 
 ### Integration API
 
 If you want to create an integration where the third party solution
-listens to, or takes action on, the Flex marketplace data, you will
-likely need to use the Integration API. Where the Marketplace API is
-meant for everyday marketplace interactions, the Integration API
-provides operators powerful access to all marketplace data and activity.
+listens to – or takes action on – your Flex marketplace, you will likely
+need to use the
+[Integration API](/introduction/getting-started-with-integration-api/).
+Where the
+[Marketplace API](/concepts/marketplace-api-integration-api/#when-to-use-the-marketplace-api)
+is meant for everyday marketplace interactions, the Integration API
+gives operators powerful access to all marketplace data and activity.
 Through the Integration API, operators can enable third party tools to
-create and update listings, update users, and manage transactions,
-bookings and stock reservations.
+manage users, listings, transactions, bookings, stock reservations, and
+more.
 
-Due to its powerful nature, the Integration API should only ever be used
-from a secure context, such as your client application server or a
-separate backend application. Here, too, the FTW server is an excellent
-place to build your Integration API logic without revealing sensitive
-information to the public web in your browser client code.
+Due to its powerful nature, the Integration API should **only ever be
+used from a secure context**, such as your client application server or
+a separate backend application. Here, too, the FTW server is an
+excellent place to build your Integration API logic without revealing
+sensitive information to the public web in your browser client code.
 
 ### Events
 
@@ -70,36 +77,35 @@ read more about
 
 Sharetribe has also built a
 [Zapier integration](/how-to/set-up-and-use-zapier/) to facilitate
-integrating third-party tools to Flex. The Zapier integration works by
+integrating third-party tools with Flex. The Zapier integration works by
 harnessing a subset of Flex events and allowing operators to connect any
-of the other 5000+ tools and solutions that also have a Zapier
-integration.
+of the other [5000+ tools and solutions](https://zapier.com/apps/) in
+the Zapier ecosystem.
 
 The Flex Zapier integration makes it easier to take action in your
-favorite business tools, e.g. Hubspot, MailChimp and others, based on
-your Flex marketplace activity. If you need to take action in Flex based
-on activity in other solutions, however, you will need to use the
-Integration API since Zapier cannot currently perform operations within
-Flex.
+favorite business tools, such as
+[Hubspot](https://zapier.com/apps/hubspot/integrations/),
+[MailChimp](https://zapier.com/apps/mailchimp/integrations/) and others,
+based on your Flex marketplace activity. However, Zapier cannot
+currently perform operations within Flex. In other words, if you need to
+take action in Flex based on activity in other solutions, you will need
+to use the Integration API directly.
 
 ## Levels of integration
 
-The complexity of a Flex integration to a third party tool can range
+The complexity of a Flex integration with a third party tool can range
 from very simple to highly complex. One aspect determining the
 complexity is how intertwined the two tools need to be. On the simple
 end, adding a script to the client application for a tracking tool is a
 trivial change, and on the complex end a full third party payment
 gateway integration will likely take several weeks to implement.
 
-The full complexity of the feature depends on the different use cases
-you need to cover on each side of the integration. If you are using the
-Zapier integration to listen to user events and passing the information
-to Hubspot, you may still need to build complex workflows on Hubspot
-side for the integration to cover your use case. Or if you want to
-integrate your Flex marketplace with Shopify and synchronize listing
-stock between the two platforms, you may need to cover several use cases
-on both sides – adding, updating and removing listings, and handling
-purchases, returns and disputes.
+The full complexity of the feature also depends on the different use
+cases you need to cover on each side of the integration. For instance,
+if you want to integrate your Flex marketplace with Shopify and
+synchronize listing stock between the two platforms, you will need to
+cover several use cases on both sides, such as adding, updating and
+removing listings, as well as handling purchases, returns and disputes.
 
 For illustration, here are some examples of types of integrations with
 different levels of complexity:
@@ -146,9 +152,9 @@ allows you to collect user activity heatmaps, feedback, and user
 behavior recordings, among other features.
 
 - Add a
-  [tracking script to the client application](/ftw/how-to-set-up-analytics-for-ftw/#custom-analytics-libraries)
+  [tracking script to the client application](/ftw/how-to-set-up-analytics-for-ftw/#custom-analytics-libraries).
 - Add custom CSP directives to
-  [/server/csp.js](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js)
+  [/server/csp.js](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js).
 
 ### Mailchimp email list
 
@@ -179,12 +185,14 @@ In Flex, messages between users are always related to transactions. If
 you want to allow more complex messaging flows between users, you can
 integrate a user-to-user chat tool such as
 [Sendbird](https://sendbird.com/). The initial integration is fairly
-simple to implement, and the eventual complexity depends on the use
-cases you want to cover.
+straightforward to implement, and the eventual complexity depends on the
+use cases you want to cover.
 
-- Add their [UI kit](https://sendbird.com/docs/uikit/v3/react/overview)
-  and [SDK](https://sendbird.com/docs/chat/v4/javascript/overview)
-- Implement and stylise a UI chat component
+- Create an account in Sendbird.
+- Add the Sendbird
+  [UI kit](https://sendbird.com/docs/uikit/v3/react/overview) and
+  [SDK](https://sendbird.com/docs/chat/v4/javascript/overview).
+- Implement and stylise a UI chat component.
 - Initialise a Sendbird user id for the user when they sign up to Flex,
   and save it in the user's private data so it can be used whenever they
   log in.
@@ -194,29 +202,32 @@ cases you want to cover.
 [Voucherify](https://www.voucherify.io/) is a promotions tool that
 allows you to create, validate and redeem discount coupons, gift cards,
 automatic discounts and other promotional offers. The initial
-integration is fairly straightforward to implement, and the eventual
-complexity depends on the use cases you want to cover.
+integration has a number of steps but is still fairly straightforward to
+implement, and the eventual complexity depends on the use cases you want
+to cover.
 
 - Create an account in Voucherify and create your own codes or use the
-  existing ones
-- Add [Voucherify SDK](https://docs.voucherify.io/docs/sdks)
+  sample codes.
+- Add [Voucherify SDK](https://docs.voucherify.io/docs/sdks).
 - Create a helper file in the server that contains functions to validate
-  and redeem a code using the Voucherify SDK
-- Add an input element to ListingPage.js for the discount code
-- Pass the discount code to line item calculation and to CheckoutPage
-  (in a similar way to
-  [this pricing tutorial](/tutorial/customize-pricing-tutorial/))
-- Add a logic to lineItems.js that adds a discount line item with the
-  correct percentage or amount if the code is valid.
-  - You will need to decide whether the discount line item is included
-    for both customer and provider (in which case the provider receives
-    a decreased payout) or only for the customer (in which case the
-    marketplace receives a decreased commission).
-- Validate the code in endpoints for transaction-line-items,
-  initiate-privileged and transition-privileged and pass the validation
-  result to lineItems function
-- Only redeem the code when initiating or transitioning the transaction
-  without speculation
+  and redeem a code using the Voucherify SDK.
+- Add an input element to the order panel for the discount code.
+- Pass the discount code to the line item calculation and to
+  CheckoutPage (in a similar way to
+  [this pricing tutorial](/tutorial/customize-pricing-tutorial/)).
+- Validate the code in endpoints for _transaction-line-items_,
+  _initiate-privileged_ and _transition-privileged_, and pass the
+  validation result to _server/api-util/lineItems.js_.
+- Add a logic to _server/api-util/lineItems.js_ that adds a discount
+  line item with the correct percentage or amount if the code is valid.
+  You will need to decide whether the discount line item is included
+  - for both customer and provider, in which case the provider receives
+    a decreased payout,
+  - or only for the customer, in which case the marketplace receives a
+    decreased commission – in this case, the discount cannot be greater
+    than the marketplace commission.
+- Only redeem the code once i.e. when actually initiating or
+  transitioning the transaction with Marketplace API.
 
 ### Google Calendar synchronised with Flex availability calendar
 
@@ -232,18 +243,18 @@ the full complexity of the integration.
 
 - Google provides
   [Calendar API](https://developers.google.com/calendar/api) to modify
-  calendar events
+  calendar events.
 - You can set up
   [push notifications](https://developers.google.com/calendar/api/guides/push)
-  to track changes on the Google side
+  to track changes on the Google side.
 - Authenticate your Flex app to get information and make changes on
-  behalf of the user in Google Calendar
+  behalf of the user in Google Calendar.
 - Whenever a booking gets created or updated in Flex, update the
-  provider's Google Calendar accordingly
-  - You can do this either by creating custom endpoints in your client
-    app server that call the Flex APIs as well as Calendar APIs
-  - Or you can listen to Flex events and call the Calendar APIs on
-    relevant events
+  provider's Google Calendar accordingly. You can do this either by
+  - creating custom endpoints in your client app server that call the
+    Flex APIs as well as the Calendar APIs,
+  - or you can listen to Flex events and call the Calendar APIs on
+    relevant events.
 - You can
   [watch the provider's Google Calendar](https://developers.google.com/calendar/api/v3/reference/events/watch),
   and whenever a new event is created or an existing one is removed,
@@ -263,6 +274,7 @@ investigating and testing, as well as collaborate closely with the
 support team of the payment gateway provider you have chosen.
 
 - Contact the support team of the payment gateway tool you intend to
-  use, and make sure you are eligible for their service.
+  use, and make sure you are eligible for their service. Some providers
+  may have limitations regarding platform size or geography.
 - Get familiar with our how-to article on
   [integrating a third-party payment gateway to Flex](/how-to/how-to-integrate-3rd-party-payment-gateway/).
