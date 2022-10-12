@@ -1167,15 +1167,18 @@ is used.
 **IMPORTANT** Payments with synchronous push payment methods are
 captured and made in full immediately when confirmed by the customer via
 their bank or app and unlike card payments there is no preauthorization
-stage. After the payment is made, it can only be reversed with a full
-refund using the `:action/stripe-refund-payment`. Unlike cancelling a
-preauthorization, creating a full refund does not refund Stripe's own
-payment processing fees to the Stripe platform account. Therefore, it is
-recommended that the transaction process takes that into account.
-Typically, this means that the transaction process is some form of
-"instant booking" where provider does not need to accept the booking at
-all, or alternatively a process where the provider accepts the booking
-before the payment is made.
+stage. This means that when using a push payment intent,
+`:action/stripe-confirm-payment-intent` is required but
+`:action/stripe-capture-payment-intent` is not. After the payment is
+made, it can only be reversed with a full refund using the
+`:action/stripe-refund-payment`. Unlike cancelling a preauthorization,
+creating a full refund does not refund Stripe's own payment processing
+fees to the Stripe platform account. Therefore, it is recommended that
+the transaction process takes that into account. Typically, this means
+that the transaction process is some form of "instant booking" where
+provider does not need to accept the booking at all, or alternatively a
+process where the provider accepts the booking before the payment is
+made.
 
 **Preconditions**:
 
