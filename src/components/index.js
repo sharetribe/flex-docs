@@ -26,10 +26,9 @@ export { default as GlobalStyle } from './GlobalStyle';
 export { default as BaselineDevGrid } from './BaselineDevGrid';
 export { default as ExtraInfo } from './ExtraInfo';
 export { default as Video } from './Video';
-export { default as Info } from './Info';
-export { default as Warning } from './Warning';
 export { Carousel, CarouselSlide } from './Carousel';
 export { default as CookieConsent } from './CookieConsent';
+export { default as Banner } from './Banner'
 
 // Components that import other components from this index. These
 // might create circular dependencies. Changing the order of these
@@ -38,6 +37,9 @@ export { default as CookieConsent } from './CookieConsent';
 // See the gatsby-node.js file to enable a Webpack plugin that warns
 // about circular dependencies to aid in finding problematic
 // dependencies.
+
+export { default as Info } from './Info';
+export { default as Warning } from './Warning';
 export { default as BaseLayout } from './BaseLayout';
 export { default as CarouselContentCreation } from './CarouselContentCreation';
 export { default as CarouselDiscovery } from './CarouselDiscovery';

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Banner from './Banner';
+import { Banner } from '../components';
 
 const WarningIcon = props => {
   return (
@@ -44,6 +44,7 @@ const Warning = props => {
       borderColour={borderColour}
       backgroundColour={backgroundColour}
       title={'Warning'}
+      {...otherProps}
     >
       {children}
     </Banner>

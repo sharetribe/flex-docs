@@ -51,10 +51,10 @@ const TitleContainer = ({ title, icon: Icon, ...otherProps }) => {
 };
 
 const Banner = props => {
-  const { children, icon: Icon, title, ...otherProps } = props;
+  const { children, ...otherProps } = props;
   return (
     <BannerContainer {...otherProps}>
-      <TitleContainer title={title} icon={Icon} {...otherProps} />
+      <TitleContainer {...otherProps} />
       <BannerContent {...otherProps}>{children}</BannerContent>
     </BannerContainer>
   );
