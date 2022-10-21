@@ -28,8 +28,8 @@ the
 ID Connect spec</a> determines that it needs to be boolean. This means
 that simply integrating Apple Sign-in as an Open ID Connect IdP in Flex
 is not possible. Instead, you will need to use the
-<a href="/docs/how-to/setup-open-id-connect-proxy/">OIDC proxy</a> approach
-to integrate Apple Sign-in into your marketplace.
+<a href="/docs/how-to/setup-open-id-connect-proxy/">OIDC proxy</a>
+approach to integrate Apple Sign-in into your marketplace.
 
 </extrainfo>
 
@@ -84,7 +84,11 @@ provider client in Flex Console.
    - **Identity provider URL**: In OpenID Connect terms this is the
      _issuer location_ of the identity provider. It is used to resolve
      ID token signing keys used by the identity provider. See below
-     _Discovery document and JSON Web keys_ for more details.
+     _Discovery document and JSON Web keys_ for more details. _Note:
+     Auth0 requires this URL with a trailing slash, but Flex Console
+     does not currently allow adding trailing slashes. Add the URL
+     without the trailing slash, and reach out to Flex Support so we can
+     manually fix the formatting._
 5. Fill in the Client ID. This is the identifier of your Flex
    marketplace at you identity provider. It will be the _audience_ of
    the ID token returned from the identity provider.
