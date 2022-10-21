@@ -87,10 +87,10 @@ provider client in Flex Console.
      _Discovery document and JSON Web keys_ for more details.
 
 <info>
-Auth0 requires this URL with a trailing slash, but Flex Console
-does not currently allow adding trailing slashes. Add the URL
-without the trailing slash, and reach out to Flex Support so we can
-manually fix the formatting.
+Auth0 requires identity provider URL with a trailing slash, but Flex Console
+does not currently allow adding trailing slashes. If you are adding an Auth0 
+integration, add the URL without the trailing slash, and reach out to Flex 
+Support so we can manually fix the formatting.
 </info>
 
 5. Fill in the Client ID. This is the identifier of your Flex
