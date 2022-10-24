@@ -2,7 +2,7 @@
 title: FTW hourly
 slug: ftw-hourly
 updated: 2019-11-21
-category: ftw-introduction
+category: ftw-legacy
 ingress:
   This article introduces FTW-hourly and what's different compared to
   FTW-daily.

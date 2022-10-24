@@ -150,6 +150,7 @@
   "Sidebar.ftwContent": "Content Management",
   "Sidebar.ftwDataFlow": "Data flow and Redux",
   "Sidebar.ftwHosting": "Hosting",
+  "Sidebar.ftwLegacy": "Legacy",
   "Sidebar.ftwPerformance": "Performance",
   "Sidebar.ftwRouting": "Routing",
   "Sidebar.ftwSearch": "Search",

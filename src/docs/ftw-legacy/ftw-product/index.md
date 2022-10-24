@@ -2,7 +2,7 @@
 title: FTW product
 slug: ftw-product
 updated: 2021-09-30
-category: ftw-introduction
+category: ftw-legacy
 ingress:
   This article introduces FTW-product and what's different compared to
   FTW-daily and FTW-hourly.
