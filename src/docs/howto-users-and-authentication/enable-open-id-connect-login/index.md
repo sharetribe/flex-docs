@@ -19,7 +19,11 @@ OpenID Connect solution available and intend to use that as a login
 option in your Flex marketplace.
 
 <info>
-Apple Sign-in has several features that resemble the OpenID Connect specification. However, the Apple Sign-in implementation has some differences to the Open ID Connect spec that render it not fully compliant.
+
+Apple Sign-in has several features that resemble the OpenID Connect
+specification. However, the Apple Sign-in implementation has some
+differences to the Open ID Connect spec that render it not fully
+compliant.
 
 One feature that our Flex developers have discovered is that the
 <i>email_verified</i> claim is returned as string from Apple, whereas
