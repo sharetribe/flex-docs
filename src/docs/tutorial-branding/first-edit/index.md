@@ -12,43 +12,40 @@ published: true
 ## Marketplace styles
 
 Custom styling is a good starting point to introduce your own branding
-and remove design choices made for example marketplace, Saunatime.
+and remove design choices made for the example marketplace, Biketribe.
 
 FTW templates have most of the styling tied to component directories,
-but there are 2 files that define custom media queries, default CSS (CSS
-Properties, element styles, and global css classes):
+but there is a configuration file that defines the marketplace color, as
+well as a handful of default images:
 
 ```shell
 └── src
-    └── styles
-        ├── customMediaQueries.css
-        └── marketplaceDefaults.css
+    └── config
+        └── configBranding.js
 ```
 
-## Changing CSS variables
+## Changing marketplace color
 
-The most important file is **marketplaceDefaults.css**, where you can
-find CSS variable `--marketplaceColor` and its two variants.
+The configBranding.js defines a marketplace color, which then gets
+generated into light and dark variants in
+**src/styles/marketplaceDefaults.css**. The darker and lighter color
+variants are mainly used for effects like color change when the cursor
+is hovering on top of a button.
 
-```css
-/* ================ Colors ================ */
-
---marketplaceColor: #38a70a;
---marketplaceColorLight: #ff4c38;
---marketplaceColorDark: #8c291e;
+```js
+// Marketplace color.
+// This is saved as CSS Property: --marketplaceColor in src/app.js
+// Also --marketplaceColorDark and --marketplaceColorLight are generated from this one
+// by adding +/- 10% to lightness.
+export const marketplaceColor = '#7c3aed';
 ```
 
 Our marketplace for summer cottages could use green color as its
-branding, so we'll change these color codes a bit:
+branding, so we'll change the main color code:
 
-```css
---marketplaceColor: #2f880a;
---marketplaceColorLight: #39a10c;
---marketplaceColorDark: #287209;
+```js
+export const marketplaceColor = '#2f880a';
 ```
-
-The darker and lighter color variants are mainly used for effects like
-color change when the cursor is hovering on top of a button.
 
 After you save the file, the development server will compile the modules
 and serve the updated app on your local development environment
@@ -58,9 +55,10 @@ running (i.e. **`yarn run dev`**).
 You should notice that some text and background-colors were changed to
 green.
 
+// TODO: Take new screenshot after Pages default landing page
 ![Hero section after changing the marketplace color](./marketplace-color-changed.png)
 
 **Congratulations!** You have made your first customization.
 
-It's time to change the Saunatime image on the landing page.<br />
+It's time to change the Biketribe image on the landing page.<br />
 [› Go to the next article](/tutorial/change-image-assets/)

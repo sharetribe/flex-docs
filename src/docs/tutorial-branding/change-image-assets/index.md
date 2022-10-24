@@ -12,119 +12,47 @@ published: true
 ## Default background image
 
 In the [previous step](/tutorial/first-edit/), you made changes to the
-CSS Properties on marketplaceDefaults.css file. This time you make
-changes to global CSS classes. **`.defaultBackgroundImage`** class can
-be found from there too. It is used to provide a background image for
-the Hero component on the landing page.
+brand configurations in the configBranding.js file. You will continue
+making changes in that same file.
 
 ```shell
 └── src
-    └── styles
-        └── marketplaceDefaults.css
+    └── config
+        └── configBranding.js
 ```
 
-```css
-/* ================ Plain global CSS glasses ================ */
+The **brandImage** configuration is used to provide a background image
+for the Hero component on several pages.
 
-/* Full screen Background image located in root-folder/src/assets */
-.defaultBackgroundImage {
-  /* Gradient direction and overlaying the black color on top of the image for better readability */
-  background: linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.6)
-    ), url('../assets/background-1440.jpg');
-
-  /* Add loading color for the div */
-  background-color: var(--matterColor);
-
-  /* Cover the whole screen with the background image */
-  background-size: cover;
-
-  /* Align the image within the container */
-  background-position: center center;
-
-  @media (--viewportLarge) {
-    border-radius: 40px;
-    border: solid 36px var(--matterColorBright);
-  }
-}
+```js
+import brandImage from '../assets/biketribe-brandImage-1500.jpg';
+...
+// brandImageURL is used as a background image on the "hero" section of several pages.
+// Used on AuthenticationPage, EmailVerificationPage, PasswordRecoveryPage, PasswordResetPage etc.
+// NOTE: Those pages use ResponsiveBackgroundImageContainer component,
+//       it's possible to include more image variants to make image fetching more performant.
+export const brandImageURL = brandImage;
 ```
 
-<extrainfo title="I can't find it, but I have something similar in a file called propertySets.css. What is that?">
+So, to change the background image, we could just save a different image
+as 'biketribe-brandImage-1500.jpg' to replace the default background
+image (or you can add a new image and then change the filename of the
+`brandImage` import). The image should be at least 1440 pixels wide so
+that it doesn't look bad on retina displays.
 
-```shell
-└── src
-    └── styles
-        └── propertySets.css
-```
-
-There you might find something like:
-
-```css
-/* Full screen Background image located in root-folder/src/assets */
---backgroundImage: {
-  /* Gradient direction and overlaying the black color on top of the image for better readability */
-  background: linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.6)
-    ), url('../../assets/background-1440.jpg');
-
-  /* Add loading color for the div */
-  background-color: var(--matterColor);
-
-  /* Cover the whole screen with the background image */
-  background-size: cover;
-
-  /* Align the image within the container */
-  background-position: center center;
-
-  @media (--viewportLarge) {
-    border-radius: 40px;
-    border: solid 36px var(--matterColorBright);
-  }
-}
-```
-
-In previous versions of FTW, there has been a third CSS file:
-propertySets.css. This file contains
-[CSS Property Sets](https://chromestatus.com/feature/5753701012602880)
-that can be applied to component styles using the `@apply`syntax.
-However, W3C decided not to include that feature in future CSS syntax,
-and the
-[postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got
-deprecated in the process.
-
-If you have an older FTW template (earlier than FTW-daily v9, FTW-hourly
-v11 or FTW-product v10), you might have this file in your codebase. If
-you start using sharetribe-scripts v6.0.0, you need to consider
-migrating away from that since it contains code that is deprecated in
-v6.0.0 of sharetribe-scripts.
-
-Read more from
-[this pull request](https://github.com/sharetribe/ftw-daily/pull/1531)
-in FTW-Daily.
-
-</extrainfo>
-
-That **background** styling-rule refers to _background-1440.jpg_ image
-in the _assets_ directory:
-
-```shell
-└── src
-    └── assets
-        └── background-1440.jpg
-```
-
-So, to change it, we could just save a different image as
-'background-1440.jpg' to replace the default background image (or you
-can add a new image and then change the filename in
-`.defaultBackgroundImage` class). The image should be 1440 pixels wide
-so that it doesn't look bad on retina displays.
-
-Here's an image, we used in this tutorial:<br />
+Here's an image that we used in this tutorial:<br />
 [Summer house by Markus Spiske (cropped)](/tutorial-assets/markus-spiske-summer-house-unsplash.jpg)
+
+```diff
+- import brandImage from '../assets/biketribe-brandImage-1500.jpg';
++ import brandImage from '../assets/markus-spiske-summer-house-unsplash.jpeg';
+```
+
+And this is how the authentication page looks with the new background
+image:
+
+// TODO take screenshot of AuthenticationPage once Biketribe branded
+microcopy etc exists!
 
 ![CottageDays example with updated Hero image](./cottagedays-background-image.png)
 
@@ -136,18 +64,20 @@ you should also pay attention to:
 ```shell
 └── src
     └── assets
-        ├── background-1440.jpg
-        ├── saunatimeFacebook-1200x630.jpg
-        └── saunatimeTwitter-600x314.jpg
+        ├── biketribe-brandImage-1500.jpg
+        ├── biketribe-facebook-sharing-1200x630.jpg
+        └── biketribe-twitter-sharing-600x314.jpg
 ```
 
-These images (**saunatimeFacebook-1200x630.jpg** and
-**saunatimeTwitter-600x314.jpg**) are used by social media sites to
-generate previews when your marketplace is shared in their platforms.
+These images (**biketribe-facebook-sharing-1200x630.jpg** and
+**biketribe-twitter-sharing-600x314.jpg**) are used by social media
+sites to generate previews when your marketplace is shared in their
+platforms.
 
 The default content is Saunatime branded so these images should be
 changed too:
 
+// TODO: Change preview image to the Biketribe one
 ![Preview image for Twitter](./saunatimeTwitter-600x314.jpg)
 
 Here are two image files you could use in the context of this tutorial:
@@ -158,12 +88,14 @@ Here are two image files you could use in the context of this tutorial:
 **Steps to follow**:
 
 1. Save those files to the assets directory
-1. Find all the modules where _saunatimeFacebook-1200x630.jpg_ and
-   _saunatimeTwitter-600x314.jpg_ are imported. There should be 2 files:
-   - _src/components/Page/Page.js_
-   - _src/containers/LandingPage/LandingPage.js_<br /> (This is an
-     example of how to overwrite default sharing images per page.)
-1. Change the imported asset files
+1. Change the imported asset files in **configBranding.js**
+
+```diff
+- import facebookImage from '../assets/biketribe-facebook-sharing-1200x630.jpg';
+- import twitterImage from '../assets/biketribe-twitter-sharing-600x314.jpg';
++ import facebookImage from '../assets/cottagedays-facebook-1200x630-by-markus-spiske.jpeg';
++ import twitterImage from '../assets/cottagedays-twitter-600x314-by-markus-spiske.jpeg';
+```
 
 <extrainfo title="Extra: how to test social media sharing?">
 
@@ -196,14 +128,14 @@ app icons:
             ├── favicon-16x16.png
             ├── favicon-32x32.png
             ├── favicon.ico
-            ├── map-marker-32x32.png
             ├── mstile-150x150.png
             └── safari-pinned-tab.svg
 
 ```
 
-The default favicon of FTW-daily template, Saunatime, is a flame icon:
+The default favicon of the FTW template, Biketribe, is a skull:
 
+// TODO: Update text and image once microcopy exists
 ![Favicon for Saunatime](./saunatime-favicon.png)
 
 To change it, we need to have favicon files - or if you have a square
@@ -224,6 +156,6 @@ you should see a new favicon in the browser's tab:
 
 ![Favicon for CottageDays](./cottagedays-favicon.png)
 
-There's one obvious Saunatime image still visible on top bar: Logo. It's
+There's one obvious Biketribe image still visible on top bar: Logo. It's
 time to change that.<br />
 [› Go to the next article](/tutorial/change-logo/)
