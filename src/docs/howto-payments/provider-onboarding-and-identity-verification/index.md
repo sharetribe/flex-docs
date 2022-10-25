@@ -2,7 +2,7 @@
 title:
   How to handle provider onboarding and identity verification on FTW
 slug: provider-onboarding-and-identity-verification
-updated: 2019-12-19
+updated: 2022-10-25
 category: how-to-payments
 ingress:
   This article describes how to take Stripe Connect Onboarding into use
@@ -29,9 +29,9 @@ meeting the requirements and reducing the operational complexity of
 self-managing the onboarding flow and identity verification. Below are
 listed the changes required to implement Stripe Connect Onboarding. If
 you are using the latest Flex Template for Web (FTW-daily v4.0.0 or
-FTW-hourly v5.0.0 or later), you need to complete only the first step -
-if you are upgrading your own implementation, follow the rest of the
-instructions.
+FTW-hourly v5.0.0 or later, or any FTW-product), you need to complete
+only the first step - if you are upgrading your own implementation,
+follow the rest of the instructions.
 
 ### 1. Enable Stripe Connect Onboarding in Stripe Dashboard
 
@@ -243,3 +243,30 @@ You can find the deprecated files still from v.3.7.0
 - [PayoutDetailsForm](https://github.com/sharetribe/ftw-daily/tree/v3.7.0/src/forms/PayoutDetailsForm)
 - [PayoutPreferencesPage](https://github.com/sharetribe/ftw-daily/tree/v3.7.0/src/containers/PayoutPreferencesPage)
 - [stripe.duck.js](https://github.com/sharetribe/ftw-daily/blob/v3.7.0/src/ducks/stripe.duck.js).
+
+## When to require provider onboarding?
+
+The default Flex Stripe integration requires the payout Connect account
+information immediately upon beginning a transaction, and the FTW
+templates does not allow booking listings that do not have provider
+payout information. For this reason, the templates have been configured
+to require provider onboarding and payout information before publishing
+any listings.
+
+However, it is possible to bypass this behavior in the template. The
+simplest way to allow publishing a listing without adding payout details
+is to modify the **handlePublishListing** function in the
+[src/components/EditListingWizard/EditListingWizard.js](https://github.com/sharetribe/ftw-daily/blob/master/src/components/EditListingWizard/EditListingWizard.js)
+in file. The function checks whether the user is connected to Stripe and
+only calls the **onPublishListingDraft** function if Stripe is connected
+and there are no requirements missing. By removing the Stripe checks and
+immediately calling **onPublishListingDraft** with the parameter id, you
+can bypass the payout details modal completely.
+
+The default behavior of the template then is that once the listing is
+published, a provider with no Stripe payout details is shown a modal
+that says the listing cannot be booked before they add their payout
+details. The provider can then choose to enter their payout details or
+click "Later".
+
+![Payment details missing](./payment_details_missing.png)
