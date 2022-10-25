@@ -145,3 +145,30 @@ There's no real reason behind this double format setup - it is just
 there to show 2 different ways to create graphics. Although, the SVG
 format is a bit better choice for logo since it stays sharp when scaled
 bigger.
+
+<extrainfo title="What you should see inside .env file?">
+
+In the `.env` file, you should see these environment variables:
+
+- **Mandatory configuration** (Flex Client ID, Stripe Publishable key,
+  and Mapbox Access token)
+- **Defaults** (currency, root URL)
+- **Features enabled** (enable availability and default search
+  locations)
+- There are also a few variables that are commented out with `#`:
+
+  ```shell
+  # REACT_APP_SHARETRIBE_USING_SSL=true
+  # SERVER_SHARETRIBE_TRUST_PROXY=true
+  # REACT_APP_SENTRY_DSN=change-me
+  # REACT_APP_CSP=report
+  # BASIC_AUTH_USERNAME=sharetribe
+  # BASIC_AUTH_PASSWORD=secret
+  # REACT_APP_GOOGLE_ANALYTICS_ID=change-me
+  ```
+
+</extrainfo>
+
+> **Note**: You should take _Content Security Policy_ (CSP) into use
+> (block mode) before going to production. Read more about it from
+> [this article](/ftw/how-to-set-up-csp-for-ftw/).

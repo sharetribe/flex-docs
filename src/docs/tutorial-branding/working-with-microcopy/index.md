@@ -10,26 +10,20 @@ published: true
 ## Where to find copy-texts
 
 One of the biggest mandatory tasks for a customization project is to
-change the UI texts. FTW-daily is a rental marketplace for saunas - so,
-there are quite many components and pages that need to change the
-copy-texts.
+change the UI texts. Biketribe is a rental and sales marketplace for
+bikes - so, there are quite many components and pages where you will
+need to change the copy-texts.
 
 The easiest way to modify the copy texts is through Flex Console, in
 Build > Content. This page helps you modify what in Flex is known as
 _microcopy_ – button labels, help texts, and other small messages that
 help your user find their way around the marketplace.
 
+_TODO: Add new image when Biketribe microcopy is visible in Console –
+does Biketribe microcopy get inputted in the editor by default or does
+the operator need to paste it?_
+
 ![Modify marketplace texts](./microcopy_start.png)
-
-_**Note:** Hosted assets are available in Flex and the FTW templates
-starting from version v8.5. If you have an earlier version and want to
-implement the feature in your template, you can see the necessary
-modifications in the PR for
-[ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510)._
-
-<extrainfo title="FTW-hourly and FTW-product versions with hosted microcopy">
-In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is available in v9.2.
-</extrainfo>
 
 When you first start building your marketplace, the JSON field in the
 Microcopy section is empty, and all microcopy comes from built-in
@@ -53,26 +47,18 @@ _en.json_ file:
         └── en.json
 ```
 
-In addition to microcopy, there are also a couple of components that
-contain a huge amount of text content (e.g. **AboutPage**,
-**PrivacyPolicy**, and **TermsOfService**). The content of those
-components is not included in the microcopy file since they need a
-free-form structure and styling. It is easier to achieve that with a
-markup language (like HTML and JSX) than key-value mapping you see in
-_en.json_ file:
+In addition to microcopy, there are also pages in the template that can
+be modified with the Pages editor. _TODO: fix wording and add link after
+Pages is released_
 
-```json
-  "LocationSearchForm.placeholder": "Search saunas…",
-```
-
-In this tutorial, we change the microcopy of Hero component, but we have
-another document that dives deeper into this topic:
+In this tutorial, we change the microcopy of the Topbar component, but
+we have another document that dives deeper into this topic:
 [How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/)
 
 ## Change the microcopy for Topbar component
 
-The content of microcopy file has a format, where the "key" contains a
-dot notation:<br />
+The content of the microcopy file has a format, where the "key" contains
+a dot notation:<br />
 _`"<ComponentName>.<microcopyKey>": "<microcopyMessage>"`_
 
 So, there are a couple of ways to find the correct microcopy key for UI
@@ -85,6 +71,8 @@ components:
 The latter option becomes easier if you use browser extension: **React
 Developer Tools**.<br /> Here's a link to
 [Chrome extension](https://chrome.google.com/webstore/search/React%20Developer%20Tools?hl=en).
+
+_TODO: Take new screenshot after Biketribe microcopy exists_
 
 ![Topbar component selected with React Developer Tools](./react_devtools_microcopy.png)
 
