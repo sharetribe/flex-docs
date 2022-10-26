@@ -12,20 +12,15 @@ published: true
 
 ## Store cleaning fee into listing
 
-Pricing can be based on a lot of variables but one practical way to
+Pricing can be based on a lot of variables, and one practical way to
 build it is to base it on information stored as extended data in
-listings. In this example, we are using listing's public data to store
-information about the cleaning fee. We start by doing some changes to
+listings. In this example, we are using a listing's public data to store
+information about the cleaning fee.
+
+Unlike in the [extended data modification section](), we will not add
+new fields to listing configuration, since cleaning fee will not be a
+searchable attribute. Instead, we start by making some changes to
 **EditListingPricingPanel** in _EditListingWizard_.
-
-```shell
-└── src
-    └── components
-        └── EditListingPricingPanel
-            └── EditListingPricingPanel.js
-```
-
-<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
 
 ```shell
 └── src
@@ -35,13 +30,6 @@ information about the cleaning fee. We start by doing some changes to
                 └── EditListingPricingPanel
                     └── EditListingPricingPanel.js
 ```
-
-</extrainfo>
-
-Here we will only list the required changes. See the
-[Add extended data to listing entity tutorial](/tutorial/add-extended-data/)
-for step-by-step instructions on how to add public data field for
-listing.
 
 ### Save to public data
 
@@ -53,9 +41,13 @@ from the submitted _values_. Money object can't be used directly as
 public data so we need to create a JSON object with keys **amount** and
 **currency** and use it in the underlying API call.
 
-> **Note:** _price_ attribute is one of the listing's default attributes
-> so it's passed to Marketplace API directly unlike the new public data
-> _cleaningFee_ which needs to be under the _publicData_ key.
+<info>
+
+**Note:** _price_ attribute is one of the listing's default attributes,
+so it's passed to Marketplace API directly, unlike the new public data
+_cleaningFee_, which needs to be under the _publicData_ key.
+
+</info>
 
 ```jsx
 onSubmit={values => {
@@ -80,15 +72,18 @@ to be Money object we need to convert the value we get from Marketplace
 API back to instance of Money.
 
 ```jsx
-const { price, publicData } = currentListing.attributes;
-const cleaningFee =
-  publicData && publicData.cleaningFee ? publicData.cleaningFee : null;
+const getInitialValues = params => {
+  const { listing } = params;
+  const { price, publicData } = listing?.attributes || {};
 
-const cleaningFeeAsMoney = cleaningFee
-  ? new Money(cleaningFee.amount, cleaningFee.currency)
-  : null;
+  const cleaningFee = publicData?.cleaningFee || null;
 
-const initialValues = { price, cleaningFee: cleaningFeeAsMoney };
+  const cleaningFeeAsMoney = cleaningFee
+    ? new Money(cleaningFee.amount, cleaningFee.currency)
+    : null;
+
+  return { price, cleaningFee: cleaningFeeAsMoney };
+};
 ```
 
 Now pass the whole `initialValues` map in the corresponding prop to
@@ -104,15 +99,6 @@ _FieldCurrencyInput_ like there is in the _price_ input.
 
 ```shell
 └── src
-    └── forms
-        └── EditListingPricingForm
-            └── EditListingPricingForm.js
-```
-
-<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
-
-```shell
-└── src
     └── containers
         └── EditListingPage
             └── EditListingWizard
@@ -120,37 +106,33 @@ _FieldCurrencyInput_ like there is in the _price_ input.
                     └── EditListingPricingForm.js
 ```
 
-</extrainfo>
-
 ```jsx
 ...
 
 <FieldCurrencyInput
-    id="price"
-    name="price"
-    className={css.priceInput}
-    autoFocus
-    label={pricePerUnitMessage}
-    placeholder={pricePlaceholderMessage}
-    currencyConfig={config.currencyConfig}
-    validate={priceValidators}
-  />
-
+  id="price"
+  name="price"
+  className={css.input}
+  autoFocus={autoFocus}
+  label={intl.formatMessage({ id: 'EditListingPricingForm.pricePerProduct' })}
+  placeholder={intl.formatMessage({ id: 'EditListingPricingForm.priceInputPlaceholder' })}
+  currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
+  validate={priceValidators}
+/>
 <FieldCurrencyInput
   id="cleaningFee"
   name="cleaningFee"
-  className={css.cleaningFeeInput}
-  autoFocus
+  className={css.input}
+  autoFocus={autoFocus}
   label={cleaningFeeMessage}
   placeholder={cleaningFeePlaceholderMessage}
-  currencyConfig={config.currencyConfig}
+  currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
 />
 ...
 ```
 
-After adding the new microcopy keys and some padding to price input in
-CSS file, the EditListingPricingPanel should look something like this:
-
+After adding the new microcopy keys, the EditListingPricingPanel should
+look something like this: // TODO: UPDATE SCREENSHOT!
 ![EditListingPricePanel](./editlistingpricepanel.png)
 
 ## Update BookingDatesForm
@@ -160,36 +142,34 @@ an add-on to their booking. In this section, we will add the UI
 component for selecting the cleaning fee and pass the information about
 the user's choice to the the backend of our client app.
 
-> **Note**: In case you would like to add the cleaning fee automatically
-> to every booking, you don't need to add the UI component for selecting
-> the cleaning fee and you can move forward to the next section: Add a
-> transaction line item for the cleaning fee.
+<info>
 
-> **Note 2**: This tutorial handles changes on top of _FTW-daily_.
-> _FTW-hourly_ is pretty close to it, but **_FTW-product_** has major
-> differences since that template is not about bookings but product
-> orders. With FTW-product, you should make changes to
+In case you would like to add the cleaning fee automatically to every
+booking, you don't need to add the UI component for selecting the
+cleaning fee and you can move forward to the next section: Add a
+transaction line item for the cleaning fee.
+
+</info>
+
+> **Note 2**: This tutorial handles changes on top of the FTW template
+> booking flow. If you want to make corresponding changes to the product
+> order flow, you'll need to make changes to
 >
-> - _OrderPanel_ (instead of BookingPanel)
-> - _ProductOrderForm_ (instead of BookingDatesForm), which is moved
->   under OrderPanel
+> - _ProductOrderForm_ (instead of BookingDatesForm)
 > - _OrderBreakdown_ (instead of BookingBreakdown)
-> - _EstimatedCustomerBreakdownMaybe_ (instead of
->   EstimatedBreakdownMaybe)
-> - bookingData is refactored as **orderData**
 
 ### Prepare props
 
 In order to be able to use the information about cleaning fee inside the
 _BookingDatesForm_ we need to pass some new information from
-_BookingPanel_ to the form. BookingPanel is component that is used on
+_OrderPanel_ to the form. OrderPanel is component that is used on
 _ListingPage_ and _TransactionPage_ to show the booking breakdown.
 
 ```shell
 └── src
     └── components
-        └── BookingPanel
-            └── BookingPanel.js
+        └── OrderPanel
+            └── OrderPanel.js
 ```
 
 This part of the tutorial is also otherwise changed.
@@ -198,43 +178,42 @@ This part of the tutorial is also otherwise changed.
 
 </extrainfo>
 
-_BookingPanel_ gets **listing** as a prop. The cleaning fee is now saved
+_OrderPanel_ gets **listing** as a prop. The cleaning fee is now saved
 to listing's public data so we can find it under the _publicData_ key
 from listing's attributes. Because we decided that adding a cleaning fee
 to listing's information is optional, we need to check if the
 cleaningFee exists in public data or not.
 
 ```jsx
-const cleaningFee =
-  listing.attributes.publicData &&
-  listing.attributes.publicData.cleaningFee
-    ? listing.attributes.publicData.cleaningFee
-    : null;
+const cleaningFee = listing?.attributes?.publicData.cleaningFee;
 ```
 
 Once we have saved the information about the cleaning fee to variable
 _cleaningFee_ we need to pass that forward to _BookingDatesForm_. This
-form is used for collecting the booking data (e.g. booking dates) and
+form is used for collecting the order data (e.g. booking dates) and
 values from this form will be used when creating the transaction
 lineItems. We will pass the _cleaningFee_ to this form as a new prop.
 
 ```diff
   <BookingDatesForm
     className={css.bookingForm}
-    formId="BookingPanel"
-    submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
-    unitType={unitType}
+    formId="OrderPanelBookingDatesForm"
+    lineItemUnitType={lineItemUnitType}
     onSubmit={onSubmit}
     price={price}
+    marketplaceCurrency={marketplaceCurrency}
+    dayCountAvailableForBooking={dayCountAvailableForBooking}
     listingId={listing.id}
     isOwnListing={isOwnListing}
-    timeSlots={timeSlots}
-    fetchTimeSlotsError={fetchTimeSlotsError}
+    monthlyTimeSlots={monthlyTimeSlots}
+    onFetchTimeSlots={onFetchTimeSlots}
+    timeZone={timeZone}
+    marketplaceName={marketplaceName}
     onFetchTransactionLineItems={onFetchTransactionLineItems}
     lineItems={lineItems}
     fetchLineItemsInProgress={fetchLineItemsInProgress}
     fetchLineItemsError={fetchLineItemsError}
-+  cleaningFee={cleaningFee}
++   cleaningFee={cleaningFee}
   />
 ```
 
@@ -246,8 +225,8 @@ component because want the cleaning fee to be optional.
 
 ```shell
 └── src
-    └── forms
-        └── BookingDatesForm
+    └── components
+        └── OrderPanel
             └── BookingDatesForm.js
 ```
 
@@ -258,17 +237,18 @@ checkbox component _FieldCheckbox_.
 
 ```diff
   import { propTypes } from '../../util/types';
-+ import { formatMoney } from '../../util/currency';
-+ import { types as sdkTypes } from '../../util/sdkLoader';
-  import config from '../../config';
++ import { formatMoney } from '../../../util/currency';
++ import { types as sdkTypes } from '../../../util/sdkLoader';
+  ...
   import {
     Form,
-    IconSpinner,
+    IconArrowHead,
     PrimaryButton,
     FieldDateRangeInput,
-+   FieldCheckbox,
-} from '../../components';
- import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
+    FieldCheckbox,
+  } from '../../../components';
+
+ import EstimatedCustomerBreakdownMaybe from './EstimatedCustomerBreakdownMaybe';
 
  import css from './BookingDatesForm.module.css';
 + const { Money } = sdkTypes;
@@ -281,8 +261,8 @@ extract the cleaningFee from **fieldRenderProps**.
 ```diff
     ...
     lineItems,
-    fetchLineItemsInProgress,
     fetchLineItemsError,
+    onFetchTimeSlots,
 +   cleaningFee,
   } = fieldRenderProps;
 ```
@@ -308,8 +288,8 @@ const cleaningFeeLabel = intl.formatMessage(
 ```
 
 We will also add new microcopy key _BookingDatesForm.cleaningFeeLabel_
-to **_en.json_** file where we can use **_fee_** variable to show the
-price.
+to the **_en.json_** file where we can use **_fee_** variable to show
+the price.
 
 ```js
   "BookingDatesForm.cleaningFeeLabel": "Cleaning fee: {fee}",
@@ -347,9 +327,9 @@ component
 
 + {cleaningFeeMaybe}
 
-  {bookingInfoMaybe}
-  {loadingSpinnerMaybe}
-  {bookingInfoErrorMaybe}
+  {showEstimatedBreakdown ? (
+    <div className={css.priceBreakdownContainer}>
+      <h3>
 ...
 ```
 
@@ -357,24 +337,27 @@ After this step, the BookingDatesForm should look like this. You should
 notice that the cleaning fee will not be visible in the booking
 breakdown yet even though we added the new checkbox.
 
+// TODO: Update screenshot
 ![Cleaning fee checkbox](./cleaningFeeCheckbox.png)
 
-### Update the bookingData
+### Update the orderData
 
 Next, we want to pass the value of the cleaning fee checkbox forward as
-part of the **bookingData**. This is needed so that we can show the
+part of the **orderData**. This is needed so that we can show the
 selected cleaning fee as a new row on the booking breakdown. To achieve
 this, we need to edit the _handleOnChange_ function which takes the
 values from the form and calls the _onFetchTransactionLineItems_
 function for constructing the transaction line items. These line items
 are shown inside the _bookingInfoMaybe_ component under the form fields.
 
-<extraInfo title="What are line items?">
+<info>
 
 In Flex, the total price of a transaction is defined by its line items.
 Line items describe what is included in a transaction. It can be a
 varying set of things from the number of booked units to customer and
 provider commissions, add-ons, discounts, or payment refunds.
+
+<br/>
 
 Every line item has a unit price and one of the following attributes:
 quantity or percentage. The quantity attribute can be used to denote the
@@ -384,14 +367,16 @@ param is used when modeling commissions for example. Based on these
 attributes a line total is calculated for each line item. Line totals
 then define the total payin and payout sums of the transaction.
 
-You can read more about line items and pricing from
-[pricing background article](/concepts/pricing/).
+<br/>
 
-</extraInfo>
+You can read more about line items and pricing in the
+[pricing concepts article](/concepts/pricing/).
 
-In the **bookingData** object, we will have all the information about
-the user's choices. In this case, it means booking dates and if they
-selected the cleaning fee or not. We only need the information if the
+</info>
+
+In the **orderData** object, we will have all the information about the
+user's choices. In this case, it means booking dates and whether or not
+they selected the cleaning fee. We only need the information if the
 cleaning fee was selected. We will fetch the cleaning fee details from
 Marketplace API later in the the backend of our client app to make sure
 this information can't be manipulated.
@@ -399,40 +384,48 @@ this information can't be manipulated.
 In our case, because there is just one checkbox, it's enough to check
 the length of that array to determine if any items are selected. If the
 length of the cleaningFee array inside values is bigger than 0, the
-_hasCleaningFee_ param is true and otherwise false. If we hade more than
-one item in the checkbox group then we should check which items were
+_hasCleaningFee_ param is true and otherwise false. If we had more than
+one item in the checkbox group, we should check which items were
 selected.
 
 ```jsx
-  handleOnChange(formValues) {
-    const { startDate, endDate } =
-      formValues.values && formValues.values.bookingDates ? formValues.values.bookingDates : {};
-    const hasCleaningFee =
-      formValues.values.cleaningFee && formValues.values.cleaningFee.length > 0;
+const handleFormSpyChange = (
+  listingId,
+  isOwnListing,
+  fetchLineItemsInProgress,
+  onFetchTransactionLineItems
+) => formValues => {
+  const { startDate, endDate } =
+    formValues.values && formValues.values.bookingDates
+      ? formValues.values.bookingDates
+      : {};
 
-    const listingId = this.props.listingId;
-    const isOwnListing = this.props.isOwnListing;
+  const hasCleaningFee = formValues.values?.cleaningFee?.length > 0;
 
-    if (startDate && endDate && !this.props.fetchLineItemsInProgress) {
-      this.props.onFetchTransactionLineItems({
-        bookingData: { startDate, endDate, hasCleaningFee },
-        listingId,
-        isOwnListing,
-      });
-    }
+  if (startDate && endDate && !fetchLineItemsInProgress) {
+    onFetchTransactionLineItems({
+      orderData: {
+        bookingStart: startDate,
+        bookingEnd: endDate,
+        hasCleaningFee,
+      },
+      listingId,
+      isOwnListing,
+    });
   }
+};
 ```
 
 ## Add a new line-item for the cleaning fee
 
-We are almost there! Next, we need to edit the the backend of our client
-app and add a new line item for cleaning fee so that it will be included
-in pricing. Flex uses privileged transitions to ensure that the pricing
-logic is handled in a secure environment. This means that constructing
-line items and transitioning requests of privileged transitions are made
-from the server-side.
+We are making progress! Next, we need to edit the the backend of our
+client app and add a new line item for cleaning fee so that it will be
+included in pricing. Flex uses privileged transitions to ensure that the
+pricing logic is handled in a secure environment. This means that
+constructing line items and transitioning requests of privileged
+transitions are made from the server-side.
 
-<extraInfo title="What are privileged transitions and why we use them?">
+<info>
 
 Privileged transitions are transaction process transitions that can be
 invoked only from a secure context. For example, when using Flex
@@ -440,6 +433,8 @@ Templates for Web this secure context is the backend of our client app.
 You can also build your own server-side validation that sits between
 your marketplace UI and the Flex Marketplace API to invoke privileged
 transitions.
+
+<br/>
 
 We are using privileged transitions and the backend of our client app
 for constructing line items because we want to make sure this is done in
@@ -453,10 +448,12 @@ fetch the pricing information like the cleaning fee amount directly from
 Marketplace API in the backend of our client app, we can avoid this
 security risk.
 
-You can read more about privileged transitions from
-[privileged transitions background article](/concepts/privileged-transitions/).
+<br/>
 
-</extraInfo>
+You can read more about privileged transitions in the
+[privileged transitions concepts article](/concepts/privileged-transitions/).
+
+</info>
 
 When we want to add a new line item for cleaning fee, we'll need to
 update the pricing logic in the _lineItems.js_ file:
@@ -510,18 +507,17 @@ Remember also to add cleaning fee to _lineItems_ array which is returned
 in the end of the function.
 
 ```diff
-exports.transactionLineItems = (listing, bookingData) => {
-  const unitPrice = listing.attributes.price;
-  const { startDate, endDate, hasCleaningFee } = bookingData;
+exports.transactionLineItems = (listing, orderData) => {
+...
 
-  const booking = {
-    code: 'line-item/night',
+  const order = {
+    code,
     unitPrice,
-    quantity: calculateQuantityFromDates(startDate, endDate, unitType),
+    quantity,
     includeFor: ['customer', 'provider'],
   };
 
-+ const cleaningFeePrice = hasCleaningFee ? resolveCleaningFeePrice(listing) : null;
++ const cleaningFeePrice = orderData.hasCleaningFee ? resolveCleaningFeePrice(listing) : null;
 + const cleaningFee = cleaningFeePrice
 +   ? [
 +       {
@@ -536,12 +532,12 @@ exports.transactionLineItems = (listing, bookingData) => {
 
   const providerCommission = {
     code: 'line-item/provider-commission',
-+   unitPrice: calculateTotalFromLineItems([booking, ...cleaningFee]),
++   unitPrice: calculateTotalFromLineItems([order, ...cleaningFee]),
     percentage: PROVIDER_COMMISSION_PERCENTAGE,
     includeFor: ['provider'],
   };
 
-+ const lineItems = [booking, ...cleaningFee, providerCommission];
++ const lineItems = [order, ...extraLineItems, ...cleaningFee, providerCommission];
 
   return lineItems;
 };
@@ -551,6 +547,7 @@ Once we have done the changes to the backend of our client app we can
 check the booking breakdown again. Now if you choose the cleaning fee,
 you should see the cleaning fee also in the booking breakdown:
 
+//TODO update screenshots
 ![Cleaning fee in booking breakdown](./cleaningFeeBookingBreakdown.png)
 
 ## Update CheckoutPage to handle cleaning fee
@@ -575,14 +572,20 @@ First, on CheckoutPage.js `loadInitialData()` does some data processing
 and, if necessary, calls `fetchSpeculatedTransaction()`.
 
 ```diff
+      const deliveryMethod = pageData.orderData?.deliveryMethod;
++     const hasCleaningFee = pageData.orderData?.cleaningFee?.length > 0;
       fetchSpeculatedTransaction(
         {
           listingId,
-          bookingStart: bookingStartForAPI,
-          bookingEnd: bookingEndForAPI,
-+         hasCleaningFee: bookingData.cleaningFee?.length > 0,
+          deliveryMethod,
++         hasCleaningFee,
+          ...quantityMaybe,
+          ...bookingDatesMaybe(pageData.orderData.bookingDates),
         },
-        transactionId
+        processAlias,
+        transactionId,
+        requestTransition,
+        isPrivileged
       );
 
 ```
@@ -590,14 +593,15 @@ and, if necessary, calls `fetchSpeculatedTransaction()`.
 This function call dispatches a `speculateTransaction` action in
 `CheckoutPage.duck.js`, which in turn calls the FTW server using the
 correct endpoint. To pass the cleaning fee selection to the API call, we
-add it to `bookingData` within the `speculateTransaction` action.
+add it to `orderData` within the `speculateTransaction` action.
 
 ```diff
-  const bookingData = {
-    startDate: orderParams.bookingStart,
-    endDate: orderParams.bookingEnd,
-+   hasCleaningFee: orderParams.hasCleaningFee,
-  };
++ const { deliveryMethod, quantity, bookingDates, hasCleaningFee, ...otherOrderParams } = orderParams;
+...
+
+  // Parameters only for client app's server
++ const orderData = deliveryMethod || hasCleaningFee ? { deliveryMethod, hasCleaningFee } : {};
+
 ```
 
 Now when the customer selects cleaning fee on the listing page and
@@ -621,11 +625,16 @@ include it in `orderParams`, which is defined towards the very end of
 `handlePaymentIntent()` function.
 
 ```diff
+    const deliveryMethod = pageData.orderData?.deliveryMethod;
++   const hasCleaningFee = pageData.orderData?.cleaningFee?.length > 0;
+...
     const orderParams = {
       listingId: pageData.listing.id,
-      bookingStart: tx.booking.attributes.start,
-      bookingEnd: tx.booking.attributes.end,
-+     hasCleaningFee: pageData.bookingData?.cleaningFee?.length > 0,
+      deliveryMethod,
++     hasCleaningFee,
+      ...quantityMaybe,
+      ...bookingDatesMaybe(pageData.orderData.bookingDates),
+      ...protectedDataMaybe,
       ...optionalPaymentParams,
     };
 ```
@@ -636,14 +645,15 @@ action in `CheckoutPage.duck.js`. The first function in the
 initiates the order if there is no existing paymentIntent, and in
 practice it dispatches the `initiateOrder` action that calls the FTW
 server. So similarly to the `speculateTransaction` action, we just need
-to add the cleaning fee selection to `bookingData` in `initiateOrder`.
+to add the cleaning fee selection to `orderData` in `initiateOrder`.
 
 ```diff
-  const bookingData = {
-    startDate: orderParams.bookingStart,
-    endDate: orderParams.bookingEnd,
-+   hasCleaningFee: orderParams.hasCleaningFee,
-  };
++ const { deliveryMethod, quantity, bookingDates, hasCleaningFee, ...otherOrderParams } = orderParams;
+...
+
+  // Parameters only for client app's server
+  const orderData = deliveryMethod || hasCleaningFee ? { deliveryMethod, hasCleaningFee } : {};
+
 ```
 
 Now you can try it out! You may have to refresh your application first,
