@@ -30,14 +30,9 @@ const sortingArrayTutorialBranding = [
   'working-with-microcopy',
   'configurations',
   'change-default-locations',
-  'implement-amenities-filter',
+  'modify-listing-extended-data',
   'add-faq-page',
   'deploy-to-render',
-];
-const sortingArrayTutorialExtendedData = [
-  'add-extended-data',
-  'show-extended-data',
-  'filter-with-extended-data',
 ];
 
 const sortingArrayTutorialTransactionProcess = [
@@ -156,11 +151,6 @@ exports.siteStructure = [
       {
         id: 'tutorial-branding',
         sortingArray: sortingArrayTutorialBranding,
-        showNextAndPrev: true,
-      },
-      {
-        id: 'tutorial-extended-data',
-        sortingArray: sortingArrayTutorialExtendedData,
         showNextAndPrev: true,
       },
       {
