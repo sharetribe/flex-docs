@@ -151,12 +151,14 @@ transaction line item for the cleaning fee.
 
 </info>
 
-> **Note 2**: This tutorial handles changes on top of the FTW template
-> booking flow. If you want to make corresponding changes to the product
-> order flow, you'll need to make changes to
->
-> - _ProductOrderForm_ (instead of BookingDatesForm)
-> - _OrderBreakdown_ (instead of BookingBreakdown)
+<info>
+
+This tutorial handles changes on top of the FTW template booking flow.
+If you want to make corresponding changes to the product order flow,
+you'll need to make changes to _ProductOrderForm_ (instead of
+BookingDatesForm)
+
+</info>
 
 ### Prepare props
 
