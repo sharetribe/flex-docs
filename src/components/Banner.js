@@ -38,7 +38,6 @@ const Title = styled.h6`
 const BannerContent = styled.div`
   && {
     margin-top: 6px;
-
     > p  {
       // Only top-level paragraphs get the P styles as paragraphs also
       // exist e.g. in lists where the baseline offset is already
@@ -48,6 +47,13 @@ const BannerContent = styled.div`
       max-width: ${props => props.theme.contentMaxWidth}px;
       color: ${props => props.fontColour};
 
+      
+
+    }
+
+    // also apply font colour to lists and other child elements
+    * {
+      color: ${props => props.fontColour};
     }
 
   }
