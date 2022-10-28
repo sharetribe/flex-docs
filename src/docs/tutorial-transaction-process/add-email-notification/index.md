@@ -11,8 +11,8 @@ published: true
 
 In this example, we will add a new email notification which will be sent
 to the customer when a new booking request has been made. We will edit
-the **cottagedays-daily-booking** transaction process which was created
-in the earlier part of this tutorial.
+the **cottagedays-nightly-booking** transaction process which was
+created in the earlier part of this tutorial.
 
 ## Fetch transaction process
 
@@ -21,10 +21,10 @@ have most the up-to-date version of the process. You can fetch any
 process version with flex-cli:
 
 ```shell
-flex-cli process pull --process=cottagedays-daily-booking --alias=release-1 --path=./cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
-> **Note**: If you already have _cottagedays-daily-booking_ directory
+> **Note**: If you already have _cottagedays-nightly-booking_ directory
 > you can't pull the process. You need to either change the --path
 > parameter or use _--force_ flag at the end of the command to overwrite
 > the existing directory.
@@ -127,7 +127,7 @@ d,YYYY" tz="Etc/UTC"}}
     <p>
       Your booking request for {{listing.title}} from {{> format-date
       date=booking.start}} to {{> format-date date=booking.end}} is now
-      waiting for provider to accept it.
+      waiting for the provider to accept it.
     </p>
 
     <p>
@@ -163,7 +163,7 @@ with **flex-cli**. To preview the changes we just made, we can run the
 command:
 
 ```shell
-flex-cli notifications preview --template cottagedays-daily-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-test
+flex-cli notifications preview --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-test
 ```
 
 You should see the HTML preview of the template in the address
@@ -173,7 +173,7 @@ refresh the browser to reload the template and render a new preview
 You can also test sending the preview email:
 
 ```shell
-flex-cli notifications send --template cottagedays-daily-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-test
+flex-cli notifications send --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-test
 ```
 
 > **Note:** The email is sent to the email address of the admin user
@@ -218,18 +218,18 @@ need more detailed information take a look at the
 Push the updated process:
 
 ```shell
-flex-cli process push --process=cottagedays-daily-booking --path=./cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
 Check version number with _process list_ command:
 
 ```shell
-flex-cli process list --process=cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
 Update the alias to point to the latest version of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-daily-booking --version=3 --marketplace=cottagedays-test
+flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=3 --marketplace=cottagedays-test
 ```
