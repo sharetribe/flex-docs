@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { baselineSmall } from '../config';
+import { baselineSmall, baselineSpacing } from '../config';
 import { P } from '.';
 
 // Use this component to create info boxes, i.e. warning, info etc. See Warning.js and Info.js how this component is used
@@ -35,9 +35,21 @@ const Title = styled.h6`
   }
 `;
 
-const BannerContent = styled(P)`
+const BannerContent = styled.div`
   && {
-    color: ${props => props.fontColour};
+    margin-top: 6px;
+
+    > p  {
+      // Only top-level paragraphs get the P styles as paragraphs also
+      // exist e.g. in lists where the baseline offset is already
+      // done. Margins are also handled separately in those components.
+      ${P.styles}
+      margin-bottom: ${baselineSpacing}px;
+      max-width: ${props => props.theme.contentMaxWidth}px;
+      color: ${props => props.fontColour};
+
+    }
+
   }
 `;
 
@@ -51,10 +63,10 @@ const TitleContainer = ({ title, icon: Icon, ...otherProps }) => {
 };
 
 const Banner = props => {
-  const { children, ...otherProps } = props;
+  const { children, title, ...otherProps } = props;
   return (
     <BannerContainer {...otherProps}>
-      <TitleContainer {...otherProps} />
+      <TitleContainer title={title} {...otherProps} />
       <BannerContent {...otherProps}>{children}</BannerContent>
     </BannerContainer>
   );
