@@ -13,7 +13,7 @@ In this example, we will change a transaction process email notification
 so that it uses protected data. We will send the provider's phone number
 to the customer, when the provider accepts the booking request. We will
 add phone number input field to Sign up form and edit the
-**cottagedays-daily-booking** transaction process which was created in
+**cottagedays-nightly-booking** transaction process which was created in
 the earlier part of this tutorial.
 
 ## Change signup form
@@ -31,18 +31,25 @@ done on the sign-up page:
 To make this change, we need to update SignupForm. There's an existing
 field to collect phone numbers. It's called **FieldPhoneNumberInput**.
 
+src/containers/AuthenticationPage/SignupForm/SignupForm.js
+
 ```shell
 └── src
-    └── forms
-        └── SignupForm
-            ├── SignupForm.js
-            └── SignupForm.module.css
+    └── containers
+        └── AuthenticationPage
+            └── SignupForm
+                ├── SignupForm.js
+                └── SignupForm.module.css
 ```
 
-> **Note**: If you have enabled social logins in your marketplace, you
-> might want to add a similar _FieldPhoneNumberInput_ also to
-> _ConfirmSignupForm_ This way users who are signing up with e.g.
-> Facebook can also add their phone number.
+<info>
+
+If you have enabled social logins in your marketplace, you might want to
+add a similar _FieldPhoneNumberInput_ also to _ConfirmSignupForm_ This
+way users who are signing up with e.g. Facebook can also add their phone
+number.
+
+</info>
 
 We need to **_import_** _FieldPhoneNumberInput_ component and then add
 it to the form. We'll add the following JSX code after the
@@ -77,8 +84,12 @@ const phoneRequiredMessage = intl.formatMessage({
 const phoneRequired = validators.required(phoneRequiredMessage);
 ```
 
-> **Note**: You might want to improve the validation. This "_required_"
-> validator just checks that the input is not empty.
+<info>
+
+You might want to improve the validation. This "_required_" validator
+just checks that the input is not empty.
+
+</info>
 
 We also need to add style-rules for **css.phone**. You can add the
 following style-rules to _SignupForm.module.css_:
@@ -141,10 +152,10 @@ have most the up-to-date version of the process. You can fetch any
 process version with Flex CLI:
 
 ```shell
-flex-cli process pull --process=cottagedays-daily-booking --alias=release-1 --path=./cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
-> **Note**: If you already have _cottagedays-daily-booking_ directory
+> **Note**: If you already have _cottagedays-nightly-booking_ directory
 > you can't pull the process. You need to either change the _--path_
 > parameter or use _--force_ flag at the end of the command to overwrite
 > the existing directory.
@@ -182,7 +193,7 @@ update the email template: _booking-request-accepted-html.html_. You can
 find that file from the fetched process directory:
 
 ```shell
-└── cottagedays-daily-booking
+└── cottagedays-nightly-booking
     └── templates
         └── booking-request-accepted
             └── booking-request-accepted-html.html
@@ -217,7 +228,7 @@ The short guide of the necessary steps:
    ```
 3. Use Flex CLI's preview with that context:
    ```shell
-   flex-cli notifications preview --template cottagedays-daily-booking/templates/booking-request-accepted --context sample-template-context.json --marketplace=cottagedays-test
+   flex-cli notifications preview --template cottagedays-nightly-booking/templates/booking-request-accepted --context sample-template-context.json --marketplace=cottagedays-test
    ```
 
 </extrainfo>
@@ -225,16 +236,16 @@ The short guide of the necessary steps:
 ### Push process changes
 
 Now that we have edited the transaction process and its email templates,
-we need to push a new version of _cottagedays-daily-booking_ process. If
-you have done the earlier parts of the tutorial this process should be
-already quite familiar to you. If you need more detailed information
+we need to push a new version of _cottagedays-nightly-booking_ process.
+If you have done the earlier parts of the tutorial this process should
+be already quite familiar to you. If you need more detailed information
 take a look at the
 [Edit transaction process with Flex CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
 
 Push the updated process:
 
 ```shell
-flex-cli process push --process=cottagedays-daily-booking --path=./cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
 Check the version number from the output of the previous _push_ command.
@@ -243,14 +254,14 @@ With _process list_ command you can get the overall picture of versions
 and process aliases:
 
 ```shell
-flex-cli process list --process=cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
 Update the alias to point to **the latest version** of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-daily-booking --version=4 --marketplace=cottagedays-test
+flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=4 --marketplace=cottagedays-test
 ```
 
 ## Test transaction on your test environment
