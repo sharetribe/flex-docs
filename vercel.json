@@ -1,3 +1,5 @@
+{
+  "redirects":
 [
   {
     "source": "/",
@@ -830,3 +832,4 @@
     "permanent": true
   }
 ]
+}
