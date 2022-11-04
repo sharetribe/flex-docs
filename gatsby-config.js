@@ -14,6 +14,9 @@ const {
 } = process.env;
 
 const isVercel = !!GATSBY_VERCEL_ENV;
+const VERCEL_URL = !/^https?:\/\//i.test(url)
+  ? 'https://' + GATSBY_VERCEL_URL
+  : GATSBY_VERCEL_URL;
 
 /**
  * Get the current env.
@@ -42,7 +45,7 @@ const getSiteUrl = env => {
   } else if (env === 'vercel-production') {
     return PRODUCTION_SITE_URL;
   } else if (env === 'vercel-preview') {
-    return GATSBY_VERCEL_URL;
+    return VERCEL_URL;
   } else {
     throw new Error(`Cannot construct siteUrl for unknown env: ${env}`);
   }
