@@ -14,7 +14,7 @@ const {
 } = process.env;
 
 const isVercel = !!GATSBY_VERCEL_ENV;
-const VERCEL_URL = !/^https?:\/\//i.test(url)
+const VERCEL_URL = !/^https?:\/\//i.test(GATSBY_VERCEL_URL)
   ? 'https://' + GATSBY_VERCEL_URL
   : GATSBY_VERCEL_URL;
 
