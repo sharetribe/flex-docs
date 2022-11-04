@@ -1,4 +1,5 @@
 {
+   "routes": [ { "handle": "filesystem" }, { "src": "/docs/(.*)", "status": 404, "dest": "/docs/404" } ],
   "redirects":
 [
   {
