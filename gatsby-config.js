@@ -7,13 +7,13 @@ const {
   GOOGLE_TAGMANAGER_ID,
   GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW,
 
-  // Env vars set by Netlify
+  // Env vars set by Vercel
   // See: https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
-  CONTEXT,
-  DEPLOY_PRIME_URL,
+  GATSBY_VERCEL_ENV,
+  GATSBY_VERCEL_URL,
 } = process.env;
 
-const isNetlify = !!CONTEXT;
+const isVercel = !!GATSBY_VERCEL_ENV;
 
 /**
  * Get the current env.
@@ -22,13 +22,13 @@ const isNetlify = !!CONTEXT;
  *
  * - 'local-development': local dev server
  * - 'local-production': local prod server
- * - 'netlify-production': production context in Netlify
- * - 'netlify-deploy-preview': pull request preview context in Netlify
- * - 'netlify-branch-deploy': non-master branch deployment context in Netlify
+ * - 'vercel-production': production context in Vercel
+ * - 'vercel-deploy-preview': pull request preview context in Netlify
+ * - 'vercel-branch-deploy': non-master branch deployment context in Netlify
  */
 const getEnv = () => {
-  if (isNetlify) {
-    return `netlify-${CONTEXT}`;
+  if (isVercel) {
+    return `vercel-${GATSBY_VERCEL_ENV}`;
   } else {
     return `local-${NODE_ENV}`;
   }
@@ -39,19 +39,17 @@ const getSiteUrl = env => {
     return 'http://localhost:8000';
   } else if (env === 'local-production') {
     return 'http://localhost:9000';
-  } else if (env === 'netlify-production') {
+  } else if (env === 'vercel-production') {
     return PRODUCTION_SITE_URL;
-  } else if (env === 'netlify-deploy-preview') {
-    return DEPLOY_PRIME_URL;
-  } else if (env === 'netlify-branch-deploy') {
-    return DEPLOY_PRIME_URL;
+  } else if (env === 'vercel-preview') {
+    return GATSBY_VERCEL_URL;
   } else {
     throw new Error(`Cannot construct siteUrl for unknown env: ${env}`);
   }
 };
 
 const getPathPrefix = env => {
-  return isNetlify || env === 'local-production' ? '/docs' : '';
+  return isVercel || env === 'local-production' ? '/docs' : '';
 };
 
 const ENV = getEnv();
@@ -191,7 +189,7 @@ module.exports = {
 
 // ================ Analytics ================
 //
-if (ENV === 'netlify-production' && GOOGLE_TAGMANAGER_ID) {
+if (ENV === 'vercel-production' && GOOGLE_TAGMANAGER_ID) {
   console.log('Enabling Google Tag Manager plugin for production');
   module.exports.plugins.push({
     resolve: 'gatsby-plugin-google-tagmanager',
@@ -200,7 +198,7 @@ if (ENV === 'netlify-production' && GOOGLE_TAGMANAGER_ID) {
     },
   });
 }
-if (ENV === 'netlify-deploy-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW) {
+if (ENV === 'vercel-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW) {
   console.log('Enabling Google Tag Manager plugin for deploy preview');
   module.exports.plugins.push({
     resolve: 'gatsby-plugin-google-tagmanager',
