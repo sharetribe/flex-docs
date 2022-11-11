@@ -1,7 +1,7 @@
 ---
 title: Implement user deletion
 slug: implement-delete-user
-updated: 2022-04-05
+updated: 2022-11-11
 category: how-to-users-and-authentication
 ingress:
   This article guides you in implementing a feature where a user can
@@ -31,13 +31,13 @@ incomplete transactions, or deletes the user's account through the
 shows the count of unfinished transactions, and if the user is deleted,
 they are immediately logged out.
 
-This how-to guide is based on the FTW-daily template and
-`flex-default-process`. As you implement the guide, you will need to
-review the transaction processes used on your marketplace to see which
-transitions count as non-final transitions, i.e. ones where you do not
-want to allow the user to delete their profile.
+This how-to guide is based on the FTW template and `default-booking`
+process. As you implement the guide, you will need to review the
+transaction processes used on your marketplace to see which transitions
+count as non-final transitions, i.e. ones where you do not want to allow
+the user to delete their profile.
 
-![Non-final transitions in flex-default-process](non-final-transitions.png)
+![Non-final transitions in default-booking process](non-final-transitions.png)
 
 In addition to incomplete transactions, your marketplace transaction
 processes may have payout considerations. If your transaction process
@@ -138,7 +138,8 @@ application's route configuration.
 
 ```shell
 └── src
-    └── routeConfiguration.js
+    └── routing
+        └── routeConfiguration.js
 ```
 
 The "Account settings" side navigation tabs are defined in
@@ -183,7 +184,7 @@ Finally, add the necessary microcopy rows into en.json
 Feel free to modify the texts to suit your marketplace.
 
 ```diff
-  "DateInput.screenReaderInputMessage": "Date input",
+  "CustomExtendedDataField.required": "Required",
 + "DeleteAccountPage.details": "This action is permanent and cannot be undone! After deleting your account, you will be logged out immediately and will not be able to access your listings or transactions anymore.",
 + "DeleteAccountPage.heading": "Delete your account",
 + "DeleteAccountPage.title": "Delete your account",
@@ -210,10 +211,11 @@ experience.
 
 ```shell
 └── src
-    └── forms
-         └── DeleteAccountForm
-               └── DeleteAccountForm.js
-               └── DeleteAccountForm.module.css
+    └── containers
+         └── DeleteAccountPage
+             └── DeleteAccountForm
+                   └── DeleteAccountForm.js
+                   └── DeleteAccountForm.module.css
 ```
 
 - [DeleteAccountForm.js](cookbook-assets/DeleteAccountForm.js)
@@ -223,21 +225,6 @@ You can either use the files directly, or use them as a template for
 modification. You can, for instance, add a feedback field if you need
 the user to submit some information before they can delete their
 account.
-
-When adding a new form, exporting it from `src/forms/index` simplifies
-importing in other components.
-
-```shell
-└── src
-    └── forms
-         └── index.js
-```
-
-```diff
-  export { default as ConfirmSignupForm } from './ConfirmSignupForm/ConfirmSignupForm';
-+ export { default as DeleteAccountForm } from './DeleteAccountForm/DeleteAccountForm';
-  export { default as EditListingAvailabilityForm } from './EditListingAvailabilityForm/EditListingAvailabilityForm';
-```
 
 Now that the DeleteAccountForm component exists, implement it into the
 DeleteAccountPage template you downloaded earlier.
@@ -253,7 +240,7 @@ Set DeleteAccountPage to only show the form for authenticated users.
 
 ```diff
   } from '../../components';
-+ import { DeleteAccountForm } from '../../forms';
++ import DeleteAccountForm from './DeleteAccountForm/DeleteAccountForm';
 ...
 + // Show form for a valid current user
 + const showDeleteAccountForm = (currentUser && currentUser.id);
@@ -299,7 +286,7 @@ strings. The file also has the capability to send a password reset link
 to the user if they have forgotten their password.
 
 ```diff
-  "DateInput.screenReaderInputMessage": "Date input",
+  "CustomExtendedDataField.required": "Required",
 + "DeleteAccountForm.confirmChangesInfo": "To delete your account, please enter your current password.",
 + "DeleteAccountForm.confirmChangesTitle": "Confirm deleting your account",
 + "DeleteAccountForm.conflictingData":  "Unable to delete user profile. You have {errorCause}",

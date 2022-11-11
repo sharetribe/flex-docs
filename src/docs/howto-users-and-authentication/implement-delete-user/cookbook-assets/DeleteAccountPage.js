@@ -15,7 +15,7 @@ import {
   Page,
   UserNav,
 } from '../../components';
-import { TopbarContainer } from '..';
+import TopbarContainer from '../TopbarContainer/TopbarContainer';
 
 import {
   deleteAccount,
