@@ -9,125 +9,218 @@ ingress:
 published: true
 ---
 
-This guide walks you through the different steps required to expand the
-listing data model in your marketplace. We'll have a look on how the
-data is added, how it can be presented and finally how it can be used to
-filter searches.
+This guide shows you two different approaches to expanding the listing
+data model in your marketplace. We'll have a look on how the listing can
+be configured so that the data gets added, and how it can then be
+presented and used to filter searches. In addition, you will learn how
+to add complex JSON attributes directly in the Edit Listing Wizard.
 
 Adding new attributes to the data model relies on
-[Extended data](/references/extended-data/).
-
-Three main areas in extending the listing data model are:
-
-- [Declare the attribute and it's possible values](#declare-the-attribute-and-its-possible-values)
-- [Edit the listing wizard](#edit-the-listing-wizard)
-- [Show the attribute on listing page](#show-the-attribute-on-listing-page)
-- [Use the attribute as a search filter](#use-the-attribute-as-a-search-filter)
-
-In this guide we will extend the listing data model by adding a
-_capacity_ attribute.
-
-## Add a new attribute
-
-### Declare the attribute and its possible values
-
-So, you have come up with a great new extension to the listing data
-model, fantastic! Depending of the type of data the new attribute is
-going to be used for it might make sense to define and store the
-possible values for the attribute. In case the data will be free form
-text there might not be use for this but in our case we want to fix the
-possible values that can be used for the capacity. Also if the attribute
-will be used as a search filter it helps to keep track of the possible
-values somewhere.
-
-If you want to use extended data field as a filter on search page, you
-need to store the possible values for the field to
-[marketplace-custom-config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/marketplace-custom-config.js)
-file.
-
-```shell
-└── src
-    └── marketplace-custom-config.js
-```
-
-<extrainfo title="FTW-product has moved config files into a different location">
+[Extended data](/references/extended-data/). In the combined template,
+top-level listing extended data is configured in the
+[configListing.js](TODO: LINK) file.
 
 ```shell
 └── src
     └── config
-        └── marketplace-custom-config.js
+        └── configListing.js
+```
+
+Configuring the listing data this way allows you to
+
+- declare the attribute and its possible values
+- show the attribute selection inputs in the listing editing wizard
+- optionally show the attribute values on the listing page and
+- optionally use the attribute as a search filter.
+
+If you want to configure a complex extended data attribute, e.g. a JSON
+object, it is good to note that Flex only allows searching and filtering
+top-level attributes. In other words, complex attributes cannot be used
+to filter listings. However, they can be useful in storing other
+relevant listing data.
+
+For a more complex attribute, you will need to follow the instructions
+for adding extended data directly to a listing. You will also need to
+make custom changes to your listing page, if you want to show the
+attribute there.
+
+In this article, we will first extend top-level data using
+**configListing.js**. Then, we will add a JSON attribute in extended
+data.
+
+## Add a new top-level attribute
+
+Let's extend the default bike related listing data by adding an
+attribute 'gears' to reflect the bike's gear count. The full
+configuration looks like this:
+
+```js
+{
+  key: 'gears',
+  scope: 'public',
+  schemaType: 'enum',
+  schemaOptions: [
+    { option: '1' , label: 'Single speed' },
+    { option: '2to3' , label: '2 to 3' },
+    { option: '4to7' , label: '4 to 7' },
+    { option: '8to15' , label: '8 to 15' },
+    { option: '16to24' , label: '16 to 24' },
+    { option: '25+' , label: 'Over 25' },
+  ],
+  indexForSearch: true,
+  searchPageConfig: {
+    label: 'Gears',
+    group: 'secondary'
+  },
+  listingPageConfig: {
+    label: 'Gears',
+    isDetail: true,
+  },
+  editListingPageConfig: {
+    label: 'Gears',
+    placeholderMessage: 'Select number of gears...',
+    isRequired: true,
+    requiredMessage: 'You need to select number of gears',
+  }
+},
+```
+
+### Declaring the attribute and its possible values
+
+Extended data attributes in the configListing.js file need to be
+defined, at minimum, by **key**, by **scope**, and by **schemaType**.
+
+```js
+  key: 'gears',
+  scope: 'public',
+      schemaType: 'enum',
+  schemaOptions: [
+    { option: '1' , label: 'Single speed' },
+    { option: '2to3' , label: '2 to 3' },
+    { option: '4to7' , label: '4 to 7' },
+    { option: '8to15' , label: '8 to 15' },
+    { option: '16to24' , label: '16 to 24' },
+    { option: '25+' , label: 'Over 25' },
+      ],
+```
+
+This attribute is defined as **public**, so it will be saved into the
+listing as **publicData.gears**. The **schemaType** attribute determines
+the shape of the data being saved:
+
+- **enum** attributes are saved as a single string value from a list of
+  predefined options
+- **multi-enum** attributes are saved as an array of string values from
+  a list of predefined options
+- **boolean** attributes are saved as **true** or **false** boolean
+  values
+- **long** attributes are saved as long i.e. as an 8-byte whole number
+- **text** attributes are saved as a single text entry
+
+If the schema type is **enum** or **multi-enum**, you will need to
+define an array of **schemaOptions** for the attribute. This allows the
+listing editing wizard to show the options when your user creates the
+listing, and it also provides the options for the search filters.
+
+### Configuring the listing detail editing page
+
+The EditListingDetailsPanel is configured to show specific inputs for
+specific schema types. This means that you only need to configure how
+the attribute shows up in the panel.
+
+You can separately determine the label for edit listing page and the
+other contexts where the attribute shows up. You can also set the
+attribute as required, and determine the error message to show if the
+attribute is missing.
+
+```js
+editListingPageConfig: {
+  label: 'Gears',
+  placeholderMessage: 'Select number of gears...',
+  isRequired: true,
+  requiredMessage: 'You need to select number of gears',
+}
+```
+
+### Configuring search
+
+Top-level attributes can be set as searchable, but you might have
+listing attributes you do not want to use for filtering listings. For
+instance, you may have private data text fields that the provider can
+use for listing-specific notes.
+
+For searchable attributes, you will need to include **indexForSearch**
+and **searchPageConfig** attributes to your listing configuration. In
+addition, you will need to
+[define a search schema](/how-to/manage-search-schemas-with-flex-cli/).
+Make sure you define the search schema **type** according to the listing
+configuration **schemaType**.
+
+```js
+indexForSearch: true,
+searchPageConfig: {
+  label: 'Gears',
+  group: 'secondary'
+    },
+```
+
+### Configuring the listing page
+
+The configuration for showing top-level extended data on the listing
+page is straightforward. In addition to the label, you can determine
+whether to show the attribute value on the listing page. By default, all
+listing config attributes with a **listingPageConfig.label** are shown
+on the listing page, but by setting **isDetail** to **false**, you can
+hide the attribute.
+
+```js
+listingPageConfig: {
+  label: 'Gears',
+  isDetail: true,
+  },
+```
+
+And that is it! With this configuration, the attribute can be added to
+the listing, used for search, and shown on the listing page. Next, we
+will add a complex JSON attribute that is not used for filtering.
+
+## Add a new complex attribute
+
+You may want to add more complex attributes as well. We will add an
+attribute **lastServiced**, which will be included in a listing selling
+the bike, and it will include the date of the last service of the bike
+as well as a description of what was serviced.
+
+<extrainfo title="Microcopy values used in this guide">
+
+You can paste the microcopy strings used in this guide in your Flex
+Console Microcopy editor or your translation file.
+
+```js
+  "EditListingServiceHistoryForm.lastServiced": "Date when last serviced",
+  "EditListingServiceHistoryForm.serviceDetails": "Details of service history",
+  "EditListingServiceHistoryPanel.createListingTitle": "Service History",
+  "EditListingServiceHistoryPanel.title": "Edit the Service History of {listingTitle}",
+  "EditListingWizard.default-buying-products.new.savePricingAndStock": "Next: Service History",
+  "EditListingWizard.default-buying-products.new.saveServiceHistory": "Next: Delivery",
+  "EditListingWizard.edit.saveServiceHistory": "Save",
+  "EditListingWizard.tabLabelServiceHistory": "Service History",
+  "FieldDateInput.placeholder": "Select date...",
+  "SectionServiceHistoryMaybe.lastServicedHeading": "Last serviced",
+  "SectionServiceHistoryMaybe.serviceDetailsHeading": "Service details",
 ```
 
 </extrainfo>
 
-There we need to create a new filter config to the `filters` array:
-
-```js
-  {
-    id: 'capacity',
-    label: 'Capacity',
-    type: 'SelectSingleFilter',
-    group: 'secondary',
-    queryParamNames: ['pub_capacity'],
-    config: {
-      // Schema type is enum for SelectSingleFilter
-      schemaType: 'enum',
-      options: [
-        { key: '1to3', label: '1 to 3' },
-        { key: '4to6', label: '4 to 6' },
-        { key: '7to9', label: '7 to 9' },
-        { key: '10plus', label: '10 plus' },
-      ],
-    },
-  },
-```
-
-The exports from that file are included in the _config.js_ file and are
-available as properties in `config.custom`. Search filters and some
-components used to edit and present the data rely on a data model of an
-array of objects that contain `key` and `label` properties.
-
-In the configuration above, we'll define a set of values that describe
-the capacity in a few ranges of how many people can fit into a given
-sauna:
-
-```js
-  { key: '1to3', label: '1 to 3' },
-  { key: '4to6', label: '4 to 6' },
-  { key: '7to9', label: '7 to 9' },
-  { key: '10plus', label: '10 plus' },
-```
-
-That list of options is relevant when we add a new public data field to
-the listing through the EditListingWizard component. If you want to know
-more about those other keys in that configuration (e.g. `type`, `group`,
-`queryParamNames`), you should read the
-[Change search filters](/how-to/change-search-filters-in-ftw/) article.
-
-> **Note**: it's entirely possible to add extended data without creating
-> search filters for it. In that case, you could just hard-code
-> configurations to the EditListingWizard's form or use
-> marketplace-custom-config.js with separately exported variable.
-
 ### Edit the listing wizard
 
-Next step is to add means for modifying the attribute data in listings.
-This is achieved by adding proper inputs to the **EditListingWizard**.
-It could probably make sense to add the input to the _description_ tab
-or modify the _amenities_ tab to also include capacity but for the sake
-of clarity let's add a new tab to the wizard. The new tab will be placed
-between the _amenities_ and _policy_ tabs.
+The first step is to add means for modifying the attribute data in
+listings. This is achieved by adding proper inputs to the
+**EditListingWizard**. It could probably make sense to add the input to
+the _details_ tab to also include service history, but for the sake of
+clarity let's add a new tab to the wizard.
 
 First lets declare the tab in **EditListingWizardTab**:
-
-```shell
-└── src
-    └── components
-        └── EditListingWizard
-            └── EditListingWizardTab.js
-```
-
-<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
 
 ```shell
 └── src
@@ -137,104 +230,108 @@ First lets declare the tab in **EditListingWizardTab**:
                 └── EditListingWizardTab.js
 ```
 
-</extrainfo>
+The new tab will be placed between the _pricing-and-stock_ and
+_delivery_ tabs.
 
 ```js
-export const AVAILABILITY = 'availability';
-export const DESCRIPTION = 'description';
-export const FEATURES = 'features';
-export const CAPACITY = 'capacity';
-export const POLICY = 'policy';
-export const LOCATION = 'location';
+export const DETAILS = 'details';
 export const PRICING = 'pricing';
+export const PRICING_AND_STOCK = 'pricing-and-stock';
+export const SERVICE_HISTORY = 'service-history';
+export const DELIVERY = 'delivery';
+export const LOCATION = 'location';
+export const AVAILABILITY = 'availability';
 export const PHOTOS = 'photos';
 
 // EditListingWizardTab component supports these tabs
 export const SUPPORTED_TABS = [
-  DESCRIPTION,
-  FEATURES,
-  CAPACITY,
-  POLICY,
-  LOCATION,
+  DETAILS,
   PRICING,
+  PRICING_AND_STOCK,
+  SERVICE_HISTORY,
+  DELIVERY,
+  LOCATION,
   AVAILABILITY,
   PHOTOS,
 ];
 ```
 
-<extrainfo title="FTW-product has a bit different panels in EditListingWizard">
-
-```js
-export const CAPACITY = 'capacity';
-export const DETAILS = 'details';
-export const DELIVERY = 'delivery';
-export const PRICING = 'pricing';
-export const PHOTOS = 'photos';
-
-// EditListingWizardTab component supports these tabs
-export const SUPPORTED_TABS = [
-  CAPACITY,
-  DETAILS,
-  DELIVERY,
-  PRICING,
-  PHOTOS,
-];
-```
-
-</extrainfo>
-
 Now in **EditListingWizard** we can take that tab declaration into use.
-_Import_ the tab name variable (_CAPACITY_) from
-**EditListingWizardTab** and add it to the `TABS` array.
+_Import_ the tab name variable (_SERVICE_HISTORY_) from
+**EditListingWizardTab** and add it to the `TABS_PRODUCT` array.
 
 ```js
-// in EditListingWizard.js
-export const TABS = [
-  DESCRIPTION,
-  FEATURES,
-  CAPACITY,
-  POLICY,
-  LOCATION,
-  PRICING,
-  ...availabilityMaybe,
+// You can reorder these panels.
+// Note 1: You need to change save button translations for new listing flow
+// Note 2: Ensure that draft listing is created after the first panel
+// and listing publishing happens after last panel.
+const TABS_DETAILS_ONLY = [DETAILS];
+const TABS_PRODUCT = [
+  DETAILS,
+  PRICING_AND_STOCK,
+  SERVICE_HISTORY,
+  DELIVERY,
   PHOTOS,
 ];
+const TABS_BOOKING = [DETAILS, LOCATION, PRICING, AVAILABILITY, PHOTOS];
+const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING];
 ```
 
-Also remember to add a label for the tab in the `tabLabel` function:
+Also remember to add a label for the tab in the `tabLabelAndSubmit`
+function:
 
 ```js
-const tabLabel = (intl, tab) => {
-  let key = null;
-  if (tab === DESCRIPTION) {
-    key = 'EditListingWizard.tabLabelDescription';
-  } else if (tab === FEATURES) {
-    key = 'EditListingWizard.tabLabelFeatures';
-  } else if (tab === CAPACITY) {
-    key = 'EditListingWizard.tabLabelCapacity';
-  } else if (tab === POLICY) {
-    key = 'EditListingWizard.tabLabelPolicy';
-  } else if (tab === LOCATION) {
-    key = 'EditListingWizard.tabLabelLocation';
+const tabLabelAndSubmit = (
+  intl,
+  tab,
+  isNewListingFlow,
+  processName
+) => {
+  const processNameString = isNewListingFlow ? `${processName}.` : '';
+  const newOrEdit = isNewListingFlow ? 'new' : 'edit';
+
+  let labelKey = null;
+  let submitButtonKey = null;
+  if (tab === DETAILS) {
+    labelKey = 'EditListingWizard.tabLabelDetails';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveDetails`;
   } else if (tab === PRICING) {
-    key = 'EditListingWizard.tabLabelPricing';
+    labelKey = 'EditListingWizard.tabLabelPricing';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.savePricing`;
+  } else if (tab === PRICING_AND_STOCK) {
+    labelKey = 'EditListingWizard.tabLabelPricingAndStock';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.savePricingAndStock`;
+  } else if (tab === SERVICE_HISTORY) {
+    labelKey = 'EditListingWizard.tabLabelServiceHistory';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveServiceHistory`;
+  } else if (tab === DELIVERY) {
+    labelKey = 'EditListingWizard.tabLabelDelivery';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveDelivery`;
+  } else if (tab === LOCATION) {
+    labelKey = 'EditListingWizard.tabLabelLocation';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveLocation`;
   } else if (tab === AVAILABILITY) {
-    key = 'EditListingWizard.tabLabelAvailability';
+    labelKey = 'EditListingWizard.tabLabelAvailability';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveAvailability`;
   } else if (tab === PHOTOS) {
-    key = 'EditListingWizard.tabLabelPhotos';
+    labelKey = 'EditListingWizard.tabLabelPhotos';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.savePhotos`;
   }
 
-  return intl.formatMessage({ id: key });
+  return {
+    label: intl.formatMessage({ id: labelKey }),
+    submitButton: intl.formatMessage({ id: submitButtonKey }),
+  };
 };
 ```
 
 The `tabCompleted` function keeps track of which data the user has
 already provided in order to tell which tabs are completed. As we will
-be storing the capacity information in the listing's _public data_
-property (see the [Extended data](/references/extended-data/) reference
-for more info on different extended data types) we shall look into that
-property when resolving whether the capacity tab has already been
-completed or not:
+be storing the service history information in the listing's _public
+data_ property (see the [Extended data](/references/extended-data/)
+reference for more info on different extended data types) we shall look
+into that property when resolving whether the capacity tab has already
+been completed or not:
 
 ```js
 /**
@@ -245,7 +342,7 @@ completed or not:
  *
  * @return true if tab / step is completed.
  */
-const tabCompleted = (tab, listing) => {
+const tabCompleted = (tab, listing, config) => {
   const {
     availabilityPlan,
     description,
@@ -253,27 +350,46 @@ const tabCompleted = (tab, listing) => {
     price,
     title,
     publicData,
+    privateData,
   } = listing.attributes;
   const images = listing.images;
 
+  const {
+    transactionType,
+    transactionProcessAlias,
+    unitType,
+    serviceHistory,
+    shippingEnabled,
+    pickupEnabled,
+  } = publicData || {};
+
+  const deliveryOptionPicked =
+    publicData && (shippingEnabled || pickupEnabled);
+
   switch (tab) {
-    case DESCRIPTION:
-      return !!(description && title);
-    case FEATURES:
-      return !!(publicData && publicData.amenities);
-    case CAPACITY:
-      return !!(publicData && publicData.capacity);
-    case POLICY:
-      return !!(publicData && typeof publicData.rules !== 'undefined');
-    case LOCATION:
+    case DETAILS:
       return !!(
-        geolocation &&
-        publicData &&
-        publicData.location &&
-        publicData.location.address
+        description &&
+        title &&
+        transactionType &&
+        transactionProcessAlias &&
+        unitType &&
+        hasValidCustomFieldsInExtendedData(
+          publicData,
+          privateData,
+          config
+        )
       );
     case PRICING:
       return !!price;
+    case PRICING_AND_STOCK:
+      return !!price;
+    case SERVICE_HISTORY:
+      return !!serviceHistory;
+    case DELIVERY:
+      return !!deliveryOptionPicked;
+    case LOCATION:
+      return !!(geolocation && publicData?.location?.address);
     case AVAILABILITY:
       return !!availabilityPlan;
     case PHOTOS:
@@ -284,20 +400,9 @@ const tabCompleted = (tab, listing) => {
 };
 ```
 
-Next task is to add form and panel components that render the capacity
-tab. As for the form, let's create a **EditListingCapacityForm**
-component:
-
-```shell
-└── src
-    └── forms
-        ├── index.js
-        └── EditListingCapacityForm
-            ├── EditListingCapacityForm.js
-            └── EditListingCapacityForm.module.css
-```
-
-<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
+Next task is to add form and panel components that render the service
+history tab. As for the form, let's create a
+**EditListingServiceHistoryForm** component:
 
 ```shell
 └── src
@@ -305,37 +410,38 @@ component:
         └── EditListingPage
             └── EditListingWizard
                 ├── EditListingWizardTab.js
-                └── EditListingCapacityPanel
-                    ├── EditListingCapacityForm.js
-                    └── EditListingCapacityForm.module.css
+                └── EditListingServiceHistoryPanel
+                    ├── EditListingServiceHistoryForm.js
+                    └── EditListingServiceHistoryForm.module.css
 ```
-
-Also relative _imports_ need to be updated accordingly.
-
-</extrainfo>
 
 ```jsx
 import React from 'react';
-import { arrayOf, bool, func, shape, string } from 'prop-types';
+import { bool, func, string } from 'prop-types';
 import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
+import { futureIsOutsideRange } from '../../../../util/dates';
 
 // These relative imports need to point to correct directories
 import {
   intlShape,
   injectIntl,
   FormattedMessage,
-} from '../../util/reactIntl';
-import { propTypes } from '../../util/types';
-import { required } from '../../util/validators';
-import { Form, Button, FieldSelect } from '../../components';
+} from '../../../../util/reactIntl';
+import { propTypes } from '../../../../util/types';
+import {
+  Form,
+  Button,
+  FieldTextInput,
+  FieldDateInput,
+} from '../../../../components';
 
-// Create this file using EditListingFeaturesForm.module.css
+// Create this file using EditListingPricingForm.module.css
 // as a template.
-import css from './EditListingCapacityForm.module.css';
+import css from './EditListingServiceHistoryForm.module.css';
 
-export const EditListingCapacityFormComponent = props => (
+export const EditListingServiceHistoryFormComponent = props => (
   <FinalForm
     {...props}
     render={formRenderProps => {
@@ -350,24 +456,13 @@ export const EditListingCapacityFormComponent = props => (
         updated,
         updateError,
         updateInProgress,
-        capacityOptions,
       } = formRenderProps;
-
-      const capacityPlaceholder = intl.formatMessage({
-        id: 'EditListingCapacityForm.capacityPlaceholder',
-      });
 
       const errorMessage = updateError ? (
         <p className={css.error}>
-          <FormattedMessage id="EditListingCapacityForm.updateFailed" />
+          <FormattedMessage id="EditListingServiceHistoryForm.updateFailed" />
         </p>
       ) : null;
-
-      const capacityRequired = required(
-        intl.formatMessage({
-          id: 'EditListingCapacityForm.capacityRequired',
-        })
-      );
 
       const classes = classNames(css.root, className);
       const submitReady = updated && pristine;
@@ -377,20 +472,25 @@ export const EditListingCapacityFormComponent = props => (
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
+          <FieldDateInput
+            className={css.input}
+            id="lastServiced"
+            name="lastServiced"
+            label={intl.formatMessage({
+              id: 'EditListingServiceHistoryForm.lastServiced',
+            })}
+            isOutsideRange={futureIsOutsideRange}
+          />
 
-          <FieldSelect
-            className={css.capacity}
-            name="capacity"
-            id="capacity"
-            validate={capacityRequired}
-          >
-            <option value="">{capacityPlaceholder}</option>
-            {capacityOptions.map(c => (
-              <option key={c.key} value={c.key}>
-                {c.label}
-              </option>
-            ))}
-          </FieldSelect>
+          <FieldTextInput
+            className={css.input}
+            id="serviceDetails"
+            name="serviceDetails"
+            type="textarea"
+            label={intl.formatMessage({
+              id: 'EditListingServiceHistoryForm.serviceDetails',
+            })}
+          />
 
           <Button
             className={css.submitButton}
@@ -407,48 +507,56 @@ export const EditListingCapacityFormComponent = props => (
   />
 );
 
-EditListingCapacityFormComponent.defaultProps = {
+EditListingServiceHistoryFormComponent.defaultProps = {
   selectedPlace: null,
   updateError: null,
 };
 
-EditListingCapacityFormComponent.propTypes = {
+EditListingServiceHistoryFormComponent.propTypes = {
   intl: intlShape.isRequired,
   onSubmit: func.isRequired,
   saveActionMsg: string.isRequired,
   updated: bool.isRequired,
   updateError: propTypes.error,
   updateInProgress: bool.isRequired,
-  capacityOptions: arrayOf(
-    shape({
-      key: string.isRequired,
-      label: string.isRequired,
-    })
-  ).isRequired,
 };
 
-export default compose(injectIntl)(EditListingCapacityFormComponent);
+export default compose(injectIntl)(
+  EditListingServiceHistoryFormComponent
+);
 ```
 
-The form component receives `capacityOptions` as a prop which are used
-to populate a **FieldSelect** component for selecting the capacity. The
-**EditListingCapacityForm** is also added to the _src/forms/index.js_
-file so that it can easily be referenced from other components.
-(FTW-product doesn't use _src/forms/index.js_) To use the capacity
-editing form we'll add a panel component which is then used in
-**EditListingWizardTab** to render the wizard phase. This component
-we'll call **EditListingCapacityPanel**:
+The form uses the **FieldDateInput** component, where we want to allow
+the user to select past dates, unlike for bookings. To do that, we need
+to create a custom **isOutsideRange** function. Let's add it to the
+**dates.js** util file that contains a selection of other date helpers
+as well.
 
 ```shell
 └── src
-    └── components
-        ├── index.js
-        └── EditListingCapacityPanel
-            ├── EditListingCapacityPanel.js
-            └── EditListingCapacityPanel.module.css
+    └── util
+        └── dates.js
 ```
 
-<extrainfo title="FTW-product has moved EditListingWizard components under EditListingPage">
+The helper uses a **react-dates** function to block days that are not
+the current day or before it.
+
+```js
+import { isInclusivelyBeforeDay } from 'react-dates';
+...
+/**
+ * Determines a custom isOutsideRange function for FieldDateInput
+ * that shows past dates
+ */
+export const futureIsOutsideRange = day => {
+  return !isInclusivelyBeforeDay(day, moment());
+}
+```
+
+To use the service history editing form we'll add a panel component
+which is then used in **EditListingWizardTab** to render correct step of
+the wizard. This component we'll call
+**EditListingServiceHistoryPanel**:
 
 ```shell
 └── src
@@ -456,142 +564,51 @@ we'll call **EditListingCapacityPanel**:
         └── EditListingPage
             └── EditListingWizard
                 ├── EditListingWizardTab.js
-                └── EditListingCapacityPanel
-                    ├── EditListingCapacityPanel.js
-                    └── EditListingCapacityPanel.module.css
+                └── EditListingServiceHistoryPanel
+                    ├── EditListingServiceHistoryPanel.js
+                    └── EditListingServiceHistoryPanel.module.css
 ```
-
-</extrainfo>
 
 ```jsx
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import config from '../../config.js';
-import { FormattedMessage } from '../../util/reactIntl';
-import { ensureOwnListing } from '../../util/data';
-import { findOptionsForSelectFilter } from '../../util/search';
-
-import { ListingLink } from '../../components';
-import { EditListingCapacityForm } from '../../forms';
-
-// Create this file using EditListingDescriptionPanel.module.css
-// as a template.
-import css from './EditListingCapacityPanel.module.css';
-
-const EditListingCapacityPanel = props => {
-  const {
-    className,
-    rootClassName,
-    listing,
-    onSubmit,
-    onChange,
-    submitButtonText,
-    panelUpdated,
-    updateInProgress,
-    errors,
-  } = props;
-
-  const classes = classNames(rootClassName || css.root, className);
-  const currentListing = ensureOwnListing(listing);
-  const { publicData } = currentListing.attributes;
-
-  const panelTitle = currentListing.id ? (
-    <FormattedMessage
-      id="EditListingCapacityPanel.title"
-      values={{ listingTitle: <ListingLink listing={listing} /> }}
-    />
-  ) : (
-    <FormattedMessage id="EditListingCapacityPanel.createListingTitle" />
-  );
-  const capacityOptions = findOptionsForSelectFilter(
-    'amenities',
-    config.custom.filters
-  );
-
-  return (
-    <div className={classes}>
-      <h1 className={css.title}>{panelTitle}</h1>
-      <EditListingCapacityForm
-        className={css.form}
-        initialValues={{ capacity: publicData.capacity }}
-        onSubmit={values => {
-          const { capacity } = values;
-          const updateValues = {
-            publicData: {
-              capacity,
-            },
-          };
-          onSubmit(updateValues);
-        }}
-        onChange={onChange}
-        saveActionMsg={submitButtonText}
-        updated={panelUpdated}
-        updateError={errors.updateListingError}
-        updateInProgress={updateInProgress}
-        capacityOptions={capacityOptions}
-      />
-    </div>
-  );
-};
-
-const { func, object, string, bool } = PropTypes;
-
-EditListingCapacityPanel.defaultProps = {
-  className: null,
-  rootClassName: null,
-  listing: null,
-};
-
-EditListingCapacityPanel.propTypes = {
-  className: string,
-  rootClassName: string,
-
-  // We cannot use propTypes.listing since the listing might be a draft.
-  listing: object,
-
-  onSubmit: func.isRequired,
-  onChange: func.isRequired,
-  submitButtonText: string.isRequired,
-  panelUpdated: bool.isRequired,
-  updateInProgress: bool.isRequired,
-  errors: object.isRequired,
-};
-
-export default EditListingCapacityPanel;
-```
-
-<extrainfo title="FTW-product would need few modifications">
-
-Relative imports are deeper and **EditListingCapacityForm** is in the
-same directory.
-
-```jsx
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-
-import config from '../../../../config.js';
+// Import configs and util modules
 import { FormattedMessage } from '../../../../util/reactIntl';
-import { ensureOwnListing } from '../../../../util/data';
-import { findOptionsForSelectFilter } from '../../../../util/search';
+import { LISTING_STATE_DRAFT } from '../../../../util/types';
 
+// Import shared components
 import { ListingLink } from '../../../../components';
 
-import EditListingCapacityForm from './EditListingCapacityForm';
+// Import modules from this directory
+import EditListingServiceHistoryForm from './EditListingServiceHistoryForm';
 
-// Create this file using EditListingDescriptionPanel.module.css
+// Create this file using EditListingLocationPanel.module.css
 // as a template.
-import css from './EditListingCapacityPanel.module.css';
+import css from './EditListingServiceHistoryPanel.module.css';
 
-const EditListingCapacityPanel = props => {
+const getInitialValues = props => {
+  const { serviceHistory } =
+    props.listing?.attributes?.publicData || {};
+  const { lastServiced, serviceDetails } = serviceHistory || {};
+
+  return {
+    lastServiced: {
+      date: (lastServiced && new Date(lastServiced)) || null,
+    },
+    serviceDetails,
+  };
+};
+
+const EditListingServiceHistoryPanel = props => {
   const {
     className,
     rootClassName,
     listing,
+    disabled,
+    ready,
     onSubmit,
-    onChange,
     submitButtonText,
     panelUpdated,
     updateInProgress,
@@ -599,43 +616,46 @@ const EditListingCapacityPanel = props => {
   } = props;
 
   const classes = classNames(rootClassName || css.root, className);
-  const currentListing = ensureOwnListing(listing);
-  const { publicData } = currentListing.attributes;
-
-  const panelTitle = currentListing.id ? (
-    <FormattedMessage
-      id="EditListingCapacityPanel.title"
-      values={{ listingTitle: <ListingLink listing={listing} /> }}
-    />
-  ) : (
-    <FormattedMessage id="EditListingCapacityPanel.createListingTitle" />
-  );
-  const capacityOptions = findOptionsForSelectFilter(
-    'amenities',
-    config.custom.filters
-  );
+  const isPublished =
+    listing?.id && listing?.attributes.state !== LISTING_STATE_DRAFT;
+  const initialValues = getInitialValues(props);
 
   return (
     <div className={classes}>
-      <h1 className={css.title}>{panelTitle}</h1>
-      <EditListingCapacityForm
+      <h1 className={css.title}>
+        {isPublished ? (
+          <FormattedMessage
+            id="EditListingServiceHistoryPanel.title"
+            values={{ listingTitle: <ListingLink listing={listing} /> }}
+          />
+        ) : (
+          <FormattedMessage id="EditListingServiceHistoryPanel.createListingTitle" />
+        )}
+      </h1>
+      <EditListingServiceHistoryForm
         className={css.form}
-        initialValues={{ capacity: publicData.capacity }}
+        initialValues={initialValues}
         onSubmit={values => {
-          const { capacity } = values;
+          const { lastServiced, serviceDetails } = values;
+
           const updateValues = {
             publicData: {
-              capacity,
+              serviceHistory: {
+                lastServiced: lastServiced?.date?.toJSON() || null,
+                serviceDetails,
+              },
             },
           };
+
           onSubmit(updateValues);
         }}
-        onChange={onChange}
         saveActionMsg={submitButtonText}
+        disabled={disabled}
+        ready={ready}
         updated={panelUpdated}
-        updateError={errors.updateListingError}
         updateInProgress={updateInProgress}
-        capacityOptions={capacityOptions}
+        fetchErrors={errors}
+        autoFocus
       />
     </div>
   );
@@ -643,100 +663,83 @@ const EditListingCapacityPanel = props => {
 
 const { func, object, string, bool } = PropTypes;
 
-EditListingCapacityPanel.defaultProps = {
+EditListingServiceHistoryPanel.defaultProps = {
   className: null,
   rootClassName: null,
   listing: null,
 };
 
-EditListingCapacityPanel.propTypes = {
+EditListingServiceHistoryPanel.propTypes = {
   className: string,
   rootClassName: string,
 
   // We cannot use propTypes.listing since the listing might be a draft.
   listing: object,
 
+  disabled: bool.isRequired,
+  ready: bool.isRequired,
   onSubmit: func.isRequired,
-  onChange: func.isRequired,
   submitButtonText: string.isRequired,
   panelUpdated: bool.isRequired,
   updateInProgress: bool.isRequired,
   errors: object.isRequired,
 };
 
-export default EditListingCapacityPanel;
+export default EditListingServiceHistoryPanel;
 ```
 
-</extrainfo>
+In the panel component, we check for an initial service history value
+from the `publicData` property of the listing. In the submit handler,
+the new service history value is stored in the same property. The
+updated listing object is eventually passed to the `updateListingDraft`
+and `requestUpdateListing` functions in the _EditListingPage.duck.js_
+file where the data updates are handled.
 
-In the panel component, we check for an initial capacity value from the
-`publicData` property of the listing. In the submit handler, the new
-capacity value is stored in the same property. The updated listing
-object is eventually passed to the `updateListingDraft` and
-`requestUpdateListing` functions in the _EditListingPage.duck.js_ file
-where the data updates are handled. In FTW-daily and FTW-hourly
-templates, **EditListingCapacityPanel** needs to be exported from
-_src/components/index.js_ for easier access from other files.
+The FieldDateInput handles an object with a **date** property but Flex
+can only save valid JSON values to extended data, so we also need to add
+conversions between string and Date to the initial values builder and
+submit handler.
 
 Now that we have the panel and the form all ready we can add the panel
 to the **EditListingWizardTab** component. This is done by importing
-**EditListingCapacityPanel** in the **_EditListingWizardTab.js_**:
-
-```diff
-import {
-  EditListingAvailabilityPanel,
-+  EditListingCapacityPanel,
-  EditListingDescriptionPanel,
-  EditListingFeaturesPanel,
-  EditListingLocationPanel,
-  EditListingPhotosPanel,
-  EditListingPoliciesPanel,
-  EditListingPricingPanel,
-} from '../../components';
-```
-
-<extrainfo title="FTW-product would import the panels a bit differently">
+**EditListingServiceHistoryPanel** in the **_EditListingWizardTab.js_**:
 
 ```diff
 // Import modules from this directory
-+ import EditListingCapacityPanel from './EditListingCapacityPanel/EditListingCapacityPanel';
+  import EditListingAvailabilityPanel from './EditListingAvailabilityPanel/EditListingAvailabilityPanel';
 import EditListingDetailsPanel from './EditListingDetailsPanel/EditListingDetailsPanel';
 import EditListingDeliveryPanel from './EditListingDeliveryPanel/EditListingDeliveryPanel';
+  import EditListingLocationPanel from './EditListingLocationPanel/EditListingLocationPanel';
 import EditListingPhotosPanel from './EditListingPhotosPanel/EditListingPhotosPanel';
 import EditListingPricingPanel from './EditListingPricingPanel/EditListingPricingPanel';
-```
+  import EditListingPricingAndStockPanel from './EditListingPricingAndStockPanel/EditListingPricingAndStockPanel';
++ import EditListingServiceHistoryPanel from './EditListingServiceHistoryPanel/EditListingServiceHistoryPanel';
 
-</extrainfo>
+```
 
 and adding a new block to the `switch` structure that handles rendering
 the correct panel:
 
 ```jsx
-case CAPACITY: {
-  const submitButtonTranslationKey = isNewListingFlow
-    ? 'EditListingWizard.saveNewCapacity'
-    : 'EditListingWizard.saveEditCapacity';
+case SERVICE_HISTORY: {
   return (
-    <EditListingCapacityPanel
-      {...panelProps(CAPACITY)}
-      submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
-      onSubmit={values => {
-        onCompleteEditListingWizardTab(tab, values);
-      }}
+    <EditListingServiceHistoryPanel
+      {...panelProps(SERVICE_HISTORY)}
     />
   );
 }
 ```
 
-There! Now we've extended the listing data model with capacity
+There! Now we've extended the listing data model with service history
 information.
 
-![Edit the capacity](./edit_capacity.png)
+![Edit the service history](./edit_service_history.png)
 
-The capacity data can now be added to new and existing listings. Next
-chapter describes how that data can be presented in the listing page.
+The capacity data can now be added to new and existing listings. The
+next chapter describes how that data can be presented in the listing
+page.
 
-## Show the attribute on listing page
+### Show the attribute on listing page
 
 Next step in adding a new attribute to the listing is to present it in
 the listing page. On some cases an extension to the listing data model
@@ -750,51 +753,57 @@ Desired outcome could also be achieved just by editing the
 **ListingPage** but extracting the capacity UI parts into a separate
 component will simplify the **ListingPage** and make possible upstream
 updates from the Flex web template repo easier as there's less chances
-for merge conflicts. So, let's create a **SectionCapacity** component in
-the _src/containers/ListingPage/_ directory:
+for merge conflicts. So, let's create a **SectionServiceHistory**
+component in the _src/containers/ListingPage/_ directory:
 
 ```shell
 └── src
     └── containers
         └── ListingPage
-            ├── SectionCapacity.js
-            ├── ListingPage.js
+            ├── SectionServiceHistory.js
+            ├── ListingPageFullImage.js
             └── ListingPage.module.css
 ```
 
 ```jsx
 import React from 'react';
-import { array, shape, string } from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import SectionTextMaybe from './SectionTextMaybe';
 
 import css from './ListingPage.module.css';
+import { formatDateIntoPartials } from '../../util/dates';
 
-const SectionCapacity = props => {
-  const { publicData, options } = props;
+const SectionServiceHistoryMaybe = props => {
+  const { intl, publicData } = props;
+  const { lastServiced, serviceDetails } =
+    publicData?.serviceHistory || {};
+  if (!lastServiced && !serviceDetails) {
+    return null;
+  }
 
-  const capacity = publicData.capacity;
-  const capacityOption = options.find(
-    option => option.key === capacity
+  const formattedServiceDate = formatDateIntoPartials(
+    new Date(lastServiced),
+    intl
   );
 
-  return capacityOption ? (
-    <div className={css.sectionCapacity}>
-      <h2 className={css.capacityTitle}>
-        <FormattedMessage id="ListingPage.capacityTitle" />
-      </h2>
-      <p className={css.capacity}>{capacityOption.label}</p>
+  return (
+    <div className={css.sectionServiceHistory}>
+      <SectionTextMaybe
+        heading={intl.formatMessage({
+          id: 'SectionServiceHistoryMaybe.lastServicedHeading',
+        })}
+        text={formattedServiceDate.date}
+      />
+      <SectionTextMaybe
+        heading={intl.formatMessage({
+          id: 'SectionServiceHistoryMaybe.serviceDetailsHeading',
+        })}
+        text={serviceDetails}
+      />
     </div>
-  ) : null;
+  );
 };
 
-SectionCapacity.propTypes = {
-  options: array.isRequired,
-  publicData: shape({
-    capacity: string,
-  }).isRequired,
-};
-
-export default SectionCapacity;
+export default SectionServiceHistoryMaybe;
 ```
 
 Remember to add corresponding css definitions to
@@ -803,55 +812,32 @@ into **ListingPage** and place it inside the
 `<div className={css.mainContent}>` element:
 
 ```js
-import SectionCapacity from './SectionCapacity';
+import SectionServiceHistoryMaybe from './SectionServiceHistoryMaybe';
 ```
 
-In the render function, you need to retrieve capacity options:
-
-```js
-const capacityOptions = findOptionsForSelectFilter(
-  'capacity',
-  filterConfig
-);
-```
-
-and use those to render the actual `SectionCapacity` component:
+In the render function, you will then show the
 
 ```jsx
 <div className={css.mainContent}>
   {/* other sections */}
 
-  <SectionCapacity publicData={publicData} options={capacityOptions} />
-
+  <SectionServiceHistoryMaybe publicData={publicData} intl={intl} />
   {/* other sections */}
 </div>
 ```
 
-And voilà, we have listing capacity presented in the listing page!
+And voilà, we have listing service history presented in the listing
+page!
 
-<extrainfo title="Where did the filterConfig come from?">
+![Show the service history on the listing page](./service_history_listing_page.png)
 
-In the snippet above, the filterConfig (containing capacity options too)
-are passed to the **ListingPage** as a property, with the default
-property value pulling the options from the custom config
-(_marketplace-custom-config.js_). This way the listing page test can
-define it's own filter configuration that are in line with test data
-used in the test and custom config changes will not affect test results.
+<info>
 
-</extrainfo>
+If there are existing listings, they don't get an update before their
+extended data is updated by a provider. (Operator can also do this
+one-by-one through Console or through Integration API.) So, you should
+assume that there are listings without these new extended data fields
+and, therefore, there should be some safeguards against undefined
+values.
 
-![Capacity on listing page](./capacity_listing_page.png)
-
-> **Note**: if there are existing listings, they don't get an update
-> before their extended data is updated by a provider. (Operator can
-> also do this one-by-one through Console or through Integration API.)
-> So, you should assume that there are listings without these new
-> extended data fields and, therefore, there should be some safeguards
-> against undefined values.
-
-## Use the attribute as a search filter
-
-To see how the capacity attribute can be used to filter search results,
-please refer to the
-[Change search filters in FTW](/how-to/change-search-filters-in-ftw/)
-how-to guide.
+</info>
