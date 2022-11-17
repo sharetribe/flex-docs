@@ -21,17 +21,16 @@ or implement your own flow.
 
 This article describes these two approaches.
 
-## Stripe Connect Onboarding
+## Stripe Connect Onboarding with the combined template
 
 Regulatory aspects of provider onboarding can be challenging and
 changing rapidly. Stripe Connect Onboarding provides ready tools for
 meeting the requirements and reducing the operational complexity of
 self-managing the onboarding flow and identity verification. Below are
 listed the changes required to implement Stripe Connect Onboarding. If
-you are using the latest Flex Template for Web (FTW-daily v4.0.0 or
-FTW-hourly v5.0.0 or later, or any FTW-product), you need to complete
-only the first step - if you are upgrading your own implementation,
-follow the rest of the instructions.
+you are using the combined template, you need to complete only the first
+step - if you are upgrading your own implementation, follow the rest of
+the instructions.
 
 ### 1. Enable Stripe Connect Onboarding in Stripe Dashboard
 
@@ -42,10 +41,9 @@ to provide `name`, `color`, and `icon` for your marketplace.
 
 ![Stripe dashboard](stripeDashboard-updated.png)
 
-**Following steps are already implemented in FTW-daily v4.0.0 and
-FTW-hourly v5.0.0 or later - and in FTW-product**
+## Stripe Connect Onboarding for custom implementations
 
-In FTW there are new components
+In the template there are new components
 [StripePayoutPage](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/StripePayoutPage),
 [StripeConnectAccountForm](https://github.com/sharetribe/ftw-daily/tree/master/src/forms/StripeConnectAccountForm),
 and a new shared duck file

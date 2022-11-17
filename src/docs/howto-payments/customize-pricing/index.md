@@ -17,14 +17,14 @@ found
 [here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/cookbook-payments/customize-pricing).**_
 
 This how-to guide shows you how listing pricing can be customized by
-using two examples: adding a cleaning fee to a listing and changing
-provider commission so that it's based on booking length. The changes
-we're about to make are as follows:
+using two examples: adding an insurance fee to a bookable listing, and
+changing provider commission so that it's based on booking length. The
+changes we are about to make are as follows:
 
-1. Update listing data model by storing cleaning fee price in listing
-   public data
-2. Update pricing logic to add a cleaning fee line item if a listing has
-   cleaning fee stored in public data
+1. Update rental listing data model by storing insurance fee price in
+   listing public data
+2. Update pricing logic to add a insurance fee line item if a listing
+   has insurance fee stored in public data
 3. Update provider commission calculation to be dependent on booking
    length
 
@@ -33,36 +33,52 @@ For more information about pricing in Flex, see the
 
 ## 1. Listing extended data
 
-Pricing can be based on a lot of variables but one practical way to
+Pricing can be based on a lot of variables, but one practical way to
 build it is to base it on information stored as extended data in
 listings. See the
 [Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/) how-to
 guide to read how to extend the listing data model with extended data.
 See the aforementioned guide for instructions how to add inputs for new
 attributes in the listing wizard. Alternatively, in order to try out
-this guide, you can just add a hard-coded cleaning fee to the
+this guide, you can just add a hard-coded insurance fee to the
 `EditListingPricingPanel` component:
 
 ```shell
 └── src
-    └── components
+    └── containers
+        └── EditListingPricingPage
+            └── EditListingPricingWizard
         └── EditListingPricingPanel
             └── EditListingPricingPanel.js
 ```
 
-On submit, save price and cleaningFee:
+Booking and product related transaction processes have different pricing
+panels, since the product process uses the
+EditListingPricingAndStockPanel component. This means that adding the
+insurance fee to the EditListingPricingPanel only adds it to bookable
+listings.
+
+However, we may want to set a different insurance fee for hourly
+listings and daily or nightly listings.
+
+On submit, save price and insuranceFee:
 
 ```diff
++ import { HOUR } from '../../../../transactions/transaction';
+...
  const form = priceCurrencyValid ? (
    <EditListingPricingForm
      className={css.form}
      initialValues={{ price }}
 -    onSubmit={onSubmit}
++    const insuranceFeeAmount = unitType === HOUR ? 500 : 2000;
 +    onSubmit={values => {
 +      const { price } = values;
 +      const updatedValues = {
-+        price,
-+        publicData: { cleaningFee: { amount: 2000, currency: 'USD' } },
++         price,
++         publicData: {
++           insuranceFee: { amount: insuranceFeeAmount, currency: marketplaceCurrency },
++         }
 +      };
 +      onSubmit(updatedValues);
 +    }}
@@ -71,17 +87,19 @@ On submit, save price and cleaningFee:
      disabled={disabled}
 ```
 
-## 2. Transaction line item for cleaning fee
+## 2. Transaction line item for insurance fee
 
-As the previous section mentions, this guide expects that the cleaning
+As the previous section mentions, this guide expects that the insurance
 fee price is stored in listing public data in an object with two keys:
 `amount` and `currency`. The `amount` attribute holds the price in
 subunits whereas `currency` holds the currency code. For example, with a
 cleaning fee of \$20 the subunit amount is 2000 cents.
 
 ```js
+const insuranceFeeAmount = unitType === HOUR ? 500 : 2000;
+...
 publicData: {
-  cleaningFee: { amount: 2000, currency: 'USD' }
+    insuranceFee: { amount: insuranceFeeAmount, currency: marketplaceCurrency },
 }
 ```
 
@@ -99,13 +117,12 @@ in the `/server/api-util/lineItems.js` file:
 ```
 
 In the bottom of the file, add a helper function that resolves the
-cleaning fee of a listing:
+insurance fee of a listing:
 
 ```js
-const resolveCleaningFeePrice = listing => {
-  const publicData = listing.attributes.publicData;
-  const cleaningFee = publicData && publicData.cleaningFee;
-  const { amount, currency } = cleaningFee;
+const resolveInsuranceFeePrice = listing => {
+  const { amount, currency } =
+    listing.attributes.publicData?.insuranceFee || {};
 
   if (amount && currency) {
     return new Money(amount, currency);
@@ -120,64 +137,64 @@ the cleaning fee line item in case the listing has a cleaning fee
 configured:
 
 ```diff
-exports.transactionLineItems = (listing, bookingData) => {
-  const unitPrice = listing.attributes.price;
-  const { startDate, endDate } = bookingData;
+exports.transactionLineItems = (listing, orderData) => {
+  const publicData = listing.attributes.publicData;
+...
 
-  const booking = {
-    code: 'line-item/night',
-    unitPrice,
-    quantity: calculateQuantityFromDates(startDate, endDate, unitType),
-    includeFor: ['customer', 'provider'],
-  };
-
-+ const cleaningFeePrice = resolveCleaningFeePrice(listing);
-+ const cleaningFee = cleaningFeePrice
++ const insuranceFeePrice = resolveInsuranceFeePrice(listing);
++ const insuranceFeeLineItem = insuranceFeePrice
 +   ? [
 +       {
-+         code: 'line-item/cleaning-fee',
-+         unitPrice: cleaningFeePrice,
++         code: 'line-item/insurance-fee',
++         unitPrice: insuranceFeePrice,
 +         quantity: 1,
 +         includeFor: ['customer', 'provider'],
 +       },
 +     ]
 +   : [];
-+
 
+  // Note: extraLineItems for product selling (aka shipping fee)
+  // is not included to commission calculation.
   const providerCommission = {
     code: 'line-item/provider-commission',
--   unitPrice: calculateTotalFromLineItems([booking]),
-+   unitPrice: calculateTotalFromLineItems([booking, ...cleaningFee]),
+-   unitPrice: calculateTotalFromLineItems([order]),
++   unitPrice: calculateTotalFromLineItems([order, ...insuranceFee]),
     percentage: PROVIDER_COMMISSION_PERCENTAGE,
     includeFor: ['provider'],
   };
 
-- const lineItems = [booking, providerCommission];
-+ const lineItems = [booking, ...cleaningFee, providerCommission];
+  // Let's keep the base price (order) as first line item and provider's commission as last one.
+  // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
+- const lineItems = [order, ...extraLineItems, providerCommission];
++ const lineItems = [order, ...extraLineItems, ...insuranceFee, providerCommission];
 
   return lineItems;
 };
 ```
 
-> **Note**: When selecting a code for your custom line-item, remember
-> that Flex requires the codes to be prefixed with _line-item/_ and the
-> maximum length including the prefix is 64 characters. Other than that
-> there are no restrictions but it's suggested that _kebab-case_ is used
-> when the code consists of multiple words.
+<info>
 
-Now, if you open up a listing page and select dates in the booking panel
-on the right, FTW will fetch line items and you will see a cleaning fee
-row in the booking breakdown:
+When selecting a code for your custom line-item, remember that Flex
+requires the codes to be prefixed with _line-item/_ and the maximum
+length including the prefix is 64 characters. Other than that there are
+no restrictions but it's suggested that _kebab-case_ is used when the
+code consists of multiple words.
+
+</info>
+
+Now, if you open up a bookable listing page and select dates in the
+order panel on the right, the template will fetch line items and you
+will see an insurance fee row in the order breakdown:
 
 ![Booking panel](booking-panel.png)
 
-Note, that the booking breakdown automatically renders the cleaning fee
+Note, that the order breakdown automatically renders the insurance fee
 line item by tokenizing the line item code and capitalizing the first
 letter. In case this won't suffice, you can add your own presentational
 line item component to the booking breakdown. This is done by adding the
-line item code (in our case `line-item/cleaning-fee`) into the
+line item code (in our case `line-item/insurance-fee`) into the
 `LINE_ITEMS` array in `src/util/types.js` and creating your own
-`LineItem*Maybe` component to be used in `BookingBreakdown`.
+`LineItem*Maybe` component to be used in `OrderBreakdown`.
 
 ## 3. Dynamic provider commission
 
@@ -196,55 +213,26 @@ follows:
 
 ```diff
  exports.transactionLineItems = (listing, bookingData) => {
-   const unitPrice = listing.attributes.price;
-   const { startDate, endDate } = bookingData;
+ ...
 
-   /**
-    * If you want to use pre-defined component and microcopy for printing the lineItems base price for booking,
-    * you should use one of the codes:
-    * line-item/night, line-item/day or line-item/units (translated to persons).
-    *
-    * Pre-definded commission components expects line item code to be one of the following:
-    * 'line-item/provider-commission', 'line-item/customer-commission'
-    *
-    * By default BookingBreakdown prints line items inside LineItemUnknownItemsMaybe if the lineItem code is not recognized. */
++  const commissionPercentage = quantity > 5
++    ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED
++    : PROVIDER_COMMISSION_PERCENTAGE;
++  const commissionPercentage = quantity > 5
++    ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED
++    : PROVIDER_COMMISSION_PERCENTAGE;
++
 
-+  const quantity = calculateQuantityFromDates(startDate, endDate, unitType);
-
-   const booking = {
-     code: 'line-item/night',
-     unitPrice,
--    quantity: calculateQuantityFromDates(startDate, endDate, unitType),
-+    quantity,
-     includeFor: ['customer', 'provider'],
-   };
-
-   const cleaningFeePrice = resolveCleaningFeePrice(listing);
-   const cleaningFee = cleaningFeePrice
-     ? [
-         {
-           code: 'line-item/cleaning-fee',
-           unitPrice: cleaningFeePrice,
-           quantity: 1,
-           includeFor: ['customer', 'provider'],
-         },
-       ]
-     : [];
-
-+  const commissionPercentage =
-+    quantity > 5 ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED : PROVIDER_COMMISSION_PERCENTAGE;
-
+   // Note: extraLineItems for product selling (aka shipping fee)
+   //       is not included to commission calculation.
    const providerCommission = {
      code: 'line-item/provider-commission',
-     unitPrice: calculateTotalFromLineItems([booking, ...cleaningFee]),
+     unitPrice: calculateTotalFromLineItems([order, ...insuranceFee]),
 -    percentage: PROVIDER_COMMISSION_PERCENTAGE,
 +    percentage: commissionPercentage,
      includeFor: ['provider'],
    };
-
-   const lineItems = [booking, ...cleaningFee, providerCommission];
-
-   return lineItems;
+...
  };
 ```
 

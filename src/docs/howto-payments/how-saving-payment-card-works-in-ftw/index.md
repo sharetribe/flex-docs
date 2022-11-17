@@ -1,10 +1,10 @@
 ---
-title: How saving a payment card works in FTW
+title: How saving a payment card works in the combined template
 slug: save-payment-card
 updated: 2020-08-11
 category: how-to-payments
 ingress:
-  An overview of how the Flex Template for Web functionality for storing
+  An overview of how the combined template functionality for storing
   payment cards works.
 published: true
 ---
@@ -14,8 +14,8 @@ published: true
 When a customer first comes to the marketplace and books a listing,
 there are several form fields the user needs to fill: expiration month,
 card verification code (CVC), card holder's name and possibly other
-billing details. To improve user experience for returning customers,
-it's good to have an option to save payment card details for future
+billing details. To improve the user experience for returning customers,
+it is good to have an option to save payment card details for future
 bookings. If there is an existing payment card available, the user can
 just click the "Send request" button to complete checkout page.
 
@@ -34,8 +34,6 @@ in use. They are automatic one-time payments that happen when the user
 is not interacting with your application. You can read more about
 off-session payments from a separate
 [article](/concepts/off-session-payments-in-transaction-process/).
-
-> Note: saving payment card was added to FTW in version v3.3.0.
 
 ## Saving card details
 

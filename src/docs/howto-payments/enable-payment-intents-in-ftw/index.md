@@ -12,10 +12,12 @@ published: true
 
 This guide walks you through the process of taking
 [PaymentIntents](https://stripe.com/docs/payments/payment-intents) into
-use. This article covers how PaymentIntents can be used with card
-payments. On general level, the steps are the same for other payment
-methods. See
-[background article on payment methods](/concepts/payment-methods-overview/)
+use in your custom client application. **These steps are already
+implemented in the combined template.**
+
+This article covers how PaymentIntents can be used with card payments.
+On general level, the steps are the same for other payment methods. See
+[the concepts article on payment methods](/concepts/payment-methods-overview/)
 and [payment intents](/concepts/payment-intents/) for more information.
 Stripe's PaymentIntent is a new way to handle Strong Customer
 Authentication (SCA) by using frictionless
@@ -25,7 +27,7 @@ Before starting to read this article, you probably want to get familiar
 with
 [Strong Customer Authentication](/concepts/strong-customer-authentication/)
 and [how PaymentIntent flow works](/concepts/payment-intents/) by
-reading related background articles.
+reading related concepts articles.
 
 > Note: Taking Stripe PaymentIntent flow into use, is a big change for
 > CheckoutPage and includes process change. You should carefully check
