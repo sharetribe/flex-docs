@@ -1,17 +1,18 @@
 ---
-title: Change transaction process setup in FTW
+title: Change transaction process setup in combined template
 slug: change-transaction-process-in-ftw
-updated: 2020-06-29
+updated: 2022-11-22
 category: how-to-transaction-process
 ingress:
-  This guide describes how to customize Flex Template for Web (FTW) to
-  use another transaction process.
+  This guide describes how to customize the combined template to use
+  another transaction process.
 published: true
 ---
 
-The default transaction process in FTW-daily is a nightly booking
-process called `flex-default-process/release-1` and FTW-daily is created
-to support states and transitions defined in that process.
+The combined template defines four transaction processes by default:
+daily bookings, nightly bookings, hourly bookings, and product sales
+processes. The template is created to support states and transitions
+defined in those processes.
 
 How the transaction process works behind the Marketplace API depends on
 how your process is customised in our backend. To customise the
@@ -19,55 +20,89 @@ transaction process in the backend, you should use Flex CLI. See the
 [Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 tutorial to get familiar with the tool.
 
-If you have changed the transaction process in your marketplace, you
-should check if your client app needs to be updated to match this
-different transaction process. You can read more about how these
-processes work from a background info article about the
+If you have changed the transaction process in your marketplace, or
+added a new one to use in parallel with the existing ones, you should
+check if your client app needs to be updated to match this different
+transaction process. You can read more about how these processes work
+from a background info article about the
 [transaction process](/concepts/transaction-process/).
 
 The following guide will help you to customise the process flow in FTW
 to match the process in our backend.
 
-> **Note:** By default,
-> [FTW-daily](https://github.com/sharetribe/ftw-daily/) is using
-> [day-based availability](/references/availability/#day-based-availability-management).
-> If you are using
-> [time-based availability](/references/availability/#time-based-availability-management)
-> in your marketplace, you can start with
-> [FTW-hourly](https://github.com/sharetribe/ftw-hourly), the template
-> supporting time-based availability out of the box.
+## 1. Add the new transaction process configuration
 
-## 1. Change the transaction process alias
+The [src/config/configTransaction.js](todo: link) file lists the
+transaction processes actively used by the template, so you need to add
+a configuration for a new transaction process. You can either comment
+out the previous active process definitions (if you only want to use the
+new process) or leave them as they are (if you want to allow using
+multiple processes in the same application).
 
-In
-[src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js),
-there are two configurations that need an update: `bookingProcessAlias`
-and `bookingUnitType`.
+```js
+{
+  type: 'negotiated-nightly-booking',
+  label: 'Negotiated nightly booking',
+  process: 'negotiated-nightly-booking',
+  alias: 'release-1',
+  unitType: 'night',
+},
+```
 
-`bookingProcessAlias` should point to the correct alias. You should
+The `alias` variable should point to the correct alias. You need to
 check from Console which process and process version your client app
 should support. All available transaction process aliases can be found
-from
+in the
 [Build section](https://flex-console.sharetribe.com/transaction-processes)
 in Console.
 
-`bookingUnitType` specifies what kind of bookable units the web app is
-dealing with. Currently, there are 3 possible values for the unit type:
-`line-item/night`, `line-item/day`, and `line-item/units`.
+The `unitType` specifies what kind of units the web app is dealing with.
+The client template recognises and handles four unit types by default:
+**day**, **night**, **hour**, and **item**.
 
-> Note 1: If you change bookingUnitType from config.js, you should
-> change it also for pricing of privileged transtions at client app's
-> server: server/api-util/lineItems.js
+<info>
 
-> Note 2: You should revise other configuration options too.
+The Flex engine can handle other unit types besides the four default
+ones. If you use a unit type outside the defaults, you need to add
+custom handling for it in e.g. line item calculation, order handling,
+and email templates.
 
-## 2. Check if the transaction.js file needs to be updated
+</info>
 
-In
-[src/util/transaction.js](https://github.com/sharetribe/flex-template-web/blob/master/src/util/transaction.js)
-file, there are lots of helper functions that are used to determine
-which state the transaction is. This file should be updated to match the
-new transaction process.
+## 2. Update the relevant files in src/transactions folder
+
+Supported transaction processes are also defined in the files in the
+**src/transactions** folder. In all cases, you will need to update the
+**transaction.js** file to include your new process definition.
+
+```shell
+└── src
+    └── transactions
+        └── transaction.js
+        ...
+
+```
+
+In addition to updating the process name to your **transaction.js**
+file, you will need to make sure the application has an accurate
+representation of the different transitions and states in your new
+transaction process. The transitions and states for the existing
+processes are defined in the **transactionProcessBooking.js** and
+**transactionProcessProduct.js** files in the same **src/transactions**
+folder.
+
+If you are replacing e.g. the default booking process with a new booking
+process that has different transitions and states, you can modify the
+existing **transactionProcessBooking.js** file to correspond to the new
+process. If you are creating a parallel booking process and want to
+allow providers to choose between two processes for their listings, you
+will need to create a new transaction process file and import it in
+**transaction.js**.
+
+The following instructions specify the steps for modifying the existing
+**transactionProcessBooking.js** file, so if you do create a new one, we
+recommend you replicate the existing default process file and make the
+necessary changes instead of creating one from scratch.
 
 ### 2.1. Update transitions and states
 
@@ -87,52 +122,42 @@ reached a specific state. The description format follows
 actual state machine are handled by Marketplace API.
 
 ```js
-const stateDescription = {
+export const graph = {
   // id is defined only to support Xstate format.
   // However if you have multiple transaction processes defined,
   // it is best to keep them in sync with transaction process aliases.
-  id: 'flex-default-process/release-1',
+  id: 'default-booking/release-1',
 
-   // This 'initial' state is a starting point for new transaction
-  initial: STATE_INITIAL,
+  // This 'initial' state is a starting point for new transaction
+  initial: states.INITIAL,
 
   // States
   states: {
-    [STATE_INITIAL]: {
+    [states.INITIAL]: {
       on: {
-        [TRANSITION_ENQUIRE]: STATE_ENQUIRY,
-        [TRANSITION_REQUEST]: STATE_PREAUTHORIZED,
+        [transitions.ENQUIRE]: states.ENQUIRY,
+        [transitions.REQUEST_PAYMENT]: states.PENDING_PAYMENT,
       },
     },
-    [STATE_ENQUIRY]: {
+    [states.ENQUIRY]: {
       on: {
-        [TRANSITION_REQUEST_AFTER_ENQUIRY]: STATE_PREAUTHORIZED,
-      },
-    },
-
-     [STATE_PREAUTHORIZED]: {
-      on: {
-        [TRANSITION_DECLINE]: STATE_DECLINED,
-        [TRANSITION_EXPIRE]: STATE_DECLINED,
-        [TRANSITION_ACCEPT]: STATE_ACCEPTED,
+        [transitions.REQUEST_PAYMENT_AFTER_ENQUIRY]: states.PENDING_PAYMENT,
       },
     },
 
-    [STATE_DECLINED]: {},
-    [STATE_ACCEPTED]: {
+    [states.PENDING_PAYMENT]: {
       on: {
-        [TRANSITION_CANCEL]: STATE_CANCELED,
-        [TRANSITION_COMPLETE]: STATE_DELIVERED,
+        [transitions.EXPIRE_PAYMENT]: states.PAYMENT_EXPIRED,
+        [transitions.CONFIRM_PAYMENT]: states.PREAUTHORIZED,
       },
     },
     // etc.
 ```
 
 When adding a new state, it needs to be added to the `states` property
-of `stateDescription`. Transitions from one state to another are defined
-in the `on` property of a state. So, you need to add outbound
-transitions there and inbound transitions to the `on` property of the
-previous state(s).
+of `graph`. Transitions from one state to another are defined in the
+`on` property of a state. So, you need to add outbound transitions there
+and inbound transitions to the `on` property of the previous state(s).
 
 ### 2.3. Update graph helper functions to match the new process
 
