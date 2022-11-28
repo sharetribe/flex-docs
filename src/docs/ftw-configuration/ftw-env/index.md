@@ -1,5 +1,5 @@
 ---
-title: FTW Environment configuration variables
+title: Template environment variables
 slug: ftw-env
 updated: 2021-01-21
 category: ftw-configuration
@@ -9,11 +9,13 @@ ingress:
 published: true
 ---
 
-The following configuration variables can be set to control the Flex
-template app behaviour. Most of them have defaults that work for
-development environment. For production deploys most should be set.
+You can change the following environment variables to specify API
+credentials or enable certain functionalities. Most have a default value
+that allows you to run the template locally. However, when you are ready
+to deploy your marketplace to production, you should reference this list
+of environment variables.
 
-## Variables
+## List of available environment variables
 
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
@@ -44,16 +46,11 @@ development environment. For production deploys most should be set.
   test key (prefix `pk_test_`) for development. The secret key needs to
   be added to Flex Console.
 
-- **`REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY`**
+- **`REACT_APP_MARKETPLACE_ROOT_URL`**
 
-  The currency used in the Marketplace as ISO 4217 currency code. For
-  example: USD, EUR, CAD, AUD, etc.
-
-- **`REACT_APP_CANONICAL_ROOT_URL`**
-
-  Canonical root url of the marketplace. Needed for social media
-  sharing, SEO optimization, and social logins. Note, that the value
-  should not include a trailing slash.
+  The root url of the marketplace. Needed for social media sharing, SEO
+  optimization, and social logins. Note, that the value should not
+  include a trailing slash.
 
 - **`NODE_ENV`**
 
@@ -71,7 +68,7 @@ development environment. For production deploys most should be set.
 
 - **`REACT_APP_SHARETRIBE_USING_SSL`**
 
-  Redirect HTTP to HTTPS?
+  Redirect HTTP to HTTPS.
 
 - **`SERVER_SHARETRIBE_TRUST_PROXY`**
 
@@ -104,36 +101,31 @@ development environment. For production deploys most should be set.
   [How to set up Analytics for FTW](/ftw/how-to-set-up-analytics-for-ftw/)
   guide for more information.
 
-- **`REACT_APP_AVAILABILITY_ENABLED`**
-
-  Enables availability calendar for listings.
-
-- **`REACT_APP_DEFAULT_SEARCHES_ENABLED`**
-
-  Enables default search suggestions in location autocomplete search
-  input.
-
-- **`REACT_APP_SHARETRIBE_SDK_BASE_URL`**
+* **`REACT_APP_SHARETRIBE_SDK_BASE_URL`**
 
   The base url to access the Sharetribe Flex Marketplace API. FTW uses
   the correct one by default so no need to set this.
 
-- **`REACT_APP_FACEBOOK_APP_ID`**
+* **`REACT_APP_FACEBOOK_APP_ID`**
 
   App ID of a Facebook App when Facebook login is used.
 
-- **`FACEBOOK_APP_SECRET`**
+* **`FACEBOOK_APP_SECRET`**
 
   App secret of a Facebook App when Facebook login is used.
 
-> **NOTE**: FTW templates are built on top of Create React App (CRA).
-> CRA uses WebpackDevServer for providing Hot Module Reloading feature.
-> In some environments, WebpackDevServer might need some extra
-> configurations. You should also check CRA's advanced configurations if
-> you experience problems with socket ports.
-> https://create-react-app.dev/docs/advanced-configuration
+<info>
 
-## Defining configuration
+FTW templates are built on top of Create React App (CRA). CRA uses
+WebpackDevServer for providing Hot Module Reloading feature. In some
+environments, WebpackDevServer might require configuring additional
+environment variables. You should also check
+[CRA's advanced configurations](https://create-react-app.dev/docs/advanced-configuration)
+if you experience problems with socket ports.
+
+</info>
+
+## Setting environment variables
 
 When the app is started locally with `yarn run dev` or
 `yarn run dev-server`, you can set environment variables by using the
@@ -147,8 +139,16 @@ variables and do not deploy an `.env` file. The client application will
 only be packaged with env variables that start with `REACT_APP`. This
 way server secrets don't end up in client bundles.
 
-**With deploys note that the configuration options are bundled in the
-client package at build time.** The configuration of the build
-environment must match run environment for things to work consistently.
-To apply changes to configuration values client bundle must be rebuilt.
-Just restarting the server is not enough.
+<warning>
+
+Do not set environment variables with the REACT_APP prefix that you do
+not want to reveal to the client. It is important to **never** publicly
+reveal the client secret of the Marketplace or Integration API.
+
+</warning>
+
+Environment variables are bundled with the client during build time. If
+you change environment variables locally or in production, you must
+remember to rebuild the client bundle. In production, this means
+redeploying the application. Locally, you need to rerun either
+`yarn run dev` or `yarn run dev-server`.

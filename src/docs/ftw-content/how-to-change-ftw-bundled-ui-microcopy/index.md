@@ -18,23 +18,15 @@ We use the [React Intl](https://github.com/yahoo/react-intl) library to
 represent UI microcopy and to format dates, numbers, and money values.
 
 _**Note:** Starting in 2022-05, FTW template microcopy can also be
-modified in Flex Console. If you want to implement this feature into
-your pre-v8.5 FTW-daily template, you can see the necessary
-modifications in the PR for
-[ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
-more:_
+modified in Flex Console._
 
 - _[Microcopy in Flex](/concepts/microcopy/)_
 - _[How hosted microcopy works in the FTW templates](/ftw/hosted-microcopy/)_
 
-<extrainfo title="FTW-hourly and FTW-product versions with hosted microcopy">
-In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is available in v9.2.
-</extrainfo>
-
 ## The microcopy file
 
 All the bundled microcopy can be found in the
-[src/translations/en.json](https://github.com/sharetribe/ftw-daily/blob/master/src/translations/en.json)
+[src/translations/en.json](https://github.com/sharetribe/ftw-x/blob/master/src/translations/en.json)
 file. The microcopy data is formatted as one JSON object with all the
 microcopy key-value pairs as properties.
 

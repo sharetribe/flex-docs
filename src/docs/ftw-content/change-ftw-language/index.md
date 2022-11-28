@@ -11,7 +11,8 @@ published: true
 
 If you want the template to use a language that is not supported by
 default, a new language-specific microcopy file needs to be added and
-the messages in it need to be translated:
+the messages in it need to be translated. This article walks you through
+the steps required to to that.
 
 ## Creating a new microcopy file
 
@@ -35,12 +36,15 @@ microcopy asset.
 
 Once you have the microcopy file in place:
 
-1. In `src/config.js`, change the `locale` variable value to match the
-   new locale (the name of the new microcopy file, without the
+1. In `config/configDefault.js`, change the `locale` variable value to
+   match the new locale (the name of the new microcopy file, without the
    extension), for example:
 
 ```js
-const locale = 'it';
+localization: {
+ locale: 'it',
+ ...
+}
 ```
 
 2. In `src/app.js`, change the React Intl import to point to the correct

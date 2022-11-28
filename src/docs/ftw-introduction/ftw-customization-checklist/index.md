@@ -4,15 +4,17 @@ slug: customization-checklist
 updated: 2019-10-23
 category: ftw-introduction
 ingress:
-  This guide lists the important things to go through when customizing
-  Flex Template for Web (FTW).
+  This article provides a reference list of common customisations to aid
+  you in development.
 published: true
 ---
 
-Here is a list of things to update and check when starting to customize
-FTW.
+The template provides a great starting point for developing your
+marketplace. This article provides a reference list of articles and
+guides you can use when you start customising your marketplace's visual
+appearance, content and configurations.
 
-## 1. Customize visual styles
+## Customize visual styles
 
 - Marketplace colors:
   [How to customize FTW styles](/ftw/how-to-customize-ftw-styles/)
@@ -29,7 +31,7 @@ FTW.
   [CheckoutPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
 - [Default background image](https://github.com/sharetribe/ftw-daily/blob/master/src/assets/background-1440.jpg)
 
-## 2. Change text content
+## Change text content
 
 - Update UI texts or change the language:
   [How to change FTW UI texts](/ftw/how-to-change-ftw-ui-texts/)
@@ -55,7 +57,7 @@ FTW.
 
     </extrainfo>
 
-## 3. Change configuration
+## Change configuration
 
 - Go through the
   [FTW Environment configuration variables](/ftw/ftw-env/)
@@ -71,7 +73,7 @@ FTW.
   - FTW-daily & FTW-hourly: _src/default-location-searches.js_
   - FTW-product: _src/config/default-location-searches.js_
 
-## 4. Other optional changes
+## Other optional changes
 
 - **Update [page schema](/tutorial/add-faq-page/#page-schema)** to
   improve Search Engine Optimization (SEO)

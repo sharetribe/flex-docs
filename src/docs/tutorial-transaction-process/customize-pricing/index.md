@@ -359,8 +359,6 @@ Line items describe what is included in a transaction. It can be a
 varying set of things from the number of booked units to customer and
 provider commissions, add-ons, discounts, or payment refunds.
 
-<br/>
-
 Every line item has a unit price and one of the following attributes:
 quantity or percentage. The quantity attribute can be used to denote the
 number of booked units, like the number of booked nights. Quantity can
@@ -368,8 +366,6 @@ also be defined as a multiplication of units and seats. The percentage
 param is used when modeling commissions for example. Based on these
 attributes a line total is calculated for each line item. Line totals
 then define the total payin and payout sums of the transaction.
-
-<br/>
 
 You can read more about line items and pricing in the
 [pricing concepts article](/concepts/pricing/).

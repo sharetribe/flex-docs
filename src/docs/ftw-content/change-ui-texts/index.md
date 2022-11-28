@@ -9,10 +9,10 @@ ingress:
 published: true
 ---
 
-The FTW templates have several types of texts that can be read in the
-user interface. The most extensive group of UI texts is microcopy, but
-FTW templates also have static pages, as well as some other groups of
-content that can be configured in the code base.
+The template has several types of texts that can be read in the user
+interface. The most extensive group of UI texts is microcopy, but the
+template also has static pages, as well as some other groups of content
+that can be configured in the code base.
 
 ## Microcopy
 
@@ -38,13 +38,15 @@ You may also want to change the language of the user interface entirely.
 Read more about
 [changing the language used in FTW](/ftw/how-to-change-ftw-language/).
 
-In addition to microcopy, there are other forms of content in the FTW
+In addition to microcopy, there are other forms of content in the client
 applications that operators may need to manage.
 
 ## Static pages
 
-A few components in the FTW template app contain texts that are not
-included in the `en.json` file, namely _AboutPage_, _PrivacyPolicy_, and
+TODO: If pages is released, remove this
+
+A few components in the template app contain texts that are not included
+in the `en.json` file, namely _AboutPage_, _PrivacyPolicy_, and
 _TermsOfService_. The reason behind this is that these components only
 contain static content that is laid out in more of a document format so
 the copy for these texts can easily be changed and maintained in the
@@ -60,23 +62,10 @@ guide.
 There are few other cases where we haven't added microcopy directly to
 the microcopy files.
 
-Labels for filters (e.g. _categories_ and _amenities_ in FTW-daily) can
-be found in _src/marketplace-custom-config.js._ By default,
-[these filters are not in use](/how-to/change-search-filters-in-ftw/#adding-a-new-search-filter),
-since every marketplace has its own extended data and search filters for
-them.
+Labels for filters can be found in
+[_config/configListing.js_](https://github.com/sharetribe/ftw-x/blob/main/src/config/configListing.js).
 
-<extrainfo title="FTW-product has moved the location of some components">
-
-```shell
-└── src
-    └── config
-        └── marketplace-custom-config.js
-```
-
-</extrainfo>
-
-[Country codes](https://github.com/sharetribe/ftw-daily/blob/master/src/translations/countryCodes.js)
+[Country codes](https://github.com/sharetribe/ftw-x/blob/master/src/translations/countryCodes.js)
 are in a separate file as well. Stripe API requires country information
 as
 [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)

@@ -9,22 +9,9 @@ ingress:
 published: true
 ---
 
-Starting from 2022-05, FTW template microcopy can be managed both in the
-built-in microcopy files and in Flex Console. This article describes how
-the FTW template uses the hosted microcopy and merges it with the
-built-in microcopy
-
-_**Note:** If you want to implement this feature into your pre-v8.5
-FTW-daily template, you can see the necessary modifications in the PRs
-for [ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
-more:_
-
-- _[Microcopy in Flex](/concepts/microcopy/)_
-- _[How built-in microcopy works in the FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/)_
-
-<extrainfo title="FTW-hourly and FTW-product versions with hosted microcopy">
-In FTW-hourly, hosted microcopy are available in v10.5. In FTW-product, they are available in v9.2.
-</extrainfo>
+Template microcopy can be managed both in the built-in microcopy files
+and in Flex Console. This article describes how the FTW template uses
+the hosted microcopy and merges it with the built-in microcopy.
 
 ## Hosted microcopy
 
@@ -38,11 +25,12 @@ microcopy file for the microcopy keys that do not have a value in the
 hosted asset. That way, the UI can still render something meaningful for
 the parts of the page that the operator has not modified.
 
-FTW templates have specified hosted microcopy as part of the app-wide
-configuration in _src/config.js_. This hosted microcopy lives in a file
-called `content/translations.js`, since language-specific microcopy
-files make it fairly easy to translate the FTW template to languages
-other than the default English.
+FTW templates specify the path to the hosted microcopy as part of the
+app-wide configuration in
+[_config/configDefault.js_](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js#L78).
+This hosted microcopy lives in a file called _content/translations.js_,
+since language-specific microcopy files make it fairly easy to translate
+the FTW template to languages other than the default English.
 
 ```js
 // CDN assets for the app. Configurable through Flex Console.
@@ -203,15 +191,16 @@ environment or **_yarn run dev-server_** on your local machine.
   _ServerApp_ component.
   ```jsx
   export const ServerApp = props => {
-    const { url, context, helmetContext, store, hostedTranslations = {} } = props;
-    setupLocale();
+    const { url, context, helmetContext, store, hostedTranslations = {}, hostedConfig = {} } = props;
+    const appConfig = mergeConfig(hostedConfig, defaultConfig);
     HelmetProvider.canUseDOM = false;
     return (
-      <IntlProvider
-        locale={config.locale}
-        messages={{ ...localeMessages, ...hostedTranslations }}
-        textComponent="span"
-      >
+      <Configurations appConfig={appConfig}>
+        <IntlProvider
+          locale={appConfig.localization.locale}
+          messages={{ ...localeMessages, ...hostedTranslations }}
+          textComponent="span"
+        >
     {/* etc. */}
   ```
 
@@ -225,8 +214,10 @@ environment or **_yarn run dev-server_** on your local machine.
 
 - Hosted microcopy is merged with default microcopy in _ClientApp_
   component.
+
   ```js
-  <ClientApp store={store} hostedTranslations={translations} />
+  <ClientApp store={store} hostedTranslations={translations} hostedConfig={hostedConfig} />,
+
   ```
 
 ## How development build works with hosted microcopy
