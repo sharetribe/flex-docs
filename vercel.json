@@ -1,12 +1,6 @@
 {
-   "routes": [ { "handle": "filesystem" }, { "src": "/docs/(.*)", "status": 404, "dest": "/docs/404" } ],
   "redirects":
 [
-  {
-    "source": "/",
-    "destination": "/docs/",
-    "permanent": true
-  },
   {
     "source": "/docs/background/development-skills/",
     "destination": "/docs/introduction/development-skills/",
