@@ -2,6 +2,11 @@
   "redirects":
 [
   {
+    "source": "/",
+    "destination": "/docs/",
+    "permanent": true
+  },
+  {
     "source": "/docs/background/development-skills/",
     "destination": "/docs/introduction/development-skills/",
     "permanent": true
