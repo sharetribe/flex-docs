@@ -11,6 +11,18 @@ ingress:
 published: true
 ---
 
+<warning>
+
+Following this guide currently does not produce a fully working LinkedIn
+OIDC proxy. We are actively looking into this to determine whether the
+issue is due to LinkedIn, Passport.js, or something else.
+
+For further information, reach out to our support team by email, or
+consult the Sharetribe Developer Community at Sharetribe's Flex
+development Slack Channel.
+
+</warning>
+
 The OpenID Connect (OIDC) support in Flex allows you to integrate login
 solutions that do not necessarily implement OpenID Connect. The idea is
 to build a suitable login flow in FTW and wrap that login information
