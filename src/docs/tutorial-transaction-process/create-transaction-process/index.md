@@ -457,25 +457,21 @@ default, so we do not need to make any changes to
 
 </info>
 
-// TODO: CHECK WHAT COMPONENTS NEED TO CHANGE!
-
 ### Add microcopy strings
 
-- a lot of microcopy strings in the FTW template are transaction process
-  specific. In other words, when you create a new transaction process,
-  you will also need to add microcopy for the relevant keys in the new
-  process
-- In this case, you can locate the microcopy keys and values that
-  reference **default-booking** and duplicate them for the new process,
-  e.g.
+A lot of microcopy strings in the combined template are transaction
+process specific. In other words, when you create a new transaction
+process, you will also need to add microcopy for the relevant keys in
+the new process.
+
+In this case, you can locate the microcopy keys and values that
+reference **default-booking** and duplicate them for the new process,
+for example:
 
 ```diff
   "CheckoutPage.default-booking.title": "Complete booking",
 + "CheckoutPage.cottagedays-nightly-booking.title": "Complete booking",
 ```
-
-// TODO Figure out whether templates will have default options for all
-unit types or if email template needs to be changed!
 
 <info>
 

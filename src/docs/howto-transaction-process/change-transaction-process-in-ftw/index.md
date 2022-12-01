@@ -71,7 +71,7 @@ and email templates.
 
 ## 2. Update the relevant files in src/transactions folder
 
-Supported transaction processes are also defined in the files in the
+Supported transaction processes are also defined in the files found in
 **src/transactions** folder. In all cases, you will need to update the
 **transaction.js** file to include your new process definition.
 
@@ -83,6 +83,14 @@ Supported transaction processes are also defined in the files in the
 
 ```
 
+```js
+// Then names of supported processes
+export const PRODUCT_PROCESS_NAME = 'default-buying-products';
+export const BOOKING_PROCESS_NAME = 'default-booking';
+// Add new processes with a descriptive name
+export const NEGOTIATION_PROCESS_NAME = 'negotiation-booking';
+```
+
 In addition to updating the process name to your **transaction.js**
 file, you will need to make sure the application has an accurate
 representation of the different transitions and states in your new
@@ -91,12 +99,13 @@ processes are defined in the **transactionProcessBooking.js** and
 **transactionProcessProduct.js** files in the same **src/transactions**
 folder.
 
-If you are replacing e.g. the default booking process with a new booking
-process that has different transitions and states, you can modify the
-existing **transactionProcessBooking.js** file to correspond to the new
-process. If you are creating a parallel booking process and want to
-allow providers to choose between two processes for their listings, you
-will need to create a new transaction process file and import it in
+If you are replacing one of the default processes (for instance the
+default booking process with a new booking process with different
+transitions and states), you can modify the existing
+**transactionProcessBooking.js** file to correspond to the new process.
+If you are creating a parallel booking process and want to allow
+providers to choose between two processes for their listings, you will
+need to create a new transaction process file and import it in
 **transaction.js**.
 
 The following instructions specify the steps for modifying the existing
@@ -161,37 +170,119 @@ and inbound transitions to the `on` property of the previous state(s).
 
 ### 2.3. Update graph helper functions to match the new process
 
-If you have different states in your state graph description, you might
-need to adjust the helper functions accordingly.
+Since the states and transitions in your state graph description have
+changed, you will need to review all the helper functions in your
+transaction process file and adjust them accordingly.
 
-For example, if you have a state `STATE_CANCELED_BY_CUSTOMER`, you might
-need a new helper function to figure out if a transaction has reached
-that state.
+For example, if you have different privileged transitions in your
+process than the ones in the default process, you will need to update
+the helper function to feature the correct transitions.
 
 ```js
-export const txIsCanceledByCustomer = tx =>
-  getTransitionsToState(STATE_CANCELED_BY_CUSTOMER).includes(
-    txLastTransition(tx)
-  );
+export const isPrivileged = transition => {
+  return [
+    transitions.REQUEST_PAYMENT,
+    transitions.REQUEST_PAYMENT_AFTER_ENQUIRY,
+  ].includes(transition);
+};
 ```
 
-> Note: Only transitions are included to transaction entity since all
-> the actions that happen during the process are tied to transitions not
-> states. Read more about the
-> [transaction process](/concepts/transaction-process/).
+<info>
 
-## 3. Update all the components that import util/transaction.js
+Only transitions are included to transaction entity, since all the
+actions that happen during the process are tied to transitions, not
+states. Read more about the
+[transaction process](/concepts/transaction-process/).
 
-The biggest task is to ensure that all the views know how to handle this
-new transaction process. You should _check all the components that
-import `transaction.js` file_. The easiest way is to find in all the
-files for a string: `from '../../util/transaction'`. However, you should
-anyway pay attention to these components:
+</info>
 
-- `InboxPage`
-- `TransactionPanel`
-- `ActivityFeed`
-- `CheckoutPage`
+## 3. Update state data for Inbox Page and Transaction Page
 
-Those components are tied closely to the different states a transaction
-might be in. Remember to test the whole transaction process thoroughly.
+In addition to the transaction process file, there are two other places
+where transaction process state data is handled: **InboxPage** and
+**TransactionPage**. Both of those containers have files you will need
+to review.
+
+```shell
+  └── src
+      └── containers
+          ├── InboxPage
+              ├── InboxPage.stateData.js
+              ├── InboxPage.stateDataBooking.js
+              └── InboxPage.stateDataProduct.js
+          └── TransactionPage
+              ├── TransactionPage.stateData.js
+              ├── TransactionPage.stateDataBooking.js
+              └── TransactionPage.stateDataProduct.js
+
+```
+
+Similarly to the **src/transactions** folder, you can either modify the
+existing booking or product file, or you can replicate the existing file
+into a new one for modifications, depending on your use case.
+
+In both contexts, the **...stateData.js** file compiles necessary
+transaction state information being used on the page. For instance,
+TransactionPage has an action button, and depending on the transaction
+state and the user's role in the transaction, the button may be used to
+accept, mark received, or dispute the transaction.
+
+The **...stateData.js** file in turn imports functions from
+**...stateDataBooking.js** and **...stateDataProduct.js** to retrieve
+the state data corresponding to the correct process.
+
+```js
+export const getStateData = params => {
+  ...
+  if (processName === PRODUCT_PROCESS_NAME) {
+    return getStateDataForProductProcess(params, processInfo());
+  } else if (processName === BOOKING_PROCESS_NAME) {
+    return getStateDataForBookingProcess(params, processInfo());
+  } else {
+    return {};
+  }
+}
+```
+
+If you have added a new process name constant besides
+_BOOKING_PROCESS_NAME_ and _PRODUCT_PROCESS_NAME_, you will need to
+import it in **...stateData.js**, as well as import the function it
+needs to use for retrieving state data, so that your Inbox Page and
+Transaction Page work correctly.
+
+The process specific **...stateData** files (e.g.
+**...stateDataBooking.js**) export a _getStateDataFor..._ function,
+which conditionally resolves the necessary props based on the
+transaction state and the user role. You will need to check which
+changes to make in the **ConditionalResolver**, for example if there are
+new states that require specific props to be returned to the page based
+on the state.
+
+If you have created a new **stateData** file (e.g.
+**InboxPage.stateData.negotiation.js**), you will need to export a
+uniquely named _getStateDataFor..._ function from that file.
+
+## 4. Add microcopy strings
+
+A lot of microcopy strings in the combined template are transaction
+process and state specific.
+
+```js
+...
+  "InboxPage.default-booking.accepted.status": "Accepted",
+  "InboxPage.default-booking.canceled.status": "Canceled",
+  "InboxPage.default-booking.declined.status": "Declined",
+  "InboxPage.default-booking.delivered.status": "Delivered",
+...
+```
+
+This means that when you create a new transaction process, you will also
+need to add microcopy for the relevant keys and states in the new
+process. You can add the process specific keys either into the
+[bundled microcopy files in the template](/ftw/how-to-change-ftw-bundled-microcopy/)
+or through the [Flex Console Content tab](/concepts/microcopy/).
+
+After making the necessary changes in these contexts, your new
+transaction process should work as expected in the template! Be sure to
+test all the steps in your transaction process carefully to make sure
+that all cases show up as you would expect.
