@@ -10,6 +10,9 @@ ingress:
 published: true
 ---
 
+TODO: Find out whether removing Stripe is necessary in the new template
+through configs or if we still need explicit removal instructions
+
 ## Removing Stripe
 
 In this guide, we will go through the minimum changes needed to make the

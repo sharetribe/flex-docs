@@ -1,13 +1,15 @@
 ---
-title: Extend listing data in FTW
+title: Extend listing data in Sharetribe Web Template
 slug: extend-listing-data-in-ftw
 updated: 2020-06-04
 category: how-to-listing
 ingress:
   This guide describes how to use use extended data to expand the
-  listing data model in Flex Template for Web (FTW).
+  listing data model in Sharetribe Web Template.
 published: true
 ---
+
+// TODO fix slug and add redirect
 
 This guide shows you two different approaches to expanding the listing
 data model in your marketplace. We'll have a look on how the listing can
