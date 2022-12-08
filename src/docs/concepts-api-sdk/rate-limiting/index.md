@@ -28,14 +28,33 @@ moment.
 </extrainfo>
 
 The rate limits are different for queries (fetching data) and commands
-(modifying data). You can find the most up-to-date details of Flex rate
-limits in the [API reference](TODO).
+(modifying data). Queries are rate limited at 1 request per second (60
+requests per minute) on average. Commands are rate limited at 1 request
+per 2 seconds (30 requests per minute) on average. You can find more
+information on Flex rate limits in the [API reference](TODO).
 
 It is good to note that **production environments are currently not rate
 limited**. Still, as you build your Flex marketplace implementation to
 take the rate and concurrency limits into account in your development
 environment, we do appreciate it if you also transfer those behaviors
 into production.
+
+## Rate limit interaction
+
+All query and command endpoints have rate limits in dev and demo
+environments. In addition, the Integration API listing creation endpoint
+has a separate rate limit in all environments. This means that in dev
+and demo environments, both rate limits apply to listing creation in the
+following way:
+
+- If the command rate limit burst capacity has not yet been depleted,
+  listing creation is rate limited at 100 API calls per minute. This
+  depletes the command rate limit burst capacity accordingly.
+- If the command rate limit burst capacity has been depleted, listing
+  creation is rate limited at the regular command rate limit of 30
+  requests per minute.
+- If other commands are taking place while listings are being created,
+  all those calls count towards the command rate limit.
 
 ## Handling rate limits in Marketplace API
 
@@ -66,9 +85,14 @@ default starting from version XX-XX. To take this built-in concurrency
 limiting to use, you need to make sure your SDK is updated to at least
 this version.
 
-To handle rate limits, you can pass configurations for query and command
-rate limiters. You can see the details of passing those configurations
-in our [SDK documentation](TODO).
+To handle the general rate limits in dev and demo environments, you can
+pass configurations for query and command rate limiters. You can see the
+details of passing those configurations in our
+[SDK documentation](TODO).
+
+For listing creation rate limits, you will need to implement your own
+rate limit handling logic. We have an example of this in our
+[Integration API example scripts repository](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/create-listings.js).
 
 It is good to note that rate limits apply by client IP address. If you
 have more than one instance of the SDK running on the same server or
