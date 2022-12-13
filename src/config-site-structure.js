@@ -11,10 +11,11 @@ const sortingArrayIntroduction = [
   'how-to-build-and-launch-with-flex',
   'is-flex-right-for-you',
   'development-skills',
+  'introducing-template',
 ];
 
 const sortingArrayIntroductionGettingStarted = [
-  'getting-started-with-ftw-daily',
+  'getting-started-with-web-template',
   'getting-started-with-flex-cli',
   'getting-started-with-integration-api',
 ];
@@ -140,7 +141,6 @@ exports.siteStructure = [
         id: 'introduction-getting-started',
         sortingArray: sortingArrayIntroductionGettingStarted,
       },
-      { id: 'introduction-templates' },
     ],
   },
   {

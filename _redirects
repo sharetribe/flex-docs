@@ -199,7 +199,7 @@
 # Redirects from Biketribe update
 
 /docs/tutorial/customize-amenities-filter/ /docs/tutorial/implement-amenities-filter/
-
+/docs/introduction/getting-started-with-ftw-daily/ /docs/introduction/getting-started-with-web-template/
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
 /docs/*  /docs/404  404

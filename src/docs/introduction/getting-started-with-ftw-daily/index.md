@@ -1,76 +1,61 @@
 ---
-title: Getting started with Flex Template for Web
-slug: getting-started-with-ftw-daily
+title: Getting started with Sharetribe Web Template
+slug: getting-started-with-web-template
 updated: 2021-12-14
 category: introduction-getting-started
 ingress:
-  Learn how to install one of the Flex Templates for Web (FTW) to your
-  local development environment.
+  Learn how to install Sharetribe Web Template to your local development
+  environment.
 skills: basic command line, text editing
 published: true
 ---
 
-Flex Templates for Web (FTW) are marketplace web applications built on
+The Sharetribe Web Template is a marketplace web application built on
 top of the
 [Marketplace API](/operator-guides/concepts/#marketplace-api). While you
 can create a marketplace purely using just the API, it requires a
 significant amount of effort (both money and time) and we recommened
 using the template as a starting point for customizations.
 
-FTW-daily is built with [React](https://reactjs.org/),
+The Sharetribe Web Template is built with [React](https://reactjs.org/),
 [Redux](https://redux.js.org/), and
 [CSS Modules](https://github.com/css-modules/css-modules). It also
 contains a small [Node.js](https://nodejs.org/en/) server, which
 provides server-side rendering (SSR) for the production site.
 
-The purpose of this guide is to clone and configure FTW-daily to your
-local development environment - and then get it up and running. This
-guide also helps you to create accounts to Stripe and Mapbox. Those
-services are needed to run the FTW-daily template app.
-
-If you want to use FTW-hourly or FTW-product as your starting point, you
-can find the relevant options in this tutorial as well. However, if you
-are intending to work through the tutorial steps, we recommend starting
-with FTW-daily, as it is the basis for the tutorials.
+The purpose of this guide is to clone and configure the Sharetribe Web
+Template to your local development environment - and then get it up and
+running. This guide also helps you to create accounts to Stripe and
+Mapbox. Those services are needed to run the Sharetribe Web Template
+app.
 
 ## Setup development environment
 
 ### Prerequisities
 
-To get FTW up and running, you will need to download and install some
-basic development tooling:
+To get Sharetribe Web Template up and running, you will need to download
+and install some basic development tooling:
 
 - [Git](https://git-scm.com/downloads)
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
-### Install the FTW-daily App locally
+### Install the Sharetribe Web Template App locally
 
 1. Open Terminal
 
 1. [Clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-   FTW-daily repository:
+   the Sharetribe Web Template repository:
 
-   ```bash
-   git clone https://github.com/sharetribe/ftw-daily.git
-   ```
+//TODO: Update link
 
-   <extrainfo title="FTW-hourly and FTW-product">
-   To clone FTW-hourly, use the command
-
-   ```bash
-   git clone https://github.com/sharetribe/ftw-hourly.git
-   ```
-
-   To clone FTW-product, use the command
-
-   ```bash
-   git clone https://github.com/sharetribe/ftw-product.git
-   ```
-
-   </extrainfo>
+```bash
+git clone https://github.com/sharetribe/ftw-daily.git
+```
 
 1. Go to the cloned directory:
+
+   // TODO update path
 
    ```bash
    cd ftw-daily/
@@ -79,7 +64,7 @@ basic development tooling:
     <extrainfo title="Check how the directory structure should look like">
 
    After these steps you should have a directory structure that looks
-   like this for FTW-daily:
+   like this for Sharetribe Web Template: TODO UPDATE
 
    ```bash
    ├── ext
@@ -143,21 +128,6 @@ basic development tooling:
 
     </extrainfo>
 
-   <extrainfo title="FTW-hourly and FTW-product">
-   If you cloned FTW-hourly:
-
-   ```bash
-   cd ftw-hourly/
-   ```
-
-   If you cloned FTW-product:
-
-   ```bash
-   cd ftw-product/
-   ```
-
-   </extrainfo>
-
 1) Install dependency libraries:
 
    ```bash
@@ -166,12 +136,12 @@ basic development tooling:
 
 ## Mandatory Integrations
 
-FTW templates have 3 mandatory integrations that you need to configure
-before the app is fully functional. The app obviously needs to discuss
-with Flex Marketplace API, but the client app also makes direct calls to
-[Stripe](https://stripe.com/en-fi). Flex uses Stripe as a payment
-processor, and FTW-daily saves sensitive payment information directly to
-it.
+The Sharetribe Web Template has 3 mandatory integrations that you need
+to configure before the app is fully functional. The app obviously needs
+to discuss with Flex Marketplace API, but the client app also makes
+direct calls to [Stripe](https://stripe.com/en-fi). Flex uses Stripe as
+a payment processor, and Sharetribe Web Template saves sensitive payment
+information directly to it.
 
 The third default integration is to a map provider.
 [Mapbox](https://www.mapbox.com) provides location search (geocoding)
@@ -179,8 +149,8 @@ and maps for the web app.
 
 ![Mandatory integrations: Flex Marketplace API, Stripe, Map provider](FTW-integrations@2x.png)
 
-FTW templates just need 4 environment variables to make these
-integrations work.
+The Sharetribe Web Template just needs 4 environment variables to make
+these integrations work.
 
 - **[`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`](#sharetribe-flex-client-id-and-client-secret)**
 - **[`SHARETRIBE_SDK_CLIENT_SECRET`](#sharetribe-flex-client-id-and-client-secret)**
@@ -196,11 +166,11 @@ https://www.sharetribe.com/products/flex/
 When you get access, you will be able to log into Flex Console and check
 the client ID.<br /> Flex Console: _Build > Applications_
 
-In addition, FTW templates use transaction processes that include
-privileged transitions. This makes it possible to customize pricing on
-the Node server that's included in the template. The **client secret**
-is needed to make this secure call from the template's own server to
-Flex API.
+In addition, Sharetribe Web Template uses transaction processes that
+include privileged transitions. This makes it possible to customize
+pricing on the Node server that's included in the template. The **client
+secret** is needed to make this secure call from the template's own
+server to Flex API.
 
 ![Flex Console: Applications tab](./console-build-application.png)
 
@@ -288,7 +258,7 @@ marketplace.
   - Secret key
 
 The publishable key (with prefix **pk**) is one used in frontend
-application (e.g. Flex Template for Web) and secret key (with prefix
+application (e.g. Sharetribe Web Template) and secret key (with prefix
 **sk**) is the one you need to add to Console. If you want to use test
 data make sure the value of the key is eg. **pk_test**\<somethinghere\>
 and not **pk_live**\<somethinghere\>
@@ -345,8 +315,8 @@ guide you through setting up the rest of the required environment
 variables. If the `.env` file doesn't exist the application won't start.
 _This `.env` file is only created for local development environment_.
 
-> See the [FTW Environment configuration variables](/ftw/ftw-env/) for
-> more information on the environment variables.
+> See the [FTW Environment configuration variables](/ftw/ftw-env/) TODO
+> UPDATE for more information on the environment variables.
 
 ## Start the server
 
@@ -368,19 +338,20 @@ This will automatically open `http://localhost:3000` in a browser:
 
 ## Summary
 
-In this tutorial, we used the FTW-daily template to get a marketplace
-running. Here's a summary of those installation steps:
+In this tutorial, we used the Sharetribe Web Template to get a
+marketplace running. Here's a summary of those installation steps:
 
 ```bash
-git clone https://github.com/sharetribe/ftw-daily.git
+git clone https://github.com/sharetribe/ftw-daily.git // TODO UPDATE URL + PATH
 cd ftw-daily/
 yarn install
 yarn run config
 yarn run dev
 ```
 
-As you can see from `http://localhost:3000`, FTW is a fully ready and
-polished marketplace application that is running on top of the
-Marketplace API. Client app customization is in your control, and you
-can change it to fit your marketplace needs. Check the
-[tutorial](/tutorial/) to learn how to customize FTW template.
+As you can see from `http://localhost:3000`, Sharetribe Web Template is
+a fully ready and polished marketplace application that is running on
+top of the Marketplace API. Client app customization is in your control,
+and you can change it to fit your marketplace needs. Check the
+[tutorial](/tutorial/) to learn how to customize the Sharetribe Web
+Template.

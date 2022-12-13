@@ -13,12 +13,13 @@ published: true
 You can use any technology to build a marketplace on top of the
 [Marketplace API](/operator-guides/concepts/#marketplace-api). However,
 making a marketplace user interface (UI) from scratch requires a lot of
-effort. This is why we provide Flex Templates for Web (FTW). These are
-polished marketplace web applications that are ready for customization.
+effort. This is why we provide the Sharetribe Web Template. It is a
+polished marketplace web application that is ready for customization.
 
-FTW is a template web application that uses the Marketplace API. It is
-built using common and modern frontend tooling, so frontend developers
-should feel right at home and happy with all the technology.
+The Sharetribe Web Template is a template web application that uses the
+Marketplace API. It is built using common and modern frontend tooling,
+so frontend developers should feel right at home and happy with all the
+technology.
 
 ## Technologies
 
@@ -50,17 +51,17 @@ needed. Working knowledge of frontend web development and JavaScript is
 a good starting point in learning the technologies.
 
 Check out the
-[Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
-tutorial to see what it takes to get the template running with a small
-customization.
+[Getting started with the Sharetribe Web Template](/introduction/getting-started-with-ftw-daily/)
+**TODO Update link** tutorial to see what it takes to get the template
+running with a small customization.
 
 ## Development tooling
 
-While FTW uses Webpack, PostCSS, and various other tools behind the
-scene, knowledge of these technologies is not needed in usual
-customizations. Compared to a usual frontend project with a long list of
-dependencies and extensive Webpack configuration files, FTW hides all
-this behind a
+While the Sharetribe Web Template uses Webpack, PostCSS, and various
+other tools behind the scene, knowledge of these technologies is not
+needed in usual customizations. Compared to a usual frontend project
+with a long list of dependencies and extensive Webpack configuration
+files, Sharetribe Web Template hides all this behind a
 [sharetribe-scripts](https://www.npmjs.com/package/sharetribe-scripts)
 NPM package.
 

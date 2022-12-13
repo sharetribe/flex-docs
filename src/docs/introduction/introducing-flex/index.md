@@ -40,19 +40,17 @@ user interface, what kind of pages or views there should be, and how
 those should be laid out. There are no limits to what you can do in
 terms of visual design.
 
-[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
-(FTW) are web templates that implement a full-feature marketplace
-experiences powered by Flex. You can choose between three templates:
+[Sharetribe Web Template](/introduction/getting-started-with-ftw-daily/)
+is a web template that implements a full-feature marketplace experience
+powered by Flex. The template can be configured to three types of
+marketplaces out of the box:
 
-- [FTW-daily](https://github.com/sharetribe/ftw-daily): a rental
-  marketplace with daily bookings
-- [FTW-hourly](https://github.com/sharetribe/ftw-hourly): a service
-  marketplace with time-based bookings
-- [FTW-product](https://github.com/sharetribe/ftw-product): a product
-  marketplace with stock management
+- a rental marketplace with daily or nightly bookings
+- a service marketplace with time-based bookings
+- a product marketplace with stock management
 
-With a Flex Template for Web, you can get started with your marketplace
-UI straight away: just download the latest FTW version and start
+With a Sharetribe Web Template, you can get started with your
+marketplace UI straight away: just download the latest version and start
 customizing it for your marketplace. There are no limits to how much you
 can customize the template. You can freely design the user interactions
 and alter the look and feel of your marketplace. You can also integrate
