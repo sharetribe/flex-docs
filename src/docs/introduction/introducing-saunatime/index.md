@@ -20,7 +20,7 @@ customize it to suit your specific marketplace.
 
 The heart of the Saunatime marketplace are listings. As a registered
 user, you can create as many listings as you want, and all published
-listings are visible to both registered and anonymous users. You can
+listings are visible to both registered and anonymous users.
 
 The Saunatime template enables complex filtering, including based on
 location, availability dates, price, and rental features. You can freely
