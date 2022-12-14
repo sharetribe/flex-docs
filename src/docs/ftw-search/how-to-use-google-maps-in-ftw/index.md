@@ -1,33 +1,37 @@
 ---
-title: How to use Google Maps in FTW
+title: How to use Google Maps in SWT
 slug: how-to-use-google-maps-in-ftw
 updated: 2020-12-15
 category: ftw-search
 ingress:
-  Flex Template for Web (FTW) offers out of the box support for Google
+  Sharetribe Web Template (SWT) offers out of the box support for Google
   Maps API for showing a map and searching locations with search
   autocompletion. This guide describes how to set up the API key for the
   API requests to work properly.
 published: true
 ---
 
-> Note: before making the change to Google Maps, you should consider if
-> you are OK with their current pricing. There's a pricing calculator
-> available in their
-> [pricing page](https://cloud.google.com/maps-platform/pricing/). FTW's
-> default map provider is Mapbox, which is often cheaper. To use Mapbox,
-> see the
-> [How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/)
-> guide.
+<info>
 
-## 1. Generate a Google Maps API key
+Note: before making the change to Google Maps, you should consider if
+you are OK with their current pricing. There's a pricing calculator
+available in their
+[pricing page](https://cloud.google.com/maps-platform/pricing/). SWT's
+default map provider is Mapbox, which is often cheaper. To use Mapbox,
+see the
+[How to set up Mapbox for SWT](/ftw/how-to-set-up-mapbox-for-ftw/)
+guide.
+
+</info>
+
+## Generate a Google Maps API key
 
 Go to the
 [Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference),
 click on the "GET A KEY" button in the top bar, and follow the
-instructions. You can copy the given key to your application now.
+instructions. Save the key for later.
 
-## 2. Enable Google Places API Web Service
+## Enable Google Places API Web Service
 
 Follow the instructions in the
 [Getting started](https://developers.google.com/maps/documentation/javascript/places#GetStarted)
@@ -35,17 +39,17 @@ section of the Places library documentation to enable using the Google
 Places API Web Service. Also Maps Static API and Maps JavaScript API
 need to be enabled.
 
-## 3. Setup the application to use the API key
+## Assign the API key to an environment variable
 
-The application uses the `REACT_APP_GOOGLE_MAPS_API_KEY` environment
-variable for the key value. For local development, you can add the
-variable in the Gitignored `.env` file in the project root:
+SWT uses the `REACT_APP_GOOGLE_MAPS_API_KEY` environment variable for
+the key value. For local development, you can add the variable in the
+gitignored `.env` file in the project root:
 
 ```bash
 REACT_APP_GOOGLE_MAPS_API_KEY=my-key-here
 ```
 
-## 4. Setup common locations to reduce typing
+## Setup common locations to reduce typing
 
 The location autocomplete-input in the landing page and the topbar can
 be configured to have specific locations shown by default when the user
@@ -81,7 +85,7 @@ Search for variables: `suggestCurrentLocation` and
 
 </extrainfo>
 
-## 5. FTW-daily & FTW-hourly: use Google Maps
+## FTW-daily & FTW-hourly: use Google Maps
 
 If you wish to use Google Maps instead of Mapbox, you need to make some
 changes to the default setup of FTW-daily and FTW-hourly.
@@ -89,7 +93,7 @@ changes to the default setup of FTW-daily and FTW-hourly.
 > **Note:** FTW-product has a different setup. If you are using it, you
 > can skip this chapter.
 
-### 5.1. Include Google Maps script instead of Mapbox scripts
+### Include Google Maps script instead of Mapbox scripts
 
 Mapbox related scripts can be removed from index.html and instead use
 Google Maps script described in comments.
@@ -112,7 +116,7 @@ _public/index.html:_
 -->
 ```
 
-### 5.2. Searching with Google's geocoding API
+### Searching with Google's geocoding API
 
 Location search aka LocationAutocompleteInput should use Google Map
 specific geocoder. The correct import is written to the comments of

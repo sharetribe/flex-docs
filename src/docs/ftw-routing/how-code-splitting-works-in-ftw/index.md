@@ -1,36 +1,13 @@
 ---
-title: How code splitting works in FTW
+title: How code splitting works in SWT
 slug: how-code-splitting-works-in-ftw
 updated: 2021-02-12
 category: ftw-routing
 ingress:
-  This article explains how the code splitting setup works in Flex
-  Template for Web (FTW).
+  This article explains how code splitting works in the Sharetribe Web
+  Template (SWT).
 published: true
 ---
-
-## Background info
-
-FTW-daily started using code-splitting from version _8.0.0_ and
-FTW-hourly from _10.0.0_.
-
-Previously, _sharetribe-scripts_ created one
-[UMD](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
-build that was used on both server and frontend. I.e. all the code used
-in the app was bundled into a single _main.bundle.js_ file and that was
-used in the web app and server.
-
-Unfortunately, this has meant that code-splitting was not supported: it
-didn't work with the UMD build due to an old bug in Webpack.
-
-With sharetribe-scripts version _5.0.0_, we changed this behaviour:
-sharetribe-scripts creates 2 different builds when `yarn run build` is
-called. Basically, this means that build-time increases (including
-`yarn run dev-server` call).
-
-However, this setup makes code-splitting possible. To make this easier,
-we have added [Loadable Components](https://loadable-components.com/)
-library to the setup.
 
 ## What is code splitting
 
@@ -40,11 +17,10 @@ smaller chunks which you can then load on demand. To familiarize
 yourself with the subject, you could read about code splitting from
 [reactjs.org](https://reactjs.org/docs/code-splitting.html).
 
-In practice, FTW templates use route-based code splitting: page-level
-components are now using
-[Loadable Components](https://loadable-components.com/) syntax to create
-[dynamic imports](https://webpack.js.org/api/module-methods/#import-1)
-functionality.
+In practice, SWT uses route-based code splitting: page-level components
+use the [Loadable Components](https://loadable-components.com/) syntax
+to create
+[dynamic imports](https://webpack.js.org/api/module-methods/#import-1).
 
 ```js
 const AboutPage = loadable(() =>
@@ -55,37 +31,28 @@ const AboutPage = loadable(() =>
 ```
 
 When Webpack comes across these loadable objects, it will create a new
-JS & CSS chunk files (e.g. _AboutPage.dc3102d3.chunk.js_). I.e. those
+JS & CSS chunk files (e.g. _AboutPage.dc3102d3.chunk.js_). Those
 code-paths are separated from the main bundle.
 
-Previously, (when code-splitting was not supported), when you loaded
-`/about` page, you received _main.bundle.js_ & _main.bundle.css_. Those
-files were pretty huge containing all the code that was needed to create
-a template app and any page inside it. Loading a single file takes time
-and also browsers had to evaluate the entire JS-file before it was ready
-to make the app fully functional.
+### Why should you use it?
 
-### Why you should use it?
+The main benefit of code splitting is reducing the code loaded for any
+single page. That improves the performance, but even more importantly,
+it makes it possible to add more navigational paths and page variants to
+the codebase. For example, adding different kinds of ListingPages for
+different listings makes more sense with code-splitting. Without code
+splitting, new pages, features, and libraries would impact the app's
+initial page load, and therefore SEO performance would drop too.
 
-The main benefit of code splitting is to reduce the code that is loaded
-for any single page. That improves the performance, but even more
-importantly, it makes it possible to add more navigational paths and
-page-variants to the codebase. For example, adding different kinds of
-ListingPages for different types of listings makes more sense with
-code-splitting. Without code splitting, new pages, features, and
-libraries would have a performance impact on the initial page load of
-the app and therefore SEO performance would drop too.
-
-> Note: currently, most of the code is in shared _src/components/_
-> directory and this reduces the benefits that come from code-splitting.
-> In the future, we are probably going to move some components from
-> there to page-specific directories (if they are not truly shared
-> between different pages).
+> Remember to keep non-reusable code in page-specific directories rather
+> than in the src/components/ directory. This improves performance, as
+> all the code in the shared directory is loaded in the main chunk file
+> that is downloaded on each page.
 
 ## How code splitting works in practice
 
-If you open `/about` page, you'll notice that there are several JS & CSS
-files loaded:
+Open the `/about` page. You will notice several JavaScript and CSS files
+loading:
 
 - **Main chunk** (e.g. _main.1df6bb19.chunk.js_ &
   main.af610ce4.chunk.css). They contain code that is shared between
@@ -94,9 +61,9 @@ files loaded:
   (Currently, it's an unnamed chunk file. e.g. _24.230845cc.chunk.js_)
 - **Page-specific chunk** (e.g. _AboutPage.dc3102d3.chunk.js_)
 
-So, there are several chunk files that can be loaded parallel in the
-first page-load and also page-specific chunks that can be loaded in
-response to in-app navigation.
+There are several chunk files that can be loaded parallel in the first
+page-load and also page-specific chunks that can be loaded in response
+to in-app navigation.
 
 Naturally, this means that during in-app navigation there are now more
 things that the app needs to load: **data** that the next page needs and
@@ -107,26 +74,16 @@ needed if the page-specific chunk is already loaded earlier.
 
 Route-based code splitting means that there might be a fast flickering
 of a blank page when navigation happens for the first time to a new
-page. To remedy that situation, FTW templates have forced the
-page-chunks to be
+page. To remedy that situation, SWT forces the page-chunks to be
 [preloaded](https://loadable-components.com/docs/prefetching/#manually-preload-a-component)
 when the mouse is over **NamedLink**. In addition, **Form** and
-**Button** components can have a property
-`enforcePagePreloadFor="SearchPage"`. That way the specified chunk is
-loaded before the user has actually clicked the button or executed form
-submit.
+**Button** components can have a property `enforcePagePreloadFor`. That
+way the specified chunk is loaded before the user has actually clicked
+the button or executed form submit.
 
-### Route configuration
+### Preloadable components in route configuration
 
-To make the aforementioned preloading possible, the loadable component
-is directly set to "component" conf in routeConfigurations.js file:
-
-```shell
-└── src
-    └── routeConfiguration.js
-```
-
-<extrainfo title="FTW-product has routeConfiguration.js file in a different location">
+Preloadable components are defined in the routeConfigurations.js file:
 
 ```shell
 └── src
@@ -134,7 +91,9 @@ is directly set to "component" conf in routeConfigurations.js file:
         └── routeConfiguration.js
 ```
 
-</extrainfo>
+At the beginning of the file, you can find the loadable component
+assigned to a constant variable. That variable is assigned to the
+`component` property of the corresponding route configuration:
 
 ```js
     // const AuthenticationPage = loadable(() => import(/* webpackChunkName: "AuthenticationPage" */ './containers/AuthenticationPage/AuthenticationPage'));
@@ -148,8 +107,7 @@ is directly set to "component" conf in routeConfigurations.js file:
 
 #### Data loading
 
-FTW templates collects _loadData_ and _setInitialValues_ Redux functions
-from
+SWT collects _loadData_ and _setInitialValues_ Redux functions from a
 [modular Redux file](https://github.com/erikras/ducks-modular-redux)
 (i.e. files that look like `<SomePageComponent>`.duck.js). This happens
 in _pageDataLoadingAPI.js_:
@@ -189,10 +147,10 @@ of every page.
 
 ## Server-side rendering (SSR)
 
-When FTW templates receive a page-load call on server and the page is a
-public one (_"auth"_ flag is not set in route configuration), the server
-will render the page into a string and returns it among HTML code. This
-process has 4 main steps:
+When SWT receives a page-load call on server and the page is a public
+one (i.e. the _"auth"_ flag is not set in route configuration), the
+server will render the page into a string and returns it among HTML
+code. This process has 4 main steps:
 
 1. _server/dataLoader.js_ initializes store
 2. It also figures out which route is used and fetches route
@@ -204,10 +162,10 @@ process has 4 main steps:
 
 ### Build directory
 
-Sharetribe-scripts dependency uses Webpack to build the application. It
-copies the content from _public/_ directory into the _build_ directory
-and the Webpack build bundles all the code into files that can be used
-in production mode.
+The sharetribe-scripts dependency uses Webpack to build the application.
+It copies the content from _public/_ directory into the _build_
+directory and the Webpack build bundles all the code into files that can
+be used in production mode.
 
 - Code for server-side rendering is saved to _build/node_ directory.
 - Code for client-side rendering is saved to _build/static_ directory.
@@ -223,7 +181,7 @@ in production mode.
   those different code chunks (JS & CSS files) that the current
   page-load is going to need.
 
-  > In practice, **renderApp** function wraps the app with
+  > In practice, the **renderApp** function wraps the app with
   > _webExtractor.collectChunks_. With that the webExtractor can figure
   > out all the relevant loadable calls that the server uses for the
   > current page and therefore the web-versions of those chunks can be

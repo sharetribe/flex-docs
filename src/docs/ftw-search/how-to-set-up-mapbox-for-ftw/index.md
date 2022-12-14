@@ -1,17 +1,17 @@
 ---
-title: How to set up Mapbox for FTW
+title: How to set up Mapbox for SWT
 slug: how-to-set-up-mapbox-for-ftw
 updated: 2019-07-04
 category: ftw-search
 ingress:
-  By default, Flex Template for Web (FTW) uses Mapbox for showing
+  By default, Sharetribe Web Template (SWT) uses Mapbox for showing
   interactive maps. This guide will help you in creating a Mapbox
-  account and setting up an account token in the FTW environment
+  account and setting up an account token in the SWT environment
   configuration.
 published: true
 ---
 
-## 1. Generate a Mapbox access token
+## Generate a Mapbox access token
 
 [Sign up to Mapbox](https://account.mapbox.com/auth/signup/) and go to
 the [account page](https://account.mapbox.com/). Then copy the
@@ -27,73 +27,76 @@ token will only work for requests that originate from the URLs you
 specify. See the Mapbox documentation for
 [URL restrictions](https://docs.mapbox.com/accounts/overview/tokens/#url-restrictions).
 
-## 2. Setup the application to use the access token
+## Assign the access token to an environment variable
 
-The application uses the `REACT_APP_MAPBOX_ACCESS_TOKEN` environment
-variable for the token value. For local development, you can add the
-variable in the Gitignored `.env` file in the project root:
+SWT uses the `REACT_APP_MAPBOX_ACCESS_TOKEN` environment variable for
+the token value. For local development, you can add the variable in the
+gitignored `.env` file in the project root:
 
 ```bash
 REACT_APP_MAPBOX_ACCESS_TOKEN=my-access-token-here
 ```
 
-## 3. Setup common locations to reduce typing
+If you are hosting you
 
-The location autocomplete input in the landing page and the topbar can
-be configured to have specific locations shown by default when the user
-focuses on the input and hasn't yet typed in any searches. This reduces
-the typing required for common searches and also reduces the need to use
-Mapbox geolocation API that much.
+## Configure default locations
 
-This is enabled by default but it can be changed via the environment
-variable:
+You can configure the search field on the landing page to show the user
+a predefined list of locations from which to search. Enabling this
+feature can make searching for common locations faster for your users
+and reduce the need to call the Mapbox Geolocation API.
 
-```bash
-REACT_APP_DEFAULT_SEARCHES_ENABLED=true
-```
+![A screenshot of the search bar in Sharetribe Web Template](location.png)
 
-The default locations are described in
-[src/default-location-searches.js](https://github.com/sharetribe/flex-template-web/blob/master/src/default-location-searches.js).
+This feature is not enabled by default. To enable it, you need to add
+the locations to the
+[configDefaultLocationSearches.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefaultLocationSearches.js#L14)
+file.
 
-The same environment variable also shows "current location" suggestion,
-which will make the browser to ask user's current location. This is a
-fast way to search listings nearby. You can specify whether to use the
-current location from
-[src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js).
-Search for variables: `suggestCurrentLocation` and
-`currentLocationBoundsDistance`.
+To disable the first result on the list to search for the user's
+"Current location", you can change the configuration variable
+[`suggestCurrentLocation` in the configMaps.js file](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js#L23)
+to false. The
+[`currentLocationBoundsDistance`](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js#L27)
+variable (found in the same file) defines the distance in meters for
+calculating the bounding box around the current location.
 
-## Optional: check rare default configurations
+## Configure fallback bounding boxes
 
-Mapbox geocoding API doesn't always return bounding boxes for locations.
-Without bounding box SearchMap component can't adjust zoom level right
-for that particular place. Therefore there are default bounding boxes
-defined to different place types in the Mapbox specific geocoder:
+The Mapbox Geocoding API does not always return a bounding box with the
+results. The
+[SearchMap](https://github.com/sharetribe/ftw-x/blob/main/src/containers/SearchPage/SearchMap/SearchMap.js)
+component needs a bounding box to adjust the zoom level of the map when
+displaying a location.
 
-[src/components/LocationAutocompleteInput/GeocoderMapbox.js](https://github.com/sharetribe/flex-template-web/blob/master/src/components/LocationAutocompleteInput/GeocoderMapbox.js).
+Suppose the Geocoding API does not return a bounding box. In that case,
+the map uses the default values defined in
+[GeocoderMapbox.js](https://github.com/sharetribe/ftw-x/blob/main/src/components/LocationAutocompleteInput/GeocoderMapbox.js).
+The configuration specifies a default distance to generate the bounding
+box with for all different Mapbox Geocoding
+[data types](https://docs.mapbox.com/api/search/geocoding/#data-types).
 
-## Optional: Restrict location autocomplete to specific country or countries
+## Restrict location autocomplete to specific country or countries
 
 If your marketplace works only in a specific country or countries it
 might be a good idea to limit the location autocomplete to those
-countries. You can specify whether to use the limitation from
-[src/config.js](https://github.com/sharetribe/flex-template-web/blob/master/src/config.js).
+countries. You can specify whether to use the limitation in
+[config/configMaps.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js#L48).
 Search for variable `countryLimit` and uncomment the line to make it
 active. Provide the country or countries in an array using
 [ISO 3166 alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 format (eg. GB, US, FI). If there are multiple values, separate them
 with commas.
 
-## Changing the map providers
+## Using Google Maps
 
-It is possible to use Google Map instead of the default map provider.
-Read more in the
-[How to use Google Maps in FTW](/ftw/how-to-use-google-maps-in-ftw/)
+It is possible to use Google Maps instead of Mapbox. Read more in the
+[How to use Google Maps in SWT](/ftw/how-to-use-google-maps-in-ftw/)
 guide.
 
 ### How to use other map providers
 
-The default map setup of FTW uses library called
+The default map setup of SWT uses library called
 [mapbox-gl-js](https://docs.mapbox.com/mapbox-gl-js/api/). It supports
 quite many other map providers too. Thus, if you wish to use a map
 provider other than Google Maps or Mapbox, first check if the map

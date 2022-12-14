@@ -1,52 +1,50 @@
 ---
-title: How the Redux setup works in FTW
+title: How Redux is used in SWT
 slug: ftw-redux
 updated: 2019-01-29
 category: ftw-data-flow
 ingress:
-  This article explains how the Redux setup works in Flex Template for
-  Web (FTW).
+  This article explains how Redux is setup in the Sharetribe Web
+  Template (SWT).
 published: true
 ---
 
 ## What is Redux
 
-FTW is JavaScript single-page application (SPA). This means that the app
-needs to be able to render several different layouts (pages) depending
-on user interaction. State management is essential for this process. FTW
-needs to know if a user has been authenticated, if it has received
-relevant data for the current page, and so on.
+SWT is single-page application (SPA) built using React. This means that
+the app needs to be able to render several different layouts (pages)
+depending on user interaction. State management is essential for this
+process. SWT needs to know if a user has been authenticated, if it has
+received relevant data for the current page, and so on.
 
 We use [Redux](https://redux.js.org/introduction/getting-started) for
 state management on the application level. You should read more about
-Redux before you start modifying queries to Flex API or creating new
-Page level elements (unless you are modifying
-[a static page](/ftw/how-to-add-static-pages-in-ftw/)).
+Redux before you start modifying queries to the Flex API or creating new
+Page level elements.
 
 In the following subtopics, we assume that you know the
 [basics of Redux](https://redux.js.org/basics/basic-tutorial) already.
 
 ## Containers: Pages + TopbarContainer
 
-We have set up FTW so that pages are aware of Redux state store, but
-other components and forms are purely
+SWT is aware of Redux state store, but other components and forms are
+purely
 [presentational components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 This makes it easier to customize UI components - you don't need to be
 aware of the complexity related to Redux setup when you just want to
 touch the behavior of some visual component. In those cases, you can
-just head to `src/components/` directory and you can see from there what
-props are available for each component when they are rendered.
-(FTW-daily and FTW-hourly use also `src/forms/` directory.)
+just head to the `src/components/` directory and you can see from there
+what props are available for each component when they are rendered.
 
 Naturally, there is a need for higher level components which fetch new
 data and define what props are passed down to presentational components.
-In Redux terminology, those components are called _Containers_. FTW has
+In Redux terminology, those components are called _Containers_. SWT has
 defined all the containers inside a directory called `src/containers/`.
-It contains all the pages and a special container for top bar
+It contains all the pages and a special container for the top bar
 (TopbarContainer) since that is a very complex component and it is
 shared with almost every page. You can read more about differences
-between presentational and container components from an
-[article written by Dan Abramov](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+between presentational and container components from this
+[article written by Dan Abramov](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 
 The actual container setup of a page level component can be found from
 the bottom of the component file. For example,
@@ -62,23 +60,23 @@ const TransactionPage = compose(
 
 ## Duck files
 
-Inside `src/containers/<ComponentName>` directory, we have also a
-special `<ComponentName>.duck.js` file. These files wrap all the other
+Inside any `src/containers/<ComponentName>` directory, you will also
+find a `<ComponentName>.duck.js` file. These files wrap all the other
 page-specific Redux concepts into a single file. Instead of writing
 action types, action creators and reducers in separate files (and spread
-them around our directory structure), FTW tries to keep pages
+them around our directory structure), SWT tries to keep pages
 encapsulated. Page specific actions, store updates, and data fetches
-happen inside their respective directory - just look for a file which
+happen inside their respective directory - just look for a file whose
 name follows a pattern: `<ComponentName>.duck.js`. This pattern is just
 a simple concept of adding related things into a single file. Read more
-from
+from the
 [author's repository](https://github.com/erikras/ducks-modular-redux).
 
 ### Global reducers
 
-Some reducers are needed in several pages. These global reducers we have
+Some reducers are needed in several pages. These global reducers are
 defined inside `src/ducks/` directory with their respective `*.duck.js`
-files. Most important global duck files are `user.duck.js` and
+files. The most important global duck files are `user.duck.js` and
 `marketplaceData.duck.js`.
 
 ## Setting up Redux
@@ -114,14 +112,14 @@ module naming schema, this means that:
 
 ## Advanced Redux concepts: thunks
 
-One essential part of state management in FTW, is filling the Redux
+One essential part of state management in SWT, is filling the Redux
 store with data fetched from the Flex API. This is done with
 [Redux Thunks](https://redux.js.org/advanced/async-actions#async-action-creators),
 which is a Redux middleware to create asynchronous action creators.
 
-As with every other Redux store actions, we have defined Thunks inside
-`*.duck.js` file. For example, fetching listing reviews can be done with
-a following thunk function:
+As with every other Redux store actions, you can find Thunks inside
+`*.duck.js` files. For example, fetching listing reviews can be done
+with the following thunk function:
 
 ```js
 export const fetchReviews = listingId => (dispatch, getState, sdk) => {

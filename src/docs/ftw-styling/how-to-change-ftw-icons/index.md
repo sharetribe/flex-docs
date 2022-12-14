@@ -78,10 +78,3 @@ those images.
     <meta name="theme-color" content="#c0392b" />
     <!-- End Favicons -->
     ```
-
-## Change the map marker icon
-
-The map marker icon in the listing can be found in
-[public/static/icons/map-marker-32x32.png](https://github.com/sharetribe/flex-template-web/blob/master/public/static/icons/map-marker-32x32.png).
-The dimensions should be 32x32 pixels, so the `favicon-32x32.png` file
-can be used to replace the map icon.

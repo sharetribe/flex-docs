@@ -1,18 +1,18 @@
 ---
-title: How routing works in FTW
+title: How routing works in SWT
 slug: how-routing-works-in-ftw
 updated: 2021-02-12
 category: ftw-routing
 ingress:
-  This article explains how the routing setup works in Flex Template for
-  Web (FTW).
+  This article explains how routing works in the Sharetribe web Template
+  (SWT).
 published: true
 ---
 
-FTW uses [React Router](https://reacttraining.com/react-router/web) for
+SWT uses [React Router](https://reacttraining.com/react-router/web) for
 creating routes to different pages. React Router is a collection of
 navigational components that allow single-page apps to create routing as
-a part of the normal rendering flow of the React app. So, instead of
+a part of the normal rendering flow of the React app. Instead of
 defining on the server what gets rendered when a user goes to URL
 _"somemarketplace.com/about"_, we just catch all the path combinations
 and let the app define what page gets rendered.
@@ -21,22 +21,14 @@ and let the app define what page gets rendered.
 
 ### Route configuration
 
-FTW has a quite straightforward routing setup - there's just one file
-you need to check before you link to existing routes or start creating
-new routes to static pages: _routeConfiguration.js_.
+The routing setup is simple in SWT. There is just one file to check
+before you link to existing routes or start creating new routes to
+static pages: _routeConfiguration.js_.
 
-There we have imported all the page-level components dynamically using
+This page imports all the page-level components dynamically using
 [Loadable Components](https://loadable-components.com/). In addition,
 there's a configuration that specifies all the pages that are currently
-used within FTW:
-
-```shell
-└── src
-    ├── routeConfiguration.js
-    └── Routes.js
-```
-
-<extrainfo title="FTW-product has routeConfiguration.js and Routes.js files in a different location">
+used within SWT:
 
 ```shell
 └── src
@@ -44,8 +36,6 @@ used within FTW:
         ├── routeConfiguration.js
         └── Routes.js
 ```
-
-</extrainfo>
 
 ```js
 const AboutPage = loadable(() =>
@@ -88,11 +78,11 @@ const routeConfiguration = () => {
 export default routeConfiguration;
 ```
 
-In the example, path `/login` renders _AuthenticationPage_ component
-with prop **tab** set to 'login'. In addition, this route configuration
-has the name: 'LoginPage'.
+In the code above, path `/login` renders the _AuthenticationPage_
+component with prop **tab** set to 'login'. In addition, this route
+configuration has the name: 'LoginPage'.
 
-> Routes use exact path matches in FTW. We felt that this makes it
+> Routes use exact path matches in SWT. We felt that this makes it
 > easier to understand the connection between a path and its routed view
 > aka related page component.
 > [Read more.](https://reactrouter.com/web/api/Route/exact-bool)
@@ -114,17 +104,18 @@ the current user:
 
 Here we have set this route to be available only for the authenticated
 users (`auth: true`) because we need to know whose listings we should
-fetch. If a user is unauthenticated, he/she is redirected to LoginPage
-(`authPage: 'LoginPage'`) before the user can see the content of the
+fetch. If a user is unauthenticated, they are redirected to LoginPage
+(`authPage: 'LoginPage'`) before they can see the content of the
 _"ManageListingsPage"_ route.
 
-There's also a _loadData_ function defined. It is a special function
+There is also a _loadData_ function defined. It is a special function
 that gets called if a page needs to fetch more data (e.g. from the
-Marketplace API) after redirecting to that route. We'll open up this
-concept in the [Loading data](#loading-data) section below.
+Marketplace API) after redirecting to that route. The loadData function
+is explained in more detail in the [Loading data](#loading-data) section
+below.
 
-In addition to these configurations, there's also a rarely used
-_setInitialValues_ function that could be defined and passed to a route:
+In addition to these configurations, there is also a _setInitialValues_
+function that can be defined and passed to a route:
 
 ```js
 {
@@ -145,13 +136,13 @@ Both _loadData_ and _setInitialValues_ functions are part of Redux data
 flow. They are defined in page-specific SomePage.duck.js files and
 exported through _src/containers/pageDataLoadingAPI.js_.
 
-### How FTW renders a route with routeConfiguration.js
+### How SWT renders a route with routeConfiguration.js
 
 The route configuration is used in _src/app.js_. For example,
 **ClientApp** defines **BrowserRouter** and gives it a child component
 (**Routes**) that gets the configuration as _routes_ property.
 
-Here's a simplified _app.js_ code that renders client-side FTW app:
+Here's a simplified _app.js_ code that renders the client-side SWT app:
 
 ```jsx
 import { BrowserRouter } from 'react-router-dom';
@@ -203,20 +194,20 @@ _RouteComponentRenderer_, which has four important jobs:
 
 ## Linking
 
-Linking is a special case in SPA. Using HTML `<a>` tags will cause
-browser to redirect to given **"href"** location. That will cause all
-the resources to be fetched again, which is a slow and unnecessary step
-for SPA. Instead, we just need to tell our router to render a different
-page by adding or modifying the location through the browser's history
-API.
+Linking needs special handling in a single page application (SPA). Using
+HTML `<a>` tags will cause the browser to redirect the user to the given
+**"href"** location. That will cause all resources to be fetched again,
+which is a slow and unnecessary step for a SPA. Instead, we just need to
+tell our router to render a different page by adding or modifying the
+location through the browser's history API.
 
 ### NamedLink and NamedRedirect
 
 React Router exports a couple of
 [navigational components](https://reacttraining.com/react-router/web/api/Link)
 (e.g. `<Link to="/about">About</Link>`) that could be used for linking
-to different internal paths. Since FTW is a template app, we want all
-the paths to be customizable too. That means that we can't use paths
+to different internal paths. Since SWT is a template app, we want all
+the paths to be customizable too. That means that we can not use paths
 directly when redirecting a user to another Route. For example, a
 marketplace for German customers might want to customize the LoginPage
 path to be `/anmelden` instead of `/login` - and that would mean that
@@ -229,7 +220,7 @@ to the correct Route even if the path is changed in
 routeConfiguration.js. Needless to say that those names should only be
 used for internal route mapping.
 
-More complex example of _NamedLink_
+Here is a more complex example of _NamedLink_:
 
 ```jsx
 // Link to LoginPage:
@@ -242,7 +233,7 @@ More complex example of _NamedLink_
 <NamedLink name="SearchPage" to={{ search: '?bounds=60.53,22.38,60.33,22.06' }}>Turku city</NamedLink>
 ```
 
-_NamedLink_ is widely used in FTW, but there are some cases when we have
+_NamedLink_ is widely used in SWT, but there are some cases when we have
 made a redirection to another page if some data is missing (e.g.
 CheckoutPage redirects to ListingPage, if some data is missing or it is
 old). This can be done by rendering a component called
@@ -301,14 +292,13 @@ collected into pageDataLoadingAPI.js file.
 
 ## Loading the code that renders a new page
 
-FTW templates use route-based code splitting. Different pages are split
-away from the main code bundle and those page-specific code chunks are
-loaded separately when the user navigates to a new page for the first
-time.
+SWT uses route-based code splitting. Different pages are split away from
+the main code bundle and those page-specific code chunks are loaded
+separately when the user navigates to a new page for the first time.
 
 This means that there might be a fast flickering of a blank page when
 navigation happens for the first time to a new page. To remedy that
-situation, FTW templates have forced the page-chunks to be
+situation, SWT forces the page-chunks to be
 [preloaded](https://loadable-components.com/docs/prefetching/#manually-preload-a-component)
 when the mouse is over **NamedLink**. In addition, **Form** and
 **Button** components can have a property
@@ -329,17 +319,6 @@ changes and sends tracking events to configured services.
 
 ```shell
 └── src
-    ├── Routes.js
-    ├──analytics
-    |  └── analytics.js
-    └── ducks
-        └── Routing.duck.js
-```
-
-<extrainfo title="FTW-product has moved Routes.js under routing directory">
-
-```shell
-└── src
     ├── routing
     |  └── Routes.js
     ├──analytics
@@ -347,8 +326,6 @@ changes and sends tracking events to configured services.
     └── ducks
         └── Routing.duck.js
 ```
-
-</extrainfo>
 
 For more information, see the
 [How to set up Analytics for FTW](/ftw/how-to-set-up-analytics-for-ftw/)
