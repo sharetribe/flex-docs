@@ -830,11 +830,6 @@
     "source": "/docs/tutorial/deploy-to-heroku/",
     "destination": "/docs/tutorial/deploy-to-render/",
     "permanent": true
-  },
-  {
-    "source": "/docs/(.*)",
-    "destination": "/docs/404",
-    "permanent": true
   }
 ]
 }
