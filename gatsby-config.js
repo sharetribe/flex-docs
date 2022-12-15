@@ -65,7 +65,7 @@ const getSiteUrl = env => {
 };
 
 const getPathPrefix = env => {
-  return isVercel || isNetlify || env === 'local-production' ? '/docs' : '';
+  return isVercel || isNetlify || env === 'local-production' ? '' : '';
 };
 
 const ENV = getEnv();
