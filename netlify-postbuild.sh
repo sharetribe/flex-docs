@@ -41,12 +41,6 @@ mv "$WORK_DIR"/* public/docs/
 
 echo "Assets moved to public/docs"
 
-echo "Move 404 back to public"
-mv -r public/docs/404/ public/
-mv public/docs/404.html public/
-
-echo "404 is in public"
-
 # This wont be needed on Vercel and will probably cause an error during build once _redirects is gone
 echo "Copying _redirects file to public/"
 cp _redirects public/
