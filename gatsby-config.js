@@ -31,8 +31,10 @@ const VERCEL_URL = !/^https?:\/\//i.test(GATSBY_VERCEL_URL)
  * - 'local-development': local dev server
  * - 'local-production': local prod server
  * - 'vercel-production': production context in Vercel
- * - 'vercel-deploy-preview': pull request preview context in Netlify
- * - 'vercel-branch-deploy': non-master branch deployment context in Netlify
+ * - 'netlify-production': production context in netlify
+ * - 'netlify-deploy-preview': pull request preview context in Netlify
+ * - 'netlify-branch-deploy': non-master branch deployment context in Netlify
+ * - 'vercel-preview': non-master branch preview deployment in Vercel
  */
 const getEnv = () => {
   if (isVercel) {
@@ -64,8 +66,13 @@ const getSiteUrl = env => {
   }
 };
 
+// Dont prefix /docs in vercel deploy previews
 const getPathPrefix = env => {
-  return isVercel || isNetlify || env === 'local-production' ? '/docs' : '';
+  return isVercel ||
+    isNetlify ||
+    (env === 'local-production' && !(env === 'vercel-preview'))
+    ? '/docs'
+    : '';
 };
 
 const ENV = getEnv();
