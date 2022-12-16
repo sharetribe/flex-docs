@@ -68,9 +68,8 @@ const getSiteUrl = env => {
 
 // Dont prefix /docs in vercel deploy previews
 const getPathPrefix = env => {
-  return isVercel ||
-    isNetlify ||
-    (env === 'local-production' && !(env === 'vercel-preview'))
+  return (isVercel || isNetlify || env === 'local-production') &&
+    !(env === 'vercel-preview')
     ? '/docs'
     : '';
 };
