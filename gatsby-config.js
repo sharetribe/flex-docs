@@ -79,6 +79,9 @@ const ENV = getEnv();
 const SITE_URL = getSiteUrl(ENV);
 const PATH_PREFIX = getPathPrefix(ENV);
 
+console.log(PATH_PREFIX, 'path prefix');
+console.log(ENV, 'env');
+
 console.log({
   NODE_ENV,
   NODE_VERSION,
