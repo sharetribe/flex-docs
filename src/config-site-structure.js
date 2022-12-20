@@ -141,6 +141,7 @@ exports.siteStructure = [
         id: 'introduction-getting-started',
         sortingArray: sortingArrayIntroductionGettingStarted,
       },
+      { id: 'introduction-templates' },
     ],
   },
   {

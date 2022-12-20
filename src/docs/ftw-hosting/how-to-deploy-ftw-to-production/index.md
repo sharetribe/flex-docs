@@ -1,11 +1,11 @@
 ---
-title: How to deploy FTW to production
+title: Deploy to production
 slug: how-to-deploy-ftw-to-production
 updated: 2021-01-21
 category: ftw-hosting
 ingress:
-  This guide describes how to set up a production deployment for Flex
-  Template for Web (FTW).
+  This article describes what to take into account when you deploy the
+  Sharetribe Web Template to production.
 published: true
 ---
 
@@ -37,13 +37,13 @@ environment in Flex.
 There are many hosting providers to choose from when considering where
 to host your marketplace. Our official recommendation is to host your
 marketplace on Heroku or Render for a hassle-free installation. However,
-you are free to host your marketplace elsewhere. Flex Templates for Web
-(FTW) should be compatible with any hosting provider as long as they
+you are free to host your marketplace elsewhere. The Sharetribe Web
+Template should be compatible with any hosting provider as long as they
 allow you to run a Node.js/Express server. Many essential functions in
-FTW rely on a small Node.js/Express server (such as server-side
+the template rely on a small Node.js/Express server (such as server-side
 rendering, SSO and transitioning privileged transactions). Serverless
-service providers such as Netlify and Vercel are unsuitable for FTW as
-they don't allow you to host a server.
+service providers such as Netlify and Vercel are unsuitable for hosting
+the template as they don't allow you to host a server.
 
 When choosing a hosting provider, you should not only consider the
 cheapest option. Scalability, tools, service-level agreements and
@@ -79,9 +79,9 @@ Deploying your marketplace to production is a three-step process:
 ### Environment variables
 
 For a full list of possible environment variables, see the
-[FTW Environment configuration variables](/ftw/ftw-env/) reference for
-more information. To deploy your marketplace, you need to add at least
-the following variables:
+[Environment configuration variables](/ftw/ftw-env/) reference for more
+information. To deploy your marketplace, you need to add at least the
+following variables:
 
 - **`NODE_ENV`**
 
@@ -121,13 +121,8 @@ for more information.
 - **`REACT_APP_CANONICAL_ROOT_URL`**
 
 This is the canonical root URL of the marketplace. For example:
-`https://the-name-of-your-app.herokuapp.com`. FTW uses the canonical
-root URL for social media sharing and SEO optimization.
-
-- **`REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY`**
-
-This is the currency your marketplace uses formatted in the Marketplace
-as ISO 4217 currency code. For example, USD, EUR, CAD, AUD, etc.
+`https://the-name-of-your-app.herokuapp.com`. The template uses the
+canonical root URL for social media sharing and SEO optimization.
 
 ### Building the app
 

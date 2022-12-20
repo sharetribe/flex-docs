@@ -1,19 +1,19 @@
 ---
-title: How routing works in SWT
+title: Routing
 slug: how-routing-works-in-ftw
 updated: 2021-02-12
 category: ftw-routing
 ingress:
   This article explains how routing works in the Sharetribe web Template
-  (SWT).
 published: true
 ---
 
-SWT uses [React Router](https://reacttraining.com/react-router/web) for
-creating routes to different pages. React Router is a collection of
-navigational components that allow single-page apps to create routing as
-a part of the normal rendering flow of the React app. Instead of
-defining on the server what gets rendered when a user goes to URL
+The Sharetribe Web Template uses
+[React Router](https://reacttraining.com/react-router/web) for creating
+routes to different pages. React Router is a collection of navigational
+components that allow single-page apps to create routing as a part of
+the normal rendering flow of the React app. Instead of defining on the
+server what gets rendered when a user goes to URL
 _"somemarketplace.com/about"_, we just catch all the path combinations
 and let the app define what page gets rendered.
 
@@ -21,14 +21,14 @@ and let the app define what page gets rendered.
 
 ### Route configuration
 
-The routing setup is simple in SWT. There is just one file to check
+The template's routing setup is simple. There is just one file to check
 before you link to existing routes or start creating new routes to
 static pages: _routeConfiguration.js_.
 
 This page imports all the page-level components dynamically using
 [Loadable Components](https://loadable-components.com/). In addition,
 there's a configuration that specifies all the pages that are currently
-used within SWT:
+used within the template:
 
 ```shell
 └── src
@@ -82,9 +82,9 @@ In the code above, path `/login` renders the _AuthenticationPage_
 component with prop **tab** set to 'login'. In addition, this route
 configuration has the name: 'LoginPage'.
 
-> Routes use exact path matches in SWT. We felt that this makes it
-> easier to understand the connection between a path and its routed view
-> aka related page component.
+> Routes use exact path matches in the template. We felt that this makes
+> it easier to understand the connection between a path and its routed
+> view aka related page component.
 > [Read more.](https://reactrouter.com/web/api/Route/exact-bool)
 
 There are a couple of extra configurations you can set. For example
@@ -136,13 +136,13 @@ Both _loadData_ and _setInitialValues_ functions are part of Redux data
 flow. They are defined in page-specific SomePage.duck.js files and
 exported through _src/containers/pageDataLoadingAPI.js_.
 
-### How SWT renders a route with routeConfiguration.js
+### How the Sharetribe Web Template renders a route with routeConfiguration.js
 
 The route configuration is used in _src/app.js_. For example,
 **ClientApp** defines **BrowserRouter** and gives it a child component
 (**Routes**) that gets the configuration as _routes_ property.
 
-Here's a simplified _app.js_ code that renders the client-side SWT app:
+Here's a simplified _app.js_ code that renders the client-side app:
 
 ```jsx
 import { BrowserRouter } from 'react-router-dom';
@@ -206,12 +206,13 @@ location through the browser's history API.
 React Router exports a couple of
 [navigational components](https://reacttraining.com/react-router/web/api/Link)
 (e.g. `<Link to="/about">About</Link>`) that could be used for linking
-to different internal paths. Since SWT is a template app, we want all
-the paths to be customizable too. That means that we can not use paths
-directly when redirecting a user to another Route. For example, a
-marketplace for German customers might want to customize the LoginPage
-path to be `/anmelden` instead of `/login` - and that would mean that
-all the _Links_ to it would need to be updated.
+to different internal paths. Since the Sharetribe Web Template is meant
+to be a starting point for customization, we want all the paths to be
+customizable too. That means that we can not use paths directly when
+redirecting a user to another Route. For example, a marketplace for
+German customers might want to customize the LoginPage path to be
+`/anmelden` instead of `/login` - and that would mean that all the
+_Links_ to it would need to be updated.
 
 This is the reason why we have created names for different routes in
 _src/routeConfiguration.js_. We have a component called
@@ -233,10 +234,10 @@ Here is a more complex example of _NamedLink_:
 <NamedLink name="SearchPage" to={{ search: '?bounds=60.53,22.38,60.33,22.06' }}>Turku city</NamedLink>
 ```
 
-_NamedLink_ is widely used in SWT, but there are some cases when we have
-made a redirection to another page if some data is missing (e.g.
-CheckoutPage redirects to ListingPage, if some data is missing or it is
-old). This can be done by rendering a component called
+_NamedLink_ is widely used in the template, but there are some cases
+when we have made a redirection to another page if some data is missing
+(e.g. CheckoutPage redirects to ListingPage, if some data is missing or
+it is old). This can be done by rendering a component called
 **NamedRedirect**, which is a similar wrapper for the
 [Redirect component](https://reacttraining.com/react-router/web/api/Redirect).
 
@@ -292,13 +293,14 @@ collected into pageDataLoadingAPI.js file.
 
 ## Loading the code that renders a new page
 
-SWT uses route-based code splitting. Different pages are split away from
-the main code bundle and those page-specific code chunks are loaded
-separately when the user navigates to a new page for the first time.
+The template uses route-based code splitting. Different pages are split
+away from the main code bundle and those page-specific code chunks are
+loaded separately when the user navigates to a new page for the first
+time.
 
 This means that there might be a fast flickering of a blank page when
 navigation happens for the first time to a new page. To remedy that
-situation, SWT forces the page-chunks to be
+situation, the template forces the page-chunks to be
 [preloaded](https://loadable-components.com/docs/prefetching/#manually-preload-a-component)
 when the mouse is over **NamedLink**. In addition, **Form** and
 **Button** components can have a property

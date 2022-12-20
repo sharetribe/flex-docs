@@ -4,8 +4,8 @@ slug: how-to-customize-ftw-styles
 updated: 2022-07-11
 category: ftw-styling
 ingress:
-  This guide describes how to change the styles of the Flex Template for
-  Web (FTW) using CSS.
+  This guide describes the CSS architecture used in the Sharetribe Web
+  Template and how to apply changes to the styling using CSS.
 published: true
 ---
 

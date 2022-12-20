@@ -1,5 +1,5 @@
 ---
-title: How to improve performance
+title: Performance and page speed
 slug: how-to-improve-performance
 updated: 2021-02-15
 category: ftw-styling
@@ -92,9 +92,9 @@ how to use the helper function, see the
 ## Use sparse attributes
 
 Another way to reduce the amount of data that is fetched from API is
-sparse attributes. This is a feature SWT has not yet leveraged fully,
-but it is created to reduce unnecessary data and speed up rendering. You
-can read more from
+sparse attributes. This is a feature is not fully leveraged in the
+template, but it is created to reduce unnecessary data and speed up
+rendering. You can read more from
 [Marketplace API reference for sparse attributes](https://www.sharetribe.com/api-reference/#sparse-attributes).
 
 ## Use code splitting

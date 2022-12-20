@@ -1,11 +1,11 @@
 ---
-title: How code splitting works in SWT
+title: Code splitting
 slug: how-code-splitting-works-in-ftw
 updated: 2021-02-12
 category: ftw-routing
 ingress:
   This article explains how code splitting works in the Sharetribe Web
-  Template (SWT).
+  Template.
 published: true
 ---
 
@@ -17,9 +17,9 @@ smaller chunks which you can then load on demand. To familiarize
 yourself with the subject, you could read about code splitting from
 [reactjs.org](https://reactjs.org/docs/code-splitting.html).
 
-In practice, SWT uses route-based code splitting: page-level components
-use the [Loadable Components](https://loadable-components.com/) syntax
-to create
+In practice, the template uses route-based code splitting: page-level
+components use the
+[Loadable Components](https://loadable-components.com/) syntax to create
 [dynamic imports](https://webpack.js.org/api/module-methods/#import-1).
 
 ```js
@@ -74,7 +74,8 @@ needed if the page-specific chunk is already loaded earlier.
 
 Route-based code splitting means that there might be a fast flickering
 of a blank page when navigation happens for the first time to a new
-page. To remedy that situation, SWT forces the page-chunks to be
+page. To remedy that situation, the template forces the page-chunks to
+be
 [preloaded](https://loadable-components.com/docs/prefetching/#manually-preload-a-component)
 when the mouse is over **NamedLink**. In addition, **Form** and
 **Button** components can have a property `enforcePagePreloadFor`. That
@@ -107,7 +108,8 @@ assigned to a constant variable. That variable is assigned to the
 
 #### Data loading
 
-SWT collects _loadData_ and _setInitialValues_ Redux functions from a
+The Sharetribe Web Template collects _loadData_ and _setInitialValues_
+Redux functions from a
 [modular Redux file](https://github.com/erikras/ducks-modular-redux)
 (i.e. files that look like `<SomePageComponent>`.duck.js). This happens
 in _pageDataLoadingAPI.js_:
@@ -147,9 +149,9 @@ of every page.
 
 ## Server-side rendering (SSR)
 
-When SWT receives a page-load call on server and the page is a public
-one (i.e. the _"auth"_ flag is not set in route configuration), the
-server will render the page into a string and returns it among HTML
+When the template receives a page-load call on server and the page is a
+public one (i.e. the _"auth"_ flag is not set in route configuration),
+the server will render the page into a string and returns it among HTML
 code. This process has 4 main steps:
 
 1. _server/dataLoader.js_ initializes store

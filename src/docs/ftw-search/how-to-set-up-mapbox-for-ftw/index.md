@@ -1,13 +1,12 @@
 ---
-title: How to set up Mapbox for SWT
+title: How to configure Mapbox
 slug: how-to-set-up-mapbox-for-ftw
 updated: 2019-07-04
 category: ftw-search
 ingress:
-  By default, Sharetribe Web Template (SWT) uses Mapbox for showing
-  interactive maps. This guide will help you in creating a Mapbox
-  account and setting up an account token in the SWT environment
-  configuration.
+  By default, the template uses Mapbox for showing interactive maps.
+  This guide will help you create a Mapbox account and assign the access
+  token to an environment variable.
 published: true
 ---
 
@@ -36,8 +35,6 @@ gitignored `.env` file in the project root:
 ```bash
 REACT_APP_MAPBOX_ACCESS_TOKEN=my-access-token-here
 ```
-
-If you are hosting you
 
 ## Configure default locations
 
@@ -91,7 +88,7 @@ with commas.
 ## Using Google Maps
 
 It is possible to use Google Maps instead of Mapbox. Read more in the
-[How to use Google Maps in SWT](/ftw/how-to-use-google-maps-in-ftw/)
+[How to configure Google Maps](/ftw/how-to-use-google-maps-in-ftw/)
 guide.
 
 ### How to use other map providers

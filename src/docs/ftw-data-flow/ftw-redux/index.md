@@ -1,21 +1,22 @@
 ---
-title: How Redux is used in SWT
+title: State management and Redux
 slug: ftw-redux
-updated: 2019-01-29
+updated: 2023-01-01
 category: ftw-data-flow
 ingress:
-  This article explains how Redux is setup in the Sharetribe Web
-  Template (SWT).
+  This article explains how the Sharetribe Web Template uses Redux for
+  state management.
 published: true
 ---
 
 ## What is Redux
 
-SWT is single-page application (SPA) built using React. This means that
-the app needs to be able to render several different layouts (pages)
-depending on user interaction. State management is essential for this
-process. SWT needs to know if a user has been authenticated, if it has
-received relevant data for the current page, and so on.
+The Sharetribe Web Template is single-page application (SPA) built using
+React. This means that the app needs to be able to render several
+different layouts (pages) depending on user interaction. State
+management is essential for this process. The template needs to know if
+a user has been authenticated or if it has received relevant data for
+the current page, and so on.
 
 We use [Redux](https://redux.js.org/introduction/getting-started) for
 state management on the application level. You should read more about
@@ -25,10 +26,10 @@ Page level elements.
 In the following subtopics, we assume that you know the
 [basics of Redux](https://redux.js.org/basics/basic-tutorial) already.
 
-## Containers: Pages + TopbarContainer
+## Container components: Pages + TopbarContainer
 
-SWT is aware of Redux state store, but other components and forms are
-purely
+The Sharetribe Web Template is aware of Redux state store, but other
+components and forms are purely
 [presentational components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 This makes it easier to customize UI components - you don't need to be
 aware of the complexity related to Redux setup when you just want to
@@ -38,11 +39,11 @@ what props are available for each component when they are rendered.
 
 Naturally, there is a need for higher level components which fetch new
 data and define what props are passed down to presentational components.
-In Redux terminology, those components are called _Containers_. SWT has
-defined all the containers inside a directory called `src/containers/`.
-It contains all the pages and a special container for the top bar
-(TopbarContainer) since that is a very complex component and it is
-shared with almost every page. You can read more about differences
+In Redux terminology, those components are called _Containers_. The
+template has defined all the containers inside a directory called
+`src/containers/`. It contains all the pages and a special container for
+the top bar (TopbarContainer) since that is a very complex component and
+it is shared with almost every page. You can read more about differences
 between presentational and container components from this
 [article written by Dan Abramov](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 
@@ -64,7 +65,7 @@ Inside any `src/containers/<ComponentName>` directory, you will also
 find a `<ComponentName>.duck.js` file. These files wrap all the other
 page-specific Redux concepts into a single file. Instead of writing
 action types, action creators and reducers in separate files (and spread
-them around our directory structure), SWT tries to keep pages
+them around our directory structure), the template tries to keep pages
 encapsulated. Page specific actions, store updates, and data fetches
 happen inside their respective directory - just look for a file whose
 name follows a pattern: `<ComponentName>.duck.js`. This pattern is just
@@ -112,8 +113,8 @@ module naming schema, this means that:
 
 ## Advanced Redux concepts: thunks
 
-One essential part of state management in SWT, is filling the Redux
-store with data fetched from the Flex API. This is done with
+One essential part of state management in the template is filling the
+Redux store with data fetched from the Flex API. This is done with
 [Redux Thunks](https://redux.js.org/advanced/async-actions#async-action-creators),
 which is a Redux middleware to create asynchronous action creators.
 
