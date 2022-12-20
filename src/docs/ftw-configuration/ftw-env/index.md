@@ -4,8 +4,8 @@ slug: ftw-env
 updated: 2021-01-21
 category: ftw-configuration
 ingress:
-  Reference documentation for environment variables in Flex Template for
-  Web (FTW).
+  Reference documentation for environment variables in the Sharetribe
+  Web Template.
 published: true
 ---
 
@@ -19,14 +19,12 @@ of environment variables.
 
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
-  See the
-  [How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/)
+  See the [How to set up Mapbox](/ftw/how-to-set-up-mapbox-for-ftw/)
   guide for more information.
 
 - **`REACT_APP_GOOGLE_MAPS_API_KEY`**
 
-  See the
-  [How to use Google Maps in FTW](/ftw/how-to-use-google-maps-in-ftw/)
+  See the [How to use Google Maps](/ftw/how-to-use-google-maps-in-ftw/)
   guide for more information.
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
@@ -78,13 +76,13 @@ of environment variables.
 - **`REACT_APP_SENTRY_DSN`**
 
   See the
-  [How to set up Sentry to log errors in FTW](/ftw/how-to-set-up-sentry/)
-  guide for more information.
+  [How to set up Sentry to log errors](/ftw/how-to-set-up-sentry/) guide
+  for more information.
 
 - **`REACT_APP_CSP`**
 
   See the
-  [How to set up Content Security Policy (CSP) for FTW](/ftw/how-to-set-up-csp-for-ftw/)
+  [How to set up Content Security Policy (CSP)](/ftw/how-to-set-up-csp-for-ftw/)
   guide for more information.
 
 - **`BASIC_AUTH_USERNAME`**
@@ -98,13 +96,13 @@ of environment variables.
 - **`REACT_APP_GOOGLE_ANALYTICS_ID`**
 
   See the
-  [How to set up Analytics for FTW](/ftw/how-to-set-up-analytics-for-ftw/)
-  guide for more information.
+  [How to set up Analytics](/ftw/how-to-set-up-analytics-for-ftw/) guide
+  for more information.
 
 * **`REACT_APP_SHARETRIBE_SDK_BASE_URL`**
 
-  The base url to access the Sharetribe Flex Marketplace API. FTW uses
-  the correct one by default so no need to set this.
+  The base url to access the Sharetribe Flex Marketplace API. The
+  template uses the correct one by default so no need to set this.
 
 * **`REACT_APP_FACEBOOK_APP_ID`**
 
@@ -116,7 +114,7 @@ of environment variables.
 
 <info>
 
-FTW templates are built on top of Create React App (CRA). CRA uses
+The template is built on top of Create React App (CRA). CRA uses
 WebpackDevServer for providing Hot Module Reloading feature. In some
 environments, WebpackDevServer might require configuring additional
 environment variables. You should also check

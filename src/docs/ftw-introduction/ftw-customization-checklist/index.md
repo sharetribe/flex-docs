@@ -14,12 +14,12 @@ marketplace. This article provides a reference list of articles and
 guides you can use when you start customising your marketplace's visual
 appearance, content and configurations.
 
-## Customize visual styles
+## Customizing visual appearance
 
 - Marketplace colors:
   [How to customize FTW styles](/ftw/how-to-customize-ftw-styles/)
-- Favicon and application icons:
-  [How to change FTW icons](/ftw/how-to-change-ftw-icons/)
+- Change the favicon:
+  [How to change the default favicons](/ftw/how-to-change-ftw-icons/)
 - Social media sharing graphics in the
   [Page](https://github.com/sharetribe/ftw-daily/blob/master/src/components/Page/Page.js)
   component

@@ -1,11 +1,11 @@
 ---
-title: How to change FTW UI texts
+title: Change template texts
 slug: how-to-change-ftw-ui-texts
 updated: 2022-06-14
 category: ftw-content
 ingress:
-  This guide gives an overview how to change the User Interface (UI)
-  texts in Flex Template for Web (FTW).
+  This guide gives an overview how to change the user interface texts in
+  the Sharetribe Web Template.
 published: true
 ---
 
@@ -16,27 +16,26 @@ that can be configured in the code base.
 
 ## Microcopy
 
-In the FTW templates, user-facing content is not written directly into
-the source code. Instead, the source code uses
+In the Sharetribe Web Template, user-facing content is not written
+directly into the source code. Instead, the source code uses
 [React Intl message formatting](https://formatjs.io/docs/intl#formatmessage)
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
 each key in their language. Read more about how
 [Flex handles microcopy](/concepts/microcopy/).
 
-By default, FTW templates use built-in language-specific microcopy files
+By default, the template use built-in language-specific microcopy files
 to show microcopy messages in the UI. However, starting in 2022-05,
 operators can also modify microcopy in Flex Console using hosted
 microcopy assets. The built-in microcopy is merged with the hosted
 microcopy in the template, so you can use both ways of managing
 microcopy. Read more about how to
-[modify built-in microcopy in FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/)
-and
-[how hosted microcopy work in the FTW templates](/ftw/hosted-microcopy/).
+[modify built-in microcopy in the template](/ftw/how-to-change-ftw-bundled-microcopy/)
+and [how hosted microcopy work in the template](/ftw/hosted-microcopy/).
 
 You may also want to change the language of the user interface entirely.
 Read more about
-[changing the language used in FTW](/ftw/how-to-change-ftw-language/).
+[changing the language used in the template](/ftw/how-to-change-ftw-language/).
 
 In addition to microcopy, there are other forms of content in the client
 applications that operators may need to manage.
@@ -54,10 +53,10 @@ component files themselves.
 
 More information about adding static content to the application can be
 found in the
-[How to add static pages in FTW](/ftw/how-to-add-static-pages-in-ftw/)
+[How to add static pages in the template](/ftw/how-to-add-static-pages-in-ftw/)
 guide.
 
-## Other cases: labels and countries
+## Labels and countries
 
 There are few other cases where we haven't added microcopy directly to
 the microcopy files.

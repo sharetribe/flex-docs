@@ -4,7 +4,7 @@ slug: how-to-set-up-currency-in-ftw
 updated: 2019-07-17
 category: ftw-configuration
 ingress:
-  Flex Template for Web (FTW) uses USD as the default currency. This
+  The Sharetribe Web Template uses USD as the default currency. This
   guide will help you to change the default currency and other
   currency-related settings.
 published: true
@@ -81,7 +81,7 @@ file.
 
 If you need to calculate the price on client app side use
 [Decimal.js](https://github.com/MikeMcl/decimal.js/) library. Currently,
-there are two places in FTW where prices are calculated:
+there are two places in the template where prices are calculated:
 
 - [server/api-util/lineItemHelpers.js](https://github.com/sharetribe/ftw-x/blob/master/server/api-util/lineItemHelpers.js)
 
@@ -91,11 +91,10 @@ there are two places in FTW where prices are calculated:
 
 You can have multiple currencies inside a single marketplace, since Flex
 itself is currency agnostic. There are, however, some caveats that you
-need to take into account. The default FTW template implementation
-limits currency to a single currency because of the caveats listed
-below. This just made things simpler to develop. You can of course
-change currency handling in your marketplace if you take these caveats
-into account.
+need to take into account. By default, the template limits currency to a
+single currency because of the caveats listed below. This just made
+things simpler to develop. You can of course change currency handling in
+your marketplace if you take these caveats into account.
 
 First, a single listing can have only a single price. If you wish to
 offer the same listing in two different currencies, you need to create

@@ -1,11 +1,12 @@
 ---
-title: Customizing FTW
+title: Customizing the template
 slug: how-to-customize-ftw
 updated: 2021-10-19
 category: ftw-introduction
 ingress:
   This article helps you set up the development environment and outlines
-  the best practices you should follow while developing on FTW.
+  the best practices you should follow while developing on the
+  Sharetribe Web Template.
 published: true
 ---
 
@@ -19,8 +20,7 @@ upstream repository. See how to set up a remote repository in the
 
 ### Create a marketplace environment
 
-Flex Templates for Web (FTW) are marketplace web applications built on
-top of the
+The Sharetribe Web Template is a React application built on top of the
 [Marketplace API](/operator-guides/concepts/#marketplace-api). While you
 can create a marketplace client application from scratch using just the
 API, it requires a lot of effort and we recommend that you use a
@@ -30,10 +30,10 @@ To use the Marketplace API, you will need a client ID. You can obtain
 one by creating a new Flex marketplace at
 [the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).
 
-### Getting started with FTW template
+### Getting started with the template
 
-If you are new to Sharetribe Flex or FTW, we recommend reading these
-articles before starting to work on development:
+If you are new to Sharetribe Flex or the Sharetribe Web Template, we
+recommend reading these articles before starting to work on development:
 
 - [Introducing Flex](/introduction/introducing-flex/)
 - [What development skills are needed?](/introduction/development-skills/)
@@ -51,8 +51,8 @@ repository, you need to pull these changes from the upstream remote.
 
 Pulling the newest changes from the upstream remote might be hard or
 impossible, depending on the extent of the changes you have made to the
-template. FTW is a starting point for development rather than something
-that you should regularly update.
+template. The template is a starting point for development rather than
+something that you should regularly update.
 
 </info>
 
@@ -188,7 +188,7 @@ yarn test
 ```
 
 For more information on tests, see the documentation on
-[how to test FTW](/ftw/how-to-test-ftw/).
+[how to test the template](/ftw/how-to-test-ftw/).
 
 ## Further reading
 

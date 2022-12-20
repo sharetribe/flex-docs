@@ -5,7 +5,7 @@ updated: 2019-01-28
 category: ftw-styling
 ingress:
   This guide describes how to change the favicon and application icons
-  in Flex Template for Web (FTW).
+  in the Sharetribe Web Template.
 published: true
 ---
 

@@ -1,27 +1,27 @@
 ---
-title: How to change FTW bundled microcopy
+title: Bundled microcopy
 slug: how-to-change-ftw-bundled-microcopy
 updated: 2022-06-14
 category: ftw-content
 ingress:
-  This guide describes how to change the bundled microcopy in Flex
-  Template for Web (FTW).
+  This guide describes what is bundled microcopy and how to make changes
+  to it.
 published: true
 ---
 
-The Flex Template for Web supports having a single language for the UI.
-Supported languages are English, French and Spanish, English being used
-by default. For information about changing the language, see the
+The Sharetribe Web Template supports having a single language for the
+UI. Supported languages are English, French and Spanish, English being
+used by default. For information about changing the language, see the
 [Changing the language](/ftw/how-to-change-ftw-language/) article.
 
 We use the [React Intl](https://github.com/yahoo/react-intl) library to
 represent UI microcopy and to format dates, numbers, and money values.
 
-_**Note:** Starting in 2022-05, FTW template microcopy can also be
-modified in Flex Console._
+_**Note:** Starting in 2022-05, template microcopy can also be modified
+in Flex Console._
 
 - _[Microcopy in Flex](/concepts/microcopy/)_
-- _[How hosted microcopy works in the FTW templates](/ftw/hosted-microcopy/)_
+- _[How hosted microcopy works in the template](/ftw/hosted-microcopy/)_
 
 ## The microcopy file
 

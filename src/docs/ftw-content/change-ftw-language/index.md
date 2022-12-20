@@ -1,11 +1,11 @@
 ---
-title: How to change FTW microcopy language
+title: How to change microcopy language
 slug: how-to-change-ftw-language
 updated: 2022-06-14
 category: ftw-content
 ingress:
-  This guide describes how to change the language used in the Flex
-  Template for Web (FTW) application
+  This guide describes how to change the language used in the Sharetribe
+  Web Template.
 published: true
 ---
 
@@ -23,16 +23,16 @@ the steps required to to that.
    language.
 
 > Note: we already have a few other language files available in
-> [src/translations/](https://github.com/sharetribe/ftw-daily/tree/master/src/translations)
+> [src/translations/](https://github.com/sharetribe/ftw-x/tree/master/src/translations)
 > directory for you to start customizing microcopy.
 
 Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to manage
 your marketplace texts, it is still important to have a built-in
-language-specific microcopy file in FTW as well, so that the application
-can show meaningful messages for any keys missing from the Flex Console
-microcopy asset.
+language-specific microcopy file in the template as well, so that the
+application can show meaningful messages for any keys missing from the
+Flex Console microcopy asset.
 
-## Changing the microcopy used in FTW
+## Changing the microcopy used in the template
 
 Once you have the microcopy file in place:
 
@@ -75,18 +75,18 @@ tests are language agnostic as they use microcopy keys as values.
 However, when adding new microcopy you can end up with missing microcopy
 keys in tests. To change the microcopy file used in tests change the
 `messages` variable in
-[src/util/test-helpers.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/test-helpers.js)
+[src/util/test-helpers.js](https://github.com/sharetribe/ftw-x/blob/master/src/util/test-helpers.js)
 to match your language in use, for example:
 
 ```js
 import messages from '../translations/it.json';
 ```
 
-## Developing FTW into a multilanguage marketplace
+## Developing the Sharetribe Web Template into a multilanguage marketplace
 
-If you intend to modify a FTW template to handle multiple languages, it
-is good to note that the FTW templates are by default configured to run
-in single language mode, so a multilanguage marketplace requires custom
+If you intend to modify the template to handle multiple languages, it is
+good to note that the template are by default configured to run in
+single language mode, so a multilanguage marketplace requires custom
 development. For multiple languages, you basically have two approaches
 for that custom development.
 

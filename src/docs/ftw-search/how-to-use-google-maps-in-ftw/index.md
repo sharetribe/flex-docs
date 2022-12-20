@@ -1,5 +1,5 @@
 ---
-title: How to configure Google Maps
+title: Enable Google Maps
 slug: how-to-use-google-maps-in-ftw
 updated: 2020-12-15
 category: ftw-search

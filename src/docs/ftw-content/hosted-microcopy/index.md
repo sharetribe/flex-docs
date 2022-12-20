@@ -4,14 +4,14 @@ slug: hosted-microcopy
 updated: 2022-06-14
 category: ftw-content
 ingress:
-  This article describes how hosted microcopy work in Flex Template for
-  Web (FTW).
+  This article describes how hosted microcopy work in the Sharetribe Web
+  Template.
 published: true
 ---
 
 Template microcopy can be managed both in the built-in microcopy files
-and in Flex Console. This article describes how the FTW template uses
-the hosted microcopy and merges it with the built-in microcopy.
+and in Flex Console. This article describes how the template uses the
+hosted microcopy and merges it with the built-in microcopy.
 
 ## Hosted microcopy
 
@@ -20,17 +20,17 @@ in Flex Console. The client app then needs to fetch it using the Asset
 Delivery API.
 
 It is good to note that even if the operator adds some hosted microcopy
-using Flex Console, the FTW template still needs to have a built-in
+using Flex Console, the template still needs to have a built-in
 microcopy file for the microcopy keys that do not have a value in the
 hosted asset. That way, the UI can still render something meaningful for
 the parts of the page that the operator has not modified.
 
-FTW templates specify the path to the hosted microcopy as part of the
+The template specifies the path to the hosted microcopy as part of the
 app-wide configuration in
 [_config/configDefault.js_](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js#L78).
 This hosted microcopy lives in a file called _content/translations.js_,
 since language-specific microcopy files make it fairly easy to translate
-the FTW template to languages other than the default English.
+the template to languages other than the default English.
 
 ```js
 // CDN assets for the app. Configurable through Flex Console.
@@ -40,7 +40,7 @@ const appCdnAssets = {
 };
 ```
 
-In addition, FTW templates have added a new global Redux file
+In addition, the template has a new global Redux file
 (_src/ducks/hostedAssets.duck.js_), which exports a Redux Thunk function
 called **fetchAppAssets**. This is the function that actually makes the
 calls to the Asset Delivery API.
@@ -64,7 +64,7 @@ Hosted assets are versioned as a
 to how Git works. Individual asset files might have not changed when the
 whole version has changed and this might cause
 [HTTP redirects](https://www.sharetribe.com/api-reference/asset-delivery-api.html#http-redirects).
-Since FTW templates use Flex SDK, the response always contains the data
+Since the template uses Flex SDK, the response always contains the data
 for the requested asset, even if the asset has not changed in the
 specified version.
 
@@ -138,11 +138,11 @@ environment or **_yarn run dev-server_** on your local machine.
    - To ensure that client-side rendering has the same version of
      microcopy, the asset version is passed (through preloaded state) to
      front end.
-   - Note: FTW does not pass the microcopy itself from the server to
-     browser. The reason is that if browser fetches the versioned asset
-     file directly, it can leverage browser's cache. So, every page
-     load, after the initial one, will use the _translation.json_ file
-     from the browser's local cache.
+   - Note: The template does not pass the microcopy itself from the
+     server to browser. The reason is that if browser fetches the
+     versioned asset file directly, it can leverage browser's cache. So,
+     every page load, after the initial one, will use the
+     _translation.json_ file from the browser's local cache.
 
    ```js
      .then(() => {

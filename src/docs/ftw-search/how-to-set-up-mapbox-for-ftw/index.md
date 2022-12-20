@@ -1,5 +1,5 @@
 ---
-title: How to configure Mapbox
+title: Enable Mapbox
 slug: how-to-set-up-mapbox-for-ftw
 updated: 2019-07-04
 category: ftw-search
