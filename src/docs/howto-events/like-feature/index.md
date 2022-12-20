@@ -1,7 +1,7 @@
 ---
 title: How to implement a like feature using events
 slug: like-feature
-updated: 2021-02-25
+updated: 2022-02-25
 category: how-to-events
 ingress:
   Following this guide, you'll be able to build a feature that allows
@@ -58,12 +58,17 @@ in the _ListingPage_ directory.
 
 ###### Step 1: Create a new file
 
+The Sharetribe Web Template (SWT) features two different listing page
+layouts. In this tutorial, we will implement the like feature to the
+default ListingPageFullImage version, but you can just as well follow
+the instructions to implement it in ListingPageHeroImage as well.
+
 ```shell
 └── src
     └── containers
         └── ListingPage
             ├── SectionLikes.js
-            ├── ListingPage.js
+            ├── ListingPageFullImage.js
             └── ListingPage.module.css
 ```
 
@@ -109,73 +114,89 @@ export default SectionLikes;
 
 ##### Step 3: Import the component
 
-Next, let's import the new component in _SectionHeading.js_:
+Next, let's import the new component in _ListingPageFullImage.js_:
 
 ```jsx
 import SectionLikes from './SectionLikes';
 ```
 
-##### Step 4: Spread the rest of the props to _rest_
+##### Step 4: Create an instance of the component into a variable
 
-In order to access _publicData_ in our new component, we have to pass it
-as a prop to _SectionHeading_ and from there on to _SectionLikes_:
+We want to show the like button next to the listing title. In SWT, where
+that title is shown depends on whether the listing page is viewed on
+mobile or on desktop. Because of this, we want to set the whole instance
+into a constant, so we can pass it to the correct contexts.
 
 ```diff
-const SectionHeading = props => {
-  const {
-    priceTitle,
-    formattedPrice,
-    richTitle,
-    category,
-    hostLink,
-    showContactUser,
-    onContactUser,
-+   ...rest
-  } = props;
++  const sectionLikes = (
++    <SectionLikes
++      publicData={currentListing?.attributes?.publicData}
++    />
++  )
 ```
 
-##### Step 5: Add the component to the render method
+##### Step 5: Pass the component variable to the render method and OrderPanel
 
-We've created the new component _SectionLikes.js_ but it still needs to
-be included in the render method of _SectionHeading.js_:
+We've created the new component _SectionLikes.js_, but it still needs to
+be included in the render method of _ListingPageFullImage.js_ to show it
+in a mobile layout:
 
 ```diff
-  return (
-    <div className={css.sectionHeading}>
-      <div className={css.desktopPriceContainer}>
-        <div className={css.desktopPriceValue} title={priceTitle}>
-          {formattedPrice}
-        </div>
-        <div className={css.desktopPerUnit}>
-          <FormattedMessage id={unitTranslationKey} />
-        </div>
-      </div>
-      <div className={css.heading}>
-        <h1 className={css.title}>{richTitle}</h1>
-        <div className={css.author}>
-          {category}
-          <FormattedMessage id="ListingPage.hostedBy" values={{ name: hostLink }} />
-          {showContactUser ? (
-            <span className={css.contactWrapper}>
-              <span className={css.separator}>•</span>
-              <InlineTextButton
-                rootClassName={css.contactLink}
-                onClick={onContactUser}
-                enforcePagePreloadFor="SignupPage"
-              >
-                <FormattedMessage id="ListingPage.contactUser" />
-              </InlineTextButton>
-            </span>
-          ) : null}
-+         <span className={css.separator}>•</span>
-+         <SectionLikes {...rest} />
-        </div>
-      </div>
+    <div className={css.mobileHeading}>
+      <h1 className={css.orderPanelTitle}>
+        <FormattedMessage id="ListingPage.orderTitle" values={{ title: richTitle }} />
+      </h1>
++     {sectionLikes}
     </div>
-  );
 ```
 
-###### Step 6: Update ListingPage.module.css
+To show the like component on a desktop layout, we need to pass it as a
+prop to OrderPanel.
+
+```diff
+    <div className={css.orderColumnForProductLayout}>
+    <OrderPanel
+      className={css.productOrderPanel}
+      listing={currentListing}
+      ...
++     sectionLikes={sectionLikes}
+    />
+
+```
+
+###### Step 6: Render the like section in OrderPanel.js
+
+To show the like component in OrderPanel, we need to pick it from props
+and show it next to the title.
+
+```shell
+└── src
+    └── components
+        └── OrderPanel
+            └── OrderPanel.js
+```
+
+Since we are passing the full instance as a prop, you can show it as a
+part of the heading.
+
+```diff
+const OrderPanel = props => {
+  const {
+    rootClassName,
+    className,
+    ...
++   sectionLikes,
+  } = props;
+...
+    <div className={css.orderHeading}>
+      {titleDesktop ? titleDesktop : <h2 className={titleClasses}>{title}</h2>}
+      {subTitleText ? <div className={css.orderHelp}>{subTitleText}</div> : null}
++     {sectionLikes}
+    </div>
+
+```
+
+###### Step 7: Update ListingPage.module.css
 
 Finally, let's style our new component by adding the following CSS rules
 in _ListingPage.module.css_:
@@ -349,8 +370,8 @@ export const updateLikes = listingId => (dispatch, getState, sdk) => {
 ###### Step 7: Import updateLikes to ListingPage.js
 
 We need to import the new thunk we defined in the _ListingPage.duck.js_
-file into _ListingPage.js_ in order to connect to the Redux store
-through _mapDispatchToProps_:
+file into _ListingPageFullImage.js_ in order to connect to the Redux
+store through _mapDispatchToProps_:
 
 ```jsx
 import {
@@ -408,27 +429,22 @@ const mapDispatchToProps = dispatch => ({
 
 Currently, clicking on the icon will do nothing. We need to make some
 small tweaks for the button click to successfully update the user
-extended data. First, we'll need to pass props down through
-_SectionHeading_ to _SectionLikes_. Then we'll add an onClick event
-handler to the React component in _SectionLikes_.
+extended data. First, we'll need to define the necessary props on
+_SectionLikes_. Then we'll add an onClick event handler to the
+_SectionLikes_ React component.
 
 ###### Step 1: Pass _SectionHeading_ the correct props in _ListingPage.js_
 
 ```diff
-<SectionHeading
-  priceTitle={priceTitle}
-  formattedPrice={formattedPrice}
-  richTitle={richTitle}
-  category={category}
-  hostLink={hostLink}
-  showContactUser={showContactUser}
-  onContactUser={this.onContactUser}
-+ publicData={publicData}
-+ onUpdateLikes={onUpdateLikes}
-+ listingId={listingId.uuid}
-+ currentUser={currentUser}
-+ updateLikesInProgress={updateLikesInProgress}
-/>
+  const sectionLikes = (
+    <SectionLikes
+      publicData={currentListing?.attributes?.publicData}
++     listingId={currentListing.id.uuid}
++     onUpdateLikes={onUpdateLikes}
++     currentUser={currentUser}
++     updateLikesInProgress={updateLikesInProgress}
+    />
+  )
 ```
 
 ###### Step 2: Define props in _SectionLikes.js_
@@ -603,14 +619,17 @@ const pollLoop = (sequenceId) => {
       const lastEvent = events[events.length - 1];
       const fullPage = events.length === res.data.meta.perPage;
       const delay = fullPage? pollWait : pollIdleWait;
--    const lastSequenceId = lastEvent ? lastEvent.attributes.sequenceId : sequenceId;
--     	      events.forEach(e => {
+      const lastSequenceId = lastEvent ? lastEvent.attributes.sequenceId : sequenceId;
+
+-     events.forEach(e => {
 -       analyzeEvent(e);
 -     });
--      if (lastEvent) saveLastEventSequenceId(lastEvent.attributes.sequenceId);
+-
+-     if (lastEvent) saveLastEventSequenceId(lastEvent.attributes.sequenceId);
 -     setTimeout(() => {pollLoop(lastSequenceId);}, delay);
 +     const likesToUpdate = groupEvents(events);
 +     const actions = Object.keys(likesToUpdate).map(key => updateListing(key, likesToUpdate[key]));
++
 +     const results = Promise.all(actions);
 +     results.then(result => {
 +       result.forEach(el => {
@@ -641,28 +660,33 @@ However, we can provide the user with instant feedback by updating the
 like count in the front-end, even though our event listener updates the
 actual like count.
 
-###### Step 1: Add new state to ListingPage.js
+###### Step 1: Add new state to ListingPageFullImage.js
 
 ```diff
-export class ListingPageComponent extends Component {
- constructor(props) {
-   super(props);
-   const { enquiryModalOpenForListingId, params } = props;
-   this.state = {
-     pageClassNames: [],
-     imageCarouselOpen: false,
-     enquiryModalOpen: enquiryModalOpenForListingId === params.id,
-+     likesOffset: 0,
-   };
+export const ListingPageComponent = props => {
+  const [enquiryModalOpen, setEnquiryModalOpen] = useState(
+    props.enquiryModalOpenForListingId === props.params.id
+  );
+
++ const [likesOffset, updateLikesOffset] = useState(0);
+
 ```
 
-###### Step 2: Pass new functions as props to SectionHeading
+###### Step 2: Pass new functions as props to SectionLikes
 
-```jsx
-<SectionHeading
- likesOffset={this.state.likesOffset}
- onSubtractLike={() => this.setState({ likesOffset: this.state.likesOffset - 1})}
- onAddLike={() => this.setState({ likesOffset: this.state.likesOffset + 1 })}
+```diff
+const sectionLikes = (
+  <SectionLikes
+    publicData={currentListing?.attributes?.publicData}
+    listingId={currentListing.id.uuid}
+    onUpdateLikes={onUpdateLikes}
+    currentUser={currentUser}
+    updateLikesInProgress={updateLikesInProgress}
++   likesOffset={likesOffset}
++   onSubtractLike={() => updateLikesOffset(likesOffset - 1)}
++   onAddLike={() => updateLikesOffset(likesOffset + 1)}
+  />
+  )
 ```
 
 ###### Step 3: Define new props in SectionLikes.js
