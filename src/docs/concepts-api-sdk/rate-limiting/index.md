@@ -1,7 +1,7 @@
 ---
 title: Rate limiting in Marketplace API and Integration API
 slug: rate-limiting
-updated: 2022-12-12
+updated: 2022-12-21
 category: concepts-api-sdk
 ingress:
   This article describes rate limiting in Marketplace API and
@@ -10,28 +10,27 @@ ingress:
 published: true
 ---
 
-Starting in XX-XX-2023, Marketplace API and Integration API will feature
-new rate limits in dev and demo environments. In addition, Integration
-API will feature new concurrency limits in dev and demo environments
-and, eventually, in production environments.
+Starting in January 2023, Marketplace API and Integration API will
+feature new rate limits in dev and demo environments. In addition,
+Integration API will feature new concurrency limits in dev and demo
+environments and, eventually, in production environments.
 
 <extrainfo title="What are rate limits and concurrency limits?">
 
-**Rate limit** means a limit on the number of requests from your
-marketplace that the API can process within a time span, e.g. in one
-minute.
+**Rate limit** means a limit on the number of requests that the API can
+process within a time span, e.g. in one minute.
 
 **Concurrency limit** means a limit on the number of simultaneous
-requests from your marketplace that the API can process at any given
-moment.
+requests that the API can process at any given moment.
 
 </extrainfo>
 
 The rate limits are different for queries (fetching data) and commands
 (modifying data). Queries are rate limited at 1 request per second (60
 requests per minute) on average. Commands are rate limited at 1 request
-per 2 seconds (30 requests per minute) on average. You can find more
-information on Flex rate limits in the [API reference](TODO).
+per 2 seconds (30 requests per minute) on average. The rate limit
+applies per client IP address. You can find more information on Flex
+rate limits in the [API reference](TODO).
 
 It is good to note that **production environments are currently not rate
 limited**. Still, as you build your Flex marketplace implementation to
@@ -88,7 +87,7 @@ this version.
 To handle the general rate limits in dev and demo environments, you can
 pass configurations for query and command rate limiters. You can see the
 details of passing those configurations in our
-[SDK documentation](TODO).
+[SDK documentation](https://sharetribe.github.io/flex-integration-sdk-js/rate-limits.html).
 
 For listing creation rate limits, you will need to implement your own
 rate limit handling logic. We have an example of this in our
@@ -97,7 +96,9 @@ rate limit handling logic. We have an example of this in our
 It is good to note that rate limits apply by client IP address. If you
 have more than one instance of the SDK running on the same server or
 computer, then each SDK instance will rate-limit itself, but combined
-they might still go over the total limits. If that is the case, you can:
+they might still go over the total limits. Read more in our
+[SDK documentation](https://sharetribe.github.io/flex-integration-sdk-js/rate-limits.html).
+If that is the case, you can:
 
 - customize the rate limits to lower values than the suggested ones,
 - customize `httpsAgent` to use `maxSockets` set to much lower than 10
@@ -111,5 +112,5 @@ they might still go over the total limits. If that is the case, you can:
 
 If you are not using the Integration SDK, we strongly recommend you to
 use your own rate and concurrency limit handling, by using e.g. a
-library such as [limiter](https://www.npmjs.com/package/limiter) for
-Node.js, or a similar existing implementation for your stack.
+library such as [bottleneck](https://www.npmjs.com/package/bottleneck)
+for Node.js, or a similar existing implementation for your stack.
