@@ -2,7 +2,7 @@
 title: Introducing Saunatime
 slug: introducing-saunatime
 updated: 2022-04-06
-category: introduction-templates
+category: introduction
 ingress:
   Saunatime is a Flex Template for Web application that features a
   rental marketplace complete with daily and nightly availability

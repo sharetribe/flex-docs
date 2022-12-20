@@ -2,7 +2,7 @@
 title: Introducing Yogatime
 slug: introducing-yogatime
 updated: 2021-10-18
-category: introduction-templates
+category: introduction
 ingress:
   If you’re building a service marketplace or are looking for
   flexibility in customizing pricing units, Yogatime is the Flex
