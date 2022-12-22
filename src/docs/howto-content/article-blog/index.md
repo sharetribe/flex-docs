@@ -1,7 +1,7 @@
 ---
 title: Create a library of articles
-slug: articles
-updated: 2022-09-29
+slug: article-library
+updated: 2022-12-22
 category: how-to-content
 ingress:
   With the Flex Pages feature, you can build static pages on your
@@ -11,9 +11,9 @@ ingress:
 published: true
 ---
 
-The Flex Pages allows you to create different types of static content.
-Using the different content elements – article, feature, column – you
-can build a wide range of different types of pages.
+The Flex Pages feature allows you to create different types of static
+content. Using the different content elements – article, feature, column
+– you can build a wide range of different types of pages.
 
 One use case for creating static content is to have a library of
 articles related to your marketplace topic. This guide shows you how to
@@ -55,64 +55,195 @@ can be linked to at least two or three other articles within your
 article base. You can start with e.g. half a dozen article topics, and
 then build your content library as you go.
 
-## Build your article pages
+## Build your library page and article pages
 
-[TODO: Add explanation and screenshots]
+[TODO: Add screenshots]
 
-- Add page and page id => this will become the URL /p/page-id
-- Add sections
-  - template => article
-  - add title => page title + section title
-- Add blocks to add images, youtube videos etc.
+To add a page, you need to navigate to Flex Console > Content > Pages.
+By default, this page contains a landing page, a terms of service page,
+and a privacy policy page. Under those pages you can see a link with
+text "+ Add new page...". Click this link.
 
-## Link to other pages
+![Page creation modal](create-page-modal.png 'Page creation modal')
 
-We have now built three pages with the page urls
+### Build your library page
+
+As the page id for this first page, enter "articles". This will be the
+collection page where you will link all your individual articles, and
+you can see the page in _[your-marketplace-url.com]/articles_.
+
+After you create the page, you can start adding new sections. Let's add
+the following sections to this main page:
+
+- Introduction section with _article_ template. You can use this section
+  to explain more about the focus of your marketplace and your article
+  collection.
+- Featured articles with _features_ template. You can use this section
+  to highlight your most important content, best performing articles, or
+  an interesting series of posts.
+- List of all articles with _article_ template. You can use this section
+  to list all your articles, either ordered chronologically or in some
+  other way you prefer.
+
+In each section, you can define a title, ingress content, and blocks for
+your copy text. After you save the changes you made, you can click the
+"View page" link in the top right corner of the page editor to see your
+changes.
+
+### Build your article pages
+
+You have now created your main article collection page. Next, you will
+create a few article pages with your actual article content. If you were
+creating a marketplace about cottages, you could first write articles
+with the following page URLs:
 
 - /p/history
 - /p/packing-list
 - /p/amenities
 
-It also makes sense to build a library contents page where you link all
-your articles
+You can create these article pages in a similar manner to how you
+created the collection page. Depending on the design of your pages, you
+may want to use _article_ sections for the main part of the text, and
+e.g. _features_ sections to highlight quotes or other key information.
 
-- /p/library
+## Link to other pages
 
-You can add different sections for possible different categories your
-content naturally falls into. If you have resources on other sites, e.g.
-guest posts or news stories, this is a good place to link to those as
-well => external links
+Once your articles have been created, you need to link the articles to
+each other.
 
-[TODO: text segments for linking:]
+For instance, in your article on amenities you could link to the other
+two articles in the following way:
 
-- in amenities:
-  - "For a wood-heated cottage, it makes sense to bring your woollen
-    socks – even in summer, the cottage may be cool inside, and [having
-    the right gear] (link to /p/packing-list) reduces the need for
-    heating during the cooler months."
-  - "For [older cottages] (link to /p/history), amenities will likely be
-    more modest."
+```
+...
+For a wood-heated cottage, it makes sense to bring your woollen socks – even in summer,
+the cottage may be cool inside, and [having the right gear](/p/packing-list) reduces
+the need for heating during the cooler months.
 
-Follow a similar pattern in the other articles.
+For [older cottages](/p/history), amenities will likely be more modest.
+...
+```
 
-You can link the pages to each other
+The example above uses the
+[Markdown](https://www.markdownguide.org/getting-started/) style of
+creating links:
 
-- either using the button UI
-- or using Markdown
+- The link text is wrapped in [square brackets]
+- The link address is added immediately after the closing bracket in
+  (curved brackets).
 
-Check your results on your marketplace site
+In addition to adding the links in the text in Markdown, you can add
+links to the button elements of both blocks and sections.
+
+![Creating an internal link button](button-ui.png 'Creating an internal link button')
 
 ## Share on social media
 
-The FTW template handles the article's meta tags in this way:
+By default, the Page Builder adds a basic page schema for each content
+page. You can modify the content of this schema in the CMSPage
+component.
 
-[TODO: explain how FTW handles meta tags]
+```shell
+└── src
+    └── containers
+        └── CMSPage
+            └── CMSPage.js
+```
 
-To see how your article looks when shared on different social media
-platforms, you can use the
+You can see the default information shared about your page by pasting a
+publicly available link to the
 [Facebook sharing debugger](https://developers.facebook.com/tools/debug/)
 and the
 [Twitter card validator](https://cards-dev.twitter.com/validator).
 
-[TODO: Add screenshot of Facebook sharing debugger and the amenities
-article]
+### Add article image to social media shares
+
+One thing that the default page schema does not do is use the article
+image in the social share. Instead, it uses the default marketplace
+sharing image. You can see the image used for social media shares in
+your page _head_ tag.
+
+// TODO: Screenshot head tag with og:image visible
+
+You can modify the template code to parse the images from your page
+asset, however, and set them as the social media share images.
+
+<info>
+
+If you want to use the article images in social shares, you need to add
+the images in Console with **landscape aspect ratio**. That way, the
+images correspond to the specifications of e.g. Open Graph and Twitter.
+The following instructions assume that your articles have at least one
+landscape image in your article.
+
+</info>
+
+You will need to make these changes in the CMSPage.js component.
+
+```shell
+└── src
+    └── containers
+        └── CMSPage
+            └── CMSPage.js
+```
+
+First, you need to parse the correct image variants from the page
+assets. Images can only be added to blocks, so this function maps all
+the block arrays from the page sections into a single array. Then, it
+picks the specified variant of each image into an array.
+
+```jsx
+const cmsPageImages = (assetData, variantName) => {
+  if (!assetData || !assetData[pageId]) {
+    return null;
+  }
+
+  // Get the correct variants of images from the content blocks
+  // of the different sections on the page.
+  const imageVariants = assetData[pageId].data?.sections
+    // First, flatMap the block arrays inside the section array into a single flat array
+    .flatMap(s => s.blocks)
+    // Second, pick the correct variants from the block images and add them to the imageVariants array.
+    .reduce((variants, b) => {
+      const { image } = b.media;
+      const variant = image?.attributes?.variants[variantName] || null;
+
+      return variant ? [...variants, variant] : variants;
+    }, []);
+
+  // Only return the imageVariants array if there are images. Otherwise return null, so that
+  // the default marketplace image is used for the og tag.
+  return imageVariants.length > 0 ? imageVariants : null;
+};
+```
+
+You can then use the same function to get the correct image sizes for
+both Facebook (i.e. Open Graph) and Twitter.
+
+```jsx
+const facebookImages = cmsPageImages(pageAssetsData, 'landscape1200');
+const twitterImages = cmsPageImages(pageAssetsData, 'landscape800');
+```
+
+When you pass the images to the PageBuilder, it passes them down to the
+Page.js component, which sets them into the page schema.
+
+```diff
+  return (
+    <PageBuilder
+      pageAssetsData={pageAssetsData?.[pageId]?.data}
+      title={schemaTitle}
+      description={schemaDescription}
+      schema={pageSchemaForSEO}
+      contentType={openGraphContentType}
+      inProgress={inProgress}
++     facebookImages={facebookImages}
++     twitterImages={twitterImages}
+    />
+  );
+```
+
+You can now see the asset based image being used in the _head_ script
+instead of the default one.
+
+// TODO Screenshot of head element
