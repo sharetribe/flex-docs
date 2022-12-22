@@ -1,7 +1,7 @@
 ---
 title: Enable Google Maps
 slug: how-to-use-google-maps-in-ftw
-updated: 2020-12-15
+updated: 2023-01-01
 category: ftw-search
 ingress:
   The Sharetribe Web Template offers out of the box support for Google
@@ -16,11 +16,10 @@ published: true
 Note: before making the change to Google Maps, you should consider if
 you are OK with their current pricing. There's a pricing calculator
 available in their
-[pricing page](https://cloud.google.com/maps-platform/pricing/). SWT's
-default map provider is Mapbox, which is often cheaper. To use Mapbox,
-see the
-[How to set up Mapbox for SWT](/ftw/how-to-set-up-mapbox-for-ftw/)
-guide.
+[pricing page](https://cloud.google.com/maps-platform/pricing/). The
+template's default map provider is Mapbox, which is often cheaper. To
+use Mapbox, see the
+[How to set up Mapbox](/ftw/how-to-set-up-mapbox-for-ftw/) guide.
 
 </info>
 
@@ -67,12 +66,11 @@ variable to `'GOOGLE_MAPS'`:
 export const mapProvider = 'GOOGLE_MAPS';
 ```
 
-## Configure default locations
+## Further reading
 
-You can configure the search field on the landing page to show the user
-a predefined list of locations from which to search. Enabling this
-feature can make searching for common locations faster for your users
-and reduce the need to call the Google Places API.
-
-Learn how to configure default locations in
-[this article](/ftw/how-to-set-up-mapbox-for-ftw/#configure-default-locations).
+Once you have enabled maps in your marketplace using your chosen map
+provider, you can change the map's configuration settings. These options
+allow you to change things like the default search locations and
+restrict location search to specific countries. Refer to the
+[map configurations article](ftw/configure-maps/) to learn more about
+the specific configurations you can adjust for maps in your marketplace.

@@ -58,10 +58,10 @@ in the _ListingPage_ directory.
 
 ###### Step 1: Create a new file
 
-The Sharetribe Web Template (SWT) features two different listing page
-layouts. In this tutorial, we will implement the like feature to the
-default ListingPageFullImage version, but you can just as well follow
-the instructions to implement it in ListingPageHeroImage as well.
+The Sharetribe Web Template features two different listing page layouts.
+In this tutorial, we will implement the like feature to the default
+ListingPageFullImage version, but you can just as well follow the
+instructions to implement it in ListingPageHeroImage as well.
 
 ```shell
 └── src
@@ -122,10 +122,11 @@ import SectionLikes from './SectionLikes';
 
 ##### Step 4: Create an instance of the component into a variable
 
-We want to show the like button next to the listing title. In SWT, where
-that title is shown depends on whether the listing page is viewed on
-mobile or on desktop. Because of this, we want to set the whole instance
-into a constant, so we can pass it to the correct contexts.
+We want to show the like button next to the listing title. In the
+template, where that title is shown depends on whether the listing page
+is viewed on mobile or on desktop. Because of this, we want to set the
+whole instance into a constant, so we can pass it to the correct
+contexts.
 
 ```diff
 +  const sectionLikes = (

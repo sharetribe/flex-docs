@@ -1,11 +1,11 @@
 ---
 title: Configuration variables
-slug: ftw-env2
+slug: configuration
 updated: 2022-10-30
 category: ftw-configuration
 ingress:
-  The combined template has a fair amount of configurations you can edit
-  through configuration files. This article explains how to change those
+  The combined template has many configurations you can edit through
+  configuration files. This article explains how to change those
   configurations and what they mean.
 published: true
 ---
@@ -24,6 +24,9 @@ from the [template environment variables](/ftw/ftw-env/) article.
 
 - [configBranding.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configBranding.js)
   - Marketplace colour, logos, Facebook and Twitter media
+- [configDefault.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js)
+  - Change localization settings, marketplace currency and add social
+    media links
 - [configLayout.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configBranding.js)
   - Layout or the search and listing page and aspect ratio for listing
     image variants
@@ -46,6 +49,99 @@ from the [template environment variables](/ftw/ftw-env/) article.
 - [configDefaultLocationSearches.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefaultLocationSearches.js)
   - Specify a list of locations that are shown to the user as
     suggestions when they click on the search bar
+
+## Branding
+
+The
+[configBranding.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configBranding.js)
+file allows you to customize the branding and appearance of your
+marketplace. The configurations you can change include the marketplace's
+color, logos for desktop and mobile devices, a background image, and
+default images for social media sharing.
+
+The `marketplaceColor` constant defines the primary color for your
+marketplace, which is used to style various elements throughout the
+site.
+
+The `logoImageDesktopURL` and `logoImageMobileURL` constants specify the
+URL for the desktop and mobile logos, respectively.
+
+The `brandImageURL` constant specifies the URL for a background image
+that is used on several pages.
+
+The `facebookImageURL` and `twitterImageURL` constants specify the
+default images for social media sharing on Facebook and Twitter,
+respectively.
+
+Keep in mind that these constants are only a small part of your
+marketplace's overall branding and appearance. You may need to modify
+other elements, such as CSS styles, to fully customize the appearance of
+your site.
+
+## Common configurations
+
+The `marketplaceName` setting specifies the name of your marketplace.
+This name is used in various places throughout the site, such as in
+microcopy and in meta tags for SEO and social media sharing.
+
+### Currency and pricing
+
+The currency setting specifies the currency used in your marketplace. It
+must be in ISO 4217 currency code and should match one of the currencies
+listed in the currencySettings.js file.
+
+The `listingMinimumPriceSubUnits` setting specifies the minimum price
+for a listing in your marketplace, expressed in currency subunits (e.g.,
+cents). A value of 0 means that there is no minimum price for listings.
+Note that Stripe may charge a minimum fee that depends on factors such
+as the country and currency.
+
+### Locale
+
+You can use the localization setting to specify the locale and the first
+day of the week used in calendars. This setting contains two properties:
+
+- `locale`: The locale of your marketplace, expressed as a language
+  code. The default value is 'en' for English.
+
+- `firstDayOfWeek`: The first day of the week in your marketplace,
+  expressed as a number between `0` (Sunday) and `6` (Saturday). The
+  default value is `1` for Monday.
+
+For example, to change the locale to French, you would set the `locale`
+property to `'fr'`. To change the first day of the week to Sunday, you
+would set the `firstDayOfWeek` property to `0`.
+
+### Structured data
+
+The `siteFacebookPage`, `siteInstagramPage`, and `siteTwitterHandle`
+settings in the code specify the schema.org organization metadata and
+are used in the meta tags for social media sharing.
+
+The `siteFacebookPage` setting specifies the Facebook page associated
+with your marketplace or organization. The page should be expressed as a
+URL (e.g., 'https://www.facebook.com/sharetribe/' or '@sharetribe').
+
+The `siteInstagramPage` setting specifies the Instagram page associated
+with your marketplace or organization. The page should be expressed as a
+URL (e.g., 'https://www.instagram.com/sharetribe/').
+
+The `siteTwitterHandle` setting specifies the Twitter handle associated
+with your marketplace or organization. The handle should be expressed as
+a username (e.g., '@sharetribe').
+
+You can also specify address information to be used in your site's
+structured data. The address setting contains four properties:
+
+- `addressCountry`: The country in which your marketplace or
+  organization is located, expressed as an ISO 3166-1 alpha-2 country
+  code (e.g., 'FI' for Finland).
+- `addressRegion`: The region or state in which your marketplace or
+  organization is located (e.g., 'Helsinki').
+- `postalCode`: The postal code of the location of your marketplace or
+  organization (e.g., '00130').
+- `streetAddress`: The street address of the location of your
+  marketplace or organization (e.g., 'Erottajankatu 19 B').
 
 ## Layout configuration
 
