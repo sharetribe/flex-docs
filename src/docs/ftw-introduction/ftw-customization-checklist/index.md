@@ -9,100 +9,75 @@ ingress:
 published: true
 ---
 
-The template provides a great starting point for developing your
-marketplace. This article provides a reference list of articles and
-guides you can use when you start customising your marketplace's visual
-appearance, content and configurations.
+The Sharetribe Web Template provides a great starting point for
+developing your marketplace. This article provides a reference list of
+articles and guides you can use when you start customising your
+marketplace's visual appearance, content and configurations.
 
-## Customizing visual appearance
+## Visual appearance
 
-- Marketplace colors:
-  [How to customize FTW styles](/ftw/how-to-customize-ftw-styles/)
-- Change the favicon:
-  [How to change the default favicons](/ftw/how-to-change-ftw-icons/)
-- Social media sharing graphics in the
-  [Page](https://github.com/sharetribe/ftw-daily/blob/master/src/components/Page/Page.js)
-  component
-- [Logo](https://github.com/sharetribe/ftw-daily/blob/master/src/components/Logo/Logo.js)
-  component change and check that it works on
-  [Topbar](https://github.com/sharetribe/ftw-daily/tree/master/src/components/Topbar),
-  [Footer](https://github.com/sharetribe/ftw-daily/tree/master/src/components/Footer),
-  and
-  [CheckoutPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
-- [Default background image](https://github.com/sharetribe/ftw-daily/blob/master/src/assets/background-1440.jpg)
+The Sharetribe Web Template is styled as a fictional marketplace for
+bicycles. To customize the default styles of the template to match your
+marketplace’s brand and style, follow these steps:
 
-## Change text content
+- Apply your branding by
+  [changing the default images and marketplace colours](/tutorial/first-edit/)
+- Change the
+  [default background image and social media images](/tutorial/change-image-assets/)
+- [Change the logo](/tutorial/change-logo/)
+- [Generate a new favicon](/ftw/how-to-change-ftw-icons/)
+- Learn more about the
+  [CSS architecture in the Sharetribe Web Template](/ftw/how-to-customize-ftw-styles/)
 
-- Update UI texts or change the language:
-  [How to change FTW UI texts](/ftw/how-to-change-ftw-ui-texts/)
-- [LandingPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/LandingPage/LandingPage.js)
-  component: update and create branded sections
-- [Footer](https://github.com/sharetribe/ftw-daily/blob/master/src/components/Footer/Footer.js)
-  component
-- [AboutPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/AboutPage/AboutPage.js)
-  component
-- Update
-  [Terms of Service](https://github.com/sharetribe/ftw-daily/blob/master/src/components/TermsOfService/TermsOfService.js)
-  and
-  [Privacy Policy](https://github.com/sharetribe/ftw-daily/blob/master/src/components/PrivacyPolicy/PrivacyPolicy.js)
+## Content and microcopy
 
-    <extrainfo title="Locate Terms of Service and Privacy Policy">
+In addition to customizing the default styles of your marketplace, it is
+also important to change the content and
+[microcopy](/concepts/microcopy/) to reflect your brand and messaging.
+There are several places where you can edit the content and copy texts
+in your marketplace:
 
-      ```shell
-      └── src
-          └── components
-              ├── TermsOfService
-              └── PrivacyPolicy
-      ```
+- Learn about [what is microcopy](/concepts/microcopy/)
+- [Change the content and microcopy in your marketplace](/tutorial/working-with-microcopy/)
+- Update your
+  [terms of service and privacy policy page](/operator-guides/free-templates/)
+- Update the footer: the
+  [footer](https://github.com/sharetribe/ftw-x/blob/master/src/components/Footer/Footer.js)
+  of your marketplace contain links and copy that will need to be
+  updated.
+- Update the
+  [email templates](https://www.sharetribe.com/docs/concepts/email-notifications/):
+  you will want to update the templates to reflect your brand and
+  messaging.
 
-    </extrainfo>
+## Configuration
 
-## Change configuration
+The configuration file of your marketplace template is a valuable
+resource that allows you to easily adjust a wide range of options in
+your marketplace. Configuration files can be found in the
+[src/config directory](https://github.com/sharetribe/ftw-x/tree/main/src/config).
+Before you begin modifying the configuration files, it is important to
+ensure that you have properly configured any environment variables that
+your marketplace uses. These variables are typically used to store
+sensitive information such as API keys, and must be set up correctly in
+order for your marketplace to function properly.
 
-- Go through the
-  [FTW Environment configuration variables](/ftw/ftw-env/)
-- **Update config.js**
-  - FTW-daily & FTW-hourly: _src/config.js_
-  - FTW-product: _src/config/config.js_
-- **Update marketplace-custom-config.js**. It contains configs for
-  search page filters and sorting.
-  - FTW-daily & FTW-hourly: _src/marketplace-custom-config.js_
-  - FTW-product: _src/config/marketplace-custom-config.js_
-- **Update default-location-searches.js**. It contains configs for
-  search page filters and sorting.
-  - FTW-daily & FTW-hourly: _src/default-location-searches.js_
-  - FTW-product: _src/config/default-location-searches.js_
+- Configure your [environment variables](/ftw/ftw-env/). You can also
+  run `yarn run config` in the root directory of the template, which
+  will walk you through the setup process.
+- Go through the configuration files of your marketplace following this
+  guide
 
 ## Other optional changes
 
-- **Update [page schema](/tutorial/add-faq-page/#page-schema)** to
-  improve Search Engine Optimization (SEO)
-- **Update ListingPage** to show extended data (aka publicData
-  attribute).
-  - It's inside _src/containers_ directory
-- **Update EditListingWizard** component to add extended data listing
-  entity.
-  - FTW-daily and FTW-hourly has it in _src/components/_ directory and
-  - FTW-product has it inside _src/containers/EditListingPage/_
-    directory.
-- **Update SearchPage** to filter with extended data
-  - It's inside _src/containers_ directory
-- **Update routeConfiguration.js** if routing changes are needed.
-  - FTW-daily and FTW-hourly has it in _src/_ directory and
-  - FTW-product has it inside _src/routing/_ directory
-- **Update transaction email templates**. For more information, see
-  [Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
-  tutorial and [Email templates](/references/email-templates/) reference
-  article.
-- **Update unit type for order line-items**, if order's main unit
-  changes ('day', 'night', 'units').
-  - FTW-daily and FTW-hourly has config:
-    [bookingUnitType](https://github.com/sharetribe/ftw-daily/blob/master/src/config.js)
-    and
-  - FTW-product has that config named as
-    [lineItemUnitType](https://github.com/sharetribe/ftw-product/blob/master/src/config/config.js)
-- **[Customize pricing](/tutorial/customize-pricing-tutorial/)**
-- **Add more static pages**:
-  [How to add static pages in FTW](/ftw/how-to-add-static-pages-in-ftw/)
-- **Update other existing pages**
-- **Update transaction process** (API + Web app)
+In addition to customizing the default styles, content and copy texts,
+and configuration options of your marketplace, there are a number of
+other changes you may want to make. Some of these options include:
+
+- [Customize pricing](/tutorial/customize-pricing-tutorial/)
+- Update your transaction process
+- Create new static pages
+- Update the routing in your marketplace
+- Update [page schema](/tutorial/add-faq-page/#page-schema) to improve
+  Search Engine Optimization (SEO)
+- Add new [search filters](/tutorial/implement-amenities-filter/)

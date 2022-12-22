@@ -72,9 +72,9 @@ Run the following commands in a new branch.
 
 3. Merge the changes to your local branch
 
-```shell
-git merge upstream/master
-```
+   ```shell
+   git merge upstream/master
+   ```
 
 4. Fix possible merge conflicts, commit, and push/deploy.
 

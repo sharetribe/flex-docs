@@ -1,5 +1,5 @@
 ---
-title: Introduction to the Sharetribe Web Template
+title: Introducing the Sharetribe Web Template
 slug: ftw
 updated: 2022-10-20
 category: ftw-introduction

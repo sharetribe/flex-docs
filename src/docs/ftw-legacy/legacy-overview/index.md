@@ -1,174 +1,43 @@
 ---
-title: FTW legacy templates
+title: Legacy templates
 slug: ftw-legacy
 updated: 2022-10-30
 category: ftw-legacy
 ingress:
-  This article describes the legacy templates deprecated on the release
-  of the new FTW combined template.
+  This article describes the Flex Templates for web that are deprecated
+  on the release of the new Sharetribe Web Template.
 published: true
 ---
 
-Deprecated from src/docs/tutorial-branding/first-edit/index.md
-<extrainfo title="I have a propertySets.css file. What is that?">
+## Deprecated templates
 
-```shell
-└── src
-    └── styles
-        └── propertySets.css
-```
+The Sharetribe Web Template replaces three separate templates that were
+previously used for daily bookings (ftw-daily), product purchases
+(ftw-product), and hourly bookings (ftw-hourly). The new template
+combines the functionality of these three templates, allowing you to
+configure it for either product bookings or hourly and daily bookings by
+making simple changes to the configuration files. If you are starting to
+develop a marketplace, we recommend that you start with the Sharetribe
+Web Template. If you have already started development on one of the
+previous templates, you can still use it with Sharetribe, but the legacy
+templates will no longer be maintained. If you use a legacy template,
+you can still contact Sharetribe's support team for assistance. In
+addition, all documentation will still be available for the legacy
+templates.
 
-In previous versions of FTW, there has been a third CSS file:
-propertySets.css. This file contains
-[CSS Property Sets](https://chromestatus.com/feature/5753701012602880)
-that can be applied to component styles using the `@apply`syntax.
-However, W3C decided not to include that feature in future CSS syntax,
-and the
-[postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got
-deprecated in the process.
+Read more about the new Sharetribe Web Template in the introduction
+article and refer to the legacy documentation here.
 
-If you have an older FTW template (earlier than FTW-daily v9, FTW-hourly
-v11 or FTW-product v10), you might have this file in your codebase. If
-you start using sharetribe-scripts v6.0.0, you need to consider
-migrating away from that since it contains code that is deprecated in
-v6.0.0 of sharetribe-scripts.
+## Migrating to Sharetribe Web Template
 
-Read more from
-[this pull request](https://github.com/sharetribe/ftw-daily/pull/1531)
-in FTW-Daily.
+The new Sharetribe Web Template provides a single, unified platform that
+can be configured to support either product bookings or hourly and daily
+bookings, depending on the needs of your marketplace. If you have
+already built your marketplace on a previous template, it may not be
+worth migrating to the new template because the code changes are
+extensive. However, if you are just starting to develop a marketplace,
+it is recommended that you use the new template.
 
-</extrainfo>
-
-```css
-/* ================ Plain global CSS glasses ================ */
-
-/* Full screen Background image located in root-folder/src/assets */
-.defaultBackgroundImage {
-  /* Gradient direction and overlaying the black color on top of the image for better readability */
-  background: linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.6)
-    ), url('../assets/background-1440.jpg');
-
-  /* Add loading color for the div */
-  background-color: var(--matterColor);
-
-  /* Cover the whole screen with the background image */
-  background-size: cover;
-
-  /* Align the image within the container */
-  background-position: center center;
-
-  @media (--viewportLarge) {
-    border-radius: 40px;
-    border: solid 36px var(--matterColorBright);
-  }
-}
-```
-
-<extrainfo title="I can't find it, but I have something similar in a file called propertySets.css. What is that?">
-
-```shell
-└── src
-    └── styles
-        └── propertySets.css
-```
-
-There you might find something like:
-
-```css
-/* Full screen Background image located in root-folder/src/assets */
---backgroundImage: {
-  /* Gradient direction and overlaying the black color on top of the image for better readability */
-  background: linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.6)
-    ), url('../../assets/background-1440.jpg');
-
-  /* Add loading color for the div */
-  background-color: var(--matterColor);
-
-  /* Cover the whole screen with the background image */
-  background-size: cover;
-
-  /* Align the image within the container */
-  background-position: center center;
-
-  @media (--viewportLarge) {
-    border-radius: 40px;
-    border: solid 36px var(--matterColorBright);
-  }
-}
-```
-
-In previous versions of FTW, there has been a third CSS file:
-propertySets.css. This file contains
-[CSS Property Sets](https://chromestatus.com/feature/5753701012602880)
-that can be applied to component styles using the `@apply`syntax.
-However, W3C decided not to include that feature in future CSS syntax,
-and the
-[postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got
-deprecated in the process.
-
-If you have an older FTW template (earlier than FTW-daily v9, FTW-hourly
-v11 or FTW-product v10), you might have this file in your codebase. If
-you start using sharetribe-scripts v6.0.0, you need to consider
-migrating away from that since it contains code that is deprecated in
-v6.0.0 of sharetribe-scripts.
-
-Read more from
-[this pull request](https://github.com/sharetribe/ftw-daily/pull/1531)
-in FTW-Daily.
-
-</extrainfo>
-
-That **background** styling-rule refers to _background-1440.jpg_ image
-in the _assets_ directory:
-
-```shell
-└── src
-    └── assets
-        └── background-1440.jpg
-```
-
-The first one (_IconLogo_) doesn't have a file extension, which means
-that it's referring to **IconLogo.js** file. If you open it, you see
-that it contains Scalable Vector Graphics (SVG) content inside React
-component.
-
-The other import (_LogoImage_) is referring to a normal PNG image.
-
-_IconLogo_ is used for mobile layout and PNG is for desktop layout.
-There's no real reason behind this double format setup - it is just
-there to show 2 different ways to create graphics. Although, the SVG
-format is a bit better choice for logo since it stays sharp when scaled
-bigger.
-
-<extrainfo title="What you should see inside .env file?">
-
-In the `.env` file, you should see these environment variables:
-
-- **Mandatory configuration** (Flex Client ID, Stripe Publishable key,
-  and Mapbox Access token)
-- **Defaults** (currency, root URL)
-- **Features enabled** (enable availability and default search
-  locations)
-- There are also a few variables that are commented out with `#`:
-
-  ```shell
-  # REACT_APP_SHARETRIBE_USING_SSL=true
-  # SERVER_SHARETRIBE_TRUST_PROXY=true
-  # REACT_APP_SENTRY_DSN=change-me
-  # REACT_APP_CSP=report
-  # BASIC_AUTH_USERNAME=sharetribe
-  # BASIC_AUTH_PASSWORD=secret
-  # REACT_APP_GOOGLE_ANALYTICS_ID=change-me
-  ```
-
-</extrainfo>
-
-> **Note**: You should take _Content Security Policy_ (CSP) into use
-> (block mode) before going to production. Read more about it from
-> [this article](/ftw/how-to-set-up-csp-for-ftw/).
+To view the changes introduced in the new template, you can review the
+pull request for the update. This will give you a detailed look at the
+specific changes and updates that have been made.
