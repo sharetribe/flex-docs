@@ -6,7 +6,7 @@ category: operator-guides
 ingress:
   Use this gallery when specifying to your developer how your
   marketplace should work
-published: false
+published: true
 ---
 
 The table below contains information about common features marketplaces
