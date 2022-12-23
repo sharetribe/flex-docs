@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { oneOf, node } from 'prop-types';
 
-const { NETLIFY, CONTEXT } = process.env;
-
-const isNetlifyDeployPreview = NETLIFY && CONTEXT === 'deploy-preview';
-
-const isDev = process.env.NODE_ENV === 'development' || isNetlifyDeployPreview;
+const isDev = process.env.NODE_ENV === 'development';
 
 const initialConsent = {
   necessary: true,
