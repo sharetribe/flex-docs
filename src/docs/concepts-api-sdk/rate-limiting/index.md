@@ -36,12 +36,12 @@ and
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#rate-limits).
 
 It is good to note that **production environments are currently not rate
-limited**. Still, as you build your Flex marketplace implementation to
-take the rate and concurrency limits into account in your development
-environment, we do appreciate it if you also transfer those behaviors
-into production.
+limited**, except for one endpoint in Integration API. Still, as you
+build your Flex marketplace implementation to take the rate and
+concurrency limits into account in your development environment, we do
+appreciate it if you also transfer those behaviors into production.
 
-## Rate limit interaction
+## Interaction between different rate limits
 
 All query and command endpoints have rate limits in dev and demo
 environments. In addition, the Integration API listing creation endpoint
