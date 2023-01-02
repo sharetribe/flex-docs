@@ -9,8 +9,9 @@ ingress:
 published: true
 ---
 
-If you want to create simple pages that just show static content without
-need for data fetches, you can create a static page.
+// TODO: Remove once Pages releases If you want to create simple pages
+that just show static content without need for data fetches, you can
+create a static page.
 
 ## 1. Create a new folder
 

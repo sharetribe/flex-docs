@@ -20,12 +20,14 @@ logged in with your API key. If not, it's recommended to first read the
 tutorial
 [Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
 
+// TODO: Update
+
 In this tutorial, we will add data schemas for the `category` and
 `amenities` public data fields in listings. New marketplaces don't have
 any schemas in the backend by default since the needs of marketplaces
-vary. However, FTW (Flex Template for Web) does define filters for
-category and amenities in its UI (user interface). This tutorial will
-make those filters work as expected.
+vary. However, Sharetribe Web Template does define filters for category
+and amenities in its UI (user interface). This tutorial will make those
+filters work as expected.
 
 We will also see how to manage data schema for user profiles. Those
 schemas are not required for FTW to work, but can be useful when

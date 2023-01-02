@@ -12,6 +12,8 @@ published: true
 
 ## What are User Journeys?
 
+// TODO: Update
+
 User journey mapping is a simple but powerful tool that helps you
 understand and plan how users interact with your marketplace and how
 they will do business on your marketplace. The User Journey maps the

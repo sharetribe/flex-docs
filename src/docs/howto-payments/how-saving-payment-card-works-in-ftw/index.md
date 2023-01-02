@@ -1,11 +1,11 @@
 ---
-title: How saving a payment card works in the combined template
+title: How saving a payment card works in the Sharetribe Web Template
 slug: save-payment-card
 updated: 2020-08-11
 category: how-to-payments
 ingress:
-  An overview of how the combined template functionality for storing
-  payment cards works.
+  An overview of the Sharetribe Web Template functionality for storing
+  payment cards.
 published: true
 ---
 

@@ -107,8 +107,8 @@ and _attractions_ and those are then matched against the listing
 content. A listing will be included in the results, in case any of the
 keywords match.
 
-In order to take the keyword search into use in FTW, see the how-to
-guides on
+In order to take the keyword search into use in the Sharetribe Web
+Template, see the how-to guides on
 [adding keyword search to the top bar](/how-to/use-keyword-search-in-topbar/)
 and [modifying filters](/how-to/change-search-filters-in-ftw/).
 
@@ -135,25 +135,25 @@ have a few options.
 
 ### Users as listings
 
-The FTW-hourly template has modeled
-[providers as listings](/introduction/introducing-yogatime/#profiles-as-bookable-listings)
-by default. This means that the user entity is distinct from the user's
-service provider entity. You can then use the default listing search to
-query the service provider profiles with all the query options described
-above.
+When modifying your listing creation flow, you can model the listings as
+service provider profiles. This means that the user entity is distinct
+from the user's service provider entity. You can then use the default
+listing search to query the service provider profiles with all the query
+options described above.
 
-### Custom user search endpoint in the FTW server
+### Custom user search endpoint in the template server
 
 The Flex Integration API does have an endpoint for querying users.
 However,
 [using the Integration API safely requires a trusted context](/concepts/marketplace-api-integration-api/#when-to-use-the-integration-api),
-such as the FTW application server. In addition, the Integration API
+such as the template application server. In addition, the Integration
+API
 [/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
 endpoint returns not only public user information but also non-public
 information.
 
 This means that if you do want to use the Integration API user query,
-you need to create a custom server endpoint in the FTW template's server
+you need to create a custom server endpoint in the template's server
 that calls the Integration API endpoint and only returns the user's
 public information – public data and metadata – back to the browser.
 Otherwise, you risk revealing sensitive user information to everyone who
@@ -161,5 +161,5 @@ visits your marketplace site.
 
 That said, the Integration API query has fewer filtering and sorting
 options than the Marketplace API listing query, so for any level of
-complexity in your user search it is recommended to use the "users as
+complexity in your user search we recommended using the "users as
 listings" approach.

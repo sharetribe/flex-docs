@@ -73,8 +73,8 @@ be eventually paid out to the provider.
 
 ## Stripe default integration
 
-In the default Flex transaction process and FTW templates, the steps
-described above are implemented using Stripe. The integration uses
+In the default Flex transaction process and Sharetribe Web Template, the
+steps described above are implemented using Stripe. The integration uses
 [Stripe Custom Connect accounts](https://stripe.com/docs/connect/custom-accounts)
 for providers. The customer can check out using a payment card or
 [another supported method](#payment-methods-and-currencies), and they
@@ -108,8 +108,8 @@ with a bank account set up before others can initiate transactions with
 them successfully. This is done by
 [creating a Stripe account](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account)
 for the authenticated user. The
-[FTW templates](/how-to/provider-onboarding-and-identity-verification/)
-are configured to do this step out-of-the-box using
+[Sharetribe Web Template](/how-to/provider-onboarding-and-identity-verification/)
+is configured to do this step out-of-the-box using
 [Stripe Connect Onboarding](https://stripe.com/en-fi/connect/onboarding).
 
 To create the account, Stripe requires verification information from the
@@ -132,8 +132,9 @@ The preauthorization is valid for 7 days, after which the
 preauthorization is automatically released by Stripe, and the funds are
 again available to the customer.
 
-In the FTW templates, creating and confirming the PaymentIntent are both
-triggered at the same customer action.
+In the Sharetribe Web Template default product purchase process,
+creating and confirming the PaymentIntent are both triggered at the same
+customer action.
 
 **Related Stripe actions:**
 
@@ -142,7 +143,13 @@ triggered at the same customer action.
 
 #### 3. Provider acceptance
 
-When a customer has requested to book a listing, a provider has 6 days
+The default product buying process in the Sharetribe Web Template uses
+an instant checkout, which means customer checkout and purchase
+acceptance are all triggered on the same customer action. In other
+words, provider acceptance is not necessary. However, it is possible to
+add the provider acceptance step to the product buying process as well.
+
+In the default booking process, on the other hand, a provider has 6 days
 to accept the booking until it expires automatically. This timeline
 ensures that the Stripe preauthorization does not expire before the
 provider has the opportunity to accept or reject the booking. Once the
@@ -162,11 +169,6 @@ responsible for paying all
 [Stripe fees](https://stripe.com/en-fi/connect/pricing) related to the
 Custom Connect account usage, so the commissions must be defined to
 cover those expenses as well.
-
-In the
-[FTW Product (Sneakertime)](https://github.com/sharetribe/ftw-product)
-template, the default process combines customer checkout and provider
-acceptance to all be triggered at the same customer action.
 
 **Related Stripe actions:**
 
@@ -219,7 +221,7 @@ of different actions to suit your marketplace.
 
 You can edit the transaction processes on your marketplace with
 [Flex CLI](/how-to/edit-transaction-process-with-flex-cli/). If you use
-one of the FTW templates, you will also need to make some
+Sharetribe Web Template, you will also need to make some
 [changes in the template](/how-to/change-transaction-process-in-ftw/) to
 enable it to use a different process. If you do make changes to a
 transaction process when you already have transactions in your
@@ -239,18 +241,14 @@ customers and providers.
 
 #### Instant booking
 
-As mentioned, the
-[FTW Product (Sneakertime)](https://github.com/sharetribe/ftw-product)
-template combines the customer checkout and provider acceptance steps
-into a single customer action. In other words, the purchase is
-automatically accepted and paid as soon as the customer clicks to pay
-for the listing. The
+As mentioned, the default product purchase process combines the customer
+checkout and provider acceptance steps into a single customer action. In
+other words, the purchase is automatically accepted and paid as soon as
+the customer clicks to pay for the listing. The
 [flex-example-processes Github repository](https://github.com/sharetribe/flex-example-processes)
 contains an example of a booking process called `instant-booking` that
-you can use to implement a similar flow for
-[FTW Daily (Saunatime)](https://github.com/sharetribe/ftw-daily) and
-[FTW Hourly (Yogatime)](https://github.com/sharetribe/ftw-hourly), as
-well as any custom client application you may be using.
+you can use to implement a similar flow for bookings in Sharetribe Web
+Template, as well as in any custom client application you may be using.
 
 #### Automatic off-session payments
 
@@ -268,7 +266,7 @@ receiving the product or service they purchased.
 
 Flex supports multiple payment methods as a part of its Stripe
 integration. The default payment method is a payment card, which is what
-the FTW templates use. However, you can enable
+the Sharetribe Web Template uses. However, you can enable
 [other payment methods](/concepts/payment-methods-overview/) as well
 with moderate custom development work.
 
@@ -282,8 +280,8 @@ Flex does not determine a currency for listings. However, each listing
 needs to have a currency specified in its `price` attribute. The value
 for `price.amount` is given in the minor unit of `price.currency` (e.g.
 cents for USD). Flex Console displays listing prices based on the
-listing's currency. The FTW templates have a single currency defined by
-default, to facilitate e.g. price filtering and sorting.
+listing's currency. The Sharetribe Web Template has a single currency
+defined by default, to facilitate e.g. price filtering and sorting.
 
 As the transaction progresses, the payment intent is created and charged
 from the customer's payment method in the listing's currency, or
@@ -307,11 +305,11 @@ See <a href="https://stripe.com/docs/currencies">Stripe's own documentation</a>
 for country-specific details on supported currencies.
 </extrainfo>
 
-## FTW and Stripe
+## Sharetribe Web Template and Stripe
 
 The default Stripe integration in Flex works with any client
-application. However, the FTW templates are further configured to work
-hand in hand with Stripe:
+application. However, the Sharetribe Web Template is further configured
+to work hand in hand with Stripe:
 
 - [Provider onboarding](/how-to/provider-onboarding-and-identity-verification/)
   is handled with Stripe Connect Onboarding. A provider cannot create
@@ -442,9 +440,9 @@ from your transaction processes, and avoid using
 For clarity, all references to Stripe's backend elements (endpoints,
 transaction process actions etc.) are named with the prefix `stripe`.
 
-If you want to modify your FTW template to work without Stripe, the
-effort is more extensive, since each template is built around a logic
-that uses Stripe actions and endpoints. You can use
+If you want to modify your template to work without Stripe, the effort
+is more extensive, since each template is built around a logic that uses
+Stripe actions and endpoints. You can use
 [this article](/how-to/removing-stripe-and-payments/) as your starting
 point.
 

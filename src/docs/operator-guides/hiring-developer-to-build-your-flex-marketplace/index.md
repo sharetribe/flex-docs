@@ -21,22 +21,26 @@ things. First communicating your requirements to the developer. Second,
 matching your requirements to your budget, timeline, and what Flex
 offers. The rest of the article will walk through these aspects.
 
-### Defining custom requirements using the Flex Template
+### Defining custom requirements using the Sharetribe Web Template
 
 With Flex, you have full freedom to build a completely unique
 marketplace. This means the developers you hire need guidance on how
 exactly you want the marketplace to work.
 
 We recommend using one of
-[Flex Templates for Web](/operator-guides/concepts/#flex-templates-for-web-ftw)
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
 as a basis for the development work, especially if you're launching a
-marketplace for the first time. The Flex Templates are examples of fully
-functional marketplace applications. Typically the Templates have
-80%-90% of the functionality you need already available, so you can
-focus on your unique requirements, and save a lot of time and money.
+marketplace for the first time. The Sharetribe Web Template is an
+example of a fully functional marketplace application. Typically the
+Template has 80%-90% of the functionality you need already available, so
+you can focus on your unique requirements, and save a lot of time and
+money.
 
-Basing your customizations on the Flex Template requires understanding
-what it offers. There are a few ways to gain this understanding:
+Basing your customizations on the Sharetribe Web Template requires
+understanding what it offers. There are a few ways to gain this
+understanding:
+
+// TODO: Update for Biketribe
 
 1. Access the Saunatime demo via your
    [Flex Console](https://flex-console.sharetribe.com/). Saunatime is
@@ -55,9 +59,9 @@ what it offers. There are a few ways to gain this understanding:
    [design files](/design-toolkit/design-files/) of the two templates to
    explore all their pages and views.
 
-Your developer’s job is to customize the Flex Template (how it looks and
-how it works) to meet your unique requirements. Your responsibility is
-to communicate these requirements to the developer.
+Your developer’s job is to customize the Sharetribe Web Template (how it
+looks and how it works) to meet your unique requirements. Your
+responsibility is to communicate these requirements to the developer.
 
 When you meet with the developers, you should be able to explain to them
 how your users create content (e.g what kind of information you collect
@@ -72,15 +76,16 @@ work, you need to communicate this to the developer. You can follow
 for help.
 
 You also need to communicate to the developers how the marketplace looks
-visually. The fastest option is to follow the visual style of the Flex
-Template. However, you might have a completely unique visual style in
-mind. In this case, you either need to adjust the design files yourself
-to communicate the visual style you want, or hire a designer to do this
-work for you. Many Flex Experts also offer design services you can hire.
+visually. The fastest option is to follow the visual style of the
+Sharetribe Web Template. However, you might have a completely unique
+visual style in mind. In this case, you either need to adjust the design
+files yourself to communicate the visual style you want, or hire a
+designer to do this work for you. Many Flex Experts also offer design
+services you can hire.
 
 ### The required budget
 
-Using one of the Flex Templates as a basis, building a unique
+Using the Sharetribe Web Template as a basis, building a unique
 marketplace concept typically requires at least 100 hours of
 development.
 

@@ -8,8 +8,8 @@ ingress:
 published: true
 ---
 
-In the FTW template, there are four example filters: _tire-size_,
-_brand_, _equipped-with_, and _category_.
+In the Sharetribe Web Template, there are four example filters:
+_tire-size_, _brand_, _equipped-with_, and _category_.
 
 //TODO: update image with Biketribe content
 

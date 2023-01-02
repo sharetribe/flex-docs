@@ -9,6 +9,8 @@ ingress:
 published: true
 ---
 
+// TODO: Remove or replace with Operator Guides?
+
 One common task, before our newly branded FTW-daily customization is
 ready to be published, is to add pages that describe the marketplace
 features more deeply. We call them static pages because those pages

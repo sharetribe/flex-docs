@@ -492,8 +492,9 @@ Intermediary format uses some notable value types:
 
 Location is an Intermediary-specific type specified as a 2-tuple of
 latitude and longitude. Both latitude and longitude are 32 bit floats.
-The `location` attribute is used in the FTW template to provide listing
-location coordinates through either Mapbox or Google maps.
+The `location` attribute is used in the Sharetribe Web Template to
+provide listing location coordinates through either Mapbox or Google
+maps.
 
 If your source data has addresses specified, and you would like to use
 them to determine coordinate information, you can use a 3rd party

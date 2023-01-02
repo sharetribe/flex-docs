@@ -115,8 +115,8 @@ If using Mapbox, you will need to define this environment variable. Sign
 up for Mapbox and go to the
 [account page](https://www.mapbox.com/account/access-tokens). Then click
 on `Create access token`. See the
-[How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/) guide
-for more information.
+[How to set up Mapbox for Sharetribe Web Template](/ftw/how-to-set-up-mapbox-for-ftw/)
+guide for more information.
 
 - **`REACT_APP_CANONICAL_ROOT_URL`**
 

@@ -5,7 +5,7 @@ updated: 2021-12-16
 category: tutorial-transaction-process
 ingress:
   This guide describes how to create a new transaction process and how
-  to take it into use on the FTW template.
+  to take it into use in the Sharetribe Web Template.
 published: true
 ---
 
@@ -15,17 +15,17 @@ In this tutorial, we'll create a new transaction process for the
 CottageDays marketplace. It will be a nightly booking process in
 contrast to the default daily process.
 
-In addition, we also add a new decline transition for the operator and
-update the client app so that it uses the new process.
+In addition, we will also add a new decline transition for the operator
+and update the client app so that it uses the new process.
 
 ### Clone Flex example processes repository
 
 // TODO: Check where the example process should come from => can't use
 the flex-default-process because it doesn't have time based bookings!
 
-Writing _process.edn_ file and email templates from scratch is a bit
-tedious task. We'll make our life a bit easier by cloning Flex example
-processes repository:
+Writing a _process.edn_ file and the email templates from scratch is a
+fairly tedious task. We'll make our life a bit easier by cloning the
+Flex example processes repository :
 
 ```shell
 git clone https://github.com/sharetribe/flex-example-processes.git
@@ -41,7 +41,7 @@ There are several processes listed in
 [that directory](https://github.com/sharetribe/flex-example-processes).
 The one we are going to use as a basis for our new process is
 _flex-default-process_. It has privileged transitions in use and it is
-therefore compatible with FTW-daily v8.0.0 or later. TODO CHECK WHICH
+therefore compatible with the Sharetribe Web Template. TODO CHECK WHICH
 PROCESS!!
 
 <extrainfo title="What's the preauth-nightly-booking example process?">
@@ -459,7 +459,7 @@ default, so we do not need to make any changes to
 
 ### Add microcopy strings
 
-A lot of microcopy strings in the combined template are transaction
+A lot of microcopy strings in Sharetribe Web Template are transaction
 process specific. In other words, when you create a new transaction
 process, you will also need to add microcopy for the relevant keys in
 the new process.

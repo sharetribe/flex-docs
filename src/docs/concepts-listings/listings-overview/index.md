@@ -26,11 +26,11 @@ When tracking
 [listing events](/references/events/#supported-event-types) through the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html),
 it is important to also pay attention to the state of the listing. For
-instance, in the default FTW template implementation the listing is
-created as draft and then goes through several updates in the draft
-state before it is published. In other words, to catch the correct
-listing event, it is useful to filter by both event type and listing
-state.
+instance, in the default Sharetribe Web Template implementation, the
+listing is created as draft, and then goes through several updates in
+the draft state before it is published. In other words, to catch the
+correct listing event, it is useful to filter by both event type and
+listing state.
 
 ### Draft
 
@@ -158,12 +158,11 @@ listings they offer. In these kinds of cases, it is useful to model
 those elements as a new type of listing, and then determine their
 behavior in the client app based on the extended data attribute.
 
-For instance, the [FTW-hourly template](/ftw/ftw-hourly/) handles
-[yoga teacher profiles as bookable listings](/introduction/introducing-yogatime/#profiles-as-bookable-listings),
-which follows the concept of modeling entities as listings. You could
-also create a searchable storefront listing that cannot itself be
-booked, and instead it displays all the listings from that specific
-provider and allows users to contact the store.
+For instance, for a service marketplace, you could model the service
+provider listings as bookable profiles. You could also create a
+searchable storefront listing that cannot itself be booked, and instead
+it displays all the listings from that specific provider and allows
+users to contact the store.
 
 In Flex, listings can be modeled and modified to cover a range of
 different use cases. If you are wondering about a use case for listings

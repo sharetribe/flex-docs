@@ -9,21 +9,21 @@ ingress:
 published: true
 ---
 
-There are several files that affect the configuration of FTW templates.
-The bottom layer consists of _environment variables_ and _src/config_
-folder.
+There are several files that affect the configuration of the Sharetribe
+Web Template. The bottom layer consists of _environment variables_ and
+_src/config_ folder.
 
 ## Environment variables
 
-FTW templates have a couple of environment variables. Those variables
-are more or less specific to a runtime environment. For example,
-`REACT_APP_SHARETRIBE_SDK_CLIENT_ID` might be pointing to the client ID
-of your Flex test-environment on localhost and on your staging server
-(if you have one).
+The Sharetribe Web Template has a couple of environment variables. Those
+variables are more or less specific to a runtime environment. For
+example, `REACT_APP_SHARETRIBE_SDK_CLIENT_ID` might be pointing to the
+client ID of your Flex test-environment on localhost and on your staging
+server (if you have one).
 
 You already have set up a couple of those environment variables, when
 you completed the
-[Getting started with the FTW guide](/introduction/getting-started-with-ftw-daily/).
+[Getting started with the Sharetribe Web Template](/introduction/getting-started-with-web-template/).
 That happened, when you executed command:
 
 ```shell
@@ -39,11 +39,9 @@ file with your preferred text editor:
 ```
 
 Full list of configuration variables can be found here:
-[FTW environment variables](/ftw/ftw-env/). You can change any of these
-variables _locally_ by just editing the **.env** file. Then you need to
-restart the server by running `yarn run dev` again.
-
-_TODO: figure out if the env variable part is necessary in Biketribe_
+[template environment variables](/ftw/ftw-env/). You can change any of
+these variables _locally_ by just editing the **.env** file. Then you
+need to restart the server by running `yarn run dev` again.
 
 ## Configuration files
 
@@ -77,15 +75,19 @@ currencies in **src/config/settingsCurrency.js**
 <extrainfo title="Why do my old listings have a wrong currency?">
 
 If you already created listings before changing the currency, listings
-using the old currency will not be bookable anymore. FTW templates don't
-support multiple currencies and they don't know how to convert listing's
-price from one currency to another.
+using the old currency will not be bookable anymore. The Sharetribe Web
+Template does not support multiple currencies and does not know how to
+convert a listing's price from one currency to another.
 
 You can just close those listings from Console.
 
-> **Note**: if you want to change the currency of a production
-> marketplace, you need to customize your client app so that it allows
-> providers to update the listing's price even if the currency is wrong.
+<info>
+
+If you want to change the currency of a production marketplace, you need
+to customize your client app so that it allows providers to update the
+listing's price even if the currency is wrong.
+
+</info>
 
 </extrainfo>
 

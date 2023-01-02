@@ -1,15 +1,15 @@
 ---
-title: Change transaction process setup in combined template
+title: Change transaction process setup in Sharetribe Web Template
 slug: change-transaction-process-in-ftw
 updated: 2022-11-22
 category: how-to-transaction-process
 ingress:
-  This guide describes how to customize the combined template to use
-  another transaction process.
+  This guide describes how to customize Sharetribe Web Template to use a
+  new transaction process.
 published: true
 ---
 
-The combined template defines four transaction processes by default:
+Sharetribe Web Template defines four transaction processes by default:
 daily bookings, nightly bookings, hourly bookings, and product sales
 processes. The template is created to support states and transitions
 defined in those processes.
@@ -264,7 +264,7 @@ uniquely named _getStateDataFor..._ function from that file.
 
 ## 4. Add microcopy strings
 
-A lot of microcopy strings in the combined template are transaction
+A lot of microcopy strings in Sharetribe Web Template are transaction
 process and state specific.
 
 ```js

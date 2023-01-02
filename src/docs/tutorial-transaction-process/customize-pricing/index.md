@@ -153,10 +153,10 @@ transaction line item for the cleaning fee.
 
 <info>
 
-This tutorial handles changes on top of the FTW template booking flow.
-If you want to make corresponding changes to the product order flow,
-you'll need to make changes to _ProductOrderForm_ (instead of
-BookingDatesForm)
+This tutorial handles changes on top of the Sharetribe Web Template
+booking flow. If you want to make corresponding changes to the product
+order flow, you'll need to make changes to _ProductOrderForm_ (instead
+of BookingDatesForm)
 
 </info>
 
@@ -426,18 +426,18 @@ transitions are made from the server-side.
 <info>
 
 Privileged transitions are transaction process transitions that can be
-invoked only from a secure context. For example, when using Flex
-Templates for Web this secure context is the backend of our client app.
-You can also build your own server-side validation that sits between
-your marketplace UI and the Flex Marketplace API to invoke privileged
+invoked only from a secure context. For example, when using Sharetribe
+Web Template, this secure context is the backend of our client app. You
+can also build your own server-side validation that sits between your
+marketplace UI and the Flex Marketplace API to invoke privileged
 transitions.
 
 <br/>
 
 We are using privileged transitions and the backend of our client app
 for constructing line items because we want to make sure this is done in
-a secure context. If the client-side code (FTW-frontend) could freely
-construct the line items, we couldn't fully trust that the price
+a secure context. If the client-side code (template front-end) could
+freely construct the line items, we couldn't fully trust that the price
 calculation follows the model intended in the marketplace. In theory, a
 marketplace user could make a direct API call to the Flex Marketplace
 API and start a transaction with modified line items (e.g. change the

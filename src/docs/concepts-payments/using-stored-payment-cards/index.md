@@ -15,17 +15,17 @@ future purchases. Doing this provides multiple benefits: it streamlines
 the checkout process for existing customers and allows you to place
 additional charges to the payment card of the customer.
 
-Flex Templates for Web (FTW) include a checkout workflow, which offers a
-box for the customer to check if they want to store their card for
-future purchases. Once they've stored it, they are offered the option to
-use the same card for subsequent purchases without entering the details
+Sharetribe Web Template includes a checkout workflow, which offers a box
+for the customer to check if they want to store their card for future
+purchases. Once they've stored it, they are offered the option to use
+the same card for subsequent purchases without entering the details
 again.
 
 In addition, each user has a page called "payment methods" in their
 account settings. From this page, the user can store a new credit card,
 delete a stored card, or replace a stored card with a new one.
 
-[Learn how storing payment card works in FTW](/how-to/save-payment-card/)
+[Learn how storing payment card works in Sharetribe Web Template](/how-to/save-payment-card/)
 
 [Read API documentation on storing credit cards](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer)
 

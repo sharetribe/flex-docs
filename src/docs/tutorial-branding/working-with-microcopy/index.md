@@ -32,14 +32,14 @@ but in the template they are in the _translations_ folder. In addition
 to the default _en.json_ file, there are other languages available,
 which is why the folder is titled _translations_.)
 
-In the Microcopy section, you can see links that lead to the microcopy
-folders for each FTW template repository, if you want to
+In the Microcopy section, you can see a link that leads to the microcopy
+folders for the Sharetribe Web Template repository, if you want to
 [copy the relevant microcopy to Flex Console](/concepts/microcopy/#how-microcopy-are-handled-in-flex).
 In this tutorial, we will not copy the full texts – instead, we will
 enter only the microcopy we want to modify.
 
-The built-in default microcopy for the FTW template can be found in this
-_en.json_ file:
+The built-in default microcopy for the Sharetribe Web Template can be
+found in this _en.json_ file:
 
 ```shell
 └── src
@@ -110,17 +110,19 @@ on the search page:
 ![Topbar with updated microcopy](./updated_topbar_microcopy.png)
 
 To get more insight into microcopy syntax, different language files, and
-localization of dates and money values, you should check the article:
-[How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/).
+localization of dates and money values, you should check out the
+article:
+[How to change Sharetribe Web Template bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/).
 
-To learn more about how the hosted microcopy work in FTW templates, read
-the article on [hosted assets in FTW](/ftw/hosted-microcopy/).
+To learn more about how the hosted microcopy work in Sharetribe Web
+Template, read the article on
+[hosted assets in Sharetribe Web Template](/ftw/hosted-microcopy/).
 
 To read more about how microcopy can be modified in Flex Console, check
 out the article about [microcopy in Flex](/concepts/microcopy/).
 
 <br />
 
-In the next article, you learn how to configure FTW-daily and change the
-default currency.<br />
+In the next article, you learn how to configure the Sharetribe Web
+Template and change the default currency.<br />
 [› Go to the next article](/tutorial/configurations/)

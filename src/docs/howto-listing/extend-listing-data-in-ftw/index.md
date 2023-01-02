@@ -18,7 +18,7 @@ presented and used to filter searches. In addition, you will learn how
 to add complex JSON attributes directly in the Edit Listing Wizard.
 
 Adding new attributes to the data model relies on
-[Extended data](/references/extended-data/). In the combined template,
+[Extended data](/references/extended-data/). In Sharetribe Web Template,
 top-level listing extended data is configured in the
 [configListing.js](TODO: LINK) file.
 

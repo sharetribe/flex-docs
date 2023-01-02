@@ -17,10 +17,10 @@ through configs or if we still need explicit removal instructions
 
 In this guide, we will go through the minimum changes needed to make the
 booking flow work without Stripe. This is not an easy customization
-project. FTW templates are made for a specific transaction process and
-payments are a core feature: its ubiquitous nature means that you need
-to touch quite many components and files. Most likely you need to
-customize some parts (e.g. transaction process, email templates,
+project. The Sharetribe Web Template works with specific transaction
+processes and payments are a core feature: its ubiquitous nature means
+that you need to touch quite many components and files. Most likely you
+need to customize some parts (e.g. transaction process, email templates,
 checkout page) more depending on your marketplace idea. For example, you
 might also want to remove unused Stripe components from your project to
 clean up the code.

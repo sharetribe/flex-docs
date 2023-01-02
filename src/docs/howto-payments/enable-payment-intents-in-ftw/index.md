@@ -13,7 +13,7 @@ published: true
 This guide walks you through the process of taking
 [PaymentIntents](https://stripe.com/docs/payments/payment-intents) into
 use in your custom client application. **These steps are already
-implemented in the combined template.**
+implemented in Sharetribe Web Template.**
 
 This article covers how PaymentIntents can be used with card payments.
 On general level, the steps are the same for other payment methods. See

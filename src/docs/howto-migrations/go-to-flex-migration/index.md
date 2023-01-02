@@ -9,8 +9,8 @@ published: true
 
 Migrating your marketplace from Sharetribe Go to Sharetribe Flex
 requires two steps. The first step is building your marketplace with
-Flex. This usually means working with the code of the Flex Template to
-build your custom marketplace.
+Flex. This usually means working with the code of the Sharetribe Web
+Template to build your custom marketplace.
 
 The second step is migrating your Go marketplace data. This article
 details how the data migration process works.

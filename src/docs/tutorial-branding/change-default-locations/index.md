@@ -141,7 +141,7 @@ Check at least these:
   ```
 
   > **Note**: origin is an unnecessary search parameter with the default
-  > configuration of FTW templates.
+  > configuration of Sharetribe Web Template.
 
   You also need to create a new microcopy key. E.g.
   _'Footer.searchAuckland'_ and add it to the microcopy file.

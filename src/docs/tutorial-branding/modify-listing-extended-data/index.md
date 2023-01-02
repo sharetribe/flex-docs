@@ -7,11 +7,11 @@ ingress: Modify listing extended data configurations
 published: true
 ---
 
-In the FTW template, listings are by default defined as rental bikes. In
-other words, they have attributes that relate to the topic – tire size,
-brand, category, add-ons. It is likely, however, that your listings are
-not bike-related, so you will want to change the attributes and their
-options.
+In the Sharetribe Web Template, listings are by default defined as
+rental bikes. In other words, they have attributes that relate to the
+topic – tire size, brand, category, add-ons. It is likely, however, that
+your listings are not bike-related, so you will want to change the
+attributes and their options.
 
 //TODO: update image with Biketribe content
 

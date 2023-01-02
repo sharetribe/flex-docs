@@ -89,37 +89,32 @@ same workflow described below.
 
 ## How to modify microcopy when building your marketplace with a developer?
 
-### 1. Setup your Flex Template with a developer
+### 1. Setup your Sharetribe Web Template with a developer
 
 To use the Microcopy editor on your marketplace, you will first need to
-set up the Flex Template you will use as the basis for your custom
-marketplace. Setting up a Flex Template for customization is a
-development process. If you are not a developer or do not yet have a
-developer on your team, you should hire a
+set up the Sharetribe Web Template you will use as the basis for your
+custom marketplace. Setting up a Sharetribe Web Template for
+customization is a development process. If you are not a developer or do
+not yet have a developer on your team, you should hire a
 [Flex Expert to help you build your marketplace](https://www.sharetribe.com/experts/).
 
-Each Flex Template has default microcopy vocabulary included, reflecting
-its starting theme. [Saunatime](/design-toolkit/user-journey-saunatime/)
-is the Flex Template for renting places or things on a daily or nightly
-basis, its microcopy refers to “saunas'' and “bookings.”
-[Yogatime](/design-toolkit/user-journey-yogatime/) is the Flex Template
-for booking service providers and its microcopy refers to “yoga
-teachers'' and “classes.” Finally,
-[Sneakertime](/design-toolkit/user-journey-sneakertime/) is the Flex
-Template for product marketplaces, it refers to “sneakers'' and
-“orders.”
+The Sharetribe Web Template has default microcopy vocabulary included,
+reflecting its starting theme. Depending on how you configure your
+marketplace – renting places or things on a daily or nightly basis,
+booking service providers, or selling products – the microcopy uses the
+corresponding terminology.
 
-Having pre-written microcopy is a significant time saver. Except for the
-themes mentioned above, most of the Templates’ microcopy uses generic
-and descriptive language suitable for most marketplaces, which means
-there are many microcopy texts you do not need to formulate. The rest of
-the article will guide you on how to use the Microcopy editor to change
-the microcopy you wish to change in building your custom marketplace.
+Having pre-written microcopy is a significant time saver. Most of the
+Template's microcopy uses generic and descriptive language suitable for
+most marketplaces, which means there are many microcopy texts you do not
+need to formulate. The rest of the article will guide you on how to use
+the Microcopy editor to change the microcopy you wish to change in
+building your custom marketplace.
 
 ### 2. Load your microcopy into the editor
 
-After you and your developer set up a Flex Template for development, you
-can use the editor to start modifying your microcopy.
+After you and your developer set up a Sharetribe Web Template for
+development, you can use the editor to start modifying your microcopy.
 
 First, you must load the default microcopy into the editor. You can do
 this by copy and pasting the language-specific microcopy file that
@@ -139,6 +134,8 @@ In your repository, you will most likely find the language-specific
 microcopy file in the same place it resided in the Template. Click “src”
 folder→ click “translations” folder→ open “en.json” file→ copy content.
 Then paste the data into the Console Microcopy editor.
+
+// TODO: Update videos?
 
 <video>
     <source src='./microcopyeditor.mp4' type='video/mp4'>
@@ -201,10 +198,8 @@ use the editor to modify your marketplace’s copy-texts.
 To start, we suggest going through the microcopy file in the editor.
 Look at the values and see how they compare to the terminology you
 decided to use in step 1. The most frequently modified pieces of
-microcopy use language specific to each Template’s imagined example. For
-FTW-product, this will be language related to “sneakers,” FTW-daily has
-language about “saunas,” and FTW-hourly language about “yoga” and “yoga
-teachers.”
+microcopy use language specific to the Template's imagined example,
+bicycles.
 
 Using the search functionality in the Microcopy editor is the easiest
 way to find the copy-texts that need changing. Press “CMD+F” on a Mac or

@@ -45,10 +45,11 @@ Before you deploy your marketplace to Render or another hosting service,
 you should first ensure that your client application runs without error
 when using SSR.
 
-The FTW templates have a small [Node/Express](https://expressjs.com/)
-server that enables SSR. It allows pages to be rendered faster than on
-the client, but even more importantly, it makes it easier for search
-engines to index your website (in case they don't execute JavaScript).
+The Sharetribe Web Template has a small
+[Node/Express](https://expressjs.com/) server that enables SSR. It
+allows pages to be rendered faster than on the client, but even more
+importantly, it makes it easier for search engines to index your website
+(in case they don't execute JavaScript).
 
 To start up the server locally, you will need to run the command:
 

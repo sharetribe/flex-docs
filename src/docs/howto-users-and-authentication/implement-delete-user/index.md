@@ -10,6 +10,8 @@ ingress:
 published: true
 ---
 
+// TODO: implement and update images
+
 Starting from 2022-03, Sharetribe Flex Marketplace API has an endpoint
 for
 [deleting a user's account](https://www.sharetribe.com/api-reference/marketplace.html#delete-user).

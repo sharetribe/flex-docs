@@ -9,6 +9,8 @@ ingress:
 published: true
 ---
 
+// TODO: Update to Biketribe
+
 In Flex, listings can have either day-based or time-based availability.
 For listings with time-based availability, the available
 [time slots](https://www.sharetribe.com/api-reference/marketplace.html#time-slots)

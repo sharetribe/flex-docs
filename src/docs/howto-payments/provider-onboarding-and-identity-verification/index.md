@@ -21,16 +21,16 @@ or implement your own flow.
 
 This article describes these two approaches.
 
-## Stripe Connect Onboarding with the combined template
+## Stripe Connect Onboarding with Sharetribe Web Template
 
 Regulatory aspects of provider onboarding can be challenging and
 changing rapidly. Stripe Connect Onboarding provides ready tools for
 meeting the requirements and reducing the operational complexity of
 self-managing the onboarding flow and identity verification. Below are
 listed the changes required to implement Stripe Connect Onboarding. If
-you are using the combined template, you need to complete only the first
-step - if you are upgrading your own implementation, follow the rest of
-the instructions.
+you are using Sharetribe Web Template, you need to complete only the
+first step - if you are upgrading your own implementation, follow the
+rest of the instructions.
 
 ### 1. Enable Stripe Connect Onboarding in Stripe Dashboard
 
@@ -246,10 +246,12 @@ You can find the deprecated files still from v.3.7.0
 
 The default Flex Stripe integration requires the payout Connect account
 information immediately upon beginning a transaction. For this reason,
-the FTW templates do not allow booking listings that do not have
-provider payout information. The templates have also been configured to
-require provider onboarding and payout information before publishing any
-listings.
+the Sharetribe Web Template does not allow booking listings that do not
+have provider payout information. The template has also been configured
+to require provider onboarding and payout information before publishing
+any listings.
+
+// TODO: Update
 
 However, it is possible to modify this behavior. The simplest way to
 allow publishing a listing without adding payout details is to modify

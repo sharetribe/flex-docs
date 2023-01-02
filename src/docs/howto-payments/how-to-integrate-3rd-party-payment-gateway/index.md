@@ -412,8 +412,9 @@ to store the information in the [transaction's
 metadata][integration-api-update-transaction-metadata] or [transition
 the transaction][integration-api-transition-transaction].
 
-If you use Flex Template for Web, you can add a new endpoint by adding
-it to the [API router][ftw-daily-api-router].
+If you use a Sharetribe Web Template, you can add a new endpoint by
+adding it to the [API router][ftw-daily-api-router]. // TODO: UPDATE
+LINK
 
 We recommend securing the endpoint with Basic Authentication if the
 payment gateway supports that.
@@ -438,8 +439,8 @@ To use privileged transitions, you need to make a new endpoint to your
 backend server. Your marketplace front-end should call this new backend
 endpoint and not the Flex API directly.
 
-If you use Flex Template for Web, you can add a new endpoint by adding
-it to the [API router][ftw-daily-api-router].
+If you use Sharetribe Web Template, you can add a new endpoint by adding
+it to the [API router][ftw-daily-api-router]. // TODO: UPDATE LINK
 
 The new server endpoint should call the payment gateway API to do the
 payment action and the Flex Marketplace API to transition the

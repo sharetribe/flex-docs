@@ -90,7 +90,7 @@ After an accepted booking is completed, the customer and provider have a
 certain period of time to review each other. After this, the reviews are
 published and the transaction is concluded.
 
-The default process is built in to Flex Template for Web. Usually, the
+The default process is built in to Sharetribe Web Template. Usually, the
 easiest way to start defining your own transaction process is by editing
 the default process.
 
@@ -189,11 +189,13 @@ Whenever your users transact, at whichever state they are in that
 interaction, the transaction process determines **what** they can do
 next and **how** it happens.
 
+// TODO: Update carousel
+
 Let’s revisit our Flex default transaction process, this time in
-conjunction with Flex Template for Web, to illustrate this. You’ll see
+conjunction with Sharetribe Web Template, to illustrate this. You’ll see
 how a transaction process state looks for providers and customers in
 Saunatime, a Flex demo marketplace. If you’re not sure what is meant by
-the “Flex Template”, you can read more about it
+the “Sharetribe Web Template”, you can read more about it
 [here](/operator-guides/concepts/#flex-templates-for-web-ftw).
 
 <txnprocessuxcarousel title="Transaction process and user experience">
@@ -251,7 +253,7 @@ For more details of the transaction process format, see the
 [Transaction process format](/references/transaction-process-format/)
 reference. To customise the UI of your marketplace to match your process
 changes, see the
-[Change transaction process setup in FTW](/how-to/change-transaction-process-in-ftw/)
+[Change transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-ftw/)
 how-to guide.
 
 If you’re working with a developer, then you need to communicate how you

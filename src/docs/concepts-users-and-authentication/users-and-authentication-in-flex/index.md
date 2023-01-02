@@ -209,9 +209,9 @@ and
 
 These transitions require a trusted token or a trusted SDK method, both
 of which are obtained using the Flex application client secret. In
-practice, the trusted context is a server environment. With the FTW
-templates, the client application server has default implementations of
-trusted endpoints for
+practice, the trusted context is a server environment. With the
+Sharetribe Web Template, the client application server has default
+implementations of trusted endpoints for
 [initiating](https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js)
 and
 [transitioning](https://github.com/sharetribe/ftw-daily/blob/master/server/api/transition-privileged.js)

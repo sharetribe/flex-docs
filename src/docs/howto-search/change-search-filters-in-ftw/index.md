@@ -21,7 +21,7 @@ _"More filters"_ button.
 
 ## Filter types
 
-The combined template has several different filter types:
+Sharetribe Web Template has several different filter types:
 _BookingDateRangeFilter_, _KeywordFilter_, _PriceFilter_,
 _SelectSingleFilter_ and _SelectMultipleFilter_. Select single and
 select multiple filters are generic – they can be used to filter search

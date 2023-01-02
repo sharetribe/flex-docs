@@ -22,23 +22,21 @@ Console is also where the day-to-day management, such as overseeing
 users’ activity, monitoring listings and reviews, and managing
 notifications, takes place.
 
-### Flex Templates for Web (FTW)
+### Sharetribe Web Template
 
 A template of a Flex marketplace user interface. Sharetribe customers
-can customize FTW for their own marketplace, or build their own UI from
-scratch. Flex Template for Web is built with Node.js + React/Redux.
+can customize the template for their own marketplace, or build their own
+UI from scratch. Sharetribe Web Template is built with Node.js +
+React/Redux.
 
-Currently we have three different template options:
+The template can be configured to three different kinds of flows:
 
-- [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
-  rental marketplace with day-based bookings
-- [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime" - a
-  service marketplace with time-based bookings
-- [FTW-product](https://github.com/sharetribe/ftw-product)
-  "Sneakertime" - a product marketplace with stock management
+- a rental marketplace with day- or night-based bookings
+- a service or rental marketplace with time-based bookings
+- a product marketplace with stock management
 
-Information about using Flex Template for Web can be found in the
-[Getting started with FTW](/introduction/getting-started-with-ftw-daily/)
+Information about using Sharetribe Web Template can be found in the
+[Getting started with FTW](/introduction/getting-started-with-web-template/)
 tutorial.
 
 ### Flex CLI

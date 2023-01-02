@@ -133,7 +133,8 @@ app icons:
 
 ```
 
-The default favicon of the FTW template, Biketribe, is a skull:
+The default favicon of the Sharetribe Web Template, Biketribe, is a
+skull:
 
 // TODO: Update text and image once microcopy exists
 ![Favicon for Saunatime](./saunatime-favicon.png)

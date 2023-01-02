@@ -4,8 +4,8 @@ slug: change-logo
 updated: 2020-02-28
 category: tutorial-branding
 ingress:
-  Learn how to change the logo and how components in Flex Template for
-  Web are styled.
+  Learn how to change the logo and how components in Sharetribe Web
+  Template are styled.
 published: true
 ---
 
@@ -90,7 +90,9 @@ component.
 
 ![Web Inspector: hover on top of the markup of Logo component](web-inspector-hovering-on-logo.png)
 
-**Useful tip**:<br > FTW templates use
+<info>
+
+Sharetribe Web Template use
 [CSS Modules](https://github.com/css-modules/css-modules) instead of
 plain CSS for styling components. CSS Modules creates unique class names
 for the rendered component - and those class name strings are in format:
@@ -99,6 +101,8 @@ for the rendered component - and those class name strings are in format:
 So, you can backtrack the correct component from the class name. In the
 example image above: the component which provides the paddings rule is
 _TopbarDesktop_.
+
+</info>
 
 ## Styling other components
 

@@ -44,15 +44,15 @@ example of a marketplace website built with Flex.
 
 Setting up the template should take no more than 5 minutes. The process
 is technical but doable even without development experience.
-[The guide for getting started with Sharetribe Web Template](/introduction/getting-started-with-ftw-daily/)
-TODO: Update link! will give you step by step instructions for doing it.
-If you encounter any problems with the setup,
+[The guide for getting started with Sharetribe Web Template](/introduction/getting-started-with-web-template/)
+will give you step by step instructions for doing it. If you encounter
+any problems with the setup,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com).
 
 Once you have the template set up, you can create a few user accounts
 and test the features: posting listings, searching them, making bookings
 and payments (see how to use
-[test credit card numbers provided by Stripe](/how-to/set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)),
+[test credit card numbers provided by Stripe](/how-to/set-up-and-use-stripe/#7-test-the-stripe-account-in-sharetribe-web-template)),
 sending messages between users, writing reviews, and so on. You can test
 them both on your desktop and on a mobile browser to see how it works on
 each device. On Console, you can then see how the users, listings and

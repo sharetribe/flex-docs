@@ -31,9 +31,9 @@ the exception of anonymous public access). Therefore, the Marketplace
 API allows access to the individual user's own data and any publicly
 available data. This allows the Marketplace API to be directly called
 from a user-controlled device or web browser, which is the case if you
-are using one of the open source
-[template applications](/operator-guides/concepts/#flex-templates-for-web-ftw)
-provided by Sharetribe.
+are using the open source
+[template application](/introduction/introducing-template/) provided by
+Sharetribe.
 
 The Marketplace API does not provide access to any data that an
 individual user should not access, such as other users' private data,

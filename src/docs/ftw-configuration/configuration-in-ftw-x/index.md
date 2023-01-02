@@ -4,8 +4,8 @@ slug: configuration
 updated: 2022-10-30
 category: ftw-configuration
 ingress:
-  The combined template has many configurations you can edit through
-  configuration files. This article explains how to change those
+  The Sharetribe Web Template has many configurations you can edit
+  through configuration files. This article explains how to change those
   configurations and what they mean.
 published: true
 ---

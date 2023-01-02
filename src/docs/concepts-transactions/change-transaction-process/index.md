@@ -108,8 +108,8 @@ To further think about the user experience on your marketplace in
 addition to transactions,
 [consult our guide](/design-toolkit/what-are-user-journeys/) on defining
 the discovery and listing creating process in your marketplace. You can
-see the default user experience provided by
-[Flex’s Templates for Web](/operator-guides/concepts/#flex-templates-for-web-ftw)
+see the default user experience provided by the
+[Sharetribe Web Template](/operator-guides/concepts/#flex-templates-for-web-ftw)
 there too.
 
 ## Draw it out
@@ -152,7 +152,7 @@ process.
 The transaction process plays out in your web or mobile marketplace
 application. Therefore, the steps you outline must be possible for your
 users to execute in your user interface. The default transaction
-processes have been built in to Flex Template for Web. If you want to
+processes have been built in to Sharetribe Web Template. If you want to
 add elements to your transaction process, your developer will need to
 customize the required pieces in order for your transaction process to
 be possible.
@@ -162,13 +162,14 @@ ability to negotiate a price, a transaction process should start with a
 customer making an offer. Providers can then accept, reject, or counter
 offers. Your users will need an interface to complete these actions.
 
-Since the Flex Template does not contain such an interface out of the
-box, a developer will need to customize it into the application. You can
-use the [Flex design files](/design-toolkit/design-files/) to guide your
-developer on how you want this to work.
+Since the Sharetribe Web Template does not contain such an interface out
+of the box, a developer will need to customize it into the application.
+You can use the [design files](/design-toolkit/design-files/) to guide
+your developer on how you want this to work.
 
-You can review everything included in the Flex Template by exploring the
-demo marketplace in your Console. You can refer to this article to
+You can review everything included in the Sharetribe Web Template by
+exploring the demo marketplace in your Console. You can refer to this
+article to
 [review the screens that are part of a transaction](/design-toolkit/your-user-journey-a-guide/#transaction-process).
 
 ## Share your transaction process with your developer

@@ -407,9 +407,9 @@ inside _LocationAutocompleteInput.module.css_.
 
 ## Using vanilla CSS
 
-FTW templates don't use vanilla CSS, but it is possible to take vanilla
-CSS into use just by creating CSS file that doesn't use `*.module.css`
-pattern in its file name.
+The Sharetribe Web Template does not use vanilla CSS, but it is possible
+to take vanilla CSS into use just by creating CSS file that doesn't use
+`*.module.css` pattern in its file name.
 
 Read more about using vanilla CSS from
 [Create React App's docs](https://create-react-app.dev/docs/adding-a-stylesheet).

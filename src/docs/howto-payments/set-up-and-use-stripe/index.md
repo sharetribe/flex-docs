@@ -6,8 +6,8 @@ category: how-to-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you
   need a free Stripe account. This guide will help you in creating a
-  Stripe account and adding Stripe API keys to Console and Flex Template
-  for Web.
+  Stripe account and adding Stripe API keys to Console and Sharetribe
+  Web Template.
 published: true
 ---
 
@@ -79,7 +79,7 @@ marketplace.
   Keys_.
 - In the section "Standard API keys" you will see two keys: publishable
   key and secret key. The publishable key (with prefix **pk**) is one
-  used in frontend application (e.g. Flex Template for Web) and secret
+  used in frontend application (e.g. Sharetribe Web Template) and secret
   key (with prefix **sk**) is the one you need to add to Console. If you
   want to use test data make sure the value of the key is eg.
   **pk_test**\<somethinghere\> and not **pk_live**\<somethinghere\>
@@ -102,18 +102,18 @@ production make sure that the toggle is off.
 
 In your client application, you need to use Stripe publishable key, when
 you create accountTokens or call other Stripe API endpoints. If you are
-using Flex Template for Web, calls to Stripe API are already there, but
-you need to add the Stripe publishable key to your `.env` file. You can
-do this by running `yarn run config` or editing the file directly in a
-text editor.
+using Sharetribe Web Template, calls to Stripe API are already there,
+but you need to add the Stripe publishable key to your `.env` file. You
+can do this by running `yarn run config` or editing the file directly in
+a text editor.
 
 Read more about configurations in FTW from
 [Getting started with FTW](/introduction/getting-started-with-ftw-daily/#add-environment-variables)
 
-## 7. Test the Stripe account in Flex Template for Web
+## 7. Test the Stripe account in Sharetribe Web Template
 
-If you are using Flex Template for Web (FTW) here is some instructions
-how you can test you Stripe account.
+If you are using the Sharetribe Web Template, refer to these
+instructions on testing your Stripe account.
 
 **Note:** When testing Stripe, make sure you are using the test API
 keys. To ensure that make sure the keys have prefix **sk_test** and
@@ -131,8 +131,8 @@ _Payments_. After filling the form you should see a new account when you
 go to Stripe Dashboard and to _Connect_ → _Accounts_.
 
 **Note:** After payout details are saved they can not be edited directly
-from FTW so you might need to create multiple accounts for testing
-purposes.
+from the template, so you might need to create multiple accounts for
+testing purposes.
 
 The form of the bank number and other required information depends on
 which country you have chosen. For example, most of the countries in
@@ -142,9 +142,9 @@ needed.
 
 ![Hong Kong bank number](bank-number-hk.png)
 
-It's also good to know that in FTW these are all separate fields but in
-Stripe clearing code and branch code are mapped together as routing
-number.
+It is also good to know that in the template, these are all separate
+fields, but in Stripe, clearing code and branch code are mapped together
+as routing number.
 
 ![Stripe bank numbers](stripe-bank-numbers.png)
 
@@ -172,8 +172,8 @@ so e.g. testing different error scenarios is possible.
 
 ## 8. Advanced: Adding new country to supported Stripe countries
 
-By default FTW already supports most of the countries that are available
-when using
+By default, the template already supports most of the countries that are
+available when using
 [Stripe custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 If you are not sure if your country is already supported, please contact
 to Stripe support before proceeding.
@@ -197,7 +197,7 @@ to Stripe support before proceeding.
    showing the ID number field is handled.
 
 <extrainfo title="Why are Brazil, India and Hungary not supported by default?">
-The current FTW templates do not support Brazil (BR), India (IN) and Hungary (HU),
+The current template does not support Brazil (BR), India (IN) and Hungary (HU),
 even though all three countries are mentioned as available Stripe countries in <a href="https://stripe.com/docs/connect/accounts#custom-accounts">Stripe's
 documentation</a>. If you want to support one of these three regions, you will
 need to do a fair amount of customization on top of the default Flex setup.

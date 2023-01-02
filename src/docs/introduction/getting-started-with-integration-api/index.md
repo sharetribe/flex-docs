@@ -132,7 +132,7 @@ This month, starting from Sun Dec 01 2019:
 - Start building your own integration. You can do so in different ways,
   depending on your needs:
   - Build your integration as a backend feature on top of your existing
-    Flex Template for Web app
+    Sharetribe Web Template app
   - Fork our Integration API examples repository and build on top of
     that
   - Create a completely new application. If you use JavaScript as your

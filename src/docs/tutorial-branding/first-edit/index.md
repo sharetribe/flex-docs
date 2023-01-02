@@ -14,9 +14,11 @@ published: true
 Custom styling is a good starting point to introduce your own branding
 and remove design choices made for the example marketplace, Biketribe.
 
-FTW templates have most of the styling tied to component directories,
-but there is a configuration file that defines the marketplace color, as
-well as a handful of default images:
+// TODO: Update to check whether this is true!
+
+Sharetribe Web Template has most of its styling tied to component
+directories, but there is a configuration file that defines the
+marketplace color, as well as a handful of default images:
 
 ```shell
 └── src

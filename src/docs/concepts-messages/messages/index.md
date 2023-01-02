@@ -10,6 +10,8 @@ ingress:
 published: true
 ---
 
+TODO: Update repo links!
+
 ## What are messages?
 
 Messages let your users communicate with other users in your
@@ -86,11 +88,11 @@ and react directly to them. See how to
 [Integration API example script repository](https://github.com/sharetribe/flex-integration-api-examples)
 if you’re unsure where to start building your integration.
 
-## Message notifications in Flex Templates for Web (FTW)
+## Message notifications in Sharetribe Web Template
 
-By default, FTW renders a notification symbol when the provider has
-transactions that require action, i.e. transactions that require
-acceptance of a booking request.
+By default, Sharetribe Web Template renders a notification symbol when
+the provider has transactions that require action, i.e. transactions
+that require acceptance of a booking request.
 
 ![Notification symbol](notification.png 'Notification symbol')
 

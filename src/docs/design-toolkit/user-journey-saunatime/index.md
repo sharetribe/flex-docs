@@ -9,6 +9,8 @@ ingress:
 published: true
 ---
 
+// TODO: Update
+
 [Saunatime template](/operator-guides/concepts/#flex-templates-for-web-ftw)
 is a great starting point for building rental marketplaces. Saunatime
 providers list saunas for rent by day. Sauna lovers can search saunas by

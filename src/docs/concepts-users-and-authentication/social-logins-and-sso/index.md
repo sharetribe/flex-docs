@@ -16,7 +16,7 @@ service, refer to the following how-to guides:
 - [Enable Facebook login](/how-to/enable-facebook-login/)
 - [Enable Google login](/how-to/enable-google-login/)
 - [Enable OpenID Connect login](/how-to/enable-open-id-connect-login/)
-- [How to set up OpenID Connect proxy in FTW](/how-to/setup-open-id-connect-proxy/)
+- [How to set up OpenID Connect proxy in Sharetribe Web Template](/how-to/setup-open-id-connect-proxy/)
 
 ## Using a third party identity provider
 
@@ -33,8 +33,10 @@ in or creating a user is as follows:
 
 The different actors in the diagram above are:
 
-- **Browser** The FTW React application running in user's browser
-- **FTW backend** FTW Node application that runs on a server
+- **Browser** The Sharetribe Web Template React application running in
+  user's browser
+- **Template backend** Sharetribe Web Template Node application that
+  runs on a server
 - **Identity provider** A service that provides user authentication, for
   example, Facebook
 - **Flex API** Flex Marketplace or Auth API
@@ -46,8 +48,8 @@ may differ depending on the identity provider that is being used but the
 flow is usually like this: user is redirected to the identity provider
 to provide their credentials, an authorization code is returned, which
 is traded to a token with a request to the identity provider from the
-FTW backend. What token is obtained depends on the identity provider and
-protocol in use.
+template backend. What token is obtained depends on the identity
+provider and protocol in use.
 
 **5.1** Invokes `/current_user/create_with_idp` endpoint in Flex
 Marketplace API. The token obtained from steps 1.-4. is passed here

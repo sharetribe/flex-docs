@@ -21,12 +21,9 @@ means that an online payment has to be verified via a customer’s online
 bank or mobile verification when conducting the payment.
 
 The default [transaction process](/concepts/transaction-process/) of
-Sharetribe Flex and the Flex Templates for Web (
-[FTW daily](https://github.com/sharetribe/ftw-daily),
-[FTW hourly](https://github.com/sharetribe/ftw-hourly),
-[FTW product](https://github.com/sharetribe/ftw-product) ) offer
-out-of-the-box support for SCA. This article helps you understand how
-exactly transactions using SCA will work in the default process.
+Sharetribe Flex and the Sharetribe Web Template (TODO: Link to repo)
+offer out-of-the-box support for SCA. This article clarifies how exactly
+transactions using SCA will work in the default process.
 
 _Remember that this is just a default:_ you can make adjustments to this
 process as you wish, as long as you comply with the SCA requirements
@@ -118,10 +115,10 @@ work.
 If your Flex instance was created before July 2019, you will need to ask
 Sharetribe support to update your transaction process.
 [Learn more about how the transaction process supporting SCA and Stripe integration works](/concepts/payment-intents/).
-If you're basing your development on Flex Template for Web version 3 or
-later, your user interface already supports SCA, but if you're using an
-earlier version of Flex Template for Web, you will also need to update
-your checkout user interface.
+If you're basing your development on the Sharetribe Web Template, your
+user interface already supports SCA, but if you're using an old legacy
+template without this feature, you will also need to update your
+checkout user interface.
 [Learn more about how to take SCA and Payment Intents into use](/how-to/enable-payment-intents/).
 
 If your marketplace has been processing transactions without SCA in the

@@ -11,10 +11,16 @@ ingress:
 published: true
 ---
 
-_**NOTE! The current default method for setting commissions has
-deprecated our old commission setting actions. If you are looking for
-the old commissions and monetization background article, it can be found
-[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/background/commissions-and-monetizing-your-platform/).**_
+<info>
+
+The current default method for setting commissions has deprecated our
+old commission setting actions. If you are looking for the old
+commissions and monetization background article, it can be found
+[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/background/commissions-and-monetizing-your-platform/).
+
+</info>
+
+TODO: Update repo links
 
 ## Introduction
 
@@ -38,10 +44,10 @@ information about how the payment flow in Flex works.
 
 Configuring commissions happens with the
 [privileged-set-line-items](/references/transaction-process-actions/#actionprivileged-set-line-items)
-transaction process action. In the FTW templates, this is done
+transaction process action. In the template, this is done
 [on the server side](https://github.com/sharetribe/ftw-daily/blob/master/server/api-util/lineItems.js)
 because of the privileged nature of this action. If you are developing a
-client application that is not based on one of the FTW templates, you
+client application that is not based on the Sharetribe Web Template, you
 can apply a similar logic.
 
 ## Percentage-based commissions

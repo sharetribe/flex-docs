@@ -5,18 +5,18 @@ updated: 2019-03-25
 category: tutorial
 ingress:
   This guide is designed to help you get started with customizing the
-  FTW-daily template.
+  Sharetribe Web Template.
 published: true
 ---
 
 ## What are we building?
 
-In this tutorial, we start to customize FTW-daily template and turn it
-into a cottage-rental marketplace called CottageDays.
+In this tutorial, we start to customize the Sharetribe Web Template and
+turn it into a cottage-rental marketplace called CottageDays.
 
 The first part of this tutorial is about branding the template. However,
-we will add new articles later about features that go beyond FTW-daily
-template and its default behaviour.
+we will add new articles later about features that go beyond the
+Sharetribe Web Template and its default behaviour.
 
 **Part 1: Branding**<br /> Learn to make changes that are necessary to
 turn Saunatime marketplace to CottageDays marketplace. At the end of
@@ -33,15 +33,16 @@ email notifications.
 
 ## Prerequisites
 
-FTW-daily is created on top of [React](https://reactjs.org/),
-[Redux](https://redux.js.org/), and styles are creted with
+Sharetribe Web Template is created on top of
+[React](https://reactjs.org/), [Redux](https://redux.js.org/), and
+styles are creted with
 [CSS Modules](https://github.com/css-modules/css-modules). You should be
 familiar with those libraries.
 
 You should also have completed the
-[Getting started guide](/introduction/getting-started-with-ftw-daily/)
-and as a result, you have the FTW-daily repository cloned to your local
-development environment and the app is available in
+[Getting started guide](/introduction/getting-started-with-web-template/)
+and as a result, you have the Sharetribe Web Template repository cloned
+to your local development environment and the app is available in
 http://localhost:3000.
 
 After that you could set up a Github repository for code changes. You
@@ -52,9 +53,11 @@ _[create your own Github repository](https://help.github.com/en/github/getting-s
 and push your locally cloned Git repository there.
 
 Even though the first option is easier (i.e. just click the "fork"
-button in FTW-daily Github repo), the latter is the recommended approach
-for the actual customization work. Here's a rough guide on how to set it
-up:
+button in Sharetribe Web Template Github repo), the latter is the
+recommended approach for the actual customization work. Here's a rough
+guide on how to set it up:
+
+// TODO: Update links
 
 1. Create a
    [Github repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
