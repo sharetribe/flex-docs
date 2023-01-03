@@ -188,8 +188,8 @@ For example, you could modify the `brand` field to a public data field
   },
 ```
 
-//TODO: UPDATE SEARCH FILTERS ARTICLE! Read more from the article:
-[Change search filters in FTW](/how-to/change-search-filters-in-ftw/)
+Read more in the article:
+[Change search filters in Sharetribe Web Template](/how-to/change-search-filters-in-ftw/)
 
 </extrainfo>
 

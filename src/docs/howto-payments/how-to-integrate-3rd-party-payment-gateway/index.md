@@ -413,8 +413,7 @@ metadata][integration-api-update-transaction-metadata] or [transition
 the transaction][integration-api-transition-transaction].
 
 If you use a Sharetribe Web Template, you can add a new endpoint by
-adding it to the [API router][ftw-daily-api-router]. // TODO: UPDATE
-LINK
+adding it to the [API router][web-template-api-router].
 
 We recommend securing the endpoint with Basic Authentication if the
 payment gateway supports that.
@@ -440,7 +439,7 @@ backend server. Your marketplace front-end should call this new backend
 endpoint and not the Flex API directly.
 
 If you use Sharetribe Web Template, you can add a new endpoint by adding
-it to the [API router][ftw-daily-api-router]. // TODO: UPDATE LINK
+it to the [API router][web-template-api-router]. // TODO: UPDATE LINK
 
 The new server endpoint should call the payment gateway API to do the
 payment action and the Flex Marketplace API to transition the
@@ -674,6 +673,8 @@ payment gateway to each step.
 
 ## Further reading
 
+// TODO: UPDATE TEMPLATE LINKS
+
 - [Platforms quick start by Adyen][adyen-platforms-quick-start]
 - [PayPal Commerce Platform for Marketplaces and Platforms developer
   documentation][paypal-commerce-platform-docs]
@@ -724,7 +725,7 @@ payment gateway to each step.
   https://www.sharetribe.com/api-reference/integration.html#update-user-profile
 [integration-api-transition-transaction]:
   https://www.sharetribe.com/api-reference/integration.html#transition-transaction
-[ftw-daily-api-router]:
+[web-template-api-router]:
   https://github.com/sharetribe/ftw-daily/blob/master/server/apiRouter.js
 [ftw-daily-initiate-privileged]:
   https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js
