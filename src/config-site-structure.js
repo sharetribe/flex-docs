@@ -113,9 +113,8 @@ const sortingArrayFTWContent = [
 ];
 
 const sortingArrayFTWIntroduction = [
+  'sharetribe-web-template',
   'how-to-customize-ftw',
-  'ftw-hourly',
-  'ftw-product',
   'customization-checklist',
 ];
 
