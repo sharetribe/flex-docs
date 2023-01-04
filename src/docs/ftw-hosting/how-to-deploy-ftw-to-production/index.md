@@ -1,7 +1,7 @@
 ---
 title: Deploy to production
 slug: how-to-deploy-ftw-to-production
-updated: 2021-01-21
+updated: 2023-01-01
 category: ftw-hosting
 ingress:
   This article describes what to take into account when you deploy the

@@ -1,7 +1,7 @@
 ---
 title: Deploy to Heroku
 slug: how-to-deploy-ftw-to-heroku
-updated: 2022-09-12
+updated: 2023-01-01
 category: ftw-hosting
 ingress:
   This guide describes how to deploy the Sharetribe Web Template to

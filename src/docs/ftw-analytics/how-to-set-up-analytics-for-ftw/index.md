@@ -1,7 +1,7 @@
 ---
 title: Enable analytics
 slug: how-to-set-up-analytics-for-ftw
-updated: 2021-05-09
+updated: 2023-01-01
 category: ftw-analytics
 ingress:
   This guide describes how to enable analytics in the Sharetribe Web

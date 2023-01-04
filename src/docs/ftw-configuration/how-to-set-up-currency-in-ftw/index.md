@@ -1,7 +1,7 @@
 ---
 title: Currency configurations
 slug: how-to-set-up-currency-in-ftw
-updated: 2019-07-17
+updated: 2023-01-01
 category: ftw-configuration
 ingress:
   The Sharetribe Web Template uses USD as the default currency. This

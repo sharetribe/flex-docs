@@ -1,7 +1,7 @@
 ---
 title: Hosted microcopy with Asset Delivery API
 slug: hosted-microcopy
-updated: 2022-06-14
+updated: 2023-01-01
 category: ftw-content
 ingress:
   This article describes how hosted microcopy work in the Sharetribe Web

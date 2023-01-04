@@ -1,7 +1,7 @@
 ---
 title: How to change the default favicons
 slug: how-to-change-ftw-icons
-updated: 2019-01-28
+updated: 2023-01-01
 category: ftw-styling
 ingress:
   This guide describes how to change the favicon and application icons

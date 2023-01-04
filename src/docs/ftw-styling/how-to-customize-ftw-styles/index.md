@@ -1,7 +1,7 @@
 ---
 title: Styling and CSS
 slug: how-to-customize-ftw-styles
-updated: 2022-07-11
+updated: 2023-01-01
 category: ftw-styling
 ingress:
   This guide describes the CSS architecture used in the Sharetribe Web

@@ -1,7 +1,7 @@
 ---
 title: Logging errors with Sentry
 slug: how-to-set-up-sentry
-updated: 2019-01-25
+updated: 2023-01-01
 category: ftw-testing-error-handling
 ingress:
   This guide documents how to use Sentry to log errors in the Sharetribe

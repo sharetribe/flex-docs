@@ -1,7 +1,7 @@
 ---
 title: Enable Mapbox
 slug: how-to-set-up-mapbox-for-ftw
-updated: 2019-07-04
+updated: 2023-01-01
 category: ftw-search
 ingress:
   By default, the template uses Mapbox for showing interactive maps.

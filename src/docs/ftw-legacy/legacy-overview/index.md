@@ -1,7 +1,7 @@
 ---
 title: Legacy templates
 slug: ftw-legacy
-updated: 2022-10-30
+updated: 2023-01-01
 category: ftw-legacy
 ingress:
   This article describes the Flex Templates for web that are deprecated

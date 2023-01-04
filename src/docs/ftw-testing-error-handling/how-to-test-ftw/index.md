@@ -1,7 +1,7 @@
 ---
 title: Running snapshot tests
 slug: how-to-test-ftw
-updated: 2021-10-05
+updated: 2023-01-01
 category: ftw-testing-error-handling
 ingress:
   This guide describes how to use the test setup in the Sharetribe Web

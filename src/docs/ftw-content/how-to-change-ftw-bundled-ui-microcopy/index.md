@@ -1,7 +1,7 @@
 ---
 title: Bundled microcopy
 slug: how-to-change-ftw-bundled-microcopy
-updated: 2022-06-14
+updated: 2023-01-01
 category: ftw-content
 ingress:
   This guide describes what is bundled microcopy and how to make changes

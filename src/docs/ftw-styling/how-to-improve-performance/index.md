@@ -1,7 +1,7 @@
 ---
 title: Performance and page speed
 slug: how-to-improve-performance
-updated: 2021-02-15
+updated: 2023-01-01
 category: ftw-styling
 ingress:
   This guide describes ways to improve the loading and rendering

@@ -1,7 +1,7 @@
 ---
 title: Customization checklist
 slug: customization-checklist
-updated: 2019-10-23
+updated: 2023-01-01
 category: ftw-introduction
 ingress:
   This article provides a reference list of common customisations to aid

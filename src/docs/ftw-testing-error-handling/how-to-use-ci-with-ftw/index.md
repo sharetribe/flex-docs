@@ -1,7 +1,7 @@
 ---
 title: Continuous integration
 slug: how-to-use-ci-with-ftw
-updated: 2019-02-05
+updated: 2023-01-01
 category: ftw-testing-error-handling
 ingress:
   This guide describes how the Continuous Integration (CI) setup works

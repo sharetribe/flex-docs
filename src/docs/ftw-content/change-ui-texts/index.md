@@ -1,7 +1,7 @@
 ---
 title: Change template texts
 slug: how-to-change-ftw-ui-texts
-updated: 2022-06-14
+updated: 2023-01-01
 category: ftw-content
 ingress:
   This guide gives an overview how to change the user interface texts in

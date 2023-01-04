@@ -1,7 +1,7 @@
 ---
 title: Content Security Policy
 slug: how-to-set-up-csp-for-ftw
-updated: 2019-01-25
+updated: 2023-01-01
 category: ftw-security
 ingress:
   This guide describes how to set up a Content Security Policy when

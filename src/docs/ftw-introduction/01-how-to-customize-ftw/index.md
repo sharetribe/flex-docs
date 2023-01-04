@@ -1,7 +1,7 @@
 ---
 title: Customizing the template
 slug: how-to-customize-ftw
-updated: 2021-10-19
+updated: 2023-01-01
 category: ftw-introduction
 ingress:
   This article helps you set up the development environment and outlines

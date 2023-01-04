@@ -1,7 +1,7 @@
 ---
 title: Code splitting
 slug: how-code-splitting-works-in-ftw
-updated: 2021-02-12
+updated: 2023-01-01
 category: ftw-routing
 ingress:
   This article explains how code splitting works in the Sharetribe Web

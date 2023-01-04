@@ -1,7 +1,7 @@
 ---
 title: Template environment variables
 slug: ftw-env
-updated: 2021-01-21
+updated: 2023-01-01
 category: ftw-configuration
 ingress:
   Reference documentation for environment variables in the Sharetribe

@@ -1,7 +1,7 @@
 ---
 title: Sharetribe Web Template
 slug: sharetribe-web-template
-updated: 2022-10-20
+updated: 2023-01-01
 category: ftw-introduction
 ingress:
   This article introduces the Sharetribe Web Template and links to

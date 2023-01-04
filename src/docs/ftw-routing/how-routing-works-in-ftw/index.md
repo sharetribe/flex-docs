@@ -1,7 +1,7 @@
 ---
 title: Routing
 slug: how-routing-works-in-ftw
-updated: 2021-02-12
+updated: 2023-01-01
 category: ftw-routing
 ingress:
   This article explains how routing works in the Sharetribe web Template
