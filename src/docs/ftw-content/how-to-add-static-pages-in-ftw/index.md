@@ -1,37 +1,36 @@
 ---
-title: How to add static pages in FTW
+title: How to add a static page
 slug: how-to-add-static-pages-in-ftw
 updated: 2023-01-01
 category: ftw-content
 ingress:
-  This guide describes how to add pages with static content in Flex
-  Template for Web (FTW).
+  This guide describes how to add a non-dynamic static page using the
+  Sharetribe Web Template
 published: true
 ---
 
-// TODO: Remove once Pages releases If you want to create simple pages
-that just show static content without need for data fetches, you can
-create a static page.
+You can create new content pages through the Console using the Pages
+feature. However, sometimes you may need a static page that does not use
+dynamic content. This guide walks you through the steps required to
+create a static and non-dynamic content page, from where to create the
+new component to how to add new routes.
 
-## 1. Create a new folder
+## Create a new folder
 
-Create a new folder under _src/containers/_ with the name of your static
-page. E.g. "about" page should be named as **AboutPage**.
+1. Create a new folder in the _src/containers/_ directory. In this
+   example, we will name our component **ContentPage**. Our new folder
+   will exist in _src/containers/ContentPage/_.
 
-## 2. Create a JavaScript file
+2. Create a new JavaScript file that matches the directory name. The
+   path should look like: _src/containers/ContentPage/ContentPage.js_
 
-Create a new JavaScript file using the folder name. The path should look
-like _src/containers/AboutPage/AboutPage.js_.
+3. Create a new CSS file that matches the directory name. The path
+   should look like:
+   _src/containers/ContentPage/ContentPage.module.css_.
 
-## 3. Create a CSS file
+## Create the component
 
-Create a new CSS file using the folder name. The path should look like
-_src/containers/AboutPage/AboutPage.module.css_.
-
-## 4. Create the component
-
-Template for a single column static page (AboutPage.js): (We'll go
-through this line-by-line below.)
+Paste the following code into the new JavaScript file you created:
 
 ```jsx
 import React from 'react';
@@ -48,30 +47,31 @@ import {
 import StaticPage from '../../containers/StaticPage/StaticPage';
 import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 
-import css from './AboutPage.module.css';
-import image from './path/to/image.png';
+import css from './ContentPage.module.css';
 
-const AboutPage = () => {
+const ContentPage = () => {
   return (
     <StaticPage
       className={css.root}
-      title="About"
+      title="Content page"
       schema={{
         '@context': 'http://schema.org',
-        '@type': 'AboutPage',
+        '@type': 'ContentPage',
         description: 'Description of this page',
-        name: 'About page',
+        name: 'Content page',
       }}
     >
       <LayoutSingleColumn>
         <LayoutWrapperTopbar>
           <TopbarContainer />
         </LayoutWrapperTopbar>
-        <LayoutWrapperMain>
-          <h1>Some content</h1>
-          <img src={image} alt="My first ice cream." />
+        <LayoutWrapperMain className={css.staticPageWrapper}>
+          <h1 className={css.pageTitle}>This is a blank page.</h1>
           <div>
-            <NamedLink name="LandingPage">Go to home page</NamedLink> or
+            <NamedLink name="LandingPage">
+              Go to the home page
+            </NamedLink>{' '}
+            or{' '}
             <ExternalLink href="https://google.com">
               Go to Google
             </ExternalLink>
@@ -85,7 +85,7 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default ContentPage;
 ```
 
 We are using [React](https://reactjs.org/) and
@@ -97,9 +97,10 @@ component which is done in the first line.
 import React from 'react';
 ```
 
-In the second line we import some components:
+On the second line we import some components:
 
-- **LayoutSingleColumn** and wrappers that it needs to position content
+- **LayoutSingleColumn** and the wrappers that it needs to position
+  content on the page
 - **Footer** component (to be added inside LayoutWrapperFooter)
 - **NamedLink** makes it easier to point to different pages inside the
   application
@@ -133,30 +134,23 @@ After that we are importing two containers:
   it needs.
 
 ```jsx
-import StaticPage from '../../containers/StaticPage/StaticPage';
+import StaticPage from '../../containers/ContentPage/ContentPage';
 import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 ```
 
 Then we need to import styles and possible other files from current
-folder. With CSS we are using
-[CSS Modules](https://github.com/css-modules/css-modules) to tackle
-possible clashes of different class names.
+folder. The template uses
+[CSS Modules](https://github.com/css-modules/css-modules) to scope all
+class names locally to prevent conflicts.
 
 ```jsx
-import css from './AboutPage.module.css';
-```
-
-Then we also import an image which is used later
-(`<img src={image} alt="My first ice cream." />`).
-
-```jsx
-import image from './path/to/image.png';
+import css from './ContentPage.module.css';
 ```
 
 Then after all the imports we are finally getting into phase were we
-define the component. `const AboutPage = props => { return <div></div>}`
-defines a component called AboutPage with content defined in return
-part. This is a
+define the component.
+`const ContentPage = props => { return <div></div>}` defines a component
+called ContentPage with content defined in return part. This is a
 [functional component](https://reactjs.org/docs/components-and-props.html).
 
 In the template above we are using StaticPage component with some
@@ -165,25 +159,25 @@ attributes:
 ```jsx
     <StaticPage
       className={css.root}
-      title="About"
+      title="Content page"
       schema={{
-        "@context": "http://schema.org",
-        "@type": "AboutPage",
-        "description": "Description of this page",
-        "name": "About page",
+        '@context': 'http://schema.org',
+        '@type': 'ContentPage',
+        description: 'Description of this page',
+        name: 'Content page',
       }}
     >
 ```
 
 - `className` is JSX name for `class` attribute used in plain HTML.
-- `title="About"` creates `<title>About</title>` element to `<head>`
-  section of the page. (That title is also used in OpenGraph meta tags).
-  You could also add `description="This is about page description"`
+- `title="Content page"` creates `<title>Content page</title>` element
+  to `<head>` section of the page. (That title is also used in OpenGraph
+  meta tags).
 - Then we have `schema` tag that defines some data for search engines in
   JSON-LD format. Check [schema.org](https://schema.org/docs/full.html)
   for more information.
 
-Inside **StaticPage** component we define layout
+Inside the **StaticPage** component we define layout
 (**LayoutSingleColumn**) and add other components inside semantic
 content wrappers so that the layout is able to understand where to
 render those blocks.
@@ -193,11 +187,10 @@ render those blocks.
   <LayoutWrapperTopbar>
     <TopbarContainer />
   </LayoutWrapperTopbar>
-  <LayoutWrapperMain>
-    <h1>Some content</h1>
-    <img src={image} alt="My first ice cream." />
+  <LayoutWrapperMain className={css.staticPageWrapper}>
+    <h1 className={css.pageTitle}>This is a blank page.</h1>
     <div>
-      <NamedLink name="LandingPage">Go to home page</NamedLink> or
+      <NamedLink name="LandingPage">Go to the home page</NamedLink> or{' '}
       <ExternalLink href="https://google.com">
         Go to Google
       </ExternalLink>
@@ -209,36 +202,44 @@ render those blocks.
 </LayoutSingleColumn>
 ```
 
-And as a final step we need to export the component.
-`export default AboutPage;`. See more from
+And as a final step we need to export the component:
+`export default ContentPage;`. See more from
 [babeljs.org](https://babeljs.io/docs/en/learn/#modules)
 
-## 5. Add some styles to the CSS file
+## Style the component
 
-Here's an example what your _AboutPage.module.css_ file could look like:
+Here's an example what your _ContentPage.module.css_ file could look
+like:
 
 ```css
 /**
  * Import custom media queries for the new page.
- * FTW-template use route-based code-splitting, every page create their own CSS files.
+ * The template uses route-based code-splitting, every page create their own CSS files.
  * This import ensures that the page and components inside will get correct media queries,
  * when the app is build.
  */
 @import '../../styles/customMediaQueries.css';
 
-.root {
-  padding: 24px;
+.pageTitle {
+  text-align: center;
+}
 
-  /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
-  background-color: var(--marketplaceColor);
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
 }
 ```
 
-## 6. Add a route to the page
+## Add routing
 
 As a last step you need to add the newly created static page to the
-routing. This can be done in _src/routeConfiguration.js_. (In
-FTW-product the file is moved to _src/routing/routeConfiguration.js_.)
+routing. This can be done in _src/routing/routeConfiguration.js_.
 
 Inside routeConfiguration function you should add a URL path, a page
 name (it should not conflicting with other pages), and the component
@@ -248,22 +249,20 @@ Add a new asynchronous import for the page in the beginning of the file
 with other page imports:
 
 ```js
-const AboutPage = loadable(() =>
+const ContentPage = loadable(() =>
   import(
-    /* webpackChunkName: "AboutPage" */ './containers/AboutPage/AboutPage'
+    /* webpackChunkName: "ContentPage" */ './containers/ContentPage/ContentPage'
   )
 );
 ```
 
-and after that add the route configuration to your newly created page:
-(In this example we created about page so '/about' would work well as a
-path.)
+After that add the route configuration to your newly created page:
 
 ```javascript
 {
-  path: '/about',
-  name: 'AboutPage',
-  component: AboutPage,
+  path: '/contentpage',
+  name: 'ContentPage',
+  component: ContentPage,
 },
 ```
 
