@@ -64,21 +64,19 @@ marketplace, which is used to style various elements throughout the
 site.
 
 The `logoImageDesktopURL` and `logoImageMobileURL` constants specify the
-URL for the desktop and mobile logos, respectively.
+URL for the desktop and mobile logos.
 
 The `brandImageURL` constant specifies the URL for a background image
 that is used on several pages.
 
 The `facebookImageURL` and `twitterImageURL` constants specify the
-default images for social media sharing on Facebook and Twitter,
-respectively.
-
-Keep in mind that these constants are only a small part of your
-marketplace's overall branding and appearance. You may need to modify
-other elements, such as CSS styles, to fully customize the appearance of
-your site.
+default images for social media sharing on Facebook and Twitter.
 
 ## Common configurations
+
+You can find all common configurations in the
+[configDefault.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js)
+file.
 
 The `marketplaceName` setting specifies the name of your marketplace.
 This name is used in various places throughout the site, such as in
@@ -88,13 +86,18 @@ microcopy and in meta tags for SEO and social media sharing.
 
 The currency setting specifies the currency used in your marketplace. It
 must be in ISO 4217 currency code and should match one of the currencies
-listed in the currencySettings.js file.
+listed in the
+[settingsCurrency.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/settingsCurrency.js)
+file.
 
 The `listingMinimumPriceSubUnits` setting specifies the minimum price
 for a listing in your marketplace, expressed in currency subunits (e.g.,
 cents). A value of 0 means that there is no minimum price for listings.
 Note that Stripe may charge a minimum fee that depends on factors such
 as the country and currency.
+
+You can read more about currency configurations in the
+[currency configurations article](/ftw/how-to-set-up-currency-in-ftw/).
 
 ### Locale
 
@@ -118,17 +121,12 @@ The `siteFacebookPage`, `siteInstagramPage`, and `siteTwitterHandle`
 settings in the code specify the schema.org organization metadata and
 are used in the meta tags for social media sharing.
 
-The `siteFacebookPage` setting specifies the Facebook page associated
-with your marketplace or organization. The page should be expressed as a
-URL (e.g., 'https://www.facebook.com/sharetribe/' or '@sharetribe').
-
-The `siteInstagramPage` setting specifies the Instagram page associated
-with your marketplace or organization. The page should be expressed as a
-URL (e.g., 'https://www.instagram.com/sharetribe/').
-
-The `siteTwitterHandle` setting specifies the Twitter handle associated
-with your marketplace or organization. The handle should be expressed as
-a username (e.g., '@sharetribe').
+The `siteFacebookPage`, `siteInstagramPage` and `siteTwitterHandle`
+settings specify the social media pages associated with your marketplace
+or organization. With the two first options, the pages should be
+expressed as an URL (e.g., 'https://www.facebook.com/sharetribe/'). For
+the `siteTwitterHandle` option, you should use a username (e.g.,
+'@sharetribe').
 
 You can also specify address information to be used in your site's
 structured data. The address setting contains four properties:
@@ -147,7 +145,9 @@ structured data. The address setting contains four properties:
 
 There are three layout options that you can toggle to change how the
 search page is rendered and how listing images are displayed in your
-marketplace.
+marketplace. You can find all layout options in the
+[configLayout.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configLayout.js)
+file.
 
 ### Search page
 
@@ -195,20 +195,160 @@ and 'full-image'.
 export const listingPageVariant = 'full-image';
 ```
 
-### Aspect ratio for listing image variants
+### Listing image aspect ratio
+
+Use the `listingImage` option to specify the aspect ratio and image
+variants for listing images in your marketplace. The option defines the
+aspect ratio of the listing image everywhere except on the listing page.
+The aspect ratio of the image on the listing page can be defined by
+toggling the listingPageVariant option between 'full-image' and
+'hero-image' (the full image option will display images in their
+original aspect ratio).
+
+For example, to change the aspect ratio of the images to 3:1, you would
+set the aspectWidth property to 1200 and the aspectHeight property to
+400:
+
+```js
+export const listingImage = {
+  // Aspect ratio for listing image variants
+  aspectWidth: 1200,
+  aspectHeight: 400,
+  // Listings have custom image variants, which are named here.
+  variantPrefix: 'listing-card',
+};
+```
+
+Which would look like this on the search page:
+
+![Image of aspect ratio](./aspect-ratio.png)
+
+## Extended data configuration
+
+The `listingExtendedData` is an array of configuration options for
+extended data fields.
+[Extended data](/concepts/extended-data-introduction/) fields are
+additional pieces of information that can be added to a listing. Each
+object in the array represents a single extended data field. You can
+find the full list of configuration options for extended data fields in
+the
+[configListing.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configListing.js#L11)
+file.
+
+Adding a new entry to the `listingExtendedData` array will automatically
+add a new input field to the listing creation wizard. Say we add a new
+extended data field using the following options:
+
+```js
+  {
+    key: 'frame',
+    scope: 'public',
+    schemaType: 'enum',
+    schemaOptions: [
+      { option: 'aluminium', label: 'Aluminium' },
+      { option: 'steel', label: 'Steel' },
+      { option: 'titanium', label: 'Titanium' },
+    ],
+    indexForSearch: false,
+    searchPageConfig: {
+      filterType: 'SelectSingleFilter',
+      label: 'Frame material',
+      group: 'primary',
+    },
+    listingPageConfig: {
+      label: 'Frame material',
+      isDetail: true,
+    },
+    editListingPageConfig: {
+      label: 'Frame material',
+      placeholderMessage: 'Select frame material',
+      isRequired: false,
+    },
+  },
+```
+
+When creating a new listing, we will see the new input field pop up:
+
+![Image of input field](./inputfield.png)
+
+And while the `isDetail` value in the `listingPageConfig` object is
+toggled to `true`, the extended data attribute will also be listed on
+the listing page:
+
+![Image of input field](./description.png)
+
+We will also be able to see the new extended data field on the search
+page and use it to filter listings. If we change the `indexForSearch`
+value to `true`, we will see a new filter component pop up, that can be
+used to filter listings by frame material:
+
+![Filter component to filter listings with frame material](./filtercomponent.png)
+
+<info>
+
+If you do enable the `indexForSearch` variable, you must also set a
+search schema. Without setting a search schema for the extended data,
+the filter component will not work. Learn how to set a search schema for
+a extended data attribute in the
+[manage search schemas article](/how-to/manage-search-schemas-with-flex-cli/).
+
+</info>
 
 ## Search configuration
+
+The
+[configSearch.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configSearch.js)
+file allows you to adjust the default search filters (price and dates)
+and how listings are sorted on the search page.
+
+### Search filters
 
 In the configSearch.js file you can change if the search bar supports
 location or keyword search by toggling the `mainSearchType` variable
 between 'keywords' and 'location'.
 
-This file also allows you to configure the default filters that are not
-based on [extended data](/concepts/listing-extended-data/). The default
-filters are:
+This file allows you to configure or remove the dates and price filter.
+To remove the filters, comment them out of the `defaultFilters` array.
+You can adjust two variables within the date filter:
+`entireDateRangeAvailable` and `mode`. The latter can be assigned to
+either `day` or `night`. Using the value `day` will allow your users to
+select a single day through the datepicker element. TODO what does
+entiredaterangeavaialble do
 
-- Date filter
-- Price filter
-- Keyword filter
+### Sorting
 
-## Important variables
+You can adjust sorting options through the `sortConfig` option. Here you
+can disable the sorting element altogether. You can add or remove
+existing sorting options by editing the options array. Even extended
+data can also be used to sort listings. See all the available sorting
+options in the
+[API reference](https://www.sharetribe.com/api-reference/marketplace.html#sorting).
+
+## Map configurations
+
+The
+[configMaps.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js)
+file allows you to set up a map provider and adjust map-related
+settings. See [this article](/ftw/configure-maps/) for a complete
+overview of what map-related adjustments you can achieve through the
+configuration files. If you are trying to change the map provider, see
+the how to set up [Google Maps](/ftw/how-to-use-google-maps-in-ftw/) or
+[Mapbox](/ftw/how-to-set-up-mapbox-for-ftw/) article.
+
+## Stripe and transactions
+
+### Stripe configurations
+
+The
+[configStripe.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configStripe.js)
+file includes all countries supported by the Flex Stripe integration.
+The list of countries is used during the Stripe onboarding process. In
+most cases, no changes are required to this file.
+
+### Transaction configurations
+
+The
+[configTransaction.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configTransaction.js)
+file is an array of transaction processes. By default, only one of the
+configurations is active, and the rest of them are commented out. You
+can use this configuration to enable different transaction processes.

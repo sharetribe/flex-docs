@@ -32,10 +32,10 @@ Access the
 The Sharetribe Web Template is a React application built on top of a
 forked version of
 [Create React App (CRA)](https://create-react-app.dev/). The modified
-version of CRA supports server-side rendering (SSR) and CSS modules. The
-template also includes a Node.js server, which enables SSR and other
-essential features which require communicating with the Sharetribe APIs
-without allowing the client to modify the requests.
+version of CRA adds support for server-side rendering (SSR) and CSS
+modules. The template also includes a Node.js server, which enables SSR
+and other essential features which require communicating with the
+Sharetribe APIs without allowing the client to modify the requests.
 
 The included Node.js server enables server-side rendering, which helps
 to improve search engine optimization and speed up the application's
@@ -76,8 +76,8 @@ more in the
 
 ## Key differences from legacy templates
 
-Before the release of the Sharetribe Web Template, we provided and
-maintained three different templates: ftw-daily, ftw-hourly and
+Before the release of the Sharetribe Web Template, Sharetribe provided
+and maintained three different templates: ftw-daily, ftw-hourly and
 ftw-product. The Sharetribe Web Template combines the features of the
 previous templates into one template and allows developers to enable
 features from each using configuration variables. If you are looking for
@@ -86,3 +86,20 @@ documentation or information regarding the legacy templates, see the
 
 The new template introduces many changes. Here is a list that details
 the most important of them:
+
+- [Configurations](/ftw/configuration/) allow you to make a variety of
+  changes without touching code. You can toggle between different
+  layouts, change search options, add new extended data fields and much
+  more.
+- Handling extended data is significantly easier and can be done through
+  a configuration file. For example, you can add a new extended data
+  field in the configuration file, and it will render a corresponding
+  input field on the listing creation page.
+- Transaction process handling is fundamentally different. Introducing
+  new transaction processes is more straightforward, and some of the
+  work can be done through the transaction configuration file. Read more
+  about how adding new transaction processes works in
+  [this article](/how-to/change-transaction-process-in-ftw/).
+- StateData.js files are responsible for handling transaction state
+  data. Read more
+  [about StateData](/how-to/change-transaction-process-in-ftw/#3-update-state-data-for-inbox-page-and-transaction-page).
