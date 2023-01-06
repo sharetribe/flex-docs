@@ -46,9 +46,10 @@ const BannerContent = styled.div`
       margin-bottom: ${baselineSpacing}px;
       max-width: ${props => props.theme.contentMaxWidth}px;
       color: ${props => props.fontColour};
+    }
 
-      
-
+    p:last-child {
+      margin-bottom: 0px;
     }
 
     // also apply font colour to lists and other child elements
