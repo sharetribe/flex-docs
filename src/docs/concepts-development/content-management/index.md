@@ -1,7 +1,7 @@
 ---
 title: Content management in Flex
 slug: content-management
-updated: 2022-08-02
+updated: 2023-01-11
 category: concepts-development
 ingress:
   This article introduces the Flex content management system and how
@@ -9,10 +9,10 @@ ingress:
 published: true
 ---
 
-In 2022-09, Flex introduces a headless CMS-like feature to create static
-pages in Flex. Initially, the feature allows operators to modify their
-landing pages without code. Going forward, it will be possible to create
-new pages as well.
+In 2023-01, Flex introduces a headless CMS-like feature to create static
+pages in Flex. The feature allows operators to modify a selection of
+default content pages without code, as well as create completely new
+pages.
 
 ## Flex Content management glossary
 
@@ -61,8 +61,9 @@ Example: article, feature, columns.
 
 Blocks are optional, but they are very useful for more extensive pieces
 of content. Different section content models can show blocks in
-different ways, depending on the design. Blocks can have fields within
-them. Example: default block.
+different ways, depending on the design. In addition, adding images to
+sections happens within blocks. Blocks can have fields within them.
+Example: default block.
 
 ### Field
 
@@ -152,7 +153,63 @@ For the landing page, the asset being modified in Flex is
 or a specific version. The client application then shows the page
 content it has fetched.
 
-TODO: EXPLAIN PUBLICATION FLOW
+The FTW templates are configured to show asset-based content starting
+from the following versions:
+
+- FTW-daily v.X.X.X
+- FTW-hourly v.X.X.X
+- FTW-product v.X.X.X
+
+For earlier template versions, you can either pull upstream updates or
+make the changes manually. You can check this article on
+[static content rendering in FTW](/ftw/page-builder/) for context, and
+these PRs for the necessary changes:
+
+- [FTW-daily]()
+- [FTW-hourly]()
+- [FTW-product]()
+
+To see your page changes in your client application, you need to save
+your changes in Flex Console and navigate to the corresponding page in
+your app.
+
+Alternatively, if you have an application running in the address set as
+your **Marketplace URL**, you can click the "View page" link next to the
+page title in Flex Console.
+
+![View page](./view-page.png)
+
+This will open the page in your **Marketplace URL** address.
+
+### Publishing pages from test to production
+
+When you first take your markeptlace to production, your production
+marketplace is created as a duplicate of your test marketplace. This
+includes all your page assets. - You can also modify your marketplace
+content pages after going to production. You will still need to make and
+test the changes in your test environment. Then, after you are happy
+with all your page changes, you can click the "Copy to production"
+button.
+
+![Copy to production](./copy-to-production.png)
+
+After clicking the button, you will see a modal detailing which pages
+have been modified, created, and removed compared to your current
+production pages. You can check the boxes of the pages you want to copy
+to production. This will override the current production content of
+those pages with the new content from the test environment.
+
+<warning>
+
+Once you have copied a page to production, you cannot return to the
+previous production version of that page. Take extra good care to double
+check your changes in test environment before copying anything to
+production!
+
+</warning>
+
+It can take up to five minutes for your changes to update from test to
+production environment.
 
 ## Content layout
 
@@ -164,3 +221,8 @@ and even in the FTW templates you have full freedom as to how the
 different sections get displayed. This means that even with the
 pre-defined options, you can create a page setup that is entirely your
 own.
+
+Read more about how the FTW templates show content created in Flex
+Console:
+
+- [How FTW renders static pages using the PageBuilder](/ftw/page-builder/)
