@@ -46,7 +46,7 @@ articles on
 - Reasons to rent out your cottage to others
 - Reasons to hire a cottage for your vacation
 - Cottage rental etiquette
-- Knit socks and mosquito spray i.e. what to pack for a cottage trip
+- What to pack for a cottage trip
 - Cottage cooking favorites, such as grilled sausages and fireside
   s'mores ... and so forth
 
@@ -56,8 +56,6 @@ article base. You can start with e.g. half a dozen article topics, and
 then build your content library as you go.
 
 ## Build your library page and article pages
-
-[TODO: Add screenshots]
 
 To add a page, you need to navigate to Flex Console > Content > Pages.
 By default, this page contains a landing page, a terms of service page,
@@ -72,8 +70,9 @@ As the page id for this first page, enter "articles". This will be the
 collection page where you will link all your individual articles, and
 you can see the page in _[your-marketplace-url.com]/articles_.
 
-After you create the page, you can start adding new sections. Let's add
-the following sections to this main page:
+After you create the page, you can start adding new sections.
+
+Let's add the following sections to this main page:
 
 - Introduction section with _article_ template. You can use this section
   to explain more about the focus of your marketplace and your article
@@ -85,6 +84,8 @@ the following sections to this main page:
   to list all your articles, either ordered chronologically or in some
   other way you prefer.
 
+![Articles sections](articles-sections.png 'Articles sections')
+
 In each section, you can define a title, ingress content, and blocks for
 your copy text. After you save the changes you made, you can click the
 "View page" link in the top right corner of the page editor to see your
@@ -95,11 +96,11 @@ changes.
 You have now created your main article collection page. Next, you will
 create a few article pages with your actual article content. If you were
 creating a marketplace about cottages, you could first write articles
-with the following page URLs:
+with the following page IDs:
 
-- /p/history
-- /p/packing-list
-- /p/amenities
+- history
+- packing-list
+- amenities
 
 You can create these article pages in a similar manner to how you
 created the collection page. Depending on the design of your pages, you
@@ -111,7 +112,7 @@ e.g. _features_ sections to highlight quotes or other key information.
 Once your articles have been created, you need to link the articles to
 each other.
 
-For instance, in your article on amenities you could link to the other
+For instance, in your article on _amenities_ you could link to the other
 two articles in the following way:
 
 ```
@@ -139,8 +140,11 @@ links to the button elements of both blocks and sections.
 
 ## Share on social media
 
+Once the pages are finished, you may want to modify how they are shown
+when shared on social media.
+
 By default, the Page Builder adds a basic page schema for each content
-page. You can modify the content of this schema in the CMSPage
+page. However, you can modify the content of this schema in the CMSPage
 component.
 
 ```shell
@@ -148,6 +152,37 @@ component.
     └── containers
         └── CMSPage
             └── CMSPage.js
+```
+
+For example, instead of the default page title and description, you may
+want to show the title and ingress of your first section in the schema.
+
+```diff
+export const CMSPageComponent = props => {
+  const { params, pageAssetsData, inProgress, error } = props;
+  const pageId = params.pageId || props.pageId;
+
++ const { title, ingress  } = pageAssetsData[pageId]?.data?.sections[0];
+...
+  // schemaTitle is used for <title> tag in addition to page schema for SEO
+- const schemaTitle = 'CMS page';
++ const schemaTitle = title?.content ?? 'CMS page';
+  // schemaDescription is used for different <meta> tags in addition to page schema for SEO
+- const schemaDescription = 'CMS page';
++ const schemaDescription = ingress?.content ?? 'CMS page';
+  const openGraphContentType = 'website';
+
+  // In addition to this schema for search engines, src/components/Page/Page.js adds some extra schemas
+  // Read more about schema
+  // - https://schema.org/
+  // - https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data
+  const pageSchemaForSEO = {
+    '@context': 'http://schema.org',
+    '@type': 'WebPage',
+    description: schemaDescription,
+    name: schemaTitle,
+  };
+
 ```
 
 You can see the default information shared about your page by pasting a
@@ -158,10 +193,9 @@ and the
 
 ### Add article image to social media shares
 
-One thing that the default page schema does not do is use the article
-image in the social share. Instead, it uses the default marketplace
-sharing image. You can see the image used for social media shares in
-your page _head_ tag.
+The default page schema does not use the article image in the social
+share. Instead, it uses the default marketplace sharing image. You can
+see the image used for social media shares in your page's _head_ tag.
 
 // TODO: Screenshot head tag with og:image visible
 
@@ -200,7 +234,7 @@ const cmsPageImages = (assetData, variantName) => {
 
   // Get the correct variants of images from the content blocks
   // of the different sections on the page.
-  const imageVariants = assetData[pageId].data?.sections
+  const imageVariants = assetData[pageId]?.data?.sections
     // First, flatMap the block arrays inside the section array into a single flat array
     .flatMap(s => s.blocks)
     // Second, pick the correct variants from the block images and add them to the imageVariants array.
