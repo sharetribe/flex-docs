@@ -99,9 +99,6 @@ and blocks you choose for your page, you can create a wide range of
 content. In the future, it will also be possible to create custom
 sections.
 
-TODO: IS THE LEVEL OF TECHNICALITY OK FOR A FLEX DOCS ARTICLE CF
-OPERATOR GUIDE?
-
 ![Example page with levels of content modeling elements](./content_modeling.png)
 
 ## Sections

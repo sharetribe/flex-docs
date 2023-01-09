@@ -107,6 +107,17 @@ created the collection page. Depending on the design of your pages, you
 may want to use _article_ sections for the main part of the text, and
 e.g. _features_ sections to highlight quotes or other key information.
 
+<info>
+
+Flex currently has a limit of **100 content pages** across your
+marketplace, including the pages included by default:
+
+- Landing page
+- Terms of service
+- Privacy policy
+
+</info>
+
 ## Link to other pages
 
 Once your articles have been created, you need to link the articles to
