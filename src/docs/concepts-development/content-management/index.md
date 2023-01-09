@@ -103,8 +103,8 @@ sections.
 
 ## Sections
 
-Flex has X default content sections that you can select for your page.
-All sections have a title, an ingress, and a button for a call to
+Flex has four default content sections that you can select for your
+page. All sections have a title, an ingress, and a button for a call to
 action.
 
 ### Article
@@ -128,6 +128,13 @@ that the block contents are on a single row, alternating the order, and
 different blocks are in a column. As with all content sections, the
 designer of your website can make changes as to how exactly the blocks
 get displayed on the page.
+
+### Carousel
+
+The carousel section shows content blocks side by side, in a carousel
+that can be browsed by swiping or scrolling. Carousel sections work
+great for a long array of blocks that the reader may or may not want to
+investigate in more depth.
 
 ## Blocks
 

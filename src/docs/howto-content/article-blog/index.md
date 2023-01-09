@@ -80,9 +80,9 @@ Let's add the following sections to this main page:
 - Featured articles with _features_ template. You can use this section
   to highlight your most important content, best performing articles, or
   an interesting series of posts.
-- List of all articles with _article_ template. You can use this section
-  to list all your articles, either ordered chronologically or in some
-  other way you prefer.
+- List of all articles with _carousel_ template. You can use this
+  section to list all your articles, either ordered chronologically or
+  in some other way you prefer.
 
 ![Articles sections](articles-sections.png 'Articles sections')
 
