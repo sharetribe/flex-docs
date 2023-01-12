@@ -41,5 +41,6 @@ mv "$WORK_DIR"/* public/docs/
 
 echo "Assets moved to public/docs"
 
+# This wont be needed on Vercel and will probably cause an error during build once _redirects is gone
 echo "Copying _redirects file to public/"
 cp _redirects public/
