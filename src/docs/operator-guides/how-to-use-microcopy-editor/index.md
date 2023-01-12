@@ -269,13 +269,17 @@ end-users, it is a good idea to always start making modifications in the
 Development environment. The sections above describe how to make these
 changes.
 
-You should transfer changes from the Development environment to the
-Production environment once you are ready. Copy the contents of your
-editor in the Development environment, then navigate to your Production
-environment using the drop-down menu in the top-left of the top bar.
-Navigate to the Microcopy editor in your Production environment
-(Build>Content), paste the microcopy from your Development environment
-into the editor, and save changes.
+When you first create your Production environment, the microcopy in your
+Development environment gets automatically copied over to your
+Production environment. After both environments are up and running, you
+will need to transfer your changes from Development environment to
+Production environment manually.
+
+Copy the contents of your editor in the Development environment, then
+navigate to your Production environment using the drop-down menu in the
+top-left of the top bar. Navigate to the Microcopy editor in your
+Production environment (Build>Content), paste the microcopy from your
+Development environment into the editor, and save changes.
 
 Note that since you are working in the Production environment, there is
 a 5 minute delay between saving changes and seeing those changes in your
