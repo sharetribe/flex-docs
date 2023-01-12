@@ -5,12 +5,10 @@ updated: 2022-11-11
 category: how-to-users-and-authentication
 ingress:
   This article guides you in implementing a feature where a user can
-  delete their own account through the FTW template Account settings
-  section.
+  delete their own account through the Sharetribe Web Template Account
+  settings section.
 published: true
 ---
-
-// TODO: implement and update images
 
 Starting from 2022-03, Sharetribe Flex Marketplace API has an endpoint
 for
@@ -20,24 +18,24 @@ participant cannot transition forward, and no payouts will be made to
 the user – even if the payouts have already been scheduled.
 
 This how-to article guides you in implementing an account deleting
-feature in the FTW template "Account settings" section. When the
-signed-in user navigates to the account deletion page, they need to
+feature in the Sharetribe web template "Account settings" section. When
+the signed-in user navigates to the account deletion page, they need to
 enter their password to confirm that they do in fact want to delete
-their account. An endpoint in the FTW application's server then gets
-called, and that endpoint checks whether the user has incomplete
+their account. An endpoint in the template application's server then
+gets called, and that endpoint checks whether the user has incomplete
 transactions.
 
-Depending on the result the endpoint then either returns the count of
+Depending on the result, the endpoint then either returns the count of
 incomplete transactions, or deletes the user's account through the
 `current_user/delete` endpoint. If the user cannot be deleted, the page
 shows the count of unfinished transactions, and if the user is deleted,
 they are immediately logged out.
 
-This how-to guide is based on the FTW template and `default-booking`
-process. As you implement the guide, you will need to review the
-transaction processes used on your marketplace to see which transitions
-count as non-final transitions, i.e. ones where you do not want to allow
-the user to delete their profile.
+This how-to guide is based on the Sharetribe Web Template and the
+`default-booking` process. As you implement the guide, you will need to
+review the transaction processes used on your marketplace to see which
+transitions count as non-final transitions, i.e. ones where you do not
+want to allow the user to delete their profile.
 
 ![Non-final transitions in default-booking process](non-final-transitions.png)
 
@@ -190,7 +188,7 @@ Feel free to modify the texts to suit your marketplace.
 + "DeleteAccountPage.details": "This action is permanent and cannot be undone! After deleting your account, you will be logged out immediately and will not be able to access your listings or transactions anymore.",
 + "DeleteAccountPage.heading": "Delete your account",
 + "DeleteAccountPage.title": "Delete your account",
-+ "DeleteAccountPage.error": "Cannot delete user profile. You have {errorCause} Please contact Saunatime support or complete the unfinished issues and try again.",
++ "DeleteAccountPage.error": "Cannot delete user profile. You have {errorCause} Please contact Biketribe support or complete the unfinished issues and try again.",
   "EditListingAvailabilityForm.fetchMonthDataFailed": "Oops, couldn't load data for {month}, please try again.",
 ...
   "LayoutWrapperAccountSettingsSideNav.contactDetailsTabTitle": "Contact details",
@@ -303,7 +301,7 @@ to the user if they have forgotten their password.
 + "DeleteAccountForm.resetPasswordLinkSent": "The instructions for resetting your password have been sent to {email}.",
 + "DeleteAccountForm.resetPasswordLinkText": "Send reset instructions.",
 + "DeleteAccountForm.resendPasswordLinkText": "Resend instructions.",
-+ "DeleteAccountForm.saveChanges": "Yes, delete my Saunatime account permanently",
++ "DeleteAccountForm.saveChanges": "Yes, delete my Biketribe account permanently",
 ```
 
 You can now see the input for the user's current password, as well as
