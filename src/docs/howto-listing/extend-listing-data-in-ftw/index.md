@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-// TODO fix slug and add redirect
-
 This guide shows you two different approaches to expanding the listing
 data model in your marketplace. We'll have a look on how the listing can
 be configured so that the data gets added, and how it can then be
@@ -82,7 +80,7 @@ configuration looks like this:
     label: 'Gears',
     placeholderMessage: 'Select number of gears...',
     isRequired: true,
-    requiredMessage: 'You need to select number of gears',
+    requiredMessage: 'You need to select the number of gears',
   }
 },
 ```

@@ -132,8 +132,7 @@ other variables:
 
 If you are using some other currency besides EUR, you can read more
 about checking the necessary currency configurations from
-[this document](/ftw/how-to-set-up-currency-in-ftw/#3-check-the-currency-configjs-file).
-TODO UPDATE LINK!
+[this document](/ftw/how-to-set-up-currency-in-ftw/).
 
 There is an additional variable set in **configDefault.js** that is
 related to currency:

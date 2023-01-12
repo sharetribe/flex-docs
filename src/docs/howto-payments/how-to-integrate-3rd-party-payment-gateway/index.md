@@ -439,7 +439,7 @@ backend server. Your marketplace front-end should call this new backend
 endpoint and not the Flex API directly.
 
 If you use Sharetribe Web Template, you can add a new endpoint by adding
-it to the [API router][web-template-api-router]. // TODO: UPDATE LINK
+it to the [API router][web-template-api-router].
 
 The new server endpoint should call the payment gateway API to do the
 payment action and the Flex Marketplace API to transition the

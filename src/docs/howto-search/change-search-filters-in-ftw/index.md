@@ -178,7 +178,6 @@ There you need to add the _gears_ attribute's configurations to the
 
 <info>
 
-// TODO fix link You may have done this already if you followed the
 [Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
 how-to guide.
 

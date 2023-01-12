@@ -42,7 +42,7 @@ applications that operators may need to manage.
 
 ## Static pages
 
-TODO: If pages is released, remove this
+TODO: Once pages is released, remove this
 
 A few components in the template app contain texts that are not included
 in the `en.json` file, namely _AboutPage_, _PrivacyPolicy_, and

@@ -11,12 +11,14 @@ published: true
 
 ## Change Logo configuration
 
-Components can be found from one of the three directories:
+Components can be found from one of two directories:
 
 - **containers**: Page-level components and TopbarContainer are
   [Redux container components](https://redux.js.org/basics/usage-with-react#presentational-and-container-components).
-- **forms**: Form components. (These use Final Form.)
-- **components**: Other presentational components.
+  These container folders also include all the forms and presentational
+  components that are only used on that specific page.
+- **components**: Shared presentational components that are used on
+  multiple pages or in other components.
 
 Logo is a presentational component and it can be found in the
 **components** directory:
@@ -29,9 +31,6 @@ Logo is a presentational component and it can be found in the
     ├── containers
     └── forms
 ```
-
-_TODO: Figure out if this article makes sense now that all the confs are
-in the same file_
 
 The main component has the same name as the directory it lies:
 Logo/Logo.js. If you open that file, you'll notice that logo images are
@@ -92,7 +91,7 @@ component.
 
 <info>
 
-Sharetribe Web Template use
+Sharetribe Web Template uses
 [CSS Modules](https://github.com/css-modules/css-modules) instead of
 plain CSS for styling components. CSS Modules creates unique class names
 for the rendered component - and those class name strings are in format:
