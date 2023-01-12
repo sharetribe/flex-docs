@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-TODO: REMOVE?
-
 ## 1. Process change
 
 To get started, the transaction process needs to be updated to support
