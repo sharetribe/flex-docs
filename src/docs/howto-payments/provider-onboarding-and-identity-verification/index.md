@@ -251,7 +251,7 @@ have provider payout information. The template has also been configured
 to require provider onboarding and payout information before publishing
 any listings.
 
-// TODO: Update
+// TODO: Update repo link
 
 However, it is possible to modify this behavior. The simplest way to
 allow publishing a listing without adding payout details is to modify

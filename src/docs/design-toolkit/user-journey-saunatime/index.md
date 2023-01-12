@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-// TODO: Update
+// TODO: Remove
 
 [Saunatime template](/operator-guides/concepts/#flex-templates-for-web-ftw)
 is a great starting point for building rental marketplaces. Saunatime

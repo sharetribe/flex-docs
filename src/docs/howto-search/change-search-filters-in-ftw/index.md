@@ -57,7 +57,7 @@ decay function that would map keyword match correlation with distance to
 _keyword_ param. You can read more about how the keyword search works in
 the related [concepts article](/concepts/how-the-listing-search-works/).
 
-// TODO: Take new screenshots! ![Desktop filters](./keyword-search.png)
+![Desktop filters](./keyword-search.png)
 
 It is possible to remove location search from topbar and replace it with
 the keyword search or use them together (without origin param). You can
