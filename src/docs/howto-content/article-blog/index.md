@@ -1,7 +1,7 @@
 ---
 title: Create a library of articles
 slug: article-library
-updated: 2022-12-22
+updated: 2023-01-17
 category: how-to-content
 ingress:
   With the Flex Pages feature, you can build static pages on your
@@ -155,7 +155,15 @@ Once the pages are finished, you may want to modify how they are shown
 when shared on social media.
 
 By default, the Page Builder adds a basic page schema for each content
-page. However, you can modify the content of this schema in the CMSPage
+page. You can see the default information shared about your page by
+pasting a publicly available link to the
+[Facebook sharing debugger](https://developers.facebook.com/tools/debug/)
+and the
+[Twitter card validator](https://cards-dev.twitter.com/validator).
+
+![Default page sharing view](./share-default.png)
+
+However, you can modify the content of this schema in the CMSPage
 component.
 
 ```shell
@@ -196,19 +204,10 @@ export const CMSPageComponent = props => {
 
 ```
 
-You can see the default information shared about your page by pasting a
-publicly available link to the
-[Facebook sharing debugger](https://developers.facebook.com/tools/debug/)
-and the
-[Twitter card validator](https://cards-dev.twitter.com/validator).
-
 ### Add article image to social media shares
 
 The default page schema does not use the article image in the social
-share. Instead, it uses the default marketplace sharing image. You can
-see the image used for social media shares in your page's _head_ tag.
-
-// TODO: Screenshot head tag with og:image visible
+share. Instead, it uses the default marketplace sharing image.
 
 You can modify the template code to parse the images from your page
 asset, however, and set them as the social media share images.
@@ -288,7 +287,7 @@ Page.js component, which sets them into the page schema.
   );
 ```
 
-You can now see the asset based image being used in the _head_ script
-instead of the default one.
+After these changes, you can see the title, ingress and image of the
+article in the social media share.
 
-// TODO Screenshot of head element
+![Customised page sharing view](./share-custom.png)
