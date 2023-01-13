@@ -22,11 +22,14 @@ glossary of the most central content related terms.
 ### Content management
 
 The way in which operator-created content is handled within Flex. Before
-Console-operated content management, operators could either add the
-content directly in the FTW codebase, or use the
-[microcopy](/concepts/microcopy) files for static content, or integrate
-an external content management system. Currently, we recommend managing
-content using the assets-based Pages feature in Flex Console.
+Console-operated content management, operators could either
+
+- add the content directly in the FTW codebase,
+- use the [microcopy](/concepts/microcopy) files for static content, or
+- integrate an external content management system.
+
+Currently, we recommend managing content using the assets-based Pages
+feature in Flex Console.
 
 ### Content modeling
 
@@ -99,7 +102,7 @@ and blocks you choose for your page, you can create a wide range of
 content. In the future, it will also be possible to create custom
 sections.
 
-![Example page with levels of content modeling elements](./content_modeling.png)
+![Landing page with levels of content modeling elements](./content-model-landing-page.png)
 
 ## Sections
 
@@ -111,23 +114,29 @@ action.
 
 Article sections are great for prose text. If your content is longer,
 you can add blocks with different levels of headings and text
-paragraphs. The blocks are displayed in a column one after the other, as
-if on a blog page.
+paragraphs. Blocks are displayed in a single column one after the other,
+as if on a blog page.
+
+![Article section](./pages-article-section.png)
 
 ### Columns
 
-Columns sections divide the blocks within the section into pre-defined
-columns, and the operator can decide the number of columns between 1-4.
-The columns pattern is great for featuring specific options in parallel,
-whether they are benefits, testimonials, or featured locations.
+Columns sections divide blocks into pre-defined columns, and the
+operator can decide the number of columns between 1-4. The columns
+pattern is great for featuring specific options in parallel, whether
+they are benefits, testimonials, or featured locations.
+
+![Columns section](./pages-columns-section.png)
 
 ### Features
 
-Features sections, by default, show blocks of visual and text content so
-that the block contents are on a single row, alternating the order, and
-different blocks are in a column. As with all content sections, the
-designer of your website can make changes as to how exactly the blocks
-get displayed on the page.
+Features sections, by default, show blocks of visual and text content.
+The block contents are on a single row, alternating the order, and
+different blocks are in a single column. As with all content sections,
+the designer of your website can make changes as to how exactly the
+blocks get displayed on the page.
+
+![Features section](./pages-features-section.png)
 
 ### Carousel
 
@@ -135,6 +144,8 @@ The carousel section shows content blocks side by side, in a carousel
 that can be browsed by swiping or scrolling. Carousel sections work
 great for a long array of blocks that the reader may or may not want to
 investigate in more depth.
+
+![Carousel section](./pages-carousel-section.png)
 
 ## Blocks
 
@@ -158,7 +169,7 @@ or a specific version. The client application then shows the page
 content it has fetched.
 
 The FTW templates are configured to show asset-based content starting
-from the following versions:
+from the following versions: // TODO Update versions
 
 - FTW-daily v.X.X.X
 - FTW-hourly v.X.X.X
@@ -168,6 +179,8 @@ For earlier template versions, you can either pull upstream updates or
 make the changes manually. You can check this article on
 [static content rendering in FTW](/ftw/page-builder/) for context, and
 these PRs for the necessary changes:
+
+// TODO update repo links
 
 - [FTW-daily]()
 - [FTW-hourly]()
