@@ -208,8 +208,6 @@ test the changes in your test environment. Then, after you are happy
 with all your page changes, you can click the "Copy to production"
 button.
 
-![Copy to production](./copy-to-production.png)
-
 After clicking the button, you will see a modal detailing which pages
 have been modified, created, and removed compared to your current
 production pages. You can check the boxes of the pages you want to copy
