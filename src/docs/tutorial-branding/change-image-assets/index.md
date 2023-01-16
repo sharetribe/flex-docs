@@ -14,8 +14,8 @@ published: true
 In the [previous step](/tutorial/first-edit/), you made changes to the
 CSS Properties on marketplaceDefaults.css file. This time you make
 changes to global CSS classes. **`.defaultBackgroundImage`** class can
-be found from there too. It is used to provide a background image for
-the Hero component on the landing page.
+be found in there too. It is used to provide a background image for
+pages such as Authentication Page for sign-up and login.
 
 ```shell
 └── src
@@ -126,7 +126,7 @@ so that it doesn't look bad on retina displays.
 Here's an image, we used in this tutorial:<br />
 [Summer house by Markus Spiske (cropped)](/tutorial-assets/markus-spiske-summer-house-unsplash.jpg)
 
-![CottageDays example with updated Hero image](./cottagedays-background-image.png)
+![CottageDays example with updated background image](./cottagedays-background-image.png)
 
 ### Images in 'assets' or Image Assets?
 
@@ -240,6 +240,6 @@ you should see a new favicon in the browser's tab:
 
 ![Favicon for CottageDays](./cottagedays-favicon.png)
 
-There's one obvious Saunatime image still visible on top bar: Logo. It's
-time to change that.<br />
-[› Go to the next article](/tutorial/change-logo/)
+We also want to modify the landing page to use the cottage theme. We
+will do that next.<br />
+[› Go to the next article](/tutorial/modify-landing-page/)

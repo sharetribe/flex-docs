@@ -202,11 +202,12 @@ This will open the page in your **Marketplace URL** address.
 
 When you first take your markeptlace to production, your production
 marketplace is created as a duplicate of your test marketplace. This
-includes all your page assets. - You can also modify your marketplace
-content pages after going to production. You will still need to make and
-test the changes in your test environment. Then, after you are happy
-with all your page changes, you can click the "Copy to production"
-button.
+includes all your page assets.
+
+You can also modify your marketplace content pages after going to
+production. You will still need to make and test the changes in your
+test environment. Then, after you are happy with all your page changes,
+you can click the "Copy to production" button
 
 After clicking the button, you will see a modal detailing which pages
 have been modified, created, and removed compared to your current
