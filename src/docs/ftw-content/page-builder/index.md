@@ -1,124 +1,235 @@
 ---
-title: How FTW renders static pages using the PageBuilder
+title: How the templates render content pages using the PageBuilder
 slug: page-builder
-updated: 2022-08-01
+updated: 2023-16-01
 category: ftw-content
 ingress:
-  This article introduces how FTW uses the Pages feature to generate
-  static pages.
+  This article introduces how Flex Templates for Web use the Pages
+  feature to generate content pages.
 published: true
 ---
 
-The Pages feature allows users to add, edit and manage content through
-Flex Console. Once you have created content through the Console, you can
-query it through the Asset Delivery API, which returns the data
-structured as JSON. Version X of FTW introduces features that render
-static pages from these page data assets.
+The Pages feature allows you to add, edit and manage content through the
+Page Editor in Flex Console. Once you have created content using the
+Page Editor, you can query it through the Asset Delivery API, which
+returns the data structured as JSON. Version X [TODO] of FTW introduces
+features that automatically render content pages from Page Asset Data.
+This article will walk you through the logic used to render these pages
+in FTW. Read more about the code-level changes introduced to FTW from
+the release notes of version X [TODO].
 
-## What are static pages
+## What are content pages
 
-Static pages are pages that are generated dynamically using Page Asset
-Data retrieved from the Asset Delivery API. Page Asset Data contains all
-the information needed to render the content on a static page. It is a
-machine-readable format of the data entered through the Page Editor in
-Console, and it reflects the structure and formatting of the content.
-Page Asset Data is returned in JSON through the Asset Delivery API.
+A content page is a page type that is informational by nature with text
+that does not frequently change. Typical content pages that you would
+have on your website would be an “About us” page, a “Frequently asked
+questions” page or a “Terms of Service” page. These pages have long
+sections of written text that might include images, links and videos.
 
-It is up to the client application how it renders the data received
-through the Asset Delivery API. Identical Page Asset Data can, for
-example, be rendered using entirely different presentational components
-on two different pages.
+In older versions of FTW, the data on these content pages was hard-coded
+into the corresponding page file. For instance, the content of the About
+Page was
+[written directly into the code](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/AboutPage/AboutPage.js#L48)
+on the AboutPage.js file. Changes to the content required editing the
+code and redeploying the client application. This required content
+editors to work with developers to make simple changes to the copy text
+of content pages.
 
-[illustration with example of how identical data can be rendered
-differently using different presentational components]
+With the introduction of Pages, versions X [TODO] and onwards of FTW now
+render content pages dynamically. Content can be managed through the
+Page Editor, which provides the editor with a graphical interface to
+input text, videos, links and images. FTW queries the
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
+to retrieve the most recent version of the content and uses it to render
+the content page. We refer to this data as
+[Page Asset Data](#page-asset-data). It reflects the content’s structure
+and is delivered in JSON.
+
+On page load, FTW queries the Asset Delivery API to fetch the Page Asset
+Data needed to render the requested page. The data is subsequently
+stored in Redux state, which triggers a component called the PageBuilder
+to render the Sections, Blocks and Fields defined in the data. The
+[rendering pages section](#rendering-pages) explains how this happens in
+further detail.
 
 ## Page Asset Data
 
-Page Asset Data always represents an individual page, i.e. to render
-your landing page and your FAQ page, the client will need to make two
-calls to the Asset Delivery API and will receive two separate JSON
-files.
+Page Asset Data is a machine-readable format of the data inputted
+through the Page Editor in Console. It represents the content and
+structure of the content page and is divided into Sections, Blocks and
+Fields.
+
+A single query to the Asset Delivery API will provide you with the Page
+Asset Data of a single content page, i.e. to render your landing page
+and your FAQ page, the client will need to make two calls to the Asset
+Delivery API and receive two separate JSON files. Page Asset Data is
+always formatted in JSON.
 
 Page Asset Data nests 3 levels of information:
 
-The Page Asset, which represents all data associated with an individual
-page The Page Asset can contain an array of Sections. Sections can have
-a type, and there are 4 different types available by default. Sections
-can contain an array of Blocks. There is only one type of Block and
-Blocks can include text formatted in markdown.
+- The Page Asset, which represents all data associated with an
+  individual page
+- The Page Asset can contain an array of Sections. Sections can have a
+  type, and there are 4 different types available by default.
+- Sections can contain an array of Blocks. Blocks can include text
+  formatted in markdown.
 
 The structure outlined above is hierarchical: Blocks are always nested
-within Sections and Sections are always nested within the Page Asset.
-Both Sections and Blocks may include Fields, which are key value pairs
-encoding data such as title, ingress and background colour.
+within Sections, and Sections are always nested within the Page Asset.
+Both Sections and Blocks may include Fields, which are key-value pairs
+encoding data such as title, ingress and background image.
 
-When read from the Page Asset Data, a Field has two key value pairs,
-type and content. For example:
+It is up to the client application how it renders the data received
+through the Asset Delivery API. Identical Page Asset Data can, for
+example, be rendered using entirely different visual elements on two
+different client applications.
+
+## Rendering pages
+
+### Routing and loadData calls
+
+FTW uses React Router to [create routes](/ftw/how-routing-works-in-ftw/)
+to different pages. This is best demonstrated through an example. When a
+user navigates to the about page, it triggers the loadData function
+specified in
+[routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L66):
 
 ```js
-"title": {
-  "type": "heading1",
-  "content": "Hello World"
-}
+  {
+     path: '/privacy-policy',
+     name: 'PrivacyPolicyPage',
+     component: PrivacyPolicyPage,
+     loadData: pageDataLoadingAPI.PrivacyPolicyPage.loadData,
+   },
 ```
 
-Section and block data:
+In older versions of FTW, no loadData function was defined for the
+privacy policy path, as the page's content was hard coded. Now, as the
+content of the page is fetched using an API call, a loadData function is
+specified in
+[PrivacyPolicyPage.duck.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.js):
 
 ```js
-sections={[
-    {
-      sectionType: 'article',
-      sectionId: 'my-article-section',
-      title: {
-        type: 'heading1',
-        content: 'Hello World!',
-      },
-      blocks: [
-        {
-          blockType: 'default-block',
-          blockId: 'cms-article-section-block-1',
-          text: {
-            type: 'markdown',
-            content: 'My article content. _Lorem ipsum_ consectetur adepisci velit',
-          },
-        },
-      ],
-    },
-  ]}
-
+export const loadData = (params, search) => dispatch => {
+  const pageAsset = {
+    privacyPolicy: `content/pages/${ASSET_NAME}.json`,
+  };
+  return dispatch(fetchPageAssets(pageAsset, true));
+};
 ```
 
-## How FTW renders Pages
+The function uses the fetchPageAssets function to fetch the Page Asset
+Data for the privacy policy page. Once the data is loaded and stored in
+state, the page can be fully rendered using the data stored in Page
+Assets.
 
-FTW uses a component called the PageBuilder to dynamically generate
-static pages using Page Asset Data. The PageBuilder component is a
-wrapper that receives the Page Asset Data as a prop, and passes data on
-to the SectionBuilder if sections are present in the data. Subsequently,
-the SectionBuilder will pass data on to the BlockBuilder if an array of
-Blocks are present. FTW also includes a Field component, which validates
-and sanitizes any data before it is rendered. The Field component uses
-the Primitive component to actually render the data. Most primitives are
-wrappers for built-in React elements, which make styling and adding
-extra features easier. The MarkdownProcessor component is used to render
-fields with type markdown.
+### Predefined routes
 
-## CMS Page TODO
+FTW has four predefined routes used to generate static pages:
 
-Asset names and loadData calls are defined in page-specific duck files
-(see LandingPage.duck.js).
+[TODO UPDATE LINKS]
 
-FTW retrieves the page asset data through the Asset Delivery API, using
-the fetchPageAssets function.
+- [PrivacyPolicy](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L292)
+- [TermsOfService](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L287)
+- [LandingPage](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L62)
+- CMSPage
+
+The first three are defined by default in Console and can not be
+removed. Therefore, there is a dedicated component in FTW for each. For
+any custom Pages created through the Page Builder, a generic component
+called CMSPage is used.
+
+If we compare the loadData calls in the privacy policy page and CMSPage,
+we can see that they differ slightly. The PrivacyPolicyPage.duck.js file
+uses a predefined path for fetching the page asset
+`content/pages/privacy-policy`
+
+```js
+import { fetchPageAssets } from '../../ducks/hostedAssets.duck';
+export const ASSET_NAME = 'privacy-policy';
+
+export const loadData = (params, search) => dispatch => {
+  const pageAsset = {
+    privacyPolicy: `content/pages/${ASSET_NAME}.json`,
+  };
+  return dispatch(fetchPageAssets(pageAsset, true));
+};
+```
+
+Whereas the CMSPage uses a dynamic ID that is passed through the URL
+
+```js
+import { fetchPageAssets } from '../../ducks/hostedAssets.duck';
+
+export const loadData = (params, search) => dispatch => {
+  const pageId = params.pageId;
+  const pageAsset = { [pageId]: `content/pages/${pageId}.json` };
+  const hasFallbackContent = false;
+  return dispatch(fetchPageAssets(pageAsset, hasFallbackContent));
+};
+```
+
+FTW can use hardcoded asset names for Pages included by default in the
+Page Builder, as the paths are static and not subject to change. The
+Pages included by default are the Landing Page, Terms of Service page
+and Privacy Policy page.
+
+The CMSPage component, on the other hand, is used to render any new
+Pages created by the user, which are assigned an ID on creation.
+
+### PageBuilder
+
+FTW uses a React component called the PageBuilder to dynamically render
+static pages using Page Asset Data. You can find the PageBuilder in the
+containers directory:
+
+```shell
+└── src
+    └── containers
+        └── PageBuilder
+            └── PageBuilder.js
+```
+
+The PageBuilder component receives the Page Asset Data as a prop, and
+uses it to render the static page. If no Page Asset Data is available,
+it renders a fallback page.
+
+```jsx
+const PageBuilder = props => {
+  const { pageAssetsData, inProgress, fallbackPage, options, ...pageProps } = props;
+
+  if (!pageAssetsData && fallbackPage && !inProgress) {
+    return fallbackPage;
+  }
+```
+
+The PageBuilder will invoke the SectionBuilder component if Sections are
+present in the Page Asset Data.
+
+```jsx
+const data = pageAssetsData || {};
+const sectionsData = data?.sections || [];
+
+<SectionBuilder sections={sectionsData} options={options} />;
+```
+
+Subsequently, the SectionBuilder will pass data on to the BlockBuilder
+if an array of Blocks is present.
+
+To render e.g. headers, links and images, FTW defines a Field component
+that is used in both the BlockBuilder and SectionBuilder. Fields are the
+most granular form of data in Page Asset Data. The Field component
+validates and sanitises any data before it is rendered.
 
 ## Section and Block types
 
 Using the Page Editor in Console, you can define a section type. FTW
-recognises all four section types and renders each using a different
+recognises all Section types and renders each using a different
 presentational component.
 
 There are four Section types:
 
-- Articles, meant for copy text and uses a narrow one colum layout
+- Articles, meant for copy text and uses a narrow one column layout
   optimized for reading
 - Carousel, an image carousel consisting from images uploaded through
   Console
@@ -128,12 +239,14 @@ There are four Section types:
 The corresponding Section component is selected using the getComponent
 function in the SectionBuilder:
 
-`const Section = getComponent(section.sectionType);`
+```js
+const Section = getComponent(section.sectionType);
+```
 
 The getComponent function uses the defaultSectionComponents object to
-select the correct component:
+select the correct React component:
 
-```js
+```jsx
 const defaultSectionComponents = {
   article: { component: SectionArticle },
   carousel: { component: SectionCarousel },
@@ -145,25 +258,129 @@ const defaultSectionComponents = {
 Each section component is wrapped in a SectionContainer. You can use it
 to apply styling that should be present in each component.
 
-Default components can be overridden and edited. Keep in mind that the
+Default components can be overridden or edited. Remember that the
 changes will be global and reflected on each static page. If you want to
-make changes to a Section component on a specific page, you can use the
-options prop to override a page-level component [link to how-to].
+change a Section component on a specific page, you can use the options
+prop to override a page-level component [link to how-to].
 
 Blocks also have a type property. Currently, Page Asset Data only
-supports a single Block type. More Block types will be introduced in the
-near future. // pageschema-update
+supports a single Block type.
 
-## Define a fallback page
+## Fallback pages
 
-FTW allows you to define fallback data if loading the Page Asset Data
-fails. You can specify a fallback page in page-level components, e.g. in
-the LandingPage.js file.
+As the content of the static page is retrieved over a network
+connection, it is important to prepare for a scenario where data is
+unavailable due to e.g. a network issue. FTW uses fallback data if
+loading the Page Asset Data through the Asset Delivery API fails.
+Fallback pages are specified for page-level components and are included
+out of the box for the Landing page, Terms of Service page and Privacy
+Policy page.
 
 A fallback page is constructed similarly to how a dynamic content page
-is. You need to structure it using the PageBuilder component, but
-instead of dynamically retrieving Page Asset Data, you pass the
-pageAssetsData prop a static JSON asset, which can be defined inline or
-in a separate file.
+is. It uses the PageBuilder component, but instead of dynamically
+retrieving Page Asset Data, it is given the pageAssetsData prop as a
+predefined JSON asset. That data can be defined inline or in a separate
+file. The fallback data should adhere to the structure and format used
+in Page Asset Data.
 
-TODO: code example of fallback page implementation
+A fallback page is defined in the same directory that the page level
+component is defined in. For example, you will find the fallback page of
+the Privacy Policy page under
+containers/PrivacyPolicyPage/FallbackPage.js:
+
+```shell
+└── src
+    └── containers
+        └── PrivacyPolicyPage
+            └── FallbackPage.js
+```
+
+## How to take Pages into use if you are using an older version of FTW
+
+This section will outline the steps to incorporate the PageBuilder
+feature into an older version of FTW. The PageBuilder feature
+automatically renders pages based on data fetched through the Asset
+Delivery API, allowing content editors to manage data in the Flex
+Console. Please note that the steps outlined in this section may not
+apply to the letter if you have made a lot of customizations to the
+template.
+
+The example in this section enables a dynamic version of the Privacy
+Policy page, and the exact steps can also be applied to other content
+pages.
+
+[TODO] add links to GitHub once the CMSPage branch is merged
+
+1. Copy the pageBuilder directory (and its contents) in its entirety to
+   src/components/PageBuilder
+2. Copy the hostedAssetsDuck.js file to src/ducks/hostedAssetsDuck.js
+3. Copy over all the new utility files to src/util: util/string.js
+   util/sanitize.js
+4. Copy over the aspectRatioWrapper component file to
+   src/components/aspectRatioWrapper
+5. Add an export statement in components/index.js for
+   aspectRatioWrapper:
+
+```js
+export { default as AspectRatioWrapper } from './AspectRatioWrapper/AspectRatioWrapper';
+```
+
+6. Install all the required packages using either yarn or npm:
+
+```shell
+yarn add rehype-react rehype-sanitize remark-parse remark-rehype unified
+```
+
+7. Overwrite the contents of src/util/data.js with the new data.js file
+8. Copy the PrivacyPolicyPage directory (and its contents) to
+   src/components/PrivacyPolicyPage (overwriting any existing files)
+9. Add a loadData call to where PrivacyPolicyPage is defined in
+   routeConfiguration.js:
+
+```js
+     {
+      path: '/privacy-policy',
+      name: 'PrivacyPolicyPage',
+      component: PrivacyPolicyPage,
+      loadData: pageDataLoadingAPI.PrivacyPolicyPage.loadData,
+    },
+```
+
+10. Add the following import to pageDataLoadingAPI.js:
+
+```js
+import { loadData as PrivacyPolicyPageLoader } from './PrivacyPolicyPage/PrivacyPolicyPage.duck';
+```
+
+11. Also add the following code to the pageDataLoadingAPI.js file:
+
+```js
+    PrivacyPolicyPage: {
+      loadData: PrivacyPolicyPageLoader,
+    },
+```
+
+To enable all new components that use the Pages feature (the About page,
+Landing page, Terms of Service page and the CMSPage), repeat steps 8 and
+onward, replacing PrivacyPolicyPage with the component you want to
+enable.
+
+In addition, Flex Console allows you to preview content pages in the
+template app. To enable this feature, you'll also need to copy over the
+PreviewResolverPage to src/containers/PreviewResolverPage, and import
+the component in routeConfiguration.js:
+
+```js
+import PreviewResolverPage from './containers/PreviewResolverPage/PreviewResolverPage';
+```
+
+You'll also need to add a route configuration for the preview page in
+routeConfiguration.js:
+
+```js
+   {
+      path: '/preview',
+      name: 'PreviewResolverPage',
+      component: PreviewResolverPage ,
+    },
+```
