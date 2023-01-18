@@ -100,6 +100,15 @@ const sortingArrayManageConsole = [
   'console-manage-reviews',
 ];
 
+const sortingArrayDevelopment = [
+  'applications',
+  'flex-environments',
+  'console-overview',
+  'content-management',
+  'headless-content-management',
+  'microcopy',
+];
+
 const sortingArrayHowToUsers = [
   'enable-facebook-login',
   'enable-google-login',
@@ -190,7 +199,7 @@ exports.siteStructure = [
       { id: 'concepts-payments', sortingArray: sortingArrayPayments },
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
-      { id: 'concepts-development' },
+      { id: 'concepts-development', sortingArray: sortingArrayDevelopment },
       { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },
