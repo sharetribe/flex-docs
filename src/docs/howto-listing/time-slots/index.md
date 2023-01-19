@@ -1,15 +1,13 @@
 ---
-title: Modify booking time intervals in FTW-hourly
+title: Modify booking time intervals in time-based listings
 slug: modify-time-intervals
-updated: 2022-08-29
+updated: 2023-01-23
 category: how-to-listing
 ingress:
-  This guide describes how to modify booking time intervals in
-  FTW-hourly
+  This guide describes how to modify booking time intervals in hourly
+  listings.
 published: true
 ---
-
-// TODO: Update to Biketribe
 
 In Flex, listings can have either day-based or time-based availability.
 For listings with time-based availability, the available
@@ -18,10 +16,10 @@ are returned from the API as continuous stretches of time. The client
 application must therefore split the availability into suitable booking
 lengths.
 
-The default behavior of the FTW-hourly template is to split the
-continuous availability stretch into one hour bookable intervals. This
-how-to guide illustrates a handful of different cases on modifying
-booking lengths.
+The default behavior of the Sharetribe Web Template hourly listings is
+to split the continuous availability stretch into one hour bookable
+intervals. This how-to guide illustrates a handful of different cases on
+modifying booking lengths.
 
 ## Set booking length to 30 minutes
 
@@ -44,47 +42,59 @@ src/util/dates.js
 - _getStartHours_ and _getEndHours_ return a list of timepoints that are
   displayed as the booking's possible start and end moments,
   respectively. They both use the same helper function _getSharpHours_
-- _getSharpHours_, in turn, by default retrieves the sharp hours that
-  exist within the availability time slot. It uses the
-  _findBookingUnitBoundaries_ function, which is a recursive function
-  that checks whether the current boundary (e.g. sharp hour) passed to
-  it falls within the availability time slot.
+- _getSharpHours_ retrieves the sharp hours that exist within the
+  availability time slot. It uses the _findBookingUnitBoundaries_
+  function.
+- _findBookingUnitBoundaries_ is a recursive function that checks
+  whether the current boundary (e.g. sharp hour) passed to it falls
+  within the availability time slot.
   - If the current boundary is within the availability time slot, the
     function calls itself with the next boundary and cumulates the
     boundary results into an array.
   - If the current boundary does not fall within the availability time
     slot, the function returns the cumulated results from the previous
     iterations.
-- _findBookingUnitBoundaries_ takes a _nextBoundaryFn_ parameter that it
-  uses to determine the next boundary value to pass to itself.
-- the function passed to _findBookingUnitBoundaries_ as _nextBoundaryFn_
-  by default is _findNextBoundary_, which is what we need to modify
-  first. The _findNextBoundary_ function increments the current boundary
-  by a predefined value.
+  - _findBookingUnitBoundaries_ takes a _nextBoundaryFn_ parameter that
+    it uses to determine the next boundary value to pass to itself.
+- the function passed as _nextBoundaryFn_ by default is
+  _findNextBoundary_. The _findNextBoundary_ function increments the
+  current boundary by a predefined value.
 
 ```js
-export const findNextBoundary = (timeZone, currentMomentOrDate) =>
+export const findNextBoundary = (
+  currentMomentOrDate,
+  timeUnit,
+  timeZone
+) =>
   moment(currentMomentOrDate)
     .clone()
     .tz(timeZone)
-    .add(1, 'hour') // The default handling uses hours
-    .startOf('hour') // By default, the time slot is rounded to the start of the hour
+    .add(1, timeUnit)
+    .startOf(timeUnit)
     .toDate();
 ```
 
+In addition to _findBookingUnitBoundaries_, the template uses
+_findNextBoundary_ to handle other time increment boundaries. That is
+why, instead of modifying _findNextBoundary_ directly, we will create a
+similar function called _findNextCustomBoundary_ to be used in
+_findBookingUnitBoundaries_, so we do not need to worry about side
+effects.
+
 ### Add a custom rounding function for moment.js
 
-FTW-hourly uses the [moment-timezone](https://momentjs.com/timezone/)
-library to modify times and dates and convert them between the listing's
-time zone and the user's time zone.
+The template hourly listing handling uses the
+[moment-timezone](https://momentjs.com/timezone/) library to modify
+times and dates and convert them between the listing's time zone and the
+user's time zone.
 
 By default, the _findNextBoundary_ function uses
 _moment.startOf('hour')_ to round the booking slots to the top of each
-hour. However, since we are now dealing with minutes, we need to create
-a custom rounding function to replace the _startOf('hour')_ function
-call. When we add it to _moment.js_ using the prototype exposed through
-_moment.fn_, we can chain it in the same place as the default
-_startOf('hour')_ function.
+hour. For _findNextCustomBoundary_ – since we are now dealing with
+minutes – we need to create a custom rounding function to replace the
+_startOf('hour')_ function call. When we add it to _moment.js_ using the
+prototype exposed through _moment.fn_, we can chain it in the same place
+as the default _startOf('hour')_ function.
 
 This rounding function rounds to sharp hours when the time slot minutes
 value is a factor of an hour, e.g. 15, 20 or 30 minutes. For other time
@@ -114,16 +124,38 @@ You will then need to use the new function to replace the built-in
 _startOf()_ function, and pass the _timeSlotMinutes_ value as the
 addition and rounding duration values.
 
+```js
+export const findNextCustomBoundary = (
+  currentMomentOrDate,
+  timeUnit,
+  timeZone
+) => {
+  return moment(currentMomentOrDate)
+    .clone()
+    .tz(timeZone)
+    .add(timeSlotMinutes, timeUnit)
+    .startOfDuration(timeSlotMinutes, timeUnit)
+    .toDate();
+};
+```
+
+Finally, we need to use the new function in _findBookingUnitBoundaries_,
+and change _timeUnit_ from _hour_ to _minutes_:
+
 ```diff
-export const findNextBoundary = (timeZone, currentMomentOrDate) =>
-   moment(currentMomentOrDate)
-     .clone()
-     .tz(timeZone)
--    .add(1, 'hour')
--    .startOf('hour')
-+    .add(timeSlotMinutes, 'minutes')
-+    .startOfDuration(timeSlotMinutes, 'minutes')
-     .toDate();
+  return findBookingUnitBoundaries({
+-   currentBoundary: findNextBoundary(millisecondBeforeStartTime, 'hour', timeZone),
++   currentBoundary: findNextCustomBoundary(millisecondBeforeStartTime, 'minutes', timeZone),
+    startMoment: moment(startTime),
+    endMoment: moment(endTime),
+-   nextBoundaryFn: findNextBoundary,
++   nextBoundaryFn: findNextCustomBoundary,
+    cumulatedResults: [],
+    intl,
+    timeZone,
+-   timeUnit: 'hour',
++   timeUnit: 'minutes',
+  });
 ```
 
 For listings with an hourly price, the function
@@ -136,9 +168,9 @@ _calculateQuantityFromHours_ as well.
 
 ## Use a time slot longer than 30 minutes
 
-If your Flex application has longer custom booking lengths than 30
-minutes, you will need to extend the previous steps to a more complex
-approach to make sure the time slots show up correctly.
+If your marketplace has longer custom booking lengths than 30 minutes,
+you will need to extend the previous steps to a more complex approach to
+make sure the time slots show up correctly.
 
 ### Find the rounding duration
 
@@ -183,17 +215,19 @@ const rounding = gcf(timeSlotMinutes, hourMinutes);
 ### Manually set first boundary to start time
 
 To manually set the first boundary to the start time, we need to pass an
-_isFirst_ parameter to the _findNextBoundary_ function. For the first
-time slot, we then skip incrementing completely.
+_isFirst_ parameter to the _findNextCustomBoundary_ function. For the
+first time slot, we then skip incrementing completely.
 
 ```diff
-- export const findNextBoundary = (timeZone, currentMomentOrDate) =>
+- export const findNextCustomBoundary = (currentMomentOrDate, timeUnit, timeZone) => {
 -   moment(currentMomentOrDate)
-+ export const findNextBoundary = (
-+   timeZone,
++ export const findNextCustomBoundary = (
 +   currentMomentOrDate,
++   timeUnit,
++   timeZone,
 +   isFirst = false
 + ) => {
++
 +   const increment = isFirst ? 0 : timeSlotMinutes;
 +   return moment(currentMomentOrDate)
       .clone()
@@ -208,9 +242,9 @@ time slot, we then skip incrementing completely.
 
 The rounding function now rounds the start time back to the rounding
 boundary. However, the default start time is passed to
-_firstNextBoundary_ as one millisecond before start time, since the
-default addition of 1 hour and the _startOf('hour')_ function cancel
-each other out.
+_findNextCustomBoundary_ as one millisecond before start time, since the
+default addition of 30 minutes and the _startOfDuration(...)_ function
+cancel each other out.
 
 Since we want to set the first booking slot manually, we can pass the
 start time directly. However, we will need to pass _true_ as the
@@ -221,9 +255,9 @@ function call when calling it from _getSharpHours_.
 -   const millisecondBeforeStartTime = new Date(startTime.getTime() - 1);
 
     return findBookingUnitBoundaries({
--     currentBoundary: findNextBoundary(timeZone, millisecondBeforeStartTime),
+-     currentBoundary: findNextCustomBoundary(millisecondBeforeStartTime, 'minutes', timeZone),
 +     // add isFirst param to determine first time slot handling
-+     currentBoundary: findNextBoundary(timeZone, startTime, true),
++     currentBoundary: findNextCustomBoundary(startTime, 'minutes', timeZone, true),
       startMoment: moment(startTime),
       endMoment: moment(endTime),
 ```
@@ -232,10 +266,10 @@ function call when calling it from _getSharpHours_.
 
 Sometimes, there are cases where you want to have a basic length for a
 booking and then different lengths for subsequent time slots. For
-instance, a listing could feature 75 minute private yoga class with the
-option to extend it for 30 minutes at a time. In those cases, you need
-to create different handling for the first time slot, i.e. the first
-start and end boundaries.
+instance, a listing could feature a 75 minute default bike rental with
+the option to extend it for 30 minutes at a time. In those cases, you
+need to create different handling for the first time slot, i.e. the
+first start and end boundaries.
 
 ```js
 const timeSlotMinutes = 30;
@@ -253,14 +287,15 @@ const rounding = gcf(timeSlotMinutes, firstSlotMinutes);
 
 In this use case, we want to determine a different behavior for the
 start and end boundaries of the first time slot. For this reason, we
-need to pass an _isStart_ parameter to _findNextBoundary_ and use it to
-determine the boundary timepoints in addition to the _isFirst_
+need to pass an _isStart_ parameter to _findNextCustomBoundary_ and use
+it to determine the boundary timepoints in addition to the _isFirst_
 parameter.
 
 ```diff
-export const findNextBoundary = (
-  timeZone,
+export const findNextCustomBoundary = (
   currentMomentOrDate,
+  timeUnit,
+  timeZone,
   isFirst = false,
 + isStart = false
 ) => {
@@ -281,19 +316,18 @@ export const findNextBoundary = (
 
 The _getSharpHours_ function is used for both start hours and end hours,
 so we need to receive it as a parameter and pass the value on to
-_findNextBoundary_.
+_findNextCustomBoundary_.
 
 ```diff
-- export const getSharpHours = (intl, timeZone, startTime, endTime) => {
-+ export const getSharpHours = (intl, timeZone, startTime, endTime, isStart = false) => {
+- export const getSharpHours = (startTime, endTime, timeZone, intl) => {
++ export const getSharpHours = (startTime, endTime, timeZone, intl, isStart = false) => {
     if (!moment.tz.zone(timeZone)) {
 ...
     return findBookingUnitBoundaries({
--     currentBoundary: findNextBoundary(timeZone, startTime, true)
+-     currentBoundary: findNextCustomBoundary(startTime, 'minutes', timeZone, true),
 +     // add isFirst and isStart params to determine first time slot handling
-+     currentBoundary: findNextBoundary(timeZone, startTime, true, isStart),
++     currentBoundary: findNextCustomBoundary(startTime, 'minutes', timeZone, true, isStart),
       startMoment: moment(startTime),
-
 ```
 
 ### Customize start hour and end hour list behavior
@@ -301,7 +335,8 @@ _findNextBoundary_.
 By default, _getStartHours_ and _getEndHours_ basically retrieve the
 same list, but _getStartHours_ removes the last entry and _getEndHours_
 removes the first entry. Since we have custom start and end handling in
-_findNextBoundary_, we also need to modify the start and end hour lists.
+_findNextCustomBoundary_, we also need to modify the start and end hour
+lists.
 
 To get correct start times, we need to first pass _true_ as the
 _isStart_ parameter from _getStartHours_ to _getSharpHours_.
@@ -325,8 +360,9 @@ export const getStartHours = (intl, timeZone, startTime, endTime) => {
 ```
 
 Finally, we can simplify the end hour handling. Since the first entry is
-determined in the findNextBoundary function, we do not need to remove
-it. Instead, we can just return the full list from _getSharpHours_.
+determined in the _findNextCustomBoundary_ function, we do not need to
+remove it. Instead, we can just return the full list from
+_getSharpHours_.
 
 ```diff
   export const getEndHours = (intl, timeZone, startTime, endTime) => {
