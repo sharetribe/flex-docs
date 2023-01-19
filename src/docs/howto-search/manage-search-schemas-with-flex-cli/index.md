@@ -39,7 +39,7 @@ support differs depending on whether the schema is defined for listings
 or user profiles. The following table summarizes the supported search
 schema scopes.
 
-| schema-for  | Supported scopes                     |
+| Schema for  | Supported scopes                     |
 | ----------- | ------------------------------------ |
 | listing     | public, metadata                     |
 | userProfile | public, private, protected, metadata |
