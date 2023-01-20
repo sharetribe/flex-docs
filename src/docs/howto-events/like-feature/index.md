@@ -277,7 +277,7 @@ const initialState = {
   fetchLineItemsError: null,
   sendEnquiryInProgress: false,
   sendEnquiryError: null,
-  enquiryModalOpenForListingId: null,
+  inquiryModalOpenForListingId: null,
 + updateLikesError: null,
 + updateLikesInProgress: false,
 };
@@ -665,8 +665,8 @@ actual like count.
 
 ```diff
 export const ListingPageComponent = props => {
-  const [enquiryModalOpen, setEnquiryModalOpen] = useState(
-    props.enquiryModalOpenForListingId === props.params.id
+  const [inquiryModalOpen, setEnquiryModalOpen] = useState(
+    props.inquiryModalOpenForListingId === props.params.id
   );
 
 + const [likesOffset, updateLikesOffset] = useState(0);

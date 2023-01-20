@@ -157,7 +157,7 @@ review period to 10 days.
 ```diff
  {:format :v3
   :transitions
-  [{:name :transition/enquire,
+  [{:name :transition/inquire,
     ...
   {:name :transition/expire-review-period,
    :at

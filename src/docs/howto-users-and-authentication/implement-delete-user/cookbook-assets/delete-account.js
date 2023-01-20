@@ -6,7 +6,7 @@ const { getSdk, getTrustedSdk, handleError } = require('../api-util/sdk');
 // to delete their account.
 const nonFinalTransitions = [
   'transition/request-payment',
-  'transition/request-payment-after-enquiry',
+  'transition/request-payment-after-inquiry',
   'transition/confirm-payment',
   'transition/accept',
   'transition/complete',

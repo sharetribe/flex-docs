@@ -196,7 +196,7 @@ What happens behind the scene:
 - Automatic expiration happens in 15 minutes, if process is not
   transitioned to 'transition/confirm-payment' before that.
 - After this call, created transaction is saved to session storage in
-  FTW (or existing enquiry tx is updated).
+  FTW (or existing inquiry tx is updated).
 
 **When you intend to save card details**, a new parameter needs to be
 passed if card details are saved at the same time:

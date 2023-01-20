@@ -40,7 +40,7 @@ If you are using the FTW default process with strong customer
 authentication (e.g. flex-default-process) you need to remove confirming
 the payment. Otherwise, the transaction will get stuck. The simplest way
 to do this is to remove `pending-payment` and `expire-payment` states
-and point `request-payment` and `request-payment-after-enquiry` directly
+and point `request-payment` and `request-payment-after-inquiry` directly
 to `preauthorized` state. However, when you are building the transaction
 process to your marketplace it might make sense to rename some of the
 states and transitions so that they make more sense in your use-case.
@@ -61,15 +61,15 @@ Example:
 ```diff
      [STATE_INITIAL]: {
        on: {
-         [TRANSITION_ENQUIRE]: STATE_ENQUIRY,
+         [TRANSITION_INQUIRE]: STATE_INQUIRY,
 -        [TRANSITION_REQUEST_PAYMENT]: STATE_PENDING_PAYMENT,
 +        [TRANSITION_REQUEST_PAYMENT]: STATE_PREAUTHORIZED,
        },
      },
-     [STATE_ENQUIRY]: {
+     [STATE_INQUIRY]: {
        on: {
--        [TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY]: STATE_PENDING_PAYMENT,
-+        [TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY]: STATE_PREAUTHORIZED,
+-        [TRANSITION_REQUEST_PAYMENT_AFTER_INQUIRY]: STATE_PENDING_PAYMENT,
++        [TRANSITION_REQUEST_PAYMENT_AFTER_INQUIRY]: STATE_PREAUTHORIZED,
        },
      },
 -
@@ -152,8 +152,8 @@ changed so here are the main changes done in the edited code:
       bookingEnd: speculatedTransaction.booking.attributes.end,
     };
 
-    const enquiredTransaction = this.state.pageData.enquiredTransaction;
-    const transactionIdMaybe = enquiredTransaction ? enquiredTransaction.id : null;
+    const inquiredTransaction = this.state.pageData.inquiredTransaction;
+    const transactionIdMaybe = inquiredTransaction ? inquiredTransaction.id : null;
 
     onInitiateOrder(requestParams, transactionIdMaybe).then(params => {
       onSendMessage({ ...params, message: initialMessage })

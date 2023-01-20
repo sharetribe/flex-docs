@@ -20,7 +20,7 @@ provider once they have engaged in a transaction. Messages always need
 to be associated with a transaction and can not be sent outside of one.
 The default
 [transaction process](https://github.com/sharetribe/flex-example-processes/blob/master/flex-default-process/process.edn)
-includes an enquiry transition, which initiates a transaction without
+includes an inquiry transition, which initiates a transaction without
 running any [actions](/references/transaction-process-actions/#actions),
 allowing the provider and customer to send messages to each other. Note
 that messages do not alter the transaction or transition state.

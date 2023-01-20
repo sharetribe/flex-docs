@@ -144,13 +144,13 @@ export const graph = {
   states: {
     [states.INITIAL]: {
       on: {
-        [transitions.ENQUIRE]: states.ENQUIRY,
+        [transitions.INQUIRE]: states.INQUIRY,
         [transitions.REQUEST_PAYMENT]: states.PENDING_PAYMENT,
       },
     },
-    [states.ENQUIRY]: {
+    [states.INQUIRY]: {
       on: {
-        [transitions.REQUEST_PAYMENT_AFTER_ENQUIRY]: states.PENDING_PAYMENT,
+        [transitions.REQUEST_PAYMENT_AFTER_INQUIRY]: states.PENDING_PAYMENT,
       },
     },
 
@@ -182,7 +182,7 @@ the helper function to feature the correct transitions.
 export const isPrivileged = transition => {
   return [
     transitions.REQUEST_PAYMENT,
-    transitions.REQUEST_PAYMENT_AFTER_ENQUIRY,
+    transitions.REQUEST_PAYMENT_AFTER_INQUIRY,
   ].includes(transition);
 };
 ```

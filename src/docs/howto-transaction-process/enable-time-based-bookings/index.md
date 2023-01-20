@@ -32,14 +32,14 @@ have something like the following in your `process.edn` file:
  {:name :action/privileged-set-line-items}
   {:name :action/stripe-create-payment-intent}],
  :to :state/pending-payment}
-{:name :transition/request-payment-after-enquiry,
+{:name :transition/request-payment-after-inquiry,
  :actor :actor.role/customer,
  :actions
  [{:name :action/create-pending-booking,
    :config {:type :time}}
  {:name :action/privileged-set-line-items}
   {:name :action/stripe-create-payment-intent}],
- :from :state/enquiry,
+ :from :state/inquiry,
  :to :state/pending-payment}
 ```
 

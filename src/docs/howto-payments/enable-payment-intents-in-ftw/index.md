@@ -54,7 +54,7 @@ previous transition (Initial - request -> Preauthorized) into two:
 ![PaymentIntents flow needs a process change](./paymentintent-process-change.png)
 
 So, after transitions (`request-payment` or
-`request-payment-after-enquiry`), API returns
+`request-payment-after-inquiry`), API returns
 `stripePaymentIntentClientSecret` among the protected data of the
 current transaction. This client-secret is used for the call to
 `stripe.confirmCardPayment`. Then there is another transition made
@@ -118,11 +118,11 @@ address) and then 4 thunk-calls/Promises need to be made in sequence:
     protectedData
 - This combines both transitions:
   - `sdk.transitions.initate` aka `request-payment`
-  - `sdk.transitions.transition` aka continue enquiry with
-    `request-payment-after-enquiry`
+  - `sdk.transitions.transition` aka continue inquiry with
+    `request-payment-after-inquiry`
 - Automatic expiration happens in 15 minutes, if process is not
   transitioned to `'transition/confirm-payment'` before that.
-- Created transaction is saved to session storage or existing enquiry tx
+- Created transaction is saved to session storage or existing inquiry tx
   is updated. (There is more about this step later.)
 
 ### Step 2. _onConfirmCardPayment_
@@ -154,17 +154,17 @@ We use session storage to buffer checkout page against page reloads and
 errors - customer needs to be able to continue payment after accidental
 page refresh and network errors. This is a UX issue, but more
 importantly, it builds trust. Because of this need, we save booking
-dates and other data there. Previously enquiredTransaction was saved
+dates and other data there. Previously inquiredTransaction was saved
 there too, but that concept is now expanded a bit: any transaction can
 now be saved to session storage under the key "transaction".
 
-So, if there is an existing transaction in enquiry state and customer
+So, if there is an existing transaction in inquiry state and customer
 books the listing, TransactionPage sends that `transaction` to
 CheckoutPage. As a first step CheckoutPage saves received data to the
 session store. This is pretty much the same functionality as with
 previous card-token payment process - only the key is changed from
-_enquiryTransaction_ to _transaction_. However, after transition
-`request-payment` (or `request-payment-after-enquiry`) the updated
+_inquiryTransaction_ to _transaction_. However, after transition
+`request-payment` (or `request-payment-after-inquiry`) the updated
 transaction is saved again. (the relevant new data in transaction is
 `stripePaymentIntentClientSecret`.)
 
