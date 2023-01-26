@@ -5,7 +5,7 @@ updated: 2023-01-17
 category: operator-guides
 ingress:
   Learn how to use Markdown to change your marketplace content pages.
-published: false
+published: true
 ---
 
 Pages lets you create and modify your marketplace’s content pages. The text in these pages can be formatted using Markdown. This guide provides an introduction to Markdown to help you use it when formatting your content pages. 
