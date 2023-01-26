@@ -8,7 +8,7 @@ ingress:
 published: true
 ---
 
-## Keystone concepts
+## Core concepts
 
 Description of terms and concepts to understand Sharetribe Flex.
 
