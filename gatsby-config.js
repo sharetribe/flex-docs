@@ -215,8 +215,8 @@ module.exports = {
 // ================ Analytics ================
 //
 if (
-  ENV === 'vercel-production' ||
-  ('netlify-production' && GOOGLE_TAGMANAGER_ID)
+  (ENV === 'vercel-production' && GOOGLE_TAGMANAGER_ID) ||
+  (ENV === 'netlify-production' && GOOGLE_TAGMANAGER_ID)
 ) {
   console.log('Enabling Google Tag Manager plugin for production');
   module.exports.plugins.push({
@@ -227,8 +227,8 @@ if (
   });
 }
 if (
-  ENV === 'vercel-preview' ||
-  ('netlify-deploy-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW)
+  (ENV === 'vercel-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW) ||
+  (ENV === 'netlify-deploy-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW)
 ) {
   console.log('Enabling Google Tag Manager plugin for deploy preview');
   module.exports.plugins.push({
