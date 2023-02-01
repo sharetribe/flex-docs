@@ -10,12 +10,6 @@ ingress:
 published: true
 ---
 
-_**NOTE! In case your pricing relies on the deprecated
-[set-line-items-and-total](/references/transaction-process-actions/#actionset-line-items-and-total)
-action, the old pricing customization article related to that can be
-found
-[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/cookbook-payments/customize-pricing).**_
-
 This how-to guide shows you how listing pricing can be customized by
 using two examples: adding a cleaning fee to a listing and changing
 provider commission so that it's based on booking length. The changes
