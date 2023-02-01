@@ -9,12 +9,6 @@ ingress:
 published: true
 ---
 
-_**NOTE! Privileged transitions enable highly flexible pricing schemes,
-deprecating our custom pricing feature that was in the past used for
-price customizations. If you are looking for the old custom pricing
-article, it can be found
-[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/background/custom-pricing/).**_
-
 ## What are privileged transitions?
 
 In Flex, a process transition is an edge between two states in the
