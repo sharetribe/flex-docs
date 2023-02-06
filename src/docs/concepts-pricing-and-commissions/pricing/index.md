@@ -10,6 +10,11 @@ ingress:
 published: true
 ---
 
+_**NOTE! The current default method for setting commissions has
+deprecated our old commission setting actions. If you are looking for
+the old commissions and monetization background article, it can be found
+[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/background/commissions-and-monetizing-your-platform/).**_
+
 ## What kind of pricing can you achieve with Flex
 
 It's common for a marketplace to base it's pricing on the length of a
