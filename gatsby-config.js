@@ -23,6 +23,8 @@ const VERCEL_URL = !/^https?:\/\//i.test(GATSBY_VERCEL_URL)
   ? 'https://' + GATSBY_VERCEL_URL
   : GATSBY_VERCEL_URL;
 
+console.log({ isVercel, isNetlify, VERCEL_URL, GATSBY_VERCEL_URL });
+
 /**
  * Get the current env.
  *
@@ -68,10 +70,7 @@ const getSiteUrl = env => {
 
 // Dont prefix /docs in vercel deploy previews
 const getPathPrefix = env => {
-  return (isVercel || isNetlify || env === 'local-production') &&
-    !(env === 'vercel-preview')
-    ? '/docs'
-    : '';
+  return isVercel || isNetlify || env === 'local-production' ? '/docs' : '';
 };
 
 const ENV = getEnv();
@@ -89,10 +88,6 @@ console.log({
   ENV,
   SITE_URL,
 });
-
-const withTrailingSlash = path => {
-  return path.endsWith('/') ? path : `${path}/`;
-};
 
 module.exports = {
   // ================ Site metadata ================
@@ -214,30 +209,30 @@ module.exports = {
 
 // ================ Analytics ================
 //
-if (
-  (ENV === 'vercel-production' && GOOGLE_TAGMANAGER_ID) ||
-  (ENV === 'netlify-production' && GOOGLE_TAGMANAGER_ID)
-) {
-  console.log('Enabling Google Tag Manager plugin for production');
-  module.exports.plugins.push({
-    resolve: 'gatsby-plugin-google-tagmanager',
-    options: {
-      id: GOOGLE_TAGMANAGER_ID,
-    },
-  });
-}
-if (
-  (ENV === 'vercel-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW) ||
-  (ENV === 'netlify-deploy-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW)
-) {
-  console.log('Enabling Google Tag Manager plugin for deploy preview');
-  module.exports.plugins.push({
-    resolve: 'gatsby-plugin-google-tagmanager',
-    options: {
-      id: GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW,
-    },
-  });
-}
+// if (
+//   (ENV === 'vercel-production' && GOOGLE_TAGMANAGER_ID) ||
+//   (ENV === 'netlify-production' && GOOGLE_TAGMANAGER_ID)
+// ) {
+//   console.log('Enabling Google Tag Manager plugin for production');
+//   module.exports.plugins.push({
+//     resolve: 'gatsby-plugin-google-tagmanager',
+//     options: {
+//       id: GOOGLE_TAGMANAGER_ID,
+//     },
+//   });
+// }
+// if (
+//   (ENV === 'vercel-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW) ||
+//   (ENV === 'netlify-deploy-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW)
+// ) {
+//   console.log('Enabling Google Tag Manager plugin for deploy preview');
+//   module.exports.plugins.push({
+//     resolve: 'gatsby-plugin-google-tagmanager',
+//     options: {
+//       id: GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW,
+//     },
+//   });
+// }
 
 if (PATH_PREFIX) {
   module.exports.pathPrefix = PATH_PREFIX;
