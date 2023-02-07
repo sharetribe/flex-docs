@@ -11,7 +11,8 @@ published: true
 Pages lets you create and modify your marketplace’s content pages. The
 text in these pages can be formatted using Markdown. This guide provides
 an introduction to Markdown to help you use it when formatting your
-content pages.
+content pages. To learn more about editing pages in general
+[read our How to edit Pages article](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-sonsole/).
 
 ## What is Markdown
 
