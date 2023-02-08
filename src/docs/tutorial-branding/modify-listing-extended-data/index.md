@@ -13,12 +13,19 @@ topic – tire size, brand, category, add-ons. It is likely, however, that
 your listings are not bike-related, so you will want to change the
 attributes and their options.
 
-//TODO: update image with Biketribe content
+![Category filter with Biketribe content](./default-category-filter.png)
 
-![Amenities filter with Saunatime content](./default-amenities-filter.png)
+In this tutorial, we edit the secondary _equipped-with_ filter into a
+primary _amenities_ filter, but the same approach works with the other
+filters too.
 
-In this tutorial, we edit the _equipped-with_ filter into an _amenities_
-filter, but the same approach works with the other filters too.
+<extrainfo title="Primary or secondary filter?">
+
+In the template application, primary filters are shown directly on the
+search page. Secondary filters are shown when the user clicks the "More
+filters" button.
+
+</extrainfo>
 
 The configuration for the default listing attributes can be found in the
 _configListing.js_ file.
@@ -93,9 +100,7 @@ values can be.
   The 'option' value is saved to the listing's public data when the
   listing is created.
 
-  //TODO: Update image once Biketribe microcopy exists
-
-  ![Console: amenities in public data](./console-amenities-public-data.png)
+  ![Console: attributes in public data](./console-listing-attributes-public-data.png)
 
 - **label**:
 
@@ -128,18 +133,18 @@ attribute as a search filter, so we need to configure _indexForSearch_
 as _true_.
 
 In _searchPageConfig_, we can define the way this filter shows up on the
-search page. We will need to change the label to 'Amenities'. In
-addition, we can determine whether our search matches only listings that
-have all of the selected amenities (_searchMode: 'has_all'_), or if we
-want to match listings that have any of the selected options
-(_searchMode: 'has_any'_).
+search page. We will need to change the label to 'Amenities', and group
+to 'primary'. In addition, we can determine whether our search matches
+only listings that have all of the selected amenities (_searchMode:
+'has_all'_), or if we want to match listings that have any of the
+selected options (_searchMode: 'has_any'_).
 
 ```js
     indexForSearch: true,
     searchPageConfig: {
       label: 'Amenities',
       searchMode: 'has_all',
-      group: 'secondary',
+      group: 'primary',
     },
 ```
 
@@ -266,7 +271,7 @@ this:
     searchPageConfig: {
       label: 'Amenities',
       searchMode: 'has_all',
-      group: 'secondary',
+      group: 'primary',
     },
     listingPageConfig: {
       label: 'Amenities',
@@ -280,7 +285,7 @@ this:
 ```
 
 After you have saved the file, you should see the following options on
-the search page: // TODO: update image
+the search page:
 ![Amenities filter with CottageDays content](./updated-amenities-filter.png)
 
 Then you need to create listings that have some of these amenities

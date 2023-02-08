@@ -55,9 +55,9 @@ helper functions that are used to determine which state the transaction
 is. Depending on the transaction process being used, the
 _transaction.js_ file refers to either
 _src/transactions/transactionProcessBooking.js_ or
-_src/transactions/transactionProcessProduct.js_ TODO CHECK FILE NAMES
-for the correct states in each process. The transaction process file
-should be updated to match the new transaction process.
+_src/transactions/transactionProcessPurchase.js_ for the correct states
+in each process. The transaction process file should be updated to match
+the new transaction process.
 [Read more about editing transaction related files](/how-to/change-transaction-process-in-ftw/#2-update-the-relevant-files-in-srctransactions-folder).
 
 Example:

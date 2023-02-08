@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-TODO: UPDATE SCREENSHOTS after new tx process names in place
-
 Microcopy refers to all the small pieces of text in your marketplace's
 dynamic pages – button labels, error messages, and help texts are all
 examples of microcopy. Modifying microcopy to match your marketplace's
