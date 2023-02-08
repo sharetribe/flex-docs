@@ -407,9 +407,6 @@ Since the first time slots are now set at the buffer minute interval, we
 divide the full booking time by _bufferMinutes_ to get the correct
 _removeCount_ value.
 
-// TODO Fix this handling since it's not working yet in the FTW-X
-implementation
-
 ```diff
 export const getStartHours = (intl, timeZone, startTime, endTime) => {
 - const hours = getSharpHours(intl, timeZone, startTime, endTime);
@@ -432,9 +429,9 @@ it. Instead, we can just return the full list from _getSharpHours_.
   };
 ```
 
-Now, even if we have a booking from 6 AM to 7 AM with a 15 minute buffer
-at the end, the next customer can start their booking at 7:15 AM.
-Conversely, the previous booking can begin 4:45 AM and no later, so that
+Now, if we have a booking from 9 AM to 10 AM with a 15 minute buffer at
+the end, the next customer can start their booking at 10:15 AM.
+Conversely, the previous booking can begin 7:45 AM and no later, so that
 the buffered time slot can fit in before the already booked session.
 
 ![Booking start options buffered time slots](./quarter_hour_starts.png)
