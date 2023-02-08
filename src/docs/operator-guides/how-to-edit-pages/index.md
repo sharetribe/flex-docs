@@ -282,14 +282,16 @@ to learn more about editing the code of content pages.
 
 ## Publish your landing page changes to Production
 
-![copy-to-production](/copy-to-production.jpg 'Copy changes to production')
-
-If your marketplace is running in production, you can copy the same
-content from your Pages to its production environment. You need to click
+To see your changes in your live marketplace, you must copy the changes you made to your production environment from your development environment. Click
 the “Copy to production…” button and then select the specific pages that
 you want to copy. This will transfer all the content from the current
-environment to your Production environment.
+environment to your production environment.
 
 The changes that you make to production will be available a few minutes
 after copying them to production. You do not need to save them again in
 your production environment.
+
+![copy-to-production](/copy-to-production.jpg 'Copy changes to production')
+_You can select what changes you copy to production. Only selected changes copy to production. The changes you copy to production overwrite your pages content in production._
+
+
