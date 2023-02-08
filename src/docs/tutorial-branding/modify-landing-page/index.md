@@ -58,8 +58,8 @@ used in the previous step for Cottage Days: <br />
 
 - [Summer house by Markus Spiske (cropped)](/tutorial-assets/markus-spiske-summer-house-unsplash.jpg)
 
-With this image, we also need to switch the text from light to dark. To
-do that, toggle the _Section theme_ buttons below the image input.
+With this image, we also need to switch the text from white to black. To
+do that, toggle the _Text color_ buttons below the image input.
 
 Once you have made these changes, scroll to the bottom of the page to
 save your changes. Now, refresh your marketplace landing page, and you
