@@ -1,213 +1,36 @@
----
-title: Page schema
-slug: page-schema
-updated: 2023-02-15
-category: references
-ingress:
-  Reference documentation providing information on the page schema.
-published: true
----
-
-// TODO do we show the \_editor attributes as well?
-
-## What is a page schema
-
-Page [assets](/references/assets/) in Flex have a structure that is
-defined by the page schema. The Flex page schema is based on
-[JSON schema](https://json-schema.org/).
-
-If you are not familiar with the JSON schema, you can learn more in the
-[Understanding JSON schema](https://json-schema.org/understanding-json-schema/)
-ebook.
-
-<info>
-
-It is good to note that the static page schema is not the same as a
-[website structured data schema](https://schema.org/):
-
-- Flex page schema is a Flex-specific description of the data being
-  returned from
-  [Flex Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
-- Schema.org structured data schema is a general vocabulary for
-  representing the data content of a page in a way that is easily
-  readable by e.g. search engines. <br/>
-
-Page schema is also distinct from an
-[extended data search schema](/references/extended-data/#search-schema):
-
-- Page schema relates to page assets created by operators through Flex
-  Console. It enables building client applications that can predictably
-  handle page asset data.
-- Extended data search schema relates to listings or users. It enables
-  searching and filtering users and listings through the Flex APIs on
-  the marketplace.
-
-</info>
-  
-The page schema determines the structure of the page in both Flex Console and the page asset fetched from Asset Delivery API.
-- The page is created and modified in Flex Console, structured by the page schema
-- The page asset is then fetched to the client, and the data structure for all pages can be predicted based on the page schema.
-
-![Page schema in context](./page-schema-context.png)
-
-## Page schema syntax: properties and \$defs
-
-The page schema itself has two main parts:
-
-- properties
-- \$defs
-
-Properties describe the main structure of the page asset, whereas \$defs
-contain subschemas. Subschemas are additional attributes that can be
-reused in several properties.
-
-- Read more about
-  [defs in JSON schema](https://json-schema.org/understanding-json-schema/structuring.html#defs)
-
-For instance, a page section's call to action has an optional internal
-button link. In the schema, the _fieldType_ attribute determines whether
-the section has a call to action, and whether it is an internal link or
-an external link.
-
-The schema then determines that if _fieldType_ is required and is
-defined as internal button link, the relevant additional attributes are
-added to _callToAction_ .
-
-```json
 {
-  "callToAction": {
-    "type": "object",
-    "properties": {
-      "fieldType": {
-        "oneOf": [
-          {
-            "$ref": "#/$defs/fieldType/none",
-            "title": "No call to action"
-          },
-          {
-            "$ref": "#/$defs/fieldType/internalButtonLink",
-            "title": "Internal link",
-            "description": "Link to a page in your marketplace. Displayed as a button."
-          },
-          {
-            "$ref": "#/$defs/fieldType/externalButtonLink",
-            "title": "External link",
-            "description": "Link to a page outside your marketplace. Opens in a new tab. Displayed as a button."
-          }
-        ]
-      }
+  "_editor": {
+    "editorTitle": "Edit page \"{asset-name}\"",
+    "viewLink": {
+      "label": "View page",
+      "url": "{marketplaceUrl}/preview?asset-path={assetPath}"
     },
-    "allOf": [
-      {
-        "if": {
-          "properties": {
-            "fieldType": {
-              "$ref": "#/$defs/fieldType/internalButtonLink"
-            }
-          },
-          "required": ["fieldType"]
-        },
-        "then": {
-          "$ref": "#/$defs/internalButtonLink"
-        }
-      }
+    "component": "tabs",
+    "order": [
+      "sections",
+      "meta"
     ]
-  }
-}
-```
-
-The definitions for _fieldType/internalButtonLink_ and
-_internalButtonLink_ can be found in _\$defs_.
-
-```json
-{
-"$defs": {
-  "fieldType": {
-    "none": {
-      "const": "none"
-    },
-    "internalButtonLink": {
-      "const": "internalButtonLink"
-    }
   },
-  "internalButtonLink": {
-    "properties": {
-      "content": {
-        "title": "Internal link text",
-        "type": "string",
-        "minLength": 1
-      },
-      "href": {
-        "description": "Include only the path after your domain. For example, if you want to link to your About page, use /p/about.",
-        "title": "Internal link address",
-        "type": "string",
-        "examples": [
-          "#section-id-as-anchor",
-          "/absolute/path/to/page"
-        ],
-        "pattern": "^(?![a-zA-Z][a-zA-Z\\+\\.\\-]*\\:)",
-        "minLength": 1
-      }
-    },
-    "required": [
-      "content",
-      "href"
-    ]
-  }
-}
-```
-
-For a page asset section where _callToAction.fieldType_ is internal
-button link, _callToAction_ will also have the properties defined in
-_internalButtonLink_.
-
-![Call to action with internal button](./internal-button-cta.png)
-
-## Using page schema when building a client
-
-Since the page schema defines the structure of the page asset, any
-client applications need to be built so that they can handle all
-situations where the data is valid according to the schema. For
-instance, required attributes are explicitly defined in the schema, so
-all other attributes should be considered optional.
-
-For instance:
-
-- _sectionId_ is required, and has a minimum length of 1. Client apps
-  can expect all sections to have a _sectionId_ string of 1 or more
-  characters.
-- _section.title_ is not required. Client apps can expect
-  _section.title_ to be an object, or _null_.
-- _section.title.content_ is not required. Clients can expect
-  _section.title.content_ to be a string with 1 or more characters, or
-  an empty string, or _null_.
-
-## Full page schema
-
-You can download the full page schema here:
-
-- [page-schema.json](./page-schema.json)
-
-The representation below shows the page schema without _\_editor_
-attributes, which are only used in Flex Console internally.
-
-```json
-{
   "type": "object",
   "properties": {
-    /**
-     * Metadata contains information that is not shown directly on the page, but it is shown in SEO,
-     * search engines, and e.g. browser tab.
-     */
     "meta": {
       "title": "SEO & Social",
       "type": "object",
+      "_editor": {
+        "component": "frame",
+        "hideTitle": true
+      },
       "properties": {
-        /** Meta page title */
         "pageTitle": {
           "type": "object",
+          "_editor": {
+            "noMargin": true
+          },
           "properties": {
             "fieldType": {
+              "_editor": {
+                "component": "hidden"
+              },
               "const": "metaTitle",
               "default": "metaTitle"
             },
@@ -221,8 +44,14 @@ attributes, which are only used in Flex Console internally.
         },
         "pageDescription": {
           "type": "object",
+          "_editor": {
+            "noMargin": true
+          },
           "properties": {
             "fieldType": {
+              "_editor": {
+                "component": "hidden"
+              },
               "default": "metaDescription",
               "const": "metaDescription"
             },
@@ -235,8 +64,14 @@ attributes, which are only used in Flex Console internally.
         },
         "socialSharing": {
           "type": "object",
+          "_editor": {
+            "noMargin": true
+          },
           "properties": {
             "fieldType": {
+              "_editor": {
+                "component": "hidden"
+              },
               "const": "openGraphData",
               "default": "openGraphData"
             },
@@ -254,12 +89,21 @@ attributes, which are only used in Flex Console internally.
               "title": "Social media image",
               "type": "object",
               "description": "Displayed when someone shares the page in social media. The image should have a 1.91:1 aspect ratio and a minimum size of 1200x630 pixels.",
+              "_editor": {
+                "component": "imageUpload",
+                "accept": [
+                  "image/png",
+                  "image/jpeg"
+                ],
+                "assetNamePrefix": "social-image",
+                "label": "Upload an image..."
+              },
               "properties": {
-                /** The image attribute contains a ref with an id and type. The API response contains
-                 *   an  "included" attribute with the full resource.
-                 */
                 "_ref": {
                   "type": "object",
+                  "_editor": {
+                    "component": "hidden"
+                  },
                   "properties": {
                     "resolver": {
                       "const": "image"
@@ -291,26 +135,49 @@ attributes, which are only used in Flex Console internally.
         }
       }
     },
-    /** The 'sections' array contains information that does get shown on the CMS page.
-     */
     "sections": {
+      "_editor": {
+        "component": "cardList",
+        "colorTheme": "light",
+        "deleteLabel": "Delete section...",
+        "addNewLabel": "Add new section",
+        "headingKey": "sectionId",
+        "subheadingKey": "sectionType",
+        "hideTitle": true
+      },
       "title": "Sections",
       "type": "array",
       "maxItems": 20,
       "items": {
+        "_editor": {
+          "order": [
+            "sectionId",
+            "sectionType",
+            "numColumns",
+            "*",
+            "blocks"
+          ]
+        },
         "title": "Section details",
         "type": "object",
         "properties": {
-          /** Section id */
           "sectionId": {
+            "_editor": {
+              "errorMessages": {
+                "pattern": "You've added characters that are not allowed."
+              }
+            },
             "description": "Section identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
             "type": "string",
             "title": "Section ID",
             "minLength": 1,
             "pattern": "^[a-z][a-z0-9_\\-]*$"
           },
-          /** Section type */
           "sectionType": {
+            "_editor": {
+              "component": "radio",
+              "direction": "vertical"
+            },
             "description": "Determines the layout of Content Blocks.",
             "type": "string",
             "title": "Section template",
@@ -337,7 +204,6 @@ attributes, which are only used in Flex Console internally.
               }
             ]
           },
-          /** Section title */
           "title": {
             "type": "object",
             "properties": {
@@ -346,6 +212,10 @@ attributes, which are only used in Flex Console internally.
                 "type": "string"
               },
               "fieldType": {
+                "_editor": {
+                  "component": "radio",
+                  "direction": "horizontal"
+                },
                 "title": "Section title size",
                 "type": "string",
                 "default": "heading2",
@@ -362,11 +232,13 @@ attributes, which are only used in Flex Console internally.
               }
             }
           },
-          /** Section description */
           "description": {
             "type": "object",
             "properties": {
               "fieldType": {
+                "_editor": {
+                  "component": "hidden"
+                },
                 "title": "Section description",
                 "type": "string",
                 "default": "paragraph",
@@ -378,7 +250,6 @@ attributes, which are only used in Flex Console internally.
               }
             }
           },
-          /** Section call to action */
           "callToAction": {
             "type": "object",
             "properties": {
@@ -387,6 +258,10 @@ attributes, which are only used in Flex Console internally.
                 "type": "string",
                 "default": "none",
                 "description": "The action the user is prompted to take after viewing the section.",
+                "_editor": {
+                  "component": "radio",
+                  "direction": "vertical"
+                },
                 "oneOf": [
                   {
                     "$ref": "#/$defs/fieldType/none",
@@ -405,7 +280,6 @@ attributes, which are only used in Flex Console internally.
                 ]
               }
             },
-            /** Section call to action additional attributes */
             "allOf": [
               {
                 "if": {
@@ -414,7 +288,9 @@ attributes, which are only used in Flex Console internally.
                       "$ref": "#/$defs/fieldType/internalButtonLink"
                     }
                   },
-                  "required": ["fieldType"]
+                  "required": [
+                    "fieldType"
+                  ]
                 },
                 "then": {
                   "$ref": "#/$defs/internalButtonLink"
@@ -427,7 +303,9 @@ attributes, which are only used in Flex Console internally.
                       "$ref": "#/$defs/fieldType/externalButtonLink"
                     }
                   },
-                  "required": ["fieldType"]
+                  "required": [
+                    "fieldType"
+                  ]
                 },
                 "then": {
                   "$ref": "#/$defs/externalButtonLink"
@@ -435,7 +313,6 @@ attributes, which are only used in Flex Console internally.
               }
             ]
           },
-          /** Section appearance */
           "appearance": {
             "type": "object",
             "properties": {
@@ -443,6 +320,10 @@ attributes, which are only used in Flex Console internally.
                 "title": "Section appearance",
                 "type": "string",
                 "default": "defaultAppearance",
+                "_editor": {
+                  "component": "radio",
+                  "direction": "vertical"
+                },
                 "oneOf": [
                   {
                     "$ref": "#/$defs/fieldType/defaultAppearance",
@@ -456,7 +337,6 @@ attributes, which are only used in Flex Console internally.
                 ]
               }
             },
-            /** Section custom appearance additional attributes */
             "if": {
               "properties": {
                 "fieldType": {
@@ -468,6 +348,9 @@ attributes, which are only used in Flex Console internally.
               "properties": {
                 "backgroundColor": {
                   "title": "Background color",
+                  "_editor": {
+                    "component": "colorPicker"
+                  },
                   "description": "Only displayed if the section doesn’t have a background image.",
                   "type": "string",
                   "pattern": "^#[A-Fa-f0-9]{6}"
@@ -476,9 +359,21 @@ attributes, which are only used in Flex Console internally.
                   "title": "Background image",
                   "type": "object",
                   "description": "For the best result, the image should have a minimum size of 1600x1200 pixels.",
+                  "_editor": {
+                    "component": "imageUpload",
+                    "accept": [
+                      "image/png",
+                      "image/jpeg"
+                    ],
+                    "assetNamePrefix": "section-background",
+                    "label": "Upload an image..."
+                  },
                   "properties": {
                     "_ref": {
                       "type": "object",
+                      "_editor": {
+                        "component": "hidden"
+                      },
                       "properties": {
                         "resolver": {
                           "const": "image"
@@ -494,6 +389,10 @@ attributes, which are only used in Flex Console internally.
                   }
                 },
                 "textColor": {
+                  "_editor": {
+                    "component": "radio",
+                    "direction": "horizontal"
+                  },
                   "title": "Text color",
                   "type": "string",
                   "default": "black",
@@ -511,8 +410,15 @@ attributes, which are only used in Flex Console internally.
               }
             }
           },
-          /** Section blocks */
           "blocks": {
+            "_editor": {
+              "component": "cardList",
+              "colorTheme": "dark",
+              "showCount": true,
+              "deleteLabel": "Delete block...",
+              "addNewLabel": "Add new block",
+              "headingKey": "blockId"
+            },
             "title": "Content Blocks",
             "type": "array",
             "maxItems": 20,
@@ -520,17 +426,24 @@ attributes, which are only used in Flex Console internally.
               "type": "object",
               "properties": {
                 "blockId": {
+                  "_editor": {
+                    "errorMessages": {
+                      "pattern": "You've added characters that are not allowed."
+                    }
+                  },
                   "description": "Block identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
                   "title": "Block ID",
                   "type": "string",
                   "pattern": "^[a-z][a-z0-9_\\-]*$"
                 },
                 "blockType": {
+                  "_editor": {
+                    "component": "hidden"
+                  },
                   "title": "Block type",
                   "const": "defaultBlock",
                   "$comment": "Currently, we only have one block type but in the future there could be many"
                 },
-                /** Block media */
                 "media": {
                   "type": "object",
                   "properties": {
@@ -538,6 +451,10 @@ attributes, which are only used in Flex Console internally.
                       "title": "Block media",
                       "type": "string",
                       "default": "none",
+                      "_editor": {
+                        "component": "radio",
+                        "direction": "vertical"
+                      },
                       "oneOf": [
                         {
                           "$ref": "#/$defs/fieldType/none",
@@ -554,9 +471,7 @@ attributes, which are only used in Flex Console internally.
                       ]
                     }
                   },
-                  /** Block media additional attributes */
                   "allOf": [
-                    /** Block image field type attributes */
                     {
                       "if": {
                         "properties": {
@@ -571,6 +486,15 @@ attributes, which are only used in Flex Console internally.
                             "title": "Image file",
                             "type": "object",
                             "description": "Most common image formats are supported",
+                            "_editor": {
+                              "component": "imageUpload",
+                              "accept": [
+                                "image/png",
+                                "image/jpeg"
+                              ],
+                              "assetNamePrefix": "block-media",
+                              "label": "Upload an image..."
+                            },
                             "properties": {
                               "_ref": {
                                 "type": "object",
@@ -582,10 +506,16 @@ attributes, which are only used in Flex Console internally.
                                     "type": "string"
                                   },
                                   "params": {
+                                    "_editor": {
+                                      "component": "hidden"
+                                    },
                                     "type": "object"
                                   }
                                 },
-                                "required": ["resolver", "target"]
+                                "required": [
+                                  "resolver",
+                                  "target"
+                                ]
                               }
                             }
                           },
@@ -593,14 +523,18 @@ attributes, which are only used in Flex Console internally.
                             "$ref": "#/$defs/aspectRatio"
                           },
                           "alt": {
+                            "_editor": {
+                              "placeholder": "Describe the image…"
+                            },
                             "description": "Short written description of an image is needed for accessibility and search engines.",
                             "title": "Image alt text",
                             "type": "string",
                             "minLength": 1
                           }
                         },
-                        "required": ["alt"],
-                        /** Block image aspect ratios */
+                        "required": [
+                          "alt"
+                        ],
                         "allOf": [
                           {
                             "if": {
@@ -701,7 +635,6 @@ attributes, which are only used in Flex Console internally.
                         ]
                       }
                     },
-                    /** Block youtube field type properties */
                     {
                       "if": {
                         "properties": {
@@ -713,6 +646,12 @@ attributes, which are only used in Flex Console internally.
                       "then": {
                         "properties": {
                           "youtubeVideoId": {
+                            "_editor": {
+                              "placeholder": "UffchBUUIoI",
+                              "errorMessages": {
+                                "pattern": "YouTube video ID must contain only letters and numbers and _ or - characters."
+                              }
+                            },
                             "description": "The part of a YouTube link after \"watch?v=\". For example, for the video youtube.com/watch?v=UffchBUUIoI, the ID is UffchBUUIoI.",
                             "type": "string",
                             "title": "YouTube video ID",
@@ -722,12 +661,14 @@ attributes, which are only used in Flex Console internally.
                             "$ref": "#/$defs/aspectRatio"
                           }
                         },
-                        "required": ["youtubeVideoId", "aspectRatio"]
+                        "required": [
+                          "youtubeVideoId",
+                          "aspectRatio"
+                        ]
                       }
                     }
                   ]
                 },
-                /** Block title */
                 "title": {
                   "type": "object",
                   "properties": {
@@ -736,6 +677,10 @@ attributes, which are only used in Flex Console internally.
                       "type": "string"
                     },
                     "fieldType": {
+                      "_editor": {
+                        "component": "radio",
+                        "direction": "horizontal"
+                      },
                       "type": "string",
                       "title": "Block title size",
                       "default": "heading3",
@@ -756,11 +701,13 @@ attributes, which are only used in Flex Console internally.
                     }
                   }
                 },
-                /** Block text */
                 "text": {
                   "type": "object",
                   "properties": {
                     "fieldType": {
+                      "_editor": {
+                        "component": "hidden"
+                      },
                       "description": "You can format text with markdown.",
                       "type": "string",
                       "title": "Text element type",
@@ -773,7 +720,6 @@ attributes, which are only used in Flex Console internally.
                     }
                   }
                 },
-                /** Block call to action */
                 "callToAction": {
                   "type": "object",
                   "properties": {
@@ -782,6 +728,10 @@ attributes, which are only used in Flex Console internally.
                       "type": "string",
                       "default": "none",
                       "description": "The action the user is prompted to take after viewing the block.",
+                      "_editor": {
+                        "component": "radio",
+                        "direction": "vertical"
+                      },
                       "oneOf": [
                         {
                           "$ref": "#/$defs/fieldType/none",
@@ -800,7 +750,6 @@ attributes, which are only used in Flex Console internally.
                       ]
                     }
                   },
-                  /** Block call to action additional attributes */
                   "allOf": [
                     {
                       "if": {
@@ -809,7 +758,9 @@ attributes, which are only used in Flex Console internally.
                             "$ref": "#/$defs/fieldType/internalButtonLink"
                           }
                         },
-                        "required": ["fieldType"]
+                        "required": [
+                          "fieldType"
+                        ]
                       },
                       "then": {
                         "$ref": "#/$defs/internalButtonLink"
@@ -822,7 +773,9 @@ attributes, which are only used in Flex Console internally.
                             "$ref": "#/$defs/fieldType/externalButtonLink"
                           }
                         },
-                        "required": ["fieldType"]
+                        "required": [
+                          "fieldType"
+                        ]
                       },
                       "then": {
                         "$ref": "#/$defs/externalButtonLink"
@@ -831,11 +784,13 @@ attributes, which are only used in Flex Console internally.
                   ]
                 }
               },
-              "required": ["blockId", "blockType"]
+              "required": [
+                "blockId",
+                "blockType"
+              ]
             }
           }
         },
-        /** For section types 'columns' and 'carousel', numColumns is required */
         "if": {
           "anyOf": [
             {
@@ -844,7 +799,9 @@ attributes, which are only used in Flex Console internally.
                   "const": "columns"
                 }
               },
-              "required": ["sectionType"]
+              "required": [
+                "sectionType"
+              ]
             },
             {
               "properties": {
@@ -852,13 +809,19 @@ attributes, which are only used in Flex Console internally.
                   "const": "carousel"
                 }
               },
-              "required": ["sectionType"]
+              "required": [
+                "sectionType"
+              ]
             }
           ]
         },
         "then": {
           "properties": {
             "numColumns": {
+              "_editor": {
+                "component": "radio",
+                "direction": "horizontal"
+              },
               "title": "Number of columns",
               "type": "integer",
               "oneOf": [
@@ -881,16 +844,18 @@ attributes, which are only used in Flex Console internally.
               ]
             }
           },
-          "required": ["numColumns"]
+          "required": [
+            "numColumns"
+          ]
         },
-        /** Section required attributes */
-        "required": ["sectionId", "sectionType"]
+        "required": [
+          "sectionId",
+          "sectionType"
+        ]
       }
     }
   },
-  /** Definitions used in the schema */
   "$defs": {
-    /** Field types */
     "fieldType": {
       "none": {
         "const": "none"
@@ -929,7 +894,6 @@ attributes, which are only used in Flex Console internally.
         "const": "customAppearance"
       }
     },
-    /** Internal button link */
     "internalButtonLink": {
       "properties": {
         "content": {
@@ -938,6 +902,12 @@ attributes, which are only used in Flex Console internally.
           "minLength": 1
         },
         "href": {
+          "_editor": {
+            "placeholder": "/p/about",
+            "errorMessages": {
+              "pattern": "This field should not include protocol like http(s)."
+            }
+          },
           "description": "Include only the path after your domain. For example, if you want to link to your About page, use /p/about.",
           "title": "Internal link address",
           "type": "string",
@@ -949,9 +919,11 @@ attributes, which are only used in Flex Console internally.
           "minLength": 1
         }
       },
-      "required": ["content", "href"]
+      "required": [
+        "content",
+        "href"
+      ]
     },
-    /** External button link */
     "externalButtonLink": {
       "properties": {
         "content": {
@@ -960,17 +932,28 @@ attributes, which are only used in Flex Console internally.
           "minLength": 1
         },
         "href": {
+          "_editor": {
+            "placeholder": "https://",
+            "errorMessages": {
+              "pattern": "The address doesn't start with http(s)://."
+            }
+          },
           "description": "External link address should begin with http(s)://.",
           "title": "External link address",
           "type": "string",
-          "examples": ["http:", "https:"],
+          "examples": [
+            "http:",
+            "https:"
+          ],
           "pattern": "^(http|https):",
           "minLength": 1
         }
       },
-      "required": ["content", "href"]
+      "required": [
+        "content",
+        "href"
+      ]
     },
-    /** Image params */
     "imageParams": {
       "scaled": {
         "const": {
@@ -1098,10 +1081,13 @@ attributes, which are only used in Flex Console internally.
         }
       }
     },
-    /** Aspect ratio */
     "aspectRatio": {
       "title": "Aspect ratio",
       "type": "string",
+      "_editor": {
+        "component": "radio",
+        "direction": "vertical"
+      },
       "default": "auto",
       "oneOf": [
         {
@@ -1124,8 +1110,3 @@ attributes, which are only used in Flex Console internally.
     }
   }
 }
-```
-
-### meta
-
-### sections
