@@ -14,8 +14,8 @@ populate their search results page.
 
 ## Edit your meta tags
 
-Within each Page edit settings, you can navigate to the SEO & Social tab
-in order to alter that Page's meta tags. You can edit the following meta
+When editing your content page, navigating to the 
+"SEO & Social" tab lets you alter its meta tags. You can edit the following meta
 tags:
 
 - Page title: This tag determines what is displayed in the browsers
