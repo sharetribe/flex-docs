@@ -22,7 +22,7 @@ Building a headless marketplace lets you create custom marketplaces faster than 
 
 The frontend refers to the marketplace website or mobile application. In a headless architecture, this portion is built and hosted separately from the marketplace backend. Frontend applications can also be referred to as client applications. 
 
-Flex Templates for Web (LINK) are the most common way to build a marketplace frontend with Flex. You may build frontends completely from scratch too.
+[Flex Templates for Web](https://www.sharetribe.com/docs//operator-guides/concepts/#flex-templates-for-web) are the most common way to build a marketplace frontend with Flex. You may build frontends completely from scratch too.
 
 The marketplace frontend communicates with the backend via Flex APIs. It sends and retrieves data through these APIs. For example, client applications rely on the Asset API to retrieve content created through the Pages editor, such as a landing page. 
 
@@ -99,7 +99,7 @@ The Microcopy editor lets you edit your marketplace’s microcopy from Console's
 
 The Pages editor lets you create, modify, and delete static content pages on your marketplace. It comes pre-loaded with four static content pages: the About page, the Landing page, the Privacy policy, and the Terms of use page. Each of these can be editor with the Pages editor, or additional content pages can be created. You can find the editor in Console's Build section.
 
-Click here (LINK!!!) to learn how to use the Pages editor to modify content on your marketplace.
+[Click here](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/) to learn how to use the Pages editor to modify content on your marketplace.
 
 ## Content 
 
@@ -139,7 +139,7 @@ Sections can have Fields and Blocks within them. Section templates determine how
 
 Blocks capture information and present it according to the Section template. Though each Block can take the same information, such as a video or image, text content or title, how this information is presented depends on the Section template. Blocks, therefore, only exist within sections. They are the sub-sections that make up a content page. 
 
-You can study different Block layouts here(LINKKKK)
+You can study different Block layouts [here.](https://www.sharetribe.com/docs/operator-guides/section-templates/)
 
 ### Fields 
 
@@ -147,14 +147,14 @@ Fields store content information. Fields may take short-form or long-form text, 
 
 ### Section templates 
 
-Section templates determine the layout of the content page created in Pages. You choose a Section template as part of building your Section. The Section template determines how Blocks show up on your marketplace page. There are three templates–Articles, Columns, and Features. You can learn more about each Section template here (LINKKK)
+Section templates determine the layout of the content page created in Pages. You choose a Section template as part of building your Section. The Section template determines how Blocks show up on your marketplace page. There are three templates–Articles, Columns, and Features. You can learn more about each Section template [here.](https://www.sharetribe.com/docs/operator-guides/section-templates/)
 
 
 ### Markdown 
 
 Markdown is a simple programming language used to add formatting to text. You can use it with Pages to emphasize or format your content. Markdown does not do anything fancy like changing the font size, font color, or font family — but it covers the essentials, using simple keyboard symbols.
 
-You can learn more about using Markdown here (LINKKKK)
+You can learn more about using Markdown [here.](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages)
 
 ## Users 
 
