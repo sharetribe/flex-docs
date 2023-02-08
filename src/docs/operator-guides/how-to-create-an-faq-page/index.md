@@ -1,6 +1,6 @@
 ---
-title: How to create a FAQ page
-slug: how-to-create-a-faq-page
+title: How to create an FAQ page
+slug: how-to-create-an-faq-page
 updated: 2023-02-07 
 category: operator-guides
 ingress:
