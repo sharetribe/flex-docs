@@ -1,7 +1,7 @@
 ---
 title: Introducing Pages
 slug: introducing-pages
-updated: 2013-01-26
+updated: 2023-01-26
 category: operator-guides
 ingress:
   The latest Sharetribe Flex feature introduces a powerful no-code interface that gives you full control over your marketplace’s content.
