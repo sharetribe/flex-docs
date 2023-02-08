@@ -8,27 +8,70 @@ ingress:
 published: true
 ---
 
-> how the data looks like after people add fields and then remove them -
-> aka how the deleted data looks like in the fetched asset, as that’s
-> causing work for me. - And we should probably document those somewhere
-> for customizers.
-
 // TODO do we show the \_editor attributes as well?
 
-- The page schema is based on [JSON schema](https://json-schema.org/) –
-  [learn more](https://json-schema.org/understanding-json-schema/)
-- not to be confused with extended data search schema [TODO: LINK]
-- or web schema
+## What is a page schema
 
-## Page Schema is divided into two parts
+Page [assets](/references/assets/) in Flex have a structure that is
+defined by the page schema. The Flex page schema is based on
+[JSON schema](https://json-schema.org/).
 
-- properties and defs
-- properties describe the structure of the page asset
-- defs contain subschemas, i.e. additional attributes that can be reused
-  in several properties
-  - read more about
-    [defs in JSON schema](https://json-schema.org/understanding-json-schema/structuring.html#defs)
-  - e.g. internal button link
+If you are not familiar with the JSON schema, you can learn more in the
+[Understanding JSON schema](https://json-schema.org/understanding-json-schema/)
+ebook.
+
+<info>
+
+It is good to note that the static page schema is not the same as a
+[website structured data schema](https://schema.org/):
+
+- Flex page schema is a Flex-specific description of the data being
+  returned from
+  [Flex Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
+- Schema.org structured data schema is a general vocabulary for
+  representing the data content of a page in a way that is easily
+  readable by e.g. search engines. <br/>
+
+Page schema is also distinct from an
+[extended data search schema](/references/extended-data/#search-schema):
+
+- Page schema relates to page assets created by operators through Flex
+  Console. It enables building client applications that can predictably
+  handle page asset data.
+- Extended data search schema relates to listings or users. It enables
+  searching and filtering users and listings through the Flex APIs on
+  the marketplace.
+
+</info>
+  
+The page schema determines the structure of the page in both Flex Console and the page asset fetched from Asset Delivery API.
+- The page is created and modified in Flex Console, structured by the page schema
+- The page asset is then fetched to the client, and the data structure for all pages can be predicted based on the page schema.
+
+![Page schema in context](./page-schema-context.png)
+
+## Page schema syntax: properties and \$defs
+
+The page schema itself has two main parts:
+
+- properties
+- \$defs
+
+Properties describe the main structure of the page asset, whereas \$defs
+contain subschemas. Subschemas are additional attributes that can be
+reused in several properties.
+
+- Read more about
+  [defs in JSON schema](https://json-schema.org/understanding-json-schema/structuring.html#defs)
+
+For instance, a page section's call to action has an optional internal
+button link. In the schema, the _fieldType_ attribute determines whether
+the section has a call to action, and whether it is an internal link or
+an external link.
+
+The schema then determines that if _fieldType_ is required and is
+defined as internal button link, the relevant additional attributes are
+added to _callToAction_ .
 
 ```json
 {
@@ -76,9 +119,8 @@ published: true
 }
 ```
 
-- additional attributes defined in `$defs`
-  - Field type is used in if
-  - internal button link is used in then
+The definitions for _fieldType/internalButtonLink_ and
+_internalButtonLink_ can be found in _\$defs_.
 
 ```json
 {/** Definitions used in the schema */
@@ -120,43 +162,34 @@ published: true
 }
 ```
 
-- This way, the asset data from API shows the attributes defined in the
-  `$def` directly in the corresponding attribute
+For a page asset section where _callToAction.fieldType_ is internal
+button link, _callToAction_ will also have the properties defined in
+_internalButtonLink_.
 
 ![Call to action with internal button](./internal-button-cta.png)
 
-### Properties
+## Using page schema when building a client
 
-- properties contains meta and sections => this is the main structure of
-  the API response
-- title and description match those in Flex Console => which input
-  yields which data
+Since the page schema defines the structure of the page asset, any
+client applications need to be built so that they can handle all
+situations where the data is valid according to the schema. For
+instance, required attributes are explicitly defined in the schema, so
+all other attributes should be considered optional.
 
-#### Meta
+For instance:
 
-- Page title
-- Page description
-- Social sharing
-  - attributes that show up when someone shares the page in social media
-
-#### Sections
-
-- Sections defines the information shown on the page
-- Depending on the section, these may vary
-
-- sectionId – required
-- sectionType – required
-  - options: _article_, _carousel_, _columns_, _features_
-- title
-- description
-- callToAction
-- appearance
-- blocks
-  - blockId – required
-  - blockType – required, _defaultBlock_
-- numColumns – required with sectionType _columns_ or _carousel_
+- _sectionId_ is required, and has a minimum length of 1. Client apps
+  can expect all sections to have a _sectionId_ string of 1 or more
+  characters.
+- _section.title_ is not required. Client apps can expect
+  _section.title_ to be an object, or _null_.
+- _section.title.content_ is not required. Clients can expect
+  _section.title.content_ to be a string with 1 or more characters, or
+  an empty string, or _null_.
 
 ## Full page schema
+
+This page schema describes Flex page asset data.
 
 ```json
 {
@@ -850,6 +883,7 @@ published: true
           },
           "required": ["numColumns"]
         },
+        /** Section required attributes */
         "required": ["sectionId", "sectionType"]
       }
     }
