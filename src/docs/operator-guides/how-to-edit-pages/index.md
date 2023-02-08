@@ -12,17 +12,21 @@ published: true
 This guide introduces how to use Pages. Pages lets you edit your
 marketplace’s static content pages, like your Landing page or About
 page. If you would like more background on the Pages feature, consult
-this [Introduction to Pages article](CHANGEMECHANGEMECHANGEME).
+this [Introduction to Pages article](https://www.sharetribe.com/docs/
+operator-guides/introducing-pages/).
 
-## Introduction
+# Introduction
 
-### Gettings started
+## Gettings started
+
+Find the Pages feature in [Console.](https://flex-console.sharetribe.com/) Navigate to your Development environment, pick the “Build” section from your top bar, select “Content” from the sub-menu, then select “Pages” from the left side menu. You should now see your default content pages (the About page, the Landing page, the Terms of use page, and the Policy page) ready for editing. 
 
 If you don't have the feature available in Console and want to start
 using it, check out our article about
-[enabling the Pages feature in your marketplace](CHANGEMECHANGEMECHANGEME).
+[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/
+operator-guides/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
 
-### Sections, Blocks, Fields, and Section templates
+## Sections, Blocks, Fields, and Section templates
 
 Content pages in your marketplace are built using Sections, Blocks, and
 Fields.
@@ -48,16 +52,13 @@ The default landing page in a Flex marketplace Demo environment has
 different type of Sections that will help you get an idea of what is
 possible with the Pages editor.
 
-![Landing page sections in pages editor](/landing-page-sections.png 'Landing Page Sections')
+![Content-model-sections](/content-model-landing-page.png 'Content model')
 
-These sections are just placeholder examples, designed to showcase the
-Pages engine capabilities. You can decide to add new Sections, as well
-as editing or removing existing Sections. The rest of the article
-explains the steps to work with the Pages editor in general, which can
+The rest of the article explains the steps to work with the Pages editor in general, which can
 be used when modify an existing page or when creating an entirely new
 page from scratch.
 
-## How to add Sections
+# How to add Sections
 
 These are the typical steps to create a new Section:
 
@@ -71,7 +72,11 @@ These are the typical steps to create a new Section:
 
 To add a Section, click on the “+ Add a new Section” link.
 
-### Define the section ID
+![Landing page sections in pages editor](/landing-page-sections.png 'Landing Page Sections')
+_Examples of sections you can create with Pages. You can decide to add new Sections, as well
+as editing or removing existing sections._
+
+## Define the section ID
 
 When creating a new section you need to define the section-id, or the
 name of the Section. It must be unique and should be descriptive. The
@@ -81,7 +86,7 @@ later on and edit the Page in the future.
 **Important:** if you don’t select an identifier, you will not be able
 to save your landing page.
 
-### Select the Section template
+## Select the Section template
 
 The Section template determines how Blocks are laid out in your section.
 There are four possible layouts:
@@ -96,13 +101,13 @@ There are four possible layouts:
 You can see examples of each section template in our
 [Section templates article](https://www.sharetribe.com/docs/operator-guides/section-templates/)
 
-_Tip_ The template can be modified later on, so don’t worry too much
+_Tip:_ The template can be modified later on, so don’t worry too much
 about it when testing,
 
 **Important:** if you don’t select a section template, you will not be
 able to save your landing page.
 
-### Add text content (Optional)
+## Add text content (Optional)
 
 You can add the title and description you want your users to see. The
 title will be displayed in bigger font at the top of the section. How
@@ -116,7 +121,7 @@ a short or long description for the section. These texts are optional.
 
 ![Carousel image with title and description example](/title-and-description.png 'Title and description example')
 
-### Add call to action content (Optional)
+## Add call to action content (Optional)
 
 The call-to-action content is basically a button in your Section. The
 button can help you guide your users to specific actions that you want
@@ -146,17 +151,17 @@ type of call to action, the text and the specific link.
 
 Adding a call to action to your Section is optional.
 
-### Specify Section appearance
+## Specify Section appearance
 
 You can choose between Default or Custom.
 
-#### Default
+### Default
 
 The default background is white or shaded white. The color alternates
 within each Section to make a slight yet almost imperceptible difference
 between them. Between rgb(252,252,252) and rgb(250,250,250)
 
-#### Custom
+### Custom
 
 With custom appearance, you can specify any other background color with
 the color picker or add a background image to a section. The image will
@@ -167,7 +172,7 @@ text color. The options are black and white. The background and the
 theme affect the whole section, including all the blocks contained in
 it.
 
-## Add blocks (Optional)
+# Add blocks (Optional)
 
 Every Section can be expanded by adding Blocks. You can add Blocks by
 clicking on the “+ Add new Block…” link at the bottom of the section.
@@ -195,7 +200,7 @@ There is no limit to the number of blocks that you can add.
 You can even have Sections that don’t contain the basic information in
 the Section fields, and add only information within blocks.
 
-### Adding media to a Block
+## Adding media to a Block
 
 You can add an image or a Youtube video as part of the content of every
 Block, within your pages. Depending on the Section template that you
@@ -210,14 +215,14 @@ choose the image or video will be displayed in a predetermined layout.
   stats of the video). You also need to specify the Aspect ratio. The
   options are: Square, Portrait, Landscape and Original
 
-### Format with markdown
+## Format with markdown
 
 You can use [markdown](https://www.markdownguide.org/basic-syntax/) to
 format text in your Fields within Blocks. To learn more about the
 markdown supported by Pages visit
 [our article about supported markdown](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages/).
 
-### Sections without blocks
+## Sections without blocks
 
 Blocks are optional. You can use any section without using blocks. You
 can use the basic fields of the Section to create image sections or
@@ -228,7 +233,7 @@ middle of the section.
 
 </sectionswithoutblockscarousel>
 
-## Edit Sections
+# Edit Sections
 
 At any point you can edit your default pages by modifying the content
 within the default pages' Sections. Press on the Section ID to start
@@ -248,7 +253,7 @@ environment it will take 5 minutes to see the changes reflected. This is
 due to the page’s
 [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>).
 
-### Reorder Sections and Blocks
+## Reorder Sections and Blocks
 
 You can alter the order of the sections within the landing page or the
 blocks within a section by dragging and dropping the elements. Make sure
@@ -258,7 +263,7 @@ landing page.
 
 ![reordering sections](/edit-sections.gif 'drag and drop to reorder a Section')
 
-### Remove Sections or Blocks
+## Remove Sections or Blocks
 
 At any point you can remove your landing page sections and blocks by
 clicking on the three-dot menu on the top right corner of the section
@@ -267,7 +272,7 @@ irreversible, you still need to save your landing page for the changes
 to take effect. If you don’t save your landing page changes the delete
 action will not be completed.
 
-### Can I edit the Footer or the Top bar?
+## Can I edit the Footer or the Top bar?
 
 The footer or Top bar cannot be edited using Pages. Changing their
 content requires changing your marketplace code directly. Contact your
@@ -275,7 +280,9 @@ developer if you need help with changes or follow our
 [developer documentation](https://www.sharetribe.com/docs/ftw/how-to-add-static-pages-in-ftw/)
 to learn more about editing the code of content pages.
 
-## Publish your landing page changes to Production
+# Publish your landing page changes to Production
+
+![copy-to-production](/copy-to-production.jpg 'Copy changes to production')
 
 If your marketplace is running in production, you can copy the same
 content from your Pages to its production environment. You need to click
