@@ -72,4 +72,5 @@ _A Carousel example showcasing different locations. Each location is added as a 
 
 ## Further formatting with Markdown 
 
-Section templates determine the layout of blocks in a section. If you want to format how information looks inside your block, then you should use Markdown. Markdown is a syntax language that lets you format text inside blocks. Our guide for formatting with Markdown will get you started using it with Pages. 
+Section templates determine the layout of blocks in a section. If you want to format how information looks inside your block, then you should use Markdown. Markdown is a syntax language that lets you format text inside blocks. [Our guide](https://www.sharetribe.com/docs/
+operator-guides/how-to-format-your-text-in-pages/) for formatting with Markdown will get you started using it with Pages. 

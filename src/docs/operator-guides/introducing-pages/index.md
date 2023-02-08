@@ -10,9 +10,9 @@ published: true
 
 Pages add the ability to build, edit, and manage your marketplace’s static content pages directly from Console. Static content pages like a Landing page or About page can now be modified without developer input. Pages’ deployment workflow lets you create and review content changes in development mode before making them available in your live marketplace. 
 
-PAGES VIDEO
+PAGESVIDEOPAGESVIDEOPAGESVIDEOPAGESVIDEOPAGESVIDEO
 
-# What you can do with Pages
+## What you can do with Pages
 
 Pages lets you create and edit content pages without code in Flex. On your marketplace, static content pages are pages featuring content created by you, the marketplace operator. Landing pages, “About” pages, FAQs or blog posts are all examples of static content pages.
 
@@ -20,7 +20,7 @@ There are various use cases for static content pages. The most obvious one is to
 
 Any Flex marketplace starts with 4 default pages: the About page, the Landing page, the Privacy policy page, and Terms of use page. Pages lets you edit these default pages, but they cannot be removed. In addition to the default pages, you can add and edit any number of custom content pages. 
 
-# How Pages works
+## How Pages works
 
 You can use Pages from Console's Build section. You can try it immediately with Saunatime, the Flex demo marketplace, or use it to create your content after setting up your own marketplace app. Start editing the default content pages, or build your own!
 
@@ -34,7 +34,7 @@ Pages works in both your development and production environments. While you buil
 
 _An example carousel section from the starting Landing page. The default code of the marketplace application renders carousels and all content created using Pages following a standard design. Developers can change this design anytime._ 
 
-# How to get started with Pages
+## How to get started with Pages
 
 Use Pages to create and edit your marketplace content when building your Flex marketplace. The first step to building your marketplace requires setting up a Flex Template. This is a technical task that requires coding knowledge. If you are not a developer or do not yet have a developer on your team, you should hire a Flex Expert to help you build your marketplace.
 
@@ -44,11 +44,13 @@ Once your own version of the Flex Template is set up, you can start building and
 ![pages-homescreen](./pages-homescreen.png) 
 _Pages home screen shows all your marketplace’s static content pages. Pages starts with a prebuilt About page, Landing page,Terms of use page, and Privacy Policy page. We recommend editing those pages to suit your marketplace as you start building._
 
+### Further guides
+
 To start, you may want to focus on editing your Landing page. This will be the first page most of your users see, so you want it to look great and clearly articulate your value proposition. Check out our guide on how to [edit your landing page](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/) to get started .
 
 If you want to create a new page, [the tutorial on how to build an FAQ page](https://www.sharetribe.com/docs/operator-guides/how-to-create-an-faq-page/) offers step-by-step instructions to get start
 
-Not sure you’re ready to start developing yet? Then try Pages out without any code setup using the demo marketplace Saunatime! After creating a Flex account, log into [Console](https://flex-console.sharetribe.com/) and follow the same steps to navigate  to Pages (Build->Content), but make sure you are in your [Demo environment](https://www.sharetribe.com/docs/operator-guides/concepts/#environments_. Marketplaces created before DATEDATEDATEDATE need to refresh their Saunatime demo. If you need any help, consult our demo starting guides, then reach out to our [support team](hello@sharetribe.com) if you face any more trouble.
+Not sure you’re ready to start developing yet? Then try Pages out without any code setup using the demo marketplace Saunatime! After creating a Flex account, log into [Console](https://flex-console.sharetribe.com/) and follow the same steps to navigate  to Pages (Build->Content), but make sure you are in your [Demo environment](https://www.sharetribe.com/docs/operator-guides/concepts/#environments_.) Marketplaces created before DATEDATEDATEDATE need to refresh their Saunatime demo. If you need any help, consult our demo starting guides, then reach out to our [support team](hello@sharetribe.com) if you face any more trouble.
 
 Marketplaces built or being built on Flex before DATEDATEDATE need to modify their frontend marketplace code to take Pages into use. Developers can consult [this guide](https://www.sharetribe.com/docs/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw) to learn how to update existing marketplace codebases with Pages functionality. 
 
