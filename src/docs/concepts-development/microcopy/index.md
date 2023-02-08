@@ -119,7 +119,7 @@ string.
 
 ```json
 {
-  "ManageListingCard.pendingApproval": "{listingTitle} is pending admin approval and can't be booked."
+  "ManageListingCard.pendingApproval": "{listingTitle} is pending admin approval. It's not visible on the marketplace yet."
 }
 ```
 
@@ -190,16 +190,16 @@ microcopy strings using
 
 When you use `select` in the microcopy string, you will need to specify
 
-- the variable determining which option to use (here: `unitType`)
+- the variable determining which option to use (here: `actor`)
 - the pattern we are following (here: `select`)
-- the options matching each alternative you want to specify (here: `day`
+- the options matching each alternative you want to specify (here: `you`
   – there could be several options specified)
 - an `other` option that gets used when none of the specified
   alternatives matches
 
 ```json
 {
-  "ListingCard.perUnit": "{unitType, select, day {per day} night {per night} hour {per hour} other {}}"
+  "TransactionPage.ActivityFeed.default-purchase.purchased": "{actor, select, you {You placed an order for {listingTitle}.} other {{otherUsersName} placed an order for {listingTitle}.}}"
 }
 ```
 
@@ -207,14 +207,22 @@ You can then use the microcopy message in the code e.g. with the
 `formatMessage` function:
 
 ```js
-// Listing unit type is saved in public data.
-<FormattedMessage
-  id="ListingCard.perUnit"
-  values={{ unitType: publicData?.unitType }}
-/>
+const message = intl.formatMessage(
+  { id: `TransactionPage.ActivityFeed.${processName}.${nextState}` },
+  {
+    actor,
+    otherUsersName,
+    listingTitle,
+    reviewLink,
+    deliveryMethod,
+    stateStatus,
+  }
+);
 ```
 
-You can use select for cases where you have a predetermined list of
+![Microcopy message with select logic](./microcopy_UI_select.png)
+
+You can use `select` for cases where you have a predetermined list of
 options you will encounter that require different microcopy strings.
 
 ## Can I have a multilanguage marketplace?
