@@ -57,10 +57,11 @@ then build your content library as you go.
 
 ## Build your library page and article pages
 
-To add a page, you need to navigate to Flex Console > Content > Pages.
-By default, this page contains a landing page, a terms of service page,
-and a privacy policy page. Under those pages you can see a link with
-text "+ Add new page...". Click this link.
+To add a page, you need to navigate to
+[Flex Console > Build > Content > Pages](https://flex-console.sharetribe.com/content/pages).
+By default, this page contains an about page, a landing page, a privacy
+policy page, and a terms of service page. Under those pages you can see
+a link with text "+ Create new page...". Click this link.
 
 ![Page creation modal](create-page-modal.png 'Page creation modal')
 
@@ -68,7 +69,7 @@ text "+ Add new page...". Click this link.
 
 As the page id for this first page, enter "articles". This will be the
 collection page where you will link all your individual articles, and
-you can see the page in _[your-marketplace-url.com]/articles_.
+you can see the page in _[your-marketplace-url.com]/p/articles_.
 
 After you create the page, you can start adding new sections.
 
@@ -112,9 +113,10 @@ e.g. _features_ sections to highlight quotes or other key information.
 Flex currently has a limit of **100 content pages** across your
 marketplace, including the pages included by default:
 
+- About
 - Landing page
-- Terms of service
 - Privacy policy
+- Terms of service
 
 </info>
 
@@ -144,150 +146,8 @@ creating links:
 - The link address is added immediately after the closing bracket in
   (curved brackets).
 
-In addition to adding the links in the text in Markdown, you can add
-links to the button elements of both blocks and sections.
+In addition to adding links in the text in Markdown, you can add calls
+to action in both sections and blocks. A call to action can be either an
+internal link or an external one.
 
-![Creating an internal link button](button-ui.png 'Creating an internal link button')
-
-## Share on social media
-
-Once the pages are finished, you may want to modify how they are shown
-when shared on social media.
-
-By default, the Page Builder adds a basic page schema for each content
-page. You can see the default information shared about your page by
-pasting a publicly available link to the
-[Facebook sharing debugger](https://developers.facebook.com/tools/debug/)
-and the
-[Twitter card validator](https://cards-dev.twitter.com/validator).
-
-![Default page sharing view](./share-default.png)
-
-However, you can modify the content of this schema in the CMSPage
-component.
-
-```shell
-└── src
-    └── containers
-        └── CMSPage
-            └── CMSPage.js
-```
-
-For example, instead of the default page title and description, you may
-want to show the title and ingress of your first section in the schema.
-
-```diff
-export const CMSPageComponent = props => {
-  const { params, pageAssetsData, inProgress, error } = props;
-  const pageId = params.pageId || props.pageId;
-
-+ const { title, ingress  } = pageAssetsData[pageId]?.data?.sections[0];
-...
-  // schemaTitle is used for <title> tag in addition to page schema for SEO
-- const schemaTitle = 'CMS page';
-+ const schemaTitle = title?.content ?? 'CMS page';
-  // schemaDescription is used for different <meta> tags in addition to page schema for SEO
-- const schemaDescription = 'CMS page';
-+ const schemaDescription = ingress?.content ?? 'CMS page';
-  const openGraphContentType = 'website';
-
-  // In addition to this schema for search engines, src/components/Page/Page.js adds some extra schemas
-  // Read more about schema
-  // - https://schema.org/
-  // - https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data
-  const pageSchemaForSEO = {
-    '@context': 'http://schema.org',
-    '@type': 'WebPage',
-    description: schemaDescription,
-    name: schemaTitle,
-  };
-
-```
-
-### Add article image to social media shares
-
-The default page schema does not use the article image in the social
-share. Instead, it uses the default marketplace sharing image.
-
-You can modify the template code to parse the images from your page
-asset, however, and set them as the social media share images.
-
-<info>
-
-If you want to use the article images in social shares, you need to add
-the images in Console with **landscape aspect ratio**. That way, the
-images correspond to the specifications of e.g. Open Graph and Twitter.
-The following instructions assume that your articles have at least one
-landscape image in your article.
-
-</info>
-
-You will need to make these changes in the CMSPage.js component.
-
-```shell
-└── src
-    └── containers
-        └── CMSPage
-            └── CMSPage.js
-```
-
-First, you need to parse the correct image variants from the page
-assets. Images can only be added to blocks, so this function maps all
-the block arrays from the page sections into a single array. Then, it
-picks the specified variant of each image into an array.
-
-```jsx
-const cmsPageImages = (assetData, variantName) => {
-  if (!assetData || !assetData[pageId]) {
-    return null;
-  }
-
-  // Get the correct variants of images from the content blocks
-  // of the different sections on the page.
-  const imageVariants = assetData[pageId]?.data?.sections
-    // First, flatMap the block arrays inside the section array into a single flat array
-    .flatMap(s => s.blocks)
-    // Second, pick the correct variants from the block images and add them to the imageVariants array.
-    .reduce((variants, b) => {
-      const { image } = b.media;
-      const variant = image?.attributes?.variants[variantName] || null;
-
-      return variant ? [...variants, variant] : variants;
-    }, []);
-
-  // Only return the imageVariants array if there are images. Otherwise return null, so that
-  // the default marketplace image is used for the og tag.
-  return imageVariants.length > 0 ? imageVariants : null;
-};
-```
-
-You can then use the same function to get the correct image sizes for
-both Facebook (i.e. Open Graph) and Twitter.
-
-```jsx
-const facebookImages = cmsPageImages(pageAssetsData, 'landscape1200');
-const twitterImages = cmsPageImages(pageAssetsData, 'landscape800');
-```
-
-When you pass the images to the PageBuilder, it passes them down to the
-Page.js component, which sets them into the page schema.
-
-```diff
-  return (
-    <PageBuilder
-      pageAssetsData={pageAssetsData?.[pageId]?.data}
-      title={schemaTitle}
-      description={schemaDescription}
-      schema={pageSchemaForSEO}
-      contentType={openGraphContentType}
-      inProgress={inProgress}
-+     facebookImages={facebookImages}
-+     twitterImages={twitterImages}
-    />
-  );
-```
-
-After these changes, you can see the title, ingress and image of the
-article in the social media share.
-
-![Customised page sharing view](./share-custom.png)
+![Adding a call to action](./call-to-action-UI.png)
