@@ -1,17 +1,18 @@
 ---
-title: Page schema
-slug: page-schema
+title: Page asset schema
+slug: page-asset-schema
 updated: 2023-02-15
 category: references
 ingress:
-  Reference documentation providing information on the page schema.
+  Reference documentation providing information on the page asset
+  schema.
 published: true
 ---
 
-## What is a page schema
+## What is a page asset schema
 
 Page [assets](/references/assets/) in Flex have a structure that is
-defined by the page schema. The Flex page schema is based on
+defined by the page asset schema. The Flex page asset schema is based on
 [JSON schema](https://json-schema.org/).
 
 If you are not familiar with the JSON schema, you can learn more in the
@@ -20,37 +21,37 @@ ebook.
 
 <info>
 
-It is good to note that the static page schema is not the same as a
-[website structured data schema](https://schema.org/):
+It is good to note that the static page asset schema is not the same as
+a [website structured data schema](https://schema.org/):
 
-- Flex page schema is a Flex-specific description of the data being
-  returned from
+- Flex page asset schema is a Flex-specific description of the data
+  being returned from
   [Flex Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 - Schema.org structured data schema is a general vocabulary for
   representing the data content of a page in a way that is easily
   readable by e.g. search engines. <br/>
 
-Page schema is also distinct from an
+Page asset schema is also distinct from an
 [extended data search schema](/references/extended-data/#search-schema):
 
-- Page schema relates to page assets created by operators through Flex
-  Console. It enables building client applications that can predictably
-  handle page asset data.
+- Page asset schema relates to page assets created by operators through
+  Flex Console. It enables building client applications that can
+  predictably handle page asset data.
 - Extended data search schema relates to listings or users. It enables
   searching and filtering users and listings through the Flex APIs on
   the marketplace.
 
 </info>
   
-The page schema determines the structure of the page in both Flex Console and the page asset fetched from Asset Delivery API.
-- The page is created and modified in Flex Console, structured by the page schema
-- The page asset is then fetched to the client, and the data structure for all pages can be predicted based on the page schema.
+The page asset schema determines the structure of the page in both Flex Console and the page asset fetched from Asset Delivery API.
+- The page is created and modified in Flex Console, structured by the page asset schema
+- The page asset is then fetched to the client, and the data structure for all pages can be predicted based on the page asset schema.
 
-![Page schema in context](./page-schema-context.png)
+![Page asset schema in context](./page-schema-context.png)
 
-## Page schema syntax: properties and \$defs
+## Page asset schema syntax: properties and \$defs
 
-The page schema itself has two main parts:
+The page asset schema itself has two main parts:
 
 - properties
 - \$defs
@@ -161,9 +162,9 @@ _internalButtonLink_.
 
 ![Call to action with internal button](./internal-button-cta.png)
 
-## Using page schema when building a client
+## Using page asset schema when building a client
 
-Since the page schema defines the structure of the page asset, any
+Since the page asset schema defines the structure of the page asset, any
 client applications need to be built so that they can handle all
 situations where the data is valid according to the schema. For
 instance, required attributes are explicitly defined in the schema, so
@@ -180,13 +181,13 @@ For instance:
   _section.title.content_ to be a string with 1 or more characters, or
   an empty string, or _null_.
 
-## Full page schema
+## Full page asset schema
 
-You can download the full page schema here:
+You can download the full page asset schema here:
 
 - [page-schema.json](./page-schema.json)
 
-The representation below shows the page schema without _\_editor_
+The representation below shows the page asset schema without _\_editor_
 attributes, which are only used in Flex Console internally.
 
 ```json
