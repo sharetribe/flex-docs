@@ -8,8 +8,6 @@ ingress:
 published: true
 ---
 
-// TODO do we show the \_editor attributes as well?
-
 ## What is a page schema
 
 Page [assets](/references/assets/) in Flex have a structure that is
@@ -195,15 +193,10 @@ attributes, which are only used in Flex Console internally.
 {
   "type": "object",
   "properties": {
-    /**
-     * Metadata contains information that is not shown directly on the page, but it is shown in SEO,
-     * search engines, and e.g. browser tab.
-     */
     "meta": {
       "title": "SEO & Social",
       "type": "object",
       "properties": {
-        /** Meta page title */
         "pageTitle": {
           "type": "object",
           "properties": {
@@ -255,9 +248,6 @@ attributes, which are only used in Flex Console internally.
               "type": "object",
               "description": "Displayed when someone shares the page in social media. The image should have a 1.91:1 aspect ratio and a minimum size of 1200x630 pixels.",
               "properties": {
-                /** The image attribute contains a ref with an id and type. The API response contains
-                 *   an  "included" attribute with the full resource.
-                 */
                 "_ref": {
                   "type": "object",
                   "properties": {
@@ -291,8 +281,6 @@ attributes, which are only used in Flex Console internally.
         }
       }
     },
-    /** The 'sections' array contains information that does get shown on the CMS page.
-     */
     "sections": {
       "title": "Sections",
       "type": "array",
@@ -301,7 +289,6 @@ attributes, which are only used in Flex Console internally.
         "title": "Section details",
         "type": "object",
         "properties": {
-          /** Section id */
           "sectionId": {
             "description": "Section identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
             "type": "string",
@@ -309,7 +296,6 @@ attributes, which are only used in Flex Console internally.
             "minLength": 1,
             "pattern": "^[a-z][a-z0-9_\\-]*$"
           },
-          /** Section type */
           "sectionType": {
             "description": "Determines the layout of Content Blocks.",
             "type": "string",
@@ -337,7 +323,6 @@ attributes, which are only used in Flex Console internally.
               }
             ]
           },
-          /** Section title */
           "title": {
             "type": "object",
             "properties": {
@@ -362,7 +347,6 @@ attributes, which are only used in Flex Console internally.
               }
             }
           },
-          /** Section description */
           "description": {
             "type": "object",
             "properties": {
@@ -378,7 +362,6 @@ attributes, which are only used in Flex Console internally.
               }
             }
           },
-          /** Section call to action */
           "callToAction": {
             "type": "object",
             "properties": {
@@ -405,7 +388,6 @@ attributes, which are only used in Flex Console internally.
                 ]
               }
             },
-            /** Section call to action additional attributes */
             "allOf": [
               {
                 "if": {
@@ -435,7 +417,6 @@ attributes, which are only used in Flex Console internally.
               }
             ]
           },
-          /** Section appearance */
           "appearance": {
             "type": "object",
             "properties": {
@@ -456,7 +437,6 @@ attributes, which are only used in Flex Console internally.
                 ]
               }
             },
-            /** Section custom appearance additional attributes */
             "if": {
               "properties": {
                 "fieldType": {
@@ -511,7 +491,6 @@ attributes, which are only used in Flex Console internally.
               }
             }
           },
-          /** Section blocks */
           "blocks": {
             "title": "Content Blocks",
             "type": "array",
@@ -530,7 +509,6 @@ attributes, which are only used in Flex Console internally.
                   "const": "defaultBlock",
                   "$comment": "Currently, we only have one block type but in the future there could be many"
                 },
-                /** Block media */
                 "media": {
                   "type": "object",
                   "properties": {
@@ -554,9 +532,7 @@ attributes, which are only used in Flex Console internally.
                       ]
                     }
                   },
-                  /** Block media additional attributes */
                   "allOf": [
-                    /** Block image field type attributes */
                     {
                       "if": {
                         "properties": {
@@ -600,7 +576,6 @@ attributes, which are only used in Flex Console internally.
                           }
                         },
                         "required": ["alt"],
-                        /** Block image aspect ratios */
                         "allOf": [
                           {
                             "if": {
@@ -701,7 +676,6 @@ attributes, which are only used in Flex Console internally.
                         ]
                       }
                     },
-                    /** Block youtube field type properties */
                     {
                       "if": {
                         "properties": {
@@ -727,7 +701,6 @@ attributes, which are only used in Flex Console internally.
                     }
                   ]
                 },
-                /** Block title */
                 "title": {
                   "type": "object",
                   "properties": {
@@ -756,7 +729,6 @@ attributes, which are only used in Flex Console internally.
                     }
                   }
                 },
-                /** Block text */
                 "text": {
                   "type": "object",
                   "properties": {
@@ -773,7 +745,6 @@ attributes, which are only used in Flex Console internally.
                     }
                   }
                 },
-                /** Block call to action */
                 "callToAction": {
                   "type": "object",
                   "properties": {
@@ -800,7 +771,6 @@ attributes, which are only used in Flex Console internally.
                       ]
                     }
                   },
-                  /** Block call to action additional attributes */
                   "allOf": [
                     {
                       "if": {
@@ -835,7 +805,6 @@ attributes, which are only used in Flex Console internally.
             }
           }
         },
-        /** For section types 'columns' and 'carousel', numColumns is required */
         "if": {
           "anyOf": [
             {
@@ -883,14 +852,11 @@ attributes, which are only used in Flex Console internally.
           },
           "required": ["numColumns"]
         },
-        /** Section required attributes */
         "required": ["sectionId", "sectionType"]
       }
     }
   },
-  /** Definitions used in the schema */
   "$defs": {
-    /** Field types */
     "fieldType": {
       "none": {
         "const": "none"
@@ -929,7 +895,6 @@ attributes, which are only used in Flex Console internally.
         "const": "customAppearance"
       }
     },
-    /** Internal button link */
     "internalButtonLink": {
       "properties": {
         "content": {
@@ -951,7 +916,6 @@ attributes, which are only used in Flex Console internally.
       },
       "required": ["content", "href"]
     },
-    /** External button link */
     "externalButtonLink": {
       "properties": {
         "content": {
@@ -970,7 +934,6 @@ attributes, which are only used in Flex Console internally.
       },
       "required": ["content", "href"]
     },
-    /** Image params */
     "imageParams": {
       "scaled": {
         "const": {
@@ -1098,7 +1061,6 @@ attributes, which are only used in Flex Console internally.
         }
       }
     },
-    /** Aspect ratio */
     "aspectRatio": {
       "title": "Aspect ratio",
       "type": "string",
