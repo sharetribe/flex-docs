@@ -26,8 +26,7 @@ Find the Pages feature in [Console.](https://flex-console.sharetribe.com/) Navig
 
 If you don't have the feature available in Console and want to start
 using it, check out our article about
-[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/
-operator-guides/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
+[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/operator-guides/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
 
 
 ## Deciding how the page is structured
@@ -74,8 +73,7 @@ Reference images:
 ## Creating the Hero Section
 
 Let’s first create an introduction where we tell our users what the FAQ Section is all about. We’ll create our introduction using a Section using the single column template and with a fitting title and a text block, no call to action, and a Section appearance of our choosing. We don’t need to create additional Blocks because we do not want to include any other content in this Section. 
-Note that you can also use [Markdown](https://www.sharetribe.com/docs/
-operator-guides/how-to-format-your-text-in-pages/) when editing content with Pages. Markdown enables you to easily format text with **bold characters** and *italics*, it allows you to create lists, and much more.
+Note that you can also use [Markdown](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages/) when editing content with Pages. Markdown enables you to easily format text with **bold characters** and *italics*, it allows you to create lists, and much more.
 
 The top Section of a website that people see first when visiting your page is called the ‘Hero’ Section. In many cases, it includes a large picture, often in the background. Additionally, there can be text and potentially a ‘call to action’ which can essentially be something as simple as a button that says “Sign up” or “Browse listings” and has a link to that page. 
 
