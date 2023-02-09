@@ -19,6 +19,10 @@ One use case for creating static content is to have a library of
 articles related to your marketplace topic. This guide shows you how to
 create an interlinked library of content using the Pages feature.
 
+This article assumes that your client app can handle
+[hosted content assets](/concepts/content-management/). You can
+[update your client according to these instructions](/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).
+
 ## Why an article library?
 
 A static article library functions as a channel for

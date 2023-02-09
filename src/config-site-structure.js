@@ -32,7 +32,6 @@ const sortingArrayTutorialBranding = [
   'configurations',
   'change-default-locations',
   'customize-amenities-filter',
-  'add-faq-page',
   'deploy-to-render',
 ];
 const sortingArrayTutorialExtendedData = [

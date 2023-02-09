@@ -73,8 +73,9 @@ FTW.
 
 ## 4. Other optional changes
 
-- **Update [page schema](/tutorial/add-faq-page/#page-schema)** to
-  improve Search Engine Optimization (SEO)
+- **Update
+  [page schema](/ftw/how-to-add-static-pages-in-ftw/#add-page-schema)**
+  to improve Search Engine Optimization (SEO)
 - **Update ListingPage** to show extended data (aka publicData
   attribute).
   - It's inside _src/containers_ directory

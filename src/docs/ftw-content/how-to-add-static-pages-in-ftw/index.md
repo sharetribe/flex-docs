@@ -112,6 +112,8 @@ component which is done in the first line.
 import React from 'react';
 ```
 
+### Import components
+
 In the second line we import some components:
 
 - **LayoutSingleColumn** and wrappers that it needs to position content
@@ -175,6 +177,8 @@ component called SocialMediaPage with content defined in return part.
 This is a
 [functional component](https://reactjs.org/docs/components-and-props.html).
 
+### Add page schema
+
 In the template above we are using StaticPage component with some
 attributes:
 
@@ -184,7 +188,7 @@ attributes:
       title="Social media"
       schema={{
         "@context": "http://schema.org",
-        "@type": "SocialMediaPage",
+        "@type": "CollectionPage",
         "description": "Description of this page",
         "name": "Social media page",
       }}
@@ -198,7 +202,11 @@ attributes:
   `description="This is the description for the social media page"`
 - Then we have `schema` tag that defines some data for search engines in
   JSON-LD format. Check [schema.org](https://schema.org/docs/full.html)
-  for more information.
+  for more information. You can also review
+  [Google's structured data types](https://developers.google.com/search/docs/appearance/structured-data/search-gallery)
+  to see if one of them fits your use case.
+
+### Define component structure
 
 Inside **StaticPage** component we define layout
 (**LayoutSingleColumn**) and add other components inside semantic

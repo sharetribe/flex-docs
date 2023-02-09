@@ -14,8 +14,9 @@ page.
 
 ![Default landing page](./default-landing-page.png)
 
-You can modify your landing page in Flex Console > Build > Content. By
-default, your marketplace has four content pages already created:
+You can modify your landing page in
+[Flex Console > Build > Content > Pages](https://flex-console.sharetribe.com/content/pages).
+By default, your marketplace has four content pages already created:
 
 - Landing page
 - Terms of Service
@@ -84,6 +85,13 @@ You can now see a customised hero element on your marketplace landing
 page.
 
 ![Landing page with fully updated hero element](./landing-page-full-update.png)
+
+Read more:
+
+- Detailed instructions on
+  [editing content pages in Console](/operator-guides/how-to-edit-content-pages-in-console/)
+- Guide on creating
+  [an FAQ page](/operator-guides/how-to-create-an-faq-page/)
 
 There is still one obvious Saunatime image visible on top bar: Logo.
 It's time to change that next.<br />
