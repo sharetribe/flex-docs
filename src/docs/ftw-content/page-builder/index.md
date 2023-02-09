@@ -79,6 +79,8 @@ within Sections, and Sections are always nested within the Page Asset.
 Both Sections and Blocks may include Fields, which are key-value pairs
 encoding data such as title, ingress and background image.
 
+- Read more: [Page asset schema](/references/page-asset-schema/)
+
 It is up to the client application how it renders the data received
 through the Asset Delivery API. Identical Page Asset Data can, for
 example, be rendered using entirely different visual elements on two
