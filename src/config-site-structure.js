@@ -123,7 +123,7 @@ const sortingArrayFTWContent = [
   'how-to-change-ftw-bundled-microcopy',
   'hosted-microcopy',
   'how-to-change-ftw-language',
-  'page-builder',
+  'how-to-add-static-pages-in-ftw',
 ];
 
 const sortingArrayFTWIntroduction = [
