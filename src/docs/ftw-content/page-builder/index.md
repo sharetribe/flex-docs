@@ -365,6 +365,21 @@ Landing page, Terms of Service page and the CMSPage), repeat steps 8 and
 onward, replacing PrivacyPolicyPage with the component you want to
 enable.
 
+After these steps, you should be able to see the default pages in your
+template.
+
+<info>
+
+In case you have not yet added the default page assets in your Flex
+Console, you will see a fallback page with a default "Maintenance mode"
+text. If this is the case, you will need to go to your
+[Flex Console > Build > Content > Pages](https://flex-console.sharetribe.com/content/pages)
+and add the default content pages.
+
+![Maintenance mode landing page](./maintenance-mode.png)
+
+</info>
+
 In addition, Flex Console allows you to preview content pages in the
 template app. To enable this feature, you'll also need to copy over the
 PreviewResolverPage to src/containers/PreviewResolverPage, and import
