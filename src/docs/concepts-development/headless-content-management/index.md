@@ -26,8 +26,8 @@ that is managed through Pages. The headless architecture allows you to
 render the content in any client you choose, as it can be retrieved by a
 call to the Flex API.
 
-To illustrate further, here is how data fetched from the API maps to
-visual elements in the default “About page” in FTW:
+To illustrate further, here is an example of how data fetched from the
+API maps to visual elements in the default “About page” in FTW:
 
 ![How data is rendered on the about page](./data.png)
 
@@ -70,8 +70,16 @@ preferred code editor to make it easier to interpret:
 
 ![Example data formatted](./formatted.png)
 
-This data is meant for your client application to interpet. FTW can
+This data is meant for your client application to interpret. FTW can
 automatically render a landing page using this data.
+
+<info>
+
+Read more about the structure of page asset data:
+
+- [Page asset schema reference](/references/page-asset-schema/)
+
+</info>
 
 To see how changes in the Console are reflected in the actual data,
 let’s make a change to the landing page through Console. Edit the title
