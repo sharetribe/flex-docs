@@ -12,8 +12,7 @@ published: true
 This guide introduces how to use Pages. Pages lets you edit your
 marketplace’s static content pages, like your Landing page or About
 page. If you would like more background on the Pages feature, consult
-this [Introduction to Pages article](https://www.sharetribe.com/docs/
-operator-guides/introducing-pages/).
+this [Introduction to Pages article](https://www.sharetribe.com/docs/operator-guides/introducing-pages/).
 
 ## Introduction
 
@@ -23,8 +22,7 @@ Find the Pages feature in [Console.](https://flex-console.sharetribe.com/) Navig
 
 If you don't have the feature available in Console and want to start
 using it, check out our article about
-[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/
-operator-guides/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
+[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/operator-guides/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
 
 ### Sections, Blocks, Fields, and Section templates
 
