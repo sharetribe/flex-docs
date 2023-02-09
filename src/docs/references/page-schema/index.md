@@ -78,6 +78,10 @@ added to _callToAction_ .
     "type": "object",
     "properties": {
       "fieldType": {
+        "title": "Section call to action",
+        "type": "string",
+        "default": "none",
+        "description": "The action the user is prompted to take after viewing the section.",
         "oneOf": [
           {
             "$ref": "#/$defs/fieldType/none",
@@ -185,10 +189,11 @@ For instance:
 
 You can download the full page asset schema here:
 
-- [page-schema.json](./page-schema.json)
+- [page-asset-schema.json](./page-asset-schema.json)
 
 The representation below shows the page asset schema without _\_editor_
-attributes, which are only used in Flex Console internally.
+attributes, which are only used in Flex Console internally and are
+subject to change.
 
 ```json
 {
@@ -247,7 +252,7 @@ attributes, which are only used in Flex Console internally.
             "image": {
               "title": "Social media image",
               "type": "object",
-              "description": "Displayed when someone shares the page in social media. The image should have a 1.91:1 aspect ratio and a minimum size of 1200x630 pixels.",
+              "description": "Displayed when someone shares the page in social media. The image should have a 1.91:1 aspect ratio and minimum dimensions of 1200x630 pixels. It should not exceed 20MB in size.",
               "properties": {
                 "_ref": {
                   "type": "object",
@@ -456,7 +461,7 @@ attributes, which are only used in Flex Console internally.
                 "backgroundImage": {
                   "title": "Background image",
                   "type": "object",
-                  "description": "For the best result, the image should have a minimum size of 1600x1200 pixels.",
+                  "description": "For the best result, the image should have the minimum dimensions of 1600x1200 pixels. It should not exceed 20MB in size.",
                   "properties": {
                     "_ref": {
                       "type": "object",
@@ -547,7 +552,7 @@ attributes, which are only used in Flex Console internally.
                           "image": {
                             "title": "Image file",
                             "type": "object",
-                            "description": "Most common image formats are supported",
+                            "description": "Most common image formats are supported. The file should not exceed 20MB in size.",
                             "properties": {
                               "_ref": {
                                 "type": "object",
@@ -862,38 +867,38 @@ attributes, which are only used in Flex Console internally.
       "none": {
         "const": "none"
       },
-      "youtube": {
-        "const": "youtube"
-      },
-      "internalButtonLink": {
-        "const": "internalButtonLink"
-      },
       "heading1": {
         "const": "heading1"
-      },
-      "image": {
-        "const": "image"
-      },
-      "heading3": {
-        "const": "heading3"
-      },
-      "externalButtonLink": {
-        "const": "externalButtonLink"
       },
       "heading2": {
         "const": "heading2"
       },
-      "paragraph": {
-        "const": "paragraph"
+      "heading3": {
+        "const": "heading3"
       },
       "markdown": {
         "const": "markdown"
       },
-      "defaultAppearance": {
-        "const": "defaultAppearance"
+      "paragraph": {
+        "const": "paragraph"
+      },
+      "externalButtonLink": {
+        "const": "externalButtonLink"
+      },
+      "internalButtonLink": {
+        "const": "internalButtonLink"
       },
       "customAppearance": {
         "const": "customAppearance"
+      },
+      "defaultAppearance": {
+        "const": "defaultAppearance"
+      },
+      "image": {
+        "const": "image"
+      },
+      "youtube": {
+        "const": "youtube"
       }
     },
     "internalButtonLink": {
@@ -1088,7 +1093,3 @@ attributes, which are only used in Flex Console internally.
   }
 }
 ```
-
-### meta
-
-### sections
