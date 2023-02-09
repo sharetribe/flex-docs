@@ -238,6 +238,6 @@ if (
   });
 }
 
-if (PATH_PREFIX) {
-  module.exports.pathPrefix = PATH_PREFIX;
-}
+// if (PATH_PREFIX) {
+module.exports.pathPrefix = '/test';
+// }
