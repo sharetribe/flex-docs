@@ -830,6 +830,11 @@
     "source": "/tutorial/add-faq-page/",
     "destination": "/docs/operator-guides/how-to-create-an-faq-page/",
     "permanent": true
+  },
+  {
+    "source": "/tutorial/change-image-assets/",
+    "destination": "/docs/operator-guides/change-images/",
+    "permanent": true
   }
 ]
 }

@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-In 2023-01, Flex introduces a headless CMS-like feature to create static
+In 2023-02, Flex introduces a headless CMS-like feature to create static
 pages in Flex. The feature allows operators to modify a selection of
 default content pages without code, as well as create completely new
 pages.
