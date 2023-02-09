@@ -12,24 +12,41 @@ published: true
 If you want to create simple pages that just show static content without
 need for data fetches, you can create a static page.
 
+You might want to do this, for instance, if
+
+- you have a page that embeds a component that fetches its own data, or
+- you want to optimise some pages for performance, so that they don't
+  fetch any data.
+
+<info>
+
+If you do not have a specific reason to create a static page directly
+into the codebase, we recommend that you create your content pages using
+[Flex Pages](/concepts/content-management/). With Pages, you can create
+multiple content pages in Flex Console and render them all using
+[the same components in FTW](/ftw/page-builder/).
+
+</info>
+
 ## 1. Create a new folder
 
 Create a new folder under _src/containers/_ with the name of your static
-page. E.g. "about" page should be named as **AboutPage**.
+page. E.g. if you are creating a page for embedding your social media
+feeds, it should be named **SocialMediaPage**.
 
 ## 2. Create a JavaScript file
 
 Create a new JavaScript file using the folder name. The path should look
-like _src/containers/AboutPage/AboutPage.js_.
+like _src/containers/SocialMediaPage/SocialMediaPage.js_.
 
 ## 3. Create a CSS file
 
 Create a new CSS file using the folder name. The path should look like
-_src/containers/AboutPage/AboutPage.module.css_.
+_src/containers/SocialMediaPage/SocialMediaPage.module.css_.
 
 ## 4. Create the component
 
-Template for a single column static page (AboutPage.js): (We'll go
+Template for a single column static page (SocialMediaPage.js): (We'll go
 through this line-by-line below.)
 
 ```jsx
@@ -47,19 +64,19 @@ import {
 import StaticPage from '../../containers/StaticPage/StaticPage';
 import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 
-import css from './AboutPage.module.css';
+import css from './SocialMediaPage.module.css';
 import image from './path/to/image.png';
 
-const AboutPage = () => {
+const SocialMediaPage = () => {
   return (
     <StaticPage
       className={css.root}
-      title="About"
+      title="Social media"
       schema={{
         '@context': 'http://schema.org',
-        '@type': 'AboutPage',
+        '@type': 'SocialMediaPage',
         description: 'Description of this page',
-        name: 'About page',
+        name: 'Social media page',
       }}
     >
       <LayoutSingleColumn>
@@ -67,8 +84,7 @@ const AboutPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-          <h1>Some content</h1>
-          <img src={image} alt="My first ice cream." />
+          <!-- You will add your embedding widgets here -->
           <div>
             <NamedLink name="LandingPage">Go to home page</NamedLink> or
             <ExternalLink href="https://google.com">
@@ -84,7 +100,7 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default SocialMediaPage;
 ```
 
 We are using [React](https://reactjs.org/) and
@@ -142,7 +158,7 @@ folder. With CSS we are using
 possible clashes of different class names.
 
 ```jsx
-import css from './AboutPage.module.css';
+import css from './SocialMediaPage.module.css';
 ```
 
 Then we also import an image which is used later
@@ -153,9 +169,10 @@ import image from './path/to/image.png';
 ```
 
 Then after all the imports we are finally getting into phase were we
-define the component. `const AboutPage = props => { return <div></div>}`
-defines a component called AboutPage with content defined in return
-part. This is a
+define the component.
+`const SocialMediaPage = props => { return <div></div>}` defines a
+component called SocialMediaPage with content defined in return part.
+This is a
 [functional component](https://reactjs.org/docs/components-and-props.html).
 
 In the template above we are using StaticPage component with some
@@ -164,20 +181,21 @@ attributes:
 ```jsx
     <StaticPage
       className={css.root}
-      title="About"
+      title="Social media"
       schema={{
         "@context": "http://schema.org",
-        "@type": "AboutPage",
+        "@type": "SocialMediaPage",
         "description": "Description of this page",
-        "name": "About page",
+        "name": "Social media page",
       }}
     >
 ```
 
 - `className` is JSX name for `class` attribute used in plain HTML.
-- `title="About"` creates `<title>About</title>` element to `<head>`
-  section of the page. (That title is also used in OpenGraph meta tags).
-  You could also add `description="This is about page description"`
+- `title="Social media"` creates `<title>Social media</title>` element
+  to `<head>` section of the page. (That title is also used in OpenGraph
+  meta tags). You could also add
+  `description="This is the description for the social media page"`
 - Then we have `schema` tag that defines some data for search engines in
   JSON-LD format. Check [schema.org](https://schema.org/docs/full.html)
   for more information.
@@ -193,8 +211,7 @@ render those blocks.
     <TopbarContainer />
   </LayoutWrapperTopbar>
   <LayoutWrapperMain>
-    <h1>Some content</h1>
-    <img src={image} alt="My first ice cream." />
+    <!-- You will add your embedding widgets here -->
     <div>
       <NamedLink name="LandingPage">Go to home page</NamedLink> or
       <ExternalLink href="https://google.com">
@@ -209,12 +226,13 @@ render those blocks.
 ```
 
 And as a final step we need to export the component.
-`export default AboutPage;`. See more from
+`export default SocialMediaPage;`. See more from
 [babeljs.org](https://babeljs.io/docs/en/learn/#modules)
 
 ## 5. Add some styles to the CSS file
 
-Here's an example what your _AboutPage.module.css_ file could look like:
+Here's an example what your _SocialMediaPage.module.css_ file could look
+like:
 
 ```css
 /**
@@ -247,22 +265,22 @@ Add a new asynchronous import for the page in the beginning of the file
 with other page imports:
 
 ```js
-const AboutPage = loadable(() =>
+const SocialMediaPage = loadable(() =>
   import(
-    /* webpackChunkName: "AboutPage" */ './containers/AboutPage/AboutPage'
+    /* webpackChunkName: "SocialMediaPage" */ './containers/SocialMediaPage/SocialMediaPage'
   )
 );
 ```
 
 and after that add the route configuration to your newly created page:
-(In this example we created about page so '/about' would work well as a
-path.)
+(In this example we created social media page so '/socialmedia' would
+work well as a path.)
 
 ```javascript
 {
-  path: '/about',
-  name: 'AboutPage',
-  component: AboutPage,
+  path: '/socialmedia',
+  name: 'SocialMediaPage',
+  component: SocialMediaPage,
 },
 ```
 
