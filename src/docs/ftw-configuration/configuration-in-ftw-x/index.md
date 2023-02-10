@@ -20,7 +20,7 @@ configuration files in the
 
 All relevant configuration is split between the following files and the
 environment variables. You can see the available environment variables
-from the [template environment variables](/ftw/ftw-env/) article.
+in the [template environment variables](/ftw/ftw-env/) article.
 
 - [configBranding.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configBranding.js)
   - Marketplace colour, logos, Facebook and Twitter media
@@ -351,4 +351,5 @@ The
 [configTransaction.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configTransaction.js)
 file is an array of transaction processes. By default, only one of the
 configurations is active, and the rest of them are commented out. You
-can use this configuration to enable different transaction processes.
+can use this configuration to enable different, or multiple, transaction
+processes.

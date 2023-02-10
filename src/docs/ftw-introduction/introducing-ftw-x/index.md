@@ -71,7 +71,7 @@ more in the
   customizable, and you can make any desired changes to the code. There
   are no limits to how far you can customize the template. See our
   [catalog of how-to articles](/how-to/) or the
-  [customization checklist](/ftw/customization-checklist/) for advise
+  [customization checklist](/ftw/customization-checklist/) for advice
   and inspiration.
 
 ## Key differences from legacy templates
@@ -82,14 +82,14 @@ ftw-product. The Sharetribe Web Template combines the features of the
 previous templates into one template and allows developers to enable
 features from each using configuration variables. If you are looking for
 documentation or information regarding the legacy templates, see the
-[legacy templates article](/ftw/ftw-legacy/).
+[legacy templates article](/ftw/legacy-templates/).
 
 The new template introduces many changes. Here is a list that details
 the most important of them:
 
 - [Configurations](/ftw/configuration/) allow you to make a variety of
   changes without touching code. You can toggle between different
-  layouts, change search options, add new extended data fields and much
+  layouts, change search options, add new extended data fields, and much
   more.
 - Handling extended data is significantly easier and can be done through
   a configuration file. For example, you can add a new extended data
