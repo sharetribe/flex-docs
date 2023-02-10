@@ -82,8 +82,9 @@ The process can issue the payout in a separate transition.
 ### Push payment flow
 
 For push payments, there is no preauthorization. Once the customer
-confirms the payment, a charge is made immediately. The charge moves
-money immediately to the provider's Stripe Connect account.
+confirms the payment, it gets captured automatically and a charge is
+made immediately. The charge moves money immediately to the provider's
+Stripe Connect account.
 
 ![Push payment flow](push-payment-flow.png 'Push payment flow in Flex.')
 

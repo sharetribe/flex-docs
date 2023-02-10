@@ -1,0 +1,830 @@
+{
+  "redirects":
+[
+  {
+    "source": "/background/development-skills/",
+    "destination": "/docs/introduction/development-skills/",
+    "permanent": true
+  },
+  {
+    "source": "/background/ftw-redux/",
+    "destination": "/docs/ftw/ftw-redux/",
+    "permanent": true
+  },
+  {
+    "source": "/background/ftw-routing/",
+    "destination": "/docs/ftw/how-routing-works-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/background/getting-started/",
+    "destination": "/docs/introduction/introducing-flex/",
+    "permanent": true
+  },
+  {
+    "source": "/background/how-to-build-and-launch-with-flex/",
+    "destination": "/docs/introduction/how-to-build-and-launch-with-flex/",
+    "permanent": true
+  },
+  {
+    "source": "/background/introducing-flex/",
+    "destination": "/docs/introduction/introducing-flex/",
+    "permanent": true
+  },
+  {
+    "source": "/background/is-flex-right-for-you/",
+    "destination": "/docs/introduction/is-flex-right-for-you/",
+    "permanent": true
+  },
+  {
+    "source": "/background/overview/",
+    "destination": "/docs/introduction/introducing-flex/",
+    "permanent": true
+  },
+  {
+    "source": "/background/save-payment-card/",
+    "destination": "/docs/how-to/save-payment-card/",
+    "permanent": true
+  },
+  {
+    "source": "/background/time-based-template/",
+    "destination": "/docs/ftw/ftw-hourly/",
+    "permanent": true
+  },
+  {
+    "source": "/background/transaction-engine/",
+    "destination": "/docs/concepts/transaction-process/",
+    "permanent": true
+  },
+  {
+    "source": "/background/what-is-the-difference-between-flex-and-go-open-source/",
+    "destination": "/docs/operator-guides/what-is-the-difference-between-flex-and-go-source-available/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/ftw-customization-checklist/",
+    "destination": "/docs/ftw/customization-checklist/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-add-static-pages-in-ftw/",
+    "destination": "/docs/ftw/how-to-add-static-pages-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-change-ftw-icons/",
+    "destination": "/docs/ftw/how-to-change-ftw-icons/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-change-ftw-ui-texts-and-translations/",
+    "destination": "/docs/ftw/how-to-change-ftw-ui-texts/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-change-search-filters-in-ftw/",
+    "destination": "/docs/how-to/change-search-filters-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-change-tos-and-privacy-policy-in-ftw/",
+    "destination": "/docs/ftw/customization-checklist/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-change-transaction-process-in-ftw/",
+    "destination": "/docs/how-to/change-transaction-process-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-customize-ftw-styles/",
+    "destination": "/docs/ftw/how-to-customize-ftw-styles/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-customize-ftw/",
+    "destination": "/docs/ftw/how-to-customize-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-customize-pricing/",
+    "destination": "/docs/how-to/how-to-customize-pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-deploy-ftw-to-production/",
+    "destination": "/docs/ftw/how-to-deploy-ftw-to-production/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-enable-login-as-user/",
+    "destination": "/docs/how-to/enable-login-as-user/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-extend-listing-data-in-ftw/",
+    "destination": "/docs/how-to/extend-listing-data-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-improve-performance/",
+    "destination": "/docs/ftw/how-to-improve-performance/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-sanitize-user-generated-content-in-ftw/",
+    "destination": "/docs/ftw/how-to-sanitize-user-generated-content-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-set-up-analytics-for-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-analytics-for-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-set-up-and-use-stripe/",
+    "destination": "/docs/how-to/set-up-and-use-stripe/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-set-up-csp-for-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-csp-for-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-set-up-currency-in-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-currency-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-set-up-mapbox-for-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-mapbox-for-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-set-up-sentry-to-log-errors-in-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-sentry/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-take-payment-intents-into-use/",
+    "destination": "/docs/how-to/enable-payment-intents/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-take-time-based-bookings-into-use/",
+    "destination": "/docs/how-to/enable-time-based-bookings-into-use/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-test-ftw/",
+    "destination": "/docs/ftw/how-to-test-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-use-ci-with-ftw/",
+    "destination": "/docs/ftw/how-to-use-ci-with-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-use-google-maps-in-ftw/",
+    "destination": "/docs/ftw/how-to-use-google-maps-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/how-to-use-keyword-search-in-topbar/",
+    "destination": "/docs/how-to/use-keyword-search-in-topbar/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/provider-onboarding-and-identity-verification/",
+    "destination": "/docs/how-to/provider-onboarding-and-identity-verification/",
+    "permanent": true
+  },
+  {
+    "source": "/guides/stripe-connect-platform-review/",
+    "destination": "/docs/how-to/stripe-connect-platform-review/",
+    "permanent": true
+  },
+  {
+    "source": "/references/ftw-env/",
+    "destination": "/docs/ftw/ftw-env/",
+    "permanent": true
+  },
+  {
+    "source": "/references/ftw/",
+    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorials/edit-email-templates-with-flex-cli/",
+    "destination": "/docs/how-to/edit-email-templates-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorials/edit-transaction-process-with-flex-cli/",
+    "destination": "/docs/how-to/edit-transaction-process-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorials/getting-started-with-flex-cli/",
+    "destination": "/docs/introduction/getting-started-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorials/getting-started-with-ftw/",
+    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorials/getting-started-with-ftw/",
+    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorials/getting-started-with-integration-api/",
+    "destination": "/docs/introduction/getting-started-with-integration-api/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorials/manage-search-schemas-with-flex-cli/",
+    "destination": "/docs/how-to/manage-search-schemas-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/background/custom-pricing/",
+    "destination": "/docs/concepts/pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-payments/customize-pricing/",
+    "destination": "/docs/how-to/how-to-customize-pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw/how-to-change-ftw-ui-texts-and-translations/",
+    "destination": "/docs/ftw/how-to-change-ftw-ui-texts/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/first-edit/",
+    "destination": "/docs/tutorial/first-edit/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/change-image-assets/",
+    "destination": "/docs/tutorial/change-image-assets/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/change-logo/",
+    "destination": "/docs/tutorial/change-logo/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/working-with-translations/",
+    "destination": "/docs/tutorial/working-with-translations/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/configurations/",
+    "destination": "/docs/tutorial/configurations/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/change-default-locations/",
+    "destination": "/docs/tutorial/change-default-locations/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/customize-amenities-filter/",
+    "destination": "/docs/tutorial/customize-amenities-filter/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/add-faq-page/",
+    "destination": "/docs/tutorial/add-faq-page/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-branding/deploy-to-heroku/",
+    "destination": "/docs/tutorial/deploy-to-render/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-extended-data/add-extended-data/",
+    "destination": "/docs/tutorial/add-extended-data/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-extended-data/show-extended-data/",
+    "destination": "/docs/tutorial/show-extended-data/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-extended-data/filter-with-extended-data/",
+    "destination": "/docs/tutorial/filter-with-extended-data/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-transaction-process/customize-pricing-tutorial/",
+    "destination": "/docs/tutorial/customize-pricing-tutorial/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-transaction-process/create-transaction-process/",
+    "destination": "/docs/tutorial/create-transaction-process/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-transaction-process/use-protected-data-in-emails/",
+    "destination": "/docs/tutorial/use-protected-data-in-emails/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial-transaction-process/add-new-email-notification/",
+    "destination": "/docs/tutorial/add-new-email-notification/",
+    "permanent": true
+  },
+  {
+    "source": "/background/concepts/",
+    "destination": "/docs/operator-guides/concepts/",
+    "permanent": true
+  },
+  {
+    "source": "/background/features/",
+    "destination": "/docs/operator-guides/features/",
+    "permanent": true
+  },
+  {
+    "source": "/background/transaction-process/",
+    "destination": "/docs/concepts/transaction-process/",
+    "permanent": true
+  },
+  {
+    "source": "/background/pricing/",
+    "destination": "/docs/concepts/pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/background/what-is-the-difference-between-flex-and-go-source-available/",
+    "destination": "/docs/operator-guides/what-is-the-difference-between-flex-and-go-source-available/",
+    "permanent": true
+  },
+  {
+    "source": "/background/payments-overview/",
+    "destination": "/docs/concepts/payments-overview/",
+    "permanent": true
+  },
+  {
+    "source": "/background/payment-methods-overview/",
+    "destination": "/docs/concepts/payment-methods-overview/",
+    "permanent": true
+  },
+  {
+    "source": "/background/payment-intents/",
+    "destination": "/docs/concepts/payment-intents/",
+    "permanent": true
+  },
+  {
+    "source": "/background/strong-customer-authentication/",
+    "destination": "/docs/concepts/strong-customer-authentication/",
+    "permanent": true
+  },
+  {
+    "source": "/background/privileged-transitions/",
+    "destination": "/docs/concepts/privileged-transitions/",
+    "permanent": true
+  },
+  {
+    "source": "/background/off-session-payments-in-transaction-process/",
+    "destination": "/docs/concepts/off-session-payments-in-transaction-process/",
+    "permanent": true
+  },
+  {
+    "source": "/background/using-stored-payment-cards/",
+    "destination": "/docs/concepts/using-stored-payment-cards/",
+    "permanent": true
+  },
+  {
+    "source": "/background/solving-payout-problems/",
+    "destination": "/docs/concepts/solving-payout-problems/",
+    "permanent": true
+  },
+  {
+    "source": "/background/commissions-and-monetizing-your-platform/",
+    "destination": "/docs/concepts/commissions-and-monetizing-your-platform/",
+    "permanent": true
+  },
+  {
+    "source": "/background/how-the-search-works/",
+    "destination": "/docs/concepts/how-the-listing-search-works/",
+    "permanent": true
+  },
+  {
+    "source": "/background/marketplace-api-integration-api/",
+    "destination": "/docs/concepts/marketplace-api-integration-api/",
+    "permanent": true
+  },
+  {
+    "source": "/background/authentication-api/",
+    "destination": "/docs/concepts/authentication-api/",
+    "permanent": true
+  },
+  {
+    "source": "/background/social-logins-and-sso/",
+    "destination": "/docs/concepts/social-logins-and-sso/",
+    "permanent": true
+  },
+  {
+    "source": "/background/applications/",
+    "destination": "/docs/concepts/applications/",
+    "permanent": true
+  },
+  {
+    "source": "/background/flex-environments/",
+    "destination": "/docs/concepts/flex-environments/",
+    "permanent": true
+  },
+  {
+    "source": "/background/requiring-approval/",
+    "destination": "/docs/concepts/requiring-approval/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-data-model/extend-listing-data-in-ftw/",
+    "destination": "/docs/how-to/extend-listing-data-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-design/customize-image-sizes/",
+    "destination": "/docs/how-to/customize-image-sizes/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-search/change-search-filters-in-ftw/",
+    "destination": "/docs/how-to/change-search-filters-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-search/use-keyword-search-in-topbar/",
+    "destination": "/docs/how-to/use-keyword-search-in-topbar/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-transaction-process/change-transaction-process-in-ftw/",
+    "destination": "/docs/how-to/change-transaction-process-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-transaction-process/enable-time-based-bookings-into-use/",
+    "destination": "/docs/how-to/enable-time-based-bookings-into-use/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-payments/how-to-customize-pricing/",
+    "destination": "/docs/how-to/how-to-customize-pricing/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-payments/set-up-and-use-stripe/",
+    "destination": "/docs/how-to/set-up-and-use-stripe/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-payments/provider-onboarding-and-identity-verification/",
+    "destination": "/docs/how-to/provider-onboarding-and-identity-verification/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-payments/enable-payment-intents/",
+    "destination": "/docs/how-to/enable-payment-intents/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-payments/save-payment-card/",
+    "destination": "/docs/how-to/save-payment-card/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-payments/stripe-connect-platform-review/",
+    "destination": "/docs/how-to/stripe-connect-platform-review/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-payments/removing-stripe-and-payments/",
+    "destination": "/docs/how-to/removing-stripe-and-payments/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-manage/enable-login-as-user/",
+    "destination": "/docs/how-to/enable-login-as-user/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-manage/implement-delete-user/",
+    "destination": "/docs/how-to/implement-delete-user/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-emails/set-up-outgoing-email-settings/",
+    "destination": "/docs/how-to/set-up-outgoing-email-settings/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-social-logins-and-sso/enable-facebook-login/",
+    "destination": "/docs/how-to/enable-facebook-login/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-social-logins-and-sso/enable-google-login/",
+    "destination": "/docs/how-to/enable-google-login/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-social-logins-and-sso/enable-open-id-connect-login/",
+    "destination": "/docs/how-to/enable-open-id-connect-login/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-social-logins-and-sso/setup-open-id-connect-proxy/",
+    "destination": "/docs/how-to/setup-open-id-connect-proxy/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-events/like-feature/",
+    "destination": "/docs/how-to/like-feature/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-events/reacting-to-events/",
+    "destination": "/docs/how-to/reacting-to-events/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook-events/set-up-and-use-zapier/",
+    "destination": "/docs/how-to/set-up-and-use-zapier/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-testing-error-handling/how-to-use-ci-with-ftw/",
+    "destination": "/docs/ftw/how-to-use-ci-with-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-styling/how-to-change-ftw-icons/",
+    "destination": "/docs/ftw/how-to-change-ftw-icons/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-styling/how-to-change-ftw-ui-texts-and-translations/",
+    "destination": "/docs/ftw/how-to-change-ftw-ui-texts/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-testing-error-handling/how-to-set-up-sentry/",
+    "destination": "/docs/ftw/how-to-set-up-sentry/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-styling/how-to-improve-performance/",
+    "destination": "/docs/ftw/how-to-improve-performance/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-styling/how-to-customize-ftw-styles/",
+    "destination": "/docs/ftw/how-to-customize-ftw-styles/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-security/how-to-sanitize-user-generated-content-in-ftw/",
+    "destination": "/docs/ftw/how-to-sanitize-user-generated-content-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-styling/how-to-add-static-pages-in-ftw/",
+    "destination": "/docs/ftw/how-to-add-static-pages-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-security/how-to-set-up-csp-for-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-csp-for-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-search/how-to-use-google-maps-in-ftw/",
+    "destination": "/docs/ftw/how-to-use-google-maps-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-search/how-to-set-up-mapbox-for-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-mapbox-for-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-routing/how-code-splitting-works-in-ftw/",
+    "destination": "/docs/ftw/how-code-splitting-works-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-routing/how-routing-works-in-ftw/",
+    "destination": "/docs/ftw/how-routing-works-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-introduction/ftw-hourly/",
+    "destination": "/docs/ftw/ftw-hourly/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-introduction/ftw-product/",
+    "destination": "/docs/ftw/ftw-product/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-introduction/ftw-customization-checklist/",
+    "destination": "/docs/ftw/ftw-customization-checklist/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-introduction/how-to-customize-ftw/",
+    "destination": "/docs/ftw/how-to-customize-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-testing-error-handling/how-to-test-ftw/",
+    "destination": "/docs/ftw/how-to-test-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-configuration/ftw-env/",
+    "destination": "/docs/ftw/ftw-env/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-analytics/how-to-set-up-analytics-for-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-analytics-for-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-hosting/how-to-deploy-ftw-to-production/",
+    "destination": "/docs/ftw/how-to-deploy-ftw-to-production/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-configuration/how-to-set-up-currency-in-ftw/",
+    "destination": "/docs/ftw/how-to-set-up-currency-in-ftw/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw-data-flow/ftw-redux/",
+    "destination": "/docs/ftw/ftw-redux/",
+    "permanent": true
+  },
+  {
+    "source": "/flex-cli/getting-started-with-flex-cli/",
+    "destination": "/docs/introduction/getting-started-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/flex-cli/edit-transaction-process-with-flex-cli/",
+    "destination": "/docs/how-to/edit-transaction-process-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/flex-cli/edit-email-templates-with-flex-cli/",
+    "destination": "/docs/how-to/edit-email-templates-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/flex-cli/manage-search-schemas-with-flex-cli/",
+    "destination": "/docs/how-to/manage-search-schemas-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/flex-cli/view-events-with-flex-cli/",
+    "destination": "/docs/how-to/view-events-with-flex-cli/",
+    "permanent": true
+  },
+  {
+    "source": "/integrations/getting-started-with-integration-api/",
+    "destination": "/docs/introduction/getting-started-with-integration-api/",
+    "permanent": true
+  },
+  {
+    "source": "/integrations/how-to-integrate-3rd-party-payment-gateway/",
+    "destination": "/docs/how-to/how-to-integrate-3rd-party-payment-gateway/",
+    "permanent": true
+  },
+  {
+    "source": "/references/api/",
+    "destination": "/docs/concepts/api/",
+    "permanent": true
+  },
+  {
+    "source": "/references/js-sdk/",
+    "destination": "/docs/concepts/js-sdk/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/change-transaction-process/",
+    "destination": "/docs/concepts/change-transaction-process/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/console-overview/",
+    "destination": "/docs/concepts/console-overview/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/design-txn-process-with-whimsical/",
+    "destination": "/docs/concepts/change-transaction-process/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/extended-data-introduction/",
+    "destination": "/docs/concepts/extended-data-introduction/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/go-to-flex-migration/",
+    "destination": "/docs/how-to/go-to-flex-migration/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/introducing-sneakertime/",
+    "destination": "/docs/introduction/introducing-sneakertime/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/introducing-yogatime/",
+    "destination": "/docs/introduction/introducing-yogatime/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/inventory-management/",
+    "destination": "/docs/concepts/inventory-management/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/manage-seats/",
+    "destination": "/docs/concepts/manage-seats/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/migrating-from-outside-sharetribe/",
+    "destination": "/docs/how-to/migrating-from-outside-sharetribe/",
+    "permanent": true
+  },
+  {
+    "source": "/operator-guides/transaction-process/",
+    "destination": "/docs/concepts/transaction-process/",
+    "permanent": true
+  },
+  {
+    "source": "/design-toolkit/user-journey/",
+    "destination": "/docs/design-toolkit/user-journey-saunatime/",
+    "permanent": true
+  },
+  {
+    "source": "/cookbook/",
+    "destination": "/docs/how-to/",
+    "permanent": true
+  },
+  {
+    "source": "/background/",
+    "destination": "/docs/concepts/",
+    "permanent": true
+  },
+  {
+    "source": "/sitemap.xml",
+    "destination": "/docs/sitemap/sitemap-index.xml",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial/working-with-translations/",
+    "destination": "/docs/tutorial/working-with-microcopy/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw/how-to-change-ftw-bundled-translations/",
+    "destination": "/docs/ftw/how-to-change-ftw-bundled-microcopy/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw/hosted-translations/",
+    "destination": "/docs/ftw/hosted-microcopy/",
+    "permanent": true
+  },
+  {
+    "source": "/concepts/translations/",
+    "destination": "/docs/concepts/microcopy/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial/deploy-to-heroku/",
+    "destination": "/docs/tutorial/deploy-to-render/",
+    "permanent": true
+  }
+]
+}

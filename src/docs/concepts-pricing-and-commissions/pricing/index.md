@@ -10,11 +10,6 @@ ingress:
 published: true
 ---
 
-_**NOTE! The current default pricing method has deprecated our old
-custom pricing feature. If you are looking for the old custom pricing
-background article, it can be found
-[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/background/custom-pricing/).**_
-
 ## What kind of pricing can you achieve with Flex
 
 It's common for a marketplace to base it's pricing on the length of a
