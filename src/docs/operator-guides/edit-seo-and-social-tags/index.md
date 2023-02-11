@@ -1,27 +1,26 @@
 ---
-title: How to edit SEO & social tags in Pages
-slug: how-to-edit-seo-and-social-tags-in-pages
+title: How to edit SEO & social metadata tags in Pages
+slug: how-to-edit-seo-and-social-metadata-in-pages
 updated: 2023-02-08
 category: operator-guides
-ingress: Change SEO and social tags in Pages
+ingress: Change metadata for SEO and Social media
 published: true
 ---
 
-Meta tags are a fundamental part of any static content page. They
-determine how social media platforms, browsers and search engines will
-display your marketplace. Google, for example, uses your SEO metatags to
-populate their search results page.
+Every page has metadata that determines how search engines and social
+media platforms will display it. Google, for example, uses the title and
+description you set to your page to populate their search results page.
 
-## Edit your meta tags
+## Edit your metadata tags
 
-When editing your content page, navigating to the 
-"SEO & Social" tab lets you alter its meta tags. You can edit the following meta
+When editing your content page, navigating to the "SEO & Social" tab
+lets you alter its metadata tags. You can edit the following metadata
 tags:
 
-- Page title: This tag determines what is displayed in the browsers
-  window and search engines search result titles.
-- Page description: Search engines might use this tag's content to give
-  more information about your page in their search results page.
+- Page title: This metadata tag determines what is displayed in the
+  browsers window and search engines search result titles.
+- Page description: Search engines might use this metadata tag's content
+  to give more information about your page in their search results page.
 - Page title for social media: The page title used specifically when
   your site is shared in social media.
 - Page description for social media: The page description used
