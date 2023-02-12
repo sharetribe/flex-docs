@@ -12,19 +12,29 @@ published: true
 This guide introduces how to use Pages. Pages lets you edit your
 marketplace’s static content pages, like your Landing page or About
 page. If you would like more background on the Pages feature, consult
-this [Introduction to Pages article](https://www.sharetribe.com/docs/operator-guides/introducing-pages/).
+this
+[Introduction to Pages article](https://www.sharetribe.com/docs/operator-guides/introducing-pages/).
 
 ## Introduction
 
 ### Gettings started
 
-Find the Pages feature in [Console.](https://flex-console.sharetribe.com/) Navigate to your Development environment, pick the “Build” section from your top bar, select “Content” from the sub-menu, then select “Pages” from the left side menu. You should now see your default content pages (the About page, the Landing page, the Terms of use page, and the Policy page) ready for editing. 
+Find the Pages feature in
+[Console](https://flex-console.sharetribe.com/). Navigate to your Demo
+environment, pick the “Build” section from your top bar, select
+“Content” from the sub-menu, then select “Pages” from the left side
+menu. You should now see your default content pages (the About page, the
+Landing page, the Terms of use page, and the Policy page) ready for
+editing. You can also access the feature directly through the path
+https://flex-console.sharetribe.com/content/pages. Make sure that you
+are in the demo environment of your marketplace if you want to start
+modifying your Pages right away.
 
-If you don't have the feature available in Console and want to start
-using it, check out our article about
+If you don't have the default Pages available in Console and want to
+start trying out this feature, check out our article about
 [enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/operator-guides/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
 
-### Sections, Blocks, Fields, and Section templates
+### Sections, Blocks, Fields, and templates
 
 Content pages in your marketplace are built using Sections, Blocks, and
 Fields.
@@ -32,29 +42,29 @@ Fields.
 determine layout and content type per Section.
 
 Any Page, including your Landing page, consists of a set of Sections. A
-Section is a part of the page that takes full page width and has
-predetermined content inside it, in a specific layout, determined by the
-chosen Section template. Every Section in a content page is created and
-managed independently from other Sections.
+Section is a part of the page that takes full page width and can hold
+content inside it. Each Section can have a title, a description, a call
+to action, and a number of Content Blocks. Section Template determines
+the layout of the Content Blocks. Every Section in a content page is
+created and managed independently from other Sections.
 
-The basic content of the section is stored using fields. Examples of
-Section fields include title, description, button content, and
-background.
+The basic content of the Section is stored using fields. Examples of
+Section fields include title, description, call to action content, and
+appearance.
 
 Each Section can also contain any number of Blocks. Blocks normally
 contain more detailed information for a Section. Each Block is made up
-of different fields like image, videos, titles, ingresses, texts, and
-buttons.
+of different fields like media, titles, text, and call to action.
 
 The default landing page in a Flex marketplace Demo environment has
 different type of Sections that will help you get an idea of what is
-possible with the Pages editor.
+possible with Pages.
 
-![Content-model-sections](/content-model-landing-page.png 'Content model')
+![Content model Sections](/content-model-landing-page.png 'Content model')
 
-The rest of the article explains the steps to work with the Pages editor in general, which can
-be used when modify an existing page or when creating an entirely new
-page from scratch.
+The rest of the article explains the steps to work and edit Pages in
+general, which can be used when modify an existing page or when creating
+an entirely new page from scratch.
 
 ## How to add Sections
 
@@ -63,30 +73,30 @@ These are the typical steps to create a new Section:
 - Define the Section ID
 - Select the Section template
 - Define number of columns (for carousel and column templates only)
-- Add text content (optional)
+- Add title and/or description (optional)
 - Add call-to-action content (optional)
-- Specify background and theme options
-- Add blocks to a section (optional)
+- Specify background and text color
+- Add Blocks to a Section (optional)
 
 To add a Section, click on the “+ Add a new Section” link.
 
-![Landing page sections in pages editor](/landing-page-sections.png 'Landing Page Sections')
-_Examples of sections you can create with Pages. You can decide to add new Sections, as well
-as editing or removing existing sections._
+![Landing page Sections in Pagesr](/landing-page-sections.png 'Landing Page Sections')
+_Examples of Sections you can create with Pages. You can decide to add
+new Sections, as well as editing or removing existing Sections._
 
-### Define the section ID
+### Define the Section ID
 
-When creating a new section you need to define the section-id, or the
+When creating a new Section you need to define the section-id, or the
 name of the Section. It must be unique and should be descriptive. The
-clearer you make it, the easier it will be to identify this section
+clearer you make it, the easier it will be to identify this Section
 later on and edit the Page in the future.
 
 **Important:** if you don’t select an identifier, you will not be able
-to save your landing page.
+to save your Page.
 
 ### Select the Section template
 
-The Section template determines how Blocks are laid out in your section.
+The Section template determines how Blocks are laid out in your Section.
 There are four possible layouts:
 
 - Article: Narrow one column layout optimized for reading
@@ -96,26 +106,28 @@ There are four possible layouts:
 - Features: Text and media are displayed side by side in alternating
   order
 
-You can see examples of each section template in our
+You can see examples of each Section template in our
 [Section templates article](https://www.sharetribe.com/docs/operator-guides/section-templates/)
 
 _Tip:_ The template can be modified later on, so don’t worry too much
 about it when testing,
 
-**Important:** if you don’t select a section template, you will not be
+**Important:** if you don’t select a Section template, you will not be
 able to save your landing page.
 
-### Add text content (Optional)
+### Add title and/or description (Optional)
 
 You can add the title and description you want your users to see. The
-title will be displayed in bigger font at the top of the section. How
+title will be displayed in bigger font at the top of the Section. How
 big is determined by your title header level. H1 is bigger than H2. The
 title size also determines the HTML level header indexed by search
-engines. You can use the title to explain the content of the section or
+engines. You can use the title to explain the content of the Section or
 define a larger text that you want to highlight.
 
-The description refers to the subtitle of the section. It can be used as
-a short or long description for the section. These texts are optional.
+_Tip:_ For SEO reasons, every page should only have a single H1 title.
+
+The description refers to the subtitle of the Section. It can be used as
+a short or long description for the Section. These texts are optional.
 
 ![Carousel image with title and description example](/title-and-description.png 'Title and description example')
 
@@ -133,15 +145,16 @@ type of call to action, the text and the specific link.
     this Section. You can always add buttons via call to action settings
     withing blocks
   - **Internal link** means that the link will open in the same tab. The
-    link should point to an internal folder within your marketplace,
-    with a partial URL.
-  - **External link** means that the link will open in a new tab. You
-    need to specify the complete URL.
+    link should point to another page within your marketplace. You
+    should only include the path after your main marketplace URL.
+  - **External link** means that the link will open in a new tab. The
+    link should point to a location outside your marketplace. You need
+    to specify the complete URL.
 - Link text: The text within the call to action button. Try to make the
   text short and simple to engage your visitors and incite them to
   action.
 - Link address: The URL or folder for the button.
-  - **Internal link:** you have to specify a folder within your
+  - **Internal link:** you have to specify a path within your
     marketplace. For example “/p/about”, it will take your users to
     `https://yourmarketplaceurl.com/p/about`
   - **External link:** you have to specify a complete URL. You need to
@@ -162,33 +175,33 @@ between them. Between rgb(252,252,252) and rgb(250,250,250)
 **Custom**
 
 With custom appearance, you can specify any other background color with
-the color picker or add a background image to a section. The image will
+the color picker or add a background image to a Section. The image will
 always be set on top of the background color. Unless your image is
 transparent, it will cover the background color. Your image will be
-expanded to fit the dimensions of the section. You can also define the
+expanded to fit the dimensions of the Section. You can also define the
 text color. The options are black and white. The background and the
-theme affect the whole section, including all the blocks contained in
+theme affect the whole Section, including all the blocks contained in
 it.
 
-## Add blocks (Optional)
+## Add content Blocks (Optional)
 
 Every Section can be expanded by adding Blocks. You can add Blocks by
-clicking on the “+ Add new Block…” link at the bottom of the section.
+clicking on the “+ Add new Block…” link at the bottom of the Section.
 
 ![add new block link](/add-new-block.png 'add new block button')
 
 Each Block needs to contain a unique Block ID. All the other fields to
 create a block are optional, however, they are recommended.
 
-- Block ID: a unique identifier for each block within the section.
-  Similar to the section id. Without this ID, you cannot save changes to
-  your landing page.
-- Media: choose if your block features an image, Youtube video embed, or
+- Block ID: a unique identifier for each Block within the Section.
+  Similar to the Section id. Without this ID, you cannot save changes to
+  your Page.
+- Media: choose if your block features an image, YouTube video embed, or
   no media.
 - Text content: Title content, title size and text content. These are
-  comparable to the text content features for the main section.
+  comparable to the text content features for the main Section.
 - Button content: Button type, button text and button link. These are
-  comparable to the button content features for the main section.
+  comparable to the button content features for the main Section.
 
 The blocks are the soul of each Section. Without block content, each
 Section will be indistinguishable from the others. Once you add blocks,
@@ -200,9 +213,10 @@ the Section fields, and add only information within blocks.
 
 ### Adding media to a Block
 
-You can add an image or a Youtube video as part of the content of every
-Block, within your pages. Depending on the Section template that you
-choose the image or video will be displayed in a predetermined layout.
+You can add an image or embed a YouTube video as part of the content of
+every Block, within your pages. Depending on the Section template that
+you choose the image or video will be displayed in a predetermined
+layout.
 
 - Image: If you want to add an image, you need to upload the image file
   from your device. You also need to specify the aspect ratio of the
@@ -222,10 +236,9 @@ markdown supported by Pages visit
 
 ### Sections without blocks
 
-Blocks are optional. You can use any section without using blocks. You
-can use the basic fields of the Section to create image sections or
-display titles or pieces of information or call to action buttons in the
-middle of the section.
+Blocks are optional. You can use any Section without using blocks. You
+can use the basic fields to create Sections for displaying images,
+titles, pieces of information or just call to action buttons.
 
 <sectionswithoutblockscarousel title="example sections without blocks">
 
@@ -235,13 +248,13 @@ middle of the section.
 
 At any point you can edit your default pages by modifying the content
 within the default pages' Sections. Press on the Section ID to start
-editing sections. In order to save any changes to a section you need to
-click the “Save changes” button at the bottom of the page. We recommend
-editing a section at a time, to make it easy to identify errors of
-missing fields that would prevent you from saving changes. Bear in mind
-that the "Save changes" button only gets enabled when there are changes
-to be saved. I.e. if you don’t make changes to a section, or you make
-changes and then remove the changes the button will be disabled.
+editing it. In order to save any changes you need to click the “Save
+changes” button at the bottom of the page. We recommend editing one
+Section at a time, to make it easy to identify errors of missing fields
+that would prevent you from saving changes. Bear in mind that the "Save
+changes" button only gets enabled when there are changes to be saved.
+I.e. if you don’t make changes, or you make changes and then remove the
+changes the save button will be disabled.
 
 As soon as you save the changes of the page, you can click the link to
 visit the page to check the new changes or, if you already have the page
@@ -253,22 +266,22 @@ due to the page’s
 
 ### Reorder Sections and Blocks
 
-You can alter the order of the sections within the landing page or the
-blocks within a section by dragging and dropping the elements. Make sure
-to save your changes after altering the section content or changing the
+You can alter the order of the Sections within the Page or the Blocks
+within a Section by dragging and dropping the elements. Make sure to
+save your changes after altering the Section content or changing the
 order of the elements, otherwise they won’t take effect on your live
-landing page.
+Page.
 
-![reordering sections](/edit-sections.gif 'drag and drop to reorder a Section')
+![reordering Sections](/edit-sections.gif 'drag and drop to reorder a Section')
 
 ### Remove Sections or Blocks
 
-At any point you can remove your landing page sections and blocks by
-clicking on the three-dot menu on the top right corner of the section
-card. Bear in mind that even though the action is technically
-irreversible, you still need to save your landing page for the changes
-to take effect. If you don’t save your landing page changes the delete
-action will not be completed.
+At any point you can remove your Page's Sections and blocks by clicking
+on the three-dot menu on the top right corner of the Section card. Bear
+in mind that even though the action is technically irreversible, you
+still need to save the changes for them to take effect in your
+environment. If you don’t save your changes the delete action will not
+be completed.
 
 ### Can I edit the Footer or the Top bar?
 
@@ -278,18 +291,19 @@ developer if you need help with changes or follow our
 [developer documentation](https://www.sharetribe.com/docs/ftw/how-to-add-static-pages-in-ftw/)
 to learn more about editing the code of content pages.
 
-## Publish your landing page changes to Production
+## Publish your Page changes to Production
 
-To see your changes in your live marketplace, you must copy the changes you made to your production environment from your development environment. Click
-the “Copy to production…” button and then select the specific pages that
-you want to copy. This will transfer all the content from the current
-environment to your production environment.
+To see your changes in your live marketplace, you must copy the changes
+you made to your production environment from your development
+environment. Click the “Copy to production…” button and then select the
+specific pages that you want to copy. This will transfer all the content
+from the current environment to your production environment.
 
 The changes that you make to production will be available a few minutes
 after copying them to production. You do not need to save them again in
 your production environment.
 
 ![copy-to-production](/copy-to-production.jpg 'Copy changes to production')
-_You can select what changes you copy to production. Only selected changes copy to production. The changes you copy to production overwrite your pages content in production._
-
-
+_You can select what changes you copy to production. Only selected
+changes copy to production. The changes you copy to production overwrite
+your pages content in production._
