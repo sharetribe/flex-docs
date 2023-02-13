@@ -25,8 +25,8 @@ By default, your marketplace has four content pages already created:
 
 ![Default pages](./default-pages.png)
 
-Each page is identified by their page id. For pages other than landing
-page, the page id is reflected in the page address on your marketplace.
+Each page is identified by their page ID. For pages other than landing
+page, the page ID is reflected in the page address on your marketplace.
 The landing page, however, shows up on the root page of your client site
 by default.
 

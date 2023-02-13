@@ -71,7 +71,7 @@ a link with text "+ Create new page...". Click this link.
 
 ### Build your library page
 
-As the page id for this first page, enter "articles". This will be the
+As the page ID for this first page, enter "articles". This will be the
 collection page where you will link all your individual articles, and
 you can see the page in _[your-marketplace-url.com]/p/articles_.
 
