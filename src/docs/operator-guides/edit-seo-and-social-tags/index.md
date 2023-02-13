@@ -43,8 +43,8 @@ to influence this time.
 
 ## Review your social media sharing details
 
-You can review how your landing page will appear in different platforms
-with the following tools:
+You can review how your Page will appear in different platforms with the
+following tools:
 
 - for Facebook: https://developers.facebook.com/tools/debug/
 - for Twitter: https://cards-dev.twitter.com/validator
