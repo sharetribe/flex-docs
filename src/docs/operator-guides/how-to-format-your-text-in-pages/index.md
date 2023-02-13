@@ -16,13 +16,13 @@ content pages. To learn more about editing pages in general
 
 ## What is Markdown
 
-Markdown is a simple programming language used to add formatting to
-text. If you want to emphasize a part of the content of your Pages, you
-can do so by formatting the text of your sections and blocks. Markdown
-in essence adds basic formatting tags to the underlying code of your
-page. It doesn’t do anything fancy like changing the font size, font
-color, or font family — but it covers the essentials, using simple
-keyboard symbols.
+Markdown is a simple markup language used to add formatting to text. If
+you want to emphasize a part of the content of your Pages, you can do so
+by formatting the text of your sections and blocks. Markdown in essence
+adds basic formatting tags to the underlying code of your page. It
+doesn’t do anything fancy like changing the font size, font color, or
+font family — but it covers the essentials, using simple keyboard
+symbols.
 
 The Pages feature uses a modified version of Markdown syntax. It allows
 you to add bold, italics, links, lists, headers, images, code and
@@ -172,7 +172,7 @@ item
 
 ## Image
 
-You can add images to your sections within the Pages editor. However, if
+You can add images to your Sections via the Section fields. However, if
 you want to add images within the text. You can do it with Markdown. The
 format for the image would be:
 
@@ -184,8 +184,12 @@ format for the image would be:
 
 You first need to add an exclamation mark, then the Alt text of the
 image in square brackets, and finally the link to the image in
-parenthesis. You will notice that it is identical to the link format but
-with an added exclamation mark.
+parenthesis. You will notice that the format for adding an image is
+identical to the format for adding a link but with an added exclamation
+mark.
+
+**Important: In order to add an image, the image needs to be hosted
+somewhere else**
 
 ## Quotation blocks
 
