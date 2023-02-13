@@ -1,9 +1,11 @@
 ---
-
-title: How to enable Pages in Console slug: how-to-enable-pages updated:
-2023-02-14 category: operator-guides ingress: Enable the Pages feature
-for your demo environment published: true
-
+title: How to enable Pages in Console 
+slug: how-to-enable-pages 
+updated: 2023-02-14 
+category: operator-guides 
+ingress: 
+	Enable the Pages feature for your demo environment 
+published: true
 ---
 
 This article explains only how to enable Pages in your marketplace. If
