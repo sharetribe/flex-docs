@@ -118,12 +118,10 @@ creating a Flex account, log into
 steps to navigate to Pages (Build->Content), but make sure you are in
 your
 [Demo environment](https://www.sharetribe.com/docs/operator-guides/concepts/#environments_.)
-Marketplaces created before February, 14th, 2023 need to refresh their
-Saunatime demo. If you need any help, consult our demo starting guides,
-then reach out to our [support team](hello@sharetribe.com) if you face
-any more trouble.
+Marketplaces created before February, 15th, 2023 will need to “Import
+default pages” to their demo environment to start making changes.
 
-Marketplaces built or being built on Flex before February, 14th, 2023
+Marketplaces built or being built on Flex before February, 15th, 2023
 need to modify their frontend marketplace code to take Pages into use.
 Developers can consult
 [this guide](https://www.sharetribe.com/docs/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw)
