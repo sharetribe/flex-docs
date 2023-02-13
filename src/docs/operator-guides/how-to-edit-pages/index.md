@@ -66,6 +66,14 @@ The rest of the article explains the steps to work and edit Pages in
 general, which can be used when modify an existing page or when creating
 an entirely new page from scratch.
 
+### SEO and social media metadata
+
+Every page has metadata, also called, meta tags, that determines how
+search engines and social media platforms will display it. Google, for
+example, uses the title and description you set to your page to populate
+their search results page. You can read more and learn
+[how to edit your SEO and social media metadata in this article](https://www.sharetribe.com/docs/operator-guides/how-to-edit-seo-and-social-metadata-in-pages).
+
 ## How to add Sections
 
 These are the typical steps to create a new Section:
