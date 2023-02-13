@@ -303,7 +303,7 @@ The changes that you make to production will be available a few minutes
 after copying them to production. You do not need to save them again in
 your production environment.
 
-![copy-to-production](/copy-to-production.jpg 'Copy changes to production')
+![copy-to-production](/copy-to-production.png 'Copy changes to production')
 _You can select what changes you copy to production. Only selected
 changes copy to production. The changes you copy to production overwrite
 your pages content in production._
