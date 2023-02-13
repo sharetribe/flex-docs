@@ -4,19 +4,20 @@ slug: article-library
 updated: 2023-01-17
 category: how-to-content
 ingress:
-  With the Pages feature, you can build static pages on your marketplace
-  directly from Flex Console. This how-to guide shows how to create a
-  blog-style library of interlinked articles on your marketplace.
+  With the Pages feature, you can build content pages on your
+  marketplace directly from Flex Console. This how-to guide shows how to
+  create a blog-style library of interlinked articles on your
+  marketplace.
 published: true
 ---
 
-The Pages feature allows you to create different types of static
-content. Using the different content elements – article, feature, column
-– you can build a wide range of different types of pages.
+The Pages feature allows you to create different types of content. Using
+the different content elements – article, feature, column – you can
+build a wide range of different types of pages.
 
-One use case for creating static content is to have a library of
-articles related to your marketplace topic. This guide shows you how to
-create an interlinked library of content using the Pages feature.
+One use case for creating content is to have a library of articles
+related to your marketplace topic. This guide shows you how to create an
+interlinked library of content using the Pages feature.
 
 This article assumes that your client app can handle
 [hosted content assets](/concepts/content-management/). You can
@@ -24,7 +25,7 @@ This article assumes that your client app can handle
 
 ## Why an article library?
 
-A static article library functions as a channel for
+An article library functions as a channel for
 [content marketing](https://www.sharetribe.com/academy/how-to-do-local-content-marketing-for-marketplaces/).
 You can educate your marketplace users and provide value,
 [build a community around your marketplace](https://www.sharetribe.com/academy/turn-marketplace-community/),

@@ -28,11 +28,11 @@ otherwise sensitive information.
 
 </warning>
 
-At present, Flex uses assets for managing static content without code
-changes:
+At present, Flex uses assets for managing marketplace content without
+code changes:
 
 - you can modify [microcopy strings](/concepts/microcopy/) and
-- create static [pages](/concepts/content-management/) for your
+- create content [pages](/concepts/content-management/) for your
   marketplace
 
 For example, a marketplace may have assets with the following assets:
@@ -120,5 +120,5 @@ custom caching is being implemented.
 ## Further reading
 
 - [Editing client application microcopy](/concepts/microcopy/)
-- [Managing static page content](/concepts/content-management)
+- [Managing asset-based marketplace content](/concepts/content-management)
 - [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)

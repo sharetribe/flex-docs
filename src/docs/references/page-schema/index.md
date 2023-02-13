@@ -21,7 +21,7 @@ ebook.
 
 <info>
 
-It is good to note that the static page asset schema is not the same as
+It is good to note that the content page asset schema is not the same as
 a [website structured data schema](https://schema.org/):
 
 - Flex page asset schema is a Flex-specific description of the data

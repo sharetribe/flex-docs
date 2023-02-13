@@ -375,14 +375,14 @@ one of the [countries supported by Stripe](https://stripe.com/global).
 
 ## Content management
 
-You can manage much of your static content – texts and images in the
-user interface of your marketplace – in Flex Console. In Flex, the term
-_microcopy_ refers to small snippets of text in the user interface, such
-as button labels, error messages and help texts. You can modify existing
-microcopy messages in Flex Console with no development work required,
-and add new messages with custom development.
+You can manage much of your marketplace texts and images in Flex
+Console. In Flex, the term _microcopy_ refers to small snippets of text
+in the user interface, such as button labels, error messages and help
+texts. You can modify existing microcopy messages in Flex Console with
+no development work required, and add new messages with custom
+development.
 
-In addition, you can create static pages, and modify the content of
+In addition, you can create content pages, and modify the content of
 existing ones, using Flex Console. You have full control over how the
 different pages are shown in your client application. You can, for
 instance, create multiple landing pages for different use cases, and add
@@ -526,7 +526,7 @@ Here are the features it offers:
 - **Transaction processes.** See a list of your
   [transaction processes](/concepts/transaction-process/) and view the
   details of each process.
-- **Content.** Modify your marketplace microcopy and static pages.
+- **Content.** Modify your marketplace microcopy and content pages.
 - **Payments.** Add your Stripe keys to be able to accept online
   payments.
 - **Built-in email templates.** Edit and preview the contents of your

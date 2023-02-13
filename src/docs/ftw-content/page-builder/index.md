@@ -127,7 +127,7 @@ Assets.
 
 ### Predefined routes
 
-FTW has four predefined routes used to generate static pages:
+FTW has four predefined routes used to generate content pages:
 
 [TODO UPDATE LINKS]
 
@@ -182,7 +182,7 @@ Pages created by the user, which are assigned an ID on creation.
 ### PageBuilder
 
 FTW uses a React component called the PageBuilder to dynamically render
-static pages using Page Asset Data. You can find the PageBuilder in the
+content pages using Page Asset Data. You can find the PageBuilder in the
 containers directory:
 
 ```shell
@@ -193,7 +193,7 @@ containers directory:
 ```
 
 The PageBuilder component receives the Page Asset Data as a prop, and
-uses it to render the static page. If no Page Asset Data is available,
+uses it to render the content page. If no Page Asset Data is available,
 it renders a fallback page.
 
 ```jsx
@@ -261,22 +261,21 @@ Each section component is wrapped in a SectionContainer. You can use it
 to apply styling that should be present in each component.
 
 Default components can be overridden or edited. Remember that the
-changes will be global and reflected on each static page. If you want to
-change a Section component on a specific page, you can use the options
-prop to override a page-level component [link to how-to].
+changes will be global and reflected on each content page. If you want
+to change a Section component on a specific page, you can use the
+options prop to override a page-level component [link to how-to].
 
 Blocks also have a type property. Currently, Page Asset Data only
 supports a single Block type.
 
 ## Fallback pages
 
-As the content of the static page is retrieved over a network
-connection, it is important to prepare for a scenario where data is
-unavailable due to e.g. a network issue. FTW uses fallback data if
-loading the Page Asset Data through the Asset Delivery API fails.
-Fallback pages are specified for page-level components and are included
-out of the box for the Landing page, Terms of Service page and Privacy
-Policy page.
+As the content of the page is retrieved over a network connection, it is
+important to prepare for a scenario where data is unavailable due to
+e.g. a network issue. FTW uses fallback data if loading the Page Asset
+Data through the Asset Delivery API fails. Fallback pages are specified
+for page-level components and are included out of the box for the
+Landing page, Terms of Service page and Privacy Policy page.
 
 A fallback page is constructed similarly to how a dynamic content page
 is. It uses the PageBuilder component, but instead of dynamically

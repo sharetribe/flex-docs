@@ -5,11 +5,11 @@ updated: 2023-01-11
 category: concepts-development
 ingress:
   This article introduces the Flex content management system and how
-  static pages can be managed in Flex Console
+  content pages can be managed in Flex Console
 published: true
 ---
 
-In 2023-02, Flex introduces a lightweight headless CMS to create static
+In 2023-02, Flex introduces a lightweight headless CMS to create content
 pages in Flex. The feature allows operators to modify four default
 content pages without code, as well as create completely new pages.
 
@@ -24,7 +24,8 @@ The way in which operator-created content is handled within Flex. Before
 Console-operated content management, operators could either
 
 - add the content directly in the FTW codebase,
-- use the [microcopy](/concepts/microcopy) files for static content, or
+- use the [microcopy](/concepts/microcopy) files for marketplace
+  content, or
 - integrate an external content management system.
 
 Currently, we recommend managing content using the assets-based Pages
@@ -177,8 +178,8 @@ from the following versions: // TODO Update versions
 
 For earlier template versions, you can either pull upstream updates or
 make the changes manually. You can check this article on
-[static content rendering in FTW](/ftw/page-builder/) for context, and
-these PRs for the necessary changes:
+[content rendering in FTW](/ftw/page-builder/) for context, and these
+PRs for the necessary changes:
 
 // TODO update repo links
 
@@ -241,4 +242,4 @@ own.
 Read more about how the FTW templates show content created in Flex
 Console:
 
-- [How FTW renders static pages using the PageBuilder](/ftw/page-builder/)
+- [How FTW renders content pages using the PageBuilder](/ftw/page-builder/)

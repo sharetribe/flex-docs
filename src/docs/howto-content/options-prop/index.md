@@ -14,7 +14,7 @@ published: true
 Version [TODO] X of Flex Templates for Web (FTW) renders content pages
 using data from Pages, the Flex headless content management system. This
 how-to article assumes a basic understanding of the Pages feature and
-how FTW renders static pages using the PageBuilder. We suggest reading
+how FTW renders content pages using the PageBuilder. We suggest reading
 the following articles before proceeding:
 
 - Pages introduction
