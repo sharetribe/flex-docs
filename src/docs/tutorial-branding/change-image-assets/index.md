@@ -51,9 +51,6 @@ Here's an image that we used in this tutorial:<br />
 And this is how the authentication page looks with the new background
 image:
 
-// TODO take screenshot of AuthenticationPage once Biketribe branded
-microcopy etc exists!
-
 ![CottageDays example with updated Hero image](./cottagedays-background-image.png)
 
 ## Images for social media
@@ -74,11 +71,10 @@ These images (**biketribe-facebook-sharing-1200x630.jpg** and
 sites to generate previews when your marketplace is shared in their
 platforms.
 
-The default content is Saunatime branded so these images should be
+The default content is Biketribe branded so these images should be
 changed too:
 
-// TODO: Change preview image to the Biketribe one
-![Preview image for Twitter](./saunatimeTwitter-600x314.jpg)
+![Preview image for Twitter](./biketribe-twitter-sharing-600x314.jpg)
 
 Here are two image files you could use in the context of this tutorial:
 
@@ -136,8 +132,7 @@ app icons:
 The default favicon of the Sharetribe Web Template, Biketribe, is a
 skull:
 
-// TODO: Update text and image once microcopy exists
-![Favicon for Saunatime](./saunatime-favicon.png)
+![Favicon for Biketribe](./biketribe-favicon.png)
 
 To change it, we need to have favicon files - or if you have a square
 logo available, you can follow
