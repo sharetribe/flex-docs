@@ -91,11 +91,12 @@ from the left side menu. You should now see your default content pages
 (the About page, the Landing page, the Terms of use page, and the Policy
 page) ready for editing, or you can create your own page.
 
-![pages-homescreen](./pages-homescreen.png) _Pages home screen shows all
-your marketplace’s static content pages. Pages starts with a prebuilt
-About page, Landing page,Terms of use page, and Privacy Policy page. We
-recommend editing those pages to suit your marketplace as you start
-building._
+![pages-homescreen](./pages-homescreen.png)
+
+_Pages home screen shows all your marketplace’s static content pages.
+Pages starts with a prebuilt About page, Landing page,Terms of use page,
+and Privacy Policy page. We recommend editing those pages to suit your
+marketplace as you start building._
 
 ### Further guides
 
