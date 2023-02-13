@@ -9,10 +9,9 @@ ingress:
 published: true
 ---
 
-In 2023-02, Flex introduces a headless CMS-like feature to create static
-pages in Flex. The feature allows operators to modify a selection of
-default content pages without code, as well as create completely new
-pages.
+In 2023-02, Flex introduces a lightweight headless CMS to create static
+pages in Flex. The feature allows operators to modify four default
+content pages without code, as well as create completely new pages.
 
 ## Flex Content management glossary
 
@@ -208,7 +207,7 @@ includes all your page assets.
 You can also modify your marketplace content pages after going to
 production. You will still need to make and test the changes in your
 test environment. Then, after you are happy with all your page changes,
-you can click the "Copy to production" button
+you can click the "Copy to production" button.
 
 After clicking the button, you will see a modal detailing which pages
 have been modified, created, and removed compared to your current

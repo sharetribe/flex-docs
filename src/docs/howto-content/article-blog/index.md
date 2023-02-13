@@ -4,14 +4,13 @@ slug: article-library
 updated: 2023-01-17
 category: how-to-content
 ingress:
-  With the Flex Pages feature, you can build static pages on your
-  marketplace directly from Flex Console. This how-to guide shows how to
-  create a blog-style library of interlinked articles on your
-  marketplace.
+  With the Pages feature, you can build static pages on your marketplace
+  directly from Flex Console. This how-to guide shows how to create a
+  blog-style library of interlinked articles on your marketplace.
 published: true
 ---
 
-The Flex Pages feature allows you to create different types of static
+The Pages feature allows you to create different types of static
 content. Using the different content elements – article, feature, column
 – you can build a wide range of different types of pages.
 

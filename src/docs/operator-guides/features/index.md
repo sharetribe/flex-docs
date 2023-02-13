@@ -375,11 +375,12 @@ one of the [countries supported by Stripe](https://stripe.com/global).
 
 ## Content management
 
-You can manage much of your marketplace content in Flex Console. In
-Flex, the term _microcopy_ refers to small snippets of text in the user
-interface, such as button labels, error messages and help texts. You can
-modify existing microcopy messages in Flex Console with no development
-work required, and add new messages with custom development.
+You can manage much of your static content – texts and images in the
+user interface of your marketplace – in Flex Console. In Flex, the term
+_microcopy_ refers to small snippets of text in the user interface, such
+as button labels, error messages and help texts. You can modify existing
+microcopy messages in Flex Console with no development work required,
+and add new messages with custom development.
 
 In addition, you can create static pages, and modify the content of
 existing ones, using Flex Console. You have full control over how the

@@ -22,7 +22,7 @@ You might want to do this, for instance, if
 
 If you do not have a specific reason to create a static page directly
 into the codebase, we recommend that you create your content pages using
-[Flex Pages](/concepts/content-management/). With Pages, you can create
+[Pages](/concepts/content-management/). With Pages, you can create
 multiple content pages in Flex Console and render them all using
 [the same components in FTW](/ftw/page-builder/).
 
