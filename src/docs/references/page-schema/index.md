@@ -185,6 +185,14 @@ For instance:
   _section.title.content_ to be a string with 1 or more characters, or
   an empty string, or _null_.
 
+<info>
+
+The schema is subject to change, in the sense that new properties may be
+introduced as time goes on, so client implementations should be able to
+handle those situations.
+
+</info>
+
 ## Full page asset schema
 
 You can download the full page asset schema here:
