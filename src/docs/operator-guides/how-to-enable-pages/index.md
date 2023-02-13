@@ -11,7 +11,7 @@ This article explains only how to enable Pages in your marketplace. If
 you want to learn how to use the feature, you can read the article about
 [editing Pages in Console](https://www.sharetribe.com/docs/operator-guides/how-to-edit-pages-in-console/)
 
-## For marketplaces created after 2023-02-14 (PAGES RELEASE DATE)
+## For marketplaces created after 2023-02-15
 
 Log into the [Flex Console](https://flex-console.sharetribe.com/).
 Switch to the demo environment. Choose the “Build” option from the top
@@ -21,7 +21,7 @@ environment, you will be able to see changes right away. If you want to
 use the Pages feature in dev or production, you would need to do further
 setup with some development.
 
-## For marketplaces created before 2023-02-14 (PAGES RELEASE DATE)
+## For marketplaces created before 2023-02-15
 
 If you created your Flex marketplace before Pages release, you can try
 out Pages in your demo environment by adding a landing page to it. To

@@ -1,7 +1,7 @@
 ---
 title: Concepts
 slug: concepts
-updated: 2023-01-26
+updated: 2023-02-14
 category: operator-guides
 ingress:
   Definition of common terms we use when talking about Sharetribe Flex.
