@@ -11,7 +11,7 @@ ingress:
 published: true
 ---
 
-TODO: Take new screenshots
+TODO: Replace with CA version
 
 The Sharetribe Web Template is a configurable marketplace application.
 It is a great starting point for developing rental, service, or product
