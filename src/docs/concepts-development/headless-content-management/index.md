@@ -9,10 +9,10 @@ ingress:
 published: true
 ---
 
-Pages is a tool that allows you to build static content pages. Pages can
-be created and edited through the Flex Console, and the data can be
-queried via API, allowing you to edit content pages through a visual
-interface.
+Pages is a lightweight headless content management system that allows
+you to build content pages. Pages can be created and edited through the
+Flex Console, and the data can be queried via API, allowing you to edit
+content pages through a visual interface.
 
 ## How is Pages "headless"?
 
