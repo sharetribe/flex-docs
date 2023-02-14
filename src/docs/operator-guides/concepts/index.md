@@ -139,7 +139,7 @@ The Development environment is used to build and extend your custom
 marketplace. You may add your own test Stripe account to the development
 environment and configure changes you will later deploy to your live
 site. One example of how to use the development environment would be to
-create your content. You may modifying microcopy or create a new static
+create your content. You may modifying microcopy or create a new content
 page, for instance, which you can deploy to your Production environment
 and live site when ready.
 
@@ -192,12 +192,11 @@ to learn more about the Microcopy editor and how to use it.
 
 ### Pages
 
-With Pages you can create, modify, and delete static content pages on
-your marketplace. It comes pre-loaded with four static content pages:
-the About page, the Landing page, the Privacy policy, and the Terms of
-use page. Each of these can be edited with Pages, or additional content
-pages can be created. You can find the editor in Console's Build
-section.
+With Pages you can create, modify, and delete content pages on your
+marketplace. It comes pre-loaded with four content pages: the About
+page, the Landing page, the Privacy policy, and the Terms of use page.
+Each of these can be edited with Pages, or additional content pages can
+be created. You can find the editor in Console's Build section.
 
 [Click here](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/)
 to learn how to use the Pages to modify content on your marketplace.
@@ -217,11 +216,11 @@ Console without code. For further, more technical information about
 Assets, consult this
 [article](https://www.sharetribe.com/docs/references/assets/).
 
-### Static pages
+### Content pages
 
-Static pages only feature content created by you, the marketplace
+Content pages only feature content created by you, the marketplace
 operator. Landing pages, “About” pages and FAQ pages are examples of
-static pages. Static pages can be built and edited using Pages.
+content pages. Content pages can be built and edited using Pages.
 
 ### Dynamic pages
 
@@ -243,21 +242,21 @@ in Console.
 
 ### Pages
 
-Pages are how marketplace operators create and edit static content pages
-in Console. In Pages, operators create content by defining one or more
+Pages are how marketplace operators create and edit content pages in
+Console. In Pages, operators create content by defining one or more
 Sections. Each Section is composed of Blocks, or subsections, laid out
 according to the Section template. Depending on which kinds of Sections
 and Blocks you choose for your page, you can create a wide range of
 content.
 
-Pages include 4 default static content pages: the About page, the
-Landing page, the Privacy policy page, and the Terms of use page. These
-can be edited, but not deleted. Operators may create any number of
-custom static pages in addition to the default pages.
+Pages include 4 default content pages: the About page, the Landing page,
+the Privacy policy page, and the Terms of use page. These can be edited,
+but not deleted. Operators may create any number of custom content pages
+in addition to the default pages.
 
 ### Sections
 
-Sections are the main element of a static page. One Section should be
+Sections are the main element of a content page. One Section should be
 used to communicate one goal or theme. Your landing page, for example,
 might have a Section for the Hero image and main CTA, a Section for
 describing the value proposition, and a Section for sharing user

@@ -10,23 +10,21 @@ published: true
 ---
 
 Pages add the ability to build, edit, and manage your marketplace’s
-static content pages directly from Console. Static content pages like a
-Landing page or About page can now be modified without developer input.
-Pages’ deployment workflow lets you create and review content changes in
+content pages directly from Console. Content pages like a Landing page
+or About page can now be modified without developer input. Pages’
+deployment workflow lets you create and review content changes in
 development mode before making them available in your live marketplace.
-
-PAGESVIDEOPAGESVIDEOPAGESVIDEOPAGESVIDEOPAGESVIDEO
 
 ## What you can do with Pages
 
 Pages lets you create and edit content pages without code in Flex. On
-your marketplace, static content pages are pages featuring content
-created by you, the marketplace operator. Landing pages, “About” pages,
-FAQs or blog posts are all examples of static content pages.
+your marketplace, content pages are pages featuring content created by
+you, the marketplace operator. Landing pages, “About” pages, FAQs or
+blog posts are all examples of content pages.
 
-There are various use cases for static content pages. The most obvious
-one is to provide informational content about how your marketplace works
-to your users. In addition, you might use Pages to create alternative
+There are various use cases for content pages. The most obvious one is
+to provide informational content about how your marketplace works to
+your users. In addition, you might use Pages to create alternative
 landing pages for various user groups, for search engine optimization
 (SEO) or paid advertising purposes, or even create a simple blog.
 
@@ -59,12 +57,12 @@ will make it possible to create a wider variety of content pages.
 
 Pages works in both your development and production environments. While
 you build your custom marketplace, you use the development environment
-to create and modify your static content pages. You can preview these
-changes immediately in your marketplace. When your marketplace is live
-and you have a production environment, you use the test environment to
-make changes to your published marketplace content and preview how they
-look in your development site. When ready, you copy finished changes
-from your test environment to your production environment and live
+to create and modify your content pages. You can preview these changes
+immediately in your marketplace. When your marketplace is live and you
+have a production environment, you use the test environment to make
+changes to your published marketplace content and preview how they look
+in your development site. When ready, you copy finished changes from
+your test environment to your production environment and live
 marketplace application.
 
 ![carousel-example](./carousel-example.png)
@@ -93,9 +91,9 @@ page) ready for editing, or you can create your own page.
 
 ![pages-homescreen](./pages-homescreen.png)
 
-_Pages home screen shows all your marketplace’s static content pages.
-Pages starts with a prebuilt About page, Landing page,Terms of use page,
-and Privacy Policy page. We recommend editing those pages to suit your
+_Pages home screen shows all your marketplace’s content pages. Pages
+starts with a prebuilt About page, Landing page,Terms of use page, and
+Privacy Policy page. We recommend editing those pages to suit your
 marketplace as you start building._
 
 ### Further guides

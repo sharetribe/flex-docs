@@ -10,9 +10,8 @@ published: true
 ---
 
 This guide introduces how to use Pages. Pages lets you edit your
-marketplace’s static content pages, like your Landing page or About
-page. If you would like more background on the Pages feature, consult
-this
+marketplace’s content pages, like your Landing page or About page. If
+you would like more background on the Pages feature, consult this
 [Introduction to Pages article](https://www.sharetribe.com/docs/operator-guides/introducing-pages/).
 
 ## Introduction

@@ -1,7 +1,7 @@
 ---
 title: How to add static pages in FTW
 slug: how-to-add-static-pages-in-ftw
-updated: 2022-05-13
+updated: 2023-02-14
 category: ftw-content
 ingress:
   This guide describes how to add pages with static content in Flex

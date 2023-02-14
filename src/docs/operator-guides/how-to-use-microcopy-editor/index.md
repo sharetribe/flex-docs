@@ -11,9 +11,10 @@ published: true
 
 ## What is microcopy
 
-Your Flex marketplace has both static and dynamic pages. Static pages
-only feature content created by you, the marketplace operator. Landing
-pages, “About” pages and FAQ pages are examples of static pages.
+Your Flex marketplace has both content and dynamic content pages.
+Content pages only feature content created by you, the marketplace
+operator. Landing pages, “About” pages and FAQ pages are examples of
+content pages.
 
 Dynamic pages, meanwhile, feature content created by your users. The
 search page displaying listings is a dynamic page. Often, dynamic pages

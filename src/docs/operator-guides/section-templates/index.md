@@ -5,7 +5,7 @@ updated: 2023-01-26
 category: operator-guides
 ingress:
   Learn how Article, Columns, Features, and Carousel templates affect
-  your static content layout in Flex.
+  your pages' layout in Flex.
 published: true
 ---
 
