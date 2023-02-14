@@ -297,10 +297,6 @@ Other static pages are not editable with the Microcopy editor. For now,
 these pages are only editable by changing the files that contain the
 software code that powers them.
 
-We are developing a Page Builder feature that will allow you to edit the
-content of static content pages in Console without needing to modify the
-underlying code as you do today.
-
 ### Digging deeper into the Microcopy editor
 
 In this article, we learned about the Microcopy editor and the microcopy

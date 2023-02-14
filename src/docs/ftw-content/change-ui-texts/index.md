@@ -51,9 +51,10 @@ through Flex Console. The default content pages include
 - Privacy Policy
 - Terms of Service
 
-These pages are displayed with the [Page Builder](/ftw/page-builder/) in
-the FTW template. In addition to these default pages, you can create
-your own content pages through Flex Console, and
+These pages are rendered by the
+[PageBuilder component](/ftw/page-builder/) in the FTW template. In
+addition to these default pages, you can create your own content pages
+through Flex Console, and
 [fully manage their content](/concepts/content-management/) without code
 changes. On the template side, you can modify
 [how that content is displayed](/how-to/options-prop/).

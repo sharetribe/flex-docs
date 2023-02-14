@@ -1,7 +1,7 @@
 ---
 title: Create a library of articles
 slug: article-library
-updated: 2023-01-17
+updated: 2023-02-14
 category: how-to-content
 ingress:
   With the Pages feature, you can build content pages on your

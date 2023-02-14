@@ -1,5 +1,5 @@
 ---
-title: How the templates render content pages using the PageBuilder
+title: How the template renders content pages
 slug: page-builder
 updated: 2023-16-01
 category: ftw-content
@@ -9,14 +9,14 @@ ingress:
 published: true
 ---
 
-The Pages feature allows you to add, edit and manage content through the
-Page Editor in Flex Console. Once you have created content using the
-Page Editor, you can query it through the Asset Delivery API, which
-returns the data structured as JSON. Version X [TODO] of FTW introduces
-features that automatically render content pages from Page Asset Data.
-This article will walk you through the logic used to render these pages
-in FTW. Read more about the code-level changes introduced to FTW from
-the release notes of version X [TODO].
+The Pages feature allows you to add, edit and manage content in Flex
+Console. Once you have created content in Console, you can query it
+through the Asset Delivery API, which returns the data structured as
+JSON. Version X [TODO] of FTW introduces features that automatically
+render content pages from Page Asset Data. This article will walk you
+through the logic used to render these pages in FTW. Read more about the
+code-level changes introduced to FTW from the release notes of version X
+[TODO].
 
 ## What are content pages
 
@@ -37,7 +37,7 @@ of content pages.
 
 With the introduction of Pages, versions X [TODO] and onwards of FTW now
 render content pages dynamically. Content can be managed through the
-Page Editor, which provides the editor with a graphical interface to
+Pages feature, which provides the editor with a graphical interface to
 input text, videos, links and images. FTW queries the
 [Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 to retrieve the most recent version of the content and uses it to render
@@ -55,9 +55,8 @@ further detail.
 ## Page Asset Data
 
 Page Asset Data is a machine-readable format of the data inputted
-through the Page Editor in Console. It represents the content and
-structure of the content page and is divided into Sections, Blocks and
-Fields.
+through Pages in Console. It represents the content and structure of the
+content page and is divided into Sections, Blocks and Fields.
 
 A single query to the Asset Delivery API will provide you with the Page
 Asset Data of a single content page, i.e. to render your landing page
@@ -138,8 +137,8 @@ FTW has four predefined routes used to generate content pages:
 
 The first three are defined by default in Console and can not be
 removed. Therefore, there is a dedicated component in FTW for each. For
-any custom Pages created through the Page Builder, a generic component
-called CMSPage is used.
+any new page created through Console, a generic component called CMSPage
+is used.
 
 If we compare the loadData calls in the privacy policy page and CMSPage,
 we can see that they differ slightly. The PrivacyPolicyPage.duck.js file
@@ -171,10 +170,10 @@ export const loadData = (params, search) => dispatch => {
 };
 ```
 
-FTW can use hardcoded asset names for Pages included by default in the
-Page Builder, as the paths are static and not subject to change. The
-Pages included by default are the Landing Page, Terms of Service page
-and Privacy Policy page.
+FTW can use hardcoded asset names for Pages included by default in
+Console, as the paths are static and not subject to change. The Pages
+included by default are the Landing Page, Terms of Service page and
+Privacy Policy page.
 
 The CMSPage component, on the other hand, is used to render any new
 Pages created by the user, which are assigned an ID on creation.
@@ -225,7 +224,7 @@ validates and sanitises any data before it is rendered.
 
 ## Section and Block types
 
-Using the Page Editor in Console, you can define a section type. FTW
+Using the Pages feature in Console, you can define a section type. FTW
 recognises all Section types and renders each using a different
 presentational component.
 

@@ -1,7 +1,7 @@
 ---
 title: Headless content management
 slug: headless-content-management
-updated: 2023-01-11
+updated: 2023-02-14
 category: concepts-content-management
 ingress:
   This article explains how data can be edited through Console and how

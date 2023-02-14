@@ -1,7 +1,7 @@
 ---
 title: Content management in Flex
 slug: content-management
-updated: 2023-01-11
+updated: 2023-02-14
 category: concepts-content-management
 ingress:
   This article introduces the Flex content management system and how

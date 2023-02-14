@@ -1,7 +1,7 @@
 ---
 title: How to customise a Section, Block or Field using options
 slug: options-prop
-updated: 2023-01-17
+updated: 2023-02-14
 category: how-to-content
 ingress:
   In this guide, we will customise a Section component on the landing

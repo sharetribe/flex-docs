@@ -1,7 +1,7 @@
 ---
 title: Free templates for your Terms of Service and Privacy Policy
 slug: free-templates
-updated: 2023-01-23
+updated: 2023-02-14
 category: operator-guides
 ingress:
   Create Terms of Service and Privacy Policy documents for your
