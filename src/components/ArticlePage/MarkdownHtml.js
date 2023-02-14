@@ -40,6 +40,7 @@ import {
   CarouselYogatimeCreationJourney,
   CarouselYogatimeSearchJourney,
   CarouselYogatimeTransactionProcess,
+  CarouselSectionsWithoutBlocks,
 } from '../../components';
 
 require('prismjs/themes/prism-tomorrow.css');
@@ -345,6 +346,7 @@ const renderAst = new rehypeReact({
     transactionprocesscarousel: CarouselTransactionProcess,
     userjourneycarousel: CarouselUserJourney,
     transactionprocesscomponentscarousel: CarouselTransactionProcessComponents,
+    sectionswithoutblockscarousel: CarouselSectionsWithoutBlocks,
     txnprocessuxcarousel: CarouselTxnProcessUX,
     sneakercreationcarousel: CarouselSneakertimeCreationJourney,
     sneakersearchcarousel: CarouselSneakertimeSearchJourney,
