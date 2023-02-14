@@ -103,6 +103,9 @@ const sortingArrayDevelopment = [
   'applications',
   'flex-environments',
   'console-overview',
+];
+
+const sortingArrayContentManagement = [
   'content-management',
   'headless-content-management',
   'microcopy',
@@ -200,6 +203,10 @@ exports.siteStructure = [
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
       { id: 'concepts-development', sortingArray: sortingArrayDevelopment },
+      {
+        id: 'concepts-content-management',
+        sortingArray: sortingArrayContentManagement,
+      },
       { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },

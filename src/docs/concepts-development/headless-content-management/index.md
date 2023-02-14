@@ -2,7 +2,7 @@
 title: Headless content management
 slug: headless-content-management
 updated: 2023-01-11
-category: concepts-development
+category: concepts-content-management
 ingress:
   This article explains how data can be edited through Console and how
   it can be queried using the Asset Delivery API.

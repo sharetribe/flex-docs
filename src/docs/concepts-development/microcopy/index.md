@@ -2,7 +2,7 @@
 title: Microcopy in Flex
 slug: microcopy
 updated: 2022-06-14
-category: concepts-development
+category: concepts-content-management
 ingress:
   This article introduces microcopy in Flex and how it is modified and
   edited in Flex Console
