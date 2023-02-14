@@ -31,7 +31,7 @@ sections of written text that might include images, links and videos.
 In older versions of FTW, the data on these content pages was hard-coded
 into the corresponding page file. For instance, the content of the About
 Page was
-[written directly into the code](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/AboutPage/AboutPage.js#L48)
+[written directly into the code](https://github.com/sharetribe/ftw-daily/blob/7a2f9b0557607533097761c063f7f98d7c8bfc1a/src/containers/AboutPage/AboutPage.js)
 on the AboutPage.js file. Changes to the content required editing the
 code and redeploying the client application. This required content
 editors to work with developers to make simple changes to the copy text
