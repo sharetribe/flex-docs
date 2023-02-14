@@ -25,13 +25,13 @@ const sortingArrayIntroductionGettingStarted = [
 const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
   'first-edit',
-  'change-image-assets',
+  'change-images',
+  'modify-landing-page',
   'change-logo',
   'working-with-microcopy',
   'configurations',
   'change-default-locations',
   'customize-amenities-filter',
-  'add-faq-page',
   'deploy-to-render',
 ];
 const sortingArrayTutorialExtendedData = [
@@ -99,6 +99,18 @@ const sortingArrayManageConsole = [
   'console-manage-reviews',
 ];
 
+const sortingArrayDevelopment = [
+  'applications',
+  'flex-environments',
+  'console-overview',
+];
+
+const sortingArrayContentManagement = [
+  'content-management',
+  'headless-content-management',
+  'microcopy',
+];
+
 const sortingArrayHowToUsers = [
   'enable-facebook-login',
   'enable-google-login',
@@ -113,6 +125,7 @@ const sortingArrayFTWContent = [
   'how-to-change-ftw-bundled-microcopy',
   'hosted-microcopy',
   'how-to-change-ftw-language',
+  'page-builder',
   'how-to-add-static-pages-in-ftw',
 ];
 
@@ -189,7 +202,11 @@ exports.siteStructure = [
       { id: 'concepts-payments', sortingArray: sortingArrayPayments },
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
-      { id: 'concepts-development' },
+      { id: 'concepts-development', sortingArray: sortingArrayDevelopment },
+      {
+        id: 'concepts-content-management',
+        sortingArray: sortingArrayContentManagement,
+      },
       { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },
@@ -217,6 +234,7 @@ exports.siteStructure = [
         sortingArray: sortingArrayPaymentCookbooks,
       },
       { id: 'how-to-migrations' },
+      { id: 'how-to-content' },
       { id: 'how-to-messaging' },
       { id: 'how-to-design' },
       { id: 'how-to-events' },

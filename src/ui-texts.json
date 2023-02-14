@@ -120,6 +120,7 @@
   "Sidebar.conceptsAvailability": "Availability and inventory management",
   "Sidebar.conceptsDevelopment": "Marketplace development & configuration",
   "Sidebar.conceptsManagement": "Marketplace management",
+  "Sidebar.conceptsContentManagement": "Content Management",
   "Sidebar.conceptsExtendedData": "Extended data",
   "Sidebar.conceptsApiSdk": "APIs & SDKs",
   "Sidebar.conceptsDataModel": "Data model",
@@ -140,6 +141,7 @@
   "Sidebar.howToEvents": "Events",
   "Sidebar.howToSearch": "Search",
   "Sidebar.howToManage": "Manage",
+  "Sidebar.howToContent": "Content Management",
 
   "Sidebar.flexCli": "Flex CLI",
 

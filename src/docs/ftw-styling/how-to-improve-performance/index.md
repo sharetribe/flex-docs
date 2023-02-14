@@ -49,7 +49,7 @@ The first step is, of course, to start measuring performance.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a
 good tool to check rendering performance. At least check those pages
 that are visible to unauthenticated users (e.g. landing page, search
-page, listing page, about page and other static pages).
+page, listing page, about page and other content pages).
 
 Lighthouse will give you some tips about how to improve performance and
 other aspects that website developers should think about.

@@ -53,17 +53,11 @@ _en.json_ file:
         └── en.json
 ```
 
-In addition to microcopy, there are also a couple of components that
-contain a huge amount of text content (e.g. **AboutPage**,
-**PrivacyPolicy**, and **TermsOfService**). The content of those
-components is not included in the microcopy file since they need a
-free-form structure and styling. It is easier to achieve that with a
-markup language (like HTML and JSX) than key-value mapping you see in
-_en.json_ file:
-
-```json
-  "LocationSearchForm.placeholder": "Search saunas…",
-```
+In addition to microcopy, your marketplace has content pages, such as
+**AboutPage**, **PrivacyPolicy**, and **TermsOfService**. Those pages
+are managed in Flex Console under Content > Pages, and they can be
+modified similarly to
+[the landing page](/tutorial/modify-landing-page/).
 
 In this tutorial, we change the microcopy of Hero component, but we have
 another document that dives deeper into this topic:

@@ -61,11 +61,12 @@
 /docs/background/custom-pricing/ /docs/concepts/pricing/
 /docs/cookbook-payments/customize-pricing/ /docs/how-to/how-to-customize-pricing/
 /docs/ftw/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw/how-to-change-ftw-ui-texts/
+/docs/tutorial/change-image-assets/ /docs/tutorial/change-images/
 
 # Redirects introduced in the Flex Docs reorganisation project
 
 /docs/tutorial-branding/first-edit/ /docs/tutorial/first-edit/
-/docs/tutorial-branding/change-image-assets/ /docs/tutorial/change-image-assets/
+/docs/tutorial-branding/change-image-assets/ /docs/tutorial/change-images/
 /docs/tutorial-branding/change-logo/ /docs/tutorial/change-logo/ 
 /docs/tutorial-branding/working-with-translations/ /docs/tutorial/working-with-translations/ 
 /docs/tutorial-branding/configurations/ /docs/tutorial/configurations/ 

@@ -4,7 +4,7 @@ slug: how-to-edit-seo-and-social-metadata-in-pages
 updated: 2023-02-14
 category: operator-guides
 ingress: Change metadata for SEO and Social media
-published: false
+published: true
 ---
 
 Every page has metadata that determines how search engines and social
