@@ -4,7 +4,7 @@ slug: how-to-create-an-faq-page
 updated: 2023-02-14
 category: operator-guides
 ingress: Learn how to use Pages to build an FAQ content page
-published: false
+published: true
 ---
 
 This article provides step by step instructions on how to use Pages to

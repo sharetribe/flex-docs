@@ -6,7 +6,7 @@ category: operator-guides
 ingress:
   Learn how Article, Columns, Features, and Carousel templates affect
   your static content layout in Flex.
-published: false
+published: true
 ---
 
 Section templates control the layout of your Section via the content
