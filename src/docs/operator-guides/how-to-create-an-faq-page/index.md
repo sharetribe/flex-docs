@@ -4,7 +4,7 @@ slug: how-to-create-an-faq-page
 updated: 2023-02-14
 category: operator-guides
 ingress: Learn how to use Pages to build an FAQ content page
-published: true
+published: false
 ---
 
 This article provides step by step instructions on how to use Pages to
@@ -406,8 +406,13 @@ move all of the changes at the same time, though: if you have made
 multiple changes to different pages, you can pick and choose which ones
 you want to move to production.
 
+<<<<<<< HEAD
 A word of warning here, as well: if you've made changes directly to your
 production environment, those changes will be overwritten and this
+=======
+A word of warning here, as well: as mentioned in the pop-up, the old
+version(s) of the page(s) in production will be overwritten and this
+>>>>>>> c771af4 (add unpublished flag)
 action cannot be undone.
 
 Success - the FAQ page is now created and live on our marketplace! You

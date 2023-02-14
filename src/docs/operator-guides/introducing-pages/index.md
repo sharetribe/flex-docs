@@ -6,7 +6,7 @@ category: operator-guides
 ingress:
   The latest Sharetribe Flex feature introduces a powerful no-code
   interface that gives you full control over your marketplace’s content.
-published: true
+published: false
 ---
 
 Pages add the ability to build, edit, and manage your marketplace’s

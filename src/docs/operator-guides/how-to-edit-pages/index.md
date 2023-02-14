@@ -6,7 +6,7 @@ category: operator-guides
 ingress:
   Learn how to use Pages to edit content across Landing page,
   informational pages, or blog pages.
-published: true
+published: false
 ---
 
 This guide introduces how to use Pages. Pages lets you edit your

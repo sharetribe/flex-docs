@@ -5,7 +5,7 @@ updated: 2023-02-14
 category: operator-guides
 ingress:
   Learn how to use Markdown to change your marketplace content pages.
-published: true
+published: false
 ---
 
 Pages lets you create and modify your marketplace’s content pages. The
