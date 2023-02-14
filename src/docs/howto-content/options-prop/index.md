@@ -11,11 +11,13 @@ published: true
 
 ## Introduction
 
-Version [TODO] X of Flex Templates for Web (FTW) renders content pages
-using data from Pages, the Flex headless content management system. This
-how-to article assumes a basic understanding of the Pages feature and
-how FTW renders content pages using the PageBuilder. We suggest reading
-the following articles before proceeding:
+Version
+[10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0)
+of Flex Templates for Web (FTW) renders content pages using data from
+Pages, the Flex headless content management system. This how-to article
+assumes a basic understanding of the Pages feature and how FTW renders
+content pages using the PageBuilder. We suggest reading the following
+articles before proceeding:
 
 - Pages introduction
 - Pages reference
@@ -246,4 +248,5 @@ Finally, we’d pass it on to the options prop in LandingPage.js:
 options={{fieldComponents: fieldOverrides}}
 ```
 
-For a list of which Fields can be overridden, see Fields.js [TODO LINK].
+For a list of which Fields can be overridden, see
+[Field.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PageBuilder/Field.js).

@@ -1,7 +1,7 @@
 ---
 title: How the template renders content pages
 slug: page-builder
-updated: 2023-16-01
+updated: 2023-14-02
 category: ftw-content
 ingress:
   This article introduces how Flex Templates for Web use the Pages
@@ -12,11 +12,13 @@ published: true
 The Pages feature allows you to add, edit and manage content in Flex
 Console. Once you have created content in Console, you can query it
 through the Asset Delivery API, which returns the data structured as
-JSON. Version X [TODO] of FTW introduces features that automatically
-render content pages from Page Asset Data. This article will walk you
-through the logic used to render these pages in FTW. Read more about the
-code-level changes introduced to FTW from the release notes of version X
-[TODO].
+JSON.
+[Version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0)
+of FTW introduces features that automatically render content pages from
+Page Asset Data. This article will walk you through the logic used to
+render these pages in FTW. Read more about the code-level changes
+introduced to FTW from the release notes of
+[version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0).
 
 ## What are content pages
 
@@ -35,10 +37,12 @@ code and redeploying the client application. This required content
 editors to work with developers to make simple changes to the copy text
 of content pages.
 
-With the introduction of Pages, versions X [TODO] and onwards of FTW now
-render content pages dynamically. Content can be managed through the
-Pages feature, which provides the editor with a graphical interface to
-input text, videos, links and images. FTW queries the
+With the introduction of Pages,
+[versions 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0)
+and onwards of FTW now render content pages dynamically. Content can be
+managed through the Pages feature, which provides the editor with a
+graphical interface to input text, videos, links and images. FTW queries
+the
 [Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 to retrieve the most recent version of the content and uses it to render
 the content page. We refer to this data as
@@ -128,12 +132,10 @@ Assets.
 
 FTW has four predefined routes used to generate content pages:
 
-[TODO UPDATE LINKS]
-
-- [PrivacyPolicy](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L292)
-- [TermsOfService](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L287)
-- [LandingPage](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L62)
-- CMSPage
+- [PrivacyPolicy](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.js)
+- [TermsOfService](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TermsOfServicePage/TermsOfServicePage.js)
+- [LandingPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/LandingPage/LandingPage.js)
+- [CMSPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CMSPage/CMSPage.js)
 
 The first three are defined by default in Console and can not be
 removed. Therefore, there is a dedicated component in FTW for each. For
@@ -308,8 +310,6 @@ template.
 The example in this section enables a dynamic version of the Privacy
 Policy page, and the exact steps can also be applied to other content
 pages.
-
-[TODO] add links to GitHub once the CMSPage branch is merged
 
 1. Copy the pageBuilder directory (and its contents) in its entirety to
    src/components/PageBuilder
