@@ -4,8 +4,8 @@ slug: headless-content-management
 updated: 2023-01-11
 category: concepts-development
 ingress:
-  This article explains how data can be edited through the Page Editor
-  and how it can be queried using the Asset Delivery API.
+  This article explains how data can be edited through Console and how
+  it can be queried using the Asset Delivery API.
 published: true
 ---
 
