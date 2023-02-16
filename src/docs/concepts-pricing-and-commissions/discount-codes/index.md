@@ -40,8 +40,9 @@ integrate a [third party discount code tool](#which-tool-to-integrate)
 
 In addition, the operator can allow a provider to offer a discount as
 well. In that case, the discount details can e.g. be saved in the
-provider's extended data, so that it can be checked and applied when a
-customer initiates a transaction with the provider.
+provider's [extended data](/concepts/user-extended-data/), so that it
+can be checked and applied when a customer initiates a transaction with
+the provider.
 
 ## Who pays for the discount?
 
@@ -56,9 +57,10 @@ the customer commission or the provider commission, i.e. is it paid for
 by the platform? Or does it reduce the provider's payout?
 
 Depending on who pays for the commission, the percentage or fixed sum
-needs to be applied differently in the transaction's line item
-calculation. In the case of bulk discounts or free additional services,
-both the platform's commission and the provider's payout are affected.
+needs to be applied differently in the transaction's
+[line item calculation](/concepts/pricing/#line-items). In the case of
+bulk discounts or free additional services, both the platform's
+commission and the provider's payout are affected.
 
 ## Who can use the discount?
 
@@ -82,6 +84,8 @@ makes sense to do some research into different choices. Some options
 include
 
 - [Voucherify](https://docs.voucherify.io/docs)
+  - Read more:
+    [High-level steps to integrating Voucherify](/concepts/integrations-introduction/#voucherify-discount-coupons)
 - [Vouchery](https://www.vouchery.io/)
 - [Stripe](https://stripe.com/docs/api/coupons) (if you are not using
   the default Flex Stripe payment integration)
@@ -91,8 +95,3 @@ discount code logic and, depending on the tool, other promotions such as
 gift cards and loyalty programs. The third party tools handle the
 validation and redeeming of the code, so you just need to communicate
 the discount to your line item calculation within the transaction.
-
-- things to note for the Voucherify how-to
-  - validate code several times, redeem only once => what happens to a
-    single-use code if it gets redeemed upon payment but the provider
-    declines the booking?
