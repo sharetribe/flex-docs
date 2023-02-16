@@ -126,10 +126,10 @@ In Open ID Connect terms, this is the issuer URL. In this setup, your
 FTW acts as the issuer towards Flex, so the URL should point to your
 FTW.
 
-By default, this should be the root address of your FTW application, for
-example, _https://example.com_ or, for default Render URLs,
-_https://EXAMPLE.onrender.com_. Note, that this URL needs to be publicly
-hosted so a `localhost` URL will not work.
+By default, the identity provider URL should be the root address of your
+FTW application, for example, _https://example.com_ or, for default
+Render URLs, _https://EXAMPLE.onrender.com_. Note, that this URL needs
+to be publicly hosted so a `localhost` URL will not work.
 
 ### Client ID
 
