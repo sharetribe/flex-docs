@@ -311,15 +311,21 @@ The example in this section enables a dynamic version of the Privacy
 Policy page, and the exact steps can also be applied to other content
 pages.
 
-1. Copy the pageBuilder directory (and its contents) in its entirety to
-   src/components/PageBuilder
-2. Copy the hostedAssetsDuck.js file to src/ducks/hostedAssetsDuck.js
-3. Copy over all the new utility files to src/util: util/string.js
-   util/sanitize.js
-4. Copy over the aspectRatioWrapper component file to
-   src/components/aspectRatioWrapper
-5. Add an export statement in components/index.js for
-   aspectRatioWrapper:
+1. Copy the
+   [pageBuilder directory](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/PageBuilder)
+   (and its contents) in its entirety to src/containers/PageBuilder
+2. Copy the
+   [hostedAssetsDuck.js](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/hostedAssets.duck.js)
+   file to src/ducks/hostedAssetsDuck.js
+3. Copy over all the new utility files to src/util:
+   [util/string.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/string.js)
+   [util/sanitize.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/sanitize.js)
+4. Copy over the
+   [aspectRatioWrapper component](https://github.com/sharetribe/ftw-daily/tree/master/src/components/AspectRatioWrapper)
+   directory to src/components/aspectRatioWrapper
+5. Add an export statement in
+   [components/index.js](https://github.com/sharetribe/ftw-daily/blob/master/src/components/index.js)
+   for aspectRatioWrapper:
 
 ```js
 export { default as AspectRatioWrapper } from './AspectRatioWrapper/AspectRatioWrapper';
@@ -331,11 +337,15 @@ export { default as AspectRatioWrapper } from './AspectRatioWrapper/AspectRatioW
 yarn add rehype-react rehype-sanitize remark-parse remark-rehype unified
 ```
 
-7. Overwrite the contents of src/util/data.js with the new data.js file
-8. Copy the PrivacyPolicyPage directory (and its contents) to
-   src/components/PrivacyPolicyPage (overwriting any existing files)
+7. Overwrite the contents of src/util/data.js with the
+   [new data.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/data.js)
+   file
+8. Copy the
+   [PrivacyPolicyPage directory](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/PrivacyPolicyPage)
+   (and its contents) to src/containers/PrivacyPolicyPage (overwriting
+   any existing files)
 9. Add a loadData call to where PrivacyPolicyPage is defined in
-   routeConfiguration.js:
+   [routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js):
 
 ```js
      {
@@ -346,13 +356,16 @@ yarn add rehype-react rehype-sanitize remark-parse remark-rehype unified
     },
 ```
 
-10. Add the following import to pageDataLoadingAPI.js:
+10. Add the following import to
+    [pageDataLoadingAPI.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/pageDataLoadingAPI.js):
 
 ```js
 import { loadData as PrivacyPolicyPageLoader } from './PrivacyPolicyPage/PrivacyPolicyPage.duck';
 ```
 
-11. Also add the following code to the pageDataLoadingAPI.js file:
+11. Also add the following code to the
+    [pageDataLoadingAPI.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/pageDataLoadingAPI.js)
+    file:
 
 ```js
     PrivacyPolicyPage: {
@@ -382,15 +395,17 @@ and add the default content pages.
 
 In addition, Flex Console allows you to preview content pages in the
 template app. To enable this feature, you'll also need to copy over the
-PreviewResolverPage to src/containers/PreviewResolverPage, and import
-the component in routeConfiguration.js:
+[PreviewResolverPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PreviewResolverPage/PreviewResolverPage.js)
+to src/containers/PreviewResolverPage/PreivewResolverPage.js, and import
+the component in
+[routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js):
 
 ```js
 import PreviewResolverPage from './containers/PreviewResolverPage/PreviewResolverPage';
 ```
 
 You'll also need to add a route configuration for the preview page in
-routeConfiguration.js:
+[routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js):
 
 ```js
    {
