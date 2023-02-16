@@ -28,6 +28,7 @@ export { default as ExtraInfo } from './ExtraInfo';
 export { default as Video } from './Video';
 export { Carousel, CarouselSlide } from './Carousel';
 export { default as CookieConsent } from './CookieConsent';
+export { default as Banner } from './Banner'
 
 // Components that import other components from this index. These
 // might create circular dependencies. Changing the order of these
@@ -36,6 +37,9 @@ export { default as CookieConsent } from './CookieConsent';
 // See the gatsby-node.js file to enable a Webpack plugin that warns
 // about circular dependencies to aid in finding problematic
 // dependencies.
+
+export { default as Info } from './Info';
+export { default as Warning } from './Warning';
 export { default as BaseLayout } from './BaseLayout';
 export { default as CarouselContentCreation } from './CarouselContentCreation';
 export { default as CarouselDiscovery } from './CarouselDiscovery';
@@ -50,6 +54,7 @@ export { default as CarouselSneakertimeTransactionProcess } from './CarouselSnea
 export { default as CarouselYogatimeTransactionProcess } from './CarouselYogatimeTransactionProcess';
 export { default as CarouselYogatimeSearchJourney } from './CarouselYogatimeSearchJourney';
 export { default as CarouselYogatimeCreationJourney } from './CarouselYogatimeCreationJourney';
+export { default as CarouselSectionsWithoutBlocks } from './CarouselSectionsWithoutBlocks';
 export { default as MainLayout } from './MainLayout';
 export { default as Topbar } from './Topbar/Topbar';
 export { default as Sidebar } from './Sidebar';

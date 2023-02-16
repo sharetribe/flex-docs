@@ -139,7 +139,7 @@ required environment variables.
 The `.env` file is the place to add your _local_ configuration. It is
 ignored in Git, so you'll have to add the corresponding configuration
 also to your server environment. Check this
-[Heroku config setup](/tutorial/deploy-to-heroku/#deploy-to-heroku)
+[Render config setup](/tutorial/deploy-to-render/#deploy-to-render)
 article - and there's also a generic article about
 [deploying to production](/ftw/how-to-deploy-ftw-to-production/).
 
@@ -234,4 +234,4 @@ and many more that you can change. For more information, check the
 [FTW customization checklist](/ftw/customization-checklist/)
 documentation too before publishing your site. See also
 [tutorial](/tutorial/introduction/) and other articles in _Flex
-Templates for Web_ and _Cookbook_ categories.
+Templates for Web_ and _How-to_ categories.

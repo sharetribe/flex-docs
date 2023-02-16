@@ -73,8 +73,9 @@ FTW.
 
 ## 4. Other optional changes
 
-- **Update [page schema](/tutorial/add-faq-page/#page-schema)** to
-  improve Search Engine Optimization (SEO)
+- **Update
+  [page schema](/ftw/how-to-add-static-pages-in-ftw/#add-page-schema)**
+  to improve Search Engine Optimization (SEO)
 - **Update ListingPage** to show extended data (aka publicData
   attribute).
   - It's inside _src/containers_ directory
@@ -100,7 +101,7 @@ FTW.
   - FTW-product has that config named as
     [lineItemUnitType](https://github.com/sharetribe/ftw-product/blob/master/src/config/config.js)
 - **[Customize pricing](/tutorial/customize-pricing-tutorial/)**
-- **Add more static pages**:
-  [How to add static pages in FTW](/ftw/how-to-add-static-pages-in-ftw/)
+- **Add more content pages**:
+  [How the templates render content pages using the PageBuilder](/ftw/page-builder/)
 - **Update other existing pages**
 - **Update transaction process** (API + Web app)

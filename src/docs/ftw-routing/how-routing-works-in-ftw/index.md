@@ -23,7 +23,7 @@ and let the app define what page gets rendered.
 
 FTW has a quite straightforward routing setup - there's just one file
 you need to check before you link to existing routes or start creating
-new routes to static pages: _routeConfiguration.js_.
+new routes to pages: _routeConfiguration.js_.
 
 There we have imported all the page-level components dynamically using
 [Loadable Components](https://loadable-components.com/). In addition,

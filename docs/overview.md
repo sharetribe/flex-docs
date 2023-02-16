@@ -207,6 +207,15 @@ prefixed path helper from Gatsby can be used. As an example, see the
 schema.org metadata creation in the
 [Breadcrumb](../src/components/Breadcrumb.js) component.
 
+The site is not deployed in a subdirectory, but instead, nemesis proxies
+traffic from www.sharetribe.com/docs/ to where Docs is deployed.
+Therefore, Docs assumes it is being served within a subdirectory, and
+therefore, links should and are be prefixed with `/docs`.
+
+There has been issues with how Vercel handles the --prefix-paths flag.
+Currently, docs is deployed on an older version of Vercel CLI. See the
+full discussion here: https://github.com/vercel/vercel/discussions/9405
+
 ## Redirects
 
 Redirects can be configured in the [\_redirects](../_redirects) file.
@@ -216,8 +225,8 @@ for more information.
 
 ## Deployment
 
-Flex Docs uses [Netlify](https://www.netlify.com/) for deployment. It is
-a great and a simple tool to build modern static sites. We have enabled
+Flex Docs uses [Vercel](https://www.vercel.com/) for deployment. It is a
+great and a simple tool to build modern static sites. We have enabled
 the
 [Netlify GitHub App](https://www.netlify.com/docs/github-permissions/)
 to enable preview builds for PRs and automatically deploying the

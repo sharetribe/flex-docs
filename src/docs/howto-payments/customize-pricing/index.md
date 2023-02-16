@@ -10,16 +10,10 @@ ingress:
 published: true
 ---
 
-_**NOTE! In case your pricing relies on the deprecated
-[set-line-items-and-total](/references/transaction-process-actions/#actionset-line-items-and-total)
-action, the old pricing customization article related to that can be
-found
-[here](https://5ee94c280d38f10008a3bfa1--sharetribe-flex-docs-site.netlify.app/docs/cookbook-payments/customize-pricing).**_
-
-This cookbook shows you how listing pricing can be customized by using
-two examples: adding a cleaning fee to a listing and changing provider
-commission so that it's based on booking length. The changes we're about
-to make are as follows:
+This how-to guide shows you how listing pricing can be customized by
+using two examples: adding a cleaning fee to a listing and changing
+provider commission so that it's based on booking length. The changes
+we're about to make are as follows:
 
 1. Update listing data model by storing cleaning fee price in listing
    public data
@@ -36,11 +30,11 @@ For more information about pricing in Flex, see the
 Pricing can be based on a lot of variables but one practical way to
 build it is to base it on information stored as extended data in
 listings. See the
-[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
-cookbook to read how to extend the listing data model with extended
-data. See the aforementioned cookbook for instructions how to add inputs
-for new attributes in the listing wizard. Alternatively, in order to try
-out this cookbook, you can just add a hard-coded cleaning fee to the
+[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/) how-to
+guide to read how to extend the listing data model with extended data.
+See the aforementioned guide for instructions how to add inputs for new
+attributes in the listing wizard. Alternatively, in order to try out
+this guide, you can just add a hard-coded cleaning fee to the
 `EditListingPricingPanel` component:
 
 ```shell

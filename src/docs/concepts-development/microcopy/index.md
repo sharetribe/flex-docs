@@ -2,7 +2,7 @@
 title: Microcopy in Flex
 slug: microcopy
 updated: 2022-06-14
-category: concepts-development
+category: concepts-content-management
 ingress:
   This article introduces microcopy in Flex and how it is modified and
   edited in Flex Console
@@ -13,7 +13,7 @@ Microcopy refers to all the small pieces of text in your marketplace's
 dynamic pages – button labels, error messages, and help texts are all
 examples of microcopy. Modifying microcopy to match your marketplace's
 theme and tone of voice is a key task in customizing any marketplace.
-[Read more about marketplace microcopy](/operator-guides).
+[Read more about marketplace microcopy](/operator-guides/).
 
 In the FTW templates, microcopy is not written directly into the source
 code. Instead, the source code uses

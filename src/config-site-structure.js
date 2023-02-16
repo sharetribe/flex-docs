@@ -25,14 +25,14 @@ const sortingArrayIntroductionGettingStarted = [
 const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
   'first-edit',
-  'change-image-assets',
+  'change-images',
+  'modify-landing-page',
   'change-logo',
   'working-with-microcopy',
   'configurations',
   'change-default-locations',
   'customize-amenities-filter',
-  'add-faq-page',
-  'deploy-to-heroku',
+  'deploy-to-render',
 ];
 const sortingArrayTutorialExtendedData = [
   'add-extended-data',
@@ -73,7 +73,7 @@ const sortingArrayTransactionProcess = [
   'transaction-process',
   'privileged-transitions',
   'change-transaction-process',
-  'reviews'
+  'reviews',
 ];
 
 const sortingArrayUsersAndAuthentication = [
@@ -99,6 +99,18 @@ const sortingArrayManageConsole = [
   'console-manage-reviews',
 ];
 
+const sortingArrayDevelopment = [
+  'applications',
+  'flex-environments',
+  'console-overview',
+];
+
+const sortingArrayContentManagement = [
+  'content-management',
+  'headless-content-management',
+  'microcopy',
+];
+
 const sortingArrayHowToUsers = [
   'enable-facebook-login',
   'enable-google-login',
@@ -113,6 +125,7 @@ const sortingArrayFTWContent = [
   'how-to-change-ftw-bundled-microcopy',
   'hosted-microcopy',
   'how-to-change-ftw-language',
+  'page-builder',
   'how-to-add-static-pages-in-ftw',
 ];
 
@@ -127,6 +140,12 @@ const sortingArrayListings = [
   'listings-overview',
   'how-the-listing-search-works',
   'requiring-approval',
+];
+
+const sortingArrayHowToListings = [
+  'extend-listing-data-in-ftw',
+  'modify-time-intervals',
+  'bookings-with-buffer',
 ];
 
 exports.siteStructure = [
@@ -183,11 +202,16 @@ exports.siteStructure = [
       { id: 'concepts-payments', sortingArray: sortingArrayPayments },
       { id: 'concepts-pricing-and-commissions' },
       { id: 'concepts-availability' },
-      { id: 'concepts-development' },
+      { id: 'concepts-development', sortingArray: sortingArrayDevelopment },
+      {
+        id: 'concepts-content-management',
+        sortingArray: sortingArrayContentManagement,
+      },
       { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
-      { id: 'concepts-messages' },
       { id: 'concepts-api-sdk' },
+      { id: 'concepts-messages' },
+      { id: 'concepts-integrations' },
     ],
     // sortingArray: sortingArrayConcepts,
   },
@@ -200,13 +224,17 @@ exports.siteStructure = [
         id: 'how-to-users-and-authentication',
         sortingArray: sortingArrayHowToUsers,
       },
-      { id: 'how-to-listing' },
+      {
+        id: 'how-to-listing',
+        sortingArray: sortingArrayHowToListings,
+      },
       { id: 'how-to-transaction-process' },
       {
         id: 'how-to-payments',
         sortingArray: sortingArrayPaymentCookbooks,
       },
       { id: 'how-to-migrations' },
+      { id: 'how-to-content' },
       { id: 'how-to-messaging' },
       { id: 'how-to-design' },
       { id: 'how-to-events' },

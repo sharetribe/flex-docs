@@ -12,7 +12,7 @@ published: true
 The Flex Template for Web supports having a single language for the UI.
 Supported languages are English, French and Spanish, English being used
 by default. For information about changing the language, see the
-[Changing the language](/ftw/how-to-change-ftw-language) article.
+[Changing the language](/ftw/how-to-change-ftw-language/) article.
 
 We use the [React Intl](https://github.com/yahoo/react-intl) library to
 represent UI microcopy and to format dates, numbers, and money values.

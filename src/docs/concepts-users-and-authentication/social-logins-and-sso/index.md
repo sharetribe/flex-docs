@@ -11,7 +11,7 @@ published: true
 
 This document gives an overview of how different login solutions work
 with Flex. To find guidance on how to implement login using a specific
-service, refer to the following cookbooks:
+service, refer to the following how-to guides:
 
 - [Enable Facebook login](/how-to/enable-facebook-login/)
 - [Enable Google login](/how-to/enable-google-login/)

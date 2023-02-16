@@ -105,7 +105,7 @@ interpreted. For instance, with time-based availability it is possible
 to define that the listing is available on weekdays from 9 AM to 11AM
 and from 1 PM to 6 PM. More information on how to set a time-based
 availability plan for a listing can be found in the
-[time-based bookings cookbook](/how-to/enable-time-based-bookings-into-use/).
+[time-based bookings how-to guide](/how-to/enable-time-based-bookings-into-use/).
 
 > **Note:** By default,
 > [FTW-daily](https://github.com/sharetribe/ftw-daily/) uses day-based

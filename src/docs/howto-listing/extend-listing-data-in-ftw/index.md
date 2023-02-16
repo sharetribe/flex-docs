@@ -854,4 +854,4 @@ used in the test and custom config changes will not affect test results.
 To see how the capacity attribute can be used to filter search results,
 please refer to the
 [Change search filters in FTW](/how-to/change-search-filters-in-ftw/)
-cookbook.
+how-to guide.

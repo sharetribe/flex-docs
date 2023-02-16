@@ -73,8 +73,8 @@ the marketplace.
 First step for adding a new filter is to make sure that the data being
 used for filtering is saved in the listing's `publicData` attribute. On
 how to achieve this, please refer to the
-[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
-cookbook. Another aspect in search filters is that a
+[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/) how-to
+guide. Another aspect in search filters is that a
 [search schema](/references/extended-data/#search-schema) needs to be
 added to the data in order for API to index it for search. Adding search
 schema can be done by the
@@ -89,8 +89,8 @@ refers to public data, "meta\_" would refer to \_metadata*, which is
 another type of extended data.
 
 Further reading on public data can be found in the
-[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
-cookbook.
+[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/) how-to
+guide.
 
 > **Note:** Only top-level attributes can be indexed.
 
@@ -143,7 +143,7 @@ There you need to add the capacity filter's configurations to the
 
 > **Note**: you might have done this already if you followed the
 > [Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
-> cookbook article.
+> how-to guide.
 
 In the above configuration, we defined filter's `id` and `label`. The
 label is not modified through the microcopy file (e.g. _en.json_),

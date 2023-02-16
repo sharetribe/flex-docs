@@ -120,6 +120,7 @@
   "Sidebar.conceptsAvailability": "Availability and inventory management",
   "Sidebar.conceptsDevelopment": "Marketplace development & configuration",
   "Sidebar.conceptsManagement": "Marketplace management",
+  "Sidebar.conceptsContentManagement": "Content Management",
   "Sidebar.conceptsExtendedData": "Extended data",
   "Sidebar.conceptsApiSdk": "APIs & SDKs",
   "Sidebar.conceptsDataModel": "Data model",
@@ -127,6 +128,7 @@
   "Sidebar.conceptsPayments": "Payments",
   "Sidebar.conceptsSearch": "Search",
   "Sidebar.conceptsMessages": "Emails & notifications",
+  "Sidebar.conceptsIntegrations": "Integrations",
 
   "Sidebar.howTo": "How-Tos",
   "Sidebar.howToUsersAndAuthentication": "Users and Authentication",
@@ -139,6 +141,7 @@
   "Sidebar.howToEvents": "Events",
   "Sidebar.howToSearch": "Search",
   "Sidebar.howToManage": "Manage",
+  "Sidebar.howToContent": "Content Management",
 
   "Sidebar.flexCli": "Flex CLI",
 
@@ -163,5 +166,7 @@
 
   "Sidebar.references": "References",
 
-  "Sidebar.background": "Background"
+  "Sidebar.background": "Background",
+
+  "Footer.heading": "Can't find what you're looking for?"
 }

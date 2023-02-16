@@ -170,6 +170,10 @@ Block quotes can have several lines or even nested block quotes.
 
 ---
 
+## Warning and info banners
+
+Add info and warning banners by using the `<info>` or `<warning>` tags.
+
 ## Code blocks
 
 This is an indented code block:

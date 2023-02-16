@@ -75,7 +75,8 @@ development environment. For production deploys most should be set.
 
 - **`SERVER_SHARETRIBE_TRUST_PROXY`**
 
-  Set when running the app behind a reverse proxy, e.g. in Heroku.
+  Set when running the app behind a reverse proxy, e.g. in Heroku or
+  Render.
 
 - **`REACT_APP_SENTRY_DSN`**
 

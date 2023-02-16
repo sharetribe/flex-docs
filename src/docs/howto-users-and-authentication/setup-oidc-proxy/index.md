@@ -4,8 +4,8 @@ slug: setup-open-id-connect-proxy
 updated: 2021-03-02
 category: how-to-users-and-authentication
 ingress:
-  In this cookbook, we'll take a look at the process of setting up
-  OpenID Connect (OIDC) proxy to FTW. This allows you to add support for
+  In this guide, we'll take a look at the process of setting up OpenID
+  Connect (OIDC) proxy to FTW. This allows you to add support for
   identity providers that Flex doesn't natively support. In this
   example, we are building the proxy implementation for LinkedIn.
 published: true
@@ -18,12 +18,15 @@ into an OpenID Connect ID token that can be used to validate user login
 in Flex. With this approach, FTW will serve as an identity provider
 towards Flex.
 
-Flex verifies the ID token by fetching the JSON Web Key that is hosted
-by your FTW server and using that to unsign the token. A consequence of
-this is, that the JSON Web Key needs to be publicly available. This
-means that the proxy setup will not work directly in localhost. To test
-out the LinkedIn login, you should e.g.
-[deploy your FTW changes to Heroku](/tutorial/deploy-to-heroku/).
+Flex verifies the ID token by
+
+- fetching the JSON Web Key that is hosted by your FTW server, and
+- using that to unsign the token.
+
+A consequence of this is that the JSON Web Key needs to be publicly
+available. This means that the proxy setup will not work directly in
+localhost. To test out the LinkedIn login, you should e.g.
+[deploy your FTW changes to Render](/tutorial/deploy-to-render/).
 
 In this guide, we'll integrate LinkedIn login to Flex by using FTW as an
 OIDC proxy to Flex. The main steps to take to achieve this are:
@@ -44,14 +47,17 @@ For OpenID Connect (OIDC) identity providers, Flex supports RSA signed
 ID tokens. RSA is an asymmetric signing function. Therefore, all OIDC
 identity providers will need to provide their URL (also known as _issuer
 location_) to Flex so that public signing keys can be fetched for ID
-token validation. When using FTW as an OIDC proxy, FTW should be served
-publicly, so that Flex can fetch the public signing key used to sign ID
-tokens used with authentication. This means that when developing OIDC
-proxy capabilities, by default, an FTW application running in
-`localhost` can not be used as an OIDC proxy but the application should
-be deployed, for example, to a staging environment. If you desire to
-develop this functionality complete locally, take a look at tools like
-[Ngrok](https://ngrok.com/) or
+token validation.
+
+When using FTW as an OIDC proxy, FTW should be served publicly, so that
+Flex can fetch the public signing key used to sign ID tokens used with
+authentication. This means that when developing OIDC proxy capabilities,
+by default, an FTW application running in `localhost` can not be used as
+an OIDC proxy but the application should be deployed, for example, to a
+staging environment.
+
+If you want to develop this functionality complete locally, take a look
+at tools like [Ngrok](https://ngrok.com/) or
 [Localtunnel](https://localtunnel.github.io/www/) that allow exposing
 your local ports publicly.
 
@@ -81,50 +87,63 @@ your local ports publicly.
 
 ## Configure a new identity provider and client in Flex Console
 
-With this proxy implementation, your FTW works as the identity provider
-that Flex uses to validate the ID token that wraps the LinkedIn login
-information. To enable logins in Flex using the OIDC proxy, a
-corresponding identity provider and identity provider client need to be
-configured for your marketplace in Flex Console. See the
-[OpenID Connect cookbook](/how-to/enable-open-id-connect-login/) on for
+With this proxy implementation, **your FTW works as the identity
+provider towards Flex.** Flex uses your FTW to validate the ID token
+that wraps the LinkedIn login information. To enable logins in Flex
+using the OIDC proxy, a corresponding identity provider and identity
+provider client need to be configured for your marketplace in Flex
+Console. See the
+[OpenID Connect how-to guide](/how-to/enable-open-id-connect-login/) for
 information on how to add a new identity provider for your marketplace.
 
-Here's some guidance for configuring a new identity provider and a
-client to be used as a proxy for LinkedIn:
+Here's some guidance for configuring your FTW as a new identity provider
+and a client to be used as a proxy for LinkedIn.
 
-- **Identity provider name and ID** The identity provider ID is
-  generated based on the name of the IdP. The ID will be passed to the
-  Flex API when creating a user or logging in using the proxy. When a
-  user logs in with an identity provider, their identity provider
-  profile is linked to their user account and this relationship is
-  exposed in the
-  [currentUser resource](https://www.sharetribe.com/api-reference/marketplace.html#currentuser-identity-provider)
-  in the Flex API. If the intention is to use the FTW to proxy login to
-  multiple services, it's advised to create a distinct identity provider
-  for each, and name them so that the ID indicates what is the actual
-  service providing the authentication. In LinkedIn's case the IdP name
-  could be "LinkedIn" or "LinkedIn Proxy".
+### Identity provider name and ID
 
-- **Identity provider URL** Based on this URL, Flex determines the path
-  to an OpenID Connect discovery document (_[identity provider
-  URL]/.well-known/openid-configuration_) and from there on to an ID
-  token signing key. By default this should be the root address of your
-  application, for example, _https://example.com_ or, for default Heroku
-  URLs, _https://EXAMPLE.herokuapp.com_. Note, that this URL needs to be
-  publicly hosted so a `localhost` URL will not work.
+The identity provider ID is generated based on the name of the IdP. The
+ID will be passed to the Flex API when creating a user or logging in
+using the proxy. When a user logs in with an identity provider, their
+identity provider profile is linked to their user account and this
+relationship is exposed in the
+[currentUser resource](https://www.sharetribe.com/api-reference/marketplace.html#currentuser-identity-provider)
+in the Flex API.
 
-- **Client ID** When using FTW as on OpenID Connect proxy, you are in
-  charge of generating a client ID. The value can be any randomly
-  generated string.
+If the intention is to use the FTW to proxy login to multiple services,
+it's advised to create a distinct identity provider for each, and name
+them so that the ID indicates what is the actual service providing the
+authentication. In LinkedIn's case the IdP name could be "FTW LinkedIn"
+or "FTW LinkedIn Proxy".
+
+### Identity provider URL
+
+Based on this URL, Flex determines the path to an OpenID Connect
+discovery document (_[identity provider
+URL]/.well-known/openid-configuration_) and from there on to an ID token
+signing key.
+
+In Open ID Connect terms, this is the issuer URL. In this setup, your
+FTW acts as the issuer towards Flex, so the URL should point to your
+FTW.
+
+By default, the identity provider URL should be the root address of your
+FTW application, for example, _https://example.com_ or, for default
+Render URLs, _https://EXAMPLE.onrender.com_. Note, that this URL needs
+to be publicly hosted so a `localhost` URL will not work.
+
+### Client ID
+
+When using FTW as on OpenID Connect proxy, you are in charge of
+generating a client ID. The value can be any randomly generated string.
 
 ## Build LinkedIn auth flow in FTW
 
 ### FTW as an OpenID Connect identity provider
 
-FTW-daily and FTW-hourly provide a few helper functions which you can
-use as a starting point in your customization. When following this guide
-you will not need to pay too much attention to them as the crucial code
-is provided for you in the `linkedin.js` file below but it's good to be
+The FTW templates provide a few helper functions which you can use as a
+starting point in your customization. When following this guide you will
+not need to pay too much attention to them as the crucial code is
+provided for you in the `linkedin.js` file below but it's good to be
 aware of them. You can find these functions in the `api-util/idToken.js`
 file in your server:
 
@@ -235,9 +254,10 @@ The RSA key pair we created in the previous section
 The keys are multi-line strings but Heroku is fine with that so you can
 paste the keys in config vars as they are.
 
-In case your FTW runtime environment requires to declare environment
-variables in a file, wrap the keys with `"`s, escape line breaks with
-`\n`s and join the lines to a single line.
+> If you are using Render or some other environment that requires you to
+> declare environment variables through a file, wrap the RSA keys with
+> quotation marks `"` and escape line breaks with the newline character
+> `\n`. Make sure that the RSA key is defined on a single line.
 
 `LINKEDIN_PROXY_IDP_ID`
 

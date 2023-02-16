@@ -14,8 +14,8 @@ FTW-daily or FTW-hourly, you might want to use the keyword search in the
 Topbar component instead of location search.
 
 > **Note:** FTW-product use Keyword search by default and it's
-> configurable through _src/config/config.js_. You can skip this
-> cookbook article.
+> configurable through _src/config/config.js_. You can skip this how-to
+> guide.
 
 ## How to use the keyword search in Topbar
 

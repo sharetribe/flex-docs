@@ -61,18 +61,19 @@
 /docs/background/custom-pricing/ /docs/concepts/pricing/
 /docs/cookbook-payments/customize-pricing/ /docs/how-to/how-to-customize-pricing/
 /docs/ftw/how-to-change-ftw-ui-texts-and-translations/ /docs/ftw/how-to-change-ftw-ui-texts/
+/docs/tutorial/change-image-assets/ /docs/tutorial/change-images/
 
 # Redirects introduced in the Flex Docs reorganisation project
 
 /docs/tutorial-branding/first-edit/ /docs/tutorial/first-edit/
-/docs/tutorial-branding/change-image-assets/ /docs/tutorial/change-image-assets/
+/docs/tutorial-branding/change-image-assets/ /docs/tutorial/change-images/
 /docs/tutorial-branding/change-logo/ /docs/tutorial/change-logo/ 
 /docs/tutorial-branding/working-with-translations/ /docs/tutorial/working-with-translations/ 
 /docs/tutorial-branding/configurations/ /docs/tutorial/configurations/ 
 /docs/tutorial-branding/change-default-locations/ /docs/tutorial/change-default-locations/ 
 /docs/tutorial-branding/customize-amenities-filter/ /docs/tutorial/customize-amenities-filter/ 
 /docs/tutorial-branding/add-faq-page/ /docs/tutorial/add-faq-page/ 
-/docs/tutorial-branding/deploy-to-heroku/ /docs/tutorial/deploy-to-heroku/ 
+/docs/tutorial-branding/deploy-to-heroku/ /docs/tutorial/deploy-to-render/ 
 
 /docs/tutorial-extended-data/add-extended-data/ /docs/tutorial/add-extended-data/
 /docs/tutorial-extended-data/show-extended-data/ /docs/tutorial/show-extended-data/
@@ -191,6 +192,10 @@
 /docs/ftw/how-to-change-ftw-bundled-translations/ /docs/ftw/how-to-change-ftw-bundled-microcopy/
 /docs/ftw/hosted-translations/ /docs/ftw/hosted-microcopy/
 /docs/concepts/translations/ /docs/concepts/microcopy/
+
+# Add new redirects below:
+
+/docs/tutorial/deploy-to-heroku/ /docs/tutorial/deploy-to-render/ 
 
 # Catchall for URL that are not found. Without this Netlify wouldn't
 # show the custom 404 page.
