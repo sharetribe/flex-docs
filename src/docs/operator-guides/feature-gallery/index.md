@@ -20,7 +20,7 @@ your developer to build this feature.
 
 # Gallery
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/shroUNJKWHK9yd2Px?backgroundColor=yellow" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
+<iframe class="airtable-embed" src="https://airtable.com/embed/shreAe4r7NNicveJ3?backgroundColor=purple&layout=card&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
 
 </iframe>
 
@@ -51,17 +51,12 @@ your developer to build this feature.
 **Alternate name(s)**: contains other keywords for the feature. The same
 feature can have many names.
 
-**:Description**:: contains what the feature is about. It describes who
-uses it, how, and to what end.
+**:Description**: brief description of what the feature is about 
 
-**:Type**:: describes what kind of marketplaces Sharetribe typically
-sees utilize this feature. One of service, rental, product, or events
+**:Type**: describes what kind of marketplaces Sharetribe typically
+sees utilize this feature.
 
-**:Starting implementation**:: tells you how the fastest implementation
-of this feature on Flex would work. It describes how you (the Operator)
-or your users (demand/supply) use the feature and what outcome resutls.
+**:Typical starting functionality**: tells you the functionality you or your users (buyer/seller) experience in the fastest or simplest implementation of this feature from the perspective of development effort required. Use this to understand the MVP experience available to Flex marketplaces.
 
-**:What to prepare for a developer?**:: shares information, including
-questions, notes, and examples, to consider when building. Use it to be
-better prepared when sharing your requirements with a developer and more
+**:Considerations for development**: shares information developers think about or need in order to build this feature.Use it to be better prepared when sharing your requirements with a developer and more
 informed when making decisions about what you build.
