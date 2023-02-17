@@ -20,7 +20,7 @@ your developer to build this feature.
 
 # Gallery
 
-<iframe src="https://airtable.com/embed/shria2G3JzOWNFiYn?backgroundColor=red" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;" title="Airtable embed" frameborder="0">
+<iframe class="airtable-embed" src="https://airtable.com/embed/shroUNJKWHK9yd2Px?backgroundColor=yellow" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
 
 </iframe>
 
