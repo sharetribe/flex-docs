@@ -150,8 +150,8 @@ Now that we know how to list processes, the next this is to
 ### flex-cli: command not found
 
 If you're seeing `flex-cli: command not found` error and you installed
-Flex CLI with Yarn, you need to add Yarn global bin path to the PATH
-environment varible.
+Flex CLI with Yarn, you need to add
+[Yarn global bin path to the PATH environment variable](https://classic.yarnpkg.com/en/docs/cli/global/#adding-the-install-location-to-your-path).
 
 #### On Windows
 
@@ -165,6 +165,7 @@ post:
 
 #### On Mac
 
-1. Open your shell configuration file. If you are using _zsh_, it will be `.zshrc`.
+1. Open your shell configuration file. If you are using _zsh_, it will
+   be `.zshrc`.
 2. Add `export PATH="$(yarn global bin):$PATH"` to the config file.
 3. Restart terminal
