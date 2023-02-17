@@ -165,6 +165,6 @@ post:
 
 #### On Mac
 
-1. Open your config file. If you are using _zsh_, it will be `.zshrc`.
+1. Open your shell configuration file. If you are using _zsh_, it will be `.zshrc`.
 2. Add `export PATH="$(yarn global bin):$PATH"` to the config file.
 3. Restart terminal
