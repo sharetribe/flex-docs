@@ -24,6 +24,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@babel/runtime": "^7.20.13",
     "@docsearch/react": "3",
     "babel-plugin-styled-components": "^1.13.3",
     "docsearch.js": "2.6.3",
