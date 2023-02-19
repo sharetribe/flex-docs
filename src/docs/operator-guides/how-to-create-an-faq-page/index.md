@@ -287,7 +287,7 @@ create a link leading to https://www.example.com/p/contact-us, we just
 need to write “/p/contact-us” in the “Internal link address” Field - in
 our example marketplace, there is a live contact form at that address.
 
-Reference images: Section, Block 1, Block 2, Block 3
+Reference images:
 
 <extrainfo title="3rd FAQ Section configuration">
 
@@ -341,7 +341,7 @@ Reference images:
 
 <extrainfo title="Review Section configuration">
 
-![Change environments](./faq-5-13-faq-section-3.jpg)
+![Change environments](./faq-5-13-review-section.jpg)
 
 </extrainfo>
 
