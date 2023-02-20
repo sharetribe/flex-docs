@@ -63,7 +63,9 @@ node_modules
 ## Build your Docker image and run the Docker container
 
 To build your Docker image, open your command line and navigate to the
-root of your FTW folder. Run the following command.
+root of your FTW folder. Run the following command – be careful to
+include the final `.` , as it indicates that the Dockerfile is in the
+current directory.
 
 ```shell
 $ docker build -t ftw-docker .
@@ -76,5 +78,5 @@ start a container using the image you created.
 $ docker run -dp 4000:4000 ftw-docker
 ```
 
-You can now visit _localhost:4000_ on your local machine to see that the
-container is running your application.
+You can now visit _http://localhost:4000_ on your local machine to see
+that the container is running your application.
