@@ -39,15 +39,16 @@ _Dockerfile_ and save.
 
 ```
 FROM node:16
-WORKDIR /
-COPY package.json ./
-COPY yarn.lock ./
+WORKDIR /home/node/app
+COPY package.json .
+COPY yarn.lock .
 RUN yarn install
-COPY . .
+COPY . ./
 ENV PORT=4000
 ENV NODE_ENV=production
 EXPOSE 4000
 RUN yarn run build
+USER node
 CMD ["yarn", "start"]
 ```
 
@@ -75,7 +76,7 @@ The build step can take a while. After the build step completes, you can
 start a container using the image you created.
 
 ```shell
-$ docker run -dp 4000:4000 ftw-docker
+$ docker run -dp  4000:4000 ftw-docker
 ```
 
 You can now visit _http://localhost:4000_ on your local machine to see
