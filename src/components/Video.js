@@ -13,10 +13,15 @@ const VideoTag = styled.video`
 
 const VideoElement = ({ children }) => {
   const mapChildren = React.Children.map(children, child => {
-    return typeof child !== 'string' ? React.cloneElement(child) : null;
+    // Using React.cloneElement, we clone the video object and overwrite the src prop.
+    // The overwrite appends #t=0.1 which in combination with preload="metadata" adds the
+    // first frame of the video as the video thumbnail.
+    return typeof child !== 'string'
+      ? React.cloneElement(child, { src: child.props?.src + '#t=0.1' })
+      : null;
   });
   return (
-    <VideoTag controls muted>
+    <VideoTag controls muted preload="metadata">
       {children && mapChildren}
       <p>Your browser does not support embedded videos</p>
     </VideoTag>
