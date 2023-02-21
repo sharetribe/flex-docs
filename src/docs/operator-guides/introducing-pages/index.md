@@ -15,7 +15,7 @@ or About page can now be modified without developer input. Pages’
 deployment workflow lets you create and review content changes in
 development mode before making them available in your live marketplace.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Nl2jjjfu3WQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pkMKt1-L09w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## What you can do with Pages
 
