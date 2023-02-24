@@ -299,6 +299,11 @@ containers/PrivacyPolicyPage/FallbackPage.js:
 
 ## How to take Pages into use if you are using an older version of FTW
 
+You can either follow these instructions, or
+[pull the latest upstream changes](ftw/how-to-customize-ftw/#pull-in-the-latest-upstream-changes).
+If you've made a lot of customisations to your application, it may be
+easier to implement the changes manually.
+
 This section will outline the steps to incorporate the PageBuilder
 feature into an older version of FTW. The PageBuilder feature
 automatically renders pages based on data fetched through the Asset
@@ -334,7 +339,7 @@ export { default as AspectRatioWrapper } from './AspectRatioWrapper/AspectRatioW
 6. Install all the required packages using either yarn or npm:
 
 ```shell
-yarn add rehype-react rehype-sanitize remark-parse remark-rehype unified
+yarn add rehype-react rehype-sanitize remark-parse remark-rehype unified@9.2.2
 ```
 
 7. Overwrite the contents of src/util/data.js with the
