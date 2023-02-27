@@ -339,7 +339,7 @@ export { default as AspectRatioWrapper } from './AspectRatioWrapper/AspectRatioW
 6. Install all the required packages using either yarn or npm:
 
 ```shell
-yarn add rehype-react rehype-sanitize remark-parse remark-rehype unified@9.2.2
+yarn add rehype-react@6.2.1 rehype-sanitize@4.0.0 remark-parse@9.0.0 remark-rehype@8.1.0 unified@9.2.2
 ```
 
 7. Overwrite the contents of src/util/data.js with the
