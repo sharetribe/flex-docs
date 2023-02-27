@@ -378,6 +378,15 @@ import { loadData as PrivacyPolicyPageLoader } from './PrivacyPolicyPage/Privacy
     },
 ```
 
+12. Overwrite the contents of server/dataLoader.js with the new
+    [server/dataLoader.js](https://github.com/sharetribe/ftw-daily/blob/master/server/dataLoader.js)
+    file.
+
+13. Allow Youtube in csp.js:
+    [row 43 of csp.js](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js#L43)
+    and
+    [row 70](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js#L70)
+
 To enable all new components that use the Pages feature (the About page,
 Landing page, Terms of Service page and the CMSPage), repeat steps 8 and
 onward, replacing PrivacyPolicyPage with the component you want to
