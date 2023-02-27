@@ -276,4 +276,13 @@ exports.siteStructure = [
     isOpen: false,
     sortingArray: sortingArrayReferences,
   },
+  {
+    id: 'operator-guides',
+    isOpen: false,
+    isHidden: false,
+    subcategories: [
+      { id: 'operator-guides-pages' },
+      { id: 'operator-guides-concepts' },
+    ],
+  },
 ];

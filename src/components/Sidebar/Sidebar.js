@@ -165,6 +165,7 @@ const SideBarStaticQuery = props => {
     <StaticQuery
       query={query}
       render={data => {
+        console.log(data, 'full data in sidebar');
         return (
           <SideNavigation>
             <CategoryList

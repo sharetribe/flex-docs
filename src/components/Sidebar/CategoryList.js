@@ -124,6 +124,7 @@ const Category = props => {
     depth,
     activeArticle,
     isOpenConfig,
+    isHiddenConfig,
     ...rest
   } = props;
 
@@ -143,9 +144,12 @@ const Category = props => {
       ? isOpenConfig
       : true;
 
+  // hide operator guides from the menu
+  const isHidden = isHiddenConfig ? true : false;
+
   const TitleComponent =
     depth && depth === 1 ? StyledMainCategoryTitle : StyledCategoryTitle;
-  return (
+  return isHidden ? null : (
     <li className={className} {...rest}>
       <TitleComponent onClick={() => setCategoryOpen(!isOpen)} depth={depth}>
         <UiText id={`Sidebar.${camelize(category)}`} />
@@ -183,8 +187,8 @@ const CategoryList = props => {
     <ul className={className}>
       {categories.map((n, i) => {
         const articleGroup = groupedArticles.find(g => g.category === n.id);
-        const hasSubcategories = n.subcategories && n.subcategories.length > 0;
 
+        const hasSubcategories = n.subcategories && n.subcategories.length > 0;
         return (
           <StyledCategory
             key={`nav_${n.id}`}
@@ -193,6 +197,7 @@ const CategoryList = props => {
             depth={depth}
             activeArticle={activeArticle}
             isOpenConfig={n.isOpen}
+            isHiddenConfig={n.isHidden}
           >
             <ArticleLinkList
               articleGroup={articleGroup}
