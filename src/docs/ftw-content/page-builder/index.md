@@ -300,7 +300,7 @@ containers/PrivacyPolicyPage/FallbackPage.js:
 ## How to take Pages into use if you are using an older version of FTW
 
 You can either follow these instructions, or
-[pull the latest upstream changes](ftw/how-to-customize-ftw/#pull-in-the-latest-upstream-changes).
+[pull the latest upstream changes](/ftw/how-to-customize-ftw/#pull-in-the-latest-upstream-changes).
 If you've made a lot of customisations to your application, it may be
 easier to implement the changes manually.
 
