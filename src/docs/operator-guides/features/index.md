@@ -1,7 +1,7 @@
 ---
 title: Features
 slug: features
-updated: 2021-10-04
+updated: 2023-02-04
 category: operator-guides
 ingress:
   This article provides an overview of the most important features of
