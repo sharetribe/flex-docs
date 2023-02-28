@@ -81,3 +81,10 @@ other changes you may want to make. Some of these options include:
 - Update [page schema](/tutorial/add-faq-page/#page-schema) to improve
   Search Engine Optimization (SEO)
 - Add new [search filters](/tutorial/implement-amenities-filter/)
+- Update transaction email templates. For more information, see
+  [Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
+  tutorial and [Email templates](/references/email-templates/) reference
+  article.
+- Add more content pages:
+  [How the templates render content pages using the PageBuilder](/ftw/page-builder/)
+- Update other existing pages

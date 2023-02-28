@@ -21,13 +21,19 @@ At present, Flex supports only JSON data as assets. Support for images
 The assets are typically edited by a marketplace operator though Flex
 Console.
 
-> **IMPORTANT** All assets are considered public and must not be used to
-> store secret or otherwise sensitive information.
+<warning>
 
-> **Note:** Assets are in early development. At present, Console allows
-> only limited ability to manage the content of a single asset - the
-> JSON document describing the [microcopy strings](/concepts/microcopy/)
-> for a client application. Stay tuned for more later on!
+All assets are considered public and must not be used to store secret or
+otherwise sensitive information.
+
+</warning>
+
+At present, Flex uses assets for managing marketplace content without
+code changes:
+
+- you can modify [microcopy strings](/concepts/microcopy/) and
+- create content [pages](/concepts/content-management/) for your
+  marketplace
 
 For example, a marketplace may have assets with the following assets:
 
@@ -114,4 +120,5 @@ custom caching is being implemented.
 ## Further reading
 
 - [Editing client application microcopy](/concepts/microcopy/)
+- [Managing asset-based marketplace content](/concepts/content-management)
 - [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)

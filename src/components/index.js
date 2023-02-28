@@ -54,6 +54,7 @@ export { default as CarouselSneakertimeTransactionProcess } from './CarouselSnea
 export { default as CarouselYogatimeTransactionProcess } from './CarouselYogatimeTransactionProcess';
 export { default as CarouselYogatimeSearchJourney } from './CarouselYogatimeSearchJourney';
 export { default as CarouselYogatimeCreationJourney } from './CarouselYogatimeCreationJourney';
+export { default as CarouselSectionsWithoutBlocks } from './CarouselSectionsWithoutBlocks';
 export { default as MainLayout } from './MainLayout';
 export { default as Topbar } from './Topbar/Topbar';
 export { default as Sidebar } from './Sidebar';

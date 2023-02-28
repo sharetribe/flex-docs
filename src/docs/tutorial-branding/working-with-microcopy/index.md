@@ -47,12 +47,14 @@ found in this _en.json_ file:
         └── en.json
 ```
 
-In addition to microcopy, there are also pages in the template that can
-be modified with the Pages editor. _TODO: fix wording and add link after
-Pages is released_
+In addition to microcopy, your marketplace has content pages, such as
+**AboutPage**, **PrivacyPolicy**, and **TermsOfService**. Those pages
+are managed in Flex Console under Content > Pages, and they can be
+modified similarly to
+[the landing page](/tutorial/modify-landing-page/).
 
-In this tutorial, we change the microcopy of the Topbar component, but
-we have another document that dives deeper into this topic:
+In this tutorial, we change the microcopy of Hero component, but we have
+another document that dives deeper into this topic:
 [How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/)
 
 ## Change the microcopy for Topbar component

@@ -11,13 +11,14 @@ published: true
 
 The template has several types of texts that can be read in the user
 interface. The most extensive group of UI texts is microcopy, but the
-template also has static pages, as well as some other groups of content
+template also has content pages, as well as some other groups of content
 that can be configured in the code base.
 
 ## Microcopy
 
 In the Sharetribe Web Template, user-facing content is not written
 directly into the source code. Instead, the source code uses
+
 [React Intl message formatting](https://formatjs.io/docs/intl#formatmessage)
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
@@ -40,16 +41,29 @@ Read more about
 In addition to microcopy, there are other forms of content in the client
 applications that operators may need to manage.
 
+## Content pages
+
+Your marketplace also has some content pages that can be modified
+through Flex Console. The default content pages include
+
+- About
+- Landing page
+- Privacy Policy
+- Terms of Service
+
+These pages are rendered by the
+[PageBuilder component](/ftw/page-builder/) in the FTW template. In
+addition to these default pages, you can create your own content pages
+through Flex Console, and
+[fully manage their content](/concepts/content-management/) without code
+changes. On the template side, you can modify
+[how that content is displayed](/how-to/options-prop/).
+
 ## Static pages
 
-TODO: Once pages is released, remove this
-
-A few components in the template app contain texts that are not included
-in the `en.json` file, namely _AboutPage_, _PrivacyPolicy_, and
-_TermsOfService_. The reason behind this is that these components only
-contain static content that is laid out in more of a document format so
-the copy for these texts can easily be changed and maintained in the
-component files themselves.
+It is possible to create fully static pages in the FTW templates. You
+might want to do this if you e.g. want to create static content pages
+for performance reasons.
 
 More information about adding static content to the application can be
 found in the

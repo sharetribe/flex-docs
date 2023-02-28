@@ -1,7 +1,7 @@
 ---
 title: Free templates for your Terms of Service and Privacy Policy
 slug: free-templates
-updated: 2022-10-17
+updated: 2023-02-14
 category: operator-guides
 ingress:
   Create Terms of Service and Privacy Policy documents for your
@@ -38,54 +38,52 @@ may not reflect the most current legal developments.
 
 ## How to use the Terms of Service template for your marketplace business
 
-- Open the
-  [TermsOfService.js](https://github.com/sharetribe/ftw-daily/blob/master/src/components/TermsOfService/TermsOfService.js)
-  file in your preferred code editor.
-
-- Open this Google Docs document where you’ll find the Terms of Service
-  template:
-  https://docs.google.com/document/d/1-tX6RznVYRQx8s0mxW_JdjElYL_-93njhAiNRvs4Zno/edit?usp=sharing
-
+- Go to [Flex Console](https://flex-console.sharetribe.com/login).
+- Open the Pages editor at /content/pages.
+- Click on the “terms-of-service” page to edit it.
+- Open the “terms-of-service” article.
+- Open the “terms-of-service” block.
+- Remove the default content from the “Text content” text area.
+- Open
+  [this Google Docs document](https://docs.google.com/document/d/1DfTGyW9cYz-Hdsc7sdQFW8_cuEZO2IASpeugznPwH_M/edit?usp=sharing)
+  where you’ll find the Terms of Service template.
 - Select and copy all the content in the template, except the disclaimer
   (start from "Terms of Service").
-
-- Paste the content into TermsOfService.js (you will need to format the
-  content yourself into valid HTML).
-
-- Go through the document and replace parts marked with
-  `{{-- INSERT HERE XXX --}}` with the correct content. This is to add
+- Paste the content into the “Text content” text area of the
+  “terms-of-service” block.
+- Go through the text content and replace parts marked with
+  {{-- INSERT HERE XXX --}} with the correct content. This is to add
   today's date, your marketplace name, your contact details, etc. You
   can use the search feature in your browser to look for all "{{--
   INSERT HERE" occurrences.
-
-- Save and deploy the changes.
+- Save the changes. You can validate how the page looks by clicking on
+  the "View page" in the top right corner of the editing page.
 
 Voilà! Your marketplace visitors will be able to view your Terms of
 Service on the Terms of Service page.
 
 ## How to use the Privacy Policy template for your marketplace business
 
-- Open the
-  [PrivacyPolicy.js](https://github.com/sharetribe/ftw-daily/blob/master/src/components/PrivacyPolicy/PrivacyPolicy.js)
-  file in your preferred code editor.
-
-- Open this Google Docs document where you’ll find the Privacy Policy
-  template:
-  https://docs.google.com/document/d/1Mg0kfSorErOXsu5FlLm1rtPGGONw4-Jv6FG4U4Ylt1Y/edit?usp=sharing.
-
+- Go to [Flex Console](https://flex-console.sharetribe.com/login).
+- Open the Pages editor at /content/pages.
+- Click on the “privacy-policy” page to edit it.
+- Open the “privacy-policy” article.
+- Open the “privacy-policy” block.
+- Remove the default content from the “Text content” text area.
+- Open
+  [this Google Docs document](https://docs.google.com/document/d/1rv9njwa_t2dTOh5mY9uGXFdz4tozqi-tqp0ZU51obg0/edit?usp=sharing)
+  where you’ll find the Privacy Policy template.
 - Select and copy all the content in the template, except the disclaimer
   (start from "Privacy Policy").
-
-- Paste the content into TermsOfService.js (you will need to format the
-  content yourself into valid HTML).
-
-- Go through the document and replace parts marked with
-  `{{-- INSERT HERE XXX --}}` with the correct content. This is to add
+- Paste the content into the “Text content” text area of the
+  “privacy-policy” block.
+- Go through the text content and replace parts marked with
+  {{-- INSERT HERE XXX --}} with the correct content. This is to add
   today's date, your marketplace name, your contact details, etc. You
   can use the search feature in your browser to look for all "{{--
   INSERT HERE" occurrences.
-
-- Save and deploy the changes.
+- Save the changes. You can validate how the page looks by clicking on
+  the "View page" in the top right corner of the editing page.
 
 Voilà! Your marketplace visitors will be able to view your Privacy
 Policy on the Privacy Policy page.

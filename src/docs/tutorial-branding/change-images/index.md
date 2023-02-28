@@ -1,11 +1,11 @@
 ---
-title: Change image assets
-slug: change-image-assets
+title: Change template images
+slug: change-images
 updated: 2022-07-11
 category: tutorial-branding
 ingress:
-  Learn how to update image assets such as the default background image,
-  favicon and app icons.
+  Learn how to update template images such as the default background
+  image, favicon and app icons.
 published: true
 ---
 
@@ -52,6 +52,22 @@ And this is how the authentication page looks with the new background
 image:
 
 ![CottageDays example with updated Hero image](./cottagedays-background-image.png)
+
+### Images in 'assets' or Image Assets?
+
+The FTW templates use two types of assets:
+
+- bundled assets and
+- hosted assets
+
+Bundled assets are a part of the client application. For images, they
+live in the _src/assets_ folder of the client codebase. Hosted assets,
+on the other hand, are fetched from the
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
+This tutorial only focuses on bundled assets. You can
+[read more about hosted assets](/references/assets/).
+
+</extrainfo>
 
 ## Images for social media
 
@@ -152,6 +168,6 @@ you should see a new favicon in the browser's tab:
 
 ![Favicon for CottageDays](./cottagedays-favicon.png)
 
-There's one obvious Biketribe image still visible on top bar: Logo. It's
-time to change that.<br />
-[› Go to the next article](/tutorial/change-logo/)
+We also want to modify the landing page to use the cottage theme. We
+will do that next.<br />
+[› Go to the next article](/tutorial/modify-landing-page/)

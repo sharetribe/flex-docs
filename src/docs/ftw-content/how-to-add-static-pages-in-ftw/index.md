@@ -1,7 +1,7 @@
 ---
 title: How to add a static page
 slug: how-to-add-static-pages-in-ftw
-updated: 2023-01-01
+updated: 2023-02-14
 category: ftw-content
 ingress:
   This guide describes how to add a non-dynamic static page using the
@@ -15,22 +15,38 @@ dynamic content. This guide walks you through the steps required to
 create a static and non-dynamic content page, from where to create the
 new component to how to add new routes.
 
-## Create a new folder
+You might want to do this, for instance, if
 
-1. Create a new folder in the _src/containers/_ directory. In this
-   example, we will name our component **ContentPage**. Our new folder
-   will exist in _src/containers/ContentPage/_.
+- you have a page that embeds a component that fetches its own data, or
+- you want to optimise some pages for performance, so that they don't
+  fetch any data.
 
-2. Create a new JavaScript file that matches the directory name. The
-   path should look like: _src/containers/ContentPage/ContentPage.js_
+<info>
 
-3. Create a new CSS file that matches the directory name. The path
-   should look like:
-   _src/containers/ContentPage/ContentPage.module.css_.
+If you do not have a specific reason to create a static page directly
+into the codebase, we recommend that you create your content pages using
+[Pages](/concepts/content-management/). With Pages, you can create
+multiple content pages in Flex Console and render them all using
+[the same components in FTW](/ftw/page-builder/).
 
-## Create the component
+</info>
 
-Paste the following code into the new JavaScript file you created:
+## 1. Create a new folder
+
+Create a new folder under _src/containers/_ with the name of your static
+page. E.g. if you are creating a page for embedding your social media
+feeds, it should be named **SocialMediaPage**.
+
+Create a new JavaScript file using the folder name. The path should look
+like _src/containers/SocialMediaPage/SocialMediaPage.js_.
+
+Create a new CSS file using the folder name. The path should look like
+_src/containers/SocialMediaPage/SocialMediaPage.module.css_.
+
+## 2. Create the component
+
+Template for a single column static page (SocialMediaPage.js): (We'll go
+through this line-by-line below.)
 
 ```jsx
 import React from 'react';
@@ -47,26 +63,27 @@ import {
 import StaticPage from '../../containers/StaticPage/StaticPage';
 import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 
-import css from './ContentPage.module.css';
+import css from './SocialMediaPage.module.css';
+import image from './path/to/image.png';
 
-const ContentPage = () => {
+const SocialMediaPage = () => {
   return (
     <StaticPage
       className={css.root}
-      title="Content page"
+      title="Social media"
       schema={{
         '@context': 'http://schema.org',
-        '@type': 'ContentPage',
+        '@type': 'SocialMediaPage',
         description: 'Description of this page',
-        name: 'Content page',
+        name: 'Social media page',
       }}
     >
       <LayoutSingleColumn>
         <LayoutWrapperTopbar>
           <TopbarContainer />
         </LayoutWrapperTopbar>
-        <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h1 className={css.pageTitle}>This is a blank page.</h1>
+        <LayoutWrapperMain>
+          <!-- You will add your embedding widgets here -->
           <div>
             <NamedLink name="LandingPage">
               Go to the home page
@@ -85,7 +102,7 @@ const ContentPage = () => {
   );
 };
 
-export default ContentPage;
+export default SocialMediaPage;
 ```
 
 We are using [React](https://reactjs.org/) and
@@ -97,7 +114,9 @@ component which is done in the first line.
 import React from 'react';
 ```
 
-On the second line we import some components:
+### Import components
+
+On the second line, we import some components:
 
 - **LayoutSingleColumn** and the wrappers that it needs to position
   content on the page
@@ -144,14 +163,24 @@ folder. The template uses
 class names locally to prevent conflicts.
 
 ```jsx
-import css from './ContentPage.module.css';
+import css from './SocialMediaPage.module.css';
+```
+
+Then we also import an image which is used later
+(`<img src={image} alt="My first ice cream." />`).
+
+```jsx
+import image from './path/to/image.png';
 ```
 
 Then after all the imports we are finally getting into phase were we
 define the component.
-`const ContentPage = props => { return <div></div>}` defines a component
-called ContentPage with content defined in return part. This is a
+`const SocialMediaPage = props => { return <div></div>}` defines a
+component called SocialMediaPage with content defined in return part.
+This is a
 [functional component](https://reactjs.org/docs/components-and-props.html).
+
+### Add page schema
 
 In the template above we are using StaticPage component with some
 attributes:
@@ -159,23 +188,28 @@ attributes:
 ```jsx
     <StaticPage
       className={css.root}
-      title="Content page"
+      title="Social media"
       schema={{
-        '@context': 'http://schema.org',
-        '@type': 'ContentPage',
-        description: 'Description of this page',
-        name: 'Content page',
+        "@context": "http://schema.org",
+        "@type": "CollectionPage",
+        "description": "Description of this page",
+        "name": "Social media page",
       }}
     >
 ```
 
 - `className` is JSX name for `class` attribute used in plain HTML.
-- `title="Content page"` creates `<title>Content page</title>` element
+- `title="Social media"` creates `<title>Social media</title>` element
   to `<head>` section of the page. (That title is also used in OpenGraph
-  meta tags).
+  meta tags). You could also add
+  `description="This is the description for the social media page"`
 - Then we have `schema` tag that defines some data for search engines in
   JSON-LD format. Check [schema.org](https://schema.org/docs/full.html)
-  for more information.
+  for more information. You can also review
+  [Google's structured data types](https://developers.google.com/search/docs/appearance/structured-data/search-gallery)
+  to see if one of them fits your use case.
+
+### Define component structure
 
 Inside the **StaticPage** component we define layout
 (**LayoutSingleColumn**) and add other components inside semantic
@@ -187,8 +221,8 @@ render those blocks.
   <LayoutWrapperTopbar>
     <TopbarContainer />
   </LayoutWrapperTopbar>
-  <LayoutWrapperMain className={css.staticPageWrapper}>
-    <h1 className={css.pageTitle}>This is a blank page.</h1>
+  <LayoutWrapperMain>
+    <!-- You will add your embedding widgets here -->
     <div>
       <NamedLink name="LandingPage">Go to the home page</NamedLink> or{' '}
       <ExternalLink href="https://google.com">
@@ -202,13 +236,13 @@ render those blocks.
 </LayoutSingleColumn>
 ```
 
-And as a final step we need to export the component:
-`export default ContentPage;`. See more from
+And as a final step we need to export the component.
+`export default SocialMediaPage;`. See more from
 [babeljs.org](https://babeljs.io/docs/en/learn/#modules)
 
 ## Style the component
 
-Here's an example what your _ContentPage.module.css_ file could look
+Here's an example what your _SocialMediaPage.module.css_ file could look
 like:
 
 ```css
@@ -249,20 +283,22 @@ Add a new asynchronous import for the page in the beginning of the file
 with other page imports:
 
 ```js
-const ContentPage = loadable(() =>
+const SocialMediaPage = loadable(() =>
   import(
-    /* webpackChunkName: "ContentPage" */ './containers/ContentPage/ContentPage'
+    /* webpackChunkName: "SocialMediaPage" */ './containers/SocialMediaPage/SocialMediaPage'
   )
 );
 ```
 
-After that add the route configuration to your newly created page:
+and after that add the route configuration to your newly created page:
+(In this example we created social media page so '/socialmedia' would
+work well as a path.)
 
 ```javascript
 {
-  path: '/contentpage',
-  name: 'ContentPage',
-  component: ContentPage,
+  path: '/socialmedia',
+  name: 'SocialMediaPage',
+  component: SocialMediaPage,
 },
 ```
 

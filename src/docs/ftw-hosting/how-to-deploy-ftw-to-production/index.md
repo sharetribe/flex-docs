@@ -61,7 +61,9 @@ computing resources for your marketplace. Other alternatives you can
 look into include [AWS](https://aws.amazon.com/),
 [Google Cloud](https://cloud.google.com/),
 [Digital Ocean](https://www.digitalocean.com/) and
-[Microsoft Azure](https://azure.microsoft.com/).
+[Microsoft Azure](https://azure.microsoft.com/). If your deployment
+solution requires using containers, you can refer to our guide on
+[running FTW in a Docker container](/ftw/run-ftw-with-docker/).
 
 ## Deploying to production
 

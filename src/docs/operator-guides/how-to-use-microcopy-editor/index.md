@@ -11,9 +11,9 @@ published: true
 
 ## What is microcopy
 
-Your Flex marketplace has both static and dynamic pages. Static pages
+Your Flex marketplace has both content and dynamic pages. Content pages
 only feature content created by you, the marketplace operator. Landing
-pages, “About” pages and FAQ pages are examples of static pages.
+pages, “About” pages and FAQ pages are examples of content pages.
 
 Dynamic pages, meanwhile, feature content created by your users. The
 search page displaying listings is a dynamic page. Often, dynamic pages
@@ -23,8 +23,8 @@ payment information into the checkout page.
 
 In Flex, the term microcopy refers to short written texts scattered
 around a dynamic page’s interface; button labels, error messages, and
-help texts are all examples.They are textual, brief (a sentence or two),
-and highly contextual.
+help texts are all examples. They are textual, brief (a sentence or
+two), and highly contextual.
 
 ![Examples of microcopy](./microcopy_examples.png)
 
@@ -281,20 +281,12 @@ a 5 minute delay between saving changes and seeing those changes in your
 marketplace. This delay safeguards the reliability and speed of your
 marketplace for your users.
 
-## How to edit content and microcopy on static pages
+## How to edit content on content pages
 
-The Microcopy editor can edit microcopy on your landing page. While you
-cannot edit the layout of the landing page (yet!), you can edit
-microcopy on the landing page using the same approach used for dynamic
-pages. Find the value in the editor, change the value, and save changes.
-
-Other static pages are not editable with the Microcopy editor. For now,
-these pages are only editable by changing the files that contain the
-software code that powers them.
-
-We are developing a Page Builder feature that will allow you to edit the
-content of static content pages in Console without needing to modify the
-underlying code as you do today.
+The Microcopy editor changes microcopy on your dynamic pages, which are
+pages where user-generated content, such as listings, appear. To change
+your content pages, like your Landing page or Terms of use,
+[you should use Pages.](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/)
 
 ### Digging deeper into the Microcopy editor
 
