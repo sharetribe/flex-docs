@@ -128,11 +128,13 @@ const Category = props => {
     ...rest
   } = props;
 
-  const [location, setLocation] = useState(window.location.href);
-
+  const [location, setLocation] = useState(null);
+  const isBrowser = typeof window !== 'undefined';
   useEffect(() => {
-    setLocation(window.location.href);
-  }, [window.location.href]);
+    if (isBrowser) {
+      setLocation(window.location.href);
+    }
+  }, [isBrowser]);
 
   const parentCategories = activeArticle
     ? findParentCategories(activeArticle.category, siteStructure)
