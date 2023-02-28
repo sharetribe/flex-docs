@@ -2,7 +2,7 @@
 title: How to create an FAQ page
 slug: how-to-create-an-faq-page
 updated: 2023-02-14
-category: operator-guides-concepts
+category: operator-guides-pages
 ingress: Learn how to use Pages to build an FAQ content page
 published: true
 ---

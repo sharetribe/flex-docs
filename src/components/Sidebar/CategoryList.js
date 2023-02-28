@@ -144,12 +144,21 @@ const Category = props => {
       ? isOpenConfig
       : true;
 
-  // hide operator guides from the menu
+  // In config-site-structure you can assign an "isHidden" variable, which will by default hide
+  // the category from the sidebar. We hide the operator guides category from the sidebar by default.
+  // However, if the user is viewing either an article in operator guides or the operator guides article
+  // index page, we show the operator guides menu in the sidebar.
+
+  // the isHidden variable won't work with other categories at the moment, see line 158
   const isHidden = isHiddenConfig ? true : false;
+  const isOperatorGuideOpen =
+    parentCategories.some(n => n.startsWith('operator-guides')) ||
+    window.location.href.includes('operator-guides');
 
   const TitleComponent =
     depth && depth === 1 ? StyledMainCategoryTitle : StyledCategoryTitle;
-  return isHidden ? null : (
+  // returns null if the menu item has the isHidden attribute and the user is not viewing an operator guide page
+  return isHidden && !isOperatorGuideOpen ? null : (
     <li className={className} {...rest}>
       <TitleComponent onClick={() => setCategoryOpen(!isOpen)} depth={depth}>
         <UiText id={`Sidebar.${camelize(category)}`} />

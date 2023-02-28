@@ -86,20 +86,21 @@ const camelize = str => {
 };
 
 const OperatorGuidesPage = props => {
-  const { category, articles, noPrefix, data } = props;
+  const { category, noPrefix, data } = props;
   const title = UiText.fn(`ArticleIndexPage.${category}.title`);
   const description = UiText.fn(`ArticleIndexPage.${category}.description`);
-  <UiText id={`Sidebar.${camelize(category)}`} />;
   const articleCountDescriptor = UiText.fn(`ArticleIndexPage.articleCount`);
   const pathPrefixMaybe = noPrefix ? {} : { pathPrefix: `/${category}/` };
-  console.log(articles, 'art');
-  const testr = data.map((entry, index) => {
+
+  const articleList = data.map((entry, index) => {
     const title = UiText.fn(`Sidebar.${camelize(entry.title)}`);
     return (
-      <div key={index}>
-        <Heading>{title}</Heading>
-        <Index {...pathPrefixMaybe} articles={entry.edges} />
-      </div>
+      <Index
+        {...pathPrefixMaybe}
+        articles={entry.edges}
+        title={title}
+        key={index}
+      />
     );
   });
   return (
@@ -111,10 +112,11 @@ const OperatorGuidesPage = props => {
       <Content>
         <Heading>{title}</Heading>
         <Count>
-          {articles.length} {articleCountDescriptor}
+          {data.reduce((acc, cur) => cur.edges.length + acc, 0)}{' '}
+          {articleCountDescriptor}
         </Count>
         <Description>{description}</Description>
-        {testr}
+        {articleList}
       </Content>
     </MainLayout>
   );

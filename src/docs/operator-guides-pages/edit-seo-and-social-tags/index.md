@@ -2,7 +2,7 @@
 title: How to edit SEO & social metadata tags in Pages
 slug: how-to-edit-seo-and-social-metadata-in-pages
 updated: 2023-02-14
-category: operator-guides-concepts
+category: operator-guides-pages
 ingress: Change metadata for SEO and Social media
 published: true
 ---

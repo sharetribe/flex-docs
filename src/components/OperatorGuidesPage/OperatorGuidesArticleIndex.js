@@ -7,7 +7,7 @@ import {
   baselineBreakpoint,
   grid,
 } from '../../config';
-import { H5, P, Ul, Link, UiText, Box } from '../../components';
+import { H5, H4, P, Ul, Link, UiText, Box } from '../../components';
 
 const Grid = styled(Ul)`
   display: grid;
@@ -20,6 +20,10 @@ const Grid = styled(Ul)`
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+`;
+
+const Heading4 = styled(H4)`
+  padding: 15px;
 `;
 
 // NOTE: custom font size
@@ -52,7 +56,7 @@ const GridItem = props => {
   return (
     <Box as="li">
       <Link neutral to={`${pathPrefix}${path}`}>
-        <H5 as="h2">{title}</H5>
+        <H5 as="h3">{title}</H5>
         <Paragraph>{ingress}</Paragraph>
       </Link>
     </Box>
@@ -60,7 +64,7 @@ const GridItem = props => {
 };
 
 const ArticleIndex = props => {
-  const { pathPrefix, articles, ...rest } = props;
+  const { pathPrefix, articles, title, ...rest } = props;
   if (articles.length === 0) {
     return (
       <P {...rest}>
@@ -71,6 +75,7 @@ const ArticleIndex = props => {
 
   return (
     <Grid {...rest}>
+      <Heading4 as="h2">{title}</Heading4>
       {articles.map(article => (
         <GridItem pathPrefix={pathPrefix} key={article.slug} {...article} />
       ))}
