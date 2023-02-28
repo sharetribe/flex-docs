@@ -388,9 +388,8 @@ import { loadData as PrivacyPolicyPageLoader } from './PrivacyPolicyPage/Privacy
     [row 70](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js#L70)
 
 To enable all new components that use the Pages feature (the About page,
-Landing page, Terms of Service page and the CMSPage), repeat steps 8 and
-onward, replacing PrivacyPolicyPage with the component you want to
-enable.
+Landing page, Terms of Service page and the CMSPage), repeat steps 8 to
+11, replacing PrivacyPolicyPage with the component you want to enable.
 
 After these steps, you should be able to see the default pages in your
 template.
