@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import { baselineBreakpoint, siteStructure } from '../../config';
@@ -128,6 +128,12 @@ const Category = props => {
     ...rest
   } = props;
 
+  const [location, setLocation] = useState(window.location.href);
+
+  useEffect(() => {
+    setLocation(window.location.href);
+  }, [window.location.href]);
+
   const parentCategories = activeArticle
     ? findParentCategories(activeArticle.category, siteStructure)
     : [];
@@ -153,7 +159,7 @@ const Category = props => {
   const isHidden = isHiddenConfig ? true : false;
   const isOperatorGuideOpen =
     parentCategories.some(n => n.startsWith('operator-guides')) ||
-    window.location.href.includes('operator-guides');
+    location?.includes('operator-guides');
 
   const TitleComponent =
     depth && depth === 1 ? StyledMainCategoryTitle : StyledCategoryTitle;
