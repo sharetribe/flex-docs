@@ -833,7 +833,7 @@
   },
   {
     "source": "/tutorial/change-image-assets/",
-    "destination": "/docs/operator-guides/change-images/",
+    "destination": "/docs/tutorial/change-images/",
     "permanent": true
   }
 ]

@@ -33,27 +33,10 @@ FTW.
 
 - Update UI texts or change the language:
   [How to change FTW UI texts](/ftw/how-to-change-ftw-ui-texts/)
-- [LandingPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/LandingPage/LandingPage.js)
-  component: update and create branded sections
 - [Footer](https://github.com/sharetribe/ftw-daily/blob/master/src/components/Footer/Footer.js)
   component
-- [AboutPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/AboutPage/AboutPage.js)
-  component
-- Update
-  [Terms of Service](https://github.com/sharetribe/ftw-daily/blob/master/src/components/TermsOfService/TermsOfService.js)
-  and
-  [Privacy Policy](https://github.com/sharetribe/ftw-daily/blob/master/src/components/PrivacyPolicy/PrivacyPolicy.js)
-
-    <extrainfo title="Locate Terms of Service and Privacy Policy">
-
-      ```shell
-      └── src
-          └── components
-              ├── TermsOfService
-              └── PrivacyPolicy
-      ```
-
-    </extrainfo>
+- Optional: modify how default content pages are shown in FTW:
+  [How the template renders content pages](/ftw/page-builder/)
 
 ## 3. Change configuration
 
