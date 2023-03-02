@@ -249,4 +249,4 @@ options={{fieldComponents: fieldOverrides}}
 ```
 
 For a list of which Fields can be overridden, see
-[Field.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PageBuilder/Field.js).
+[Field.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PageBuilder/Field/Field.js).

@@ -9,7 +9,7 @@ published: true
 
 This article explains only how to enable Pages in your marketplace. If
 you want to learn how to use the feature, you can read the article about
-[editing Pages in Console](https://www.sharetribe.com/docs/operator-guides/how-to-edit-pages-in-console/)
+[editing Pages in Console](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/)
 
 ## For marketplaces created after 2023-02-15
 
