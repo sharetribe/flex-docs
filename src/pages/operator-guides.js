@@ -1,32 +1,39 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-
-// import { dev, siteStructure } from '../config';
-import { dev } from '../config';
-// import { findSortingArrays } from '../util/navigation';
-import { ArticleIndexPage } from '../components';
+import { dev, siteStructure } from '../config';
+import { findCategory } from '../util/navigation';
+import { OperatorGuidesPage } from '../components';
 
 const category = 'operator-guides';
-// TODO const sortingArray = findSortingArrays(category, siteStructure);
+const sortingArray = findCategory(category, siteStructure);
 
 const query = graphql`
   query OperatorGuidesIndexQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { in: ["operator-guides"] } } }
+      filter: {
+        frontmatter: {
+          category: {
+            in: ["operator-guides-pages", "operator-guides-concepts"]
+          }
+        }
+      }
       sort: {
         fields: [frontmatter___category, frontmatter___slug]
         order: [ASC, ASC]
       }
     ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            slug
-            category
-            updated
-            ingress
-            published
+      group(field: frontmatter___category) {
+        fieldValue
+        totalCount
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+              updated
+              ingress
+              published
+            }
           }
         }
       }
@@ -34,41 +41,59 @@ const query = graphql`
   }
 `;
 
-// const byArrayOfSlugs = sortingArray => (a, b) => {
-//   const indexA = sortingArray.indexOf(a.slug);
-//   const indexB = sortingArray.indexOf(b.slug);
+const byArrayOfSlugs = sortingArray => (a, b) => {
+  const indexA = sortingArray.indexOf(a.slug);
+  const indexB = sortingArray.indexOf(b.slug);
 
-//   // If sorting array doesn't contain slug,
-//   // we'll push it to the end of the array.
-//   const defaultPlacement = sortingArray.length;
-//   const i1 = indexA > -1 ? indexA : defaultPlacement;
-//   const i2 = indexB > -1 ? indexB : defaultPlacement;
+  // If sorting array doesn't contain slug,
+  // we'll push it to the end of the array.
+  const defaultPlacement = sortingArray.length;
+  const i1 = indexA > -1 ? indexA : defaultPlacement;
+  const i2 = indexB > -1 ? indexB : defaultPlacement;
 
-//   return i1 - i2;
-// };
+  return i1 - i2;
+};
 
-const OperatorGuidesPage = () => {
+const OperatorGuides = () => {
   return (
     <StaticQuery
       query={query}
       render={data => {
-        const edges = data.allMarkdownRemark
-          ? data.allMarkdownRemark.edges
-          : [];
-        const articles = edges.reduce((result, edge) => {
-          const { frontmatter } = edge.node;
-          if (dev || frontmatter.published) {
-            return result.concat(frontmatter);
-          } else {
-            return result;
-          }
-        }, []);
-        // TODO .sort(byArrayOfSlugs(sortingArray));
+        // format the data returned by the graphql query
+        // to a format understood by the OperatorGuidesPage component.
+        // also sort each sublist of articles
+        const formatData = data.allMarkdownRemark.group.map(
+          (subcategory, index) => {
+            const onlyPublishedArticles = subcategory.edges.reduce(
+              (result, edge) => {
+                const { frontmatter } = edge.node;
+                if (dev || frontmatter.published) {
+                  return result.concat(frontmatter);
+                } else {
+                  return result;
+                }
+              },
+              []
+            );
 
-        return <ArticleIndexPage category={category} articles={articles} />;
+            // find the sortingArray of the subcategory we're currently iterating through
+            const currentSortingArray = sortingArray.subcategories.find(
+              n => n.id == subcategory.fieldValue
+            ).sortingArray;
+            // sort subcategory articles based on the sorting array
+            onlyPublishedArticles.sort(byArrayOfSlugs(currentSortingArray));
+
+            return {
+              title: subcategory.fieldValue,
+              edges: onlyPublishedArticles,
+            };
+          }
+        );
+
+        return <OperatorGuidesPage category={category} data={formatData} />;
       }}
     />
   );
 };
 
-export default OperatorGuidesPage;
+export default OperatorGuides;

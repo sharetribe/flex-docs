@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import { baselineBreakpoint, siteStructure } from '../../config';
@@ -124,8 +124,17 @@ const Category = props => {
     depth,
     activeArticle,
     isOpenConfig,
+    isHiddenConfig,
     ...rest
   } = props;
+
+  const [location, setLocation] = useState(null);
+  const isBrowser = typeof window !== 'undefined';
+  useEffect(() => {
+    if (isBrowser) {
+      setLocation(window.location);
+    }
+  }, [isBrowser]);
 
   const parentCategories = activeArticle
     ? findParentCategories(activeArticle.category, siteStructure)
@@ -143,9 +152,22 @@ const Category = props => {
       ? isOpenConfig
       : true;
 
+  // In config-site-structure you can assign an "isHidden" variable, which will by default hide
+  // the category from the sidebar. We hide the operator guides category from the sidebar by default.
+  // However, if the user is viewing either an article in operator guides or the operator guides article
+  // index page, we show the operator guides menu in the sidebar.
+  const isHidden = isHiddenConfig ? true : false;
+
+  const categoryFromUrlPath = location?.pathname?.split('/')[1];
+
+  const isBeingViewed =
+    parentCategories.some(n => n.startsWith(category)) ||
+    categoryFromUrlPath?.includes(category);
+
   const TitleComponent =
     depth && depth === 1 ? StyledMainCategoryTitle : StyledCategoryTitle;
-  return (
+  // returns null if the menu item has the isHidden attribute and the user is not viewing an operator guide page
+  return isHidden && !isBeingViewed ? null : (
     <li className={className} {...rest}>
       <TitleComponent onClick={() => setCategoryOpen(!isOpen)} depth={depth}>
         <UiText id={`Sidebar.${camelize(category)}`} />
@@ -183,8 +205,8 @@ const CategoryList = props => {
     <ul className={className}>
       {categories.map((n, i) => {
         const articleGroup = groupedArticles.find(g => g.category === n.id);
-        const hasSubcategories = n.subcategories && n.subcategories.length > 0;
 
+        const hasSubcategories = n.subcategories && n.subcategories.length > 0;
         return (
           <StyledCategory
             key={`nav_${n.id}`}
@@ -193,6 +215,7 @@ const CategoryList = props => {
             depth={depth}
             activeArticle={activeArticle}
             isOpenConfig={n.isOpen}
+            isHiddenConfig={n.isHidden}
           >
             <ArticleLinkList
               articleGroup={articleGroup}
