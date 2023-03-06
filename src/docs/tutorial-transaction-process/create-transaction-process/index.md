@@ -20,9 +20,6 @@ and update the client app so that it uses the new process.
 
 ### Clone Flex example processes repository
 
-// TODO: Check where the example process should come from => can't use
-the flex-default-process because it doesn't have time based bookings!
-
 Writing a _process.edn_ file and the email templates from scratch is a
 fairly tedious task. We'll make our life a bit easier by cloning the
 Flex example processes repository :
@@ -40,22 +37,7 @@ cd flex-example-processes/
 There are several processes listed in
 [that directory](https://github.com/sharetribe/flex-example-processes).
 The one we are going to use as a basis for our new process is
-_flex-default-process_. It has privileged transitions in use and it is
-therefore compatible with the Sharetribe Web Template. TODO CHECK WHICH
-PROCESS!!
-
-<extrainfo title="What's the preauth-nightly-booking example process?">
-
-In the example processes repository, there's another process that is
-named referencing nightly booking (_preauth-nightly-booking_). It's an
-old process (created before privileged transitions feature) and its
-speciality was about how it counted total price with
-[:action/calculate-tx-nightly-total-price](https://github.com/sharetribe/flex-example-processes/blob/master/preauth-nightly-booking/process.edn#L20).
-However, with privileged transitions, the pricing is set on the client
-app - so, there is no need for process changes between nightly and daily
-booking.
-
-</extrainfo>
+_default-booking_.
 
 ### Create a new process
 
@@ -91,7 +73,7 @@ use _"cottagedays-nightly-booking"_. Our final command for the
 _cottagedays-test_ marketplace would look like this:
 
 ```shell
-flex-cli process create --path=./flex-default-process --process=cottagedays-nightly-booking --marketplace=cottagedays-test
+flex-cli process create --path=./default-booking --process=cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
 > **Note**: you need to modify the command to use your own test

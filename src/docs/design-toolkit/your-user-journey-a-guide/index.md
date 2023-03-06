@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-// TODO: Update
+// TODO: CA will update
 
 Creating a user journey lets you communicate how your marketplace will
 work. You should define your marketplace’s user journeys in preparing to

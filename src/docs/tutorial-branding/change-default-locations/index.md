@@ -13,17 +13,13 @@ When you make a location search, you notice that the template suggests
 the user's current location by default. In addition, you can configure
 default searches for certain key locations in your marketplace.
 
-// TODO: Update image with Biketribe final microcopy + UI
-
 ![Default search locations component rendered](./default-search-locations.png)
 
-These default locations improve UX since users don't need to type
-anything and they guide users to the most popular locations in your
-marketplace.
+Default locations improve UX, since users don't need to type anything
+and they guide users to the most popular locations in your marketplace.
 
-We want to change those since our CottageDays marketplace operates in
-different locations than Saunatime. Let's add a suggestion: _"Auckland,
-New Zealand"_.
+In addition to current location, we want to help users find listings in
+specific locations. Let's add a suggestion: _"Auckland, New Zealand"_.
 
 ## Change configDefaultLocationSearches.js
 
@@ -99,11 +95,9 @@ change it to point to Auckland:
 
 The result should look like this:
 
-// TODO: update image
-
 ![Auckland in default locations](auckland-in-default-locations.png)
 
-You can change the other locations in a similar fashion.
+You can add other locations in a similar fashion.
 
 ## Other hard-coded links with a location search
 

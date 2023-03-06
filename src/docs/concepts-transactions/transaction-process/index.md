@@ -189,8 +189,6 @@ Whenever your users transact, at whichever state they are in that
 interaction, the transaction process determines **what** they can do
 next and **how** it happens.
 
-// TODO: Update carousel
-
 Let’s revisit our Flex default transaction process, this time in
 conjunction with Sharetribe Web Template, to illustrate this. You’ll see
 how a transaction process state looks for providers and customers in

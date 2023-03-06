@@ -55,7 +55,6 @@ running (i.e. **`yarn run dev`**).
 You should notice that some text and background-colors were changed to
 green.
 
-// TODO: Take new screenshot after Pages default landing page
 ![Hero section after changing the marketplace color](./marketplace-color-changed.png)
 
 **Congratulations!** You have made your first customization.
