@@ -361,6 +361,10 @@ yarn add rehype-react@6.2.1 rehype-sanitize@4.0.0 remark-parse@9.0.0 remark-rehy
     },
 ```
 
+If you are adding a route to the CMSPage, see
+[the routeConfiguration file](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L69)
+on how it should be formatted.
+
 10. Add the following import to
     [pageDataLoadingAPI.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/pageDataLoadingAPI.js):
 
@@ -387,9 +391,9 @@ import { loadData as PrivacyPolicyPageLoader } from './PrivacyPolicyPage/Privacy
     and
     [row 70](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js#L70)
 
-To enable all new components that use the Pages feature (the About page,
-Landing page, Terms of Service page and the CMSPage), repeat steps 8 to
-11, replacing PrivacyPolicyPage with the component you want to enable.
+To enable all new components that use the Pages feature (the Landing
+page, Terms of Service page and the CMSPage), repeat steps 8 to 11,
+replacing PrivacyPolicyPage with the component you want to enable.
 
 After these steps, you should be able to see the default pages in your
 template.
