@@ -25,8 +25,8 @@ If you are just beginning to develop a marketplace, we recommend that
 you start with the Sharetribe Web Template. If you have already built
 your marketplace on one of the legacy templates, you can still continue
 use it with Sharetribe APIs and our support will continue to help you
-with development related issues. In addition, you will always be able to
-access the documentation for the legacy templates.
+with development related issues. In addition, you will be able to access
+the documentation for the legacy templates until 12/2024.
 
 Read more about the new Sharetribe Web Template in the
 [introduction article](/ftw/sharetribe-web-template/) and refer to the

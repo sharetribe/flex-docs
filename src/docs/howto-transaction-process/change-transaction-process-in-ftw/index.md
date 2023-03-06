@@ -1,5 +1,5 @@
 ---
-title: Change transaction process setup in Sharetribe Web Template
+title: Change transaction process in Sharetribe Web Template
 slug: change-transaction-process-in-ftw
 updated: 2022-11-22
 category: how-to-transaction-process
