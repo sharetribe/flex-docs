@@ -243,7 +243,6 @@ const ArticlePage = props => {
           </MobileTocWrapper>
           <Markdown className="docSearch-content" htmlAst={htmlAst} />
           <Footer />
-
           <NextAndPrevArticles
             slug={slug}
             category={category}

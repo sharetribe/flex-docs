@@ -147,6 +147,12 @@ const sortingArrayHowToListings = [
   'modify-time-intervals',
   'bookings-with-buffer',
 ];
+const sortingArrayOperatorGuidesPages = ['introducing-pages'];
+const sortingArrayOperatorGuidesConcepts = [
+  'concepts',
+  'features',
+  'flex-operator-resources',
+];
 
 exports.siteStructure = [
   {
@@ -275,5 +281,21 @@ exports.siteStructure = [
     id: 'references',
     isOpen: false,
     sortingArray: sortingArrayReferences,
+  },
+  {
+    id: 'operator-guides',
+    isOpen: false,
+    isHidden: true,
+    subcategories: [
+      {
+        id: 'operator-guides-concepts',
+        sortingArray: sortingArrayOperatorGuidesConcepts,
+      },
+
+      {
+        id: 'operator-guides-pages',
+        sortingArray: sortingArrayOperatorGuidesPages,
+      },
+    ],
   },
 ];
