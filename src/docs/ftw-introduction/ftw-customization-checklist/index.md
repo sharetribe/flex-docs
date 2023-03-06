@@ -80,7 +80,8 @@ other changes you may want to make. Some of these options include:
 - Update the routing in your marketplace
 - Update [page schema](/tutorial/add-faq-page/#page-schema) to improve
   Search Engine Optimization (SEO)
-- Add new [search filters](/tutorial/implement-amenities-filter/)
+- Update
+  [listing extended data](/tutorial/modify-listing-extended-data/)
 - Update transaction email templates. For more information, see
   [Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
   tutorial and [Email templates](/references/email-templates/) reference

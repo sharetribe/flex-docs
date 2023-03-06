@@ -142,6 +142,7 @@ Check at least these:
 
     </extrainfo>
 
-On search page, you can use different kind of filters. In the next
-article you learn how to update the options for amenities filter.<br />
-[› Go to the next article](/tutorial/customize-amenities-filter/)
+On the search page, you can use different kinds of filters. In the next
+article, you will learn how to update listing attributes used on listing
+creation page and search filters.<br />
+[› Go to the next article](/tutorial/modify-listing-extended-data/)
