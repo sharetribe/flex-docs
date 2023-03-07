@@ -38,9 +38,10 @@ create one in
 Once you log in to Console, you'll notice there's nothing there yet: you
 naturally don't yet have any users, listings, or transactions.
 
-The first step after logging in to Console is to set up a [Sharetribe
-Web Template](todo: link to repo). The template is a fully functional
-example of a marketplace website built with Flex.
+The first step after logging in to Console is to set up a
+[Sharetribe Web Template](/introduction/introducing-template/). The
+template is a fully functional example of a marketplace website built
+with Flex.
 
 Setting up the template should take no more than 5 minutes. The process
 is technical but doable even without development experience.
@@ -135,8 +136,7 @@ Typically, the development work is done by downloading the
 [open source codebase of Sharetribe Web Template](https://github.com/sharetribe/ftw-daily)
 **TODO Update link** and customizing it according your needs. If you're
 a developer, you can proceed to do this and
-[start development right away](/ftw/how-to-customize-ftw/). **todo
-update link**
+[start development right away](/ftw/how-to-customize-ftw/).
 
 If you're not a developer yourself and don't have one in your team,
 you'll need to contract or hire a developer to do this work for you. You
@@ -193,6 +193,8 @@ try to launch as quickly as you can, as that is where the true learning begins.
 
 ## 4. Going live
 
+// TODO UPDATE WORDING AND SCREENSHOT FOR ENVIRONMENTS!
+
 Once you've reached a point when you're ready to invite first real users
 to your marketplace, it's time to go live.
 
@@ -208,10 +210,10 @@ information about
 development phase is completely free. You only need to pay when you
 start inviting your real users to your marketplace.
 
-After you've subscribed, we will create a _production environment_ to
-complement your current _development_ and _demo_ environments. This
-means that you can easily do development and testing of new features,
-without those affecting your actual users in any way.
+After you've subscribed, we will create a _live environment_ to
+complement your current _dev_ and _test_ environments. This means that
+you can easily do development and testing of new features, without those
+affecting your actual users in any way.
 
 Naturally, development doesn't stop once you've gone live: that's just
 the very beginning. It's highly likely that you want to keep improving

@@ -15,13 +15,12 @@ bikes - so, there are quite many components and pages where you will
 need to change the copy-texts.
 
 The easiest way to modify the copy texts is through Flex Console, in
-Build > Content. This page helps you modify what in Flex is known as
-_microcopy_ – button labels, help texts, and other small messages that
-help your user find their way around the marketplace.
+Build > Content > Microcopy editor. This page helps you modify what in
+Flex is known as _microcopy_ – button labels, help texts, and other
+small messages that help your user find their way around the
+marketplace.
 
-_TODO: Add new image when Biketribe microcopy is visible in Console –
-does Biketribe microcopy get inputted in the editor by default or does
-the operator need to paste it?_
+TODO Update screenshot
 
 ![Modify marketplace texts](./microcopy_start.png)
 
@@ -80,8 +79,8 @@ _TODO: Take new screenshot after Biketribe microcopy exists_
 
 In the screenshot, the highlighted text (listing creation link) comes
 from a component called **FormattedMessage**. This is a component from
-[React Intl](https://github.com/formatjs/react-intl) library which FTW
-templates use to embed microcopy messages to correct microcopy keys. If
+[React Intl](https://github.com/formatjs/react-intl) library which the
+template uses to embed microcopy messages to correct microcopy keys. If
 you check the **props** section on the _Components_ tab of Web Inspector
 (when React Developer Tools is installed), you see a row:
 `id: "TopbarDesktop.createListing"`.
@@ -103,6 +102,8 @@ all of them:
 
 Copy and paste the above rows, complete with the curly brackets, to the
 Microcopy JSON field.
+
+// TODO update screenshots
 
 ![Modified Topbar microcopy in Console](./microcopy_editor_updates.png)
 

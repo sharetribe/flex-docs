@@ -15,8 +15,8 @@ In this tutorial, we'll create a new transaction process for the
 CottageDays marketplace. It will be a nightly booking process in
 contrast to the default daily process.
 
-In addition, we will also add a new decline transition for the operator
-and update the client app so that it uses the new process.
+In addition, we will also add a new decline transition for the operator,
+and update the client app to use the new process.
 
 ### Clone Flex example processes repository
 
@@ -76,8 +76,12 @@ _cottagedays-test_ marketplace would look like this:
 flex-cli process create --path=./default-booking --process=cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
-> **Note**: you need to modify the command to use your own test
-> marketplace ID, which you can find from the Flex Console.
+<info>
+
+You need to modify the command to use your own test marketplace ID,
+which you can find in Flex Console.
+
+</info>
 
 After executing that command, you can go to the Flex Console (Build ->
 Transaction processes tab) and see that the
@@ -107,7 +111,7 @@ a different name.
 
 ## Modify transaction process
 
-One transition that should be considered carefully, is the operator's
+One transition that should be considered carefully is the operator's
 ability to cancel a transaction. If the operator needs to cancel a
 transaction in a certain state, there needs to be a transition defined
 for it in the transaction process. Let's add a new operator transition
@@ -176,16 +180,16 @@ read this document:
 
 In the preauthorized state, the money hasn't left the customer's bank
 account. There is just a cover reservation made for the future capture
-of the payment. This is done to avoid insufficient funds error. Stripe
-can hold this preauthorization for 7 days and, therefore, we have an
-automatic expiration in the preauthorized state.
+of the payment. This is done to avoid an insufficient funds error.
+Stripe can hold this preauthorization for 7 days and, therefore, we have
+an automatic expiration in the preauthorized state.
 
 <br/>
 
-In these declines and expire transitions,
-**:action/stripe-refund-payment** will release the cover reservation,
-but if it's called after the payment is captured, it will refund the
-payment. And to be more specific, then both transfers are reversed:
+In these decline and expire transitions,
+**:action/stripe-refund-payment** releases the cover reservation, but if
+it's called after the payment is captured, it will refund the payment.
+And to be more specific, then both transfers are reversed:
 
 <br/>
 
@@ -289,7 +293,7 @@ export const transactionTypes = [
 
 The web app needs to understand how the connected transaction process
 works and, therefore, the process graph is actually duplicated in the
-current versions of FTW templates.
+current version of the template.
 
 ```shell
 └── src
@@ -297,7 +301,7 @@ current versions of FTW templates.
         └── transactionProcessBooking.js
 ```
 
-So, we need to make the transaction process change also there.
+So, we also need to make the transaction process change there.
 
 ```js
 export const OPERATOR_ACTIONS_PROCESS_NAME = 'cottagedays-nightly-booking';

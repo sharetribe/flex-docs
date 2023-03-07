@@ -1,7 +1,7 @@
 ---
 title: Getting started with Sharetribe Web Template
 slug: getting-started-with-web-template
-updated: 2021-12-14
+updated: 2023-03-07
 category: introduction-getting-started
 ingress:
   Learn how to install Sharetribe Web Template to your local development
@@ -12,16 +12,16 @@ published: true
 
 The Sharetribe Web Template is a marketplace web application built on
 top of the
-[Marketplace API](/operator-guides/concepts/#marketplace-api). While you
-can create a marketplace purely using just the API, it requires a
-significant amount of effort (both money and time) and we recommened
-using the template as a starting point for customizations.
+[Marketplace API](/introduction/introducing-flex/#the-marketplace-api).
+While you can create a marketplace purely using just the API, it
+requires a significant amount of effort (both money and time) and we
+recommened using the template as a starting point for customizations.
 
 The Sharetribe Web Template is built with [React](https://reactjs.org/),
 [Redux](https://redux.js.org/), and
 [CSS Modules](https://github.com/css-modules/css-modules). It also
 contains a small [Node.js](https://nodejs.org/en/) server, which
-provides server-side rendering (SSR) for the production site.
+provides server-side rendering (SSR) for the deployed site.
 
 The purpose of this guide is to clone and configure the Sharetribe Web
 Template to your local development environment - and then get it up and
@@ -223,7 +223,7 @@ will need to review your platform account before you get access. See
 [this article](https://help.sharetribe.com/en/articles/2815555-apply-for-stripe-connect-review)
 to learn how to apply for Stripe Connect review.
 
-**Other countries**<br /> If you're in any another country, follow these
+**Other countries**<br /> If you are in any other country, follow these
 instructions to enable Stripe Connect:
 
 1. Click the **Connect** top menu item, and then click the **Get
@@ -263,9 +263,13 @@ application (e.g. Sharetribe Web Template) and secret key (with prefix
 data make sure the value of the key is eg. **pk_test**\<somethinghere\>
 and not **pk_live**\<somethinghere\>
 
-> **Note:** If you want to use test data in development make sure that
-> _"Viewing test data"_ toggle is on. This way no real money will be
-> used. In production make sure that the toggle is off.
+<info>
+
+If you want to use test data in development, make sure that the
+_"Viewing test data"_ toggle is on. This way no real money will be used.
+In production, make sure that the toggle is off.
+
+</info>
 
 ![Get API keys from Stripe](./stripe-api-keys.png)
 
@@ -277,9 +281,13 @@ and not **pk_live**\<somethinghere\>
 
 ![Add Stripe secret key to Console](./add-stripe-to-console.png)
 
-> **Note**: The secret key and publishable key need to match with each
-> other. You can't use a publishable key from a different Stripe account
-> than the secret key - or mix test keys and live keys.
+<info>
+
+The secret key and publishable key need to match with each other. You
+can't use a publishable key from a different Stripe account than the
+secret key - or mix test keys and live keys.
+
+</info>
 
 ### Mapbox Access Token
 
@@ -315,8 +323,12 @@ guide you through setting up the rest of the required environment
 variables. If the `.env` file doesn't exist the application won't start.
 _This `.env` file is only created for local development environment_.
 
-> See the [FTW Environment configuration variables](/ftw/ftw-env/) TODO
-> UPDATE for more information on the environment variables.
+<info>
+
+See the [template environment variables](/ftw/ftw-env/) for more
+information on the environment variables.
+
+</info>
 
 ## Start the server
 
@@ -326,15 +338,20 @@ Start the development server:
 yarn run dev
 ```
 
-This will automatically open `http://localhost:3000` in a browser:
+This will automatically open `http://localhost:3000` in a browser: //
+TODO Update screenshot
 
 ![Default marketplace screenshot](./saunatime-default.png)
 
-> **Note:** As you browse your marketplace and create listings, you may
-> notice that the search filters do not work. You can activate the
-> filters by creating a
-> [search schema](/how-to/manage-search-schemas-with-flex-cli/#adding-schemas)
-> that corresponds to your FTW template.
+<info>
+
+As you browse your marketplace and create listings, you may notice that
+the search filters do not work. You can activate the filters by creating
+a
+[search schema](/how-to/manage-search-schemas-with-flex-cli/#adding-schemas)
+that corresponds to your template.
+
+</info>
 
 ## Summary
 
@@ -353,5 +370,5 @@ As you can see from `http://localhost:3000`, Sharetribe Web Template is
 a fully ready and polished marketplace application that is running on
 top of the Marketplace API. Client app customization is in your control,
 and you can change it to fit your marketplace needs. Check the
-[tutorial](/tutorial/) to learn how to customize the Sharetribe Web
-Template.
+[tutorial](/tutorial/introduction/) to learn how to customize the
+Sharetribe Web Template.

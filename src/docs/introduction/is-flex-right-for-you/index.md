@@ -66,8 +66,10 @@ example, one of these popular platforms:
 - [UrbanSitter](https://www.urbansitter.com/) – find a babysitter (B2C)
 
 Building such a platform with Flex is very fast, as you can start with
-an example template – the [Sharetribe Web Template](TODO: LINK) can be
-configured to run as a rental marketplace and as a service marketplace.
+an example template – the
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
+can be configured to run as a rental marketplace and as a service
+marketplace.
 
 ## Marketplaces for selling physical or digital products
 
@@ -83,11 +85,13 @@ these popular platforms:
 - [Etsy](https://www.etsy.com) - selling handmade or vintage items and
   craft supplies (C2C, B2C)
 
-You can also use the [Sharetribe Web Template](TODO: LINK) to start
-building a marketplace for selling physical products fast. It has stock
-management included and it asks shipping address from customer and shows
-that to provider. However, it doesn't include a shopping cart feature by
-default. A shopping cart would require changes to the payment process.
+You can also use the
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
+to start building a marketplace for selling physical products fast. It
+has stock management included, and it asks the customer for a shipping
+address and shows it to the provider. However, it does not include a
+shopping cart feature by default. A shopping cart would require changes
+to the payment process.
 
 It's possible to build a marketplace that sells digital products, and
 you will need to do some custom development to integrate a system for

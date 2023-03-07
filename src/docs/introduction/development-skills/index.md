@@ -11,10 +11,11 @@ published: true
 ---
 
 You can use any technology to build a marketplace on top of the
-[Marketplace API](/operator-guides/concepts/#marketplace-api). However,
-making a marketplace user interface (UI) from scratch requires a lot of
-effort. This is why we provide the Sharetribe Web Template. It is a
-polished marketplace web application that is ready for customization.
+[Marketplace API](/introduction/introducing-flex/#the-marketplace-api).
+However, making a marketplace user interface (UI) from scratch requires
+a lot of effort. This is why we provide the Sharetribe Web Template. It
+is a polished marketplace web application that is ready for
+customization.
 
 The Sharetribe Web Template is a template web application that uses the
 Marketplace API. It is built using common and modern frontend tooling,
@@ -31,7 +32,7 @@ Here are the main technologies the FTW uses:
 - [React](https://reactjs.org/): library for creating user interfaces
   with components
 - [Redux](https://redux.js.org/): state and data flow handling
-- [React Router](https://reacttraining.com/react-router/): routing
+- [React Router](https://reactrouter.com/en/main): routing
 - [Final Form](https://github.com/final-form/final-form): forms
 - [Express](https://expressjs.com/): server side rendering of the React
   application
@@ -51,9 +52,9 @@ needed. Working knowledge of frontend web development and JavaScript is
 a good starting point in learning the technologies.
 
 Check out the
-[Getting started with the Sharetribe Web Template](/introduction/getting-started-with-ftw-daily/)
-**TODO Update link** tutorial to see what it takes to get the template
-running with a small customization.
+[Getting started with the Sharetribe Web Template](/introduction/getting-started-with-web-template/)
+tutorial to see what it takes to get the template running with a small
+customization.
 
 ## Development tooling
 

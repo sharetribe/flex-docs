@@ -40,7 +40,7 @@ user interface, what kind of pages or views there should be, and how
 those should be laid out. There are no limits to what you can do in
 terms of visual design.
 
-[Sharetribe Web Template](/introduction/getting-started-with-ftw-daily/)
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
 is a web template that implements a full-feature marketplace experience
 powered by Flex. The template can be configured to three types of
 marketplaces out of the box:

@@ -59,5 +59,5 @@ green.
 
 **Congratulations!** You have made your first customization.
 
-It's time to change the Biketribe image on the landing page.<br />
-[› Go to the next article](/tutorial/change-image-assets/)
+It's time to change the Biketribe background image.<br />
+[› Go to the next article](/tutorial/change-images/)

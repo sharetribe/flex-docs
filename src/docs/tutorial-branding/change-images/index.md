@@ -34,6 +34,8 @@ import brandImage from '../assets/biketribe-brandImage-1500.jpg';
 export const brandImageURL = brandImage;
 ```
 
+![Default Biketribe background image](./biketribe-background-image.png)
+
 So, to change the background image, we could just save a different image
 as 'biketribe-brandImage-1500.jpg' to replace the default background
 image (or you can add a new image and then change the filename of the

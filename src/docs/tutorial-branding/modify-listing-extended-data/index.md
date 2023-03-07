@@ -22,8 +22,9 @@ filters too.
 <extrainfo title="Primary or secondary filter?">
 
 In the template application, primary filters are shown directly on the
-search page. Secondary filters are shown when the user clicks the "More
-filters" button.
+map search page. Secondary filters are shown when the user clicks the
+"More filters" button. The list search page shows both primary and
+secondary filters by default.
 
 </extrainfo>
 
@@ -293,7 +294,8 @@ selected.
 
 ---
 
-In the next article, we add FAQ page. With that article, you learn how
-to add static pages. Quite often there's a need to add more info about
-how the marketplace works and adding a static page is the easiest way to
-do that. <br /> [› Go to the next article](/tutorial/add-faq-page/)
+After all these changes, the client app starts to look like a
+CottageDays marketplace. It's time to get it online and share it with
+people who could give you some feedback. In the next article, we'll
+deploy the app to Render. <br />
+[› Go to the next article](/tutorial/deploy-to-render/)

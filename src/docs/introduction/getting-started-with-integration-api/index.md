@@ -77,9 +77,12 @@ will need these values in the next step.
 
 ![Example application client ID and client secret details screen](./app-data.png)
 
-> **IMPORTANT** Always keep your client secret secure. Never expose it
-> to an untrusted device or application, such as end user's browser or
-> mobile app.
+<warning>
+
+Always keep your client secret secure. Never expose it to an untrusted
+device or application, such as an end user's browser or mobile app.
+
+</warning>
 
 ## Configuration
 
