@@ -76,8 +76,8 @@ modeled on AirBnB to learn more about them.
 ![Default transaction process](./complete-transaction-process.png)
 
 In the image above you can see the default transaction process in
-Sharetribe Flex called "flex-default-process". It is the same process
-that you will find, albeit with a different layout, within your Console
+Sharetribe Flex called "default-booking". It is the same process that
+you will find, albeit with a different layout, within your Console
 account's
 [transaction process page](https://flex-console.sharetribe.com/transaction-processes).
 It closely mimics how a customer and a provider transact on AirBnB. From
@@ -99,9 +99,9 @@ the default process.
 The status at any given point in a transaction is called its state. The
 state describes where the users are in their transaction.
 
-The Flex default process, for example, has a state called preauthorized.
-It signifies that a customer has requested to book a time from the
-provider’s calendar, and a charge on their credit card has been
+The Flex default booking process, for example, has a state called
+preauthorized. It signifies that a customer has requested to book a time
+from the provider’s calendar, and a charge on their credit card has been
 preauthorized.
 
 From the _preauthorized_ state the provider can reject or accept the
@@ -155,8 +155,8 @@ templates used for the notifications are also considered part of the
 transaction process, and can be fully customised to fit the needs of the
 marketplace.
 
-In the Flex default process, transitioning from the accepted to the
-delivered state triggers three email notifications. The provider
+In the Flex default booking process, transitioning from the accepted to
+the delivered state triggers three email notifications. The provider
 receives a notification that their money has been paid out and a
 notification prompting them to review the customer. The customer
 receives an email notification to review the provider.
@@ -178,7 +178,8 @@ very good question. The graph is simply a visualization of the
 transaction process information (the states, the transitions, and the
 actions) stored in your marketplace database in Flex. The transaction
 process is, in reality, a short set of instructions written in a text
-file. You can see an example of these instructions
+file. You can see an example of these instructions **TODO update repo
+link**
 [here](https://github.com/sharetribe/flex-example-processes/blob/master/flex-default-process/process.edn)
 if you are curious.
 
@@ -189,12 +190,13 @@ Whenever your users transact, at whichever state they are in that
 interaction, the transaction process determines **what** they can do
 next and **how** it happens.
 
-Let’s revisit our Flex default transaction process, this time in
+Let’s revisit our Flex default booking transaction process, this time in
 conjunction with Sharetribe Web Template, to illustrate this. You’ll see
 how a transaction process state looks for providers and customers in
-Saunatime, a Flex demo marketplace. If you’re not sure what is meant by
-the “Sharetribe Web Template”, you can read more about it
-[here](/operator-guides/concepts/#flex-templates-for-web-ftw).
+Biketribe, the default marketplace built with Sharetribe Web Template.
+If you’re not sure what is meant by the “Sharetribe Web Template”, you
+can read more about it
+[here](/operator-guides/concepts/#sharetribe-web-template).
 
 <txnprocessuxcarousel title="Transaction process and user experience">
 
@@ -209,9 +211,9 @@ more suitable to the customers’ needs.
 However, quite often it's helpful to start building your process by
 making slight customizations to the default process. Typical minor
 customizations for transaction process are adding the possibility for a
-customer to cancel a booking or a booking request, changing the
-marketplace commission percentage or editing the contents of the email
-templates used for the notifications.
+customer to cancel a booking or a booking request, adding operator
+transitions, or editing the contents of the email templates used for the
+notifications.
 
 ![An example transaction process with instant booking and customer cancellation](./tx-process-instabook-customer-cancel.png)
 

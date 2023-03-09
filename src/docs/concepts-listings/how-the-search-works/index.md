@@ -146,16 +146,24 @@ options described above.
 The Flex Integration API does have an endpoint for querying users.
 However,
 [using the Integration API safely requires a trusted context](/concepts/marketplace-api-integration-api/#when-to-use-the-integration-api),
-such as the template application server. In addition, the Integration
-API
+such as the template application server.
+
+<warning>
+
+Never use Integration API from browser code! Integration API can only be
+securely used in server environments.
+
+</warning>
+
+In addition, the Integration API
 [/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
 endpoint returns not only public user information but also non-public
 information.
 
 This means that if you do want to use the Integration API user query,
 you need to create a custom server endpoint in the template's server
-that calls the Integration API endpoint and only returns the user's
-public information – public data and metadata – back to the browser.
+that calls the Integration API endpoint and **only returns the user's
+public information** – public data and metadata – back to the browser.
 Otherwise, you risk revealing sensitive user information to everyone who
 visits your marketplace site.
 

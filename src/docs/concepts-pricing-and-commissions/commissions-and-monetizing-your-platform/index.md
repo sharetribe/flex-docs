@@ -50,32 +50,32 @@ charged from the provider, the customer, or both.
 A marketplace that charges 10 % from the customer and 12 % from the
 provider would configure the commissions like this:
 
-```
+```js
 const PROVIDER_COMMISSION_PERCENTAGE = -12; // Provider commission is negative
 const CUSTOMER_COMMISSION_PERCENTAGE = 10; // Customer commission is positive
 
-const booking = {
-  code: bookingUnitType,
+const order = {
+  code,
   unitPrice,
-  quantity: calculateQuantityFromDates(startDate, endDate, bookingUnitType),
+  quantity,
   includeFor: ['customer', 'provider'],
 };
 
 const providerCommission = {
   code: 'line-item/provider-commission',
-  unitPrice: calculateTotalFromLineItems([booking]),
+  unitPrice: calculateTotalFromLineItems([order]),
   percentage: PROVIDER_COMMISSION_PERCENTAGE,
   includeFor: ['provider'],
 };
 
 const customerCommission = {
   code: 'line-item/customer-commission',
-  unitPrice: calculateTotalFromLineItems([booking]),
+  unitPrice: calculateTotalFromLineItems([order]),
   percentage: CUSTOMER_COMMISSION_PERCENTAGE,
   includeFor: ['customer'],
 };
 
-const lineItems = [booking, providerCommission, customerCommission];
+const lineItems = [order, providerCommission, customerCommission];
 ```
 
 For a 100 EUR listing, this would result in a 110 EUR payin for the
@@ -102,7 +102,7 @@ pay a fixed commission regardless of the listing price or quantity.
 
 ### Example
 
-```
+```js
 const FIXED_PROVIDER_COMMISSION = -1500; // Provider commission is negative
 const FIXED_CUSTOMER_COMMISSION = 1050; // Customer commission is positive
 
@@ -110,10 +110,10 @@ const calculateCommission = (unitPrice, amount) => {
   return new Money(amount, unitPrice.currency);
 };
 
-const booking = {
-  code: bookingUnitType,
+const order = {
+  code,
   unitPrice,
-  quantity: calculateQuantityFromDates(startDate, endDate, bookingUnitType),
+  quantity,
   includeFor: ['customer', 'provider'],
 };
 
@@ -131,7 +131,7 @@ const customerCommission = {
   includeFor: ['customer'],
 };
 
-const lineItems = [booking, providerCommission, customerCommission];
+const lineItems = [order, providerCommission, customerCommission];
 ```
 
 For a 100 EUR listing, this would result in a 110.5 EUR payin for the
@@ -150,17 +150,20 @@ but always at least 10 dollars.
 
 ### Example
 
-```
+```js
 const PROVIDER_COMMISSION_PERCENTAGE = -12; // Provider commission is negative
 const MINIMUM_PROVIDER_COMMISSION = -1000; // Negative commission in minor units, i.e. in USD cents
 
 const CUSTOMER_COMMISSION_PERCENTAGE = 10;
 const REDUCED_CUSTOMER_COMMISSION_PERCENTAGE = 7;
 
-const calculateProviderCommission = (booking) => {
+const calculateProviderCommission = booking => {
   // Use existing helper functions to calculate totals and percentages
   const price = calculateTotalFromLineItems([booking]);
-  const commission = calculateTotalPriceFromPercentage(price, PROVIDER_COMMISSION_PERCENTAGE);
+  const commission = calculateTotalPriceFromPercentage(
+    price,
+    PROVIDER_COMMISSION_PERCENTAGE
+  );
 
   // Since provider commissions are negative, comparison must be negative as well
   if (commission.amount < MINIMUM_PROVIDER_COMMISSION) {
@@ -169,36 +172,36 @@ const calculateProviderCommission = (booking) => {
 
   return new Money(MINIMUM_PROVIDER_COMMISSION, price.currency);
 };
-
 ```
 
-```
-const booking = {
-  code: bookingUnitType,
+```js
+const order = {
+  code,
   unitPrice,
-  quantity: calculateQuantityFromDates(startDate, endDate, bookingUnitType),
+  quantity,
   includeFor: ['customer', 'provider'],
 };
 
 const providerCommission = {
   code: 'line-item/provider-commission',
-  unitPrice: calculateProviderCommission(booking),
+  unitPrice: calculateProviderCommission(order),
   quantity: 1,
   includeFor: ['provider'],
 };
 
-const customerPercentage = booking.quantity > 5
-  ? REDUCED_CUSTOMER_COMMISSION_PERCENTAGE
-  : CUSTOMER_COMMISSION_PERCENTAGE;
+const customerPercentage =
+  booking.quantity > 5
+    ? REDUCED_CUSTOMER_COMMISSION_PERCENTAGE
+    : CUSTOMER_COMMISSION_PERCENTAGE;
 
 const customerCommission = {
   code: 'line-item/customer-commission',
-  unitPrice: calculateTotalFromLineItems([booking]),
+  unitPrice: calculateTotalFromLineItems([order]),
   percentage: customerPercentage,
   includeFor: ['customer'],
 };
 
-const lineItems = [booking, providerCommission, customerCommission];
+const lineItems = [order, providerCommission, customerCommission];
 ```
 
 ## Subscription-based model

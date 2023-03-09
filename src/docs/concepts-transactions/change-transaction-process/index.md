@@ -10,9 +10,9 @@ published: true
 ---
 
 Capturing how your users transact is a critical part of customizing your
-marketplace. Your developer will use a feature called the transaction
-process to implement the steps your users take when they interact on
-your marketplace.
+marketplace. Flex uses a feature called the transaction process to
+implement the steps your users take when they interact on your
+marketplace.
 
 Even if you’re not the one developing your marketplace, you still have
 work to do. First, you must design how you want transactions on your
@@ -64,16 +64,17 @@ what you would like to happen and when. For instance, if refunds happen
 on your marketplace, define at what point customers are eligible to
 receive them and when not.
 
-### Bookings
+### Bookings or stock
 
 Booking is a process specific to reserving a time slot from a provider’s
 availability calendar. If your marketplace includes bookings, then be
 sure to outline how they will work. The most important detail to specify
 is the time-units used to make reservations: hours, days, weeks, or
-something else?
+something else? You can use bookings for both rentals and services.
 
-You most likely will not use booking functionality if your marketplace
-is for selling products.
+If your marketplace is for selling products, you would use stock instead
+of bookings to manage how many units each listing has available to be
+purchased.
 
 ### Shared information
 
@@ -109,7 +110,7 @@ addition to transactions,
 [consult our guide](/design-toolkit/what-are-user-journeys/) on defining
 the discovery and listing creating process in your marketplace. You can
 see the default user experience provided by the
-[Sharetribe Web Template](/operator-guides/concepts/#flex-templates-for-web-ftw)
+[Sharetribe Web Template](/operator-guides/concepts/#sharetribe-web-template)
 there too.
 
 ## Draw it out
@@ -144,7 +145,7 @@ What steps will be the same? What will be different?
 Also, check out some of the template processes in Flex that you can find
 in the Build tab of your
 [Console](https://flex-console.sharetribe.com/). Using existing
-processes always saves your developer time configuring your transaction
+processes always saves development time on configuring your transaction
 process.
 
 ## Remember your marketplace website or app

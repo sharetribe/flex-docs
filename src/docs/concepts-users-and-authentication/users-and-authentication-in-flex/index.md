@@ -88,7 +88,7 @@ registered user, and update existing listings.
 Beyond that, Flex does not have different levels of user access within
 the marketplace. Operators who want to create more complex user
 hierarchies will need to think about the levels of user access they want
-each custom role to have and potentially use a custom backend solution
+each custom role to have, and potentially use a custom backend solution
 to complement Flex default user management. If you are contemplating
 creating a user hierarchy in your Flex marketplace, contact
 [Flex Support](mailto:flex-support@sharetribe.com) and let us know your
@@ -110,8 +110,8 @@ profile image of the user.
 Flex Integration API allows trusted secure applications to access all
 data within a marketplace. It is not accessible for marketplace users
 with their own sign-in credentials. Instead, Integration API can be used
-to create server-side integrations to external systems or retrieve data
-for custom marketplace dashboards.
+to create server-side integrations to external systems, or to retrieve
+data for custom marketplace dashboards.
 
 ### Authenticating to Flex APIs
 
@@ -141,7 +141,8 @@ new accounts. The user data is only visible when it is linked to, and
 even then only ID and banned status are shown.
 
 Operators can ban and unban users through Flex Console, but there is no
-endpoint in the Flex APIs to ban a user.
+endpoint in the Flex APIs to ban a user. Unbanning a user does not
+automatically reinstate the user's deleted listings.
 
 ### Deleted user
 
@@ -211,7 +212,7 @@ These transitions require a trusted token or a trusted SDK method, both
 of which are obtained using the Flex application client secret. In
 practice, the trusted context is a server environment. With the
 Sharetribe Web Template, the client application server has default
-implementations of trusted endpoints for
+implementations of trusted endpoints for **TODO Update repo links**
 [initiating](https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js)
 and
 [transitioning](https://github.com/sharetribe/ftw-daily/blob/master/server/api/transition-privileged.js)
@@ -230,10 +231,10 @@ through
 or the
 [Sharetribe Flex Integration SDK](https://sharetribe.github.io/flex-integration-sdk-js/authentication.html).
 You should only grant access to trusted applications, such as ones that
-run in your own backend systems or applications only authorized
-marketplace operators can execute.
+run in your own backend systems, or applications that can only be
+executed by authorized marketplace operators.
 
-In order to gain authorisation you need to authenticate using the client
-ID and client secret of your Integration API application. Read more on
-how to authenticate from the
+In order to gain authorisation, you need to authenticate using the
+client ID and client secret of your Integration API application. Read
+more on how to authenticate in the
 [Authentication API reference](https://www.sharetribe.com/api-reference/authentication.html).

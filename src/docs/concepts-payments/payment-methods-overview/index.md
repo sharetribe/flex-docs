@@ -103,7 +103,7 @@ same features and capabilities.
 ### Customizing the transaction process
 
 The
-[default transaction process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-default-process)
+[default processes](https://github.com/sharetribe/flex-example-processes/tree/master/)
 in Flex supports card payments. The general article on
 [the transaction process](/concepts/transaction-process/) describes the
 process in more detail.
@@ -137,6 +137,7 @@ and support for both card and push payments in the
 [Instant booking process](https://github.com/sharetribe/flex-example-processes#instant-booking)
 in the
 [Flex example transaction processes repository](https://github.com/sharetribe/flex-example-processes).
+TODO IS THIS STILL ACCURATE WITH THE PROCESS UPDATES?
 
 ### Handling payment methods in the client app
 

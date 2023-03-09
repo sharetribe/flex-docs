@@ -132,9 +132,9 @@ The preauthorization is valid for 7 days, after which the
 preauthorization is automatically released by Stripe, and the funds are
 again available to the customer.
 
-In the Sharetribe Web Template default product purchase process,
-creating and confirming the PaymentIntent are both triggered at the same
-customer action.
+In the Sharetribe Web Template default purchase process, creating and
+confirming the PaymentIntent are both triggered at the same customer
+action.
 
 **Related Stripe actions:**
 
@@ -143,11 +143,11 @@ customer action.
 
 #### 3. Provider acceptance
 
-The default product buying process in the Sharetribe Web Template uses
-an instant checkout, which means customer checkout and purchase
-acceptance are all triggered on the same customer action. In other
-words, provider acceptance is not necessary. However, it is possible to
-add the provider acceptance step to the product buying process as well.
+The default purchase process in the Sharetribe Web Template uses an
+instant checkout, which means customer checkout and purchase acceptance
+are all triggered on the same customer action. In other words, provider
+acceptance is not necessary. However, it is possible to add the provider
+acceptance step to the product buying process as well.
 
 In the default booking process, on the other hand, a provider has 6 days
 to accept the booking until it expires automatically. This timeline
@@ -241,7 +241,7 @@ customers and providers.
 
 #### Instant booking
 
-As mentioned, the default product purchase process combines the customer
+As mentioned, the default purchase process combines the customer
 checkout and provider acceptance steps into a single customer action. In
 other words, the purchase is automatically accepted and paid as soon as
 the customer clicks to pay for the listing. The

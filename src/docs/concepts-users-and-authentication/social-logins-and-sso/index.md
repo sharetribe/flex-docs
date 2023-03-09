@@ -45,11 +45,16 @@ Details on the requests in the diagram above:
 
 **1.-4.** This is standard OAuth2/OpenID Connect login flow. This part
 may differ depending on the identity provider that is being used but the
-flow is usually like this: user is redirected to the identity provider
-to provide their credentials, an authorization code is returned, which
-is traded to a token with a request to the identity provider from the
-template backend. What token is obtained depends on the identity
-provider and protocol in use.
+flow is usually like this:
+
+- the user is redirected to the identity provider to provide their
+  credentials
+- an authorization code is returned from the identity provider
+- the template backend sends a request to the identity provider to trade
+  the code for a token.
+
+What token is obtained depends on the identity provider and protocol in
+use.
 
 **5.1** Invokes `/current_user/create_with_idp` endpoint in Flex
 Marketplace API. The token obtained from steps 1.-4. is passed here

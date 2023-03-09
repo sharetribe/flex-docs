@@ -121,6 +121,8 @@ three environment types: a Demo environment, a Development environment,
 and a Production environment. Demo and Development environments are
 included with every Flex account.
 
+// TODO UPDATE ENVIRONMENTS DESCRIPTION
+
 Demo environments are to demo how the Saunatime Flex Template and Flex
 Console work.
 
