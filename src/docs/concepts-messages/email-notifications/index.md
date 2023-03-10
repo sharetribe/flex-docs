@@ -76,8 +76,9 @@ You can update, add, or delete transaction notifications by
 [editing the transaction process](/how-to/edit-transaction-process-with-flex-cli/).
 The
 [template sub-directory](https://github.com/sharetribe/flex-example-processes/tree/master/flex-default-process/templates)
-in the transaction process directory contains all the transaction
-notification email templates. All transaction notifications use the
+**TODO UPDATE REPO LINK** in the transaction process directory contains
+all the transaction notification email templates. All transaction
+notifications use the
 [Handlebars templating language](/references/email-templates/#handlebars)
 and can be edited similarly to built-in email templates.
 

@@ -146,6 +146,8 @@ different levels of complexity:
 
 ## Examples of specific integrations
 
+TODO Update repo links
+
 ### Hotjar analytics
 
 [Hotjar](https://www.hotjar.com/) is an analytics tool for websites that

@@ -44,25 +44,26 @@ changed even if the value ends up changing.
 <FormattedMessage id="ManageListingCard.editListing" />
 ```
 
-Starting from 2022-05, marketplace operators can modify the wording of
-microcopy in Flex Console. This means that operators can make changes to
-the marketplace texts without the need for code changes. In addition,
-the same microcopy can now be used from several different client
-applications, making it easier to make centralized changes.
+In addition to adding a microcopy file in the client application, Flex
+marketplace operators can modify the wording of microcopy in Flex
+Console. This means that operators can make changes to the marketplace
+texts without the need for code changes. The same microcopy can also be
+used from several different client applications, making it easier to
+make centralized changes.
 
 ![Simple Console microcopy](./microcopy_simple.png)
 
 ## How microcopy is handled in Flex
 
-With Console-editable microcopy, Flex introduces a concept of
+Console-editable microcopy in Flex is based on a concept of
 [assets](/references/assets/). Assets provide a way to define
 marketplace content and configurations using JSON files without needing
 to include the actual content in the client application codebase.
 
 For the microcopy file version being edited in Flex Console, the asset
 in question is `content/translations.json`. In other words, Flex Console
-has a dedicated view – "Build" > "Content" – for modifying the
-`content/translations.json` asset. The asset refers to translations
+has a dedicated view – "Build" > "Content" > "Microcopy" – for modifying
+the `content/translations.json` asset. The asset refers to translations
 because the language-specific microcopy files allow the marketplace to
 fairly easily be translated to languages other than English.
 

@@ -52,9 +52,13 @@ etc. Such trusted applications are for example applications that run in
 your own backend systems or applications meant to be executed by
 authorized marketplace operators.
 
-> **IMPORTANT** Never expose your Integration API
-> [application](/concepts/applications/) credentials to an untrusted
-> device or application, such as end user's browser or mobile app.
+<warning>
+
+Never expose your Integration API [application](/concepts/applications/)
+credentials to an untrusted device or application, such as end user's
+browser or mobile app.
+
+</warning>
 
 The Integration API is well suited for building the following types of
 applications:
