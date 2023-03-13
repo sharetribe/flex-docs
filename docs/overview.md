@@ -48,7 +48,7 @@ Basically the data flows in the following way:
 1. Each article is rendered with the
    [ArticlePage](../src/components/ArticlePage/ArticlePage.js) component
 
-When the site is built with `yarn run prod` or in Netlify, the build
+When the site is built with `yarn run prod` or in Vercel, the build
 output is a bunch of static files that can be served without any dynamic
 server rendering. The client side app mounts when the site starts up, so
 all dynamic interactivity is still possible in the client side UI.
@@ -68,12 +68,11 @@ src/                 # Site source code
 .cache/              # Gatsby cache directory
 .gitignore           # Files ignored in Git
 .prettierrc          # Prettier configuration
-_redirects           # Netlify redirects
+vercel.json          # Vercel redirects and configurations
 gatsby-browser.js    # Gatsby Browser API usage
 gatsby-config.js     # Gatsby config
 gatsby-node.js       # Gatsby Node API usage
 gatsby-ssr.js        # Gatsby SSR API usage
-netlify-postbuild.sh # Script to run after Netlify build
 package.json         # Dependencies etc.
 yarn.lock            # Locked versions of the dependencies
 ```
@@ -125,57 +124,44 @@ information.
 
   The local production server started with `yarn run prod` forces on the
   production mode. Otherwise the production mode should be enabled in
-  Netlify, otherwise the development mode is used locally.
+  Vercel, otherwise the development mode is used locally.
 
 - **`NODE_VERSION`**
 
-  This sets the [Node](https://nodejs.org/) version in Netlify. The
-  value can be anything that [nvm](https://github.com/creationix/nvm)
-  accepts.
+  You can set the node version in the Vercel dashboard.
+  [Vercel docs for setting the Node version](https://vercel.com/changelog/node-js-version-now-customizable-in-the-project-settings).
 
-  For more information, see the
-  [Netlify docs for setting the Node version](https://www.netlify.com/docs/continuous-deployment/#set-node-ruby-or-python-version).
+- **`GATSBY_VERCEL_ENV`**
 
-- **`CONTEXT`**
-
-  The deployment context automatically set by Netlify.
+  The deployment context automatically set by Vercel.
 
   > There are three predefined deploy contexts:
   >
   > - `production`: this context corresponds to the main site’s
   >   deployment, attached to the Git branch you set when the site is
   >   created.
-  > - `deploy-preview`: this context corresponds to the previews we
-  >   build for pull/merge requests.
-  > - `branch-deploy`: this context corresponds to deploys from branches
-  >   that are not the site’s main production branch.
+  > - `preview`: this context corresponds to the previews we build for
+  >   pull/merge requests.
+  > - `development`: this context corresponds to the local development
+  >   environment (e.g. you're using `vercel dev` to run your local)
 
   Out of those three, currently we use `production` for the `master`
   branch that is running the production deployment, and `deploy-preview`
   for the preview builds in PRs.
 
   For more information, see the
-  [Netlify docs for deploy contexts](https://www.netlify.com/docs/continuous-deployment/#deploy-contexts).
+  [Vercel docs for environment variables](https://vercel.com/docs/concepts/projects/environment-variables).
 
 - **`PRODUCTION_SITE_URL`**
 
   The site URL in production, **without** the `/docs` path prefix. Only
-  used in the Netlify production context.
+  used in the Vercle production context.
 
 - **`GOOGLE_TAGMANAGER_ID`**
 
   The Google Tag Manager (GTM) ID. GTM is only enabled if the ID is
-  defined and the app is running in the Netlify production context. GTM
+  defined and the app is running in the Vercel production context. GTM
   is used e.g. for adding Google Analytics to the site.
-
-- **`DEPLOY_PRIME_URL`**
-
-  Individual deployment URL (vs. the `PRODUCTION_SITE_URL`)
-  automatically set by Netlify. This is used e.g. for deploy previews
-  for PRs.
-
-  For more information, see the
-  [Netlify docs for build environment variables](https://www.netlify.com/docs/continuous-deployment/#build-environment-variables).
 
 ### `gatsby-config.js`
 
@@ -218,26 +204,24 @@ full discussion here: https://github.com/vercel/vercel/discussions/9405
 
 ## Redirects
 
-Redirects can be configured in the [\_redirects](../_redirects) file.
+Redirects can be configured in the [\vercel.json](../vercel.son) file.
 See the
-[Netlify documentation for redirects](https://www.netlify.com/docs/redirects/)
+[Vercel documentation on redirects](https://vercel.com/docs/concepts/projects/project-configuration/)
 for more information.
 
 ## Deployment
 
 Flex Docs uses [Vercel](https://www.vercel.com/) for deployment. It is a
 great and a simple tool to build modern static sites. We have enabled
-the
-[Netlify GitHub App](https://www.netlify.com/docs/github-permissions/)
-to enable preview builds for PRs and automatically deploying the
-`master` branch.
+the [Vercel GitHub App](https://github.com/apps/vercel) to enable
+preview builds for PRs and automatically deploying the `master` branch.
 
-Seeing the build logs and doing rollbacks etc. can be done in the
-`sharetribe-flex-docs-site` Netlify site:
+Seeing the build logs and doing rollbacks etc. can be done in Vercel
+console:
 
-https://app.netlify.com/sites/sharetribe-flex-docs-site
+https://vercel.com/sharetribe/flex-docs
 
-The credentials are in the company password manager.
+Ask Aleksi or Boyan for access.
 
-See the [Netlify documentation](https://www.netlify.com/docs/) for more
-information on how to use Netlify for various tasks.
+See the [Vercel documentation](https://www.vercel.com/docs/) for more
+information on how to use Vercel for various tasks.
