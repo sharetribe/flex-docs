@@ -1,62 +1,33 @@
 ---
-title: Feature gallery
-slug: feature-gallery
-updated: 2022-12-20
+title: Custom feature knowledge base
+slug: feature-knowledge-base
+updated: 2023-03-14
 category: operator-guides
 ingress:
-  Use this gallery when specifying to your developer how your
-  marketplace should work
+  Use this information when specifying your custom marketplace requirements.
 published: true
 ---
 
-The table below contains information about common features marketplaces
-build with Sharetribe Flex. If you are not a developer, you need to hire
-a developer like a Flex Expert to help you build your marketplace. Your
-responsibility in this arrangement is to tell the developers how you
-want your marketplace to work. Use this table to help you name
-functionalities you want in your marketplace, understand their most
-basic implementation on Flex, and learn what information to prepare for
-your developer to build this feature.
+The knowledge base below lists some of the custom features you can build with code in your Flex marketplace. If you’re not a developer, you’ll need to hire a developer to help build your marketplace. You can use the information below to help you when preparing feature requirements for your developer.
 
-# Gallery
-
+# Knowledge base
 <iframe class="airtable-embed" src="https://airtable.com/embed/shreAe4r7NNicveJ3?backgroundColor=purple&layout=card&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
 
 </iframe>
 
-# How to use this gallery
+<info>
 
-1. Book a meeting with a developer. Connect using the Directory or
-   [book a call with Sharetribe’s team](https://calendly.com/welcome-to-flex)
-   if you would like to be introduced to teams suited to your needs.
-2. Find the features you are interested in building through keyword
-   search. If you do not find a feature you’re looking for, it maybe
-   that Sharetribe has not added it to the gallery yet. Please contact
-   us at hello@sharetribe.com if you do not find the feature you’re
-   looking for.
-3. If you want to build an MVP, use the basic implementation
-   specifications when documenting how your feature should work.
-4. Review “What to prepare for a developer” and ensure you have the
-   information the developer might need to help estimate and build the
-   feature.
-5. If you’re preparing a
-   [user journey](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/),
-   use these specifications to add further detail to how user’s complete
-   their journey
+The knowledge base currently contains only a subset of features commonly built in Flex marketplaces. If you’re looking for a particular feature, but do not see it on this list, it is likely we have not added it yet. Please feel free to reach out to hello@sharetribe.com if you have any questions about possibilities, complexities, and approaches of the features you have in mind for your marketplace.
 
-# Legend
 
-**Name**: the name of the feature as Sharetribe understands it
+</info>
 
-**Alternate name(s)**: contains other keywords for the feature. The same
-feature can have many names.
+# How to prepare requirements for successful development 
 
-**:Description**: brief description of what the feature is about 
+The first step to hiring a developer to build your marketplace is to make them understand what you would like to build. With Flex, the fastest way to do this is by describing changes you would like to implement on top of the starting development templates. We recommend using the user journey framework to communicate these changes, creating flowcharts depicting steps users like buyers or sellers take to achieve a particular goal. We share some tips on how to prepare Flex user journeys here.
 
-**:Type**: describes what kind of marketplaces Sharetribe typically
-sees utilize this feature.
+In describing your requirements using user journeys or another approach, you will cover how your marketplace works. Certain use cases are already supported in the Flex Templates, while others require the development of custom features. This knowledge base shares the list of common features and their typical names to help you find them. Note that this list is work in progress and does not reflect every feature possible on Flex.
 
-**:Typical starting functionality**: tells you the functionality you or your users (buyer/seller) experience in the fastest or simplest implementation of this feature from the perspective of development effort required. Use this to understand the MVP experience available to Flex marketplaces.
+**Typical starting functionality** gives you an example of how this feature can work. Usually we are describing how the feature works at its simplest implementation. 
 
-**:Considerations for development**: shares information developers think about or need in order to build this feature.Use it to be better prepared when sharing your requirements with a developer and more
-informed when making decisions about what you build.
+Depending on the feature, developers might need additional information to build the feature. **Considerations for development** shares some of the information they will need in order to implement the feature. It also tells you more about the technical considerations that go into building the feature to give you more context about the preparation and work required. 
