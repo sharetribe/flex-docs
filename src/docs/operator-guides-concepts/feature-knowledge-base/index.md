@@ -11,18 +11,13 @@ published: true
 The knowledge base below lists some of the custom features you can build with code in your Flex marketplace. If you’re not a developer, you’ll need to hire a developer to help build your marketplace. You can use the information below to help you when preparing feature requirements for your developer.
 
 # Knowledge base
+
 <iframe class="airtable-embed" src="https://airtable.com/embed/shreAe4r7NNicveJ3?backgroundColor=purple&layout=card&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
 
 </iframe>
 
 
 
-<info>
-
-The knowledge base currently contains only a subset of features commonly built in Flex marketplaces. If you’re looking for a particular feature, but do not see it on this list, it is likely we have not added it yet. Please feel free to reach out to hello@sharetribe.com if you have any questions about possibilities, complexities, and approaches of the features you have in mind for your marketplace.
-
-
-</info>
 
 # How to prepare requirements for successful development 
 
@@ -33,3 +28,11 @@ In describing your requirements using user journeys or another approach, you wil
 **Typical starting functionality** gives you an example of how this feature can work. Usually we are describing how the feature works at its simplest implementation. 
 
 Depending on the feature, developers might need additional information to build the feature. **Considerations for development** shares some of the information they will need in order to implement the feature. It also tells you more about the technical considerations that go into building the feature to give you more context about the preparation and work required. 
+
+
+<info>
+
+The knowledge base currently contains only a subset of features commonly built in Flex marketplaces. If you’re looking for a particular feature, but do not see it on this list, it is likely we have not added it yet. Please feel free to reach out to hello@sharetribe.com if you have any questions about possibilities, complexities, and approaches of the features you have in mind for your marketplace.
+
+
+</info>
