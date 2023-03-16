@@ -46,9 +46,13 @@ The former of those can be done in payment methods page (profile menu ->
 account settings -> payment methods), but you can also save payment card
 details on the checkout page when making a one-time payment.
 
-> Note: currently, it is only possible to save one card, which becomes
-> the default payment method. I.e. if there is already one payment card
-> saved, your only option is to replace the card with a new one.
+<info>
+
+Currently, it is only possible to save one card, which becomes the
+default payment method. I.e. if there is already one payment card saved,
+your only option is to replace the card with a new one.
+
+</info>
 
 ### Saving cards without making an initial payment
 
@@ -87,6 +91,8 @@ making a one-time payment with a different payment card, there's an
 option (checkbox) to save the new payment card as the default payment
 method.
 
+// TODO UPDATE SCREENSHOT
+
 ![One-time payment and saving card details for future use](one-time-payment.png 'One-time payment and saving card details for future use')
 
 If the default payment method exists, user needs to select one-time
@@ -117,9 +123,13 @@ checkout flow:**
   - Create a `stripeCustomer` entity for the current user if needed.
   - Attach the created payment method to `stripeCustomer` entity.
 
-> Note: Even if the call to save payment method fails, one-time payment
-> itself has succeeded. Therefore, it is better to forward user to
-> `TransactionPage` anyway.
+<info>
+
+Even if the call to save payment method fails, one-time payment itself
+has succeeded. Therefore, it is better to forward user to
+`TransactionPage` anyway.
+
+</info>
 
 ### Getting permission to save a card
 
@@ -145,16 +155,21 @@ book a listing, there are couple of changes needed:
 
 Here's the description of complete call sequence on CheckoutPage.
 
-**Note: PaymentIntents flow needs transaction process change as
-described in doc:**
+<info>
 
-[Enable Payment Intents if you are using an old version of FTW](/how-to/enable-payment-intents/)
+PaymentIntents flow needs transaction process change as described in the
+article about
+**[enabling payment intents](/how-to/enable-payment-intents/)**.
+
+</info>
 
 ### Initial data for Checkout:
 
+//TODO UPDATE REPO LINK
+
 Check if the user has already saved a default payment method. Fetch
 currentUser entity with `stripeCustomer.defaultPaymentMethod`
-relationship. In FTW, we call a thunk function:
+relationship. In Sharetribe Web Template, we call a thunk function:
 [`fetchCurrentUser` in CheckoutPage.duck.js](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L302).
 
 Behind the scenes, this is essentially the following call:
@@ -196,7 +211,7 @@ What happens behind the scene:
 - Automatic expiration happens in 15 minutes, if process is not
   transitioned to 'transition/confirm-payment' before that.
 - After this call, created transaction is saved to session storage in
-  FTW (or existing inquiry tx is updated).
+  Sharetribe Web Template (or existing inquiry tx is updated).
 
 **When you intend to save card details**, a new parameter needs to be
 passed if card details are saved at the same time:
@@ -232,14 +247,19 @@ sdk.transactions.initiate({
 });
 ```
 
-> Note: params might be different in different transaction process
-> graphs.
+<info>
+
+Params might be different in different transaction process graphs.
+
+</info>
+
+// TODO UPDATE REPO LINKS
 
 Check
 [`initiateOrder` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L171)
 and related
 [`orderParams`](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.js#L373)
-from FTW.
+from Sharetribe Web Template.
 
 ###### Step 2.
 
@@ -253,9 +273,14 @@ stripe.confirmCardPayment(
 `paymentParams` should include card element and billing details. See
 [stripe.confirmCardPayment documentation](https://stripe.com/docs/js/payment_intents/confirm_card_payment)..
 
-> Note: paymentParams are not needed when using previously saved payment
-> card. FTW handles this in
-> [`confirmCardPayment` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/stripe.duck.js#L657).
+<info>
+TODO UPDATE LINK
+
+PaymentParams are not needed when using previously saved payment card.
+Sharetribe Web Template handles this in
+**[`confirmCardPayment` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/stripe.duck.js#L657)**.
+
+</info>
 
 Stripe's frontent script checks if PaymentIntent needs extra actions
 from customer. Some payments might need Strong Customer Authentication
@@ -272,9 +297,9 @@ sdk.transactions.transition({
 });
 ```
 
-Inform Marketplace API, that PaymentIntent is ready to be captured after
-possible SCA authentication has been requested from user. FTW does that
-in
+Inform Marketplace API that PaymentIntent is ready to be captured after
+possible SCA authentication has been requested from user. Sharetribe Web
+Template does that in
 [`confirmPayment` thunk call](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L206)
 
 ###### Step 4.
@@ -283,8 +308,8 @@ in
 sdk.messages.send({ transactionId: orderId, content: message });
 ```
 
-FTW sends an initial message to transaction if customer has added a
-message.
+The template sends an initial message to the transaction if customer has
+added a message.
 
 ###### Step 5.
 
@@ -293,12 +318,14 @@ selected the "Save for later use" checkbox. So, this is relevant if user
 has selected onetime payment - instead of making a charge from the
 previously saved credit card.
 
-On FTW, we call
+In the template, we call
 [savePaymentMethod function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L200)
 that creates stripe customer and adds updates default payment method.
 
 There are 3 different scenarios, which require different calls to Flex
 API:
+
+// TODO UPDATE REPO LINKS
 
 **1. No StripeCustomer entity connected to Flex API:**
 
@@ -309,7 +336,7 @@ sdk.stripeCustomer.create(
 );
 ```
 
-FTW:
+Template:
 [`dispatch(createStripeCustomer(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L136)
 
 **2. Current user has already defaultPaymentMethod - 2 calls:**
@@ -319,7 +346,7 @@ FTW:
 => sdk.stripeCustomer.addPaymentMethod({ stripePaymentMethodId }, { expand: true })
 ```
 
-FTW:
+Template:
 [`dispatch(updatePaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L181)
 
 **3. Current user has StripeCustomer entity connected, but no
@@ -329,7 +356,7 @@ defaultPaymentMethod:**
 => sdk.stripeCustomer.addPaymentMethod({ stripePaymentMethodId }, { expand: true })
 ```
 
-FTW:
+Template:
 [`dispatch(addPaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L151)
 
 After these steps, customer is redirected to inbox and the ball is

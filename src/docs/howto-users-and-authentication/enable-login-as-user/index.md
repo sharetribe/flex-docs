@@ -23,8 +23,9 @@ messages, or initiate or transition transactions**.
 
 If you are using Sharetribe Web Template, this feature works out of the
 box. If you are using one of the legacy templates where this feature is
-not available by default, you can refer to our [legacy
-documentation](TODO: LINK) for implementation instructions.
+not available by default, you can refer to our
+[legacy documentation](/ftw/legacy-templates/) for implementation
+instructions.
 
 </info>
 
@@ -34,13 +35,13 @@ As context, here's a quick description of the technical implementation
 of how the Login as user works to make it easier to understand the
 changes it requires. The authentication flow uses the _authorization
 code_ grant type defined in the OAuth2. Console works as an
-_authorization server_ that issues an authorization code for FTW. FTW
-then uses this code to obtain an access token from Auth API. The access
-token is valid for 30 minutes and it does not come with a refresh token.
-The token can be used as a normal token obtained with a password login
-excluding updating payment information, sending messages, and initiating
-or transitioning transactions. The image below describes the
-authentication flow in more detail.
+_authorization server_ that issues an authorization code for Sharetribe
+Web Template. The template then uses this code to obtain an access token
+from Auth API. The access token is valid for 30 minutes and it does not
+come with a refresh token. The token can be used as a normal token
+obtained with a password login excluding updating payment information,
+sending messages, and initiating or transitioning transactions. The
+image below describes the authentication flow in more detail.
 
 ![Authentication flow](authentication-flow.png)
 
@@ -52,9 +53,10 @@ configured in Console. This value will be used to redirect back to your
 marketplace, and the value is validated in Console when issuing an
 authorization code.
 
-When developing FTW locally while testing this feature, you need to set
-the Marketplace URL as **localhost:4000** and use **yarn run
-dev-server** so that both your client and server run on the same port.
+When developing Sharetribe Web Template locally while testing this
+feature, you need to set the Marketplace URL as **localhost:4000** and
+use **yarn run dev-server** so that both your client and server run on
+the same port.
 
 </info>
 

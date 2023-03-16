@@ -69,7 +69,7 @@ Let's see what we have in the `process/` directory:
 
 If you look at the `:notifications` key in the `process.edn` file, you
 will see that the template directories and file names match the
-`:template` values in the notifictions:
+`:template` values in the notifications:
 
 ```clojure
 :notifications
@@ -102,7 +102,7 @@ version is automatically generated from the HTML template.
 
 ### Example
 
-For example, the `:notification/new-booking-request` notifiction:
+For example, the `:notification/new-booking-request` notification:
 
 ```clojure
 {:name :notification/new-booking-request,
@@ -121,7 +121,7 @@ new-booking-request/
 
 Note that the template name (e.g. `:new-booking-request`) doesn't have
 to match the notification name (e.g.
-`:notification/new-booking-request`) as you can share a template with
+`:notification/new-booking-request`) as you can use the same template in
 multiple notifications.
 
 ## Email template syntax
@@ -285,9 +285,10 @@ flex-cli process list --process preauth-with-nightly-booking -m my-test-marketpl
 ## Update alias
 
 As you saw from Console or from the `process list` command above, there
-isn't an alias pointing to the latest process version. To allow FTW or
-other apps to use the new process version through the Marketplace API,
-you will need an alias to point to the version.
+isn't an alias pointing to the latest process version. To allow
+Sharetribe Web Template or other apps to use the new process version
+through the Marketplace API, you will need an alias to point to the
+version.
 
 In our `preauth-with-nightly-booking` example process there is a
 `release-1` alias. Let's update that to point to the new process

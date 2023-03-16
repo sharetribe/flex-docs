@@ -9,6 +9,9 @@ ingress:
 published: true
 ---
 
+// TODO This can be configured in configLayout, so do we want to keep
+the guide modified or skip it entirely?
+
 Flex provides a selection of predefined image sizes, or _variants_ as
 they are called, to be used in your marketplace website. However, when
 none of the predefined variants suits your needs, a custom variant can

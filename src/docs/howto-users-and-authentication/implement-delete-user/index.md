@@ -10,15 +10,14 @@ ingress:
 published: true
 ---
 
-Starting from 2022-03, Sharetribe Flex Marketplace API has an endpoint
-for
+Sharetribe Flex Marketplace API has an endpoint for
 [deleting a user's account](https://www.sharetribe.com/api-reference/marketplace.html#delete-user).
 After the user has been deleted, any transactions where they are a
 participant cannot transition forward, and no payouts will be made to
 the user – even if the payouts have already been scheduled.
 
 This how-to article guides you in implementing an account deleting
-feature in the Sharetribe web template "Account settings" section. When
+feature in the Sharetribe Web Template "Account settings" section. When
 the signed-in user navigates to the account deletion page, they need to
 enter their password to confirm that they do in fact want to delete
 their account. An endpoint in the template application's server then
@@ -70,23 +69,19 @@ First, add a new tab to the Account settings section of the template.
 The new page will appear as the final tab in Account Settings side
 navigation.
 
-```diff
-  const tabs = [
-    {
-      text: <FormattedMessage id="LayoutWrapperAccountSettingsSideNav.contactDetailsTabTitle" />,
-  ...
+```jsx
       linkProps: {
         name: 'PaymentMethodsPage',
       },
     },
-+   {
-+     text: <FormattedMessage id="LayoutWrapperAccountSettingsSideNav.deleteAccountTabTitle" />,
-+     selected: currentTab === 'DeleteAccountPage',
-+     id: 'DeleteAccountPageTab',
-+     linkProps: {
-+       name: 'DeleteAccountPage',
-+     },
-+   },
+    {
+      text: <FormattedMessage id="LayoutWrapperAccountSettingsSideNav.deleteAccountTabTitle" />,
+      selected: currentTab === 'DeleteAccountPage',
+      id: 'DeleteAccountPageTab',
+      linkProps: {
+        name: 'DeleteAccountPage',
+      },
+    },
   ];
 ```
 
@@ -118,18 +113,19 @@ reducer to a combined reducer.
 
 For more info on the Redux structure, you can read about
 [the Ducks modular Redux proposal](https://github.com/erikras/ducks-modular-redux),
-which is the proposal of Redux usage followed in the FTW templates.
+which is the proposal of Redux usage followed in the Sharetribe Web
+Template.
 
-```diff
+```js
   import ContactDetailsPage from './ContactDetailsPage/ContactDetailsPage.duck';
-+ import DeleteAccountPage from './DeleteAccountPage/DeleteAccountPage.duck';
+  import DeleteAccountPage from './DeleteAccountPage/DeleteAccountPage.duck';
   import EditListingPage from './EditListingPage/EditListingPage.duck';
   ...
 
   export {
     CheckoutPage,
     ContactDetailsPage,
-+   DeleteAccountPage,
+    DeleteAccountPage,
     EditListingPage,
 ```
 
@@ -142,38 +138,54 @@ application's route configuration.
         └── routeConfiguration.js
 ```
 
+```js
+const ContactDetailsPage = loadable(() =>
+  import(
+    /* webpackChunkName: "ContactDetailsPage" */ './containers/ContactDetailsPage/ContactDetailsPage'
+  )
+);
+const DeleteAccountPage = loadable(() =>
+  import(
+    /* webpackChunkName: "DeleteAccountPage" */ './containers/DeleteAccountPage/DeleteAccountPage'
+  )
+);
+const EditListingPage = loadable(() =>
+  import(
+    /* webpackChunkName: "EditListingPage" */ './containers/EditListingPage/EditListingPage'
+  )
+);
+```
+
 The "Account settings" side navigation tabs are defined in
 routeConfiguration.js as well, so add DeleteAccountPage in the tab
 array.
 
-```diff
-  const ContactDetailsPage = loadable(() => import(/* webpackChunkName: "ContactDetailsPage" */ './containers/ContactDetailsPage/ContactDetailsPage'));
-+ const DeleteAccountPage = loadable(() => import(/* webpackChunkName: "DeleteAccountPage" */ './containers/DeleteAccountPage/DeleteAccountPage'));
-  const EditListingPage = loadable(() => import(/* webpackChunkName: "EditListingPage" */ './containers/EditListingPage/EditListingPage'));
-...
+```js
 export const ACCOUNT_SETTINGS_PAGES = [
   'ContactDetailsPage',
   'PasswordChangePage',
   'StripePayoutPage',
   'PaymentMethodsPage',
-+ 'DeleteAccountPage',
+  'DeleteAccountPage',
 ];
-...
-      component: PaymentMethodsPage,
-      loadData: pageDataLoadingAPI.PaymentMethodsPage.loadData,
-    },
-+   {
-+     path: '/account/delete-profile',
-+     name: 'DeleteAccountPage',
-+     auth: true,
-+     authPage: 'LoginPage',
-+     component: DeleteAccountPage,
-+   },
-    {
-      path: '/terms-of-service',
 ```
 
-Finally, add the necessary microcopy rows into en.json
+Then, add the delete profile route to the array returned by the route
+configuration function:
+
+```js
+    {
+      path: '/account/delete-profile',
+      name: 'DeleteAccountPage',
+      auth: true,
+      authPage: 'LoginPage',
+      component: DeleteAccountPage,
+    },
+```
+
+Finally, add the necessary microcopy rows into either
+src/translations/en.json or the
+[Flex Console microcopy editor](/concepts/microcopy).
 
 ```shell
 └── src
@@ -183,17 +195,14 @@ Finally, add the necessary microcopy rows into en.json
 
 Feel free to modify the texts to suit your marketplace.
 
-```diff
-  "CustomExtendedDataField.required": "Required",
-+ "DeleteAccountPage.details": "This action is permanent and cannot be undone! After deleting your account, you will be logged out immediately and will not be able to access your listings or transactions anymore.",
-+ "DeleteAccountPage.heading": "Delete your account",
-+ "DeleteAccountPage.title": "Delete your account",
-+ "DeleteAccountPage.error": "Cannot delete user profile. You have {errorCause} Please contact Biketribe support or complete the unfinished issues and try again.",
+```
+"DeleteAccountPage.details": "This action is permanent and cannot be undone! After deleting your account, you will be logged out immediately and will not be able to access your listings or transactions anymore.",
+"DeleteAccountPage.heading": "Delete your account",
+"DeleteAccountPage.title": "Delete your account",
+"DeleteAccountPage.error": "Cannot delete user profile. You have {errorCause} Please contact Biketribe support or complete the unfinished issues and try again.",
   "EditListingAvailabilityForm.fetchMonthDataFailed": "Oops, couldn't load data for {month}, please try again.",
 ...
-  "LayoutWrapperAccountSettingsSideNav.contactDetailsTabTitle": "Contact details",
-+ "LayoutWrapperAccountSettingsSideNav.deleteAccountTabTitle": "Delete account",
-  "LayoutWrapperAccountSettingsSideNav.passwordTabTitle": "Password",
+"LayoutWrapperAccountSettingsSideNav.deleteAccountTabTitle": "Delete account",
 ```
 
 If you now navigate to Account Settings, you can see the "Delete
@@ -237,30 +246,36 @@ DeleteAccountPage template you downloaded earlier.
 ```
 
 Set DeleteAccountPage to only show the form for authenticated users.
+First, create the form component depending on whether current user
+exists.
+
+```js
+import DeleteAccountForm from './DeleteAccountForm/DeleteAccountForm';
+```
+
+```js
+// Show form for a valid current user
+const showDeleteAccountForm = currentUser && currentUser.id;
+
+const deleteAccountForm = showDeleteAccountForm ? (
+  <DeleteAccountForm
+    className={css.form}
+    deleteAccountError={deleteAccountError}
+    currentUser={currentUser}
+    onSubmit={handleDeleteAccount}
+    onChange={onChange}
+    onResetPassword={onResetPassword}
+    resetPasswordInProgress={resetPasswordInProgress}
+    resetPasswordError={resetPasswordError}
+    inProgress={deleteAccountInProgress}
+    ready={accountDeleted}
+  />
+) : null;
+```
+
+Then, add the form component as a child to the Page component.
 
 ```diff
-  } from '../../components';
-+ import DeleteAccountForm from './DeleteAccountForm/DeleteAccountForm';
-...
-+ // Show form for a valid current user
-+ const showDeleteAccountForm = (currentUser && currentUser.id);
-+
-+ const deleteAccountForm = showDeleteAccountForm ? (
-+     <DeleteAccountForm
-+       className={css.form}
-+       deleteAccountError={deleteAccountError}
-+       currentUser={currentUser}
-+       onSubmit={handleDeleteAccount}
-+       onChange={onChange}
-+       onResetPassword={onResetPassword}
-+       resetPasswordInProgress={resetPasswordInProgress}
-+       resetPasswordError={resetPasswordError}
-+       inProgress={deleteAccountInProgress}
-+       ready={accountDeleted}
-+     />
-+   ) :
-+   null;
-+
   return (
     <Page title={title} scrollingDisabled={scrollingDisabled}>
 ...
@@ -285,23 +300,22 @@ and requirements, so those validation error messages require microcopy
 strings. The file also has the capability to send a password reset link
 to the user if they have forgotten their password.
 
-```diff
-  "CustomExtendedDataField.required": "Required",
-+ "DeleteAccountForm.confirmChangesInfo": "To delete your account, please enter your current password.",
-+ "DeleteAccountForm.confirmChangesTitle": "Confirm deleting your account",
-+ "DeleteAccountForm.conflictingData":  "Unable to delete user profile. You have {errorCause}",
-+ "DeleteAccountForm.genericFailure": "Whoops, something went wrong. Please refresh the page and try again.",
-+ "DeleteAccountForm.passwordFailed": "Please double-check your current password",
-+ "DeleteAccountForm.passwordLabel": "Current password",
-+ "DeleteAccountForm.passwordPlaceholder": "Enter your current password…",
-+ "DeleteAccountForm.passwordRequired": "Current password is required",
-+ "DeleteAccountForm.passwordTooLong": "The password should be at most {maxLength} characters",
-+ "DeleteAccountForm.passwordTooShort": "The password should be at least {minLength} characters",
-+ "DeleteAccountForm.resetPasswordInfo": "Forgot your password or don't have one? {resetPasswordLink}",
-+ "DeleteAccountForm.resetPasswordLinkSent": "The instructions for resetting your password have been sent to {email}.",
-+ "DeleteAccountForm.resetPasswordLinkText": "Send reset instructions.",
-+ "DeleteAccountForm.resendPasswordLinkText": "Resend instructions.",
-+ "DeleteAccountForm.saveChanges": "Yes, delete my Biketribe account permanently",
+```
+"DeleteAccountForm.confirmChangesInfo": "To delete your account, please enter your current password.",
+"DeleteAccountForm.confirmChangesTitle": "Confirm deleting your account",
+"DeleteAccountForm.conflictingData":  "Unable to delete user profile. You have {errorCause}",
+"DeleteAccountForm.genericFailure": "Whoops, something went wrong. Please refresh the page and try again.",
+"DeleteAccountForm.passwordFailed": "Please double-check your current password",
+"DeleteAccountForm.passwordLabel": "Current password",
+"DeleteAccountForm.passwordPlaceholder": "Enter your current password…",
+"DeleteAccountForm.passwordRequired": "Current password is required",
+"DeleteAccountForm.passwordTooLong": "The password should be at most {maxLength} characters",
+"DeleteAccountForm.passwordTooShort": "The password should be at least {minLength} characters",
+"DeleteAccountForm.resetPasswordInfo": "Forgot your password or don't have one? {resetPasswordLink}",
+"DeleteAccountForm.resetPasswordLinkSent": "The instructions for resetting your password have been sent to {email}.",
+"DeleteAccountForm.resetPasswordLinkText": "Send reset instructions.",
+"DeleteAccountForm.resendPasswordLinkText": "Resend instructions.",
+"DeleteAccountForm.saveChanges": "Yes, delete my Biketribe account permanently",
 ```
 
 You can now see the input for the user's current password, as well as
@@ -357,30 +371,58 @@ button on DeleteAccountPage to open the modal.
 ...
 
 + const incompleteTransactions = deleteAccountError?.status === 409;
-...
--             {deleteAccountForm}
-+           <Button
-+             onClick={handleModalOpen}
-+             disabled={incompleteTransactions}
-+           >
-+             Delete my account
-+           </Button>
-+           <Modal
-+             id="DeleteAccountPage.deleteAccountModal"
-+             isOpen={modalIsOpen}
-+             onManageDisableScrolling={onManageDisableScrolling}
-+             onClose={handleModalClose}
-+           >
-+             {deleteAccountForm}
-+           </Modal>
-...
+```
+
+Replace `{deleteAccountForm}` with the following:
+
+```js
+            <Button
+              onClick={handleModalOpen}
+              disabled={incompleteTransactions}
+            >
+              Delete my account
+            </Button>
+            <Modal
+              id="DeleteAccountPage.deleteAccountModal"
+              isOpen={modalIsOpen}
+              onManageDisableScrolling={onManageDisableScrolling}
+              onClose={handleModalClose}
+            >
+              {deleteAccountForm}
+            </Modal>
+```
+
+Then, add _onManageDisableScrolling_ to
+_DeleteAccountPageComponent.propTypes_:
+
+```js
+DeleteAccountPageComponent.propTypes = {
+  deleteAccountError: propTypes.error,
+  deleteAccountInProgress: bool.isRequired,
+  currentUser: propTypes.currentUser,
   onChange: func.isRequired,
-+ onManageDisableScrolling: func.isRequired,
+  onManageDisableScrolling: func.isRequired,
   onSubmitDeleteAccount: func.isRequired,
-...
+  accountDeleted: bool.isRequired,
+  scrollingDisabled: bool.isRequired,
+  resetPasswordInProgress: bool,
+  resetPasswordError: propTypes.error,
+
+  // from injectIntl
+  intl: intlShape.isRequired,
+};
+```
+
+Also add _onManageDisableScrolling_ to _mapDispatchToProps_:
+
+```js
+const mapDispatchToProps = dispatch => ({
+  onChange: () => dispatch(deleteAccountClear()),
   onLogout: () => dispatch(logout()),
-+ onManageDisableScrolling: () => dispatch(manageDisableScrolling()),
+  onManageDisableScrolling: () => dispatch(manageDisableScrolling()),
   onSubmitDeleteAccount: values => dispatch(deleteAccount(values)),
+  onResetPassword: values => dispatch(resetPassword(values)),
+});
 ```
 
 </extrainfo>
@@ -427,19 +469,19 @@ First, create the endpoint in the client-side API file.
           ...
 ```
 
-```diff
-+  // Check if user can be deleted and then delete the user. Endpoint logic
-+  // must be modified to accommodate the transaction processes used in
-+  // the marketplace.
-+  export const deleteUserAccount = body => {
-+    return post('/api/delete-account', body);
-+  }
+```js
+// Check if user can be deleted and then delete the user. Endpoint logic
+// must be modified to accommodate the transaction processes used in
+// the marketplace.
+export const deleteUserAccount = body => {
+  return post('/api/delete-account', body);
+};
 ```
 
 Then, import the endpoint in DeleteAccountPage.duck.js.
 
-```diff
-+ import { deleteUserAccount } from '../../util/api';
+```js
+import { deleteUserAccount } from '../../util/api';
 ```
 
 Now, clicking the delete button should show a 404 error in the dev tools
@@ -499,25 +541,23 @@ whether the user has provider transactions where the payout transition
 has been created less than seven days ago. You can use this example as a
 starting point for such logic.
 
-```diff
+```js
   sdk.transactions.query({
-+   only: "sale"
+    only: "sale"
   })
   .then(resp => {
-...
-+  // In flex-default-process, payouts are created on "transition/complete". We want to
-+  // determine the transactions where this transition has been created less than 7 days ago.
-+  const pendingPayouts = resp.data.data.filter(tx =>{+
-+      // For the transactions where the user is the provider, check the transitions
-+      // to determine whether "transition/complete" was created less than 7 days ago.
-+      return tx.attributes.transitions.some(tr => {
-+          const today = new Date();
-+          const sevenDaysFromCreated = new Date(tr.createdAt);
-+          sevenDaysFromCreated.setDate(sevenDaysFromCreated.getDate() + 7);
-+          return tr.transition == 'transition/complete' && today < sevenDaysFromCreated;
-+      });
-+  })
-+
+   // In flex-default-process, payouts are created on "transition/complete". We want to
+   // determine the transactions where this transition has been created less than 7 days ago.
+   const pendingPayouts = resp.data.data.filter(tx =>{
+       // For the transactions where the user is the provider, check the transitions
+       // to determine whether "transition/complete" was created less than 7 days ago.
+       return tx.attributes.transitions.some(tr => {
+           const today = new Date();
+           const sevenDaysFromCreated = new Date(tr.createdAt);
+           sevenDaysFromCreated.setDate(sevenDaysFromCreated.getDate()   7);
+           return tr.transition == 'transition/complete' && today < sevenDaysFromCreated;
+       });
+   })
 ```
 
 </extrainfo>
@@ -543,14 +583,13 @@ has unfinished transactions, you can check the `status` of
 `deleteAccountError` on DeleteAccountPage.js and only show the fields
 when the user has not already received a 409 Conflict error.
 
-```diff
- // Show form for a valid current user
-- const showDeleteAccountForm = (currentUser && currentUser.id);
-+ const showDeleteAccountForm = (
-+   currentUser
-+   && currentUser.id
-+   && deleteAccountError?.status !== 409
-+ );
+In that case, replace the existing _const showDeleteAccountForm_
+definition with the one below:
+
+```js
+// Show form for a valid current user
+const showDeleteAccountForm =
+  currentUser && currentUser.id && deleteAccountError?.status !== 409;
 ```
 
 ## Test functionality

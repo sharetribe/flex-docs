@@ -5,8 +5,8 @@ updated: 2020-07-06
 category: how-to-payments
 ingress:
   In some cases, you might want to remove Stripe integrations or even
-  all the payments from FTW. This article gives you a starting point for
-  these customizations.
+  all the payments from Sharetribe Web Template. This article gives you
+  a starting point for these customizations.
 published: true
 ---
 
@@ -120,8 +120,8 @@ the component.
 Removing Stripe from `CheckoutPage` is probably the most complicated
 task in this list because the Strong Customer Authentication (SCA) and
 ability to save payment method have added a lot of logic to the current
-page. We can use an edited version of CheckoutPage from an old template
-(FTW 2.17.1) as a simpler starting point:
+page. We can use an edited version of CheckoutPage from a legacy
+template (FTW 2.17.1) as a simpler starting point:
 
 - [SimpleCheckoutPage.js](/tutorial-assets/SimpleCheckoutPage.js)
 
@@ -299,7 +299,7 @@ Stripe related components:
 - StripePaymentForm
 - StripeConnectAccountForm
 
-You can also remove Stripe script form
+// TODO Update repo link You can also remove Stripe script form
 [public/index.html](https://github.com/sharetribe/ftw-daily/blob/master/public/index.html#L169).
 
 ## Removing payments

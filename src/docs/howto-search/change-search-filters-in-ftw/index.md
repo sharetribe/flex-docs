@@ -78,8 +78,8 @@ marketplace.
 First step for adding a new filter is to make sure that the data being
 used for filtering is saved in the listing's `publicData` attribute. On
 how to achieve this, please refer to the
-[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/) how-to
-guide. Another aspect in search filters is that a
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+how-to guide. Another aspect in search filters is that a
 [search schema](/references/extended-data/#search-schema) needs to be
 added to the data in order for API to index it for search. Adding search
 schema can be done by the
@@ -96,18 +96,18 @@ refers to **public data**. Similarly, "meta\_" would refer to
 Further reading on public data can be found in the
 [listing extended data concepts article](/concepts/listing-extended-data/)
 and the
-[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/) how-to
-guide.
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+how-to guide.
 
-<info>
+In Flex, only top-level attributes can be indexed i.e. used for search.
+If you have a public data attribute with nested attributes, it is not
+possible to create a search schema for those. So instead of using a
+nested attribute:
 
-Do note that only top-level attributes can be indexed i.e. used for
-search. If you have a public data attribute with nested attributes, it
-is not possible to create a search schema for those. So instead of
-
-```js
+```jsx
 publicData: {
   instrumentProficiency: {
+    // These attributes cannot be indexed for search in Flex
     violin: 'professional',
     guitar: 'intermediate',
     tuba: 'beginner',
@@ -116,17 +116,16 @@ publicData: {
 ```
 
 you would need to set all attributes you want to query as top-level
-attributes
+attributes:
 
 ```js
 publicData: {
-    violinProficiency: 'professional',
-    guitarProficiency: 'intermediate',
-    tubaProficiency: 'beginner',
+  // These attributes can be indexed for search in Flex
+  violinProficiency: 'professional',
+  guitarProficiency: 'intermediate',
+  tubaProficiency: 'beginner',
 }
 ```
-
-</info>
 
 ### Common changes
 
@@ -179,7 +178,8 @@ There you need to add the _gears_ attribute's configurations to the
 <info>
 
 [Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
-how-to guide.
+how-to guide explains the listing extended data configurations in more
+detail.
 
 </info>
 

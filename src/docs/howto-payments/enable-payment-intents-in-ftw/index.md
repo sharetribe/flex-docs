@@ -4,9 +4,9 @@ slug: enable-payment-intents
 updated: 2020-08-11
 category: how-to-payments
 ingress:
-  Overview of how Stripe PaymentIntents work in FTW, and how you can
-  change older FTW version to support for Strong Customer Authentication
-  (SCA).
+  Overview of how Stripe PaymentIntents work in Sharetribe Web Template,
+  and how you can update legacy templates to support for Strong Customer
+  Authentication (SCA).
 published: true
 ---
 
@@ -29,13 +29,17 @@ with
 and [how PaymentIntent flow works](/concepts/payment-intents/) by
 reading related concepts articles.
 
-> Note: Taking Stripe PaymentIntent flow into use, is a big change for
-> CheckoutPage and includes process change. You should carefully check
-> what kind of changes are made in FTW release:
-> [v3.0.0](https://github.com/sharetribe/flex-template-web/releases/tag/v3.0.0).
-> Taking update from upstream or even cherry-picking commits might make
-> the update easier, but you should first track your custom-code to
-> affected components.
+<info>
+
+Taking Stripe PaymentIntent flow into use is a big change for
+CheckoutPage and includes process change. You should carefully check
+what kind of changes are made in a legacy template release:
+[v3.0.0](https://github.com/sharetribe/flex-template-web/releases/tag/v3.0.0).
+Taking an update from upstream or even cherry-picking commits might make
+the update easier, but you should first track your custom-code to
+affected components.
+
+</info>
 
 ## 1. Process change
 
@@ -180,15 +184,19 @@ Most of the visual changes happen in StripePaymentForm. Billing details
 are added to the form and most of the errors of different thunk calls
 are shown inside it.
 
-The default mode for FTW is to show billing address fields. Even though
-it is recommended by Stripe, you might want to remove those fields due
-to UX reasons. That can be made just by not adding
-`StripePaymentAddress` sub-component.
+The default mode for Sharetribe Web Template is to show billing address
+fields. Even though it is recommended by Stripe, you might want to
+remove those fields due to UX reasons. That can be made just by not
+adding `StripePaymentAddress` sub-component.
 
-> Note: if the page is reloaded after successful call to
-> `stripe.confirmCardPayment` billing details should not be shown to the
-> user since credit card number and other billing details are already
-> sent to Stripe.
+<info>
+
+If the page is reloaded after successful call to
+`stripe.confirmCardPayment` billing details should not be shown to the
+user since credit card number and other billing details are already sent
+to Stripe.
+
+</info>
 
 ## 6. Test with live credit cards
 
@@ -197,10 +205,14 @@ credit card issuers, you should test at least some credit cards how they
 work in a live environment.
 
 This can be done by creating another
-[production environment](/ftw/how-to-deploy-ftw-to-production/) FTW
-instance that uses your production Client Id for Flex with live Stripe
-keys (both publishable and secret). Then create a new Git branch that
-takes PaymentIntents flow into use and adds
+[production environment](/ftw/how-to-deploy-ftw-to-production/) instance
+of Sharetribe Web Template that uses
+
+- yourproduction Client Id for Flex and
+- live Stripe keys (both publishable and secret).
+
+Then create a new Git branch that takes PaymentIntents flow into use and
+adds
 [Basic Authentication configuration](https://github.com/sharetribe/flex-template-web/blob/master/.env-template#L32)
 into environment variables. After that, you could deploy your
 payment-intent branch into your production environment. Then you can

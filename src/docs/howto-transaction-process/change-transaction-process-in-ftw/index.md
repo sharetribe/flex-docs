@@ -32,21 +32,23 @@ to match the process in our backend.
 
 ## 1. Add the new transaction process configuration
 
-The [src/config/configTransaction.js](todo: link) file lists the
-transaction processes actively used by the template, so you need to add
-a configuration for a new transaction process. You can either comment
-out the previous active process definitions (if you only want to use the
-new process) or leave them as they are (if you want to allow using
-multiple processes in the same application).
+The [src/config/configListing.js](todo: link) file lists the listing
+types actively used by the template, as well as the transaction
+processes related to those types. You need to add a configuration for a
+new transaction process. You can either comment out the previous active
+process definitions (if you only want to use the new process) or leave
+them as they are (if you want to allow using multiple processes in the
+same application).
 
 ```js
-{
-  type: 'negotiated-nightly-booking',
-  label: 'Negotiated nightly booking',
-  process: 'negotiated-nightly-booking',
-  alias: 'release-1',
-  unitType: 'night',
-},
+  {
+    type: 'nightly-booking',
+    label: 'Nightly booking',
+    transactionType: {
+      process: 'negotiated-booking',
+      alias: 'release-1',
+      unitType: 'night',
+    },
 ```
 
 The `alias` variable should point to the correct alias. You need to
@@ -88,7 +90,7 @@ Supported transaction processes are also defined in the files found in
 export const PRODUCT_PROCESS_NAME = 'default-buying-products';
 export const BOOKING_PROCESS_NAME = 'default-booking';
 // Add new processes with a descriptive name
-export const NEGOTIATION_PROCESS_NAME = 'negotiation-booking';
+export const NEGOTIATION_PROCESS_NAME = 'negotiated-booking';
 ```
 
 In addition to updating the process name to your **transaction.js**
@@ -96,7 +98,7 @@ file, you will need to make sure the application has an accurate
 representation of the different transitions and states in your new
 transaction process. The transitions and states for the existing
 processes are defined in the **transactionProcessBooking.js** and
-**transactionProcessProduct.js** files in the same **src/transactions**
+**transactionProcessPurchase.js** files in the same **src/transactions**
 folder.
 
 If you are replacing one of the default processes (for instance the
@@ -189,7 +191,7 @@ export const isPrivileged = transition => {
 
 <info>
 
-Only transitions are included to transaction entity, since all the
+Only transitions are included in the transaction entity, since all the
 actions that happen during the process are tied to transitions, not
 states. Read more about the
 [transaction process](/concepts/transaction-process/).
@@ -209,11 +211,11 @@ to review.
           ├── InboxPage
               ├── InboxPage.stateData.js
               ├── InboxPage.stateDataBooking.js
-              └── InboxPage.stateDataProduct.js
+              └── InboxPage.stateDataPurchase.js
           └── TransactionPage
               ├── TransactionPage.stateData.js
               ├── TransactionPage.stateDataBooking.js
-              └── TransactionPage.stateDataProduct.js
+              └── TransactionPage.stateDataPurchase.js
 
 ```
 
@@ -228,14 +230,14 @@ state and the user's role in the transaction, the button may be used to
 accept, mark received, or dispute the transaction.
 
 The **...stateData.js** file in turn imports functions from
-**...stateDataBooking.js** and **...stateDataProduct.js** to retrieve
+**...stateDataBooking.js** and **...stateDataPurchase.js** to retrieve
 the state data corresponding to the correct process.
 
 ```js
 export const getStateData = params => {
   ...
-  if (processName === PRODUCT_PROCESS_NAME) {
-    return getStateDataForProductProcess(params, processInfo());
+  if (processName === PURCHASE_PROCESS_NAME) {
+    return getStateDataForPurchaseProcess(params, processInfo());
   } else if (processName === BOOKING_PROCESS_NAME) {
     return getStateDataForBookingProcess(params, processInfo());
   } else {
@@ -245,7 +247,7 @@ export const getStateData = params => {
 ```
 
 If you have added a new process name constant besides
-_BOOKING_PROCESS_NAME_ and _PRODUCT_PROCESS_NAME_, you will need to
+_BOOKING_PROCESS_NAME_ and _PURCHASE_PROCESS_NAME_, you will need to
 import it in **...stateData.js**, as well as import the function it
 needs to use for retrieving state data, so that your Inbox Page and
 Transaction Page work correctly.
@@ -259,7 +261,7 @@ new states that require specific props to be returned to the page based
 on the state.
 
 If you have created a new **stateData** file (e.g.
-**InboxPage.stateData.negotiation.js**), you will need to export a
+**InboxPage.stateDataNegotiation.js**), you will need to export a
 uniquely named _getStateDataFor..._ function from that file.
 
 ## 4. Add microcopy strings

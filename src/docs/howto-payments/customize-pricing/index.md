@@ -30,9 +30,9 @@ For more information about pricing in Flex, see the
 Pricing can be based on a lot of variables, but one practical way to
 build it is to base it on information stored as extended data in
 listings. See the
-[Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/) how-to
-guide to read how to extend the listing data model with extended data.
-See the aforementioned guide for instructions how to add inputs for new
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+how-to guide to read how to extend the listing data model with extended
+data. See the same guide for instructions how to add inputs for new
 attributes in the listing wizard. Alternatively, in order to try out
 this guide, you can just add a hard-coded insurance fee to the
 `EditListingPricingPanel` component:
@@ -110,8 +110,8 @@ in the `/server/api-util/lineItems.js` file:
         └── lineItems.js
 ```
 
-In the bottom of the file, add a helper function that resolves the
-insurance fee of a listing:
+In the helper function section of the file, add a function that resolves
+the insurance fee of a listing:
 
 ```js
 const resolveInsuranceFeePrice = listing => {
@@ -127,43 +127,39 @@ const resolveInsuranceFeePrice = listing => {
 ```
 
 Now the `transactionLineItems` function can be updated to also provide
-the cleaning fee line item in case the listing has a cleaning fee
+the insurance fee line item in case the listing has an insurance fee
 configured:
 
-```diff
-exports.transactionLineItems = (listing, orderData) => {
-  const publicData = listing.attributes.publicData;
-...
+```js
+const insuranceFeePrice = resolveInsuranceFeePrice(listing);
+const insuranceFeeLineItem = insuranceFeePrice
+  ? [
+      {
+        code: 'line-item/insurance-fee',
+        unitPrice: insuranceFeePrice,
+        quantity: 1,
+        includeFor: ['customer', 'provider'],
+      },
+    ]
+  : [];
 
-+ const insuranceFeePrice = resolveInsuranceFeePrice(listing);
-+ const insuranceFeeLineItem = insuranceFeePrice
-+   ? [
-+       {
-+         code: 'line-item/insurance-fee',
-+         unitPrice: insuranceFeePrice,
-+         quantity: 1,
-+         includeFor: ['customer', 'provider'],
-+       },
-+     ]
-+   : [];
-
-  // Note: extraLineItems for product selling (aka shipping fee)
-  // is not included to commission calculation.
-  const providerCommission = {
-    code: 'line-item/provider-commission',
--   unitPrice: calculateTotalFromLineItems([order]),
-+   unitPrice: calculateTotalFromLineItems([order, ...insuranceFee]),
-    percentage: PROVIDER_COMMISSION_PERCENTAGE,
-    includeFor: ['provider'],
-  };
-
-  // Let's keep the base price (order) as first line item and provider's commission as last one.
-  // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
-- const lineItems = [order, ...extraLineItems, providerCommission];
-+ const lineItems = [order, ...extraLineItems, ...insuranceFee, providerCommission];
-
-  return lineItems;
+// Note: extraLineItems for product selling (aka shipping fee)
+// is not included to commission calculation.
+const providerCommission = {
+  code: 'line-item/provider-commission',
+  unitPrice: calculateTotalFromLineItems([order, ...insuranceFee]),
+  percentage: PROVIDER_COMMISSION_PERCENTAGE,
+  includeFor: ['provider'],
 };
+
+// Let's keep the base price (order) as first line item and provider's commission as last one.
+// Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
+const lineItems = [
+  order,
+  ...extraLineItems,
+  ...insuranceFee,
+  providerCommission,
+];
 ```
 
 <info>
@@ -171,7 +167,7 @@ exports.transactionLineItems = (listing, orderData) => {
 When selecting a code for your custom line-item, remember that Flex
 requires the codes to be prefixed with _line-item/_ and the maximum
 length including the prefix is 64 characters. Other than that there are
-no restrictions but it's suggested that _kebab-case_ is used when the
+no restrictions, but we recommend that _kebab-case_ is used when the
 code consists of multiple words.
 
 </info>
@@ -184,7 +180,7 @@ will see an insurance fee row in the order breakdown:
 
 Note, that the order breakdown automatically renders the insurance fee
 line item by tokenizing the line item code and capitalizing the first
-letter. In case this won't suffice, you can add your own presentational
+letter. In case this is not enough, you can add your own presentational
 line item component to the booking breakdown. This is done by adding the
 line item code (in our case `line-item/insurance-fee`) into the
 `LINE_ITEMS` array in `src/util/types.js` and creating your own
@@ -205,29 +201,24 @@ follows:
 +const PROVIDER_COMMISSION_PERCENTAGE_REDUCED = -7;
 ```
 
-```diff
- exports.transactionLineItems = (listing, bookingData) => {
- ...
+```js
+const commissionPercentage =
+  quantity > 5
+    ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED
+    : PROVIDER_COMMISSION_PERCENTAGE;
+const commissionPercentage =
+  quantity > 5
+    ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED
+    : PROVIDER_COMMISSION_PERCENTAGE;
 
-+  const commissionPercentage = quantity > 5
-+    ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED
-+    : PROVIDER_COMMISSION_PERCENTAGE;
-+  const commissionPercentage = quantity > 5
-+    ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED
-+    : PROVIDER_COMMISSION_PERCENTAGE;
-+
-
-   // Note: extraLineItems for product selling (aka shipping fee)
-   //       is not included to commission calculation.
-   const providerCommission = {
-     code: 'line-item/provider-commission',
-     unitPrice: calculateTotalFromLineItems([order, ...insuranceFee]),
--    percentage: PROVIDER_COMMISSION_PERCENTAGE,
-+    percentage: commissionPercentage,
-     includeFor: ['provider'],
-   };
-...
- };
+// Note: extraLineItems for product selling (aka shipping fee)
+//       is not included to commission calculation.
+const providerCommission = {
+  code: 'line-item/provider-commission',
+  unitPrice: calculateTotalFromLineItems([order, ...insuranceFee]),
+  percentage: commissionPercentage,
+  includeFor: ['provider'],
+};
 ```
 
 Now when the provider takes a look at a pricing breakdown of a booking

@@ -1,6 +1,7 @@
 ---
 title:
-  How to handle provider onboarding and identity verification on FTW
+  How to handle provider onboarding and identity verification in
+  Sharetribe Web Template
 slug: provider-onboarding-and-identity-verification
 updated: 2022-10-25
 category: how-to-payments
@@ -43,12 +44,14 @@ to provide `name`, `color`, and `icon` for your marketplace.
 
 ## Stripe Connect Onboarding for custom implementations
 
-In the template there are new components
-[StripePayoutPage](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/StripePayoutPage),
-[StripeConnectAccountForm](https://github.com/sharetribe/ftw-daily/tree/master/src/forms/StripeConnectAccountForm),
-and a new shared duck file
-[stripeConnectAccount.duck.js](https://github.com/sharetribe/ftw-daily/tree/master/src/ducks/stripeConnectAccount.duck.js)
-where the Connect onboarding is mostly handled. You can also check out
+// TODO UPDATE REPO LINKS In the template, Connect Onboarding is mainly
+handled in the following files:
+
+- [StripePayoutPage](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/StripePayoutPage)
+- [StripeConnectAccountForm](https://github.com/sharetribe/ftw-daily/tree/master/src/forms/StripeConnectAccountForm)
+- [stripeConnectAccount.duck.js](https://github.com/sharetribe/ftw-daily/tree/master/src/ducks/stripeConnectAccount.duck.js)
+
+You can also check out
 [PR #1234](https://github.com/sharetribe/ftw-daily/pull/1234) where you
 can find all the code changes.
 
@@ -73,13 +76,17 @@ the create-stripe-account call:
 
 ![Creating Stripe account](stripePayoutForm.png)
 
-**Note:** In the `EditListingWizard` component, the modal with
+<info>
+
+In the `EditListingWizard` component, the modal with
 `StripeConnectAccountForm` is shown if the user doesn't have a Stripe
 Account yet or if there is some information missing from the account.
 The modal will be shown only if the user is publishing the listing. This
 means that users can update already published listing even if their
 Stripe Account is in the restricted state but they can't publish new
 listings.
+
+</info>
 
 ### 3. Fetching information about a Stripe Account
 
@@ -91,14 +98,16 @@ Stripe Account.
 The account data is returned after each create and update Stripe Account
 API call so there is no need for separate fetch API call in these cases.
 
-In FTW the Stripe Account is fetched in
+// TODO UPDATE REPO LINKS
+
+In Sharetribe Web Template, the Stripe Account is fetched in
 [`loadData`](https://github.com/sharetribe/ftw-daily/blob/a107a7eae19cfc9196de81816af2c5ca5a676770/src/containers/StripePayoutPage/StripePayoutPage.duck.js#L73)
 function on `StripePayoutPage.duck.js`. Quite similar `loadData`
-funciton is also used on `EditListingPage`. More information about data
-loading you can find from the article
-[How routing works in FTW](/ftw/how-routing-works-in-ftw/).
+funciton is also used on `EditListingPage`. You can find more
+information about data loading in
+[our routing article](/ftw/how-routing-works-in-ftw/).
 
-After the Stripe Account has been fetched we need to check
+After the Stripe Account has been fetched, we need to check
 `requirements` of the `stripeAccountData` attribute which contains the
 related
 [Stripe Account Object](https://stripe.com/docs/api/accounts/object). If
@@ -174,15 +183,19 @@ information we need to
 [create a new Account Link](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account-link)
 and redirect user back to Connect onboarding.
 
-Only thing we manage on the FTW side is updating the `bankAccountToken`
-of the Stripe Account. This means that if the provider want's to update
-their bank account number (e.g. IBAN), it's handled by passing a new
-bankAccountToken to
+Only thing we manage on the template side is updating the
+`bankAccountToken` of the Stripe Account. This means that if the
+provider want's to update their bank account number (e.g. IBAN), it's
+handled by passing a new bankAccountToken to
 [update Stripe Account](https://www.sharetribe.com/api-reference/marketplace.html#update-stripe-account)
 API endpoint.
 
-**Note:** Currently, Stripe doesn't support updating the country of the
-account after the account has been created.
+<info>
+
+Currently, Stripe doesn't support updating the country of the account
+after the account has been created.
+
+</info>
 
 ## Using custom flow
 
@@ -192,11 +205,13 @@ the whole onboarding. The downside with this approach is that you are
 responsible for collecting all the required information and keeping the
 UI up-to-date also with the possible future changes.
 
-Before FTW-daily v4.0.0 and FTW-hourly v5.0.0 the Stripe onboarding was
-implemented like this also in FTW. There are some now deprecated
-components you can use as a starting point if you want to implement your
-own flow. You should keep in mind that these components will not be
-updated by our team since FTW will use Connect Onboarding by default.
+In our older
+[legacy templates](/how-to/provider-onboarding-and-identity-verification/#using-deprecated-payoutdetailsform-and-payoutdetailspage-as-a-starting-point),
+Stripe onboarding was implemented like this. There are some now
+deprecated components you can use as a starting point if you want to
+implement your own flow. You should keep in mind that these components
+will not be updated by our team since Sharetribe Web Template uses
+Connect Onboarding by default.
 
 ### Collecting required information
 
@@ -219,12 +234,11 @@ creating or updating the Stripe Account.
 
 ### Updating the Stripe Account
 
-Before FTW-daily v4.0.0 and FTW-hourly v5.0.0 it was not possible to
-update a Stripe Account through user's account settings. However, if you
-decide to use your own custom flow you should concider implementing a
-way to check the status of a Stripe Account and collect more information
-about the user when it's required. Otherwise, the Stripe Account might
-get restricted and payouts to the provider will fail.
+If you decide to use your own custom flow, you should concider
+implementing a way to check the status of a Stripe Account and collect
+more information about the user when it's required. Otherwise, the
+Stripe Account might get restricted and payouts to the provider will
+fail.
 
 ### Using deprecated PayoutDetailsForm and PayoutDetailsPage as a starting point
 

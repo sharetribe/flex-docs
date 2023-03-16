@@ -585,7 +585,7 @@ The transaction process should look something like this:
 
 The steps to implement this stage are:
 
-1. Add ([or modify existing][ftw-daily-initiate-privileged]) server
+1. Add ([or modify existing][template-initiate-privileged]) server
    endpoint for initiating a transaction.
 2. Initiate the transaction.
 3. Make the payment after the transaction is initiated.
@@ -727,5 +727,5 @@ payment gateway to each step.
   https://www.sharetribe.com/api-reference/integration.html#transition-transaction
 [web-template-api-router]:
   https://github.com/sharetribe/ftw-daily/blob/master/server/apiRouter.js
-[ftw-daily-initiate-privileged]:
+[template-initiate-privileged]:
   https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js
