@@ -12,12 +12,16 @@ The knowledge base below lists some of the custom features you can build with co
 
 # Knowledge base
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/shreAe4r7NNicveJ3?backgroundColor=purple&layout=card&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
+<iframe src="https://airtable.com/embed/shreAe4r7NNicveJ3?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
 
 </iframe>
 
+<info>
+
+The knowledge base currently contains only a subset of features commonly built in Flex marketplaces. If you’re looking for a particular feature, but do not see it on this list, it is likely we have not added it yet. Please feel free to reach out to hello@sharetribe.com if you have any questions about possibilities, complexities, and approaches of the features you have in mind for your marketplace.
 
 
+</info>
 
 # How to prepare requirements for successful development 
 
@@ -30,9 +34,4 @@ In describing your requirements using user journeys or another approach, you wil
 Depending on the feature, developers might need additional information to build the feature. **Considerations for development** shares some of the information they will need in order to implement the feature. It also tells you more about the technical considerations that go into building the feature to give you more context about the preparation and work required. 
 
 
-<info>
 
-The knowledge base currently contains only a subset of features commonly built in Flex marketplaces. If you’re looking for a particular feature, but do not see it on this list, it is likely we have not added it yet. Please feel free to reach out to hello@sharetribe.com if you have any questions about possibilities, complexities, and approaches of the features you have in mind for your marketplace.
-
-
-</info>
