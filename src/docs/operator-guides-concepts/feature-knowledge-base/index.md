@@ -8,7 +8,7 @@ ingress:
 published: true
 ---
 
-The knowledge base below lists some of the custom features you can build with code in your Flex marketplace. If you’re not a developer, you’ll need to hire a developer to help build your marketplace. You can use the information below to help you when preparing feature requirements for your developer.
+The knowledge base below lists some of the most common custom features that have been built in Flex marketplaces with custom coding. If you’re not a developer yourself, you’ll need to hire one to help build your marketplace. You can use the information below to help you when preparing feature requirements for your developer.
 
 # Knowledge base
 
@@ -18,8 +18,7 @@ The knowledge base below lists some of the custom features you can build with co
 
 <info>
 
-The knowledge base currently contains only a subset of features commonly built in Flex marketplaces. If you’re looking for a particular feature, but do not see it on this list, it is likely we have not added it yet. Please feel free to reach out to hello@sharetribe.com if you have any questions about possibilities, complexities, and approaches of the features you have in mind for your marketplace.
-
+The knowledge base currently contains only a subset of features commonly built in Flex marketplaces. If you’re looking for a particular feature, but do not see it on this list, it is likely we have not added it to the knowledge base yet, but most likely it is still fully doable. Please feel free to reach out to hello@sharetribe.com if you have any questions about possibilities, complexities, and approaches of the features you have in mind for your marketplace.
 
 </info>
 
