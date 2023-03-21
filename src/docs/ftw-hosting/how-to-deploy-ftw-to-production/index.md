@@ -50,8 +50,8 @@ cheapest option. Scalability, tools, service-level agreements and
 available computing resources are examples of factors that should weigh
 in when choosing a hosting provider. It is also possible that hosting
 providers' prices and services may change over time, e.g.
-[Heroku is discontinuing](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/)
-its popular free tier on October 26th, 2022.
+[Heroku discontinued](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/)
+its popular free tier in October 2022.
 
 As of the time of writing, [Render](https://www.render.com) and
 [Fly.io](https://fly.io) continue to provide a free tier, which you can
@@ -63,14 +63,18 @@ look into include [AWS](https://aws.amazon.com/),
 [Digital Ocean](https://www.digitalocean.com/) and
 [Microsoft Azure](https://azure.microsoft.com/). If your deployment
 solution requires using containers, you can refer to our guide on
-[running FTW in a Docker container](/ftw/run-ftw-with-docker/).
+[running the template in a Docker container](/ftw/run-ftw-with-docker/).
 
 ## Deploying to production
 
-> If you are looking to deploy your marketplace on either Heroku or
-> Render, please read our detailed deployment guides for both
-> [Heroku](/ftw/how-to-deploy-ftw-to-heroku/) and
-> [Render](/tutorial/deploy-to-render/#deploy-to-render).
+<info>
+
+If you are looking to deploy your marketplace on either Heroku or
+Render, please read our detailed deployment guides for both
+[Heroku](/ftw/how-to-deploy-ftw-to-heroku/) and
+[Render](/tutorial/deploy-to-render/#deploy-to-render).
+
+</info>
 
 Deploying your marketplace to production is a three-step process:
 
@@ -120,11 +124,11 @@ on `Create access token`. See the
 [How to set up Mapbox for Sharetribe Web Template](/ftw/how-to-set-up-mapbox-for-ftw/)
 guide for more information.
 
-- **`REACT_APP_CANONICAL_ROOT_URL`**
+- **`REACT_APP_MARKETPLACE_ROOT_URL`**
 
-This is the canonical root URL of the marketplace. For example:
-`https://the-name-of-your-app.herokuapp.com`. The template uses the
-canonical root URL for social media sharing and SEO optimization.
+This is the root URL of the marketplace. For example:
+`https://the-name-of-your-app.herokuapp.com`. The template uses the root
+URL for social media sharing and SEO optimization.
 
 ### Building the app
 

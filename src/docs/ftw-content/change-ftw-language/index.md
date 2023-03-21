@@ -22,9 +22,13 @@ the steps required to to that.
 2. Change the messages in the new microcopy file to the desired
    language.
 
-> Note: we already have a few other language files available in
-> [src/translations/](https://github.com/sharetribe/ftw-x/tree/master/src/translations)
-> directory for you to start customizing microcopy.
+<info>
+
+We already have a few other language files available in
+[src/translations/](https://github.com/sharetribe/ftw-x/tree/master/src/translations)
+directory for you to start customizing microcopy.
+
+</info>
 
 Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to manage
 your marketplace texts, it is still important to have a built-in
@@ -85,8 +89,8 @@ import messages from '../translations/it.json';
 ## Developing the Sharetribe Web Template into a multilanguage marketplace
 
 If you intend to modify the template to handle multiple languages, it is
-good to note that the template are by default configured to run in
-single language mode, so a multilanguage marketplace requires custom
+good to note that the template is by default configured to run in single
+language mode, so a multilanguage marketplace requires custom
 development. For multiple languages, you basically have two approaches
 for that custom development.
 

@@ -4,7 +4,7 @@ slug: how-routing-works-in-ftw
 updated: 2023-01-01
 category: ftw-routing
 ingress:
-  This article explains how routing works in the Sharetribe web Template
+  This article explains how routing works in the Sharetribe Web Template
 published: true
 ---
 
@@ -82,10 +82,14 @@ In the code above, path `/login` renders the _AuthenticationPage_
 component with prop **tab** set to 'login'. In addition, this route
 configuration has the name: 'LoginPage'.
 
-> Routes use exact path matches in the template. We felt that this makes
-> it easier to understand the connection between a path and its routed
-> view aka related page component.
-> [Read more.](https://reactrouter.com/web/api/Route/exact-bool)
+<info>
+
+Routes use exact path matches in the template. We felt that this makes
+it easier to understand the connection between a path and its routed
+view aka related page component.
+**[Read more](https://reactrouter.com/web/api/Route/exact-bool)**
+
+</info>
 
 There are a couple of extra configurations you can set. For example
 `/listings` path leads to a page that lists all the listings provided by
@@ -185,8 +189,7 @@ _RouteComponentRenderer_, which has four important jobs:
 - Dispatch location changed actions to Redux store. This makes it
   possible for analytics Redux middleware to listen to location changes.
   For more information, see the
-  [How to set up Analytics for FTW](/ftw/how-to-set-up-analytics-for-ftw/)
-  guide.
+  [Enable analytics](/ftw/how-to-set-up-analytics-for-ftw/) guide.
 - Rendering of the page-level component that the Route is connected
   through the configuration. Those page-level components are Loadable
   Components. When a page is rendered for the first time, the code-chunk
@@ -281,8 +284,8 @@ export const loadData = (params, search) => dispatch => {
 };
 ```
 
-Note: **loadData** function needs to be separately mapped in
-routeConfiguration.js and to do that those data loading functions are
+The **loadData** function needs to be separately mapped in
+routeConfiguration.js. To do that, the data loading functions are
 collected into pageDataLoadingAPI.js file.
 
 ```shell
@@ -330,8 +333,7 @@ changes and sends tracking events to configured services.
 ```
 
 For more information, see the
-[How to set up Analytics for FTW](/ftw/how-to-set-up-analytics-for-ftw/)
-guide.
+[Enable analytics](/ftw/how-to-set-up-analytics-for-ftw/) guide.
 
 ## A brief introduction to SSR
 

@@ -4,21 +4,27 @@ slug: page-builder
 updated: 2023-14-02
 category: ftw-content
 ingress:
-  This article introduces how Flex Templates for Web use the Pages
+  This article introduces how the Sharetribe Web Template uses the Pages
   feature to generate content pages.
 published: true
 ---
 
+// TODO Update repo links
+
 The Pages feature allows you to add, edit and manage content in Flex
 Console. Once you have created content in Console, you can query it
 through the Asset Delivery API, which returns the data structured as
-JSON.
-[Version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0)
-of FTW introduces features that automatically render content pages from
-Page Asset Data. This article will walk you through the logic used to
-render these pages in FTW. Read more about the code-level changes
-introduced to FTW from the release notes of
+JSON. The Sharetribe Web Template contains features that automatically
+render content pages from Page Asset Data. This article will walk you
+through the logic used to render these pages in the template.
+
+<extrainfo title="I am using a legacy template without Pages support">
+
+Read more about the code-level changes introduced to the legacy FTW
+templates in the release notes of
 [version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0).
+
+</extrainfo>
 
 ## What are content pages
 
@@ -28,33 +34,31 @@ have on your website would be an “About us” page, a “Frequently asked
 questions” page or a “Terms of Service” page. These pages have long
 sections of written text that might include images, links and videos.
 
-In older versions of FTW, the data on these content pages was hard-coded
-into the corresponding page file. For instance, the content of the About
-Page was
+In older versions of our legacy templates, the data on these content
+pages was hard-coded into the corresponding page file. For instance, the
+content of the About Page was
 [written directly into the code](https://github.com/sharetribe/ftw-daily/blob/7a2f9b0557607533097761c063f7f98d7c8bfc1a/src/containers/AboutPage/AboutPage.js)
 on the AboutPage.js file. Changes to the content required editing the
 code and redeploying the client application. This required content
 editors to work with developers to make simple changes to the copy text
 of content pages.
 
-With the introduction of Pages,
-[versions 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0)
-and onwards of FTW now render content pages dynamically. Content can be
-managed through the Pages feature, which provides the editor with a
-graphical interface to input text, videos, links and images. FTW queries
-the
+Sharetribe Web Template renders content pages dynamically. Content can
+be managed through the Pages feature, which provides the editor with a
+graphical interface to input text, videos, links and images. The
+template queries the
 [Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 to retrieve the most recent version of the content and uses it to render
 the content page. We refer to this data as
 [Page Asset Data](#page-asset-data). It reflects the content’s structure
 and is delivered in JSON.
 
-On page load, FTW queries the Asset Delivery API to fetch the Page Asset
-Data needed to render the requested page. The data is subsequently
-stored in Redux state, which triggers a component called the PageBuilder
-to render the Sections, Blocks and Fields defined in the data. The
-[rendering pages section](#rendering-pages) explains how this happens in
-further detail.
+On page load, the template queries the Asset Delivery API to fetch the
+Page Asset Data needed to render the requested page. The data is
+subsequently stored in Redux state, which triggers a component called
+the PageBuilder to render the Sections, Blocks and Fields defined in the
+data. The [rendering pages section](#rendering-pages) explains how this
+happens in further detail.
 
 ## Page Asset Data
 
@@ -63,10 +67,10 @@ through Pages in Console. It represents the content and structure of the
 content page and is divided into Sections, Blocks and Fields.
 
 A single query to the Asset Delivery API will provide you with the Page
-Asset Data of a single content page, i.e. to render your landing page
-and your FAQ page, the client will need to make two calls to the Asset
-Delivery API and receive two separate JSON files. Page Asset Data is
-always formatted in JSON.
+Asset Data of a single content page. In other words, to render both your
+landing page and your FAQ page, the client will need to make two calls
+to the Asset Delivery API and receive two separate JSON files. Page
+Asset Data is always formatted in JSON.
 
 Page Asset Data nests 3 levels of information:
 
@@ -93,10 +97,10 @@ different client applications.
 
 ### Routing and loadData calls
 
-FTW uses React Router to [create routes](/ftw/how-routing-works-in-ftw/)
-to different pages. This is best demonstrated through an example. When a
-user navigates to the about page, it triggers the loadData function
-specified in
+Sharetribe Web Template uses React Router to
+[create routes](/ftw/how-routing-works-in-ftw/) to different pages. This
+is best demonstrated through an example. When a user navigates to the
+about page, it triggers the loadData function specified in
 [routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L66):
 
 ```js
@@ -108,9 +112,9 @@ specified in
    },
 ```
 
-In older versions of FTW, no loadData function was defined for the
-privacy policy path, as the page's content was hard coded. Now, as the
-content of the page is fetched using an API call, a loadData function is
+In legacy templates, no loadData function was defined for the privacy
+policy path, as the page's content was hard coded. Now, as the content
+of the page is fetched using an API call, a loadData function is
 specified in
 [PrivacyPolicyPage.duck.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.js):
 
@@ -130,7 +134,8 @@ Assets.
 
 ### Predefined routes
 
-FTW has four predefined routes used to generate content pages:
+Sharetribe Web Template has four predefined routes used to generate
+content pages:
 
 - [PrivacyPolicy](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.js)
 - [TermsOfService](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TermsOfServicePage/TermsOfServicePage.js)
@@ -138,9 +143,9 @@ FTW has four predefined routes used to generate content pages:
 - [CMSPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CMSPage/CMSPage.js)
 
 The first three are defined by default in Console and can not be
-removed. Therefore, there is a dedicated component in FTW for each. For
-any new page created through Console, a generic component called CMSPage
-is used.
+removed. Therefore, there is a dedicated component in the template for
+each. For any new page created through Console, a generic component
+called CMSPage is used.
 
 If we compare the loadData calls in the privacy policy page and CMSPage,
 we can see that they differ slightly. The PrivacyPolicyPage.duck.js file
@@ -172,8 +177,8 @@ export const loadData = (params, search) => dispatch => {
 };
 ```
 
-FTW can use hardcoded asset names for Pages included by default in
-Console, as the paths are static and not subject to change. The Pages
+The template can use hardcoded asset names for Pages included by default
+in Console, as the paths are static and not subject to change. The Pages
 included by default are the Landing Page, Terms of Service page and
 Privacy Policy page.
 
@@ -182,9 +187,9 @@ Pages created by the user, which are assigned an ID on creation.
 
 ### PageBuilder
 
-FTW uses a React component called the PageBuilder to dynamically render
-content pages using Page Asset Data. You can find the PageBuilder in the
-containers directory:
+Sharetribe Web Template uses a React component called the PageBuilder to
+dynamically render content pages using Page Asset Data. You can find the
+PageBuilder in the containers directory:
 
 ```shell
 └── src
@@ -219,20 +224,20 @@ const sectionsData = data?.sections || [];
 Subsequently, the SectionBuilder will pass data on to the BlockBuilder
 if an array of Blocks is present.
 
-To render e.g. headers, links and images, FTW defines a Field component
-that is used in both the BlockBuilder and SectionBuilder. Fields are the
-most granular form of data in Page Asset Data. The Field component
-validates and sanitises any data before it is rendered.
+To render e.g. headers, links and images, the template defines a Field
+component that is used in both the BlockBuilder and SectionBuilder.
+Fields are the most granular form of data in Page Asset Data. The Field
+component validates and sanitises any data before it is rendered.
 
 ## Section and Block types
 
-Using the Pages feature in Console, you can define a section type. FTW
-recognises all Section types and renders each using a different
+Using the Pages feature in Console, you can define a section type. The
+template recognises all Section types and renders each using a different
 presentational component.
 
 There are four Section types:
 
-- Articles, meant for copy text and uses a narrow one column layout
+- Articles, meant for copy text and using a narrow one column layout
   optimized for reading
 - Carousel, an image carousel consisting from images uploaded through
   Console
@@ -264,7 +269,7 @@ to apply styling that should be present in each component.
 Default components can be overridden or edited. Remember that the
 changes will be global and reflected on each content page. If you want
 to change a Section component on a specific page, you can use the
-options prop to override a page-level component [link to how-to].
+[options prop to override a page-level component](/how-to/options-prop/).
 
 Blocks also have a type property. Currently, Page Asset Data only
 supports a single Block type.
@@ -298,6 +303,9 @@ containers/PrivacyPolicyPage/FallbackPage.js:
 ```
 
 ## How to take Pages into use if you are using an older version of FTW
+
+// TODO is legacy docs link enough or do we want to have the full guide
+here?
 
 You can either follow these instructions, or
 [pull the latest upstream changes](/ftw/how-to-customize-ftw/#pull-in-the-latest-upstream-changes).

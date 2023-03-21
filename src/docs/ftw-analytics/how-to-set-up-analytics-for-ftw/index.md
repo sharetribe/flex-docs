@@ -20,9 +20,13 @@ The template has built-in support for Google Analytics. All you need to
 do is assign your Google Analytics Tracking ID to the environment
 variable `REACT_APP_GOOGLE_ANALYTICS_ID`.
 
-> Google Analytics doesn't work in a hot-loading environment! The
-> analytics script is added server-side. You can test it in your local
-> environment by using the command `yarn run dev-server`.
+<info>
+
+Google Analytics doesn't work in a hot-loading environment! The
+analytics script is added server-side. You can test it in your local
+environment by using the command `yarn run dev-server`.
+
+</info>
 
 ### Google Analytics 4
 
@@ -35,8 +39,12 @@ If you prefer to use Universal Analytics, you should look into how
 Analytics was implemented in
 [this pull request](https://github.com/sharetribe/ftw-daily/pull/1508).
 
-> The template will require a Tracking ID compatible with Google
-> Analytics 4. The ID needs to begin with the "G-" prefix.
+<info>
+
+The template will require a Tracking ID compatible with Google
+Analytics 4. The ID needs to begin with the "G-" prefix.
+
+</info>
 
 #### Enhanced measurements
 
@@ -114,11 +122,15 @@ form of the URL.
 `l/{listing-slug}/{listing-id}`. The canonical form of that URL would
 be: `l/{listing-id}`.
 
-> A "_slug_" is a web development term for a short, user-friendly
-> string. In the example above, the template generates the slug from the
-> listing's title, which is prone to frequent changes. Therefore, a
-> canonical form of that URL is needed to maintain a stable link which
-> doesn't change every time the name of the listing changes.
+<info>
+
+A "_slug_" is a web development term for a short, user-friendly string.
+In the example above, the template generates the slug from the listing's
+title, which is prone to frequent changes. Therefore, a canonical form
+of that URL is needed to maintain a stable link which doesn't change
+every time the name of the listing changes.
+
+</info>
 
 This approach allows unified analytics and correct tracking of pages
 that can be accessed from multiple URLs.

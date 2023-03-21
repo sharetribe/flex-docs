@@ -66,7 +66,7 @@ Then add the following environment variables as Config Vars:
 
   If you are using Mapbox instead of Google Maps
 
-- `REACT_APP_CANONICAL_ROOT_URL`
+- `REACT_APP_MARKETPLACE_ROOT_URL`
 
   Canonical root URL of the marketplace. Remove trailing slash from the
   domain.<br />E.g. _`https://<the-name-of-your-app>.herokuapp.com`_

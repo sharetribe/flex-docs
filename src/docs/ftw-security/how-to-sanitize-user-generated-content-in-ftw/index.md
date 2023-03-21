@@ -73,8 +73,9 @@ external links (since `target="_blank"` attribute is
 [vulnerable for XSS](https://mathiasbynens.github.io/rel-noopener/)).
 
 There is also Field\* components around `<input>` elements (e.g.
-FieldTextInput) since FTW uses Final Form. Those could be used in a
-similar fashion to validate content or just format it before saving.
+FieldTextInput) since the Sharetribe Web Template uses Final Form. Those
+could be used in a similar fashion to validate content or just format it
+before saving.
 
 ## Further reading
 

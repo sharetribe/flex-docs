@@ -146,5 +146,9 @@ export const fetchReviews = listingId => (dispatch, getState, sdk) => {
 };
 ```
 
-> Note: `sdk` parameter is also provided by Redux Thunk. We pass it to
-> middleware in store.js: `thunk.withExtraArgument(sdk)`
+<info>
+
+The `sdk` parameter is also provided by Redux Thunk. We pass it to
+middleware in store.js: `thunk.withExtraArgument(sdk)`
+
+</info>

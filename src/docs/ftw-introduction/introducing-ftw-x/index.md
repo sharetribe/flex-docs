@@ -44,7 +44,7 @@ rendering. You should consider this requirement when choosing a hosting
 provider for your marketplace project. Serverless hosting platforms are
 not compatible with the template, as they are not equipped to run a
 server. You need to use a hosting provider that supports running a
-Node.js/express server to run the Sharetribe Web Template without any
+Node.js/Express.js server to run the Sharetribe Web Template without any
 issues.
 
 For a complete overview of the technologies used in the template, read
@@ -78,12 +78,12 @@ more in the
 ## Key differences from legacy templates
 
 Before the release of the Sharetribe Web Template, Sharetribe provided
-and maintained three different templates: ftw-daily, ftw-hourly and
-ftw-product. The Sharetribe Web Template combines the features of the
-previous templates into one template and allows developers to enable
-features from each using configuration variables. If you are looking for
-documentation or information regarding the legacy templates, see the
-[legacy templates article](/ftw/legacy-templates/).
+and maintained three different templates: **ftw-daily**, **ftw-hourly**
+and **ftw-product**. The Sharetribe Web Template combines the features
+of the previous templates into one template and allows developers to
+enable features from each using configuration variables. If you are
+looking for documentation or information regarding the legacy templates,
+see the [legacy templates article](/ftw/legacy-templates/).
 
 The new template introduces many changes. Here is a list that details
 the most important of them:

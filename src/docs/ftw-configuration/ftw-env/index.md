@@ -47,7 +47,7 @@ of environment variables.
 - **`REACT_APP_MARKETPLACE_ROOT_URL`**
 
   The root url of the marketplace. Needed for social media sharing, SEO
-  optimization, and social logins. Note, that the value should not
+  optimization, and social logins. Note that the value should not
   include a trailing slash.
 
 - **`NODE_ENV`**
@@ -139,9 +139,12 @@ way server secrets don't end up in client bundles.
 
 <warning>
 
-Do not set environment variables with the REACT_APP prefix that you do
-not want to reveal to the client. It is important to **never** publicly
-reveal the client secret of the Marketplace or Integration API.
+Only use the REACT_APP prefix with environment variables that you want
+to reveal to the public internet.
+
+It is important to **never** publicly reveal the client secret of the
+Marketplace or Integration API – in other words, DO NOT prefix those
+variables with REACT_APP!
 
 </warning>
 

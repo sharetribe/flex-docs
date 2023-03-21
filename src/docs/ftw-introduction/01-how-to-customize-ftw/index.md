@@ -196,5 +196,5 @@ There are many things that you should change in the default template and
 many more that you can change. For more information, check the
 [template customization checklist](/ftw/customization-checklist/)
 documentation before publishing your site. Also see the
-[tutorial](/tutorial/introduction/) and other articles in the _Flex
-Templates for Web_ and _How-to_ categories.
+[tutorial](/tutorial/introduction/) and other articles in the
+[Sharetribe Web Template](/ftw/) and [How-to](/how-to/) categories.

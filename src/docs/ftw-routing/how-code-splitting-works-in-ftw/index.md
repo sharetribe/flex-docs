@@ -44,10 +44,14 @@ different listings makes more sense with code-splitting. Without code
 splitting, new pages, features, and libraries would impact the app's
 initial page load, and therefore SEO performance would drop too.
 
-> Remember to keep non-reusable code in page-specific directories rather
-> than in the src/components/ directory. This improves performance, as
-> all the code in the shared directory is loaded in the main chunk file
-> that is downloaded on each page.
+<info>
+
+Remember to keep non-reusable code in page-specific directories rather
+than in the src/components/ directory. This improves performance, as all
+the code in the shared directory is loaded in the main chunk file that
+is downloaded on each page.
+
+</info>
 
 ## How code splitting works in practice
 
@@ -183,8 +187,8 @@ be used in production mode.
   those different code chunks (JS & CSS files) that the current
   page-load is going to need.
 
-  > In practice, the **renderApp** function wraps the app with
-  > _webExtractor.collectChunks_. With that the webExtractor can figure
-  > out all the relevant loadable calls that the server uses for the
-  > current page and therefore the web-versions of those chunks can be
-  > included to rendered pages through `<script>` tags.
+In practice, the **renderApp** function wraps the app with
+_webExtractor.collectChunks_. With that, the webExtractor can figure out
+all the relevant loadable calls that the server uses for the current
+page and therefore the web-versions of those chunks can be included to
+rendered pages through `<script>` tags.

@@ -40,7 +40,7 @@ const appCdnAssets = {
 };
 ```
 
-In addition, the template has a new global Redux file
+In addition, the template has a global Redux file
 (_src/ducks/hostedAssets.duck.js_), which exports a Redux Thunk function
 called **fetchAppAssets**. This is the function that actually makes the
 calls to the Asset Delivery API.

@@ -50,6 +50,10 @@ in the country you are operating. **If the listing price is lower than
 Stripe's minimum charge amount, Stripe will not process the payment and
 the transaction will fail.**
 
+If you want to allow listings with no price, you will need to
+[add a new transaction process](/how-to/change-transaction-process-in-ftw/)
+where you have removed pricing and payment related actions.
+
 ## Currency subunits
 
 The

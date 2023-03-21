@@ -118,8 +118,9 @@ would set the `firstDayOfWeek` property to `0`.
 ### Structured data
 
 The `siteFacebookPage`, `siteInstagramPage`, and `siteTwitterHandle`
-settings in the code specify the schema.org organization metadata and
-are used in the meta tags for social media sharing.
+settings in the code specify the [Schema.org](https://schema.org/)
+organization metadata and are used in the meta tags for social media
+sharing.
 
 The `siteFacebookPage`, `siteInstagramPage` and `siteTwitterHandle`
 settings specify the social media pages associated with your marketplace
@@ -223,7 +224,9 @@ Which would look like this on the search page:
 
 ![Image of aspect ratio](./aspect-ratio.png)
 
-## Extended data configuration
+## Listing configuration
+
+### Extended data configuration
 
 The `listingExtendedData` is an array of configuration options for
 extended data fields.
@@ -294,6 +297,24 @@ a extended data attribute in the
 
 </info>
 
+### Listing type configurations
+
+// TODO Check repo links
+
+The [configListing.js]() file also contains an array of listing type and
+their associated transaction process configurations. Listing types can
+also be used to define whether listings of the type should show
+available stock.
+
+You can use this configuration to enable different listing types, either
+using the same transaction processes or different ones. Each listing
+type can have only one transaction process. However, since you can have
+multiple listing types per marketplace, you can also have multiple
+transaction processes in use at one time.
+
+- Read more:
+  [Change transaction process in Sharetribe Web Template](/how-to/change-transaction-process-in-ftw/).
+
 ## Search configuration
 
 The
@@ -309,19 +330,27 @@ between 'keywords' and 'location'.
 
 This file allows you to configure or remove the dates and price filter.
 To remove the filters, comment them out of the `defaultFilters` array.
+
 You can adjust two variables within the date filter:
-`entireDateRangeAvailable` and `mode`. The latter can be assigned to
-either `day` or `night`. Using the value `day` will allow your users to
-select a single day through the datepicker element. TODO what does
-entiredaterangeavaialble do
+`entireRangeAvailable` and `mode`.
+
+The `entireRangeAvailable` config is _true_ by default. When it is true,
+filtering with a time range (e.g. May 1st-May 7th) only returns listings
+with availability for the entire duration. If `entireRangeAvailable` is
+_false_, filtering with the same dates returns listings with at least
+some availability between the start and end dates.
+
+The `mode` config can be assigned to either `day` or `night`. Using the
+value `day` will allow your users to select a single day through the
+datepicker element.
 
 ### Sorting
 
 You can adjust sorting options through the `sortConfig` option. Here you
 can disable the sorting element altogether. You can add or remove
-existing sorting options by editing the options array. Even extended
-data can also be used to sort listings. See all the available sorting
-options in the
+existing sorting options by editing the options array. Extended data can
+also be used to sort listings. See all the available sorting options in
+the
 [API reference](https://www.sharetribe.com/api-reference/marketplace.html#sorting).
 
 ## Map configurations
@@ -344,12 +373,3 @@ The
 file includes all countries supported by the Flex Stripe integration.
 The list of countries is used during the Stripe onboarding process. In
 most cases, no changes are required to this file.
-
-### Transaction configurations
-
-The
-[configTransaction.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configTransaction.js)
-file is an array of transaction processes. By default, only one of the
-configurations is active, and the rest of them are commented out. You
-can use this configuration to enable different, or multiple, transaction
-processes.

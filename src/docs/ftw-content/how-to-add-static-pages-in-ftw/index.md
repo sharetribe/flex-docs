@@ -27,7 +27,7 @@ If you do not have a specific reason to create a static page directly
 into the codebase, we recommend that you create your content pages using
 [Pages](/concepts/content-management/). With Pages, you can create
 multiple content pages in Flex Console and render them all using
-[the same components in FTW](/ftw/page-builder/).
+[the same components in Sharetribe Web Template](/ftw/page-builder/).
 
 </info>
 
@@ -291,7 +291,7 @@ const SocialMediaPage = loadable(() =>
 ```
 
 and after that add the route configuration to your newly created page:
-(In this example we created social media page so '/socialmedia' would
+(In this example we created a social media page so '/socialmedia' would
 work well as a path.)
 
 ```javascript
