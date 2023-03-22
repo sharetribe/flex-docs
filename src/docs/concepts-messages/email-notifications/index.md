@@ -24,7 +24,7 @@ request.
 ## Enable email notifications
 
 Email notifications are automatically enabled in your test marketplace.
-However, in your production marketplace, you must
+However, in your live marketplace, you must
 [configure outgoing email settings](/how-to/set-up-outgoing-email-settings/)
 for email notifications to work.
 

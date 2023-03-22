@@ -40,8 +40,8 @@ it possible to keep the polling interval short enough to react to events
 shortly after they occur.
 
 Flex does not retain event data forever. Flex maintains a history of all
-marketplace events for 90 days in production marketplaces and for 7 days
-in test and demo marketplaces.
+marketplace events for 90 days in live marketplaces and for 7 days in
+dev and test marketplaces.
 
 ## Event data
 

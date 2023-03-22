@@ -39,7 +39,7 @@ and edit any number of custom content pages.
 ## How Pages works
 
 You can use Pages from Console's Build section. You can try it
-immediately with the marketplace in the Flex demo environment, or use it
+immediately with the marketplace in the Flex test environment, or use it
 to create your content after setting up your own marketplace app. Start
 editing the default content pages, or build your own! Read more about
 [enabling Pages in your marketplace](https://www.sharetribe.com/docs/operator-guides/how-to-enable-pages/).
@@ -57,15 +57,14 @@ developer can make the necessary modifications. A future release will
 also allow developers to add more types of sections and blocks, which
 will make it possible to create a wider variety of content pages.
 
-Pages works in both your development and production environments. While
-you build your custom marketplace, you use the development environment
-to create and modify your content pages. You can preview these changes
+Pages works in both your development and live environments. While you
+build your custom marketplace, you use the development environment to
+create and modify your content pages. You can preview these changes
 immediately in your marketplace. When your marketplace is live and you
-have a production environment, you use the test environment to make
-changes to your published marketplace content and preview how they look
-in your development site. When ready, you copy finished changes from
-your test environment to your production environment and live
-marketplace application.
+have a live environment, you use the test environment to make changes to
+your published marketplace content and preview how they look in your
+development site. When ready, you copy finished changes from your test
+environment to your live environment and live marketplace application.
 
 ![carousel-example](./carousel-example.png)
 
@@ -112,14 +111,14 @@ If you want to create a new page,
 offers step-by-step instructions to get start
 
 Not sure you’re ready to start developing yet? Then try Pages out
-without any code setup using the demo marketplace Saunatime! After
+without any code setup using the test marketplace Saunatime! After
 creating a Flex account, log into
 [Console](https://flex-console.sharetribe.com/) and follow the same
 steps to navigate to Pages (Build->Content), but make sure you are in
 your
-[Demo environment](https://www.sharetribe.com/docs/operator-guides/concepts/#environments_.)
+[Test environment](https://www.sharetribe.com/docs/operator-guides/concepts/#environments_.)
 Marketplaces created before February, 15th, 2023 will need to “Import
-default pages” to their demo environment to start making changes.
+default pages” to their test environment to start making changes.
 
 Marketplaces built or being built on Flex before February, 15th, 2023
 need to modify their frontend marketplace code to take Pages into use.

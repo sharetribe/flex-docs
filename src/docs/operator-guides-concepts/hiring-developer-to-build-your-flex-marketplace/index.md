@@ -38,12 +38,12 @@ focus on your unique requirements, and save a lot of time and money.
 Basing your customizations on the Flex Template requires understanding
 what it offers. There are a few ways to gain this understanding:
 
-1. Access the Saunatime demo via your
+1. Access the Saunatime test environment via your
    [Flex Console](https://flex-console.sharetribe.com/). Saunatime is
-   one of the Flex Templates. The demo allows you to try out all the
-   features of the Flex Template: searching, signing up as a new user,
-   adding listings, making bookings and payments, sending messages,
-   leaving reviews, and so on.
+   one of the Flex Templates. The test environment allows you to try out
+   all the features of the Flex Template: searching, signing up as a new
+   user, adding listings, making bookings and payments, sending
+   messages, leaving reviews, and so on.
 2. Study
    [how listing search, listing creation, and transactions work](/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates)
    specifically.

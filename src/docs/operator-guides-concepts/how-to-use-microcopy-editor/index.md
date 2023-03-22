@@ -58,10 +58,10 @@ All these decisions affect the choices you make in your microcopy.
 
 ## How to test the Microcopy editor?
 
-You can test the Microcopy editor in your Flex demo marketplace. After
-creating a Flex account, log into
+You can try out the Microcopy editor in your Flex test marketplace.
+After creating a Flex account, log into
 [Console](https://flex-console.sharetribe.com/). Ensure you are in the
-[Demo environment](/concepts/flex-environments/#demo-environment).
+[Test environment](/concepts/flex-environments/#test-environment).
 
 Navigate to the Build section from your top bar, then the Content
 section. The Microcopy editor is here.
@@ -84,7 +84,7 @@ Saunatime code repository. Click “src” folder→ click “translations”
 folder→ open “en.json” file→ copy content.
 [Here is a direct link](https://github.com/sharetribe/ftw-daily/blob/master/src/translations/en.json)
 to the file you need.Then paste the data into the Console Microcopy
-editor. You can make changes to the Saunatime demo microcopy using the
+editor. You can make changes to the Saunatime test microcopy using the
 same workflow described below.
 
 ## How to modify microcopy when building your marketplace with a developer?

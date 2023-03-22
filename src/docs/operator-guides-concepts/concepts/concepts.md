@@ -128,28 +128,28 @@ sneakers and sellers.
 ### Environments
 
 Environments describe different instances of a Flex backend. There are
-three environment types: a Demo environment, a Development environment,
-and a Production environment. Demo and Development environments are
-included with every Flex account.
+three environment types: a Test environment, a Development environment,
+and a Live environment. Test and Development environments are included
+with every Flex account.
 
-Demo environments are to demo how the Saunatime Flex Template and Flex
-Console work.
+Test environments act as a live preview on how the Saunatime Flex
+Template and Flex Console work.
 
 The Development environment is used to build and extend your custom
 marketplace. You may add your own test Stripe account to the development
 environment and configure changes you will later deploy to your live
 site. One example of how to use the development environment would be to
 create your content. You may modifying microcopy or create a new content
-page, for instance, which you can deploy to your Production environment
-and live site when ready.
+page, for instance, which you can deploy to your Live environment and
+live site when ready.
 
-When the built marketplace is ready to go live, a Production environment
-should be procured by subscribing to Flex. A Production environment lets
-your marketplace add real users to your database and process
-transactions with real money. Your users see the Pages content stored in
-your Production environment. Production environments are used alongside
-Development environments; you develop new features and content using the
-latter and publish it to the former when it is ready.
+When the built marketplace is ready to go live, a Live environment
+should be procured by subscribing to Flex. A Live environment lets your
+marketplace add real users to your database and process transactions
+with real money. Your users see the Pages content stored in your Live
+environment. Live environments are used alongside Development
+environments; you develop new features and content using the latter and
+publish it to the former when it is ready.
 
 ### Extended data
 
