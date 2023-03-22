@@ -89,11 +89,11 @@ Flex subscriptions (see more information about
 ## Workflow between the three environments
 
 In a nutshell, the workflow between the environments is that changes
-flow from DEV to TEST to LIVE:
+flow from Dev to Test to Live:
 
-- code changes are made and reviewed in DEV, and get pushed from DEV to
-  TEST and LIVE
-- no-code changes are made in TEST, and get pushed from TEST to LIVE.
+- code changes are made and reviewed in Dev, and get pushed from Dev to
+  Test and Live
+- no-code changes are made in Test, and get pushed from Test to Live.
 
 [Graph](https://whimsical.com/biketribe-visuals-VvUyPRAiA61oxbdi69Md99)
 
@@ -110,11 +110,11 @@ No-code changes include
 - Microcopy changes in Flex Console
 - Pages changes in Flex Console
 
-We recommend that you keep TEST and LIVE environments identical as much
-as possible. In other words, push any code changes from DEV to TEST and
-LIVE at the same time before making further no-code changes in TEST.
-This will ensure that your TEST environment accurately works as a
-preview environment for LIVE.
+We recommend that you keep Test and Live environments identical as much
+as possible. In other words, push any code changes from Dev to Test and
+Live at the same time before making further no-code changes in Test.
+This will ensure that your Test environment accurately works as a
+preview environment for Live.
 
 ## Additional development environments
 

@@ -148,9 +148,9 @@ following keys:
   elements) of id and content.
 
 You can find your marketplace ID in Flex Console > Build > General. Note
-that the anonymised test file needs to specify your test environment
-marketplace ID and your production data file needs to specify your
-production environment marketplace ID.
+that the anonymised test file needs to specify your development
+environment marketplace ID and your production data file needs to
+specify your live environment marketplace ID.
 
 The id part of the data row 2-tuple is specified as a tuple of 1 to 3
 elements. The first element is always an id attribute and identifies the
@@ -179,7 +179,7 @@ exported data.
 
 Note that import ids are only used in the import phase and they can not
 be mapped to existing resource ids, because the final resource id is not
-created based on the import id. In other words, if e.g. your test
+created based on the import id. In other words, if e.g. your dev
 marketplace already has data rows, you cannot reference those rows by
 import ids in the Intermediary file.
 
@@ -568,7 +568,7 @@ We recommend that you only use a subset of your data for the test
 import. The purpose of the test migration is to confirm that your
 extract-and-transform process creates a migration file that is valid and
 consistent, so there is rarely need for importing the anonymized
-equivalent of your full user data into the test environment.
+equivalent of your full user data into the dev environment.
 
 ### Password management
 

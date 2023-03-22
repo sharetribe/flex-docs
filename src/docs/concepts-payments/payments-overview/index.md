@@ -343,8 +343,8 @@ troubleshoot the problem.
 
 - Double check that you have followed the
   [Stripe setup instructions](/how-to/set-up-and-use-stripe/). Note that
-  in your test environment, you need to use the Stripe keys starting
-  with `sk_test` and `pk_test`, and you will also need to use
+  in your dev and test environments, you need to use the Stripe keys
+  starting with `sk_test` and `pk_test`, and you will also need to use
   [Stripe's test payout details](https://stripe.com/docs/connect/testing#payouts)
   and
   [test payment methods](https://stripe.com/docs/testing#payment-intents-api)
