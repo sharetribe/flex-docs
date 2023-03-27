@@ -318,7 +318,7 @@ Read more about [code-splitting](/ftw/how-code-splitting-works-in-ftw/).
 It is possible to track page views to gather information about
 navigation behaviour. Tracking is tied to routing through _Routes.js_
 where _RouteRendererComponent_ dispatches `LOCATION_CHANGED` actions.
-These actions are handled by a global reducer (_Routing.duck.js_), but
+These actions are handled by a global reducer (_routing.duck.js_), but
 more importantly, _analytics.js_ (a Redux middleware) listens to these
 changes and sends tracking events to configured services.
 
@@ -329,7 +329,7 @@ changes and sends tracking events to configured services.
     ├──analytics
     |  └── analytics.js
     └── ducks
-        └── Routing.duck.js
+        └── routing.duck.js
 ```
 
 For more information, see the

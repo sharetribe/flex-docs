@@ -110,10 +110,10 @@ variables:
 /* Used with inline CSS SVGs */
 --marketplaceColorEncoded: %23c0392b;
 
---successColor: #2ecc71;
---successColorDark: #239954;
---failColor: #ff0000;
---attentionColor: #ffaa00;
+--colorSuccess: #2ecc71;
+--colorSuccessDark: #239954;
+--colorFail: #ff0000;
+--colorAttention: #ffaa00;
 
 --matterColorDark: #000000;
 --matterColor: #4a4a4a;
@@ -131,12 +131,12 @@ The `--marketplaceColorEncoded` variable holds the same value as
 `--marketplaceColor` but with the _#_ URL encoded. This value can be
 used to maintain a consistent color scheme with inline SVG icons.
 
-`--successColor` (green) is used in form inputs for showing that the
+`--colorSuccess` (green) is used in form inputs for showing that the
 input value is valid. Sometimes, submit buttons (`<PrimaryButton>`) are
 also using that color to highlight the fact that user has entered valid
 information to the form at hand.
 
-Similarly `--failColor` is used to style errors and `--attentionColor`
+Similarly `--colorFail` is used to style errors and `--colorAttention`
 is used to draw user's attention to certain UI components (e.g. required
 form inputs, or important info in Inbox)
 

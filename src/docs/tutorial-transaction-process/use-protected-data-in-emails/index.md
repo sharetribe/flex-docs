@@ -129,12 +129,12 @@ section.
 
 This is possible because all the extra fields that are added to
 SignupForm component are saved as protected data to the user entity.
-This happens in **_signup_** function at _Auth.duck.js_.
+This happens in **_signup_** function at _auth.duck.js_.
 
 ```shell
 └── src
     └── ducks
-        └── Auth.duck.js
+        └── auth.duck.js
 ```
 
 ## Reveal protected data
