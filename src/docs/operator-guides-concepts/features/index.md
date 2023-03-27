@@ -299,7 +299,7 @@ lots of helpful features. Here are some of them:
   immediately when a customer pays, or hold it until the booking period
   is over, and release it to the provider's bank account only after that
   (after automatically deducting your commission). You can hold money up
-  to 6 months before releasing it to the provider.
+  to 3 months before releasing it to the provider.
 - **Refunds.** If something goes wrong with the order or the customer
   wants to cancel, you can easily refund them.
 - **Charge your commission.** You can charge a commission from the

@@ -27,7 +27,7 @@ With Flex, you have full freedom to build a completely unique
 marketplace. This means the developers you hire need guidance on how
 exactly you want the marketplace to work.
 
-We recommend using one of
+We recommend using the
 [Sharetribe Web Template](/introduction/getting-started-with-web-template/)
 as a basis for the development work, especially if you're launching a
 marketplace for the first time. The Sharetribe Web Template is an
@@ -40,19 +40,17 @@ Basing your customizations on the Sharetribe Web Template requires
 understanding what it offers. There are a few ways to gain this
 understanding:
 
-// TODO: Update for Biketribe
-
-1. Access the Saunatime demo via your
-   [Flex Console](https://flex-console.sharetribe.com/). Saunatime is
-   one of the Flex Templates. The demo allows you to try out all the
-   features of the Flex Template: searching, signing up as a new user,
-   adding listings, making bookings and payments, sending messages,
-   leaving reviews, and so on.
+1. Access the Biketribe test environment marketplace via your
+   [Flex Console](https://flex-console.sharetribe.com/). Biketribe is
+   the Sharetribe Web Template theme. The test environment allows you to
+   try out all the features of the Flex Template: searching, signing up
+   as a new user, adding listings, making bookings and payments, sending
+   messages, leaving reviews, and so on.
 2. Study
    [how listing search, listing creation, and transactions work](/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates)
    specifically.
-3. Install one of the
-   [template applications (Saunatime, Yogatime, or Sneakertime) yourself](/introduction/getting-started-with-ftw-daily/),
+3. Install the
+   [template application yourself](/introduction/getting-started-with-web-template/),
    or ask a developer to do it for you.
 4. If you're comfortable working with design software like Sketch, Adobe
    XD or Figma, you can download the complete
@@ -96,7 +94,8 @@ This is the absolute minimum budget you need to be prepared for.
 However, in this scenario, your concept would need to require only
 minimal adjustments to the templates, where you keep the user journeys
 the same and focus only on changing the particulars: listing fields,
-search filters, small changes to the transaction process, and branding.
+search filters, small changes to the transaction processes, and
+branding.
 
 More commonly development will take more hours, so an average budget
 required to launch the first version of your platform tends to be around
