@@ -28,8 +28,7 @@ The template enables complex filtering, including based on location,
 availability dates, price, and listing features. You can freely modify
 the listing and search attributes to suit your marketplace.
 
-![Saunatime search page](./saunatime_searchpage.png) // TODO UPDATE
-IMAGE
+![Saunatime search page](./saunatime_searchpage.png)
 
 ## Availability
 
@@ -213,10 +212,11 @@ tutorial starts with the Sharetribe Web Template, and it guides you
 through visual and functional modifications.
 
 When working with Flex, you have the option to start development on top
-of our [Sharetribe Web Template](TODO update link), the web application
-built on top of the Marketplace API. You can also develop your frontend
-application from scratch, but using our template can save considerable
-time.
+of our
+[Sharetribe Web Template](https://github.com/sharetribe/web-template/),
+the web application built on top of the Marketplace API. You can also
+develop your frontend application from scratch, but using our template
+can save considerable time.
 
 If you’re looking to hire a developer from Sharetribe’s
 [Expert Partner Network](https://www.sharetribe.com/experts/), check out

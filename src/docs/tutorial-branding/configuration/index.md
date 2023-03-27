@@ -168,7 +168,6 @@ get something. In this tutorial, we use €6 aka 600 cents:
 The error message, when creating a new listing
 (_EditListingPricingForm_):
 
-//TODO TAKE NEW SCREENSHOT!
 ![EditListingPricingForm: validation for minimum price](./minimum-price.png)
 
 In the next article, we change the default suggestions for search

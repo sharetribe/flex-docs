@@ -109,8 +109,7 @@ allows you to customize your public listing and user information to fit
 your needs exactly!
 
 Let’s look at listing public data in action. Here is a listing from
-Saunatime, the Flex demo marketplace. // TODO Update screenshots in
-publicextendeddatacarousel
+Biketribe, the Flex test marketplace.
 
 <publicextendeddatacarousel title="Examples of public extended data">
 

@@ -258,30 +258,33 @@ from the context menu.
 
 // TODO Update screenshot + related code
 
-![Mobile LandingPage hero title](./styling-find-component.png)
+![Login form password recovery link](./styling-find-component.png)
 
-Here we have opened title on LandingPage and the styles for the
-**heroMainTitle** heading:
+Here we have opened Authentication Page forgot password link:
 
 ```html
-<h1 class="SectionHero_heroMainTitle__3mVNg">
-  <span>Book saunas everywhere.</span>
-</h1>
+<a
+  class="LoginForm_recoveryLink__iyezw marketplaceModalHelperLink"
+  href="/recover-password"
+>
+  <span>Reset password</span>
+  <a></a
+></a>
 ```
 
 Styles are defined in a "class" called
-**`SectionHero_heroMainTitle__3mVNg`**. As stated before, the first part
-of a class name is actually giving us a hint about what component is
-defining that style - in this case, it's _SectionHero_ and its styles
-can be found from the file: **SectionHero.module.css**.
+**`LoginForm_recoveryLink__iyezw`**. As stated before, the first part of
+a class name is actually giving us a hint about what component is
+defining that style - in this case, it's _LoginForm_ and its styles can
+be found from the file: **LoginForm.module.css**.
 
 ```shell
 └── src
     └── containers
-        └── LandingPage
-            └── SectionHero
-               └── SectionHero.js
-               └── SectionHero.module.css
+        └── AuthenticationPage
+            └── LoginForm
+               └── LoginForm.js
+               └── LoginForm.module.css
 ```
 
 ### Styling guidelines
@@ -291,8 +294,8 @@ We have a practice of naming the outermost class of a component as
 element it only has **.root** class, and if there's more complex inner
 DOM structure needed, additional classes are named semantically.
 
-`<SectionHero>` could contain classes named as **.root**,
-**.heroMainTitle**, **.heroSubtitle**.
+`<LoginForm>` could contain classes named as **.root**, **.password**,
+**.recoveryLink**.
 
 Some guidelines we have tried to follow:
 

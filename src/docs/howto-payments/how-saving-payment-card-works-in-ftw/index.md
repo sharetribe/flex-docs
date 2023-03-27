@@ -91,8 +91,6 @@ making a one-time payment with a different payment card, there's an
 option (checkbox) to save the new payment card as the default payment
 method.
 
-// TODO UPDATE SCREENSHOT
-
 ![One-time payment and saving card details for future use](one-time-payment.png 'One-time payment and saving card details for future use')
 
 If the default payment method exists, user needs to select one-time

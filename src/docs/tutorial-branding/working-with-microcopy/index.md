@@ -20,8 +20,6 @@ Flex is known as _microcopy_ – button labels, help texts, and other
 small messages that help your user find their way around the
 marketplace.
 
-TODO Update screenshot
-
 ![Modify marketplace texts](./microcopy_start.png)
 
 When you first start building your marketplace, the JSON field in the
@@ -73,8 +71,6 @@ The latter option becomes easier if you use browser extension: **React
 Developer Tools**.<br /> Here's a link to
 [Chrome extension](https://chrome.google.com/webstore/search/React%20Developer%20Tools?hl=en).
 
-_TODO: Take new screenshot after Biketribe microcopy exists_
-
 ![Topbar component selected with React Developer Tools](./react_devtools_microcopy.png)
 
 In the screenshot, the highlighted text (listing creation link) comes
@@ -102,8 +98,6 @@ all of them:
 
 Copy and paste the above rows, complete with the curly brackets, to the
 Microcopy JSON field.
-
-// TODO update screenshots
 
 ![Modified Topbar microcopy in Console](./microcopy_editor_updates.png)
 

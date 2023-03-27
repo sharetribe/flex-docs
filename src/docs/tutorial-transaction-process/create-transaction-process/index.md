@@ -228,8 +228,6 @@ Now, if you open the process graph from the Flex Console, you'll see
 that the new transition and state are visible in the updated version of
 the process.
 
-// TODO: UPDATE SCREENSHOTS
-
 ![Updated process.](./updated-process.png)
 
 Here's a screenshot of the transaction card in the Flex Console. It

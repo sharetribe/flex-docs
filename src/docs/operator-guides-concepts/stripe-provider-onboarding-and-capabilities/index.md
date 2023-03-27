@@ -13,8 +13,6 @@ ingress:
 published: true
 ---
 
-// TODO: Decide whether to remove or update
-
 ## Introduction
 
 Coping with regulatory environment regarding provider onboarding can be
