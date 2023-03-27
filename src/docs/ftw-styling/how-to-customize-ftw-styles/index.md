@@ -196,20 +196,20 @@ This also affects line-heights of font styles.
 ## Fonts
 
 You can find all font-related rule sets from the
-[marketplaceDefaults.css](https://github.com/sharetribe/ftw-x/blob/main/src/styles/marketplaceDefaults.css)
+[marketplaceDefaults.css](https://github.com/sharetribe/web-template/blob/main/src/styles/marketplaceDefaults.css)
 file. The default font is defined in the `--fontFamily`
 [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
 The template uses either the Mac OS system font or
 [Inter](https://fonts.google.com/specimen/Inter) if any other operating
 system is in use. Even though Inter is a Google Font, it gets served
 through the Sharetribe CDN for performance reasons. The
-[public/index.html](https://github.com/sharetribe/ftw-x/blob/main/public/index.html)
+[public/index.html](https://github.com/sharetribe/web-template/blob/main/public/index.html)
 is responsible for actually loading the fonts into the application.
 
 If you want to change the font, you must make changes to both
-[marketplaceDefaults.css](https://github.com/sharetribe/ftw-x/blob/main/src/styles/marketplaceDefaults.css)
+[marketplaceDefaults.css](https://github.com/sharetribe/web-template/blob/main/src/styles/marketplaceDefaults.css)
 and
-[public/index.html](https://github.com/sharetribe/ftw-x/blob/main/public/index.html).
+[public/index.html](https://github.com/sharetribe/web-template/blob/main/public/index.html).
 If you're interested in different font-loading strategies, see these
 links:
 

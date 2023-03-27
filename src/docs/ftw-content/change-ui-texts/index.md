@@ -76,9 +76,9 @@ There are few other cases where we haven't added microcopy directly to
 the microcopy files.
 
 Labels for filters can be found in
-[_config/configListing.js_](https://github.com/sharetribe/ftw-x/blob/main/src/config/configListing.js).
+[_config/configListing.js_](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js).
 
-[Country codes](https://github.com/sharetribe/ftw-x/blob/master/src/translations/countryCodes.js)
+[Country codes](https://github.com/sharetribe/web-template/blob/master/src/translations/countryCodes.js)
 are in a separate file as well. Stripe API requires country information
 as
 [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)

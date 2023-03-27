@@ -25,7 +25,7 @@ the steps required to to that.
 <info>
 
 We already have a few other language files available in
-[src/translations/](https://github.com/sharetribe/ftw-x/tree/master/src/translations)
+[src/translations/](https://github.com/sharetribe/web-template/tree/master/src/translations)
 directory for you to start customizing microcopy.
 
 </info>
@@ -79,7 +79,7 @@ tests are language agnostic as they use microcopy keys as values.
 However, when adding new microcopy you can end up with missing microcopy
 keys in tests. To change the microcopy file used in tests change the
 `messages` variable in
-[src/util/test-helpers.js](https://github.com/sharetribe/ftw-x/blob/master/src/util/test-helpers.js)
+[src/util/test-helpers.js](https://github.com/sharetribe/web-template/blob/master/src/util/test-helpers.js)
 to match your language in use, for example:
 
 ```js

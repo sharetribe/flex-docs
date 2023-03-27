@@ -32,7 +32,7 @@ REACT_APP_SENTRY_DSN='<sentry-dsn>'  yarn run dev-server
 The template will log all errors to the console if you do not configure
 the Sentry DNS key. You can find all code associated with error logging
 and Sentry in
-[src/util/log.js](https://github.com/sharetribe/ftw-x/blob/master/src/util/log.js)
+[src/util/log.js](https://github.com/sharetribe/web-template/blob/master/src/util/log.js)
 
 ## Configure logging with basic access authentication
 

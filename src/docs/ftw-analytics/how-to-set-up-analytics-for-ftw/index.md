@@ -70,14 +70,14 @@ history events_ features.
 ### Built-in handlers
 
 The Sharetribe Web Template includes an
-[event handler](https://github.com/sharetribe/ftw-x/blob/main/src/analytics/handlers.js#L9)
+[event handler](https://github.com/sharetribe/web-template/blob/main/src/analytics/handlers.js#L9)
 that sends `page_view` events to Google Analytics. These events need to
 registered manually because the template is a single-page application,
 meaning that in-app navigation does not render a page load.
 
 The Google Analytics script registers a `page_view` event automatically
 on every page load. The
-[`trackPageView`](https://github.com/sharetribe/ftw-x/blob/main/src/analytics/handlers.js#L9)
+[`trackPageView`](https://github.com/sharetribe/web-template/blob/main/src/analytics/handlers.js#L9)
 function takes this into account and only sends a `page_view` event to
 Google if a page is accessed through in-app navigation.
 
@@ -96,7 +96,7 @@ packages instead of manually appending a third-party script.
 
 If the analytics library has an external script, you can add the library
 script tag to the
-[public/index.html](https://github.com/sharetribe/ftw-x/blob/master/public/index.html)
+[public/index.html](https://github.com/sharetribe/web-template/blob/master/public/index.html)
 file.
 
 In some cases, you might want to import the script during server-side
@@ -104,13 +104,13 @@ rendering (SSR). Importing the script during SSR also allows you to
 conditionally import the script, depending on, e.g. certain environment
 variables. To inject the script during SSR, see how the
 `googleAnalyticsScript` is imported in the
-[server/renderer.js](https://github.com/sharetribe/ftw-x/blob/master/server/renderer.js)
+[server/renderer.js](https://github.com/sharetribe/web-template/blob/master/server/renderer.js)
 file.
 
 ### Create a handler
 
 You can create a custom handler e.g. in
-[src/analytics/handlers.js](https://github.com/sharetribe/ftw-x/blob/master/src/analytics/handlers.js).
+[src/analytics/handlers.js](https://github.com/sharetribe/web-template/blob/master/src/analytics/handlers.js).
 If you want to track page views, you could create a class that
 implements a `trackPageView(canonicalPath, previousPath)` method.
 
@@ -143,4 +143,4 @@ canonical URL that is given to the method.
 
 Finally, you only need to initialise the handler in the
 `setupAnalyticsHandlers()` function in
-[src/index.js](https://github.com/sharetribe/ftw-x/blob/master/src/index.js).
+[src/index.js](https://github.com/sharetribe/web-template/blob/master/src/index.js).

@@ -42,7 +42,7 @@ in your marketplace:
 - Update your
   [terms of service and privacy policy page](/operator-guides/free-templates/)
 - Update the footer: the
-  [footer](https://github.com/sharetribe/ftw-x/blob/master/src/components/Footer/Footer.js)
+  [footer](https://github.com/sharetribe/web-template/blob/master/src/components/Footer/Footer.js)
   of your marketplace contain links and copy that will need to be
   updated.
 - Update the
@@ -55,7 +55,7 @@ in your marketplace:
 The configuration file of your marketplace template is a valuable
 resource that allows you to easily adjust a wide range of options in
 your marketplace. Configuration files can be found in the
-[src/config directory](https://github.com/sharetribe/ftw-x/tree/main/src/config).
+[src/config directory](https://github.com/sharetribe/web-template/tree/main/src/config).
 Before you begin modifying the configuration files, it is important to
 ensure that you have properly configured any environment variables that
 your marketplace uses. These variables are typically used to store

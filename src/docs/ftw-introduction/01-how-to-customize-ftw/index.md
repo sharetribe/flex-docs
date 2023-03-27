@@ -119,7 +119,7 @@ See the full list of [environment variables](/ftw/ftw-env/) for more
 information.
 
 For in-app configurations, see the
-[src/config directory](https://github.com/sharetribe/ftw-x/tree/main/src/config).
+[src/config directory](https://github.com/sharetribe/web-template/tree/main/src/config).
 
 ```shell
 └── src
@@ -160,7 +160,7 @@ yarn run dev-server
 
 This runs the frontend production build and starts the Express.js server
 in
-[server/index.js](https://github.com/sharetribe/ftw-x/blob/main/server/index.js).
+[server/index.js](https://github.com/sharetribe/web-template/blob/main/server/index.js).
 
 ```shell
 └── server
@@ -168,7 +168,7 @@ in
 ```
 
 The server is automatically restarted when changes are detected in the
-[server](https://github.com/sharetribe/ftw-x/blob/main/server/)
+[server](https://github.com/sharetribe/web-template/blob/main/server/)
 directory.
 
 <info>

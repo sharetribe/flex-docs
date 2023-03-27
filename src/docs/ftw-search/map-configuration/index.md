@@ -21,14 +21,14 @@ and reduce the need to call the Mapbox Geolocation API.
 
 This feature is not enabled by default. To enable it, you need to add
 the locations to the
-[configDefaultLocationSearches.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefaultLocationSearches.js#L14)
+[configDefaultLocationSearches.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefaultLocationSearches.js#L14)
 file.
 
 To disable the first result on the list to search for the user's
 "Current location", you can change the configuration variable
-[`suggestCurrentLocation` in the configMaps.js file](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js#L23)
+[`suggestCurrentLocation` in the configMaps.js file](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js#L23)
 to false. The
-[`currentLocationBoundsDistance`](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js#L27)
+[`currentLocationBoundsDistance`](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js#L27)
 variable (found in the same file) defines the distance in meters for
 calculating the bounding box around the current location.
 
@@ -39,13 +39,13 @@ For a more detailed guide on how to change the default locations, refer
 
 The Mapbox Geocoding API does not always return a bounding box with the
 results. The
-[SearchMap](https://github.com/sharetribe/ftw-x/blob/main/src/containers/SearchPage/SearchMap/SearchMap.js)
+[SearchMap](https://github.com/sharetribe/web-template/blob/main/src/containers/SearchPage/SearchMap/SearchMap.js)
 component needs a bounding box to adjust the zoom level of the map when
 displaying a location.
 
 Suppose the Geocoding API does not return a bounding box. In that case,
 the map uses the default values defined in
-[GeocoderMapbox.js](https://github.com/sharetribe/ftw-x/blob/main/src/components/LocationAutocompleteInput/GeocoderMapbox.js).
+[GeocoderMapbox.js](https://github.com/sharetribe/web-template/blob/main/src/components/LocationAutocompleteInput/GeocoderMapbox.js).
 The configuration specifies a default distance to generate the bounding
 box with for all different Mapbox Geocoding
 [data types](https://docs.mapbox.com/api/search/geocoding/#data-types).
@@ -55,7 +55,7 @@ box with for all different Mapbox Geocoding
 If your marketplace works only in a specific country or countries it
 might be a good idea to limit the location autocomplete to those
 countries. You can specify whether to use the limitation in
-[config/configMaps.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js#L48).
+[config/configMaps.js](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js#L48).
 Search for variable `countryLimit` and uncomment the line to make it
 active. Provide the country or countries in an array using
 [ISO 3166 alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)

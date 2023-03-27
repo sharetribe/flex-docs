@@ -14,7 +14,7 @@ There are a lot of settings you can edit and configure through
 configuration files. These settings are related to branding, layout,
 listings, search, maps, payment and transactions. You can find all
 configuration files in the
-[config directory](https://github.com/sharetribe/ftw-x/tree/main/src/config).
+[config directory](https://github.com/sharetribe/web-template/tree/main/src/config).
 
 ## Configuration files
 
@@ -22,38 +22,38 @@ All relevant configuration is split between the following files and the
 environment variables. You can see the available environment variables
 in the [template environment variables](/ftw/ftw-env/) article.
 
-- [configBranding.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configBranding.js)
+- [configBranding.js](https://github.com/sharetribe/web-template/blob/main/src/config/configBranding.js)
   - Marketplace colour, logos, Facebook and Twitter media
-- [configDefault.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js)
+- [configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js)
   - Change localization settings, marketplace currency and add social
     media links
-- [configLayout.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configBranding.js)
+- [configLayout.js](https://github.com/sharetribe/web-template/blob/main/src/config/configBranding.js)
   - Layout or the search and listing page and aspect ratio for listing
     image variants
-- [configListing.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configListing.js)
+- [configListing.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js)
   - You can define extended data variables and how they are displayed on
     both the listing and search page. Read more about the available
     settings in the
-    [configListing.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configListing.js)
+    [configListing.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js)
     file.
-- [configSearch.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configSearch.js)
+- [configSearch.js](https://github.com/sharetribe/web-template/blob/main/src/config/configSearch.js)
   - Change between keyword or location search and set default search
     filters and sorting options
-- [configMaps.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js)
+- [configMaps.js](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js)
   - Choose to load maps through Google or Mapbox and location-related
     search settings
-- [configStripe.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configStripe.js)
+- [configStripe.js](https://github.com/sharetribe/web-template/blob/main/src/config/configStripe.js)
   - The configuration that Stripe needs to function correctly
-- [configTransaction.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configTransaction.js)
+- [configTransaction.js](https://github.com/sharetribe/web-template/blob/main/src/config/configTransaction.js)
   - Specify the transaction type your marketplace uses
-- [configDefaultLocationSearches.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefaultLocationSearches.js)
+- [configDefaultLocationSearches.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefaultLocationSearches.js)
   - Specify a list of locations that are shown to the user as
     suggestions when they click on the search bar
 
 ## Branding
 
 The
-[configBranding.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configBranding.js)
+[configBranding.js](https://github.com/sharetribe/web-template/blob/main/src/config/configBranding.js)
 file allows you to customize the branding and appearance of your
 marketplace. The configurations you can change include the marketplace's
 color, logos for desktop and mobile devices, a background image, and
@@ -75,7 +75,7 @@ default images for social media sharing on Facebook and Twitter.
 ## Common configurations
 
 You can find all common configurations in the
-[configDefault.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js)
+[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js)
 file.
 
 The `marketplaceName` setting specifies the name of your marketplace.
@@ -87,7 +87,7 @@ microcopy and in meta tags for SEO and social media sharing.
 The currency setting specifies the currency used in your marketplace. It
 must be in ISO 4217 currency code and should match one of the currencies
 listed in the
-[settingsCurrency.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/settingsCurrency.js)
+[settingsCurrency.js](https://github.com/sharetribe/web-template/blob/main/src/config/settingsCurrency.js)
 file.
 
 The `listingMinimumPriceSubUnits` setting specifies the minimum price
@@ -147,7 +147,7 @@ structured data. The address setting contains four properties:
 There are three layout options that you can toggle to change how the
 search page is rendered and how listing images are displayed in your
 marketplace. You can find all layout options in the
-[configLayout.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configLayout.js)
+[configLayout.js](https://github.com/sharetribe/web-template/blob/main/src/config/configLayout.js)
 file.
 
 ### Search page
@@ -162,7 +162,7 @@ export const searchPageVariant = 'map';
 ```
 
 You can change the layout of the search page in the
-[configLayout.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configLayout.js#L9)
+[configLayout.js](https://github.com/sharetribe/web-template/blob/main/src/config/configLayout.js#L9)
 file by toggling the `searchPageVariant` variable between 'map' and
 'list'.
 
@@ -187,7 +187,7 @@ The 'full-image' layout option displays an image carousel, which renders
 images using their original aspect ratio.
 
 You can change the layout of the search page in the
-[configLayout.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configLayout.js#L9)
+[configLayout.js](https://github.com/sharetribe/web-template/blob/main/src/config/configLayout.js#L9)
 file by toggling the `listingPageVariant` variable between 'hero-image'
 and 'full-image'.
 
@@ -235,7 +235,7 @@ additional pieces of information that can be added to a listing. Each
 object in the array represents a single extended data field. You can
 find the full list of configuration options for extended data fields in
 the
-[configListing.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configListing.js#L11)
+[configListing.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js#L11)
 file.
 
 Adding a new entry to the `listingExtendedData` array will automatically
@@ -318,7 +318,7 @@ transaction processes in use at one time.
 ## Search configuration
 
 The
-[configSearch.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configSearch.js)
+[configSearch.js](https://github.com/sharetribe/web-template/blob/main/src/config/configSearch.js)
 file allows you to adjust the default search filters (price and dates)
 and how listings are sorted on the search page.
 
@@ -356,7 +356,7 @@ the
 ## Map configurations
 
 The
-[configMaps.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js)
+[configMaps.js](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js)
 file allows you to set up a map provider and adjust map-related
 settings. See [this article](/ftw/configure-maps/) for a complete
 overview of what map-related adjustments you can achieve through the
@@ -369,7 +369,7 @@ the how to set up [Google Maps](/ftw/how-to-use-google-maps-in-ftw/) or
 ### Stripe configurations
 
 The
-[configStripe.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configStripe.js)
+[configStripe.js](https://github.com/sharetribe/web-template/blob/main/src/config/configStripe.js)
 file includes all countries supported by the Flex Stripe integration.
 The list of countries is used during the Stripe onboarding process. In
 most cases, no changes are required to this file.

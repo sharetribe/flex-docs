@@ -28,10 +28,10 @@ since it allows JavaScript execution.
 
 You can find a collection of functions you can use to sanitize data in
 your marketplace in the
-[sanitize.js file](https://github.com/sharetribe/ftw-x/blob/main/src/util/sanitize.js).
+[sanitize.js file](https://github.com/sharetribe/web-template/blob/main/src/util/sanitize.js).
 The template sanitizes user and listing data fetched from the API by
 calling the
-[sanitizeEntity function](https://github.com/sharetribe/ftw-x/blob/main/src/util/sanitize.js#L176).
+[sanitizeEntity function](https://github.com/sharetribe/web-template/blob/main/src/util/sanitize.js#L176).
 The template calls this function when listing or user data is fetched
 from the API and stored in the Redux store.
 
@@ -56,11 +56,11 @@ Here is an example of when you should sanitize extended data yourself:
 ```
 
 Any listing extended data attributes specified through the
-[configListings.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configListing.js)
+[configListings.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js)
 file are sanitized automatically. A similar configuration does not exist
 for user extended data attributes, and to sanitize that data, you will
 need to update the functions in the
-[sanitize.js file](https://github.com/sharetribe/ftw-x/blob/main/src/util/sanitize.js).
+[sanitize.js file](https://github.com/sharetribe/web-template/blob/main/src/util/sanitize.js).
 
 ## Wrap external links
 

@@ -57,7 +57,7 @@ REACT_APP_GOOGLE_MAPS_API_KEY=my-key-here
 ### Enable Google Maps in the template
 
 To enable Google Maps, you must toggle a configuration variable found in
-[configMaps.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configMaps.js#L13).
+[configMaps.js](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js#L13).
 This configuration variable can be one of two options: `'MAPBOX'` or
 `'GOOGLE_MAPS'`. To enable Google Maps in the template, change the
 variable to `'GOOGLE_MAPS'`:

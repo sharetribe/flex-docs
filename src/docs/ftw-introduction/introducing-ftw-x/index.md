@@ -11,12 +11,12 @@ published: true
 
 ## Introduction
 
-[The Sharetribe Web Template](https://github.com/sharetribe/ftw-x) is a
-React template meant to function as a starting point for the development
-of your marketplace. It supports all the features available through the
-Sharetribe APIs, and is easily customized. For a complete list of
-features that are possible in the template, either natively or with
-custom development, see the
+[The Sharetribe Web Template](https://github.com/sharetribe/web-template)
+is a React template meant to function as a starting point for the
+development of your marketplace. It supports all the features available
+through the Sharetribe APIs, and is easily customized. For a complete
+list of features that are possible in the template, either natively or
+with custom development, see the
 [features article](/operator-guides/features/).
 
 We recommend you be familiar with React, Redux and CSS Modules before
@@ -26,7 +26,7 @@ and
 [how to install and run the template locally](/introduction/getting-started-with-web-template/).
 
 Access the
-[GitHub repository for the template here](https://github.com/sharetribe/ftw-x).
+[GitHub repository for the template here](https://github.com/sharetribe/web-template).
 
 ## Technical overview
 

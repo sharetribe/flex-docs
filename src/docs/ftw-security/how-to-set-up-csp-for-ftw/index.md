@@ -27,7 +27,7 @@ According to
 
 By default the CSP is disabled in the Sharetribe Web Template. By
 turning it on, the default whitelist in
-[server/csp.js](https://github.com/sharetribe/ftw-x/blob/master/server/csp.js)
+[server/csp.js](https://github.com/sharetribe/web-template/blob/master/server/csp.js)
 works with the all the URLs and tools that come with the application.
 
 ## Turn on the Content Security Policy
@@ -53,7 +53,7 @@ logged in the backend.
 If you want to whitelist new sources (for example, when adding a new
 external analytics service) and keep the CSP enabled, you should add the
 domains to the whitelist in
-[server/csp.js](https://github.com/sharetribe/ftw-x/blob/master/server/csp.js).
+[server/csp.js](https://github.com/sharetribe/web-template/blob/master/server/csp.js).
 
 The easiest way to do this is to first turn on the policy in report mode
 and then see what policy violations are logged by the browser's

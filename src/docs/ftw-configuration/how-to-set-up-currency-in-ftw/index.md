@@ -18,7 +18,7 @@ default payment integration, please confirm that
 intend to use.
 
 You can find the currency configuration in the
-[configDefault.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js#L20)
+[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L20)
 file. The currency configuration must be in the
 [ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes),
 e.g. USD, EUR, CAD, AUD, etc. The default value is USD.
@@ -37,7 +37,7 @@ application is changed.
 
 The variable `listingMinimumPriceSubUnits` defines the minimum price a
 customer can give a listing. You can find that variable in
-[configDefault.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js#L25).
+[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L25).
 You need to specify the minimum price as the subunits of the currency
 you are using, i.e. if you are using dollars,
 `listingMinimumPriceSubUnits: 500` would set the minimum price for a
@@ -57,7 +57,7 @@ where you have removed pricing and payment related actions.
 ## Currency subunits
 
 The
-[settingsCurrency.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/settingsCurrency.js)
+[settingsCurrency.js](https://github.com/sharetribe/web-template/blob/main/src/config/settingsCurrency.js)
 file specifies an array of currency sub-units the template uses to
 format currencies correctly. The most common currencies are already
 included in the file. If the currency is a
@@ -74,11 +74,11 @@ than floats to avoid rounding errors.
 
 Formatting money is done by using
 [React Intl](https://github.com/yahoo/react-intl). The component
-[`FieldCurrencyInput`](https://github.com/sharetribe/ftw-x/blob/main/src/components/FieldCurrencyInput/FieldCurrencyInput.js)
+[`FieldCurrencyInput`](https://github.com/sharetribe/web-template/blob/main/src/components/FieldCurrencyInput/FieldCurrencyInput.js)
 converts user input to a formatted message and adds the Money object to
 the price attribute of a listing. All currency is formatted specified by
 the value set in the
-[configDefault.js](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js#L20)
+[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L20)
 file.
 
 ## Calculating the price client-side
@@ -87,9 +87,9 @@ If you need to calculate the price on client app side use
 [Decimal.js](https://github.com/MikeMcl/decimal.js/) library. Currently,
 there are two places in the template where prices are calculated:
 
-- [server/api-util/lineItemHelpers.js](https://github.com/sharetribe/ftw-x/blob/master/server/api-util/lineItemHelpers.js)
+- [server/api-util/lineItemHelpers.js](https://github.com/sharetribe/web-template/blob/master/server/api-util/lineItemHelpers.js)
 
-- [EstimatedCustomerBreakdownMaybe.js](https://github.com/sharetribe/ftw-x/blob/master/src/components/OrderPanel/EstimatedCustomerBreakdownMaybe.js)
+- [EstimatedCustomerBreakdownMaybe.js](https://github.com/sharetribe/web-template/blob/master/src/components/OrderPanel/EstimatedCustomerBreakdownMaybe.js)
 
 ## Using multiple currencies
 

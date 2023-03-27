@@ -27,7 +27,7 @@ the parts of the page that the operator has not modified.
 
 The template specifies the path to the hosted microcopy as part of the
 app-wide configuration in
-[_config/configDefault.js_](https://github.com/sharetribe/ftw-x/blob/main/src/config/configDefault.js#L78).
+[_config/configDefault.js_](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L78).
 This hosted microcopy lives in a file called _content/translations.js_,
 since language-specific microcopy files make it fairly easy to translate
 the template to languages other than the default English.

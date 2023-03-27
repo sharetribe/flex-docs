@@ -87,7 +87,7 @@ not visible inside an initially rendered part of the screen. Lazy
 loading these off-screen images can be done with a helper function:
 `lazyLoadWithDimensions` (from _util/contextHelpers/_). For an example
 how to use the helper function, see the
-[ListingCard component](https://github.com/sharetribe/ftw-x/blob/main/src/components/ListingCard/ListingCard.js#L41).
+[ListingCard component](https://github.com/sharetribe/web-template/blob/main/src/components/ListingCard/ListingCard.js#L41).
 
 ## Use sparse attributes
 

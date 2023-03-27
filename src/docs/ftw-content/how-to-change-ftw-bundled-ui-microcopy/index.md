@@ -26,7 +26,7 @@ through the Flex Console:
 ## The microcopy file
 
 All the bundled microcopy can be found in the
-[src/translations/en.json](https://github.com/sharetribe/ftw-x/blob/master/src/translations/en.json)
+[src/translations/en.json](https://github.com/sharetribe/web-template/blob/master/src/translations/en.json)
 file. The microcopy data is formatted as one JSON object with all the
 microcopy key-value pairs as properties.
 
