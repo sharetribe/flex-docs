@@ -44,8 +44,6 @@ in the [template environment variables](/ftw/ftw-env/) article.
     search settings
 - [configStripe.js](https://github.com/sharetribe/web-template/blob/main/src/config/configStripe.js)
   - The configuration that Stripe needs to function correctly
-- [configTransaction.js](https://github.com/sharetribe/web-template/blob/main/src/config/configTransaction.js)
-  - Specify the transaction type your marketplace uses
 - [configDefaultLocationSearches.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefaultLocationSearches.js)
   - Specify a list of locations that are shown to the user as
     suggestions when they click on the search bar
@@ -153,20 +151,21 @@ file.
 ### Search page
 
 The SearchPage component of the template has two layout variants: 'map'
-and 'list'.
+and 'grid'.
 
 ```js
 // There are 2 SearchPage variants that can be used:
-// 'map' & 'list'
-export const searchPageVariant = 'map';
+// 'map' & 'grid'
+export const searchPage = {
+  variantType: 'map',
+};
 ```
 
 You can change the layout of the search page in the
 [configLayout.js](https://github.com/sharetribe/web-template/blob/main/src/config/configLayout.js#L9)
-file by toggling the `searchPageVariant` variable between 'map' and
-'list'.
+file by toggling the `variantType` variable between 'map' and 'grid'.
 
-The 'list' layout does not contain a map but instead, displays a grid of
+The 'grid' layout does not contain a map but instead, displays a grid of
 listings with filters shown in the sidebar. This layout is best suited
 for cases where users are interested in browsing a list of search
 results rather than selecting a location on a map.
@@ -180,20 +179,21 @@ within a particular location or neighborhood.
 ### Listing images
 
 You can toggle between two options on how listing images are displayed
-on the listing page. The 'hero-image' layout option shows a hero section
+on the listing page. The 'coverPhoto' layout option shows a hero section
 with a cropped image at the beginning of the page.
 
-The 'full-image' layout option displays an image carousel, which renders
+The 'carousel' layout option displays an image carousel, which renders
 images using their original aspect ratio.
 
 You can change the layout of the search page in the
-[configLayout.js](https://github.com/sharetribe/web-template/blob/main/src/config/configLayout.js#L9)
-file by toggling the `listingPageVariant` variable between 'hero-image'
-and 'full-image'.
+[configLayout.js](https://github.com/sharetribe/web-template/blob/main/src/config/configLayout.js#L16)
+file by toggling the `listingPage` variable between 'coverPhoto' and
+'carousel'.
 
 ```js
-// export const listingPageVariant = 'hero-image';
-export const listingPageVariant = 'full-image';
+export const listingPage = {
+  variantType: 'carousel',
+};
 ```
 
 ### Listing image aspect ratio
@@ -202,19 +202,19 @@ Use the `listingImage` option to specify the aspect ratio and image
 variants for listing images in your marketplace. The option defines the
 aspect ratio of the listing image everywhere except on the listing page.
 The aspect ratio of the image on the listing page can be defined by
-toggling the listingPageVariant option between 'full-image' and
-'hero-image' (the full image option will display images in their
-original aspect ratio).
+toggling the listingPage option between 'coverPhoto' and 'carousel' (the
+carousel option will display images in their original aspect ratio).
 
 For example, to change the aspect ratio of the images to 3:1, you would
-set the aspectWidth property to 1200 and the aspectHeight property to
-400:
+set the aspectRatio property to 3/1:
 
 ```js
 export const listingImage = {
-  // Aspect ratio for listing image variants
-  aspectWidth: 1200,
-  aspectHeight: 400,
+  variantType: 'cropImage',
+  // Aspect ratio for listing image variants (width/height)
+  // Note: This will be converted to separate aspectWidth and aspectHeight values
+  // to make calculations easier.
+  aspectRatio: '3/1',
   // Listings have custom image variants, which are named here.
   variantPrefix: 'listing-card',
 };
@@ -252,17 +252,17 @@ extended data field using the following options:
       { option: 'steel', label: 'Steel' },
       { option: 'titanium', label: 'Titanium' },
     ],
-    indexForSearch: false,
-    searchPageConfig: {
+    filterConfig: {
+      indexForSearch: false,
       filterType: 'SelectSingleFilter',
       label: 'Frame material',
       group: 'primary',
     },
-    listingPageConfig: {
+    showConfig: {
       label: 'Frame material',
       isDetail: true,
     },
-    editListingPageConfig: {
+    saveConfig: {
       label: 'Frame material',
       placeholderMessage: 'Select frame material',
       isRequired: false,
@@ -274,9 +274,9 @@ When creating a new listing, we will see the new input field pop up:
 
 ![Image of input field](./inputfield.png)
 
-And while the `isDetail` value in the `listingPageConfig` object is
-toggled to `true`, the extended data attribute will also be listed on
-the listing page:
+And while the `isDetail` value in the `showConfig` object is toggled to
+`true`, the extended data attribute will also be listed on the listing
+page:
 
 ![Image of input field](./description.png)
 
@@ -299,12 +299,11 @@ a extended data attribute in the
 
 ### Listing type configurations
 
-// TODO Check repo links
-
-The [configListing.js]() file also contains an array of listing type and
-their associated transaction process configurations. Listing types can
-also be used to define whether listings of the type should show
-available stock.
+The
+[configListing.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js)
+file also contains an array of listing type and their associated
+transaction process configurations. Listing types can also be used to
+define whether listings of the type should show available stock.
 
 You can use this configuration to enable different listing types, either
 using the same transaction processes or different ones. Each listing
