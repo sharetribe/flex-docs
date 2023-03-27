@@ -10,8 +10,6 @@ ingress:
 published: true
 ---
 
-TODO: Update repo links!
-
 ## What are messages?
 
 Messages let your users communicate with other users in your
@@ -99,23 +97,23 @@ that require acceptance of a booking request.
 This is how the default logic works:
 
 1.  A
-    [query is made](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L300)
+    [query is made](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L306)
     that retrieves all sales transactions (i.e. transactions where the
-    current user is the provider) transactions that are in the
-    [confirm payment state](https://github.com/sharetribe/ftw-daily/blob/85e9291a3078c54d6531ad465276f03847882911/src/util/transaction.js#L214)
+    current user is the provider) transactions that are in a state that
+    [requires provider attention](https://github.com/sharetribe/web-template/blob/main/src/transactions/transaction.js#L287)
 2.  The amount of sales transactions determines the
-    [notification count](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L104)
+    [notification count](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L105)
     shown
-    [in the badge](https://github.com/sharetribe/ftw-daily/blob/master/src/components/TopbarDesktop/TopbarDesktop.js#L55).
+    [in the badge](https://github.com/sharetribe/web-template/blob/main/src/components/Topbar/TopbarDesktop/TopbarDesktop.js#L60).
 
 The variable
-[currentUserNotificationCount](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L63)
+[currentUserNotificationCount](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L64)
 stores the number of active notifications.
 
 You can extend the messaging logic in many ways. For example, a common
 customisation is to display a notification every time a user receives a
 new message. To achieve this, you could change the logic behind
-[currentUserNotificationCount](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L63)
+[currentUserNotificationCount](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L64)
 to display a number stored in extended data. The data attribute would
 represent the number of unread messages, and could be updated every time
 a new message is detected using [events](/how-to/reacting-to-events/).

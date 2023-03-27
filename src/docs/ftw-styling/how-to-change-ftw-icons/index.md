@@ -33,16 +33,20 @@ those images.
 
 6.  Unzip the favicons.zip archive and replace the default icons and
     files in
-    [public/static/icons/](https://github.com/sharetribe/flex-template-web/blob/master/public/static/icons/)
+    [public/static/icons/](https://github.com/sharetribe/web-template/tree/main/public/static/icons)
     with the new icons
 
 7.  Replace the default HTML snippet in
-    [public/index.html](https://github.com/sharetribe/flex-template-web/blob/master/public/index.html)
+    [public/index.html](https://github.com/sharetribe/web-template/blob/main/public/index.html)
     with the snippet from the generator.
 
-    **Note:** Remove the manifest link from the snippet as we have a
-    default manifest with extra data compared to the generated one. You
-    can edit the default file as you wish.
+    <info>
+
+    Remove the manifest link from the snippet as we have a default
+    manifest with extra data compared to the generated one. You can edit
+    the default file as you wish.
+
+    </info>
 
     **Example HTML snippet:**
 

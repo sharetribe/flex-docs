@@ -44,12 +44,12 @@ to provide `name`, `color`, and `icon` for your marketplace.
 
 ## Stripe Connect Onboarding for custom implementations
 
-// TODO UPDATE REPO LINKS In the template, Connect Onboarding is mainly
-handled in the following files:
+In the template, Connect Onboarding is mainly handled in the following
+files:
 
-- [StripePayoutPage](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/StripePayoutPage)
-- [StripeConnectAccountForm](https://github.com/sharetribe/ftw-daily/tree/master/src/forms/StripeConnectAccountForm)
-- [stripeConnectAccount.duck.js](https://github.com/sharetribe/ftw-daily/tree/master/src/ducks/stripeConnectAccount.duck.js)
+- [StripePayoutPage](https://github.com/sharetribe/web-template/tree/main/src/containers/StripePayoutPage)
+- [StripeConnectAccountForm](https://github.com/sharetribe/web-template/tree/main/src/components/StripeConnectAccountForm)
+- [stripeConnectAccount.duck.js](https://github.com/sharetribe/web-template/blob/main/src/ducks/stripeConnectAccount.duck.js)
 
 You can also check out
 [PR #1234](https://github.com/sharetribe/ftw-daily/pull/1234) where you
@@ -98,10 +98,8 @@ Stripe Account.
 The account data is returned after each create and update Stripe Account
 API call so there is no need for separate fetch API call in these cases.
 
-// TODO UPDATE REPO LINKS
-
 In Sharetribe Web Template, the Stripe Account is fetched in
-[`loadData`](https://github.com/sharetribe/ftw-daily/blob/a107a7eae19cfc9196de81816af2c5ca5a676770/src/containers/StripePayoutPage/StripePayoutPage.duck.js#L73)
+[`loadData`](https://github.com/sharetribe/web-template/blob/main/src/containers/StripePayoutPage/StripePayoutPage.duck.js#L73)
 function on `StripePayoutPage.duck.js`. Quite similar `loadData`
 funciton is also used on `EditListingPage`. You can find more
 information about data loading in
@@ -265,17 +263,15 @@ have provider payout information. The template has also been configured
 to require provider onboarding and payout information before publishing
 any listings.
 
-// TODO: Update repo link
-
 However, it is possible to modify this behavior. The simplest way to
 allow publishing a listing without adding payout details is to modify
 the **handlePublishListing** function in the
-[src/components/EditListingWizard/EditListingWizard.js](https://github.com/sharetribe/ftw-daily/blob/master/src/components/EditListingWizard/EditListingWizard.js)
-in file. The function checks whether the user is connected to Stripe,
-and only calls the **onPublishListingDraft** function if Stripe is
-connected and there are no requirements missing. By removing the Stripe
-checks and immediately calling **onPublishListingDraft** with the
-parameter id, you can bypass the payout details modal completely.
+[src/components/EditListingWizard/EditListingWizard.js](https://github.com/sharetribe/web-template/blob/main/src/containers/EditListingPage/EditListingWizard/EditListingWizard.js)
+file. The function checks whether the user is connected to Stripe, and
+only calls the **onPublishListingDraft** function if Stripe is connected
+and there are no requirements missing. By removing the Stripe checks and
+immediately calling **onPublishListingDraft** with the parameter id, you
+can bypass the payout details modal completely.
 
 The default behavior of the template in this situation is that once the
 listing is published, a provider with no Stripe payout details is shown

@@ -173,27 +173,8 @@ The Sharetribe Web Template is configured to show asset-based content by
 default.
 
 For legacy template versions that do not have asset-based content
-capabilities, you can refer to our legacy template documentation.
-
----
-
-// TODO Move this section to legacy template article, or link to old
-Content management article
-
-- FTW-daily v10.0.0
-- FTW-hourly v12.0.0
-- FTW-product v11.0.0
-
-For legacy templates before these versions, you can either pull upstream
-updates or make the changes manually. You can check this article on
-[content rendering in FTW](/ftw/page-builder/) for context, and these
-PRs for the necessary changes:
-
-- [FTW-daily](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0)
-- [FTW-hourly](https://github.com/sharetribe/ftw-hourly/releases/tag/v12.0.0)
-- [FTW-product](https://github.com/sharetribe/ftw-product/releases/tag/v11.0.0)
-
----
+capabilities, you can refer to our
+[legacy template documentation](TODO).
 
 To see your page changes in your client application, you need to save
 your changes in Flex Console and navigate to the corresponding page in

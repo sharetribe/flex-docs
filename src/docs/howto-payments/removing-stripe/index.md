@@ -50,9 +50,10 @@ preauthorized to be captured.
 
 #### Edit the transaction process file to reflect the changes in your transaction process
 
-The [src/transactions/transaction.js](todo: repo link) has a number of
-helper functions that are used to determine which state the transaction
-is. Depending on the transaction process being used, the
+The
+[src/transactions/transaction.js](https://github.com/sharetribe/web-template/blob/main/src/transactions/transaction.js)
+has a number of helper functions that are used to determine which state
+the transaction is. Depending on the transaction process being used, the
 _transaction.js_ file refers to either
 _src/transactions/transactionProcessBooking.js_ or
 _src/transactions/transactionProcessPurchase.js_ for the correct states
@@ -93,10 +94,12 @@ Example:
 
 ### 2. Remove Stripe checks from EditListingWizard
 
-In [`EditListingWizard.js`](todo: update link) we are checking if the
-provider has a Stripe account with all the required information before
-we allow them to publish listings. This check is done in the
-`handlePublishListing` function and needs to be removed.
+In
+[`EditListingWizard.js`](https://github.com/sharetribe/web-template/blob/main/src/containers/EditListingPage/EditListingWizard/EditListingWizard.js)
+we are checking if the provider has a Stripe account with all the
+required information before we allow them to publish listings. This
+check is done in the `handlePublishListing` function and needs to be
+removed.
 
 ```js
   handlePublishListing(id) {
@@ -110,10 +113,11 @@ related props we pass to `EditListingWizard`.
 
 ### 3. Edit ModalMissingInformation
 
-By default, [`ModalMissingInformation`](todo: link) will remind users to
-create a Stripe account. The same modal is used for reminding about
-email verification so we should just remove the Stripe related code from
-the component.
+By default,
+[`ModalMissingInformation`](https://github.com/sharetribe/web-template/blob/main/src/components/ModalMissingInformation/ModalMissingInformation.js)
+will remind users to create a Stripe account. The same modal is used for
+reminding about email verification so we should just remove the Stripe
+related code from the component.
 
 ### 4. Edit CheckoutPage
 
@@ -233,7 +237,10 @@ const bookingForm = (
 
 If you are not using Stripe you should remove or at least hide the pages
 that are meant for managing the information saved to Stripe. These pages
-are [StripePayoutPage](todo: link) and [PaymentMethodsPage](todo: link).
+are
+[StripePayoutPage](https://github.com/sharetribe/web-template/tree/main/src/containers/StripePayoutPage)
+and
+[PaymentMethodsPage](https://github.com/sharetribe/web-template/tree/main/src/containers/PaymentMethodsPage).
 Both of these pages are accessible through the account settings so we
 want to remove them from both navigation component and route
 configuration.
@@ -299,8 +306,8 @@ Stripe related components:
 - StripePaymentForm
 - StripeConnectAccountForm
 
-// TODO Update repo link You can also remove Stripe script form
-[public/index.html](https://github.com/sharetribe/ftw-daily/blob/master/public/index.html#L169).
+You can also remove Stripe script form
+[public/index.html](https://github.com/sharetribe/web-template/blob/main/public/index.html#L171).
 
 ## Removing payments
 

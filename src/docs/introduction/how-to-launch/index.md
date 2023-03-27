@@ -133,9 +133,9 @@ design ready for your marketplace, it's time to start development work
 to make your marketplace look and work the way your designs describe.
 
 Typically, the development work is done by downloading the
-[open source codebase of Sharetribe Web Template](https://github.com/sharetribe/ftw-daily)
-**TODO Update link** and customizing it according your needs. If you're
-a developer, you can proceed to do this and
+[open source codebase of Sharetribe Web Template](https://github.com/sharetribe/web-template/)
+and customizing it according your needs. If you're a developer, you can
+proceed to do this and
 [start development right away](/ftw/how-to-customize-ftw/).
 
 If you're not a developer yourself and don't have one in your team,
@@ -192,8 +192,6 @@ higher is the likelihood that you end up wasting both money and time. So
 try to launch as quickly as you can, as that is where the true learning begins.
 
 ## 4. Going live
-
-// TODO UPDATE WORDING AND SCREENSHOT FOR ENVIRONMENTS!
 
 Once you've reached a point when you're ready to invite first real users
 to your marketplace, it's time to go live.

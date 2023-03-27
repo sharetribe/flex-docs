@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-// TODO Update repo links
-
 The Pages feature allows you to add, edit and manage content in Flex
 Console. Once you have created content in Console, you can query it
 through the Asset Delivery API, which returns the data structured as
@@ -23,6 +21,10 @@ through the logic used to render these pages in the template.
 Read more about the code-level changes introduced to the legacy FTW
 templates in the release notes of
 [version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0).
+
+You can find instructions on adding the Pages capability into your
+legacy template [in our old documentation](todo: link to "how to take
+Pages into use" section)
 
 </extrainfo>
 
@@ -101,7 +103,7 @@ Sharetribe Web Template uses React Router to
 [create routes](/ftw/how-routing-works-in-ftw/) to different pages. This
 is best demonstrated through an example. When a user navigates to the
 about page, it triggers the loadData function specified in
-[routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L66):
+[routeConfiguration.js](https://github.com/sharetribe/web-template/blob/main/src/routing/routeConfiguration.js#L76):
 
 ```js
   {
@@ -116,7 +118,7 @@ In legacy templates, no loadData function was defined for the privacy
 policy path, as the page's content was hard coded. Now, as the content
 of the page is fetched using an API call, a loadData function is
 specified in
-[PrivacyPolicyPage.duck.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.js):
+[PrivacyPolicyPage.duck.js](https://github.com/sharetribe/web-template/blob/main/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.duck.js):
 
 ```js
 export const loadData = (params, search) => dispatch => {
@@ -137,10 +139,10 @@ Assets.
 Sharetribe Web Template has four predefined routes used to generate
 content pages:
 
-- [PrivacyPolicy](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.js)
-- [TermsOfService](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TermsOfServicePage/TermsOfServicePage.js)
-- [LandingPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/LandingPage/LandingPage.js)
-- [CMSPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CMSPage/CMSPage.js)
+- [PrivacyPolicy](https://github.com/sharetribe/web-template/blob/main/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.js)
+- [TermsOfService](https://github.com/sharetribe/web-template/blob/main/src/containers/TermsOfServicePage/TermsOfServicePage.js)
+- [LandingPage](https://github.com/sharetribe/web-template/blob/main/src/containers/LandingPage/LandingPage.js)
+- [CMSPage](https://github.com/sharetribe/web-template/blob/main/src/containers/CMSPage/CMSPage.js)
 
 The first three are defined by default in Console and can not be
 removed. Therefore, there is a dedicated component in the template for
@@ -304,138 +306,6 @@ containers/PrivacyPolicyPage/FallbackPage.js:
 
 ## How to take Pages into use if you are using an older version of FTW
 
-// TODO is legacy docs link enough or do we want to have the full guide
-here?
-
-You can either follow these instructions, or
-[pull the latest upstream changes](/ftw/how-to-customize-ftw/#pull-in-the-latest-upstream-changes).
-If you've made a lot of customisations to your application, it may be
-easier to implement the changes manually.
-
-This section will outline the steps to incorporate the PageBuilder
-feature into an older version of FTW. The PageBuilder feature
-automatically renders pages based on data fetched through the Asset
-Delivery API, allowing content editors to manage data in the Flex
-Console. Please note that the steps outlined in this section may not
-apply to the letter if you have made a lot of customizations to the
-template.
-
-The example in this section enables a dynamic version of the Privacy
-Policy page, and the exact steps can also be applied to other content
-pages.
-
-1. Copy the
-   [pageBuilder directory](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/PageBuilder)
-   (and its contents) in its entirety to src/containers/PageBuilder
-2. Copy the
-   [hostedAssetsDuck.js](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/hostedAssets.duck.js)
-   file to src/ducks/hostedAssetsDuck.js
-3. Copy over all the new utility files to src/util:
-   [util/string.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/string.js)
-   [util/sanitize.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/sanitize.js)
-4. Copy over the
-   [aspectRatioWrapper component](https://github.com/sharetribe/ftw-daily/tree/master/src/components/AspectRatioWrapper)
-   directory to src/components/aspectRatioWrapper
-5. Add an export statement in
-   [components/index.js](https://github.com/sharetribe/ftw-daily/blob/master/src/components/index.js)
-   for aspectRatioWrapper:
-
-```js
-export { default as AspectRatioWrapper } from './AspectRatioWrapper/AspectRatioWrapper';
-```
-
-6. Install all the required packages using either yarn or npm:
-
-```shell
-yarn add rehype-react@6.2.1 rehype-sanitize@4.0.0 remark-parse@9.0.0 remark-rehype@8.1.0 unified@9.2.2
-```
-
-7. Overwrite the contents of src/util/data.js with the
-   [new data.js](https://github.com/sharetribe/ftw-daily/blob/master/src/util/data.js)
-   file
-8. Copy the
-   [PrivacyPolicyPage directory](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/PrivacyPolicyPage)
-   (and its contents) to src/containers/PrivacyPolicyPage (overwriting
-   any existing files)
-9. Add a loadData call to where PrivacyPolicyPage is defined in
-   [routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js):
-
-```js
-     {
-      path: '/privacy-policy',
-      name: 'PrivacyPolicyPage',
-      component: PrivacyPolicyPage,
-      loadData: pageDataLoadingAPI.PrivacyPolicyPage.loadData,
-    },
-```
-
-If you are adding a route to the CMSPage, see
-[the routeConfiguration file](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js#L69)
-on how it should be formatted.
-
-10. Add the following import to
-    [pageDataLoadingAPI.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/pageDataLoadingAPI.js):
-
-```js
-import { loadData as PrivacyPolicyPageLoader } from './PrivacyPolicyPage/PrivacyPolicyPage.duck';
-```
-
-11. Also add the following code to the
-    [pageDataLoadingAPI.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/pageDataLoadingAPI.js)
-    file:
-
-```js
-    PrivacyPolicyPage: {
-      loadData: PrivacyPolicyPageLoader,
-    },
-```
-
-12. Overwrite the contents of server/dataLoader.js with the new
-    [server/dataLoader.js](https://github.com/sharetribe/ftw-daily/blob/master/server/dataLoader.js)
-    file.
-
-13. Allow Youtube in csp.js:
-    [row 43 of csp.js](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js#L43)
-    and
-    [row 70](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js#L70)
-
-To enable all new components that use the Pages feature (the Landing
-page, Terms of Service page and the CMSPage), repeat steps 8 to 11,
-replacing PrivacyPolicyPage with the component you want to enable.
-
-After these steps, you should be able to see the default pages in your
-template.
-
-<info>
-
-In case you have not yet added the default page assets in your Flex
-Console, you will see a fallback page with a default "Maintenance mode"
-text. If this is the case, you will need to go to your
-[Flex Console > Build > Content > Pages](https://flex-console.sharetribe.com/content/pages)
-and add the default content pages.
-
-![Maintenance mode landing page](./maintenance-mode.png)
-
-</info>
-
-In addition, Flex Console allows you to preview content pages in the
-template app. To enable this feature, you'll also need to copy over the
-[PreviewResolverPage](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/PreviewResolverPage/PreviewResolverPage.js)
-to src/containers/PreviewResolverPage/PreivewResolverPage.js, and import
-the component in
-[routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js):
-
-```js
-import PreviewResolverPage from './containers/PreviewResolverPage/PreviewResolverPage';
-```
-
-You'll also need to add a route configuration for the preview page in
-[routeConfiguration.js](https://github.com/sharetribe/ftw-daily/blob/master/src/routeConfiguration.js):
-
-```js
-   {
-      path: '/preview',
-      name: 'PreviewResolverPage',
-      component: PreviewResolverPage ,
-    },
-```
+All Sharetribe Web Template versions support Pages. If you want to add
+Pages capabilities to an older FTW template that does not support Pages,
+you can review [the instructions in our legacy documentation](todo).

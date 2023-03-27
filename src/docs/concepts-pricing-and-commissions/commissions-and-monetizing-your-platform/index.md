@@ -34,7 +34,7 @@ information about how the payment flow in Flex works.
 Configuring commissions happens with the
 [privileged-set-line-items](/references/transaction-process-actions/#actionprivileged-set-line-items)
 transaction process action. In the template, this is done
-[on the server side](https://github.com/sharetribe/ftw-daily/blob/master/server/api-util/lineItems.js)
+[on the server side](https://github.com/sharetribe/web-template/blob/main/server/api-util/lineItems.js)
 because of the privileged nature of this action. If you are developing a
 client application that is not based on the Sharetribe Web Template, you
 can apply a similar logic.

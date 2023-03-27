@@ -146,8 +146,6 @@ different levels of complexity:
 
 ## Examples of specific integrations
 
-TODO Update repo links
-
 ### Hotjar analytics
 
 [Hotjar](https://www.hotjar.com/) is an analytics tool for websites that
@@ -157,7 +155,7 @@ behavior recordings, among other features.
 - Add a
   [tracking script to the client application](/ftw/how-to-set-up-analytics-for-ftw/#custom-analytics-libraries).
 - Add custom CSP directives to
-  [/server/csp.js](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js).
+  [/server/csp.js](https://github.com/sharetribe/web-template/blob/main/server/csp.js).
 
 ### Mailchimp email list
 

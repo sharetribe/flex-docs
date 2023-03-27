@@ -32,12 +32,15 @@ CI=true yarn test
 
 Note that this also runs the linter.
 
-> Note: In some environments, alternative test watcher doesn't always
-> work and it can die unexpectedly. If that happens to you, you might
-> want to install
-> [Watchman](https://facebook.github.io/watchman/docs/install/). Read
-> more about
-> [this issue](https://github.com/facebook/create-react-app/issues/871).
+<info>
+
+In some environments, alternative test watcher doesn't always work and
+it can die unexpectedly. If that happens to you, you might want to
+install [Watchman](https://facebook.github.io/watchman/docs/install/).
+Read more about
+**[this issue](https://github.com/facebook/create-react-app/issues/871)**.
+
+</info>
 
 ## Extending tests
 
@@ -53,7 +56,7 @@ Most tests included in the template are
 A failing snapshots can be updated through the
 [Jest watch mode](https://jestjs.io/docs/snapshot-testing#interactive-snapshot-mode).
 Even though most tests in the template are UI-focused,
-[some tests](https://github.com/sharetribe/ftw-daily/blob/master/server/api-util/currency.test.js)
+[some tests](https://github.com/sharetribe/web-template/blob/main/server/api-util/currency.test.js)
 are written with unit-testing in mind.
 
 Test files can be found next to the code they are testing and can be
@@ -61,15 +64,15 @@ identified by a `.test.js` suffix. Snapshots are located in a nested
 folder `__snapshots__`.
 
 ```
-├── EditListingAvailabilityForm.example.js
-├── EditListingAvailabilityForm.js
-├── EditListingAvailabilityForm.module.css
-├── EditListingAvailabilityForm.test.js
-├── ManageAvailabilityCalendar.js
-├── ManageAvailabilityCalendar.module.css
+├── ManageListingCard.example.js
+├── ManageListingCard.js
+├── ManageListingCard.module.css
+├── ManageListingCard.test.js
+├── MenuIcon.js
+├── Overlay.js
+├── Overlay.module.css
 └── __snapshots__
-    └── EditListingAvailabilityForm.test.js.snap
-
+    └── ManageListingCard.test.js.snap
 ```
 
 The template does not include full test coverage; the template is

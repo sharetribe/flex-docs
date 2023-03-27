@@ -213,7 +213,7 @@ of Sharetribe Web Template that uses
 
 Then create a new Git branch that takes PaymentIntents flow into use and
 adds
-[Basic Authentication configuration](https://github.com/sharetribe/flex-template-web/blob/master/.env-template#L32)
+[Basic Authentication configuration](https://github.com/sharetribe/web-template/blob/main/.env-template#L51)
 into environment variables. After that, you could deploy your
 payment-intent branch into your production environment. Then you can
 just book some existing listing and maybe reject it to get refund to

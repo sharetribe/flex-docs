@@ -15,7 +15,7 @@ run tests and other scripts. Continuous integration prevents deploying
 changes that break tests or fail audits.
 
 You can use the
-[.circleci/config.yml](https://github.com/sharetribe/flex-template-web/blob/master/.circleci/config.yml)
+[.circleci/config.yml](https://github.com/sharetribe/web-template/blob/main/.circleci/config.yml)
 file to configure CircleCI.
 
 ## Enabling continuous integration

@@ -137,7 +137,6 @@ and support for both card and push payments in the
 [Instant booking process](https://github.com/sharetribe/flex-example-processes#instant-booking)
 in the
 [Flex example transaction processes repository](https://github.com/sharetribe/flex-example-processes).
-TODO IS THIS STILL ACCURATE WITH THE PROCESS UPDATES?
 
 ### Handling payment methods in the client app
 

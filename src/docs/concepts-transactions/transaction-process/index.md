@@ -178,8 +178,7 @@ very good question. The graph is simply a visualization of the
 transaction process information (the states, the transitions, and the
 actions) stored in your marketplace database in Flex. The transaction
 process is, in reality, a short set of instructions written in a text
-file. You can see an example of these instructions **TODO update repo
-link**
+file. You can see an example of these instructions
 [here](https://github.com/sharetribe/flex-example-processes/blob/master/flex-default-process/process.edn)
 if you are curious.
 

@@ -212,10 +212,10 @@ These transitions require a trusted token or a trusted SDK method, both
 of which are obtained using the Flex application client secret. In
 practice, the trusted context is a server environment. With the
 Sharetribe Web Template, the client application server has default
-implementations of trusted endpoints for **TODO Update repo links**
-[initiating](https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js)
+implementations of trusted endpoints for
+[initiating](https://github.com/sharetribe/web-template/blob/main/server/api/initiate-privileged.js)
 and
-[transitioning](https://github.com/sharetribe/ftw-daily/blob/master/server/api/transition-privileged.js)
+[transitioning](https://github.com/sharetribe/web-template/blob/main/server/api/transition-privileged.js)
 transactions.
 
 ### Full access to Integration API

@@ -55,8 +55,6 @@ button in Sharetribe Web Template Github repo), the latter is the
 recommended approach for the actual customization work. Here's a rough
 guide on how to set it up:
 
-// TODO: Update links
-
 1. Create a
    [Github repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
 
@@ -76,8 +74,8 @@ guide on how to set it up:
    It should print this:
 
    ```shell
-   origin  https://github.com/sharetribe/ftw-daily.git (fetch)
-   origin  https://github.com/sharetribe/ftw-daily.git (push)
+   origin  https://github.com/sharetribe/web-template.git (fetch)
+   origin  https://github.com/sharetribe/web-template.git (push)
    ```
 
 1. Rename the Sharetribe Web Template repository (current '_origin_') as
@@ -98,8 +96,8 @@ guide on how to set it up:
    It should print this:
 
    ```shell
-   upstream  https://github.com/sharetribe/ftw-daily.git (fetch)
-   upstream  https://github.com/sharetribe/ftw-daily.git (push)
+   upstream  https://github.com/sharetribe/web-template.git (fetch)
+   upstream  https://github.com/sharetribe/web-template.git (push)
    ```
 
    </extrainfo>
@@ -123,8 +121,8 @@ guide on how to set it up:
    ```shell
    origin  https://github.com/<your-github-account>/<the-name-of-your-new-repo>.git (fetch)
    origin  https://github.com/<your-github-account>/<the-name-of-your-new-repo>.git (push)
-   upstream  https://github.com/sharetribe/ftw-daily.git (fetch)
-   upstream  https://github.com/sharetribe/ftw-daily.git (push)
+   upstream  https://github.com/sharetribe/web-template.git (fetch)
+   upstream  https://github.com/sharetribe/web-template.git (push)
    ```
 
    </extrainfo>

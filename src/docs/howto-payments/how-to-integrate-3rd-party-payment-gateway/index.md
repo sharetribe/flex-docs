@@ -673,8 +673,6 @@ payment gateway to each step.
 
 ## Further reading
 
-// TODO: UPDATE TEMPLATE LINKS
-
 - [Platforms quick start by Adyen][adyen-platforms-quick-start]
 - [PayPal Commerce Platform for Marketplaces and Platforms developer
   documentation][paypal-commerce-platform-docs]
@@ -726,6 +724,6 @@ payment gateway to each step.
 [integration-api-transition-transaction]:
   https://www.sharetribe.com/api-reference/integration.html#transition-transaction
 [web-template-api-router]:
-  https://github.com/sharetribe/ftw-daily/blob/master/server/apiRouter.js
+  https://github.com/sharetribe/web-template/blob/main/server/apiRouter.js
 [template-initiate-privileged]:
-  https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js
+  https://github.com/sharetribe/web-template/blob/main/server/api/initiate-privileged.js

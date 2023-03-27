@@ -47,86 +47,79 @@ and install some basic development tooling:
 1. [Clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
    the Sharetribe Web Template repository:
 
-//TODO: Update link
-
 ```bash
-git clone https://github.com/sharetribe/ftw-daily.git
+git clone https://github.com/sharetribe/web-template.git
 ```
 
 1. Go to the cloned directory:
 
-   // TODO update path
-
    ```bash
-   cd ftw-daily/
+   cd web-template/
    ```
 
     <extrainfo title="Check how the directory structure should look like">
 
    After these steps you should have a directory structure that looks
-   like this for Sharetribe Web Template: TODO UPDATE
+   like this for Sharetribe Web Template:
 
-   ```bash
-   ├── ext
-   │   └── transaction-process
-   ├── node_modules
-   │   └── // dependencies
-   ├── public
-   │   ├── static
-   │   ├── 500.html
-   │   ├── index.html
-   │   └── robots.txt
-   ├── scripts
-   │   ├── audit.js
-   │   ├── config.js
-   │   └── translations.js
-   ├── server
-   │   ├── api
-   │   ├── api-util
-   │   ├── apiRouter.js
-   │   ├── apiServer.js
-   │   ├── auth.js
-   │   ├── csp.js
-   │   ├── dataLoader.js
-   │   ├── env.js
-   │   ├── importer.js
-   │   ├── index.js
-   │   ├── log.js
-   │   ├── renderer.js
-   │   └── sitemap.js
-   ├── src
-   │   ├── analytics
-   │   ├── assets
-   │   ├── components
-   │   ├── containers
-   │   ├── ducks
-   │   ├── forms
-   │   ├── styles
-   │   │   ├── marketplaceDefaults.css
-   │   │   └── customMediaQueries.css
-   │   ├── translations
-   │   ├── util
-   │   ├── Routes.js
-   │   ├── app.js
-   │   ├── config.js
-   │   ├── currency-config.js
-   │   ├── default-location-searches.js
-   │   ├── examples.js
-   │   ├── index.js
-   │   ├── marketplace-custom-config.js
-   │   ├── reducers.js
-   │   ├── routeConfiguration.js
-   │   ├── store.js
-   │   └── stripe-config.js
-   ├── CHANGELOG.md
-   ├── LICENSE
-   ├── README.md
-   ├── app.json
-   ├── package.json
-   └── yarn.lock
-   ```
+   ````bash
+      ├── ext
+      │   └── transaction-processes
+      ├── node_modules
+      │   └── // dependencies
+      ├── public
+      │   ├── static
+      │   ├── index.html
+      │   ├── robots.txt
+      │   └── 500.html
+      ├── scripts
+      │   ├── audit.js
+      │   ├── config.js
+      │   └── translations.js
+      ├── server
+      │   ├── api
+      │   ├── api-util
+      │   ├── apiRouter.js
+      │   ├── apiServer.js
+      │   ├── auth.js
+      │   ├── csp.js
+      │   ├── dataLoader.js
+      │   ├── env.js
+      │   ├── importer.js
+      │   ├── index.js
+      │   ├── log.js
+      │   ├── renderer.js
+      │   ├── sitemap.js
+      │   └── wellKnownRouter.js
+      ├── src
+      │   ├── analytics
+      │   ├── app.js
+      │   ├── app.node.test.js
+      │   ├── app.test.js
+      │   ├── assets
+      │   ├── components
+      │   ├── config
+      │   ├── containers
+      │   ├── context
+      │   ├── ducks
+      │   ├── examples.js
+      │   ├── index.js
+      │   ├── reducers.js
+      │   ├── routing
+      │   ├── store.js
+      │   ├── styles
+      │   ├── transactions
+      │   ├── translations
+      │   └── util
+      ├── CHANGELOG.md
+      ├── LICENSE
+      ├── README.md
+      ├── package.json
+      └── yarn.lock
+         ```
 
     </extrainfo>
+   ````
 
 1) Install dependency libraries:
 
@@ -359,8 +352,8 @@ In this tutorial, we used the Sharetribe Web Template to get a
 marketplace running. Here's a summary of those installation steps:
 
 ```bash
-git clone https://github.com/sharetribe/ftw-daily.git // TODO UPDATE URL + PATH
-cd ftw-daily/
+git clone https://github.com/sharetribe/web-template.git
+cd web-template/
 yarn install
 yarn run config
 yarn run dev

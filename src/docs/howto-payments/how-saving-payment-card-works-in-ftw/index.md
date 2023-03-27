@@ -165,12 +165,10 @@ article about
 
 ### Initial data for Checkout:
 
-//TODO UPDATE REPO LINK
-
 Check if the user has already saved a default payment method. Fetch
 currentUser entity with `stripeCustomer.defaultPaymentMethod`
 relationship. In Sharetribe Web Template, we call a thunk function:
-[`fetchCurrentUser` in CheckoutPage.duck.js](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L302).
+[`fetchCurrentUser` in CheckoutPage.duck.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.duck.js#L401).
 
 Behind the scenes, this is essentially the following call:
 
@@ -253,12 +251,10 @@ Params might be different in different transaction process graphs.
 
 </info>
 
-// TODO UPDATE REPO LINKS
-
 Check
-[`initiateOrder` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L171)
+[`initiateOrder` thunk function](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.duck.js#L156)
 and related
-[`orderParams`](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.js#L373)
+[`orderParams`](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.js#L538)
 from Sharetribe Web Template.
 
 ###### Step 2.
@@ -274,11 +270,10 @@ stripe.confirmCardPayment(
 [stripe.confirmCardPayment documentation](https://stripe.com/docs/js/payment_intents/confirm_card_payment)..
 
 <info>
-TODO UPDATE LINK
 
 PaymentParams are not needed when using previously saved payment card.
 Sharetribe Web Template handles this in
-**[`confirmCardPayment` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/stripe.duck.js#L657)**.
+**[`confirmCardPayment` thunk function](https://github.com/sharetribe/web-template/blob/main/src/ducks/stripe.duck.js#L246)**.
 
 </info>
 
@@ -300,7 +295,7 @@ sdk.transactions.transition({
 Inform Marketplace API that PaymentIntent is ready to be captured after
 possible SCA authentication has been requested from user. Sharetribe Web
 Template does that in
-[`confirmPayment` thunk call](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L206)
+[`confirmPayment` thunk call](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.duck.js#L245)
 
 ###### Step 4.
 
@@ -319,13 +314,11 @@ has selected onetime payment - instead of making a charge from the
 previously saved credit card.
 
 In the template, we call
-[savePaymentMethod function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L200)
+[savePaymentMethod function](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L192)
 that creates stripe customer and adds updates default payment method.
 
 There are 3 different scenarios, which require different calls to Flex
 API:
-
-// TODO UPDATE REPO LINKS
 
 **1. No StripeCustomer entity connected to Flex API:**
 
@@ -337,7 +330,7 @@ sdk.stripeCustomer.create(
 ```
 
 Template:
-[`dispatch(createStripeCustomer(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L136)
+[`dispatch(createStripeCustomer(stripePaymentMethodId))`](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L136)
 
 **2. Current user has already defaultPaymentMethod - 2 calls:**
 
@@ -347,7 +340,7 @@ Template:
 ```
 
 Template:
-[`dispatch(updatePaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L181)
+[`dispatch(updatePaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L181)
 
 **3. Current user has StripeCustomer entity connected, but no
 defaultPaymentMethod:**
@@ -357,7 +350,7 @@ defaultPaymentMethod:**
 ```
 
 Template:
-[`dispatch(addPaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L151)
+[`dispatch(addPaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L151)
 
 After these steps, customer is redirected to inbox and the ball is
 thrown to Provider to accept or decline the booking.

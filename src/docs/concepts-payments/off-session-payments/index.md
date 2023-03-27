@@ -126,13 +126,11 @@ timestamp.
 
 ### Separating order from payment
 
-TODO UPDATE REPO LINKS
-
 In the default transaction process and default template flow, the order
 is initiated and processed on
-[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
+[CheckoutPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.js)
 in `handlePaymentIntent()`, using
-[initial values from ListingPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/ListingPage/ListingPage.js)
+[initial values from ListingPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/ListingPage/ListingPage.js)
 set in `handleSubmit()` with `callSetInitialValues()`. Since the
 off-session payment process separates initiating the order (i.e.
 creating a booking, setting line items in a privileged transition) from
@@ -150,12 +148,12 @@ If the automatic payment succeeds, the customer does not need to take
 further action on the transaction before the review process. Manual
 payment, on the other hand, does require a new user flow in the
 template.
-[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
+[CheckoutPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.js)
 is set up to handle payments toward Stripe, so the simplest option is
 that after an automatic payment has not succeeded and the customer has
 manually triggered the transition to create a payment intent, they are
 redirected to CheckoutPage.js (cf.
-[TransactionPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TransactionPage/TransactionPage.js)
+[TransactionPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/TransactionPage/TransactionPage.js)
 `redirectToCheckoutPageWithInitialValues()`) to continue the process.
 
 Pay attention to the following points when designing your user flow:

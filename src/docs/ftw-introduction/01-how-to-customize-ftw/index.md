@@ -37,7 +37,7 @@ recommend reading these articles before starting to work on development:
 
 - [Introducing Flex](/introduction/introducing-flex/)
 - [What development skills are needed?](/introduction/development-skills/)
-- [Getting started](/introduction/getting-started-with-ftw-daily/)
+- [Getting started](/introduction/getting-started-with-web-template/)
 
 The [tutorial introduction](/tutorial/introduction/#prerequisites) will
 also walk you through creating a GitHub repository.

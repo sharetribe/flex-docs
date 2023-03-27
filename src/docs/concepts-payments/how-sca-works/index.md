@@ -21,7 +21,8 @@ means that an online payment has to be verified via a customer’s online
 bank or mobile verification when conducting the payment.
 
 The default [transaction process](/concepts/transaction-process/) of
-Sharetribe Flex and the Sharetribe Web Template (TODO: Link to repo)
+Sharetribe Flex and the
+[Sharetribe Web Template](https://github.com/sharetribe/web-template/)
 offer out-of-the-box support for SCA. This article clarifies how exactly
 transactions using SCA will work in the default process.
 

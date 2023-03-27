@@ -7,8 +7,6 @@ ingress: This article will help you understand how to navigate Console.
 published: true
 ---
 
-// TODO: Does CA update this?
-
 Console is the central control system of your Flex marketplace. In
 Console, you can change a number of general settings and manage most of
 the data of your marketplace related to users, listings, transactions
