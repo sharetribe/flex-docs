@@ -142,14 +142,14 @@ configurations are defined in the `configListing.js` file:
 ```
 
 There you need to add the _gears_ attribute's configurations to the
-`listingExtendedData` array:
+`listingFields` array:
 
 ```js
 {
   key: 'gears',
   scope: 'public',
   schemaType: 'enum',
-  schemaOptions: [
+  enumOptions: [
     { option: '1' , label: 'Single speed' },
     { option: '2to3' , label: '2 to 3' },
     { option: '4to7' , label: '4 to 7' },
@@ -157,16 +157,16 @@ There you need to add the _gears_ attribute's configurations to the
     { option: '16to24' , label: '16 to 24' },
     { option: '25+' , label: 'Over 25' },
   ],
-  indexForSearch: true,
-  searchPageConfig: {
+  filterConfig: {
+    indexForSearch: true,
     label: 'Gears',
     group: 'secondary'
   },
-  listingPageConfig: {
+  showConfig: {
     label: 'Gears',
     isDetail: true,
   },
-  editListingPageConfig: {
+  saveConfig: {
     label: 'Gears',
     placeholderMessage: 'Select number of gears...',
     isRequired: true,
@@ -189,8 +189,8 @@ data the values are stored. The `scope` attribute determines how the
 query parameter gets formed, if the whole extended data attribute is
 specified as searchable.
 
-The `searchPageConfig` object defines how the attribute is displayed on
-the search page. The `label` attribute is modified in configListing.js
+The `filterConfig` object defines how the attribute is displayed on the
+search page. The `label` attribute is modified in configListing.js
 instead of through the microcopy file (e.g. _en.json_), because we
 thought that having it here would make customizations easier. However,
 you could use `<FormattedMessage id="some.microcopy.key.here" />`
@@ -200,7 +200,7 @@ The `schemaType` configuration is used, among other things, to determine
 the default search component used on search page. The current filters
 that can deal with extended data are **SelectSingleFilter** for enum
 types, and **SelectMultipleFilter** for multi-enum types. However, you
-can also pass `searchPageConfig.filterType` explicitly to use
+can also pass `filterConfig.filterType` explicitly to use
 **SelectMultipleFilter** with enum attributes.
 
 Finally, `group` can be 'primary' or 'secondary'. On the desktop layout,
@@ -208,11 +208,10 @@ primary filters are those which are visible by default, and secondary
 filters are not visible. You can open the secondary filters panel by
 clicking "More filters" button.
 
-As a summary, that new filter configuration in `listingExtendedData`
-array, is enough to render a _gears_ filter on search page. That is, if
-you have the correct schema added for the _gears_ attribute to the
-search engine using
-[Flex CLI](/introduction/getting-started-with-flex-cli/).
+As a summary, that new filter configuration in `listingFields` array, is
+enough to render a _gears_ filter on search page. That is, if you have
+the correct schema added for the _gears_ attribute to the search engine
+using [Flex CLI](/introduction/getting-started-with-flex-cli/).
 
 ## Creating your own filter types
 

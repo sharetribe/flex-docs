@@ -16,9 +16,10 @@ presented and used to filter searches. In addition, you will learn how
 to add complex JSON attributes directly in the Edit Listing Wizard.
 
 Adding new attributes to the data model relies on
-[Extended data](/references/extended-data/). In Sharetribe Web Template,
+[extended data](/references/extended-data/). In Sharetribe Web Template,
 top-level listing extended data is configured in the
-[configListing.js](TODO: LINK) file.
+[configListing.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js)
+file.
 
 ```shell
 └── src
@@ -51,61 +52,55 @@ data.
 ## Add a new top-level attribute
 
 Let's extend the default bike related listing data by adding an
-attribute 'gears' to reflect the bike's gear count. The full
+attribute 'frame' to reflect the bike's frame type. The full
 configuration looks like this:
 
 ```js
 {
-  key: 'gears',
+  key: 'frame',
   scope: 'public',
   schemaType: 'enum',
-  schemaOptions: [
-    { option: '1' , label: 'Single speed' },
-    { option: '2to3' , label: '2 to 3' },
-    { option: '4to7' , label: '4 to 7' },
-    { option: '8to15' , label: '8 to 15' },
-    { option: '16to24' , label: '16 to 24' },
-    { option: '25+' , label: 'Over 25' },
+  enumOptions: [
+    { option: 'aluminium', label: 'Aluminium' },
+    { option: 'steel', label: 'Steel' },
+    { option: 'titanium', label: 'Titanium' },
   ],
-  indexForSearch: true,
-  searchPageConfig: {
-    label: 'Gears',
-    group: 'secondary'
+  filterConfig: {
+    indexForSearch: false,
+    filterType: 'SelectSingleFilter',
+    label: 'Frame material',
+    group: 'primary',
   },
-  listingPageConfig: {
-    label: 'Gears',
+  showConfig: {
+    label: 'Frame material',
     isDetail: true,
   },
-  editListingPageConfig: {
-    label: 'Gears',
-    placeholderMessage: 'Select number of gears...',
-    isRequired: true,
-    requiredMessage: 'You need to select the number of gears',
-  }
+  saveConfig: {
+    label: 'Frame material',
+    placeholderMessage: 'Select frame material',
+    isRequired: false,
+  },
 },
 ```
 
 ### Declaring the attribute and its possible values
 
-Extended data attributes in the configListing.js file need to be
+Extended data attributes in the _configListing.js_ file need to be
 defined, at minimum, by **key**, by **scope**, and by **schemaType**.
 
 ```js
-  key: 'gears',
-  scope: 'public',
-      schemaType: 'enum',
-  schemaOptions: [
-    { option: '1' , label: 'Single speed' },
-    { option: '2to3' , label: '2 to 3' },
-    { option: '4to7' , label: '4 to 7' },
-    { option: '8to15' , label: '8 to 15' },
-    { option: '16to24' , label: '16 to 24' },
-    { option: '25+' , label: 'Over 25' },
-      ],
+key: 'frame',
+scope: 'public',
+schemaType: 'enum',
+enumOptions: [
+  { option: 'aluminium', label: 'Aluminium' },
+  { option: 'steel', label: 'Steel' },
+  { option: 'titanium', label: 'Titanium' },
+],
 ```
 
 This attribute is defined as **public**, so it will be saved into the
-listing as **publicData.gears**. The **schemaType** attribute determines
+listing as **publicData.frame**. The **schemaType** attribute determines
 the shape of the data being saved:
 
 - **enum** attributes are saved as a single string value from a list of
@@ -118,13 +113,13 @@ the shape of the data being saved:
 - **text** attributes are saved as a single text entry
 
 If the schema type is **enum** or **multi-enum**, you will need to
-define an array of **schemaOptions** for the attribute. This allows the
+define an array of **enumOptions** for the attribute. This allows the
 listing editing wizard to show the options when your user creates the
 listing, and it also provides the options for the search filters.
 
 ### Configuring the listing detail editing page
 
-The EditListingDetailsPanel is configured to show specific inputs for
+The _EditListingDetailsPanel_ is configured to show specific inputs for
 specific schema types. This means that you only need to configure how
 the attribute shows up in the panel.
 
@@ -134,12 +129,11 @@ attribute as required, and determine the error message to show if the
 attribute is missing.
 
 ```js
-editListingPageConfig: {
-  label: 'Gears',
-  placeholderMessage: 'Select number of gears...',
-  isRequired: true,
-  requiredMessage: 'You need to select number of gears',
-}
+saveConfig: {
+  label: 'Frame material',
+  placeholderMessage: 'Select frame material',
+  isRequired: false,
+},
 ```
 
 ### Configuring search
@@ -149,35 +143,36 @@ listing attributes you do not want to use for filtering listings. For
 instance, you may have private data text fields that the provider can
 use for listing-specific notes.
 
-For searchable attributes, you will need to include **indexForSearch**
-and **searchPageConfig** attributes to your listing configuration. In
-addition, you will need to
+For searchable attributes, you will need to include the **filterConfig**
+attribute to your listing configuration. In addition, you will need to
 [define a search schema](/how-to/manage-search-schemas-with-flex-cli/).
 Make sure you define the search schema **type** according to the listing
 configuration **schemaType**.
 
 ```js
-indexForSearch: true,
-searchPageConfig: {
-  label: 'Gears',
-  group: 'secondary'
-    },
+  filterConfig: {
+    indexForSearch: false,
+    filterType: 'SelectSingleFilter',
+    label: 'Frame material',
+    group: 'primary',
+  },
 ```
 
 ### Configuring the listing page
 
 The configuration for showing top-level extended data on the listing
 page is straightforward. In addition to the label, you can determine
-whether to show the attribute value on the listing page. By default, all
-listing config attributes with a **listingPageConfig.label** are shown
-on the listing page, but by setting **isDetail** to **false**, you can
-hide the attribute.
+whether to show specific attribute values on the listing page. By
+default, all listing config attributes with a **showConfig.label** are
+shown on the listing page, but by setting **isDetail** to **false** on
+an attribute with schema type _enum_, _long_, or _boolean_, you can hide
+the attribute from the Details section on the listing page.
 
 ```js
-listingPageConfig: {
-  label: 'Gears',
+showConfig: {
+  label: 'Frame material',
   isDetail: true,
-  },
+},
 ```
 
 And that is it! With this configuration, the attribute can be added to
@@ -761,7 +756,7 @@ component in the _src/containers/ListingPage/_ directory:
     └── containers
         └── ListingPage
             ├── SectionServiceHistory.js
-            ├── ListingPageFullImage.js
+            ├── ListingPageCarousel.js
             └── ListingPage.module.css
 ```
 

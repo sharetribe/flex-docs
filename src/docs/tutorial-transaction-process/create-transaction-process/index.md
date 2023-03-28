@@ -264,22 +264,22 @@ _night_.
 ```js
 export const listingTypes = [
   {
-    type: 'daily-booking',
+    listingType: 'daily-booking',
     label: 'Daily booking',
     transactionType: {
       process: 'default-booking',
-      alias: 'release-1',
+      alias: 'default-booking/release-1',
       unitType: 'day',
     },
   },
   // Here are some examples for other listingTypes
   // TODO: SearchPage does not work well if both booking and product selling are used at the same time
   {
-    type: 'nightly-booking',
+    listingType: 'nightly-booking',
     label: 'Nightly booking',
     transactionType: {
       process: 'default-booking',
-      alias: 'release-1',
+      alias: 'default-booking/release-1',
       unitType: 'night',
     },
   },
@@ -290,12 +290,13 @@ listings:
 
 ```diff
   {
-    type: 'nightly-booking',
+    listingType: 'nightly-booking',
     label: 'Nightly booking',
     transactionType: {
 -     process: 'default-booking',
-+     process: 'cottagedays-nightly-process',
-      alias: 'release-1',
+-     alias: 'release-1',
++     process: 'cottage-days-booking',
++     alias: 'cottage-days-booking/release-1',
       unitType: 'night',
     },
   },

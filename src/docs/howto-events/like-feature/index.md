@@ -60,15 +60,15 @@ in the _ListingPage_ directory.
 
 The Sharetribe Web Template features two different listing page layouts.
 In this tutorial, we will implement the like feature to the default
-ListingPageFullImage version, but you can just as well follow the
-instructions to implement it in ListingPageHeroImage as well.
+ListingPageCarousel version, but you can just as well follow the
+instructions to implement it in ListingPageCoverPhoto as well.
 
 ```shell
 └── src
     └── containers
         └── ListingPage
             ├── SectionLikes.js
-            ├── ListingPageFullImage.js
+            ├── ListingPageCarousel.js
             └── ListingPage.module.css
 ```
 
@@ -114,7 +114,7 @@ export default SectionLikes;
 
 ##### Step 3: Import the component
 
-Next, let's import the new component in _ListingPageFullImage.js_:
+Next, let's import the new component in _ListingPageCarousel.js_:
 
 ```jsx
 import SectionLikes from './SectionLikes';
@@ -139,7 +139,7 @@ contexts.
 ##### Step 5: Pass the component variable to the render method and OrderPanel
 
 We've created the new component _SectionLikes.js_, but it still needs to
-be included in the render method of _ListingPageFullImage.js_ to show it
+be included in the render method of _ListingPageCarousel.js_ to show it
 in a mobile layout:
 
 ```diff
@@ -371,7 +371,7 @@ export const updateLikes = listingId => (dispatch, getState, sdk) => {
 ###### Step 7: Import updateLikes to ListingPage.js
 
 We need to import the new thunk we defined in the _ListingPage.duck.js_
-file into _ListingPageFullImage.js_ in order to connect to the Redux
+file into _ListingPageCarousel.js_ in order to connect to the Redux
 store through _mapDispatchToProps_:
 
 ```jsx
@@ -661,7 +661,7 @@ However, we can provide the user with instant feedback by updating the
 like count in the front-end, even though our event listener updates the
 actual like count.
 
-###### Step 1: Add new state to ListingPageFullImage.js
+###### Step 1: Add new state to ListingPageCarousel.js
 
 ```diff
 export const ListingPageComponent = props => {

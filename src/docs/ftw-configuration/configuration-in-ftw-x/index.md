@@ -228,18 +228,17 @@ Which would look like this on the search page:
 
 ### Extended data configuration
 
-The `listingExtendedData` is an array of configuration options for
-extended data fields.
-[Extended data](/concepts/extended-data-introduction/) fields are
-additional pieces of information that can be added to a listing. Each
-object in the array represents a single extended data field. You can
-find the full list of configuration options for extended data fields in
-the
+The `listingFields` is an array of configuration options for extended
+data fields. [Extended data](/concepts/extended-data-introduction/)
+fields are additional pieces of information that can be added to a
+listing. Each object in the array represents a single extended data
+field. You can find the full list of configuration options for extended
+data fields in the
 [configListing.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js#L11)
 file.
 
-Adding a new entry to the `listingExtendedData` array will automatically
-add a new input field to the listing creation wizard. Say we add a new
+Adding a new entry to the `listingFields` array will automatically add a
+new input field to the listing creation wizard. Say we add a new
 extended data field using the following options:
 
 ```js
@@ -247,7 +246,7 @@ extended data field using the following options:
     key: 'frame',
     scope: 'public',
     schemaType: 'enum',
-    schemaOptions: [
+    enumOptions: [
       { option: 'aluminium', label: 'Aluminium' },
       { option: 'steel', label: 'Steel' },
       { option: 'titanium', label: 'Titanium' },

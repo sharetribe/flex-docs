@@ -32,21 +32,22 @@ to match the process in our backend.
 
 ## 1. Add the new transaction process configuration
 
-The [src/config/configListing.js](todo: link) file lists the listing
-types actively used by the template, as well as the transaction
-processes related to those types. You need to add a configuration for a
-new transaction process. You can either comment out the previous active
-process definitions (if you only want to use the new process) or leave
-them as they are (if you want to allow using multiple processes in the
-same application).
+The
+[src/config/configListing.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js)
+file lists the listing types actively used by the template, as well as
+the transaction processes related to those types. You need to add a
+configuration for a new transaction process. You can either comment out
+the previous active process definitions (if you only want to use the new
+process) or leave them as they are (if you want to allow using multiple
+processes in the same application).
 
 ```js
   {
-    type: 'nightly-booking',
+    listingType: 'nightly-booking',
     label: 'Nightly booking',
     transactionType: {
       process: 'negotiated-booking',
-      alias: 'release-1',
+      alias: 'negotiated-booking/release-1',
       unitType: 'night',
     },
 ```
@@ -87,7 +88,7 @@ Supported transaction processes are also defined in the files found in
 
 ```js
 // Then names of supported processes
-export const PRODUCT_PROCESS_NAME = 'default-buying-products';
+export const PURCHASE_PROCESS_NAME = 'default-purchase';
 export const BOOKING_PROCESS_NAME = 'default-booking';
 // Add new processes with a descriptive name
 export const NEGOTIATION_PROCESS_NAME = 'negotiated-booking';

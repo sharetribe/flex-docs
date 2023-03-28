@@ -339,8 +339,8 @@ button on DeleteAccountPage to open the modal.
 - import React, { useEffect } from 'react';
 + import React, { useEffect, useState } from 'react';
 ...
-- import { isScrollingDisabled } from '../../ducks/UI.duck';
-+ import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
+- import { isScrollingDisabled } from '../../ducks/ui.duck';
++ import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/ui.duck';
 ...
     UserNav,
 +   Button,

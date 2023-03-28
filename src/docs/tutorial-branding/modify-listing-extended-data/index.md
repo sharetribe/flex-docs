@@ -9,13 +9,13 @@ published: true
 
 In the Sharetribe Web Template, listings are by default defined as
 rental bikes. In other words, they have attributes that relate to the
-topic – tire size, brand, category, add-ons. It is likely, however, that
-your listings are not bike-related, so you will want to change the
+topic – tire size, brand, category, accessories. It is likely, however,
+that your listings are not bike-related, so you will want to change the
 attributes and their options.
 
 ![Category filter with Biketribe content](./default-category-filter.png)
 
-In this tutorial, we edit the secondary _equipped-with_ filter into a
+In this tutorial, we edit the secondary _accessories_ filter into a
 primary _amenities_ filter, but the same approach works with the other
 filters too.
 
@@ -41,10 +41,10 @@ In that file, the different listing extended data attributes and their
 configuration options are defined in an array:
 
 ```js
-export const listingExtendedData = [
+export const listingFields = [
 ```
 
-Locate the attribute _equipped-with_ from that list – this is the
+Locate the attribute _accessories_ from that list – this is the
 attribute we will replace with _amenities_ – and you can see some basic
 info.
 
@@ -54,44 +54,38 @@ file.
 
 ```js
 {
-    key: 'equipped-with',
+    key: 'accessories',
     scope: 'public',
-    includeForTransactionTypes: [
-      'product-selling',
-      'daily-booking',
-      'nightly-booking',
-      'hourly-booking',
-    ],
     schemaType: 'multi-enum',
-    schemaOptions: [
+    enumOptions: [
       { option: 'bell', label: 'Bell' },
       { option: 'lights', label: 'Lights' },
       { option: 'lock', label: 'Lock' },
       { option: 'mudguard', label: 'Mudguard' },
     ],
-    indexForSearch: true,
-    searchPageConfig: {
-      label: 'Equipped with',
+    filterConfig: {
+      indexForSearch: true,
+      label: 'Accessories',
       searchMode: 'has_all',
       group: 'secondary',
     },
-    listingPageConfig: {
-      label: 'Equipped with',
+    showConfig: {
+      label: 'Accessories',
     },
-    editListingPageConfig: {
-      label: 'Equipped with',
+    saveConfig: {
+      label: 'Accessories',
       placeholderMessage: 'Choose…',
       isRequired: false,
     },
 },
 ```
 
-## Update schemaOptions
+## Update enumOptions
 
-First, let's take a look at the _schemaType_ and _schemaOptions_
+First, let's take a look at the _schemaType_ and _enumOptions_
 attribute. This extended data attribute has schemaType **multi-enum**,
 which means that a listing can have one or more options selected as the
-value of the attribute. The _schemaOptions_ attribute defines what those
+value of the attribute. The _enumOptions_ attribute defines what those
 values can be.
 
 **The _option_ syntax has two properties:**
@@ -111,10 +105,10 @@ values can be.
   _configListing.js_.
 
 We want amenities that are related to our cottage-rental marketplace.
-We'll use the following configuration for _schemaOptions_:
+We'll use the following configuration for _enumOptions_:
 
 ```js
-    schemaOptions: [
+    enumOptions: [
       { option: 'terrace', label: 'Terrace' },
       { option: 'bathroom', label: 'Bathroom' },
       { option: 'swimming_pool', label: 'Swimming pool' },
@@ -133,7 +127,7 @@ listings from Marketplace API. We want to include the _amenities_
 attribute as a search filter, so we need to configure _indexForSearch_
 as _true_.
 
-In _searchPageConfig_, we can define the way this filter shows up on the
+In _filterConfig_, we can define the way this filter shows up on the
 search page. We will need to change the label to 'Amenities', and group
 to 'primary'. In addition, we can determine whether our search matches
 only listings that have all of the selected amenities (_searchMode:
@@ -141,8 +135,8 @@ only listings that have all of the selected amenities (_searchMode:
 selected options (_searchMode: 'has_any'_).
 
 ```js
-    indexForSearch: true,
-    searchPageConfig: {
+    filterConfig: {
+      indexForSearch: true,
       label: 'Amenities',
       searchMode: 'has_all',
       group: 'primary',
@@ -155,8 +149,8 @@ The Biketribe extended data attributes are just an example selection of
 attributes, since a fair number of marketplaces need some attributes
 that can be used to filter listings. However, they are not added to the
 search engine by default, because it might be that the relevant keys are
-not actually called _brand_ and _equipped-with_ but something different
-– for instance _amenities_, like in this tutorial.
+not actually called _brand_ and _accessories_ but something different –
+for instance _amenities_, like in this tutorial.
 
 If we want to make the `sdk.listing.query` endpoint understand that
 listings have a new public data field, we need to add search schema for
@@ -194,7 +188,7 @@ search engine:
 
 - `--key amenities`: key for this new searchable data is _amenities_.
 - `--type multi-enum`: the type is an enumeration with an array of
-  choices. The listingExtendedData attributes call this _schemaType_.
+  choices. The listingFields attributes call this _schemaType_.
 - `--scope public`: key can be found from the public data section of a
   listing entity.
 
@@ -206,7 +200,7 @@ search engine:
   can check your marketplace ID from Flex Console (Build section).
 
 You can find the values for **key**, **type** and **scope** in the
-**listingExtendedData** configuration. The value for **type** is called
+**listingFields** configuration. The value for **type** is called
 **schemaType** in the configuration.
 
 ```js
@@ -234,10 +228,10 @@ you can determine the placeholder for the input. You can also set the
 attribute as required, if necessary.
 
 ```js
-    listingPageConfig: {
+    showConfig: {
       label: 'Amenities',
     },
-    editListingPageConfig: {
+    saveConfig: {
       label: 'Amenities',
       placeholderMessage: 'Choose…',
       isRequired: false,
@@ -258,7 +252,7 @@ this:
       'hourly-booking',
     ],
     schemaType: 'multi-enum',
-    schemaOptions: [
+    enumOptions: [
       { option: 'terrace', label: 'Terrace' },
       { option: 'bathroom', label: 'Bathroom' },
       { option: 'swimming_pool', label: 'Swimming pool' },
@@ -268,16 +262,16 @@ this:
       { option: 'barbeque', label: 'Barbeque' },
       { option: 'fireplace', label: 'Fireplace' },
     ],
-    indexForSearch: true,
-    searchPageConfig: {
+    filterConfig: {
+      indexForSearch: true,
       label: 'Amenities',
       searchMode: 'has_all',
       group: 'primary',
     },
-    listingPageConfig: {
+    showConfig: {
       label: 'Amenities',
     },
-    editListingPageConfig: {
+    saveConfig: {
       label: 'Amenities',
       placeholderMessage: 'Choose…',
       isRequired: false,
