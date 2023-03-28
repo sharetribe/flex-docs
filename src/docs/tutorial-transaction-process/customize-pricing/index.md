@@ -32,6 +32,15 @@ changes to **EditListingPricingPanel** in _EditListingWizard_.
                     └── EditListingPricingPanel.js
 ```
 
+<info>
+
+This tutorial handles changes on top of the Sharetribe Web Template
+booking flow. If you want to make corresponding changes to the product
+order flow, you'll need to make comparable changes to
+_EditListingPricingAndStockPanel.js_ instead.
+
+</info>
+
 ### Save to public data
 
 In _EditListingPricingPanel_, we need to edit the _onSubmit_ function to
@@ -113,29 +122,42 @@ param to the _FieldCurrencyInput_ like there is in the _price_ input.
 ...
 
 <FieldCurrencyInput
-  id="price"
+  id={`${formId}price`}
   name="price"
   className={css.input}
   autoFocus={autoFocus}
-  label={intl.formatMessage({ id: 'EditListingPricingForm.pricePerProduct' })}
+  label={intl.formatMessage(
+    { id: 'EditListingPricingForm.pricePerProduct' },
+    { unitType }
+  )}
   placeholder={intl.formatMessage({ id: 'EditListingPricingForm.priceInputPlaceholder' })}
   currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
   validate={priceValidators}
 />
 <FieldCurrencyInput
-  id="cleaningFee"
+  id={`${formId}cleaningFee`}
   name="cleaningFee"
   className={css.input}
   autoFocus={autoFocus}
-  label={cleaningFeeMessage}
-  placeholder={cleaningFeePlaceholderMessage}
+  label={intl.formatMessage(
+    { id: 'EditListingPricingForm.pricePerProduct' },
+    { unitType }
+  )}
+  placeholder={intl.formatMessage({ id: 'EditListingPricingForm.priceInputPlaceholder' })}
   currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
 />
 ...
 ```
 
+You can use the following microcopy keys:
+
+```js
+  "EditListingPricingForm.cleaningFee":"Cleaning fee (optional)",
+  "EditListingPricingForm.cleaningFeePlaceholder": "Add a cleaning fee..."
+```
+
 After adding the new microcopy keys, the EditListingPricingPanel should
-look something like this: // TODO: UPDATE SCREENSHOT!
+look something like this:
 ![EditListingPricePanel](./editlistingpricepanel.png)
 
 ## Update BookingDatesForm
@@ -223,7 +245,9 @@ component, because we want the cleaning fee to be optional.
 └── src
     └── components
         └── OrderPanel
-            └── BookingDatesForm.js
+            └── BookingDatesForm
+                └── BookingDatesForm.js
+                └── BookingDatesForm.module.css
 ```
 
 In _BookingDatesForm_ we need to import a couple of new resources we
@@ -236,13 +260,14 @@ checkbox component _FieldCheckbox_.
 + import { formatMoney } from '../../../util/currency';
 + import { types as sdkTypes } from '../../../util/sdkLoader';
   ...
-  import {
-    Form,
-    IconArrowHead,
-    PrimaryButton,
-    FieldDateRangeInput,
-    FieldCheckbox,
-  } from '../../../components';
+import {
+  Form,
+  IconArrowHead,
+  PrimaryButton,
+  FieldDateRangeInput,
+  H6,
++ FieldCheckbox,
+} from '../../../components';
 
  import EstimatedCustomerBreakdownMaybe from './EstimatedCustomerBreakdownMaybe';
 
@@ -299,7 +324,8 @@ a cleaning fee saved in its public data.
 ```jsx
 const cleaningFeeMaybe = cleaningFee ? (
   <FieldCheckbox
-    id="cleaningFee"
+    className={css.cleaningFeeContainer}
+    id={`${formId}.cleaningFee`}
     name="cleaningFee"
     label={cleaningFeeLabel}
     value="cleaningFee"
@@ -312,13 +338,13 @@ component
 
 ```diff
 ...
-    timeSlots={timeSlots}
-    useMobileMargins
-    validate={composeValidators(
-      required(requiredMessage),
-      bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
-    )}
+    isDayBlocked={isDayBlocked}
+    isOutsideRange={isOutsideRange}
+    isBlockedBetween={isBlockedBetween(monthlyTimeSlots, timeZone)}
     disabled={fetchLineItemsInProgress}
+    onClose={event =>
+      setCurrentMonth(getStartOf(event?.startDate ?? startOfToday, 'month', timeZone))
+    }
   />
 
 + {cleaningFeeMaybe}
@@ -329,11 +355,19 @@ component
 ...
 ```
 
+As the final step for adding the checkbox, add the corresponding CSS
+class to _BookingDatesForm.module.css_.
+
+```css
+.cleaningFeeContainer {
+  margin-top: 24px;
+}
+```
+
 After this step, the BookingDatesForm should look like this. You should
 notice that the cleaning fee will not be visible in the booking
 breakdown yet, even though we added the new checkbox.
 
-// TODO: Update screenshot
 ![Cleaning fee checkbox](./cleaningFeeCheckbox.png)
 
 ### Update the orderData
@@ -529,11 +563,13 @@ exports.transactionLineItems = (listing, orderData) => {
 
   const providerCommission = {
     code: 'line-item/provider-commission',
+-   unitPrice: calculateTotalFromLineItems([order]),
 +   unitPrice: calculateTotalFromLineItems([order, ...cleaningFee]),
     percentage: PROVIDER_COMMISSION_PERCENTAGE,
     includeFor: ['provider'],
   };
 
+- const lineItems = [order, ...extraLineItems, providerCommission];
 + const lineItems = [order, ...extraLineItems, ...cleaningFee, providerCommission];
 
   return lineItems;
@@ -544,7 +580,6 @@ Once we have made the changes to the backend of our client app, we can
 check the order breakdown again. If you now choose the cleaning fee, you
 should see the cleaning fee in the booking breakdown:
 
-//TODO update screenshots
 ![Cleaning fee in booking breakdown](./cleaningFeeBookingBreakdown.png)
 
 ## Update CheckoutPage to handle cleaning fee
@@ -568,7 +603,16 @@ the function that speculatively fetches the transaction in
 the CheckoutPage.js `loadInitialData()` does some data processing and,
 if necessary, calls `fetchSpeculatedTransaction()`.
 
+```shell
+└── src
+    └── containers
+        └── CheckoutPage
+            └── CheckoutPage.js
+```
+
 ```diff
+loadInitialData() {
+  ...
       const deliveryMethod = pageData.orderData?.deliveryMethod;
 +     const hasCleaningFee = pageData.orderData?.cleaningFee?.length > 0;
       fetchSpeculatedTransaction(
@@ -584,19 +628,32 @@ if necessary, calls `fetchSpeculatedTransaction()`.
         requestTransition,
         isPrivileged
       );
-
+...
 ```
 
 This function call dispatches a `speculateTransaction` action in
 `CheckoutPage.duck.js`, which in turn calls the template server using
-the correct endpoint. To pass the cleaning fee selection to the API
-call, we add it to `orderData` within the `speculateTransaction` action.
+the correct endpoint.
+
+```shell
+└── src
+    └── containers
+        └── CheckoutPage
+            └── CheckoutPage.duck.js
+```
+
+To pass the cleaning fee selection to the API call, we add it to
+`orderData` within the `speculateTransaction` action.
 
 ```diff
+export const speculateTransaction = (
+  ...
+- const { deliveryMethod, quantity, bookingDates, ...otherOrderParams } = orderParams;
 + const { deliveryMethod, quantity, bookingDates, hasCleaningFee, ...otherOrderParams } = orderParams;
 ...
 
   // Parameters only for client app's server
+- const orderData = deliveryMethod ? { deliveryMethod } : {};
 + const orderData = deliveryMethod || hasCleaningFee ? { deliveryMethod, hasCleaningFee } : {};
 
 ```
@@ -610,12 +667,21 @@ checkout page.
 ### Include cleaning fee in the final transaction price
 
 The final step is to add the same logic to the flow that eventually sets
-the price for the transaction. In `CheckoutPage.js`, the function that
-does the heavy lifting in handling the payment processing is
-`handlePaymentIntent()`. In short, it first creates five functions to
-handle the transaction payment process, then composes them into a single
-function `handlePaymentIntentCreation()`, and then calls that function
-with parameter `orderParams`.
+the price for the transaction.
+
+```shell
+└── src
+    └── containers
+        └── CheckoutPage
+            └── CheckoutPage.js
+```
+
+In `CheckoutPage.js`, the function that does the heavy lifting in
+handling the payment processing is `handlePaymentIntent()`. In short, it
+first creates five functions to handle the transaction payment process,
+then composes them into a single function
+`handlePaymentIntentCreation()`, and then calls that function with
+parameter `orderParams`.
 
 To add the cleaning fee information into this process, we want to
 include it in `orderParams`, which is defined towards the very end of
@@ -637,20 +703,33 @@ include it in `orderParams`, which is defined towards the very end of
 ```
 
 Then, we still need to add the cleaning fee information to the correct
-action in `CheckoutPage.duck.js`. The first function in the
-`handlePaymentIntentCreation()` composition is `fnRequestPayment`. It
-initiates the order if there is no existing paymentIntent, and in
-practice it dispatches the `initiateOrder` action that calls the
-template server. So similarly to the `speculateTransaction` action, we
-just need to add the cleaning fee selection to `orderData` in
-`initiateOrder`.
+action in `CheckoutPage.duck.js`.
+
+```shell
+└── src
+    └── containers
+        └── CheckoutPage
+            └── CheckoutPage.duck.js
+```
+
+The first function in the `handlePaymentIntentCreation()` composition is
+`fnRequestPayment`. It initiates the order if there is no existing
+paymentIntent, and in practice it dispatches the `initiateOrder` action
+that calls the template server. So similarly to the
+`speculateTransaction` action, we just need to add the cleaning fee
+selection to `orderData` in `initiateOrder`.
 
 ```diff
+export const initiateOrder = (
+  ...
+
+- const { deliveryMethod, quantity, bookingDates, ...otherOrderParams } = orderParams;
 + const { deliveryMethod, quantity, bookingDates, hasCleaningFee, ...otherOrderParams } = orderParams;
 ...
 
   // Parameters only for client app's server
-  const orderData = deliveryMethod || hasCleaningFee ? { deliveryMethod, hasCleaningFee } : {};
+- const orderData = deliveryMethod ? { deliveryMethod } : {};
++ const orderData = deliveryMethod || hasCleaningFee ? { deliveryMethod, hasCleaningFee } : {};
 
 ```
 
@@ -683,8 +762,8 @@ The <a href="/docs/tutorial/use-protected-data-in-emails/">third step of this tu
       {{/each}}
 ```
 
-The email templates that list the full line items in the default
-transaction process are
+The email templates that list the full line items in the default booking
+process are
 
 - `new-booking-request` (to provider)
 - `booking-request-accepted` (to customer)
