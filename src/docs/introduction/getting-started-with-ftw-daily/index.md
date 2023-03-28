@@ -138,7 +138,7 @@ in the repository.
 
 To use the template, you will need to have the templates in your Flex
 environment.
-[Follow these steps](/tutorial/create-transaction-process/#create-a-new-process)
+[Follow these steps](https://github.com/sharetribe/web-template#take-the-new-beta-processes-into-use)
 to create both processes in your environment through Flex CLI.
 
 ## Mandatory Integrations
