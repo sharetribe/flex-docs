@@ -127,6 +127,20 @@ git clone https://github.com/sharetribe/web-template.git
    yarn install
    ```
 
+### Check that you have the correct transaction processes in your environment
+
+If you are using the beta release of the Sharetribe Web Template, it is
+good to note that there are two new transaction processes the template
+uses, and those processes are not in your Flex marketplace by default.
+You can find the transaction processes in
+[/ext/transaction-processes/](https://github.com/sharetribe/web-template/tree/main/ext/transaction-processes)
+in the repository.
+
+To use the template, you will need to have the templates in your Flex
+environment.
+[Follow these steps](/tutorial/create-transaction-process/#create-a-new-process)
+to create both processes in your environment through Flex CLI.
+
 ## Mandatory Integrations
 
 The Sharetribe Web Template has 3 mandatory integrations that you need
