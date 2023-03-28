@@ -174,7 +174,7 @@ default.
 
 For legacy template versions that do not have asset-based content
 capabilities, you can refer to our
-[legacy template documentation](TODO).
+[legacy template documentation](/ftw/legacy-templates/).
 
 To see your page changes in your client application, you need to save
 your changes in Flex Console and navigate to the corresponding page in

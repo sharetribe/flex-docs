@@ -256,8 +256,6 @@ browser's dev tools. Right-click on top of the correct element, and
 select _Inspector_, or something of the sort depending on the browser,
 from the context menu.
 
-// TODO Update screenshot + related code
-
 ![Login form password recovery link](./styling-find-component.png)
 
 Here we have opened Authentication Page forgot password link:
