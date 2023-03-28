@@ -135,8 +135,6 @@ microcopy file in the same place it resided in the Template. Click “src”
 folder→ click “translations” folder→ open “en.json” file→ copy content.
 Then paste the data into the Console Microcopy editor.
 
-// TODO: Update videos?
-
 <video>
     <source src='./microcopyeditor.mp4' type='video/mp4'>
     <source src='./microcopyeditor.webm' type='video/webm'>

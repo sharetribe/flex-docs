@@ -23,8 +23,7 @@ templates in the release notes of
 [version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0).
 
 You can find instructions on adding the Pages capability into your
-legacy template [in our old documentation](todo: link to "how to take
-Pages into use" section)
+legacy template [in our legacy documentation]().
 
 </extrainfo>
 
@@ -308,4 +307,4 @@ containers/PrivacyPolicyPage/FallbackPage.js:
 
 All Sharetribe Web Template versions support Pages. If you want to add
 Pages capabilities to an older FTW template that does not support Pages,
-you can review [the instructions in our legacy documentation](todo).
+you can review [the instructions in our legacy documentation]().

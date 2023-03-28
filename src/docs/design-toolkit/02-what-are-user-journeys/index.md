@@ -12,8 +12,6 @@ published: true
 
 ## What are User Journeys?
 
-// TODO: CA will update
-
 User journey mapping is a simple but powerful tool that helps you
 understand and plan how users interact with your marketplace and how
 they will do business on your marketplace. The User Journey maps the
@@ -31,6 +29,13 @@ _Provider (seller) - A user who sells or rents their products or
 services on a marketplace._
 
 ## The User Journeys for Flex Templates
+
+<info>
+
+For the beta release, we don't yet have a user journey available for the
+Sharetribe Web Template.
+
+</info>
 
 The Flex User Journeys will introduce you to the three different
 marketplace templates - Saunatime, Yogatime and Sneakertime - and their

@@ -11,8 +11,6 @@ published: true
 
 ![Template in Sketch](./FTW-in-Sketch.png)
 
-TODO UPDATE SKETCH FILES!
-
 The Sharetribe Web Template designs are available as Sketch files. The
 design files include complete designs for the template desktop and
 mobile views, as well as wireframes for the template desktop. You can
@@ -30,7 +28,12 @@ available as Sketch files below.
 
 ## Design files
 
-//TODO: Update design file description
+<info>
+
+For the beta release, we don't yet have design files available for the
+Sharetribe Web Template.
+
+</info>
 
 Sharetribe offers three templates: one for daily bookings (e.g. booking
 saunas or hiking tours), one for hourly bookings (e.g. booking yoga
