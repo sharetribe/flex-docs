@@ -323,8 +323,8 @@ and how listings are sorted on the search page.
 ### Search filters
 
 In the configSearch.js file you can change if the search bar supports
-location or keyword search by toggling the `mainSearchType` variable
-between 'keywords' and 'location'.
+location or keyword search by toggling the `mainSearch` variable between
+'keywords' and 'location'.
 
 This file allows you to configure or remove the dates and price filter.
 To remove the filters, comment them out of the `defaultFilters` array.
