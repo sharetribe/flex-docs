@@ -12,7 +12,7 @@ The knowledge base below lists some of the most common custom features that have
 
 # Knowledge base
 
-<iframe src="https://airtable.com/embed/shreAe4r7NNicveJ3?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
+<iframe class="airtable-embed" src="https://airtable.com/embed/shreAe4r7NNicveJ3?backgroundColor=purple&layout=card&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;">
 
 </iframe>
 
