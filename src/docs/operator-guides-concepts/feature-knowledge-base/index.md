@@ -2,7 +2,7 @@
 title: Custom feature knowledge base
 slug: feature-knowledge-base
 updated: 2023-03-14
-category: operator-guides
+category: operator-guides-concepts
 ingress:
   Use this information when specifying your custom marketplace requirements.
 published: true
