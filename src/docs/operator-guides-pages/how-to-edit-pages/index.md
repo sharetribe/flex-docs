@@ -1,7 +1,7 @@
 ---
 title: How to edit content pages in Console
 slug: how-to-edit-content-pages-in-console
-updated: 2023-02-14
+updated: 2023-04-01
 category: operator-guides-pages
 ingress:
   Learn how to use Pages to edit content across Landing page,
@@ -37,7 +37,7 @@ start trying out this feature, check out our article about
 
 Content pages in your marketplace are built using Sections, Blocks, and
 Fields.
-[Section templates](https://www.sharetribe.com/docs/operator-guides/section-templates)
+[Section templates](https://www.sharetribe.com/docs/operator-guides/section-templates/)
 determine layout and content type per Section.
 
 Any Page, including your Landing page, consists of a set of Sections. A
@@ -71,7 +71,7 @@ Every page has metadata, also called, meta tags, that determines how
 search engines and social media platforms will display it. Google, for
 example, uses the title and description you set to your page to populate
 their search results page. You can read more and learn
-[how to edit your SEO and social media metadata in this article](https://www.sharetribe.com/docs/operator-guides/how-to-edit-seo-and-social-metadata-in-pages).
+[how to edit your SEO and social media metadata in this article](https://www.sharetribe.com/docs/operator-guides/how-to-edit-seo-and-social-metadata-in-pages/).
 
 ## How to add Sections
 

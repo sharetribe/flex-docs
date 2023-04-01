@@ -1,7 +1,7 @@
 ---
 title: Assets
 slug: assets
-updated: 2022-05-16
+updated: 2023-04-01
 category: references
 ingress: Reference documentation providing information on assets.
 published: true
@@ -120,5 +120,5 @@ custom caching is being implemented.
 ## Further reading
 
 - [Editing client application microcopy](/concepts/microcopy/)
-- [Managing asset-based marketplace content](/concepts/content-management)
+- [Managing asset-based marketplace content](/concepts/content-management/)
 - [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)

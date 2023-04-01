@@ -1,7 +1,7 @@
 ---
 title: Introducing Pages
 slug: introducing-pages
-updated: 2023-02-14
+updated: 2023-04-01
 category: operator-guides-pages
 ingress:
   The latest Sharetribe Flex feature introduces a powerful no-code
@@ -129,4 +129,4 @@ to learn how to update existing marketplace codebases with Pages
 functionality.
 
 For more technical information on how Pages work, read more about
-[Flex's content management system.](https://www.sharetribe.com/docs/concepts/content-management)
+[Flex's content management system](https://www.sharetribe.com/docs/concepts/content-management/).
