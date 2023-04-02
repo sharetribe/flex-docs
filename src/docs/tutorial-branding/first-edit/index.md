@@ -1,7 +1,7 @@
 ---
 title: First customization
 slug: first-edit
-updated: 2022-07-11
+updated: 2023-04-01
 category: tutorial-branding
 ingress:
   Begin customizing your marketplace by custom styling and introducing
@@ -92,4 +92,4 @@ green.
 **Congratulations!** You have made your first customization.
 
 It's time to change the Saunatime image on the landing page.<br />
-[› Go to the next article](/tutorial/change-image-assets/)
+[› Go to the next article](/tutorial/change-images/)
