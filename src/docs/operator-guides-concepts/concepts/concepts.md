@@ -1,7 +1,7 @@
 ---
 title: Concepts
 slug: concepts
-updated: 2023-02-14
+updated: 2023-04-01
 category: operator-guides-concepts
 ingress:
   Definition of common terms we use when talking about Sharetribe Flex.
@@ -34,7 +34,7 @@ a headless architecture, this portion is built and hosted separately
 from the marketplace backend. Frontend applications can also be referred
 to as client applications.
 
-[Flex Templates for Web](https://www.sharetribe.com/docs//operator-guides/concepts/#flex-templates-for-web)
+[Flex Templates for Web](https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web)
 are the most common way to build a marketplace frontend with Flex. You
 may build frontends completely from scratch too.
 
@@ -106,7 +106,7 @@ open-sourced website applications that developers can modify per your
 unique requirements. The result is a custom-built marketplace without
 the cost or time required to build it from scratch.
 
-[Saunatime](https://www.sharetribe.com/docs/design-toolkit/user-journey-saunatime)
+[Saunatime](https://www.sharetribe.com/docs/design-toolkit/user-journey-saunatime/)
 is a great starting point for building rental marketplaces. Saunatime
 providers list saunas for rent by day. Sauna lovers can search saunas by
 location and book saunas by day using an availability calendar.
@@ -159,7 +159,7 @@ User, Listing, and Transaction resources store. By capturing custom
 variables or IDs to these pre-built resources, developers may support a
 broad range of use cases using a turnkey set of backend tools.
 
-[Click here](https://www.sharetribe.com/docs/operator-guides/extended-data-introduction/)
+[Click here](https://www.sharetribe.com/docs/concepts/extended-data-introduction/)
 to learn more about the different types of use cases supported by
 extended data.
 
@@ -303,7 +303,7 @@ color, or font family — but it covers the essentials, using simple
 keyboard symbols.
 
 You can learn more about using Markdown
-[here.](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages)
+[here.](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages/)
 
 ## Users
 
