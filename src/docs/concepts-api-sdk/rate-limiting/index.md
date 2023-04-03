@@ -10,10 +10,10 @@ ingress:
 published: true
 ---
 
-Starting in January 2023, Marketplace API and Integration API will
-feature new rate limits in dev and test environments. In addition,
-Integration API will feature new concurrency limits in dev and test
-environments and, eventually, in live environments.
+Starting in January 2023, Marketplace API and Integration API feature
+new rate limits in dev and test environments. In addition, Integration
+API features new concurrency limits in dev and test environments and,
+eventually, in live environments.
 
 <extrainfo title="What are rate limits and concurrency limits?">
 
