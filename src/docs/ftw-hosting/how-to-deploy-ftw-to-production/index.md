@@ -18,19 +18,33 @@ production environment. Typically, alongside your production
 environment, you will also host another version of your client
 environment: a test environment.
 
-Having two environments is a common practice in software development.
-The test environment is a clone of the production environment intended
-for testing new features before being deployed to production. Once a
-development team deems a feature production-ready, i.e. fit for a live
-audience, they can deploy it to production. A workflow like this helps
-prevent bugs and unfinished code from being released to your users.
+Having several environments is a common practice in software
+development. The test environment is a clone of the production
+environment intended for testing new features before being deployed to
+production. Once a development team deems a feature production-ready,
+i.e. fit for a live audience, they can deploy it to production. A
+workflow like this helps prevent bugs and unfinished code from being
+released to your users.
 
 Sharetribe Flex offers
-[three different environment types](https://www.sharetribe.com/docs/concepts/flex-environments/#environment-types).
-You should connect your client application with the corresponding
-marketplace environment, i.e. your client environment intended for
-testing should use environment variables that point to your test
-environment in Flex.
+[three different environment types](https://www.sharetribe.com/docs/concepts/flex-environments/#environment-types)
+– live, test, and dev. You should connect your client application with
+the corresponding marketplace environment, i.e. your client environment
+intended for testing should use environment variables that point to your
+test environment in Flex.
+
+More specifically, the workflow recommended with Flex is that you have
+three deployments of your client application:
+
+- production deployment, connected to your Live environment and running
+  real transactions
+- test deployment, connected to your Test environment and intended for
+  previewing no-code changes
+- dev deployment, connected to your Dev environment and intended for
+  testing and previewing code-level changes.
+
+We recommend that you keep your production and test deployments
+identical, so that operators can preview their no-code changes reliably.
 
 ## Where to host your application?
 
