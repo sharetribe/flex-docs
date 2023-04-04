@@ -256,33 +256,33 @@ Note that
 [enabling multiple language support requires](/ftw/how-to-change-ftw-language/#developing-ftw-into-a-multilanguage-marketplace)
 custom development to set up.
 
-### 5. Publishing microcopy to production
+### 5. Publishing microcopy to the Live environment
 
 Everything we have built so far with the Microcopy editor has been in
 the Development environment. When your marketplace is live with real
-users and transactions, you will have a Production environment Microcopy
+users and transactions, you will have a Live environment Microcopy
 editor as well to modify the marketplace website your users are actually
 using.
 
-Since changes made and saved in the Production environment affect your
+Since changes made and saved in the Live environment affect your
 end-users, it is a good idea to always start making modifications in the
 Development environment. The sections above describe how to make these
 changes.
 
-When you first create your Production environment, the microcopy in your
-Development environment gets automatically copied over to your
-Production environment. After both environments are up and running, you
-will need to transfer your changes from Development environment to
-Production environment manually.
+When you first create your Live environment, the microcopy in your
+Development environment gets automatically copied over to your Live
+environment. After both environments are up and running, you will need
+to transfer your changes from Development environment to Live
+environment manually.
 
 Copy the contents of your editor in the Development environment, then
-navigate to your Production environment using the drop-down menu in the
-top-left of the top bar. Navigate to the Microcopy editor in your
-Production environment (Build>Content), paste the microcopy from your
-Development environment into the editor, and save changes.
+navigate to your Live environment using the drop-down menu in the
+top-left of the top bar. Navigate to the Microcopy editor in your Live
+environment (Build>Content), paste the microcopy from your Development
+environment into the editor, and save changes.
 
-Note that since you are working in the Production environment, there is
-a 5 minute delay between saving changes and seeing those changes in your
+Note that since you are working in the Live environment, there is a 5
+minute delay between saving changes and seeing those changes in your
 marketplace. This delay safeguards the reliability and speed of your
 marketplace for your users.
 

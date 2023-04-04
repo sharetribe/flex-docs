@@ -205,9 +205,9 @@ to your marketplace, it's time to go live.
 
 // TODO Update screenshot At this point, you should subscribe to
 Sharetribe Flex. You can do this from Flex Console. Open the Environment
-dropdown and click the Set up production item to subscribe.
+dropdown and click the _Set up live_ item to subscribe.
 
-![Click Set up production to subscribe](./set-up-production.png)
+![Click Set up live to subscribe](./set-up-production.png)
 
 This is when you start paying the Flex minimum monthly fee (see more
 information about

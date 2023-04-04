@@ -193,6 +193,7 @@ Alternatively, if you have an application running in the address set as
 your **Marketplace URL**, you can click the "View page" link next to the
 page title in Flex Console.
 
+// TODO Check if screenshot needs to be changed
 ![View page](./view-page.png)
 
 This will open the page in your **Marketplace URL** address.
@@ -206,19 +207,19 @@ includes all your page assets.
 You can also modify your marketplace content pages after going live. You
 will still need to make and test the changes in your test environment.
 Then, after you are happy with all your page changes, you can click the
-"Copy to production" button.
+"Copy to live" button.
 
 After clicking the button, you will see a modal detailing which pages
 have been modified, created, and removed compared to your current live
-pages. You can check the boxes of the pages you want to copy to
-production. This will override the current live content of those pages
-with the new content from the test environment.
+pages. You can check the boxes of the pages you want to copy to Live.
+This will override the current live content of those pages with the new
+content from the test environment.
 
 <warning>
 
-Once you have copied a page to production, you cannot return to the
-previous live version of that page. Take extra good care to double check
-your changes in test environment before copying anything to production!
+Once you have copied a page to Live, you cannot return to the previous
+live version of that page. Take extra good care to double check your
+changes in test environment before copying anything to Live!
 
 </warning>
 

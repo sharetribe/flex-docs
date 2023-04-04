@@ -149,8 +149,8 @@ following keys:
 
 You can find your marketplace ID in Flex Console > Build > General. Note
 that the anonymised test file needs to specify your development
-environment marketplace ID and your production data file needs to
-specify your live environment marketplace ID.
+environment marketplace ID and your live data file needs to specify your
+live environment marketplace ID.
 
 The id part of the data row 2-tuple is specified as a tuple of 1 to 3
 elements. The first element is always an id attribute and identifies the
@@ -551,9 +551,8 @@ Timestamp in .edn is given as an `#inst` tagged element.
 
 ### No updates are supported
 
-The import is loaded only once to the production environment and
-currently updates with multiple production data imports are not
-supported.
+The import is loaded only once to the live environment and currently
+updates with multiple live data imports are not supported.
 
 ### Test import
 
@@ -584,9 +583,8 @@ it is essential to share the data securely. Contact us when you are
 ready to share the data.
 
 Anonymised test data for validation and test migrations can be shared
-via email. However, for production data with real user information, we
-will create a secure upload link that is valid for an agreed amount of
-time.
+via email. However, for live data with real user information, we will
+create a secure upload link that is valid for an agreed amount of time.
 
 ## A full example of Intermediary format
 

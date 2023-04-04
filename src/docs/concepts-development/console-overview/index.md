@@ -48,7 +48,7 @@ marketplace.
 
 It is easy to change environments from the topbar.
 
-![Change environments](./env-change.png)
+// TODO Update screenshot ![Change environments](./env-change.png)
 
 ## Sections
 

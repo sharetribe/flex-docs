@@ -86,7 +86,7 @@ marketplace.
 
 **Note:** If you want to use test data in development make sure that
 "View test data" toggle is on. This way no real money will be used. In
-production make sure that the toggle is off.
+the live environment, make sure that the toggle is off.
 
 ![Get API keys from Stripe](./api-keys.png)
 

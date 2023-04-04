@@ -142,7 +142,9 @@ You then need to add the following environment variables:
 - `REACT_APP_SHARETRIBE_SDK_CLIENT_ID`
 
   Flex client ID. Check this from
-  [Console](https://flex-console.sharetribe.com/applications).
+  [Console](https://flex-console.sharetribe.com/applications). For a
+  test environment that is meant for developing further features, use
+  the client ID from your _development environment_.
 
 - `SHARETRIBE_SDK_CLIENT_SECRET`
 

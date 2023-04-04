@@ -129,7 +129,7 @@ More info can be found on the
 
 ## Your Go marketplace
 
-In addition to migrating your Go marketplace data to your production
+In addition to migrating your Go marketplace data to your live
 environment, our team will work with you to make sure any ongoing
 transactions are completed successfully.
 
@@ -155,8 +155,8 @@ please email flex-support@sharetribe.com and include the following
 information:
 
 - Migration date and time (your Go marketplace will be restricted from
-  new activity at this point; your Flex marketplace will be in
-  production and live after this point)
+  new activity at this point; your Flex marketplace will be live after
+  this point)
 - Subscription model, annual or monthly payments
 - The sender email address: e.g., email@example.com
 - The sender email name: e.g., The Marketplace Team.

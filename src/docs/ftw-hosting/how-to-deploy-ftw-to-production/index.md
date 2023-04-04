@@ -19,19 +19,19 @@ environment, you will also host another version of your client
 environment: a test environment.
 
 Having several environments is a common practice in software
-development. The test environment is a clone of the production
-environment intended for testing new features before being deployed to
-production. Once a development team deems a feature production-ready,
-i.e. fit for a live audience, they can deploy it to production. A
-workflow like this helps prevent bugs and unfinished code from being
-released to your users.
+development. The test environment is most often a clone of the
+production environment intended for testing new features before being
+deployed to production. Once a development team deems a feature
+production-ready, i.e. fit for a live audience, they can deploy it to
+production. A workflow like this helps prevent bugs and unfinished code
+from being released to your users.
 
 Sharetribe Flex offers
 [three different environment types](https://www.sharetribe.com/docs/concepts/flex-environments/#environment-types)
-– live, test, and dev. You should connect your client application with
+– Live, Test, and Dev. You should connect your client application with
 the corresponding marketplace environment, i.e. your client environment
-intended for testing should use environment variables that point to your
-test environment in Flex.
+intended for development should use environment variables that point to
+your dev environment in Flex.
 
 More specifically, the workflow recommended with Flex is that you have
 three deployments of your client application:
@@ -45,6 +45,8 @@ three deployments of your client application:
 
 We recommend that you keep your production and test deployments
 identical, so that operators can preview their no-code changes reliably.
+Read more:
+[Flex environments](/concepts/flex-environments//#workflow-between-the-three-environments).
 
 ## Where to host your application?
 

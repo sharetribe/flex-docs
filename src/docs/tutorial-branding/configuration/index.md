@@ -65,7 +65,7 @@ In the `.env` file, you should see these environment variables:
   ```
 
 > **Note**: You should take _Content Security Policy_ (CSP) into use
-> (block mode) before going to production. Read more about it from
+> (block mode) before going to production. Read more about it in
 > [this article](/ftw/how-to-set-up-csp-for-ftw/).
 
 </extrainfo>
@@ -96,9 +96,9 @@ price from one currency to another.
 
 You can just close those listings from Console.
 
-> **Note**: if you want to change the currency of a production
-> marketplace, you need to customize your client app so that it allows
-> providers to update the listing's price even if the currency is wrong.
+> **Note**: if you want to change the currency of a live marketplace,
+> you need to customize your client app so that it allows providers to
+> update the listing's price even if the currency is wrong.
 
 </extrainfo>
 

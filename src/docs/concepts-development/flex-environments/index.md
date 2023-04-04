@@ -95,15 +95,13 @@ flow from Dev to Test to Live:
   Test and Live
 - no-code changes are made in Test, and get pushed from Test to Live.
 
-[Graph](https://whimsical.com/biketribe-visuals-VvUyPRAiA61oxbdi69Md99)
+![Flex environments workflow](./flex-environments.png)
 
 Code changes include
 
 - client application development, updated through your code repository
 - transaction process changes, updated through Flex CLI
 - search schema changes, updated through Flex CLI
-- asset schema changes, updated through Flex CLI // TODO Check whether
-  Dynamic Console is live when Biketribe is published!
 
 No-code changes include
 

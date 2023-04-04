@@ -97,9 +97,9 @@ information for the most recent asset, so that subsequent fetches can be
 done based on asset version.
 
 When fetching by alias, the cache time is a few seconds for development
-environment and up to 5 minutes for production environment. In other
-words, it can take up to 5 minutes for microcopy updates to be visible
-in a production environment. These cache times are subject to change.
+environment and up to 5 minutes for live environment. In other words, it
+can take up to 5 minutes for microcopy updates to be visible in a live
+environment. These cache times are subject to change.
 
 ```js
 sdk.assetByAlias({
