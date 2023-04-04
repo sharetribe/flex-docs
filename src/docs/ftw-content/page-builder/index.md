@@ -264,7 +264,7 @@ to apply styling that should be present in each component.
 Default components can be overridden or edited. Remember that the
 changes will be global and reflected on each content page. If you want
 to change a Section component on a specific page, you can use the
-options prop to override a page-level component [link to how-to].
+[options prop to override a page-level component](/how-to/options-prop/)
 
 Blocks also have a type property. Currently, Page Asset Data only
 supports a single Block type.
