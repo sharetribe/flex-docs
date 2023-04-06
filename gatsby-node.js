@@ -43,6 +43,7 @@ const findMainCategory = category => {
 };
 
 // Netlify didn't know about Array.prototype.flat()
+// (we used to be on Netlify)
 const flatten = (array, depth = 1) => {
   const f = (acc, cur) => {
     if (Array.isArray(cur)) {
