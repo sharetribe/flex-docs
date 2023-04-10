@@ -1,7 +1,7 @@
 ---
 title: Introducing Sharetribe Web Template
 slug: introducing-template
-updated: 2023-01-15
+updated: 2023-04-10
 category: introduction
 ingress:
   Learn about the out of the box functionalities available in the
@@ -86,6 +86,8 @@ the listing’s availability plan. Bookings can be made for multiple spots
 or seats. This feature can be added easily by modifying the Template
 code.
 
+![create-listing-per-day-availability](./create-listing-per-day-availability.png)
+
 Read more about
 [availability management in Flex](/docs/references/availability/).
 
@@ -121,6 +123,8 @@ search page for location search includes a map; customers can scroll the
 map to find new listings from different locations. Sorting and filtering
 fields are available via a drop down menu near the top of the page.
 
+![search-page-map-view](./search-page-map-view.png)
+
 Learn more about how to
 [configure your search settings](/ftw/configuration/#search-configuration).
 
@@ -148,6 +152,9 @@ Providers add their availability while creating their listings. They
 configure when they are available for booking, creating a calendar that
 the customer can use during search and booking.
 
+![accept-request-booking-seller](./accept-request-booking-seller.png)
+
+
 ### Product default process
 
 You can also configure the Sharetribe Web Template to become a
@@ -169,6 +176,8 @@ request. In either case, funds are transferred to the marketplace’s
 Stripe account. The configured seller commission is paid out to the
 marketplace. The remaining funds (the seller’s earnings) are paid out to
 their bank account according to rules of the transaction process.
+
+![checkout-page](./checkout-page.png)
 
 Learn more about
 [how payments work in Flex](/concepts/payments-overview/).
@@ -227,6 +236,9 @@ Sellers can revisit the modal from their account settings at any point
 if they need to edit their information (such as a change of address) or
 provide more information to be in compliance.
 
+
+![seller-onboarding-stripe-2](./seller-onboarding-stripe-2.png)
+
 Learn more about
 [handing seller onboarding on your marketplace](https://www.sharetribe.com/docs/how-to/provider-onboarding-and-identity-verification/).
 
@@ -269,13 +281,17 @@ design. You can find the Sharetribe Web Template design files here.
 The first step to take the Sharetribe Web Template into use is
 downloading the codebase and installing the necessary development tools.
 Then, check out our tutorial where you modify Biketribe’s visual and
-functional settings to create an entirely new marketplace. Follow our
+functional settings to create an entirely new marketplace. 
+
+Follow our
 [getting started guide](/introduction/getting-started-with-web-template/)
 for installation instructions and tutorial next steps. If you prefer to
 code your own features right away, don’t hesitate to use
 [our documentation](https://www.sharetribe.com/docs/) or contact
 [our support team](mailto:flex-support@sharetribe.com) by email for
-help. If you are not a developer, then you will need to hire a developer
+help. 
+
+If you are not a developer, then you will need to hire a developer
 to take Flex into use. We recommend finding a vetted developer from
 Sharetribe’s
 [Expert Partner Network](https://www.sharetribe.com/experts/). As a next
