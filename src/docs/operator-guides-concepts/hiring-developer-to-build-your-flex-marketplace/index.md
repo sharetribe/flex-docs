@@ -1,4 +1,4 @@
----
+    ---
 title: Hiring a developer to build your Flex marketplace
 slug: how-to-hire-developer
 updated: 2021-06-22
@@ -21,41 +21,30 @@ things. First communicating your requirements to the developer. Second,
 matching your requirements to your budget, timeline, and what Flex
 offers. The rest of the article will walk through these aspects.
 
-### Defining custom requirements using the Flex Template
+### Defining custom requirements using the Sharetribe Web Template
 
 With Flex, you have full freedom to build a completely unique
 marketplace. This means the developers you hire need guidance on how
 exactly you want the marketplace to work.
 
-We recommend using one of
-[Flex Templates for Web](/operator-guides/concepts/#flex-templates-for-web-ftw)
+We recommend using the
+[Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-flex/)
 as a basis for the development work, especially if you're launching a
-marketplace for the first time. The Flex Templates are examples of fully
-functional marketplace applications. Typically the Templates have
-80%-90% of the functionality you need already available, so you can
-focus on your unique requirements, and save a lot of time and money.
+marketplace for the first time. The Template features an example marketplace designed to be customized into many different kinds of marketplaces. Developers download the Template's code, then modify it to create your unique requirements. 
 
-Basing your customizations on the Flex Template requires understanding
+Basing your customizations on the Template requires understanding
 what it offers. There are a few ways to gain this understanding:
 
-1. Access the Saunatime demo via your
-   [Flex Console](https://flex-console.sharetribe.com/). Saunatime is
-   one of the Flex Templates. The demo allows you to try out all the
-   features of the Flex Template: searching, signing up as a new user,
-   adding listings, making bookings and payments, sending messages,
-   leaving reviews, and so on.
-2. Study
-   [how listing search, listing creation, and transactions work](/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates)
-   specifically.
-3. Install one of the
-   [template applications (Saunatime, Yogatime, or Sneakertime) yourself](/introduction/getting-started-with-ftw-daily/),
+1. Access the Biketribe test site via your
+   [Flex Console](https://flex-console.sharetribe.com/). Here you can access the marketplace as a user to try out its base features and understand its design. 
+2. Install the
+   [template application yourself](/introduction/getting-started-with-web-template//),
    or ask a developer to do it for you.
-4. If you're comfortable working with design software like Sketch, Adobe
+3. If you're comfortable working with design software like Sketch, Adobe
    XD or Figma, you can download the complete
-   [design files](/design-toolkit/design-files/) of the two templates to
-   explore all their pages and views.
+   [design files](/design-toolkit/design-files/) of the Template and modify them to specify your custom design. 
 
-Your developer’s job is to customize the Flex Template (how it looks and
+Your developer’s job is to customize the Template (how it looks and
 how it works) to meet your unique requirements. Your responsibility is
 to communicate these requirements to the developer.
 
@@ -72,15 +61,14 @@ work, you need to communicate this to the developer. You can follow
 for help.
 
 You also need to communicate to the developers how the marketplace looks
-visually. The fastest option is to follow the visual style of the Flex
-Template. However, you might have a completely unique visual style in
+visually. The fastest option is to follow the visual style of the Template. However, you might have a completely unique visual style in
 mind. In this case, you either need to adjust the design files yourself
 to communicate the visual style you want, or hire a designer to do this
 work for you. Many Flex Experts also offer design services you can hire.
 
 ### The required budget
 
-Using one of the Flex Templates as a basis, building a unique
+Using the Sharetribe Web Template as a basis, building a unique
 marketplace concept typically requires at least 100 hours of
 development.
 
@@ -89,7 +77,7 @@ $30 per hour (the hourly rates of Flex Experts vary from $15 to
 $100), this means building the first version of your marketplace would cost $3,000.
 This is the absolute minimum budget you need to be prepared for.
 However, in this scenario, your concept would need to require only
-minimal adjustments to the templates, where you keep the user journeys
+minimal adjustments to the Template, where you keep the user journeys
 the same and focus only on changing the particulars: listing fields,
 search filters, small changes to the transaction process, and branding.
 

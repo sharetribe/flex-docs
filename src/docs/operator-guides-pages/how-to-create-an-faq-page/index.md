@@ -396,9 +396,8 @@ Reference images:
 ## Setting the page live
 
 Now that we’ve created the page and made sure it works as supposed, all
-that’s left is to move it to the live environment - in other words, to
-production. This can be done by clicking the blue button “Copy to
-production…” on the left side bar.
+that’s left is to move it to the Live environment. This can be done by clicking the blue button “Copy to
+live…” on the left side bar.
 
 When you click on the button, you’ll get a pop-up asking you to confirm
 that you wish to move all the changes to production. You don’t need to
@@ -407,7 +406,7 @@ multiple changes to different pages, you can pick and choose which ones
 you want to move to production.
 
 A word of warning here, as well: if you've made changes directly to your
-production environment, those changes will be overwritten and this
+Live environment, those changes will be overwritten. This
 action cannot be undone.
 
 Success - the FAQ page is now created and live on our marketplace! You

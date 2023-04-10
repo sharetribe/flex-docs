@@ -1,7 +1,7 @@
 ---
 title: How to edit content pages in Console
 slug: how-to-edit-content-pages-in-console
-updated: 2023-04-01
+updated: 2023-04-10
 category: operator-guides-pages
 ingress:
   Learn how to use Pages to edit content across Landing page,
@@ -19,14 +19,14 @@ you would like more background on the Pages feature, consult this
 ### Gettings started
 
 Find the Pages feature in
-[Console](https://flex-console.sharetribe.com/). Navigate to your Demo
+[Console](https://flex-console.sharetribe.com/). Navigate to your Test
 environment, pick the “Build” section from your top bar, select
 “Content” from the sub-menu, then select “Pages” from the left side
 menu. You should now see your default content pages (the About page, the
 Landing page, the Terms of use page, and the Policy page) ready for
 editing. You can also access the feature directly through the path
 https://flex-console.sharetribe.com/content/pages. Make sure that you
-are in the demo environment of your marketplace if you want to start
+are in the Test environment of your marketplace if you want to start
 modifying your Pages right away.
 
 If you don't have the default Pages available in Console and want to
@@ -55,7 +55,7 @@ Each Section can also contain any number of Blocks. Blocks normally
 contain more detailed information for a Section. Each Block is made up
 of different fields like media, titles, text, and call to action.
 
-The default landing page in a Flex marketplace Demo environment has
+The default landing page in a Flex marketplace Test environment has
 different type of Sections that will help you get an idea of what is
 possible with Pages.
 
@@ -265,8 +265,8 @@ changes the save button will be disabled.
 
 As soon as you save the changes of the page, you can click the link to
 visit the page to check the new changes or, if you already have the page
-open somewhere, reload the page to see the changes. In the demo
-environment the changes will be reflected immediately. In the production
+open somewhere, reload the page to see the changes. In the Test
+environment the changes will be reflected immediately. In the Live
 environment it will take 5 minutes to see the changes reflected. This is
 due to the page’s
 [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>).
@@ -298,19 +298,19 @@ developer if you need help with changes or follow our
 [developer documentation](https://www.sharetribe.com/docs/ftw/how-to-add-static-pages-in-ftw/)
 to learn more about editing the code of content pages.
 
-## Publish your Page changes to Production
+## Publish your Page changes to Live
 
 To see your changes in your live marketplace, you must copy the changes
-you made to your production environment from your development
-environment. Click the “Copy to production…” button and then select the
+you made to your Live environment from your Development
+environment. Click the “Copy to live…” button and then select the
 specific pages that you want to copy. This will transfer all the content
-from the current environment to your production environment.
+from the current environment to your Live environment.
 
-The changes that you make to production will be available a few minutes
-after copying them to production. You do not need to save them again in
-your production environment.
+The changes that you make to Live will be available a few minutes
+after copying them to Live. You do not need to save them again in
+your Live environment.
 
-![copy-to-production](/copy-to-production.png 'Copy changes to production')
-_You can select what changes you copy to production. Only selected
-changes copy to production. The changes you copy to production overwrite
-your pages content in production._
+![copy-to-production](/copy-to-production.png 'Copy changes to live')
+_You can select what changes you copy to Live. Only selected
+changes copy to Live. The changes you copy to Live overwrite
+your pages content there._

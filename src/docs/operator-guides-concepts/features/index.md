@@ -357,7 +357,7 @@ or even personalize the templates based on who the recipient is.
 
 ## Multiple languages and currencies
 
-Flex Template for Web includes default language-specific microcopy files
+Sharetribe Web Template includes default language-specific microcopy files
 for English, Spanish, French and German, but you can easily translate it
 to the language of your choice. With some development work you can make
 your marketplace multilingual, allowing your users to use it in the
@@ -396,20 +396,16 @@ can decide fully things like which fonts and colors to use, what kind of
 pages or views there should be, and how those should be laid out. There
 are no limits to what you can do in terms of visual design.
 
-It's easy for you to get started with the design, since beautiful
-[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
-offer an ideal starting point. The templates are fully responsive so
-they look great both on desktop and mobile devices.
+It's easy for you to get started with the design by leveraging the [Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template)
+The template is fully responsive so they look great both on desktop and mobile devices.
 
-Your users won't see Sharetribe mentioned anywhere. The web address is
-your own domain, the email notifications get sent from your email
+Your users won't see Sharetribe mentioned anywhere. The web address is your own domain, the email notifications get sent from your email
 address, and the entire user experience is fully tailored to match your
 brand.
 
 ## SEO
 
-[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
-are optimized for search engines by default, and you have full control
+The Sharetribe Web Template is optimized for search engines by default, and you have full control
 to tailor the experience the way you wish. You can decide the exact URL
 structure, edit meta tags freely, and do any other optimizations you
 want.
@@ -418,9 +414,7 @@ want.
 
 Since Flex is a "headless" marketplace solution, you can use it to build
 either a website or a mobile application or both. Building a web app is
-quicker today, because of
-[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/),
-which offer a great starting point for development. A similar template
+quicker today thanks to the [Sharetribe Web Template.](https://www.sharetribe.com/docs/introduction/introducing-template). A similar template
 doesn't exist yet for mobile.
 
 ## Integrations
@@ -434,7 +428,7 @@ your marketplace to third party services in CSV format.
 
 Some examples of integrations you might want to add:
 
-- The map provider of your choice (Flex Template for Web offers default
+- The map provider of your choice (Sharetribe Web Template offers default
   implementations for [Mapbox](https://www.mapbox.com/) and Google Maps)
 - The analytics provider of your choice, like Google Analytics,
   [Hotjar](https://www.hotjar.com/), [Mixpanel](https://mixpanel.com/),
