@@ -1,4 +1,4 @@
-    ---
+---
 title: Hiring a developer to build your Flex marketplace
 slug: how-to-hire-developer
 updated: 2021-06-22
@@ -30,23 +30,29 @@ exactly you want the marketplace to work.
 We recommend using the
 [Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-flex/)
 as a basis for the development work, especially if you're launching a
-marketplace for the first time. The Template features an example marketplace designed to be customized into many different kinds of marketplaces. Developers download the Template's code, then modify it to create your unique requirements. 
+marketplace for the first time. The Template features an example
+marketplace designed to be customized into many different kinds of
+marketplaces. Developers download the Template's code, then modify it to
+create your unique requirements.
 
-Basing your customizations on the Template requires understanding
-what it offers. There are a few ways to gain this understanding:
+Basing your customizations on the Template requires understanding what
+it offers. There are a few ways to gain this understanding:
 
 1. Access the Biketribe test site via your
-   [Flex Console](https://flex-console.sharetribe.com/). Here you can access the marketplace as a user to try out its base features and understand its design. 
+   [Flex Console](https://flex-console.sharetribe.com/). Here you can
+   access the marketplace as a user to try out its base features and
+   understand its design.
 2. Install the
    [template application yourself](/introduction/getting-started-with-web-template//),
    or ask a developer to do it for you.
 3. If you're comfortable working with design software like Sketch, Adobe
    XD or Figma, you can download the complete
-   [design files](/design-toolkit/design-files/) of the Template and modify them to specify your custom design. 
+   [design files](/design-toolkit/design-files/) of the Template and
+   modify them to specify your custom design.
 
-Your developer’s job is to customize the Template (how it looks and
-how it works) to meet your unique requirements. Your responsibility is
-to communicate these requirements to the developer.
+Your developer’s job is to customize the Template (how it looks and how
+it works) to meet your unique requirements. Your responsibility is to
+communicate these requirements to the developer.
 
 When you meet with the developers, you should be able to explain to them
 how your users create content (e.g what kind of information you collect
@@ -61,7 +67,8 @@ work, you need to communicate this to the developer. You can follow
 for help.
 
 You also need to communicate to the developers how the marketplace looks
-visually. The fastest option is to follow the visual style of the Template. However, you might have a completely unique visual style in
+visually. The fastest option is to follow the visual style of the
+Template. However, you might have a completely unique visual style in
 mind. In this case, you either need to adjust the design files yourself
 to communicate the visual style you want, or hire a designer to do this
 work for you. Many Flex Experts also offer design services you can hire.
