@@ -202,8 +202,10 @@ available when using
 If you are not sure if your country is already supported, please contact
 to Stripe support before proceeding.
 
-1. Add a new country to `stripe-config.js` file (use other country
-   configurations as an example). See Stripe documentation for
+1. Add a new country to
+   [`configStripe.js`](https://github.com/sharetribe/web-template/blob/main/src/config/configStripe.js)
+   file (use other country configurations as an example). See Stripe
+   documentation for
    [minimum verification requirements](https://stripe.com/docs/connect/required-verification-information)
    and
    [bank account format](https://stripe.com/docs/connect/payouts#formats).

@@ -300,9 +300,15 @@ a extended data attribute in the
 
 The
 [configListing.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js)
-file also contains an array of listing type and their associated
-transaction process configurations. Listing types can also be used to
-define whether listings of the type should show available stock.
+file contains an array of listing type and their associated transaction
+process configurations. Listing types contain information on the
+transaction process the listing uses and what unit of time is used to
+book the listing (e.g. daily or hourly). When creating a listing, the
+user can select the listing type from a dropdown based on the listing
+types defined in the configuration files. The listing type and
+transaction process alias are stored in the public data of the listing.
+Listing types can also be used to define whether listings of the type
+should show available stock.
 
 You can use this configuration to enable different listing types, either
 using the same transaction processes or different ones. Each listing
