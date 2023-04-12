@@ -101,7 +101,7 @@ actions of a transition**.
   - [stockAdjustments](https://www.sharetribe.com/api-reference/integration.html#stock-adjustments)
   - [stockReservations](https://www.sharetribe.com/api-reference/integration.html#stock-reservations)
 - [Transaction process actions for stock reservations](/references/transaction-process-actions/#stock-reservations)
-- [Example transaction process definition](https://github.com/sharetribe/flex-example-processes#flex-product-default-process)
+- [Example transaction process definition](https://github.com/sharetribe/flex-example-processes#default-purchase)
   for selling products using stock
 - The [FTW product](/ftw/ftw-product/) is an example implementation of
   stock management.
