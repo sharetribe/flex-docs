@@ -25,12 +25,22 @@ link below.
 ## Getting started
 
 Find the Pages feature in
-[Console.](https://flex-console.sharetribe.com/) Navigate to your
-Development environment, pick the “Build” section from your top bar,
-select “Content” from the sub-menu, then select “Pages” from the left
-side menu. You should now see your default content pages (the About
+[Console.](https://flex-console.sharetribe.com/) Navigate to your test
+(or development) environment, pick the “Build” section from your top
+bar, select “Content” from the sub-menu, then select “Pages” from the
+left side menu. You should now see your default content pages (the About
 page, the Landing page, the Terms of use page, and the Policy page)
 ready for editing.
+
+<extrainfo title="Test or development environment?">
+
+You can determine which environment to use by checking the location of
+the "Copy to Live..." button in Flex Console > Build > Content. If you
+can see the button when you are in Dev, follow these instructions in
+Dev. If you can see the button in Test, follow these instructions in
+Test.
+
+</extrainfo>
 
 If you don't have the feature available in Console and want to start
 using it, check out our article about
@@ -397,13 +407,13 @@ Reference images:
 
 Now that we’ve created the page and made sure it works as supposed, all
 that’s left is to move it to the live environment. This can be done by
-clicking the blue button “Copy to live…” on the left side bar.
+clicking the blue button “Copy to Live…” on the left side bar.
 
 When you click on the button, you’ll get a pop-up asking you to confirm
-that you wish to move all the changes to live. You don’t need to move
+that you wish to move all the changes to Live. You don’t need to move
 all of the changes at the same time, though: if you have made multiple
 changes to different pages, you can pick and choose which ones you want
-to move to live.
+to move to Live.
 
 A word of warning here, as well: if you've made changes directly to your
 live environment, those changes will be overwritten and this action

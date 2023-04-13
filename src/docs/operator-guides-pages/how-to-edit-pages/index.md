@@ -300,19 +300,19 @@ to learn more about editing the code of content pages.
 
 ## Publish your Page changes to Live
 
-// TODO Does the button text change? To see your changes in your live
-marketplace, you must copy the changes you made to your live environment
-from your development environment. Click the “Copy to live…” button and
-then select the specific pages that you want to copy. This will transfer
-all the content from the current environment to your live environment.
+To see your changes in your live marketplace, you must copy the changes
+you made from your test or development environment to your live
+environment. Click the “Copy to Live…” button and then select the
+specific pages that you want to copy. This will transfer all the content
+from the current environment to your live environment.
 
 The changes that you make to your live environment will be available a
-few minutes after copying them to live. You do not need to save them
+few minutes after copying them to Live. You do not need to save them
 again in your live environment.
 
 // TODO Update screenshot
 
-![copy-to-production](/copy-to-production.png 'Copy changes to live')
+![copy-to-production](/copy-to-production.png 'Copy changes to Live')
 _You can select what changes you copy to the live environment. Only
-selected changes copy to live. The changes you copy to live overwrite
+selected changes copy to Live. The changes you copy to Live overwrite
 your pages content in the live environment._

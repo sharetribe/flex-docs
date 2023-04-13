@@ -57,14 +57,14 @@ developer can make the necessary modifications. A future release will
 also allow developers to add more types of sections and blocks, which
 will make it possible to create a wider variety of content pages.
 
-Pages works in both your development and live environments. While you
-build your custom marketplace, you use the development environment to
-create and modify your content pages. You can preview these changes
-immediately in your marketplace. When your marketplace is live and you
-have a live environment, you use the test environment to make changes to
-your published marketplace content and preview how they look in your
-development site. When ready, you copy finished changes from your test
-environment to your live environment and live marketplace application.
+Pages works in both your test and live environments. While you build
+your custom marketplace, you use the test environment to create and
+modify your content pages. You can preview these changes immediately in
+your marketplace. When your marketplace is live and you have a live
+environment, you use the test environment to make changes to your
+published marketplace content and preview how they look in your test
+site. When ready, you copy finished changes from your test environment
+to your live environment and live marketplace application.
 
 ![carousel-example](./carousel-example.png)
 
@@ -84,11 +84,21 @@ your marketplace.
 
 Once your own version of the Flex Template is set up, you can start
 building and editing your content pages in Console. Log into Console,
-navigate to your Development environment, pick the “Build” section from
-your top bar, select “Content” from the sub-menu, then select “Pages”
-from the left side menu. You should now see your default content pages
-(the About page, the Landing page, the Terms of use page, and the Policy
-page) ready for editing, or you can create your own page.
+navigate to your test (or development) environment, pick the “Build”
+section from your top bar, select “Content” from the sub-menu, then
+select “Pages” from the left side menu. You should now see your default
+content pages (the About page, the Landing page, the Terms of use page,
+and the Policy page) ready for editing, or you can create your own page.
+
+<extrainfo title="Test or development environment?">
+
+You can determine which environment to use by checking the location of
+the "Copy to Live..." button in Flex Console > Build > Content. If you
+can see the button when you are in Dev, follow these instructions in
+Dev. If you can see the button in Test, follow these instructions in
+Test.
+
+</extrainfo>
 
 ![pages-homescreen](./pages-homescreen.png)
 

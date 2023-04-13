@@ -61,7 +61,7 @@ All these decisions affect the choices you make in your microcopy.
 You can try out the Microcopy editor in your Flex test marketplace.
 After creating a Flex account, log into
 [Console](https://flex-console.sharetribe.com/). Ensure you are in the
-[Test environment](/concepts/flex-environments/#test-environment).
+[test environment](/concepts/flex-environments/#test-environment).
 
 Navigate to the Build section from your top bar, then the Content
 section. The Microcopy editor is here.
@@ -256,35 +256,36 @@ Note that
 [enabling multiple language support requires](/ftw/how-to-change-ftw-language/#developing-ftw-into-a-multilanguage-marketplace)
 custom development to set up.
 
-### 5. Publishing microcopy to the Live environment
+### 5. Publishing microcopy to the live environment
 
 Everything we have built so far with the Microcopy editor has been in
-the Development environment. When your marketplace is live with real
-users and transactions, you will have a Live environment Microcopy
-editor as well to modify the marketplace website your users are actually
-using.
+the development environment (Dev). When your marketplace is live with
+real users and transactions, you will have a live environment (Live)
+Microcopy editor as well to modify the marketplace website your users
+are actually using.
 
-Since changes made and saved in the Live environment affect your
-end-users, it is a good idea to always start making modifications in the
-Development environment. The sections above describe how to make these
-changes.
+Since changes made and saved in Live affect your end-users, it is a good
+idea to always start making modifications in Dev. The sections above
+describe how to make these changes.
 
-When you first create your Live environment, the microcopy in your
-Development environment gets automatically copied over to your Live
-environment. After both environments are up and running, you will need
-to transfer your changes from Development environment to Live
-environment manually.
+When you first create your live environment, the microcopy in Dev gets
+automatically copied over to Live. After both environments are up and
+running, you will need to transfer your changes from Dev to Live
+manually.
 
-Copy the contents of your editor in the Development environment, then
-navigate to your Live environment using the drop-down menu in the
-top-left of the top bar. Navigate to the Microcopy editor in your Live
-environment (Build>Content), paste the microcopy from your Development
-environment into the editor, and save changes.
+Copy the contents of your editor in Dev, then navigate to Live using the
+drop-down menu in the top-left of the top bar. Navigate to the Microcopy
+editor in Live(Build>Content), paste the microcopy from Dev into the
+editor, and save changes.
 
-Note that since you are working in the Live environment, there is a 5
+<info>
+
+Note that since you are working in the live environment, there is a 5
 minute delay between saving changes and seeing those changes in your
 marketplace. This delay safeguards the reliability and speed of your
 marketplace for your users.
+
+</info>
 
 ## How to edit content on content pages
 

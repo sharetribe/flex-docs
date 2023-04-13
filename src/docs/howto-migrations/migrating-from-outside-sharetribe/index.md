@@ -35,14 +35,13 @@ You should request a migration when:
 
 You will work with Sharetribe’s engineers to complete your migration. If
 you're planning to migrate your data to Flex, you should always start
-the process with a test migration to your development environment, and
-ensure everything looks correct there, before doing a live migration. If
-you want to initiate the (test or live) migration process, you should
-email flex-support@sharetribe.com with the subject “Migrating from
-outside Sharetribe”. Please include your Flex organization (your
-organization is displayed in your
-[Console](https://flex-console.sharetribe.com/) in the top right
-corner).
+the process with a test migration to your dev environment, and ensure
+everything looks correct there, before doing a live migration. If you
+want to initiate the (test or live) migration process, you should email
+flex-support@sharetribe.com with the subject “Migrating from outside
+Sharetribe”. Please include your Flex organization (your organization is
+displayed in your [Console](https://flex-console.sharetribe.com/) in the
+top right corner).
 
 ## Intermediary data
 
@@ -148,9 +147,9 @@ following keys:
   elements) of id and content.
 
 You can find your marketplace ID in Flex Console > Build > General. Note
-that the anonymised test file needs to specify your development
-environment marketplace ID and your live data file needs to specify your
-live environment marketplace ID.
+that the anonymised test file needs to specify your dev environment
+marketplace ID and your live data file needs to specify your live
+environment marketplace ID.
 
 The id part of the data row 2-tuple is specified as a tuple of 1 to 3
 elements. The first element is always an id attribute and identifies the
@@ -556,9 +555,9 @@ updates with multiple live data imports are not supported.
 
 ### Test import
 
-We can perform multiple imports to test environment, with the caveat
+We can perform multiple imports to the dev environment, with the caveat
 that no data deletion in this situation is possible. This might lead to
-duplicate information being uploaded to the test environment.
+duplicate information being uploaded to the dev environment.
 
 Also, anonymizing test import data by hiding sensitive information like
 names, addresses, email addresses and Stripe keys is highly recommended.

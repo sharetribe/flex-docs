@@ -33,7 +33,7 @@ can find the relevant options in this tutorial as well. However, if you
 are intending to work through the tutorial steps, we recommend starting
 with FTW-daily, as it is the basis for the tutorials.
 
-## Setup development environment
+## Setup a development environment
 
 ### Prerequisities
 
@@ -343,7 +343,8 @@ variables that you you collected in the previous step.
 After that, it will create `.env` file to your local repository and
 guide you through setting up the rest of the required environment
 variables. If the `.env` file doesn't exist the application won't start.
-_This `.env` file is only created for local development environment_.
+_This `.env` file is only created for the local development
+environment_.
 
 > See the [FTW Environment configuration variables](/ftw/ftw-env/) for
 > more information on the environment variables.

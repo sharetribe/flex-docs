@@ -128,26 +128,26 @@ sneakers and sellers.
 ### Environments
 
 Environments describe different instances of a Flex backend. There are
-three environment types: a Test environment, a Development environment,
-and a Live environment. Test and Development environments are included
-with every Flex account.
+three environment types: a test environment (Test), a development
+environment (Dev), and a live environment (Live). Test and Dev are
+included with every Flex account.
 
 Test environments act as a live preview on how the Saunatime Flex
-Template and Flex Console work.
+Template and Flex Console work. One example of how to use the test
+environment would be to create your content. You may modifying microcopy
+or create a new content page, for instance, which you can deploy to your
+live environment and live site when ready.
 
-The Development environment is used to build and extend your custom
+The development environment is used to build and extend your custom
 marketplace. You may add your own test Stripe account to the development
 environment and configure changes you will later deploy to your live
-site. One example of how to use the development environment would be to
-create your content. You may modifying microcopy or create a new content
-page, for instance, which you can deploy to your Live environment and
-live site when ready.
+site.
 
-When the built marketplace is ready to go live, a Live environment
-should be procured by subscribing to Flex. A Live environment lets your
+When the built marketplace is ready to go live, a live environment
+should be procured by subscribing to Flex. A live environment lets your
 marketplace add real users to your database and process transactions
-with real money. Your users see the Pages content stored in your Live
-environment. Live environments are used alongside Development
+with real money. Your users see the Pages content stored in your live
+environment. Live environments are used alongside test and development
 environments; you develop new features and content using the latter and
 publish it to the former when it is ready.
 

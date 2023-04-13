@@ -34,12 +34,12 @@ You should request a migration when:
 
 You will work with Sharetribe’s engineers to complete your migration. If
 you're planning to migrate your data from Go to Flex, you should always
-start the process with a test migration to your development environment,
-and ensure everything looks correct there, before doing a live
-migration. If you want to initiate the (test or live) migration process,
-you should email flex-support@sharetribe.com with the subject “Go to
-Flex migration”. Please include your Go marketplace URL and your Flex
-organization (your organization is displayed in your
+start the process with a test migration into your development
+environment, and ensure everything looks correct there, before doing a
+live migration. If you want to initiate the (test or live) migration
+process, you should email flex-support@sharetribe.com with the subject
+“Go to Flex migration”. Please include your Go marketplace URL and your
+Flex organization (your organization is displayed in your
 [Console](https://flex-console.sharetribe.com/) in the top right corner)
 
 ### What data is migrated?

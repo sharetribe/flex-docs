@@ -62,7 +62,7 @@ choose from three templates:
 > [getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 > for more information.
 
-You should follow the [tutorial](/tutorial/introduction/) to set up
+You should follow the [tutorial](/tutorial/introduction/) to set up a
 local development environment and connect it to GitHub.
 
 ### Pull in the latest upstream changes

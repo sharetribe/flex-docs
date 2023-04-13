@@ -18,7 +18,7 @@ Switch to the test environment. Choose the “Build” option from the top
 bar, then select “Content”. Go to the any of the default pages to start
 editing the corresponding page. When you make changes within the test
 environment, you will be able to see changes right away. If you want to
-use the Pages feature in dev or live, you would need to do further setup
+use the Pages feature in Dev or Live, you would need to do further setup
 with some development.
 
 ## For marketplaces created before 2023-02-15
@@ -47,7 +47,7 @@ functionality.
 
 ## How to enable Pages in Development or Live environments?
 
-To enable Pages in any other environment than test, you need some
+To enable Pages in any other environment than Test, you need some
 technical implementation. If you are not a developer you would need the
 help of a developer. You and them can read more about the specific steps
 in
