@@ -18,8 +18,8 @@ Switch to the Test environment. Choose the “Build” option from the top
 bar, then select “Content”. Go to the any of the default pages to start
 editing the corresponding page. When you make changes within the Test
 environment, you will be able to see changes right away. If you want to
-use the Pages feature in dev or production, you would need to do further
-setup with some development.
+use the Pages feature in Dev or Live, you would need to do further setup
+with some development.
 
 ## For marketplaces created before 2023-02-15
 
@@ -36,15 +36,15 @@ environment.
 
 ### How to enable Pages in your development or live marketplace?
 
-
 Note that the above lets you test the Pages feature (and follow along
 our Pages documentation, including this
-[FAQ tutorial](https://www.sharetribe.com/docs/operator-guides/how-to-create-an-faq-page/) only in your Test environment
+[FAQ tutorial](https://www.sharetribe.com/docs/operator-guides/how-to-create-an-faq-page/)
+only in your Test environment
 
-You will need to modify your frontend codebase to take Pages into use in the live or development version of your marketplace. 
+You will need to modify your frontend codebase to take Pages into use in
+the live or development version of your marketplace.
 
 Developers can consult
 [this guide](https://www.sharetribe.com/docs/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw)
 to learn how to update existing marketplace codebases with Pages
 functionality.
-

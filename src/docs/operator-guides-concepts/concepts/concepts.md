@@ -99,38 +99,55 @@ building integrations into many other software applications easier.
 
 ### Sharetribe Web Template
 
-Sharetribe Web Template (SWT) is the best way to start building a custom marketplace on Flex. The Template is an
-open-sourced website application modifiable with coding. Using it allows building a custom marketplace at a fraction of the
-the cost or time required to build it from scratch.
+Sharetribe Web Template (SWT) is the best way to start building a custom
+marketplace on Flex. The Template is an open-sourced website application
+modifiable with coding. Using it allows building a custom marketplace at
+a fraction of the the cost or time required to build it from scratch.
 
-Certain settings in an SWT-based marketplace will become configurable in Console throughout 2023. This includes the listing type, search page layout, search page fields, listing fields, and many more. Launching a marketplace with SWT requires a developer. 
+Certain settings in an SWT-based marketplace will become configurable in
+Console throughout 2023. This includes the listing type, search page
+layout, search page fields, listing fields, and many more. Launching a
+marketplace with SWT requires a developer.
 
-Sharetribe built other templates called "Flex Templates for Web." SWT is an upgrade on these templates by combining their functionalities into a single code base. You can find more information about these legacy templates [here](https://www.sharetribe.com/docs/ftw/legacy-templates/).
+Sharetribe built other templates called "Flex Templates for Web." SWT is
+an upgrade on these templates by combining their functionalities into a
+single code base. You can find more information about these legacy
+templates [here](https://www.sharetribe.com/docs/ftw/legacy-templates/).
 
 ### Environments
 
 Environments describe different instances of a Flex backend. There are
-three environment types: a Test environment, a Development environment,
-and a Live environment. Test and Development environments are
-included free forever with every Flex account.
+three environment types: a Test environment, a Development (Dev)
+environment, and a Live environment. Test and Dev are included free
+forever with every Flex account.
 
-Test environments are for building features and content into your markeptlace using no code tools in Console. One example of how to use the Test environment would be to create or edit your content pages. You might create a new content
-page in Test, see how it looks on your test marketplace, then "Copy to live" the page when it is ready.
+Test environments are for building features and content into your
+markeptlace using no code tools in Console. One example of how to use
+the Test environment would be to create or edit your content pages. You
+might create a new content page in Test, see how it looks on your test
+marketplace, then "Copy to live" the page when it is ready.
 
 The Development environment is used to build and extend your custom
-marketplace by developers. You may add your own test Stripe account to the development
-environment and use it with code to build custom features you will later deploy to your live
-site. 
+marketplace by developers. You may add your own test Stripe account to
+the development environment and use it with code to build custom
+features you will later deploy to your live site.
 
-A Live environment is needed to launch a marketplace. It lets
-your marketplace signup real users and process real transactions. 
+A Live environment is needed to launch a marketplace. It lets your
+marketplace signup real users and process real transactions.
 
-We recommend using your environments and associated apps (frontends) in this way: 
+We recommend using your environments and associated apps (frontends) in
+this way:
 
-1. Live environment and live app. This should always be fully functional and only include features that have been released to the users of the marketplace.
-2. Test environment and test app. This should always be identical to the live app, so when the operator makes no-code changes to content or configuration, they can immediately preview them in the test app before publishing them.
-3. Development environment and development app. This is the work-in-progress application, which can sometimes include features that have not yet been released to users.
-
+1. Live environment and live app. This should always be fully functional
+   and only include features that have been released to the users of the
+   marketplace.
+2. Test environment and test app. This should always be identical to the
+   live app, so when the operator makes no-code changes to content or
+   configuration, they can immediately preview them in the test app
+   before publishing them.
+3. Development environment and development app. This is the
+   work-in-progress application, which can sometimes include features
+   that have not yet been released to users.
 
 ### Extended data
 

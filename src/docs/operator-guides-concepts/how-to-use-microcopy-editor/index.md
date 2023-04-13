@@ -58,8 +58,8 @@ All these decisions affect the choices you make in your microcopy.
 
 ## How to test the Microcopy editor?
 
-You can test the Microcopy editor in your Flex demo marketplace. After
-creating a Flex account, log into
+You can try out the Microcopy editor in your Flex test marketplace.
+After creating a Flex account, log into
 [Console](https://flex-console.sharetribe.com/). Ensure you are in the
 [Test environment](/concepts/flex-environments/#test-environment).
 
@@ -84,7 +84,7 @@ Saunatime code repository. Click “src” folder→ click “translations”
 folder→ open “en.json” file→ copy content.
 [Here is a direct link](https://github.com/sharetribe/web-template/blob/main/src/translations/en.json)
 to the file you need.Then paste the data into the Console Microcopy
-editor. You can make changes to the Saunatime demo microcopy using the
+editor. You can make changes to the Saunatime test microcopy using the
 same workflow described below.
 
 ## How to modify microcopy when building your marketplace with a developer?
@@ -92,26 +92,27 @@ same workflow described below.
 ### 1. Setup your Sharetribe Web Template with a developer
 
 To use the Microcopy editor on your marketplace, you will first need to
-set up the Sharetribe Web Template, which serves as the basis for your custom
-marketplace. Setting up the Template for customization is a
+set up the Sharetribe Web Template, which serves as the basis for your
+custom marketplace. Setting up the Template for customization is a
 development process. If you are not a developer or do not yet have a
 developer on your team, you should hire a
 [Flex Expert to help you build your marketplace](https://www.sharetribe.com/experts/).
 
-The Template has default microcopy vocabulary included, reflecting
-its starting theme Biketribe. Biketribe is a marketplace for buying and renting bikes. 
+The Template has default microcopy vocabulary included, reflecting its
+starting theme Biketribe. Biketribe is a marketplace for buying and
+renting bikes.
 
 Having pre-written microcopy is a significant time saver. Except for the
-Biketribe theme, most of the Template's microcopy uses generic
-and descriptive language suitable for most marketplaces, which means
-there are many microcopy texts you do not need to formulate. The rest of
-the article will guide you on how to use the Microcopy editor to change
-the microcopy you wish to change in building your custom marketplace.
+Biketribe theme, most of the Template's microcopy uses generic and
+descriptive language suitable for most marketplaces, which means there
+are many microcopy texts you do not need to formulate. The rest of the
+article will guide you on how to use the Microcopy editor to change the
+microcopy you wish to change in building your custom marketplace.
 
 ### 2. Load your microcopy into the editor
 
-After you and your developer set up the Sharetribe Web Template for development, you
-can use the editor to start modifying your microcopy.
+After you and your developer set up the Sharetribe Web Template for
+development, you can use the editor to start modifying your microcopy.
 
 First, you must load the default microcopy into the editor. You can do
 this by copy and pasting the language-specific microcopy file that
@@ -193,7 +194,7 @@ use the editor to modify your marketplace’s copy-texts.
 To start, we suggest going through the microcopy file in the editor.
 Look at the values and see how they compare to the terminology you
 decided to use in step 1. The most frequently modified pieces of
-microcopy use language specific to the Template's theme "Biketribe". 
+microcopy use language specific to the Template's theme "Biketribe".
 
 Using the search functionality in the Microcopy editor is the easiest
 way to find the copy-texts that need changing. Press “CMD+F” on a Mac or
@@ -232,8 +233,8 @@ corresponding new key directly to your marketplace code. Your developer
 will code the element, situation, or place where the microcopy will
 exist (like a new button, for example), define its key, and then add it
 to the microcopy file edited by the Microcopy editor. Once the key
-exists in the microcopy file, you can copy the new key-value
-pair into the Microcopy editor.
+exists in the microcopy file, you can copy the new key-value pair into
+the Microcopy editor.
 
 Supporting multiple languages in your marketplace is a special case of
 adding microcopy. Because the Microcopy editor only works with a single
@@ -245,35 +246,36 @@ Note that
 [enabling multiple language support requires](/ftw/how-to-change-ftw-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplacee)
 custom development to set up.
 
-### 5. Publishing microcopy to production
+### 5. Publishing microcopy to the live environment
 
 Everything we have built so far with the Microcopy editor has been in
-the Development environment. When your marketplace is live with real
-users and transactions, you will have a Production environment Microcopy
-editor as well to modify the marketplace website your users are actually
-using.
+the development environment (Dev). When your marketplace is live with
+real users and transactions, you will have a live environment (Live)
+Microcopy editor as well to modify the marketplace website your users
+are actually using.
 
-Since changes made and saved in the Production environment affect your
-end-users, it is a good idea to always start making modifications in the
-Development environment. The sections above describe how to make these
-changes.
+Since changes made and saved in Live affect your end-users, it is a good
+idea to always start making modifications in Dev. The sections above
+describe how to make these changes.
 
-When you first create your Production environment, the microcopy in your
-Development environment gets automatically copied over to your
-Production environment. After both environments are up and running, you
-will need to transfer your changes from Development environment to
-Production environment manually.
+When you first create your live environment, the microcopy in Dev gets
+automatically copied over to Live. After both environments are up and
+running, you will need to transfer your changes from Dev to Live
+manually.
 
-Copy the contents of your editor in the Development environment, then
-navigate to your Production environment using the drop-down menu in the
-top-left of the top bar. Navigate to the Microcopy editor in your
-Production environment (Build>Content), paste the microcopy from your
-Development environment into the editor, and save changes.
+Copy the contents of your editor in Dev, then navigate to Live using the
+drop-down menu in the top-left of the top bar. Navigate to the Microcopy
+editor in Live(Build>Content), paste the microcopy from Dev into the
+editor, and save changes.
 
-Note that since you are working in the Production environment, there is
-a 5 minute delay between saving changes and seeing those changes in your
+<info>
+
+Note that since you are working in the live environment, there is a 5
+minute delay between saving changes and seeing those changes in your
 marketplace. This delay safeguards the reliability and speed of your
 marketplace for your users.
+
+</info>
 
 ## How to edit content on content pages
 

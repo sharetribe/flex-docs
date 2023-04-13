@@ -23,24 +23,24 @@ It is important to understand that Console is a way of viewing and
 manipulating the data on your marketplace. Each marketplace is
 specifically related to an environment. Each organization can have
 multiple environments. By default, there are three environments to
-consider: demo, development (dev) and production (prod). Each
-environment has its own data and therefore the information that you can
-view and manipulate through Console will be exclusively related to the
-environment that you are working with. This means that the development
-environment’s data in Console is completely separate from the data in
-the production environment’s Console.
+consider: test, development (dev) and live. Each environment has its own
+data and therefore the information that you can view and manipulate
+through Console will be exclusively related to the environment that you
+are working with. This means that the development environment’s data in
+Console is completely separate from the data in the live environment’s
+Console.
 
-When you open your account, you have immediate access to the demo and
+When you open your account, you have immediate access to the test and
 development environments within the organization. Eventually, when you
-are ready to launch your marketplace, you can request a production
-environment setup.
+are ready to launch your marketplace, you can request a live environment
+setup.
 
 When you interact and create new users, listings, and transactions with
-your [live demo](https://flex-console.sharetribe.com), you will see the
-data in the demo environment. While you cannot modify the code of the
-demo, you can start playing around with it and see the changes you make
-reflected in the demo environment’s Console. You can create users, new
-listings, and even transactions and reviews.
+your [test application](https://flex-console.sharetribe.com), you will
+see the data in the test environment. While you cannot modify the code
+of the test environment, you can start playing around with it and see
+the changes you make reflected in the test environment’s Console. You
+can create users, new listings, and even transactions and reviews.
 
 To interact and see data in your development environment’s Console, you
 first need to set up the frontend application for your development
@@ -48,7 +48,7 @@ marketplace.
 
 It is easy to change environments from the topbar.
 
-![Change environments](./env-change.png)
+![Change environments](./change-env.png)
 
 ## Sections
 
@@ -60,7 +60,7 @@ In the Home section, you find information about working with Flex. You
 can find links to various resources that will help you understand, test,
 and build your custom marketplace. These include:
 
-- Links to your fully functional demo marketplace called Saunatime,
+- Links to your fully functional test marketplace called Saunatime,
   where you can get an idea of how Flex works.
 - Instructions on how to set up your local Flex instance and links to
   the Flex documentation and API reference, all of which you will need
@@ -141,9 +141,9 @@ In Console, you navigate between the different environments and sections
 through links in your top bar.
 
 On the left side of the top bar, you can switch between the environments
-of your organization: demo, development, and production. If your
-marketplace is not yet live, this is where you’ll find the option to set
-up production and subscribe to Flex. Once your production environment is
+of your organization: test, development, and live. If your marketplace
+is not yet live, this is where you’ll find the option to set up your
+live environment and subscribe to Flex. Once your live environment is
 created, you’ll access it from here.
 
 Next come the different sections we discussed above: Home, Build, and

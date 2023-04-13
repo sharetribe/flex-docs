@@ -121,7 +121,7 @@ stored in an array, so the schema type should be `multi-enum`.
 Let's first see what search schemas we have defined:
 
 ```
-$ flex-cli search -m my-test-marketplace
+$ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope   Key   Type   Default value   Doc
 
@@ -130,17 +130,17 @@ Schema for   Scope   Key   Type   Default value   Doc
 Let's add the search schemas for the category and amenities:
 
 ```
-$ flex-cli search set --key category --type enum --scope public -m my-test-marketplace
+$ flex-cli search set --key category --type enum --scope public -m my-marketplace-dev
 ```
 
 ```
-$ flex-cli search set --key amenities --type multi-enum --scope public -m my-test-marketplace
+$ flex-cli search set --key amenities --type multi-enum --scope public -m my-marketplace-dev
 ```
 
 We should now see the details for these new schemas:
 
 ```
-$ flex-cli search -m my-test-marketplace
+$ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope   Key        Type        Default value   Doc
 listing      public  amenities  multi-enum
@@ -169,7 +169,7 @@ to find users of a certain age range.
 Search schema for user profiles can be added as follows:
 
 ```
-$ flex-cli search set --schema-for userProfile --key age --type long --scope protected -m my-test-marketplace
+$ flex-cli search set --schema-for userProfile --key age --type long --scope protected -m my-marketplace-dev
 ```
 
 The above adds a search schema for `userProfile` with `long` type for a
@@ -179,7 +179,7 @@ Querying the defined schemas now shows both the listing schemas added on
 the previous step and the new user profile schema:
 
 ```
-$ flex-cli search -m my-test-marketplace
+$ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key        Type        Default value   Doc
 listing      public     amenities  multi-enum
@@ -206,7 +206,7 @@ You can set the default value for a search schema simply by passing a
 schema described above, the Flex CLI command is as follows:
 
 ```
-$ flex-cli search set --key isPromoted --type boolean --scope metadata --default false -m my-test-marketplace
+$ flex-cli search set --key isPromoted --type boolean --scope metadata --default false -m my-marketplace-dev
 ```
 
 Now, if we query all the search schemas on the marketplace, we can see
@@ -214,7 +214,7 @@ the default value for the `isPromoted` schema in the corresponding
 column.
 
 ```
-$ flex-cli search -m my-test-marketplace
+$ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key         Type         Default value   Doc
 listing      metadata   isPromoted  boolean      false

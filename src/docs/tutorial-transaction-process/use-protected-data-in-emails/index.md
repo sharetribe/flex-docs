@@ -141,7 +141,7 @@ have most the up-to-date version of the process. You can fetch any
 process version with Flex CLI:
 
 ```shell
-flex-cli process pull --process=cottagedays-daily-booking --alias=release-1 --path=./cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process pull --process=cottagedays-daily-booking --alias=release-1 --path=./cottagedays-daily-booking --marketplace=cottagedays-dev
 ```
 
 > **Note**: If you already have _cottagedays-daily-booking_ directory
@@ -217,7 +217,7 @@ The short guide of the necessary steps:
    ```
 3. Use Flex CLI's preview with that context:
    ```shell
-   flex-cli notifications preview --template cottagedays-daily-booking/templates/booking-request-accepted --context sample-template-context.json --marketplace=cottagedays-test
+   flex-cli notifications preview --template cottagedays-daily-booking/templates/booking-request-accepted --context sample-template-context.json --marketplace=cottagedays-dev
    ```
 
 </extrainfo>
@@ -234,7 +234,7 @@ take a look at the
 Push the updated process:
 
 ```shell
-flex-cli process push --process=cottagedays-daily-booking --path=./cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process push --process=cottagedays-daily-booking --path=./cottagedays-daily-booking --marketplace=cottagedays-dev
 ```
 
 Check the version number from the output of the previous _push_ command.
@@ -243,21 +243,21 @@ With _process list_ command you can get the overall picture of versions
 and process aliases:
 
 ```shell
-flex-cli process list --process=cottagedays-daily-booking --marketplace=cottagedays-test
+flex-cli process list --process=cottagedays-daily-booking --marketplace=cottagedays-dev
 ```
 
 Update the alias to point to **the latest version** of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-daily-booking --version=4 --marketplace=cottagedays-test
+flex-cli process update-alias --alias=release-1 --process=cottagedays-daily-booking --version=4 --marketplace=cottagedays-dev
 ```
 
-## Test transaction on your test environment
+## Test transaction in your dev environment
 
 Now all the changes are made and the transaction process is updated. Now
-it's time to test it with a transaction. You should create 2 new user
-accounts for your test marketplace and create a listing to one of them.
+it's time to dev it with a transaction. You should create 2 new user
+accounts for your dev marketplace and create a listing to one of them.
 Then with the other account book the newly created listing.
 
 When you accept that booking request, you should see email notification

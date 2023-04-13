@@ -343,17 +343,17 @@ troubleshoot the problem.
 
 - Double check that you have followed the
   [Stripe setup instructions](/how-to/set-up-and-use-stripe/). Note that
-  in your test environment, you need to use the Stripe keys starting
-  with `sk_test` and `pk_test`, and you will also need to use
+  in your dev and test environments, you need to use the Stripe keys
+  starting with `sk_test` and `pk_test`, and you will also need to use
   [Stripe's test payout details](https://stripe.com/docs/connect/testing#payouts)
   and
   [test payment methods](https://stripe.com/docs/testing#payment-intents-api)
-  with those test keys. In production with real payment methods, you
-  will need to use the keys starting with `sk_live` and `pk_live`. Also
-  check that the keys you are using match the keys in Stripe Dashboard.
-  You can "roll" i.e. refresh the keys if necessary and enter the new
-  keys &mdash; they will still be connected to the same Stripe platform
-  account.
+  with those test keys. In the live environment with real payment
+  methods, you will need to use the keys starting with `sk_live` and
+  `pk_live`. Also check that the keys you are using match the keys in
+  Stripe Dashboard. You can "roll" i.e. refresh the keys if necessary
+  and enter the new keys &mdash; they will still be connected to the
+  same Stripe platform account.
 
 - If you get your Stripe integration working to the point that you get
   an error message from Stripe, it is useful to take a moment to check

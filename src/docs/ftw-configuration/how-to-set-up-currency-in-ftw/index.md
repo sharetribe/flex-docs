@@ -99,9 +99,9 @@ there are two places in FTW where prices are calculated:
   [EstimatedCustomerBreakdownMaybe.js](https://github.com/sharetribe/flex-template-web/blob/master/src/components/OrderPanel/EstimatedCustomerBreakdownMaybe.js)
   on FTW-product)
 
-## Your Saunatime demo listings
+## Your Saunatime test listings
 
-If you just started, you likely have a few demo Saunatime listings in
+If you just started, you likely have a few test Saunatime listings in
 your Console. These listings use EUR as their currency. Configuring a
 currency different than EUR will result in an error as the FTW cannot
 convert the currency of existing listings. You can ignore this error by

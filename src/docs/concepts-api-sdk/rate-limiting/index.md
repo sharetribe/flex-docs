@@ -10,10 +10,10 @@ ingress:
 published: true
 ---
 
-Starting in January 2023, Marketplace API and Integration API will
-feature new rate limits in dev and demo environments. In addition,
-Integration API will feature new concurrency limits in dev and demo
-environments and, eventually, in production environments.
+Starting in January 2023, Marketplace API and Integration API feature
+new rate limits in dev and test environments. In addition, Integration
+API features new concurrency limits in dev and test environments and,
+eventually, in live environments.
 
 <extrainfo title="What are rate limits and concurrency limits?">
 
@@ -35,7 +35,7 @@ rate limits in the API reference for
 and
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#rate-limits).
 
-It is good to note that **production environments are currently not rate
+It is good to note that **live environments are currently not rate
 limited**, except for one endpoint in Integration API. Still, as you
 build your Flex marketplace implementation to take the rate and
 concurrency limits into account in your development environment, we do
@@ -43,10 +43,10 @@ appreciate it if you also transfer those behaviors into production.
 
 ## Interaction between different rate limits
 
-All query and command endpoints have rate limits in dev and demo
+All query and command endpoints have rate limits in dev and test
 environments. In addition, the Integration API listing creation endpoint
 has a separate rate limit in all environments. This means that in dev
-and demo environments, both rate limits apply to listing creation in the
+and test environments, both rate limits apply to listing creation in the
 following way:
 
 - If the command rate limit burst capacity has not yet been depleted,
@@ -87,7 +87,7 @@ default starting from version 1.9.0. To take this built-in concurrency
 limiting to use, you need to make sure your SDK is updated to at least
 this version.
 
-To handle the general rate limits in dev and demo environments, you can
+To handle the general rate limits in dev and test environments, you can
 pass configurations for query and command rate limiters. You can see the
 details of passing those configurations in our
 [SDK documentation](https://sharetribe.github.io/flex-integration-sdk-js/rate-limits.html).

@@ -168,7 +168,7 @@ use the [Flex design files](/design-toolkit/design-files/) to guide your
 developer on how you want this to work.
 
 You can review everything included in the Flex Template by exploring the
-demo marketplace in your Console. You can refer to this article to
+test marketplace in your Console. You can refer to this article to
 [review the screens that are part of a transaction](/design-toolkit/your-user-journey-a-guide/#transaction-process).
 
 ## Share your transaction process with your developer

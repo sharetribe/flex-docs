@@ -266,9 +266,9 @@ changes the save button will be disabled.
 As soon as you save the changes of the page, you can click the link to
 visit the page to check the new changes or, if you already have the page
 open somewhere, reload the page to see the changes. In the Test
-environment the changes will be reflected immediately. In the Live
-environment it will take 5 minutes to see the changes reflected. This is
-due to the page’s
+environment, the changes will be reflected immediately. In the Live
+environment, it will take 5 minutes to see the changes reflected. This
+is due to the page’s
 [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>).
 
 ### Reorder Sections and Blocks
@@ -301,16 +301,16 @@ to learn more about editing the code of content pages.
 ## Publish your Page changes to Live
 
 To see your changes in your live marketplace, you must copy the changes
-you made to your Live environment from your Development
-environment. Click the “Copy to live…” button and then select the
-specific pages that you want to copy. This will transfer all the content
-from the current environment to your Live environment.
+you made from your Development environment to your Live environment.
+Click the “Copy to live…” button and then select the specific pages that
+you want to copy. This will transfer all the content from the current
+environment to your Live environment.
 
-The changes that you make to Live will be available a few minutes
-after copying them to Live. You do not need to save them again in
-your Live environment.
+The changes that you make to Live will be available a few minutes after
+copying them to Live. You do not need to save them again in your Live
+environment.
 
 ![copy-to-production](/copy-to-production.png 'Copy changes to live')
-_You can select what changes you copy to Live. Only selected
-changes copy to Live. The changes you copy to Live overwrite
-your pages content there._
+_You can select what changes you copy to Live. Only selected changes
+copy to Live. The changes you copy to Live overwrite your pages content
+there._
