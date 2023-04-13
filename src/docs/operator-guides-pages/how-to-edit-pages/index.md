@@ -310,8 +310,6 @@ The changes that you make to your live environment will be available a
 few minutes after copying them to Live. You do not need to save them
 again in your live environment.
 
-// TODO Update screenshot
-
 ![copy-to-production](/copy-to-production.png 'Copy changes to Live')
 _You can select what changes you copy to the live environment. Only
 selected changes copy to Live. The changes you copy to Live overwrite

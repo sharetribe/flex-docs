@@ -17,7 +17,7 @@ The environment can be changed from the dropdown in the left corner of
 the topbar. Those who have access to multiple organizations can see the
 organization dropdown on the right.
 
-// TODO Update screenshot of env selection
+![Enviroment selection](./env-change.png)
 
 <info>
 

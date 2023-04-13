@@ -193,7 +193,6 @@ Alternatively, if you have an application running in the address set as
 your **Marketplace URL**, you can click the "View page" link next to the
 page title in Flex Console.
 
-// TODO Check if screenshot needs to be changed
 ![View page](./view-page.png)
 
 This will open the page in your **Marketplace URL** address.
