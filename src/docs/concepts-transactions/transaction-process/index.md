@@ -192,7 +192,7 @@ next and **how** it happens.
 Let’s revisit our Flex default transaction process, this time in
 conjunction with Flex Template for Web, to illustrate this. You’ll see
 how a transaction process state looks for providers and customers in
-Saunatime, a Flex demo marketplace. If you’re not sure what is meant by
+Saunatime, a Flex test marketplace. If you’re not sure what is meant by
 the “Flex Template”, you can read more about it
 [here](/operator-guides/concepts/#flex-templates-for-web-ftw).
 

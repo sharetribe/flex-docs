@@ -50,7 +50,7 @@ to the listing's extended data - so the first prerequisite is already
 covered. Now we add the schema for it.
 
 ```shell
-flex-cli search set --key view --type enum --scope public -m my-test-marketplace
+flex-cli search set --key view --type enum --scope public -m my-marketplace-dev
 ```
 
 Basically this command says that we set a new _search index_ for the
@@ -64,10 +64,10 @@ search engine:
 
   Read more about [public data](/references/extended-data/).
 
-- `-m my-marketplace-test`: your marketplace ID.
+- `-m my-marketplace-dev`: your marketplace ID.
 
-  With CottageDays test marketplace, the ID is _cottagedays-test_. You
-  can check your marketplace ID from Flex Console (Build section).
+  With CottageDays dev marketplace, the ID is _cottagedays-dev_. You can
+  check your marketplace ID from Flex Console (Build section).
 
 ### Add SingleSelectFilter component
 

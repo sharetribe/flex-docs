@@ -226,7 +226,7 @@ can set the search schema for amenities public data key. Since one
 listing can have multiple amenities, the schema type is **multi-enum**.
 
 ```shell
-flex-cli search set --key amenities --type multi-enum --scope public -m my-marketplace-test
+flex-cli search set --key amenities --type multi-enum --scope public -m my-marketplace-dev
 ```
 
 Basically this command says that we set a new _search index_ for the
@@ -240,10 +240,10 @@ search engine:
 
   Read more about [public data](/references/extended-data/).
 
-- `-m my-marketplace-test`: your marketplace ID.
+- `-m my-marketplace-dev`: your marketplace ID.
 
-  With CottageDays test marketplace, the ID is _cottagedays-test_. You
-  can check your marketplace ID from Flex Console (Build section).
+  With CottageDays dev marketplace, the ID is _cottagedays-dev_. You can
+  check your marketplace ID from Flex Console (Build section).
 
 Read more about
 [setting search schemas with Flex CLI](/how-to/manage-search-schemas-with-flex-cli/).
@@ -256,7 +256,7 @@ can belong to only one category. So, if you decide to add _category_ key
 to the search schema, you need to use type **enum** instead:
 
 ```shell
-flex-cli search set --key category --type enum --scope public -m my-marketplace-test
+flex-cli search set --key category --type enum --scope public -m my-marketplace-dev
 ```
 
 </extrainfo>

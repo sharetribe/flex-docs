@@ -10,7 +10,7 @@ published: true
 ---
 
 The following configuration variables can be set to control the Flex
-template app behaviour. Most of them have defaults that work for
+template app behaviour. Most of them have defaults that work for a
 development environment. For production deploys most should be set.
 
 ## Variables

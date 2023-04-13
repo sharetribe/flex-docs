@@ -34,12 +34,12 @@ You should request a migration when:
 
 You will work with Sharetribe’s engineers to complete your migration. If
 you're planning to migrate your data from Go to Flex, you should always
-start the process with a test migration to your development environment,
-and ensure everything looks correct there, before doing a live
-migration. If you want to initiate the (test or live) migration process,
-you should email flex-support@sharetribe.com with the subject “Go to
-Flex migration”. Please include your Go marketplace URL and your Flex
-organization (your organization is displayed in your
+start the process with a test migration into your development
+environment, and ensure everything looks correct there, before doing a
+live migration. If you want to initiate the (test or live) migration
+process, you should email flex-support@sharetribe.com with the subject
+“Go to Flex migration”. Please include your Go marketplace URL and your
+Flex organization (your organization is displayed in your
 [Console](https://flex-console.sharetribe.com/) in the top right corner)
 
 ### What data is migrated?
@@ -129,7 +129,7 @@ More info can be found on the
 
 ## Your Go marketplace
 
-In addition to migrating your Go marketplace data to your production
+In addition to migrating your Go marketplace data to your live
 environment, our team will work with you to make sure any ongoing
 transactions are completed successfully.
 
@@ -155,8 +155,8 @@ please email flex-support@sharetribe.com and include the following
 information:
 
 - Migration date and time (your Go marketplace will be restricted from
-  new activity at this point; your Flex marketplace will be in
-  production and live after this point)
+  new activity at this point; your Flex marketplace will be live after
+  this point)
 - Subscription model, annual or monthly payments
 - The sender email address: e.g., email@example.com
 - The sender email name: e.g., The Marketplace Team.

@@ -204,10 +204,10 @@ Once you've reached a point when you're ready to invite first real users
 to your marketplace, it's time to go live.
 
 At this point, you should subscribe to Sharetribe Flex. You can do this
-from Flex Console. Open the Environment dropdown and click the Set up
-production item to subscribe.
+from Flex Console. Open the Environment dropdown and click the _Set up
+live_ item to subscribe.
 
-![Click Set up production to subscribe](./set-up-production.png)
+![Click Set up live to subscribe](./set-up-live.png)
 
 This is when you start paying the Flex minimum monthly fee (see more
 information about
@@ -215,10 +215,10 @@ information about
 development phase is completely free. You only need to pay when you
 start inviting your real users to your marketplace.
 
-After you've subscribed, we will create a _production environment_ to
-complement your current _development_ and _demo_ environments. This
-means that you can easily do development and testing of new features,
-without those affecting your actual users in any way.
+After you've subscribed, we will create a _live environment_ to
+complement your current _dev_ and _test_ environments. This means that
+you can easily do development and testing of new features, without those
+affecting your actual users in any way.
 
 Naturally, development doesn't stop once you've gone live: that's just
 the very beginning. It's highly likely that you want to keep improving
