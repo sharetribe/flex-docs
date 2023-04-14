@@ -1,30 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { baselineBreakpoint, baselineLarge, grid } from '../../config';
+import { baselineBreakpoint, grid } from '../../config';
 import { WarningIcon } from '../../components';
 
 const Icon = styled(WarningIcon).attrs({
   bgcolor: '#c4dfff',
 })`
-  min-width: 23px;
   height: 23px;
   margin-right: 10px;
+  min-width: 23px;
 `;
 
 const Banner = styled.div`
-  display: ${props => (props.isOpen ? 'flex' : 'none')};
-  position: relative;
   background-color: #c4dfff;
   border: 2px solid #224fb6;
   border-radius: 4px;
-  padding: 20px 30px 20px 20px;
+  display: ${props => (props.isOpen ? 'flex' : 'none')};
   font-size: 12px;
+  font-weight: 700;
   max-width: min(
     ${props => props.theme.pageContentMaxWidth + 2 * grid.sideMargin}px,
     calc(100% - 4em)
   );
+  padding: 20px 30px 20px 20px;
+  position: relative;
   margin: 30px auto 0 auto;
-  font-weight: 700;
+
   a {
     font-weight: 400;
     text-decoration: underline;
@@ -55,7 +56,7 @@ const Cross = props => {
       width="0.75em"
       height="0.75em"
       stroke="currentColor"
-      stroke-width="2"
+      strokeWidth="2"
       {...props}
     >
       <path d="M1,1 9,9 M9,1 1,9" />
@@ -90,7 +91,6 @@ const VersionBanner = props => {
         <Icon />
         <div>
           <StyledCross onClick={() => setIsOpen(!isOpen)}></StyledCross>
-
           <span>
             You are browsing the documentation for the new Sharetribe Web
             Template. If you are using FTW-daily, hourly or product, see the
