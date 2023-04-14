@@ -1,4 +1,10 @@
 {
+    "rewrites": [
+    {
+      "source": "/legacy/:match(.*)",
+      "destination": "https://legacy-docs-git-legacy-docs-sharetribe.vercel.app/:match"
+    }
+  ],
   "redirects":
 [
   {
