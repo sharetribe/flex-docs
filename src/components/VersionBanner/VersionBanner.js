@@ -64,7 +64,7 @@ const Cross = props => {
   );
 };
 
-const StyledCross = styled(Cross)`
+const CloseBanner = styled(Cross)`
   width: 20px;
   position: absolute;
   cursor: pointer;
@@ -90,14 +90,14 @@ const VersionBanner = props => {
       <Banner isOpen={isOpen}>
         <Icon />
         <div>
-          <StyledCross onClick={() => setIsOpen(!isOpen)}></StyledCross>
+          <CloseBanner onClick={() => setIsOpen(!isOpen)}></CloseBanner>
           <span>
             You are browsing the documentation for the new Sharetribe Web
             Template. If you are using FTW-daily, hourly or product, see the
             legacy documentation.
           </span>
           <div>
-            <a href="https://www.sharetribe.com/docs/legacy/">Read more</a>
+            <a href="/ftw/legacy-templates/">Read more</a>
             <a href="https://www.sharetribe.com/docs/legacy/">
               Legacy documentation
             </a>
