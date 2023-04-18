@@ -152,7 +152,7 @@ have most the up-to-date version of the process. You can fetch any
 process version with Flex CLI:
 
 ```shell
-flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
 <info>
@@ -233,7 +233,7 @@ The short guide of the necessary steps:
    ```
 3. Use Flex CLI's preview with that context:
    ```shell
-   flex-cli notifications preview --template cottagedays-nightly-booking/templates/booking-request-accepted --context sample-template-context.json --marketplace=cottagedays-dev
+   flex-cli notifications preview --template cottagedays-nightly-booking/templates/booking-request-accepted --context sample-template-context.json --marketplace=cottagedays-test
    ```
 
 </extrainfo>
@@ -250,7 +250,7 @@ take a look at the
 Push the updated process:
 
 ```shell
-flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
 Check the version number from the output of the previous _push_ command.
@@ -259,17 +259,17 @@ With _process list_ command you can get the overall picture of versions
 and process aliases:
 
 ```shell
-flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-test
 ```
 
 Update the alias to point to **the latest version** of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=4 --marketplace=cottagedays-dev
+flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=4 --marketplace=cottagedays-test
 ```
 
-## Test transaction in your dev environment
+## Test transaction on your test environment
 
 Now all the relevant changes are made, and the transaction process is
 updated. It is time to test our new process with a transaction. You

@@ -1,7 +1,7 @@
 ---
 title: Assets
 slug: assets
-updated: 2023-04-01
+updated: 2022-05-16
 category: references
 ingress: Reference documentation providing information on assets.
 published: true
@@ -105,19 +105,20 @@ specific version can be cached for extended period of time. On the other
 hand, the `latest` alias is mutable and therefore asset data retrieved
 by alias cannot be cached indefinitely. The cache time for access by
 alias can differ depending on whether your marketplace environment is a
-development or live one. For live marketplaces the cache time can be up
-to 5 minutes, while for development marketplaces it is much lower. Refer
-to the
+development or production one. For production marketplaces the cache
+time can be up to 5 minutes, while for development marketplaces it is
+much lower. Refer to the
 [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 for up-to-date-information. The `Cache-Control` HTTP header will always
 provide correct data and client applications should observe that if
 custom caching is being implemented.
 
-> In live marketplaces, the latest asset data can be cached and it may
-> take up to 5 minutes before any changes are visible to all end users.
+> In production marketplaces, the latest asset data can be cached and it
+> may take up to 5 minutes before any changes are visible to all end
+> users.
 
 ## Further reading
 
 - [Editing client application microcopy](/concepts/microcopy/)
-- [Managing asset-based marketplace content](/concepts/content-management/)
+- [Managing asset-based marketplace content](/concepts/content-management)
 - [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)

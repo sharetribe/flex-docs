@@ -35,13 +35,14 @@ You should request a migration when:
 
 You will work with Sharetribe’s engineers to complete your migration. If
 you're planning to migrate your data to Flex, you should always start
-the process with a test migration to your dev environment, and ensure
-everything looks correct there, before doing a live migration. If you
-want to initiate the (test or live) migration process, you should email
-flex-support@sharetribe.com with the subject “Migrating from outside
-Sharetribe”. Please include your Flex organization (your organization is
-displayed in your [Console](https://flex-console.sharetribe.com/) in the
-top right corner).
+the process with a test migration to your development environment, and
+ensure everything looks correct there, before doing a live migration. If
+you want to initiate the (test or live) migration process, you should
+email flex-support@sharetribe.com with the subject “Migrating from
+outside Sharetribe”. Please include your Flex organization (your
+organization is displayed in your
+[Console](https://flex-console.sharetribe.com/) in the top right
+corner).
 
 ## Intermediary data
 
@@ -147,9 +148,9 @@ following keys:
   elements) of id and content.
 
 You can find your marketplace ID in Flex Console > Build > General. Note
-that the anonymised test file needs to specify your dev environment
-marketplace ID and your live data file needs to specify your live
-environment marketplace ID.
+that the anonymised test file needs to specify your test environment
+marketplace ID and your production data file needs to specify your
+production environment marketplace ID.
 
 The id part of the data row 2-tuple is specified as a tuple of 1 to 3
 elements. The first element is always an id attribute and identifies the
@@ -178,7 +179,7 @@ exported data.
 
 Note that import ids are only used in the import phase and they can not
 be mapped to existing resource ids, because the final resource id is not
-created based on the import id. In other words, if e.g. your dev
+created based on the import id. In other words, if e.g. your test
 marketplace already has data rows, you cannot reference those rows by
 import ids in the Intermediary file.
 
@@ -551,14 +552,15 @@ Timestamp in .edn is given as an `#inst` tagged element.
 
 ### No updates are supported
 
-The import is loaded only once to the live environment and currently
-updates with multiple live data imports are not supported.
+The import is loaded only once to the production environment and
+currently updates with multiple production data imports are not
+supported.
 
 ### Test import
 
-We can perform multiple imports to the dev environment, with the caveat
+We can perform multiple imports to test environment, with the caveat
 that no data deletion in this situation is possible. This might lead to
-duplicate information being uploaded to the dev environment.
+duplicate information being uploaded to the test environment.
 
 Also, anonymizing test import data by hiding sensitive information like
 names, addresses, email addresses and Stripe keys is highly recommended.
@@ -567,7 +569,7 @@ We recommend that you only use a subset of your data for the test
 import. The purpose of the test migration is to confirm that your
 extract-and-transform process creates a migration file that is valid and
 consistent, so there is rarely need for importing the anonymized
-equivalent of your full user data into the dev environment.
+equivalent of your full user data into the test environment.
 
 ### Password management
 
@@ -583,8 +585,9 @@ it is essential to share the data securely. Contact us when you are
 ready to share the data.
 
 Anonymised test data for validation and test migrations can be shared
-via email. However, for live data with real user information, we will
-create a secure upload link that is valid for an agreed amount of time.
+via email. However, for production data with real user information, we
+will create a secure upload link that is valid for an agreed amount of
+time.
 
 ## A full example of Intermediary format
 

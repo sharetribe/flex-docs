@@ -205,16 +205,16 @@ credit card issuers, you should test at least some credit cards how they
 work in a live environment.
 
 This can be done by creating another
-[live environment](/ftw/how-to-deploy-ftw-to-production/) instance of
-Sharetribe Web Template that uses
+[production environment](/ftw/how-to-deploy-ftw-to-production/) instance
+of Sharetribe Web Template that uses
 
-- your production Client Id for Flex and
+- yourproduction Client Id for Flex and
 - live Stripe keys (both publishable and secret).
 
 Then create a new Git branch that takes PaymentIntents flow into use and
 adds
 [Basic Authentication configuration](https://github.com/sharetribe/web-template/blob/main/.env-template#L51)
 into environment variables. After that, you could deploy your
-payment-intent branch into your live environment. Then you can just book
-some existing listing and maybe reject it to get refund to your live
-card account.
+payment-intent branch into your production environment. Then you can
+just book some existing listing and maybe reject it to get refund to
+your live card account.

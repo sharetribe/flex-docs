@@ -83,8 +83,8 @@ You can just close those listings from Console.
 
 <info>
 
-If you want to change the currency of a live marketplace, you need to
-customize your client app so that it allows providers to update the
+If you want to change the currency of a production marketplace, you need
+to customize your client app so that it allows providers to update the
 listing's price even if the currency is wrong.
 
 </info>

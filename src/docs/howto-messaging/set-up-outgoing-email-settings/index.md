@@ -5,7 +5,7 @@ updated: 2020-12-21
 category: how-to-messaging
 ingress:
   This article describes how to set up a custom email sender address for
-  your live marketplace.
+  your production marketplace.
 published: true
 ---
 
@@ -27,16 +27,16 @@ Flex uses [SendGrid](https://sendgrid.com/) as an email service
 provider. By default, we manage your SendGrid account and settings
 automatically, and the costs are included in your Flex subscription.
 
-When you have your live environment created and you have bought your
-custom domain for it, you should set up and validate the outgoing email
-settings. Follow the steps below to enable email sending and increase
-the chances that your emails will be delivered reliably.
+When you have your production environment created and you have bought
+your custom domain for it, you should set up and validate the outgoing
+email settings. Follow the steps below to enable email sending and
+increase the chances that your emails will be delivered reliably.
 
 ### 1. Add sender name and address
 
-Make sure you select your live environment in the top navigation in
-Console. Then head on to the General settings page in the Build section.
-You can see the outgoing email settings below the marketplace
+Make sure you select your production environment in the top navigation
+in Console. Then head on to the General settings page in the Build
+section. You can see the outgoing email settings below the marketplace
 information:
 
 ![Outgoing email settings 1/3](./email-settings-1of3.png)
@@ -139,10 +139,10 @@ SendGrid by following their instructions on
 
 ### 2. Enable using own SendGrid key in Flex Console
 
-Log in to your Console, and select your live environment. There are two
-options for integrating SendGrid. You can do it during the initial setup
-of the marketplace or later if you wish to change from managed setup to
-using your own SendGrid account.
+Log in to your Console, and select your production environment. There
+are two options for integrating SendGrid. You can do it during the
+initial setup of the marketplace or later if you wish to change from
+managed setup to using your own SendGrid account.
 
 #### During initial setup
 
@@ -171,8 +171,8 @@ correctly, you are good to go!
 ## Summary
 
 In this article, we went through the setup to configure a custom email
-address for your live marketplace. It is important to get all the steps
-done and validated to ensure that emails are working reliably.
+address for your production marketplace. It is important to get all the
+steps done and validated to ensure that emails are working reliably.
 
 If you have any questions or need a more advanced setup, you can
 [contact Sharetribe support](mailto:flex-support@sharetribe.com) and we

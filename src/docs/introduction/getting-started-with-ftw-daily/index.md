@@ -29,7 +29,7 @@ running. This guide also helps you to create accounts to Stripe and
 Mapbox. Those services are needed to run the Sharetribe Web Template
 app.
 
-## Setup a development environment
+## Setup development environment
 
 ### Prerequisities
 
@@ -328,8 +328,7 @@ variables that you you collected in the previous step.
 After that, it will create `.env` file to your local repository and
 guide you through setting up the rest of the required environment
 variables. If the `.env` file doesn't exist the application won't start.
-_This `.env` file is only created for the local development
-environment_.
+_This `.env` file is only created for local development environment_.
 
 <info>
 

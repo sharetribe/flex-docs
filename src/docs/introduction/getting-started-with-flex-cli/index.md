@@ -128,7 +128,7 @@ detailed information about a single process.
 Let's list all the processes:
 
 ```bash
-flex-cli process list -m my-marketplace-dev
+flex-cli process list -m my-test-marketplace
 ```
 
 This command shows you a list of transaction processes in your

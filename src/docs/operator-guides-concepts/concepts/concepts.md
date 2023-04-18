@@ -1,7 +1,7 @@
 ---
 title: Concepts
 slug: concepts
-updated: 2023-04-01
+updated: 2023-02-14
 category: operator-guides-concepts
 ingress:
   Definition of common terms we use when talking about Sharetribe Flex.
@@ -117,28 +117,28 @@ tutorial.
 ### Environments
 
 Environments describe different instances of a Flex backend. There are
-three environment types: a test environment (Test), a development
-environment (Dev), and a live environment (Live). Test and Dev are
+three environment types: a Demo environment, a Development environment,
+and a Production environment. Demo and Development environments are
 included with every Flex account.
 
-Test environments act as a live preview on how the Saunatime Flex
-Template and Flex Console work. One example of how to use the test
-environment would be to create your content. You may modifying microcopy
-or create a new content page, for instance, which you can deploy to your
-live environment and live site when ready.
+Demo environments are to demo how the Saunatime Flex Template and Flex
+Console work.
 
-The development environment is used to build and extend your custom
+The Development environment is used to build and extend your custom
 marketplace. You may add your own test Stripe account to the development
 environment and configure changes you will later deploy to your live
-site.
+site. One example of how to use the development environment would be to
+create your content. You may modifying microcopy or create a new content
+page, for instance, which you can deploy to your Production environment
+and live site when ready.
 
-When the built marketplace is ready to go live, a live environment
-should be procured by subscribing to Flex. A live environment lets your
-marketplace add real users to your database and process transactions
-with real money. Your users see the Pages content stored in your live
-environment. Live environments are used alongside test and development
-environments; you develop new features and content using the latter and
-publish it to the former when it is ready.
+When the built marketplace is ready to go live, a Production environment
+should be procured by subscribing to Flex. A Production environment lets
+your marketplace add real users to your database and process
+transactions with real money. Your users see the Pages content stored in
+your Production environment. Production environments are used alongside
+Development environments; you develop new features and content using the
+latter and publish it to the former when it is ready.
 
 ### Extended data
 
@@ -148,7 +148,7 @@ User, Listing, and Transaction resources store. By capturing custom
 variables or IDs to these pre-built resources, developers may support a
 broad range of use cases using a turnkey set of backend tools.
 
-[Click here](https://www.sharetribe.com/docs/concepts/extended-data-introduction/)
+[Click here](https://www.sharetribe.com/docs/operator-guides/extended-data-introduction/)
 to learn more about the different types of use cases supported by
 extended data.
 
@@ -271,7 +271,7 @@ color, or font family — but it covers the essentials, using simple
 keyboard symbols.
 
 You can learn more about using Markdown
-[here.](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages/)
+[here.](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages)
 
 ## Users
 

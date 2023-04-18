@@ -76,7 +76,7 @@ use _"cottage-days-booking"_. Our final command for the
 _cottagedays-test_ marketplace would look like this:
 
 ```shell
-flex-cli process create --path=./default-booking --process=cottage-days-booking --marketplace=cottagedays-dev
+flex-cli process create --path=./default-booking --process=cottage-days-booking --marketplace=cottagedays-test
 ```
 
 <info>
@@ -99,7 +99,7 @@ our client app, since it doesn't have process alias set. We can create
 an alias for our new process with Flex CLI command:
 
 ```shell
-flex-cli process create-alias --process=cottage-days-booking --version=1 --alias=release-1 --marketplace=cottagedays-dev
+flex-cli process create-alias --process=cottage-days-booking --version=1 --alias=release-1 --marketplace=cottagedays-test
 ```
 
 With that command, we are creating a new alias _"release-1"_ and point
@@ -128,7 +128,7 @@ have most the up-to-date version of the process. You can fetch any
 process version with flex-cli:
 
 ```shell
-flex-cli process pull --process=cottage-days-booking --alias=release-1 --path=./cottage-days-booking --marketplace=cottagedays-dev
+flex-cli process pull --process=cottage-days-booking --alias=release-1 --path=./cottage-days-booking --marketplace=cottagedays-test
 ```
 
 Now, we can open the _process.edn_ file from the new directory with a
@@ -213,7 +213,7 @@ Updating a transaction process is a similar process than creating a new
 one. This time we use _push_ command:
 
 ```shell
-flex-cli process push --process=cottage-days-booking --path=./cottage-days-booking --marketplace=cottagedays-dev
+flex-cli process push --process=cottage-days-booking --path=./cottage-days-booking --marketplace=cottagedays-test
 ```
 
 And if you go to Console, you notice that there's a new version (2)
@@ -221,7 +221,7 @@ created of the _cottage-days-booking_ process. However, the alias is
 still pointing to the first version. We need to update the alias too:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottage-days-booking --version=2 --marketplace=cottagedays-dev
+flex-cli process update-alias --alias=release-1 --process=cottage-days-booking --version=2 --marketplace=cottagedays-test
 ```
 
 Now, if you open the process graph from the Flex Console, you'll see

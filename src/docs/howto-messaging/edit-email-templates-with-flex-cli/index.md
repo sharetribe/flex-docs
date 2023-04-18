@@ -36,10 +36,10 @@ page in the Build section of Console.
 
 To edit the transaction email templates, you need to pull an existing
 process with its templates. First, let's list all the processes of our
-`my-marketplace-dev` marketplace:
+`my-test-marketplace` marketplace:
 
 ```bash
-flex-cli process list -m my-marketplace-dev
+flex-cli process list -m my-test-marketplace
 ```
 
 The `process list` command prints out all the processes and their latest
@@ -51,7 +51,7 @@ your marketplace - so, you need to adjust this guide accordingly.
 Let's pull that process version:
 
 ```bash
-flex-cli process pull --process preauth-with-nightly-booking --version 1 --path process -m my-marketplace-dev
+flex-cli process pull --process preauth-with-nightly-booking --version 1 --path process -m my-test-marketplace
 ```
 
 This will create a `process/` directory that has all the process files
@@ -196,7 +196,7 @@ You can test your changes and templates by previewing or sending a test
 email using your local template files. To preview the change above:
 
 ```bash
-flex-cli notifications preview --template process/templates/new-booking-request -m my-marketplace-dev
+flex-cli notifications preview --template process/templates/new-booking-request -m my-test-marketplace
 ```
 
 The command will render the given template using
@@ -221,7 +221,7 @@ If you want to verify the email in an email client software, you can
 also send the test preview email:
 
 ```bash
-flex-cli notifications send --template process/templates/new-booking-request -m my-marketplace-dev
+flex-cli notifications send --template process/templates/new-booking-request -m my-test-marketplace
 ```
 
 The email is sent to the email address of the admin user that was used
@@ -254,7 +254,7 @@ file and make edits to it:
 You can then pass the changed context file to the preview command:
 
 ```bash
-flex-cli notifications preview --template process/templates/new-booking-request --context sample-template-context.json -m my-marketplace-dev
+flex-cli notifications preview --template process/templates/new-booking-request --context sample-template-context.json -m my-test-marketplace
 ```
 
 Now you will see the preview with the context data that you edited:
@@ -272,14 +272,14 @@ Now that you have edited the email templates, you need to push a new
 version of your process:
 
 ```bash
-flex-cli process push --path process --process preauth-with-nightly-booking -m my-marketplace-dev
+flex-cli process push --path process --process preauth-with-nightly-booking -m my-test-marketplace
 ```
 
 You can see the new version in Console or using the `process list`
 command:
 
 ```bash
-flex-cli process list --process preauth-with-nightly-booking -m my-marketplace-dev
+flex-cli process list --process preauth-with-nightly-booking -m my-test-marketplace
 ```
 
 ## Update alias
@@ -295,13 +295,13 @@ In our `preauth-with-nightly-booking` example process there is a
 version:
 
 ```bash
-flex-cli process update-alias --process preauth-with-nightly-booking --alias release-1 --version 2 -m my-marketplace-dev
+flex-cli process update-alias --process preauth-with-nightly-booking --alias release-1 --version 2 -m my-test-marketplace
 ```
 
 To see the updated alias, run the `process list` command again:
 
 ```bash
-flex-cli process list --process preauth-with-nightly-booking -m my-marketplace-dev
+flex-cli process list --process preauth-with-nightly-booking -m my-test-marketplace
 ```
 
 ## Summary

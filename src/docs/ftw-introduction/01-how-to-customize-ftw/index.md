@@ -70,9 +70,6 @@ something that you should regularly update.
 
 </info>
 
-You should follow the [tutorial](/tutorial/introduction/) to set up a
-local development environment and connect it to GitHub.
-
 Run the following commands in a new branch.
 
 1. Create a new branch and switch into that branch:

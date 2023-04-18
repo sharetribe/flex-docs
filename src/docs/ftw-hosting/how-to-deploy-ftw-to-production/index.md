@@ -18,35 +18,19 @@ production environment. Typically, alongside your production
 environment, you will also host another version of your client
 environment: a test environment.
 
-Having several environments is a common practice in software
-development. The test environment is most often a clone of the
-production environment intended for testing new features before being
-deployed to production. Once a development team deems a feature
-production-ready, i.e. fit for a live audience, they can deploy it to
-production. A workflow like this helps prevent bugs and unfinished code
-from being released to your users.
+Having two environments is a common practice in software development.
+The test environment is a clone of the production environment intended
+for testing new features before being deployed to production. Once a
+development team deems a feature production-ready, i.e. fit for a live
+audience, they can deploy it to production. A workflow like this helps
+prevent bugs and unfinished code from being released to your users.
 
 Sharetribe Flex offers
-[three different environment types](https://www.sharetribe.com/docs/concepts/flex-environments/#environment-types)
-– Live, Test, and Dev. You should connect your client application with
-the corresponding marketplace environment, i.e. your client environment
-intended for development should use environment variables that point to
-your dev environment in Flex.
-
-More specifically, the workflow recommended with Flex is that you have
-three deployments of your client application:
-
-- production deployment, connected to your live environment and running
-  real transactions
-- test deployment, connected to your test environment and intended for
-  previewing no-code changes
-- dev deployment, connected to your dev environment and intended for
-  testing and previewing code-level changes.
-
-We recommend that you keep your production and test deployments
-identical, so that operators can preview their no-code changes reliably.
-Read more:
-[Flex environments](/concepts/flex-environments//#workflow-between-the-three-environments).
+[three different environment types](https://www.sharetribe.com/docs/concepts/flex-environments/#environment-types).
+You should connect your client application with the corresponding
+marketplace environment, i.e. your client environment intended for
+testing should use environment variables that point to your test
+environment in Flex.
 
 ## Where to host your application?
 
@@ -71,7 +55,7 @@ its popular free tier in October 2022.
 
 As of the time of writing, [Render](https://www.render.com) and
 [Fly.io](https://fly.io) continue to provide a free tier, which you can
-use, e.g. to host a test application. You will have to move to a paid
+use, e.g. to host a testing environment. You will have to move to a paid
 plan for a production-level deployment to ensure consistent uptime and
 computing resources for your marketplace. Other alternatives you can
 look into include [AWS](https://aws.amazon.com/),
