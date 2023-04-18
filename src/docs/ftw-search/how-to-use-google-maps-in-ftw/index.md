@@ -36,6 +36,16 @@ Go to the
 and click on "Get started" button in the top bar, and follow the
 instructions. Save the key for later.
 
+<warning>
+
+Make sure to follow
+[API security best practices](https://developers.google.com/maps/api-security-best-practices)
+with your Google Maps API keys. For example, restricting your API key to
+your client app URL will prevent unauthorised use that would impact your
+billing.
+
+</warning>
+
 ### Enable Google APIs
 
 Follow the instructions in the
