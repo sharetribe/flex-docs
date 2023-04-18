@@ -21,10 +21,10 @@ tutorial
 [Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
 
 In this tutorial, we will add data schemas for the `category` and
-`equipped-with` public data fields in listings. New marketplaces don't
+`accessories` public data fields in listings. New marketplaces don't
 have any schemas in the backend by default since the needs of
 marketplaces vary. However, Sharetribe Web Template does define filters
-for `category` and `equipped-with` in its UI (user interface). This
+for `category` and `accessories` in its UI (user interface). This
 tutorial will make those filters work as expected.
 
 We will also see how to manage data schema for user profiles. Those
@@ -64,13 +64,13 @@ just skips those values.
 
 ## Schema types and cardinalities
 
-| Type       | Cardinality | Example data                                                                                     | Example query                                                                      |
-| ---------- | ----------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| enum       | one         | `category: "electric-bikes"`                                                                     | `pub_category=electric-bikes,city-bikes`                                           |
-| multi-enum | many        | `equipped-with: ["bell", "lights"]`                                                              | `pub_equipped-with=has_all:bell,lights` or `pub_equipped-with=has_any:bell,lights` |
-| boolean    | one         | `hasPannierRack: true`                                                                           | `pub_hasPannierRack=true`                                                          |
-| long       | one         | `manufactureYear: 2021`                                                                          | `pub_manufactureYear=2020,2023`                                                    |
-| text       | one         | `accessoriesDescription: "Pannier bags and a dog carrier (max 18 pounds) available on request."` | `keywords=bags%20dog%20carrier`                                                    |
+| Type       | Cardinality | Example data                                                                                     | Example query                                                                  |
+| ---------- | ----------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| enum       | one         | `category: "electric-bikes"`                                                                     | `pub_category=electric-bikes,city-bikes`                                       |
+| multi-enum | many        | `accessories: ["bell", "lights"]`                                                                | `pub_accessories=has_all:bell,lights` or `pub_accessories=has_any:bell,lights` |
+| boolean    | one         | `hasPannierRack: true`                                                                           | `pub_hasPannierRack=true`                                                      |
+| long       | one         | `manufactureYear: 2021`                                                                          | `pub_manufactureYear=2020,2023`                                                |
+| text       | one         | `accessoriesDescription: "Pannier bags and a dog carrier (max 18 pounds) available on request."` | `keywords=bags%20dog%20carrier`                                                |
 
 <info>
 
@@ -98,11 +98,11 @@ With the `enum` type like the category above, when you query
 `pub_category=electric-bikes,city-bikes`, you will match listings with
 either "electric-bikes" OR "city-bikes" as the category. With the
 `multi-enum`, you can control the matching mode explicitly. The query
-`pub_equipped-with=has_all:bell,lights` will match listings with "bell"
-AND "lights" in the equipped-with whereas the query
-`pub_equipped-with=has_any:bell,lights` will match listings with either
+`pub_accessories=has_all:bell,lights` will match listings with "bell"
+AND "lights" in the accessories whereas the query
+`pub_accessories=has_any:bell,lights` will match listings with either
 "bell" OR "lights" (or both). If you don't specify the match mode in the
-query (i.e. `pub_equipped-with=bell,lights`), by default we use the
+query (i.e. `pub_accessories=bell,lights`), by default we use the
 has_all mathing mode (AND) for multi enums.
 
 With the `text` type, you provide a search query, so splitting values
@@ -121,9 +121,9 @@ endpoint API reference.
 ## Adding listing search schemas
 
 Sharetribe Web Template defines several search filters in listing public
-data, and two of them are `category` and `equipped-with`. A category is
+data, and two of them are `category` and `accessories`. A category is
 something that is selected from a dropdown of options, so the schema
-type should be `enum`. A listing can have multiple `equipped-with`
+type should be `enum`. A listing can have multiple `accessories`
 attributes that are also selected from a set of options and stored in an
 array, so the schema type should be `multi-enum`.
 
@@ -136,14 +136,14 @@ Schema for   Scope   Key   Type   Default value   Doc
 
 ```
 
-Let's add the search schemas for the category and equipped-with:
+Let's add the search schemas for the category and accessories:
 
 ```
 $ flex-cli search set --key category --type enum --scope public -m my-marketplace-dev
 ```
 
 ```
-$ flex-cli search set --key equipped-with --type multi-enum --scope public -m my-marketplace-dev
+$ flex-cli search set --key accessories --type multi-enum --scope public -m my-marketplace-dev
 ```
 
 We should now see the details for these new schemas:
@@ -152,7 +152,7 @@ We should now see the details for these new schemas:
 $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope   Key            Type        Default value   Doc
-listing      public  equipped-with  multi-enum
+listing      public  accessories  multi-enum
 listing      public  category       enum
 ```
 
@@ -195,7 +195,7 @@ the previous step and the new user profile schema:
 $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key           Type        Default value   Doc
-listing      public     equipped-with multi-enum
+listing      public     accessories multi-enum
 listing      public     category      enum
 userProfile  protected  age           long
 ```
@@ -231,7 +231,7 @@ $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key             Type         Default value   Doc
 listing      metadata   isPromoted      boolean      false
-listing      public     equipped-with   multi-enum
+listing      public     accessories   multi-enum
 listing      public     category        enum
 userProfile  protected  age             long
 ```
@@ -239,7 +239,7 @@ userProfile  protected  age             long
 ## Summary
 
 In this guide, we used Flex CLI to define search schemas for our
-marketplace. We used the listing `category` and `equipped-with` as
+marketplace. We used the listing `category` and `accessories` as
 examples, as the template expects those. In addition, we looked at
 adding user search schemas for Integration API as well as adding a
 listing schema with a default value.

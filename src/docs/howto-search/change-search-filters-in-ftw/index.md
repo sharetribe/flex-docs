@@ -40,9 +40,9 @@ could then be made with the query parameter `pub_category=city-bikes`.
 
 The _SelectMultipleFilter_, on the other hand, can take multiple values
 for a single search parameter. In this case, a listing entity could
-contain public data `equipped-with: ['bell', 'lights', 'lock']` and the
+contain public data `accessories: ['bell', 'lights', 'lock']` and the
 query parameter to retrieve that listing among other search results
-could be `pub_equipped-with=has_any:bell,mudguard`.
+could be `pub_accessories=has_any:bell,mudguard`.
 
 We will tell you more about these filters later on in this article.
 
