@@ -21,7 +21,7 @@ have most the up-to-date version of the process. You can fetch any
 process version with flex-cli:
 
 ```shell
-flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-test
+flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
 ```
 
 <info>
@@ -167,7 +167,7 @@ them with **flex-cli**. To preview the changes we just made, we can run
 the command:
 
 ```shell
-flex-cli notifications preview --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-test
+flex-cli notifications preview --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-dev
 ```
 
 You should see the HTML preview of the template in the address
@@ -177,7 +177,7 @@ refresh the browser to reload the template and render a new preview
 You can also test sending the preview email:
 
 ```shell
-flex-cli notifications send --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-test
+flex-cli notifications send --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-dev
 ```
 
 <info>
@@ -226,18 +226,18 @@ need more detailed information, take a look at the
 Push the updated process:
 
 ```shell
-flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-test
+flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
 ```
 
 Check version number with _process list_ command:
 
 ```shell
-flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-test
+flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-dev
 ```
 
 Update the alias to point to the latest version of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=3 --marketplace=cottagedays-test
+flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=3 --marketplace=cottagedays-dev
 ```

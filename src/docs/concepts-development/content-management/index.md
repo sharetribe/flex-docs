@@ -1,7 +1,7 @@
 ---
 title: Content management in Flex
 slug: content-management
-updated: 2023-02-14
+updated: 2023-04-01
 category: concepts-content-management
 ingress:
   This article introduces the Flex content management system and how
@@ -24,7 +24,7 @@ The way in which operator-created content is handled within Flex. Before
 Console-operated content management, operators could either
 
 - add the content directly in the client app codebase,
-- use the [microcopy](/concepts/microcopy) files for marketplace
+- use the [microcopy](/concepts/microcopy/) files for marketplace
   content, or
 - integrate an external content management system.
 
@@ -42,7 +42,7 @@ a systematic way.
 
 The collection of different content elements under a specific URL. Pages
 can have fields, sections, or blocks within them. A page can be fetched
-as [an asset](/references/assets) from the Flex Asset Delivery API.
+as [an asset](/references/assets/) from the Flex Asset Delivery API.
 Example: `landing-page`.
 
 ### Page asset
@@ -162,7 +162,7 @@ including italics and bolding, subheadings, links, and code snippets.
 ## Content delivery
 
 Once the page has been created, it is fetched as an
-[asset](/references/assets) to the client application using the
+[asset](/references/assets/) to the client application using the
 [Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
 For the landing page, the asset being modified in Flex is
 `content/landing-page.js`. Assets can be fetched by the latest version,
@@ -188,34 +188,33 @@ page title in Flex Console.
 
 This will open the page in your **Marketplace URL** address.
 
-### Publishing pages from test to production
+### Publishing pages from test to live
 
-When you first take your markeptlace to production, your production
-marketplace is created as a duplicate of your test marketplace. This
+When you first take your marketplace live, your live marketplace
+environment is created as a duplicate of your test marketplace. This
 includes all your page assets.
 
-You can also modify your marketplace content pages after going to
-production. You will still need to make and test the changes in your
-test environment. Then, after you are happy with all your page changes,
-you can click the "Copy to production" button.
+You can also modify your marketplace content pages after going live. You
+will still need to make and test the changes in your test environment.
+Then, after you are happy with all your page changes, you can click the
+"Copy to live" button.
 
 After clicking the button, you will see a modal detailing which pages
-have been modified, created, and removed compared to your current
-production pages. You can check the boxes of the pages you want to copy
-to production. This will override the current production content of
-those pages with the new content from the test environment.
+have been modified, created, and removed compared to your current live
+pages. You can check the boxes of the pages you want to copy to Live.
+This will override the current live content of those pages with the new
+content from the test environment.
 
 <warning>
 
-Once you have copied a page to production, you cannot return to the
-previous production version of that page. Take extra good care to double
-check your changes in test environment before copying anything to
-production!
+Once you have copied a page to Live, you cannot return to the previous
+live version of that page. Take extra good care to double check your
+changes in test environment before copying anything to Live!
 
 </warning>
 
 It can take up to five minutes for your changes to update from test to
-production environment.
+live environment.
 
 ## Content layout
 

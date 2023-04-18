@@ -65,7 +65,7 @@ any of the additional parameters lists the 100 latest events for your
 marketplace:
 
 ```
-$ flex-cli events -m sauna-demo-1
+$ flex-cli events -m my-marketplace-dev
 
 Seq ID   Resource ID                           Event type                     Created at local time   Source           Actor
 3391589  5fca1e5b-2004-4479-a68c-dfc8a03083b8  availabilityException/created  2020-12-04 1:32:43 PM   marketplace-api  jane@example.com
@@ -96,7 +96,7 @@ By adding the `--limit` (short version `-l`) parameter we can limit the
 output to given number of events:
 
 ```bash
-$ flex-cli events -l 2 -m sauna-demo-1
+$ flex-cli events -l 2 -m my-marketplace-dev
 
 Seq ID   Resource ID                           Event type                     Created at local time   Source           Actor
 3391589  5fca1e5b-2004-4479-a68c-dfc8a03083b8  availabilityException/created  2020-12-04 1:32:43 PM   marketplace-api  jane@example.com
@@ -107,7 +107,7 @@ We can look at only certain type of events using the `--filter`
 parameter:
 
 ```bash
-$ flex-cli events --filter user/created,listing -m sauna-demo-1
+$ flex-cli events --filter user/created,listing -m my-marketplace-dev
 
 Seq ID   Resource ID                           Event type       Created at local time   Source           Actor
 3471813  5fce8536-61f5-4c85-8160-61b1799d256f  user/created     2020-12-07 9:40:38 PM   marketplace-api
@@ -126,7 +126,7 @@ Using the `--resource` parameter we can query only events that are for a
 certain known resource:
 
 ```bash
-$ flex-cli events --resource 5fce86c7-e435-4047-ab3b-dc4fee02d51d -m sauna-demo-1
+$ flex-cli events --resource 5fce86c7-e435-4047-ab3b-dc4fee02d51d -m my-marketplace-dev
 
 Seq ID   Resource ID                           Event type       Created at local time   Source           Actor
 3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created  2020-12-07 9:47:19 PM   marketplace-api  joe@example.com
@@ -148,7 +148,7 @@ but also for other resources related to the specific resource. That is
 possible using the `--related-resource` parameter:
 
 ```bash
-$ flex-cli events --related-resource 5fce86c7-e435-4047-ab3b-dc4fee02d51d -m sauna-demo-1
+$ flex-cli events --related-resource 5fce86c7-e435-4047-ab3b-dc4fee02d51d -m my-marketplace-dev
 
 Seq ID   Resource ID                           Event type                     Created at local time   Source           Actor
 3471856  5fce86c7-e435-4047-ab3b-dc4fee02d51d  listing/created                2020-12-07 9:47:19 PM   marketplace-api  joe@example.com
@@ -181,16 +181,16 @@ events after a known sequence ID / time or events right before a
 sequence id / time.
 
 ```bash
-$ flex-cli events --after-seqid 3391593 -M sauna-demo-1
+$ flex-cli events --after-seqid 3391593 -M my-marketplace-dev
 ...
 
-$ flex-cli events --before-seqid 3462912  -m sauna-demo-1
+$ flex-cli events --before-seqid 3462912  -m my-marketplace-dev
 ...
 
-$ flex-cli events --after-ts 2020-12-05  -m sauna-demo-1
+$ flex-cli events --after-ts 2020-12-05  -m my-marketplace-dev
 ...
 
-$ flex-cli events --before-ts 2020-12-05T10:00.000Z  -m sauna-demo-1
+$ flex-cli events --before-ts 2020-12-05T10:00.000Z  -m my-marketplace-dev
 ```
 
 Timestamps can be given with date only or with the time component
@@ -205,7 +205,7 @@ combined with time range queries. For example, we can get the next 100
 user and listing events since 7th of December 2020 with the command:
 
 ```bash
-$ flex-cli events --after-ts 2020-12-07 --filter user,listing -m sauna-demo-1
+$ flex-cli events --after-ts 2020-12-07 --filter user,listing -m my-marketplace-dev
 ```
 
 ## Output modes and examining events in detail
@@ -218,7 +218,7 @@ into the details of an event, you need to use a json mode. With the
 filtering parameter `--seqid` we can target a single event:
 
 ```bash
-$ flex-cli events --seqid 3471843 -m sauna-demo-1 --json-pretty
+$ flex-cli events --seqid 3471843 -m my-marketplace-dev --json-pretty
 {
   "eventType": "user/updated",
   "createdAt": "2020-12-07T19:45:38.721Z",
@@ -287,7 +287,7 @@ parse the output. In `--json` mode Flex CLI prints the events as one
 line JSON objects.
 
 ```bash
-$ flex-cli events -m sauna-demo-1 --json | less
+$ flex-cli events -m my-marketplace-dev --json | less
 {"eventType":"availabilityException/created","createdAt":"2020-12-04T11:32:43.794Z","resourceType":"a
 {"eventType":"availabilityException/created","createdAt":"2020-12-04T11:32:44.346Z","resourceType":"a
 {"eventType":"availabilityException/created","createdAt":"2020-12-04T11:32:45.524Z","resourceType":"a
@@ -305,7 +305,7 @@ The output can be easily parsed and transformed by using e.g. the
 wonderful [jq](https://stedolan.github.io/jq/) command-line tool.
 
 ```bash
-$ flex-cli events --filter listing -m sauna-demo-1 --json | jq '{sequenceId, eventType, source, changedKeys: (.previousValues // {} | keys)}'
+$ flex-cli events --filter listing -m my-marketplace-dev --json | jq '{sequenceId, eventType, source, changedKeys: (.previousValues // {} | keys)}'
 {
   "sequenceId": 3471856,
   "eventType": "listing/created",
@@ -399,7 +399,7 @@ Live tailing supports all the same output modes (default table output,
 `--json` and `--json-pretty`) as the events query does.
 
 ```bash
-$ flex-cli events tail -m sauna-demo-1
+$ flex-cli events tail -m my-marketplace-dev
 Starting live tail of events. Type <Ctrl>+C to quit.
 
 Seq ID   Resource ID                           Event type                     Created at local time   Source           Actor

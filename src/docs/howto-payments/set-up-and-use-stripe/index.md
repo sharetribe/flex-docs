@@ -93,9 +93,9 @@ marketplace.
 
 <info>
 
-If you want to use test data in development make sure that "View test
-data" toggle is on. This way no real money will be used. In production
-make sure that the toggle is off.
+If you want to use test data in development, make sure that the "View
+test data" toggle is on. This way no real money will be used. In the
+live environment, make sure that the toggle is off.
 
 </info>
 

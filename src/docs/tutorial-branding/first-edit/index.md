@@ -1,7 +1,7 @@
 ---
 title: First customization
 slug: first-edit
-updated: 2022-07-11
+updated: 2023-04-01
 category: tutorial-branding
 ingress:
   Begin customizing your marketplace by custom styling and introducing
