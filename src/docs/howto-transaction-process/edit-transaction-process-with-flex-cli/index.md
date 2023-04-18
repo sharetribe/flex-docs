@@ -42,7 +42,7 @@ Remember to include your marketplace ident to the command with the
 `-m <your marketplace ident here>`:
 
 ```bash
-flex-cli process list -m my-test-marketplace
+flex-cli process list -m my-marketplace-dev
 ```
 
 From the list of processes, pick the one that you want to edit. In this
@@ -71,7 +71,7 @@ We can see that required options are:
 Pull the process and save it to `process` directory:
 
 ```bash
-flex-cli process pull --process default-booking --version 1 --path process -m my-test-marketplace
+flex-cli process pull --process default-booking --version 1 --path process -m my-marketplace-dev
 ```
 
 See what's inside the `process` directory:
@@ -207,7 +207,7 @@ Now that we have validated the `process.edn` file we are ready to push
 the changes to Flex:
 
 ```bash
-flex-cli process push --path process --process default-booking -m my-test-marketplace
+flex-cli process push --path process --process default-booking -m my-marketplace-dev
 ```
 
 After the process is successfully pushed, you'll see a new process
@@ -229,7 +229,7 @@ First, let's see what aliases are pointing to which versions. We can do
 this by using the `process list` command with the `--process` option:
 
 ```bash
-flex-cli process list --process default-booking -m my-test-marketplace
+flex-cli process list --process default-booking -m my-marketplace-dev
 ```
 
 You'll see a list of process versions and aliases pointing to them. The
@@ -243,7 +243,7 @@ In the default process, the name of the existing alias is `release-1`.
 The command to update the alias is `process update-alias`:
 
 ```bash
-flex-cli process update-alias --process default-booking --alias release-1 --version 2 -m my-test-marketplace
+flex-cli process update-alias --process default-booking --alias release-1 --version 2 -m my-marketplace-dev
 ```
 
 This command updates the alias `release-1` to point to `default-booking`

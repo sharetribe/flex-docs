@@ -11,8 +11,6 @@
   "scripts": {
     "clean": "rm -rf .cache public",
     "build": "gatsby build --prefix-paths",
-    "netlify-build": "yarn run build && yarn run netlify-postbuild",
-    "netlify-postbuild": "./netlify-postbuild.sh",
     "dev": "gatsby develop",
     "serve": "gatsby serve --prefix-paths",
     "prod": "export NODE_ENV=production && yarn run build && yarn run serve",
