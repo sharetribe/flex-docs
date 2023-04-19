@@ -296,6 +296,26 @@ exports.siteStructure = [
         id: 'operator-guides-pages',
         sortingArray: sortingArrayOperatorGuidesPages,
       },
+
+      {
+        id: 'operator-guides-layout',
+        sortingArray: sortingArrayOperatorGuidesLayout,
+      },
+
+      {
+        id: 'operator-guides-transactions',
+        sortingArray: sortingArrayOperatorGuidesTransactions,
+      },
+
+      {
+        id: 'operator-guides-branding',
+        sortingArray: sortingArrayOperatorGuidesBranding,
+      },
+
+      {
+        id: 'operator-guides-listings',
+        sortingArray: sortingArrayOperatorGuidesListings,
+      },
     ],
   },
 ];
