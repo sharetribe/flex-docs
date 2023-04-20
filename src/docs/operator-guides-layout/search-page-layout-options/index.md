@@ -17,6 +17,8 @@ There are two different search page layouts: Map view and Grid view.
 
 The Map view of the search page displays the listings grid on the left and the map on the right. The map highlights the locations of several listings on your marketplace. The listing filters are displayed above the listing grid on the left side of the page. This layout is excellent if your marketplace products or services are location-based.
 
+![Map view option for search page layout](./map-view.png)
+
 ## Grid view
 
 In the grid view, the whole screen showcases the listings in a grid, and the filters are displayed on the left. If your business isn’t location-based, you probably have no use for a map showing the locations of the listings on your marketplace. In this case, you can use the grid view. The filters take a bit more prominence in this view and can be ideal for product marketplaces. 

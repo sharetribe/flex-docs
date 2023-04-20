@@ -26,14 +26,14 @@ The favicon will be visible to any visitor in their browser tab. For your favico
 
 If the photo you upload is smaller than the recommended 48x48 px size, If the images are smaller, it will be scaled up, which caused pixelation. 
 
-![image name](./favicon.png)
+![favicon](./favicon.png)
 
 
 ## Background image for login pages
 
 The background image is for pages related to authentication: Login, Sign Up, Email Verification, Password Recovery, and Password Reset. It should have a 2:1 aspect ratio and a minimum size of 1200x600 pixels.
 
-![image name](./background-image.png)
+![background-image](./background-image.png)
 
 ## Social media image
 

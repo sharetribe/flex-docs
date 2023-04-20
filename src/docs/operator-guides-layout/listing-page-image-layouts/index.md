@@ -23,10 +23,16 @@ For a more detailed view, the user can enlarge the images.
 
 Here’s what the listing page carousel with thumbnails looks like:
 
+![image carousel with thumbails](./image-carousel-with-thumbnail.png)
+
 And here, you can see the page when you view large photos. The image becomes full screen.
+
+![fullscreen image of carousel with thumbnails](./fullscreen-image.png)
 
 ## Screen wide cover photo
 
 This option displays the first uploaded image as the top hero section of the listing page, filling the screen width. The screen-wide cover photo is only one image shown by default, with a link to see the rest of the listing images. The transaction action section can the n be found under the screen wide photo. 
 
 Screen-wide cover photos are ideal for showing landscape photos. Listings of rental properties or experiences commonly use this layout. 
+
+![screenwide cover photo](./screenwide-cover-photo.png)
