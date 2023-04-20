@@ -2,7 +2,7 @@
 title: How to set your marketplace commission
 slug: how-to-set-your-marketplace-commission
 updated: 2023-04-20
-category: operator-guides-transaction
+category: operator-guides-transactions
 ingress:
   You can set a commission for your marketplace. Commissions are the percentage you get from each transaction that takes place in your marketplace.
 published: true

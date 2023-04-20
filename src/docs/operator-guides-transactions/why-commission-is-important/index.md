@@ -2,7 +2,7 @@
 title: Why commission is important
 slug: why-commission-is-important
 updated: 2023-04-20
-category: operator-guides-transaction
+category: operator-guides-transactions
 ingress:
   Why setting a commission is important in your marketplace.
 published: true

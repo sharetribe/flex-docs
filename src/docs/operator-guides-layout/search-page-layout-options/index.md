@@ -2,9 +2,9 @@
 title: Search page layout options
 slug: search-page-layout-options
 updated: 2023-04-20
-category: operator-guides-concelayout
+category: operator-guides-layout
 ingress:
-  The search page shows the listings on your marketplace. Users can find the offering or product they need by sorting, filtering, or (in map view) dragging the map..
+  The search page shows the listings on your marketplace. Users can find the offering or product they need by sorting, filtering, or (in map view) dragging the map.
 published: true
 ---
 

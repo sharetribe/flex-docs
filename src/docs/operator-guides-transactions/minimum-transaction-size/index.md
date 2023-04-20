@@ -2,7 +2,7 @@
 title: What is the minimum transaction size
 slug: what-is-the-minimum-transaction-size
 updated: 2023-04-20
-category: operator-guides-transaction
+category: operator-guides-transactions
 ingress:
   The minimum transaction size is the lowest amount possible to transact through your marketplace.
 published: true
