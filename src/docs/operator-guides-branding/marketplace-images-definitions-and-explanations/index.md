@@ -4,12 +4,10 @@ slug: marketplace-images-definition-and-explanation
 updated: 2023-04-19
 category: operator-guides-branding
 ingress:
-  Explanation for the different images needed when setting up your marketplace.
+Several images are necessary for your marketplace’s branding and overall presentation to users and visitors. These include your marketplace logo, favicon, app icon, background image for login pages, and social media image. In this article, we describe the images that can be used and altered from Console.
 published: true
 ---
 
-
-Several images are necessary for your marketplace’s branding and overall presentation to users and visitors. These include your marketplace logo, favicon, app icon, background image for login pages, and social media image. In this article, we describe the images that can be used and altered from Console.
 
 ## Marketplace Logo
 
@@ -24,6 +22,7 @@ The favicon is shown on the browser's tab. If your logo has a simple icon, you c
 ## Background image for login/signup page
 
 The background image for the login/signup page is the image that your users see in the background when logging in. It’s also shown on other pages related to user authentication, including Password Recovery, Password Reset, and Email Verification.
+
 
 The image should be appealing and give users a glimpse into your marketplace, what they should look forward to, and the kind of quality to expect when they make a listing. It should have a 2:1 aspect ratio and a minimum size of 1200x600 pixels. The background image for the login pages can be a maximum of 2400px wide. 
 Here’s an example of a background image: 
