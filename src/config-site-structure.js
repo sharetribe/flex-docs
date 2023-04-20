@@ -147,12 +147,22 @@ const sortingArrayHowToListings = [
   'modify-time-intervals',
   'bookings-with-buffer',
 ];
+
 const sortingArrayOperatorGuidesPages = ['introducing-pages'];
+
 const sortingArrayOperatorGuidesConcepts = [
   'concepts',
   'features',
   'flex-operator-resources',
 ];
+
+const sortingArrayOperatorGuidesLayout = [];
+
+const sortingArrayOperatorGuidesBranding = [];
+
+const sortingArrayOperatorGuidesListings = [];
+
+const sortingArrayOperatorGuidesTransactions = [];
 
 exports.siteStructure = [
   {
