@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-![Template in Sketch](./FTW-in-Sketch.png)
+![Template in Sketch](./template-sketch.png)
 
 The Sharetribe Web Template designs are available as Sketch files. The
 design files include complete designs for the template desktop and
@@ -28,21 +28,8 @@ available as Sketch files below.
 
 ## Design files
 
-<info>
-
-For the beta release, we don't yet have design files available for the
-Sharetribe Web Template.
-
-</info>
-
-Sharetribe offers three templates: one for daily bookings (e.g. booking
-saunas or hiking tours), one for hourly bookings (e.g. booking yoga
-lessons or renting kayaks), and one for product marketplaces (e.g.
-selling and buying sneakers). The main difference between the daily and
-hourly templates is the booking calendar, but also the outlooks differ
-to show some of the flexibility that Flex offers. Both the hourly and
-daily templates are provided in desktop and mobile layouts. The designs
-are provided as .sketch files, which can be opened using the
+The template is provided in desktop and mobile layouts. The designs are
+provided as .sketch files, which can be opened using the
 [Sketch vector graphics editor](https://www.sketch.com/). Some other
 design tools such as Adobe XD and Photoshop also offer support for
 designs in the .sketch file format.
@@ -60,12 +47,8 @@ we'll connect you to a designer who can help you out.
 
 ## Assets
 
-[Access design files in Google Drive](https://bit.ly/3miruCr).
-
-Or download directly: <br /><br /> <b>FTW daily</b><br />
-[Sharetribe_Flex-DAILY-Desktop.sketch](https://bit.ly/3bfeKGb)<br />
-[Sharetribe_Flex-DAILY-Mobile.sketch](https://bit.ly/3pKFbfl)<br />
-[Sharetribe_Flex-DAILY-Wireframes.sketch](https://bit.ly/3vOZ1aB)
+Access the design resources in our
+[GitHub Repository](https://github.com/sharetribe/design-resources).
 
 The design files can be used according to
 [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
