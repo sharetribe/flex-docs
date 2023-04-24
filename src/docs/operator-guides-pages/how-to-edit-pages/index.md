@@ -1,7 +1,7 @@
 ---
 title: How to edit content pages in Console
 slug: how-to-edit-content-pages-in-console
-updated: 2023-04-10
+updated: 2023-04-25
 category: operator-guides-pages
 ingress:
   Learn how to use Pages to edit content across Landing page,
@@ -300,17 +300,18 @@ to learn more about editing the code of content pages.
 
 ## Publish your Page changes to Live
 
-To see your changes in your live marketplace, you must copy the changes
-you made from your Development environment to your Live environment.
+To see your changes in your Live marketplace, you must copy the changes
+you made in your Test environment to your Live environment.
+
 Click the “Copy to live…” button and then select the specific pages that
-you want to copy. This will transfer all the content from the current
+you want to copy. This will transfer all the content from the Test
 environment to your Live environment.
 
 The changes that you make to Live will be available a few minutes after
 copying them to Live. You do not need to save them again in your Live
 environment.
 
-![copy-to-production](/copy-to-production.png 'Copy changes to live')
+![copy-to-production](/copy-to-production.png 'Copy changes to Live')
 _You can select what changes you copy to Live. Only selected changes
 copy to Live. The changes you copy to Live overwrite your pages content
 there._
