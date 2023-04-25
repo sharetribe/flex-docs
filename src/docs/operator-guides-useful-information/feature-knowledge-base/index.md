@@ -24,7 +24,7 @@ The knowledge base currently contains only a subset of features commonly built i
 
 # How to prepare requirements for successful development 
 
-The first step to hiring a developer to build your marketplace is to make them understand what you would like to build. With Flex, the fastest way to do this is by describing changes you would like to implement on top of the starting development templates. We recommend using the user journey framework to communicate these changes, creating flowcharts depicting steps users like buyers or sellers take to achieve a particular goal. We share some tips on how to prepare Flex user journeys here.
+The first step to hiring a developer to build your marketplace is to make them understand what you would like to build. With Flex, the fastest way to do this is by describing changes you would like to implement on top of the starting development template. We recommend using the user journey framework to communicate these changes, creating flowcharts depicting steps users like buyers or sellers take to achieve a particular goal. We share some tips on how to prepare Flex user journeys here.
 
 In describing your requirements using user journeys or another approach, you will cover how your marketplace works. Certain use cases are already supported in the Flex Templates, while others require the development of custom features. This knowledge base shares the list of common features and their typical names to help you find them. Note that this list is work in progress and does not reflect every feature possible on Flex.
 

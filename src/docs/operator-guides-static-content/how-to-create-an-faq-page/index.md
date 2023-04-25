@@ -406,8 +406,8 @@ Reference images:
 ## Setting the page live
 
 Now that we’ve created the page and made sure it works as supposed, all
-that’s left is to move it to the live environment. This can be done by
-clicking the blue button “Copy to Live…” on the left side bar.
+that’s left is to move it to the Live environment. This can be done by
+clicking the blue button “Copy to live…” on the left side bar.
 
 When you click on the button, you’ll get a pop-up asking you to confirm
 that you wish to move all the changes to Live. You don’t need to move
@@ -416,8 +416,8 @@ changes to different pages, you can pick and choose which ones you want
 to move to Live.
 
 A word of warning here, as well: if you've made changes directly to your
-live environment, those changes will be overwritten and this action
-cannot be undone.
+Live environment, those changes will be overwritten. This action cannot
+be undone.
 
 Success - the FAQ page is now created and live on our marketplace! You
 can see the result below. This tutorial might end here, but the journey
