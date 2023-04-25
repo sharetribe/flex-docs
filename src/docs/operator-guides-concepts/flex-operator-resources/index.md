@@ -31,17 +31,17 @@ components and what you need to customize your Flex marketplace.
   https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/
 - What development skills are needed to customize Flex:
   https://www.sharetribe.com/docs/introduction/development-skills/
-- Flex Templates for Web (FTW):
-  https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web-ftw
+- Sharetribe Web Template:
+  https://www.sharetribe.com/docs/operator-guides/concepts/##sharetribe-web-template
 
-## Flex Template for Web
+## Sharetribe Web Template
 
 These two articles will get started with the front end template that we
 have made available for you. Though, bear in mind that you don't need to
 use it, if you have different front end plans.
 
-- Getting started with FTW:
-  https://www.sharetribe.com/docs/introduction/getting-started-with-ftw-daily/
+- Getting started with Sharetribe Web
+  Template:/introduction/getting-started-with-web-template/
 - Customization checklist:
   https://www.sharetribe.com/docs/ftw/customization-checklist/
 
@@ -104,9 +104,8 @@ move forward with your project, check out this content.
 
 - Flex Documentation: https://www.sharetribe.com/docs/
 - Flex API Reference: https://www.sharetribe.com/api-reference/
-- FTW-daily Repo: https://github.com/sharetribe/ftw-daily
-- FTW-hourly Repo: https://github.com/sharetribe/ftw-hourly
-- FTW-product Repo: https://github.com/sharetribe/ftw-product
+- Sharetribe Web Template repo:
+  https://github.com/sharetribe/web-template/
 - Flex Developer Slack Channel: https://www.sharetribe.com/flex-slack
 - Flex Support Email: flex-support@sharetribe.com
 

@@ -46,10 +46,10 @@ flex-cli process list -m my-marketplace-dev
 ```
 
 From the list of processes, pick the one that you want to edit. In this
-tutorial we'll use process `preauth-with-nightly-booking`, version 1.
-You probably have different processes in your marketplace, you could use
-those. However, you can check the content of this "nightly booking"
-example process online from
+tutorial we'll use process `default-booking`, version 1. You might have
+different processes in your marketplace, so you can use those. However,
+you can check the content of this default booking example process online
+from
 [Flex example processes](https://github.com/sharetribe/flex-example-processes)
 Github repository.
 
@@ -71,7 +71,7 @@ We can see that required options are:
 Pull the process and save it to `process` directory:
 
 ```bash
-flex-cli process pull --process preauth-with-nightly-booking --version 1 --path process -m my-marketplace-dev
+flex-cli process pull --process default-booking --version 1 --path process -m my-marketplace-dev
 ```
 
 See what's inside the `process` directory:
@@ -157,7 +157,7 @@ review period to 10 days.
 ```diff
  {:format :v3
   :transitions
-  [{:name :transition/enquire,
+  [{:name :transition/inquire,
     ...
   {:name :transition/expire-review-period,
    :at
@@ -207,7 +207,7 @@ Now that we have validated the `process.edn` file we are ready to push
 the changes to Flex:
 
 ```bash
-flex-cli process push --path process --process preauth-with-nightly-booking -m my-marketplace-dev
+flex-cli process push --path process --process default-booking -m my-marketplace-dev
 ```
 
 After the process is successfully pushed, you'll see a new process
@@ -229,7 +229,7 @@ First, let's see what aliases are pointing to which versions. We can do
 this by using the `process list` command with the `--process` option:
 
 ```bash
-flex-cli process list --process preauth-with-nightly-booking -m my-marketplace-dev
+flex-cli process list --process default-booking -m my-marketplace-dev
 ```
 
 You'll see a list of process versions and aliases pointing to them. The
@@ -243,11 +243,11 @@ In the default process, the name of the existing alias is `release-1`.
 The command to update the alias is `process update-alias`:
 
 ```bash
-flex-cli process update-alias --process preauth-with-nightly-booking --alias release-1 --version 2 -m my-marketplace-dev
+flex-cli process update-alias --process default-booking --alias release-1 --version 2 -m my-marketplace-dev
 ```
 
-This command updates the alias `release-1` to point to
-`preauth-with-nightly-booking` process version `2`.
+This command updates the alias `release-1` to point to `default-booking`
+process version `2`.
 
 To verify that the change was successful, you can rerun the
 `process list` command and see that the `release-1` alias is now
@@ -260,8 +260,8 @@ break your marketplace front-end if you haven't updated it to work with
 the new process.
 
 The review period has now been changed! Next time you initiate a new
-transaction with the alias `preauth-with-booking/release-1` the review
-period is 10 days.
+transaction with the alias `default-booking/release-1` the review period
+is 10 days.
 
 ## Summary
 

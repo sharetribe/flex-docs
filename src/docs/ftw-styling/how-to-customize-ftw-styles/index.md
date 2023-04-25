@@ -1,20 +1,19 @@
 ---
-title: How to customize FTW styles
+title: Styling and CSS
 slug: how-to-customize-ftw-styles
-updated: 2022-07-11
+updated: 2023-01-01
 category: ftw-styling
 ingress:
-  This guide describes how to change the styles of the Flex Template for
-  Web (FTW) using CSS.
+  This guide describes the CSS architecture used in the Sharetribe Web
+  Template and how to apply changes to the styling using CSS.
 published: true
 ---
 
-The goal for creating styling for FTW was to keep styling as close as
-possible to plain CSS while still trying to avoid the mess that comes
-along with globally defined cascading behavior that CSS is all about.
+The goal for the template was to keep stylesheets as close as possible
+to plain CSS while still trying to avoid the mess that comes along with
+the globally defined cascading behaviour.
 
-To tackle this goal, we have split the styling into two levels in this
-template application:
+To tackle this goal, we have split the styling into two levels:
 
 - [Marketplace level styling](#marketplace-level-styling) with 3 global
   stylesheets:
@@ -25,36 +24,12 @@ template application:
 - [Component level styling](#styling-components) using
   [CSS Modules](https://github.com/css-modules/css-modules)
 
-<extrainfo title="I have a propertySets.css file. What is that?">
-
-```shell
-└── src
-    └── styles
-        └── propertySets.css
-```
-
-In previous versions of FTW, there has been a third CSS file:
-propertySets.css. This file contains
-[CSS Property Sets](https://chromestatus.com/feature/5753701012602880)
-that can be applied to component styles using the `@apply`syntax.
-However, W3C decided not to include that feature in future CSS syntax,
-and the
-[postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got
-deprecated in the process.
-
-If you have an older FTW template (earlier than FTW-daily v9, FTW-hourly
-v11 or FTW-product v10), you might have this file in your codebase. If
-you start using sharetribe-scripts v6.0.0, you need to consider
-migrating away from that since it contains code that is deprecated in
-v6.0.0 of sharetribe-scripts.
-
-Read more from
-[this pull request](https://github.com/sharetribe/ftw-daily/pull/1531)
-in FTW-Daily.
-
-</extrainfo>
-
 ## Marketplace level styling
+
+Marketplace-level styling refers to global styles used across the
+template. The stylesheets presented in this section contain variables
+such as `marketplaceColor`, which defines the primary colour used in
+many icons and fonts across the marketplace.
 
 ```shell
 └── src
@@ -86,8 +61,8 @@ root-element level (`<html>`) and then used inside some CSS rule.
 }
 ```
 
-(Read more about CSS Properties from
-[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties))
+Read more about CSS Properties from
+[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
 
 ### customMediaQueries.css
 
@@ -135,10 +110,10 @@ variables:
 /* Used with inline CSS SVGs */
 --marketplaceColorEncoded: %23c0392b;
 
---successColor: #2ecc71;
---successColorDark: #239954;
---failColor: #ff0000;
---attentionColor: #ffaa00;
+--colorSuccess: #2ecc71;
+--colorSuccessDark: #239954;
+--colorFail: #ff0000;
+--colorAttention: #ffaa00;
 
 --matterColorDark: #000000;
 --matterColor: #4a4a4a;
@@ -156,12 +131,12 @@ The `--marketplaceColorEncoded` variable holds the same value as
 `--marketplaceColor` but with the _#_ URL encoded. This value can be
 used to maintain a consistent color scheme with inline SVG icons.
 
-`--successColor` (green) is used in form inputs for showing that the
+`--colorSuccess` (green) is used in form inputs for showing that the
 input value is valid. Sometimes, submit buttons (`<PrimaryButton>`) are
 also using that color to highlight the fact that user has entered valid
 information to the form at hand.
 
-Similarly `--failColor` is used to style errors and `--attentionColor`
+Similarly `--colorFail` is used to style errors and `--colorAttention`
 is used to draw user's attention to certain UI components (e.g. required
 form inputs, or important info in Inbox)
 
@@ -201,8 +176,8 @@ For example, our default font is defined as:
 }
 ```
 
-And created class can be used inside a component's
-[CSS Module syntax](#styling-components) as:
+The new class can be used inside a component's
+[CSS Module syntax](#styling-components):
 
 ```css
 .tip {
@@ -210,67 +185,33 @@ And created class can be used inside a component's
 }
 ```
 
-<extrainfo title="I don't have classes in customMediaQueries.css but I have a propertySets.css file. What is that?">
+<info>
 
-In the previous versions of FTW templates, there has been also a third
-file: propertySets.css. This file contained CSS Property Sets that could
-be applied to component styles with `@apply` syntax. However, W3C
-decided not to include that feature in future CSS syntax and the
-postcss-apply plugin was deprecated in the process.
+The template app follows a pattern where the height of an element should
+be divisible by **6px** on mobile layout and **8px** on bigger layouts.
+This also affects line-heights of font styles.
 
-So, if you have an older FTW template (earlier than FTW-daily v9,
-FTW-hourly v11, or FTW-product v10), you might have this file in your
-codebase. If you start using sharetribe-scripts v6.0.0 you need to
-consider migrating away from that since it contains code that is
-deprecated in v6.0.0 of sharetribe-scripts.
-
-Previously, fonts and other shared sets of CSS rules were specified in
-propertySets.css.
-
-For example, our default font was defined as:
-
-```css
---marketplaceDefaultFontStyles: {
-  font-family: var(--fontFamily);
-  font-weight: var(--fontWeightMedium);
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.1px;
-  /* No margins for default font */
-
-  @media (--viewportMedium) {
-    font-size: 16px;
-    line-height: 32px;
-  }
-}
-```
-
-And created property set were used as:
-
-```css
-p {
-  @apply --marketplaceDefaultFontStyles;
-}
-```
-
-</extrainfo>
-
-> ⚠️ **Note**: template app is following a pattern where the height of
-> an element should be divisible by **6px** on mobile layout and **8px**
-> on bigger layouts. This affects line-heights of font styles too.
+</info>
 
 ## Fonts
 
-**marketplaceDefaults.css** file is mostly responsible of what font
-styles are used. The font-family itself is defined in the
-[CSS Property](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
-`--fontFamily` and by default, FTW templates use Poppins. This is a
-Google Font, but for performance reasons we have served them from
-Sharetribe's CDN.
+You can find all font-related rule sets from the
+[marketplaceDefaults.css](https://github.com/sharetribe/web-template/blob/main/src/styles/marketplaceDefaults.css)
+file. The default font is defined in the `--fontFamily`
+[CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
+The template uses either the Mac OS system font or
+[Inter](https://fonts.google.com/specimen/Inter) if any other operating
+system is in use. Even though Inter is a Google Font, it gets served
+through the Sharetribe CDN for performance reasons. The
+[public/index.html](https://github.com/sharetribe/web-template/blob/main/public/index.html)
+is responsible for actually loading the fonts into the application.
 
-The actual font files are loaded in _public/index.html_. If you want to
-change the font or loading strategy, you need to edit those 3 files. To
-read more about font-loading strategies, check these links:
+If you want to change the font, you must make changes to both
+[marketplaceDefaults.css](https://github.com/sharetribe/web-template/blob/main/src/styles/marketplaceDefaults.css)
+and
+[public/index.html](https://github.com/sharetribe/web-template/blob/main/public/index.html).
+If you're interested in different font-loading strategies, see these
+links:
 
 - https://www.zachleat.com/web/comprehensive-webfonts/
 - https://css-tricks.com/the-best-font-loading-strategies-and-how-to-execute-them/
@@ -306,61 +247,43 @@ case **heroMainTitle**):
 <h1 className={css.heroMainTitle}>Book saunas everywhere</h1>
 ```
 
-### Find the component
+### Finding a component
 
 Quite often one needs to find a component that is responsible for
 certain UI partial in order to change the styles. In this case, the
 easiest way to pinpoint a component is to open the inspector from
-browser's dev tools. (Right-click on top of the correct element, and
+browser's dev tools. Right-click on top of the correct element, and
 select _Inspector_, or something of the sort depending on the browser,
-from the context menu.)
+from the context menu.
 
-![Mobile LandingPage hero title](./styling-find-component.png)
+![Login form password recovery link](./styling-find-component.png)
 
-Here we have opened title on LandingPage and the styles for the
-**heroMainTitle** heading:
+Here we have opened Authentication Page forgot password link:
 
 ```html
-<h1 class="SectionHero_heroMainTitle__3mVNg">
-  <span>Book saunas everywhere.</span>
-</h1>
+<a
+  class="LoginForm_recoveryLink__iyezw marketplaceModalHelperLink"
+  href="/recover-password"
+>
+  <span>Reset password</span>
+  <a></a
+></a>
 ```
 
 Styles are defined in a "class" called
-**`SectionHero_heroMainTitle__3mVNg`**. As stated before, the first part
-of a class name is actually giving us a hint about what component is
-defining that style - in this case, it's _SectionHero_ and its styles
-can be found from the file: **SectionHero.module.css**.
+**`LoginForm_recoveryLink__iyezw`**. As stated before, the first part of
+a class name is actually giving us a hint about what component is
+defining that style - in this case, it's _LoginForm_ and its styles can
+be found from the file: **LoginForm.module.css**.
 
 ```shell
 └── src
-    └── components
-        └── SectionHero
-            └── SectionHero.module.css
+    └── containers
+        └── AuthenticationPage
+            └── LoginForm
+               └── LoginForm.js
+               └── LoginForm.module.css
 ```
-
-There's only two groups of components that break that rule:
-
-- **src/containers**
-
-  These components are connected to Redux store: Pages and
-  TopbarContainer
-
-- **src/forms**
-
-<extrainfo title="FTW-product has moved components and removed 'src/forms/' directory">
-
-FTW-product has moved most of the components that are only used in a
-single page, inside the directory of that page-level component. In
-addition, _src/forms_ directory became obsolete and it was removed
-altogether.
-
-This was done to reduce the size of code-chunks (JavaScript files
-containing part of the source code) that are shared between different
-pages. It improves performance since individual pages need to load less
-code before they can render themselves.
-
-</extrainfo>
 
 ### Styling guidelines
 
@@ -369,8 +292,8 @@ We have a practice of naming the outermost class of a component as
 element it only has **.root** class, and if there's more complex inner
 DOM structure needed, additional classes are named semantically.
 
-`<SectionHero>` could contain classes named as **.root**,
-**.heroMainTitle**, **.heroSubtitle**.
+`<LoginForm>` could contain classes named as **.root**, **.password**,
+**.recoveryLink**.
 
 Some guidelines we have tried to follow:
 
@@ -487,25 +410,9 @@ inside _LocationAutocompleteInput.module.css_.
 
 ## Using vanilla CSS
 
-FTW templates don't use vanilla CSS, but it is possible to take vanilla
-CSS into use just by creating CSS file that doesn't use `*.module.css`
-pattern in its file name.
+The Sharetribe Web Template does not use vanilla CSS, but it is possible
+to take vanilla CSS into use just by creating CSS file that doesn't use
+`*.module.css` pattern in its file name.
 
-Read more about using vanilla CSS from Create React App's docs:<br/>
-https://create-react-app.dev/docs/adding-a-stylesheet
-
-<extrainfo title="Before FTW-daily@v7.0.0 or FTW-hourly@v9.0.0">
-
-Old template version before FTW-daily@v7.0.0 or FTW-hourly@v9.0.0 are
-expecting all `*.css` files to contain CSS Modules markup. Adding
-vanilla CSS in those setups required that the file was uploaded outside
-of the build process.
-
-In practice, the files using plain CSS could be added to
-_public/static/_ directory and then linked them inside _index.html_:
-
-```html
-<link rel="stylesheet" href="%PUBLIC_URL%/static/myStylesheet.css" />
-```
-
-</extrainfo>
+Read more about using vanilla CSS from
+[Create React App's docs](https://create-react-app.dev/docs/adding-a-stylesheet).

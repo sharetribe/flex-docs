@@ -28,7 +28,7 @@ environment on your local machine. At some point during the development
 process, you will want to start testing features in an environment where
 a server exposes your website to the public Internet. Using a cloud
 hosting service like [Render](https://www.render.com) or
-[Heroku](https://www.heroku.com/) you can deploy your application to a
+[Heroku](https://www.heroku.com/), you can deploy your application to a
 server, after which your marketplace will be accessible through a public
 URL.
 
@@ -45,10 +45,11 @@ Before you deploy your marketplace to Render or another hosting service,
 you should first ensure that your client application runs without error
 when using SSR.
 
-The FTW templates have a small [Node/Express](https://expressjs.com/)
-server that enables SSR. It allows pages to be rendered faster than on
-the client, but even more importantly, it makes it easier for search
-engines to index your website (in case they don't execute JavaScript).
+The Sharetribe Web Template has a small
+[Node/Express](https://expressjs.com/) server that enables SSR. It
+allows pages to be rendered faster than on the client, but even more
+importantly, it makes it easier for search engines to index your website
+(in case they don't execute JavaScript).
 
 To start up the server locally, you will need to run the command:
 
@@ -63,9 +64,13 @@ with
 to run a development server, which simulates how the client application
 would run in a production environment.
 
-> **Note:** If you have issues with SSR, you have likely called
-> functions that belong to the **window** object/scope. In the server
-> environment, the **window** object is not available.
+<info>
+
+If you have issues with SSR, you have likely called functions that
+belong to the **window** object/scope. In the server environment, the
+**window** object is not available.
+
+</info>
 
 ### Enable HTTP basic access authentication
 
@@ -75,10 +80,10 @@ web application while still testing your marketplace: it prevents your
 site from being indexed in search engines and users from accidentally
 signing up in a marketplace still under development.
 
-FTW exposes two environment variables with which you can set a username
-and password that limit access to your web application. When you deploy
-your application to Render, remember to define the following environment
-variables:
+Sharetribe Web Template exposes two environment variables with which you
+can set a username and password that limit access to your web
+application. When you deploy your application to Render, remember to
+define the following environment variables:
 
 `BASIC_AUTH_USERNAME` and `BASIC_AUTH_PASSWORD`
 
@@ -92,9 +97,13 @@ marketplace to Render. You can also deploy your marketplace on another
 cloud hosting platform, but we suggest using Render as it provides a
 [free tier](https://render.com/pricing) and is quick and easy to set up.
 
-> **Note:** Make sure you have completed the
-> [Tutorial introduction](https://www.sharetribe.com/docs/tutorial/introduction/)
-> as this step requires having your code hosted in a git repository.
+<info>
+
+Make sure you have completed the
+[Tutorial introduction](https://www.sharetribe.com/docs/tutorial/introduction/),
+as this step requires having your code hosted in a Git repository.
+
+</info>
 
 ### Create an account on Render
 
@@ -120,11 +129,6 @@ the repository you want to deploy.
 
 Give your web service a name. You do not need to touch any other
 settings (such as environment, branch, build command and start command),
-and select the free plan. Before clicking on "create web service", click
-on "Advanced" to enter the required environment variables.
-
-Give your web service a name. You do not need to touch any other
-settings (such as environment, branch, build command and start command)
 and select the free plan. Before clicking on "create web service", click
 on "Advanced" to enter the required environment variables.
 
@@ -237,12 +241,12 @@ addition, you should try to:
   - [Facebook sharing debugger](https://developers.facebook.com/tools/debug/)
   - [Twitter card validator](https://cards-dev.twitter.com/validator)
 - Save payment card
-
-  Use [test card numbers](https://stripe.com/docs/testing).
+  - Use [test card numbers](https://stripe.com/docs/testing).
 
 If your marketplace concept needs advanced features, you need to
 continue with customizations. In
-[the next part of this tutorial](/tutorial/add-extended-data/), we'll go
-through how to extend listing entities with extended data.
+[the next part of this tutorial](/tutorial/customize-pricing-tutorial/),
+we'll go through how to modify the pricing and transaction flow on your
+marketplace.
 
-[› Go to the next article](/tutorial/add-extended-data/)
+[› Go to the next article](/tutorial/customize-pricing-tutorial/)

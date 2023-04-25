@@ -10,24 +10,9 @@ ingress:
 published: true
 ---
 
-**Note, that Google login requires ftw-daily version
-[6.5.0](https://github.com/sharetribe/ftw-daily/releases/tag/v6.5.0) or
-ftw-hourly version
-[8.5.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v8.5.0).**
-
-<extrainfo title="Updating from upstream not an option?">
-
-Has your marketplace UI application diverged from ftw-daily or
-ftw-hourly so much that pulling upstream updates to enable Google login
-is not a feasible option? In that case, take a look at the following
-change sets in ftw-daily for reference on how to implement Google login
-in the front end:
-
-- [Facebook login changes](https://github.com/sharetribe/ftw-daily/pull/1366)
-  (contains many updates regarding social logins in general)
-- [Google login changes](https://github.com/sharetribe/ftw-daily/pull/1376)
-
-</extrainfo>
+**If you are working with one of our legacy templates and are not sure
+whether Google login is enabled, take a look at our
+[legacy documentation](/ftw/legacy-templates/).**
 
 Enabling Google login consists of three main steps:
 
@@ -39,9 +24,9 @@ Enabling Google login consists of three main steps:
   provider (IdP) client is what let's Flex know that the users of your
   marketplace are allowed to use the Google Sign-In Project you created
   to log into your marketplace.
-- **Configure FTW** A few attributes from the Sign-In Project will need
-  to be configured to FTW so that FTW can perform the login flow via
-  Google.
+- **Configure Sharetribe Web Template** A few attributes from the
+  Sign-In Project will need to be configured to Sharetribe Web Template
+  so that it can perform the login flow via Google.
 
 ## Configure the Google Sign-In Project
 
@@ -115,18 +100,19 @@ The IdP client config should now look something like this:
    into one identity provider client in Flex Console.
 7. Click "Add client" and your identity provider client is ready.
 
-## Configure FTW
+## Configure Sharetribe Web Template
 
-Last step to enabling Google login is to configure FTW with the values
-that you used to add an identity provider client in Console. Add the
-following environment variables to FTW:
+Last step to enabling Google login is to configure your Sharetribe Web
+Template with the values that you used to add an identity provider
+client in Console. Add the following environment variables to the
+template:
 
 - **`REACT_APP_GOOGLE_CLIENT_ID`** The Client ID of your Google Sing-In.
   Corresponds to _client ID_ of the identity provider client in Console.
 - **`GOOGLE_CLIENT_SECRET`** The Client Secret of your Google Sign-In.
 
-For more information on FTW environment variables, see the
-[FTW Environment configuration variables](/ftw/ftw-env/) article.
+For more information on the template environment variables, see the
+[Template environment variables](/ftw/ftw-env/) article.
 
-That is it. Setting these environment variables will make FTW render the
-Google login button in signup and login forms.
+That is it. Setting these environment variables will make Sharetribe Web
+Template render the Google login button in signup and login forms.

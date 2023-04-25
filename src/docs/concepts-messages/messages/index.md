@@ -16,9 +16,9 @@ Messages let your users communicate with other users in your
 marketplace. They can be exchanged freely between a customer and a
 provider once they have engaged in a transaction. Messages always need
 to be associated with a transaction and can not be sent outside of one.
-The default
-[transaction process](https://github.com/sharetribe/flex-example-processes/blob/master/flex-default-process/process.edn)
-includes an enquiry transition, which initiates a transaction without
+The default booking
+[transaction process](https://github.com/sharetribe/flex-example-processes/blob/master/default-booking/process.edn)
+includes an inquiry transition, which initiates a transaction without
 running any [actions](/references/transaction-process-actions/#actions),
 allowing the provider and customer to send messages to each other. Note
 that messages do not alter the transaction or transition state.
@@ -86,34 +86,34 @@ and react directly to them. See how to
 [Integration API example script repository](https://github.com/sharetribe/flex-integration-api-examples)
 if you’re unsure where to start building your integration.
 
-## Message notifications in Flex Templates for Web (FTW)
+## Message notifications in Sharetribe Web Template
 
-By default, FTW renders a notification symbol when the provider has
-transactions that require action, i.e. transactions that require
-acceptance of a booking request.
+By default, Sharetribe Web Template renders a notification symbol when
+the provider has transactions that require action, i.e. transactions
+that require acceptance of a booking request.
 
 ![Notification symbol](notification.png 'Notification symbol')
 
 This is how the default logic works:
 
 1.  A
-    [query is made](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L300)
+    [query is made](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L306)
     that retrieves all sales transactions (i.e. transactions where the
-    current user is the provider) transactions that are in the
-    [confirm payment state](https://github.com/sharetribe/ftw-daily/blob/85e9291a3078c54d6531ad465276f03847882911/src/util/transaction.js#L214)
+    current user is the provider) transactions that are in a state that
+    [requires provider attention](https://github.com/sharetribe/web-template/blob/main/src/transactions/transaction.js#L287)
 2.  The amount of sales transactions determines the
-    [notification count](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L104)
+    [notification count](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L105)
     shown
-    [in the badge](https://github.com/sharetribe/ftw-daily/blob/master/src/components/TopbarDesktop/TopbarDesktop.js#L55).
+    [in the badge](https://github.com/sharetribe/web-template/blob/main/src/components/Topbar/TopbarDesktop/TopbarDesktop.js#L60).
 
 The variable
-[currentUserNotificationCount](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L63)
+[currentUserNotificationCount](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L64)
 stores the number of active notifications.
 
 You can extend the messaging logic in many ways. For example, a common
 customisation is to display a notification every time a user receives a
 new message. To achieve this, you could change the logic behind
-[currentUserNotificationCount](https://github.com/sharetribe/ftw-daily/blob/master/src/ducks/user.duck.js#L63)
+[currentUserNotificationCount](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L64)
 to display a number stored in extended data. The data attribute would
 represent the number of unread messages, and could be updated every time
 a new message is detected using [events](/how-to/reacting-to-events/).

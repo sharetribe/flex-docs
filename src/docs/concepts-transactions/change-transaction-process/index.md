@@ -10,9 +10,9 @@ published: true
 ---
 
 Capturing how your users transact is a critical part of customizing your
-marketplace. Your developer will use a feature called the transaction
-process to implement the steps your users take when they interact on
-your marketplace.
+marketplace. Flex uses a feature called the transaction process to
+implement the steps your users take when they interact on your
+marketplace.
 
 Even if you’re not the one developing your marketplace, you still have
 work to do. First, you must design how you want transactions on your
@@ -64,16 +64,17 @@ what you would like to happen and when. For instance, if refunds happen
 on your marketplace, define at what point customers are eligible to
 receive them and when not.
 
-### Bookings
+### Bookings or stock
 
 Booking is a process specific to reserving a time slot from a provider’s
 availability calendar. If your marketplace includes bookings, then be
 sure to outline how they will work. The most important detail to specify
 is the time-units used to make reservations: hours, days, weeks, or
-something else?
+something else? You can use bookings for both rentals and services.
 
-You most likely will not use booking functionality if your marketplace
-is for selling products.
+If your marketplace is for selling products, you would use stock instead
+of bookings to manage how many units each listing has available to be
+purchased.
 
 ### Shared information
 
@@ -108,8 +109,8 @@ To further think about the user experience on your marketplace in
 addition to transactions,
 [consult our guide](/design-toolkit/what-are-user-journeys/) on defining
 the discovery and listing creating process in your marketplace. You can
-see the default user experience provided by
-[Flex’s Templates for Web](/operator-guides/concepts/#flex-templates-for-web-ftw)
+see the default user experience provided by the
+[Sharetribe Web Template](/operator-guides/concepts/#sharetribe-web-template)
 there too.
 
 ## Draw it out
@@ -144,7 +145,7 @@ What steps will be the same? What will be different?
 Also, check out some of the template processes in Flex that you can find
 in the Build tab of your
 [Console](https://flex-console.sharetribe.com/). Using existing
-processes always saves your developer time configuring your transaction
+processes always saves development time on configuring your transaction
 process.
 
 ## Remember your marketplace website or app
@@ -152,7 +153,7 @@ process.
 The transaction process plays out in your web or mobile marketplace
 application. Therefore, the steps you outline must be possible for your
 users to execute in your user interface. The default transaction
-processes have been built in to Flex Template for Web. If you want to
+processes have been built in to Sharetribe Web Template. If you want to
 add elements to your transaction process, your developer will need to
 customize the required pieces in order for your transaction process to
 be possible.
@@ -162,13 +163,14 @@ ability to negotiate a price, a transaction process should start with a
 customer making an offer. Providers can then accept, reject, or counter
 offers. Your users will need an interface to complete these actions.
 
-Since the Flex Template does not contain such an interface out of the
-box, a developer will need to customize it into the application. You can
-use the [Flex design files](/design-toolkit/design-files/) to guide your
-developer on how you want this to work.
+Since the Sharetribe Web Template does not contain such an interface out
+of the box, a developer will need to customize it into the application.
+You can use the [design files](/design-toolkit/design-files/) to guide
+your developer on how you want this to work.
 
-You can review everything included in the Flex Template by exploring the
-test marketplace in your Console. You can refer to this article to
+You can review everything included in the Sharetribe Web Template by
+exploring the demo marketplace in your Console. You can refer to this
+article to
 [review the screens that are part of a transaction](/design-toolkit/your-user-journey-a-guide/#transaction-process).
 
 ## Share your transaction process with your developer

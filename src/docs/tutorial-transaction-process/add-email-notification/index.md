@@ -9,10 +9,10 @@ ingress:
 published: true
 ---
 
-In this example, we will add a new email notification which will be sent
+In this example, we will add a new email notification that will be sent
 to the customer when a new booking request has been made. We will edit
-the **cottagedays-daily-booking** transaction process which was created
-in the earlier part of this tutorial.
+the **cottagedays-nightly-booking** transaction process which was
+created in the earlier part of this tutorial.
 
 ## Fetch transaction process
 
@@ -21,13 +21,17 @@ have most the up-to-date version of the process. You can fetch any
 process version with flex-cli:
 
 ```shell
-flex-cli process pull --process=cottagedays-daily-booking --alias=release-1 --path=./cottagedays-daily-booking --marketplace=cottagedays-dev
+flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
 ```
 
-> **Note**: If you already have _cottagedays-daily-booking_ directory
-> you can't pull the process. You need to either change the --path
-> parameter or use _--force_ flag at the end of the command to overwrite
-> the existing directory.
+<info>
+
+If you already have a _cottagedays-nightly-booking_ directory, you can't
+pull the process. You need to either change the --path parameter or use
+_--force_ flag at the end of the command to overwrite the existing
+directory.
+
+</info>
 
 ## Create a new email template
 
@@ -70,7 +74,7 @@ will not work.
 
 ### Edit the notification
 
-Because we want to send the new-booking-request-for-customer
+Because we want to send the _new-booking-request-for-customer_
 notification as a confirmation to the customer, we want to do some small
 changes to the subject line in the
 _new-booking-request-for-customer-subject.txt_ file:
@@ -87,7 +91,7 @@ Templates are using
 [Handlebars syntax](/references/email-templates/#handlebars) which will
 be rendered as HTML when the email is sent. Handlebars enables adding
 variables like recipient name, marketplace name, and transaction details
-to the template. You can see all variables that are available in
+to the template. You can see all variables that are available in the
 [transaction email context reference](/references/email-templates/#transaction-email-context).
 
 At the beginning of the notification file, we define helper functions
@@ -127,7 +131,7 @@ d,YYYY" tz="Etc/UTC"}}
     <p>
       Your booking request for {{listing.title}} from {{> format-date
       date=booking.start}} to {{> format-date date=booking.end}} is now
-      waiting for provider to accept it.
+      waiting for the provider to accept it.
     </p>
 
     <p>
@@ -158,40 +162,44 @@ d,YYYY" tz="Etc/UTC"}}
 
 ## Preview your changes
 
-Once we have done changes to the email notifications we can preview them
-with **flex-cli**. To preview the changes we just made, we can run the
-command:
+Once we have done changes to the email notifications, we can preview
+them with **flex-cli**. To preview the changes we just made, we can run
+the command:
 
 ```shell
-flex-cli notifications preview --template cottagedays-daily-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-dev
+flex-cli notifications preview --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-dev
 ```
 
 You should see the HTML preview of the template in the address
-http://localhost:3535. If you do any changes to the template, you can
+http://localhost:3535. If you make any changes to the template, you can
 refresh the browser to reload the template and render a new preview
 
 You can also test sending the preview email:
 
 ```shell
-flex-cli notifications send --template cottagedays-daily-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-dev
+flex-cli notifications send --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-dev
 ```
 
-> **Note:** The email is sent to the email address of the admin user
-> that was used in logging in to the CLI
+<info>
+
+The email is sent to the email address of the admin user that was used
+in logging in to the CLI.
+
+</info>
 
 ## Update process.edn
 
 Once we have the new notification files in place, we need to add the
-notification to the **process.edn** file. In the _process.edn_ file all
+notification to the **process.edn** file. In the _process.edn_ file, all
 the notifications are added under the _:notifications_ key. We can use
 the _new-booking-request_ notification as an example again.
 
-The _:name_ of the notification should be unique so we use the name
+The _:name_ of the notification should be unique, so we use the name
 _new-booking-request-for-customer_. We want this notification to be sent
-when _:transition/confirm-payment_ happens which is at the same time as
-the provider gets new-booking-request notification. We want this
-notification to be sent to customer so we choose that as an actor for
-_:to_ parameter. Last, we need to make sure that the value of
+when _:transition/confirm-payment_ happens, which is at the same time
+when the provider gets new-booking-request notification. We want this
+notification to be sent to the customer so we choose that as an actor
+for _:to_ parameter. Last, we need to make sure that the value of
 _:template_ is the same as the directory we created earlier.
 
 ```diff
@@ -211,25 +219,25 @@ _:template_ is the same as the directory we created earlier.
 
 Now that you have edited the email templates, you need to push a new
 version of your process. If you have done the earlier parts of the
-tutorial this process should be already quite familiar to you. If you
-need more detailed information take a look at the
+tutorial, this process should be already quite familiar to you. If you
+need more detailed information, take a look at the
 [Edit transaction process with Flex CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
 
 Push the updated process:
 
 ```shell
-flex-cli process push --process=cottagedays-daily-booking --path=./cottagedays-daily-booking --marketplace=cottagedays-dev
+flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
 ```
 
 Check version number with _process list_ command:
 
 ```shell
-flex-cli process list --process=cottagedays-daily-booking --marketplace=cottagedays-dev
+flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-dev
 ```
 
 Update the alias to point to the latest version of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-daily-booking --version=3 --marketplace=cottagedays-dev
+flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=3 --marketplace=cottagedays-dev
 ```

@@ -1,30 +1,31 @@
 ---
 title: Create a new transaction process
 slug: create-transaction-process
-updated: 2021-12-16
+updated: 2023-03-08
 category: tutorial-transaction-process
 ingress:
   This guide describes how to create a new transaction process and how
-  to take it into use on the FTW-daily template.
+  to take it into use in the Sharetribe Web Template.
 published: true
 ---
 
+In this tutorial, we'll create a new transaction process for the
+CottageDays marketplace. It will be a booking process where we will add
+a new transition for the customer to cancel their booking request before
+the provider accepts it. We will also update the client app to use the
+new process, and to allow the customer to cancel the request.
+
 ## Create a transaction process
 
-In this tutorial, we'll create a new transaction process for the
-CottageDays marketplace. It will be a daily booking process in contrast
-to the default nightly process. We make this for demonstration purpose
-since it might not be a smart move for an actual cottage-rental
-marketplace.
-
-In addition, we also add a new decline transition for the operator and
-update the client app so that it uses the new process.
+First, we will use the default booking process to create a similar but
+separate transaction process. This will allow us to make changes to the
+transaction behavior.
 
 ### Clone Flex example processes repository
 
-Writing _process.edn_ file and email templates from scratch is a bit
-tedious task. We'll make our life a bit easier by cloning Flex example
-processes repository:
+Writing a _process.edn_ file and the email templates from scratch is a
+fairly tedious task. We'll make our life a bit easier by cloning the
+Flex example processes repository :
 
 ```shell
 git clone https://github.com/sharetribe/flex-example-processes.git
@@ -39,21 +40,7 @@ cd flex-example-processes/
 There are several processes listed in
 [that directory](https://github.com/sharetribe/flex-example-processes).
 The one we are going to use as a basis for our new process is
-_flex-default-process_. It has privileged transitions in use and it is
-therefore compatible with FTW-daily v8.0.0 or later.
-
-<extrainfo title="What's the preauth-daily-booking example process?">
-
-In the example processes repository, there's another process that
-specifically named as daily booking (_preauth-daily-booking_). It's an
-old process (created before privilege transitions feature) and its
-speciality was about how it counted total price with
-[:action/calculate-tx-daily-total-price](https://github.com/sharetribe/flex-example-processes/blob/master/preauth-daily-booking/process.edn#L22).
-However, with privileged transitions, the pricing is set on the client
-app - so, there is no need for process changes between nightly and daily
-booking.
-
-</extrainfo>
+_default-booking_.
 
 ### Create a new process
 
@@ -85,21 +72,25 @@ repository.
 
 Then we just need to define a name to that process and specify the
 marketplace environment, where the new process should be created. We'll
-use _"cottagedays-daily-booking"_. Our final command for the
-_cottagedays-dev_ marketplace would look like this:
+use _"cottage-days-booking"_. Our final command for the
+_cottagedays-test_ marketplace would look like this:
 
 ```shell
-flex-cli process create --path=./flex-default-process --process=cottagedays-daily-booking --marketplace=cottagedays-dev
+flex-cli process create --path=./default-booking --process=cottage-days-booking --marketplace=cottagedays-dev
 ```
 
-> **Note**: you need to modify the command to use your own dev
-> marketplace ID, which you can find from the Flex Console.
+<info>
+
+You need to modify the command to use your own dev marketplace ID, which
+you can find in Flex Console.
+
+</info>
 
 After executing that command, you can go to the Flex Console (Build ->
-Transaction processes tab) and see that the
-_"cottagedays-daily-booking"_ process is there.
+Transaction processes tab) and see that the _"cottage-days-booking"_
+process is there.
 
-![CottageDays daily booking process created.](./cottagedays-daily-booking-process.png)
+![CottageDays booking process created.](./cottage-days-booking-process.png)
 
 ### Create process alias
 
@@ -108,25 +99,27 @@ our client app, since it doesn't have process alias set. We can create
 an alias for our new process with Flex CLI command:
 
 ```shell
-flex-cli process create-alias --process=cottagedays-daily-booking --version=1 --alias=release-1 --marketplace=cottagedays-dev
+flex-cli process create-alias --process=cottage-days-booking --version=1 --alias=release-1 --marketplace=cottagedays-dev
 ```
 
 With that command, we are creating a new alias _"release-1"_ and point
 it to the previously created process and its version 1.
 
 After that you should see the alias in the Console:<br />
-`cottagedays-daily-booking/release-1`.
+`cottage-days-booking/release-1`.
 
 At this point, we have essentially just copied the default process under
 a different name.
 
 ## Modify transaction process
 
-One transition that should be considered carefully, is the operator's
-ability to cancel a transaction. If the operator needs to cancel a
-transaction in a certain state, there needs to be a transition defined
-for it in the transaction process. Let's add a new operator transition
-to the process.
+In the default booking process, the provider can accept or decline a
+booking request. However, we want to also allow the customer to cancel
+their booking request before the provider accepts the booking if, for
+instance, the customer's schedule changes.
+
+To allow this, we need to add a new transition to the transaction
+process.
 
 ### Pull the existing transaction process
 
@@ -135,7 +128,7 @@ have most the up-to-date version of the process. You can fetch any
 process version with flex-cli:
 
 ```shell
-flex-cli process pull --process=cottagedays-daily-booking --alias=release-1 --path=./cottagedays-daily-booking --marketplace=cottagedays-dev
+flex-cli process pull --process=cottage-days-booking --alias=release-1 --path=./cottage-days-booking --marketplace=cottagedays-dev
 ```
 
 Now, we can open the _process.edn_ file from the new directory with a
@@ -144,71 +137,75 @@ by reading our
 [reference document](/references/transaction-process-format/#the-edn-format)
 about it.
 
-There's one existing cancel transition defined for operator in that
-file. That cancel transition can be called when the transaction is in
-the state: **accepted**.
+The provider can decline the booking with `transition/decline`. It
+refunds the payment and declines the pending booking.
 
 ```clojure
-  {:name :transition/cancel,
-   :actor :actor.role/operator,
+  {:name :transition/decline,
+   :actor :actor.role/provider,
    :actions
-   [{:name :action/cancel-booking}
-    {:name :action/calculate-full-refund}
-    {:name :action/stripe-refund-payment}],
-   :from :state/accepted,
-   :to :state/cancelled}
+   [{:name :action/calculate-full-refund}
+    {:name :action/stripe-refund-payment}
+    ;; Keep this action last in the list of actions for
+    ;; the transition
+    {:name :action/decline-booking}],
+   :from :state/preauthorized,
+   :to :state/declined}
 
 ```
 
-Let's add another similar transition there:
+Let's add another similar transition, but for the customer:
 
 ```clojure
-  {:name :transition/decline-preauthorized-by-operator,
-   :actor :actor.role/operator,
+  {:name :transition/customer-cancel
+   :actor :actor.role/customer,
    :actions
-   [{:name :action/decline-booking}
-    {:name :action/calculate-full-refund}
-    {:name :action/stripe-refund-payment}],
+   [{:name :action/calculate-full-refund}
+    {:name :action/stripe-refund-payment}
+    ;; Keep this action last in the list of actions for
+    ;; the transition
+    {:name :action/decline-booking}],
    :from :state/preauthorized,
-   :to :state/declined-by-operator}
+   :to :state/declined}
 ```
 
 With this configuration, we are creating a new transition called
-_:transition/decline-preauthorized-by-operator_ for the operator.
-Because it's called before the provider has accepted the booking, it's
-using _:action/decline-booking_ instead of _:action/cancel-booking_.
-Otherwise, the actions are the same as in _:transition/cancel_. We
-calculate refunds and refund the payment through Stripe. If you want to
-check all the possible actions, you should read this document:
+_:transition/customer-cancel_ for the customer. Because it's called
+before the provider has accepted the booking, it's using
+_:action/decline-booking_ instead of _:action/cancel-booking_, even
+though we call it 'cancel'. We calculate refunds and refund the payment
+through Stripe. If you want to see all the actions that are possible in
+a transaction process, you can read this document:
 [Transaction process actions](/references/transaction-process-actions/).
 
-<extrainfo title="What happens to the money in refunds?" id="refund-extra-info">
+<info>
 
 In the preauthorized state, the money hasn't left the customer's bank
 account. There is just a cover reservation made for the future capture
-of the payment. This is done to avoid insufficient funds error. Stripe
-can hold this preauthorization for 7 days and, therefore, we have an
-automatic expiration in the preauthorized state.
+of the payment. This is done to avoid an insufficient funds error.
+Stripe can hold this preauthorization for 7 days and, therefore, we have
+an automatic expiration in the preauthorized state.
 
-In these declines and expire transitions,
-**:action/stripe-refund-payment** will release the cover reservation,
-but if it's called after the payment is captured, it will refund the
-payment. And to be more specific, then both transfers are reversed:
+<br/>
+
+In these decline and expire transitions,
+**:action/stripe-refund-payment** releases the cover reservation, but if
+it's called after the payment is captured, it will refund the payment.
+And to be more specific, then both transfers are reversed:
+
+<br/>
 
 1. Commission (aka application fee) is returned from platform account to
    the provider.
 2. Then full payment is returned from the provider's account to the
    customer.
 
-</extrainfo>
+</info>
 
-The operator can call this transition from Console (from transaction
-card's _Timeline_ column) or alternatively through Integration API. This
-transition is only possible when a transaction is in the
-**preauthorized** state. The last line
-`:to :state/declined-by-operator}`, creates actually a new state called
-**declined-by-operator**. It is going to be one of the final states for
-any transactions since there's no transition away from that state.
+The customer will need to call this transaction from the client
+application, and it is only possible when a transaction is in the
+**preauthorized** state. We will implement the user interface to calling
+the transition later in this tutorial.
 
 ### Push a new transaction process
 
@@ -216,15 +213,15 @@ Updating a transaction process is a similar process than creating a new
 one. This time we use _push_ command:
 
 ```shell
-flex-cli process push --process=cottagedays-daily-booking --path=./cottagedays-daily-booking --marketplace=cottagedays-dev
+flex-cli process push --process=cottage-days-booking --path=./cottage-days-booking --marketplace=cottagedays-dev
 ```
 
 And if you go to Console, you notice that there's a new version (2)
-created of the _cottagedays-daily-booking_ process. However, the alias
-is still pointing to the first version. We need to update the alias too:
+created of the _cottage-days-booking_ process. However, the alias is
+still pointing to the first version. We need to update the alias too:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-daily-booking --version=2 --marketplace=cottagedays-dev
+flex-cli process update-alias --alias=release-1 --process=cottage-days-booking --version=2 --marketplace=cottagedays-dev
 ```
 
 Now, if you open the process graph from the Flex Console, you'll see
@@ -251,214 +248,363 @@ the version of the process that was in use at that time. Therefore, you
 might need to update your client app, so that it supports several
 different process versions.
 
-<extrainfo title="FTW-product has different transaction process, configs, and dir structure.">
-
-FTW-product's config.js has been moved into _src/config/config.js_ and
-some of the process related configs have been changed. E.g.
-bookingProcessAlias is renamed as _transactionProcessAlias_ and
-bookingUnitType is renamed as _lineItemUnitType_.
-
-FTW-product has a different transaction process graph compared to
-FTW-daily. This means that rest of this tutorial is not really
-applicable on top of FTW-product.
-
-</extrainfo>
-
-### Update config.js
+### Update configListing.js
 
 ```shell
 └── src
-    └── config.js
+    └── config
+        └── configListing.js
 ```
 
-Since we have created a new process, we need to update
-**bookingProcessAlias** variable in config.js. This variable defines
-what transaction process is used when a new transaction is created from
-the web app.
+The **configListing.js** file details an array listing types, each with
+a unique transaction type. The transaction type defines the transaction
+process and alias being used, as well as the unit type, such as _day_ or
+_night_.
 
 ```js
-const bookingProcessAlias = 'cottagedays-daily-booking/release-1';
+export const listingTypes = [
+  {
+    listingType: 'daily-booking',
+    label: 'Daily booking',
+    transactionType: {
+      process: 'default-booking',
+      alias: 'default-booking/release-1',
+      unitType: 'day',
+    },
+  },
+  // Here are some examples for other listingTypes
+  // TODO: SearchPage does not work well if both booking and product selling are used at the same time
+  {
+    listingType: 'nightly-booking',
+    label: 'Nightly booking',
+    transactionType: {
+      process: 'default-booking',
+      alias: 'default-booking/release-1',
+      unitType: 'night',
+    },
+  },
 ```
 
-In the same file, we need to also update variable: **bookingUnitType**.
-It defines some UI changes (mostly about microcopy) - i.e. is this
-booking about _nights_, _days_, or some other _units_.
+Let's use the new _cottage-days-booking_ process in the nightly booking
+listings:
 
-```js
-const bookingUnitType = 'line-item/day';
+```diff
+  {
+    listingType: 'nightly-booking',
+    label: 'Nightly booking',
+    transactionType: {
+-     process: 'default-booking',
+-     alias: 'release-1',
++     process: 'cottage-days-booking',
++     alias: 'cottage-days-booking/release-1',
+      unitType: 'night',
+    },
+  },
 ```
 
-### Update transaction.js
+### Create transaction process graph file
 
 The web app needs to understand how the connected transaction process
 works and, therefore, the process graph is actually duplicated in the
-current versions of FTW templates.
+current version of the template.
 
 ```shell
 └── src
-    └── util
-        └── transaction.js
+    └── transactions
+        └── transactionProcessBooking.js
 ```
 
-So, we need to make the transaction process change also there.
+Since our new process is nearly the same as the default one, we can
+duplicate the _transactionProcessBooking.js_ file into a new file in the
+same folder named _transactionProcessBookingCustomerCancel.js_ and make
+the necessary changes.
 
-**Step 1**: Create a new transition variable:
-`TRANSITION_DECLINE_BY_OPERATOR`.
-
-```js
-// When the provider accepts or declines a transaction from the
-// SalePage, it is transitioned with the accept or decline transition.
-export const TRANSITION_ACCEPT = 'transition/accept';
-export const TRANSITION_DECLINE = 'transition/decline';
-
-export const TRANSITION_DECLINE_BY_OPERATOR =
-  'transition/decline-preauthorized-by-operator';
+```shell
+└── src
+    └── transactions
+        └── transactionProcessBookingCustomerCancel.js
 ```
 
-**Step 2**: Create a new state variable: `STATE_DECLINED_BY_OPERATOR`.
+**Step 1**: Create a new transition to the **transitions** object:
+`CUSTOMER_CANCEL`.
 
-```js
-const STATE_DECLINED = 'declined';
-const STATE_DECLINED_BY_OPERATOR = 'declined-by-operator';
+```diff
+export const transitions = {
+  ...
+  // The operator can accept or decline the offer on behalf of the provider
+  OPERATOR_ACCEPT: 'transition/operator-accept',
+  OPERATOR_DECLINE: 'transition/operator-decline',
+
++ CUSTOMER_CANCEL: 'transition/customer-cancel',
+
+  // The backend automatically expire the transaction.
+  EXPIRE: 'transition/expire',
+  ...
 ```
 
-**Step 3**: Update the process graph.<br /> Variable _stateDescription_
-contains the same process graph in _Xstate_ format. As a first thing,
+**Step 2**: Update the process graph.<br /> Variable _stateDescription_
+contains the same process graph in _Xstate_ format. As the first thing,
 you could also update the id of the graph.
 
 The mandatory change is that we need to add the new state and transition
 into that process description:
 
 ```diff
-    [STATE_PREAUTHORIZED]: {
+export const graph = {
+  // id is defined only to support Xstate format.
+  // However if you have multiple transaction processes defined,
+  // it is best to keep them in sync with transaction process aliases.
++ id: 'cottage-days-booking/release-1',
+...
+    [states.PREAUTHORIZED]: {
       on: {
-        [TRANSITION_DECLINE]: STATE_DECLINED,
-+       [TRANSITION_DECLINE_BY_OPERATOR]: STATE_DECLINED_BY_OPERATOR,
-        [TRANSITION_EXPIRE]: STATE_DECLINED,
-        [TRANSITION_ACCEPT]: STATE_ACCEPTED,
+        [transitions.DECLINE]: states.DECLINED,
+        [transitions.OPERATOR_DECLINE]: states.DECLINED,
+        [transitions.EXPIRE]: states.EXPIRED,
+        [transitions.ACCEPT]: states.ACCEPTED,
+        [transitions.OPERATOR_ACCEPT]: states.ACCEPTED,
++       [transitions.CUSTOMER_CANCEL]: states.DECLINED,
       },
-    },
-
-    [STATE_DECLINED]: {},
-+   [STATE_DECLINED_BY_OPERATOR]: {},
 ```
 
-**Step 4**: Update relevant helper functions.
+**Step 3**: Update relevant helper functions.
 
-- _txIsDeclined_ needs to be updated
+- _isRelevantPastTransition_ needs to be updated
 
-  ```js
-  const transitionsToDeclined = [
-    ...getTransitionsToState(STATE_DECLINED),
-    ...getTransitionsToState(STATE_DECLINED_BY_OPERATOR),
-  ];
-  export const txIsDeclined = tx =>
-    transitionsToDeclined.includes(txLastTransition(tx));
-  ```
+```js
+// Check if a transition is the kind that should be rendered
+// when showing transition history (e.g. ActivityFeed)
+// The first transition and most of the expiration transitions made by system are not relevant
+export const isRelevantPastTransition = transition => {
+  return [
+    transitions.ACCEPT,
+    transitions.OPERATOR_ACCEPT,
+    transitions.CANCEL,
+    transitions.COMPLETE,
+    transitions.CONFIRM_PAYMENT,
+    transitions.DECLINE,
+    transitions.OPERATOR_DECLINE,
+    transitions.CUSTOMER_CANCEL,
+    transitions.EXPIRE,
+    transitions.REVIEW_1_BY_CUSTOMER,
+    transitions.REVIEW_1_BY_PROVIDER,
+    transitions.REVIEW_2_BY_CUSTOMER,
+    transitions.REVIEW_2_BY_PROVIDER,
+  ].includes(transition);
+};
+```
 
-- _isRelevantPastTransition_ needs to be updated too
+### Update transaction.js
 
-  ```js
-  // Check if a transition is the kind that should be rendered
-  // when showing transition history (e.g. ActivityFeed)
-  // The first transition and most of the expiration transitions made by system are not relevant
-  export const isRelevantPastTransition = transition => {
-    return [
-      TRANSITION_ACCEPT,
-      TRANSITION_CANCEL,
-      TRANSITION_COMPLETE,
-      TRANSITION_CONFIRM_PAYMENT,
-      TRANSITION_DECLINE,
-      TRANSITION_DECLINE_BY_OPERATOR,
-      TRANSITION_EXPIRE,
-      TRANSITION_REVIEW_1_BY_CUSTOMER,
-      TRANSITION_REVIEW_1_BY_PROVIDER,
-      TRANSITION_REVIEW_2_BY_CUSTOMER,
-      TRANSITION_REVIEW_2_BY_PROVIDER,
-    ].includes(transition);
-  };
-  ```
-
-### Update components
-
-Now, the last and most important step is to go through all the
-components that import 'util/transaction'. I.e. we need to figure out if
-those components need to be updated so that they can handle the changed
-process.
-
-In this tutorial, we'll just update **ActivityFeed** component, which is
-shown on the transaction page.
+We then need to import and use
+_transactionProcessBookingCustomerCancel.js_ in the transaction.js file.
+This file determines the processes that are supported in the
+application.
 
 ```shell
 └── src
-    └── components
-        └── ActivityFeed
-            └── ActivityFeed.js
+    └── transactions
+        └── transaction.js
 ```
 
-The new transition needs to be _imported_ there and then a new microcopy
-key should be added into **resolveTransitionMessage** function:
+Let's first import the new process and export its name as a constant.
 
-```js
-    case TRANSITION_DECLINE_BY_OPERATOR:
-      return <FormattedMessage id="ActivityFeed.operatorDecline" />;
+```diff
+  import * as log from '../util/log';
+  import { ensureTransaction } from '../util/data';
+  import * as purchaseProcess from './transactionProcessPurchase';
+  import * as bookingProcess from './transactionProcessBooking';
++ import * as customerCancelProcess from './transactionProcessBookingCustomerCancel';
+
+  // Supported unit types
+  export const ITEM = 'item';
+  export const DAY = 'day';
+  export const NIGHT = 'night';
+  export const HOUR = 'hour';
+
+  // Then names of supported processes
+  export const PURCHASE_PROCESS_NAME = 'default-purchase';
+  export const BOOKING_PROCESS_NAME = 'default-booking';
++ export const CUSTOMER_CANCEL_BOOKING_PROCESS_NAME = 'cottage-days-booking';
+
 ```
 
-We'll add the microcopy key and value to _src/translations/en.json_
-file:
+Then, we will add it to the array of supported processes, and set it to
+handle unit type _night_.
 
-```json
-"ActivityFeed.operatorDecline": "The booking was cancelled.",
+```jsx
+const PROCESSES = [
+  {
+    name: PURCHASE_PROCESS_NAME,
+    alias: 'release-1',
+    process: purchaseProcess,
+    unitTypes: [ITEM],
+  },
+  {
+    name: BOOKING_PROCESS_NAME,
+    alias: 'release-1',
+    process: bookingProcess,
+    unitTypes: [DAY, HOUR],
+  },
+  {
+    name: CUSTOMER_CANCEL_BOOKING_PROCESS_NAME,
+    alias: 'release-1',
+    process: customerCancelProcess,
+    unitTypes: [NIGHT],
+  },
+];
 ```
 
-### Update pricing on server
+Finally, we need to update the _isBookingProcess_ helper – we need to
+add the new process name to the list used to determine booking
+processes.
 
-When privileged transitions are used, the pricing changes should be made
-from a trusted environment. In FTW-daily template, that means the
-included server.
+```diff
+
+export const isBookingProcess = processName => {
+  const latestProcessName = resolveLatestProcessName(processName);
+  const processInfo = PROCESSES.find(process => process.name === latestProcessName);
++ return [BOOKING_PROCESS_NAME, CUSTOMER_CANCEL_BOOKING_PROCESS_NAME].includes(processInfo?.name);
+};
+
+```
+
+The next step is to determine how this transaction process data is used.
+By default, the template has two pages that use transaction process data
+to show different UI elements depending on the transaction's state:
+InboxPage and TransactionPage.
+
+### Update state helpers
+
+First, we will make a simple change to InboxPage state handling, and
+then a slightly bigger change to TransactionPage state handling.
+
+#### Update InboxPage state data
 
 ```shell
-└── server
-    └── api-util
-        └── lineItems.js
+└── src
+    └── containers
+        └── InboxPage
+            └── InboxPage.stateData.js
 ```
 
-Our changes didn't bring any new line-items, but it changed the existing
-booking unit type from _night_ to _day_. Therefore, we need to update
-_bookingUnitType_ there too:
+This file compiles the transaction process specific state data mappers
+that check the state of the transaction and inject additional data that
+is needed in the corresponding container for each state.
 
-```js
-// This bookingUnitType needs to be one of the following:
-// line-item/night, line-item/day or line-item/units
-const bookingUnitType = 'line-item/day';
+Our process change does did not add a new state, and Inbox Page is only
+concerned about showing state data and not about initiating transitions.
+Therefore, we can use the default booking process state data mapper for
+our new process as well.
+
+We will update the _getStateData_ function in this file to use the
+_isBookingProcess_ helper function we modified earlier.
+
+```jsx
+if (processName === PURCHASE_PROCESS_NAME) {
+  return getStateDataForPurchaseProcess(params, processInfo());
+} else if (isBookingProcess(processName)) {
+  return getStateDataForBookingProcess(params, processInfo());
+} else {
+  return {};
+}
 ```
 
-<extrainfo title="Update your email notifications">
-To keep showing the line items on your email notifications, you will need to replace
+#### Update TransactionPage state data
 
-```html
-{{#eq "line-item/night" code}}
+On transaction page, we also need to make state data handling changes.
+Here, we want to show the customer cancel button when the transaction is
+in the correct state. To do that, we need to inject the relevant data.
+
+Since this behavior is different from the default booking process
+behavior, we need to make a dedicated file for transaction page state
+data.
+
+```shell
+└── src
+    └── containers
+        └── TransactionPage
+            └── TransactionPage.stateData.js
+            └── TransactionPage.stateDataBooking.js
 ```
 
-with
+We will duplicate the _TransactionPage.stateDataBooking.js_ file into
+_TransactionPage.stateDataCustomerCancel.js_ file and make the following
+changes in the new file.
 
-```html
-{{#eq "line-item/day" code}}
+The process specific state data file determines what to show on
+transaction page for each state and each participant. We will make our
+changes to the case where the transaction is in preauthorized state and
+the authenticated user is the customer.
+
+In the return clause, we add two attributes that determine that we want
+to show a button in this state for this user, and that we want that
+button to dispatch the _CUSTOMER_CANCEL_ transition when clicked.
+
+```diff
+    .cond([states.PREAUTHORIZED, CUSTOMER], () => {
+      return {
+        processName,
+        processState,
+        showDetailCardHeadings: true,
+        showExtraInfo: true,
++       showActionButtons: true,
++       primaryButtonProps: actionButtonProps(transitions.CUSTOMER_CANCEL, CUSTOMER),
+      };
+    })
 ```
 
-in your email notification templates. The next step in the tutorial
-deals with updating email notifications.
+There is one more step left to update for the new transaction process –
+microcopy strings. If you now try to create a listing with the new
+process, you will see microcopy keys that reference the new process.
 
-The email templates that list the full line items in the default
-transaction process are
+![Microcopy uses keys as fallback for the new process](./new-process-microcopy-keys.png)
 
-- `new-booking-request` (to provider)
-- `booking-request-accepted` (to customer)
-- `money-paid` (to provider)
+We will add the necessary microcopy strings next.
 
-</extrainfo>
+### Add microcopy strings
 
----
+A lot of microcopy strings in Sharetribe Web Template are transaction
+process specific. In other words, when you create a new transaction
+process, you will also need to add microcopy for the relevant keys in
+the new process.
 
-And that's it. We have created a new process, added a new transition
-there and modified our client app to work with the new process.
+In this case, you can locate the microcopy keys and values that
+reference **default-booking** and duplicate them for the new process,
+for example:
+
+```json
+{
+  "EditListingWizard.default-booking.new.saveAvailability": "Next: Photos",
+  "EditListingWizard.default-booking.new.saveDetails": "Next: Location",
+  "EditListingWizard.default-booking.new.saveLocation": "Next: Pricing",
+  "EditListingWizard.default-booking.new.savePhotos": "Publish listing",
+  "EditListingWizard.default-booking.new.savePricing": "Next: Availability",
+  "EditListingWizard.cottage-days-booking.new.saveAvailability": "Next: Photos",
+  "EditListingWizard.cottage-days-booking.new.saveDetails": "Next: Location",
+  "EditListingWizard.cottage-days-booking.new.saveLocation": "Next: Pricing",
+  "EditListingWizard.cottage-days-booking.new.savePhotos": "Publish listing",
+  "EditListingWizard.cottage-days-booking.new.savePricing": "Next: Availability"
+}
+```
+
+You can now see the correct microcopy strings instead of the keys.
+
+![Updated microcopy strings for the new process](./new-process-microcopy-strings.png)
+
+## Summary
+
+We created a new process based on an existing process, and added a new
+transition in the new process. We then pushed our changes to the Flex
+backend using Flex CLI.
+
+In addition, we modified our client app to work with the new process by
+updating
+
+- listing configuration,
+- transaction process graph file,
+- state data helper files, and
+- microcopy strings.
+
+The next tutorial guide will focus on modifying transaction process
+email notifications.

@@ -1,62 +1,68 @@
 ---
-title: How to sanitize user-generated content in FTW
+title: Sanitizing user-generated content
 slug: how-to-sanitize-user-generated-content-in-ftw
-updated: 2019-04-04
+updated: 2023-01-01
 category: ftw-security
 ingress:
-  This guide describes how to sanitize user-generated content on Flex
-  Template for Web (FTW).
+  This guide describes how to sanitize user-generated content to prevent
+  XSS vulnerabilities.
 published: true
 ---
 
-User-generated content (UGC) is a big source of Cross-Site Scripting
-(XSS) vulnerabilities so one should pay attention to it.
+User-generated content can expose your marketplace to Cross-Site
+Scripting (XSS) attacks. Therefore, it is essential to take precautions
+when working with a website that allows users to generate and input
+content.
 
 By default,
 [React DOM escapes any values embedded in JSX](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
-before rendering them. This makes customization a bit more
-straightforward from XSS perspective.
+before rendering them. The feature prevents injection attacks, and it is
+generally safe to embed user input in JSX.
 
 However, there are other XSS vulnerabilities to consider. User-generated
 content should be validated if passed to component props. For example,
-`href` attribute in `<a>` tag could potentially contain XSS attack
-vector since it allows JavaScript execution like
-`href="javascript:alert('An XSS vulnerability found.')"`.
+the href attribute in a `<a>` tag could contain an XSS attack vector
+since it allows JavaScript execution.
 
-## First things first: set up Content Security Policy
+## sanitize.js
 
-One of the most advanced safety measures in modern browsers is Content
-Security Policy (CSP). When it is used, it helps to detect and mitigate
-certain types of attacks, including XSS and data injection attacks. Read
-more from our documentation on
-[how to set up Content Security Policy](/ftw/how-to-set-up-csp-for-ftw/)
+You can find a collection of functions you can use to sanitize data in
+your marketplace in the
+[sanitize.js file](https://github.com/sharetribe/web-template/blob/main/src/util/sanitize.js).
+The template sanitizes user and listing data fetched from the API by
+calling the
+[sanitizeEntity function](https://github.com/sharetribe/web-template/blob/main/src/util/sanitize.js#L176).
+The template calls this function when listing or user data is fetched
+from the API and stored in the Redux store.
 
-## Sanitize user-generated content when updating entities
+## When to sanitize user-generated content
 
-We have added an example of how user-generated content could be
-sanitized when entities are queried and updated to Redux store. Those
-examples can be found from the utility file
-[src/util/sanitize.js](https://github.com/sharetribe/flex-template-web/blob/master/src/util/sanitize.js).
+If you add new fields to extended data, we highly recommend modifying
+the sanitization functions to reflect those changes. This is
+particularly important if you use extended data somewhere other than
+wrapped in JSX.
 
-You should modify those sanitize functions (e.g. `sanitizeUser`) to
-include any extendedData you have created for your marketplace. This is
-important if the data is used as a props/attribute in components (e.g.
-`<div attr=...ESCAPE UNTRUSTED DATA BEFORE PUTTING HERE...>content`). As
-stated before, using it inside JSX components (e.g.
-`<div>{publicData.saunaRules}</div>`) is handled by React DOM.
+Here is an example of public data wrapped in JSX, where the React DOM
+handles sanitization:
 
-Those sanitize functions are used by default in `src/util/data.js`.
-There is an `updatedEntities` function, which is called before
-marketplace entities are saved to Redux store.
+```jsx
+<div>{publicData.saunaRules}</div>
+```
 
-However, you should note that `updateEntities` is called when something
-is added to the marketplaceData section of Redux store. So, it might not
-include all the places where entities are queried from Marketplace API.
-In addition, you might also want to use sanitization directly in UI
-components - for example, you could sanitize `href` prop in
-`<ExternalLink>` component.
+Here is an example of when you should sanitize extended data yourself:
 
-## Other things to consider
+```jsx
+<div attr={publicData.saunaRules}>content).
+```
+
+Any listing extended data attributes specified through the
+[configListings.js](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js)
+file are sanitized automatically. A similar configuration does not exist
+for user extended data attributes, and to sanitize that data, you will
+need to update the functions in the
+[sanitize.js file](https://github.com/sharetribe/web-template/blob/main/src/util/sanitize.js).
+
+## Wrap external links
 
 It is a good practice to use wrapper components around elements that
 might need extra safety measures. It makes it easier to add those extra
@@ -67,10 +73,11 @@ external links (since `target="_blank"` attribute is
 [vulnerable for XSS](https://mathiasbynens.github.io/rel-noopener/)).
 
 There is also Field\* components around `<input>` elements (e.g.
-FieldTextInput) since FTW uses Final Form. Those could be used in a
-similar fashion to validate content or just format it before saving.
+FieldTextInput) since the Sharetribe Web Template uses Final Form. Those
+could be used in a similar fashion to validate content or just format it
+before saving.
 
-## Resources
+## Further reading
 
 - [How to set up Content Security Policy](/ftw/how-to-set-up-csp-for-ftw/)
 - [JSX prevents injection attacks](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)

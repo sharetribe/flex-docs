@@ -10,21 +10,9 @@ ingress:
 published: true
 ---
 
-**Note, that Facebook login requires ftw-daily version
-[6.4.0](https://github.com/sharetribe/ftw-daily/releases/tag/v6.4.0) or
-ftw-hourly version
-[8.4.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v8.4.0).**
-
-<extrainfo title="Updating from upstream not an option?">
-
-Has your marketplace UI application diverged from ftw-daily or
-ftw-hourly so much that pulling upstream updates to enable Facebook
-login is not a feasible option? In that case, take a look at the
-following change set in ftw-daily for reference on how to implement
-Facebook login in the front end:
-[Facebook login in Github](https://github.com/sharetribe/ftw-daily/pull/1366).
-
-</extrainfo>
+**If you are working with one of our legacy templates and are not sure
+whether Facebook login is enabled, take a look at our
+[legacy documentation](/ftw/legacy-templates/).**
 
 Enabling Facebook login consists of three main steps:
 
@@ -36,9 +24,9 @@ Enabling Facebook login consists of three main steps:
   provider (IdP) client is what let's Flex know that the users of your
   marketplace are allowed to use the Facebook app you created to log
   into your marketplace.
-- **Configure FTW** A few attributes from the Facebook app will need to
-  be configured to FTW so that FTW can perform the login flow via
-  Facebook.
+- **Configure Sharetribe Web Template** A few attributes from the
+  Facebook app will need to be configured to your Sharetribe Web
+  Template so that it can perform the login flow via Facebook.
 
 ## Configure a Facebook app
 
@@ -70,9 +58,10 @@ Create a Facebook app by following these steps:
     to App Domains, or one of them if you added many.
 14. You might also need to add your privacy policy URL (in some cases
     this is not needed). If so, please add it by typing the URL to your
-    privacy policy into the "Privacy Policy URL" field. In FTW the
-    policy is by default located in the `/privacy-policy` path, so the
-    URL could then be https://www.example.com/privacy-policy.
+    privacy policy into the "Privacy Policy URL" field. In Sharetribe
+    Web Template, the policy is by default located in the
+    `/privacy-policy` path, so the URL could then be
+    https://www.example.com/privacy-policy.
 15. Click "Save Changes" at the bottom right.
 
 Now your app basic setting should look like this:
@@ -99,7 +88,8 @@ Now your app basic setting should look like this:
 22. In the "Valid OAuth redirect URIs" field add your marketplace
     address followed by `/api/auth/facebook/callback`, for example:
     https://www.example.com/api/auth/facebook/callback. This endpoint
-    can be different if you have modified the `/api` endpoints in FTW.
+    can be different if you have modified the `/api` endpoints in
+    Sharetribe Web Template.
 
 Your Facebook login settings should now look like this:
 
@@ -151,19 +141,20 @@ The IdP client config should now look something like this:
 
 6. Click "Add client" and your identity provider client is ready.
 
-## Configure FTW
+## Configure Sharetribe Web Template
 
-Last step to enabling Facebook login is to configure FTW with the values
-that you used to add an identity provider client in Console. Add the
-following environment variables to FTW:
+Last step to enabling Facebook login is to configure your Sharetribe Web
+Template with the values that you used to add an identity provider
+client in Console. Add the following environment variables to your
+template:
 
 - **`REACT_APP_FACEBOOK_APP_ID`** The App ID of your Facebook app.
   Corresponds to _client ID_ of the identity provider in Console.
 - **`FACEBOOK_APP_SECRET`** The App Secret of your Facebook app.
   Corresponds to _client secret_ of the identity provider in Console.
 
-For more information on FTW environment variables, see the
-[FTW Environment configuration variables](/ftw/ftw-env/) article.
+For more information on the template environment variables, see the
+[Template environment variables](/ftw/ftw-env/) article.
 
-That is it. Setting these environment variables will make FTW render the
-Facebook login button in signup and login forms.
+That is it. Setting these environment variables will make Sharetribe Web
+Template render the Facebook login button in signup and login forms.

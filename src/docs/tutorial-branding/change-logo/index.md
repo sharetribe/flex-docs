@@ -4,147 +4,65 @@ slug: change-logo
 updated: 2020-02-28
 category: tutorial-branding
 ingress:
-  Learn how to change the logo and how components in Flex Template for
-  Web are styled.
+  Learn how to change the logo and how components in Sharetribe Web
+  Template are styled.
 published: true
 ---
 
-## Change Logo component
+## Change Logo configuration
 
-Components can be found from one of the three directories:
+Components can be found from one of two directories:
 
 - **containers**: Page-level components and TopbarContainer are
   [Redux container components](https://redux.js.org/basics/usage-with-react#presentational-and-container-components).
-- **forms**: Form components. (These use Final Form.)
-- **components**: Other presentational components.
+  These container folders also include all the forms and presentational
+  components that are only used on that specific page.
+- **components**: Shared presentational components that are used on
+  multiple pages or in other components.
 
-Logo is a presentational component and it can be found from components
-directory:
+Logo is a presentational component and it can be found in the
+**components** directory:
 
 ```shell
 └── src
     ├── components
     │   └── Logo
-    │       ├── IconLogo.js
-    │       ├── Logo.module.css
-    │       ├── Logo.js
-    │       └── saunatime-logo.png
+    │       └── Logo.js
     ├── containers
     └── forms
 ```
 
 The main component has the same name as the directory it lies:
-Logo/Logo.js. If you open that file, you'll notice that it imports 2
-logo-files from the same directory:
+Logo/Logo.js. If you open that file, you'll notice that logo images are
+set in the same **configBranding.js** file as the previous changes.
 
 ```js
-import IconLogo from './IconLogo';
-import LogoImage from './saunatime-logo.png';
+// NOTE: logo images are set in src/config/configBranding.js
+const { logoImageDesktopURL, logoImageMobileURL } = config.branding;
 ```
 
-The first one (_IconLogo_) doesn't have a file extension, which means
-that it's referring to **IconLogo.js** file. If you open it, you see
-that it contains Scalable Vector Graphics (SVG) content inside React
-component.
-
-The other import (_LogoImage_) is referring to a normal PNG image.
-
-_IconLogo_ is used for mobile layout and PNG is for desktop layout.
-There's no real reason behind this double format setup - it is just
-there to show 2 different ways to create graphics. Although, the SVG
-format is a bit better choice for logo since it stays sharp when scaled
-bigger.
-
-However, in this tutorial, we'll use raster images (PNGs):
+You can use either PNG files or SVG files for the logo component. In
+this tutorial, we'll use raster images (PNGs):
 
 - [CottageDays mobile logo](/tutorial-assets/cottagedays-logo-small.png)
 - [CottageDays desktop logo](/tutorial-assets/cottagedays-logo.png)
 
-Save those files to _Logo_ directory, and then change the imports:
+Save those files to the **src/assets** directory, and then change the
+imports in **configBranding.js**:
 
-```js
-import MobileLogoImage from './cottagedays-logo-small.png';
-import DesktopLogoImage from './cottagedays-logo.png';
+```shell
+└── src
+    ├── assets
+    └── config
+        └── configBranding.js
 ```
 
-You also need to change the places where the previously imported logos
-were used. Since we use PNGs in this tutorial, we just need plain
-`<img>` elements. Therefore, we can simplify the function component a
-bit.
-
-First of all, class _.logoMobile_ (inside Logo.css) needs to be changed.
-Previously, it just adjusted styles for SVG _paths_, which we don't have
-anymore. However, IconLogo component had a height explicitly defined in
-its _props_. It was 25px tall, so we should use that.
-
-```css
-.logoMobile {
-  height: 25px;
-}
+```diff
+- import logoImageDesktop from '../assets/biketribe-logo-desktop.png';
+- import logoImageMobile from '../assets/biketribe-logo-mobile.png';
++ import logoImageDesktop from '../assets/cottagedays-logo.png';
++ import logoImageMobile from '../assets/cottagedays-logo-small.png';
 ```
-
-Then we can simplify the Logo component itself:
-
-```js
-const Logo = props => {
-  const { className, format, ...rest } = props;
-  const isMobile = format !== 'desktop';
-  const classes = classNames(className, { [css.logoMobile]: isMobile });
-  const logoImage = isMobile ? MobileLogoImage : DesktopLogoImage;
-
-  return (
-    <img
-      className={classes}
-      src={logoImage}
-      alt={config.siteTitle}
-      {...rest}
-    />
-  );
-};
-```
-
-<extrainfo title="Check the whole Logo.js file">
-
-```js
-import React from 'react';
-import { oneOf, string } from 'prop-types';
-import classNames from 'classnames';
-
-import config from '../../config';
-import MobileLogoImage from './cottagedays-logo-small.png';
-import DesktopLogoImage from './cottagedays-logo.png';
-import css from './Logo.module.css';
-
-const Logo = props => {
-  const { className, format, ...rest } = props;
-  const isMobile = format !== 'desktop';
-  const classes = classNames(className, { [css.logoMobile]: isMobile });
-  const logoImage = isMobile ? MobileLogoImage : DesktopLogoImage;
-
-  return (
-    <img
-      className={classes}
-      src={logoImage}
-      alt={config.siteTitle}
-      {...rest}
-    />
-  );
-};
-
-Logo.defaultProps = {
-  className: null,
-  format: 'desktop',
-};
-
-Logo.propTypes = {
-  className: string,
-  format: oneOf(['desktop', 'mobile']),
-};
-
-export default Logo;
-```
-
-</extrainfo>
 
 After those changes, you should see the updated Logo:
 
@@ -171,7 +89,9 @@ component.
 
 ![Web Inspector: hover on top of the markup of Logo component](web-inspector-hovering-on-logo.png)
 
-**Useful tip**:<br > FTW templates use
+<info>
+
+Sharetribe Web Template uses
 [CSS Modules](https://github.com/css-modules/css-modules) instead of
 plain CSS for styling components. CSS Modules creates unique class names
 for the rendered component - and those class name strings are in format:
@@ -180,6 +100,8 @@ for the rendered component - and those class name strings are in format:
 So, you can backtrack the correct component from the class name. In the
 example image above: the component which provides the paddings rule is
 _TopbarDesktop_.
+
+</info>
 
 ## Styling other components
 

@@ -107,13 +107,6 @@ and from 1 PM to 6 PM. More information on how to set a time-based
 availability plan for a listing can be found in the
 [time-based bookings how-to guide](/how-to/enable-time-based-bookings-into-use/).
 
-> **Note:** By default,
-> [FTW-daily](https://github.com/sharetribe/ftw-daily/) uses day-based
-> availability. If you want to use time-based availability in your
-> marketplace instead, it's recommended that you start with
-> [FTW-hourly](https://github.com/sharetribe/ftw-hourly), the Flex
-> Template for Web that supports time-based availability out of the box.
-
 ### Timeslots, availability plans and exceptions
 
 Timeslots are periods of time, which are available to be booked. E.g. if

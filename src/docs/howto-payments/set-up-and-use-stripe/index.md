@@ -6,8 +6,8 @@ category: how-to-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you
   need a free Stripe account. This guide will help you in creating a
-  Stripe account and adding Stripe API keys to Console and Flex Template
-  for Web.
+  Stripe account and adding Stripe API keys to Console and Sharetribe
+  Web Template.
 published: true
 ---
 
@@ -32,21 +32,28 @@ is now active":
 
 ![Active Stripe account](./account-active.png)
 
-> Note: Stripe requires US accounts to add their EIN for their accounts
-> to be fully activated. If you don't have an EIN, it's okay to use your
-> personal name and SSN. Read more about signing up without a tax ID or
-> employer ID number
-> [here](https://support.stripe.com/questions/signing-up-for-a-us-stripe-account-without-a-tax-id-or-employer-id-number).
+<info>
+
+Stripe requires US accounts to add their EIN for their accounts to be
+fully activated. If you don't have an EIN, it's okay to use your
+personal name and SSN. Read more about signing up without a tax ID or
+employer ID number
+**[here](https://support.stripe.com/questions/signing-up-for-a-us-stripe-account-without-a-tax-id-or-employer-id-number)**.
+
+</info>
 
 ## 2. Enable Stripe Connect in your platform
 
 Sharetribe uses the Stripe Connect features with
 [custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 
-> **Note!** Stripe might need to review your platform account before you
-> get access. <br /> Check
-> [this article](/how-to/stripe-connect-platform-review/) to learn how
-> to apply for Stripe Connect review.
+<info>
+
+Stripe might need to review your platform account before you get access.
+<br /> Check **[this article](/how-to/stripe-connect-platform-review/)**
+to learn how to apply for Stripe Connect review.
+
+</info>
 
 If you're in any another country, follow these instructions to enable
 Stripe Connect:
@@ -79,14 +86,18 @@ marketplace.
   Keys_.
 - In the section "Standard API keys" you will see two keys: publishable
   key and secret key. The publishable key (with prefix **pk**) is one
-  used in frontend application (e.g. Flex Template for Web) and secret
+  used in frontend application (e.g. Sharetribe Web Template) and secret
   key (with prefix **sk**) is the one you need to add to Console. If you
   want to use test data make sure the value of the key is eg.
   **pk_test**\<somethinghere\> and not **pk_live**\<somethinghere\>
 
-**Note:** If you want to use test data in development make sure that
-"View test data" toggle is on. This way no real money will be used. In
-the live environment, make sure that the toggle is off.
+<info>
+
+If you want to use test data in development, make sure that "View test
+data" toggle is on. This way no real money will be used. In the live
+environment, make sure that the toggle is off.
+
+</info>
 
 ![Get API keys from Stripe](./api-keys.png)
 
@@ -102,23 +113,27 @@ the live environment, make sure that the toggle is off.
 
 In your client application, you need to use Stripe publishable key, when
 you create accountTokens or call other Stripe API endpoints. If you are
-using Flex Template for Web, calls to Stripe API are already there, but
-you need to add the Stripe publishable key to your `.env` file. You can
-do this by running `yarn run config` or editing the file directly in a
-text editor.
+using Sharetribe Web Template, calls to Stripe API are already there,
+but you need to add the Stripe publishable key to your `.env` file. You
+can do this by running `yarn run config` or editing the file directly in
+a text editor.
 
-Read more about configurations in FTW from
-[Getting started with FTW](/introduction/getting-started-with-ftw-daily/#add-environment-variables)
+Read more about configurations in the template in
+[Getting started with Sharetribe Web Template](/introduction/getting-started-with-web-template/#add-environment-variables)
 
-## 7. Test the Stripe account in Flex Template for Web
+## 7. Test the Stripe account in Sharetribe Web Template
 
-If you are using Flex Template for Web (FTW) here is some instructions
-how you can test you Stripe account.
+If you are using the Sharetribe Web Template, refer to these
+instructions on testing your Stripe account.
 
-**Note:** When testing Stripe, make sure you are using the test API
-keys. To ensure that make sure the keys have prefix **sk_test** and
-**pk_test**. When checking the Stripe dashboard, make sure "View test
-data" toggle is on!
+<info>
+
+When testing Stripe, make sure you are using the test API keys. To
+ensure that make sure the keys have prefix **sk_test** and **pk_test**.
+When checking the Stripe dashboard, make sure "View test data" toggle is
+on!
+
+</info>
 
 ### Test adding payout details
 
@@ -126,13 +141,18 @@ Every provider needs to add payout details to their account before they
 are able to publish listings. Stripe provides test values for
 [identity verification](https://stripe.com/docs/connect/testing#identity-verification)
 and [bank numbers](https://stripe.com/docs/connect/testing#payouts). In
-FTW you can add payout details for the account in _Account Settings_ →
-_Payments_. After filling the form you should see a new account when you
-go to Stripe Dashboard and to _Connect_ → _Accounts_.
+Sharetribe Web Template, you can add payout details for the account in
+_Account Settings_ → _Payments_. After filling the form you should see a
+new account when you go to Stripe Dashboard and to _Connect_ →
+_Accounts_.
 
-**Note:** After payout details are saved they can not be edited directly
-from FTW so you might need to create multiple accounts for testing
+<info>
+
+After payout details are saved, they can not be edited directly in the
+template, so you might need to create multiple accounts for testing
 purposes.
+
+</info>
 
 The form of the bank number and other required information depends on
 which country you have chosen. For example, most of the countries in
@@ -142,9 +162,9 @@ needed.
 
 ![Hong Kong bank number](bank-number-hk.png)
 
-It's also good to know that in FTW these are all separate fields but in
-Stripe clearing code and branch code are mapped together as routing
-number.
+It is also good to know that in the template, these are all separate
+fields, but in Stripe, clearing code and branch code are mapped together
+as routing number.
 
 ![Stripe bank numbers](stripe-bank-numbers.png)
 
@@ -154,9 +174,13 @@ over your company. This requirement is country specific. For more
 information, see
 [Stripe support](https://support.stripe.com/questions/company-ownership-and-director-requirement).
 
-> Note: if a company/provider doesn't include enough owners to cover
-> most of the shares, you might need to manually state that there are no
-> more persons that own 25% or more.
+<info>
+
+If a company/provider doesn't include enough owners to cover most of the
+shares, you might need to manually state that there are no more persons
+that own 25% or more.
+
+</info>
 
 ![Add more owners alert](stripe-add-more-owners-alert.png)
 
@@ -172,14 +196,16 @@ so e.g. testing different error scenarios is possible.
 
 ## 8. Advanced: Adding new country to supported Stripe countries
 
-By default FTW already supports most of the countries that are available
-when using
+By default, the template already supports most of the countries that are
+available when using
 [Stripe custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
 If you are not sure if your country is already supported, please contact
 to Stripe support before proceeding.
 
-1. Add a new country to `stripe-config.js` file (use other country
-   configurations as an example). See Stripe documentation for
+1. Add a new country to
+   [`configStripe.js`](https://github.com/sharetribe/web-template/blob/main/src/config/configStripe.js)
+   file (use other country configurations as an example). See Stripe
+   documentation for
    [minimum verification requirements](https://stripe.com/docs/connect/required-verification-information)
    and
    [bank account format](https://stripe.com/docs/connect/payouts#formats).
@@ -198,7 +224,7 @@ to Stripe support before proceeding.
 
 <info>
 
-The current FTW templates do not support Brazil (BR), India (IN) and
+The Sharetribe Web Template does not support Brazil (BR), India (IN) and
 Hungary (HU), even though all three countries are mentioned as available
 Stripe countries in
 <a href="https://stripe.com/docs/connect/accounts#custom-accounts">Stripe's

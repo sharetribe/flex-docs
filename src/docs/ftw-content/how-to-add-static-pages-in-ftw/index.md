@@ -1,16 +1,19 @@
 ---
-title: How to add static pages in FTW
+title: How to add a static page
 slug: how-to-add-static-pages-in-ftw
 updated: 2023-02-14
 category: ftw-content
 ingress:
-  This guide describes how to add pages with static content in Flex
-  Template for Web (FTW).
+  This guide describes how to add a non-dynamic static page using the
+  Sharetribe Web Template
 published: true
 ---
 
-If you want to create simple pages that just show static content without
-need for data fetches, you can create a static page.
+You can create new content pages through the Console using the Pages
+feature. However, sometimes you may need a static page that does not use
+dynamic content. This guide walks you through the steps required to
+create a static and non-dynamic content page, from where to create the
+new component to how to add new routes.
 
 You might want to do this, for instance, if
 
@@ -24,7 +27,7 @@ If you do not have a specific reason to create a static page directly
 into the codebase, we recommend that you create your content pages using
 [Pages](/concepts/content-management/). With Pages, you can create
 multiple content pages in Flex Console and render them all using
-[the same components in FTW](/ftw/page-builder/).
+[the same components in Sharetribe Web Template](/ftw/page-builder/).
 
 </info>
 
@@ -34,17 +37,13 @@ Create a new folder under _src/containers/_ with the name of your static
 page. E.g. if you are creating a page for embedding your social media
 feeds, it should be named **SocialMediaPage**.
 
-## 2. Create a JavaScript file
-
 Create a new JavaScript file using the folder name. The path should look
 like _src/containers/SocialMediaPage/SocialMediaPage.js_.
-
-## 3. Create a CSS file
 
 Create a new CSS file using the folder name. The path should look like
 _src/containers/SocialMediaPage/SocialMediaPage.module.css_.
 
-## 4. Create the component
+## 2. Create the component
 
 Template for a single column static page (SocialMediaPage.js): (We'll go
 through this line-by-line below.)
@@ -86,7 +85,10 @@ const SocialMediaPage = () => {
         <LayoutWrapperMain>
           <!-- You will add your embedding widgets here -->
           <div>
-            <NamedLink name="LandingPage">Go to home page</NamedLink> or
+            <NamedLink name="LandingPage">
+              Go to the home page
+            </NamedLink>{' '}
+            or{' '}
             <ExternalLink href="https://google.com">
               Go to Google
             </ExternalLink>
@@ -114,9 +116,10 @@ import React from 'react';
 
 ### Import components
 
-In the second line we import some components:
+On the second line, we import some components:
 
-- **LayoutSingleColumn** and wrappers that it needs to position content
+- **LayoutSingleColumn** and the wrappers that it needs to position
+  content on the page
 - **Footer** component (to be added inside LayoutWrapperFooter)
 - **NamedLink** makes it easier to point to different pages inside the
   application
@@ -150,14 +153,14 @@ After that we are importing two containers:
   it needs.
 
 ```jsx
-import StaticPage from '../../containers/StaticPage/StaticPage';
+import StaticPage from '../../containers/ContentPage/ContentPage';
 import TopbarContainer from '../../containers/TopbarContainer/TopbarContainer';
 ```
 
 Then we need to import styles and possible other files from current
-folder. With CSS we are using
-[CSS Modules](https://github.com/css-modules/css-modules) to tackle
-possible clashes of different class names.
+folder. The template uses
+[CSS Modules](https://github.com/css-modules/css-modules) to scope all
+class names locally to prevent conflicts.
 
 ```jsx
 import css from './SocialMediaPage.module.css';
@@ -208,7 +211,7 @@ attributes:
 
 ### Define component structure
 
-Inside **StaticPage** component we define layout
+Inside the **StaticPage** component we define layout
 (**LayoutSingleColumn**) and add other components inside semantic
 content wrappers so that the layout is able to understand where to
 render those blocks.
@@ -221,7 +224,7 @@ render those blocks.
   <LayoutWrapperMain>
     <!-- You will add your embedding widgets here -->
     <div>
-      <NamedLink name="LandingPage">Go to home page</NamedLink> or
+      <NamedLink name="LandingPage">Go to the home page</NamedLink> or{' '}
       <ExternalLink href="https://google.com">
         Go to Google
       </ExternalLink>
@@ -237,7 +240,7 @@ And as a final step we need to export the component.
 `export default SocialMediaPage;`. See more from
 [babeljs.org](https://babeljs.io/docs/en/learn/#modules)
 
-## 5. Add some styles to the CSS file
+## Style the component
 
 Here's an example what your _SocialMediaPage.module.css_ file could look
 like:
@@ -245,25 +248,32 @@ like:
 ```css
 /**
  * Import custom media queries for the new page.
- * FTW-template use route-based code-splitting, every page create their own CSS files.
+ * The template uses route-based code-splitting, every page create their own CSS files.
  * This import ensures that the page and components inside will get correct media queries,
  * when the app is build.
  */
 @import '../../styles/customMediaQueries.css';
 
-.root {
-  padding: 24px;
+.pageTitle {
+  text-align: center;
+}
 
-  /* Use CSS variable defined in src/styles/marketplaceDefaults.css */
-  background-color: var(--marketplaceColor);
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
 }
 ```
 
-## 6. Add a route to the page
+## Add routing
 
 As a last step you need to add the newly created static page to the
-routing. This can be done in _src/routeConfiguration.js_. (In
-FTW-product the file is moved to _src/routing/routeConfiguration.js_.)
+routing. This can be done in _src/routing/routeConfiguration.js_.
 
 Inside routeConfiguration function you should add a URL path, a page
 name (it should not conflicting with other pages), and the component
@@ -281,7 +291,7 @@ const SocialMediaPage = loadable(() =>
 ```
 
 and after that add the route configuration to your newly created page:
-(In this example we created social media page so '/socialmedia' would
+(In this example we created a social media page so '/socialmedia' would
 work well as a path.)
 
 ```javascript

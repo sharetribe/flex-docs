@@ -12,72 +12,40 @@ published: true
 ## Marketplace styles
 
 Custom styling is a good starting point to introduce your own branding
-and remove design choices made for example marketplace, Saunatime.
+and remove design choices made for the example marketplace, Biketribe.
 
-FTW templates have most of the styling tied to component directories,
-but there are 2 files that define custom media queries, default CSS (CSS
-Properties, element styles, and global css classes):
-
-```shell
-└── src
-    └── styles
-        ├── customMediaQueries.css
-        └── marketplaceDefaults.css
-```
-
-<extrainfo title="I have a propertySets.css file. What is that?">
+Sharetribe Web Template has most of its styling tied to component
+directories, but there is a configuration file that defines the
+marketplace color, as well as a handful of default images:
 
 ```shell
 └── src
-    └── styles
-        └── propertySets.css
+    └── config
+        └── configBranding.js
 ```
 
-In previous versions of FTW, there has been a third CSS file:
-propertySets.css. This file contains
-[CSS Property Sets](https://chromestatus.com/feature/5753701012602880)
-that can be applied to component styles using the `@apply`syntax.
-However, W3C decided not to include that feature in future CSS syntax,
-and the
-[postcss-apply plugin](https://github.com/pascalduez/postcss-apply) got
-deprecated in the process.
+## Changing marketplace color
 
-If you have an older FTW template (earlier than FTW-daily v9, FTW-hourly
-v11 or FTW-product v10), you might have this file in your codebase. If
-you start using sharetribe-scripts v6.0.0, you need to consider
-migrating away from that since it contains code that is deprecated in
-v6.0.0 of sharetribe-scripts.
+The configBranding.js defines a marketplace color, which then gets
+generated into light and dark variants in
+**src/styles/marketplaceDefaults.css**. The darker and lighter color
+variants are mainly used for effects like color change when the cursor
+is hovering on top of a button.
 
-Read more from
-[this pull request](https://github.com/sharetribe/ftw-daily/pull/1531)
-in FTW-Daily.
-
-</extrainfo>
-
-## Changing CSS variables
-
-The most important file is **marketplaceDefaults.css**, where you can
-find CSS variable `--marketplaceColor` and its two variants.
-
-```css
-/* ================ Colors ================ */
-
---marketplaceColor: #38a70a;
---marketplaceColorLight: #ff4c38;
---marketplaceColorDark: #8c291e;
+```js
+// Marketplace color.
+// This is saved as CSS Property: --marketplaceColor in src/app.js
+// Also --marketplaceColorDark and --marketplaceColorLight are generated from this one
+// by adding +/- 10% to lightness.
+export const marketplaceColor = '#7c3aed';
 ```
 
 Our marketplace for summer cottages could use green color as its
-branding, so we'll change these color codes a bit:
+branding, so we'll change the main color code:
 
-```css
---marketplaceColor: #2f880a;
---marketplaceColorLight: #39a10c;
---marketplaceColorDark: #287209;
+```js
+export const marketplaceColor = '#2f880a';
 ```
-
-The darker and lighter color variants are mainly used for effects like
-color change when the cursor is hovering on top of a button.
 
 After you save the file, the development server will compile the modules
 and serve the updated app on your local development environment
@@ -91,5 +59,5 @@ green.
 
 **Congratulations!** You have made your first customization.
 
-It's time to change the Saunatime image on the landing page.<br />
+It's time to change the Biketribe background image.<br />
 [› Go to the next article](/tutorial/change-images/)

@@ -1,11 +1,11 @@
 ---
-title: How saving a payment card works in FTW
+title: How saving a payment card works in the Sharetribe Web Template
 slug: save-payment-card
 updated: 2020-08-11
 category: how-to-payments
 ingress:
-  An overview of how the Flex Template for Web functionality for storing
-  payment cards works.
+  An overview of the Sharetribe Web Template functionality for storing
+  payment cards.
 published: true
 ---
 
@@ -14,8 +14,8 @@ published: true
 When a customer first comes to the marketplace and books a listing,
 there are several form fields the user needs to fill: expiration month,
 card verification code (CVC), card holder's name and possibly other
-billing details. To improve user experience for returning customers,
-it's good to have an option to save payment card details for future
+billing details. To improve the user experience for returning customers,
+it is good to have an option to save payment card details for future
 bookings. If there is an existing payment card available, the user can
 just click the "Send request" button to complete checkout page.
 
@@ -35,8 +35,6 @@ is not interacting with your application. You can read more about
 off-session payments from a separate
 [article](/concepts/off-session-payments-in-transaction-process/).
 
-> Note: saving payment card was added to FTW in version v3.3.0.
-
 ## Saving card details
 
 There are 2 ways to save payment card details:
@@ -48,9 +46,13 @@ The former of those can be done in payment methods page (profile menu ->
 account settings -> payment methods), but you can also save payment card
 details on the checkout page when making a one-time payment.
 
-> Note: currently, it is only possible to save one card, which becomes
-> the default payment method. I.e. if there is already one payment card
-> saved, your only option is to replace the card with a new one.
+<info>
+
+Currently, it is only possible to save one card, which becomes the
+default payment method. I.e. if there is already one payment card saved,
+your only option is to replace the card with a new one.
+
+</info>
 
 ### Saving cards without making an initial payment
 
@@ -119,9 +121,13 @@ checkout flow:**
   - Create a `stripeCustomer` entity for the current user if needed.
   - Attach the created payment method to `stripeCustomer` entity.
 
-> Note: Even if the call to save payment method fails, one-time payment
-> itself has succeeded. Therefore, it is better to forward user to
-> `TransactionPage` anyway.
+<info>
+
+Even if the call to save payment method fails, one-time payment itself
+has succeeded. Therefore, it is better to forward user to
+`TransactionPage` anyway.
+
+</info>
 
 ### Getting permission to save a card
 
@@ -147,17 +153,20 @@ book a listing, there are couple of changes needed:
 
 Here's the description of complete call sequence on CheckoutPage.
 
-**Note: PaymentIntents flow needs transaction process change as
-described in doc:**
+<info>
 
-[Enable Payment Intents if you are using an old version of FTW](/how-to/enable-payment-intents/)
+PaymentIntents flow needs transaction process change as described in the
+article about
+**[enabling payment intents](/how-to/enable-payment-intents/)**.
+
+</info>
 
 ### Initial data for Checkout:
 
 Check if the user has already saved a default payment method. Fetch
 currentUser entity with `stripeCustomer.defaultPaymentMethod`
-relationship. In FTW, we call a thunk function:
-[`fetchCurrentUser` in CheckoutPage.duck.js](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L302).
+relationship. In Sharetribe Web Template, we call a thunk function:
+[`fetchCurrentUser` in CheckoutPage.duck.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.duck.js#L401).
 
 Behind the scenes, this is essentially the following call:
 
@@ -198,7 +207,7 @@ What happens behind the scene:
 - Automatic expiration happens in 15 minutes, if process is not
   transitioned to 'transition/confirm-payment' before that.
 - After this call, created transaction is saved to session storage in
-  FTW (or existing enquiry tx is updated).
+  Sharetribe Web Template (or existing inquiry tx is updated).
 
 **When you intend to save card details**, a new parameter needs to be
 passed if card details are saved at the same time:
@@ -234,14 +243,17 @@ sdk.transactions.initiate({
 });
 ```
 
-> Note: params might be different in different transaction process
-> graphs.
+<info>
+
+Params might be different in different transaction process graphs.
+
+</info>
 
 Check
-[`initiateOrder` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L171)
+[`initiateOrder` thunk function](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.duck.js#L156)
 and related
-[`orderParams`](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.js#L373)
-from FTW.
+[`orderParams`](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.js#L538)
+from Sharetribe Web Template.
 
 ###### Step 2.
 
@@ -255,9 +267,13 @@ stripe.confirmCardPayment(
 `paymentParams` should include card element and billing details. See
 [stripe.confirmCardPayment documentation](https://stripe.com/docs/js/payment_intents/confirm_card_payment)..
 
-> Note: paymentParams are not needed when using previously saved payment
-> card. FTW handles this in
-> [`confirmCardPayment` thunk function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/stripe.duck.js#L657).
+<info>
+
+PaymentParams are not needed when using previously saved payment card.
+Sharetribe Web Template handles this in
+**[`confirmCardPayment` thunk function](https://github.com/sharetribe/web-template/blob/main/src/ducks/stripe.duck.js#L246)**.
+
+</info>
 
 Stripe's frontent script checks if PaymentIntent needs extra actions
 from customer. Some payments might need Strong Customer Authentication
@@ -274,10 +290,10 @@ sdk.transactions.transition({
 });
 ```
 
-Inform Marketplace API, that PaymentIntent is ready to be captured after
-possible SCA authentication has been requested from user. FTW does that
-in
-[`confirmPayment` thunk call](https://github.com/sharetribe/flex-template-web/blob/master/src/containers/CheckoutPage/CheckoutPage.duck.js#L206)
+Inform Marketplace API that PaymentIntent is ready to be captured after
+possible SCA authentication has been requested from user. Sharetribe Web
+Template does that in
+[`confirmPayment` thunk call](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.duck.js#L245)
 
 ###### Step 4.
 
@@ -285,8 +301,8 @@ in
 sdk.messages.send({ transactionId: orderId, content: message });
 ```
 
-FTW sends an initial message to transaction if customer has added a
-message.
+The template sends an initial message to the transaction if customer has
+added a message.
 
 ###### Step 5.
 
@@ -295,8 +311,8 @@ selected the "Save for later use" checkbox. So, this is relevant if user
 has selected onetime payment - instead of making a charge from the
 previously saved credit card.
 
-On FTW, we call
-[savePaymentMethod function](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L200)
+In the template, we call
+[savePaymentMethod function](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L192)
 that creates stripe customer and adds updates default payment method.
 
 There are 3 different scenarios, which require different calls to Flex
@@ -311,8 +327,8 @@ sdk.stripeCustomer.create(
 );
 ```
 
-FTW:
-[`dispatch(createStripeCustomer(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L136)
+Template:
+[`dispatch(createStripeCustomer(stripePaymentMethodId))`](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L136)
 
 **2. Current user has already defaultPaymentMethod - 2 calls:**
 
@@ -321,8 +337,8 @@ FTW:
 => sdk.stripeCustomer.addPaymentMethod({ stripePaymentMethodId }, { expand: true })
 ```
 
-FTW:
-[`dispatch(updatePaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L181)
+Template:
+[`dispatch(updatePaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L181)
 
 **3. Current user has StripeCustomer entity connected, but no
 defaultPaymentMethod:**
@@ -331,8 +347,8 @@ defaultPaymentMethod:**
 => sdk.stripeCustomer.addPaymentMethod({ stripePaymentMethodId }, { expand: true })
 ```
 
-FTW:
-[`dispatch(addPaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/flex-template-web/blob/master/src/ducks/paymentMethods.duck.js#L151)
+Template:
+[`dispatch(addPaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L151)
 
 After these steps, customer is redirected to inbox and the ball is
 thrown to Provider to accept or decline the booking.

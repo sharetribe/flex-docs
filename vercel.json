@@ -48,7 +48,7 @@
   },
   {
     "source": "/background/time-based-template/",
-    "destination": "/docs/ftw/ftw-hourly/",
+    "destination": "/docs/legacy/ftw/ftw-hourly/",
     "permanent": true
   },
   {
@@ -173,7 +173,7 @@
   },
   {
     "source": "/guides/how-to-take-time-based-bookings-into-use/",
-    "destination": "/docs/how-to/enable-time-based-bookings-into-use/",
+    "destination": "/docs/legacy/how-to/enable-time-based-bookings-into-use/",
     "permanent": true
   },
   {
@@ -193,7 +193,7 @@
   },
   {
     "source": "/guides/how-to-use-keyword-search-in-topbar/",
-    "destination": "/docs/how-to/use-keyword-search-in-topbar/",
+    "destination": "/docs/legacy/how-to/use-keyword-search-in-topbar/",
     "permanent": true
   },
   {
@@ -298,7 +298,7 @@
   },
   {
     "source": "/tutorial-branding/customize-amenities-filter/",
-    "destination": "/docs/tutorial/customize-amenities-filter/",
+    "destination": "/docs/legacy/tutorial/customize-amenities-filter/",
     "permanent": true
   },
   {
@@ -313,17 +313,17 @@
   },
   {
     "source": "/tutorial-extended-data/add-extended-data/",
-    "destination": "/docs/tutorial/add-extended-data/",
+    "destination": "/docs/legacy/tutorial/add-extended-data/",
     "permanent": true
   },
   {
     "source": "/tutorial-extended-data/show-extended-data/",
-    "destination": "/docs/tutorial/show-extended-data/",
+    "destination": "/docs/legacy/tutorial/show-extended-data/",
     "permanent": true
   },
   {
     "source": "/tutorial-extended-data/filter-with-extended-data/",
-    "destination": "/docs/tutorial/filter-with-extended-data/",
+    "destination": "/docs/legacy/tutorial/filter-with-extended-data/",
     "permanent": true
   },
   {
@@ -458,7 +458,7 @@
   },
   {
     "source": "/cookbook-design/customize-image-sizes/",
-    "destination": "/docs/how-to/customize-image-sizes/",
+    "destination": "/docs/legacy/how-to/customize-image-sizes/",
     "permanent": true
   },
   {
@@ -468,7 +468,7 @@
   },
   {
     "source": "/cookbook-search/use-keyword-search-in-topbar/",
-    "destination": "/docs/how-to/use-keyword-search-in-topbar/",
+    "destination": "/docs/legacy/how-to/use-keyword-search-in-topbar/",
     "permanent": true
   },
   {
@@ -478,7 +478,7 @@
   },
   {
     "source": "/cookbook-transaction-process/enable-time-based-bookings-into-use/",
-    "destination": "/docs/how-to/enable-time-based-bookings-into-use/",
+    "destination": "/docs/legacy/how-to/enable-time-based-bookings-into-use/",
     "permanent": true
   },
   {
@@ -633,12 +633,12 @@
   },
   {
     "source": "/ftw-introduction/ftw-hourly/",
-    "destination": "/docs/ftw/ftw-hourly/",
+    "destination": "/docs/legacy/ftw/ftw-hourly/",
     "permanent": true
   },
   {
     "source": "/ftw-introduction/ftw-product/",
-    "destination": "/docs/ftw/ftw-product/",
+    "destination": "/docs/legacy/ftw/ftw-product/",
     "permanent": true
   },
   {
@@ -753,12 +753,12 @@
   },
   {
     "source": "/operator-guides/introducing-sneakertime/",
-    "destination": "/docs/introduction/introducing-sneakertime/",
+    "destination": "/docs/legacy/introduction/introducing-sneakertime/",
     "permanent": true
   },
   {
     "source": "/operator-guides/introducing-yogatime/",
-    "destination": "/docs/introduction/introducing-yogatime/",
+    "destination": "/docs/legacy/introduction/introducing-yogatime/",
     "permanent": true
   },
   {
@@ -783,7 +783,7 @@
   },
   {
     "source": "/design-toolkit/user-journey/",
-    "destination": "/docs/design-toolkit/user-journey-saunatime/",
+    "destination": "/docs/legacy/design-toolkit/user-journey-saunatime/",
     "permanent": true
   },
   {
@@ -834,6 +834,81 @@
   {
     "source": "/tutorial/change-image-assets/",
     "destination": "/docs/tutorial/change-images/",
+    "permanent": true
+  },
+ {
+    "source": "/design-toolkit/user-journey-saunatime/",
+    "destination": "/docs/legacy/design-toolkit/user-journey-saunatime/",
+    "permanent": true
+  },
+ {
+    "source": "/design-toolkit/user-journey-sneakertime/",
+    "destination": "/docs/legacy/design-toolkit/user-journey-sneakertime/",
+    "permanent": true
+  },
+ {
+    "source": "/design-toolkit/user-journey-yogatime/",
+    "destination": "/docs/legacy/design-toolkit/user-journey-yogatime/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/ftw-hourly/",
+    "destination": "/docs/legacy/ftw/ftw-hourly/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/ftw-product/",
+    "destination": "/docs/legacy/ftw/ftw-product/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/customize-image-sizes/",
+    "destination": "/docs/legacy/how-to/customize-image-sizes/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/use-keyword-search-in-topbar/",
+    "destination": "/docs/legacy/how-to/use-keyword-search-in-topbar/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/enable-time-based-bookings-into-use/",
+    "destination": "/docs/legacy/how-to/enable-time-based-bookings-into-use/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/introducing-saunatime/",
+    "destination": "/docs/legacy/introduction/introducing-saunatime/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/introducing-sneakertime/",
+    "destination": "/docs/legacy/introduction/introducing-sneakertime/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/introducing-yogatime/",
+    "destination": "/docs/legacy/introduction/introducing-yogatime/",
+    "permanent": true
+  },
+ {
+    "source": "/tutorial/customize-amenities-filter/",
+    "destination": "/docs/legacy/tutorial/customize-amenities-filter/",
+    "permanent": true
+  },
+ {
+    "source": "/tutorial/add-extended-data/",
+    "destination": "/docs/legacy/tutorial/add-extended-data/",
+    "permanent": true
+  },
+ {
+    "source": "/tutorial/filter-with-extended-data/",
+    "destination": "/docs/legacy/tutorial/filter-with-extended-data/",
+    "permanent": true
+  },
+ {
+    "source": "/tutorial/show-extended-data/",
+    "destination": "/docs/legacy/tutorial/show-extended-data/",
     "permanent": true
   }
 ]

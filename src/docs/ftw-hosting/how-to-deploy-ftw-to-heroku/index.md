@@ -1,15 +1,16 @@
 ---
-title: How to deploy FTW to Heroku
+title: Deploy to Heroku
 slug: how-to-deploy-ftw-to-heroku
-updated: 2022-09-12
+updated: 2023-01-01
 category: ftw-hosting
 ingress:
-  This guide describes how to deploy Flex Template for Web to Heroku.
+  This guide describes how to deploy the Sharetribe Web Template to
+  Heroku.
 published: true
 ---
 
-This guide provides a practical demonstration of how to deploy Flex
-Template for Web (FTW) to Heroku. Heroku is one of the most popular
+This guide provides a practical demonstration of how to deploy the
+Sharetribe Web Template to Heroku. Heroku is one of the most popular
 cloud hosting service providers, and because of that, there is a lot of
 information online that can help you solve and debug potential problems
 with your deployment. Unlike [Render](https://www.render.com), Heroku
@@ -22,7 +23,7 @@ accounts:
 - [Stripe](https://stripe.com/)
 - [Mapbox](https://www.mapbox.com/)
 
-## Deploying FTW to Heroku
+## Deploying the template to Heroku
 
 **Step 1: Create a Heroku account**
 
@@ -65,12 +66,7 @@ Then add the following environment variables as Config Vars:
 
   If you are using Mapbox instead of Google Maps
 
-- `REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY`
-
-  The currency used in the Marketplace is formatted in the ISO 4217
-  currency code. For example USD, EUR, CAD, AUD, etc.
-
-- `REACT_APP_CANONICAL_ROOT_URL`
+- `REACT_APP_MARKETPLACE_ROOT_URL`
 
   Canonical root URL of the marketplace. Remove trailing slash from the
   domain.<br />E.g. _`https://<the-name-of-your-app>.herokuapp.com`_
@@ -102,14 +98,6 @@ Then add the following environment variables as Config Vars:
   Content Security Policy (CSP). Read more from
   [this article](/ftw/how-to-set-up-csp-for-ftw/).<br /> Accepts values:
   _block_ and _report_. The recommended value is _block_.
-
-- `REACT_APP_AVAILABILITY_ENABLED`
-
-  Possible values: true/false<br/> Use value: true
-
-- `REACT_APP_DEFAULT_SEARCHES_ENABLED`
-
-  Possible values: true/false<br/> Use value: true
 
 If you change these values later on, _you need to deploy the app again_.
 Environment variables are baked into the static build files of the web

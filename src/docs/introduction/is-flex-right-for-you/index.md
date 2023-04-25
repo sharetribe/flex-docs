@@ -65,12 +65,11 @@ example, one of these popular platforms:
   hairdressers and beauty professionals (B2C)
 - [UrbanSitter](https://www.urbansitter.com/) – find a babysitter (B2C)
 
-Building such a platform with Flex is very fast, as you can start from
-example templates – either from
-[FTW-daily](https://github.com/sharetribe/ftw-daily), an example of a
-rental marketplace, or from
-[FTW-hourly](https://github.com/sharetribe/ftw-hourly), an example of a
-service marketplace.
+Building such a platform with Flex is very fast, as you can start with
+an example template – the
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
+can be configured to run as a rental marketplace and as a service
+marketplace.
 
 ## Marketplaces for selling physical or digital products
 
@@ -86,12 +85,13 @@ these popular platforms:
 - [Etsy](https://www.etsy.com) - selling handmade or vintage items and
   craft supplies (C2C, B2C)
 
-You can use [FTW-product](https://github.com/sharetribe/ftw-product) to
-start building a marketplace for selling physical products fast. It has
-stock management included and it asks shipping address from customer and
-shows that to provider. However, it doesn't include a shopping cart
-feature by default. A shopping cart would require changes to the payment
-process.
+You can also use the
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
+to start building a marketplace for selling physical products fast. It
+has stock management included, and it asks the customer for a shipping
+address and shows it to the provider. However, it does not include a
+shopping cart feature by default. A shopping cart would require changes
+to the payment process.
 
 It's possible to build a marketplace that sells digital products, and
 you will need to do some custom development to integrate a system for
@@ -113,8 +113,8 @@ Some marketplaces have another kind of workflow, which can be called a
 [Thumbtack](https://www.thumbtack.com/) and
 [Upwork](https://www.upwork.com/).
 
-In these marketplaces, it's the providers who do the searching. The
-customers start by creating a post that describes their requirements.
+In these marketplaces, it's the providers who do the searching.
+Customers start by creating a post that describes their requirements.
 The service providers browse these posts and bid on some of them. The
 customer then chooses one of the bids and starts working with the
 provider in question, eventually making a payment based on the invoice

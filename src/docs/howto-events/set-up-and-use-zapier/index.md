@@ -89,8 +89,8 @@ categories:
 
 - `Listing created`: sent each time a listing is created
 - `Listing updated`: sent each time a listing is updated. **Please note
-  that in the default listing creation flow in FTW a new listing goes
-  already through several (seven) updates between the first draft and
+  that in the default listing creation flow in Sharetribe Web Template,
+  a new listing goes through several updates between the first draft and
   eventual publishing**. Be sure to check out Zapier's own
   [Filter app](https://zapier.com/apps/filter/integrations) to filter
   out the relevant ones.

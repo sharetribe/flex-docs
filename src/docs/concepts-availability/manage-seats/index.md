@@ -35,14 +35,13 @@ the
 of a listing. If the number of seats is set to 0, the listing will not
 be available at that time.
 
-In our templates, FTW-daily and FTW-hourly, the default seat
-availability of any particular listing is one. Providers set the
-availability plan and exceptions of their listing during the listing
-creation. Users determine when their listing is available and when it’s
-not within the timeframes your marketplace offers: hourly, daily, or
-custom length. When modifying the template, you or your developers can
-enable more than one seat per time slot, either in general or for
-specific dates and times.
+In our Sharetribe Web Template, the default seat availability of any
+particular bookable listing is one. Providers set the availability plan
+and exceptions of their listing during listing creation. Users determine
+when their listing is available and when it’s not within the timeframes
+your marketplace offers: hourly, daily, or custom length. When modifying
+the template, you or your developers can enable more than one seat per
+time slot, either in general or for specific dates and times.
 
 If your marketplace listings happen at a specific time or place instead
 of at a repeated interval (e.g. concerts or events), you can set the

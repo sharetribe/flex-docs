@@ -116,10 +116,11 @@ login flow requires using another client or if you wish to remove the
 client you added and create a new one. Just select the identity provider
 from the dropdown when creating a new client.
 
-## Add OpenID Connect login flow to FTW
+## Add OpenID Connect login flow to Sharetribe Web Template
 
-OpenID Connect login flow can be added to FTW in multiple ways. One good
-starting point is to take a look at OpenID Connect implementations in
+OpenID Connect login flow can be added to Sharetribe Web Template in
+multiple ways. One good starting point is to take a look at OpenID
+Connect implementations in
 [the Passport.js strategies](http://www.passportjs.org). Keep in mind
 that you should get a hold of the ID token that is returned from the
 identity provider so that you can pass it along to Flex's

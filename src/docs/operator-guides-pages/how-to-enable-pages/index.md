@@ -36,15 +36,28 @@ environment.
 
 ## How to use Pages during development?
 
-When you are developing your marketplace or you hired a developer to help you, you should use your Test environment to build out your static content with Pages. This environment should be connected to a Test version of your marketplace frontend. 
+When you are developing your marketplace or you hired a developer to
+help you, you should use your Test environment to build out your static
+content with Pages. This environment should be connected to a Test
+version of your marketplace frontend.
 
-At the same time, you have a Dev version of your marketplace frontend where code changes are being deployed. Once these code changes are completed, they should be used to update the Test version of your marketplace. This keeps your Test version, which you are modifying with no-code tools, up-to-date with the latest code-customized version of your marketplace (the Dev version). 
+At the same time, you have a Dev version of your marketplace frontend
+where code changes are being deployed. Once these code changes are
+completed, they should be used to update the Test version of your
+marketplace. This keeps your Test version, which you are modifying with
+no-code tools, up-to-date with the latest code-customized version of
+your marketplace (the Dev version).
 
-When you are ready to go live, you will procure a Live environment and create a Live version of your marketplace. The Live version contains both the latest (working) code changes and the latest no-code changes. Code changes continue to be developed in the Dev version, then deployed to the Test and Live versions when ready. No code changes via Console are made in the Test environment, to the Test version, then copied to the Live version when ready.
+When you are ready to go live, you will procure a Live environment and
+create a Live version of your marketplace. The Live version contains
+both the latest (working) code changes and the latest no-code changes.
+Code changes continue to be developed in the Dev version, then deployed
+to the Test and Live versions when ready. No code changes via Console
+are made in the Test environment, to the Test version, then copied to
+the Live version when ready.
 
-Setting up your Dev (and Live) marketplace is a technical task requiring development help. Developers can consult
+Setting up your Dev (and Live) marketplace is a technical task requiring
+development help. Developers can consult
 [this guide](https://www.sharetribe.com/docs/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw)
 to learn how to update existing marketplace codebases with Pages
 functionality.
-
-

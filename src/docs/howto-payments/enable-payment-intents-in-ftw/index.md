@@ -4,18 +4,20 @@ slug: enable-payment-intents
 updated: 2020-08-11
 category: how-to-payments
 ingress:
-  Overview of how Stripe PaymentIntents work in FTW, and how you can
-  change older FTW version to support for Strong Customer Authentication
-  (SCA).
+  Overview of how Stripe PaymentIntents work in Sharetribe Web Template,
+  and how you can update legacy templates to support for Strong Customer
+  Authentication (SCA).
 published: true
 ---
 
 This guide walks you through the process of taking
 [PaymentIntents](https://stripe.com/docs/payments/payment-intents) into
-use. This article covers how PaymentIntents can be used with card
-payments. On general level, the steps are the same for other payment
-methods. See
-[background article on payment methods](/concepts/payment-methods-overview/)
+use in your custom client application. **These steps are already
+implemented in Sharetribe Web Template.**
+
+This article covers how PaymentIntents can be used with card payments.
+On general level, the steps are the same for other payment methods. See
+[the concepts article on payment methods](/concepts/payment-methods-overview/)
 and [payment intents](/concepts/payment-intents/) for more information.
 Stripe's PaymentIntent is a new way to handle Strong Customer
 Authentication (SCA) by using frictionless
@@ -25,15 +27,19 @@ Before starting to read this article, you probably want to get familiar
 with
 [Strong Customer Authentication](/concepts/strong-customer-authentication/)
 and [how PaymentIntent flow works](/concepts/payment-intents/) by
-reading related background articles.
+reading related concepts articles.
 
-> Note: Taking Stripe PaymentIntent flow into use, is a big change for
-> CheckoutPage and includes process change. You should carefully check
-> what kind of changes are made in FTW release:
-> [v3.0.0](https://github.com/sharetribe/flex-template-web/releases/tag/v3.0.0).
-> Taking update from upstream or even cherry-picking commits might make
-> the update easier, but you should first track your custom-code to
-> affected components.
+<info>
+
+Taking Stripe PaymentIntent flow into use is a big change for
+CheckoutPage and includes process change. You should carefully check
+what kind of changes are made in the legacy template release:
+[v3.0.0](https://github.com/sharetribe/flex-template-web/releases/tag/v3.0.0).
+Taking an update from upstream or even cherry-picking commits might make
+the update easier, but you should first track your custom-code to
+affected components.
+
+</info>
 
 ## 1. Process change
 
@@ -52,7 +58,7 @@ previous transition (Initial - request -> Preauthorized) into two:
 ![PaymentIntents flow needs a process change](./paymentintent-process-change.png)
 
 So, after transitions (`request-payment` or
-`request-payment-after-enquiry`), API returns
+`request-payment-after-inquiry`), API returns
 `stripePaymentIntentClientSecret` among the protected data of the
 current transaction. This client-secret is used for the call to
 `stripe.confirmCardPayment`. Then there is another transition made
@@ -116,11 +122,11 @@ address) and then 4 thunk-calls/Promises need to be made in sequence:
     protectedData
 - This combines both transitions:
   - `sdk.transitions.initate` aka `request-payment`
-  - `sdk.transitions.transition` aka continue enquiry with
-    `request-payment-after-enquiry`
+  - `sdk.transitions.transition` aka continue inquiry with
+    `request-payment-after-inquiry`
 - Automatic expiration happens in 15 minutes, if process is not
   transitioned to `'transition/confirm-payment'` before that.
-- Created transaction is saved to session storage or existing enquiry tx
+- Created transaction is saved to session storage or existing inquiry tx
   is updated. (There is more about this step later.)
 
 ### Step 2. _onConfirmCardPayment_
@@ -152,17 +158,17 @@ We use session storage to buffer checkout page against page reloads and
 errors - customer needs to be able to continue payment after accidental
 page refresh and network errors. This is a UX issue, but more
 importantly, it builds trust. Because of this need, we save booking
-dates and other data there. Previously enquiredTransaction was saved
+dates and other data there. Previously inquiredTransaction was saved
 there too, but that concept is now expanded a bit: any transaction can
 now be saved to session storage under the key "transaction".
 
-So, if there is an existing transaction in enquiry state and customer
+So, if there is an existing transaction in inquiry state and customer
 books the listing, TransactionPage sends that `transaction` to
 CheckoutPage. As a first step CheckoutPage saves received data to the
 session store. This is pretty much the same functionality as with
 previous card-token payment process - only the key is changed from
-_enquiryTransaction_ to _transaction_. However, after transition
-`request-payment` (or `request-payment-after-enquiry`) the updated
+_inquiryTransaction_ to _transaction_. However, after transition
+`request-payment` (or `request-payment-after-inquiry`) the updated
 transaction is saved again. (the relevant new data in transaction is
 `stripePaymentIntentClientSecret`.)
 
@@ -178,15 +184,19 @@ Most of the visual changes happen in StripePaymentForm. Billing details
 are added to the form and most of the errors of different thunk calls
 are shown inside it.
 
-The default mode for FTW is to show billing address fields. Even though
-it is recommended by Stripe, you might want to remove those fields due
-to UX reasons. That can be made just by not adding
-`StripePaymentAddress` sub-component.
+The default mode for Sharetribe Web Template is to show billing address
+fields. Even though it is recommended by Stripe, you might want to
+remove those fields due to UX reasons. That can be made just by not
+adding `StripePaymentAddress` sub-component.
 
-> Note: if the page is reloaded after successful call to
-> `stripe.confirmCardPayment` billing details should not be shown to the
-> user since credit card number and other billing details are already
-> sent to Stripe.
+<info>
+
+If the page is reloaded after successful call to
+`stripe.confirmCardPayment` billing details should not be shown to the
+user since credit card number and other billing details are already sent
+to Stripe.
+
+</info>
 
 ## 6. Test with live credit cards
 
@@ -195,11 +205,15 @@ credit card issuers, you should test at least some credit cards how they
 work in a live environment.
 
 This can be done by creating another
-[live environment](/ftw/how-to-deploy-ftw-to-production/) FTW instance
-that uses your live Client Id for Flex with live Stripe keys (both
-publishable and secret). Then create a new Git branch that takes
-PaymentIntents flow into use and adds
-[Basic Authentication configuration](https://github.com/sharetribe/flex-template-web/blob/master/.env-template#L32)
+[live environment](/ftw/how-to-deploy-ftw-to-production/) instance of
+Sharetribe Web Template that uses
+
+- your live Client Id for Flex and
+- live Stripe keys (both publishable and secret).
+
+Then create a new Git branch that takes PaymentIntents flow into use and
+adds
+[Basic Authentication configuration](https://github.com/sharetribe/web-template/blob/main/.env-template#L51)
 into environment variables. After that, you could deploy your
 payment-intent branch into your live environment. Then you can just book
 some existing listing and maybe reject it to get refund to your live

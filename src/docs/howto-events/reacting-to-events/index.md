@@ -60,11 +60,12 @@ one of three ways:
   and be
   [published](https://www.sharetribe.com/api-reference/marketplace.html#publish-draft-listing)
   separately
-- in case your marketplace has the listing approval feature on, a
+- in case your marketplace has the
+  [listing approval feature](/concepts/requiring-approval/) on, a
   listing that is pending approval becomes published when it is approved
   by an operator
 
-Therefore, in order to cover both cases, we need to process both
+Therefore, in order to cover all cases, we need to process both
 `listing/created` and `listing/updated` events. A query for only these
 types of events looks like this:
 

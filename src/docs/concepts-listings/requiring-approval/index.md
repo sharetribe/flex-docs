@@ -90,10 +90,10 @@ flex-cli listing-approval disable -m [your-marketplace]
 
 ```
 
-## Elements indicating listing approval in FTW templates
+## Elements indicating listing approval in Sharetribe Web Template
 
-All three FTW templates show UI elements related to pending listings by
-default.
+The Sharetribe Web Template shows UI elements related to pending
+listings by default.
 
 When a user publishes a listing on a marketplace that requires operator
 approval, the listing state is set as `pendingApproval`. Listings in
@@ -101,7 +101,7 @@ approval, the listing state is set as `pendingApproval`. Listings in
 know that their listing is pending approval. The listing is not yet
 shown to other users.
 
-![Banner indicating that listing is pending approval](pending-approval-banner.png 'The FTW applications show a banner on the listing by default')
+![Banner indicating that listing is pending approval](pending-approval-banner.png 'The template application shows a banner on the listing by default')
 
 When the provider navigates to their Manage Listings page, listings
 pending approval are shown with an overlay indicating the listing's

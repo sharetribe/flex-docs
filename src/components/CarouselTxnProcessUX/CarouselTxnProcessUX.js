@@ -26,8 +26,8 @@ const CarouselTxnProcessUX = props => {
         <h3>What the provider sees</h3>
         <p>
           Here we see what a transaction in a preauthorized state looks like in
-          Saunatime. Specifically, we are in the inbox of the transaction’s
-          provider. The buyer has just made a request to book our sauna.
+          Biketribe. Specifically, we are in the inbox of the transaction’s
+          provider. The buyer has just made a request to book our bike.
         </p>
         <p>
           As our transaction process determines, the provider has three options:

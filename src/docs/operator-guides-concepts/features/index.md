@@ -299,7 +299,7 @@ lots of helpful features. Here are some of them:
   immediately when a customer pays, or hold it until the booking period
   is over, and release it to the provider's bank account only after that
   (after automatically deducting your commission). You can hold money up
-  to 6 months before releasing it to the provider.
+  to 3 months before releasing it to the provider.
 - **Refunds.** If something goes wrong with the order or the customer
   wants to cancel, you can easily refund them.
 - **Charge your commission.** You can charge a commission from the
@@ -357,11 +357,11 @@ or even personalize the templates based on who the recipient is.
 
 ## Multiple languages and currencies
 
-Sharetribe Web Template includes default language-specific microcopy files
-for English, Spanish, French and German, but you can easily translate it
-to the language of your choice. With some development work you can make
-your marketplace multilingual, allowing your users to use it in the
-language of their choice.
+Sharetribe Web Template includes default language-specific microcopy
+files for English, Spanish, French and German, but you can easily
+translate it to the language of your choice. With some development work
+you can make your marketplace multilingual, allowing your users to use
+it in the language of their choice.
 
 You can also use any currency you want, as long as it's in the list of
 [100+ currencies supported by Stripe](https://stripe.com/docs/currencies).
@@ -396,17 +396,21 @@ can decide fully things like which fonts and colors to use, what kind of
 pages or views there should be, and how those should be laid out. There
 are no limits to what you can do in terms of visual design.
 
-It's easy for you to get started with the design by leveraging the [Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template)
-The template is fully responsive so they look great both on desktop and mobile devices.
+It's easy for you to get started with the design by leveraging the
+[Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template)
+The template is fully responsive so they look great both on desktop and
+mobile devices.
 
-Your users won't see Sharetribe mentioned anywhere. The web address is your own domain, the email notifications get sent from your email
+Your users won't see Sharetribe mentioned anywhere. The web address is
+your own domain, the email notifications get sent from your email
 address, and the entire user experience is fully tailored to match your
 brand.
 
 ## SEO
 
-The Sharetribe Web Template is optimized for search engines by default, and you have full control
-to tailor the experience the way you wish. You can decide the exact URL
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
+is optimized for search engines by default, and you have full control to
+tailor the experience the way you wish. You can decide the exact URL
 structure, edit meta tags freely, and do any other optimizations you
 want.
 
@@ -414,8 +418,10 @@ want.
 
 Since Flex is a "headless" marketplace solution, you can use it to build
 either a website or a mobile application or both. Building a web app is
-quicker today thanks to the [Sharetribe Web Template.](https://www.sharetribe.com/docs/introduction/introducing-template). A similar template
-doesn't exist yet for mobile.
+quicker today, because of
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/),
+which offers a great starting point for development. A similar template
+does not yet exist for mobile.
 
 ## Integrations
 
@@ -428,8 +434,9 @@ your marketplace to third party services in CSV format.
 
 Some examples of integrations you might want to add:
 
-- The map provider of your choice (Sharetribe Web Template offers default
-  implementations for [Mapbox](https://www.mapbox.com/) and Google Maps)
+- The map provider of your choice (Sharetribe Web Template offers
+  default implementations for [Mapbox](https://www.mapbox.com/) and
+  Google Maps)
 - The analytics provider of your choice, like Google Analytics,
   [Hotjar](https://www.hotjar.com/), [Mixpanel](https://mixpanel.com/),
   or [Amplitude](https://amplitude.com/)

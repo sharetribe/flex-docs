@@ -34,11 +34,12 @@ or
 [Intercom](https://www.intercom.com/help/en/articles/168-install-intercom-on-your-website-to-support-and-onboard-logged-in-users),
 directly into your client app code.
 
-The FTW templates include a Node.js/Express server by default. Some
-third party integrations may require a secure context, such as
+The Sharetribe Web Template includes a Node.js/Express server by
+default. Some third party integrations, such as
 [Voucherify](#voucherify-discount-coupons) or other promotion
-integrations. For these types of integrations, you can use the FTW
-server to create endpoints or other logic in a secure way.
+integrations, may require a secure context. For these types of
+integrations, you can use the template server to create endpoints or
+other logic in a secure way.
 
 ### Integration API
 
@@ -56,7 +57,7 @@ more.
 
 Due to its powerful nature, the Integration API should **only ever be
 used from a secure context**, such as your client application server or
-a separate backend application. Here, too, the FTW server is an
+a separate backend application. Here, too, the template server is an
 excellent place to build your Integration API logic without revealing
 sensitive information to the public web in your browser client code.
 
@@ -154,7 +155,7 @@ behavior recordings, among other features.
 - Add a
   [tracking script to the client application](/ftw/how-to-set-up-analytics-for-ftw/#custom-analytics-libraries).
 - Add custom CSP directives to
-  [/server/csp.js](https://github.com/sharetribe/ftw-daily/blob/master/server/csp.js).
+  [/server/csp.js](https://github.com/sharetribe/web-template/blob/main/server/csp.js).
 
 ### Mailchimp email list
 

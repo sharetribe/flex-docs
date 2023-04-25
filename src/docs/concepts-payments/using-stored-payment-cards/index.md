@@ -15,17 +15,17 @@ future purchases. Doing this provides multiple benefits: it streamlines
 the checkout process for existing customers and allows you to place
 additional charges to the payment card of the customer.
 
-Flex Templates for Web (FTW) include a checkout workflow, which offers a
-box for the customer to check if they want to store their card for
-future purchases. Once they've stored it, they are offered the option to
-use the same card for subsequent purchases without entering the details
+Sharetribe Web Template includes a checkout workflow, which offers a box
+for the customer to check if they want to store their card for future
+purchases. Once they've stored it, they are offered the option to use
+the same card for subsequent purchases without entering the details
 again.
 
 In addition, each user has a page called "payment methods" in their
 account settings. From this page, the user can store a new credit card,
 delete a stored card, or replace a stored card with a new one.
 
-[Learn how storing payment card works in FTW](/how-to/save-payment-card/)
+[Learn how storing payment card works in Sharetribe Web Template](/how-to/save-payment-card/)
 
 [Read API documentation on storing credit cards](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer)
 
@@ -61,22 +61,20 @@ an initial purchase. For example, if a rented item is stolen or damaged
 by the customer or returned late, you might want to charge the customer
 extra to cover these costs.
 
-You can initiate additional charges directly from your Stripe dashboard.
-You should always notify the customer in question about why an extra
-charge was placed on their card. The additional charges won't get
-displayed in Flex Console. The money from the extra charges is placed to
-your platform's Stripe balance, from which it is moved to your bank
-account. If a payout to the provider (in this case the owner of the
-item) is needed, you will need to handle it manually from your own bank
-account.
-
-Also, it's important to remember that if your marketplace is accepting
-payments from European customers, starting from September 14th these
-customer will sometimes need to use
+If your marketplace uses
 [Strong Customer Authentication](/concepts/strong-customer-authentication/)
-to verify credit card purchases. Thus, you can't necessarily create
-additional charges to their card without allowing them to approve the
-charge with Strong Customer Authentication.
+to verify credit card purchases, you cannot create additional charges to
+their card without allowing them to approve the charge with Strong
+Customer Authentication.
+
+If that is not the case, you can initiate additional charges directly
+from your Stripe dashboard. You should always notify the customer in
+question about why an extra charge was placed on their card. The
+additional charges won't get displayed in Flex Console. The money from
+the extra charges is placed to your platform's Stripe balance, from
+which it is moved to your bank account. If a payout to the provider (in
+this case the owner of the item) is needed, you will need to handle it
+manually from your own bank account.
 
 **Can I enable recurring / subscription payments?**
 
@@ -91,7 +89,8 @@ storage subscription.
 Right now, Sharetribe Flex doesn't offer support for Stripe
 subscriptions. However, there is a workaround. Once the customer has
 made the initial booking and payment, you would send a request to your
-own backend component, which would then create a subscription with the
-stored credit card of the customer. The subsequent subscription payments
-would then not be visible in Flex Console, but you could monitor them
-from Stripe dashboard.
+own backend component, for instance the server of your Sharetribe Web
+Template, which would then create a subscription with the stored credit
+card of the customer. The subsequent subscription payments would then
+not be visible in Flex Console, but you could monitor them from Stripe
+dashboard.

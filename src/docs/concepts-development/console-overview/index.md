@@ -97,10 +97,10 @@ outgoing email address, where all notifications to your marketplace’s
 users will be sent from.
 
 **Content** is where you can modify your marketplace microcopy. You can
-add your existing microcopy file content from your Flex Template, or
-copy and paste the default language-specific microcopy file from the
-featured links, and modify the texts to suit your marketplace. Read more
-about [modifying microcopy in Console](/concepts/microcopy/).
+add your existing microcopy file content from your Sharetribe Web
+Template, or copy and paste the default language-specific microcopy file
+from the featured links, and modify the texts to suit your marketplace.
+Read more about [modifying microcopy in Console](/concepts/microcopy/).
 
 **Transaction processes** is quite self-explanatory: it shows the
 different kinds of transaction processes your marketplace has. You can

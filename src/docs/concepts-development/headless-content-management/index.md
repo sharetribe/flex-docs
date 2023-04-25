@@ -20,23 +20,23 @@ The Pages feature allows content editors to make changes to content
 pages without having to touch code. Pages is a “headless” feature, where
 the content is decoupled from the frontend, and can be accessed via API.
 
-In Flex, the presentational layer, or frontend, is usually FTW (if you
-are not using a custom client application), and the content is the data
-that is managed through Pages. The headless architecture allows you to
-render the content in any client you choose, as it can be retrieved by a
-call to the Flex API.
+In Flex, the presentational layer, or frontend, is usually the
+Sharetribe Web Template (if you are not using a custom client
+application), and the content is the data that is managed through Pages.
+The headless architecture allows you to render the content in any client
+you choose, as it can be retrieved by a call to the Flex API.
 
 To illustrate further, here is an example of how data fetched from the
-API maps to visual elements in the default “About page” in FTW:
+API maps to visual elements in the default “About page” in the template:
 
 ![How data is rendered on the about page](./data.png)
 
 ## Querying the Asset Delivery API
 
 The content you edit through Console can be queried through the Asset
-Delivery API. FTW queries this data automatically and renders the
-content on dynamic content pages using it. Learn more about how FTW
-renders content pages [here](/ftw/page-builder/).
+Delivery API. The template queries this data automatically and renders
+the content on dynamic content pages using it. Learn more about how the
+template renders content pages [here](/ftw/page-builder/).
 
 A basic query to the Asset Delivery API to fetch the content of the
 landing page looks like this:
@@ -70,8 +70,8 @@ preferred code editor to make it easier to interpret:
 
 ![Example data formatted](./formatted.png)
 
-This data is meant for your client application to interpret. FTW can
-automatically render a landing page using this data.
+This data is meant for your client application to interpret. Sharetribe
+Web Template can automatically render a landing page using this data.
 
 <info>
 

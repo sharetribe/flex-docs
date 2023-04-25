@@ -27,11 +27,15 @@ In order to access Flex APIs, you need to create an _Application_ in
 Application has a _client ID_. In addition, applications that access the
 Integration API also have a corresponding _client secret_.
 
-> **NOTE** The easiest way to interact with both the Marketplace API and
-> the Integration API is to use our [SDKs](/concepts/js-sdk/). The SDKs
-> handle most of the complexity regarding authentication, access, and
-> refresh tokens. Below we discuss some of the underlying mechanisms and
-> principles in the Authentication API.
+<info>
+
+The easiest way to interact with both the Marketplace API and the
+Integration API is to use our [SDKs](/concepts/js-sdk/). The SDKs handle
+most of the complexity regarding authentication, access, and refresh
+tokens. Below, we discuss some of the underlying mechanisms and
+principles in the Authentication API.
+
+</info>
 
 The Authentication API is based on the [OAuth 2.0](https://oauth.net/2/)
 framework.
@@ -39,10 +43,13 @@ framework.
 See also the
 [Authentication API reference documentation](https://www.sharetribe.com/api-reference/authentication.html)
 
-> **IMPORTANT** The _client secret_ is a secret value that must be kept
-> safe and secure. Never expose your _client secret_ publicly (e.g. in
-> your web site's HTML or JavaScript code, in your mobile app source
-> code, etc).
+<warning>
+
+The _client secret_ is a secret value that must be kept safe and secure.
+Never expose your _client secret_ publicly (e.g. in your web site's HTML
+or JavaScript code, in your mobile app source code, etc).
+
+</warning>
 
 The Authentication API's main endpoint is for
 [issuing tokens](https://www.sharetribe.com/api-reference/authentication.html#issuing-tokens).
@@ -70,6 +77,10 @@ types_:
   _username_ and _password_. It also provides Marketplace API
   applications with a _refresh token_ that can be used to obtain fresh
   access tokens and can act as the end user's session secret.
+- `token_exchange` grant type is used by Marketplace API to create a
+  trusted context for e.g. [privileged transitions]() within
+  transactions. It uses both _client ID_ and _client secret_, as well as
+  a valid user access token obtained with `password` grant type.
 - `refresh_token` grant type is used by both Marketplace API and
   Integration API applications and grants a fresh _access token_ when
   given a client ID and a valid _refresh token_.

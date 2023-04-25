@@ -4,8 +4,8 @@ slug: solving-payout-problems
 updated: 2019-09-10
 category: concepts-payments
 ingress:
-  A payout is the part of the payment process where the price of a
-  booking is paid to the provider's bank account. This article gives you
+  A payout is the part of the payment process where the price of an
+  order is paid to the provider's bank account. This article gives you
   an overview of how payments work in Flex, what problems you may
   encounter with payouts, and how to solve those problems.
 published: true
@@ -13,15 +13,15 @@ published: true
 
 ## Introduction
 
-Enabling customers to pay for their bookings and paying that money to
+Enabling customers to pay for their orders and paying that money to
 listing providers is one of the most valuable features of Flex. Most of
-the time payments work as expected: the customer pays for the booking
-and the provider receives the money when it's time. However, there are
-many variables that affect the payments and sometimes problems may
-occur. The payment gateway can deny payouts to a user, the user's bank
-might deny payouts, or for some other reason the numbers don't seem to
-add up. This article presents potential cases where payouts might fail
-and what are the ways to fix those issues.
+the time payments work as expected: the customer pays for the order, and
+the provider receives the money when it's time. However, there are many
+variables that affect the payments and sometimes problems may occur. The
+payment gateway can deny payouts to a user, the user's bank might deny
+payouts, or for some other reason the numbers don't seem to add up. This
+article presents potential cases where payouts might fail and what are
+the ways to fix those issues.
 
 ## Payments in Flex
 
@@ -30,12 +30,12 @@ and what are the ways to fix those issues.
 To make sure that payments make it to the provider and that the
 marketplace operator can collect their commissions, Flex uses a payment
 gateway called [Stripe](https://stripe.com). The image above presents
-the steps that are taken when a customer pays for a booking and the
-money is eventually paid to the provider. As an example, it uses a
-booking that costs 100€ and has both customer and provider commissions
-of 10%. The different entities that are involved in the process are
-_Customer's payment card_, _Stripe platform account_, _Connected
-account_, and _Provider's bank account_.
+the steps that are taken when a customer pays for an order and the money
+is eventually paid to the provider. As an example, it uses a booking
+that costs 100€ and has both customer and provider commissions of 10%.
+The different entities that are involved in the process are _Customer's
+payment card_, _Stripe platform account_, _Connected account_, and
+_Provider's bank account_.
 
 - **Customer's payment card** Credit or debit card that the customer
   uses to pay for the booking.
@@ -68,8 +68,10 @@ as follows.
    of the associated bank account. At this point the provider does not
    yet have access to the money. It stays in Stripe and is earmarked to
    be paid to the provider. In the default processes this happens when
-   the provider accepts a booking request. See also the background
-   article on [PaymentIntents in Flex](/concepts/payment-intents/).
+   the provider accepts a booking request, or the customer purchases a
+   product. See also the background article on
+   [PaymentIntents in Flex](/concepts/payment-intents/) and the
+   [payments overview](/concepts/payments-overview/).
 1. **Pay commissions** Once a charge is captured and the money is in the
    provider's connected account, commissions are moved to the
    marketplaces Stripe account (the platform account). In our case both
@@ -95,10 +97,11 @@ connected account can have insufficient funds.
 
 Manually refunding a payment straight from Stripe usually fixes the
 transaction that is being refunded but it may lead to problems in
-forthcoming transactions. **Therefore, you should not manually refund
-payments in the Stripe Dashboard!** As an example of how manual refunds
-can result in insufficient funds on a connected account, picture the
-following scenario:
+forthcoming transactions. **Therefore, you should never manually refund
+payments in the Stripe Dashboard!**
+
+As an example of how manual refunds can result in insufficient funds on
+a connected account, picture the following scenario:
 
 - Provider has two transactions, both have a captured charge.
 - Price on both is the same as in the image above: the booking costs
@@ -259,6 +262,6 @@ missing information. As mentioned the payout state does not propagate
 back to Flex in cases like this. If the payout state seems to be fine
 but a provider is reporting missing payouts, it's good to take a look at
 the connected account of the user. The associated Stripe account can be
-found in Console from the user view. Usually the problem is missing
+found in Console from the user view. Usually the problem is missing the
+account and act based on those to fill in missing information.
 information in the connected account. See if there are any warnings in
-the account and act based on those to fill in missing information.

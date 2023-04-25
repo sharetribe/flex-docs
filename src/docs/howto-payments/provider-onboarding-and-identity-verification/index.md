@@ -1,6 +1,7 @@
 ---
 title:
-  How to handle provider onboarding and identity verification on FTW
+  How to handle provider onboarding and identity verification in
+  Sharetribe Web Template
 slug: provider-onboarding-and-identity-verification
 updated: 2022-10-25
 category: how-to-payments
@@ -21,17 +22,16 @@ or implement your own flow.
 
 This article describes these two approaches.
 
-## Stripe Connect Onboarding
+## Stripe Connect Onboarding with Sharetribe Web Template
 
 Regulatory aspects of provider onboarding can be challenging and
 changing rapidly. Stripe Connect Onboarding provides ready tools for
 meeting the requirements and reducing the operational complexity of
 self-managing the onboarding flow and identity verification. Below are
 listed the changes required to implement Stripe Connect Onboarding. If
-you are using the latest Flex Template for Web (FTW-daily v4.0.0 or
-FTW-hourly v5.0.0 or later, or any FTW-product), you need to complete
-only the first step - if you are upgrading your own implementation,
-follow the rest of the instructions.
+you are using Sharetribe Web Template, you need to complete only the
+first step - if you are upgrading your own implementation, follow the
+rest of the instructions.
 
 ### 1. Enable Stripe Connect Onboarding in Stripe Dashboard
 
@@ -42,15 +42,16 @@ to provide `name`, `color`, and `icon` for your marketplace.
 
 ![Stripe dashboard](stripeDashboard-updated.png)
 
-**Following steps are already implemented in FTW-daily v4.0.0 and
-FTW-hourly v5.0.0 or later - and in FTW-product**
+## Stripe Connect Onboarding for custom implementations
 
-In FTW there are new components
-[StripePayoutPage](https://github.com/sharetribe/ftw-daily/tree/master/src/containers/StripePayoutPage),
-[StripeConnectAccountForm](https://github.com/sharetribe/ftw-daily/tree/master/src/forms/StripeConnectAccountForm),
-and a new shared duck file
-[stripeConnectAccount.duck.js](https://github.com/sharetribe/ftw-daily/tree/master/src/ducks/stripeConnectAccount.duck.js)
-where the Connect onboarding is mostly handled. You can also check out
+In the template, Connect Onboarding is mainly handled in the following
+files:
+
+- [StripePayoutPage](https://github.com/sharetribe/web-template/tree/main/src/containers/StripePayoutPage)
+- [StripeConnectAccountForm](https://github.com/sharetribe/web-template/tree/main/src/components/StripeConnectAccountForm)
+- [stripeConnectAccount.duck.js](https://github.com/sharetribe/web-template/blob/main/src/ducks/stripeConnectAccount.duck.js)
+
+You can also check out
 [PR #1234](https://github.com/sharetribe/ftw-daily/pull/1234) where you
 can find all the code changes.
 
@@ -75,13 +76,17 @@ the create-stripe-account call:
 
 ![Creating Stripe account](stripePayoutForm.png)
 
-**Note:** In the `EditListingWizard` component, the modal with
+<info>
+
+In the `EditListingWizard` component, the modal with
 `StripeConnectAccountForm` is shown if the user doesn't have a Stripe
 Account yet or if there is some information missing from the account.
 The modal will be shown only if the user is publishing the listing. This
 means that users can update already published listing even if their
 Stripe Account is in the restricted state but they can't publish new
 listings.
+
+</info>
 
 ### 3. Fetching information about a Stripe Account
 
@@ -93,14 +98,14 @@ Stripe Account.
 The account data is returned after each create and update Stripe Account
 API call so there is no need for separate fetch API call in these cases.
 
-In FTW the Stripe Account is fetched in
-[`loadData`](https://github.com/sharetribe/ftw-daily/blob/a107a7eae19cfc9196de81816af2c5ca5a676770/src/containers/StripePayoutPage/StripePayoutPage.duck.js#L73)
+In Sharetribe Web Template, the Stripe Account is fetched in
+[`loadData`](https://github.com/sharetribe/web-template/blob/main/src/containers/StripePayoutPage/StripePayoutPage.duck.js#L73)
 function on `StripePayoutPage.duck.js`. Quite similar `loadData`
-funciton is also used on `EditListingPage`. More information about data
-loading you can find from the article
-[How routing works in FTW](/ftw/how-routing-works-in-ftw/).
+funciton is also used on `EditListingPage`. You can find more
+information about data loading in
+[our routing article](/ftw/how-routing-works-in-ftw/).
 
-After the Stripe Account has been fetched we need to check
+After the Stripe Account has been fetched, we need to check
 `requirements` of the `stripeAccountData` attribute which contains the
 related
 [Stripe Account Object](https://stripe.com/docs/api/accounts/object). If
@@ -176,15 +181,19 @@ information we need to
 [create a new Account Link](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account-link)
 and redirect user back to Connect onboarding.
 
-Only thing we manage on the FTW side is updating the `bankAccountToken`
-of the Stripe Account. This means that if the provider want's to update
-their bank account number (e.g. IBAN), it's handled by passing a new
-bankAccountToken to
+Only thing we manage on the template side is updating the
+`bankAccountToken` of the Stripe Account. This means that if the
+provider want's to update their bank account number (e.g. IBAN), it's
+handled by passing a new bankAccountToken to
 [update Stripe Account](https://www.sharetribe.com/api-reference/marketplace.html#update-stripe-account)
 API endpoint.
 
-**Note:** Currently, Stripe doesn't support updating the country of the
-account after the account has been created.
+<info>
+
+Currently, Stripe doesn't support updating the country of the account
+after the account has been created.
+
+</info>
 
 ## Using custom flow
 
@@ -194,11 +203,13 @@ the whole onboarding. The downside with this approach is that you are
 responsible for collecting all the required information and keeping the
 UI up-to-date also with the possible future changes.
 
-Before FTW-daily v4.0.0 and FTW-hourly v5.0.0 the Stripe onboarding was
-implemented like this also in FTW. There are some now deprecated
-components you can use as a starting point if you want to implement your
-own flow. You should keep in mind that these components will not be
-updated by our team since FTW will use Connect Onboarding by default.
+In our older
+[legacy templates](/how-to/provider-onboarding-and-identity-verification/#using-deprecated-payoutdetailsform-and-payoutdetailspage-as-a-starting-point),
+Stripe onboarding was implemented like this. There are some now
+deprecated components you can use as a starting point if you want to
+implement your own flow. You should keep in mind that these components
+will not be updated by our team since Sharetribe Web Template uses
+Connect Onboarding by default.
 
 ### Collecting required information
 
@@ -221,12 +232,11 @@ creating or updating the Stripe Account.
 
 ### Updating the Stripe Account
 
-Before FTW-daily v4.0.0 and FTW-hourly v5.0.0 it was not possible to
-update a Stripe Account through user's account settings. However, if you
-decide to use your own custom flow you should concider implementing a
-way to check the status of a Stripe Account and collect more information
-about the user when it's required. Otherwise, the Stripe Account might
-get restricted and payouts to the provider will fail.
+If you decide to use your own custom flow, you should concider
+implementing a way to check the status of a Stripe Account and collect
+more information about the user when it's required. Otherwise, the
+Stripe Account might get restricted and payouts to the provider will
+fail.
 
 ### Using deprecated PayoutDetailsForm and PayoutDetailsPage as a starting point
 
@@ -248,20 +258,20 @@ You can find the deprecated files still from v.3.7.0
 
 The default Flex Stripe integration requires the payout Connect account
 information immediately upon beginning a transaction. For this reason,
-the FTW templates do not allow booking listings that do not have
-provider payout information. The templates have also been configured to
-require provider onboarding and payout information before publishing any
-listings.
+the Sharetribe Web Template does not allow booking listings that do not
+have provider payout information. The template has also been configured
+to require provider onboarding and payout information before publishing
+any listings.
 
 However, it is possible to modify this behavior. The simplest way to
 allow publishing a listing without adding payout details is to modify
 the **handlePublishListing** function in the
-[src/components/EditListingWizard/EditListingWizard.js](https://github.com/sharetribe/ftw-daily/blob/master/src/components/EditListingWizard/EditListingWizard.js)
-in file. The function checks whether the user is connected to Stripe,
-and only calls the **onPublishListingDraft** function if Stripe is
-connected and there are no requirements missing. By removing the Stripe
-checks and immediately calling **onPublishListingDraft** with the
-parameter id, you can bypass the payout details modal completely.
+[src/components/EditListingWizard/EditListingWizard.js](https://github.com/sharetribe/web-template/blob/main/src/containers/EditListingPage/EditListingWizard/EditListingWizard.js)
+file. The function checks whether the user is connected to Stripe, and
+only calls the **onPublishListingDraft** function if Stripe is connected
+and there are no requirements missing. By removing the Stripe checks and
+immediately calling **onPublishListingDraft** with the parameter id, you
+can bypass the payout details modal completely.
 
 The default behavior of the template in this situation is that once the
 listing is published, a provider with no Stripe payout details is shown

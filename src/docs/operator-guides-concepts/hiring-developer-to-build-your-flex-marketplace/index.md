@@ -86,7 +86,8 @@ This is the absolute minimum budget you need to be prepared for.
 However, in this scenario, your concept would need to require only
 minimal adjustments to the Template, where you keep the user journeys
 the same and focus only on changing the particulars: listing fields,
-search filters, small changes to the transaction process, and branding.
+search filters, small changes to the transaction processes, and
+branding.
 
 More commonly development will take more hours, so an average budget
 required to launch the first version of your platform tends to be around

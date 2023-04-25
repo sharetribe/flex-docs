@@ -1,7 +1,7 @@
 ---
 title: 'How to design your user journey'
 slug: your-user-journey-a-guide
-updated: 2021-01-19
+updated: 2023-04-19
 category: design-toolkit
 ingress:
   Learn how to design your marketplace's user journey. Understanding
@@ -9,25 +9,17 @@ ingress:
 published: true
 ---
 
-Creating a user journey lets you communicate how your marketplace will
-work. You should define your marketplace’s user journeys in preparing to
-hire developers. Specifying to Flex development partners how providers
-create listings, how users find listings, and how they interact together
-during a transaction lets you receive more accurate estimates of the
-budget required to build your custom marketplace with Flex.
-
-In
-[the previous article](/design-toolkit/what-are-user-journeys/#the-user-journeys-for-flex-templates),
-you learned how listing creation, listing discovery, and the transaction
-process works in one of the Flex Templates. Now it is time to define how
-users complete these critical journeys on your marketplace.
+We learned about user journeys and how to use the Template to create them to save time and money in [a previous article](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/). Now it is time to define how
+your users will use your marketplace.
 
 ## 1. Background work
 
-Pick one of the three processes (listing creation, discovery process,
-transaction process) to start with. Think through all the steps that
-your users need to go through while using your marketplace in this
-journey.
+The 3 most important user journeys on any marketplace are how listings are created, how listings are found via search, and how supply and demand interacts to transact. In short, listing creation, discovery process, and transaction process.
+
+Defining all 3 is important eventually, but focus on 1 to start. The easiest way to start is to write the default
+successful user journey first, and then add differing paths. Keep it simple.
+
+Here are some common points of consideration in each journey. 
 
 #### Listing creation
 
@@ -49,7 +41,7 @@ marketplace. Consider these questions:
 
 #### Discovery process
 
-Focus on illustrating how users search and find listings. Consider these
+Focus on answering how users search and find listings. Consider these
 questions:
 
 - Can the user browse the results before they have logged in?
@@ -88,19 +80,12 @@ Learn more about
 
 ## 2. Create maps for listing creation journey, discovery journey and transaction process.
 
-There are many ways to illustrate user journeys. You can draft using pen
+There are many ways to document your user journeys. You can draft using pen
 and paper, a mind map software like Whimsical or Miro, or by simply
-listing the steps in a document or Powerpoint. You can use our user
-journey map toolkit to help. To help you to get started, you can
-download our Powerpoint template for Saunatime user journeys, and use it
-as a basis for drawing your own. Powerpoint templates can be edited in
-Powerpoint, Key or Google Slides.
+listing the steps in a document or Powerpoint. 
 
-[User journey templates](/flex-design-toolkit.pptx)
+As an example, we share here the journeys to a marketplace for renting saunas daily, like an AirBnB for saunas. They are in Powerpoint format ([download them here](/flex-design-toolkit.pptx)), which you can edit in any similar software like Google Slides or Key. Creating something like this will help developers quickly grasp what your marketplace is about and help them move forward developing it.
 
-Start simple. The easiest way to start is to write the default
-successful user journey first, and then add differing paths. Remember,
-you can see the default User Journeys for Saunatime in this article.
 
 ## 3. Share the journey maps with developers
 

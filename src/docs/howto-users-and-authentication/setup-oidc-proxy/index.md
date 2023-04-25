@@ -1,45 +1,45 @@
 ---
-title: How to set up OpenID Connect proxy in FTW
+title: How to set up OpenID Connect proxy in Sharetribe Web Template
 slug: setup-open-id-connect-proxy
 updated: 2021-03-02
 category: how-to-users-and-authentication
 ingress:
   In this guide, we'll take a look at the process of setting up OpenID
-  Connect (OIDC) proxy to FTW. This allows you to add support for
-  identity providers that Flex doesn't natively support. In this
-  example, we are building the proxy implementation for LinkedIn.
+  Connect (OIDC) proxy to Sharetribe Web Template. This allows you to
+  add support for identity providers that Flex doesn't natively support.
+  In this example, we are building the proxy implementation for
+  LinkedIn.
 published: true
 ---
 
 The OpenID Connect (OIDC) support in Flex allows you to integrate login
 solutions that do not necessarily implement OpenID Connect. The idea is
-to build a suitable login flow in FTW and wrap that login information
-into an OpenID Connect ID token that can be used to validate user login
-in Flex. With this approach, FTW will serve as an identity provider
-towards Flex.
+to build a suitable login flow in Sharetribe Web Template and wrap that
+login information into an OpenID Connect ID token that can be used to
+validate user login in Flex. With this approach, the template will serve
+as an identity provider towards Flex.
 
 Flex verifies the ID token by
 
-- fetching the JSON Web Key that is hosted by your FTW server, and
+- fetching the JSON Web Key that is hosted by your template server, and
 - using that to unsign the token.
 
 A consequence of this is that the JSON Web Key needs to be publicly
 available. This means that the proxy setup will not work directly in
 localhost. To test out the LinkedIn login, you should e.g.
-[deploy your FTW changes to Render](/tutorial/deploy-to-render/).
+[deploy your template changes to Render](/tutorial/deploy-to-render/).
 
-In this guide, we'll integrate LinkedIn login to Flex by using FTW as an
-OIDC proxy to Flex. The main steps to take to achieve this are:
+In this guide, we'll integrate LinkedIn login to Flex by using
+Sharetribe Web Template as an OIDC proxy to Flex. The main steps to take
+to achieve this are:
 
 1. Create a login app in Linkedin
 1. Configure a new identity provider and client in Flex Console
-1. Build LinkedIn auth flow in FTW
+1. Build LinkedIn auth flow in the template
 
-**Note, that using FTW as an OpenID Connect proxy requires ftw-daily
-version
-[7.3.0](https://github.com/sharetribe/ftw-daily/releases/tag/v7.3.0) or
-ftw-hourly version
-[9.3.0](https://github.com/sharetribe/ftw-hourly/releases/tag/v9.3.0).**
+**If you are working with one of our legacy templates and are not sure
+whether using Open ID Connect proxy is enabled, take a look at our
+[legacy documentation](/ftw/legacy-templates/).**
 
 ## A note about development environments
 
@@ -49,12 +49,12 @@ identity providers will need to provide their URL (also known as _issuer
 location_) to Flex so that public signing keys can be fetched for ID
 token validation.
 
-When using FTW as an OIDC proxy, FTW should be served publicly, so that
-Flex can fetch the public signing key used to sign ID tokens used with
-authentication. This means that when developing OIDC proxy capabilities,
-by default, an FTW application running in `localhost` can not be used as
-an OIDC proxy but the application should be deployed, for example, to a
-staging environment.
+When using Sharetribe Web Template as an OIDC proxy, it should be served
+publicly, so that Flex can fetch the public signing key used to sign ID
+tokens used with authentication. This means that when developing OIDC
+proxy capabilities, by default, a template application running in
+`localhost` can not be used as an OIDC proxy but the application should
+be deployed, for example, to a staging environment.
 
 If you want to develop this functionality complete locally, take a look
 at tools like [Ngrok](https://ngrok.com/) or
@@ -87,17 +87,17 @@ your local ports publicly.
 
 ## Configure a new identity provider and client in Flex Console
 
-With this proxy implementation, **your FTW works as the identity
-provider towards Flex.** Flex uses your FTW to validate the ID token
-that wraps the LinkedIn login information. To enable logins in Flex
-using the OIDC proxy, a corresponding identity provider and identity
-provider client need to be configured for your marketplace in Flex
-Console. See the
+With this proxy implementation, **your Sharetribe Web Template works as
+the identity provider towards Flex.** Flex uses your template
+application to validate the ID token that wraps the LinkedIn login
+information. To enable logins in Flex using the OIDC proxy, a
+corresponding identity provider and identity provider client need to be
+configured for your marketplace in Flex Console. See the
 [OpenID Connect how-to guide](/how-to/enable-open-id-connect-login/) for
 information on how to add a new identity provider for your marketplace.
 
-Here's some guidance for configuring your FTW as a new identity provider
-and a client to be used as a proxy for LinkedIn.
+Here's some guidance for configuring your template application as a new
+identity provider and a client to be used as a proxy for LinkedIn.
 
 ### Identity provider name and ID
 
@@ -109,11 +109,11 @@ relationship is exposed in the
 [currentUser resource](https://www.sharetribe.com/api-reference/marketplace.html#currentuser-identity-provider)
 in the Flex API.
 
-If the intention is to use the FTW to proxy login to multiple services,
-it's advised to create a distinct identity provider for each, and name
-them so that the ID indicates what is the actual service providing the
-authentication. In LinkedIn's case the IdP name could be "FTW LinkedIn"
-or "FTW LinkedIn Proxy".
+If the intention is to use the Sharetribe Web Template to proxy login to
+multiple services, it's advised to create a distinct identity provider
+for each, and name them so that the ID indicates what is the actual
+service providing the authentication. In LinkedIn's case the IdP name
+could be "Template LinkedIn" or "Template LinkedIn Proxy".
 
 ### Identity provider URL
 
@@ -123,29 +123,30 @@ URL]/.well-known/openid-configuration_) and from there on to an ID token
 signing key.
 
 In Open ID Connect terms, this is the issuer URL. In this setup, your
-FTW acts as the issuer towards Flex, so the URL should point to your
-FTW.
+Sharetribe Web Template acts as the issuer towards Flex, so the URL
+should point to your template.
 
 By default, the identity provider URL should be the root address of your
-FTW application, for example, _https://example.com_ or, for default
+template application, for example, _https://example.com_ or, for default
 Render URLs, _https://EXAMPLE.onrender.com_. Note, that this URL needs
 to be publicly hosted so a `localhost` URL will not work.
 
 ### Client ID
 
-When using FTW as on OpenID Connect proxy, you are in charge of
-generating a client ID. The value can be any randomly generated string.
+When using Sharetribe Web Template as on OpenID Connect proxy, you are
+in charge of generating a client ID. The value can be any randomly
+generated string.
 
-## Build LinkedIn auth flow in FTW
+## Build LinkedIn auth flow in Sharetribe Web Template
 
-### FTW as an OpenID Connect identity provider
+### Sharetribe Web Template as an OpenID Connect identity provider
 
-The FTW templates provide a few helper functions which you can use as a
-starting point in your customization. When following this guide you will
-not need to pay too much attention to them as the crucial code is
-provided for you in the `linkedin.js` file below but it's good to be
-aware of them. You can find these functions in the `api-util/idToken.js`
-file in your server:
+The Sharetribe Web Template provides a few helper functions which you
+can use as a starting point in your customization. When following this
+guide, you will not need to pay too much attention to them as the
+crucial code is provided for you in the `linkedin.js` file below, but
+it's good to be aware of them. You can find these functions in the
+`api-util/idToken.js` file in your server:
 
 ```shell
 └── server
@@ -178,22 +179,23 @@ _options_.
 
 These functions can be used to serve an OpenID Connect discovery
 document and JSON Web Keys that are used by Flex to validate the ID
-token written by your proxy implementation. FTW will automatically use
-these functions to expose correct endpoints when JWT signing keys are
-configured.
+token written by your proxy implementation. Sharetribe Web Template will
+automatically use these functions to expose correct endpoints when JWT
+signing keys are configured.
 
 ### Generate an RSA key pair
 
 A RSA public and private key pair is used to sign and validate an ID
-token that is passed from FTW to Flex during the login/signup flow. When
-a user successfully logs into LinkedIn, FTW wraps the user information
-to an ID token that is signed with a private key. The corresponding
-public key is served by FTW in `/.well-known/jwks.json` and it is
-fetched by Flex when an ID token is validated.
+token that is passed from the template application to Flex during the
+login/signup flow. When a user successfully logs into LinkedIn, the
+template wraps the user information to an ID token that is signed with a
+private key. The corresponding public key is served by the template in
+`/.well-known/jwks.json` and it is fetched by Flex when an ID token is
+validated.
 
-In order for the FTW to operate as an OpenID Connect identity provider,
-you will need to generate a RSA key pair. Both keys need to be in PEM
-format.
+In order for the Sharetribe Web Template to operate as an OpenID Connect
+identity provider, you will need to generate a RSA key pair. Both keys
+need to be in PEM format.
 
 The keys can be generated with `ssh-keygen` command line tool by running
 the following commands. The first one will generate a key pair, with the
@@ -203,22 +205,22 @@ public key file from the first command.
 
 ```
 # create an RSA key pair, you can leave out the passphrase when prompted
-ssh-keygen -f ftw_rsa -t rsa -m PEM
+ssh-keygen -f swt_rsa -t rsa -m PEM
 
 # now you have two files
-# ftw_rsa: private key in PEM format
-# ftw_rsa.pub: public key in SSH public key format
+# swt_rsa: private key in PEM format
+# swt_rsa.pub: public key in SSH public key format
 
 # convert the public key from previous command to PEM format
-ssh-keygen -f ftw_rsa.pub -e -m PEM > ftw_rsa_pub
+ssh-keygen -f swt_rsa.pub -e -m PEM > swt_rsa_pub
 ```
 
-Now you have two files: `ftw_rsa` and `ftw_rsa_pub` (also you have
-`ftw_rsa.pub` but that one you don't need). The content of the files
+Now you have two files: `swt_rsa` and `swt_rsa_pub` (also you have
+`swt_rsa.pub` but that one you don't need). The content of the files
 should look like the following:
 
 ```
-# ftw_rsa
+# swt_rsa
 
 -----BEGIN RSA PRIVATE KEY-----
 private key
@@ -227,7 +229,7 @@ here
 -----END RSA PRIVATE KEY-----
 
 
-# ftw_rsa_pub
+# swt_rsa_pub
 
 -----BEGIN RSA PUBLIC KEY-----
 public key
@@ -239,7 +241,7 @@ here
 We will use these key values to configure your application in the next
 section.
 
-### Configure FTW
+### Configure Sharetribe Web Template
 
 Add the following environment variables:
 
@@ -254,17 +256,21 @@ The RSA key pair we created in the previous section
 The keys are multi-line strings but Heroku is fine with that so you can
 paste the keys in config vars as they are.
 
-> If you are using Render or some other environment that requires you to
-> declare environment variables through a file, wrap the RSA keys with
-> quotation marks `"` and escape line breaks with the newline character
-> `\n`. Make sure that the RSA key is defined on a single line.
+<info>
+
+If you are using Render or some other environment that requires you to
+declare environment variables through a file, wrap the RSA keys with
+quotation marks `"` and escape line breaks with the newline character
+`\n`. Make sure that the RSA key is defined on a single line.
+
+</info>
 
 `LINKEDIN_PROXY_IDP_ID`
 
 The identifier of your identity provider that you configure to Flex. It
-declares that you are using your FTW OpenID Connect proxy as an identity
-provider. Use the "IdP ID" value of an identity provider client in
-Console for this variable.
+declares that you are using your template OpenID Connect proxy as an
+identity provider. Use the "IdP ID" value of an identity provider client
+in Console for this variable.
 
 `LINKEDIN_PROXY_CLIENT_ID`
 
@@ -296,14 +302,14 @@ run `yarn install`:
 "passport-linkedin-oauth2": "^2.0.0",
 ```
 
-### Implement the LinkedIn login flow in FTW backend
+### Implement the LinkedIn login flow in Sharetribe Web Template backend
 
-Next, let's add a new file to FTW that handles authentication to
-LinkedIn. You can find the complete file here:
+Next, let's add a new file to the template that handles authentication
+to LinkedIn. You can find the complete file here:
 
 - [linkedin.js](/tutorial-assets/linkedin.js)
 
-Place the file in `server/api/auth` folder inside FTW:
+Place the file in `server/api/auth` folder inside the template:
 
 ```shell
 └── server
@@ -383,10 +389,10 @@ const idpClientId =
     : null;
 ```
 
-### Add a LinkedIn login button to FTW
+### Add a LinkedIn login button to Sharetribe Web Template
 
-Once we have added the authentication endpoints to the FTW server, we
-need to add a button for LinkedIn login to the AuthenticationPage.
+Once we have added the authentication endpoints to the template server,
+we need to add a button for LinkedIn login to the AuthenticationPage.
 
 ```shell
 └── src
