@@ -1,7 +1,7 @@
 ---
 title: How to edit content pages in Console
 slug: how-to-edit-content-pages-in-console
-updated: 2023-04-01
+updated: 2023-04-25
 category: operator-guides-pages
 ingress:
   Learn how to use Pages to edit content across Landing page,
@@ -26,7 +26,7 @@ menu. You should now see your default content pages (the About page, the
 Landing page, the Terms of use page, and the Policy page) ready for
 editing. You can also access the feature directly through the path
 https://flex-console.sharetribe.com/content/pages. Make sure that you
-are in the test environment of your marketplace if you want to start
+are in the Test environment of your marketplace if you want to start
 modifying your Pages right away.
 
 If you don't have the default Pages available in Console and want to
@@ -265,10 +265,10 @@ changes the save button will be disabled.
 
 As soon as you save the changes of the page, you can click the link to
 visit the page to check the new changes or, if you already have the page
-open somewhere, reload the page to see the changes. In the test
-environment the changes will be reflected immediately. In the live
-environment it will take 5 minutes to see the changes reflected. This is
-due to the page’s
+open somewhere, reload the page to see the changes. In the Test
+environment, the changes will be reflected immediately. In the Live
+environment, it will take 5 minutes to see the changes reflected. This
+is due to the page’s
 [cache](<https://en.wikipedia.org/wiki/Cache_(computing)>).
 
 ### Reorder Sections and Blocks
@@ -300,17 +300,18 @@ to learn more about editing the code of content pages.
 
 ## Publish your Page changes to Live
 
-To see your changes in your live marketplace, you must copy the changes
-you made from your test or development environment to your live
-environment. Click the “Copy to Live…” button and then select the
-specific pages that you want to copy. This will transfer all the content
-from the current environment to your live environment.
+To see your changes in your Live marketplace, you must copy the changes
+you made in your Test environment to your Live environment.
 
-The changes that you make to your live environment will be available a
-few minutes after copying them to Live. You do not need to save them
-again in your live environment.
+Click the “Copy to live…” button and then select the specific pages that
+you want to copy. This will transfer all the content from the Test
+environment to your Live environment.
+
+The changes that you make to Live will be available a few minutes after
+copying them to Live. You do not need to save them again in your Live
+environment.
 
 ![copy-to-production](/copy-to-production.png 'Copy changes to Live')
-_You can select what changes you copy to the live environment. Only
-selected changes copy to Live. The changes you copy to Live overwrite
-your pages content in the live environment._
+_You can select what changes you copy to Live. Only selected changes
+copy to Live. The changes you copy to Live overwrite your pages content
+there._

@@ -1,9 +1,9 @@
 ---
 title: How to enable Pages in Console
 slug: how-to-enable-pages
-updated: 2023-02-14
+updated: 2023-04-25
 category: operator-guides-pages
-ingress: Enable the Pages feature for your test environment
+ingress: Enable the Pages feature in your Test environment
 published: true
 ---
 
@@ -14,9 +14,9 @@ you want to learn how to use the feature, you can read the article about
 ## For marketplaces created after 2023-02-15
 
 Log into the [Flex Console](https://flex-console.sharetribe.com/).
-Switch to the test environment. Choose the “Build” option from the top
+Switch to the Test environment. Choose the “Build” option from the top
 bar, then select “Content”. Go to the any of the default pages to start
-editing the corresponding page. When you make changes within the test
+editing the corresponding page. When you make changes within the Test
 environment, you will be able to see changes right away. If you want to
 use the Pages feature in Dev or Live, you would need to do further setup
 with some development.
@@ -24,31 +24,27 @@ with some development.
 ## For marketplaces created before 2023-02-15
 
 If you created your Flex marketplace before Pages release, you can try
-out Pages in your test environment by adding a landing page to it. To
+out Pages in your Test environment by adding a landing page to it. To
 refresh your test Marketplace, you need to go to Pages in your Flex
 Console and click the button “Import default pages”. You can then make
 adjustments to your test Marketplace and see how they look on the page.
 You can visit Pages by going to you Test environment and clicking on
 "Build" and then "Content". You can follow
 [this direct link to Pages in Console](https://flex-console.sharetribe.com/content/pages/),
-but bear in mind that you might need to navigate to the test
+but bear in mind that you might need to navigate to the Test
 environment.
 
-Note that the above lets you test the Pages feature (and follow along
-our Pages documentation, including this
-[FAQ tutorial](https://www.sharetribe.com/docs/operator-guides/how-to-create-an-faq-page/),
-but it does not yet let you make changes to your marketplace client
-app’s development or live content pages. You will need to modify your
-custom marketplace’s code to connect it to the new Pages feature.
-Developers can consult
+## How to use Pages during development?
+
+When you are developing your marketplace or you hired a developer to help you, you should use your Test environment to build out your static content with Pages. This environment should be connected to a Test version of your marketplace frontend. 
+
+At the same time, you have a Dev version of your marketplace frontend where code changes are being deployed. Once these code changes are completed, they should be used to update the Test version of your marketplace. This keeps your Test version, which you are modifying with no-code tools, up-to-date with the latest code-customized version of your marketplace (the Dev version). 
+
+When you are ready to go live, you will procure a Live environment and create a Live version of your marketplace. The Live version contains both the latest (working) code changes and the latest no-code changes. Code changes continue to be developed in the Dev version, then deployed to the Test and Live versions when ready. No code changes via Console are made in the Test environment, to the Test version, then copied to the Live version when ready.
+
+Setting up your Dev (and Live) marketplace is a technical task requiring development help. Developers can consult
 [this guide](https://www.sharetribe.com/docs/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw)
 to learn how to update existing marketplace codebases with Pages
 functionality.
 
-## How to enable Pages in Development or Live environments?
 
-To enable Pages in any other environment than Test, you need some
-technical implementation. If you are not a developer you would need the
-help of a developer. You and them can read more about the specific steps
-in
-[this Page builder doc](https://www.sharetribe.com/docs/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).

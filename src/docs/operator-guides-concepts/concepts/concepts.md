@@ -34,9 +34,9 @@ a headless architecture, this portion is built and hosted separately
 from the marketplace backend. Frontend applications can also be referred
 to as client applications.
 
-[Flex Templates for Web](https://www.sharetribe.com/docs/operator-guides/concepts/#flex-templates-for-web)
-are the most common way to build a marketplace frontend with Flex. You
-may build frontends completely from scratch too.
+[The Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template)
+is the most common way to build a marketplace frontend with Flex. You
+may build your frontend completely from scratch too.
 
 The marketplace frontend communicates with the backend via Flex APIs. It
 sends and retrieves data through these APIs. For example, client
@@ -97,59 +97,57 @@ initiating actions in other software as a result of something happening
 in your marketplace. Flex is integrated with Zapier, which can make
 building integrations into many other software applications easier.
 
-### Flex Templates for Web
+### Sharetribe Web Template
 
-Flex Templates for Web are the starting point for building your custom
-marketplace with Flex. There are three templates from which you can
-choose the one closest to your marketplace idea. The templates are
-open-sourced website applications that developers can modify per your
-unique requirements. The result is a custom-built marketplace without
-the cost or time required to build it from scratch.
+Sharetribe Web Template (SWT) is the best way to start building a custom
+marketplace on Flex. The Template is an open-sourced website application
+modifiable with coding. Using it allows building a custom marketplace at
+a fraction of the the cost or time required to build it from scratch.
 
-[Saunatime](https://www.sharetribe.com/docs/design-toolkit/user-journey-saunatime/)
-is a great starting point for building rental marketplaces. Saunatime
-providers list saunas for rent by day. Sauna lovers can search saunas by
-location and book saunas by day using an availability calendar.
+Certain settings in an SWT-based marketplace will become configurable in
+Console throughout 2023. This includes the listing type, search page
+layout, search page fields, listing fields, and many more. Launching a
+marketplace with SWT requires a developer.
 
-[Yogatime](https://www.sharetribe.com/docs/design-toolkit/user-journey-yogatime/)
-is a marketplace for service providers–in this example case Yoga
-teachers–to create profile listings advertising their teaching practice.
-Customers can book hourly sessions from these teachers’ availability
-calendars. Since Yogatime uses time based availability, rather than day
-based availability like Saunatime, it is also a good starting point for
-marketplaces where bookings are made with time units smaller than days.
-
-[Sneakertime](https://www.sharetribe.com/docs/design-toolkit/user-journey-sneakertime/)
-is designed to be a starting point for marketplaces where products are
-bought and sold. Sellers list their products–in this case sneakers–and
-manage inventory and fulfilment. Customers find, purchase, and review
-sneakers and sellers.
+Sharetribe built other templates called "Flex Templates for Web." SWT is
+an upgrade on these templates by combining their functionalities into a
+single code base. You can find more information about these legacy
+templates [here](https://www.sharetribe.com/docs/ftw/legacy-templates/).
 
 ### Environments
 
 Environments describe different instances of a Flex backend. There are
-three environment types: a test environment (Test), a development
-environment (Dev), and a live environment (Live). Test and Dev are
-included with every Flex account.
+three environment types: a Test environment, a Development (Dev)
+environment, and a Live environment. Test and Dev are included free
+forever with every Flex account.
 
-Test environments act as a live preview on how the Saunatime Flex
-Template and Flex Console work. One example of how to use the test
-environment would be to create your content. You may modifying microcopy
-or create a new content page, for instance, which you can deploy to your
-live environment and live site when ready.
+Test environments are for building features and content into your
+markeptlace using no code tools in Console. One example of how to use
+the Test environment would be to create or edit your content pages. You
+might create a new content page in Test, see how it looks on your test
+marketplace, then "Copy to live" the page when it is ready.
 
-The development environment is used to build and extend your custom
-marketplace. You may add your own test Stripe account to the development
-environment and configure changes you will later deploy to your live
-site.
+The Development environment is used to build and extend your custom
+marketplace by developers. You may add your own test Stripe account to
+the development environment and use it with code to build custom
+features you will later deploy to your live site.
 
-When the built marketplace is ready to go live, a live environment
-should be procured by subscribing to Flex. A live environment lets your
-marketplace add real users to your database and process transactions
-with real money. Your users see the Pages content stored in your live
-environment. Live environments are used alongside test and development
-environments; you develop new features and content using the latter and
-publish it to the former when it is ready.
+A Live environment is needed to launch a marketplace. It lets your
+marketplace signup real users and process real transactions.
+
+We recommend using your environments and associated apps (frontends) in
+this way:
+
+1. Live environment and live app. This should always be fully functional
+   and only include features that have been released to the users of the
+   marketplace.
+2. Test environment and test app. This should always be identical to the
+   live app, so when the operator makes no-code changes to content or
+   configuration, they can immediately preview them in the test app
+   before publishing them.
+3. Development environment and development app. This is the
+   work-in-progress application, which can sometimes include features
+   that have not yet been released to users.
 
 ### Extended data
 

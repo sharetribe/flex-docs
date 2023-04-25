@@ -61,7 +61,7 @@ All these decisions affect the choices you make in your microcopy.
 You can try out the Microcopy editor in your Flex test marketplace.
 After creating a Flex account, log into
 [Console](https://flex-console.sharetribe.com/). Ensure you are in the
-[test environment](/concepts/flex-environments/#test-environment).
+[Test environment](/concepts/flex-environments/#test-environment).
 
 Navigate to the Build section from your top bar, then the Content
 section. The Microcopy editor is here.
@@ -70,8 +70,8 @@ section. The Microcopy editor is here.
 
 _When you first start building your marketplace, the JSON field in
 Microcopy is empty, and all microcopy comes from built-in microcopy
-files in the template. (We refer to these texts as microcopy, but in the
-template they are in the **translations** folder. In addition to the
+files in the Template. (We refer to these texts as microcopy, but in the
+Template they are in the **translations** folder. In addition to the
 default **en.json** file, there are other languages available, which is
 why the folder is titled **translations**.)_
 
@@ -82,49 +82,42 @@ eventually use to modify your own marketplace’s microcopy.
 Select the “Daily-bookings / Saunatime” link, which takes you to the
 Saunatime code repository. Click “src” folder→ click “translations”
 folder→ open “en.json” file→ copy content.
-[Here is a direct link](https://github.com/sharetribe/ftw-daily/blob/master/src/translations/en.json)
+[Here is a direct link](https://github.com/sharetribe/web-template/blob/main/src/translations/en.json)
 to the file you need.Then paste the data into the Console Microcopy
 editor. You can make changes to the Saunatime test microcopy using the
 same workflow described below.
 
 ## How to modify microcopy when building your marketplace with a developer?
 
-### 1. Setup your Flex Template with a developer
+### 1. Setup your Sharetribe Web Template with a developer
 
 To use the Microcopy editor on your marketplace, you will first need to
-set up the Flex Template you will use as the basis for your custom
-marketplace. Setting up a Flex Template for customization is a
+set up the Sharetribe Web Template, which serves as the basis for your
+custom marketplace. Setting up the Template for customization is a
 development process. If you are not a developer or do not yet have a
 developer on your team, you should hire a
 [Flex Expert to help you build your marketplace](https://www.sharetribe.com/experts/).
 
-Each Flex Template has default microcopy vocabulary included, reflecting
-its starting theme. [Saunatime](/design-toolkit/user-journey-saunatime/)
-is the Flex Template for renting places or things on a daily or nightly
-basis, its microcopy refers to “saunas'' and “bookings.”
-[Yogatime](/design-toolkit/user-journey-yogatime/) is the Flex Template
-for booking service providers and its microcopy refers to “yoga
-teachers'' and “classes.” Finally,
-[Sneakertime](/design-toolkit/user-journey-sneakertime/) is the Flex
-Template for product marketplaces, it refers to “sneakers'' and
-“orders.”
+The Template has default microcopy vocabulary included, reflecting its
+starting theme Biketribe. Biketribe is a marketplace for buying and
+renting bikes.
 
 Having pre-written microcopy is a significant time saver. Except for the
-themes mentioned above, most of the Templates’ microcopy uses generic
-and descriptive language suitable for most marketplaces, which means
-there are many microcopy texts you do not need to formulate. The rest of
-the article will guide you on how to use the Microcopy editor to change
-the microcopy you wish to change in building your custom marketplace.
+Biketribe theme, most of the Template's microcopy uses generic and
+descriptive language suitable for most marketplaces, which means there
+are many microcopy texts you do not need to formulate. The rest of the
+article will guide you on how to use the Microcopy editor to change the
+microcopy you wish to change in building your custom marketplace.
 
 ### 2. Load your microcopy into the editor
 
-After you and your developer set up a Flex Template for development, you
-can use the editor to start modifying your microcopy.
+After you and your developer set up the Sharetribe Web Template for
+development, you can use the editor to start modifying your microcopy.
 
 First, you must load the default microcopy into the editor. You can do
 this by copy and pasting the language-specific microcopy file that
 contains all the microcopy in your marketplace. In the marketplace
-template, we refer to it as a “translation” file because this file is
+Template, we refer to it as a “translation” file because this file is
 used as the basis for translating your marketplace into another language
 There is a Spanish, French, German, and English version of this file
 available to start.
@@ -201,10 +194,7 @@ use the editor to modify your marketplace’s copy-texts.
 To start, we suggest going through the microcopy file in the editor.
 Look at the values and see how they compare to the terminology you
 decided to use in step 1. The most frequently modified pieces of
-microcopy use language specific to each Template’s imagined example. For
-FTW-product, this will be language related to “sneakers,” FTW-daily has
-language about “saunas,” and FTW-hourly language about “yoga” and “yoga
-teachers.”
+microcopy use language specific to the Template's theme "Biketribe".
 
 Using the search functionality in the Microcopy editor is the easiest
 way to find the copy-texts that need changing. Press “CMD+F” on a Mac or
@@ -243,8 +233,8 @@ corresponding new key directly to your marketplace code. Your developer
 will code the element, situation, or place where the microcopy will
 exist (like a new button, for example), define its key, and then add it
 to the microcopy file edited by the Microcopy editor. Once the key
-exists in the template microcopy file, you can copy the new key-value
-pair into the Microcopy editor.
+exists in the microcopy file, you can copy the new key-value pair into
+the Microcopy editor.
 
 Supporting multiple languages in your marketplace is a special case of
 adding microcopy. Because the Microcopy editor only works with a single
@@ -253,7 +243,7 @@ should use the editor to modify one of your supported languages. Any
 additional languages supported by your marketplace need to be edited
 separately and shared with your developer to deploy to your marketplace.
 Note that
-[enabling multiple language support requires](/ftw/how-to-change-ftw-language/#developing-ftw-into-a-multilanguage-marketplace)
+[enabling multiple language support requires](/ftw/how-to-change-ftw-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplacee)
 custom development to set up.
 
 ### 5. Publishing microcopy to the live environment
