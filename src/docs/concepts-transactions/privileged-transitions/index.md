@@ -55,8 +55,8 @@ The client secret is tied to a Marketplace API
 to a trusted one, the client secret needs to be from the same
 application as the client ID that was used to obtain the access token.
 
-Remember to never expose the client secret publicly. This enables full
-control over requests that invoke privileged transitions.
+Remember to never expose the client secret publicly. Doing so would
+enable full control over requests that invoke privileged transitions.
 
 ## How to use a privileged transition
 

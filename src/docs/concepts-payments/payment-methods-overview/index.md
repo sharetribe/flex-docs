@@ -39,8 +39,12 @@ or
 [Wallets](https://stripe.com/docs/payments/payment-methods/overview#wallets)
 in Stripe's classification.
 
-_Note: Flex does not support payment methods that require the use of
-Stripe's older Sources API._
+<warning>
+
+Flex does not support payment methods that require the use of Stripe's
+older Sources API.
+
+</warning>
 
 This article presents how payments flow depending on whether you use
 card (or similar) payments or have enabled any other push payment
@@ -99,17 +103,20 @@ same features and capabilities.
 ### Customizing the transaction process
 
 The
-[default transaction process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-default-process)
+[default processes](https://github.com/sharetribe/flex-example-processes/tree/master/)
 in Flex supports card payments. The general article on
 [the transaction process](/concepts/transaction-process/) describes the
 process in more detail.
 
-> **A note on Google Pay, Apple Pay, and Microsoft Pay**
->
-> Even though Google Pay, Apple Pay, and Microsoft Pay are similar to
-> card payments, they require some changes to the default implementation
-> of FTW. To enable them in FTW, you need to follow the
-> [Stripe instructions on the Request Payment Button](https://stripe.com/docs/stripe-js/elements/payment-request-button).
+<info>
+
+Even though Google Pay, Apple Pay, and Microsoft Pay are similar to card
+payments, they require some changes to the default implementation of
+Sharetribe Web Template. To enable them in the template, you need to
+follow the
+[Stripe instructions on the Request Payment Button](https://stripe.com/docs/stripe-js/elements/payment-request-button).
+
+</info>
 
 If you wish to enable push payments, you need to adapt your transaction
 process. For instance, you need to add a new transition that includes
@@ -145,4 +152,4 @@ describe how to edit the transaction process:
 - [Transaction process](/concepts/transaction-process/)
 - [Action reference for Stripe integration](/references/transaction-process-actions/#stripe-integration)
 - [Editing transaction process](/how-to/edit-transaction-process-with-flex-cli/)
-- [Changing transaction process setup in FTW](/how-to/change-transaction-process-in-ftw/)
+- [Changing transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-ftw/)

@@ -48,7 +48,7 @@ where `config/client.json` could contain configuration data (for
 instance, UI colors, marketplace pricing settings, etc) and
 `content/translations.json` could contain string microcopy data to be
 used in a marketplace client application (such as one based on one of
-the FTW templates).
+the Sharetribe Web Template).
 
 ## Asset versioning
 

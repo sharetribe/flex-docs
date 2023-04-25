@@ -40,19 +40,17 @@ user interface, what kind of pages or views there should be, and how
 those should be laid out. There are no limits to what you can do in
 terms of visual design.
 
-[Flex Templates for Web](/introduction/getting-started-with-ftw-daily/)
-(FTW) are web templates that implement a full-feature marketplace
-experiences powered by Flex. You can choose between three templates:
+[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
+is a web template that implements a full-feature marketplace experience
+powered by Flex. The template can be configured to three types of
+marketplaces out of the box:
 
-- [FTW-daily](https://github.com/sharetribe/ftw-daily): a rental
-  marketplace with daily bookings
-- [FTW-hourly](https://github.com/sharetribe/ftw-hourly): a service
-  marketplace with time-based bookings
-- [FTW-product](https://github.com/sharetribe/ftw-product): a product
-  marketplace with stock management
+- a rental marketplace with daily or nightly bookings
+- a service marketplace with time-based bookings
+- a product marketplace with stock management
 
-With a Flex Template for Web, you can get started with your marketplace
-UI straight away: just download the latest FTW version and start
+With a Sharetribe Web Template, you can get started with your
+marketplace UI straight away: just download the latest version and start
 customizing it for your marketplace. There are no limits to how much you
 can customize the template. You can freely design the user interactions
 and alter the look and feel of your marketplace. You can also integrate
@@ -82,10 +80,10 @@ functionality that Flex supports.
 Sharetribe handles running and scaling the Marketplace API. To take full
 advantage of this, you should design your Marketplace UI to point a
 majority of the traffic directly to the Marketplace API. For example,
-Flex Template for Web only handles the initial page load when a user
-opens their browser. After that, FTW lets the client application
-(Single-page application) talk directly with the Marketplace API, and
-the API powers all further interactions.
+Sharetribe Web Template only handles the initial page load when a user
+opens their browser. After that, the template lets the client
+application (Single-page application) talk directly with the Marketplace
+API, and the API powers all further interactions.
 
 To learn more about the capabilities of the Marketplace API and Flex,
 visit the [API reference documentation](/concepts/api/).
@@ -107,6 +105,16 @@ Console also offers tools to develop your marketplace, for example, an
 editor for email templates. Console is accessed via a web UI that we
 provide out of the box. Think of it as an admin interface you never have
 to build!
+
+### The Integration API
+
+The Integration API is how you can integrate third party solutions to
+your Flex marketplace. It provides full access to your marketplace data
+and operations, so you can integrate a vast range of services to your
+marketplace behind the scenes. To read more about the capabilities of
+the Integration API, visit the
+[API reference documentation](/concepts/api/). You can also read more
+about [integrations in Flex](/concepts/integrations-introduction).
 
 ### Flex CLI
 

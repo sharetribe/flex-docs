@@ -11,10 +11,11 @@ const sortingArrayIntroduction = [
   'how-to-build-and-launch-with-flex',
   'is-flex-right-for-you',
   'development-skills',
+  'introducing-template',
 ];
 
 const sortingArrayIntroductionGettingStarted = [
-  'getting-started-with-ftw-daily',
+  'getting-started-with-web-template',
   'getting-started-with-flex-cli',
   'getting-started-with-integration-api',
 ];
@@ -31,13 +32,9 @@ const sortingArrayTutorialBranding = [
   'working-with-microcopy',
   'configurations',
   'change-default-locations',
-  'customize-amenities-filter',
+  'implement-amenities-filter',
+  'modify-listing-extended-data',
   'deploy-to-render',
-];
-const sortingArrayTutorialExtendedData = [
-  'add-extended-data',
-  'show-extended-data',
-  'filter-with-extended-data',
 ];
 
 const sortingArrayTutorialTransactionProcess = [
@@ -130,9 +127,8 @@ const sortingArrayFTWContent = [
 ];
 
 const sortingArrayFTWIntroduction = [
+  'sharetribe-web-template',
   'how-to-customize-ftw',
-  'ftw-hourly',
-  'ftw-product',
   'customization-checklist',
 ];
 
@@ -175,7 +171,6 @@ exports.siteStructure = [
         id: 'introduction-getting-started',
         sortingArray: sortingArrayIntroductionGettingStarted,
       },
-      { id: 'introduction-templates' },
     ],
   },
   {
@@ -186,11 +181,6 @@ exports.siteStructure = [
       {
         id: 'tutorial-branding',
         sortingArray: sortingArrayTutorialBranding,
-        showNextAndPrev: true,
-      },
-      {
-        id: 'tutorial-extended-data',
-        sortingArray: sortingArrayTutorialExtendedData,
         showNextAndPrev: true,
       },
       {
@@ -280,6 +270,7 @@ exports.siteStructure = [
       { id: 'ftw-testing-error-handling' },
       { id: 'ftw-hosting' },
       { id: 'ftw-analytics' },
+      { id: 'ftw-legacy' },
     ],
   },
 

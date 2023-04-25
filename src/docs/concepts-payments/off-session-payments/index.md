@@ -107,12 +107,12 @@ disallowing customers to remove their stored payment card in your UI
 implementation, if they have ongoing transactions for which they have
 not yet been charged.
 
-## Considerations about implementation in FTW templates
+## Considerations about implementation in Sharetribe Web Template
 
 If you want to implement
 [the example process](https://github.com/sharetribe/flex-example-processes/tree/master/automatic-off-session-payment)
 in your user interface, there are multiple ways to do so. If your user
-interface is based on one of the FTW templates, here are a few things
+interface is based on the Sharetribe Web Template, here are a few things
 worth considering.
 
 ### Transitions and states
@@ -126,11 +126,11 @@ timestamp.
 
 ### Separating order from payment
 
-In the default transaction process and default FTW flow, the order is
-initiated and processed on
-[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
+In the default transaction process and default template flow, the order
+is initiated and processed on
+[CheckoutPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.js)
 in `handlePaymentIntent()`, using
-[initial values from ListingPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/ListingPage/ListingPage.js)
+[initial values from ListingPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/ListingPage/ListingPage.js)
 set in `handleSubmit()` with `callSetInitialValues()`. Since the
 off-session payment process separates initiating the order (i.e.
 creating a booking, setting line items in a privileged transition) from
@@ -146,14 +146,14 @@ separation.
 
 If the automatic payment succeeds, the customer does not need to take
 further action on the transaction before the review process. Manual
-payment, on the other hand, does require a new user flow in the FTW
+payment, on the other hand, does require a new user flow in the
 template.
-[CheckoutPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/CheckoutPage/CheckoutPage.js)
+[CheckoutPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.js)
 is set up to handle payments toward Stripe, so the simplest option is
 that after an automatic payment has not succeeded and the customer has
 manually triggered the transition to create a payment intent, they are
 redirected to CheckoutPage.js (cf.
-[TransactionPage.js](https://github.com/sharetribe/ftw-daily/blob/master/src/containers/TransactionPage/TransactionPage.js)
+[TransactionPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/TransactionPage/TransactionPage.js)
 `redirectToCheckoutPageWithInitialValues()`) to continue the process.
 
 Pay attention to the following points when designing your user flow:

@@ -1,40 +1,32 @@
 ---
-title: How to change FTW bundled microcopy
+title: Bundled microcopy
 slug: how-to-change-ftw-bundled-microcopy
-updated: 2022-06-14
+updated: 2023-01-01
 category: ftw-content
 ingress:
-  This guide describes how to change the bundled microcopy in Flex
-  Template for Web (FTW).
+  This guide describes what is bundled microcopy and how to make changes
+  to it.
 published: true
 ---
 
-The Flex Template for Web supports having a single language for the UI.
-Supported languages are English, French and Spanish, English being used
-by default. For information about changing the language, see the
+The Sharetribe Web Template supports having a single language for the
+UI. Supported languages are English, French and Spanish, English being
+used by default. For information about changing the language, see the
 [Changing the language](/ftw/how-to-change-ftw-language/) article.
 
 We use the [React Intl](https://github.com/yahoo/react-intl) library to
 represent UI microcopy and to format dates, numbers, and money values.
 
-_**Note:** Starting in 2022-05, FTW template microcopy can also be
-modified in Flex Console. If you want to implement this feature into
-your pre-v8.5 FTW-daily template, you can see the necessary
-modifications in the PR for
-[ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510). Read
-more:_
+In addition to bundled microcopy, Flex allows modifying microcopy
+through the Flex Console:
 
-- _[Microcopy in Flex](/concepts/microcopy/)_
-- _[How hosted microcopy works in the FTW templates](/ftw/hosted-microcopy/)_
-
-<extrainfo title="FTW-hourly and FTW-product versions with hosted microcopy">
-In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is available in v9.2.
-</extrainfo>
+- [Microcopy in Flex](/concepts/microcopy/)
+- [How hosted microcopy works in the template](/ftw/hosted-microcopy/)
 
 ## The microcopy file
 
 All the bundled microcopy can be found in the
-[src/translations/en.json](https://github.com/sharetribe/ftw-daily/blob/master/src/translations/en.json)
+[src/translations/en.json](https://github.com/sharetribe/web-template/blob/master/src/translations/en.json)
 file. The microcopy data is formatted as one JSON object with all the
 microcopy key-value pairs as properties.
 

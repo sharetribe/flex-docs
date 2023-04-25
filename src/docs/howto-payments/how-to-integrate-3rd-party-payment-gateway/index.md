@@ -412,8 +412,8 @@ to store the information in the [transaction's
 metadata][integration-api-update-transaction-metadata] or [transition
 the transaction][integration-api-transition-transaction].
 
-If you use Flex Template for Web, you can add a new endpoint by adding
-it to the [API router][ftw-daily-api-router].
+If you use a Sharetribe Web Template, you can add a new endpoint by
+adding it to the [API router][web-template-api-router].
 
 We recommend securing the endpoint with Basic Authentication if the
 payment gateway supports that.
@@ -438,8 +438,8 @@ To use privileged transitions, you need to make a new endpoint to your
 backend server. Your marketplace front-end should call this new backend
 endpoint and not the Flex API directly.
 
-If you use Flex Template for Web, you can add a new endpoint by adding
-it to the [API router][ftw-daily-api-router].
+If you use Sharetribe Web Template, you can add a new endpoint by adding
+it to the [API router][web-template-api-router].
 
 The new server endpoint should call the payment gateway API to do the
 payment action and the Flex Marketplace API to transition the
@@ -585,7 +585,7 @@ The transaction process should look something like this:
 
 The steps to implement this stage are:
 
-1. Add ([or modify existing][ftw-daily-initiate-privileged]) server
+1. Add ([or modify existing][template-initiate-privileged]) server
    endpoint for initiating a transaction.
 2. Initiate the transaction.
 3. Make the payment after the transaction is initiated.
@@ -723,7 +723,7 @@ payment gateway to each step.
   https://www.sharetribe.com/api-reference/integration.html#update-user-profile
 [integration-api-transition-transaction]:
   https://www.sharetribe.com/api-reference/integration.html#transition-transaction
-[ftw-daily-api-router]:
-  https://github.com/sharetribe/ftw-daily/blob/master/server/apiRouter.js
-[ftw-daily-initiate-privileged]:
-  https://github.com/sharetribe/ftw-daily/blob/master/server/api/initiate-privileged.js
+[web-template-api-router]:
+  https://github.com/sharetribe/web-template/blob/main/server/apiRouter.js
+[template-initiate-privileged]:
+  https://github.com/sharetribe/web-template/blob/main/server/api/initiate-privileged.js

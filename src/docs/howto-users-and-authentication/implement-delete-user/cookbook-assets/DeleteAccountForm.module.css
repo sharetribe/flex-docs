@@ -1,4 +1,4 @@
-@import '../../styles/customMediaQueries.css';
+@import '../../../styles/customMediaQueries.css';
 /* Older versions of template should import deprecated file: */
 /* @import '../../styles/propertySets.css'; */
 
@@ -65,7 +65,7 @@
   /* Older versions of template should use '@apply' instead of 'composes' */
   /* @apply --marketplaceH4FontStyles; */
   composes: h4 from global;
-  color: var(--failColor);
+  color: var(--colorFail);
   text-align: center;
   display: inline-block;
   width: 100%;

@@ -15,8 +15,8 @@ examples of microcopy. Modifying microcopy to match your marketplace's
 theme and tone of voice is a key task in customizing any marketplace.
 [Read more about marketplace microcopy](/operator-guides/).
 
-In the FTW templates, microcopy is not written directly into the source
-code. Instead, the source code uses
+In the Sharetribe Web Template, microcopy is not written directly into
+the source code. Instead, the source code uses
 [React Intl message formatting](https://formatjs.io/docs/intl#formatmessage)
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
@@ -44,25 +44,26 @@ changed even if the value ends up changing.
 <FormattedMessage id="ManageListingCard.editListing" />
 ```
 
-Starting from 2022-05, marketplace operators can modify the wording of
-microcopy in Flex Console. This means that operators can make changes to
-the marketplace texts without the need for code changes. In addition,
-the same microcopy can now be used from several different client
-applications, making it easier to make centralized changes.
+In addition to adding a microcopy file in the client application, Flex
+marketplace operators can modify the wording of microcopy in Flex
+Console. This means that operators can make changes to the marketplace
+texts without the need for code changes. The same microcopy can also be
+used from several different client applications, making it easier to
+make centralized changes.
 
 ![Simple Console microcopy](./microcopy_simple.png)
 
 ## How microcopy is handled in Flex
 
-With Console-editable microcopy, Flex introduces a concept of
+Console-editable microcopy in Flex is based on a concept of
 [assets](/references/assets/). Assets provide a way to define
 marketplace content and configurations using JSON files without needing
 to include the actual content in the client application codebase.
 
 For the microcopy file version being edited in Flex Console, the asset
 in question is `content/translations.json`. In other words, Flex Console
-has a dedicated view – "Build" > "Content" – for modifying the
-`content/translations.json` asset. The asset refers to translations
+has a dedicated view – "Build" > "Content" > "Microcopy" – for modifying
+the `content/translations.json` asset. The asset refers to translations
 because the language-specific microcopy files allow the marketplace to
 fairly easily be translated to languages other than English.
 
@@ -70,8 +71,7 @@ fairly easily be translated to languages other than English.
 
 You can add one or more microcopy key-value pairs in JSON format into
 the Microcopy field. You can copy them from the linked microcopy
-resources in the FTW templates, or your existing marketplace microcopy
-file.
+resources in the template, or your existing marketplace microcopy file.
 
 ![Add microcopy key-value pairs](./microcopy_console.png)
 
@@ -81,7 +81,7 @@ in JSON format. Assets can be retrieved by the latest version, or by a
 specific version. Read more:
 
 - [Marketplace assets](/references/assets/)
-- [Handling hosted asset microcopy in the FTW templates](/ftw/hosted-microcopy/)
+- [Handling hosted asset microcopy in the Sharetribe Web Template](/ftw/hosted-microcopy/)
 
 ## Format for editing microcopy in Console
 
@@ -95,8 +95,8 @@ can, at its simplest, consist of a phrase.
 }
 ```
 
-In the FTW template, the phrase is then passed to the UI element that
-shows the value.
+In the template, the phrase is then passed to the UI element that shows
+the value.
 
 ```js
 // ManageListingCard.js uses the variable to identify the message
@@ -106,7 +106,7 @@ shows the value.
 ![Simple microcopy phrase in UI](./microcopy_UI_simple.png)
 
 Read more about
-[using microcopy in the FTW templates](/ftw/how-to-change-ftw-bundled-microcopy/#using-the-microcopy).
+[using microcopy in the Sharetribe Web Template](/ftw/how-to-change-ftw-bundled-microcopy/#using-the-microcopy).
 
 ### Simple argument
 
@@ -118,7 +118,7 @@ string.
 
 ```json
 {
-  "ManageListingCard.pendingApproval": "{listingTitle} is pending admin approval and can't be booked."
+  "ManageListingCard.pendingApproval": "{listingTitle} is pending admin approval. It's not visible on the marketplace yet."
 }
 ```
 
@@ -186,22 +186,19 @@ pluralization arguments (`zero`, `one`, `two`, `few` etc.) in the
 In addition to pluralization options, you can build logic to the
 microcopy strings using
 [select formatting](https://formatjs.io/docs/core-concepts/icu-syntax/#select-format).
-The current FTW template microcopy does not have an existing example of
-this pattern, however you can of course modify your code to include this
-formatting as well.
 
 When you use `select` in the microcopy string, you will need to specify
 
-- the variable determining which option to use (here: `mode`)
+- the variable determining which option to use (here: `actor`)
 - the pattern we are following (here: `select`)
-- the options matching each alternative you want to specify (here:
-  `class` – there could be several options specified)
+- the options matching each alternative you want to specify (here: `you`
+  – there could be several options specified)
 - an `other` option that gets used when none of the specified
   alternatives matches
 
 ```json
 {
-  "BookingBreakdown.description": "{mode, select, day {You are booking the following time span:} night {You are booking the following time span:} other {You are booking the following {unitType}:}}"
+  "TransactionPage.ActivityFeed.default-purchase.purchased": "{actor, select, you {You placed an order for {listingTitle}.} other {{otherUsersName} placed an order for {listingTitle}.}}"
 }
 ```
 
@@ -209,17 +206,22 @@ You can then use the microcopy message in the code e.g. with the
 `formatMessage` function:
 
 ```js
-// mode: the types of bookings or products available on the listing page, e.g. class, package, day, night
-const mode = 'class';
-const unitType = 'yoga class'
-// For { mode: 'class', unitType: 'yoga class' }, the message will read "You are booking the following yoga class.".
-const description = intl.formatMessage(
-  { id="BookingBreakdown.description" },
-  { mode, unitType }
+const message = intl.formatMessage(
+  { id: `TransactionPage.ActivityFeed.${processName}.${nextState}` },
+  {
+    actor,
+    otherUsersName,
+    listingTitle,
+    reviewLink,
+    deliveryMethod,
+    stateStatus,
+  }
 );
 ```
 
-You can use select for cases where you have a predetermined list of
+![Microcopy message with select logic](./microcopy_UI_select.png)
+
+You can use `select` for cases where you have a predetermined list of
 options you will encounter that require different microcopy strings.
 
 ## Can I have a multilanguage marketplace?
@@ -245,4 +247,4 @@ shows the correct language, for example:
 ```
 
 Read more about what to consider when
-[building a multilanguage Flex marketplace on top of a FTW template](/ftw/how-to-change-ftw-language/#developing-ftw-into-a-multilanguage-marketplace).
+[building a multilanguage Flex marketplace on top of Sharetribe Web Template](/ftw/how-to-change-ftw-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplace).

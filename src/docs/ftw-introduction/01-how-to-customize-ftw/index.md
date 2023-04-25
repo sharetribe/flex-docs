@@ -1,19 +1,26 @@
 ---
-title: How to Customize FTW
+title: Customizing the template
 slug: how-to-customize-ftw
-updated: 2021-10-19
+updated: 2023-01-01
 category: ftw-introduction
 ingress:
-  So you've decided to build your own marketplace using Flex Template
-  for Web (FTW). That's awesome! This guide will help you in setting up
-  your fork and describes the general workflow.
+  This article helps you set up the development environment and outlines
+  the best practices you should follow while developing on the
+  Sharetribe Web Template.
 published: true
 ---
 
-## Create a marketplace environment
+## Prerequisites
 
-Flex Templates for Web (FTW) are marketplace web applications built on
-top of the
+When you start a new project, you should create a new Git repository for
+your project and add the template repository as a remote repository.
+That allows you to update your code with the latest changes from the
+upstream repository. See how to set up a remote repository in the
+[tutorial](/tutorial/introduction/#prerequisites).
+
+### Create a marketplace environment
+
+The Sharetribe Web Template is a React application built on top of the
 [Marketplace API](/operator-guides/concepts/#marketplace-api). While you
 can create a marketplace client application from scratch using just the
 API, it requires a lot of effort and we recommend that you use a
@@ -23,92 +30,75 @@ To use the Marketplace API, you will need a client ID. You can obtain
 one by creating a new Flex marketplace at
 [the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).
 
-## Setup
+### Check that you have the correct transaction processes in your environment
 
-To start a new customization project, you should create a separate Git
-repository and setup the Git remotes so that you can pull in changes
-from the main (upstream) repository to your custom repository.
+If you have created your marketplace environment prior to the 25th of
+April 2023, and you are using the Sharetribe Web Template, it is good to
+note that there are two new transaction pro cesses the template uses,
+and those processes may not be in your Flex marketplace by default. You
+can find the transaction processes in
+[/ext/transaction-processes/](https://github.com/sharetribe/web-template/tree/main/ext/transaction-processes)
+in the repository.
 
-### Getting started with FTW template
+To use the template, you will need to have the transaction processes in
+your Flex environment.
+[Follow these steps](https://github.com/sharetribe/web-template#take-the-new-beta-processes-into-use)
+to create both processes in your environment through Flex CLI.
 
-If you are new to Sharetribe Flex or FTW, we recommend going through
-couple of articles first:
+### Getting started with the template
+
+If you are new to Sharetribe Flex or the Sharetribe Web Template, we
+recommend reading these articles before starting to work on development:
 
 - [Introducing Flex](/introduction/introducing-flex/)
 - [What development skills are needed?](/introduction/development-skills/)
-- [Getting started](/introduction/getting-started-with-ftw-daily/)
+- [Getting started](/introduction/getting-started-with-web-template/)
 
-The [Tutorial introduction](/tutorial/introduction/#prerequisites) will
+The [tutorial introduction](/tutorial/introduction/#prerequisites) will
 also walk you through creating a GitHub repository.
 
-### Choose a template
+## Pull in the latest upstream changes
 
-[Tutorial](/tutorial/introduction/) goes through one of the FTW
-templates (FTW-daily), but that's not the only one. Currently, you can
-choose from three templates:
+To update your project with the newest changes from the remote
+repository, you need to pull these changes from the upstream remote.
 
-- [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
-  rental marketplace with day-based bookings
-- [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime" - a
-  service marketplace with time-based bookings
-- [FTW-product](https://github.com/sharetribe/ftw-product)
-  "Sneakertime" - a product marketplace with stock management.
+<info>
 
-> **Note:** By default your Flex marketplace comes with day-based
-> [transaction process](/concepts/transaction-process/). If you want to
-> start working with FTW-hourly, you need to change to the
-> [time-based process](https://github.com/sharetribe/flex-example-processes/tree/master/flex-hourly-default-process).
-> See
-> [getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
-> for more information.
+Pulling the newest changes from the upstream remote might be hard or
+impossible, depending on the extent of the changes you have made to the
+template. The template is a starting point for development rather than
+something that you should regularly update.
+
+</info>
 
 You should follow the [tutorial](/tutorial/introduction/) to set up a
 local development environment and connect it to GitHub.
 
-### Pull in the latest upstream changes
+Run the following commands in a new branch.
 
-If you want to update your local customization project with changes in
-FTW, you should pull in changes from the upstream remote.
-
-> **Note:** Depending on the changes you've made to the template, this
-> might be hard/impossible depending on what has changed. You should
-> mainly think of FTW as being the starting point of your customization,
-> not something that is constantly updated as you make changes to it.
-
-Run the following commands in a feature branch
-
-1. Create a new feature branch and switch into that branch:
+1. Create a new branch and switch into that branch:
 
    ```shell
    git checkout -b updates-from-upstream
    ```
 
-1. Fetch the latest changes from the upstream repository:
+2. Fetch the latest changes from the upstream repository:
 
    ```shell
    git fetch upstream
    ```
 
-1. Merge the changes to your local branch
-
-   > FTW-daily and FTW-hourly still follow old Github convention to name
-   > the default branch as **master** instead of **main**.
-
-   ```shell
-   git merge upstream/master
-   ```
-
-   FTW-product uses _main_ as main branch.
+3. Merge the changes to your local branch
 
    ```shell
    git merge upstream/main
    ```
 
-1. Fix possible merge conflicts, commit, and push/deploy.
+4. Fix possible merge conflicts, commit, and push/deploy.
 
-See also the
-[Syncing a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
-documentation.
+If you have forked the repository instead of setting a remote, see how
+to
+[sync a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork).
 
 ## Installing dependecies
 
@@ -118,12 +108,11 @@ In your project root, install dependency libraries:
 yarn install
 ```
 
-## Configuration
+## Configuring environment variables
 
-There are some mandatory configuration, and some configuration that you
-most likely want to at least go through.
-
-To get started, run:
+You need to configure some environment variables before deploying or
+running the template locally. You can simply run the following command
+in the root of your project directory:
 
 ```shell
 yarn run config
@@ -137,35 +126,23 @@ required environment variables.
 ```
 
 The `.env` file is the place to add your _local_ configuration. It is
-ignored in Git, so you'll have to add the corresponding configuration
-also to your server environment. Check this
-[Render config setup](/tutorial/deploy-to-render/#deploy-to-render)
-article - and there's also a generic article about
-[deploying to production](/ftw/how-to-deploy-ftw-to-production/).
+ignored by Git, so you will have to add the corresponding configuration
+also to your server environment. When deploying the template to Render
+or Heroku, you need to configure the environment variables in the
+hosting platform. See our article on deploying the template to
+[Render](/tutorial/deploy-to-render/#deploy-to-render) for more
+information.
 
-There are some mandatory configuration variables that are defined in the
-template. See the
-[FTW Environment configuration variables](/ftw/ftw-env/) reference for
-more information.
+See the full list of [environment variables](/ftw/ftw-env/) for more
+information.
 
-See also the
-[src/config.js](https://github.com/sharetribe/ftw-daily/blob/master/src/config.js)
-file for more configuration options.
-
-```shell
-└── src
-    └── config.js
-```
-
-<extrainfo title="FTW-product has config.js file in different location">
+For in-app configurations, see the
+[src/config directory](https://github.com/sharetribe/web-template/tree/main/src/config).
 
 ```shell
 └── src
     └── config
-        └── config.js
 ```
-
-</extrainfo>
 
 ## Development
 
@@ -201,20 +178,24 @@ yarn run dev-server
 
 This runs the frontend production build and starts the Express.js server
 in
-[server/index.js](https://github.com/sharetribe/ftw-daily/blob/master/server/index.js).
+[server/index.js](https://github.com/sharetribe/web-template/blob/main/server/index.js).
 
 ```shell
 └── server
     └── index.js
 ```
 
-The server is automatically restarted when there are changes in the
-[server/](https://github.com/sharetribe/ftw-daily/tree/master/server)
+The server is automatically restarted when changes are detected in the
+[server](https://github.com/sharetribe/web-template/blob/main/server/)
 directory.
 
-> **Note:** this server does **not** pick up changes in the frontend
-> application code. For that you need to rebuild the client bundle by
-> restarting the server manually.
+<info>
+
+This server does **not** detect changes in the frontend application
+code. For that you need to rebuild the client bundle by restarting the
+server manually.
+
+</info>
 
 ## Tests
 
@@ -224,14 +205,14 @@ To start the test watcher, run
 yarn test
 ```
 
-For more information, see the [How to test FTW](/ftw/how-to-test-ftw/)
-documentation.
+For more information on tests, see the documentation on
+[how to test the template](/ftw/how-to-test-ftw/).
 
-## Customization
+## Further reading
 
-There are many things that you should change in the default template,
-and many more that you can change. For more information, check the
-[FTW customization checklist](/ftw/customization-checklist/)
-documentation too before publishing your site. See also
-[tutorial](/tutorial/introduction/) and other articles in _Flex
-Templates for Web_ and _How-to_ categories.
+There are many things that you should change in the default template and
+many more that you can change. For more information, check the
+[template customization checklist](/ftw/customization-checklist/)
+documentation before publishing your site. Also see the
+[tutorial](/tutorial/introduction/) and other articles in the
+[Sharetribe Web Template](/ftw/) and [How-to](/how-to/) categories.

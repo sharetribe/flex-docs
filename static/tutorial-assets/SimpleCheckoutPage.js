@@ -96,7 +96,7 @@ export class CheckoutPageComponent extends Component {
       bookingData,
       bookingDates,
       listing,
-      enquiredTransaction,
+      inquiredTransaction,
       fetchSpeculatedTransaction,
       history,
     } = this.props;
@@ -115,14 +115,14 @@ export class CheckoutPageComponent extends Component {
         bookingData,
         bookingDates,
         listing,
-        enquiredTransaction,
+        inquiredTransaction,
         STORAGE_KEY
       );
     }
 
     // NOTE: stored data can be empty if user has already successfully completed transaction.
     const pageData = hasDataInProps
-      ? { bookingData, bookingDates, listing, enquiredTransaction }
+      ? { bookingData, bookingDates, listing, inquiredTransaction }
       : storedData(STORAGE_KEY);
 
     const hasData =
@@ -183,9 +183,9 @@ export class CheckoutPageComponent extends Component {
       bookingEnd: speculatedTransaction.booking.attributes.end,
     };
 
-    const enquiredTransaction = this.state.pageData.enquiredTransaction;
-    const transactionIdMaybe = enquiredTransaction
-      ? enquiredTransaction.id
+    const inquiredTransaction = this.state.pageData.inquiredTransaction;
+    const transactionIdMaybe = inquiredTransaction
+      ? inquiredTransaction.id
       : null;
 
     onInitiateOrder(requestParams, transactionIdMaybe).then(params => {
@@ -243,7 +243,7 @@ export class CheckoutPageComponent extends Component {
 
     const isLoading = !this.state.dataLoaded || speculateTransactionInProgress;
 
-    const { listing, bookingDates, enquiredTransaction } = this.state.pageData;
+    const { listing, bookingDates, inquiredTransaction } = this.state.pageData;
     const currentTransaction = ensureTransaction(
       speculatedTransaction,
       {},
@@ -430,7 +430,7 @@ export class CheckoutPageComponent extends Component {
       id: unitTranslationKey,
     })}`;
 
-    const showInitialMessageInput = !enquiredTransaction;
+    const showInitialMessageInput = !inquiredTransaction;
 
     const pageProps = { title, scrollingDisabled };
 
@@ -563,7 +563,7 @@ CheckoutPageComponent.defaultProps = {
   bookingDates: null,
   speculateTransactionError: null,
   speculatedTransaction: null,
-  enquiredTransaction: null,
+  inquiredTransaction: null,
   currentUser: null,
 };
 
@@ -579,7 +579,7 @@ CheckoutPageComponent.propTypes = {
   speculateTransactionInProgress: bool.isRequired,
   speculateTransactionError: propTypes.error,
   speculatedTransaction: propTypes.transaction,
-  enquiredTransaction: propTypes.transaction,
+  inquiredTransaction: propTypes.transaction,
   initiateOrderError: propTypes.error,
   currentUser: propTypes.currentUser,
   params: shape({
@@ -609,7 +609,7 @@ const mapStateToProps = state => {
     speculateTransactionInProgress,
     speculateTransactionError,
     speculatedTransaction,
-    enquiredTransaction,
+    inquiredTransaction,
     initiateOrderError,
   } = state.CheckoutPage;
   const { currentUser } = state.user;
@@ -622,7 +622,7 @@ const mapStateToProps = state => {
     speculateTransactionInProgress,
     speculateTransactionError,
     speculatedTransaction,
-    enquiredTransaction,
+    inquiredTransaction,
     listing,
     initiateOrderError,
   };

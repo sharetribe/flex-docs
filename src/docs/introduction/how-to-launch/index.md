@@ -38,33 +38,26 @@ create one in
 Once you log in to Console, you'll notice there's nothing there yet: you
 naturally don't yet have any users, listings, or transactions.
 
-The first step after logging in to Console is to set up a Flex Template
-for Web (FTW). FTW is a fully functional example of a marketplace
-website built with Flex. Currently we have three template options:
+The first step after logging in to Console is to set up a
+[Sharetribe Web Template](/introduction/introducing-template/). The
+template is a fully functional example of a marketplace website built
+with Flex.
 
-- [FTW-daily](https://github.com/sharetribe/ftw-daily) "Saunatime" - a
-  fictional marketplace for renting home saunas from sauna owners.
-- [FTW-hourly](https://github.com/sharetribe/ftw-hourly) "Yogatime - a
-  fictional marketplace for booking yoga classes from various yoga
-  teachers.
-- [FTW-product](https://github.com/sharetribe/ftw-product)
-  "Sneakertime" - a product marketplace with stock management
-
-Setting up FTW should take no more than 5 minutes. The process is
-technical but doable even without development experience.
-[The guide for getting started with FTW](/introduction/getting-started-with-ftw-daily/)
+Setting up the template should take no more than 5 minutes. The process
+is technical but doable even without development experience.
+[The guide for getting started with Sharetribe Web Template](/introduction/getting-started-with-web-template/)
 will give you step by step instructions for doing it. If you encounter
 any problems with the setup,
 [contact Sharetribe support](mailto:flex-support@sharetribe.com).
 
-Once you have FTW set up, you can create a few user accounts and test
-the features: posting listings, searching them, making bookings and
-payments (see how to use
-[test credit card numbers provided by Stripe](/how-to/set-up-and-use-stripe/#6-test-the-stripe-account-in-flex-template-for-web)),
+Once you have the template set up, you can create a few user accounts
+and test the features: posting listings, searching them, making bookings
+and payments (see how to use
+[test credit card numbers provided by Stripe](/how-to/set-up-and-use-stripe/#7-test-the-stripe-account-in-sharetribe-web-template)),
 sending messages between users, writing reviews, and so on. You can test
 them both on your desktop and on a mobile browser to see how it works on
 each device. On Console, you can then see how the users, listings and
-transactions you created in FTW appear there.
+transactions you created in the template appear there.
 
 ## 2. Designing your marketplace
 
@@ -79,20 +72,20 @@ exact user interface of your platform. If this is the case, you can jump
 directly to the [Development section](#3-developing-your-marketplace).
 
 If you haven't yet done any thinking in terms of the design, it's often
-a good idea to start the design work from FTW. A good approach is to
-think about what changes are needed to the different pages of FTW to
-make it work with your concept. For example, you might want to adjust
-the booking page to allow your users to book per hour instead of per
-night. You can add pages (like "FAQ" or "How it works") or remove pages
-you find unnecessary (perhaps a user profile page is not needed).
-Naturally you might also want to change the fonts, color scheme, and
-other elements of the general look & feel to make the marketplace look
-uniquely yours.
+a good idea to start your design work with the Sharetribe Web Template.
+A good approach is to think about what changes are needed to the
+different pages of the template to make it work with your concept. For
+example, you might want to adjust the booking page to allow your users
+to suggest a price instead of using the default listing price. You can
+add pages (like "FAQ" or "How it works") or remove pages you find
+unnecessary (perhaps a user profile page is not needed). Naturally you
+might also want to change the fonts, color scheme, and other elements of
+the general look & feel to make the marketplace look uniquely yours.
 
 You might also come to the conclusion that the user interface of your
-marketplace is so different from the example presented in FTW that it
-doesn't offer a good basis for your design. Perhaps you want to build a
-mobile app instead of a website, or just have some other major
+marketplace is so different from the example presented in our template
+that it doesn't offer a good basis for your design. Perhaps you want to
+build a mobile app instead of a website, or just have some other major
 differences in your approach. That's completely fine: you can also start
 drafting the user interface completely from scratch. Typically, it makes
 sense to start by building
@@ -121,7 +114,7 @@ what kind of user interface you need to accommodate the design.
 Once you have the wireframes ready and know what you want, the next step
 is to build the actual visual design. If you're comfortable with using a
 design tool like [Sketch](https://www.sketch.com/), you can
-[download the Sketch design files of FTW](/design-toolkit/design-files/#assets)
+[download the Sketch design files of Sharetribe Web Template](/design-toolkit/design-files/#assets)
 and build your own design by adjusting these files. This approach can
 dramatically speed up the design process, and it offers an easy starting
 point for the developers.
@@ -140,7 +133,7 @@ design ready for your marketplace, it's time to start development work
 to make your marketplace look and work the way your designs describe.
 
 Typically, the development work is done by downloading the
-[open source codebase of FTW](https://github.com/sharetribe/ftw-daily)
+[open source codebase of Sharetribe Web Template](https://github.com/sharetribe/web-template/)
 and customizing it according your needs. If you're a developer, you can
 proceed to do this and
 [start development right away](/ftw/how-to-customize-ftw/).

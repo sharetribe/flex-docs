@@ -1,76 +1,68 @@
 ---
-title: How to set up currency in FTW
+title: Currency configurations
 slug: how-to-set-up-currency-in-ftw
-updated: 2019-07-17
+updated: 2023-01-01
 category: ftw-configuration
 ingress:
-  Flex Template for Web (FTW) uses USD as the default currency. This
-  guide will help you to change currency and edit other configurations
-  related to it.
+  The Sharetribe Web Template uses USD as the default currency. This
+  guide will help you to change the default currency and other
+  currency-related settings.
 published: true
 ---
 
-## 1. Change the currency
+## Change marketplace currency
 
-At the moment FTW uses Stripe as the only payment provider so before
-changing the currency, make sure it's supported in Stripe. See the
-Stripe documentation for
-[supported currencies](https://stripe.com/docs/currencies).
+Stripe is the default payment processor in Flex. If you are using the
+default payment integration, please confirm that
+[Stripe supports the currency](https://stripe.com/docs/currencies) you
+intend to use.
 
-Environment variable `REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY` is used
-for the currency. For local development you can add the variable in the
-Gitignored `.env` file in the project root:
+You can find the currency configuration in the
+[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L20)
+file. The currency configuration must be in the
+[ISO 4217 currency code](https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes),
+e.g. USD, EUR, CAD, AUD, etc. The default value is USD.
 
-```bash
-REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY=your-currency
-```
+<info>
 
-You can also change the configuration with the command line tool by
-running
-
-```bash
-yarn run config
-```
-
-Remember to restart the application after editing the environment
-variable!
-
-**Note:** If you already created listings before changing the currency,
-listings using old currency will not show the price when a new currency
-is in use. Currently, FTW doesn't support changing the currency of the
+If you already created listings before changing the currency, listings
+using old currency will not show the price when a new currency is in
+use. Currently, Flex does not support changing the currency of the
 listing so the price cannot be edited after the currency used in the
 application is changed.
 
-## 2. Edit listing minimum price
+</info>
 
-In the `config.js` file, search for variable
-`listingMinimumPriceSubUnits` and give a minimum price in currency's
-subunits (e.g. cents). By default, FTW uses value 0 which means there is
-no restriction to the price but we recommend that the listing minimum
-price should be at least the same amount as
-[Stripe fee](https://stripe.com/docs/currencies#minimum-and-maximum-charge-amounts)
-in the country you are operating. If the listing price is lower, Stripe
-will not process the payment and the booking fails.
+## Edit listing minimum price
 
-## 3. Check the currency-config.js file
+The variable `listingMinimumPriceSubUnits` defines the minimum price a
+customer can give a listing. You can find that variable in
+[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L25).
+You need to specify the minimum price as the subunits of the currency
+you are using, i.e. if you are using dollars,
+`listingMinimumPriceSubUnits: 500` would set the minimum price for a
+listing at 5 dollars.
 
-See the
-[currency-config.js](https://github.com/sharetribe/ftw-daily/blob/master/src/currency-config.js)
-file and make sure the currency is added to the `subUnitDivisors` array.
-Most common currencies are already added to the file. If the currency is
+You can also set the value as 0, meaning there is no minimum price. We
+recommend that the minimum listing price be at least the same as
+[Stripe's minimum charge amount](https://stripe.com/docs/currencies#minimum-and-maximum-charge-amounts)
+in the country you are operating. **If the listing price is lower than
+Stripe's minimum charge amount, Stripe will not process the payment and
+the transaction will fail.**
+
+If you want to allow listings with no price, you will need to
+[add a new transaction process](/how-to/change-transaction-process-in-ftw/)
+where you have removed pricing and payment related actions.
+
+## Currency subunits
+
+The
+[settingsCurrency.js](https://github.com/sharetribe/web-template/blob/main/src/config/settingsCurrency.js)
+file specifies an array of currency sub-units the template uses to
+format currencies correctly. The most common currencies are already
+included in the file. If the currency is a
 [zero-decimal currency](https://stripe.com/docs/currencies#zero-decimal)
-(e.g. JPY) use value 1. Otherwise, the value is usually 100.
-
-<extrainfo title="FTW-product has moved config files into a different location">
-
-```shell
-└── src
-    └── config
-        ├── config.js
-        └── currency-config.js
-```
-
-</extrainfo>
+(e.g. JPY) it uses value 1. Otherwise, the value is usually 100.
 
 ### Why subunits?
 
@@ -78,45 +70,35 @@ All API requests to Stripe expects amounts to be provided in a
 currency’s smallest unit. It's also better to calculate using integers
 than floats to avoid rounding errors.
 
-## 4. Optional: Format values
+## Formatting currency
 
 Formatting money is done by using
-[React Intl](https://github.com/yahoo/react-intl). Component
-`FieldCurrencyInput` converts user input to a formatted message and adds
-the Money object to price attribute of a listing. `currency-config.js`
-file affects how prices are formatted by determining how the subunits
-are converted to the actual unit (e.g. from cents to USD).
+[React Intl](https://github.com/yahoo/react-intl). The component
+[`FieldCurrencyInput`](https://github.com/sharetribe/web-template/blob/main/src/components/FieldCurrencyInput/FieldCurrencyInput.js)
+converts user input to a formatted message and adds the Money object to
+the price attribute of a listing. All currency is formatted specified by
+the value set in the
+[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L20)
+file.
 
-## 5. Optional: Calculate the price in client app side
+## Calculating the price client-side
 
 If you need to calculate the price on client app side use
 [Decimal.js](https://github.com/MikeMcl/decimal.js/) library. Currently,
-there are two places in FTW where prices are calculated:
+there are two places in the template where prices are calculated:
 
-- [server/api-util/lineItemHelpers.js](https://github.com/sharetribe/ftw-daily/blob/master/server/api-util/lineItemHelpers.js)
-- [EstimatedBreakdownMaybe.js](https://github.com/sharetribe/flex-template-web/blob/master/src/forms/BookingDatesForm/EstimatedBreakdownMaybe.js)
-  (which is refactored as
-  [EstimatedCustomerBreakdownMaybe.js](https://github.com/sharetribe/flex-template-web/blob/master/src/components/OrderPanel/EstimatedCustomerBreakdownMaybe.js)
-  on FTW-product)
+- [server/api-util/lineItemHelpers.js](https://github.com/sharetribe/web-template/blob/master/server/api-util/lineItemHelpers.js)
 
-## Your Saunatime test listings
+- [EstimatedCustomerBreakdownMaybe.js](https://github.com/sharetribe/web-template/blob/master/src/components/OrderPanel/EstimatedCustomerBreakdownMaybe.js)
 
-If you just started, you likely have a few test Saunatime listings in
-your Console. These listings use EUR as their currency. Configuring a
-currency different than EUR will result in an error as the FTW cannot
-convert the currency of existing listings. You can ignore this error by
-closing these listings in your Console, which will remove them from the
-search page as well, and creating new listings.
-
-## FTW and multiple currencies
+## Using multiple currencies
 
 You can have multiple currencies inside a single marketplace, since Flex
 itself is currency agnostic. There are, however, some caveats that you
-need to take into account. The default FTW template implementation
-limits currency to a single currency because of the caveats listed
-below. This just made things simpler to develop. You can of course
-change currency handling in your marketplace if you take these caveats
-into account.
+need to take into account. By default, the template limits currency to a
+single currency because of the caveats listed below. This just made
+things simpler to develop. You can of course change currency handling in
+your marketplace if you take these caveats into account.
 
 First, a single listing can have only a single price. If you wish to
 offer the same listing in two different currencies, you need to create

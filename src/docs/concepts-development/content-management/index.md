@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-In 2023-02, Flex introduces a lightweight headless CMS to create content
+In 2023-02, Flex introduced a lightweight headless CMS to create content
 pages in Flex. The feature allows operators to modify four default
 content pages without code, as well as create completely new pages.
 
@@ -23,8 +23,8 @@ glossary of the most central content related terms.
 The way in which operator-created content is handled within Flex. Before
 Console-operated content management, operators could either
 
-- add the content directly in the FTW codebase,
-- use the [microcopy](/concepts/microcopy/) files for marketplace
+- add the content directly in the client app codebase,
+- use the [microcopy](/concepts/microcopy) files for marketplace
   content, or
 - integrate an external content management system.
 
@@ -169,21 +169,12 @@ For the landing page, the asset being modified in Flex is
 or a specific version. The client application then shows the page
 content it has fetched.
 
-The FTW templates are configured to show asset-based content starting
-from the following versions:
+The Sharetribe Web Template is configured to show asset-based content by
+default.
 
-- FTW-daily v10.0.0
-- FTW-hourly v12.0.0
-- FTW-product v11.0.0
-
-For earlier template versions, you can either pull upstream updates or
-make the changes manually. You can check this article on
-[content rendering in FTW](/ftw/page-builder/) for context, and these
-PRs for the necessary changes:
-
-- [FTW-daily](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0)
-- [FTW-hourly](https://github.com/sharetribe/ftw-hourly/releases/tag/v12.0.0)
-- [FTW-product](https://github.com/sharetribe/ftw-product/releases/tag/v11.0.0)
+For legacy template versions that do not have asset-based content
+capabilities, you can refer to our
+[legacy template documentation](/ftw/legacy-templates/).
 
 To see your page changes in your client application, you need to save
 your changes in Flex Console and navigate to the corresponding page in
@@ -228,15 +219,14 @@ live environment.
 ## Content layout
 
 Content modeling does not, by default, contain information how the
-content should be laid out in the client application. The FTW templates
-do have components corresponding to the different content sections.
-However, the Flex content assets can be used in any client application,
-and even in the FTW templates you have full freedom as to how the
-different sections get displayed. This means that even with the
+content should be laid out in the client application. The Sharetribe web
+template does have components corresponding to the different content
+sections. However, the Flex content assets can be used in any client
+application, and even in the template you have full freedom as to how
+the different sections get displayed. This means that even with the
 pre-defined options, you can create a page setup that is entirely your
 own.
 
-Read more about how the FTW templates show content created in Flex
-Console:
+Read more about how the template shows content created in Flex Console:
 
-- [How FTW renders content pages using the PageBuilder](/ftw/page-builder/)
+- [How the Sharetribe Web Template renders content pages using the PageBuilder](/ftw/page-builder/)

@@ -9,11 +9,11 @@ ingress:
 published: true
 ---
 
-Starting from February 2019, Stripe started to review all new Connect
-Platforms. They don't seem to review all of them, and they haven't
-shared how they select which one to review, but it might happen. They've
-said that this is because of recent regulations. You'll have to provide
-some details about your business and Stripe promise they will review and
+If you create a new Stripe Platform, you might get reviewed by Stripe.
+They do not seem to review all of them, and they have not shared how
+they select which one to review, but it might happen. They've said that
+this is because of recent regulations. You'll have to provide some
+details about your business and Stripe promise they will review and
 enable your Stripe Platform within one business day.
 
 ## How to apply for Connect review at Stripe

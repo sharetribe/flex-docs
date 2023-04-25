@@ -31,9 +31,9 @@ the exception of anonymous public access). Therefore, the Marketplace
 API allows access to the individual user's own data and any publicly
 available data. This allows the Marketplace API to be directly called
 from a user-controlled device or web browser, which is the case if you
-are using one of the open source
-[template applications](/operator-guides/concepts/#flex-templates-for-web-ftw)
-provided by Sharetribe.
+are using the open source
+[template application](/introduction/introducing-template/) provided by
+Sharetribe.
 
 The Marketplace API does not provide access to any data that an
 individual user should not access, such as other users' private data,
@@ -52,9 +52,13 @@ etc. Such trusted applications are for example applications that run in
 your own backend systems or applications meant to be executed by
 authorized marketplace operators.
 
-> **IMPORTANT** Never expose your Integration API
-> [application](/concepts/applications/) credentials to an untrusted
-> device or application, such as end user's browser or mobile app.
+<warning>
+
+Never expose your Integration API [application](/concepts/applications/)
+credentials to an untrusted device or application, such as end user's
+browser or mobile app.
+
+</warning>
 
 The Integration API is well suited for building the following types of
 applications:

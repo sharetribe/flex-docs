@@ -10,26 +10,17 @@ published: true
 ## Where to find copy-texts
 
 One of the biggest mandatory tasks for a customization project is to
-change the UI texts. FTW-daily is a rental marketplace for saunas - so,
-there are quite many components and pages that need to change the
-copy-texts.
+change the UI texts. Biketribe is a rental and sales marketplace for
+bikes - so, there are quite many components and pages where you will
+need to change the copy-texts.
 
 The easiest way to modify the copy texts is through Flex Console, in
-Build > Content. This page helps you modify what in Flex is known as
-_microcopy_ – button labels, help texts, and other small messages that
-help your user find their way around the marketplace.
+Build > Content > Microcopy editor. This page helps you modify what in
+Flex is known as _microcopy_ – button labels, help texts, and other
+small messages that help your user find their way around the
+marketplace.
 
 ![Modify marketplace texts](./microcopy_start.png)
-
-_**Note:** Hosted assets are available in Flex and the FTW templates
-starting from version v8.5. If you have an earlier version and want to
-implement the feature in your template, you can see the necessary
-modifications in the PR for
-[ftw-daily](https://github.com/sharetribe/ftw-daily/pull/1510)._
-
-<extrainfo title="FTW-hourly and FTW-product versions with hosted microcopy">
-In FTW-hourly, hosted microcopy is available in v10.5. In FTW-product, it is available in v9.2.
-</extrainfo>
 
 When you first start building your marketplace, the JSON field in the
 Microcopy section is empty, and all microcopy comes from built-in
@@ -38,14 +29,14 @@ but in the template they are in the _translations_ folder. In addition
 to the default _en.json_ file, there are other languages available,
 which is why the folder is titled _translations_.)
 
-In the Microcopy section, you can see links that lead to the microcopy
-folders for each FTW template repository, if you want to
+In the Microcopy section, you can see a link that leads to the microcopy
+folders for the Sharetribe Web Template repository, if you want to
 [copy the relevant microcopy to Flex Console](/concepts/microcopy/#how-microcopy-are-handled-in-flex).
 In this tutorial, we will not copy the full texts – instead, we will
 enter only the microcopy we want to modify.
 
-The built-in default microcopy for the FTW template can be found in this
-_en.json_ file:
+The built-in default microcopy for the Sharetribe Web Template can be
+found in this _en.json_ file:
 
 ```shell
 └── src
@@ -65,8 +56,8 @@ another document that dives deeper into this topic:
 
 ## Change the microcopy for Topbar component
 
-The content of microcopy file has a format, where the "key" contains a
-dot notation:<br />
+The content of the microcopy file has a format, where the "key" contains
+a dot notation:<br />
 _`"<ComponentName>.<microcopyKey>": "<microcopyMessage>"`_
 
 So, there are a couple of ways to find the correct microcopy key for UI
@@ -84,8 +75,8 @@ Developer Tools**.<br /> Here's a link to
 
 In the screenshot, the highlighted text (listing creation link) comes
 from a component called **FormattedMessage**. This is a component from
-[React Intl](https://github.com/formatjs/react-intl) library which FTW
-templates use to embed microcopy messages to correct microcopy keys. If
+[React Intl](https://github.com/formatjs/react-intl) library which the
+template uses to embed microcopy messages to correct microcopy keys. If
 you check the **props** section on the _Components_ tab of Web Inspector
 (when React Developer Tools is installed), you see a row:
 `id: "TopbarDesktop.createListing"`.
@@ -116,17 +107,19 @@ on the search page:
 ![Topbar with updated microcopy](./updated_topbar_microcopy.png)
 
 To get more insight into microcopy syntax, different language files, and
-localization of dates and money values, you should check the article:
-[How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/).
+localization of dates and money values, you should check out the
+article:
+[How to change Sharetribe Web Template bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/).
 
-To learn more about how the hosted microcopy work in FTW templates, read
-the article on [hosted assets in FTW](/ftw/hosted-microcopy/).
+To learn more about how the hosted microcopy work in Sharetribe Web
+Template, read the article on
+[hosted assets in Sharetribe Web Template](/ftw/hosted-microcopy/).
 
 To read more about how microcopy can be modified in Flex Console, check
 out the article about [microcopy in Flex](/concepts/microcopy/).
 
 <br />
 
-In the next article, you learn how to configure FTW-daily and change the
-default currency.<br />
+In the next article, you learn how to configure the Sharetribe Web
+Template and change the default currency.<br />
 [› Go to the next article](/tutorial/configurations/)

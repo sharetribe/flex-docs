@@ -93,6 +93,6 @@ Read more:
 - Guide on creating
   [an FAQ page](/operator-guides/how-to-create-an-faq-page/)
 
-There is still one obvious Saunatime image visible on top bar: Logo.
+There is still one obvious Biketribe image visible on top bar: the logo.
 It's time to change that next.<br />
 [› Go to the next article](/tutorial/change-logo/)

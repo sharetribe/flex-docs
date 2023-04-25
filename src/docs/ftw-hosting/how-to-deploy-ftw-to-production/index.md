@@ -1,11 +1,11 @@
 ---
-title: How to deploy FTW to production
+title: Deploy to production
 slug: how-to-deploy-ftw-to-production
-updated: 2021-01-21
+updated: 2023-01-01
 category: ftw-hosting
 ingress:
-  This guide describes how to set up a production deployment for Flex
-  Template for Web (FTW).
+  This article describes what to take into account when you deploy the
+  Sharetribe Web Template to production.
 published: true
 ---
 
@@ -53,21 +53,21 @@ Read more:
 There are many hosting providers to choose from when considering where
 to host your marketplace. Our official recommendation is to host your
 marketplace on Heroku or Render for a hassle-free installation. However,
-you are free to host your marketplace elsewhere. Flex Templates for Web
-(FTW) should be compatible with any hosting provider as long as they
+you are free to host your marketplace elsewhere. The Sharetribe Web
+Template should be compatible with any hosting provider as long as they
 allow you to run a Node.js/Express server. Many essential functions in
-FTW rely on a small Node.js/Express server (such as server-side
+the template rely on a small Node.js/Express server (such as server-side
 rendering, SSO and transitioning privileged transactions). Serverless
-service providers such as Netlify and Vercel are unsuitable for FTW as
-they don't allow you to host a server.
+service providers such as Netlify and Vercel are unsuitable for hosting
+the template as they don't allow you to host a server.
 
 When choosing a hosting provider, you should not only consider the
 cheapest option. Scalability, tools, service-level agreements and
 available computing resources are examples of factors that should weigh
 in when choosing a hosting provider. It is also possible that hosting
 providers' prices and services may change over time, e.g.
-[Heroku is discontinuing](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/)
-its popular free tier on October 26th, 2022.
+[Heroku discontinued](https://techcrunch.com/2022/08/25/heroku-announces-plans-to-eliminate-free-plans-blaming-fraud-and-abuse/)
+its popular free tier in October 2022.
 
 As of the time of writing, [Render](https://www.render.com) and
 [Fly.io](https://fly.io) continue to provide a free tier, which you can
@@ -79,14 +79,18 @@ look into include [AWS](https://aws.amazon.com/),
 [Digital Ocean](https://www.digitalocean.com/) and
 [Microsoft Azure](https://azure.microsoft.com/). If your deployment
 solution requires using containers, you can refer to our guide on
-[running FTW in a Docker container](/ftw/run-ftw-with-docker/).
+[running the template in a Docker container](/ftw/run-ftw-with-docker/).
 
 ## Deploying to production
 
-> If you are looking to deploy your marketplace on either Heroku or
-> Render, please read our detailed deployment guides for both
-> [Heroku](/ftw/how-to-deploy-ftw-to-heroku/) and
-> [Render](/tutorial/deploy-to-render/#deploy-to-render).
+<info>
+
+If you are looking to deploy your marketplace on either Heroku or
+Render, please read our detailed deployment guides for both
+[Heroku](/ftw/how-to-deploy-ftw-to-heroku/) and
+[Render](/tutorial/deploy-to-render/#deploy-to-render).
+
+</info>
 
 Deploying your marketplace to production is a three-step process:
 
@@ -97,9 +101,9 @@ Deploying your marketplace to production is a three-step process:
 ### Environment variables
 
 For a full list of possible environment variables, see the
-[FTW Environment configuration variables](/ftw/ftw-env/) reference for
-more information. To deploy your marketplace, you need to add at least
-the following variables:
+[Environment configuration variables](/ftw/ftw-env/) reference for more
+information. To deploy your marketplace, you need to add at least the
+following variables:
 
 - **`NODE_ENV`**
 
@@ -133,19 +137,14 @@ If using Mapbox, you will need to define this environment variable. Sign
 up for Mapbox and go to the
 [account page](https://www.mapbox.com/account/access-tokens). Then click
 on `Create access token`. See the
-[How to set up Mapbox for FTW](/ftw/how-to-set-up-mapbox-for-ftw/) guide
-for more information.
+[How to set up Mapbox for Sharetribe Web Template](/ftw/how-to-set-up-mapbox-for-ftw/)
+guide for more information.
 
-- **`REACT_APP_CANONICAL_ROOT_URL`**
+- **`REACT_APP_MARKETPLACE_ROOT_URL`**
 
-This is the canonical root URL of the marketplace. For example:
-`https://the-name-of-your-app.herokuapp.com`. FTW uses the canonical
-root URL for social media sharing and SEO optimization.
-
-- **`REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY`**
-
-This is the currency your marketplace uses formatted in the Marketplace
-as ISO 4217 currency code. For example, USD, EUR, CAD, AUD, etc.
+This is the root URL of the marketplace. For example:
+`https://the-name-of-your-app.herokuapp.com`. The template uses the root
+URL for social media sharing and SEO optimization.
 
 ### Building the app
 
