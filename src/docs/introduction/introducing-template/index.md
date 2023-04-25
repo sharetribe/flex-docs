@@ -274,7 +274,8 @@ Learn more about
 Self-hosting the Template code base lets you customize the starting
 design as much as you want. Any custom design can be implemented on
 Flex. We offer downloadable design files to help you build your custom
-design. You can find the Sharetribe Web Template design files here.
+design. You can find the Sharetribe Web Template design files
+[here](https://github.com/sharetribe/design-resources).
 
 ## Customizing your own marketplace
 
