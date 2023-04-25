@@ -78,6 +78,8 @@ const VersionBanner = props => {
     const isOpenS = JSON.parse(localStorage.getItem('FLEX_DOCS_bannerIsOpen'));
     if (isOpenS) {
       setIsOpen(isOpenS);
+    } else if (isOpenS == null) {
+      setIsOpen(true);
     }
   }, []);
   useEffect(() => {
@@ -85,6 +87,7 @@ const VersionBanner = props => {
       localStorage.setItem('FLEX_DOCS_bannerIsOpen', JSON.stringify(isOpen));
     }
   }, [isOpen]);
+
   return (
     <div>
       <Banner isOpen={isOpen}>
