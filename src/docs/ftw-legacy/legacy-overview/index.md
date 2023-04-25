@@ -9,6 +9,8 @@ ingress:
 published: true
 ---
 
+##### [View the legacy documentation](https://www.sharetribe.com/docs/legacy/)
+
 ## Deprecated templates
 
 The Sharetribe Web Template replaces three separate templates that were

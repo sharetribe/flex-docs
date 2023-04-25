@@ -33,7 +33,7 @@ reading related concepts articles.
 
 Taking Stripe PaymentIntent flow into use is a big change for
 CheckoutPage and includes process change. You should carefully check
-what kind of changes are made in a legacy template release:
+what kind of changes are made in the legacy template release:
 [v3.0.0](https://github.com/sharetribe/flex-template-web/releases/tag/v3.0.0).
 Taking an update from upstream or even cherry-picking commits might make
 the update easier, but you should first track your custom-code to

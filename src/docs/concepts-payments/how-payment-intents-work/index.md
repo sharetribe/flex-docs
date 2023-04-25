@@ -296,7 +296,8 @@ you would use the `confirm-payment` transition for card payments and the
 
 The Sharetribe Web Template supports card payments with PaymentIntents
 by default. If you need to adjust the default implementation, or if
-you're currently using one of our legacy templates,
+you're currently using one of our
+[legacy templates](https://www.sharetribe.com/docs/ftw/legacy-templates/),
 [learn more about how to take PaymentIntents into use](/how-to/enable-payment-intents/).
 
 ## Further reading

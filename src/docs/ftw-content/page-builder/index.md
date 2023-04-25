@@ -23,7 +23,8 @@ templates in the release notes of
 [version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0).
 
 You can find instructions on adding the Pages capability into your
-legacy template [in our legacy documentation]().
+legacy template
+[in our legacy documentation](https://www.sharetribe.com/docs/ftw/legacy-templates/).
 
 </extrainfo>
 
@@ -35,9 +36,10 @@ have on your website would be an “About us” page, a “Frequently asked
 questions” page or a “Terms of Service” page. These pages have long
 sections of written text that might include images, links and videos.
 
-In older versions of our legacy templates, the data on these content
-pages was hard-coded into the corresponding page file. For instance, the
-content of the About Page was
+In older versions of our
+[legacy templates](https://www.sharetribe.com/docs/ftw/legacy-templates/),
+the data on these content pages was hard-coded into the corresponding
+page file. For instance, the content of the About Page was
 [written directly into the code](https://github.com/sharetribe/ftw-daily/blob/7a2f9b0557607533097761c063f7f98d7c8bfc1a/src/containers/AboutPage/AboutPage.js)
 on the AboutPage.js file. Changes to the content required editing the
 code and redeploying the client application. This required content
@@ -113,10 +115,11 @@ about page, it triggers the loadData function specified in
    },
 ```
 
-In legacy templates, no loadData function was defined for the privacy
-policy path, as the page's content was hard coded. Now, as the content
-of the page is fetched using an API call, a loadData function is
-specified in
+In
+[legacy templates](https://www.sharetribe.com/docs/ftw/legacy-templates/),
+no loadData function was defined for the privacy policy path, as the
+page's content was hard coded. Now, as the content of the page is
+fetched using an API call, a loadData function is specified in
 [PrivacyPolicyPage.duck.js](https://github.com/sharetribe/web-template/blob/main/src/containers/PrivacyPolicyPage/PrivacyPolicyPage.duck.js):
 
 ```js
@@ -303,8 +306,9 @@ containers/PrivacyPolicyPage/FallbackPage.js:
             └── FallbackPage.js
 ```
 
-## How to take Pages into use if you are using an older version of FTW
+## How to take Pages into use if you are using a legacy temlate
 
 All Sharetribe Web Template versions support Pages. If you want to add
-Pages capabilities to an older FTW template that does not support Pages,
-you can review [the instructions in our legacy documentation]().
+Pages capabilities to an older template that does not support Pages, you
+can review
+[the instructions in our legacy documentation](https://www.sharetribe.com/docs/legacy/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).

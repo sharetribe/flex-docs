@@ -16,6 +16,8 @@ services, products, or something else. It offers basic marketplace
 functionalities out of the box so that you can focus on developing
 custom features.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dHe8_z4FAEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Development starting point
 
 The Sharetribe Web Template lets you build a custom marketplace fast.
@@ -154,7 +156,6 @@ the customer can use during search and booking.
 
 ![accept-request-booking-seller](./accept-request-booking-seller.png)
 
-
 ### Product default process
 
 You can also configure the Sharetribe Web Template to become a
@@ -236,7 +237,6 @@ Sellers can revisit the modal from their account settings at any point
 if they need to edit their information (such as a change of address) or
 provide more information to be in compliance.
 
-
 ![seller-onboarding-stripe-2](./seller-onboarding-stripe-2.png)
 
 Learn more about
@@ -281,7 +281,7 @@ design. You can find the Sharetribe Web Template design files here.
 The first step to take the Sharetribe Web Template into use is
 downloading the codebase and installing the necessary development tools.
 Then, check out our tutorial where you modify Biketribe’s visual and
-functional settings to create an entirely new marketplace. 
+functional settings to create an entirely new marketplace.
 
 Follow our
 [getting started guide](/introduction/getting-started-with-web-template/)
@@ -289,10 +289,10 @@ for installation instructions and tutorial next steps. If you prefer to
 code your own features right away, don’t hesitate to use
 [our documentation](https://www.sharetribe.com/docs/) or contact
 [our support team](mailto:flex-support@sharetribe.com) by email for
-help. 
+help.
 
-If you are not a developer, then you will need to hire a developer
-to take Flex into use. We recommend finding a vetted developer from
+If you are not a developer, then you will need to hire a developer to
+take Flex into use. We recommend finding a vetted developer from
 Sharetribe’s
 [Expert Partner Network](https://www.sharetribe.com/experts/). As a next
 step, learn more about how to
