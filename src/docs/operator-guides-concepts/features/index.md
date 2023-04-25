@@ -396,10 +396,10 @@ can decide fully things like which fonts and colors to use, what kind of
 pages or views there should be, and how those should be laid out. There
 are no limits to what you can do in terms of visual design.
 
-It's easy for you to get started with the design, since the beautiful
-[Sharetribe Web Template](/introduction/getting-started-with-web-template/)
-offers an ideal starting point. The template is fully responsive so it
-looks great both on desktop and mobile devices.
+It's easy for you to get started with the design by leveraging the
+[Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template)
+The template is fully responsive so they look great both on desktop and
+mobile devices.
 
 Your users won't see Sharetribe mentioned anywhere. The web address is
 your own domain, the email notifications get sent from your email

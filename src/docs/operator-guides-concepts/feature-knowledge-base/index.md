@@ -38,7 +38,7 @@ have in mind for your marketplace.
 The first step to hiring a developer to build your marketplace is to
 make them understand what you would like to build. With Flex, the
 fastest way to do this is by describing changes you would like to
-implement on top of the starting development templates. We recommend
+implement on top of the starting development template. We recommend
 using the user journey framework to communicate these changes, creating
 flowcharts depicting steps users like buyers or sellers take to achieve
 a particular goal. We share some tips on how to prepare Flex user
