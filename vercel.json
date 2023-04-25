@@ -2,7 +2,7 @@
     "rewrites": [
     {
       "source": "/legacy/:match(.*)",
-      "destination": "https://legacy-docs-git-legacy-docs-sharetribe.vercel.app/:match"
+      "destination": "https://legacy-docs-ruby.vercel.app/:match"
     }
   ],
   "redirects":
