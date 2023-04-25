@@ -44,17 +44,16 @@ version of your marketplace frontend.
 At the same time, you have a Dev version of your marketplace frontend
 where code changes are being deployed. Once these code changes are
 completed, they should be used to update the Test version of your
-marketplace. This keeps your Test version, which you are modifying with
+marketplace. This keeps your Test marketplace, which you are modifying with
 no-code tools, up-to-date with the latest code-customized version of
-your marketplace (the Dev version).
+your marketplace (the Dev marketplace).
 
 When you are ready to go live, you will procure a Live environment and
 create a Live version of your marketplace. The Live version contains
 both the latest (working) code changes and the latest no-code changes.
 Code changes continue to be developed in the Dev version, then deployed
-to the Test and Live versions when ready. No code changes via Console
-are made in the Test environment, to the Test version, then copied to
-the Live version when ready.
+to the Test and Live versions when ready. You make no code changes via Console in the Test environment and preview them in the Test marketplace. Once you're happy with them, you copy them to your Live marketplace by clicking the 'Copy to live...' button. 
+
 
 Setting up your Dev (and Live) marketplace is a technical task requiring
 development help. Developers can consult
