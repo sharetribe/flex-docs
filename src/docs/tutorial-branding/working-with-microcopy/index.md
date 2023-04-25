@@ -52,7 +52,7 @@ modified similarly to
 
 In this tutorial, we change the microcopy of Hero component, but we have
 another document that dives deeper into this topic:
-[How to change FTW bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/)
+[How to change bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/)
 
 ## Change the microcopy for Topbar component
 

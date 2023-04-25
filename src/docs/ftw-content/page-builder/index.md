@@ -282,10 +282,10 @@ supports a single Block type.
 
 As the content of the page is retrieved over a network connection, it is
 important to prepare for a scenario where data is unavailable due to
-e.g. a network issue. FTW uses fallback data if loading the Page Asset
-Data through the Asset Delivery API fails. Fallback pages are specified
-for page-level components and are included out of the box for the
-Landing page, Terms of Service page and Privacy Policy page.
+e.g. a network issue. The template uses fallback data if loading the
+Page Asset Data through the Asset Delivery API fails. Fallback pages are
+specified for page-level components and are included out of the box for
+the Landing page, Terms of Service page and Privacy Policy page.
 
 A fallback page is constructed similarly to how a dynamic content page
 is. It uses the PageBuilder component, but instead of dynamically
