@@ -33,7 +33,7 @@ trap cleanup EXIT
 echo "Move files from public/ to $WORK_DIR"
 mv public/* "$WORK_DIR"
 
-echo "Create public/docs directory"
+echo "Create public/docs directory" 
 mkdir public/docs
 
 echo "Move files from $WORK_DIR to public/docs"
