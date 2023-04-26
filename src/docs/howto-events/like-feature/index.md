@@ -405,7 +405,8 @@ We need to initialise the props that are connected to the Redux store:
 
 ###### Step 9: Update ListingPageComponent propTypes
 
-FTW uses _propTypes_ to validate that the data we receive is valid:
+The template uses _propTypes_ to validate that the data we receive is
+valid:
 
 ```diff
   lineItems: array,

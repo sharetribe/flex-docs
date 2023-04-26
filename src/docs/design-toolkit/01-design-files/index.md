@@ -4,8 +4,8 @@ slug: design-files
 updated: 2020-10-05
 category: design-toolkit
 ingress:
-  Wireframes and complete design files in mobile and desktop layout for
-  Sharetribe Web Template.
+  The complete design files in mobile and desktop layout for Sharetribe
+  Web Template.
 published: true
 ---
 
@@ -13,26 +13,17 @@ published: true
 
 The Sharetribe Web Template designs are available as Sketch files. The
 design files include complete designs for the template desktop and
-mobile views, as well as wireframes for the template desktop. You can
-use these files as the basis for your own designs. This approach can
-dramatically speed up the design process, and it offers an easy starting
-point for the developers.
-
-## Wireframes
-
-Wireframes are an excellent tool to design your marketplace at the
-structural level. They are most often used to arrange content and
-functionality and establish the basic structure of a page before moving
-on to designing visual elements. Wireframes for our desktop layout are
-available as Sketch files below.
+mobile views. You can use these files as the basis for your own designs.
+This approach can dramatically speed up the design process, and it
+offers an easy starting point for the developers.
 
 ## Design files
 
 The template is provided in desktop and mobile layouts. The designs are
 provided as .sketch files, which can be opened using the
 [Sketch vector graphics editor](https://www.sketch.com/). Some other
-design tools such as Adobe XD and Photoshop also offer support for
-designs in the .sketch file format.
+design tools such as Adobe XD also offer support for designs in the
+.sketch file format.
 
 Once you have the design files installed, you can start working on
 customizing the design to match the visual identity of your marketplace.
