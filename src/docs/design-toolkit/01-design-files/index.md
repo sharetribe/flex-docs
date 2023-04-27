@@ -1,52 +1,43 @@
 ---
 title: Design files
 slug: design-files
-updated: 2020-10-05
+updated: 2023-27-04
 category: design-toolkit
 ingress:
   The complete design files in mobile and desktop layout for Sharetribe
-  Web Template.
+  Web Template
 published: true
 ---
 
 ![Template in Sketch](./template-sketch.png)
 
+##### [Download the design files here](https://github.com/sharetribe/design-resources)
+
 The Sharetribe Web Template designs are available as Sketch files. The
-design files include complete designs for the template desktop and
-mobile views. You can use these files as the basis for your own designs.
-This approach can dramatically speed up the design process, and it
-offers an easy starting point for the developers.
+files include the complete designs for the template in desktop and
+mobile views, allowing you to visualize and better understand how the
+various components fit together. These files are the starting point for
+your custom marketplace design and using them can dramatically speed up
+your design process.
 
 ## Design files
 
-The template is provided in desktop and mobile layouts. The designs are
-provided as .sketch files, which can be opened using the
-[Sketch vector graphics editor](https://www.sketch.com/). Some other
-design tools such as Adobe XD also offer support for designs in the
-.sketch file format.
+Access the design resources in our
+[GitHub Repository](https://github.com/sharetribe/design-resources). The
+design files are under the
+[Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
+You will also need to download the Inter font, which you can download
+through [Google Fonts](https://fonts.google.com/specimen/Inter). We
+offer the design files as .sketch files, which you can open using Sketch
+and some other digital design tools, such as Adobe XD or Figma.
 
 Once you have the design files installed, you can start working on
 customizing the design to match the visual identity of your marketplace.
-Not only should you concentrate on how your marketplace should look
-like, but also on what kind of user interfaces are required for your
-users to interact with each other.
+Not only should you concentrate on how your marketplace should look but
+also on what kind of user interfaces are required for your users to
+interact with each other.
 
-If you don't want to do the design work yourself, you can always hire a
-designer to do it for you. If you don't know any designers,
-[contact Sharetribe support](mailto:flex-support@sharetribe.com) and
-we'll connect you to a designer who can help you out.
-
-## Assets
-
-Access the design resources in our
-[GitHub Repository](https://github.com/sharetribe/design-resources).
-
-The design files can be used according to
-[Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
-The files can also be opened with Adobe XD and Figma. The font used is
-Poppins, which can be downloaded through
-[Adobe Fonts](https://fonts.adobe.com/fonts/poppins) or through
-[Google Fonts](https://fonts.google.com/specimen/Poppins).
-
-We are glad to receive ideas and improvements at
-[flex-support@sharetribe.com](mailto:flex-support@sharetribe.com).
+If you do not want to do the design work yourself, you can always hire a
+designer to do it for you. If you don't know any designers, contact
+Sharetribe support, and we'll connect you to a designer who can help
+you.
