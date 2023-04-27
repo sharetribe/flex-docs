@@ -5,7 +5,7 @@ const { createIdToken } = require('../../api-util/idToken');
 
 const radix = 10;
 const PORT = parseInt(process.env.REACT_APP_DEV_API_SERVER_PORT, radix);
-const rootUrl = process.env.REACT_APP_CANONICAL_ROOT_URL;
+const rootUrl = process.env.REACT_APP_MARKETPLACE_ROOT_URL;
 const clientID = process.env.REACT_APP_LINKEDIN_CLIENT_ID;
 const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
 
