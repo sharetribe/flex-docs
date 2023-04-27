@@ -169,9 +169,9 @@ You then need to add the following environment variables:
   The currency used in the Marketplace is formatted in the ISO 4217
   currency code. For example USD, EUR, CAD, AUD, etc.
 
-- `REACT_APP_CANONICAL_ROOT_URL`
+- `REACT_APP_MARKETPLACE_ROOT_URL`
 
-  Canonical root URL of the marketplace. Remove trailing slash from the
+  This is the root URL of the marketplace. Remove trailing slash from the
   domain.<br />E.g. _`https://<the-name-of-your-app>.onrender.com`_
 
 - `NODE_ENV`
