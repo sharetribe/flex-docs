@@ -28,8 +28,9 @@ design files are under the
 [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
 You will also need to download the Inter font, which you can download
 through [Google Fonts](https://fonts.google.com/specimen/Inter). We
-offer the design files as .sketch files, which you can open using Sketch
-and some other digital design tools, such as Adobe XD or Figma.
+offer the design files as .sketch files, which you can open using
+[Sketch](https://www.sketch.com/) and some other digital design tools,
+such as Adobe XD or Figma.
 
 Once you have the design files installed, you can start working on
 customizing the design to match the visual identity of your marketplace.
