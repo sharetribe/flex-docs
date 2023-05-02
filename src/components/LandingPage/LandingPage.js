@@ -203,7 +203,7 @@ const LandingPage = props => {
               <SectionLink to="/introduction/introducing-flex/">
                 <UiText id="LandingPage.introduction.introductionFlex" />
               </SectionLink>
-              <SectionLink to="/introduction/getting-started-with-ftw-daily/">
+              <SectionLink to="/introduction/getting-started-with-web-template/">
                 <UiText id="LandingPage.introduction.gettingStarted" />
               </SectionLink>
             </SectionLinks>
