@@ -146,8 +146,8 @@ start times as it takes to fit a buffered hour before the final end
 time.
 
 ```diff
-export const getStartHours = (intl, timeZone, startTime, endTime) => {
-  const hours = getSharpHours(intl, timeZone, startTime, endTime);
+export const getStartHours = (startTime, endTime, timeZone, intl) => {
+  const hours = getSharpHours(startTime, endTime, timeZone, intl);
 - return hours.length < 2 ? hours : hours.slice(0, -1);
 + const removeCount = Math.ceil((hourMinutes + bufferMinutes) / hourMinutes);
 + return hours.length < removeCount ? [] : hours.slice(0, -removeCount);
@@ -408,10 +408,10 @@ divide the full booking time by _bufferMinutes_ to get the correct
 _removeCount_ value.
 
 ```diff
-export const getStartHours = (intl, timeZone, startTime, endTime) => {
-- const hours = getSharpHours(intl, timeZone, startTime, endTime);
+export const getStartHours = (startTime, endTime, timeZone, intl) => {
+- const hours = getSharpHours(startTime, endTime, timeZone, intl);
 - const removeCount = Math.ceil((hourMinutes + bufferMinutes) / hourMinutes)
-+ const hours = getSharpHours(intl, timeZone, startTime, endTime, true);
++ const hours = getSharpHours(startTime, endTime, timeZone, intl, true);
 + const removeCount = Math.ceil((hourMinutes + bufferMinutes) / bufferMinutes)
   return hours.length < removeCount ? [] : hours.slice(0, -removeCount);
 };
@@ -423,9 +423,9 @@ it. Instead, we can just return the full list from _getSharpHours_.
 
 ```diff
   export const getEndHours = (intl, timeZone, startTime, endTime) => {
--   const hours = getSharpHours(intl, timeZone, startTime, endTime);
+-   const hours = getSharpHours(startTime, endTime, timeZone, intl);
 -   return hours.length < 2 ? [] : hours.slice(1);
-+   return getSharpHours(intl, timeZone, startTime, endTime);
++   return getSharpHours(startTime, endTime, timeZone, intl);
   };
 ```
 
