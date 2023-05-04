@@ -108,9 +108,8 @@ content. A listing will be included in the results, in case any of the
 keywords match.
 
 In order to take the keyword search into use in the Sharetribe Web
-Template, see the how-to guides on
-[adding keyword search to the top bar](/how-to/use-keyword-search-in-topbar/)
-and [modifying filters](/how-to/change-search-filters-in-ftw/).
+Template, you need to
+[change the configuration files](/ftw/configuration/#search-configuration).
 
 ## Location search
 

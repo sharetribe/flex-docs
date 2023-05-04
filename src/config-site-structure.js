@@ -32,7 +32,6 @@ const sortingArrayTutorialBranding = [
   'working-with-microcopy',
   'configurations',
   'change-default-locations',
-  'implement-amenities-filter',
   'modify-listing-extended-data',
   'deploy-to-render',
 ];

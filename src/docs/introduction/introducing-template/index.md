@@ -91,7 +91,7 @@ code.
 ![create-listing-per-day-availability](./create-listing-per-day-availability.png)
 
 Read more about
-[availability management in Flex](/docs/references/availability/).
+[availability management in Flex](/references/availability/).
 
 ### Inventory management
 

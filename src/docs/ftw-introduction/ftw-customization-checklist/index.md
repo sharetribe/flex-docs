@@ -23,7 +23,7 @@ marketplace’s brand and style, follow these steps:
 - Apply your branding by
   [changing the default images and marketplace colours](/tutorial/first-edit/)
 - Change the
-  [default background image and social media images](/tutorial/change-image-assets/)
+  [default background image and social media images](/tutorial/change-images/)
 - [Change the logo](/tutorial/change-logo/)
 - [Generate a new favicon](/ftw/how-to-change-ftw-icons/)
 - Learn more about the
@@ -78,8 +78,6 @@ other changes you may want to make. Some of these options include:
 - Update your transaction process
 - Create new static pages
 - Update the routing in your marketplace
-- Update [page schema](/tutorial/add-faq-page/#page-schema) to improve
-  Search Engine Optimization (SEO)
 - Update
   [listing extended data](/tutorial/modify-listing-extended-data/)
 - Update transaction email templates. For more information, see
