@@ -1,6 +1,6 @@
 ---
-title: Marketplace images, definition, and explanation
-slug: marketplace-images-definition-and-explanation
+title: Introduction to marketplace images
+slug: introduction-to-marketplace-images
 updated: 2023-04-19
 category: operator-guides-branding
 ingress:
@@ -65,4 +65,4 @@ another social media service.
 For the best result, your social media image should exactly be 1200x600
 pixels. If you upload a bigger image, then the social media platform may
 crop it, potentially leaving out certain information, such as the
-marketplace name or slogan. 
+marketplace name or slogan.
