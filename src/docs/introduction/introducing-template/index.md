@@ -91,7 +91,7 @@ code.
 ![create-listing-per-day-availability](./create-listing-per-day-availability.png)
 
 Read more about
-[availability management in Flex](/docs/references/availability/).
+[availability management in Flex](/references/availability/).
 
 ### Inventory management
 
@@ -108,7 +108,7 @@ automatically go to zero. Listings with zero stock are filtered out by
 default, and do not appear in search.
 
 Read more about
-[inventory management in Flex](/concepts/inventory-management).
+[inventory management in Flex](/concepts/inventory-management/).
 
 ## Search
 

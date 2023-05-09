@@ -397,7 +397,7 @@ pages or views there should be, and how those should be laid out. There
 are no limits to what you can do in terms of visual design.
 
 It's easy for you to get started with the design by leveraging the
-[Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template)
+[Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template/)
 The template is fully responsive so they look great both on desktop and
 mobile devices.
 

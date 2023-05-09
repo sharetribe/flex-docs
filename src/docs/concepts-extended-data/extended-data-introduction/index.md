@@ -14,7 +14,7 @@ This article explains the basics of extended data. If you want to get
 technical instead, check out the
 [Extended data API Reference](/references/extended-data/) or learn how
 to add extended data in
-[part two of the Flex tutorial](/tutorial/add-extended-data/).
+[the extended data tutorial](/tutorial/modify-listing-extended-data/).
 
 ## Why extended data?
 

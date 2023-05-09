@@ -185,7 +185,7 @@ configuration function:
 
 Finally, add the necessary microcopy rows into either
 src/translations/en.json or the
-[Flex Console microcopy editor](/concepts/microcopy).
+[Flex Console microcopy editor](/concepts/microcopy/).
 
 ```shell
 └── src

@@ -60,7 +60,7 @@ In the Home section, you find information about working with Flex. You
 can find links to various resources that will help you understand, test,
 and build your custom marketplace. These include:
 
-- Links to your fully functional test marketplace called Saunatime,
+- Links to your fully functional test marketplace called Biketribe,
   where you can get an idea of how Flex works.
 - Instructions on how to set up your local Flex instance and links to
   the Flex documentation and API reference, all of which you will need

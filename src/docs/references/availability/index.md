@@ -103,9 +103,7 @@ availability plans can specify one or more time intervals for each day
 of the week, and specify the time zone in which these times should be
 interpreted. For instance, with time-based availability it is possible
 to define that the listing is available on weekdays from 9 AM to 11AM
-and from 1 PM to 6 PM. More information on how to set a time-based
-availability plan for a listing can be found in the
-[time-based bookings how-to guide](/how-to/enable-time-based-bookings-into-use/).
+and from 1 PM to 6 PM.
 
 ### Timeslots, availability plans and exceptions
 

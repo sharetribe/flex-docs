@@ -7,7 +7,7 @@ ingress: Change the look of your landing page
 published: true
 ---
 
-The default landing page for the Saunatime template shows generic
+The default landing page for the Biketribe template shows generic
 instructions and images for building a successful landing page. In this
 tutorial, you will learn to modify the **hosted assets** on your landing
 page.

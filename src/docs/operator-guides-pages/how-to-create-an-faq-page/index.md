@@ -146,11 +146,11 @@ one column of text and an image in the background.
 
 We’ll need a title for the page, as well as a description. This is what
 users will read first when entering the FAQ page, so let’s make it
-descriptive. We’ll have the title be “Saunatime FAQ”, referring to the
+descriptive. We’ll have the title be Biketribe FAQ”, referring to the
 name of the marketplace, set the title as “Section title (H1)” and have
 the ingress content be “Here you can find answers to the most common
-questions about Saunatime”. Let’s not add a call to action; we’ll use
-one in a later Section, though.
+questions about Biketribe. Let’s not add a call to action; we’ll use one
+in a later Section, though.
 
 When it comes to the background, we’ll set up a background image. That
 means that for ‘Section appearance’, we will select ‘Custom’, we’ll
