@@ -114,7 +114,7 @@ and operations, so you can integrate a vast range of services to your
 marketplace behind the scenes. To read more about the capabilities of
 the Integration API, visit the
 [API reference documentation](/concepts/api/). You can also read more
-about [integrations in Flex](/concepts/integrations-introduction).
+about [integrations in Flex](/concepts/integrations-introduction/).
 
 ### Flex CLI
 

@@ -34,7 +34,7 @@ a headless architecture, this portion is built and hosted separately
 from the marketplace backend. Frontend applications can also be referred
 to as client applications.
 
-[The Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template)
+[The Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template/)
 is the most common way to build a marketplace frontend with Flex. You
 may build your frontend completely from scratch too.
 

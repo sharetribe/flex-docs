@@ -38,7 +38,7 @@ and Sentry in
 
 By default, Sentry fetches the source maps for minified javascript
 files. However, that might not work if authentication, such as
-[basic access authentication](/tutorial/deploy-to-render#enable-http-basic-access-authentication),
+[basic access authentication](/tutorial/deploy-to-render/#enable-http-basic-access-authentication),
 is enabled. If you want to enable logging to Sentry while having basic
 access authentication enabled, you can pass Sentry a security token.
 Sentry then adds this token to the source maps request header, which
