@@ -1,11 +1,11 @@
 ---
-title: Tutorial introduction
+title: Introduction
 slug: introduction
-updated: 2024-04-09
+updated: 2023-04-09
 category: tutorial
 ingress:
-  In the tutorial, you will learn how to build a self-hosted marketplace
-  using the Sharetribe Web Template
+  Over the course of the tutorial, you will learn how to build a
+  self-hosted marketplace using the Sharetribe Web Template
 published: true
 ---
 
@@ -16,6 +16,8 @@ development using the Sharetribe Web Template. Before you begin, we
 recommend you complete the non-technical tutorial **[TODO: Link to
 introduction of the non-technical tutorial]** to see what you can
 achieve using the no-code UIs in Console.
+
+## What is a self-hosted marketplace?
 
 ## What are we building?
 
