@@ -13,9 +13,11 @@ published: true
 
 Scaling is an important question when thinking about the long term future of your marketplace. You'll want a platform that not only has the features that you need, but one that also smoothly grows with you as your platform becomes more popular and successful. Sharetribe Flex offers the infrastructure, performance, and tools to create your custom marketplace fast and scale it as far as you can.
 
+
 ## Technical scalability
 
 Flex is built to scale with your marketplace's growing technical demands. As you build, launch, and grow your marketplace, your technical needs will evolve: You will need to store more and more data, make sure that data is always secure and available, and continue to build out your platform's user experience. Flex's software architecture and backend services are built to help you meet these challenges.
+
 
 ### Frontend flexibility
 
@@ -25,18 +27,14 @@ With Flex, you build, own, and host the front end code of the marketplace. This 
 
 The number of options is vast. Need more advanced shipping options for your international sneaker marketplace? Find a third party solution that suits your needs, and integrate it to your marketplace! Need file sharing services for your vendors who are selling digital art? Sure thing! Want to give an easy way for your marketplace users to communicate with you via a chat widget? You bet it's possible. One marketplace running on Flex, the [car sharing marketplace Drive Lah](https://www.sharetribe.com/customers/drive-lah/), even integrated a tool for being able to unlock cars remotely. You can read more about Flex integration tools along with some examples [over here](https://www.sharetribe.com/docs/concepts/integrations-introduction/).
 
-
 The frontend of your marketplace is powered by the backend, which is operated by the Sharetribe team. We keep your marketplace secure and available at any scale.
+
 
 ### Backend security and performance
 
 Sharetribe's primary service is to create, store, secure, and make available at scale your Flex marketplace data. Flex backends run on server infrastructure provided by Amazon Web Services (AWS), so your data is stored on [high grade security data centers](https://aws.amazon.com/compliance/data-center/controls/?nc1=h_ls). Within Sharetribe, access to the data is limited to only systems or personnel that need to access it for their work, and with the least privileges principle. This means that access to data is denied by default and given only to those for whom it is required. If you would like to learn more about our data security infrastructure and practices, [please contact us](mailto:hello@sharetribe.com) for our Data Security Overview.
 
-
-
-[With regard to performance, it is important that your marketplace is reliably available whenever your users want to use it. We have backup systems and internal processes to ensure that Flex stays online no matter the situation, which has resulted in a historical uptime of 99.99+%. You can always track and subscribe to Flex uptime updates via [a publicly available page](https://status.sharetribe.com/uptime).
-
-
+With regard to performance, it is important that your marketplace is reliably available whenever your users want to use it. We have backup systems and internal processes to ensure that Flex stays online no matter the situation, which has resulted in a historical uptime of 99.99+%. You can always track and subscribe to Flex uptime updates via [a publicly available page](https://status.sharetribe.com/uptime).
 
 However, uptime is only one aspect of performance: you want to be sure that the marketplace performs well even under load. This was the case with the private pool rental marketplace [Swimmy](https://www.sharetribe.com/customers/swimmy/), which grew strongly during its very first years, especially around the summer. The Flex backend doesn't struggle even with a significant surge of users or listings: Swimmy has since grown to tens of thousands of users, and manages to work well under load without issue. The marketplace mentioned in the previous section, [Drive Lah](https://www.sharetribe.com/customers/drive-lah/), has grown even bigger - beyond 200.000 users.
 
@@ -44,7 +42,6 @@ However, uptime is only one aspect of performance: you want to be sure that the 
 ## Business scalability
 
 When choosing a marketplace platform, technical performance is not the only aspect of scaling you need to consider: you should also think about how the solution can accommodate the evolving needs of your users. It is always disruptive to move to a new platform if you already have an established online marketplace somewhere, so it is best to choose a solution you will be happy with in the long run. Some things you should think about are future software updates, the support you can get when you run into different questions, and data/code ownership.
-
 
 
 ### Building with Flex
