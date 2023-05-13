@@ -2,9 +2,8 @@
 title: Can I trust that Flex scales to my needs?
 slug: can-i-trust-that-flex-scales-to-my-needs
 updated: 2023-05-13
-category: operator-guides
-ingress:
-  Finding out how your marketplace can scale on Sharetribe Flex
+category: operator-guides-concepts
+ingress: Finding out how your marketplace can scale on Sharetribe Flex
 published: true
 ---
 
