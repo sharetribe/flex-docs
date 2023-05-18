@@ -22,10 +22,10 @@ here.
 
 Your marketplace logo is shown on your marketplace Top bar. For the best
 result, we recommend using a file with a height of 48 pixels and a width
-of 48–370 pixels. Check this article if you want to know more about the
-logo measurements (Link to the other article).
+of 48–370 pixels.
+[Learn more about the logo measurements](https://sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 
-![logo](./logo.png)
+![biketribe-logo](./logo.png)
 
 ## Favicon
 
@@ -34,7 +34,7 @@ icon, you can use this icon as your favicon. It’s also known as the tab
 icon. For your favicon image, use a square image in dimension 48x48
 pixels or bigger. Here’s an example of a marketplace favicon:
 
-![favicon](./favicon.png)
+![biketribe-favicon](./favicon.png)
 
 ## Background image for login/signup page
 
@@ -44,25 +44,30 @@ pages related to user authentication, including Password Recovery,
 Password Reset, and Email Verification.
 
 The image should be appealing and give users a glimpse into your
-marketplace, what they should look forward to, and the kind of quality
-to expect when they make a listing. It should have a 2:1 aspect ratio
-and a minimum size of 1200x600 pixels. The background image for the
-login pages can be a maximum of 2400px wide. Here’s an example of a
-background image:
+marketplace, what they should look forward to. It is a great way to give
+another good impression to new users. Don't be scared to use a
+significant image, or even a full color block (saved as an image) if it
+suits your brand. It should have a 2:1 aspect ratio and a minimum size
+of 1200x600 pixels. The background image for the login pages can be a
+maximum of 2400px wide. Here’s an example of how the background image
+would look in the signup page:
 
 ![background image](./background-image.png)
 
 ## Social media images
 
-When you or someone shares a link to your marketplace on social media,
-you want the people engaging with that tweet, LinkedIn, or Facebook post
-to quickly understand your marketplace.
-
 The social media image is shown on the social media card when someone
 shares your marketplace in a post on Facebook, Twitter, LinkedIn, or
-another social media service.
+another social media service. An engaging image might help people decide
+to engage with your brand.
 
-For the best result, your social media image should exactly be 1200x600
+![biketribe-social-image-facebook](./biketribe-social-facebook.png)
+
+For the best result, your social media image should be around 1200x600
 pixels. If you upload a bigger image, then the social media platform may
-crop it, potentially leaving out certain information, such as the
-marketplace name or slogan.
+crop it, potentially leaving out certain information or an important
+image, such as the marketplace name or slogan.
+
+Here is the original image that was displayed above:
+
+![biketribe-social](./biketribe-social.png)

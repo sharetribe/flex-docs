@@ -1,7 +1,7 @@
 ---
 title: How to set your marketplace commission
 slug: how-to-set-your-marketplace-commission
-updated: 2023-04-20
+updated: 2023-05-19
 category: operator-guides-transactions
 ingress:
   You can set a commission for your marketplace. Commissions are the
@@ -10,17 +10,17 @@ ingress:
 published: true
 ---
 
-To set your marketplace commission, go to **Build**. On the page, click
-on the **Content** tab, and select **Commission**. On this page, input
-your **Provider Commission (%)** and **Save Changes**.
+You can set your marketplace commission in
+[the Commission page of your Console account](https://flex-console.sharetribe.com/a/transactions/commission/).
+The commission that you set will always be a percentage of the
+transaction total.
 
 ### Example
 
 Let’s assume that you set a commission of 10% on your marketplace. If
 the seller lists the item for $100, and the buyer pays the $100 for the
-listing. The marketplace gets $10, and the seller gets $90.
+listing. Your commission will be $10. The seller would get $90 and you
+would get \$10 (minus any Stripe fees).
 
-This is also known as the seller commission.
-
-You can learn more about the buyer and seller commission here (ATTACH
-DOC ABOUT Why Commissions are Important).
+You can learn more about the importance of
+[your marketplace commission as a means of monetization here](https://www.sharetribe.com/docs/operator-guides/why-is-commission-important/).

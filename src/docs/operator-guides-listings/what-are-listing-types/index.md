@@ -1,14 +1,17 @@
 ---
 title: What are listing types
 slug: what-are-listing-types
-updated: 2023-04-24
+updated: 2023-05-19
 category: operator-guides-listings
-ingress: Understanding listing types, how to create and use them.
+ingress:
+  Determining the right Listing type to use is fundamental for achieving
+  a working product with Sharetribe. This article explains Listing types
+  in detail.
 published: true
 ---
 
 Listings describe the products and services offered by your providers.
-Listing type determines how customers interact with the listing. Are
+Listing type determines how customers interact with those listing. Are
 they purchasing a physical product from an inventory, making a calendar
 booking, or sending an inquiry as a free message? If they are making a
 booking, does it happen on an hourly or a daily basis? If they're
@@ -24,12 +27,13 @@ needs to set how many items they have in stock, and decide if they offer
 pick-up or shipping as delivery options.
 
 In addition to listing types, you can affect the data collected from the
-provider when creating a listing by adding custom fields.
+provider when creating a listing
+[by adding custom fields](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
 
 ## How to create a Listing type?
 
-When creating a Listing type, you need to define the title of the
-Listing type settings and the Transaction settings.
+When creating a Listing type, you need to define the Listing type
+settings and the Transaction settings.
 
 ### Listing type settings
 
@@ -58,19 +62,20 @@ transaction on the listing page.
 - Calendar booking: allows providers to set their availability in the
   listing creation form. Allows buyers to initiate transactions based on
   the corresponding availability. Perfect for most rental and service
-  marketplaces. [Read more](LINK TO THE CALENDAR BOOKING IN THE OTHER
-  ARTICLE).
+  marketplaces.
+  [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#calendar-booking).
 
 - Buying and selling products: allows providers to set the price of a
   unit and define how many units they can provide. Allows buyers to
   purchase those listings. Perfect for product marketplaces (and in some
-  other types of marketplaces). [Read more](LINK TO THE stock setting IN
-  THE OTHER ARTICLE).
+  other types of marketplaces).
+  [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#buying-and-selling-products).
 
 Finally, transaction settings determine the transaction process used in
 your marketplace. The transaction process maps out how a transaction
 happens between a customer and provider, including payment, payout, and
-reviews. You can learn more about the transaction process here.
+reviews.
+[You can learn more about the transaction settings here](https://www.sharetribe.com/docs/understanding-transaction-settings/).
 
 ## Can I edit or delete an existing Listing type?
 

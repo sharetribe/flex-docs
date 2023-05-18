@@ -1,26 +1,32 @@
 ---
 title: Location search
 slug: location-search
-updated: 2023-04-24
+updated: 2023-05-19
 category: operator-guides-listings
-ingress:
-  You can enable Location search from [the Listing Search settings page
-  in Console](link to the console listing search page).
+ingress: This articles explains how Location search works in Sharetribe.
 published: true
 ---
+
+As it's name indicates it allows your users to search within your
+marketplace based on location or areas. You can enable Location search
+from
+[the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
 
 Location features in Sharetribe are powered by Mapbox. You can read more
 about
 [setting your Mapbox account in this article](https://www.sharetribe.com/docs/ftw/how-to-set-up-mapbox-for-ftw/).
 Location search allows you to use a location to find listings near that
-location.
+location or within that searched area.
 
 ## How are the search results found and sorted?
 
-Location search by origin sorts the listings from the closest to the
-furthest from the given point that the user searched. Location search by
-bounds displays only listings that are within the area searched for and
-sorts the results in relation to the center of the area searched.
+If you search a specific point or address, the listings will be sorted
+from the closest to the furthest from the given point that the user
+searched. This is called Location search by origin.
+
+If you search an area, the search page, will only listings that are
+within the area searched for and sort the results in relation to the
+center of the area searched. This is called Location search by bounds
 
 ## Is it possible to limit the distance from the searched point?
 
@@ -40,8 +46,9 @@ Not by default.
 
 ## How can I change the default text displayed in the search bar?
 
-You can do that easily with [the Microcopy editor](link to microcopy
-editor article). Find the “TopbarSearchForm.placeholder” and the
+You can do that easily with
+[the Microcopy editor](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
+Find the “TopbarSearchForm.placeholder” and the
 “LocationSearchForm.placeholder” keys and replace the text there for
 your own. The default text is “Search bikes…”
 

@@ -1,40 +1,43 @@
 ---
 title: Understanding transaction settings
 slug: understanding-transaction-settings
-updated: 2023-04-24
+updated: 2023-05-19
 category: operator-guides-listings
 ingress:
-  Transaction settings are configured when you are creating your Listing
-  type.
+  Understanding Transaction settings can help you build your ideal
+  marketplace. This article explains in detail how these settings work.
 published: true
 ---
 
-Transaction settings impact how providers create listings, how customers
-initiate transactions, and how those transactions happen. This article
-explains in detail how these settings work.
+Transaction settings are determined within each
+[Listing type](https://www.sharetribe.com/docs/operator-guides/what-are-listing-types/).
+These settings impact how providers create listings, how customers
+initiate transactions, and how those transactions happen.
 
 ## What are the different Transaction Settings?
 
-You can define 2 types of transactions: Calendar Booking and Buying and
-selling products. These settings define what will be asked within the
-listing creation (and edit) form and the options when initiating a
-transaction.
+You can define 2 types of transactions: **Calendar Booking** and
+**Buying and selling products**. These settings define what will be
+asked within the listing creation (and edit) form and the options when
+initiating a transaction.
 
 ### Calendar booking
 
-Calendar booking allows providers to set their availability and for
-buyers to book listings based on that availability. The Booking unit
-defines the availability management system.
+Calendar booking allows providers to set their availability. It allows
+buyers to book listings based on that set availability. The Booking
+unit, which you can set if you have selected "Calendar booking" as the
+transaction setting, defines the availability management system.
 
 - Daily: Listings can be booked daily. If the start date is today and
   the end date is tomorrow, the customer is charged for two days. It
-  covers the whole date in the calendar, so the booking dates cannot
-  overlap.
+  covers the whole day in the calendar, so the booking dates cannot
+  overlap on the same day.
 
 - Nightly: Listings can be booked per night. If the start date is today
   and the end date is tomorrow, the customer is charged for one night.
   It doesn’t cover the whole date in the calendar. The end date of one
-  booking and the start date of another booking can overlap.
+  booking and the start date of another booking can overlap on the same
+  day.
 
 - Hourly: Customer chooses a specific start time and end time within a
   specific date. Booking intervals are every hour.
@@ -50,8 +53,8 @@ to allow in the marketplace.
 
 - One item: Stock quantity is always 1. If an item is sold, it is no
   longer available to be purchased by other buyers. Listing authors
-  cannot re-open the listing with extra stock. This type works well for
-  marketplaces selling unique art or pre-owned goods.
+  cannot re-open the listing with extra stock. This type of stock works
+  well for marketplaces selling unique art or pre-owned goods.
 
 - Multiple items: The listing author can determine the number of items
   that are in stock. Buyers can buy several of these items up to the
