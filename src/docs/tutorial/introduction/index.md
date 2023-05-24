@@ -5,30 +5,27 @@ updated: 2023-04-09
 category: tutorial
 ingress:
   Over the course of the tutorial, you will learn how to build a
-  self-hosted marketplace using the Sharetribe Web Template
+  marketplace using the Sharetribe Web Template
 published: true
 ---
 
-The goal of this tutorial is to help you build a marketplace using a
-self-hosted version of the Sharetribe Web Template. You will learn how
-to set up a self-hosted marketplace and how to start working on
-development using the Sharetribe Web Template. Before you begin, we
-recommend you complete the non-technical tutorial **[TODO: Link to
-introduction of the non-technical tutorial]** to see what you can
-achieve using the no-code UIs in Console.
-
-## What is a self-hosted marketplace?
+The goal of this tutorial is to help you build a marketplace using the
+Sharetribe Web Template. You will learn how to set up a marketplace and
+how to start working on development using the Sharetribe Web Template.
+You will also learn how to use the adjustable configurations in Console.
 
 ## What are we building?
 
 In this tutorial, we will start editing the Sharetribe Web Template and
-turn it into a Sauna rental marketplace called Saunatribe.
+turn it into a [Sauna](https://en.wikipedia.org/wiki/Sauna) rental
+marketplace called Saunatime.
 
-The first part of this tutorial focuses on setting up the self-hosted
-template, making minor changes to the template styles and deploying a
-development environment. The second part dives deeper into modifying the
-listing creation process, and the third part focuses on editing the
-transaction process.
+The first part of this tutorial focuses on installing the template,
+using the Console interface to make changes to the branding and layout
+of your marketplace, making minor changes to the template styles and
+deploying a development environment. The second part dives deeper into
+modifying the listing creation process, and the third part focuses on
+editing the transaction process.
 
 ## Background knowledge
 
@@ -45,15 +42,14 @@ suffice, and you'll learn a lot throughout the tutorial).
   APIs. The template provides you with a fully functional marketplace
   out of the box.
 
-- **Self-hosted marketplace**: an instance of the Sharetribe Web
-  Template that you host in the hosting environment of your choice (e.g.
-  Heroku or Render), allowing you to customise and manage the code base
-  freely.
+- **Custom marketplace app**: an instance of the Sharetribe Web Template
+  that you host in the hosting environment of your choice (e.g. Heroku
+  or Render), allowing you to customise and manage the code base freely.
 
-- **Headless**: the marketplace client is decoupled from the marketplace
-  backend. The client communicates with the backend via API. You can
-  manage configurations, assets and pages in Console, and your client
-  can access them using the Asset Delivery API.
+- **Headless**: the marketplace client app is decoupled from the
+  marketplace backend. The client communicates with the backend via API.
+  You can manage configurations, assets and pages in Console, and your
+  client can access them using the Asset Delivery API.
 
 - **Marketplace environment**: There are three marketplace environments:
   Test, Development, and Live (you can find these in Console). You can
@@ -170,4 +166,5 @@ URLs.<br /> Read more about
 Now you are ready to make code changes and save them to Github!
 
 The first part of this tutorial starts with changing the marketplace
-color.<br /> [› Go to the next article](/tutorial/first-edit/)
+color.<br />
+[› Go to the next article **TODO CHANGE THIS LINK**](/tutorial/first-edit/)

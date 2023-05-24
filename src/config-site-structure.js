@@ -25,9 +25,10 @@ const sortingArrayIntroductionGettingStarted = [
 // for the listed articles.
 const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
+  'change-branding',
+  'modify-landing-page',
   'first-edit',
   'change-images',
-  'modify-landing-page',
   'change-logo',
   'working-with-microcopy',
   'configurations',
