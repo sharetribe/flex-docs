@@ -280,13 +280,12 @@ exports.siteStructure = [
     isHidden: true,
     subcategories: [
       {
-        id: 'operator-guides-concepts',
-        sortingArray: sortingArrayOperatorGuidesConcepts,
-      },
-
-      {
         id: 'operator-guides-pages',
         sortingArray: sortingArrayOperatorGuidesPages,
+      },
+      {
+        id: 'operator-guides-concepts',
+        sortingArray: sortingArrayOperatorGuidesConcepts,
       },
     ],
   },

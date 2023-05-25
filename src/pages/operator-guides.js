@@ -6,7 +6,6 @@ import { OperatorGuidesPage } from '../components';
 
 const category = 'operator-guides';
 const sortingArray = findCategory(category, siteStructure);
-console.log(sortingArray);
 
 const query = graphql`
   query OperatorGuidesIndexQuery {
@@ -91,7 +90,13 @@ const OperatorGuides = () => {
           }
         );
 
-        return <OperatorGuidesPage category={category} data={formatData} />;
+        return (
+          <OperatorGuidesPage
+            category={category}
+            data={formatData}
+            sortingArray={sortingArray}
+          />
+        );
       }}
     />
   );

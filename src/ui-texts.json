@@ -172,5 +172,11 @@
   "Sidebar.operatorGuidesConcepts": "Concepts",
   "Sidebar.operatorGuidesPages": "Pages",
 
+  "Sidebar.pilotDayGuides": "Pilot Day Guides",
+  "Sidebar.pilotDayGuidesConcepts": "Concepts",
+  "ArticlePage.pilot-day-guides.breadCrumbTitle": "Pilot Day Guides",
+  "ArticleIndexPage.pilot-day-guides.title": "Pilot Day Guides",
+  "ArticleIndexPage.pilot-day-guides.description": "All pilot day guides",
+
   "Footer.heading": "Can't find what you're looking for?"
 }
