@@ -12,7 +12,7 @@ published: true
 In this tutorial section, you will familiarise yourself with the
 [Pages feature in Console](https://flex-console.sharetribe.com/content/pages).
 The Pages feature allows you to modify the content and layout of your
-landing page and other static pages in your marketplace using the
+landing page and other content pages in your marketplace using the
 no-code editor in Console. At the end of this tutorial, you will have
 learnt how to edit the landing page of your marketplace. We will change
 your landing page images and content to align with our sauna-themed
@@ -87,15 +87,20 @@ do that, toggle the _Text color_ buttons below the image input.
 
 ![Select white text](./select-white.png)
 
+You will also need to remove the background image included with the
+content block in the hero section. This image is a picture of a cyclist
+overlayed on top of the existing hero image. You can remove it by
+opening the content block `hero-id` and selecting the "No media" option.
+
+![Remove overlay](./remove-overlay.png)
+
 Once you have made these changes, scroll to the bottom of the page to
 save your changes. Now, refresh your marketplace landing page, and you
 can see the updated image on the top of the page.
 
 ![Landing page after image update](./landing-page-image-update.png)
 
-Finally, you'll need to edit the
-
-Next, you will update the text content of this section.
+In the next step, you will update the copy text of this section.
 
 ### Update block contents
 
@@ -105,21 +110,32 @@ Click the block to open it and edit the contents.
 
 ![Landing page block content](./landing-page-block-content.png)
 
-Replace the existing title and text content with your marketplace title
-and tagline. Click "Save changes", and refresh your landing page.
+Let's replace the existing title and content with taglines that fit our
+Sauna-themed marketplace. Once ready, click "Save changes", and refresh
+your landing page.
 
 You can now see a customised hero element on your marketplace landing
 page.
 
 ![Landing page with fully updated hero element](./landing-page-full-update.png)
 
-Read more:
+## Summary
 
+## Further reading
+
+Learn more about Pages and content modelling from the following
+articles:
+
+- [Introducing pages](/operator-guides/introducing-pages/)
+- [How to edit SEO & social metadata tags in Pages](/operator-guides/how-to-edit-seo-and-social-metadata-in-pages/)
 - Detailed instructions on
   [editing content pages in Console](/operator-guides/how-to-edit-content-pages-in-console/)
 - Guide on creating
   [an FAQ page](/operator-guides/how-to-create-an-faq-page/)
+- [How to format your text in Pages with Markdown](/operator-guides/how-to-format-your-text-in-pages/)
+- [Section templates](/operator-guides/section-templates/)
+- [Content modelling and management](/concepts/content-management/)
+- [Learn how the template renders content pages](/ftw/page-builder/)
 
-There is still one obvious Biketribe image visible on top bar: the logo.
-It's time to change that next.<br />
+Nect up we'll focus on changing microcopy:<br />
 [› Go to the next article](/tutorial/change-logo/)
