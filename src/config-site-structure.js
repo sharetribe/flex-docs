@@ -149,6 +149,8 @@ const sortingArrayOperatorGuidesConcepts = [
   'flex-operator-resources',
 ];
 
+const sortingArrayPilotDayGuides = ['test-page'];
+
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -285,6 +287,16 @@ exports.siteStructure = [
       {
         id: 'operator-guides-pages',
         sortingArray: sortingArrayOperatorGuidesPages,
+      },
+    ],
+  },
+  {
+    id: 'pilot-day-guides',
+    isOpen: false,
+    subcategories: [
+      {
+        id: 'pilot-day-guides-concepts',
+        sortingArray: sortingArrayPilotDayGuides,
       },
     ],
   },

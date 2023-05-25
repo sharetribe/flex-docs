@@ -158,7 +158,23 @@ const Category = props => {
   // index page, we show the operator guides menu in the sidebar.
   const isHidden = isHiddenConfig ? true : false;
 
-  const categoryFromUrlPath = location?.pathname?.split('/')[1];
+  /**
+   * Regular Expression Pattern:
+   * /\/(?:docs\/)?([^/]+)(\/|$)/
+   *
+   * Explanation:
+   * - \/                        Matches a forward slash '/'
+   * - (?:docs\/)?               Matches the optional prefix 'docs/'
+   * - ([^/]+)                   Captures one or more characters that are not forward slashes, representing the category
+   * - (\/|$)                    Matches either a forward slash or the end of the string
+   *
+   * The regular expression extracts the category from a URL path while excluding the 'docs' prefix if present.
+   * This allows the logic to work both on production, staging and local envirionment.
+   * It matches the first segment after an optional 'docs/' prefix, capturing it as the category.
+   * Use the match result's first capturing group (matchResult[1]) to retrieve the extracted category.
+   */
+  const matchResult = location?.pathname?.match(/\/(?:docs\/)?([^/]+)(\/|$)/);
+  const categoryFromUrlPath = matchResult ? matchResult[1] : undefined;
 
   const isBeingViewed =
     parentCategories.some(n => n.startsWith(category)) ||
@@ -167,6 +183,7 @@ const Category = props => {
   const TitleComponent =
     depth && depth === 1 ? StyledMainCategoryTitle : StyledCategoryTitle;
   // returns null if the menu item has the isHidden attribute and the user is not viewing an operator guide page
+
   return isHidden && !isBeingViewed ? null : (
     <li className={className} {...rest}>
       <TitleComponent onClick={() => setCategoryOpen(!isOpen)} depth={depth}>

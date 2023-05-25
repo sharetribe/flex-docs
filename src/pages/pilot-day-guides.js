@@ -4,18 +4,15 @@ import { dev, siteStructure } from '../config';
 import { findCategory } from '../util/navigation';
 import { OperatorGuidesPage } from '../components';
 
-const category = 'operator-guides';
+const category = 'pilot-day-guides';
 const sortingArray = findCategory(category, siteStructure);
-console.log(sortingArray);
 
 const query = graphql`
-  query OperatorGuidesIndexQuery {
+  query PilotDayGuidesIndexQuery {
     allMarkdownRemark(
       filter: {
         frontmatter: {
-          category: {
-            in: ["operator-guides-pages", "operator-guides-concepts"]
-          }
+          category: { in: ["pilot-day-guides-concepts", "pilot-day-guides"] }
         }
       }
       sort: {
@@ -55,7 +52,7 @@ const byArrayOfSlugs = sortingArray => (a, b) => {
   return i1 - i2;
 };
 
-const OperatorGuides = () => {
+const PilotDayGuides = () => {
   return (
     <StaticQuery
       query={query}
@@ -97,4 +94,4 @@ const OperatorGuides = () => {
   );
 };
 
-export default OperatorGuides;
+export default PilotDayGuides;

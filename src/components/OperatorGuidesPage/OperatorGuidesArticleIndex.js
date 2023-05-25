@@ -75,7 +75,7 @@ const ArticleIndex = props => {
 
   return (
     <Grid {...rest}>
-      <Heading4 as="h2">{title}</Heading4>
+      <Heading4 as="h2">{title} yass</Heading4>
       {articles.map(article => (
         <GridItem pathPrefix={pathPrefix} key={article.slug} {...article} />
       ))}
