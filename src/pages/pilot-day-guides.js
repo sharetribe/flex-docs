@@ -12,7 +12,13 @@ const query = graphql`
     allMarkdownRemark(
       filter: {
         frontmatter: {
-          category: { in: ["pilot-day-guides-concepts", "pilot-day-guides"] }
+          category: {
+            in: [
+              "pilot-day-guides-concepts"
+              "pilot-day-guides"
+              "pilot-day-guides-pages"
+            ]
+          }
         }
       }
       sort: {
@@ -74,12 +80,17 @@ const PilotDayGuides = () => {
               []
             );
 
+            console.log(sortingArray.subcategories);
+
             // find the sortingArray of the subcategory we're currently iterating through
             const currentSortingArray = sortingArray.subcategories.find(
               n => n.id == subcategory.fieldValue
-            ).sortingArray;
-            // sort subcategory articles based on the sorting array
-            onlyPublishedArticles.sort(byArrayOfSlugs(currentSortingArray));
+            )?.sortingArray;
+
+            // sort subcategory articles based on the sorting array if it exists
+            if (currentSortingArray) {
+              onlyPublishedArticles.sort(byArrayOfSlugs(currentSortingArray));
+            }
 
             return {
               title: subcategory.fieldValue,
@@ -88,7 +99,13 @@ const PilotDayGuides = () => {
           }
         );
 
-        return <OperatorGuidesPage category={category} data={formatData} />;
+        return (
+          <OperatorGuidesPage
+            category={category}
+            data={formatData}
+            sortingArray={sortingArray}
+          />
+        );
       }}
     />
   );

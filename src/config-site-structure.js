@@ -275,8 +275,26 @@ exports.siteStructure = [
     sortingArray: sortingArrayReferences,
   },
   {
+    id: 'tutorial-rental',
+    isOpen: true,
+    sortingArray: [],
+    isHidden: true,
+  },
+  {
+    id: 'tutorial-service',
+    isOpen: true,
+    sortingArray: [],
+    isHidden: true,
+  },
+  {
+    id: 'tutorial-product',
+    isOpen: true,
+    sortingArray: [],
+    isHidden: true,
+  },
+  {
     id: 'operator-guides',
-    isOpen: false,
+    isOpen: true,
     isHidden: true,
     subcategories: [
       {
@@ -291,11 +309,16 @@ exports.siteStructure = [
   },
   {
     id: 'pilot-day-guides',
-    isOpen: false,
+    isOpen: true,
+    isHidden: true,
     subcategories: [
       {
         id: 'pilot-day-guides-concepts',
         sortingArray: sortingArrayPilotDayGuides,
+      },
+      {
+        id: 'pilot-day-guides-pages',
+        sortingArray: [],
       },
     ],
   },

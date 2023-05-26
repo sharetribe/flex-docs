@@ -178,5 +178,25 @@
   "ArticleIndexPage.pilot-day-guides.title": "Pilot Day Guides",
   "ArticleIndexPage.pilot-day-guides.description": "All pilot day guides",
 
+  "Sidebar.pilotDayGuidesPages": "Pages",
+  "Sidebar.tutorialRental": "Rental tutorial",
+  "ArticleIndexPage.tutorial-rental.title": "Rental tutorial",
+  "ArticleIndexPage.tutorial-rental.description": "description here",
+  "ArticlePage.tutorial-rental.breadCrumbTitle": "Rental tutorial",
+  "ArticleIndexPage.tutorial-service.title": "Service tutorial",
+  "ArticleIndexPage.tutorial-service.description": "desc",
+
+  "Sidebar.tutorialService": "Service tutorial",
+  "Sidebar.tutorialProduct": "Product tutorial",
+  "ArticlePage.tutorial-service.breadCrumbTitle": "Service tutorial",
+  "ArticlePage.tutorial-product.breadCrumbTitle": "Product tutorial",
+
+  "ArticleIndexPage.tutorial-product.description": "Description",
+  "ArticleIndexPage.tutorial-product.title": "Product tutorial",
+
+
+
+
+
   "Footer.heading": "Can't find what you're looking for?"
 }
