@@ -279,18 +279,21 @@ exports.siteStructure = [
     isOpen: true,
     sortingArray: [],
     isHidden: true,
+    hideSidebar: true,
   },
   {
     id: 'tutorial-service',
     isOpen: true,
     sortingArray: [],
     isHidden: true,
+    hideSidebar: true,
   },
   {
     id: 'tutorial-product',
     isOpen: true,
     sortingArray: [],
     isHidden: true,
+    hideSidebar: true,
   },
   {
     id: 'operator-guides',
@@ -298,12 +301,12 @@ exports.siteStructure = [
     isHidden: true,
     subcategories: [
       {
-        id: 'operator-guides-pages',
-        sortingArray: sortingArrayOperatorGuidesPages,
-      },
-      {
         id: 'operator-guides-concepts',
         sortingArray: sortingArrayOperatorGuidesConcepts,
+      },
+      {
+        id: 'operator-guides-pages',
+        sortingArray: sortingArrayOperatorGuidesPages,
       },
     ],
   },
@@ -311,6 +314,7 @@ exports.siteStructure = [
     id: 'pilot-day-guides',
     isOpen: true,
     isHidden: true,
+    hideSidebar: true,
     subcategories: [
       {
         id: 'pilot-day-guides-concepts',

@@ -125,16 +125,9 @@ const Category = props => {
     activeArticle,
     isOpenConfig,
     isHiddenConfig,
+    location,
     ...rest
   } = props;
-
-  const [location, setLocation] = useState(null);
-  const isBrowser = typeof window !== 'undefined';
-  useEffect(() => {
-    if (isBrowser) {
-      setLocation(window.location);
-    }
-  }, [isBrowser]);
 
   const parentCategories = activeArticle
     ? findParentCategories(activeArticle.category, siteStructure)
@@ -183,7 +176,6 @@ const Category = props => {
   const TitleComponent =
     depth && depth === 1 ? StyledMainCategoryTitle : StyledCategoryTitle;
   // returns null if the menu item has the isHidden attribute and the user is not viewing an operator guide page
-
   return isHidden && !isBeingViewed ? null : (
     <li className={className} {...rest}>
       <TitleComponent onClick={() => setCategoryOpen(!isOpen)} depth={depth}>
@@ -218,39 +210,106 @@ const CategoryList = props => {
     context,
     depth,
   } = props;
+
+  const [location, setLocation] = useState(null);
+  const isBrowser = typeof window !== 'undefined';
+  useEffect(() => {
+    if (isBrowser) {
+      setLocation(window.location);
+    }
+  }, [isBrowser]);
+
+  const matchResult = location?.pathname?.match(/\/(?:docs\/)?([^/]+)(\/|$)/);
+  const categoryFromUrlPath = matchResult ? matchResult[1] : undefined;
+
+  const areWeViewingACategoryThatShouldHideTheMenuBar = (
+    categories,
+    categoryFromUrl
+  ) => {
+    return (
+      categories.find(
+        item => item.id === categoryFromUrl && item.hideSidebar
+      ) || null
+    );
+  };
+
+  // let's define what category is being viewed based on
+  const match = areWeViewingACategoryThatShouldHideTheMenuBar(
+    categories,
+    categoryFromUrlPath
+  );
+
   return (
     <ul className={className}>
-      {categories.map((n, i) => {
-        const articleGroup = groupedArticles.find(g => g.category === n.id);
+      {!match ? (
+        categories.map((n, i) => {
+          const articleGroup = groupedArticles.find(g => g.category === n.id);
+          const hasSubcategories =
+            n.subcategories && n.subcategories.length > 0;
 
-        const hasSubcategories = n.subcategories && n.subcategories.length > 0;
-        return (
-          <StyledCategory
-            key={`nav_${n.id}`}
-            category={n.id}
-            context={context}
-            depth={depth}
-            activeArticle={activeArticle}
-            isOpenConfig={n.isOpen}
-            isHiddenConfig={n.isHidden}
-          >
-            <ArticleLinkList
-              articleGroup={articleGroup}
+          return (
+            <StyledCategory
+              key={`nav_${n.id}`}
+              category={n.id}
+              context={context}
+              depth={depth}
               activeArticle={activeArticle}
-              depth={depth + 1}
-            />
-            {hasSubcategories ? (
-              <CategoryList
+              isOpenConfig={n.isOpen}
+              isHiddenConfig={n.isHidden}
+              hideSidebarConfig={n.hideSidebar}
+              location={location}
+            >
+              <ArticleLinkList
+                articleGroup={articleGroup}
                 activeArticle={activeArticle}
-                categories={n.subcategories}
-                groupedArticles={groupedArticles}
-                context={context}
                 depth={depth + 1}
               />
-            ) : null}
-          </StyledCategory>
-        );
-      })}
+              {hasSubcategories ? (
+                <CategoryList
+                  isSubCategoryList={hasSubcategories}
+                  activeArticle={activeArticle}
+                  categories={n.subcategories}
+                  groupedArticles={groupedArticles}
+                  context={context}
+                  depth={depth + 1}
+                />
+              ) : null}
+            </StyledCategory>
+          );
+        })
+      ) : (
+        <StyledCategory
+          key={`nav_${match.id}`}
+          category={match.id}
+          context={context}
+          depth={depth}
+          activeArticle={activeArticle}
+          isOpenConfig={match.isOpen}
+          isHiddenConfig={match.isHidden}
+          hideSidebarConfig={match.hideSidebar}
+          location={location}
+        >
+          <ArticleLinkList
+            articleGroup={groupedArticles.find(g => g.category === match.id)}
+            activeArticle={
+              match.subcategories && match.subcategories.length > 0
+            }
+            depth={depth + 1}
+          />
+          {match.subcategories && match.subcategories.length > 0 ? (
+            <CategoryList
+              isSubCategoryList={
+                match.subcategories && match.subcategories.length > 0
+              }
+              activeArticle={activeArticle}
+              categories={match.subcategories}
+              groupedArticles={groupedArticles}
+              context={context}
+              depth={depth + 1}
+            />
+          ) : null}
+        </StyledCategory>
+      )}
     </ul>
   );
 };
