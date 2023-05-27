@@ -2,7 +2,7 @@
 title: Key terms and definitions 
 slug: concepts
 updated: 2023-04-01
-category: operator-guides-concepts
+category: operator-guides-useful-information
 ingress:
   Definition of common terms we use when talking about Sharetribe Flex.
 published: true

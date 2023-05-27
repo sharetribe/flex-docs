@@ -2,7 +2,7 @@
 title: How to use the Microcopy editor
 slug: how-to-use-microcopy-editor
 updated: 2022-06-14
-category: operator-guides-concepts
+category: operator-guides-static-content
 ingress:
   The Microcopy editor lets you modify your marketplace’s microcopy in
   Flex Console.

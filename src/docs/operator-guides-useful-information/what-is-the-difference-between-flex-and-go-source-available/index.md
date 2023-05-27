@@ -2,7 +2,7 @@
 title: What is the difference between Flex and Go Source Available?
 slug: what-is-the-difference-between-flex-and-go-source-available
 updated: 2021-09-21
-category: operator-guides-concepts
+category: operator-guides-useful-information
 ingress:
   This table illustrates the essential differences between Sharetribe
   Flex and Sharetribe Go Source-Available (Community Edition).

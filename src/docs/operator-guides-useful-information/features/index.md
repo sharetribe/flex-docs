@@ -1,8 +1,8 @@
 ---
-title: Features
+title: All Sharetribe Flex features
 slug: features
 updated: 2023-02-04
-category: operator-guides-concepts
+category: operator-guides-useful-information
 ingress:
   This article provides an overview of the most important features of
   Sharetribe Flex.

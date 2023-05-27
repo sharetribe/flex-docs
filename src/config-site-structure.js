@@ -163,6 +163,7 @@ const sortingArrayOperatorGuidesBranding = [];
 const sortingArrayOperatorGuidesListings = [];
 
 const sortingArrayOperatorGuidesTransactions = [];
+const sortingArrayOperatorGuidesUsefulInformation = [];
 
 exports.siteStructure = [
   {
@@ -301,7 +302,10 @@ exports.siteStructure = [
         id: 'operator-guides-concepts',
         sortingArray: sortingArrayOperatorGuidesConcepts,
       },
-
+{
+        id: 'operator-guides-useful-information',
+        sortingArray: sortingArrayOperatorGuidesUsefulInformation,
+      },
       {
         id: 'operator-guides-static-content',
         sortingArray: sortingArrayOperatorGuidesStaticContent,

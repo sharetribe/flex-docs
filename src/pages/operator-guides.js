@@ -20,6 +20,7 @@ const query = graphql`
               "operator-guides-layout"
               "operator-guides-transactions"
               "operator-guides-listings"
+              "operator-guides-useful-information"
             ]
           }
         }
