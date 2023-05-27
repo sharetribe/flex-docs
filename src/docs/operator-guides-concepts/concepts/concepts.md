@@ -1,5 +1,5 @@
 ---
-title: Concepts
+title: Key terms and definitions 
 slug: concepts
 updated: 2023-04-01
 category: operator-guides-concepts

@@ -2,7 +2,7 @@
 title: How to enable Pages in Console
 slug: how-to-enable-pages
 updated: 2023-02-14
-category: operator-guides-pages
+category: operator-guides-static-content
 ingress: Enable the Pages feature for your test environment
 published: true
 ---

@@ -2,7 +2,7 @@
 title: Section templates
 slug: section-templates
 updated: 2023-01-26
-category: operator-guides-pages
+category: operator-guides-static-content
 ingress:
   Learn how Article, Columns, Features, and Carousel templates affect
   your pages' layout in Flex.

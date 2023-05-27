@@ -148,7 +148,7 @@ const sortingArrayHowToListings = [
   'bookings-with-buffer',
 ];
 
-const sortingArrayOperatorGuidesPages = ['introducing-pages'];
+const sortingArrayOperatorGuidesStaticContent = ['introducing-pages'];
 
 const sortingArrayOperatorGuidesConcepts = [
   'concepts',
@@ -303,8 +303,8 @@ exports.siteStructure = [
       },
 
       {
-        id: 'operator-guides-pages',
-        sortingArray: sortingArrayOperatorGuidesPages,
+        id: 'operator-guides-static-content',
+        sortingArray: sortingArrayOperatorGuidesStaticContent,
       },
 
       {

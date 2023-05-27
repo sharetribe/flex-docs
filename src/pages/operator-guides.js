@@ -14,7 +14,7 @@ const query = graphql`
         frontmatter: {
           category: {
             in: [
-              "operator-guides-pages"
+              "operator-guides-static-content"
               "operator-guides-concepts"
               "operator-guides-branding"
               "operator-guides-layout"

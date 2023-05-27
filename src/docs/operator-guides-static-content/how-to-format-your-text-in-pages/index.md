@@ -2,7 +2,7 @@
 title: How to format your text in Pages with Markdown
 slug: how-to-format-your-text-in-pages
 updated: 2023-02-14
-category: operator-guides-pages
+category: operator-guides-static-content
 ingress:
   Learn how to use Markdown to change your marketplace content pages.
 published: true

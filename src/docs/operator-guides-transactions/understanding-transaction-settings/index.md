@@ -2,7 +2,7 @@
 title: Understanding transaction settings
 slug: understanding-transaction-settings
 updated: 2023-05-19
-category: operator-guides-listings
+category: operator-guides-transactions
 ingress:
   Understanding Transaction settings can help you build your ideal
   marketplace. This article explains in detail how these settings work.
