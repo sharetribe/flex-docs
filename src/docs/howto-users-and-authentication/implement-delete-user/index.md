@@ -76,7 +76,7 @@ navigation.
     },
     {
       text: <FormattedMessage id="LayoutWrapperAccountSettingsSideNav.deleteAccountTabTitle" />,
-      selected: currentTab === 'DeleteAccountPage',
+      selected: currentPage === 'DeleteAccountPage',
       id: 'DeleteAccountPageTab',
       linkProps: {
         name: 'DeleteAccountPage',
@@ -141,17 +141,17 @@ application's route configuration.
 ```js
 const ContactDetailsPage = loadable(() =>
   import(
-    /* webpackChunkName: "ContactDetailsPage" */ './containers/ContactDetailsPage/ContactDetailsPage'
+    /* webpackChunkName: "ContactDetailsPage" */ '../containers/ContactDetailsPage/ContactDetailsPage'
   )
 );
 const DeleteAccountPage = loadable(() =>
   import(
-    /* webpackChunkName: "DeleteAccountPage" */ './containers/DeleteAccountPage/DeleteAccountPage'
+    /* webpackChunkName: "DeleteAccountPage" */ '../containers/DeleteAccountPage/DeleteAccountPage'
   )
 );
 const EditListingPage = loadable(() =>
   import(
-    /* webpackChunkName: "EditListingPage" */ './containers/EditListingPage/EditListingPage'
+    /* webpackChunkName: "EditListingPage" */ '../containers/EditListingPage/EditListingPage'
   )
 );
 ```
