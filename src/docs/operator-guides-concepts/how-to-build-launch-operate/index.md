@@ -22,7 +22,8 @@ Some of these changes are must-haves: you'll likely want to change your logo and
 
 
 
-You can review [the Biketribe customization checklist](LINKTOARTICLE) to make sure you’ve covered the most important no-code modifications. 
+You can review [the Biketribe customization checklist](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist
+) to make sure you’ve covered the most important no-code modifications. 
 
 ## How to go Live
 
@@ -30,7 +31,7 @@ Your marketplace may be ready for its first users after you change the Biketribe
 
 Though Sharetribe hosts your marketplace data, you must host your frontend code to launch your marketplace. Hosting your code allows you to configure a custom domain, set up live payments, and make further modifications with code. 
 
-Hosting your own code is a technical process and [we recommend hiring a Flex Expert](LINKTOARTICLE) if you have never done this before. 
+Hosting your own code is a technical process and [we recommend hiring a Flex Expert](https://docs.google.com/document/d/1deMWStVhrd8hloBRzw680_PsTnatCogBEDJ07NW24Cc/edit#heading=h.y7k9wiwafivw) if you have never done this before. 
 You can learn more about the technical steps involved in moving to Live in [this guide.](https://www.sharetribe.com/docs/ftw/how-to-deploy-ftw-to-production/#deploying-to-production) 
 
 ## Extend infinitely with code 
@@ -44,7 +45,7 @@ Code tools enable you to build a fully custom marketplace with virtually any fea
 
 Our [custom feature knowledge base](https://www.sharetribe.com/docs/operator-guides/feature-knowledge-base/) will give you more insight into typical code customizations and what it takes to build them. 
 
-Unless you are a developer, you should [hire a developer](LINKTOARTICLE) to work with the code of your marketplace. 
+Unless you are a developer, you should [hire a developer](https://docs.google.com/document/d/1deMWStVhrd8hloBRzw680_PsTnatCogBEDJ07NW24Cc/edit#heading=h.ixxwdm9pqfwo) to work with the code of your marketplace. 
 
 ## Your building workflow
 
