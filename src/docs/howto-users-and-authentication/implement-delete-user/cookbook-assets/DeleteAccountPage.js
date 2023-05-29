@@ -7,13 +7,10 @@ import { propTypes } from '../../util/types';
 import { isScrollingDisabled } from '../../ducks/ui.duck';
 import {
   LayoutSideNavigation,
-  LayoutWrapperMain,
-  LayoutWrapperAccountSettingsSideNav,
-  LayoutWrapperTopbar,
-  LayoutWrapperFooter,
   Footer,
   Page,
   UserNav,
+  H3,
 } from '../../components';
 import TopbarContainer from '../TopbarContainer/TopbarContainer';
 
@@ -68,27 +65,28 @@ export const DeleteAccountPageComponent = props => {
 
   return (
     <Page title={title} scrollingDisabled={scrollingDisabled}>
-      <LayoutSideNavigation>
-        <LayoutWrapperTopbar>
-          <TopbarContainer
-            currentPage="DeleteAccountPage"
-            desktopClassName={css.desktopTopbar}
-            mobileClassName={css.mobileTopbar}
-          />
-          <UserNav selectedPageName="DeleteAccountPage" />
-        </LayoutWrapperTopbar>
-        <LayoutWrapperAccountSettingsSideNav currentTab="DeleteAccountPage" />
-        <LayoutWrapperMain>
-          <div className={css.content}>
-            <h1 className={css.title}>
-              <FormattedMessage id="DeleteAccountPage.heading" />
-            </h1>
-            {pageDetails}
-          </div>
-        </LayoutWrapperMain>
-        <LayoutWrapperFooter>
-          <Footer />
-        </LayoutWrapperFooter>
+      <LayoutSideNavigation
+        topbar={
+          <>
+            <TopbarContainer
+              currentPage="DeleteAccountPage"
+              desktopClassName={css.desktopTopbar}
+              mobileClassName={css.mobileTopbar}
+            />
+            <UserNav selectedPageName="DeleteAccountPage" />
+          </>
+        }
+        sideNav={null}
+        useAccountSettingsNav
+        currentPage="DeleteAccountPage"
+        footer={<Footer />}
+      >
+        <div className={css.content}>
+          <H3 as="h1" className={css.title}>
+            <FormattedMessage id="DeleteAccountPage.heading" />
+          </H3>
+          {pageDetails}
+        </div>
       </LayoutSideNavigation>
     </Page>
   );
