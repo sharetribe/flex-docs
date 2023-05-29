@@ -27,8 +27,8 @@ const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
   'change-branding',
   'modify-landing-page',
-  'first-edit',
   'working-with-microcopy',
+  'first-edit',
   'configurations',
   'change-default-locations',
   'modify-listing-extended-data',

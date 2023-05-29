@@ -17,7 +17,7 @@ login pages, and social media image using the no-code editor in Console.
 ## What are hosted assets
 
 You can modify your marketplace's visual assets using
-[Console](https://flex-console.sharetribe.com/design/brandin). The
+[Console](https://flex-console.sharetribe.com/design/branding). The
 Console allows non-technical users to manage and edit visual assets like
 logos and favicons without touching code. Once you have uploaded the
 assets through the Console, the template app uses an API call to
@@ -96,3 +96,12 @@ cohesive and visually appealing experience for your users.
 To read more about best practices regarding visual assets and how to
 make your images look good, read more in our article on
 [how to add good looking logos and images](/operator-guides/how-to-add-good-looking-logos-and-images/).
+
+## Further reading
+
+Learn more about branding, brand images and the Asset Delivery API from
+the following articles:
+
+- [How to add good looking logos and images](/operator-guides/how-to-add-good-looking-logos-and-images/).
+- [Introduction to marketplace images](/operator-guides/introduction-to-marketplace-images/).
+- [API documentation on our Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).

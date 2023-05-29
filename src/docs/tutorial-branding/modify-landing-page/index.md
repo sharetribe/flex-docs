@@ -121,6 +121,13 @@ page.
 
 ## Summary
 
+In this tutorial, you got to make your first changes to your
+marketplace's landing page using the Pages feature in Console. In this
+section of the tutorial, you learned how to make several customizations,
+including changing the hero image, adjusting the section's background
+image and text color, and updating the block contents. In the next
+article, you will focus on changing microcopy.
+
 ## Further reading
 
 Learn more about Pages and content modelling from the following
