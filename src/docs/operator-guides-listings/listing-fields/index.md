@@ -37,7 +37,7 @@ also be used to create filters or affect the keyword search.
 There are 3 types of listing fields that can be added: "Free text",
 "Select one" and "Select multiple". [Read more specific instructions on
 how to add listing
-fields]((https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
+fields](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
 
 ### Free text
 
@@ -84,6 +84,7 @@ available) from a list of options. To create this field, you have to
 define the list of options available to select. These will be displayed
 as checkboxes in the listing creation form.
 
+![Select Multiple in the lising form](./2023-05-28 22.57.11.jpg)
 ![Select multiple in the listing form](./select_multiple-field-listing_form.png)
 
 It will be displayed as multiple options selected on the listing page.
