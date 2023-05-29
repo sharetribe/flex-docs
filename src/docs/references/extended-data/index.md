@@ -45,8 +45,8 @@ a resource. It is also readable by marketplace operators. Protected data
 can be revealed to all transaction parties via the marketplace
 [transaction process](/concepts/transaction-process/).
 
-Protected data can be used to store information about listings or users
-that is only made visible to a customer at a specific point in the
+Protected data can be used to store information that is only made
+visible to the transaction participants at a specific point in the
 [transaction process](/concepts/transaction-process/).
 
 ### Private data
