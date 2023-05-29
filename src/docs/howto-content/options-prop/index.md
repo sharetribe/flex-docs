@@ -188,7 +188,7 @@ used the following mapping:
 
 ```js
 const blockOverrides = {
-  ['default-block']: { component: CustomBlock },
+  ['defaultBlock']: { component: CustomBlock },
 };
 ```
 
