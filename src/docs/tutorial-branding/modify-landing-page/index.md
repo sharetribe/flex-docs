@@ -80,7 +80,7 @@ image_.
 Remove the existing one, and then upload the same background image we
 used in the previous section of the tutorial: <br />
 
-- [Saunatime background](/tutorial-assets/saunatime-background.png)
+- [Saunatime background](/tutorial-assets/saunatime-hero.png)
 
 With this image, we also need to switch the text from white to black. To
 do that, toggle the _Text color_ buttons below the image input.

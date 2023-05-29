@@ -56,12 +56,12 @@ options between RGB, HSL and HEX by clicking on the color picker.
 ## Upload your marketplace logo and favicon
 
 Next, we will want to change the marketplace logo. For your Sauna themed
-marketplace, you can use the following logo:
+marketplace, you can use the following asset:
 
-![Saunatime logo](./saunatime-logo.png)
+- [Saunatime logo](/tutorial-assets/saunatime-logo.png)
 
 In addition to the logo, you can download the
-[favicon here](./favicon.ico).
+[favicon here](/tutorial-assets/favicon.png).
 
 Upload the logo file and favicon using the interface in Console. For
 more information on best practices and ensuring that your logo images
@@ -76,14 +76,14 @@ the background for modals, popups and login pages. You can think of this
 image as a backdrop that reinforces your marketplace's branding. You can
 use the following image as the background image:
 
-![Saunatime background](./saunatime-background.png)
+- [Saunatime background](/tutorial-assets/saunatime-background.png)
 
 In addition to the background image, you'll upload a social media image.
 This image is shown on the social media card when someone shares your
 marketplace in a post on Facebook, Twitter, LinkedIn, or another social
-media service.
+media service:
 
-![Saunatime social](./saunatime-social.jpg)
+- [Saunatime social media sharing](/tutorial-assets/saunatime-social.jpg)
 
 ## Summary
 

@@ -28,8 +28,6 @@ const sortingArrayTutorialBranding = [
   'change-branding',
   'modify-landing-page',
   'first-edit',
-  'change-images',
-  'change-logo',
   'working-with-microcopy',
   'configurations',
   'change-default-locations',
