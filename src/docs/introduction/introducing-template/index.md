@@ -11,28 +11,19 @@ published: true
 
 The Sharetribe Web Template is a customizable marketplace web
 application built on top of the Flex APIs. It is a great starting point
-for developing any type of marketplace, whether it is about rentals,
-services, products, or something else. It offers basic marketplace
-functionalities out of the box so that you can focus on developing
-custom features.
+for building any type of marketplace, whether it is about rentals,
+services, products, or something else. You can configure the Template without coding, then host the code to launch and add custom features. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dHe8_z4FAEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Development starting point
+## Customization starting point
 
-The Sharetribe Web Template lets you build a custom marketplace fast.
-After downloading the open-sourced codebase and installing your tooling,
-you start with a fictional marketplace called Biketribe. Biketribe is a
-web app for purchasing or renting bikes.
+You can configure a hosted version of the Sharetribe Web Template in your Console's Test environment. When you first open your Test marketplace, you start with an example marketplace called Biketribe. Biketribe is a marketplace running on Flex APIs for renting bicycles. 
 
-The Sharetribe Web Template is designed to be customized. Biketribe is
-an example to help you develop your own custom marketplace faster. The
-codebase features modern frontend technologies, so developers familiar
-with headless web development should be able to start building quickly.
+You can change Biketribe default settings in Console. Change core user experiences like search, listing
+creation, and transactions in Console's Build section under the "Content" tab. For a full list of the no-code capabilities and how to use them to change Biketribe, please consult our [Biketribe configuration checklist.](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist)
 
-Much of the Template’s initial functionality is configurable through a
-few simple code changes. Core user experiences like search, listing
-creation, and transactions can be set from a single file.
+At the least, after configuring your marketplace, you will need to install the Template codebase on your own servers. More likely, you will want to modify the Template codebase with your own custom features in addition to the configurations you made without coding. Please start with [this guide](https://www.sharetribe.com/docs/introduction/getting-started-with-web-template/) on how to get install the Template locally.
 
 Overall, the development phase takes typically 1-2 months from the first
 lines of code written to the launch of the first version. Depending on

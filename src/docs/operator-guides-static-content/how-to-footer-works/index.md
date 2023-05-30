@@ -1,7 +1,7 @@
 ---
 title: How to edit your marketplace footer 
 slug: how-footer-works
-updated: 2023-04-19
+updated: 2023-06-01
 category: operator-guides-static-content
 ingress:
  Learn how to configure your marketplace footer
