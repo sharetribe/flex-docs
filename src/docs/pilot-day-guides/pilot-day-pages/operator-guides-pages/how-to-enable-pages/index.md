@@ -2,7 +2,7 @@
 title: How to enable Pages in Console
 slug: how-to-enable-pages
 updated: 2023-04-25
-category: pilot-day-guides-pages
+category: pilot-day-guides-static-content
 ingress: Enable the Pages feature in your Test environment
 published: true
 ---

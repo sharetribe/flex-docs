@@ -179,11 +179,18 @@
 
   "Sidebar.pilotDayGuides": "Pilot Day Guides",
   "Sidebar.pilotDayGuidesConcepts": "Concepts",
+  "Sidebar.pilotDayGuidesUsefulInformation": "Useful Information",
+  "Sidebar.pilotDayGuidesStaticContent": "Static content",
+  "Sidebar.pilotDayGuidesLayout": "Layout",
+  "Sidebar.pilotDayGuidesTransactions": "Transactions",
+  "Sidebar.pilotDayGuidesListings": "Listings",
+  "Sidebar.pilotDayGuidesBranding": "Branding",
+
+
   "ArticlePage.pilot-day-guides.breadCrumbTitle": "Pilot Day Guides",
   "ArticleIndexPage.pilot-day-guides.title": "Pilot Day Guides",
   "ArticleIndexPage.pilot-day-guides.description": "All pilot day guides",
 
-  "Sidebar.pilotDayGuidesPages": "Pages",
   "Sidebar.tutorialRental": "Rental tutorial",
   "ArticleIndexPage.tutorial-rental.title": "Rental tutorial",
   "ArticleIndexPage.tutorial-rental.description": "description here",

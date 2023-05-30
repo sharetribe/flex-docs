@@ -16,7 +16,12 @@ const query = graphql`
             in: [
               "pilot-day-guides-concepts"
               "pilot-day-guides"
-              "pilot-day-guides-pages"
+              "pilot-day-guides-static-content"
+              "pilot-day-guides-transactions"
+              "pilot-day-guides-useful-information"
+              "pilot-day-guides-listings"
+              "pilot-day-guides-layout"
+              "pilot-day-guides-branding"
             ]
           }
         }

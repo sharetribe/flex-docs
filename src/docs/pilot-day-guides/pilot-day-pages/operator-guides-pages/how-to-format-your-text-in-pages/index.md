@@ -1,6 +1,6 @@
 ---
 title: How to format your text in Pages with Markdown
-slug: how-to-format-your-text-in-pages
+slug: how-to-format-your-text-in-static-content
 updated: 2023-02-14
 category: pilot-day-guides-pages
 ingress:

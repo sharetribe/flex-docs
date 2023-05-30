@@ -2,7 +2,7 @@
 title: How to create an FAQ page
 slug: how-to-create-an-faq-page
 updated: 2023-02-14
-category: pilot-day-guides-pages
+category: pilot-day-guides-static-content
 ingress: Learn how to use Pages to build an FAQ content page
 published: true
 ---

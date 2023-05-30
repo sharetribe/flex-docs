@@ -2,7 +2,7 @@
 title: How to edit SEO & social metadata tags in Pages
 slug: how-to-edit-seo-and-social-metadata-in-pages
 updated: 2023-02-14
-category: pilot-day-guides-pages
+category: pilot-day-guides-static-content
 ingress: Change metadata for SEO and Social media
 published: true
 ---

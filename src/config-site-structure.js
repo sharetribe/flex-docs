@@ -356,9 +356,35 @@ exports.siteStructure = [
         sortingArray: sortingArrayPilotDayGuides,
       },
       {
-        id: 'pilot-day-guides-pages',
+        id: 'pilot-day-guides',
         sortingArray: [],
       },
+            {
+        id: 'pilot-day-guides-static-content',
+        sortingArray: [],
+      },
+            {
+        id: 'pilot-day-guides-transactions',
+        sortingArray: [],
+      },
+            {
+        id: 'pilot-day-guides-useful-information',
+        sortingArray: [],
+      },
+            {
+        id: 'pilot-day-guides-listings',
+        sortingArray: [],
+      },
+            {
+        id: 'pilot-day-guides-layout',
+        sortingArray: [],
+      },
+            {
+        id: 'pilot-day-guides-branding',
+        sortingArray: [],
+      },
+            
+            
     ],
   },
 ];
