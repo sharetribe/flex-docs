@@ -171,8 +171,8 @@ You then need to add the following environment variables:
 
 - `REACT_APP_MARKETPLACE_ROOT_URL`
 
-  This is the root URL of the marketplace. Remove trailing slash from the
-  domain.<br />E.g. _`https://<the-name-of-your-app>.onrender.com`_
+  This is the root URL of the marketplace. Remove trailing slash from
+  the domain.<br />E.g. _`https://<the-name-of-your-app>.onrender.com`_
 
 - `NODE_ENV`
 

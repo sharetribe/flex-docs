@@ -107,9 +107,10 @@
   "Sidebar.introductionTemplates": "Flex & Templates",
 
   "Sidebar.tutorial": "Tutorial",
-  "Sidebar.tutorialBranding": "Part 1: Branding and extended data",
+  "Sidebar.tutorialBranding": "Part 1: Branding",
+  "Sidebar.tutorialListings": "Part 2: Listings",
   "Sidebar.tutorialIntroduction": "Introduction",
-  "Sidebar.tutorialTransactionProcess": "Part 2: Modifying the transaction process",
+  "Sidebar.tutorialTransactionProcess": "Part 3: Modifying the transaction process",
 
   "Sidebar.concepts": "Concepts",
   "Sidebar.conceptsUsersAndAuthentication": "Users and Authentication",

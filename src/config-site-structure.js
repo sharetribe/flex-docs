@@ -35,6 +35,8 @@ const sortingArrayTutorialBranding = [
   'deploy-to-render',
 ];
 
+const sortingArrayTutorialListings = ['add-new-wizard-tab'];
+
 const sortingArrayTutorialTransactionProcess = [
   'customize-pricing-tutorial',
   'create-transaction-process',
@@ -168,6 +170,11 @@ exports.siteStructure = [
       {
         id: 'tutorial-branding',
         sortingArray: sortingArrayTutorialBranding,
+        showNextAndPrev: true,
+      },
+      {
+        id: 'tutorial-listings',
+        sortingArray: sortingArrayTutorialListings,
         showNextAndPrev: true,
       },
       {
