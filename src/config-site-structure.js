@@ -142,12 +142,23 @@ const sortingArrayHowToListings = [
   'modify-time-intervals',
   'bookings-with-buffer',
 ];
-const sortingArrayOperatorGuidesPages = ['introducing-pages'];
+  const sortingArrayOperatorGuidesStaticContent = ['introducing-pages'];
+
 const sortingArrayOperatorGuidesConcepts = [
   'concepts',
   'features',
   'flex-operator-resources',
 ];
+
+const sortingArrayOperatorGuidesLayout = [];
+
+const sortingArrayOperatorGuidesBranding = [];
+
+const sortingArrayOperatorGuidesListings = [];
+
+const sortingArrayOperatorGuidesTransactions = [];
+const sortingArrayOperatorGuidesUsefulInformation = [];
+
 
 const sortingArrayPilotDayGuides = ['test-page'];
 
@@ -297,32 +308,40 @@ exports.siteStructure = [
   },
   {
     id: 'operator-guides',
-    isOpen: true,
+    isOpen: false,
     isHidden: true,
     subcategories: [
       {
         id: 'operator-guides-concepts',
         sortingArray: sortingArrayOperatorGuidesConcepts,
       },
-      {
-        id: 'operator-guides-pages',
-        sortingArray: sortingArrayOperatorGuidesPages,
-      },
-    ],
-  },
-  {
-    id: 'pilot-day-guides',
-    isOpen: true,
-    isHidden: true,
-    hideSidebar: true,
-    subcategories: [
-      {
-        id: 'pilot-day-guides-concepts',
-        sortingArray: sortingArrayPilotDayGuides,
+{
+        id: 'operator-guides-useful-information',
+        sortingArray: sortingArrayOperatorGuidesUsefulInformation,
       },
       {
-        id: 'pilot-day-guides-pages',
-        sortingArray: [],
+        id: 'operator-guides-static-content',
+        sortingArray: sortingArrayOperatorGuidesStaticContent,
+      },
+
+      {
+        id: 'operator-guides-layout',
+        sortingArray: sortingArrayOperatorGuidesLayout,
+      },
+
+      {
+        id: 'operator-guides-transactions',
+        sortingArray: sortingArrayOperatorGuidesTransactions,
+      },
+
+      {
+        id: 'operator-guides-branding',
+        sortingArray: sortingArrayOperatorGuidesBranding,
+      },
+
+      {
+        id: 'operator-guides-listings',
+        sortingArray: sortingArrayOperatorGuidesListings,
       },
     ],
   },
