@@ -345,4 +345,20 @@ exports.siteStructure = [
       },
     ],
   },
+    {
+    id: 'pilot-day-guides',
+    isOpen: true,
+    isHidden: true,
+    hideSidebar: true,
+    subcategories: [
+      {
+        id: 'pilot-day-guides-concepts',
+        sortingArray: sortingArrayPilotDayGuides,
+      },
+      {
+        id: 'pilot-day-guides-pages',
+        sortingArray: [],
+      },
+    ],
+  },
 ];
