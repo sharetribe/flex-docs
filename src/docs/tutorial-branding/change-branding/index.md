@@ -9,10 +9,11 @@ ingress:
 published: true
 ---
 
-In this tutorial, you will learn how to configure your marketplace's
-brand color and images. By following these steps, you will be able to
-update your marketplace's colour, logo, favicon, background image for
-login pages, and social media image using the no-code editor in Console.
+In this tutorial section, you will learn how to configure your
+marketplace's brand color and images. By following these steps, you will
+be able to update your marketplace's colour, logo, favicon, background
+image for login pages, and social media image using the no-code editor
+in Console.
 
 ## What are hosted assets
 

@@ -1,24 +1,41 @@
 ---
 title: Working with microcopy
 slug: working-with-microcopy
-updated: 2022-05-13
+updated: 2023-05-13
 category: tutorial-branding
-ingress: Change the UI copy-texts and implement new microcopy.
+ingress:
+  Change your marketplace's copy-texts and implement new microcopy.
 published: true
 ---
 
-## Where to find copy-texts
+In this tutorial section, you will learn what is microcopy and how to
+change it using the no-code interface in Console. We will change the
+Bike-themed microcopy to match our Sauna-themed marketplace.
+
+## What is microcopy
+
+Microcopy refers to short, contextual written texts found throughout
+your marketplace's interface, such as button labels, error messages, and
+help texts. It plays a crucial role in setting the tone of communication
+and making key vocabulary decisions that shape the user experience on a
+website or application.
+
+Like other hosted assets, your template application fetches the
+microcopy you manage through the no-code interface in Console via our
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
+
+## Where to find microcopy
 
 One of the biggest mandatory tasks for a customization project is to
-change the UI texts. Biketribe is a rental and sales marketplace for
-bikes - so, there are quite many components and pages where you will
-need to change the copy-texts.
+change the user interface (UI) texts. Biketribe is a rental and sales
+marketplace for bikes - so, there are quite many components and pages
+where you will need to change the copy-texts.
 
 The easiest way to modify the copy texts is through Flex Console, in
-Build > Content > Microcopy editor. This page helps you modify what in
-Flex is known as _microcopy_ – button labels, help texts, and other
-small messages that help your user find their way around the
-marketplace.
+[Build > Content > Microcopy editor](https://flex-console.sharetribe.com/content).
+This page helps you modify what in Flex is known as _microcopy_ – button
+labels, help texts, and other small messages that help your user find
+their way around the marketplace.
 
 ![Modify marketplace texts](./microcopy_start.png)
 
@@ -89,10 +106,10 @@ all of them:
 
 ```json
 {
-  "TopbarDesktop.createListing": "+ Add your cottage",
+  "TopbarDesktop.createListing": "+ Add your Sauna",
   "TopbarDesktop.login": "Log back in",
   "TopbarDesktop.signup": "Create an account",
-  "TopbarSearchForm.placeholder": "Search cottages..."
+  "TopbarSearchForm.placeholder": "Search saunas..."
 }
 ```
 
