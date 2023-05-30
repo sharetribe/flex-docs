@@ -84,7 +84,6 @@ available) from a list of options. To create this field, you have to
 define the list of options available to select. These will be displayed
 as checkboxes in the listing creation form.
 
-![Select Multiple in the lising form](./2023-05-28 22.57.11.jpg)
 ![Select multiple in the listing form](./select_multiple-field-listing_form.png)
 
 It will be displayed as multiple options selected on the listing page.

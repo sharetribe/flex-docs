@@ -8,7 +8,7 @@ ingress:
 published: true
 ---
 
-Sharetribe Flex allows you to build a unique marketplace fast with custom development. To work with Flex, you need these development skills, or you need to hire a software developer. Though any developer with the required skillset will do, we recommend hiring a vetted developer from Sharetribe's official Flex Expert Network for great quality work at competitive rates. 
+Sharetribe Flex allows you to build a unique marketplace fast with custom development. To work with Flex, you need these [development skills](https://www.sharetribe.com/docs/introduction/development-skills/), or you need to hire a software developer. Though any developer with the required skillset will do, we recommend hiring a vetted developer from Sharetribe's official Flex [Expert Network](https://www.sharetribe.com/experts/) for great quality work at competitive rates. 
 
 To hire a developer to build your Flex marketplace, you'll need to take three key steps:
 
@@ -27,9 +27,9 @@ While Flex offers no-code tools to make basic modifications to your marketplace,
 
 ## How to find a qualified developer 
 
-Although you have the option to hire any developer with the required development skills to build your Flex marketplace, we highly recommend considering one from our Expert Network. Experts in our network are vetted for their skills and professionalism. Each has built at least one custom marketplace using Flex previously, though most have built several. 
+Although you have the option to hire any developer with the [required development skills](https://www.sharetribe.com/docs/introduction/development-skills/) to build your Flex marketplace, we highly recommend considering one from our Expert Network. Experts in our network are vetted for their skills and professionalism. Each has built at least one custom marketplace using Flex previously, though most have built several. 
 
-You can connect with a developer from the Flex Expert Network through the Flex Console. Either book a call with Sharetribe to discuss your project and questions. If you prefer, you can review Expert profiles and contact them directly in the Expert directory. 
+You can connect with a developer from the Flex Expert Network through the Flex Console. Either book a call with Sharetribe to discuss your project and questions. If you prefer, you can review Expert profiles and contact them directly in the [Expert directory](https://www.sharetribe.com/experts/). 
 
 The first step to working with a Flex Expert is to meet and share your requirements. They can then prepare a high-level estimate for you, including the estimated cost and time to build your marketplace.
 
@@ -41,7 +41,7 @@ At a rate of $30 per hour (the hourly rates of Flex Experts vary from $30 to $10
 
 More commonly, the development will involve implementing more customizations beyond the basics and will take more hours. Therefore, the average budget required to launch the first version of your platform tends to be around $10k.
 
-The cost and time to develop your unique marketplace with Flex depend heavily on your specific requirements in terms of features, workflows, and design. What you are building and who you hire to build it are the biggest determinants of the budget needed to build your marketplace. As a general rule, we recommend you launch your first version (the "Minimum Viable Platform") with as minimal a feature set as possible so you are able to launch faster and validate your concept. We call this the Lean Marketplace approach.
+The cost and time to develop your unique marketplace with Flex depend heavily on your specific requirements in terms of features, workflows, and design. What you are building and who you hire to build it are the biggest determinants of the budget needed to build your marketplace. As a general rule, we recommend you launch your first version ([the "Minimum Viable Platform"](https://www.sharetribe.com/academy/how-to-build-a-minimum-viable-platform/)) with as minimal a feature set as possible so you are able to launch faster and validate your concept. We call this the Lean Marketplace approach.
 
 ## Prepare your requirements to get proposals
 
