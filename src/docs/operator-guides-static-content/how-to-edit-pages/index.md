@@ -2,7 +2,7 @@
 title: How to edit content pages in Console
 slug: how-to-edit-content-pages-in-console
 updated: 2023-04-25
-category: operator-guides-pages
+category: operator-guides-static-content
 ingress:
   Learn how to use Pages to edit content across Landing page,
   informational pages, or blog pages.
