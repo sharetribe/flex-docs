@@ -71,8 +71,8 @@ Biketribe uses language about bikes. Build your own messaging in the following s
 - Change the microcopy in your marketplace. Edit in [Console](https://flex-console.sharetribe.com/) or learn more in the [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor).
 - Change your marketplace landing page. Edit in [Console](https://flex-console.sharetribe.com/) or learn more in the [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console).
 - Update your Terms of Service and Privacy Policy. Edit in [Console](https://flex-console.sharetribe.com/) or learn more in [the documentation](https://www.sharetribe.com/docs/operator-guides/free-templates). 
-- Update the footer. Edit in [Console](https://flex-console.sharetribe.com/) or learn more in the documentation. 
-- Update your built-in emails. Edit in [Console](https://flex-console.sharetribe.com/) or learn more in the documentation. 
+- Update the footer. Edit in [Console](https://flex-console.sharetribe.com/) or learn more in the [documentation](https://www.sharetribe.com/docs/operator-guides/how-footer-works). 
+- Update your built-in emails. Edit in [Console](https://flex-console.sharetribe.com/) or learn more in the [documentation](https://www.sharetribe.com/docs/concepts/email-notifications/#built-in-email-notifications). 
 
 
 ### Listings 
@@ -93,7 +93,7 @@ Biketribe customers rent per day. If your marketplace transaction is different, 
 
 ## Go Live and customize further 
 
-Once you have completed these changes, it's time to review your marketplace. If you are ready to launch to your first users, then you need to set up a Live environment, host your marketplace code, and configure your DNS. This process does require technical knowledge. You can learn more about how to [go Live here.](https://docs.google.com/document/d/19op8D4NggDsGidtByeWk6k8wfVjBaRx7l-RbA9tSetg/edit) (GOLIVEHEADER)
+Once you have completed these changes, it's time to review your marketplace. If you are ready to launch to your first users, then you need to set up a Live environment, host your marketplace code, and configure your DNS. This process does require technical knowledge. You can learn more about how to [go Live here.](https://www.sharetribe.com/docs/operator-guides/how-to-build-launch-operate-with-sharetribe-flex) (GOLIVEHEADER)
 
 Hosting your marketplace code lets anyone with development skills make customizations beyond what is available with the no-code tools. You can build custom features, create a custom design, integrate 3rd party software, and much more with code. Unless you are a developer, you should [hire a developer](https://www.sharetribe.com/docs/operator-guides/how-to-hire-developer/) to make these coding changes. 
 

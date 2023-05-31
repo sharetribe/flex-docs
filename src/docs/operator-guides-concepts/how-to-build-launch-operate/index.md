@@ -12,7 +12,7 @@ Sharetribe Flex allows you to build a completely unique custom marketplace for t
 
 The process of building your marketplace typically starts by modifying your example marketplace: [Biketribe](https://www.sharetribe.com/docs/introduction/introducing-template/), a peer-to-peer marketplace for bike rentals. You can easily change the configuration of this marketplace in Console to create a rental, service or product marketplace for any niche.
 
-If you're happy with how your marketplace works after configuring Biketribe, then you can go live right away. If you need further changes before going live, you can customize more aspects of your marketplace with code. Coding changes allow you to make customizations beyond the options available via no-code tools. You can make changes with code (and no-code) tools before going live or anytime after. 
+If you're happy with how your marketplace works after configuring Biketribe, then you can [go live](https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/#4-going-live) right away. If you need further changes before going live, you can customize more aspects of your marketplace with code. Coding changes allow you to make customizations beyond the options available via no-code tools. You can make changes with code (and no-code) tools before going live or anytime after. 
 
 ## How to configure your marketplace without coding
 
@@ -22,8 +22,7 @@ Some of these changes are must-haves: you'll likely want to change your logo and
 
 
 
-You can review [the Biketribe customization checklist](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist
-) to make sure you’ve covered the most important no-code modifications. 
+You can review [the Biketribe customization checklist](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist) to make sure you’ve covered the most important no-code modifications. 
 
 ## How to go Live
 
