@@ -13,7 +13,7 @@ In this example, we will change a transaction process email notification
 so that it uses protected data. We will send the provider's phone number
 to the customer when the provider accepts the booking request. We will
 add a phone number input field to Sign up form and edit the
-**cottagedays-nightly-booking** transaction process that was created in
+**saunatime-instant-booking** transaction process that was created in
 the earlier part of this tutorial.
 
 ## Change signup form
@@ -21,8 +21,8 @@ the earlier part of this tutorial.
 By default, users can save phone numbers on Contact details page (path:
 _/account/contact-details_). However, it is not required for all users.
 Since we want to reveal the provider's phone number to the customer when
-the booking is accepted, we need to collect it first. This should be
-done on the sign-up page:
+the booking is made, we need to collect it first. This should be done on
+the sign-up page:
 
 ![Phone number input added to sign-up form](./signup-form.png)
 
@@ -30,8 +30,6 @@ done on the sign-up page:
 
 To make this change, we need to update _SignupForm_. There's an existing
 field to collect phone numbers. It's called **FieldPhoneNumberInput**.
-
-src/containers/AuthenticationPage/SignupForm/SignupForm.js
 
 ```shell
 └── src
@@ -106,7 +104,8 @@ following style-rules to _SignupForm.module.css_:
 
 ### Update microcopy
 
-Add the required microcopy to the en.json file.
+Add the required microcopy to the en.json file, or in Flex Console >
+Build > Content > Microcopy editor.
 
 ```shell
 └── src
@@ -152,14 +151,14 @@ have most the up-to-date version of the process. You can fetch any
 process version with Flex CLI:
 
 ```shell
-flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --path=./saunatime-instant-booking --marketplace=saunatime-dev
 ```
 
 <info>
 
-If you already have _cottagedays-nightly-booking_ directory you can't
-pull the process. You need to either change the _--path_ parameter or
-use a _--force_ flag at the end of the command to overwrite the existing
+If you already have _saunatime-instant-booking_ directory you can't pull
+the process. You need to either change the _--path_ parameter or use a
+_--force_ flag at the end of the command to overwrite the existing
 directory.
 
 </info>
@@ -168,7 +167,7 @@ directory.
 
 When we open up the _process.edn_ file from the fetched transaction
 process, we should be able to find the configuration for
-_transition/accept_.
+_transition/confirm-payment_.
 
 To reveal the provider's protected data, we add a new action to that
 transition:
@@ -180,40 +179,40 @@ provider's protected data, and rename it as _:providerPhoneNumber_ when
 it is saved to the transaction entity's protected data.
 
 ```diff
-  {:name :transition/accept,
-   :actor :actor.role/provider,
+  {:name :transition/confirm-payment,
+   :actor :actor.role/customer,
    :actions
    [{:name :action/accept-booking}
 +   {:name :action/reveal-provider-protected-data,
 +    :config {:key-mapping {:phoneNumber :providerPhoneNumber}}}
+    {:name :action/stripe-confirm-payment-intent}
     {:name :action/stripe-capture-payment-intent}],
-   :from :state/preauthorized,
-   :to :state/accepted}
+   :from :state/pending-payment,
+   :to :state/booked}
 ```
 
 ### Update email template
 
 To use the phone number from the transaction entity, we need to update
-the email template: _booking-request-accepted-html.html_. You can find
+the email template: _booking-confirmed-customer-html.html_. You can find
 that file from the fetched process directory:
 
 ```shell
-└── cottagedays-nightly-booking
+└── saunatime-instant-booking
     └── templates
-        └── booking-request-accepted
-            └── booking-request-accepted-html.html
+        └── booking-confirmed-customer
+            └── booking-confirmed-customer-html.html
 ```
 
 We add a new paragraph inside a section where **transaction context** is
 available: between `{{#with transaction}}` and `{{/with}}`.
 
 ```diff
-    {{#with transaction}}
-    <p>{{provider.display-name}} has accepted your booking request for {{listing.title}} from {{> format-date date=booking.start}} to {{> format-date date=booking.end}}.</p>
-
-+    <p>In case you need to contact {{provider.display-name}} directly, you can use the following phone number: {{protected-data.providerPhoneNumber}}</p>
-
-    <p>We have charged {{> format-money money=payin-total}} from your credit card. Here's your receipt.</p>
+...
+    {{/each}}
++   <p style="font-size:16px;line-height:1.4;margin:16px 0;color:#484848">In case you need to contact {{provider.display-name}} directly, you can use the following phone number: {{protected-data.providerPhoneNumber}}</p>
+    <p style="font-size:16px;line-height:1.4;margin:16px 0;color:#484848">Your card has been charged for
+      {{> format-money money=payin-total}}. Here&#x27;s the booking breakdown.</p>
 ```
 
 <extrainfo title="How to test the email template rendering locally?">
@@ -232,25 +231,28 @@ The short guide of the necessary steps:
    "protected-data" : { "providerPhoneNumber": "+358 12 3456789" },
    ```
 3. Use Flex CLI's preview with that context:
-   ```shell
-   flex-cli notifications preview --template cottagedays-nightly-booking/templates/booking-request-accepted --context sample-template-context.json --marketplace=cottagedays-dev
-   ```
+
+```shell
+
+flex-cli notifications preview --template saunatime-instant-booking/templates/booking-confirmed-customer --context sample-template-context.json --marketplace=saunatime-dev
+
+```
 
 </extrainfo>
 
 ### Push process changes
 
 Now that we have edited the transaction process and its email templates,
-we need to push a new version of _cottagedays-nightly-booking_ process.
-If you have done the earlier parts of the tutorial this process should
-be already quite familiar to you. If you need more detailed information
+we need to push a new version of _saunatime-instant-booking_ process. If
+you have done the earlier parts of the tutorial this process should be
+already quite familiar to you. If you need more detailed information
 take a look at the
 [Edit transaction process with Flex CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
 
 Push the updated process:
 
 ```shell
-flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process push --process=saunatime-instant-booking --path=./saunatime-instant-booking --marketplace=saunatime-dev
 ```
 
 Check the version number from the output of the previous _push_ command.
@@ -259,14 +261,14 @@ With _process list_ command you can get the overall picture of versions
 and process aliases:
 
 ```shell
-flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process list --process=saunatime-instant-booking --marketplace=saunatime-dev
 ```
 
 Update the alias to point to **the latest version** of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=4 --marketplace=cottagedays-dev
+flex-cli process update-alias --alias=release-1 --process=saunatime-instant-booking --version=4 --marketplace=saunatime-dev
 ```
 
 ## Test transaction in your dev environment
@@ -289,3 +291,14 @@ that was used at the time those transactions were created. So, you need
 to create new transactions to test the updated process.
 
 </info>
+
+### Summary
+
+In this tutorial, you
+
+- Added a phone number input to SignupForm to save the user's phone
+  number in their protected data
+- Updated a transaction process to reveal the provider's phone number to
+  the transaction's protected data
+- Updated a transaction process notification to include the provider's
+  phone number from transaction protected data
