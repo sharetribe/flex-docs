@@ -356,7 +356,7 @@ exports.siteStructure = [
         sortingArray: sortingArrayPilotDayGuides,
       },
       {
-        id: 'pilot-day-guides',
+        id: 'pilot-day-guides-tutorials',
         sortingArray: [],
       },
             {

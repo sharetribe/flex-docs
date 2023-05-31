@@ -15,7 +15,7 @@ const query = graphql`
           category: {
             in: [
               "pilot-day-guides-concepts"
-              "pilot-day-guides"
+              "pilot-day-guides-tutorials"
               "pilot-day-guides-static-content"
               "pilot-day-guides-transactions"
               "pilot-day-guides-useful-information"
