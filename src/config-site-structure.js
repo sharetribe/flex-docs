@@ -35,7 +35,10 @@ const sortingArrayTutorialBranding = [
   'deploy-to-render',
 ];
 
-const sortingArrayTutorialListings = ['add-new-wizard-tab'];
+const sortingArrayTutorialListings = [
+  'add-new-wizard-tab',
+  'add-favorite-saunas',
+];
 
 const sortingArrayTutorialTransactionProcess = [
   'customize-pricing-tutorial',
