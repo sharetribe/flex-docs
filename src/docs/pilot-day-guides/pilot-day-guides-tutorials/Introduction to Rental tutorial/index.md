@@ -1,37 +1,37 @@
 ---
-title: Rental tutorial part 1
+title: Introduction to Rental Tutorial
 slug: introduction-to-rental-tutorial
-updated: 2023-02-14
+updated: 2023-05-31
 category: pilot-day-guides-tutorials
-ingress: Change metadata for SEO and Social media
+ingress: Changing Biketribe into a marketplace for renting saunas daily
 published: true
 ---
 
-Every page has metadata that determines how search engines and social
-media platforms will display it. Google, for example, uses the title and
-description you set to your page to populate their search results page.
+Welcome to the rental tutorial! The goal of this guide is to assist you in becoming acquainted with the essential configuration pages for your Hosted app and discover all the required configurations for setting up a rental marketplace. 
 
-## Rental Tutorial: A Guide to Navigating the World of Rentals
+We will focus exclusively on using the no-code settings of The New Sharetribe throughout this tutorial. Our step-by-step instructions will navigate you through the process of configuring your marketplace via the Console. Please note that all work will be carried out in your marketplace's Test environment.
 
-Rental Tutorial: A Guide to Navigating the World of Rentals
+## What are we building?
 
-In today's fast-paced world, rentals have become an integral part of our
-lives. Whether it's finding a place to live, renting a vehicle for a
-road trip, or leasing equipment for a project, the rental industry
-offers convenience and flexibility. However, navigating the world of
-rentals can sometimes be a daunting task, especially for those
-unfamiliar with the process. That's why we've put together this
-comprehensive rental tutorial to help you understand the ins and outs of
-renting and make the most of your rental experience.
+In this tutorial, we're going to kick things off with the default theme, Biketribe, and tweak it into a marketplace for renting saunas. We're going to call it "Saunatime." Now, while we're guiding you with specific steps to build Saunatime, feel free to mix things up a bit to create your marketplace. Just remember, if you switch things around, you'll need to keep track of those changes when following other steps in this tutorial. Along the way, we'll also cover a few key concepts to help you better understand the process.
 
-Determine Your Needs: Before embarking on your rental journey, it's
-essential to identify your specific needs. Are you looking for a
-short-term or long-term rental? Do you require a particular type of
-property or equipment? Understanding your requirements will help you
-narrow down your options and save time during your search.
+## The steps in the process
 
-Research Rental Options: Once you have a clear idea of what you're
-looking for, it's time to research rental options. Use online platforms,
-local directories, or seek recommendations from friends and colleagues.
-Compare prices, read reviews, and gather information about the rental
-providers to ensure they are reliable and reputable.
+These are the steps that we will follow in this tutorial. If you are a returning user, you can jump directly to any of the articles below
+
+Basic configuration: Marketplace branding
+Basic configuration: Layout
+Static Content: Modifying the Landing Page 
+Static Content: Edit the footer
+Static content: Change marketplace default texts
+Listing settings: Setting the right Listing type
+Listing settings: Creating listing fields
+Listing settings: Customizing listing search
+Basic configuration: Configure commission and minimum listing price
+Explore the marketplace: Sign up as a new user
+Explore the marketplace: Creating our first listing
+Explore the marketplace: Create your first Transaction
+
+## End result
+
+At the end of the tutorial, you will have a fully functional Sauna-themed rental marketplace. It will be in your Test environment, an environment you can use to explore the user experience and user design of your marketplace and to test the marketplace functionality.
