@@ -192,10 +192,10 @@
   "ArticleIndexPage.pilot-day-guides.title": "Pilot Day Guides",
   "ArticleIndexPage.pilot-day-guides.description": "All pilot day guides",
 
-  "Sidebar.tutorialRental": "Rental tutorial",
-  "ArticleIndexPage.tutorial-rental.title": "Rental tutorial",
-  "ArticleIndexPage.tutorial-rental.description": "description here",
-  "ArticlePage.tutorial-rental.breadCrumbTitle": "Rental tutorial",
+  "Sidebar.tutorialRental": "The New Sharetribe Guides",
+  "ArticleIndexPage.tutorial-rental.title": "The New Sharetribe Guides",
+  "ArticleIndexPage.tutorial-rental.description": "All documentation about The New Sharetribe",
+  "ArticlePage.tutorial-rental.breadCrumbTitle": "The New Sharetribe Guides",
   "ArticleIndexPage.tutorial-service.title": "Service tutorial",
   "ArticleIndexPage.tutorial-service.description": "desc",
 
