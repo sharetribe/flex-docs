@@ -123,6 +123,8 @@ on the search page:
 
 ![Topbar with updated microcopy](./updated_topbar_microcopy.png)
 
+## Further reading
+
 To get more insight into microcopy syntax, different language files, and
 localization of dates and money values, you should check out the
 article:

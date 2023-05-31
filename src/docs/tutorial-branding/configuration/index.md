@@ -91,21 +91,6 @@ listing's price even if the currency is wrong.
 
 </extrainfo>
 
-Another configuration defined in configDefault.js is **siteTitle** - and
-then that variable is used in `<meta>` tags and
-[webpage's schema](https://schema.org/).
-
-```js
-// Site title is needed in meta tags (bots and social media sharing reads those)
-const siteTitle = 'Biketribe';
-```
-
-### Task: _Set listing's minimum price_
-
-Let's continue our task of changing currency to euros. In the previous
-chapter, we changed the currency to EUR and it is already in use when a
-new listing is created.
-
 <extrainfo title="Extra: how to import currency on a component file?">
 
 The _configDefault.js_ file defines the currency and exports it among
@@ -129,6 +114,21 @@ other variables:
    ```
 
 </extrainfo>
+
+Another configuration defined in configDefault.js is **siteTitle** - and
+then that variable is used in `<meta>` tags and
+[webpage's schema](https://schema.org/).
+
+```js
+// Site title is needed in meta tags (bots and social media sharing reads those)
+const siteTitle = 'Biketribe';
+```
+
+### Task: _Set listing's minimum price_
+
+Let's continue our task of changing currency to euros. In the previous
+chapter, we changed the currency to EUR and it is already in use when a
+new listing is created.
 
 If you are using some other currency besides EUR, you can read more
 about checking the necessary currency configurations from

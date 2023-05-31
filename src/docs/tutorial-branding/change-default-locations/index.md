@@ -99,44 +99,6 @@ The result should look like this:
 
 You can add other locations in a similar fashion.
 
-## Other hard-coded links with a location search
-
-There are hard-coded links to search page from other components too.
-Check at least the **Footer** component.
-
-<extrainfo title="Extra: adjust locations listed in Footer component">
-
-```shell
-└── src
-    └── components
-        └── Footer
-            └── Footer.js
-```
-
-_Footer_ has hard-coded links to the search page. These links use
-_NamedLink_ component, which just gets the full list of _search_ params:
-
-```js
-<NamedLink
-  name="SearchPage"
-  to={{
-    search:
-      '?address=Helsinki%2C%20Finland&bounds=60.2978389%2C25.254484899999966%2C59.9224887%2C24.782875800000056&origin=60.16985569999999%2C24.93837910000002',
-  }}
-  className={css.link}
->
-  <FormattedMessage id="Footer.searchHelsinki" />
-</NamedLink>
-```
-
-> **Note**: origin is an unnecessary search parameter with the default
-> configuration of Sharetribe Web Template.
-
-You also need to create a new microcopy key. E.g.
-_'Footer.searchAuckland'_ and add it to the microcopy file.
-
-  </extrainfo>
-
 On the search page, you can use different kinds of filters. In the next
 article, you will learn how to update listing attributes used on listing
 creation page and search filters.<br />
