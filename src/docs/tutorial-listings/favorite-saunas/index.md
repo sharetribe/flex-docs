@@ -20,6 +20,14 @@ In this tutorial, you will
 - Save the favorites to the user’s extended data
 - Create a new page, _FavoriteListingsPage_
 
+<info>
+
+This tutorial uses the following marketplace configurations:
+
+- Layout > Listing page image layout: **Screen-wide cover photo**
+
+</info>
+
 ### Add a favorite button to listing page
 
 First, we will add a button on each listing so that a signed-in user can

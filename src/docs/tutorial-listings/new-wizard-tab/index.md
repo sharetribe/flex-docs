@@ -25,6 +25,15 @@ In this tutorial, you will
 - Show the listing’s rules on the listing page with the
   _SectionTextMaybe_ component
 
+<info>
+
+This tutorial uses the following marketplace configurations:
+
+- Layout > Listing page image layout: **Screen-wide cover photo**
+- Listing types > Transaction process: **Calendar booking**
+
+</info>
+
 ## Add EditListingRulesPanel and EditListingRulesForm
 
 The different listing wizard panels can be found in the EditListingPage
