@@ -292,7 +292,7 @@ to create new transactions to test the updated process.
 
 </info>
 
-### Summary
+## Summary
 
 In this tutorial, you
 

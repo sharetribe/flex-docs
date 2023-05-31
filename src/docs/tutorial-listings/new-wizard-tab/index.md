@@ -543,7 +543,7 @@ You can now see the listing rules displayed on the listing page.
 
 ![Sauna rules on listing page](./saunatime-rules-listing-page.png)
 
-## Review
+## Summary
 
 In this tutorial, you
 

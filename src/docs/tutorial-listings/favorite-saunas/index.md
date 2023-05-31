@@ -28,7 +28,7 @@ This tutorial uses the following marketplace configurations:
 
 </info>
 
-### Add a favorite button to listing page
+## Add a favorite button to listing page
 
 First, we will add a button on each listing so that a signed-in user can
 favorite that particular listing. In this tutorial, we will add the
@@ -210,7 +210,7 @@ refresh your app and you will see the correct texts in the button.
 Clicking the button will not do anything yet, so as the next step, we
 will create the functionality to favorite a listing.
 
-### Save the favorites to the user’s extended data
+## Save the favorites to the user’s extended data
 
 When the user clicks the favorite button, we want to save that click in
 the user’s extended data. More specifically, if the listing is not in
@@ -454,7 +454,7 @@ favorites list with this listing's id.
 
 ![User's favorite listings in Flex Console](./saunatime-favorites-console.png)
 
-### Create FavoriteListingsPage
+## Create FavoriteListingsPage
 
 In addition to seeing the favorite status on the individual listing’s
 page, we want to show all favorited listings on a separate page. For
@@ -729,7 +729,7 @@ favorited listings.
 
 ![Favorite listings page](./saunatime-favorites-page.png)
 
-### Add navigation
+## Add navigation
 
 As the final step, we will add our new favorite listings page into the
 navigation elements of the page – TopBar and UserNav.
@@ -824,6 +824,8 @@ settings.
 
 And that’s it! The Saunatime marketplace now allows users to set
 listings as favorites and view them on a separate page.
+
+## Summary
 
 In this tutorial, you have
 

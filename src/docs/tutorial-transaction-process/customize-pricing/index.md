@@ -798,6 +798,8 @@ process are
 
 </extrainfo>
 
+## Summary
+
 In this tutorial, you have
 
 - Saved a cleaning fee attribute to the listing's public data in
