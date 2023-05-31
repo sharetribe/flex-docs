@@ -1,7 +1,7 @@
 ---
 title: Add a new email notification
 slug: add-new-email-notification
-updated: 2020-07-21
+updated: 2023-05-31
 category: tutorial-transaction-process
 ingress:
   Learn how to add a new email notification to the existing transaction
@@ -10,9 +10,9 @@ published: true
 ---
 
 In this example, we will add a new email notification that will be sent
-to the customer when a new booking request has been made. We will edit
-the **cottagedays-nightly-booking** transaction process which was
-created in the earlier part of this tutorial.
+to the customer when their booking time is approaching. We will edit the
+**saunatime-instant-booking** transaction process, which was created in
+the earlier part of this tutorial.
 
 ## Fetch transaction process
 
@@ -21,12 +21,12 @@ have most the up-to-date version of the process. You can fetch any
 process version with flex-cli:
 
 ```shell
-flex-cli process pull --process=cottagedays-nightly-booking --alias=release-1 --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --path=./saunatime-instant-booking --marketplace=saunatime-dev
 ```
 
 <info>
 
-If you already have a _cottagedays-nightly-booking_ directory, you can't
+If you already have a _saunatime-instant-booking_ directory, you can't
 pull the process. You need to either change the --path parameter or use
 _--force_ flag at the end of the command to overwrite the existing
 directory.
@@ -38,56 +38,29 @@ directory.
 When the latest version of the transaction process is pulled, we can
 navigate to the
 [_templates_ directory](/how-to/edit-email-templates-with-flex-cli/#templates-directory).
-We want to add a new directory for the new notification there. Because
-the new notification will be somewhat similar to the existing
-**new-booking-request** notification, we can use that directory as a
-starting point.
-
-### Copy the notification
-
-You can use the following command to copy the contents of the
-_new-booking-request_ directory to a new
-_new-booking-request-for-customer_ directory.
+We want to add a new directory for the new notification there.
 
 ```shell
-cp -r new-booking-request new-booking-request-for-customer
+└── saunatime-instant-booking
+    └── templates
+        └── booking-reminder-customer
 ```
 
-### Rename notification files
+### Copy the notification files
 
-Now you can see that inside _new-booking-request-for-customer_ directory
-there are two files:
+Create two files in the new directory with the following file names, and
+add the linked contents:
 
-- _new-booking-request-subject.txt_ - holds the mail Subject line
-  template
-- _new-booking-request-html.html_ - contains the template for the HTML
-  version of the mail
-
-We need to rename these files to:
-
-- _new-booking-request-for-customer-html.html_
-- _new-booking-request-for-customer-subject.txt_.
+- [booking-reminder-customer-subject.txt](/tutorial-assets/booking-reminder-customer-subject.txt)
+  – contains the email message subject line template
+- [booking-reminder-customer-html.html](/tutorial-assets/booking-reminder-customer-html.txt)
+  – contains the template for the HTML version of the email message
 
 Remember to follow the naming convention where the file ends with
 _\*-html.html_ or _\*-subject.txt_. Otherwise, the notification files
 will not work.
 
-### Edit the notification
-
-Because we want to send the _new-booking-request-for-customer_
-notification as a confirmation to the customer, we want to do some small
-changes to the subject line in the
-_new-booking-request-for-customer-subject.txt_ file:
-
-```diff
-- {{transaction.customer.display-name}} has requested to book {{transaction.listing.title}}
-+ You have requested to book {{transaction.listing.title}}
-```
-
-Next, we will edit the actual content of the email notification in the
-_new-booking-request-for-customer-html.html_ file.
-
-Templates are using
+Templates use the
 [Handlebars syntax](/references/email-templates/#handlebars) which will
 be rendered as HTML when the email is sent. Handlebars enables adding
 variables like recipient name, marketplace name, and transaction details
@@ -100,74 +73,14 @@ format follows a structure of a standard HTML document. You can add
 styles with CSS, edit the structure with HTML, and add transaction
 details by using variables within `{{}}`.
 
-For example, the notification code could look like this:
-
-<!-- prettier-ignore -->
-```html
-{{~#*inline "format-money"~}}
-{{money-amount money}}
-{{money.currency}}
-{{~/inline~}}
-
-{{~#*inline "format-date"~}}
-{{date date format="MMM
-d,YYYY" tz="Etc/UTC"}}
-{{~/inline~}}
-
-<html>
-  <head>
-    <style type="text/css">
-      .email-title {
-        color: #2f880a;
-      }
-    </style>
-  </head>
-  <body>
-    {{#with transaction}}
-    <h1 class="email-title">
-      You have requested to book {{listing.title}}
-    </h1>
-
-    <p>
-      Your booking request for {{listing.title}} from {{> format-date
-      date=booking.start}} to {{> format-date date=booking.end}} is now
-      waiting for the provider to accept it.
-    </p>
-
-    <p>
-      The request will be accepted by {{> format-date
-      date=delayed-transition.run-at}}. Otherwise the request will be
-      expired and the money you paid will be refunded to you. The
-      provider can also decline the booking.
-    </p>
-
-    <p>
-      <a href="{{marketplace.url}}/order/{{url-encode id}}/details"
-        >Check the booking details here</a
-      >
-    </p>
-
-    {{/with}}
-
-    <hr />
-
-    <p>
-      You have received this email notification because you are a member
-      of {{marketplace.name}}. If you no longer wish to receive these
-      emails, please contact {{marketplace.name}} team.
-    </p>
-  </body>
-</html>
-```
-
 ## Preview your changes
 
-Once we have done changes to the email notifications, we can preview
-them with **flex-cli**. To preview the changes we just made, we can run
-the command:
+Once we have created the email notification, we can preview them with
+**flex-cli**. To preview the changes we just made, we can run the
+command:
 
 ```shell
-flex-cli notifications preview --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-dev
+flex-cli notifications preview --template saunatime-instant-booking/templates/booking-reminder-customer --marketplace=saunatime-dev
 ```
 
 You should see the HTML preview of the template in the address
@@ -177,7 +90,7 @@ refresh the browser to reload the template and render a new preview
 You can also test sending the preview email:
 
 ```shell
-flex-cli notifications send --template cottagedays-nightly-booking/templates/new-booking-request-for-customer --marketplace=cottagedays-dev
+flex-cli notifications send --template saunatime-instant-booking/templates/booking-reminder-customer --marketplace=saunatime-dev
 ```
 
 <info>
@@ -192,26 +105,34 @@ in logging in to the CLI.
 Once we have the new notification files in place, we need to add the
 notification to the **process.edn** file. In the _process.edn_ file, all
 the notifications are added under the _:notifications_ key. We can use
-the _new-booking-request_ notification as an example again.
+the _booking-confirmed-customer_ notification as an example.
 
 The _:name_ of the notification should be unique, so we use the name
-_new-booking-request-for-customer_. We want this notification to be sent
-when _:transition/confirm-payment_ happens, which is at the same time
-when the provider gets new-booking-request notification. We want this
-notification to be sent to the customer so we choose that as an actor
-for _:to_ parameter. Last, we need to make sure that the value of
-_:template_ is the same as the directory we created earlier.
+_booking-reminder-customer_. We want this notification to be sent to the
+customer as well, so the _:to_ parameter stays the same. We also want to
+make sure that the value of _:template_ is the same as the directory we
+created earlier.
+
+We want this notification to be sent two days before the booking starts.
+One way to do this would be to add a new automatic transition two days
+before the booking start date, and send this notification on the .
+Instead, we will use the same _confirm-payment_ transition as in
+_booking-confirmed-customer_, but add an _:at_ parameter, where we can
+specify the sending time more specifically.
 
 ```diff
  :notifications
-  [{:name :notification/new-booking-request
-    :on :transition/confirm-payment
-    :to :actor.role/provider
-    :template :new-booking-request}
-+  {:name :notification/new-booking-request-for-customer
-+   :on :transition/confirm-payment
-+   :to :actor.role/customer
-+   :template :new-booking-request-for-customer}
+  [{:name :notification/booking-confirmed-customer,
+   :on :transition/confirm-payment,
+   :to :actor.role/customer,
+   :template :booking-confirmed-customer}
++ {:name :notification/booking-reminder-customer
++  :on :transition/confirm-payment,
++  :to :actor.role/customer
++  :template :booking-reminder-customer
++  :at {:fn/minus
++       [{:fn/timepoint [:time/booking-start]}
++        {:fn/period ["P2D"]}]}}
 ...
 ```
 
@@ -226,18 +147,27 @@ need more detailed information, take a look at the
 Push the updated process:
 
 ```shell
-flex-cli process push --process=cottagedays-nightly-booking --path=./cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process push --process=saunatime-instant-booking --path=./saunatime-instant-booking --marketplace=saunatime-dev
 ```
 
 Check version number with _process list_ command:
 
 ```shell
-flex-cli process list --process=cottagedays-nightly-booking --marketplace=cottagedays-dev
+flex-cli process list --process=saunatime-instant-booking --marketplace=saunatime-dev
 ```
 
 Update the alias to point to the latest version of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=cottagedays-nightly-booking --version=3 --marketplace=cottagedays-dev
+flex-cli process update-alias --alias=release-1 --process=saunatime-instant-booking --version=3 --marketplace=saunatime-dev
 ```
+
+## Summary
+
+In this tutorial, you:
+
+- Created a new email template folder
+- Previewed your email template
+- Added a new email notification to the transaction process
+- Updated the transaction process
