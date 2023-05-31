@@ -2,7 +2,7 @@
 title: Introduction to Rental Tutorial
 slug: introduction-to-rental-tutorial
 updated: 2023-05-31
-category: pilot-day-guides-tutorials
+category: tutorial-rental
 ingress: Changing Biketribe into a marketplace for renting saunas daily
 published: true
 ---
