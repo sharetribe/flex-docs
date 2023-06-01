@@ -3,15 +3,15 @@ title: Explore the marketplace - create your first transaction
 slug: creating-your-first-transaction
 updated: 2023-06-01
 category: tutorial-rental
-ingress: If you have been following this tutorial, you should have [one user account](LINK TO THE SIGNUP AS A USER ARTICLE from the tutorial), which [has one listing in the marketplace](LINK TO THE POST A LISTING ARTICLE from the tutorial). To create a transaction in the marketplace, the first thing that you need to do is create a secondary user to initiate the transaction. The listing author cannot book or buy their own listing(s).   
+ingress:    By now, you should have a user account and a listing. In this article, we consider how to create your first transaction. 
 published: true
 ---
 
-Create a completely new account following the instructions in [the previous article](LINK TO THE SIGNUP AS A USER ARTICLE). You need to use a different email. 
+If you have been following this tutorial, you should have [one user account](www.sharetribe.com/docs/operator-guides/sign-up-as-a-user), which [has one listing in the marketplace](https://www.sharetribe.com/docs/operator-guides/creating-your-first-listing). To create a transaction in the marketplace, the first thing that you need to do is create a secondary user to initiate the transaction. The listing author cannot book or buy their own listing(s). Create a completely new account following the instructions in [the previous article](www.sharetribe.com/docs/operator-guides/sign-up-as-a-user). You need to use a different email. 
 
 ## Initiating a transaction (as a buyer)
 
-Once you have created a new account, you can initiate a transaction with it. Make sure you are logged in with this new account. Visit the listing [you created before](LINK TO THE POST A NEW LISTING ARTICLE from the tutorial). You should be able to find it by going to your search page. You can visit the search page in many ways. One of them is through the link “Find a sauna” in your Footer, which you created in [this article](LINK TO FOOTER ARTICLE). 
+Once you have created a new account, you can initiate a transaction with it. Make sure you are logged in with this new account. Visit the listing [you created before](https://www.sharetribe.com/docs/operator-guides/creating-your-first-listing). You should be able to find it by going to your search page. You can visit the search page in many ways. One of them is through the link “Find a sauna” in your Footer, which you created in [this article](https://www.sharetribe.com/docs/operator-guides/modifying-the-footer). 
 
  Once you are on the listing page, you should be able to see the booking options on the right side of the page. Select a start and end date and click on “Request to book”.
 
@@ -29,4 +29,4 @@ Voilá! You have initiated and accepted the very first transaction in your marke
 
 When the transaction period is passed, the transaction will automatically be marked as completed. And you should be able to experience the review process. Depending on the dates that you selected, that might be a bit later. 
 
-If you have any questions about the transaction process or anything that you read about in this tutorial. Feel free to contact [the Sharetribe support team](mailto: help@sharetribe.com)
+If you have any questions about the transaction process or anything that you read about in this tutorial. Feel free to contact [the Sharetribe support team](mailto:help@sharetribe.com).
