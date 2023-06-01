@@ -12,7 +12,7 @@ Sharetribe Flex allows you to build a completely unique custom marketplace for t
 
 The process of building your marketplace typically starts by modifying your example marketplace: [Biketribe](https://www.sharetribe.com/docs/introduction/introducing-template/), a peer-to-peer marketplace for bike rentals. You can easily change the configuration of this marketplace in Console to create a rental, service or product marketplace for any niche.
 
-If you're happy with how your marketplace works after configuring Biketribe, then you can [go live](https://www.sharetribe.com/docs/introduction/how-to-build-and-launch-with-flex/#4-going-live) right away. If you need further changes before going live, you can customize more aspects of your marketplace with code. Coding changes allow you to make customizations beyond the options available via no-code tools. You can make changes with code (and no-code) tools before going live or anytime after. 
+If you're happy with how your marketplace works after configuring Biketribe, then you can go Live right away. If you need further changes before going Live, you can customize more aspects of your marketplace with code. Coding changes allow you to make customizations beyond the options available via no-code tools. You can make changes with code (and no-code) tools before going live or anytime after. 
 
 ## How to configure your marketplace without coding
 
@@ -50,7 +50,7 @@ Unless you are a developer, you should [hire a developer](https://www.sharetribe
 
 Since you have both no-code and code tools available in Flex, there is a recommended workflow to ensure that no-code and code changes merge together smoothly. 
 
-Making no-code changes should always happen in the Test environment. The changes you make will show up in your Test marketplace. The Test marketplace is the latest version of your marketplace. It shows every no-code modification you’ve made thus far, as well as any code modifications, if there are any. Once your marketplace is live, you can “Copy to Live” your no-code changes after checking that everything works in your Test marketplace.
+Making no-code changes should always happen in the Test environment. The changes you make will show up in your Test marketplace. The Test marketplace is the latest version of your marketplace. It shows every no-code modification you’ve made thus far, as well as any code modifications, if there are any. Once your marketplace is Live, you can “Copy to Live” your no-code changes after checking that everything works in your Test marketplace.
 
 If you already have a Live marketplace, then your Test marketplace should be kept as close to identical to your Live marketplace. This ensures that what works in your Test marketplace also works in your Live marketplace. 
 
