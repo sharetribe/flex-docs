@@ -4,7 +4,7 @@ slug: how-to-stripe
 updated: 2023-06-01
 category: tutorial-rental
 ingress: Learn how to setup Stripe to power payments and commissions in your marketplace 
- published: true
+published: true
 —
 
 Stripe is a payment processor. Your marketplace uses Stripe’s Connect platform to power payments on your marketplace: Everything from processing buyer payment cards, charging your commission, paying out earnings directly to seller bank accounts, seller onboarding, KYC, and more is handled by Stripe.
