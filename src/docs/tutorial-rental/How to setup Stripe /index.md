@@ -7,7 +7,7 @@ ingress: Learn how to setup Stripe to power payments and commissions in your mar
 published: true
 —
 
-Stripe is a payment processor. Your marketplace uses Stripe’s Connect platform to power payments on your marketplace: Everything from processing buyer payment cards, charging your commission, paying out earnings directly to seller bank accounts, seller onboarding, KYC, and more is handled by Stripe.
+Stripe is a payment processor. Your marketplace uses Stripe’s Connect platform to power payments on your marketplace, including processing buyer payment cards, charging your commission, paying out earnings directly to seller bank accounts, seller onboarding, KYC, and more.
 
 To get it working, you'll need a free Stripe account, configure a few settings in your Stripe Dashboard, get your API keys from Stripe, and add them to [Console when you go Live.](GOINGLIVEARTICLE)
 
@@ -19,8 +19,6 @@ Creating a Stripe account is free and you can delete it anytime. If you already 
 
 Note that right now, once you have configured your Stripe account in your Sharetribe marketplace, you won't be able to change it to another one. You can always update all details (bank account, account name...) in your Stripe dashboard but using another new account later isn't possible for the time being.
 
-To create your Stripe account:
-
 - Go to https://dashboard.stripe.com/register
 - Fill in the required fields, then create your Stripe account
 - You can skip the first question by clicking "Skip for now" if you do not know 
@@ -31,8 +29,6 @@ Your Stripe account is now confirmed! Let’s proceed.
 #2. Activate your Stripe account
 As you will receive money from your users via your Stripe account, you have to provide some details such as your address and your bank account. This data is secured by Stripe and won't be shared with anyone. This process is called “Activating” your account.
 
-To activate your Stripe account:
-
 - Log in to your Stripe account and click the Activate your account link in the top menu.
 ![stripe-1](./stripe-1.png)
 - Complete all the fields according to the instructions and set _Your website_ to your marketplace custom domain when asked. 
@@ -42,7 +38,7 @@ To activate your Stripe account:
 
 Your Stripe account may still need to be reviewed by Stripe. It's automatic, and it should be a very quick process. You may need to provide additional information in order to verify your identity if a red banner appears on your Stripe dashboard.
 ![stripe-2](./stripe-2.png)
-Once the review is completed, your dashboard will say "Your account is now active". Here is what it should look like:
+Once the review is completed, your dashboard will say "Your account is now active". 
 ![stripe-3](./stripe-3.png)
 
 Good job! Now you need to enable Connect in your platform so your sellers can add their bank details in their settings.
@@ -50,9 +46,7 @@ Good job! Now you need to enable Connect in your platform so your sellers can ad
 #3. Enable Stripe Connect and Stripe Connect Onboarding on your platform
 Sharetribe uses the Stripe Connect features with Custom Accounts. These enable your sellers to process payments through your marketplace and let you earn a commission on these sales. These next steps describe how to enable Stripe Connect.
 
-**This step is important: without this step, providers will not be able to receive money and buyers will not be able to start any transaction.**
-
-To enable Stripe Connect:
+**This step is important. Without it, providers will not be able to receive money and buyers will not be able to start any transaction.**
 
 - Click Connect in the top bar. Then "Get started". 
 ![stripe-4](./stripe-4.png)
@@ -60,7 +54,7 @@ To enable Stripe Connect:
     - At this point, Stripe may have to review your account. If that's the case, you may consult our [guide on how to complete the Connect Review](https://www.sharetribe.com/docs/how-to/stripe-connect-platform-review/) process for help.
 ![stripe-5](./stripe-5.png)
 
-After a few seconds, or after the review process, you should see your Connect dashboard. Let’s finalize the Connect setup: 
+After a few seconds, or after the review process, you should see your Connect dashboard. Let’s finalize the Connect setup now. 
 
 - From the top bar, go to Settings (the gear icon) then Settings under the Connect heading.
 ![stripe-6](./stripe-6.png)
@@ -76,9 +70,9 @@ After a few seconds, or after the review process, you should see your Connect da
 Great, Stripe is configured! Last step is to get your API keys and input them into Console.
 
 #4. Get your API keys from Stripe and add them to your Console
-API keys are some text strings that have one technical purpose: Link your Sharetribe marketplace with your Stripe account, so you can manage payments in your marketplace.
+API keys are some text strings that link your Sharetribe marketplace with your Stripe account, so you can manage payments in your marketplace.
 
-First, get your API keys from Stripe:
+First, get your API keys from Stripe.
 
 - Click "Developers" →  "API Keys"  in the top bar menu.
 
@@ -94,9 +88,9 @@ First, get your API keys from Stripe:
 
 ![stripe-13](./stripe-13.png)
 
-- A new window will pop up with the secret key. 
+- A new window will pop up with the Secret key. 
 - Copy the value of the Secret key. It should look like sk_live_somelongrandomvaluelike0Rx3jvetc 
-    - Note: You won't be able to see the key again after this. Make sure you copy it and save it somewhere safe and private.
+    - Note that ou won't be able to see the key again after this. Make sure you copy it and save it somewhere safe and private.
 ![stripe-14](./stripe-14.png)
 - Paste that value in your Console->Build->Payments 
 ![stripe-15](./stripe-15.png)

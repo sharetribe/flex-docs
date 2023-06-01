@@ -5,11 +5,11 @@ updated: 2023-06-01
 category: tutorial-rental
 ingress: Six steps to go Live and launch your marketplace!
 published: true
-—
+—--
 
 Once you are ready to bring the first users to your marketplace, you are ready to go Live. Going Live unlocks the Live environment, which allows real users to signup to your marketplace and transact with real money.
 
-Going Live takes several steps:
+Going Live takes several steps.
 
 1. Subscription
 2. Sharing information with Sharetribe about your custom domain, payments, analytics, and map provider 
@@ -36,12 +36,12 @@ Your Live marketplace will be accessible at a custom domain of your choice. You 
 During the setup process, please share with us your custom domain name. Once your Live environment is confirmed, you should [configure your DNS records with your hosting provider.](URL#configure-your-custom-domain)
 
 Sharetribe provides a dedicated SSL certificate for your marketplace address when your domain is connected to your marketplace.
-##Stripe publishable key 
+##Stripe Publishable key 
 A marketplace-specific payment system called Stripe Connect powers payments on your marketplace. Stripe Connect requires several setup steps. Please consult [our guide for help setting up your Stripe Connect.](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-stripe)
  
-After setup, you can find your publishable key in [Stripe->Developers->API keys.](https://dashboard.stripe.com/apikeys) Share with us this key, which will look something like _pk_live_somelongrandomvaluelikeVqFze9etc_. 
+After setup, you can find your Publishable key in [Stripe->Developers->API keys.](https://dashboard.stripe.com/apikeys) Share with us this key, which will look something like _pk_live_somelongrandomvaluelikeVqFze9etc_. 
 
-You will configure your private key after Sharetribe confirms your Live environment.
+You will configure your Secret key after Sharetribe confirms your Live environment.
 ##Map provider public key
 You need to select a map provider to power geolocation functionalities on your marketplace, such as a location-based search for listings. Even if customers use keywords to search, a map provider is necessary to let your sellers input a pickup location if they want.
 
@@ -57,12 +57,12 @@ If you wish to create a new one, click <code>+ Create a token</code>, give it a 
 
 Go to the [Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference), and click on the "Get started" button in the top bar, and follow the instructions to generate your key. Share this key with Sharetribe.
 
-Next, you must enable certain capabilities within Google Maps.Follow the instructions in the [Getting started](https://developers.google.com/maps/documentation/javascript/places#GetStarted) section of the Places library documentation to enable using the required services. You should enable: 
+Next, you must enable certain capabilities within Google Maps.Follow the instructions in the [Getting started](https://developers.google.com/maps/documentation/javascript/places#GetStarted) section of the Places library documentation to enable using the required services. You should enable`:`
 Google Places API Web Service
 Maps Static API 
 Maps JavaScript API.
 ##Google Analytics
-Google Analytics lets you browse and analyze lots of data: number of visitors, pages viewed, time spent on your marketplace, traffic sources, and more. Sharetribe has built-in support for Google Analytics. Google Analytics is free to use. 
+Google Analytics lets you browse and analyze lots of data, such number of visitors, pages viewed, time spent on your marketplace, traffic sources, and more. Sharetribe has built-in support for Google Analytics. Google Analytics is free to use. 
 
 Using Google Analytics is optional. If you want to use Google Analytics, you need to share your Google Analytics measurement ID with Sharetribe during the setup process. You can always setup Google Analytics at any point later by sharing the measurement 
 
@@ -75,31 +75,31 @@ To enable your custom domain, you must configure www and root domain records in 
 
 ## Configure your www records 
 
-Your www records make your marketplace accessible at “www.myexampledomain.com”. To set it up:
+Your www records make your marketplace accessible at “www.myexampledomain.com”.
 
 1. Look over the existing CNAME records.
 2. If a CNAME record exists where "Host" or "Source" is set to "www", click edit and set "Points To" or "Value" or "Target" to "proxy.sharetribe.com". Note that the target address for this record, proxy.sharetribe.com, should be copied as-is. You don't need to change it to your own marketplace's address.
-3. If a CNAME record doesn't exist, click "Add record" or "Create record". From the record type list, select CNAME. Fill in the following fields: "Host" or "Source" to "www". "Points To" or "Value" or "Target" to "proxy.sharetribe.com". If you have to fill a field named "TTL", set it to "3600". Note that the target address for this record, proxy.sharetribe.com, should be copied as-is.
+3. \If a CNAME record doesn't exist, click "Add record" or "Create record". From the record type list, select CNAME. Fill in the following fields:\ "Host" or "Source" to "www". "Points To" or "Value" or "Target" to "proxy.sharetribe.com". If you have to fill a field named "TTL", set it to "3600". Note that the target address for this record, proxy.sharetribe.com, should be copied as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your changes.
 
 ## Configure your root domain records
 
-Your root domain is your domain without “www.” “myexampledomain.com” is an example of a root domain. To set it up:
+Your root domain is your domain without “www.” “myexampledomain.com” is an example of a root domain.
 
 1. Look over any existing A records
 2. If an A record exists where "Host" or "Source" is set to "@", click edit and set "Points To" or "Value" or "Target" to "52.202.58.6" or "52.202.50.54". Pick the one you prefer!
-3. If an A record doesn't exist, click "Add record" or "Create record". From the record type list, select A. Fill in the following fields: "Host" or "Source" to "@". "Points To" or "Value" or "Target" to "52.202.58.6" or "52.202.50.54". Pick the one you prefer. If you have to fill a field named "TTL", set it to "3600".
+3. If an A record doesn't exist, click "Add record" or "Create record". From the record type list, select A. Fill in "Host" or "Source" to "@". "Points To" or "Value" or "Target" to "52.202.58.6" or "52.202.50.54". Pick the one you prefer. If you have to fill a field named "TTL", set it to "3600".
 4. Save changes.
 5. Check that the record has been updated or created according to your changes.
 
 ## Host your marketplace at a subdomain 
 
-You may want to host your marketplace at subdomain, where your marketplace is accessible at an address such as “mymarketplace.myexampledomain.com.” To set this up:
+You may want to host your marketplace at subdomain, where your marketplace is accessible at an address such as “mymarketplace.myexampledomain.com.”
 
 1. Look over the existing CNAME records.
 2. If a CNAME record, where "Host" or "Source" is set to your desired subdomain, exists, click edit and set "Points To" or "Value" or "Target" to "proxy.sharetribe.com". Note that the target address for this record, proxy.sharetribe.com, should be copied as-is. You don't need to change it to your own marketplace's address.
-3. If such a CNAME record doesn't exist, click "Add record" or "Create record". From the record type list, select CNAME. Fill in the following fields: "Host" or "Source" to the desired subdomain (such as "mymarketplace"). "Points To" or "Value" or "Target" to "proxy.sharetribe.com". If you have to fill a field named "TTL", set it to "3600". Note that the target address for this record, proxy.sharetribe.com, should be copied as-is.
+3. If such a CNAME record doesn't exist, click "Add record" or "Create record". From the record type list, select CNAME. Fill in "Host" or "Source" to the desired subdomain (such as "mymarketplace"). "Points To" or "Value" or "Target" to "proxy.sharetribe.com". If you have to fill a field named "TTL", set it to "3600". Note that the target address for this record, proxy.sharetribe.com, should be copied as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your changes.
 #4. Sharetribe confirms your Live environment
@@ -125,7 +125,7 @@ Under “Outgoing email settings”, click on the "1/3 Start setup" button to st
 
 ![go-live-3](./go-live-3.png)
 
-When you have added your sender email information, you will be prompted with DNS information:
+When you have added your sender email information, you will be prompted with DNS information.
 
 ![go-live-4](./go-live-4.png)
 
@@ -138,7 +138,7 @@ Next, you need to add the generated records from your Console to your DNS hostin
 
 ## Validate DNS 
 
-When you have configured your DNS, you still need to validate the records for your emails to work. You can do that by clicking on the "3/3 Validate" button in Console. If everything is set up correctly, you should see a success message in Console:
+When you have configured your DNS, you still need to validate the records for your emails to work. You can do that by clicking on the "3/3 Validate" button in Console. If everything is set up correctly, you should see a success message in Console.
 
 ![go-live-5](./go-live-5.png)
 
