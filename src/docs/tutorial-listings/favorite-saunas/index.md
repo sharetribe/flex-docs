@@ -478,7 +478,7 @@ Then, add the following files in the folder:
 
 <extrainfo title="FavoriteListingsPage.js explained">
 
-This section will go through FavoriteListingsPage in more detail.
+This section will go through FavoriteListingsPage.js in more detail.
 
 First, we import the necessary elements used in the file. In this
 section, all rows start with import.
@@ -643,6 +643,122 @@ const FavoriteListingsPage = compose(
 
 export default FavoriteListingsPage;
 ```
+
+</extrainfo>
+
+<extrainfo title="FavoriteListingsPage.duck.js explained">
+
+This section will go through FavoriteListingsPage.duck.js in more
+detail.
+
+First, we import the necessary elements, and define the result page
+size.
+
+Then, we start creating the different elements of the
+[Redux ducks pattern](https://github.com/erikras/ducks-modular-redux):
+
+- [Actions](https://redux.js.org/usage/reducing-boilerplate#actions)
+- [Reducer](https://redux.js.org/usage/reducing-boilerplate#reducers)
+- [Action creators](https://redux.js.org/usage/reducing-boilerplate#action-creators)
+- [Thunks](https://redux.js.org/usage/writing-logic-thunks)
+
+For action types, we export three different ones: a request action, a
+success action, and an error action for fetching listings.
+
+Then, we define initial state and a helper function _resultIds_, and
+create and export the reducer for the page. The reducer defines state
+behavior for each of the three action types defined earlier, as well as
+a default.
+
+```jsx
+const favoriteListingsPageReducer = (
+  state = initialState,
+  action = {}
+) => {
+  const { type, payload } = action;
+  switch (type) {
+    case FETCH_LISTINGS_REQUEST:
+      return {
+        ...state,
+        queryParams: payload.queryParams,
+        queryInProgress: true,
+        queryFavoritesError: null,
+        currentPageResultIds: [],
+      };
+    case FETCH_LISTINGS_SUCCESS:
+      return {
+        ...state,
+        currentPageResultIds: resultIds(payload.data),
+        pagination: payload.data.meta,
+        queryInProgress: false,
+      };
+    case FETCH_LISTINGS_ERROR:
+      // eslint-disable-next-line no-console
+      console.error(payload);
+      return {
+        ...state,
+        queryInProgress: false,
+        queryFavoritesError: payload,
+      };
+    default:
+      return state;
+  }
+};
+```
+
+Next, we export action creators, one for each action type.
+
+Finally, we create our thunks to call SDK. The main SDK call we want to
+make on this page is fetching listings based on the user's favorite
+listings. We therefore export a _queryFavoriteListings_ thunk.
+
+The structure of the thunk serves an example of most of the thunks in
+the Sharetribe Web Template.
+
+- Dispatch a **request** action – this sets a selection of values in
+  state, for instance _queryInProgress: true_, which the page can then
+  use to display a loading indicator
+- Set up SDK call parameters
+- Make SDK call
+- For a successful SDK response, handle the response data and dispatch a
+  **success** action – this again sets a selection values in state,
+  which the page can use to stop loading indication and display the data
+- In case of an error, dispatch an **error** action – this sets a
+  selection of values in state that the page can use to stop loading
+  indication and display an error message.
+
+```jsx
+export const queryFavoriteListings = queryParams => (
+  dispatch,
+  getState,
+  sdk
+) => {
+  dispatch(queryFavoritesRequest(queryParams));
+  const { currentUser } = getState().user;
+  const { favorites } =
+    currentUser?.attributes.profile.privateData || {};
+
+  const favoritesMaybe = favorites ? { ids: favorites } : {};
+  const { perPage, ...rest } = queryParams;
+  const params = { ...favoritesMaybe, ...rest, perPage };
+
+  return sdk.listings
+    .query(params)
+    .then(response => {
+      dispatch(addMarketplaceEntities(response));
+      dispatch(queryFavoritesSuccess(response));
+      return response;
+    })
+    .catch(e => {
+      dispatch(queryFavoritesError(storableError(e)));
+      throw e;
+    });
+};
+```
+
+In addition to the _queryFavoriteListings_ thunk, we export a _loadData_
+function that gets called when the page loads, which in turn calls the
+_queryFavoriteListings_ thunk to initiate the listing fetching process.
 
 </extrainfo>
 

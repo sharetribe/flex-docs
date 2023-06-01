@@ -47,7 +47,11 @@ const favoriteListingsPageReducer = (state = initialState, action = {}) => {
     case FETCH_LISTINGS_ERROR:
       // eslint-disable-next-line no-console
       console.error(payload);
-      return { ...state, queryInProgress: false, queryFavoritesError: payload };
+      return {
+        ...state,
+        queryInProgress: false,
+        queryFavoritesError: payload
+      };
 
     default:
       return state;
@@ -73,6 +77,8 @@ export const queryFavoritesError = e => ({
   error: true,
   payload: e,
 });
+
+// ================ Thunks ================ //
 
 // Throwing error for new (loadData may need that info)
 export const queryFavoriteListings = queryParams => (dispatch, getState, sdk) => {
