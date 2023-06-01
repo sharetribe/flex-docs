@@ -31,7 +31,6 @@ const sortingArrayTutorialBranding = [
   'first-edit',
   'configurations',
   'change-default-locations',
-  'modify-listing-extended-data',
   'deploy-to-render',
 ];
 

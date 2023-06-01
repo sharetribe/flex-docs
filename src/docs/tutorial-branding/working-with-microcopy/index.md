@@ -123,6 +123,13 @@ on the search page:
 
 ![Topbar with updated microcopy](./updated_topbar_microcopy.png)
 
+## Summary
+
+Microcopy refers to short, contextual written texts found throughout the
+marketplace's interface. In this tutorial, you learnt to modify the
+microcopy of your marketplace using the no-code interface in Console.
+You also learnt how to locate microcopy keys using the developer tools.
+
 ## Further reading
 
 To get more insight into microcopy syntax, different language files, and
@@ -136,9 +143,3 @@ Template, read the article on
 
 To read more about how microcopy can be modified in Flex Console, check
 out the article about [microcopy in Flex](/concepts/microcopy/).
-
-<br />
-
-In the next article, you learn how to configure the Sharetribe Web
-Template and change the default currency.<br />
-[› Go to the next article](/tutorial/configurations/)

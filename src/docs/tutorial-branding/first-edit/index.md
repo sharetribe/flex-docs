@@ -12,11 +12,11 @@ published: true
 ## Introduction
 
 Styling your marketplace is the first step towards customizing its
-appearance. You can make many visual changes using the no-code tools in
-Console [TODO: Link to non-technical article about visual changes] but
-for more extensive changes, you will need to edit the code of the
-Sharetribe Web Template directly. This tutorial teaches you to style
-components directly through code in the Sharetribe Web Template.
+appearance. You can make many visual changes using the
+[no-code tools in Console](/tutorial/change-branding/) but for more
+extensive changes, you will need to edit the code of the Sharetribe Web
+Template directly. This tutorial teaches you to style components
+directly through code in the Sharetribe Web Template.
 
 After this tutorial, you will know how to:
 
@@ -26,7 +26,8 @@ After this tutorial, you will know how to:
 
 ## CSS Modules
 
-The Sharetribe Web Template uses [CSS Modules](TODO: LINK) to style
+The Sharetribe Web Template uses
+[CSS Modules](https://github.com/css-modules/css-modules) to style
 components. CSS Modules enable modular and scoped styling by generating
 unique class names for each CSS module, preventing naming conflicts and
 encapsulating styles within specific components. You can find
@@ -55,9 +56,21 @@ component on the landing page. To do that, we will locate the component
 we want to edit through the browser's developer tools and make a change
 in the CSS file of that component.
 
+<info>
+
+You can also adjust the background colour of specific sections through
+[Pages in Console](https://flex-console.sharetribe.com/content/pages).
+By setting a background colour through code, you'll be setting a default
+value for the colour of the sections, which you can override through
+Console. If you don't want to make changes to your code, you can skip
+this tutorial section and directly edit the colour of your sections
+using Pages.
+
+</info>
+
 By default, the background colour of the sections on the landing page
 alternates between white and grey. Our goal is to change the colours to
-alternate between grey and a light pastel purple.
+alternate between grey and a light pastel pink.
 
 Let's start by powering up the development environment by running:
 `yarn run dev`
@@ -121,22 +134,23 @@ background-colour property is applied to every second element on the
 landing page.
 
 Let’s change the background colour to a new colour. First, define a new
-variable:
+variable in
+[src/styles/marketplaceDefaults.css](https://github.com/sharetribe/web-template/blob/main/src/styles/marketplaceDefaults.css).
 
 ```css
-var(—colorPastelPurple)
+--colorPastelPink: #fbf0ef;
 ```
 
 And assign it to background-color:
 
 ```css
   &:nth-of-type(odd) {
-    background-color: var(--colorPurple);
+    background-color: var(--colorPastelPink);
   }
 ```
 
 Now when we refresh the page, we’ll see that the background colour of
-the sections alternates between grey and a pastel purple.
+the sections alternates between grey and a pastel pink.
 
 ## How to assign CSS classes to React Components
 
@@ -163,5 +177,17 @@ prop of React components!
 
 ## Summary
 
-Next, it's time to deploy a test environment!<br />
-[› Go to the next article](/tutorial/change-images/)
+In this tutorial, you learned how to style components in the Sharetribe
+Web Template using CSS Modules. The tutorial guided you through
+identifying the desired component using browser developer tools,
+locating its corresponding CSS file, and making changes to customize the
+background color. By following this tutorial, you now know how to
+customise and style components and how the template uses the CSS modules
+library.
+
+## Further reading
+
+Read more about the CSS architecture used in the Sharetribe Web Template
+in our
+[Styling and CSS](https://www.sharetribe.com/docs/ftw/how-to-customize-ftw-styles/)
+article.

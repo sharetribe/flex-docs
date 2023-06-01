@@ -9,6 +9,8 @@ ingress:
 published: true
 ---
 
+## Introduction
+
 When you make a location search, you notice that the template suggests
 the user's current location by default. In addition, you can configure
 default searches for certain key locations in your marketplace.
@@ -99,7 +101,11 @@ The result should look like this:
 
 You can add other locations in a similar fashion.
 
-On the search page, you can use different kinds of filters. In the next
-article, you will learn how to update listing attributes used on listing
-creation page and search filters.<br />
-[› Go to the next article](/tutorial/modify-listing-extended-data/)
+## Summary
+
+In this tutorial, you modified the default locations by making changes
+to the configDefaultLocationSearches.js file in the src/config
+directory. Within this file, you can edit an array example locations,
+each represented by an object containing an id, an address, and a bounds
+object defining the bounding box for the displayed area on the search
+map.

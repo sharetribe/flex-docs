@@ -143,6 +143,3 @@ articles:
 - [Section templates](/operator-guides/section-templates/)
 - [Content modelling and management](/concepts/content-management/)
 - [Learn how the template renders content pages](/ftw/page-builder/)
-
-Nect up we'll focus on changing microcopy:<br />
-[› Go to the next article](/tutorial/change-logo/)
