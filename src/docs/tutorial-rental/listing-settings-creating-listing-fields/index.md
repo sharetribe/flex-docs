@@ -1,5 +1,5 @@
 ---
-title: Listing Settings- Creating listing fields.
+title: Listing Settings - Creating listing fields.
 slug: creating-listing-fields
 updated: 2023-06-01
 category: tutorial-rental
@@ -56,7 +56,7 @@ Make this field mandatory
 Save the changes. 
 
 ### 3. Add extra optional fields
-You can add the following fields. If you add them, your listings will be more complete and you can experiment with more listing field functions, but it will take a bit more time [to create a listing](LINK TO THE CREATE A LISTING ARTICLE IN THE TUTORIAL): 
+You can add the following fields. If you add them, your listings will be more complete and you can experiment with more listing field functions, but it will take a bit more time [to create a listing](https://www.sharetribe.com/docs/operator-guides/creating-your-first-listing): 
 
  - Field label: Sauna privacy
  - Field id: sauna-privacy
