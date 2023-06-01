@@ -1,5 +1,5 @@
 ---
-title: Basic Configuration: Marketplace Branding
+title: Basic Configuration - Marketplace Branding
 slug: basic-configuration-marketplace-branding
 updated: 2023-05-31
 category: tutorial-rental

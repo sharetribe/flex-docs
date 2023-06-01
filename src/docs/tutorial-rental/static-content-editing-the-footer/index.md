@@ -1,5 +1,5 @@
 ---
-title: Basic Configuration: Static Content- Modifying the Footer.
+title: Static Content- Modifying the Footer.
 slug: modifying-the-footer
 updated: 2023-06-01
 category: tutorial-rental
@@ -7,8 +7,8 @@ ingress: The footer is an important linking element in all pages of your marketp
 published: true
 ---
 
-## 1. Add a Slogan and Copyright and choose a 
-For the Slogan, add the following text: “The largest online community to rent saunas.”
+## 1. Add a Slogan and Copyright
+For the Slogan, add the following text: **“The largest online community to rent saunas.”**
 For the Copyright, add the following text: **“© Saunatime”**
 
 ## 2. Social media links
@@ -21,7 +21,7 @@ Choose 4 column as the number of content columns. If there are less than 4 conte
 
 For block one change the id to: static-links
 Change the Block text to: 
-​​- [About us](/p/about)
+​- [About us](/p/about)
 - [Find a Sauna](/s)
 - [List your sauna](/l/new)
 

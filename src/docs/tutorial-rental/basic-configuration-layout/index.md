@@ -1,5 +1,5 @@
 ---
-title: Basic Configuration: Marketplace Layout
+title: Basic Configuration - Marketplace Layout
 slug: basic-configuration-marketplace-layout
 updated: 2023-06-01
 category: tutorial-rental

@@ -1,5 +1,5 @@
 ---
-title: Basic Configuration: Static Content- Modifying the Footer.
+title: Static Content- Modifying the Footer.
 slug: changing-the-marketplace-default-texts
 updated: 2023-06-01
 category: tutorial-rental
