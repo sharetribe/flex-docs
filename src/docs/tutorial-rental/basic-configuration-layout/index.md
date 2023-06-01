@@ -9,7 +9,7 @@ published: true
 
 # Basic configuration: Layout
 
-In Console’s test environment go to Build → Content → Layout. [Read more about how these settings affect your marketplace](Link to Layout article in pilot day)
+In Console’s test environment go to **Build → Content → Layout**. [Read more about how these settings affect your marketplace](Link to Layout article in pilot day)
 
 ## 1. Search page layout
 
