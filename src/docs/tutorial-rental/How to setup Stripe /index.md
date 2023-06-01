@@ -3,16 +3,19 @@ title: How to setup Stripe for payments on your marketplace
 slug: how-to-stripe
 updated: 2023-06-01
 category: tutorial-rental
-ingress: Learn how to setup Stripe to power payments and commissions in your marketplace 
+ingress:
+  Learn how to setup Stripe to power payments and commissions in your marketplace 
 published: true
-—
+---
 
 Stripe is a payment processor. Your marketplace uses Stripe’s Connect platform to power payments on your marketplace, including processing buyer payment cards, charging your commission, paying out earnings directly to seller bank accounts, seller onboarding, KYC, and more.
 
 To get it working, you'll need a free Stripe account, configure a few settings in your Stripe Dashboard, get your API keys from Stripe, and add them to [Console when you go Live.](GOINGLIVEARTICLE)
 
 Follow the instructions closely and it will work smoothly!
-#1. Create and confirm your free Stripe account
+
+# 1. Create and confirm your free Stripe account
+
 Creating a Stripe account is free and you can delete it anytime. If you already have a Stripe account (for another project), it's better to create a new one to avoid any interference.
 
  
@@ -26,7 +29,7 @@ Note that right now, once you have configured your Stripe account in your Sharet
 - Click the confirmation link in this email and log in with your credentials.
 
 Your Stripe account is now confirmed! Let’s proceed.
-#2. Activate your Stripe account
+# 2. Activate your Stripe account
 As you will receive money from your users via your Stripe account, you have to provide some details such as your address and your bank account. This data is secured by Stripe and won't be shared with anyone. This process is called “Activating” your account.
 
 - Log in to your Stripe account and click the Activate your account link in the top menu.
@@ -43,7 +46,8 @@ Once the review is completed, your dashboard will say "Your account is now activ
 
 Good job! Now you need to enable Connect in your platform so your sellers can add their bank details in their settings.
 
-#3. Enable Stripe Connect and Stripe Connect Onboarding on your platform
+# 3. Enable Stripe Connect and Stripe Connect Onboarding on your platform
+
 Sharetribe uses the Stripe Connect features with Custom Accounts. These enable your sellers to process payments through your marketplace and let you earn a commission on these sales. These next steps describe how to enable Stripe Connect.
 
 **This step is important. Without it, providers will not be able to receive money and buyers will not be able to start any transaction.**
@@ -69,7 +73,8 @@ After a few seconds, or after the review process, you should see your Connect da
 
 Great, Stripe is configured! Last step is to get your API keys and input them into Console.
 
-#4. Get your API keys from Stripe and add them to your Console
+# 4. Get your API keys from Stripe and add them to your Console
+
 API keys are some text strings that link your Sharetribe marketplace with your Stripe account, so you can manage payments in your marketplace.
 
 First, get your API keys from Stripe.

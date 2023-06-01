@@ -3,9 +3,11 @@ title: How to go Live amd launch your marketplace
 slug: going-live
 updated: 2023-06-01
 category: tutorial-rental
-ingress: Six steps to go Live and launch your marketplace!
+ingress:
+  Six steps to go Live and launch your marketplace!
 published: true
-—--
+---
+
 
 Once you are ready to bring the first users to your marketplace, you are ready to go Live. Going Live unlocks the Live environment, which allows real users to signup to your marketplace and transact with real money.
 
@@ -20,29 +22,37 @@ Going Live takes several steps.
 
 This guide details how to complete each step.
 
-#1. Subscription
+# 1. Subscription
+
 Go Live by subscribing to a paid plan. You can review different plans and features available [here.](PRICINGPLANURL)
 
 To subscribe, go to your [Console.](https://flex-console.sharetribe.com/) Press your environment dropdown menu in the top left and select “Go Live” Fill in your billing information and submit. 
 
-![go-live-1](./go-live-1.png)
+![Go Live](./go-live-1.png)
+
 #2. Share information for setup with Sharetribe
 After subscribing you will receive a confirmation email with your invoice and billing information. The email also includes [a link to this form](https://sharetribe.typeform.com/to/yKLsJryj) that you should use to share information for setup with Sharetribe. If the form is not working for you for some reason, please email us the following information at hello@sharetribe.com.
 
 Here is a list of the information that will be collected from you during the setup process.
+
 ##Custom domain
+
 Your Live marketplace will be accessible at a custom domain of your choice. You must purchase, host, and configure your DNS settings with a hosting provider in order to use a custom domain. You can use any hosting provider, such as GoDaddy, Google Domains, or Hover. 
 
 During the setup process, please share with us your custom domain name. Once your Live environment is confirmed, you should [configure your DNS records with your hosting provider.](URL#configure-your-custom-domain)
 
 Sharetribe provides a dedicated SSL certificate for your marketplace address when your domain is connected to your marketplace.
+
 ##Stripe Publishable key 
+
 A marketplace-specific payment system called Stripe Connect powers payments on your marketplace. Stripe Connect requires several setup steps. Please consult [our guide for help setting up your Stripe Connect.](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-stripe)
  
 After setup, you can find your Publishable key in [Stripe->Developers->API keys.](https://dashboard.stripe.com/apikeys) Share with us this key, which will look something like _pk_live_somelongrandomvaluelikeVqFze9etc_. 
 
 You will configure your Secret key after Sharetribe confirms your Live environment.
+
 ##Map provider public key
+
 You need to select a map provider to power geolocation functionalities on your marketplace, such as a location-based search for listings. Even if customers use keywords to search, a map provider is necessary to let your sellers input a pickup location if they want.
 
 You can choose either Mapbox or Google Maps as a map provider. If you are not sure where to start, we recommend Mapbox due to their generous free tier.
@@ -61,7 +71,9 @@ Next, you must enable certain capabilities within Google Maps.Follow the instruc
 Google Places API Web Service
 Maps Static API 
 Maps JavaScript API.
+
 ##Google Analytics
+
 Google Analytics lets you browse and analyze lots of data, such number of visitors, pages viewed, time spent on your marketplace, traffic sources, and more. Sharetribe has built-in support for Google Analytics. Google Analytics is free to use. 
 
 Using Google Analytics is optional. If you want to use Google Analytics, you need to share your Google Analytics measurement ID with Sharetribe during the setup process. You can always setup Google Analytics at any point later by sharing the measurement 
@@ -70,7 +82,8 @@ You can generate this ID by creating a Google Analytics account and generating a
 
 Note that we strongly recommend disabling the “Enhanced measurements” feature in Google Analytics 4 as it can affect your marketplace’s navigation. 
 
-#3. Configure your custom domain
+# 3. Configure your custom domain
+
 To enable your custom domain, you must configure www and root domain records in your DNS. Alternatively, you can host your marketplace at a subdomain. 
 
 ## Configure your www records 
@@ -102,19 +115,22 @@ You may want to host your marketplace at subdomain, where your marketplace is ac
 3. If such a CNAME record doesn't exist, click "Add record" or "Create record". From the record type list, select CNAME. Fill in "Host" or "Source" to the desired subdomain (such as "mymarketplace"). "Points To" or "Value" or "Target" to "proxy.sharetribe.com". If you have to fill a field named "TTL", set it to "3600". Note that the target address for this record, proxy.sharetribe.com, should be copied as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your changes.
-#4. Sharetribe confirms your Live environment
+
+# 4. Sharetribe confirms your Live environment
 
 After submitting your details, Sharetribe will set up your Live environment. Sharetribe typically turns around your marketplace in 24 hours or less during business days., often less during business days. Follow instructions carefully to prevent any delays during setup.
 
-#5. Configure payments 
-Navigate to your new Live environment using the environment drop down menu. Then, add your Stripe live key to your Flex Console. Find this key where you got your public key or follow our instructions for more information. It should look like _sk_live_somelongrandomvaluelike0Rx3jvetc _
+# 5. Configure payments 
+
+Navigate to your new Live environment using the environment drop down menu. Then, add your Stripe live key to your Flex Console. Find this key where you got your public key or follow our instructions for more information. It should look like _sk_live_somelongrandomvaluelike0Rx3jvetc_
 
 Paste your live key in Console->Build->Payments and save changes. 
 
 ![go-live-2](./go-live-2.png)
 
 
-#6. Configure outgoing email address
+# 6. Configure outgoing email address
+
 The final step is configuring your outgoing email settings. This setup will ensure your emails are branded with your marketplace name and sender address as well as help ensure reliable email delivery. 
 
 Navigate to Console->Build->General to complete this setup.
