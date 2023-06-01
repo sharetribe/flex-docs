@@ -10,9 +10,7 @@ published: true
 ---
 
 The search page displays all listings from your marketplace. Users can
-find the service, property or product that they need browsing directly
-in this page and using the [search feature](LINK TO SEARCH PAGE ARTICLE)
-or different sorting parameters. They can even find a listings by
+find the listing that they need through keyword search or location search, and by filtering and sorting different attributes. They can even find a listings by
 dragging and exploring a map. You can define the layout of this page
 from your Console account. Go to Build → Content → Layout.
 
