@@ -30,7 +30,9 @@ to pull in the latest upstream changes.
 <info>
 
 Settings configured in local configurations files are overridden by any
-fetched via the Asset Delivery API.
+fetched via the Asset Delivery API. You can refer to
+[this article](/ftw/hosted-and-local-configurations/) to modify the way
+your template merges local and hosted configurations.
 
 </info>
 
