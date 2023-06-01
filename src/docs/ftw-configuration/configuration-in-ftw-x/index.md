@@ -16,6 +16,24 @@ listings, search, maps, payment and transactions. You can find all
 configuration files in the
 [config directory](https://github.com/sharetribe/web-template/tree/main/src/config).
 
+## Using Console for configurations
+
+Console allows users to configure many configuration variables through a
+new no-code interface. The newest release of The Sharetribe Web Template
+supports fetching the configuration data through the
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
+If you are using an older version of the web-template, follow the
+instructions
+[here](/ftw/how-to-customize-ftw/#pull-in-the-latest-upstream-changes)
+to pull in the latest upstream changes.
+
+<info>
+
+Settings configured in local configurations files are overridden by any
+fetched via the Asset Delivery API.
+
+</info>
+
 ## Configuration files
 
 All relevant configuration is split between the following files and the
