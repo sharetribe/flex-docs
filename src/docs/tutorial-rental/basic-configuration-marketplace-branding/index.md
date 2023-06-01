@@ -13,7 +13,7 @@ published: true
 
 Branding settings allow you to change the images and main color of your
 marketplace. In Console’s test environment, go to Build → Content →
-Branding. [Read more about adding nice looking images]((https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images))
+Branding. [Read more about adding nice looking images](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images)
 
 ## Follow these steps
 
