@@ -1,4 +1,10 @@
 {
+    "rewrites": [
+    {
+      "source": "/legacy/:match(.*)",
+      "destination": "https://legacy-docs-ruby.vercel.app/:match"
+    }
+  ],
   "redirects":
 [
   {

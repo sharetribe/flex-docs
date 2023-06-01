@@ -28,8 +28,8 @@ for `category` and `accessories` in its UI (user interface). This
 tutorial will make those filters work as expected.
 
 We will also see how to manage data schema for user profiles. Those
-schemas are not required for FTW to work, but can be useful when
-building own integrations via the Flex Integration API.
+schemas are not required for Sharetribe Web Template to work, but can be
+useful when building own integrations via the Flex Integration API.
 
 ## Extended data types and schema scopes
 

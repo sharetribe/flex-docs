@@ -57,7 +57,7 @@ image:
 
 ### Images in 'assets' or Image Assets?
 
-The FTW templates use two types of assets:
+The template use two types of assets:
 
 - bundled assets and
 - hosted assets

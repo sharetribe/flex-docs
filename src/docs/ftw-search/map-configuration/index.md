@@ -33,7 +33,7 @@ variable (found in the same file) defines the distance in meters for
 calculating the bounding box around the current location.
 
 For a more detailed guide on how to change the default locations, refer
-[to the tutorial](http://localhost:8000/tutorial/change-default-locations/).
+[to the tutorial](/tutorial/change-default-locations/).
 
 ## Configure fallback bounding boxes
 

@@ -12,18 +12,31 @@ published: true
 The Sharetribe Web Template is a customizable marketplace web
 application built on top of the Flex APIs. It is a great starting point
 for building any type of marketplace, whether it is about rentals,
-services, products, or something else. You can configure the Template without coding, then host the code to launch and add custom features. 
+services, products, or something else. You can configure the Template
+without coding, then host the code to launch and add custom features.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dHe8_z4FAEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Customization starting point
 
-You can configure a hosted version of the Sharetribe Web Template in your Console's Test environment. When you first open your Test marketplace, you start with an example marketplace called Biketribe. Biketribe is a marketplace running on Flex APIs for renting bicycles. 
+You can configure a hosted version of the Sharetribe Web Template in
+your Console's Test environment. When you first open your Test
+marketplace, you start with an example marketplace called Biketribe.
+Biketribe is a marketplace running on Flex APIs for renting bicycles.
 
-You can change Biketribe default settings in Console. Change core user experiences like search, listing
-creation, and transactions in Console's Build section under the "Content" tab. For a full list of the no-code capabilities and how to use them to change Biketribe, please consult our [Biketribe configuration checklist.](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist)
+You can change Biketribe default settings in Console. Change core user
+experiences like search, listing creation, and transactions in Console's
+Build section under the "Content" tab. For a full list of the no-code
+capabilities and how to use them to change Biketribe, please consult our
+[Biketribe configuration checklist.](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist)
 
-At the least, after configuring your marketplace, you will need to install the Template codebase on your own servers. More likely, you will want to modify the Template codebase with your own custom features in addition to the configurations you made without coding. Please start with [this guide](https://www.sharetribe.com/docs/introduction/getting-started-with-web-template/) on how to get install the Template locally.
+At the very least, after configuring your marketplace, you will need to
+install the Template codebase on your own servers. More likely, you will
+want to modify the Template codebase with your own custom features in
+addition to the configurations you made without coding. Please start
+with
+[this guide](https://www.sharetribe.com/docs/introduction/getting-started-with-web-template/)
+on how to install the Template locally.
 
 Overall, the development phase takes typically 1-2 months from the first
 lines of code written to the launch of the first version. Depending on
@@ -82,7 +95,7 @@ code.
 ![create-listing-per-day-availability](./create-listing-per-day-availability.png)
 
 Read more about
-[availability management in Flex](/docs/references/availability/).
+[availability management in Flex](/references/availability/).
 
 ### Inventory management
 
@@ -99,7 +112,7 @@ automatically go to zero. Listings with zero stock are filtered out by
 default, and do not appear in search.
 
 Read more about
-[inventory management in Flex](/concepts/inventory-management).
+[inventory management in Flex](/concepts/inventory-management/).
 
 ## Search
 
@@ -265,7 +278,8 @@ Learn more about
 Self-hosting the Template code base lets you customize the starting
 design as much as you want. Any custom design can be implemented on
 Flex. We offer downloadable design files to help you build your custom
-design. You can find the Sharetribe Web Template design files here.
+design. You can find the Sharetribe Web Template design files
+[here](https://github.com/sharetribe/design-resources).
 
 ## Customizing your own marketplace
 

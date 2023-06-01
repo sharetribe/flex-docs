@@ -28,7 +28,7 @@ two), and highly contextual.
 
 ![Examples of microcopy](./microcopy_examples.png)
 
-_Examples of microcopy from the Saunatime listing page highlighted in
+_Examples of microcopy from the Biketribe listing page highlighted in
 blue. Note that listing fields and search filters ("Sauna type",
 "Amenities" and "Sauna rules" for example) are not editable with the
 microcopy editor. An upcoming feature will introduce a dedicated feature
@@ -75,16 +75,16 @@ Template they are in the **translations** folder. In addition to the
 default **en.json** file, there are other languages available, which is
 why the folder is titled **translations**.)_
 
-Next, load the Saunatime microcopy into the editor. You can follow
+Next, load the Biketribe microcopy into the editor. You can follow
 [the same steps](#2-load-your-microcopy-into-the-editor) you would
 eventually use to modify your own marketplace’s microcopy.
 
-Select the “Daily-bookings / Saunatime” link, which takes you to the
-Saunatime code repository. Click “src” folder→ click “translations”
+Select the “Daily-bookings / Biketribe link, which takes you to the
+Biketribe code repository. Click “src” folder→ click “translations”
 folder→ open “en.json” file→ copy content.
 [Here is a direct link](https://github.com/sharetribe/web-template/blob/main/src/translations/en.json)
 to the file you need.Then paste the data into the Console Microcopy
-editor. You can make changes to the Saunatime test microcopy using the
+editor. You can make changes to the Biketribe test microcopy using the
 same workflow described below.
 
 ## How to modify microcopy when building your marketplace with a developer?

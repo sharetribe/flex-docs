@@ -1,5 +1,5 @@
 ---
-title: Key terms and definitions 
+title: Key terms and definitions
 slug: concepts
 updated: 2023-04-01
 category: operator-guides-useful-information
@@ -34,7 +34,7 @@ a headless architecture, this portion is built and hosted separately
 from the marketplace backend. Frontend applications can also be referred
 to as client applications.
 
-[The Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template)
+[The Sharetribe Web Template](https://www.sharetribe.com/docs/introduction/introducing-template/)
 is the most common way to build a marketplace frontend with Flex. You
 may build your frontend completely from scratch too.
 
@@ -99,20 +99,22 @@ building integrations into many other software applications easier.
 
 ### Sharetribe Web Template
 
-Sharetribe Web Template (SWT) is the best way to start building a custom
+Sharetribe Web Template is the best way to start building a custom
 marketplace on Flex. The Template is an open-sourced website application
 modifiable with coding. Using it allows building a custom marketplace at
 a fraction of the the cost or time required to build it from scratch.
 
-Certain settings in an SWT-based marketplace will become configurable in
-Console throughout 2023. This includes the listing type, search page
-layout, search page fields, listing fields, and many more. Launching a
-marketplace with SWT requires a developer.
+Certain settings are
+[configurable in Console](/operator-guides/biketribe-configuration-checklist/#what-to-modify).
+These include the listing type, search page layout, search page fields,
+listing fields, and many more. Launching a marketplace with the template
+requires a developer.
 
-Sharetribe built other templates called "Flex Templates for Web." SWT is
-an upgrade on these templates by combining their functionalities into a
-single code base. You can find more information about these legacy
-templates [here](https://www.sharetribe.com/docs/ftw/legacy-templates/).
+Sharetribe built other templates called "Flex Templates for Web." The
+Sharetribe Web Template is an upgrade on these templates and combines
+their functionalities into a single code base. You can find more
+information about these legacy templates
+[here](https://www.sharetribe.com/docs/ftw/legacy-templates/).
 
 ### Environments
 
@@ -165,9 +167,9 @@ extended data.
 
 Transaction process defines the rules of what and how transactions
 happen on the marketplace. Anytime two users interact on a Flex
-marketplace, what steps are available to them, when they are available,
-and what happens as a result of these steps is enclosed in the
-transaction process.
+marketplace, the transaction process determines what steps are available
+to them, when they are available, and what happens as a result of these
+steps.
 
 You can have different transaction processes for different ways of
 transacting, like renting and buying products, in the same marketplace.
@@ -177,27 +179,6 @@ You can see the transaction processes of your marketplace in Console’s
 [Click here](https://www.sharetribe.com/docs/concepts/transaction-process/)
 to learn more about transaction processes and for tips on how desing
 your own.
-
-### Microcopy editor
-
-The Microcopy editor lets you edit your marketplace’s microcopy from
-Console's Build section. Use the Microcopy editor to edit the short
-written texts scattered around your marketplace, like button labels,
-error messages, or help texts.
-
-[Click here](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/)
-to learn more about the Microcopy editor and how to use it.
-
-### Pages
-
-With Pages you can create, modify, and delete content pages on your
-marketplace. It comes pre-loaded with four content pages: the About
-page, the Landing page, the Privacy policy, and the Terms of use page.
-Each of these can be edited with Pages, or additional content pages can
-be created. You can find the editor in Console's Build section.
-
-[Click here](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/)
-to learn how to use the Pages to modify content on your marketplace.
 
 ## Content
 

@@ -130,7 +130,7 @@ In the default transaction process and default template flow, the order
 is initiated and processed on
 [CheckoutPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.js)
 in `handlePaymentIntent()`, using
-[initial values from ListingPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/ListingPage/ListingPage.js)
+[initial values from ListingPage.shared.js](https://github.com/sharetribe/web-template/blob/main/src/containers/ListingPage/ListingPage.shared.js)
 set in `handleSubmit()` with `callSetInitialValues()`. Since the
 off-session payment process separates initiating the order (i.e.
 creating a booking, setting line items in a privileged transition) from

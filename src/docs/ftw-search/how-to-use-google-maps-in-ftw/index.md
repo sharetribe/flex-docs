@@ -82,5 +82,5 @@ Once you have enabled maps in your marketplace using your chosen map
 provider, you can change the map's configuration settings. These options
 allow you to change things like the default search locations and
 restrict location search to specific countries. Refer to the
-[map configurations article](ftw/configure-maps/) to learn more about
+[map configurations article](/ftw/configure-maps/) to learn more about
 the specific configurations you can adjust for maps in your marketplace.

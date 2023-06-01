@@ -32,7 +32,6 @@ const sortingArrayTutorialBranding = [
   'working-with-microcopy',
   'configurations',
   'change-default-locations',
-  'implement-amenities-filter',
   'modify-listing-extended-data',
   'deploy-to-render',
 ];
@@ -293,7 +292,7 @@ exports.siteStructure = [
         id: 'operator-guides-concepts',
         sortingArray: sortingArrayOperatorGuidesConcepts,
       },
-{
+      {
         id: 'operator-guides-useful-information',
         sortingArray: sortingArrayOperatorGuidesUsefulInformation,
       },

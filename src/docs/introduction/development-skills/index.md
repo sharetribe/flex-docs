@@ -24,7 +24,7 @@ technology.
 
 ## Technologies
 
-Here are the main technologies the FTW uses:
+Here are the main technologies the Sharetribe Web Template uses:
 
 - JavaScript: the programming language for the whole application
 - CSS: styling the user interface using
