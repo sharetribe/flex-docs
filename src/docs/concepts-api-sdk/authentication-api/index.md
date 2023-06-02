@@ -78,7 +78,8 @@ types_:
   applications with a _refresh token_ that can be used to obtain fresh
   access tokens and can act as the end user's session secret.
 - `token_exchange` grant type is used by Marketplace API to create a
-  trusted context for e.g. [privileged transitions]() within
+  trusted context for e.g.
+  [privileged transitions](/concepts/privileged-transitions/) within
   transactions. It uses both _client ID_ and _client secret_, as well as
   a valid user access token obtained with `password` grant type.
 - `refresh_token` grant type is used by both Marketplace API and

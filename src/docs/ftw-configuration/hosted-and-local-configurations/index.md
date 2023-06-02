@@ -25,8 +25,9 @@ in the template.
 
 ## How configurations are merged in the template
 
-The template uses a function [mergeConfig]() in
-_src/util/configHelpers.js_ to handle the configurations.
+The template uses a function
+[mergeConfig](https://github.com/sharetribe/web-template/blob/main/src/util/configHelpers.js#L667)
+in _src/util/configHelpers.js_ to handle the configurations.
 
 ```shell
 └── src

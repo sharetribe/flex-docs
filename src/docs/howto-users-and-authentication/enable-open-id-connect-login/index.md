@@ -69,8 +69,10 @@ To take an OpenID Connect identity provider into use with Flex, you will
 need to configure a new identity provider and an accompanying identity
 provider client in Flex Console.
 
-1. Go to the [Social logins & SSO]() page in Console and click "+ Add
-   new" to add a new identity provider client.
+1. Go to the
+   [Social logins & SSO](https://flex-console.sharetribe.com/social-logins-and-sso)
+   page in Console and click "+ Add new" to add a new identity provider
+   client.
 2. Fill in a name for the client.
 3. In the identity provider dropdown, select "+ Add a new identity
    provider..."
