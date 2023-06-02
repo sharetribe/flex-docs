@@ -2,7 +2,7 @@
 title: Default transaction process options
 slug: default-transaction-process-options
 updated: 2023-06-02
-category: references
+category: operator-guides-transactions
 ingress:
   Illustrated guide of the options buyers and sellers have with the default transaction process.
 published: true
