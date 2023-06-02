@@ -161,6 +161,12 @@ const sortingArrayOperatorGuidesUsefulInformation = [];
 
 const sortingArrayPilotDayGuides = ['test-page'];
 
+const sortingArrayTheNewSharetribeUsefulInformation = [
+  ];
+const sortingArrayTheNewSharetribeTutorial = [
+
+  ];  
+
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -298,7 +304,7 @@ exports.siteStructure = [
         id: 'the-new-sharetribe-useful-information',
         sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
       },
-      ]
+      ],
     hideSidebar: true,
   },
   {
