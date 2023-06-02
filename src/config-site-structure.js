@@ -145,12 +145,23 @@ const sortingArrayHowToListings = [
   'modify-time-intervals',
   'bookings-with-buffer',
 ];
-const sortingArrayOperatorGuidesPages = ['introducing-pages'];
+
+const sortingArrayOperatorGuidesStaticContent = ['introducing-pages'];
+
 const sortingArrayOperatorGuidesConcepts = [
   'concepts',
   'features',
   'flex-operator-resources',
 ];
+
+const sortingArrayOperatorGuidesLayout = [];
+
+const sortingArrayOperatorGuidesBranding = [];
+
+const sortingArrayOperatorGuidesListings = [];
+
+const sortingArrayOperatorGuidesTransactions = [];
+const sortingArrayOperatorGuidesUsefulInformation = [];
 
 exports.siteStructure = [
   {
@@ -288,10 +299,33 @@ exports.siteStructure = [
         id: 'operator-guides-concepts',
         sortingArray: sortingArrayOperatorGuidesConcepts,
       },
+      {
+        id: 'operator-guides-useful-information',
+        sortingArray: sortingArrayOperatorGuidesUsefulInformation,
+      },
+      {
+        id: 'operator-guides-static-content',
+        sortingArray: sortingArrayOperatorGuidesStaticContent,
+      },
 
       {
-        id: 'operator-guides-pages',
-        sortingArray: sortingArrayOperatorGuidesPages,
+        id: 'operator-guides-layout',
+        sortingArray: sortingArrayOperatorGuidesLayout,
+      },
+
+      {
+        id: 'operator-guides-transactions',
+        sortingArray: sortingArrayOperatorGuidesTransactions,
+      },
+
+      {
+        id: 'operator-guides-branding',
+        sortingArray: sortingArrayOperatorGuidesBranding,
+      },
+
+      {
+        id: 'operator-guides-listings',
+        sortingArray: sortingArrayOperatorGuidesListings,
       },
     ],
   },

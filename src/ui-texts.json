@@ -171,7 +171,12 @@
 
   "Sidebar.operatorGuides": "Operator Guides",
   "Sidebar.operatorGuidesConcepts": "Concepts",
-  "Sidebar.operatorGuidesPages": "Pages",
+  "Sidebar.operatorGuidesUsefulInformation": "Useful Information",
+  "Sidebar.operatorGuidesStaticContent": "Static content",
+  "Sidebar.operatorGuidesLayout": "Layout",
+  "Sidebar.operatorGuidesTransactions": "Transactions",
+  "Sidebar.operatorGuidesListings": "Listings",
+  "Sidebar.operatorGuidesBranding": "Branding",
 
   "Footer.heading": "Can't find what you're looking for?"
 }

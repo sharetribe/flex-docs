@@ -13,7 +13,15 @@ const query = graphql`
       filter: {
         frontmatter: {
           category: {
-            in: ["operator-guides-pages", "operator-guides-concepts"]
+            in: [
+              "operator-guides-static-content"
+              "operator-guides-concepts"
+              "operator-guides-branding"
+              "operator-guides-layout"
+              "operator-guides-transactions"
+              "operator-guides-listings"
+              "operator-guides-useful-information"
+            ]
           }
         }
       }
