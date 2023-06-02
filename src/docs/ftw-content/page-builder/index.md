@@ -306,7 +306,7 @@ containers/PrivacyPolicyPage/FallbackPage.js:
             └── FallbackPage.js
 ```
 
-## How to take Pages into use if you are using a legacy temlate
+## How to take Pages into use if you are using a legacy template
 
 All Sharetribe Web Template versions support Pages. If you want to add
 Pages capabilities to an older template that does not support Pages, you

@@ -10,9 +10,11 @@ published: true
 ---
 
 The search page displays all listings from your marketplace. Users can
-find the listing that they need through keyword search or location search, and by filtering and sorting different attributes. They can even find a listings by
-dragging and exploring a map. You can define the layout of this page
-from your Console account. Go to Build → Content → Layout.
+find the listing that they need through keyword search or location
+search, and by filtering and sorting different attributes. They can even
+find a listings by dragging and exploring a map. You can define the
+layout of this page from your Console account. Go to Build → Content →
+Layout.
 
 There are two different search page layouts that you can select from:
 Map view and Grid view.

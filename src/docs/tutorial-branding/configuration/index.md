@@ -1,25 +1,27 @@
 ---
-title: Change configurations
+title: Change currency and minimum price
 slug: configurations
 updated: 2020-02-28
 category: tutorial-branding
 ingress:
-  Change marketplace configurations - change the marketplace currency to
-  euro.
+  In this tutorial section we change the marketplace currency and we set
+  a minimum price for transactions.
 published: true
 ---
 
 There are several files that affect the configuration of the Sharetribe
 Web Template. The bottom layer consists of _environment variables_ and
-_src/config_ folder.
+all the files in the _src/config_ folder. In addition to that, you can
+adjust many of your marketplace settings through Console.
 
-## Environment variables
+## Environment variables and configuration files
 
-The Sharetribe Web Template has a couple of environment variables. Those
-variables are more or less specific to a runtime environment. For
-example, `REACT_APP_SHARETRIBE_SDK_CLIENT_ID` might be pointing to the
-client ID of your Flex test-environment on localhost and on your staging
-server (if you have one).
+You make a lot of adjustments to your marketplace via environment
+variables, configuration files and through Console. These configurations
+are specific to the runtime environment. For example, the
+`REACT_APP_SHARETRIBE_SDK_CLIENT_ID` environment variable might be
+pointing to the client ID of your Flex development environment on
+localhost and on your staging server (if you have one).
 
 You already have set up a couple of those environment variables, when
 you completed the
@@ -30,20 +32,24 @@ That happened, when you executed command:
 yarn run config
 ```
 
-That config script just asked a couple of mandatory variables from you
-and then created a new hidden file: "**.env**". You can just open that
-file with your preferred text editor:
+That config script asked you to input all mandatory variables and then
+created a new hidden file: "**.env**". You can open that file with your
+preferred text editor:
 
 ```shell
 └── .env
 ```
 
-Full list of configuration variables can be found here:
+A full list of environment variables can be found here:
 [template environment variables](/ftw/ftw-env/). You can change any of
 these variables _locally_ by just editing the **.env** file. Then you
 need to restart the server by running `yarn run dev` again.
 
-## Configuration files
+You can also find a full list of configuration variables that can be
+changed through the template codebase in the
+[Configuration variables](/ftw/configuration/) article.
+
+## Change the currency
 
 Most configurations are defined in the different files in the
 **src/config** folder.
@@ -54,15 +60,18 @@ Most configurations are defined in the different files in the
         └── configDefault.js
 ```
 
-Some environment variables are just included in _configDefault.js_ file,
-which is then imported into the components that use those variables.
+Some environment variables are imported in the
+[_configDefault.js_](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js)
+file, which is then imported into the components that use those
+variables.
 
 However, the **configDefault.js** file also contains other variables
 that are hard-coded in the file.
 
 One of those variables is marketplace currency. To change it, you will
 need to add the correct currency code. You can check the available
-currencies in **src/config/settingsCurrency.js**
+currencies in
+[**src/config/settingsCurrency.js**](https://github.com/sharetribe/web-template/blob/main/src/config/settingsCurrency.js).
 
 ```diff
   // Marketplace currency.
@@ -72,14 +81,13 @@ currencies in **src/config/settingsCurrency.js**
 + currency: 'EUR',
 ```
 
-<extrainfo title="Why do my old listings have a wrong currency?">
-
 If you already created listings before changing the currency, listings
 using the old currency will not be bookable anymore. The Sharetribe Web
 Template does not support multiple currencies and does not know how to
 convert a listing's price from one currency to another.
 
-You can just close those listings from Console.
+If you have existing listings in another currency, you can close those
+listings through Console.
 
 <info>
 
@@ -91,22 +99,7 @@ listing's price even if the currency is wrong.
 
 </extrainfo>
 
-Another configuration defined in configDefault.js is **siteTitle** - and
-then that variable is used in `<meta>` tags and
-[webpage's schema](https://schema.org/).
-
-```js
-// Site title is needed in meta tags (bots and social media sharing reads those)
-const siteTitle = 'Biketribe';
-```
-
-### Task: _Set listing's minimum price_
-
-Let's continue our task of changing currency to euros. In the previous
-chapter, we changed the currency to EUR and it is already in use when a
-new listing is created.
-
-<extrainfo title="Extra: how to import currency on a component file?">
+<extrainfo title="Extra: how to import currency in a component file?">
 
 The _configDefault.js_ file defines the currency and exports it among
 other variables:
@@ -130,19 +123,28 @@ other variables:
 
 </extrainfo>
 
-If you are using some other currency besides EUR, you can read more
-about checking the necessary currency configurations from
-[this document](/ftw/how-to-set-up-currency-in-ftw/).
+## Set a minimum price for your listings
 
-There is an additional variable set in **configDefault.js** that is
-related to currency:
+Now we'll set a minimum transaction size. This can be set through
+[Console](https://staging-console.i.sharetribe.com/transactions/minimum-transaction-size)
+and it will be enforced when users create new listings. Users will not
+be able to create listings below the minimun transaction size you define
+in Console.
 
-```js
-  // Listing minimum price in currency sub units, e.g. cents.
-  // 0 means no restriction to the price
-  // Note: Stripe does have minimum fee that depends on country, currency, etc.
-  listingMinimumPriceSubUnits: 500,
-```
+<info>
+
+Existing listings in your marketplace will not be affected by the new
+minimum price.
+
+</info>
+
+You can adjust the minimun transaction size in
+[Console](https://staging-console.i.sharetribe.com/transactions/minimum-transaction-size):
+
+![Change minimum price](./console-price.png)
+
+The value you input will be in cents. Therefore, 500 represents a
+minimun transaction size of 5 euros.
 
 Stripe (the payment processor used by Flex) has a
 [minimum (and maximum) charge amounts per currency](https://stripe.com/docs/currencies#minimum-and-maximum-charge-amounts).
@@ -153,23 +155,20 @@ We need to ensure that providers don't create listings that are cheaper
 than the minimum price. If the listing price is lower, Stripe will not
 process the payment and the booking fails.
 
-So, we should set the minimum price to be higher than what Stripe
-charges. We need to decide a level where provider and marketplace also
-get something. In this tutorial, we use €6 aka 600 cents:
+## Summary
 
-```diff
-// Listing minimum price in currency sub units, e.g. cents.
-// 0 means no restriction to the price
-// Note: Stripe does have minimum fee that depends on country, currency, etc.
-- const listingMinimumPriceSubUnits = 500;
-+ const listingMinimumPriceSubUnits = 600;
-```
+In this tutorial, we changed the marketplace currency and set a minimun
+price for transactions using the no-code UI in Console. Currency needs
+to be edited through the configDefault.js file and changing the currency
+code to the desired value. You should consider what you want to set as
+the minimum transaction price of your marketplace. The recommendation is
+that the minimum listing price be at least the same as Stripe's minimum
+charge amount in the country you are operating. If the listing price is
+lower than Stripe's minimum charge amount, Stripe will not process the
+payment and the transaction will fail.
 
-The error message, when creating a new listing
-(_EditListingPricingForm_):
+## Further reading
 
-![EditListingPricingForm: validation for minimum price](./minimum-price.png)
-
-In the next article, we change the default suggestions for search
-locations.<br />
-[› Go to the next article](/tutorial/change-default-locations/)
+- [Currency configurations](/ftw/how-to-set-up-currency-in-ftw/)
+- [Environment variables](/ftw/ftw-env/)
+- [Configuration variables](/ftw/configuration/)

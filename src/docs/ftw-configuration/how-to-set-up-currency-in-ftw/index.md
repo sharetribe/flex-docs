@@ -35,13 +35,12 @@ application is changed.
 
 ## Edit listing minimum price
 
-The variable `listingMinimumPriceSubUnits` defines the minimum price a
-customer can give a listing. You can find that variable in
-[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L25).
+If you are using the newest version of The Sharetribe Web Template, you
+can edit your listing minimum price through
+[Console](https://staging-console.i.sharetribe.com/transactions/minimum-transaction-size).
 You need to specify the minimum price as the subunits of the currency
-you are using, i.e. if you are using dollars,
-`listingMinimumPriceSubUnits: 500` would set the minimum price for a
-listing at 5 dollars.
+you are using, i.e. if you are using dollars, 500 would set the minimum
+price for a listing at 5 dollars.
 
 You can also set the value as 0, meaning there is no minimum price. We
 recommend that the minimum listing price be at least the same as
@@ -49,6 +48,13 @@ recommend that the minimum listing price be at least the same as
 in the country you are operating. **If the listing price is lower than
 Stripe's minimum charge amount, Stripe will not process the payment and
 the transaction will fail.**
+
+If you're not using the newest version of The Sharetribe Web Template,
+or if you prefer to use local configuration files you can adjust the
+`listingMinimumPriceSubUnits` variable in
+[configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L25).
+The variable `listingMinimumPriceSubUnits` defines the minimum price a
+customer can give a listing.
 
 If you want to allow listings with no price, you will need to
 [add a new transaction process](/how-to/change-transaction-process-in-ftw/)

@@ -35,9 +35,8 @@ also be used to create filters or affect the keyword search.
 ## Custom listing field types
 
 There are 3 types of listing fields that can be added: "Free text",
-"Select one" and "Select multiple". [Read more specific instructions on
-how to add listing
-fields](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
+"Select one" and "Select multiple".
+[Read more specific instructions on how to add listing fields](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
 
 ### Free text
 

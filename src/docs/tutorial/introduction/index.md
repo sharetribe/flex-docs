@@ -1,59 +1,81 @@
 ---
-title: Tutorial introduction
+title: Introduction
 slug: introduction
-updated: 2019-03-25
+updated: 2023-04-09
 category: tutorial
 ingress:
-  This guide is designed to help you get started with customizing the
-  Sharetribe Web Template.
+  Over the course of the tutorial, you will learn how to build a
+  marketplace using the Sharetribe Web Template
 published: true
 ---
 
+The goal of this tutorial is to help you build a marketplace using the
+Sharetribe Web Template. You will learn how to set up a marketplace and
+how to start working on development using the Sharetribe Web Template.
+You will also learn how to use the adjustable configurations in Console.
+
 ## What are we building?
 
-In this tutorial, we start to customize the Sharetribe Web Template and
-turn it into a cottage rental marketplace called CottageDays.
+In this tutorial, we will start editing the Sharetribe Web Template and
+turn it into a [Sauna](https://en.wikipedia.org/wiki/Sauna) rental
+marketplace called Saunatime.
 
-The first part of this tutorial is about branding the template. The
-second part dives deeper into modifying the transaction process
-behavior.
+The first part of this tutorial focuses on installing the template,
+using the Console interface to make changes to the branding and layout
+of your marketplace, making minor changes to the template styles and
+deploying a development environment. The second part dives deeper into
+modifying the listing creation process, and the third part focuses on
+editing the transaction process.
 
-**Part 1: Branding and customizing listings**<br /> Learn to make
-changes that are necessary to turn a Biketribe marketplace into a
-CottageDays marketplace. At the end of this part, we deploy CottageDays
-marketplace to Render.
+## Background knowledge
 
-**Part 2: Modifying the transaction process**<br /> Here, we start by
-showing how to customize the pricing. Then the rest of the articles are
-more focused on making modifications to the transaction process and
-email notifications.
+The first part of the tutorial is accessible even though you are brand
+new to web development. Parts two and three increase in difficulty, and
+it helps to have some background in web development.
 
-## Prerequisites
+Before you start working on the tutorial, it's good to understand a few
+key concepts (a general understanding of the fundamentals should
+suffice, and you'll learn a lot throughout the tutorial).
 
-Sharetribe Web Template is created on top of
-[React](https://reactjs.org/), [Redux](https://redux.js.org/), and
-styles are created with
-[CSS Modules](https://github.com/css-modules/css-modules). You should be
-familiar with those libraries.
+- **The Sharetribe Web Template**: a template aimed as a starting point
+  for developing your marketplace application on top of Sharetribe's
+  APIs. The template provides you with a fully functional marketplace
+  out of the box.
 
-You should also have completed the
-[Getting started guide](/introduction/getting-started-with-web-template/)
-and as a result, you have the Sharetribe Web Template repository cloned
-to your local development environment and the app is available in
-http://localhost:3000.
+- **Custom marketplace app**: an instance of the Sharetribe Web Template
+  that you host in the hosting environment of your choice (e.g. Heroku
+  or Render), allowing you to customise and manage the code base freely.
 
-After that you could set up a Github repository for code changes. You
-could either
+- **Headless**: the marketplace client app is decoupled from the
+  marketplace backend. The client communicates with the backend via API.
+  You can manage configurations, assets and pages in Console, and your
+  client can access them using the Asset Delivery API.
 
-- _[fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository)
-  the FTW-daily repository_ or
-- _[create your own Github repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo)_
-  and push your locally cloned Git repository there.
+- **Marketplace environment**: There are three marketplace environments:
+  Test, Development, and Live (you can find these in Console). You can
+  use the development environment to develop your marketplace and test
+  environment as a preview or staging environment. Your Live marketplace
+  is home to your actual live marketplace.
 
-Even though the first option is easier (i.e. just click the "fork"
-button in Sharetribe Web Template Github repo), the latter is the
-recommended approach for the actual customization work. Here's a rough
-guide on how to set it up:
+- **Flex CLI**: A command line tool that you can use to change your
+  marketplace's advanced configurations, such as transaction processes
+  and email templates
+
+## Before starting the tutorial
+
+Before continuing to the tutorial's first part, complete the
+[Getting Started Guide](/introduction/getting-started-with-web-template/).
+This guide will walk you through installing the template and setting up
+your local development environment.
+
+We also recommend that you create a GitHub repository for your new
+marketplace. Using a GitHub repository allows you to keep track of
+changes made to your code over time, making it easier to revert to
+previous versions or compare different versions of your code. It also
+enables collaboration among multiple developers working on the same
+project, and provides a backup of your code in the cloud.
+
+To create a GitHub repository, you will need to:
 
 1. Create a
    [Github repository](https://help.github.com/en/github/getting-started-with-github/create-a-repo).
@@ -144,4 +166,5 @@ URLs.<br /> Read more about
 Now you are ready to make code changes and save them to Github!
 
 The first part of this tutorial starts with changing the marketplace
-color.<br /> [› Go to the next article](/tutorial/first-edit/)
+color.<br />
+[› Go to the next article **TODO CHANGE THIS LINK**](/tutorial/first-edit/)

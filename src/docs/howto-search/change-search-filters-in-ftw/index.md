@@ -75,6 +75,17 @@ search query is made.
 Next we'll guide you through the steps of adding a _gears_ filter to the
 marketplace.
 
+<info>
+
+If your marketplace is using hosted configurations defined in Flex
+Console, you can make the changes described in this section by adding
+new listing fields and defining the correct search settings for the
+field.
+
+**[Skip to the next section](#creating-your-own-filter-types)**
+
+</info>
+
 First step for adding a new filter is to make sure that the data being
 used for filtering is saved in the listing's `publicData` attribute. On
 how to achieve this, please refer to the
@@ -208,7 +219,7 @@ primary filters are those which are visible by default, and secondary
 filters are not visible. You can open the secondary filters panel by
 clicking "More filters" button.
 
-As a summary, that new filter configuration in `listingFields` array, is
+As a summary, the new filter configuration in `listingFields` array is
 enough to render a _gears_ filter on search page. That is, if you have
 the correct schema added for the _gears_ attribute to the search engine
 using [Flex CLI](/introduction/getting-started-with-flex-cli/).
@@ -237,3 +248,12 @@ When you have your custom filter component ready, you need to add it to
         └── SearchPage
             └── FilterComponent.js
 ```
+
+<info>
+
+Settings configured in local configurations files are overridden by any
+fetched via the Asset Delivery API. You can refer to
+[this article](/ftw/hosted-and-local-configurations/) to modify the way
+your template merges local and hosted configurations.
+
+</info>

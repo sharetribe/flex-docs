@@ -34,9 +34,9 @@ one by creating a new Flex marketplace at
 
 If you have created your marketplace environment prior to the 25th of
 April 2023, and you are using the Sharetribe Web Template, it is good to
-note that there are two new transaction pro cesses the template uses,
-and those processes may not be in your Flex marketplace by default. You
-can find the transaction processes in
+note that there are two new transaction processes the template uses, and
+those processes may not be in your Flex marketplace by default. You can
+find the transaction processes in
 [/ext/transaction-processes/](https://github.com/sharetribe/web-template/tree/main/ext/transaction-processes)
 in the repository.
 

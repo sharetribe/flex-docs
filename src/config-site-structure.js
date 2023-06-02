@@ -25,15 +25,18 @@ const sortingArrayIntroductionGettingStarted = [
 // for the listed articles.
 const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
-  'first-edit',
-  'change-images',
+  'change-branding',
   'modify-landing-page',
-  'change-logo',
   'working-with-microcopy',
+  'first-edit',
   'configurations',
   'change-default-locations',
-  'modify-listing-extended-data',
   'deploy-to-render',
+];
+
+const sortingArrayTutorialListings = [
+  'add-new-wizard-tab',
+  'add-favorite-saunas',
 ];
 
 const sortingArrayTutorialTransactionProcess = [
@@ -183,6 +186,11 @@ exports.siteStructure = [
         showNextAndPrev: true,
       },
       {
+        id: 'tutorial-listings',
+        sortingArray: sortingArrayTutorialListings,
+        showNextAndPrev: true,
+      },
+      {
         id: 'tutorial-transaction-process',
         sortingArray: sortingArrayTutorialTransactionProcess,
         showNextAndPrev: true,
@@ -242,7 +250,6 @@ exports.siteStructure = [
       { id: 'how-to-migrations' },
       { id: 'how-to-content' },
       { id: 'how-to-messaging' },
-      { id: 'how-to-design' },
       { id: 'how-to-events' },
       { id: 'how-to-search' },
     ],

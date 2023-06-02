@@ -52,6 +52,15 @@ processes in the same application).
     },
 ```
 
+<info>
+
+Settings configured in local configurations files are overridden by any
+fetched via the Asset Delivery API. You can refer to
+[this article](/ftw/hosted-and-local-configurations/) to modify the way
+your template merges local and hosted configurations.
+
+</info>
+
 The `alias` variable should point to the correct alias. You need to
 check from Console which process and process version your client app
 should support. All available transaction process aliases can be found
