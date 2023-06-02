@@ -126,7 +126,7 @@ other variables:
 ## Set a minimum price for your listings
 
 Now we'll set a minimum transaction size. This can be set through
-[Console](https://staging-console.i.sharetribe.com/transactions/minimum-transaction-size)
+[Console](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size)
 and it will be enforced when users create new listings. Users will not
 be able to create listings below the minimun transaction size you define
 in Console.
@@ -139,7 +139,7 @@ minimum price.
 </info>
 
 You can adjust the minimun transaction size in
-[Console](https://staging-console.i.sharetribe.com/transactions/minimum-transaction-size):
+[Console](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size):
 
 ![Change minimum price](./console-price.png)
 
