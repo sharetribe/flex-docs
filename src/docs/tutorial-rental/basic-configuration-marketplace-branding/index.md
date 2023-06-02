@@ -43,7 +43,7 @@ Click on the “Upload image” section for the Favicon. Once you click
 this, you should be able to upload an image from your computer. Download
 the image below and use it for your settings.
 
-![favicon](./faviocon.png)
+![favicon](./favicon.png)
 
 ### 4. Upload a Background image for login pages
 

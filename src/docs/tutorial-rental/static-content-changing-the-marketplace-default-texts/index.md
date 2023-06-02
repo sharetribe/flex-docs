@@ -70,5 +70,4 @@ to **“replace all.”** If possible, use that function.
 After you are done, copy the entire text and paste it into the Microcopy
 editor, and then save the content.
 
-You can learn more about the microcopy editor and how to use it here:
-https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/.
+You can learn more about the microcopy editor and how to use it [here](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
