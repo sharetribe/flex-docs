@@ -8,9 +8,9 @@ published: true
 noindex: true
 ---
 
-Once you are ready to bring the first users to your marketplace, you are
-ready to go Live. Going Live unlocks the Live environment, which allows
-real users to signup to your marketplace and transact with real money.
+
+Once you are ready to bring the first users to your marketplace, you are ready to go Live. Going Live unlocks the Live environment, where it is possible to add real users and process transactions with real credit card details. 
+
 
 Going Live takes several steps.
 
@@ -45,7 +45,7 @@ form is not working for you for some reason, please email us the
 following information at hello@sharetribe.com.
 
 Here is a list of the information that will be collected from you during
-the setup process.
+the setup process:
 
 ### Custom domain
 
@@ -108,10 +108,10 @@ Next, you must enable certain capabilities within Google Maps.Follow the
 instructions in the
 [Getting started](https://developers.google.com/maps/documentation/javascript/places#GetStarted)
 section of the Places library documentation to enable using the required
-services. You should enable`:` Google Places API Web Service Maps Static
+services. You should enable: Google Places API Web Service Maps Static
 API Maps JavaScript API.
 
-##Google Analytics
+## Google Analytics
 
 Google Analytics lets you browse and analyze lots of data, such number
 of visitors, pages viewed, time spent on your marketplace, traffic
@@ -140,39 +140,37 @@ subdomain.
 ### Configure your www records
 
 Your www records make your marketplace accessible at
-“www.myexampledomain.com”.
+`www.myexampledomain.com`.
 
 1. Look over the existing CNAME records.
 2. If a CNAME record exists where "Host" or "Source" is set to "www",
    click edit and set "Points To" or "Value" or "Target" to
-   "proxy.sharetribe.com". 
-   - Note that depending on the DNS provider you may need to add a period at the end: "proxy.sharetribe.com."
-   - Note that the target address for this record,
-   proxy.sharetribe.com, should be copied as-is. You don't need to
-   change it to your own marketplace's address.
-3. \If a CNAME record doesn't exist, click "Add record" or "Create
+   `proxy.sharetribe.com`. 
+   - Note that depending on the DNS provider you may need to add a period at the end: `proxy.sharetribe.com.`
+   - Note that the target address for this record, proxy.sharetribe.com, should be copied as-is. You don't need to change it to your own marketplace's address.
+3. If a CNAME record doesn't exist, click "Add record" or "Create
    record". From the record type list, select CNAME. Fill in the
-   following fields:\ "Host" or "Source" to "www". "Points To" or
-   "Value" or "Target" to "proxy.sharetribe.com". If you have to fill a
+   following fields: "Host" or "Source" to "www". "Points To" or
+   "Value" or "Target" to `proxy.sharetribe.com`. If you have to fill a
    field named "TTL", set it to "3600". Note that the target address for
-   this record, proxy.sharetribe.com, should be copied as-is.
+   this record, `proxy.sharetribe.com`, should be copied as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your
    changes.
 
 ### Configure your root domain records
 
-Your root domain is your domain without “www.” “myexampledomain.com” is
+Your root domain is your domain without “www”. `myexampledomain.com` is
 an example of a root domain.
 
 1. Look over any existing A records
-2. If an A record exists where "Host" or "Source" is set to "@", click
-   edit and set "Points To" or "Value" or "Target" to "34.248.140.98".
+2. If an A record exists where "Host" or "Source" is set to `@`, click
+   edit and set "Points To" or "Value" or "Target" to `34.248.140.98`.
 3. If an A record doesn't exist, click "Add record" or "Create record".
    From the record type list, select A. Fill in "Host" or "Source" to
-   "@". "Points To" or "Value" or "Target" to "34.248.140.98".If you have to fill a field
+   `@`. "Points To" or "Value" or "Target" to `34.248.140.98`.If you have to fill a field
    named "TTL", set it to "3600".
-   - Note that depending on the DNS provider, this record needs to be left blank.
+   - Note that depending on the DNS provider, this record may need to be left blank.
 4. Save changes.
 5. Check that the record has been updated or created according to your
    changes.
@@ -181,20 +179,20 @@ an example of a root domain.
 
 You may want to host your marketplace at subdomain, where your
 marketplace is accessible at an address such as
-“mymarketplace.myexampledomain.com.”
+`mymarketplace.myexampledomain.com.`
 
 1. Look over the existing CNAME records.
 2. If a CNAME record, where "Host" or "Source" is set to your desired
    subdomain, exists, click edit and set "Points To" or "Value" or
-   "Target" to "proxy.sharetribe.com". Note that the target address for
-   this record, proxy.sharetribe.com, should be copied as-is. You don't
+   "Target" to `proxy.sharetribe.com`. Note that the target address for
+   this record, `proxy.sharetribe.com`, should be copied as-is. You don't
    need to change it to your own marketplace's address.
 3. If such a CNAME record doesn't exist, click "Add record" or "Create
    record". From the record type list, select CNAME. Fill in "Host" or
    "Source" to the desired subdomain (such as "mymarketplace"). "Points
-   To" or "Value" or "Target" to "proxy.sharetribe.com". If you have to
+   To" or "Value" or "Target" to `proxy.sharetribe.com`. If you have to
    fill a field named "TTL", set it to "3600". Note that the target
-   address for this record, proxy.sharetribe.com, should be copied
+   address for this record, `proxy.sharetribe.com`, should be copied
    as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your
