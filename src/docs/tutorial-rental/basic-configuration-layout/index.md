@@ -2,7 +2,7 @@
 title: Basic Configuration - Marketplace Layout
 slug: basic-configuration-marketplace-layout
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   You can choose any layout for your specific marketplace. In this
   tutorial we will set the Layout options that work the best for a Sauna

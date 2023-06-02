@@ -2,7 +2,7 @@
 title: Static Content- Modifying the Landing page.
 slug: modifying-the-landing-page
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   The landing page is likely to be the first impression for many of your
   users. This page plays a crucial role in persuading new visitors to

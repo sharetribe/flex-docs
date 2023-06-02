@@ -192,13 +192,13 @@
   "ArticleIndexPage.pilot-day-guides.title": "Pilot Day Guides",
   "ArticleIndexPage.pilot-day-guides.description": "All pilot day guides",
 
-  "Sidebar.tutorialRental": "The New Sharetribe Guides",
-  "ArticleIndexPage.tutorial-rental.title": "The New Sharetribe help center",
-  "ArticleIndexPage.tutorial-rental.description": "Take a tutorial or find an answer to any question you have about how The New Sharetribe works",
-  "ArticlePage.tutorial-rental.breadCrumbTitle": "The New Sharetribe Guides",
+  "Sidebar.theNewSharetribe": "The New Sharetribe Guides",
+  "ArticleIndexPage.the-new-sharetribe.title": "The New Sharetribe help center",
+  "ArticleIndexPage.the-new-sharetribe.description": "Take a tutorial or find an answer to any question you have about how The New Sharetribe works",
+  "ArticlePage.the-new-sharetribe.breadCrumbTitle": "The New Sharetribe Guides",
   "ArticleIndexPage.tutorial-service.title": "Service tutorial",
   "ArticleIndexPage.tutorial-service.description": "desc",
-
+  
   "Sidebar.tutorialService": "Service tutorial",
   "Sidebar.tutorialProduct": "Product tutorial",
   "ArticlePage.tutorial-service.breadCrumbTitle": "Service tutorial",
@@ -206,10 +206,6 @@
 
   "ArticleIndexPage.tutorial-product.description": "Description",
   "ArticleIndexPage.tutorial-product.title": "Product tutorial",
-
-
-
-
 
   "Footer.heading": "Can't find what you're looking for?"
 }

@@ -2,7 +2,7 @@
 title: Explore the marketplace - create your first listing
 slug: creating-your-first-listing
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   To create a  listing, you would first have to [create a user
   account](LINK TO THE PREVIOUS TUTORIAL article). On the marketplace,

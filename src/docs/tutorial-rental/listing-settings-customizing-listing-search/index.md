@@ -2,7 +2,7 @@
 title: Listing Settings - Setting the isting Search.
 slug: setting-listing-search
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   Listing search is fundamental for your users to discover the listings
   that match their preferences.

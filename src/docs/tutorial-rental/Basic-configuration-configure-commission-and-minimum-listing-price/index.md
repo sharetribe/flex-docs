@@ -3,7 +3,7 @@ title:
   Basic configuration - configure commission and minimum listing price.
 slug: configure-commission-and-minimum-listing-price
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   The New Sharetribe uses Stripe as a payment provider to handle online
   transactions. In order for your sellers to be able to receive payments

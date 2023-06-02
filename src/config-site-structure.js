@@ -142,7 +142,7 @@ const sortingArrayHowToListings = [
   'modify-time-intervals',
   'bookings-with-buffer',
 ];
-  const sortingArrayOperatorGuidesStaticContent = ['introducing-pages'];
+const sortingArrayOperatorGuidesStaticContent = ['introducing-pages'];
 
 const sortingArrayOperatorGuidesConcepts = [
   'concepts',
@@ -158,7 +158,6 @@ const sortingArrayOperatorGuidesListings = [];
 
 const sortingArrayOperatorGuidesTransactions = [];
 const sortingArrayOperatorGuidesUsefulInformation = [];
-
 
 const sortingArrayPilotDayGuides = ['test-page'];
 
@@ -286,7 +285,7 @@ exports.siteStructure = [
     sortingArray: sortingArrayReferences,
   },
   {
-    id: 'tutorial-rental',
+    id: 'the-new-sharetribe',
     isOpen: true,
     sortingArray: [],
     isHidden: true,
@@ -315,7 +314,7 @@ exports.siteStructure = [
         id: 'operator-guides-concepts',
         sortingArray: sortingArrayOperatorGuidesConcepts,
       },
-{
+      {
         id: 'operator-guides-useful-information',
         sortingArray: sortingArrayOperatorGuidesUsefulInformation,
       },
@@ -345,7 +344,7 @@ exports.siteStructure = [
       },
     ],
   },
-    {
+  {
     id: 'pilot-day-guides',
     isOpen: true,
     isHidden: true,
@@ -359,32 +358,30 @@ exports.siteStructure = [
         id: 'pilot-day-guides-tutorials',
         sortingArray: [],
       },
-            {
+      {
         id: 'pilot-day-guides-static-content',
         sortingArray: [],
       },
-            {
+      {
         id: 'pilot-day-guides-transactions',
         sortingArray: [],
       },
-            {
+      {
         id: 'pilot-day-guides-useful-information',
         sortingArray: [],
       },
-            {
+      {
         id: 'pilot-day-guides-listings',
         sortingArray: [],
       },
-            {
+      {
         id: 'pilot-day-guides-layout',
         sortingArray: [],
       },
-            {
+      {
         id: 'pilot-day-guides-branding',
         sortingArray: [],
       },
-            
-            
     ],
   },
 ];

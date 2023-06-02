@@ -2,7 +2,7 @@
 title: Explore the marketplace - create your first transaction
 slug: creating-your-first-transaction
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   If you have been following this tutorial, you should have [one user
   account](LINK TO THE SIGNUP AS A USER ARTICLE from the tutorial),

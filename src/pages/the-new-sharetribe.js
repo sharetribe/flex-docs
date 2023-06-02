@@ -5,13 +5,13 @@ import { dev, siteStructure } from '../config';
 import { findSortingArrays } from '../util/navigation';
 import { ArticleIndexPage } from '../components';
 
-const category = 'tutorial-rental';
+const category = 'the-new-sharetribe';
 const sortingArray = findSortingArrays(category, siteStructure);
 
 const query = graphql`
-  query TutorialRentalIndexQuery {
+  query TheNewSharetribeIndexQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { in: ["tutorial-rental"] } } }
+      filter: { frontmatter: { category: { in: ["the-new-sharetribe"] } } }
       sort: {
         fields: [frontmatter___category, frontmatter___slug]
         order: [ASC, ASC]
@@ -46,7 +46,7 @@ const byArrayOfSlugs = sortingArray => (a, b) => {
   return i1 - i2;
 };
 
-const TutorialRental = () => {
+const TheNewSharetribe = () => {
   return (
     <StaticQuery
       query={query}
@@ -70,4 +70,4 @@ const TutorialRental = () => {
   );
 };
 
-export default TutorialRental;
+export default TheNewSharetribe;

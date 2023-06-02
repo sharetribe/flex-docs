@@ -2,7 +2,7 @@
 title: Rental tutorial part 1
 slug: introduction-to-tutorial
 updated: 2023-02-14
-category: tutorial-rental
+category: the-new-sharetribe
 ingress: Change metadata for SEO and Social media
 published: true
 ---

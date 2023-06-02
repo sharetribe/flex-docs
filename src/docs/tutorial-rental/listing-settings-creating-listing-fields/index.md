@@ -2,7 +2,7 @@
 title: Listing Settings- Creating listing fields.
 slug: creating-listing-fields
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   In this segment of the tutorial, we will be tailoring various aspects
   of the marketplace to align with Saunatime's listing requirements and

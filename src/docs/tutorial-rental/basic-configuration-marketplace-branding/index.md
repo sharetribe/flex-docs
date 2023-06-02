@@ -2,7 +2,7 @@
 title: Basic Configuration - Marketplace Branding
 slug: basic-configuration-marketplace-branding
 updated: 2023-05-31
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   We will start working with the most basic and relatively important
   aspect of your marketplace,   Branding.

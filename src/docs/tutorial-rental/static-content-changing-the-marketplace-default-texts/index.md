@@ -2,7 +2,7 @@
 title: Static Content- Modifying the Footer.
 slug: changing-the-marketplace-default-texts
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe
 ingress:
   Most copy texts in your marketplace can be modified via the [Microcopy
   editor](link to microcopy editor article). However, many of them don’t
