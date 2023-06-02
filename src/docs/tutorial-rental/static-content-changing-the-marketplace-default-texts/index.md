@@ -4,9 +4,7 @@ slug: changing-the-marketplace-default-texts
 updated: 2023-06-01
 category: tutorial-rental
 ingress:
-  Most copy texts in your marketplace can be modified via the [Microcopy
-  editor](link to microcopy editor article). However, many of them don’t
-  need to be changed at all.
+  Most copy texts in your marketplace can be modified via the Microcopy editor. However, many of them don’t need to be changed at all.
 published: true
 ---
 

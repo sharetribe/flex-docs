@@ -1,7 +1,5 @@
 ---
-title:
-  Basic Configuration – Listing Settings – Setting theright listing
-  types.
+title: Basic Configuration – Listing Settings – Setting theright listing types.
 slug: setting-the-listing-types
 updated: 2023-06-01
 category: tutorial-rental
