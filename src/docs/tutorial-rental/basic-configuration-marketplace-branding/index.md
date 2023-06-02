@@ -13,8 +13,7 @@ published: true
 
 Branding settings allow you to change the images and main color of your
 marketplace. In Console’s test environment, go to Build → Content →
-Branding. [Read more about adding nice looking images](Link to adding
-good looking images)]
+Branding. [Read more about adding nice looking images](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images]
 
 ## Follow these steps
 
@@ -34,8 +33,7 @@ and use it for your settings.
 
 ![logo image](./saunatime.png)
 
-You can learn more about marketplace logos here:
-https://docs.google.com/document/d/1ASAwsOQ3uHDOXbwSK-HZUCcKs4TO9TzZjvjkhaEiyHM/edit#
+You can learn more about marketplace logos [here](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images)
 
 ### 3. Upload the marketplace Favicon
 
