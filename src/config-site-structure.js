@@ -164,7 +164,21 @@ const sortingArrayPilotDayGuides = ['test-page'];
 const sortingArrayTheNewSharetribeUsefulInformation = [
   ];
 const sortingArrayTheNewSharetribeTutorial = [
-
+     "tutorial-introduction",
+   "basic-configuration-marketplace-branding",
+  "basic-configuration-marketplace-layout",
+  "modifying-the-landing-page",
+  "modifying-the-footer",
+  "changing-the-marketplace-default-texts",
+  "setting-the-listing-types",
+    "setting-the-listing-types-2",
+    "creating-listing-fields",
+  "setting-listing-search",
+    "configure-commission-and-minimum-listing-price",
+  "sign-up-as-a-new-user",
+    "create-your-first-listing",
+  "creating-your-first-transaction",
+   "steps-after-tutorial",
   ];  
 
 exports.siteStructure = [
