@@ -70,9 +70,7 @@ the create-stripe-account call:
   for the user. Recommended to pass in at this phase to minimize the
   steps in the onboarding process.
 - `requestedCapabilities`: Required capabilities for payments to work in
-  Flex are `card_payments` and `transfers`. You can read more about
-  capabilities from
-  [our article regarding Capabilities](/operator-guides/stripe-provider-onboarding-and-capabilities/)
+  Flex are `card_payments` and `transfers`.
 
 ![Creating Stripe account](stripePayoutForm.png)
 

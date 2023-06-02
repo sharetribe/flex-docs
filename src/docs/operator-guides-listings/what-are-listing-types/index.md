@@ -75,7 +75,7 @@ Finally, transaction settings determine the transaction process used in
 your marketplace. The transaction process maps out how a transaction
 happens between a customer and provider, including payment, payout, and
 reviews.
-[You can learn more about the transaction settings here](https://www.sharetribe.com/docs/understanding-transaction-settings/).
+[You can learn more about the transaction settings here](/operator-guides/understanding-transaction-settings/).
 
 ## Can I edit or delete an existing Listing type?
 
