@@ -1,5 +1,5 @@
 ---
-title: Listing Settings - Setting the isting Search.
+title: Listing Settings - Setting the listing Search.
 slug: setting-listing-search
 updated: 2023-06-01
 category: tutorial-rental
@@ -10,8 +10,7 @@ published: true
 ---
 
 Some aspects of the listing search, are set in the Listing fields, which
-we touched on, in [the previous article of the tutorial](LINK TO THE
-LISTING FIELDS]. To set the Listing search go to Build → Content →
+we touched on, in [the previous article of the tutorial](www.sharetribe.com/docs/pilot-day-guides/creating-listing-fields). To set the Listing search go to Build → Content →
 Listing search.
 
 ## Search type
@@ -35,5 +34,5 @@ Finally, we’ll save changes, and we’re done with our listing type,
 field, and search configuration.
 
 You can learn more about listing types, listing fields, and listing
-search in our new console help articles here: LINK TO LISTING FIELDS and
+search in our new console help articles here: LINK TO LISTING FIELDS,  and
 LISTING SEARCH ARTICLES.
