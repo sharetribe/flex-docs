@@ -20,12 +20,9 @@ logged in with your API key. If not, it's recommended to first read the
 tutorial
 [Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
 
-In this tutorial, we will add data schemas for the `category` and
-`accessories` public data fields in listings. New marketplaces don't
-have any schemas in the backend by default since the needs of
-marketplaces vary. However, Sharetribe Web Template does define filters
-for `category` and `accessories` in its UI (user interface). This
-tutorial will make those filters work as expected.
+In this tutorial, we will add a data schema for the `listingType` public
+data field in listings. If your marketplace uses different listing
+types, you may want to create pages that only show one type of listing.
 
 We will also see how to manage data schema for user profiles. Those
 schemas are not required for Sharetribe Web Template to work, but can be
@@ -118,48 +115,81 @@ For the full query reference, see the
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 endpoint API reference.
 
+## Listing fields and search settings in Flex Console
+
+When you add listing fields in Flex Console, and select "Include this
+field in keyword search", Flex generates a search schema for the field
+automatically. In the Console, the available field type options are
+
+- free text (search schema: `text`)
+- select one (search schema: `enum`)
+- select multiple (search schema: `multi-enum`)
+
+When you review your search schemas with the `flex-cli search` command,
+schemas defined for listing fields in console have the following doc
+string in the search schema:
+
+```shell
+A listing field defined in Console. Can not be edited with the CLI.
+```
+
+If you then try to add a search schema through Flex CLI for a key and
+scope that already exists in a Console-originated listing field, you
+will see the following error:
+
+```
+ › API call failed. Status: 409, reason: A search schema with the same key and scope has already been defined in an asset.
+```
+
 ## Adding listing search schemas
 
-Sharetribe Web Template defines several search filters in listing public
-data, and two of them are `category` and `accessories`. A category is
-something that is selected from a dropdown of options, so the schema
-type should be `enum`. A listing can have multiple `accessories`
-attributes that are also selected from a set of options and stored in an
-array, so the schema type should be `multi-enum`.
+When creating a listing, the template saves the listing type in the
+listing's public data. If you are using multiple listing types, you may
+want to only show one type of listing at a time on the search page. We
+will create a search schema for the public data attribute `listingType`
+to make this kind of filtering possible.
 
-Let's first see what search schemas we have defined:
-
-```
-$ flex-cli search -m my-marketplace-dev
-
-Schema for   Scope   Key   Type   Default value   Doc
-
-```
-
-Let's add the search schemas for the category and accessories:
-
-```
-$ flex-cli search set --key category --type enum --scope public -m my-marketplace-dev
-```
-
-```
-$ flex-cli search set --key accessories --type multi-enum --scope public -m my-marketplace-dev
-```
-
-We should now see the details for these new schemas:
+Our marketplace has one Console-created listing field, `category`. Let's
+first see how that search schema looks:
 
 ```
 $ flex-cli search -m my-marketplace-dev
 
-Schema for   Scope   Key            Type        Default value   Doc
-listing      public  accessories  multi-enum
-listing      public  category       enum
+Schema for   Scope   Key       Type   Default value   Doc
+listing      public  category  enum                   A listing field defined in Console. Can not be edited with the CLI.
+
+```
+
+Let's add the search schema for listing type:
+
+```
+$ flex-cli search set --key listingType --type enum --scope public -m my-marketplace-dev
+```
+
+We should now see the details for this new schema alongside our Console
+created one:
+
+```
+$ flex-cli search -m my-marketplace-dev
+
+Schema for   Scope   Key          Type   Default value   Doc
+listing      public  category     enum                   A listing field defined in Console. Can not be edited with the CLI.
+listing      public  listingType  enum
 ```
 
 Note that `--schema-for` option is not needed when adding schema for
 `listing` as `listing` is the default.
 
 If you wish to remove a schema, you can use the `search unset` command.
+
+<info>
+
+If you have already defined a search schema for a key through Flex CLI,
+you can not create a listing field in Flex Console with that same key.
+
+![Console warning about conflicting keys](./conflictingSearchSchema.png)
+
+</info>
 
 ## Adding user search schema
 
@@ -194,10 +224,10 @@ the previous step and the new user profile schema:
 ```
 $ flex-cli search -m my-marketplace-dev
 
-Schema for   Scope      Key           Type        Default value   Doc
-listing      public     accessories multi-enum
-listing      public     category      enum
-userProfile  protected  age           long
+Schema for   Scope      Key          Type   Default value   Doc
+listing      public     category     enum                   A listing field defined in Console. Can not be edited with the CLI.
+listing      public     listingType  enum
+userProfile  protected  age          long
 ```
 
 If you wish to remove a schema, you can use the `search unset` command.
@@ -229,20 +259,21 @@ column.
 ```
 $ flex-cli search -m my-marketplace-dev
 
-Schema for   Scope      Key             Type         Default value   Doc
-listing      metadata   isPromoted      boolean      false
-listing      public     accessories   multi-enum
-listing      public     category        enum
-userProfile  protected  age             long
+Schema for   Scope      Key          Type     Default value   Doc
+listing      metadata   isPromoted   boolean  false
+listing      public     category     enum                     A listing field defined in Console. Can not be edited with the CLI.
+listing      public     listingType  enum
+userProfile  protected  age          long
 ```
 
 ## Summary
 
 In this guide, we used Flex CLI to define search schemas for our
-marketplace. We used the listing `category` and `accessories` as
-examples, as the template expects those. In addition, we looked at
-adding user search schemas for Integration API as well as adding a
-listing schema with a default value.
+marketplace. We also saw how schemas defined through Flex Console and
+Flex CLI interact. We used the public data attributes `category` and
+`listingType` as examples. In addition, we looked at adding user search
+schemas for Integration API as well as adding a listing schema with a
+default value.
 
 For more information, see the following resources:
 
