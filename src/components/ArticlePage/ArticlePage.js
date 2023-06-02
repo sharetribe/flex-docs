@@ -199,6 +199,7 @@ const ArticlePage = props => {
 
   return (
     <MainLayout
+      noIndex={frontmatter.noindex}
       title={title}
       description={ingress}
       activeArticle={{ category, slug }}

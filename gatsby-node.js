@@ -143,6 +143,7 @@ exports.createPages = ({ graphql, actions }) => {
               category
               ingress
               published
+              noindex
             }
           }
         }
