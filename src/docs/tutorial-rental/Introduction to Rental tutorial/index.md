@@ -3,14 +3,12 @@ title: Tutorial introduction
 slug: tutorial-introduction
 updated: 2023-05-31
 category: tutorial-rental
-ingress: Learn how to build your marketplace with The New Sharetribe
+ingress: Learn how to build your marketplace with The New Sharetribe.
 published: true
 ---
 
-Welcome to The New Sharetribe tutorial! The goal of the tutorial is to
-assist you in becoming acquainted with the essential configuration pages
-for your Hosted app and discover all the required configurations for
-setting up a marketplace.
+Welcome to The New Sharetribe tutorial! In this tutorial, you'll learn
+how to build and launch a marketplace website without coding.
 
 In this tutorial, we will be setting up a rental marketplace. However,
 we'll also give guidance on what to do if you're building a marketplace
@@ -18,7 +16,7 @@ for selling products or services instead.
 
 We will focus exclusively on using the no-code settings of The New
 Sharetribe throughout this tutorial. Our step-by-step instructions will
-navigate you through the process of configuring your marketplace via the
+navigate you through the process of configuring your marketplace in
 Console. Please note that all work will be carried out in your
 marketplace's Test environment.
 
@@ -38,14 +36,17 @@ a few key concepts to help you better understand the process.
 These are the steps that we will follow in this tutorial. If you are a
 returning user, you can jump directly to any of the articles below
 
-Design: Marketplace branding Design: Layout Content: Modifying the
-Landing Page Content: Edit the footer Content: Change marketplace
-default texts Listing settings: Setting the right Listing type Listing
-settings: Creating listing fields Listing settings: Customizing listing
-search Transaction settings: Configure commission and minimum listing
-price Explore the marketplace: Sign up as a new user Explore the
-marketplace: Creating our first listing Explore the marketplace: Create
-your first Transaction
+- [Design: Marketplace branding](../basic-configuration-marketplace-layout)
+- Design: Layout
+- Content: Modifying the Landing Page
+- Content: Edit the footer Content: Change marketplace default texts
+- Listing settings: Setting the right Listing type
+- Listing settings: Creating listing fields
+- Listing settings: Customizing listing search
+- Transaction settings: Configure commission and minimum listing price
+- Explore the marketplace: Sign up as a new user
+- Explore the marketplace: Creating your first listing
+- Explore the marketplace: Create your first Transaction
 
 ## End result
 
