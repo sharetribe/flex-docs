@@ -145,7 +145,9 @@ Your www records make your marketplace accessible at
 1. Look over the existing CNAME records.
 2. If a CNAME record exists where "Host" or "Source" is set to "www",
    click edit and set "Points To" or "Value" or "Target" to
-   "proxy.sharetribe.com". Note that the target address for this record,
+   "proxy.sharetribe.com". 
+   - Note that depending on the DNS provider you may need to add a period at the end: "proxy.sharetribe.com."
+   - Note that the target address for this record,
    proxy.sharetribe.com, should be copied as-is. You don't need to
    change it to your own marketplace's address.
 3. \If a CNAME record doesn't exist, click "Add record" or "Create
@@ -165,13 +167,12 @@ an example of a root domain.
 
 1. Look over any existing A records
 2. If an A record exists where "Host" or "Source" is set to "@", click
-   edit and set "Points To" or "Value" or "Target" to "52.202.58.6" or
-   "52.202.50.54". Pick the one you prefer!
+   edit and set "Points To" or "Value" or "Target" to "34.248.140.98".
 3. If an A record doesn't exist, click "Add record" or "Create record".
    From the record type list, select A. Fill in "Host" or "Source" to
-   "@". "Points To" or "Value" or "Target" to "52.202.58.6" or
-   "52.202.50.54". Pick the one you prefer. If you have to fill a field
+   "@". "Points To" or "Value" or "Target" to "34.248.140.98".If you have to fill a field
    named "TTL", set it to "3600".
+   - Note that depending on the DNS provider, this record needs to be left blank.
 4. Save changes.
 5. Check that the record has been updated or created according to your
    changes.

@@ -163,6 +163,8 @@ const sortingArrayPilotDayGuides = ['test-page'];
 
 const sortingArrayTheNewSharetribeUsefulInformation = [
   ];
+
+/// Arrange The New Sharetribe tutorial 
 const sortingArrayTheNewSharetribeTutorial = [
      "tutorial-introduction",
    "basic-configuration-marketplace-branding",
@@ -174,9 +176,9 @@ const sortingArrayTheNewSharetribeTutorial = [
     "setting-the-listing-types-2",
     "creating-listing-fields",
   "setting-listing-search",
-    "configure-commission-and-minimum-listing-price",
+  "configure-commission-and-minimum-listing-price",
   "sign-up-as-a-new-user",
-    "create-your-first-listing",
+  "creating-your-first-listing",
   "creating-your-first-transaction",
    "steps-after-tutorial",
   ];  
