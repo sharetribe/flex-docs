@@ -11,7 +11,11 @@ const sortingArray = findSortingArrays(category, siteStructure);
 const query = graphql`
   query TheNewSharetribeIndexQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { in: ["the-new-sharetribe"] } } }
+      filter: { frontmatter: { category: { in: [
+      "the-new-sharetribe-tutorial"
+      "the-new-sharetribe-useful-information"
+
+      ] } } }
       sort: {
         fields: [frontmatter___category, frontmatter___slug]
         order: [ASC, ASC]

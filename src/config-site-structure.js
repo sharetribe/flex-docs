@@ -289,6 +289,16 @@ exports.siteStructure = [
     isOpen: true,
     sortingArray: [],
     isHidden: true,
+    subcategories: [
+      {
+        id: 'the-new-sharetribe-tutorial',
+        sortingArray: sortingArrayTheNewSharetribeTutorial,
+      },
+      {
+        id: 'the-new-sharetribe-useful-information',
+        sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
+      },
+      ]
     hideSidebar: true,
   },
   {

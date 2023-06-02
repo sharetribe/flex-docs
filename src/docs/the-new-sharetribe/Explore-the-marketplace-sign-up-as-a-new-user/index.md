@@ -2,7 +2,7 @@
 title: Explore the marketplace - sign up as a new user
 slug: sign-up-as-a-new-user
 updated: 2023-06-01
-category: the-new-sharetribe
+category: the-new-sharetribe-tutorial
 ingress:
   In order to act as a user in your marketplace, you need to create an
   account in your marketplace.

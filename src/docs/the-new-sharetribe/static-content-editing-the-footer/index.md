@@ -2,7 +2,7 @@
 title: Static Content- Modifying the Footer.
 slug: modifying-the-footer
 updated: 2023-06-01
-category: the-new-sharetribe
+category: the-new-sharetribe-tutorial
 ingress:
   The footer is an important linking element in all pages of your
   marketplace. You can add links to search pages, static content,

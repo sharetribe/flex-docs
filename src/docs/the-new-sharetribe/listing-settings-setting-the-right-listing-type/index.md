@@ -1,10 +1,10 @@
 ---
 title:
-  Basic Configuration – Listing Settings – Setting theright listing
+  Basic Configuration – Listing Settings – Setting the right listing
   types.
 slug: setting-the-listing-types
 updated: 2023-06-01
-category: the-new-sharetribe
+category: the-new-sharetribe-tutorial
 ingress:
   Listing type will determine how your users interact with each other.
   Saunas are normally booked within the day and for the whole day.

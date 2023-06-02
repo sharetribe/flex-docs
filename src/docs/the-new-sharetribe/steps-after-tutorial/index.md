@@ -2,7 +2,7 @@
 title: Steps after tutorial
 slug: steps-after-tutorial
 updated: 2023-06-01
-category: the-new-sharetribe
+category: the-new-sharetribe-tutorial
 ingress:
   We are done with the tutorial. If you finished this tutorial, you
   should now have a fully functional Sauna rental marketplace, with

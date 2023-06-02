@@ -2,7 +2,7 @@
 title: How to go Live and launch your marketplace
 slug: going-live
 updated: 2023-06-01
-category: the-new-sharetribe
+category: the-new-sharetribe-useful-information
 ingress: Six steps to go Live and launch your marketplace!
 published: true
 noindex: true
