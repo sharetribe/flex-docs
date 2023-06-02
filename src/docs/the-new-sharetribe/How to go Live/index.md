@@ -36,7 +36,7 @@ information and submit.
 
 ![Go Live](./go-live-1.png)
 
-#2. Share information for setup with Sharetribe After subscribing you
+# 2. Share information for setup with Sharetribe After subscribing you
 will receive a confirmation email with your invoice and billing
 information. The email also includes
 [a link to this form](https://sharetribe.typeform.com/to/yKLsJryj) that
@@ -47,7 +47,7 @@ following information at hello@sharetribe.com.
 Here is a list of the information that will be collected from you during
 the setup process.
 
-##Custom domain
+### Custom domain
 
 Your Live marketplace will be accessible at a custom domain of your
 choice. You must purchase, host, and configure your DNS settings with a
@@ -61,7 +61,7 @@ Once your Live environment is confirmed, you should
 Sharetribe provides a dedicated SSL certificate for your marketplace
 address when your domain is connected to your marketplace.
 
-##Stripe Publishable key
+### Stripe Publishable key
 
 A marketplace-specific payment system called Stripe Connect powers
 payments on your marketplace. Stripe Connect requires several setup
@@ -76,7 +76,7 @@ _pk_live_somelongrandomvaluelikeVqFze9etc_.
 You will configure your Secret key after Sharetribe confirms your Live
 environment.
 
-##Map provider public key
+### Map provider public key
 
 You need to select a map provider to power geolocation functionalities
 on your marketplace, such as a location-based search for listings. Even
@@ -137,7 +137,7 @@ To enable your custom domain, you must configure www and root domain
 records in your DNS. Alternatively, you can host your marketplace at a
 subdomain.
 
-## Configure your www records
+### Configure your www records
 
 Your www records make your marketplace accessible at
 “www.myexampledomain.com”.
@@ -160,7 +160,7 @@ Your www records make your marketplace accessible at
 5. Check that the record has been updated or created according to your
    changes.
 
-## Configure your root domain records
+### Configure your root domain records
 
 Your root domain is your domain without “www.” “myexampledomain.com” is
 an example of a root domain.
@@ -177,7 +177,7 @@ an example of a root domain.
 5. Check that the record has been updated or created according to your
    changes.
 
-## Host your marketplace at a subdomain
+### Host your marketplace at a subdomain
 
 You may want to host your marketplace at subdomain, where your
 marketplace is accessible at an address such as
@@ -227,7 +227,7 @@ sender address as well as help ensure reliable email delivery.
 
 Navigate to Console->Build->General to complete this setup.
 
-## Add sender name and address
+### Add sender name and address
 
 Under “Outgoing email settings”, click on the "1/3 Start setup" button
 to start the setup. Follow the instructions in the UI.
@@ -239,7 +239,7 @@ with DNS information.
 
 ![go-live-4](./go-live-4.png)
 
-## Configure DNS
+### Configure DNS
 
 Next, you need to add the generated records from your Console to your
 DNS hosting. This is an important step for your sender reputation and
@@ -250,7 +250,7 @@ visible in Console.
 by SendGrid might be useful if you are not sure how to configure the DNS
 records for your specific DNS provider.
 
-## Validate DNS
+### Validate DNS
 
 When you have configured your DNS, you still need to validate the
 records for your emails to work. You can do that by clicking on the "3/3
