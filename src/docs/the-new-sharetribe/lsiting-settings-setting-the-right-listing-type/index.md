@@ -1,6 +1,6 @@
 ---
 title: Listing Settings- Setting the right listing types.
-slug: setting-the-listing-types
+slug: setting-the-listing-types-2
 updated: 2023-06-01
 category: the-new-sharetribe
 ingress:

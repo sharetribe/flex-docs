@@ -256,7 +256,6 @@ const CategoryList = props => {
               activeArticle={activeArticle}
               isOpenConfig={n.isOpen}
               isHiddenConfig={n.isHidden}
-              hideSidebarConfig={n.hideSidebar}
               location={location}
             >
               <ArticleLinkList
@@ -286,7 +285,6 @@ const CategoryList = props => {
           activeArticle={activeArticle}
           isOpenConfig={match.isOpen}
           isHiddenConfig={match.isHidden}
-          hideSidebarConfig={match.hideSidebar}
           location={location}
         >
           <ArticleLinkList
