@@ -117,9 +117,10 @@ endpoint API reference.
 
 ## Listing fields and search settings in Flex Console
 
-When you add listing fields in Flex Console, and select "Include this
-field in keyword search", Flex generates a search schema for the field
-automatically. In the Console, the available field type options are
+When you add listing fields in Flex Console, and select _Include this
+field in keyword search_ or _Add a filter to Search Page_, Flex
+generates a search schema for the field automatically. In the Console,
+the available field type options are
 
 - free text (search schema: `text`)
 - select one (search schema: `enum`)

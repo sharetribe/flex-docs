@@ -45,6 +45,18 @@ One of the simplest ways to configure commissions is to define a
 percentage of the listing price as a commission. Commissions can be
 charged from the provider, the customer, or both.
 
+<info>
+
+If your application uses hosted configurations, you can define provider
+commissions in Flex Console.
+
+![Commission defined in Console](consoleCommission.png)
+
+To implement the other examples in this article, you will need a degree
+of custom development.
+
+</info>
+
 ### Example
 
 A marketplace that charges 10 % from the customer and 12 % from the

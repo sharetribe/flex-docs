@@ -40,10 +40,7 @@ in your marketplace:
 - [Change the content and microcopy in your marketplace](/tutorial/working-with-microcopy/)
 - Update your
   [terms of service and privacy policy page](/operator-guides/free-templates/)
-- Update the footer: the
-  [footer](https://github.com/sharetribe/web-template/blob/master/src/components/Footer/Footer.js)
-  of your marketplace contain links and copy that will need to be
-  updated.
+- Configure the footer of your marketplace in Flex Console.
 - Update the
   [email templates](https://www.sharetribe.com/docs/concepts/email-notifications/):
   you will want to update the templates to reflect your brand and

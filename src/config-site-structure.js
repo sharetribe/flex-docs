@@ -239,7 +239,6 @@ exports.siteStructure = [
       { id: 'how-to-migrations' },
       { id: 'how-to-content' },
       { id: 'how-to-messaging' },
-      { id: 'how-to-design' },
       { id: 'how-to-events' },
       { id: 'how-to-search' },
     ],

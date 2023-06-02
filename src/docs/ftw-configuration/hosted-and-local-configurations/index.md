@@ -12,7 +12,7 @@ published: true
 
 The Sharetribe Web Template has a number of configurations that can be
 used to customise the template with low code effort. Starting in version
-XX-XX, the template can also use [asset-based](/references/assets/)
+v2.0.0, the template can also use [asset-based](/references/assets/)
 configurations, if they are defined in Flex Console.
 
 Some configurations are mandatory to define in Flex Console, such as
