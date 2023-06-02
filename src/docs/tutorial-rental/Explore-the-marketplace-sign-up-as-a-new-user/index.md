@@ -34,6 +34,8 @@ profile bio. To go to your profile settings, click on your initials
 (replaced by your picture once you add one) in the top right corner of
 the marketplace page and select: profile settings.
 
+From the Profile settings, you can easily find on the top right the other two profile-related pages: “Your listings” (which should say “Your saunas” if you have followed this tutorial step by step) and “Account settings”. Within “Your listings” you will be able to manage all your listings, open closed listings, close open listings, edit draft listings, and more. Within “Acccount settings” you can edit your contact detail, i.e., phone number, change your password, edit your Payout details (for selling) and Payment methods (for buying). Ignore the Payout details and Payment methods for now. We will tackle that process [when creating a listing](www.sharetribe.com/docs/pilot-day-guides/creating-your-first-listing). 
+
 From the Profile settings, you can easily find on the top right the
 other two profile-related pages: “Your listings” (which should say “Your
 saunas” if you have followed this tutorial step by step) and “Account
@@ -43,5 +45,4 @@ listings, and more. Within “Acccount settings” you can edit your contact
 detail, i.e., phone number, change your password, edit your Payout
 details (for selling) and Payment methods (for buying). Ignore the
 Payout details and Payment methods for now. We will tackle that process
-[when creating a listing](LINK TO CREATE A LISTING TUTORIAL ARTICLE; The
-next one in the tutorial).
+[when creating a listing](https://www.sharetribe.com/docs/pilot-day-guides/creating-your-first-listing).

@@ -4,8 +4,7 @@ slug: creating-your-first-listing
 updated: 2023-06-01
 category: tutorial-rental
 ingress:
-  To create a  listing, you would first have to [create a user
-  account](LINK TO THE PREVIOUS TUTORIAL article). On the marketplace,
+  To create a  listing, you would first have to [www.sharetribe.com/docs/pilot-day-guides/sign-up-as-a-user). On the marketplace,
   click on the link “List your Sauna” on the Top bar. This will take you
   to the Listing creation form.
 published: true
