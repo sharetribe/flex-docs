@@ -56,7 +56,7 @@ hosting provider, such as GoDaddy, Google Domains, or Hover.
 
 During the setup process, please share with us your custom domain name.
 Once your Live environment is confirmed, you should
-[configure your DNS records with your hosting provider.](URL#configure-your-custom-domain)
+[configure your DNS records with your hosting provider.](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/#3-configure-your-custom-domain)
 
 Sharetribe provides a dedicated SSL certificate for your marketplace
 address when your domain is connected to your marketplace.
