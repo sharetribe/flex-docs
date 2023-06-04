@@ -112,7 +112,7 @@ booking process.
 The booking panel provides a visual interface for buyers to view and
 select availability. Dates and/or hours available are highlighted, and
 unavailable times are grayed out or otherwise marked as unavailable.
-buyers can select from the available times and add these to their
+Buyers can select from the available times and add these to their
 booking.
 
 Pricing for daily or nightly bookings is set by the seller and is

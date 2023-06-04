@@ -182,7 +182,7 @@ You can see illustrations of the process below.
 
 </extrainfo>
 
-<extrainfo title="Step 13 (again): Choose the operator action (here, we choose 'operator complete)">
+<extrainfo title="Step 13 (again): Choose the operator action (here, we choose 'operator complete')">
 
 ![Change environments](./13-operator-actions-complete.png)
 
@@ -246,25 +246,25 @@ You can see screenshots of the different steps below.
 
 <extrainfo title="Steps 1-2: Buyer selecting delivery method">
 
-![Change environments](./10-buyer-selecting-delivery.png)
+![Change environments](./16-buyer-selecting-delivery.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 3-6: Buyer checkout with shipping as delivery method">
 
-![Change environments](./11-buyer-shipping-checkout.png)
+![Change environments](./17-buyer-shipping-checkout.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 5-9: Buyer checkout with pickup as delivery method">
 
-![Change environments](./12-buyer-pickup-checkout.png)
+![Change environments](./18-buyer-pickup-checkout.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 10-11: Buyer checked out successfully">
 
-![Change environments](./13-buyer-booking-success.png)
+![Change environments](./19-buyer-booking-success.png)
 
 </extrainfo>
 
@@ -294,31 +294,31 @@ You can see the screenshots of these steps below.
 
 <extrainfo title="Step 1: Seller in their inbox">
 
-![Change environments](./14-seller-inbox.png)
+![Change environments](./20-seller-inbox.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 2-4: Seller at the transaction page">
 
-![Change environments](./15-seller-transactionthread.png)
+![Change environments](./21-seller-transactionthread.png)
 
 </extrainfo>
 
 <extrainfo title="Step 5: Seller marked the bike as delivered">
 
-![Change environments](./16-seller-delivered.png)
+![Change environments](./22-seller-delivered.png)
 
 </extrainfo>
 
 <extrainfo title="Step 6: Buyer sees update and marks bike as received">
 
-![Change environments](./17-buyer-receiving.png)
+![Change environments](./23-buyer-receiving.png)
 
 </extrainfo>
 
 <extrainfo title="Step 7: After marking the bike as delivered/received, users can leave each other a review">
 
-![Change environments](./18-buyer-received.png)
+![Change environments](./24-buyer-received.png)
 
 </extrainfo>
 
