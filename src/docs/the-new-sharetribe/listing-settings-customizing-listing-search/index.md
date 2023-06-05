@@ -1,11 +1,11 @@
 ---
-title: Listing Settings - Setting the listing Search.
-slug: setting-listing-search
+title: Tutorial step 6 – Customize listing search
+slug: tutorial-listing-search
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:
-  Listing search is fundamental for your users to discover the listings
-  that match their preferences.
+  Listing search allows your customers to discover products and services
+  they need.
 published: true
 noindex: true
 ---

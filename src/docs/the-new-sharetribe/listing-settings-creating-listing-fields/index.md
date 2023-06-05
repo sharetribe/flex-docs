@@ -1,5 +1,5 @@
 ---
-title: Tutorial step 4 – Create listing fields
+title: Tutorial step 5 – Create listing fields
 slug: tutorial-listing-fields
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial

@@ -1,6 +1,6 @@
 ---
-title: Explore the marketplace - create your first transaction
-slug: creating-your-first-transaction
+title: Tutorial step 10 – Create your first transaction
+slug: tutorial-create-transaction
 updated: 2023-06-01
 category: tutorial-rental
 ingress:    By now, you should have a user account and a listing. In this article, we consider how to create your first transaction. 

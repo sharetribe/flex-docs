@@ -54,19 +54,19 @@ the step of your choice.
 5. [Create listing fields](../tutorial-listing-fields)
 6. [Customize listing search](../tutorial-listing-search)
 7. [Configure commission and minimum transaction size](../tutorial-commission-tx-size)
-8. [Decide your vocabulary](../tutorial-vocabulary)
+8. [Decide your vocabulary](../tutorial-microcopy)
 9. [Edit footer](../tutorial-footer)
 
 **Testing the marketplace**
 
-10. Explore the marketplace: Sign up as a new user
-11. Creating your first listing
-12. Creating your first transaction
+10. [Sign up as a new user](../tutorial-sign-up)
+11. [Create your first listing](../tutorial-create-listing)
+12. [Create your first transaction](../tutorial-create-transaction)
 
-**Launching**
+**Launching and growing**
 
-13. Going live
-14. Further customization
+13. Go live
+14. Customize and extend further
 
 ### Let's get started!
 

@@ -4,7 +4,8 @@ slug: tutorial-listing-type
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:
-  Listing type will determine how your users interact with each other.
+  Listing type determines how your customers and providers interact with
+  each other.
 published: true
 noindex: true
 ---

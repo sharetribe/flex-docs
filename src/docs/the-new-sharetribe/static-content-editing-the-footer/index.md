@@ -1,6 +1,6 @@
 ---
-title: Static Content- Modifying the Footer.
-slug: modifying-the-footer
+title: Tutorial step 9 – Edit footer
+slug: tutorial-footer
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:

@@ -1,7 +1,7 @@
 ---
 title:
-  Basic configuration - configure commission and minimum listing price.
-slug: configure-commission-and-minimum-listing-price
+  Tutorial step 7 – Configure commission and minimum transaction size
+slug: tutorial-commission-tx-size
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:

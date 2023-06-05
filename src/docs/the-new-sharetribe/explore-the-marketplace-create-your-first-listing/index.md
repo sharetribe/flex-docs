@@ -1,6 +1,6 @@
 ---
-title: Explore the marketplace - create your first listing
-slug: creating-your-first-listing
+title: Tutorial step 11 – Create your first listing
+slug: tutorial-create-listing
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:

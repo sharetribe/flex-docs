@@ -161,27 +161,35 @@ const sortingArrayOperatorGuidesUsefulInformation = [];
 
 const sortingArrayPilotDayGuides = ['test-page'];
 
-const sortingArrayTheNewSharetribeUsefulInformation = [
-  ];
+const sortingArrayTheNewSharetribeUsefulInformation = [];
 
-/// Arrange The New Sharetribe tutorial 
+/// Arrange The New Sharetribe tutorial
 const sortingArrayTheNewSharetribeTutorial = [
-     "tutorial-introduction",
-   "basic-configuration-marketplace-branding",
-  "basic-configuration-marketplace-layout",
-  "modifying-the-landing-page",
-  "modifying-the-footer",
-  "changing-the-marketplace-default-texts",
-  "setting-the-listing-types",
-    "setting-the-listing-types-2",
-    "creating-listing-fields",
-  "setting-listing-search",
-  "configure-commission-and-minimum-listing-price",
-  "sign-up-as-a-new-user",
-  "creating-your-first-listing",
-  "creating-your-first-transaction",
-   "steps-after-tutorial",
-  ];  
+  'tutorial-introduction',
+  'tutorial-marketplace-branding',
+  'tutorial-marketplace-layout',
+  'tutorial-landing-page',
+  'tutorial-listing-type',
+  'tutorial-listing-fields',
+  'tutorial-listing-search',
+  'tutorial-commission-tx-size',
+  'tutorial-microcopy',
+  'tutorial-footer',
+  'tutorial-sign-up',
+  'tutorial-create-listing',
+  'tutorial-create-transaction',
+  'tutorial-go-live',
+  'tutorial-further-customization',
+  'changing-the-marketplace-default-texts',
+  'setting-the-listing-types',
+  'creating-listing-fields',
+  'setting-listing-search',
+  'configure-commission-and-minimum-listing-price',
+  'sign-up-as-a-new-user',
+  'creating-your-first-listing',
+  'creating-your-first-transaction',
+  'steps-after-tutorial',
+];
 
 exports.siteStructure = [
   {
@@ -320,7 +328,7 @@ exports.siteStructure = [
         id: 'the-new-sharetribe-useful-information',
         sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
       },
-      ],
+    ],
     hideSidebar: true,
   },
   {

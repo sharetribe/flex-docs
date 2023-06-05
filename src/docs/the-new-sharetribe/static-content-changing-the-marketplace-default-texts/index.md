@@ -1,6 +1,6 @@
 ---
-title: Static Content- Modifying the Footer.
-slug: changing-the-marketplace-default-texts
+title: Tutorial step 8 – Decide your vocabulary
+slug: tutorial-microcopy
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:

@@ -1,5 +1,5 @@
 ---
-title: Tutorial step 2 – Adjust marketplace layout
+title: Tutorial step 2 – Choose marketplace layout
 slug: tutorial-marketplace-layout
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial

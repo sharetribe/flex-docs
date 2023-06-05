@@ -1,6 +1,6 @@
 ---
-title: Explore the marketplace - sign up as a new user
-slug: sign-up-as-a-new-user
+title: Tutorial step 10 – Sign up as a new user
+slug: tutorial-sign-up
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:
