@@ -117,7 +117,7 @@ const orderCategories = (sortingArray, data) => {
 };
 
 const OperatorGuidesPage = props => {
-  const { category, noPrefix, data, sortingArray } = props;
+  const { category, noPrefix, data, sortingArray, noIndex } = props;
   const title = UiText.fn(`ArticleIndexPage.${category}.title`);
   const description = UiText.fn(`ArticleIndexPage.${category}.description`);
   const articleCountDescriptor = UiText.fn(`ArticleIndexPage.articleCount`);
@@ -138,6 +138,7 @@ const OperatorGuidesPage = props => {
   });
   return (
     <MainLayout
+      noIndex={noIndex}
       title={title}
       description={description}
       activeCategory={category}

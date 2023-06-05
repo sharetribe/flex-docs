@@ -2,34 +2,42 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import { dev, siteStructure } from '../config';
-import { findSortingArrays } from '../util/navigation';
-import { ArticleIndexPage } from '../components';
+import { findCategory } from '../util/navigation';
+import { OperatorGuidesPage } from '../components';
 
 const category = 'the-new-sharetribe';
-const sortingArray = findSortingArrays(category, siteStructure);
+const sortingArray = findCategory(category, siteStructure);
 
 const query = graphql`
   query TheNewSharetribeIndexQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { in: [
-      "the-new-sharetribe-tutorial"
-      "the-new-sharetribe-useful-information"
-
-      ] } } }
+      filter: {
+        frontmatter: {
+          category: {
+            in: [
+              "the-new-sharetribe-tutorial"
+              "the-new-sharetribe-useful-information"
+            ]
+          }
+        }
+      }
       sort: {
         fields: [frontmatter___category, frontmatter___slug]
         order: [ASC, ASC]
       }
     ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            slug
-            category
-            updated
-            ingress
-            published
+      group(field: frontmatter___category) {
+        fieldValue
+        totalCount
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+              updated
+              ingress
+              published
+            }
           }
         }
       }
@@ -55,23 +63,43 @@ const TheNewSharetribe = () => {
     <StaticQuery
       query={query}
       render={data => {
-        const edges = data.allMarkdownRemark
-          ? data.allMarkdownRemark.edges
-          : [];
-        const articles = edges
-          .reduce((result, edge) => {
-            const { frontmatter } = edge.node;
-            if (dev || frontmatter.published) {
-              return result.concat(frontmatter);
-            } else {
-              return result;
-            }
-          }, [])
-          .sort(byArrayOfSlugs(sortingArray));
+        // format the data returned by the graphql query
+        // to a format understood by the OperatorGuidesPage component.
+        // also sort each sublist of articles
+        const formatData = data.allMarkdownRemark.group.map(
+          (subcategory, index) => {
+            const onlyPublishedArticles = subcategory.edges.reduce(
+              (result, edge) => {
+                const { frontmatter } = edge.node;
+                if (dev || frontmatter.published) {
+                  return result.concat(frontmatter);
+                } else {
+                  return result;
+                }
+              },
+              []
+            );
+
+            // find the sortingArray of the subcategory we're currently iterating through
+            const currentSortingArray = sortingArray.subcategories.find(
+              n => n.id == subcategory.fieldValue
+            ).sortingArray;
+            // sort subcategory articles based on the sorting array
+            onlyPublishedArticles.sort(byArrayOfSlugs(currentSortingArray));
+
+            return {
+              title: subcategory.fieldValue,
+              edges: onlyPublishedArticles,
+            };
+          }
+        );
+
         return (
-          <ArticleIndexPage
+          // TODO: rename operator guides page as a more generic component as it's being used in multiple places now
+          <OperatorGuidesPage
             category={category}
-            articles={articles}
+            data={formatData}
+            sortingArray={sortingArray}
             noIndex={true}
           />
         );
