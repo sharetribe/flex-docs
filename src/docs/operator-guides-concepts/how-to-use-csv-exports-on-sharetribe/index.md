@@ -1,8 +1,7 @@
 ---
 title:
-  How to use download your marketplace data as a CSV exports on
-  Sharetribe
-slug: how-to-use-csv-exports-on-sharetribe
+  How to download your marketplace data as a CSV export on Sharetribe
+slug: how-to-download-csv-exports-on-sharetribe
 updated: 2023-06-06
 category: operator-guides-concepts
 ingress:
@@ -16,7 +15,7 @@ CSV (Comma Separated Values) exports are a handy feature on Sharetribe
 that allows you to download important marketplace data, like user
 details, listings, transactions, and reviews. These can be opened and
 analyzed in spreadsheet programs like Excel, Google Sheets, or Numbers.
-The screenshots below have been taken within a default demo environment:
+The screenshots below have been taken within a regular test environment:
 your mileage may vary.
 
 ## Where to find the csv export buttons
@@ -28,9 +27,9 @@ is found in the "Manage" -> "Users" section at the top right part of the
 screen (2). The "Listings", "Transactions", and "Reviews" sections of
 the Console have similar links.
 
-<extrainfo title="Finding the download .csv button from the Console">
+<extrainfo title="Finding the download .csv button from the Console for downloading user data">
 
-![Change environments](./01-export-users-button.png)
+![Change environments](./01-export-users-link.png)
 
 </extrainfo>
 
@@ -40,7 +39,8 @@ the Console have similar links.
 
 This dataset includes information about each user in your marketplace.
 To export it, go to the "Manage" -> Users" section in Console, and click
-on the "Download .csv" button.
+on the "Download .csv" button. Click below for descriptions on what data
+the file contains.
 
 <extrainfo title="What the users csv export looks like (example data, first few rows)">
 
@@ -58,7 +58,8 @@ on the "Download .csv" button.
 
 This includes information about all the listings in your marketplace.
 Find this by navigating to the "Manage" -> "Listings" section in Console
-section and clicking on "Download .csv".
+section and clicking on "Download .csv". Click below for descriptions on
+what data the file contains.
 
 <extrainfo title="What the listings csv export looks like (example data, first few rows)">
 
@@ -76,7 +77,8 @@ section and clicking on "Download .csv".
 
 This dataset consists of all transactions that occurred in your
 marketplace. Go to the "Manage" -> Transactions" section and click
-"Download .csv".
+"Download .csv". Click below for descriptions on what data the file
+contains.
 
 <extrainfo title="What the transactions csv export looks like (example data, first few rows)">
 
@@ -93,7 +95,8 @@ marketplace. Go to the "Manage" -> Transactions" section and click
 ### Reviews
 
 This includes all reviews left by users. Find this in the "Manage" ->
-"Reviews" section and then click on "Download .csv".
+"Reviews" section and then click on "Download .csv". Click below for
+descriptions on what data the file contains.
 
 <extrainfo title="What the reviews csv export looks like (example data, first few rows)">
 
