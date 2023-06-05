@@ -121,9 +121,7 @@ prepare for a relaxing experience!”**
 
 ### 4. Other sections
 
-Remove all other sections from the Page editor. If you want to learn
-more about editing pages in your marketplace, you can read
-[this article in our documentation](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/)
+Remove all other sections from the Page editor.
 
 Remember to “Save changes”
 
