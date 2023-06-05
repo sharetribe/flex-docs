@@ -16,6 +16,7 @@ export const query = graphql`
         category
         ingress
         skills
+        noindex
       }
       htmlAst
       headings {

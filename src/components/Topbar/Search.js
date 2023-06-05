@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import { categoryFromLocation } from '../../util/utils';
 import { baselineBreakpoint } from '../../config';
 
 import { DocSearch } from '@docsearch/react';
@@ -24,13 +25,40 @@ const Wrapper = styled.div`
 const Search = props => {
   const { ...rest } = props;
 
-  return (
-    <Wrapper {...rest}>
+  const [location, setLocation] = useState(null);
+  const isBrowser = typeof window !== 'undefined';
+
+  useEffect(() => {
+    if (isBrowser) {
+      setLocation(window.location);
+    }
+  });
+
+  const altSearch = categoryFromLocation(location) === 'the-new-sharetribe';
+
+  const FlexDocsSearch = props => {
+    return (
       <DocSearch
         appId="IPOXPQ3KFI"
-        apiKey="48fd5d7d401d024a0b034f9e62b1cd34"
+        apiKey="19a5a1c0a630be55ad534d8b640afe89"
         indexName="sharetribe"
       />
+    );
+  };
+
+  const TheNewSharetribeSearch = props => {
+    return (
+      <DocSearch
+        appId="IPOXPQ3KFI"
+        apiKey="19a5a1c0a630be55ad534d8b640afe89"
+        indexName="sharetribe_new_sharetribe"
+      />
+    );
+  };
+
+  return (
+    <Wrapper {...rest}>
+      {altSearch ? <TheNewSharetribeSearch /> : <FlexDocsSearch />}
     </Wrapper>
   );
 };
