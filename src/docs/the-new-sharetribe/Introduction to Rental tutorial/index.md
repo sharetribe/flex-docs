@@ -21,7 +21,7 @@ navigate you through the process of configuring your marketplace in
 Console. Please note that all work will be carried out in your
 marketplace's Test environment.
 
-## What are we building?
+### What are we building?
 
 In this tutorial, we're going to kick things off with the default theme,
 Biketribe, and tweak it into a peer-to-peer marketplace for renting
@@ -32,28 +32,43 @@ switch things around, you'll need to keep track of those changes when
 following other steps in this tutorial. Along the way, we'll also cover
 a few key concepts to help you better understand the process.
 
-## The steps in the process
-
-These are the steps that we will follow in this tutorial. If you are a
-returning user, you can jump directly to any of the articles below
-
-- [Design: Marketplace branding](../basic-configuration-marketplace-layout)
-- Design: Layout
-- Content: Modifying the Landing Page
-- Content: Edit the footer Content: Change marketplace default texts
-- Listing settings: Setting the right Listing type
-- Listing settings: Creating listing fields
-- Listing settings: Customizing listing search
-- Transaction settings: Configure commission and minimum listing price
-- Explore the marketplace: Sign up as a new user
-- Explore the marketplace: Creating your first listing
-- Explore the marketplace: Create your first Transaction
-
-## End result
-
 At the end of the tutorial, you will have a fully functional
 Sauna-themed rental marketplace. It will be in your Test environment, an
 environment you can use to explore the user experience and user design
 of your marketplace and to test the marketplace functionality. At the
 end, we'll also explain the steps to take to launch your marketplace
 live, in your own domain, and start inviting real users to it.
+
+### The steps in the process
+
+Below are the steps that we will follow in this tutorial. We recommend
+following the tutorial in this order, but feel free to jump directly to
+the step of your choice.
+
+**Building the marketplace**
+
+1. [Adjust marketplace branding](../tutorial-marketplace-branding)
+2. [Choose marketplace layout](../tutorial-marketplace-layout)
+3. [Modify the landing page](../tutorial-landing-page)
+4. [Adjust listing type](../tutorial-listing-type)
+5. [Create listing fields](../tutorial-listing-fields)
+6. [Customize listing search](../tutorial-listing-search)
+7. [Configure commission and minimum transaction size](../tutorial-commission-tx-size)
+8. [Decide your vocabulary](../tutorial-vocabulary)
+9. [Edit footer](../tutorial-footer)
+
+**Testing the marketplace**
+
+10. Explore the marketplace: Sign up as a new user
+11. Creating your first listing
+12. Creating your first transaction
+
+**Launching**
+
+13. Going live
+14. Further customization
+
+### Let's get started!
+
+It's time to start building!
+[Go to Step 1: Adjust marketplace branding](../tutorial-marketplace-branding).

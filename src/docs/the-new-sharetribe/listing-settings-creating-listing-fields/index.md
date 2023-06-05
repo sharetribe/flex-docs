@@ -1,33 +1,40 @@
 ---
-title: Listing Settings- Creating listing fields.
-slug: creating-listing-fields
+title: Tutorial step 4 – Create listing fields
+slug: tutorial-listing-fields
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:
-  In this segment of the tutorial, we will be tailoring various aspects
-  of the marketplace to align with Saunatime's listing requirements and
-  user information preferences.
+  In this step we will decide what data is collected when a listing is
+  created, and add a couple of search filters based on this data.
 published: true
 noindex: true
 ---
 
-Our focus will be on ensuring that users have an easy time both when
-listing a sauna and when browsing saunas for rent, providing all the
-details they would typically wish to include or discover.
+Listing fields refer to the form fields a provider needs to fill in when
+creating a listing. Each listing has a set of default fields, like
+title, description and price. The exact set of default fields is
+determined by the transaction process chosen when
+[determining listing type](./tutorial-listing-type).
 
-## Listing fields
+In addition to the default fields, you can add a number of custom
+fields. These allow you to decide exactly what data is collected when a
+listing is created. You can also create search filters based on these
+fields.
 
-Go to **Build → Content → Listing fields**. On the listing fields page,
-select “+ Add a new listing field.”
+Let's create some custom fields. Click "Custom fields" from the
+navigation on the left. There we see several fields, but these are very
+Biketribe-specific. Let's delete them all, except "Category". You can
+delete a field by clicking the three dots on the right and selecting
+"Delete listing type" from the menu that opens up.
 
-Open the tab labeled “unknown-id” and fill in the field settings as
-follows:
+We want to keep "Category" but repurpose it to be about saunas. Open the
+"Category"
 
-Delete all the listings fields except the one called “Category”.
+### Field label
 
-Open the Category field
+Field label is displayed in the marketplace next to the form field.
 
-### 1. Add a Category field / Edit the category field
+**Keep "Category"**
 
 - Field label: Category
 - Field id: category

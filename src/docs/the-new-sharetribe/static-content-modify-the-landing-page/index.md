@@ -1,6 +1,6 @@
 ---
-title: Static Content- Modifying the Landing page.
-slug: modifying-the-landing-page
+title: Tutorial step 3 – Modify the landing page
+slug: tutorial-landing-page
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:
@@ -13,12 +13,14 @@ noindex: true
 ---
 
 To customize the landing page and construct additional pages, we'll take
-advantage of the Pages feature.
+advantage of Sharetribe's built-in Content Management System, Pages.
+With Pages, you can edit your content pages like "About us", "How it
+works", "Terms of use", and so on, or even create a simple blog. In this
+tutorial, we will only work on your Landing page.
 
-All your static content pages can be modified under **Build → Content →
-Pages**. In this tutorial, we will only work on your Landing page. Once
-in pages, Go to your landing page card and click on **“Edit content.”**
-![Edit content image](./editcontent.png)
+All your content pages can be modified under **Build → Content →
+Pages**. Once in Pages, Go to your landing page card and click on
+**“Edit content.”** ![Edit content image](./editcontent.png)
 
 _Optional Tip_ Before editing the content, click **“View page,”** which
 will open the landing page on a separate tab. You can use this tab’s
@@ -28,26 +30,36 @@ section.
 ## Edit the landing page specific content
 
 Within the landing page edit page, you will encounter several sections.
-You can add and remove sections according to your needs. In this
-tutorial, though, we will tackle each section at a time:
+You can add and remove sections according to your unique needs. In this
+tutorial, we'll only make a few quick modifications to the existing
+sections to build a landing page for our sauna marketplace with a
+minimum amount of work.
 
 ### 1. “hero” section
 
-Don’t change Section ID. Don’t change the Section template selection
-(leave it as “Features”)
+The first section of a landing page is typically called "Hero". It often
+includes your main message, with the most important "call-to-action" (an
+invite for a user to take a specific action by clicking a button, etc).
+We'll keep this section, but it should be talking about saunas, not
+about bikes.
 
-Leave the section title and Section description empty. You will affect
-the look of this section through the section Block
+There are several settings we can keep intact.
 
-Choose the “No call to action” option.
+- Don’t change Section ID. Don’t change the Section template selection
+  (leave it as “Features”)
+- Leave the section title and Section description empty. You will affect
+  the look of this section through the section Block.
+- Keep the default “No call to action” option.
 
 The settings should look like this: ![Hero section](./herosection.png)
 
-In the Section appearance section choose “Custom” And add this image:
-![custom settings image](./customsetting.png)
+We do want to change the background image though.
 
-The hero section already has a content block called hero-block. Make the
-following changes:
+- In the Section appearance section choose “Custom” And add this image:
+  ![custom settings image](./customsetting.png)
+
+Then, let's change the text content. The hero section already has a
+content block called "hero-block". Make the following changes:
 
 - Replace the Image file for the file below (it is a transparent PNG
   file). Leave the Aspect ratio and Image alt text as they are.
@@ -68,18 +80,21 @@ opened earlier. ![Hero section image](./welcomesaunatime.png)
 The next section, locations, can be used to link directly to locations
 where you have or expect to have, the most listings. By default, the
 section already contains some locations. We will use the pre-set
-locations for this tutorial. Make the following changes:
+locations for this tutorial.
 
-Change the Section Title to: “Find a Sauna Anywhere”. Change the section
-description to “Find the best saunas at the tap of a button, anywhere in
-Finland.”
+We'll only make a few minor changes to the text content:
 
-Don’t change the Section call to action or the Section appearance
+- Change the Section Title to: “Find a Sauna Anywhere”.
+- Change the section description to “Find the best saunas at the tap of
+  a button, anywhere in Finland.”
+
+There's no need to change the Section call to action or the Section
+appearance
 
 Within the Content blocks, you will see there are 6 cities pre-set.
 Within each city’s Content Block open the Block and alter the Block
-text, and only the Block text. Replace the word **“bikes”** for
-**“saunas”** i.e
+text, and only the Block text. Replace the word “bikes” with “saunas”
+like below:
 
 Replace:
 [› See bikes in Helsinki](/s?address=Helsinki%2C%20Uusimaa%2C%20Finland&bounds=60.297839%2C25.337729924%2C60.06196768%2C24.807445703)
@@ -114,13 +129,18 @@ Remember to “Save changes”
 
 ### 5. SEO & Social
 
-Set the following text:
+At the top of the page editor, there's a tab "SEO & Social". It allows
+you to set titles and descriptions for your page for search engines and
+social media sites.
 
-Page title: Saunatime - Book saunas everywhere Page description: The
-largest online community for to find and rent a sauna. Page title for
-social media: Book saunas everywhere Page description for social media:
-The largest online community for to find and rent a sauna. Social media
-image: Add the following image
+Add the following content:
+
+- Page title: Saunatime - Book saunas everywhere Page description: The
+  largest online community for to find and rent a sauna.
+- Page title for social media: Book saunas everywhere
+- Page description for social media: The largest online community for to
+  find and rent a sauna.
+- Social media image: Add the following image
 
 ![Book saunas everywhere](./seoandsocial.png)
 
@@ -129,10 +149,18 @@ Save changes.
 ### 6. Other static Pages
 
 By default, your marketplace includes three other static content pages
-**—About, Privacy Policy, and Terms of Service—** that demand your
-attention before launching. You can also add more static content pages.
-Modifying these pages in the tutorial would be redundant. The
-instructions would be similar to the ones shown above, just with
-alternate texts. Because of this, we will not pay attention to these
-pages for now. It's critical for you to remember, however, to refine
-them before going live.
+that you should change before you launch: "About", "Privacy Policy", and
+"Terms of Service". "About" is an optional page you can remove if you
+don't need it. "Privatey Policy" and "Terms of Service" are mandatory to
+have. Sharetribe provides a template for both pages. In addition to
+these, you can add any number of other content pages.
+
+We won't go through these pages in this tutorial. Now that you know how
+to edit your landing page, you can use the same editor for the other
+pages.
+
+### Next: landing page
+
+That's it for layout! Next, it's time to start configuring how listings
+in your marketplace work.
+[Go to Step 4: Adjust listing type](./tutorial-listing-type).
