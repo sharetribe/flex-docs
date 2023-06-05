@@ -26,11 +26,10 @@ Once you set a commission, this will automatically be charged from every
 transaction. You can set a commission from Build → Content → Commission.
 
 Set the “Provider commission (%),” to 10%, by typing “10”. Save changes.
-You can [learn more about commissions here](LINK TO COMMISSION ARTICLE).
+You can [learn more about commissions here](https://www.sharetribe.com/docs/operator-guides/how-to-set-your-marketplace-commission).
 
 ## 2. Set a Minimum Transaction size
 
 Go to **Build → Content → Minimum transaction size**. In the field
 “Minimum Listing Price,” we’ll add 1 and save changes. You can [learn
-more about the minimum listing price here](LINK TO THE MINIMUM LISTING
-PRICE ARTICLE).
+more about the minimum listing price here](https://www.sharetribe.com/docs/operator-guides/what-is-the-minimum-transaction-size).
