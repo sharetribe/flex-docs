@@ -18,7 +18,7 @@ export const categoryFromLocation = location => {
 // Helper function.
 // Transforms kebab-case to camelCase
 // e.g. tutorial-branding => tutorialBranding
-const camelize = str => {
+export const camelize = str => {
   const arr = str.split('-');
   const capitalize = (item, index) =>
     index > 0 ? item.charAt(0).toUpperCase() + item.slice(1) : item;

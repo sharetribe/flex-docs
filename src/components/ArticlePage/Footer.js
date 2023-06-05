@@ -56,7 +56,7 @@ const AlternativeFooter = props => {
 };
 
 const Footer = props => {
-  const { altFooter } = props;
+  const { altFooter, ...rest } = props;
   return (
     <Container>
       <Heading>
