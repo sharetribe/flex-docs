@@ -27,7 +27,7 @@ This guide details how to complete each step.
 # 1. Subscription
 
 Go Live by subscribing to a paid plan. You can review different plans
-and features available [here.](PRICINGPLANURL)
+and features available on the [marketing site.](https://www.sharetribe.com/new-sharetribe/)
 
 To subscribe, go to your
 [Console.](https://flex-console.sharetribe.com/) Press your environment
@@ -36,8 +36,8 @@ information and submit.
 
 ![Go Live](./go-live-1.png)
 
-# 2. Share information for setup with Sharetribe After subscribing you
-will receive a confirmation email with your invoice and billing
+# 2. Share information for setup with Sharetribe 
+After subscribing you will receive a confirmation email with your invoice and billing
 information. The email also includes
 [a link to this form](https://sharetribe.typeform.com/to/yKLsJryj) that
 you should use to share information for setup with Sharetribe. If the
@@ -111,7 +111,7 @@ section of the Places library documentation to enable using the required
 services. You should enable: Google Places API Web Service Maps Static
 API Maps JavaScript API.
 
-## Google Analytics
+### Google Analytics
 
 Google Analytics lets you browse and analyze lots of data, such number
 of visitors, pages viewed, time spent on your marketplace, traffic
@@ -202,8 +202,7 @@ marketplace is accessible at an address such as
 
 After submitting your details, Sharetribe will set up your Live
 environment. Sharetribe typically turns around your marketplace in 24
-hours or less during business days., often less during business days.
-Follow instructions carefully to prevent any delays during setup.
+hours during business days, often less. Follow instructions carefully to prevent any delays during setup.
 
 # 5. Configure payments
 

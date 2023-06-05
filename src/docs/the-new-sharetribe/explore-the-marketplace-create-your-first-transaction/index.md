@@ -2,7 +2,7 @@
 title: Tutorial step 10 – Create your first transaction
 slug: tutorial-create-transaction
 updated: 2023-06-01
-category: tutorial-rental
+category: the-new-sharetribe-tutorial
 ingress:    By now, you should have a user account and a listing. In this article, we consider how to create your first transaction. 
 published: true
 noindex: true
