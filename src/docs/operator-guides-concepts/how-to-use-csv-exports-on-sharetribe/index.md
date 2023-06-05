@@ -3,7 +3,7 @@ title:
   How to use download your marketplace data as a CSV exports on
   Sharetribe
 slug: how-to-use-csv-exports-on-sharetribe
-updated: 2023-06-05
+updated: 2023-06-06
 category: operator-guides-concepts
 ingress:
   Illustrated guide of the CSV export functionality on Sharetribe.
@@ -90,10 +90,10 @@ marketplace. Go to the "Manage" -> Transactions" section and click
 
 </extrainfo>
 
-###
+### Reviews
 
-Reviews: This includes all reviews left by users. Find this in the
-"Manage" -> "Reviews" section and then click on "Download .csv".
+This includes all reviews left by users. Find this in the "Manage" ->
+"Reviews" section and then click on "Download .csv".
 
 <extrainfo title="What the reviews csv export looks like (example data, first few rows)">
 
