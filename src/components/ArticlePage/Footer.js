@@ -26,22 +26,43 @@ const StyledBox = styled(Box)`
   margin-top: 20px;
 `;
 
+const RegularFooter = props => {
+  return (
+    <Paragraph>
+      Reach out to our support team by{' '}
+      <A href="mailto:flex-support@sharetribe.com">email</A>, or consult the
+      Sharetribe Developer Community at{' '}
+      <Link to="https://www.sharetribe.com/flex-slack">
+        Sharetribe's Flex development Slack Channel
+      </Link>
+      . You can also contact our support team through the chat widget in Flex
+      Console.
+    </Paragraph>
+  );
+};
+
+const AlternativeFooter = props => {
+  return (
+    <Paragraph>
+      Reach out to our support team from the bottom-right-located support widget
+      in <Link to="https://flex-console.sharetribe.com/">Console</Link>, by{' '}
+      <A href="mailto:hello@sharetribe.com">email</A> or by joining{' '}
+      <Link to="https://join.slack.com/t/thenewsharetribe/shared_invite/zt-1w56fgnau-qogsmJxAFU0mU9mRDLMXTg">
+        The New Sharetribe Slack Community
+      </Link>
+      .
+    </Paragraph>
+  );
+};
+
 const Footer = props => {
+  const { altFooter } = props;
   return (
     <Container>
       <Heading>
         <UiText id="Footer.heading" />
       </Heading>
-      <Paragraph>
-        Reach out to our support team by{' '}
-        <A href="mailto:flex-support@sharetribe.com">email</A>, or consult the
-        Sharetribe Developer Community at{' '}
-        <Link to="https://www.sharetribe.com/flex-slack">
-          Sharetribe's Flex development Slack Channel
-        </Link>
-        . You can also contact our support team through the chat widget in Flex
-        Console.
-      </Paragraph>
+      {altFooter ? <AlternativeFooter /> : <RegularFooter />}
     </Container>
   );
 };
