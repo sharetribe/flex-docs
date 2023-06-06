@@ -22,12 +22,10 @@ All your content pages can be modified under **Build → Content →
 Pages**. Once in Pages, Go to your landing page card and click on
 **“Edit content.”** ![Edit content image](./editcontent.png)
 
-_Optional Tip_ Before editing the content, click **“View page,”** which
+_Optional Tip: Before editing the content, click **“View page,”** which
 will open the landing page on a separate tab. You can use this tab’s
 refresh option in your browser and see changes after saving each
-section.
-
-## Edit the landing page specific content
+section._
 
 Within the landing page edit page, you will encounter several sections.
 You can add and remove sections according to your unique needs. In this
@@ -93,14 +91,7 @@ appearance
 
 Within the Content blocks, you will see there are 6 cities pre-set.
 Within each city’s Content Block open the Block and alter the Block
-text, and only the Block text. Replace the word “bikes” with “saunas”
-like below:
-
-Replace:
-[› See bikes in Helsinki](/s?address=Helsinki%2C%20Uusimaa%2C%20Finland&bounds=60.297839%2C25.337729924%2C60.06196768%2C24.807445703)
-
-With:
-[› See saunas in Helsinki](/s?address=Helsinki%2C%20Uusimaa%2C%20Finland&bounds=60.297839%2C25.337729924%2C60.06196768%2C24.807445703)
+text, and only the Block text. Replace the word “bikes” with “saunas”.
 
 ### 3. “how-it-works” section
 
@@ -157,8 +148,8 @@ We won't go through these pages in this tutorial. Now that you know how
 to edit your landing page, you can use the same editor for the other
 pages.
 
-### Next: landing page
+### Next: listing type
 
-That's it for layout! Next, it's time to start configuring how listings
-in your marketplace work.
+That's it for landing page! Next, it's time to start configuring how
+listings in your marketplace work.
 [Go to Step 4: Adjust listing type](/the-new-sharetribe/tutorial-listing-type/).
