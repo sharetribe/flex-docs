@@ -67,7 +67,7 @@ Now it's time to save the changes. Let's not preview the marketplace at
 this point, as testing the listing type would require creating a new
 transaction, and we have a few more steps to complete before that.
 
-### Next: landing page
+### Next: listing fields
 
 That's it for listing type! Next, we'll decide what data is collected
 when a new listing is created.

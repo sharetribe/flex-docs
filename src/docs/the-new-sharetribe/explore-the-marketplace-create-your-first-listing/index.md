@@ -4,11 +4,11 @@ slug: tutorial-create-listing
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:
-  To create a  listing, you would first have to create a user account. On the marketplace,
-  click on the link “List your Sauna” on the Top bar. This will take you
-  to the Listing creation form.
-published: true
-noindex: true
+  To create a  listing, you would first have to create a user account.
+  On the marketplace, click on the link “List your Sauna” on the Top
+  bar. This will take you to the Listing creation form.
+published: false
+noindex: false
 ---
 
 In the listing creation form, the very first time you create a listing,
@@ -21,10 +21,10 @@ Add the following details to the listings: **Listing title**: Cozy sauna
 in Helsinki **Listing description**: This electric sauna is located in
 Helsinki, It is a cozy sauna in the middle of the forest.
 
- -  **Category**:Electric Sauna 
- - **Amenities**: Select the options “Bathroom” and “Own drinks allowed” 
- - **Sauna Privacy (Optional field, if you added it)**: Public 
- - **Sauna capacity (Optional field, if you added it)**: 5
+- **Category**:Electric Sauna
+- **Amenities**: Select the options “Bathroom” and “Own drinks allowed”
+- **Sauna Privacy (Optional field, if you added it)**: Public
+- **Sauna capacity (Optional field, if you added it)**: 5
 
 ## 2. Add Location
 

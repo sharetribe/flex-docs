@@ -4,69 +4,64 @@ slug: tutorial-microcopy
 updated: 2023-06-01
 category: the-new-sharetribe-tutorial
 ingress:
-  Most copy texts in your marketplace can be modified via the Microcopy editor. However, many of them don’t need to be changed at all.
+  In this tutorial step, we'll teach you how to use the Microcopy
+  feature to modify the terminology used in your marketplace.
 published: true
 noindex: true
 ---
 
-In this tutorial, we’ll just browse over the basic usage of Microcopy
-editor and change the basic test that will allow you to have a Sauna
-rental marketplace. If you want to read more,
-[check out this article about Microcopy editor](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
-We’ll make the changes in two ways: specific instructions to change a
-key and general.
+Different marketplaces use different words when talking about their
+users and listings. Sometimes they might be "buyers" and "sellers", in
+other cases "guests" and "hosts".
 
-1. Changing the **“List your bike”** text that shows in your marketplace
-   top bar.
-2. Changing all text containing the word **“bike”** for the word
-   **“sauna”** in bulk.
+In Biketribe, you notice that the user interface talks about "Bikes" and
+"Bike owners". We'd like it to talk about "Saunas" and "Sauna owners"
+instead.
 
-In Console, go to **Build → Content → Microcopy editor.**
+In the world of user interfaces, such terminology scattered here and
+there is referred to as "Microcopy". The New Sharetribe comes with an
+editor that allows you to edit any texts in your user interface.
 
-## Changing a specific text
+Let's start by navigating to "Microcopy".
 
-In this step, we will replace the call to action text that showcases in
-the top bar
+### Changing the text of a specific link
 
-![replacing the CTA](./replacingCTA.png)
+In the top bar of your marketplace, there's a link that says "List your
+bike". We'd like this word to say "List your sauna". Let's find the
+word. Click the editor and hit Ctrl + F (on Windows) or Cmd + F (on Mac)
+to open the search. Type "List your bike" to the search.
 
-Within the Microcopy page, go into the editor window. You can use Ctrl +
-F (on Windows) or Cmd + F (on Mac) to search for a specific text, but
-that will only return the next available match, depending on the
-location of your cursor on the text. Try searching for the text **“List
-your bike”**
+Searching once only returns the first instance. You'll notice that "List
+your bike" is mentioned in several different places in the user
+interface. Each of these has its own corresponding "key" that describes
+where the text is displayed:
 
-You will notice that there are 4 different ”List your bike” options.
-Their corresponding keys are **“TopbarDesktop.createListing”**,
-**“EditListingPage.titleCreateListing”**, **“Footer.toNewListingPage”**,
-and **“TopbarMobileMenu.newListingLink”**. Each one of these keys
-corresponds to a different place where the text **“List your bike”** is
-displayed in your marketplace.
+- “TopbarDesktop.createListing”
+- “EditListingPage.titleCreateListing”
+- “TopbarMobileMenu.newListingLink”
 
-Make the following change:
+When editing, you should not change the key. Instead, you should change
+the value that comes after the key. For all these keys, the default
+value is "List your bike". Replace "bike" with "sauna" in all these.
 
-- Change only the one corresponding to the key
-  **“TopbarDesktop.createListing”**. This will change the text in the
-  top bar link to create a new listing. Other **“List your bike”** texts
-  in your marketplace will not be changed for now.
+Save changes.
 
-Make sure to save your changes once you are done.
+### Changing a specific word everywhere in the user interface
 
-## Changing a specific word in the marketplace
+The word "bike" is used in many other places in the user interface
+besides the link we just changed. Instead of finding all of them one by
+one, let's just edit the rest in bulk.
 
-You can manually find and replace the text bike within the Microcopy
-editor Page in Console. However, that will be time-consuming. There is a
-simpler way to do this.
-
-Copy the entire content of the Microcopy editor JSON file and paste it
-into a simple text editor. You can use Atom, Sublimetext, or the basic
-editor available on your computer, like Notepad or TextEdit. All of
-these editors have a find function and a replace function. Use the find
-and replace function of the editor and find the word **“bike”** and
-replace it with the word **“sauna.”** Most editors also have a function
-to **“replace all.”** If possible, use that function.
+Select all of the text in the editor (click the editor and hit "CTRL +
+A" in Windows or "CMD + A" in Mac), copy it, and paste it to your
+favorite text editor. Then, do a "replace all" operation that finds
+every occurrence of the word "bike" and replaces it with "sauna".
 
 After you are done, copy the entire text and paste it into the Microcopy
 editor, and then save the content.
 
-You can learn more about the microcopy editor and how to use it [here](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
+### Next: footer
+
+Now the language in your marketplace is all about saunas. There's one
+more step before we're done: linking everything we've built together
+through the footer. [Go to Step 9: Edit the footer](./tutorial-footer).

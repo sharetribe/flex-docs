@@ -23,80 +23,120 @@ fields.
 
 Let's create some custom fields. Click "Custom fields" from the
 navigation on the left. There we see several fields, but these are very
-Biketribe-specific. Let's delete them all, except "Category". You can
-delete a field by clicking the three dots on the right and selecting
-"Delete listing type" from the menu that opens up.
+Biketribe-specific. Let's delete them all. Instead, we will create the
+following new fields:
 
-We want to keep "Category" but repurpose it to be about saunas. Open the
-"Category"
+- Sauna type. Is it an Electic sauna, a Smoke sauna, or a Wooden sauna?
+- Amenities. What extras are included? Are towels, swimsuits etc
+  provided?
+- Sauna rules. Are there any specific things someone booking the sauna
+  should keep in mind?
 
-### Field label
+Let's start with sauna type. Click "Add a new listing field", and click
+open the newly created field.
+
+### Field settings
+
+#### Field label
 
 Field label is displayed in the marketplace next to the form field.
 
-**Keep "Category"**
+**Write "Sauna type"**
 
-- Field label: Category
-- Field id: category
-- Field type: Select one Make this field mandatory by checking the box
-  labeled “This field is mandatory”.
-- Field Options:
-- Choose the first tab of the field options to open it. Set the option
-  label to Electric Sauna and the option id as electricsauna.
-- In the second tab of field options, set the option label to Wooden
-  Sauna and the option id as woodensauna.
-- Add a new option by clicking “+ Add a new option”. Set the third
-  option label to Smoke Sauna and option id as smokesauna.
-- Search settings: check “Add a filter to Search Page”. Select the
-  option to“Use as a primary search filter”
+#### Field ID
 
-Save changes.
+Field ID is a unique identifier that is stored in the data of the
+listing. While the label can be changed, you should not change the field
+ID after listings have been created with it, as the old listings will
+retain the old ID. Field ID should not contain spaces or special
+characters.
 
-### 2. Add listing fields
+**Write "saunaType"**
 
-Add one more listing field. These fields will have the following
-settings:
+#### Field type
 
-- Field label: Sauna amenities
-- Field id: amenities
-- Field type: Select multiple Make this field mandatory
-- Field Options: Add multiple field options. For each field option, add
-  an option id that corresponds to the field label. Use the following
-  field labels:
+Field type determines how the field works. In this case, we want each
+sauna to have exactly one type, and it should be chosen from a
+predefined list of types.
 
-  Towels Bathroom Own drinks allowed Swimming Pool Jacuzzi Own Food
-  Allowed Barbeque Audiovisual entertainment
+**Choose "Select one"**
 
-- Search settings: Check the box to “Add a filter to Search Page”.
-  Select the option to “Use as a secondary search filter,”
+#### This field is mandatory
 
-Save the changes.
+We want every sauna to have a sauna type.
 
-### 3. Add extra optional fields
+**Check the checkbox**
 
-You can add the following fields. If you add them, your listings will be
-more complete and you can experiment with more listing field functions,
-but it will take a bit more time [to create a listing](LINK TO THE
-CREATE A LISTING ARTICLE IN THE TUTORIAL):
+### Field options
 
-- Field label: Sauna privacy
-- Field id: sauna-privacy
-- Field type: Select one Don’t make this field mandatory
-- Field Options: For the field options (with a corresponding option id),
-  add:
-  - Private house/flat
-  - Student building
-  - Local/community owned
-  - Public
-- Search settings: Don’t add a filter to the search page.
+Here we define the different options for the sauna type. Click open the
+first option.
 
-- Field label: Sauna capacity
-- Field id: saunacapacity
-- Field type: Free text (we’ll make this field mandatory).
-- Search settings: Don’t check “Include this field in keyword search”.
+#### Option label
 
-### Save changes
+Just like fields, options have labels.
 
-You need to save the changes that you made on this page in order to
-activate them. If you get an error when trying to save, check the error
-message on the page. It should be easy to pinpoint and fix it.
+**Write "Electric sauna"**
+
+#### Option value
+
+Option value is a bit like Field ID: it's an identifier stored in the
+listing data. No spaces or special characters allowed.
+
+**Write "electricSauna"**
+
+Now edit the second option. For the label, put "Wooden sauna" and for
+the value "woodenSauna".
+
+Let's add one more option. Click "Add a new option". Add "Smoke sauna"
+as the label and "smokeSauna" as the value.
+
+### Search settings
+
+We can create a filter for our "Select one" field for search page. Let's
+do that, so people searching for smoke saunas can filter out the rest.
+
+**Check the checkbox**
+
+#### Filter placement
+
+Most important filters should be made primary, so they're always visible
+in our map layout, while secondary filters can be under "More filters"
+submenu. Type is very important, so let's make it primary.
+
+**Choose "Use as a primary search filter"**
+
+Now we have created our first custom listing field! Let's add two more.
+
+The next one is "Amenities". This time we want one sauna to have
+multiple amenities. The field should not bemandatory, as some saunas
+might not have any amenities. There should be a search filter, but it
+can be under "More filters" menu.
+
+- Field label: "Amenities"
+- Field id: "amenities"
+- Field type: "Select multiple"
+- Don't check "This field is mandatory"
+- Three field options: "Towels/towels", "Jacuzzi/jacuzzi", "Wi-fi/wifi"
+- Search settings: Check "Add a filter to Search Page"
+- Filter placement: "Use as a secondary search filter"
+
+Finally, let's add "Sauna rules". This is just a freeform text field.
+It's optional: a sauna doesn't need to have rules. For free text fields,
+we can't add a search filter, but we can decide whether a free text
+search should search the contents of this field. In this case, it
+doesn't make sense.
+
+- Field label: "Sauna rules"
+- Field id: "saunaRules"
+- Field type: "Select multiple"
+- Don't check "This field is mandatory"
+- Don't check "Include this field in keyword search."
+
+We're done! **Remember to save the changes!**
+
+### Next: listing search
+
+Now that we've defined listing fields, it's time to look more into the
+search experience.
+[Go to Step 6: Customize listing search](./tutorial-listing-search).

@@ -7,8 +7,8 @@ ingress:
   We are done with the tutorial. If you finished this tutorial, you
   should now have a fully functional Sauna rental marketplace, with
   settings, a listing, a user and a transaction.
-published: true
-noindex: true
+published: false
+noindex: false
 ---
 
 You can now follow the tutorial instructions or use what you learned

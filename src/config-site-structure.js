@@ -175,20 +175,6 @@ const sortingArrayTheNewSharetribeTutorial = [
   'tutorial-commission-tx-size',
   'tutorial-microcopy',
   'tutorial-footer',
-  'tutorial-sign-up',
-  'tutorial-create-listing',
-  'tutorial-create-transaction',
-  'tutorial-go-live',
-  'tutorial-further-customization',
-  'changing-the-marketplace-default-texts',
-  'setting-the-listing-types',
-  'creating-listing-fields',
-  'setting-listing-search',
-  'configure-commission-and-minimum-listing-price',
-  'sign-up-as-a-new-user',
-  'creating-your-first-listing',
-  'creating-your-first-transaction',
-  'steps-after-tutorial',
 ];
 
 exports.siteStructure = [

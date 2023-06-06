@@ -45,8 +45,6 @@ Below are the steps that we will follow in this tutorial. We recommend
 following the tutorial in this order, but feel free to jump directly to
 the step of your choice.
 
-**Building the marketplace**
-
 1. [Adjust marketplace branding](../tutorial-marketplace-branding)
 2. [Choose marketplace layout](../tutorial-marketplace-layout)
 3. [Modify the landing page](../tutorial-landing-page)
@@ -55,18 +53,7 @@ the step of your choice.
 6. [Customize listing search](../tutorial-listing-search)
 7. [Configure commission and minimum transaction size](../tutorial-commission-tx-size)
 8. [Decide your vocabulary](../tutorial-microcopy)
-9. [Edit footer](../tutorial-footer)
-
-**Testing the marketplace**
-
-10. [Sign up as a new user](../tutorial-sign-up)
-11. [Create your first listing](../tutorial-create-listing)
-12. [Create your first transaction](../tutorial-create-transaction)
-
-**Launching and growing**
-
-13. Go live
-14. Customize and extend further
+9. [Edit the footer](../tutorial-footer)
 
 ### Let's get started!
 

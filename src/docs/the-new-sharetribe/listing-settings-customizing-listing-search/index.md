@@ -10,20 +10,64 @@ published: true
 noindex: true
 ---
 
-Some aspects of the listing search, are set in the Listing fields, which we touched on, in [the previous article of the tutorial](https://www.sharetribe.com/docs/pilot-day-guides/creating-listing-fields). To set the Listing search go to Build → Content → Listing search. 
+In the [previous step about listing fields](./tutorial-listing-fields),
+we already altered the search experience by adding custom search filter.
+However, there are also some more general search configuration options,
+which can be adjusted from "Listing search". Let's go there
 
-## Search type
-On the listing search page, leave the search type as “Location search”. 
+### Search type
 
-## Date range filter
-Check the option “Display a date range filter.” 
-Select “Partial availability” as the Availability mode. 
-Select “Daily availability”as the Date range mode. 
+Saunatime is a location-based marketplace, so we want the customers to
+start their journey by searchin by location.
 
-## Price filter
-Check “Display a price filter” under Price filter. Set the price filter minimum value to 20 and the maximum value as 1000. 
+**Keep "Location search"**
 
-## Save changes
-Finally, we’ll save changes, and we’re done with our listing type, field, and search configuration. 
+On the listing search page, leave the search type as “Location search”.
 
-You can learn more about [listing types](https://www.sharetribe.com/docs/operator-guides/what-are-listing-types), [listing fields](https://www.sharetribe.com/docs/operator-guides/listing-fields), and [listing search](https://www.sharetribe.com/docs/operator-guides/listing-search-settings) in our new console help articles.
+### Date range filter
+
+Date range filter allows the customer to filter the search based on
+which saunas are available at a specific time. That sounds handy for us,
+so let's keep it.
+
+** Check “Display a date range filter.”**
+
+#### Availability mode
+
+We can decide if the search returns all listings that have some
+availability on the given date range, or only listings that have the
+full date range available. In our case, we assume that people don't want
+to book a sauna for multiple days, so if they're using the filter for a
+specific week, they probably want to see saunas that are available on at
+least some of those days.
+
+**Choose "Partial availability"**
+
+#### Date range mode
+
+Our saunas are available for overnight bookings, so the filter should
+also reflect that.
+
+**Choose "Nightly availability"**
+
+### Price filter
+
+Some people might want to filter out saunas that don't fid their budget.
+
+**Check “Display a price filter”**
+
+#### Price filter minimum and maximum value
+
+We assume that no sauna costs more than \$1000/night.
+
+**Write “0” in Price filter minimum value**
+
+**Write “1000” in Price filter maximum value**
+
+All done! **Remember to save changes.**
+
+### Next: commission and minimum transaction size
+
+Now we're happy with how our listings work, and how they are searched.
+Next, let's look into how you monetize your transactions.
+[Go to step 7: Configure commission and minimum transaction size](./tutorial-commission-tx-size).
