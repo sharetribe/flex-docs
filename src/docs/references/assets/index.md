@@ -31,24 +31,25 @@ otherwise sensitive information.
 At present, Flex uses assets for managing marketplace content without
 code changes:
 
-- you can modify [microcopy strings](/concepts/microcopy/) and
+- you can modify [microcopy strings](/concepts/microcopy/),
 - create content [pages](/concepts/content-management/) for your
-  marketplace
+  marketplace, and
+- configure your marketplace branding, layout, listings, search, footer,
+  and transactions
 
 For example, a marketplace may have assets with the following assets:
 
 ```shell
-├── config
-│   └── client.json
-└── content
-    └── translations.json
+├── content
+│   └── translations.json
+└── design
+    └── branding.json
 ```
 
-where `config/client.json` could contain configuration data (for
-instance, UI colors, marketplace pricing settings, etc) and
-`content/translations.json` could contain string microcopy data to be
-used in a marketplace client application (such as one based on one of
-the Sharetribe Web Template).
+where `design/branding.json` could contain configuration data (for
+instance, UI colors, logo, etc) and `content/translations.json` could
+contain string microcopy data to be used in a marketplace client
+application (such as one based on one of the Sharetribe Web Template).
 
 ## Asset versioning
 
@@ -71,9 +72,12 @@ To facilitate access to the latest asset data, Flex maintains a built-in
 _alias_ called `latest` that always refers to the latest asset tree
 version.
 
-> **Note:** Old versions of the asset tree may be automatically deleted,
-> but no sooner than 24 hours after the version gets succeeded by a
-> newer one.
+<info>
+
+Old versions of the asset tree may be automatically deleted, but no
+sooner than 24 hours after the version gets succeeded by a newer one.
+
+</info>
 
 ## Retrieving asset data
 
@@ -113,8 +117,12 @@ for up-to-date-information. The `Cache-Control` HTTP header will always
 provide correct data and client applications should observe that if
 custom caching is being implemented.
 
-> In live marketplaces, the latest asset data can be cached and it may
-> take up to 5 minutes before any changes are visible to all end users.
+<info>
+
+In live marketplaces, the latest asset data can be cached and it may
+take up to 5 minutes before any changes are visible to all end users.
+
+</info>
 
 ## Further reading
 

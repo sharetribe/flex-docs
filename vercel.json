@@ -284,7 +284,17 @@
   },
   {
     "source": "/tutorial-branding/change-logo/",
-    "destination": "/docs/tutorial/change-logo/",
+    "destination": "/docs/legacy/tutorial/change-logo/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial/modify-listing-extended-data/",
+    "destination": "/docs/legacy/tutorial/modify-listing-extended-data/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial/change-logo/",
+    "destination": "/docs/legacy/tutorial/change-logo/",
     "permanent": true
   },
   {
@@ -839,7 +849,12 @@
   },
   {
     "source": "/tutorial/change-image-assets/",
-    "destination": "/docs/tutorial/change-images/",
+    "destination": "/docs/legacy/tutorial/change-images/",
+    "permanent": true
+  },
+  {
+    "source": "/tutorial/change-images/",
+    "destination": "/docs/legacy/tutorial/change-images/",
     "permanent": true
   },
  {

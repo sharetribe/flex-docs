@@ -21,11 +21,10 @@ bicycles. To customize the default styles of the template to match your
 marketplace’s brand and style, follow these steps:
 
 - Apply your branding by
-  [changing the default images and marketplace colours](/tutorial/first-edit/)
+  [changing the default images and marketplace colours](/tutorial/change-branding/)
 - Change the
-  [default background image and social media images](/tutorial/change-images/)
-- [Change the logo](/tutorial/change-logo/)
-- [Generate a new favicon](/ftw/how-to-change-ftw-icons/)
+  [default background image and social media images](/tutorial/change-branding/)
+- [Change the branding of your template](/tutorial/change-branding/)
 - Learn more about the
   [CSS architecture in the Sharetribe Web Template](/ftw/how-to-customize-ftw-styles/)
 
@@ -41,10 +40,7 @@ in your marketplace:
 - [Change the content and microcopy in your marketplace](/tutorial/working-with-microcopy/)
 - Update your
   [terms of service and privacy policy page](/operator-guides/free-templates/)
-- Update the footer: the
-  [footer](https://github.com/sharetribe/web-template/blob/master/src/components/Footer/Footer.js)
-  of your marketplace contain links and copy that will need to be
-  updated.
+- Configure the footer of your marketplace in Flex Console.
 - Update the
   [email templates](https://www.sharetribe.com/docs/concepts/email-notifications/):
   you will want to update the templates to reflect your brand and
@@ -78,8 +74,6 @@ other changes you may want to make. Some of these options include:
 - Update your transaction process
 - Create new static pages
 - Update the routing in your marketplace
-- Update
-  [listing extended data](/tutorial/modify-listing-extended-data/)
 - Update transaction email templates. For more information, see
   [Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
   tutorial and [Email templates](/references/email-templates/) reference

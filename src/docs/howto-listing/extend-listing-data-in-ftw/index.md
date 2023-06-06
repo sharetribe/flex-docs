@@ -27,6 +27,15 @@ file.
         └── configListing.js
 ```
 
+<info>
+
+Settings configured in local configurations files are overridden by any
+fetched via the Asset Delivery API. You can refer to
+[this article](/ftw/hosted-and-local-configurations/) to modify the way
+your template merges local and hosted configurations.
+
+</info>
+
 Configuring the listing data this way allows you to
 
 - declare the attribute and its possible values
@@ -50,6 +59,16 @@ In this article, we will first extend top-level data using
 data.
 
 ## Add a new top-level attribute
+
+<info>
+
+If your marketplace is using hosted configurations defined in Flex
+Console, you can make the changes described in this section by adding
+new listing fields.
+
+**[Skip to the next section](#add-a-new-complex-attribute)**
+
+</info>
 
 Let's extend the default bike related listing data by adding an
 attribute 'frame' to reflect the bike's frame type. The full

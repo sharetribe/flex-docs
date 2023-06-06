@@ -171,8 +171,8 @@ You then need to add the following environment variables:
 
 - `REACT_APP_MARKETPLACE_ROOT_URL`
 
-  This is the root URL of the marketplace. Remove trailing slash from the
-  domain.<br />E.g. _`https://<the-name-of-your-app>.onrender.com`_
+  This is the root URL of the marketplace. Remove trailing slash from
+  the domain.<br />E.g. _`https://<the-name-of-your-app>.onrender.com`_
 
 - `NODE_ENV`
 
@@ -243,10 +243,5 @@ addition, you should try to:
 - Save payment card
   - Use [test card numbers](https://stripe.com/docs/testing).
 
-If your marketplace concept needs advanced features, you need to
-continue with customizations. In
-[the next part of this tutorial](/tutorial/customize-pricing-tutorial/),
-we'll go through how to modify the pricing and transaction flow on your
-marketplace.
-
-[› Go to the next article](/tutorial/customize-pricing-tutorial/)
+In [the next part of this tutorial](/tutorial/add-new-wizard-tab/),
+we'll go through how to add new tabs to the listing wizard.

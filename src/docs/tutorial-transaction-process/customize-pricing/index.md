@@ -10,6 +10,21 @@ ingress:
 published: true
 ---
 
+In this tutorial, you will
+
+- Allow providers to add a cleaning fee to their listings
+- Allow customers to select whether they want to include the cleaning
+  fee in their booking
+- Include a selected cleaning fee in the transaction's pricing
+
+<info>
+
+This tutorial uses the following marketplace configurations:
+
+- Listing types > Transaction process: **Calendar booking**
+
+</info>
+
 ## Store cleaning fee into listing
 
 Pricing can be based on a lot of variables, and one practical way to
@@ -17,11 +32,10 @@ build it is to base it on information stored as extended data in
 listings. In this example, we are using a listing's public data to store
 information about the cleaning fee.
 
-Unlike in the
-[extended data modification section](/tutorial/modify-listing-extended-data/),
-we will not add new fields to listing configuration, since cleaning fee
-will not be a searchable attribute. Instead, we start by making some
-changes to **EditListingPricingPanel** in _EditListingWizard_.
+We will not add new fields to listing configuration in Flex Console,
+since we do not want to show the cleaning fee in the Details panel.
+Instead, we start by making some changes to **EditListingPricingPanel**
+in _EditListingWizard_.
 
 ```shell
 └── src
@@ -34,10 +48,9 @@ changes to **EditListingPricingPanel** in _EditListingWizard_.
 
 <info>
 
-This tutorial handles changes on top of the Sharetribe Web Template
-booking flow. If you want to make corresponding changes to the product
-order flow, you'll need to make comparable changes to
-_EditListingPricingAndStockPanel.js_ instead.
+If you want to make corresponding changes to listing types with the
+transaction process **Buying and selling products**, you'll need to make
+comparable changes to _EditListingPricingAndStockPanel.js_ instead.
 
 </info>
 
@@ -140,10 +153,10 @@ param to the _FieldCurrencyInput_ like there is in the _price_ input.
   className={css.input}
   autoFocus={autoFocus}
   label={intl.formatMessage(
-    { id: 'EditListingPricingForm.pricePerProduct' },
+    { id: 'EditListingPricingForm.cleaningFee' },
     { unitType }
   )}
-  placeholder={intl.formatMessage({ id: 'EditListingPricingForm.priceInputPlaceholder' })}
+  placeholder={intl.formatMessage({ id: 'EditListingPricingForm.cleaningFeePlaceholder' })}
   currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
 />
 ...
@@ -174,10 +187,9 @@ and you can move forward to the next section:
 
 <info>
 
-This tutorial handles changes on top of the Sharetribe Web Template
-booking flow. If you want to make corresponding changes to the product
-order flow, you'll need to make changes to _ProductOrderForm_ (instead
-of BookingDatesForm)
+If you want to make corresponding changes to listing types with the
+transaction process **Buying and selling products**, you'll need to make
+comparable changes to _ProductOrderForm_ instead of _BookingDatesForm_.
 
 </info>
 
@@ -364,9 +376,9 @@ class to _BookingDatesForm.module.css_.
 }
 ```
 
-After this step, the BookingDatesForm should look like this. You should
-notice that the cleaning fee will not be visible in the booking
-breakdown yet, even though we added the new checkbox.
+After this step, the BookingDatesForm should look like this. Note that
+the cleaning fee will not be visible in the order breakdown yet, even
+though we added the new checkbox.
 
 ![Cleaning fee checkbox](./cleaningFeeCheckbox.png)
 
@@ -561,16 +573,31 @@ exports.transactionLineItems = (listing, orderData) => {
 +   : [];
 +
 
-  const providerCommission = {
-    code: 'line-item/provider-commission',
--   unitPrice: calculateTotalFromLineItems([order]),
-+   unitPrice: calculateTotalFromLineItems([order, ...cleaningFee]),
-    percentage: PROVIDER_COMMISSION_PERCENTAGE,
-    includeFor: ['provider'],
+  // Provider commission reduces the amount of money that is paid out to provider.
+  // Therefore, the provider commission line-item should have negative effect to the payout total.
+  const getNegation = percentage => {
+    return -1 * percentage;
   };
 
-- const lineItems = [order, ...extraLineItems, providerCommission];
-+ const lineItems = [order, ...extraLineItems, ...cleaningFee, providerCommission];
+  // Note: extraLineItems for product selling (aka shipping fee)
+  //       is not included to commission calculation.
+  const providerCommissionMaybe = hasCommissionPercentage(providerCommission)
+    ? [
+        {
+          code: 'line-item/provider-commission',
+-         unitPrice: calculateTotalFromLineItems([order]),
++         unitPrice: calculateTotalFromLineItems([order, ...cleaningFee]),
+          percentage: getNegation(providerCommission.percentage),
+          includeFor: ['provider'],
+        },
+      ]
+    : [];
+
+  // Let's keep the base price (order) as first line item and provider's commission as last one.
+  // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
+- const lineItems = [order, ...extraLineItems, ...providerCommissionMaybe];
++ const lineItems = [order, ...extraLineItems, ...cleaningFee, ...providerCommissionMaybe];
+
 
   return lineItems;
 };
@@ -770,3 +797,15 @@ process are
 - `money-paid` (to provider)
 
 </extrainfo>
+
+## Summary
+
+In this tutorial, you have
+
+- Saved a cleaning fee attribute to the listing's public data in
+  _EditListingPricingPanel_
+- Updated the _BookingDatesForm_ and _OrderPanel_ to show and handle
+  cleaning fee selection
+- Added cleaning fee to line item handling server-side
+- Updated the _CheckoutPage_ to include cleaning fee in the booking's
+  pricing

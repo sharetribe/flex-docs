@@ -9,17 +9,23 @@ ingress:
 published: true
 ---
 
-We learned about user journeys and how to use the Template to create them to save time and money in [a previous article](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/). Now it is time to define how
-your users will use your marketplace.
+We learned about user journeys and how to use the Template to create
+them to save time and money in
+[a previous article](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/).
+Now it is time to define how your users will use your marketplace.
 
 ## 1. Background work
 
-The 3 most important user journeys on any marketplace are how listings are created, how listings are found via search, and how supply and demand interacts to transact. In short, listing creation, discovery process, and transaction process.
+The 3 most important user journeys on any marketplace are how listings
+are created, how listings are found via search, and how supply and
+demand interacts to transact. In short, listing creation, discovery
+process, and transaction process.
 
-Defining all 3 is important eventually, but focus on 1 to start. The easiest way to start is to write the default
-successful user journey first, and then add differing paths. Keep it simple.
+Defining all 3 is important eventually, but focus on 1 to start. The
+easiest way to start is to write the default successful user journey
+first, and then add differing paths. Keep it simple.
 
-Here are some common points of consideration in each journey. 
+Here are some common points of consideration in each journey.
 
 #### Listing creation
 
@@ -80,12 +86,16 @@ Learn more about
 
 ## 2. Create maps for listing creation journey, discovery journey and transaction process.
 
-There are many ways to document your user journeys. You can draft using pen
-and paper, a mind map software like Whimsical or Miro, or by simply
-listing the steps in a document or Powerpoint. 
+There are many ways to document your user journeys. You can draft using
+pen and paper, a mind map software like Whimsical or Miro, or by simply
+listing the steps in a document or Powerpoint.
 
-As an example, we share here the journeys to a marketplace for renting saunas daily, like an AirBnB for saunas. They are in Powerpoint format ([download them here](/flex-design-toolkit.pptx)), which you can edit in any similar software like Google Slides or Key. Creating something like this will help developers quickly grasp what your marketplace is about and help them move forward developing it.
-
+As an example, we share here the journeys to a marketplace for renting
+saunas daily, like an AirBnB for saunas. They are in Powerpoint format
+([download them here](/flex-design-toolkit.pptx)), which you can edit in
+any similar software like Google Slides or Key. Creating something like
+this will help developers quickly grasp what your marketplace is about
+and help them move forward developing it.
 
 ## 3. Share the journey maps with developers
 
