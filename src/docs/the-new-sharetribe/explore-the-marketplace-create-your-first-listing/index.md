@@ -8,7 +8,7 @@ ingress:
   On the marketplace, click on the link “List your Sauna” on the Top
   bar. This will take you to the Listing creation form.
 published: false
-noindex: false
+noindex: true
 ---
 
 In the listing creation form, the very first time you create a listing,

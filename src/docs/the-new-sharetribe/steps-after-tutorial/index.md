@@ -8,7 +8,7 @@ ingress:
   should now have a fully functional Sauna rental marketplace, with
   settings, a listing, a user and a transaction.
 published: false
-noindex: false
+noindex: true
 ---
 
 You can now follow the tutorial instructions or use what you learned

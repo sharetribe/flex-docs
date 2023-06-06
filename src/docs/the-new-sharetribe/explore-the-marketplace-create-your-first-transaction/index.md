@@ -7,7 +7,7 @@ ingress:
   By now, you should have a user account and a listing. In this article,
   we consider how to create your first transaction.
 published: false
-noindex: false
+noindex: true
 ---
 
 If you have been following this tutorial, you should have
