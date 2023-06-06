@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../config';
@@ -6,6 +6,7 @@ import { Link, UiText } from '../../components';
 import Logo from './Logo';
 import Search from './Search';
 import OffScreenToggle from './OffScreenToggle';
+import { categoryFromLocation } from '../../util/utils';
 
 const Wrapper = styled.header`
   display: flex;
@@ -58,13 +59,35 @@ const TopbarSearch = styled(Search)`
 const Topbar = props => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  const [location, setLocation] = useState(null);
+  const isBrowser = typeof window !== 'undefined';
+  useEffect(() => {
+    if (isBrowser) {
+      setLocation(window.location);
+    }
+  }, [isBrowser]);
+
   const { activeCategory, manageSidebar, ...rest } = props;
   const { isOpen, setIsOpen } = manageSidebar;
+
+  const category = categoryFromLocation(location);
+  // We're not going to render the banner if we're viewing this category, see the ternary operator below
+  const theNewSharetribe = 'the-new-sharetribe';
+  // let's render a different logo if we're viewing any of the new sharetribe articles
+  const isTheNewSharetribe = category === theNewSharetribe;
+
   return (
     <Wrapper isSearchOpen={isSearchOpen} {...rest}>
       <OffScreenToggle isOpen={isOpen} setIsOpen={setIsOpen} />
-      <HomeLink to="/" aria-label={UiText.fn('Topbar.homeAriaLabel')}>
-        <TopbarLogo alt={UiText.fn('Topbar.logoAlt')} />
+
+      <HomeLink
+        to={isTheNewSharetribe ? '/the-new-sharetribe/' : '/'}
+        aria-label={UiText.fn('Topbar.homeAriaLabel')}
+      >
+        <TopbarLogo
+          simpleLogo={isTheNewSharetribe}
+          alt={UiText.fn('Topbar.logoAlt')}
+        />
       </HomeLink>
       <TopbarSearch isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
     </Wrapper>

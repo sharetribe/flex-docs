@@ -95,7 +95,7 @@ code.
 ![create-listing-per-day-availability](./create-listing-per-day-availability.png)
 
 Read more about
-[availability management in Flex](/references/availability/).
+[availability management in Flex](/docs/references/availability/).
 
 ### Inventory management
 
@@ -112,7 +112,7 @@ automatically go to zero. Listings with zero stock are filtered out by
 default, and do not appear in search.
 
 Read more about
-[inventory management in Flex](/concepts/inventory-management/).
+[inventory management in Flex](/concepts/inventory-management).
 
 ## Search
 
@@ -278,8 +278,7 @@ Learn more about
 Self-hosting the Template code base lets you customize the starting
 design as much as you want. Any custom design can be implemented on
 Flex. We offer downloadable design files to help you build your custom
-design. You can find the Sharetribe Web Template design files
-[here](https://github.com/sharetribe/design-resources).
+design. You can find the Sharetribe Web Template design files here.
 
 ## Customizing your own marketplace
 

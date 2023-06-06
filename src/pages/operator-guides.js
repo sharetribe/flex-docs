@@ -98,7 +98,13 @@ const OperatorGuides = () => {
           }
         );
 
-        return <OperatorGuidesPage category={category} data={formatData} />;
+        return (
+          <OperatorGuidesPage
+            category={category}
+            data={formatData}
+            sortingArray={sortingArray}
+          />
+        );
       }}
     />
   );

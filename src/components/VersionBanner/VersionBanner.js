@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { baselineBreakpoint, grid } from '../../config';
 import { WarningIcon } from '../../components';
+import { categoryFromLocation } from '../../util/utils';
 
 const Icon = styled(WarningIcon).attrs({
   bgcolor: '#c4dfff',
@@ -88,7 +89,19 @@ const VersionBanner = props => {
     }
   }, [isOpen]);
 
-  return (
+  const [location, setLocation] = useState(null);
+  const isBrowser = typeof window !== 'undefined';
+  useEffect(() => {
+    if (isBrowser) {
+      setLocation(window.location);
+    }
+  }, [isBrowser]);
+
+  const category = categoryFromLocation(location);
+  // We're not going to render the banner if we're viewing this category, see the ternary operator below
+  const theNewSharetribe = 'the-new-sharetribe';
+
+  return category === theNewSharetribe ? null : (
     <div>
       <Banner isOpen={isOpen}>
         <Icon />

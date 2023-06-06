@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import {
@@ -8,6 +8,7 @@ import {
   siteStructure,
 } from '../../config';
 import { findParentCategories } from '../../util/navigation';
+import { categoryFromLocation } from '../../util/utils';
 import {
   Ingress,
   H1,
@@ -179,6 +180,18 @@ const ArticlePage = props => {
   const { frontmatter, htmlAst, tableOfContents } = props;
   const { title, slug, updated, category, ingress } = frontmatter;
   const mainCategory = findMainCategory(category) || category;
+  const [location, setLocation] = useState(null);
+  const isBrowser = typeof window !== 'undefined';
+
+  // fetch browser location
+  useEffect(() => {
+    if (isBrowser) {
+      setLocation(window.location);
+    }
+  }, [isBrowser]);
+
+  const alternativeFooter =
+    categoryFromLocation(location) === 'the-new-sharetribe';
 
   // Structured metadata for the article page
   //
@@ -199,6 +212,7 @@ const ArticlePage = props => {
 
   return (
     <MainLayout
+      noIndex={frontmatter.noindex}
       title={title}
       description={ingress}
       activeArticle={{ category, slug }}
@@ -242,7 +256,7 @@ const ArticlePage = props => {
             />
           </MobileTocWrapper>
           <Markdown className="docSearch-content" htmlAst={htmlAst} />
-          <Footer />
+          <Footer altFooter={alternativeFooter} />
           <NextAndPrevArticles
             slug={slug}
             category={category}

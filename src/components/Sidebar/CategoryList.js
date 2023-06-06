@@ -125,16 +125,9 @@ const Category = props => {
     activeArticle,
     isOpenConfig,
     isHiddenConfig,
+    location,
     ...rest
   } = props;
-
-  const [location, setLocation] = useState(null);
-  const isBrowser = typeof window !== 'undefined';
-  useEffect(() => {
-    if (isBrowser) {
-      setLocation(window.location);
-    }
-  }, [isBrowser]);
 
   const parentCategories = activeArticle
     ? findParentCategories(activeArticle.category, siteStructure)
@@ -158,7 +151,23 @@ const Category = props => {
   // index page, we show the operator guides menu in the sidebar.
   const isHidden = isHiddenConfig ? true : false;
 
-  const categoryFromUrlPath = location?.pathname?.split('/')[1];
+  /**
+   * Regular Expression Pattern:
+   * /\/(?:docs\/)?([^/]+)(\/|$)/
+   *
+   * Explanation:
+   * - \/                        Matches a forward slash '/'
+   * - (?:docs\/)?               Matches the optional prefix 'docs/'
+   * - ([^/]+)                   Captures one or more characters that are not forward slashes, representing the category
+   * - (\/|$)                    Matches either a forward slash or the end of the string
+   *
+   * The regular expression extracts the category from a URL path while excluding the 'docs' prefix if present.
+   * This allows the logic to work both on production, staging and local envirionment.
+   * It matches the first segment after an optional 'docs/' prefix, capturing it as the category.
+   * Use the match result's first capturing group (matchResult[1]) to retrieve the extracted category.
+   */
+  const matchResult = location?.pathname?.match(/\/(?:docs\/)?([^/]+)(\/|$)/);
+  const categoryFromUrlPath = matchResult ? matchResult[1] : undefined;
 
   const isBeingViewed =
     parentCategories.some(n => n.startsWith(category)) ||
@@ -201,39 +210,104 @@ const CategoryList = props => {
     context,
     depth,
   } = props;
+
+  const [location, setLocation] = useState(null);
+  const isBrowser = typeof window !== 'undefined';
+  useEffect(() => {
+    if (isBrowser) {
+      setLocation(window.location);
+    }
+  }, [isBrowser]);
+
+  const matchResult = location?.pathname?.match(/\/(?:docs\/)?([^/]+)(\/|$)/);
+  const categoryFromUrlPath = matchResult ? matchResult[1] : undefined;
+
+  const areWeViewingACategoryThatShouldHideTheMenuBar = (
+    categories,
+    categoryFromUrl
+  ) => {
+    return (
+      categories.find(
+        item => item.id === categoryFromUrl && item.hideSidebar
+      ) || null
+    );
+  };
+
+  // let's define what category is being viewed based on
+  const match = areWeViewingACategoryThatShouldHideTheMenuBar(
+    categories,
+    categoryFromUrlPath
+  );
+
   return (
     <ul className={className}>
-      {categories.map((n, i) => {
-        const articleGroup = groupedArticles.find(g => g.category === n.id);
+      {!match ? (
+        categories.map((n, i) => {
+          const articleGroup = groupedArticles.find(g => g.category === n.id);
+          const hasSubcategories =
+            n.subcategories && n.subcategories.length > 0;
 
-        const hasSubcategories = n.subcategories && n.subcategories.length > 0;
-        return (
-          <StyledCategory
-            key={`nav_${n.id}`}
-            category={n.id}
-            context={context}
-            depth={depth}
-            activeArticle={activeArticle}
-            isOpenConfig={n.isOpen}
-            isHiddenConfig={n.isHidden}
-          >
-            <ArticleLinkList
-              articleGroup={articleGroup}
+          return (
+            <StyledCategory
+              key={`nav_${n.id}`}
+              category={n.id}
+              context={context}
+              depth={depth}
               activeArticle={activeArticle}
-              depth={depth + 1}
-            />
-            {hasSubcategories ? (
-              <CategoryList
+              isOpenConfig={n.isOpen}
+              isHiddenConfig={n.isHidden}
+              location={location}
+            >
+              <ArticleLinkList
+                articleGroup={articleGroup}
                 activeArticle={activeArticle}
-                categories={n.subcategories}
-                groupedArticles={groupedArticles}
-                context={context}
                 depth={depth + 1}
               />
-            ) : null}
-          </StyledCategory>
-        );
-      })}
+              {hasSubcategories ? (
+                <CategoryList
+                  isSubCategoryList={hasSubcategories}
+                  activeArticle={activeArticle}
+                  categories={n.subcategories}
+                  groupedArticles={groupedArticles}
+                  context={context}
+                  depth={depth + 1}
+                />
+              ) : null}
+            </StyledCategory>
+          );
+        })
+      ) : (
+        <StyledCategory
+          key={`nav_${match.id}`}
+          category={match.id}
+          context={context}
+          depth={depth}
+          activeArticle={activeArticle}
+          isOpenConfig={match.isOpen}
+          isHiddenConfig={match.isHidden}
+          location={location}
+        >
+          <ArticleLinkList
+            articleGroup={groupedArticles.find(g => g.category === match.id)}
+            activeArticle={
+              match.subcategories && match.subcategories.length > 0
+            }
+            depth={depth + 1}
+          />
+          {match.subcategories && match.subcategories.length > 0 ? (
+            <CategoryList
+              isSubCategoryList={
+                match.subcategories && match.subcategories.length > 0
+              }
+              activeArticle={activeArticle}
+              categories={match.subcategories}
+              groupedArticles={groupedArticles}
+              context={context}
+              depth={depth + 1}
+            />
+          ) : null}
+        </StyledCategory>
+      )}
     </ul>
   );
 };

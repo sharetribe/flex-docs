@@ -166,5 +166,4 @@ URLs.<br /> Read more about
 Now you are ready to make code changes and save them to Github!
 
 The first part of this tutorial starts with changing the marketplace
-color.<br />
-[› Go to the next article](/tutorial/change-branding/)
+color.<br /> [› Go to the next article](/tutorial/change-branding/)

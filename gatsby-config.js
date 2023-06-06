@@ -165,8 +165,11 @@ module.exports = {
         excludes: [
           '/styleguide',
           '/thanks-for-the-feedback',
+          '/pilot-day-guides',
           `/operator-guides`,
           `/operator-guides/*`,
+          `/the-new-sharetribe`,
+          `/the-new-sharetribe/*`,
         ],
         query: `
         {

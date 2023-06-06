@@ -163,6 +163,24 @@ const sortingArrayOperatorGuidesListings = [];
 const sortingArrayOperatorGuidesTransactions = [];
 const sortingArrayOperatorGuidesUsefulInformation = [];
 
+const sortingArrayPilotDayGuides = ['test-page'];
+
+const sortingArrayTheNewSharetribeUsefulInformation = [];
+
+/// Arrange The New Sharetribe tutorial
+const sortingArrayTheNewSharetribeTutorial = [
+  'tutorial-introduction',
+  'tutorial-marketplace-branding',
+  'tutorial-marketplace-layout',
+  'tutorial-landing-page',
+  'tutorial-listing-type',
+  'tutorial-listing-fields',
+  'tutorial-listing-search',
+  'tutorial-commission-tx-size',
+  'tutorial-microcopy',
+  'tutorial-footer',
+];
+
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -291,6 +309,37 @@ exports.siteStructure = [
     sortingArray: sortingArrayReferences,
   },
   {
+    id: 'the-new-sharetribe',
+    isOpen: true,
+    sortingArray: [],
+    isHidden: true,
+    subcategories: [
+      {
+        id: 'the-new-sharetribe-tutorial',
+        sortingArray: sortingArrayTheNewSharetribeTutorial,
+      },
+      {
+        id: 'the-new-sharetribe-useful-information',
+        sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
+      },
+    ],
+    hideSidebar: true,
+  },
+  {
+    id: 'tutorial-service',
+    isOpen: true,
+    sortingArray: [],
+    isHidden: true,
+    hideSidebar: true,
+  },
+  {
+    id: 'tutorial-product',
+    isOpen: true,
+    sortingArray: [],
+    isHidden: true,
+    hideSidebar: true,
+  },
+  {
     id: 'operator-guides',
     isOpen: false,
     isHidden: true,
@@ -326,6 +375,46 @@ exports.siteStructure = [
       {
         id: 'operator-guides-listings',
         sortingArray: sortingArrayOperatorGuidesListings,
+      },
+    ],
+  },
+  {
+    id: 'pilot-day-guides',
+    isOpen: true,
+    isHidden: true,
+    hideSidebar: true,
+    subcategories: [
+      {
+        id: 'pilot-day-guides-concepts',
+        sortingArray: sortingArrayPilotDayGuides,
+      },
+      {
+        id: 'pilot-day-guides-tutorials',
+        sortingArray: [],
+      },
+      {
+        id: 'pilot-day-guides-static-content',
+        sortingArray: [],
+      },
+      {
+        id: 'pilot-day-guides-transactions',
+        sortingArray: [],
+      },
+      {
+        id: 'pilot-day-guides-useful-information',
+        sortingArray: [],
+      },
+      {
+        id: 'pilot-day-guides-listings',
+        sortingArray: [],
+      },
+      {
+        id: 'pilot-day-guides-layout',
+        sortingArray: [],
+      },
+      {
+        id: 'pilot-day-guides-branding',
+        sortingArray: [],
       },
     ],
   },

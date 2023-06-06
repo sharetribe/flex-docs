@@ -56,9 +56,9 @@ const flatten = (array, depth = 1) => {
   return depth > 0 ? array.reduce(f, []) : array;
 };
 
-const allowedCategoryIds = flatten(
-  siteStructure.map(flattenSubcategories)
-).concat('operator-guides');
+const allowedCategoryIds = flatten(siteStructure.map(flattenSubcategories))
+  .concat('operator-guides')
+  .concat('pilot-day-guides');
 
 // Uncomment to warn about circular dependencies.
 //
@@ -143,6 +143,7 @@ exports.createPages = ({ graphql, actions }) => {
               category
               ingress
               published
+              noindex
             }
           }
         }
