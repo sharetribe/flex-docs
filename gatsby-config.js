@@ -168,6 +168,7 @@ module.exports = {
           '/pilot-day-guides',
           `/operator-guides`,
           `/operator-guides/*`,
+          `/the-new-sharetribe``/the-new-sharetribe/*`,
         ],
         query: `
         {
