@@ -51,16 +51,20 @@ const Paragraph = styled(P).attrs({
 
 const GridItem = props => {
   // Note that this pathPrefix variable has nothing to do with what is defined in module.exports gatsby-config.js
-  const { pathPrefix, title, slug, category, ingress } = props;
+  const { pathPrefix, title, slug, category, ingress, published } = props;
   const path = `${slug}/`;
-  return (
-    <Box as="li">
-      <Link neutral to={`${pathPrefix}${path}`}>
-        <H5 as="h3">{title}</H5>
-        <Paragraph>{ingress}</Paragraph>
-      </Link>
-    </Box>
-  );
+  if (published) {
+    return (
+      <Box as="li">
+        <Link neutral to={`${pathPrefix}${path}`}>
+          <H5 as="h3">{title}</H5>
+          <Paragraph>{ingress}</Paragraph>
+        </Link>
+      </Box>
+    );
+  } else {
+    return null;
+  }
 };
 
 const ArticleIndex = props => {
