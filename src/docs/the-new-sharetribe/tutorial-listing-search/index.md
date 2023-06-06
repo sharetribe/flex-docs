@@ -10,7 +10,8 @@ published: true
 noindex: true
 ---
 
-In the [previous step about listing fields](./tutorial-listing-fields),
+In the
+[previous step about listing fields](/the-new-sharetribe/tutorial-listing-fields/),
 we already altered the search experience by adding custom search filter.
 However, there are also some more general search configuration options,
 which can be adjusted from "Listing search". Let's go there
@@ -70,4 +71,4 @@ All done! **Remember to save changes.**
 
 Now we're happy with how our listings work, and how they are searched.
 Next, let's look into how you monetize your transactions.
-[Go to step 7: Configure commission and minimum transaction size](./tutorial-commission-tx-size).
+[Go to step 7: Configure commission and minimum transaction size](/the-new-sharetribe/tutorial-commission-tx-size/).

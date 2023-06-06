@@ -71,4 +71,4 @@ transaction, and we have a few more steps to complete before that.
 
 That's it for listing type! Next, we'll decide what data is collected
 when a new listing is created.
-[Go to Step 5: Create listing fields](./tutorial-listing-fields).
+[Go to Step 5: Create listing fields](/the-new-sharetribe/tutorial-listing-fields/).

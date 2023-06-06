@@ -60,4 +60,4 @@ of changes has already been saved.
 ### Next: landing page
 
 That's it for layout! Next,
-[go to Step 3: Modify the landing page](./tutorial-landing-page).
+[go to Step 3: Modify the landing page](/the-new-sharetribe/tutorial-landing-page/).

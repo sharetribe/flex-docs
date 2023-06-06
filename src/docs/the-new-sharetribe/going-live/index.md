@@ -8,9 +8,10 @@ published: true
 noindex: true
 ---
 
-
-Once you are ready to bring the first users to your marketplace, you are ready to go Live. Going Live unlocks the Live environment, where it is possible to add real users and process transactions with real credit card details. 
-
+Once you are ready to bring the first users to your marketplace, you are
+ready to go Live. Going Live unlocks the Live environment, where it is
+possible to add real users and process transactions with real credit
+card details.
 
 Going Live takes several steps.
 
@@ -27,7 +28,8 @@ This guide details how to complete each step.
 # 1. Subscription
 
 Go Live by subscribing to a paid plan. You can review different plans
-and features available on the [marketing site.](https://www.sharetribe.com/new-sharetribe/)
+and features available on the
+[marketing site.](https://www.sharetribe.com/new-sharetribe/)
 
 To subscribe, go to your
 [Console.](https://flex-console.sharetribe.com/) Press your environment
@@ -36,9 +38,10 @@ information and submit.
 
 ![Go Live](./go-live-1.png)
 
-# 2. Share information for setup with Sharetribe 
-After subscribing you will receive a confirmation email with your invoice and billing
-information. The email also includes
+# 2. Share information for setup with Sharetribe
+
+After subscribing you will receive a confirmation email with your
+invoice and billing information. The email also includes
 [a link to this form](https://sharetribe.typeform.com/to/yKLsJryj) that
 you should use to share information for setup with Sharetribe. If the
 form is not working for you for some reason, please email us the
@@ -145,15 +148,18 @@ Your www records make your marketplace accessible at
 1. Look over the existing CNAME records.
 2. If a CNAME record exists where "Host" or "Source" is set to "www",
    click edit and set "Points To" or "Value" or "Target" to
-   `proxy.sharetribe.com`. 
-   - Note that depending on the DNS provider you may need to add a period at the end: `proxy.sharetribe.com.`
-   - Note that the target address for this record, proxy.sharetribe.com, should be copied as-is. You don't need to change it to your own marketplace's address.
+   `proxy.sharetribe.com`.
+   - Note that depending on the DNS provider you may need to add a
+     period at the end: `proxy.sharetribe.com.`
+   - Note that the target address for this record, proxy.sharetribe.com,
+     should be copied as-is. You don't need to change it to your own
+     marketplace's address.
 3. If a CNAME record doesn't exist, click "Add record" or "Create
    record". From the record type list, select CNAME. Fill in the
-   following fields: "Host" or "Source" to "www". "Points To" or
-   "Value" or "Target" to `proxy.sharetribe.com`. If you have to fill a
-   field named "TTL", set it to "3600". Note that the target address for
-   this record, `proxy.sharetribe.com`, should be copied as-is.
+   following fields: "Host" or "Source" to "www". "Points To" or "Value"
+   or "Target" to `proxy.sharetribe.com`. If you have to fill a field
+   named "TTL", set it to "3600". Note that the target address for this
+   record, `proxy.sharetribe.com`, should be copied as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your
    changes.
@@ -168,9 +174,10 @@ an example of a root domain.
    edit and set "Points To" or "Value" or "Target" to `34.248.140.98`.
 3. If an A record doesn't exist, click "Add record" or "Create record".
    From the record type list, select A. Fill in "Host" or "Source" to
-   `@`. "Points To" or "Value" or "Target" to `34.248.140.98`.If you have to fill a field
-   named "TTL", set it to "3600".
-   - Note that depending on the DNS provider, this record may need to be left blank.
+   `@`. "Points To" or "Value" or "Target" to `34.248.140.98`.If you
+   have to fill a field named "TTL", set it to "3600".
+   - Note that depending on the DNS provider, this record may need to be
+     left blank.
 4. Save changes.
 5. Check that the record has been updated or created according to your
    changes.
@@ -185,8 +192,8 @@ marketplace is accessible at an address such as
 2. If a CNAME record, where "Host" or "Source" is set to your desired
    subdomain, exists, click edit and set "Points To" or "Value" or
    "Target" to `proxy.sharetribe.com`. Note that the target address for
-   this record, `proxy.sharetribe.com`, should be copied as-is. You don't
-   need to change it to your own marketplace's address.
+   this record, `proxy.sharetribe.com`, should be copied as-is. You
+   don't need to change it to your own marketplace's address.
 3. If such a CNAME record doesn't exist, click "Add record" or "Create
    record". From the record type list, select CNAME. Fill in "Host" or
    "Source" to the desired subdomain (such as "mymarketplace"). "Points
@@ -202,7 +209,8 @@ marketplace is accessible at an address such as
 
 After submitting your details, Sharetribe will set up your Live
 environment. Sharetribe typically turns around your marketplace in 24
-hours during business days, often less. Follow instructions carefully to prevent any delays during setup.
+hours during business days, often less. Follow instructions carefully to
+prevent any delays during setup.
 
 # 5. Configure payments
 

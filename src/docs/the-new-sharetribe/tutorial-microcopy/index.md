@@ -64,4 +64,5 @@ editor, and then save the content.
 
 Now the language in your marketplace is all about saunas. There's one
 more step before we're done: linking everything we've built together
-through the footer. [Go to Step 9: Edit the footer](./tutorial-footer).
+through the footer.
+[Go to Step 9: Edit the footer](/the-new-sharetribe/tutorial-footer/).

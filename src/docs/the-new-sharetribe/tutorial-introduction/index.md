@@ -45,17 +45,17 @@ Below are the steps that we will follow in this tutorial. We recommend
 following the tutorial in this order, but feel free to jump directly to
 the step of your choice.
 
-1. [Adjust marketplace branding](../tutorial-marketplace-branding)
-2. [Choose marketplace layout](../tutorial-marketplace-layout)
-3. [Modify the landing page](../tutorial-landing-page)
-4. [Adjust listing type](../tutorial-listing-type)
-5. [Create listing fields](../tutorial-listing-fields)
-6. [Customize listing search](../tutorial-listing-search)
-7. [Configure commission and minimum transaction size](../tutorial-commission-tx-size)
-8. [Decide your vocabulary](../tutorial-microcopy)
-9. [Edit the footer](../tutorial-footer)
+1. [Adjust marketplace branding](/the-new-sharetribe/tutorial-marketplace-branding/)
+2. [Choose marketplace layout](/the-new-sharetribe/tutorial-marketplace-layout/)
+3. [Modify the landing page](/the-new-sharetribe/tutorial-landing-page/)
+4. [Adjust listing type](/the-new-sharetribe/tutorial-listing-type/)
+5. [Create listing fields](/the-new-sharetribe/tutorial-listing-fields/)
+6. [Customize listing search](/the-new-sharetribe/tutorial-listing-search/)
+7. [Configure commission and minimum transaction size](/the-new-sharetribe/tutorial-commission-tx-size/)
+8. [Decide your vocabulary](/the-new-sharetribe/tutorial-microcopy/)
+9. [Edit the footer](/the-new-sharetribe/tutorial-footer/)
 
 ### Let's get started!
 
 It's time to start building!
-[Go to Step 1: Adjust marketplace branding](../tutorial-marketplace-branding).
+[Go to Step 1: Adjust marketplace branding](/the-new-sharetribe/tutorial-marketplace-branding).

@@ -161,4 +161,4 @@ pages.
 
 That's it for layout! Next, it's time to start configuring how listings
 in your marketplace work.
-[Go to Step 4: Adjust listing type](./tutorial-listing-type).
+[Go to Step 4: Adjust listing type](/the-new-sharetribe/tutorial-listing-type/).

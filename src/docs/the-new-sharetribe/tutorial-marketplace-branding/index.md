@@ -34,7 +34,7 @@ Click on the “Upload image” section for the logo. Once there, you should
 be able to upload an image from your computer. Download the image below
 and use it for your settings.
 
-![logo image](./saunatime.png)
+[Download the Logo image here](/tutorial-assets/tns/saunatime.png)
 
 ### 3. Upload the favicon
 
@@ -44,16 +44,16 @@ section for the Favicon. Once you click this, you should be able to
 upload an image from your computer. Download the image below and use it
 for your settings.
 
-![favicon](./favicon.png)
+[Download the favicon here](/tutorial-assets/tns/favicon.png)
 
 ### 4. Upload a background image for login pages
 
 You can add a big background image to your login page, signup page and a
 few other authentication-related pages to connect these pages to your
 brand. Click on the “Upload image” section for the Background image for
-login pages. Upload the JPG image below.
+login pages. Upload the PNG image below.
 
-![background image](./backgroundimage.png)
+[Download the background image here](/tutorial-assets/tns/backgroundimage.png)
 
 ### 5. Upload a Social media image
 
@@ -62,7 +62,7 @@ and LinkedIn when someone shares a link to your marketplace in them.
 
 Click on the “Upload image” section for Social media. Use this image:
 
-![social media image](./socialmediaimage.png)
+[Download the social media image here](/tutorial-assets/tns/socialmediaimage.png)
 
 ### Save Changes
 
@@ -74,4 +74,4 @@ brand images of your marketplace have changed.
 ### Next: marketplace layout
 
 That's it for branding! Next,
-[go to Step 2: Adjust marketplace layout](./tutorial-marketplace-layout).
+[go to Step 2: Adjust marketplace layout](/the-new-sharetribe/tutorial-marketplace-layout/).

@@ -14,7 +14,7 @@ Listing fields refer to the form fields a provider needs to fill in when
 creating a listing. Each listing has a set of default fields, like
 title, description and price. The exact set of default fields is
 determined by the transaction process chosen when
-[determining listing type](./tutorial-listing-type).
+[determining listing type](/the-new-sharetribe/tutorial-listing-type/).
 
 In addition to the default fields, you can add a number of custom
 fields. These allow you to decide exactly what data is collected when a
@@ -139,4 +139,4 @@ We're done! **Remember to save the changes!**
 
 Now that we've defined listing fields, it's time to look more into the
 search experience.
-[Go to Step 6: Customize listing search](./tutorial-listing-search).
+[Go to Step 6: Customize listing search](/the-new-sharetribe/tutorial-listing-search/).

@@ -81,4 +81,4 @@ Save changes.
 Now our marketplace is working the way we're expecting! However, there
 are few more adjustments we should make before testing things. The next
 one is about deciding on the words we use.
-[Go to Step 8: Decide your vocabulary](./tutorial-microcopy).
+[Go to Step 8: Decide your vocabulary](/the-new-sharetribe/tutorial-microcopy/).
