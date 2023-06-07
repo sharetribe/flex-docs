@@ -32,7 +32,7 @@ this in mind if you want to review all changes to listings.
 Currently, you can't "decline" a listing, though you can delete a
 listing that you don't approve if you prefer. If a listing needs changes
 to meet your marketplace standards, you'll need to get in touch with the
-seller to suggest improvements and ask them to submit a new listing.
+seller to suggest improvements and ask them to edit the listing.
 
 There isn't an automatic email notification when you approve a listing.
 However, you could use something like Zapier to send a message when a
