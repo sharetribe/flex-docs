@@ -11,9 +11,7 @@ published: true
 
 Sharetribe Flex offers you the chance to approve new listings before
 they go live. This article explains how to use this feature through the
-Flex Console. It is also possible for a developer to use this
-functionality through the Flex CLI, which is covered in
-[the technical version of this guide](https://www.sharetribe.com/docs/concepts/requiring-approval/#managing-listing-approval-in-flex-console).
+Flex Console.
 
 ## Understanding the listing approval function
 
