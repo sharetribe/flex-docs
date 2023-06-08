@@ -18,6 +18,7 @@ const query = graphql`
               "the-new-sharetribe-tutorial"
               "the-new-sharetribe-useful-information"
               "the-new-sharetribe-static-content"
+              "the-new-sharetribe-branding"
             ]
           }
         }

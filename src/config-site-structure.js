@@ -323,6 +323,10 @@ exports.siteStructure = [
         sortingArray: [],
       },
       {
+        id: 'the-new-sharetribe-branding',
+        sortingArray: [],
+      },
+      {
         id: 'the-new-sharetribe-useful-information',
         sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
       }
