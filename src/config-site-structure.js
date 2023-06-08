@@ -322,6 +322,10 @@ exports.siteStructure = [
         id: 'the-new-sharetribe-useful-information',
         sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
       },
+      {
+        id: 'the-new-sharetribe-static-content',
+        sortingArray: sortingArrayTheNewSharetribeStaticPagesUseful,
+      }
     ],
     hideSidebar: true,
   },
