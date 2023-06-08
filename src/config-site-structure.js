@@ -319,12 +319,12 @@ exports.siteStructure = [
         sortingArray: sortingArrayTheNewSharetribeTutorial,
       },
       {
-        id: 'the-new-sharetribe-static-content',
-        sortingArray: [],
-      },
-      {
         id: 'the-new-sharetribe-useful-information',
         sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
+      },
+      {
+        id: 'the-new-sharetribe-static-content',
+        sortingArray: [],
       }
     ],
     hideSidebar: true,
