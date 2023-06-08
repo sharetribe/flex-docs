@@ -16,8 +16,8 @@ const query = graphql`
           category: {
             in: [
               "the-new-sharetribe-tutorial"
-              "the-new-sharetribe-useful-information"
               "the-new-sharetribe-static-content"
+              "the-new-sharetribe-useful-information"
             ]
           }
         }
