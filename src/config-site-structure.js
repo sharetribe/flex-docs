@@ -324,7 +324,6 @@ exports.siteStructure = [
       },
       {
         id: 'the-new-sharetribe-static-content',
-        sortingArray: sortingArrayTheNewSharetribeStaticContent,
       }
     ],
     hideSidebar: true,
