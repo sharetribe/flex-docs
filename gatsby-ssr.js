@@ -8,11 +8,28 @@ export const wrapPageElement = props => {
   return <Root>{element}</Root>;
 };
 
-export const onRenderBody = (
-  { setHeadComponents },
-  {}
-) => {
-  setHeadComponents([
+export const onRenderBody = ({ setHeadComponents }) => {
+const plausibleHeadComponents = process.env.NODE_ENV === `production` ? [
+  <link key="plausible-preconnect" rel="preconnect" href={`https://plausible.io`} />,
+  <script
+    key="plausible-script"
+    async
+    defer
+    src="/stats/script.js"
+    data-domain="sharetribe.com/docs"
+    data-api="/stats/api/event"
+  />,
+  // See: https://plausible.io/docs/custom-event-goals#1-trigger-custom-events-with-javascript-on-your-site
+  <script
+    key="plausible-custom-events"
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) };
+      `,
+    }}
+  />,
+] : [];
+ return setHeadComponents([
     <link 
       rel="preconnect" 
       href="https://IPOXPQ3KFI-dsn.algolia.net" 
@@ -22,6 +39,7 @@ export const onRenderBody = (
       key="plugin-docsearch-css"
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
-    />
+    />,
+    ...plausibleHeadComponents
   ]);
 };
