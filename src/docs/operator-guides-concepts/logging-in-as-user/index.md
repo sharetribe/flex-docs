@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-# Login as another user
-
 As a marketplace operator of a Sharetribe Flex marketplace, you have the
 ability to login on behalf of your marketplace's users. This feature is
 useful for understanding the user experience, solving reported problems,
