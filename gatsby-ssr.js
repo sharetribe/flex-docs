@@ -9,6 +9,9 @@ export const wrapPageElement = props => {
 };
 
 export const onRenderBody = ({ setHeadComponents }) => {
+// Custom environment variable set via the Vercel dashboard 
+// We use different data-domain in preview environments for testing plausible
+const isPreviewEnv = process.env.PLAUSIBLE_ENV === `preview`;
 const plausibleHeadComponents = process.env.NODE_ENV === `production` ? [
   <link key="plausible-preconnect" rel="preconnect" href={`https://plausible.io`} />,
   <script
@@ -16,7 +19,7 @@ const plausibleHeadComponents = process.env.NODE_ENV === `production` ? [
     async
     defer
     src="/stats/js/script/"
-    data-domain="flex-docs.vercel.app"
+    data-domain={isPreviewEnv ? "flex-docs.vercel.app" : "sharetribe.com/docs"}
     data-api="/stats/api/event/"
   />,
   // See: https://plausible.io/docs/custom-event-goals#1-trigger-custom-events-with-javascript-on-your-site
