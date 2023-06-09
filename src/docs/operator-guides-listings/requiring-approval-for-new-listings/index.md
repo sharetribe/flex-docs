@@ -9,14 +9,12 @@ ingress:
 published: true
 ---
 
-Sharetribe Flex offers you the chance to approve new listings before
-they go live. This article explains how to use this feature through the
-Flex Console.
+Listing approval lets you, the marketplace operator, review every new listing in your marketplace and decide if it can be published.  You can review and approve listings directly in Console. 
 
 ## Understanding the listing approval function
 
-Normally, a new listing on Flex goes live as soon as the person who
-created it hits the "publish" button. However, you can change this so
+Normally, a new listing on Flex goes live as soon as the listing author 
+publishes their listing. However, you can change this so
 that new listings need your approval before they go live. This means
 that a listing only gets published after you've checked and approved it.
 
@@ -34,19 +32,17 @@ listing that you don't approve if you prefer. If a listing needs changes
 to meet your marketplace standards, you'll need to get in touch with the
 seller to suggest improvements and ask them to edit the listing.
 
-There isn't an automatic email notification when you approve a listing.
-However, you could use something like Zapier to send a message when a
-listing changes from "pending approval" to "published". You can read
-more about Zapier from
+There are no automatic email notifications to you when a new listing is pending approval or to the seller when the listing is approved. One good way to setup notifications for this process is to use, for example, Zapier. You can use Zapier to connect your marketplace with an emailing tool that sends a message when a listing changes from "pending approval" to "published" to the seller. You can read more about Zapier from
 [this guide](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/).
 
-(Non-technical version of the Zapier guide is coming up soon!)
+
 
 ## How to manage listing approval in Flex Console
 
 You can turn on the listing approval feature in your Flex Console. Go to
 "Build > General" and look down to find the right section (1). By
 default, listing approval is turned off.
+
 
 <extrainfo title="Step 1: Finding the listing approval toggle in the Console">
 
@@ -73,14 +69,10 @@ the bottom of the listing panel that lets you approve the listing (3).
 
 </extrainfo>
 
-## Experience from the seller's perspective
+## How sellers experience listing approval
 
-As a seller, you can create your listing just as you normally would,
-starting from the listing creation button in the top bar of the
-marketplace (4). The difference comes after you fill out all the fields
-and hit "Publish listing" (5). Instead of going live immediately, your
-listing will wait for the marketplace operator (the admin) to review and
-approve it.
+Sellers create their listing normally,starting from the listing creation button in the top bar of the marketplace (4). The difference comes after they fill out all the fields and publish their listing (5). Before being published, the listing will need to be approved.
+
 
 <extrainfo title="Step 4: Creating a new listing">
 
@@ -94,15 +86,10 @@ approve it.
 
 </extrainfo>
 
-While waiting for approval, your listing isn't visible to other users on
-the marketplace. This means they won't be able to see or interact with
-your listing until it's been approved.
+While waiting for approval, the listing is only visible to the listing author. It does not appear in search and cannot be used to start a new transaction until it's been approved.
 
-A noticeable feature will be a banner at the top of your listing page
-(6). This banner signals that your listing is "pending approval." This
-message is a reminder for you, and is not visible to other users. It
-simply means that your listing is in the process of being reviewed by
-the admin.
+A noticeable feature will be a banner at the top of the listing page
+(6). This banner signals that the listing is "pending approval."
 
 <extrainfo title="Step 6: Banner indicating that the listing is awaiting approval">
 
@@ -110,7 +97,4 @@ the admin.
 
 </extrainfo>
 
-Once the operator has reviewed and approved your listing, it will become
-visible to all users on the marketplace, and they can start interacting
-with it. Remember, there's no automatic notification for this, so you
-might want to keep an eye on your listing's status.
+Once you have reviewed and approved the listing, it will become visible to all users on the marketplace, and they can start interacting with it. Remember, there is no automatic notification when a listing is approved and published.
