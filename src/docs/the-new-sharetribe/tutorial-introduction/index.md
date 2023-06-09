@@ -39,6 +39,17 @@ of your marketplace and to test the marketplace functionality. At the
 end, we'll also explain the steps to take to launch your marketplace
 live, in your own domain, and start inviting real users to it.
 
+### How does building a marketplace without coding work?
+
+To start building your marketplace without coding, you need to navigate
+to the "Build" section in Console, and then go to subsection "Content".
+This is where all the no-code customization currently takes place.
+
+There are also other subsections in "Build", like "Transaction
+processes", "Applications", and "Social logins & SSO". These are needed
+only when doing custom development with code. For now, you can ignore
+them, and focus on things under "Content".
+
 ### The steps in the process
 
 Below are the steps that we will follow in this tutorial. We recommend
