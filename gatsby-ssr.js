@@ -16,7 +16,7 @@ const plausibleHeadComponents = process.env.NODE_ENV === `production` ? [
     async
     defer
     src="/stats/js/script/"
-    data-domain="sharetribe.com/docs"
+    data-domain="flex-docs.vercel.app"
     data-api="/stats/api/event/"
   />,
   // See: https://plausible.io/docs/custom-event-goals#1-trigger-custom-events-with-javascript-on-your-site
