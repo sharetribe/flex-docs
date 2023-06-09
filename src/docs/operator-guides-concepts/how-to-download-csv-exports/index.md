@@ -1,6 +1,6 @@
 ---
-title:
-  How to download your marketplace data as a CSV export slug: how-to-download-csv-exports
+title: How to download your marketplace data as a CSV export 
+slug: how-to-download-csv-exports
 updated: 2023-06-06
 category: operator-guides-concepts
 ingress:
