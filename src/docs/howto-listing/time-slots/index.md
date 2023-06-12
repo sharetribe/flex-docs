@@ -110,7 +110,8 @@ slot minutes, see
  * @returns Moment rounded to the start of the specified time value
  */
 moment.fn.startOfDuration = function(value, timeUnit) {
-  const getMs = (val, unit) => moment.duration(val, unit)._milliseconds;
+  const getMs = (val, unit) =>
+    moment.duration(val, unit).asMilliseconds();
   const ms = getMs(value, timeUnit);
 
   // Get UTC offset to account for potential time zone difference between
@@ -166,11 +167,11 @@ _calculateQuantityFromHours_ as well.
 
 ![Booking breakdown with half hour booking](./30_minute_booking.png)
 
-## Use a time slot longer than 30 minutes
+## Use an irregular time slot
 
-If your marketplace has longer custom booking lengths than 30 minutes,
-you will need to extend the previous steps to a more complex approach to
-make sure the time slots show up correctly.
+If your marketplace has custom booking lengths longer than (and not
+divisible by) 30 minutes, you will need to extend the previous steps to
+a more complex approach to make sure the time slots show up correctly.
 
 ### Find the rounding duration
 
@@ -219,25 +220,22 @@ _isFirst_ parameter to the _findNextCustomBoundary_ function. For the
 first time slot, we then skip incrementing completely.
 
 ```diff
-- export const findNextCustomBoundary = (currentMomentOrDate, timeUnit, timeZone) => {
--   moment(currentMomentOrDate)
-+ export const findNextCustomBoundary = (
-+   currentMomentOrDate,
-+   timeUnit,
-+   timeZone,
-+   isFirst = false
-+ ) => {
-+
-+   const increment = isFirst ? 0 : timeSlotMinutes;
-+   return moment(currentMomentOrDate)
-      .clone()
-      .tz(timeZone)
--     .add(timeSlotMinutes, 'minutes')
--     .startOfDuration(timeSlotMinutes, 'minutes')
-+     .add(increment, 'minutes')
-+     .startOfDuration(rounding, 'minutes')
-      .toDate();
-+ }
+export const findNextCustomBoundary = (
+  currentMomentOrDate,
+  timeUnit,
+- timeZone
++ timeZone,
++ isFirst = false
+) => {
++ const increment = isFirst ? 0 : timeSlotMinutes;
+  return moment(currentMomentOrDate)
+    .clone()
+    .tz(timeZone)
+-   .add(timeSlotMinutes, timeUnit)
+-   .startOfDuration(timeSlotMinutes, timeUnit)
++   .add(increment, timeUnit)
++   .startOfDuration(rounding, timeUnit)
+    .toDate();
 ```
 
 The rounding function now rounds the start time back to the rounding
@@ -255,9 +253,9 @@ function call when calling it from _getSharpHours_.
 -   const millisecondBeforeStartTime = new Date(startTime.getTime() - 1);
 
     return findBookingUnitBoundaries({
--     currentBoundary: findNextCustomBoundary(millisecondBeforeStartTime, 'minutes', timeZone),
+-     currentBoundary: findNextCustomBoundary(millisecondBeforeStartTime, 'minute', timeZone),
 +     // add isFirst param to determine first time slot handling
-+     currentBoundary: findNextCustomBoundary(startTime, 'minutes', timeZone, true),
++     currentBoundary: findNextCustomBoundary(startTime, 'minute', timeZone, true),
       startMoment: moment(startTime),
       endMoment: moment(endTime),
 ```

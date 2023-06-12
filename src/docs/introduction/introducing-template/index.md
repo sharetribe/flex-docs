@@ -15,7 +15,7 @@ for building any type of marketplace, whether it is about rentals,
 services, products, or something else. You can configure the Template
 without coding, then host the code to launch and add custom features.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dHe8_z4FAEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2gOM61b8LJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Customization starting point
 

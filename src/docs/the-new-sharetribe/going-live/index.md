@@ -167,7 +167,8 @@ Your www records make your marketplace accessible at
 ### Configure your root domain records
 
 Your root domain is your domain without “www”. `myexampledomain.com` is
-an example of a root domain. The root domain will redirect to your main domain.
+an example of a root domain. The root domain will redirect to your main
+domain.
 
 1. Look over any existing A records
 2. If an A record exists where "Host" or "Source" is set to `@`, click
@@ -186,7 +187,8 @@ an example of a root domain. The root domain will redirect to your main domain.
 
 You may want to host your marketplace at subdomain, where your
 marketplace is accessible at an address such as
-`mymarketplace.myexampledomain.com.` This will be your main marketplace domain.
+`mymarketplace.myexampledomain.com.` This will be your main marketplace
+domain.
 
 1. Look over the existing CNAME records.
 2. If a CNAME record, where "Host" or "Source" is set to your desired

@@ -245,7 +245,8 @@ value is a factor of an hour, e.g. 15, 20 or 30 minutes.
  * @returns Moment rounded to the start of the specified time value
  */
 moment.fn.startOfDuration = function(value, timeUnit) {
-  const getMs = (val, unit) => moment.duration(val, unit)._milliseconds;
+  const getMs = (val, unit) =>
+    moment.duration(val, unit).asMilliseconds();
   const ms = getMs(value, timeUnit);
 
   // Get UTC offset to account for potential time zone difference between
@@ -293,7 +294,7 @@ export const findNextCustomBoundary = (
     .clone()
     .tz(timeZone)
     .add(increment, timeUnit)
-    .startOf(bufferMinutes, timeUnit)
+    .startOfDuration(bufferMinutes, timeUnit)
     .toDate();
 };
 ```
@@ -380,7 +381,7 @@ beginning of the available time slot.
     const millisecondBeforeStartTime = new Date(startTime.getTime() - 1);
     return findBookingUnitBoundaries({
 -     currentBoundary: findNextBoundary(millisecondBeforeStartTime, 'hour', timeZone),
-+     currentBoundary: findNextCustomBoundary(startTime, 'minutes', timeZone, isFirst, isStart),
++     currentBoundary: findNextCustomBoundary(startTime, 'minute', timeZone, isFirst, isStart),
       startMoment: moment(startTime),
       endMoment: moment(endTime),
 -     nextBoundaryFn: findNextBoundary,
