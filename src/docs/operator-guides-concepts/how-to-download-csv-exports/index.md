@@ -1,5 +1,5 @@
 ---
-title: How to download your marketplace data as a CSV export 
+title: How to download your marketplace data as a CSV export
 slug: how-to-download-csv-exports
 updated: 2023-06-06
 category: operator-guides-concepts
@@ -10,8 +10,9 @@ published: true
 
 CSV (Comma Separated Values) exports are a handy feature on Sharetribe
 that allows you to download important marketplace data, like user
-details, listings, transactions, and reviews. Use this data as a basis for your marketplace analysis for example in a program like Excel, or for manually connecting your marketplace data to other software. 
-
+details, listings, transactions, and reviews. Use this data as a basis
+for your marketplace analysis for example in a program like Excel, or
+for manually connecting your marketplace data to other software.
 
 ## Where to find the csv export buttons
 
@@ -116,14 +117,24 @@ may take some time if your marketplace has grown very large.
 ## What can you do with your data exports
 
 With these data sets, you can analyze the performance of your
-marketplace.You can build analyses in spreadsheet software like Excel or Google Sheets, or import the files into bespoke analytics solutions. [Lemonado](https://lemonado.io/sharetribe) is one such solution with dashboards and functionalities specific to Sharetribe marketplace.  
+marketplace.You can build analyses in spreadsheet software like Excel or
+Google Sheets, or import the files into bespoke analytics solutions.
+[Lemonado](https://lemonado.io/sharetribe) is one such solution with
+dashboards and functionalities specific to Sharetribe marketplace.
 
-Here are some ideas for key metrics to track and how: 
+Here are some ideas for key metrics to track and how:
 
-- You can monitor your marketplace's user growth over time
-based on the "users" export with the help of the 'CreatedAt' column.
-- You can see which listings are the most popular by counting the ‘ListingID’ in transactions export. 
-- You can track your Gross Merchandise Value (GMV) by adding up the ‘PayinTotal’ from your transactions export.  
+- You can monitor your marketplace's user growth over time based on the
+  "users" export with the help of the 'CreatedAt' column.
+- You can see which listings are the most popular by counting the
+  ‘ListingID’ in transactions export.
+- You can track your Gross Merchandise Value (GMV) by adding up the
+  ‘PayinTotal’ from your transactions export.
 
-CSV exports can also be useful if you want to manually connect your marketplace to another tool. For instance, you can use the Users export to retrieve the email addresses of your users to upload into an email marketing tool. It is possible to build such a data pipeline via Zapier in many cases or with code in all cases; however, doing this work manually might allow you to launch faster and save funds in the early stages of your marketplace. 
-
+CSV exports can also be useful if you want to manually connect your
+marketplace to another tool. For instance, you can use the Users export
+to retrieve the email addresses of your users to upload into an email
+marketing tool. It is possible to build such a data pipeline via Zapier
+in many cases or with code in all cases; however, doing this work
+manually might allow you to launch faster and save funds in the early
+stages of your marketplace.
