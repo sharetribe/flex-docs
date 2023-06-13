@@ -11,7 +11,7 @@ ingress:
 published: true
 ---
 
-Flex offers you several tools to help you build the right search
+The New Sharetribe offers you several tools to help you build the right search
 experience for your users.
 
 Note that both anonymous users (users without a login) and logged in
