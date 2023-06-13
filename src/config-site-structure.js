@@ -319,7 +319,23 @@ exports.siteStructure = [
         sortingArray: sortingArrayTheNewSharetribeTutorial,
       },
       {
+        id: 'the-new-sharetribe-useful-information',
+        sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
+      },
+      {
+        id: 'the-new-sharetribe-concepts',
+        sortingArray: [],
+      },
+      {
         id: 'the-new-sharetribe-static-content',
+        sortingArray: [],
+      },
+      {
+        id: 'the-new-sharetribe-layout',
+        sortingArray: [],
+      },
+      {
+        id: 'the-new-sharetribe-transactions',
         sortingArray: [],
       },
       {
@@ -329,14 +345,6 @@ exports.siteStructure = [
       {
         id: 'the-new-sharetribe-listings',
         sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-layout',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-useful-information',
-        sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
       }
       
     ],
