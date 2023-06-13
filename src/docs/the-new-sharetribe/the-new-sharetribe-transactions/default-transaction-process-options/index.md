@@ -11,7 +11,7 @@ published: true
 
 # Default transaction processes from the point of view of a marketplace user
 
-There are two default processes available with Sharetribe Flex: one for
+There are two default processes available with The New Sharetribe: one for
 hourly or daily bookings with an availability calendar, and another for
 buying and selling products. All these processes are explained below in
 detail, along with screenshots. Note that the processes are very
@@ -22,7 +22,7 @@ own marketplace.
 
 ### 1. Booking a listing as a buyer
 
-In Sharetribe Flex, users can book services or items that are available
+In The New Sharetribe, users can book services or items that are available
 for specific time slots using the calendar booking function. This
 process includes the functionality for booking a service or rental that
 can be booked for one or multiple days or hours, such as a car rental or
@@ -132,7 +132,7 @@ You can see the screenshots of these steps below.
 
 ### 3. Holding the payment (escrow) and payout to the seller
 
-Sharetribe Flex provides a secure system for payments. When a booking is
+The New Sharetribe provides a secure system for payments. When a booking is
 made, the payment is held in escrow until the service or item is
 delivered. After the delivery, and the confirmation from the buyer, the
 payment is released to the seller. This creates trust and assurance
@@ -148,7 +148,7 @@ payment within 1-2 weeks.
 
 ### Operator actions
 
-Sharetribe Flex allows you to act on behalf of your users if needed. In
+The New Sharetribe allows you to act on behalf of your users if needed. In
 the default booking transaction process, there are four options:
 accepting or declining a purchase request, and marking it as completed
 or cancelled on the user’s behalf (12). Cancelling the transaction
@@ -204,7 +204,7 @@ You can see illustrations of the process below.
 
 ### 1. Purchasing a product as a buyer
 
-Sharetribe Flex marketplaces can be used as product marketplaces as
+The New Sharetribe marketplaces can be used as product marketplaces as
 well. It is possible to make purchases of different types and
 quantities, such as an order of one or more t-shirts, or digital files.
 In the example below, which is a bike selling marketplace, we assume
@@ -324,7 +324,7 @@ You can see the screenshots of these steps below.
 
 ### 3. Holding the payment (escrow) and payout to the seller
 
-Sharetribe Flex provides a secure system for payments. When a purchase
+The New Sharetribe provides a secure system for payments. When a purchase
 is made, the payment is held in escrow until the buyer marks the
 transaction as completed. After the buyer does this, the payment is
 released to the seller. This creates trust and assurance between parties
@@ -339,7 +339,7 @@ released to the seller, who will receive the payment within 1-2 weeks.
 
 ## Operator actions
 
-Sharetribe Flex allows you to act on behalf of your users if needed. In
+The New Sharetribe allows you to act on behalf of your users if needed. In
 the default product purchase transaction process, there are three
 options (8): cancelling a transaction after it has been purchased; and
 either cancelling the transaction or marking it as received after a
@@ -383,7 +383,7 @@ You can see illustrations of the process below.
 ## Changing default transaction processes
 
 You may want to change how transactions happen on your marketplace
-beyond these defaults. This is possible with Flex by extending your
+beyond these defaults. This is possible with The New Sharetribe by extending your
 marketplace with code. If you are a developer, consult our developer
 documentation for more information on how a
 [transaction process](https://www.sharetribe.com/docs/references/transaction-process-format/)
