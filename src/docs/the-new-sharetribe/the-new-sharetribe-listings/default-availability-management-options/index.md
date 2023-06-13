@@ -173,7 +173,7 @@ cancellations.
 ## Changing default availability management options
 
 You may want to change these default functionalities for your
-marketplace to work how you need. This is possible with Flex by
+marketplace to work how you need. This is possible with The New Sharetribe by
 extending your marketplace with code. If you are a developer, consult
 our developer documentation for more information on how
 [availability management](https://www.sharetribe.com/docs/references/availability/)
