@@ -24,7 +24,7 @@ the steps required to to that.
 
 <info>
 
-We already have a few other language files available in
+We will add a few other language files available in
 [src/translations/](https://github.com/sharetribe/web-template/tree/master/src/translations)
 directory for you to start customizing microcopy.
 
@@ -51,25 +51,38 @@ localization: {
 }
 ```
 
-2. In `src/app.js`, change the React Intl import to point to the correct
-   `react-intl` locale, for example:
-
-```js
-import localeData from 'react-intl/locale-data/it';
-```
-
-3. If you are using a non-english locale with moment library, you should
-   also import time specific formatting rules for that locale:
+2. If you are using a non-english locale with moment library, you should
+   import time specific formatting rules for that locale:
 
 ```js
 import 'moment/locale/it';
 ```
+
+<info>
+
+If you are using a template that supports code-splitted locale imports
+(i.e. after this commit), you can technically skip this second step.
+
+However, for performance reasons, we recommend adding the rows below in
+_src/app.js_ before _const MomentLocaleLoader_:
+
+```
+   import 'moment/locale/it';
+   const hardCodedLocale = process.env.NODE_ENV === 'test' ? 'en' : 'it';
+```
+
+</info>
 
 4.  Point `messagesInLocale` to correct .json file, for example:
 
 ```js
 import messagesInLocale from './translations/it.json';
 ```
+
+It is also recommended to change _defaultMicrocopy.json_ translations.
+That way, accidentally deleted keys in dynamic hosted microcopy (in
+Console) won't cause the default English translations to be rendered in
+your custom client app.
 
 ## Changing the microcopy used in tests
 
