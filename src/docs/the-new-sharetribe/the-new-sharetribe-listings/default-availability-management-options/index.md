@@ -1,8 +1,8 @@
 ---
 title: Default availability management options
 slug: default-availability-management-options
-updated: 2023-06-02
-category: operator-guides-listings
+updated: 2023-06-14
+category: the-new-sharetribe-listings
 ingress:
   Illustrated guide of the options buyers and sellers have with
   availability management.

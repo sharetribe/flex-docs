@@ -1,8 +1,8 @@
 ---
 title: Requiring approval for new listings
 slug: requiring-approval-for-new-listings
-updated: 2023-06-07
-category: operator-guides-listings
+updated: 2023-06-14
+category: the-new-sharetribe-listings
 ingress:
   A guide that shows how the process for approving listings as operator
   works.

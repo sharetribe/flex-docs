@@ -1,8 +1,8 @@
 ---
 title: Default transaction process options
 slug: default-transaction-process-options
-updated: 2023-06-02
-category: operator-guides-transactions
+updated: 2023-06-14
+category: the-new-sharetribe-transactions
 ingress:
   Illustrated guide of the options buyers and sellers have with the
   default transaction process.

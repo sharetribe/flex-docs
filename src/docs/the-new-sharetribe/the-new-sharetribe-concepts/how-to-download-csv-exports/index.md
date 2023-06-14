@@ -2,8 +2,8 @@
 title:
   How to download your marketplace data as a CSV export on Sharetribe
 slug: how-to-download-csv-exports-on-sharetribe
-updated: 2023-06-06
-category: operator-guides-concepts
+updated: 2023-06-14
+category: the-new-sharetribe-concepts
 ingress:
   Illustrated guide of the CSV export functionality on Sharetribe.
 published: true
