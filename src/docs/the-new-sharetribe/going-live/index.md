@@ -59,7 +59,7 @@ hosting provider, such as GoDaddy, Google Domains, or Hover.
 
 During the setup process, please share with us your custom domain name.
 You should also start
-[configuring your DNS records with your hosting provider.](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/#3-configure-your-custom-domain)
+[configuring your DNS records with your hosting provider](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/#3-configure-your-custom-domain)
 so that when we receive the information everything is ready for us to
 set up your live environment.
 
