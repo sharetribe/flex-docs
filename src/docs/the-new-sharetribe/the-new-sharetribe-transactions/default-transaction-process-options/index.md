@@ -1,7 +1,7 @@
 ---
 title: Default transaction process options
 slug: default-transaction-process-options
-updated: 2023-06-02
+updated: 2023-06-14
 category: the-new-sharetribe-transactions
 ingress:
   Illustrated guide of the options buyers and sellers have with the
@@ -11,7 +11,7 @@ published: true
 
 # Default transaction processes from the point of view of a marketplace user
 
-There are two default processes available with The New Sharetribe: one for
+There are two default processes available with Sharetribe: one for
 hourly or daily bookings with an availability calendar, and another for
 buying and selling products. All these processes are explained below in
 detail, along with screenshots. Note that the processes are very
@@ -22,12 +22,12 @@ own marketplace.
 
 ### 1. Booking a listing as a buyer
 
-In The New Sharetribe, users can book services or items that are available
-for specific time slots using the calendar booking function. This
-process includes the functionality for booking a service or rental that
-can be booked for one or multiple days or hours, such as a car rental or
-a trip with a tour guide. In the example below, we assume that the users
-are already logged in.
+In Sharetribe, users can book services or items that are available for
+specific time slots using the calendar booking function. This process
+includes the functionality for booking a service or rental that can be
+booked for one or multiple days or hours, such as a car rental or a trip
+with a tour guide. In the example below, we assume that the users are
+already logged in.
 
 To make a booking, the user will (1) browse the listings and click on
 the desired item or service. Then, they will (2) select their preferred
@@ -132,7 +132,7 @@ You can see the screenshots of these steps below.
 
 ### 3. Holding the payment (escrow) and payout to the seller
 
-The New Sharetribe provides a secure system for payments. When a booking is
+Sharetribe provides a secure system for payments. When a booking is
 made, the payment is held in escrow until the service or item is
 delivered. After the delivery, and the confirmation from the buyer, the
 payment is released to the seller. This creates trust and assurance
@@ -148,11 +148,11 @@ payment within 1-2 weeks.
 
 ### Operator actions
 
-The New Sharetribe allows you to act on behalf of your users if needed. In
-the default booking transaction process, there are four options:
-accepting or declining a purchase request, and marking it as completed
-or cancelled on the user’s behalf (12). Cancelling the transaction
-includes refunding the Stripe payment.
+Sharetribe allows you to act on behalf of your users if needed. In the
+default booking transaction process, there are four options: accepting
+or declining a purchase request, and marking it as completed or
+cancelled on the user’s behalf (12). Cancelling the transaction includes
+refunding the Stripe payment.
 
 These actions are taken from the Console. You need to navigate to the
 transaction in question, and then choose the action from the right hand
@@ -204,11 +204,11 @@ You can see illustrations of the process below.
 
 ### 1. Purchasing a product as a buyer
 
-The New Sharetribe marketplaces can be used as product marketplaces as
-well. It is possible to make purchases of different types and
-quantities, such as an order of one or more t-shirts, or digital files.
-In the example below, which is a bike selling marketplace, we assume
-that the users are already logged in.
+Sharetribe marketplaces can be used as product marketplaces as well. It
+is possible to make purchases of different types and quantities, such as
+an order of one or more t-shirts, or digital files. In the example
+below, which is a bike selling marketplace, we assume that the users are
+already logged in.
 
 In cases where there's only one item in stock, a buyer can purchase it
 instantly by clicking the "Buy Now" button (1). If the item only has one
@@ -324,8 +324,8 @@ You can see the screenshots of these steps below.
 
 ### 3. Holding the payment (escrow) and payout to the seller
 
-The New Sharetribe provides a secure system for payments. When a purchase
-is made, the payment is held in escrow until the buyer marks the
+Sharetribe provides a secure system for payments. When a purchase is
+made, the payment is held in escrow until the buyer marks the
 transaction as completed. After the buyer does this, the payment is
 released to the seller. This creates trust and assurance between parties
 involved in the transaction.
@@ -339,12 +339,12 @@ released to the seller, who will receive the payment within 1-2 weeks.
 
 ## Operator actions
 
-The New Sharetribe allows you to act on behalf of your users if needed. In
-the default product purchase transaction process, there are three
-options (8): cancelling a transaction after it has been purchased; and
-either cancelling the transaction or marking it as received after a
-dispute has occurred. Cancelling the transaction includes refunding the
-Stripe payment in both cases.
+Sharetribe allows you to act on behalf of your users if needed. In the
+default product purchase transaction process, there are three options
+(8): cancelling a transaction after it has been purchased; and either
+cancelling the transaction or marking it as received after a dispute has
+occurred. Cancelling the transaction includes refunding the Stripe
+payment in both cases.
 
 These actions are taken from the Console. You need to navigate to the
 transaction in question, and then choose the action from the right hand
@@ -383,9 +383,9 @@ You can see illustrations of the process below.
 ## Changing default transaction processes
 
 You may want to change how transactions happen on your marketplace
-beyond these defaults. This is possible with The New Sharetribe by extending your
-marketplace with code. If you are a developer, consult our developer
-documentation for more information on how a
+beyond these defaults. This is possible with Sharetribe by extending
+your marketplace with code. If you are a developer, consult our
+developer documentation for more information on how a
 [transaction process](https://www.sharetribe.com/docs/references/transaction-process-format/)
 works under the hood. If you are not a developer, then consider
 [hiring a developer](https://www.sharetribe.com/docs/operator-guides/how-to-hire-developer/)

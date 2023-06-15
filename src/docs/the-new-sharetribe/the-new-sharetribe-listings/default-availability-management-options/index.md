@@ -1,7 +1,7 @@
 ---
 title: Default availability management options
 slug: default-availability-management-options
-updated: 2023-06-02
+updated: 2023-06-14
 category: the-new-sharetribe-listings
 ingress:
   Illustrated guide of the options buyers and sellers have with
@@ -173,7 +173,7 @@ cancellations.
 ## Changing default availability management options
 
 You may want to change these default functionalities for your
-marketplace to work how you need. This is possible with The New Sharetribe by
+marketplace to work how you need. This is possible with Sharetribe by
 extending your marketplace with code. If you are a developer, consult
 our developer documentation for more information on how
 [availability management](https://www.sharetribe.com/docs/references/availability/)

@@ -1,7 +1,7 @@
 ---
 title: Default inventory management options
 slug: default-inventory-management-options
-updated: 2023-06-02
+updated: 2023-06-14
 category: the-new-sharetribe-listings
 ingress:
   Illustrated guide of the options buyers and sellers have with
@@ -11,7 +11,7 @@ published: true
 
 # Default Inventory Management Options
 
-The New Sharetribe allows sellers to manage their inventory effectively by
+Sharetribe allows sellers to manage their inventory effectively by
 enabling specific listing types. When a listing is categorized under the
 buying and selling products type, it automatically enables the inventory
 management feature, which allows for detailed stock control.
@@ -106,9 +106,9 @@ Shipping fees are added according to the listing’s shipping price: there
 is one price for shipping the first item, and a different price can be
 set for shipping each additional item.
 
-The New Sharetribe automatically adjusts the inventory based on buyer
-purchases. When a purchase is made, the quantity purchased is deducted
-from the available stock. This feature ensures real-time accuracy of the
+Sharetribe automatically adjusts the inventory based on buyer purchases.
+When a purchase is made, the quantity purchased is deducted from the
+available stock. This feature ensures real-time accuracy of the
 inventory, preventing over-sales and helping sellers to manage their
 stock efficiently.
 
@@ -121,7 +121,7 @@ stock efficiently.
 ## Changing default inventory management options
 
 You may want to change these default functionalities for your
-marketplace to work how you need. This is possible with The New Sharetribe by
+marketplace to work how you need. This is possible with Sharetribe by
 extending your marketplace with code. If you are a developer, consult
 our developer documentation for more information on
 [inventory management](https://www.sharetribe.com/docs/references/stock/)
