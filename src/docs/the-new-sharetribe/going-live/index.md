@@ -18,8 +18,8 @@ Going Live takes several steps.
 1. Subscription
 2. Sharing information with Sharetribe about your custom domain,
    payments, analytics, and map provider
-3. Sharetribe confirming your Live environment
-4. Configuring your custom domain
+3. Configuring your custom domain
+4. Sharetribe confirming your Live environment
 5. Configure payments
 6. Configure outgoing email address
 
@@ -58,8 +58,10 @@ hosting provider in order to use a custom domain. You can use any
 hosting provider, such as GoDaddy, Google Domains, or Hover.
 
 During the setup process, please share with us your custom domain name.
-Once your Live environment is confirmed, you should
-[configure your DNS records with your hosting provider.](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/#3-configure-your-custom-domain)
+You should also start
+[configuring your DNS records with your hosting provider](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/#3-configure-your-custom-domain)
+so that when we receive the information everything is ready for us to
+set up your live environment.
 
 Sharetribe provides a dedicated SSL certificate for your marketplace
 address when your domain is connected to your marketplace.
@@ -246,7 +248,7 @@ with DNS information.
 
 ![go-live-4](./go-live-4.png)
 
-### Configure DNS
+### Configure email DNS
 
 Next, you need to add the generated records from your Console to your
 DNS hosting. This is an important step for your sender reputation and
@@ -257,12 +259,12 @@ visible in Console.
 by SendGrid might be useful if you are not sure how to configure the DNS
 records for your specific DNS provider.
 
-### Validate DNS
+### Validate email DNS
 
-When you have configured your DNS, you still need to validate the
-records for your emails to work. You can do that by clicking on the "3/3
-Validate" button in Console. If everything is set up correctly, you
-should see a success message in Console.
+When you have configured your email DNS records, you still need to
+validate the records for your emails to work. You can do that by
+clicking on the "3/3 Validate" button in Console. If everything is set
+up correctly, you should see a success message in Console.
 
 ![go-live-5](./go-live-5.png)
 

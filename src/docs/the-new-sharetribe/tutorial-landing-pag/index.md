@@ -61,6 +61,7 @@ content block called "hero-block". Make the following changes:
 
 - Replace the Image file for the file below (it is a transparent PNG
   file). Leave the Aspect ratio and Image alt text as they are.
+  [Download the transparent image here](/tutorial-assets/tns/transparent-image.png)
 - Replace the Block title content for: “Welcome to Saunatime” and select
   Page title (H1) as the Block title size.
 - Replace the Block text content for: write “The marketplace for all
