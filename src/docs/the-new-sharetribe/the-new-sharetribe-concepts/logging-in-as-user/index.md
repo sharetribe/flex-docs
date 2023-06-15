@@ -2,7 +2,7 @@
 title: Login as a user
 slug: login-as-user
 updated: 2023-06-14
-category: the-new-sharetribe-concepts
+category: concepts
 ingress:
   Here you can find out how to log in on behalf of another marketplace
   user.
