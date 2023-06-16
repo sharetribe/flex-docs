@@ -150,18 +150,18 @@ Your www records make your marketplace accessible at
 1. Look over the existing CNAME records.
 2. If a CNAME record exists where "Host" or "Source" is set to "www",
    click edit and set "Points To" or "Value" or "Target" to
-   `proxy.sharetribe.com`.
+   `proxy.mysharetribe.com`.
    - Note that depending on the DNS provider you may need to add a
-     period at the end: `proxy.sharetribe.com.`
-   - Note that the target address for this record, proxy.sharetribe.com,
+     period at the end: `proxy.mysharetribe.com.`
+   - Note that the target address for this record, proxy.mysharetribe.com,
      should be copied as-is. You don't need to change it to your own
      marketplace's address.
 3. If a CNAME record doesn't exist, click "Add record" or "Create
    record". From the record type list, select CNAME. Fill in the
    following fields: "Host" or "Source" to "www". "Points To" or "Value"
-   or "Target" to `proxy.sharetribe.com`. If you have to fill a field
+   or "Target" to `proxy.mysharetribe.com`. If you have to fill a field
    named "TTL", set it to "3600". Note that the target address for this
-   record, `proxy.sharetribe.com`, should be copied as-is.
+   record, `proxy.mysharetribe.com`, should be copied as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your
    changes.
@@ -195,15 +195,15 @@ domain.
 1. Look over the existing CNAME records.
 2. If a CNAME record, where "Host" or "Source" is set to your desired
    subdomain, exists, click edit and set "Points To" or "Value" or
-   "Target" to `proxy.sharetribe.com`. Note that the target address for
-   this record, `proxy.sharetribe.com`, should be copied as-is. You
+   "Target" to `proxy.mysharetribe.com`. Note that the target address for
+   this record, `proxy.mysharetribe.com`, should be copied as-is. You
    don't need to change it to your own marketplace's address.
 3. If such a CNAME record doesn't exist, click "Add record" or "Create
    record". From the record type list, select CNAME. Fill in "Host" or
    "Source" to the desired subdomain (such as "mymarketplace"). "Points
-   To" or "Value" or "Target" to `proxy.sharetribe.com`. If you have to
+   To" or "Value" or "Target" to `proxy.mysharetribe.com`. If you have to
    fill a field named "TTL", set it to "3600". Note that the target
-   address for this record, `proxy.sharetribe.com`, should be copied
+   address for this record, `proxy.mysharetribe.com`, should be copied
    as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your
