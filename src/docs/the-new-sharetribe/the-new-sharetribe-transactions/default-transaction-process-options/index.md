@@ -380,13 +380,3 @@ You can see illustrations of the process below.
 
 </extrainfo>
 
-## Changing default transaction processes
-
-You may want to change how transactions happen on your marketplace
-beyond these defaults. This is possible with Sharetribe by extending
-your marketplace with code. If you are a developer, consult our
-developer documentation for more information on how a
-[transaction process](https://www.sharetribe.com/docs/references/transaction-process-format/)
-works under the hood. If you are not a developer, then consider
-[hiring a developer](https://www.sharetribe.com/docs/operator-guides/how-to-hire-developer/)
-to help you change your transaction process.
