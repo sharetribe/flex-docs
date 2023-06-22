@@ -82,7 +82,7 @@ _Examples of microcopy visible on the listing page._
 The first step to building your marketplace is modifying Biketribe
 default configurations that do not apply to your marketplace. You can
 modify these with no-code tools from
-[Console](https://flex-console.sharetribe.com/). Console is your
+Console. Console is your
 operator backend for configuring your marketplace without code and
 viewing and managing your marketplace data, like users or listings.
 
