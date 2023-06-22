@@ -106,7 +106,7 @@ _An example key-value pair in the Microcopy editor. Note both the key
 and value are enclosed in quotation marks. A comma marks the end of the
 key-value pair, followed by a line break._
 
-### 3. Modify frequently used pieces of microcopy
+### Modify frequently used pieces of microcopy
 
 With your marketplace’s microcopy file copied into the editor, you can
 use the editor to modify your marketplace’s copy-texts.
@@ -141,7 +141,7 @@ There are many copy-texts in your marketplace. You will likely need
 several efforts in order to modify the starting texts to your desired
 terminology.
 
-### 4. How to add or remove pieces of microcopy
+### How to add or remove pieces of microcopy
 
 So far we have changed existing microcopy, but you may also want to add
 pieces of microcopy in building your marketplace. This typically happens
