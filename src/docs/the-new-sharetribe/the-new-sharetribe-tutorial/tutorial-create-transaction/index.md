@@ -6,7 +6,7 @@ category: the-new-sharetribe-tutorial
 ingress:
   By now, you should have a user account and a listing. In this article,
   we consider how to create your first transaction.
-published: true
+published: false
 noindex: true
 ---
 
