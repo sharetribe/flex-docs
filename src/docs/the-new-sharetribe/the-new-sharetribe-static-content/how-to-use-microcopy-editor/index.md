@@ -97,8 +97,7 @@ Here is a brief description of the file you are looking at:
   techniques
   [here](/concepts/microcopy/#format-for-editing-microcopy-in-console).
 - You can only modify values in the editor. You cannot modify keys. Keys
-  must be modified by
-  [modifying the code of your marketplace application](#4-how-to-add-or-remove-pieces-of-microcopy).
+  must be modified by modifying the code of your marketplace application.
 
 ![Example of a microcopy key-value pair](./microcopy_key_value.png)
 
@@ -159,12 +158,7 @@ the Microcopy editor.
 Supporting multiple languages in your marketplace is a special case of
 adding microcopy. Because the Microcopy editor only works with a single
 language, you cannot use it to modify multiple different languages. You
-should use the editor to modify one of your supported languages. Any
-additional languages supported by your marketplace need to be edited
-separately and shared with your developer to deploy to your marketplace.
-Note that
-[enabling multiple language support requires](/ftw/how-to-change-ftw-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplacee)
-custom development to set up.
+should use the editor to modify one of your supported languages.
 
 </info>
 
