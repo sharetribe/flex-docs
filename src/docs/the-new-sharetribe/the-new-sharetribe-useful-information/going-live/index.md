@@ -31,8 +31,7 @@ Go Live by subscribing to a paid plan. You can review different plans
 and features available on the
 [marketing site.](https://www.sharetribe.com/new-sharetribe/)
 
-To subscribe, go to your
-[Console.](https://flex-console.sharetribe.com/) Press your environment
+To subscribe, go to your Console. Press your environment
 dropdown menu in the top left and select “Go Live” Fill in your billing
 information and submit.
 

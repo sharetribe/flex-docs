@@ -79,7 +79,7 @@ maximize performance, you might want to ask your users to upload smaller
 images. Depending on the thumbnail ratio on your marketplace search
 page, the recommended sizes vary quite a lot. You can learn more about
 the listing thumbnail aspect ratio here, in
-[this article from the layout section](https://www.sharetribe.com/docs/operator-guides/listing-thumbnail-aspect-ratio/).
+[this article from the layout section](https://www.sharetribe.com/docs/the-new-sharetribe/listing-thumbnail-aspect-ratio/).
 
 ## Do you need a logo?
 

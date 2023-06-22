@@ -5,13 +5,13 @@ updated: 2022-06-14
 category: the-new-sharetribe-static-content
 ingress:
   The Microcopy editor lets you modify your marketplace’s microcopy in
-  Flex Console.
+  TNS Console.
 published: true
 ---
 
 ## What is microcopy
 
-Your Flex marketplace has both content and dynamic pages. Content pages
+Your The New Sharetribe marketplace has both content and dynamic pages. Content pages
 only feature content created by you, the marketplace operator. Landing
 pages, “About” pages and FAQ pages are examples of content pages.
 
@@ -21,7 +21,7 @@ offer users the ability to interact with them, such as when buyers are
 selecting the length of a booking from a listing or entering their
 payment information into the checkout page.
 
-In Flex, the term microcopy refers to short written texts scattered
+In TNS, the term microcopy refers to short written texts scattered
 around a dynamic page’s interface; button labels, error messages, and
 help texts are all examples. They are textual, brief (a sentence or
 two), and highly contextual.
@@ -32,13 +32,13 @@ _Examples of microcopy from the Biketribe listing page highlighted in
 blue. Note that listing fields and search filters ("Sauna type",
 "Amenities" and "Sauna rules" for example) are not editable with the
 microcopy editor. An upcoming feature will introduce a dedicated feature
-for editing these fields and filters in Console._
+for editing these fields and filters in Console.
 
-With the Microcopy editor, you can modify these texts in your Flex
+With the Microcopy editor, you can modify these texts in your TNS
 Console. You can also use the Microcopy editor to translate these texts
 to a new language. This article will walk you through how to set up your
 Microcopy editor and make microcopy changes while building and operating
-your Flex marketplace.
+your TNS marketplace.
 
 ## Why microcopy matters
 
@@ -58,97 +58,17 @@ All these decisions affect the choices you make in your microcopy.
 
 ## How to test the Microcopy editor?
 
-You can try out the Microcopy editor in your Flex test marketplace.
-After creating a Flex account, log into
-[Console](https://flex-console.sharetribe.com/). Ensure you are in the
-[Test environment](/concepts/flex-environments/#test-environment).
+You can try out the Microcopy editor in your TNS test marketplace.
+After creating a TNS account, log into Console. Ensure you are in the
+Test environment.
 
 Navigate to the Build section from your top bar, then the Content
 section. The Microcopy editor is here.
 
 ![Microcopy editor](./microcopy_editor.png)
 
-_When you first start building your marketplace, the JSON field in
-Microcopy is empty, and all microcopy comes from built-in microcopy
-files in the Template. (We refer to these texts as microcopy, but in the
-Template they are in the **translations** folder. In addition to the
-default **en.json** file, there are other languages available, which is
-why the folder is titled **translations**.)_
+_When you first start building your marketplace, you'll find the microcopy in red text in the microcopy editor._
 
-Next, load the Biketribe microcopy into the editor. You can follow
-[the same steps](#2-load-your-microcopy-into-the-editor) you would
-eventually use to modify your own marketplace’s microcopy.
-
-Select the “Daily-bookings / Biketribe link, which takes you to the
-Biketribe code repository. Click “src” folder→ click “translations”
-folder→ open “en.json” file→ copy content.
-[Here is a direct link](https://github.com/sharetribe/web-template/blob/main/src/translations/en.json)
-to the file you need.Then paste the data into the Console Microcopy
-editor. You can make changes to the Biketribe test microcopy using the
-same workflow described below.
-
-## How to modify microcopy when building your marketplace with a developer?
-
-### 1. Setup your Sharetribe Web Template with a developer
-
-To use the Microcopy editor on your marketplace, you will first need to
-set up the Sharetribe Web Template, which serves as the basis for your
-custom marketplace. Setting up the Template for customization is a
-development process. If you are not a developer or do not yet have a
-developer on your team, you should hire a
-[Flex Expert to help you build your marketplace](https://www.sharetribe.com/experts/).
-
-The Template has default microcopy vocabulary included, reflecting its
-starting theme Biketribe. Biketribe is a marketplace for buying and
-renting bikes.
-
-Having pre-written microcopy is a significant time saver. Except for the
-Biketribe theme, most of the Template's microcopy uses generic and
-descriptive language suitable for most marketplaces, which means there
-are many microcopy texts you do not need to formulate. The rest of the
-article will guide you on how to use the Microcopy editor to change the
-microcopy you wish to change in building your custom marketplace.
-
-### 2. Load your microcopy into the editor
-
-After you and your developer set up the Sharetribe Web Template for
-development, you can use the editor to start modifying your microcopy.
-
-First, you must load the default microcopy into the editor. You can do
-this by copy and pasting the language-specific microcopy file that
-contains all the microcopy in your marketplace. In the marketplace
-Template, we refer to it as a “translation” file because this file is
-used as the basis for translating your marketplace into another language
-There is a Spanish, French, German, and English version of this file
-available to start.
-
-You should use (copy and paste) the microcopy file directly from your
-marketplace’s repository, or database where your code is being modified
-by a developer. If you’re unsure where your repository is or how to
-navigate it, you can request that they add the correct file to the
-editor for you or that they share it with you.
-
-In your repository, you will most likely find the language-specific
-microcopy file in the same place it resided in the Template. Click “src”
-folder→ click “translations” folder→ open “en.json” file→ copy content.
-Then paste the data into the Console Microcopy editor.
-
-<video>
-    <source src='./microcopyeditor.mp4' type='video/mp4'>
-    <source src='./microcopyeditor.webm' type='video/webm'>
-    <source src='./microcopyeditor.ogv' type='video/ogg'>
-</video>
-
-If the language of your choice is not available, you can take one of
-these default files as a basis and translate your marketplace by
-changing the contents of the file to that language. For the purposes of
-this tutorial, we will use the English version (en.json) of the written
-texts.
-
-![Microcopy editor with data added](./microcopy_data.png)
-
-_The Microcopy editor loaded with the en.json microcopy file. We’re
-ready to roll!_
 
 Here is a brief description of the file you are looking at:
 
@@ -246,35 +166,6 @@ Note that
 [enabling multiple language support requires](/ftw/how-to-change-ftw-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplacee)
 custom development to set up.
 
-### 5. Publishing microcopy to the live environment
-
-Everything we have built so far with the Microcopy editor has been in
-the development environment (Dev). When your marketplace is live with
-real users and transactions, you will have a live environment (Live)
-Microcopy editor as well to modify the marketplace website your users
-are actually using.
-
-Since changes made and saved in Live affect your end-users, it is a good
-idea to always start making modifications in Dev. The sections above
-describe how to make these changes.
-
-When you first create your live environment, the microcopy in Dev gets
-automatically copied over to Live. After both environments are up and
-running, you will need to transfer your changes from Dev to Live
-manually.
-
-Copy the contents of your editor in Dev, then navigate to Live using the
-drop-down menu in the top-left of the top bar. Navigate to the Microcopy
-editor in Live(Build>Content), paste the microcopy from Dev into the
-editor, and save changes.
-
-<info>
-
-Note that since you are working in the live environment, there is a 5
-minute delay between saving changes and seeing those changes in your
-marketplace. This delay safeguards the reliability and speed of your
-marketplace for your users.
-
 </info>
 
 ## How to edit content on content pages
@@ -282,17 +173,12 @@ marketplace for your users.
 The Microcopy editor changes microcopy on your dynamic pages, which are
 pages where user-generated content, such as listings, appear. To change
 your content pages, like your Landing page or Terms of use,
-[you should use Pages.](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/)
+[you should use Pages.](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-edit-content-pages-in-console/)
 
 ### Digging deeper into the Microcopy editor
 
 In this article, we learned about the Microcopy editor and the microcopy
-it changes. We also learned how to use the Microcopy editor to modify
-the Template microcopy while you build your Flex marketplace with a
-developer. You can use the editor to change any microcopy already in the
+it changes. You can use the editor to change any microcopy already in the
 Template, or to change any additional microcopy added during building
 your site.
 
-To learn more about microcopy in Flex through technical details, consult
-[our guide](/concepts/microcopy/) on how Microcopy works in the Template
-code.

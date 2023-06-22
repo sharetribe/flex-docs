@@ -15,7 +15,7 @@ determine the best layout for all your listings. You can choose your
 layout in the Build → Content → Layout page of your Console account.
 
 A primary image is always displayed on the listing page or as a
-[thumbnail in the search page](https://www.sharetribe.com/docs/operator-guides/listing-thumbnail-aspect-ratio/),
+[thumbnail in the search page](https://www.sharetribe.com/docs/the-new-sharetribe/listing-thumbnail-aspect-ratio/),
 but you can add as many photos as you need. Users will be able to expand
 and look at the other pictures as well.
 
@@ -64,4 +64,4 @@ marketplace, this layout might be better for you.
 
 It’s possible to add JPEG and PNG files types. All listing images can be
 up to, but not more than, 20 MB and 3072x3072 pixels.
-[Read more about marketplace images](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
+[Read more about marketplace images](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-good-looking-logos-and-images/).

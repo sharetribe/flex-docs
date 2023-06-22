@@ -23,7 +23,7 @@ here.
 Your marketplace logo is shown on your marketplace Top bar. For the best
 result, we recommend using a file with a height of 48 pixels and a width
 of 48–370 pixels.
-[Learn more about the logo measurements](https://sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
+[Learn more about the logo measurements](https://sharetribe.com/docs/the-new-sharetribe/how-to-add-good-looking-logos-and-images/).
 
 ![biketribe-logo](./logo.png)
 

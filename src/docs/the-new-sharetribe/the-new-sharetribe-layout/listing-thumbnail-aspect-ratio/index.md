@@ -29,7 +29,7 @@ provider uploads in the listing creation form. The maximum listing size
 is 20 MB and 3072 x 3072 pixels. The recommended listing image file type
 is jpg or png. For more information on how to ensure the best quality
 photos on your marketplace, check out
-[this article](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
+[this article](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-good-looking-logos-and-images/).
 
 ## Different ratios
 
