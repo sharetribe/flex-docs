@@ -11,7 +11,7 @@ noindex: true
 ---
 
 If you have been following this tutorial, you should have
-[one user account](www.sharetribe.com/docs/the-new-sharetribe/sign-up-as-a-user),
+[one user account](www.sharetribe.com/docs/the-new-sharetribe/tutorial-sign-up),
 which
 [has one listing in the marketplace](https://www.sharetribe.com/docs/the-new-sharetribe/tutorial-create-listing).
 To create a transaction in the marketplace, the first thing that you

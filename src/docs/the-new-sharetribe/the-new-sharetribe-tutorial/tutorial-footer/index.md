@@ -81,7 +81,7 @@ making a booking.
 Now that you've learned how to build a marketplace with Sharetribe, you
 can start building your own! Once you're happy with it, you can publist
 it in your own domain and launch it to real users.
-[Learn more about the process of launching your marketplace](../going-live/)
+[Learn more about the process of launching your marketplace](www.sharetribe.com/docs/the-new-sharetribe/going-live/)
 
 Is there a change you'd like to make to your marketplace that doesn't
 seem to be possible with the methods you learned in the tutorial? Send
