@@ -1,7 +1,7 @@
 ---
 title: Keyword search
 slug: keyword-search
-updated: 2023-05-19
+updated: 2023-06-26
 category: operator-guides-listings
 ingress: This articles explains how Keyword search works in Sharetribe.
 published: true
@@ -50,6 +50,4 @@ your own. The default text is “Search bikes…”
 
 ## Can I have both keyword and location search available in the same marketplace?
 
-Not by default. You can only use one of them at the same time. If you
-want to be able to use both, you will need to customize your marketplace
-with code.
+Yes. If your marketplace uses the location search, you can choose to display a "keyword" filter on your marketplace search page. You can enable this from [the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
