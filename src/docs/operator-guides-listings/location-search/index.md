@@ -54,5 +54,4 @@ your own. The default text is “Search bikes…”
 
 ## Can I have both keyword and location search available in the same marketplace?
 
-Yes. If you have enabled the location search, you can enable a "keyword" filter
-to the search page.
+Yes. If your marketplace uses the location search, you can choose to display a "keyword" filter on your marketplace search page. You can enable this from [the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
