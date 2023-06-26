@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 6 – Customize listing search
 slug: tutorial-listing-search
-updated: 2023-06-01
+updated: 2023-06-26
 category: the-new-sharetribe-tutorial
 ingress:
   Listing search allows your customers to discover products and services
@@ -12,18 +12,25 @@ noindex: true
 
 In the
 [previous step about listing fields](/the-new-sharetribe/tutorial-listing-fields/),
-we already altered the search experience by adding custom search filter.
+we already altered the search experience by adding a custom search filter.
 However, there are also some more general search configuration options,
-which can be adjusted from "Listing search". Let's go there
+which can be adjusted from "Listing search". Let's go there.
 
 ### Search type
 
 Saunatime is a location-based marketplace, so we want the customers to
-start their journey by searchin by location.
+start their journey by searching by location.
 
 **Keep "Location search"**
 
 On the listing search page, leave the search type as “Location search”.
+
+**Keyword filter**
+
+With location search, you can still allow customers to filter listings
+and search for a specific term. Let's do that.
+
+**Check "Display keyword filter"**
 
 ### Date range filter
 
@@ -31,7 +38,7 @@ Date range filter allows the customer to filter the search based on
 which saunas are available at a specific time. That sounds handy for us,
 so let's keep it.
 
-** Check “Display a date range filter.”**
+**Check “Display a date range filter.”**
 
 #### Availability mode
 
@@ -53,7 +60,7 @@ also reflect that.
 
 ### Price filter
 
-Some people might want to filter out saunas that don't fid their budget.
+Some people might want to filter out saunas that don't fit their budget.
 
 **Check “Display a price filter”**
 
