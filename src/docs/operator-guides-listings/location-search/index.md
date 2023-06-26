@@ -1,7 +1,7 @@
 ---
 title: Location search
 slug: location-search
-updated: 2023-05-19
+updated: 2023-06-26
 category: operator-guides-listings
 ingress: This articles explains how Location search works in Sharetribe.
 published: true
