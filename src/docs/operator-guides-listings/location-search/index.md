@@ -54,5 +54,5 @@ your own. The default text is “Search bikes…”
 
 ## Can I have both keyword and location search available in the same marketplace?
 
-Not by default. You can only use one of them at the same time. If you
-want to be able to use both, you will need to self host the platform.
+Yes. If you have enabled the location search, you can enable a "keyword" filter
+to the search page.
