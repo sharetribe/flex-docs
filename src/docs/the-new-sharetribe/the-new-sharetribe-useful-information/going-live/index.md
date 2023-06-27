@@ -152,8 +152,8 @@ If you are already using the domain you plan to use for your marketplace on anot
 
 ### Configure your subdomain DNS record: For **www** or any other subdomain.
 
-Your subdomain records can make your marketplace accessible at any
-subdomain, the default option is "www", but there are other options
+Your subdomain records can be set to make your marketplace accessible at
+any subdomain, the default option is "www", but there are other options
 possible like "listings", or "marketplace", or "shop".
 `www.myexampledomain.com` or `www.sharetribe.com` or
 `marketplace-academy.sharetribe.com` are examples of subdomains. If you
@@ -199,20 +199,21 @@ subdomain other than "www".
 
 1. Look over any existing A records
 2. If an A record exists for your root domain, you need to modify the
-   address and point it to Sharetribe's IP address: `34.248.140.98`
-   instead.
+   address and point it to Sharetribe's IP address instead:
+   `34.248.140.98`
    - In many domain providers your root domain is set via the `@` sign,
      if you have any A type record with a "Host" or "Source" or "Name"
      set to `@`, edit the record and set "Points To" or "Value" or
-     "Target" to `34.248.140.98`.
-   - Some few domain providers, use the entire domain instead of just
-     the `@` sign. In those providers, you should add your entire
-     domain. For example `myexampledomain.com`.
+     "Target" to `34.248.140.98`
+   - Some domain providers, use the entire domain instead of just the
+     `@` sign. In those providers, you should look for and modifyt an A
+     type record with your entire domain (and without any subdomain
+     attached to it). For example `myexampledomain.com`.
 3. If an A record doesn't exist, click "Add record" or "Create record".
    - From the record type list, select A.
    - For most domain providers in order to create a record, you need to
-     fill in "Host" or "Source" to `@`. "Points To" or "Value" or
-     "Target" to `34.248.140.98`.
+     set the "Host" or "Source" or "Name" to `@`.
+     - Set the "Points To" or "Value" or "Target" to `34.248.140.98`
    - If you have to fill a field named "TTL", set it to "3600".
    - Note that in some domain providers, instead of setting the record
      via the `@` sign, you need to write the entire domain.
@@ -221,7 +222,7 @@ subdomain other than "www".
    changes.
 
 <info>
-If you have any questions setting your DNS records, we recommend contacting your domain provider's support team. Most domain provider's teams are super familiar with helping with DNS record changes (as it is quite a common request). The Sharetribe team is of course happy to help always, but have no access to your DNS configurations. 
+If you have any questions setting your DNS records, we recommend contacting your domain provider's support team and sharing this instructions. Most domain provider's teams are super familiar with helping with DNS record changes for third party tools (as it is quite a common request). The Sharetribe team is of course happy to help always, but have no access to your DNS configurations. 
 </info>
 
 # 4. Sharetribe confirms your Live environment
