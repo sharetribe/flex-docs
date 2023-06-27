@@ -17,6 +17,12 @@ const query = graphql`
             in: [
               "the-new-sharetribe-tutorial"
               "the-new-sharetribe-useful-information"
+              "the-new-sharetribe-static-content"
+              "the-new-sharetribe-branding"
+              "the-new-sharetribe-layout"
+              "the-new-sharetribe-listings"
+              "the-new-sharetribe-transactions"
+              "the-new-sharetribe-concepts"
             ]
           }
         }
