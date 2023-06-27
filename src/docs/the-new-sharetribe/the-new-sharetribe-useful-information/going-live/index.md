@@ -147,7 +147,7 @@ redirect. The Sharetribe team can set one redirect for you. This would
 normally be from the root domain to your www subdomain.
 
 <info>
-If you are already using on another site the domain that you are planning to use for your marketplace, please contact support before making any DNS record changes. This will ensure a smooth transition and avoid unnecessary down time in your domain property. 
+If you are already using the domain you plan to use for your marketplace on another site, please contact support before making any DNS record changes. This will ensure a smooth transition and avoid unnecessary down time in your domain property. 
 </info>
 
 ### Configure your subdomain DNS record: For **www** or any other subdomain.
