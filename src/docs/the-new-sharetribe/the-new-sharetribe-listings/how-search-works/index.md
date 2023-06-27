@@ -11,8 +11,8 @@ ingress:
 published: true
 ---
 
-The New Sharetribe offers you several tools to help you build the right search
-experience for your users.
+The New Sharetribe offers you several tools to help you build the right
+search experience for your users.
 
 Note that both anonymous users (users without a login) and logged in
 users can search and view listings created by providers on your
@@ -45,13 +45,13 @@ to fill out.
 
 ## Can I have both Keyword and Location search enabled?
 
-At the moment it is unfortunately **not possible** to have both search
-functions working at the same time by default. However, this is
-achievable if you host your own front end application.
+Yes. If your marketplace uses the location search, you can choose to
+display a "keyword" filter on your marketplace search page. You can
+enable this from the Listing Search settings page in Console.
 
 ## Can I enable user or transaction search (instead of listing's search)?
 
 No. At the moment it is only possible to search listings. But you can
-build your marketplace around the User flows or User experieence where
+build your marketplace around the User flows or User experience where
 users create listings to display their profiles and manage their
 availability.

@@ -11,9 +11,10 @@ published: true
 
 ## What is microcopy
 
-Your The New Sharetribe marketplace has both content and dynamic pages. Content pages
-only feature content created by you, the marketplace operator. Landing
-pages, “About” pages and FAQ pages are examples of content pages.
+Your The New Sharetribe marketplace has both content and dynamic pages.
+Content pages only feature content created by you, the marketplace
+operator. Landing pages, “About” pages and FAQ pages are examples of
+content pages.
 
 Dynamic pages, meanwhile, feature content created by your users. The
 search page displaying listings is a dynamic page. Often, dynamic pages
@@ -32,7 +33,7 @@ _Examples of microcopy from the Biketribe listing page highlighted in
 blue. Note that listing fields and search filters ("Sauna type",
 "Amenities" and "Sauna rules" for example) are not editable with the
 microcopy editor. An upcoming feature will introduce a dedicated feature
-for editing these fields and filters in Console.
+for editing these fields and filters in Console._
 
 With the Microcopy editor, you can modify these texts in your TNS
 Console. You can also use the Microcopy editor to translate these texts
@@ -58,17 +59,17 @@ All these decisions affect the choices you make in your microcopy.
 
 ## How to test the Microcopy editor?
 
-You can try out the Microcopy editor in your TNS test marketplace.
-After creating a TNS account, log into Console. Ensure you are in the
-Test environment.
+You can try out the Microcopy editor in your TNS test marketplace. After
+creating a TNS account, log into Console. Ensure you are in the Test
+environment.
 
 Navigate to the Build section from your top bar, then the Content
 section. The Microcopy editor is here.
 
 ![Microcopy editor](./microcopy_editor.png)
 
-_When you first start building your marketplace, you'll find the microcopy in red text in the microcopy editor._
-
+_When you first start building your marketplace, you'll find the
+microcopy in red text in the microcopy editor._
 
 Here is a brief description of the file you are looking at:
 
@@ -97,7 +98,8 @@ Here is a brief description of the file you are looking at:
   techniques
   [here](/concepts/microcopy/#format-for-editing-microcopy-in-console).
 - You can only modify values in the editor. You cannot modify keys. Keys
-  must be modified by modifying the code of your marketplace application.
+  must be modified by modifying the code of your marketplace
+  application.
 
 ![Example of a microcopy key-value pair](./microcopy_key_value.png)
 
@@ -126,12 +128,6 @@ editor.
     <source src='./changeTexts.webm' type='video/webm'>
     <source src='./changeTexts.ogv' type='video/ogg'>
 </video>
-
-You can also inspect your marketplace application and learn the name and
-location of its different keys. This is a more advanced technique
-requiring installation of developer tooling in your browser. You can
-learn more about it in
-[our developer documentation](/tutorial/working-with-microcopy/#change-the-microcopy-for-topbar-component).
 
 As you work, remember to save your changes frequently. Everytime you
 save, any changed copy-texts will be uploaded to your marketplace.
@@ -172,7 +168,6 @@ your content pages, like your Landing page or Terms of use,
 ### Digging deeper into the Microcopy editor
 
 In this article, we learned about the Microcopy editor and the microcopy
-it changes. You can use the editor to change any microcopy already in the
-Template, or to change any additional microcopy added during building
-your site.
-
+it changes. You can use the editor to change any microcopy already in
+the Template, or to change any additional microcopy added during
+building your site.
