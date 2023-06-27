@@ -316,6 +316,17 @@ a extended data attribute in the
 
 </info>
 
+<info>
+
+In the current version of the template, search filters show up
+automatically for **enum** and **multi-enum** schema types. For schema
+types **long** and **boolean**, you will need to create custom filtering
+options.
+
+Schema type **text** is included in keyword search.
+
+</info>
+
 ### Listing type configurations
 
 The

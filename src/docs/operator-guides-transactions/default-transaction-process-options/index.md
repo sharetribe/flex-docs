@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-# Default transaction processes from the point of view of a marketplace user
-
 There are two default processes available with Sharetribe Flex: one for
 hourly or daily bookings with an availability calendar, and another for
 buying and selling products. All these processes are explained below in
