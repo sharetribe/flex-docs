@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-# Default Availability Management Options
-
 By selecting a listing type associated with the calendar booking
 transaction process, sellers are empowered to manage the availability of
 their services or items. This feature allows sellers to display their

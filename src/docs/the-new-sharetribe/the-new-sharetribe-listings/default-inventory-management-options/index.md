@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-# Default Inventory Management Options
-
 Sharetribe allows sellers to manage their inventory effectively by
 enabling specific listing types. When a listing is categorized under the
 buying and selling products type, it automatically enables the inventory
@@ -117,4 +115,3 @@ stock efficiently.
 ![Change environments](./inventory-04-buyer-multistock.jpg)
 
 </extrainfo>
-
