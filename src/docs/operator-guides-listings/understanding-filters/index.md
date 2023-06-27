@@ -9,10 +9,10 @@ published: true
 
 Filters can be used to give a better discovery experience to your users.
 As your listing offering grows, it will become harder for your users to
-find exactly what they’re looking for on the marketplace just by [using
-the search](LINKS TO THE SEARCH ARTICLE). The right use of filters can
-significantly increase the browsing experience and your marketplace
-usage and conversion.
+find exactly what they’re looking for on the marketplace just by
+[using the search](/operator-guides/how-search-works/). The right use of
+filters can significantly increase the browsing experience and your
+marketplace usage and conversion.
 
 You can control your marketplace filters from several settings in
 Console. You can control both: how filters are displayed in the search
