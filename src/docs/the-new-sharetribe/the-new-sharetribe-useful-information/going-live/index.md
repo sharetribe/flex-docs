@@ -31,7 +31,8 @@ Go Live by subscribing to a paid plan. You can review different plans
 and features available on the
 [marketing site.](https://www.sharetribe.com/new-sharetribe/)
 
-To subscribe, go to your Console. Press your environment
+To subscribe, go to your
+[Console.](https://flex-console.sharetribe.com/) Press your environment
 dropdown menu in the top left and select “Go Live” Fill in your billing
 information and submit.
 
@@ -58,7 +59,7 @@ hosting provider, such as GoDaddy, Google Domains, or Hover.
 
 During the setup process, please share with us your custom domain name.
 You should also start
-[configuring your DNS records with your hosting provider](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/#3-configure-your-custom-domain)
+[configuring your DNS records with your hosting provider.](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/#3-configure-your-custom-domain)
 so that when we receive the information everything is ready for us to
 set up your live environment.
 
@@ -137,76 +138,92 @@ navigation.
 
 # 3. Configure your custom domain
 
-To enable your custom domain, you must configure www and root domain
-records in your DNS. Alternatively, you can host your marketplace at a
-subdomain.
+To connect your custom domain to your marketplace, you must configure
+DNS records in your domain provider/hosting dashboard. You can host your
+marketplace in any domain or subdomain as long as you own the domain.
+Sharetribe strongly recommends hosting your marketplace in a www (or
+other) subdomain and having your root (main) domain, if needed, as a
+redirect. The Sharetribe team can set one redirect for you. This would
+normally be from the root domain to your www subdomain.
 
-### Configure your www records
+<info>
+If you are already using the domain you plan to use for your marketplace on another site, please contact support before making any DNS record changes. This will ensure a smooth transition and avoid unnecessary down time in your domain property. 
+</info>
 
-Your www records make your marketplace accessible at
-`www.myexampledomain.com`. This will be your main marketplace domain.
+### Configure your subdomain DNS record: For **www** or any other subdomain.
+
+Your subdomain records can be set to make your marketplace accessible at
+any subdomain, the default option is "www", but there are other options
+possible like "listings", or "marketplace", or "shop".
+`www.myexampledomain.com` or `www.sharetribe.com` or
+`marketplace-academy.sharetribe.com` are examples of subdomains. If you
+are planning to also use your root domain for your marketplace, `www`
+should be your main subdomain.
 
 1. Look over the existing CNAME records.
-2. If a CNAME record exists where "Host" or "Source" is set to "www",
-   click edit and set "Points To" or "Value" or "Target" to
-   `proxy.mysharetribe.com`.
+2. If a CNAME record exists where "Host" or "Source" or "Name" is set to
+   "www" or your desired subdomain, click edit and set "Points To" or
+   "Value" or "Target" to `proxy.mysharetribe.com`.
    - Note that depending on the DNS provider you may need to add a
      period at the end: `proxy.mysharetribe.com.`
-   - Note that the target address for this record, proxy.mysharetribe.com,
-     should be copied as-is. You don't need to change it to your own
-     marketplace's address.
+   - Note that the target address for this record,
+     proxy.mysharetribe.com, should be copied as-is. You don't need to
+     change it to your own marketplace's address.
 3. If a CNAME record doesn't exist, click "Add record" or "Create
-   record". From the record type list, select CNAME. Fill in the
-   following fields: "Host" or "Source" to "www". "Points To" or "Value"
-   or "Target" to `proxy.mysharetribe.com`. If you have to fill a field
-   named "TTL", set it to "3600". Note that the target address for this
-   record, `proxy.mysharetribe.com`, should be copied as-is.
+   record".
+   - From the record type list, select CNAME.
+   - Fill in the "Host" or "Source" to any subdomain you want to use,
+     like "www" or "listings" or "marketplace" or "your-own-subdomain".
+   - Set or fill the "Points To" or "Value" or "Target" field to
+     `proxy.mysharetribe.com`.
+   - If you have to fill a field named "TTL", set it to "3600".
+   - Note that some domain providers use the entire subdomain address
+     for the setup, instead of only the subdomain part, so instead of
+     adding just `www` as the "Host" or "Source", you would need to add
+     `www.myexampledomain.com`
+   - Note that the target address for this record,
+     `proxy.mysharetribe.com`, should be copied exactly as-is.
 4. Save changes.
 5. Check that the record has been updated or created according to your
    changes.
 
-### Configure your root domain records
+### Configure your root domain record
 
-Your root domain is your domain without “www”. `myexampledomain.com` is
-an example of a root domain. The root domain will redirect to your main
-domain.
+Your root domain is your base domain without “www”.
+`myexampledomain.com` and `sharetribe.com` are examples of root domains.
+The root domain should redirect to your main marketplace domain if you
+are using a `www` subdomain. You normally don't need to set the root
+domain DNS record if you are not planning to use "www" as your main
+(sub)domain, sou can ignore this instructions if you are going to use a
+subdomain other than "www".
 
 1. Look over any existing A records
-2. If an A record exists where "Host" or "Source" is set to `@`, click
-   edit and set "Points To" or "Value" or "Target" to `34.248.140.98`.
+2. If an A record exists for your root domain, you need to modify the
+   address and point it to Sharetribe's IP address instead:
+   `34.248.140.98`
+   - In many domain providers your root domain is set via the `@` sign,
+     if you have any A type record with a "Host" or "Source" or "Name"
+     set to `@`, edit the record and set "Points To" or "Value" or
+     "Target" to `34.248.140.98`
+   - Some domain providers, use the entire domain instead of just the
+     `@` sign. In those providers, you should look for and modifyt an A
+     type record with your entire domain (and without any subdomain
+     attached to it). For example `myexampledomain.com`.
 3. If an A record doesn't exist, click "Add record" or "Create record".
-   From the record type list, select A. Fill in "Host" or "Source" to
-   `@`. "Points To" or "Value" or "Target" to `34.248.140.98`.If you
-   have to fill a field named "TTL", set it to "3600".
-   - Note that depending on the DNS provider, this record may need to be
-     left blank.
+   - From the record type list, select A.
+   - For most domain providers in order to create a record, you need to
+     set the "Host" or "Source" or "Name" to `@`.
+     - Set the "Points To" or "Value" or "Target" to `34.248.140.98`
+   - If you have to fill a field named "TTL", set it to "3600".
+   - Note that in some domain providers, instead of setting the record
+     via the `@` sign, you need to write the entire domain.
 4. Save changes.
 5. Check that the record has been updated or created according to your
    changes.
 
-### Host your marketplace at a subdomain
-
-You may want to host your marketplace at subdomain, where your
-marketplace is accessible at an address such as
-`mymarketplace.myexampledomain.com.` This will be your main marketplace
-domain.
-
-1. Look over the existing CNAME records.
-2. If a CNAME record, where "Host" or "Source" is set to your desired
-   subdomain, exists, click edit and set "Points To" or "Value" or
-   "Target" to `proxy.mysharetribe.com`. Note that the target address for
-   this record, `proxy.mysharetribe.com`, should be copied as-is. You
-   don't need to change it to your own marketplace's address.
-3. If such a CNAME record doesn't exist, click "Add record" or "Create
-   record". From the record type list, select CNAME. Fill in "Host" or
-   "Source" to the desired subdomain (such as "mymarketplace"). "Points
-   To" or "Value" or "Target" to `proxy.mysharetribe.com`. If you have to
-   fill a field named "TTL", set it to "3600". Note that the target
-   address for this record, `proxy.mysharetribe.com`, should be copied
-   as-is.
-4. Save changes.
-5. Check that the record has been updated or created according to your
-   changes.
+<info>
+If you have any questions setting your DNS records, we recommend contacting your domain provider's support team and sharing this instructions. Most domain provider's teams are super familiar with helping with DNS record changes for third party tools (as it is quite a common request). The Sharetribe team is of course happy to help always, but have no access to your DNS configurations. 
+</info>
 
 # 4. Sharetribe confirms your Live environment
 
@@ -270,4 +287,4 @@ up correctly, you should see a success message in Console.
 Whenever you change your DNS records, you can revalidate to check that
 everything is set up correctly.
 
-Voila! You’re Live!
+Voila! You’re Live and fully functional!
