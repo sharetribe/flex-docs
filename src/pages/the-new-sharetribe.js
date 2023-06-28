@@ -23,6 +23,7 @@ const query = graphql`
               "the-new-sharetribe-listings"
               "the-new-sharetribe-transactions"
               "the-new-sharetribe-concepts"
+              "the-new-sharetribe-analytics"
             ]
           }
         }

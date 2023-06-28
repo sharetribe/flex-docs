@@ -345,6 +345,10 @@ exports.siteStructure = [
       {
         id: 'the-new-sharetribe-listings',
         sortingArray: [],
+      },
+      {
+        id: 'the-new-sharetribe-analytics',
+        sortingArray: [],
       }
       
     ],
