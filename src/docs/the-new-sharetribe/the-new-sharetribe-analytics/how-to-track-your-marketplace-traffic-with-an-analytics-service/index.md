@@ -1,7 +1,7 @@
 ---
 title:
   How to track your marketplace traffic with an analytics service
-how-to-track-your-marketplace-traffic-with-an-analytics-service
+slug: how-to-track-your-marketplace-traffic-with-an-analytics-service
 updated: 2023-06-29
 category: the-new-sharetribe-analytics
 ingress:
