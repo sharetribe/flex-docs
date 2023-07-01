@@ -18,7 +18,7 @@ in Console.
 ## What are hosted assets
 
 You can modify your marketplace's visual assets using
-[Console](https://flex-console.sharetribe.com/design/branding). The
+[Console](https://flex-console.sharetribe.com/a/design/branding). The
 Console allows non-technical users to manage and edit visual assets like
 logos and favicons without touching code. Once you have uploaded the
 assets through the Console, the template app uses an API call to
@@ -48,7 +48,7 @@ like color changes when the cursor hovers over a button.
 Let's use a bright red for our Sauna themed marketplace. We'll use the
 hex color `#c0392b`. You can change the color of your marketplace by
 navigating to **Build** > **Content** > **Branding** in
-[Console](https://flex-console.sharetribe.com/design/branding) and
+[Console](https://flex-console.sharetribe.com/a/design/branding) and
 clicking on the color picker. You can cycle the different colour input
 options between RGB, HSL and HEX by clicking on the color picker.
 

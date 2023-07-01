@@ -106,16 +106,16 @@ marketplace.
 - Apply your branding by changing the default images and marketplace
   colours. Edit in [Console](https://flex-console.sharetribe.com/) or
   learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 - Change the default background image and social media images. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 - Change the logo. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 - Generate a new favicon. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 
 ### Content and microcopy
 
@@ -124,16 +124,16 @@ following steps.
 
 - Change the microcopy in your marketplace. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
 - Change your marketplace landing page. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/).
 - Update your Terms of Service and Privacy Policy. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in
-  [the documentation](https://www.sharetribe.com/docs/operator-guides/free-templates).
+  [the documentation](https://www.sharetribe.com/docs/operator-guides/free-templates/).
 - Update the footer. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-footer-works).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-footer-works/).
 - Update your built-in emails. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/concepts/email-notifications/#built-in-email-notifications).
@@ -146,16 +146,16 @@ your marketplace.
 
 - Change your listing fields. Configure in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/listing-fields).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/listing-fields/).
 - Change your listing layout. Configure in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/listing-page-image-layouts).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/listing-page-image-layouts/).
 - Change your search filters. Configure in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-search-works).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-search-works/).
 - Change your search page layout. Configure in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/search-page-layout-options).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/search-page-layout-options/).
 
 ### Transactions
 
@@ -164,10 +164,10 @@ different, then make these changes.
 
 - Update your listing types. Configure in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/what-are-listing-types).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/what-are-listing-types/).
 - Choose your transaction process. Configure in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/).
 
 ## Go Live and customize further
 

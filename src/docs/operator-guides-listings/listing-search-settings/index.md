@@ -31,7 +31,7 @@ articles:
 In the Listing search settings you can also enable filters for default
 fields. You can choose to Display a date range filter and Display a
 Price filter.
-[If you want to understand adding filters for custom fields read here](https://www.sharetribe.com/docs/operator-guides/understanding-filters).
+[If you want to understand adding filters for custom fields read here](https://www.sharetribe.com/docs/operator-guides/understanding-filters/).
 
 ### Date range filter
 

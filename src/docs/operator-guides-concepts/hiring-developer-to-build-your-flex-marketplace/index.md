@@ -115,6 +115,6 @@ your marketplace will look and work at the beginning, but you should try
 to prepare clear guidelines for your most important feature needs. This
 generative process is made easier by having the starting Template to use
 as a jumping off point for your custom marketplace. In
-[our next article,](https://www.sharetribe.com/docs/operator-guides/how-to-prepare-requirements-for-developer)
+[our next article](https://www.sharetribe.com/docs/operator-guides/how-to-prepare-requirements-for-developer/),
 we share more tips on how to use the Template to prepare requirements
 for meeting with developers.
