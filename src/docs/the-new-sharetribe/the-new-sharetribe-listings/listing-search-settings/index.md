@@ -1,7 +1,7 @@
 ---
 title: Listing search settings
 slug: listing-search-settings
-updated: 2023-05-19
+updated: 2023-07-01
 category: the-new-sharetribe-listings
 ingress:
   Using search is a great way to allow users to find exactly what they
@@ -11,14 +11,14 @@ published: true
 ---
 
 The search feature is enabled by default in all Sharetribe marketplaces.
-However, you can define the type of search to support depending on your
+You can define the type of search to support depending on your
 user’s needs. You can also add filtering options to your marketplace,
 this include general filter options and specific fields filters.
 
 ## Search type
 
 Sharetribe has two different search types or search functions, keyword
-and location search. You can enable either one from the
+and location search. You can enable one or combine them from the
 Listing Search page of Console.
 You can read more about these features and how they work in these
 articles:
