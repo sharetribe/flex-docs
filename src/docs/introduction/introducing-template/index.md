@@ -28,7 +28,7 @@ You can change Biketribe default settings in Console. Change core user
 experiences like search, listing creation, and transactions in Console's
 Build section under the "Content" tab. For a full list of the no-code
 capabilities and how to use them to change Biketribe, please consult our
-[Biketribe configuration checklist.](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist)
+[Biketribe configuration checklist](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist/).
 
 At the very least, after configuring your marketplace, you will need to
 install the Template codebase on your own servers. More likely, you will
@@ -95,7 +95,7 @@ code.
 ![create-listing-per-day-availability](./create-listing-per-day-availability.png)
 
 Read more about
-[availability management in Flex](/docs/references/availability/).
+[availability management in Flex](/references/availability/).
 
 ### Inventory management
 
@@ -112,7 +112,7 @@ automatically go to zero. Listings with zero stock are filtered out by
 default, and do not appear in search.
 
 Read more about
-[inventory management in Flex](/concepts/inventory-management).
+[inventory management in Flex](/concepts/inventory-management/).
 
 ## Search
 

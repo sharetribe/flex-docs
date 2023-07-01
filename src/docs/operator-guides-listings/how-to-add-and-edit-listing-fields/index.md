@@ -63,7 +63,7 @@ search settings for the field.
   You can also define the Filter visibility settings, which determines
   whether the Filter will be a primary or a secondary filter. Learn more
   about filters in
-  [this article about understanding filters](https://www.sharetribe.com/docs/understanding-filters)
+  [this article about understanding filters](https://www.sharetribe.com/docs/operator-guides/understanding-filters/).
 
 ## Field options for Select fields
 
