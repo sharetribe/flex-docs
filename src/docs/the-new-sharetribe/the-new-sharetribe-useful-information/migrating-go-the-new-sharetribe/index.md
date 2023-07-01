@@ -146,7 +146,7 @@ transactions. Your Go marketplace’s new URL will be marketplace-name.sharetrib
 Legacy Go marketplaces are hosted by Sharetribe for 6 months and then shut down. 
 ## Start your test migration
 
-Ready to migrate your marketplace to The New Sharetribe? You can use the email template below to request a test migration and tell us how you would like your Go data to be transformed. You should add your info or preferences anywhere delineated with “<text>” that is relevant for you. If you’re not sure about the right choice for you, simply get in touch with your marketplace information and we will guide you through it. 
+Ready to migrate your marketplace to The New Sharetribe? You can use the email template below to request a test migration and tell us how you would like your Go data to be transformed. Replace **bold** variables in the template email below that apply to your marketplace. If you’re not sure about the right choice for you, simply get in touch with your marketplace information and we will guide you through it. 
 
 
 To: hello@sharetribe.com
@@ -158,23 +158,23 @@ I would like to migrate my Go marketplace data to my Test environment in The New
 
 My marketplace information is:
 
-Here is my Go marketplace URL: <mymarketplace.com> 
-My New Sharetribe organization is: <organization-name> 
+Here is my Go marketplace URL: **mymarketplace.com**
+My New Sharetribe organization is: **organization-name**
 
 My choices for the migration are: 
 
+Category: My Go marketplace uses subcategories. Please use the **subcategories or categories** in the migration. 
 
-Category: My Go marketplace uses subcategories. Please use the <subcategories> (or <categories>) level of information in the migration. 
-
-Listing type: My Go marketplace uses multiple order types. Please use the <the name of the order type> in the migration
+Listing type: My Go marketplace uses multiple order types. Please use the **order type** in the migration
 
 
 Availability: My marketplace uses availability calendars. Please:
-Please set the <following availability> for listings with an availability calendar. _Daily or nightly calendars define availability in terms of days, so an example instruction would be “listings have availability every weekday.” Hourly availability calendars use hours and days. “Listings have availability every weekday between 09:00 and 18:00” would be a valid request._
-Please use <timezone> as the default timezone
-Please use <number> as the default number of seats 
+Please set the **following availability** for listings with an availability calendar. _Daily or nightly calendars define availability in terms of days, so an example instruction would be “listings have availability every weekday.” Hourly availability calendars use hours and days. “Listings have availability every weekday between 09:00 and 18:00” would be a valid request._
+Please use **timezone** as the default timezone
+Please use **number** as the default number of seats 
+
 Product purchases: My marketplace includes product sales. Please: 
-Please use <number> as the default available stock. 
+Please use **number** as the default available stock. 
 
 Cheers!
 
