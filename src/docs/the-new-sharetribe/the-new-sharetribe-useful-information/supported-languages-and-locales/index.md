@@ -10,13 +10,13 @@ published: true
 
 The New Sharetribe currently supports English as the marketplace language. Within the English language, there are several versions that the new Sharetribe supports, including:
 
-English - Australia
-English - Canada
-English - Ireland
-English - New Zealand
-English - Singapore
-English - United Kingdom
-English - United States
+- English - Australia
+- English - Canada
+- English - Ireland
+- English - New Zealand
+- English - Singapore
+- English - United Kingdom
+- English - United States
 
 Furthermore, you have the flexibility to customize the first day of the week to either Monday or Sunday. This change will be reflected in the calendar used for booking and availability management. You can learn more about the availability management using the calendar [in this article](https://www.sharetribe.com/docs/the-new-sharetribe/default-availability-management-options).
 
