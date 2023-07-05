@@ -1,7 +1,7 @@
 ---
 title: Tutorial introduction
 slug: tutorial-introduction
-updated: 2023-05-31
+updated: 2023-07-05
 category: the-new-sharetribe-tutorial
 ingress: Learn how to build your marketplace with The New Sharetribe.
 published: true
@@ -41,14 +41,12 @@ live, in your own domain, and start inviting real users to it.
 
 ### How does building a marketplace without coding work?
 
-To start building your marketplace without coding, you need to navigate
-to the "Build" section in Console, and then go to subsection "Content".
-This is where all the no-code customization currently takes place.
+Building your marketplace without coding happens through the menus in the "Build" section of the sidebar navigation in Console. This is where all the no-code customization takes place.
 
-There are also other subsections in "Build", like "Transaction
-processes", "Applications", and "Social logins & SSO". These are needed
+Under "Advanced" you'll find things like "Transaction
+process visualizer", "Applications", "Social logins & SSO", etc. These are needed
 only when doing custom development with code. For now, you can ignore
-them, and focus on things under "Content".
+them, and focus on things in the other menus.
 
 ### The steps in the process
 

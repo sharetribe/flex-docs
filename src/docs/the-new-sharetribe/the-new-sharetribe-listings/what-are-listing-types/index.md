@@ -1,7 +1,7 @@
 ---
 title: What are listing types
 slug: what-are-listing-types
-updated: 2023-05-19
+updated: 2023-07-05
 category: the-new-sharetribe-listings
 ingress:
   Determining the right Listing type to use is fundamental for achieving
@@ -91,7 +91,7 @@ Once a listing has been created, its listing type can no longer be
 changed. If you want to make changes to a listing type or delete a
 listing type, it's recommended to close any open listings that were
 created with the old version of the listing type. You can close listings
-from the Listings tab in the Manage section.
+from the "Listings" page in the "Manage" section of the sidebar navigation.
 
 ## Can I have multiple Listing types?
 

@@ -1,7 +1,7 @@
 ---
 title: Listing thumbnail aspect ratio
 slug: listing-thumbnail-aspect-ratio
-updated: 2023-04-20
+updated: 2023-07-05
 category: the-new-sharetribe-layout
 ingress:
   Getting the aspect ratio and dimensions of your listing images right
@@ -11,8 +11,7 @@ published: true
 
 The listing thumbnail aspect ratio setting determines how the images in
 your marketplace's search page will be displayed. You can define this
-ratio from your Console. Within your test environment go to Build →
-Content → Layout.
+ratio from your Console. Within your test environment go to Design → Layout.
 
 These images give the first impression of your offering to your
 prospective buyers. You should select the aspect ratio that best

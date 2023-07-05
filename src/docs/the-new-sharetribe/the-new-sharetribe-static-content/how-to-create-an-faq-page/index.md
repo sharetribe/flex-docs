@@ -1,7 +1,7 @@
 ---
 title: How to create an FAQ page
 slug: how-to-create-an-faq-page
-updated: 2023-02-14
+updated: 2023-07-05
 category: the-new-sharetribe-static-content
 ingress: Learn how to use Pages to build an FAQ content page
 published: true
@@ -25,10 +25,8 @@ link below.
 ## Getting started
 
 Find the Pages feature in
-Console. Navigate to your test
-(or development) environment, pick the “Build” section from your top
-bar, select “Content” from the sub-menu, then select “Pages” from the
-left side menu. You should now see your default content pages (the About
+Console. Navigate to your test environment, click the “Content” menu in the sidebar
+then “Pages”. You should now see your default content pages (the About
 page, the Landing page, the Terms of use page, and the Policy page)
 ready for editing.
 
@@ -393,7 +391,7 @@ Reference images:
 
 Now that we’ve created the page and made sure it works as supposed, all
 that’s left is to move it to the Live environment. This can be done by
-clicking the blue button “Copy to live…” on the left side bar.
+clicking the blue button “Copy to Live…” on the top left sidebar.
 
 When you click on the button, you’ll get a pop-up asking you to confirm
 that you wish to move all the changes to Live. You don’t need to move

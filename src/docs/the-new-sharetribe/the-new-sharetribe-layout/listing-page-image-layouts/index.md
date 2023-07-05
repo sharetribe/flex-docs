@@ -1,7 +1,7 @@
 ---
 title: Listing page image layouts
 slug: listing-page-image-layouts
-updated: 2023-05-18
+updated: 2023-07-05
 category: the-new-sharetribe-layout
 ingress:
   There are two options for the listing page layout. This article
@@ -12,7 +12,7 @@ published: true
 When posting a listing, your users can add images to the make their
 posts, offers or request, more appealing. With this setting you can
 determine the best layout for all your listings. You can choose your
-layout in the Build → Content → Layout page of your Console account.
+layout in the "Design → Layout" page of your Console account.
 
 A primary image is always displayed on the listing page or as a
 [thumbnail in the search page](https://www.sharetribe.com/docs/the-new-sharetribe/listing-thumbnail-aspect-ratio/),

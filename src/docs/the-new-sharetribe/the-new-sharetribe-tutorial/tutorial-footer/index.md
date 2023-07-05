@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 9 – Edit the footer
 slug: tutorial-footer
-updated: 2023-06-01
+updated: 2023-07-05-
 category: the-new-sharetribe-tutorial
 ingress:
   Footer links all the elements in your marketplace together. In this
@@ -16,7 +16,7 @@ layout). It typically contains lots of links that help your users
 navigate your marketplace, as well as links to additional destinations,
 like your social media profiles.
 
-Let's start editing by navigating to "Footer".
+Let's start editing by navigating to "Content → Footer".
 
 The footer has a special left column that contains predetermined
 content: your logo, slogan, social media links, and copyright statement.
@@ -73,7 +73,7 @@ Save changes.
 ### Next: start testing your marketplace – and build your own!
 
 We're done with the setup! It's time to start using your sauna
-marketplace. Click "View your marketplace" on the left and start
+marketplace. Click "View your marketplace" on the top left in the sidebar and start
 browsing your site. You can try signing up as a new user, creating some
 listings, and then signing up as another user, doing a search, and
 making a booking.

@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 3 – Modify the landing page
 slug: tutorial-landing-page
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-tutorial
 ingress:
   The landing page is likely to be the first impression for many of your
@@ -18,7 +18,7 @@ With Pages, you can edit your content pages like "About us", "How it
 works", "Terms of use", and so on, or even create a simple blog. In this
 tutorial, we will only work on your Landing page.
 
-All your content pages can be modified under **Build → Content →
+All your content pages can be modified under **Content →
 Pages**. Once in Pages, Go to your landing page card and click on
 **“Edit content.”** ![Edit content image](./editcontent.png)
 

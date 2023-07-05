@@ -1,7 +1,7 @@
 ---
 title: Listing fields
 slug: listing-fields
-updated: 2023-05-19
+updated: 2023-07-05
 category: the-new-sharetribe-listings
 ingress:
   This article will help you understand what are listing fields and how
@@ -111,7 +111,7 @@ that you are adding and can be used to find listings easier. Depending
 on the type of filter that you are adding, you will have these two
 search settings options:
 
-#### Include this field in keyword search:
+#### Include this field in keyword search
 
 This option is available only to Free text type of fields. If enabled,
 the contents of this field will be searched against when users use
@@ -119,7 +119,7 @@ keyword search. Keyword search returns results based on how well they
 match the listing title, description, and free text field (in this order
 of priority).
 
-#### Add a filter to the search page:
+#### Add a filter to the search page
 
 This option is available only for Select one or Select multiple field
 types. If enabled, a filter is added to the search page that can be used

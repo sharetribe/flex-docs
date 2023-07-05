@@ -1,7 +1,7 @@
 ---
 title: Why is commission important?
 slug: why-is-commission-important
-updated: 2023-05-19
+updated: 2023-07-05
 category: the-new-sharetribe-transactions
 ingress: Why setting a commission is important in your marketplace.
 published: true
@@ -30,7 +30,7 @@ marketplace.
 
 Let’s set the provider commission as 10%. If the listing price is
 $60, then the seller commission of 10% is used. This means that the buyer pays a total of $60.
-The marketplace gets $6, and the seller gets $56.
+The marketplace gets $6, and the seller gets $54.
 
 ## Why is it called Provider commission?
 

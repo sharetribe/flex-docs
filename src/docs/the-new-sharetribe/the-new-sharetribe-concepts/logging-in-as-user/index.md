@@ -1,7 +1,7 @@
 ---
 title: Login as a user
 slug: login-as-user
-updated: 2023-06-14
+updated: 2023-07-05
 category: the-new-sharetribe-concepts
 ingress:
   Here you can find out how to log in on behalf of another marketplace
@@ -29,8 +29,8 @@ You also cannot make purchases when logged in as another user.
 
 ## How to use the "Login as user" feature
 
-The way you can login as a user is through the Console. From there, you
-can access the user list from the "Manage" -> "Users" section (1). You
+The way you can login as a user is through Console. From there, you
+can access the user list from the "Users" menu in the "Manage" section of the sidebar navigation (1). You
 can then search for the user you want to log in as (2) or select them
 from the user list. When you are viewing their profile card, click on
 the three dots near the user's profile picture (3), and from there, you
