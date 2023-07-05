@@ -10,17 +10,19 @@ published: true
 
 The New Sharetribe currently supports English as the marketplace language. Within the English language, there are several versions that the new Sharetribe supports, including:
 
-English - Australia
-English - Canada
-English - Ireland
-English - New Zealand
-English - Singapore
-English - United Kingdom
-English - United States
+- English - Australia
+- English - Canada
+- English - Ireland
+- English - New Zealand
+- English - Singapore
+- English - United Kingdom
+- English - United States
 
 Furthermore, you have the flexibility to customize the first day of the week to either Monday or Sunday. This change will be reflected in the calendar used for booking and availability management. You can learn more about the availability management using the calendar [in this article](https://www.sharetribe.com/docs/the-new-sharetribe/default-availability-management-options).
 
 ## What happens when you change your English locale? 
+
+By default, the starting locale of the marketplace is set to English - US.
 
 When you change your locale to a different version of English, it impacts how the currency is displayed next to the listing price. Let's take a look at an example to illustrate this:
 
