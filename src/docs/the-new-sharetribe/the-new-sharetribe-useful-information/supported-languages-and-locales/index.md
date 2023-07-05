@@ -22,6 +22,8 @@ Furthermore, you have the flexibility to customize the first day of the week to 
 
 ## What happens when you change your English locale? 
 
+By default, the starting locale of the marketplace is set to English - US.
+
 When you change your locale to a different version of English, it impacts how the currency is displayed next to the listing price. Let's take a look at an example to illustrate this:
 
 In the English - United States locale, the currency is displayed using only the symbol (“$”), as shown below:

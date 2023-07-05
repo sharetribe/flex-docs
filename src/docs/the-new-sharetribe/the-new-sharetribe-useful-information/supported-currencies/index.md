@@ -18,7 +18,9 @@ The New Sharetribe currently supports the following currencies:
 - SGD
 - USD
 
-The marketplace currency can only be changed by a member of the Sharetribe team. If you wish to change your currency, please send us an email at help@sharetribe.com or a message through the chat widget in your Console, and let us know which currency you would like to use.
+By default, the starting currency of the marketplace is set to USD.
+
+Please note that changing the marketplace currency can only be done by a member of the Sharetribe team. If you wish to change your currency, please send us an email at help@sharetribe.com or a message through the chat widget in your Console, and let us know which currency you would like to use.
 
 ## What happens when the currency is changed
 
