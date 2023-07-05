@@ -38,7 +38,7 @@ may not reflect the most current legal developments.
 
 ## How to use the Terms of Service template for your marketplace business
 
-- Go to your TNS Console.
+- Go to your New Sharetribe Console.
 - Open the Pages editor in "Content → Pages".
 - Click on the “terms-of-service” page to edit it.
 - Open the “terms-of-service” article.
@@ -64,7 +64,7 @@ Service on the Terms of Service page.
 
 ## How to use the Privacy Policy template for your marketplace business
 
-- Go to your TNS console.
+- Go to your New Sharetribe console.
 - Open the Pages editor in "Content → Pages".
 - Click on the “privacy-policy” page to edit it.
 - Open the “privacy-policy” article.

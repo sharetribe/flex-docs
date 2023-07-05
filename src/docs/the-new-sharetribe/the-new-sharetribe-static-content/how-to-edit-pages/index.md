@@ -52,7 +52,7 @@ Each Section can also contain any number of Blocks. Blocks normally
 contain more detailed information for a Section. Each Block is made up
 of different fields like media, titles, text, and call to action.
 
-The default landing page in a TNS marketplace Test environment has
+The default landing page in a New Sharetribe marketplace Test environment has
 different type of Sections that will help you get an idea of what is
 possible with Pages.
 

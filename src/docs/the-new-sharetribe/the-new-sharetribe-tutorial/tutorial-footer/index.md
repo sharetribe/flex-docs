@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 9 – Edit the footer
 slug: tutorial-footer
-updated: 2023-07-05-
+updated: 2023-07-05
 category: the-new-sharetribe-tutorial
 ingress:
   Footer links all the elements in your marketplace together. In this
