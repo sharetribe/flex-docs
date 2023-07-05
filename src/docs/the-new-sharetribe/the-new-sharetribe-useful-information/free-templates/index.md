@@ -1,7 +1,7 @@
 ---
 title: Free templates for your Terms of Service and Privacy Policy
 slug: free-templates
-updated: 2023-02-14
+updated: 2023-07-05
 category: the-new-sharetribe-useful-information
 ingress:
   Create Terms of Service and Privacy Policy documents for your
@@ -38,8 +38,8 @@ may not reflect the most current legal developments.
 
 ## How to use the Terms of Service template for your marketplace business
 
-- Go to your TNS Console.
-- Open the Pages editor at /content/pages.
+- Go to your New Sharetribe Console.
+- Open the Pages editor in "Content → Pages".
 - Click on the “terms-of-service” page to edit it.
 - Open the “terms-of-service” article.
 - Open the “terms-of-service” block.
@@ -64,8 +64,8 @@ Service on the Terms of Service page.
 
 ## How to use the Privacy Policy template for your marketplace business
 
-- Go to your TNS console.
-- Open the Pages editor at /content/pages.
+- Go to your New Sharetribe console.
+- Open the Pages editor in "Content → Pages".
 - Click on the “privacy-policy” page to edit it.
 - Open the “privacy-policy” article.
 - Open the “privacy-policy” block.

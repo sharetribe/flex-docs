@@ -1,7 +1,7 @@
 ---
 title: Search page layout options
 slug: search-page-layout-options
-updated: 2023-04-20
+updated: 2023-07-05
 category: the-new-sharetribe-layout
 ingress:
   Using a map or not can be a great way of customizing your user
@@ -13,8 +13,7 @@ The search page displays all listings from your marketplace. Users can
 find the listing that they need through keyword search or location
 search, and by filtering and sorting different attributes. They can even
 find a listings by dragging and exploring a map. You can define the
-layout of this page from your Console account. Go to Build → Content →
-Layout.
+layout of this page from your Console account. Go to "Design → Layout".
 
 There are two different search page layouts that you can select from:
 Map view and Grid view.

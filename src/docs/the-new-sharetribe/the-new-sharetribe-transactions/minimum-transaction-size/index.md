@@ -1,7 +1,7 @@
 ---
 title: What is the minimum transaction size
 slug: what-is-the-minimum-transaction-size
-updated: 2023-05-19
+updated: 2023-07-05
 category: the-new-sharetribe-transactions
 ingress:
   The minimum transaction size is the lowest amount possible to transact
@@ -22,11 +22,10 @@ In practice, the minimum transaction size is enforced by determining the
 minimum listing price that sellers can add to their listings.
 
 For example, if you set the minimum transaction size in your marketplace
-as
-$10, in practice what you are doing is setting the minimum listing price. Providers won’t be able to list an item below this set price of $10.
+as $10, in practice what you are doing is setting the minimum listing price. Providers won’t be able to list an item below this set price of $10.
 Even if the expected or average transaction size would larger. The
 validation is done at listing creation, and not at the transaction
 level.
 
 You can set the minimum transaction size from your
-Console → Minimum transaction size page.
+Console in "Transactions → Minimum transaction size".

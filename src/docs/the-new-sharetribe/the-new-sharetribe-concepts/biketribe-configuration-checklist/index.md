@@ -1,7 +1,7 @@
 ---
 title: Biketribe configuration checklist
 slug: biketribe-configuration-checklist
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-concepts
 ingress: Review Biketribe defaults and how to change them
 published: true
@@ -26,7 +26,7 @@ use code to fully customize your marketplace.
 ![biketribe_search_page](./search_page-grid_layout-landscape.png)
 
 
-### Biketribe users:
+### Biketribe users
 
 Biketribe is a peer to peer marketplace. Users are usually individuals.
 Users can book a bike rental or offer their bikes for rent (i.e. a user
@@ -38,7 +38,7 @@ agreeing to the marketplace terms and conditions.
 
 _Every Biketribe user creates a profile to list or book bikes._
 
-### Biketribe listings:
+### Biketribe listings
 
 Providers list bikes for rent. They use a listing creation wizard to add
 their bike listing to the platform. The wizard asks them details about
@@ -50,7 +50,7 @@ already.
 ![biketribe_listing_daily](./biketribe-listing_daily-buyer.png)
 _Biketribe customers book bikes per day starting from the listing page._
 
-### Biketribe transactions and reviews:
+### Biketribe transactions and reviews
 
 Customers request to rent a bike by entering their payment details on a
 checkout page. Providers must respond to the request within 3 days. Once

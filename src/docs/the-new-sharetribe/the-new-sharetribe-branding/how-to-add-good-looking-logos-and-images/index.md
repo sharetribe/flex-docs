@@ -1,16 +1,16 @@
 ---
 title: How to add good looking logos and images
 slug: how-to-add-good-looking-logos-and-images
-updated: 2023-04-19
+updated: 2023-07-05
 category: the-new-sharetribe-branding
-ingress: Resolution and Cropping Rules for your marketplace images.
+ingress: Resolution and cropping rules for your marketplace images.
 published: true
 ---
 
 You can add all your marketplace photos, including the logo, favicon,
 app icon, background image, and social media images, in the Content area
 of your Console account. Go to the test environment of your marketplace
-and then go to Content → Branding.
+and then go to "Design → Branding".
 
 ## Ensure your images look good!
 

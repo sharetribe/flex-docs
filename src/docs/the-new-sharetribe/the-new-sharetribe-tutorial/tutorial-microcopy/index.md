@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 8 – Decide your vocabulary
 slug: tutorial-microcopy
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-tutorial
 ingress:
   In this tutorial step, we'll teach you how to use the Microcopy
@@ -22,7 +22,7 @@ In the world of user interfaces, such terminology scattered here and
 there is referred to as "Microcopy". The New Sharetribe comes with an
 editor that allows you to edit any texts in your user interface.
 
-Let's start by navigating to "Microcopy".
+Let's start by navigating to "Content → Microcopy".
 
 ### Changing the text of a specific link
 

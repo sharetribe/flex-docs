@@ -1,7 +1,7 @@
 ---
 title: How to go Live and launch your marketplace
 slug: going-live
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-useful-information
 ingress: Six steps to go Live and launch your marketplace!
 published: true
@@ -32,9 +32,9 @@ and features available on the
 [marketing site.](https://www.sharetribe.com/new-sharetribe/)
 
 To subscribe, go to your
-[Console.](https://flex-console.sharetribe.com/) Press your environment
-dropdown menu in the top left and select “Go Live” Fill in your billing
-information and submit.
+[Console.](https://flex-console.sharetribe.com/) Click the environment
+dropdown in the top left of the sidebar navigation and select “Set up Live marketplace”.
+Fill in your billing information and submit.
 
 ![Go Live](./go-live-1.png)
 
@@ -115,26 +115,6 @@ instructions in the
 section of the Places library documentation to enable using the required
 services. You should enable: Google Places API Web Service ("Places API"), Maps Static
 API, and Maps JavaScript API.
-
-### Google Analytics
-
-Google Analytics lets you browse and analyze lots of data, such number
-of visitors, pages viewed, time spent on your marketplace, traffic
-sources, and more. Sharetribe has built-in support for Google Analytics.
-Google Analytics is free to use.
-
-Using Google Analytics is optional. If you want to use Google Analytics,
-you need to share your Google Analytics measurement ID with Sharetribe
-during the setup process. You can always setup Google Analytics at any
-point later by sharing the measurement
-
-You can generate this ID by creating a Google Analytics account and
-generating a <code>Measurement ID</code> It should look something like
-"G-XXXXXX".
-
-Note that we strongly recommend disabling the “Enhanced measurements”
-feature in Google Analytics 4 as it can affect your marketplace’s
-navigation.
 
 # 3. Configure your custom domain
 
@@ -240,7 +220,7 @@ where you got your public key or follow our instructions for more
 information. It should look like
 _sk_live_somelongrandomvaluelike0Rx3jvetc_
 
-Paste your live key in Console->Build->Payments and save changes.
+Paste your live key in "Integrations -> Payments" and save changes.
 
 ![go-live-2](./go-live-2.png)
 

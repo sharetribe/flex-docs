@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 5 – Create listing fields
 slug: tutorial-listing-fields
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-tutorial
 ingress:
   In this step we will decide what data is collected when a listing is
@@ -21,7 +21,7 @@ fields. These allow you to decide exactly what data is collected when a
 listing is created. You can also create search filters based on these
 fields.
 
-Let's create some custom fields. Click "Custom fields" from the
+Let's create some custom fields. Click "Listings → Listing fields" from the
 navigation on the left. There we see several fields, but these are very
 Biketribe-specific. Let's delete them all. Instead, we will create the
 following new fields:

@@ -1,7 +1,7 @@
 ---
 title: Understanding filters
 slug: understanding-filters
-updated: 2023-05-18
+updated: 2023-07-05
 category: the-new-sharetribe-listings
 ingress: Understanding and adding filters in your marketplace.
 published: true
@@ -10,7 +10,7 @@ published: true
 Filters can be used to give a better discovery experience to your users.
 As your listing offering grows, it will become harder for your users to
 find exactly what they’re looking for on the marketplace just by [using
-the search](LINKS TO THE SEARCH ARTICLE). The right use of filters can
+the search](https://www.sharetribe.com/docs/the-new-sharetribe/how-search-works/). The right use of filters can
 significantly increase the browsing experience and your marketplace
 usage and conversion.
 
@@ -25,8 +25,7 @@ You can add filters for the two main
 There are filters for default fields and filters for custom fields.
 
 Filters for default fields (Date range and Price) can be controlled from
-the
-Listing Search settings of your Console.
+the "Listings -> Listing search" page of your Console.
 
 You can enable a **Date range filter** and a **Price filter**. Read more
 about
@@ -67,4 +66,4 @@ type of filter)
 ## How to define how filters look in the search page?
 
 You can define how filters are displayed in the search page, via
-the Search page Layout settings.
+the "Design -> Layout" then "Search page Layout" setting.

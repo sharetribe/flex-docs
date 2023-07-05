@@ -1,7 +1,7 @@
 ---
 title: How to edit content pages in Console
 slug: how-to-edit-content-pages-in-console
-updated: 2023-04-25
+updated: 2023-07-05
 category: the-new-sharetribe-static-content
 ingress:
   Learn how to use Pages to edit content across Landing page,
@@ -20,9 +20,8 @@ you would like more background on the Pages feature, consult this
 
 Find the Pages feature in
 Console. Navigate to your Test
-environment, pick the “Build” section from your top bar, select
-“Content” from the sub-menu, then select “Pages” from the left side
-menu. You should now see your default content pages (the About page, the
+environment, click the “Content” menu in the sidebar then “Pages”.
+You should now see your default content pages (the About page, the
 Landing page, the Terms of use page, and the Policy page) ready for
 editing. Make sure that you are in the Test environment of your marketplace if you want to start
 modifying your Pages right away.
@@ -53,7 +52,7 @@ Each Section can also contain any number of Blocks. Blocks normally
 contain more detailed information for a Section. Each Block is made up
 of different fields like media, titles, text, and call to action.
 
-The default landing page in a TNS marketplace Test environment has
+The default landing page in a New Sharetribe marketplace Test environment has
 different type of Sections that will help you get an idea of what is
 possible with Pages.
 
@@ -297,7 +296,7 @@ Yes, you can edit your marketpalce footer. You can learn more about this [here](
 To see your changes in your Live marketplace, you must copy the changes
 you made in your Test environment to your Live environment.
 
-Click the “Copy to live…” button and then select the specific pages that
+Click the “Copy to Live…” button and then select the specific pages that
 you want to copy. This will transfer all the content from the Test
 environment to your Live environment.
 

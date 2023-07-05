@@ -1,13 +1,13 @@
 ---
 title: How to edit your marketplace footer
 slug: how-footer-works
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-static-content
 ingress: Learn how to configure your marketplace footer
 published: true
 ---
 
-The Footer section in the Console Build → Content allows
+The Footer section in the Console "Content → Footer" allows
 you to create a footer for your marketplace, an important component that
 can enhance the navigation experience for your users by providing them
 with quick access to relevant content and links to social media

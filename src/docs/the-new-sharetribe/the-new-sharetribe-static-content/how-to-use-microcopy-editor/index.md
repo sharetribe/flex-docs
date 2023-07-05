@@ -1,17 +1,17 @@
 ---
 title: How to use the Microcopy editor
 slug: how-to-use-microcopy-editor
-updated: 2022-06-14
+updated: 2022-07-05
 category: the-new-sharetribe-static-content
 ingress:
   The Microcopy editor lets you modify your marketplace’s microcopy in
-  TNS Console.
+  The New Sharetribe Console.
 published: true
 ---
 
 ## What is microcopy
 
-Your The New Sharetribe marketplace has both content and dynamic pages.
+Your New Sharetribe marketplace has both content and dynamic pages.
 Content pages only feature content created by you, the marketplace
 operator. Landing pages, “About” pages and FAQ pages are examples of
 content pages.
@@ -22,7 +22,7 @@ offer users the ability to interact with them, such as when buyers are
 selecting the length of a booking from a listing or entering their
 payment information into the checkout page.
 
-In TNS, the term microcopy refers to short written texts scattered
+In The New Sharetribe, the term microcopy refers to short written texts scattered
 around a dynamic page’s interface; button labels, error messages, and
 help texts are all examples. They are textual, brief (a sentence or
 two), and highly contextual.
@@ -35,11 +35,11 @@ blue. Note that listing fields and search filters ("Sauna type",
 microcopy editor. An upcoming feature will introduce a dedicated feature
 for editing these fields and filters in Console._
 
-With the Microcopy editor, you can modify these texts in your TNS
+With the Microcopy editor, you can modify these texts in your New Sharetribe
 Console. You can also use the Microcopy editor to translate these texts
 to a new language. This article will walk you through how to set up your
 Microcopy editor and make microcopy changes while building and operating
-your TNS marketplace.
+your New Sharetribe marketplace.
 
 ## Why microcopy matters
 
@@ -59,12 +59,11 @@ All these decisions affect the choices you make in your microcopy.
 
 ## How to test the Microcopy editor?
 
-You can try out the Microcopy editor in your TNS test marketplace. After
-creating a TNS account, log into Console. Ensure you are in the Test
+You can try out the Microcopy editor in your New Sharetribe test marketplace. After
+creating a New Sharetribe account, log into Console. Ensure you are in the Test
 environment.
 
-Navigate to the Build section from your top bar, then the Content
-section. The Microcopy editor is here.
+In the left navigation sidebar, navigate to the "Content -> Microcopy". The Microcopy editor is here.
 
 ![Microcopy editor](./microcopy_editor.png)
 

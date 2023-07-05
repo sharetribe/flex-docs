@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 2 – Choose marketplace layout
 slug: tutorial-marketplace-layout
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-tutorial
 ingress:
   You can choose any layout for your specific marketplace. In this
@@ -13,8 +13,7 @@ noindex: true
 
 Layout settings allow you to choose the layout of some of the key pages
 in your marketplace by choosing from a set of options. To get started,
-you should be in Build -> Content in your Test environment in Console.
-Then, click "Layout" from the left.
+you should be in Design -> Layout in your Test environment in Console.
 
 ### 1. Search page layout
 

@@ -1,7 +1,7 @@
 ---
 title: How to setup Stripe for payments on your marketplace
 slug: how-to-stripe
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-useful-information
 ingress:
   Learn how to setup Stripe to power payments and commissions in your
@@ -17,7 +17,7 @@ directly to seller bank accounts, seller onboarding, KYC, and more.
 
 To get it working, you'll need a free Stripe account, configure a few
 settings in your Stripe Dashboard, get your API keys from Stripe, and
-add them to [Console when you go Live.](GOINGLIVEARTICLE)
+add them to [Console when you go Live.](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/)
 
 Follow the instructions closely and it will work smoothly!
 
@@ -140,7 +140,7 @@ First, get your API keys from Stripe.
   should look like pk_live_somelongrandomvaluelikeVqFze9etc
   ![stripe-12](./stripe-12.png)
 - Share this value with Sharetribe during the
-  [going Live process.](LINKTOGOINGLIVE)
+  [going Live process.](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/)
 
 - Go back to your Stripe account, in the API tab and click the Reveal
   live key token button.
@@ -152,7 +152,7 @@ First, get your API keys from Stripe.
   sk_live_somelongrandomvaluelike0Rx3jvetc - Note that ou won't be able
   to see the key again after this. Make sure you copy it and save it
   somewhere safe and private. ![stripe-14](./stripe-14.png)
-- Paste that value in your Console->Build->Payments
+- Paste that value in your payments setup page, at "Integrations -> Payments"
   ![stripe-15](./stripe-15.png)
 
 That's it! You have now connected your Stripe account and are ready to

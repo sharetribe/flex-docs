@@ -1,7 +1,7 @@
 ---
 title: Requiring approval for new listings
 slug: requiring-approval-for-new-listings
-updated: 2023-06-14
+updated: 2023-07-05
 category: the-new-sharetribe-listings
 ingress:
   A guide that shows how the process for approving listings as operator
@@ -36,7 +36,7 @@ seller to suggest improvements and ask them to submit a new listing.
 ## How to manage listing approval in Console
 
 You can turn on the listing approval feature in your Console. Go to
-"Build > General" and look down to find the right section (1). By
+"General" and look down to find the right section (1). By
 default, listing approval is turned off.
 
 <extrainfo title="Step 1: Finding the listing approval toggle in the Console">

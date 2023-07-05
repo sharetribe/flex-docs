@@ -1,7 +1,7 @@
 ---
 title: Introducing Pages
 slug: introducing-pages
-updated: 2023-04-01
+updated: 2023-07-05
 category: the-new-sharetribe-static-content
 ingress:
   The new sharetribe also feature a powerful
@@ -30,7 +30,7 @@ your users. In addition, you might use Pages to create alternative
 landing pages for various user groups, for search engine optimization
 (SEO) or paid advertising purposes, or even create a simple blog.
 
-Any TNS marketplace starts with 4 default pages: the About page, the
+Any New Sharetribe marketplace starts with 4 default pages: the About page, the
 Landing page, the Privacy policy page, and Terms of use page. Pages lets
 you edit these default pages, but, with the exception of the About Page,
 they cannot be removed. In addition to the default pages, you can add
@@ -38,8 +38,8 @@ and edit any number of custom content pages.
 
 ## How Pages works
 
-You can use Pages from Console's Build section. You can try it
-immediately in the TNS Test environment, or use it to create your
+You can use Pages from Console, in "Content -> Pages". You can try it
+immediately in the New Sharetribe Test environment, or use it to create your
 content after setting up your own marketplace app. Start editing the
 default content pages!
 
@@ -50,7 +50,7 @@ multiple different types of content, like texts, Youtube videos or
 images.
 
 The content you create displays in your marketplace frontend. It is laid
-out using the default TNS design. If you want your content to follow a
+out using the default New Sharetribe design. If you want your content to follow a
 different design, a developer can make the necessary modifications. A
 future release will also allow developers to add more types of sections
 and blocks, which will make it possible to create a wider variety of

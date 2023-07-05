@@ -1,7 +1,7 @@
 ---
 title: Keyword search
 slug: keyword-search
-updated: 2023-05-19
+updated: 2023-07-05
 category: the-new-sharetribe-listings
 ingress: This articles explains how Keyword search works in Sharetribe.
 published: true
@@ -9,7 +9,7 @@ published: true
 
 As it's name indicates it allows your users to search within your
 marketplace based on keywords. You can enable Keyword search from the
-Listing Search settings page in Console.
+"Listings -> Listing search" page in Console.
 
 The search returns listings that match the keywords searched. The match
 can be found in the text content of a listing. The listing attributes
@@ -46,4 +46,4 @@ your own. The default text is “Search bikes…”
 
 Yes. If your marketplace uses the location search, you can choose to
 display a "keyword" filter on your marketplace search page. You can
-enable this from the Listing Search settings page in Console.
+enable this from the "Listings -> Listing search" page in Console.

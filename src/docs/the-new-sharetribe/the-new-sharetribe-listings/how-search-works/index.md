@@ -1,7 +1,7 @@
 ---
 title: How search works
 slug: how-search-works
-updated: 2023-07-01
+updated: 2023-07-05
 category: the-new-sharetribe-listings
 ingress:
   Search is how users find what they are looking for on your
@@ -48,7 +48,7 @@ to fill out.
 
 Yes. If your marketplace uses the location search, you can choose to
 display a "keyword" filter on your marketplace search page. You can
-enable this from the Listing Search settings page in Console.
+enable this from the "Listings -> Listing search" page in Console.
 
 ## Can I enable user or transaction search (instead of listing's search)?
 

@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 4 – Adjust the listing type
 slug: tutorial-listing-type
-updated: 2023-06-01
+updated: 2023-07-05
 category: the-new-sharetribe-tutorial
 ingress:
   Listing type determines how your customers and providers interact with
@@ -16,9 +16,9 @@ with the listing: for example, are they purchasing a physical product
 from an inventory, or making a calendar booking?
 
 For now, your marketplace can have only one listing type available at a
-time. Let's adjust its settings. Click "Listing type" from the
-navigation on the left and click open the default listing type "Daily
-booking".
+time. Let's adjust its settings. Click "Listings →
+Listing types" from the navigation on the left and click open the
+default listing type "Daily booking".
 
 In our Sauna marketplace, we want to offer nightly bookings to allow
 all-night sauna parties: you book a slot from the calendar, check in

@@ -2,7 +2,7 @@
 title:
   How to track your marketplace traffic with an analytics service
 slug: how-to-track-your-marketplace-traffic-with-an-analytics-service
-updated: 2023-06-29
+updated: 2023-07-05
 category: the-new-sharetribe-analytics
 ingress:
   Gathering traffic information on who visits your marketplace and how they browse it is key to growing your business.
@@ -32,7 +32,7 @@ Your Google Analytics account is now created, and you have your tracking ID. Nex
 ## How to add your Google Analytics Tracking ID to your Sharetribe marketplace in Console
 
 1. Log in to Console
-1. Go to "Integrations / Analytics"
+1. Go to "Integrations -> Analytics"
 1. Check "Google Analytics"
 1. Paste the "Measurement ID" you copied earlier into the "Google Analytics Measurement ID" field
 1. Save changes

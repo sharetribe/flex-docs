@@ -1,7 +1,7 @@
 ---
 title: How to add and edit listing fields
 slug: how-to-add-and-edit-listing-fields
-updated: 2023-05-19
+updated: 2023-07-05
 category: the-new-sharetribe-listings
 ingress:
   Adding new fields can be really intuitive. This article helps clarify
@@ -14,7 +14,7 @@ the Listing fields section in Console.
 
 ## Adding a new field
 
-To add a new field, go to the Listing fields section of your Console
+To add a new field, go to the "Listings -> Listing fields" page of your Console
 account and click on the “+ Add a new custom field” link towards the
 bottom of the page.
 
