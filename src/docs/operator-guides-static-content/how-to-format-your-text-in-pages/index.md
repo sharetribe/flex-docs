@@ -74,14 +74,23 @@ can then be either the Section or the Block titles.
 
 ## Links
 
+## Links
+
 You can add links to the text by adding square brackets, followed by the
 link in parenthesis:
 
 ```
-Here is [a link to Sharetribe’s site\]\(https://www.sharetribe.com)
+Here is [a link to Sharetribe’s site]\(https://www.sharetribe.com)
 ```
 
 Here is [a link to Sharetribe’s site](https://www.sharetribe.com)
+
+Linking to pages within your marketplace site should be done with
+internal links for faster page loads.
+
+```
+Here is a [link to your About page]\(/p/about)
+```
 
 You can also turn a URL or an email address into a link by surrounding
 it with `<>`:
