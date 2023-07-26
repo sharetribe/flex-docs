@@ -21,12 +21,12 @@ fields. These allow you to decide exactly what data is collected when a
 listing is created. You can also create search filters based on these
 fields.
 
-Let's create some custom fields. Click "Listings → Listing fields" from the
-navigation on the left. There we see several fields, but these are very
-Biketribe-specific. Let's delete them all. Instead, we will create the
-following new fields:
+Let's create some custom fields. Click "Listings → Listing fields" from
+the navigation on the left. There we see several fields, but these are
+very Biketribe-specific. Let's delete them all. Instead, we will create
+the following new fields:
 
-- Sauna type. Is it an Electic sauna, a Smoke sauna, or a Wooden sauna?
+- Sauna type. Is it an Electric sauna, a Smoke sauna, or a Wooden sauna?
 - Amenities. What extras are included? Are towels, swimsuits etc
   provided?
 - Sauna rules. Are there any specific things someone booking the sauna
@@ -109,7 +109,7 @@ submenu. Type is very important, so let's make it primary.
 Now we have created our first custom listing field! Let's add two more.
 
 The next one is "Amenities". This time we want one sauna to have
-multiple amenities. The field should not bemandatory, as some saunas
+multiple amenities. The field should not be mandatory, as some saunas
 might not have any amenities. There should be a search filter, but it
 can be under "More filters" menu.
 

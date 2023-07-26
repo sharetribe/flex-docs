@@ -18,9 +18,10 @@ With Pages, you can edit your content pages like "About us", "How it
 works", "Terms of use", and so on, or even create a simple blog. In this
 tutorial, we will only work on your Landing page.
 
-All your content pages can be modified under **Content →
-Pages**. Once in Pages, Go to your landing page card and click on
-**“Edit content.”** ![Edit content image](./editcontent.png)
+All your content pages can be modified under **Content → Pages**. Once
+in Pages, Go to your landing page card and click on **“Edit content.”**
+
+![Edit content image](./editcontent.png)
 
 _Optional Tip: Before editing the content, click **“View page,”** which
 will open the landing page on a separate tab. You can use this tab’s
@@ -49,12 +50,19 @@ There are several settings we can keep intact.
   the look of this section through the section Block.
 - Keep the default “No call to action” option.
 
-The settings should look like this: ![Hero section](./herosection.png)
+The settings should look like this:
+
+<extrainfo title="Hero section configuration">
+
+![Hero section](./herosection.png)
+
+</extrainfo>
 
 We do want to change the background image though.
 
 - In the Section appearance section choose “Custom” And add this image:
-  ![custom settings image](./customsetting.png)
+
+![custom settings image](./customsetting.png)
 
 Then, let's change the text content. The hero section already has a
 content block called "hero-block". Make the following changes:
@@ -72,7 +80,9 @@ content block called "hero-block". Make the following changes:
   all other call-to-action settings intact.
 
 Save changes and check the current view on the “view page” tab you
-opened earlier. ![Hero section image](./welcomesaunatime.png)
+opened earlier.
+
+![Hero section image](./welcomesaunatime.png)
 
 ### 2. “locations” section
 
@@ -125,10 +135,11 @@ social media sites.
 
 Add the following content:
 
-- Page title: Saunatime - Book saunas everywhere Page description: The
-  largest online community for to find and rent a sauna.
+- Page title: Saunatime - Book saunas everywhere
+- Page description: The largest online community to find and rent a
+  sauna.
 - Page title for social media: Book saunas everywhere
-- Page description for social media: The largest online community for to
+- Page description for social media: The largest online community to
   find and rent a sauna.
 - Social media image: Add the following image
 
@@ -141,7 +152,7 @@ Save changes.
 By default, your marketplace includes three other static content pages
 that you should change before you launch: "About", "Privacy Policy", and
 "Terms of Service". "About" is an optional page you can remove if you
-don't need it. "Privatey Policy" and "Terms of Service" are mandatory to
+don't need it. "Privacy Policy" and "Terms of Service" are mandatory to
 have. Sharetribe provides a template for both pages. In addition to
 these, you can add any number of other content pages.
 
