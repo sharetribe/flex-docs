@@ -1,7 +1,7 @@
 ---
 title: Implement user deletion
 slug: implement-delete-user
-updated: 2022-11-11
+updated: 2023-07-26
 category: how-to-users-and-authentication
 ingress:
   This article guides you in implementing a feature where a user can
@@ -61,8 +61,9 @@ First, add a new tab to the Account settings section of the template.
 ```shell
 └── src
     └── components
-         └── LayoutWrapperAccountSettingsSideNav
-              └── LayoutWrapperAccountSettingsSideNav.js
+        └── LayoutComposer
+            └── LayoutSideNavigation
+                └──LayoutWrapperAccountSettingsSideNav.js
           ...
 ```
 
@@ -200,8 +201,6 @@ Feel free to modify the texts to suit your marketplace.
 "DeleteAccountPage.heading": "Delete your account",
 "DeleteAccountPage.title": "Delete your account",
 "DeleteAccountPage.error": "Cannot delete user profile. You have {errorCause} Please contact Biketribe support or complete the unfinished issues and try again.",
-  "EditListingAvailabilityForm.fetchMonthDataFailed": "Oops, couldn't load data for {month}, please try again.",
-...
 "LayoutWrapperAccountSettingsSideNav.deleteAccountTabTitle": "Delete account",
 ```
 
