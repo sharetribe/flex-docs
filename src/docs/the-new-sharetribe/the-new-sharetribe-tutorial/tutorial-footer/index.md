@@ -79,7 +79,7 @@ listings, and then signing up as another user, doing a search, and
 making a booking.
 
 Now that you've learned how to build a marketplace with Sharetribe, you
-can start building your own! Once you're happy with it, you can publist
+can start building your own! Once you're happy with it, you can publish
 it in your own domain and launch it to real users.
 [Learn more about the process of launching your marketplace](www.sharetribe.com/docs/the-new-sharetribe/going-live/)
 

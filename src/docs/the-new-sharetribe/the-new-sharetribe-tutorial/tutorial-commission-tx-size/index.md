@@ -22,17 +22,18 @@ Sharetribe's preconfigured Stripe credentials, which means you can test
 how payments work without setting up your own Stripe platform account.
 Because of that, we're going to skip Stripe setup in this tutorial.
 However, you do need to set up one before going live.
-[Learn more about how to set up a Stripe account and connect it to your marketplace](./how-to-stripe)
+[Learn more about how to set up a Stripe account and connect it to your marketplace](../how-to-stripe)
 
 In this tutorial step, we'll go through the process of determining your
 commission and minimum transaction size. Let's start by navigating to
 "Transactions → Commission".
 
-In the test environment Stripe is already enabled, so you
-don’t have to configure your own Stripe account. You will still need to interact with Stripe when creating a listing and
-initiating a transaction, but you don’t need to configure your own Stripe account yet.
+In the test environment Stripe is already enabled, so you don’t have to
+configure your own Stripe account. You will still need to interact with
+Stripe when creating a listing and initiating a transaction, but you
+don’t need to configure your own Stripe account yet.
 
-[Read more about setting up Stripe here](www.sharetribe.com/docs/the-new-sharetribe/how-to-stripe/).
+[Read more about setting up Stripe here](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-stripe/).
 
 ### Commission
 
@@ -63,7 +64,8 @@ listing price. We recommend setting a default so that your commission
 from a minimum transaction is at least one dollar. In our case, that
 would be five dollars. The minimum listing price is provided in cents.
 
-In the field “Minimum listing price in cents” we’ll add 500 and save changes. You can
+In the field “Minimum listing price in cents” we’ll add 500 and save
+changes. You can
 [learn more about the minimum listing price here](https://www.sharetribe.com/docs/the-new-sharetribe/what-is-the-minimum-transaction-size).
 
 **Write 500 in "Minimum listing price in cents"**
