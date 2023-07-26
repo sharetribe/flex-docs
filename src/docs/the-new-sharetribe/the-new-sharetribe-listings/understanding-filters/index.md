@@ -9,10 +9,10 @@ published: true
 
 Filters can be used to give a better discovery experience to your users.
 As your listing offering grows, it will become harder for your users to
-find exactly what they’re looking for on the marketplace just by [using
-the search](https://www.sharetribe.com/docs/the-new-sharetribe/how-search-works/). The right use of filters can
-significantly increase the browsing experience and your marketplace
-usage and conversion.
+find exactly what they’re looking for on the marketplace just by
+[using the search](https://www.sharetribe.com/docs/the-new-sharetribe/how-search-works/).
+The right use of filters can significantly increase the browsing
+experience and your marketplace usage and conversion.
 
 You can control your marketplace filters from several settings in
 Console. You can control both: how filters are displayed in the search
@@ -65,5 +65,5 @@ type of filter)
 
 ## How to define how filters look in the search page?
 
-You can define how filters are displayed in the search page, via
-the "Design -> Layout" then "Search page Layout" setting.
+You can define how filters are displayed in the search page, via the
+"Design -> Layout" then "Search page Layout" setting.

@@ -18,9 +18,9 @@ With Pages, you can edit your content pages like "About us", "How it
 works", "Terms of use", and so on, or even create a simple blog. In this
 tutorial, we will only work on your Landing page.
 
-All your content pages can be modified under **Content →
-Pages**. Once in Pages, Go to your landing page card and click on
-**“Edit content.”** ![Edit content image](./editcontent.png)
+All your content pages can be modified under **Content → Pages**. Once
+in Pages, Go to your landing page card and click on **“Edit content.”**
+![Edit content image](./editcontent.png)
 
 _Optional Tip: Before editing the content, click **“View page,”** which
 will open the landing page on a separate tab. You can use this tab’s

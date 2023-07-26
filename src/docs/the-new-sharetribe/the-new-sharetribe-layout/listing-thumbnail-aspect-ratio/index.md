@@ -11,7 +11,8 @@ published: true
 
 The listing thumbnail aspect ratio setting determines how the images in
 your marketplace's search page will be displayed. You can define this
-ratio from your Console. Within your test environment go to Design → Layout.
+ratio from your Console. Within your test environment go to Design →
+Layout.
 
 These images give the first impression of your offering to your
 prospective buyers. You should select the aspect ratio that best

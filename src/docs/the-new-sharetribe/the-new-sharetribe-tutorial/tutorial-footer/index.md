@@ -73,10 +73,10 @@ Save changes.
 ### Next: start testing your marketplace – and build your own!
 
 We're done with the setup! It's time to start using your sauna
-marketplace. Click "View your marketplace" on the top left in the sidebar and start
-browsing your site. You can try signing up as a new user, creating some
-listings, and then signing up as another user, doing a search, and
-making a booking.
+marketplace. Click "View your marketplace" on the top left in the
+sidebar and start browsing your site. You can try signing up as a new
+user, creating some listings, and then signing up as another user, doing
+a search, and making a booking.
 
 Now that you've learned how to build a marketplace with Sharetribe, you
 can start building your own! Once you're happy with it, you can publist

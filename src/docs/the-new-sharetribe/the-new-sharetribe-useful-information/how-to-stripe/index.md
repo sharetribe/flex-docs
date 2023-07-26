@@ -17,7 +17,8 @@ directly to seller bank accounts, seller onboarding, KYC, and more.
 
 To get it working, you'll need a free Stripe account, configure a few
 settings in your Stripe Dashboard, get your API keys from Stripe, and
-add them to [Console when you go Live.](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/)
+add them to
+[Console when you go Live.](https://www.sharetribe.com/docs/the-new-sharetribe/going-live/)
 
 Follow the instructions closely and it will work smoothly!
 
@@ -152,8 +153,8 @@ First, get your API keys from Stripe.
   sk_live_somelongrandomvaluelike0Rx3jvetc - Note that ou won't be able
   to see the key again after this. Make sure you copy it and save it
   somewhere safe and private. ![stripe-14](./stripe-14.png)
-- Paste that value in your payments setup page, at "Integrations -> Payments"
-  ![stripe-15](./stripe-15.png)
+- Paste that value in your payments setup page, at "Integrations ->
+  Payments" ![stripe-15](./stripe-15.png)
 
 That's it! You have now connected your Stripe account and are ready to
 receive payments in your marketplace!
