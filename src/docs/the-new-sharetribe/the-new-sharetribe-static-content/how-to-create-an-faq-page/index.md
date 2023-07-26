@@ -24,11 +24,10 @@ link below.
 
 ## Getting started
 
-Find the Pages feature in
-Console. Navigate to your test environment, click the “Content” menu in the sidebar
-then “Pages”. You should now see your default content pages (the About
-page, the Landing page, the Terms of use page, and the Policy page)
-ready for editing.
+Find the Pages feature in Console. Navigate to your test environment,
+click the “Content” menu in the sidebar then “Pages”. You should now see
+your default content pages (the About page, the Landing page, the Terms
+of use page, and the Policy page) ready for editing.
 
 ## Deciding how the page is structured
 
@@ -82,10 +81,10 @@ changes, and that can result in broken links if there are links
 elsewhere that lead to that page. Generally, we recommend that you don’t
 change existing Page IDs or URL addresses unless necessary.
 
-So, we’re now in the “Pages” area of the  Console. To create a new
-page, we’ll click “+ Create new page…” at the bottom, and then we get a
-pop-up window. We want a short and self-explanatory URL address and name
-for the page, so we’ll just use “faq” as the Page ID. Then we click on
+So, we’re now in the “Pages” area of the Console. To create a new page,
+we’ll click “+ Create new page…” at the bottom, and then we get a pop-up
+window. We want a short and self-explanatory URL address and name for
+the page, so we’ll just use “faq” as the Page ID. Then we click on
 “Create page”, and _voilà_ – an empty page has been created! Now, you
 can click on the “Edit content” text in the Pages area to start shaping
 it.

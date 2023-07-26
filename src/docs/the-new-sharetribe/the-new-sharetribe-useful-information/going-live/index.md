@@ -33,8 +33,8 @@ and features available on the
 
 To subscribe, go to your
 [Console.](https://flex-console.sharetribe.com/) Click the environment
-dropdown in the top left of the sidebar navigation and select “Set up Live marketplace”.
-Fill in your billing information and submit.
+dropdown in the top left of the sidebar navigation and select “Set up
+Live marketplace”. Fill in your billing information and submit.
 
 ![Go Live](./go-live-1.png)
 
@@ -113,8 +113,8 @@ Next, you must enable certain capabilities within Google Maps.Follow the
 instructions in the
 [Getting started](https://developers.google.com/maps/documentation/javascript/places#GetStarted)
 section of the Places library documentation to enable using the required
-services. You should enable: Google Places API Web Service ("Places API"), Maps Static
-API, and Maps JavaScript API.
+services. You should enable: Google Places API Web Service ("Places
+API"), Maps Static API, and Maps JavaScript API.
 
 # 3. Configure your custom domain
 

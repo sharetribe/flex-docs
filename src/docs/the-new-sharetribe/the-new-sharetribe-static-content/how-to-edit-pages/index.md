@@ -18,12 +18,11 @@ you would like more background on the Pages feature, consult this
 
 ### Gettings started
 
-Find the Pages feature in
-Console. Navigate to your Test
-environment, click the “Content” menu in the sidebar then “Pages”.
-You should now see your default content pages (the About page, the
-Landing page, the Terms of use page, and the Policy page) ready for
-editing. Make sure that you are in the Test environment of your marketplace if you want to start
+Find the Pages feature in Console. Navigate to your Test environment,
+click the “Content” menu in the sidebar then “Pages”. You should now see
+your default content pages (the About page, the Landing page, the Terms
+of use page, and the Policy page) ready for editing. Make sure that you
+are in the Test environment of your marketplace if you want to start
 modifying your Pages right away.
 
 If you don't have the default Pages available in Console and want to
@@ -52,9 +51,9 @@ Each Section can also contain any number of Blocks. Blocks normally
 contain more detailed information for a Section. Each Block is made up
 of different fields like media, titles, text, and call to action.
 
-The default landing page in a New Sharetribe marketplace Test environment has
-different type of Sections that will help you get an idea of what is
-possible with Pages.
+The default landing page in a New Sharetribe marketplace Test
+environment has different type of Sections that will help you get an
+idea of what is possible with Pages.
 
 ![Content model Sections](/content-model-landing-page.png 'Content model')
 
@@ -289,7 +288,8 @@ be completed.
 
 ### Can I edit the Footer?
 
-Yes, you can edit your marketpalce footer. You can learn more about this [here](https://www.sharetribe.com/docs/the-new-sharetribe/how-footer-works/).
+Yes, you can edit your marketpalce footer. You can learn more about this
+[here](https://www.sharetribe.com/docs/the-new-sharetribe/how-footer-works/).
 
 ## Publish your Page changes to Live
 

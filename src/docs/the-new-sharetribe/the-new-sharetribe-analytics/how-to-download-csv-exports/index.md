@@ -21,9 +21,12 @@ your mileage may vary.
 ## Where to find the csv export buttons
 
 The CSV exports are accessed from the Console. You can find the links
-for downloading the CSV files in all pages of the "Manage" section in the Console sidebar navigation (1). For example, the link to download the user list of the marketplace
-is found in the "Users" menu of the "Manage section" in the sidebar navigation (2). The "Listings", "Transactions", and "Reviews" sections of
-the Console have similar links.
+for downloading the CSV files in all pages of the "Manage" section in
+the Console sidebar navigation (1). For example, the link to download
+the user list of the marketplace is found in the "Users" menu of the
+"Manage section" in the sidebar navigation (2). The "Listings",
+"Transactions", and "Reviews" sections of the Console have similar
+links.
 
 <extrainfo title="Finding the download .csv button from the Console for downloading user data">
 
@@ -36,9 +39,9 @@ the Console have similar links.
 ### Users
 
 This dataset includes information about each user in your marketplace.
-To export it, go to the "Users" menu in the "Manage" section in Console, and click
-on the "Download .csv" button. Click below for descriptions on what data
-the file contains.
+To export it, go to the "Users" menu in the "Manage" section in Console,
+and click on the "Download .csv" button. Click below for descriptions on
+what data the file contains.
 
 <extrainfo title="What the users csv export looks like (example data, first few rows)">
 
@@ -55,8 +58,9 @@ the file contains.
 ### Listings
 
 This includes information about all the listings in your marketplace.
-Find this by navigating to the "Listings" menu in the "Manage" section in Console and clicking on "Download .csv". Click below for descriptions on
-what data the file contains.
+Find this by navigating to the "Listings" menu in the "Manage" section
+in Console and clicking on "Download .csv". Click below for descriptions
+on what data the file contains.
 
 <extrainfo title="What the listings csv export looks like (example data, first few rows)">
 
@@ -73,9 +77,9 @@ what data the file contains.
 ### Transactions
 
 This dataset consists of all transactions that occurred in your
-marketplace. Go to the "Transactions" menu in the "Manage" section in Console and click
-"Download .csv". Click below for descriptions on what data the file
-contains.
+marketplace. Go to the "Transactions" menu in the "Manage" section in
+Console and click "Download .csv". Click below for descriptions on what
+data the file contains.
 
 <extrainfo title="What the transactions csv export looks like (example data, first few rows)">
 
@@ -91,8 +95,9 @@ contains.
 
 ### Reviews
 
-This includes all reviews left by users. Find this in the "Review" menu in the "Manage" section in Console and then click on "Download .csv". Click below for
-descriptions on what data the file contains.
+This includes all reviews left by users. Find this in the "Review" menu
+in the "Manage" section in Console and then click on "Download .csv".
+Click below for descriptions on what data the file contains.
 
 <extrainfo title="What the reviews csv export looks like (example data, first few rows)">
 

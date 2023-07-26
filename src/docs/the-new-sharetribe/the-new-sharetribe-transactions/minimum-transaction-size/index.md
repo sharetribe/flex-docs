@@ -22,10 +22,11 @@ In practice, the minimum transaction size is enforced by determining the
 minimum listing price that sellers can add to their listings.
 
 For example, if you set the minimum transaction size in your marketplace
-as $10, in practice what you are doing is setting the minimum listing price. Providers won’t be able to list an item below this set price of $10.
+as
+$10, in practice what you are doing is setting the minimum listing price. Providers won’t be able to list an item below this set price of $10.
 Even if the expected or average transaction size would larger. The
 validation is done at listing creation, and not at the transaction
 level.
 
-You can set the minimum transaction size from your
-Console in "Transactions → Minimum transaction size".
+You can set the minimum transaction size from your Console in
+"Transactions → Minimum transaction size".

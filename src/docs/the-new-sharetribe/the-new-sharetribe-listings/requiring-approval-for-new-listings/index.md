@@ -36,8 +36,8 @@ seller to suggest improvements and ask them to submit a new listing.
 ## How to manage listing approval in Console
 
 You can turn on the listing approval feature in your Console. Go to
-"General" and look down to find the right section (1). By
-default, listing approval is turned off.
+"General" and look down to find the right section (1). By default,
+listing approval is turned off.
 
 <extrainfo title="Step 1: Finding the listing approval toggle in the Console">
 
