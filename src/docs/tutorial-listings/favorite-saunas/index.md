@@ -24,7 +24,7 @@ In this tutorial, you will
 
 This tutorial uses the following marketplace configurations:
 
-- Layout > Listing page image layout: **Image carousel with thumbnails**
+- Layout > Listing page image layout: **Screen-wide cover photo**
 
 </info>
 
@@ -239,13 +239,13 @@ _ListingPage.shared.js_ file.
 
 We will then need to import and use those functionalities in the listing
 page component we are using. Since the layout configuration in our
-marketplace is _Image carousel with thumbnails_, the corresponding
-listing page component is _ListingPageCarousel.js_.
+marketplace is _Screen-wide cover photo_, the corresponding listing page
+component is _ListingPageCoverPhoto.js_.
 
 <info>
 
-If your listing page configuration is _Screen-wide cover photo_, you
-will need to modify the component _ListingPageCoverPhoto.js_ instead.
+If your listing page configuration is _Image carousel with thumbnails_,
+you will need to modify the component _ListingPageCarousel.js_ instead.
 
 </info>
 
@@ -317,13 +317,13 @@ This function receives the necessary information and actions from its
 parameters, so all we need to know in this function is that we are
 updating the current user’s private data.
 
-Next, we call this function from _ListingPageCarousel.js_. We will first
-import the function we just created.
+Next, we call this function from _ListingPageCoverPhoto.js_. We will
+first import the function we just created.
 
 <info>
 
-If your listing page configuration is _Screen-wide cover photo_, you
-will need to modify the component _ListingPageCoverPhoto.js_ instead.
+If your listing page configuration is _Image carousel with thumbnails_,
+you will need to modify the component _ListingPageCarousel.js_ instead.
 
 </info>
 
@@ -369,7 +369,7 @@ Whenever we use Redux actions from a container, we need to use the
 [mapDispatchToProps](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
 mapping to use the actions through props in the component.
 
-The _ListingPageCarousel_ component already has a _mapDispatchToProps_
+The _ListingPageCoverPhoto_ component already has a _mapDispatchToProps_
 function, so we can add the _updateProfile_ action as a prop for the
 component there.
 
@@ -388,7 +388,7 @@ const mapDispatchToProps = dispatch => ({
 We can give our prop a descriptive name, such as _onUpdateFavorites_,
 since in this component we are only using it for that purpose.
 
-Now, the _ListingPageCarousel_ props contains the _onUpdateFavorites_
+Now, the _ListingPageCoverPhoto_ props contains the _onUpdateFavorites_
 function that we can use. Let’s add it to the
 [destructured](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 list in the beginning of the component.
@@ -420,7 +420,7 @@ const onToggleFavorites = handleToggleFavorites({
 Finally, we can pass the necessary props to _OrderPanel_ to connect the
 functionality with the button we created earlier. Add the _currentUser_
 and _onToggleFavorites_ props to the _OrderPanel_ component in
-_ListingPageCarousel_.
+_ListingPageCoverPhoto_.
 
 ```js
     <OrderPanel
