@@ -1,7 +1,7 @@
 ---
 title: Add a favorite saunas button
 slug: add-favorite-saunas
-updated: 2023-05-30
+updated: 2023-07-27
 category: tutorial-listings
 ingress:
   Learn how to add a favorites functionality to Sharetribe Web Template
@@ -24,7 +24,7 @@ In this tutorial, you will
 
 This tutorial uses the following marketplace configurations:
 
-- Layout > Listing page image layout: **Screen-wide cover photo**
+- Layout > Listing page image layout: **Image carousel with thumbnails**
 
 </info>
 
@@ -239,8 +239,15 @@ _ListingPage.shared.js_ file.
 
 We will then need to import and use those functionalities in the listing
 page component we are using. Since the layout configuration in our
-marketplace is _Screen-wide cover photo_, the corresponding listing page
-component is _ListingPageCoverPhoto.js_.
+marketplace is _Image carousel with thumbnails_, the corresponding
+listing page component is _ListingPageCarousel.js_.
+
+<info>
+
+If your listing page configuration is _Screen-wide cover photo_, you
+will need to modify the component _ListingPageCoverPhoto.js_ instead.
+
+</info>
 
 Finally, we need to pass the necessary props to OrderPanel.js.
 
@@ -249,7 +256,7 @@ Finally, we need to pass the necessary props to OrderPanel.js.
     └── containers
         └── ListingPage
             ├── ListingPage.shared.js
-            └── ListingPageCoverPhoto.js
+            └── ListingPageCarousel.js
 
 ```
 
@@ -310,8 +317,15 @@ This function receives the necessary information and actions from its
 parameters, so all we need to know in this function is that we are
 updating the current user’s private data.
 
-Next, we call this function from _ListingPageCoverPhoto.js_. We will
-first import the function we just created.
+Next, we call this function from _ListingPageCarousel.js_. We will first
+import the function we just created.
+
+<info>
+
+If your listing page configuration is _Screen-wide cover photo_, you
+will need to modify the component _ListingPageCoverPhoto.js_ instead.
+
+</info>
 
 In addition, we need to import the Redux action that we will use to
 actually update the user’s profile. For that, we can use the
@@ -355,7 +369,7 @@ Whenever we use Redux actions from a container, we need to use the
 [mapDispatchToProps](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
 mapping to use the actions through props in the component.
 
-The _ListingPageCoverPhoto_ component already has a _mapDispatchToProps_
+The _ListingPageCarousel_ component already has a _mapDispatchToProps_
 function, so we can add the _updateProfile_ action as a prop for the
 component there.
 
@@ -374,7 +388,7 @@ const mapDispatchToProps = dispatch => ({
 We can give our prop a descriptive name, such as _onUpdateFavorites_,
 since in this component we are only using it for that purpose.
 
-Now, the _ListingPageCoverPhoto_ props contains the _onUpdateFavorites_
+Now, the _ListingPageCarousel_ props contains the _onUpdateFavorites_
 function that we can use. Let’s add it to the
 [destructured](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 list in the beginning of the component.
@@ -406,7 +420,7 @@ const onToggleFavorites = handleToggleFavorites({
 Finally, we can pass the necessary props to _OrderPanel_ to connect the
 functionality with the button we created earlier. Add the _currentUser_
 and _onToggleFavorites_ props to the _OrderPanel_ component in
-_ListingPageCoverPhoto_.
+_ListingPageCarousel_.
 
 ```js
     <OrderPanel
@@ -441,7 +455,7 @@ The flow of the data happens like this:
   resource
 - the Redux action then calls _currentUserShowSuccess_, which updates
   the _currentUser_ in the store with the updated resource
-- the _currentUser_ prop that we pass from ListingPageCoverPhoto to
+- the _currentUser_ prop that we pass from ListingPageCarousel to
   OrderPanel is mapped to Redux state, so any changes to currentUser in
   state are immediately reflected in the prop
 
