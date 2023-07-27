@@ -179,10 +179,23 @@ defines a component called SocialMediaPage with content defined in
 return part. This is a
 [functional component](https://reactjs.org/docs/components-and-props.html).
 
+### Define layout areas
+
+First, we need to define layout areas that will be used in the
+**LayoutComposer** component. Since we will pass a topbar, a main
+component area, and a footer, let's name those areas accordingly.
+
+```jsx
+const layoutAreas = `
+    topbar
+    main
+    footer
+  `;
+```
+
 ### Add page schema
 
-In the template above we are using StaticPage component with some
-attributes:
+In the template above, we use StaticPage component with some attributes:
 
 ```jsx
     <StaticPage
@@ -210,10 +223,17 @@ attributes:
 
 ### Define component structure
 
-Inside the **StaticPage** component we define layout
-(**LayoutSingleColumn**) and add other components inside semantic
-content wrappers so that the layout is able to understand where to
-render those blocks.
+Inside the **StaticPage** component we wrap the content into the
+LayoutComposer component, which expects a functional React component as
+children. Within that component, we pass three elements that correspond
+to the layout areas defined earlier:
+
+- **TopBarContainer** for the _topbar_ layout area,
+- **div** with class _css.content_ for the main layout area, and
+- **FooterContainer** for the _footer_ layout area.
+
+Any static content we want to show on this page will be wrapped inside
+the _css.content_ **div**.
 
 ```jsx
 <LayoutComposer areas={layoutAreas} className={css.layout}>
@@ -244,7 +264,7 @@ render those blocks.
 ```
 
 And as a final step we need to export the component.
-`export default SocialMediaPage;`. See more from
+`export default SocialMediaPage;`. See more in
 [babeljs.org](https://babeljs.io/docs/en/learn/#modules)
 
 ## Style the component
@@ -275,12 +295,12 @@ like:
 
 ## Add routing
 
-As a last step you need to add the newly created static page to the
+As a last step, you need to add the newly created static page to the
 routing. This can be done in _src/routing/routeConfiguration.js_.
 
-Inside routeConfiguration function you should add a URL path, a page
-name (it should not conflicting with other pages), and the component
-itself.
+Inside the _routeConfiguration_ function, you should add a URL path, a
+page name (it should not conflicting with other pages), and the
+component itself.
 
 Add a new asynchronous import for the page in the beginning of the file
 with other page imports:
@@ -293,13 +313,13 @@ const SocialMediaPage = loadable(() =>
 );
 ```
 
-and after that add the route configuration to your newly created page:
-(In this example we created a social media page so '/socialmedia' would
+After that, add the route configuration to your newly created page: (In
+this example we created a social media page so '/social-media' would
 work well as a path.)
 
 ```javascript
 {
-  path: '/socialmedia',
+  path: '/social-media',
   name: 'SocialMediaPage',
   component: SocialMediaPage,
 },

@@ -97,7 +97,7 @@ packages instead of manually appending a third-party script.
 If the analytics library has an external script, you can add the library
 script tag to the
 [src/util/includeScripts.js](https://github.com/sharetribe/web-template/blob/main/src/util/includeScripts.js)
-file. You will also whitelist the corresponding URLs in the
+file. You will also need to whitelist the corresponding URLs in the
 [server/csp.js](https://github.com/sharetribe/web-template/blob/main/server/csp.js)
 file.
 
