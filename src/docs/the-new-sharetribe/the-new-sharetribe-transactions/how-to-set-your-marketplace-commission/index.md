@@ -10,7 +10,9 @@ ingress:
 published: true
 ---
 
-You can set your marketplace commission in the Commission page of your Console account. The commission that you set will always be a percentage of the
+You can set your marketplace commission in
+[the Commission page of your Console account](https://flex-console.sharetribe.com/a/transactions/commission/).
+The commission that you set will always be a percentage of the
 transaction total.
 
 ### Example
@@ -21,4 +23,4 @@ listing. Your commission will be $10. The seller would get $90 and you
 would get \$10 (minus any Stripe fees).
 
 You can learn more about the importance of
-[your marketplace commission as a means of monetization here](https://www.sharetribe.com/docs/the-new-sharetribe/why-is-commission-important/).
+[your marketplace commission as a means of monetization here](https://www.sharetribe.com/docs/operator-guides/why-is-commission-important/).

@@ -33,6 +33,14 @@ listing that you don't approve if you prefer. If a listing needs changes
 to meet your marketplace standards, you'll need to get in touch with the
 seller to suggest improvements and ask them to submit a new listing.
 
+There isn't an automatic email notification when you approve a listing.
+However, you could use something like Zapier to send a message when a
+listing changes from "pending approval" to "published". You can read
+more about Zapier from
+[this guide](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/).
+
+(Non-technical version of the Zapier guide is coming up soon!)
+
 ## How to manage listing approval in Console
 
 You can turn on the listing approval feature in your Console. Go to

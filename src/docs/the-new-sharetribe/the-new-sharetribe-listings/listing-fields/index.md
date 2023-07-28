@@ -23,7 +23,7 @@ There are default listing fields and custom listing fields. Default
 listing fields are very specifics: listing title, listing description,
 price and location. These fields cannot be removed. You can, however,
 modify how the default fields are named in your marketplace by using
-the microcopy editor.
+[the microcopy editor](https://flex-console.sharetribe.com/content/microcopy).
 
 Custom listing fields are optional and can be created, added, and
 removed from your marketplace. Each custom listing field will allow you
@@ -36,7 +36,7 @@ also be used to create filters or affect the keyword search.
 
 There are 3 types of listing fields that can be added: "Free text",
 "Select one" and "Select multiple".
-[Read more specific instructions on how to add listing fields](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-and-edit-listing-fields/).
+[Read more specific instructions on how to add listing fields](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
 
 ### Free text
 
@@ -102,7 +102,7 @@ The list of field options you input, besides being the options that a
 listing author can select when creating a listing, is also the potential
 list of filter options on your search page. You need to add at least one
 option but can add as many as you want.
-[Read more about lisitng filters](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-filters/).
+[Read more about lisitng filters](https://www.sharetribe.com/docs/operator-guides/understanding-filters/).
 
 ## Search settings
 
@@ -129,4 +129,4 @@ depending on the type of Field.
 
 - Filter visibility: determines whether the filter is a primary or a
   secondary filter.
-  [Learn more about this option in this article about search and filtering](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-filters/).
+  [Learn more about this option in this article about search and filtering](https://www.sharetribe.com/docs/operator-guides/understanding-filters/).

@@ -12,30 +12,32 @@ published: true
 This guide introduces how to use Pages. Pages lets you edit your
 marketplace’s content pages, like your Landing page or About page. If
 you would like more background on the Pages feature, consult this
-[Introduction to Pages article](https://www.sharetribe.com/docs/the-new-sharetribe/introducing-pages/).
+[Introduction to Pages article](https://www.sharetribe.com/docs/operator-guides/introducing-pages/).
 
 ## Introduction
 
 ### Gettings started
 
 Find the Pages feature in
-Console. Navigate to your Test
+[Console](https://flex-console.sharetribe.com/). Navigate to your Test
 environment, pick the “Build” section from your top bar, select
 “Content” from the sub-menu, then select “Pages” from the left side
 menu. You should now see your default content pages (the About page, the
 Landing page, the Terms of use page, and the Policy page) ready for
-editing. Make sure that you are in the Test environment of your marketplace if you want to start
+editing. You can also access the feature directly through the path
+https://flex-console.sharetribe.com/content/pages. Make sure that you
+are in the Test environment of your marketplace if you want to start
 modifying your Pages right away.
 
 If you don't have the default Pages available in Console and want to
 start trying out this feature, check out our article about
-[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
+[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/operator-guides/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
 
 ### Sections, Blocks, Fields, and templates
 
 Content pages in your marketplace are built using Sections, Blocks, and
 Fields.
-[Section templates](https://www.sharetribe.com/docs/the-new-sharetribe/section-templates/)
+[Section templates](https://www.sharetribe.com/docs/operator-guides/section-templates/)
 determine layout and content type per Section.
 
 Any Page, including your Landing page, consists of a set of Sections. A
@@ -53,7 +55,7 @@ Each Section can also contain any number of Blocks. Blocks normally
 contain more detailed information for a Section. Each Block is made up
 of different fields like media, titles, text, and call to action.
 
-The default landing page in a TNS marketplace Test environment has
+The default landing page in a Flex marketplace Test environment has
 different type of Sections that will help you get an idea of what is
 possible with Pages.
 
@@ -69,7 +71,7 @@ Every page has metadata, also called, meta tags, that determines how
 search engines and social media platforms will display it. Google, for
 example, uses the title and description you set to your page to populate
 their search results page. You can read more and learn
-[how to edit your SEO and social media metadata in this article](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-edit-seo-and-social-metadata-in-pages/).
+[how to edit your SEO and social media metadata in this article](https://www.sharetribe.com/docs/operator-guides/how-to-edit-seo-and-social-metadata-in-pages/).
 
 ## How to add Sections
 
@@ -112,7 +114,7 @@ There are four possible layouts:
   order
 
 You can see examples of each Section template in our
-[Section templates article](https://www.sharetribe.com/docs/the-new-sharetribe/section-templates/)
+[Section templates article](https://www.sharetribe.com/docs/operator-guides/section-templates/)
 
 _Tip:_ The template can be modified later on, so don’t worry too much
 about it when testing,
@@ -237,7 +239,7 @@ layout.
 You can use [markdown](https://www.markdownguide.org/basic-syntax/) to
 format text in your Fields within Blocks. To learn more about the
 markdown supported by Pages visit
-[our article about supported markdown](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-format-your-text-in-pages/).
+[our article about supported markdown](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages/).
 
 ### Sections without blocks
 
@@ -288,9 +290,13 @@ still need to save the changes for them to take effect in your
 environment. If you don’t save your changes the delete action will not
 be completed.
 
-### Can I edit the Footer?
+### Can I edit the Footer or the Top bar?
 
-Yes, you can edit your marketpalce footer. You can learn more about this [here](https://www.sharetribe.com/docs/the-new-sharetribe/how-footer-works/).
+The footer or Top bar cannot be edited using Pages. Changing their
+content requires changing your marketplace code directly. Contact your
+developer if you need help with changes or follow our
+[developer documentation](https://www.sharetribe.com/docs/ftw/how-to-add-static-pages-in-ftw/)
+to learn more about editing the code of content pages.
 
 ## Publish your Page changes to Live
 

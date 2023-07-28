@@ -118,13 +118,13 @@ Remember, these files contain important and sensitive data of your
 users, so handle them with care. Also, exporting large amounts of data
 may take some time if your marketplace has grown very large.
 
-## What can you do with your data exports
+## Analyzing Your Data
 
-With these data sets, you can analyze the performance of your marketplace.You can build analyses in spreadsheet software like Excel or Google Sheets, or import the files into bespoke analytics solutions. [Lemonado](https://lemonado.io/sharetribe) is one such solution with dashboards and functionalities specific to Sharetribe marketplace.
-
-Here are some ideas for key metrics to track and how:
-
-You can monitor your marketplace's user growth over time based on the "users" export with the help of the 'CreatedAt' column.
-You can see which listings are the most popular by counting the ‘ListingID’ in transactions export.
-You can track your Gross Merchandise Value (GMV) by adding up the ‘PayinTotal’ from your transactions export.
-CSV exports can also be useful if you want to manually connect your marketplace to another tool. For instance, you can use the Users export to retrieve the email addresses of your users to upload into an email marketing tool. It is possible to build such a data pipeline via Zapier in many cases or with code in all cases; however, doing this work manually might allow you to launch faster and save funds in the early stages of your marketplace.
+With these data sets, you can analyze the performance of your
+marketplace. For example, you can monitor your marketplace's user growth
+based on the users export with the help of the 'CreatedAt' column,
+examine the popularity of listings from the transactions export and its
+'ListingId' value, track the number of transactions in a given month, or
+measure user satisfaction based on reviews, and much more. Understanding
+these data sets will help you make informed decisions to improve your
+marketplace.

@@ -44,4 +44,4 @@ listings, and more. Within “Acccount settings” you can edit your contact
 detail, i.e., phone number, change your password, edit your Payout
 details (for selling) and Payment methods (for buying). Ignore the
 Payout details and Payment methods for now. We will tackle that process
-[when creating a listing](https://www.sharetribe.com/docs/the-new-sharetribe/tutorial-create-listing).
+[when creating a listing](https://www.sharetribe.com/docs/pilot-day-guides/creating-your-first-listing).

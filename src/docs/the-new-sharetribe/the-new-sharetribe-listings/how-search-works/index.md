@@ -23,25 +23,25 @@ listings.
 
 By default, two types of search are available in your marketplace:
 keyword and location search. If you enable
-[keyword search](https://www.sharetribe.com/docs/the-new-sharetribe/keyword-search/),
+[keyword search](https://www.sharetribe.com/docs/operator-guides/keyword-search/),
 your users search for listings by typing text into a search bar. When
-[location search](https://www.sharetribe.com/docs/the-new-sharetribe/location-search/)
+[location search](https://www.sharetribe.com/docs/operator-guides/location-search/)
 is enabled, users search for listings by searching for a specific place,
 like a country, city, or street.
 
 You can find out more
-[here about the search feature settings](https://www.sharetribe.com/docs/the-new-sharetribe/listing-search-settings/).
+[here about the search feature settings](https://www.sharetribe.com/docs/operator-guides/listing-search-settings/).
 
 ## Search page layout and filters
 
 Your search page (where results from a search appear) can show listings
 in map view or grid view.
-[You can learn more about the layout options in this article](https://www.sharetribe.com/docs/the-new-sharetribe/search-page-layout-options/).
+[You can learn more about the layout options in this article](https://www.sharetribe.com/docs/operator-guides/search-page-layout-options/).
 
 On the search page, users can sort and filter their results. You can
 create sort and filter options from the listing fields you ask providers
 to fill out.
-[Read more about filters in this article](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-filters/).
+[Read more about filters in this article](https://www.sharetribe.com/docs/operator-guides/understanding-filters/).
 
 ## Can I have both Keyword and Location search enabled?
 

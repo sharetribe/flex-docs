@@ -118,3 +118,13 @@ stock efficiently.
 
 </extrainfo>
 
+## Changing default inventory management options
+
+You may want to change these default functionalities for your
+marketplace to work how you need. This is possible with Sharetribe by
+extending your marketplace with code. If you are a developer, consult
+our developer documentation for more information on
+[inventory management](https://www.sharetribe.com/docs/references/stock/)
+works under the hood. If you are not a developer, then consider
+[hiring a developer](https://www.sharetribe.com/docs/operator-guides/how-to-hire-developer/)
+to help you modify how inventory works on your marketplace.

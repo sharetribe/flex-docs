@@ -5,7 +5,7 @@ updated: 2023-01-26
 category: the-new-sharetribe-static-content
 ingress:
   Learn how Article, Columns, Features, and Carousel templates affect
-  your pages' layout in The New Sharetribe.
+  your pages' layout in Flex.
 published: true
 ---
 
@@ -131,5 +131,5 @@ Section templates determine the layout of Blocks in a Section. If you
 want to format how information looks inside your Block, then you should
 use Markdown. Markdown is a syntax language that lets you format text
 inside Blocks.
-[Our guide](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-format-your-text-in-pages/)
+[Our guide](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages/)
 for formatting with Markdown will get you started using it with Pages.

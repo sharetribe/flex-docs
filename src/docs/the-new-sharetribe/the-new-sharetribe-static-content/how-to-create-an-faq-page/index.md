@@ -10,7 +10,7 @@ published: true
 This article provides step by step instructions on how to use Pages to
 build an FAQ page. It assumes you know basics about how Pages work
 covered in this
-[guide.](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-edit-content-pages-in-console/)
+[guide.](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/)
 
 Also, to get an idea of what we’re about to create, you can see the end
 result, i.e., the FAQ page we’ll create in this tutorial by clicking the
@@ -25,12 +25,26 @@ link below.
 ## Getting started
 
 Find the Pages feature in
-Console. Navigate to your test
+[Console.](https://flex-console.sharetribe.com/) Navigate to your test
 (or development) environment, pick the “Build” section from your top
 bar, select “Content” from the sub-menu, then select “Pages” from the
 left side menu. You should now see your default content pages (the About
 page, the Landing page, the Terms of use page, and the Policy page)
 ready for editing.
+
+<extrainfo title="Test or development environment?">
+
+You can determine which environment to use by checking the location of
+the "Copy to Live..." button in Flex Console > Build > Content. If you
+can see the button when you are in Dev, follow these instructions in
+Dev. If you can see the button in Test, follow these instructions in
+Test.
+
+</extrainfo>
+
+If you don't have the feature available in Console and want to start
+using it, check out our article about
+[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/operator-guides/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
 
 ## Deciding how the page is structured
 
@@ -84,7 +98,7 @@ changes, and that can result in broken links if there are links
 elsewhere that lead to that page. Generally, we recommend that you don’t
 change existing Page IDs or URL addresses unless necessary.
 
-So, we’re now in the “Pages” area of the  Console. To create a new
+So, we’re now in the “Pages” area of the Flex Console. To create a new
 page, we’ll click “+ Create new page…” at the bottom, and then we get a
 pop-up window. We want a short and self-explanatory URL address and name
 for the page, so we’ll just use “faq” as the Page ID. Then we click on
@@ -114,7 +128,7 @@ using the single column template and with a fitting title and a text
 block, no call to action, and a Section appearance of our choosing. We
 don’t need to create additional Blocks because we do not want to include
 any other content in this Section. Note that you can also use
-[Markdown](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-format-your-text-in-pages/)
+[Markdown](https://www.sharetribe.com/docs/operator-guides/how-to-format-your-text-in-pages/)
 when editing content with Pages. Markdown enables you to easily format
 text with **bold characters** and _italics_, it allows you to create
 lists, and much more.

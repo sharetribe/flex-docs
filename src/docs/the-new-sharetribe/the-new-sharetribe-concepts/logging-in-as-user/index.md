@@ -24,7 +24,7 @@ this way. For a seller, you cannot change the user's payout details,
 send messages to other users or interact with ongoing transactions. You
 can only interact with ongoing transactions when you have an operator
 transition in the transaction process, like you do in the
-[default product purchase process.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-process-options/#operator-actions-1).
+[default product purchase process.](https://www.sharetribe.com/docs/operator-guides/default-transaction-process-options/#operator-actions-1).
 You also cannot make purchases when logged in as another user.
 
 ## How to use the "Login as user" feature

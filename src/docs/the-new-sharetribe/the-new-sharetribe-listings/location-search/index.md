@@ -7,12 +7,15 @@ ingress: This articles explains how Location search works in Sharetribe.
 published: true
 ---
 
-As it's name indicates, it allows your users to search within your
+As it's name indicates it allows your users to search within your
 marketplace based on location or areas. You can enable Location search
 from
-the Listing Search settings page in Console.
+[the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
 
-Location features in Sharetribe are powered by Mapbox. Location search allows you to use a location to find listings near that
+Location features in Sharetribe are powered by Mapbox. You can read more
+about
+[setting your Mapbox account in this article](https://www.sharetribe.com/docs/ftw/how-to-set-up-mapbox-for-ftw/).
+Location search allows you to use a location to find listings near that
 location or within that searched area.
 
 ## How are the search results found and sorted?
@@ -44,7 +47,7 @@ Not by default.
 ## How can I change the default text displayed in the search bar?
 
 You can do that easily with
-[the Microcopy editor](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-use-microcopy-editor/).
+[the Microcopy editor](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
 Find the “TopbarSearchForm.placeholder” and the
 “LocationSearchForm.placeholder” keys and replace the text there for
 your own. The default text is “Search bikes…”

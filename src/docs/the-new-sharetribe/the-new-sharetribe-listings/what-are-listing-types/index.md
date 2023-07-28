@@ -28,7 +28,7 @@ pick-up or shipping as delivery options.
 
 In addition to listing types, you can affect the data collected from the
 provider when creating a listing
-[by adding custom fields](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-and-edit-listing-fields/).
+[by adding custom fields](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
 
 ## How to create a Listing type?
 
@@ -63,19 +63,19 @@ transaction on the listing page.
   listing creation form. Allows buyers to initiate transactions based on
   the corresponding availability. Perfect for most rental and service
   marketplaces.
-  [Read more](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-transaction-settings/#calendar-booking).
+  [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#calendar-booking).
 
 - Buying and selling products: allows providers to set the price of a
   unit and define how many units they can provide. Allows buyers to
   purchase those listings. Perfect for product marketplaces (and in some
   other types of marketplaces).
-  [Read more](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-transaction-settings/#buying-and-selling-products).
+  [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#buying-and-selling-products).
 
 Finally, transaction settings determine the transaction process used in
 your marketplace. The transaction process maps out how a transaction
 happens between a customer and provider, including payment, payout, and
 reviews.
-[You can learn more about the transaction settings here](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-transaction-settings/).
+[You can learn more about the transaction settings here](/operator-guides/understanding-transaction-settings/).
 
 ## Can I edit or delete an existing Listing type?
 

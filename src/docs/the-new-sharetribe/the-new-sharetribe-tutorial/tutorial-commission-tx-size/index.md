@@ -36,7 +36,7 @@ You will still need to interact with Stripe when creating a listing and
 initiating a transaction, but you don’t need to configure your own
 Stripe account yet.
 
-[Read more about setting up Stripe here](www.sharetribe.com/docs/the-new-sharetribe/how-to-stripe/).
+[Read more about setting up Stripe here](/the-new-sharetribe/how-to-stripe/).
 
 ### Commission
 
@@ -51,7 +51,7 @@ from every transaction. We believe 20% is a fair fee for Saunatime.
 
 Go to **Build → Content → Minimum transaction size**. In the field
 “Minimum Listing Price,” we’ll add 1 and save changes. You can
-[learn more about the minimum listing price here](https://www.sharetribe.com/docs/the-new-sharetribe/what-is-the-minimum-transaction-size).
+[learn more about the minimum listing price here](https://www.sharetribe.com/docs/operator-guides/what-is-the-minimum-transaction-size).
 
 **Write "20" in "Provider commission"**
 

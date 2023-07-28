@@ -10,7 +10,7 @@ published: true
 ---
 
 Transaction settings are determined within each
-[Listing type](https://www.sharetribe.com/docs/the-new-sharetribe/what-are-listing-types/).
+[Listing type](https://www.sharetribe.com/docs/operator-guides/what-are-listing-types/).
 These settings impact how providers create listings, how customers
 initiate transactions, and how those transactions happen.
 
