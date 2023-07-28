@@ -19,19 +19,19 @@ this include general filter options and specific fields filters.
 
 Sharetribe has two different search types or search functions, keyword
 and location search. You can enable either one from the
-[Listing Search page of Console](https://flex-console.sharetribe.com/a/listings/listing-search).
+Listing Search page of Console.
 You can read more about these features and how they work in these
 articles:
 
-- [Keyword search](https://www.sharetribe.com/docs/operator-guides/keyword-search/)
-- [Location search](https://www.sharetribe.com/docs/operator-guides/location-search/)
+- [Keyword search](https://www.sharetribe.com/docs/the-new-sharetribe/keyword-search/)
+- [Location search](https://www.sharetribe.com/docs/the-new-sharetribe/location-search/)
 
 ## Filters
 
 In the Listing search settings you can also enable filters for default
 fields. You can choose to Display a date range filter and Display a
 Price filter.
-[If you want to understand adding filters for custom fields read here](https://www.sharetribe.com/docs/operator-guides/understanding-filters).
+[If you want to understand adding filters for custom fields read here](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-filters).
 
 ### Date range filter
 

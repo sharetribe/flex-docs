@@ -10,7 +10,7 @@ published: true
 ---
 
 You can add custom listing fields to your marketplace from
-[the Listing fields section in Console](https://flex-console.sharetribe.com/a/listings/listing-fields).
+the Listing fields section in Console.
 
 ## Adding a new field
 
@@ -37,7 +37,7 @@ There are 3 mandatory options.
 - Field type: You have to choose the type of field that you want to use:
   Free text, Select one, or Select multiple. For more information on
   these types
-  [check out the Listing fields article](https://www.sharetribe.com/docs/operator-guides/listing-fields/)
+  [check out the Listing fields article](https://www.sharetribe.com/docs/the-new-sharetribe/listing-fields/)
 
 ## Optional settings
 
@@ -52,7 +52,7 @@ search settings for the field.
 - Search settings: You can determine whether the field is used in the
   search page to make discovering the listing easier. Depending on the
   type of field, the setting that is available differs. Read more about
-  [Custom field search settings](https://www.sharetribe.com/docs/operator-guides/listing-fields/#search-settings).
+  [Custom field search settings](https://www.sharetribe.com/docs/the-new-sharetribe/listing-fields/#search-settings).
 
   - Free text fields: This extra settion allows the system to index the
     content of the field in keyword search.
@@ -63,7 +63,7 @@ search settings for the field.
   You can also define the Filter visibility settings, which determines
   whether the Filter will be a primary or a secondary filter. Learn more
   about filters in
-  [this article about understanding filters](https://www.sharetribe.com/docs/understanding-filters)
+  [this article about understanding filters](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-filters)
 
 ## Field options for Select fields
 
@@ -84,4 +84,4 @@ value.
 At this moment, it is not possible to remove the default listing fields,
 like title and description. You can, however, modify the copy text that
 is displayed to your users
-[via microcopy editor](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/)
+[via microcopy editor](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-use-microcopy-editor/)

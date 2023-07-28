@@ -9,7 +9,7 @@ published: true
 
 As it's name indicates it allows your users to search within your
 marketplace based on keywords. You can enable Keyword search from
-[the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
+the Listing Search settings page in Console.
 
 The search returns listings that match the keywords searched. The match
 can be found in the text content of a listing. The listing attributes
@@ -36,14 +36,14 @@ accents or marks.
 ## How to add custom fields to the Keyword search results?
 
 When you create
-[a new Custom Listing Field](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/),
+[a new Custom Listing Field](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-and-edit-listing-fields/),
 if the listing field is a Free Text type of field, you can enable the
 option to include the field in the keyword search.
 
 ## How can I change the default text displayed in the search bar?
 
 You can do that easily with
-[the Microcopy editor](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
+[the Microcopy editor](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-use-microcopy-editor/).
 Find the “TopbarSearchForm.placeholder” and the
 “LocationSearchForm.placeholder” keys and replace the text there for
 your own. The default text is “Search bikes…”
