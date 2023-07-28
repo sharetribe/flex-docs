@@ -5,14 +5,9 @@ import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
 import { isScrollingDisabled } from '../../ducks/ui.duck';
-import {
-  LayoutSideNavigation,
-  Footer,
-  Page,
-  UserNav,
-  H3,
-} from '../../components';
+import { LayoutSideNavigation, Page, UserNav, H3 } from '../../components';
 import TopbarContainer from '../TopbarContainer/TopbarContainer';
+import FooterContainer from '../FooterContainer/FooterContainer';
 
 import {
   deleteAccount,
@@ -73,13 +68,13 @@ export const DeleteAccountPageComponent = props => {
               desktopClassName={css.desktopTopbar}
               mobileClassName={css.mobileTopbar}
             />
-            <UserNav selectedPageName="DeleteAccountPage" />
+            <UserNav currentPage="DeleteAccountPage" />
           </>
         }
         sideNav={null}
         useAccountSettingsNav
         currentPage="DeleteAccountPage"
-        footer={<Footer />}
+        footer={<FooterContainer />}
       >
         <div className={css.content}>
           <H3 as="h1" className={css.title}>

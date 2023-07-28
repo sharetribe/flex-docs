@@ -22,8 +22,8 @@ will be shown in the listing page when a user visits.
 There are default listing fields and custom listing fields. Default
 listing fields are very specifics: listing title, listing description,
 price and location. These fields cannot be removed. You can, however,
-modify how the default fields are named in your marketplace by using
-the microcopy editor.
+modify how the default fields are named in your marketplace by using the
+microcopy editor.
 
 Custom listing fields are optional and can be created, added, and
 removed from your marketplace. Each custom listing field will allow you

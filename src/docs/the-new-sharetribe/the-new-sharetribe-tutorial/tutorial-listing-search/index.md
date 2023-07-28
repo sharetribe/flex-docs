@@ -12,9 +12,10 @@ noindex: true
 
 In the
 [previous step about listing fields](/the-new-sharetribe/tutorial-listing-fields/),
-we already altered the search experience by adding a custom search filter.
-However, there are also some more general search configuration options,
-which can be adjusted from "Listings → Listing search". Let's go there.
+we already altered the search experience by adding a custom search
+filter. However, there are also some more general search configuration
+options, which can be adjusted from "Listings → Listing search". Let's
+go there.
 
 ### Search type
 

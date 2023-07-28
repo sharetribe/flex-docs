@@ -7,10 +7,10 @@ ingress: Review Biketribe defaults and how to change them
 published: true
 ---
 
-Building your marketplace with The New Sharetribe typically starts by modifying
-Biketribe, your example marketplace. Learn more about Biketribe’s
-default configurations and what to modify to turn Biketribe into your
-marketplace.
+Building your marketplace with The New Sharetribe typically starts by
+modifying Biketribe, your example marketplace. Learn more about
+Biketribe’s default configurations and what to modify to turn Biketribe
+into your marketplace.
 
 ## What is Biketribe
 
@@ -24,7 +24,6 @@ no-code tools to setup your custom marketplace. Then, you can go Live or
 use code to fully customize your marketplace.
 
 ![biketribe_search_page](./search_page-grid_layout-landscape.png)
-
 
 ### Biketribe users
 
@@ -81,10 +80,9 @@ _Examples of microcopy visible on the listing page._
 
 The first step to building your marketplace is modifying Biketribe
 default configurations that do not apply to your marketplace. You can
-modify these with no-code tools from
-Console. Console is your
-operator backend for configuring your marketplace without code and
-viewing and managing your marketplace data, like users or listings.
+modify these with no-code tools from Console. Console is your operator
+backend for configuring your marketplace without code and viewing and
+managing your marketplace data, like users or listings.
 
 The following checklist provides an overview of every configuration in
 Biketribe that you should review. Certain defaults, like the marketplace
@@ -100,17 +98,14 @@ Modify the default brand and style in Biketribe to match your
 marketplace.
 
 - Apply your branding by changing the default images and marketplace
-  colours. Edit in Console or
-  learn more in the
+  colours. Edit in Console or learn more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-good-looking-logos-and-images/).
 - Change the default background image and social media images. Edit in
   Console or learn more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-good-looking-logos-and-images/).
-- Change the logo. Edit in
-  Console or learn more in the
+- Change the logo. Edit in Console or learn more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-good-looking-logos-and-images/).
-- Generate a new favicon. Edit in
-  Console or learn more in
+- Generate a new favicon. Edit in Console or learn more in
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-good-looking-logos-and-images/).
 
 ### Content and microcopy
@@ -118,17 +113,16 @@ marketplace.
 Biketribe uses language about bikes. Build your own messaging in the
 following steps.
 
-- Change the microcopy in your marketplace. Edit in
-  Console or learn more in the
+- Change the microcopy in your marketplace. Edit in Console or learn
+  more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-use-microcopy-editor).
-- Change your marketplace landing page. Edit in
-  Console or learn more in the
+- Change your marketplace landing page. Edit in Console or learn more in
+  the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-edit-content-pages-in-console).
-- Update your Terms of Service and Privacy Policy. Edit in
-  Console or learn more in
+- Update your Terms of Service and Privacy Policy. Edit in Console or
+  learn more in
   [the documentation](https://www.sharetribe.com/docs/the-new-sharetribe/free-templates).
-- Update the footer. Edit in
-  Console or learn more in the
+- Update the footer. Edit in Console or learn more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/how-footer-works).
 
 ### Listings
@@ -137,17 +131,14 @@ Biketribe providers list their bikes. Update the listing page, search
 page, and listing wizard to suit what your providers are offering on
 your marketplace.
 
-- Change your listing fields. Configure in
-  Console or learn more in the
+- Change your listing fields. Configure in Console or learn more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/listing-fields).
-- Change your listing layout. Configure in
-  Console or learn more in the
+- Change your listing layout. Configure in Console or learn more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/listing-page-image-layouts).
-- Change your search filters. Configure in
-  Console or learn more in the
+- Change your search filters. Configure in Console or learn more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/how-search-works).
-- Change your search page layout. Configure in
-  Console or learn more in the
+- Change your search page layout. Configure in Console or learn more in
+  the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/search-page-layout-options).
 
 ### Transactions
@@ -155,15 +146,16 @@ your marketplace.
 Biketribe customers rent per day. If your marketplace transaction is
 different, then make these changes.
 
-- Update your listing types. Configure in
-  Console or learn more in the
+- Update your listing types. Configure in Console or learn more in the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/what-are-listing-types).
-- Choose your transaction process. Configure in
-  Console or learn more in the
+- Choose your transaction process. Configure in Console or learn more in
+  the
   [documentation](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-transaction-settings).
 
 ## Go Live and customize further
 
 Once you have completed these changes, it's time to review your
 marketplace. If you are ready to launch to your first users, then you
-need to set up a Live environment. You can do this by going to your environments, select live, and choose subscription plan. And now, you're live. 
+need to set up a Live environment. You can do this by going to your
+environments, select live, and choose subscription plan. And now, you're
+live.

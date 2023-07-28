@@ -1,7 +1,7 @@
 ---
 title: Add a favorite saunas button
 slug: add-favorite-saunas
-updated: 2023-05-30
+updated: 2023-07-27
 category: tutorial-listings
 ingress:
   Learn how to add a favorites functionality to Sharetribe Web Template
@@ -242,6 +242,13 @@ page component we are using. Since the layout configuration in our
 marketplace is _Screen-wide cover photo_, the corresponding listing page
 component is _ListingPageCoverPhoto.js_.
 
+<info>
+
+If your listing page configuration is _Image carousel with thumbnails_,
+you will need to modify the component _ListingPageCarousel.js_ instead.
+
+</info>
+
 Finally, we need to pass the necessary props to OrderPanel.js.
 
 ```shell
@@ -249,7 +256,7 @@ Finally, we need to pass the necessary props to OrderPanel.js.
     └── containers
         └── ListingPage
             ├── ListingPage.shared.js
-            └── ListingPageCoverPhoto.js
+            └── ListingPageCarousel.js
 
 ```
 
@@ -312,6 +319,13 @@ updating the current user’s private data.
 
 Next, we call this function from _ListingPageCoverPhoto.js_. We will
 first import the function we just created.
+
+<info>
+
+If your listing page configuration is _Image carousel with thumbnails_,
+you will need to modify the component _ListingPageCarousel.js_ instead.
+
+</info>
 
 In addition, we need to import the Redux action that we will use to
 actually update the user’s profile. For that, we can use the
@@ -441,7 +455,7 @@ The flow of the data happens like this:
   resource
 - the Redux action then calls _currentUserShowSuccess_, which updates
   the _currentUser_ in the store with the updated resource
-- the _currentUser_ prop that we pass from ListingPageCoverPhoto to
+- the _currentUser_ prop that we pass from ListingPageCarousel to
   OrderPanel is mapped to Redux state, so any changes to currentUser in
   state are immediately reflected in the prop
 

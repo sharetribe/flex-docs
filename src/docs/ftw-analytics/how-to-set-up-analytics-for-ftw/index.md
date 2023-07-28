@@ -96,21 +96,15 @@ packages instead of manually appending a third-party script.
 
 If the analytics library has an external script, you can add the library
 script tag to the
-[public/index.html](https://github.com/sharetribe/web-template/blob/master/public/index.html)
-file.
-
-In some cases, you might want to import the script during server-side
-rendering (SSR). Importing the script during SSR also allows you to
-conditionally import the script, depending on, e.g. certain environment
-variables. To inject the script during SSR, see how the
-`googleAnalyticsScript` is imported in the
-[server/renderer.js](https://github.com/sharetribe/web-template/blob/master/server/renderer.js)
+[src/util/includeScripts.js](https://github.com/sharetribe/web-template/blob/main/src/util/includeScripts.js)
+file. You will also need to whitelist the corresponding URLs in the
+[server/csp.js](https://github.com/sharetribe/web-template/blob/main/server/csp.js)
 file.
 
 ### Create a handler
 
 You can create a custom handler e.g. in
-[src/analytics/handlers.js](https://github.com/sharetribe/web-template/blob/master/src/analytics/handlers.js).
+[src/analytics/handlers.js](https://github.com/sharetribe/web-template/blob/main/src/analytics/handlers.js).
 If you want to track page views, you could create a class that
 implements a `trackPageView(canonicalPath, previousPath)` method.
 
@@ -143,4 +137,4 @@ canonical URL that is given to the method.
 
 Finally, you only need to initialise the handler in the
 `setupAnalyticsHandlers()` function in
-[src/index.js](https://github.com/sharetribe/web-template/blob/master/src/index.js).
+[src/index.js](https://github.com/sharetribe/web-template/blob/main/src/index.js).

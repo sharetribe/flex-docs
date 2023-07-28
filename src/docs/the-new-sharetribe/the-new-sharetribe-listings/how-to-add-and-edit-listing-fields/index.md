@@ -9,14 +9,14 @@ ingress:
 published: true
 ---
 
-You can add custom listing fields to your marketplace from
-the Listing fields section in Console.
+You can add custom listing fields to your marketplace from the Listing
+fields section in Console.
 
 ## Adding a new field
 
-To add a new field, go to the "Listings -> Listing fields" page of your Console
-account and click on the “+ Add a new custom field” link towards the
-bottom of the page.
+To add a new field, go to the "Listings -> Listing fields" page of your
+Console account and click on the “+ Add a new custom field” link towards
+the bottom of the page.
 
 When creating the field, you have to determine the Field label, the
 Field ID, and the Field type. Additionally, you can determine whether

@@ -27,8 +27,8 @@ keyword and location search. If you enable
 your users search for listings by typing text into a search bar. When
 [location search](https://www.sharetribe.com/docs/the-new-sharetribe/location-search/)
 is enabled, users search for listings by searching for a specific place,
-like a country, city, or street. In addition to location search, you can enable a keyword
-filter.
+like a country, city, or street. In addition to location search, you can
+enable a keyword filter.
 
 You can find out more
 [here about the search feature settings](https://www.sharetribe.com/docs/the-new-sharetribe/listing-search-settings/).

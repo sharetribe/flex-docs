@@ -22,10 +22,10 @@ offer users the ability to interact with them, such as when buyers are
 selecting the length of a booking from a listing or entering their
 payment information into the checkout page.
 
-In The New Sharetribe, the term microcopy refers to short written texts scattered
-around a dynamic page’s interface; button labels, error messages, and
-help texts are all examples. They are textual, brief (a sentence or
-two), and highly contextual.
+In The New Sharetribe, the term microcopy refers to short written texts
+scattered around a dynamic page’s interface; button labels, error
+messages, and help texts are all examples. They are textual, brief (a
+sentence or two), and highly contextual.
 
 ![Examples of microcopy](./microcopy_examples.png)
 
@@ -35,11 +35,11 @@ blue. Note that listing fields and search filters ("Sauna type",
 microcopy editor. An upcoming feature will introduce a dedicated feature
 for editing these fields and filters in Console._
 
-With the Microcopy editor, you can modify these texts in your New Sharetribe
-Console. You can also use the Microcopy editor to translate these texts
-to a new language. This article will walk you through how to set up your
-Microcopy editor and make microcopy changes while building and operating
-your New Sharetribe marketplace.
+With the Microcopy editor, you can modify these texts in your New
+Sharetribe Console. You can also use the Microcopy editor to translate
+these texts to a new language. This article will walk you through how to
+set up your Microcopy editor and make microcopy changes while building
+and operating your New Sharetribe marketplace.
 
 ## Why microcopy matters
 
@@ -59,11 +59,12 @@ All these decisions affect the choices you make in your microcopy.
 
 ## How to test the Microcopy editor?
 
-You can try out the Microcopy editor in your New Sharetribe test marketplace. After
-creating a New Sharetribe account, log into Console. Ensure you are in the Test
-environment.
+You can try out the Microcopy editor in your New Sharetribe test
+marketplace. After creating a New Sharetribe account, log into Console.
+Ensure you are in the Test environment.
 
-In the left navigation sidebar, navigate to the "Content -> Microcopy". The Microcopy editor is here.
+In the left navigation sidebar, navigate to the "Content -> Microcopy".
+The Microcopy editor is here.
 
 ![Microcopy editor](./microcopy_editor.png)
 

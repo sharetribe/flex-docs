@@ -4,8 +4,8 @@ slug: introducing-pages
 updated: 2023-07-05
 category: the-new-sharetribe-static-content
 ingress:
-  The new sharetribe also feature a powerful
-  interface that gives you full control over your marketplace’s content.
+  The new sharetribe also feature a powerful interface that gives you
+  full control over your marketplace’s content.
 published: true
 ---
 
@@ -19,10 +19,10 @@ development mode before making them available in your live marketplace.
 
 ## What you can do with Pages
 
-Pages lets you create and edit content pages without code in The New Sharetribe. On
-your marketplace, content pages are pages featuring content created by
-you, the marketplace operator. Landing pages, “About” pages, FAQs or
-blog posts are all examples of content pages.
+Pages lets you create and edit content pages without code in The New
+Sharetribe. On your marketplace, content pages are pages featuring
+content created by you, the marketplace operator. Landing pages, “About”
+pages, FAQs or blog posts are all examples of content pages.
 
 There are various use cases for content pages. The most obvious one is
 to provide informational content about how your marketplace works to
@@ -30,18 +30,18 @@ your users. In addition, you might use Pages to create alternative
 landing pages for various user groups, for search engine optimization
 (SEO) or paid advertising purposes, or even create a simple blog.
 
-Any New Sharetribe marketplace starts with 4 default pages: the About page, the
-Landing page, the Privacy policy page, and Terms of use page. Pages lets
-you edit these default pages, but, with the exception of the About Page,
-they cannot be removed. In addition to the default pages, you can add
-and edit any number of custom content pages.
+Any New Sharetribe marketplace starts with 4 default pages: the About
+page, the Landing page, the Privacy policy page, and Terms of use page.
+Pages lets you edit these default pages, but, with the exception of the
+About Page, they cannot be removed. In addition to the default pages,
+you can add and edit any number of custom content pages.
 
 ## How Pages works
 
 You can use Pages from Console, in "Content -> Pages". You can try it
-immediately in the New Sharetribe Test environment, or use it to create your
-content after setting up your own marketplace app. Start editing the
-default content pages!
+immediately in the New Sharetribe Test environment, or use it to create
+your content after setting up your own marketplace app. Start editing
+the default content pages!
 
 Each content page is built using a combination of sections and blocks.
 Sections define the different content areas and their layout. Blocks
@@ -50,11 +50,11 @@ multiple different types of content, like texts, Youtube videos or
 images.
 
 The content you create displays in your marketplace frontend. It is laid
-out using the default New Sharetribe design. If you want your content to follow a
-different design, a developer can make the necessary modifications. A
-future release will also allow developers to add more types of sections
-and blocks, which will make it possible to create a wider variety of
-content pages.
+out using the default New Sharetribe design. If you want your content to
+follow a different design, a developer can make the necessary
+modifications. A future release will also allow developers to add more
+types of sections and blocks, which will make it possible to create a
+wider variety of content pages.
 
 While your marketplace is in development, use Pages in the Test
 environment to build out your content.
