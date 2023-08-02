@@ -1,7 +1,7 @@
 ---
 title: Layout options explained
 slug: layout-options-explained
-updated: 2023-06-01
+updated: 2023-08-02
 category: operator-guides-layout
 ingress: Configure how your search and listing pages look
 published: true
@@ -28,7 +28,7 @@ using the Map view layout_
 
 You can also choose how listing images display on the search page. Learn
 more about these thumbnails in
-[our in-depth guide](https://www.sharetribe.com/docs/operator-guides/listing-thumbnail-aspect-ratio).
+[our in-depth guide](https://www.sharetribe.com/docs/operator-guides/listing-thumbnail-aspect-ratio/).
 
 ## Listing page image layouts
 

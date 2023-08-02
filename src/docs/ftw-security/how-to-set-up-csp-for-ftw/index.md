@@ -1,7 +1,7 @@
 ---
 title: Content Security Policy
 slug: how-to-set-up-csp-for-ftw
-updated: 2023-01-01
+updated: 2023-08-02
 category: ftw-security
 ingress:
   This guide describes how to set up a Content Security Policy when
@@ -67,4 +67,4 @@ resources:
 - https://content-security-policy.com/
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 - https://ponyfoo.com/articles/content-security-policy-in-express-apps
-- https://helmetjs.github.io/docs/csp/
+- https://helmetjs.github.io/#content-security-policy
