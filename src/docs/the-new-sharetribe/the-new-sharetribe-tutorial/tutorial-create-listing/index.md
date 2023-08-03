@@ -138,9 +138,9 @@ of the information by hand. Choose <b>"I'm and individual"</b>. Choose <b>"Finla
 You will immediately see another message with the title “Stripe needs
 more information”. **This is normal.**
 
-<extrainfo title="Payout preferences pop-up">
+<extrainfo title="Get verified pop-up">
 
-![Payment preferences pop-up](./payout-popup.png)
+![Stripe payout verification step](./get-verified-popup.png)
 
 </extrainfo>
 
