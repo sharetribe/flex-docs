@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-On our iamginary bike rental marketplace, some providers may have
+On our imaginary bike rental marketplace, some providers may have
 several similar bikes to rent. Instead of needing to create separate
 listings for each similar bike, we can add “seats” to a single listing.
 This makes it possible for customers to book several similar bikes in
@@ -32,21 +32,20 @@ In this guide, you will
 
 Seats are a feature of a bookable listing’s availability plan. By
 default, all listings are created with availability plans featuring one
-seat. To enable booking listings with multiple seats, we need to add the
-ability to create listings whose availability plan contains more than
-one seat.
+seat.
 
-We will make those changes in EditListingAvailabilityPanel:
+To enable booking listings with multiple seats, we need to add the
+ability to create listings whose availability plan contains more than
+one seat. We will make these changes in EditListingAvailabilityPanel:
 
 - For enabling seats in the default plan, we will update
   _AvailabilityPlanEntries.js_, which is a subcomponent used in
   _EditListingAvailabilityPlanForm.js_
 - For managing seats in availability exceptions, we will update
   _EditListingAvailabilityExceptionForm.js_
-- For saving both those changes, we need to make updates in
+- For saving both those changes, we will update in
   _EditListingAvailabilityPanel.js_
-- For showing those changes, we need to make updates in
-  _WeeklyCalendar.js_
+- For showing those changes, we will update in _WeeklyCalendar.js_
 
 ```shell
 └── src
@@ -66,8 +65,9 @@ We will make those changes in EditListingAvailabilityPanel:
 
 ### Add seats handling to default availability plan
 
-AvailabilityPlanEntries.js is a component that, in the
-EditListingAvailabilityPlanForm, represents a single day’s availability.
+_AvailabilityPlanEntries_ is a component that, in the
+_EditListingAvailabilityPlanForm_, represents a single day’s
+availability.
 
 ```shell
 └── src
@@ -91,7 +91,7 @@ seats to full-day availability.
 
 #### Show seats input in AvailabilityPlanEntries
 
-We will need to import FieldTextInput from _src/components_, so let's
+We will need to import _FieldTextInput_ from _src/components_, so let's
 add it to the existing import statement.
 
 ```jsx
@@ -100,14 +100,17 @@ import {
   IconClose,
   FieldSelect,
   FieldCheckbox,
-  FieldTextInput,
+  FieldTextInput, // add this row
 } from '../../../../../components';
 ```
 
 When the user selects a day as active on a full day listing, the time
-range component is hidden by default. However, now that we want to allow
-modifying seats for each day, we can add a seats input to the hidden
-time range component.
+range component is hidden by default. Now that we want to allow
+modifying seats for each day, however, we can add a _seats_ input to the
+hidden time range component.
+
+Replace the existing _TimeRangeHidden_ component with the following
+version:
 
 ```jsx
 const TimeRangeHidden = props => {
@@ -162,7 +165,7 @@ with this new one.
       if (useFullDays) {
         if (isChecked) {
           // /** Replace this: **/
-          // formApi.mutators.push(dayOfWeek, { startTime: '00:00', endTime: '24:00' });
+          formApi.mutators.push(dayOfWeek, { startTime: '00:00', endTime: '24:00' });
           // /** with this: **/
           formApi.mutators.push(dayOfWeek, {
             startTime: '00:00',
@@ -175,9 +178,11 @@ with this new one.
 ```
 
 Now, we still need to give the correct props to the new
-_TimeRangeHidden_ element. In addition to name and key, we pass _value_
-and _onChange_ props. The value passed to _TimeRangeHidden_ is the entry
-pushed to _formApi.mutators_ in the checkbox onChange function, i.e.
+_TimeRangeHidden_ element. In addition to _name_ and _key_, we pass
+_value_ and _onChange_ props, as well as intl.
+
+The _value_ prop passed to _TimeRangeHidden_ is the entry pushed to
+_formApi.mutators_ in the checkbox _onChange_ function, i.e.
 
 ```jsx
 {
@@ -190,8 +195,12 @@ pushed to _formApi.mutators_ in the checkbox onChange function, i.e.
 In the _onChange_ function, we determine how the current plan gets
 updated with the numeric input value.
 
+Replace the existing usage of TimeRangeHidden with the
+
 ```jsx
-  return useFullDays ? (
+    /** Replace this **/
+    <TimeRangeHidden name={name} key={name} />
+    /** with this **/
     <TimeRangeHidden
       name={name}
       key={name}
@@ -204,8 +213,6 @@ updated with the numeric input value.
         formApi.mutators.update(dayOfWeek, 0, { ...currentPlan, seats: value });
       }}
     />
-  ) : (
-...
 ```
 
 At this point, we can add the microcopy necessary in this guide. You can
@@ -305,10 +312,49 @@ availability plan in the _listing/update_ network call.
 
 ![Seats saved to availability plan](./availabilityPlanNetwork.png)
 
+If you now refresh the page and re-open the modal, the seats values we
+just saved do not show up in the modal. We still need to update one
+function in _EditListingAvailabilityPanel.js_: _createEntryDayGroups_.
+
+The _createEntryDayGroups_ function takes the existing availability plan
+and maps the existing availability entries into initial values for the
+_EditListingAvailabilityPlanForm_. By default, it does not handle seats,
+so we will add seats handling.
+
+```diff
+// Create initial entry mapping for form's initial values
+const createEntryDayGroups = (entries = {}) => {
+  // Collect info about which days are active in the availability plan form:
+  let activePlanDays = [];
+  return entries.reduce((groupedEntries, entry) => {
+-   const { startTime, endTime: endHour, dayOfWeek } = entry;
++   const { startTime, endTime: endHour, seats, dayOfWeek } = entry;
+    const dayGroup = groupedEntries[dayOfWeek] || [];
+    activePlanDays = activePlanDays.includes(dayOfWeek)
+      ? activePlanDays
+      : [...activePlanDays, dayOfWeek];
+    return {
+      ...groupedEntries,
+      [dayOfWeek]: [
+        ...dayGroup,
+        {
+          startTime,
+          endTime: endHour === '00:00' ? '24:00' : endHour,
++         seats,
+        },
+      ],
+      activePlanDays,
+    };
+  }, {});
+};
+```
+
+Now the saved values also show up after refreshing the page.
+
 #### Show default seats in the weekly calendar
 
-As the final step of adding the default seats, let’s show the number of
-available seats in the weekly calendar.
+As the final step of adding seats to the default availability plan,
+let’s show the number of available seats in the weekly calendar.
 
 ```shell
 └── src
@@ -393,8 +439,8 @@ with multiple seats.
 Creating exceptions with multiple seats is a great way to manage
 event-based marketplaces.
 
-By removing the default plan entry inputs, you can set the default plan
-to always be created with 0 seats. Providers can then add availability
+By removing all default plan entries, you can set the default plan to
+always be created with 0 seats. Providers can then add availability
 exceptions with a number of seats to open certain events to bookings.
 
 This way, a service provider can use a single listing to organize
@@ -418,7 +464,7 @@ First, we’ll again import the _FieldTextInput_ component for seats.
 
 ```jsx
 import {
-  FieldTextInput,
+  FieldTextInput, // add this row
   Form,
   H3,
   PrimaryButton,
@@ -452,7 +498,7 @@ const seatsSelectionMaybe = isAvailable ? (
 ```
 
 The component uses a CSS class to add a bit of margin, and we need to
-add it to EditListingAvailabilityExceptionForm.module.css.
+add the class to _EditListingAvailabilityExceptionForm.module.css_.
 
 ```css
 .seats {
@@ -474,12 +520,13 @@ Then, we need to include the component in the form.
 …
 ```
 
-Now, we can see the seats input in the availability exception modal.
+Now, we can see the _seats_ input in the availability exception modal.
 
 ![Seat selection in availability exception modal](./availabilityExceptionSeats.png)
 
-Now, let’s modify the _EditListingAvailabilityPanel.js_ file to save the
-seats we entered. The saving happens in the _saveException_ function.
+Now, let’s modify the _EditListingAvailabilityPanel.js_ file again to
+save the seats we entered. The saving happens in the _saveException_
+function.
 
 ```jsx
 // Save exception click handler
@@ -522,9 +569,9 @@ const saveException = values => {
 };
 ```
 
-Here, we want to capture the value of seats from values. Let’s assign
-values.seats to the constant _rawSeats_, so we can still maintain the
-availability check when setting the value of seats in the function.
+Here, we want to capture the value of seats from values. We will assign
+_values.seats_ to the constant _rawSeats_, so we can keep the
+availability check when setting the value of _seats_ in the function.
 
 ```js
   // Save exception click handler
@@ -546,8 +593,8 @@ Now, the seats get saved when we click “Save exception” in the modal.
 ![Exception with seats saved in a Network call](./availabilityExceptionNetwork.png)
 
 Finally, we want to show the number of seats for exceptions as well. We
-will do that in the same WeeklyCalendar.js file that we modified for the
-default plan.
+will do that in the same _WeeklyCalendar.js_ file that we modified for
+the default plan.
 
 ```shell
 └── src
@@ -561,8 +608,8 @@ default plan.
 
 The component here we want to modify is _AvailableExceptionsInfo_. It
 uses the same microcopy key
-_EditListingAvailabilityPanel.WeeklyCalendar.available_ as the PlanEntry
-component.
+_EditListingAvailabilityPanel.WeeklyCalendar.available_ as the
+_PlanEntry_ component.
 
 ```jsx
 // Component that renders all the ExceptionEntry components that allow availability (seats > 0)
@@ -603,7 +650,7 @@ single exception. Therefore, we can determine the number of seats based
 on the first item in the _availableExceptions_ array. Then, we just need
 to pass the value of seats to _FormattedMessage_.
 
-```jsx
+```diff
 // Component that renders all the ExceptionEntry components that allow availability (seats > 0)
 const AvailableExceptionsInfo = ({
   availableExceptions,
@@ -613,14 +660,15 @@ const AvailableExceptionsInfo = ({
   onDeleteAvailabilityException,
 }) => {
   const hasAvailableExceptions = availableExceptions.length > 0;
-  const seats = hasAvailableExceptions ? availableExceptions[0].attributes.seats : null;
++ const seats = hasAvailableExceptions ? availableExceptions[0].attributes.seats : null;
 
   return hasAvailableExceptions ? (
     <>
       <Heading as="h6" rootClassName={css.exceptionsSubtitle}>
-        <FormattedMessage
-          id="EditListingAvailabilityPanel.WeeklyCalendar.available"
-          values={{ seats }}
+-       <FormattedMessage id="EditListingAvailabilityPanel.WeeklyCalendar.available" />
++       <FormattedMessage
++         id="EditListingAvailabilityPanel.WeeklyCalendar.available"
++         values={{ seats }}
         />
       </Heading>
 ```
@@ -631,8 +679,9 @@ Now, you can see the number of seats on each exception, as well.
 
 ## Update listing booking flow to allow bookings with seats
 
-Now, we need to add the logic for customers to book more than one seat
-in a listing.
+We now have a listing with multiple seats available for booking! Next,
+we need to add the logic for customers to book more than one seat in
+that listing.
 
 ### Show seats input in order form
 
@@ -642,9 +691,7 @@ form.
 ```shell
 └── src
     └── components
-      ├── FieldDateRangeInput
-      │	  └── FieldDateRangeInput.js
-      └── OrderPanel
+        └── OrderPanel
             └── BookingDatesForm
                 └── BookingDatesForm.js
 ```
@@ -655,12 +702,14 @@ in the specified time range. For instance, if a customer wants to book
 Monday through Sunday, and Friday already has a booking, we can only
 allow the customer to book as many seats as are available for Friday.
 
-Let's add the following two functions after the imports in
-_BookingDatesForm.js_:
+Let's add the following import and two functions after the existing
+imports in _BookingDatesForm.js_:
 
 ```jsx
+import { generateMonths } from '../../../util/generators';
+
 /**
- * Return an array of timeslots for the months of start date and end date
+ * Return an array of timeslots for the months between start date and end date
  * @param {*} monthlyTimeSlots
  * @param {*} startDate
  * @param {*} endDate
@@ -673,25 +722,16 @@ const pickBookingMonthTimeSlots = (
   endDate,
   timeZone
 ) => {
-  const startDateAsDate = new Date(startDate);
-  const endDateAsDate = new Date(endDate);
+  // The generateMonths generator returns the first day of each month that is spanned
+  // by the time range between start date and end date.
+  const monthsInRange = generateMonths(startDate, endDate, timeZone);
 
-  if (startDateAsDate.getMonth() !== endDateAsDate.getMonth()) {
-    // TODO: Handle situation where months are several months apart
-    const startMonthTimeSlots = pickMonthlyTimeSlots(
-      monthlyTimeSlots,
-      startDate,
-      timeZone
-    );
-    const nextMonthTimeSlots = pickMonthlyTimeSlots(
-      monthlyTimeSlots,
-      endDate,
-      timeZone
-    );
-    return [...startMonthTimeSlots, ...nextMonthTimeSlots];
-  } else {
-    return pickMonthlyTimeSlots(monthlyTimeSlots, startDate, timeZone);
-  }
+  return monthsInRange.reduce((timeSlots, firstOfMonth) => {
+    return [
+      ...timeSlots,
+      ...pickMonthlyTimeSlots(monthlyTimeSlots, firstOfMonth, timeZone),
+    ];
+  }, []);
 };
 
 // Get the time slot for a booking duration that has the least seats
@@ -714,7 +754,7 @@ const getMinSeatsTimeSlot = (
     return (
       // booking start date falls within time slot
       (start < startDate && end > startDate) ||
-      // whole booking falls within time slot
+      // whole time slot is within booking period
       (start >= startDate && end <= endDate) ||
       // booking end date falls within time slot
       (start < endDate && end > endDate)
@@ -807,6 +847,8 @@ const getSeatsArray = () => {
     bookingDates.endDate
   );
 
+  // Return an array of the seat options a customer
+  // can pick for the time range
   return Array(minSeatsTimeSlot.seats)
     .fill()
     .map((_, i) => i + 1);
@@ -830,6 +872,14 @@ FieldDateRangeInput.
 ```
 
 Now, we will add the corresponding handling to _FieldDateRangeInput_.
+
+```shell
+└── src
+    └── components
+      └── FieldDateRangeInput
+      	  └── FieldDateRangeInput.js
+```
+
 First, add _FieldSelect_ to the import from components folder:
 
 ```js
@@ -847,7 +897,7 @@ destructuring:
 	...
       onFocusedInputChange,
 +     seatsArray,
-+ 	 seatsLabel
++ 	  seatsLabel
       ...rest
     } = this.props;
 ```
@@ -892,7 +942,7 @@ end dates have been selected:
 
 If you now select more than one bike for this rental, the price
 calculation will still only show the price for one bike. Since we are
-already passing the seats value to the onFetchTransactionLineItems
+already passing the seats value to the _onFetchTransactionLineItems_
 function, our next step is to handle the correct number of seats in the
 line item calculation.
 
@@ -901,7 +951,7 @@ line item calculation.
 To calculate the booking price with the correct number of seats, we need
 to modify the line item calculation in _server/api-util/lineItems.js_.
 We also need to modify _LineItemBasePriceMaybe.js_ in the
-_OrderBreakdown_ to show the line items correctly.
+_OrderBreakdown_ component to show the line items correctly.
 
 We will start with handling the line item calculation server-side, in
 _lineItems.js_.
@@ -968,17 +1018,15 @@ In Flex, line items need to have either
 
 - a percentage,
 - a quantity, or
-- both units _and_ seats. <br/>
-
-For this reason, we use **quantity** to denote the number of days when
-seats are not defined, and **units** to denote the number of days when
-seats are defined.
+- both units _and_ seats. <br/>For this reason, we use **quantity** to
+  denote the number of days when seats are not defined, and **units** to
+  denote the number of days when seats are defined.
 
 **[Read more about line items](https://www.sharetribe.com/docs/concepts/pricing/#line-items)**.
 
 </info>
 
-Because we are now handling both quantity and units, we will include
+Because we are now handling both _quantity_ and _units_, we will include
 units in our error handling, and then determine which option to use in
 the line item.
 
@@ -1111,7 +1159,8 @@ First, let’s parse the raw seats value from the values parameter:
 ```
 
 Then, we will check whether the value of seats is a number, and include
-it in the _orderData_ sent to _CheckoutPage_.
+it in the _orderData_ attribute of _initialValues_ sent to
+_CheckoutPage_.
 
 ```diff
   const quantity = Number.parseInt(quantityRaw, 10);
@@ -1133,8 +1182,8 @@ it in the _orderData_ sent to _CheckoutPage_.
   };
 ```
 
-The next step is to pass seats from orderData to Redux actions on the
-CheckoutPage.
+The next step is to pass seats from _orderData_ to Redux actions on the
+_CheckoutPage_.
 
 ```shell
 └── src
@@ -1144,9 +1193,9 @@ CheckoutPage.
 
 _CheckoutPage_ makes two calls to the Redux store with _orderData_:
 
-- fetching speculated transaction in loadInitialData, immediately when
+- fetching speculated transaction in _loadInitialData_, immediately when
   the customer lands on the page, and
-- initiating order in handlePaymentIntent when the customer has filled
+- initiating order in _handlePaymentIntent_ when the customer has filled
   out the necessary information
 
 In both of those contexts, we will add _seats_ handling. Similarly to
@@ -1179,8 +1228,8 @@ handle _quantity_.
       );
 ```
 
-In handlePaymentIntent, the orderData handling can be found towards the
-very end of the function.
+In _handlePaymentIntent_, the _orderData_ handling can be found towards
+the very end of the function.
 
 ```diff
 handlePaymentIntent(handlePaymentParams, process) {
@@ -1205,8 +1254,8 @@ handlePaymentIntent(handlePaymentParams, process) {
     return handlePaymentIntentCreation(orderParams);
 ```
 
-Finally, we need to add seats handling in CheckoutPage.duck.js to the
-Redux actions that make the actual SDK calls.
+Finally, we need to add _seats_ handling in _CheckoutPage.duck.js_ to
+the Redux actions that make the actual SDK calls.
 
 ```shell
 └── src
@@ -1216,8 +1265,8 @@ Redux actions that make the actual SDK calls.
 
 There are two actions we will need to modify:
 
-- speculateTransaction and
-- initiateOrder
+- _speculateTransaction_ and
+- _initiateOrder_
 
 Here, too, we will benchmark our _seats_ handling on the pre-existing
 _quantity_ handling.
