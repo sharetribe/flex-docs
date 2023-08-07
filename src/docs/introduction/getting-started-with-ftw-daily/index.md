@@ -29,6 +29,15 @@ running. This guide also helps you to create accounts to Stripe and
 Mapbox. Those services are needed to run the Sharetribe Web Template
 app.
 
+<info>
+
+We recommend that you take the steps for this guide in your **Flex
+Console dev environment**.
+
+**[Read more about Flex environments](/concepts/flex-environments/).**
+
+</info>
+
 ## Setup a development environment
 
 ### Prerequisities
