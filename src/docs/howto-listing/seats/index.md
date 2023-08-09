@@ -1151,7 +1151,7 @@ const getDateRangeUnitsSeatsLineItems = (orderData, code) => {
 
 ##### Line item calculation for hourly bookings
 
-<extrainfo title="Click here to see how to hadnle line items for hourly bookings">
+<extrainfo title="Click here to see how to handle line items for hourly bookings">
 
 If you are working with hourly bookings, you will need to make a similar
 parallel function for _getHourQuantityAndLineItems_, and add it to
@@ -1201,9 +1201,11 @@ In Flex, line items need to have either
 
 - a percentage,
 - a quantity, or
-- both units _and_ seats. <br/>For this reason, we use **quantity** to
-  denote the number of days when seats are not defined, and **units** to
-  denote the number of days when seats are defined.
+- both units _and_ seats.
+
+<br/>For this reason, we use **quantity** to denote the number of days
+when seats are not defined, and **units** to denote the number of days
+when seats are defined.
 
 **[Read more about line items](https://www.sharetribe.com/docs/concepts/pricing/#line-items)**.
 
