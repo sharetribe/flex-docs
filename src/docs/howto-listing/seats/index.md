@@ -28,6 +28,14 @@ In this guide, you will
   - Update booking breakdown to show seat line items correctly
   - Add seats handling to line item calculation
 
+<info>
+
+This guide deals mainly with adding seats for **daily bookings**. Where
+the hourly booking implementation differs, you will find collapsible
+sections describing how and where to make the relevant changes.
+
+</info>
+
 ## Update EditListingAvailabilityPanel to add seats to listings
 
 Seats are a feature of a bookable listing’s availability plan. By
@@ -86,8 +94,7 @@ The _AvailabilityPlanEntries_ component handles
 - day and night availability (i.e. no time ranges)
 - and hourly availability (which does have time ranges).
 
-In this guide, we are using **day-based listings**, so we will only add
-seats to full-day availability.
+In this guide, we are using **day-based listings**.
 
 #### Show seats input in AvailabilityPlanEntries
 
@@ -195,7 +202,7 @@ _formApi.mutators_ in the checkbox _onChange_ function, i.e.
 In the _onChange_ function, we determine how the current plan gets
 updated with the numeric input value.
 
-Replace the existing usage of TimeRangeHidden with the
+Replace the existing usage of _TimeRangeHidden_ with the following:
 
 ```jsx
     /** Replace this **/
@@ -215,7 +222,9 @@ Replace the existing usage of TimeRangeHidden with the
     />
 ```
 
-<extrainfo title="Add seats for hourly availability">
+##### Add seats for hourly availability
+
+<extrainfo title="Click here to see how to add seats for hourly availability">
 
 If you want to add seats for hourly availability, you can do the
 following:
@@ -475,14 +484,16 @@ entry.
 
 ![Default availability plan with seats](./weeklyCalendarDefault.png)
 
-<info>
+##### Show seats for hourly availability
+
+<extrainfo title="Click here to see how to show seats for hourly availability">
 
 If you are working with hourly bookings, you will need to pass the
 _entry.seats_ value as a new prop from _WeeklyCalendar.PlanEntry_ to
 _TimeRange_, and then show the _seats_ prop in the necessary contexts in
 _TimeRange_.
 
-</info>
+</extrainfo>
 
 Next, let’s enable seat handling in availability exceptions.
 
@@ -1004,7 +1015,9 @@ end dates have been selected:
 
 ![Seat selection in Order Panel](./orderPanelSeatsInput.png)
 
-<extrainfo title="Add seat selection to hourly bookings">
+##### Add seat selection to hourly bookings
+
+<extrainfo title="Click here to see how to add seat selection to hourly bookings">
 
 For hourly bookings, you will need to modify _BookingTimeForm_ and
 _FieldDateAndTimeInput_.
@@ -1136,13 +1149,32 @@ const getDateRangeUnitsSeatsLineItems = (orderData, code) => {
 };
 ```
 
-<info>
+##### Line item calculation for hourly bookings
+
+<extrainfo title="Click here to see how to hadnle line items for hourly bookings">
 
 If you are working with hourly bookings, you will need to make a similar
 parallel function for _getHourQuantityAndLineItems_, and add it to
 `unitType: hour` handling.
 
-</info>
+```jsx
+/**
+ * Get quantity for arbitrary units and seats for time-based bookings.
+ *
+ * @param {*} orderData should contain quantity
+ */
+const getHourUnitsSeatsAndLineItems = orderData => {
+  const { bookingStart, bookingEnd, seats } = orderData || {};
+  const units =
+    bookingStart && bookingEnd
+      ? calculateQuantityFromHours(bookingStart, bookingEnd)
+      : null;
+
+  return { units, seats, extraLineItems: [] };
+};
+```
+
+</extrainfo>
 
 We want to use this new function whenever _orderData_ has _seats_
 defined. We do that when defining the _quantityAndExtraLineItems_
