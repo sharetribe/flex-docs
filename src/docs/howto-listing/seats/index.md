@@ -215,6 +215,61 @@ Replace the existing usage of TimeRangeHidden with the
     />
 ```
 
+<extrainfo title="Add seats for hourly availability">
+
+If you want to add seats for hourly availability, you can do the
+following:
+
+1. Add a numeric _FieldTextInput_ to the _TimeRangeSelects_ component:
+
+```jsx
+<FieldTextInput
+  id={`${name}.seats`}
+  name={`${name}.seats`}
+  className={css.fieldSelect}
+  type="number"
+  min="1"
+/>
+```
+
+2. Initialise the time range with 1 seat when the daily checkbox is
+   first checked:
+
+```diff
+    } else {
+      const shouldAddEntry = isChecked && !hasEntries;
+      if (shouldAddEntry) {
+        // The 'hour' unit is not initialized with any value,
++       // except seats,
+        // because user need to pick them themselves.
+-       formApi.mutators.push(dayOfWeek, { startTime: null, endTime: null });
++       formApi.mutators.push(dayOfWeek, { startTime: null, endTime: null, seats: 1 });
+      } else if (!isChecked) {
+        // If day of week checkbox is unchecked,
+        // we'll remove all the entries for that day.
+        formApi.mutators.removeBatch(dayOfWeek, entries);
+      }
+    }
+```
+
+3. Initialise the time range with 1 seat when adding a new time range
+   within an existing day:
+
+```diff
+  {!useFullDays && fields.length > 0 ? (
+    <InlineTextButton
+      type="button"
+      className={css.buttonAddNew}
+-     onClick={() => fields.push({ startTime: null, endTime: null })}
++     onClick={() => fields.push({ startTime: null, endTime: null, seats: 1 })}
+    >
+      <FormattedMessage id="EditListingAvailabilityPlanForm.addAnother" />
+    </InlineTextButton>
+  ) : null}
+```
+
+</extrainfo>
+
 At this point, we can add the microcopy necessary in this guide. You can
 add the microcopy through Flex Console, or in _src/translations/en.js_,
 if you are not using Console-based microcopy.
@@ -419,6 +474,15 @@ Now, the weekly calendar shows the default seats available for each
 entry.
 
 ![Default availability plan with seats](./weeklyCalendarDefault.png)
+
+<info>
+
+If you are working with hourly bookings, you will need to pass the
+_entry.seats_ value as a new prop from _WeeklyCalendar.PlanEntry_ to
+_TimeRange_, and then show the _seats_ prop in the necessary contexts in
+_TimeRange_.
+
+</info>
 
 Next, let’s enable seat handling in availability exceptions.
 
@@ -940,6 +1004,85 @@ end dates have been selected:
 
 ![Seat selection in Order Panel](./orderPanelSeatsInput.png)
 
+<extrainfo title="Add seat selection to hourly bookings">
+
+For hourly bookings, you will need to modify _BookingTimeForm_ and
+_FieldDateAndTimeInput_.
+
+```shell
+└── src
+    └── components
+        └── OrderPanel
+            └── BookingTimeForm
+                └── BookingTimeForm.js
+      	        └── FieldDateAndTimeInput.js
+```
+
+The _seatsArray_ variable can be calculated in the
+_FieldDateAndTimeInput_ component using the existing _selectedTimeSlot_
+variable. In other words, no need to use the _getMinSeatsTimeSlot_
+helper described above.
+
+```jsx
+const seatsArray =
+  Array(selectedTimeSlot?.attributes.seats)
+    .fill()
+    .map((_, i) => i + 1) || null;
+
+const seatsSelectionMaybe =
+  seatsArray?.length > 1 ? (
+    <FieldSelect name="seats" id="seats" label={seatsLabel}>
+      {seatsArray.map(s => (
+        <option value={s} key={s}>
+          {s}
+        </option>
+      ))}
+    </FieldSelect>
+  ) : null;
+```
+
+Add _seatsSelectionMaybe_ towards the very end of the returned form:
+
+```diff
+            </FieldSelect>
+          </div>
+        </div>
++       {seatsSelectionMaybe}
+      </div>
+```
+
+In _BookingTimeForm_, you will need to modify _handleOnChange_ to pass
+seats from _formValues.values_ to _orderData_.
+
+```diff
+  handleOnChange(formValues) {
+-   const { bookingStartTime, bookingEndTime } = formValues.values;
++   const { bookingStartTime, bookingEndTime, seats } = formValues.values;
+    const startDate = bookingStartTime ? timestampToDate(bookingStartTime) : null;
+    const endDate = bookingEndTime ? timestampToDate(bookingEndTime) : null;
+
+    const listingId = this.props.listingId;
+    const isOwnListing = this.props.isOwnListing;
+
+    // We expect values bookingStartTime and bookingEndTime to be strings
+    // which is the default case when the value has been selected through the form
+    const isSameTime = bookingStartTime === bookingEndTime;
+
+    if (bookingStartTime && bookingEndTime && !isSameTime && !this.props.fetchLineItemsInProgress) {
+      this.props.onFetchTransactionLineItems({
+-       orderData: { bookingStart: startDate, bookingEnd: endDate },
++       orderData: { bookingStart: startDate, bookingEnd: endDate, seats: parseInt(seats, 10) },
+        listingId,
+        isOwnListing,
+      });
+    }
+  }
+```
+
+In addition, handle _seatsLabel_ similarly to how it is handled above.
+
+</extrainfo>
+
 If you now select more than one bike for this rental, the price
 calculation will still only show the price for one bike. Since we are
 already passing the seats value to the _onFetchTransactionLineItems_
@@ -992,6 +1135,14 @@ const getDateRangeUnitsSeatsLineItems = (orderData, code) => {
   return { units, seats, extraLineItems: [] };
 };
 ```
+
+<info>
+
+If you are working with hourly bookings, you will need to make a similar
+parallel function for _getHourQuantityAndLineItems_, and add it to
+`unitType: hour` handling.
+
+</info>
 
 We want to use this new function whenever _orderData_ has _seats_
 defined. We do that when defining the _quantityAndExtraLineItems_
