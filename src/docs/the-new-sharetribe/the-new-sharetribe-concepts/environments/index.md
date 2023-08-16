@@ -55,15 +55,14 @@ environment to a live marketplace.
 ### Test environment
 
 The Test environment is where building your marketplace no-code happens.
-It is connected to a test marketplace application where you can try the
+It is connected to a test marketplace application, where you can try the
 build functionalities in peace by using test users and test payments.
 
 Once you have a Live environment, the Test environment functions as a
 preview environment for how your Live marketplace application will work.
 You as the operator make no-code changes in Test, and copy them to Live.
-without needing a developer to intervene. Because Test and Live are
-identical, your changes made in Test show up correctly when published to
-Live.
+Because Test and Live are identical, your changes made in Test show up
+correctly when published to Live.
 
 Note that you should not onboard real users or listings to Test, as they
 cannot be moved into Live.
@@ -98,9 +97,10 @@ Dev, as they cannot be moved into Live.
 ## Workflow between the three environments
 
 In a nutshell, the workflow between the environments is that changes
-flow from Dev to Test to Live:
+flow either from Test or from Dev to the other environments:
 
-- no-code changes are made in Test, and get pushed from Test to Live
+- no-code changes are made in Test, and get pushed from Test to Dev and
+  Live
 - code changes are made and reviewed in Dev, and get pushed from Dev to
   Test and Live
 
