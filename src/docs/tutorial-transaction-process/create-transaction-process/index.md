@@ -10,16 +10,16 @@ published: true
 ---
 
 In this tutorial, we'll create a new transaction process for the
-CottageDays marketplace. It will be a booking process where we will add
-a new transition for the customer to cancel their booking request before
-the provider accepts it. We will also update the client app to use the
-new process, and to allow the customer to cancel the request.
+Saunatime marketplace. It will be an instant booking process where the
+booking is accepted automatically upon making the booking, without the
+provider needing to take action. We will also update the client app to
+use the new process.
 
 ## Create a transaction process
 
-First, we will use the default booking process to create a similar but
-separate transaction process. This will allow us to make changes to the
-transaction behavior.
+First, we will use an existing instant booking process to create a
+similar but separate transaction process. This will allow us to make
+changes to the transaction behavior.
 
 ### Clone Flex example processes repository
 
@@ -489,15 +489,15 @@ to handle all time based unit types.
 const PROCESSES = [
   {
     name: PURCHASE_PROCESS_NAME,
-    alias: 'release-1',
+    alias: `${PURCHASE_PROCESS_NAME}/release-1`,
     process: purchaseProcess,
     unitTypes: [ITEM],
   },
   {
     name: BOOKING_PROCESS_NAME,
-    alias: 'release-1',
+    alias: `${BOOKING_PROCESS_NAME}/release-1`,
     process: bookingProcess,
-    unitTypes: [DAY, HOUR],
+    unitTypes: [DAY, NIGHT, HOUR],
   },
   {
     name: INSTANT_PROCESS_NAME,
