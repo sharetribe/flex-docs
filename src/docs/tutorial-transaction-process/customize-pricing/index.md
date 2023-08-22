@@ -400,12 +400,13 @@ varied, from the number of booked units to customer and provider
 commissions, add-ons, discounts, or payment refunds.
 
 Every line item has a unit price and one of the following attributes:
-**quantity** or **percentage**. The quantity attribute can be used to
-denote the number of booked units, like the number of booked nights.
-Quantity can also be defined as a multiplication of units and seats. The
-percentage param is used, for instance, when modeling commissions. Based
-on these attributes, a line total is calculated for each line item. Line
-totals then define the total payin and payout sums of the transaction.
+**quantity**, **percentage**, or both **seats** and **units**. The
+quantity attribute can be used to denote the number of booked units,
+like the number of booked nights. Quantity can also be defined as a
+multiplication of units and seats. The percentage param is used, for
+instance, when modeling commissions. Based on these attributes, a line
+total is calculated for each line item. Line totals then define the
+total payin and payout sums of the transaction.
 
 You can read more about line items and pricing in the
 [pricing concepts article](/concepts/pricing/).
@@ -518,8 +519,9 @@ be manipulated, we don't pass it directly from the template frontend.
 Instead, we fetch the listing from Marketplace API, and check that
 listing's public data for the accurate cleaning fee.
 
-If you have several helper functions, you might want to add this
-function to the `lineItemHelpers.js` file instead.
+If you have several helper functions, you might want to export this
+function from the `lineItemHelpers.js` file instead, and import it in
+`lineItems.js`.
 
 ```jsx
 const resolveCleaningFeePrice = listing => {
@@ -537,8 +539,8 @@ const resolveCleaningFeePrice = listing => {
 
 ### Add line-item
 
-Now the transactionLineItems function can be updated to also provide the
-cleaning fee line item when the listing has a cleaning fee.
+Now the _transactionLineItems_ function can be updated to also provide
+the cleaning fee line item when the listing has a cleaning fee.
 
 In this example, the provider commission is calculated from the total of
 booking and cleaning fees. That's why we need to add the _cleaningFee_
@@ -618,72 +620,62 @@ the booking.
 ### Fetch speculated transaction complete with cleaning fee
 
 When a user clicks "Request to book", `ListingPage.js` sends the booking
-details as initial values to `CheckoutPage.js`, which then fetches the
+details as initial values to the Checkout Page, which then fetches the
 possible transaction information, including pricing, to be shown on the
 checkout page. In Flex language, this is known as "speculating" the
 transaction - the booking has not been made, but the line items are
 calculated as if it were.
 
-This means that we need to first pass the cleaning fee information to
-the function that speculatively fetches the transaction in
-`CheckoutPage.js`, and then receive it in `CheckoutPage.duck.js`. First,
-the CheckoutPage.js `loadInitialData()` does some data processing and,
-if necessary, calls `fetchSpeculatedTransaction()`.
+Since we are dealing with a paid transaction, we need to be modifying
+the `CheckoutPageWithPayment.js` component. In that file, we have a
+function called _getOrderParams_, which creates the correct set of order
+parameters for all line item related API calls. Let's add cleaning fee
+handling to that function.
 
 ```shell
 └── src
     └── containers
         └── CheckoutPage
-            └── CheckoutPage.js
+            └── CheckoutPageWithPayment.js
 ```
 
 ```diff
-loadInitialData() {
-  ...
-      const deliveryMethod = pageData.orderData?.deliveryMethod;
-+     const hasCleaningFee = pageData.orderData?.cleaningFee?.length > 0;
-      fetchSpeculatedTransaction(
-        {
-          listingId,
-          deliveryMethod,
-+         hasCleaningFee,
-          ...quantityMaybe,
-          ...bookingDatesMaybe(pageData.orderData.bookingDates),
-        },
-        processAlias,
-        transactionId,
-        requestTransition,
-        isPrivileged
-      );
-...
+const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config) => {
+  const quantity = pageData.orderData?.quantity;
+  const quantityMaybe = quantity ? { quantity } : {};
+  const deliveryMethod = pageData.orderData?.deliveryMethod;
+  const deliveryMethodMaybe = deliveryMethod ? { deliveryMethod } : {};
++ const hasCleaningFee = pageData.orderData?.cleaningFee?.length > 0;
+
+  const { listingType, unitType } = pageData?.listing?.attributes?.publicData || {};
+  const protectedDataMaybe = {
+    protectedData: {
+      ...getTransactionTypeData(listingType, unitType, config),
+      ...deliveryMethodMaybe,
+      ...shippingDetails,
+    },
+  };
+
+  // These are the order parameters for the first payment-related transition
+  // which is either initiate-transition or initiate-transition-after-enquiry
+  const orderParams = {
+    listingId: pageData?.listing?.id,
+    ...deliveryMethodMaybe,
++   hasCleaningFee,
+    ...quantityMaybe,
+    ...bookingDatesMaybe(pageData.orderData?.bookingDates),
+    ...protectedDataMaybe,
+    ...optionalPaymentParams,
+  };
+  return orderParams;
+};
 ```
 
-This function call dispatches a `speculateTransaction` action in
-`CheckoutPage.duck.js`, which in turn calls the template server using
-the correct endpoint.
-
-```shell
-└── src
-    └── containers
-        └── CheckoutPage
-            └── CheckoutPage.duck.js
-```
-
-To pass the cleaning fee selection to the API call, we add it to
-`orderData` within the `speculateTransaction` action.
-
-```diff
-export const speculateTransaction = (
-  ...
-- const { deliveryMethod, quantity, bookingDates, ...otherOrderParams } = orderParams;
-+ const { deliveryMethod, quantity, bookingDates, hasCleaningFee, ...otherOrderParams } = orderParams;
-...
-
-  // Parameters only for client app's server
-- const orderData = deliveryMethod ? { deliveryMethod } : {};
-+ const orderData = deliveryMethod || hasCleaningFee ? { deliveryMethod, hasCleaningFee } : {};
-
-```
+This function is used to build order parameters when the component loads
+initial data for the page, and the order params are then passed to a
+`speculateTransaction` action in `CheckoutPage.duck.js`. That action, in
+turn, calls the template server using the correct endpoint and the order
+parameters provided.
 
 Now when the customer selects cleaning fee on the listing page and
 clicks "Request to book", we see the correct price and breakdown on the
@@ -691,80 +683,25 @@ checkout page.
 
 ![Cleaning fee in booking breakdown on checkout page](./checkoutPageBreakdown.png)
 
-### Include cleaning fee in the final transaction price
+The same function builds order parameters that get passed to the final
+transaction initialisation.
 
-The final step is to add the same logic to the flow that eventually sets
-the price for the transaction.
+<info>
 
-```shell
-└── src
-    └── containers
-        └── CheckoutPage
-            └── CheckoutPage.js
-```
+In `CheckoutPageWithPayment.js`, the function that does the heavy
+lifting in handling the payment processing is
+`processCheckoutWithPayment()`, which is imported from a helper file. In
+short, it first creates five functions to handle the transaction payment
+process, then composes them into a single function
+`handlePaymentIntentCreation()`, and then calls that function with the
+`orderParams` parameter.
 
-In `CheckoutPage.js`, the function that does the heavy lifting in
-handling the payment processing is `handlePaymentIntent()`. In short, it
-first creates five functions to handle the transaction payment process,
-then composes them into a single function
-`handlePaymentIntentCreation()`, and then calls that function with
-parameter `orderParams`.
+</info>
 
-To add the cleaning fee information into this process, we want to
-include it in `orderParams`, which is defined towards the very end of
-`handlePaymentIntent()` function.
-
-```diff
-    const deliveryMethod = pageData.orderData?.deliveryMethod;
-+   const hasCleaningFee = pageData.orderData?.cleaningFee?.length > 0;
-...
-    const orderParams = {
-      listingId: pageData.listing.id,
-      deliveryMethod,
-+     hasCleaningFee,
-      ...quantityMaybe,
-      ...bookingDatesMaybe(pageData.orderData.bookingDates),
-      ...protectedDataMaybe,
-      ...optionalPaymentParams,
-    };
-```
-
-Then, we still need to add the cleaning fee information to the correct
-action in `CheckoutPage.duck.js`.
-
-```shell
-└── src
-    └── containers
-        └── CheckoutPage
-            └── CheckoutPage.duck.js
-```
-
-The first function in the `handlePaymentIntentCreation()` composition is
-`fnRequestPayment`. It initiates the order if there is no existing
-paymentIntent, and in practice it dispatches the `initiateOrder` action
-that calls the template server. So similarly to the
-`speculateTransaction` action, we just need to add the cleaning fee
-selection to `orderData` in `initiateOrder`.
-
-```diff
-export const initiateOrder = (
-  ...
-
-- const { deliveryMethod, quantity, bookingDates, ...otherOrderParams } = orderParams;
-+ const { deliveryMethod, quantity, bookingDates, hasCleaningFee, ...otherOrderParams } = orderParams;
-...
-
-  // Parameters only for client app's server
-- const orderData = deliveryMethod ? { deliveryMethod } : {};
-+ const orderData = deliveryMethod || hasCleaningFee ? { deliveryMethod, hasCleaningFee } : {};
-
-```
-
-Now you can try it out! You may have to refresh your application first,
-so that the Redux changes take effect. When you complete a booking on a
-listing that has a cleaning fee specified, you can see the cleaning fee
-included in the price on the booking page. In addition, the Flex Console
-transaction price breakdown also shows the cleaning fee.
+Now you can try it out! When you complete a booking on a listing that
+has a cleaning fee specified, you can see the cleaning fee included in
+the price on the booking page. In addition, the Flex Console transaction
+price breakdown also shows the cleaning fee.
 
 ![Cleaning fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
 
