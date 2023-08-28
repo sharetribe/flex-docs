@@ -972,7 +972,7 @@ destructuring:
 	...
       onFocusedInputChange,
 +     seatsArray,
-+ 	  seatsLabel
++ 	  seatsLabel,
       ...rest
     } = this.props;
 ```
@@ -1368,138 +1368,62 @@ _CheckoutPage_.
 ```
 
 The next step is to pass seats from _orderData_ to Redux actions on the
-_CheckoutPage_.
+_CheckoutPage_. Since we are dealing with payments, we will make the
+changes in the _CheckoutPageWithPayment.js_ component.
 
 ```shell
 └── src
     └── containers
-        └── CheckoutPage.js
+        └── CheckoutPage
+            └── CheckoutPageWithPayment.js
 ```
 
-_CheckoutPage_ makes two calls to the Redux store with _orderData_:
+In this component, the data we passed as _orderData_ is available under
+_pageData_.
 
-- fetching speculated transaction in _loadInitialData_, immediately when
-  the customer lands on the page, and
-- initiating order in _handlePaymentIntent_ when the customer has filled
-  out the necessary information
+_CheckoutPageWithPayment_ makes two Redux calls using order parameters
+parsed from _pageData_:
 
-In both of those contexts, we will add _seats_ handling. Similarly to
-_ListingPage.shared.js_, we will handle _seats_ the same way we already
-handle _quantity_.
+- fetching speculated transaction immediately when the customer lands on
+  the page, and
+- initiating order when the customer has filled out the necessary
+  information
+
+In both of those contexts, the order parameters are created using the
+_getOrderParams_ function, so that is where we will add _seats_
+handling. Similarly to _ListingPage.shared.js_, we will handle _seats_
+the same way we already handle _quantity_.
 
 ```diff
-  loadInitialData() {
-...
-      // Fetch speculated transaction for showing price in order breakdown
-      // NOTE: if unit type is line-item/item, quantity needs to be added.
-      // The way to pass it to checkout page is through pageData.orderData
-      const quantity = pageData.orderData?.quantity;
-      const quantityMaybe = quantity ? { quantity } : {};
-+     const seats = pageData.orderData?.seats;
-+     const seatsMaybe = seats ? { seats } : {};
-      const deliveryMethod = pageData.orderData?.deliveryMethod;
-      fetchSpeculatedTransaction(
-        {
-          listingId,
-          deliveryMethod,
-          ...quantityMaybe,
-+         ...seatsMaybe,
-          ...bookingDatesMaybe(pageData.orderData.bookingDates),
-        },
-        processAlias,
-        transactionId,
-        requestTransition,
-        isPrivileged
-      );
-```
-
-In _handlePaymentIntent_, the _orderData_ handling can be found towards
-the very end of the function.
-
-```diff
-handlePaymentIntent(handlePaymentParams, process) {
-...
-    const quantity = pageData.orderData?.quantity;
-    const quantityMaybe = quantity ? { quantity } : {};
-+   const seats = pageData.orderData?.seats;
-+   const seatsMaybe = seats ? { seats } : {};
-    const deliveryMethod = pageData.orderData?.deliveryMethod;
-    const deliveryMethodMaybe = deliveryMethod ? { deliveryMethod } : {};
-...
-    const orderParams = {
-      listingId: pageData.listing.id,
-      deliveryMethod,
-      ...quantityMaybe,
-+     ...seatsMaybe,
-      ...bookingDatesMaybe(pageData.orderData.bookingDates),
-      ...protectedDataMaybe,
-      ...optionalPaymentParams,
-    };
-
-    return handlePaymentIntentCreation(orderParams);
-```
-
-Finally, we need to add _seats_ handling in _CheckoutPage.duck.js_ to
-the Redux actions that make the actual SDK calls.
-
-```shell
-└── src
-    └── containers
-        └── CheckoutPage.duck.js
-```
-
-There are two actions we will need to modify:
-
-- _speculateTransaction_ and
-- _initiateOrder_
-
-Here, too, we will benchmark our _seats_ handling on the pre-existing
-_quantity_ handling.
-
-```diff
-export const speculateTransaction = (
-...
-- const { deliveryMethod, quantity, bookingDates, ...otherOrderParams } = orderParams;
-+ const { deliveryMethod, quantity, seats, bookingDates, ...otherOrderParams } = orderParams;
-  const quantityMaybe = quantity ? { stockReservationQuantity: quantity } : {};
+const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config) => {
+  const quantity = pageData.orderData?.quantity;
+  const quantityMaybe = quantity ? { quantity } : {};
++ const seats = pageData.orderData?.seats;
 + const seatsMaybe = seats ? { seats } : {};
-  const bookingParamsMaybe = bookingDates || {};
 
-  // Parameters only for client app's server
-  const orderData = deliveryMethod ? { deliveryMethod } : {};
+  const deliveryMethod = pageData.orderData?.deliveryMethod;
+  const deliveryMethodMaybe = deliveryMethod ? { deliveryMethod } : {};
 
-  // Parameters for Marketplace API
-  const transitionParams = {
+...
+
+  // These are the order parameters for the first payment-related transition
+  // which is either initiate-transition or initiate-transition-after-enquiry
+  const orderParams = {
+    listingId: pageData?.listing?.id,
+    ...deliveryMethodMaybe,
     ...quantityMaybe,
 +   ...seatsMaybe,
-    ...bookingParamsMaybe,
-    ...otherOrderParams,
-    cardToken: 'CheckoutPage_speculative_card_token',
+    ...bookingDatesMaybe(pageData.orderData?.bookingDates),
+    ...protectedDataMaybe,
+    ...optionalPaymentParams,
   };
+  return orderParams;
+};
 ```
 
-The changes to the _initiateOrder_ function are identical:
-
-```diff
-export const initiateOrder = (
-...
-- const { deliveryMethod, quantity, bookingDates, ...otherOrderParams } = orderParams;
-+ const { deliveryMethod, quantity, seats, bookingDates, ...otherOrderParams } = orderParams;
-  const quantityMaybe = quantity ? { stockReservationQuantity: quantity } : {};
-+ const seatsMaybe = seats ? { seats } : {};
-  const bookingParamsMaybe = bookingDates || {};
-
-  // Parameters only for client app's server
-  const orderData = deliveryMethod ? { deliveryMethod } : {};
-
-  // Parameters for Marketplace API
-  const transitionParams = {
-    ...quantityMaybe,
-+   ...seatsMaybe,
-    ...bookingParamsMaybe,
-    ...otherOrderParams,
-  };
-```
+When we pass _seats_ as a part of _orderParams_ to the Redux actions,
+the default handling passes them onwards to the line item calculation we
+modified earlier.
 
 Now, you can make a booking with multiple seats!
 
