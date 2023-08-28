@@ -113,8 +113,10 @@ checkout flow:**
     saved, one-time payment form is shown on its own.
   - One-time payment needs card details, card holder's name etc. and
     optional permission to save card details for future bookings.
-- In `request-payment` transition, a new parameter needs to be passed if
-  card details are saved at the same time: `setupPaymentMethodForSaving`
+- When requesting payment, a parameter needs to be passed if card
+  details are saved at the same time: `setupPaymentMethodForSaving`. In
+  the default template, this is handled in the first step of the
+  _processCheckoutWithPayment_ function.
 - `stripe.confirmCardPayment` call, `confirm-payment` transition and the
   call to send initial message are handled as before
 - Save the payment method if user has given permission to do that:
@@ -201,17 +203,19 @@ sdk.transactions
 What happens behind the scene:
 
 - API creates PaymentIntent against Stripe API and returns
-  stripePaymentIntentClientSecret inside transaction's protectedData.
+  _stripePaymentIntentClientSecret_ inside the transaction's
+  _protectedData_.
 - Booking is created at this step - so, availability management will
   block dates for conflicting bookings.
 - Automatic expiration happens in 15 minutes, if process is not
-  transitioned to 'transition/confirm-payment' before that.
-- After this call, created transaction is saved to session storage in
-  Sharetribe Web Template (or existing inquiry tx is updated).
+  transitioned with _transition/confirm-payment_ before that.
+- After this call, the newly created transaction is saved to session
+  storage in Sharetribe Web Template (or existing inquiry transaction is
+  updated).
 
 **When you intend to save card details**, a new parameter needs to be
 passed if card details are saved at the same time:
-`setupPaymentMethodForSaving`
+`setupPaymentMethodForSaving`.
 
 ```js
 sdk.transactions.initiate({
@@ -243,6 +247,18 @@ sdk.transactions.initiate({
 });
 ```
 
+In the default Sharetribe Web Template, both these cases are handled
+with _optionalPaymentParams_ in _CheckoutPageWithPayment.js_.
+
+```jsx
+const optionalPaymentParams =
+  selectedPaymentFlow === USE_SAVED_CARD && hasDefaultPaymentMethodSaved
+    ? { paymentMethod: stripePaymentMethodId }
+    : selectedPaymentFlow === PAY_AND_SAVE_FOR_LATER_USE
+    ? { setupPaymentMethodForSaving: true }
+    : {};
+```
+
 <info>
 
 Params might be different in different transaction process graphs.
@@ -269,7 +285,7 @@ stripe.confirmCardPayment(
 
 <info>
 
-PaymentParams are not needed when using previously saved payment card.
+PaymentParams are not needed when using a previously saved payment card.
 Sharetribe Web Template handles this in
 **[`confirmCardPayment` thunk function](https://github.com/sharetribe/web-template/blob/main/src/ducks/stripe.duck.js#L246)**.
 
@@ -350,5 +366,6 @@ defaultPaymentMethod:**
 Template:
 [`dispatch(addPaymentMethod(stripePaymentMethodId))`](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L151)
 
-After these steps, customer is redirected to inbox and the ball is
-thrown to Provider to accept or decline the booking.
+After these steps, the customer is redirected to their inbox. Depending
+on the transaction process, either the purchase is accepted directly, or
+it is up to the provider to accept or decline the booking.
