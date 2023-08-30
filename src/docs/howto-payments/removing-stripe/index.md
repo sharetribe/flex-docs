@@ -14,13 +14,25 @@ published: true
 
 In this guide, we will go through the minimum changes needed to make the
 booking flow work without Stripe. This is not an easy customization
-project. The Sharetribe Web Template works with specific transaction
-processes and payments are a core feature of each: its ubiquitous nature
-means that you need to touch quite many components and files. Most
-likely you need to customize some parts (e.g. transaction process, email
-templates, checkout page) more depending on your marketplace idea. For
-example, you might also want to remove unused Stripe components from
-your project to clean up the code.
+project.
+
+The Sharetribe Web Template works with specific transaction processes
+and payments are a core feature of the booking and purchase processes:
+the ubiquitous nature means that you need to touch several components
+and files. Most likely you need to customize some parts (e.g.
+transaction process, email templates, checkout page) more depending on
+your marketplace idea. For example, you might also want to remove unused
+Stripe components from your project to clean up the code.
+
+<info>
+
+The template supports the default free inquiry process (TODO FIX
+WORDING), which does not include bookings or stock reservations. This
+process is the easiest way to use a marketplace without Stripe. However,
+if you do want to use bookings or stock reservations without Stripe, you
+will need to follow the steps in this guide.
+
+</info>
 
 ### 1. Update the transaction processes and remove Stripe related actions
 
@@ -111,133 +123,126 @@ After changing the `handlePublishListing` you can remove unused code.
 You also might want to clean up `EditListingPage` and remove the Stripe
 related props we pass to `EditListingWizard`.
 
-### 3. Edit ModalMissingInformation
-
-By default,
-[`ModalMissingInformation`](https://github.com/sharetribe/web-template/blob/main/src/components/ModalMissingInformation/ModalMissingInformation.js)
-will remind users to create a Stripe account. The same modal is used for
-reminding about email verification so we should just remove the Stripe
-related code from the component.
-
-### 4. Edit CheckoutPage
+### 3. Edit CheckoutPage
 
 Removing Stripe from `CheckoutPage` is probably the most complicated
 task in this list because the Strong Customer Authentication (SCA) and
 ability to save payment method have added a lot of logic to the current
-page. We can use an edited version of CheckoutPage from a legacy
-template (FTW 2.17.1) as a simpler starting point:
+page.
 
-- [SimpleCheckoutPage.js](/tutorial-assets/SimpleCheckoutPage.js)
+By default, the `CheckoutPage` component uses two sub-components,
+depending on the transaction process:
 
-Some of the functions on later versions of CheckoutPage.duck.js have
-changed, so here are the main changes done in the edited code:
+- _CheckoutPageWithInquiryProcess_ is used with the default free inquiry
+  process
+- _CheckoutPageWithPayment_ is used with the default booking and
+  purchase processes
 
-- In `handleSubmit` function we only call onInitiateOrder function,
-  which internally decides if the transaction should be initiated or
-  transitioned. We also need to handle sending the possible initial
-  message after that.
+We can use an edited version of the _CheckoutPageWithPayment_ component,
+titled _CheckoutPageWithoutPayment_, as a starting point for the
+modifications.
 
-```js
-  handleSubmit(values) {
-    if (this.state.submitting) {
-      return;
-    }
+- [CheckoutPageWithoutPayment.js](/tutorial-assets/CheckoutPageWithoutPayment.js)
 
-    this.setState({ submitting: true });
+The _CheckoutPageWithoutPayment_ component also imports a
+_SimpleOrderForm_ component. Let's add the component to the
+StripePaymentForm folder.
 
-    const initialMessage = values.initialMessage;
-    const { history, speculatedTransaction, dispatch, onInitiateOrder, onSendMessage } = this.props;
+```shell
+  └── src
+      └── containers
+          └── CheckoutPage
+              └── StripePaymentForm
+                  └── SimpleOrderForm.js
+```
 
-    // Create order aka transaction
-    // NOTE: if unit type is line-item/units, quantity needs to be added.
-    // The way to pass it to checkout page is through pageData.bookingData
-    const requestParams = {
-      listingId: this.state.pageData.listing.id,
-      bookingStart: speculatedTransaction.booking.attributes.start,
-      bookingEnd: speculatedTransaction.booking.attributes.end,
-    };
+- [SimpleOrderForm.js](/tutorial-assets/SimpleOrderForm.js)
 
-    const inquiredTransaction = this.state.pageData.inquiredTransaction;
-    const transactionIdMaybe = inquiredTransaction ? inquiredTransaction.id : null;
+To use _CheckoutPageWithPayment_, we need to make these changes to
+existing components:
 
-    onInitiateOrder(requestParams, transactionIdMaybe).then(params => {
-      onSendMessage({ ...params, message: initialMessage })
-        .then(values => {
-          const { orderId, messageSuccess } = values;
-          this.setState({ submitting: false });
-          const routes = routeConfiguration();
-          const OrderPage = findRouteByRouteName('OrderDetailsPage', routes);
+- Export a _processCheckoutWithPayment_ function from
+  _src/containers/CheckoutPage/CheckoutPageTransactionHelpers.js_
 
-          // Transaction is already created, but if the initial message
-          // sending failed, we tell it to the OrderDetailsPage.
-          dispatch(
-            OrderPage.setInitialValues({
-              initialMessageFailedToTransaction: messageSuccess ? null : orderId,
-            })
-          );
-          const orderDetailsPath = pathByRouteName('OrderDetailsPage', routes, {
-            id: orderId.uuid,
-          });
-          clearData(STORAGE_KEY);
-          history.push(orderDetailsPath);
-        })
-        .catch(() => {
-          this.setState({ submitting: false });
-        });
+```jsx
+export const processCheckoutWithoutPayment = (orderParams, extraParams) => {
+  const {
+    message,
+    onInitiateOrder,
+    onSendMessage,
+    pageData,
+    process,
+    setPageData,
+    sessionStorageKey,
+  } = extraParams;
+
+  const storedTx = ensureTransaction(pageData.transaction);
+
+  const processAlias = pageData?.listing?.attributes?.publicData?.transactionProcessAlias;
+
+  ////////////////////////////////////////////////
+  // Step 1: initiate order                     //
+  // by requesting booking from Marketplace API //
+  ////////////////////////////////////////////////
+  const fnRequest = fnParams => {
+    // fnParams should be { listingId, deliveryMethod, quantity?, bookingDates?, protectedData }
+
+    const requestTransition =
+      storedTx?.attributes?.lastTransition === process.transitions.INQUIRE
+        ? process.transitions.REQUEST_PAYMENT_AFTER_INQUIRY
+        : process.transitions.REQUEST_PAYMENT;
+    const isPrivileged = process.isPrivileged(requestTransition);
+
+    onInitiateOrder(
+      fnParams,
+      processAlias,
+      storedTx.id,
+      requestTransition,
+      isPrivileged
+    ).then(order => {
+      // Store the returned transaction (order)
+      persistTransaction(order, pageData, storeData, setPageData, sessionStorageKey);
     });
-  }
+
+    return orderPromise;
+  };
+
+  //////////////////////////////////
+  // Step 2: send initial message //
+  //////////////////////////////////
+  const fnSendMessage = fnParams => {
+    const orderId = fnParams?.id;
+    return onSendMessage({ id: orderId, message });
+  };
+
+  /////////////////////////////////
+  // Call each step in sequence //
+  ////////////////////////////////
+
+  return fnRequest(orderParams).then(res => fnSendMessage({...res}))
+};
+};
 ```
 
-- Replace `StripePaymentForm` with something else. In this example we
-  have simple `bookingForm` which has input for initial message and
-  button for booking.
+- Import and use _loadInitialData_ instead of
+  _loadInitialDataForStripePayments_ in _CheckoutPage.js_.
 
-```js
-const bookingForm = (
-  <FinalForm
-    onSubmit={values => this.handleSubmit(values)}
-    render={fieldRenderProps => {
-      const { handleSubmit } = fieldRenderProps;
-      return (
-        <Form onSubmit={handleSubmit}>
-          {showInitialMessageInput ? (
-            <div>
-              <h3 className={css.messageHeading}>
-                <FormattedMessage id="StripePaymentForm.messageHeading" />
-              </h3>
-
-              <FieldTextInput
-                type="textarea"
-                id={`bookingForm-message`}
-                name="initialMessage"
-                label={initialMessageLabel}
-                placeholder={messagePlaceholder}
-                className={css.message}
-              />
-            </div>
-          ) : null}
-          <div className={css.submitContainer}>
-            <PrimaryButton
-              className={css.submitButton}
-              type="submit"
-              inProgress={this.state.submitting}
-              disabled={false}
-            >
-              Confirm booking
-            </PrimaryButton>
-          </div>
-        </Form>
-      );
-    }}
-  />
-);
+```jsx
+if (getProcessName(data) !== INQUIRY_PROCESS_NAME) {
+  // Fetch speculateTransition for transactions that include bookings or purchases
+  loadInitialData({
+    pageData: data || {},
+    fetchSpeculatedTransaction,
+    config,
+  });
+}
 ```
 
-### 5. Hide/remove Stripe related pages
+### 4. Hide/remove Stripe related pages
 
-If you are not using Stripe you should remove or at least hide the pages
-that are meant for managing the information saved to Stripe. These pages
-are
+If you are not using Stripe, you should remove or at least hide the
+pages that are meant for managing the information saved to Stripe. These
+pages are
 [StripePayoutPage](https://github.com/sharetribe/web-template/tree/main/src/containers/StripePayoutPage)
 and
 [PaymentMethodsPage](https://github.com/sharetribe/web-template/tree/main/src/containers/PaymentMethodsPage).
@@ -314,11 +319,11 @@ You can also remove Stripe script form
 If you want to remove payments completely from your marketplace, there
 are even more things to consider. Again it depends a lot on your
 use-case what kind of changes are needed. If you e.g. want to add a
-transaction process with free transactions, you need to build the
-conditional logic for showing pricing components when needed and hiding
-them when not. If you want to build the marketplace completely without
-payments, you most likely want to hide all the references to listing
-price.
+transaction process with free bookings or purchases, you need to build
+the conditional logic for showing pricing components when needed and
+hiding them when not. If you want to build the marketplace completely
+without payments, you most likely want to hide all the references to
+listing price.
 
 ### More changes to the transaction process
 
@@ -346,7 +351,7 @@ marketplace, you should also go through all these pages to hide or
 remove the parts related to payments.
 
 - ListingPage, CheckoutPage, TransactionPage: Remove or hide
-  `BookingBreakdown` component when the transaction is free
+  `OrderBreakdown` component when the transaction is free
 - EditListingPage: remove pricing tab from `EditListingWizard`
 - SearchPage: remove price filter & edit `ListingCard` so that it
   doesn't show the listing price
