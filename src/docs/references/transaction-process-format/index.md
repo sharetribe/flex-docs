@@ -355,16 +355,17 @@ automatic transitions get executed from the state.
 
 ## Notifications
 
-Notifications are emails that are sent as part of the transaction process when
-certain transitions occur. They optionally support delays via the `:at` key (see
-also the [Time expressions, delayed transitions and delayed
-notifications](#time-expressions-delayed-transitions-and-delayed-notifications)
+Notifications are emails that are sent as part of the transaction
+process when certain transitions occur. They optionally support delays
+via the `:at` key (see also the
+[Time expressions, delayed transitions and delayed notifications](#time-expressions-delayed-transitions-and-delayed-notifications)
 section). Every notification needs to have a unique (in the scope of the
-process) name and can be tied only to a single transition. The email content of
-a notification is rendered using a template. These templates can be reused
-between notifications. If there's two different transitions where you want to
-send the same email, you can just refer to same template in both. Notifications
-can be sent to the customer or to the provider.
+process) name and can be tied only to a single transition. The email
+content of a notification is rendered using a template. These templates
+can be reused between notifications. If there's two different
+transitions where you want to send the same email, you can just refer to
+same template in both. Notifications can be sent to the customer or to
+the provider.
 
 ## Validating and inspecting a process
 
@@ -469,13 +470,13 @@ requires and accepts.
 
 ### Notification
 
-| Key         | Type            | Description                                                                                                                                                                                 | Example                                                                                              |
-|-------------|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| `:name`     | Keyword         | Unique name for the notification.                                                                                                                                                           | `:notification/new-booking-request`                                                                  |
-| `:on`       | Keyword         | Reference to a transition name that when completed triggers this notification.                                                                                                              | `:transition/confirm-payment`                                                                        |
-| `:to`       | Keyword         | Recipient of the notification email. One of: `:actor.role/customer`, `:actor.role/provider`                                                                                                 | `:actor.role/provider`                                                                               |
-| `:template` | Keyword         | Refrence to an email template to render the email body for this notification.                                                                                                               | `:new-booking-request`                                                                               |
-| `:at`       | Time expression | Optional time expression that when given turns the notification to a delayed notification. Any scheduled delayed notification is cancelled if the transaction transitions to another state. | `{:fn/plus [{:fn/timepoint [:time/first-entered-state :state/preauthorized]} {:fn/period ["P5D"]}]}` |
+| Key         | Type            | Description                                                                                                                                                                                                                 | Example                                                                                              |
+| ----------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `:name`     | Keyword         | Unique name for the notification.                                                                                                                                                                                           | `:notification/new-booking-request`                                                                  |
+| `:on`       | Keyword         | Reference to a transition name that when completed triggers this notification.                                                                                                                                              | `:transition/confirm-payment`                                                                        |
+| `:to`       | Keyword         | Recipient of the notification email. One of: `:actor.role/customer`, `:actor.role/provider`                                                                                                                                 | `:actor.role/provider`                                                                               |
+| `:template` | Keyword         | Refrence to an email template to render the email body for this notification.                                                                                                                                               | `:new-booking-request`                                                                               |
+| `:at`       | Time expression | Optional time expression that when given turns the notification to a delayed notification. Any scheduled delayed notification is cancelled if the transaction transitions to another state before the notification is sent. | `{:fn/plus [{:fn/timepoint [:time/first-entered-state :state/preauthorized]} {:fn/period ["P5D"]}]}` |
 
 **Example**:
 
