@@ -316,9 +316,9 @@ to work hand in hand with Stripe:
   listings (i.e. receive money from customers) unless they have verified
   their identity with Stripe &mdash; this ensures that the platform is
   always KYC compliant.
-- CheckoutPage.js handles all Stripe actions related to customer
-  checkout, including creating and confirming the payment intent, with a
-  single button click.
+- _CheckoutPage.js_ and its subcomponent _CheckoutPageWithPayment.js_
+  handle Stripe actions related to customer checkout, including creating
+  and confirming the payment intent, with a single button click.
 - The customer can save their payment method to Flex either when
   purchasing a listing, or on a separate Payment Methods page.
 
