@@ -97,20 +97,33 @@ function to include listing types from both hosted asset based
 configurations and local configurations.
 
 ```jsx
+// Note: by default, listing types and fields are only merged if explicitly set for debugging
 const mergeListingConfig = (hostedConfig, defaultConfigs) => {
   // Listing configuration is splitted to several assets in Console
-  const hostedListingTypes = hostedConfig.listingTypes?.listingTypes;
-  const hostedListingFields = hostedConfig.listingFields?.listingFields;
-  const hostedListingConfig =
-    hostedListingTypes && hostedListingFields
-      ? {
-          listingTypes: restructureListingTypes(hostedListingTypes),
-          listingFields: restructureListingFields(hostedListingFields),
-        }
-      : null;
+  const hostedListingTypes = restructureListingTypes(
+    hostedConfig.listingTypes?.listingTypes
+  );
+  const hostedListingFields = restructureListingFields(
+    hostedConfig.listingFields?.listingFields
+  );
 
-  const { listingTypes = [], listingFields = [], ...rest } =
-    hostedListingConfig || defaultConfigs.listing;
+  // The default values for local debugging
+  const {
+    listingTypes: defaultListingTypes,
+    listingFields: defaultListingFields,
+    ...rest
+  } = defaultConfigs.listing || {};
+
+  // When debugging, include default configs.
+  // Otherwise, use listing types and fields from hosted assets.
+  const shouldMerge = mergeDefaultTypesAndFieldsForDebugging(false);
+  const listingTypes = shouldMerge
+    ? union(hostedListingTypes, defaultListingTypes, 'listingType')
+    : hostedListingTypes;
+  const listingFields = shouldMerge
+    ? union(hostedListingFields, defaultListingFields, 'key')
+    : hostedListingFields;
+
   const listingTypesInUse = getListingTypeStringsInUse(listingTypes);
 
   return {
@@ -123,16 +136,22 @@ const mergeListingConfig = (hostedConfig, defaultConfigs) => {
 };
 ```
 
-By default, this function first creates a _hostedListingConfig_ object
-from the hosted asset listing configurations. It then uses the hosted
-config to determine listing types and listing fields, and only refers to
-default config if neither listing types nor listing fields exist in the
-hosted asset.
+By default, this function first determines the hosted and local listing
+fields and listing types. Then, it checks whether to merge both, or to
+only use hosted configurations.
+
+<info>
+
+When debugging your code, you can toggle the parameter for
+_mergeDefaultTypesAndFieldsForDebugging_ into _true_ to show both local
+and hosted configurations.
+
+</info>
 
 ## Example: use both hosted and local configs for listing types
 
-Let's say you want to use multiple listing types – one for regular
-bookings, defined in Flex Console, and one for
+Let's say you want to use multiple listing types in your marketplace –
+one for regular bookings, defined in Flex Console, and one for
 [negotiated bookings](https://github.com/sharetribe/flex-example-processes/tree/master/negotiated-booking),
 defined in the template.
 
@@ -143,14 +162,14 @@ to the _mergeListingConfig_ function:
 ```diff
 const mergeListingConfig = (hostedConfig, defaultConfigs) => {
 ...
-- const { listingTypes = [], listingFields = [], ...rest } =
--   hostedListingConfig || defaultConfigs.listing;
-+ const { listingFields = [], ...rest } = hostedListingConfig || defaultConfigs.listing;
-+
-+ const listingTypes = [
-+   ...hostedListingConfig.listingTypes,
-+   ...defaultConfigs.listing.listingTypes,
-+ ];
+  const shouldMerge = mergeDefaultTypesAndFieldsForDebugging(false);
+- const listingTypes = shouldMerge
+-   ? union(hostedListingTypes, defaultListingTypes, 'listingType')
+-   : hostedListingTypes;
++ const listingTypes = union(hostedListingTypes, defaultListingTypes, 'listingType');
+  const listingFields = shouldMerge
+    ? union(hostedListingFields, defaultListingFields, 'key')
+    : hostedListingFields;
 ...
 ```
 
