@@ -115,7 +115,7 @@ checkout flow:**
     optional permission to save card details for future bookings.
 - When requesting payment, a parameter needs to be passed if card
   details are saved at the same time: `setupPaymentMethodForSaving`. In
-  the default template, this is handled in the first step of the
+  the template, by default, this is handled in the first step of the
   _processCheckoutWithPayment_ function.
 - `stripe.confirmCardPayment` call, `confirm-payment` transition and the
   call to send initial message are handled as before

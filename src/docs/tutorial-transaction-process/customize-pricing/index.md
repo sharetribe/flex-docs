@@ -672,7 +672,7 @@ const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config
 ```
 
 This function is used to build order parameters when the component loads
-initial data for the page, and the order params are then passed to a
+initial data for the page, and the order parameters are then passed to a
 `speculateTransaction` action in `CheckoutPage.duck.js`. That action, in
 turn, calls the template server using the correct endpoint and the order
 parameters provided.
