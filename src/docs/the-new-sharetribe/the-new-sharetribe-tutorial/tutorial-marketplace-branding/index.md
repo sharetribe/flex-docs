@@ -25,8 +25,8 @@ color.” This will allow you to select a color. You can use a color
 picker, click a color on the color gradient, or input an RGB coordinate
 or a hex value.
 
-In this case, we're going to use RGB coordinates. Choose 177,69,49 for
-R,G and B. This should give you the dark red brand color of Saunatime.
+In this case, we're going to use RGB coordinates. Choose 101,68,228 for
+R,G and B. This should give you the blue brand color of Biketribe.
 
 ### 2. Upload the logo
 

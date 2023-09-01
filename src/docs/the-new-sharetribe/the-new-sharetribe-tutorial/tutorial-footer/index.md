@@ -29,12 +29,12 @@ The footer has two specific place for "Slogan" as it's a common
 convention in footers. Slogan is a one liner describing the essence of
 your marketplace.
 
-**Write “The largest online marketplace for sauna rentals.”**
+**Write “The largest online marketplace for bike rentals.”**
 
 ### 2. Social media links
 
 We want to link to our awesome social media profile. Let's start by
-removing all Biketribe's social media links. Then, add a social media
+removing all the existing social media links. Then, add a social media
 link by clicking **“+ Add a new social media link”** : Select Facebook
 as a platform from the dropdown menu Add this url as the Link URL:
 https://facebook.com/sharetribe
@@ -45,7 +45,7 @@ Copyright statement is another common footer convention, so a specific
 space has been reserved for it in the footer too. Copyright states that
 you reserve the rights to the material on your website.
 
-**Write “© Saunatime”**
+**Write “© Biketribe"**
 
 ### 4. Columns and Content blocks
 
@@ -57,14 +57,14 @@ You can format block text with
 [markdown](https://www.markdownguide.org/basic-syntax/) to add links,
 bolding, and other rich text.
 
-We're going to repurpose the content columns of Biketribe for the
+We're going to repurpose the content columns for the
 purposes of this tutorial, as they work quite well for us.
 
 Open the "general" block. You notice that it has three links. Two of
-them have a mention of the word "bike". Change this to "sauna".
+them have a mention of the word "listing". Change this to "bike".
 
-In "cities1" and "cities2", do the same thing: change "Bikes" to
-"Saunas" in each link.
+In "cities1" and "cities2", do the same thing: change "listings" to
+"bikes" in each link.
 
 "terms" can stay as is.
 
@@ -72,7 +72,7 @@ Save changes.
 
 ### Next: start testing your marketplace – and build your own!
 
-We're done with the setup! It's time to start using your sauna
+We're done with the setup! It's time to start using your bike
 marketplace. Click "View your marketplace" on the top left in the
 sidebar and start browsing your site. You can try signing up as a new
 user, creating some listings, and then signing up as another user, doing

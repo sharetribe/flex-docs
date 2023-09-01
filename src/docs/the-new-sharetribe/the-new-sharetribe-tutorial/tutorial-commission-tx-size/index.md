@@ -44,7 +44,7 @@ upcoming feature will allow you to charge a commission also from the
 customer.
 
 Once you set a commission percentage, this will automatically be charged
-from every transaction. We believe 20% is a fair fee for Saunatime.
+from every transaction. We believe 20% is a fair fee for Biketribe.
 
 **Write "20" in "Provider commission (%)"**
 
@@ -57,7 +57,7 @@ Navigate to "Transactions → Minimum transaction size".
 Stripe also collects a fee from each transaction, and it collects it
 from the platform operator – in this case, you! This means that you
 should not allow transactions where you lose money. A good rule of thumb
-is that you should earn at least 50 cents from each transaction. .
+is that you should earn at least 50 cents from each transaction.
 
 You can control the minimum transaction size by setting a minimum
 listing price. We recommend setting a default so that your commission

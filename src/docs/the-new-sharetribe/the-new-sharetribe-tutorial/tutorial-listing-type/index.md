@@ -20,9 +20,9 @@ time. Let's adjust its settings. Click "Listings → Listing types" from
 the navigation on the left and click open the default listing type
 "Daily booking".
 
-In our Sauna marketplace, we want to offer nightly bookings to allow
-all-night sauna parties: you book a slot from the calendar, check in
-during the evening and check out the next morning.
+In our bike marketplace, we want to offer daily bookings to allow
+for long term rentals: you book a slot from the calendar, check in
+during the morning or midday, and check out at the end of the last day.
 
 ### Listing type label
 
@@ -30,7 +30,7 @@ Listing type label will become more important when it's possible to have
 multiple listing types in a marketplace. For now, it's just a descriptor
 for you. Let's put something descriptive.
 
-**Type "Nightly booking"**
+**Type "Daily booking"**
 
 ### Listing type ID
 
@@ -38,17 +38,17 @@ Listing type ID is a unique identifier that is stored to each listing
 using this listing type. It can't contain spaces, and there are other
 character restrictions too. In general, you should not change the ID of
 an existing listing type that has listings created with it, as those
-listings will retain the old ID. We don't have any sauna listings yet,
+listings will retain the old ID. We don't have any bike listings yet,
 so we can proceed to change the ID.
 
-**Type "nightly-booking"**
+**Type "daily-booking"**
 
 ### Transaction process
 
 Transaction process determines the flow of the transaction initiated
 from a listing with this listing type. There are currently two options:
 Calendar booking and Buying and selling products. Biketribe uses
-calendar bookings, which is what we would want too.
+calendar bookings, which is what we would want.
 
 **Keep "Calendar booking"**
 
@@ -58,10 +58,10 @@ and selling products here".
 ### Booking unit
 
 Next we need to determine how the calendar and booking experience works.
-Options are daily, nightly and hourly bookings. We want overnight
-bookings, so we'll choose "Nightly".
+Options are daily, nightly and hourly bookings. We want daytime
+bookings, so we'll choose "Daily".
 
-**Choose "Nightly"**
+**Choose "Daily"**
 
 Now it's time to save the changes. Let's not preview the marketplace at
 this point, as testing the listing type would require creating a new

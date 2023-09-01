@@ -30,7 +30,7 @@ section._
 Within the landing page edit page, you will encounter several sections.
 You can add and remove sections according to your unique needs. In this
 tutorial, we'll only make a few quick modifications to the existing
-sections to build a landing page for our sauna marketplace with a
+sections to build a landing page for our bike marketplace with a
 minimum amount of work.
 
 ### 1. “hero” section
@@ -38,8 +38,7 @@ minimum amount of work.
 The first section of a landing page is typically called "Hero". It often
 includes your main message, with the most important "call-to-action" (an
 invite for a user to take a specific action by clicking a button, etc).
-We'll keep this section, but it should be talking about saunas, not
-about bikes.
+We'll keep this section, but it should be talking specifically about bikes.
 
 There are several settings we can keep intact.
 
@@ -69,13 +68,12 @@ content block called "hero-block". Make the following changes:
 - Replace the Image file for the file below (it is a transparent PNG
   file). Leave the Aspect ratio and Image alt text as they are.
   [Download the transparent image here](/tutorial-assets/tns/transparent-image.png)
-- Replace the Block title content for: “Welcome to Saunatime” and select
+- Replace the Block title content for: “Welcome to Biketribe” and select
   Page title (H1) as the Block title size.
-- Replace the Block text content for: write “The marketplace for all
-  sauna bookings and rentals. From electric saunas to smoke and wood
-  saunas, you'll find the best possible saunas you can in Finland and at
-  the most affordable prices. Book a hot night or rent yours out!”
-- Change the Internal link text to “Browse saunas in Helsinki.” Leave
+- Replace the Block text content for: write “We want to bring everyone 
+  access to any kind of bikes, while reducing the need to own a bike. 
+  That's better for the people and for the planet.”
+- Change the Internal link text to “Browse bikes in Helsinki.” Leave
   all other call-to-action settings intact.
 
 Save changes and check the current view on the “view page” tab you
@@ -92,22 +90,21 @@ locations for this tutorial.
 
 We'll only make a few minor changes to the text content:
 
-- Change the Section Title to: “Find a Sauna Anywhere”.
-- Change the section description to “Find the best saunas at the tap of
-  a button, anywhere in Finland.”
+- Change the Section Title to: “Find a bike anywhere”.
+- Change the section description to “No matter where you are, we have the right bike for you.”
 
 There's no need to change the Section call to action or the Section
 appearance
 
 Within the Content blocks, you will see there are 6 cities pre-set.
 Within each city’s Content Block open the Block and alter the Block
-text, and only the Block text. Replace the word “bikes” with “saunas”.
+text, and only the Block text. Insert the word “bikes”.
 
 ### 3. “how-it-works” section
 
 Open the “how-it-works-for-customers” section. Change the section ID to
-“how-it-works”. Replace the word “Bike” for the word “Sauna” in ever
-text of the section. You need to change it in:
+“how-it-works”. Replace or insert the word “Bike" in every appropriate
+text of the section. You can change it in:
 
 - Section title
 - Section description
@@ -117,8 +114,8 @@ text of the section. You need to change it in:
 
 In Block 3 of the section, **“how-it-works-step-3”**, Change the Block
 title for **“3. Start enjoying!”** and the Block text for: **“Use
-Saunatime’s messaging system to iron out the details of the visit, and
-prepare for a relaxing experience!”**
+Biketribe’s messaging system to iron out the details of the rental, and
+prepare for an exciting experience!”**
 
 ### 4. Other sections
 
@@ -134,12 +131,12 @@ social media sites.
 
 Add the following content:
 
-- Page title: Saunatime - Book saunas everywhere
+- Page title: Biketribe - Find a bike everywhere
 - Page description: The largest online community to find and rent a
-  sauna.
-- Page title for social media: Book saunas everywhere
+  bike.
+- Page title for social media: Find a bike everywhere
 - Page description for social media: The largest online community to
-  find and rent a sauna.
+  find and rent a bike.
 - Social media image: Add the following image
 
 ![Book saunas everywhere](./seoandsocial.png)
