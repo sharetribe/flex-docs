@@ -1,7 +1,7 @@
 ---
 title: How to change microcopy language
 slug: how-to-change-ftw-language
-updated: 2023-01-01
+updated: 2023-09-04
 category: ftw-content
 ingress:
   This guide describes how to change the language used in the Sharetribe
@@ -79,10 +79,10 @@ _src/app.js_ before _const MomentLocaleLoader_:
 import messagesInLocale from './translations/it.json';
 ```
 
-It is also recommended to change _defaultMicrocopy.json_ translations.
-That way, accidentally deleted keys in dynamic hosted microcopy (in
-Console) won't cause the default English translations to be rendered in
-your custom client app.
+It is also recommended to change _en.json_ translations. That way,
+accidentally deleted keys in dynamic hosted microcopy (in Console) won't
+cause the default English translations to be rendered in your custom
+client app.
 
 ## Changing the microcopy used in tests
 

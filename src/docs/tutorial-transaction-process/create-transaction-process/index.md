@@ -1,7 +1,7 @@
 ---
 title: Create a new transaction process
 slug: create-transaction-process
-updated: 2023-05-31
+updated: 2023-09-04
 category: tutorial-transaction-process
 ingress:
   This guide describes how to create a new transaction process and how
@@ -262,12 +262,15 @@ alongside the hosted ones next.
 ```diff
 const mergeListingConfig = (hostedConfig, defaultConfigs) => {
 ...
-- const { listingTypes = [], listingFields = [], ...rest } = hostedListingConfig || defaultConfigs.listing;
-+ const { listingFields = [], ...rest } = hostedListingConfig || defaultConfigs.listing;
-+ const listingTypes = [
-+   ...hostedListingConfig.listingTypes,
-+   ...defaultConfigs.listing.listingTypes,
-+ ];
+  const shouldMerge = mergeDefaultTypesAndFieldsForDebugging(false);
+- const listingTypes = shouldMerge
+-   ? union(hostedListingTypes, defaultListingTypes, 'listingType')
+-   : hostedListingTypes;
++ const listingTypes = union(hostedListingTypes, defaultListingTypes, 'listingType');
+  const listingFields = shouldMerge
+    ? union(hostedListingFields, defaultListingFields, 'key')
+    : hostedListingFields;
+...
 ```
 
 Now, both the built-in listing types and the Flex Console created

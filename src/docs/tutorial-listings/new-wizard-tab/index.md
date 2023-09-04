@@ -1,7 +1,7 @@
 ---
 title: Add a new listing wizard tab
 slug: add-new-wizard-tab
-updated: 2023-05-29
+updated: 2023-09-04
 category: tutorial-listings
 ingress: Learn how to add a new tab to the listing creation wizard.
 published: true
@@ -480,8 +480,7 @@ Console.
 ![New tab without label](./saunatime-wizard-microcopy-key.png)
 
 To fix this, add the following keys and values in your Flex Console >
-Build > Content > Microcopy editor or
-_src/translations/defaultMicrocopy.json_ file:
+Build > Content > Microcopy editor or _src/translations/en.json_ file:
 
 ```json
   "EditListingWizard.tabLabelRules": "Rules",

@@ -1,10 +1,10 @@
 ---
 title: Automatic off-session payments in transaction process
 slug: off-session-payments-in-transaction-process
-updated: 2021-10-14
+updated: 2023-09-04
 category: concepts-payments
 ingress:
-  With off-session payments you can automatically charge your customers
+  With off-session payments, you can automatically charge your customers
   closer to their booking times. This allows for money to be held in
   Stripe throughout the booking period even when the booking is placed
   long time in advance.
@@ -66,7 +66,7 @@ In this example, a transaction goes as follows:
 4. The automatic charge can fail for multiple reasons. If the charge
    fails, the customer (and optionally also the provider) receives an
    email notification and the customer is asked to visit the marketplace
-   web site in order to pay manually.
+   website in order to pay manually.
 
 <extrainfo title="How does creating and capturing an off-session payment work?">
 In the auto-payment transition, the payment intent creation needs to be configured to use the customer's saved payment information, if it exists. When the action is configured like this, it both creates and confirms the payment intent. Therefore, only capturing the payment intent remains necessary.
@@ -88,15 +88,18 @@ In the auto-payment transition, the payment intent creation needs to be configur
 </extrainfo>
 
 It is important to note that an off-session payment can fail for various
-reasons. For instance, the card could be denied due to insufficient
-funds, the issuing bank may require additional authentication from the
-customer (this can easily occur with European payment cards when
-[Strong Customer Authentication regulation](/concepts/strong-customer-authentication/)
-kicks in), the payment card might have expired, etc. It is therefore
-always important to allow for a fall-back payment path in your
-transaction process. Since only one transition from a state can be
-triggered automatically, this fall-back payment path must trigger upon a
-user action, as in the example.
+reasons. For instance:
+
+- the card could be denied due to insufficient funds,
+- the issuing bank may require additional authentication from the
+  customer (this can easily occur with European payment cards with
+  [Strong Customer Authentication regulation](/concepts/strong-customer-authentication/))
+- or the payment card might have expired.
+
+It is therefore always important to allow for a fallback payment path in
+your transaction process. In Flex, only one transition from a state can
+be triggered automatically, so a fallback payment path must trigger upon
+a user action, as in the example.
 
 You can build upon this example and extend it to make the payment
 process more robust. For instance, in case the customer fails to pay for
@@ -127,16 +130,16 @@ timestamp.
 ### Separating order from payment
 
 In the default transaction process and default template flow, the order
-is initiated and processed on
-[CheckoutPage.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPage.js)
-in `handlePaymentIntent()`, using
-[initial values from ListingPage.shared.js](https://github.com/sharetribe/web-template/blob/main/src/containers/ListingPage/ListingPage.shared.js)
-set in `handleSubmit()` with `callSetInitialValues()`. Since the
-off-session payment process separates initiating the order (i.e.
-creating a booking, setting line items in a privileged transition) from
-payment (creating and further processing Stripe payment intent), it is
-important to pay attention to the way you want to handle that
-separation.
+is initiated and processed in
+[CheckoutPageWithPayment.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPageWithPayment.js)
+using _processCheckoutWithPayment()_.
+[_ListingPage.shared.js_ passes initial values](https://github.com/sharetribe/web-template/blob/main/src/containers/ListingPage/ListingPage.shared.js)
+in its `handleSubmit()` with `callSetInitialValues()`, and those initial
+values get handled on the checkout page. Since the off-session payment
+process separates initiating the order (i.e. creating a booking, setting
+line items in a privileged transition) from payment (creating and
+further processing Stripe payment intent), it is important to pay
+attention to the way you want to handle that separation.
 
 - What happens when user clicks 'Request to book' on ListingPage.js?
 - Where is the API call made to invoke the initial process transition

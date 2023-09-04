@@ -1,12 +1,12 @@
 ---
 title: Enable PaymentIntents
 slug: enable-payment-intents
-updated: 2020-08-11
+updated: 2023-09-04
 category: how-to-payments
 ingress:
   Overview of how Stripe PaymentIntents work in Sharetribe Web Template,
-  and how you can update legacy templates to support for Strong Customer
-  Authentication (SCA).
+  and how you can update legacy templates and custom apps to support
+  Strong Customer Authentication (SCA).
 published: true
 ---
 
@@ -100,11 +100,15 @@ be reloaded at some point. We need to retrieve up-to-date PaymentIntent
 from Stripe API and check its status to be able to continue the payment
 process. This can be done with `stripe.retrievePaymentIntent`.
 
-> Note: previously `stripe.confirmCardPayment` was called
-> `stripe.handleCardPayment` which is now deprecated. Basically,
-> handleCardPayment has been renamed to confirmCardPayment. In addition
-> to the rename, Stripe has slightly modified the arguments. These
-> changes should not affect the behavior of the method.
+<info>
+
+Previously _stripe.confirmCardPayment_ was called
+_stripe.handleCardPayment_, which is now deprecated. Basically,
+_handleCardPayment_ has been renamed to _confirmCardPayment_. In
+addition to the rename, Stripe has slightly modified the arguments.
+These changes should not affect the behavior of the method.
+
+</info>
 
 ## 3. CheckoutPage: add new API calls and call them in sequence
 
@@ -148,9 +152,13 @@ address) and then 4 thunk-calls/Promises need to be made in sequence:
 
 ![Stripe.js: PaymentIntents authentication modal](./stripe-paymentintents-authentication-modal.png)
 
-> Note: `stripe.confirmCardPayment` needs an instance of Stripe to be
-> passed from StripePaymentForm. `stripe.confirmCardPayment` will check
-> card details from connected Stripe Elements input.
+<info>
+
+The _stripe.confirmCardPayment_ action needs an instance of Stripe to be
+passed from StripePaymentForm. _stripe.confirmCardPayment_ will check
+card details from connected Stripe Elements input.
+
+</info>
 
 ## 4. CheckoutPage: save updated transaction
 
@@ -158,7 +166,7 @@ We use session storage to buffer checkout page against page reloads and
 errors - customer needs to be able to continue payment after accidental
 page refresh and network errors. This is a UX issue, but more
 importantly, it builds trust. Because of this need, we save booking
-dates and other data there. Previously inquiredTransaction was saved
+dates and other data there. Previously _inquiredTransaction_ was saved
 there too, but that concept is now expanded a bit: any transaction can
 now be saved to session storage under the key "transaction".
 
@@ -172,8 +180,8 @@ _inquiryTransaction_ to _transaction_. However, after transition
 transaction is saved again. (the relevant new data in transaction is
 `stripePaymentIntentClientSecret`.)
 
-In addition, the handling of booking breakdown with
-SpeculatedTransaction needs to be changed because saved transaction
+In addition, the handling of order breakdown with
+_speculatedTransaction_ needs to be changed, because saved transaction
 already contains booking in some cases and a new call to
 `sdk.transactions.initiateSpeculative` would just return a conflict
 error telling about an already existing booking.
@@ -192,7 +200,7 @@ adding `StripePaymentAddress` sub-component.
 <info>
 
 If the page is reloaded after successful call to
-`stripe.confirmCardPayment` billing details should not be shown to the
+_stripe.confirmCardPayment_, billing details should not be shown to the
 user since credit card number and other billing details are already sent
 to Stripe.
 
@@ -206,7 +214,7 @@ work in a live environment.
 
 This can be done by creating another
 [live environment](/ftw/how-to-deploy-ftw-to-production/) instance of
-Sharetribe Web Template that uses
+your client app that uses
 
 - your live Client Id for Flex and
 - live Stripe keys (both publishable and secret).
