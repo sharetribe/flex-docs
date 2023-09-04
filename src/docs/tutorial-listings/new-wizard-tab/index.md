@@ -480,8 +480,7 @@ Console.
 ![New tab without label](./saunatime-wizard-microcopy-key.png)
 
 To fix this, add the following keys and values in your Flex Console >
-Build > Content > Microcopy editor or
-_src/translations/defaultMicrocopy.json_ file:
+Build > Content > Microcopy editor or _src/translations/en.json_ file:
 
 ```json
   "EditListingWizard.tabLabelRules": "Rules",
