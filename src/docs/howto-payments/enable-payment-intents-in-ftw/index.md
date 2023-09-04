@@ -1,7 +1,7 @@
 ---
 title: Enable PaymentIntents
 slug: enable-payment-intents
-updated: 2020-08-11
+updated: 2023-09-04
 category: how-to-payments
 ingress:
   Overview of how Stripe PaymentIntents work in Sharetribe Web Template,

@@ -1,7 +1,7 @@
 ---
 title: How to manage hosted and local configurations
 slug: hosted-and-local-configurations
-updated: 2023-06-01
+updated: 2023-09-04
 category: ftw-configuration
 ingress:
   The Sharetribe Web Template has both local and asset-based

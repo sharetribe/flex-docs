@@ -1,7 +1,7 @@
 ---
 title: Automatic off-session payments in transaction process
 slug: off-session-payments-in-transaction-process
-updated: 2021-10-14
+updated: 2023-09-04
 category: concepts-payments
 ingress:
   With off-session payments, you can automatically charge your customers
@@ -130,8 +130,9 @@ timestamp.
 ### Separating order from payment
 
 In the default transaction process and default template flow, the order
-is initiated and processed in [CheckoutPageWithPayment.js](TODO UPDATE
-LINK) using _processCheckoutWithPayment()_.
+is initiated and processed in
+[CheckoutPageWithPayment.js](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPageWithPayment.js)
+using _processCheckoutWithPayment()_.
 [_ListingPage.shared.js_ passes initial values](https://github.com/sharetribe/web-template/blob/main/src/containers/ListingPage/ListingPage.shared.js)
 in its `handleSubmit()` with `callSetInitialValues()`, and those initial
 values get handled on the checkout page. Since the off-session payment

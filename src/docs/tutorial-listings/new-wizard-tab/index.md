@@ -1,7 +1,7 @@
 ---
 title: Add a new listing wizard tab
 slug: add-new-wizard-tab
-updated: 2023-05-29
+updated: 2023-09-04
 category: tutorial-listings
 ingress: Learn how to add a new tab to the listing creation wizard.
 published: true

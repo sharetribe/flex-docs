@@ -1,7 +1,7 @@
 ---
 title: How saving a payment card works in the Sharetribe Web Template
 slug: save-payment-card
-updated: 2020-08-11
+updated: 2023-09-04
 category: how-to-payments
 ingress:
   An overview of the Sharetribe Web Template functionality for storing

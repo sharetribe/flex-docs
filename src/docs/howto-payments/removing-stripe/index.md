@@ -1,7 +1,7 @@
 ---
 title: How to remove Stripe and payments
 slug: removing-stripe-and-payments
-updated: 2020-07-06
+updated: 2023-09-04
 category: how-to-payments
 ingress:
   In some cases, you might want to remove Stripe integrations or even
@@ -26,11 +26,11 @@ Stripe components from your project to clean up the code.
 
 <info>
 
-The template supports the default free inquiry process (TODO FIX
-WORDING), which does not include bookings or stock reservations. This
-process is the easiest way to use a marketplace without Stripe. However,
-if you do want to use bookings or stock reservations without Stripe, you
-will need to follow the steps in this guide.
+The template supports the _default-inquiry_ process, which does not
+include bookings or stock reservations. This process is the easiest way
+to use a marketplace without Stripe. However, if you do want to use
+bookings or stock reservations without Stripe, you will need to follow
+the steps in this guide.
 
 </info>
 

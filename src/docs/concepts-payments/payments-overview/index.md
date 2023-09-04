@@ -1,7 +1,7 @@
 ---
 title: Payments in Flex
 slug: payments-overview
-updated: 2021-12-10
+updated: 2023-09-04
 category: concepts-payments
 ingress:
   This article introduces how payments work in Flex in general, and

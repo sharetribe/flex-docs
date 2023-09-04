@@ -1,7 +1,7 @@
 ---
 title: How to change microcopy language
 slug: how-to-change-ftw-language
-updated: 2023-01-01
+updated: 2023-09-04
 category: ftw-content
 ingress:
   This guide describes how to change the language used in the Sharetribe

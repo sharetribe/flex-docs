@@ -3,7 +3,7 @@ title:
   How to handle provider onboarding and identity verification in
   Sharetribe Web Template
 slug: provider-onboarding-and-identity-verification
-updated: 2022-10-25
+updated: 2023-09-04
 category: how-to-payments
 ingress:
   This article describes how to take Stripe Connect Onboarding into use
