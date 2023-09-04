@@ -142,7 +142,7 @@ We can use an edited version of the _CheckoutPageWithPayment_ component,
 titled _CheckoutPageWithoutPayment_, as a starting point for the
 modifications.
 
-- [CheckoutPageWithoutPayment.js](/tutorial-assets/CheckoutPageWithoutPayment.js)
+- [CheckoutPageWithoutPayment.js](CheckoutPageWithoutPayment.js)
 
 The _CheckoutPageWithoutPayment_ component also imports a
 _SimpleOrderForm_ component. Let's add the component to the
@@ -156,9 +156,9 @@ StripePaymentForm folder.
                   └── SimpleOrderForm.js
 ```
 
-- [SimpleOrderForm.js](/tutorial-assets/SimpleOrderForm.js)
+- [SimpleOrderForm.js](SimpleOrderForm.js)
 
-To use _CheckoutPageWithPayment_, we need to make these changes to
+To use _CheckoutPageWithoutPayment_, we need to make these changes to
 existing components:
 
 - Export a _processCheckoutWithPayment_ function from
