@@ -51,8 +51,8 @@ the Title, and the other internal; the ID.
 ## Transaction settings
 
 Transaction settings define several important aspects of how your
-marketplace works. You have two options available by default: Calendar
-booking or buying and selling products.
+marketplace works. You have three options available by default: Calendar
+booking; Buying and selling products; and Free messaging.
 
 Transaction settings impact what information providers must fill out
 when creating their listing. They also impact how buyers initiate a
@@ -69,6 +69,12 @@ transaction on the listing page.
   purchase those listings. Perfect for product marketplaces (and in some
   other types of marketplaces).
   [Read more](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-transaction-settings/#buying-and-selling-products).
+
+- Free messaging: allows a transaction without payments between buyers
+  and sellers. Sellers can add a price or not to the listing. Useful for
+  marketplaces where payments are not necessary or should happen
+  off-platform.
+  [Read more](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-transaction-settings/#free-messaging)
 
 Finally, transaction settings determine the transaction process used in
 your marketplace. The transaction process maps out how a transaction
