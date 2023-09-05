@@ -30,8 +30,25 @@ localhost. To test out the LinkedIn login, you should e.g.
 [deploy your template changes to Render](/tutorial/deploy-to-render/).
 
 In this guide, we'll integrate LinkedIn login to Flex by using
-Sharetribe Web Template as an OIDC proxy to Flex. The main steps to take
-to achieve this are:
+Sharetribe Web Template as an OIDC proxy to Flex.
+
+<warning>
+
+LinkedIn has
+[adopted the Open ID Connect framework](https://www.linkedin.com/developers/news/featured-updates/openid-connect-authentication)
+for their authentication flow. Our team is investigating the
+implications of this change as it relates to authenticating towards
+Flex.
+
+At the moment, you can use the guide below as an illustrative guide to
+integrating other non-OIDC authentication flows with Flex. However, we
+cannot guarantee that implementing this guide will result in a fully
+functional LinkedIn login flow. We will update the contents of this
+article as our investigation progresses.
+
+</warning>
+
+The main steps to take to achieve this are:
 
 1. Create a login app in Linkedin
 1. Configure a new identity provider and client in Flex Console
