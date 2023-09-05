@@ -563,6 +563,12 @@ duplicate information being uploaded to the dev environment.
 Also, anonymizing test import data by hiding sensitive information like
 names, addresses, email addresses and Stripe keys is highly recommended.
 
+For anonymising email addresses, we recommend that you use + -aliases of
+an email address that you have access to (e.g.
+_admin+userId1@example.com_). This way, you can use the recover password
+feature to gain access to the individual accounts. Alternatively, you
+can use the Login as user feature to test anonymised user accounts.
+
 We recommend that you only use a subset of your data for the test
 import. The purpose of the test migration is to confirm that your
 extract-and-transform process creates a migration file that is valid and
