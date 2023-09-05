@@ -1,7 +1,7 @@
 ---
 title: Understanding transaction settings
 slug: understanding-transaction-settings
-updated: 2023-05-19
+updated: 2023-09-14
 category: the-new-sharetribe-transactions
 ingress:
   Understanding Transaction settings can help you build your ideal
@@ -16,10 +16,10 @@ initiate transactions, and how those transactions happen.
 
 ## What are the different Transaction Settings?
 
-You can define 2 types of transactions: **Calendar Booking** and
-**Buying and selling products**. These settings define what will be
-asked within the listing creation (and edit) form and the options when
-initiating a transaction.
+You can define 3 types of transactions: **Calendar Booking**; **Buying
+and selling products**; and **Free messaging**. These settings define
+what will be asked within the listing creation (and edit) form and the
+options when initiating a transaction.
 
 ### Calendar booking
 
@@ -42,6 +42,9 @@ transaction setting, defines the availability management system.
 - Hourly: Customer chooses a specific start time and end time within a
   specific date. Booking intervals are every hour.
 
+Learn how calendar booking works for customers and providers
+[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-options/#calendar-booking)
+
 ### Buying and selling products
 
 Buying and selling products allows listing providers to set a specific
@@ -61,3 +64,23 @@ to allow in the marketplace.
   specified stock quantity. The listing stays available for as long as
   there is stock. Listing authors can add more stock to their listings
   at any point. Works well for commercial product-selling marketplaces.
+
+Learn how buying and selling products works for customers and providers
+[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-options/#buying-and-selling-products)
+
+### Free messaging
+
+Free messaging allows providers to create listings that do not accept
+online payments. Providers can add a price to the listing or not. Buyers
+send an inquiry to the provider to start a transaction. Buyers and
+sellers use the transaction to message and decide on next steps.
+
+Reasons why you may not have payments on your platform are varied. On
+one hand, items or services on your marketplace may be offered for free,
+so there is no need for payments. On the other hand, payments in your
+industry might be too complex, so you want those to happen off-platform
+and focus on providing value to buyers and sellers in the discovery
+phase.
+
+Learn how free messsaging works for customers and providers
+[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-options/#free-messaging).

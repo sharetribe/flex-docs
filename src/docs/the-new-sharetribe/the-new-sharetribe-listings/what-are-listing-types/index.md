@@ -1,12 +1,11 @@
 ---
 title: What are listing types
 slug: what-are-listing-types
-updated: 2023-07-05
+updated: 2023-09-14
 category: the-new-sharetribe-listings
 ingress:
-  Determining the right Listing type to use is fundamental for achieving
-  a working product with Sharetribe. This article explains Listing types
-  in detail.
+  Listing types determine what kind of listings are created on your
+  marketplace and how customers interact with them.
 published: true
 ---
 
