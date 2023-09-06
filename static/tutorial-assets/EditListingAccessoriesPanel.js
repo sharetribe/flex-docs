@@ -11,17 +11,17 @@ import { types as sdkTypes } from '../../../../util/sdkLoader';
 import { H3, ListingLink } from '../../../../components';
 
 // Import modules from this directory
-import EditListingRulesForm from './EditListingRulesForm';
-import css from './EditListingRulesPanel.module.css';
+import EditListingAccessoriesForm from './EditListingAccessoriesForm';
+import css from './EditListingAccessoriesPanel.module.css';
 
 const getInitialValues = params => {
   const { listing } = params;
-  const { rules } = listing?.attributes.publicData || {};
+  const { accessories } = listing?.attributes.publicData || {};
 
-  return { rules };
+  return { accessories };
 };
 
-const EditListingRulesPanel = props => {
+const EditListingAccessoriesPanel = props => {
   const {
     className,
     rootClassName,
@@ -45,26 +45,26 @@ const EditListingRulesPanel = props => {
       <H3 as="h1">
         {isPublished ? (
           <FormattedMessage
-            id="EditListingRulesPanel.title"
+            id="EditListingAccessoriesPanel.title"
             values={{ listingTitle: <ListingLink listing={listing} />, lineBreak: <br /> }}
           />
         ) : (
           <FormattedMessage
-            id="EditListingRulesPanel.createListingTitle"
+            id="EditListingAccessoriesPanel.createListingTitle"
             values={{ lineBreak: <br /> }}
           />
         )}
       </H3>
-      <EditListingRulesForm
+      <EditListingAccessoriesForm
         className={css.form}
         initialValues={initialValues}
         onSubmit={values => {
-          const { rules = '' } = values;
+          const { accessories = '' } = values;
 
           // New values for listing attributes
           const updateValues = {
             publicData: {
-              rules
+              accessories
             }
           };
           onSubmit(updateValues);
@@ -83,13 +83,13 @@ const EditListingRulesPanel = props => {
 
 const { func, object, string, bool } = PropTypes;
 
-EditListingRulesPanel.defaultProps = {
+EditListingAccessoriesPanel.defaultProps = {
   className: null,
   rootClassName: null,
   listing: null,
 };
 
-EditListingRulesPanel.propTypes = {
+EditListingAccessoriesPanel.propTypes = {
   className: string,
   rootClassName: string,
 
@@ -105,4 +105,4 @@ EditListingRulesPanel.propTypes = {
   errors: object.isRequired,
 };
 
-export default EditListingRulesPanel;
+export default EditListingAccessoriesPanel;

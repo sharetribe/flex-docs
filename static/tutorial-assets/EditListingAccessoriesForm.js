@@ -13,10 +13,10 @@ import { required } from '../../../../util/validators';
 import { Button, Form, FieldTextInput } from '../../../../components';
 
 // Import modules from this directory
-import css from './EditListingRulesForm.module.css';
+import css from './EditListingAccessoriesForm.module.css';
 
 
-export const EditListingRulesFormComponent = props => (
+export const EditListingAccessoriesFormComponent = props => (
   <FinalForm
     {...props}
     render={formRenderProps => {
@@ -46,22 +46,22 @@ export const EditListingRulesFormComponent = props => (
         <Form onSubmit={handleSubmit} className={classes}>
           {updateListingError ? (
             <p className={css.error}>
-              <FormattedMessage id="EditListingRulesForm.updateFailed" />
+              <FormattedMessage id="EditListingAccessoriesForm.updateFailed" />
             </p>
           ) : null}
           {showListingsError ? (
             <p className={css.error}>
-              <FormattedMessage id="EditListingRulesForm.showListingFailed" />
+              <FormattedMessage id="EditListingAccessoriesForm.showListingFailed" />
             </p>
           ) : null}
           <FieldTextInput
-            id={`${formId}rules`}
-            name="rules"
+            id={`${formId}accessories`}
+            name="accessories"
             className={css.input}
             autoFocus={autoFocus}
             type="textarea"
-            label="Rules"
-            placeholder={intl.formatMessage({ id: 'EditListingRulesForm.rulesInputPlaceholder' })}
+            label="Accessories"
+            placeholder={intl.formatMessage({ id: 'EditListingAccessoriesForm.AccessoriesInputPlaceholder' })}
             validate={required(
               intl.formatMessage({
                 id: 'EditListingDetailsForm.descriptionRequired',
@@ -84,12 +84,12 @@ export const EditListingRulesFormComponent = props => (
   />
 );
 
-EditListingRulesFormComponent.defaultProps = {
+EditListingAccessoriesFormComponent.defaultProps = {
   fetchErrors: null,
-  formId: 'EditListingRulesForm',
+  formId: 'EditListingAccessoriesForm',
 };
 
-EditListingRulesFormComponent.propTypes = {
+EditListingAccessoriesFormComponent.propTypes = {
   formId: string,
   intl: intlShape.isRequired,
   onSubmit: func.isRequired,
@@ -104,4 +104,4 @@ EditListingRulesFormComponent.propTypes = {
   }),
 };
 
-export default compose(injectIntl)(EditListingRulesFormComponent);
+export default compose(injectIntl)(EditListingAccessoriesFormComponent);

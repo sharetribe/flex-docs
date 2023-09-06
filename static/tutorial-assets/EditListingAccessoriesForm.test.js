@@ -4,17 +4,17 @@ import '@testing-library/jest-dom';
 import { fakeIntl } from '../../../../util/testData';
 import { renderWithProviders as render, testingLibrary } from '../../../../util/testHelpers';
 
-import EditListingRulesForm from './EditListingRulesForm';
+import EditListingAccessoriesForm from './EditListingAccessoriesForm';
 
 const { screen, userEvent } = testingLibrary;
 
 const noop = () => null;
 
-describe('EditListingRulesForm', () => {
-  test('Check that rules can be given and submit button activates', () => {
-    const saveActionMsg = 'Save rules';
+describe('EditListingAccessoriesForm', () => {
+  test('Check that accessories can be given and submit button activates', () => {
+    const saveActionMsg = 'Save accessories';
     render(
-      <EditListingRulesForm
+      <EditListingAccessoriesForm
         intl={fakeIntl}
         dispatch={noop}
         onSubmit={v => v}
@@ -31,8 +31,8 @@ describe('EditListingRulesForm', () => {
     expect(screen.getByRole('button', { name: saveActionMsg })).toBeDisabled();
 
     // Fill mandatory attributes
-    const rules = 'Rules';
-    userEvent.type(screen.getByRole('textbox', { name: rules }), 'Be nice');
+    const accessories = 'Accessories';
+    userEvent.type(screen.getByRole('textbox', { name: accessories }), 'Pannier rack');
 
     // Test that save button is enabled
     expect(screen.getByRole('button', { name: saveActionMsg })).toBeEnabled();
