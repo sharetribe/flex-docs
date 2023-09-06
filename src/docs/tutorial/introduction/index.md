@@ -9,23 +9,23 @@ ingress:
 published: true
 ---
 
-The goal of this tutorial is to help you build a marketplace using the
-Sharetribe Web Template. You will learn how to set up a marketplace and
-how to start working on development using the Sharetribe Web Template.
-You will also learn how to use the adjustable configurations in Console.
+The goal of this tutorial is to help you customise your marketplace
+using the Sharetribe Web Template. You will learn how to set up a custom
+app for your marketplace, and how to start working on development using
+the Sharetribe Web Template.
 
 ## What are we building?
 
-In this tutorial, we will start editing the Sharetribe Web Template and
-turn it into a [Sauna](https://en.wikipedia.org/wiki/Sauna) rental
-marketplace called Saunatime.
+In this tutorial, we will continue modifying your Biketribe marketplace
+that you configured in Section 1 of the tutorial (TODO FIGURE OUT
+WORDING). We will start editing the Sharetribe Web Template, and add
+custom development features to Biketribe.
 
 The first part of this tutorial focuses on installing the template,
-using the Console interface to make changes to the branding and layout
-of your marketplace, making minor changes to the template styles and
-deploying a development environment. The second part dives deeper into
-modifying the listing creation process, and the third part focuses on
-editing the transaction process.
+making minor changes to the template styles, and deploying a development
+environment. The second part dives deeper into modifying the listing
+creation process, and the third part focuses on editing the transaction
+process.
 
 ## Background knowledge
 
@@ -53,9 +53,9 @@ suffice, and you'll learn a lot throughout the tutorial).
 
 - **Marketplace environment**: There are three marketplace environments:
   Test, Development, and Live (you can find these in Console). You can
-  use the development environment to develop your marketplace and test
-  environment as a preview or staging environment. Your Live marketplace
-  is home to your actual live marketplace.
+  use the development environment to develop and test your marketplace,
+  and test environment to preview your no-code changes. Your Live
+  marketplace is home to your actual live marketplace.
 
 - **Flex CLI**: A command line tool that you can use to change your
   marketplace's advanced configurations, such as transaction processes
@@ -165,5 +165,6 @@ URLs.<br /> Read more about
 
 Now you are ready to make code changes and save them to Github!
 
-The first part of this tutorial starts with changing the marketplace
-color.<br /> [› Go to the next article](/tutorial/change-branding/)
+The first part of this tutorial starts with changing the background
+color of the landing page components.<br />
+[› Go to the next article](/tutorial/first-edit/)

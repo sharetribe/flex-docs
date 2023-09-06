@@ -97,8 +97,6 @@ listing's price even if the currency is wrong.
 
 </info>
 
-</extrainfo>
-
 <extrainfo title="Extra: how to import currency in a component file?">
 
 The _configDefault.js_ file defines the currency and exports it among
@@ -123,49 +121,11 @@ other variables:
 
 </extrainfo>
 
-## Set a minimum price for your listings
-
-Now we'll set a minimum transaction size. This can be set through
-[Console](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size)
-and it will be enforced when users create new listings. Users will not
-be able to create listings below the minimun transaction size you define
-in Console.
-
-<info>
-
-Existing listings in your marketplace will not be affected by the new
-minimum price.
-
-</info>
-
-You can adjust the minimun transaction size in
-[Console](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size):
-
-![Change minimum price](./console-price.png)
-
-The value you input will be in cents. Therefore, 500 represents a
-minimun transaction size of 5 euros.
-
-Stripe (the payment processor used by Flex) has a
-[minimum (and maximum) charge amounts per currency](https://stripe.com/docs/currencies#minimum-and-maximum-charge-amounts).
-For euros, the minimum charge amount is 50 cents at the time when this
-article was written.
-
-We need to ensure that providers don't create listings that are cheaper
-than the minimum price. If the listing price is lower, Stripe will not
-process the payment and the booking fails.
-
 ## Summary
 
-In this tutorial, we changed the marketplace currency and set a minimun
-price for transactions using the no-code UI in Console. Currency needs
-to be edited through the configDefault.js file and changing the currency
-code to the desired value. You should consider what you want to set as
-the minimum transaction price of your marketplace. The recommendation is
-that the minimum listing price be at least the same as Stripe's minimum
-charge amount in the country you are operating. If the listing price is
-lower than Stripe's minimum charge amount, Stripe will not process the
-payment and the transaction will fail.
+In this tutorial, we changed the marketplace currency. Currency needs to
+be edited through the configDefault.js file by changing the currency
+code to the desired value.
 
 ## Further reading
 
