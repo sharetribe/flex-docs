@@ -227,7 +227,7 @@ Replace the existing usage of _TimeRangeHidden_ with the following:
 <extrainfo title="Click here to see how to add seats for hourly availability">
 
 If you want to add seats for hourly availability, you can do the
-following:
+following instead of modifying the _TimeRangeHidden_ component:
 
 1. Add a numeric _FieldTextInput_ to the _TimeRangeSelects_ component:
 
@@ -488,10 +488,65 @@ entry.
 
 <extrainfo title="Click here to see how to show seats for hourly availability">
 
-If you are working with hourly bookings, you will need to pass the
-_entry.seats_ value as a new prop from _WeeklyCalendar.PlanEntry_ to
-_TimeRange_, and then show the _seats_ prop in the necessary contexts in
-_TimeRange_.
+If you are working with hourly bookings, you can do the following
+instead of modifying the _availabilityInfo_ message:
+
+1. Pass the _entry.seats_ value as a new prop from
+   _WeeklyCalendar.PlanEntry_ to _TimeRange_
+
+```diff
+  return (
+    <div className={css.planEntry} {...rest}>
+      <div
+        className={classNames(css.availabilityDot, {
+          [css.isAvailable]: entry.seats > 0,
+        })}
+      />
+      {useFullDays ? (
+        availabilityInfo
+      ) : (
+        <TimeRange
+          className={css.timeRange}
+          startDate={parseLocalizedTime(date, entry.startTime, timeZone)}
+          endDate={getEndTimeAsDate(date, entry.endTime, isDaily, timeZone)}
++         seats={entry.seats}
+          dateType={useFullDays ? DATE_TYPE_DATE : DATE_TYPE_TIME}
+          timeZone={timeZone}
+        />
+      )}
+    </div>
+  );
+```
+
+2. In _TimeRange_, get the _seats_ value from props.
+
+```jsx
+export const TimeRangeComponent = props => {
+  const { rootClassName, className, startDate, endDate, seats, dateType, timeZone, intl } = props;
+  const start = formatDateIntoPartials(startDate, intl, { timeZone });
+...
+```
+
+3. Show the _seats_ prop in the spans with class
+   _className={css.dateSection}_ in _TimeRange_, e.g.
+
+```jsx
+...
+  } else if (isSingleDay && dateType === DATE_TYPE_DATETIME) {
+    return (
+      <div className={classes}>
+        <span className={css.dateSection}>{`${start.date}, ${start.time} - ${end.time}`} ({seats})</span>
+      </div>
+    );
+  } else {
+    return (
+      <div className={classes}>
+        <span className={css.dateSection}>{`${start.dateAndTime} - `}</span>
+        <span className={css.dateSection}>{`${end.dateAndTime}`} ({seats})</span>
+      </div>
+    );
+  }
+```
 
 </extrainfo>
 
@@ -1020,7 +1075,7 @@ end dates have been selected:
 <extrainfo title="Click here to see how to add seat selection to hourly bookings">
 
 For hourly bookings, you will need to modify _BookingTimeForm_ and
-_FieldDateAndTimeInput_.
+_FieldDateAndTimeInput_ instead of _BookingDatesForm_.
 
 ```shell
 └── src
@@ -1153,9 +1208,9 @@ const getDateRangeUnitsSeatsLineItems = (orderData, code) => {
 
 <extrainfo title="Click here to see how to handle line items for hourly bookings">
 
-If you are working with hourly bookings, you will need to make a similar
-parallel function for _getHourQuantityAndLineItems_, and add it to
-`unitType: hour` handling.
+If you are working with hourly bookings, you will need to make a
+parallel function for _getHourQuantityAndLineItems_ instead, and add it
+to `unitType: hour` handling.
 
 ```jsx
 /**
