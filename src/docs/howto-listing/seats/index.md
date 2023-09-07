@@ -527,7 +527,7 @@ export const TimeRangeComponent = props => {
 ...
 ```
 
-3. Show the _seats_ prop in the spans with class
+3. Show the _seats_ prop in the _span_ elements with
    _className={css.dateSection}_ in _TimeRange_, e.g.
 
 ```jsx
