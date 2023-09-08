@@ -34,7 +34,7 @@ Click on the “Upload an image...” field for the logo. Once there, you
 should be able to upload an image from your computer. Download the image
 below and use it for your settings.
 
-[Download the Logo image here](/tutorial-assets/tns/biketribe.png)
+[Download the Logo image here](/tutorial-assets/tns/biketribe-logo-576x108.png)
 
 ### 3. Upload the favicon
 
@@ -44,7 +44,7 @@ field for the Favicon. Once you click this, you should be able to upload
 an image from your computer. Download the image below and use it for
 your settings.
 
-[Download the favicon here](/tutorial-assets/tns/favicon-32x32-biketribe.png)
+[Download the favicon here](/tutorial-assets/tns/biketribe-favicon.png)
 
 ### 4. Upload a background image for login pages
 
@@ -53,7 +53,7 @@ few other authentication-related pages to connect these pages to your
 brand. Click on the “Upload an image...” field for the Background image
 for login pages. Upload the PNG image below.
 
-[Download the background image here](/tutorial-assets/tns/backgroundimage.png)
+[Download the background image here](/tutorial-assets/tns/biketribe-brandImage-1500-darken.png)
 
 ### 5. Upload a Social media image
 
@@ -63,7 +63,7 @@ and LinkedIn when someone shares a link to your marketplace in them.
 Click on the “Upload an image...” field for Social media. Use this
 image:
 
-[Download the social media image here](/tutorial-assets/tns/socialmediaimage.png)
+[Download the social media image here](/tutorial-assets/tns/biketribe-facebook-sharing-1200x630.png)
 
 ### Save Changes
 
