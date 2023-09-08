@@ -1,7 +1,7 @@
 ---
 title: Tutorial introduction
 slug: tutorial-introduction
-updated: 2023-07-05
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress: Learn how to build your marketplace with The New Sharetribe.
 published: true

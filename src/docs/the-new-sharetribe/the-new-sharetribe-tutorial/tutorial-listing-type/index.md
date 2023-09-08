@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 4 – Adjust the listing type
 slug: tutorial-listing-type
-updated: 2023-07-05
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress:
   Listing type determines how your customers and providers interact with
@@ -20,9 +20,10 @@ time. Let's adjust its settings. Click "Listings → Listing types" from
 the navigation on the left and click open the default listing type
 "Daily booking".
 
-In our bike marketplace, we want to offer daily bookings to allow
-for long term rentals: you book a slot from the calendar, check in
-during the morning or midday, and check out at the end of the last day.
+In our bike marketplace, we can offer a variety of booking flows.
+Here, we set up daily bookings to allow for long term rentals: 
+you book a slot from the calendar, check in during the morning 
+or midday, and check out at the end of the last day.
 
 ### Listing type label
 

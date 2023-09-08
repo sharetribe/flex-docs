@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 10 – Sign up as a new user
 slug: tutorial-sign-up
-updated: 2023-06-01
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress:
   In order to act as a user in your marketplace, you need to create an
@@ -24,7 +24,7 @@ easier-to-remember, password. Accept the Terms of Service and the
 Privacy Policy and click “Sign up.”
 
 You will receive an email in your inbox, click the confirmation link in
-the email, and that’s it. You are a bona fide user of the Saunatime
+the email, and that’s it. You are a bona fide user of the Biketribe
 marketplace.
 
 ## Optional: update your Profile information
@@ -37,7 +37,7 @@ the marketplace page and select: profile settings.
 
 From the Profile settings, you can easily find on the top right the
 other two profile-related pages: “Your listings” (which should say “Your
-saunas” if you have followed this tutorial step by step) and “Account
+bikes if you have followed this tutorial step by step) and “Account
 settings”. Within “Your listings” you will be able to manage all your
 listings, open closed listings, close open listings, edit draft
 listings, and more. Within “Acccount settings” you can edit your contact

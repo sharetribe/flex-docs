@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 5 – Create listing fields
 slug: tutorial-listing-fields
-updated: 2023-07-05
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress:
   In this step we will decide what data is collected when a listing is
@@ -22,9 +22,8 @@ listing is created. You can also create search filters based on these
 fields.
 
 Let's create some custom fields. Click "Listings → Listing fields" from
-the navigation on the left. There we see several fields, but these are not
-very Biketribe-specific. Let's delete them all. Instead, we will create
-the following new fields:
+the navigation on the left. There we see an example field. Let's delete
+it and create the following new fields:
 
 - Bike brand. Is it made by Cube, GHOST, Giant, or someone else?
 - Accessories. What extras are included? Is a bell, lights, lock, or 
@@ -56,7 +55,7 @@ characters.
 #### Field type
 
 Field type determines how the field works. In this case, we want each
-sauna to have exactly one type, and it should be chosen from a
+bike to have exactly one type, and it should be chosen from a
 predefined list of types.
 
 **Choose "Select one"**
@@ -124,8 +123,8 @@ can be under "More filters" menu.
 - Filter placement: "Use as a secondary search filter"
 
 Finally, let's add "Bike rules". This is just a freeform text field, for example if the bike 
-can't handle rough terrain. It's optional: a bike doesn't need to have specific usage rules, 
-if it does well in all situations. 
+can't handle rough terrain and it should only be driven on flat road or terrain. It's optional: 
+a bike doesn't need to have specific usage rules, if it does well in all situations. 
 For free text fields, we can't add a search filter, but we can decide whether a free text
 search should search the contents of this field. In this case, it
 doesn't make sense.

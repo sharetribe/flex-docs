@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 1 – Adjust marketplace branding
 slug: tutorial-marketplace-branding
-updated: 2023-07-05
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress:
   We will start the tutorial by adding your logo and other basic
@@ -34,7 +34,7 @@ Click on the “Upload an image...” field for the logo. Once there, you
 should be able to upload an image from your computer. Download the image
 below and use it for your settings.
 
-[Download the Logo image here](/tutorial-assets/tns/saunatime.png)
+[Download the Logo image here](/tutorial-assets/tns/biketribe.png)
 
 ### 3. Upload the favicon
 
@@ -44,7 +44,7 @@ field for the Favicon. Once you click this, you should be able to upload
 an image from your computer. Download the image below and use it for
 your settings.
 
-[Download the favicon here](/tutorial-assets/tns/favicon.png)
+[Download the favicon here](/tutorial-assets/tns/favicon-32x32-biketribe.png)
 
 ### 4. Upload a background image for login pages
 

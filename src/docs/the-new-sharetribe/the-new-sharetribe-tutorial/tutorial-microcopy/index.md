@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 8 – Decide your vocabulary
 slug: tutorial-microcopy
-updated: 2023-07-05
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress:
   In this tutorial step, we'll teach you how to use the Microcopy
@@ -14,8 +14,8 @@ Different marketplaces use different words when talking about their
 users and listings. Sometimes they might be "buyers" and "sellers", in
 other cases "guests" and "hosts".
 
-In Biketribe, we'd like the user interface to talk about "bikes" 
-and "bike owners".
+In Biketribe, when it comes to what is being offered and by whom, we'd 
+like the user interface to talk about "bikes" and "bike owners".
 
 In the world of user interfaces, such terminology scattered here and
 there is referred to as "Microcopy". The New Sharetribe comes with an

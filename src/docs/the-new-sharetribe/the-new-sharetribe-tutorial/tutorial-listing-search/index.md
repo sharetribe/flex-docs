@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 6 – Customize listing search
 slug: tutorial-listing-search
-updated: 2023-07-05
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress:
   Listing search allows your customers to discover products and services

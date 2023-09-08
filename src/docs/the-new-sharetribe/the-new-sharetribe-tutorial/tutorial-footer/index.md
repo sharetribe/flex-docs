@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 9 – Edit the footer
 slug: tutorial-footer
-updated: 2023-07-05
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress:
   Footer links all the elements in your marketplace together. In this
@@ -36,7 +36,7 @@ your marketplace.
 We want to link to our awesome social media profile. Let's start by
 removing all the existing social media links. Then, add a social media
 link by clicking **“+ Add a new social media link”** : Select Facebook
-as a platform from the dropdown menu Add this url as the Link URL:
+as a platform from the dropdown menu. Add this url as the Link URL:
 https://facebook.com/sharetribe
 
 ### 3. Copyright

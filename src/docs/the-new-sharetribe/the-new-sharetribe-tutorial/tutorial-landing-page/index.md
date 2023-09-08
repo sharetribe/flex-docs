@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 3 – Modify the landing page
 slug: tutorial-landing-page
-updated: 2023-07-05
+updated: 2023-09-08
 category: the-new-sharetribe-tutorial
 ingress:
   The landing page is likely to be the first impression for many of your
@@ -60,14 +60,13 @@ We do want to change the background image though.
 
 - In the Section appearance section choose “Custom” And add this image:
 
-![custom settings image](./customsetting.png)
+![custom settings image](./biketribe-brandImage-1500-darken.png)
 
 Then, let's change the text content. The hero section already has a
 content block called "hero-block". Make the following changes:
 
-- Replace the Image file for the file below (it is a transparent PNG
-  file). Leave the Aspect ratio and Image alt text as they are.
-  [Download the transparent image here](/tutorial-assets/tns/transparent-image.png)
+- Replace the Image file for the file below. Leave the Aspect ratio 
+  and Image alt text as they are. [Download the image here](./flying_biker.png)
 - Replace the Block title content for: “Welcome to Biketribe” and select
   Page title (H1) as the Block title size.
 - Replace the Block text content for: write “We want to bring everyone 
@@ -79,7 +78,7 @@ content block called "hero-block". Make the following changes:
 Save changes and check the current view on the “view page” tab you
 opened earlier.
 
-![Hero section image](./welcomesaunatime.png)
+![Hero section image](./hero_example.png)
 
 ### 2. “locations” section
 
@@ -139,7 +138,7 @@ Add the following content:
   find and rent a bike.
 - Social media image: Add the following image
 
-![Book saunas everywhere](./seoandsocial.png)
+![Book saunas everywhere](./biketribe-facebook-sharing-1200x630.png)
 
 Save changes.
 
