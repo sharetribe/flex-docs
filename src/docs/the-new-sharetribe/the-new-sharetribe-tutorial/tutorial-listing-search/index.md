@@ -47,7 +47,7 @@ We can decide if the search returns all listings that have some
 availability on the given date range, or only listings that have the
 full date range available. In our case, we assume that people don't want
 to rent a bike for too many days, so if they're using the filter for a
-specific week, they probably want to see saunas that are available on at
+specific week, they probably want to see bikes that are available on at
 least some of those days.
 
 **Choose "Partial availability"**
