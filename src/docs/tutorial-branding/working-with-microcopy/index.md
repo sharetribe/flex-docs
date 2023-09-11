@@ -1,5 +1,5 @@
 ---
-title: Working with microcopy
+title: Working with marketplace texts
 slug: working-with-microcopy
 updated: 2023-05-13
 category: tutorial-branding
@@ -7,6 +7,8 @@ ingress:
   Change your marketplace's copy-texts and implement new microcopy.
 published: true
 ---
+
+TODO FIGURE OUT IF THIS STILL EXISTS?
 
 In this tutorial section, you will learn what is microcopy and how to
 change it using the no-code interface in Console. We will change the
@@ -48,7 +50,7 @@ which is why the folder is titled _translations_.)
 
 In the Microcopy section, you can see a link that leads to the microcopy
 folders for the Sharetribe Web Template repository, if you want to
-[copy the relevant microcopy to Flex Console](/concepts/microcopy/#how-microcopy-are-handled-in-flex).
+[copy the relevant microcopy to Flex Console](/concepts/marketplace-texts/#how-microcopy-are-handled-in-flex).
 In this tutorial, we will not copy the full texts – instead, we will
 enter only the microcopy we want to modify.
 
@@ -69,7 +71,7 @@ modified similarly to
 
 In this tutorial, we change the microcopy of Hero component, but we have
 another document that dives deeper into this topic:
-[How to change bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/)
+[How to change bundled marketplace texts](/ftw/how-to-change-ftw-bundled-marketplace-texts/)
 
 ## Change the microcopy for Topbar component
 
@@ -135,11 +137,12 @@ You also learnt how to locate microcopy keys using the developer tools.
 To get more insight into microcopy syntax, different language files, and
 localization of dates and money values, you should check out the
 article:
-[How to change Sharetribe Web Template bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/).
+[How to change Sharetribe Web Template bundled marketplace texts](/ftw/how-to-change-ftw-bundled-marketplace-texts/).
 
-To learn more about how the hosted microcopy work in Sharetribe Web
-Template, read the article on
-[hosted assets in Sharetribe Web Template](/ftw/hosted-microcopy/).
+To learn more about how the hosted marketplace texts work in Sharetribe
+Web Template, read the article on
+[hosted assets in Sharetribe Web Template](/ftw/hosted-marketplace-texts/).
 
-To read more about how microcopy can be modified in Flex Console, check
-out the article about [microcopy in Flex](/concepts/microcopy/).
+To read more about how marketplace texts can be modified in Flex
+Console, check out the article about
+[marketplace texts in Flex](/concepts/marketplace-texts/).

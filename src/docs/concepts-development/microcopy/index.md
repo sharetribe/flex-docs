@@ -1,22 +1,22 @@
 ---
-title: Microcopy in Flex
-slug: microcopy
+title: Marketplace texts in Flex
+slug: marketplace-texts
 updated: 2022-06-14
 category: concepts-content-management
 ingress:
-  This article introduces microcopy in Flex and how it is modified and
-  edited in Flex Console
+  This article introduces marketplace texts in Flex and how they is
+  modified and edited in Flex Console
 published: true
 ---
 
-Microcopy refers to all the small pieces of text in your marketplace's
-dynamic pages – button labels, error messages, and help texts are all
-examples of microcopy. Modifying microcopy to match your marketplace's
-theme and tone of voice is a key task in customizing any marketplace.
-[Read more about marketplace microcopy](/operator-guides/).
+Marketplace texts cover all the small pieces of text in your
+marketplace's dynamic pages – button labels, error messages, and help
+texts, for example. Modifying marketplace texts to match your
+marketplace's theme and tone of voice is a key task in customizing any
+marketplace. [Read more about marketplace texts](/operator-guides/).
 
-In the Sharetribe Web Template, microcopy is not written directly into
-the source code. Instead, the source code uses
+In the Sharetribe Web Template, marketplace texts are not written
+directly into the source code. Instead, the source code uses
 [React Intl message formatting](https://formatjs.io/docs/intl#formatmessage)
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
@@ -27,7 +27,7 @@ selected language.
 The key - value syntax is as follows:
 
 ```json
-"<component name>.<microcopy key>": "<microcopy>"
+"<component name>.<marketplace text key>": "<marketplace text>"
 ```
 
 For example:
@@ -44,48 +44,51 @@ changed even if the value ends up changing.
 <FormattedMessage id="ManageListingCard.editListing" />
 ```
 
-In addition to adding a microcopy file in the client application, Flex
-marketplace operators can modify the wording of microcopy in Flex
-Console. This means that operators can make changes to the marketplace
-texts without the need for code changes. The same microcopy can also be
-used from several different client applications, making it easier to
-make centralized changes.
+In addition to adding a marketplace text file in the client application,
+Flex marketplace operators can modify the wording of marketplace texts
+in Flex Console. This means that operators can make changes to the
+marketplace texts without the need for code changes. The same
+marketplace texts can also be used from several different client
+applications, making it easier to make centralized changes.
 
-![Simple Console microcopy](./microcopy_simple.png)
+![Simple Console marketplace texts](./microcopy_simple.png)
 
-## How microcopy is handled in Flex
+## How marketplace texts are handled in Flex
 
-Console-editable microcopy in Flex is based on a concept of
+Console-editable marketplace texts in Flex are based on a concept of
 [assets](/references/assets/). Assets provide a way to define
 marketplace content and configurations using JSON files without needing
 to include the actual content in the client application codebase.
 
-For the microcopy file version being edited in Flex Console, the asset
-in question is `content/translations.json`. In other words, Flex Console
-has a dedicated view – "Build" > "Content" > "Microcopy" – for modifying
-the `content/translations.json` asset. The asset refers to translations
-because the language-specific microcopy files allow the marketplace to
-fairly easily be translated to languages other than English.
+For the marketplace text file version being edited in Flex Console, the
+asset in question is `content/translations.json`. In other words, Flex
+Console has a dedicated view – "Build" > "Content" > "TODO TITLE" – for
+modifying the `content/translations.json` asset. The asset refers to
+translations because the language-specific marketplace text files allow
+the marketplace to fairly easily be translated to languages other than
+English.
 
-![Content view for editing microcopy](./microcopy_start.png)
+TODO UPDATE SCREENSHOT
+![Content view for editing marketplace texts](./microcopy_start.png)
 
-You can add one or more microcopy key-value pairs in JSON format into
-the Microcopy field. You can copy them from the linked microcopy
-resources in the template, or your existing marketplace microcopy file.
+You can add one or more marketplace text key-value pairs in JSON format
+into the Marketplace texts field. You can copy them from the linked
+marketplace text resources in the template, or your existing marketplace
+text file.
 
-![Add microcopy key-value pairs](./microcopy_console.png)
+![Add marketplace text key-value pairs](./microcopy_console.png)
 
-When the asset has been created, you will need to fetch the microcopy to
-the client application. Microcopy is fetched through Asset Delivery API
-in JSON format. Assets can be retrieved by the latest version, or by a
-specific version. Read more:
+When the asset has been created, you will need to fetch the marketplace
+texts to the client application. Marketplace texts are fetched through
+Asset Delivery API in JSON format. Assets can be retrieved by the latest
+version, or by a specific version. Read more:
 
 - [Marketplace assets](/references/assets/)
-- [Handling hosted asset microcopy in the Sharetribe Web Template](/ftw/hosted-microcopy/)
+- [Handling hosted asset marketplace texts in the Sharetribe Web Template](/ftw/hosted-marketplace-texts/)
 
-## Format for editing microcopy in Console
+## Format for editing marketplace texts in Console
 
-A piece of microcopy using the
+A piece of marketplace text using the
 [React Intl formatMessage formatting](https://formatjs.io/docs/intl#formatmessage)
 can, at its simplest, consist of a phrase.
 
@@ -103,18 +106,18 @@ the value.
 <FormattedMessage id="ManageListingCard.editListing" />
 ```
 
-![Simple microcopy phrase in UI](./microcopy_UI_simple.png)
+![Simple marketplace text phrase in UI](./microcopy_UI_simple.png)
 
 Read more about
-[using microcopy in the Sharetribe Web Template](/ftw/how-to-change-ftw-bundled-microcopy/#using-the-microcopy).
+[using marketplace texts in the Sharetribe Web Template](/ftw/how-to-change-ftw-bundled-marketplace-texts/#using-the-microcopy).
 
 ### Simple argument
 
 In addition, the format supports passing parameters as arguments to the
-microcopy string. Passing a
+marketplace text string. Passing a
 [simple argument](https://formatjs.io/docs/core-concepts/icu-syntax/#simple-argument)
-allows showing context-specific information as a part of the microcopy
-string.
+allows showing context-specific information as a part of the marketplace
+text string.
 
 ```json
 {
@@ -122,7 +125,7 @@ string.
 }
 ```
 
-Using the microcopy message then requires that the code passes parameter
+Using the message then requires that the code passes parameter
 `listingTitle` to the element that renders the value. The
 `{ listingTitle }` parameter will then be replaced with whatever the
 listing's title is.
@@ -136,19 +139,20 @@ listing's title is.
 />
 ```
 
-![Microcopy phrase with parameter in UI](./microcopy_UI_parameter.png)
+![Marketplace text phrase with parameter in UI](./microcopy_UI_parameter.png)
 
-Do note that even if the microcopy message uses a simple argument, you
-can choose to not use it. For instance, you could replace the microcopy
-message in the previous example with
+Do note that even if the message uses a simple argument, you can choose
+to not use it. For instance, you could replace the message in the
+previous example with
 `"ManageListingCard.pendingApproval": "This listing is pending admin approval and can't be booked."`.
 However, if you later decide you do want to use the title, it is
-recommended to double check the original microcopy file in your client
-application to see the names of the attributes available in the message.
+recommended to double check the original marketplace text file in your
+client application to see the names of the attributes available in the
+message.
 
 ### Pluralization
 
-One important factor in creating natural microcopy is handling
+One important factor in creating natural marketplace texts is handling
 pluralization in a text. The ICU format makes it possible to define
 different wordings for singular and plural options.
 
@@ -158,7 +162,8 @@ different wordings for singular and plural options.
 }
 ```
 
-When you use plural in the microcopy string, you will need to specify
+When you use plural in the marketplace text string, you will need to
+specify
 
 - the variable determining which option to use (here: `count`)
 - the pattern we are following (here: `plural`)
@@ -174,7 +179,7 @@ When you use plural in the microcopy string, you will need to specify
 />
 ```
 
-![Microcopy message with pluralization in UI](./microcopy_UI_plural.png)
+![Message with pluralization in UI](./microcopy_UI_plural.png)
 
 Since different languages have different pluralization rules,
 pluralization is defined per language. You can see the full list of
@@ -184,10 +189,11 @@ pluralization arguments (`zero`, `one`, `two`, `few` etc.) in the
 ### Selection
 
 In addition to pluralization options, you can build logic to the
-microcopy strings using
+marketplace text strings using
 [select formatting](https://formatjs.io/docs/core-concepts/icu-syntax/#select-format).
 
-When you use `select` in the microcopy string, you will need to specify
+When you use `select` in the marketplace text string, you will need to
+specify
 
 - the variable determining which option to use (here: `actor`)
 - the pattern we are following (here: `select`)
@@ -202,8 +208,8 @@ When you use `select` in the microcopy string, you will need to specify
 }
 ```
 
-You can then use the microcopy message in the code e.g. with the
-`formatMessage` function:
+You can then use the message in the code e.g. with the `formatMessage`
+function:
 
 ```js
 const message = intl.formatMessage(
@@ -219,18 +225,19 @@ const message = intl.formatMessage(
 );
 ```
 
-![Microcopy message with select logic](./microcopy_UI_select.png)
+![Message with select logic](./microcopy_UI_select.png)
 
 You can use `select` for cases where you have a predetermined list of
-options you will encounter that require different microcopy strings.
+options you will encounter that require different marketplace text
+strings.
 
 ## Can I have a multilanguage marketplace?
 
-Having several language-specific microcopy files enables using a single
-application for multiple languages. However, editing microcopy in
-Console only supports one language at a time, so you will need to modify
-any other languages using bundled microcopy files within your client
-application.
+Having several language-specific marketplace text files enables using a
+single application for multiple languages. However, editing marketplace
+texts in Console only supports one language at a time, so you will need
+to modify any other languages using bundled marketplace text files
+within your client application.
 
 Having multiple languages in a single marketplace may, however, cause a
 problem in terms of user-generated content. Even though listings and

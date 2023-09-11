@@ -175,7 +175,7 @@ Here is a brief description of the file you are looking at:
   incorporate contextual variables like a listing title or booking
   length into your copy-texts. You can learn more about these advanced
   techniques
-  [here](/concepts/microcopy/#format-for-editing-microcopy-in-console).
+  [here](/concepts/marketplace-texts/#format-for-editing-microcopy-in-console).
 - You can only modify values in the editor. You cannot modify keys. Keys
   must be modified by
   [modifying the code of your marketplace application](#4-how-to-add-or-remove-pieces-of-microcopy).
@@ -294,5 +294,5 @@ Template, or to change any additional microcopy added during building
 your site.
 
 To learn more about microcopy in Flex through technical details, consult
-[our guide](/concepts/microcopy/) on how Microcopy works in the Template
-code.
+[our guide](/concepts/marketplace-texts/) on how Microcopy works in the
+Template code.

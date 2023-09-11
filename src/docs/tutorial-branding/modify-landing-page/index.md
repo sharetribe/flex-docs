@@ -126,7 +126,7 @@ marketplace's landing page using the Pages feature in Console. In this
 section of the tutorial, you learned how to make several customizations,
 including changing the hero image, adjusting the section's background
 image and text color, and updating the block contents. In the next
-article, you will focus on changing microcopy.
+article, you will focus on changing marketplace texts.
 
 ## Further reading
 

@@ -585,21 +585,22 @@ if (processName === PURCHASE_PROCESS_NAME) {
 ```
 
 There is one more step left to update for the new transaction process –
-microcopy strings. If you now try to create a listing with the new
-process, you will see microcopy keys that reference the new process.
+marketplace text strings. If you now try to create a listing with the
+new process, you will see marketplace text keys that reference the new
+process.
 
-![Microcopy uses keys as fallback for the new process](./new-process-microcopy-keys.png)
+![Marketplace texts use keys as fallback for the new process](./new-process-microcopy-keys.png)
 
-We will add the necessary microcopy strings next.
+We will add the necessary marketplace text strings next.
 
-### Add microcopy strings
+### Add marketplace text strings
 
-A lot of microcopy strings in Sharetribe Web Template are transaction
-process specific. In other words, when you create a new transaction
-process, you will also need to add microcopy for the relevant keys in
-the new process.
+A lot of marketplace text strings in Sharetribe Web Template are
+transaction process specific. In other words, when you create a new
+transaction process, you will also need to add marketplace texts for the
+relevant keys in the new process.
 
-In this case, you can locate the microcopy keys and values that
+In this case, you can locate the marketplace text keys and values that
 reference **default-booking** and duplicate them for the new process,
 for example:
 
@@ -618,9 +619,10 @@ for example:
 }
 ```
 
-You can now see the correct microcopy strings instead of the keys.
+You can now see the correct marketplace text strings instead of the
+keys.
 
-![Updated microcopy strings for the new process](./new-process-microcopy-strings.png)
+![Updated marketplace text strings for the new process](./new-process-microcopy-strings.png)
 
 ## Summary
 
@@ -634,7 +636,7 @@ updating
 - listing configuration,
 - transaction process graph file,
 - state data helper files, and
-- microcopy strings.
+- marketplace text strings.
 
 The next tutorial guide will focus on modifying transaction process
 email notifications.

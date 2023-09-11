@@ -98,7 +98,7 @@ users will be sent from.
 
 **Content** is where you can modify your marketplace content and
 configurations. You can
-[modify your marketplace microcopy](/concepts/microcopy/), create
+[modify your marketplace texts](/concepts/marketplace-texts/), create
 [content pages](/concepts/headless-content-management/), and configure
 aspects of your marketplace branding, layout, and other details
 [without coding](/tutorial/change-branding/).

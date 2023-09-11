@@ -96,7 +96,7 @@ Here is a brief description of the file you are looking at:
   incorporate contextual variables like a listing title or booking
   length into your copy-texts. You can learn more about these advanced
   techniques
-  [here](/concepts/microcopy/#format-for-editing-microcopy-in-console).
+  [here](/concepts/marketplace-texts/#format-for-editing-microcopy-in-console).
 - You can only modify values in the editor. You cannot modify keys. Keys
   must be modified by modifying the code of your marketplace
   application.

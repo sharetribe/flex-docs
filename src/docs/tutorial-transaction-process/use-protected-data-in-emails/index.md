@@ -102,10 +102,11 @@ following style-rules to _SignupForm.module.css_:
 }
 ```
 
-### Update microcopy
+### Update marketplace texts
 
-Add the required microcopy to the en.json file, or in Flex Console >
-Build > Content > Microcopy editor.
+Add the required marketplace texts to the en.json file, or in Flex
+Console > Build > Content > Marketplace texts editor. TODO FIGURE OUT IF
+THIS STILL EXISTS
 
 ```shell
 └── src

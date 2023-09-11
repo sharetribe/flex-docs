@@ -162,15 +162,15 @@ param to the _FieldCurrencyInput_ like there is in the _price_ input.
 ...
 ```
 
-You can use the following microcopy keys:
+You can use the following marketplace text keys:
 
 ```js
   "EditListingPricingForm.cleaningFee":"Cleaning fee (optional)",
   "EditListingPricingForm.cleaningFeePlaceholder": "Add a cleaning fee..."
 ```
 
-After adding the new microcopy keys, the EditListingPricingPanel should
-look something like this:
+After adding the new marketplace text keys, the EditListingPricingPanel
+should look something like this:
 ![EditListingPricePanel](./editlistingpricepanel.png)
 
 ## Update BookingDatesForm
@@ -320,9 +320,9 @@ const cleaningFeeLabel = intl.formatMessage(
 );
 ```
 
-We will also add a new microcopy key _BookingDatesForm.cleaningFeeLabel_
-to the **_en.json_** file, and we can use the **_fee_** variable to show
-the price.
+We will also add a new marketplace text key
+_BookingDatesForm.cleaningFeeLabel_ to the **_en.json_** file, and we
+can use the **_fee_** variable to show the price.
 
 ```js
   "BookingDatesForm.cleaningFeeLabel": "Cleaning fee: {fee}",

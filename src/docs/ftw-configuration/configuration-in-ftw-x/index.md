@@ -98,7 +98,7 @@ file.
 
 The `marketplaceName` setting specifies the name of your marketplace.
 This name is used in various places throughout the site, such as in
-microcopy and in meta tags for SEO and social media sharing.
+marketplace texts and in meta tags for SEO and social media sharing.
 
 ### Currency and pricing
 

@@ -437,9 +437,9 @@ const authWithLinkedin = () => {
 
 Then we can use the _SocialLoginButton_ component to show the option to
 log in with LinkedIn to the users. Remember to add the LinkedIn related
-microcopy keys as well as LinkedIn logo too! Usually, different identity
-providers have brand centers where you can find the logos and guidelines
-how to use them. You can download LinkedIn logo from
+marketplace text keys as well as LinkedIn logo too! Usually, different
+identity providers have brand centers where you can find the logos and
+guidelines how to use them. You can download LinkedIn logo from
 [LinkedIn brand center](https://brand.linkedin.com/downloads).
 
 ```js

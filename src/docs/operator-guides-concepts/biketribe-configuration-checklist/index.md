@@ -71,15 +71,15 @@ directly and see details of their transaction in their Inbox._
 
 ### Biketribe content
 
-Biketribe content includes static pages and microcopy. Biketribe’s
-static pages are the Landing page, About page, Terms of use, and Privacy
-policy. The Landing page is the most Biketribe-specific page.
-Biketribe’s microcopy, which covers the words or phrases the marketplace
-uses in buttons, help texts, or error messages, is mostly generic,
-except for the term “bike.”
+Biketribe content includes static pages and marketplace texts.
+Biketribe’s static pages are the Landing page, About page, Terms of use,
+and Privacy policy. The Landing page is the most Biketribe-specific
+page. Biketribe’s marketplace texts, which covers the words or phrases
+the marketplace uses in buttons, help texts, or error messages, is
+mostly generic, except for the term “bike.”
 
 ![biketribe_microcopy](./biketribe-listing_daily_microcopy.png)
-_Examples of microcopy visible on the listing page._
+_Examples of marketplace texts visible on the listing page._
 
 ## What to modify
 
@@ -117,12 +117,12 @@ marketplace.
   [Console](https://flex-console.sharetribe.com/) or learn more in
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 
-### Content and microcopy
+### Content and marketplace texts
 
 Biketribe uses language about bikes. Build your own messaging in the
 following steps.
 
-- Change the microcopy in your marketplace. Edit in
+- Change the marketplace texts in your marketplace. Edit in
   [Console](https://flex-console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
 - Change your marketplace landing page. Edit in

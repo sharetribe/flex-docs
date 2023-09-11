@@ -268,9 +268,9 @@ also include the same smooth style out of the box.
 
 Branding the Sharetribe Web Template is easy with a refined styling
 approach that lets you set the marketplace colors, logos, and favicons
-quickly. You’ll also likely want to change your marketplace’s microcopy,
+quickly. You’ll also likely want to change your marketplace’s texts,
 modify your landing page, and add essential information to your users
-with Console’s Microcopy and Pages editors.
+with Console’s Marketplace Texts TODO CHECK NAMING and Pages editors.
 
 Learn more about
 [how content works in Flex](/concepts/content-management/).

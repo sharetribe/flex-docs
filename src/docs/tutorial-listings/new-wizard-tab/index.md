@@ -7,6 +7,8 @@ ingress: Learn how to add a new tab to the listing creation wizard.
 published: true
 ---
 
+TODO FIGURE OUT IF THIS STILL EXISTS!
+
 The template has default tabs in the listing creation wizard for both
 bookings and purchases. The first of those tabs, “Details” shows the
 attributes you have configured for your marketplace listings in Flex

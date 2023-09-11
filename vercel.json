@@ -939,6 +939,21 @@
     "source": "/tutorial/show-extended-data/",
     "destination": "/docs/legacy/tutorial/show-extended-data/",
     "permanent": true
+  },
+ {
+    "source": "/concepts/microcopy/",
+    "destination": "/docs/concepts/marketplace-texts/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/hosted-microcopy/",
+    "destination": "/docs/ftw/hosted-marketplace-texts/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-change-ftw-bundled-microcopy/",
+    "destination": "/docs/ftw/how-to-change-ftw-bundled-marketplace-texts/",
+    "permanent": true
   }
 ]
 }
