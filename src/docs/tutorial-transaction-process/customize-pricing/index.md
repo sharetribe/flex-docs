@@ -5,17 +5,17 @@ updated: 2023-09-04
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an
-  optional cleaning fee on top of the regular nightly price of the
+  optional helmet rental fee on top of the regular nightly price of the
   accommodation.
 published: true
 ---
 
 In this tutorial, you will
 
-- Allow providers to add a cleaning fee to their listings
-- Allow customers to select whether they want to include the cleaning
-  fee in their booking
-- Include a selected cleaning fee in the transaction's pricing
+- Allow providers to add a helmet rental fee to their listings
+- Allow customers to select whether they want to include the helmet
+  rental fee in their booking
+- Include a selected helmet rental fee in the transaction's pricing
 
 <info>
 
@@ -25,15 +25,15 @@ This tutorial uses the following marketplace configurations:
 
 </info>
 
-## Store cleaning fee into listing
+## Store helmet rental fee into listing
 
 Pricing can be based on a lot of variables, and one practical way to
 build it is to base it on information stored as extended data in
 listings. In this example, we are using a listing's public data to store
-information about the cleaning fee.
+information about the helmet rental fee.
 
 We will not add new fields to listing configuration in Flex Console,
-since we do not want to show the cleaning fee in the Details panel.
+since we do not want to show the helmet rental fee in the Details panel.
 Instead, we start by making some changes to **EditListingPricingPanel**
 in _EditListingWizard_.
 
@@ -57,9 +57,9 @@ comparable changes to _EditListingPricingAndStockPanel.js_ instead.
 ### Save to public data
 
 In _EditListingPricingPanel_, we need to edit the _onSubmit_ function to
-save the new public data field called **cleaningFee**. Because we are
+save the new public data field called **helmetFee**. Because we are
 using _FieldCurrencyInput_ component in this example as the input of
-choice, the _cleaningFee_ variable will be a Money object when we get it
+choice, the _helmetFee_ variable will be a Money object when we get it
 from the submitted _values_. Money object can't be used directly as
 public data, so we need to create a JSON object with keys **amount** and
 **currency**, and use it in the underlying API call.
@@ -68,19 +68,18 @@ public data, so we need to create a JSON object with keys **amount** and
 
 The _price_ attribute is one of the listing's default attributes, so
 it's passed to Marketplace API directly. The new public data attribute
-_cleaningFee_, on the other hand, needs to be under the _publicData_
-key.
+_helmetFee_, on the other hand, needs to be under the _publicData_ key.
 
 </info>
 
 ```jsx
 onSubmit={values => {
-  const { price, cleaningFee = null } = values;
+  const { price, helmetFee = null } = values;
 
   const updatedValues = {
     price,
     publicData: {
-      cleaningFee: { amount: cleaningFee.amount, currency: cleaningFee.currency },
+      helmetFee: { amount: helmetFee.amount, currency: helmetFee.currency },
     },
   };
   onSubmit(updatedValues);
@@ -89,8 +88,8 @@ onSubmit={values => {
 
 ### Initialize the form
 
-Next, we want to pass inital values for _price_ and _cleaningFee_. For
-this, we need to get the _cleaningFee_ from listing attributes under the
+Next, we want to pass inital values for _price_ and _helmetFee_. For
+this, we need to get the _helmetFee_ from listing attributes under the
 _publicData_ key. Also, because _FieldCurrencyInput_ expects the value
 to be a Money object, we need to convert the value we get from
 Marketplace API back to an instance of Money.
@@ -100,13 +99,13 @@ const getInitialValues = params => {
   const { listing } = params;
   const { price, publicData } = listing?.attributes || {};
 
-  const cleaningFee = publicData?.cleaningFee || null;
+  const helmetFee = publicData?.helmetFee || null;
 
-  const cleaningFeeAsMoney = cleaningFee
-    ? new Money(cleaningFee.amount, cleaningFee.currency)
+  const helmetFeeAsMoney = helmetFee
+    ? new Money(helmetFee.amount, helmetFee.currency)
     : null;
 
-  return { price, cleaningFee: cleaningFeeAsMoney };
+  return { price, helmetFee: helmetFeeAsMoney };
 };
 ```
 
@@ -115,9 +114,9 @@ _EditListingPricingForm_.
 
 ### Add input component
 
-We want to be able to save the listing's cleaning fee amount, so we add
-a new _FieldCurrencyInput_ to the _EditListingPricingForm_. The id and
-name of this field will be _cleaningFee_.
+We want to be able to save the listing's helmet rental fee amount, so we
+add a new _FieldCurrencyInput_ to the _EditListingPricingForm_. The id
+and name of this field will be _helmetFee_.
 
 Adding this fee will be optional, so we don't want to add any _validate_
 param to the _FieldCurrencyInput_ like there is in the _price_ input.
@@ -148,15 +147,15 @@ param to the _FieldCurrencyInput_ like there is in the _price_ input.
   validate={priceValidators}
 />
 <FieldCurrencyInput
-  id={`${formId}cleaningFee`}
-  name="cleaningFee"
+  id={`${formId}helmetFee`}
+  name="helmetFee"
   className={css.input}
   autoFocus={autoFocus}
   label={intl.formatMessage(
-    { id: 'EditListingPricingForm.cleaningFee' },
+    { id: 'EditListingPricingForm.helmetFee' },
     { unitType }
   )}
-  placeholder={intl.formatMessage({ id: 'EditListingPricingForm.cleaningFeePlaceholder' })}
+  placeholder={intl.formatMessage({ id: 'EditListingPricingForm.helmetFeePlaceholder' })}
   currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
 />
 ...
@@ -165,25 +164,25 @@ param to the _FieldCurrencyInput_ like there is in the _price_ input.
 You can use the following microcopy keys:
 
 ```js
-  "EditListingPricingForm.cleaningFee":"Cleaning fee (optional)",
-  "EditListingPricingForm.cleaningFeePlaceholder": "Add a cleaning fee..."
+  "EditListingPricingForm.helmetFee":"Helmet rental fee (optional)",
+  "EditListingPricingForm.helmetFeePlaceholder": "Add a helmet rental fee..."
 ```
 
 After adding the new microcopy keys, the EditListingPricingPanel should
-look something like this:
+look something like this: TODO UPDATE IMAGE
 ![EditListingPricePanel](./editlistingpricepanel.png)
 
 ## Update BookingDatesForm
 
-In our example the cleaning fee is optional, and users can select it as
-an add-on to their booking. In this section, we will add the UI
-component for selecting the cleaning fee and pass the information about
-the user's choice to the the backend of our client app.
+In our example the helmet rental fee is optional, and users can select
+it as an add-on to their booking. In this section, we will add the UI
+component for selecting the helmet rental fee and pass the information
+about the user's choice to the the backend of our client app.
 
-In case you want to add the cleaning fee automatically to every booking,
-you don't need to add the UI component for selecting the cleaning fee,
-and you can move forward to the next section:
-[Add a new line item for the cleaning fee](/tutorial/customize-pricing-tutorial/#add-a-new-line-item-for-the-cleaning-fee).
+In case you want to add the helmet rental fee automatically to every
+booking, you don't need to add the UI component for selecting the helmet
+rental fee, and you can move forward to the next section:
+[Add a new line item for the helmet rental fee](/tutorial/customize-pricing-tutorial/#add-a-new-line-item-for-the-helmet-fee).
 
 <info>
 
@@ -195,10 +194,10 @@ comparable changes to _ProductOrderForm_ instead of _BookingDatesForm_.
 
 ### Prepare props
 
-To use the information about cleaning fee inside the _BookingDatesForm_,
-we need to pass some new information from _OrderPanel_ to the form.
-OrderPanel is the component used on _ListingPage_ and _TransactionPage_
-to show the order breakdown.
+To use the information about helmet rental fee inside the
+_BookingDatesForm_, we need to pass some new information from
+_OrderPanel_ to the form. OrderPanel is the component used on
+_ListingPage_ and _TransactionPage_ to show the order breakdown.
 
 ```shell
 └── src
@@ -207,22 +206,22 @@ to show the order breakdown.
             └── OrderPanel.js
 ```
 
-_OrderPanel_ gets **listing** as a prop. The cleaning fee is now saved
-in the listing's public data, so we can find it under the _publicData_
-key in the listing's attributes.
+_OrderPanel_ gets **listing** as a prop. The helmet rental fee is now
+saved in the listing's public data, so we can find it under the
+_publicData_ key in the listing's attributes.
 
-Because adding a cleaning fee to a listing is optional, we need to check
-whether or not the cleaningFee exists in public data.
+Because adding a helmet rental fee to a listing is optional, we need to
+check whether or not the _helmetFee_ exists in public data.
 
 ```jsx
-const cleaningFee = listing?.attributes?.publicData.cleaningFee;
+const helmetFee = listing?.attributes?.publicData.helmetFee;
 ```
 
-Once we have saved the cleaning fee information to the variable
-_cleaningFee_, we need to pass it forward to _BookingDatesForm_. This
-form is used for collecting the order data (e.g. booking dates), and
-values from this form will be used when creating the transaction line
-items. We will pass the _cleaningFee_ to this form as a new prop.
+Once we have saved the helmet rental fee information to the variable
+_helmetFee_, we need to pass it forward to _BookingDatesForm_. This form
+is used for collecting the order data (e.g. booking dates), and values
+from this form will be used when creating the transaction line items. We
+will pass the _helmetFee_ to this form as a new prop.
 
 ```diff
   <BookingDatesForm
@@ -243,15 +242,15 @@ items. We will pass the _cleaningFee_ to this form as a new prop.
     lineItems={lineItems}
     fetchLineItemsInProgress={fetchLineItemsInProgress}
     fetchLineItemsError={fetchLineItemsError}
-+   cleaningFee={cleaningFee}
++   helmetFee={helmetFee}
   />
 ```
 
-### Add cleaning fee checkbox
+### Add helmet rental fee checkbox
 
 Next, we need to add a new field to _BookingDatesForm_ for selecting the
-possible cleaning fee. For this, we will use the **FieldCheckbox**
-component, because we want the cleaning fee to be optional.
+possible helmet rental fee. For this, we will use the **FieldCheckbox**
+component, because we want the helmet rental fee to be optional.
 
 ```shell
 └── src
@@ -263,9 +262,9 @@ component, because we want the cleaning fee to be optional.
 ```
 
 In _BookingDatesForm_ we need to import a couple of new resources we
-need to add the cleaning fee. These will include a few helper functions
-necessary to handle the _cleaningFee_ price information, as well as the
-checkbox component _FieldCheckbox_.
+need to add the helmet rental fee. These will include a few helper
+functions necessary to handle the _helmetFee_ price information, as well
+as the checkbox component _FieldCheckbox_.
 
 ```diff
   import { propTypes } from '../../util/types';
@@ -288,64 +287,61 @@ import {
 ```
 
 When we have imported these files, we will add the checkbox component
-for selecting the cleaning fee. For this, we need to extract the
-cleaningFee from **fieldRenderProps**.
+for selecting the helmet rental fee. For this, we need to extract the
+helmetFee from **fieldRenderProps**.
 
 ```diff
     ...
     lineItems,
     fetchLineItemsError,
     onFetchTimeSlots,
-+   cleaningFee,
++   helmetFee,
   } = fieldRenderProps;
 ```
 
-We want to show the amount of cleaning fee to the user in the checkbox
-label, so we need to format _cleaningFee_ to a printable form. For this,
-we want to use the _formatMoney_ function that uses localized
+We want to show the amount of helmet rental fee to the user in the
+checkbox label, so we need to format _helmetFee_ to a printable form.
+For this, we want to use the _formatMoney_ function that uses localized
 formatting. This function expects a Money object as a parameter, so we
 need to do the conversion.
 
 ```jsx
-const formattedCleaningFee = cleaningFee
-  ? formatMoney(
-      intl,
-      new Money(cleaningFee.amount, cleaningFee.currency)
-    )
+const formattedCleaningFee = helmetFee
+  ? formatMoney(intl, new Money(helmetFee.amount, helmetFee.currency))
   : null;
 
-const cleaningFeeLabel = intl.formatMessage(
-  { id: 'BookingDatesForm.cleaningFeeLabel' },
+const helmetFeeLabel = intl.formatMessage(
+  { id: 'BookingDatesForm.helmetFeeLabel' },
   { fee: formattedCleaningFee }
 );
 ```
 
-We will also add a new microcopy key _BookingDatesForm.cleaningFeeLabel_
+We will also add a new microcopy key _BookingDatesForm.helmetFeeLabel_
 to the **_en.json_** file, and we can use the **_fee_** variable to show
 the price.
 
 ```js
-  "BookingDatesForm.cleaningFeeLabel": "Cleaning fee: {fee}",
+  "BookingDatesForm.helmetFeeLabel": "Helmet rental fee: {fee}",
 ```
 
-Because there might be listings without a cleaning fee, we want to show
-the checkbox only when needed. This is why we will create the
-**cleaningFeeMaybe** component which is rendered only if the listing has
-a cleaning fee saved in its public data.
+Because there might be listings without a helmet rental fee, we want to
+show the checkbox only when needed. This is why we will create the
+**helmetFeeMaybe** component which is rendered only if the listing has a
+helmet rental fee saved in its public data.
 
 ```jsx
-const cleaningFeeMaybe = cleaningFee ? (
+const helmetFeeMaybe = helmetFee ? (
   <FieldCheckbox
-    className={css.cleaningFeeContainer}
-    id={`${formId}.cleaningFee`}
-    name="cleaningFee"
-    label={cleaningFeeLabel}
-    value="cleaningFee"
+    className={css.helmetFeeContainer}
+    id={`${formId}.helmetFee`}
+    name="helmetFee"
+    label={helmetFeeLabel}
+    value="helmetFee"
   />
 ) : null;
 ```
 
-Then we can add the **cleaningFeeMaybe** to the returned `<Form>`
+Then we can add the **helmetFeeMaybe** to the returned `<Form>`
 component
 
 ```diff
@@ -359,7 +355,7 @@ component
     }
   />
 
-+ {cleaningFeeMaybe}
++ {helmetFeeMaybe}
 
   {showEstimatedBreakdown ? (
     <div className={css.priceBreakdownContainer}>
@@ -371,26 +367,26 @@ As the final step for adding the checkbox, add the corresponding CSS
 class to _BookingDatesForm.module.css_.
 
 ```css
-.cleaningFeeContainer {
+.helmetFeeContainer {
   margin-top: 24px;
 }
 ```
 
 After this step, the BookingDatesForm should look like this. Note that
-the cleaning fee will not be visible in the order breakdown yet, even
-though we added the new checkbox.
-
-![Cleaning fee checkbox](./cleaningFeeCheckbox.png)
+the helmet rental fee will not be visible in the order breakdown yet,
+even though we added the new checkbox. TODO UPDATE IMAGE
+![Helmet rental fee checkbox](./helmetFeeCheckbox.png)
 
 ### Update the orderData
 
-Next, we want to pass the value of the cleaning fee checkbox as part of
-the **orderData**. This is needed so that we can show the selected
-cleaning fee as a new row in the order breakdown. To achieve this, we
-need to edit the _handleOnChange_ function, which takes the values from
-the form and calls the _onFetchTransactionLineItems_ function for
-constructing the transaction line items. These line items are then shown
-inside the _bookingInfoMaybe_ component under the form fields.
+Next, we want to pass the value of the helmet rental fee checkbox as
+part of the **orderData**. This is needed so that we can show the
+selected helmet rental fee as a new row in the order breakdown. To
+achieve this, we need to edit the _handleOnChange_ function, which takes
+the values from the form and calls the _onFetchTransactionLineItems_
+function for constructing the transaction line items. These line items
+are then shown inside the _bookingInfoMaybe_ component under the form
+fields.
 
 <info>
 
@@ -415,15 +411,16 @@ You can read more about line items and pricing in the
 
 In the **orderData** object, we have all the information about the
 user's choices. In this case, this includes booking dates, and whether
-or not they selected the cleaning fee.
+or not they selected the helmet rental fee.
 
-We only need to know if the cleaning fee was selected. We will fetch the
-cleaning fee details from Marketplace API later in the the backend of
-our client app to make sure this information cannot be manipulated.
+We only need to know if the helmet rental fee was selected. We will
+fetch the helmet rental fee details from Marketplace API later in the
+the backend of our client app to make sure this information cannot be
+manipulated.
 
 In our case, because there is just one checkbox, it's enough to check
 the length of that array to determine if any items are selected. If the
-length of the _cleaningFee_ array inside _values_ is bigger than 0, the
+length of the _helmetFee_ array inside _values_ is bigger than 0, the
 _hasCleaningFee_ param is true, and otherwise it is false. If we had
 more than one item in the checkbox group, we should check which items
 were selected.
@@ -440,7 +437,7 @@ const handleFormSpyChange = (
       ? formValues.values.bookingDates
       : {};
 
-  const hasCleaningFee = formValues.values?.cleaningFee?.length > 0;
+  const hasCleaningFee = formValues.values?.helmetFee?.length > 0;
 
   if (startDate && endDate && !fetchLineItemsInProgress) {
     onFetchTransactionLineItems({
@@ -456,11 +453,11 @@ const handleFormSpyChange = (
 };
 ```
 
-## Add a new line-item for the cleaning fee
+## Add a new line-item for the helmet fee
 
 We are making progress! Next, we need to edit the the backend of our
-client app, and add a new line item for the cleaning fee, so that it can
-be included in pricing.
+client app, and add a new line item for the helmet rental fee, so that
+it can be included in pricing.
 
 Flex uses privileged transitions to ensure that the pricing logic is
 handled in a secure environment. This means that constructing line items
@@ -488,10 +485,10 @@ calculation follows the model intended in the marketplace.
 
 In theory, a marketplace user could make a direct API call to the Flex
 Marketplace API and start a transaction with modified line items – for
-instance, change the cleaning fee amount. We can avoid this security
-risk by using privileged transitions and fetching the pricing
-information, like the cleaning fee amount, directly from Marketplace API
-in the backend of our client app.
+instance, change the helmet rental fee amount. We can avoid this
+security risk by using privileged transitions and fetching the pricing
+information, like the helmet rental fee amount, directly from
+Marketplace API in the backend of our client app.
 
 <br/>
 
@@ -500,8 +497,8 @@ You can read more about privileged transitions in the
 
 </info>
 
-Since we want to add a new line item for the cleaning fee, we'll need to
-update the pricing logic in the _lineItems.js_ file:
+Since we want to add a new line item for the helmet rental fee, we'll
+need to update the pricing logic in the _lineItems.js_ file:
 
 ```shell
 └── server
@@ -510,14 +507,14 @@ update the pricing logic in the _lineItems.js_ file:
         └── lineItemHelpers.js
 ```
 
-### Resolve the cleaning fee
+### Resolve the helmet rental fee
 
-First, we will add a new helper function for resolving the cleaning fee
-line item. This function will take the listing as a parameter, and then
-get the cleaning fee from its public data. To make sure the data cannot
-be manipulated, we don't pass it directly from the template frontend.
-Instead, we fetch the listing from Marketplace API, and check that
-listing's public data for the accurate cleaning fee.
+First, we will add a new helper function for resolving the helmet rental
+fee line item. This function will take the listing as a parameter, and
+then get the helmet rental fee from its public data. To make sure the
+data cannot be manipulated, we don't pass it directly from the template
+frontend. Instead, we fetch the listing from Marketplace API, and check
+that listing's public data for the accurate helmet rental fee.
 
 If you have several helper functions, you might want to export this
 function from the `lineItemHelpers.js` file instead, and import it in
@@ -526,8 +523,8 @@ function from the `lineItemHelpers.js` file instead, and import it in
 ```jsx
 const resolveCleaningFeePrice = listing => {
   const publicData = listing.attributes.publicData;
-  const cleaningFee = publicData && publicData.cleaningFee;
-  const { amount, currency } = cleaningFee;
+  const helmetFee = publicData && publicData.helmetFee;
+  const { amount, currency } = helmetFee;
 
   if (amount && currency) {
     return new Money(amount, currency);
@@ -540,16 +537,18 @@ const resolveCleaningFeePrice = listing => {
 ### Add line-item
 
 Now the _transactionLineItems_ function can be updated to also provide
-the cleaning fee line item when the listing has a cleaning fee.
+the helmet rental fee line item when the listing has a helmet rental
+fee.
 
 In this example, the provider commission is calculated from the total of
-booking and cleaning fees. That's why we need to add the _cleaningFee_
-item also to _calculateTotalFromLineItems(...)_ function in the
-_providerCommission_ line item. If we don't add the cleaning fee, the
-provider commission calculation is only based on the booking fee.
+booking and helmet rental fees. That's why we need to add the
+_helmetFee_ item also to _calculateTotalFromLineItems(...)_ function in
+the _providerCommission_ line item. If we don't add the helmet rental
+fee, the provider commission calculation is only based on the booking
+fee.
 
-Also remember to add the cleaning fee to the _lineItems_ array that is
-returned in the end of the function.
+Also remember to add the helmet rental fee to the _lineItems_ array that
+is returned in the end of the function.
 
 ```diff
 exports.transactionLineItems = (listing, orderData) => {
@@ -562,12 +561,12 @@ exports.transactionLineItems = (listing, orderData) => {
     includeFor: ['customer', 'provider'],
   };
 
-+ const cleaningFeePrice = orderData.hasCleaningFee ? resolveCleaningFeePrice(listing) : null;
-+ const cleaningFee = cleaningFeePrice
++ const helmetFeePrice = orderData.hasCleaningFee ? resolveCleaningFeePrice(listing) : null;
++ const helmetFee = helmetFeePrice
 +   ? [
 +       {
-+         code: 'line-item/cleaning-fee',
-+         unitPrice: cleaningFeePrice,
++         code: 'line-item/helmet-rental-fee',
++         unitPrice: helmetFeePrice,
 +         quantity: 1,
 +         includeFor: ['customer', 'provider'],
 +       },
@@ -588,7 +587,7 @@ exports.transactionLineItems = (listing, orderData) => {
         {
           code: 'line-item/provider-commission',
 -         unitPrice: calculateTotalFromLineItems([order]),
-+         unitPrice: calculateTotalFromLineItems([order, ...cleaningFee]),
++         unitPrice: calculateTotalFromLineItems([order, ...helmetFee]),
           percentage: getNegation(providerCommission.percentage),
           includeFor: ['provider'],
         },
@@ -598,7 +597,7 @@ exports.transactionLineItems = (listing, orderData) => {
   // Let's keep the base price (order) as first line item and provider's commission as last one.
   // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
 - const lineItems = [order, ...extraLineItems, ...providerCommissionMaybe];
-+ const lineItems = [order, ...extraLineItems, ...cleaningFee, ...providerCommissionMaybe];
++ const lineItems = [order, ...extraLineItems, ...helmetFee, ...providerCommissionMaybe];
 
 
   return lineItems;
@@ -606,18 +605,18 @@ exports.transactionLineItems = (listing, orderData) => {
 ```
 
 Once we have made the changes to the backend of our client app, we can
-check the order breakdown again. If you now choose the cleaning fee, you
-should see the cleaning fee in the booking breakdown:
+check the order breakdown again. If you now choose the helmet rental
+fee, you should see the helmet rental fee in the booking breakdown: TODO
+UPDATE IMAGE
+![Helmet fee in booking breakdown](./helmetFeeBookingBreakdown.png)
 
-![Cleaning fee in booking breakdown](./cleaningFeeBookingBreakdown.png)
+## Update CheckoutPage to handle helmet rental fee
 
-## Update CheckoutPage to handle cleaning fee
-
-Finally, we want to update the Checkout Page so that it takes the
-cleaning fee selection into account when the customer actually pays for
+Finally, we want to update the Checkout Page so that it takes the helmet
+rental fee selection into account when the customer actually pays for
 the booking.
 
-### Fetch speculated transaction complete with cleaning fee
+### Fetch speculated transaction complete with helmet rental fee
 
 When a user clicks "Request to book", `ListingPage.js` sends the booking
 details as initial values to the Checkout Page, which then fetches the
@@ -629,8 +628,8 @@ calculated as if it were.
 Since we are dealing with a paid transaction, we need to be modifying
 the `CheckoutPageWithPayment.js` component. In that file, we have a
 function called _getOrderParams_, which creates the correct set of order
-parameters for all line item related API calls. Let's add cleaning fee
-handling to that function.
+parameters for all line item related API calls. Let's add helmet rental
+fee handling to that function.
 
 ```shell
 └── src
@@ -645,7 +644,7 @@ const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config
   const quantityMaybe = quantity ? { quantity } : {};
   const deliveryMethod = pageData.orderData?.deliveryMethod;
   const deliveryMethodMaybe = deliveryMethod ? { deliveryMethod } : {};
-+ const hasCleaningFee = pageData.orderData?.cleaningFee?.length > 0;
++ const hasCleaningFee = pageData.orderData?.helmetFee?.length > 0;
 
   const { listingType, unitType } = pageData?.listing?.attributes?.publicData || {};
   const protectedDataMaybe = {
@@ -677,11 +676,10 @@ initial data for the page, and the order parameters are then passed to a
 turn, calls the template server using the correct endpoint and the order
 parameters provided.
 
-Now when the customer selects cleaning fee on the listing page and
+Now when the customer selects helmet rental fee on the listing page and
 clicks "Request to book", we see the correct price and breakdown on the
-checkout page.
-
-![Cleaning fee in booking breakdown on checkout page](./checkoutPageBreakdown.png)
+checkout page. TODO UPDATE IMAGE
+![Helmet fee in booking breakdown on checkout page](./checkoutPageBreakdown.png)
 
 The same function builds order parameters that get passed to the final
 transaction initialisation.
@@ -699,14 +697,14 @@ process, then composes them into a single function
 </info>
 
 Now you can try it out! When you complete a booking on a listing that
-has a cleaning fee specified, you can see the cleaning fee included in
-the price on the booking page. In addition, the Flex Console transaction
-price breakdown also shows the cleaning fee.
+has a helmet rental fee specified, you can see the helmet rental fee
+included in the price on the booking page. In addition, the Flex Console
+transaction price breakdown also shows the helmet rental fee. TODO
+UPDATE IMAGE
+![Helmet fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
 
-![Cleaning fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
-
-<extrainfo title="Add cleaning fee to email notifications">
-To add the cleaning fee into your email notifications, you will need to add it to the email templates.
+<extrainfo title="Add helmet rental fee to email notifications">
+To add the helmet rental fee into your email notifications, you will need to add it to the email templates.
 The <a href="/docs/tutorial/use-protected-data-in-emails/">third step of this tutorial</a> deals with updating email notifications.
 
 ```diff
@@ -714,9 +712,9 @@ The <a href="/docs/tutorial/use-protected-data-in-emails/">third step of this tu
         {{#contains include-for "provider"}}
           {{#eq "line-item/day" code}} ...
 
-+          {{#eq "line-item/cleaning-fee" code}}
++          {{#eq "line-item/helmet-rental-fee" code}}
 +            <tr class="bottom-row">
-+              <td>Cleaning fee</td>
++              <td>Helmet fee</td>
 +              <td class="right">{{> format-money money=line-total}}</td>
 +            </tr>
 +          {{/eq}}
@@ -739,10 +737,10 @@ process are
 
 In this tutorial, you have
 
-- Saved a cleaning fee attribute to the listing's public data in
+- Saved a helmet rental fee attribute to the listing's public data in
   _EditListingPricingPanel_
 - Updated the _BookingDatesForm_ and _OrderPanel_ to show and handle
-  cleaning fee selection
-- Added cleaning fee to line item handling server-side
-- Updated the _CheckoutPage_ to include cleaning fee in the booking's
-  pricing
+  helmet rental fee selection
+- Added helmet rental fee to line item handling server-side
+- Updated the _CheckoutPage_ to include helmet rental fee in the
+  booking's pricing

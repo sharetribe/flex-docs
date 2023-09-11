@@ -11,7 +11,7 @@ published: true
 
 In this example, we will add a new email notification that will be sent
 to the customer when their booking time is approaching. We will edit the
-**saunatime-instant-booking** transaction process, which was created in
+**biketribe-instant-booking** transaction process, which was created in
 the earlier part of this tutorial.
 
 ## Fetch transaction process
@@ -21,12 +21,12 @@ have most the up-to-date version of the process. You can fetch any
 process version with flex-cli:
 
 ```shell
-flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --path=./saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process pull --process=biketribe-instant-booking --alias=release-1 --path=./biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 <info>
 
-If you already have a _saunatime-instant-booking_ directory, you can't
+If you already have a _biketribe-instant-booking_ directory, you can't
 pull the process. You need to either change the --path parameter or use
 _--force_ flag at the end of the command to overwrite the existing
 directory.
@@ -41,7 +41,7 @@ navigate to the
 We want to add a new directory for the new notification there.
 
 ```shell
-└── saunatime-instant-booking
+└── biketribe-instant-booking
     └── templates
         └── booking-reminder-customer
 ```
@@ -80,7 +80,7 @@ Once we have created the email notification, we can preview them with
 command:
 
 ```shell
-flex-cli notifications preview --template saunatime-instant-booking/templates/booking-reminder-customer --marketplace=saunatime-dev
+flex-cli notifications preview --template biketribe-instant-booking/templates/booking-reminder-customer --marketplace=biketribe-dev
 ```
 
 You should see the HTML preview of the template in the address
@@ -90,7 +90,7 @@ refresh the browser to reload the template and render a new preview
 You can also test sending the preview email:
 
 ```shell
-flex-cli notifications send --template saunatime-instant-booking/templates/booking-reminder-customer --marketplace=saunatime-dev
+flex-cli notifications send --template biketribe-instant-booking/templates/booking-reminder-customer --marketplace=biketribe-dev
 ```
 
 <info>
@@ -147,20 +147,20 @@ need more detailed information, take a look at the
 Push the updated process:
 
 ```shell
-flex-cli process push --process=saunatime-instant-booking --path=./saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process push --process=biketribe-instant-booking --path=./biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 Check version number with _process list_ command:
 
 ```shell
-flex-cli process list --process=saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process list --process=biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 Update the alias to point to the latest version of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=saunatime-instant-booking --version=3 --marketplace=saunatime-dev
+flex-cli process update-alias --alias=release-1 --process=biketribe-instant-booking --version=3 --marketplace=biketribe-dev
 ```
 
 ## Summary

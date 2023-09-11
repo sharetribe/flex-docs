@@ -13,8 +13,8 @@ In this example, we will change a transaction process email notification
 so that it uses protected data. We will send the provider's phone number
 to the customer when the provider accepts the booking request. We will
 add a phone number input field to Sign up form and edit the
-**saunatime-instant-booking** transaction process that was created in
-the earlier part of this tutorial.
+**biketribe-instant-booking** transaction process that was created in
+the previous part of this tutorial.
 
 ## Change signup form
 
@@ -24,6 +24,7 @@ Since we want to reveal the provider's phone number to the customer when
 the booking is made, we need to collect it first. This should be done on
 the sign-up page:
 
+TODO UPDATE SCREENSHOT?
 ![Phone number input added to sign-up form](./signup-form.png)
 
 ### Add input component
@@ -151,12 +152,12 @@ have most the up-to-date version of the process. You can fetch any
 process version with Flex CLI:
 
 ```shell
-flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --path=./saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process pull --process=biketribe-instant-booking --alias=release-1 --path=./biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 <info>
 
-If you already have _saunatime-instant-booking_ directory you can't pull
+If you already have _biketribe-instant-booking_ directory you can't pull
 the process. You need to either change the _--path_ parameter or use a
 _--force_ flag at the end of the command to overwrite the existing
 directory.
@@ -198,7 +199,7 @@ the email template: _booking-confirmed-customer-html.html_. You can find
 that file from the fetched process directory:
 
 ```shell
-└── saunatime-instant-booking
+└── biketribe-instant-booking
     └── templates
         └── booking-confirmed-customer
             └── booking-confirmed-customer-html.html
@@ -234,7 +235,7 @@ The short guide of the necessary steps:
 
 ```shell
 
-flex-cli notifications preview --template saunatime-instant-booking/templates/booking-confirmed-customer --context sample-template-context.json --marketplace=saunatime-dev
+flex-cli notifications preview --template biketribe-instant-booking/templates/booking-confirmed-customer --context sample-template-context.json --marketplace=biketribe-dev
 
 ```
 
@@ -243,7 +244,7 @@ flex-cli notifications preview --template saunatime-instant-booking/templates/bo
 ### Push process changes
 
 Now that we have edited the transaction process and its email templates,
-we need to push a new version of _saunatime-instant-booking_ process. If
+we need to push a new version of _biketribe-instant-booking_ process. If
 you have done the earlier parts of the tutorial this process should be
 already quite familiar to you. If you need more detailed information
 take a look at the
@@ -252,7 +253,7 @@ take a look at the
 Push the updated process:
 
 ```shell
-flex-cli process push --process=saunatime-instant-booking --path=./saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process push --process=biketribe-instant-booking --path=./biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 Check the version number from the output of the previous _push_ command.
@@ -261,14 +262,14 @@ With _process list_ command you can get the overall picture of versions
 and process aliases:
 
 ```shell
-flex-cli process list --process=saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process list --process=biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 Update the alias to point to **the latest version** of the transaction
 process:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=saunatime-instant-booking --version=4 --marketplace=saunatime-dev
+flex-cli process update-alias --alias=release-1 --process=biketribe-instant-booking --version=4 --marketplace=biketribe-dev
 ```
 
 ## Test transaction in your dev environment
@@ -282,6 +283,7 @@ created listing.
 When you accept the booking request, you should see email notification
 sent to the customer's email address.
 
+TODO UPDATE SCREENSHOT
 ![Updated email notification](./updated-email-notification.png)
 
 <info>

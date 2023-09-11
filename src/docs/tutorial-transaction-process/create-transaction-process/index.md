@@ -10,7 +10,7 @@ published: true
 ---
 
 In this tutorial, we'll create a new transaction process for the
-Saunatime marketplace. It will be an instant booking process where the
+Biketribe marketplace. It will be an instant booking process where the
 booking is accepted automatically upon making the booking, without the
 provider needing to take action. We will also update the client app to
 use the new process.
@@ -72,11 +72,11 @@ repository.
 
 Then we just need to define a name to that process and specify the
 marketplace environment, where the new process should be created. We'll
-use _"saunatime-instant-booking"_. Our final command for the
-_saunatime-dev_ marketplace would look like this:
+use _"biketribe-instant-booking"_. Our final command for the
+_biketribe-dev_ marketplace would look like this:
 
 ```shell
-flex-cli process create --path=./instant-booking --process=saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process create --path=./instant-booking --process=biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 <info>
@@ -88,9 +88,10 @@ you can find in Flex Console.
 
 After executing that command, you can go to the Flex Console (Build ->
 Transaction processes tab) and see that the
-_"saunatime-instant-booking"_ process is there.
+_"biketribe-instant-booking"_ process is there.
 
-![Saunatime instant booking process created.](./saunatime-instant-booking-process.png)
+TODO UPDATE IMAGE
+![Biketribe instant booking process created.](./biketribe-instant-booking-process.png)
 
 ### Create process alias
 
@@ -99,14 +100,14 @@ our client app, since it doesn't have process alias set. We can create
 an alias for our new process with Flex CLI command:
 
 ```shell
-flex-cli process create-alias --process=saunatime-instant-booking --version=1 --alias=release-1 --marketplace=saunatime-dev
+flex-cli process create-alias --process=biketribe-instant-booking --version=1 --alias=release-1 --marketplace=biketribe-dev
 ```
 
 With that command, we are creating a new alias _"release-1"_ and point
 it to the previously created process and its version 1.
 
 After that you should see the alias in the Console:<br />
-`saunatime-instant-booking/release-1`.
+`biketribe-instant-booking/release-1`.
 
 At this point, we have essentially just copied the default process under
 a different name.
@@ -128,7 +129,7 @@ have most the up-to-date version of the process. You can fetch any
 process version with flex-cli:
 
 ```shell
-flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --path=./saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process pull --process=biketribe-instant-booking --alias=release-1 --path=./biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 Now, we can open the _process.edn_ file from the new directory with a
@@ -173,21 +174,21 @@ Updating a transaction process is a similar process than creating a new
 one. This time we use _push_ command:
 
 ```shell
-flex-cli process push --process=saunatime-instant-booking --path=./saunatime-instant-booking --marketplace=saunatime-dev
+flex-cli process push --process=biketribe-instant-booking --path=./biketribe-instant-booking --marketplace=biketribe-dev
 ```
 
 And if you go to Console, you notice that there's a new version (2)
-created of the _saunatime-instant-booking_ process. However, the alias
+created of the _biketribe-instant-booking_ process. However, the alias
 is still pointing to the first version. We need to update the alias too:
 
 ```shell
-flex-cli process update-alias --alias=release-1 --process=saunatime-instant-booking --version=2 --marketplace=saunatime-dev
+flex-cli process update-alias --alias=release-1 --process=biketribe-instant-booking --version=2 --marketplace=biketribe-dev
 ```
 
 Now, if you open the process graph from the Flex Console, you'll see
 that the push payment transitions have been removed from the process.
 
-![Updated process.](./updated-process.png)
+TODO UPDATE IMAGE ![Updated process.](./updated-process.png)
 
 ## Update client app
 
@@ -227,7 +228,7 @@ export const listingTypes = [
   },
 ```
 
-Let's use the new _saunatime-instant-booking_ process as the daily
+Let's use the new _biketribe-instant-booking_ process as the daily
 booking process:
 
 ```diff
@@ -239,8 +240,8 @@ booking process:
     transactionType: {
 -     process: 'default-booking',
 -     alias: 'default-booking/release-1',
-+     process: 'saunatime-instant-booking',
-+     alias: 'saunatime-instant-booking/release-1',
++     process: 'biketribe-instant-booking',
++     alias: 'biketribe-instant-booking/release-1',
       unitType: 'day',
     },
   },
@@ -379,7 +380,7 @@ export const graph = {
   // id is defined only to support Xstate format.
   // However if you have multiple transaction processes defined,
   // it is best to keep them in sync with transaction process aliases.
-+ id: 'saunatime-instant-booking/release-1',
++ id: 'biketribe-instant-booking/release-1',
 ...
 // States
   states: {
@@ -481,7 +482,7 @@ Let's first import the new process and export its name as a constant.
   // Then names of supported processes
   export const PURCHASE_PROCESS_NAME = 'default-purchase';
   export const BOOKING_PROCESS_NAME = 'default-booking';
-+ export const INSTANT_PROCESS_NAME = 'saunatime-instant-booking';
++ export const INSTANT_PROCESS_NAME = 'biketribe-instant-booking';
 
 ```
 
@@ -529,6 +530,7 @@ Now if you start creating a new listing, you will see a dropdown of
 listing types. One of the listing types comes from Flex Console, and the
 other comes from our built-in configuration.
 
+TODO UPDATE IMAGE
 ![Instant booking process available for selection](./saunatime-instant-booking-dropdown.png)
 
 The next step is to determine how this transaction process data is used.
@@ -588,6 +590,7 @@ There is one more step left to update for the new transaction process –
 microcopy strings. If you now try to create a listing with the new
 process, you will see microcopy keys that reference the new process.
 
+TODO UPDATE IMAGE
 ![Microcopy uses keys as fallback for the new process](./new-process-microcopy-keys.png)
 
 We will add the necessary microcopy strings next.
@@ -610,16 +613,17 @@ for example:
   "EditListingWizard.default-booking.new.saveLocation": "Next: Pricing",
   "EditListingWizard.default-booking.new.savePhotos": "Publish listing",
   "EditListingWizard.default-booking.new.savePricing": "Next: Availability",
-  "EditListingWizard.saunatime-instant-booking.new.saveAvailability": "Next: Photos",
-  "EditListingWizard.saunatime-instant-booking.new.saveDetails": "Next: Location",
-  "EditListingWizard.saunatime-instant-booking.new.saveLocation": "Next: Pricing",
-  "EditListingWizard.saunatime-instant-booking.new.savePhotos": "Publish listing",
-  "EditListingWizard.saunatime-instant-booking.new.savePricing": "Next: Availability"
+  "EditListingWizard.biketribe-instant-booking.new.saveAvailability": "Next: Photos",
+  "EditListingWizard.biketribe-instant-booking.new.saveDetails": "Next: Location",
+  "EditListingWizard.biketribe-instant-booking.new.saveLocation": "Next: Pricing",
+  "EditListingWizard.biketribe-instant-booking.new.savePhotos": "Publish listing",
+  "EditListingWizard.biketribe-instant-booking.new.savePricing": "Next: Availability"
 }
 ```
 
 You can now see the correct microcopy strings instead of the keys.
 
+TODO UPDATE IMAGE
 ![Updated microcopy strings for the new process](./new-process-microcopy-strings.png)
 
 ## Summary
