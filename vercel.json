@@ -939,6 +939,12 @@
     "source": "/tutorial/show-extended-data/",
     "destination": "/docs/legacy/tutorial/show-extended-data/",
     "permanent": true
+  },
+  {
+    "source": "/tutorial/add-favorite-saunas/",
+    "destination": "/docs/tutorial/add-favorite-bikes/",
+    "permanent": true
+
   }
 ]
 }

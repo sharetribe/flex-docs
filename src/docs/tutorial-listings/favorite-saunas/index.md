@@ -1,6 +1,6 @@
 ---
-title: Add a favorite saunas button
-slug: add-favorite-saunas
+title: Add a favorite bikes button
+slug: add-favorite-bikes
 updated: 2023-07-27
 category: tutorial-listings
 ingress:
@@ -8,9 +8,9 @@ ingress:
 published: true
 ---
 
-In the Saunatime marketplace, we want to enable users to save listings
+In the Biketribe marketplace, we want to enable users to save listings
 on their favorites list. This way, users can save a list of favorite
-saunas for the future, even if they don’t want to book immediately.
+bikes for the future, even if they don’t want to book immediately.
 
 In this tutorial, you will
 
@@ -182,7 +182,8 @@ with _className_ `css.author`.
 Now, you can see the button in the order panel. However, the button text
 shows the microcopy key of the message, not the message we want to show.
 
-![Favorite sauna button with microcopy key](./saunatime-favorites-button-key.png)
+TODO UPDATE IMAGE
+![Favorite bike button with microcopy key](./saunatime-favorites-button-key.png)
 
 Let’s fix that by adding all the microcopy keys we need in this
 tutorial. You can add them in Flex Console > Build > Content >
@@ -191,21 +192,22 @@ Microcopy, or in src/translations/en.js.
 ```json
 …
   "FavoriteListingsPage.loadingFavoriteListings": "Loading listings…",
-  "FavoriteListingsPage.noResults": "You haven't listed any saunas.",
+  "FavoriteListingsPage.noResults": "You haven't listed any bikes.",
   "FavoriteListingsPage.queryError": "Query failed. Please try again.",
-  "FavoriteListingsPage.title": "View your favorite saunas",
+  "FavoriteListingsPage.title": "View your favorite bikes",
   "FavoriteListingsPage.youHaveListings": "You have {count} favorite {count, plural, one {listing} other {listings}}",
   "OrderPanel.addFavoriteButton":"Add to favorites",
   "OrderPanel.unfavoriteButton":"Unfavorite",
-  "TopbarDesktop.favoriteListingsLink": "Favorite saunas",
-  "UserNav.favoriteListings": "Favorite saunas"
+  "TopbarDesktop.favoriteListingsLink": "Favorite bikes",
+  "UserNav.favoriteListings": "Favorite bikes"
 …
 ```
 
 After adding the microcopy strings and saving your changes, you can
-refresh your app and you will see the correct texts in the button.
+refresh your browser and you will see the correct texts in the button.
 
-![Favorite sauna button with correct microcopy](./saunatime-favorites-button-value.png)
+TODO UPDATE IMAGE
+![Favorite bike button with correct microcopy](./saunatime-favorites-button-value.png)
 
 Clicking the button will not do anything yet, so as the next step, we
 will create the functionality to favorite a listing.
@@ -256,7 +258,7 @@ Finally, we need to pass the necessary props to OrderPanel.js.
     └── containers
         └── ListingPage
             ├── ListingPage.shared.js
-            └── ListingPageCarousel.js
+            └── ListingPageCoverPhoto.js
 
 ```
 
@@ -438,6 +440,7 @@ Now, when you navigate to a listing’s page and open your
 you can see that each click of the button triggers an _update_profile_
 network call that saves the click information.
 
+TODO UPDATE IMAGE
 ![Network call to update profile on favorite button click](./saunatime-favorites-update-profile-network.png)
 
 <extrainfo title="How does the network call propagate to the button?">
@@ -455,9 +458,9 @@ The flow of the data happens like this:
   resource
 - the Redux action then calls _currentUserShowSuccess_, which updates
   the _currentUser_ in the store with the updated resource
-- the _currentUser_ prop that we pass from ListingPageCarousel to
-  OrderPanel is mapped to Redux state, so any changes to currentUser in
-  state are immediately reflected in the prop
+- the _currentUser_ prop that we pass from _ListingPageCoverPhoto_ to
+  _OrderPanel_ is mapped to Redux state, so any changes to _currentUser_
+  in state are immediately reflected in the prop
 
 </extrainfo>
 
@@ -857,6 +860,7 @@ const FavoriteListingsPage = loadable(() => import(/* webpackChunkName: "Favorit
 Now, when you navigate to _localhost:3000/favorites_, you can see your
 favorited listings.
 
+TODO UPDATE IMAGE
 ![Favorite listings page](./saunatime-favorites-page.png)
 
 ## Add navigation
@@ -877,6 +881,7 @@ In the top bar, we will add Favorite Listings as a menu item to the
 profile menu that opens when a user clicks their avatar in the top right
 corner.
 
+TODO UPDATE IMAGE
 ![Default profile menu](./saunatime-default-profile-menu.png)
 
 To add the profile menu item, add the following code snippet in the
@@ -897,6 +902,7 @@ profileMenu before the row `<MenuItem key="ProfileSettingsPage">`
 Now, we can see a link to favorite listings page when we click the
 user’s profile image.
 
+TODO UPDATE IMAGE
 ![Profile menu with favorites page](./saunatime-favorites-profile-menu.png)
 
 The last addition comes to the UserNav component.
@@ -905,7 +911,7 @@ When we click on the profile menu link for favorite listings, we get to
 the page. However, the user navigation bar does not show the favorite
 listings page.
 
-![Default UserNav bar](./saunatime-favorites-page.png)
+TODO UPDATE IMAGE ![Default UserNav bar](./saunatime-favorites-page.png)
 
 Let’s add the link next. Open the _UserNav.js_ file and replace the tabs
 array with the following code:
@@ -947,12 +953,13 @@ array with the following code:
 ```
 
 Now, when you save the file and refresh the app, you will see a link to
-Favorite saunas in between the links for your listings and profile
+Favorite bikes in between the links for your listings and profile
 settings.
 
+TODO UPDATE IMAGE
 ![UserNav bar with favorites](./saunatime-usernav-favorites.png)
 
-And that’s it! The Saunatime marketplace now allows users to set
+And that’s it! The Biketribe marketplace now allows users to set
 listings as favorites and view them on a separate page.
 
 ## Summary
