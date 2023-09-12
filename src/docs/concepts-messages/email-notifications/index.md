@@ -47,6 +47,16 @@ Build section.
 
 The email templates use the
 [Handlebars template language](/references/email-templates/#handlebars).
+The most prominent use of the handlebar templates is the `t` helper,
+which is used to render the template content. The helper renders either
+the message denoted by a message key, or a fallback message.
+
+```
+{{t "ResetPassword.MembershipParagraph" "You have received this email notification
+because you are a member of {marketplaceName}. If you no longer wish to receive
+these emails, please contact {marketplaceName} team." marketplaceName=marketplace.name}}
+```
+
 In each template, you can use a set of predefined context variables
 (such as the name and email of the recipient). You can find all context
 variables to the right of the built-in email template editor. You can
@@ -72,7 +82,11 @@ notifications usually relate to information about bookings and payments,
 in contrast to built-in email notifications, which are typically
 actionable and related to account management.
 
-You can update, add, or delete transaction notifications by
+You can edit the content of the transaction notifications in Console
+TODO EXPLAIN EDITOR
+
+You can update message keys, as well as add or delete transaction
+notifications, by
 [editing the transaction process](/how-to/edit-transaction-process-with-flex-cli/).
 The
 [template sub-directory](https://github.com/sharetribe/flex-example-processes/tree/master/default-booking/templates)

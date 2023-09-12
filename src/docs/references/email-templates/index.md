@@ -103,6 +103,38 @@ parameters they take and example how to use them:
 
 Can't find a helper you are looking for? Let us know!
 
+### `t`
+
+> Params:
+>
+> - message key
+> - fallback message
+>
+> Hash:
+>
+> - list of hash parameters and their respective values used with the
+>   messages
+
+Example usage:
+
+```
+{{t "BookingNewRequest.Description" "{customerDisplayName} requested to book {listingTitle}
+in {marketplaceName}." customerDisplayName=customer.display-name
+listingTitle=listing.title marketplaceName=marketplace.name}}
+```
+
+Inline helper that makes it possible to modify the email template texts
+without making changes in the template code. The helper renders the
+message corresponding to the key, if the key exists in the
+[email text asset](/references/assets/). If the key does not exist, the
+helper renders the fallback message.
+
+Any hash parameters used inside either message must be wrapped in single
+curly brackets, and the values for those hash parameters need to be
+defined after the message key and the fallback message.
+
+TODO REVIEW OTHER HELPERS
+
 ### `contains`
 
 > Params:

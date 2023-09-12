@@ -1,7 +1,7 @@
 ---
 title: Edit email templates with Flex CLI
 slug: edit-email-templates-with-flex-cli
-updated: 2020-10-29
+updated: 2023-09-14
 category: how-to-messaging
 ingress:
   This tutorial shows you how to edit email templates using the Flex
@@ -44,14 +44,14 @@ flex-cli process list -m my-marketplace-dev
 
 The `process list` command prints out all the processes and their latest
 versions. You want to pick the correct process and version from this
-list. In this tutorial we will use the `preauth-with-nightly-booking`
-process, version 1. You probably have different transaction processes in
-your marketplace - so, you need to adjust this guide accordingly.
+list. In this tutorial we will use the `default-booking` process,
+version 1. You probably have different transaction processes in your
+marketplace - so, you need to adjust this guide accordingly.
 
 Let's pull that process version:
 
 ```bash
-flex-cli process pull --process preauth-with-nightly-booking --version 1 --path process -m my-marketplace-dev
+flex-cli process pull --process default-booking --version 1 --path process -m my-marketplace-dev
 ```
 
 This will create a `process/` directory that has all the process files
@@ -73,19 +73,19 @@ will see that the template directories and file names match the
 
 ```clojure
 :notifications
- [{:name :notification/new-booking-request,
+ [{:name :notification/booking-new-request,
    :on :transition/confirm-payment,
    :to :actor.role/provider,
-   :template :new-booking-request}
-  {:name :notification/booking-request-accepted,
+   :template :booking-new-request}
+  {:name :notification/booking-accepted-request,
    :on :transition/accept,
    :to :actor.role/customer,
-   :template :booking-request-accepted}
-  ,,,
-  {:name :notification/review-by-customer-second,
-   :on :transition/review-2-by-customer,
-   :to :actor.role/provider,
-   :template :review-by-other-party-published}]
+   :template :booking-accepted-request}
+  {:name :notification/booking-operator-accepted-request-to-customer,
+   :on :transition/operator-accept,
+   :to :actor.role/customer,
+   :template :booking-accepted-request}
+...
 ```
 
 A template for a notification is a directory that is named after the
@@ -102,62 +102,35 @@ version is automatically generated from the HTML template.
 
 ### Example
 
-For example, the `:notification/new-booking-request` notification:
+For example, the `:notification/booking-new-request` notification:
 
 ```clojure
-{:name :notification/new-booking-request,
- :on :transition/confirm-payment,
- :to :actor.role/provider,
- :template :new-booking-request}
+{:name :notification/booking-new-request,
+   :on :transition/confirm-payment,
+   :to :actor.role/provider,
+   :template :booking-new-request}
 ```
 
 has the following template:
 
 ```
-new-booking-request/
-├── new-booking-request-html.html
-└── new-booking-request-subject.txt
+booking-new-request
+├── booking-new-request-html.html
+└── booking-new-request-subject.txt
 ```
 
-Note that the template name (e.g. `:new-booking-request`) doesn't have
+Note that the template name (e.g. `:booking-new-request`) doesn't have
 to match the notification name (e.g.
-`:notification/new-booking-request`) as you can use the same template in
+`:notification/booking-new-request`) as you can use the same template in
 multiple notifications.
 
 ## Email template syntax
 
 Templates use [Handlebars](http://handlebarsjs.com/) syntax.
 
-Example HTML:
+Example HTML: TODO
 
 ```handlebars
-{{~#*inline "format-date"~}}
-{{date date format="MMM d, YYYY"}}
-{{~/inline~}}
-
-<html>
-  <body>
-    {{#with transaction}}
-    <h1>Please respond to a request by {{customer.display-name}}</h1>
-
-    <p>
-      Good news! {{customer.display-name}} just requested to book {{listing.title}}
-      from {{> format-date date=booking.start}} to {{> format-date date=booking.end}}.
-      Here's the breakdown.
-    </p>
-
-    ...
-
-    {{/with}}
-
-    <hr />
-
-    <p>
-      You have received this email notification because you are a member of {{marketplace.name}}.
-      If you no longer wish to receive these emails, please contact {{marketplace.name}} team.
-    </p>
-  </body>
-</html>
 
 ```
 
@@ -178,9 +151,9 @@ description of the email context, see the
 
 ## Change a template
 
-Let's change the email template for new booking requests.
+TODO Let's change the email template for new booking requests.
 
-Open the `new-booking-request/new-booking-request-html.html` file in a
+Open the `booking-new-request/booking-new-request-html.html` file in a
 text editor and make a simple change:
 
 ```diff
@@ -196,7 +169,7 @@ You can test your changes and templates by previewing or sending a test
 email using your local template files. To preview the change above:
 
 ```bash
-flex-cli notifications preview --template process/templates/new-booking-request -m my-marketplace-dev
+flex-cli notifications preview --template process/templates/booking-new-request -m my-marketplace-dev
 ```
 
 The command will render the given template using
@@ -221,7 +194,7 @@ If you want to verify the email in an email client software, you can
 also send the test preview email:
 
 ```bash
-flex-cli notifications send --template process/templates/new-booking-request -m my-marketplace-dev
+flex-cli notifications send --template process/templates/booking-new-request -m my-marketplace-dev
 ```
 
 The email is sent to the email address of the admin user that was used
@@ -254,7 +227,7 @@ file and make edits to it:
 You can then pass the changed context file to the preview command:
 
 ```bash
-flex-cli notifications preview --template process/templates/new-booking-request --context sample-template-context.json -m my-marketplace-dev
+flex-cli notifications preview --template process/templates/booking-new-request --context sample-template-context.json -m my-marketplace-dev
 ```
 
 Now you will see the preview with the context data that you edited:
@@ -272,14 +245,14 @@ Now that you have edited the email templates, you need to push a new
 version of your process:
 
 ```bash
-flex-cli process push --path process --process preauth-with-nightly-booking -m my-marketplace-dev
+flex-cli process push --path process --process default-booking -m my-marketplace-dev
 ```
 
 You can see the new version in Console or using the `process list`
 command:
 
 ```bash
-flex-cli process list --process preauth-with-nightly-booking -m my-marketplace-dev
+flex-cli process list --process default-booking -m my-marketplace-dev
 ```
 
 ## Update alias
@@ -290,18 +263,17 @@ Sharetribe Web Template or other apps to use the new process version
 through the Marketplace API, you will need an alias to point to the
 version.
 
-In our `preauth-with-nightly-booking` example process there is a
-`release-1` alias. Let's update that to point to the new process
-version:
+In our `default-booking` example process there is a `release-1` alias.
+Let's update that to point to the new process version:
 
 ```bash
-flex-cli process update-alias --process preauth-with-nightly-booking --alias release-1 --version 2 -m my-marketplace-dev
+flex-cli process update-alias --process default-booking --alias release-1 --version 2 -m my-marketplace-dev
 ```
 
 To see the updated alias, run the `process list` command again:
 
 ```bash
-flex-cli process list --process preauth-with-nightly-booking -m my-marketplace-dev
+flex-cli process list --process default-booking -m my-marketplace-dev
 ```
 
 ## Summary
