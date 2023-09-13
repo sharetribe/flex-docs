@@ -4,7 +4,7 @@ slug: marketplace-texts
 updated: 2022-06-14
 category: concepts-content-management
 ingress:
-  This article introduces marketplace texts in Flex and how they is
+  This article introduces marketplace texts in Flex and how they are
   modified and edited in Flex Console
 published: true
 ---
@@ -13,11 +13,14 @@ Marketplace texts cover all the small pieces of text in your
 marketplace's dynamic pages – button labels, error messages, and help
 texts, for example. Modifying marketplace texts to match your
 marketplace's theme and tone of voice is a key task in customizing any
-marketplace. [Read more about marketplace texts](/operator-guides/).
+marketplace. [Read more about marketplace texts](/operator-guides/) TODO
+UPDATE LINK.
+
+## Marketplace texts in the Sharetribe Web Template
 
 In the Sharetribe Web Template, marketplace texts are not written
 directly into the source code. Instead, the source code uses
-[React Intl message formatting](https://formatjs.io/docs/intl#formatmessage)
+[ICU message formatting](https://unicode-org.github.io/icu/userguide/format_parse/messages/)
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
 each key in their language. The end user only sees the content creator's
@@ -53,10 +56,40 @@ applications, making it easier to make centralized changes.
 
 ![Simple Console marketplace texts](./microcopy_simple.png)
 
+## Email texts
+
+Marketplace email templates also use a similar formatting with a
+[custom Handlebar helper](/references/email-templates/#handlebars).
+
+The key-value syntax is similar to the one Sharetribe Web Template uses:
+
+```json
+"<email template name>.<email template section>": "<message>",
+```
+
+For example,
+
+```json
+"EmailChanged.Title": "Your email address was changed",
+```
+
+The email template syntax uses the key with the Handlebar helper `t`. In
+addition to the message key, the helper expects a fallback message, in
+case the message key does not exist.
+
+```handlebars
+<h1 style="font-size:26px;line-height:1.3;font-weight:700;color:#484848">
+  {{t "EmailChanged.Title" "Your email address was changed"}}
+</h1>
+```
+
+Similarly to marketplace texts, email texts can also be modified from
+Console > Build > TODO EXPLAIN.
+
 ## How marketplace texts are handled in Flex
 
-Console-editable marketplace texts in Flex are based on a concept of
-[assets](/references/assets/). Assets provide a way to define
+Console-editable marketplace and email texts in Flex are based on a
+concept of [assets](/references/assets/). Assets provide a way to define
 marketplace content and configurations using JSON files without needing
 to include the actual content in the client application codebase.
 
@@ -78,18 +111,21 @@ text file.
 
 ![Add marketplace text key-value pairs](./microcopy_console.png)
 
-When the asset has been created, you will need to fetch the marketplace
-texts to the client application. Marketplace texts are fetched through
-Asset Delivery API in JSON format. Assets can be retrieved by the latest
-version, or by a specific version. Read more:
+When the marketplace text asset has been created, you will need to fetch
+the marketplace texts to the client application. Marketplace texts are
+fetched through Asset Delivery API in JSON format. Assets can be
+retrieved by the latest version, or by a specific version. Read more:
 
 - [Marketplace assets](/references/assets/)
 - [Handling hosted asset marketplace texts in the Sharetribe Web Template](/ftw/hosted-marketplace-texts/)
 
-## Format for editing marketplace texts in Console
+Since email notifications are sent directly from Flex, the email text
+asset is used automatically as soon as it exists.
 
-A piece of marketplace text using the
-[React Intl formatMessage formatting](https://formatjs.io/docs/intl#formatmessage)
+## Format for editing marketplace and email texts in Console
+
+A piece of marketplace text using
+[ICU message formatting](https://unicode-org.github.io/icu/userguide/format_parse/messages/)
 can, at its simplest, consist of a phrase.
 
 ```json
@@ -108,8 +144,12 @@ the value.
 
 ![Simple marketplace text phrase in UI](./microcopy_UI_simple.png)
 
+In the email templates, the phrase is passed to the Handlebar helper
+`t`, which either renders the message itself, or the fallback message.
+
 Read more about
 [using marketplace texts in the Sharetribe Web Template](/ftw/how-to-change-ftw-bundled-marketplace-texts/#using-the-microcopy).
+TODO CHECK LINK
 
 ### Simple argument
 
@@ -140,6 +180,26 @@ listing's title is.
 ```
 
 ![Marketplace text phrase with parameter in UI](./microcopy_UI_parameter.png)
+
+For the email texts, a simple argument works in a similar fashion.
+
+```json
+{
+  "NewMessage.MessageSentParagraph": "{senderName} sent you a message in {marketplaceName}."
+}
+```
+
+In the email template, all parameters that are used either in the ICU
+message or the fallback message need to be defined within the `t`
+helper.
+
+```handlebars
+<p style=\"font-size:16px;line-height:1.4;margin:16px 0;color:#484848">
+  {{t "NewMessage.MessageSentParagraph" "{senderName} sent you a message in {marketplaceName}." senderName=sender.display-name marketplaceName=marketplace.name}}
+</p>
+```
+
+![Email text phrase with parameter in Console](./email_text_parameter.png)
 
 Do note that even if the message uses a simple argument, you can choose
 to not use it. For instance, you could replace the message in the
@@ -180,6 +240,32 @@ specify
 ```
 
 ![Message with pluralization in UI](./microcopy_UI_plural.png)
+
+You can use pluralization, too, in email templates.
+
+```json
+{
+  "BookingNewRequest.PriceForHoursQuantity": "{amount, number, ::.00} {currency} × {units, number} {units, plural, one {hour} other {hours}}"
+}
+```
+
+Here, too, we define
+
+- the variable determining which option to use (here: `units`)
+- the pattern we are following (here: `plural`)
+- the options matching each alternative you want to specify (here: `one`
+  – there could be several options specified)
+- an `other` option that gets used when none of the specified
+  alternatives matches
+
+```handlebars
+  <p style="font-size:16px;line-height:1.4;margin:16px 0;color:#484848;margin-bottom:1px">
+    {{t "BookingNewRequest.PriceForHoursQuantity" "{amount, number, ::.00} {currency} × {units, number} {units, plural, one {hour} other {hours}}" amount=unit-price.amount currency=unit-price.currency units=units}}
+  </p>
+
+```
+
+![Message with pluralization in email](./email_text_plural.png)
 
 Since different languages have different pluralization rules,
 pluralization is defined per language. You can see the full list of
@@ -227,6 +313,21 @@ const message = intl.formatMessage(
 
 ![Message with select logic](./microcopy_UI_select.png)
 
+```json
+{
+  "PurchaseOrderMarkedAsDelivered.Subject": "Your order for {listingTitle} was {option, select, shipping {shipped} other {delivered}}"
+}
+```
+
+```handlebars
+{{set-translations (asset "email/translations.json")}}
+{{t "PurchaseOrderMarkedAsDelivered.Subject"
+"Your order for {listingTitle} was {option, select, shipping {shipped} other {delivered}}"
+listingTitle=transaction.listing.title option=transaction.protected-data.deliveryMethod}}
+```
+
+![Email subject with select logic](./email_text_select.png)
+
 You can use `select` for cases where you have a predetermined list of
 options you will encounter that require different marketplace text
 strings.
@@ -247,10 +348,14 @@ are rarely capable of providing content for several languages.
 
 With email notifications and built-in emails, you would need to save the
 user's language to extended data and then have an if-statement that
-shows the correct language, for example:
+renders a message key pointing to the correct language, for example:
 
 ```js
-{{#eq recipient.private-data.language "en"}}Hello{{else}}Bonjour{{/eq}}
+{{#eq recipient.private-data.language "en"}}
+  {{t "TemplateName.TitleEn" "Hello"}}
+{{else}}
+  {{t "TemplateName.TitleFr" "Bonjour"}}
+{{/eq}}
 ```
 
 Read more about what to consider when
