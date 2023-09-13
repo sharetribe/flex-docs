@@ -25,6 +25,7 @@ const sortingArrayIntroductionGettingStarted = [
 // for the listed articles.
 const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
+  'copy-assets',
   'change-branding',
   'modify-landing-page',
   'working-with-microcopy',
@@ -349,8 +350,7 @@ exports.siteStructure = [
       {
         id: 'the-new-sharetribe-analytics',
         sortingArray: [],
-      }
-      
+      },
     ],
     hideSidebar: true,
   },

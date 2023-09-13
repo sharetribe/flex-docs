@@ -358,7 +358,7 @@ yarn run dev
 
 This will automatically open `http://localhost:3000` in a browser:
 
-![Default marketplace screenshot](./biketribe-default.png)
+![Default marketplace screenshot](./generic-landingpage.png)
 
 <info>
 
