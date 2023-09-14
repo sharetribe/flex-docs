@@ -420,8 +420,6 @@ You can see screenshots of the process below.
 
 <extrainfo title="Step 4-5: Order details page, buyer view">
 
-[INSERTPHOTO]
-
 ![Change environments](./31-inquiry-three.png)
 
 ### 2. Reacting to inquiries as a seller

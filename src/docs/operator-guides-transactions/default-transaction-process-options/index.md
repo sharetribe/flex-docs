@@ -335,7 +335,7 @@ funds are then held by Stripe until the purchase period has passed.
 After 2 days have passed from the end of the booking, the funds are
 released to the seller, who will receive the payment within 1-2 weeks.
 
-## Operator actions
+### Operator actions
 
 Sharetribe Flex allows you to act on behalf of your users if needed. In
 the default product purchase transaction process, there are three
@@ -377,6 +377,72 @@ You can see illustrations of the process below.
 ![Change environments](./28-operator-actions-cancel-done.png)
 
 </extrainfo>
+
+## Free messaging
+
+### 1. Inquiring about a listing as a buyer
+
+Free messaging should be used when no payments happens on the platform
+during a transaction. The process is simple: buyers send an inquiry to
+the provider to start a transaction. Providers can respond to the
+inquiry on the order details page with a message. The buyer and seller
+can message as much or as little as needed through your marketplace.
+
+Buyers initiate transactions from the listing page. Pressing the call to
+action button takes them to a detail page with the listing and message
+input field (1). The message field cannot be left blank, buyers must
+write something there (2). The inquiry is finalized and sent to the
+seller by pressing the call to action again (3). After sending the
+inquiry, they are transferred to the order details page where the
+inquiry message is shown alongside the listing and transaction timeline
+(4). Buyers have the option to write more message (5).
+
+The initial inquiry message triggers a notification to the seller that
+they received a new inquiry on your marketplace. Subsequent messages
+from the buyer trigger a notification to the seller that they received a
+new message.
+
+You can see screenshots of the process below.
+
+<extrainfo title="Step 1: Buyer starts inquiry">
+
+![Change environments](./29-inquiry-one.png)
+
+</extrainfo>
+
+<extrainfo title="Steps 2-3: Buyer completes inquiry">
+
+![Change environments](./30-inquiry-two.png)
+
+</extrainfo>
+
+<extrainfo title="Step 4-5: Order details page, buyer view">
+
+![Change environments](./31-inquiry-three.png)
+
+### 2. Reacting to inquiries as a seller
+
+Sellers are notified by email when a new inquiry is created on their
+listing. They can find the the inquiry in their Inbox. A seller's order
+details page includes information about the inquired listing, the
+inquiry message and any subsequent messages from the customer, and a
+timeline of the transaction (6). Sellers can write back to the message
+(7).
+
+Each new message triggers an email notification to the buyer that they
+received a new message in your marketplace.
+
+<extrainfo title="Steps 6-7: Order details page, seller view">
+
+![Change environments](./32-inquiry-four.png)
+
+</extrainfo>
+
+### Operator actions
+
+There are no actions for an operator to take during this transaction.
+Operators can view the transaction and messages exchanged during it in
+Manage->Transactions in Console.
 
 ## Changing default transaction processes
 
