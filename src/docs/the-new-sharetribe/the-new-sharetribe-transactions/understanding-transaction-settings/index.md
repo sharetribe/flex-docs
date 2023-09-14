@@ -82,5 +82,5 @@ industry might be too complex, so you want those to happen off-platform
 and focus on providing value to buyers and sellers in the discovery
 phase.
 
-Learn how free messsaging works for customers and providers
-[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-options/#free-messaging).
+Learn how free messaging works for customers and providers
+[in this article](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-options/#free-messaging).

@@ -163,7 +163,7 @@ you are taking through a separate window (14). Whenever you move the
 transaction forward, you can see confirmation that the operation was
 successful from the timeline and activity logs (15).
 
-You can see illustrations of the process below.
+You can see screenshots of the process below.
 
 <extrainfo title="Step 12 (optional): available operator actions in the transaction process">
 
@@ -354,7 +354,7 @@ taking through a separate window (10). Whenever you move the transaction
 forward, you can see confirmation that the operation was successful from
 the timeline and activity logs (11).
 
-You can see illustrations of the process below.
+You can see screenshots of the process below.
 
 <extrainfo title="Step 8 (optional): available operator actions in the transaction process">
 
@@ -392,19 +392,37 @@ can message as much or as little as needed through your marketplace.
 
 Buyers initiate transactions from the listing page. Pressing the call to
 action button takes them to a detail page with the listing and message
-input field. The message field cannot be left blank, buyers must write
-something there. The inquiry is finalized and sent to the seller by
-pressing the call to action again. After sending the inquiry, they are
-transferred to the order details page where the inquiry message is shown
-alongside the listing and transaction timeline. Buyers have the option
-to write more message.
+input field (1). The message field cannot be left blank, buyers must
+write something there (2). The inquiry is finalized and sent to the
+seller by pressing the call to action again (3). After sending the
+inquiry, they are transferred to the order details page where the
+inquiry message is shown alongside the listing and transaction timeline
+(4). Buyers have the option to write more message (5).
 
 The initial inquiry message triggers a notification to the seller that
 they received a new inquiry on your marketplace. Subsequent messages
 from the buyer trigger a notification to the seller that they received a
 new message.
 
-SCREEENSHOTS
+You can see screenshots of the process below.
+
+<extrainfo title="Step 1: Buyer starts inquiry">
+
+![Change environments](./29-inquiry-one.png)
+
+</extrainfo>
+
+<extrainfo title="Steps 2-3: Buyer completes inquiry">
+
+![Change environments](./30-inquiry-two.png)
+
+</extrainfo>
+
+<extrainfo title="Step 4-5: Order details page, buyer view">
+
+[INSERTPHOTO]
+
+</extrainfo>
 
 ### 2. Reacting to inquiries as a seller
 
@@ -412,12 +430,17 @@ Sellers are notified by email when a new inquiry is created on their
 listing. They can find the the inquiry in their Inbox. A seller's order
 details page includes information about the inquired listing, the
 inquiry message and any subsequent messages from the customer, and a
-timeline of the transaction. Sellers can write back to the message.
+timeline of the transaction (6). Sellers can write back to the message
+(7).
 
 Each new message triggers an email notification to the buyer that they
 received a new message in your marketplace.
 
-SCREEENSHOTS
+<extrainfo title="Steps 6-7: Order details page, seller view">
+
+[INSERTPHOTO]
+
+</extrainfo>
 
 ### Operator actions
 
