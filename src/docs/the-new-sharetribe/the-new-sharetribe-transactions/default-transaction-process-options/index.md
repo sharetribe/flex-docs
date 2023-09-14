@@ -422,7 +422,7 @@ You can see screenshots of the process below.
 
 [INSERTPHOTO]
 
-</extrainfo>
+![Change environments](./31-inquiry-three.png)
 
 ### 2. Reacting to inquiries as a seller
 
@@ -438,7 +438,7 @@ received a new message in your marketplace.
 
 <extrainfo title="Steps 6-7: Order details page, seller view">
 
-[INSERTPHOTO]
+![Change environments](./32-inquiry-four.png)
 
 </extrainfo>
 
