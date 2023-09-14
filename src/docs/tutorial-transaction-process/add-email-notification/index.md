@@ -27,8 +27,8 @@ flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --pa
 <info>
 
 If you already have a _saunatime-instant-booking_ directory, you can't
-pull the process. You need to either change the --path parameter or use
-_--force_ flag at the end of the command to overwrite the existing
+pull the process. You need to either change the _--path_ parameter or
+use _--force_ flag at the end of the command to overwrite the existing
 directory.
 
 </info>
@@ -67,11 +67,11 @@ variables like recipient name, marketplace name, and transaction details
 to the template. You can see all variables that are available in the
 [transaction email context reference](/references/email-templates/#transaction-email-context).
 
-At the beginning of the notification file, we define helper functions
-for formatting money and date values. After that, the email template
-format follows a structure of a standard HTML document. You can add
-styles with CSS, edit the structure with HTML, and add transaction
-details by using variables within `{{}}`.
+At the beginning of the notification file, we define global variables
+for managing email texts. After that, the email template format follows
+a structure of a standard HTML document. You can add styles with CSS,
+edit the structure with HTML, and add transaction details by using
+variables within `{{}}`.
 
 ## Preview your changes
 
@@ -99,6 +99,30 @@ The email is sent to the email address of the admin user that was used
 in logging in to the CLI.
 
 </info>
+
+## Add new email texts in Console
+
+The email text editor in Console allows operators to change email
+template texts without code changes. Since the template we just added
+has new email text content, your previews were rendered with the
+template fallback values.
+
+To allow making email text changes in this template as well, add the
+following email texts into the email text editor:
+
+```json
+{
+  "BookingReminder.ContactProvider": "If you have questions about your booking, you can contact {providerDisplayName} through the order page.",
+  "BookingReminder.ContentForDaily": "You have booked {listingTitle} {dateStart,date,::YYYYMMMd} to {dateEnd,date,::YYYYMMMd}.",
+  "BookingReminder.ContentForHourly": "You have booked {listingTitle} from {dateStart,date,::hmmaYYYYMMMd} to {dateEnd,date,::hmmaYYYYMMMd}.",
+  "BookingReminder.ContentForNightly": "You have booked {listingTitle} from {dateStart,date,::YYYYMMMd} to {dateEnd,date,::YYYYMMMd}.",
+  "BookingReminder.Cta": "View order details",
+  "BookingReminder.Subject": "Your booking for {listingTitle} is approaching!",
+  "BookingReminder.Title": "Your booking for {listingTitle} is approaching!"
+}
+```
+
+TODO add instructions and screenshots for testing!
 
 ## Update process.edn
 
