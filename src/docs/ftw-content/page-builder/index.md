@@ -325,6 +325,11 @@ After you have made sure you have all these configurations added in your
 Console, refresh the browser. Your marketplace should now show up with
 the configurations you added.
 
+If Maintenance mode still persists, check your browser developer tools
+for further errors. You can also always reach out to our support through
+the chat widget in your Console, and we will be happy to troubleshoot
+the issue with you!
+
 ## How to take Pages into use if you are using a legacy template
 
 All Sharetribe Web Template versions support Pages. If you want to add
