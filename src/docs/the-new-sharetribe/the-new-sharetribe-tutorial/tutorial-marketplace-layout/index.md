@@ -32,8 +32,8 @@ option.
 Image carousel with thumbnails is a good default for most marketplaces.
 However, if the listings in your marketplace are properties with
 attractive images, screen-wide cover photos can make the listing page
-look more attractive. Our bikes have such good looking images that we're
-going to take the latter option.
+look more attractive. The carousel works well for our bike images, so
+we're going to take the former option.
 
 **Choose "Screen-wide cover photo"**
 
