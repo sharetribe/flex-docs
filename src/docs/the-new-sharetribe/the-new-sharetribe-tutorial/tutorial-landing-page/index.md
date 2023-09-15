@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 3 – Modify the landing page
 slug: tutorial-landing-page
-updated: 2023-09-08
+updated: 2023-09-15
 category: the-new-sharetribe-tutorial
 ingress:
   The landing page is likely to be the first impression for many of your

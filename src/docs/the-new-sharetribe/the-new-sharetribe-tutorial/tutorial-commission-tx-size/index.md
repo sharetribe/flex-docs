@@ -2,7 +2,7 @@
 title:
   Tutorial step 7 – Configure commission and minimum transaction size
 slug: tutorial-commission-tx-size
-updated: 2023-09-08
+updated: 2023-09-15
 category: the-new-sharetribe-tutorial
 ingress:
   In this step we'll look into how you can automatically collect a
@@ -35,7 +35,7 @@ don’t need to configure your own Stripe account yet.
 
 [Read more about setting up Stripe here](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-stripe/).
 
-### Commission
+## Commission
 
 First off, navigate to the "Transactions → Commission" in Console.
 
@@ -72,7 +72,7 @@ changes. You can
 
 Save changes.
 
-### Next: vocabulary
+## Next: vocabulary
 
 Now our marketplace is working the way we're expecting! However, there
 are few more adjustments we should make before testing things. The next

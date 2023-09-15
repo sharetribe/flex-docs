@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 9 – Edit the footer
 slug: tutorial-footer
-updated: 2023-09-08
+updated: 2023-09-15
 category: the-new-sharetribe-tutorial
 ingress:
   Footer links all the elements in your marketplace together. In this
@@ -57,8 +57,8 @@ You can format block text with
 [markdown](https://www.markdownguide.org/basic-syntax/) to add links,
 bolding, and other rich text.
 
-We're going to repurpose the content columns for the
-purposes of this tutorial, as they work quite well for us.
+We're going to repurpose the content columns for the purposes of this
+tutorial, as they work quite well for us.
 
 Open the "general" block. You notice that it has three links. Two of
 them have a mention of the word "listing". Change this to "bike".
