@@ -25,10 +25,6 @@ of use page, and the Policy page) ready for editing. Make sure that you
 are in the Test environment of your marketplace if you want to start
 modifying your Pages right away.
 
-If you don't have the default Pages available in Console and want to
-start trying out this feature, check out our article about
-[enabling the Pages feature in your marketplace](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-enable-pages/#for-marketplaces-created-before-2023-02-14-pages-release-date).
-
 ### Sections, Blocks, Fields, and templates
 
 Content pages in your marketplace are built using Sections, Blocks, and
