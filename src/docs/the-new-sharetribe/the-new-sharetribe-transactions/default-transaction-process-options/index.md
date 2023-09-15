@@ -422,6 +422,8 @@ You can see screenshots of the process below.
 
 ![Change environments](./31-inquiry-three.png)
 
+</extrainfo>
+
 ### 2. Reacting to inquiries as a seller
 
 Sellers are notified by email when a new inquiry is created on their
