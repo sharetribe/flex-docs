@@ -316,10 +316,10 @@ see a fallback page with the title "Maintenance mode".
 To fix the situation, make sure that you have added the following
 mandatory configurations in your Console:
 
-[- Branding](https://flex-console.sharetribe.com/a/design/branding)
-[- Listing type](https://flex-console.sharetribe.com/a/listings/listing-types)
-[- Listing fields](https://flex-console.sharetribe.com/a/listings/listing-fields)
-[- Minimum transaction size](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size)
+- [Branding](https://flex-console.sharetribe.com/a/design/branding)
+- [Listing type](https://flex-console.sharetribe.com/a/listings/listing-types)
+- [Listing fields](https://flex-console.sharetribe.com/a/listings/listing-fields)
+- [Minimum transaction size](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size)
 
 After you have made sure you have all these configurations added in your
 Console, refresh the browser. Your marketplace should now show up with
@@ -329,6 +329,23 @@ If Maintenance mode still persists, check your browser developer tools
 for further errors. You can also always reach out to our support through
 the chat widget in your Console, and we will be happy to troubleshoot
 the issue with you!
+
+#### Additional tips on troubleshooting the maintenance mode error message
+
+If your marketplace runs without issue on your local, but you see the
+"maintenance mode" message on a cloud deployment (e.g., in Heroku or
+Render), you should check that you have the correct Client ID set in
+your environment variables. The marketplace uses the Client ID to fetch
+your
+[marketplace assets](/tutorial/change-branding/#what-are-hosted-assets)
+through our API.
+
+You might also see the "maintenance mode" message if a
+[Listing Field ID](/operator-guides/how-to-add-and-edit-listing-fields/#adding-a-new-field)
+you've defined via Console clashes with any of the
+[built-in public data fields](https://github.com/sharetribe/web-template/blob/main/src/util/configHelpers.js#L25-L33).
+If this is the case, you will see a message about this when you open the
+console view in your browser's developer tools tab.
 
 ## How to take Pages into use if you are using a legacy template
 
