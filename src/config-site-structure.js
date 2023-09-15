@@ -26,9 +26,6 @@ const sortingArrayIntroductionGettingStarted = [
 const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
   'copy-assets',
-  'change-branding',
-  'modify-landing-page',
-  'working-with-microcopy',
   'first-edit',
   'configurations',
   'change-default-locations',

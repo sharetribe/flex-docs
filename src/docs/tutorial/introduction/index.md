@@ -22,16 +22,16 @@ WORDING). We will start editing the Sharetribe Web Template, and add
 custom development features to Biketribe.
 
 The first part of this tutorial focuses on installing the template,
-making minor changes to the template styles, and deploying a development
-environment. The second part dives deeper into modifying the listing
-creation process, and the third part focuses on editing the transaction
-process.
+copying no-code changes from Test to Dev, making minor changes to the
+template styles, and deploying a development environment. The second
+part dives deeper into modifying the listing creation process, and the
+third part focuses on editing the transaction process.
 
 ## Background knowledge
 
-The first part of the tutorial is accessible even though you are brand
-new to web development. Parts two and three increase in difficulty, and
-it helps to have some background in web development.
+The first part of the tutorial is accessible even if you are brand new
+to web development. Parts two and three increase in difficulty, and it
+helps to have some background in web development.
 
 Before you start working on the tutorial, it's good to understand a few
 key concepts (a general understanding of the fundamentals should
@@ -53,9 +53,11 @@ suffice, and you'll learn a lot throughout the tutorial).
 
 - **Marketplace environment**: There are three marketplace environments:
   Test, Development, and Live (you can find these in Console). You can
-  use the development environment to develop and test your marketplace,
-  and test environment to preview your no-code changes. Your Live
-  marketplace is home to your actual live marketplace.
+  use the development environment to develop and test your marketplace.
+  In the no-code tutorial, you made your changes in your Test
+  environment, and you can keep using it to preview your no-code
+  changes. Your Live marketplace is home to your actual live
+  marketplace.
 
 - **Flex CLI**: A command line tool that you can use to change your
   marketplace's advanced configurations, such as transaction processes
@@ -63,7 +65,8 @@ suffice, and you'll learn a lot throughout the tutorial).
 
 ## Before starting the tutorial
 
-Before continuing to the tutorial's first part, complete the
+Before continuing to the first part of this technical tutorial, complete
+the
 [Getting Started Guide](/introduction/getting-started-with-web-template/).
 This guide will walk you through installing the template and setting up
 your local development environment.
@@ -165,6 +168,6 @@ URLs.<br /> Read more about
 
 Now you are ready to make code changes and save them to Github!
 
-The first part of this tutorial starts with changing the background
-color of the landing page components.<br />
-[› Go to the next article](/tutorial/first-edit/)
+The first part of this tutorial starts with copying your no-code changes
+from Test to Dev.<br />
+[› Go to the next article](/tutorial/copy-assets/)

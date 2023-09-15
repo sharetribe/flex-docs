@@ -4,8 +4,8 @@ slug: copy-assets
 updated: 2023-09-14
 category: tutorial-branding
 ingress:
-  Begin the development of your marketplace by copying no-code changes
-  from Test environment to Dev environment
+  Begin developing your marketplace by copying no-code changes from Test
+  environment to Dev environment
 published: true
 ---
 

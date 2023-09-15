@@ -80,6 +80,7 @@ by navigating to http://localhost:3000
 Next, you'll want to inspect the element you want to modify using the
 developer console in your web browser.
 
+TODO UPDATE SCREENSHOT
 ![Inspect element through the browser's developer tools](./inspect-element.png)
 
 <info>
