@@ -43,7 +43,7 @@ to your users' account management. Use the
 email notifications. You can customise built-in emails using the
 [Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
 in the Flex Console. You can find the editor in the Console under the
-Build section.
+Build section. TODO EXPAND ON EDITING CONTENT VS STRUCTURE!
 
 The email templates use the
 [Handlebars template language](/references/email-templates/#handlebars).

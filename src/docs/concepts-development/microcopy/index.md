@@ -56,7 +56,7 @@ applications, making it easier to make centralized changes.
 
 ![Simple Console marketplace texts](./microcopy_simple.png)
 
-## Email texts
+## Email texts in Sharetribe
 
 Marketplace email templates also use a similar formatting with a
 [custom Handlebar helper](/references/email-templates/#handlebars).
@@ -83,7 +83,7 @@ case the message key does not exist.
 </h1>
 ```
 
-Similarly to marketplace texts, email texts can also be modified from
+Similarly to marketplace texts, email texts can also be modified in
 Console > Build > TODO EXPLAIN.
 
 ## How marketplace texts are handled in Flex
@@ -148,8 +148,7 @@ In the email templates, the phrase is passed to the Handlebar helper
 `t`, which either renders the message itself, or the fallback message.
 
 Read more about
-[using marketplace texts in the Sharetribe Web Template](/ftw/how-to-change-ftw-bundled-marketplace-texts/#using-the-microcopy).
-TODO CHECK LINK
+[using marketplace texts in the Sharetribe Web Template](/ftw/how-to-change-ftw-bundled-marketplace-texts/#using-marketplace-texts).
 
 ### Simple argument
 
@@ -260,7 +259,9 @@ Here, too, we define
 
 ```handlebars
   <p style="font-size:16px;line-height:1.4;margin:16px 0;color:#484848;margin-bottom:1px">
-    {{t "BookingNewRequest.PriceForHoursQuantity" "{amount, number, ::.00} {currency} × {units, number} {units, plural, one {hour} other {hours}}" amount=unit-price.amount currency=unit-price.currency units=units}}
+    {{t "BookingNewRequest.PriceForHoursQuantity"
+    "{amount, number, ::.00} {currency} × {units, number} {units, plural, one {hour} other {hours}}"
+    amount=unit-price.amount currency=unit-price.currency units=units}}
   </p>
 
 ```

@@ -14,14 +14,14 @@ Flex CLI (Command-line interface) is a tool for changing your
 marketplace's advanced configurations such as transaction processes and
 email templates.
 
-This tutorial expects that you have already installed Flex CLI and are
+This guide expects that you have already installed Flex CLI and are
 logged in with your API key. If not, it's recommended to first read the
-tutorial
+guide
 [Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
 
 We also recommend that you go through the
 [Edit transaction process with Flex CLI](/how-to/edit-transaction-process-with-flex-cli/)
-tutorial to understand process pulling, editing, pushing, and alias
+guide to understand process pulling, editing, pushing, and alias
 handling on a general level.
 
 In this tutorial we make a change to an email template that is used in
@@ -133,7 +133,7 @@ multiple notifications.
 
 ## Email template syntax
 
-Templates use [Handlebars](http://handlebarsjs.com/) syntax.
+The templates use [Handlebars](http://handlebarsjs.com/) syntax.
 
 Example HTML:
 
@@ -228,7 +228,7 @@ description of the email context, see the
 
 ## Change a template
 
-TODO Let's change the email template for new booking requests.
+Let's change the email template for new booking requests.
 
 Open the `booking-new-request/booking-new-request-html.html` file in a
 text editor. Let's change the color of the "Accept or Decline the

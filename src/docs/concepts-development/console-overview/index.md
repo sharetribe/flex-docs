@@ -119,7 +119,7 @@ marketplace as a part of the default user flow. They are essential to
 the operation of Flex and are designed to be sent at the crucial moments
 of the user onboarding flow and are not related to the transaction
 process. The contents and visual style of these emails can be edited
-with HTML directly in this tab of the Build section.
+with HTML directly in this tab of the Build section. TODO UPDATE
 
 **Applications** compiles all applications that have access to the Flex
 APIs through your marketplace. At minimum, this tab includes your

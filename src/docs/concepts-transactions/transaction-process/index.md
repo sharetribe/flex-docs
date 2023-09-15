@@ -165,7 +165,7 @@ To review what notifications are sent as part of the Flex default
 process, visit your [Flex Console](/operator-guides/concepts/#console)
 Build tab. Each included
 [email notification has a template](/references/email-templates/#editing-transaction-emails)
-that can be customized using the Flex CLI.
+that can be customized using the Flex CLI. TODO EXPLAIN EMAIL EDITOR
 
 <transactionprocesscomponentscarousel title="Transaction process components">
 

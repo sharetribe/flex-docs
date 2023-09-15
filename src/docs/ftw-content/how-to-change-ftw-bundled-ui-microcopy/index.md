@@ -51,7 +51,7 @@ all the components are independent, how a component can be used
 anywhere, and how modifications to a single component do not affect
 other components.
 
-## Using the marketplace texts
+## Using marketplace texts
 
 React Intl provides multiple ways to access the marketplace text data,
 but the most commonly used are the `formatMessage` function and the

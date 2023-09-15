@@ -186,6 +186,8 @@ the given `count`.
 
 ### `date`
 
+TODO CHECK HOW INLINE HELPERS WORK WITH CUSTOM HELPERS!
+
 > Params:
 >
 > - time
@@ -232,6 +234,38 @@ Example usage:
 
 ```handlebars
 {{date-day-before d format="d. MMM, YYYY" lang="fi-FI" tz="Europe/Helsinki"}}
+```
+
+Renders a properly localized `time`, one day before the given date,
+based on the `format` and `lang` hash parameters.
+
+The `format` supports
+[Joda-Time formatting](https://www.joda.org/joda-time/key_format.html).
+
+The `lang` supports [IETF BCP 47](https://tools.ietf.org/html/bcp47)
+language tag strings. More info about language tags can be found
+[W3C Internationalization article for language tags](https://www.w3.org/International/articles/language-tags/#region).
+E.g. "en-US" is a valid string.
+
+The `tz` supports
+[Joda-Time timezones](https://www.joda.org/joda-time/timezones.html).
+
+### `date-transform`
+
+> Params:
+>
+> - time
+>
+> Hash:
+>
+> - format
+> - lang: optional, default `en-US`
+> - tz: optional, default "UTC"
+
+Example usage:
+
+```handlebars
+{{date-transform d format="d. MMM, YYYY" lang="fi-FI" tz="Europe/Helsinki"}}
 ```
 
 Renders a properly localized `time`, one day before the given date,
@@ -334,6 +368,11 @@ Example usage:
 
 Encode the given string as application/x-www-form-urlencoded. Should be
 used for query string components.
+
+## Editing email content
+
+For both built-in emails and transaction process emails, you can edit
+content with the email text editor TODO EXPLAIN EDITOR.
 
 ## Editing built-in emails
 
