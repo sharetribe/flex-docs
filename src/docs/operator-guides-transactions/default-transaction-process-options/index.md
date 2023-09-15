@@ -404,24 +404,6 @@ new message.
 
 You can see screenshots of the process below.
 
-<extrainfo title="Step 1: Buyer starts inquiry">
-
-![Change environments](./29-inquiry-one.png)
-
-</extrainfo>
-
-<extrainfo title="Steps 2-3: Buyer completes inquiry">
-
-![Change environments](./30-inquiry-two.png)
-
-</extrainfo>
-
-<extrainfo title="Step 4-5: Order details page, buyer view">
-
-![Change environments](./31-inquiry-three.png)
-
-</extrainfo>
-
 ### 2. Reacting to inquiries as a seller
 
 Sellers are notified by email when a new inquiry is created on their
