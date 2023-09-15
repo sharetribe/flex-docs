@@ -306,6 +306,25 @@ containers/PrivacyPolicyPage/FallbackPage.js:
             └── FallbackPage.js
 ```
 
+## Maintenance mode
+
+If the marketplace is missing some mandatory configurations, you will
+see a fallback page with the title "Maintenance mode".
+
+![Maintenance mode page](./maintenance-mode.png)
+
+To fix the situation, make sure that you have added the following
+mandatory configurations in your Console:
+
+- Branding
+- Listing type
+- Listing fields
+- Minimum transaction size
+
+After you have made sure you have all these configurations added in your
+Console, refresh the browser. Your marketplace should now show up with
+the configurations you added.
+
 ## How to take Pages into use if you are using a legacy template
 
 All Sharetribe Web Template versions support Pages. If you want to add
