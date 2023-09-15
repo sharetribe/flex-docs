@@ -30,15 +30,16 @@ section._
 Within the landing page edit page, you will encounter several sections.
 You can add and remove sections according to your unique needs. In this
 tutorial, we'll only make a few quick modifications to the existing
-sections to build a landing page for our bike marketplace with a
-minimum amount of work.
+sections to build a landing page for our bike marketplace with a minimum
+amount of work.
 
 ### 1. “hero” section
 
 The first section of a landing page is typically called "Hero". It often
 includes your main message, with the most important "call-to-action" (an
 invite for a user to take a specific action by clicking a button, etc).
-We'll keep this section, but it should be talking specifically about bikes.
+We'll keep this section, but it should be talking specifically about
+bikes.
 
 There are several settings we can keep intact.
 
@@ -65,20 +66,21 @@ We do want to change the background image though.
 Then, let's change the text content. The hero section already has a
 content block called "hero-block". Make the following changes:
 
-- Replace the Image file for the file below. Leave the Aspect ratio 
-  and Image alt text as they are. [Download the image here](./flying_biker.png)
+- Replace the Image file for the file below. Leave the Aspect ratio and
+  Image alt text as they are.
+  [Download the image here](./flying_biker.png)
 - Replace the Block title content for: “Welcome to Biketribe” and select
   Page title (H1) as the Block title size.
-- Replace the Block text content for: write “We want to bring everyone 
-  access to any kind of bikes, while reducing the need to own a bike. 
+- Replace the Block text content for: write “We want to bring everyone
+  access to any kind of bikes, while reducing the need to own a bike.
   That's better for the people and for the planet.”
-- Change the Internal link text to “Browse bikes in Helsinki.” Leave
-  all other call-to-action settings intact.
+- Change the Internal link text to “Browse bikes in Helsinki.” Leave all
+  other call-to-action settings intact.
 
 Save changes and check the current view on the “view page” tab you
 opened earlier.
 
-![Hero section image](./hero_example.png)
+![Hero section image](./heroExample.png)
 
 ### 2. “locations” section
 
@@ -90,7 +92,8 @@ locations for this tutorial.
 We'll only make a few minor changes to the text content:
 
 - Change the Section Title to: “Find a bike anywhere”.
-- Change the section description to “No matter where you are, we have the right bike for you.”
+- Change the section description to “No matter where you are, we have
+  the right bike for you.”
 
 There's no need to change the Section call to action or the Section
 appearance
