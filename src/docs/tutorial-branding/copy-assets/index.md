@@ -35,28 +35,28 @@ and other features.
 _TODO if necessary, the Test blank assets are available locally in
 /Documents/Codebase/Notes/generics-tutorial-assets -S_
 
-- Go to your Test environment, which now has your Biketribe related
-  no-code changes, and click "Copy changes to..."
+Go to your Test environment, which now has your Biketribe related
+no-code changes, and click "Copy changes to..."
 
-TODO SCREENSHOT
+![Copy changes selection](./copy_changes_to.png)
 
 You will see a modal showing all the changes you have made that are
 currently not in Dev. Since we have not copied anything to Dev, the
 modal shows all of our no-code changes.
 
-TODO SCREENSHOT
+![Copy changes modal](./copy_changes_modal_blank.png)
 
-Select all the changes, and then click button. Now, you can go to your
-dev environment, and you will see that the content changes have been
-copied over.
+Select all the changes, and then click the "Copy to Dev" button. Now,
+you can go to your dev environment, and you will see that the content
+changes have been copied over.
 
-TODO SCREENSHOT
+![Assets in dev environment](./assets_in_dev.png)
 
 When you now go to the browser that is running your template in
 localhost:3000, you will also see that the branding corresponds to your
 Biketribe marketplace.
 
-TODO SCREENSHOT
+![Localhost with Biketribe theme](./dev_with_biketribe.png)
 
 You can now continue to develop your marketplace with the same
 configurations you set up in Test!
