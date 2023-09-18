@@ -1,7 +1,7 @@
 ---
 title: What are listing types
 slug: what-are-listing-types
-updated: 2023-05-19
+updated: 2023-09-14
 category: operator-guides-listings
 ingress:
   Determining the right Listing type to use is fundamental for achieving
@@ -70,6 +70,11 @@ transaction on the listing page.
   purchase those listings. Perfect for product marketplaces (and in some
   other types of marketplaces).
   [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#buying-and-selling-products).
+- Free messaging: allows a transaction without payments between buyers
+  and sellers. Sellers can add a price or not to the listing. Useful for
+  marketplaces where payments are not necessary or should happen
+  off-platform.
+  [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#free-messaging)
 
 Finally, transaction settings determine the transaction process used in
 your marketplace. The transaction process maps out how a transaction

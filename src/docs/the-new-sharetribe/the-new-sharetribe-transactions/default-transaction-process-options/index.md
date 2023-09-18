@@ -1,7 +1,7 @@
 ---
 title: Default transaction process options
 slug: default-transaction-process-options
-updated: 2023-06-14
+updated: 2023-09-14
 category: the-new-sharetribe-transactions
 ingress:
   Illustrated guide of the options buyers and sellers have with the
@@ -9,23 +9,26 @@ ingress:
 published: true
 ---
 
-There are two default processes available with Sharetribe: one for
-hourly or daily bookings with an availability calendar, and another for
-buying and selling products. All these processes are explained below in
-detail, along with screenshots. Note that the processes are very
-similar, so it is enough for you to read the section(s) relevant to your
-own marketplace.
+A transaction process charts the available actions a provider, customer,
+and operator can take during a transaction. There are three different
+transaction processes available by default: Calendar booking; Buying and
+selling products; and Free messaging. You can learn more about how to
+select a transaction process while creating a Listing type
+[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/what-are-listing-types/)
 
-## Calendar Booking Process with Daily and Hourly Bookings
+The rest of this article shows how the different transaction processes
+look and work for customers, providers, and operators in your
+marketplace and Console.
+
+## Calendar booking
 
 ### 1. Booking a listing as a buyer
 
-In Sharetribe, users can book services or items that are available for
-specific time slots using the calendar booking function. This process
-includes the functionality for booking a service or rental that can be
-booked for one or multiple days or hours, such as a car rental or a trip
-with a tour guide. In the example below, we assume that the users are
-already logged in.
+This process should be used when a transaction involves a customer
+booking a time from the provider's availility calendar. Default booking
+units are hourly, daily, or nightly. To learn more about how
+availability management works with different booking units, please see
+[this article](https://www.sharetribe.com/docs/the-new-sharetribe/default-availability-management-options/).
 
 To make a booking, the user will (1) browse the listings and click on
 the desired item or service. Then, they will (2) select their preferred
@@ -160,7 +163,7 @@ you are taking through a separate window (14). Whenever you move the
 transaction forward, you can see confirmation that the operation was
 successful from the timeline and activity logs (15).
 
-You can see illustrations of the process below.
+You can see screenshots of the process below.
 
 <extrainfo title="Step 12 (optional): available operator actions in the transaction process">
 
@@ -198,23 +201,22 @@ You can see illustrations of the process below.
 
 </extrainfo>
 
-## Buying and Selling Products Process
+## Buying and selling products
 
 ### 1. Purchasing a product as a buyer
 
-Sharetribe marketplaces can be used as product marketplaces as well. It
-is possible to make purchases of different types and quantities, such as
-an order of one or more t-shirts, or digital files. In the example
-below, which is a bike selling marketplace, we assume that the users are
-already logged in.
+This process is suitable for product marketplaces. It is possible to
+make purchases of different types and quantities, such as an order of
+one or more t-shirts, or digital files. In the example below, which is a
+bike selling marketplace, we assume that the users are already logged
+in.
 
 In cases where there's only one item in stock, a buyer can purchase it
 instantly by clicking the "Buy Now" button (1). If the item only has one
 delivery method, that one is chosen by default. Otherwise, users can use
 a drop-down selector to choose between pickup and shipping (2). When the
 buyer has chosen their delivery method and clicked on the buy now
-button, the single item is then added to their shopping cart, and the
-buyer can proceed to checkout.
+button, they proceed to checkout.
 
 The checkout process looks different depending on the delivery method.
 If shipping was chosen, the users will see a screen where they can
@@ -227,8 +229,8 @@ different. Here, the user will see the pickup address (5), payment
 method selection (6), the option to add additional information as a
 message (7), and the price breakdown (8). Here, we use the pickup
 delivery method so we click on “Confirm and pay” button (9). After this,
-we see the transaction page where further messages can be exchanged (10)
-and we get the option to mark the bike as received (11).
+we see the order details page where further messages can be exchanged
+(10) and we get the option to mark the bike as received (11).
 
 The pricing of a single item stock is determined by the seller and
 displayed on the listing page. A shipping fee is added to the price if
@@ -277,11 +279,11 @@ Within the inbox, sellers have the option of seeing all the purchases in
 the seller inbox. They can access the newest purchase by clicking on it
 (1).
 
-This takes them to the same kind of transaction page as the buyer. Here
-they can also see the price breakdown including the marketplace fee (2)
-as well as shipping details, if applicable. The seller can also send a
-message (3) to the buyer and mark the bike as delivered (4). After
-selling the listing, the seller sees a confirmation page (5).
+This takes them to the seller's order details page. Here they can also
+see the price breakdown including the marketplace fee (2) as well as
+shipping details, if applicable. The seller can also send a message (3)
+to the buyer and mark the bike as delivered (4). After selling the
+listing, the seller sees a confirmation page (5).
 
 On the buyer’s side, they will be able to see that the purchase has been
 accepted, continue sending messages if needed and mark the bike as
@@ -335,7 +337,7 @@ funds are then held by Stripe until the purchase period has passed.
 After 2 days have passed from the end of the booking, the funds are
 released to the seller, who will receive the payment within 1-2 weeks.
 
-## Operator actions
+### Operator actions
 
 Sharetribe allows you to act on behalf of your users if needed. In the
 default product purchase transaction process, there are three options
@@ -352,7 +354,7 @@ taking through a separate window (10). Whenever you move the transaction
 forward, you can see confirmation that the operation was successful from
 the timeline and activity logs (11).
 
-You can see illustrations of the process below.
+You can see screenshots of the process below.
 
 <extrainfo title="Step 8 (optional): available operator actions in the transaction process">
 
@@ -377,3 +379,71 @@ You can see illustrations of the process below.
 ![Change environments](./28-operator-actions-cancel-done.png)
 
 </extrainfo>
+
+## Free messaging
+
+### 1. Inquiring about a listing as a buyer
+
+Free messaging should be used when no payments happens on the platform
+during a transaction. The process is simple: buyers send an inquiry to
+the provider to start a transaction. Providers can respond to the
+inquiry on the order details page with a message. The buyer and seller
+can message as much or as little as needed through your marketplace.
+
+Buyers initiate transactions from the listing page. Pressing the call to
+action button takes them to a detail page with the listing and message
+input field (1). The message field cannot be left blank, buyers must
+write something there (2). The inquiry is finalized and sent to the
+seller by pressing the call to action again (3). After sending the
+inquiry, they are transferred to the order details page where the
+inquiry message is shown alongside the listing and transaction timeline
+(4). Buyers have the option to write more message (5).
+
+The initial inquiry message triggers a notification to the seller that
+they received a new inquiry on your marketplace. Subsequent messages
+from the buyer trigger a notification to the seller that they received a
+new message.
+
+You can see screenshots of the process below.
+
+<extrainfo title="Step 1: Buyer starts inquiry">
+
+![Change environments](./29-inquiry-one.png)
+
+</extrainfo>
+
+<extrainfo title="Steps 2-3: Buyer completes inquiry">
+
+![Change environments](./30-inquiry-two.png)
+
+</extrainfo>
+
+<extrainfo title="Step 4-5: Order details page, buyer view">
+
+![Change environments](./31-inquiry-three.png)
+
+</extrainfo>
+
+### 2. Reacting to inquiries as a seller
+
+Sellers are notified by email when a new inquiry is created on their
+listing. They can find the the inquiry in their Inbox. A seller's order
+details page includes information about the inquired listing, the
+inquiry message and any subsequent messages from the customer, and a
+timeline of the transaction (6). Sellers can write back to the message
+(7).
+
+Each new message triggers an email notification to the buyer that they
+received a new message in your marketplace.
+
+<extrainfo title="Steps 6-7: Order details page, seller view">
+
+![Change environments](./32-inquiry-four.png)
+
+</extrainfo>
+
+### Operator actions
+
+There are no actions for an operator to take during this transaction.
+Operators can view the transaction and messages exchanged during it in
+Manage->Transactions in Console.
