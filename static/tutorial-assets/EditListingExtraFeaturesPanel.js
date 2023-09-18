@@ -11,17 +11,17 @@ import { types as sdkTypes } from '../../../../util/sdkLoader';
 import { H3, ListingLink } from '../../../../components';
 
 // Import modules from this directory
-import EditListingAccessoriesForm from './EditListingAccessoriesForm';
-import css from './EditListingAccessoriesPanel.module.css';
+import EditListingExtraFeaturesForm from './EditListingExtraFeaturesForm';
+import css from './EditListingExtraFeaturesPanel.module.css';
 
 const getInitialValues = params => {
   const { listing } = params;
-  const { accessories } = listing?.attributes.publicData || {};
+  const { extraFeatures } = listing?.attributes.publicData || {};
 
-  return { accessories };
+  return { extraFeatures };
 };
 
-const EditListingAccessoriesPanel = props => {
+const EditListingExtraFeaturesPanel = props => {
   const {
     className,
     rootClassName,
@@ -45,26 +45,26 @@ const EditListingAccessoriesPanel = props => {
       <H3 as="h1">
         {isPublished ? (
           <FormattedMessage
-            id="EditListingAccessoriesPanel.title"
+            id="EditListingExtraFeaturesPanel.title"
             values={{ listingTitle: <ListingLink listing={listing} />, lineBreak: <br /> }}
           />
         ) : (
           <FormattedMessage
-            id="EditListingAccessoriesPanel.createListingTitle"
+            id="EditListingExtraFeaturesPanel.createListingTitle"
             values={{ lineBreak: <br /> }}
           />
         )}
       </H3>
-      <EditListingAccessoriesForm
+      <EditListingExtraFeaturesForm
         className={css.form}
         initialValues={initialValues}
         onSubmit={values => {
-          const { accessories = '' } = values;
+          const { extraFeatures = '' } = values;
 
           // New values for listing attributes
           const updateValues = {
             publicData: {
-              accessories
+              extraFeatures
             }
           };
           onSubmit(updateValues);
@@ -83,13 +83,13 @@ const EditListingAccessoriesPanel = props => {
 
 const { func, object, string, bool } = PropTypes;
 
-EditListingAccessoriesPanel.defaultProps = {
+EditListingExtraFeaturesPanel.defaultProps = {
   className: null,
   rootClassName: null,
   listing: null,
 };
 
-EditListingAccessoriesPanel.propTypes = {
+EditListingExtraFeaturesPanel.propTypes = {
   className: string,
   rootClassName: string,
 
@@ -105,4 +105,4 @@ EditListingAccessoriesPanel.propTypes = {
   errors: object.isRequired,
 };
 
-export default EditListingAccessoriesPanel;
+export default EditListingExtraFeaturesPanel;

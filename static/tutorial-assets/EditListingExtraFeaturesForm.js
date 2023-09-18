@@ -13,10 +13,10 @@ import { required } from '../../../../util/validators';
 import { Button, Form, FieldTextInput } from '../../../../components';
 
 // Import modules from this directory
-import css from './EditListingAccessoriesForm.module.css';
+import css from './EditListingExtraFeaturesForm.module.css';
 
 
-export const EditListingAccessoriesFormComponent = props => (
+export const EditListingExtraFeaturesFormComponent = props => (
   <FinalForm
     {...props}
     render={formRenderProps => {
@@ -46,22 +46,22 @@ export const EditListingAccessoriesFormComponent = props => (
         <Form onSubmit={handleSubmit} className={classes}>
           {updateListingError ? (
             <p className={css.error}>
-              <FormattedMessage id="EditListingAccessoriesForm.updateFailed" />
+              <FormattedMessage id="EditListingExtraFeaturesForm.updateFailed" />
             </p>
           ) : null}
           {showListingsError ? (
             <p className={css.error}>
-              <FormattedMessage id="EditListingAccessoriesForm.showListingFailed" />
+              <FormattedMessage id="EditListingExtraFeaturesForm.showListingFailed" />
             </p>
           ) : null}
           <FieldTextInput
-            id={`${formId}accessories`}
-            name="accessories"
+            id={`${formId}extraFeatures`}
+            name="extraFeatures"
             className={css.input}
             autoFocus={autoFocus}
             type="textarea"
-            label="Accessories"
-            placeholder={intl.formatMessage({ id: 'EditListingAccessoriesForm.AccessoriesInputPlaceholder' })}
+            label="Extra Features"
+            placeholder={intl.formatMessage({ id: 'EditListingExtraFeaturesForm.ExtraFeaturesInputPlaceholder' })}
             validate={required(
               intl.formatMessage({
                 id: 'EditListingDetailsForm.descriptionRequired',
@@ -84,12 +84,12 @@ export const EditListingAccessoriesFormComponent = props => (
   />
 );
 
-EditListingAccessoriesFormComponent.defaultProps = {
+EditListingExtraFeaturesFormComponent.defaultProps = {
   fetchErrors: null,
-  formId: 'EditListingAccessoriesForm',
+  formId: 'EditListingExtraFeaturesForm',
 };
 
-EditListingAccessoriesFormComponent.propTypes = {
+EditListingExtraFeaturesFormComponent.propTypes = {
   formId: string,
   intl: intlShape.isRequired,
   onSubmit: func.isRequired,
@@ -104,4 +104,4 @@ EditListingAccessoriesFormComponent.propTypes = {
   }),
 };
 
-export default compose(injectIntl)(EditListingAccessoriesFormComponent);
+export default compose(injectIntl)(EditListingExtraFeaturesFormComponent);

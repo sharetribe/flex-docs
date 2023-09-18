@@ -21,7 +21,7 @@ to explain the accessories of their rental bike in more detail.
 
 In this tutorial, you will
 
-- Add _EditListingAccessoriesPanel_ and _EditListingAccessoriesForm_
+- Add _EditListingExtraFeaturesPanel_ and _EditListingExtraFeaturesForm_
   components
 - Use the new panel in _EditListingWizard_
 - Show the listing’s accessories on the listing page with the
@@ -37,7 +37,7 @@ This tutorial uses the following marketplace configurations:
 
 </info>
 
-## Add EditListingAccessoriesPanel and EditListingAccessoriesForm
+## Add EditListingExtraFeaturesPanel and EditListingExtraFeaturesForm
 
 The different listing wizard panels can be found in the EditListingPage
 folder under EditListingWizard.
@@ -61,12 +61,12 @@ Each panel has the same structure:
 
 In this tutorial, we will use the following files.
 
-- [EditListingAccessoriesPanel.js](/tutorial-assets/EditListingAccessoriesPanel.js)
-- [EditListingAccessoriesPanel.module.css](/tutorial-assets/EditListingAccessoriesPanel.module.css)
-- [EditListingAccessoriesForm.js](/tutorial-assets/EditListingAccessoriesForm.js)
-- [EditListingAccessoriesForm.module.css](/tutorial-assets/EditListingAccessoriesForm.module.css)
+- [EditListingExtraFeaturesPanel.js](/tutorial-assets/EditListingExtraFeaturesPanel.js)
+- [EditListingExtraFeaturesPanel.module.css](/tutorial-assets/EditListingExtraFeaturesPanel.module.css)
+- [EditListingExtraFeaturesForm.js](/tutorial-assets/EditListingExtraFeaturesForm.js)
+- [EditListingExtraFeaturesForm.module.css](/tutorial-assets/EditListingExtraFeaturesForm.module.css)
 
-Create a new folder titled _EditListingAccessoriesPanel_ in the
+Create a new folder titled _EditListingExtraFeaturesPanel_ in the
 _EditListingWizard_ folder. Add the above files into the new folder.
 
 ```shell
@@ -74,25 +74,25 @@ _EditListingWizard_ folder. Add the above files into the new folder.
     └── containers
         └── EditListingPage
             └── EditListingWizard
-                └── EditListingAccessoriesPanel
-                    ├── EditListingAccessoriesPanel.js
+                └── EditListingExtraFeaturesPanel
+                    ├── EditListingExtraFeaturesPanel.js
                     ├── …
 ```
 
 <extrainfo title="Add .example.js and .test.js files">
 
-If you want to add _EditListingAccessoriesForm.example.js_ and
-_EditListingAccessoriesForm.test.js_ files as well, you can download
+If you want to add _EditListingExtraFeaturesForm.example.js_ and
+_EditListingExtraFeaturesForm.test.js_ files as well, you can download
 them here
 
-- [EditListingAccessoriesForm.test.js](/tutorial-assets/EditListingAccessoriesForm.test.js)
-- [EditListingAccessoriesForm.example.js](/tutorial-assets/EditListingAccessoriesForm.example.js)
+- [EditListingExtraFeaturesForm.test.js](/tutorial-assets/EditListingExtraFeaturesForm.test.js)
+- [EditListingExtraFeaturesForm.example.js](/tutorial-assets/EditListingExtraFeaturesForm.example.js)
 
 </extrainfo>
 
-<extrainfo title="EditListingAccessoriesPanel.js explained">
+<extrainfo title="EditListingExtraFeaturesPanel.js explained">
 
-This section will go through _EditListingAccessoriesPanel_ in more
+This section will go through _EditListingExtraFeaturesPanel_ in more
 detail.
 
 First, we import the necessary elements used in the file. In this
@@ -116,7 +116,7 @@ to set our props into constants for ease of use. We also create a
 handful of other constants to then pass to the returned element.
 
 ```js
-const EditListingAccessoriesPanel = props => {
+const EditListingExtraFeaturesPanel = props => {
   const {
     className,
     rootClassName,
@@ -138,7 +138,7 @@ const EditListingAccessoriesPanel = props => {
 
 The second half of the component is the returned element. First, we show
 a title that depends on whether the listing has been published or not.
-Then, we show the actual EditListingAccessoriesForm.
+Then, we show the actual EditListingExtraFeaturesForm.
 
 In the form _onSubmit_ function, we again use destructuring assignment
 for retrieving the value of _accessories_ from the incoming values, and
@@ -151,17 +151,17 @@ the _onSubmit_ function received as a prop.
       <H3 as="h1">
         {isPublished ? (
           <FormattedMessage
-            id="EditListingAccessoriesPanel.title"
+            id="EditListingExtraFeaturesPanel.title"
             values={{ listingTitle: <ListingLink listing={listing} />, lineBreak: <br /> }}
           />
         ) : (
           <FormattedMessage
-            id="EditListingAccessoriesPanel.createListingTitle"
+            id="EditListingExtraFeaturesPanel.createListingTitle"
             values={{ lineBreak: <br /> }}
           />
         )}
       </H3>
-      <EditListingAccessoriesForm
+      <EditListingExtraFeaturesForm
         className={css.form}
         initialValues={initialValues}
         onSubmit={values => {
@@ -193,9 +193,10 @@ finally exports the component.
 
 </extrainfo>
 
-<extrainfo title="EditListingAccessoriesForm.js explained">
+<extrainfo title="EditListingExtraFeaturesForm.js explained">
 
-This section will go through EditListingAccessoriesForm in more detail.
+This section will go through EditListingExtraFeaturesForm in more
+detail.
 
 First, we import the necessary elements used in the file. In this
 section, all rows start with `import`.
@@ -205,11 +206,11 @@ use the
 [Final Form library](https://final-form.org/docs/final-form/getting-started)
 for form state management. This means that on the highest level, we
 directly return a _FinalForm_ component from our
-EditListingAccessoriesFormComponent. We then use the FinalForm
+EditListingExtraFeaturesFormComponent. We then use the FinalForm
 component's _render_ prop to customise our Accessories form behavior.
 
 ```js
-export const EditListingAccessoriesFormComponent = props => (
+export const EditListingExtraFeaturesFormComponent = props => (
   <FinalForm
     {...props}
     render={formRenderProps => {
@@ -237,8 +238,8 @@ export const EditListingAccessoriesFormComponent = props => (
 ```
 
 Above, we have defined the necessary constants to use in the form. It is
-good to note that the EditListingAccessoriesForm component receives an
-_onSubmit_ prop, defined in EditListingAccessoriesPanel, that gets
+good to note that the EditListingExtraFeaturesForm component receives an
+_onSubmit_ prop, defined in EditListingExtraFeaturesPanel, that gets
 passed directly to the FinalForm component. The FinalForm component
 wraps that prop as the _handleSubmit_ form render prop, which we then
 pass to the actual Form as _onSubmit_.
@@ -251,12 +252,12 @@ addition, we show any errors from props.
         <Form onSubmit={handleSubmit} className={classes}>
           {updateListingError ? (
             <p className={css.error}>
-              <FormattedMessage id="EditListingAccessoriesForm.updateFailed" />
+              <FormattedMessage id="EditListingExtraFeaturesForm.updateFailed" />
             </p>
           ) : null}
           {showListingsError ? (
             <p className={css.error}>
-              <FormattedMessage id="EditListingAccessoriesForm.showListingFailed" />
+              <FormattedMessage id="EditListingExtraFeaturesForm.showListingFailed" />
             </p>
           ) : null}
           <FieldTextInput
@@ -266,7 +267,7 @@ addition, we show any errors from props.
             autoFocus={autoFocus}
             type="textarea"
             label="Accessories"
-            placeholder={intl.formatMessage({ id: 'EditListingAccessoriesForm.accessoriesInputPlaceholder' })}
+            placeholder={intl.formatMessage({ id: 'EditListingExtraFeaturesForm.accessoriesInputPlaceholder' })}
             validate={required(
               intl.formatMessage({
                 id: 'EditListingDetailsForm.descriptionRequired',
@@ -299,7 +300,9 @@ we need to compose
 when exporting the component.
 
 ```js
-export default compose(injectIntl)(EditListingAccessoriesFormComponent);
+export default compose(injectIntl)(
+  EditListingExtraFeaturesFormComponent
+);
 ```
 
 </extrainfo>
@@ -315,15 +318,15 @@ Listing Wizard. The wizard has a layered structure:
   _EditListingWizardTab_ component and an array of supported tabs, as
   well as navigation and the Stripe onboarding parts of the wizard
 
-So to use our new _EditListingAccessoriesPanel_ component, we need to
+So to use our new _EditListingExtraFeaturesPanel_ component, we need to
 
 - import it in the _EditListingWizardTab_ component
 - render it in the correct context, and
 - add `ACCESSORIES` to the list of supported tabs
 
-### Add EditListingAccessoriesPanel to EditListingWizardTab
+### Add EditListingExtraFeaturesPanel to EditListingWizardTab
 
-First, import the EditListingAccessoriesPanel component in
+First, import the EditListingExtraFeaturesPanel component in
 EditListingWizardTab.
 
 ```shell
@@ -338,7 +341,7 @@ EditListingWizardTab.
 ```diff
   import EditListingPricingPanel from './EditListingPricingPanel/EditListingPricingPanel';
   import EditListingPricingAndStockPanel from './EditListingPricingAndStockPanel EditListingPricingAndStockPanel';
-+ import EditListingAccessoriesPanel from './EditListingAccessoriesPanel/EditListingAccessoriesPanel';
++ import EditListingExtraFeaturesPanel from './EditListingExtraFeaturesPanel/EditListingExtraFeaturesPanel';
 
 ```
 
@@ -389,7 +392,7 @@ return. Add the following code block to the switch statement, before the
     }
     case ACCESSORIES: {
       return (
-        <EditListingAccessoriesPanel
+        <EditListingExtraFeaturesPanel
           {...panelProps(ACCESSORIES)}
         />
       );
@@ -399,7 +402,7 @@ return. Add the following code block to the switch statement, before the
   }
 ```
 
-### Show EditListingAccessoriesPanel in EditListingWizard
+### Show EditListingExtraFeaturesPanel in EditListingWizard
 
 Almost there! We still need to add the ACCESSORIES tab handling to
 EditListingWizard.
@@ -463,7 +466,7 @@ else if (tab === ACCESSORIES) {
 The `tabCompleted` function checks whether a specific wizard tab is
 completed. The way it checks this is by verifying whether the listing
 has values in the necessary attributes. Since the
-EditListingAccessoriesPanel saves the accessories in the listing’s
+EditListingExtraFeaturesPanel saves the accessories in the listing’s
 publicData under the `accessories` attribute, we will add a case to the
 switch statement that checks whether `publicData.accessories` has a
 value.
@@ -491,12 +494,12 @@ Build > Content > Microcopy editor or _src/translations/en.json_ file:
 
 ```json
   "EditListingWizard.tabLabelAccessories": "Accessories",
-  "EditListingAccessoriesPanel.createListingTitle": "Accessories",
-  "EditListingAccessoriesPanel.title": "Edit the accessories of {listingTitle}",
-  "EditListingAccessoriesForm.accessoriesInputPlaceholder": "Explain your bike accessories...",
-  "EditListingAccessoriesForm.accessoriesRequired": "Adding accessories is required",
-  "EditListingAccessoriesForm.updateFailed": "Updating listing failed",
-  "EditListingAccessoriesForm.showListingFailed": "Fetching listing failed",
+  "EditListingExtraFeaturesPanel.createListingTitle": "Accessories",
+  "EditListingExtraFeaturesPanel.title": "Edit the accessories of {listingTitle}",
+  "EditListingExtraFeaturesForm.accessoriesInputPlaceholder": "Explain your bike accessories...",
+  "EditListingExtraFeaturesForm.accessoriesRequired": "Adding accessories is required",
+  "EditListingExtraFeaturesForm.updateFailed": "Updating listing failed",
+  "EditListingExtraFeaturesForm.showListingFailed": "Fetching listing failed",
   "EditListingWizard.default-booking.new.savePricing": "Next: Accessories",
   "EditListingWizard.default-booking.new.saveAccessories": "Next: Availability",
   "EditListingWizard.edit.saveAccessories": "Save changes",
