@@ -74,7 +74,7 @@ transaction on the listing page.
   and sellers. Sellers can add a price or not to the listing. Useful for
   marketplaces where payments are not necessary or should happen
   off-platform.
-  [Read more](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-transaction-settings/#free-messaging)
+  [Read more](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-transaction-settings/#free-messaging).
 
 Finally, transaction settings determine the transaction process used in
 your marketplace. The transaction process maps out how a transaction
