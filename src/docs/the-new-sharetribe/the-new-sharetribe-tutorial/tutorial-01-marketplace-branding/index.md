@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 1 – Adjust marketplace branding
 slug: tutorial-marketplace-branding
-updated: 2023-09-08
+updated: 2023-09-20
 category: the-new-sharetribe-tutorial
 ingress:
   We will start the tutorial by adding your logo and other basic
