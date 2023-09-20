@@ -20,7 +20,7 @@ tutorial, we will only work on your Landing page.
 
 All your content pages can be modified under **Content → Pages**. Once
 in Pages, Go to your landing page card and click on **“Edit content.”**
-![Edit content image](./editcontent.png)
+![Edit content image](/tutorial-assets/tns/editcontent.png)
 
 _Optional Tip: Before editing the content, click **“View page,”** which
 will open the landing page on a separate tab. You can use this tab’s
@@ -53,7 +53,7 @@ The settings should look like this:
 
 <extrainfo title="Hero section configuration">
 
-![Hero section](./herosection.png)
+![Hero section](/tutorial-assets/tns/herosection.png)
 
 </extrainfo>
 
@@ -61,14 +61,14 @@ We do want to change the background image though.
 
 - In the Section appearance section choose “Custom” And add this image:
 
-![custom settings image](./biketribe-brandImage-1500-darken.png)
+![custom settings image](/tutorial-assets/tns/biketribe-brandImage-1500-darken.png)
 
 Then, let's change the text content. The hero section already has a
 content block called "hero-block". Make the following changes:
 
 - Replace the Image file for the file below. Leave the Aspect ratio and
   Image alt text as they are.
-  [Download the image here](./flying_biker.png)
+  [Download the image here](/tutorial-assets/tns/flying_biker.png)
 - Replace the Block title content for: “Welcome to Biketribe” and select
   Page title (H1) as the Block title size.
 - Replace the Block text content for: write “We want to bring everyone
@@ -80,7 +80,7 @@ content block called "hero-block". Make the following changes:
 Save changes and check the current view on the “view page” tab you
 opened earlier.
 
-![Hero section image](./heroExample.png)
+![Hero section image](/tutorial-assets/tns/heroExample.png)
 
 ### 2. “locations” section
 
@@ -141,7 +141,7 @@ Add the following content:
   find and rent a bike.
 - Social media image: Add the following image
 
-![Book saunas everywhere](./biketribe-facebook-sharing-1200x630.png)
+![Book saunas everywhere](/tutorial-assets/tns/biketribe-facebook-sharing-1200x630.png)
 
 Save changes.
 
