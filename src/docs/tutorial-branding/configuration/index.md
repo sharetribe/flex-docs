@@ -124,7 +124,7 @@ other variables:
 ## Summary
 
 In this tutorial, we changed the marketplace currency. Currency needs to
-be edited through the configDefault.js file by changing the currency
+be edited through the _configDefault.js_ file by changing the currency
 code to the desired value.
 
 ## Further reading

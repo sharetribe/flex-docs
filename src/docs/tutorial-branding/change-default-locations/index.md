@@ -15,8 +15,6 @@ When you make a location search, you notice that the template suggests
 the user's current location by default. In addition, you can configure
 default searches for certain key locations in your marketplace.
 
-TODO UPDATE IMAGE
-
 ![Default search locations component rendered](./default-search-locations.png)
 
 Default locations improve UX, since users don't need to type anything
@@ -27,9 +25,9 @@ specific locations. Let's add a suggestion: _"Auckland, New Zealand"_.
 
 ## Change configDefaultLocationSearches.js
 
-The component, that actually makes geocoding calls to the map providers
-geocoding API, is called _LocationAutocompleteInput_. However, the
-default locations are actually set in a file called
+The component that makes geocoding calls to the map providers geocoding
+API is called _LocationAutocompleteInput_. However, the default
+locations are actually set in a file called
 _configDefaultLocationSearches.js_:
 
 ```shell
@@ -50,7 +48,8 @@ const defaultLocations = [
   //     bounds: new LatLngBounds(new LatLng(60.29783, 25.25448), new LatLng(59.92248, 24.78287)),
   //   },
   // },
-  // the rest of the default locations.
+  // ...
+  // ** the rest of the default locations **
 ];
 
 export default defaultLocations;
