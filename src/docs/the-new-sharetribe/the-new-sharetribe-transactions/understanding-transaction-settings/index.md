@@ -43,7 +43,7 @@ transaction setting, defines the availability management system.
   specific date. Booking intervals are every hour.
 
 Learn how calendar booking works for customers and providers
-[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-options/#calendar-booking)
+[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-process-options/#calendar-booking)
 
 ### Buying and selling products
 
@@ -66,7 +66,7 @@ to allow in the marketplace.
   at any point. Works well for commercial product-selling marketplaces.
 
 Learn how buying and selling products works for customers and providers
-[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-options/#buying-and-selling-products)
+[in this article.](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-process-options/#buying-and-selling-products)
 
 ### Free messaging
 
@@ -83,4 +83,4 @@ and focus on providing value to buyers and sellers in the discovery
 phase.
 
 Learn how free messaging works for customers and providers
-[in this article](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-options/#free-messaging).
+[in this article](https://www.sharetribe.com/docs/the-new-sharetribe/default-transaction-process-options/#free-messaging).
