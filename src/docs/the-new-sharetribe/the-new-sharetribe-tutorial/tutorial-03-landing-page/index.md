@@ -61,7 +61,11 @@ We do want to change the background image though.
 
 - In the Section appearance section choose “Custom” And add this image:
 
-![custom settings image](/tutorial-assets/tns/biketribe-brandImage-1500-darken.png)
+<extrainfo title="Custom settings image">
+
+![Custom settings image](/tutorial-assets/tns/biketribe-brandImage-1500-darken.png)
+
+</extrainfo>
 
 Then, let's change the text content. The hero section already has a
 content block called "hero-block". Make the following changes:
@@ -82,27 +86,7 @@ opened earlier.
 
 ![Hero section image](/tutorial-assets/tns/heroExample.png)
 
-### 2. “locations” section
-
-The next section, locations, can be used to link directly to locations
-where you have or expect to have, the most listings. By default, the
-section already contains some locations. We will use the pre-set
-locations for this tutorial.
-
-We'll only make a few minor changes to the text content:
-
-- Change the Section Title to: “Find a bike anywhere”.
-- Change the section description to “No matter where you are, we have
-  the right bike for you.”
-
-There's no need to change the Section call to action or the Section
-appearance
-
-Within the Content blocks, you will see there are 6 cities pre-set.
-Within each city’s Content Block open the Block and alter the Block
-text, and only the Block text. Insert the word “bikes”.
-
-### 3. “how-it-works” section
+### 2. “how-it-works” section
 
 Open the “how-it-works-for-customers” section. Change the section ID to
 “how-it-works”. Replace or insert the word “Bike" in every appropriate
@@ -118,6 +102,26 @@ In Block 3 of the section, **“how-it-works-step-3”**, Change the Block
 title for **“3. Start enjoying!”** and the Block text for: **“Use
 Biketribe’s messaging system to iron out the details of the rental, and
 prepare for an exciting experience!”**
+
+### 3. "featured-items" section
+
+The next section, featured items, can be used to link directly to items,
+or in this case, locations where you have or expect to have the most
+listings. By default, the section already contains some locations. We
+will use the pre-set locations for this tutorial.
+
+We'll only make a few minor changes to the text content:
+
+- Change the Section Title to: “Find a bike anywhere”.
+- Change the section description to “No matter where you are, we have
+  the right bike for you.”
+
+There's no need to change the Section call to action or the Section
+appearance
+
+Within the Content blocks, you will see there are 6 cities pre-set.
+Within each city’s Content Block open the Block and alter the Block
+text, and only the Block text. Insert the word “bikes”.
 
 ### 4. Other sections
 
@@ -139,9 +143,13 @@ Add the following content:
 - Page title for social media: Find a bike everywhere
 - Page description for social media: The largest online community to
   find and rent a bike.
-- Social media image: Add the following image
+- Social media image: Add the following image :
 
-![Book saunas everywhere](/tutorial-assets/tns/biketribe-facebook-sharing-1200x630.png)
+<extrainfo title="Social media image">
+
+![Bikes & gear for every surface](/tutorial-assets/tns/biketribe-facebook-sharing-1200x630.png)
+
+</extrainfo>
 
 Save changes.
 

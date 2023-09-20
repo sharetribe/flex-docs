@@ -63,9 +63,6 @@ tutorial, as they work quite well for us.
 Open the "general" block. You notice that it has three links. Two of
 them have a mention of the word "listing". Change this to "bike".
 
-In "cities1" and "cities2", do the same thing: change "listings" to
-"bikes" in each link.
-
 "terms" can stay as is.
 
 Save changes.
