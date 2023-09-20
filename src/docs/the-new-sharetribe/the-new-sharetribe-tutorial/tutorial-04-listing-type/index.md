@@ -20,10 +20,10 @@ time. Let's adjust its settings. Click "Listings → Listing types" from
 the navigation on the left and click open the default listing type
 "Daily booking".
 
-In our bike marketplace, we can offer a variety of booking flows.
-Here, we set up daily bookings to allow for long term rentals: 
-you book a slot from the calendar, check in during the morning 
-or midday, and check out at the end of the last day.
+In our bike marketplace, we can offer a variety of booking flows. Here,
+we set up daily bookings to allow for long term rentals: you book a slot
+from the calendar, check in during the morning or midday, and check out
+at the end of the last day.
 
 ### Listing type label
 
@@ -39,8 +39,8 @@ Listing type ID is a unique identifier that is stored to each listing
 using this listing type. It can't contain spaces, and there are other
 character restrictions too. In general, you should not change the ID of
 an existing listing type that has listings created with it, as those
-listings will retain the old ID. We don't have any bike listings yet,
-so we can proceed to change the ID.
+listings will retain the old ID. We don't have any bike listings yet, so
+we can proceed to change the ID.
 
 **Type "daily-booking"**
 

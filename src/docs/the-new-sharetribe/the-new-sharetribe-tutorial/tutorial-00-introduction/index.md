@@ -23,21 +23,22 @@ marketplace's Test environment.
 
 ### What are we building?
 
-In this tutorial, we're going to kick things off with the default Sharetribe 
-theme, and tweak it into a peer-to-peer marketplace for renting bikes. 
-We're going to call it "Biketribe." Now, while we're guiding you
-with specific steps to build Biketribe, feel free to mix things up a bit
-to create your unique marketplace concept instead. Just remember, if you
-switch things around, you'll need to keep track of those changes when
-following other steps in this tutorial. Along the way, we'll also cover
-a few key concepts to help you better understand the process.
+In this tutorial, we're going to kick things off with the default
+Sharetribe theme, and tweak it into a peer-to-peer marketplace for
+renting bikes. We're going to call it "Biketribe." Now, while we're
+guiding you with specific steps to build Biketribe, feel free to mix
+things up a bit to create your unique marketplace concept instead. Just
+remember, if you switch things around, you'll need to keep track of
+those changes when following other steps in this tutorial. Along the
+way, we'll also cover a few key concepts to help you better understand
+the process.
 
-At the end of the tutorial, you will have a fully functional
-bike-themed rental marketplace. It will be in your Test environment, an
-environment you can use to explore the user experience and user design
-of your marketplace and to test the marketplace functionality. At the
-end, we'll explain the necessary steps to launch your marketplace live
-on your own domain, and start inviting real users to it.
+At the end of the tutorial, you will have a fully functional bike-themed
+rental marketplace. It will be in your Test environment, an environment
+you can use to explore the user experience and user design of your
+marketplace and to test the marketplace functionality. At the end, we'll
+explain the necessary steps to launch your marketplace live on your own
+domain, and start inviting real users to it.
 
 ### How does building a marketplace without coding work?
 

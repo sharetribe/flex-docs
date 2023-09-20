@@ -26,10 +26,10 @@ the navigation on the left. There we see an example field. Let's delete
 it and create the following new fields:
 
 - Bike brand. Is it made by Cube, GHOST, Giant, or someone else?
-- Accessories. What extras are included? Is a bell, lights, lock, or 
+- Accessories. What extras are included? Is a bell, lights, lock, or
   mudguard included?
-- Bike rental rules. Are there any specific things someone renting the bike
-  should keep in mind?
+- Bike rental rules. Are there any specific things someone renting the
+  bike should keep in mind?
 
 Let's start with bike brand. Click "Add a new listing field", and click
 open the newly created field.
@@ -55,8 +55,8 @@ characters.
 #### Field type
 
 Field type determines how the field works. In this case, we want each
-bike to have exactly one type, and it should be chosen from a
-predefined list of types.
+bike to have exactly one type, and it should be chosen from a predefined
+list of types.
 
 **Choose "Select one"**
 
@@ -84,11 +84,11 @@ listing data. No spaces or special characters allowed.
 
 **Write "cube"**
 
-Now edit the second option. For the label, put "Diamant" and for
-the value "diamant".
+Now edit the second option. For the label, put "Diamant" and for the
+value "diamant".
 
-Let's add one more option. Click "Add a new option". Add "GHOST"
-as the label and "ghost" as the value.
+Let's add one more option. Click "Add a new option". Add "GHOST" as the
+label and "ghost" as the value.
 
 Repeat the process for as many brands as you want to add.
 
@@ -118,16 +118,18 @@ can be under "More filters" menu.
 - Field id: "accessories"
 - Field type: "Select multiple"
 - Don't check "This field is mandatory"
-- Four field options: "Bell/bell", "Lights/lights", "Lock/lock", and "Mudguard/mudguard"
+- Four field options: "Bell/bell", "Lights/lights", "Lock/lock", and
+  "Mudguard/mudguard"
 - Search settings: Check "Add a filter to Search Page"
 - Filter placement: "Use as a secondary search filter"
 
-Finally, let's add "Bike rules". This is just a freeform text field, for example if the bike 
-can't handle rough terrain and it should only be driven on flat road or terrain. It's optional: 
-a bike doesn't need to have specific usage rules, if it does well in all situations. 
-For free text fields, we can't add a search filter, but we can decide whether a free text
-search should search the contents of this field. In this case, it
-doesn't make sense.
+Finally, let's add "Bike rules". This is just a freeform text field, for
+example if the bike can't handle rough terrain and it should only be
+driven on flat road or terrain. It's optional: a bike doesn't need to
+have specific usage rules, if it does well in all situations. For free
+text fields, we can't add a search filter, but we can decide whether a
+free text search should search the contents of this field. In this case,
+it doesn't make sense.
 
 - Field label: "Bike rules"
 - Field id: "bikeRules"
