@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 5 – Create listing fields
-slug: tutorial-listing-fields
-updated: 2023-09-08
+slug: tutorial-05-listing-fields
+updated: 2023-09-20
 category: the-new-sharetribe-tutorial
 ingress:
   In this step we will decide what data is collected when a listing is

@@ -1,8 +1,8 @@
 ---
 title:
   Tutorial step 7 – Configure commission and minimum transaction size
-slug: tutorial-commission-tx-size
-updated: 2023-09-15
+slug: tutorial-07-commission-tx-size
+updated: 2023-09-20
 category: the-new-sharetribe-tutorial
 ingress:
   In this step we'll look into how you can automatically collect a

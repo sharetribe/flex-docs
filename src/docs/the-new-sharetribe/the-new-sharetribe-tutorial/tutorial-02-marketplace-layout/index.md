@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 2 – Choose marketplace layout
-slug: tutorial-marketplace-layout
-updated: 2023-09-08
+slug: tutorial-02-marketplace-layout
+updated: 2023-09-20
 category: the-new-sharetribe-tutorial
 ingress:
   You can choose any layout for your specific marketplace. In this

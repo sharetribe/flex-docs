@@ -1,6 +1,6 @@
 ---
 title: Tutorial step 8 – Decide your vocabulary
-slug: tutorial-microcopy
+slug: tutorial-08-microcopy
 updated: 2023-09-20
 category: the-new-sharetribe-tutorial
 ingress:

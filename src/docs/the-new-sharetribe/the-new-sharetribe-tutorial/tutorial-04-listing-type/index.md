@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 4 – Adjust the listing type
-slug: tutorial-listing-type
-updated: 2023-09-08
+slug: tutorial-04-listing-type
+updated: 2023-09-20
 category: the-new-sharetribe-tutorial
 ingress:
   Listing type determines how your customers and providers interact with
