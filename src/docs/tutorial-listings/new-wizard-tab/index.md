@@ -13,26 +13,25 @@ attributes you have configured for your marketplace listings in Flex
 Console. However, you can also add custom tabs to the listing creation
 flow.
 
-TODO UPDATE IMAGE
-![Bike creation wizard](./saunatime-listing-details.png)
+![Bike creation wizard](./biketribe-listing-details.png)
 
 In addition to having a listing description, we want to allow providers
-to explain the accessories of their rental bike in more detail.
+to explain any potential extra features of their rental bike in more
+detail.
 
 In this tutorial, you will
 
 - Add _EditListingExtraFeaturesPanel_ and _EditListingExtraFeaturesForm_
   components
 - Use the new panel in _EditListingWizard_
-- Show the listing’s accessories on the listing page with the
+- Show the listing’s extra features on the listing page with the
   _SectionTextMaybe_ component
 
 <info>
 
 This tutorial uses the following marketplace configurations:
 
-- Layout > Listing page image layout: **Screen-wide cover photo** TODO
-  UPDATE
+- Layout > Listing page image layout: **Image carousel with thumbnails**
 - Listing types > Transaction process: **Calendar booking**
 
 </info>
@@ -99,14 +98,14 @@ First, we import the necessary elements used in the file. In this
 section, all rows start with `import`.
 
 Next, we create a helper function `getInitialValues` to return any
-existing value of the accessories from the listing's public data.
+existing value of the extra features from the listing's public data.
 
 ```js
 const getInitialValues = params => {
   const { listing } = params;
-  const { accessories } = listing?.attributes.publicData || {};
+  const { extraFeatures } = listing?.attributes.publicData || {};
 
-  return { accessories };
+  return { extraFeatures };
 };
 ```
 
@@ -141,9 +140,9 @@ a title that depends on whether the listing has been published or not.
 Then, we show the actual EditListingExtraFeaturesForm.
 
 In the form _onSubmit_ function, we again use destructuring assignment
-for retrieving the value of _accessories_ from the incoming values, and
-then set _accessories_ as an attribute for _publicData_ before calling
-the _onSubmit_ function received as a prop.
+for retrieving the value of _extraFeatures_ from the incoming values,
+and then set _extraFeatures_ as an attribute for _publicData_ before
+calling the _onSubmit_ function received as a prop.
 
 ```js
   return (
@@ -165,12 +164,12 @@ the _onSubmit_ function received as a prop.
         className={css.form}
         initialValues={initialValues}
         onSubmit={values => {
-          const { accessories = '' } = values;
+          const { extraFeatures = '' } = values;
 
           // New values for listing attributes
           const updateValues = {
             publicData: {
-              accessories
+              extraFeatures
             }
           };
           onSubmit(updateValues);
@@ -207,7 +206,7 @@ use the
 for form state management. This means that on the highest level, we
 directly return a _FinalForm_ component from our
 EditListingExtraFeaturesFormComponent. We then use the FinalForm
-component's _render_ prop to customise our Accessories form behavior.
+component's _render_ prop to customise our Extra features form behavior.
 
 ```js
 export const EditListingExtraFeaturesFormComponent = props => (
@@ -261,18 +260,13 @@ addition, we show any errors from props.
             </p>
           ) : null}
           <FieldTextInput
-            id={`${formId}accessories`}
-            name="accessories"
+            id={`${formId}extraFeatures`}
+            name="extraFeatures"
             className={css.input}
             autoFocus={autoFocus}
             type="textarea"
-            label="Accessories"
-            placeholder={intl.formatMessage({ id: 'EditListingExtraFeaturesForm.accessoriesInputPlaceholder' })}
-            validate={required(
-              intl.formatMessage({
-                id: 'EditListingDetailsForm.descriptionRequired',
-              })
-            )}
+            label="Extra features"
+            placeholder={intl.formatMessage({ id: 'EditListingExtraFeaturesForm.extraFeaturesInputPlaceholder' })}
           />
 
           <Button
@@ -322,7 +316,7 @@ So to use our new _EditListingExtraFeaturesPanel_ component, we need to
 
 - import it in the _EditListingWizardTab_ component
 - render it in the correct context, and
-- add `ACCESSORIES` to the list of supported tabs
+- add `EXTRAFEATURES` to the list of supported tabs
 
 ### Add EditListingExtraFeaturesPanel to EditListingWizardTab
 
@@ -346,14 +340,14 @@ EditListingWizardTab.
 ```
 
 The EditListingWizardTab component also exports constants for all
-supported panels, so let’s add the new ACCESSORIES panel in that list,
+supported panels, so let’s add the new EXTRAFEATURES panel in that list,
 as well as into the SUPPORTED_TABS array.
 
 ```js
 export const DETAILS = 'details';
 export const PRICING = 'pricing';
 export const PRICING_AND_STOCK = 'pricing-and-stock';
-export const ACCESSORIES = 'accessories';
+export const EXTRAFEATURES = 'extra-features';
 export const DELIVERY = 'delivery';
 export const LOCATION = 'location';
 export const AVAILABILITY = 'availability';
@@ -364,7 +358,7 @@ export const SUPPORTED_TABS = [
   DETAILS,
   PRICING,
   PRICING_AND_STOCK,
-  ACCESSORIES,
+  EXTRAFEATURES,
   DELIVERY,
   LOCATION,
   AVAILABILITY,
@@ -390,10 +384,10 @@ return. Add the following code block to the switch statement, before the
         />
       );
     }
-    case ACCESSORIES: {
+    case EXTRAFEATURES: {
       return (
         <EditListingExtraFeaturesPanel
-          {...panelProps(ACCESSORIES)}
+          {...panelProps(EXTRAFEATURES)}
         />
       );
     }
@@ -404,7 +398,7 @@ return. Add the following code block to the switch statement, before the
 
 ### Show EditListingExtraFeaturesPanel in EditListingWizard
 
-Almost there! We still need to add the ACCESSORIES tab handling to
+Almost there! We still need to add the EXTRAFEATURES tab handling to
 EditListingWizard.
 
 ```shell
@@ -426,14 +420,14 @@ import EditListingWizardTab, {
   PRICING,
   PRICING_AND_STOCK,
   DELIVERY,
-  ACCESSORIES,
+  EXTRAFEATURES,
   LOCATION,
   AVAILABILITY,
   PHOTOS,
 } from './EditListingWizardTab';
 ```
 
-Next, add the `ACCESSORIES` tab to the existing `TABS_BOOKING` array.
+Next, add the `EXTRAFEATURES` tab to the existing `TABS_BOOKING` array.
 
 ```js
 const TABS_DETAILS_ONLY = [DETAILS];
@@ -442,7 +436,7 @@ const TABS_BOOKING = [
   DETAILS,
   LOCATION,
   PRICING,
-  ACCESSORIES,
+  EXTRAFEATURES,
   AVAILABILITY,
   PHOTOS,
 ];
@@ -450,33 +444,33 @@ const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING];
 ```
 
 The EditListingWizard component checks the tab value in two functions:
-tabLabelAndSubmit tabCompleted
+_tabLabelAndSubmit_ and _tabCompleted_.
 
 The `tabLabelAndSubmit` function determines the microcopy keys for the
 tab label and the submit button. Add the following block in the if-else
 sequence:
 
 ```
-else if (tab === ACCESSORIES) {
-    labelKey = 'EditListingWizard.tabLabelAccessories';
-    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveAccessories`;
+else if (tab === EXTRAFEATURES) {
+    labelKey = 'EditListingWizard.tabLabelExtraFeatures';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveExtraFeatures`;
   }
 ```
 
 The `tabCompleted` function checks whether a specific wizard tab is
 completed. The way it checks this is by verifying whether the listing
 has values in the necessary attributes. Since the
-EditListingExtraFeaturesPanel saves the accessories in the listing’s
-publicData under the `accessories` attribute, we will add a case to the
-switch statement that checks whether `publicData.accessories` has a
-value.
+EditListingExtraFeaturesPanel saves the extra features in the listing’s
+publicData under the `extraFeatures` attribute, we will add a case to
+the switch statement that checks whether `publicData.extraFeatures` has
+a value.
 
 ```
 …
     case PHOTOS:
       return images && images.length > 0;
-    case ACCESSORIES:
-      return !!publicData.accessories;
+    case EXTRAFEATURES:
+      return !!publicData.extraFeatures;
     default:
       return false;
 ```
@@ -486,75 +480,72 @@ the left side navigation. However, the label only shows the relevant
 microcopy key, since we have not yet added the microcopy values in Flex
 Console.
 
-TODO UPDATE IMAGE
-![New tab without label](./saunatime-wizard-microcopy-key.png)
+![New tab without label](./biketribe-wizard-microcopy-key.png)
 
 To fix this, add the following keys and values in your Flex Console >
 Build > Content > Microcopy editor or _src/translations/en.json_ file:
 
 ```json
-  "EditListingWizard.tabLabelAccessories": "Accessories",
-  "EditListingExtraFeaturesPanel.createListingTitle": "Accessories",
-  "EditListingExtraFeaturesPanel.title": "Edit the accessories of {listingTitle}",
-  "EditListingExtraFeaturesForm.accessoriesInputPlaceholder": "Explain your bike accessories...",
-  "EditListingExtraFeaturesForm.accessoriesRequired": "Adding accessories is required",
+  "EditListingWizard.tabLabelExtraFeatures": "Extra features",
+  "EditListingExtraFeaturesPanel.createListingTitle": "Extra features",
+  "EditListingExtraFeaturesPanel.title": "Edit the extra features of {listingTitle}",
+  "EditListingExtraFeaturesForm.extraFeaturesInputPlaceholder": "Explain your bike extra features...",
   "EditListingExtraFeaturesForm.updateFailed": "Updating listing failed",
   "EditListingExtraFeaturesForm.showListingFailed": "Fetching listing failed",
-  "EditListingWizard.default-booking.new.savePricing": "Next: Accessories",
-  "EditListingWizard.default-booking.new.saveAccessories": "Next: Availability",
-  "EditListingWizard.edit.saveAccessories": "Save changes",
-  "ListingPage.accessoriesTitle": "Accessories"
+  "EditListingWizard.default-booking.new.savePricing": "Next: Extra features",
+  "EditListingWizard.default-booking.new.saveExtraFeatures": "Next: Availability",
+  "EditListingWizard.edit.saveExtraFeatures": "Save changes",
+  "ListingPage.extraFeaturesTitle": "Extra features"
 ```
 
 After adding these microcopy keys and values, you can create and edit
-the accessories of a listing. You can test the panel functionality by
-saving some accessories for the listing.
+the extra features of a listing. You can test the panel functionality by
+saving some extra features for the listing.
 
-TODO UPDATE IMAGE ![Bike rules panel](./saunatime-rules-panel.png)
+![Bike extra features panel](./biketribe-extrafeatures-panel.png)
 
 When you now view the bike in your Flex Console > Manage > Listings, you
-can see the accessories get saved in the listing's public data.
+can see the extra features get saved in the listing's public data.
 
-TODO UPDATE IMAGE
-![Bike rules in Flex Console](./saunatime-rules-console.png)
+![Bike extra features in Flex Console](./console-extra-features.png)
 
-## Show Accessories on listing page with SectionTextMaybe component
+## Show Extra features on listing page with SectionTextMaybe component
 
-Now that the listing has accessories, we want to show them on the
+Now that the listing has extra features, we want to show them on the
 listing page. To do that, we will need to add a section to the listing
-page that displays the accessories. We have configured our marketplace
-to use the screen-wide cover photo layout, so we will modify the
-_ListingPageCoverPhoto.js_ file.
+page that displays the extra features. We have configured our
+marketplace to use the screen-wide cover photo layout, so we will modify
+the _ListingPageCoverPhoto.js_ file.
 
 ```shell
 └── src
     └── containers
         └── ListingPage
-            ├── ListingPageCoverPhoto.js
+            ├── ListingPageCarousel.js
             ├── …
 ```
 
-The listing pages, ListingPageCoverPhoto and ListingPageCarousel (which
-corresponds to the "Image carousel" layout option), show listing data
-using `Section` components, which render different types of data in a
-predefined way. Since the bike accessories data is free text, we can use
-the pre-existing _SectionTextMaybe_ component to display the
-accessories.
+The listing pages, ListingPageCarousel and ListingPageCoverPhoto (which
+corresponds to the "Screen wide cover photo" layout option), show
+listing data using `Section` components, which render different types of
+data in a predefined way. Since the bike extra features data is free
+text, we can use the pre-existing _SectionTextMaybe_ component to
+display the extra features.
 
 Add the following code snippet above the _SectionMapMaybe_ component in
 ListingPageCarousel:
 
 ```js
 <SectionTextMaybe
-  text={publicData.accessories}
-  heading={intl.formatMessage({ id: 'ListingPage.accessoriesTitle' })}
+  text={publicData.extraFeatures}
+  heading={intl.formatMessage({ id: 'ListingPage.extraFeaturesTitle' })}
 />
 ```
 
-You can now see the listing accessories displayed on the listing page.
+You can now see the listing extra features displayed on the listing
+page.
 
-TODO UPDATE IMAGE
-![Bike rules on listing page](./saunatime-rules-listing-page.png)
+![Bike extra features on listing page](./biketribe-extrafeatures-listing-page.png)
 
 ## Summary
 
@@ -569,5 +560,5 @@ In this tutorial, you
     the new panel
 - Added microcopy strings for the different texts related to the new
   panel
-- Used _SectionTextMaybe_ on the listing page for displaying the
-  accessories
+- Used _SectionTextMaybe_ on the listing page for displaying the extra
+  features

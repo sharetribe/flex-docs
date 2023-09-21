@@ -7,7 +7,6 @@ import classNames from 'classnames';
 // Import configs and util modules
 import { intlShape, injectIntl, FormattedMessage } from '../../../../util/reactIntl';
 import { propTypes } from '../../../../util/types';
-import { required } from '../../../../util/validators';
 
 // Import shared components
 import { Button, Form, FieldTextInput } from '../../../../components';
@@ -60,13 +59,8 @@ export const EditListingExtraFeaturesFormComponent = props => (
             className={css.input}
             autoFocus={autoFocus}
             type="textarea"
-            label="Extra Features"
-            placeholder={intl.formatMessage({ id: 'EditListingExtraFeaturesForm.ExtraFeaturesInputPlaceholder' })}
-            validate={required(
-              intl.formatMessage({
-                id: 'EditListingDetailsForm.descriptionRequired',
-              })
-            )}
+            label="Extra features"
+            placeholder={intl.formatMessage({ id: 'EditListingExtraFeaturesForm.extraFeaturesInputPlaceholder' })}
           />
 
           <Button
