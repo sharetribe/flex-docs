@@ -48,25 +48,25 @@ You can see screenshots of the different steps below.
 
 <extrainfo title="Step 1: Buyer browsing">
 
-![Change environments](./01-buyer-browsing.png)
+![Buyer browsing](./01-buyer-browsing.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 2-4: Buyer looking at listing view">
 
-![Change environments](./02-buyer-listingview.png)
+![Buyer listing view](./02-buyer-listingview.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 5-7: Buyer on the checkout page">
 
-![Change environments](./03-buyer-checkout.png)
+![Buyer checkout](./03-buyer-checkout.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 8-9: Buyer after checking out">
 
-![Change environments](./04-buyer-checkout-success.png)
+![Buyer checkout](./04-buyer-checkout-success.png)
 
 </extrainfo>
 
@@ -103,31 +103,31 @@ You can see the screenshots of these steps below.
 
 <extrainfo title="Step 1: Seller notification">
 
-![Change environments](./05-seller-notification.png)
+![Seller notification](./05-seller-notification.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 2-3: Seller looking at their inbox">
 
-![Change environments](./06-seller-inbox.png)
+![Seller notification](./06-seller-inbox.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 4-7: Seller looking at the transaction thread">
 
-![Change environments](./07-seller-transactionthread.png)
+![Seller message](./07-seller-transactionthread.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 8-9: Seller's transaction thread after accepting the request">
 
-![Change environments](./08-seller-accepted.png)
+![Seller accepted](./08-seller-accepted.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 10-11: Buyer's transaction thread after seller has accepted the request">
 
-![Change environments](./09-buyer-accepted.png)
+![Buyer accepted](./09-buyer-accepted.png)
 
 </extrainfo>
 
@@ -167,37 +167,37 @@ You can see screenshots of the process below.
 
 <extrainfo title="Step 12 (optional): available operator actions in the transaction process">
 
-![Change environments](./10-transaction-process-operator-actions.png)
+![Transaction process actions](./10-transaction-process-operator-actions.png)
 
 </extrainfo>
 
 <extrainfo title="Step 13: Choose the operator action (here, we choose 'accept')">
 
-![Change environments](./11-operator-actions-accept.png)
+![Operator actions](./11-operator-actions-accept.png)
 
 </extrainfo>
 
 <extrainfo title="Step 14: Confirm the operator action">
 
-![Change environments](./12-operator-actions-accept-confirm.png)
+![Operator actions confirm](./12-operator-actions-accept-confirm.png)
 
 </extrainfo>
 
 <extrainfo title="Step 13 (again): Choose the operator action (here, we choose 'operator complete')">
 
-![Change environments](./13-operator-actions-complete.png)
+![Operator actions complete](./13-operator-actions-complete.png)
 
 </extrainfo>
 
 <extrainfo title="Step 14 (again): Confirm the operator action">
 
-![Change environments](./14-operator-actions-complete-confirm.png)
+![Operator actions confirm](./14-operator-actions-complete-confirm.png)
 
 </extrainfo>
 
 <extrainfo title="Step 15: See the completed transitions in the timeline and activity log">
 
-![Change environments](./15-operator-actions-operator-actions-done.png)
+![Operator actions done](./15-operator-actions-operator-actions-done.png)
 
 </extrainfo>
 
@@ -246,25 +246,25 @@ You can see screenshots of the different steps below.
 
 <extrainfo title="Steps 1-2: Buyer selecting delivery method">
 
-![Change environments](./16-buyer-selecting-delivery.png)
+![Buyer choice delivery](./16-buyer-selecting-delivery.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 3-6: Buyer checkout with shipping as delivery method">
 
-![Change environments](./17-buyer-shipping-checkout.png)
+![Buyer choice checkout](./17-buyer-shipping-checkout.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 5-9: Buyer checkout with pickup as delivery method">
 
-![Change environments](./18-buyer-pickup-checkout.png)
+![Buyer choice pickup](./18-buyer-pickup-checkout.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 10-11: Buyer checked out successfully">
 
-![Change environments](./19-buyer-booking-success.png)
+![Buyer success](./19-buyer-booking-success.png)
 
 </extrainfo>
 
@@ -294,31 +294,31 @@ You can see the screenshots of these steps below.
 
 <extrainfo title="Step 1: Seller in their inbox">
 
-![Change environments](./20-seller-inbox.png)
+![Seller inbox](./20-seller-inbox.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 2-4: Seller at the transaction page">
 
-![Change environments](./21-seller-transactionthread.png)
+![Seller inbox](./21-seller-transactionthread.png)
 
 </extrainfo>
 
 <extrainfo title="Step 5: Seller marked the bike as delivered">
 
-![Change environments](./22-seller-delivered.png)
+![Seller delivered](./22-seller-delivered.png)
 
 </extrainfo>
 
 <extrainfo title="Step 6: Buyer sees update and marks bike as received">
 
-![Change environments](./23-buyer-receiving.png)
+![Buyer received](./23-buyer-receiving.png)
 
 </extrainfo>
 
 <extrainfo title="Step 7: After marking the bike as delivered/received, users can leave each other a review">
 
-![Change environments](./24-buyer-received.png)
+![Reviews](./24-buyer-received.png)
 
 </extrainfo>
 
@@ -358,25 +358,25 @@ You can see screenshots of the process below.
 
 <extrainfo title="Step 8 (optional): available operator actions in the transaction process">
 
-![Change environments](./25-transaction-process-operator-actions.png)
+![Operator actions](./25-transaction-process-operator-actions.png)
 
 </extrainfo>
 
 <extrainfo title="Step 9: Choose the operator action (here, we choose 'cancel')">
 
-![Change environments](./26-operator-actions-cancel.png)
+![Operator actions cancel](./26-operator-actions-cancel.png)
 
 </extrainfo>
 
 <extrainfo title="Step 10: Confirm the operator action">
 
-![Change environments](./27-operator-actions-cancel-confirm.png)
+![Operator actions confirm](./27-operator-actions-cancel-confirm.png)
 
 </extrainfo>
 
 <extrainfo title="Step 11: See the completed transition in the timeline and activity log">
 
-![Change environments](./28-operator-actions-cancel-done.png)
+![Operator actions timeline](./28-operator-actions-cancel-done.png)
 
 </extrainfo>
 
@@ -408,19 +408,19 @@ You can see screenshots of the process below.
 
 <extrainfo title="Step 1: Buyer starts inquiry">
 
-![Change environments](./29-inquiry-one.png)
+![Inquiry start](./29-inquiry-one.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 2-3: Buyer completes inquiry">
 
-![Change environments](./30-inquiry-two.png)
+![Inquiry start buyer](./30-inquiry-two.png)
 
 </extrainfo>
 
 <extrainfo title="Step 4-5: Order details page, buyer view">
 
-![Change environments](./31-inquiry-three.png)
+![Inquiry order page](./31-inquiry-three.png)
 
 </extrainfo>
 
@@ -438,7 +438,7 @@ received a new message in your marketplace.
 
 <extrainfo title="Steps 6-7: Order details page, seller view">
 
-![Change environments](./32-inquiry-four.png)
+![Inquery seller view](./32-inquiry-four.png)
 
 </extrainfo>
 
