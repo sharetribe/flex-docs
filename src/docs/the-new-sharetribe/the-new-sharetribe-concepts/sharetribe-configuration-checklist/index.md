@@ -1,6 +1,6 @@
 ---
 title: Sharetribe configuration checklist
-slug: biketribe-configuration-checklist
+slug: sharetribe-configuration-checklist
 updated: 2023-09-15
 category: the-new-sharetribe-concepts
 ingress: How to change the default Sharetribe assets

@@ -35,7 +35,7 @@ attractive images, screen-wide cover photos can make the listing page
 look more attractive. The carousel works well for our bike images, so
 we're going to take the former option.
 
-**Choose "Screen-wide cover photo"**
+**Choose "Image carousel with thumbnails"**
 
 ### 3. Listing thumbnail aspect ratio
 
