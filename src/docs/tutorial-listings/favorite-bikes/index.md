@@ -24,7 +24,7 @@ In this tutorial, you will
 
 This tutorial uses the following marketplace configurations:
 
-- Layout > Listing page image layout: **Screen-wide cover photo**
+- Layout > Listing page image layout: **Image carousel with thumbnails**
 
 </info>
 
@@ -182,8 +182,7 @@ with _className_ `css.author`.
 Now, you can see the button in the order panel. However, the button text
 shows the microcopy key of the message, not the message we want to show.
 
-TODO UPDATE IMAGE
-![Favorite bike button with microcopy key](./saunatime-favorites-button-key.png)
+![Favorite bike button with microcopy key](./biketribe-favorites-button-key.png)
 
 Let’s fix that by adding all the microcopy keys we need in this
 tutorial. You can add them in Flex Console > Build > Content >
@@ -206,8 +205,7 @@ Microcopy, or in src/translations/en.js.
 After adding the microcopy strings and saving your changes, you can
 refresh your browser and you will see the correct texts in the button.
 
-TODO UPDATE IMAGE
-![Favorite bike button with correct microcopy](./saunatime-favorites-button-value.png)
+![Favorite bike button with correct microcopy](./biketribe-favorites-button-value.png)
 
 Clicking the button will not do anything yet, so as the next step, we
 will create the functionality to favorite a listing.
@@ -241,13 +239,13 @@ _ListingPage.shared.js_ file.
 
 We will then need to import and use those functionalities in the listing
 page component we are using. Since the layout configuration in our
-marketplace is _Screen-wide cover photo_, the corresponding listing page
-component is _ListingPageCoverPhoto.js_.
+marketplace is _Image carousel with thumbnails_, the corresponding
+listing page component is _ListingPageCarousel.js_.
 
 <info>
 
-If your listing page configuration is _Image carousel with thumbnails_,
-you will need to modify the component _ListingPageCarousel.js_ instead.
+If your listing page configuration is _Screen-wide cover photo_, you
+will need to modify the component _ListingPageCoverPhoto.js_ instead.
 
 </info>
 
@@ -258,7 +256,7 @@ Finally, we need to pass the necessary props to OrderPanel.js.
     └── containers
         └── ListingPage
             ├── ListingPage.shared.js
-            └── ListingPageCoverPhoto.js
+            └── _ListingPageCarousel.js
 
 ```
 
@@ -319,13 +317,13 @@ This function receives the necessary information and actions from its
 parameters, so all we need to know in this function is that we are
 updating the current user’s private data.
 
-Next, we call this function from _ListingPageCoverPhoto.js_. We will
-first import the function we just created.
+Next, we call this function from _ListingPageCarousel.js_. We will first
+import the function we just created.
 
 <info>
 
-If your listing page configuration is _Image carousel with thumbnails_,
-you will need to modify the component _ListingPageCarousel.js_ instead.
+If your listing page configuration is _Screen-wide cover photo_, you
+will need to modify the component _ListingPageCoverPhoto.js_ instead.
 
 </info>
 
@@ -371,7 +369,7 @@ Whenever we use Redux actions from a container, we need to use the
 [mapDispatchToProps](https://react-redux.js.org/using-react-redux/connect-mapdispatch)
 mapping to use the actions through props in the component.
 
-The _ListingPageCoverPhoto_ component already has a _mapDispatchToProps_
+The _ListingPageCarousel_ component already has a _mapDispatchToProps_
 function, so we can add the _updateProfile_ action as a prop for the
 component there.
 
@@ -390,7 +388,7 @@ const mapDispatchToProps = dispatch => ({
 We can give our prop a descriptive name, such as _onUpdateFavorites_,
 since in this component we are only using it for that purpose.
 
-Now, the _ListingPageCoverPhoto_ props contains the _onUpdateFavorites_
+Now, the _ListingPageCarousel_ props contains the _onUpdateFavorites_
 function that we can use. Let’s add it to the
 [destructured](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 list in the beginning of the component.
@@ -422,7 +420,7 @@ const onToggleFavorites = handleToggleFavorites({
 Finally, we can pass the necessary props to _OrderPanel_ to connect the
 functionality with the button we created earlier. Add the _currentUser_
 and _onToggleFavorites_ props to the _OrderPanel_ component in
-_ListingPageCoverPhoto_.
+_ListingPageCarousel_.
 
 ```js
     <OrderPanel
@@ -440,8 +438,7 @@ Now, when you navigate to a listing’s page and open your
 you can see that each click of the button triggers an _update_profile_
 network call that saves the click information.
 
-TODO UPDATE IMAGE
-![Network call to update profile on favorite button click](./saunatime-favorites-update-profile-network.png)
+![Network call to update profile on favorite button click](./biketribe-favorites-update-profile-network.png)
 
 <extrainfo title="How does the network call propagate to the button?">
 
@@ -458,7 +455,7 @@ The flow of the data happens like this:
   resource
 - the Redux action then calls _currentUserShowSuccess_, which updates
   the _currentUser_ in the store with the updated resource
-- the _currentUser_ prop that we pass from _ListingPageCoverPhoto_ to
+- the _currentUser_ prop that we pass from _ListingPageCarousel_ to
   _OrderPanel_ is mapped to Redux state, so any changes to _currentUser_
   in state are immediately reflected in the prop
 
@@ -469,7 +466,7 @@ and find the details card of the user with whom you favorited the
 listing. You can see in their Private data that the user now has a
 favorites list with this listing's id.
 
-![User's favorite listings in Flex Console](./saunatime-favorites-console.png)
+![User's favorite listings in Flex Console](./biketribe-favorites-console.png)
 
 ## Create FavoriteListingsPage
 
@@ -860,8 +857,7 @@ const FavoriteListingsPage = loadable(() => import(/* webpackChunkName: "Favorit
 Now, when you navigate to _localhost:3000/favorites_, you can see your
 favorited listings.
 
-TODO UPDATE IMAGE
-![Favorite listings page](./saunatime-favorites-page.png)
+![Favorite listings page](./biketribe-favorites-page.png)
 
 ## Add navigation
 
@@ -871,18 +867,18 @@ navigation elements of the page – TopBar and UserNav.
 ```shell
 └── src
     └── components
-      ├── Topbar
-          └── TopbarDesktop.js
-      └── UserNav
-          └── UserNav.js
+        ├── Topbar
+        │   └── TopbarDesktop
+        │       └── TopbarDesktop.js
+        └── UserNav
+            └── UserNav.js
 ```
 
 In the top bar, we will add Favorite Listings as a menu item to the
 profile menu that opens when a user clicks their avatar in the top right
 corner.
 
-TODO UPDATE IMAGE
-![Default profile menu](./saunatime-default-profile-menu.png)
+![Default profile menu](./biketribe-default-profile-menu.png)
 
 To add the profile menu item, add the following code snippet in the
 profileMenu before the row `<MenuItem key="ProfileSettingsPage">`
@@ -902,8 +898,7 @@ profileMenu before the row `<MenuItem key="ProfileSettingsPage">`
 Now, we can see a link to favorite listings page when we click the
 user’s profile image.
 
-TODO UPDATE IMAGE
-![Profile menu with favorites page](./saunatime-favorites-profile-menu.png)
+![Profile menu with favorites page](./biketribe-favorites-profile-menu.png)
 
 The last addition comes to the UserNav component.
 
@@ -911,7 +906,7 @@ When we click on the profile menu link for favorite listings, we get to
 the page. However, the user navigation bar does not show the favorite
 listings page.
 
-TODO UPDATE IMAGE ![Default UserNav bar](./saunatime-favorites-page.png)
+![Default UserNav bar](./biketribe-favorites-page.png)
 
 Let’s add the link next. Open the _UserNav.js_ file and replace the tabs
 array with the following code:
@@ -956,8 +951,7 @@ Now, when you save the file and refresh the app, you will see a link to
 Favorite bikes in between the links for your listings and profile
 settings.
 
-TODO UPDATE IMAGE
-![UserNav bar with favorites](./saunatime-usernav-favorites.png)
+![UserNav bar with favorites](./biketribe-usernav-favorites.png)
 
 And that’s it! The Biketribe marketplace now allows users to set
 listings as favorites and view them on a separate page.
