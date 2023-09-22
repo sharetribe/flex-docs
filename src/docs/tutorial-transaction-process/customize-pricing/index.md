@@ -169,7 +169,7 @@ You can use the following microcopy keys:
 ```
 
 After adding the new microcopy keys, the EditListingPricingPanel should
-look something like this: TODO UPDATE IMAGE
+look something like this:
 ![EditListingPricePanel](./editlistingpricepanel.png)
 
 ## Update BookingDatesForm
@@ -306,13 +306,13 @@ formatting. This function expects a Money object as a parameter, so we
 need to do the conversion.
 
 ```jsx
-const formattedCleaningFee = helmetFee
+const formattedHelmetFee = helmetFee
   ? formatMoney(intl, new Money(helmetFee.amount, helmetFee.currency))
   : null;
 
 const helmetFeeLabel = intl.formatMessage(
   { id: 'BookingDatesForm.helmetFeeLabel' },
-  { fee: formattedCleaningFee }
+  { fee: formattedHelmetFee }
 );
 ```
 
@@ -375,6 +375,7 @@ class to _BookingDatesForm.module.css_.
 After this step, the BookingDatesForm should look like this. Note that
 the helmet rental fee will not be visible in the order breakdown yet,
 even though we added the new checkbox. TODO UPDATE IMAGE
+
 ![Helmet rental fee checkbox](./helmetFeeCheckbox.png)
 
 ### Update the orderData
@@ -421,9 +422,9 @@ manipulated.
 In our case, because there is just one checkbox, it's enough to check
 the length of that array to determine if any items are selected. If the
 length of the _helmetFee_ array inside _values_ is bigger than 0, the
-_hasCleaningFee_ param is true, and otherwise it is false. If we had
-more than one item in the checkbox group, we should check which items
-were selected.
+_hasHelmetFee_ param is true, and otherwise it is false. If we had more
+than one item in the checkbox group, we should check which items were
+selected.
 
 ```jsx
 const handleFormSpyChange = (
@@ -437,14 +438,14 @@ const handleFormSpyChange = (
       ? formValues.values.bookingDates
       : {};
 
-  const hasCleaningFee = formValues.values?.helmetFee?.length > 0;
+  const hasHelmetFee = formValues.values?.helmetFee?.length > 0;
 
   if (startDate && endDate && !fetchLineItemsInProgress) {
     onFetchTransactionLineItems({
       orderData: {
         bookingStart: startDate,
         bookingEnd: endDate,
-        hasCleaningFee,
+        hasHelmetFee,
       },
       listingId,
       isOwnListing,
@@ -473,15 +474,11 @@ can also build your own server-side validation that sits between your
 marketplace UI and the Flex Marketplace API to invoke privileged
 transitions.
 
-<br/>
-
 We are using privileged transitions and the backend of our client app to
 construct line items, because we want to make sure it is done in a
 secure context. If the client-side code (template front-end) could
 freely construct the line items, we couldn't fully trust that the price
 calculation follows the model intended in the marketplace.
-
-<br/>
 
 In theory, a marketplace user could make a direct API call to the Flex
 Marketplace API and start a transaction with modified line items – for
@@ -489,8 +486,6 @@ instance, change the helmet rental fee amount. We can avoid this
 security risk by using privileged transitions and fetching the pricing
 information, like the helmet rental fee amount, directly from
 Marketplace API in the backend of our client app.
-
-<br/>
 
 You can read more about privileged transitions in the
 [privileged transitions concepts article](/concepts/privileged-transitions/).
@@ -521,7 +516,7 @@ function from the `lineItemHelpers.js` file instead, and import it in
 `lineItems.js`.
 
 ```jsx
-const resolveCleaningFeePrice = listing => {
+const resolveHelmetFeePrice = listing => {
   const publicData = listing.attributes.publicData;
   const helmetFee = publicData && publicData.helmetFee;
   const { amount, currency } = helmetFee;
@@ -561,7 +556,7 @@ exports.transactionLineItems = (listing, orderData) => {
     includeFor: ['customer', 'provider'],
   };
 
-+ const helmetFeePrice = orderData.hasCleaningFee ? resolveCleaningFeePrice(listing) : null;
++ const helmetFeePrice = orderData.hasHelmetFee ? resolveHelmetFeePrice(listing) : null;
 + const helmetFee = helmetFeePrice
 +   ? [
 +       {
@@ -606,8 +601,8 @@ exports.transactionLineItems = (listing, orderData) => {
 
 Once we have made the changes to the backend of our client app, we can
 check the order breakdown again. If you now choose the helmet rental
-fee, you should see the helmet rental fee in the booking breakdown: TODO
-UPDATE IMAGE
+fee, you should see the helmet rental fee in the booking breakdown:
+
 ![Helmet fee in booking breakdown](./helmetFeeBookingBreakdown.png)
 
 ## Update CheckoutPage to handle helmet rental fee
@@ -644,7 +639,7 @@ const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config
   const quantityMaybe = quantity ? { quantity } : {};
   const deliveryMethod = pageData.orderData?.deliveryMethod;
   const deliveryMethodMaybe = deliveryMethod ? { deliveryMethod } : {};
-+ const hasCleaningFee = pageData.orderData?.helmetFee?.length > 0;
++ const hasHelmetFee = pageData.orderData?.helmetFee?.length > 0;
 
   const { listingType, unitType } = pageData?.listing?.attributes?.publicData || {};
   const protectedDataMaybe = {
@@ -660,7 +655,7 @@ const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config
   const orderParams = {
     listingId: pageData?.listing?.id,
     ...deliveryMethodMaybe,
-+   hasCleaningFee,
++   hasHelmetFee,
     ...quantityMaybe,
     ...bookingDatesMaybe(pageData.orderData?.bookingDates),
     ...protectedDataMaybe,
@@ -678,7 +673,8 @@ parameters provided.
 
 Now when the customer selects helmet rental fee on the listing page and
 clicks "Request to book", we see the correct price and breakdown on the
-checkout page. TODO UPDATE IMAGE
+checkout page.
+
 ![Helmet fee in booking breakdown on checkout page](./checkoutPageBreakdown.png)
 
 The same function builds order parameters that get passed to the final
@@ -699,8 +695,8 @@ process, then composes them into a single function
 Now you can try it out! When you complete a booking on a listing that
 has a helmet rental fee specified, you can see the helmet rental fee
 included in the price on the booking page. In addition, the Flex Console
-transaction price breakdown also shows the helmet rental fee. TODO
-UPDATE IMAGE
+transaction price breakdown also shows the helmet rental fee.
+
 ![Helmet fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
 
 <extrainfo title="Add helmet rental fee to email notifications">
@@ -708,28 +704,36 @@ To add the helmet rental fee into your email notifications, you will need to add
 The <a href="/docs/tutorial/use-protected-data-in-emails/">third step of this tutorial</a> deals with updating email notifications.
 
 ```diff
-      {{#each tx-line-items}}
-        {{#contains include-for "provider"}}
-          {{#eq "line-item/day" code}} ...
-
-+          {{#eq "line-item/helmet-rental-fee" code}}
-+            <tr class="bottom-row">
-+              <td>Helmet fee</td>
-+              <td class="right">{{> format-money money=line-total}}</td>
-+            </tr>
-+          {{/eq}}
-
-          {{#eq "line-item/provider-commission" code}} ...
-        {{/contains}}
-      {{/each}}
+...
+-       {{/if}}{{/eq}}{{#eq "line-item/provider-commission" code}}
++       {{/if}}{{/eq}}
++       {{#eq "line-item/helmet-rental-fee" code}}
++       <table align="center" border="0" cellPadding="0" cellSpacing="0" role="presentation" width="100%">
++         <tbody>
++           <tr>
++             <td>
++               <td>
++                 <p style="font-size:16px;line-height:1.4;margin:16px 0;color:#484848;margin-top:1px">Helmet rental fee</p>
++               </td>
++               <td style="text-align:right">
++                 <p style="font-size:16px;line-height:1.4;margin:16px 0;color:#484848;margin-top:1px">{{> format-money money=line-total}}</p>
++               </td>
++             </td>
++           </tr>
++         </tbody>
++       </table>
++       {{/eq}}
++       {{#eq "line-item/provider-commission" code}}
+        <table align="center" border="0" cellPadding="0" cellSpacing="0" role="presentation" width="100%">
+...
 ```
 
 The email templates that list the full line items in the default booking
 process are
 
-- `new-booking-request` (to provider)
+- `booking-new-request` (to provider)
 - `booking-request-accepted` (to customer)
-- `money-paid` (to provider)
+- `booking-money-paid` (to provider)
 
 </extrainfo>
 

@@ -459,18 +459,23 @@ else if (tab === EXTRAFEATURES) {
 
 The `tabCompleted` function checks whether a specific wizard tab is
 completed. The way it checks this is by verifying whether the listing
-has values in the necessary attributes. Since the
-EditListingExtraFeaturesPanel saves the extra features in the listing’s
-publicData under the `extraFeatures` attribute, we will add a case to
-the switch statement that checks whether `publicData.extraFeatures` has
-a value.
+has values in the necessary attributes.
+
+Since the EditListingExtraFeaturesPanel is not a required attribute, we
+we will add a case to the switch statement and just return `true`
+whether or not it has a value. The panel saves the extra feature
+information in the listing’s publicData under the `extraFeatures`
+attribute, so if this was a required feature, we would check whether
+`publicData.extraFeatures` has a value.
 
 ```
 …
     case PHOTOS:
       return images && images.length > 0;
     case EXTRAFEATURES:
-      return !!publicData.extraFeatures;
+      return true;
+      // /** For a required attribute: **/
+      // return !!publicData.extraFeatures;
     default:
       return false;
 ```
