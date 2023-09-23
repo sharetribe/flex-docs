@@ -1,13 +1,10 @@
 ---
-title: Listing search settings
+title: What are Listing search settings
 slug: listing-search-settings
-updated: 2023-07-05
+updated: 2023-09-24
 category: the-new-sharetribe-listings
-ingress:
-  Using search is a great way to allow users to find exactly what they
-  are looking for. This article explains the settings that you can
-  enable and choose from in the "Listings -> Listing search" page in
-  Console.
+ingress: Understand the options to setup your marketplace search
+
 published: true
 ---
 
