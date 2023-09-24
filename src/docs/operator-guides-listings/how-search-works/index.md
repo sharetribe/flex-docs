@@ -4,7 +4,8 @@ slug: how-search-works
 updated: 2023-09-24
 category: operator-guides-listings
 ingress:
-Learn about the settings available to build the right search experience for your users
+  Learn about the settings available to build the right search
+  experience for your users
 published: true
 ---
 
