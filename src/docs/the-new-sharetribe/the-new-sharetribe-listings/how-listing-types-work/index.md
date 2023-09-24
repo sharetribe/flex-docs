@@ -59,6 +59,8 @@ place. Providers are asked to fill out the basic listing details like
 the title, your custom fields, location, photos, and, if enabled, the
 price.
 
+![Provider view multiple listing types](./listing-type-seller.png)
+
 In addition to Listing types, custom fields impact the information
 collected from providers during listing creation. You can learn more
 about setting up custom fields
@@ -98,6 +100,11 @@ or an expired request. You can review the steps and stages of each
 transaction process for buyers, sellers, and operators in this
 [comprehensive guide](the-new-sharetribe/default-transaction-process-options/).
 
+![Transaction process view in Console](./transaction-process.png)
+
+In Console, you can see an overview of the transaction processes
+available in Advanced>Transaction process visualizer
+
 ## How do marketplaces with multiple Listing types work
 
 Having multiple Listing types means that you have different types of
@@ -107,14 +114,17 @@ experiences alongside nightly stays. Or, your providers should be able
 to sell and rent their items. Ultimately, you are introducing more
 options for both providers and buyers.
 
-When you have multiple Listing types, Providers decide what Listing type
-to assign their listing during listing creation. Listings can only have
-one Listing type, so, if a provider would like to offer a listing in
-multiple different ways, they will create a listing for each offering.
-For example, if a provider is renting their bike both hourly and daily,
-then they will create a listing with an hourly Listing type and one with
-a daily Listing type. Using descriptive Listing type titles will ensure
-they pick the right one.
+![Operator view multiple listing types](./listing-type-admin.png)
+
+transaction-process When you have multiple Listing types, Providers
+decide what Listing type to assign their listing during listing
+creation. Listings can only have one Listing type, so, if a provider
+would like to offer a listing in multiple different ways, they will
+create a listing for each offering. For example, if a provider is
+renting their bike both hourly and daily, then they will create a
+listing with an hourly Listing type and one with a daily Listing type.
+Using descriptive Listing type titles will ensure they pick the right
+one.
 
 If you do have multiple types of transactions on your marketplace, it
 probably means you have customers with different goals. Some may want to
