@@ -4,7 +4,6 @@ slug: listing-search-settings
 updated: 2023-09-24
 category: the-new-sharetribe-listings
 ingress: Understand the options to setup your marketplace search
-
 published: true
 ---
 

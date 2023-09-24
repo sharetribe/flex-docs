@@ -1,63 +1,47 @@
 ---
-title: What are listing types
+title: What are listing types settings
 slug: what-are-listing-types
-updated: 2023-09-14
+updated: 2023-09-24
 category: operator-guides-listings
 ingress:
-  Determining the right Listing type to use is fundamental for achieving
-  a working product with Sharetribe. This article explains Listing types
-  in detail.
+  Understand the settings and options when creating a Listing type.
 published: true
 ---
 
-Listings describe the products and services offered by your providers.
-Listing type determines how customers interact with those listing. Are
-they purchasing a physical product from an inventory, making a calendar
-booking, or sending an inquiry as a free message? If they are making a
-booking, does it happen on an hourly or a daily basis? If they're
-purchasing a product, can they buy multiple products of the same type in
-one go, or is every product unique? These are examples of choices you
-make when setting your listing type.
+Your Listing types determine what kind of listings are created on your
+marketplace and how customers interact with them. You must have at least
+one Listing type enabled in your marketplace to determine how
+transactions work. You may setup multiple Listing types (up to 20) if
+there should be different types of transactions on your marketplace.
 
-Listing type affects also the data that is collected from the provider
-when creating the listing. For example, if the customer is booking from
-a calendar, the provider needs to determine times that are available for
-booking. If a physical product is bought from an inventory, the provider
-needs to set how many items they have in stock, and decide if they offer
-pick-up or shipping as delivery options.
-
-In addition to listing types, you can affect the data collected from the
-provider when creating a listing
-[by adding custom fields](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
-
-## How to create a Listing type?
-
-When creating a Listing type, you need to define the Listing type
-settings and the Transaction settings.
-
-### Listing type settings
+## Listing type settings
 
 These are two fields that define the Listing type, one outward facing;
 the Title, and the other internal; the ID.
 
-- Listing type title: this is the name of the Listing type. It will be
-  displayed to the users of your marketplace in different locations. You
-  should add a descriptive title.
+- Listing type title: the name of the Listing type. It is shown to your
+  users on your marketplace, like when a seller is picking the listing
+  type during listing creation. Therefore, use a title that describes
+  what should happen with this listing, such as "Daily rental" or
+  "Product sale."
 
-- Listing type ID: this is a unique identifier not shown to your users.
-  It is used to distinguish this Listing type from others in your
-  Console. It can be used during custom development for the same
-  distinguishing purpose.
+- Listing type ID: the unique identifier for this Listing type. It
+  distinguishes this Listing type from others. It is not shown to your
+  users. This ID is saved along with listing data and displayed or used
+  to display data to the Admin or to help developers organize code when
+  creating custom functionalities.
 
 ## Transaction settings
 
 Transaction settings define several important aspects of how your
-marketplace works. You have two options available by default: Calendar
-booking or buying and selling products.
-
-Transaction settings impact what information providers must fill out
+marketplace works. They impact what information providers must fill out
 when creating their listing. They also impact how buyers initiate a
-transaction on the listing page.
+transaction on the listing page. Finally, transaction settings determine
+how a transaction happens between a buyer and provider, including
+payment, payout, and reviews.
+
+You have three transaction settings available by default: Calendar
+booking; Buying and selling products; and Free messaging.
 
 - Calendar booking: allows providers to set their availability in the
   listing creation form. Allows buyers to initiate transactions based on
@@ -70,38 +54,24 @@ transaction on the listing page.
   purchase those listings. Perfect for product marketplaces (and in some
   other types of marketplaces).
   [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#buying-and-selling-products).
+
 - Free messaging: allows a transaction without payments between buyers
   and sellers. Sellers can add a price or not to the listing. Useful for
   marketplaces where payments are not necessary or should happen
   off-platform.
-  [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#free-messaging)
+  [Read more](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/#free-messaging).
 
-Finally, transaction settings determine the transaction process used in
-your marketplace. The transaction process maps out how a transaction
-happens between a customer and provider, including payment, payout, and
-reviews.
-[You can learn more about the transaction settings here](/operator-guides/understanding-transaction-settings/).
+## Multiple Listing types
 
-## Can I edit or delete an existing Listing type?
+You can have up to 20 Listing types in your marketplace. Each Listing
+type must have a unique Listing type ID. When creating a listing,
+providers select one Listing type from all your Listing types per
+listing. Listings cannot take more than one Listing type at a time.
 
-You can make changes to an existing listing type or delete one, but this
-is not recommended if you created listings with the listing type that
-you want to keep open. Those listings will retain the settings of the
-old version of the listing type. For example, if your listing type
-earlier had calendar booking as its transaction process, and you change
-the transaction process to product selling, the old listings will still
-display a calendar.
+## What do the different Listing type settings mean for my users
 
-Once a listing has been created, its listing type can no longer be
-changed. If you want to make changes to a listing type or delete a
-listing type, it's recommended to close any open listings that were
-created with the old version of the listing type. You can close listings
-from the Listings tab in the Manage section.
-
-## Can I have multiple Listing types?
-
-Currently you can only configure one listing type in Console. If you
-self-host your marketplace, you can bypass this limitation with custom
-development and have several listing types available in the same
-marketplace. In the future, it will be possible to configure multiple
-listing types directly in Console.
+Listing types impact how buyers start transactions, how providers create
+their listings, and how they both interact to bring a transaction to a
+successful conclusion. Learn more about how different Listing types
+affect your users
+[in this article.](/operator-guides/how-listing-types-work).

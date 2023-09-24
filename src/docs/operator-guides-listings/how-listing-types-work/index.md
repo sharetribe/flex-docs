@@ -2,7 +2,7 @@
 title: How Listing types work
 slug: how-listing-types-work
 updated: 2023-09-24
-category: the-new-sharetribe-listings
+category: operator-guides-listings
 ingress:
   Listing types determine what kind of listings are created on your
   marketplace and how customers interact with them.
@@ -37,7 +37,7 @@ item for rental where an availability calendar is necessary. Providers
 using this Listing type will can add a calendar of availability for
 their service or rental. You can learn more about how providers add and
 manage their availability
-[here](the-new-sharetribe/default-availability-management-options/#how-sellers-add-their-availability).
+[here](operator-guides/default-availability-management-options/#how-sellers-add-their-availability).
 When creating their first listing, providers offering bookings will need
 to add their payout details to your marketplace in order to accept the
 booking and payment.
@@ -48,7 +48,7 @@ is available for pickup, delivery, or both. They can also add how many
 items they have in stock if you enable "Multiple items" stock type. You
 can learn more about how shipping, pickup, and stock management works
 for providers
-[here](/the-new-sharetribe/default-inventory-management-options/). When
+[here](/operator-guides/default-inventory-management-options/). When
 creating their first listing, providers offering products for sale will
 need to add their payout details to your marketplace in order to accept
 payments.
@@ -64,7 +64,7 @@ price.
 In addition to Listing types, custom fields impact the information
 collected from providers during listing creation. You can learn more
 about setting up custom fields
-[here](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-add-and-edit-listing-fields/).
+[here](https://www.sharetribe.com/docs/operator-guides/how-to-add-and-edit-listing-fields/).
 
 ## How Listing types work for buyers
 
@@ -76,14 +76,14 @@ book per hour, per day, or per night depending on the booking unit of
 the Listing type. The price of their booking equals the length of time
 they booked times the cost of per availability unit. You can learn more
 about how buyers book
-[here](/the-new-sharetribe/default-availability-management-options/#how-buyers-book).
+[here](/operator-guides/default-availability-management-options/#how-buyers-book).
 
 When Buying and selling products is in use, buyers purchase one or
 multiple units of a listing, if multiple units are available. The price
 equals the number of units they purchase multiplied by the unit price.
 Buyers also select the method of delivery. Learn more about how buyers
 purchase products
-[here](/the-new-sharetribe/default-inventory-management-options/#buying-the-listing-as-a-buyer).
+[here](/operator-guides/default-inventory-management-options/#buying-the-listing-as-a-buyer).
 
 Free messaging enables buyers to send an inquiry to sellers without any
 payment. Inquiries are initiated from the listing page.
@@ -98,7 +98,7 @@ conclusion. The transaction process also has rules for how things
 progress even for unsuccessful outcomes, such as a problem with delivery
 or an expired request. You can review the steps and stages of each
 transaction process for buyers, sellers, and operators in this
-[comprehensive guide](the-new-sharetribe/default-transaction-process-options/).
+[comprehensive guide](operator-guides/default-transaction-process-options/).
 
 ![Transaction process view in Console](./transaction-process.png)
 

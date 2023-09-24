@@ -1,5 +1,5 @@
 ---
-title: How filters works
+title: How filters work
 slug: understanding-filters
 updated: 2023-09-24
 category: the-new-sharetribe-listings
