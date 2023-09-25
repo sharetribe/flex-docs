@@ -90,7 +90,6 @@ After executing that command, you can go to the Flex Console (Build ->
 Transaction processes tab) and see that the
 _"biketribe-instant-booking"_ process is there.
 
-TODO UPDATE IMAGE
 ![Biketribe instant booking process created.](./biketribe-instant-booking-process.png)
 
 ### Create process alias
@@ -188,7 +187,7 @@ flex-cli process update-alias --alias=release-1 --process=biketribe-instant-book
 Now, if you open the process graph from the Flex Console, you'll see
 that the push payment transitions have been removed from the process.
 
-TODO UPDATE IMAGE ![Updated process.](./updated-process.png)
+![Updated process.](./updated-process.png)
 
 ## Update client app
 
@@ -471,17 +470,19 @@ Let's first import the new process and export its name as a constant.
   import { ensureTransaction } from '../util/data';
   import * as purchaseProcess from './transactionProcessPurchase';
   import * as bookingProcess from './transactionProcessBooking';
+  import * as inquiryProcess from './transactionProcessInquiry';
 + import * as instantProcess from './transactionProcessInstantBooking';
 
-  // Supported unit types
   export const ITEM = 'item';
   export const DAY = 'day';
   export const NIGHT = 'night';
   export const HOUR = 'hour';
+  export const INQUIRY = 'inquiry';
 
   // Then names of supported processes
   export const PURCHASE_PROCESS_NAME = 'default-purchase';
   export const BOOKING_PROCESS_NAME = 'default-booking';
+  export const INQUIRY_PROCESS_NAME = 'default-inquiry';
 + export const INSTANT_PROCESS_NAME = 'biketribe-instant-booking';
 
 ```
@@ -502,6 +503,12 @@ const PROCESSES = [
     alias: `${BOOKING_PROCESS_NAME}/release-1`,
     process: bookingProcess,
     unitTypes: [DAY, NIGHT, HOUR],
+  },
+  {
+    name: INQUIRY_PROCESS_NAME,
+    alias: `${INQUIRY_PROCESS_NAME}/release-1`,
+    process: inquiryProcess,
+    unitTypes: [INQUIRY],
   },
   {
     name: INSTANT_PROCESS_NAME,
@@ -530,18 +537,12 @@ Now if you start creating a new listing, you will see a dropdown of
 listing types. One of the listing types comes from Flex Console, and the
 other comes from our built-in configuration.
 
-TODO UPDATE IMAGE
-![Instant booking process available for selection](./saunatime-instant-booking-dropdown.png)
+![Instant booking process available for selection](./biketribe-process-dropdown.png)
 
 The next step is to determine how this transaction process data is used.
 By default, the template has two pages that use transaction process data
 to show different UI elements depending on the transaction's state:
 InboxPage and TransactionPage.
-
-### Update state helpers
-
-First, we will make a simple change to InboxPage state handling, and
-then a slightly bigger change to TransactionPage state handling.
 
 #### Update InboxPage and TransactionPage state data
 
@@ -590,7 +591,6 @@ There is one more step left to update for the new transaction process –
 microcopy strings. If you now try to create a listing with the new
 process, you will see microcopy keys that reference the new process.
 
-TODO UPDATE IMAGE
 ![Microcopy uses keys as fallback for the new process](./new-process-microcopy-keys.png)
 
 We will add the necessary microcopy strings next.
@@ -623,7 +623,6 @@ for example:
 
 You can now see the correct microcopy strings instead of the keys.
 
-TODO UPDATE IMAGE
 ![Updated microcopy strings for the new process](./new-process-microcopy-strings.png)
 
 ## Summary
