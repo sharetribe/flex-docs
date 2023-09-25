@@ -51,4 +51,37 @@ create sort and filter options from the listing fields you ask providers
 to fill out.
 [Read more about filters in this article](https://www.sharetribe.com/docs/the-new-sharetribe/understanding-filters/).
 
-2
+## FAQ
+
+### How do I enable location and keyword search?
+
+If your marketplace uses the location search, you can choose to display
+a keyword filter on your marketplace search page. This filters all
+results from the initial location search using keywords. You can enable
+location and keyword search from Listing search tab in Console.
+
+### How do I search by users?
+
+If your marketplace search is built around user profiles, as might be
+the case in a marketplace for finding and hiring industry experts, then
+you should build your listings to capture information about the
+individual. You can change your custom filters, Listing types, and
+marketplace texts to suit this use case. Searching for user profiles is
+not possible without making coding changes to your marketplace.
+
+### How do I search by Listing type?
+
+Your marketplace may have multiple Listing types, enabling different
+types of transactions and listings. It is not possible to use Listing
+types in a search currently, so filters, keyword, and/or location search
+should be used to help buyers find the right listing.
+
+### What happens to listings without availability when using the availability filters?
+
+Before an availability filter is applied, all listings matching the
+searched for criteria are returned regardless of Listing type. For
+instance, a keyword search for "bike" will return bikes that are
+available for purchase and bikes that are available for rental, if both
+such listings exist in your marketplace. Once an availability filter is
+applied, then only Listings that have an availability plan (i.e.
+listings available for bookings) are shown.
