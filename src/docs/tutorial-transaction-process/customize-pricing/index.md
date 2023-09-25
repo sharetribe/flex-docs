@@ -79,7 +79,8 @@ onSubmit={values => {
   const updatedValues = {
     price,
     publicData: {
-      helmetFee: { amount: helmetFee.amount, currency: helmetFee.currency },
+      helmetFee: helmetFee ? { amount: helmetFee.amount, currency: helmetFee.currency } : null,
+
     },
   };
   onSubmit(updatedValues);

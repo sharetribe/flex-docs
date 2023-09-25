@@ -24,7 +24,6 @@ Since we want to reveal the provider's phone number to the customer when
 the booking is made, we need to collect it first. This should be done on
 the sign-up page:
 
-TODO UPDATE SCREENSHOT?
 ![Phone number input added to sign-up form](./signup-form.png)
 
 ### Add input component
@@ -164,7 +163,7 @@ directory.
 
 </info>
 
-### Update accept transition
+### Update confirm-payment transition
 
 When we open up the _process.edn_ file from the fetched transaction
 process, we should be able to find the configuration for
@@ -283,7 +282,6 @@ created listing.
 When you accept the booking request, you should see email notification
 sent to the customer's email address.
 
-TODO UPDATE SCREENSHOT
 ![Updated email notification](./updated-email-notification.png)
 
 <info>
