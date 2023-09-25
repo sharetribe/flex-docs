@@ -1,7 +1,7 @@
 ---
 title: Default transaction process options
 slug: default-transaction-process-options
-updated: 2023-09-14
+updated: 2023-09-25
 category: the-new-sharetribe-transactions
 ingress:
   Illustrated guide of the options buyers and sellers have with the
@@ -330,12 +330,23 @@ transaction as completed. After the buyer does this, the payment is
 released to the seller. This creates trust and assurance between parties
 involved in the transaction.
 
-The default transaction process captures the funds immediately from the
-buyer’s credit card when they are making the purchase. The reservation
-is then converted to a charge once the seller accepts the request. The
-funds are then held by Stripe until the purchase period has passed.
-After 2 days have passed from the end of the booking, the funds are
-released to the seller, who will receive the payment within 1-2 weeks.
+The default purchase process creates a charge on the buyer’s credit card
+immediately when the buyer places the order. The seller then needs to
+mark the order as delivered once they’ve shipped the order or the buyer
+has picked it up. It’s also possible for the marketplace operator to
+mark an order as delivered in Console on behalf of the seller. **If
+nobody marks the order as delivered, the order will be automatically
+cancelled after 14 days and the buyer will be refunded.**
+
+Once an order is marked delivered, the funds will be released to the
+seller when one of these two conditions is met: 1) The buyer marks the
+order as received or 2) Two weeks have passed from marking the order as
+delivered and the buyer hasn’t disputed the order. If the buyer disputes
+the order before 2 weeks have passed, then it’s up for the marketplace
+operator to decide how to resolve the dispute: the operator can either
+refund the buyer or release the payment to the seller. **If the operator
+doesn’t take an action within 60 days, the order will be automatically
+cancelled and the buyer will be refunded.**
 
 ### Operator actions
 
