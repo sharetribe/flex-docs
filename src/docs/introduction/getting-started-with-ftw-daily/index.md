@@ -1,7 +1,7 @@
 ---
 title: Getting started with Sharetribe Web Template
 slug: getting-started-with-web-template
-updated: 2023-03-07
+updated: 2023-09-25
 category: introduction-getting-started
 ingress:
   Learn how to install Sharetribe Web Template to your local development

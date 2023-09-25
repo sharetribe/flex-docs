@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing-tutorial
-updated: 2023-09-04
+updated: 2023-09-25
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an
@@ -375,7 +375,7 @@ class to _BookingDatesForm.module.css_.
 
 After this step, the BookingDatesForm should look like this. Note that
 the helmet rental fee will not be visible in the order breakdown yet,
-even though we added the new checkbox. TODO UPDATE IMAGE
+even though we added the new checkbox.
 
 ![Helmet rental fee checkbox](./helmetFeeCheckbox.png)
 

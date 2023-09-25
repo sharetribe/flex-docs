@@ -1,7 +1,7 @@
 ---
 title: Style a component
 slug: first-edit
-updated: 2023-04-01
+updated: 2023-09-25
 category: tutorial-branding
 ingress:
   Begin the development of your marketplace by customising the
@@ -12,11 +12,11 @@ published: true
 ## Introduction
 
 Styling your marketplace is the first step towards customizing its
-appearance. You can make many visual changes using the [no-code tools in
-Console] (TODO UPDATE LINK TO NO-CODE TUTORIAL) but for more extensive
-changes, you will need to edit the code of the Sharetribe Web Template
-directly. This tutorial teaches you to style components directly through
-code in the Sharetribe Web Template.
+appearance. You can make many visual changes using the
+[no-code tools in Console](/the-new-sharetribe/tutorial-00-introduction/)
+but for more extensive changes, you will need to edit the code of the
+Sharetribe Web Template directly. This tutorial teaches you to style
+components directly through code in the Sharetribe Web Template.
 
 After this tutorial, you will know how to:
 

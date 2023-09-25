@@ -1,7 +1,7 @@
 ---
 title: Introduction
 slug: introduction
-updated: 2023-04-09
+updated: 2023-09-25
 category: tutorial
 ingress:
   Over the course of the tutorial, you will learn how to build a

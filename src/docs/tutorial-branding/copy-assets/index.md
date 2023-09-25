@@ -1,7 +1,7 @@
 ---
 title: Copy no-code changes from Test to Dev
 slug: copy-assets
-updated: 2023-09-14
+updated: 2023-09-25
 category: tutorial-branding
 ingress:
   Begin developing your marketplace by copying no-code changes from Test
@@ -31,9 +31,6 @@ When you first run your dev marketplace, you see the default branding
 and other features.
 
 ![Default marketplace screenshot](./generic-landingpage.png)
-
-_TODO if necessary, the Test blank assets are available locally in
-/Documents/Codebase/Notes/generics-tutorial-assets -S_
 
 Go to your Test environment, which now has your Biketribe related
 no-code changes, and click "Copy changes to..."
