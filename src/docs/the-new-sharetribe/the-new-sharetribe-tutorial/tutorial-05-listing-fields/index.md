@@ -1,7 +1,7 @@
 ---
 title: Tutorial step 5 – Create listing fields
-slug: tutorial-listing-fields
-updated: 2023-07-05
+slug: tutorial-05-listing-fields
+updated: 2023-09-20
 category: the-new-sharetribe-tutorial
 ingress:
   In this step we will decide what data is collected when a listing is
@@ -22,17 +22,16 @@ listing is created. You can also create search filters based on these
 fields.
 
 Let's create some custom fields. Click "Listings → Listing fields" from
-the navigation on the left. There we see several fields, but these are
-very Biketribe-specific. Let's delete them all. Instead, we will create
-the following new fields:
+the navigation on the left. There we see an example field. Let's delete
+it and create the following new fields:
 
-- Sauna type. Is it an Electric sauna, a Smoke sauna, or a Wooden sauna?
-- Amenities. What extras are included? Are towels, swimsuits etc
-  provided?
-- Sauna rules. Are there any specific things someone booking the sauna
-  should keep in mind?
+- Bike brand. Is it made by Cube, GHOST, Giant, or someone else?
+- Accessories. What extras are included? Is a bell, lights, lock, or
+  mudguard included?
+- Bike rental rules. Are there any specific things someone renting the
+  bike should keep in mind?
 
-Let's start with sauna type. Click "Add a new listing field", and click
+Let's start with bike brand. Click "Add a new listing field", and click
 open the newly created field.
 
 ### Field settings
@@ -41,7 +40,7 @@ open the newly created field.
 
 Field label is displayed in the marketplace next to the form field.
 
-**Write "Sauna type"**
+**Write "Brand"**
 
 #### Field ID
 
@@ -51,50 +50,52 @@ ID after listings have been created with it, as the old listings will
 retain the old ID. Field ID should not contain spaces or special
 characters.
 
-**Write "saunaType"**
+**Write "brand"**
 
 #### Field type
 
 Field type determines how the field works. In this case, we want each
-sauna to have exactly one type, and it should be chosen from a
-predefined list of types.
+bike to have exactly one type, and it should be chosen from a predefined
+list of types.
 
 **Choose "Select one"**
 
 #### This field is mandatory
 
-We want every sauna to have a sauna type.
+We want every bike to have a brand.
 
 **Check the checkbox**
 
 ### Field options
 
-Here we define the different options for the sauna type. Click open the
+Here we define the different options for the bike type. Click open the
 first option.
 
 #### Option label
 
 Just like fields, options have labels.
 
-**Write "Electric sauna"**
+**Write "Cube"**
 
 #### Option value
 
 Option value is a bit like Field ID: it's an identifier stored in the
 listing data. No spaces or special characters allowed.
 
-**Write "electricSauna"**
+**Write "cube"**
 
-Now edit the second option. For the label, put "Wooden sauna" and for
-the value "woodenSauna".
+Now edit the second option. For the label, put "Diamant" and for the
+value "diamant".
 
-Let's add one more option. Click "Add a new option". Add "Smoke sauna"
-as the label and "smokeSauna" as the value.
+Let's add one more option. Click "Add a new option". Add "GHOST" as the
+label and "ghost" as the value.
+
+Repeat the process for as many brands as you want to add.
 
 ### Search settings
 
 We can create a filter for our "Select one" field for search page. Let's
-do that, so people searching for smoke saunas can filter out the rest.
+do that, so people searching for GHOST bikes can filter out the rest.
 
 **Check the checkbox**
 
@@ -108,27 +109,30 @@ submenu. Type is very important, so let's make it primary.
 
 Now we have created our first custom listing field! Let's add two more.
 
-The next one is "Amenities". This time we want one sauna to have
-multiple amenities. The field should not be mandatory, as some saunas
+The next one is "Accessories". This time we want one bike to have
+multiple accessories. The field should not be mandatory, as some bikes
 might not have any amenities. There should be a search filter, but it
 can be under "More filters" menu.
 
-- Field label: "Amenities"
-- Field id: "amenities"
+- Field label: "Accessories"
+- Field id: "accessories"
 - Field type: "Select multiple"
 - Don't check "This field is mandatory"
-- Three field options: "Towels/towels", "Jacuzzi/jacuzzi", "Wi-fi/wifi"
+- Four field options: "Bell/bell", "Lights/lights", "Lock/lock", and
+  "Mudguard/mudguard"
 - Search settings: Check "Add a filter to Search Page"
 - Filter placement: "Use as a secondary search filter"
 
-Finally, let's add "Sauna rules". This is just a freeform text field.
-It's optional: a sauna doesn't need to have rules. For free text fields,
-we can't add a search filter, but we can decide whether a free text
-search should search the contents of this field. In this case, it
-doesn't make sense.
+Finally, let's add "Bike rules". This is just a freeform text field, for
+example if the bike can't handle rough terrain and it should only be
+driven on flat road or terrain. It's optional: a bike doesn't need to
+have specific usage rules, if it does well in all situations. For free
+text fields, we can't add a search filter, but we can decide whether a
+free text search should search the contents of this field. In this case,
+it doesn't make sense.
 
-- Field label: "Sauna rules"
-- Field id: "saunaRules"
+- Field label: "Bike rules"
+- Field id: "bikeRules"
 - Field type: "Select multiple"
 - Don't check "This field is mandatory"
 - Don't check "Include this field in keyword search."

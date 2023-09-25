@@ -1,8 +1,8 @@
 ---
 title:
   Tutorial step 7 – Configure commission and minimum transaction size
-slug: tutorial-commission-tx-size
-updated: 2023-07-05
+slug: tutorial-07-commission-tx-size
+updated: 2023-09-20
 category: the-new-sharetribe-tutorial
 ingress:
   In this step we'll look into how you can automatically collect a
@@ -35,7 +35,7 @@ don’t need to configure your own Stripe account yet.
 
 [Read more about setting up Stripe here](https://www.sharetribe.com/docs/the-new-sharetribe/how-to-stripe/).
 
-### Commission
+## Commission
 
 First off, navigate to the "Transactions → Commission" in Console.
 
@@ -44,7 +44,7 @@ upcoming feature will allow you to charge a commission also from the
 customer.
 
 Once you set a commission percentage, this will automatically be charged
-from every transaction. We believe 20% is a fair fee for Saunatime.
+from every transaction. We believe 20% is a fair fee for Biketribe.
 
 **Write "20" in "Provider commission (%)"**
 
@@ -57,7 +57,7 @@ Navigate to "Transactions → Minimum transaction size".
 Stripe also collects a fee from each transaction, and it collects it
 from the platform operator – in this case, you! This means that you
 should not allow transactions where you lose money. A good rule of thumb
-is that you should earn at least 50 cents from each transaction. .
+is that you should earn at least 50 cents from each transaction.
 
 You can control the minimum transaction size by setting a minimum
 listing price. We recommend setting a default so that your commission
@@ -72,7 +72,7 @@ changes. You can
 
 Save changes.
 
-### Next: vocabulary
+## Next: vocabulary
 
 Now our marketplace is working the way we're expecting! However, there
 are few more adjustments we should make before testing things. The next

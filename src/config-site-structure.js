@@ -167,16 +167,16 @@ const sortingArrayTheNewSharetribeUsefulInformation = [];
 
 /// Arrange The New Sharetribe tutorial
 const sortingArrayTheNewSharetribeTutorial = [
-  'tutorial-introduction',
-  'tutorial-marketplace-branding',
-  'tutorial-marketplace-layout',
-  'tutorial-landing-page',
-  'tutorial-listing-type',
-  'tutorial-listing-fields',
-  'tutorial-listing-search',
-  'tutorial-commission-tx-size',
-  'tutorial-microcopy',
-  'tutorial-footer',
+  'tutorial-00-introduction',
+  'tutorial-01-marketplace-branding',
+  'tutorial-02-marketplace-layout',
+  'tutorial-03-landing-page',
+  'tutorial-04-listing-type',
+  'tutorial-05-listing-fields',
+  'tutorial-06-listing-search',
+  'tutorial-07-commission-tx-size',
+  'tutorial-08-microcopy',
+  'tutorial-09-footer',
 ];
 
 exports.siteStructure = [
