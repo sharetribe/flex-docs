@@ -356,6 +356,11 @@ Start the development server:
 yarn run dev
 ```
 
+Running `yarn run dev` uses
+[Webpack's dev-server](https://webpack.js.org/configuration/dev-server/)
+with
+[Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/).
+
 This will automatically open `http://localhost:3000` in a browser:
 
 ![Default marketplace screenshot](./generic-landingpage.png)

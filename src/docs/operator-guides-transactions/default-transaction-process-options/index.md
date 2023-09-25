@@ -1,7 +1,7 @@
 ---
 title: Default transaction process options
 slug: default-transaction-process-options
-updated: 2023-06-02
+updated: 2023-09-14
 category: operator-guides-transactions
 ingress:
   Illustrated guide of the options buyers and sellers have with the
@@ -45,25 +45,25 @@ You can see screenshots of the different steps below.
 
 <extrainfo title="Step 1: Buyer browsing">
 
-![Change environments](./01-buyer-browsing.png)
+![Buyer browsing](./01-buyer-browsing.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 2-4: Buyer looking at listing view">
 
-![Change environments](./02-buyer-listingview.png)
+![Buyer listing view](./02-buyer-listingview.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 5-7: Buyer on the checkout page">
 
-![Change environments](./03-buyer-checkout.png)
+![Buyer checkout](./03-buyer-checkout.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 8-9: Buyer after checking out">
 
-![Change environments](./04-buyer-checkout-success.png)
+![Buyer checkout](./04-buyer-checkout-success.png)
 
 </extrainfo>
 
@@ -100,31 +100,31 @@ You can see the screenshots of these steps below.
 
 <extrainfo title="Step 1: Seller notification">
 
-![Change environments](./05-seller-notification.png)
+![Seller notification](./05-seller-notification.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 2-3: Seller looking at their inbox">
 
-![Change environments](./06-seller-inbox.png)
+![Seller notification](./06-seller-inbox.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 4-7: Seller looking at the transaction thread">
 
-![Change environments](./07-seller-transactionthread.png)
+![Seller message](./07-seller-transactionthread.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 8-9: Seller's transaction thread after accepting the request">
 
-![Change environments](./08-seller-accepted.png)
+![Seller accepted](./08-seller-accepted.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 10-11: Buyer's transaction thread after seller has accepted the request">
 
-![Change environments](./09-buyer-accepted.png)
+![Buyer accepted](./09-buyer-accepted.png)
 
 </extrainfo>
 
@@ -164,39 +164,40 @@ You can see illustrations of the process below.
 
 <extrainfo title="Step 12 (optional): available operator actions in the transaction process">
 
-![Change environments](./10-transaction-process-operator-actions.png)
+![Transaction process actions](./10-transaction-process-operator-actions.png)
 
 </extrainfo>
 
 <extrainfo title="Step 13: Choose the operator action (here, we choose 'accept')">
 
-![Change environments](./11-operator-actions-accept.png)
+![Operator actions](./11-operator-actions-accept.png)
 
 </extrainfo>
 
 <extrainfo title="Step 14: Confirm the operator action">
 
-![Change environments](./12-operator-actions-accept-confirm.png)
+![Operator actions confirm](./12-operator-actions-accept-confirm.png)
 
 </extrainfo>
 
 <extrainfo title="Step 13 (again): Choose the operator action (here, we choose 'operator complete')">
 
-![Change environments](./13-operator-actions-complete.png)
+![Operator actions complete](./13-operator-actions-complete.png)
 
 </extrainfo>
 
 <extrainfo title="Step 14 (again): Confirm the operator action">
 
-![Change environments](./14-operator-actions-complete-confirm.png)
+![Operator actions confirm](./14-operator-actions-complete-confirm.png)
 
 </extrainfo>
 
 <extrainfo title="Step 15: See the completed transitions in the timeline and activity log">
 
-![Change environments](./15-operator-actions-operator-actions-done.png)
+![Operator actions done](./15-operator-actions-operator-actions-done.png)
 
 </extrainfo>
+
 
 ## Buying and Selling Products Process
 
@@ -244,25 +245,25 @@ You can see screenshots of the different steps below.
 
 <extrainfo title="Steps 1-2: Buyer selecting delivery method">
 
-![Change environments](./16-buyer-selecting-delivery.png)
+![Buyer choice delivery](./16-buyer-selecting-delivery.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 3-6: Buyer checkout with shipping as delivery method">
 
-![Change environments](./17-buyer-shipping-checkout.png)
+![Buyer choice checkout](./17-buyer-shipping-checkout.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 5-9: Buyer checkout with pickup as delivery method">
 
-![Change environments](./18-buyer-pickup-checkout.png)
+![Buyer choice pickup](./18-buyer-pickup-checkout.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 10-11: Buyer checked out successfully">
 
-![Change environments](./19-buyer-booking-success.png)
+![Buyer success](./19-buyer-booking-success.png)
 
 </extrainfo>
 
@@ -292,31 +293,31 @@ You can see the screenshots of these steps below.
 
 <extrainfo title="Step 1: Seller in their inbox">
 
-![Change environments](./20-seller-inbox.png)
+![Seller inbox](./20-seller-inbox.png)
 
 </extrainfo>
 
 <extrainfo title="Steps 2-4: Seller at the transaction page">
 
-![Change environments](./21-seller-transactionthread.png)
+![Seller inbox](./21-seller-transactionthread.png)
 
 </extrainfo>
 
 <extrainfo title="Step 5: Seller marked the bike as delivered">
 
-![Change environments](./22-seller-delivered.png)
+![Seller delivered](./22-seller-delivered.png)
 
 </extrainfo>
 
 <extrainfo title="Step 6: Buyer sees update and marks bike as received">
 
-![Change environments](./23-buyer-receiving.png)
+![Buyer received](./23-buyer-receiving.png)
 
 </extrainfo>
 
 <extrainfo title="Step 7: After marking the bike as delivered/received, users can leave each other a review">
 
-![Change environments](./24-buyer-received.png)
+![Reviews](./24-buyer-received.png)
 
 </extrainfo>
 
@@ -335,7 +336,7 @@ funds are then held by Stripe until the purchase period has passed.
 After 2 days have passed from the end of the booking, the funds are
 released to the seller, who will receive the payment within 1-2 weeks.
 
-## Operator actions
+### Operator actions
 
 Sharetribe Flex allows you to act on behalf of your users if needed. In
 the default product purchase transaction process, there are three
@@ -356,27 +357,95 @@ You can see illustrations of the process below.
 
 <extrainfo title="Step 8 (optional): available operator actions in the transaction process">
 
-![Change environments](./25-transaction-process-operator-actions.png)
+![Operator actions](./25-transaction-process-operator-actions.png)
 
 </extrainfo>
 
 <extrainfo title="Step 9: Choose the operator action (here, we choose 'cancel')">
 
-![Change environments](./26-operator-actions-cancel.png)
+![Operator actions cancel](./26-operator-actions-cancel.png)
 
 </extrainfo>
 
 <extrainfo title="Step 10: Confirm the operator action">
 
-![Change environments](./27-operator-actions-cancel-confirm.png)
+![Operator actions confirm](./27-operator-actions-cancel-confirm.png)
 
 </extrainfo>
 
 <extrainfo title="Step 11: See the completed transition in the timeline and activity log">
 
-![Change environments](./28-operator-actions-cancel-done.png)
+![Operator actions timeline](./28-operator-actions-cancel-done.png)
 
 </extrainfo>
+
+## Free messaging
+
+### 1. Inquiring about a listing as a buyer
+
+Free messaging should be used when no payments happens on the platform
+during a transaction. The process is simple: buyers send an inquiry to
+the provider to start a transaction. Providers can respond to the
+inquiry on the order details page with a message. The buyer and seller
+can message as much or as little as needed through your marketplace.
+
+Buyers initiate transactions from the listing page. Pressing the call to
+action button takes them to a detail page with the listing and message
+input field (1). The message field cannot be left blank, buyers must
+write something there (2). The inquiry is finalized and sent to the
+seller by pressing the call to action again (3). After sending the
+inquiry, they are transferred to the order details page where the
+inquiry message is shown alongside the listing and transaction timeline
+(4). Buyers have the option to write more message (5).
+
+The initial inquiry message triggers a notification to the seller that
+they received a new inquiry on your marketplace. Subsequent messages
+from the buyer trigger a notification to the seller that they received a
+new message.
+
+You can see screenshots of the process below.
+
+<extrainfo title="Step 1: Buyer starts inquiry">
+
+![Inquiry start](./29-inquiry-one.png)
+
+</extrainfo>
+
+<extrainfo title="Steps 2-3: Buyer completes inquiry">
+
+![Inquiry start buyer](./30-inquiry-two.png)
+
+</extrainfo>
+
+<extrainfo title="Step 4-5: Order details page, buyer view">
+
+![Inquiry order page](./31-inquiry-three.png)
+
+</extrainfo>
+
+### 2. Reacting to inquiries as a seller
+
+Sellers are notified by email when a new inquiry is created on their
+listing. They can find the the inquiry in their Inbox. A seller's order
+details page includes information about the inquired listing, the
+inquiry message and any subsequent messages from the customer, and a
+timeline of the transaction (6). Sellers can write back to the message
+(7).
+
+Each new message triggers an email notification to the buyer that they
+received a new message in your marketplace.
+
+<extrainfo title="Steps 6-7: Order details page, seller view">
+
+![Inquery seller view](./32-inquiry-four.png)
+
+</extrainfo>
+
+### Operator actions
+
+There are no actions for an operator to take during this transaction.
+Operators can view the transaction and messages exchanged during it in
+Manage->Transactions in Console.
 
 ## Changing default transaction processes
 
