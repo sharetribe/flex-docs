@@ -15,10 +15,10 @@ your marketplace. _Listing type_ determines how customers can interact
 with the listing: for example, are they purchasing a physical product
 from an inventory, or making a calendar booking?
 
-For now, your marketplace can have only one listing type available at a
-time. Let's adjust its settings. Click "Listings → Listing types" from
-the navigation on the left and click open the default listing type
-"Daily booking".
+Your marketplace can have multiple different Listing types enabled. For
+now, we'll setup just one.s Click "Listings → Listing types" from the
+navigation on the left and click open the default listing type "Daily
+booking".
 
 In our Sauna marketplace, we want to offer nightly bookings to allow
 all-night sauna parties: you book a slot from the calendar, check in

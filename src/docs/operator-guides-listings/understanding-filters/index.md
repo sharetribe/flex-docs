@@ -1,7 +1,7 @@
 ---
-title: Understanding filters
+title: How filters work
 slug: understanding-filters
-updated: 2023-05-18
+updated: 2023-09-24
 category: operator-guides-listings
 ingress: Understanding and adding filters in your marketplace.
 published: true

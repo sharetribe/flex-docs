@@ -1,7 +1,7 @@
 ---
-title: Understanding filters
+title: How filters work
 slug: understanding-filters
-updated: 2023-07-05
+updated: 2023-09-24
 category: the-new-sharetribe-listings
 ingress: Understanding and adding filters in your marketplace.
 published: true
@@ -44,7 +44,7 @@ You can then define if the filter is a primary or a secondary filter.
   the map view it is only visible within the “More filters” menu in the
   Map Layout view.
 
-## How do filters work in the search page?
+## How filters work in the search page
 
 Filters can be a bit complex to understand. These section explains how
 the custom field filters work. Date range and Price filters explanation
@@ -63,7 +63,7 @@ If a filter is created for a Select multiple type of field, the filter
 will only display listings that have all of the selected options. (AND
 type of filter)
 
-## How to define how filters look in the search page?
+## How filters look in the search page
 
 You can define how filters are displayed in the search page, via the
 "Design -> Layout" then "Search page Layout" setting.
