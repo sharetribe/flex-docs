@@ -141,7 +141,7 @@ Example HTML:
 <!--
 ** First, set global variables for the whole file
 -->
-    {{set-translations (asset "email/translations.json")}} <!-- TODO CHECK ASSET NAME -->
+    {{set-translations (asset "content/email-texts.json")}}
     {{set-locale (asset "general/localization.json" "locale" "en_US")}}
     {{set-timezone transaction.listing.availability-plan.timezone}}
 <html lang="en">

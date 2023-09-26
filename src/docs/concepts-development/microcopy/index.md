@@ -321,7 +321,7 @@ const message = intl.formatMessage(
 ```
 
 ```handlebars
-{{set-translations (asset "email/translations.json")}}
+{{set-translations (asset "content/email-texts.json")}}
 {{t "PurchaseOrderMarkedAsDelivered.Subject"
 "Your order for {listingTitle} was {option, select, shipping {shipped} other {delivered}}"
 listingTitle=transaction.listing.title option=transaction.protected-data.deliveryMethod}}
