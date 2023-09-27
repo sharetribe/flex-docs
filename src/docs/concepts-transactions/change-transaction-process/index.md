@@ -14,6 +14,8 @@ marketplace. Sharetribe uses a feature called the transaction process to
 implement the steps your users take when they interact on your
 marketplace.
 
+<plan tier="extend" feature="Customizing your transaction process"></plan>
+
 Even if you’re not the one developing your marketplace, you still have
 work to do. First, you must design how you want transactions on your
 marketplace to happen. Second, you must communicate this to your

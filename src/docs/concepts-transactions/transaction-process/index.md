@@ -14,6 +14,12 @@ Your marketplace exists to connect supply and demand. You have a unique
 vision of how this connection should happen. Sharetribe makes this
 custom vision possible using its composable transaction process.
 
+<plan tier="launch">
+
+Live transactions are available in the Launch plan and above.
+
+</plan>
+
 ## Users interact through transactions
 
 Any time users connect with each other on a Sharetribe marketplace, they
@@ -207,6 +213,8 @@ Template”, you can read more about it
 As all marketplaces’ have their own characteristics, it is common to
 need some customization to the default transaction process to make it
 more suitable to the customers’ needs.
+
+<plan tier="extend" feature="Customizing transaction processes"></plan>
 
 However, quite often it's helpful to start building your process by
 making slight customizations to the default process. Typical minor

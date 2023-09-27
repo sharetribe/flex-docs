@@ -116,6 +116,8 @@ users with their own sign-in credentials. Instead, Integration API can
 be used to create server-side integrations to external systems, or to
 retrieve data for custom marketplace dashboards.
 
+<plan tier="extend" feature="Integration API access"></plan>
+
 ### Authenticating to Sharetribe APIs
 
 Sharetribe marketplace users need to sign up with their email address to
@@ -228,6 +230,8 @@ The Integration API offers access to the entire marketplace data. This
 includes all users, listings, transactions, and messages. To see what
 endpoints you can access using the Integration API, refer to the
 [Integration API reference](https://www.sharetribe.com/api-reference/integration.html).
+
+<plan tier="extend" feature="Integration API access"></plan>
 
 To access the Integration API you need a valid access token obtained
 through

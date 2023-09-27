@@ -22,6 +22,12 @@ account.
 The following sections offer an overview of the two methods and how to
 configure them.
 
+<plan tier="onboard">
+
+Configuring outgoing email settings is available in paid plans.
+
+</plan>
+
 ## Managed setup
 
 Sharetribe uses [SendGrid](https://sendgrid.com/) as an email service

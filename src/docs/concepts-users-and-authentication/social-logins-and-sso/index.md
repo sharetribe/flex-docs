@@ -18,6 +18,9 @@ specific service, refer to the following how-to guides:
 - [Enable OpenID Connect login](/how-to/enable-open-id-connect-login/)
 - [How to set up OpenID Connect proxy in Sharetribe Web Template](/how-to/setup-open-id-connect-proxy/)
 
+<plan tier='extend' feature="Using identity providers">
+</plan>
+
 ## Using a third party identity provider
 
 In addition to username and password based authentication, Sharetribe

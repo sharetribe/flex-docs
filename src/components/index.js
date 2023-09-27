@@ -41,6 +41,7 @@ export { default as VersionBanner } from './VersionBanner/VersionBanner'
 // dependencies.
 
 export { default as Info } from './Info';
+export { default as Plan } from './Plan';
 export { default as Warning } from './Warning';
 export { default as BaseLayout } from './BaseLayout';
 export { default as CarouselContentCreation } from './CarouselContentCreation';

@@ -221,6 +221,8 @@ over the transaction process. In terms of payments, you can make
 parallel paths depending on your payment strategy, and you can fine-tune
 the timeline of different actions to suit your marketplace.
 
+<plan tier="extend" feature="Customizing your transaction process"></plan>
+
 You can edit the transaction processes on your marketplace with
 [Flex CLI](/how-to/edit-transaction-process-with-flex-cli/). If you use
 Sharetribe Web Template, you will also need to make some
