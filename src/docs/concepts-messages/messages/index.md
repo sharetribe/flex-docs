@@ -19,7 +19,7 @@ to be associated with a transaction and can not be sent outside of one.
 
 The default booking and purchase
 [transaction processes](https://github.com/sharetribe/flex-example-processes/blob/master/default-booking/process.edn)
-includes an inquiry transition, which initiates a transaction without
+include an inquiry transition, which initiates a transaction without
 running any [actions](/references/transaction-process-actions/#actions),
 allowing the provider and customer to send messages to each other. In
 addition, the
