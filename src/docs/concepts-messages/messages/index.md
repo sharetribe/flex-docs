@@ -16,12 +16,18 @@ Messages let your users communicate with other users in your
 marketplace. They can be exchanged freely between a customer and a
 provider once they have engaged in a transaction. Messages always need
 to be associated with a transaction and can not be sent outside of one.
-The default booking
-[transaction process](https://github.com/sharetribe/flex-example-processes/blob/master/default-booking/process.edn)
+
+The default booking and purchase
+[transaction processes](https://github.com/sharetribe/flex-example-processes/blob/master/default-booking/process.edn)
 includes an inquiry transition, which initiates a transaction without
 running any [actions](/references/transaction-process-actions/#actions),
-allowing the provider and customer to send messages to each other. Note
-that messages do not alter the transaction or transition state.
+allowing the provider and customer to send messages to each other. In
+addition, the
+[default-inquiry process](https://github.com/sharetribe/flex-example-processes/blob/master/default-inquiry/process.edn)
+initiates a simple transaction that is only intended for messaging.
+
+Note that messages do not alter the transaction or transition it to a
+different state.
 
 ### Sending messages
 

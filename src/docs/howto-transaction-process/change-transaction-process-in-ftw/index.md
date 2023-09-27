@@ -9,10 +9,15 @@ ingress:
 published: true
 ---
 
-Sharetribe Web Template defines four transaction processes by default:
-daily bookings, nightly bookings, hourly bookings, and product sales
-processes. The template is created to support states and transitions
-defined in those processes.
+Sharetribe Web Template defines three transaction processes by default:
+
+- daily, nightly, and hourly bookings use the **default-booking**
+  process,
+- product sales use the **default-purchase** process, and
+- inquiries use the **default-inquiry** process.
+
+The template is created to support states and transitions defined in
+those processes.
 
 How the transaction process works behind the Marketplace API depends on
 how your process is customised in our backend. To customise the
