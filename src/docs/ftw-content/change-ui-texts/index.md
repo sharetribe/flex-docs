@@ -23,11 +23,11 @@ directly into the source code. Instead, the source code uses
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
 each key in their language. Read more about how
-[Flex handles microcopy](/concepts/microcopy/).
+[Sharetribe handles microcopy](/concepts/microcopy/).
 
 By default, the template use built-in language-specific microcopy files
 to show microcopy messages in the UI. However, starting in 2022-05,
-operators can also modify microcopy in Flex Console using hosted
+operators can also modify microcopy in Sharetribe Console using hosted
 microcopy assets. The built-in microcopy is merged with the hosted
 microcopy in the template, so you can use both ways of managing
 microcopy. Read more about how to
@@ -44,7 +44,7 @@ applications that operators may need to manage.
 ## Content pages
 
 Your marketplace also has some content pages that can be modified
-through Flex Console. The default content pages include
+through Sharetribe Console. The default content pages include
 
 - About
 - Landing page
@@ -54,7 +54,7 @@ through Flex Console. The default content pages include
 These pages are rendered by the
 [PageBuilder component](/ftw/page-builder/) in the template. In addition
 to these default pages, you can create your own content pages through
-Flex Console, and
+Sharetribe Console, and
 [fully manage their content](/concepts/content-management/) without code
 changes. On the template side, you can modify
 [how that content is displayed](/how-to/options-prop/).

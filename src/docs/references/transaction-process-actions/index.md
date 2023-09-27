@@ -1074,8 +1074,8 @@ Transaction processes need to use them especially if they want to be
 SCA-compatible.
 
 After the PaymentIntent is created, it's ID and client secret are
-temporarily accessible in the Flex transaction protected data under the
-`stripePaymentIntents` key in the following form:
+temporarily accessible in the Sharetribe transaction protected data
+under the `stripePaymentIntents` key in the following form:
 
 ```json
 {
@@ -1145,8 +1145,8 @@ push payment methods. The following payment methods are supported:
 - Przelewy24
 
 After the PaymentIntent is created, it's ID and client secret are
-temporarily accessible in the Flex transaction protected data under the
-`stripePaymentIntents` key in the following form:
+temporarily accessible in the Sharetribe transaction protected data
+under the `stripePaymentIntents` key in the following form:
 
 ```json
 {

@@ -11,14 +11,14 @@ published: true
 ---
 
 Your marketplace exists to connect supply and demand. You have a unique
-vision of how this connection should happen. Flex makes this custom
-vision possible using its composable transaction process.
+vision of how this connection should happen. Sharetribe makes this
+custom vision possible using its composable transaction process.
 
 ## Users interact through transactions
 
-Any time users connect with each other on a Flex marketplace, they do it
-through a transaction. At its core, a Flex transaction is the
-interaction between two users—the provider and the customer—from
+Any time users connect with each other on a Sharetribe marketplace, they
+do it through a transaction. At its core, a Sharetribe transaction is
+the interaction between two users—the provider and the customer—from
 beginning to end. A single transaction might include events such as
 messages between users, the payment sent from the customer to the
 provider, and the reviews users leave about their experience.
@@ -31,8 +31,8 @@ speed. Perhaps you’d like both options, depending on the nature of the
 offered service.
 
 The guidelines for how you’d like users to transact are established in
-Flex using a transaction process. Your marketplace’s transaction process
-determines how your customers and providers move through their
+Sharetribe using a transaction process. Your marketplace’s transaction
+process determines how your customers and providers move through their
 transaction. You can have different transaction processes for different
 ways of transacting, like renting and buying products, in the same
 marketplace too.
@@ -44,7 +44,7 @@ possibilities they have upon reaching each step.
 Your marketplace can have multiple different transaction processes in
 use simultaneously. You can see the transaction processes of your
 marketplace in
-[Flex Console](https://flex-console.sharetribe.com/transaction-processes).
+[Sharetribe Console](https://flex-console.sharetribe.com/transaction-processes).
 
 Typically, all transaction processes are different. These differences
 can be fundamental and change the logic of the order flow, or they can
@@ -75,10 +75,9 @@ modeled on AirBnB to learn more about them.
 
 ![Default transaction process](./complete-transaction-process.png)
 
-In the image above you can see the default transaction process in
-Sharetribe Flex called "default-booking". It is the same process that
-you will find, albeit with a different layout, within your Console
-account's
+In the image above you can see one of the default transaction processes
+in Sharetribe called "default-booking". It is the same process that you
+will find, albeit with a different layout, within your Console account's
 [transaction process page](https://flex-console.sharetribe.com/transaction-processes).
 It closely mimics how a customer and a provider transact on AirBnB. From
 a listing, customers can message a provider or book directly by entering
@@ -99,7 +98,7 @@ the default process.
 The status at any given point in a transaction is called its state. The
 state describes where the users are in their transaction.
 
-The Flex default booking process, for example, has a state called
+The Sharetribe default booking process, for example, has a state called
 preauthorized. It signifies that a customer has requested to book a time
 from the provider’s calendar, and a charge on their credit card has been
 preauthorized.
@@ -115,8 +114,8 @@ steps between states.
 
 A transition is triggered by one type of user or “actor”: the customer,
 the provider, the operator, or time (this is known as the “system” actor
-in Flex, or as an automatic transition). From the accepted state in the
-transaction, the transaction will automatically transition to a
+in Sharetribe, or as an automatic transition). From the accepted state
+in the transaction, the transaction will automatically transition to a
 delivered state at a certain point in time. Or, the operator may cancel
 the booking.
 
@@ -125,9 +124,9 @@ They also describe who can complete the steps. If there are no possible
 transitions from a state, the transaction has ended.
 
 Technically, transitions can be considered the main building block of
-Flex transaction process. They define, implicitly or explicitly, all the
-other elements of a transaction process. We will not go to into more
-detail in this article, but you can find more information
+Sharetribe transaction process. They define, implicitly or explicitly,
+all the other elements of a transaction process. We will not go to into
+more detail in this article, but you can find more information
 [in the transaction process format reference documentation.](/references/transaction-process-format/)
 
 ### Actions
@@ -136,14 +135,15 @@ Actions describe what happens as part of a transition. For example, the
 transaction process allows users to transition from accepted state to
 delivered or cancelled. The transaction may “complete” automatically, or
 the operator may “cancel” it with the respective transitions. “Complete”
-actions involve creating a payout to the provider via Stripe (Flex’s
-payment gateway). “Cancel” actions, on the other hand, include
-cancelling the booking and issuing a refund.
+actions involve creating a payout to the provider via Stripe
+(Sharetribe’s payment gateway). “Cancel” actions, on the other hand,
+include cancelling the booking and issuing a refund.
 
-Possible actions are defined by the capacity of the Flex API. The list
-of all transaction process actions can be found
+Possible actions are defined by the capacity of the Sharetribe API. The
+list of all transaction process actions can be found
 [in the transaction process actions reference documentation](/references/transaction-process-actions/).
-Creating custom transaction process actions is not possible in Flex.
+Creating custom transaction process actions is not possible in
+Sharetribe.
 
 ### Notifications
 
@@ -155,15 +155,16 @@ templates used for the notifications are also considered part of the
 transaction process, and can be fully customised to fit the needs of the
 marketplace.
 
-In the Flex default booking process, transitioning from the accepted to
-the delivered state triggers three email notifications. The provider
-receives a notification that their money has been paid out and a
-notification prompting them to review the customer. The customer
+In the Sharetribe default booking process, transitioning from the
+accepted to the delivered state triggers three email notifications. The
+provider receives a notification that their money has been paid out and
+a notification prompting them to review the customer. The customer
 receives an email notification to review the provider.
 
-To review what notifications are sent as part of the Flex default
-process, visit your [Flex Console](/operator-guides/concepts/#console)
-Build tab. Each included
+To review what notifications are sent as part of the Sharetribe default
+process, visit your
+[Sharetribe Console](/operator-guides/concepts/#console) Build tab. Each
+included
 [email notification has a template](/references/email-templates/#editing-transaction-emails)
 that can be customized using the Flex CLI.
 
@@ -176,9 +177,9 @@ that can be customized using the Flex CLI.
 You may be wondering what a graph has to do with your marketplace – a
 very good question. The graph is simply a visualization of the
 transaction process information (the states, the transitions, and the
-actions) stored in your marketplace database in Flex. The transaction
-process is, in reality, a short set of instructions written in a text
-file. You can see an example of these instructions
+actions) stored in your marketplace database in Sharetribe. The
+transaction process is, in reality, a short set of instructions written
+in a text file. You can see an example of these instructions
 [here](https://github.com/sharetribe/flex-example-processes/blob/master/default-booking/process.edn)
 if you are curious.
 
@@ -189,12 +190,12 @@ Whenever your users transact, at whichever state they are in that
 interaction, the transaction process determines **what** they can do
 next and **how** it happens.
 
-Let’s revisit our Flex default booking transaction process, this time in
-conjunction with Sharetribe Web Template, to illustrate this. You’ll see
-how a transaction process state looks for providers and customers in
-Biketribe, the default marketplace built with Sharetribe Web Template.
-If you’re not sure what is meant by the “Sharetribe Web Template”, you
-can read more about it
+Let’s revisit our Sharetribe default booking transaction process, this
+time in conjunction with Sharetribe Web Template, to illustrate this.
+You’ll see how a transaction process state looks for providers and
+customers in Biketribe, the default marketplace built with Sharetribe
+Web Template. If you’re not sure what is meant by the “Sharetribe Web
+Template”, you can read more about it
 [here](/operator-guides/concepts/#sharetribe-web-template).
 
 <txnprocessuxcarousel title="Transaction process and user experience">
@@ -239,12 +240,12 @@ transaction process plays out in your marketplace application where your
 users transact.
 
 Now that you understand more about how the transaction process works,
-it’s time to create your own. Flex provides a few default processes, but
-you’ll likely want to modify these to capture the unique way your users
-will transact.
+it’s time to create your own. Sharetribe provides a few default
+processes, but you’ll likely want to modify these to capture the unique
+way your users will transact.
 
-If you’re a developer building with Flex, you can build your transaction
-process using the Flex CLI. Here are guides for
+If you’re a developer building with Sharetribe, you can build your
+transaction process using the Flex CLI. Here are guides for
 [creating your own transaction process](/tutorial/create-transaction-process/)
 and for
 [getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).

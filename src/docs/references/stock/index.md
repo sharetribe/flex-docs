@@ -7,8 +7,8 @@ ingress: Reference documentation for listing stock management.
 published: true
 ---
 
-The listing stock management features of Flex allow providers to define
-the quantity of available stock for purchase. There are three key
+The listing stock management features of Sharetribe allow providers to
+define the quantity of available stock for purchase. There are three key
 concepts related to stock management:
 
 - **stock** represents the quantity of available units, associated with

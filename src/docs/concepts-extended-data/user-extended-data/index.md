@@ -37,8 +37,8 @@ in Integration API.
 
 ## Types of users
 
-By default, Flex marketplace users have the capabilities to be both
-providers and customers. However, you may want to limit those
+By default, Sharetribe marketplace users have the capabilities to be
+both providers and customers. However, you may want to limit those
 capabilities, for instance by only allowing verified marketplace users
 to create listings. Or you may want to have a three-way marketplace
 where only one type of participant can be in several roles – yoga

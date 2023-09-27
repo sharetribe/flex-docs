@@ -5,21 +5,21 @@ updated: 2019-12-04
 category: introduction-getting-started
 ingress:
   This tutorial is the place to start your journey building custom
-  integrations using the Flex Integration API.
+  integrations using the Sharetribe Integration API.
 
 published: true
 ---
 
-The Flex Integration API is an application programming interface that
-provides full access to the marketplace's data. It can be used to build
-applications that integrate different own or 3rd party systems with the
-Flex marketplace. For an overview of the different APIs that Flex
-provides, read
+The Sharetribe Integration API is an application programming interface
+that provides full access to the marketplace's data. It can be used to
+build applications that integrate different own or 3rd party systems
+with the Sharetribe marketplace. For an overview of the different APIs
+that Sharetribe provides, read
 [this article](/concepts/marketplace-api-integration-api/).
 
 In this tutorial, you will download, set up and run an
 [example Integration API command line script](https://github.com/sharetribe/flex-integration-api-examples)
-that will report some data about your Flex marketplace.
+that will report some data about your Sharetribe marketplace.
 
 ## Install development tooling
 
@@ -52,19 +52,21 @@ Install all dependencies:
 yarn install
 ```
 
-## Create Integration API application in Flex Console
+## Create Integration API application in Sharetribe Console
 
-The example scripts use the Flex Integration SDK for JavaScript. In
-order for the SDK to be able to authenticate to the Integration API, it
-requires two values: a client ID and a client secret. You can obtain
+The example scripts use the Sharetribe Integration SDK for JavaScript.
+In order for the SDK to be able to authenticate to the Integration API,
+it requires two values: a client ID and a client secret. You can obtain
 both by creating a new
-[Integration API application](/concepts/applications/) in Flex Console.
+[Integration API application](/concepts/applications/) in Sharetribe
+Console.
 
 Log in to your marketplace in
-[Flex Console](https://flex-console.sharetribe.com/) and navigate to
+[Sharetribe Console](https://flex-console.sharetribe.com/) and navigate
+to
 [Build > Applications](https://flex-console.sharetribe.com/applications).
 
-![Applications in Flex Console](./apps.png)
+![Applications in Sharetribe Console](./apps.png)
 
 Click the `Add new` link, fill in an application name (for instance "My
 example integration") and choose `Integration API` as the API.

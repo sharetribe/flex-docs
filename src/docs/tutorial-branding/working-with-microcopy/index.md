@@ -8,6 +8,8 @@ ingress:
 published: true
 ---
 
+TODO OBSOLETE
+
 In this tutorial section, you will learn what is microcopy and how to
 change it using the no-code interface in Console. We will change the
 Bike-themed microcopy to match our Sauna-themed marketplace.

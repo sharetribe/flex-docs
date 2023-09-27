@@ -27,7 +27,7 @@ This is what the our landing page looks like so far:
 Using the Console you can create and edit content pages without code.
 
 You can modify your content pages by navigating to
-[Flex Console > Build > Content > Pages](https://flex-console.sharetribe.com/content/pages).
+[Sharetribe Console > Build > Content > Pages](https://flex-console.sharetribe.com/content/pages).
 
 By default, your marketplace has four content pages already created:
 

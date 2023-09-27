@@ -7,17 +7,17 @@ ingress: How to import data from outside Sharetribe ecosystem
 published: true
 ---
 
-Data from an existing marketplace can be migrated to Sharetribe Flex. If
-your marketplace is running in Sharetribe Go, there is a ready migration
-path that will be handled by us. We will handle the migration in this
-case and you can find the outline for this process
+Data from an existing marketplace can be migrated to Sharetribe. If your
+marketplace is running in Sharetribe Go, there is a ready migration path
+that will be handled by us. We will handle the migration in this case
+and you can find the outline for this process
 [here](/how-to/go-to-flex-migration/).
 
 If you are running a marketplace outside the Sharetribe ecosystem, and
-would like to import data to Flex, it is possible. You will need to
-extract your data from its existing storage and transform it into
+would like to import data to Sharetribe, it is possible. You will need
+to extract your data from its existing storage and transform it into
 Sharetribe's proprietary data format called Intermediary. Sharetribe
-will then validate the transformed data and load it into Flex.
+will then validate the transformed data and load it into Sharetribe.
 
 This article will outline how you can encode data into Intermediary
 format, give you syntax examples of the format, and provide instructions
@@ -29,19 +29,21 @@ You should request a migration when:
 
 - You have a marketplace operating outside the Sharetribe ecosystem
 - You know you want to transfer your marketplace users and listings to
-  your Flex marketplace. If you’d prefer to re-start your community in
-  Flex, then a migration is not needed.
-- You have started developing with Flex
+  your Sharetribe marketplace. If you’d prefer to re-start your
+  community in Sharetribe, then a migration is not needed.
+- You have started developing with Sharetribe or configured your no-code
+  settings to get started with a no-code Sharetribe marketplace.
 
 You will work with Sharetribe’s engineers to complete your migration. If
-you're planning to migrate your data to Flex, you should always start
-the process with a test migration to your dev environment, and ensure
-everything looks correct there, before doing a live migration. If you
-want to initiate the (test or live) migration process, you should email
-flex-support@sharetribe.com with the subject “Migrating from outside
-Sharetribe”. Please include your Flex organization (your organization is
-displayed in your [Console](https://flex-console.sharetribe.com/) in the
-top right corner).
+you're planning to migrate your data to Sharetribe, you should always
+start the process with a test migration to your dev environment, and
+ensure everything looks correct there, before doing a live migration. If
+you want to initiate the (test or live) migration process, you should
+email flex-support@sharetribe.com with the subject “Migrating from
+outside Sharetribe”. Please include your Sharetribe organization (your
+organization is displayed in your
+[Console](https://flex-console.sharetribe.com/) in the top right
+corner).
 
 ## Intermediary data
 
@@ -146,10 +148,10 @@ following keys:
   marketplace data rows. Each row is a 2-tuple (an array with two
   elements) of id and content.
 
-You can find your marketplace ID in Flex Console > Build > General. Note
-that the anonymised test file needs to specify your dev environment
-marketplace ID and your live data file needs to specify your live
-environment marketplace ID.
+You can find your marketplace ID in Sharetribe Console > Build >
+General. Note that the anonymised test file needs to specify your dev
+environment marketplace ID and your live data file needs to specify your
+live environment marketplace ID.
 
 The id part of the data row 2-tuple is specified as a tuple of 1 to 3
 elements. The first element is always an id attribute and identifies the
@@ -252,7 +254,7 @@ This means that the Intermediary supports importing:
 - [Profile images](#image)
 - [Listing images](#image)
 - [Stripe accounts](#stripe-account) - You need to use the same Stripe
-  keys in Flex as in your current service
+  keys in Sharetribe as in your current service
 - [Reviews](#review)
 
 The migration process has some built-in validation for the types within
@@ -260,9 +262,9 @@ an Intermediary file. Optional keys must have non-empty values, and if
 an optional key does not have a value, the key must be omitted for that
 resource. Empty strings are validated as empty values.
 
-For listings, users, and reviews, the corresponding Flex API resource
-reference is linked under their type description. It is good to note
-that the shape of the Intermediary data corresponds to the API
+For listings, users, and reviews, the corresponding Sharetribe API
+resource reference is linked under their type description. It is good to
+note that the shape of the Intermediary data corresponds to the API
 reference, however there may be differences in e.g. attribute naming.
 
 #### Listing
@@ -328,7 +330,7 @@ key like this:
 The Intermediary file validation also checks that the email address
 format is valid.
 
-At the moment, all users created within Flex are defined with both
+At the moment, all users created within Sharetribe are defined with both
 `:user.role/customer` and `:user.role/provider`. The user roles cannot
 be configured after the import, so we recommend that you add both roles
 for all users and determine any distinction between user groups in your
@@ -514,7 +516,7 @@ not you provide an address attribute in e.g. public data.
 
 Money is an Intermediary-specific type and it is defined as [ amount,
 currency ]. Note that in the
-[Flex API reference for listings](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format),
+[Sharetribe API reference for listings](https://www.sharetribe.com/api-reference/marketplace.html#listing-resource-format),
 the `money` type differs somewhat from the Intermediary `#im/money` type
 – the `#im/money` type uses decimals for the amount whereas the API
 `money` type amount is given as an integer representing the currency's

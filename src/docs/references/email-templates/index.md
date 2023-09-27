@@ -9,8 +9,8 @@ ingress:
 published: true
 ---
 
-Sharetribe Flex supports customizing the contents of all the emails that
-are sent from the platform.
+Sharetribe supports customizing the contents of all the emails that are
+sent from the platform.
 
 The platform sends two types of emails:
 
@@ -20,8 +20,8 @@ The platform sends two types of emails:
 
 The built-in emails can be customized using the
 [Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
-in the Flex Console. You find the editor in the Console under Build
-section.
+in the Sharetribe Console. You find the editor in the Console under
+Build section.
 
 To change the transaction emails, follow the
 [Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
@@ -65,7 +65,7 @@ documentation for more information about the templating language.
 
 ## Helpers
 
-Sharetribe Flex email templating supports a subset of
+Sharetribe email templating supports a subset of
 [Handlebars built in helpers](https://handlebarsjs.com/guide/builtin-helpers.html).
 
 In addition to the built-in helpers, we have implemented a small set of
@@ -307,8 +307,8 @@ used for query string components.
 
 The built-in emails can be customized using the
 [Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
-in the Flex Console. You find the editor in the Console under Build
-section.
+in the Sharetribe Console. You find the editor in the Console under
+Build section.
 
 In addition to the code editor that allows you to edit the template, the
 editor also contains a **context viewer** that shows you a sample of the

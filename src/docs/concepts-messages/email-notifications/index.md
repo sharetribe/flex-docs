@@ -11,13 +11,13 @@ ingress:
 published: true
 ---
 
-Sharetribe Flex sends email notifications to users when specific events
-occur in your marketplace. There are two categories of email
-notifications in Flex: built-in email notifications, which relate to
-user account management, and transaction process emails, which get
-triggered at specific stages of transactions. For instance, an built-in
-email notification gets sent when a user changes their email or password
-or when they need to verify a new email address. A transaction process
+Sharetribe sends email notifications to users when specific events occur
+in your marketplace. There are two categories of email notifications in
+Sharetribe: built-in email notifications, which relate to user account
+management, and transaction process emails, which get triggered at
+specific stages of transactions. For instance, an built-in email
+notification gets sent when a user changes their email or password or
+when they need to verify a new email address. A transaction process
 email can inform the user of a successful payment or a new booking
 request.
 
@@ -42,8 +42,8 @@ to your users' account management. Use the
 [Console](https://flex-console.sharetribe.com/) to manage the built-in
 email notifications. You can customise built-in emails using the
 [Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
-in the Flex Console. You can find the editor in the Console under the
-Build section.
+in the Sharetribe Console. You can find the editor in the Console under
+the Build section.
 
 The email templates use the
 [Handlebars template language](/references/email-templates/#handlebars).

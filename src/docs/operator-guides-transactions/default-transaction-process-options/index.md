@@ -198,7 +198,6 @@ You can see illustrations of the process below.
 
 </extrainfo>
 
-
 ## Buying and Selling Products Process
 
 ### 1. Purchasing a product as a buyer

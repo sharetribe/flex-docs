@@ -1,17 +1,18 @@
 ---
-title: Flex environments
-slug: flex-environments
+title: Sharetribe environments
+slug: sharetribe-environments
 updated: 2023-08-16
 category: concepts-development
 ingress:
-  What are Flex environments and the differences the three types have.
+  What are Sharetribe environments and the differences the three types
+  have.
 published: true
 ---
 
-Flex environments are instances of your own marketplace, but with
-different functions. When you first create a Flex account, you have two
-environments: Test and Dev. When you are ready to go live, we will
-create a third environment: Live.
+Sharetribe environments are instances of your own marketplace, but with
+different functions. When you first create a Sharetribe account, you
+have two environments: Test and Dev. When you are ready to go live, we
+will create a third environment: Live.
 
 The environment can be changed from the dropdown in the left corner of
 the topbar. Those who have access to multiple organizations can see the
@@ -22,7 +23,7 @@ organization dropdown on the right.
 <info>
 
 **Organization** and **environment** are terms that are used to
-communicate which Flex marketplace you are looking at in Console.
+communicate which Sharetribe marketplace you are looking at in Console.
 
 **Organization**: An entity that is created when you first create an
 account. This is where you can invite other admin users to work with. An
@@ -32,15 +33,15 @@ but it can only include one live environment.
 **Environment**: A marketplace instance within your organization which
 can be created for different purposes. There are three different types
 of environments: Dev, Test, and Live. You can access them all with the
-same Flex account.
+same Sharetribe account.
 
 </info>
 
 ## Environment types
 
-The three environments in Flex each have their own specific purpose.
-Each environment should also have its own dedicated client application,
-which also follows the purpose of the environment.
+The three environments in Sharetribe each have their own specific
+purpose. Each environment should also have its own dedicated client
+application, which also follows the purpose of the environment.
 
 ### Dev environment
 
@@ -87,8 +88,8 @@ transactions.
 When the necessary development has been done and your marketplace is
 ready for onboarding real users, you can initiate the Live environment
 setup from Console. This is also the point when you start paying the
-Flex subscriptions (see more information about
-[Flex pricing](https://www.sharetribe.com/products/flex/#pricing)).
+Sharetribe subscriptions (see more information about
+[Sharetribe pricing](https://www.sharetribe.com/products/flex/#pricing)).
 
 ## Workflow between the three environments
 
@@ -100,7 +101,7 @@ flow from Dev to Test to Live:
 - no-code changes are made in Test, and get pushed from Test to Dev and
   Live.
 
-![Flex environments workflow](./flex-environments.png)
+![Sharetribe environments workflow](./flex-environments.png)
 
 Code changes include
 
@@ -124,5 +125,5 @@ Depending on your development flow, you might need additional dev
 environments for your organization, e.g. for Quality Assurance (QA) or
 automated testing. We can include additional environments to your paid
 subscription at a price of \$49 per month per environment. To include
-additional development environments in your subscription, contact Flex
-Support!
+additional development environments in your subscription, contact
+Sharetribe Support!

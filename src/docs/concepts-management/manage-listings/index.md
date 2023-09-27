@@ -38,11 +38,11 @@ description, Listing ID, and the listing’s creation date. These fields
 are not changeable or deletable, but most of their contents can be
 edited directly on this page. You cannot, however, make changes to the
 listing creation date and the listing ID, which is a unique identifier
-within the Flex database.
+within the Sharetribe database.
 
 Below the summary, you have separate sections for each type of extended
-data. Extended data is a Flex feature that allows you to customize and
-collect user, listing, and transaction data specific to your
+data. Extended data is a Sharetribe feature that allows you to customize
+and collect user, listing, and transaction data specific to your
 marketplace. You can read
 [an introduction to extended data](/concepts/extended-data-introduction/)
 to learn more. All extended data can be edited directly through Console.

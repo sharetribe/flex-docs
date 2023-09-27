@@ -30,19 +30,19 @@ of environment variables.
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
   Your application's client ID. You can get this from
-  [Flex Console](https://flex-console.sharetribe.com/applications).
+  [Sharetribe Console](https://flex-console.sharetribe.com/applications).
 
 - **`SHARETRIBE_SDK_CLIENT_SECRET`**
 
   Your application's client secret. It's related to client ID and used
   for privileged transitions from server side. You can get this from
-  [Flex Console](https://flex-console.sharetribe.com/applications).
+  [Sharetribe Console](https://flex-console.sharetribe.com/applications).
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
   Stripe publishable API key for generating tokens with Stripe API. Use
   test key (prefix `pk_test_`) for development. The secret key needs to
-  be added to Flex Console.
+  be added to Sharetribe Console.
 
 - **`REACT_APP_MARKETPLACE_ROOT_URL`**
 
@@ -101,8 +101,8 @@ of environment variables.
 
 * **`REACT_APP_SHARETRIBE_SDK_BASE_URL`**
 
-  The base url to access the Sharetribe Flex Marketplace API. The
-  template uses the correct one by default so no need to set this.
+  The base url to access the Sharetribe Marketplace API. The template
+  uses the correct one by default so no need to set this.
 
 * **`REACT_APP_FACEBOOK_APP_ID`**
 

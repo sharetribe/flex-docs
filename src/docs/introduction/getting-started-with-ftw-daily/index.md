@@ -31,10 +31,10 @@ app.
 
 <info>
 
-We recommend that you take the steps for this guide in your **Flex
+We recommend that you take the steps for this guide in your **Sharetribe
 Console dev environment**.
 
-**[Read more about Flex environments](/concepts/flex-environments/).**
+**[Read more about Sharetribe environments](/concepts/flex-environments/).**
 
 </info>
 
@@ -141,13 +141,13 @@ git clone https://github.com/sharetribe/web-template.git
 If you have created your marketplace environment prior to the 25th of
 April 2023, and you are using the Sharetribe Web Template, it is good to
 note that there are two new transaction processes the template uses, and
-those processes may not be in your Flex marketplace by default. You can
-find the transaction processes in
+those processes may not be in your Sharetribe marketplace by default.
+You can find the transaction processes in
 [/ext/transaction-processes/](https://github.com/sharetribe/web-template/tree/main/ext/transaction-processes)
 in the repository.
 
 To use the template, you will need to have the transaction processes in
-your Flex environment.
+your Sharetribe environment.
 [Follow these steps](https://github.com/sharetribe/web-template#take-the-new-beta-processes-into-use)
 to create both processes in your environment through Flex CLI.
 
@@ -155,16 +155,16 @@ to create both processes in your environment through Flex CLI.
 
 The Sharetribe Web Template has 3 mandatory integrations that you need
 to configure before the app is fully functional. The app obviously needs
-to discuss with Flex Marketplace API, but the client app also makes
-direct calls to [Stripe](https://stripe.com/en-fi). Flex uses Stripe as
-a payment processor, and Sharetribe Web Template saves sensitive payment
-information directly to it.
+to discuss with Sharetribe Marketplace API, but the client app also
+makes direct calls to [Stripe](https://stripe.com/en-fi). Sharetribe
+uses Stripe as a payment processor, and Sharetribe Web Template saves
+sensitive payment information directly to it.
 
 The third default integration is to a map provider.
 [Mapbox](https://www.mapbox.com) provides location search (geocoding)
 and maps for the web app.
 
-![Mandatory integrations: Flex Marketplace API, Stripe, Map provider](FTW-integrations@2x.png)
+![Mandatory integrations: Sharetribe Marketplace API, Stripe, Map provider](FTW-integrations@2x.png)
 
 The Sharetribe Web Template just needs 4 environment variables to make
 these integrations work.
@@ -174,37 +174,37 @@ these integrations work.
 - **[`REACT_APP_STRIPE_PUBLISHABLE_KEY`](#stripe-keys)**
 - **[`REACT_APP_MAPBOX_ACCESS_TOKEN`](#mapbox-access-token)**
 
-### Sharetribe Flex client ID and client secret
+### Sharetribe Sharetribe client ID and client secret
 
 To use the Marketplace API, you will need a **client ID**. You can sign
-up for your free Flex account at
+up for your free Sharetribe account at
 https://www.sharetribe.com/products/flex/
 
-When you get access, you will be able to log into Flex Console and check
-the client ID.<br /> Flex Console: _Build > Applications_
+When you get access, you will be able to log into Sharetribe Console and
+check the client ID.<br /> Sharetribe Console: _Build > Applications_
 
 In addition, Sharetribe Web Template uses transaction processes that
 include privileged transitions. This makes it possible to customize
 pricing on the Node server that's included in the template. The **client
 secret** is needed to make this secure call from the template's own
-server to Flex API.
+server to Sharetribe API.
 
-![Flex Console: Applications tab](./console-build-application.png)
+![Sharetribe Console: Applications tab](./console-build-application.png)
 
 ### Stripe keys
 
-Both Flex API and your client app need to be able to discuss with Stripe
-API. Stripe has two different keys:
+Both Sharetribe API and your client app need to be able to discuss with
+Stripe API. Stripe has two different keys:
 
 - _Secret key_ for server-side requests
 - _Publishable key_ for calls from web browser
 
-Flex API uses the Stripe secret key to make payment-related requests
-when a transaction moves forward. The client app needs to use the Stripe
-publishable key to run the `stripe.js` script. The script has two main
-functions: it has fraud detection built in, and it is also used to save
-sensitive information directly to Stripe. For instance, a customer's
-credit card number is saved directly to Stripe.
+Sharetribe API uses the Stripe secret key to make payment-related
+requests when a transaction moves forward. The client app needs to use
+the Stripe publishable key to run the `stripe.js` script. The script has
+two main functions: it has fraud detection built in, and it is also used
+to save sensitive information directly to Stripe. For instance, a
+customer's credit card number is saved directly to Stripe.
 
 #### 1. Create and confirm your free Stripe account
 

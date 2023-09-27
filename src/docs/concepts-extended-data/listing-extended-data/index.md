@@ -5,7 +5,7 @@ updated: 2022-09-29
 category: concepts-extended-data
 ingress:
   Listing extended data allows you to use the powerful search engine in
-  Flex, as well as customise your listing information.
+  Sharetribe, as well as customise your listing information.
 published: true
 ---
 
@@ -38,7 +38,7 @@ through the
 create and update endpoints. An operator can modify all listing extended
 data, either through
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#listings)
-or in Flex Console.
+or in Sharetribe Console.
 
 ## Search and filtering
 
@@ -49,7 +49,7 @@ them narrow down results to a selection that best fits their needs.
 Extended data helps you build the custom search and filtering experience
 your marketplace needs.
 
-Listings can be searched by keyword or location using Flex’s
+Listings can be searched by keyword or location using Sharetribe’s
 [powerful built-in search feature](/concepts/how-the-listing-search-works/).
 In addition to this, you can use listing public extended data and
 metadata to create a variety of different types of filters; for example,
@@ -76,4 +76,4 @@ A marketplace can have several types of listings – rentals and sales,
 events and facilities. Listing extended data is a powerful way to
 distinguish different listing types. Read more about the possibilities
 for
-[different listing types in Flex](/concepts/listings-overview/#different-types-of-listings).
+[different listing types in Sharetribe](/concepts/listings-overview/#different-types-of-listings).

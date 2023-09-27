@@ -280,8 +280,8 @@ following instead of modifying the _TimeRangeHidden_ component:
 </extrainfo>
 
 At this point, we can add the microcopy necessary in this guide. You can
-add the microcopy through Flex Console, or in _src/translations/en.js_,
-if you are not using Console-based microcopy.
+add the microcopy through Sharetribe Console, or in
+_src/translations/en.js_, if you are not using Console-based microcopy.
 
 ```json
 ...
@@ -1252,7 +1252,7 @@ constant, which is also where other similar helper functions are used.
 
 <info>
 
-In Flex, line items need to have either
+In Sharetribe, line items need to have either
 
 - a percentage,
 - a quantity, or

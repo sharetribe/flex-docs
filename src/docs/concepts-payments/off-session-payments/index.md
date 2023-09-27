@@ -19,7 +19,7 @@ is 90 days. Therefore, the maximum amount of time customers can book in
 advance is limited, if your transaction process follows this payment
 pattern.
 
-Flex API has capabilities for
+Sharetribe API has capabilities for
 [saving payment card details for future use](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer).
 In addition, it is possible to configure your transaction process in
 such a way that the customer is charged automatically off-session at a
@@ -97,9 +97,9 @@ reasons. For instance:
 - or the payment card might have expired.
 
 It is therefore always important to allow for a fallback payment path in
-your transaction process. In Flex, only one transition from a state can
-be triggered automatically, so a fallback payment path must trigger upon
-a user action, as in the example.
+your transaction process. In Sharetribe, only one transition from a
+state can be triggered automatically, so a fallback payment path must
+trigger upon a user action, as in the example.
 
 You can build upon this example and extend it to make the payment
 process more robust. For instance, in case the customer fails to pay for

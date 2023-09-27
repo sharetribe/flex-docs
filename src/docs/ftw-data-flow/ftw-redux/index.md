@@ -20,8 +20,8 @@ the current page, and so on.
 
 We use [Redux](https://redux.js.org/introduction/getting-started) for
 state management on the application level. You should read more about
-Redux before you start modifying queries to the Flex API or creating new
-Page level elements.
+Redux before you start modifying queries to the Sharetribe API or
+creating new Page level elements.
 
 In the following subtopics, we assume that you know the
 [basics of Redux](https://redux.js.org/basics/basic-tutorial) already.
@@ -114,7 +114,7 @@ module naming schema, this means that:
 ## Advanced Redux concepts: thunks
 
 One essential part of state management in the template is filling the
-Redux store with data fetched from the Flex API. This is done with
+Redux store with data fetched from the Sharetribe API. This is done with
 [Redux Thunks](https://redux.js.org/advanced/async-actions#async-action-creators),
 which is a Redux middleware to create asynchronous action creators.
 
@@ -126,7 +126,7 @@ with the following thunk function:
 export const fetchReviews = listingId => (dispatch, getState, sdk) => {
   // Make store aware of a request to fetch reviews
   dispatch(fetchReviewsRequest);
-  // Fetch reviews using Flex SDK
+  // Fetch reviews using Sharetribe SDK
   return sdk.reviews
     .query({
       listingId,

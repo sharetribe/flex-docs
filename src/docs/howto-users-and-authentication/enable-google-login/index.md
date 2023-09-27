@@ -20,10 +20,10 @@ Enabling Google login consists of three main steps:
   connects your marketplace to Google and let's Google know that users
   from your marketplace are allowed to authenticate themselves using the
   Google Sign-In.
-- **Create an identity provider client in Flex Console** Identity
-  provider (IdP) client is what let's Flex know that the users of your
-  marketplace are allowed to use the Google Sign-In Project you created
-  to log into your marketplace.
+- **Create an identity provider client in Sharetribe Console** Identity
+  provider (IdP) client is what let's Sharetribe know that the users of
+  your marketplace are allowed to use the Google Sign-In Project you
+  created to log into your marketplace.
 - **Configure Sharetribe Web Template** A few attributes from the
   Sign-In Project will need to be configured to Sharetribe Web Template
   so that it can perform the login flow via Google.
@@ -67,10 +67,10 @@ marketplace by following these steps:
 
 Now that your Google Sign-In project is all set up, a corresponding
 _identity provider client_ will need to be configured for your
-marketplace. This will tell Flex that your users will be allowed to log
-into your marketplace using the Google Sign-In you just created. The
-information stored in an IdP client is used to verify a token obtained
-from Google when a user logs in.
+marketplace. This will tell Sharetribe that your users will be allowed
+to log into your marketplace using the Google Sign-In you just created.
+The information stored in an IdP client is used to verify a token
+obtained from Google when a user logs in.
 
 An identity provider client can be configure with the following steps:
 
@@ -97,7 +97,7 @@ The IdP client config should now look something like this:
    clicking "+ Add new trusted client". In case you are using two
    distinct Google Sign-In projects, configure those as distinct clients
    in Console but always bundle all the client IDs of a single project
-   into one identity provider client in Flex Console.
+   into one identity provider client in Sharetribe Console.
 7. Click "Add client" and your identity provider client is ready.
 
 ## Configure Sharetribe Web Template

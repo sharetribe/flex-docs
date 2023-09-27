@@ -10,7 +10,7 @@ ingress:
 published: true
 ---
 
-Sharetribe Flex Marketplace API has an endpoint for
+Sharetribe Marketplace API has an endpoint for
 [deleting a user's account](https://www.sharetribe.com/api-reference/marketplace.html#delete-user).
 After the user has been deleted, any transactions where they are a
 participant cannot transition forward, and no payouts will be made to
@@ -186,7 +186,7 @@ configuration function:
 
 Finally, add the necessary microcopy rows into either
 src/translations/en.json or the
-[Flex Console microcopy editor](/concepts/microcopy/).
+[Sharetribe Console microcopy editor](/concepts/microcopy/).
 
 ```shell
 └── src
@@ -436,7 +436,7 @@ However, if you click the button now, you will get an error from
 DeleteAccountPage.duck.js stating that `deleteUserAccount` is not
 defined. We will add the endpoint to the Redux action next.
 
-## Add logic to call the Flex API endpoint
+## Add logic to call the Sharetribe API endpoint
 
 The next step is to add the logic that calls the server endpoint, which
 then calls the Marketplace API endpoint if the user can be deleted.
@@ -609,7 +609,7 @@ under the password input.
 Once you are happy with the user flow without the deletion SDK call, you
 can uncomment the code in `delete-account.js` that calls the SDK
 endpoint. After that, you can confirm the deletion of the user in your
-Flex Console.
+Sharetribe Console.
 
 Once a user has been deleted, their listings are also removed. However,
 their transactions and messages will still show up in the inbox of the

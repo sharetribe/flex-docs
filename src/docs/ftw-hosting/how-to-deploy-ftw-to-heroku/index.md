@@ -49,12 +49,12 @@ Then add the following environment variables as Config Vars:
 
 - `REACT_APP_SHARETRIBE_SDK_CLIENT_ID`
 
-  Flex client ID. Check this from
+  Sharetribe client ID. Check this from
   [Console](https://flex-console.sharetribe.com/applications).
 
 - `SHARETRIBE_SDK_CLIENT_SECRET`
 
-  Flex client secret. Check this from
+  Sharetribe client secret. Check this from
   [Console](https://flex-console.sharetribe.com/applications).
 
 - `REACT_APP_STRIPE_PUBLISHABLE_KEY`

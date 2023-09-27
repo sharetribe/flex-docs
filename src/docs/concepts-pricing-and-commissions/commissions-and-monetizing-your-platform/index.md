@@ -4,18 +4,18 @@ slug: commissions-and-monetizing-your-platform
 updated: 2021-12-10
 category: concepts-pricing-and-commissions
 ingress:
-  Flex provides configurable options for monetizing your platform. You
-  can collect commissions from providers, customers, or both. This
+  Sharetribe provides configurable options for monetizing your platform.
+  You can collect commissions from providers, customers, or both. This
   article provides you with basic information on the mechanisms
-  supported by Flex for monetizing your platform.
+  supported by Sharetribe for monetizing your platform.
 published: true
 ---
 
 ## Introduction
 
 If you have already defined a pricing model for your marketplace, this
-article will provide you with basic information on the options Flex
-provides and how to take them into use.
+article will provide you with basic information on the options
+Sharetribe provides and how to take them into use.
 
 If you need more information on how to decide the pricing, our
 Marketplace Academy has
@@ -28,8 +28,8 @@ As background, familiarizing yourself with
 [privileged transitions](/concepts/privileged-transitions/) gives you a
 good understanding of the concepts discussed in this article. In
 addition, the article that describes
-[payments in Flex](/concepts/payments-overview/) provides valuable
-information about how the payment flow in Flex works.
+[payments in Sharetribe](/concepts/payments-overview/) provides valuable
+information about how the payment flow in Sharetribe works.
 
 Configuring commissions happens with the
 [privileged-set-line-items](/references/transaction-process-actions/#actionprivileged-set-line-items)
@@ -48,7 +48,7 @@ charged from the provider, the customer, or both.
 <info>
 
 If your application uses hosted configurations, you can define provider
-commissions in Flex Console.
+commissions in Sharetribe Console.
 
 ![Commission defined in Console](consoleCommission.png)
 
@@ -219,9 +219,9 @@ const lineItems = [order, providerCommission, customerCommission];
 ## Subscription-based model
 
 The line item commissions are the most straightforward way of monetizing
-your marketplace and are directly supported by Flex. However, you might
-want to experiment with other monetization models depending on your
-business idea. For example, subscriptions might be a good way of
+your marketplace and are directly supported by Sharetribe. However, you
+might want to experiment with other monetization models depending on
+your business idea. For example, subscriptions might be a good way of
 monetizing your marketplace. With the
 [Integration API](/concepts/marketplace-api-integration-api/#when-to-use-the-integration-api),
 you can integrate a third-party service such as

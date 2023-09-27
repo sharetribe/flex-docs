@@ -4,9 +4,9 @@ slug: messages
 updated: 2022-07-21
 category: concepts-messages
 ingress:
-  Flex allows your users to communicate with each other using messages.
-  This article introduces the concept of messages and how to access
-  messages through Zapier.
+  Sharetribe allows your users to communicate with each other using
+  messages. This article introduces the concept of messages and how to
+  access messages through Zapier.
 published: true
 ---
 

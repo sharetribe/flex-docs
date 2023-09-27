@@ -10,7 +10,7 @@ published: true
 ---
 
 Capturing how your users transact is a critical part of customizing your
-marketplace. Flex uses a feature called the transaction process to
+marketplace. Sharetribe uses a feature called the transaction process to
 implement the steps your users take when they interact on your
 marketplace.
 
@@ -50,10 +50,10 @@ in your marketplaces helpful.
 
 ### Payments
 
-Payments are a typical component of online marketplaces. Flex already
-has an integration with Stripe Connect using Custom Accounts, a payment
-gateway specifically designed for marketplaces allowing credit and debit
-card payments, commissions and delayed payouts.
+Payments are a typical component of online marketplaces. Sharetribe
+already has an integration with Stripe Connect using Custom Accounts, a
+payment gateway specifically designed for marketplaces allowing credit
+and debit card payments, commissions and delayed payouts.
 
 Note that Stripe Connect offers these functionalities in only certain
 countries; your platform _and_ your providers must be located in
@@ -80,9 +80,9 @@ purchased.
 
 Sometimes, additional information needs to be shared between a customer
 and provider during a transaction. Messaging is a common feature in
-marketplaces for this reason, and comes included in Flex. Will that be
-all your users need to share additional information, or does your
-marketplaces require something more?
+marketplaces for this reason, and comes included in Sharetribe. Will
+that be all your users need to share additional information, or does
+your marketplaces require something more?
 
 ### Email notifications
 
@@ -101,7 +101,7 @@ about the following.
 - Does a review include both a five star rating and a text description,
   or only one of these?
 - What is the time period during which a review can be made?
-- When are the reviews published? For example, Flex’s default is a
+- When are the reviews published? For example, Sharetribe’s default is a
   "double-blind" process, where reviews are published after both parties
   have submitted their review.
 
@@ -142,8 +142,8 @@ transaction processes to find the one most similar to your needs.
 Use the example to specify what will happen in your own marketplace.
 What steps will be the same? What will be different?
 
-Also, check out some of the template processes in Flex that you can find
-in the Build tab of your
+Also, check out some of the template processes in Sharetribe that you
+can find in the Build tab of your
 [Console](https://flex-console.sharetribe.com/). Using existing
 processes always saves development time on configuring your transaction
 process.
@@ -187,7 +187,7 @@ when email notifications are sent.
 Building with a technical solution may be new to you. If you have any
 questions or concerns, need some feedback, or something is unclear,
 don’t hesitate to reach out to our team at hello@sharetribe.com. We’re
-glad to facilitate you building with Flex.
+glad to facilitate you building with Sharetribe.
 
 ## Start designing
 

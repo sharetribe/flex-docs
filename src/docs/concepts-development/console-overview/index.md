@@ -7,15 +7,15 @@ ingress: This article will help you understand how to navigate Console.
 published: true
 ---
 
-Console is the central control system of your Flex marketplace. In
+Console is the central control system of your Sharetribe marketplace. In
 Console, you can change a number of general settings and manage most of
 the data of your marketplace related to users, listings, transactions
 and reviews.
 
-When you create a Flex account, you also create an organization within
-Flex’s system. You can invite multiple people to your organization to
-help you manage or develop your marketplace. In fact, you can even have
-multiple marketplaces within the same organization.
+When you create a Sharetribe account, you also create an organization
+within Sharetribe’s system. You can invite multiple people to your
+organization to help you manage or develop your marketplace. In fact,
+you can even have multiple marketplaces within the same organization.
 
 ## Environments
 
@@ -56,20 +56,20 @@ Console is divided in three main sections: Home, Manage and Build.
 
 ### Home
 
-In the Home section, you find information about working with Flex. You
-can find links to various resources that will help you understand, test,
-and build your custom marketplace. These include:
+In the Home section, you find information about working with Sharetribe.
+You can find links to various resources that will help you understand,
+test, and build your custom marketplace. These include:
 
 - Links to your fully functional test marketplace called Biketribe,
-  where you can get an idea of how Flex works.
-- Instructions on how to set up your local Flex instance and links to
-  the Flex documentation and API reference, all of which you will need
-  when you want to start developing your marketplace.
+  where you can get an idea of how Sharetribe works.
+- Instructions on how to set up your local Sharetribe instance and links
+  to the Sharetribe documentation and API reference, all of which you
+  will need when you want to start developing your marketplace.
 - Access to our Slack channel, where you can ask technical questions and
   engage with our technical team and the community.
-- A calendar to book a call with one of our Flex representatives who are
-  happy to help you assess whether Flex is the right tool for your
-  project.
+- A calendar to book a call with one of our Sharetribe representatives
+  who are happy to help you assess whether Sharetribe is the right tool
+  for your project.
 
 ### Manage
 
@@ -108,7 +108,7 @@ different kinds of transaction processes your marketplace has. You can
 toggle between the different processes in the left-side selection and
 see how many transactions have used each process. You can also inspect
 the components of the transaction processes. Read more about
-[transaction processes in Flex](/concepts/transaction-process/).
+[transaction processes in Sharetribe](/concepts/transaction-process/).
 
 **Payments** has information about your Stripe configuration. Your
 Stripe secret key is added here. The public key is configured within the
@@ -116,20 +116,20 @@ code of your frontend application by your developer.
 
 **Built-in email templates** includes all emails that are sent from your
 marketplace as a part of the default user flow. They are essential to
-the operation of Flex and are designed to be sent at the crucial moments
-of the user onboarding flow and are not related to the transaction
-process. The contents and visual style of these emails can be edited
-with HTML directly in this tab of the Build section.
+the operation of Sharetribe and are designed to be sent at the crucial
+moments of the user onboarding flow and are not related to the
+transaction process. The contents and visual style of these emails can
+be edited with HTML directly in this tab of the Build section.
 
-**Applications** compiles all applications that have access to the Flex
-APIs through your marketplace. At minimum, this tab includes your
-frontend application, but can also have applications for integrated
+**Applications** compiles all applications that have access to the
+Sharetribe APIs through your marketplace. At minimum, this tab includes
+your frontend application, but can also have applications for integrated
 services.
 
 **Events** has a summary of what the Events feature is about as well as
 some quick links to the relevant documentation. It also mentions the
-Zapier integration and shows the main command to view events with Flex
-CLI.
+Zapier integration and shows the main command to view events with
+Sharetribe CLI.
 
 **Social logins & SSO** contains all identity provider clients, that is,
 the third-party solutions your users can sign up with on your
@@ -144,8 +144,8 @@ through links in your top bar.
 On the left side of the top bar, you can switch between the environments
 of your organization: test, development, and live. If your marketplace
 is not yet live, this is where you’ll find the option to set up your
-live environment and subscribe to Flex. Once your live environment is
-created, you’ll access it from here.
+live environment and subscribe to Sharetribe. Once your live environment
+is created, you’ll access it from here.
 
 Next come the different sections we discussed above: Home, Build, and
 Manage.
@@ -154,11 +154,12 @@ On the right side of the top bar, you can manage your organization and
 invite new members to join it. This is where you add the people who help
 you develop or manage your marketplace.
 
-Next to the organization, you find a link to the Flex documentation,
-where you are now. Flex docs has information about the important
-concepts of Flex, instructions for customizations, and more!
+Next to the organization, you find a link to the Sharetribe
+documentation, where you are now. Sharetribe Docs has information about
+the important concepts of Sharetribe, instructions for customizations,
+and more!
 
 Finally, in the rightmost corner of the topbar, you can manage your
 Console account. You can change your password and generate personal API
-keys that you need for the Flex command-line interface (CLI). You can
-also log out of Console here.
+keys that you need for the Flex command-line interface (CLI) TODO CHECK
+NAMING. You can also log out of Console here.

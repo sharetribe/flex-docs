@@ -77,7 +77,7 @@ marketplace.
 
 <info>
 
-If your marketplace is using hosted configurations defined in Flex
+If your marketplace is using hosted configurations defined in Sharetribe
 Console, you can make the changes described in this section by adding
 new listing fields and defining the correct search settings for the
 field.
@@ -110,15 +110,15 @@ and the
 [Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
 how-to guide.
 
-In Flex, only top-level attributes can be indexed i.e. used for search.
-If you have a public data attribute with nested attributes, it is not
-possible to create a search schema for those. So instead of using a
-nested attribute:
+In Sharetribe, only top-level attributes can be indexed i.e. used for
+search. If you have a public data attribute with nested attributes, it
+is not possible to create a search schema for those. So instead of using
+a nested attribute:
 
 ```jsx
 publicData: {
   instrumentProficiency: {
-    // These attributes cannot be indexed for search in Flex
+    // These attributes cannot be indexed for search in Sharetribe
     violin: 'professional',
     guitar: 'intermediate',
     tuba: 'beginner',
@@ -131,7 +131,7 @@ attributes:
 
 ```js
 publicData: {
-  // These attributes can be indexed for search in Flex
+  // These attributes can be indexed for search in Sharetribe
   violinProficiency: 'professional',
   guitarProficiency: 'intermediate',
   tubaProficiency: 'beginner',

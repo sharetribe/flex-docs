@@ -10,8 +10,8 @@ published: true
 ---
 
 The Sharetribe Web Template is a customizable marketplace web
-application built on top of the Flex APIs. It is a great starting point
-for building any type of marketplace, whether it is about rentals,
+application built on top of the Sharetribe APIs. It is a great starting
+point for building any type of marketplace, whether it is about rentals,
 services, products, or something else. You can configure the Template
 without coding, then host the code to launch and add custom features.
 
@@ -22,7 +22,8 @@ without coding, then host the code to launch and add custom features.
 You can configure a hosted version of the Sharetribe Web Template in
 your Console's Test environment. When you first open your Test
 marketplace, you start with an example marketplace called Biketribe.
-Biketribe is a marketplace running on Flex APIs for renting bicycles.
+Biketribe is a marketplace running on Sharetribe APIs for renting
+bicycles.
 
 You can change Biketribe default settings in Console. Change core user
 experiences like search, listing creation, and transactions in Console's
@@ -48,8 +49,8 @@ functionality available in the Sharetribe Web Template.
 ## Listings
 
 The heart of the Sharetribe Web Template marketplace are listings.
-Listings represent what is offered on a Flex marketplace, whether it is
-a product, a job, a service, rental or something else.
+Listings represent what is offered on a Sharetribe marketplace, whether
+it is a product, a job, a service, rental or something else.
 
 A few configurations make it easy to set what your listings are about.
 By default, Biketribe registered users can create any number of
@@ -95,7 +96,7 @@ code.
 ![create-listing-per-day-availability](./create-listing-per-day-availability.png)
 
 Read more about
-[availability management in Flex](/references/availability/).
+[availability management in Sharetribe](/references/availability/).
 
 ### Inventory management
 
@@ -112,7 +113,7 @@ automatically go to zero. Listings with zero stock are filtered out by
 default, and do not appear in search.
 
 Read more about
-[inventory management in Flex](/concepts/inventory-management/).
+[inventory management in Sharetribe](/concepts/inventory-management/).
 
 ## Search
 
@@ -185,7 +186,7 @@ their bank account according to rules of the transaction process.
 ![checkout-page](./checkout-page.png)
 
 Learn more about
-[how payments work in Flex](/concepts/payments-overview/).
+[how payments work in Sharetribe](/concepts/payments-overview/).
 
 ### Messaging
 
@@ -226,7 +227,7 @@ password, add their payout details, or add their payment info (credit or
 debit card) for faster checkout.
 
 Learn more about how
-[user accounts and authentication work in Flex](/concepts/users-and-authentication-in-flex/).
+[user accounts and authentication work in Sharetribe](/concepts/users-and-authentication-in-flex/).
 
 ### Seller onboarding
 
@@ -248,8 +249,8 @@ Learn more about
 
 ### Email notifications
 
-The Sharetribe Web Template uses Flex to send email notifications. There
-are two types of email notifications. Built-in email notifications
+The Sharetribe Web Template uses Sharetribe to send email notifications.
+There are two types of email notifications. Built-in email notifications
 relate to user account management and are sent whenever a user is
 setting up their account or changing some of its settings. Transaction
 process emails, meanwhile, are sent as a result of certain actions in a
@@ -257,7 +258,7 @@ transaction, such as when a new message is received. Only users with
 verified email addresses receive emails.
 
 Learn more about
-[how email notifications work in Flex](/concepts/email-notifications/).
+[how email notifications work in Sharetribe](/concepts/email-notifications/).
 
 ## Design
 
@@ -273,12 +274,13 @@ modify your landing page, and add essential information to your users
 with Console’s Microcopy and Pages editors.
 
 Learn more about
-[how content works in Flex](/concepts/content-management/).
+[how content works in Sharetribe](/concepts/content-management/).
 
 Self-hosting the Template code base lets you customize the starting
 design as much as you want. Any custom design can be implemented on
-Flex. We offer downloadable design files to help you build your custom
-design. You can find the Sharetribe Web Template design files here.
+Sharetribe. We offer downloadable design files to help you build your
+custom design. You can find the Sharetribe Web Template design files
+here.
 
 ## Customizing your own marketplace
 
@@ -296,7 +298,7 @@ code your own features right away, don’t hesitate to use
 help.
 
 If you are not a developer, then you will need to hire a developer to
-take Flex into use. We recommend finding a vetted developer from
+take Sharetribe into use. We recommend finding a vetted developer from
 Sharetribe’s
 [Expert Partner Network](https://www.sharetribe.com/experts/). As a next
 step, learn more about how to

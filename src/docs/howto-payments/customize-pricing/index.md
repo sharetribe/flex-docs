@@ -4,9 +4,9 @@ slug: how-to-customize-pricing
 updated: 2022-06-14
 category: how-to-payments
 ingress:
-  Flex allows lots of flexibility for your providers in terms of how
-  they can set their pricing. This guide walks you through customizing
-  listing pricing and commission.
+  Sharetribe allows lots of flexibility for your providers in terms of
+  how they can set their pricing. This guide walks you through
+  customizing listing pricing and commission.
 published: true
 ---
 
@@ -22,7 +22,7 @@ changes we are about to make are as follows:
 3. Update provider commission calculation to be dependent on booking
    length
 
-For more information about pricing in Flex, see the
+For more information about pricing in Sharetribe, see the
 [Pricing background article](/concepts/pricing/).
 
 ## 1. Listing extended data
@@ -97,7 +97,7 @@ publicData: {
 }
 ```
 
-Flex pricing uses
+Sharetribe pricing uses
 [privileged transitions](/concepts/privileged-transitions/) to ensure
 flexible pricing models while keeping control of the pricing logic in a
 secure environment. Transitioning requests of privileged transitions are
@@ -164,11 +164,11 @@ const lineItems = [
 
 <info>
 
-When selecting a code for your custom line-item, remember that Flex
-requires the codes to be prefixed with _line-item/_ and the maximum
-length including the prefix is 64 characters. Other than that there are
-no restrictions, but we recommend that _kebab-case_ is used when the
-code consists of multiple words.
+When selecting a code for your custom line-item, remember that
+Sharetribe requires the codes to be prefixed with _line-item/_ and the
+maximum length including the prefix is 64 characters. Other than that
+there are no restrictions, but we recommend that _kebab-case_ is used
+when the code consists of multiple words.
 
 </info>
 

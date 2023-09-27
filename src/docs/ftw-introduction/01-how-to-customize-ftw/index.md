@@ -27,7 +27,7 @@ API, it requires a lot of effort and we recommend that you use a
 template as a starting point for customizations.
 
 To use the Marketplace API, you will need a client ID. You can obtain
-one by creating a new Flex marketplace at
+one by creating a new Sharetribe marketplace at
 [the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).
 
 ### Check that you have the correct transaction processes in your environment
@@ -35,22 +35,22 @@ one by creating a new Flex marketplace at
 If you have created your marketplace environment prior to the 25th of
 April 2023, and you are using the Sharetribe Web Template, it is good to
 note that there are two new transaction processes the template uses, and
-those processes may not be in your Flex marketplace by default. You can
-find the transaction processes in
+those processes may not be in your Sharetribe marketplace by default.
+You can find the transaction processes in
 [/ext/transaction-processes/](https://github.com/sharetribe/web-template/tree/main/ext/transaction-processes)
 in the repository.
 
 To use the template, you will need to have the transaction processes in
-your Flex environment.
+your Sharetribe environment.
 [Follow these steps](https://github.com/sharetribe/web-template#take-the-new-beta-processes-into-use)
 to create both processes in your environment through Flex CLI.
 
 ### Getting started with the template
 
-If you are new to Sharetribe Flex or the Sharetribe Web Template, we
+If you are new to Sharetribe or the Sharetribe Web Template, we
 recommend reading these articles before starting to work on development:
 
-- [Introducing Flex](/introduction/introducing-flex/)
+- [Introducing Sharetribe](/introduction/introducing-flex/)
 - [What development skills are needed?](/introduction/development-skills/)
 - [Getting started](/introduction/getting-started-with-web-template/)
 

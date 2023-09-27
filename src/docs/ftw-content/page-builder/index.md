@@ -9,12 +9,13 @@ ingress:
 published: true
 ---
 
-The Pages feature allows you to add, edit and manage content in Flex
-Console. Once you have created content in Console, you can query it
-through the Asset Delivery API, which returns the data structured as
-JSON. The Sharetribe Web Template contains features that automatically
-render content pages from Page Asset Data. This article will walk you
-through the logic used to render these pages in the template.
+The Pages feature allows you to add, edit and manage content in
+Sharetribe Console. Once you have created content in Console, you can
+query it through the Asset Delivery API, which returns the data
+structured as JSON. The Sharetribe Web Template contains features that
+automatically render content pages from Page Asset Data. This article
+will walk you through the logic used to render these pages in the
+template.
 
 <extrainfo title="I am using a legacy template without Pages support">
 

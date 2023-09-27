@@ -29,17 +29,17 @@ The rate limits are different for queries (fetching data) and commands
 (modifying data). Queries are rate limited at 1 request per second (60
 requests per minute) on average. Commands are rate limited at 1 request
 per 2 seconds (30 requests per minute) on average. The rate limit
-applies per client IP address. You can find more information on Flex
-rate limits in the API reference for
+applies per client IP address. You can find more information on
+Sharetribe rate limits in the API reference for
 [Marketplace API](https://www.sharetribe.com/api-reference/marketplace.html#rate-limits)
 and
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#rate-limits).
 
 It is good to note that **live environments are currently not rate
 limited**, except for one endpoint in Integration API. Still, as you
-build your Flex marketplace implementation to take the rate and
-concurrency limits into account in your development environment, we do
-appreciate it if you also transfer those behaviors into production.
+customize your Sharetribe marketplace implementation to take the rate
+and concurrency limits into account in your development environment, we
+do appreciate it if you also transfer those behaviors into production.
 
 ## Interaction between different rate limits
 
@@ -82,7 +82,7 @@ limiting, which needs to be handled.
 
 ### Integration SDK
 
-Flex Integration SDK is configured to handle concurrency limits by
+Sharetribe Integration SDK is configured to handle concurrency limits by
 default starting from version 1.9.0. To take this built-in concurrency
 limiting to use, you need to make sure your SDK is updated to at least
 this version.

@@ -31,16 +31,16 @@ services on a marketplace._
 
 ## The Template user journeys
 
-Marketplace development on Flex begins with the Sharetribe Web Template.
-Developers download this codebase, then modify it to create custom
-marketplaces. The existing codebase can save developers lots of time. It
-can also make it a lot easier to create your user journeys because that
-Template codebase already contains prebuilt journeys for a variety of
-must-have marketplace features, such as signup, listing creation,
-search, purchasing, reviews, seller onboarding, and more.
+Marketplace development on Sharetribe begins with the Sharetribe Web
+Template. Developers download this codebase, then modify it to create
+custom marketplaces. The existing codebase can save developers lots of
+time. It can also make it a lot easier to create your user journeys
+because that Template codebase already contains prebuilt journeys for a
+variety of must-have marketplace features, such as signup, listing
+creation, search, purchasing, reviews, seller onboarding, and more.
 
-Creating a free Flex account and visiting your Test environment is the
-best way to see how the Template works. There you can access the
+Creating a free Sharetribe account and visiting your Test environment is
+the best way to see how the Template works. There you can access the
 Template and use it as a real user, creating accounts, making
 transactions, sending messages, and so on. If you're familiar with Figma
 or other design tools, you can also download, view, and modify the
@@ -48,11 +48,11 @@ or other design tools, you can also download, view, and modify the
 showing all the screens in the Template.
 
 The workflows you pursue in the Template represent the out of the box
-features available in Flex. Developers can use them as they are, modify
-them, or completely remove (or add) functionality from this starting
-point. A great way then to describe the requirements of your marketplace
-are as modifications, tweaks, or sweeping changes to the existing
-functionality.
+features available in Sharetribe. Developers can use them as they are,
+modify them, or completely remove (or add) functionality from this
+starting point. A great way then to describe the requirements of your
+marketplace are as modifications, tweaks, or sweeping changes to the
+existing functionality.
 
 In the
 [next article](https://www.sharetribe.com/docs/design-toolkit/your-user-journey-a-guide/),

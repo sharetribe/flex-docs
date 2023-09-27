@@ -10,17 +10,17 @@ published: true
 ---
 
 Template microcopy can be managed both in the built-in microcopy files
-and in Flex Console. This article describes how the template uses the
-hosted microcopy and merges it with the built-in microcopy.
+and in Sharetribe Console. This article describes how the template uses
+the hosted microcopy and merges it with the built-in microcopy.
 
 ## Hosted microcopy
 
 **Hosted microcopy** is microcopy that the marketplace operator can edit
-in Flex Console. The client app then needs to fetch it using the Asset
-Delivery API.
+in Sharetribe Console. The client app then needs to fetch it using the
+Asset Delivery API.
 
 It is good to note that even if the operator adds some hosted microcopy
-using Flex Console, the template still needs to have a built-in
+using Sharetribe Console, the template still needs to have a built-in
 microcopy file for the microcopy keys that do not have a value in the
 hosted asset. That way, the UI can still render something meaningful for
 the parts of the page that the operator has not modified.
@@ -33,7 +33,7 @@ since language-specific microcopy files make it fairly easy to translate
 the template to languages other than the default English.
 
 ```js
-// CDN assets for the app. Configurable through Flex Console.
+// CDN assets for the app. Configurable through Sharetribe Console.
 // Currently, only translation.json is available.
 const appCdnAssets = {
   translations: 'content/translations.json',
@@ -64,8 +64,8 @@ Hosted assets are versioned as a
 to how Git works. Individual asset files might have not changed when the
 whole version has changed and this might cause
 [HTTP redirects](https://www.sharetribe.com/api-reference/asset-delivery-api.html#http-redirects).
-Since the template uses Flex SDK, the response always contains the data
-for the requested asset, even if the asset has not changed in the
+Since the template uses Sharetribe SDK, the response always contains the
+data for the requested asset, even if the asset has not changed in the
 specified version.
 
 ```js

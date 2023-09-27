@@ -12,8 +12,8 @@ published: true
 
 ## Change marketplace currency
 
-Stripe is the default payment processor in Flex. If you are using the
-default payment integration, please confirm that
+Stripe is the default payment processor in Sharetribe. If you are using
+the default payment integration, please confirm that
 [Stripe supports the currency](https://stripe.com/docs/currencies) you
 intend to use.
 
@@ -27,7 +27,7 @@ e.g. USD, EUR, CAD, AUD, etc. The default value is USD.
 
 If you already created listings before changing the currency, listings
 using old currency will not show the price when a new currency is in
-use. Currently, Flex does not support changing the currency of the
+use. Currently, Sharetribe does not support changing the currency of the
 listing so the price cannot be edited after the currency used in the
 application is changed.
 
@@ -99,12 +99,12 @@ there are two places in the template where prices are calculated:
 
 ## Using multiple currencies
 
-You can have multiple currencies inside a single marketplace, since Flex
-itself is currency agnostic. There are, however, some caveats that you
-need to take into account. By default, the template limits currency to a
-single currency because of the caveats listed below. This just made
-things simpler to develop. You can of course change currency handling in
-your marketplace if you take these caveats into account.
+You can have multiple currencies inside a single marketplace, since
+Sharetribe itself is currency agnostic. There are, however, some caveats
+that you need to take into account. By default, the template limits
+currency to a single currency because of the caveats listed below. This
+just made things simpler to develop. You can of course change currency
+handling in your marketplace if you take these caveats into account.
 
 First, a single listing can have only a single price. If you wish to
 offer the same listing in two different currencies, you need to create

@@ -20,7 +20,7 @@ You make a lot of adjustments to your marketplace via environment
 variables, configuration files and through Console. These configurations
 are specific to the runtime environment. For example, the
 `REACT_APP_SHARETRIBE_SDK_CLIENT_ID` environment variable might be
-pointing to the client ID of your Flex development environment on
+pointing to the client ID of your Sharetribe development environment on
 localhost and on your staging server (if you have one).
 
 You already have set up a couple of those environment variables, when
@@ -146,7 +146,7 @@ You can adjust the minimun transaction size in
 The value you input will be in cents. Therefore, 500 represents a
 minimun transaction size of 5 euros.
 
-Stripe (the payment processor used by Flex) has a
+Stripe (the payment processor used by Sharetribe) has a
 [minimum (and maximum) charge amounts per currency](https://stripe.com/docs/currencies#minimum-and-maximum-charge-amounts).
 For euros, the minimum charge amount is 50 cents at the time when this
 article was written.

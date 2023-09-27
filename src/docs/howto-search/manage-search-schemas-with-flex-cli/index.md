@@ -186,7 +186,8 @@ If you wish to remove a schema, you can use the `search unset` command.
 <info>
 
 If you have already defined a search schema for a key through Flex CLI,
-you can not create a listing field in Flex Console with that same key.
+you can not create a listing field in Sharetribe Console with that same
+key.
 
 ![Console warning about conflicting keys](./conflictingSearchSchema.png)
 
@@ -270,8 +271,8 @@ userProfile  protected  age          long
 ## Summary
 
 In this guide, we used Flex CLI to define search schemas for our
-marketplace. We also saw how schemas defined through Flex Console and
-Flex CLI interact. We used the public data attributes `category` and
+marketplace. We also saw how schemas defined through Sharetribe Console
+and Flex CLI interact. We used the public data attributes `category` and
 `listingType` as examples. In addition, we looked at adding user search
 schemas for Integration API as well as adding a listing schema with a
 default value.

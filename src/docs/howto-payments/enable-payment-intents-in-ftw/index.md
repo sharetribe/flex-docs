@@ -82,9 +82,9 @@ processes here:
 https://github.com/sharetribe/flex-example-processes
 
 All the example processes support SCA. If you need help with the
-concrete steps to customize your process to support SCA, contact Flex
-support from the support widget in Console and we'll guide you through
-the changes.
+concrete steps to customize your process to support SCA, contact
+Sharetribe support from the support widget in Console and we'll guide
+you through the changes.
 
 ## 2. Add new thunk calls to stripe.duck.js
 
@@ -143,7 +143,7 @@ address) and then 4 thunk-calls/Promises need to be made in sequence:
 
 - This tells Marketplace API that customer has completed the payment
   requirements. API will validate and mark the payment confirmed in
-  Flex.
+  Sharetribe.
 
 ### Step 4. _onSendMessage_
 
@@ -216,7 +216,7 @@ This can be done by creating another
 [live environment](/ftw/how-to-deploy-ftw-to-production/) instance of
 your client app that uses
 
-- your live Client Id for Flex and
+- your live Client Id for Sharetribe and
 - live Stripe keys (both publishable and secret).
 
 Then create a new Git branch that takes PaymentIntents flow into use and

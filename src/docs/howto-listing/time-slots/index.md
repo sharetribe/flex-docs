@@ -9,8 +9,8 @@ ingress:
 published: true
 ---
 
-In Flex, listings can have either day-based or time-based availability.
-For listings with time-based availability, the available
+In Sharetribe, listings can have either day-based or time-based
+availability. For listings with time-based availability, the available
 [time slots](https://www.sharetribe.com/api-reference/marketplace.html#time-slots)
 are returned from the API as continuous stretches of time. The client
 application must therefore split the availability into suitable booking

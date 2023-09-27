@@ -5,13 +5,13 @@ updated: 2020-06-25
 category: concepts-transaction-process
 ingress:
   This article introduces you to the concept of privileged transitions
-  and how Flex uses them to invoke actions from a trusted context.
+  and how Sharetribe uses them to invoke actions from a trusted context.
 published: true
 ---
 
 ## What are privileged transitions?
 
-In Flex, a process transition is an edge between two states in the
+In Sharetribe, a process transition is an edge between two states in the
 transaction process graph. Invoking transitions is guarded in the
 process definition by tying them to a specific state when they can be
 transitioned and by defining who can perform the transition. This way
@@ -29,7 +29,7 @@ price parameters.
 This is where privileged transitions come into play. They are
 transaction process transitions that can be invoked only from a trusted
 context. In other words, this means that you can build your own server
-side validation that sits between your marketplace UI and the Flex
+side validation that sits between your marketplace UI and the Sharetribe
 Marketplace API. In the discount coupon example, this means that the
 discount coupon that a user has can be passed as a parameter in the
 transition request. Server side transition request validation can invoke

@@ -11,8 +11,8 @@ published: true
 ---
 
 This reference guide assumes you know the basic idea and concepts, such
-as states, transitions and actions, of the Flex transaction process. If
-you don't, please check this
+as states, transitions and actions, of the Sharetribe transaction
+process. If you don't, please check this
 [background article about Transaction process](/concepts/transaction-process/)
 first.
 
@@ -155,7 +155,7 @@ The annotated process description for this process is as follows:
 
 ## The edn format
 
-The process description in Sharetribe Flex uses a format called
+The process description in Sharetribe Sharetribe uses a format called
 [edn](https://github.com/edn-format/edn). It's quite similar to JSON but
 it supports a few more primitive types, such as datetime values and
 keywords, and has some extra features. The syntax is also slightly
@@ -321,7 +321,7 @@ reference article.
 ## Time expressions, delayed transitions and delayed notifications
 
 Time expressions can be used both with transitions and notifications to
-delay the execution. The Flex transaction engine exposes a set of
+delay the execution. The Sharetribe transaction engine exposes a set of
 timepoints that you can tie delays to as well as a small set of
 functions to further control the exact timing. The basic structure of a
 time expression is a map from function name to a list (vector) of

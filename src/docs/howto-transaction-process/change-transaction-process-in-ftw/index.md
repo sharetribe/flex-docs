@@ -297,7 +297,7 @@ This means that when you create a new transaction process, you will also
 need to add microcopy for the relevant keys and states in the new
 process. You can add the process specific keys either into the
 [bundled microcopy files in the template](/ftw/how-to-change-ftw-bundled-microcopy/)
-or through the [Flex Console Content tab](/concepts/microcopy/).
+or through the [Sharetribe Console Content tab](/concepts/microcopy/).
 
 After making the necessary changes in these contexts, your new
 transaction process should work as expected in the template! Be sure to

@@ -5,12 +5,12 @@ updated: 2022-08-18
 category: concepts-availability
 ingress:
   Inventory or stock management is a key feature of many product
-  marketplaces. Here’s how Flex’s stock management works.
+  marketplaces. Here’s how the Sharetribe stock management works.
 published: true
 ---
 
-In Flex, you can manage the available stock or inventory of a listing
-via the stock-related features in the Marketplace API and the
+In Sharetribe, you can manage the available stock or inventory of a
+listing via the stock-related features in the Marketplace API and the
 Integration API. With those APIs, you can determine the available stock
 (quantity) of any given listing as well as add to and subtract from it.
 Additions to stock will mostly be determined by providers, as they
@@ -18,8 +18,8 @@ restock the items they sell. Stock subtractions, on the other hand, will
 mostly happen as part of transactions, as buyers on your marketplace
 make purchases.
 
-This article describes the stock management features of Flex on a high
-level. We also have
+This article describes the Sharetribe stock management features on a
+high level. We also have
 [a more technical article about stock management](/references/stock/).
 
 ## How do you determine the initial available stock or increase the available stock of a listing?
@@ -27,11 +27,11 @@ level. We also have
 With the stock-related APIs, you add to the available stock of a listing
 by creating a
 [stock adjustment](/operator-guides/concepts/#stock-adjustment). This is
-an API call that you make through one of our APIs that lets your Flex
-marketplace know that you have increased the quantity of available stock
-for one of your listings. This adjustment could be done directly through
-the marketplace UI or a third-party integration using the corresponding
-API calls.
+an API call that you make through one of our APIs that lets your
+Sharetribe marketplace know that you have increased the quantity of
+available stock for one of your listings. This adjustment could be done
+directly through the marketplace UI or a third-party integration using
+the corresponding API calls.
 
 ## How do you remove or decrease the available stock of a listing?
 
@@ -48,17 +48,17 @@ released back to the inventory and other users will be able to purchase
 them. Find out more about
 [transaction process actions related to stock reservations](/references/transaction-process-actions/#stock-reservations).
 
-You can also connect your Flex marketplace with third-party systems to
-further manage stock. If units are bought through another site or
-system, you can sync this information with the Integration API and
-adjust your stock accordingly.
+You can also connect your Sharetribe marketplace with third-party
+systems to further manage stock. If units are bought through another
+site or system, you can sync this information with the Integration API
+and adjust your stock accordingly.
 
 Finally, providers could manually adjust their inventory directly from
 the marketplace interface. Similar to how they would add inventory.
 
 ## Can listings be closed automatically if there is no stock left?
 
-Yes! This feature can be built into your Flex marketplace app with
+Yes! This feature can be built into your Sharetribe marketplace app with
 relative ease, even though it is not part of the default template.
 Furthermore, even if you don’t have a system in place that would close
 the listings automatically, users will not be able to purchase more

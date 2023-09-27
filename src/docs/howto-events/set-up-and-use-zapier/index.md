@@ -4,30 +4,31 @@ slug: set-up-and-use-zapier
 updated: 2021-06-02
 category: how-to-events
 ingress:
-  This guide demonstrates how to connect Flex to Zapier, gives a brief
-  overview of the events and information made available to Zapier, and
-  finally the possibilities a working Zapier integration holds.
+  This guide demonstrates how to connect Sharetribe to Zapier, gives a
+  brief overview of the events and information made available to Zapier,
+  and finally the possibilities a working Zapier integration holds.
 published: true
 ---
 
 ## What is Zapier and why should you use it?
 
-Your Flex marketplace is built on top of APIs, which makes it possible
-for your marketplace app to talk to other web applications. Building
-third-party integrations is a great way to bring new features to your
-marketplace, but until now, it still required advanced coding skills to
-connect two apps.
+Your Sharetribe marketplace is built on top of APIs, which makes it
+possible for your marketplace app to talk to other web applications.
+Building third-party integrations is a great way to bring new features
+to your marketplace, but until now, it still required advanced coding
+skills to connect two apps.
 
-With Zapier, you can connect your Flex marketplace with more than 3,000
-other web apps with just a few clicks. You can then build "Zaps", which
-are automated workflows or sequences of actions that get kicked off by a
-trigger. An event in one app can set in motion an action in a second app
-and another action in a third app etc.
+With Zapier, you can connect your Sharetribe marketplace with more than
+3,000 other web apps with just a few clicks. You can then build "Zaps",
+which are automated workflows or sequences of actions that get kicked
+off by a trigger. An event in one app can set in motion an action in a
+second app and another action in a third app etc.
 
-Once you’ve created a Zapier account and connected your Flex marketplace
-account, you can use nine different events in your marketplace as a
-trigger for actions in other apps. Zapier can also perform "search
-actions" in your marketplace data about users, listings or transactions.
+Once you’ve created a Zapier account and connected your Sharetribe
+marketplace account, you can use nine different events in your
+marketplace as a trigger for actions in other apps. Zapier can also
+perform "search actions" in your marketplace data about users, listings
+or transactions.
 
 Together this allows you to create complex workflows based on things
 happening in your marketplace. A new booking can trigger the sending of
@@ -35,18 +36,18 @@ a text message with Twilio. A new user sign-up can set into action a
 campaign of drip emails in Mailchimp. A new listing can be automatically
 posted to any of your marketplace’s social accounts. And so much more.
 
-## Connecting Zapier to Flex
+## Connecting Zapier to Sharetribe
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zUp4eZufKsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To take Zapier into use and connect it to Flex, you need:
+To take Zapier into use and connect it to Sharetribe, you need:
 
 - **An account at Zapier**. There is a free trial, but eventually, based
   on your usage, you may need a paid plan at Zapier.
 - **A Client ID and a Client Secret for the Integration API**, which you
-  need to authorize Zapier to connect to your Flex account. You can
-  create a Client ID and a Client Secret by adding a new application in
-  Console > Build > Applications.
+  need to authorize Zapier to connect to your Sharetribe account. You
+  can create a Client ID and a Client Secret by adding a new application
+  in Console > Build > Applications.
 - **An account for each third-party app you’d like to connect with.**
 
 ### 1. Register a Zapier-account
@@ -56,7 +57,7 @@ To take Zapier into use and connect it to Flex, you need:
 2. Choose your preferred method of signing up and follow the steps until
    you reach your Zapier Dashboard.
 
-### 2. Create a new application with credentials in Flex console
+### 2. Create a new application with credentials in Sharetribe console
 
 1. Go to
    [Console > Build > Applications](https://flex-console.sharetribe.com/applications).
@@ -67,18 +68,19 @@ To take Zapier into use and connect it to Flex, you need:
    secret must be kept secure. Do not share it publicly. Sharetribe team
    will never ask you for your client secret.
 
-### 3. Connect Zapier to Flex
+### 3. Connect Zapier to Sharetribe
 
 1. In your Zapier dashboard, go to "My Apps" and click "Add Connection"
 2. In the Search bar, type in "Sharetribe Flex", and select Sharetribe
    Flex from the results. This will open up a new pop-up window to
-   authorize access to Flex.
+   authorize access to Sharetribe.
 3. Here, fill in the Client ID & Client Secret from the previous step
    and click "Yes, continue".
 4. If the connection is successful, you'll be returned to a screen that
    shows you that you have a connection to your marketplace.
 
-You can now connect Flex to any other app that you connect to Zapier.
+You can now connect Sharetribe to any other app that you connect to
+Zapier.
 
 ## Which events can be used as triggers in Zapier?
 
@@ -130,18 +132,19 @@ able to collect.
 It is good to note that any extended data attributes only show up in
 Zapier if they are present in the resource you are testing with. For
 example, if you are testing phone number handling in a user event, you
-can check in [Flex Console](https://flex-console.sharetribe.com/users)
-to see whether the user has a phone number defined in the first place.
-Since Zapier listens to events, it is useful to start any Zapier
-development work by triggering an event with the specific test data you
-need, so you know that your data has the necessary attributes.
+can check in
+[Sharetribe Console](https://flex-console.sharetribe.com/users) to see
+whether the user has a phone number defined in the first place. Since
+Zapier listens to events, it is useful to start any Zapier development
+work by triggering an event with the specific test data you need, so you
+know that your data has the necessary attributes.
 
 ## Which actions can Zapier take in my marketplace?
 
-The Flex-Zapier integration doesn't only send events to Zapier, it can
-also receive commands from Zapier to perform "search actions" in your
-marketplace, based on relevant ids. There are three different search
-actions:
+The Sharetribe-Zapier integration doesn't only send events to Zapier, it
+can also receive commands from Zapier to perform "search actions" in
+your marketplace, based on relevant ids. There are three different
+search actions:
 
 - `Show user`: shows information about a user based on a user ID (both
   providers & buyers)
@@ -170,7 +173,7 @@ which you can choose to include:
 All of the information can again be used in the rest of the Zap, for
 example to insert in an email, or a Tweet etc.
 
-## Some examples of what you can do with Zapier and Flex
+## Some examples of what you can do with Zapier and Sharetribe
 
 The above might all sound a bit dry and theoretical, so what does this
 mean in practice? Here are some ideas:
@@ -195,21 +198,21 @@ actions already defined, which you can then take into use. It does still
 require you to sign in to all the services involved in the Zap and test
 the different steps. More templates are coming.
 
-- [Send a text message to the provider for each new booking in a Flex marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
+- [Send a text message to the provider for each new booking in a Sharetribe marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
 - [Add a new user in your marketplace to a Mailchip audience](https://zapier.com/shared/412d7744a23855ce00941567a619c7ffb7652335)
 - [Send a tweet for each new listing with name & listing URL](https://zapier.com/shared/967732338e072db4edc8332e0de182deb0feef6b)
 
 ## Video tutorials
 
-### How to connect Flex to Zapier
+### How to connect Sharetribe to Zapier
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zUp4eZufKsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### How to send information from Flex to Google Sheets using Zapier
+### How to send information from Sharetribe to Google Sheets using Zapier
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C8rdoLSsxiY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### How to build a text message integration in Sharetribe Flex using Twilio and Zapier
+### How to build a text message integration in Sharetribe using Twilio and Zapier
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w2Dmw1x0c3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

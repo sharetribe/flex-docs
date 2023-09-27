@@ -76,8 +76,8 @@ transactions.
 When the necessary configurations and development have been done, and
 your marketplace is ready for onboarding real users, you can initiate
 the Live environment setup from Console. This is also the point when you
-start paying for a subscription (see more information about [Sharetribe
-pricing at the bottom of our website](https://www.sharetribe.com/new-sharetribe/).
+start paying for a subscription (see more information about
+[Sharetribe pricing at the bottom of our website](https://www.sharetribe.com/new-sharetribe/).
 
 You rarely make no-code or code changes in your Live environment.
 Changes are made in the Dev environment and the Test environment, then

@@ -6,20 +6,20 @@ category: how-to-users-and-authentication
 ingress:
   In this guide, we'll take a look at the process of setting up OpenID
   Connect (OIDC) proxy to Sharetribe Web Template. This allows you to
-  add support for identity providers that Flex doesn't natively support.
-  In this example, we are building the proxy implementation for
+  add support for identity providers that Sharetribe doesn't natively
+  support. In this example, we are building the proxy implementation for
   LinkedIn.
 published: true
 ---
 
-The OpenID Connect (OIDC) support in Flex allows you to integrate login
-solutions that do not necessarily implement OpenID Connect. The idea is
-to build a suitable login flow in Sharetribe Web Template and wrap that
-login information into an OpenID Connect ID token that can be used to
-validate user login in Flex. With this approach, the template will serve
-as an identity provider towards Flex.
+The OpenID Connect (OIDC) support in Sharetribe allows you to integrate
+login solutions that do not necessarily implement OpenID Connect. The
+idea is to build a suitable login flow in Sharetribe Web Template and
+wrap that login information into an OpenID Connect ID token that can be
+used to validate user login in Sharetribe. With this approach, the
+template will serve as an identity provider towards Sharetribe.
 
-Flex verifies the ID token by
+Sharetribe verifies the ID token by
 
 - fetching the JSON Web Key that is hosted by your template server, and
 - using that to unsign the token.
@@ -29,8 +29,8 @@ available. This means that the proxy setup will not work directly in
 localhost. To test out the LinkedIn login, you should e.g.
 [deploy your template changes to Render](/tutorial/deploy-to-render/).
 
-In this guide, we'll integrate LinkedIn login to Flex by using
-Sharetribe Web Template as an OIDC proxy to Flex.
+In this guide, we'll integrate LinkedIn login to Sharetribe by using
+Sharetribe Web Template as an OIDC proxy to Sharetribe.
 
 <warning>
 
@@ -38,20 +38,20 @@ LinkedIn has
 [adopted the Open ID Connect framework](https://www.linkedin.com/developers/news/featured-updates/openid-connect-authentication)
 for their authentication flow. Our team is investigating the
 implications of this change as it relates to authenticating towards
-Flex.
+Sharetribe.
 
 At the moment, you can use the guide below as an illustrative guide to
-integrating other non-OIDC authentication flows with Flex. However, we
-cannot guarantee that implementing this guide will result in a fully
-functional LinkedIn login flow. We will update the contents of this
-article as our investigation progresses.
+integrating other non-OIDC authentication flows with Sharetribe.
+However, we cannot guarantee that implementing this guide will result in
+a fully functional LinkedIn login flow. We will update the contents of
+this article as our investigation progresses.
 
 </warning>
 
 The main steps to take to achieve this are:
 
 1. Create a login app in Linkedin
-1. Configure a new identity provider and client in Flex Console
+1. Configure a new identity provider and client in Sharetribe Console
 1. Build LinkedIn auth flow in the template
 
 **If you are working with one of our legacy templates and are not sure
@@ -60,16 +60,16 @@ whether using Open ID Connect proxy is enabled, take a look at our
 
 ## A note about development environments
 
-For OpenID Connect (OIDC) identity providers, Flex supports RSA signed
-ID tokens. RSA is an asymmetric signing function. Therefore, all OIDC
-identity providers will need to provide their URL (also known as _issuer
-location_) to Flex so that public signing keys can be fetched for ID
-token validation.
+For OpenID Connect (OIDC) identity providers, Sharetribe supports RSA
+signed ID tokens. RSA is an asymmetric signing function. Therefore, all
+OIDC identity providers will need to provide their URL (also known as
+_issuer location_) to Sharetribe so that public signing keys can be
+fetched for ID token validation.
 
 When using Sharetribe Web Template as an OIDC proxy, it should be served
-publicly, so that Flex can fetch the public signing key used to sign ID
-tokens used with authentication. This means that when developing OIDC
-proxy capabilities, by default, a template application running in
+publicly, so that Sharetribe can fetch the public signing key used to
+sign ID tokens used with authentication. This means that when developing
+OIDC proxy capabilities, by default, a template application running in
 `localhost` can not be used as an OIDC proxy but the application should
 be deployed, for example, to a staging environment.
 
@@ -102,14 +102,14 @@ your local ports publicly.
 1. It takes a few moments for LinkedIn to validate your app for the
    _Sign In_ product.
 
-## Configure a new identity provider and client in Flex Console
+## Configure a new identity provider and client in Sharetribe Console
 
 With this proxy implementation, **your Sharetribe Web Template works as
-the identity provider towards Flex.** Flex uses your template
-application to validate the ID token that wraps the LinkedIn login
-information. To enable logins in Flex using the OIDC proxy, a
-corresponding identity provider and identity provider client need to be
-configured for your marketplace in Flex Console. See the
+the identity provider towards Sharetribe.** Sharetribe uses your
+template application to validate the ID token that wraps the LinkedIn
+login information. To enable logins in Sharetribe using the OIDC proxy,
+a corresponding identity provider and identity provider client need to
+be configured for your marketplace in Sharetribe Console. See the
 [OpenID Connect how-to guide](/how-to/enable-open-id-connect-login/) for
 information on how to add a new identity provider for your marketplace.
 
@@ -119,12 +119,12 @@ identity provider and a client to be used as a proxy for LinkedIn.
 ### Identity provider name and ID
 
 The identity provider ID is generated based on the name of the IdP. The
-ID will be passed to the Flex API when creating a user or logging in
-using the proxy. When a user logs in with an identity provider, their
+ID will be passed to the Sharetribe API when creating a user or logging
+in using the proxy. When a user logs in with an identity provider, their
 identity provider profile is linked to their user account and this
 relationship is exposed in the
 [currentUser resource](https://www.sharetribe.com/api-reference/marketplace.html#currentuser-identity-provider)
-in the Flex API.
+in the Sharetribe API.
 
 If the intention is to use the Sharetribe Web Template to proxy login to
 multiple services, it's advised to create a distinct identity provider
@@ -134,14 +134,14 @@ could be "Template LinkedIn" or "Template LinkedIn Proxy".
 
 ### Identity provider URL
 
-Based on this URL, Flex determines the path to an OpenID Connect
+Based on this URL, Sharetribe determines the path to an OpenID Connect
 discovery document (_[identity provider
 URL]/.well-known/openid-configuration_) and from there on to an ID token
 signing key.
 
 In Open ID Connect terms, this is the issuer URL. In this setup, your
-Sharetribe Web Template acts as the issuer towards Flex, so the URL
-should point to your template.
+Sharetribe Web Template acts as the issuer towards Sharetribe, so the
+URL should point to your template.
 
 By default, the identity provider URL should be the root address of your
 template application, for example, _https://example.com_ or, for default
@@ -185,8 +185,9 @@ _options_.
 - _user_ object should contain at least _firstName_, _lastName_, _email_
   and _emailVerified_ fields.
 - _options_ object contains information about how the id token should be
-  signed and the keys required for that. Currently, Flex supports only
-  RS256 signing algorithm so the _options_ object should look like this:
+  signed and the keys required for that. Currently, Sharetribe supports
+  only RS256 signing algorithm so the _options_ object should look like
+  this:
 
 ```
 { signingAlg: 'RS256', rsaPrivateKey, keyId }
@@ -195,20 +196,20 @@ _options_.
 **`openIdConfiguration`** and **`jwksUri`**
 
 These functions can be used to serve an OpenID Connect discovery
-document and JSON Web Keys that are used by Flex to validate the ID
-token written by your proxy implementation. Sharetribe Web Template will
-automatically use these functions to expose correct endpoints when JWT
-signing keys are configured.
+document and JSON Web Keys that are used by Sharetribe to validate the
+ID token written by your proxy implementation. Sharetribe Web Template
+will automatically use these functions to expose correct endpoints when
+JWT signing keys are configured.
 
 ### Generate an RSA key pair
 
 A RSA public and private key pair is used to sign and validate an ID
-token that is passed from the template application to Flex during the
-login/signup flow. When a user successfully logs into LinkedIn, the
+token that is passed from the template application to Sharetribe during
+the login/signup flow. When a user successfully logs into LinkedIn, the
 template wraps the user information to an ID token that is signed with a
 private key. The corresponding public key is served by the template in
-`/.well-known/jwks.json` and it is fetched by Flex when an ID token is
-validated.
+`/.well-known/jwks.json` and it is fetched by Sharetribe when an ID
+token is validated.
 
 In order for the Sharetribe Web Template to operate as an OpenID Connect
 identity provider, you will need to generate a RSA key pair. Both keys
@@ -284,25 +285,25 @@ quotation marks `"` and escape line breaks with the newline character
 
 `LINKEDIN_PROXY_IDP_ID`
 
-The identifier of your identity provider that you configure to Flex. It
-declares that you are using your template OpenID Connect proxy as an
-identity provider. Use the "IdP ID" value of an identity provider client
-in Console for this variable.
+The identifier of your identity provider that you configure to
+Sharetribe. It declares that you are using your template OpenID Connect
+proxy as an identity provider. Use the "IdP ID" value of an identity
+provider client in Console for this variable.
 
 `LINKEDIN_PROXY_CLIENT_ID`
 
 The client ID of your identity provider client that you configure to
-Flex. Use the "Client ID" value of an identity provider client in
+Sharetribe. Use the "Client ID" value of an identity provider client in
 Console for this variable.
 
 `KEY_ID`
 
 The value will be used as the `kid` header in ID tokens that are passed
-to Flex when a user logs in with LinkedIn. It is also used as the `kid`
-attribute of the JSON Web key that the proxy serves in an endpoint. Even
-though using a _kid_ value in your keys is not compulsory, we heavily
-recommend using it with your token and the JWK. For example, key caching
-in the Flex API relies heavily on it.
+to Sharetribe when a user logs in with LinkedIn. It is also used as the
+`kid` attribute of the JSON Web key that the proxy serves in an
+endpoint. Even though using a _kid_ value in your keys is not
+compulsory, we heavily recommend using it with your token and the JWK.
+For example, key caching in the Sharetribe API relies heavily on it.
 
 ### Add Passport module dependency
 
@@ -336,10 +337,10 @@ Place the file in `server/api/auth` folder inside the template:
 ```
 
 The biggest difference between LinkedIn login and e.g. Facebook login
-which has first-class support in Flex is that we need to use
+which has first-class support in Sharetribe is that we need to use
 _createIdToken_ helper function to create the id token from the
 information we fetched from LinkedIn. This new id token is then passed
-forward to Flex as _idpToken_ parameter.
+forward to Sharetribe as _idpToken_ parameter.
 
 ```js
   createIdToken(idpClientId, user, { signingAlg: 'RS256', rsaPrivateKey, keyId })
@@ -379,14 +380,14 @@ router.get('/auth/linkedin', authenticateLinkedin);
 
 // This is the route for callback URL the user is redirected after authenticating
 // with Linkedin. In this route a Passport.js custom callback is used for calling
-// loginWithIdp endpoint in Flex API to authenticate user to Flex
+// loginWithIdp endpoint in Sharetribe API to authenticate user to Sharetribe
 router.get('/auth/linkedin/callback', authenticateLinkedinCallback);
 ```
 
 Finally, on the server side we need to update
 `server/api/auth/createUserWithIdp.js` so that a correct IdP client ID
-is passed to the Flex API. In the beginning of the file resolve the
-following environment variables:
+is passed to the Sharetribe API. In the beginning of the file resolve
+the following environment variables:
 
 ```js
 const LINKEDIN_PROXY_CLIENT_ID = process.env.LINKEDIN_PROXY_CLIENT_ID;
@@ -471,4 +472,4 @@ That's it! In order to integrate some other identity provider, implement
 their authentication flow using Passport.js or some other method and use
 the utility functions in `api-util/idToken.js` accordingly to wrap the
 login information into an OpenID Connect ID token that can be used to
-log in to a Flex marketplace.
+log in to a Sharetribe marketplace.

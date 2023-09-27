@@ -17,10 +17,10 @@ used by default. For information about changing the language, see the
 We use the [React Intl](https://github.com/yahoo/react-intl) library to
 represent UI microcopy and to format dates, numbers, and money values.
 
-In addition to bundled microcopy, Flex allows modifying microcopy
-through the Flex Console:
+In addition to bundled microcopy, Sharetribe allows modifying microcopy
+through the Sharetribe Console:
 
-- [Microcopy in Flex](/concepts/microcopy/)
+- [Microcopy in Sharetribe](/concepts/microcopy/)
 - [How hosted microcopy works in the template](/ftw/hosted-microcopy/)
 
 ## The microcopy file

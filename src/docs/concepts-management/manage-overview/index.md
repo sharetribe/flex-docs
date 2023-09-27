@@ -40,4 +40,5 @@ You can also perform marketplace admin actions on the Manage pages.
 On each page, you can download the data in CSV format.
 
 If you’d like to learn more about operating a marketplace in Console, we
-recommend this [overview of Flex Console](/concepts/console-overview/).
+recommend this
+[overview of Sharetribe Console](/concepts/console-overview/).

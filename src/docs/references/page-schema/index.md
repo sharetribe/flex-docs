@@ -11,9 +11,9 @@ published: true
 
 ## What is a page asset schema
 
-Page [assets](/references/assets/) in Flex have a structure that is
-defined by the page asset schema. The Flex page asset schema is based on
-[JSON schema](https://json-schema.org/).
+Page [assets](/references/assets/) in Sharetribe have a structure that
+is defined by the page asset schema. The Sharetribe page asset schema is
+based on [JSON schema](https://json-schema.org/).
 
 If you are not familiar with the JSON schema, you can learn more in the
 [Understanding JSON schema](https://json-schema.org/understanding-json-schema/)
@@ -24,9 +24,9 @@ ebook.
 It is good to note that the content page asset schema is not the same as
 a [website structured data schema](https://schema.org/):
 
-- Flex page asset schema is a Flex-specific description of the data
-  being returned from
-  [Flex Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
+- Sharetribe page asset schema is a Sharetribe-specific description of
+  the data being returned from
+  [Sharetribe Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 - Schema.org structured data schema is a general vocabulary for
   representing the data content of a page in a way that is easily
   readable by e.g. search engines. <br/>
@@ -35,16 +35,16 @@ Page asset schema is also distinct from an
 [extended data search schema](/references/extended-data/#search-schema):
 
 - Page asset schema relates to page assets created by operators through
-  Flex Console. It enables building client applications that can
+  Sharetribe Console. It enables building client applications that can
   predictably handle page asset data.
 - Extended data search schema relates to listings or users. It enables
-  searching and filtering users and listings through the Flex APIs on
-  the marketplace.
+  searching and filtering users and listings through the Sharetribe APIs
+  on the marketplace.
 
 </info>
   
-The page asset schema determines the structure of the page in both Flex Console and the page asset fetched from Asset Delivery API.
-- The page is created and modified in Flex Console, structured by the page asset schema
+The page asset schema determines the structure of the page in both Sharetribe Console and the page asset fetched from Asset Delivery API.
+- The page is created and modified in Sharetribe Console, structured by the page asset schema
 - The page asset is then fetched to the client, and the data structure for all pages can be predicted based on the page asset schema.
 
 ![Page asset schema in context](./page-schema-context.png)
@@ -200,7 +200,7 @@ You can download the full page asset schema here:
 - [page-asset-schema.json](./page-asset-schema.json)
 
 The representation below shows the page asset schema without _\_editor_
-attributes, which are only used in Flex Console internally and are
+attributes, which are only used in Sharetribe Console internally and are
 subject to change.
 
 ```json

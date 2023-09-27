@@ -12,12 +12,12 @@ published: true
 ## Introduction
 
 The Sharetribe Web Template renders content pages using data from Pages,
-the Flex headless content management system. This how-to article assumes
-a basic understanding of the Pages feature and how the template renders
-content pages using the PageBuilder. We suggest reading the following
-articles before proceeding:
+the Sharetribe headless content management system. This how-to article
+assumes a basic understanding of the Pages feature and how the template
+renders content pages using the PageBuilder. We suggest reading the
+following articles before proceeding:
 
-- [Content management in Flex](/concepts/content-management/)
+- [Content management in Sharetribe](/concepts/content-management/)
 - [Assets reference](/references/assets/)
 - [How the template renders content pages](/ftw/page-builder/)
 

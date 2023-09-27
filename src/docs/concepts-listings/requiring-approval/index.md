@@ -4,16 +4,16 @@ slug: requiring-approval
 updated: 2022-03-07
 category: concepts-listings
 ingress:
-  Flex allows you to require operator approval for new listings before
-  they are published. This article explains the feature and describes
-  how to take listing approval into use in both Flex Console and Flex
-  CLI.
+  Sharetribe allows you to require operator approval for new listings
+  before they are published. This article explains the feature and
+  describes how to take listing approval into use in both Sharetribe
+  Console and Flex CLI.
 published: true
 ---
 
 ## Listing approval
 
-By default, listings in Flex are published as soon as their author
+By default, listings in Sharetribe are published as soon as their author
 clicks the "publish" button. However, you can also set new listings to
 require approval before they are published. When the feature is enabled,
 new listings only get published once an operator has reviewed and
@@ -40,29 +40,29 @@ However, you can for instance
 where a listing's state goes from `pendingApproval` to `published` and
 send a message.
 
-## Managing listing approval in Flex Console
+## Managing listing approval in Sharetribe Console
 
 Listing approval can be enabled in your
-[Flex Console](https://flex-console.sharetribe.com/general), under
+[Sharetribe Console](https://flex-console.sharetribe.com/general), under
 Build > General. Listing approval is disabled by default.
 
 ![Listing approval toggle](listing-approval-toggle.png 'Listing approval is toggled in Build > General')
 
 When your marketplace has listings requiring approval, you can see them
-in your Flex Console Listings view. A listing requiring approval has a
-badge indicating its state.
+in your Sharetribe Console Listings view. A listing requiring approval
+has a badge indicating its state.
 
 ![Listing approval badge](pending-approval-badge.png 'Listings pending approval show a badge')
 
 When you click open the listing, the bottom of the listing panel shows a
 button to approve the listing.
 
-![Listing approval button](pending-approval-button.png 'Operator can approve listings in Flex Console')
+![Listing approval button](pending-approval-button.png 'Operator can approve listings in Sharetribe Console')
 
 ## Approving listings through Integration API
 
-In addition to Flex Console, an operator can also create an integration
-to approve listings through the
+In addition to Sharetribe Console, an operator can also create an
+integration to approve listings through the
 [Integration API](/introduction/getting-started-with-integration-api/)
 through the endpoint
 [integration_api/listings/approve](https://www.sharetribe.com/api-reference/integration.html#approve-listing).
@@ -74,7 +74,7 @@ user has unused listing quota.
 
 ## Enabling and disabling listing approval in Flex CLI
 
-In addition to the Flex Console, you can also use
+In addition to the Sharetribe Console, you can also use
 [Flex CLI](/introduction/getting-started-with-flex-cli/) to enable and
 disable listing approval on your marketplace.
 

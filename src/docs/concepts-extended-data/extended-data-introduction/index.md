@@ -16,8 +16,8 @@ technical instead, check out the
 
 ## Why extended data?
 
-Extended data is a Flex feature that allows you to customize your user,
-listing, and transaction data. Your marketplace has its own unique
+Extended data is a Sharetribe feature that allows you to customize your
+user, listing, and transaction data. Your marketplace has its own unique
 offering and requires specific data that other marketplaces do not.
 Maybe you’re building a marketplace for cooking classes and want to ask
 chefs how many years of experience they have. Or perhaps you’re building
@@ -29,7 +29,7 @@ not end there!
 
 If you’ve used Sharetribe Go, you might be familiar with custom listing
 and user fields, which are fields with limited customizability. Extended
-data is the Flex-equivalent, but without the constraints of
+data is the Sharetribe-equivalent, but without the constraints of
 predetermined functionality: it’s listing and user fields on steroids.
 Extended data can be customized to different use-cases to fit your exact
 needs: in addition to collecting the information you need from your
@@ -51,9 +51,9 @@ offer examples of what they can be used for.
 ## Types of extended data
 
 There are six possible types of extended data, defined by who can edit
-and view them. Four out of these are available in Flex at this time.
-They are _public data_, _protected data_, _private data_, and _public
-metadata_.
+and view them. Four out of these are available in Sharetribe at this
+time. They are _public data_, _protected data_, _private data_, and
+_public metadata_.
 
 In the following sections, “author” means the user who created the
 listing or profile in question. “Operator” refers to both the
@@ -107,7 +107,7 @@ allows you to customize your public listing and user information to fit
 your needs exactly!
 
 Let’s look at listing public data in action. Here is a listing from
-Biketribe, the Flex test marketplace.
+Biketribe, the Sharetribe test marketplace.
 
 <publicextendeddatacarousel title="Examples of public extended data">
 
@@ -204,7 +204,7 @@ you want to collect about your users and listings or what is important
 for users to know during transactions. Next, you should think about who
 has access to edit that information. Finally, you should consider
 whether you want to display this information to everyone, select users,
-or just to yourself. Through extended data, Flex can support a multitude
-of different kinds of listings, monetization models, user profiles, and
-so on. You can create the exact data structure you need for your
-marketplace.
+or just to yourself. Through extended data, Sharetribe can support a
+multitude of different kinds of listings, monetization models, user
+profiles, and so on. You can create the exact data structure you need
+for your marketplace.

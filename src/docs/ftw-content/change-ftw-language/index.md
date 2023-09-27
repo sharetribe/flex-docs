@@ -34,7 +34,7 @@ Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to manage
 your marketplace texts, it is still important to have a built-in
 language-specific microcopy file in the template as well, so that the
 application can show meaningful messages for any keys missing from the
-Flex Console microcopy asset.
+Sharetribe Console microcopy asset.
 
 ## Changing the microcopy used in the template
 
@@ -124,4 +124,4 @@ paths like `/fr/about`. In this case, it is useful to save the user's
 language preference to the extended data.
 
 Read more about having
-[a multilanguage marketplace on top of Flex](/concepts/microcopy/#can-i-have-a-multilanguage-marketplace).
+[a multilanguage marketplace on top of Sharetribe](/concepts/microcopy/#can-i-have-a-multilanguage-marketplace).

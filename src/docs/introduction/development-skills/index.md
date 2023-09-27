@@ -4,7 +4,7 @@ slug: development-skills
 updated: 2019-11-21
 category: introduction
 ingress:
-  Building a custom marketplace with Flex requires some software
+  Building a custom marketplace with Sharetribe requires some software
   development skills. This article explains what you need to know when
   customizing the platform.
 published: true
@@ -74,7 +74,7 @@ all the nice things from `create-react-app` are still there.
 ## Getting help
 
 If you are unsure if something is possible or how to do a certain thing
-with Flex, you can contact our support:
+with Sharetribe, you can contact our support:
 [flex-support@sharetribe.com](mailto:flex-support@sharetribe.com). If
 you are not a developer or don't have access to one, we can also help
 you.

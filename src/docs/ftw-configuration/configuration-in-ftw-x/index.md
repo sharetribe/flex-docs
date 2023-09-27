@@ -405,6 +405,6 @@ the how to set up [Google Maps](/ftw/how-to-use-google-maps-in-ftw/) or
 
 The
 [configStripe.js](https://github.com/sharetribe/web-template/blob/main/src/config/configStripe.js)
-file includes all countries supported by the Flex Stripe integration.
-The list of countries is used during the Stripe onboarding process. In
-most cases, no changes are required to this file.
+file includes all countries supported by the Sharetribe Stripe
+integration. The list of countries is used during the Stripe onboarding
+process. In most cases, no changes are required to this file.

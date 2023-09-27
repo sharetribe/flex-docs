@@ -1,19 +1,21 @@
 ---
-title: How to build and launch your marketplace with Flex
+title: How to build and launch your marketplace with Sharetribe
 slug: how-to-build-and-launch-with-flex
 updated: 2022-01-13
 category: introduction
 ingress:
   This article describes what it takes to build and launch your
-  marketplace with Sharetribe Flex. There are four main stages in this
+  marketplace with Sharetribe. There are four main stages in this
   process, and we'll go through each one in detail.
 published: true
 ---
 
-To build and launch your marketplace with Flex, you need to go through
-the following stages:
+TODO IS THIS OBSOLETE AFTER NO-CODE?
 
-1. Getting access to Flex
+To build and launch your marketplace with Sharetribe, you need to go
+through the following stages:
+
+1. Getting access to Sharetribe
 
 2. Designing your marketplace
 
@@ -22,17 +24,17 @@ the following stages:
 4. Going live
 
 In this article, it is assumed that you've already read
-[Introducing Flex](/introduction/introducing-flex/), which explains the
-basic concepts of Flex. If you haven't done that yet, it's a good idea
-to do that now.
+[Introducing Sharetribe](/introduction/introducing-flex/), which
+explains the basic concepts of Sharetribe. If you haven't done that yet,
+it's a good idea to do that now.
 
-## 1. Getting access to Flex
+## 1. Getting access to Sharetribe
 
 If you're reading this article, the chances are that you already have
-access a Flex marketplace. This means that you have an account in
-[Flex Console](https://flex-console.sharetribe.com) (the "admin section"
-of your Flex marketplace). If you don't have an account yet, you can
-create one in
+access a Sharetribe marketplace. This means that you have an account in
+[Sharetribe Console](https://flex-console.sharetribe.com) (the "admin
+section" of your Sharetribe marketplace). If you don't have an account
+yet, you can create one in
 [the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).
 
 Once you log in to Console, you'll notice there's nothing there yet: you
@@ -41,7 +43,7 @@ naturally don't yet have any users, listings, or transactions.
 The first step after logging in to Console is to set up a
 [Sharetribe Web Template](/introduction/introducing-template/). The
 template is a fully functional example of a marketplace website built
-with Flex.
+with Sharetribe.
 
 Setting up the template should take no more than 5 minutes. The process
 is technical but doable even without development experience.
@@ -127,10 +129,11 @@ we'll connect you to a designer who can help you out.
 
 ## 3. Developing your marketplace
 
-In Flex, all the changes made to the user interface of your marketplace
-are done by editing the software code directly. Thus, once you have the
-design ready for your marketplace, it's time to start development work
-to make your marketplace look and work the way your designs describe.
+In Sharetribe, all the changes made to the user interface of your
+marketplace are done by editing the software code directly. Thus, once
+you have the design ready for your marketplace, it's time to start
+development work to make your marketplace look and work the way your
+designs describe.
 
 Typically, the development work is done by downloading the
 [open source codebase of Sharetribe Web Template](https://github.com/sharetribe/web-template/)
@@ -142,17 +145,18 @@ If you're not a developer yourself and don't have one in your team,
 you'll need to contract or hire a developer to do this work for you. You
 can work with any developer of your choice, but we highly recommend the
 developers in the
-[Flex Expert Network](https://www.sharetribe.com/experts/). The network
-consists of experienced agencies and freelancers around the world, all
-vetted by Sharetribe for their Flex skills. They will be happy to guide
-you through the process of defining your exact requirements and
-completing your marketplace based on them.
+[Sharetribe Expert Network](https://www.sharetribe.com/experts/). The
+network consists of experienced agencies and freelancers around the
+world, all vetted by Sharetribe for their Sharetribe skills. They will
+be happy to guide you through the process of defining your exact
+requirements and completing your marketplace based on them.
 
-If you'd like to receive a quote from a Flex Expert for building your
-marketplace, you can head to the
-[Flex Expert Directory](https://www.sharetribe.com/experts/) and contact
-some developers directly from there. If you'd like to get help choosing
-the right developer or learn more about the process for hiring, you can
+If you'd like to receive a quote from a Sharetribe Expert for building
+your marketplace, you can head to the
+[Sharetribe Expert Directory](https://www.sharetribe.com/experts/) and
+contact some developers directly from there. If you'd like to get help
+choosing the right developer or learn more about the process for hiring,
+you can
 [book a free consultation call](https://calendly.com/welcome-to-flex)
 with a Sharetribe team member, and we'll guide you through the process.
 
@@ -196,16 +200,16 @@ try to launch as quickly as you can, as that is where the true learning begins.
 Once you've reached a point when you're ready to invite first real users
 to your marketplace, it's time to go live.
 
-At this point, you should subscribe to Sharetribe Flex. You can do this
-from Flex Console. Open the Environment dropdown and click the _Set up
+At this point, you should subscribe to Sharetribe. You can do this from
+Sharetribe Console. Open the Environment dropdown and click the _Set up
 live_ item to subscribe.
 
 ![Click Set up live to subscribe](./set-up-live.png)
 
-This is when you start paying the Flex minimum monthly fee (see more
-information about
-[Flex pricing](https://www.sharetribe.com/products/flex/#pricing)). The
-development phase is completely free. You only need to pay when you
+This is when you start paying the Sharetribe minimum monthly fee (see
+more information about
+[Sharetribe pricing](https://www.sharetribe.com/products/flex/#pricing)).
+The development phase is completely free. You only need to pay when you
 start inviting your real users to your marketplace.
 
 After you've subscribed, we will create a _live environment_ to

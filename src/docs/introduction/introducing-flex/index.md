@@ -1,30 +1,32 @@
 ---
-title: Introducing Flex
+title: Introducing Sharetribe
 slug: introducing-flex
 updated: 2019-11-21
 category: introduction
 ingress:
-  Overview of how Sharetribe Flex works, and how you can build your
-  online marketplace platform using it.
+  Overview of how Sharetribe works, and how you can build your online
+  marketplace platform using it.
 published: true
 ---
 
+TODO FIX WORDING TO REFER E.G. TO CUSTOM DEVELOPMENT APPROACH!
+
 ## Introduction
 
-Sharetribe Flex is a complete solution for building a powerful online
-marketplace for rentals, services, events or experiences. Flex provides
-you with all the necessary marketplace infrastructure out of the box. At
-the same time, because of its headless architecture, Flex gives you
-total freedom to customize your user experience.
+Sharetribe is a complete solution for building a powerful online
+marketplace for rentals, services, events or experiences. Sharetribe
+provides you with all the necessary marketplace infrastructure out of
+the box. At the same time, because of its headless architecture,
+Sharetribe gives you total freedom to customize your user experience.
 
-This makes Flex the fastest and most affordable way to build a unique
-platform that adapts to the entire lifecycle of your business. As your
-business grows, Flex takes care of running and scaling your backend —
-allowing you to focus on the unique value of your platform.
+This makes Sharetribe the fastest and most affordable way to build a
+unique platform that adapts to the entire lifecycle of your business. As
+your business grows, Sharetribe takes care of running and scaling your
+backend — allowing you to focus on the unique value of your platform.
 
-## Flex Components
+## Sharetribe Components
 
-![Flex customer architecture](./flex-customer-architecture.png)
+![Sharetribe customer architecture](./flex-customer-architecture.png)
 
 ### Your marketplace UI
 
@@ -42,7 +44,7 @@ terms of visual design.
 
 [Sharetribe Web Template](/introduction/getting-started-with-web-template/)
 is a web template that implements a full-feature marketplace experience
-powered by Flex. The template can be configured to three types of
+powered by Sharetribe. The template can be configured to three types of
 marketplaces out of the box:
 
 - a rental marketplace with daily or nightly bookings
@@ -62,20 +64,20 @@ address, and the entire user experience is fully tailored to match your
 brand.
 
 If you prefer to start from scratch, you can build your own UI on top of
-Flex's Marketplace API yourself. For instance, if you want to build a
-mobile application for your marketplace, you will need to build a fully
-custom user interface. You can also have several UI applications for the
-same marketplace, so the user can manage their listings and transactions
-on a native mobile app as well as on the web.
+Sharetribe's Marketplace API yourself. For instance, if you want to
+build a mobile application for your marketplace, you will need to build
+a fully custom user interface. You can also have several UI applications
+for the same marketplace, so the user can manage their listings and
+transactions on a native mobile app as well as on the web.
 
 ### The Marketplace API
 
-The Marketplace API is how your UI connects to the Flex services. It's
-an HTTP interface with a design influenced by the
+The Marketplace API is how your UI connects to the Sharetribe services.
+It's an HTTP interface with a design influenced by the
 [JSON API specification](https://jsonapi.org/) and the
 [CQRS pattern](https://martinfowler.com/bliki/CQRS.html). The
 Marketplace API allows you to implement all the standard marketplace
-functionality that Flex supports.
+functionality that Sharetribe supports.
 
 Sharetribe handles running and scaling the Marketplace API. To take full
 advantage of this, you should design your Marketplace UI to point a
@@ -85,15 +87,15 @@ opens their browser. After that, the template lets the client
 application (Single-page application) talk directly with the Marketplace
 API, and the API powers all further interactions.
 
-To learn more about the capabilities of the Marketplace API and Flex,
-visit the [API reference documentation](/concepts/api/).
+To learn more about the capabilities of the Marketplace API and
+Sharetribe, visit the [API reference documentation](/concepts/api/).
 
-### Flex JavaScript SDK
+### Sharetribe JavaScript SDK
 
-[The Flex JavaScript SDK](/concepts/js-sdk/) is a small JavaScript
+[The Sharetribe JavaScript SDK](/concepts/js-sdk/) is a small JavaScript
 library that helps you with integrating the Marketplace API. It handles
 tasks like authentication and session management and makes it easy to
-use correct data types with the API. Using the Flex JS SDK is not
+use correct data types with the API. Using the Sharetribe JS SDK is not
 required, but if you are working with JavaScript, we strongly encourage
 you to have a look.
 
@@ -109,12 +111,13 @@ to build!
 ### The Integration API
 
 The Integration API is how you can integrate third party solutions to
-your Flex marketplace. It provides full access to your marketplace data
-and operations, so you can integrate a vast range of services to your
-marketplace behind the scenes. To read more about the capabilities of
-the Integration API, visit the
+your Sharetribe marketplace. It provides full access to your marketplace
+data and operations, so you can integrate a vast range of services to
+your marketplace behind the scenes. To read more about the capabilities
+of the Integration API, visit the
 [API reference documentation](/concepts/api/). You can also read more
-about [integrations in Flex](/concepts/integrations-introduction/).
+about
+[integrations in Sharetribe](/concepts/integrations-introduction/).
 
 ### Flex CLI
 
@@ -126,7 +129,8 @@ See the
 [Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 tutorial for more information.
 
-## Is Flex the right fit for you?
+## Is Sharetribe the right fit for you?
 
-Now you know roughly what Flex is all about. Next, it's time to evaluate
-[whether Flex is the right fit for your specific marketplace idea](/introduction/is-flex-right-for-you/).
+Now you know roughly what Sharetribe is all about. Next, it's time to
+evaluate
+[whether Sharetribe is the right fit for your specific marketplace idea](/introduction/is-flex-right-for-you/).

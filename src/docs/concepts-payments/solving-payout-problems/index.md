@@ -6,36 +6,36 @@ category: concepts-payments
 ingress:
   A payout is the part of the payment process where the price of an
   order is paid to the provider's bank account. This article gives you
-  an overview of how payments work in Flex, what problems you may
-  encounter with payouts, and how to solve those problems.
+  an overview of what problems you may encounter with payouts in
+  Sharetribe and how to solve those problems.
 published: true
 ---
 
 ## Introduction
 
 Enabling customers to pay for their orders and paying that money to
-listing providers is one of the most valuable features of Flex. Most of
-the time payments work as expected: the customer pays for the order, and
-the provider receives the money when it's time. However, there are many
-variables that affect the payments and sometimes problems may occur. The
-payment gateway can deny payouts to a user, the user's bank might deny
-payouts, or for some other reason the numbers don't seem to add up. This
-article presents potential cases where payouts might fail and what are
-the ways to fix those issues.
+listing providers is one of the most valuable features of Sharetribe.
+Most of the time payments work as expected: the customer pays for the
+order, and the provider receives the money when it's time. However,
+there are many variables that affect the payments and sometimes problems
+may occur. The payment gateway can deny payouts to a user, the user's
+bank might deny payouts, or for some other reason the numbers don't seem
+to add up. This article presents potential cases where payouts might
+fail and what are the ways to fix those issues.
 
-## Payments in Flex
+## Payments in Sharetribe
 
-![Flex payment process](payment-process.png 'Payment process in Flex.')
+![Sharetribe payment process](payment-process.png 'Payment process in Sharetribe.')
 
 To make sure that payments make it to the provider and that the
-marketplace operator can collect their commissions, Flex uses a payment
-gateway called [Stripe](https://stripe.com). The image above presents
-the steps that are taken when a customer pays for an order and the money
-is eventually paid to the provider. As an example, it uses a booking
-that costs 100€ and has both customer and provider commissions of 10%.
-The different entities that are involved in the process are _Customer's
-payment card_, _Stripe platform account_, _Connected account_, and
-_Provider's bank account_.
+marketplace operator can collect their commissions, Sharetribe uses a
+payment gateway called [Stripe](https://stripe.com). The image above
+presents the steps that are taken when a customer pays for an order and
+the money is eventually paid to the provider. As an example, it uses a
+booking that costs 100€ and has both customer and provider commissions
+of 10%. The different entities that are involved in the process are
+_Customer's payment card_, _Stripe platform account_, _Connected
+account_, and _Provider's bank account_.
 
 - **Customer's payment card** Credit or debit card that the customer
   uses to pay for the booking.
@@ -43,9 +43,9 @@ _Provider's bank account_.
   account that is identified by the secret Stripe key that is configured
   in the Console.
 - **Connected account** Provider's connected account in Stripe. This
-  account is created by Flex and it is not accessible by the provider
-  but it can be used to specify the payouts of a single provider in the
-  Stripe Dashboard.
+  account is created by Sharetribe and it is not accessible by the
+  provider but it can be used to specify the payouts of a single
+  provider in the Stripe Dashboard.
 - **Provider's bank account** This is where the money is paid when a
   payout is created.
 
@@ -57,7 +57,7 @@ as follows.
    payment card but it's reserved to pay the booking. In the default
    transaction process this happens when a customer requests to book a
    listing and the payment is confirmed.
-1. **Capture charge** Flex operates using a Stripe concept called
+1. **Capture charge** Sharetribe operates using a Stripe concept called
    [PaymentIntents](https://stripe.com/docs/payments/payment-intents)
    but behind the scenes a _charge_ is what defines the payment. When a
    charge is captured, the preauthorization from step 1. is paid to
@@ -70,7 +70,7 @@ as follows.
    be paid to the provider. In the default processes this happens when
    the provider accepts a booking request, or the customer purchases a
    product. See also the background article on
-   [PaymentIntents in Flex](/concepts/payment-intents/) and the
+   [PaymentIntents in Sharetribe](/concepts/payment-intents/) and the
    [payments overview](/concepts/payments-overview/).
 1. **Pay commissions** Once a charge is captured and the money is in the
    provider's connected account, commissions are moved to the
@@ -123,9 +123,9 @@ commissions and let the provider pay them. The following takes place:
   70€ is insufficient for paying out 90€ to the provider's bank account
   and the payout for that transaction will fail.
 
-Manual refunds are not supported by Flex. Ideally the transaction
+Manual refunds are not supported by Sharetribe. Ideally the transaction
 process should be designed so that all refunds can be performed from
-Flex.
+Sharetribe.
 
 #### Disputes
 
@@ -162,10 +162,10 @@ payout.
 
 Sometimes Stripe or the provider's bank can refuse a payment for varying
 reasons. In most cases it's due to some information being missing from
-the provider's connected Stripe account. At the moment Flex can not keep
-up with payout status changes like this so if Stripe or the receiving
-bank refuses the payout for one reason or another, the transaction state
-in Flex will not update.
+the provider's connected Stripe account. At the moment Sharetribe can
+not keep up with payout status changes like this so if Stripe or the
+receiving bank refuses the payout for one reason or another, the
+transaction state in Sharetribe will not update.
 
 ## How to investigate and fix failed payouts
 
@@ -184,12 +184,12 @@ different values.
 1. Pending. This means that the customer has been charged, but your
    marketplace has not yet attempted to initiate a payout to the
    provider.
-2. Due. This means that a date for the payout has been assigned by Flex.
-   You can see this date in the column PayoutDue. Flex will attempt a
-   payout on this date.
-3. Paid. Flex has attempted to pay the money to the bank account of the
-   provider. According to Stripe, it will then take between 1 and 7 days
-   for the money to reach their bank account. However, it's still
+2. Due. This means that a date for the payout has been assigned by
+   Sharetribe. You can see this date in the column PayoutDue. Sharetribe
+   will attempt a payout on this date.
+3. Paid. Sharetribe has attempted to pay the money to the bank account
+   of the provider. According to Stripe, it will then take between 1 and
+   7 days for the money to reach their bank account. However, it's still
    possible for the payout to fail, if there's something wrong with the
    account of the provider.
 4. Cancelled. This means that the payout won't be attempted, because the
@@ -259,9 +259,10 @@ account and manually bundle them together and pay out at once.
 
 The CSV export does not help in the case where the payout fails due to
 missing information. As mentioned the payout state does not propagate
-back to Flex in cases like this. If the payout state seems to be fine
-but a provider is reporting missing payouts, it's good to take a look at
-the connected account of the user. The associated Stripe account can be
-found in Console from the user view. Usually the problem is missing the
-account and act based on those to fill in missing information.
-information in the connected account. See if there are any warnings in
+back to Sharetribe in cases like this. If the payout state seems to be
+fine but a provider is reporting missing payouts, it's good to take a
+look at the connected account of the user. The associated Stripe account
+can be found in Console from the user view. Usually the problem is
+missing the account and act based on those to fill in missing
+information. information in the connected account. See if there are any
+warnings in

@@ -15,11 +15,11 @@ asset a name and allows organizing assets in a way similar to a file
 system, where assets can be organized in directory-like structure. The
 content of the asset is its data in one of the supported data types.
 
-At present, Flex supports only JSON data as assets. Support for images
-(JPEG, PNG, etc) is coming in the future.
+At present, Sharetribe supports only JSON data as assets. Support for
+images (JPEG, PNG, etc) is coming in the future.
 
-The assets are typically edited by a marketplace operator though Flex
-Console.
+The assets are typically edited by a marketplace operator though
+Sharetribe Console.
 
 <warning>
 
@@ -28,8 +28,8 @@ otherwise sensitive information.
 
 </warning>
 
-At present, Flex uses assets for managing marketplace content without
-code changes:
+At present, Sharetribe uses assets for managing marketplace content
+without code changes:
 
 - you can modify [microcopy strings](/concepts/microcopy/),
 - create content [pages](/concepts/content-management/) for your
@@ -68,9 +68,9 @@ The entire asset tree is versioned as a whole and individual assets do
 not have their own independent versions. Unlike Git, however, the asset
 tree versioning does not support branching.
 
-To facilitate access to the latest asset data, Flex maintains a built-in
-_alias_ called `latest` that always refers to the latest asset tree
-version.
+To facilitate access to the latest asset data, Sharetribe maintains a
+built-in _alias_ called `latest` that always refers to the latest asset
+tree version.
 
 <info>
 
@@ -86,10 +86,10 @@ Client applications retrieve asset data through the
 Asset data can be access either by alias (using the built-in `latest`
 alias) or by specific version.
 
-In order to access asset data, clients need a client ID for a valid Flex
-Marketplace API application. The easiest way to access assets is by
-using the
-[Flex SDK for JavaScript](/concepts/js-sdk/#flex-sdk-for-javascript).
+In order to access asset data, clients need a client ID for a valid
+Sharetribe Marketplace API application. The easiest way to access assets
+is by using the
+[Sharetribe SDK for JavaScript](/concepts/js-sdk/#flex-sdk-for-javascript).
 
 See the
 [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)

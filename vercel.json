@@ -939,6 +939,11 @@
     "source": "/tutorial/show-extended-data/",
     "destination": "/docs/legacy/tutorial/show-extended-data/",
     "permanent": true
+  },
+ {
+    "source": "/concepts/flex-environments/",
+    "destination": "/docs/concepts/sharetribe-environments/",
+    "permanent": true
   }
 ]
 }

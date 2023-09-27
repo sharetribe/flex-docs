@@ -50,11 +50,11 @@ deleted, but the content of the bio, name, and email, can be modified
 directly through Console. You cannot make changes to the Stripe ID,
 which depends on the information provided by Stripe when the user
 connects their bank account details to their profile, and the User ID,
-which is a unique identifier within the Flex database.
+which is a unique identifier within the Sharetribe database.
 
 Below the overview, you have separate sections for each type of extended
-data. Extended data is a Flex feature that allows you to customize and
-collect user, listing, and transaction data specific to your
+data. Extended data is a Sharetribe feature that allows you to customize
+and collect user, listing, and transaction data specific to your
 marketplace. You can read
 [an introduction to extended data](/concepts/extended-data-introduction/)
 to learn more. All extended data can be edited directly through Console.

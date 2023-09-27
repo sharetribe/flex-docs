@@ -26,15 +26,15 @@ production-ready, i.e. fit for a live audience, they can deploy it to
 production. A workflow like this helps prevent bugs and unfinished code
 from being released to your users.
 
-Sharetribe Flex offers
+Sharetribe offers
 [three different environment types](https://www.sharetribe.com/docs/concepts/flex-environments/#environment-types)
 – Live, Test, and Dev. You should connect your client application with
 the corresponding marketplace environment, i.e. your client environment
 intended for development should use environment variables that point to
-your dev environment in Flex.
+your dev environment in Sharetribe.
 
-More specifically, the workflow recommended with Flex is that you have
-three deployments of your client application:
+More specifically, the workflow recommended with Sharetribe is that you
+have three deployments of your client application:
 
 - production deployment, connected to your live environment and running
   real transactions
@@ -46,7 +46,7 @@ three deployments of your client application:
 We recommend that you keep your production and test deployments
 identical, so that operators can preview their no-code changes reliably.
 Read more:
-[Flex environments](/concepts/flex-environments//#workflow-between-the-three-environments).
+[Sharetribe environments](/concepts/flex-environments//#workflow-between-the-three-environments).
 
 ## Where to host your application?
 
@@ -117,19 +117,19 @@ default. Heroku and Render define a port automatically.
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
 Your client ID. You can find it in
-[Flex Console](https://flex-console.sharetribe.com/applications).
+[Sharetribe Console](https://flex-console.sharetribe.com/applications).
 
 - **`SHARETRIBE_SDK_CLIENT_SECRET`**
 
 Your client secret. You can find it in
-[Flex Console](https://flex-console.sharetribe.com/applications).
+[Sharetribe Console](https://flex-console.sharetribe.com/applications).
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
 Stripe publishable API key for generating tokens with Stripe API. You
 find it on the Stripe
 [API keys](https://dashboard.stripe.com/account/apikeys) page. You will
-also need to add the secret key in Flex Console.
+also need to add the secret key in Sharetribe Console.
 
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 

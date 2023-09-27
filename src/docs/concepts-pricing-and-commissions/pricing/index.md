@@ -4,21 +4,21 @@ slug: pricing
 updated: 2020-06-25
 category: concepts-pricing-and-commissions
 ingress:
-  Flex allows lots of flexibility for your providers in terms of how
-  they can set their pricing. This guide walks you through how price is
-  defined in Flex.
+  Sharetribe allows lots of flexibility for your providers in terms of
+  how they can set their pricing. This guide walks you through how price
+  is defined in Sharetribe.
 published: true
 ---
 
-## What kind of pricing can you achieve with Flex
+## What kind of pricing can you achieve with Sharetribe
 
 It's common for a marketplace to base it's pricing on the length of a
 booking, on a number of booked units, or the combination of these two.
-With Flex you can design your pricing using these two parameters but the
-pricing can also be extended to support more complicated business models
-or even be replaced with a completely different model altogether. Here
-are some examples of common pricing schemes you might want to add on top
-of the regular listing price.
+With Sharetribe you can design your pricing using these two parameters
+but the pricing can also be extended to support more complicated
+business models or even be replaced with a completely different model
+altogether. Here are some examples of common pricing schemes you might
+want to add on top of the regular listing price.
 
 - **Add-ons.** Upsell additions on top of the regular price. Examples:
   cleaning fee, insurance, delivery.
@@ -37,9 +37,9 @@ of the regular listing price.
   $100,
   and after that, each additional person costs $20 extra.
 
-All of these options can be achieved with the Flex pricing
+All of these options can be achieved with the Sharetribe pricing
 functionality. In this article, we'll look a bit closer at how pricing
-works in Flex and how pricing schemes can be designed.
+works in Sharetribe and how pricing schemes can be designed.
 
 ## Pricing terminology
 
@@ -56,7 +56,7 @@ works in Flex and how pricing schemes can be designed.
 
 ## Line items
 
-In Flex, the total price of a transaction is defined by its _line
+In Sharetribe, the total price of a transaction is defined by its _line
 items_. Line items describe what is included in a transaction. It can be
 a varying set of things from the number of booked units to customer and
 provider commissions, add-ons, discounts, or payment refunds.
@@ -75,7 +75,8 @@ percentage param is used when modeling commissions for example. Based on
 these attributes a line total is calculated for each line item. Line
 totals then define the total payin and payout sums of the transaction.
 
-The following arguments can be passed in a line item to the Flex API:
+The following arguments can be passed in a line item to the Sharetribe
+API:
 
 - `code`: A string that identifies the line item. Must start with
   `line-item/`, for example, `line-item/cleaning-fee`, mandatory.
@@ -90,8 +91,8 @@ The following arguments can be passed in a line item to the Flex API:
   `provider`. Defines which party of a transaction the line item applies
   to.
 
-The `lineTotal` is not a mandatory parameter. Flex will calculate the
-line total and if one is provided, it will validate the `lineTotal`
+The `lineTotal` is not a mandatory parameter. Sharetribe will calculate
+the line total and if one is provided, it will validate the `lineTotal`
 parameter against the calculated value.
 
 ## Calculating the price
@@ -148,4 +149,4 @@ that the `calculate-full-refund` action can be run only once during a
 transaction.
 
 The action calculates a full refund. Partial refunds are not supported
-by Flex at the moment.
+by Sharetribe at the moment.

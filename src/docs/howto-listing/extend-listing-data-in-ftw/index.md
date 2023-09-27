@@ -44,10 +44,10 @@ Configuring the listing data this way allows you to
 - optionally use the attribute as a search filter.
 
 If you want to configure a complex extended data attribute, e.g. a JSON
-object, it is good to note that Flex only allows searching and filtering
-top-level attributes. In other words, complex attributes cannot be used
-to filter listings. However, they can be useful in storing other
-relevant listing data.
+object, it is good to note that Sharetribe only allows searching and
+filtering top-level attributes. In other words, complex attributes
+cannot be used to filter listings. However, they can be useful in
+storing other relevant listing data.
 
 For a more complex attribute, you will need to follow the instructions
 for adding extended data directly to a listing. You will also need to
@@ -62,7 +62,7 @@ data.
 
 <info>
 
-If your marketplace is using hosted configurations defined in Flex
+If your marketplace is using hosted configurations defined in Sharetribe
 Console, you can make the changes described in this section by adding
 new listing fields.
 
@@ -207,8 +207,8 @@ as well as a description of what was serviced.
 
 <extrainfo title="Microcopy values used in this guide">
 
-You can paste the microcopy strings used in this guide in your Flex
-Console Microcopy editor or your translation file.
+You can paste the microcopy strings used in this guide in your
+Sharetribe Console Microcopy editor or your translation file.
 
 ```js
   "EditListingServiceHistoryForm.lastServiced": "Date when last serviced",
@@ -709,10 +709,10 @@ updated listing object is eventually passed to the `updateListingDraft`
 and `requestUpdateListing` functions in the _EditListingPage.duck.js_
 file where the data updates are handled.
 
-The FieldDateInput handles an object with a **date** property but Flex
-can only save valid JSON values to extended data, so we also need to add
-conversions between string and Date to the initial values builder and
-submit handler.
+The FieldDateInput handles an object with a **date** property but
+Sharetribe can only save valid JSON values to extended data, so we also
+need to add conversions between string and Date to the initial values
+builder and submit handler.
 
 Now that we have the panel and the form all ready we can add the panel
 to the **EditListingWizardTab** component. This is done by importing
@@ -766,9 +766,10 @@ specific component for it and place it in the **ListingPage** container.
 Desired outcome could also be achieved just by editing the
 **ListingPage** but extracting the capacity UI parts into a separate
 component will simplify the **ListingPage** and make possible upstream
-updates from the Flex web template repo easier as there's less chances
-for merge conflicts. So, let's create a **SectionServiceHistory**
-component in the _src/containers/ListingPage/_ directory:
+updates from the Sharetribe web template repo easier as there's less
+chances for merge conflicts. So, let's create a
+**SectionServiceHistory** component in the _src/containers/ListingPage/_
+directory:
 
 ```shell
 └── src
