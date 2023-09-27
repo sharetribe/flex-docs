@@ -9,10 +9,12 @@ ingress:
 published: true
 ---
 
-In the no-code tutorial, you configured your marketplace into a bike
-rental marketplace called Biketribe. We will continue to custom develop
-on top of those same configurations. To do that, we will copy all
-no-code changes from Test environment to Dev environment.
+In
+[the no-code tutorial](/the-new-sharetribe/tutorial-00-introduction/),
+you configured your marketplace into a bike rental marketplace called
+Biketribe. We will continue to custom develop on top of those same
+configurations. To do that, we will copy all no-code changes from Test
+environment to Dev environment.
 
 We recommend that throughout your development process, you follow the
 same workflow:
@@ -23,7 +25,8 @@ same workflow:
 This way, your Test environment remains the single source of truth for
 no-code changes, and you will be able to make code changes on top of the
 same configuration that you have in the Test (and possibly Live)
-environments.
+environments. This way, you also do not need to copy your no-code
+changes from Dev to Test manually.
 
 ### Copy no-code changes from Test to Dev
 
