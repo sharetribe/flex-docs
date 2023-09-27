@@ -56,6 +56,8 @@ Through the Integration API, operators can enable third party tools to
 manage users, listings, transactions, bookings, stock reservations, and
 more.
 
+<plan tier="extend" feature="Access to Integration API"></plan>
+
 Due to its powerful nature, the Integration API should **only ever be
 used from a secure context**, such as your client application server or
 a separate backend application. Here, too, the template server is an
@@ -84,6 +86,8 @@ works by harnessing a subset of Sharetribe events and allowing operators
 to connect any of the other
 [5000+ tools and solutions](https://zapier.com/apps/) in the Zapier
 ecosystem.
+
+<plan tier="extend" feature="Access to the Zapier integration"></plan>
 
 The Sharetribe Zapier integration makes it easier to take action in your
 favorite business tools, such as

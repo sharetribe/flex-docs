@@ -62,6 +62,8 @@ is well suited for integrations with your own or 3rd party systems,
 custom reporting and custom tooling for operators managing the
 marketplace.
 
+<plan tier="extend" feature="Access to Integration SDK"></plan>
+
 You can access all the JS SDK documentation at:
 
 https://sharetribe.github.io/flex-integration-sdk-js/

@@ -9,6 +9,9 @@ ingress:
 published: true
 ---
 
+A Sharetribe marketplace allows you to manage content in Console without
+making code changes.
+
 ## Sharetribe Content management glossary
 
 Before diving deeper into content management in Sharetribe, here is a
@@ -98,6 +101,7 @@ and blocks you choose for your page, you can create a wide range of
 content. In the future, it will also be possible to create custom
 sections.
 
+TODO UPDATE TO GENERIC ASSETS OR BIKETRIBE
 ![Landing page with levels of content modeling elements](./content-model-landing-page.png)
 
 ## Sections
@@ -180,7 +184,7 @@ Alternatively, if you have an application running in the address set as
 your **Marketplace URL**, you can click the "View page" link next to the
 page title in Sharetribe Console.
 
-![View page](./view-page.png)
+TODO UPDATE TO GENERIC ASSETS OR BIKETRIBE ![View page](./view-page.png)
 
 This will open the page in your **Marketplace URL** address.
 

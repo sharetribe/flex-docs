@@ -15,6 +15,8 @@ Flex CLI (Command-line interface) is a tool for changing your
 marketplace's configurations such as transaction processes and email
 templates.
 
+<plan tier="extend" feature="Access to Sharetribe CLI"></plan>
+
 This tutorial expects that you have already installed Flex CLI and are
 logged in with your API key. It's recommended to first read the tutorial
 [Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).

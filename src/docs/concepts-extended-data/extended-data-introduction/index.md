@@ -27,15 +27,11 @@ determine exactly what information you want your users to provide on
 your marketplace and how. However, the possibilities of extended data do
 not end there!
 
-If you’ve used Sharetribe Go, you might be familiar with custom listing
-and user fields, which are fields with limited customizability. Extended
-data is the Sharetribe-equivalent, but without the constraints of
-predetermined functionality: it’s listing and user fields on steroids.
 Extended data can be customized to different use-cases to fit your exact
 needs: in addition to collecting the information you need from your
 users in the form you choose, it allows you to display featured
-listings, have different user types, build custom search functionality…
-And the list goes on!
+listings, have different user types, build custom search functionality,
+and much more.
 
 With extended data, you can build integrations with third-party
 services, such as a subscription payment system or SMS notification
@@ -149,8 +145,7 @@ store an ID from an external service to user or listing private data and
 connect it to services such as SMS notifications with Twilio or sync the
 provider’s schedule with Google Calendar!
 
-I’ll present a few more examples of how private data can work in
-practice. For instance, though you may not want your customers and
+As a further example – even though you may not want your customers and
 providers to be able to contact each other outside of your platform, you
 might still want to be able to call them yourself. A user’s phone number
 can be saved in their private data for these situations.
@@ -165,12 +160,16 @@ portfolios could be included as private data.
 ### 4. Public metadata
 
 Public metadata is visible to all users, but only the operator and the
-Integration API can edit it. Typical use-cases for metadata are featured
-listings or premium users. You may want to curate listings that get this
-extra visibility yourself or offer it as a paid service, so using public
-data, which the users can edit themselves, is not an option. This is
-where metadata comes into play. Like public data, public metadata can be
-used as search filters and parameters and in sorting search results.
+Integration API can edit it.
+
+<plan tier="extend" feature="Access to Integration API"></plan>
+
+Typical use-cases for metadata are featured listings or premium users.
+You may want to curate listings that get this extra visibility yourself
+or offer it as a paid service, so using public data, which the users can
+edit themselves, is not an option. This is where metadata comes into
+play. Like public data, public metadata can be used as search filters
+and parameters and in sorting search results.
 
 In addition to featured listings, other ways to use public metadata
 could be to distinguish verified users from regular ones or highlight

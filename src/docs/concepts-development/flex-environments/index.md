@@ -9,6 +9,8 @@ ingress:
 published: true
 ---
 
+TODO UPDATE TO NEW CONSOLE
+
 Sharetribe environments are instances of your own marketplace, but with
 different functions. When you first create a Sharetribe account, you
 have two environments: Test and Dev. When you are ready to go live, we

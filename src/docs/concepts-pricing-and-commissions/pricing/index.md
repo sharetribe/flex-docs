@@ -17,8 +17,17 @@ booking, on a number of booked units, or the combination of these two.
 With Sharetribe you can design your pricing using these two parameters
 but the pricing can also be extended to support more complicated
 business models or even be replaced with a completely different model
-altogether. Here are some examples of common pricing schemes you might
-want to add on top of the regular listing price.
+altogether.
+
+<plan tier="launch">
+
+Online payments in the Live environment are available in the Launch plan
+and above.
+
+</plan>
+
+Here are some examples of common pricing schemes you might want to add
+on top of the regular listing price.
 
 - **Add-ons.** Upsell additions on top of the regular price. Examples:
   cleaning fee, insurance, delivery.

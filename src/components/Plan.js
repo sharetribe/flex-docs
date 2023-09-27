@@ -37,18 +37,20 @@ const tierColours = {
     fontColour: '#072901',
     borderColour: '#072901',
     backgroundColour: '#c4f5ba',
-    content: ' is available in the Extend plan.',
+    content: ' in the Live environment is available in the Extend plan.',
   },
   launch: {
     fontColour: '#242901',
     borderColour: '#242901',
     backgroundColour: '#d3baed',
-    content: ' is available in the Launch plan and above.',
+    content:
+      ' in the Live environment is available in the Launch plan and above.',
   },
   onboard: {
     fontColour: '#292301',
     borderColour: '#292301',
     backgroundColour: '#ede2ba',
+    content: ' is available in paid plans.',
   },
 };
 
@@ -70,7 +72,7 @@ const Plan = props => {
 
   const link = (
     <Link to="https://www.sharetribe.com/products/pricing/" target="_blank">
-      Read more about Sharetribe pricing
+      Read more about Sharetribe pricing.
     </Link>
   );
 

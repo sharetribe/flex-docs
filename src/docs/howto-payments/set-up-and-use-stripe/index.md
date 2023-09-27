@@ -11,6 +11,13 @@ ingress:
 published: true
 ---
 
+<plan tier="launch">
+
+Online payments in the Live environment are available in the Launch plan
+and above.
+
+</plan>
+
 ## 1. Create and confirm your free Stripe account
 
 [Register to Stripe](https://dashboard.stripe.com/register). After

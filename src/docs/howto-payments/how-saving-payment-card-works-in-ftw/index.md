@@ -9,7 +9,12 @@ ingress:
 published: true
 ---
 
-## Introduction
+<plan tier="launch">
+
+Online payments in the Live environment are available in the Launch plan
+and above.
+
+</plan>
 
 When a customer first comes to the marketplace and books a listing,
 there are several form fields the user needs to fill: expiration month,

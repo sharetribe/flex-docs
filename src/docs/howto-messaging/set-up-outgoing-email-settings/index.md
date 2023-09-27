@@ -22,10 +22,7 @@ account.
 The following sections offer an overview of the two methods and how to
 configure them.
 
-<plan tier="onboard">
-
-Configuring outgoing email settings is available in paid plans.
-
+<plan tier="onboard" feature="Configuring outgoing email settings">
 </plan>
 
 ## Managed setup

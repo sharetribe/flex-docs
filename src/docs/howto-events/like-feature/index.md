@@ -15,6 +15,8 @@ these events by updating a 'likes' value in listing extended data. In
 addition, we display the number of likes on the listing page and allow
 users to interact by clicking on a 'like' -button.
 
+<plan tier="extend" feature="Access to Integration API and events"></plan>
+
 ## Approaches to updating extended data
 
 [Extended data](/references/extended-data/) is a practical feature that

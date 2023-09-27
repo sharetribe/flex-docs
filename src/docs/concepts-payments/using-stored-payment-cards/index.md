@@ -15,6 +15,13 @@ purchases. Doing this provides multiple benefits: it streamlines the
 checkout process for existing customers and allows you to place
 additional charges to the payment card of the customer.
 
+<plan tier="launch">
+
+Online payments in the Live environment are available in the Launch plan
+and above.
+
+</plan>
+
 Sharetribe Web Template includes a checkout workflow, which offers a box
 for the customer to check if they want to store their card for future
 purchases. Once they've stored it, they are offered the option to use
@@ -87,10 +94,10 @@ charges the customer's card every month, until the customer cancels the
 storage subscription.
 
 Right now, Sharetribe doesn't offer support for Stripe subscriptions.
-However, there is a workaround. Once the customer has made the initial
-booking and payment, you would send a request to your own backend
-component, for instance the server of your Sharetribe Web Template,
-which would then create a subscription with the stored credit card of
-the customer. The subsequent subscription payments would then not be
-visible in Sharetribe Console, but you could monitor them from Stripe
-dashboard.
+However, there is a workaround with custom development. Once the
+customer has made the initial booking and payment, you would send a
+request to your own backend component, for instance the server of your
+Sharetribe Web Template, which would then create a subscription with the
+stored credit card of the customer. The subsequent subscription payments
+would then not be visible in Sharetribe Console, but you could monitor
+them from Stripe dashboard.

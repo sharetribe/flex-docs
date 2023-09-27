@@ -122,13 +122,16 @@ If you wish to enable push payments, you need to adapt your transaction
 process. For instance, you need to add a new transition that includes
 the
 [stripe-create-payment-intent-push](/references/transaction-process-actions/#actionstripe-create-payment-intent-push)
-action. Further, because push payments do not have a preauthorization
-phase, it is recommended to avoid that in the transaction process and
-use an _instant booking_ type of flow. The example below describes the
-minimum recommended changes in the two transitions:
-`request-push-payment` and `confirm-payment-instant-booking`. The
-example illustrates how you can still use the preauthorization step for
-card payments.
+action.
+
+<plan tier="extend" feature="Customizing your transaction process"></plan>
+
+Further, because push payments do not have a preauthorization phase, it
+is recommended to avoid that in the transaction process and use an
+_instant booking_ type of flow. The example below describes the minimum
+recommended changes in the two transitions: `request-push-payment` and
+`confirm-payment-instant-booking`. The example illustrates how you can
+still use the preauthorization step for card payments.
 
 ![Push payment process](push-payment-process.png 'Push payment process example.')
 

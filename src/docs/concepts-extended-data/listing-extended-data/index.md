@@ -28,9 +28,13 @@ On the other hand, listing private data is available through the
 [ownListing endpoints](https://www.sharetribe.com/api-reference/marketplace.html#own-listings)
 in Marketplace API and
 [listing endpoints](https://www.sharetribe.com/api-reference/integration.html#listings)
-in Integration API. Private data can be used to allow the listing author
-to make private notes on the listing, since the information is not
-visible for the general marketplace audience.
+in Integration API.
+
+<plan tier="extend" feature="Access to Integration API"></plan>
+
+Private data can be used to allow the listing author to make private
+notes on the listing, since the information is not visible for the
+general marketplace audience.
 
 The listing's author can modify the listing's public and private data
 through the

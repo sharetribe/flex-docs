@@ -52,11 +52,15 @@ New messages trigger a
 the receiving party of the message. You can edit built-in email
 notifications through
 [Console](https://flex-console.sharetribe.com/email-templates/new-message).
+TODO EXPLAIN EMAIL TEXT VS CODE EDITORS
 
 ## Zapier, events and messages
 
 Using [Zapier](/how-to/set-up-and-use-zapier/) you can connect your
 marketplace with other web applications and create automated workflows.
+
+<plan tier="extend" feature="Access to the Zapier integration"></plan>
+
 Even though you can’t listen for new messages through Zapier, messages
 can easily be retrieved as a transaction relationship. For more complex
 customisations, you can use events to listen to new or deleted messages.

@@ -19,11 +19,13 @@ Sharetribe Web Template defines three transaction processes by default:
 The template is created to support states and transitions defined in
 those processes.
 
-How the transaction process works behind the Marketplace API depends on
-how your process is customised in our backend. To customise the
+How the transaction process works underneath the Marketplace API depends
+on how your process is customised in our backend. To customise the
 transaction process in the backend, you should use Flex CLI. See the
 [Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
 tutorial to get familiar with the tool.
+
+<plan tier="extend" feature="Adding new transaction processes"></plan>
 
 If you have changed the transaction process in your marketplace, or
 added a new one to use in parallel with the existing ones, you should

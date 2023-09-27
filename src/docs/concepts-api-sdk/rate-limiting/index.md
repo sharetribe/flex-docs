@@ -80,6 +80,8 @@ Rate limits will likely be more visible to you when developing with the
 Integration API. In addition, Integration API also features concurrency
 limiting, which needs to be handled.
 
+<plan tier="extend" feature="Access to Integration API"></plan>
+
 ### Integration SDK
 
 Sharetribe Integration SDK is configured to handle concurrency limits by

@@ -29,6 +29,8 @@ to their account. This allows you to charge customers closer to their
 booking dates, so that the money can be held in Stripe throughout the
 booking period.
 
+<plan tier="extend" feature="Customizing your transaction process"></plan>
+
 Another way to use the off-session payment logic might be to create a
 pre-order functionality for a product marketplace. In a pre-order
 transaction flow, the provider could put their future offerings for sale

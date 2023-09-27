@@ -26,9 +26,20 @@ Sharetribe and the
 offer out-of-the-box support for SCA. This article clarifies how exactly
 transactions using SCA will work in the default process.
 
-_Remember that this is just a default:_ you can make adjustments to this
-process as you wish, as long as you comply with the SCA requirements
-when dealing with payments by European customers.
+<plan tier="launch">
+
+Online payments in the Live environment are available in the Launch plan
+and above.
+
+</plan>
+
+<plan tier="extend">
+
+In the Extend plan, you can make adjustments to your transaction
+processes, as long as you comply with the SCA requirements when dealing
+with payments by European customers.
+
+</plan>
 
 ## How payment with SCA works
 
@@ -88,9 +99,9 @@ booking.
 ## Should you use SCA in your marketplace?
 
 If you want to be able to accept payments from European customers in
-your marketplace, your payment process must support SCA starting from
-September 14th, 2019. After this date, payments done by European credit
-cards with a payment process that doesn't support SCA might fail.
+your marketplace, your payment process must support SCA. Otherwise,
+payments done by European credit cards with a payment process that
+doesn't support SCA might fail.
 
 Even if you don't need to accept payments from European customers, it
 might still make sense for you to enable SCA for all transactions

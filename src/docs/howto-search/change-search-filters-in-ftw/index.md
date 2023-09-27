@@ -96,13 +96,14 @@ added to the data in order for API to index it for search. Adding search
 schema can be done by the
 [Flex CLI](/introduction/getting-started-with-flex-cli/).
 
-Once a public data attribute is added to the listings and the data
-attribute is indexed, the listing searches can be filtered by that
-attribute by adding a query parameter that consists of a preceding
-"pub\_" and the attribute name, so for the _capacity_ attribute the
-parameter would be "pub_capacity". You might have guessed that "pub\_"
-refers to **public data**. Similarly, "meta\_" would refer to
-**metadata**, which is another type of extended data.
+<plan tier="extend" feature="Access to Sharetribe CLI"></plan> Once a
+public data attribute is added to the listings and the data attribute is
+indexed, the listing searches can be filtered by that attribute by
+adding a query parameter that consists of a preceding "pub\_" and the
+attribute name, so for the _capacity_ attribute the parameter would be
+"pub_capacity". You might have guessed that "pub\_" refers to **public
+data**. Similarly, "meta\_" would refer to **metadata**, which is
+another type of extended data.
 
 Further reading on public data can be found in the
 [listing extended data concepts article](/concepts/listing-extended-data/)

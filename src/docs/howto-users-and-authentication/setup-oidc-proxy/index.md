@@ -12,6 +12,8 @@ ingress:
 published: true
 ---
 
+<plan tier="extend" feature="Using identity providers"></plan>
+
 The OpenID Connect (OIDC) support in Sharetribe allows you to integrate
 login solutions that do not necessarily implement OpenID Connect. The
 idea is to build a suitable login flow in Sharetribe Web Template and
