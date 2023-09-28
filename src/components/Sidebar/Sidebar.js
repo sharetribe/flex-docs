@@ -153,7 +153,10 @@ const SideBarStaticQuery = props => {
         window.innerWidth > DESKTOP_LAYOUT_WIDTH &&
         currentArticleLinkItem
       ) {
-        currentArticleLinkItem.scrollIntoView({ block: 'center' });
+        currentArticleLinkItem.scrollIntoView({
+          block: 'nearest',
+          inline: 'start',
+        });
       }
     }
     // We don't want to rerender every time sidebarNavsIsOpen changes.
