@@ -53,7 +53,7 @@ tutorial we'll use process `default-booking`, version 1. You might have
 different processes in your marketplace, so you can use those. However,
 you can check the content of this default booking example process online
 from
-[Flex example processes](https://github.com/sharetribe/flex-example-processes)
+[Flex example processes](https://github.com/sharetribe/sharetribe-example-processes)
 Github repository.
 
 We can pull the process with the `process pull` command. Let's see the

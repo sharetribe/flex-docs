@@ -103,7 +103,7 @@ same features and capabilities.
 ### Customizing the transaction process
 
 The
-[default processes](https://github.com/sharetribe/flex-example-processes/tree/master/)
+[default processes](https://github.com/sharetribe/sharetribe-example-processes/tree/master/)
 in Sharetribe supports card payments. The general article on
 [the transaction process](/concepts/transaction-process/) describes the
 process in more detail.
@@ -137,9 +137,9 @@ still use the preauthorization step for card payments.
 
 You can find another example process with only an _instant booking_ flow
 and support for both card and push payments in the
-[Instant booking process](https://github.com/sharetribe/flex-example-processes#instant-booking)
+[Instant booking process](https://github.com/sharetribe/sharetribe-example-processes#instant-booking)
 in the
-[Sharetribe example transaction processes repository](https://github.com/sharetribe/flex-example-processes).
+[Sharetribe example transaction processes repository](https://github.com/sharetribe/sharetribe-example-processes).
 
 ### Handling payment methods in the client app
 

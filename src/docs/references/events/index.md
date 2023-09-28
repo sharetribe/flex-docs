@@ -439,7 +439,7 @@ reflect data before the transition.
 - [Using Sharetribe CLI to view event data](/how-to/view-events-with-flex-cli/)
 - [Reacting to events](/how-to/reacting-to-events/) how-to guide
 - A
-  [full example](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js)
+  [full example](https://github.com/sharetribe/sharetribe-integration-api-examples/blob/master/scripts/notify-new-listings.js)
   Integration API application is available
-  [in the Integration API examples](https://github.com/sharetribe/flex-integration-api-examples/)
+  [in the Integration API examples](https://github.com/sharetribe/sharetribe-integration-api-examples/)
   repository

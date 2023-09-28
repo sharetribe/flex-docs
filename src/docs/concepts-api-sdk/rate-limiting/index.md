@@ -96,7 +96,7 @@ details of passing those configurations in our
 
 For listing creation rate limits, you will need to implement your own
 rate limit handling logic. We have an example of this in our
-[Integration API example scripts repository](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/create-listings.js).
+[Integration API example scripts repository](https://github.com/sharetribe/sharetribe-integration-api-examples/blob/master/scripts/create-listings.js).
 
 It is good to note that rate limits apply by client IP address. If you
 have more than one instance of the SDK running on the same server or

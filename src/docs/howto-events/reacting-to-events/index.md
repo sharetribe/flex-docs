@@ -396,8 +396,8 @@ processing can be considered the safer choice in those cases.
 ## Additional resources
 
 - A
-  [full example](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js)
+  [full example](https://github.com/sharetribe/sharetribe-integration-api-examples/blob/master/scripts/notify-new-listings.js)
   Integration API application is available
-  [in the Integration API examples](https://github.com/sharetribe/flex-integration-api-examples/)
+  [in the Integration API examples](https://github.com/sharetribe/sharetribe-integration-api-examples/)
   repository
 - [Reference article](/references/events/) for events

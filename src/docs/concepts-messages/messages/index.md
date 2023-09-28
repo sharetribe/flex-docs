@@ -18,12 +18,12 @@ provider once they have engaged in a transaction. Messages always need
 to be associated with a transaction and can not be sent outside of one.
 
 The default booking and purchase
-[transaction processes](https://github.com/sharetribe/flex-example-processes/blob/master/default-booking/process.edn)
+[transaction processes](https://github.com/sharetribe/sharetribe-example-processes/blob/master/default-booking/process.edn)
 include an inquiry transition, which initiates a transaction without
 running any [actions](/references/transaction-process-actions/#actions),
 allowing the provider and customer to send messages to each other. In
 addition, the
-[default-inquiry process](https://github.com/sharetribe/flex-example-processes/blob/master/default-inquiry/process.edn)
+[default-inquiry process](https://github.com/sharetribe/sharetribe-example-processes/blob/master/default-inquiry/process.edn)
 initiates a simple transaction that is only intended for messaging.
 
 Note that messages do not alter the transaction or transition it to a
@@ -93,7 +93,7 @@ only react to transactions, listing and user events. Events allow you to
 listen to [created messages](/references/events/#supported-event-types)
 and react directly to them. See how to
 [react to events](/how-to/reacting-to-events/) and the
-[Integration API example script repository](https://github.com/sharetribe/flex-integration-api-examples)
+[Integration API example script repository](https://github.com/sharetribe/sharetribe-integration-api-examples)
 if you’re unsure where to start building your integration.
 
 ## Message notifications in Sharetribe Web Template
