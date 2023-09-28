@@ -45,7 +45,7 @@ _instant-booking_.
 ### Create a new process
 
 To get up and running with Sharetribe CLI, see the
-[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/)
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/)
 guide in Flex Docs.
 
 Let's see what the subcommand `help` gives us about `process create`:
@@ -125,7 +125,7 @@ To make this change, we need to update the transaction process.
 
 Before we modify our transaction process, it's better to ensure that we
 have most the up-to-date version of the process. You can fetch any
-process version with flex-cli:
+process version with Sharetribe CLI:
 
 ```shell
 flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --path=./saunatime-instant-booking --marketplace=saunatime-dev

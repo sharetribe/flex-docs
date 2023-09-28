@@ -369,8 +369,8 @@ the provider.
 
 ## Validating and inspecting a process
 
-The flex-cli supports validating a local process description as well as
-showing basic information about the process and its transitions.
+The Sharetribe CLI supports validating a local process description as
+well as showing basic information about the process and its transitions.
 
 To validate a process and print overall process description (when it's
 valid) or validation errors:

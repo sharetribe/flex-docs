@@ -1,6 +1,6 @@
 ---
 title: Getting started with Sharetribe CLI
-slug: getting-started-with-flex-cli
+slug: getting-started-with-sharetribe-cli
 updated: 2021-10-04
 category: introduction-getting-started
 ingress:
@@ -143,7 +143,7 @@ documentation for the Flex CLI. We also learned how to disable and
 enable the listing approval functionality for our marketplace.
 
 Now that we know how to list processes, the next this is to
-[make a small change to the existing process](/how-to/edit-transaction-process-with-flex-cli/).
+[make a small change to the existing process](/how-to/edit-transaction-process-with-sharetribe-cli/).
 
 ## Troubleshooting
 

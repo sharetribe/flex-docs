@@ -82,7 +82,7 @@ example, the Listing resource includes availability calendar features,
 so it can be used to create custom booking and reservation experiences.
 
 You can learn more about the User resource
-[here](https://www.sharetribe.com/docs/concepts/users-and-authentication-in-flex/),
+[here](https://www.sharetribe.com/docs/concepts/users-and-authentication-in-sharetribe/),
 the Listing resource
 [here](https://www.sharetribe.com/docs/concepts/listings-overview/), and
 the Transaction resource
@@ -478,7 +478,7 @@ You can learn more about transaction email notifications
 
 It is possible to send SMS notifications too, but this requires a 3rd
 party integration. You may
-[use Zapier](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-flex-using-twilio-and-zapier)
+[use Zapier](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-using-twilio-and-zapier)
 to send such emails or build bespoke integrations into tools like
 Twilio.
 

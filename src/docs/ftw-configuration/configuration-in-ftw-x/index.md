@@ -312,7 +312,7 @@ If you do enable the `indexForSearch` variable, you must also set a
 search schema. Without setting a search schema for the extended data,
 the filter component will not work. Learn how to set a search schema for
 a extended data attribute in the
-[manage search schemas article](/how-to/manage-search-schemas-with-flex-cli/).
+[manage search schemas article](/how-to/manage-search-schemas-with-sharetribe-cli/).
 
 </info>
 

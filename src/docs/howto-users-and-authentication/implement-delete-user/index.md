@@ -519,8 +519,8 @@ profile.
 ```js
 // The list of non-final transitions depends on the transaction processes
 // being used on the marketplace. This list contains the non-final transitions
-// of an unmodified flex-default-process i.e. the transitions where we do not want to allow the user
-// to delete their account.
+// of an unmodified default-booking process i.e. the transitions where we do not want to
+// allow the user to delete their account.
 const nonFinalTransitions = [
   'transition/request-payment',
   'transition/request-payment-after-inquiry',
@@ -545,7 +545,7 @@ starting point for such logic.
     only: "sale"
   })
   .then(resp => {
-   // In flex-default-process, payouts are created on "transition/complete". We want to
+   // In the default-booking and default-purchase processes, payouts are created on "transition/complete". We want to
    // determine the transactions where this transition has been created less than 7 days ago.
    const pendingPayouts = resp.data.data.filter(tx =>{
        // For the transactions where the user is the provider, check the transitions

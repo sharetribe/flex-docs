@@ -256,7 +256,7 @@ If you’re a developer building with Sharetribe, you can build your
 transaction process using the Sharetribe CLI. Here are guides for
 [creating your own transaction process](/tutorial/create-transaction-process/)
 and for
-[getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
+[getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 For more details of the transaction process format, see the
 [Transaction process format](/references/transaction-process-format/)
 reference. To customise the UI of your marketplace to match your process

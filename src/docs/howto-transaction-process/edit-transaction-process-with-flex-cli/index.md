@@ -1,6 +1,6 @@
 ---
 title: Edit transaction process with Sharetribe CLI
-slug: edit-transaction-process-with-flex-cli
+slug: edit-transaction-process-with-sharetribe-cli
 updated: 2021-12-23
 category: how-to-transaction-process
 ingress:
@@ -20,7 +20,7 @@ templates.
 This tutorial expects that you have already installed Sharetribe CLI and
 are logged in with your API key. It's recommended to first read the
 tutorial
-[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 If you haven't read
 [how transaction processes work in Flex](/concepts/transaction-process/),
 it's a good idea to do that before starting this tutorial.
@@ -282,5 +282,5 @@ reference to read about all the possibilities that transaction process
 engine gives to you.
 
 As a next step, you may also to edit the transaction email templates.
-[Editing email templates with Sharetribe CLI](/how-to/edit-email-templates-with-flex-cli/)
+[Editing email templates with Sharetribe CLI](/how-to/edit-email-templates-with-sharetribe-cli/)
 tutorial guides you through this process.

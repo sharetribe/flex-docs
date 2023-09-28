@@ -1,6 +1,6 @@
 ---
 title: View events with Sharetribe CLI
-slug: view-events-with-flex-cli
+slug: view-events-with-sharetribe-cli
 updated: 2020-12-09
 category: how-to-events
 ingress:
@@ -20,7 +20,7 @@ processes and email templates.
 guide expects that you have already installed Sharetribe CLI and are
 logged in with your API key. If not, it's recommended to first read the
 tutorial
-[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
 In this guide, we will learn how the events of a marketplace can be
 queried using Sharetribe CLI, how we can inspect events in more detail

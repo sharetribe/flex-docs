@@ -1,6 +1,6 @@
 ---
 title: Users and authentication in Sharetribe
-slug: users-and-authentication-in-flex
+slug: users-and-authentication-in-sharetribe
 updated: 2022-05-16
 category: concepts-users-and-authentication
 ingress:

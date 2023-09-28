@@ -83,5 +83,5 @@ To facilitate user querying, it is possible to filter users also by
 extended data when calling the endpoint. That way, you can segment your
 users by important attributes for more fine-grained processing. To
 filter users by extended data, you will need to
-[create a search schema](/how-to/manage-search-schemas-with-flex-cli/)
+[create a search schema](/how-to/manage-search-schemas-with-sharetribe-cli/)
 for the user profile.

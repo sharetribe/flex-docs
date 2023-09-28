@@ -89,7 +89,7 @@ alias) or by specific version.
 In order to access asset data, clients need a client ID for a valid
 Sharetribe Marketplace API application. The easiest way to access assets
 is by using the
-[Sharetribe SDK for JavaScript](/concepts/js-sdk/#flex-sdk-for-javascript).
+[Sharetribe SDK for JavaScript](/concepts/js-sdk/#sharetribe-sdk-for-javascript).
 
 See the
 [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)

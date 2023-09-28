@@ -12,7 +12,7 @@ published: true
 
 The Sharetribe Web Template is a marketplace web application built on
 top of the
-[Marketplace API](/introduction/introducing-flex/#the-marketplace-api).
+[Marketplace API](/introduction/introducing-sharetribe/#the-marketplace-api).
 While you can create a marketplace purely using just the API, it
 requires a significant amount of effort (both money and time) and we
 recommened using the template as a starting point for customizations.
@@ -34,7 +34,7 @@ app.
 We recommend that you take the steps for this guide in your **Sharetribe
 Console dev environment**.
 
-**[Read more about Sharetribe environments](/concepts/flex-environments/).**
+**[Read more about Sharetribe environments](/concepts/sharetribe-environments/).**
 
 </info>
 
@@ -169,16 +169,15 @@ and maps for the web app.
 The Sharetribe Web Template just needs 4 environment variables to make
 these integrations work.
 
-- **[`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`](#sharetribe-flex-client-id-and-client-secret)**
-- **[`SHARETRIBE_SDK_CLIENT_SECRET`](#sharetribe-flex-client-id-and-client-secret)**
+- **[`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`](#sharetribe-client-id-and-client-secret)**
+- **[`SHARETRIBE_SDK_CLIENT_SECRET`](#sharetribe-client-id-and-client-secret)**
 - **[`REACT_APP_STRIPE_PUBLISHABLE_KEY`](#stripe-keys)**
 - **[`REACT_APP_MAPBOX_ACCESS_TOKEN`](#mapbox-access-token)**
 
-### Sharetribe Sharetribe client ID and client secret
+### Sharetribe client ID and client secret
 
 To use the Marketplace API, you will need a **client ID**. You can sign
-up for your free Sharetribe account at
-https://www.sharetribe.com/products/flex/
+up for your free Sharetribe account at TODO LINK
 
 When you get access, you will be able to log into Sharetribe Console and
 check the client ID.<br /> Sharetribe Console: _Build > Applications_
@@ -370,7 +369,7 @@ This will automatically open `http://localhost:3000` in a browser:
 As you browse your marketplace and create listings, you may notice that
 the search filters do not work. You can activate the filters by creating
 a
-[search schema](/how-to/manage-search-schemas-with-flex-cli/#adding-schemas)
+[search schema](/how-to/manage-search-schemas-with-sharetribe-cli/#adding-schemas)
 that corresponds to your template.
 
 </info>

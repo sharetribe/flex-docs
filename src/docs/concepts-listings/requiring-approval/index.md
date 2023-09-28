@@ -75,8 +75,8 @@ user has unused listing quota.
 ## Enabling and disabling listing approval in Sharetribe CLI
 
 In addition to the Sharetribe Console, you can also use
-[Sharetribe CLI](/introduction/getting-started-with-flex-cli/) to enable
-and disable listing approval on your marketplace.
+[Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/) to
+enable and disable listing approval on your marketplace.
 
 ```bash
 #To see whether your marketplace requires listings to be approved

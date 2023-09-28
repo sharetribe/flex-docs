@@ -77,7 +77,7 @@ in contrast to built-in email notifications, which are typically
 actionable and related to account management.
 
 You can update, add, or delete transaction notifications by
-[editing the transaction process](/how-to/edit-transaction-process-with-flex-cli/).
+[editing the transaction process](/how-to/edit-transaction-process-with-sharetribe-cli/).
 
 TODO EXPLAIN TEXTS VS CODE EDITOR CHANGE
 

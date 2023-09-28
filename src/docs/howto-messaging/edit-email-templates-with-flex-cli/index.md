@@ -1,6 +1,6 @@
 ---
 title: Edit email templates with Sharetribe CLI
-slug: edit-email-templates-with-flex-cli
+slug: edit-email-templates-with-sharetribe-cli
 updated: 2020-10-29
 category: how-to-messaging
 ingress:
@@ -19,10 +19,10 @@ email templates.
 This tutorial expects that you have already installed Sharetribe CLI and
 are logged in with your API key. If not, it's recommended to first read
 the tutorial
-[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
 We also recommend that you go through the
-[Edit transaction process with Sharetribe CLI](/how-to/edit-transaction-process-with-flex-cli/)
+[Edit transaction process with Sharetribe CLI](/how-to/edit-transaction-process-with-sharetribe-cli/)
 tutorial to understand process pulling, editing, pushing, and alias
 handling on a general level.
 
@@ -316,7 +316,7 @@ This is the generic workflow to update the notification email contents
 that are part of the transaction process of your marketplace.
 
 With this and the
-[Edit transaction process with Sharetribe CLI](/how-to/edit-transaction-process-with-flex-cli/)
+[Edit transaction process with Sharetribe CLI](/how-to/edit-transaction-process-with-sharetribe-cli/)
 tutorial, you now know how to change the transaction process and its
 email templates. As a next step, you might want to read the
 [Transaction process format](/references/transaction-process-format/)

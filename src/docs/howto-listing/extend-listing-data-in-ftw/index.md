@@ -164,7 +164,7 @@ use for listing-specific notes.
 
 For searchable attributes, you will need to include the **filterConfig**
 attribute to your listing configuration. In addition, you will need to
-[define a search schema](/how-to/manage-search-schemas-with-flex-cli/).
+[define a search schema](/how-to/manage-search-schemas-with-sharetribe-cli/).
 Make sure you define the search schema **type** according to the listing
 configuration **schemaType**.
 

@@ -34,11 +34,12 @@ many of the use cases where other applications use webhooks.
 Currently, Sharetribe exposes events by allowing them to be queried via
 the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
-or viewed via [Sharetribe CLI](/how-to/view-events-with-flex-cli/).
-Integration API supports implementing efficient polling where only
-events that have happened since last poll query are returned. This makes
-it possible to keep the polling interval short enough to react to events
-shortly after they occur.
+or viewed via
+[Sharetribe CLI](/how-to/view-events-with-sharetribe-cli/). Integration
+API supports implementing efficient polling where only events that have
+happened since last poll query are returned. This makes it possible to
+keep the polling interval short enough to react to events shortly after
+they occur.
 
 Sharetribe does not retain event data forever. Sharetribe maintains a
 history of all marketplace events for 90 days in live marketplaces and
@@ -92,8 +93,8 @@ happened after the given sequence ID, making the sequence ID a perfect
 tool for loading subsequent events in comparison to a known ID. When
 querying events synchronously (e.g. via the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
-or [Sharetribe CLI](/how-to/view-events-with-flex-cli/)), events are
-always returned in order of their sequence IDs.
+or [Sharetribe CLI](/how-to/view-events-with-sharetribe-cli/)), events
+are always returned in order of their sequence IDs.
 
 Note that, in contrast to sequence IDs, there can be multiple events
 that have the exact same `createdAt` timestamp, so applications should
@@ -436,7 +437,7 @@ reflect data before the transition.
 ## Further reading
 
 - [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
-- [Using Sharetribe CLI to view event data](/how-to/view-events-with-flex-cli/)
+- [Using Sharetribe CLI to view event data](/how-to/view-events-with-sharetribe-cli/)
 - [Reacting to events](/how-to/reacting-to-events/) how-to guide
 - A
   [full example](https://github.com/sharetribe/sharetribe-integration-api-examples/blob/master/scripts/notify-new-listings.js)

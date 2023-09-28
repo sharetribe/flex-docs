@@ -32,7 +32,7 @@
   },
   {
     "source": "/background/getting-started/",
-    "destination": "/docs/introduction/introducing-flex/",
+    "destination": "/docs/introduction/introducing-sharetribe/",
     "permanent": true
   },
   {
@@ -42,7 +42,7 @@
   },
   {
     "source": "/background/introducing-flex/",
-    "destination": "/docs/introduction/introducing-flex/",
+    "destination": "/docs/introduction/introducing-sharetribe/",
     "permanent": true
   },
   {
@@ -52,7 +52,7 @@
   },
   {
     "source": "/background/overview/",
-    "destination": "/docs/introduction/introducing-flex/",
+    "destination": "/docs/introduction/introducing-sharetribe/",
     "permanent": true
   },
   {
@@ -227,32 +227,32 @@
   },
   {
     "source": "/references/ftw/",
-    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "destination": "/docs/introduction/getting-started-with-web-template/",
     "permanent": true
   },
   {
     "source": "/tutorials/edit-email-templates-with-flex-cli/",
-    "destination": "/docs/how-to/edit-email-templates-with-flex-cli/",
+    "destination": "/docs/how-to/edit-email-templates-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/tutorials/edit-transaction-process-with-flex-cli/",
-    "destination": "/docs/how-to/edit-transaction-process-with-flex-cli/",
+    "destination": "/docs/how-to/edit-transaction-process-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/tutorials/getting-started-with-flex-cli/",
-    "destination": "/docs/introduction/getting-started-with-flex-cli/",
+    "destination": "/docs/introduction/getting-started-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/tutorials/getting-started-with-ftw/",
-    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "destination": "/docs/introduction/getting-started-with-web-template/",
     "permanent": true
   },
   {
     "source": "/tutorials/getting-started-with-ftw/",
-    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "destination": "/docs/introduction/getting-started-with-web-template/",
     "permanent": true
   },
   {
@@ -262,7 +262,7 @@
   },
   {
     "source": "/tutorials/manage-search-schemas-with-flex-cli/",
-    "destination": "/docs/how-to/manage-search-schemas-with-flex-cli/",
+    "destination": "/docs/how-to/manage-search-schemas-with-sharetribe-cli/",
     "permanent": true
   },
   {
@@ -467,7 +467,7 @@
   },
   {
     "source": "/background/flex-environments/",
-    "destination": "/docs/concepts/flex-environments/",
+    "destination": "/docs/concepts/sharetribe-environments/",
     "permanent": true
   },
   {
@@ -707,27 +707,27 @@
   },
   {
     "source": "/flex-cli/getting-started-with-flex-cli/",
-    "destination": "/docs/introduction/getting-started-with-flex-cli/",
+    "destination": "/docs/introduction/getting-started-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/flex-cli/edit-transaction-process-with-flex-cli/",
-    "destination": "/docs/how-to/edit-transaction-process-with-flex-cli/",
+    "destination": "/docs/how-to/edit-transaction-process-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/flex-cli/edit-email-templates-with-flex-cli/",
-    "destination": "/docs/how-to/edit-email-templates-with-flex-cli/",
+    "destination": "/docs/how-to/edit-email-templates-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/flex-cli/manage-search-schemas-with-flex-cli/",
-    "destination": "/docs/how-to/manage-search-schemas-with-flex-cli/",
+    "destination": "/docs/how-to/manage-search-schemas-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/flex-cli/view-events-with-flex-cli/",
-    "destination": "/docs/how-to/view-events-with-flex-cli/",
+    "destination": "/docs/how-to/view-events-with-sharetribe-cli/",
     "permanent": true
   },
   {
@@ -943,6 +943,46 @@
  {
     "source": "/concepts/flex-environments/",
     "destination": "/docs/concepts/sharetribe-environments/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/introducing-flex/",
+    "destination": "/docs/introduction/introducing-sharetribe/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/getting-started-with-ftw-daily/",
+    "destination": "/docs/introduction/getting-started-with-web-template/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/getting-started-with-flex-cli/",
+    "destination": "/docs/introduction/getting-started-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/concepts/users-and-authentication-in-flex/",
+    "destination": "/docs/concepts/users-and-authentication-in-sharetribe/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/edit-transaction-process-with-flex-cli/",
+    "destination": "/docs/how-to/edit-transaction-process-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/manage-search-schemas-with-flex-cli/",
+    "destination": "/docs/how-to/manage-search-schemas-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/view-events-with-flex-cli/",
+    "destination": "/docs/how-to/view-events-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/edit-email-templates-with-flex-cli/",
+    "destination": "/docs/how-to/edit-email-templates-with-sharetribe-cli/",
     "permanent": true
   }
 ]

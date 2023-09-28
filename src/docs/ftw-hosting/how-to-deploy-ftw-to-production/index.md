@@ -27,7 +27,7 @@ production. A workflow like this helps prevent bugs and unfinished code
 from being released to your users.
 
 Sharetribe offers
-[three different environment types](https://www.sharetribe.com/docs/concepts/flex-environments/#environment-types)
+[three different environment types](https://www.sharetribe.com/docs/concepts/sharetribe-environments/#environment-types)
 – Live, Test, and Dev. You should connect your client application with
 the corresponding marketplace environment, i.e. your client environment
 intended for development should use environment variables that point to
@@ -46,7 +46,7 @@ have three deployments of your client application:
 We recommend that you keep your production and test deployments
 identical, so that operators can preview their no-code changes reliably.
 Read more:
-[Sharetribe environments](/concepts/flex-environments//#workflow-between-the-three-environments).
+[Sharetribe environments](/concepts/sharetribe-environments//#workflow-between-the-three-environments).
 
 ## Where to host your application?
 

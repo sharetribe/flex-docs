@@ -24,7 +24,7 @@ through the following stages:
 4. Going live
 
 In this article, it is assumed that you've already read
-[Introducing Sharetribe](/introduction/introducing-flex/), which
+[Introducing Sharetribe](/introduction/introducing-sharetribe/), which
 explains the basic concepts of Sharetribe. If you haven't done that yet,
 it's a good idea to do that now.
 

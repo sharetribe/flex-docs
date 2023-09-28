@@ -45,5 +45,5 @@ You can edit the text and rating directly in Console.
 At the bottom of the review card, you find the Events section. It
 contains a Sharetribe CLI command that you can use to view all the
 events related to this review. Read more about
-[viewing events with Sharetribe CLI](/how-to/view-events-with-flex-cli/)
+[viewing events with Sharetribe CLI](/how-to/view-events-with-sharetribe-cli/)
 or visit the [Events reference in our Docs site](/references/events/).

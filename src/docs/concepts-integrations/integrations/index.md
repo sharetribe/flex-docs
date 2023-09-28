@@ -183,7 +183,7 @@ Zapier integration, so you can use Zapier to trigger actions in Twilio
 tools with no coding.
 
 - Follow the
-  [Sharetribe video guide](/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-flex-using-twilio-and-zapier)
+  [Sharetribe video guide](/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-using-twilio-and-zapier)
   to send providers a SMS message whenever their listing gets booked.
 
 ### Sendbird user-to-user chat app

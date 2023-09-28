@@ -200,7 +200,7 @@ const LandingPage = props => {
               <UiText id="LandingPage.introduction.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/introduction/introducing-flex/">
+              <SectionLink to="/introduction/introducing-sharetribe/">
                 <UiText id="LandingPage.introduction.introductionFlex" />
               </SectionLink>
               <SectionLink to="/introduction/getting-started-with-web-template/">
@@ -289,7 +289,7 @@ const LandingPage = props => {
             <SectionLink to="/how-to/change-transaction-process-in-ftw/">
               <UiText id="LandingPage.bestPicks.changeTransactionProcess" />
             </SectionLink>
-            <SectionLink to="/introduction/getting-started-with-flex-cli/">
+            <SectionLink to="/introduction/getting-started-with-sharetribe-cli/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFlexCLi" />
             </SectionLink>
             <SectionLink to="/introduction/getting-started-with-integration-api/">

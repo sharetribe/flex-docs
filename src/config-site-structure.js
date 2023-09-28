@@ -6,8 +6,8 @@
  */
 
 const sortingArrayIntroduction = [
-  'introducing-flex',
-  'getting-started-with-ftw-daily',
+  'introducing-sharetribe',
+  'getting-started-with-web-template',
   'how-to-build-and-launch-with-flex',
   'is-flex-right-for-you',
   'development-skills',
@@ -16,7 +16,7 @@ const sortingArrayIntroduction = [
 
 const sortingArrayIntroductionGettingStarted = [
   'getting-started-with-web-template',
-  'getting-started-with-flex-cli',
+  'getting-started-with-sharetribe-cli',
   'getting-started-with-integration-api',
 ];
 
@@ -76,7 +76,7 @@ const sortingArrayTransactionProcess = [
 ];
 
 const sortingArrayUsersAndAuthentication = [
-  'users-and-authentication-in-flex',
+  'users-and-authentication-in-sharetribe',
   'social-logins-and-sso',
 ];
 
@@ -100,7 +100,7 @@ const sortingArrayManageConsole = [
 
 const sortingArrayDevelopment = [
   'applications',
-  'flex-environments',
+  'sharetribe-environments',
   'console-overview',
 ];
 
@@ -349,8 +349,7 @@ exports.siteStructure = [
       {
         id: 'the-new-sharetribe-analytics',
         sortingArray: [],
-      }
-      
+      },
     ],
     hideSidebar: true,
   },

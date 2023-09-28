@@ -61,7 +61,7 @@ All these decisions affect the choices you make in your microcopy.
 You can try out the Microcopy editor in your Flex test marketplace.
 After creating a Flex account, log into
 [Console](https://flex-console.sharetribe.com/). Ensure you are in the
-[Test environment](/concepts/flex-environments/#test-environment).
+[Test environment](/concepts/sharetribe-environments/#test-environment).
 
 Navigate to the Build section from your top bar, then the Content
 section. The Microcopy editor is here.

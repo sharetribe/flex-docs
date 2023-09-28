@@ -57,7 +57,7 @@ The URL to the article is constructed from the `category` and the `slug`
 in the article frontmatter. The final URL will be:
 
 ```bash
-https://www.sharetribe.com / docs        / introduction / introducing-flex /
+https://www.sharetribe.com / docs        / introduction / introducing-sharetribe /
 | domain                   | path prefix | category   | slug             | trailing slash
 ```
 

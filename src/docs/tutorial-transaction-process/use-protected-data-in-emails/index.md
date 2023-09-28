@@ -221,7 +221,7 @@ To test the protected data using Sharetribe CLI's built-in preview
 functionality, you need to use a custom sample-template-context.json.
 
 You can read more from the Sharetribe CLI article:
-[Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-flex-cli/#sample-email-context)
+[Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-sharetribe-cli/#sample-email-context)
 
 The short guide of the necessary steps:
 
@@ -247,7 +247,7 @@ we need to push a new version of _saunatime-instant-booking_ process. If
 you have done the earlier parts of the tutorial this process should be
 already quite familiar to you. If you need more detailed information
 take a look at the
-[Edit transaction process with Sharetribe CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
+[Edit transaction process with Sharetribe CLI tutorial](/how-to/edit-transaction-process-with-sharetribe-cli/#validate-and-push-the-process).
 
 Push the updated process:
 

@@ -227,7 +227,7 @@ password, add their payout details, or add their payment info (credit or
 debit card) for faster checkout.
 
 Learn more about how
-[user accounts and authentication work in Sharetribe](/concepts/users-and-authentication-in-flex/).
+[user accounts and authentication work in Sharetribe](/concepts/users-and-authentication-in-sharetribe/).
 
 ### Seller onboarding
 

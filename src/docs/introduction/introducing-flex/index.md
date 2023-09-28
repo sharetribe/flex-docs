@@ -1,6 +1,6 @@
 ---
 title: Introducing Sharetribe
-slug: introducing-flex
+slug: introducing-sharetribe
 updated: 2019-11-21
 category: introduction
 ingress:
@@ -126,7 +126,7 @@ marketplace's advanced configurations such as transaction processes and
 email templates.
 
 See the
-[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/)
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/)
 tutorial for more information.
 
 ## Is Sharetribe the right fit for you?

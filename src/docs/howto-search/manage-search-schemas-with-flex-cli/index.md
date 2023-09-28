@@ -1,6 +1,6 @@
 ---
 title: Manage search schemas with Sharetribe CLI
-slug: manage-search-schemas-with-flex-cli
+slug: manage-search-schemas-with-sharetribe-cli
 updated: 2021-11-30
 category: how-to-search
 ingress:
@@ -20,7 +20,7 @@ email templates.
 This tutorial expects that you have already installed Sharetribe CLI and
 are logged in with your API key. If not, it's recommended to first read
 the tutorial
-[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
 In this tutorial, we will add a data schema for the `listingType` public
 data field in listings. If your marketplace uses different listing

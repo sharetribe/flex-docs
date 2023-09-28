@@ -70,8 +70,8 @@ keywords and location. See the API
 [reference documentation](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 for a full list of search parameters. Do note that for all search
 parameters, you will need to create a
-[search schema](/how-to/manage-search-schemas-with-flex-cli/) so that
-the data is indexed correctly for search.
+[search schema](/how-to/manage-search-schemas-with-sharetribe-cli/) so
+that the data is indexed correctly for search.
 
 ## Keyword search
 

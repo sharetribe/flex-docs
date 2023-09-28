@@ -18,7 +18,7 @@ the earlier part of this tutorial.
 
 Before we modify our transaction process, it's better to ensure that we
 have most the up-to-date version of the process. You can fetch any
-process version with flex-cli:
+process version with Sharetribe CLI:
 
 ```shell
 flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --path=./saunatime-instant-booking --marketplace=saunatime-dev
@@ -37,7 +37,7 @@ directory.
 
 When the latest version of the transaction process is pulled, we can
 navigate to the
-[_templates_ directory](/how-to/edit-email-templates-with-flex-cli/#templates-directory).
+[_templates_ directory](/how-to/edit-email-templates-with-sharetribe-cli/#templates-directory).
 We want to add a new directory for the new notification there.
 
 ```shell
@@ -76,7 +76,7 @@ details by using variables within `{{}}`.
 ## Preview your changes
 
 Once we have created the email notification, we can preview them with
-**flex-cli**. To preview the changes we just made, we can run the
+**Sharetribe CLI**. To preview the changes we just made, we can run the
 command:
 
 ```shell
@@ -142,7 +142,7 @@ Now that you have edited the email templates, you need to push a new
 version of your process. If you have done the earlier parts of the
 tutorial, this process should be already quite familiar to you. If you
 need more detailed information, take a look at the
-[Edit transaction process with Sharetribe CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
+[Edit transaction process with Sharetribe CLI tutorial](/how-to/edit-transaction-process-with-sharetribe-cli/#validate-and-push-the-process).
 
 Push the updated process:
 

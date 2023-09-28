@@ -129,7 +129,8 @@ availability, and stock, among others.
 
 In addition to the default parameters, you can query listings by public
 extended data attributes, i.e. public data and metadata. You will need
-to [set a search schema](/how-to/manage-search-schemas-with-flex-cli/)
+to
+[set a search schema](/how-to/manage-search-schemas-with-sharetribe-cli/)
 for the attribute so that it is indexed for search within Sharetribe.
 
 ### Different types of listings
@@ -149,7 +150,7 @@ information is also saved in the listing extended data.
 By passing listing type as a query parameter to the endpoint, you can
 then create differentiated views for the two types of listings. Again,
 using extended data as query parameters requires
-[setting a search schema](/how-to/manage-search-schemas-with-flex-cli/).
+[setting a search schema](/how-to/manage-search-schemas-with-sharetribe-cli/).
 
 Some marketplaces want to allow filtering by entities that are not
 strictly speaking listings available to be purchased. Examples include

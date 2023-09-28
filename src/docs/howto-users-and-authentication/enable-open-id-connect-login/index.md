@@ -83,7 +83,7 @@ identity provider client in Sharetribe Console.
 
 4. Fill in information regarding your OpenID Connect identity provider.
    This is the service that your users authenticate to in order to log
-   into flex.
+   into Sharetribe.
    - **Identity provider name**: A descriptive name for the identity
      provider that helps you to distinguish it from other providers.
    - **Identity provider ID**: IdP ID that is passed as a parameter to
