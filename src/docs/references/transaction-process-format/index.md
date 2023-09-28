@@ -5,8 +5,8 @@ updated: 2022-02-09
 category: references
 ingress:
   This reference article describes the format of the process.edn file
-  that is used with Flex CLI to customise the transaction processes of
-  your marketplace.
+  that is used with Sharetribe CLI to customise the transaction
+  processes of your marketplace.
 published: true
 ---
 

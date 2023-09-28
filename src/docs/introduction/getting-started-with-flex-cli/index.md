@@ -1,19 +1,19 @@
 ---
-title: Getting started with Flex CLI
+title: Getting started with Sharetribe CLI
 slug: getting-started-with-flex-cli
 updated: 2021-10-04
 category: introduction-getting-started
 ingress:
-  This tutorial shows you how to get started with the Flex CLI. You will
-  learn how to log in with your API key, how to use the help command and
-  other basic commands.
+  This tutorial shows you how to get started with the Sharetribe CLI.
+  You will learn how to log in with your API key, how to use the help
+  command and other basic commands.
 skills: basic command line, text editing
 published: true
 ---
 
 <asciinema recording-id="267478"></asciinema>
 
-Flex CLI (Command-line interface) is a tool for changing your
+Sharetribe CLI (Command-line interface) is a tool for changing your
 marketplace's advanced configurations such as transaction processes and
 email templates.
 
@@ -22,9 +22,9 @@ how to run basic commands.
 
 Now, let's get started!
 
-## Install Flex CLI
+## Install Sharetribe CLI
 
-Flex CLI is distributed via
+Sharetribe CLI is distributed via
 [npmjs](https://www.npmjs.com/package/flex-cli). To install packages
 from npmjs, you will need to download and install Node.js development
 environment:
@@ -33,13 +33,13 @@ environment:
 - [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
 When you have installed Node.js and Yarn, type the following command to
-install Flex CLI:
+install Sharetribe CLI:
 
 ```bash
 yarn global add flex-cli
 ```
 
-To verify that Flex CLI was successfully installed, run:
+To verify that Sharetribe CLI was successfully installed, run:
 
 ```bash
 flex-cli
@@ -136,11 +136,11 @@ marketplace.
 
 ## Summary
 
-In this tutorial, we installed Flex CLI, logged in using an API key and
-tried some example commands. In addition, we familiarized ourselves with
-the `help` command that is the main source of documentation for the Flex
-CLI. We also learned how to disable and enable the listing approval
-functionality for our marketplace.
+In this tutorial, we installed Sharetribe CLI, logged in using an API
+key and tried some example commands. In addition, we familiarized
+ourselves with the `help` command that is the main source of
+documentation for the Flex CLI. We also learned how to disable and
+enable the listing approval functionality for our marketplace.
 
 Now that we know how to list processes, the next this is to
 [make a small change to the existing process](/how-to/edit-transaction-process-with-flex-cli/).
@@ -150,7 +150,7 @@ Now that we know how to list processes, the next this is to
 ### flex-cli: command not found
 
 If you're seeing `flex-cli: command not found` error and you installed
-Flex CLI with Yarn, you need to add
+Sharetribe CLI with Yarn, you need to add
 [Yarn global bin path to the PATH environment variable](https://classic.yarnpkg.com/en/docs/cli/global/#adding-the-install-location-to-your-path).
 
 #### On Windows

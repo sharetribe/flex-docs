@@ -224,8 +224,8 @@ the timeline of different actions to suit your marketplace.
 <plan tier="extend" feature="Customizing your transaction process"></plan>
 
 You can edit the transaction processes on your marketplace with
-[Flex CLI](/how-to/edit-transaction-process-with-flex-cli/). If you use
-Sharetribe Web Template, you will also need to make some
+[Sharetribe CLI](/how-to/edit-transaction-process-with-flex-cli/). If
+you use Sharetribe Web Template, you will also need to make some
 [changes in the template](/how-to/change-transaction-process-in-ftw/) to
 enable it to use a different process. If you do make changes to a
 transaction process when you already have transactions in your

@@ -84,16 +84,16 @@ data possible via some API endpoints. For instance
 supports querying listings by public data or metadata.
 
 Search schemas can be managed with
-[Flex CLI](/introduction/getting-started-with-flex-cli/). With the CLI,
-you can list, set and unset search schemas for listing's public data and
-metadata as well as for user profile's metadata, private, protected and
-public data. The commands to manage search schemas are:
+[Sharetribe CLI](/introduction/getting-started-with-flex-cli/). With the
+CLI, you can list, set and unset search schemas for listing's public
+data and metadata as well as for user profile's metadata, private,
+protected and public data. The commands to manage search schemas are:
 
 - `flex-cli search` List all defined data schemas
 - `flex-cli search set` Set (create or update) data schema
 - `flex-cli search unset` Unset data schema
 
 You can also check out our tutorial for
-[managing search schemas with Flex CLI](/how-to/manage-search-schemas-with-flex-cli/).
+[managing search schemas with Sharetribe CLI](/how-to/manage-search-schemas-with-flex-cli/).
 
 > **Note:** Only top-level values in extended data can have a schema.

@@ -148,7 +148,7 @@ process.
 
 Before we modify our transaction process, it's better to ensure that we
 have most the up-to-date version of the process. You can fetch any
-process version with Flex CLI:
+process version with Sharetribe CLI:
 
 ```shell
 flex-cli process pull --process=saunatime-instant-booking --alias=release-1 --path=./saunatime-instant-booking --marketplace=saunatime-dev
@@ -217,11 +217,11 @@ available: between `{{#with transaction}}` and `{{/with}}`.
 
 <extrainfo title="How to test the email template rendering locally?">
 
-To test the protected data using Flex CLI's built-in preview
+To test the protected data using Sharetribe CLI's built-in preview
 functionality, you need to use a custom sample-template-context.json.
 
-You can read more from the Flex CLI article:
-[Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/#sample-email-context)
+You can read more from the Sharetribe CLI article:
+[Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-flex-cli/#sample-email-context)
 
 The short guide of the necessary steps:
 
@@ -230,7 +230,7 @@ The short guide of the necessary steps:
    ```json
    "protected-data" : { "providerPhoneNumber": "+358 12 3456789" },
    ```
-3. Use Flex CLI's preview with that context:
+3. Use Sharetribe CLI's preview with that context:
 
 ```shell
 
@@ -247,7 +247,7 @@ we need to push a new version of _saunatime-instant-booking_ process. If
 you have done the earlier parts of the tutorial this process should be
 already quite familiar to you. If you need more detailed information
 take a look at the
-[Edit transaction process with Flex CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
+[Edit transaction process with Sharetribe CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
 
 Push the updated process:
 

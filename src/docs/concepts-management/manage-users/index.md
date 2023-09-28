@@ -62,10 +62,10 @@ You can change existing field values or even add new extended data
 fields.
 
 At the bottom of the user card, you have the Events section. It contains
-a Flex CLI command that you can use to view all the events related to
-this user. Read more about
-[viewing events with Flex CLI](/how-to/view-events-with-flex-cli/) or
-visit the [Events reference in our Docs site](/references/events/).
+a Sharetribe CLI command that you can use to view all the events related
+to this user. Read more about
+[viewing events with Sharetribe CLI](/how-to/view-events-with-flex-cli/)
+or visit the [Events reference in our Docs site](/references/events/).
 
 ## Browse and search users
 

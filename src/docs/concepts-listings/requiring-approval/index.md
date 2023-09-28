@@ -7,7 +7,7 @@ ingress:
   Sharetribe allows you to require operator approval for new listings
   before they are published. This article explains the feature and
   describes how to take listing approval into use in both Sharetribe
-  Console and Flex CLI.
+  Console and Sharetribe CLI.
 published: true
 ---
 
@@ -72,11 +72,11 @@ listings and premium users to post five listings, you could create an
 Integration API script that automatically approves the listing if the
 user has unused listing quota.
 
-## Enabling and disabling listing approval in Flex CLI
+## Enabling and disabling listing approval in Sharetribe CLI
 
 In addition to the Sharetribe Console, you can also use
-[Flex CLI](/introduction/getting-started-with-flex-cli/) to enable and
-disable listing approval on your marketplace.
+[Sharetribe CLI](/introduction/getting-started-with-flex-cli/) to enable
+and disable listing approval on your marketplace.
 
 ```bash
 #To see whether your marketplace requires listings to be approved

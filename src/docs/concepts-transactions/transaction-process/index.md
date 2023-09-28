@@ -172,7 +172,7 @@ process, visit your
 [Sharetribe Console](/operator-guides/concepts/#console) Build tab. Each
 included
 [email notification has a template](/references/email-templates/#editing-transaction-emails)
-that can be customized using the Flex CLI.
+that can be customized using the Sharetribe CLI.
 
 <transactionprocesscomponentscarousel title="Transaction process components">
 
@@ -253,10 +253,10 @@ processes, but you’ll likely want to modify these to capture the unique
 way your users will transact.
 
 If you’re a developer building with Sharetribe, you can build your
-transaction process using the Flex CLI. Here are guides for
+transaction process using the Sharetribe CLI. Here are guides for
 [creating your own transaction process](/tutorial/create-transaction-process/)
 and for
-[getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
+[getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
 For more details of the transaction process format, see the
 [Transaction process format](/references/transaction-process-format/)
 reference. To customise the UI of your marketplace to match your process

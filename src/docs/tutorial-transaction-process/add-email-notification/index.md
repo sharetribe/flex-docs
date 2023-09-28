@@ -142,7 +142,7 @@ Now that you have edited the email templates, you need to push a new
 version of your process. If you have done the earlier parts of the
 tutorial, this process should be already quite familiar to you. If you
 need more detailed information, take a look at the
-[Edit transaction process with Flex CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
+[Edit transaction process with Sharetribe CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
 
 Push the updated process:
 

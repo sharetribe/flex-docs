@@ -57,9 +57,9 @@ suffice, and you'll learn a lot throughout the tutorial).
   environment as a preview or staging environment. Your Live marketplace
   is home to your actual live marketplace.
 
-- **Flex CLI**: A command line tool that you can use to change your
-  marketplace's advanced configurations, such as transaction processes
-  and email templates
+- **Sharetribe CLI**: A command line tool that you can use to change
+  your marketplace's advanced configurations, such as transaction
+  processes and email templates
 
 ## Before starting the tutorial
 

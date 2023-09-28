@@ -108,8 +108,8 @@ flow from Dev to Test to Live:
 Code changes include
 
 - client application development, updated through your code repository
-- transaction process changes, updated through Flex CLI
-- search schema changes, updated through Flex CLI
+- transaction process changes, updated through Sharetribe CLI
+- search schema changes, updated through Sharetribe CLI
 
 No-code changes include
 

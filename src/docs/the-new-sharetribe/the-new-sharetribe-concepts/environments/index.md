@@ -115,8 +115,8 @@ Code changes include:
 
 - client application development, updated through your development code
   repository
-- transaction process changes, updated through Flex CLI
-- search schema changes, updated through Flex CLI
+- transaction process changes, updated through Sharetribe CLI
+- search schema changes, updated through Sharetribe CLI
 
 We recommend that you keep Test and Live identical as much as possible.
 In other words, push any code changes from Dev to Test and Live at the

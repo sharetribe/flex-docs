@@ -1,26 +1,26 @@
 ---
-title: Manage search schemas with Flex CLI
+title: Manage search schemas with Sharetribe CLI
 slug: manage-search-schemas-with-flex-cli
 updated: 2021-11-30
 category: how-to-search
 ingress:
   This tutorial shows you how to manage extended data search schemas
-  with Flex CLI. With search schemas in place, you can use custom
+  with Sharetribe CLI. With search schemas in place, you can use custom
   extended data fields as filters in your queries.
 skills: basic command line, text editing
 published: true
 ---
 
-Flex CLI (Command-line interface) is a tool for changing your
+Sharetribe CLI (Command-line interface) is a tool for changing your
 marketplace's advanced configurations such as transaction processes and
 email templates.
 
 <plan tier="extend" feature="Access to Sharetribe CLI"></plan>
 
-This tutorial expects that you have already installed Flex CLI and are
-logged in with your API key. If not, it's recommended to first read the
-tutorial
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
+This tutorial expects that you have already installed Sharetribe CLI and
+are logged in with your API key. If not, it's recommended to first read
+the tutorial
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
 
 In this tutorial, we will add a data schema for the `listingType` public
 data field in listings. If your marketplace uses different listing
@@ -136,8 +136,8 @@ string in the search schema:
 A listing field defined in Console. Can not be edited with the CLI.
 ```
 
-If you then try to add a search schema through Flex CLI for a key and
-scope that already exists in a Console-originated listing field, you
+If you then try to add a search schema through Sharetribe CLI for a key
+and scope that already exists in a Console-originated listing field, you
 will see the following error:
 
 ```
@@ -187,9 +187,9 @@ If you wish to remove a schema, you can use the `search unset` command.
 
 <info>
 
-If you have already defined a search schema for a key through Flex CLI,
-you can not create a listing field in Sharetribe Console with that same
-key.
+If you have already defined a search schema for a key through Sharetribe
+CLI, you can not create a listing field in Sharetribe Console with that
+same key.
 
 ![Console warning about conflicting keys](./conflictingSearchSchema.png)
 
@@ -199,8 +199,8 @@ key.
 
 <info>
 
-Adding user search schemas is only supported in Flex CLI versions 1.10.0
-and above. Use yarn to update Flex CLI by running
+Adding user search schemas is only supported in Sharetribe CLI versions
+1.10.0 and above. Use yarn to update Sharetribe CLI by running
 `yarn global upgrade flex-cli` or `npm update -g flex-cli` if you are
 using npm.
 
@@ -250,7 +250,7 @@ the default value.
 
 You can set the default value for a search schema simply by passing a
 `--default` flag with the desired default value. To create the search
-schema described above, the Flex CLI command is as follows:
+schema described above, the Sharetribe CLI command is as follows:
 
 ```
 $ flex-cli search set --key isPromoted --type boolean --scope metadata --default false -m my-marketplace-dev
@@ -272,12 +272,12 @@ userProfile  protected  age          long
 
 ## Summary
 
-In this guide, we used Flex CLI to define search schemas for our
+In this guide, we used Sharetribe CLI to define search schemas for our
 marketplace. We also saw how schemas defined through Sharetribe Console
-and Flex CLI interact. We used the public data attributes `category` and
-`listingType` as examples. In addition, we looked at adding user search
-schemas for Integration API as well as adding a listing schema with a
-default value.
+and Sharetribe CLI interact. We used the public data attributes
+`category` and `listingType` as examples. In addition, we looked at
+adding user search schemas for Integration API as well as adding a
+listing schema with a default value.
 
 For more information, see the following resources:
 

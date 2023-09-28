@@ -43,7 +43,7 @@ in the repository.
 To use the template, you will need to have the transaction processes in
 your Sharetribe environment.
 [Follow these steps](https://github.com/sharetribe/web-template#take-the-new-beta-processes-into-use)
-to create both processes in your environment through Flex CLI.
+to create both processes in your environment through Sharetribe CLI.
 
 ### Getting started with the template
 

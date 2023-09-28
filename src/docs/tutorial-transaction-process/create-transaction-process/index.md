@@ -44,8 +44,8 @@ _instant-booking_.
 
 ### Create a new process
 
-To get up and running with Flex CLI, see the
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
+To get up and running with Sharetribe CLI, see the
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/)
 guide in Flex Docs.
 
 Let's see what the subcommand `help` gives us about `process create`:
@@ -96,7 +96,7 @@ _"saunatime-instant-booking"_ process is there.
 
 The process is created, but we still can't reference that process from
 our client app, since it doesn't have process alias set. We can create
-an alias for our new process with Flex CLI command:
+an alias for our new process with Sharetribe CLI command:
 
 ```shell
 flex-cli process create-alias --process=saunatime-instant-booking --version=1 --alias=release-1 --marketplace=saunatime-dev
@@ -626,7 +626,7 @@ You can now see the correct microcopy strings instead of the keys.
 
 We created a new process based on an existing example process, and
 removed unnecessary transitions from the new process. We then pushed our
-changes to the Flex backend using Flex CLI.
+changes to the Flex backend using Sharetribe CLI.
 
 In addition, we modified our client app to work with the new process by
 updating

@@ -94,7 +94,7 @@ how-to guide. Another aspect in search filters is that a
 [search schema](/references/extended-data/#search-schema) needs to be
 added to the data in order for API to index it for search. Adding search
 schema can be done by the
-[Flex CLI](/introduction/getting-started-with-flex-cli/).
+[Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
 
 <plan tier="extend" feature="Access to Sharetribe CLI"></plan> Once a
 public data attribute is added to the listings and the data attribute is
@@ -223,7 +223,7 @@ clicking "More filters" button.
 As a summary, the new filter configuration in `listingFields` array is
 enough to render a _gears_ filter on search page. That is, if you have
 the correct schema added for the _gears_ attribute to the search engine
-using [Flex CLI](/introduction/getting-started-with-flex-cli/).
+using [Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
 
 ## Creating your own filter types
 

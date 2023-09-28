@@ -1,29 +1,31 @@
 ---
-title: View events with Flex CLI
+title: View events with Sharetribe CLI
 slug: view-events-with-flex-cli
 updated: 2020-12-09
 category: how-to-events
 ingress:
-  This guide shows you how to query and view events data using Flex CLI.
-  Events tell you the change history of marketplace data resources and
-  allow observing noteworthy events.
+  This guide shows you how to query and view events data using
+  Sharetribe CLI. Events tell you the change history of marketplace data
+  resources and allow observing noteworthy events.
 
 skills: basic command line, text editing
 published: true
 ---
 
-Flex CLI (Command-line interface) is a tool for examing and changing
-your marketplace's advanced configurations such as transaction processes
-and email templates.
+Sharetribe CLI (Command-line interface) is a tool for examing and
+changing your marketplace's advanced configurations such as transaction
+processes and email templates.
 
 <plan tier="extend" feature="Access to Sharetribe CLI"></plan> This
-guide expects that you have already installed Flex CLI and are logged in
-with your API key. If not, it's recommended to first read the tutorial
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
+guide expects that you have already installed Sharetribe CLI and are
+logged in with your API key. If not, it's recommended to first read the
+tutorial
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
 
 In this guide, we will learn how the events of a marketplace can be
-queried using Flex CLI, how we can inspect events in more detail as well
-as combine Flex CLI with other tools to further process the event data.
+queried using Sharetribe CLI, how we can inspect events in more detail
+as well as combine Sharetribe CLI with other tools to further process
+the event data.
 
 In Flex, events represent changes in marketplace data resources such as
 listings, users and transactions. An event captures a single change in
@@ -36,7 +38,7 @@ fields. To learn more about events, have a look at the
 
 ## Querying events
 
-The command for querying events using Flex CLI is `events`.
+The command for querying events using Sharetribe CLI is `events`.
 
 ```bash
 $ flex-cli help events
@@ -172,10 +174,10 @@ This is useful when trying to investigate the change history of a
 listing's availability, the history of transactions for a given listing
 or user, and so on.
 
-Flex CLI supports two different ways to look at events from the past. We
-can either use the sequence ID to define a query range or we can use
-timestamps matching event's created at. Sequence IDs are unique and
-strictly increasing, meaning that events that occurred later in time
+Sharetribe CLI supports two different ways to look at events from the
+past. We can either use the sequence ID to define a query range or we
+can use timestamps matching event's created at. Sequence IDs are unique
+and strictly increasing, meaning that events that occurred later in time
 always have a larger sequence ID. With both options we can query either
 events after a known sequence ID / time or events right before a
 sequence id / time.
@@ -210,12 +212,12 @@ $ flex-cli events --after-ts 2020-12-07 --filter user,listing -m my-marketplace-
 
 ## Output modes and examining events in detail
 
-In addition to the default table output mode, Flex CLI supports `--json`
-and `--json-pretty` modes. In the table output mode the CLI prints only
-summary information about the events. This is useful when wanting to see
-the big picture, which events happened and when. When you want to look
-into the details of an event, you need to use a json mode. With the
-filtering parameter `--seqid` we can target a single event:
+In addition to the default table output mode, Sharetribe CLI supports
+`--json` and `--json-pretty` modes. In the table output mode the CLI
+prints only summary information about the events. This is useful when
+wanting to see the big picture, which events happened and when. When you
+want to look into the details of an event, you need to use a json mode.
+With the filtering parameter `--seqid` we can target a single event:
 
 ```bash
 $ flex-cli events --seqid 3471843 -m my-marketplace-dev --json-pretty
@@ -283,8 +285,8 @@ reference for
 
 While `--json-pretty` is a good mode for examining the event details
 manually, `--json` is the mode you want when needing to programmatically
-parse the output. In `--json` mode Flex CLI prints the events as one
-line JSON objects.
+parse the output. In `--json` mode Sharetribe CLI prints the events as
+one line JSON objects.
 
 ```bash
 $ flex-cli events -m my-marketplace-dev --json | less
@@ -373,8 +375,8 @@ $ flex-cli events --filter listing -m my-marketplace-dev --json | jq '{sequenceI
 
 ## Live tailing events
 
-Flex CLI also offers a way to follow events live as they happen, a.k.a.
-live tail them. The command to do this is `events tail`
+Sharetribe CLI also offers a way to follow events live as they happen,
+a.k.a. live tail them. The command to do this is `events tail`
 
 ```bash
 $ flex-cli help events tail
@@ -417,17 +419,17 @@ Seq ID   Resource ID                           Event type                     Cr
 
 ## Summary
 
-Flex CLI gives you visibility into the events that happen in your
+Sharetribe CLI gives you visibility into the events that happen in your
 marketplace. It supports querying events in a few different ways based
 on event types, affected resource or time. It also supports following
 events that happen in your marketlpace live.
 
-Using Flex CLI to examine events is a great way to see what's happening
-in your marketplace and how the marketplace data has gotten to it's
-current state. Looking at the events using Flex CLI is also a great way
-to get started with planning how to build an integration that reacts to
-events as it allows you to see what kind of events happen when, and
-what's the data that's recorded for each event.
+Using Sharetribe CLI to examine events is a great way to see what's
+happening in your marketplace and how the marketplace data has gotten to
+it's current state. Looking at the events using Sharetribe CLI is also a
+great way to get started with planning how to build an integration that
+reacts to events as it allows you to see what kind of events happen
+when, and what's the data that's recorded for each event.
 
 For more information about events, see the following resources:
 

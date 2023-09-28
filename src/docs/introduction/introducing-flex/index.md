@@ -119,14 +119,14 @@ of the Integration API, visit the
 about
 [integrations in Sharetribe](/concepts/integrations-introduction/).
 
-### Flex CLI
+### Sharetribe CLI
 
-Flex CLI (Command-line interface) is a tool for changing your
+Sharetribe CLI (Command-line interface) is a tool for changing your
 marketplace's advanced configurations such as transaction processes and
 email templates.
 
 See the
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/)
 tutorial for more information.
 
 ## Is Sharetribe the right fit for you?

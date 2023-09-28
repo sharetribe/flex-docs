@@ -92,7 +92,7 @@ A listing can have several different states:
   published, so the listing is waiting for operator's approval before it
   is published. You can enable or disable the listing approval
   functionality for your marketplace in
-  [Flex CLI](/introduction/getting-started-with-flex-cli/#enable-and-disable-listing-approval-functionality).
+  [Sharetribe CLI](/introduction/getting-started-with-flex-cli/#enable-and-disable-listing-approval-functionality).
 - **Closed.** The listing used to be published, but has since been
   closed, either by the provider or by the operator. The listing is
   still visible to the provider, but not discoverable via search.

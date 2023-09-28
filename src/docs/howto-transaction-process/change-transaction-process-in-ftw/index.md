@@ -21,8 +21,9 @@ those processes.
 
 How the transaction process works underneath the Marketplace API depends
 on how your process is customised in our backend. To customise the
-transaction process in the backend, you should use Flex CLI. See the
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
+transaction process in the backend, you should use Sharetribe CLI. See
+the
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/)
 tutorial to get familiar with the tool.
 
 <plan tier="extend" feature="Adding new transaction processes"></plan>

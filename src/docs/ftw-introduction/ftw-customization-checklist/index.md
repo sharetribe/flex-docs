@@ -75,7 +75,7 @@ other changes you may want to make. Some of these options include:
 - Create new static pages
 - Update the routing in your marketplace
 - Update transaction email templates. For more information, see
-  [Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
+  [Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-flex-cli/)
   tutorial and [Email templates](/references/email-templates/) reference
   article.
 - Add more content pages:

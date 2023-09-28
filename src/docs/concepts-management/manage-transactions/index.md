@@ -110,10 +110,10 @@ it is seared in the transaction information. Transaction related
 protected data cannot be changed through Console.
 
 At the bottom of the transaction card, you find the Events section. It
-contains a Flex CLI command that you can use to view all the events
-related to this transaction. Read more about
-[viewing events with Flex CLI](/how-to/view-events-with-flex-cli/) or
-visit the [Events reference in our Docs site](/references/events/).
+contains a Sharetribe CLI command that you can use to view all the
+events related to this transaction. Read more about
+[viewing events with Sharetribe CLI](/how-to/view-events-with-flex-cli/)
+or visit the [Events reference in our Docs site](/references/events/).
 
 ## Browse and Search transactions
 

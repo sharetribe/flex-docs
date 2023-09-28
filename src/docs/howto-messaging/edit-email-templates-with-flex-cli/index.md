@@ -1,5 +1,5 @@
 ---
-title: Edit email templates with Flex CLI
+title: Edit email templates with Sharetribe CLI
 slug: edit-email-templates-with-flex-cli
 updated: 2020-10-29
 category: how-to-messaging
@@ -10,19 +10,19 @@ skills: basic command line, text editing
 published: true
 ---
 
-Flex CLI (Command-line interface) is a tool for changing your
+Sharetribe CLI (Command-line interface) is a tool for changing your
 marketplace's advanced configurations such as transaction processes and
 email templates.
 
 <plan tier="extend" feature="Access to Sharetribe CLI"></plan>
 
-This tutorial expects that you have already installed Flex CLI and are
-logged in with your API key. If not, it's recommended to first read the
-tutorial
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
+This tutorial expects that you have already installed Sharetribe CLI and
+are logged in with your API key. If not, it's recommended to first read
+the tutorial
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-flex-cli/).
 
 We also recommend that you go through the
-[Edit transaction process with Flex CLI](/how-to/edit-transaction-process-with-flex-cli/)
+[Edit transaction process with Sharetribe CLI](/how-to/edit-transaction-process-with-flex-cli/)
 tutorial to understand process pulling, editing, pushing, and alias
 handling on a general level.
 
@@ -316,7 +316,7 @@ This is the generic workflow to update the notification email contents
 that are part of the transaction process of your marketplace.
 
 With this and the
-[Edit transaction process with Flex CLI](/how-to/edit-transaction-process-with-flex-cli/)
+[Edit transaction process with Sharetribe CLI](/how-to/edit-transaction-process-with-flex-cli/)
 tutorial, you now know how to change the transaction process and its
 email templates. As a next step, you might want to read the
 [Transaction process format](/references/transaction-process-format/)
