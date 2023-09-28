@@ -30,7 +30,7 @@ For more information about pricing in Sharetribe, see the
 Pricing can be based on a lot of variables, but one practical way to
 build it is to base it on information stored as extended data in
 listings. See the
-[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-template/)
 how-to guide to read how to extend the listing data model with extended
 data. See the same guide for instructions how to add inputs for new
 attributes in the listing wizard. Alternatively, in order to try out

@@ -1,8 +1,8 @@
 ---
 title: Routing
-slug: how-routing-works-in-ftw
+slug: how-routing-works-in-template
 updated: 2023-01-01
-category: ftw-routing
+category: template-routing
 ingress:
   This article explains how routing works in the Sharetribe Web Template
 published: true
@@ -189,7 +189,8 @@ _RouteComponentRenderer_, which has four important jobs:
 - Dispatch location changed actions to Redux store. This makes it
   possible for analytics Redux middleware to listen to location changes.
   For more information, see the
-  [Enable analytics](/ftw/how-to-set-up-analytics-for-ftw/) guide.
+  [Enable analytics](/template/how-to-set-up-analytics-for-template/)
+  guide.
 - Rendering of the page-level component that the Route is connected
   through the configuration. Those page-level components are Loadable
   Components. When a page is rendered for the first time, the code-chunk
@@ -311,7 +312,7 @@ when the mouse is over **NamedLink**. In addition, **Form** and
 loaded before the user has actually clicked the button or executed form
 submit.
 
-Read more about [code-splitting](/ftw/how-code-splitting-works-in-ftw/).
+Read more about [code-splitting](/template/code-splitting-in-template/).
 
 ## Analytics
 
@@ -333,7 +334,8 @@ changes and sends tracking events to configured services.
 ```
 
 For more information, see the
-[Enable analytics](/ftw/how-to-set-up-analytics-for-ftw/) guide.
+[Enable analytics](/template/how-to-set-up-analytics-for-template/)
+guide.
 
 ## A brief introduction to SSR
 

@@ -109,7 +109,7 @@ time including all the basic functionality of an online marketplace out
 of the box.
 
 You get access to the
-[Sharetribe Web Template](https://www.sharetribe.com/docs/ftw/sharetribe-web-template/),
+[Sharetribe Web Template](https://www.sharetribe.com/docs/template/sharetribe-web-template/),
 an open sourced frontend template that helps you reduce how much
 development you need to launch.You and your team can skip the
 time-consuming process of creating basic marketplace functionality like

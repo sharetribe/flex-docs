@@ -1,8 +1,8 @@
 ---
 title: Customizing the template
-slug: how-to-customize-ftw
+slug: how-to-customize-template
 updated: 2023-01-01
-category: ftw-introduction
+category: template-introduction
 ingress:
   This article helps you set up the development environment and outlines
   the best practices you should follow while developing on the
@@ -133,8 +133,8 @@ hosting platform. See our article on deploying the template to
 [Render](/tutorial/deploy-to-render/#deploy-to-render) for more
 information.
 
-See the full list of [environment variables](/ftw/ftw-env/) for more
-information.
+See the full list of [environment variables](/template/template-env/)
+for more information.
 
 For in-app configurations, see the
 [src/config directory](https://github.com/sharetribe/web-template/tree/main/src/config).
@@ -206,13 +206,13 @@ yarn test
 ```
 
 For more information on tests, see the documentation on
-[how to test the template](/ftw/how-to-test-ftw/).
+[how to test the template](/template/how-to-test-template/).
 
 ## Further reading
 
 There are many things that you should change in the default template and
 many more that you can change. For more information, check the
-[template customization checklist](/ftw/customization-checklist/)
+[template customization checklist](/template/customization-checklist/)
 documentation before publishing your site. Also see the
 [tutorial](/tutorial/introduction/) and other articles in the
-[Sharetribe Web Template](/ftw/) and [How-to](/how-to/) categories.
+[Sharetribe Web Template](/template/) and [How-to](/how-to/) categories.

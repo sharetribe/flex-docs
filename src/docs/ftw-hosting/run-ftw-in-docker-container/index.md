@@ -1,8 +1,8 @@
 ---
 title: How to run Sharetribe Web Template in a Docker container
-slug: run-ftw-with-docker
+slug: run-template-with-docker
 updated: 2023-02-20
-category: ftw-hosting
+category: template-hosting
 ingress:
   This guide describes how to set up a Docker container running the
   Sharetribe Web Template.
@@ -70,14 +70,14 @@ include the final `.` , as it indicates that the Dockerfile is in the
 current directory.
 
 ```shell
-$ docker build -t ftw-docker .
+$ docker build -t sharetribe-docker .
 ```
 
 The build step can take a while. After the build step completes, you can
 start a container using the image you created.
 
 ```shell
-$ docker run -dp 4000:4000 ftw-docker
+$ docker run -dp 4000:4000 sharetribe-docker
 ```
 
 You can now visit _http://localhost:4000_ on your local machine to see

@@ -114,7 +114,7 @@ Sharetribe built other templates called "Flex Templates for Web." The
 Sharetribe Web Template is an upgrade on these templates and combines
 their functionalities into a single code base. You can find more
 information about these legacy templates
-[here](https://www.sharetribe.com/docs/ftw/legacy-templates/).
+[here](https://www.sharetribe.com/docs/template/legacy-templates/).
 
 ### Environments
 

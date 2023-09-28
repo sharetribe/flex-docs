@@ -293,5 +293,5 @@ For more information, see the following resources:
 - API reference for the
   [/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
   endpoint in the Integration API
-- [Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
+- [Extend listing data in FTW](/how-to/extend-listing-data-in-template/)
 - [Change search filters in FTW](/how-to/change-search-filters-in-ftw/)

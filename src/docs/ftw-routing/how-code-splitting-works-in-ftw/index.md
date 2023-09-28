@@ -1,8 +1,8 @@
 ---
 title: Code splitting
-slug: how-code-splitting-works-in-ftw
+slug: code-splitting-in-template
 updated: 2023-01-01
-category: ftw-routing
+category: template-routing
 ingress:
   This article explains how code splitting works in the Sharetribe Web
   Template.

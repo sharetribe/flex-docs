@@ -71,7 +71,7 @@ _src/transactions/transactionProcessBooking.js_ or
 _src/transactions/transactionProcessPurchase.js_ for the correct states
 in each process. The transaction process file should be updated to match
 the new transaction process.
-[Read more about editing transaction related files](/how-to/change-transaction-process-in-ftw/#2-update-the-relevant-files-in-srctransactions-folder).
+[Read more about editing transaction related files](/how-to/change-transaction-process-in-template/#2-update-the-relevant-files-in-srctransactions-folder).
 
 Example:
 

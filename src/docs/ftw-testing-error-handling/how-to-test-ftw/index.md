@@ -1,8 +1,8 @@
 ---
 title: Running snapshot tests
-slug: how-to-test-ftw
+slug: how-to-test-template
 updated: 2023-01-01
-category: ftw-testing-error-handling
+category: template-testing-error-handling
 ingress:
   This guide describes how to use the test setup in the Sharetribe Web
   Template

@@ -295,7 +295,7 @@ be completed.
 The footer or Top bar cannot be edited using Pages. Changing their
 content requires changing your marketplace code directly. Contact your
 developer if you need help with changes or follow our
-[developer documentation](https://www.sharetribe.com/docs/ftw/how-to-add-static-pages-in-ftw/)
+[developer documentation](https://www.sharetribe.com/docs/template/how-to-add-static-pages/)
 to learn more about editing the code of content pages.
 
 ## Publish your Page changes to Live

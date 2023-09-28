@@ -189,5 +189,5 @@ library.
 
 Read more about the CSS architecture used in the Sharetribe Web Template
 in our
-[Styling and CSS](https://www.sharetribe.com/docs/ftw/how-to-customize-ftw-styles/)
+[Styling and CSS](https://www.sharetribe.com/docs/template/how-to-customize-template-styles/)
 article.

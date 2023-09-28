@@ -1,8 +1,8 @@
 ---
 title: Template environment variables
-slug: ftw-env
+slug: template-env
 updated: 2023-01-01
-category: ftw-configuration
+category: template-configuration
 ingress:
   Reference documentation for environment variables in the Sharetribe
   Web Template.
@@ -19,12 +19,14 @@ of environment variables.
 
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
-  See the [How to set up Mapbox](/ftw/how-to-set-up-mapbox-for-ftw/)
+  See the
+  [How to set up Mapbox](/template/how-to-set-up-mapbox-for-template/)
   guide for more information.
 
 - **`REACT_APP_GOOGLE_MAPS_API_KEY`**
 
-  See the [How to use Google Maps](/ftw/how-to-use-google-maps-in-ftw/)
+  See the
+  [How to use Google Maps](/template/how-to-use-google-maps-in-template/)
   guide for more information.
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
@@ -76,13 +78,13 @@ of environment variables.
 - **`REACT_APP_SENTRY_DSN`**
 
   See the
-  [How to set up Sentry to log errors](/ftw/how-to-set-up-sentry/) guide
-  for more information.
+  [How to set up Sentry to log errors](/template/how-to-set-up-sentry/)
+  guide for more information.
 
 - **`REACT_APP_CSP`**
 
   See the
-  [How to set up Content Security Policy (CSP)](/ftw/how-to-set-up-csp-for-ftw/)
+  [How to set up Content Security Policy (CSP)](/template/how-to-set-up-csp-for-template/)
   guide for more information.
 
 - **`BASIC_AUTH_USERNAME`**
@@ -96,8 +98,8 @@ of environment variables.
 - **`REACT_APP_GOOGLE_ANALYTICS_ID`**
 
   See the
-  [How to set up Analytics](/ftw/how-to-set-up-analytics-for-ftw/) guide
-  for more information.
+  [How to set up Analytics](/template/how-to-set-up-analytics-for-template/)
+  guide for more information.
 
 * **`REACT_APP_SHARETRIBE_SDK_BASE_URL`**
 

@@ -342,8 +342,8 @@ environment_.
 
 <info>
 
-See the [template environment variables](/ftw/ftw-env/) for more
-information on the environment variables.
+See the [template environment variables](/template/template-env/) for
+more information on the environment variables.
 
 </info>
 

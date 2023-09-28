@@ -226,8 +226,8 @@ the timeline of different actions to suit your marketplace.
 You can edit the transaction processes on your marketplace with
 [Sharetribe CLI](/how-to/edit-transaction-process-with-sharetribe-cli/).
 If you use Sharetribe Web Template, you will also need to make some
-[changes in the template](/how-to/change-transaction-process-in-ftw/) to
-enable it to use a different process. If you do make changes to a
+[changes in the template](/how-to/change-transaction-process-in-template/)
+to enable it to use a different process. If you do make changes to a
 transaction process when you already have transactions in your
 environment, it is good to note that a transaction will proceed with the
 transaction process it was initiated with, and changing the transaction

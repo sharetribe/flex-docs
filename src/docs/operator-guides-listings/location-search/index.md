@@ -14,7 +14,7 @@ from
 
 Location features in Sharetribe are powered by Mapbox. You can read more
 about
-[setting your Mapbox account in this article](https://www.sharetribe.com/docs/ftw/how-to-set-up-mapbox-for-ftw/).
+[setting your Mapbox account in this article](https://www.sharetribe.com/docs/template/how-to-set-up-mapbox-for-template/).
 Location search allows you to use a location to find listings near that
 location or within that searched area.
 

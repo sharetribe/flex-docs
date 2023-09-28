@@ -113,7 +113,7 @@ const VersionBanner = props => {
             legacy documentation.
           </span>
           <div>
-            <a href="/docs/ftw/legacy-templates/">Read more</a>
+            <a href="/docs/template/legacy-templates/">Read more</a>
             <a target="_blank" href="https://www.sharetribe.com/docs/legacy/">
               Legacy documentation
             </a>

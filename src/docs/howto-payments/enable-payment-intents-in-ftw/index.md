@@ -220,8 +220,8 @@ credit card issuers, you should test at least some credit cards how they
 work in a live environment.
 
 This can be done by creating another
-[live environment](/ftw/how-to-deploy-ftw-to-production/) instance of
-your client app that uses
+[live environment](/template/how-to-deploy-template-to-production/)
+instance of your client app that uses
 
 - your live Client Id for Sharetribe and
 - live Stripe keys (both publishable and secret).

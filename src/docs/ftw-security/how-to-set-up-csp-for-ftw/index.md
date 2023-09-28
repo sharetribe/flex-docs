@@ -1,8 +1,8 @@
 ---
 title: Content Security Policy
-slug: how-to-set-up-csp-for-ftw
+slug: how-to-set-up-csp-for-template
 updated: 2023-08-02
-category: ftw-security
+category: template-security
 ingress:
   This guide describes how to set up a Content Security Policy when
   using the Sharetribe Web Template.
@@ -44,7 +44,7 @@ The environment value accepts three values:
   requests that violate the policy are blocked
 
 If error logging with Sentry is enabled (See the
-[How to set up Sentry to log errors ](/ftw/how-to-set-up-sentry/)
+[How to set up Sentry to log errors ](/template/how-to-set-up-sentry/)
 guide), the reports are sent to Sentry. Otherwise, the reports are
 logged in the backend.
 

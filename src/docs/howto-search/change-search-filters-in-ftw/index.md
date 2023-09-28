@@ -89,7 +89,7 @@ field.
 First step for adding a new filter is to make sure that the data being
 used for filtering is saved in the listing's `publicData` attribute. On
 how to achieve this, please refer to the
-[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-template/)
 how-to guide. Another aspect in search filters is that a
 [search schema](/references/extended-data/#search-schema) needs to be
 added to the data in order for API to index it for search. Adding search
@@ -108,7 +108,7 @@ another type of extended data.
 Further reading on public data can be found in the
 [listing extended data concepts article](/concepts/listing-extended-data/)
 and the
-[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-template/)
 how-to guide.
 
 In Sharetribe, only top-level attributes can be indexed i.e. used for
@@ -189,7 +189,7 @@ There you need to add the _gears_ attribute's configurations to the
 
 <info>
 
-[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-template/)
 how-to guide explains the listing extended data configurations in more
 detail.
 
@@ -255,7 +255,7 @@ When you have your custom filter component ready, you need to add it to
 
 Settings configured in local configurations files are overridden by any
 fetched via the Asset Delivery API. You can refer to
-[this article](/ftw/hosted-and-local-configurations/) to modify the way
-your template merges local and hosted configurations.
+[this article](/template/hosted-and-local-configurations/) to modify the
+way your template merges local and hosted configurations.
 
 </info>

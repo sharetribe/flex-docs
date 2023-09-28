@@ -36,7 +36,7 @@ API maps to visual elements in the default “About page” in the template:
 The content you edit through Console can be queried through the Asset
 Delivery API. The template queries this data automatically and renders
 the content on dynamic content pages using it. Learn more about how the
-template renders content pages [here](/ftw/page-builder/).
+template renders content pages [here](/template/page-builder/).
 
 A basic query to the Asset Delivery API to fetch the content of the
 landing page looks like this:

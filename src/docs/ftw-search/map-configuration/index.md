@@ -2,7 +2,7 @@
 title: Map configurations
 slug: configure-maps
 updated: 2023-01-01
-category: ftw-search
+category: template-search
 ingress:
   This article discusses configuration settings for maps, with which you
   can customize the appearance and functionality of the maps in your

@@ -58,7 +58,7 @@ The main steps to take to achieve this are:
 
 **If you are working with one of our legacy templates and are not sure
 whether using Open ID Connect proxy is enabled, take a look at our
-[legacy documentation](/ftw/legacy-templates/).**
+[legacy documentation](/template/legacy-templates/).**
 
 ## A note about development environments
 

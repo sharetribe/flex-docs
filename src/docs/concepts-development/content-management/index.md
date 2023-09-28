@@ -174,7 +174,7 @@ default.
 
 For legacy template versions that do not have asset-based content
 capabilities, you can refer to our
-[legacy template documentation](/ftw/legacy-templates/).
+[legacy template documentation](/template/legacy-templates/).
 
 To see your page changes in your client application, you need to save
 your changes in Sharetribe Console and navigate to the corresponding
@@ -230,4 +230,4 @@ own.
 Read more about how the template shows content created in Sharetribe
 Console:
 
-- [How the Sharetribe Web Template renders content pages using the PageBuilder](/ftw/page-builder/)
+- [How the Sharetribe Web Template renders content pages using the PageBuilder](/template/page-builder/)

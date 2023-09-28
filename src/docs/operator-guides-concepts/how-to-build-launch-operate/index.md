@@ -62,7 +62,7 @@ Hosting your own code is a technical process and
 [we recommend hiring a Flex Expert](https://www.sharetribe.com/docs/operator-guides/how-to-hire-developer/)
 if you have never done this before. You can learn more about the
 technical steps involved in moving to Live in
-[this guide.](https://www.sharetribe.com/docs/ftw/how-to-deploy-ftw-to-production/#deploying-to-production)
+[this guide.](https://www.sharetribe.com/docs/template/how-to-deploy-template-to-production/#deploying-to-production)
 
 ## Extend infinitely with code
 

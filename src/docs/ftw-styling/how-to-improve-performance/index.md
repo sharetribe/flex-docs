@@ -2,7 +2,7 @@
 title: Performance and page speed
 slug: how-to-improve-performance
 updated: 2023-01-01
-category: ftw-styling
+category: template-styling
 ingress:
   This guide describes ways to improve the loading and rendering
   performance of your marketplace.
@@ -107,4 +107,4 @@ directory. Those components end up to main chunk file that is downloaded
 on each page (when full page-load is requested).
 
 You can read more
-[in the code splitting article](/ftw/how-code-splitting-works-in-ftw/).
+[in the code splitting article](/template/code-splitting-in-template/).

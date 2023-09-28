@@ -261,7 +261,7 @@ For more details of the transaction process format, see the
 [Transaction process format](/references/transaction-process-format/)
 reference. To customise the UI of your marketplace to match your process
 changes, see the
-[Change transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-ftw/)
+[Change transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-template/)
 how-to guide.
 
 If you’re working with a developer, then you need to communicate how you

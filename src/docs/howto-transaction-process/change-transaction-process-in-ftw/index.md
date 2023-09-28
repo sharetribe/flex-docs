@@ -1,6 +1,6 @@
 ---
 title: Change transaction process in Sharetribe Web Template
-slug: change-transaction-process-in-ftw
+slug: change-transaction-process-in-template
 updated: 2022-11-22
 category: how-to-transaction-process
 ingress:
@@ -64,8 +64,8 @@ processes in the same application).
 
 Settings configured in local configurations files are overridden by any
 fetched via the Asset Delivery API. You can refer to
-[this article](/ftw/hosted-and-local-configurations/) to modify the way
-your template merges local and hosted configurations.
+[this article](/template/hosted-and-local-configurations/) to modify the
+way your template merges local and hosted configurations.
 
 </info>
 
@@ -299,7 +299,7 @@ process and state specific.
 This means that when you create a new transaction process, you will also
 need to add microcopy for the relevant keys and states in the new
 process. You can add the process specific keys either into the
-[bundled microcopy files in the template](/ftw/how-to-change-ftw-bundled-microcopy/)
+[bundled microcopy files in the template](/template/how-to-change-ftw-bundled-microcopy/)
 or through the [Sharetribe Console Content tab](/concepts/microcopy/).
 
 After making the necessary changes in these contexts, your new

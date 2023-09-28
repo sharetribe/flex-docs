@@ -133,7 +133,7 @@ to update your transaction process.
 [Learn more about how the transaction process supporting SCA and Stripe integration works](/concepts/payment-intents/).
 If you're developing on the Sharetribe Web Template, your user interface
 already supports SCA, but if you're using an old
-[legacy template](https://www.sharetribe.com/docs/ftw/legacy-templates/)
+[legacy template](https://www.sharetribe.com/docs/template/legacy-templates/)
 without this feature, you will also need to update your checkout user
 interface.
 [Learn more about how to take SCA and Payment Intents into use](/how-to/enable-payment-intents/).

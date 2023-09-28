@@ -142,4 +142,4 @@ articles:
 - [How to format your text in Pages with Markdown](/operator-guides/how-to-format-your-text-in-pages/)
 - [Section templates](/operator-guides/section-templates/)
 - [Content modelling and management](/concepts/content-management/)
-- [Learn how the template renders content pages](/ftw/page-builder/)
+- [Learn how the template renders content pages](/template/page-builder/)

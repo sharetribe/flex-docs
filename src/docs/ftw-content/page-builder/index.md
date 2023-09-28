@@ -2,7 +2,7 @@
 title: How the template renders content pages
 slug: page-builder
 updated: 2023-14-02
-category: ftw-content
+category: template-content
 ingress:
   This article introduces how the Sharetribe Web Template uses the Pages
   feature to generate content pages.
@@ -19,13 +19,13 @@ template.
 
 <extrainfo title="I am using a legacy template without Pages support">
 
-Read more about the code-level changes introduced to the legacy FTW
+Read more about the code-level changes introduced in the legacy FTW
 templates in the release notes of
 [version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0).
 
 You can find instructions on adding the Pages capability into your
 legacy template
-[in our legacy documentation](https://www.sharetribe.com/docs/ftw/legacy-templates/).
+[in our legacy documentation](https://www.sharetribe.com/docs/template/legacy-templates/).
 
 </extrainfo>
 
@@ -38,7 +38,7 @@ questions” page or a “Terms of Service” page. These pages have long
 sections of written text that might include images, links and videos.
 
 In older versions of our
-[legacy templates](https://www.sharetribe.com/docs/ftw/legacy-templates/),
+[legacy templates](https://www.sharetribe.com/docs/template/legacy-templates/),
 the data on these content pages was hard-coded into the corresponding
 page file. For instance, the content of the About Page was
 [written directly into the code](https://github.com/sharetribe/ftw-daily/blob/7a2f9b0557607533097761c063f7f98d7c8bfc1a/src/containers/AboutPage/AboutPage.js)
@@ -102,9 +102,10 @@ different client applications.
 ### Routing and loadData calls
 
 Sharetribe Web Template uses React Router to
-[create routes](/ftw/how-routing-works-in-ftw/) to different pages. This
-is best demonstrated through an example. When a user navigates to the
-about page, it triggers the loadData function specified in
+[create routes](/template/how-routing-works-in-template/) to different
+pages. This is best demonstrated through an example. When a user
+navigates to the about page, it triggers the loadData function specified
+in
 [routeConfiguration.js](https://github.com/sharetribe/web-template/blob/main/src/routing/routeConfiguration.js#L76):
 
 ```js
@@ -117,7 +118,7 @@ about page, it triggers the loadData function specified in
 ```
 
 In
-[legacy templates](https://www.sharetribe.com/docs/ftw/legacy-templates/),
+[legacy templates](https://www.sharetribe.com/docs/template/legacy-templates/),
 no loadData function was defined for the privacy policy path, as the
 page's content was hard coded. Now, as the content of the page is
 fetched using an API call, a loadData function is specified in
@@ -353,4 +354,4 @@ console view in your browser's developer tools tab.
 All Sharetribe Web Template versions support Pages. If you want to add
 Pages capabilities to an older template that does not support Pages, you
 can review
-[the instructions in our legacy documentation](https://www.sharetribe.com/docs/legacy/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).
+[the instructions in our legacy documentation](https://www.sharetribe.com/docs/legacy/template/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).

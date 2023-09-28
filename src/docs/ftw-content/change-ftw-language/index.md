@@ -1,8 +1,8 @@
 ---
 title: How to change microcopy language
-slug: how-to-change-ftw-language
+slug: how-to-change-template-language
 updated: 2023-09-04
-category: ftw-content
+category: template-content
 ingress:
   This guide describes how to change the language used in the Sharetribe
   Web Template.
@@ -30,8 +30,8 @@ directory for you to start customizing microcopy.
 
 </info>
 
-Even if you use [hosted microcopy](/ftw/hosted-microcopy/) to manage
-your marketplace texts, it is still important to have a built-in
+Even if you use [hosted microcopy](/template/hosted-microcopy/) to
+manage your marketplace texts, it is still important to have a built-in
 language-specific microcopy file in the template as well, so that the
 application can show meaningful messages for any keys missing from the
 Sharetribe Console microcopy asset.

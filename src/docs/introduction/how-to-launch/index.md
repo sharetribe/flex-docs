@@ -139,7 +139,7 @@ Typically, the development work is done by downloading the
 [open source codebase of Sharetribe Web Template](https://github.com/sharetribe/web-template/)
 and customizing it according your needs. If you're a developer, you can
 proceed to do this and
-[start development right away](/ftw/how-to-customize-ftw/).
+[start development right away](/template/how-to-customize-template/).
 
 If you're not a developer yourself and don't have one in your team,
 you'll need to contract or hire a developer to do this work for you. You

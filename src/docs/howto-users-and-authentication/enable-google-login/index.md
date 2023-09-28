@@ -12,7 +12,7 @@ published: true
 
 **If you are working with one of our legacy templates and are not sure
 whether Google login is enabled, take a look at our
-[legacy documentation](/ftw/legacy-templates/).**
+[legacy documentation](/template/legacy-templates/).**
 
 <plan tier="extend" feature="Using identity providers"></plan>
 
@@ -114,7 +114,7 @@ template:
 - **`GOOGLE_CLIENT_SECRET`** The Client Secret of your Google Sign-In.
 
 For more information on the template environment variables, see the
-[Template environment variables](/ftw/ftw-env/) article.
+[Template environment variables](/template/template-env/) article.
 
 That is it. Setting these environment variables will make Sharetribe Web
 Template render the Google login button in signup and login forms.

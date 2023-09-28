@@ -71,7 +71,7 @@ modified similarly to
 
 In this tutorial, we change the microcopy of Hero component, but we have
 another document that dives deeper into this topic:
-[How to change bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/)
+[How to change bundled microcopy](/template/how-to-change-ftw-bundled-microcopy/)
 
 ## Change the microcopy for Topbar component
 
@@ -137,11 +137,11 @@ You also learnt how to locate microcopy keys using the developer tools.
 To get more insight into microcopy syntax, different language files, and
 localization of dates and money values, you should check out the
 article:
-[How to change Sharetribe Web Template bundled microcopy](/ftw/how-to-change-ftw-bundled-microcopy/).
+[How to change Sharetribe Web Template bundled microcopy](/template/how-to-change-ftw-bundled-microcopy/).
 
 To learn more about how the hosted microcopy work in Sharetribe Web
 Template, read the article on
-[hosted assets in Sharetribe Web Template](/ftw/hosted-microcopy/).
+[hosted assets in Sharetribe Web Template](/template/hosted-microcopy/).
 
 To read more about how microcopy can be modified in Flex Console, check
 out the article about [microcopy in Flex](/concepts/microcopy/).

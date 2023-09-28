@@ -155,4 +155,4 @@ describe how to edit the transaction process:
 - [Transaction process](/concepts/transaction-process/)
 - [Action reference for Stripe integration](/references/transaction-process-actions/#stripe-integration)
 - [Editing transaction process](/how-to/edit-transaction-process-with-sharetribe-cli/)
-- [Changing transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-ftw/)
+- [Changing transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-template/)

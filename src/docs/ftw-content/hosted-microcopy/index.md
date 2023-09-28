@@ -2,7 +2,7 @@
 title: Hosted microcopy with Asset Delivery API
 slug: hosted-microcopy
 updated: 2023-01-01
-category: ftw-content
+category: template-content
 ingress:
   This article describes how hosted microcopy work in the Sharetribe Web
   Template.
@@ -237,4 +237,4 @@ This is setup is in use if you run **_yarn run dev_** on local machine.
 If you want to read more, here are some pointers:
 
 - [Asset Delivery API](/references/assets/)
-- [Short intro to SSR](/ftw/how-routing-works-in-ftw/#a-brief-introduction-to-ssr)
+- [Short intro to SSR](/template/how-routing-works-in-template/#a-brief-introduction-to-ssr)

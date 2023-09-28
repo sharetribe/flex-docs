@@ -133,7 +133,7 @@ fields are available via a drop down menu near the top of the page.
 ![search-page-map-view](./search-page-map-view.png)
 
 Learn more about how to
-[configure your search settings](/ftw/configuration/#search-configuration).
+[configure your search settings](/template/configuration/#search-configuration).
 
 ### Browsing and filtering
 
@@ -144,7 +144,7 @@ the fields’ read and write permissions depending on the needed use case,
 and quickly turn listing fields into corresponding filters.
 
 Read more about how to
-[configure extended data in the Sharetribe Web Template](/ftw/configuration/#listing-configuration).
+[configure extended data in the Sharetribe Web Template](/template/configuration/#listing-configuration).
 
 ## Transactions
 

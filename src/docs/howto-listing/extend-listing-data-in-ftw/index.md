@@ -1,6 +1,6 @@
 ---
 title: Extend listing data in Sharetribe Web Template
-slug: extend-listing-data-in-ftw
+slug: extend-listing-data-in-template
 updated: 2020-06-04
 category: how-to-listing
 ingress:
@@ -31,8 +31,8 @@ file.
 
 Settings configured in local configurations files are overridden by any
 fetched via the Asset Delivery API. You can refer to
-[this article](/ftw/hosted-and-local-configurations/) to modify the way
-your template merges local and hosted configurations.
+[this article](/template/hosted-and-local-configurations/) to modify the
+way your template merges local and hosted configurations.
 
 </info>
 

@@ -19,7 +19,7 @@ following articles before proceeding:
 
 - [Content management in Sharetribe](/concepts/content-management/)
 - [Assets reference](/references/assets/)
-- [How the template renders content pages](/ftw/page-builder/)
+- [How the template renders content pages](/template/page-builder/)
 
 This guide will introduce you to best practices for styling and
 customising components used by the PageBuilder.

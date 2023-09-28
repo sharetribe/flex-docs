@@ -243,7 +243,7 @@ should use the editor to modify one of your supported languages. Any
 additional languages supported by your marketplace need to be edited
 separately and shared with your developer to deploy to your marketplace.
 Note that
-[enabling multiple language support requires](/ftw/how-to-change-ftw-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplacee)
+[enabling multiple language support requires](/template/how-to-change-template-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplacee)
 custom development to set up.
 
 ### 5. Publishing microcopy to the live environment

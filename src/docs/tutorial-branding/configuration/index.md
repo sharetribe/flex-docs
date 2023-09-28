@@ -41,13 +41,14 @@ preferred text editor:
 ```
 
 A full list of environment variables can be found here:
-[template environment variables](/ftw/ftw-env/). You can change any of
-these variables _locally_ by just editing the **.env** file. Then you
-need to restart the server by running `yarn run dev` again.
+[template environment variables](/template/template-env/). You can
+change any of these variables _locally_ by just editing the **.env**
+file. Then you need to restart the server by running `yarn run dev`
+again.
 
 You can also find a full list of configuration variables that can be
 changed through the template codebase in the
-[Configuration variables](/ftw/configuration/) article.
+[Configuration variables](/template/configuration/) article.
 
 ## Change the currency
 
@@ -169,6 +170,6 @@ payment and the transaction will fail.
 
 ## Further reading
 
-- [Currency configurations](/ftw/how-to-set-up-currency-in-ftw/)
-- [Environment variables](/ftw/ftw-env/)
-- [Configuration variables](/ftw/configuration/)
+- [Currency configurations](/template/how-to-set-up-currency-in-template/)
+- [Environment variables](/template/template-env/)
+- [Configuration variables](/template/configuration/)

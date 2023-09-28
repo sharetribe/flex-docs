@@ -2,7 +2,7 @@
 title: Customization checklist
 slug: customization-checklist
 updated: 2023-01-01
-category: ftw-introduction
+category: template-introduction
 ingress:
   This article provides a reference list of common customisations to aid
   you in development.
@@ -26,7 +26,7 @@ marketplace’s brand and style, follow these steps:
   [default background image and social media images](/tutorial/change-branding/)
 - [Change the branding of your template](/tutorial/change-branding/)
 - Learn more about the
-  [CSS architecture in the Sharetribe Web Template](/ftw/how-to-customize-ftw-styles/)
+  [CSS architecture in the Sharetribe Web Template](/template/how-to-customize-template-styles/)
 
 ## Content and microcopy
 
@@ -58,9 +58,9 @@ your marketplace uses. These variables are typically used to store
 sensitive information such as API keys, and must be set up correctly in
 order for your marketplace to function properly.
 
-- Configure your [environment variables](/ftw/ftw-env/). You can also
-  run `yarn run config` in the root directory of the template, which
-  will walk you through the setup process.
+- Configure your [environment variables](/template/template-env/). You
+  can also run `yarn run config` in the root directory of the template,
+  which will walk you through the setup process.
 - Go through the configuration files of your marketplace following this
   guide
 
@@ -79,6 +79,6 @@ other changes you may want to make. Some of these options include:
   tutorial and [Email templates](/references/email-templates/) reference
   article.
 - Add more content pages:
-  [How the templates render content pages using the PageBuilder](/ftw/page-builder/)
+  [How the templates render content pages using the PageBuilder](/template/page-builder/)
 - Update other existing pages
   <plan tier="extend" feature="Customizing your transaction process and email templates"></plan>

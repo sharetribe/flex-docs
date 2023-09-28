@@ -83,7 +83,7 @@ in JSON format. Assets can be retrieved by the latest version, or by a
 specific version. Read more:
 
 - [Marketplace assets](/references/assets/)
-- [Handling hosted asset microcopy in the Sharetribe Web Template](/ftw/hosted-microcopy/)
+- [Handling hosted asset microcopy in the Sharetribe Web Template](/template/hosted-microcopy/)
 
 ## Format for editing microcopy in Console
 
@@ -108,7 +108,7 @@ the value.
 ![Simple microcopy phrase in UI](./microcopy_UI_simple.png)
 
 Read more about
-[using microcopy in the Sharetribe Web Template](/ftw/how-to-change-ftw-bundled-microcopy/#using-the-microcopy).
+[using microcopy in the Sharetribe Web Template](/template/how-to-change-ftw-bundled-microcopy/#using-the-microcopy).
 
 ### Simple argument
 
@@ -249,4 +249,4 @@ shows the correct language, for example:
 ```
 
 Read more about what to consider when
-[building a multilanguage Flex marketplace on top of Sharetribe Web Template](/ftw/how-to-change-ftw-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplace).
+[building a multilanguage Flex marketplace on top of Sharetribe Web Template](/template/how-to-change-template-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplace).

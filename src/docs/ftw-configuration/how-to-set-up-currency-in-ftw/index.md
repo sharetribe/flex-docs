@@ -1,8 +1,8 @@
 ---
 title: Currency configurations
-slug: how-to-set-up-currency-in-ftw
+slug: how-to-set-up-currency-in-template
 updated: 2023-01-01
-category: ftw-configuration
+category: template-configuration
 ingress:
   The Sharetribe Web Template uses USD as the default currency. This
   guide will help you to change the default currency and other
@@ -57,7 +57,7 @@ The variable `listingMinimumPriceSubUnits` defines the minimum price a
 customer can give a listing.
 
 If you want to allow listings with no price, you will need to
-[add a new transaction process](/how-to/change-transaction-process-in-ftw/)
+[add a new transaction process](/how-to/change-transaction-process-in-template/)
 where you have removed pricing and payment related actions.
 
 ## Currency subunits

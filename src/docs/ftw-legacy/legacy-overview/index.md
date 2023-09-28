@@ -2,7 +2,7 @@
 title: Legacy templates
 slug: legacy-templates
 updated: 2023-01-01
-category: ftw-legacy
+category: template-legacy
 ingress:
   This article describes the Flex Templates for web that are deprecated
   on the release of the new Sharetribe Web Template.
@@ -33,8 +33,8 @@ with development related issues. In addition, you will be able to access
 the documentation for the legacy templates until 12/2024.
 
 Read more about the new Sharetribe Web Template in the
-[introduction article](/ftw/sharetribe-web-template/) and refer to the
-legacy documentation here.
+[introduction article](/template/sharetribe-web-template/) and refer to
+the legacy documentation here.
 
 ## Migrate to the Sharetribe Web Template
 

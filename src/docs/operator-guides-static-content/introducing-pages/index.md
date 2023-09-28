@@ -123,7 +123,7 @@ default pages” to their Test environment to start making changes.
 Marketplaces built or being built on Flex before February, 15th, 2023
 need to modify their frontend marketplace code to take Pages into use.
 Developers can consult
-[this guide](https://www.sharetribe.com/docs/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw)
+[this guide](https://www.sharetribe.com/docs/template/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw)
 to learn how to update existing marketplace codebases with Pages
 functionality.
 

@@ -109,7 +109,7 @@ keywords match.
 
 In order to take the keyword search into use in the Sharetribe Web
 Template, you need to
-[change the configuration files](/ftw/configuration/#search-configuration).
+[change the configuration files](/template/configuration/#search-configuration).
 
 ## Location search
 

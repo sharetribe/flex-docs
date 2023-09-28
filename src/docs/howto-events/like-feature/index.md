@@ -242,7 +242,7 @@ _ListingPage.duck.js_. We'll need to import the _currentUserShowSuccess_
 function from _user.duck.js_ to update the current user. In addition,
 we'll be adding a new action type, action creator and reducer to the
 file. For more information on how Redux is setup in FTW, refer to our
-[article on Redux](/ftw/ftw-redux/).
+[article on Redux](/template/redux/).
 
 ###### Step 1: Import currentUserShowSuccess
 

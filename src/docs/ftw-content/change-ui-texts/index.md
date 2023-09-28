@@ -1,8 +1,8 @@
 ---
 title: Change template texts
-slug: how-to-change-ftw-ui-texts
+slug: how-to-change-template-ui-texts
 updated: 2023-01-01
-category: ftw-content
+category: template-content
 ingress:
   This guide gives an overview how to change the user interface texts in
   the Sharetribe Web Template.
@@ -31,12 +31,13 @@ operators can also modify microcopy in Sharetribe Console using hosted
 microcopy assets. The built-in microcopy is merged with the hosted
 microcopy in the template, so you can use both ways of managing
 microcopy. Read more about how to
-[modify built-in microcopy in the template](/ftw/how-to-change-ftw-bundled-microcopy/)
-and [how hosted microcopy work in the template](/ftw/hosted-microcopy/).
+[modify built-in microcopy in the template](/template/how-to-change-ftw-bundled-microcopy/)
+and
+[how hosted microcopy work in the template](/template/hosted-microcopy/).
 
 You may also want to change the language of the user interface entirely.
 Read more about
-[changing the language used in the template](/ftw/how-to-change-ftw-language/).
+[changing the language used in the template](/template/how-to-change-template-language/).
 
 In addition to microcopy, there are other forms of content in the client
 applications that operators may need to manage.
@@ -52,9 +53,9 @@ through Sharetribe Console. The default content pages include
 - Terms of Service
 
 These pages are rendered by the
-[PageBuilder component](/ftw/page-builder/) in the template. In addition
-to these default pages, you can create your own content pages through
-Sharetribe Console, and
+[PageBuilder component](/template/page-builder/) in the template. In
+addition to these default pages, you can create your own content pages
+through Sharetribe Console, and
 [fully manage their content](/concepts/content-management/) without code
 changes. On the template side, you can modify
 [how that content is displayed](/how-to/options-prop/).
@@ -67,7 +68,7 @@ content pages for performance reasons.
 
 More information about adding static content to the application can be
 found in the
-[How to add static pages in the template](/ftw/how-to-add-static-pages-in-ftw/)
+[How to add static pages in the template](/template/how-to-add-static-pages/)
 guide.
 
 ## Labels and countries

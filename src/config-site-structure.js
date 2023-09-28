@@ -119,18 +119,18 @@ const sortingArrayHowToUsers = [
   'implement-delete-user',
 ];
 
-const sortingArrayFTWContent = [
-  'how-to-change-ftw-ui-texts',
-  'how-to-change-ftw-bundled-microcopy',
+const sortingArrayTemplateContent = [
+  'how-to-change-template-ui-texts',
+  'how-to-change-ftw-bundled-microcopy', //TODO HANDLE MICROCOPY ONCE OTHER CHANGE MERGED
   'hosted-microcopy',
-  'how-to-change-ftw-language',
+  'how-to-change-template-language',
   'page-builder',
-  'how-to-add-static-pages-in-ftw',
+  'how-to-add-static-pages',
 ];
 
-const sortingArrayFTWIntroduction = [
+const sortingArrayTemplateIntroduction = [
   'sharetribe-web-template',
-  'how-to-customize-ftw',
+  'how-to-customize-template',
   'customization-checklist',
 ];
 
@@ -141,7 +141,7 @@ const sortingArrayListings = [
 ];
 
 const sortingArrayHowToListings = [
-  'extend-listing-data-in-ftw',
+  'extend-listing-data-in-template',
   'modify-time-intervals',
   'bookings-with-buffer',
 ];
@@ -274,27 +274,27 @@ exports.siteStructure = [
   },
 
   {
-    id: 'ftw',
+    id: 'template',
     isOpen: false,
     subcategories: [
       {
-        id: 'ftw-introduction',
-        sortingArray: sortingArrayFTWIntroduction,
+        id: 'template-introduction',
+        sortingArray: sortingArrayTemplateIntroduction,
       },
-      { id: 'ftw-configuration' },
+      { id: 'template-configuration' },
       {
-        id: 'ftw-content',
-        sortingArray: sortingArrayFTWContent,
+        id: 'template-content',
+        sortingArray: sortingArrayTemplateContent,
       },
-      { id: 'ftw-styling' },
-      { id: 'ftw-routing' },
-      { id: 'ftw-data-flow' },
-      { id: 'ftw-search' },
-      { id: 'ftw-security' },
-      { id: 'ftw-testing-error-handling' },
-      { id: 'ftw-hosting' },
-      { id: 'ftw-analytics' },
-      { id: 'ftw-legacy' },
+      { id: 'template-styling' },
+      { id: 'template-routing' },
+      { id: 'template-data-flow' },
+      { id: 'template-search' },
+      { id: 'template-security' },
+      { id: 'template-testing-error-handling' },
+      { id: 'template-hosting' },
+      { id: 'template-analytics' },
+      { id: 'template-legacy' },
     ],
   },
 

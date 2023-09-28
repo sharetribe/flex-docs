@@ -1,8 +1,8 @@
 ---
 title: State management and Redux
-slug: ftw-redux
+slug: redux
 updated: 2023-01-01
-category: ftw-data-flow
+category: template-data-flow
 ingress:
   This article explains how the Sharetribe Web Template uses Redux for
   state management.

@@ -1,8 +1,8 @@
 ---
 title: Styling and CSS
-slug: how-to-customize-ftw-styles
+slug: how-to-customize-template-styles
 updated: 2023-01-01
-category: ftw-styling
+category: template-styling
 ingress:
   This guide describes the CSS architecture used in the Sharetribe Web
   Template and how to apply changes to the styling using CSS.

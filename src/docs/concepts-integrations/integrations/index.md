@@ -29,7 +29,7 @@ and on the complexity of the integration you are looking to create.
 The simplest integration tool is your client application. Since you have
 full control over your marketplace client app, you can add analytics and
 tracking tools such as [Hotjar](#hotjar-analytics) or
-[Goole Analytics](/ftw/how-to-set-up-analytics-for-ftw/#configure-google-analytics),
+[Goole Analytics](/template/how-to-set-up-analytics-for-template/#configure-google-analytics),
 or messaging tools such as [Sendbird](#sendbird-user-to-user-chat-app)
 or
 [Intercom](https://www.intercom.com/help/en/articles/168-install-intercom-on-your-website-to-support-and-onboard-logged-in-users),
@@ -159,7 +159,7 @@ allows you to collect user activity heatmaps, feedback, and user
 behavior recordings, among other features.
 
 - Add a
-  [tracking script to the client application](/ftw/how-to-set-up-analytics-for-ftw/#custom-analytics-libraries).
+  [tracking script to the client application](/template/how-to-set-up-analytics-for-template/#custom-analytics-libraries).
 - Add custom CSP directives to
   [/server/csp.js](https://github.com/sharetribe/web-template/blob/main/server/csp.js).
 

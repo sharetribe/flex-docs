@@ -1,8 +1,8 @@
 ---
 title: Deploy to production
-slug: how-to-deploy-ftw-to-production
+slug: how-to-deploy-template-to-production
 updated: 2023-01-01
-category: ftw-hosting
+category: template-hosting
 ingress:
   This article describes what to take into account when you deploy the
   Sharetribe Web Template to production.
@@ -79,7 +79,7 @@ look into include [AWS](https://aws.amazon.com/),
 [Digital Ocean](https://www.digitalocean.com/) and
 [Microsoft Azure](https://azure.microsoft.com/). If your deployment
 solution requires using containers, you can refer to our guide on
-[running the template in a Docker container](/ftw/run-ftw-with-docker/).
+[running the template in a Docker container](/template/run-template-with-docker/).
 
 ## Deploying to production
 
@@ -87,7 +87,7 @@ solution requires using containers, you can refer to our guide on
 
 If you are looking to deploy your marketplace on either Heroku or
 Render, please read our detailed deployment guides for both
-[Heroku](/ftw/how-to-deploy-ftw-to-heroku/) and
+[Heroku](/template/how-to-deploy-template-to-heroku/) and
 [Render](/tutorial/deploy-to-render/#deploy-to-render).
 
 </info>
@@ -101,9 +101,9 @@ Deploying your marketplace to production is a three-step process:
 ### Environment variables
 
 For a full list of possible environment variables, see the
-[Environment configuration variables](/ftw/ftw-env/) reference for more
-information. To deploy your marketplace, you need to add at least the
-following variables:
+[Environment configuration variables](/template/template-env/) reference
+for more information. To deploy your marketplace, you need to add at
+least the following variables:
 
 - **`NODE_ENV`**
 
@@ -137,7 +137,7 @@ If using Mapbox, you will need to define this environment variable. Sign
 up for Mapbox and go to the
 [account page](https://www.mapbox.com/account/access-tokens). Then click
 on `Create access token`. See the
-[How to set up Mapbox for Sharetribe Web Template](/ftw/how-to-set-up-mapbox-for-ftw/)
+[How to set up Mapbox for Sharetribe Web Template](/template/how-to-set-up-mapbox-for-template/)
 guide for more information.
 
 - **`REACT_APP_MARKETPLACE_ROOT_URL`**

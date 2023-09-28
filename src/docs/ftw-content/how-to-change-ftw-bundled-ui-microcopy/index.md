@@ -2,7 +2,7 @@
 title: Bundled microcopy
 slug: how-to-change-ftw-bundled-microcopy
 updated: 2023-01-01
-category: ftw-content
+category: template-content
 ingress:
   This guide describes what is bundled microcopy and how to make changes
   to it.
@@ -12,7 +12,8 @@ published: true
 The Sharetribe Web Template supports having a single language for the
 UI. Supported languages are English, French and Spanish, English being
 used by default. For information about changing the language, see the
-[Changing the language](/ftw/how-to-change-ftw-language/) article.
+[Changing the language](/template/how-to-change-template-language/)
+article.
 
 We use the [React Intl](https://github.com/yahoo/react-intl) library to
 represent UI microcopy and to format dates, numbers, and money values.
@@ -21,7 +22,7 @@ In addition to bundled microcopy, Sharetribe allows modifying microcopy
 through the Sharetribe Console:
 
 - [Microcopy in Sharetribe](/concepts/microcopy/)
-- [How hosted microcopy works in the template](/ftw/hosted-microcopy/)
+- [How hosted microcopy works in the template](/template/hosted-microcopy/)
 
 ## The microcopy file
 
