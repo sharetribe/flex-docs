@@ -1,7 +1,7 @@
 ---
 title: Add a new listing wizard tab
 slug: add-new-wizard-tab
-updated: 2023-09-04
+updated: 2023-09-25
 category: tutorial-listings
 ingress: Learn how to add a new tab to the listing creation wizard.
 published: true
@@ -13,28 +13,30 @@ attributes you have configured for your marketplace listings in Flex
 Console. However, you can also add custom tabs to the listing creation
 flow.
 
-![Sauna creation wizard](./saunatime-listing-details.png)
+![Bike creation wizard](./biketribe-listing-details.png)
 
 In addition to having a listing description, we want to allow providers
-to explain the rules of their rental sauna in more detail.
+to explain any potential extra features of their rental bike in more
+detail.
 
 In this tutorial, you will
 
-- Add _EditListingRulesPanel_ and _EditListingRulesForm_ components
+- Add _EditListingExtraFeaturesPanel_ and _EditListingExtraFeaturesForm_
+  components
 - Use the new panel in _EditListingWizard_
-- Show the listing’s rules on the listing page with the
+- Show the listing’s extra features on the listing page with the
   _SectionTextMaybe_ component
 
 <info>
 
 This tutorial uses the following marketplace configurations:
 
-- Layout > Listing page image layout: **Screen-wide cover photo**
+- Layout > Listing page image layout: **Image carousel with thumbnails**
 - Listing types > Transaction process: **Calendar booking**
 
 </info>
 
-## Add EditListingRulesPanel and EditListingRulesForm
+## Add EditListingExtraFeaturesPanel and EditListingExtraFeaturesForm
 
 The different listing wizard panels can be found in the EditListingPage
 folder under EditListingWizard.
@@ -58,50 +60,52 @@ Each panel has the same structure:
 
 In this tutorial, we will use the following files.
 
-- [EditListingRulesPanel.js](/tutorial-assets/EditListingRulesPanel.js)
-- [EditListingRulesPanel.module.css](/tutorial-assets/EditListingRulesPanel.module.css)
-- [EditListingRulesForm.js](/tutorial-assets/EditListingRulesForm.js)
-- [EditListingRulesForm.module.css](/tutorial-assets/EditListingRulesForm.module.css)
+- [EditListingExtraFeaturesPanel.js](/tutorial-assets/EditListingExtraFeaturesPanel.js)
+- [EditListingExtraFeaturesPanel.module.css](/tutorial-assets/EditListingExtraFeaturesPanel.module.css)
+- [EditListingExtraFeaturesForm.js](/tutorial-assets/EditListingExtraFeaturesForm.js)
+- [EditListingExtraFeaturesForm.module.css](/tutorial-assets/EditListingExtraFeaturesForm.module.css)
 
-Create a new folder titled EditListingRulesPanel in the
-EditListingWizard folder. Add the above files into the new folder.
+Create a new folder titled _EditListingExtraFeaturesPanel_ in the
+_EditListingWizard_ folder. Add the above files into the new folder.
 
 ```shell
 └── src
     └── containers
         └── EditListingPage
             └── EditListingWizard
-                └── EditListingRulesPanel
-                    ├── EditListingRulesPanel.js
+                └── EditListingExtraFeaturesPanel
+                    ├── EditListingExtraFeaturesPanel.js
                     ├── …
 ```
 
 <extrainfo title="Add .example.js and .test.js files">
 
-If you want to add EditListingRulesForm.example.js and
-EditListingRulesForm.test.js files as well, you can download them here
+If you want to add _EditListingExtraFeaturesForm.example.js_ and
+_EditListingExtraFeaturesForm.test.js_ files as well, you can download
+them here
 
-- [EditListingRulesForm.test.js](/tutorial-assets/EditListingRulesForm.test.js)
-- [EditListingRulesForm.example.js](/tutorial-assets/EditListingRulesForm.example.js)
+- [EditListingExtraFeaturesForm.test.js](/tutorial-assets/EditListingExtraFeaturesForm.test.js)
+- [EditListingExtraFeaturesForm.example.js](/tutorial-assets/EditListingExtraFeaturesForm.example.js)
 
 </extrainfo>
 
-<extrainfo title="EditListingRulesPanel.js explained">
+<extrainfo title="EditListingExtraFeaturesPanel.js explained">
 
-This section will go through EditListingRulesPanel in more detail.
+This section will go through _EditListingExtraFeaturesPanel_ in more
+detail.
 
 First, we import the necessary elements used in the file. In this
 section, all rows start with `import`.
 
 Next, we create a helper function `getInitialValues` to return any
-existing value of the rules from the listing's public data.
+existing value of the extra features from the listing's public data.
 
 ```js
 const getInitialValues = params => {
   const { listing } = params;
-  const { rules } = listing?.attributes.publicData || {};
+  const { extraFeatures } = listing?.attributes.publicData || {};
 
-  return { rules };
+  return { extraFeatures };
 };
 ```
 
@@ -111,7 +115,7 @@ to set our props into constants for ease of use. We also create a
 handful of other constants to then pass to the returned element.
 
 ```js
-const EditListingRulesPanel = props => {
+const EditListingExtraFeaturesPanel = props => {
   const {
     className,
     rootClassName,
@@ -133,12 +137,12 @@ const EditListingRulesPanel = props => {
 
 The second half of the component is the returned element. First, we show
 a title that depends on whether the listing has been published or not.
-Then, we show the actual EditListingRulesForm.
+Then, we show the actual EditListingExtraFeaturesForm.
 
 In the form _onSubmit_ function, we again use destructuring assignment
-for retrieving the value of _rules_ from the incoming values, and then
-set _rules_ as an attribute for _publicData_ before calling the
-_onSubmit_ function received as a prop.
+for retrieving the value of _extraFeatures_ from the incoming values,
+and then set _extraFeatures_ as an attribute for _publicData_ before
+calling the _onSubmit_ function received as a prop.
 
 ```js
   return (
@@ -146,26 +150,26 @@ _onSubmit_ function received as a prop.
       <H3 as="h1">
         {isPublished ? (
           <FormattedMessage
-            id="EditListingRulesPanel.title"
+            id="EditListingExtraFeaturesPanel.title"
             values={{ listingTitle: <ListingLink listing={listing} />, lineBreak: <br /> }}
           />
         ) : (
           <FormattedMessage
-            id="EditListingRulesPanel.createListingTitle"
+            id="EditListingExtraFeaturesPanel.createListingTitle"
             values={{ lineBreak: <br /> }}
           />
         )}
       </H3>
-      <EditListingRulesForm
+      <EditListingExtraFeaturesForm
         className={css.form}
         initialValues={initialValues}
         onSubmit={values => {
-          const { rules = '' } = values;
+          const { extraFeatures = '' } = values;
 
           // New values for listing attributes
           const updateValues = {
             publicData: {
-              rules
+              extraFeatures
             }
           };
           onSubmit(updateValues);
@@ -188,9 +192,10 @@ finally exports the component.
 
 </extrainfo>
 
-<extrainfo title="EditListingRulesForm.js explained">
+<extrainfo title="EditListingExtraFeaturesForm.js explained">
 
-This section will go through EditListingRulesPanel in more detail.
+This section will go through EditListingExtraFeaturesForm in more
+detail.
 
 First, we import the necessary elements used in the file. In this
 section, all rows start with `import`.
@@ -200,11 +205,11 @@ use the
 [Final Form library](https://final-form.org/docs/final-form/getting-started)
 for form state management. This means that on the highest level, we
 directly return a _FinalForm_ component from our
-EditListingRulesComponent. We then use the FinalForm component's
-_render_ prop to customise our Rules form behavior.
+EditListingExtraFeaturesFormComponent. We then use the FinalForm
+component's _render_ prop to customise our Extra features form behavior.
 
 ```js
-export const EditListingRulesFormComponent = props => (
+export const EditListingExtraFeaturesFormComponent = props => (
   <FinalForm
     {...props}
     render={formRenderProps => {
@@ -232,11 +237,11 @@ export const EditListingRulesFormComponent = props => (
 ```
 
 Above, we have defined the necessary constants to use in the form. It is
-good to note that the EditListingRulesForm component receives an
-_onSubmit_ prop, defined in EditListingRulesPanel, that gets passed
-directly to the FinalForm component. The FinalForm component wraps that
-prop as the _handleSubmit_ form render prop, which we then pass to the
-actual Form as _onSubmit_.
+good to note that the EditListingExtraFeaturesForm component receives an
+_onSubmit_ prop, defined in EditListingExtraFeaturesPanel, that gets
+passed directly to the FinalForm component. The FinalForm component
+wraps that prop as the _handleSubmit_ form render prop, which we then
+pass to the actual Form as _onSubmit_.
 
 The form itself contains only one text field, and the submit button. In
 addition, we show any errors from props.
@@ -246,27 +251,22 @@ addition, we show any errors from props.
         <Form onSubmit={handleSubmit} className={classes}>
           {updateListingError ? (
             <p className={css.error}>
-              <FormattedMessage id="EditListingRulesForm.updateFailed" />
+              <FormattedMessage id="EditListingExtraFeaturesForm.updateFailed" />
             </p>
           ) : null}
           {showListingsError ? (
             <p className={css.error}>
-              <FormattedMessage id="EditListingRulesForm.showListingFailed" />
+              <FormattedMessage id="EditListingExtraFeaturesForm.showListingFailed" />
             </p>
           ) : null}
           <FieldTextInput
-            id={`${formId}rules`}
-            name="rules"
+            id={`${formId}extraFeatures`}
+            name="extraFeatures"
             className={css.input}
             autoFocus={autoFocus}
             type="textarea"
-            label="Rules"
-            placeholder={intl.formatMessage({ id: 'EditListingRulesForm.rulesInputPlaceholder' })}
-            validate={required(
-              intl.formatMessage({
-                id: 'EditListingDetailsForm.descriptionRequired',
-              })
-            )}
+            label="Extra features"
+            placeholder={intl.formatMessage({ id: 'EditListingExtraFeaturesForm.extraFeaturesInputPlaceholder' })}
           />
 
           <Button
@@ -294,7 +294,9 @@ we need to compose
 when exporting the component.
 
 ```js
-export default compose(injectIntl)(EditListingRulesFormComponent);
+export default compose(injectIntl)(
+  EditListingExtraFeaturesFormComponent
+);
 ```
 
 </extrainfo>
@@ -310,15 +312,15 @@ Listing Wizard. The wizard has a layered structure:
   _EditListingWizardTab_ component and an array of supported tabs, as
   well as navigation and the Stripe onboarding parts of the wizard
 
-So to use our new _EditListingRulesPanel_ component, we need to
+So to use our new _EditListingExtraFeaturesPanel_ component, we need to
 
 - import it in the _EditListingWizardTab_ component
 - render it in the correct context, and
-- add `RULES` to the list of supported tabs
+- add `EXTRAFEATURES` to the list of supported tabs
 
-### Add EditListingRulesPanel to EditListingWizardTab
+### Add EditListingExtraFeaturesPanel to EditListingWizardTab
 
-First, import the EditListingRulesPanel component in
+First, import the EditListingExtraFeaturesPanel component in
 EditListingWizardTab.
 
 ```shell
@@ -333,19 +335,19 @@ EditListingWizardTab.
 ```diff
   import EditListingPricingPanel from './EditListingPricingPanel/EditListingPricingPanel';
   import EditListingPricingAndStockPanel from './EditListingPricingAndStockPanel EditListingPricingAndStockPanel';
-+ import EditListingRulesPanel from './EditListingRulesPanel/EditListingRulesPanel';
++ import EditListingExtraFeaturesPanel from './EditListingExtraFeaturesPanel/EditListingExtraFeaturesPanel';
 
 ```
 
 The EditListingWizardTab component also exports constants for all
-supported panels, so let’s add the new RULES panel in that list, as well
-as into the SUPPORTED_TABS array.
+supported panels, so let’s add the new EXTRAFEATURES panel in that list,
+as well as into the SUPPORTED_TABS array.
 
 ```js
 export const DETAILS = 'details';
 export const PRICING = 'pricing';
 export const PRICING_AND_STOCK = 'pricing-and-stock';
-export const RULES = 'rules';
+export const EXTRAFEATURES = 'extra-features';
 export const DELIVERY = 'delivery';
 export const LOCATION = 'location';
 export const AVAILABILITY = 'availability';
@@ -356,7 +358,7 @@ export const SUPPORTED_TABS = [
   DETAILS,
   PRICING,
   PRICING_AND_STOCK,
-  RULES,
+  EXTRAFEATURES,
   DELIVERY,
   LOCATION,
   AVAILABILITY,
@@ -382,10 +384,10 @@ return. Add the following code block to the switch statement, before the
         />
       );
     }
-    case RULES: {
+    case EXTRAFEATURES: {
       return (
-        <EditListingRulesPanel
-          {...panelProps(RULES)}
+        <EditListingExtraFeaturesPanel
+          {...panelProps(EXTRAFEATURES)}
         />
       );
     }
@@ -394,9 +396,9 @@ return. Add the following code block to the switch statement, before the
   }
 ```
 
-### Show EditListingRulesPanel in EditListingWizard
+### Show EditListingExtraFeaturesPanel in EditListingWizard
 
-Almost there! We still need to add the RULES tab handling to
+Almost there! We still need to add the EXTRAFEATURES tab handling to
 EditListingWizard.
 
 ```shell
@@ -418,14 +420,14 @@ import EditListingWizardTab, {
   PRICING,
   PRICING_AND_STOCK,
   DELIVERY,
-  RULES,
+  EXTRAFEATURES,
   LOCATION,
   AVAILABILITY,
   PHOTOS,
 } from './EditListingWizardTab';
 ```
 
-Next, add the `RULES` tab to the existing `TABS_BOOKING` array.
+Next, add the `EXTRAFEATURES` tab to the existing `TABS_BOOKING` array.
 
 ```js
 const TABS_DETAILS_ONLY = [DETAILS];
@@ -434,7 +436,7 @@ const TABS_BOOKING = [
   DETAILS,
   LOCATION,
   PRICING,
-  RULES,
+  EXTRAFEATURES,
   AVAILABILITY,
   PHOTOS,
 ];
@@ -442,106 +444,113 @@ const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING];
 ```
 
 The EditListingWizard component checks the tab value in two functions:
-tabLabelAndSubmit tabCompleted
+_tabLabelAndSubmit_ and _tabCompleted_.
 
 The `tabLabelAndSubmit` function determines the microcopy keys for the
 tab label and the submit button. Add the following block in the if-else
 sequence:
 
 ```
-else if (tab === RULES) {
-    labelKey = 'EditListingWizard.tabLabelRules';
-    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveRules`;
+else if (tab === EXTRAFEATURES) {
+    labelKey = 'EditListingWizard.tabLabelExtraFeatures';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveExtraFeatures`;
   }
 ```
 
 The `tabCompleted` function checks whether a specific wizard tab is
 completed. The way it checks this is by verifying whether the listing
-has values in the necessary attributes. Since the EditListingRulesPanel
-saves the rules in the listing’s publicData under the `rules` attribute,
-we will add a case to the switch statement that checks whether
-`publicData.rules` has a value.
+has values in the necessary attributes.
+
+Since the EditListingExtraFeaturesPanel is not a required attribute, we
+we will add a case to the switch statement and just return `true`
+whether or not it has a value. The panel saves the extra feature
+information in the listing’s publicData under the `extraFeatures`
+attribute, so if this was a required feature, we would check whether
+`publicData.extraFeatures` has a value.
 
 ```
 …
     case PHOTOS:
       return images && images.length > 0;
-    case RULES:
-      return !!publicData.rules;
+    case EXTRAFEATURES:
+      return true;
+      // /** For a required attribute: **/
+      // return !!publicData.extraFeatures;
     default:
       return false;
 ```
 
-Now, If you start creating a new listing, you’ll see a new tab label in
+Now, if you start creating a new listing, you’ll see a new tab label in
 the left side navigation. However, the label only shows the relevant
 microcopy key, since we have not yet added the microcopy values in Flex
 Console.
 
-![New tab without label](./saunatime-wizard-microcopy-key.png)
+![New tab without label](./biketribe-wizard-microcopy-key.png)
 
 To fix this, add the following keys and values in your Flex Console >
 Build > Content > Microcopy editor or _src/translations/en.json_ file:
 
 ```json
-  "EditListingWizard.tabLabelRules": "Rules",
-  "EditListingRulesPanel.createListingTitle": "Rules",
-  "EditListingRulesPanel.title": "Edit the rules of {listingTitle}",
-  "EditListingRulesForm.rulesInputPlaceholder": "Explain your sauna rules...",
-  "EditListingRulesForm.rulesRequired": "Adding rules is required",
-  "EditListingRulesForm.updateFailed": "Updating listing failed",
-  "EditListingRulesForm.showListingFailed": "Fetching listing failed",
-  "EditListingWizard.default-booking.new.savePricing": "Next: Rules",
-  "EditListingWizard.default-booking.new.saveRules": "Next: Availability",
-  "EditListingWizard.edit.saveRules": "Save changes",
-  "ListingPage.rulesTitle": "Rules"
+  "EditListingWizard.tabLabelExtraFeatures": "Extra features",
+  "EditListingExtraFeaturesPanel.createListingTitle": "Extra features",
+  "EditListingExtraFeaturesPanel.title": "Edit the extra features of {listingTitle}",
+  "EditListingExtraFeaturesForm.extraFeaturesInputPlaceholder": "Explain your bike extra features...",
+  "EditListingExtraFeaturesForm.updateFailed": "Updating listing failed",
+  "EditListingExtraFeaturesForm.showListingFailed": "Fetching listing failed",
+  "EditListingWizard.default-booking.new.savePricing": "Next: Extra features",
+  "EditListingWizard.default-booking.new.saveExtraFeatures": "Next: Availability",
+  "EditListingWizard.edit.saveExtraFeatures": "Save changes",
+  "ListingPage.extraFeaturesTitle": "Extra features"
 ```
 
 After adding these microcopy keys and values, you can create and edit
-the rules of a listing. You can test the panel functionality by saving
-some rules for the listing.
+the extra features of a listing. You can test the panel functionality by
+saving some extra features for the listing.
 
-![Sauna rules panel](./saunatime-rules-panel.png)
+![Bike extra features panel](./biketribe-extrafeatures-panel.png)
 
-When you now view the sauna in your Flex Console > Manage > Listings,
-you can see the rules get saved in the listing's public data.
+When you now view the bike in your Flex Console > Manage > Listings, you
+can see the extra features get saved in the listing's public data.
 
-![Sauna rules in Flex Console](./saunatime-rules-console.png)
+![Bike extra features in Flex Console](./console-extra-features.png)
 
-## Show Rules on listing page with SectionTextMaybe component
+## Show Extra features on listing page with SectionTextMaybe component
 
-Now that the listing has rules, we want to show them on the listing
-page. To do that, we will need to add a section to the listing page that
-displays the rules. We have configured our marketplace to use the
-screen-wide cover photo layout, so we will modify the
-_ListingPageCoverPhoto.js_ file.
+Now that the listing has extra features, we want to show them on the
+listing page. To do that, we will need to add a section to the listing
+page that displays the extra features. We have configured our
+marketplace to use the screen-wide cover photo layout, so we will modify
+the _ListingPageCoverPhoto.js_ file.
 
 ```shell
 └── src
     └── containers
         └── ListingPage
-            ├── ListingPageCoverPhoto.js
+            ├── ListingPageCarousel.js
             ├── …
 ```
 
-The listing pages, ListingPageCoverPhoto and ListingPageCarousel (which
-corresponds to the "Image carousel" layout option), show listing data
-using `Section` components, which render different types of data in a
-predefined way. Since the sauna rules data is free text, we can use the
-pre-existing _SectionTextMaybe_ component to display the rules.
+The listing pages, ListingPageCarousel and ListingPageCoverPhoto (which
+corresponds to the "Screen wide cover photo" layout option), show
+listing data using `Section` components, which render different types of
+data in a predefined way. Since the bike extra features data is free
+text, we can use the pre-existing _SectionTextMaybe_ component to
+display the extra features.
 
 Add the following code snippet above the _SectionMapMaybe_ component in
 ListingPageCarousel:
 
 ```js
 <SectionTextMaybe
-  text={publicData.rules}
-  heading={intl.formatMessage({ id: 'ListingPage.rulesTitle' })}
+  text={publicData.extraFeatures}
+  heading={intl.formatMessage({ id: 'ListingPage.extraFeaturesTitle' })}
 />
 ```
 
-You can now see the listing rules displayed on the listing page.
+You can now see the listing extra features displayed on the listing
+page.
 
-![Sauna rules on listing page](./saunatime-rules-listing-page.png)
+![Bike extra features on listing page](./biketribe-extrafeatures-listing-page.png)
 
 ## Summary
 
@@ -556,4 +565,5 @@ In this tutorial, you
     the new panel
 - Added microcopy strings for the different texts related to the new
   panel
-- Used _SectionTextMaybe_ on the listing page for displaying the rules
+- Used _SectionTextMaybe_ on the listing page for displaying the extra
+  features
