@@ -336,9 +336,7 @@ If your marketplace runs without issue on your local, but you see the
 "maintenance mode" message on a cloud deployment (e.g., in Heroku or
 Render), you should check that you have the correct Client ID set in
 your environment variables. The marketplace uses the Client ID to fetch
-your
-[marketplace assets](/tutorial/change-branding/#what-are-hosted-assets)
-through our API.
+your marketplace assets through our API.
 
 You might also see the "maintenance mode" message if a
 [Listing Field ID](/operator-guides/how-to-add-and-edit-listing-fields/#adding-a-new-field)
