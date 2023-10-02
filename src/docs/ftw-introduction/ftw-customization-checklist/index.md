@@ -16,15 +16,10 @@ marketplace's visual appearance, content and configurations.
 
 ## Visual appearance
 
-The Sharetribe Web Template is styled as a fictional marketplace for
-bicycles. To customize the default styles of the template to match your
-marketplace’s brand and style, follow these steps:
+You can edit the default styles of the template via the branding tab in
+Console. For more advanced changes you can:
 
-- Apply your branding by
-  [changing the default images and marketplace colours](/tutorial/change-branding/)
-- Change the
-  [default background image and social media images](/tutorial/change-branding/)
-- [Change the branding of your template](/tutorial/change-branding/)
+- [Learn to style the template using CSS](/docs/tutorial/first-edit/)
 - Learn more about the
   [CSS architecture in the Sharetribe Web Template](/ftw/how-to-customize-ftw-styles/)
 
@@ -37,7 +32,6 @@ There are several places where you can edit the content and copy texts
 in your marketplace:
 
 - Learn about [what is microcopy](/concepts/microcopy/)
-- [Change the content and microcopy in your marketplace](/tutorial/working-with-microcopy/)
 - Update your
   [terms of service and privacy policy page](/operator-guides/free-templates/)
 - Configure the footer of your marketplace in Flex Console.
