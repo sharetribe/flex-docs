@@ -307,51 +307,6 @@ exports.siteStructure = [
     sortingArray: sortingArrayReferences,
   },
   {
-    id: 'the-new-sharetribe',
-    isOpen: true,
-    sortingArray: [],
-    isHidden: true,
-    subcategories: [
-      {
-        id: 'the-new-sharetribe-tutorial',
-        sortingArray: sortingArrayTheNewSharetribeTutorial,
-      },
-      {
-        id: 'the-new-sharetribe-useful-information',
-        sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
-      },
-      {
-        id: 'the-new-sharetribe-concepts',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-static-content',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-layout',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-transactions',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-branding',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-listings',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-analytics',
-        sortingArray: [],
-      },
-    ],
-    hideSidebar: true,
-  },
-  {
     id: 'tutorial-service',
     isOpen: true,
     sortingArray: [],
