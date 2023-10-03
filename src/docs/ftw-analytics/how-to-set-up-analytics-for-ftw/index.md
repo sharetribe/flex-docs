@@ -1,7 +1,7 @@
 ---
 title: Enable analytics
 slug: how-to-set-up-analytics-for-ftw
-updated: 2023-01-01
+updated: 2023-01-10
 category: ftw-analytics
 ingress:
   This guide describes how to enable analytics in the Sharetribe Web
@@ -10,9 +10,10 @@ published: true
 ---
 
 The Sharetribe Web Template comes with built-in support for Google
-Analytics and supports tracking page views with a customisable analytics
-handlers. This article explains how to enable Google Analytics and use
-and create custom analytics handlers.
+Analytics and supports tracking page views with a customizable analytics
+handler. The template also supports using Plausible analytics for
+tracking page views. This article explains how to enable Plausible or
+Google Analytics and use and create custom analytics handlers.
 
 ## Configure Google Analytics
 
@@ -84,6 +85,27 @@ Google if a page is accessed through in-app navigation.
 If you'd like to track something other than page views, you can
 implement your custom handler using the `trackPageView` function as an
 example.
+
+## Configure Plausible Analytics
+
+The template also includes built-in support for
+[Plausible Analytics](https://plausible.io). Plausible is a GDPR
+compliant open source web analytics service. You must assign the
+data-domain value from the Plausible Analytics tracking script to the
+environment variable `REACT_APP_PLAUSIBLE_DOMAINS`.
+
+If this would be your Plausible analytics script:
+`<script defer data-domain="example.com" src="https://plausible.io/js/script.js"></script>`
+
+You would assign example.com to the environment variable:
+`REACT_APP_PLAUSIBLE_DOMAINS=example.com`
+
+You can also assign multiple domains separated by a comma:
+`REACT_APP_PLAUSIBLE_DOMAINS=example1.com,example2.com`
+
+Without customising how Plausible is
+[loaded into the template](https://github.com/sharetribe/web-template/blob/fd9596462c5979ca9e421b1ab69df92a7dd2056c/src/util/includeScripts.js#L102-L111),
+you can only track page views using it.
 
 ## Custom analytics libraries
 
