@@ -1,27 +1,23 @@
 ---
-title: Listing search settings
+title: What are Listing search settings
 slug: listing-search-settings
 updated: 2023-05-19
 category: operator-guides-listings
-ingress:
-  Using search is a great way to allow users to find exactly what they
-  are looking for. This article explains the settings that you can
-  enable and choose from in the Listing search page in Console.
+ingress: Understand the options to setup your marketplace search
 published: true
 ---
 
 The search feature is enabled by default in all Sharetribe marketplaces.
-However, you can define the type of search to support depending on your
-user’s needs. You can also add filtering options to your marketplace,
-this include general filter options and specific fields filters.
+You can define the type of search to support depending on your user’s
+needs. You can also add filtering options to your marketplace, this
+include general filter options and specific fields filters.
 
 ## Search type
 
 Sharetribe has two different search types or search functions, keyword
-and location search. You can enable either one from the
-[Listing Search page of Console](https://flex-console.sharetribe.com/a/listings/listing-search).
-You can read more about these features and how they work in these
-articles:
+and location search. You can enable one or combine them from the Listing
+Search page of Console. You can read more about these features and how
+they work in these articles:
 
 - [Keyword search](https://www.sharetribe.com/docs/operator-guides/keyword-search/)
 - [Location search](https://www.sharetribe.com/docs/operator-guides/location-search/)
@@ -31,7 +27,7 @@ articles:
 In the Listing search settings you can also enable filters for default
 fields. You can choose to Display a date range filter and Display a
 Price filter.
-[If you want to understand adding filters for custom fields read here](https://www.sharetribe.com/docs/operator-guides/understanding-filters/).
+[If you want to understand adding filters for custom fields read here](https://www.sharetribe.com/docs/operator-guides/understanding-filters).
 
 ### Date range filter
 

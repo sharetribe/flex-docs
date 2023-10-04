@@ -1,7 +1,7 @@
 ---
 title: Change default locations
 slug: change-default-locations
-updated: 2020-03-03
+updated: 2023-09-25
 category: tutorial-branding
 ingress:
   Change the list of default locations that show up when using the
@@ -25,9 +25,9 @@ specific locations. Let's add a suggestion: _"Auckland, New Zealand"_.
 
 ## Change configDefaultLocationSearches.js
 
-The component, that actually makes geocoding calls to the map providers
-geocoding API, is called _LocationAutocompleteInput_. However, the
-default locations are actually set in a file called
+The component that makes geocoding calls to the map providers geocoding
+API is called _LocationAutocompleteInput_. However, the default
+locations are actually set in a file called
 _configDefaultLocationSearches.js_:
 
 ```shell
@@ -48,7 +48,8 @@ const defaultLocations = [
   //     bounds: new LatLngBounds(new LatLng(60.29783, 25.25448), new LatLng(59.92248, 24.78287)),
   //   },
   // },
-  // the rest of the default locations.
+  // ...
+  // ** the rest of the default locations **
 ];
 
 export default defaultLocations;
@@ -104,8 +105,8 @@ You can add other locations in a similar fashion.
 ## Summary
 
 In this tutorial, you modified the default locations by making changes
-to the configDefaultLocationSearches.js file in the src/config
-directory. Within this file, you can edit an array example locations,
+to the _configDefaultLocationSearches.js_ file in the _src/config_
+directory. Within this file, you can edit an array of example locations,
 each represented by an object containing an id, an address, and a bounds
 object defining the bounding box for the displayed area on the search
 map.

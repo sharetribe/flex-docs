@@ -954,6 +954,12 @@
     "source": "/ftw/how-to-change-ftw-bundled-microcopy/",
     "destination": "/docs/ftw/how-to-change-ftw-bundled-marketplace-texts/",
     "permanent": true
+  },
+  {
+    "source": "/tutorial/add-favorite-saunas/",
+    "destination": "/docs/tutorial/add-favorite-bikes/",
+    "permanent": true
+
   }
 ]
 }

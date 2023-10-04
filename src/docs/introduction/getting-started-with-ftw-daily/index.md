@@ -1,7 +1,7 @@
 ---
 title: Getting started with Sharetribe Web Template
 slug: getting-started-with-web-template
-updated: 2023-03-07
+updated: 2023-09-25
 category: introduction-getting-started
 ingress:
   Learn how to install Sharetribe Web Template to your local development
@@ -356,9 +356,14 @@ Start the development server:
 yarn run dev
 ```
 
+Running `yarn run dev` uses
+[Webpack's dev-server](https://webpack.js.org/configuration/dev-server/)
+with
+[Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/).
+
 This will automatically open `http://localhost:3000` in a browser:
 
-![Default marketplace screenshot](./biketribe-default.png)
+![Default marketplace screenshot](./generic-landingpage.png)
 
 <info>
 

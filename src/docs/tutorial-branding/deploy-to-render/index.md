@@ -1,7 +1,7 @@
 ---
 title: Create a test environment
 slug: deploy-to-render
-updated: 2022-09-12
+updated: 2023-09-25
 category: tutorial-branding
 ingress:
   Deploy your marketplace to a cloud hosting platform to share it with
@@ -57,12 +57,9 @@ To start up the server locally, you will need to run the command:
 yarn run dev-server
 ```
 
-This command will use
-[Webpack's dev-server](https://webpack.js.org/configuration/dev-server/)
-with
-[Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/)
-to run a development server, which simulates how the client application
-would run in a production environment.
+This command will run the actual Node/Express server in server/index.js
+so you can test server-side rendering, simulating how the client
+application would run in a production environment.
 
 <info>
 

@@ -1,7 +1,7 @@
 ---
 title: Template environment variables
 slug: ftw-env
-updated: 2023-01-01
+updated: 2023-01-10
 category: ftw-configuration
 ingress:
   Reference documentation for environment variables in the Sharetribe
@@ -98,6 +98,11 @@ of environment variables.
   See the
   [How to set up Analytics](/ftw/how-to-set-up-analytics-for-ftw/) guide
   for more information.
+
+- **`REACT_APP_PLAUSIBLE_DOMAINS`**
+
+  Used to configure Plausible Analytics. Read more in
+  [how to set up analytics](ftw-analytics/how-to-set-up-analytics-for-ftw/index.md).
 
 * **`REACT_APP_SHARETRIBE_SDK_BASE_URL`**
 
