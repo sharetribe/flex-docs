@@ -945,6 +945,11 @@
     "destination": "/docs/tutorial/add-favorite-bikes/",
     "permanent": true
 
+  },
+  {
+    "source": "/the-new-sharetribe/tutorial-09-footer/",
+    "destination": "/help/en/articles/8418333-tutorial-step-9-edit-the-footer/",
+    "permanent": true
   }
 ]
 }
