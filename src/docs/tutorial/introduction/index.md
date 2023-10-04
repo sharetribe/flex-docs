@@ -17,7 +17,7 @@ the Sharetribe Web Template.
 ## What are we building?
 
 In this tutorial, we will continue modifying your Biketribe marketplace
-[that you configured in the first tutorial](/the-new-sharetribe/tutorial-00-introduction/).
+[that you configured in the first tutorial](https://www.sharetribe.com/help/en/articles/8418029-tutorial-introduction).
 We will start editing the Sharetribe Web Template, and add custom
 development features to Biketribe.
 

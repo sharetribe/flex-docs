@@ -10,7 +10,7 @@ published: true
 ---
 
 In
-[the no-code tutorial](/the-new-sharetribe/tutorial-00-introduction/),
+[the no-code tutorial](https://www.sharetribe.com/help/en/articles/8418029-tutorial-introduction),
 you configured your marketplace into a bike rental marketplace called
 Biketribe. We will continue to custom develop on top of those same
 configurations. To do that, we will copy all no-code changes from Test
