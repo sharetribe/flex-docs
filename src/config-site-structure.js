@@ -25,9 +25,7 @@ const sortingArrayIntroductionGettingStarted = [
 // for the listed articles.
 const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
-  'change-branding',
-  'modify-landing-page',
-  'working-with-microcopy',
+  'copy-assets',
   'first-edit',
   'configurations',
   'change-default-locations',
@@ -169,16 +167,16 @@ const sortingArrayTheNewSharetribeUsefulInformation = [];
 
 /// Arrange The New Sharetribe tutorial
 const sortingArrayTheNewSharetribeTutorial = [
-  'tutorial-introduction',
-  'tutorial-marketplace-branding',
-  'tutorial-marketplace-layout',
-  'tutorial-landing-page',
-  'tutorial-listing-type',
-  'tutorial-listing-fields',
-  'tutorial-listing-search',
-  'tutorial-commission-tx-size',
-  'tutorial-microcopy',
-  'tutorial-footer',
+  'tutorial-00-introduction',
+  'tutorial-01-marketplace-branding',
+  'tutorial-02-marketplace-layout',
+  'tutorial-03-landing-page',
+  'tutorial-04-listing-type',
+  'tutorial-05-listing-fields',
+  'tutorial-06-listing-search',
+  'tutorial-07-commission-tx-size',
+  'tutorial-08-microcopy',
+  'tutorial-09-footer',
 ];
 
 exports.siteStructure = [
@@ -307,51 +305,6 @@ exports.siteStructure = [
     id: 'references',
     isOpen: false,
     sortingArray: sortingArrayReferences,
-  },
-  {
-    id: 'the-new-sharetribe',
-    isOpen: true,
-    sortingArray: [],
-    isHidden: true,
-    subcategories: [
-      {
-        id: 'the-new-sharetribe-tutorial',
-        sortingArray: sortingArrayTheNewSharetribeTutorial,
-      },
-      {
-        id: 'the-new-sharetribe-useful-information',
-        sortingArray: sortingArrayTheNewSharetribeUsefulInformation,
-      },
-      {
-        id: 'the-new-sharetribe-concepts',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-static-content',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-layout',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-transactions',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-branding',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-listings',
-        sortingArray: [],
-      },
-      {
-        id: 'the-new-sharetribe-analytics',
-        sortingArray: [],
-      },
-    ],
-    hideSidebar: true,
   },
   {
     id: 'tutorial-service',

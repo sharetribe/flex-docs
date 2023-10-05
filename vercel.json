@@ -1080,10 +1080,16 @@
     "destination": "/docs/template/how-to-test-template/",
     "permanent": true
   },
- {
+  {
     "source": "/ftw/how-code-splitting-works-in-ftw/",
     "destination": "/docs/template/code-splitting-in-template/",
     "permanent": true
+  },
+  {
+    "source": "/tutorial/add-favorite-saunas/",
+    "destination": "/docs/tutorial/add-favorite-bikes/",
+    "permanent": true
+
   }
 ]
 }

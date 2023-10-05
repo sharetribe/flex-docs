@@ -102,8 +102,8 @@ users will be sent from.
 configurations. You can
 [modify your marketplace microcopy](/concepts/microcopy/), create
 [content pages](/concepts/headless-content-management/), and configure
-aspects of your marketplace branding, layout, and other details
-[without coding](/tutorial/change-branding/).
+aspects of your marketplace branding, layout, and other details without
+coding.
 
 **Transaction processes** is quite self-explanatory: it shows the
 different kinds of transaction processes your marketplace has. You can
