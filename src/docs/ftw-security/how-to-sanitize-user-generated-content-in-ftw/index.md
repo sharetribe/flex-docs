@@ -1,6 +1,6 @@
 ---
 title: Sanitizing user-generated content
-slug: how-to-sanitize-user-generated-content-in-ftw
+slug: how-to-sanitize-user-generated-content
 updated: 2023-01-01
 category: template-security
 ingress:

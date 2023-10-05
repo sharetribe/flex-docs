@@ -59,6 +59,6 @@ marketplace by clicking the 'Copy to live...' button.
 
 Setting up your Dev (and Live) marketplace is a technical task requiring
 development help. Developers can consult
-[this guide](https://www.sharetribe.com/docs/template/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw)
+[this guide](https://www.sharetribe.com/docs/legacy/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw)
 to learn how to update existing marketplace codebases with Pages
 functionality.

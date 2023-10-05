@@ -97,7 +97,7 @@
   },
   {
     "source": "/guides/how-to-change-search-filters-in-ftw/",
-    "destination": "/docs/how-to/change-search-filters-in-ftw/",
+    "destination": "/docs/how-to/change-search-filters-in-template/",
     "permanent": true
   },
   {
@@ -147,7 +147,7 @@
   },
   {
     "source": "/guides/how-to-sanitize-user-generated-content-in-ftw/",
-    "destination": "/docs/ftw/how-to-sanitize-user-generated-content-in-ftw/",
+    "destination": "/docs/template/how-to-sanitize-user-generated-content/",
     "permanent": true
   },
   {
@@ -197,7 +197,7 @@
   },
   {
     "source": "/guides/how-to-use-ci-with-ftw/",
-    "destination": "/docs/ftw/how-to-use-ci-with-ftw/",
+    "destination": "/docs/template/how-to-use-ci-with-template/",
     "permanent": true
   },
   {
@@ -487,7 +487,7 @@
   },
   {
     "source": "/cookbook-search/change-search-filters-in-ftw/",
-    "destination": "/docs/how-to/change-search-filters-in-ftw/",
+    "destination": "/docs/how-to/change-search-filters-in-template/",
     "permanent": true
   },
   {
@@ -592,7 +592,7 @@
   },
   {
     "source": "/ftw-testing-error-handling/how-to-use-ci-with-ftw/",
-    "destination": "/docs/ftw/how-to-use-ci-with-ftw/",
+    "destination": "/docs/template/how-to-use-ci-with-template/",
     "permanent": true
   },
   {
@@ -622,7 +622,7 @@
   },
   {
     "source": "/ftw-security/how-to-sanitize-user-generated-content-in-ftw/",
-    "destination": "/docs/ftw/how-to-sanitize-user-generated-content-in-ftw/",
+    "destination": "/docs/template/how-to-sanitize-user-generated-content/",
     "permanent": true
   },
   {
@@ -1089,7 +1089,21 @@
     "source": "/tutorial/add-favorite-saunas/",
     "destination": "/docs/tutorial/add-favorite-bikes/",
     "permanent": true
-
+  },
+  {
+    "source": "/ftw/how-to-sanitize-user-generated-content-in-ftw/",
+    "destination": "/docs/template/how-to-sanitize-user-generated-content/",
+    "permanent": true
+  },
+  {
+    "source": "/how-to/change-search-filters-in-ftw/",
+    "destination": "/docs/how-to/change-search-filters-in-template/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw/how-to-use-ci-with-ftw/",
+    "destination": "/docs/template/how-to-use-ci-with-template/",
+    "permanent": true
   }
 ]
 }

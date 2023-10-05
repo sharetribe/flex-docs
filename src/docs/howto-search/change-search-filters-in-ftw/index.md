@@ -1,6 +1,6 @@
 ---
 title: Change search filters in Sharetribe Web Template
-slug: change-search-filters-in-ftw
+slug: change-search-filters-in-template
 updated: 2022-06-14
 category: how-to-search
 ingress:

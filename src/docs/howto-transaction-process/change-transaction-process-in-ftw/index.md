@@ -35,8 +35,8 @@ transaction process. You can read more about how these processes work
 from a background info article about the
 [transaction process](/concepts/transaction-process/).
 
-The following guide will help you to customise the process flow in FTW
-to match the process in our backend.
+The following guide will help you to customise the process flow in the
+template to match the process in our backend.
 
 ## 1. Add the new transaction process configuration
 

@@ -46,7 +46,7 @@ _instant-booking_.
 
 To get up and running with Sharetribe CLI, see the
 [Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/)
-guide in Flex Docs.
+guide in Dev Docs.
 
 Let's see what the subcommand `help` gives us about `process create`:
 

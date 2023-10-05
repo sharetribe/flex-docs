@@ -1,6 +1,6 @@
 ---
 title: Continuous integration
-slug: how-to-use-ci-with-ftw
+slug: how-to-use-ci-with-template
 updated: 2023-01-01
 category: template-testing-error-handling
 ingress:

@@ -1,12 +1,12 @@
 # Algolia configuration
 
-Flex Docs uses
+Dev Docs uses
 [Algolia DocSearch v3](https://docsearch.algolia.com/docs/what-is-docsearch/).
 The search UI is a React component imported through the @docsearch/react
 package. You can find it in Search.js. The styling of the UI component
 is in GlobalStyle.js.
 
-The Algolia Crawler scrapes Flex Docs once a week. You can find the
+The Algolia Crawler scrapes Dev Docs once a week. You can find the
 configuration here: https://crawler.algolia.com/admin/
 
 At time of writing, the Algolia Docsearch documentation isn't very
