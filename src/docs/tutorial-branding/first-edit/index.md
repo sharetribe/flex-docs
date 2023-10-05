@@ -13,7 +13,7 @@ published: true
 
 Styling your marketplace is the first step towards customizing its
 appearance. You can make many visual changes using the
-[no-code tools in Console](/the-new-sharetribe/tutorial-00-introduction/)
+[no-code tools in Console](https://www.sharetribe.com/help/en/articles/8418029-tutorial-introduction)
 but for more extensive changes, you will need to edit the code of the
 Sharetribe Web Template directly. This tutorial teaches you to style
 components directly through code in the Sharetribe Web Template.
