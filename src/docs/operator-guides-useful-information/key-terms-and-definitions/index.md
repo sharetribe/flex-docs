@@ -105,7 +105,7 @@ modifiable with coding. Using it allows building a custom marketplace at
 a fraction of the the cost or time required to build it from scratch.
 
 Certain settings are
-[configurable in Console](/operator-guides/biketribe-configuration-checklist/#what-to-modify).
+[configurable in Console](/operator-guides/sharetribe-configuration-checklist/#what-to-modify).
 These include the listing type, search page layout, search page fields,
 listing fields, and many more. Launching a marketplace with the template
 requires a developer.
