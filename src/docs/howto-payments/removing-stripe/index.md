@@ -45,6 +45,8 @@ You need to remove at least the following actions:
 - :action/stripe-refund-charge
 - :action/stripe-refund-payment
 
+<plan tier="extend" feature="Customizing your transaction process"></plan>
+
 If you are using the template default processes with strong customer
 authentication (e.g. `default-booking` or `default-purchase`) you need
 to remove confirming the payment. Otherwise, the transaction will get
