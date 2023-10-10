@@ -208,7 +208,7 @@ as well as a description of what was serviced.
 <extrainfo title="Marketplace texts used in this guide">
 
 You can paste the marketplace text strings used in this guide in your
-Flex Console Marketplace Texts TODO CHECK EDITOR NAME editor or your
+Flex Console, under Build > Content > Marketplace texts, or your
 translation file.
 
 ```js

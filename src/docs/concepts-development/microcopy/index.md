@@ -13,8 +13,8 @@ Marketplace texts cover all the small pieces of text in your
 marketplace's dynamic pages – button labels, error messages, and help
 texts, for example. Modifying marketplace texts to match your
 marketplace's theme and tone of voice is a key task in customizing any
-marketplace. [Read more about marketplace texts](/operator-guides/) TODO
-UPDATE LINK.
+marketplace.
+[Read more about marketplace texts](https://www.sharetribe.com/help/en/collections/6265229-setup-copy-texts)
 
 ## Marketplace texts in the Sharetribe Web Template
 
@@ -49,9 +49,9 @@ changed even if the value ends up changing.
 
 In addition to adding a marketplace text file in the client application,
 Flex marketplace operators can modify the wording of marketplace texts
-in Flex Console. This means that operators can make changes to the
-marketplace texts without the need for code changes. The same
-marketplace texts can also be used from several different client
+in Flex Console > Build > Content. This means that operators can make
+changes to the marketplace texts without the need for code changes. The
+same marketplace texts can also be used from several different client
 applications, making it easier to make centralized changes.
 
 ![Simple Console marketplace texts](./microcopy_simple.png)
@@ -84,7 +84,7 @@ case the message key does not exist.
 ```
 
 Similarly to marketplace texts, email texts can also be modified in
-Console > Build > TODO EXPLAIN.
+Console > Build > Content.
 
 ## How marketplace texts are handled in Flex
 
@@ -93,28 +93,11 @@ concept of [assets](/references/assets/). Assets provide a way to define
 marketplace content and configurations using JSON files without needing
 to include the actual content in the client application codebase.
 
-For the marketplace text file version being edited in Flex Console, the
-asset in question is `content/translations.json`. In other words, Flex
-Console has a dedicated view – "Build" > "Content" > "TODO TITLE" – for
-modifying the `content/translations.json` asset. The asset refers to
-translations because the language-specific marketplace text files allow
-the marketplace to fairly easily be translated to languages other than
-English.
+![Content view for editing marketplace texts](./marketplace-text-editor.png)
 
-TODO UPDATE SCREENSHOT
-![Content view for editing marketplace texts](./microcopy_start.png)
-
-You can add one or more marketplace text key-value pairs in JSON format
-into the Marketplace texts field. You can copy them from the linked
-marketplace text resources in the template, or your existing marketplace
-text file.
-
-![Add marketplace text key-value pairs](./microcopy_console.png)
-
-When the marketplace text asset has been created, you will need to fetch
-the marketplace texts to the client application. Marketplace texts are
-fetched through Asset Delivery API in JSON format. Assets can be
-retrieved by the latest version, or by a specific version. Read more:
+Marketplace texts are fetched to the client application through Asset
+Delivery API in JSON format. Assets can be retrieved by the latest
+version, or by a specific version. Read more:
 
 - [Marketplace assets](/references/assets/)
 - [Handling hosted asset marketplace texts in the Sharetribe Web Template](/ftw/hosted-marketplace-texts/)

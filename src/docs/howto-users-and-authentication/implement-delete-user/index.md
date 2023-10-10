@@ -187,7 +187,6 @@ configuration function:
 Finally, add the necessary marketplace text rows into either
 src/translations/en.json or the
 [Flex Console Marketplace texts editor](/concepts/marketplace-texts/).
-TODO CHECK NAMING
 
 ```shell
 └── src

@@ -35,7 +35,7 @@ page in the Build section of Console.
 <info>
 
 For content-only changes, you can use the Console transaction email
-editor in Build > Content > TODO EXPLAIN EDITOR
+editor in Build > Content > Email texts.
 
 </info>
 

@@ -388,7 +388,7 @@ used for query string components.
 ## Editing email content
 
 For both built-in emails and transaction process emails, you can edit
-content with the email text editor TODO EXPLAIN EDITOR.
+content with the email text editor under Build > Content > Email texts.
 
 ## Editing built-in emails
 

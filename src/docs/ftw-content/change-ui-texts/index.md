@@ -74,10 +74,11 @@ guide.
 ## Labels and countries
 
 There are few other cases where we haven't added marketplace texts
-directly to the marketplace text files. TODO CHECK IF THIS IS STILL TRUE
+directly to the marketplace text files.
 
 Labels for filters can be found in
-[_config/configListing.js_](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js).
+[_config/configListing.js_](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js),
+and edited in Console.
 
 [Country codes](https://github.com/sharetribe/web-template/blob/master/src/translations/countryCodes.js)
 are in a separate file as well. Stripe API requires country information

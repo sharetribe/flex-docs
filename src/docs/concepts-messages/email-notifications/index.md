@@ -40,10 +40,7 @@ Do note that built-in email notifications can not be disabled.
 There are seven built-in email notifications, all of which are related
 to your users' account management. Use the
 [Console](https://flex-console.sharetribe.com/) to manage the built-in
-email notifications. You can customise built-in emails using the
-[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
-in the Flex Console. You can find the editor in the Console under the
-Build section. TODO EXPAND ON EDITING CONTENT VS STRUCTURE!
+email notifications.
 
 The email templates use the
 [Handlebars template language](/references/email-templates/#handlebars).
@@ -62,6 +59,13 @@ In each template, you can use a set of predefined context variables
 variables to the right of the built-in email template editor. You can
 access user extended data through the context variables, if you want to
 customise email content further.
+
+You can edit the text content of email notifications in Console >
+Build > Content > Email texts. You can preview the built-in emails, and
+customise their structure,using the
+[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
+in the Flex Console. You can find the editor in the Console under the
+Build > Advanced section.
 
 The built-in email template editor does not include a visual editor, but
 if you want, you can design your email in any
@@ -82,13 +86,10 @@ notifications usually relate to information about bookings and payments,
 in contrast to built-in email notifications, which are typically
 actionable and related to account management.
 
-You can edit the content of the transaction notifications in Console
-TODO EXPLAIN EDITOR
-
-You can update message keys, as well as add or delete transaction
-notifications, by
-[editing the transaction process](/how-to/edit-transaction-process-with-flex-cli/).
-The
+You can edit the content of the transaction notifications in Console >
+Build > Content > Email texts. You can preview your changes, as well as
+update message keys and add or delete transaction notifications, with
+the [Flex CLI](/how-to/edit-transaction-process-with-flex-cli/). The
 [template sub-directory](https://github.com/sharetribe/flex-example-processes/tree/master/default-booking/templates)
 in the transaction process directory contains all the transaction
 notification email templates. All transaction notifications use the
