@@ -233,7 +233,7 @@ environment, it is good to note that a transaction will proceed with the
 transaction process it was initiated with, and changing the transaction
 process of a single transaction is not possible. You can see the
 transaction process related to each transaction in
-[Sharetribe Console](https://flex-console.sharetribe.com/) > Manage >
+[Sharetribe Console](https://console.sharetribe.com/) > Manage >
 Transactions.
 
 The transaction process also controls the automatic
@@ -370,7 +370,7 @@ troubleshoot the problem.
 
 If nothing seems to work, you can always contact Sharetribe technical
 support through the chat widget in your
-[Sharetribe Console](https://flex-console.sharetribe.com/) or
+[Sharetribe Console](https://console.sharetribe.com/) or
 [by email](mailto:flex-support@sharetribe.com) for further
 troubleshooting.
 
@@ -426,7 +426,7 @@ to find out whether this option would best suit your needs.
 
 If you are contemplating partial refunds for your marketplace, you can
 also contact Sharetribe technical support through the chat widget in
-your [Sharetribe Console](https://flex-console.sharetribe.com/) or
+your [Sharetribe Console](https://console.sharetribe.com/) or
 [by email](mailto:flex-support@sharetribe.com). Let us know your
 specific use case, and we may be able to recommend some avenues for you
 to explore.

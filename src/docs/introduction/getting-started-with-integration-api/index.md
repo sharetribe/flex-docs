@@ -62,9 +62,8 @@ both by creating a new
 Console.
 
 Log in to your marketplace in
-[Sharetribe Console](https://flex-console.sharetribe.com/) and navigate
-to
-[Build > Applications](https://flex-console.sharetribe.com/applications).
+[Sharetribe Console](https://console.sharetribe.com/) and navigate to
+[Build > Applications](https://console.sharetribe.com/advanced/applications).
 
 ![Applications in Sharetribe Console](./apps.png)
 

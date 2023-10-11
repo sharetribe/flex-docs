@@ -29,4 +29,4 @@ validation is done at listing creation, and not at the transaction
 level.
 
 You can set the minimum transaction size from your
-[Console → Minimum transaction size page](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size).
+[Console → Minimum transaction size page](https://console.sharetribe.com/a/transactions/minimum-transaction-size).

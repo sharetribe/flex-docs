@@ -113,9 +113,8 @@ offers step-by-step instructions to get start
 Not sure you’re ready to start developing yet? Then try Pages out
 without any code setup using the Test marketplace Biketribe! After
 creating a Flex account, log into
-[Console](https://flex-console.sharetribe.com/) and follow the same
-steps to navigate to Pages (Build->Content), but make sure you are in
-your
+[Console](https://console.sharetribe.com/) and follow the same steps to
+navigate to Pages (Build->Content), but make sure you are in your
 [Test environment](https://www.sharetribe.com/docs/operator-guides/concepts/#environments_.)
 Marketplaces created before February, 15th, 2023 will need to “Import
 default pages” to their Test environment to start making changes.

@@ -31,7 +31,7 @@ sending notifications to your marketplace users as part of your
 transaction process. These transaction email template changes are also a
 form of process change, and they create a new version of your process.
 For email templates not part of your transaction process, see the
-[Built-in email templates](https://flex-console.sharetribe.com/email-templates)
+[Built-in email templates](https://console.sharetribe.com/advanced/email-templates)
 page in the Build section of Console.
 
 ## Pull existing process

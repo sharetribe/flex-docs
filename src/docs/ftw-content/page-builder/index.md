@@ -318,10 +318,10 @@ see a fallback page with the title "Maintenance mode".
 To fix the situation, make sure that you have added the following
 mandatory configurations in your Console:
 
-- [Branding](https://flex-console.sharetribe.com/a/design/branding)
-- [Listing type](https://flex-console.sharetribe.com/a/listings/listing-types)
-- [Listing fields](https://flex-console.sharetribe.com/a/listings/listing-fields)
-- [Minimum transaction size](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size)
+- [Branding](https://console.sharetribe.com/a/design/branding)
+- [Listing type](https://console.sharetribe.com/a/listings/listing-types)
+- [Listing fields](https://console.sharetribe.com/a/listings/listing-fields)
+- [Minimum transaction size](https://console.sharetribe.com/a/transactions/minimum-transaction-size)
 
 After you have made sure you have all these configurations added in your
 Console, refresh the browser. Your marketplace should now show up with

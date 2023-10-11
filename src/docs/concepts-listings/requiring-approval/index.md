@@ -43,7 +43,7 @@ send a message.
 ## Managing listing approval in Sharetribe Console
 
 Listing approval can be enabled in your
-[Sharetribe Console](https://flex-console.sharetribe.com/general), under
+[Sharetribe Console](https://console.sharetribe.com/general), under
 Build > General. Listing approval is disabled by default.
 
 ![Listing approval toggle](listing-approval-toggle.png 'Listing approval is toggled in Build > General')

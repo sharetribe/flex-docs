@@ -101,12 +101,12 @@ you to have a look.
 
 ### Console
 
-[Console](https://flex-console.sharetribe.com/) is where you to manage
-all your marketplace data, such as users, listings and transactions.
-Console also offers tools to develop your marketplace, for example, an
-editor for email templates. Console is accessed via a web UI that we
-provide out of the box. Think of it as an admin interface you never have
-to build!
+[Console](https://console.sharetribe.com/) is where you to manage all
+your marketplace data, such as users, listings and transactions. Console
+also offers tools to develop your marketplace, for example, an editor
+for email templates. Console is accessed via a web UI that we provide
+out of the box. Think of it as an admin interface you never have to
+build!
 
 ### The Integration API
 

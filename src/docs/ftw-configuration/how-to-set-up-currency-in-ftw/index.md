@@ -37,7 +37,7 @@ application is changed.
 
 If you are using the newest version of The Sharetribe Web Template, you
 can edit your listing minimum price through
-[Console](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size).
+[Console](https://console.sharetribe.com/a/transactions/minimum-transaction-size).
 You need to specify the minimum price as the subunits of the currency
 you are using, i.e. if you are using dollars, 500 would set the minimum
 price for a listing at 5 dollars.

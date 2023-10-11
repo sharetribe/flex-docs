@@ -72,7 +72,7 @@ you will need to configure a new identity provider and an accompanying
 identity provider client in Sharetribe Console.
 
 1. Go to the
-   [Social logins & SSO](https://flex-console.sharetribe.com/social-logins-and-sso)
+   [Social logins & SSO](https://console.sharetribe.com/advanced/social-logins-and-sso)
    page in Console and click "+ Add new" to add a new identity provider
    client.
 2. Fill in a name for the client.

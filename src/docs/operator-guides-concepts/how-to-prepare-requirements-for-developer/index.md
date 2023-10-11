@@ -54,8 +54,8 @@ To effectively leverage the Template, it's important to understand its
 capabilities. There are a few ways to gain this understanding:
 
 - Access the Biketribe marketplace in the Test environment of your
-  [Flex Console](https://flex-console.sharetribe.com/) to explore the
-  default features, workflows, and design.
+  [Flex Console](https://console.sharetribe.com/) to explore the default
+  features, workflows, and design.
 - [Install the template application yourself](https://www.sharetribe.com/docs/introduction/getting-started-with-web-template/),
   or have a developer do it for you.
 - If you're comfortable working with design software like Sketch, Adobe

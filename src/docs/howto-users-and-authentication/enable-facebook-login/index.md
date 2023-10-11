@@ -123,7 +123,7 @@ when a user logs in.
 An identity provider client can be configure with the following steps:
 
 1. Go to
-   [Social logins & SSO in Console](https://flex-console.sharetribe.com/social-logins-and-sso).
+   [Social logins & SSO in Console](https://console.sharetribe.com/advanced/social-logins-and-sso).
 2. Under _Identity provider clients_ click "+ Add new".
 3. Set "Client name". This can be anything you choose, for example,
    "Facebook login". In case you need to create multiple Facebook apps,

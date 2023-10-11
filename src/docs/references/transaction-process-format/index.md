@@ -174,9 +174,9 @@ Processes have two different types of transitions. Initial transitions
 are used for creating new transactions whereas subsequent transitions
 move existing transactions forward in the process. An initial transition
 in the process definition has no `:from` state defined. When we render
-the process graph on [Console](https://flex-console.sharetribe.com) we
-show a synthetic state `state/initial` but this is not a state that is
-or should be defined in the process description.
+the process graph on [Console](https://console.sharetribe.com) we show a
+synthetic state `state/initial` but this is not a state that is or
+should be defined in the process description.
 
 In Marketplace API initial transitions are invoked via the
 [transactions/initiate](https://www.sharetribe.com/api-reference/marketplace.html#initiate-transaction)
@@ -417,7 +417,7 @@ Notifications
 
 Once you've pushed a new process version to your marketplace you can use
 the
-[Console process viewer](https://flex-console.sharetribe.com/transaction-processes)
+[Console process viewer](https://console.sharetribe.com/advanced/transaction-processes)
 to see the process graph and inspect transitions. This is currently the
 only place where you can see the parameters that a given transition
 requires and accepts.

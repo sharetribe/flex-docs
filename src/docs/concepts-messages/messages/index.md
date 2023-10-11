@@ -51,7 +51,7 @@ New messages trigger a
 [built-in email notification](/concepts/email-notifications/) sent to
 the receiving party of the message. You can edit built-in email
 notifications through
-[Console](https://flex-console.sharetribe.com/email-templates/new-message).
+[Console](https://console.sharetribe.com/email-templates/new-message).
 TODO EXPLAIN EMAIL TEXT VS CODE EDITORS
 
 ## Zapier, events and messages

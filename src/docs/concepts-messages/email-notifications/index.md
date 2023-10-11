@@ -39,13 +39,13 @@ Do note that built-in email notifications can not be disabled.
 
 There are seven built-in email notifications, all of which are related
 to your users' account management. Use the
-[Console](https://flex-console.sharetribe.com/) to manage the built-in
-email notifications.
+[Console](https://console.sharetribe.com/) to manage the built-in email
+notifications.
 
 <plan tier="extend" feature="The email template code editor"></plan>
 
 You can customise built-in emails using the
-[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
+[Built-in email template editor](https://console.sharetribe.com/advanced/email-templates)
 in the Sharetribe Console. You can find the editor in the Console under
 the Build section. TODO EXPLAIN EMAIL TEXTS VS CODE EDITOR
 
@@ -78,8 +78,6 @@ actionable and related to account management.
 
 You can update, add, or delete transaction notifications by
 [editing the transaction process](/how-to/edit-transaction-process-with-sharetribe-cli/).
-
-TODO EXPLAIN TEXTS VS CODE EDITOR CHANGE
 
 <plan tier="extend" feature="Customizing your transaction notifications"></plan>
 

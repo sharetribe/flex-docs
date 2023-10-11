@@ -58,8 +58,8 @@ in the CSS file of that component.
 <info>
 
 You can also adjust the background color of specific sections through
-[Pages in Console](https://flex-console.sharetribe.com/content/pages).
-By setting a background color through code, you'll be setting a default
+[Pages in Console](https://console.sharetribe.com/content/pages). By
+setting a background color through code, you'll be setting a default
 value for the color of the sections, which you can override through
 Console. If you don't want to make changes to your code, you can skip
 this tutorial section and directly edit the color of your sections using

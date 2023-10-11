@@ -117,12 +117,12 @@ default. Heroku and Render define a port automatically.
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
 Your client ID. You can find it in
-[Sharetribe Console](https://flex-console.sharetribe.com/applications).
+[Sharetribe Console](https://console.sharetribe.com/advanced/applications).
 
 - **`SHARETRIBE_SDK_CLIENT_SECRET`**
 
 Your client secret. You can find it in
-[Sharetribe Console](https://flex-console.sharetribe.com/applications).
+[Sharetribe Console](https://console.sharetribe.com/advanced/applications).
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 

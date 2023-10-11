@@ -33,10 +33,9 @@ no-code) tools before going live or anytime after.
 ## How to configure your marketplace without coding
 
 Building begins by changing the configurations of Biketribe, your
-example marketplace, in
-[Flex Console](https://flex-console.sharetribe.com/). You can set up
-your marketplace essentials like branding, layout, payments, listing
-fields, and listing types.
+example marketplace, in [Flex Console](https://console.sharetribe.com/).
+You can set up your marketplace essentials like branding, layout,
+payments, listing fields, and listing types.
 
 Some of these changes are must-haves: you'll likely want to change your
 logo and remove Biketribe branding. Others are optional: for example, if

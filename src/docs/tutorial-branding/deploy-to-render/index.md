@@ -143,14 +143,14 @@ You then need to add the following environment variables:
 - `REACT_APP_SHARETRIBE_SDK_CLIENT_ID`
 
   Sharetribe client ID. Check this from
-  [Console](https://flex-console.sharetribe.com/applications). For a dev
-  environment that is meant for developing further features, use the
+  [Console](https://console.sharetribe.com/advanced/applications). For a
+  dev environment that is meant for developing further features, use the
   client ID from your _development environment_.
 
 - `SHARETRIBE_SDK_CLIENT_SECRET`
 
   Sharetribe client secret. Check this from
-  [Console](https://flex-console.sharetribe.com/applications).
+  [Console](https://console.sharetribe.com/advanced/applications).
 
 - `REACT_APP_STRIPE_PUBLISHABLE_KEY`
 

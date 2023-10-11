@@ -32,13 +32,13 @@ of environment variables.
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
   Your application's client ID. You can get this from
-  [Sharetribe Console](https://flex-console.sharetribe.com/applications).
+  [Sharetribe Console](https://console.sharetribe.com/advanced/applications).
 
 - **`SHARETRIBE_SDK_CLIENT_SECRET`**
 
   Your application's client secret. It's related to client ID and used
   for privileged transitions from server side. You can get this from
-  [Sharetribe Console](https://flex-console.sharetribe.com/applications).
+  [Sharetribe Console](https://console.sharetribe.com/advanced/applications).
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 

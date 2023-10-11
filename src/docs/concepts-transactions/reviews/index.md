@@ -64,7 +64,7 @@ published.
 
 Once published, reviews cannot be removed. They can, however, be
 modified by the operator in Sharetribe Console > Manage >
-[Reviews](https://flex-console.sharetribe.com/reviews).
+[Reviews](https://console.sharetribe.com/reviews).
 
 ### Can I add a review after the review period has expired?
 

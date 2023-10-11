@@ -42,8 +42,7 @@ you want to initiate the (test or live) migration process, you should
 email flex-support@sharetribe.com with the subject “Migrating from
 outside Sharetribe”. Please include your Sharetribe organization (your
 organization is displayed in your
-[Console](https://flex-console.sharetribe.com/) in the top right
-corner).
+[Console](https://console.sharetribe.com/) in the top right corner).
 
 ## Intermediary data
 

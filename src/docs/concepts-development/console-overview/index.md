@@ -38,11 +38,11 @@ are ready to launch your marketplace, you can request a live environment
 setup.
 
 When you interact and create new users, listings, and transactions with
-your [test application](https://flex-console.sharetribe.com), you will
-see the data in the test environment. While you cannot modify the code
-of the test environment, you can start playing around with it and see
-the changes you make reflected in the test environment’s Console. You
-can create users, new listings, and even transactions and reviews.
+your [test application](https://console.sharetribe.com), you will see
+the data in the test environment. While you cannot modify the code of
+the test environment, you can start playing around with it and see the
+changes you make reflected in the test environment’s Console. You can
+create users, new listings, and even transactions and reviews.
 
 To interact and see data in your development environment’s Console, you
 first need to set up the frontend application for your development

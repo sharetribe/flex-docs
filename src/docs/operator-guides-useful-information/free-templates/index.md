@@ -38,7 +38,7 @@ may not reflect the most current legal developments.
 
 ## How to use the Terms of Service template for your marketplace business
 
-- Go to [Flex Console](https://flex-console.sharetribe.com/login).
+- Go to [Flex Console](https://console.sharetribe.com/login).
 - Open the Pages editor at /content/pages.
 - Click on the “terms-of-service” page to edit it.
 - Open the “terms-of-service” article.
@@ -64,7 +64,7 @@ Service on the Terms of Service page.
 
 ## How to use the Privacy Policy template for your marketplace business
 
-- Go to [Flex Console](https://flex-console.sharetribe.com/login).
+- Go to [Flex Console](https://console.sharetribe.com/login).
 - Open the Pages editor at /content/pages.
 - Click on the “privacy-policy” page to edit it.
 - Open the “privacy-policy” article.

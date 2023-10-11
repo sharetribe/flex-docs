@@ -62,7 +62,7 @@ To take Zapier into use and connect it to Sharetribe, you need:
 ### 2. Create a new application with credentials in Sharetribe console
 
 1. Go to
-   [Console > Build > Applications](https://flex-console.sharetribe.com/applications).
+   [Console > Build > Applications](https://console.sharetribe.com/advanced/applications).
    Click on “+Add new”.
 2. Fill in a name (e.g. "Zapier") and select _Integration API_
 3. Copy the Client ID and the Client Secret somewhere secure before
@@ -134,12 +134,11 @@ able to collect.
 It is good to note that any extended data attributes only show up in
 Zapier if they are present in the resource you are testing with. For
 example, if you are testing phone number handling in a user event, you
-can check in
-[Sharetribe Console](https://flex-console.sharetribe.com/users) to see
-whether the user has a phone number defined in the first place. Since
-Zapier listens to events, it is useful to start any Zapier development
-work by triggering an event with the specific test data you need, so you
-know that your data has the necessary attributes.
+can check in [Sharetribe Console](https://console.sharetribe.com/users)
+to see whether the user has a phone number defined in the first place.
+Since Zapier listens to events, it is useful to start any Zapier
+development work by triggering an event with the specific test data you
+need, so you know that your data has the necessary attributes.
 
 ## Which actions can Zapier take in my marketplace?
 

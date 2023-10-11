@@ -24,13 +24,12 @@ link below.
 
 ## Getting started
 
-Find the Pages feature in
-[Console.](https://flex-console.sharetribe.com/) Navigate to your test
-(or development) environment, pick the “Build” section from your top
-bar, select “Content” from the sub-menu, then select “Pages” from the
-left side menu. You should now see your default content pages (the About
-page, the Landing page, the Terms of use page, and the Policy page)
-ready for editing.
+Find the Pages feature in [Console.](https://console.sharetribe.com/)
+Navigate to your test (or development) environment, pick the “Build”
+section from your top bar, select “Content” from the sub-menu, then
+select “Pages” from the left side menu. You should now see your default
+content pages (the About page, the Landing page, the Terms of use page,
+and the Policy page) ready for editing.
 
 <extrainfo title="Test or development environment?">
 

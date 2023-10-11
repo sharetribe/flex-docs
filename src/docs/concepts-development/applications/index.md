@@ -12,10 +12,11 @@ published: true
 In Sharetribe, accessing the
 [Marketplace API or the Integration API](/concepts/marketplace-api-integration-api/)
 starts with creating an
-[_application_](https://flex-console.sharetribe.com/applications). Each
-application has the necessary credentials (client ID and optional client
-secret) that are used to [authenticate](/concepts/authentication-api/)
-your application to the Sharetribe APIs.
+[_application_](https://console.sharetribe.com/advanced/applications).
+Each application has the necessary credentials (client ID and optional
+client secret) that are used to
+[authenticate](/concepts/authentication-api/) your application to the
+Sharetribe APIs.
 
 Applications come in two types: Marketplace API applications and
 Integration API applications. Both types of applications have both a

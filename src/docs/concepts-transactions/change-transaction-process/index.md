@@ -146,9 +146,8 @@ What steps will be the same? What will be different?
 
 Also, check out some of the template processes in Sharetribe that you
 can find in the Build tab of your
-[Console](https://flex-console.sharetribe.com/). Using existing
-processes always saves development time on configuring your transaction
-process.
+[Console](https://console.sharetribe.com/). Using existing processes
+always saves development time on configuring your transaction process.
 
 ## Remember your marketplace website or app
 

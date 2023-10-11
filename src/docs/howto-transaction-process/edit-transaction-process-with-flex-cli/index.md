@@ -215,7 +215,7 @@ flex-cli process push --path process --process default-booking -m my-marketplace
 
 After the process is successfully pushed, you'll see a new process
 version in
-[Console](https://flex-console.sharetribe.com/transaction-processes).
+[Console](https://console.sharetribe.com/advanced/transaction-processes).
 
 Please note that pushing the changes to Flex doesn't immediately change
 the way how your marketplace works. The existing transactions are still

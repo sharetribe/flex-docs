@@ -23,7 +23,7 @@ and password), while Integration API applications authenticate using
 their own credentials.
 
 In order to access Sharetribe APIs, you need to create an _Application_
-in [Console](https://flex-console.sharetribe.com/applications). Each
+in [Console](https://console.sharetribe.com/advanced/applications). Each
 Application has a _client ID_. In addition, applications that access the
 Integration API also have a corresponding _client secret_.
 

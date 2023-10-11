@@ -73,7 +73,7 @@ The `alias` variable should point to the correct alias. You need to
 check from Console which process and process version your client app
 should support. All available transaction process aliases can be found
 in the
-[Build section](https://flex-console.sharetribe.com/transaction-processes)
+[Build section](https://console.sharetribe.com/advanced/transaction-processes)
 in Console.
 
 The `unitType` specifies what kind of units the web app is dealing with.

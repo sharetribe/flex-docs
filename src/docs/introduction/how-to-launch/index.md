@@ -32,7 +32,7 @@ it's a good idea to do that now.
 
 If you're reading this article, the chances are that you already have
 access a Sharetribe marketplace. This means that you have an account in
-[Sharetribe Console](https://flex-console.sharetribe.com) (the "admin
+[Sharetribe Console](https://console.sharetribe.com) (the "admin
 section" of your Sharetribe marketplace). If you don't have an account
 yet, you can create one in
 [the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).

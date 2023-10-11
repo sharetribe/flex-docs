@@ -13,10 +13,10 @@ you want to learn how to use the feature, you can read the article about
 
 ## For marketplaces created after 2023-02-15
 
-Log into the [Flex Console](https://flex-console.sharetribe.com/).
-Switch to the Test environment. Choose the “Build” option from the top
-bar, then select “Content”. Go to the any of the default pages to start
-editing the corresponding page. When you make changes within the Test
+Log into the [Flex Console](https://console.sharetribe.com/). Switch to
+the Test environment. Choose the “Build” option from the top bar, then
+select “Content”. Go to the any of the default pages to start editing
+the corresponding page. When you make changes within the Test
 environment, you will be able to see changes right away. If you want to
 use the Pages feature in Dev or Live, you would need to do further setup
 with some development.
@@ -30,7 +30,7 @@ Console and click the button “Import default pages”. You can then make
 adjustments to your test Marketplace and see how they look on the page.
 You can visit Pages by going to you Test environment and clicking on
 "Build" and then "Content". You can follow
-[this direct link to Pages in Console](https://flex-console.sharetribe.com/content/pages/),
+[this direct link to Pages in Console](https://console.sharetribe.com/content/pages/),
 but bear in mind that you might need to navigate to the Test
 environment.
 

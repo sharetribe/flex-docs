@@ -62,7 +62,7 @@ then build your content library as you go.
 ## Build your library page and article pages
 
 To add a page, you need to navigate to
-[Sharetribe Console > Build > Content > Pages](https://flex-console.sharetribe.com/content/pages).
+[Sharetribe Console > Build > Content > Pages](https://console.sharetribe.com/content/pages).
 By default, this page contains an about page, a landing page, a privacy
 policy page, and a terms of service page. Under those pages you can see
 a link with text "+ Create new page...". Click this link.

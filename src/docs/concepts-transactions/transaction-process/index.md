@@ -50,7 +50,7 @@ possibilities they have upon reaching each step.
 Your marketplace can have multiple different transaction processes in
 use simultaneously. You can see the transaction processes of your
 marketplace in
-[Sharetribe Console](https://flex-console.sharetribe.com/transaction-processes).
+[Sharetribe Console](https://console.sharetribe.com/advanced/transaction-processes).
 
 Typically, all transaction processes are different. These differences
 can be fundamental and change the logic of the order flow, or they can
@@ -84,7 +84,7 @@ modeled on AirBnB to learn more about them.
 In the image above you can see one of the default transaction processes
 in Sharetribe called "default-booking". It is the same process that you
 will find, albeit with a different layout, within your Console account's
-[transaction process page](https://flex-console.sharetribe.com/transaction-processes).
+[transaction process page](https://console.sharetribe.com/advanced/transaction-processes).
 It closely mimics how a customer and a provider transact on AirBnB. From
 a listing, customers can message a provider or book directly by entering
 their payment details and authorizing the charge on their card.
