@@ -1,6 +1,6 @@
 ---
 title: How to use the Microcopy editor
-slug: how-to-use-microcopy-editor
+slug: how-to-edit-marketplace-texts
 updated: 2022-06-14
 category: operator-guides-static-content
 ingress:

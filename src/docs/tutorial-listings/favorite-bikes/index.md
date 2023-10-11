@@ -180,13 +180,14 @@ with _className_ `css.author`.
 ```
 
 Now, you can see the button in the order panel. However, the button text
-shows the microcopy key of the message, not the message we want to show.
+shows the marketplace text key of the message, not the message we want
+to show.
 
-![Favorite bike button with microcopy key](./biketribe-favorites-button-key.png)
+![Favorite bike button with marketplace text key](./biketribe-favorites-button-key.png)
 
-Let’s fix that by adding all the microcopy keys we need in this
+Let’s fix that by adding all the marketplace texts we need in this
 tutorial. You can add them in Flex Console > Build > Content >
-Microcopy, or in src/translations/en.js.
+Marketplace texts, or in src/translations/en.js.
 
 ```json
 …
@@ -202,10 +203,10 @@ Microcopy, or in src/translations/en.js.
 …
 ```
 
-After adding the microcopy strings and saving your changes, you can
+After adding the marketplace texts and saving your changes, you can
 refresh your browser and you will see the correct texts in the button.
 
-![Favorite bike button with correct microcopy](./biketribe-favorites-button-value.png)
+![Favorite bike button with correct texts](./biketribe-favorites-button-value.png)
 
 Clicking the button will not do anything yet, so as the next step, we
 will create the functionality to favorite a listing.
@@ -646,8 +647,8 @@ const mapStateToProps = state => {
 Finally, we compose and export our component. We need to compose it with
 both
 [injectIntl](https://formatjs.io/docs/react-intl/api/#injectintl-hoc),
-which allows us to use microcopy in the component, and Redux, which
-allows us to get data from the store as props.
+which allows us to use marketplace texts in the component, and Redux,
+which allows us to get data from the store as props.
 
 ```js
 const FavoriteListingsPage = compose(

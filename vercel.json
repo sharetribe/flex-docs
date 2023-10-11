@@ -959,7 +959,11 @@
     "source": "/tutorial/add-favorite-saunas/",
     "destination": "/docs/tutorial/add-favorite-bikes/",
     "permanent": true
-
+  },
+  {
+    "source": "/operator-guides/how-to-use-microcopy-editor/",
+    "destination": "/docs/operator-guides/how-to-edit-marketplace-texts/",
+    "permanent": true
   }
 ]
 }

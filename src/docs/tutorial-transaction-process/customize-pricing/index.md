@@ -317,9 +317,10 @@ const helmetFeeLabel = intl.formatMessage(
 );
 ```
 
-We will also add a new microcopy key _BookingDatesForm.helmetFeeLabel_
-to the **_en.json_** file, and we can use the **_fee_** variable to show
-the price.
+We will also add a new marketplace text key
+_BookingDatesForm.helmetFeeLabel_ to the **_en.json_** file or the
+Marketplace texts editor in Console, and we can use the **_fee_**
+variable to show the price.
 
 ```js
   "BookingDatesForm.helmetFeeLabel": "Helmet rental fee: {fee}",

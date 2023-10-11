@@ -168,13 +168,13 @@ listing.
 
 ### How do I update the texts my buyers and providers see for a Listing type?
 
-You can update your marketplace texts using the Microcopy editor,
-including texts like the checkout button or help information providers
-and buyers see in their Inbox. Note that these texts are associated with
-the transaction process in use by the Listing type, not the Listing type
-itself. This means that if you change texts for Free messaging as an
-example, you are changing the texts for every Listing type using this
-transaction process.
+You can update your marketplace texts using the Marketplace texts
+editor, including texts like the checkout button or help information
+providers and buyers see in their Inbox. Note that these texts are
+associated with the transaction process in use by the Listing type, not
+the Listing type itself. This means that if you change texts for Free
+messaging as an example, you are changing the texts for every Listing
+type using this transaction process.
 
 ### How do I update the Listing type of a listing?
 

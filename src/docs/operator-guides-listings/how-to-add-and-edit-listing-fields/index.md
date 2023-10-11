@@ -84,4 +84,4 @@ value.
 At this moment, it is not possible to remove the default listing fields,
 like title and description. You can, however, modify the copy text that
 is displayed to your users
-[via marketplace text editor](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/)
+[via marketplace text editor](https://www.sharetribe.com/docs/operator-guides/how-to-edit-marketplace-texts/)
