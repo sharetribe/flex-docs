@@ -28,7 +28,7 @@ You can read more about the template sitemap and other resources in the
 ### robots.txt
 
 The [your-domain]**/robots.txt** file details the authenticated routes
-that crawlers should avoid, and exposes the URL to the main sitemap. If
+as disallowed for crawlers, and exposes the URL to the main sitemap. If
 you custom develop routes that require authentication, it is a good idea
 to specify them here.
 
@@ -98,13 +98,19 @@ set in
 
 The template caches sitemap data
 [for one day by default](https://github.com/sharetribe/web-template/blob/main/server/resources/sitemap.js#L55).
+In addition, the sitemap API endpoints cache results for one day. This
+means that when using the template, the combined cache effect can be up
+to two days.
+
 Especially on bigger sites with multiple listings, listing sitemap data
 can take up to a few seconds to fetch from the SDK. Caching the results
 improves the sitemap performance.
 
-## Testing your sitemap on Google
+## Adding your sitemap to Google
 
-To test your sitemap on Google, you should add Google site verification
+To add your sitemap on Google, you should add Google site verification
 through Sharetribe Console. After that, you can add your sitemap index
-to Google Search Console. You can read more detailed instructions in
+to Google Search Console. That way, your site gets indexed immediately,
+and you don't need to wait for it to be discovered by bots. You can read
+more detailed instructions in
 [Google's own documentation](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#addsitemap).
