@@ -40,12 +40,12 @@ _sitemap-index.xml_, all with slightly different data:
   _robots.txt_ file.
 - _sitemap-recent-listings.xml_ exposes routes to the most recently
   created listings. The listing data is fetched from a specific
-  _sitemapData_ endpoint available in both [SDK]() and [API](). The
-  endpoint returns the 10 000 most recent listings.
+  [_sitemapData_ endpoint](TODO API REF LINK). The endpoint returns the
+  10 000 most recent listings.
 - _sitemap-recent-pages.xml_ exposes routes to the CMS pages created in
   Console that do not have built-in paths in the client application. The
-  page data is fetched from a specific _sitemapData_ endpoint available
-  in both [SDK]() and [API]().
+  page data is fetched from a specific [_sitemapData_ endpoint](TODO API
+  REF LINK).
 
 ## Caching
 

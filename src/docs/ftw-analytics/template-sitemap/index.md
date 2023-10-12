@@ -11,8 +11,10 @@ published: true
 
 Your marketplace's sitemap helps search engines to process the correct
 information on your marketplace. The Sharetribe Web Template has
-built-in support for creating a sitemap, and this article gives you some
-context into how the process works.
+built-in support for creating a sitemap (introduced in
+[this change set](https://github.com/sharetribe/web-template/pull/243)),
+and this article gives you some context into how sitemap generating
+works in the template.
 
 ## Template sitemap structure
 
