@@ -1,29 +1,35 @@
 ---
-title: Introduction to marketplace images
+title: What are the branding images
 slug: introduction-to-marketplace-images
-updated: 2023-04-19
+updated: 2023-10-04
 category: operator-guides-branding
 ingress:
-  Several images are necessary for your marketplace’s branding and
-  overall presentation to users and visitors. These include your
-  marketplace logo, favicon, app icon, background image for login pages,
-  and social media image. In this article, we describe the images that
-  can be used and altered from Console.
+  Learn about the different images that help communicate your brand.
 published: true
 ---
 
+Sharetribe offers the ability to upload a variety of images and logos to
+display your brand throughout your marketplace. Each type of brand
+images requires a different size to properly display throughout your
+marketplace. Unless otherwise stated, images should be in .png, .jpg, or
+.gif format.
+
 ## Marketplace Logo
 
-Your logo lets your customers instantly recognize your business and
-connect with what you do and stand for. Every marketplace or business
-looking to have an online presence should have a great logo that
-communicates your brand identity. Check our guide to good-looking logos
-here.
+Your marketplace logo is shown on your marketplace top bar and in the
+footer.
 
-Your marketplace logo is shown on your marketplace Top bar. For the best
-result, we recommend using a file with a height of 48 pixels and a width
-of 48–370 pixels.
-[Learn more about the logo measurements](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
+You can choose to display your logo in three different sizes:
+
+- Small: logo dimensions are 24x640 pixels
+- Medium: logo dimensions are 24x640 pixels
+- Big: logo dimensions are 36x640 pixels
+
+As you might notice, increasing your logo size increases logo height
+while keeping the logo width the same. Therefore, it is important to
+upload a logo that suits the size of the logo you wish to display. You
+might need to create multiple logos of different heights as you
+experiment with different sizes.
 
 ![biketribe-logo](./logo.png)
 
@@ -32,9 +38,19 @@ of 48–370 pixels.
 The favicon is shown on the browser's tab. If your logo has a simple
 icon, you can use this icon as your favicon. It’s also known as the tab
 icon. For your favicon image, use a square image in dimension 48x48
-pixels or bigger. Here’s an example of a marketplace favicon:
+pixels or bigger.
 
 ![biketribe-favicon](./favicon.png)
+
+## App icon
+
+The app icon is similar to the favicon: it is a square icon representing
+your site in different browser contexts. For example, the app icon is
+used when your marketplace is bookmarked to a mobile home screen or when
+viewing open tabs in Chrome browser.
+
+Make sure that your app icon has a square aspect ratio and dimensions of
+at least 512x512 pixels for best results.
 
 ## Background image for login/signup page
 

@@ -26,9 +26,9 @@ symbols.
 
 The Pages feature uses a modified version of Markdown syntax. It allows
 you to add bold, italics, links, lists, headers, images, code and
-quotation blocks to the content text. You can add markdown in blocks
-description and sections ingress. Markdown doesn’t work in section
-titles or block titles.
+quotation blocks to the content text. You can only add Markdown to text
+in Content Blocks. Markdown doesn’t work in section titles, section
+descriptions or block titles.
 
 This article helps you get an idea of how markdown works. Bear in mind
 that the rendering in this site is different that the rendering in

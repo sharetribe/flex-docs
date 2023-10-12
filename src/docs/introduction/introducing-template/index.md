@@ -28,7 +28,7 @@ You can change Biketribe default settings in Console. Change core user
 experiences like search, listing creation, and transactions in Console's
 Build section under the "Content" tab. For a full list of the no-code
 capabilities and how to use them to change Biketribe, please consult our
-[Biketribe configuration checklist](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist/).
+[Biketribe configuration checklist](https://www.sharetribe.com/docs/operator-guides/sharetribe-configuration-checklist/).
 
 At the very least, after configuring your marketplace, you will need to
 install the Template codebase on your own servers. More likely, you will

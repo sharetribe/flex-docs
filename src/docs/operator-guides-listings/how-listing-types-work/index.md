@@ -140,7 +140,7 @@ this feature.
 
 Listing types are set in your Console>Listings>Listing types tab. You
 can learn more about the different settings you configure
-[during Listing type setup here](https://www.sharetribe.com/docs/the-new-sharetribe/what-are-listing-types/).
+[during Listing type setup here](https://www.sharetribe.com/help/en/articles/8413200-what-are-listing-type-settings).
 
 ### What happens to existing listings when I change my Listing type settings?
 
