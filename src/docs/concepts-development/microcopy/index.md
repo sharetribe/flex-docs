@@ -330,17 +330,32 @@ user profiles could include both language versions by saving the content
 of language-specific input fields to a listing's extended data, users
 are rarely capable of providing content for several languages.
 
-With email notifications and built-in emails, you would need to save the
-user's language to extended data and then have an if-statement that
-renders a message key pointing to the correct language, for example:
+With email notifications and built-in emails, at the moment only a
+single file of translations is supported. However, it is possible to
+dynamically construct the translation keys used in the `t` helper, by
+using the `concat` helper to concatenate the key with data that is
+available in the template context. This mechanism can be used to support
+multiple languages in the new email templates, like in the following
+example:
 
-```js
-{{#eq recipient.private-data.language "en"}}
-  {{t "TemplateName.TitleEn" "Hello"}}
-{{else}}
-  {{t "TemplateName.TitleFr" "Bonjour"}}
-{{/eq}}
+In _content/email-texts.json_:
+
+```json
+{
+  // Translation key for the email subject in English
+  "NewMessage.Subject_en": "{senderName} has sent you a new message"
+}
 ```
+
+In the template:
+
+```handlebars
+{{!-- Dynamically construct the translation key based on the recipient's language --}}
+{{t (concat "NewMessage.Subject" "_" recipient.private-data.language) "{senderName} has sent you a new message" senderName=message.sender.display-name}}
+```
+
+In the above example the language is stored in the recipient's private
+data.
 
 Read more about what to consider when
 [building a multilanguage Flex marketplace on top of Sharetribe Web Template](/ftw/how-to-change-ftw-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplace).
