@@ -17,8 +17,10 @@ application.
 However, on a marketplace, it is likely that you will have listing URLs
 that include dynamic data from each listing – and you still want search
 engines to index those pages. Sharetribe offers API endpoints for
-fetching sitemap data for [listings](TODO API REF LINK) and [CMS
-pages](TODO API REF LINK).
+fetching sitemap data for
+[listings](https://www.sharetribe.com/api-reference/marketplace.html#query-list-of-listings)
+and
+[CMS pages](https://www.sharetribe.com/api-reference/marketplace.html#query-list-of-assets).
 
 <info>
 
@@ -48,16 +50,23 @@ different data:
   _robots.txt_ file.
 - _sitemap-recent-listings.xml_ exposes routes to the most recently
   created listings. The listing data is fetched from a specific
-  [_sitemapData_ endpoint](TODO API REF LINK). The endpoint returns the
-  10 000 most recent listings.
+  [_sitemapData_ endpoint](https://www.sharetribe.com/api-reference/marketplace.html#query-list-of-listings).
+  The endpoint returns the 10 000 most recent listings.
 - _sitemap-recent-pages.xml_ exposes routes to the CMS pages created in
   Console that do not have built-in paths in the client application. The
-  page data is fetched from a specific [_sitemapData_ endpoint](TODO API
-  REF LINK).
+  page data is fetched from a specific
+  [_sitemapData_ endpoint](https://www.sharetribe.com/api-reference/marketplace.html#query-list-of-assets).
 
 It is good to note that the sitemap API endpoints cache results for one
 day, so sitemaps generated using the sitemap API endpoints do not update
 in real time.
+
+If your marketplace has more than 10 000 listings, you will need to
+fetch the information for older listing through Integration API. Since
+the Integration API
+[listing query endpoint](https://www.sharetribe.com/api-reference/integration.html#query-listings)
+is paginated, you will need to filter the results by e.g. the
+_createdAt_ attribute to retrieve all listings.
 
 ## Caching
 
