@@ -42,7 +42,7 @@ buttons, help texts, unit markers, and other words or phrases that help
 users navigate your marketplace and accomplish their goals. Here is an
 example of different Marketplace texts found on a booking listing page.
 
-![]()
+![Examples of marketplace texts](./marketplace-text-examples.png)
 
 ## How Marketplace texts work
 
@@ -83,7 +83,7 @@ understanding where a piece of text appears.
 The first part of the key (before the period) points to the page you are
 editing.
 
-![]()
+![Marketplace text key specifies the page](./marketplace-texts-key.png)
 
 Remember that Marketplace texts only appear on dynamic pages. If you
 want to edit texts on a content page, you should use the Pages editor at
@@ -95,7 +95,7 @@ The second part of the key (after the period) tells you what section of
 that page you are editing. This maps to a specific area within the page
 where the text will appear.
 
-![]()
+![Marketplace text key also specifies the element being edited](./marketplace-texts-element.png)
 
 It will be hard to know where a text appears by looking at the key alone
 at first. The best way to start is to search directly for the phrase or
@@ -115,7 +115,7 @@ is always written after the colon (:) that follows a key. A comma (,) is
 placed after the quotation-mark-enclosed value, denoting the end of the
 Marketplace text piece.
 
-![]()
+![Marketplace text content is written after a colon](./marketplace-texts-content.png)
 
 In addition to text, numbers, and punctuation, you can use simple and
 complex arguments in your Marketplace texts. Arguments allow you to
@@ -133,6 +133,8 @@ bar appears. Type in the word you're looking for and press "Enter". The
 editor automatically jumps to the first instance of your search term it
 finds. If you want to find the next instance, press Ctrl+F or Cmd+F and
 hit enter again.
+
+![You can use search in the marketplace texts editor](./marketplace-texts-search.png)
 
 If you are making many changes, consider using a third-party editor for
 the task. Plain text editors like Notepad on Windows, TextEdit on Mac,
@@ -173,7 +175,7 @@ Whenever that happens, and you want to edit the values of the new keys,
 you need to copy-paste the new key-value pairs to Marketplace texts.
 This article teaches you how.
 
-## Can I add a link or formatting with Marketplace texts?
+### Can I add a link or formatting with Marketplace texts?
 
 Marketplace texts doesn't support adding links or formatting (bolding,
 italics, etc). If you want to add links or format your text, you need to
