@@ -144,7 +144,11 @@ const sortingArrayHowToListings = [
   'bookings-with-buffer',
 ];
 
-const sortingArrayOperatorGuidesStaticContent = ['introducing-pages'];
+const sortingArrayOperatorGuidesStaticContent = [
+  'introducing-pages',
+  'what-are-marketplace-texts',
+  'what-are-email-texts',
+];
 
 const sortingArrayOperatorGuidesConcepts = [
   'concepts',
