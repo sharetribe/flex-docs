@@ -279,9 +279,10 @@ following instead of modifying the _TimeRangeHidden_ component:
 
 </extrainfo>
 
-At this point, we can add the microcopy necessary in this guide. You can
-add the microcopy through Flex Console, or in _src/translations/en.js_,
-if you are not using Console-based microcopy.
+At this point, we can add the marketplace texts necessary in this guide.
+You can add the marketplace texts through Flex Console, or in
+_src/translations/en.js_, if you are not using Console-based marketplace
+texts.
 
 ```json
 ...
@@ -430,8 +431,8 @@ let’s show the number of available seats in the weekly calendar.
                         └── WeeklyCalendar.js
 ```
 
-We have already added a microcopy string that takes a _seats_ parameter.
-Now we will pass the _seats_ value to the microcopy.
+We have already added a marketplace text string that takes a _seats_
+parameter. Now we will pass the _seats_ value to the message.
 
 Similarly to the inputs, the weekly calendar also has an element that
 renders a single availability plan entry, called _PlanEntry_. For full
@@ -737,7 +738,7 @@ the default plan.
 ```
 
 The component here we want to modify is _AvailableExceptionsInfo_. It
-uses the same microcopy key
+uses the same marketplace text key
 _EditListingAvailabilityPanel.WeeklyCalendar.available_ as the
 _PlanEntry_ component.
 
@@ -1330,7 +1331,7 @@ const quantity = unitPurchase?.units
   : null;
 ```
 
-We also want to show different microcopy whenever the order has seats
+We also want to show different messages whenever the order has seats
 defined. We will therefore set the _FormattedMessage_ component into a
 variable, so we can conditionally use the version that is appropriate.
 

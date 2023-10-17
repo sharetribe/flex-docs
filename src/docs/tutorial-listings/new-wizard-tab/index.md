@@ -286,8 +286,8 @@ addition, we show any errors from props.
 ```
 
 The rest of the file defines the necessary props more closely, and
-finally exports the component. Since the form uses microcopy, and
-therefore needs the
+finally exports the component. Since the form uses Console-editable
+marketplace texts, and therefore needs the
 [_intl_ object](https://formatjs.io/docs/react-intl/api/#the-intl-object),
 we need to compose
 [injectIntl](https://formatjs.io/docs/react-intl/api/#injectintl-hoc)
@@ -446,9 +446,9 @@ const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING];
 The EditListingWizard component checks the tab value in two functions:
 _tabLabelAndSubmit_ and _tabCompleted_.
 
-The `tabLabelAndSubmit` function determines the microcopy keys for the
-tab label and the submit button. Add the following block in the if-else
-sequence:
+The `tabLabelAndSubmit` function determines the marketplace text keys
+for the tab label and the submit button. Add the following block in the
+if-else sequence:
 
 ```
 else if (tab === EXTRAFEATURES) {
@@ -482,13 +482,14 @@ attribute, so if this was a required feature, we would check whether
 
 Now, if you start creating a new listing, you’ll see a new tab label in
 the left side navigation. However, the label only shows the relevant
-microcopy key, since we have not yet added the microcopy values in Flex
-Console.
+marketplace text key, since we have not yet added the marketplace texts
+in Flex Console.
 
 ![New tab without label](./biketribe-wizard-microcopy-key.png)
 
 To fix this, add the following keys and values in your Flex Console >
-Build > Content > Microcopy editor or _src/translations/en.json_ file:
+Build > Content > Marketplace texts editor or _src/translations/en.json_
+file:
 
 ```json
   "EditListingWizard.tabLabelExtraFeatures": "Extra features",
@@ -503,9 +504,9 @@ Build > Content > Microcopy editor or _src/translations/en.json_ file:
   "ListingPage.extraFeaturesTitle": "Extra features"
 ```
 
-After adding these microcopy keys and values, you can create and edit
-the extra features of a listing. You can test the panel functionality by
-saving some extra features for the listing.
+After adding these marketplace texts, you can create and edit the extra
+features of a listing. You can test the panel functionality by saving
+some extra features for the listing.
 
 ![Bike extra features panel](./biketribe-extrafeatures-panel.png)
 
@@ -563,7 +564,7 @@ In this tutorial, you
   - show the correct labels and
   - check whether the listing has the necessary information related to
     the new panel
-- Added microcopy strings for the different texts related to the new
+- Added marketplace texts for the different contexts related to the new
   panel
 - Used _SectionTextMaybe_ on the listing page for displaying the extra
   features

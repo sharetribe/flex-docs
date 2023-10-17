@@ -357,8 +357,8 @@ or even personalize the templates based on who the recipient is.
 
 ## Multiple languages and currencies
 
-Sharetribe Web Template includes default language-specific microcopy
-files for English, Spanish, French and German, but you can easily
+Sharetribe Web Template includes default language-specific marketplace
+texts files for English, Spanish, French and German, but you can easily
 translate it to the language of your choice. With some development work
 you can make your marketplace multilingual, allowing your users to use
 it in the language of their choice.
@@ -376,11 +376,10 @@ one of the [countries supported by Stripe](https://stripe.com/global).
 ## Content management
 
 You can manage much of your marketplace texts and images in Flex
-Console. In Flex, the term _microcopy_ refers to small snippets of text
-in the user interface, such as button labels, error messages and help
-texts. You can modify existing microcopy messages in Flex Console with
-no development work required, and add new messages with custom
-development.
+Console. Marketplace texts include small snippets of text in the user
+interface, such as button labels, error messages and help texts. You can
+modify existing marketplace texts in Flex Console with no development
+work required, and add new messages with custom development.
 
 In addition, you can create content pages, and modify the content of
 existing ones, using Flex Console. You have full control over how the
@@ -527,7 +526,7 @@ Here are the features it offers:
 - **Transaction processes.** See a list of your
   [transaction processes](/concepts/transaction-process/) and view the
   details of each process.
-- **Content.** Modify your marketplace microcopy and content pages.
+- **Content.** Modify your marketplace texts and content pages.
 - **Payments.** Add your Stripe keys to be able to accept online
   payments.
 - **Built-in email templates.** Edit and preview the contents of your

@@ -205,10 +205,11 @@ attribute **lastServiced**, which will be included in a listing selling
 the bike, and it will include the date of the last service of the bike
 as well as a description of what was serviced.
 
-<extrainfo title="Microcopy values used in this guide">
+<extrainfo title="Marketplace texts used in this guide">
 
-You can paste the microcopy strings used in this guide in your Flex
-Console Microcopy editor or your translation file.
+You can paste the marketplace text strings used in this guide in your
+Flex Console, under Build > Content > Marketplace texts, or your
+translation file.
 
 ```js
   "EditListingServiceHistoryForm.lastServiced": "Date when last serviced",

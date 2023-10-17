@@ -31,7 +31,8 @@ otherwise sensitive information.
 At present, Flex uses assets for managing marketplace content without
 code changes:
 
-- you can modify [microcopy strings](/concepts/microcopy/),
+- you can modify
+  [marketplace text strings](/concepts/marketplace-texts/),
 - create content [pages](/concepts/content-management/) for your
   marketplace, and
 - configure your marketplace branding, layout, listings, search, footer,
@@ -48,7 +49,7 @@ For example, a marketplace may have assets with the following assets:
 
 where `design/branding.json` could contain configuration data (for
 instance, UI colors, logo, etc) and `content/translations.json` could
-contain string microcopy data to be used in a marketplace client
+contain string marketplace text data to be used in a marketplace client
 application (such as one based on one of the Sharetribe Web Template).
 
 ## Asset versioning
@@ -126,6 +127,6 @@ take up to 5 minutes before any changes are visible to all end users.
 
 ## Further reading
 
-- [Editing client application microcopy](/concepts/microcopy/)
+- [Editing client application marketplace texts](/concepts/marketplace-texts/)
 - [Managing asset-based marketplace content](/concepts/content-management/)
 - [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)

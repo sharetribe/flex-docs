@@ -279,10 +279,10 @@ If you have created a new **stateData** file (e.g.
 **InboxPage.stateDataNegotiation.js**), you will need to export a
 uniquely named _getStateDataFor..._ function from that file.
 
-## 4. Add microcopy strings
+## 4. Add marketplace text strings
 
-A lot of microcopy strings in Sharetribe Web Template are transaction
-process and state specific.
+A lot of marketplace text strings in Sharetribe Web Template are
+transaction process and state specific.
 
 ```js
 ...
@@ -294,10 +294,10 @@ process and state specific.
 ```
 
 This means that when you create a new transaction process, you will also
-need to add microcopy for the relevant keys and states in the new
-process. You can add the process specific keys either into the
-[bundled microcopy files in the template](/ftw/how-to-change-ftw-bundled-microcopy/)
-or through the [Flex Console Content tab](/concepts/microcopy/).
+need to add marketplace texts for the relevant keys and states in the
+new process. You can add the process specific keys either into the
+[bundled marketplace text files in the template](/ftw/how-to-change-ftw-bundled-marketplace-texts/)
+or through the [Flex Console Content tab](/concepts/marketplace-texts/).
 
 After making the necessary changes in these contexts, your new
 transaction process should work as expected in the template! Be sure to

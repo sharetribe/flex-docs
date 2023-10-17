@@ -162,15 +162,15 @@ param to the _FieldCurrencyInput_ like there is in the _price_ input.
 ...
 ```
 
-You can use the following microcopy keys:
+You can use the following marketplace text keys:
 
 ```js
   "EditListingPricingForm.helmetFee":"Helmet rental fee (optional)",
   "EditListingPricingForm.helmetFeePlaceholder": "Add a helmet rental fee..."
 ```
 
-After adding the new microcopy keys, the EditListingPricingPanel should
-look something like this:
+After adding the new marketplace text keys, the EditListingPricingPanel
+should look something like this:
 ![EditListingPricePanel](./editlistingpricepanel.png)
 
 ## Update BookingDatesForm
@@ -317,9 +317,10 @@ const helmetFeeLabel = intl.formatMessage(
 );
 ```
 
-We will also add a new microcopy key _BookingDatesForm.helmetFeeLabel_
-to the **_en.json_** file, and we can use the **_fee_** variable to show
-the price.
+We will also add a new marketplace text key
+_BookingDatesForm.helmetFeeLabel_ to the **_en.json_** file or the
+Marketplace texts editor in Console, and we can use the **_fee_**
+variable to show the price.
 
 ```js
   "BookingDatesForm.helmetFeeLabel": "Helmet rental fee: {fee}",
