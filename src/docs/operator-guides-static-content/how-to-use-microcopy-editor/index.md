@@ -1,7 +1,7 @@
 ---
 title: How to edit marketplace texts
 slug: how-to-edit-marketplace-texts
-updated: 2022-06-14
+updated: 2023-10-17
 category: operator-guides-static-content
 ingress: Learn how to modify your marketplace texts on dynamic pages
 published: true
