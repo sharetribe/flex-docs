@@ -832,17 +832,17 @@
   },
   {
     "source": "/ftw/how-to-change-ftw-bundled-translations/",
-    "destination": "/docs/ftw/how-to-change-ftw-bundled-microcopy/",
+    "destination": "/docs/template/how-to-change-bundled-marketplace-texts/",
     "permanent": true
   },
   {
     "source": "/ftw/hosted-translations/",
-    "destination": "/docs/ftw/hosted-microcopy/",
+    "destination": "/docs/template/hosted-marketplace-texts/",
     "permanent": true
   },
   {
     "source": "/concepts/translations/",
-    "destination": "/docs/concepts/microcopy/",
+    "destination": "/docs/concepts/marketplace-texts/",
     "permanent": true
   },
   {
@@ -1092,12 +1092,12 @@
   },
  {
     "source": "/ftw/hosted-microcopy/",
-    "destination": "/docs/ftw/hosted-marketplace-texts/",
+    "destination": "/docs/template/hosted-marketplace-texts/",
     "permanent": true
   },
  {
     "source": "/ftw/how-to-change-ftw-bundled-microcopy/",
-    "destination": "/docs/ftw/how-to-change-ftw-bundled-marketplace-texts/",
+    "destination": "/docs/template/how-to-change-bundled-marketplace-texts/",
     "permanent": true
   },
   {
@@ -1123,6 +1123,16 @@
   {    
     "source": "/operator-guides/how-to-use-microcopy-editor/",
     "destination": "/docs/operator-guides/how-to-edit-marketplace-texts/",
+    "permanent": true
+  },
+  {    
+    "source": "/ftw/hosted-marketplace-texts/",
+    "destination": "/docs/template/hosted-marketplace-texts/",
+    "permanent": true
+  },
+  {    
+    "source": "/ftw/how-to-change-ftw-bundled-marketplace-texts/",
+    "destination": "/docs/template/how-to-change-bundled-marketplace-texts/",
     "permanent": true
   }
 ]

@@ -105,7 +105,7 @@ const sortingArrayDevelopment = [
 const sortingArrayContentManagement = [
   'content-management',
   'headless-content-management',
-  'microcopy',
+  'marketplace-texts',
 ];
 
 const sortingArrayHowToUsers = [
@@ -119,8 +119,8 @@ const sortingArrayHowToUsers = [
 
 const sortingArrayTemplateContent = [
   'how-to-change-template-ui-texts',
-  'how-to-change-ftw-bundled-microcopy', //TODO HANDLE MICROCOPY ONCE OTHER CHANGE MERGED
-  'hosted-microcopy',
+  'how-to-change-bundled-marketplace-texts',
+  'hosted-marketplace-texts',
   'how-to-change-template-language',
   'page-builder',
   'how-to-add-static-pages',

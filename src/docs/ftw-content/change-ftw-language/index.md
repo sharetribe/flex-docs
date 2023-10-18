@@ -1,7 +1,6 @@
 ---
 title: How to change marketplace language
 slug: how-to-change-template-language
-slug: how-to-change-ftw-language
 updated: 2023-09-04
 category: template-content
 ingress:
@@ -33,10 +32,9 @@ directory for you to start customizing marketplace texts.
 
 </info>
 
-TODO Even if you use [hosted microcopy](/template/hosted-microcopy/) to
 Even if you use
-[hosted marketplace texts](/ftw/hosted-marketplace-texts/) to manage
-your marketplace texts, it is still important to have a built-in
+[hosted marketplace texts](/template/hosted-marketplace-texts/) to
+manage your marketplace texts, it is still important to have a built-in
 language-specific marketplace text file in the template as well, so that
 the application can show meaningful messages for any keys missing from
 the Sharetribe Console marketplace text asset.

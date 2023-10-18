@@ -1,11 +1,11 @@
 ---
-title: Marketplace texts in Flex
+title: Marketplace texts in Sharetribe
 slug: marketplace-texts
 updated: 2022-06-14
 category: concepts-content-management
 ingress:
-  This article introduces marketplace texts in Flex and how they are
-  modified and edited in Flex Console
+  This article introduces marketplace texts in Sharetribe and how they
+  are modified and edited in Sharetribe Console
 published: true
 ---
 
@@ -48,11 +48,12 @@ changed even if the value ends up changing.
 ```
 
 In addition to adding a marketplace text file in the client application,
-Flex marketplace operators can modify the wording of marketplace texts
-in Flex Console > Build > Content. This means that operators can make
-changes to the marketplace texts without the need for code changes. The
-same marketplace texts can also be used from several different client
-applications, making it easier to make centralized changes.
+Sharetribe marketplace operators can modify the wording of marketplace
+texts in Sharetribe Console > Build > Content. This means that operators
+can make changes to the marketplace texts without the need for code
+changes. The same marketplace texts can also be used from several
+different client applications, making it easier to make centralized
+changes.
 
 ![Simple Console marketplace texts](./microcopy_simple.png)
 
@@ -86,12 +87,13 @@ case the message key does not exist.
 Similarly to marketplace texts, email texts can also be modified in
 Console > Build > Content.
 
-## How marketplace texts are handled in Flex
+## How marketplace texts are handled in Sharetribe
 
-Console-editable marketplace and email texts in Flex are based on a
-concept of [assets](/references/assets/). Assets provide a way to define
-marketplace content and configurations using JSON files without needing
-to include the actual content in the client application codebase.
+Console-editable marketplace and email texts in Sharetribe are based on
+a concept of [assets](/references/assets/). Assets provide a way to
+define marketplace content and configurations using JSON files without
+needing to include the actual content in the client application
+codebase.
 
 ![Content view for editing marketplace texts](./marketplace-text-editor.png)
 
@@ -99,12 +101,11 @@ Marketplace texts are fetched to the client application through Asset
 Delivery API in JSON format. Assets can be retrieved by the latest
 version, or by a specific version. Read more:
 
-- [Marketplace assets](/references/assets/) TODO
-- [Handling hosted asset microcopy in the Sharetribe Web Template](/template/hosted-microcopy/)
-- [Handling hosted asset marketplace texts in the Sharetribe Web Template](/ftw/hosted-marketplace-texts/)
+- [Marketplace assets](/references/assets/)
+- [Handling hosted asset marketplace texts in the Sharetribe Web Template](/template/hosted-marketplace-texts/)
 
-Since email notifications are sent directly from Flex, the email text
-asset is used automatically as soon as it exists.
+Since email notifications are sent directly from Sharetribe, the email
+text asset is used automatically as soon as it exists.
 
 ## Format for editing marketplace and email texts in Console
 
@@ -131,9 +132,8 @@ the value.
 In the email templates, the phrase is passed to the Handlebar helper
 `t`, which either renders the message itself, or the fallback message.
 
-Read more about TODO
-[using microcopy in the Sharetribe Web Template](/template/how-to-change-ftw-bundled-microcopy/#using-the-microcopy).
-[using marketplace texts in the Sharetribe Web Template](/ftw/how-to-change-ftw-bundled-marketplace-texts/#using-marketplace-texts).
+Read more about
+[using marketplace texts in the Sharetribe Web Template](/template/how-to-change-bundled-marketplace-texts/#using-marketplace-texts).
 
 ### Simple argument
 
@@ -360,4 +360,4 @@ In the above example the language is stored in the recipient's private
 data.
 
 Read more about what to consider when
-[building a multilanguage Flex marketplace on top of Sharetribe Web Template](/template/how-to-change-template-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplace).
+[building a multilanguage Sharetribe marketplace on top of Sharetribe Web Template](/template/how-to-change-template-language/#developing-the-sharetribe-web-template-into-a-multilanguage-marketplace).

@@ -298,9 +298,8 @@ transaction process and state specific.
 
 This means that when you create a new transaction process, you will also
 need to add microcopy for the relevant keys and states in the new
-process. You can add the process specific keys either into the TODO
-[bundled marketplace text files in the template](/template/how-to-change-ftw-bundled-microcopy/)
-[bundled marketplace text files in the template](/ftw/how-to-change-ftw-bundled-marketplace-texts/)
+process. You can add the process specific keys either into the
+[bundled marketplace text files in the template](/template/how-to-change-bundled-marketplace-texts/)
 or through the
 [Sharetribe Console Content tab](/concepts/marketplace-texts/).
 

@@ -1,6 +1,6 @@
 ---
 title: Bundled marketplace texts
-slug: how-to-change-ftw-bundled-marketplace-texts
+slug: how-to-change-bundled-marketplace-texts
 updated: 2023-01-01
 category: template-content
 ingress:
@@ -22,9 +22,8 @@ values.
 In addition to bundled marketplace texts, Sharetribe allows modifying
 marketplace texts through the Sharetribe Console:
 
-- [Marketplace texts in Sharetribe](/concepts/marketplace-texts/) TODO
-- [How hosted marketpalace texts work in the template](/template/hosted-microcopy/)
-- [How hosted marketpalace texts work in the template](/ftw/hosted-marketplace-texts/)
+- [Marketplace texts in Sharetribe](/concepts/marketplace-texts/)
+- [How hosted marketpalace texts work in the template](/template/hosted-marketplace-texts/)
 
 ## The marketplace text file
 

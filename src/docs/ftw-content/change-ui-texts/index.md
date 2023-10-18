@@ -30,12 +30,10 @@ files to show messages in the UI. However, starting in 2022-05,
 operators can also modify marketplace texts in Sharetribe Console using
 hosted marketplace text assets. The built-in marketplace texts are
 merged with the hosted marketplace texts in the template, so you can use
-both ways of managing marketplace texts. Read more about how to TODO
-[modify built-in marketplace texts in the template](/template/how-to-change-ftw-bundled-microcopy/)
-[modify built-in marketplace texts in the template](/ftw/how-to-change-ftw-bundled-marketplace-texts/)
-and TODO
-[how hosted marketplace texts work in the template](/template/hosted-microcopy/).
-[how hosted marketplace texts work in the template](/ftw/hosted-marketplace-texts/).
+both ways of managing marketplace texts. Read more about how to
+[modify built-in marketplace texts in the template](/template/how-to-change-bundled-marketplace-texts/)
+and
+[how hosted marketplace texts work in the template](/template/hosted-marketplace-texts/).
 
 You may also want to change the language of the user interface entirely.
 Read more about
