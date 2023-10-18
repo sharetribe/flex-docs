@@ -42,20 +42,40 @@ to your users' account management. Use the
 [Console](https://console.sharetribe.com/) to manage the built-in email
 notifications.
 
-<plan tier="extend" feature="The email template code editor"></plan>
+You can edit the built-in email content with the Email texts editor in
+Console > Build > Content.
 
-You can customise built-in emails using the
+You can preview and customise built-in emails using the
 [Built-in email template editor](https://console.sharetribe.com/advanced/email-templates)
 in the Sharetribe Console. You can find the editor in the Console under
-the Build section. TODO EXPLAIN EMAIL TEXTS VS CODE EDITOR
+the Build > Advanced section.
+
+<plan tier="extend" feature="The email template code editor"></plan>
 
 The email templates use the
 [Handlebars template language](/references/email-templates/#handlebars).
+The most prominent use of the handlebar templates is the `t` helper,
+which is used to render the template content. The helper renders either
+the message denoted by a message key, or a fallback message.
+
+```
+{{t "ResetPassword.MembershipParagraph" "You have received this email notification
+because you are a member of {marketplaceName}. If you no longer wish to receive
+these emails, please contact {marketplaceName} team." marketplaceName=marketplace.name}}
+```
+
 In each template, you can use a set of predefined context variables
 (such as the name and email of the recipient). You can find all context
 variables to the right of the built-in email template editor. You can
 access user extended data through the context variables, if you want to
 customise email content further.
+
+You can edit the text content of email notifications in Console >
+Build > Content > Email texts. You can preview the built-in emails, and
+customise their structure,using the
+[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
+in the Flex Console. You can find the editor in the Console under the
+Build > Advanced section.
 
 The built-in email template editor does not include a visual editor, but
 if you want, you can design your email in any
@@ -76,8 +96,11 @@ notifications usually relate to information about bookings and payments,
 in contrast to built-in email notifications, which are typically
 actionable and related to account management.
 
-You can update, add, or delete transaction notifications by
-[editing the transaction process](/how-to/edit-transaction-process-with-sharetribe-cli/).
+You can edit the content of the transaction notifications in Console >
+Build > Content > Email texts. You can preview your changes, as well as
+update message keys and add or delete transaction notifications, with
+the
+[Sharetribe CLI](/how-to/edit-transaction-process-with-sharetribe-cli/).
 
 <plan tier="extend" feature="Customizing your transaction notifications"></plan>
 

@@ -1085,6 +1085,21 @@
     "destination": "/docs/template/code-splitting-in-template/",
     "permanent": true
   },
+  {    
+    "source": "/concepts/microcopy/",
+    "destination": "/docs/concepts/marketplace-texts/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/hosted-microcopy/",
+    "destination": "/docs/ftw/hosted-marketplace-texts/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-change-ftw-bundled-microcopy/",
+    "destination": "/docs/ftw/how-to-change-ftw-bundled-marketplace-texts/",
+    "permanent": true
+  },
   {
     "source": "/tutorial/add-favorite-saunas/",
     "destination": "/docs/tutorial/add-favorite-bikes/",
@@ -1103,6 +1118,11 @@
   {
     "source": "/ftw/how-to-use-ci-with-ftw/",
     "destination": "/docs/template/how-to-use-ci-with-template/",
+    "permanent": true
+  },
+  {    
+    "source": "/operator-guides/how-to-use-microcopy-editor/",
+    "destination": "/docs/operator-guides/how-to-edit-marketplace-texts/",
     "permanent": true
   }
 ]

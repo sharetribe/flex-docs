@@ -1,11 +1,11 @@
 ---
-title: Bundled microcopy
-slug: how-to-change-ftw-bundled-microcopy
+title: Bundled marketplace texts
+slug: how-to-change-ftw-bundled-marketplace-texts
 updated: 2023-01-01
 category: template-content
 ingress:
-  This guide describes what is bundled microcopy and how to make changes
-  to it.
+  This guide describes what bundled marketplace texts are, and how to
+  make changes to them.
 published: true
 ---
 
@@ -16,25 +16,27 @@ used by default. For information about changing the language, see the
 article.
 
 We use the [React Intl](https://github.com/yahoo/react-intl) library to
-represent UI microcopy and to format dates, numbers, and money values.
+represent UI marketplace texts and to format dates, numbers, and money
+values.
 
-In addition to bundled microcopy, Sharetribe allows modifying microcopy
-through the Sharetribe Console:
+In addition to bundled marketplace texts, Sharetribe allows modifying
+marketplace texts through the Sharetribe Console:
 
-- [Microcopy in Sharetribe](/concepts/microcopy/)
-- [How hosted microcopy works in the template](/template/hosted-microcopy/)
+- [Marketplace texts in Sharetribe](/concepts/marketplace-texts/) TODO
+- [How hosted marketpalace texts work in the template](/template/hosted-microcopy/)
+- [How hosted marketpalace texts work in the template](/ftw/hosted-marketplace-texts/)
 
-## The microcopy file
+## The marketplace text file
 
-All the bundled microcopy can be found in the
+All the bundled marketplace texts can be found in the
 [src/translations/en.json](https://github.com/sharetribe/web-template/blob/master/src/translations/en.json)
-file. The microcopy data is formatted as one JSON object with all the
-microcopy key-value pairs as properties.
+file. The marketplace text data is formatted as one JSON object with all
+the marketplace text key-value pairs as properties.
 
 The key - value syntax is as follows:
 
 ```json
-"<component name>.<microcopy key>": "<message>"
+"<component name>.<marketplace text key>": "<message>"
 ```
 
 For example:
@@ -45,16 +47,16 @@ For example:
 
 The keys are namespaced to the corresponding component. This is aligned
 with the component driven paradigm that the application follows. It
-might introduce duplication with same microcopy messages occurring
-multiple times in the microcopy file. On the other hand, it also
-emphasizes how all the components are independent, how a component can
-be used anywhere, and how modifications to a single component do not
-affect other components.
+might introduce duplication with same messages occurring multiple times
+in the marketplace text file. On the other hand, it also emphasizes how
+all the components are independent, how a component can be used
+anywhere, and how modifications to a single component do not affect
+other components.
 
-## Using the marketplace microcopy
+## Using marketplace texts
 
-React Intl provides multiple ways to access the microcopy data but the
-most commonly used are the `formatMessage` function and the
+React Intl provides multiple ways to access the marketplace text data,
+but the most commonly used are the `formatMessage` function and the
 `FormattedMessage` tag provided by React Intl.
 
 To use the `formatMessage` function, component needs to be wrapped with
@@ -96,13 +98,13 @@ Other functions and componets can be explored in the
 ## Formatting
 
 React Intl uses the [FormatJS](https://formatjs.io/) formatters for
-shaping the microcopy messages based on given arguments. Here are a few
-examples on how to use FormatJS.
+shaping the messages based on given arguments. Here are a few examples
+on how to use FormatJS.
 
 ### Arguments
 
 Pass a named argument to the format function/component. For the
-following microcopy message:
+following message:
 
 ```json
 "EnquiryForm.messageLabel": "Message to {authorDisplayName}",
@@ -128,8 +130,8 @@ intl.formatMessage(
 
 ### Pluralization
 
-With pluralization, a microcopy message can be formatted to adapt to a
-number argument.
+With pluralization, a message can be formatted to adapt to a number
+argument.
 
 ```json
 "ManageListingsPage.youHaveListings":
@@ -137,9 +139,9 @@ number argument.
 ```
 
 This message takes the `count` argument and uses the `plural`, `one` and
-`other` keywords to format the last word of the microcopy message to be
-_listing_ or _listings_ based on the `count`. The pluralized message can
-be used with the `FormattedMessage` component:
+`other` keywords to format the last word of the message to be _listing_
+or _listings_ based on the `count`. The pluralized message can be used
+with the `FormattedMessage` component:
 
 ```jsx
 <FormattedMessage
@@ -159,11 +161,11 @@ intl.formatMessage(
 
 ### Select an option
 
-If you have two or more options that the microcopy message needs to show
-depending on another argument, you can use the `select` keyword to pass
-the necessary information to the message.
+If you have two or more options that the message needs to show depending
+on another argument, you can use the `select` keyword to pass the
+necessary information to the message.
 
-When you use `select` in the microcopy message, you will need to specify
+When you use `select` in the message, you will need to specify
 
 - the variable determining which option to use (here: `mode`)
 - the pattern we are following (here: `select`)
@@ -176,8 +178,8 @@ When you use `select` in the microcopy message, you will need to specify
  "BookingBreakdown.description": "{mode, select, day {You are booking the following days:} night {You are booking the following nights:} other {You are booking the following {unitType}:}}"
 ```
 
-You can then use the microcopy message in the code with the
-`formatMessage` function:
+You can then use the message in the code with the `formatMessage`
+function:
 
 ```js
 // mode: the types of bookings or products available

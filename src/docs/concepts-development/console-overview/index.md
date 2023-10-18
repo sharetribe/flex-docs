@@ -62,8 +62,8 @@ In the Home section, you find information about working with Sharetribe.
 You can find links to various resources that will help you understand,
 test, and build your custom marketplace. These include:
 
-- Links to your fully functional test marketplace called Biketribe,
-  where you can get an idea of how Sharetribe works.
+- Links to your fully functional test marketplace, where you can get an
+  idea of how Sharetribe works.
 - Instructions on how to set up your local Sharetribe instance and links
   to the Sharetribe documentation and API reference, all of which you
   will need when you want to start developing your marketplace.
@@ -93,40 +93,51 @@ worry about this specific section of your marketplace. It’s good to know
 the basics, nonetheless, so here is a brief overview of what the Build
 section includes.
 
-**General settings** contain basic information about your marketplace:
-your marketplace ID, URL and name. Here, you can also configure an
-outgoing email address, where all notifications to your marketplace’s
-users will be sent from.
+**General** contains basic information about your marketplace: your
+marketplace ID, URL and name. Here, you can also configure an outgoing
+email address, where all notifications to your marketplace’s users will
+be sent from.
 
 **Content** is where you can modify your marketplace content and
 configurations. You can
-[modify your marketplace microcopy](/concepts/microcopy/), create
-[content pages](/concepts/headless-content-management/), and configure
-aspects of your marketplace branding, layout, and other details without
-coding.
+[modify your marketplace and email texts](/concepts/marketplace-texts/),
+create [content pages](/concepts/headless-content-management/), and
+configure your marketplace footer.
 
-**Transaction processes** is quite self-explanatory: it shows the
-different kinds of transaction processes your marketplace has. You can
-toggle between the different processes in the left-side selection and
-see how many transactions have used each process. You can also inspect
-the components of the transaction processes. Read more about
-[transaction processes in Sharetribe](/concepts/transaction-process/).
+**Design** allows you to modify the branding and layout of your
+marketplace.
+
+**Listings** contains configurations related to your marketplace listing
+types, listing fields, and listing search conventions.
+
+**Transactions** related configurations include minimum transaction size
+and provider commission.
+
+---
+
+**Integrations** allows you to configure third party integrations such
+as analytics and Stripe payments.
 
 **Payments** has information about your Stripe configuration. Your
 Stripe secret key is added here. The public key is configured within the
 code of your frontend application by your developer.
 
-**Built-in email templates** includes all emails that are sent from your
-marketplace as a part of the default user flow. They are essential to
-the operation of Sharetribe and are designed to be sent at the crucial
-moments of the user onboarding flow and are not related to the
-transaction process. The contents and visual style of these emails can
-be edited with HTML directly in this tab of the Build section.
+---
+
+**Advanced** has more technical configuration and development options.
 
 **Applications** compiles all applications that have access to the
 Sharetribe APIs through your marketplace. At minimum, this tab includes
 your frontend application, but can also have applications for integrated
 services.
+
+**Built-in email templates** includes all emails that are sent from your
+marketplace as a part of the default user flow. They are essential to
+the operation of Flex and are designed to be sent at the crucial moments
+of the user onboarding flow and are not related to the transaction
+process. The structure visual style of these emails can be edited with
+HTML directly in this tab of the Build section. You can edit the content
+of the built in emails in Build > Content > Email texts.
 
 **Events** has a summary of what the Events feature is about as well as
 some quick links to the relevant documentation. It also mentions the
@@ -138,30 +149,42 @@ the third-party solutions your users can sign up with on your
 marketplace. They could be Facebook Login, Google Login, or maybe your
 own identity provider.
 
-## Top bar
+**Transaction process visualizer** shows the different kinds of
+transaction processes your marketplace has. You can toggle between the
+different processes in the left-side selection and see how many
+transactions have used each process. You can also inspect the components
+of the transaction processes. Read more about
+[transaction processes in Flex](/concepts/transaction-process/).
+
+## Side bar
 
 In Console, you navigate between the different environments and sections
-through links in your top bar.
+through links in your side bar.
 
-On the left side of the top bar, you can switch between the environments
-of your organization: test, development, and live. If your marketplace
-is not yet live, this is where you’ll find the option to set up your
-live environment and subscribe to Sharetribe. Once your live environment
-is created, you’ll access it from here.
+On the top of the side bar, you can switch between the environments of
+your organization: Test, Development, and Live.
 
-Next come the different sections we discussed above: Home, Build, and
-Manage.
+On the bottom of the side bar, you can manage your account and
+organization by clicking your email address. You can change your
+password and generate personal API keys that you need for the Flex
+command-line interface (CLI). You can also log out of Console here.
 
-On the right side of the top bar, you can manage your organization and
-invite new members to join it. This is where you add the people who help
-you develop or manage your marketplace.
+This is also where you add new admin users – the people who help you
+develop or manage your marketplace.
 
-Next to the organization, you find a link to the Sharetribe
-documentation, where you are now. Sharetribe Docs has information about
-the important concepts of Sharetribe, instructions for customizations,
-and more!
+Above your email address, you find links to our Help Center, as well as
+a link to contact our support.
 
-Finally, in the rightmost corner of the topbar, you can manage your
-Console account. You can change your password and generate personal API
-keys that you need for the Flex command-line interface (CLI) TODO CHECK
-NAMING. You can also log out of Console here.
+## Action buttons
+
+In addition to the side bar, you still have a few action buttons on the
+top right of your screen:
+
+**View marketplace** takes you directly to the address you have defined
+as your Marketplace URL in Build > General.
+
+**Copy changes to...** is visible in your Test environment, and it will
+open a dialog that allows you to copy your configurations from the Test
+environment to either Live or Dev.
+
+**Go live** allows you to set up your Live environment.

@@ -38,15 +38,15 @@ Modify the default brand and style to match your marketplace.
   [Console](https://console.sharetribe.com/) or learn more in
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 
-### Content and microcopy
+### Content and marketplace texts
 
 The default marketplace uses generic words and phrases that are not
 specific to any marketplace theme. Build your own messaging in the
 following steps.
 
-- Change the microcopy in your marketplace. Edit in
+- Change the texts in your marketplace. Edit in
   [Console](https://console.sharetribe.com/) or learn more in the
-  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
+  [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-edit-marketplace-texts/).
 - Change your marketplace landing page. Edit in
   [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/).

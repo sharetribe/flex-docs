@@ -43,7 +43,7 @@ option to include the field in the keyword search.
 ## How can I change the default text displayed in the search bar?
 
 You can do that easily with
-[the Microcopy editor](https://www.sharetribe.com/docs/operator-guides/how-to-use-microcopy-editor/).
+[the Marketplace texts editor](https://www.sharetribe.com/docs/operator-guides/how-to-edit-marketplace-texts/).
 Find the “TopbarSearchForm.placeholder” and the
 “LocationSearchForm.placeholder” keys and replace the text there for
 your own. The default text is “Search bikes…”

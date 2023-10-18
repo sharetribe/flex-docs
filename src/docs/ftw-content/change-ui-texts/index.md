@@ -10,11 +10,11 @@ published: true
 ---
 
 The template has several types of texts that can be read in the user
-interface. The most extensive group of UI texts is microcopy, but the
-template also has content pages, as well as some other groups of content
-that can be configured in the code base.
+interface. In addition to marketplace texts, the template also has
+content pages, as well as some other groups of content that can be
+configured in the code base.
 
-## Microcopy
+## Marketplace texts
 
 In the Sharetribe Web Template, user-facing content is not written
 directly into the source code. Instead, the source code uses
@@ -23,24 +23,26 @@ directly into the source code. Instead, the source code uses
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
 each key in their language. Read more about how
-[Sharetribe handles microcopy](/concepts/microcopy/).
+[Sharetribe handles marketplace texts](/concepts/marketplace-texts/).
 
-By default, the template use built-in language-specific microcopy files
-to show microcopy messages in the UI. However, starting in 2022-05,
-operators can also modify microcopy in Sharetribe Console using hosted
-microcopy assets. The built-in microcopy is merged with the hosted
-microcopy in the template, so you can use both ways of managing
-microcopy. Read more about how to
-[modify built-in microcopy in the template](/template/how-to-change-ftw-bundled-microcopy/)
-and
-[how hosted microcopy work in the template](/template/hosted-microcopy/).
+By default, the template use built-in language-specific marketplace text
+files to show messages in the UI. However, starting in 2022-05,
+operators can also modify marketplace texts in Sharetribe Console using
+hosted marketplace text assets. The built-in marketplace texts are
+merged with the hosted marketplace texts in the template, so you can use
+both ways of managing marketplace texts. Read more about how to TODO
+[modify built-in marketplace texts in the template](/template/how-to-change-ftw-bundled-microcopy/)
+[modify built-in marketplace texts in the template](/ftw/how-to-change-ftw-bundled-marketplace-texts/)
+and TODO
+[how hosted marketplace texts work in the template](/template/hosted-microcopy/).
+[how hosted marketplace texts work in the template](/ftw/hosted-marketplace-texts/).
 
 You may also want to change the language of the user interface entirely.
 Read more about
 [changing the language used in the template](/template/how-to-change-template-language/).
 
-In addition to microcopy, there are other forms of content in the client
-applications that operators may need to manage.
+In addition to marketplace texts, there are other forms of content in
+the client applications that operators may need to manage.
 
 ## Content pages
 
@@ -73,11 +75,12 @@ guide.
 
 ## Labels and countries
 
-There are few other cases where we haven't added microcopy directly to
-the microcopy files.
+There are few other cases where we haven't added marketplace texts
+directly to the marketplace text files.
 
 Labels for filters can be found in
-[_config/configListing.js_](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js).
+[_config/configListing.js_](https://github.com/sharetribe/web-template/blob/main/src/config/configListing.js),
+and edited in Console.
 
 [Country codes](https://github.com/sharetribe/web-template/blob/master/src/translations/countryCodes.js)
 are in a separate file as well. Stripe API requires country information

@@ -23,15 +23,15 @@ Console. For more advanced changes you can:
 - Learn more about the
   [CSS architecture in the Sharetribe Web Template](/template/how-to-customize-template-styles/)
 
-## Content and microcopy
+## Content and marketplace texts
 
 In addition to customizing the default styles of your marketplace, it is
 also important to change the content and
-[microcopy](/concepts/microcopy/) to reflect your brand and messaging.
-There are several places where you can edit the content and copy texts
-in your marketplace:
+[marketplace texts](/concepts/marketplace-texts/) to reflect your brand
+and messaging. There are several places where you can edit the content
+and copy texts in your marketplace:
 
-- Learn about [what is microcopy](/concepts/microcopy/)
+- Learn about [marketplace texts](/concepts/marketplace-texts/)
 - Update your
   [terms of service and privacy policy page](/operator-guides/free-templates/)
 - Configure the footer of your marketplace in Flex Console.

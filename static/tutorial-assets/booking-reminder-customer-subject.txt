@@ -1,1 +1,1 @@
-Your booking for {{transaction.listing.title}} is approaching!
+{{set-translations (asset "email/translations.json")}}{{t "BookingReminder.Subject" "Your booking for {listingTitle} is approaching!" listingTitle=transaction.listing.title }}

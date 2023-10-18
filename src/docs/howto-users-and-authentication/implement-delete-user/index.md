@@ -184,9 +184,9 @@ configuration function:
     },
 ```
 
-Finally, add the necessary microcopy rows into either
+Finally, add the necessary marketplace text rows into either
 src/translations/en.json or the
-[Sharetribe Console microcopy editor](/concepts/microcopy/).
+[Sharetribe Console Marketplace texts editor](/concepts/marketplace-texts/).
 
 ```shell
 └── src
@@ -286,7 +286,7 @@ Then, add the form component as a child to the Page component.
   );
 ```
 
-You still need to add some microcopy related to the form.
+You still need to add some marketplace texts related to the form.
 
 ```shell
 └── src
@@ -295,9 +295,9 @@ You still need to add some microcopy related to the form.
 ```
 
 The DeleteAccountForm template file has validations for password length
-and requirements, so those validation error messages require microcopy
-strings. The file also has the capability to send a password reset link
-to the user if they have forgotten their password.
+and requirements, so those validation error messages require marketplace
+text strings. The file also has the capability to send a password reset
+link to the user if they have forgotten their password.
 
 ```
 "DeleteAccountForm.confirmChangesInfo": "To delete your account, please enter your current password.",

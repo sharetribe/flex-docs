@@ -43,7 +43,7 @@ you're happy with how the Biketribe rental flow works, you don't need to
 adjust it
 
 You can review
-[the Biketribe customization checklist](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist/)
+[the Biketribe customization checklist](https://www.sharetribe.com/docs/operator-guides/sharetribe-configuration-checklist/)
 to make sure you’ve covered the most important no-code modifications.
 
 ## How to go Live

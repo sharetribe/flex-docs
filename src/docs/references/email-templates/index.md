@@ -103,6 +103,65 @@ parameters they take and example how to use them:
 
 Can't find a helper you are looking for? Let us know!
 
+### `t`
+
+> Params:
+>
+> - message key
+> - fallback message
+>
+> Hash:
+>
+> - list of hash parameters and their respective values used with the
+>   messages
+
+Example usage:
+
+```handlebars
+{{t "BookingNewRequest.Description" "{customerDisplayName} requested to book {listingTitle}
+in {marketplaceName}." customerDisplayName=customer.display-name
+listingTitle=listing.title marketplaceName=marketplace.name}}
+```
+
+Inline helper that makes it possible to modify the email template texts
+without making changes in the template code. This helper uses the
+[ICU message format](https://unicode-org.github.io/icu/userguide/format_parse/messages/)
+to render messages and parameters into a string.
+
+The helper renders the message corresponding to the key, if the key
+exists in the [email text asset](/references/assets/). If the key does
+not exist, the helper renders the fallback message.
+
+Any hash parameters used inside either message must be wrapped in single
+curly brackets, and the values for those hash parameters need to be
+defined after the message key and the fallback message.
+
+### `format-text`
+
+> Params:
+>
+> - message
+>
+> Hash:
+>
+> - list of hash parameters and their respective values used with the
+>   messages
+
+Example usage:
+
+```handlebars
+{{format-text "{amount,number,::.00} {currency}" amount=money.amount currency=money.currency}}
+```
+
+Inline helper that formats a text string using the
+[ICU message format](https://unicode-org.github.io/icu/userguide/format_parse/messages/).
+This helper works similarly to the `t` helper, but instead of accepting
+a message key and a fallback message, it accepts a single string.
+
+Any hash parameters used inside either message must be wrapped in single
+curly brackets, and the values for those hash parameters need to be
+defined after the message.
+
 ### `contains`
 
 > Params:
@@ -216,6 +275,29 @@ E.g. "en-US" is a valid string.
 The `tz` supports
 [Joda-Time timezones](https://www.joda.org/joda-time/timezones.html).
 
+### `date-transform`
+
+> Params:
+>
+> - date
+>
+> Hash:
+>
+> - days
+
+Example usage:
+
+```handlebars
+{{format-text "{date,date,::EE}" date=(date-transform date days=-1)}}
+```
+
+Can be used with the [format-text](#format-text) helper to transform a
+date value to past or future days according to the `days` hash
+parameter:
+
+- negative values for transforming to the past of the date
+- positive values for transforming to the future of the date
+
 ### `money-amount`
 
 > Params:
@@ -302,6 +384,11 @@ Example usage:
 
 Encode the given string as application/x-www-form-urlencoded. Should be
 used for query string components.
+
+## Editing email content
+
+For both built-in emails and transaction process emails, you can edit
+content with the email text editor under Build > Content > Email texts.
 
 ## Editing built-in emails
 

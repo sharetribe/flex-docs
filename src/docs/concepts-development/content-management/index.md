@@ -23,8 +23,8 @@ The way in which operator-created content is handled within Sharetribe.
 Before Console-operated content management, operators could either
 
 - add the content directly in the client app codebase,
-- use the [microcopy](/concepts/microcopy/) files for marketplace
-  content, or
+- use the [marketplace text](/concepts/marketplace-texts/) files for
+  marketplace content, or
 - integrate an external content management system.
 
 Currently, we recommend managing content using the assets-based Pages

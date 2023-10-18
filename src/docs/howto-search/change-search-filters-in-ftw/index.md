@@ -203,10 +203,11 @@ specified as searchable.
 
 The `filterConfig` object defines how the attribute is displayed on the
 search page. The `label` attribute is modified in configListing.js
-instead of through the microcopy file (e.g. _en.json_), because we
-thought that having it here would make customizations easier. However,
-you could use `<FormattedMessage id="some.microcopy.key.here" />`
-component instead of plain string as the value of `label` if you want.
+instead of through the marketplace text file (e.g. _en.json_), because
+we thought that having it here would make customizations easier.
+However, you could use
+`<FormattedMessage id="some.marketplace.text.key.here" />` component
+instead of plain string as the value of `label` if you want.
 
 The `schemaType` configuration is used, among other things, to determine
 the default search component used on search page. The current filters

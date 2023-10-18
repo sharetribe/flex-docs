@@ -29,7 +29,7 @@ You can change Biketribe default settings in Console. Change core user
 experiences like search, listing creation, and transactions in Console's
 Build section under the "Content" tab. For a full list of the no-code
 capabilities and how to use them to change Biketribe, please consult our
-[Biketribe configuration checklist](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist/).
+[Biketribe configuration checklist](https://www.sharetribe.com/docs/operator-guides/sharetribe-configuration-checklist/).
 
 At the very least, after configuring your marketplace, you will need to
 install the Template codebase on your own servers. More likely, you will
@@ -269,9 +269,9 @@ also include the same smooth style out of the box.
 
 Branding the Sharetribe Web Template is easy with a refined styling
 approach that lets you set the marketplace colors, logos, and favicons
-quickly. You’ll also likely want to change your marketplace’s microcopy,
+quickly. You’ll also likely want to change your marketplace’s texts,
 modify your landing page, and add essential information to your users
-with Console’s Microcopy and Pages editors.
+with Console’s editors for Marketplace texts and Pages.
 
 Learn more about
 [how content works in Sharetribe](/concepts/content-management/).

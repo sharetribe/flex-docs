@@ -71,7 +71,7 @@ listing types, and set the provider commission fee.
 You can test these capabilities by going to the Test environment in your
 Flex Console and selecting Build → Content. To get a complete overview
 of the no-code capabilities in the Flex Console, you can refer to
-[the Biketribe configuration checklist](https://www.sharetribe.com/docs/operator-guides/biketribe-configuration-checklist/).
+[the Biketribe configuration checklist](https://www.sharetribe.com/docs/operator-guides/sharetribe-configuration-checklist/).
 
 ## Types of features you can build with Flex
 

@@ -105,7 +105,7 @@ modifiable with coding. Using it allows building a custom marketplace at
 a fraction of the the cost or time required to build it from scratch.
 
 Certain settings are
-[configurable in Console](/operator-guides/biketribe-configuration-checklist/#what-to-modify).
+[configurable in Console](/operator-guides/sharetribe-configuration-checklist/#what-to-modify).
 These include the listing type, search page layout, search page fields,
 listing fields, and many more. Launching a marketplace with the template
 requires a developer.
@@ -186,7 +186,7 @@ your own.
 
 Assets refers to the API resource which stores your text and visual
 content. Your landing page texts and pictures, your Terms page legalese,
-and your marketplace microcopy are stored in the Flex backend as unique
+and your marketplace texts are stored in the Flex backend as unique
 Assets.
 
 Your marketplace frontend retrieves Assets from the Flex backend and
@@ -209,15 +209,15 @@ the ability to interact with them, such as when buyers are selecting the
 length of a booking from a listing or entering their payment information
 into the checkout page.
 
-### Microcopy
+### Marketplace texts
 
-Microcopy refers to short written texts scattered around a dynamic
+Marketplace texts include short written texts scattered around a dynamic
 page’s interface; button labels, error messages, and help texts are all
 examples.They are textual, brief (a sentence or two), and highly
 contextual.
 
-You can modify your marketplace’s microcopy using the Microcopy editor
-in Console.
+You can modify your marketplace’s texts using the Marketplace texts
+editor in Console.
 
 ### Pages
 

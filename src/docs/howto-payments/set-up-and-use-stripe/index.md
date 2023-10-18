@@ -217,8 +217,8 @@ to Stripe support before proceeding.
    and
    [bank account format](https://stripe.com/docs/connect/payouts#formats).
 
-2. Add new microcopy keys to the microcopy file you are using (e.g.
-   `translations/en.json`). Add at least
+2. Add new marketplace text keys to the marketplace text file you are
+   using (e.g. `translations/en.json`). Add at least
    `PayoutDetailsForm.countryNames.COUNTRYCODE` and
    `PayoutDetailsForm.companyTaxIdLabel.COUNTRYCODE` keys but there
    might be also other keys needed.
