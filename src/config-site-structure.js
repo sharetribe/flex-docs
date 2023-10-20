@@ -325,45 +325,6 @@ exports.siteStructure = [
     hideSidebar: true,
   },
   {
-    id: 'operator-guides',
-    isOpen: false,
-    isHidden: true,
-    subcategories: [
-      {
-        id: 'operator-guides-concepts',
-        sortingArray: sortingArrayOperatorGuidesConcepts,
-      },
-      {
-        id: 'operator-guides-useful-information',
-        sortingArray: sortingArrayOperatorGuidesUsefulInformation,
-      },
-      {
-        id: 'operator-guides-static-content',
-        sortingArray: sortingArrayOperatorGuidesStaticContent,
-      },
-
-      {
-        id: 'operator-guides-layout',
-        sortingArray: sortingArrayOperatorGuidesLayout,
-      },
-
-      {
-        id: 'operator-guides-transactions',
-        sortingArray: sortingArrayOperatorGuidesTransactions,
-      },
-
-      {
-        id: 'operator-guides-branding',
-        sortingArray: sortingArrayOperatorGuidesBranding,
-      },
-
-      {
-        id: 'operator-guides-listings',
-        sortingArray: sortingArrayOperatorGuidesListings,
-      },
-    ],
-  },
-  {
     id: 'pilot-day-guides',
     isOpen: true,
     isHidden: true,

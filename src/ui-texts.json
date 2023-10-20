@@ -78,10 +78,6 @@
   "ArticleIndexPage.references.title": "All Reference articles",
   "ArticleIndexPage.references.description": "This collection of articles provides a technical description on the various components that form Sharetribe Flex, such as handling transaction processes, using extended data and availability and stock management. Here you can also find information on our API endpoints and the JavaScript SDKs that can be used to access them.",
   "ArticleIndexPage.articleCount": "articles",
-
-  "ArticleIndexPage.operator-guides.title": "All Operator Guides",
-  "ArticleIndexPage.operator-guides.description": "Guides for marketplace operators",
-
   "ArticlePage.tableOfContents": "Table of Contents",
   "ArticlePage.introduction.breadCrumbTitle": "Introduction",
   "ArticlePage.concepts.breadCrumbTitle": "Concepts",
@@ -95,7 +91,6 @@
   "ArticlePage.integrations.breadCrumbTitle": "Integrations",
   "ArticlePage.flex-cli.breadCrumbTitle": "Flex CLI",
   "ArticlePage.references.breadCrumbTitle": "References",
-  "ArticlePage.operator-guides.breadCrumbTitle": "Operator Guides",
   "ArticlePage.LastUpdated.lastUpdated": "Last updated ",
   "ArticlePage.InfoSection.requiredSkills": "Required skills",
 
