@@ -13,16 +13,16 @@ const PlanIcon = props => {
       />
       <path
         d="M250.26 166.05L256 288l5.73-121.95a5.74 5.74 0 00-5.79-6h0a5.74 5.74 0 00-5.68 6z"
-        fill="#C4DFFF"
-        stroke="#C4DFFF"
+        fill="#fff0af"
+        stroke="#fff0af"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="32"
       />
       <path
         d="M256 367.91a20 20 0 1120-20 20 20 0 01-20 20z"
-        stroke="#C4DFFF"
-        fill="#C4DFFF"
+        stroke="#fff0af"
+        fill="#fff0af"
       />
     </svg>
   );
@@ -35,30 +35,37 @@ const Icon = styled(PlanIcon)`
 const tierColours = {
   extend: {
     fontColour: '#072901',
-    borderColour: '#072901',
-    backgroundColour: '#c4f5ba',
+    borderColour: '#d9b411',
+    backgroundColour: '#fff0af',
     content: ' in the Live environment is available in the Extend plan.',
+    title: 'Extend plan required',
   },
   launch: {
     fontColour: '#242901',
-    borderColour: '#242901',
-    backgroundColour: '#d3baed',
+    borderColour: '#d9b411',
+    backgroundColour: '#fff0af',
     content:
       ' in the Live environment is available in the Launch plan and above.',
+    title: 'Launch plan required',
   },
   onboard: {
     fontColour: '#292301',
     borderColour: '#292301',
-    backgroundColour: '#ede2ba',
+    backgroundColour: '#fff0af',
     content: ' is available in paid plans.',
+    title: 'Onboard plan required',
   },
 };
 
 const Plan = props => {
   const { children, tier, feature, ...otherProps } = props;
-  const { fontColour, borderColour, backgroundColour, content } = tierColours[
-    tier
-  ];
+  const {
+    fontColour,
+    borderColour,
+    backgroundColour,
+    content,
+    title,
+  } = tierColours[tier];
 
   const featureMaybe = feature ? (
     <div>
@@ -82,7 +89,7 @@ const Plan = props => {
       fontColour={fontColour}
       borderColour={borderColour}
       backgroundColour={backgroundColour}
-      title={'Pricing information'}
+      title={title}
       {...otherProps}
     >
       {featureMaybe}
