@@ -203,10 +203,10 @@ next and **how** it happens.
 Let’s revisit our Sharetribe default booking transaction process, this
 time in conjunction with Sharetribe Web Template, to illustrate this.
 You’ll see how a transaction process state looks for providers and
-customers in Biketribe, the default marketplace built with Sharetribe
-Web Template. If you’re not sure what is meant by the “Sharetribe Web
+customers in Biketribe, an example marketplace built with Sharetribe Web
+Template. If you’re not sure what is meant by the “Sharetribe Web
 Template”, you can read more about it
-[here](/operator-guides/concepts/#sharetribe-web-template).
+[here](/introduction/introducing-template/).
 
 <txnprocessuxcarousel title="Transaction process and user experience">
 

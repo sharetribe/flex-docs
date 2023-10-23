@@ -102,8 +102,8 @@ as search filters and parameters and to sort search results. Public data
 allows you to customize your public listing and user information to fit
 your needs exactly!
 
-Let’s look at listing public data in action. Here is a listing from
-Biketribe, the Sharetribe test marketplace.
+Let’s look at listing public data in action. Here is a listing from an
+imaginary bike rental marketplace, Biketribe.
 
 <publicextendeddatacarousel title="Examples of public extended data">
 
