@@ -204,7 +204,6 @@ Follow this steps:
 
 1. Go
    [to this address](https://whimsical.com/flex-default-transaction-process-GDRUyuF7M5nMSte6rfwNuc)
-   TODO?
 2. Sign in to your Whimsical account or create an account if you don't
    have one.
 3. On the top right, click on "COPY TO" and select your private folder

@@ -176,8 +176,8 @@ these integrations work.
 
 ### Sharetribe client ID and client secret
 
-To use the Marketplace API, you will need a **client ID**. You can sign
-up for your free Sharetribe account at TODO LINK
+To use the Marketplace API, you will need a **client ID**. You can
+[sign up for your free Sharetribe account here](https://console.sharetribe.com/new).
 
 When you get access, you will be able to log into Sharetribe Console and
 check the client ID.<br /> Sharetribe Console: _Build > Applications_

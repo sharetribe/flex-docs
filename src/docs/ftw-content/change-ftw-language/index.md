@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-TODO SLUG
-
 If you want the template to use a language that is not supported by
 default, a new language-specific marketplace text file needs to be added
 and the messages in it need to be translated. This article walks you

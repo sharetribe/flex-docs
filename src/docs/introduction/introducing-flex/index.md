@@ -1,15 +1,13 @@
 ---
 title: Introducing Sharetribe
 slug: introducing-sharetribe
-updated: 2019-11-21
+updated: 2023-10-23
 category: introduction
 ingress:
-  Overview of how Sharetribe works, and how you can build your online
-  marketplace platform using it.
+  Overview of how the Sharetribe Developer Platform works, and how you
+  can build and customise your online marketplace platform using it.
 published: true
 ---
-
-TODO FIX WORDING TO REFER E.G. TO CUSTOM DEVELOPMENT APPROACH!
 
 ## Introduction
 
@@ -18,11 +16,6 @@ marketplace for rentals, services, events or experiences. Sharetribe
 provides you with all the necessary marketplace infrastructure out of
 the box. At the same time, because of its headless architecture,
 Sharetribe gives you total freedom to customize your user experience.
-
-This makes Sharetribe the fastest and most affordable way to build a
-unique platform that adapts to the entire lifecycle of your business. As
-your business grows, Sharetribe takes care of running and scaling your
-backend — allowing you to focus on the unique value of your platform.
 
 ## Sharetribe Components
 
@@ -72,9 +65,9 @@ transactions on a native mobile app as well as on the web.
 
 ### The Marketplace API
 
-The Marketplace API is how your UI connects to the Sharetribe services.
-It's an HTTP interface with a design influenced by the
-[JSON API specification](https://jsonapi.org/) and the
+The Marketplace API is how your UI connects to the Sharetribe Developer
+Platform services. It's an HTTP interface with a design influenced by
+the [JSON API specification](https://jsonapi.org/) and the
 [CQRS pattern](https://martinfowler.com/bliki/CQRS.html). The
 Marketplace API allows you to implement all the standard marketplace
 functionality that Sharetribe supports.
@@ -88,7 +81,8 @@ application (Single-page application) talk directly with the Marketplace
 API, and the API powers all further interactions.
 
 To learn more about the capabilities of the Marketplace API and
-Sharetribe, visit the [API reference documentation](/concepts/api/).
+Sharetribe Developer Platform, visit the
+[API reference documentation](/concepts/api/).
 
 ### Sharetribe JavaScript SDK
 
@@ -103,10 +97,10 @@ you to have a look.
 
 [Console](https://console.sharetribe.com/) is where you to manage all
 your marketplace data, such as users, listings and transactions. Console
-also offers tools to develop your marketplace, for example, an editor
-for email templates. Console is accessed via a web UI that we provide
-out of the box. Think of it as an admin interface you never have to
-build!
+also offers tools to develop and customize your marketplace, for
+example, an editor for email templates. Console is accessed via a web UI
+that we provide out of the box. Think of it as an admin interface you
+never have to build!
 
 ### The Integration API
 
@@ -127,10 +121,4 @@ email templates.
 
 See the
 [Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/)
-tutorial for more information.
-
-## Is Sharetribe the right fit for you?
-
-Now you know roughly what Sharetribe is all about. Next, it's time to
-evaluate
-[whether Sharetribe is the right fit for your specific marketplace idea](/introduction/is-flex-right-for-you/).
+guide for more information.

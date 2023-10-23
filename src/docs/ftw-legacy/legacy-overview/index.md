@@ -11,8 +11,6 @@ published: true
 
 ##### [View the legacy documentation](https://www.sharetribe.com/docs/legacy/)
 
-TODO EXPLAIN FLEX
-
 ## Deprecated templates
 
 The Sharetribe Web Template replaces three separate templates that were

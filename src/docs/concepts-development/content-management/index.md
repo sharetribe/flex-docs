@@ -101,7 +101,6 @@ and blocks you choose for your page, you can create a wide range of
 content. In the future, it will also be possible to create custom
 sections.
 
-TODO UPDATE TO GENERIC ASSETS OR BIKETRIBE
 ![Landing page with levels of content modeling elements](./content-model-landing-page.png)
 
 ## Sections
@@ -177,14 +176,10 @@ capabilities, you can refer to our
 [legacy template documentation](/template/legacy-templates/).
 
 To see your page changes in your client application, you need to save
-your changes in Sharetribe Console and navigate to the corresponding
-page in your app.
+your changes in Sharetribe Console. Then, you can click the "View page"
+link next to the page title.
 
-Alternatively, if you have an application running in the address set as
-your **Marketplace URL**, you can click the "View page" link next to the
-page title in Sharetribe Console.
-
-TODO UPDATE TO GENERIC ASSETS OR BIKETRIBE ![View page](./view-page.png)
+![View page](./view-page.png)
 
 This will open the page in your **Marketplace URL** address.
 
@@ -215,6 +210,8 @@ changes in test environment before copying anything to Live!
 
 It can take up to five minutes for your changes to update from test to
 live environment.
+
+You can also copy your asset changes to the dev environment.
 
 ## Content layout
 

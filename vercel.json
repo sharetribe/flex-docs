@@ -1134,6 +1134,16 @@
     "source": "/ftw/how-to-change-ftw-bundled-marketplace-texts/",
     "destination": "/docs/template/how-to-change-bundled-marketplace-texts/",
     "permanent": true
+  },
+  {    
+    "source": "/introduction/how-to-build-and-launch-with-flex/",
+    "destination": "https://www.sharetribe.com/help/en/articles/8501769-how-to-build-a-marketplace-with-sharetribe/",
+    "permanent": true
+  },
+  {    
+    "source": "/introduction/is-flex-right-for-you/",
+    "destination": "https://www.sharetribe.com/help/en/articles/8501752-what-is-sharetribe/",
+    "permanent": true
   }
 ]
 }

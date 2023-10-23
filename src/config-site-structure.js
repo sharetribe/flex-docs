@@ -8,7 +8,6 @@
 const sortingArrayIntroduction = [
   'introducing-sharetribe',
   'getting-started-with-web-template',
-  'how-to-build-and-launch-with-flex',
   'is-flex-right-for-you',
   'development-skills',
   'introducing-template',

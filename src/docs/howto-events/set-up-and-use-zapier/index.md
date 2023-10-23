@@ -40,6 +40,13 @@ posted to any of your marketplace’s social accounts. And so much more.
 
 ## Connecting Zapier to Sharetribe
 
+<info>
+
+The videos in this article refer to _Flex_, which is an old name for the
+Sharetribe Developer Platform.
+
+</info>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zUp4eZufKsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To take Zapier into use and connect it to Sharetribe, you need:

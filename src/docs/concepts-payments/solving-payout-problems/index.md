@@ -182,7 +182,6 @@ If there's a reason to doubt that a payout has failed, one place to
 start tracking it is the transactions CSV export which is available
 under _Manage > Transactions_ in Console.
 
-TODO REPLACE SCREENSHOT
 ![Transactions CSV export](console-tx-csv.png 'Transactions CSV export')
 
 The transactions CSV file has a column called _PayoutState_ which
