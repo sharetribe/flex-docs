@@ -417,7 +417,7 @@ understands booking increments as small as 5 minutes.
 Syncing information between an availability calendar in Flex and a 3rd
 party calendar service is possible with custom development. The extent
 of the work required depends on your needs and the calendar. Please
-contact our support team at flex-support@sharetribe.com if you have any
+contact our support team at hello@sharetribe.com if you have any
 questions about building such a feature.
 
 ### Seats

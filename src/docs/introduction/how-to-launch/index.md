@@ -50,7 +50,7 @@ is technical but doable even without development experience.
 [The guide for getting started with Sharetribe Web Template](/introduction/getting-started-with-web-template/)
 will give you step by step instructions for doing it. If you encounter
 any problems with the setup,
-[contact Sharetribe support](mailto:flex-support@sharetribe.com).
+[contact Sharetribe support](mailto:hello@sharetribe.com).
 
 Once you have the template set up, you can create a few user accounts
 and test the features: posting listings, searching them, making bookings
@@ -124,8 +124,8 @@ point for the developers.
 Does all of this sound overwhelming to you? If you're don't want to do
 the design work yourself, you can always hire a designer to do it for
 you. If you don't know any designers,
-[contact Sharetribe support](mailto:flex-support@sharetribe.com) and
-we'll connect you to a designer who can help you out.
+[contact Sharetribe support](mailto:hello@sharetribe.com) and we'll
+connect you to a designer who can help you out.
 
 ## 3. Developing your marketplace
 

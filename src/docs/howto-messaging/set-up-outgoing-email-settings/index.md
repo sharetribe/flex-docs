@@ -180,5 +180,5 @@ address for your live marketplace. It is important to get all the steps
 done and validated to ensure that emails are working reliably.
 
 If you have any questions or need a more advanced setup, you can
-[contact Sharetribe support](mailto:flex-support@sharetribe.com) and we
-are happy to help you.
+[contact Sharetribe support](mailto:hello@sharetribe.com) and we are
+happy to help you.

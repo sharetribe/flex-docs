@@ -39,8 +39,8 @@ you're planning to migrate your data to Sharetribe, you should always
 start the process with a test migration to your dev environment, and
 ensure everything looks correct there, before doing a live migration. If
 you want to initiate the (test or live) migration process, you should
-email flex-support@sharetribe.com with the subject “Migrating from
-outside Sharetribe”. Please include your Sharetribe organization (your
+email hello@sharetribe.com with the subject “Migrating from outside
+Sharetribe”. Please include your Sharetribe organization (your
 organization is displayed in your
 [Console](https://console.sharetribe.com/) in the top right corner).
 

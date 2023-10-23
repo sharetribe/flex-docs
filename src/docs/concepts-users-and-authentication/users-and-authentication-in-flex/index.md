@@ -93,8 +93,8 @@ hierarchies will need to think about the levels of user access they want
 each custom role to have, and potentially use a custom backend solution
 to complement Sharetribe default user management. If you are
 contemplating creating a user hierarchy in your Sharetribe marketplace,
-contact [Sharetribe Support](mailto:flex-support@sharetribe.com) and let
-us know your use case – we're happy to help you figure out a suitable
+contact [Sharetribe Support](mailto:hello@sharetribe.com) and let us
+know your use case – we're happy to help you figure out a suitable
 solution!
 
 ### Login as user

@@ -294,8 +294,7 @@ Follow our
 for installation instructions and tutorial next steps. If you prefer to
 code your own features right away, don’t hesitate to use
 [our documentation](https://www.sharetribe.com/docs/) or contact
-[our support team](mailto:flex-support@sharetribe.com) by email for
-help.
+[our support team](mailto:hello@sharetribe.com) by email for help.
 
 If you are not a developer, then you will need to hire a developer to
 take Sharetribe into use. We recommend finding a vetted developer from

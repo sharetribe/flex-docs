@@ -71,8 +71,8 @@ modified by the operator in Sharetribe Console > Manage >
 Sometimes, transaction participants want to add missing reviews after
 the review period has expired. If the marketplace operators decide that
 the review is relevant and honest, you can reach out to us at
-[Sharetribe Support](mailto:flex-support@sharetribe.com) with the issue
-and we can look into it.
+[Sharetribe Support](mailto:hello@sharetribe.com) with the issue and we
+can look into it.
 
 ### How can I add an average rating attribute to my listings?
 

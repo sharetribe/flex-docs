@@ -371,8 +371,7 @@ troubleshoot the problem.
 If nothing seems to work, you can always contact Sharetribe technical
 support through the chat widget in your
 [Sharetribe Console](https://console.sharetribe.com/) or
-[by email](mailto:flex-support@sharetribe.com) for further
-troubleshooting.
+[by email](mailto:hello@sharetribe.com) for further troubleshooting.
 
 ### How can I partially refund transactions in my Sharetribe marketplace?
 
@@ -427,9 +426,8 @@ to find out whether this option would best suit your needs.
 If you are contemplating partial refunds for your marketplace, you can
 also contact Sharetribe technical support through the chat widget in
 your [Sharetribe Console](https://console.sharetribe.com/) or
-[by email](mailto:flex-support@sharetribe.com). Let us know your
-specific use case, and we may be able to recommend some avenues for you
-to explore.
+[by email](mailto:hello@sharetribe.com). Let us know your specific use
+case, and we may be able to recommend some avenues for you to explore.
 
 ### Can I use Sharetribe and not use Stripe?
 
