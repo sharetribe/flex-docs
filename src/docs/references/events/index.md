@@ -1,7 +1,7 @@
 ---
 title: Events
 slug: events
-updated: 2021-01-12
+updated: 2023-10-24
 category: references
 ingress: Reference documentation for Sharetribe marketplace events.
 published: true

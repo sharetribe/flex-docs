@@ -1,7 +1,7 @@
 ---
 title: Bundled marketplace texts
 slug: how-to-change-bundled-marketplace-texts
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-content
 ingress:
   This guide describes what bundled marketplace texts are, and how to

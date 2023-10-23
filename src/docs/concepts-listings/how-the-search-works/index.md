@@ -1,7 +1,7 @@
 ---
 title: How the listing search works
 slug: how-the-listing-search-works
-updated: 2019-07-17
+updated: 2023-10-24
 category: concepts-listings
 ingress:
   Listings search can be crucial for your marketplace to thrive.

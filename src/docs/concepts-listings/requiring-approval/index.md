@@ -1,7 +1,7 @@
 ---
 title: Requiring approval for new listings
 slug: requiring-approval
-updated: 2022-03-07
+updated: 2023-10-24
 category: concepts-listings
 ingress:
   Sharetribe allows you to require operator approval for new listings

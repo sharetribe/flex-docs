@@ -1,7 +1,7 @@
 ---
 title: Customization checklist
 slug: customization-checklist
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-introduction
 ingress:
   This article provides a reference list of common customisations to aid

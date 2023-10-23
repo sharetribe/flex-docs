@@ -1,7 +1,7 @@
 ---
 title: How to add a static page
 slug: how-to-add-static-pages
-updated: 2023-02-14
+updated: 2023-10-24
 category: template-content
 ingress:
   This guide describes how to add a non-dynamic static page using the

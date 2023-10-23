@@ -1,7 +1,7 @@
 ---
 title: Deploy to Heroku
 slug: how-to-deploy-template-to-heroku
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-hosting
 ingress:
   This guide describes how to deploy the Sharetribe Web Template to

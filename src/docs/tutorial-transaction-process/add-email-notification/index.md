@@ -1,7 +1,7 @@
 ---
 title: Add a new email notification
 slug: add-new-email-notification
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-transaction-process
 ingress:
   Learn how to add a new email notification to the existing transaction

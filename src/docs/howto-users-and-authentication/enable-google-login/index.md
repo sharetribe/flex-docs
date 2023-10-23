@@ -1,7 +1,7 @@
 ---
 title: Enable Google login
 slug: enable-google-login
-updated: 2020-12-04
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   In this how-to guide we'll take a look at the process of setting up

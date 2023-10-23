@@ -1,7 +1,7 @@
 ---
 title: Transaction process time expressions
 slug: transaction-process-time-expressions
-updated: 2022-02-09
+updated: 2023-10-24
 category: references
 ingress:
   This reference article describes the time expressions used in the

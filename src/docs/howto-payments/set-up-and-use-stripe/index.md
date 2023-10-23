@@ -1,7 +1,7 @@
 ---
 title: Set up and use Stripe
 slug: set-up-and-use-stripe
-updated: 2022-02-22
+updated: 2023-10-24
 category: how-to-payments
 ingress:
   To enable payments and receive commissions in your marketplace, you

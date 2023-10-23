@@ -1,7 +1,7 @@
 ---
 title: Sharetribe environments
 slug: sharetribe-environments
-updated: 2023-08-16
+updated: 2023-10-24
 category: concepts-development
 ingress:
   What are Sharetribe environments and the differences the three types

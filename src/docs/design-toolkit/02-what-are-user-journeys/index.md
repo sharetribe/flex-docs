@@ -1,7 +1,7 @@
 ---
 title: What Are User Journeys?
 slug: what-are-user-journeys
-updated: 2023-04-19
+updated: 2023-10-24
 category: design-toolkit
 ingress:
   A user journey map illustrates the step by step process that users

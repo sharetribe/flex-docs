@@ -1,7 +1,7 @@
 ---
 title: Privileged transitions
 slug: privileged-transitions
-updated: 2020-06-25
+updated: 2023-10-24
 category: concepts-transaction-process
 ingress:
   This article introduces you to the concept of privileged transitions

@@ -1,7 +1,7 @@
 ---
 title: Enable Mapbox
 slug: how-to-set-up-mapbox-for-template
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-search
 ingress:
   By default, the template uses Mapbox for showing interactive maps.

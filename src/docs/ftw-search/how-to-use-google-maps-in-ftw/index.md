@@ -1,7 +1,7 @@
 ---
 title: Enable Google Maps
 slug: how-to-use-google-maps-in-template
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-search
 ingress:
   The Sharetribe Web Template offers out of the box support for Google

@@ -1,7 +1,7 @@
 ---
 title: Social logins & SSO
 slug: social-logins-and-sso
-updated: 2020-12-16
+updated: 2023-10-24
 category: concepts-users-and-authentication
 ingress:
   Sharetribe allows your users to authenticate themselves using a 3rd

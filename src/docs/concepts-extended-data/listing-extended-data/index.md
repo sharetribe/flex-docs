@@ -1,7 +1,7 @@
 ---
 title: Listing extended data
 slug: listing-extended-data
-updated: 2022-09-29
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   Listing extended data allows you to use the powerful search engine in

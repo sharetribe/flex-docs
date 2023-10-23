@@ -1,7 +1,7 @@
 ---
 title: Edit email templates with Sharetribe CLI
 slug: edit-email-templates-with-sharetribe-cli
-updated: 2023-10-18
+updated: 2023-10-24
 category: how-to-messaging
 ingress:
   This tutorial shows you how to edit email templates using the

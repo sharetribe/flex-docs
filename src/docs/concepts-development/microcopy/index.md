@@ -1,7 +1,7 @@
 ---
 title: Marketplace texts in Sharetribe
 slug: marketplace-texts
-updated: 2022-06-14
+updated: 2023-10-24
 category: concepts-content-management
 ingress:
   This article introduces marketplace texts in Sharetribe and how they

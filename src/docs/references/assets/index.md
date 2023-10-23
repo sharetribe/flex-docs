@@ -1,7 +1,7 @@
 ---
 title: Assets
 slug: assets
-updated: 2023-04-01
+updated: 2023-10-24
 category: references
 ingress: Reference documentation providing information on assets.
 published: true

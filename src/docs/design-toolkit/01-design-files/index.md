@@ -1,7 +1,7 @@
 ---
 title: Design files
 slug: design-files
-updated: 2023-27-04
+updated: 2023-10-24
 category: design-toolkit
 ingress:
   The complete design files in mobile and desktop layout for Sharetribe

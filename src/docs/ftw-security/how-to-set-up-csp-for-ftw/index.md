@@ -1,7 +1,7 @@
 ---
 title: Content Security Policy
 slug: how-to-set-up-csp-for-template
-updated: 2023-08-02
+updated: 2023-10-24
 category: template-security
 ingress:
   This guide describes how to set up a Content Security Policy when

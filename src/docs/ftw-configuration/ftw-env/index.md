@@ -1,7 +1,7 @@
 ---
 title: Template environment variables
 slug: template-env
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-configuration
 ingress:
   Reference documentation for environment variables in the Sharetribe

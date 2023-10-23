@@ -1,7 +1,7 @@
 ---
 title: How to run Sharetribe Web Template in a Docker container
 slug: run-template-with-docker
-updated: 2023-02-20
+updated: 2023-10-24
 category: template-hosting
 ingress:
   This guide describes how to set up a Docker container running the

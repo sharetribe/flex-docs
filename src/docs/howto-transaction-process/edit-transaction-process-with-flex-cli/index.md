@@ -1,7 +1,7 @@
 ---
 title: Edit transaction process with Sharetribe CLI
 slug: edit-transaction-process-with-sharetribe-cli
-updated: 2021-12-23
+updated: 2023-10-24
 category: how-to-transaction-process
 ingress:
   This tutorial shows you how to edit transaction process with

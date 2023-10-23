@@ -1,7 +1,7 @@
 ---
 title: How to remove Stripe and payments
 slug: removing-stripe-and-payments
-updated: 2023-09-04
+updated: 2023-10-24
 category: how-to-payments
 ingress:
   In some cases, you might want to remove Stripe integrations or even

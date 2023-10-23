@@ -1,7 +1,7 @@
 ---
 title: JavaScript SDKs
 slug: js-sdk
-updated: 2021-10-05
+updated: 2023-10-24
 category: concepts-api-sdk
 ingress: Information on our SDKs and where to find our SDK documentation
 published: true

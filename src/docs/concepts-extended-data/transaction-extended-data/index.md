@@ -1,7 +1,7 @@
 ---
 title: Transaction extended data
 slug: transaction-extended-data
-updated: 2022-09-29
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   Transaction extended data allows you to keep sensitive information

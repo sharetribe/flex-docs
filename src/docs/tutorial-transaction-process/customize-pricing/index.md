@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing-tutorial
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an

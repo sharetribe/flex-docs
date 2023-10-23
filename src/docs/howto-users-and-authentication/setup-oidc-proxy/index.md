@@ -1,7 +1,7 @@
 ---
 title: How to set up OpenID Connect proxy in Sharetribe Web Template
 slug: setup-open-id-connect-proxy
-updated: 2021-03-02
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   In this guide, we'll take a look at the process of setting up OpenID

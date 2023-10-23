@@ -1,7 +1,7 @@
 ---
 title: Sanitizing user-generated content
 slug: how-to-sanitize-user-generated-content
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-security
 ingress:
   This guide describes how to sanitize user-generated content to prevent

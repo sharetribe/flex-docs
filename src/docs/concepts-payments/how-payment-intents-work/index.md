@@ -1,7 +1,7 @@
 ---
 title: How PaymentIntents work
 slug: payment-intents
-updated: 2021-10-14
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   Overview of how Stripe PaymentIntents work with Sharetribe, and how

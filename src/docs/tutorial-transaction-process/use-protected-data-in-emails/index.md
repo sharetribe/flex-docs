@@ -1,7 +1,7 @@
 ---
 title: Use protected data in an email notification
 slug: use-protected-data-in-emails
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-transaction-process
 ingress:
   Learn how to use protected data in an email notification by modifying

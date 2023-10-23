@@ -1,7 +1,7 @@
 ---
 title: Hosted marketplace texts with Asset Delivery API
 slug: hosted-marketplace-texts
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-content
 ingress:
   This article describes how hosted marketplace texts work in the

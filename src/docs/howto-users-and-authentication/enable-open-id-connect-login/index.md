@@ -1,7 +1,7 @@
 ---
 title: Enable OpenID Connect login
 slug: enable-open-id-connect-login
-updated: 2021-02-03
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   In this guide we'll take at how to use an OpenID Connect login

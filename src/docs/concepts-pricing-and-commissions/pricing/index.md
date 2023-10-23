@@ -1,7 +1,7 @@
 ---
 title: Pricing
 slug: pricing
-updated: 2020-06-25
+updated: 2023-10-24
 category: concepts-pricing-and-commissions
 ingress:
   Sharetribe allows lots of flexibility for your providers in terms of

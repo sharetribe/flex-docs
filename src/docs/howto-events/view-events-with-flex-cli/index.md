@@ -1,7 +1,7 @@
 ---
 title: View events with Sharetribe CLI
 slug: view-events-with-sharetribe-cli
-updated: 2020-12-09
+updated: 2023-10-24
 category: how-to-events
 ingress:
   This guide shows you how to query and view events data using

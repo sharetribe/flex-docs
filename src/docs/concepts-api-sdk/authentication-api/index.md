@@ -1,7 +1,7 @@
 ---
 title: Authentication API
 slug: authentication-api
-updated: 2019-11-27
+updated: 2023-10-24
 category: concepts-api-sdk
 ingress:
   Description of the Sharetribe Authentication API and how the

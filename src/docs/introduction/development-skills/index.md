@@ -1,7 +1,7 @@
 ---
 title: What development skills are needed?
 slug: development-skills
-updated: 2019-11-21
+updated: 2023-10-24
 category: introduction
 ingress:
   Building a custom marketplace with Sharetribe requires some software

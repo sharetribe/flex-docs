@@ -1,7 +1,7 @@
 ---
 title: Extended data
 slug: extended-data
-updated: 2021-12-15
+updated: 2023-10-24
 category: references
 ingress:
   Reference documentation providing information on all the different

@@ -1,7 +1,7 @@
 ---
 title: Enable Facebook login
 slug: enable-facebook-login
-updated: 2020-11-16
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   In this how-to guide we'll take a look at the process of setting up

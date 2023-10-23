@@ -1,7 +1,7 @@
 ---
 title: How Strong Customer Authentication works
 slug: strong-customer-authentication
-updated: 2021-10-04
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   This article gives an overview of Strong Customer Authentication, a

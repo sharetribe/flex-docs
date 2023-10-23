@@ -1,7 +1,7 @@
 ---
 title: How to customize pricing
 slug: how-to-customize-pricing
-updated: 2022-06-14
+updated: 2023-10-24
 category: how-to-payments
 ingress:
   Sharetribe allows lots of flexibility for your providers in terms of

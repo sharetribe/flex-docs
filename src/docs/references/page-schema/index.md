@@ -1,7 +1,7 @@
 ---
 title: Page asset schema
 slug: page-asset-schema
-updated: 2023-02-14
+updated: 2023-10-24
 category: references
 ingress:
   Reference documentation providing information on the page asset

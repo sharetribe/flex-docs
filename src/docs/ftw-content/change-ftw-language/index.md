@@ -1,7 +1,7 @@
 ---
 title: How to change marketplace language
 slug: how-to-change-template-language
-updated: 2023-09-04
+updated: 2023-10-24
 category: template-content
 ingress:
   This guide describes how to change the language used in the Sharetribe

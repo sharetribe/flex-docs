@@ -1,7 +1,7 @@
 ---
 title: Messages
 slug: messages
-updated: 2022-07-21
+updated: 2023-10-24
 category: concepts-messages
 ingress:
   Sharetribe allows your users to communicate with each other using

@@ -1,7 +1,7 @@
 ---
 title: Set up outgoing email settings
 slug: set-up-outgoing-email-settings
-updated: 2020-12-21
+updated: 2023-10-24
 category: how-to-messaging
 ingress:
   This article describes how to set up a custom email sender address for
@@ -32,10 +32,10 @@ provider. By default, we manage your SendGrid account and settings
 automatically, and the costs are included in your Sharetribe
 subscription.
 
-When you have your live environment created and you have bought your
-custom domain for it, you should set up and validate the outgoing email
-settings. Follow the steps below to enable email sending and increase
-the chances that your emails will be delivered reliably.
+When you have your live environment created, you can set up and validate
+the outgoing email settings if you use a custom domain. Follow the steps
+below to enable email sending with a custom domain, and increase the
+chances that your emails will be delivered reliably.
 
 ### 1. Add sender name and address
 

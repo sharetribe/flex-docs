@@ -1,7 +1,7 @@
 ---
 title: Change currency and minimum price
 slug: configurations
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-branding
 ingress:
   In this tutorial section we change the marketplace currency and we set

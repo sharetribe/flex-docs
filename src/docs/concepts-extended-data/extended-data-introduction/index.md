@@ -1,7 +1,7 @@
 ---
 title: Introduction to extended data
 slug: extended-data-introduction
-updated: 2021-04-30
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   Extended data allows you to fully customize the information you want

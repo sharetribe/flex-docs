@@ -1,7 +1,7 @@
 ---
 title: Rate limiting in Marketplace API and Integration API
 slug: rate-limiting
-updated: 2022-12-21
+updated: 2023-10-24
 category: concepts-api-sdk
 ingress:
   This article describes rate limiting in Marketplace API and

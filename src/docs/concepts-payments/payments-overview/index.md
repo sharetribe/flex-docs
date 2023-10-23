@@ -1,7 +1,7 @@
 ---
 title: Payments in Sharetribe
 slug: payments-overview
-updated: 2023-09-04
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   This article introduces how payments work in Sharetribe in general,

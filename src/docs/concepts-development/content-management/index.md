@@ -1,7 +1,7 @@
 ---
 title: Content management in Sharetribe
 slug: content-management
-updated: 2023-04-01
+updated: 2023-10-24
 category: concepts-content-management
 ingress:
   This article introduces the Sharetribe content management system and

@@ -1,7 +1,7 @@
 ---
 title: Transaction process actions
 slug: transaction-process-actions
-updated: 2021-10-14
+updated: 2023-10-24
 category: references
 ingress:
   This reference article lists all the available actions and their

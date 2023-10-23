@@ -1,7 +1,7 @@
 ---
 title: Listing stock management
 slug: stock
-updated: 2021-09-13
+updated: 2023-10-24
 category: references
 ingress: Reference documentation for listing stock management.
 published: true

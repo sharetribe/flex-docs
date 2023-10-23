@@ -1,7 +1,7 @@
 ---
 title: Manage user data in Console
 slug: console-manage-users
-updated: 2022-04-13
+updated: 2023-10-24
 category: concepts-management
 ingress: Manage, edit, add, and browse user information in Console
 published: true

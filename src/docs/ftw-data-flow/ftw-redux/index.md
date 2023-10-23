@@ -1,7 +1,7 @@
 ---
 title: State management and Redux
 slug: redux
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-data-flow
 ingress:
   This article explains how the Sharetribe Web Template uses Redux for

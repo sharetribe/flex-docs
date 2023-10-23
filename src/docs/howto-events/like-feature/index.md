@@ -1,7 +1,7 @@
 ---
 title: How to implement a like feature using events
 slug: like-feature
-updated: 2022-02-25
+updated: 2023-10-24
 category: how-to-events
 ingress:
   Following this guide, you'll be able to build a feature that allows

@@ -1,7 +1,7 @@
 ---
 title: Sitemap in Sharetribe Web Template
 slug: sitemap-in-template
-updated: 2023-10-12
+updated: 2023-10-24
 category: template-analytics
 ingress:
   This guide describes how the default sitemap works in the Sharetribe

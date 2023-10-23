@@ -1,7 +1,7 @@
 ---
 title: User extended data
 slug: user-extended-data
-updated: 2022-09-29
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   User extended data allows you to distinguish between different types

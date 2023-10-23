@@ -1,7 +1,7 @@
 ---
 title: Inventory management
 slug: inventory-management
-updated: 2022-08-18
+updated: 2023-10-24
 category: concepts-availability
 ingress:
   Inventory or stock management is a key feature of many product

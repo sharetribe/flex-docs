@@ -1,7 +1,7 @@
 ---
 title: Solving payout problems
 slug: solving-payout-problems
-updated: 2019-09-10
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   A payout is the part of the payment process where the price of an

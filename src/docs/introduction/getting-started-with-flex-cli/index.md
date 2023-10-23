@@ -1,7 +1,7 @@
 ---
 title: Getting started with Sharetribe CLI
 slug: getting-started-with-sharetribe-cli
-updated: 2021-10-04
+updated: 2023-10-24
 category: introduction-getting-started
 ingress:
   This tutorial shows you how to get started with the Sharetribe CLI.

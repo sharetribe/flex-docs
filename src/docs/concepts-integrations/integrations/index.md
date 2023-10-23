@@ -1,7 +1,7 @@
 ---
 title: Introduction to integrations in Sharetribe
 slug: integrations-introduction
-updated: 2022-10-11
+updated: 2023-10-24
 category: concepts-integrations
 ingress:
   Sharetribe allows integrations with a vast range of third party tools

@@ -1,7 +1,7 @@
 ---
 title: Managing transaction data in Console
 slug: console-manage-transactions
-updated: 2022-04-13
+updated: 2023-10-24
 category: concepts-management
 ingress: Manage, review, monitor and transition transactions in Console
 published: true

@@ -1,7 +1,7 @@
 ---
 title: Change template texts
 slug: how-to-change-template-ui-texts
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-content
 ingress:
   This guide gives an overview how to change the user interface texts in

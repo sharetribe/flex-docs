@@ -1,7 +1,7 @@
 ---
 title: Reacting to events
 slug: reacting-to-events
-updated: 2020-12-15
+updated: 2023-10-24
 category: how-to-events
 ingress:
   This guide demonstrates how to build an integration that reacts to

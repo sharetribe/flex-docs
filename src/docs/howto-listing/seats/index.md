@@ -1,7 +1,7 @@
 ---
 title: Add listings with multiple seats
 slug: multiple-seats
-updated: 2023-09-04
+updated: 2023-10-24
 category: how-to-listing
 ingress:
   This guide describes how to handle multiple seats in listings and

@@ -1,7 +1,7 @@
 ---
 title: Managing listing data in Console
 slug: console-manage-listings
-updated: 2022-04-13
+updated: 2023-10-24
 category: concepts-management
 ingress: Manage, edit, add, and browse listing information in Console
 published: true

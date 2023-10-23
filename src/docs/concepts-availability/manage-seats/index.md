@@ -1,7 +1,7 @@
 ---
 title: Manage seats
 slug: manage-seats
-updated: 2021-10-18
+updated: 2023-10-24
 category: concepts-availability
 ingress:
   You can manage the capacity of an event or a rental space within a

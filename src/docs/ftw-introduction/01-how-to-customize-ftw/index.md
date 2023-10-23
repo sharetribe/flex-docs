@@ -1,7 +1,7 @@
 ---
 title: Customizing the template
 slug: how-to-customize-template
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-introduction
 ingress:
   This article helps you set up the development environment and outlines

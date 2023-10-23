@@ -1,7 +1,7 @@
 ---
 title: Listings in Sharetribe
 slug: listings-overview
-updated: 2022-06-27
+updated: 2023-10-24
 category: concepts-listings
 ingress:
   Sharetribe powers online marketplaces, and listings are at the core of

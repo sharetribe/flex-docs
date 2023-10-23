@@ -1,7 +1,7 @@
 ---
 title: Set up and use Zapier
 slug: set-up-and-use-zapier
-updated: 2021-06-02
+updated: 2023-10-24
 category: how-to-events
 ingress:
   This guide demonstrates how to connect Sharetribe to Zapier, gives a

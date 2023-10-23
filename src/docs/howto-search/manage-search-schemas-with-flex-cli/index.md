@@ -1,7 +1,7 @@
 ---
 title: Manage search schemas with Sharetribe CLI
 slug: manage-search-schemas-with-sharetribe-cli
-updated: 2021-11-30
+updated: 2023-10-24
 category: how-to-search
 ingress:
   This tutorial shows you how to manage extended data search schemas

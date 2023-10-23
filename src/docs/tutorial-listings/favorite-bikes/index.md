@@ -1,7 +1,7 @@
 ---
 title: Add a favorite bikes button
 slug: add-favorite-bikes
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-listings
 ingress:
   Learn how to add a favorites functionality to Sharetribe Web Template

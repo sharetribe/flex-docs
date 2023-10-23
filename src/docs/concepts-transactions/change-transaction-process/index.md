@@ -1,7 +1,7 @@
 ---
 title: Changing your transaction process
 slug: change-transaction-process
-updated: 2020-12-20
+updated: 2023-10-24
 category: concepts-transaction-process
 ingress:
   How to create and communicate a new transaction processes or make

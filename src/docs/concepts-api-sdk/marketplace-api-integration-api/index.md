@@ -1,7 +1,7 @@
 ---
 title: Sharetribe Marketplace API and Integration API
 slug: marketplace-api-integration-api
-updated: 2019-11-27
+updated: 2023-10-24
 category: concepts-api-sdk
 ingress:
   Description of the different Sharetribe APIs and how to choose which

@@ -1,7 +1,7 @@
 ---
 title: Extend listing data in Sharetribe Web Template
 slug: extend-listing-data-in-template
-updated: 2020-06-04
+updated: 2023-10-24
 category: how-to-listing
 ingress:
   This guide describes how to use use extended data to expand the

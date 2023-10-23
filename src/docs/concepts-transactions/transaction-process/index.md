@@ -1,7 +1,7 @@
 ---
 title: Introduction to transaction processes
 slug: transaction-process
-updated: 2022-04-06
+updated: 2023-10-24
 category: concepts-transaction-process
 ingress:
   This article introduces transaction processes as a concept, their

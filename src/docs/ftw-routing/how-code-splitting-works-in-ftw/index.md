@@ -1,7 +1,7 @@
 ---
 title: Code splitting
 slug: code-splitting-in-template
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-routing
 ingress:
   This article explains how code splitting works in the Sharetribe Web

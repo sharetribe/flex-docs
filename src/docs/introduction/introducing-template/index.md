@@ -1,7 +1,7 @@
 ---
 title: Introducing Sharetribe Web Template
 slug: introducing-template
-updated: 2023-04-19
+updated: 2023-10-24
 category: introduction
 ingress:
   Learn about the out of the box functionalities available in the

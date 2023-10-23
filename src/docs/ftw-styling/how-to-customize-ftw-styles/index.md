@@ -1,7 +1,7 @@
 ---
 title: Styling and CSS
 slug: how-to-customize-template-styles
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-styling
 ingress:
   This guide describes the CSS architecture used in the Sharetribe Web

@@ -1,7 +1,7 @@
 ---
 title: Applications
 slug: applications
-updated: 2019-12-10
+updated: 2023-10-24
 category: concepts-development
 ingress:
   Sharetribe Applications are the entities that authenticate to and

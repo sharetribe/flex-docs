@@ -1,7 +1,7 @@
 ---
 title: How the template renders content pages
 slug: page-builder
-updated: 2023-14-02
+updated: 2023-10-24
 category: template-content
 ingress:
   This article introduces how the Sharetribe Web Template uses the Pages

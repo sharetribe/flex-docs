@@ -1,7 +1,7 @@
 ---
 title: Email notifications
 slug: email-notifications
-updated: 2022-07-21
+updated: 2023-10-24
 category: concepts-messages
 ingress:
   Email notifications are messages users receive when something

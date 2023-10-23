@@ -1,7 +1,7 @@
 ---
 title: Reviews
 slug: reviews
-updated: 2022-08-17
+updated: 2023-10-24
 category: concepts-transaction-process
 ingress:
   This article introduces reviews in the Sharetribe marketplace, why

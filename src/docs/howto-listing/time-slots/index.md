@@ -1,7 +1,7 @@
 ---
 title: Modify booking time intervals in time-based listings
 slug: modify-time-intervals
-updated: 2023-01-23
+updated: 2023-10-24
 category: how-to-listing
 ingress:
   This guide describes how to modify booking time intervals in hourly

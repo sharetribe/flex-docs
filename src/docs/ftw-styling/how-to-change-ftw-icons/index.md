@@ -1,7 +1,7 @@
 ---
 title: How to change the default favicons
 slug: how-to-change-ftw-icons
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-styling
 ingress:
   This guide describes how to use your own custom favicon and

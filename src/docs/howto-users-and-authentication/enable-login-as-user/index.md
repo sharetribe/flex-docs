@@ -1,7 +1,7 @@
 ---
 title: Enable Login as user
 slug: enable-login-as-user
-updated: 2020-06-01
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   This article guides you how to take into use the Login as user feature

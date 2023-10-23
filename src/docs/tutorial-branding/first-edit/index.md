@@ -1,7 +1,7 @@
 ---
 title: Style a component
 slug: first-edit
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-branding
 ingress:
   Begin the development of your marketplace by customising the

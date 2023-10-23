@@ -1,7 +1,7 @@
 ---
 title: Implement user deletion
 slug: implement-delete-user
-updated: 2023-07-26
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   This article guides you in implementing a feature where a user can

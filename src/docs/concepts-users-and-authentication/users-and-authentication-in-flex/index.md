@@ -1,7 +1,7 @@
 ---
 title: Users and authentication in Sharetribe
 slug: users-and-authentication-in-sharetribe
-updated: 2022-05-16
+updated: 2023-10-24
 category: concepts-users-and-authentication
 ingress:
   This article explains how users are managed and how authentication and

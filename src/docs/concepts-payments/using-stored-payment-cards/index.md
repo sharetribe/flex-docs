@@ -1,7 +1,7 @@
 ---
 title: Using stored payment cards
 slug: using-stored-payment-cards
-updated: 2019-08-26
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   This article gives you a brief overview on how the Sharetribe

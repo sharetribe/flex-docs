@@ -1,7 +1,7 @@
 ---
 title: Change transaction process in Sharetribe Web Template
 slug: change-transaction-process-in-template
-updated: 2022-11-22
+updated: 2023-10-24
 category: how-to-transaction-process
 ingress:
   This guide describes how to customize Sharetribe Web Template to use a

@@ -1,7 +1,7 @@
 ---
 title: Introducing Sharetribe Developer Platform
 slug: introducing-sharetribe-developer-platform
-updated: 2023-10-23
+updated: 2023-10-24
 category: introduction
 ingress:
   Overview of how the Sharetribe Developer Platform works, and how you

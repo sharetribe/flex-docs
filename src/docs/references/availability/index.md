@@ -1,7 +1,7 @@
 ---
 title: Listing availability management
 slug: availability
-updated: 2020-10-05
+updated: 2023-10-24
 category: references
 ingress: Reference documentation for listing availability management.
 published: true

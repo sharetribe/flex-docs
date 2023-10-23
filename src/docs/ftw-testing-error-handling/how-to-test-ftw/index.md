@@ -1,7 +1,7 @@
 ---
 title: Running snapshot tests
 slug: how-to-test-template
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-testing-error-handling
 ingress:
   This guide describes how to use the test setup in the Sharetribe Web

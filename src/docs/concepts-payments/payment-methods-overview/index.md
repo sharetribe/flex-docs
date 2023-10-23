@@ -1,7 +1,7 @@
 ---
 title: Payment methods overview
 slug: payment-methods-overview
-updated: 2021-02-01
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   This article provides an overview of different payment methods in

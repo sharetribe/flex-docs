@@ -1,7 +1,7 @@
 ---
 title: Configuration variables
 slug: configuration
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-configuration
 ingress:
   The Sharetribe Web Template has many configurations you can edit

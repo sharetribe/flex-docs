@@ -1,7 +1,7 @@
 ---
 title: Deploy to production
 slug: how-to-deploy-template-to-production
-updated: 2023-01-01
+updated: 2023-10-24
 category: template-hosting
 ingress:
   This article describes what to take into account when you deploy the
