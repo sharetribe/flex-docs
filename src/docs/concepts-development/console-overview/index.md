@@ -7,8 +7,6 @@ ingress: This article will help you understand how to navigate Console.
 published: true
 ---
 
-TODO UPDATE TO NEW CONSOLE!
-
 Console is the central control system of your Sharetribe marketplace. In
 Console, you can change a number of general settings and manage most of
 the data of your marketplace related to users, listings, transactions
@@ -133,11 +131,11 @@ services.
 
 **Built-in email templates** includes all emails that are sent from your
 marketplace as a part of the default user flow. They are essential to
-the operation of Flex and are designed to be sent at the crucial moments
-of the user onboarding flow and are not related to the transaction
-process. The structure visual style of these emails can be edited with
-HTML directly in this tab of the Build section. You can edit the content
-of the built in emails in Build > Content > Email texts.
+the operation of the marketplace and are designed to be sent at the
+crucial moments of the user onboarding flow and are not related to the
+transaction process. The structure visual style of these emails can be
+edited with HTML directly in this tab of the Build section. You can edit
+the content of the built in emails in Build > Content > Email texts.
 
 **Events** has a summary of what the Events feature is about as well as
 some quick links to the relevant documentation. It also mentions the
@@ -154,7 +152,7 @@ transaction processes your marketplace has. You can toggle between the
 different processes in the left-side selection and see how many
 transactions have used each process. You can also inspect the components
 of the transaction processes. Read more about
-[transaction processes in Flex](/concepts/transaction-process/).
+[transaction processes in Sharetribe](/concepts/transaction-process/).
 
 ## Side bar
 
@@ -166,7 +164,7 @@ your organization: Test, Development, and Live.
 
 On the bottom of the side bar, you can manage your account and
 organization by clicking your email address. You can change your
-password and generate personal API keys that you need for the Flex
+password and generate personal API keys that you need for the Sharetribe
 command-line interface (CLI). You can also log out of Console here.
 
 This is also where you add new admin users – the people who help you

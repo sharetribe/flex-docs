@@ -11,7 +11,7 @@ Data from an existing marketplace can be migrated to Sharetribe. If your
 marketplace is running in Sharetribe Go, there is a ready migration path
 that will be handled by us. We will handle the migration in this case
 and you can find the outline for this process
-[here](/how-to/go-to-flex-migration/).
+[here](https://www.sharetribe.com/help/en/articles/8418385-migrating-from-sharetribe-go-to-the-new-sharetribe).
 
 If you are running a marketplace outside the Sharetribe ecosystem, and
 would like to import data to Sharetribe, it is possible. You will need

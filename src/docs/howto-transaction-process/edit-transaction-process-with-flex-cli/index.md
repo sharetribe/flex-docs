@@ -22,7 +22,7 @@ are logged in with your API key. It's recommended to first read the
 tutorial
 [Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 If you haven't read
-[how transaction processes work in Flex](/concepts/transaction-process/),
+[how transaction processes work in Sharetribe](/concepts/transaction-process/),
 it's a good idea to do that before starting this tutorial.
 
 In this tutorial we extend the marketplace review period. After we've
@@ -53,7 +53,7 @@ tutorial we'll use process `default-booking`, version 1. You might have
 different processes in your marketplace, so you can use those. However,
 you can check the content of this default booking example process online
 from
-[Flex example processes](https://github.com/sharetribe/sharetribe-example-processes)
+[Sharetribe example processes](https://github.com/sharetribe/sharetribe-example-processes)
 Github repository.
 
 We can pull the process with the `process pull` command. Let's see the
@@ -145,8 +145,8 @@ transition in your marketplace. Each transition contains values for keys
 like `:name`, `:actor`, `:actions`, `:to` and `:from`.
 
 To extend the review period in the transaction process, we need to find
-the transition where the review periods are defined. In the Flex default
-processes, the review period length is defined in the transition
+the transition where the review periods are defined. In the Sharetribe
+default processes, the review period length is defined in the transition
 `:transition/expire-review-period`, and if one participant has already
 reviewed the other, in either
 `:transition/expire-provider-review-period` or
@@ -207,7 +207,7 @@ your process with all the states, transitions and notifications listed.
 In case the file is invalid, you'll see a validation error.
 
 Now that we have validated the `process.edn` file we are ready to push
-the changes to Flex:
+the changes to Sharetribe:
 
 ```bash
 flex-cli process push --path process --process default-booking -m my-marketplace-dev
@@ -217,10 +217,10 @@ After the process is successfully pushed, you'll see a new process
 version in
 [Console](https://console.sharetribe.com/advanced/transaction-processes).
 
-Please note that pushing the changes to Flex doesn't immediately change
-the way how your marketplace works. The existing transactions are still
-using the old process version and the new transaction will be using the
-old process as long as the existing alias is pointing to it.
+Please note that pushing the changes to Sharetribe doesn't immediately
+change the way how your marketplace works. The existing transactions are
+still using the old process version and the new transaction will be
+using the old process as long as the existing alias is pointing to it.
 
 So, to take the changes into use, let's update the alias!
 
@@ -268,10 +268,10 @@ is 10 days.
 
 ## Summary
 
-In this tutorial we pulled an existing process definition with the Flex
-CLI. We extended the review period to 10 days, validated the process
-file and pushed it back to Flex. Finally, we updated the alias to point
-to the new version.
+In this tutorial we pulled an existing process definition with the
+Sharetribe CLI. We extended the review period to 10 days, validated the
+process file and pushed it back to Sharetribe. Finally, we updated the
+alias to point to the new version.
 
 You know now how to make simple modifications to the process. Have a
 look at the

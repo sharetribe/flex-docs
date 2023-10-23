@@ -29,6 +29,7 @@ template as a starting point for customizations.
 To use the Marketplace API, you will need a client ID. You can obtain
 one by creating a new Sharetribe marketplace at
 [the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).
+TODO
 
 ### Check that you have the correct transaction processes in your environment
 

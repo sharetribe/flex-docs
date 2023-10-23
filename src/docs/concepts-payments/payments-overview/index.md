@@ -181,7 +181,7 @@ If the customer requests a refund for one reason or another, the
 operator can refund the PaymentIntent. The Sharetribe integration with
 Stripe only supports full refunds. (Handling partial refunds is
 discussed
-[later in this article](/concepts/payments-overview/#can-i-partially-refund-transactions-in-my-flex-marketplace).)
+[later in this article](/concepts/payments-overview/#how-can-i-partially-refund-transactions-in-my-sharetribe-marketplace).)
 The default transaction process takes into account whether or not the
 PaymentIntent has already been captured from the customer's account.
 

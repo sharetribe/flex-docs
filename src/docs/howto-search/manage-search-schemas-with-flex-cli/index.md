@@ -28,7 +28,8 @@ types, you may want to create pages that only show one type of listing.
 
 We will also see how to manage data schema for user profiles. Those
 schemas are not required for Sharetribe Web Template to work, but can be
-useful when building own integrations via the Flex Integration API.
+useful when building own integrations via the Sharetribe Integration
+API.
 
 ## Extended data types and schema scopes
 
@@ -117,12 +118,12 @@ For the full query reference, see the
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 endpoint API reference.
 
-## Listing fields and search settings in Flex Console
+## Listing fields and search settings in Sharetribe Console
 
-When you add listing fields in Flex Console, and select _Include this
-field in keyword search_ or _Add a filter to Search Page_, Flex
-generates a search schema for the field automatically. In the Console,
-the available field type options are
+When you add listing fields in Sharetribe Console, and select _Include
+this field in keyword search_ or _Add a filter to Search Page_,
+Sharetribe generates a search schema for the field automatically. In the
+Console, the available field type options are
 
 - free text (search schema: `text`)
 - select one (search schema: `enum`)
@@ -244,9 +245,9 @@ marketplace, labelled with a metadata attribute `isPromoted: true`. If
 you only have a handful of promoted listings, you likely do not want to
 tag all other listings with `isPromoted: false`.
 
-Instead, Flex allows you to set a default value for the search schema –
-all listings that do not have the attribute get returned when querying
-the default value.
+Instead, Sharetribe allows you to set a default value for the search
+schema – all listings that do not have the attribute get returned when
+querying the default value.
 
 You can set the default value for a search schema simply by passing a
 `--default` flag with the desired default value. To create the search

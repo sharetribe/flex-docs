@@ -120,11 +120,11 @@ Console > Build > Content > Marketplace texts.
 ```
 
 After those changes, you can create a new user account using the sign-up
-page. Then, if you open the user card in the Flex Console, you should be
-able to see the added phone number in the user entity's protected data
-section.
+page. Then, if you open the user card in the Sharetribe Console, you
+should be able to see the added phone number in the user entity's
+protected data section.
 
-![Phone number in Flex Console](./phone-number-in-protected-data.png)
+![Phone number in Sharetribe Console](./phone-number-in-protected-data.png)
 
 This is possible because all the extra fields that are added to
 SignupForm component are saved as protected data to the user entity.

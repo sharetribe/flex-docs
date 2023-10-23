@@ -23,10 +23,10 @@ or [Adyen for Platforms][adyen-for-platforms]) with Sharetribe.
 Before reading this guide, you should be familiar with the following
 Sharetribe features:
 
-- [Privileged transitions][flex-docs-privileged-transitions-background]
-- [Events][flex-docs-events-reference]
-- [Reacting to events][flex-docs-reacting-to-events-cookbook]
-- [Extended data][flex-docs-extended-data-reference]
+- [Privileged transitions][dev-docs-concepts-privileged-transitions]
+- [Events][dev-docs-refence-events]
+- [Reacting to events][dev-docs-howto-reacting-to-events]
+- [Extended data][dev-docs-reference-extended-data]
 
 <plan tier="extend" feature="Access to Integration API and events"></plan>
 
@@ -425,8 +425,8 @@ payment gateway supports that.
 There are two main options for integrating Sharetribe with a 3rd-party
 payment gateway:
 
-- [Privileged transitions][flex-docs-privileged-transitions-background]
-- [Events][flex-docs-events-reference].
+- [Privileged transitions][dev-docs-concepts-privileged-transitions]
+- [Events][dev-docs-refence-events].
 
 For some payment flow stages you can use either method to build the
 integration, but for some stages using exactly one of the two is
@@ -712,11 +712,11 @@ marketplace payment flow and gave recommendations on how to integrate a
   https://stripe.com/docs/security/guide#validating-pci-compliance
 [giropay]: https://www.giropay.de/
 [ideal]: https://www.ideal.nl/en/
-[flex-docs-privileged-transitions-background]:
+[dev-docs-concepts-privileged-transitions]:
   /concepts/privileged-transitions/
-[flex-docs-events-reference]: /references/events/
-[flex-docs-reacting-to-events-cookbook]: /how-to/reacting-to-events/
-[flex-docs-extended-data-reference]: /references/extended-data/
+[dev-docs-refence-events]: /references/events/
+[dev-docs-howto-reacting-to-events]: /how-to/reacting-to-events/
+[dev-docs-reference-extended-data]: /references/extended-data/
 [pci-saq-a-pdf]:
   https://www.pcisecuritystandards.org/documents/PCI-DSS-v3_2_1-SAQ-A.pdf
 [marketplace-api-update-user-profile]:

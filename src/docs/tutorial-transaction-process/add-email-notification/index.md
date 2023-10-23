@@ -75,9 +75,9 @@ details by using variables within `{{}}`.
 
 <extrainfo title="Add new text sections in the email template">
 
-You can modify the text content of the emails in Flex Console. However,
-if you want to add a completely new text section, you can add it using
-the same helper `{{t}}` that is used across the template.
+You can modify the text content of the emails in Sharetribe Console.
+However, if you want to add a completely new text section, you can add
+it using the same helper `{{t}}` that is used across the template.
 
 The structure of the helper is as follows:
 

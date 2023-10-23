@@ -139,7 +139,7 @@ marketplace.
 In this tutorial, we installed Sharetribe CLI, logged in using an API
 key and tried some example commands. In addition, we familiarized
 ourselves with the `help` command that is the main source of
-documentation for the Flex CLI. We also learned how to disable and
+documentation for the Sharetribe CLI. We also learned how to disable and
 enable the listing approval functionality for our marketplace.
 
 Now that we know how to list processes, the next this is to

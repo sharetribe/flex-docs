@@ -10,6 +10,8 @@ ingress:
 published: true
 ---
 
+TODO OBSOLETE?
+
 ## Marketplaces
 
 Sharetribe is a software solution for building marketplaces.

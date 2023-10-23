@@ -9,9 +9,9 @@ published: true
 
 The template has default tabs in the listing creation wizard for both
 bookings and purchases. The first of those tabs, “Details” shows the
-attributes you have configured for your marketplace listings in Flex
-Console. However, you can also add custom tabs to the listing creation
-flow.
+attributes you have configured for your marketplace listings in
+Sharetribe Console. However, you can also add custom tabs to the listing
+creation flow.
 
 ![Bike creation wizard](./biketribe-listing-details.png)
 
@@ -483,13 +483,12 @@ attribute, so if this was a required feature, we would check whether
 Now, if you start creating a new listing, you’ll see a new tab label in
 the left side navigation. However, the label only shows the relevant
 marketplace text key, since we have not yet added the marketplace texts
-in Flex Console.
+in Sharetribe Console.
 
 ![New tab without label](./biketribe-wizard-microcopy-key.png)
 
-To fix this, add the following keys and values in your Flex Console >
-Build > Content > Marketplace texts editor or _src/translations/en.json_
-file:
+To fix this, add the following keys and values in your Console > Build >
+Content > Marketplace texts editor or _src/translations/en.json_ file:
 
 ```json
   "EditListingWizard.tabLabelExtraFeatures": "Extra features",
@@ -510,10 +509,11 @@ some extra features for the listing.
 
 ![Bike extra features panel](./biketribe-extrafeatures-panel.png)
 
-When you now view the bike in your Flex Console > Manage > Listings, you
-can see the extra features get saved in the listing's public data.
+When you now view the bike in your Sharetribe Console > Manage >
+Listings, you can see the extra features get saved in the listing's
+public data.
 
-![Bike extra features in Flex Console](./console-extra-features.png)
+![Bike extra features in Sharetribe Console](./console-extra-features.png)
 
 ## Show Extra features on listing page with SectionTextMaybe component
 

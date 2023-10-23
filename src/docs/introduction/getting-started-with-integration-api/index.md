@@ -94,8 +94,9 @@ cp env-template .env
 ```
 
 Open the `.env` file in your favorite text editor and fill in the
-`FLEX_INTEGRATION_CLIENT_ID` and `FLEX_INTEGRATION_CLIENT_SECRET`
-variables with the values you obtained in the previous step.
+`SHARETRIBE_INTEGRATION_CLIENT_ID` and
+`SHARETRIBE_INTEGRATION_CLIENT_SECRET` variables with the values you
+obtained in the previous step.
 
 ## Run an example report
 

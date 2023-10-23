@@ -27,13 +27,13 @@ queried using Sharetribe CLI, how we can inspect events in more detail
 as well as combine Sharetribe CLI with other tools to further process
 the event data.
 
-In Flex, events represent changes in marketplace data resources such as
-listings, users and transactions. An event captures a single change in
-marketplace data, e.g. a user being created or a listing being updated.
-Events can be further analyzed to interpret them as logical actions such
-as a listing being published, a message being sent or a user having
-changed their email address by looking into what were the changed data
-fields. To learn more about events, have a look at the
+In Sharetribe, events represent changes in marketplace data resources
+such as listings, users and transactions. An event captures a single
+change in marketplace data, e.g. a user being created or a listing being
+updated. Events can be further analyzed to interpret them as logical
+actions such as a listing being published, a message being sent or a
+user having changed their email address by looking into what were the
+changed data fields. To learn more about events, have a look at the
 [Events](/references/events/) reference.
 
 ## Querying events

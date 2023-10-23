@@ -34,7 +34,7 @@ and copy texts in your marketplace:
 - Learn about [marketplace texts](/concepts/marketplace-texts/)
 - Update your
   [terms of service and privacy policy page](/operator-guides/free-templates/)
-- Configure the footer of your marketplace in Flex Console.
+- Configure the footer of your marketplace in Sharetribe Console.
 - Update the
   [email templates](https://www.sharetribe.com/docs/concepts/email-notifications/):
   you will want to update the templates to reflect your brand and

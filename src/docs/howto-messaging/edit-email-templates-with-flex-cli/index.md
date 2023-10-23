@@ -4,8 +4,8 @@ slug: edit-email-templates-with-sharetribe-cli
 updated: 2023-10-18
 category: how-to-messaging
 ingress:
-  This tutorial shows you how to edit email templates using the Flex
-  Command-line interface.
+  This tutorial shows you how to edit email templates using the
+  Sharetribe Command-line interface.
 skills: basic command line, text editing
 published: true
 ---

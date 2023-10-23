@@ -73,9 +73,9 @@ customise email content further.
 You can edit the text content of email notifications in Console >
 Build > Content > Email texts. You can preview the built-in emails, and
 customise their structure,using the
-[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
-in the Flex Console. You can find the editor in the Console under the
-Build > Advanced section.
+[Built-in email template editor](https://console.sharetribe.com/email-templates)
+in the Sharetribe Console. You can find the editor in the Console under
+the Build > Advanced section.
 
 The built-in email template editor does not include a visual editor, but
 if you want, you can design your email in any

@@ -82,10 +82,10 @@ The client template recognises and handles four unit types by default:
 
 <info>
 
-The Flex engine can handle other unit types besides the four default
-ones. If you use a unit type outside the defaults, you need to add
-custom handling for it in e.g. line item calculation, order handling,
-and email templates.
+The Sharetribe engine can handle other unit types besides the four
+default ones. If you use a unit type outside the defaults, you need to
+add custom handling for it in e.g. line item calculation, order
+handling, and email templates.
 
 </info>
 

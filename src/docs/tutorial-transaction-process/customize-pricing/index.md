@@ -32,10 +32,10 @@ build it is to base it on information stored as extended data in
 listings. In this example, we are using a listing's public data to store
 information about the helmet rental fee.
 
-We will not add new fields to listing configuration in Flex Console,
-since we do not want to show the helmet rental fee in the Details panel.
-Instead, we start by making some changes to **EditListingPricingPanel**
-in _EditListingWizard_.
+We will not add new fields to listing configuration in Sharetribe
+Console, since we do not want to show the helmet rental fee in the
+Details panel. Instead, we start by making some changes to
+**EditListingPricingPanel** in _EditListingWizard_.
 
 ```shell
 └── src
@@ -393,9 +393,9 @@ fields.
 
 <info>
 
-In Flex, the total price of a transaction is defined by its line items.
-Line items describe what is included in a transaction. Line items can be
-varied, from the number of booked units to customer and provider
+In Sharetribe, the total price of a transaction is defined by its line
+items. Line items describe what is included in a transaction. Line items
+can be varied, from the number of booked units to customer and provider
 commissions, add-ons, discounts, or payment refunds.
 
 Every line item has a unit price and one of the following attributes:
@@ -462,9 +462,9 @@ We are making progress! Next, we need to edit the the backend of our
 client app, and add a new line item for the helmet rental fee, so that
 it can be included in pricing.
 
-Flex uses privileged transitions to ensure that the pricing logic is
-handled in a secure environment. This means that constructing line items
-and transitioning requests of privileged transitions are made
+Sharetribe uses privileged transitions to ensure that the pricing logic
+is handled in a secure environment. This means that constructing line
+items and transitioning requests of privileged transitions are made
 server-side.
 
 <info>
@@ -473,7 +473,7 @@ Privileged transitions are transaction process transitions that can only
 be invoked from a secure context. For example, when using Sharetribe Web
 Template, this secure context is the backend of the template app. You
 can also build your own server-side validation that sits between your
-marketplace UI and the Flex Marketplace API to invoke privileged
+marketplace UI and the Sharetribe Marketplace API to invoke privileged
 transitions.
 
 We are using privileged transitions and the backend of our client app to
@@ -482,11 +482,11 @@ secure context. If the client-side code (template front-end) could
 freely construct the line items, we couldn't fully trust that the price
 calculation follows the model intended in the marketplace.
 
-In theory, a marketplace user could make a direct API call to the Flex
-Marketplace API and start a transaction with modified line items – for
-instance, change the helmet rental fee amount. We can avoid this
-security risk by using privileged transitions and fetching the pricing
-information, like the helmet rental fee amount, directly from
+In theory, a marketplace user could make a direct API call to the
+Sharetribe Marketplace API and start a transaction with modified line
+items – for instance, change the helmet rental fee amount. We can avoid
+this security risk by using privileged transitions and fetching the
+pricing information, like the helmet rental fee amount, directly from
 Marketplace API in the backend of our client app.
 
 You can read more about privileged transitions in the
@@ -618,8 +618,8 @@ the booking.
 When a user clicks "Request to book", `ListingPage.js` sends the booking
 details as initial values to the Checkout Page, which then fetches the
 possible transaction information, including pricing, to be shown on the
-checkout page. In Flex language, this is known as "speculating" the
-transaction - the booking has not been made, but the line items are
+checkout page. In Sharetribe language, this is known as "speculating"
+the transaction - the booking has not been made, but the line items are
 calculated as if it were.
 
 Since we are dealing with a paid transaction, we need to be modifying
@@ -696,10 +696,10 @@ process, then composes them into a single function
 
 Now you can try it out! When you complete a booking on a listing that
 has a helmet rental fee specified, you can see the helmet rental fee
-included in the price on the booking page. In addition, the Flex Console
-transaction price breakdown also shows the helmet rental fee.
+included in the price on the booking page. In addition, the Sharetribe
+Console transaction price breakdown also shows the helmet rental fee.
 
-![Helmet fee in booking breakdown in Flex Console](./consoleBookingBreakdown.png)
+![Helmet fee in booking breakdown in Sharetribe Console](./consoleBookingBreakdown.png)
 
 <extrainfo title="Add helmet rental fee to email notifications">
 To add the helmet rental fee into your email notifications, you will need to add it to the email templates.

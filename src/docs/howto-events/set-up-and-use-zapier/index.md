@@ -75,7 +75,7 @@ To take Zapier into use and connect it to Sharetribe, you need:
 1. In your Zapier dashboard, go to "My Apps" and click "Add Connection"
 2. In the Search bar, type in "Sharetribe Flex", and select Sharetribe
    Flex from the results. This will open up a new pop-up window to
-   authorize access to Sharetribe.
+   authorize access to Sharetribe. TODO
 3. Here, fill in the Client ID & Client Secret from the previous step
    and click "Yes, continue".
 4. If the connection is successful, you'll be returned to a screen that

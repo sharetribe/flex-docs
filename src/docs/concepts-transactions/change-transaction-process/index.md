@@ -204,7 +204,8 @@ Follow this steps:
 
 1. Go
    [to this address](https://whimsical.com/flex-default-transaction-process-GDRUyuF7M5nMSte6rfwNuc)
-2. Sign in to your whimsical account or create an account if you don't
+   TODO?
+2. Sign in to your Whimsical account or create an account if you don't
    have one.
 3. On the top right, click on "COPY TO" and select your private folder
 4. That's it! You can now start designing your own transaction process
