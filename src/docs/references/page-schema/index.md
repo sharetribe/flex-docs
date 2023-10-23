@@ -303,37 +303,47 @@ subject to change.
         "title": "Section details",
         "type": "object",
         "properties": {
+           "sectionName": {
+              "type": "string",
+              "title": "Section name",
+              "description": "Section name is not shown on the page. It just helps you remember what the section is about."
+          },
           "sectionId": {
-            "description": "Section identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+            "description": "An anchor link allows you to link directly to this section, like this: www.yourdomain.com/p/page_id#anchor-link-id:. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
             "type": "string",
-            "title": "Section ID",
-            "minLength": 1,
-            "pattern": "^[a-z][a-z0-9_\\-]*$"
+            "title": "Anchor link ID",
+            "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
           },
           "sectionType": {
-            "description": "Determines the layout of Content Blocks.",
+            "description": "Determines the layout of the section content. [Learn more about section templates.](https://www.sharetribe.com/help/en/articles/8387253-what-are-section-templates)",
+,
             "type": "string",
             "title": "Section template",
             "oneOf": [
               {
                 "const": "article",
                 "title": "Article",
-                "description": "Blocks on top of each other in a narrow layout optimized for reading."
+                "description": "Content Blocks on top of each other in a narrow layout optimized for reading."
               },
               {
                 "const": "carousel",
                 "title": "Carousel",
-                "description": "Blocks side by side, 1-4 blocks visible at a time, the rest revealed by swiping or scrolling."
+                "description": "Content Blocks side by side, 1-4 blocks visible at a time, the rest revealed by swiping or scrolling."
               },
               {
                 "const": "columns",
                 "title": "Columns",
-                "description": "Blocks in a grid of 1, 2, 3, or 4 columns."
+                "description": "Content Blocks in a grid of 1, 2, 3, or 4 columns."
               },
               {
                 "const": "features",
                 "title": "Features",
-                "description": "Blocks on top of each other, text, and media side by side in an alternating order."
+                "description": "Content Blocks on top of each other, text, and media side by side in an alternating order."
+              },
+              {
+                "const": "hero",
+                "title": "Hero",
+                "description": "No Content Blocks, just title, description and button. Works well as the first section. "
               }
             ]
           },
@@ -462,7 +472,7 @@ subject to change.
               "properties": {
                 "backgroundColor": {
                   "title": "Background color",
-                  "description": "Only displayed if the section doesn’t have a background image.",
+                  "description": "Only displayed if the section doesn't have a background image.",
                   "type": "string",
                   "pattern": "^#[A-Fa-f0-9]{6}"
                 },
@@ -505,6 +515,25 @@ subject to change.
               }
             }
           },
+      "allOf": [
+    {
+      "if": {
+        "properties": {
+          "sectionType": {
+            "enum": [
+              "columns",
+              "carousel",
+              "article",
+              "features"
+            ]
+          }
+        },
+        "required": [
+          "sectionType"
+        ]
+      },
+      "then": {
+        "properties": {
           "blocks": {
             "title": "Content Blocks",
             "type": "array",
@@ -512,11 +541,16 @@ subject to change.
             "items": {
               "type": "object",
               "properties": {
-                "blockId": {
-                  "description": "Block identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
-                  "title": "Block ID",
+                "blockName": {
                   "type": "string",
-                  "pattern": "^[a-z][a-z0-9_\\-]*$"
+                  "title": "Block name",
+                  "description": "Block name is not shown on the page. It just helps you remember what the block is about."
+                },
+                "blockId": {
+                  "description": "An anchor link allows you to link directly to this block, like this: www.yourdomain.com/p/page_id#anchor-link-id:. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+                  "type": "string",
+                  "title": "Anchor link ID",
+                  "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
                 },
                 "blockType": {
                   "title": "Block type",
@@ -815,7 +849,7 @@ subject to change.
                   ]
                 }
               },
-              "required": ["blockId", "blockType"]
+              "required": ["blockType"]
             }
           }
         },
@@ -866,7 +900,7 @@ subject to change.
           },
           "required": ["numColumns"]
         },
-        "required": ["sectionId", "sectionType"]
+        "required": ["sectionType"]
       }
     }
   },
