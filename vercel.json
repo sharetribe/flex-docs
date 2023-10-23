@@ -42,7 +42,7 @@
   },
   {
     "source": "/background/introducing-flex/",
-    "destination": "/docs/introduction/introducing-sharetribe/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
     "permanent": true
   },
   {
@@ -947,7 +947,7 @@
   },
  {
     "source": "/introduction/introducing-flex/",
-    "destination": "/docs/introduction/introducing-sharetribe/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
     "permanent": true
   },
  {

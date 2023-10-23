@@ -1,6 +1,6 @@
 ---
-title: Introducing Sharetribe
-slug: introducing-sharetribe
+title: Introducing Sharetribe Developer Platform
+slug: introducing-sharetribe-developer-platform
 updated: 2023-10-23
 category: introduction
 ingress:
@@ -19,7 +19,7 @@ Sharetribe gives you total freedom to customize your user experience.
 
 ## Sharetribe Components
 
-![Sharetribe customer architecture](./flex-customer-architecture.png)
+![Sharetribe customer architecture](./sharetribe-customer-architecture.png)
 
 ### Your marketplace UI
 
