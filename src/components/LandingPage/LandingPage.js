@@ -180,12 +180,6 @@ const LandingPage = props => {
         </IntroHeading>
         <IntroDescription>
           <UiText id="LandingPage.introParagraph1" />
-          <IntroBr />
-          <UiText id="LandingPage.introParagraph2" />{' '}
-          <A href="https://www.sharetribe.com/products/flex/roadmap/">
-            <UiText id="LandingPage.introRoadmapLink" />
-          </A>
-          {'.'}
         </IntroDescription>
         <CategoriesHeading as="h2">
           <UiText id="LandingPage.categoriesHeading" />

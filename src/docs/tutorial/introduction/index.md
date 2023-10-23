@@ -9,29 +9,29 @@ ingress:
 published: true
 ---
 
-The goal of this tutorial is to help you customise your marketplace
-using the Sharetribe Web Template. You will learn how to set up a custom
-app for your marketplace, and how to start working on development using
-the Sharetribe Web Template.
+The goal of this developer tutorial is to help you customise your
+marketplace using the Sharetribe Web Template. You will learn how to set
+up a custom app for your marketplace, and how to start working on
+development using the Sharetribe Web Template.
 
 ## What are we building?
 
 In this tutorial, we will continue modifying your Biketribe marketplace
-[that you configured in the first tutorial](https://www.sharetribe.com/help/en/articles/8418029-tutorial-introduction).
+[that you configured in the no-code tutorial](https://www.sharetribe.com/help/en/articles/8418029-tutorial-introduction).
 We will start editing the Sharetribe Web Template, and add custom
 development features to Biketribe.
 
-The first part of this tutorial focuses on installing the template,
-copying no-code changes from Test to Dev, making minor changes to the
-template styles, and deploying a development environment. The second
-part dives deeper into modifying the listing creation process, and the
-third part focuses on editing the transaction process.
+The first part of this developer tutorial focuses on installing the
+template, copying no-code changes from Test to Dev, making minor changes
+to the template styles, and deploying a development environment. The
+second part dives deeper into modifying the listing creation process,
+and the third part focuses on editing the transaction process.
 
 ## Background knowledge
 
-The first part of the tutorial is accessible even if you are brand new
-to web development. Parts two and three increase in difficulty, and it
-helps to have some background in web development.
+The first part of the developer tutorial is accessible even if you are
+brand new to web development. Parts two and three increase in
+difficulty, and it helps to have some background in web development.
 
 Before you start working on the tutorial, it's good to understand a few
 key concepts (a general understanding of the fundamentals should
