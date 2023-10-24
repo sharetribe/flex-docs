@@ -100,6 +100,6 @@ and help them move forward developing it.
 ## 3. Share the journey maps with developers
 
 If you would like to hire vetted Sharetribe developers, start either by
-[booking a call](https://calendly.com/welcome-to-flex) with our team or
+[booking a call](https://www.sharetribe.com/video-call) with our team or
 connect directly with Sharetribe Experts through the
 [Expert Directory](https://www.sharetribe.com/experts/). TODO
