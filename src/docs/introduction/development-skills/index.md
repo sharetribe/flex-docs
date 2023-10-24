@@ -4,9 +4,9 @@ slug: development-skills
 updated: 2023-10-24
 category: introduction
 ingress:
-  Building a custom marketplace with Sharetribe requires some software
-  development skills. This article explains what you need to know when
-  customizing the platform.
+  Building a custom marketplace with Sharetribe Developer Platform
+  requires some software development skills. This article explains what
+  you need to know when customizing the platform.
 published: true
 ---
 
@@ -80,4 +80,4 @@ developer or don't have access to one, we can also help you.
 
 For developers doing customizations, we have an active community in
 Slack. You will get access to the channel when you get an account to
-[Console](/operator-guides/concepts/#console).
+[Console](/concepts/console-overview/).

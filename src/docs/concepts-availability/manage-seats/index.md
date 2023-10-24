@@ -31,7 +31,7 @@ or
 
 You define the available seats for any given time slot of a listing via
 the
-[availability plan or availability exceptions](/operator-guides/concepts/#availability-plan--availability-exception)
+[availability plan or availability exceptions](/references/availability/)
 of a listing. If the number of seats is set to 0, the listing will not
 be available at that time.
 

@@ -341,7 +341,7 @@ your environment variables. The marketplace uses the Client ID to fetch
 your marketplace assets through our API.
 
 You might also see the "maintenance mode" message if a
-[Listing Field ID](/operator-guides/how-to-add-and-edit-listing-fields/#adding-a-new-field)
+[Listing Field ID](https://www.sharetribe.com/help/en/articles/8413285-how-to-add-and-edit-listing-fields)
 you've defined via Console clashes with any of the
 [built-in public data fields](https://github.com/sharetribe/web-template/blob/main/src/util/configHelpers.js#L25-L33).
 If this is the case, you will see a message about this when you open the

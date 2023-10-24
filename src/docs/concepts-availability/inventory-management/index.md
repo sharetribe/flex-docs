@@ -25,13 +25,12 @@ high level. We also have
 ## How do you determine the initial available stock or increase the available stock of a listing?
 
 With the stock-related APIs, you add to the available stock of a listing
-by creating a
-[stock adjustment](/operator-guides/concepts/#stock-adjustment). This is
-an API call that you make through one of our APIs that lets your
-Sharetribe marketplace know that you have increased the quantity of
-available stock for one of your listings. This adjustment could be done
-directly through the marketplace UI or a third-party integration using
-the corresponding API calls.
+by creating a [stock adjustment](/references/stock/). This is an API
+call that you make through one of our APIs that lets your Sharetribe
+marketplace know that you have increased the quantity of available stock
+for one of your listings. This adjustment could be done directly through
+the marketplace UI or a third-party integration using the corresponding
+API calls.
 
 ## How do you remove or decrease the available stock of a listing?
 

@@ -153,10 +153,9 @@ section. The block contains a title, and you can determine the level of
 the title (page title, section title, section subtitle). A block can
 also have text content and a button.
 
-Block text content can be
-[modified with Markdown](/operator-guides/how-to-format-your-text-in-pages/).
-This allows the content creator to use even more fine-grained editing,
-including italics and bolding, subheadings, links, and code snippets.
+Block text content can be modified with Markdown. This allows the
+content creator to use even more fine-grained editing, including italics
+and bolding, subheadings, links, and code snippets.
 
 ## Content delivery
 

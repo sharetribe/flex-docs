@@ -13,11 +13,8 @@ published: true
 
 [The Sharetribe Web Template](https://github.com/sharetribe/web-template)
 is a React template meant to function as a starting point for the
-development of your marketplace. It supports all the features available
-through the Sharetribe APIs, and is easily customized. For a complete
-list of features that are possible in the template, either natively or
-with custom development, see the
-[features article](/operator-guides/features/).
+development of your marketplace. It supports the features available
+through the Sharetribe APIs, and is easily customized.
 
 We recommend you be familiar with React, Redux and CSS Modules before
 you start working on the template. Read more about

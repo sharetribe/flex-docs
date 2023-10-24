@@ -21,7 +21,7 @@ upstream repository. See how to set up a remote repository in the
 ### Create a marketplace environment
 
 The Sharetribe Web Template is a React application built on top of the
-[Marketplace API](/operator-guides/concepts/#marketplace-api). While you
+[Marketplace API](/concepts/marketplace-api-integration-api/). While you
 can create a marketplace client application from scratch using just the
 API, it requires a lot of effort and we recommend that you use a
 template as a starting point for customizations.

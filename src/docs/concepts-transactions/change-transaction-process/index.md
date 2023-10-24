@@ -112,8 +112,7 @@ addition to transactions,
 [consult our guide](/design-toolkit/what-are-user-journeys/) on defining
 the discovery and listing creating process in your marketplace. You can
 see the default user experience provided by the
-[Sharetribe Web Template](/operator-guides/concepts/#sharetribe-web-template)
-there too.
+[Sharetribe Web Template](/template/sharetribe-web-template/) there too.
 
 ## Draw it out
 

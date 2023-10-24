@@ -58,9 +58,9 @@ or visit the [Events reference in our Docs site](/references/events/).
 ### Listing approval
 
 If you have
-[the listing approval feature](/operator-guides/concepts/#listing-pending-approval)
-enabled in your marketplace, you will find the “approve listing” button
-at the bottom of the displayed section of the listing card.
+[the listing approval feature](/concepts/requiring-approval/) enabled in
+your marketplace, you will find the “approve listing” button at the
+bottom of the displayed section of the listing card.
 
 ## Browse and search Listings
 

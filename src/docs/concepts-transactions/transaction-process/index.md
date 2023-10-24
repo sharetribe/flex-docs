@@ -168,9 +168,8 @@ a notification prompting them to review the customer. The customer
 receives an email notification to review the provider.
 
 To review what notifications are sent as part of the Sharetribe default
-process, visit your
-[Sharetribe Console](/operator-guides/concepts/#console) Build tab. Each
-included
+process, visit your [Sharetribe Console](/concepts/console-overview/)
+Build tab. Each included
 [email notification has a template](/references/email-templates/#editing-transaction-emails)
 that can be customized using the Sharetribe CLI. You can also edit the
 content of the transaction notifications in the Console, under Build >

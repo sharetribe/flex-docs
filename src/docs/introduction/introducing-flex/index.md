@@ -15,7 +15,8 @@ Sharetribe is a complete solution for building a powerful online
 marketplace for rentals, services, events or experiences. Sharetribe
 provides you with all the necessary marketplace infrastructure out of
 the box. At the same time, because of its headless architecture,
-Sharetribe gives you total freedom to customize your user experience.
+Sharetribe Developer Platform gives you total freedom to customize your
+user experience.
 
 ## Sharetribe Components
 
@@ -44,7 +45,7 @@ marketplaces out of the box:
 - a service marketplace with time-based bookings
 - a product marketplace with stock management
 
-With a Sharetribe Web Template, you can get started with your
+With a Sharetribe Web Template, you can get started developing your
 marketplace UI straight away: just download the latest version and start
 customizing it for your marketplace. There are no limits to how much you
 can customize the template. You can freely design the user interactions

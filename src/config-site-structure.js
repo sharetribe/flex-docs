@@ -6,9 +6,7 @@
  */
 
 const sortingArrayIntroduction = [
-  'introducing-sharetribe',
-  'getting-started-with-web-template',
-  'is-flex-right-for-you',
+  'introducing-sharetribe-developer-platform',
   'development-skills',
   'introducing-template',
 ];
