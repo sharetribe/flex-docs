@@ -1,7 +1,7 @@
 ---
 title: How the listing search works
 slug: how-the-listing-search-works
-updated: 2019-07-17
+updated: 2023-10-24
 category: concepts-listings
 ingress:
   Listings search can be crucial for your marketplace to thrive.
@@ -10,12 +10,12 @@ ingress:
 published: true
 ---
 
-## Listings search in Flex
+## Listings search in Sharetribe
 
-In Flex, listings are searched by using the
+In Sharetribe, listings are searched by using the
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
-endpoint. Flex has a powerful listing search engine, which can find
-listings based on multiple criteria:
+endpoint. Sharetribe has a powerful listing search engine, which can
+find listings based on multiple criteria:
 
 - **Geolocation.** The search can be used to display only listings that
   are within a provided radius from certain coordinates. Read more about
@@ -70,8 +70,8 @@ keywords and location. See the API
 [reference documentation](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 for a full list of search parameters. Do note that for all search
 parameters, you will need to create a
-[search schema](/how-to/manage-search-schemas-with-flex-cli/) so that
-the data is indexed correctly for search.
+[search schema](/how-to/manage-search-schemas-with-sharetribe-cli/) so
+that the data is indexed correctly for search.
 
 ## Keyword search
 
@@ -109,7 +109,7 @@ keywords match.
 
 In order to take the keyword search into use in the Sharetribe Web
 Template, you need to
-[change the configuration files](/ftw/configuration/#search-configuration).
+[change the configuration files](/template/configuration/#search-configuration).
 
 ## Location search
 
@@ -127,10 +127,10 @@ match search results to a map view.
 
 ## How about user search?
 
-The Flex Marketplace API does not have an endpoint for querying users.
-This is because listings are modeled as the focus of the marketplace. If
-you do, however, want to implement a search functionality for users, you
-have a few options.
+The Sharetribe Marketplace API does not have an endpoint for querying
+users. This is because listings are modeled as the focus of the
+marketplace. If you do, however, want to implement a search
+functionality for users, you have a few options.
 
 ### Users as listings
 
@@ -142,7 +142,7 @@ options described above.
 
 ### Custom user search endpoint in the template server
 
-The Flex Integration API does have an endpoint for querying users.
+The Sharetribe Integration API does have an endpoint for querying users.
 However,
 [using the Integration API safely requires a trusted context](/concepts/marketplace-api-integration-api/#when-to-use-the-integration-api),
 such as the template application server.

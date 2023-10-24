@@ -1,7 +1,7 @@
 ---
 title: Email notifications
 slug: email-notifications
-updated: 2022-07-21
+updated: 2023-10-24
 category: concepts-messages
 ingress:
   Email notifications are messages users receive when something
@@ -11,13 +11,13 @@ ingress:
 published: true
 ---
 
-Sharetribe Flex sends email notifications to users when specific events
-occur in your marketplace. There are two categories of email
-notifications in Flex: built-in email notifications, which relate to
-user account management, and transaction process emails, which get
-triggered at specific stages of transactions. For instance, an built-in
-email notification gets sent when a user changes their email or password
-or when they need to verify a new email address. A transaction process
+Sharetribe sends email notifications to users when specific events occur
+in your marketplace. There are two categories of email notifications in
+Sharetribe: built-in email notifications, which relate to user account
+management, and transaction process emails, which get triggered at
+specific stages of transactions. For instance, an built-in email
+notification gets sent when a user changes their email or password or
+when they need to verify a new email address. A transaction process
 email can inform the user of a successful payment or a new booking
 request.
 
@@ -39,8 +39,18 @@ Do note that built-in email notifications can not be disabled.
 
 There are seven built-in email notifications, all of which are related
 to your users' account management. Use the
-[Console](https://flex-console.sharetribe.com/) to manage the built-in
-email notifications.
+[Console](https://console.sharetribe.com/) to manage the built-in email
+notifications.
+
+You can edit the built-in email content with the Email texts editor in
+Console > Build > Content.
+
+You can preview and customise built-in emails using the
+[Built-in email template editor](https://console.sharetribe.com/advanced/email-templates)
+in the Sharetribe Console. You can find the editor in the Console under
+the Build > Advanced section.
+
+<plan tier="extend" feature="The email template code editor"></plan>
 
 The email templates use the
 [Handlebars template language](/references/email-templates/#handlebars).
@@ -63,9 +73,9 @@ customise email content further.
 You can edit the text content of email notifications in Console >
 Build > Content > Email texts. You can preview the built-in emails, and
 customise their structure,using the
-[Built-in email template editor](https://flex-console.sharetribe.com/email-templates)
-in the Flex Console. You can find the editor in the Console under the
-Build > Advanced section.
+[Built-in email template editor](https://console.sharetribe.com/email-templates)
+in the Sharetribe Console. You can find the editor in the Console under
+the Build > Advanced section.
 
 The built-in email template editor does not include a visual editor, but
 if you want, you can design your email in any
@@ -89,8 +99,13 @@ actionable and related to account management.
 You can edit the content of the transaction notifications in Console >
 Build > Content > Email texts. You can preview your changes, as well as
 update message keys and add or delete transaction notifications, with
-the [Flex CLI](/how-to/edit-transaction-process-with-flex-cli/). The
-[template sub-directory](https://github.com/sharetribe/flex-example-processes/tree/master/default-booking/templates)
+the
+[Sharetribe CLI](/how-to/edit-transaction-process-with-sharetribe-cli/).
+
+<plan tier="extend" feature="Customizing your transaction notifications"></plan>
+
+The
+[template sub-directory](https://github.com/sharetribe/sharetribe-example-processes/tree/master/default-booking/templates)
 in the transaction process directory contains all the transaction
 notification email templates. All transaction notifications use the
 [Handlebars templating language](/references/email-templates/#handlebars)

@@ -180,12 +180,6 @@ const LandingPage = props => {
         </IntroHeading>
         <IntroDescription>
           <UiText id="LandingPage.introParagraph1" />
-          <IntroBr />
-          <UiText id="LandingPage.introParagraph2" />{' '}
-          <A href="https://www.sharetribe.com/products/flex/roadmap/">
-            <UiText id="LandingPage.introRoadmapLink" />
-          </A>
-          {'.'}
         </IntroDescription>
         <CategoriesHeading as="h2">
           <UiText id="LandingPage.categoriesHeading" />
@@ -200,7 +194,7 @@ const LandingPage = props => {
               <UiText id="LandingPage.introduction.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/introduction/introducing-flex/">
+              <SectionLink to="/introduction/introducing-sharetribe/">
                 <UiText id="LandingPage.introduction.introductionFlex" />
               </SectionLink>
               <SectionLink to="/introduction/getting-started-with-web-template/">
@@ -274,22 +268,22 @@ const LandingPage = props => {
             </SectionDescription>
           </div>
           <Ul>
-            <SectionLink to="/ftw/how-to-customize-ftw/">
-              <UiText id="LandingPage.bestPicks.gettingStartedWithFTW" />
+            <SectionLink to="/template/how-to-customize-template/">
+              <UiText id="LandingPage.bestPicks.gettingStartedWithTemplate" />
             </SectionLink>
-            <SectionLink to="/ftw/customization-checklist/">
-              <UiText id="LandingPage.bestPicks.ftwCustomizationChecklist" />
+            <SectionLink to="/template/customization-checklist/">
+              <UiText id="LandingPage.bestPicks.templateCustomizationChecklist" />
             </SectionLink>
-            <SectionLink to="/how-to/extend-listing-data-in-ftw/">
+            <SectionLink to="/how-to/extend-listing-data-in-template/">
               <UiText id="LandingPage.bestPicks.extendListingData" />
             </SectionLink>
             <SectionLink to="/how-to/how-to-customize-pricing/">
               <UiText id="LandingPage.bestPicks.customizePricing" />
             </SectionLink>
-            <SectionLink to="/how-to/change-transaction-process-in-ftw/">
+            <SectionLink to="/how-to/change-transaction-process-in-template/">
               <UiText id="LandingPage.bestPicks.changeTransactionProcess" />
             </SectionLink>
-            <SectionLink to="/introduction/getting-started-with-flex-cli/">
+            <SectionLink to="/introduction/getting-started-with-sharetribe-cli/">
               <UiText id="LandingPage.bestPicks.gettingStartedWithFlexCLi" />
             </SectionLink>
             <SectionLink to="/introduction/getting-started-with-integration-api/">

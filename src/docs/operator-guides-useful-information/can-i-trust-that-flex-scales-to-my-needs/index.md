@@ -109,7 +109,7 @@ time including all the basic functionality of an online marketplace out
 of the box.
 
 You get access to the
-[Sharetribe Web Template](https://www.sharetribe.com/docs/ftw/sharetribe-web-template/),
+[Sharetribe Web Template](https://www.sharetribe.com/docs/template/sharetribe-web-template/),
 an open sourced frontend template that helps you reduce how much
 development you need to launch.You and your team can skip the
 time-consuming process of creating basic marketplace functionality like
@@ -143,7 +143,7 @@ so that it is fast and affordable to start with a custom platform while
 ensuring that the tech will not stand in your way in the future as you
 scale. We don't lock you in either with regard to your data, or with
 regard to which developers you can use, allowing you to remain very
-flexible within the Flex framework. And in the unlikely event that you
-decide to move away to a different solution, you're free to do that as
-well. But we will of course keep working hard to avoid that by making
+flexible within the Sharetribe framework. And in the unlikely event that
+you decide to move away to a different solution, you're free to do that
+as well. But we will of course keep working hard to avoid that by making
 Flex as good as it can be.🙂

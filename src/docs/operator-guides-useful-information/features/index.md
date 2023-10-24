@@ -13,8 +13,8 @@ Flex offers a large set of features that make it very fast for you to
 build your marketplace exactly the way you want. In addition, if a
 specific feature you need is not listed on this page, you can often
 build it yourself. If you don't spot the feature you need,
-[contact Sharetribe support](mailto:flex-support@sharetribe.com) to
-learn more about how to get it built.
+[contact Sharetribe support](mailto:hello@sharetribe.com) to learn more
+about how to get it built.
 
 ## Users and authentication
 
@@ -92,7 +92,7 @@ A listing can have several different states:
   published, so the listing is waiting for operator's approval before it
   is published. You can enable or disable the listing approval
   functionality for your marketplace in
-  [Flex CLI](/introduction/getting-started-with-flex-cli/#enable-and-disable-listing-approval-functionality).
+  [Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/#enable-and-disable-listing-approval-functionality).
 - **Closed.** The listing used to be published, but has since been
   closed, either by the provider or by the operator. The listing is
   still visible to the provider, but not discoverable via search.

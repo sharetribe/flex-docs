@@ -1,7 +1,7 @@
 ---
 title: How to remove Stripe and payments
 slug: removing-stripe-and-payments
-updated: 2023-09-04
+updated: 2023-10-24
 category: how-to-payments
 ingress:
   In some cases, you might want to remove Stripe integrations or even
@@ -45,6 +45,8 @@ You need to remove at least the following actions:
 - :action/stripe-refund-charge
 - :action/stripe-refund-payment
 
+<plan tier="extend" feature="Customizing your transaction process"></plan>
+
 If you are using the template default processes with strong customer
 authentication (e.g. `default-booking` or `default-purchase`) you need
 to remove confirming the payment. Otherwise, the transaction will get
@@ -71,7 +73,7 @@ _src/transactions/transactionProcessBooking.js_ or
 _src/transactions/transactionProcessPurchase.js_ for the correct states
 in each process. The transaction process file should be updated to match
 the new transaction process.
-[Read more about editing transaction related files](/how-to/change-transaction-process-in-ftw/#2-update-the-relevant-files-in-srctransactions-folder).
+[Read more about editing transaction related files](/how-to/change-transaction-process-in-template/#2-update-the-relevant-files-in-srctransactions-folder).
 
 Example:
 

@@ -11,7 +11,7 @@ published: true
 ---
 
 You can set your marketplace commission in
-[the Commission page of your Console account](https://flex-console.sharetribe.com/a/transactions/commission/).
+[the Commission page of your Console account](https://console.sharetribe.com/a/transactions/commission/).
 The commission that you set will always be a percentage of the
 transaction total.
 

@@ -10,7 +10,7 @@ published: true
 ---
 
 You can add custom listing fields to your marketplace from
-[the Listing fields section in Console](https://flex-console.sharetribe.com/a/listings/listing-fields).
+[the Listing fields section in Console](https://console.sharetribe.com/a/listings/listing-fields).
 
 ## Adding a new field
 

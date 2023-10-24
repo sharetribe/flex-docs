@@ -10,11 +10,11 @@ published: true
 As it's name indicates it allows your users to search within your
 marketplace based on location or areas. You can enable Location search
 from
-[the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
+[the Listing Search settings page in Console](https://console.sharetribe.com/a/listings/listing-search).
 
 Location features in Sharetribe are powered by Mapbox. You can read more
 about
-[setting your Mapbox account in this article](https://www.sharetribe.com/docs/ftw/how-to-set-up-mapbox-for-ftw/).
+[setting your Mapbox account in this article](https://www.sharetribe.com/docs/template/how-to-set-up-mapbox-for-template/).
 Location search allows you to use a location to find listings near that
 location or within that searched area.
 
@@ -57,4 +57,4 @@ your own. The default text is “Search bikes…”
 Yes. If your marketplace uses the location search, you can choose to
 display a "keyword" filter on your marketplace search page. You can
 enable this from
-[the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
+[the Listing Search settings page in Console](https://console.sharetribe.com/a/listings/listing-search).

@@ -1,19 +1,26 @@
 ---
 title: Using stored payment cards
 slug: using-stored-payment-cards
-updated: 2019-08-26
+updated: 2023-10-24
 category: concepts-payments
 ingress:
-  This article gives you a brief overview on how the Flex functionality
-  for storing credit and debit cards works and what are the different
-  use cases for it.
+  This article gives you a brief overview on how the Sharetribe
+  functionality for storing credit and debit cards works and what are
+  the different use cases for it.
 published: true
 ---
 
-Sharetribe Flex allows you to store the payment card of a customer for
-future purchases. Doing this provides multiple benefits: it streamlines
-the checkout process for existing customers and allows you to place
+Sharetribe allows you to store the payment card of a customer for future
+purchases. Doing this provides multiple benefits: it streamlines the
+checkout process for existing customers and allows you to place
 additional charges to the payment card of the customer.
+
+<plan tier="launch">
+
+Online payments in the Live environment are available in the Launch plan
+and above.
+
+</plan>
 
 Sharetribe Web Template includes a checkout workflow, which offers a box
 for the customer to check if they want to store their card for future
@@ -70,8 +77,8 @@ Customer Authentication.
 If that is not the case, you can initiate additional charges directly
 from your Stripe dashboard. You should always notify the customer in
 question about why an extra charge was placed on their card. The
-additional charges won't get displayed in Flex Console. The money from
-the extra charges is placed to your platform's Stripe balance, from
+additional charges won't get displayed in Sharetribe Console. The money
+from the extra charges is placed to your platform's Stripe balance, from
 which it is moved to your bank account. If a payout to the provider (in
 this case the owner of the item) is needed, you will need to handle it
 manually from your own bank account.
@@ -86,11 +93,11 @@ a provider. You might want to create a subscription that automatically
 charges the customer's card every month, until the customer cancels the
 storage subscription.
 
-Right now, Sharetribe Flex doesn't offer support for Stripe
-subscriptions. However, there is a workaround. Once the customer has
-made the initial booking and payment, you would send a request to your
-own backend component, for instance the server of your Sharetribe Web
-Template, which would then create a subscription with the stored credit
-card of the customer. The subsequent subscription payments would then
-not be visible in Flex Console, but you could monitor them from Stripe
-dashboard.
+Right now, Sharetribe doesn't offer support for Stripe subscriptions.
+However, there is a workaround with custom development. Once the
+customer has made the initial booking and payment, you would send a
+request to your own backend component, for instance the server of your
+Sharetribe Web Template, which would then create a subscription with the
+stored credit card of the customer. The subsequent subscription payments
+would then not be visible in Sharetribe Console, but you could monitor
+them from Stripe dashboard.

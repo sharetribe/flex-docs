@@ -1,11 +1,11 @@
-# Flex Docs overview
+# Dev Docs overview
 
 This documentation explains the technologies and the architecture of the
 site. It also documents the available commands and how the site is
 deployed.
 
 To start coding the UI, be sure to read the
-[Flex Docs coding conventions](./coding-conventions.md).
+[Dev Docs coding conventions](./coding-conventions.md).
 
 ## Technologies
 
@@ -211,7 +211,7 @@ for more information.
 
 ## Deployment
 
-Flex Docs uses [Vercel](https://www.vercel.com/) for deployment. It is a
+Dev Docs uses [Vercel](https://www.vercel.com/) for deployment. It is a
 great and a simple tool to build modern static sites. We have enabled
 the [Vercel GitHub App](https://github.com/apps/vercel) to enable
 preview builds for PRs and automatically deploying the `master` branch.

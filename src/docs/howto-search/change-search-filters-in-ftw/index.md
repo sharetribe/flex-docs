@@ -1,7 +1,7 @@
 ---
 title: Change search filters in Sharetribe Web Template
-slug: change-search-filters-in-ftw
-updated: 2022-06-14
+slug: change-search-filters-in-template
+updated: 2023-10-24
 category: how-to-search
 ingress:
   This guide describes how to change the search filters in Sharetribe
@@ -77,7 +77,7 @@ marketplace.
 
 <info>
 
-If your marketplace is using hosted configurations defined in Flex
+If your marketplace is using hosted configurations defined in Sharetribe
 Console, you can make the changes described in this section by adding
 new listing fields and defining the correct search settings for the
 field.
@@ -89,36 +89,37 @@ field.
 First step for adding a new filter is to make sure that the data being
 used for filtering is saved in the listing's `publicData` attribute. On
 how to achieve this, please refer to the
-[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-template/)
 how-to guide. Another aspect in search filters is that a
 [search schema](/references/extended-data/#search-schema) needs to be
 added to the data in order for API to index it for search. Adding search
 schema can be done by the
-[Flex CLI](/introduction/getting-started-with-flex-cli/).
+[Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
-Once a public data attribute is added to the listings and the data
-attribute is indexed, the listing searches can be filtered by that
-attribute by adding a query parameter that consists of a preceding
-"pub\_" and the attribute name, so for the _capacity_ attribute the
-parameter would be "pub_capacity". You might have guessed that "pub\_"
-refers to **public data**. Similarly, "meta\_" would refer to
-**metadata**, which is another type of extended data.
+<plan tier="extend" feature="Access to Sharetribe CLI"></plan> Once a
+public data attribute is added to the listings and the data attribute is
+indexed, the listing searches can be filtered by that attribute by
+adding a query parameter that consists of a preceding "pub\_" and the
+attribute name, so for the _capacity_ attribute the parameter would be
+"pub_capacity". You might have guessed that "pub\_" refers to **public
+data**. Similarly, "meta\_" would refer to **metadata**, which is
+another type of extended data.
 
 Further reading on public data can be found in the
 [listing extended data concepts article](/concepts/listing-extended-data/)
 and the
-[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-template/)
 how-to guide.
 
-In Flex, only top-level attributes can be indexed i.e. used for search.
-If you have a public data attribute with nested attributes, it is not
-possible to create a search schema for those. So instead of using a
-nested attribute:
+In Sharetribe, only top-level attributes can be indexed i.e. used for
+search. If you have a public data attribute with nested attributes, it
+is not possible to create a search schema for those. So instead of using
+a nested attribute:
 
 ```jsx
 publicData: {
   instrumentProficiency: {
-    // These attributes cannot be indexed for search in Flex
+    // These attributes cannot be indexed for search in Sharetribe
     violin: 'professional',
     guitar: 'intermediate',
     tuba: 'beginner',
@@ -131,7 +132,7 @@ attributes:
 
 ```js
 publicData: {
-  // These attributes can be indexed for search in Flex
+  // These attributes can be indexed for search in Sharetribe
   violinProficiency: 'professional',
   guitarProficiency: 'intermediate',
   tubaProficiency: 'beginner',
@@ -188,7 +189,7 @@ There you need to add the _gears_ attribute's configurations to the
 
 <info>
 
-[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-ftw/)
+[Extend listing data in Sharetribe Web Template](/how-to/extend-listing-data-in-template/)
 how-to guide explains the listing extended data configurations in more
 detail.
 
@@ -223,7 +224,8 @@ clicking "More filters" button.
 As a summary, the new filter configuration in `listingFields` array is
 enough to render a _gears_ filter on search page. That is, if you have
 the correct schema added for the _gears_ attribute to the search engine
-using [Flex CLI](/introduction/getting-started-with-flex-cli/).
+using
+[Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
 ## Creating your own filter types
 
@@ -254,7 +256,7 @@ When you have your custom filter component ready, you need to add it to
 
 Settings configured in local configurations files are overridden by any
 fetched via the Asset Delivery API. You can refer to
-[this article](/ftw/hosted-and-local-configurations/) to modify the way
-your template merges local and hosted configurations.
+[this article](/template/hosted-and-local-configurations/) to modify the
+way your template merges local and hosted configurations.
 
 </info>

@@ -1,28 +1,29 @@
 ---
-title: Flex environments
-slug: flex-environments
-updated: 2023-08-16
+title: Sharetribe environments
+slug: sharetribe-environments
+updated: 2023-10-24
 category: concepts-development
 ingress:
-  What are Flex environments and the differences the three types have.
+  What are Sharetribe environments and the differences the three types
+  have.
 published: true
 ---
 
-Flex environments are instances of your own marketplace, but with
-different functions. When you first create a Flex account, you have two
-environments: Test and Dev. When you are ready to go live, we will
-create a third environment: Live.
+Sharetribe environments are instances of your own marketplace, but with
+different functions. When you first create a Sharetribe account, you
+have one environment: Test. If you start customizing your marketplace
+with code, you can enable a second environment – Dev. Finally, when you
+are ready to go live, we will create a third environment: Live.
 
-The environment can be changed from the dropdown in the left corner of
-the topbar. Those who have access to multiple organizations can see the
-organization dropdown on the right.
+The environment can be changed from the dropdown in the top of the
+sidebar.
 
 ![Enviroment selection](./env-change.png)
 
 <info>
 
 **Organization** and **environment** are terms that are used to
-communicate which Flex marketplace you are looking at in Console.
+communicate which Sharetribe marketplace you are looking at in Console.
 
 **Organization**: An entity that is created when you first create an
 account. This is where you can invite other admin users to work with. An
@@ -32,15 +33,32 @@ but it can only include one live environment.
 **Environment**: A marketplace instance within your organization which
 can be created for different purposes. There are three different types
 of environments: Dev, Test, and Live. You can access them all with the
-same Flex account.
+same Sharetribe account.
 
 </info>
 
 ## Environment types
 
-The three environments in Flex each have their own specific purpose.
-Each environment should also have its own dedicated client application,
-which also follows the purpose of the environment.
+The three environments in Sharetribe each have their own specific
+purpose. Each environment should also have its own dedicated client
+application, which also follows the purpose of the environment.
+
+### Test environment
+
+The Test environment works as a preview environment for Live. Whereas a
+possible Dev environment is meant for the developer to make code
+changes, Test is meant to reflect your Live environment as accurately as
+possible.
+
+The operator can make no-code changes in Test, and copy them to Dev and
+Live without needing a developer to intervene. Because Test and Live are
+identical, the operator can trust that their changes made in Test show
+up correctly when published to Live. Copying no-code assets to Dev makes
+it easy for developers to be working on the correct configurations in
+Dev.
+
+Note that you should not onboard real users or listings to Test, as they
+cannot be moved into Live.
 
 ### Dev environment
 
@@ -49,34 +67,18 @@ your marketplace happens and where you can explore the build
 functionalities in peace by using test users and
 [test credit cards with Stripe](/how-to/set-up-and-use-stripe/).
 
-Even after launching your marketplace, you can continue building new
-features in Dev without causing disruptions to your Test or Live
-marketplaces. Note that you should not onboard real users or listings to
-Dev, as they cannot be moved into Live.
-
-### Test environment
-
-The Test environment works as a preview environment for Live. Whereas
-Dev is meant for the developer to make code changes, Test is meant to
-reflect your Live environment as accurately as possible.
-
-Therefore, whenever the development team wants to publish their code
-changes, they will test and review them in Dev first, and then copy them
-to Test and Live at the same time.
-
-The operator can make no-code changes in Test, and copy them to Dev and
-Live without needing the developer to intervene. Because Test and Live
-are identical, the operator can trust that their changes made in Test
-show up correctly when published to Live. Copying no-code assets to Dev
-makes it easy for developers to be working on the correct configurations
-in Dev.
+Whenever the development team wants to publish their code changes, they
+will fully test and review them in Dev first, and then copy them to Test
+and Live at the same time.
 
 If development work requires new configurations to be copied from Dev to
 Test (such as listing fields), they need to be recreated manually in
 Test, and can then be copied to Live.
 
-Note that you should not onboard real users or listings to Test, as they
-cannot be moved into Live.
+Even after launching your marketplace, you can continue building new
+features in Dev without causing disruptions to your Test or Live
+marketplaces. Note that you should not onboard real users or listings to
+Dev, as they cannot be moved into Live.
 
 ### Live environment
 
@@ -87,8 +89,8 @@ transactions.
 When the necessary development has been done and your marketplace is
 ready for onboarding real users, you can initiate the Live environment
 setup from Console. This is also the point when you start paying the
-Flex subscriptions (see more information about
-[Flex pricing](https://www.sharetribe.com/products/flex/#pricing)).
+Sharetribe subscriptions (see more information about
+[Sharetribe pricing](https://www.sharetribe.com/pricing)).
 
 ## Workflow between the three environments
 
@@ -100,13 +102,13 @@ flow from Dev to Test to Live:
 - no-code changes are made in Test, and get pushed from Test to Dev and
   Live.
 
-![Flex environments workflow](./flex-environments.png)
+![Sharetribe environments workflow](./flex-environments.png)
 
 Code changes include
 
 - client application development, updated through your code repository
-- transaction process changes, updated through Flex CLI
-- search schema changes, updated through Flex CLI
+- transaction process changes, updated through Sharetribe CLI
+- search schema changes, updated through Sharetribe CLI
 
 No-code changes include
 
@@ -124,5 +126,5 @@ Depending on your development flow, you might need additional dev
 environments for your organization, e.g. for Quality Assurance (QA) or
 automated testing. We can include additional environments to your paid
 subscription at a price of \$49 per month per environment. To include
-additional development environments in your subscription, contact Flex
-Support!
+additional development environments in your subscription, contact
+Sharetribe Support!

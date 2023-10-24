@@ -26,7 +26,7 @@ There are filters for default fields and filters for custom fields.
 
 Filters for default fields (Date range and Price) can be controlled from
 the
-[Listing Search settings of your Console account](https://flex-console.sharetribe.com/a/listings/listing-search).
+[Listing Search settings of your Console account](https://console.sharetribe.com/a/listings/listing-search).
 
 You can enable a **Date range filter** and a **Price filter**. Read more
 about
@@ -67,4 +67,4 @@ type of filter)
 ## How to define how filters look in the search page?
 
 You can define how filters are displayed in the search page, via
-[the Search page Layout settings](https://flex-console.sharetribe.com/a/design/layout)
+[the Search page Layout settings](https://console.sharetribe.com/a/design/layout)

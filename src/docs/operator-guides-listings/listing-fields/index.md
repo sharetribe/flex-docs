@@ -23,7 +23,7 @@ There are default listing fields and custom listing fields. Default
 listing fields are very specifics: listing title, listing description,
 price and location. These fields cannot be removed. You can, however,
 modify how the default fields are named in your marketplace by using
-[the Marketplace texts editor](https://flex-console.sharetribe.com/a/content/marketplace-texts).
+[the Marketplace texts editor](https://console.sharetribe.com/a/content/marketplace-texts).
 
 Custom listing fields are optional and can be created, added, and
 removed from your marketplace. Each custom listing field will allow you

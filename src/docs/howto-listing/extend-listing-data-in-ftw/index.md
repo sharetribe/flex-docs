@@ -1,7 +1,7 @@
 ---
 title: Extend listing data in Sharetribe Web Template
-slug: extend-listing-data-in-ftw
-updated: 2020-06-04
+slug: extend-listing-data-in-template
+updated: 2023-10-24
 category: how-to-listing
 ingress:
   This guide describes how to use use extended data to expand the
@@ -31,8 +31,8 @@ file.
 
 Settings configured in local configurations files are overridden by any
 fetched via the Asset Delivery API. You can refer to
-[this article](/ftw/hosted-and-local-configurations/) to modify the way
-your template merges local and hosted configurations.
+[this article](/template/hosted-and-local-configurations/) to modify the
+way your template merges local and hosted configurations.
 
 </info>
 
@@ -44,10 +44,10 @@ Configuring the listing data this way allows you to
 - optionally use the attribute as a search filter.
 
 If you want to configure a complex extended data attribute, e.g. a JSON
-object, it is good to note that Flex only allows searching and filtering
-top-level attributes. In other words, complex attributes cannot be used
-to filter listings. However, they can be useful in storing other
-relevant listing data.
+object, it is good to note that Sharetribe only allows searching and
+filtering top-level attributes. In other words, complex attributes
+cannot be used to filter listings. However, they can be useful in
+storing other relevant listing data.
 
 For a more complex attribute, you will need to follow the instructions
 for adding extended data directly to a listing. You will also need to
@@ -62,7 +62,7 @@ data.
 
 <info>
 
-If your marketplace is using hosted configurations defined in Flex
+If your marketplace is using hosted configurations defined in Sharetribe
 Console, you can make the changes described in this section by adding
 new listing fields.
 
@@ -164,7 +164,7 @@ use for listing-specific notes.
 
 For searchable attributes, you will need to include the **filterConfig**
 attribute to your listing configuration. In addition, you will need to
-[define a search schema](/how-to/manage-search-schemas-with-flex-cli/).
+[define a search schema](/how-to/manage-search-schemas-with-sharetribe-cli/).
 Make sure you define the search schema **type** according to the listing
 configuration **schemaType**.
 
@@ -208,7 +208,7 @@ as well as a description of what was serviced.
 <extrainfo title="Marketplace texts used in this guide">
 
 You can paste the marketplace text strings used in this guide in your
-Flex Console, under Build > Content > Marketplace texts, or your
+Sharetribe Console, under Build > Content > Marketplace texts, or your
 translation file.
 
 ```js
@@ -710,10 +710,10 @@ updated listing object is eventually passed to the `updateListingDraft`
 and `requestUpdateListing` functions in the _EditListingPage.duck.js_
 file where the data updates are handled.
 
-The FieldDateInput handles an object with a **date** property but Flex
-can only save valid JSON values to extended data, so we also need to add
-conversions between string and Date to the initial values builder and
-submit handler.
+The FieldDateInput handles an object with a **date** property but
+Sharetribe can only save valid JSON values to extended data, so we also
+need to add conversions between string and Date to the initial values
+builder and submit handler.
 
 Now that we have the panel and the form all ready we can add the panel
 to the **EditListingWizardTab** component. This is done by importing
@@ -767,9 +767,10 @@ specific component for it and place it in the **ListingPage** container.
 Desired outcome could also be achieved just by editing the
 **ListingPage** but extracting the capacity UI parts into a separate
 component will simplify the **ListingPage** and make possible upstream
-updates from the Flex web template repo easier as there's less chances
-for merge conflicts. So, let's create a **SectionServiceHistory**
-component in the _src/containers/ListingPage/_ directory:
+updates from the Sharetribe web template repo easier as there's less
+chances for merge conflicts. So, let's create a
+**SectionServiceHistory** component in the _src/containers/ListingPage/_
+directory:
 
 ```shell
 └── src

@@ -1,7 +1,7 @@
 ---
 title: Manage seats
 slug: manage-seats
-updated: 2021-10-18
+updated: 2023-10-24
 category: concepts-availability
 ingress:
   You can manage the capacity of an event or a rental space within a
@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-In Flex, you can manage the capacity of an event or space within a
+In Sharetribe, you can manage the capacity of an event or space within a
 specific timeframe with seats. Seats is a fundamental feature for
 marketplaces that provide events, rentals, or services that can be
 booked by multiple people at the same time. Seats allow you to define
@@ -31,7 +31,7 @@ or
 
 You define the available seats for any given time slot of a listing via
 the
-[availability plan or availability exceptions](/operator-guides/concepts/#availability-plan--availability-exception)
+[availability plan or availability exceptions](/references/availability/)
 of a listing. If the number of seats is set to 0, the listing will not
 be available at that time.
 
@@ -76,10 +76,11 @@ are released and other users will be able to book them. Find out more
 about
 [availability related transaction actions](/references/transaction-process-actions/#bookings).
 
-You can also connect your Flex marketplace with third-party systems to
-further manage seats. If bookings are made through another system, you
-can sync this information using the Integration API and adjust listing
-availability plans accordingly or override the plan with an exception.
+You can also connect your Sharetribe marketplace with third-party
+systems to further manage seats. If bookings are made through another
+system, you can sync this information using the Integration API and
+adjust listing availability plans accordingly or override the plan with
+an exception.
 
 Finally, providers could manually reduce the number of seats or block
 their availability entirely for a specific time slot (date or hour)
@@ -108,4 +109,4 @@ same timeframe.
 
 If you are looking to manage the stock or inventory of a listing, you
 should take a look at
-[stock management in Flex](/concepts/inventory-management/).
+[stock management in Sharetribe](/concepts/inventory-management/).

@@ -1,7 +1,7 @@
 ---
 title: Getting started with Sharetribe Web Template
 slug: getting-started-with-web-template
-updated: 2023-09-25
+updated: 2023-10-24
 category: introduction-getting-started
 ingress:
   Learn how to install Sharetribe Web Template to your local development
@@ -12,7 +12,7 @@ published: true
 
 The Sharetribe Web Template is a marketplace web application built on
 top of the
-[Marketplace API](/introduction/introducing-flex/#the-marketplace-api).
+[Marketplace API](/introduction/introducing-sharetribe/#the-marketplace-api).
 While you can create a marketplace purely using just the API, it
 requires a significant amount of effort (both money and time) and we
 recommened using the template as a starting point for customizations.
@@ -31,10 +31,10 @@ app.
 
 <info>
 
-We recommend that you take the steps for this guide in your **Flex
+We recommend that you take the steps for this guide in your **Sharetribe
 Console dev environment**.
 
-**[Read more about Flex environments](/concepts/flex-environments/).**
+**[Read more about Sharetribe environments](/concepts/sharetribe-environments/).**
 
 </info>
 
@@ -141,70 +141,69 @@ git clone https://github.com/sharetribe/web-template.git
 If you have created your marketplace environment prior to the 25th of
 April 2023, and you are using the Sharetribe Web Template, it is good to
 note that there are two new transaction processes the template uses, and
-those processes may not be in your Flex marketplace by default. You can
-find the transaction processes in
+those processes may not be in your Sharetribe marketplace by default.
+You can find the transaction processes in
 [/ext/transaction-processes/](https://github.com/sharetribe/web-template/tree/main/ext/transaction-processes)
 in the repository.
 
 To use the template, you will need to have the transaction processes in
-your Flex environment.
+your Sharetribe environment.
 [Follow these steps](https://github.com/sharetribe/web-template#take-the-new-beta-processes-into-use)
-to create both processes in your environment through Flex CLI.
+to create both processes in your environment through Sharetribe CLI.
 
 ## Mandatory Integrations
 
 The Sharetribe Web Template has 3 mandatory integrations that you need
 to configure before the app is fully functional. The app obviously needs
-to discuss with Flex Marketplace API, but the client app also makes
-direct calls to [Stripe](https://stripe.com/en-fi). Flex uses Stripe as
-a payment processor, and Sharetribe Web Template saves sensitive payment
-information directly to it.
+to discuss with Sharetribe Marketplace API, but the client app also
+makes direct calls to [Stripe](https://stripe.com/en-fi). Sharetribe
+uses Stripe as a payment processor, and Sharetribe Web Template saves
+sensitive payment information directly to it.
 
 The third default integration is to a map provider.
 [Mapbox](https://www.mapbox.com) provides location search (geocoding)
 and maps for the web app.
 
-![Mandatory integrations: Flex Marketplace API, Stripe, Map provider](FTW-integrations@2x.png)
+![Mandatory integrations: Sharetribe Marketplace API, Stripe, Map provider](FTW-integrations@2x.png)
 
 The Sharetribe Web Template just needs 4 environment variables to make
 these integrations work.
 
-- **[`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`](#sharetribe-flex-client-id-and-client-secret)**
-- **[`SHARETRIBE_SDK_CLIENT_SECRET`](#sharetribe-flex-client-id-and-client-secret)**
+- **[`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`](#sharetribe-client-id-and-client-secret)**
+- **[`SHARETRIBE_SDK_CLIENT_SECRET`](#sharetribe-client-id-and-client-secret)**
 - **[`REACT_APP_STRIPE_PUBLISHABLE_KEY`](#stripe-keys)**
 - **[`REACT_APP_MAPBOX_ACCESS_TOKEN`](#mapbox-access-token)**
 
-### Sharetribe Flex client ID and client secret
+### Sharetribe client ID and client secret
 
-To use the Marketplace API, you will need a **client ID**. You can sign
-up for your free Flex account at
-https://www.sharetribe.com/products/flex/
+To use the Marketplace API, you will need a **client ID**. You can
+[sign up for your free Sharetribe account here](https://console.sharetribe.com/new).
 
-When you get access, you will be able to log into Flex Console and check
-the client ID.<br /> Flex Console: _Build > Applications_
+When you get access, you will be able to log into Sharetribe Console and
+check the client ID.<br /> Sharetribe Console: _Build > Applications_
 
 In addition, Sharetribe Web Template uses transaction processes that
 include privileged transitions. This makes it possible to customize
 pricing on the Node server that's included in the template. The **client
 secret** is needed to make this secure call from the template's own
-server to Flex API.
+server to Sharetribe API.
 
-![Flex Console: Applications tab](./console-build-application.png)
+![Sharetribe Console: Applications tab](./console-build-application.png)
 
 ### Stripe keys
 
-Both Flex API and your client app need to be able to discuss with Stripe
-API. Stripe has two different keys:
+Both Sharetribe API and your client app need to be able to discuss with
+Stripe API. Stripe has two different keys:
 
 - _Secret key_ for server-side requests
 - _Publishable key_ for calls from web browser
 
-Flex API uses the Stripe secret key to make payment-related requests
-when a transaction moves forward. The client app needs to use the Stripe
-publishable key to run the `stripe.js` script. The script has two main
-functions: it has fraud detection built in, and it is also used to save
-sensitive information directly to Stripe. For instance, a customer's
-credit card number is saved directly to Stripe.
+Sharetribe API uses the Stripe secret key to make payment-related
+requests when a transaction moves forward. The client app needs to use
+the Stripe publishable key to run the `stripe.js` script. The script has
+two main functions: it has fraud detection built in, and it is also used
+to save sensitive information directly to Stripe. For instance, a
+customer's credit card number is saved directly to Stripe.
 
 #### 1. Create and confirm your free Stripe account
 
@@ -343,8 +342,8 @@ environment_.
 
 <info>
 
-See the [template environment variables](/ftw/ftw-env/) for more
-information on the environment variables.
+See the [template environment variables](/template/template-env/) for
+more information on the environment variables.
 
 </info>
 
@@ -370,7 +369,7 @@ This will automatically open `http://localhost:3000` in a browser:
 As you browse your marketplace and create listings, you may notice that
 the search filters do not work. You can activate the filters by creating
 a
-[search schema](/how-to/manage-search-schemas-with-flex-cli/#adding-schemas)
+[search schema](/how-to/manage-search-schemas-with-sharetribe-cli/#adding-schemas)
 that corresponds to your template.
 
 </info>

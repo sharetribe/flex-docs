@@ -1,7 +1,7 @@
 ---
 title: Page asset schema
 slug: page-asset-schema
-updated: 2023-02-14
+updated: 2023-10-24
 category: references
 ingress:
   Reference documentation providing information on the page asset
@@ -11,9 +11,9 @@ published: true
 
 ## What is a page asset schema
 
-Page [assets](/references/assets/) in Flex have a structure that is
-defined by the page asset schema. The Flex page asset schema is based on
-[JSON schema](https://json-schema.org/).
+Page [assets](/references/assets/) in Sharetribe have a structure that
+is defined by the page asset schema. The Sharetribe page asset schema is
+based on [JSON schema](https://json-schema.org/).
 
 If you are not familiar with the JSON schema, you can learn more in the
 [Understanding JSON schema](https://json-schema.org/understanding-json-schema/)
@@ -24,9 +24,9 @@ ebook.
 It is good to note that the content page asset schema is not the same as
 a [website structured data schema](https://schema.org/):
 
-- Flex page asset schema is a Flex-specific description of the data
-  being returned from
-  [Flex Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
+- Sharetribe page asset schema is a Sharetribe-specific description of
+  the data being returned from
+  [Sharetribe Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 - Schema.org structured data schema is a general vocabulary for
   representing the data content of a page in a way that is easily
   readable by e.g. search engines. <br/>
@@ -35,16 +35,16 @@ Page asset schema is also distinct from an
 [extended data search schema](/references/extended-data/#search-schema):
 
 - Page asset schema relates to page assets created by operators through
-  Flex Console. It enables building client applications that can
+  Sharetribe Console. It enables building client applications that can
   predictably handle page asset data.
 - Extended data search schema relates to listings or users. It enables
-  searching and filtering users and listings through the Flex APIs on
-  the marketplace.
+  searching and filtering users and listings through the Sharetribe APIs
+  on the marketplace.
 
 </info>
   
-The page asset schema determines the structure of the page in both Flex Console and the page asset fetched from Asset Delivery API.
-- The page is created and modified in Flex Console, structured by the page asset schema
+The page asset schema determines the structure of the page in both Sharetribe Console and the page asset fetched from Asset Delivery API.
+- The page is created and modified in Sharetribe Console, structured by the page asset schema
 - The page asset is then fetched to the client, and the data structure for all pages can be predicted based on the page asset schema.
 
 ![Page asset schema in context](./page-schema-context.png)
@@ -200,7 +200,7 @@ You can download the full page asset schema here:
 - [page-asset-schema.json](./page-asset-schema.json)
 
 The representation below shows the page asset schema without _\_editor_
-attributes, which are only used in Flex Console internally and are
+attributes, which are only used in Sharetribe Console internally and are
 subject to change.
 
 ```json
@@ -265,12 +265,8 @@ subject to change.
                 "_ref": {
                   "type": "object",
                   "properties": {
-                    "resolver": {
-                      "const": "image"
-                    },
-                    "target": {
-                      "type": "string"
-                    },
+                    "resolver": { "const": "image" },
+                    "target": { "type": "string" },
                     "params": {
                       "const": {
                         "variants": {
@@ -303,47 +299,48 @@ subject to change.
         "title": "Section details",
         "type": "object",
         "properties": {
-          "sectionId": {
-            "description": "Section identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+          "sectionName": {
             "type": "string",
-            "title": "Section ID",
-            "minLength": 1,
-            "pattern": "^[a-z][a-z0-9_\\-]*$"
+            "title": "Section name",
+            "description": "Section name is not shown on the page. It just helps you remember what the section is about."
+          },
+          "sectionId": {
+            "description": "An anchor link allows you to link directly to this section, like this: www.yourdomain.com/p/page_id#anchor-link-id. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+            "type": "string",
+            "title": "Anchor link ID",
+            "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
           },
           "sectionType": {
-            "description": "Determines the layout of Content Blocks.",
+            "description": "Determines the layout of the section content. [Learn more about section templates.](https://www.sharetribe.com/help/en/articles/8387253-what-are-section-templates)",
             "type": "string",
             "title": "Section template",
             "oneOf": [
               {
                 "const": "article",
                 "title": "Article",
-                "description": "Blocks on top of each other in a narrow layout optimized for reading."
+                "description": "Content Blocks on top of each other in a narrow layout optimized for reading."
               },
               {
                 "const": "carousel",
                 "title": "Carousel",
-                "description": "Blocks side by side, 1-4 blocks visible at a time, the rest revealed by swiping or scrolling."
+                "description": "Content Blocks side by side, 1-4 blocks visible at a time, the rest revealed by swiping or scrolling."
               },
               {
                 "const": "columns",
                 "title": "Columns",
-                "description": "Blocks in a grid of 1, 2, 3, or 4 columns."
+                "description": "Content Blocks in a grid of 1, 2, 3, or 4 columns."
               },
               {
                 "const": "features",
                 "title": "Features",
-                "description": "Blocks on top of each other, text, and media side by side in an alternating order."
+                "description": "Content Blocks on top of each other, text, and media side by side in an alternating order."
               }
             ]
           },
           "title": {
             "type": "object",
             "properties": {
-              "content": {
-                "title": "Section title",
-                "type": "string"
-              },
+              "content": { "title": "Section title", "type": "string" },
               "fieldType": {
                 "title": "Section title size",
                 "type": "string",
@@ -412,9 +409,7 @@ subject to change.
                   },
                   "required": ["fieldType"]
                 },
-                "then": {
-                  "$ref": "#/$defs/internalButtonLink"
-                }
+                "then": { "$ref": "#/$defs/internalButtonLink" }
               },
               {
                 "if": {
@@ -425,9 +420,7 @@ subject to change.
                   },
                   "required": ["fieldType"]
                 },
-                "then": {
-                  "$ref": "#/$defs/externalButtonLink"
-                }
+                "then": { "$ref": "#/$defs/externalButtonLink" }
               }
             ]
           },
@@ -453,16 +446,14 @@ subject to change.
             },
             "if": {
               "properties": {
-                "fieldType": {
-                  "const": "customAppearance"
-                }
+                "fieldType": { "const": "customAppearance" }
               }
             },
             "then": {
               "properties": {
                 "backgroundColor": {
                   "title": "Background color",
-                  "description": "Only displayed if the section doesn’t have a background image.",
+                  "description": "Only displayed if the section doesn't have a background image.",
                   "type": "string",
                   "pattern": "^#[A-Fa-f0-9]{6}"
                 },
@@ -474,12 +465,8 @@ subject to change.
                     "_ref": {
                       "type": "object",
                       "properties": {
-                        "resolver": {
-                          "const": "image"
-                        },
-                        "target": {
-                          "type": "string"
-                        },
+                        "resolver": { "const": "image" },
+                        "target": { "type": "string" },
                         "params": {
                           "$ref": "#/$defs/imageParams/scaled"
                         }
@@ -492,422 +479,402 @@ subject to change.
                   "type": "string",
                   "default": "black",
                   "oneOf": [
-                    {
-                      "const": "black",
-                      "title": "Black"
-                    },
-                    {
-                      "const": "white",
-                      "title": "White"
-                    }
+                    { "const": "black", "title": "Black" },
+                    { "const": "white", "title": "White" }
                   ]
                 }
               }
             }
-          },
-          "blocks": {
-            "title": "Content Blocks",
-            "type": "array",
-            "maxItems": 20,
-            "items": {
-              "type": "object",
+          }
+        },
+        "allOf": [
+          {
+            "if": {
               "properties": {
-                "blockId": {
-                  "description": "Block identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
-                  "title": "Block ID",
-                  "type": "string",
-                  "pattern": "^[a-z][a-z0-9_\\-]*$"
-                },
-                "blockType": {
-                  "title": "Block type",
-                  "const": "defaultBlock",
-                  "$comment": "Currently, we only have one block type but in the future there could be many"
-                },
-                "media": {
-                  "type": "object",
-                  "properties": {
-                    "fieldType": {
-                      "title": "Block media",
-                      "type": "string",
-                      "default": "none",
-                      "oneOf": [
-                        {
-                          "$ref": "#/$defs/fieldType/none",
-                          "title": "No media"
-                        },
-                        {
-                          "$ref": "#/$defs/fieldType/image",
-                          "title": "Image"
-                        },
-                        {
-                          "$ref": "#/$defs/fieldType/youtube",
-                          "title": "YouTube video"
-                        }
-                      ]
-                    }
-                  },
-                  "allOf": [
-                    {
-                      "if": {
+                "sectionType": {
+                  "enum": ["columns", "carousel", "article", "features"]
+                }
+              },
+              "required": ["sectionType"]
+            },
+            "then": {
+              "properties": {
+                "blocks": {
+                  "title": "Content Blocks",
+                  "type": "array",
+                  "maxItems": 20,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blockName": {
+                        "type": "string",
+                        "title": "Block name",
+                        "description": "Block name is not shown on the page. It just helps you remember what the block is about."
+                      },
+                      "blockId": {
+                        "description": "An anchor link allows you to link directly to this block, like this: www.yourdomain.com/p/page_id#anchor-link-id. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+                        "type": "string",
+                        "title": "Anchor link ID",
+                        "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
+                      },
+                      "blockType": {
+                        "title": "Block type",
+                        "const": "defaultBlock",
+                        "$comment": "Currently, we only have one block type but in the future there could be many"
+                      },
+                      "media": {
+                        "type": "object",
                         "properties": {
                           "fieldType": {
-                            "$ref": "#/$defs/fieldType/image"
-                          }
-                        }
-                      },
-                      "then": {
-                        "properties": {
-                          "image": {
-                            "title": "Image file",
-                            "type": "object",
-                            "description": "Most common image formats are supported. The file should not exceed 20MB in size.",
-                            "properties": {
-                              "_ref": {
-                                "type": "object",
-                                "properties": {
-                                  "resolver": {
-                                    "const": "image"
-                                  },
-                                  "target": {
-                                    "type": "string"
-                                  },
-                                  "params": {
-                                    "type": "object"
-                                  }
-                                },
-                                "required": ["resolver", "target"]
-                              }
-                            }
-                          },
-                          "aspectRatio": {
-                            "$ref": "#/$defs/aspectRatio"
-                          },
-                          "alt": {
-                            "description": "Short written description of an image is needed for accessibility and search engines.",
-                            "title": "Image alt text",
+                            "title": "Block media",
                             "type": "string",
-                            "minLength": 1
+                            "default": "none",
+                            "oneOf": [
+                              {
+                                "$ref": "#/$defs/fieldType/none",
+                                "title": "No media"
+                              },
+                              {
+                                "$ref": "#/$defs/fieldType/image",
+                                "title": "Image"
+                              },
+                              {
+                                "$ref": "#/$defs/fieldType/youtube",
+                                "title": "YouTube video"
+                              }
+                            ]
                           }
                         },
-                        "required": ["alt"],
                         "allOf": [
                           {
                             "if": {
                               "properties": {
-                                "aspectRatio": {
-                                  "const": "1/1"
+                                "fieldType": {
+                                  "$ref": "#/$defs/fieldType/image"
                                 }
                               }
                             },
                             "then": {
                               "properties": {
                                 "image": {
+                                  "title": "Image file",
+                                  "type": "object",
+                                  "description": "Most common image formats are supported. The file should not exceed 20MB in size.",
                                   "properties": {
                                     "_ref": {
+                                      "type": "object",
                                       "properties": {
-                                        "params": {
-                                          "$ref": "#/$defs/imageParams/square"
+                                        "resolver": {
+                                          "const": "image"
+                                        },
+                                        "target": { "type": "string" }
+                                      },
+                                      "required": ["resolver", "target"]
+                                    }
+                                  },
+                                  "required": ["_ref"]
+                                },
+                                "aspectRatio": {
+                                  "$ref": "#/$defs/aspectRatio"
+                                },
+                                "alt": {
+                                  "description": "Short written description of an image is needed for accessibility and search engines.",
+                                  "title": "Image alt text",
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "alt",
+                                "image",
+                                "aspectRatio"
+                              ],
+                              "allOf": [
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "aspectRatio": { "const": "1/1" }
+                                    },
+                                    "required": ["aspectRatio"]
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "image": {
+                                        "properties": {
+                                          "_ref": {
+                                            "properties": {
+                                              "params": {
+                                                "type": "object",
+                                                "$ref": "#/$defs/imageParams/square"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "aspectRatio": { "const": "16/9" }
+                                    },
+                                    "required": ["aspectRatio"]
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "image": {
+                                        "properties": {
+                                          "_ref": {
+                                            "properties": {
+                                              "params": {
+                                                "type": "object",
+                                                "$ref": "#/$defs/imageParams/landscape"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "aspectRatio": { "const": "2/3" }
+                                    },
+                                    "required": ["aspectRatio"]
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "image": {
+                                        "properties": {
+                                          "_ref": {
+                                            "properties": {
+                                              "params": {
+                                                "type": "object",
+                                                "$ref": "#/$defs/imageParams/portrait"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "if": {
+                                    "properties": {
+                                      "aspectRatio": { "const": "auto" }
+                                    },
+                                    "required": ["aspectRatio"]
+                                  },
+                                  "then": {
+                                    "properties": {
+                                      "image": {
+                                        "properties": {
+                                          "_ref": {
+                                            "properties": {
+                                              "params": {
+                                                "type": "object",
+                                                "$ref": "#/$defs/imageParams/original"
+                                              }
+                                            }
+                                          }
                                         }
                                       }
                                     }
                                   }
                                 }
-                              }
+                              ]
                             }
                           },
                           {
                             "if": {
                               "properties": {
-                                "aspectRatio": {
-                                  "const": "16/9"
+                                "fieldType": {
+                                  "$ref": "#/$defs/fieldType/youtube"
                                 }
                               }
                             },
                             "then": {
                               "properties": {
-                                "image": {
-                                  "properties": {
-                                    "_ref": {
-                                      "properties": {
-                                        "params": {
-                                          "$ref": "#/$defs/imageParams/landscape"
-                                        }
-                                      }
-                                    }
-                                  }
+                                "youtubeVideoId": {
+                                  "description": "The part of a YouTube link after \"watch?v=\". For example, for the video youtube.com/watch?v=UffchBUUIoI, the ID is UffchBUUIoI.",
+                                  "type": "string",
+                                  "title": "YouTube video ID",
+                                  "pattern": "^[0-9A-Za-z_-]+$"
+                                },
+                                "aspectRatio": {
+                                  "$ref": "#/$defs/aspectRatio"
                                 }
+                              },
+                              "required": [
+                                "youtubeVideoId",
+                                "aspectRatio"
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "title": {
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "title": "Block title",
+                            "type": "string"
+                          },
+                          "fieldType": {
+                            "type": "string",
+                            "title": "Block title size",
+                            "default": "heading3",
+                            "oneOf": [
+                              {
+                                "$ref": "#/$defs/fieldType/heading1",
+                                "title": "Page title (H1)"
+                              },
+                              {
+                                "$ref": "#/$defs/fieldType/heading2",
+                                "title": "Section title (H2)"
+                              },
+                              {
+                                "$ref": "#/$defs/fieldType/heading3",
+                                "title": "Section subtitle (H3)"
                               }
+                            ]
+                          }
+                        }
+                      },
+                      "text": {
+                        "type": "object",
+                        "properties": {
+                          "fieldType": {
+                            "type": "string",
+                            "title": "Text element type",
+                            "default": "markdown",
+                            "$ref": "#/$defs/fieldType/markdown"
+                          },
+                          "content": {
+                            "title": "Block text",
+                            "type": "string",
+                            "description": "You can format text with markdown. [Learn more about markdown](https://www.sharetribe.com/help/en/articles/8404687-how-to-format-your-text-in-pages-with-markdown)."
+                          }
+                        }
+                      },
+                      "callToAction": {
+                        "type": "object",
+                        "properties": {
+                          "fieldType": {
+                            "title": "Block call to action",
+                            "type": "string",
+                            "default": "none",
+                            "description": "The action the user is prompted to take after viewing the block.",
+                            "oneOf": [
+                              {
+                                "$ref": "#/$defs/fieldType/none",
+                                "title": "No call to action"
+                              },
+                              {
+                                "$ref": "#/$defs/fieldType/internalButtonLink",
+                                "title": "Internal link",
+                                "description": "Link to a page in your marketplace. Displayed as a button."
+                              },
+                              {
+                                "$ref": "#/$defs/fieldType/externalButtonLink",
+                                "title": "External link",
+                                "description": "Link to a page outside your marketplace. Opens in a new tab. Displayed as a button."
+                              }
+                            ]
+                          }
+                        },
+                        "allOf": [
+                          {
+                            "if": {
+                              "properties": {
+                                "fieldType": {
+                                  "$ref": "#/$defs/fieldType/internalButtonLink"
+                                }
+                              },
+                              "required": ["fieldType"]
+                            },
+                            "then": {
+                              "$ref": "#/$defs/internalButtonLink"
                             }
                           },
                           {
                             "if": {
                               "properties": {
-                                "aspectRatio": {
-                                  "const": "2/3"
+                                "fieldType": {
+                                  "$ref": "#/$defs/fieldType/externalButtonLink"
                                 }
-                              }
+                              },
+                              "required": ["fieldType"]
                             },
                             "then": {
-                              "properties": {
-                                "image": {
-                                  "properties": {
-                                    "_ref": {
-                                      "properties": {
-                                        "params": {
-                                          "$ref": "#/$defs/imageParams/portrait"
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          {
-                            "if": {
-                              "properties": {
-                                "aspectRatio": {
-                                  "const": "auto"
-                                }
-                              }
-                            },
-                            "then": {
-                              "properties": {
-                                "image": {
-                                  "properties": {
-                                    "_ref": {
-                                      "properties": {
-                                        "params": {
-                                          "$ref": "#/$defs/imageParams/original"
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
+                              "$ref": "#/$defs/externalButtonLink"
                             }
                           }
                         ]
                       }
                     },
-                    {
-                      "if": {
-                        "properties": {
-                          "fieldType": {
-                            "$ref": "#/$defs/fieldType/youtube"
-                          }
-                        }
-                      },
-                      "then": {
-                        "properties": {
-                          "youtubeVideoId": {
-                            "description": "The part of a YouTube link after \"watch?v=\". For example, for the video youtube.com/watch?v=UffchBUUIoI, the ID is UffchBUUIoI.",
-                            "type": "string",
-                            "title": "YouTube video ID",
-                            "pattern": "^[0-9A-Za-z_-]+$"
-                          },
-                          "aspectRatio": {
-                            "$ref": "#/$defs/aspectRatio"
-                          }
-                        },
-                        "required": ["youtubeVideoId", "aspectRatio"]
-                      }
-                    }
-                  ]
-                },
-                "title": {
-                  "type": "object",
-                  "properties": {
-                    "content": {
-                      "title": "Block title",
-                      "type": "string"
-                    },
-                    "fieldType": {
-                      "type": "string",
-                      "title": "Block title size",
-                      "default": "heading3",
-                      "oneOf": [
-                        {
-                          "$ref": "#/$defs/fieldType/heading1",
-                          "title": "Page title (H1)"
-                        },
-                        {
-                          "$ref": "#/$defs/fieldType/heading2",
-                          "title": "Section title (H2)"
-                        },
-                        {
-                          "$ref": "#/$defs/fieldType/heading3",
-                          "title": "Section subtitle (H3)"
-                        }
-                      ]
-                    }
+                    "required": ["blockType"]
                   }
-                },
-                "text": {
-                  "type": "object",
-                  "properties": {
-                    "fieldType": {
-                      "description": "You can format text with markdown.",
-                      "type": "string",
-                      "title": "Text element type",
-                      "default": "markdown",
-                      "$ref": "#/$defs/fieldType/markdown"
-                    },
-                    "content": {
-                      "title": "Block text",
-                      "type": "string"
-                    }
-                  }
-                },
-                "callToAction": {
-                  "type": "object",
-                  "properties": {
-                    "fieldType": {
-                      "title": "Block call to action",
-                      "type": "string",
-                      "default": "none",
-                      "description": "The action the user is prompted to take after viewing the block.",
-                      "oneOf": [
-                        {
-                          "$ref": "#/$defs/fieldType/none",
-                          "title": "No call to action"
-                        },
-                        {
-                          "$ref": "#/$defs/fieldType/internalButtonLink",
-                          "title": "Internal link",
-                          "description": "Link to a page in your marketplace. Displayed as a button."
-                        },
-                        {
-                          "$ref": "#/$defs/fieldType/externalButtonLink",
-                          "title": "External link",
-                          "description": "Link to a page outside your marketplace. Opens in a new tab. Displayed as a button."
-                        }
-                      ]
-                    }
-                  },
-                  "allOf": [
-                    {
-                      "if": {
-                        "properties": {
-                          "fieldType": {
-                            "$ref": "#/$defs/fieldType/internalButtonLink"
-                          }
-                        },
-                        "required": ["fieldType"]
-                      },
-                      "then": {
-                        "$ref": "#/$defs/internalButtonLink"
-                      }
-                    },
-                    {
-                      "if": {
-                        "properties": {
-                          "fieldType": {
-                            "$ref": "#/$defs/fieldType/externalButtonLink"
-                          }
-                        },
-                        "required": ["fieldType"]
-                      },
-                      "then": {
-                        "$ref": "#/$defs/externalButtonLink"
-                      }
-                    }
-                  ]
                 }
-              },
-              "required": ["blockId", "blockType"]
-            }
-          }
-        },
-        "if": {
-          "anyOf": [
-            {
-              "properties": {
-                "sectionType": {
-                  "const": "columns"
-                }
-              },
-              "required": ["sectionType"]
-            },
-            {
-              "properties": {
-                "sectionType": {
-                  "const": "carousel"
-                }
-              },
-              "required": ["sectionType"]
-            }
-          ]
-        },
-        "then": {
-          "properties": {
-            "numColumns": {
-              "title": "Number of columns",
-              "type": "integer",
-              "oneOf": [
-                {
-                  "const": 1,
-                  "title": "1"
-                },
-                {
-                  "const": 2,
-                  "title": "2"
-                },
-                {
-                  "const": 3,
-                  "title": "3"
-                },
-                {
-                  "const": 4,
-                  "title": "4"
-                }
-              ]
+              }
             }
           },
-          "required": ["numColumns"]
-        },
-        "required": ["sectionId", "sectionType"]
+          {
+            "if": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "sectionType": { "const": "columns" }
+                  },
+                  "required": ["sectionType"]
+                },
+                {
+                  "properties": {
+                    "sectionType": { "const": "carousel" }
+                  },
+                  "required": ["sectionType"]
+                }
+              ]
+            },
+            "then": {
+              "properties": {
+                "numColumns": {
+                  "title": "Number of columns",
+                  "type": "integer",
+                  "oneOf": [
+                    { "const": 1, "title": "1" },
+                    { "const": 2, "title": "2" },
+                    { "const": 3, "title": "3" },
+                    { "const": 4, "title": "4" }
+                  ]
+                }
+              },
+              "required": ["numColumns"]
+            }
+          }
+        ],
+        "required": ["sectionType"]
       }
     }
   },
   "$defs": {
     "fieldType": {
-      "none": {
-        "const": "none"
-      },
-      "heading1": {
-        "const": "heading1"
-      },
-      "heading2": {
-        "const": "heading2"
-      },
-      "heading3": {
-        "const": "heading3"
-      },
-      "markdown": {
-        "const": "markdown"
-      },
-      "paragraph": {
-        "const": "paragraph"
-      },
-      "externalButtonLink": {
-        "const": "externalButtonLink"
-      },
-      "internalButtonLink": {
-        "const": "internalButtonLink"
-      },
-      "customAppearance": {
-        "const": "customAppearance"
-      },
-      "defaultAppearance": {
-        "const": "defaultAppearance"
-      },
-      "image": {
-        "const": "image"
-      },
-      "youtube": {
-        "const": "youtube"
-      }
+      "youtube": { "const": "youtube" },
+      "internalButtonLink": { "const": "internalButtonLink" },
+      "none": { "const": "none" },
+      "defaultAppearance": { "const": "defaultAppearance" },
+      "heading1": { "const": "heading1" },
+      "image": { "const": "image" },
+      "heading3": { "const": "heading3" },
+      "externalButtonLink": { "const": "externalButtonLink" },
+      "heading2": { "const": "heading2" },
+      "customAppearance": { "const": "customAppearance" },
+      "paragraph": { "const": "paragraph" },
+      "markdown": { "const": "markdown" }
     },
     "internalButtonLink": {
       "properties": {
@@ -924,7 +891,7 @@ subject to change.
             "#section-id-as-anchor",
             "/absolute/path/to/page"
           ],
-          "pattern": "^(?![a-zA-Z][a-zA-Z\\+\\.\\-]*\\:)",
+          "pattern": "^(?![a-zA-Z][a-zA-Z+.-]*:)",
           "minLength": 1
         }
       },
@@ -973,16 +940,8 @@ subject to change.
       "square": {
         "const": {
           "variants": {
-            "square400": {
-              "width": 400,
-              "height": 400,
-              "fit": "crop"
-            },
-            "square800": {
-              "width": 800,
-              "height": 800,
-              "fit": "crop"
-            },
+            "square400": { "width": 400, "height": 400, "fit": "crop" },
+            "square800": { "width": 800, "height": 800, "fit": "crop" },
             "square1200": {
               "width": 1200,
               "height": 1200,
@@ -1080,22 +1039,10 @@ subject to change.
       "type": "string",
       "default": "auto",
       "oneOf": [
-        {
-          "const": "1/1",
-          "title": "Square (1:1)"
-        },
-        {
-          "const": "16/9",
-          "title": "Landscape (16:9)"
-        },
-        {
-          "const": "2/3",
-          "title": "Portrait (2:3)"
-        },
-        {
-          "const": "auto",
-          "title": "Original"
-        }
+        { "const": "1/1", "title": "Square (1:1)" },
+        { "const": "16/9", "title": "Landscape (16:9)" },
+        { "const": "2/3", "title": "Portrait (2:3)" },
+        { "const": "auto", "title": "Original" }
       ]
     }
   }

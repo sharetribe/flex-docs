@@ -30,9 +30,9 @@ const RegularFooter = props => {
   return (
     <Paragraph>
       Reach out to our support team by{' '}
-      <A href="mailto:flex-support@sharetribe.com">email</A>, or consult the
-      Sharetribe Developer Community at{' '}
-      <Link to="https://www.sharetribe.com/flex-slack">
+      <A href="mailto:hello@sharetribe.com">email</A>, or consult the Sharetribe
+      Developer Community at{' '}
+      <Link to="https://www.sharetribe.com/dev-slack">
         Sharetribe's Flex development Slack Channel
       </Link>
       . You can also contact our support team through the chat widget in Flex

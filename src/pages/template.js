@@ -5,7 +5,7 @@ import { dev, siteStructure } from '../config';
 import { findSortingArrays } from '../util/navigation';
 import { ArticleIndexPage } from '../components';
 
-const category = 'ftw';
+const category = 'template';
 const sortingArray = findSortingArrays(category, siteStructure);
 
 const query = graphql`
@@ -15,20 +15,20 @@ const query = graphql`
         frontmatter: {
           category: {
             in: [
-              "ftw"
-              "ftw-templates"
-              "ftw-configuration"
-              "ftw-content"
-              "ftw-styling"
-              "ftw-routing"
-              "ftw-data-flow"
-              "ftw-search"
-              "ftw-security"
-              "ftw-testing-error-handling"
-              "ftw-hosting"
-              "ftw-analytics"
-              "ftw-hosting"
-              "ftw-performance"
+              "template"
+              "template-templates"
+              "template-configuration"
+              "template-content"
+              "template-styling"
+              "template-routing"
+              "template-data-flow"
+              "template-search"
+              "template-security"
+              "template-testing-error-handling"
+              "template-hosting"
+              "template-analytics"
+              "template-hosting"
+              "template-performance"
             ]
           }
         }
@@ -67,7 +67,7 @@ const byArrayOfSlugs = sortingArray => (a, b) => {
   return i1 - i2;
 };
 
-const FTWPage = () => {
+const TemplatePage = () => {
   return (
     <StaticQuery
       query={query}
@@ -91,4 +91,4 @@ const FTWPage = () => {
   );
 };
 
-export default FTWPage;
+export default TemplatePage;

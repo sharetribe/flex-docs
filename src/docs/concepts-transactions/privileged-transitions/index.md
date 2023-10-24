@@ -1,22 +1,28 @@
 ---
 title: Privileged transitions
 slug: privileged-transitions
-updated: 2020-06-25
+updated: 2023-10-24
 category: concepts-transaction-process
 ingress:
   This article introduces you to the concept of privileged transitions
-  and how Flex uses them to invoke actions from a trusted context.
+  and how Sharetribe uses them to invoke actions from a trusted context.
 published: true
 ---
 
 ## What are privileged transitions?
 
-In Flex, a process transition is an edge between two states in the
+In Sharetribe, a process transition is an edge between two states in the
 transaction process graph. Invoking transitions is guarded in the
 process definition by tying them to a specific state when they can be
 transitioned and by defining who can perform the transition. This way
 transition requests have built-in validation of who can invoke them and
 in what state of the transaction flow.
+
+<plan tier="launch">
+
+Live transactions are available in the Launch plan and above.
+
+</plan>
 
 However, there are moments when more control is required on who can
 initiate a transition and especially with what kind of parameters. Take
@@ -29,7 +35,7 @@ price parameters.
 This is where privileged transitions come into play. They are
 transaction process transitions that can be invoked only from a trusted
 context. In other words, this means that you can build your own server
-side validation that sits between your marketplace UI and the Flex
+side validation that sits between your marketplace UI and the Sharetribe
 Marketplace API. In the discount coupon example, this means that the
 discount coupon that a user has can be passed as a parameter in the
 transition request. Server side transition request validation can invoke
@@ -86,11 +92,15 @@ commission.
 
 The Integration API
 [makes it possible to invoke transitions](https://www.sharetribe.com/api-reference/integration.html#transition-transaction)
-for which the `:actor` is set to `:actor.role/operator`. As the
-Integration API authentication requires knowledge of the integration
-application's client secret and is meant to be used only from your own
-backend implementation, it is considered a trusted source for invoking
-transitions. As a consequence, the operator transitions can utilize any
-privileged actions. For instance,
+for which the `:actor` is set to `:actor.role/operator`.
+
+<plan tier="extend" feature="Integration API access">
+</plan>
+
+As the Integration API authentication requires knowledge of the
+integration application's client secret and is meant to be used only
+from your own backend implementation, it is considered a trusted source
+for invoking transitions. As a consequence, the operator transitions can
+utilize any privileged actions. For instance,
 [privileged-update-metadata](/references/transaction-process-actions/#actionprivileged-update-metadata)
 action can be used to update the transaction's metadata.

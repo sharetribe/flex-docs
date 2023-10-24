@@ -1,8 +1,8 @@
 ---
 title: Customization checklist
 slug: customization-checklist
-updated: 2023-01-01
-category: ftw-introduction
+updated: 2023-10-24
+category: template-introduction
 ingress:
   This article provides a reference list of common customisations to aid
   you in development.
@@ -21,7 +21,7 @@ Console. For more advanced changes you can:
 
 - [Learn to style the template using CSS](/docs/tutorial/first-edit/)
 - Learn more about the
-  [CSS architecture in the Sharetribe Web Template](/ftw/how-to-customize-ftw-styles/)
+  [CSS architecture in the Sharetribe Web Template](/template/how-to-customize-template-styles/)
 
 ## Content and marketplace texts
 
@@ -33,12 +33,10 @@ and copy texts in your marketplace:
 
 - Learn about [marketplace texts](/concepts/marketplace-texts/)
 - Update your
-  [terms of service and privacy policy page](/operator-guides/free-templates/)
-- Configure the footer of your marketplace in Flex Console.
-- Update the
-  [email templates](https://www.sharetribe.com/docs/concepts/email-notifications/):
-  you will want to update the templates to reflect your brand and
-  messaging.
+  [terms of service and privacy policy page](https://www.sharetribe.com/help/en/articles/8410839-free-templates-for-your-terms-of-service-and-privacy-policy)
+- Configure the footer of your marketplace in Sharetribe Console.
+- Update the [email templates](/concepts/email-notifications/): you will
+  want to update the templates to reflect your brand and messaging.
 
 ## Configuration
 
@@ -52,9 +50,9 @@ your marketplace uses. These variables are typically used to store
 sensitive information such as API keys, and must be set up correctly in
 order for your marketplace to function properly.
 
-- Configure your [environment variables](/ftw/ftw-env/). You can also
-  run `yarn run config` in the root directory of the template, which
-  will walk you through the setup process.
+- Configure your [environment variables](/template/template-env/). You
+  can also run `yarn run config` in the root directory of the template,
+  which will walk you through the setup process.
 - Go through the configuration files of your marketplace following this
   guide
 
@@ -69,9 +67,10 @@ other changes you may want to make. Some of these options include:
 - Create new static pages
 - Update the routing in your marketplace
 - Update transaction email templates. For more information, see
-  [Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/)
+  [Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-sharetribe-cli/)
   tutorial and [Email templates](/references/email-templates/) reference
   article.
 - Add more content pages:
-  [How the templates render content pages using the PageBuilder](/ftw/page-builder/)
+  [How the templates render content pages using the PageBuilder](/template/page-builder/)
 - Update other existing pages
+  <plan tier="extend" feature="Customizing your transaction process and email templates"></plan>

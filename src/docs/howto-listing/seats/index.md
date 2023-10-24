@@ -1,7 +1,7 @@
 ---
 title: Add listings with multiple seats
 slug: multiple-seats
-updated: 2023-09-04
+updated: 2023-10-24
 category: how-to-listing
 ingress:
   This guide describes how to handle multiple seats in listings and
@@ -280,7 +280,7 @@ following instead of modifying the _TimeRangeHidden_ component:
 </extrainfo>
 
 At this point, we can add the marketplace texts necessary in this guide.
-You can add the marketplace texts through Flex Console, or in
+You can add the marketplace texts through Sharetribe Console, or in
 _src/translations/en.js_, if you are not using Console-based marketplace
 texts.
 
@@ -1253,7 +1253,7 @@ constant, which is also where other similar helper functions are used.
 
 <info>
 
-In Flex, line items need to have either
+In Sharetribe, line items need to have either
 
 - a percentage,
 - a quantity, or

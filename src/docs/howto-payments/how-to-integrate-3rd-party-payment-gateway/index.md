@@ -2,37 +2,39 @@
 title:
   How to integrate a 3rd-party payment gateway with your marketplace
 slug: how-to-integrate-3rd-party-payment-gateway
-updated: 2021-03-19
+updated: 2023-10-24
 category: how-to-payments
 ingress:
   This guide describes, on a high-level, how to integrate any 3rd-party
-  payment gateway with your Flex-powered marketplace.
+  payment gateway with your Sharetribe-powered marketplace.
 published: true
 ---
 
-Sharetribe Flex provides out-of-the-box integration with Stripe. To
-reach markets not supported by Stripe, relying on another payment
-gateway can be crucial. This guide describes on a high-level, without
-going into the details of specific payment gateways, how to integrate
-any 3rd-party payment gateway (such as [PayPal Commerce
+Sharetribe provides out-of-the-box integration with Stripe. To reach
+markets not supported by Stripe, relying on another payment gateway can
+be crucial. This guide describes on a high-level, without going into the
+details of specific payment gateways, how to integrate any 3rd-party
+payment gateway (such as [PayPal Commerce
 Platform][paypal-commerce-platform], [MANGOPAY][mangopay-marketplaces],
-or [Adyen for Platforms][adyen-for-platforms]) with Sharetribe Flex.
+or [Adyen for Platforms][adyen-for-platforms]) with Sharetribe.
 
 ## Prerequisites
 
 Before reading this guide, you should be familiar with the following
-Sharetribe Flex features:
+Sharetribe features:
 
-- [Privileged transitions][flex-docs-privileged-transitions-background]
-- [Events][flex-docs-events-reference]
-- [Reacting to events][flex-docs-reacting-to-events-cookbook]
-- [Extended data][flex-docs-extended-data-reference]
+- [Privileged transitions][dev-docs-concepts-privileged-transitions]
+- [Events][dev-docs-refence-events]
+- [Reacting to events][dev-docs-howto-reacting-to-events]
+- [Extended data][dev-docs-reference-extended-data]
+
+<plan tier="extend" feature="Access to Integration API and events"></plan>
 
 ## Marketplace payment flow
 
 In this section we illustrate a marketplace payment flow in high-level
 and briefly discuss each stage. Later in this article, we'll go through
-how to integrate each state with your Flex-powered marketplace.
+how to integrate each state with your Sharetribe-powered marketplace.
 
 In a nutshell, a payment flow in a marketplace contains five significant
 steps. The following diagram illustrates a timeline of these steps:
@@ -45,11 +47,11 @@ steps. The following diagram illustrates a timeline of these steps:
 
 ### Step 1: Provider onboarding
 
-In this step, the provider connects their Flex account with the payment
-gateway. This is the step when they provide the bank details where the
-money from the customers will be transferred to. In addition, in this
-step, they provide the necessary information and documents for the
-identity verification and _Know Your Customer (KYC)_ requirements.
+In this step, the provider connects their Sharetribe account with the
+payment gateway. This is the step when they provide the bank details
+where the money from the customers will be transferred to. In addition,
+in this step, they provide the necessary information and documents for
+the identity verification and _Know Your Customer (KYC)_ requirements.
 
 ### Step 2: Customer checkout
 
@@ -144,10 +146,10 @@ Contact the support and make sure that:
 
 ## White-label or hosted onboarding and payments
 
-Before integrating a 3rd-party payment gateway with Flex, a few words on
-the different onboarding and payment experiences the payment gateways
-offer. The different experiences have implications for the integration,
-branding, and also the level of PCI-compliance required.
+Before integrating a 3rd-party payment gateway with Sharetribe, a few
+words on the different onboarding and payment experiences the payment
+gateways offer. The different experiences have implications for the
+integration, branding, and also the level of PCI-compliance required.
 
 There are two main types of onboarding and payment experiences the
 payment gateways offer: white-label and hosted. However, most providers
@@ -158,7 +160,7 @@ offer a mix of both.
 Payment gateways such as [MANGOPAY][mangopay-marketplaces] and
 [Adyen][adyen-for-platforms] offer a so-called white-label experience.
 This experience is closest to the default [Stripe
-Connect][stripe-connect] integration in Flex.
+Connect][stripe-connect] integration in Sharetribe.
 
 A white-label experience means that you build the payment flow inside
 your marketplace application. This way, you have control over the
@@ -196,15 +198,15 @@ experience.
 
 White-label payment gateways usually offer an option to use hosted pages
 in some stages of the payment flow. We offer this approach by default
-with the Stripe integration in Flex, where we use [hosted pages for
-provider onboarding][stripe-connect-onboarding] and a white-label
+with the Stripe integration in Sharetribe, where we use [hosted pages
+for provider onboarding][stripe-connect-onboarding] and a white-label
 experience for customer checkout.
 
 Using hosted pages for some parts of the payment flow and white-label
 experience for other parts provides a good balance between the work
 required from you and the ability to customize the user experience. For
-example, we've chosen to use Stripe-hosted pages for Flex's provider
-onboarding because in this step, compliance with the _Know Your
+example, we've chosen to use Stripe-hosted pages for Sharetribe's
+provider onboarding because in this step, compliance with the _Know Your
 Customer_ (KYC) guidelines is critical and may include uploading
 identity documents or utility bills. Implementing all that in a
 white-label fashion would require an undesirable amount of work.
@@ -418,13 +420,13 @@ adding it to the [API router][web-template-api-router].
 We recommend securing the endpoint with Basic Authentication if the
 payment gateway supports that.
 
-## Integrating your Flex marketplace with a 3rd-party payment gateway
+## Integrating your Sharetribe marketplace with a 3rd-party payment gateway
 
-There are two main options for integrating Flex with a 3rd-party payment
-gateway:
+There are two main options for integrating Sharetribe with a 3rd-party
+payment gateway:
 
-- [Privileged transitions][flex-docs-privileged-transitions-background]
-- [Events][flex-docs-events-reference].
+- [Privileged transitions][dev-docs-concepts-privileged-transitions]
+- [Events][dev-docs-refence-events].
 
 For some payment flow stages you can use either method to build the
 integration, but for some stages using exactly one of the two is
@@ -436,20 +438,20 @@ method works in practice.
 
 To use privileged transitions, you need to make a new endpoint to your
 backend server. Your marketplace front-end should call this new backend
-endpoint and not the Flex API directly.
+endpoint and not the Sharetribe API directly.
 
 If you use Sharetribe Web Template, you can add a new endpoint by adding
 it to the [API router][web-template-api-router].
 
 The new server endpoint should call the payment gateway API to do the
-payment action and the Flex Marketplace API to transition the
+payment action and the Sharetribe Marketplace API to transition the
 transaction.
 
 The following diagram shows the call sequence between the marketplace
 and the APIs. First, a user makes a transaction request using the
-marketplace front end, after which the backend calls the Flex
+marketplace front end, after which the backend calls the Sharetribe
 Marketplace API to initiate the transaction. Next, the marketplace
-backend calls the payment gateway's API, and finally the Flex
+backend calls the payment gateway's API, and finally the Sharetribe
 Marketplace API is called again after the payment action is completed.
 
 ![Privileged transitions call sequence](privileged-transitions-sequence.png)
@@ -459,14 +461,16 @@ Marketplace API is called again after the payment action is completed.
   'Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS'
 
 Error handling in this model is simple. Because all the calls to the
-Flex Marketplace API and the payment gateway's API are triggered by the
-request of the end-user, your marketplace front-end can immediately
-return a failure response and show an error message to the user when
-things go wrong.
+Sharetribe Marketplace API and the payment gateway's API are triggered
+by the request of the end-user, your marketplace front-end can
+immediately return a failure response and show an error message to the
+user when things go wrong.
 
 ### Using Events
 
 You can also use Events for your payment gateway integration.
+
+<plan tier="extend" feature="Access to Integration API and events"></plan>
 
 In this model, the transaction transition is done as usual. Your backend
 polls the events and reacts to transaction transition events by calling
@@ -556,13 +560,13 @@ encryption, or hosted pages when collecting credit card information.
 
 **Recommendation:** Use **privileged transitions** for this step.
 
-**Recommendation:** Initiate the Flex transition before payment.
+**Recommendation:** Initiate the Sharetribe transition before payment.
 
 If using 3D Security is required, the checkout process may contain
 multiple steps where the customer may have to leave your marketplace app
 and go to their bank's website to confirm the payment. This process may
 take some time for the user to complete. Because of that, we recommend
-that you initiate the Flex transition first, before initiating the
+that you initiate the Sharetribe transition first, before initiating the
 payment. During the initialization of the transaction, you can already
 make a booking and ensure availability. It would be a bad experience for
 the user to pay first but then realize that the transaction
@@ -666,10 +670,10 @@ requirements. We then discussed PCI DSS compliance in more detail.
 
 We discussed the integration and what are the options to communicate
 with payment gateways. After that, we laid out the two different options
-to hook your payment integration code with Flex: privileged transitions
-and events. Finally, we went through each stage of the marketplace
-payment flow and gave recommendations on how to integrate a 3rd-party
-payment gateway to each step.
+to hook your payment integration code with Sharetribe: privileged
+transitions and events. Finally, we went through each stage of the
+marketplace payment flow and gave recommendations on how to integrate a
+3rd-party payment gateway to each step.
 
 ## Further reading
 
@@ -708,11 +712,11 @@ payment gateway to each step.
   https://stripe.com/docs/security/guide#validating-pci-compliance
 [giropay]: https://www.giropay.de/
 [ideal]: https://www.ideal.nl/en/
-[flex-docs-privileged-transitions-background]:
+[dev-docs-concepts-privileged-transitions]:
   /concepts/privileged-transitions/
-[flex-docs-events-reference]: /references/events/
-[flex-docs-reacting-to-events-cookbook]: /how-to/reacting-to-events/
-[flex-docs-extended-data-reference]: /references/extended-data/
+[dev-docs-refence-events]: /references/events/
+[dev-docs-howto-reacting-to-events]: /how-to/reacting-to-events/
+[dev-docs-reference-extended-data]: /references/extended-data/
 [pci-saq-a-pdf]:
   https://www.pcisecuritystandards.org/documents/PCI-DSS-v3_2_1-SAQ-A.pdf
 [marketplace-api-update-user-profile]:

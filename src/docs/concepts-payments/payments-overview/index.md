@@ -1,17 +1,17 @@
 ---
-title: Payments in Flex
+title: Payments in Sharetribe
 slug: payments-overview
-updated: 2023-09-04
+updated: 2023-10-24
 category: concepts-payments
 ingress:
-  This article introduces how payments work in Flex in general, and
-  describes the default Stripe payment gateway integration
+  This article introduces how payments work in Sharetribe in general,
+  and describes the default Stripe payment gateway integration
 published: true
 ---
 
-Flex is a full-fledged marketplace solution, complete with payment
-capabilities. In this article, you will learn about the Flex default
-payment integration, implemented with Stripe, as well as some
+Sharetribe is a full-fledged marketplace solution, complete with payment
+capabilities. In this article, you will learn about the Sharetribe
+default payment integration, implemented with Stripe, as well as some
 alternatives in case the default integration does not fully serve your
 marketplace needs.
 
@@ -24,10 +24,10 @@ significant steps:
 
 ### Step 1: Provider onboarding
 
-In this step, the provider connects their Flex account with the payment
-gateway. This is where they provide the bank details that eventually
-receive money from the customers. In addition, in this step, they
-provide the necessary information and documents for the identity
+In this step, the provider connects their Sharetribe account with the
+payment gateway. This is where they provide the bank details that
+eventually receive money from the customers. In addition, in this step,
+they provide the necessary information and documents for the identity
 verification and _Know Your Customer_
 [(KYC)](https://en.wikipedia.org/wiki/Know_your_customer) requirements.
 [These requirements vary](https://stripe.com/docs/connect/required-verification-information)
@@ -73,8 +73,9 @@ be eventually paid out to the provider.
 
 ## Stripe default integration
 
-In the default Flex transaction process and Sharetribe Web Template, the
-steps described above are implemented using Stripe. The integration uses
+In the default Sharetribe transaction process and Sharetribe Web
+Template, the steps described above are implemented using Stripe. The
+integration uses
 [Stripe Custom Connect accounts](https://stripe.com/docs/connect/custom-accounts)
 for providers. The customer can check out using a payment card or
 [another supported method](#payment-methods-and-currencies), and they
@@ -99,13 +100,13 @@ the provider's Custom Connect account information.
 
 ### Default payment process with Stripe
 
-![Default payment flow in Flex](./automatic_confirmation_flow.png)
+![Default payment flow in Sharetribe](./automatic_confirmation_flow.png)
 
 #### 1. Provider onboarding
 
-In the Flex default integration, users need to have a Stripe account
-with a bank account set up before others can initiate transactions with
-them successfully. This is done by
+In the Sharetribe default integration, users need to have a Stripe
+account with a bank account set up before others can initiate
+transactions with them successfully. This is done by
 [creating a Stripe account](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account)
 for the authenticated user. The
 [Sharetribe Web Template](/how-to/provider-onboarding-and-identity-verification/)
@@ -120,8 +121,8 @@ your most likely marketplace provider demographics in
 
 #### 2. Customer checkout
 
-When the customer initiates a transaction in the Flex default
-transaction processes, Flex creates a
+When the customer initiates a transaction in the Sharetribe default
+transaction processes, Sharetribe creates a
 [PaymentIntent](/concepts/payment-intents/) for the total price of the
 transaction. Once the PaymentIntent is confirmed, Stripe preauthorizes
 the sum from the customer's payment method. In other words, even though
@@ -177,9 +178,10 @@ cover those expenses as well.
 #### 4. Customer refund
 
 If the customer requests a refund for one reason or another, the
-operator can refund the PaymentIntent. The Flex integration with Stripe
-only supports full refunds. (Handling partial refunds is discussed
-[later in this article](/concepts/payments-overview/#can-i-partially-refund-transactions-in-my-flex-marketplace).)
+operator can refund the PaymentIntent. The Sharetribe integration with
+Stripe only supports full refunds. (Handling partial refunds is
+discussed
+[later in this article](/concepts/payments-overview/#how-can-i-partially-refund-transactions-in-my-sharetribe-marketplace).)
 The default transaction process takes into account whether or not the
 PaymentIntent has already been captured from the customer's account.
 
@@ -199,7 +201,7 @@ the PaymentIntent is created. This means that for booking or purchase
 times exceeding 90 days, the process needs to be modified.
 
 <extrainfo title="Manual or automatic payout?">
-In Stripe terms, the Flex integration uses manual payouts. This means
+In Stripe terms, the Sharetribe integration uses manual payouts. This means
 that Stripe does not automatically pay out the funds from the Connect 
 accounts e.g. daily or weekly, and instead the platform controls the payout
 schedule. Since the payouts are triggered by the transaction process, they happen
@@ -214,22 +216,24 @@ process is using the Stripe payout action.
 
 ### Modifications to the default process
 
-One of the strengths of Flex is that you have complete control over the
-transaction process. In terms of payments, you can make parallel paths
-depending on your payment strategy, and you can fine-tune the timeline
-of different actions to suit your marketplace.
+One of the strengths of Sharetribe is that you have complete control
+over the transaction process. In terms of payments, you can make
+parallel paths depending on your payment strategy, and you can fine-tune
+the timeline of different actions to suit your marketplace.
+
+<plan tier="extend" feature="Customizing your transaction process"></plan>
 
 You can edit the transaction processes on your marketplace with
-[Flex CLI](/how-to/edit-transaction-process-with-flex-cli/). If you use
-Sharetribe Web Template, you will also need to make some
-[changes in the template](/how-to/change-transaction-process-in-ftw/) to
-enable it to use a different process. If you do make changes to a
+[Sharetribe CLI](/how-to/edit-transaction-process-with-sharetribe-cli/).
+If you use Sharetribe Web Template, you will also need to make some
+[changes in the template](/how-to/change-transaction-process-in-template/)
+to enable it to use a different process. If you do make changes to a
 transaction process when you already have transactions in your
 environment, it is good to note that a transaction will proceed with the
 transaction process it was initiated with, and changing the transaction
 process of a single transaction is not possible. You can see the
 transaction process related to each transaction in
-[Flex Console](https://flex-console.sharetribe.com/) > Manage >
+[Sharetribe Console](https://console.sharetribe.com/) > Manage >
 Transactions.
 
 The transaction process also controls the automatic
@@ -245,15 +249,15 @@ As mentioned, the default purchase process combines the customer
 checkout and provider acceptance steps into a single customer action. In
 other words, the purchase is automatically accepted and paid as soon as
 the customer clicks to pay for the listing. The
-[flex-example-processes Github repository](https://github.com/sharetribe/flex-example-processes)
+[sharetribe-example-processes Github repository](https://github.com/sharetribe/sharetribe-example-processes)
 contains an example of a booking process called `instant-booking` that
 you can use to implement a similar flow for bookings in Sharetribe Web
 Template, as well as in any custom client application you may be using.
 
 #### Automatic off-session payments
 
-Another notable approach to modifying the payment timeline in Flex is
-the
+Another notable approach to modifying the payment timeline in Sharetribe
+is the
 [off-session payment pattern](/concepts/off-session-payments-in-transaction-process/).
 In an off-session payment, the customer checkout and provider acceptance
 happen when the customer books or purchases the listing, but the payment
@@ -264,24 +268,25 @@ receiving the product or service they purchased.
 
 ### Payment methods and currencies
 
-Flex supports multiple payment methods as a part of its Stripe
+Sharetribe supports multiple payment methods as a part of its Stripe
 integration. The default payment method is a payment card, which is what
 the Sharetribe Web Template uses. However, you can enable
 [other payment methods](/concepts/payment-methods-overview/) as well
 with moderate custom development work.
 
-The user can save a default payment method in Flex. If your marketplace
-uses the
+The user can save a default payment method in Sharetribe. If your
+marketplace uses the
 [automatic off-session payment flow](#automatic-off-session-payments),
 the customer must save their payment method so that the transaction
 process can try to automatically charge them at the specified moment.
 
-Flex does not determine a currency for listings. However, each listing
-needs to have a currency specified in its `price` attribute. The value
-for `price.amount` is given in the minor unit of `price.currency` (e.g.
-cents for USD). Flex Console displays listing prices based on the
-listing's currency. The Sharetribe Web Template has a single currency
-defined by default, to facilitate e.g. price filtering and sorting.
+Sharetribe does not determine a currency for listings. However, each
+listing needs to have a currency specified in its `price` attribute. The
+value for `price.amount` is given in the minor unit of `price.currency`
+(e.g. cents for USD). Sharetribe Console displays listing prices based
+on the listing's currency. The Sharetribe Web Template has a single
+currency defined by default, to facilitate e.g. price filtering and
+sorting.
 
 As the transaction progresses, the payment intent is created and charged
 from the customer's payment method in the listing's currency, or
@@ -307,7 +312,7 @@ for country-specific details on supported currencies.
 
 ## Sharetribe Web Template and Stripe
 
-The default Stripe integration in Flex works with any client
+The default Stripe integration in Sharetribe works with any client
 application. However, the Sharetribe Web Template is further configured
 to work hand in hand with Stripe:
 
@@ -319,7 +324,7 @@ to work hand in hand with Stripe:
 - _CheckoutPage.js_ and its subcomponent _CheckoutPageWithPayment.js_
   handle Stripe actions related to customer checkout, including creating
   and confirming the payment intent, with a single button click.
-- The customer can save their payment method to Flex either when
+- The customer can save their payment method to Sharetribe either when
   purchasing a listing, or on a separate Payment Methods page.
 
 ## Frequently asked questions
@@ -363,48 +368,47 @@ troubleshoot the problem.
   [Stripe payout issues](/concepts/solving-payout-problems/) for advice
   or ideas.
 
-If nothing seems to work, you can always contact Flex technical support
-through the chat widget in your
-[Flex Console](https://flex-console.sharetribe.com/) or
-[by email](mailto:flex-support@sharetribe.com) for further
-troubleshooting.
+If nothing seems to work, you can always contact Sharetribe technical
+support through the chat widget in your
+[Sharetribe Console](https://console.sharetribe.com/) or
+[by email](mailto:hello@sharetribe.com) for further troubleshooting.
 
-### How can I partially refund transactions in my Flex marketplace?
+### How can I partially refund transactions in my Sharetribe marketplace?
 
-The default Stripe integration in Flex only supports fully refunding
-PaymentIntents. If you have a use case where you would need to implement
-partial refunds, here are some options you can consider. All of these
-require some degree of custom development effort.
+The default Stripe integration in Sharetribe only supports fully
+refunding PaymentIntents. If you have a use case where you would need to
+implement partial refunds, here are some options you can consider. All
+of these require some degree of custom development effort.
 
 #### Multiple transactions for one purchase
 
-If you want to keep using the default Flex Stripe integration, you can
-look into triggering two transactions in Flex for a single purchase
-&mdash; one for the main price, and one for the refundable part of the
-price. Each transaction would have its own PaymentIntent towards Stripe,
-so you would need to implement separate transaction processes for each
-type of transaction to handle the PaymentIntents, and the payments would
-show up as two different charges on the customer's account. Furthermore,
-you would need to coordinate commission amounts, as well as the
-possibility of a full refund, e.g. if the booking is cancelled by the
-provider for one reason or another. Also bear in mind that if you
-trigger two transactions for the same payment method in quick
-succession, some card providers may flag this as suspect behavior, so
-you will need to consider the timing of the transactions carefully.
+If you want to keep using the default Sharetribe Stripe integration, you
+can look into triggering two transactions in Sharetribe for a single
+purchase &mdash; one for the main price, and one for the refundable part
+of the price. Each transaction would have its own PaymentIntent towards
+Stripe, so you would need to implement separate transaction processes
+for each type of transaction to handle the PaymentIntents, and the
+payments would show up as two different charges on the customer's
+account. Furthermore, you would need to coordinate commission amounts,
+as well as the possibility of a full refund, e.g. if the booking is
+cancelled by the provider for one reason or another. Also bear in mind
+that if you trigger two transactions for the same payment method in
+quick succession, some card providers may flag this as suspect behavior,
+so you will need to consider the timing of the transactions carefully.
 
 #### Partial third party payment integration
 
-In this option, you would use the Flex default payment integration up to
-the point where the payment gets captured onto the provider's Custom
-Connect account. You would then handle all payouts and refunds manually,
-i.e. outside the Flex transaction process &mdash; either in Stripe
-Dashboard, or through the Stripe API with your own integration. This
-would require you to keep track of the correct sums to be paid out for
-each transaction yourself. This option poses the risk of causing payout
-issues for completely unrelated transactions; Stripe does not separate
-funds by PaymentIntent, so a miscalculated excessive refund on a
-transaction between provider A and customer B may cause payout to fail
-for customer C on a different transaction. You can read more on
+In this option, you would use the Sharetribe default payment integration
+up to the point where the payment gets captured onto the provider's
+Custom Connect account. You would then handle all payouts and refunds
+manually, i.e. outside the Sharetribe transaction process &mdash; either
+in Stripe Dashboard, or through the Stripe API with your own
+integration. This would require you to keep track of the correct sums to
+be paid out for each transaction yourself. This option poses the risk of
+causing payout issues for completely unrelated transactions; Stripe does
+not separate funds by PaymentIntent, so a miscalculated excessive refund
+on a transaction between provider A and customer B may cause payout to
+fail for customer C on a different transaction. You can read more on
 [payout issues on manual refunds](/concepts/solving-payout-problems/#why-payouts-fail)
 to figure out what you would need to consider to implement this option
 successfully.
@@ -420,20 +424,19 @@ development. You can refer to our high-level instructions on
 to find out whether this option would best suit your needs.
 
 If you are contemplating partial refunds for your marketplace, you can
-also contact Flex technical support through the chat widget in your
-[Flex Console](https://flex-console.sharetribe.com/) or
-[by email](mailto:flex-support@sharetribe.com). Let us know your
-specific use case, and we may be able to recommend some avenues for you
-to explore.
+also contact Sharetribe technical support through the chat widget in
+your [Sharetribe Console](https://console.sharetribe.com/) or
+[by email](mailto:hello@sharetribe.com). Let us know your specific use
+case, and we may be able to recommend some avenues for you to explore.
 
-### Can I use Flex and not use Stripe?
+### Can I use Sharetribe and not use Stripe?
 
-You can absolutely use Flex without using Stripe. You might not use
-payments at all in your marketplace, or your platform operates in a
+You can absolutely use Sharetribe without using Stripe. You might not
+use payments at all in your marketplace, or your platform operates in a
 non&ndash;Stripe supported country, or you may have some other reason.
 
-Using the Flex backend without the Stripe integration is fairly simple.
-You will need to remove references to all
+Using the Sharetribe backend without the Stripe integration is fairly
+simple. You will need to remove references to all
 [Stripe-related transaction process actions](/references/transaction-process-actions/#stripe-integration)
 from your transaction processes, and avoid using
 [Stripe-related endpoints](https://www.sharetribe.com/api-reference/marketplace.html).

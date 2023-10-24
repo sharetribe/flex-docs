@@ -7,12 +7,11 @@ ingress: Learn how to configure your marketplace footer
 published: true
 ---
 
-The Footer section in the
-[Console](https://flex-console.sharetribe.com/) Build → Content allows
-you to create a footer for your marketplace, an important component that
-can enhance the navigation experience for your users by providing them
-with quick access to relevant content and links to social media
-channels.
+The Footer section in the [Console](https://console.sharetribe.com/)
+Build → Content allows you to create a footer for your marketplace, an
+important component that can enhance the navigation experience for your
+users by providing them with quick access to relevant content and links
+to social media channels.
 
 There are four elements in the footer that be customized:
 

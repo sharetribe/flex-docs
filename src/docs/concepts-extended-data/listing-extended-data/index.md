@@ -1,11 +1,11 @@
 ---
 title: Listing extended data
 slug: listing-extended-data
-updated: 2022-09-29
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   Listing extended data allows you to use the powerful search engine in
-  Flex, as well as customise your listing information.
+  Sharetribe, as well as customise your listing information.
 published: true
 ---
 
@@ -28,9 +28,13 @@ On the other hand, listing private data is available through the
 [ownListing endpoints](https://www.sharetribe.com/api-reference/marketplace.html#own-listings)
 in Marketplace API and
 [listing endpoints](https://www.sharetribe.com/api-reference/integration.html#listings)
-in Integration API. Private data can be used to allow the listing author
-to make private notes on the listing, since the information is not
-visible for the general marketplace audience.
+in Integration API.
+
+<plan tier="extend" feature="Access to Integration API"></plan>
+
+Private data can be used to allow the listing author to make private
+notes on the listing, since the information is not visible for the
+general marketplace audience.
 
 The listing's author can modify the listing's public and private data
 through the
@@ -38,7 +42,7 @@ through the
 create and update endpoints. An operator can modify all listing extended
 data, either through
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#listings)
-or in Flex Console.
+or in Sharetribe Console.
 
 ## Search and filtering
 
@@ -49,7 +53,7 @@ them narrow down results to a selection that best fits their needs.
 Extended data helps you build the custom search and filtering experience
 your marketplace needs.
 
-Listings can be searched by keyword or location using Flex’s
+Listings can be searched by keyword or location using Sharetribe’s
 [powerful built-in search feature](/concepts/how-the-listing-search-works/).
 In addition to this, you can use listing public extended data and
 metadata to create a variety of different types of filters; for example,
@@ -76,4 +80,4 @@ A marketplace can have several types of listings – rentals and sales,
 events and facilities. Listing extended data is a powerful way to
 distinguish different listing types. Read more about the possibilities
 for
-[different listing types in Flex](/concepts/listings-overview/#different-types-of-listings).
+[different listing types in Sharetribe](/concepts/listings-overview/#different-types-of-listings).

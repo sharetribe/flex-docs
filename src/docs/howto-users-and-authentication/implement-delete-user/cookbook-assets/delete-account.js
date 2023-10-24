@@ -2,8 +2,8 @@ const { getSdk, getTrustedSdk, handleError } = require('../api-util/sdk');
 
 // The list of non-final transitions depends on the transaction processes
 // being used on the marketplace. This list contains the non-final transitions
-// of flex-default-process i.e. the ones where we do not want to allow the user
-// to delete their account.
+// of an unmodified default-booking process i.e. the transitions where we do not want to
+// allow the user to delete their account.
 const nonFinalTransitions = [
   'transition/request-payment',
   'transition/request-payment-after-inquiry',

@@ -1,19 +1,22 @@
 ---
 title: How to change the default favicons
 slug: how-to-change-ftw-icons
-updated: 2023-01-01
-category: ftw-styling
+updated: 2023-10-24
+category: template-styling
 ingress:
-  This guide describes how to change the favicon and application icons
-  in the Sharetribe Web Template.
+  This guide describes how to use your own custom favicon and
+  application icons in the Sharetribe Web Template.
 published: true
 ---
 
-The default icons are generated using
-[RealFaviconGenerator](https://realfavicongenerator.net/). You can
-upload your original icon to the tool, customize the colors and themes,
-and download a generated set if icons and an HTML snippet to point to
-those images.
+By default, the Sharetribe Web Template uses favicons and application
+icons generated through Console. You can also use
+[RealFaviconGenerator](https://realfavicongenerator.net/) to generate
+your own set of favicons, if necessary.
+
+You can upload your original icon to the tool, customize the colors and
+themes, and download a generated set if icons and an HTML snippet to
+point to those images.
 
 ## Generate new favicons
 

@@ -1,7 +1,7 @@
 ---
 title: Enable Google login
 slug: enable-google-login
-updated: 2020-12-04
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   In this how-to guide we'll take a look at the process of setting up
@@ -12,7 +12,9 @@ published: true
 
 **If you are working with one of our legacy templates and are not sure
 whether Google login is enabled, take a look at our
-[legacy documentation](/ftw/legacy-templates/).**
+[legacy documentation](/template/legacy-templates/).**
+
+<plan tier="extend" feature="Using identity providers"></plan>
 
 Enabling Google login consists of three main steps:
 
@@ -20,10 +22,10 @@ Enabling Google login consists of three main steps:
   connects your marketplace to Google and let's Google know that users
   from your marketplace are allowed to authenticate themselves using the
   Google Sign-In.
-- **Create an identity provider client in Flex Console** Identity
-  provider (IdP) client is what let's Flex know that the users of your
-  marketplace are allowed to use the Google Sign-In Project you created
-  to log into your marketplace.
+- **Create an identity provider client in Sharetribe Console** Identity
+  provider (IdP) client is what let's Sharetribe know that the users of
+  your marketplace are allowed to use the Google Sign-In Project you
+  created to log into your marketplace.
 - **Configure Sharetribe Web Template** A few attributes from the
   Sign-In Project will need to be configured to Sharetribe Web Template
   so that it can perform the login flow via Google.
@@ -67,15 +69,15 @@ marketplace by following these steps:
 
 Now that your Google Sign-In project is all set up, a corresponding
 _identity provider client_ will need to be configured for your
-marketplace. This will tell Flex that your users will be allowed to log
-into your marketplace using the Google Sign-In you just created. The
-information stored in an IdP client is used to verify a token obtained
-from Google when a user logs in.
+marketplace. This will tell Sharetribe that your users will be allowed
+to log into your marketplace using the Google Sign-In you just created.
+The information stored in an IdP client is used to verify a token
+obtained from Google when a user logs in.
 
 An identity provider client can be configure with the following steps:
 
 1. Go to
-   [Social logins & SSO in Console](https://flex-console.sharetribe.com/social-logins-and-sso).
+   [Social logins & SSO in Console](https://console.sharetribe.com/advanced/social-logins-and-sso).
 2. Under _Identity provider clients_ click "+ Add new".
 3. Set "Client name". This can be anything you choose, for example,
    "Google login".
@@ -97,7 +99,7 @@ The IdP client config should now look something like this:
    clicking "+ Add new trusted client". In case you are using two
    distinct Google Sign-In projects, configure those as distinct clients
    in Console but always bundle all the client IDs of a single project
-   into one identity provider client in Flex Console.
+   into one identity provider client in Sharetribe Console.
 7. Click "Add client" and your identity provider client is ready.
 
 ## Configure Sharetribe Web Template
@@ -112,7 +114,7 @@ template:
 - **`GOOGLE_CLIENT_SECRET`** The Client Secret of your Google Sign-In.
 
 For more information on the template environment variables, see the
-[Template environment variables](/ftw/ftw-env/) article.
+[Template environment variables](/template/template-env/) article.
 
 That is it. Setting these environment variables will make Sharetribe Web
 Template render the Google login button in signup and login forms.

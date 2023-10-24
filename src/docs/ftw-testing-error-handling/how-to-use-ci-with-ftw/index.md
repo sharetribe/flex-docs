@@ -1,8 +1,8 @@
 ---
 title: Continuous integration
-slug: how-to-use-ci-with-ftw
+slug: how-to-use-ci-with-template
 updated: 2023-01-01
-category: ftw-testing-error-handling
+category: template-testing-error-handling
 ingress:
   This guide describes how the Continuous Integration (CI) setup works
   in the Sharetribe Web Template and how to enable it.

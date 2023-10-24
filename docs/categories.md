@@ -1,6 +1,6 @@
-# Categories in Flex Docs
+# Categories in Dev Docs
 
-Flex Docs is organised into the following functional categories:
+Dev Docs is organised into the following functional categories:
 
 - Tutorials
 - Concepts

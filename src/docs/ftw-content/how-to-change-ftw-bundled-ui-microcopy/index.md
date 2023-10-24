@@ -1,8 +1,8 @@
 ---
 title: Bundled marketplace texts
-slug: how-to-change-ftw-bundled-marketplace-texts
-updated: 2023-01-01
-category: ftw-content
+slug: how-to-change-bundled-marketplace-texts
+updated: 2023-10-24
+category: template-content
 ingress:
   This guide describes what bundled marketplace texts are, and how to
   make changes to them.
@@ -12,17 +12,18 @@ published: true
 The Sharetribe Web Template supports having a single language for the
 UI. Supported languages are English, French and Spanish, English being
 used by default. For information about changing the language, see the
-[Changing the language](/ftw/how-to-change-ftw-language/) article.
+[Changing the language](/template/how-to-change-template-language/)
+article.
 
 We use the [React Intl](https://github.com/yahoo/react-intl) library to
 represent UI marketplace texts and to format dates, numbers, and money
 values.
 
-In addition to bundled marketplace texts, Flex allows modifying
-marketplace texts through the Flex Console:
+In addition to bundled marketplace texts, Sharetribe allows modifying
+marketplace texts through the Sharetribe Console:
 
-- [Marketplace texts in Flex](/concepts/marketplace-texts/)
-- [How hosted marketpalace texts work in the template](/ftw/hosted-marketplace-texts/)
+- [Marketplace texts in Sharetribe](/concepts/marketplace-texts/)
+- [How hosted marketpalace texts work in the template](/template/hosted-marketplace-texts/)
 
 ## The marketplace text file
 

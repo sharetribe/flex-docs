@@ -1,18 +1,18 @@
 ---
 title: Transaction process format
 slug: transaction-process-format
-updated: 2022-02-09
+updated: 2023-10-24
 category: references
 ingress:
   This reference article describes the format of the process.edn file
-  that is used with Flex CLI to customise the transaction processes of
-  your marketplace.
+  that is used with Sharetribe CLI to customise the transaction
+  processes of your marketplace.
 published: true
 ---
 
 This reference guide assumes you know the basic idea and concepts, such
-as states, transitions and actions, of the Flex transaction process. If
-you don't, please check this
+as states, transitions and actions, of the Sharetribe transaction
+process. If you don't, please check this
 [background article about Transaction process](/concepts/transaction-process/)
 first.
 
@@ -155,7 +155,7 @@ The annotated process description for this process is as follows:
 
 ## The edn format
 
-The process description in Sharetribe Flex uses a format called
+The process description in Sharetribe Sharetribe uses a format called
 [edn](https://github.com/edn-format/edn). It's quite similar to JSON but
 it supports a few more primitive types, such as datetime values and
 keywords, and has some extra features. The syntax is also slightly
@@ -174,9 +174,9 @@ Processes have two different types of transitions. Initial transitions
 are used for creating new transactions whereas subsequent transitions
 move existing transactions forward in the process. An initial transition
 in the process definition has no `:from` state defined. When we render
-the process graph on [Console](https://flex-console.sharetribe.com) we
-show a synthetic state `state/initial` but this is not a state that is
-or should be defined in the process description.
+the process graph on [Console](https://console.sharetribe.com) we show a
+synthetic state `state/initial` but this is not a state that is or
+should be defined in the process description.
 
 In Marketplace API initial transitions are invoked via the
 [transactions/initiate](https://www.sharetribe.com/api-reference/marketplace.html#initiate-transaction)
@@ -321,7 +321,7 @@ reference article.
 ## Time expressions, delayed transitions and delayed notifications
 
 Time expressions can be used both with transitions and notifications to
-delay the execution. The Flex transaction engine exposes a set of
+delay the execution. The Sharetribe transaction engine exposes a set of
 timepoints that you can tie delays to as well as a small set of
 functions to further control the exact timing. The basic structure of a
 time expression is a map from function name to a list (vector) of
@@ -369,8 +369,8 @@ the provider.
 
 ## Validating and inspecting a process
 
-The flex-cli supports validating a local process description as well as
-showing basic information about the process and its transitions.
+The Sharetribe CLI supports validating a local process description as
+well as showing basic information about the process and its transitions.
 
 To validate a process and print overall process description (when it's
 valid) or validation errors:
@@ -417,7 +417,7 @@ Notifications
 
 Once you've pushed a new process version to your marketplace you can use
 the
-[Console process viewer](https://flex-console.sharetribe.com/transaction-processes)
+[Console process viewer](https://console.sharetribe.com/advanced/transaction-processes)
 to see the process graph and inspect transitions. This is currently the
 only place where you can see the parameters that a given transition
 requires and accepts.

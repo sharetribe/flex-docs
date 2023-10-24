@@ -33,10 +33,9 @@ no-code) tools before going live or anytime after.
 ## How to configure your marketplace without coding
 
 Building begins by changing the configurations of Biketribe, your
-example marketplace, in
-[Flex Console](https://flex-console.sharetribe.com/). You can set up
-your marketplace essentials like branding, layout, payments, listing
-fields, and listing types.
+example marketplace, in [Flex Console](https://console.sharetribe.com/).
+You can set up your marketplace essentials like branding, layout,
+payments, listing fields, and listing types.
 
 Some of these changes are must-haves: you'll likely want to change your
 logo and remove Biketribe branding. Others are optional: for example, if
@@ -62,7 +61,7 @@ Hosting your own code is a technical process and
 [we recommend hiring a Flex Expert](https://www.sharetribe.com/docs/operator-guides/how-to-hire-developer/)
 if you have never done this before. You can learn more about the
 technical steps involved in moving to Live in
-[this guide.](https://www.sharetribe.com/docs/ftw/how-to-deploy-ftw-to-production/#deploying-to-production)
+[this guide.](https://www.sharetribe.com/docs/template/how-to-deploy-template-to-production/#deploying-to-production)
 
 ## Extend infinitely with code
 

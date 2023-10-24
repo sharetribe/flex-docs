@@ -1,7 +1,7 @@
 ---
 title: Managing transaction data in Console
 slug: console-manage-transactions
-updated: 2022-04-13
+updated: 2023-10-24
 category: concepts-management
 ingress: Manage, review, monitor and transition transactions in Console
 published: true
@@ -52,7 +52,8 @@ The summary includes most of the information about the transaction.
   [stock reservations states](/references/stock/#stock-reservation-states).
 - Stock reservation quantity: The amount of stock reserved in this
   transaction.
-- Transaction ID: Unique ID of the transaction in the Flex database.
+- Transaction ID: Unique ID of the transaction in the Sharetribe
+  database.
 - Transaction process: You can have multiple
   [transaction processes](/concepts/transaction-process/) active in your
   marketplace and each transaction process can have multiple versions.
@@ -82,10 +83,11 @@ that transition in the timeline section.
 ### Activity
 
 [All customer interactions in your marketplace](/concepts/transaction-process/#users-interact-through-transactions)
-are considered transactions in Flex. In the activity section, you will
-see the history of the transaction. This includes all the transitions
-that have occurred already, similar to the Timeline section, interwoven
-with the communication that has happened within the transaction.
+are considered transactions in Sharetribe. In the activity section, you
+will see the history of the transaction. This includes all the
+transitions that have occurred already, similar to the Timeline section,
+interwoven with the communication that has happened within the
+transaction.
 
 The communication includes all the
 [notifications that have been sent](/references/transaction-process-format/#notifications)
@@ -108,10 +110,10 @@ it is seared in the transaction information. Transaction related
 protected data cannot be changed through Console.
 
 At the bottom of the transaction card, you find the Events section. It
-contains a Flex CLI command that you can use to view all the events
-related to this transaction. Read more about
-[viewing events with Flex CLI](/how-to/view-events-with-flex-cli/) or
-visit the [Events reference in our Docs site](/references/events/).
+contains a Sharetribe CLI command that you can use to view all the
+events related to this transaction. Read more about
+[viewing events with Sharetribe CLI](/how-to/view-events-with-sharetribe-cli/)
+or visit the [Events reference in our Docs site](/references/events/).
 
 ## Browse and Search transactions
 

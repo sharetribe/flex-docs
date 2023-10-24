@@ -9,7 +9,7 @@ published: true
 
 As it's name indicates it allows your users to search within your
 marketplace based on keywords. You can enable Keyword search from
-[the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
+[the Listing Search settings page in Console](https://console.sharetribe.com/a/listings/listing-search).
 
 The search returns listings that match the keywords searched. The match
 can be found in the text content of a listing. The listing attributes
@@ -53,4 +53,4 @@ your own. The default text is “Search bikes…”
 Yes. If your marketplace uses the location search, you can choose to
 display a "keyword" filter on your marketplace search page. You can
 enable this from
-[the Listing Search settings page in Console](https://flex-console.sharetribe.com/a/listings/listing-search).
+[the Listing Search settings page in Console](https://console.sharetribe.com/a/listings/listing-search).

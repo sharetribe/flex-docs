@@ -18,16 +18,15 @@ you would like more background on the Pages feature, consult this
 
 ### Gettings started
 
-Find the Pages feature in
-[Console](https://flex-console.sharetribe.com/). Navigate to your Test
-environment, pick the “Build” section from your top bar, select
-“Content” from the sub-menu, then select “Pages” from the left side
-menu. You should now see your default content pages (the About page, the
-Landing page, the Terms of use page, and the Policy page) ready for
-editing. You can also access the feature directly through the path
-https://flex-console.sharetribe.com/content/pages. Make sure that you
-are in the Test environment of your marketplace if you want to start
-modifying your Pages right away.
+Find the Pages feature in [Console](https://console.sharetribe.com/).
+Navigate to your Test environment, pick the “Build” section from your
+top bar, select “Content” from the sub-menu, then select “Pages” from
+the left side menu. You should now see your default content pages (the
+About page, the Landing page, the Terms of use page, and the Policy
+page) ready for editing. You can also access the feature directly
+through the path https://console.sharetribe.com/content/pages. Make sure
+that you are in the Test environment of your marketplace if you want to
+start modifying your Pages right away.
 
 If you don't have the default Pages available in Console and want to
 start trying out this feature, check out our article about
@@ -295,7 +294,7 @@ be completed.
 The footer or Top bar cannot be edited using Pages. Changing their
 content requires changing your marketplace code directly. Contact your
 developer if you need help with changes or follow our
-[developer documentation](https://www.sharetribe.com/docs/ftw/how-to-add-static-pages-in-ftw/)
+[developer documentation](https://www.sharetribe.com/docs/template/how-to-add-static-pages/)
 to learn more about editing the code of content pages.
 
 ## Publish your Page changes to Live

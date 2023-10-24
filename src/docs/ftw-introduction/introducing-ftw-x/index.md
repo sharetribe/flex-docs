@@ -1,8 +1,8 @@
 ---
 title: Sharetribe Web Template
 slug: sharetribe-web-template
-updated: 2023-01-01
-category: ftw-introduction
+updated: 2023-10-24
+category: template-introduction
 ingress:
   This article introduces the Sharetribe Web Template and links to
   relevant resources.
@@ -13,11 +13,8 @@ published: true
 
 [The Sharetribe Web Template](https://github.com/sharetribe/web-template)
 is a React template meant to function as a starting point for the
-development of your marketplace. It supports all the features available
-through the Sharetribe APIs, and is easily customized. For a complete
-list of features that are possible in the template, either natively or
-with custom development, see the
-[features article](/operator-guides/features/).
+development of your marketplace. It supports the features available
+through the Sharetribe APIs, and is easily customized.
 
 We recommend you be familiar with React, Redux and CSS Modules before
 you start working on the template. Read more about
@@ -62,9 +59,9 @@ more in the
   template works and how to customize it. A good place to start is the
   [tutorial](/tutorial/introduction/).
 
-- Start with the [configuration variables](/ftw/configuration/): the
-  template includes a number of configuration variables that can be used
-  to make quick and easy changes to the layout, branding, and
+- Start with the [configuration variables](/template/configuration/):
+  the template includes a number of configuration variables that can be
+  used to make quick and easy changes to the layout, branding, and
   functionality of the template. Experiment with these variables to see
   what kind of changes you can make.
 
@@ -72,8 +69,8 @@ more in the
   customizable, and you can make any desired changes to the code. There
   are no limits to how far you can customize the template. See our
   [catalog of how-to articles](/how-to/) or the
-  [customization checklist](/ftw/customization-checklist/) for advice
-  and inspiration.
+  [customization checklist](/template/customization-checklist/) for
+  advice and inspiration.
 
 ## Key differences from legacy templates
 
@@ -83,13 +80,13 @@ and **ftw-product**. The Sharetribe Web Template combines the features
 of the previous templates into one template and allows developers to
 enable features from each using configuration variables. If you are
 looking for documentation or information regarding the legacy templates,
-see the [legacy templates article](/ftw/legacy-templates/).
+see the [legacy templates article](/template/legacy-templates/).
 
 The new template introduces many changes. Here is a list that details
 the most important of them:
 
-- [Configurations](/ftw/configuration/) allow you to make a variety of
-  changes without touching code. You can toggle between different
+- [Configurations](/template/configuration/) allow you to make a variety
+  of changes without touching code. You can toggle between different
   layouts, change search options, add new extended data fields, and much
   more.
 - Handling extended data is significantly easier and can be done through
@@ -100,7 +97,7 @@ the most important of them:
   new transaction processes is more straightforward, and some of the
   work can be done through the transaction configuration file. Read more
   about how adding new transaction processes works in
-  [this article](/how-to/change-transaction-process-in-ftw/).
+  [this article](/how-to/change-transaction-process-in-template/).
 - StateData.js files are responsible for handling transaction state
   data. Read more
-  [about StateData](/how-to/change-transaction-process-in-ftw/#3-update-state-data-for-inbox-page-and-transaction-page).
+  [about StateData](/how-to/change-transaction-process-in-template/#3-update-state-data-for-inbox-page-and-transaction-page).

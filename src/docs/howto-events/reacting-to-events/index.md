@@ -1,26 +1,28 @@
 ---
 title: Reacting to events
 slug: reacting-to-events
-updated: 2020-12-15
+updated: 2023-10-24
 category: how-to-events
 ingress:
   This guide demonstrates how to build an integration that reacts to
-  events that happen in your Flex marketplace, using the Flex
-  Integration API.
+  events that happen in your Sharetribe marketplace, using the
+  Sharetribe Integration API.
 published: true
 ---
 
-One of the main purposes of [events](/references/events/) in Flex is to
-allow building integrations that programatically react to changes and
-actions in a marketplace. In this guide, we will show how to use the
-Flex Integration API to continuously query events efficiently. We will
-also demonstrate how to interpret the event data to detect actions,
+One of the main purposes of [events](/references/events/) in Sharetribe
+is to allow building integrations that programatically react to changes
+and actions in a marketplace. In this guide, we will show how to use the
+Sharetribe Integration API to continuously query events efficiently. We
+will also demonstrate how to interpret the event data to detect actions,
 using publishing a listing as an example.
 
-This guide assumes that you have already set up a Flex Integration API
-application and have a Node.js app with the
+<plan tier="extend" feature="Access to Integration API and events"></plan>
+
+This guide assumes that you have already set up a Sharetribe Integration
+API application and have a Node.js app with the
 [Integration API SDK](/concepts/js-sdk/) ready. If you have not yet used
-the Flex Integration API, follow the
+the Sharetribe Integration API, follow the
 [Getting started with the Integration API](/introduction/getting-started-with-integration-api/)
 guide first and you will be ready to proceed with this guide.
 
@@ -75,10 +77,10 @@ integrationSdk.events.query({
 });
 ```
 
-This would still give us all events with the given types that Flex keeps
-in history. In practice, often we are interested in _new_ events only.
-In the absense of another point of reference, it is possible to query
-events starting from a given timestamp:
+This would still give us all events with the given types that Sharetribe
+keeps in history. In practice, often we are interested in _new_ events
+only. In the absense of another point of reference, it is possible to
+query events starting from a given timestamp:
 
 ```javascript
 const now = new Date();
@@ -182,7 +184,7 @@ practice, an application that reacts to events needs to poll for new
 events continuously. In this section we will show how this is best
 achieved.
 
-In Flex, each event has a unique `sequenceId` and the
+In Sharetribe, each event has a unique `sequenceId` and the
 [sequence IDs are strictly increasing](/references//events/#event-sequence-ids).
 Moreover, the `/events/query` Integration API endpoint always returns
 events sorted by their sequence IDs in ascending order. This means that
@@ -237,7 +239,7 @@ factors, including:
 
 - how much activity there is in the marketplace
 - how important it is that the events are processed without delay
-- maintaining good practice when accessing the Flex APIs
+- maintaining good practice when accessing the Sharetribe APIs
 
 In most cases, a polling interval of 1-10 minutes may be completely
 sufficient. In cases were more rapid reaction is required, we highly
@@ -394,8 +396,8 @@ processing can be considered the safer choice in those cases.
 ## Additional resources
 
 - A
-  [full example](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js)
+  [full example](https://github.com/sharetribe/sharetribe-integration-api-examples/blob/master/scripts/notify-new-listings.js)
   Integration API application is available
-  [in the Integration API examples](https://github.com/sharetribe/flex-integration-api-examples/)
+  [in the Integration API examples](https://github.com/sharetribe/sharetribe-integration-api-examples/)
   repository
 - [Reference article](/references/events/) for events

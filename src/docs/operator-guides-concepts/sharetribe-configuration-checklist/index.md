@@ -25,17 +25,17 @@ no-code tools at your disposal.
 Modify the default brand and style to match your marketplace.
 
 - Apply your branding by changing the default images and marketplace
-  colours. Edit in [Console](https://flex-console.sharetribe.com/) or
-  learn more in the
+  colours. Edit in [Console](https://console.sharetribe.com/) or learn
+  more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 - Change the default background image and social media images. Edit in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
-- Change the logo. Edit in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+- Change the logo. Edit in [Console](https://console.sharetribe.com/) or
+  learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 - Generate a new favicon. Edit in
-  [Console](https://flex-console.sharetribe.com/) or learn more in
+  [Console](https://console.sharetribe.com/) or learn more in
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-add-good-looking-logos-and-images/).
 
 ### Content and marketplace texts
@@ -45,19 +45,19 @@ specific to any marketplace theme. Build your own messaging in the
 following steps.
 
 - Change the texts in your marketplace. Edit in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-edit-marketplace-texts/).
 - Change your marketplace landing page. Edit in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-to-edit-content-pages-in-console/).
 - Update your Terms of Service and Privacy Policy. Edit in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/free-templates/).
-- Update the footer. Edit in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+- Update the footer. Edit in [Console](https://console.sharetribe.com/)
+  or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-footer-works/).
 - Update your built-in emails. Edit in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/concepts/email-notifications/#built-in-email-notifications).
 
 ### Listings
@@ -67,16 +67,16 @@ fields and filters. Update the listing page, search page, and listing
 wizard to suit what your providers are offering on your marketplace.
 
 - Change your listing fields. Configure in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/listing-fields/).
 - Change your listing layout. Configure in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/listing-page-image-layouts/).
 - Change your search filters. Configure in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/how-search-works/).
 - Change your search page layout. Configure in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/search-page-layout-options/).
 
 ### Transactions
@@ -86,10 +86,10 @@ marketplace type you select during singup. Review your listing type and
 ensure you are using the right transaction process for your marketplace.
 
 - Update your listing types. Configure in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/what-are-listing-types/).
 - Choose your transaction process. Configure in
-  [Console](https://flex-console.sharetribe.com/) or learn more in the
+  [Console](https://console.sharetribe.com/) or learn more in the
   [documentation](https://www.sharetribe.com/docs/operator-guides/understanding-transaction-settings/).
 
 ## Go Live and customize further

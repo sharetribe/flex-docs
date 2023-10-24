@@ -1,7 +1,7 @@
 ---
 title: How Strong Customer Authentication works
 slug: strong-customer-authentication
-updated: 2021-10-04
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   This article gives an overview of Strong Customer Authentication, a
@@ -21,14 +21,25 @@ means that an online payment has to be verified via a customer’s online
 bank or mobile verification when conducting the payment.
 
 The default [transaction process](/concepts/transaction-process/) of
-Sharetribe Flex and the
+Sharetribe and the
 [Sharetribe Web Template](https://github.com/sharetribe/web-template/)
 offer out-of-the-box support for SCA. This article clarifies how exactly
 transactions using SCA will work in the default process.
 
-_Remember that this is just a default:_ you can make adjustments to this
-process as you wish, as long as you comply with the SCA requirements
-when dealing with payments by European customers.
+<plan tier="launch">
+
+Online payments in the Live environment are available in the Launch plan
+and above.
+
+</plan>
+
+<plan tier="extend">
+
+In the Extend plan, you can make adjustments to your transaction
+processes, as long as you comply with the SCA requirements when dealing
+with payments by European customers.
+
+</plan>
 
 ## How payment with SCA works
 
@@ -88,9 +99,9 @@ booking.
 ## Should you use SCA in your marketplace?
 
 If you want to be able to accept payments from European customers in
-your marketplace, your payment process must support SCA starting from
-September 14th, 2019. After this date, payments done by European credit
-cards with a payment process that doesn't support SCA might fail.
+your marketplace, your payment process must support SCA. Otherwise,
+payments done by European credit cards with a payment process that
+doesn't support SCA might fail.
 
 Even if you don't need to accept payments from European customers, it
 might still make sense for you to enable SCA for all transactions
@@ -111,18 +122,18 @@ causing you problems, enabling SCA can be a good idea.
 
 <info>
 
-If you created your Flex instance after July 2019, SCA is already
+If you created your Sharetribe instance after July 2019, SCA is already
 enabled in your marketplace. You don't need to do anything to make it
 work.
 
 </info>
 
-If your Flex instance was created before July 2019, you will need to
-update your transaction process.
+If your Sharetribe instance was created before July 2019, you will need
+to update your transaction process.
 [Learn more about how the transaction process supporting SCA and Stripe integration works](/concepts/payment-intents/).
 If you're developing on the Sharetribe Web Template, your user interface
 already supports SCA, but if you're using an old
-[legacy template](https://www.sharetribe.com/docs/ftw/legacy-templates/)
+[legacy template](https://www.sharetribe.com/docs/template/legacy-templates/)
 without this feature, you will also need to update your checkout user
 interface.
 [Learn more about how to take SCA and Payment Intents into use](/how-to/enable-payment-intents/).

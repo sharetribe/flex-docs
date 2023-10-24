@@ -1,7 +1,7 @@
 ---
 title: Enable Login as user
 slug: enable-login-as-user
-updated: 2020-06-01
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   This article guides you how to take into use the Login as user feature
@@ -24,8 +24,8 @@ messages, or initiate or transition transactions**.
 If you are using Sharetribe Web Template, this feature works out of the
 box. If you are using one of the legacy templates where this feature is
 not available by default, you can refer to our
-[legacy documentation](/ftw/legacy-templates/) for implementation
-instructions.
+**[legacy documentation](/template/legacy-templates/)** for
+implementation instructions.
 
 </info>
 

@@ -1,7 +1,7 @@
 ---
 title: Automatic off-session payments in transaction process
 slug: off-session-payments-in-transaction-process
-updated: 2023-09-04
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   With off-session payments, you can automatically charge your customers
@@ -19,7 +19,7 @@ is 90 days. Therefore, the maximum amount of time customers can book in
 advance is limited, if your transaction process follows this payment
 pattern.
 
-Flex API has capabilities for
+Sharetribe API has capabilities for
 [saving payment card details for future use](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer).
 In addition, it is possible to configure your transaction process in
 such a way that the customer is charged automatically off-session at a
@@ -28,6 +28,8 @@ with your web site or app), provided that they have saved a payment card
 to their account. This allows you to charge customers closer to their
 booking dates, so that the money can be held in Stripe throughout the
 booking period.
+
+<plan tier="extend" feature="Customizing your transaction process"></plan>
 
 Another way to use the off-session payment logic might be to create a
 pre-order functionality for a product marketplace. In a pre-order
@@ -44,9 +46,9 @@ Suppose your sauna rentals marketplace should allow customers to book
 saunas up to a year in advance, but the customer is only charged at a
 specified moment before the booking. The figure below illustrates how a
 part of your transaction process might look like. The
-[flex-example-processes Github repository](https://github.com/sharetribe/flex-example-processes/)
+[sharetribe-example-processes Github repository](https://github.com/sharetribe/sharetribe-example-processes/)
 contains
-[an example transaction process](https://github.com/sharetribe/flex-example-processes/tree/master/automatic-off-session-payment)
+[an example transaction process](https://github.com/sharetribe/sharetribe-example-processes/tree/master/automatic-off-session-payment)
 corresponding to the flow described.
 
 ![Example transaction process with delayed payment](tx-delayed-payments.png 'Example transaction process with delayed payment')
@@ -59,7 +61,7 @@ In this example, a transaction goes as follows:
 2. The provider verifies the request and accepts the booking.
 3. At a later point in time (1 month before the booking start time in
    this example, and 1 day before the booking start in the
-   [example process](https://github.com/sharetribe/flex-example-processes/tree/master/automatic-off-session-payment)),
+   [example process](https://github.com/sharetribe/sharetribe-example-processes/tree/master/automatic-off-session-payment)),
    an attempt is made to automatically charge the customer's stored
    payment card. If the charge succeeds, the transaction continues
    onwards.
@@ -97,9 +99,9 @@ reasons. For instance:
 - or the payment card might have expired.
 
 It is therefore always important to allow for a fallback payment path in
-your transaction process. In Flex, only one transition from a state can
-be triggered automatically, so a fallback payment path must trigger upon
-a user action, as in the example.
+your transaction process. In Sharetribe, only one transition from a
+state can be triggered automatically, so a fallback payment path must
+trigger upon a user action, as in the example.
 
 You can build upon this example and extend it to make the payment
 process more robust. For instance, in case the customer fails to pay for
@@ -113,7 +115,7 @@ not yet been charged.
 ## Considerations about implementation in Sharetribe Web Template
 
 If you want to implement
-[the example process](https://github.com/sharetribe/flex-example-processes/tree/master/automatic-off-session-payment)
+[the example process](https://github.com/sharetribe/sharetribe-example-processes/tree/master/automatic-off-session-payment)
 in your user interface, there are multiple ways to do so. If your user
 interface is based on the Sharetribe Web Template, here are a few things
 worth considering.

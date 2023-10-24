@@ -4,13 +4,7 @@ import noScroll from 'no-scroll';
 
 import { baselineBreakpoint, baselineLarge } from '../config';
 
-import {
-  BaseLayout,
-  Topbar,
-  Footer,
-  Sidebar,
-  VersionBanner,
-} from '../components';
+import { BaseLayout, Topbar, Footer, Sidebar } from '../components';
 
 const hasWindow = typeof window !== 'undefined';
 const getWindowDimensions = () => {
@@ -124,10 +118,7 @@ const MainLayout = props => {
           <SidebarArea isOpen={isOpen}>
             <Sidebar activeArticle={activeArticle} />
           </SidebarArea>
-          <Content>
-            <VersionBanner />
-            {children}
-          </Content>
+          <Content>{children}</Content>
         </WrapperSidebar>
         <Footer />
       </WrapperTopbar>

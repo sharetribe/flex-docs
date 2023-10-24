@@ -1,8 +1,8 @@
 ---
 title: Sanitizing user-generated content
-slug: how-to-sanitize-user-generated-content-in-ftw
-updated: 2023-01-01
-category: ftw-security
+slug: how-to-sanitize-user-generated-content
+updated: 2023-10-24
+category: template-security
 ingress:
   This guide describes how to sanitize user-generated content to prevent
   XSS vulnerabilities.
@@ -79,7 +79,7 @@ before saving.
 
 ## Further reading
 
-- [How to set up Content Security Policy](/ftw/how-to-set-up-csp-for-ftw/)
+- [How to set up Content Security Policy](/template/how-to-set-up-csp-for-template/)
 - [JSX prevents injection attacks](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
 - [OWASP XSS prevention cheat sheet](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md)
 - https://mathiasbynens.github.io/rel-noopener/

@@ -1,7 +1,7 @@
 ---
 title: Modify booking time intervals in time-based listings
 slug: modify-time-intervals
-updated: 2023-01-23
+updated: 2023-10-24
 category: how-to-listing
 ingress:
   This guide describes how to modify booking time intervals in hourly
@@ -9,8 +9,8 @@ ingress:
 published: true
 ---
 
-In Flex, listings can have either day-based or time-based availability.
-For listings with time-based availability, the available
+In Sharetribe, listings can have either day-based or time-based
+availability. For listings with time-based availability, the available
 [time slots](https://www.sharetribe.com/api-reference/marketplace.html#time-slots)
 are returned from the API as continuous stretches of time. The client
 application must therefore split the availability into suitable booking

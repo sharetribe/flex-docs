@@ -1,7 +1,7 @@
 ---
 title: User extended data
 slug: user-extended-data
-updated: 2022-09-29
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   User extended data allows you to distinguish between different types
@@ -27,6 +27,8 @@ endpoint. Operators can see all user extended data through the
 [user retrieval endpoints](https://www.sharetribe.com/api-reference/integration.html#users)
 in Integration API.
 
+<plan tier="extend" feature="Access to Integration API"></plan>
+
 Authenticated users are able to modify their own public, protected and
 private extended data through the
 [current user creation and update endpoints](https://www.sharetribe.com/api-reference/marketplace.html#current-user)
@@ -37,8 +39,8 @@ in Integration API.
 
 ## Types of users
 
-By default, Flex marketplace users have the capabilities to be both
-providers and customers. However, you may want to limit those
+By default, Sharetribe marketplace users have the capabilities to be
+both providers and customers. However, you may want to limit those
 capabilities, for instance by only allowing verified marketplace users
 to create listings. Or you may want to have a three-way marketplace
 where only one type of participant can be in several roles – yoga
@@ -62,6 +64,8 @@ participant of the transaction. This type of information can include
 contact information such as phone numbers, or e.g. instructions to
 access a listing's goods or services in some other way.
 
+<plan tier="extend" feature="Customizing your transaction process"></plan>
+
 As a part of your marketplace's transaction process, then, you can have
 an action that reveals the user's protected data in the transaction. In
 other words, the revealed protected data becomes also available in the
@@ -79,5 +83,5 @@ To facilitate user querying, it is possible to filter users also by
 extended data when calling the endpoint. That way, you can segment your
 users by important attributes for more fine-grained processing. To
 filter users by extended data, you will need to
-[create a search schema](/how-to/manage-search-schemas-with-flex-cli/)
+[create a search schema](/how-to/manage-search-schemas-with-sharetribe-cli/)
 for the user profile.

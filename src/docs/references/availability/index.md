@@ -1,16 +1,17 @@
 ---
 title: Listing availability management
 slug: availability
-updated: 2020-10-05
+updated: 2023-10-24
 category: references
 ingress: Reference documentation for listing availability management.
 published: true
 ---
 
-The listing availability management features of Flex allow providers to
-define when (and when not) their listings are available for booking.
-There are three different concepts related to availability management
-that together define whether a certain time or day is available on not:
+The listing availability management features of Sharetribe allow
+providers to define when (and when not) their listings are available for
+booking. There are three different concepts related to availability
+management that together define whether a certain time or day is
+available on not:
 
 - An **availability plan** can be defined for each listing. It comprises
   of general availability rules for each day of the week. For instance

@@ -6,17 +6,14 @@
  */
 
 const sortingArrayIntroduction = [
-  'introducing-flex',
-  'getting-started-with-ftw-daily',
-  'how-to-build-and-launch-with-flex',
-  'is-flex-right-for-you',
+  'introducing-sharetribe-developer-platform',
   'development-skills',
   'introducing-template',
 ];
 
 const sortingArrayIntroductionGettingStarted = [
   'getting-started-with-web-template',
-  'getting-started-with-flex-cli',
+  'getting-started-with-sharetribe-cli',
   'getting-started-with-integration-api',
 ];
 
@@ -74,7 +71,7 @@ const sortingArrayTransactionProcess = [
 ];
 
 const sortingArrayUsersAndAuthentication = [
-  'users-and-authentication-in-flex',
+  'users-and-authentication-in-sharetribe',
   'social-logins-and-sso',
 ];
 
@@ -98,14 +95,14 @@ const sortingArrayManageConsole = [
 
 const sortingArrayDevelopment = [
   'applications',
-  'flex-environments',
+  'sharetribe-environments',
   'console-overview',
 ];
 
 const sortingArrayContentManagement = [
   'content-management',
   'headless-content-management',
-  'microcopy',
+  'marketplace-texts',
 ];
 
 const sortingArrayHowToUsers = [
@@ -117,18 +114,18 @@ const sortingArrayHowToUsers = [
   'implement-delete-user',
 ];
 
-const sortingArrayFTWContent = [
-  'how-to-change-ftw-ui-texts',
-  'how-to-change-ftw-bundled-microcopy',
-  'hosted-microcopy',
-  'how-to-change-ftw-language',
+const sortingArrayTemplateContent = [
+  'how-to-change-template-ui-texts',
+  'how-to-change-bundled-marketplace-texts',
+  'hosted-marketplace-texts',
+  'how-to-change-template-language',
   'page-builder',
-  'how-to-add-static-pages-in-ftw',
+  'how-to-add-static-pages',
 ];
 
-const sortingArrayFTWIntroduction = [
+const sortingArrayTemplateIntroduction = [
   'sharetribe-web-template',
-  'how-to-customize-ftw',
+  'how-to-customize-template',
   'customization-checklist',
 ];
 
@@ -139,7 +136,7 @@ const sortingArrayListings = [
 ];
 
 const sortingArrayHowToListings = [
-  'extend-listing-data-in-ftw',
+  'extend-listing-data-in-template',
   'modify-time-intervals',
   'bookings-with-buffer',
 ];
@@ -276,27 +273,27 @@ exports.siteStructure = [
   },
 
   {
-    id: 'ftw',
+    id: 'template',
     isOpen: false,
     subcategories: [
       {
-        id: 'ftw-introduction',
-        sortingArray: sortingArrayFTWIntroduction,
+        id: 'template-introduction',
+        sortingArray: sortingArrayTemplateIntroduction,
       },
-      { id: 'ftw-configuration' },
+      { id: 'template-configuration' },
       {
-        id: 'ftw-content',
-        sortingArray: sortingArrayFTWContent,
+        id: 'template-content',
+        sortingArray: sortingArrayTemplateContent,
       },
-      { id: 'ftw-styling' },
-      { id: 'ftw-routing' },
-      { id: 'ftw-data-flow' },
-      { id: 'ftw-search' },
-      { id: 'ftw-security' },
-      { id: 'ftw-testing-error-handling' },
-      { id: 'ftw-hosting' },
-      { id: 'ftw-analytics' },
-      { id: 'ftw-legacy' },
+      { id: 'template-styling' },
+      { id: 'template-routing' },
+      { id: 'template-data-flow' },
+      { id: 'template-search' },
+      { id: 'template-security' },
+      { id: 'template-testing-error-handling' },
+      { id: 'template-hosting' },
+      { id: 'template-analytics' },
+      { id: 'template-legacy' },
     ],
   },
 

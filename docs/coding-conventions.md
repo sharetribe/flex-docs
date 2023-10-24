@@ -1,4 +1,4 @@
-# Flex Docs coding conventions
+# Dev Docs coding conventions
 
 Here are some common guidelines for making components and styling them.
 

@@ -82,7 +82,7 @@ example, the Listing resource includes availability calendar features,
 so it can be used to create custom booking and reservation experiences.
 
 You can learn more about the User resource
-[here](https://www.sharetribe.com/docs/concepts/users-and-authentication-in-flex/),
+[here](https://www.sharetribe.com/docs/concepts/users-and-authentication-in-sharetribe/),
 the Listing resource
 [here](https://www.sharetribe.com/docs/concepts/listings-overview/), and
 the Transaction resource
@@ -114,7 +114,7 @@ Sharetribe built other templates called "Flex Templates for Web." The
 Sharetribe Web Template is an upgrade on these templates and combines
 their functionalities into a single code base. You can find more
 information about these legacy templates
-[here](https://www.sharetribe.com/docs/ftw/legacy-templates/).
+[here](https://www.sharetribe.com/docs/template/legacy-templates/).
 
 ### Environments
 
@@ -417,7 +417,7 @@ understands booking increments as small as 5 minutes.
 Syncing information between an availability calendar in Flex and a 3rd
 party calendar service is possible with custom development. The extent
 of the work required depends on your needs and the calendar. Please
-contact our support team at flex-support@sharetribe.com if you have any
+contact our support team at hello@sharetribe.com if you have any
 questions about building such a feature.
 
 ### Seats
@@ -478,7 +478,7 @@ You can learn more about transaction email notifications
 
 It is possible to send SMS notifications too, but this requires a 3rd
 party integration. You may
-[use Zapier](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-flex-using-twilio-and-zapier)
+[use Zapier](https://www.sharetribe.com/docs/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-using-twilio-and-zapier)
 to send such emails or build bespoke integrations into tools like
 Twilio.
 

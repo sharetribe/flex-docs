@@ -1,30 +1,31 @@
 ---
 title: How the template renders content pages
 slug: page-builder
-updated: 2023-14-02
-category: ftw-content
+updated: 2023-10-24
+category: template-content
 ingress:
   This article introduces how the Sharetribe Web Template uses the Pages
   feature to generate content pages.
 published: true
 ---
 
-The Pages feature allows you to add, edit and manage content in Flex
-Console. Once you have created content in Console, you can query it
-through the Asset Delivery API, which returns the data structured as
-JSON. The Sharetribe Web Template contains features that automatically
-render content pages from Page Asset Data. This article will walk you
-through the logic used to render these pages in the template.
+The Pages feature allows you to add, edit and manage content in
+Sharetribe Console. Once you have created content in Console, you can
+query it through the Asset Delivery API, which returns the data
+structured as JSON. The Sharetribe Web Template contains features that
+automatically render content pages from Page Asset Data. This article
+will walk you through the logic used to render these pages in the
+template.
 
 <extrainfo title="I am using a legacy template without Pages support">
 
-Read more about the code-level changes introduced to the legacy FTW
+Read more about the code-level changes introduced in the legacy FTW
 templates in the release notes of
 [version 10.0.0](https://github.com/sharetribe/ftw-daily/releases/tag/v10.0.0).
 
 You can find instructions on adding the Pages capability into your
 legacy template
-[in our legacy documentation](https://www.sharetribe.com/docs/ftw/legacy-templates/).
+[in our legacy documentation](https://www.sharetribe.com/docs/template/legacy-templates/).
 
 </extrainfo>
 
@@ -37,7 +38,7 @@ questions” page or a “Terms of Service” page. These pages have long
 sections of written text that might include images, links and videos.
 
 In older versions of our
-[legacy templates](https://www.sharetribe.com/docs/ftw/legacy-templates/),
+[legacy templates](https://www.sharetribe.com/docs/template/legacy-templates/),
 the data on these content pages was hard-coded into the corresponding
 page file. For instance, the content of the About Page was
 [written directly into the code](https://github.com/sharetribe/ftw-daily/blob/7a2f9b0557607533097761c063f7f98d7c8bfc1a/src/containers/AboutPage/AboutPage.js)
@@ -101,9 +102,10 @@ different client applications.
 ### Routing and loadData calls
 
 Sharetribe Web Template uses React Router to
-[create routes](/ftw/how-routing-works-in-ftw/) to different pages. This
-is best demonstrated through an example. When a user navigates to the
-about page, it triggers the loadData function specified in
+[create routes](/template/how-routing-works-in-template/) to different
+pages. This is best demonstrated through an example. When a user
+navigates to the about page, it triggers the loadData function specified
+in
 [routeConfiguration.js](https://github.com/sharetribe/web-template/blob/main/src/routing/routeConfiguration.js#L76):
 
 ```js
@@ -116,7 +118,7 @@ about page, it triggers the loadData function specified in
 ```
 
 In
-[legacy templates](https://www.sharetribe.com/docs/ftw/legacy-templates/),
+[legacy templates](https://www.sharetribe.com/docs/template/legacy-templates/),
 no loadData function was defined for the privacy policy path, as the
 page's content was hard coded. Now, as the content of the page is
 fetched using an API call, a loadData function is specified in
@@ -316,10 +318,10 @@ see a fallback page with the title "Maintenance mode".
 To fix the situation, make sure that you have added the following
 mandatory configurations in your Console:
 
-- [Branding](https://flex-console.sharetribe.com/a/design/branding)
-- [Listing type](https://flex-console.sharetribe.com/a/listings/listing-types)
-- [Listing fields](https://flex-console.sharetribe.com/a/listings/listing-fields)
-- [Minimum transaction size](https://flex-console.sharetribe.com/a/transactions/minimum-transaction-size)
+- [Branding](https://console.sharetribe.com/a/design/branding)
+- [Listing type](https://console.sharetribe.com/a/listings/listing-types)
+- [Listing fields](https://console.sharetribe.com/a/listings/listing-fields)
+- [Minimum transaction size](https://console.sharetribe.com/a/transactions/minimum-transaction-size)
 
 After you have made sure you have all these configurations added in your
 Console, refresh the browser. Your marketplace should now show up with
@@ -339,7 +341,7 @@ your environment variables. The marketplace uses the Client ID to fetch
 your marketplace assets through our API.
 
 You might also see the "maintenance mode" message if a
-[Listing Field ID](/operator-guides/how-to-add-and-edit-listing-fields/#adding-a-new-field)
+[Listing Field ID](https://www.sharetribe.com/help/en/articles/8413285-how-to-add-and-edit-listing-fields)
 you've defined via Console clashes with any of the
 [built-in public data fields](https://github.com/sharetribe/web-template/blob/main/src/util/configHelpers.js#L25-L33).
 If this is the case, you will see a message about this when you open the
@@ -350,4 +352,4 @@ console view in your browser's developer tools tab.
 All Sharetribe Web Template versions support Pages. If you want to add
 Pages capabilities to an older template that does not support Pages, you
 can review
-[the instructions in our legacy documentation](https://www.sharetribe.com/docs/legacy/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).
+[the instructions in our legacy documentation](https://www.sharetribe.com/docs/legacy/template/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).

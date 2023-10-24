@@ -1,7 +1,7 @@
 ---
 title: Manage user data in Console
 slug: console-manage-users
-updated: 2022-04-13
+updated: 2023-10-24
 category: concepts-management
 ingress: Manage, edit, add, and browse user information in Console
 published: true
@@ -50,11 +50,11 @@ deleted, but the content of the bio, name, and email, can be modified
 directly through Console. You cannot make changes to the Stripe ID,
 which depends on the information provided by Stripe when the user
 connects their bank account details to their profile, and the User ID,
-which is a unique identifier within the Flex database.
+which is a unique identifier within the Sharetribe database.
 
 Below the overview, you have separate sections for each type of extended
-data. Extended data is a Flex feature that allows you to customize and
-collect user, listing, and transaction data specific to your
+data. Extended data is a Sharetribe feature that allows you to customize
+and collect user, listing, and transaction data specific to your
 marketplace. You can read
 [an introduction to extended data](/concepts/extended-data-introduction/)
 to learn more. All extended data can be edited directly through Console.
@@ -62,10 +62,10 @@ You can change existing field values or even add new extended data
 fields.
 
 At the bottom of the user card, you have the Events section. It contains
-a Flex CLI command that you can use to view all the events related to
-this user. Read more about
-[viewing events with Flex CLI](/how-to/view-events-with-flex-cli/) or
-visit the [Events reference in our Docs site](/references/events/).
+a Sharetribe CLI command that you can use to view all the events related
+to this user. Read more about
+[viewing events with Sharetribe CLI](/how-to/view-events-with-sharetribe-cli/)
+or visit the [Events reference in our Docs site](/references/events/).
 
 ## Browse and search users
 

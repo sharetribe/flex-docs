@@ -1,7 +1,7 @@
 ---
 title: Create a test environment
 slug: deploy-to-render
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-branding
 ingress:
   Deploy your marketplace to a cloud hosting platform to share it with
@@ -142,15 +142,15 @@ You then need to add the following environment variables:
 
 - `REACT_APP_SHARETRIBE_SDK_CLIENT_ID`
 
-  Flex client ID. Check this from
-  [Console](https://flex-console.sharetribe.com/applications). For a dev
-  environment that is meant for developing further features, use the
+  Sharetribe client ID. Check this from
+  [Console](https://console.sharetribe.com/advanced/applications). For a
+  dev environment that is meant for developing further features, use the
   client ID from your _development environment_.
 
 - `SHARETRIBE_SDK_CLIENT_SECRET`
 
-  Flex client secret. Check this from
-  [Console](https://flex-console.sharetribe.com/applications).
+  Sharetribe client secret. Check this from
+  [Console](https://console.sharetribe.com/advanced/applications).
 
 - `REACT_APP_STRIPE_PUBLISHABLE_KEY`
 
@@ -196,8 +196,9 @@ You then need to add the following environment variables:
 - `REACT_APP_CSP`
 
   Content Security Policy (CSP). Read more from
-  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br /> Accepts values:
-  _block_ and _report_. The recommended value is _block_.
+  [this article](/template/how-to-set-up-csp-for-template/).<br />
+  Accepts values: _block_ and _report_. The recommended value is
+  _block_.
 
 - `REACT_APP_AVAILABILITY_ENABLED`
 

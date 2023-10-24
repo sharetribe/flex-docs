@@ -1,21 +1,28 @@
 ---
-title: Flex Marketplace API and Integration API
+title: Sharetribe Marketplace API and Integration API
 slug: marketplace-api-integration-api
-updated: 2019-11-27
+updated: 2023-10-24
 category: concepts-api-sdk
 ingress:
-  Description of the different Flex APIs and how to choose which one to
-  use
+  Description of the different Sharetribe APIs and how to choose which
+  one to use
 published: true
 ---
 
 ## Introduction
 
-Flex provides two different main APIs for interacting with the
+Sharetribe provides two different main APIs for interacting with the
 marketplace and accessing its data: the _Marketplace API_ and the
-_Integration API_. In addition, Flex has also the _Authentication API_,
-which is used to authenticate and obtain access credentials that are
-needed to access both the Marketplace API and the Integration API.
+_Integration API_. In addition, Sharetribe also has the _Authentication
+API_, which is used to authenticate and obtain access credentials that
+are needed to access both the Marketplace API and the Integration API.
+
+<info>
+
+For more information about the Asset Delivery API, see our
+**[reference documentation](/references/assets/)**.
+
+</info>
 
 ## When to use the Marketplace API
 
@@ -40,11 +47,13 @@ individual user should not access, such as other users' private data,
 transactions, or messages.
 
 The easiest way to access the Marketplace API is to use the
-[Flex SDK for JavaScript](/concepts/js-sdk/#flex-sdk-for-javascript).
+[Sharetribe SDK for JavaScript](/concepts/js-sdk/#sharetribe-sdk-for-javascript).
 See also the
 [Marketplace API reference documentation](https://www.sharetribe.com/api-reference/marketplace.html).
 
 ## When to use the Integration API
+
+<plan tier="extend" feature="Access to Integration API"></plan>
 
 The Integration API allows trusted secure applications to access the
 entire marketplace data: all users, listings, transactions, messages,
@@ -70,7 +79,7 @@ applications:
 - Custom tooling for operators managing the marketplace
 
 The easiest way to access the Integration API is to use the
-[Flex Integration SDK for JavaScript](/concepts/js-sdk/#flex-integration-sdk-for-javascript).
+[Sharetribe Integration SDK for JavaScript](/concepts/js-sdk/#sharetribe-integration-sdk-for-javascript).
 See also the
 [Integration API reference documentation](https://www.sharetribe.com/api-reference/integration.html).
 

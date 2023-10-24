@@ -1,7 +1,7 @@
-# Writing articles for Flex Docs
+# Writing articles for Dev Docs
 
 This document is for people adding articles or editing article contents
-in the Flex Docs site.
+in the Dev Docs site.
 
 ## Choosing the correct category
 
@@ -57,7 +57,7 @@ The URL to the article is constructed from the `category` and the `slug`
 in the article frontmatter. The final URL will be:
 
 ```bash
-https://www.sharetribe.com / docs        / introduction / introducing-flex /
+https://www.sharetribe.com / docs        / introduction / introducing-sharetribe /
 | domain                   | path prefix | category   | slug             | trailing slash
 ```
 
@@ -89,8 +89,8 @@ to see what's possible and how everything renders in the dev server.
 ### Internal links
 
 Extra note must be added for links within the article content that point
-to pages within the Flex Docs site. Because the production environment
-is running within the `/docs` path prefix and the development server is
+to pages within the Dev Docs site. Because the production environment is
+running within the `/docs` path prefix and the development server is
 just running in the localhost root `/`, the internal links **should not
 have the `/docs` prefix**. That is added automatically.
 
