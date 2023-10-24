@@ -1,36 +1,27 @@
 {
   "_editor": {
     "editorTitle": "Edit page \"{asset-name}\"",
+    "editorDescription": "A page consists of a number of sections. Each section can have a title, a description, a call-to-action and a number of Content Blocks. Section Template and Section Appearance allow you to customize the layout and look and feel of the section. [Learn more about editing content pages](https://www.sharetribe.com/help/en/articles/8387209-how-to-edit-a-content-page).",
     "viewLink": {
       "label": "View page",
       "url": "{marketplaceUrl}/preview?asset-path={assetPath}"
     },
     "component": "tabs",
-    "order": [
-      "sections",
-      "meta"
-    ]
+    "order": ["sections", "meta"]
   },
   "type": "object",
   "properties": {
     "meta": {
       "title": "SEO & Social",
       "type": "object",
-      "_editor": {
-        "component": "frame",
-        "hideTitle": true
-      },
+      "_editor": { "component": "frame", "hideTitle": true },
       "properties": {
         "pageTitle": {
           "type": "object",
-          "_editor": {
-            "noMargin": true
-          },
+          "_editor": { "noMargin": true },
           "properties": {
             "fieldType": {
-              "_editor": {
-                "component": "hidden"
-              },
+              "_editor": { "component": "hidden" },
               "const": "metaTitle",
               "default": "metaTitle"
             },
@@ -44,14 +35,10 @@
         },
         "pageDescription": {
           "type": "object",
-          "_editor": {
-            "noMargin": true
-          },
+          "_editor": { "noMargin": true },
           "properties": {
             "fieldType": {
-              "_editor": {
-                "component": "hidden"
-              },
+              "_editor": { "component": "hidden" },
               "default": "metaDescription",
               "const": "metaDescription"
             },
@@ -64,14 +51,10 @@
         },
         "socialSharing": {
           "type": "object",
-          "_editor": {
-            "noMargin": true
-          },
+          "_editor": { "noMargin": true },
           "properties": {
             "fieldType": {
-              "_editor": {
-                "component": "hidden"
-              },
+              "_editor": { "component": "hidden" },
               "const": "openGraphData",
               "default": "openGraphData"
             },
@@ -91,26 +74,17 @@
               "description": "Displayed when someone shares the page in social media. The image should have a 1.91:1 aspect ratio and minimum dimensions of 1200x630 pixels. It should not exceed 20MB in size.",
               "_editor": {
                 "component": "imageUpload",
-                "accept": [
-                  "image/png",
-                  "image/jpeg"
-                ],
+                "accept": ["image/png", "image/jpeg"],
                 "assetNamePrefix": "social-image",
                 "label": "Upload an image..."
               },
               "properties": {
                 "_ref": {
                   "type": "object",
-                  "_editor": {
-                    "component": "hidden"
-                  },
+                  "_editor": { "component": "hidden" },
                   "properties": {
-                    "resolver": {
-                      "const": "image"
-                    },
-                    "target": {
-                      "type": "string"
-                    },
+                    "resolver": { "const": "image" },
+                    "target": { "type": "string" },
                     "params": {
                       "const": {
                         "variants": {
@@ -137,31 +111,14 @@
     },
     "sections": {
       "_editor": {
+        "fallbackHeadingKey": "sectionId",
         "subheadingKey": "sectionType",
         "hideTitle": true,
         "component": "cardList",
-        "headingKey": {
-          "__features": [
-            "section-name",
-            "sectionName",
-            "sectionId"
-          ]
-        },
-        "fallbackHeadingKey": {
-          "__features": [
-            "section-name",
-            "sectionId"
-          ]
-        },
-        "headingDefaultLabel": {
-          "__features": [
-            "section-name",
-            "Section name not given",
-            "Section ID not given"
-          ]
-        },
+        "headingKey": "sectionName",
         "subheadingDefaultLabel": "Section type not selected",
         "addNewLabel": "Add a new section",
+        "headingDefaultLabel": "Section name not given",
         "colorTheme": "light",
         "deleteLabel": "Delete section..."
       },
@@ -170,84 +127,39 @@
       "maxItems": 20,
       "items": {
         "_editor": {
-          "order": {
-            "__features": [
-              "section-name",
-              [
-                "sectionName",
-                "sectionType",
-                "numColumns",
-                "*",
-                "blocks",
-                "sectionId"
-              ],
-              [
-                "sectionId",
-                "sectionType",
-                "numColumns",
-                "*",
-                "blocks"
-              ]
-            ]
-          }
+          "order": [
+            "sectionName",
+            "sectionType",
+            "numColumns",
+            "*",
+            "blocks",
+            "sectionId"
+          ]
         },
         "title": "Section details",
         "type": "object",
         "properties": {
           "sectionName": {
-            "__features": [
-              "section-name",
-              {
-                "_editor": {
-                  "placeholder": "Give your section a name..."
-                },
-                "type": "string",
-                "title": "Section name",
-                "description": "Section name is not shown on the page. It just helps you remember what the section is about."
-              }
-            ]
+            "_editor": { "placeholder": "Give your section a name..." },
+            "type": "string",
+            "title": "Section name",
+            "description": "Section name is not shown on the page. It just helps you remember what the section is about."
           },
           "sectionId": {
-            "__features": [
-              "section-name",
-              {
-                "_editor": {
-                  "errorMessages": {
-                    "pattern": "You've added characters that are not allowed."
-                  },
-                  "placeholder": "anchor-link-id"
-                },
-                "description": "An anchor link allows you to link directly to this section, like this: www.yourdomain.com/p/page_id#anchor-link-id:. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
-                "type": "string",
-                "title": "Anchor link ID",
-                "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
+            "_editor": {
+              "errorMessages": {
+                "pattern": "You've added characters that are not allowed."
               },
-              {
-                "_editor": {
-                  "errorMessages": {
-                    "pattern": "You've added characters that are not allowed."
-                  }
-                },
-                "description": "Section identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
-                "type": "string",
-                "title": "Section ID",
-                "minLength": 1,
-                "pattern": "^[a-z][a-z0-9_\\-]*$"
-              }
-            ]
+              "placeholder": "anchor-link-id"
+            },
+            "description": "An anchor link allows you to link directly to this section, like this: www.yourdomain.com/p/page_id#anchor-link-id. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+            "type": "string",
+            "title": "Anchor link ID",
+            "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
           },
           "sectionType": {
-            "_editor": {
-              "component": "radio",
-              "direction": "vertical"
-            },
-            "description": {
-              "__features": [
-                "pilot",
-                "Determines the layout of the section content. [Learn more about section templates.](https://www.sharetribe.com/help/en/articles/8387253-what-are-section-templates)",
-                "Determines the layout of the section content. [Learn more about section templates.](https://www.sharetribe.com/docs/operator-guides/section-templates/"
-              ]
-            },
+            "_editor": { "component": "radio", "direction": "vertical" },
+            "description": "Determines the layout of the section content. [Learn more about section templates.](https://www.sharetribe.com/help/en/articles/8387253-what-are-section-templates)",
             "type": "string",
             "title": "Section template",
             "oneOf": [
@@ -270,31 +182,15 @@
                 "const": "features",
                 "title": "Features",
                 "description": "Content Blocks on top of each other, text, and media side by side in an alternating order."
-              },
-              {
-                "__features": [
-                  "hero-section-type",
-                  {
-                    "const": "hero",
-                    "title": "Hero",
-                    "description": "No Content Blocks, just title, description and button. Works well as the first section. "
-                  }
-                ]
               }
             ]
           },
           "title": {
             "type": "object",
             "properties": {
-              "content": {
-                "title": "Section title",
-                "type": "string"
-              },
+              "content": { "title": "Section title", "type": "string" },
               "fieldType": {
-                "_editor": {
-                  "component": "radio",
-                  "direction": "horizontal"
-                },
+                "_editor": { "component": "radio", "direction": "horizontal" },
                 "title": "Section title size",
                 "type": "string",
                 "default": "heading2",
@@ -315,18 +211,13 @@
             "type": "object",
             "properties": {
               "fieldType": {
-                "_editor": {
-                  "component": "hidden"
-                },
+                "_editor": { "component": "hidden" },
                 "title": "Section description",
                 "type": "string",
                 "default": "paragraph",
                 "$ref": "#/$defs/fieldType/paragraph"
               },
-              "content": {
-                "title": "Section description",
-                "type": "string"
-              }
+              "content": { "title": "Section description", "type": "string" }
             }
           },
           "callToAction": {
@@ -337,10 +228,7 @@
                 "type": "string",
                 "default": "none",
                 "description": "The action the user is prompted to take after viewing the section.",
-                "_editor": {
-                  "component": "radio",
-                  "direction": "vertical"
-                },
+                "_editor": { "component": "radio", "direction": "vertical" },
                 "oneOf": [
                   {
                     "$ref": "#/$defs/fieldType/none",
@@ -367,13 +255,9 @@
                       "$ref": "#/$defs/fieldType/internalButtonLink"
                     }
                   },
-                  "required": [
-                    "fieldType"
-                  ]
+                  "required": ["fieldType"]
                 },
-                "then": {
-                  "$ref": "#/$defs/internalButtonLink"
-                }
+                "then": { "$ref": "#/$defs/internalButtonLink" }
               },
               {
                 "if": {
@@ -382,13 +266,9 @@
                       "$ref": "#/$defs/fieldType/externalButtonLink"
                     }
                   },
-                  "required": [
-                    "fieldType"
-                  ]
+                  "required": ["fieldType"]
                 },
-                "then": {
-                  "$ref": "#/$defs/externalButtonLink"
-                }
+                "then": { "$ref": "#/$defs/externalButtonLink" }
               }
             ]
           },
@@ -399,10 +279,7 @@
                 "title": "Section appearance",
                 "type": "string",
                 "default": "defaultAppearance",
-                "_editor": {
-                  "component": "radio",
-                  "direction": "vertical"
-                },
+                "_editor": { "component": "radio", "direction": "vertical" },
                 "oneOf": [
                   {
                     "$ref": "#/$defs/fieldType/defaultAppearance",
@@ -417,19 +294,13 @@
               }
             },
             "if": {
-              "properties": {
-                "fieldType": {
-                  "const": "customAppearance"
-                }
-              }
+              "properties": { "fieldType": { "const": "customAppearance" } }
             },
             "then": {
               "properties": {
                 "backgroundColor": {
                   "title": "Background color",
-                  "_editor": {
-                    "component": "colorPicker"
-                  },
+                  "_editor": { "component": "colorPicker" },
                   "description": "Only displayed if the section doesn't have a background image.",
                   "type": "string",
                   "pattern": "^#[A-Fa-f0-9]{6}"
@@ -440,29 +311,18 @@
                   "description": "For the best result, the image should have the minimum dimensions of 1600x1200 pixels. It should not exceed 20MB in size.",
                   "_editor": {
                     "component": "imageUpload",
-                    "accept": [
-                      "image/png",
-                      "image/jpeg"
-                    ],
+                    "accept": ["image/png", "image/jpeg"],
                     "assetNamePrefix": "section-background",
                     "label": "Upload an image..."
                   },
                   "properties": {
                     "_ref": {
                       "type": "object",
-                      "_editor": {
-                        "component": "hidden"
-                      },
+                      "_editor": { "component": "hidden" },
                       "properties": {
-                        "resolver": {
-                          "const": "image"
-                        },
-                        "target": {
-                          "type": "string"
-                        },
-                        "params": {
-                          "$ref": "#/$defs/imageParams/scaled"
-                        }
+                        "resolver": { "const": "image" },
+                        "target": { "type": "string" },
+                        "params": { "$ref": "#/$defs/imageParams/scaled" }
                       }
                     }
                   }
@@ -476,14 +336,8 @@
                   "type": "string",
                   "default": "black",
                   "oneOf": [
-                    {
-                      "const": "black",
-                      "title": "Black"
-                    },
-                    {
-                      "const": "white",
-                      "title": "White"
-                    }
+                    { "const": "black", "title": "Black" },
+                    { "const": "white", "title": "White" }
                   ]
                 }
               }
@@ -495,17 +349,10 @@
             "if": {
               "properties": {
                 "sectionType": {
-                  "enum": [
-                    "columns",
-                    "carousel",
-                    "article",
-                    "features"
-                  ]
+                  "enum": ["columns", "carousel", "article", "features"]
                 }
               },
-              "required": [
-                "sectionType"
-              ]
+              "required": ["sectionType"]
             },
             "then": {
               "properties": {
@@ -516,91 +363,39 @@
                     "showCount": true,
                     "deleteLabel": "Delete block...",
                     "addNewLabel": "Add a new block",
-                    "headingKey": {
-                      "__features": [
-                        "section-name",
-                        "blockName",
-                        "blockId"
-                      ]
-                    },
-                    "fallbackHeadingKey": {
-                      "__features": [
-                        "section-name",
-                        "blockId"
-                      ]
-                    },
-                    "headingDefaultLabel": {
-                      "__features": [
-                        "section-name",
-                        "Block name not given",
-                        "Block ID not given"
-                      ]
-                    }
+                    "headingKey": "blockName",
+                    "fallbackHeadingKey": "blockId",
+                    "headingDefaultLabel": "Block name not given"
                   },
                   "title": "Content Blocks",
                   "type": "array",
                   "maxItems": 20,
                   "items": {
                     "type": "object",
-                    "_editor": {
-                      "order": {
-                        "__features": [
-                          "section-name",
-                          [
-                            "blockName",
-                            "*",
-                            "blockId"
-                          ]
-                        ]
-                      }
-                    },
+                    "_editor": { "order": ["blockName", "*", "blockId"] },
                     "properties": {
                       "blockName": {
-                        "__features": [
-                          "section-name",
-                          {
-                            "_editor": {
-                              "placeholder": "Give your block a name..."
-                            },
-                            "type": "string",
-                            "title": "Block name",
-                            "description": "Block name is not shown on the page. It just helps you remember what the block is about."
-                          }
-                        ]
+                        "_editor": {
+                          "placeholder": "Give your block a name..."
+                        },
+                        "type": "string",
+                        "title": "Block name",
+                        "description": "Block name is not shown on the page. It just helps you remember what the block is about."
                       },
                       "blockId": {
-                        "__features": [
-                          "section-name",
-                          {
-                            "_editor": {
-                              "errorMessages": {
-                                "pattern": "You've added characters that are not allowed."
-                              },
-                              "placeholder": "anchor-link-id"
-                            },
-                            "description": "An anchor link allows you to link directly to this block, like this: www.yourdomain.com/p/page_id#anchor-link-id:. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
-                            "type": "string",
-                            "title": "Anchor link ID",
-                            "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
+                        "_editor": {
+                          "errorMessages": {
+                            "pattern": "You've added characters that are not allowed."
                           },
-                          {
-                            "_editor": {
-                              "errorMessages": {
-                                "pattern": "You've added characters that are not allowed."
-                              }
-                            },
-                            "description": "Block identifier. Start with a lowercase character. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
-                            "title": "Block ID",
-                            "type": "string",
-                            "minLength": 1,
-                            "pattern": "^[a-z][a-z0-9_\\-]*$"
-                          }
-                        ]
+                          "placeholder": "anchor-link-id"
+                        },
+                        "description": "An anchor link allows you to link directly to this block, like this: www.yourdomain.com/p/page_id#anchor-link-id. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+                        "type": "string",
+                        "title": "Anchor link ID",
+                        "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
                       },
                       "blockType": {
-                        "_editor": {
-                          "component": "hidden"
-                        },
+                        "_editor": { "component": "hidden" },
                         "title": "Block type",
                         "const": "defaultBlock",
                         "$comment": "Currently, we only have one block type but in the future there could be many"
@@ -649,10 +444,7 @@
                                   "description": "Most common image formats are supported. The file should not exceed 20MB in size.",
                                   "_editor": {
                                     "component": "imageUpload",
-                                    "accept": [
-                                      "image/png",
-                                      "image/jpeg"
-                                    ],
+                                    "accept": ["image/png", "image/jpeg"],
                                     "assetNamePrefix": "block-media",
                                     "label": "Upload an image..."
                                   },
@@ -660,22 +452,13 @@
                                     "_ref": {
                                       "type": "object",
                                       "properties": {
-                                        "resolver": {
-                                          "const": "image"
-                                        },
-                                        "target": {
-                                          "type": "string"
-                                        }
+                                        "resolver": { "const": "image" },
+                                        "target": { "type": "string" }
                                       },
-                                      "required": [
-                                        "resolver",
-                                        "target"
-                                      ]
+                                      "required": ["resolver", "target"]
                                     }
                                   },
-                                  "required": [
-                                    "_ref"
-                                  ]
+                                  "required": ["_ref"]
                                 },
                                 "aspectRatio": {
                                   "$ref": "#/$defs/aspectRatio"
@@ -690,22 +473,14 @@
                                   "minLength": 1
                                 }
                               },
-                              "required": [
-                                "alt",
-                                "image",
-                                "aspectRatio"
-                              ],
+                              "required": ["alt", "image", "aspectRatio"],
                               "allOf": [
                                 {
                                   "if": {
                                     "properties": {
-                                      "aspectRatio": {
-                                        "const": "1/1"
-                                      }
+                                      "aspectRatio": { "const": "1/1" }
                                     },
-                                    "required": [
-                                      "aspectRatio"
-                                    ]
+                                    "required": ["aspectRatio"]
                                   },
                                   "then": {
                                     "properties": {
@@ -730,13 +505,9 @@
                                 {
                                   "if": {
                                     "properties": {
-                                      "aspectRatio": {
-                                        "const": "16/9"
-                                      }
+                                      "aspectRatio": { "const": "16/9" }
                                     },
-                                    "required": [
-                                      "aspectRatio"
-                                    ]
+                                    "required": ["aspectRatio"]
                                   },
                                   "then": {
                                     "properties": {
@@ -761,13 +532,9 @@
                                 {
                                   "if": {
                                     "properties": {
-                                      "aspectRatio": {
-                                        "const": "2/3"
-                                      }
+                                      "aspectRatio": { "const": "2/3" }
                                     },
-                                    "required": [
-                                      "aspectRatio"
-                                    ]
+                                    "required": ["aspectRatio"]
                                   },
                                   "then": {
                                     "properties": {
@@ -792,13 +559,9 @@
                                 {
                                   "if": {
                                     "properties": {
-                                      "aspectRatio": {
-                                        "const": "auto"
-                                      }
+                                      "aspectRatio": { "const": "auto" }
                                     },
-                                    "required": [
-                                      "aspectRatio"
-                                    ]
+                                    "required": ["aspectRatio"]
                                   },
                                   "then": {
                                     "properties": {
@@ -845,14 +608,9 @@
                                   "title": "YouTube video ID",
                                   "pattern": "^[0-9A-Za-z_-]+$"
                                 },
-                                "aspectRatio": {
-                                  "$ref": "#/$defs/aspectRatio"
-                                }
+                                "aspectRatio": { "$ref": "#/$defs/aspectRatio" }
                               },
-                              "required": [
-                                "youtubeVideoId",
-                                "aspectRatio"
-                              ]
+                              "required": ["youtubeVideoId", "aspectRatio"]
                             }
                           }
                         ]
@@ -893,10 +651,7 @@
                         "type": "object",
                         "properties": {
                           "fieldType": {
-                            "_editor": {
-                              "component": "hidden"
-                            },
-                            "description": "You can format text with markdown.",
+                            "_editor": { "component": "hidden" },
                             "type": "string",
                             "title": "Text element type",
                             "default": "markdown",
@@ -904,7 +659,8 @@
                           },
                           "content": {
                             "title": "Block text",
-                            "type": "string"
+                            "type": "string",
+                            "description": "You can format text with markdown. [Learn more about markdown](https://www.sharetribe.com/help/en/articles/8404687-how-to-format-your-text-in-pages-with-markdown)."
                           }
                         }
                       },
@@ -946,13 +702,9 @@
                                   "$ref": "#/$defs/fieldType/internalButtonLink"
                                 }
                               },
-                              "required": [
-                                "fieldType"
-                              ]
+                              "required": ["fieldType"]
                             },
-                            "then": {
-                              "$ref": "#/$defs/internalButtonLink"
-                            }
+                            "then": { "$ref": "#/$defs/internalButtonLink" }
                           },
                           {
                             "if": {
@@ -961,29 +713,14 @@
                                   "$ref": "#/$defs/fieldType/externalButtonLink"
                                 }
                               },
-                              "required": [
-                                "fieldType"
-                              ]
+                              "required": ["fieldType"]
                             },
-                            "then": {
-                              "$ref": "#/$defs/externalButtonLink"
-                            }
+                            "then": { "$ref": "#/$defs/externalButtonLink" }
                           }
                         ]
                       }
                     },
-                    "required": {
-                      "__features": [
-                        "section-name",
-                        [
-                          "blockType"
-                        ],
-                        [
-                          "blockId",
-                          "blockType"
-                        ]
-                      ]
-                    }
+                    "required": ["blockType"]
                   }
                 }
               }
@@ -993,24 +730,12 @@
             "if": {
               "anyOf": [
                 {
-                  "properties": {
-                    "sectionType": {
-                      "const": "columns"
-                    }
-                  },
-                  "required": [
-                    "sectionType"
-                  ]
+                  "properties": { "sectionType": { "const": "columns" } },
+                  "required": ["sectionType"]
                 },
                 {
-                  "properties": {
-                    "sectionType": {
-                      "const": "carousel"
-                    }
-                  },
-                  "required": [
-                    "sectionType"
-                  ]
+                  "properties": { "sectionType": { "const": "carousel" } },
+                  "required": ["sectionType"]
                 }
               ]
             },
@@ -1024,84 +749,35 @@
                   "title": "Number of columns",
                   "type": "integer",
                   "oneOf": [
-                    {
-                      "const": 1,
-                      "title": "1"
-                    },
-                    {
-                      "const": 2,
-                      "title": "2"
-                    },
-                    {
-                      "const": 3,
-                      "title": "3"
-                    },
-                    {
-                      "const": 4,
-                      "title": "4"
-                    }
+                    { "const": 1, "title": "1" },
+                    { "const": 2, "title": "2" },
+                    { "const": 3, "title": "3" },
+                    { "const": 4, "title": "4" }
                   ]
                 }
               },
-              "required": [
-                "numColumns"
-              ]
+              "required": ["numColumns"]
             }
           }
         ],
-        "required": {
-          "__features": [
-            "section-name",
-            [
-              "sectionType"
-            ],
-            [
-              "sectionId",
-              "sectionType"
-            ]
-          ]
-        }
+        "required": ["sectionType"]
       }
     }
   },
   "$defs": {
     "fieldType": {
-      "youtube": {
-        "const": "youtube"
-      },
-      "internalButtonLink": {
-        "const": "internalButtonLink"
-      },
-      "none": {
-        "const": "none"
-      },
-      "defaultAppearance": {
-        "const": "defaultAppearance"
-      },
-      "heading1": {
-        "const": "heading1"
-      },
-      "image": {
-        "const": "image"
-      },
-      "heading3": {
-        "const": "heading3"
-      },
-      "externalButtonLink": {
-        "const": "externalButtonLink"
-      },
-      "heading2": {
-        "const": "heading2"
-      },
-      "customAppearance": {
-        "const": "customAppearance"
-      },
-      "paragraph": {
-        "const": "paragraph"
-      },
-      "markdown": {
-        "const": "markdown"
-      }
+      "youtube": { "const": "youtube" },
+      "internalButtonLink": { "const": "internalButtonLink" },
+      "none": { "const": "none" },
+      "defaultAppearance": { "const": "defaultAppearance" },
+      "heading1": { "const": "heading1" },
+      "image": { "const": "image" },
+      "heading3": { "const": "heading3" },
+      "externalButtonLink": { "const": "externalButtonLink" },
+      "heading2": { "const": "heading2" },
+      "customAppearance": { "const": "customAppearance" },
+      "paragraph": { "const": "paragraph" },
+      "markdown": { "const": "markdown" }
     },
     "internalButtonLink": {
       "properties": {
@@ -1120,18 +796,12 @@
           "description": "Include only the path after your domain. For example, if you want to link to your About page, use /p/about.",
           "title": "Internal link address",
           "type": "string",
-          "examples": [
-            "#section-id-as-anchor",
-            "/absolute/path/to/page"
-          ],
+          "examples": ["#section-id-as-anchor", "/absolute/path/to/page"],
           "pattern": "^(?![a-zA-Z][a-zA-Z+.-]*:)",
           "minLength": 1
         }
       },
-      "required": [
-        "content",
-        "href"
-      ]
+      "required": ["content", "href"]
     },
     "externalButtonLink": {
       "properties": {
@@ -1150,142 +820,60 @@
           "description": "External link address should begin with http(s)://.",
           "title": "External link address",
           "type": "string",
-          "examples": [
-            "http:",
-            "https:"
-          ],
+          "examples": ["http:", "https:"],
           "pattern": "^(http|https):",
           "minLength": 1
         }
       },
-      "required": [
-        "content",
-        "href"
-      ]
+      "required": ["content", "href"]
     },
     "imageParams": {
       "scaled": {
         "const": {
           "variants": {
-            "scaled800": {
-              "width": 800,
-              "height": 800,
-              "fit": "scale"
-            },
-            "scaled1200": {
-              "width": 1200,
-              "height": 1200,
-              "fit": "scale"
-            },
-            "scaled2400": {
-              "width": 2400,
-              "height": 2400,
-              "fit": "scale"
-            }
+            "scaled800": { "width": 800, "height": 800, "fit": "scale" },
+            "scaled1200": { "width": 1200, "height": 1200, "fit": "scale" },
+            "scaled2400": { "width": 2400, "height": 2400, "fit": "scale" }
           }
         }
       },
       "square": {
         "const": {
           "variants": {
-            "square400": {
-              "width": 400,
-              "height": 400,
-              "fit": "crop"
-            },
-            "square800": {
-              "width": 800,
-              "height": 800,
-              "fit": "crop"
-            },
-            "square1200": {
-              "width": 1200,
-              "height": 1200,
-              "fit": "crop"
-            },
-            "square2400": {
-              "width": 2400,
-              "height": 2400,
-              "fit": "crop"
-            }
+            "square400": { "width": 400, "height": 400, "fit": "crop" },
+            "square800": { "width": 800, "height": 800, "fit": "crop" },
+            "square1200": { "width": 1200, "height": 1200, "fit": "crop" },
+            "square2400": { "width": 2400, "height": 2400, "fit": "crop" }
           }
         }
       },
       "landscape": {
         "const": {
           "variants": {
-            "landscape400": {
-              "width": 400,
-              "height": 225,
-              "fit": "crop"
-            },
-            "landscape800": {
-              "width": 800,
-              "height": 450,
-              "fit": "crop"
-            },
-            "landscape1200": {
-              "width": 1200,
-              "height": 675,
-              "fit": "crop"
-            },
-            "landscape2400": {
-              "width": 2400,
-              "height": 1350,
-              "fit": "crop"
-            }
+            "landscape400": { "width": 400, "height": 225, "fit": "crop" },
+            "landscape800": { "width": 800, "height": 450, "fit": "crop" },
+            "landscape1200": { "width": 1200, "height": 675, "fit": "crop" },
+            "landscape2400": { "width": 2400, "height": 1350, "fit": "crop" }
           }
         }
       },
       "portrait": {
         "const": {
           "variants": {
-            "portrait400": {
-              "width": 400,
-              "height": 600,
-              "fit": "crop"
-            },
-            "portrait800": {
-              "width": 800,
-              "height": 1200,
-              "fit": "crop"
-            },
-            "portrait1200": {
-              "width": 1200,
-              "height": 1800,
-              "fit": "crop"
-            },
-            "portrait2400": {
-              "width": 2400,
-              "height": 3600,
-              "fit": "crop"
-            }
+            "portrait400": { "width": 400, "height": 600, "fit": "crop" },
+            "portrait800": { "width": 800, "height": 1200, "fit": "crop" },
+            "portrait1200": { "width": 1200, "height": 1800, "fit": "crop" },
+            "portrait2400": { "width": 2400, "height": 3600, "fit": "crop" }
           }
         }
       },
       "original": {
         "const": {
           "variants": {
-            "original400": {
-              "width": 400,
-              "height": 400,
-              "fit": "scale"
-            },
-            "original800": {
-              "width": 800,
-              "height": 800,
-              "fit": "scale"
-            },
-            "original1200": {
-              "width": 1200,
-              "height": 1200,
-              "fit": "scale"
-            },
-            "original2400": {
-              "width": 2400,
-              "height": 2400,
-              "fit": "scale"
-            }
+            "original400": { "width": 400, "height": 400, "fit": "scale" },
+            "original800": { "width": 800, "height": 800, "fit": "scale" },
+            "original1200": { "width": 1200, "height": 1200, "fit": "scale" },
+            "original2400": { "width": 2400, "height": 2400, "fit": "scale" }
           }
         }
       }
@@ -1293,28 +881,13 @@
     "aspectRatio": {
       "title": "Aspect ratio",
       "type": "string",
-      "_editor": {
-        "component": "radio",
-        "direction": "vertical"
-      },
+      "_editor": { "component": "radio", "direction": "vertical" },
       "default": "auto",
       "oneOf": [
-        {
-          "const": "1/1",
-          "title": "Square (1:1)"
-        },
-        {
-          "const": "16/9",
-          "title": "Landscape (16:9)"
-        },
-        {
-          "const": "2/3",
-          "title": "Portrait (2:3)"
-        },
-        {
-          "const": "auto",
-          "title": "Original"
-        }
+        { "const": "1/1", "title": "Square (1:1)" },
+        { "const": "16/9", "title": "Landscape (16:9)" },
+        { "const": "2/3", "title": "Portrait (2:3)" },
+        { "const": "auto", "title": "Original" }
       ]
     }
   }
