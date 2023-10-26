@@ -40,15 +40,16 @@ your [test application](https://console.sharetribe.com), you will see
 the data in the test environment. While you cannot modify the code of
 the test environment, you can start playing around with it and see the
 changes you make reflected in the test environment’s Console. You can
-create users, new listings, and even transactions and reviews.
+create users, new listings, and even transactions and reviews. You can
+also configure your marketplace without code.
 
 To interact and see data in your development environment’s Console, you
 first need to set up the frontend application for your development
 marketplace.
 
-It is easy to change environments from the topbar.
+It is easy to change environments in the top of the sidebar.
 
-![Change environments](./change-env.png)
+![Change environments](./env-change.png)
 
 ## Sections
 
@@ -60,16 +61,15 @@ In the Home section, you find information about working with Sharetribe.
 You can find links to various resources that will help you understand,
 test, and build your custom marketplace. These include:
 
-- Links to your fully functional test marketplace, where you can get an
-  idea of how Sharetribe works.
+- Your setup checklist for configuring your test environment marketplace
+  without code
+- Links to further resources to learn more about setting up your
+  marketplace
 - Instructions on how to set up your local Sharetribe instance and links
   to the Sharetribe documentation and API reference, all of which you
   will need when you want to start developing your marketplace.
 - Access to our Slack channel, where you can ask technical questions and
   engage with our technical team and the community.
-- A calendar to book a call with one of our Sharetribe representatives
-  who are happy to help you assess whether Sharetribe is the right tool
-  for your project.
 
 ### Manage
 
