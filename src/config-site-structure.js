@@ -31,7 +31,7 @@ const sortingArrayTutorialBranding = [
 
 const sortingArrayTutorialListings = [
   'add-new-wizard-tab',
-  'add-favorite-saunas',
+  'add-favorite-bikes',
 ];
 
 const sortingArrayTutorialTransactionProcess = [

@@ -352,4 +352,4 @@ console view in your browser's developer tools tab.
 All Sharetribe Web Template versions support Pages. If you want to add
 Pages capabilities to an older template that does not support Pages, you
 can review
-[the instructions in our legacy documentation](https://www.sharetribe.com/docs/legacy/template/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).
+[the instructions in our legacy documentation](https://www.sharetribe.com/docs/legacy/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).

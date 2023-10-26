@@ -26,7 +26,7 @@ and
 
 The Sharetribe Web Template has tooling to create a dynamic sitemap by
 default. Read more about the template sitemap structure and logic:
-**[Sitemap in Sharetribe Web Template](/ftw/sitemap-in-template/)**
+**[Sitemap in Sharetribe Web Template](/template/sitemap-in-template/)**
 
 </info>
 

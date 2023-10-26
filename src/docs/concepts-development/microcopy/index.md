@@ -14,7 +14,7 @@ marketplace's dynamic pages – button labels, error messages, and help
 texts, for example. Modifying marketplace texts to match your
 marketplace's theme and tone of voice is a key task in customizing any
 marketplace.
-[Read more about marketplace texts](https://www.sharetribe.com/help/en/collections/6265229-setup-copy-texts)
+[Read more about marketplace texts](https://www.sharetribe.com/help/en/collections/6265229-editing-other-text-content)
 
 ## Marketplace texts in the Sharetribe Web Template
 

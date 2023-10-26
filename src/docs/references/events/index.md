@@ -123,7 +123,7 @@ follows:
   resource with `id`, `attributes` and optional `relationships` keys,
   each containing the corresponding portion of resource data
 - The value of relationships attributes follows the same format as
-  [relationships normally do in the Integration API](https://www.sharetribe.com/api-reference/index.html#including-related-resources)
+  [relationships normally do in the Integration API](https://www.sharetribe.com/api-reference/#including-related-resources)
 
 In both formats, the `previousValues` object always has the same shape
 as the `resource` object.

@@ -32,7 +32,7 @@
   },
   {
     "source": "/background/getting-started/",
-    "destination": "/docs/introduction/introducing-sharetribe/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
     "permanent": true
   },
   {
@@ -52,7 +52,7 @@
   },
   {
     "source": "/background/overview/",
-    "destination": "/docs/introduction/introducing-sharetribe/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
     "permanent": true
   },
   {
@@ -1143,6 +1143,16 @@
   {    
     "source": "/introduction/is-flex-right-for-you/",
     "destination": "https://www.sharetribe.com/help/en/articles/8501752-what-is-sharetribe/",
+    "permanent": true
+  },
+  {    
+    "source": "/introduction/introducing-sharetribe/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
+    "permanent": true
+  },
+  {    
+    "source": "/ftw/page-builder/",
+    "destination": "/docs/template/page-builder/",
     "permanent": true
   }
 ]

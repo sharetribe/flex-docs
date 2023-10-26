@@ -51,7 +51,7 @@ New messages trigger a
 [built-in email notification](/concepts/email-notifications/) sent to
 the receiving party of the message. You can edit built-in email
 notification content through
-[Console > Build > Content > Email texts](https://console.sharetribe.com/o/learningsariproduct/m/learningsariproduct/a/content/email-texts),
+[Console > Build > Content > Email texts](https://console.sharetribe.com/a/content/email-texts),
 and you can modify the structure and code of the notifications through
 [Console](https://console.sharetribe.com/email-templates/new-message).
 

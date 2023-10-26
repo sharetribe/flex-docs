@@ -19,7 +19,7 @@ marketplace's visual appearance, content and configurations.
 You can edit the default styles of the template via the branding tab in
 Console. For more advanced changes you can:
 
-- [Learn to style the template using CSS](/docs/tutorial/first-edit/)
+- [Learn to style the template using CSS](/tutorial/first-edit/)
 - Learn more about the
   [CSS architecture in the Sharetribe Web Template](/template/how-to-customize-template-styles/)
 

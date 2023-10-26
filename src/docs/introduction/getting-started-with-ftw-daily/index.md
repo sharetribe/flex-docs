@@ -12,7 +12,7 @@ published: true
 
 The Sharetribe Web Template is a marketplace web application built on
 top of the
-[Marketplace API](/introduction/introducing-sharetribe/#the-marketplace-api).
+[Marketplace API](/introduction/introducing-sharetribe-developer-platform/#the-marketplace-api).
 While you can create a marketplace purely using just the API, it
 requires a significant amount of effort (both money and time) and we
 recommened using the template as a starting point for customizations.
