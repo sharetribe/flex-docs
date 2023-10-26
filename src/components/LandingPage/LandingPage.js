@@ -194,7 +194,7 @@ const LandingPage = props => {
               <UiText id="LandingPage.introduction.description" />
             </StyledSectionDescription>
             <SectionLinks>
-              <SectionLink to="/introduction/introducing-sharetribe/">
+              <SectionLink to="/introduction/introducing-sharetribe-developer-platform/">
                 <UiText id="LandingPage.introduction.introductionFlex" />
               </SectionLink>
               <SectionLink to="/introduction/getting-started-with-web-template/">

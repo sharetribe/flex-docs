@@ -78,7 +78,7 @@ const Plan = props => {
   ) : null;
 
   const link = (
-    <Link to="https://www.sharetribe.com/products/pricing/" target="_blank">
+    <Link to="https://www.sharetribe.com/pricing/" target="_blank">
       Read more about Sharetribe pricing.
     </Link>
   );

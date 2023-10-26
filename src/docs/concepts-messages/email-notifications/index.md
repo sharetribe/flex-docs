@@ -140,6 +140,6 @@ in our
 
 If you are unsure how to approach a Zapier integration, do not hesitate
 to reach out to our support team through one of our
-[official support channels](https://www.sharetribe.com/support/). We
+[official support channels](https://www.sharetribe.com/help/en/). We
 will be happy to help you figure out your specific use case and give you
 some suggestions for implementation.

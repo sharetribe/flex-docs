@@ -11,7 +11,7 @@ published: true
 ---
 
 You can use any technology to build a marketplace on top of the
-[Marketplace API](/introduction/introducing-sharetribe/#the-marketplace-api).
+[Marketplace API](/introduction/introducing-sharetribe-developer-platform/#the-marketplace-api).
 However, making a marketplace user interface (UI) from scratch requires
 a lot of effort. This is why we provide the Sharetribe Web Template. It
 is a polished marketplace web application that is ready for

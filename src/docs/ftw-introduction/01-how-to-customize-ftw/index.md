@@ -52,7 +52,7 @@ to create both processes in your environment through Sharetribe CLI.
 If you are new to Sharetribe or the Sharetribe Web Template, we
 recommend reading these articles before starting to work on development:
 
-- [Introducing Sharetribe](/introduction/introducing-sharetribe/)
+- [Introducing Sharetribe](/introduction/introducing-sharetribe-developer-platform/)
 - [What development skills are needed?](/introduction/development-skills/)
 - [Getting started](/introduction/getting-started-with-web-template/)
 
