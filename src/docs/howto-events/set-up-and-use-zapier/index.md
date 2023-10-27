@@ -42,8 +42,8 @@ posted to any of your marketplace’s social accounts. And so much more.
 
 <info>
 
-The videos in this article refer to _Flex_, which is an old name for the
-Sharetribe Developer Platform.
+The videos below mention Sharetribe Flex, which has since their
+publication become just Sharetribe.
 
 </info>
 
@@ -211,6 +211,13 @@ the different steps. More templates are coming.
 - [Send a tweet for each new listing with name & listing URL](https://zapier.com/shared/967732338e072db4edc8332e0de182deb0feef6b)
 
 ## Video tutorials
+
+<info>
+
+The videos below mention Sharetribe Flex, which has since their
+publication become just Sharetribe.
+
+</info>
 
 ### How to connect Sharetribe to Zapier
 
