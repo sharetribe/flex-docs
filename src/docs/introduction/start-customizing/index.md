@@ -29,8 +29,8 @@ API**.
 Your no-code configurations are available through the public **Asset
 Delivery API**.
 
-Integration and analytics capabilities are available server-side through
-**Integration API**.
+Capabilities for creating custom integrations and data analytics are
+available server-side through **Integration API**.
 
 Authentication to Marketplace API and Integration API happens through
 the **Authentication API**.
@@ -66,15 +66,22 @@ client id set in your app.
 
 When you custom develop your marketplace, you also need to host your own
 application. When starting your custom development, it is enough to host
-your custom codebase for the Dev environment. When you want to publish
-your code, you will also need to host a client application for the Test
-and Live environments.
+your custom client application for the Dev environment. This makes it
+possible for several people to test and validate the features you are
+developing. In addition, some custom features, such as third-party
+integrations, may require a hosted environment to work properly.
 
-When you have a hosted application set up for your custom client, you
-can change the Marketplace URL in your Console > Build > General view to
-point to the URL of your custom client. That way, the Sharetribe backend
-uses the correct URL for e.g. adding links to emails sent through the
-Sharetribe backend.
+When you want to publish your code, you will also need to host a client
+application for the Test and Live environments. Hosting your custom
+client app for Test environment allows operators to view their no-code
+changes alongside the custom developed features, so it is important to
+keep Test and Live client applications identical.
+
+Once you have deployed your marketplace application to a hosting
+service, you can change the Marketplace URL in your Console > Build >
+General view to point to the URL of your custom client. That way, the
+Sharetribe backend uses the correct URL for e.g. adding links to emails
+sent through the Sharetribe backend.
 
 ## Custom developing with the Sharetribe Web Template
 
@@ -83,7 +90,7 @@ Sharetribe-hosted client app, you can use the Sharetribe Web Template as
 your starting point. Sharetribe Web Template is an open-source version
 of the code that powers your Sharetribe-hosted marketplace.
 
-- [Read more about the Sharetribe Web Template](/introduction/introducing-template/)
+- [Read more about the Sharetribe Web Template](/template/sharetribe-web-template/)
 
 The template uses the TODO SDK to connect to the Marketplace API and
 Asset Delivery API. The SDK also handles authentication towards
@@ -115,15 +122,34 @@ customizations that are possible with the Sharetribe Developer Platform.
 
 To share your changes online, you will need to deploy the template. Note
 that to deploy the template, for any marketplace environment (Dev, Test,
-or Live), your deployment service needs to be able to run a NodeJS
+or Live), your deployment service needs to be able to run a Node.js
 server.
+
+Hosting environments that support Node.js servers:
+
+- [Heroku](https://www.sharetribe.com/docs/template/how-to-deploy-template-to-heroku/)
+- [Render](https://www.sharetribe.com/docs/tutorial/deploy-to-render/)
+- [Fly.io](https://fly.io/docs/js/)
+- [Microsoft Azure](https://learn.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=linux&pivots=development-environment-vscode)
+- [Containerized environments](https://www.sharetribe.com/docs/template/run-template-with-docker/)
+
+Hosting environments that do not support Node.js servers:
+
+- Vercel (supports Next.js)
+- AWS Amplify (supports front-end technologies and Next.js)
 
 - [Read more about template deployment](/template/how-to-deploy-template-to-production/)
 
 ## Custom developing with your own client application
 
 You can also create a fully custom client application for your
-marketplace.
+marketplace. The headless architecture of the Sharetribe Developer
+Platform allows you to build fully custom. You might want to build a
+mobile application, integrate Sharetribe marketplace functionalities to
+your existing website infrastructure, or simply develop with the stack
+of your choice.
+
+Do note that currently we only have SDKs available for Javascript.
 
 We currently do not have a tutorial focusing on non-Sharetribe Web
 Template development. However, we recommend that you check through the
@@ -134,8 +160,11 @@ with the Sharetribe Developer Platform.
 
 When deciding on the stack for your custom client application, it is
 good to note that to fully use the features of the Sharetribe Developer
-Platform, you need some kind of a server environment. Features requiring
-a server include:
+Platform, you need some kind of a server environment. The server is
+necessary for features that require a trusted non-browser context for
+security reasons.
+
+Features requiring a server include:
 
 - using SSO and identity providers
 - Integration API – it provides full access to your marketplace, so it
