@@ -125,20 +125,19 @@ that to deploy the template, for any marketplace environment (Dev, Test,
 or Live), your deployment service needs to be able to run a Node.js
 server.
 
-Hosting environments that support Node.js servers:
+- Hosting environments that support Node.js servers:
 
-- [Heroku](https://www.sharetribe.com/docs/template/how-to-deploy-template-to-heroku/)
-- [Render](https://www.sharetribe.com/docs/tutorial/deploy-to-render/)
-- [Fly.io](https://fly.io/docs/js/)
-- [Microsoft Azure](https://learn.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=linux&pivots=development-environment-vscode)
-- [Containerized environments](https://www.sharetribe.com/docs/template/run-template-with-docker/)
+  - [Heroku](https://www.sharetribe.com/docs/template/how-to-deploy-template-to-heroku/)
+  - [Render](https://www.sharetribe.com/docs/tutorial/deploy-to-render/)
+  - [Fly.io](https://fly.io/docs/js/)
+  - [Microsoft Azure](https://learn.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=linux&pivots=development-environment-vscode)
+  - [Containerized environments](https://www.sharetribe.com/docs/template/run-template-with-docker/)
 
-Hosting environments that do not support Node.js servers:
+- Hosting environments that do not support Node.js servers:
+  - Vercel (supports front-end technologies and Next.js)
+  - AWS Amplify (supports front-end technologies and Next.js)
 
-- Vercel (supports Next.js)
-- AWS Amplify (supports front-end technologies and Next.js)
-
-- [Read more about template deployment](/template/how-to-deploy-template-to-production/)
+* [Read more about template deployment](/template/how-to-deploy-template-to-production/)
 
 ## Custom developing with your own client application
 
