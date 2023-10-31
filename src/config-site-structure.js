@@ -8,6 +8,7 @@
 const sortingArrayIntroduction = [
   'introducing-sharetribe-developer-platform',
   'development-skills',
+  'introduction-to-customizing',
   'introducing-template',
 ];
 
