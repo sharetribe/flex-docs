@@ -92,12 +92,12 @@ of the code that powers your Sharetribe-hosted marketplace.
 
 - [Read more about the Sharetribe Web Template](/template/sharetribe-web-template/)
 
-The template uses the TODO SDK to connect to the Marketplace API and
-Asset Delivery API. The SDK also handles authentication towards
+The template uses the Sharetribe SDK to connect to the Marketplace API
+and Asset Delivery API. The SDK also handles authentication towards
 Marketplace API, and shares the user's login between the browser and the
 server.
 
-- [Read more about the TODO SDK](https://sharetribe.github.io/flex-sdk-js/)
+- [Read more about the Sharetribe SDK](https://sharetribe.github.io/flex-sdk-js/)
 
 To get started with the template, you need to clone the Sharetribe Web
 Template repository and set it up with your marketplace client id and
