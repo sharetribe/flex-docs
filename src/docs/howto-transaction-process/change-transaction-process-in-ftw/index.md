@@ -26,8 +26,6 @@ the
 [Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/)
 tutorial to get familiar with the tool.
 
-<plan tier="extend" feature="Adding new transaction processes"></plan>
-
 If you have changed the transaction process in your marketplace, or
 added a new one to use in parallel with the existing ones, you should
 check if your client app needs to be updated to match this different

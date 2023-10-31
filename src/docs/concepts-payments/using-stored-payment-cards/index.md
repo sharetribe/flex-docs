@@ -15,13 +15,6 @@ purchases. Doing this provides multiple benefits: it streamlines the
 checkout process for existing customers and allows you to place
 additional charges to the payment card of the customer.
 
-<plan tier="launch">
-
-Online payments in the Live environment are available in the Launch plan
-and above.
-
-</plan>
-
 Sharetribe Web Template includes a checkout workflow, which offers a box
 for the customer to check if they want to store their card for future
 purchases. Once they've stored it, they are offered the option to use

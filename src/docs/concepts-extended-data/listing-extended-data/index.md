@@ -30,8 +30,6 @@ in Marketplace API and
 [listing endpoints](https://www.sharetribe.com/api-reference/integration.html#listings)
 in Integration API.
 
-<plan tier="extend" feature="Access to Integration API"></plan>
-
 Private data can be used to allow the listing author to make private
 notes on the listing, since the information is not visible for the
 general marketplace audience.

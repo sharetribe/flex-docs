@@ -28,8 +28,6 @@ to the transaction, which renders it visible within the transaction. In
 addition, a transaction process can have an action to
 [update transaction protected data](/references/transaction-process-actions/#actionupdate-protected-data).
 
-<plan tier="extend" feature="Customizing your transaction process"></plan>
-
 Protected data can be used to store any transaction specific information
 that the users are allowed to modify. Most common use cases include
 customer or provider contact information, but e.g. for more complex
@@ -44,8 +42,6 @@ third party services whose information is transaction specific, like
 discount services, you can store information such as integration
 references or discount codes or percentages in transaction metadata.
 Metadata can also be used to tag transactions for analytics purposes.
-
-<plan tier="extend" feature="Access to Integration API"></plan>
 
 You need a trusted context for updating transaction metadata – either a
 privileged transition, or a secure server endpoint. You can also build a

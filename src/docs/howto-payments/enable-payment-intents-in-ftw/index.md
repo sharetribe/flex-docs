@@ -15,13 +15,6 @@ This guide walks you through the process of taking
 use in your custom client application. **These steps are already
 implemented in Sharetribe Web Template.**
 
-<plan tier="launch">
-
-Online payments in the Live environment are available in the Launch plan
-and above.
-
-</plan>
-
 This article covers how PaymentIntents can be used with card payments.
 On general level, the steps are the same for other payment methods. See
 [the concepts article on payment methods](/concepts/payment-methods-overview/)

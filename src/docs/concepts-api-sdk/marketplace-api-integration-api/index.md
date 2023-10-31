@@ -53,8 +53,6 @@ See also the
 
 ## When to use the Integration API
 
-<plan tier="extend" feature="Access to Integration API"></plan>
-
 The Integration API allows trusted secure applications to access the
 entire marketplace data: all users, listings, transactions, messages,
 etc. Such trusted applications are for example applications that run in

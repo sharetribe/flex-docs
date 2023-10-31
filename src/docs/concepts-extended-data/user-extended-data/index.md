@@ -27,8 +27,6 @@ endpoint. Operators can see all user extended data through the
 [user retrieval endpoints](https://www.sharetribe.com/api-reference/integration.html#users)
 in Integration API.
 
-<plan tier="extend" feature="Access to Integration API"></plan>
-
 Authenticated users are able to modify their own public, protected and
 private extended data through the
 [current user creation and update endpoints](https://www.sharetribe.com/api-reference/marketplace.html#current-user)
@@ -63,8 +61,6 @@ transaction participants may want to only reveal to the other
 participant of the transaction. This type of information can include
 contact information such as phone numbers, or e.g. instructions to
 access a listing's goods or services in some other way.
-
-<plan tier="extend" feature="Customizing your transaction process"></plan>
 
 As a part of your marketplace's transaction process, then, you can have
 an action that reveals the user's protected data in the transaction. In

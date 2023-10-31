@@ -14,8 +14,6 @@ published: true
 whether Google login is enabled, take a look at our
 [legacy documentation](/template/legacy-templates/).**
 
-<plan tier="extend" feature="Using identity providers"></plan>
-
 Enabling Google login consists of three main steps:
 
 - **Create a Google Sign-In Project** Google Sign-In Project is what

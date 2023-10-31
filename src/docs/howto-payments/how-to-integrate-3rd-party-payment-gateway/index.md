@@ -28,8 +28,6 @@ Sharetribe features:
 - [Reacting to events][dev-docs-howto-reacting-to-events]
 - [Extended data][dev-docs-reference-extended-data]
 
-<plan tier="extend" feature="Access to Integration API and events"></plan>
-
 ## Marketplace payment flow
 
 In this section we illustrate a marketplace payment flow in high-level
@@ -469,8 +467,6 @@ user when things go wrong.
 ### Using Events
 
 You can also use Events for your payment gateway integration.
-
-<plan tier="extend" feature="Access to Integration API and events"></plan>
 
 In this model, the transaction transition is done as usual. Your backend
 polls the events and reacts to transaction transition events by calling

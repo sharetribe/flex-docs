@@ -124,8 +124,6 @@ the
 [stripe-create-payment-intent-push](/references/transaction-process-actions/#actionstripe-create-payment-intent-push)
 action.
 
-<plan tier="extend" feature="Customizing your transaction process"></plan>
-
 Further, because push payments do not have a preauthorization phase, it
 is recommended to avoid that in the transaction process and use an
 _instant booking_ type of flow. The example below describes the minimum

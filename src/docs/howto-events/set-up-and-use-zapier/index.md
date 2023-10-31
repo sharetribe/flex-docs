@@ -24,8 +24,6 @@ which are automated workflows or sequences of actions that get kicked
 off by a trigger. An event in one app can set in motion an action in a
 second app and another action in a third app etc.
 
-<plan tier="extend" feature="Access to the Zapier integration"></plan>
-
 Once you’ve created a Zapier account and connected your Sharetribe
 marketplace account, you can use nine different events in your
 marketplace as a trigger for actions in other apps. Zapier can also

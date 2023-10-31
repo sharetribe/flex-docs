@@ -23,13 +23,6 @@ bank might deny payouts, or for some other reason the numbers don't seem
 to add up. This article presents potential cases where payouts might
 fail and what are the ways to fix those issues.
 
-<plan tier="launch">
-
-Online payments in the Live environment are available in the Launch plan
-and above.
-
-</plan>
-
 ## Payments in Sharetribe
 
 ![Sharetribe payment process](payment-process.png 'Payment process in Sharetribe.')
