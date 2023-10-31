@@ -1,12 +1,12 @@
 ---
 title: Start customizing your marketplace
 slug: introduction-to-customizing
-updated: 2023-10-25
+updated: 2023-10-31
 category: introduction
 ingress:
-  When you want to start customizing your marketplace, you need to take
-  some steps. Learn what to take into consideration when starting custom
-  development
+  When you want to start customizing your marketplace, there are some
+  general topics that require your attention. Learn what to take into
+  consideration when starting custom development
 published: true
 ---
 
