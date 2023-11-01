@@ -105,7 +105,7 @@ the
 <plan tier="extend" feature="Customizing your transaction notifications"></plan>
 
 The
-[template sub-directory](https://github.com/sharetribe/sharetribe-example-processes/tree/master/default-booking/templates)
+[template sub-directory](https://github.com/sharetribe/example-processes/tree/master/default-booking/templates)
 in the transaction process directory contains all the transaction
 notification email templates. All transaction notifications use the
 [Handlebars templating language](/references/email-templates/#handlebars)

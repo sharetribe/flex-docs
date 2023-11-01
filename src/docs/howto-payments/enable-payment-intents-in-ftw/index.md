@@ -86,7 +86,7 @@ The default transaction process supports SCA, but if you have an older
 process version without PaymentIntents, you can see our new example
 processes here:
 
-https://github.com/sharetribe/sharetribe-example-processes
+https://github.com/sharetribe/example-processes
 
 All the example processes support SCA. If you need help with the
 concrete steps to customize your process to support SCA, contact

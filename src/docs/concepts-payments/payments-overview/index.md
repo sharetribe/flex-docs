@@ -249,7 +249,7 @@ As mentioned, the default purchase process combines the customer
 checkout and provider acceptance steps into a single customer action. In
 other words, the purchase is automatically accepted and paid as soon as
 the customer clicks to pay for the listing. The
-[sharetribe-example-processes Github repository](https://github.com/sharetribe/sharetribe-example-processes)
+[example-processes Github repository](https://github.com/sharetribe/example-processes)
 contains an example of a booking process called `instant-booking` that
 you can use to implement a similar flow for bookings in Sharetribe Web
 Template, as well as in any custom client application you may be using.

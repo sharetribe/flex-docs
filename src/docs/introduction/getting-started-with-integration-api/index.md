@@ -18,7 +18,7 @@ that Sharetribe provides, read
 [this article](/concepts/marketplace-api-integration-api/).
 
 In this tutorial, you will download, set up and run an
-[example Integration API command line script](https://github.com/sharetribe/sharetribe-integration-api-examples)
+[example Integration API command line script](https://github.com/sharetribe/integration-api-examples)
 that will report some data about your Sharetribe marketplace.
 
 ## Install development tooling
@@ -35,13 +35,13 @@ install some basic development tooling:
 Clone the examples repository:
 
 ```bash
-git clone https://github.com/sharetribe/sharetribe-integration-api-examples.git
+git clone https://github.com/sharetribe/integration-api-examples.git
 ```
 
 Go to the cloned directory:
 
 ```bash
-cd sharetribe-integration-api-examples
+cd integration-api-examples
 ```
 
 ## Install the dependencies
@@ -130,7 +130,7 @@ This month, starting from Sun Dec 01 2019:
 ## Next steps
 
 - Study the examples
-  [source code](https://github.com/sharetribe/sharetribe-integration-api-examples)
+  [source code](https://github.com/sharetribe/integration-api-examples)
   to get a better understanding on how to use the Integration SDK
 - Read the
   [Integration API reference documentation](https://www.sharetribe.com/api-reference/)

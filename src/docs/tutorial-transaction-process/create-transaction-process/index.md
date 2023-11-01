@@ -28,18 +28,18 @@ fairly tedious task. We'll make our life a bit easier by cloning the
 Sharetribe example processes repository :
 
 ```shell
-git clone https://github.com/sharetribe/sharetribe-example-processes.git
+git clone https://github.com/sharetribe/example-processes.git
 ```
 
 And then we move to that directory:
 
 ```shell
-cd sharetribe-example-processes/
+cd example-processes/
 ```
 
 There are several processes listed in
-[that directory](https://github.com/sharetribe/sharetribe-example-processes).
-The one we are going to use as a basis for our new process is
+[that directory](https://github.com/sharetribe/example-processes). The
+one we are going to use as a basis for our new process is
 _instant-booking_.
 
 ### Create a new process
@@ -67,8 +67,7 @@ So, if we would like to create a new process, we need to specify a path
 to the local directory. That directory should contain process definition
 (process.edn file) and templates subdirectory containing correct email
 templates for the email notifications defined in that process. We
-already have those since we cloned the _sharetribe-example-processes_
-repository.
+already have those since we cloned the _example-processes_ repository.
 
 Then we just need to define a name to that process and specify the
 marketplace environment, where the new process should be created. We'll

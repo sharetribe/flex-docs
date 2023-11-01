@@ -101,5 +101,5 @@ actions of a transition**.
   - [stockAdjustments](https://www.sharetribe.com/api-reference/integration.html#stock-adjustments)
   - [stockReservations](https://www.sharetribe.com/api-reference/integration.html#stock-reservations)
 - [Transaction process actions for stock reservations](/references/transaction-process-actions/#stock-reservations)
-- [Example transaction process definition](https://github.com/sharetribe/sharetribe-example-processes#default-purchase)
+- [Example transaction process definition](https://github.com/sharetribe/example-processes#default-purchase)
   for selling products using stock
