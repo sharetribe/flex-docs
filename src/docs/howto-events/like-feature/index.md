@@ -494,10 +494,10 @@ we'll listen to the
 [/events/query](https://www.sharetribe.com/api-reference/integration.html#query-events)
 endpoint, filter out relevant events and finally update listing extended
 data. We'll use the
-[_notify-new-listings.js_](https://github.com/sharetribe/sharetribe-integration-api-examples/blob/master/scripts/notify-new-listings.js)
+[_notify-new-listings.js_](https://github.com/sharetribe/integration-api-examples/blob/master/scripts/notify-new-listings.js)
 script in the integration-api-examples as a basis for our new script.
 Make sure to follow the instructions at the
-[root of the repository](https://github.com/sharetribe/sharetribe-integration-api-examples#getting-started)
+[root of the repository](https://github.com/sharetribe/integration-api-examples#getting-started)
 if you're unsure how to run the script locally.
 
 First off, we'll need to change what event type we want to filter. In
@@ -648,7 +648,7 @@ const pollLoop = (sequenceId) => {
 ```
 
 You can now run the script locally following the instructions
-[here](https://github.com/sharetribe/sharetribe-integration-api-examples#getting-started).
+[here](https://github.com/sharetribe/integration-api-examples#getting-started).
 
 ## Increment the counter in the UI
 

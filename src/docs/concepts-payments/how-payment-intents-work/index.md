@@ -84,9 +84,9 @@ does not need acceptance from the provider.
 
 You can find another example process with only an _instant booking_ flow
 and support for both card and push payments in the
-[Instant booking process](https://github.com/sharetribe/sharetribe-example-processes#instant-booking)
+[Instant booking process](https://github.com/sharetribe/example-processes#instant-booking)
 in the
-[Sharetribe example transaction processes repository](https://github.com/sharetribe/sharetribe-example-processes).
+[Sharetribe example transaction processes repository](https://github.com/sharetribe/example-processes).
 
 ## Actions related to PaymentIntents
 

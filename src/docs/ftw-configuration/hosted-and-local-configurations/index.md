@@ -152,7 +152,7 @@ and hosted configurations.
 
 Let's say you want to use multiple listing types in your marketplace –
 one for regular bookings, defined in Sharetribe Console, and one for
-[negotiated bookings](https://github.com/sharetribe/sharetribe-example-processes/tree/master/negotiated-booking),
+[negotiated bookings](https://github.com/sharetribe/example-processes/tree/master/negotiated-booking),
 defined in the template.
 
 First, follow the directions in the process README.md to configure the

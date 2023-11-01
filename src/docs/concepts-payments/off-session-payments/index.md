@@ -46,9 +46,9 @@ Suppose your sauna rentals marketplace should allow customers to book
 saunas up to a year in advance, but the customer is only charged at a
 specified moment before the booking. The figure below illustrates how a
 part of your transaction process might look like. The
-[sharetribe-example-processes Github repository](https://github.com/sharetribe/sharetribe-example-processes/)
+[example-processes Github repository](https://github.com/sharetribe/example-processes/)
 contains
-[an example transaction process](https://github.com/sharetribe/sharetribe-example-processes/tree/master/automatic-off-session-payment)
+[an example transaction process](https://github.com/sharetribe/example-processes/tree/master/automatic-off-session-payment)
 corresponding to the flow described.
 
 ![Example transaction process with delayed payment](tx-delayed-payments.png 'Example transaction process with delayed payment')
@@ -61,7 +61,7 @@ In this example, a transaction goes as follows:
 2. The provider verifies the request and accepts the booking.
 3. At a later point in time (1 month before the booking start time in
    this example, and 1 day before the booking start in the
-   [example process](https://github.com/sharetribe/sharetribe-example-processes/tree/master/automatic-off-session-payment)),
+   [example process](https://github.com/sharetribe/example-processes/tree/master/automatic-off-session-payment)),
    an attempt is made to automatically charge the customer's stored
    payment card. If the charge succeeds, the transaction continues
    onwards.
@@ -115,7 +115,7 @@ not yet been charged.
 ## Considerations about implementation in Sharetribe Web Template
 
 If you want to implement
-[the example process](https://github.com/sharetribe/sharetribe-example-processes/tree/master/automatic-off-session-payment)
+[the example process](https://github.com/sharetribe/example-processes/tree/master/automatic-off-session-payment)
 in your user interface, there are multiple ways to do so. If your user
 interface is based on the Sharetribe Web Template, here are a few things
 worth considering.
