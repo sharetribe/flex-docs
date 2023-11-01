@@ -90,7 +90,7 @@ When the necessary development has been done and your marketplace is
 ready for onboarding real users, you can initiate the Live environment
 setup from Console. This is also the point when you start paying the
 Sharetribe subscriptions (see more information about
-[Sharetribe pricing](https://www.sharetribe.com/pricing)).
+[Sharetribe pricing](https://www.sharetribe.com/pricing/)).
 
 ## Workflow between the three environments
 
