@@ -50,8 +50,6 @@ You can preview and customise built-in emails using the
 in the Sharetribe Console. You can find the editor in the Console under
 the Build > Advanced section.
 
-<plan tier="extend" feature="The email template code editor"></plan>
-
 The email templates use the
 [Handlebars template language](/references/email-templates/#handlebars).
 The most prominent use of the handlebar templates is the `t` helper,
@@ -101,8 +99,6 @@ Build > Content > Email texts. You can preview your changes, as well as
 update message keys and add or delete transaction notifications, with
 the
 [Sharetribe CLI](/how-to/edit-transaction-process-with-sharetribe-cli/).
-
-<plan tier="extend" feature="Customizing your transaction notifications"></plan>
 
 The
 [template sub-directory](https://github.com/sharetribe/example-processes/tree/master/default-booking/templates)

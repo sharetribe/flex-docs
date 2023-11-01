@@ -60,8 +60,6 @@ and you can modify the structure and code of the notifications through
 Using [Zapier](/how-to/set-up-and-use-zapier/) you can connect your
 marketplace with other web applications and create automated workflows.
 
-<plan tier="extend" feature="Access to the Zapier integration"></plan>
-
 Even though you can’t listen for new messages through Zapier, messages
 can easily be retrieved as a transaction relationship. For more complex
 customisations, you can use events to listen to new or deleted messages.

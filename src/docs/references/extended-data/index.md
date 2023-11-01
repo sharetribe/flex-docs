@@ -86,8 +86,6 @@ supports querying listings by public data or metadata.
 Search schemas can be managed with
 [Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
-<plan tier="extend" feature="Access to Sharetribe CLI in the live environment"></plan>
-
 With the CLI, you can list, set and unset search schemas for listing's
 public data and metadata as well as for user profile's metadata,
 private, protected and public data. The commands to manage search

@@ -18,12 +18,6 @@ transitioned and by defining who can perform the transition. This way
 transition requests have built-in validation of who can invoke them and
 in what state of the transaction flow.
 
-<plan tier="launch">
-
-Live transactions are available in the Launch plan and above.
-
-</plan>
-
 However, there are moments when more control is required on who can
 initiate a transition and especially with what kind of parameters. Take
 discounts on pricing by leveraging discount coupons managed by a 3rd
@@ -93,9 +87,6 @@ commission.
 The Integration API
 [makes it possible to invoke transitions](https://www.sharetribe.com/api-reference/integration.html#transition-transaction)
 for which the `:actor` is set to `:actor.role/operator`.
-
-<plan tier="extend" feature="Integration API access">
-</plan>
 
 As the Integration API authentication requires knowledge of the
 integration application's client secret and is meant to be used only

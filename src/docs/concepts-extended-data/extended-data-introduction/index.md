@@ -162,8 +162,6 @@ portfolios could be included as private data.
 Public metadata is visible to all users, but only the operator and the
 Integration API can edit it.
 
-<plan tier="extend" feature="Access to Integration API"></plan>
-
 Typical use-cases for metadata are featured listings or premium users.
 You may want to curate listings that get this extra visibility yourself
 or offer it as a paid service, so using public data, which the users can

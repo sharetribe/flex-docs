@@ -73,4 +73,3 @@ other changes you may want to make. Some of these options include:
 - Add more content pages:
   [How the templates render content pages using the PageBuilder](/template/page-builder/)
 - Update other existing pages
-  <plan tier="extend" feature="Customizing your transaction process and email templates"></plan>

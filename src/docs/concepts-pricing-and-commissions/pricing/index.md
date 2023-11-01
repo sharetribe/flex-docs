@@ -19,13 +19,6 @@ but the pricing can also be extended to support more complicated
 business models or even be replaced with a completely different model
 altogether.
 
-<plan tier="launch">
-
-Online payments in the Live environment are available in the Launch plan
-and above.
-
-</plan>
-
 Here are some examples of common pricing schemes you might want to add
 on top of the regular listing price.
 

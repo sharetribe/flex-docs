@@ -17,8 +17,6 @@ Sharetribe Integration API to continuously query events efficiently. We
 will also demonstrate how to interpret the event data to detect actions,
 using publishing a listing as an example.
 
-<plan tier="extend" feature="Access to Integration API and events"></plan>
-
 This guide assumes that you have already set up a Sharetribe Integration
 API application and have a Node.js app with the
 [Integration API SDK](/concepts/js-sdk/) ready. If you have not yet used

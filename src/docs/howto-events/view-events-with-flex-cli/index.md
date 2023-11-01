@@ -16,10 +16,9 @@ Sharetribe CLI (Command-line interface) is a tool for examing and
 changing your marketplace's advanced configurations such as transaction
 processes and email templates.
 
-<plan tier="extend" feature="Access to Sharetribe CLI"></plan> This
-guide expects that you have already installed Sharetribe CLI and are
-logged in with your API key. If not, it's recommended to first read the
-tutorial
+This guide expects that you have already installed Sharetribe CLI and
+are logged in with your API key. If not, it's recommended to first read
+the tutorial
 [Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
 In this guide, we will learn how the events of a marketplace can be

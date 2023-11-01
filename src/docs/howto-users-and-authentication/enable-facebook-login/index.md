@@ -14,8 +14,6 @@ published: true
 whether Facebook login is enabled, take a look at our
 [legacy documentation](/template/legacy-templates/).**
 
-<plan tier="extend" feature="Using identity providers"></plan>
-
 Enabling Facebook login consists of three main steps:
 
 - **Create a Facebook app** Facebook app is what connects your

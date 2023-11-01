@@ -33,7 +33,7 @@ const RegularFooter = props => {
       <A href="mailto:hello@sharetribe.com">email</A>, or consult the Sharetribe
       Developer Community at{' '}
       <Link to="https://www.sharetribe.com/dev-slack">
-        Sharetribe's Flex development Slack Channel
+        Sharetribe Developers Slack Channel
       </Link>
       . You can also contact our support team through the chat widget in Flex
       Console.

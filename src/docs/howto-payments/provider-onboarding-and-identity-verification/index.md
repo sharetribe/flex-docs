@@ -17,13 +17,6 @@ Sharetribe offers two different mechanisms for creating a provider
 verification process where providers can enter all necessary and
 required information for them to receive payments.
 
-<plan tier="launch">
-
-Online payments in the Live environment are available in the Launch plan
-and above.
-
-</plan>
-
 You can either choose to use ready-made tools provided by Stripe
 ([Stripe Connect Onboarding](https://stripe.com/en-fi/connect/onboarding))
 or implement your own flow.

@@ -9,8 +9,6 @@ ingress:
 published: true
 ---
 
-<plan tier="extend" feature="Using identity providers"></plan>
-
 ## OpenID Connect
 
 [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html)

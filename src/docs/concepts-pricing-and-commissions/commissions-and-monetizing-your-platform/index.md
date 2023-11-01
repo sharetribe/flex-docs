@@ -23,13 +23,6 @@ Marketplace Academy has
 describing different pricing models and the tradeoffs behind different
 options.
 
-<plan tier="launch">
-
-Online payments in the Live environment are available in the Launch plan
-and above.
-
-</plan>
-
 As background, familiarizing yourself with
 [line items](/concepts/pricing/#line-items) and
 [privileged transitions](/concepts/privileged-transitions/) gives you a
@@ -235,5 +228,3 @@ you can integrate a third-party service such as
 [Chargebee](https://www.chargebee.com/) or
 [Stripe billing](https://stripe.com/en-fi/billing) to process
 subscription payments from users who want access to your marketplace.
-
-<plan tier="extend" feature="Using Integration API"></plan>

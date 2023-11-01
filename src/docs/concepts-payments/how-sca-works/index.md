@@ -26,21 +26,6 @@ Sharetribe and the
 offer out-of-the-box support for SCA. This article clarifies how exactly
 transactions using SCA will work in the default process.
 
-<plan tier="launch">
-
-Online payments in the Live environment are available in the Launch plan
-and above.
-
-</plan>
-
-<plan tier="extend">
-
-In the Extend plan, you can make adjustments to your transaction
-processes, as long as you comply with the SCA requirements when dealing
-with payments by European customers.
-
-</plan>
-
 ## How payment with SCA works
 
 From the customer's perspective, most transactions are business as
