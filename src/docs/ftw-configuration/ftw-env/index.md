@@ -119,6 +119,12 @@ of environment variables.
 
   App secret of a Facebook App when Facebook login is used.
 
+* **`REACT_APP_SHARETRIBE_SDK_ASSET_CDN_BASE_URL`**
+
+Used to initialize the SDK with a custom base URL. Only use this if you
+want to proxy asset SDK calls through your server. The template uses the
+correct base URL by default if left empty.
+
 <info>
 
 The template is built on top of Create React App (CRA). CRA uses
