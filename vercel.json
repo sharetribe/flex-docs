@@ -72,7 +72,7 @@
   },
   {
     "source": "/background/what-is-the-difference-between-flex-and-go-open-source/",
-    "destination": "/docs/operator-guides/what-is-the-difference-between-flex-and-go-source-available/",
+    "destination": "https://www.sharetribe.com/help/en/collections/6589321-migrating-to-sharetribe-from-other-platforms/",
     "permanent": true
   },
   {
@@ -372,12 +372,12 @@
   },
   {
     "source": "/background/concepts/",
-    "destination": "/docs/operator-guides/concepts/",
+    "destination": "https://www.sharetribe.com/help/en/articles/8510727-technical-terms-and-definitions/",
     "permanent": true
   },
   {
     "source": "/background/features/",
-    "destination": "/docs/operator-guides/features/",
+    "destination": "https://www.sharetribe.com/features/",
     "permanent": true
   },
   {
@@ -392,7 +392,7 @@
   },
   {
     "source": "/background/what-is-the-difference-between-flex-and-go-source-available/",
-    "destination": "/docs/operator-guides/what-is-the-difference-between-flex-and-go-source-available/",
+    "destination": "https://www.sharetribe.com/help/en/collections/6589321-migrating-to-sharetribe-from-other-platforms/",
     "permanent": true
   },
   {
@@ -852,7 +852,7 @@
   },
   {
     "source": "/tutorial/add-faq-page/",
-    "destination": "/docs/operator-guides/how-to-create-an-faq-page/",
+    "destination": "https://www.sharetribe.com/help/en/articles/8410849-how-to-create-an-faq-page/",
     "permanent": true
   },
   {
