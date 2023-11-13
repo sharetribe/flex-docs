@@ -1,8 +1,8 @@
 ---
 title: How to change marketplace language
-slug: how-to-change-ftw-language
-updated: 2023-09-04
-category: ftw-content
+slug: how-to-change-template-language
+updated: 2023-10-24
+category: template-content
 ingress:
   This guide describes how to change the language used in the Sharetribe
   Web Template.
@@ -31,11 +31,11 @@ directory for you to start customizing marketplace texts.
 </info>
 
 Even if you use
-[hosted marketplace texts](/ftw/hosted-marketplace-texts/) to manage
-your marketplace texts, it is still important to have a built-in
+[hosted marketplace texts](/template/hosted-marketplace-texts/) to
+manage your marketplace texts, it is still important to have a built-in
 language-specific marketplace text file in the template as well, so that
 the application can show meaningful messages for any keys missing from
-the Flex Console marketplace text asset.
+the Sharetribe Console marketplace text asset.
 
 ## Changing the marketplace texts used in the template
 
@@ -125,4 +125,4 @@ paths like `/fr/about`. In this case, it is useful to save the user's
 language preference to the extended data.
 
 Read more about having
-[a multilanguage marketplace on top of Flex](/concepts/marketplace-texts/#can-i-have-a-multilanguage-marketplace).
+[a multilanguage marketplace on top of Sharetribe](/concepts/marketplace-texts/#can-i-have-a-multilanguage-marketplace).

@@ -1,8 +1,8 @@
 ---
 title: Configuration variables
 slug: configuration
-updated: 2023-01-01
-category: ftw-configuration
+updated: 2023-10-24
+category: template-configuration
 ingress:
   The Sharetribe Web Template has many configurations you can edit
   through configuration files. This article explains how to change those
@@ -24,15 +24,15 @@ supports fetching the configuration data through the
 [Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
 If you are using an older version of the web-template, follow the
 instructions
-[here](/ftw/how-to-customize-ftw/#pull-in-the-latest-upstream-changes)
+[here](/template/how-to-customize-template/#pull-in-the-latest-upstream-changes)
 to pull in the latest upstream changes.
 
 <info>
 
 Settings configured in local configurations files are overridden by any
 fetched via the Asset Delivery API. You can refer to
-[this article](/ftw/hosted-and-local-configurations/) to modify the way
-your template merges local and hosted configurations.
+[this article](/template/hosted-and-local-configurations/) to modify the
+way your template merges local and hosted configurations.
 
 </info>
 
@@ -40,7 +40,8 @@ your template merges local and hosted configurations.
 
 All relevant configuration is split between the following files and the
 environment variables. You can see the available environment variables
-in the [template environment variables](/ftw/ftw-env/) article.
+in the [template environment variables](/template/template-env/)
+article.
 
 - [configBranding.js](https://github.com/sharetribe/web-template/blob/main/src/config/configBranding.js)
   - Marketplace colour, logos, Facebook and Twitter media
@@ -115,7 +116,7 @@ Note that Stripe may charge a minimum fee that depends on factors such
 as the country and currency.
 
 You can read more about currency configurations in the
-[currency configurations article](/ftw/how-to-set-up-currency-in-ftw/).
+[currency configurations article](/template/how-to-set-up-currency-in-template/).
 
 ### Locale
 
@@ -312,7 +313,7 @@ If you do enable the `indexForSearch` variable, you must also set a
 search schema. Without setting a search schema for the extended data,
 the filter component will not work. Learn how to set a search schema for
 a extended data attribute in the
-[manage search schemas article](/how-to/manage-search-schemas-with-flex-cli/).
+[manage search schemas article](/how-to/manage-search-schemas-with-sharetribe-cli/).
 
 </info>
 
@@ -348,7 +349,7 @@ multiple listing types per marketplace, you can also have multiple
 transaction processes in use at one time.
 
 - Read more:
-  [Change transaction process in Sharetribe Web Template](/how-to/change-transaction-process-in-ftw/).
+  [Change transaction process in Sharetribe Web Template](/how-to/change-transaction-process-in-template/).
 
 ## Search configuration
 
@@ -393,11 +394,12 @@ the
 The
 [configMaps.js](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js)
 file allows you to set up a map provider and adjust map-related
-settings. See [this article](/ftw/configure-maps/) for a complete
+settings. See [this article](/template/configure-maps/) for a complete
 overview of what map-related adjustments you can achieve through the
 configuration files. If you are trying to change the map provider, see
-the how to set up [Google Maps](/ftw/how-to-use-google-maps-in-ftw/) or
-[Mapbox](/ftw/how-to-set-up-mapbox-for-ftw/) article.
+the how to set up
+[Google Maps](/template/how-to-use-google-maps-in-template/) or
+[Mapbox](/template/how-to-set-up-mapbox-for-template/) article.
 
 ## Stripe and transactions
 
@@ -405,6 +407,6 @@ the how to set up [Google Maps](/ftw/how-to-use-google-maps-in-ftw/) or
 
 The
 [configStripe.js](https://github.com/sharetribe/web-template/blob/main/src/config/configStripe.js)
-file includes all countries supported by the Flex Stripe integration.
-The list of countries is used during the Stripe onboarding process. In
-most cases, no changes are required to this file.
+file includes all countries supported by the Sharetribe Stripe
+integration. The list of countries is used during the Stripe onboarding
+process. In most cases, no changes are required to this file.

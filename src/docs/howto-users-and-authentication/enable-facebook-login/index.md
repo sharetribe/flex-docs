@@ -1,7 +1,7 @@
 ---
 title: Enable Facebook login
 slug: enable-facebook-login
-updated: 2020-11-16
+updated: 2023-10-24
 category: how-to-users-and-authentication
 ingress:
   In this how-to guide we'll take a look at the process of setting up
@@ -12,7 +12,7 @@ published: true
 
 **If you are working with one of our legacy templates and are not sure
 whether Facebook login is enabled, take a look at our
-[legacy documentation](/ftw/legacy-templates/).**
+[legacy documentation](/template/legacy-templates/).**
 
 Enabling Facebook login consists of three main steps:
 
@@ -20,10 +20,10 @@ Enabling Facebook login consists of three main steps:
   marketplace to Facebook and let's Facebook know that users from your
   marketplace are allowed to authenticate themselves using the Facebook
   login.
-- **Create an identity provider client in Flex Console** Identity
-  provider (IdP) client is what let's Flex know that the users of your
-  marketplace are allowed to use the Facebook app you created to log
-  into your marketplace.
+- **Create an identity provider client in Sharetribe Console** Identity
+  provider (IdP) client is what let's Sharetribe know that the users of
+  your marketplace are allowed to use the Facebook app you created to
+  log into your marketplace.
 - **Configure Sharetribe Web Template** A few attributes from the
   Facebook app will need to be configured to your Sharetribe Web
   Template so that it can perform the login flow via Facebook.
@@ -107,13 +107,13 @@ Your Facebook login settings should now look like this:
     dot should be displayed.
 
 Your Facebook app is now created and configured. The next step is to set
-up an identity provider client in Flex Console.
+up an identity provider client in Sharetribe Console.
 
 ## Configure an identity provider client in Console
 
 Now that your Facebook app is all set up, a corresponding _identity
 provider client_ will need to be configured for your marketplace. This
-will tell Flex that your users will be allowed to log into your
+will tell Sharetribe that your users will be allowed to log into your
 marketplace using the Facebook app you just created. The information
 stored in an IdP client is used to verify a token obtained from Facebook
 when a user logs in.
@@ -121,7 +121,7 @@ when a user logs in.
 An identity provider client can be configure with the following steps:
 
 1. Go to
-   [Social logins & SSO in Console](https://flex-console.sharetribe.com/social-logins-and-sso).
+   [Social logins & SSO in Console](https://console.sharetribe.com/advanced/social-logins-and-sso).
 2. Under _Identity provider clients_ click "+ Add new".
 3. Set "Client name". This can be anything you choose, for example,
    "Facebook login". In case you need to create multiple Facebook apps,
@@ -154,7 +154,7 @@ template:
   Corresponds to _client secret_ of the identity provider in Console.
 
 For more information on the template environment variables, see the
-[Template environment variables](/ftw/ftw-env/) article.
+[Template environment variables](/template/template-env/) article.
 
 That is it. Setting these environment variables will make Sharetribe Web
 Template render the Facebook login button in signup and login forms.

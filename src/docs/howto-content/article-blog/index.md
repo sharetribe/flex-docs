@@ -1,12 +1,12 @@
 ---
 title: Create a library of articles
 slug: article-library
-updated: 2023-02-14
+updated: 2023-10-24
 category: how-to-content
 ingress:
   With the Pages feature, you can build content pages on your
-  marketplace directly from Flex Console. This how-to guide shows how to
-  create a blog-style library of interlinked articles on your
+  marketplace directly from Sharetribe Console. This how-to guide shows
+  how to create a blog-style library of interlinked articles on your
   marketplace.
 published: true
 ---
@@ -21,7 +21,7 @@ interlinked library of content using the Pages feature.
 
 This article assumes that your client app can handle
 [hosted content assets](/concepts/content-management/). You can
-[update your client according to these instructions](/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).
+[update your client according to these instructions](/legacy/ftw/page-builder/#how-to-take-pages-into-use-if-you-are-using-an-older-version-of-ftw).
 
 ## Why an article library?
 
@@ -62,7 +62,7 @@ then build your content library as you go.
 ## Build your library page and article pages
 
 To add a page, you need to navigate to
-[Flex Console > Build > Content > Pages](https://flex-console.sharetribe.com/content/pages).
+[Sharetribe Console > Build > Content > Pages](https://console.sharetribe.com/content/pages).
 By default, this page contains an about page, a landing page, a privacy
 policy page, and a terms of service page. Under those pages you can see
 a link with text "+ Create new page...". Click this link.
@@ -114,7 +114,7 @@ e.g. _features_ sections to highlight quotes or other key information.
 
 <info>
 
-Flex currently has a limit of **100 content pages** across your
+Sharetribe currently has a limit of **100 content pages** across your
 marketplace, including the pages included by default:
 
 - About

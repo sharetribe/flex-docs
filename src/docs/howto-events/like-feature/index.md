@@ -1,7 +1,7 @@
 ---
 title: How to implement a like feature using events
 slug: like-feature
-updated: 2022-02-25
+updated: 2023-10-24
 category: how-to-events
 ingress:
   Following this guide, you'll be able to build a feature that allows
@@ -40,7 +40,7 @@ in the user's extended data.
 To allow users to like listings, we introduce a UI-element users can
 interact with to like a listing. However, when we update a listing's
 extended data as a reaction to user input, we are prone to a race
-condition. Fortunately, Flex provides a powerful feature called
+condition. Fortunately, Sharetribe provides a powerful feature called
 [events](/references/events/) that we can use to solve the problem. We
 can listen to events using a script that polls the
 [events endpoint](https://www.sharetribe.com/api-reference/integration.html#query-events).
@@ -239,8 +239,8 @@ To update the user extended data, we'll need to make some changes to
 _ListingPage.duck.js_. We'll need to import the _currentUserShowSuccess_
 function from _user.duck.js_ to update the current user. In addition,
 we'll be adding a new action type, action creator and reducer to the
-file. For more information on how Redux is setup in FTW, refer to our
-[article on Redux](/ftw/ftw-redux/).
+file. For more information on how Redux is setup in the template, refer
+to our [article on Redux](/template/redux/).
 
 ###### Step 1: Import currentUserShowSuccess
 
@@ -492,10 +492,10 @@ we'll listen to the
 [/events/query](https://www.sharetribe.com/api-reference/integration.html#query-events)
 endpoint, filter out relevant events and finally update listing extended
 data. We'll use the
-[_notify-new-listings.js_](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js)
+[_notify-new-listings.js_](https://github.com/sharetribe/integration-api-examples/blob/master/scripts/notify-new-listings.js)
 script in the integration-api-examples as a basis for our new script.
 Make sure to follow the instructions at the
-[root of the repository](https://github.com/sharetribe/flex-integration-api-examples#getting-started)
+[root of the repository](https://github.com/sharetribe/integration-api-examples#getting-started)
 if you're unsure how to run the script locally.
 
 First off, we'll need to change what event type we want to filter. In
@@ -646,7 +646,7 @@ const pollLoop = (sequenceId) => {
 ```
 
 You can now run the script locally following the instructions
-[here](https://github.com/sharetribe/flex-integration-api-examples#getting-started).
+[here](https://github.com/sharetribe/integration-api-examples#getting-started).
 
 ## Increment the counter in the UI
 

@@ -1,11 +1,11 @@
 ---
 title: How PaymentIntents work
 slug: payment-intents
-updated: 2021-10-14
+updated: 2023-10-24
 category: concepts-payments
 ingress:
-  Overview of how Stripe PaymentIntents work with Sharetribe Flex, and
-  how you can build your transaction process with support for Strong
+  Overview of how Stripe PaymentIntents work with Sharetribe, and how
+  you can build your transaction process with support for Strong
   Customer Authentication (SCA).
 published: true
 ---
@@ -16,8 +16,8 @@ published: true
 mechanism provided by Stripe to track the lifecycle of customer checkout
 flow. In addition, PaymentIntents provide tools for
 [Strong Customer Authentication (SCA)](/concepts/strong-customer-authentication/)
-where required. Flex has built-in support for PaymentIntents and Strong
-Customer Authentication.
+where required. Sharetribe has built-in support for PaymentIntents and
+Strong Customer Authentication.
 
 In September 2019
 [new European regulation](https://stripe.com/en-fi/payments/strong-customer-authentication)
@@ -33,12 +33,12 @@ things like
 [3D Secure Card Payments](https://stripe.com/docs/payments/3d-secure).
 
 PaymentIntents also allow a variety of payment methods to be used when
-making a payment in Flex. See the
-[overview of supported payment methods in Flex](/concepts/payment-methods-overview/).
+making a payment in Sharetribe. See the
+[overview of supported payment methods in Sharetribe](/concepts/payment-methods-overview/).
 
-This article will describe how PaymentIntents relate to Flex transaction
-processes and the general principles of implementing a checkout flow
-with PaymentIntents.
+This article will describe how PaymentIntents relate to Sharetribe
+transaction processes and the general principles of implementing a
+checkout flow with PaymentIntents.
 
 ## Transaction process with PaymentIntents
 
@@ -64,14 +64,14 @@ steps:
 For technical implementation of PaymentIntents, Stripe offers two
 approaches -
 [manual or automatic confirmation flow](https://stripe.com/docs/payments/payment-intents#one-time-payments).
-Flex uses the automatic flow. In practice, the Flex transaction engine
-models the automatic flow with two transitions. First transition creates
-the PaymentIntent (Step 1.) and second transition will validate and mark
-it confirmed in Flex (Step 3.). Between these steps, the automatic flow
-pushes the responsibility of authenticating, authorizing and confirming
-the payment in Stripe to the client application (Step 2.). More
-information on the Step 2. can be found in this
-[section](#required-actions-in-the-client).
+Sharetribe uses the automatic flow. In practice, the Sharetribe
+transaction engine models the automatic flow with two transitions. First
+transition creates the PaymentIntent (Step 1.) and second transition
+will validate and mark it confirmed in Sharetribe (Step 3.). Between
+these steps, the automatic flow pushes the responsibility of
+authenticating, authorizing and confirming the payment in Stripe to the
+client application (Step 2.). More information on the Step 2. can be
+found in this [section](#required-actions-in-the-client).
 
 ### Example transaction process with both card and push payments
 
@@ -84,9 +84,9 @@ does not need acceptance from the provider.
 
 You can find another example process with only an _instant booking_ flow
 and support for both card and push payments in the
-[Instant booking process](https://github.com/sharetribe/flex-example-processes#instant-booking)
+[Instant booking process](https://github.com/sharetribe/example-processes#instant-booking)
 in the
-[Flex example transaction processes repository](https://github.com/sharetribe/flex-example-processes).
+[Sharetribe example transaction processes repository](https://github.com/sharetribe/example-processes).
 
 ## Actions related to PaymentIntents
 
@@ -197,8 +197,8 @@ customer action. Typically, the customer needs to be redirected to their
 bank website or app where they can complete the payment, after which
 they get redirected back to the marketplace.
 
-This means that Flex implementation of PaymentIntents supports payment
-flows that require authentication and those that do not. When
+This means that Sharetribe implementation of PaymentIntents supports
+payment flows that require authentication and those that do not. When
 implementing the PaymentIntent flow in the client you need to be
 prepared for handling both cases - payments requiring SCA and payments
 that do not. It might be impossible to know in advance whether the
@@ -226,11 +226,11 @@ guides as a reference:
   - [Przelewy24](https://stripe.com/docs/payments/p24/accept-a-payment)
 
 Below we outline the concrete steps and how they work in combination
-with the Flex transaction process.
+with the Sharetribe transaction process.
 
-#### Step 1: Initiate or transition a Flex transaction
+#### Step 1: Initiate or transition a Sharetribe transaction
 
-With Flex, the step to create a PaymentIntent in handled by the
+With Sharetribe, the step to create a PaymentIntent in handled by the
 transaction engine when a transaction transitions with a transition
 using one of the following actions:
 
@@ -279,12 +279,12 @@ This data is only exposed to the customer in the transaction. The
 provider can not access neither the PaymentIntent ID nor the client
 secret.
 
-#### Step 3: Transition the Flex transaction further
+#### Step 3: Transition the Sharetribe transaction further
 
 Once any customer authentication or payment confirmation is handled in
-the UI, you need to transition the Flex transaction further in order for
-Flex to record the payment details correctly. Make sure that the
-transition includes the
+the UI, you need to transition the Sharetribe transaction further in
+order for Sharetribe to record the payment details correctly. Make sure
+that the transition includes the
 [stripe-confirm-payment-intent](#stripe-confirm-payment-intent) action.
 
 If we assume that your transaction process follows
@@ -292,12 +292,12 @@ If we assume that your transaction process follows
 you would use the `confirm-payment` transition for card payments and the
 `confirm-payment-instant-booking` transition for push payments.
 
-## Using PaymentIntents in Flex
+## Using PaymentIntents in Sharetribe
 
 The Sharetribe Web Template supports card payments with PaymentIntents
 by default. If you need to adjust the default implementation, or if
 you're currently using one of our
-[legacy templates](https://www.sharetribe.com/docs/ftw/legacy-templates/),
+[legacy templates](https://www.sharetribe.com/docs/template/legacy-templates/),
 [learn more about how to take PaymentIntents into use](/how-to/enable-payment-intents/).
 
 ## Further reading
@@ -306,5 +306,5 @@ you're currently using one of our
 
 * [Transaction process](/concepts/transaction-process/)
 * [Action reference for Stripe integration](/references/transaction-process-actions/#stripe-integration)
-* [Editing transaction process](/how-to/edit-transaction-process-with-flex-cli/)
-* [Changing transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-ftw/)
+* [Editing transaction process](/how-to/edit-transaction-process-with-sharetribe-cli/)
+* [Changing transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-template/)

@@ -3,7 +3,7 @@ title:
   How to handle provider onboarding and identity verification in
   Sharetribe Web Template
 slug: provider-onboarding-and-identity-verification
-updated: 2023-09-04
+updated: 2023-10-24
 category: how-to-payments
 ingress:
   This article describes how to take Stripe Connect Onboarding into use
@@ -13,10 +13,11 @@ published: true
 
 ## Introduction
 
-Flex offers two different mechanisms for creating a provider
+Sharetribe offers two different mechanisms for creating a provider
 verification process where providers can enter all necessary and
-required information for them to receive payments. You can either choose
-to use ready-made tools provided by Stripe
+required information for them to receive payments.
+
+You can either choose to use ready-made tools provided by Stripe
 ([Stripe Connect Onboarding](https://stripe.com/en-fi/connect/onboarding))
 or implement your own flow.
 
@@ -70,7 +71,7 @@ the create-stripe-account call:
   for the user. Recommended to pass in at this phase to minimize the
   steps in the onboarding process.
 - `requestedCapabilities`: Required capabilities for payments to work in
-  Flex are `card_payments` and `transfers`.
+  Sharetribe are `card_payments` and `transfers`.
 
 ![Creating Stripe account](stripePayoutForm.png)
 
@@ -89,9 +90,9 @@ listings.
 ### 3. Fetching information about a Stripe Account
 
 If the user already has a Stripe Account you need to fetch the
-up-to-date account data from Stripe through Flex API. This way we can
-warn the users if there is some required information missing from their
-Stripe Account.
+up-to-date account data from Stripe through Sharetribe API. This way we
+can warn the users if there is some required information missing from
+their Stripe Account.
 
 The account data is returned after each create and update Stripe Account
 API call so there is no need for separate fetch API call in these cases.
@@ -101,7 +102,7 @@ In Sharetribe Web Template, the Stripe Account is fetched in
 function on `StripePayoutPage.duck.js`. Quite similar `loadData`
 funciton is also used on `EditListingPage`. You can find more
 information about data loading in
-[our routing article](/ftw/how-routing-works-in-ftw/).
+[our routing article](/template/how-routing-works-in-template/).
 
 After the Stripe Account has been fetched, we need to check
 `requirements` of the `stripeAccountData` attribute which contains the
@@ -225,8 +226,8 @@ these.
 After you have collected the information you need to obtain a new
 [account token](https://stripe.com/docs/connect/account-tokens) via
 Stripe API, through the same Stripe platform account as the one used by
-the marketplace. This account token should be passed to Flex API when
-creating or updating the Stripe Account.
+the marketplace. This account token should be passed to Sharetribe API
+when creating or updating the Stripe Account.
 
 ### Updating the Stripe Account
 

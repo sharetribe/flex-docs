@@ -22,17 +22,17 @@
   },
   {
     "source": "/background/ftw-redux/",
-    "destination": "/docs/ftw/ftw-redux/",
+    "destination": "/docs/template/redux/",
     "permanent": true
   },
   {
     "source": "/background/ftw-routing/",
-    "destination": "/docs/ftw/how-routing-works-in-ftw/",
+    "destination": "/docs/template/how-routing-works-in-template/",
     "permanent": true
   },
   {
     "source": "/background/getting-started/",
-    "destination": "/docs/introduction/introducing-flex/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
     "permanent": true
   },
   {
@@ -42,7 +42,7 @@
   },
   {
     "source": "/background/introducing-flex/",
-    "destination": "/docs/introduction/introducing-flex/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
     "permanent": true
   },
   {
@@ -52,7 +52,7 @@
   },
   {
     "source": "/background/overview/",
-    "destination": "/docs/introduction/introducing-flex/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
     "permanent": true
   },
   {
@@ -82,7 +82,7 @@
   },
   {
     "source": "/guides/how-to-add-static-pages-in-ftw/",
-    "destination": "/docs/ftw/how-to-add-static-pages-in-ftw/",
+    "destination": "/docs/template/how-to-add-static-pages/",
     "permanent": true
   },
   {
@@ -92,12 +92,12 @@
   },
   {
     "source": "/guides/how-to-change-ftw-ui-texts-and-translations/",
-    "destination": "/docs/ftw/how-to-change-ftw-ui-texts/",
+    "destination": "/docs/template/how-to-change-template-ui-texts/",
     "permanent": true
   },
   {
     "source": "/guides/how-to-change-search-filters-in-ftw/",
-    "destination": "/docs/how-to/change-search-filters-in-ftw/",
+    "destination": "/docs/how-to/change-search-filters-in-template/",
     "permanent": true
   },
   {
@@ -107,17 +107,17 @@
   },
   {
     "source": "/guides/how-to-change-transaction-process-in-ftw/",
-    "destination": "/docs/how-to/change-transaction-process-in-ftw/",
+    "destination": "/docs/how-to/change-transaction-process-in-template/",
     "permanent": true
   },
   {
     "source": "/guides/how-to-customize-ftw-styles/",
-    "destination": "/docs/ftw/how-to-customize-ftw-styles/",
+    "destination": "/docs/template/how-to-customize-template-styles/",
     "permanent": true
   },
   {
     "source": "/guides/how-to-customize-ftw/",
-    "destination": "/docs/ftw/how-to-customize-ftw/",
+    "destination": "/docs/template/how-to-customize-template/",
     "permanent": true
   },
   {
@@ -127,7 +127,7 @@
   },
   {
     "source": "/guides/how-to-deploy-ftw-to-production/",
-    "destination": "/docs/ftw/how-to-deploy-ftw-to-production/",
+    "destination": "/docs/template/how-to-deploy-template-to-production/",
     "permanent": true
   },
   {
@@ -137,7 +137,7 @@
   },
   {
     "source": "/guides/how-to-extend-listing-data-in-ftw/",
-    "destination": "/docs/how-to/extend-listing-data-in-ftw/",
+    "destination": "/docs/how-to/extend-listing-data-in-template/",
     "permanent": true
   },
   {
@@ -147,12 +147,12 @@
   },
   {
     "source": "/guides/how-to-sanitize-user-generated-content-in-ftw/",
-    "destination": "/docs/ftw/how-to-sanitize-user-generated-content-in-ftw/",
+    "destination": "/docs/template/how-to-sanitize-user-generated-content/",
     "permanent": true
   },
   {
     "source": "/guides/how-to-set-up-analytics-for-ftw/",
-    "destination": "/docs/ftw/how-to-set-up-analytics-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-analytics-for-template/",
     "permanent": true
   },
   {
@@ -162,17 +162,17 @@
   },
   {
     "source": "/guides/how-to-set-up-csp-for-ftw/",
-    "destination": "/docs/ftw/how-to-set-up-csp-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-csp-for-template/",
     "permanent": true
   },
   {
     "source": "/guides/how-to-set-up-currency-in-ftw/",
-    "destination": "/docs/ftw/how-to-set-up-currency-in-ftw/",
+    "destination": "/docs/template/how-to-set-up-currency-in-template/",
     "permanent": true
   },
   {
     "source": "/guides/how-to-set-up-mapbox-for-ftw/",
-    "destination": "/docs/ftw/how-to-set-up-mapbox-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-mapbox-for-template/",
     "permanent": true
   },
   {
@@ -192,17 +192,17 @@
   },
   {
     "source": "/guides/how-to-test-ftw/",
-    "destination": "/docs/ftw/how-to-test-ftw/",
+    "destination": "/docs/template/how-to-test-template/",
     "permanent": true
   },
   {
     "source": "/guides/how-to-use-ci-with-ftw/",
-    "destination": "/docs/ftw/how-to-use-ci-with-ftw/",
+    "destination": "/docs/template/how-to-use-ci-with-template/",
     "permanent": true
   },
   {
     "source": "/guides/how-to-use-google-maps-in-ftw/",
-    "destination": "/docs/ftw/how-to-use-google-maps-in-ftw/",
+    "destination": "/docs/template/how-to-use-google-maps-in-template/",
     "permanent": true
   },
   {
@@ -222,37 +222,37 @@
   },
   {
     "source": "/references/ftw-env/",
-    "destination": "/docs/ftw/ftw-env/",
+    "destination": "/docs/template/template-env/",
     "permanent": true
   },
   {
     "source": "/references/ftw/",
-    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "destination": "/docs/introduction/getting-started-with-web-template/",
     "permanent": true
   },
   {
     "source": "/tutorials/edit-email-templates-with-flex-cli/",
-    "destination": "/docs/how-to/edit-email-templates-with-flex-cli/",
+    "destination": "/docs/how-to/edit-email-templates-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/tutorials/edit-transaction-process-with-flex-cli/",
-    "destination": "/docs/how-to/edit-transaction-process-with-flex-cli/",
+    "destination": "/docs/how-to/edit-transaction-process-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/tutorials/getting-started-with-flex-cli/",
-    "destination": "/docs/introduction/getting-started-with-flex-cli/",
+    "destination": "/docs/introduction/getting-started-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/tutorials/getting-started-with-ftw/",
-    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "destination": "/docs/introduction/getting-started-with-web-template/",
     "permanent": true
   },
   {
     "source": "/tutorials/getting-started-with-ftw/",
-    "destination": "/docs/introduction/getting-started-with-ftw-daily/",
+    "destination": "/docs/introduction/getting-started-with-web-template/",
     "permanent": true
   },
   {
@@ -262,7 +262,7 @@
   },
   {
     "source": "/tutorials/manage-search-schemas-with-flex-cli/",
-    "destination": "/docs/how-to/manage-search-schemas-with-flex-cli/",
+    "destination": "/docs/how-to/manage-search-schemas-with-sharetribe-cli/",
     "permanent": true
   },
   {
@@ -277,7 +277,7 @@
   },
   {
     "source": "/ftw/how-to-change-ftw-ui-texts-and-translations/",
-    "destination": "/docs/ftw/how-to-change-ftw-ui-texts/",
+    "destination": "/docs/template/how-to-change-template-ui-texts/",
     "permanent": true
   },
   {
@@ -467,7 +467,7 @@
   },
   {
     "source": "/background/flex-environments/",
-    "destination": "/docs/concepts/flex-environments/",
+    "destination": "/docs/concepts/sharetribe-environments/",
     "permanent": true
   },
   {
@@ -477,7 +477,7 @@
   },
   {
     "source": "/cookbook-data-model/extend-listing-data-in-ftw/",
-    "destination": "/docs/how-to/extend-listing-data-in-ftw/",
+    "destination": "/docs/how-to/extend-listing-data-in-template/",
     "permanent": true
   },
   {
@@ -487,7 +487,7 @@
   },
   {
     "source": "/cookbook-search/change-search-filters-in-ftw/",
-    "destination": "/docs/how-to/change-search-filters-in-ftw/",
+    "destination": "/docs/how-to/change-search-filters-in-template/",
     "permanent": true
   },
   {
@@ -497,7 +497,7 @@
   },
   {
     "source": "/cookbook-transaction-process/change-transaction-process-in-ftw/",
-    "destination": "/docs/how-to/change-transaction-process-in-ftw/",
+    "destination": "/docs/how-to/change-transaction-process-in-template/",
     "permanent": true
   },
   {
@@ -592,7 +592,7 @@
   },
   {
     "source": "/ftw-testing-error-handling/how-to-use-ci-with-ftw/",
-    "destination": "/docs/ftw/how-to-use-ci-with-ftw/",
+    "destination": "/docs/template/how-to-use-ci-with-template/",
     "permanent": true
   },
   {
@@ -602,7 +602,7 @@
   },
   {
     "source": "/ftw-styling/how-to-change-ftw-ui-texts-and-translations/",
-    "destination": "/docs/ftw/how-to-change-ftw-ui-texts/",
+    "destination": "/docs/template/how-to-change-template-ui-texts/",
     "permanent": true
   },
   {
@@ -617,42 +617,42 @@
   },
   {
     "source": "/ftw-styling/how-to-customize-ftw-styles/",
-    "destination": "/docs/ftw/how-to-customize-ftw-styles/",
+    "destination": "/docs/template/how-to-customize-template-styles/",
     "permanent": true
   },
   {
     "source": "/ftw-security/how-to-sanitize-user-generated-content-in-ftw/",
-    "destination": "/docs/ftw/how-to-sanitize-user-generated-content-in-ftw/",
+    "destination": "/docs/template/how-to-sanitize-user-generated-content/",
     "permanent": true
   },
   {
     "source": "/ftw-styling/how-to-add-static-pages-in-ftw/",
-    "destination": "/docs/ftw/how-to-add-static-pages-in-ftw/",
+    "destination": "/docs/template/how-to-add-static-pages/",
     "permanent": true
   },
   {
     "source": "/ftw-security/how-to-set-up-csp-for-ftw/",
-    "destination": "/docs/ftw/how-to-set-up-csp-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-csp-for-template/",
     "permanent": true
   },
   {
     "source": "/ftw-search/how-to-use-google-maps-in-ftw/",
-    "destination": "/docs/ftw/how-to-use-google-maps-in-ftw/",
+    "destination": "/docs/template/how-to-use-google-maps-in-template/",
     "permanent": true
   },
   {
     "source": "/ftw-search/how-to-set-up-mapbox-for-ftw/",
-    "destination": "/docs/ftw/how-to-set-up-mapbox-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-mapbox-for-template/",
     "permanent": true
   },
   {
     "source": "/ftw-routing/how-code-splitting-works-in-ftw/",
-    "destination": "/docs/ftw/how-code-splitting-works-in-ftw/",
+    "destination": "/docs/template/code-splitting-in-template/",
     "permanent": true
   },
   {
     "source": "/ftw-routing/how-routing-works-in-ftw/",
-    "destination": "/docs/ftw/how-routing-works-in-ftw/",
+    "destination": "/docs/template/how-routing-works-in-template/",
     "permanent": true
   },
   {
@@ -672,62 +672,62 @@
   },
   {
     "source": "/ftw-introduction/how-to-customize-ftw/",
-    "destination": "/docs/ftw/how-to-customize-ftw/",
+    "destination": "/docs/template/how-to-customize-template/",
     "permanent": true
   },
   {
     "source": "/ftw-testing-error-handling/how-to-test-ftw/",
-    "destination": "/docs/ftw/how-to-test-ftw/",
+    "destination": "/docs/template/how-to-test-template/",
     "permanent": true
   },
   {
     "source": "/ftw-configuration/ftw-env/",
-    "destination": "/docs/ftw/ftw-env/",
+    "destination": "/docs/template/template-env/",
     "permanent": true
   },
   {
     "source": "/ftw-analytics/how-to-set-up-analytics-for-ftw/",
-    "destination": "/docs/ftw/how-to-set-up-analytics-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-analytics-for-template/",
     "permanent": true
   },
   {
     "source": "/ftw-hosting/how-to-deploy-ftw-to-production/",
-    "destination": "/docs/ftw/how-to-deploy-ftw-to-production/",
+    "destination": "/docs/template/how-to-deploy-template-to-production/",
     "permanent": true
   },
   {
     "source": "/ftw-configuration/how-to-set-up-currency-in-ftw/",
-    "destination": "/docs/ftw/how-to-set-up-currency-in-ftw/",
+    "destination": "/docs/template/how-to-set-up-currency-in-template/",
     "permanent": true
   },
   {
     "source": "/ftw-data-flow/ftw-redux/",
-    "destination": "/docs/ftw/ftw-redux/",
+    "destination": "/docs/template/redux/",
     "permanent": true
   },
   {
     "source": "/flex-cli/getting-started-with-flex-cli/",
-    "destination": "/docs/introduction/getting-started-with-flex-cli/",
+    "destination": "/docs/introduction/getting-started-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/flex-cli/edit-transaction-process-with-flex-cli/",
-    "destination": "/docs/how-to/edit-transaction-process-with-flex-cli/",
+    "destination": "/docs/how-to/edit-transaction-process-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/flex-cli/edit-email-templates-with-flex-cli/",
-    "destination": "/docs/how-to/edit-email-templates-with-flex-cli/",
+    "destination": "/docs/how-to/edit-email-templates-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/flex-cli/manage-search-schemas-with-flex-cli/",
-    "destination": "/docs/how-to/manage-search-schemas-with-flex-cli/",
+    "destination": "/docs/how-to/manage-search-schemas-with-sharetribe-cli/",
     "permanent": true
   },
   {
     "source": "/flex-cli/view-events-with-flex-cli/",
-    "destination": "/docs/how-to/view-events-with-flex-cli/",
+    "destination": "/docs/how-to/view-events-with-sharetribe-cli/",
     "permanent": true
   },
   {
@@ -832,17 +832,17 @@
   },
   {
     "source": "/ftw/how-to-change-ftw-bundled-translations/",
-    "destination": "/docs/ftw/how-to-change-ftw-bundled-microcopy/",
+    "destination": "/docs/template/how-to-change-bundled-marketplace-texts/",
     "permanent": true
   },
   {
     "source": "/ftw/hosted-translations/",
-    "destination": "/docs/ftw/hosted-microcopy/",
+    "destination": "/docs/template/hosted-marketplace-texts/",
     "permanent": true
   },
   {
     "source": "/concepts/translations/",
-    "destination": "/docs/concepts/microcopy/",
+    "destination": "/docs/concepts/marketplace-texts/",
     "permanent": true
   },
   {
@@ -941,23 +941,218 @@
     "permanent": true
   },
  {
+    "source": "/concepts/flex-environments/",
+    "destination": "/docs/concepts/sharetribe-environments/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/introducing-flex/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/getting-started-with-ftw-daily/",
+    "destination": "/docs/introduction/getting-started-with-web-template/",
+    "permanent": true
+  },
+ {
+    "source": "/introduction/getting-started-with-flex-cli/",
+    "destination": "/docs/introduction/getting-started-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/concepts/users-and-authentication-in-flex/",
+    "destination": "/docs/concepts/users-and-authentication-in-sharetribe/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/edit-transaction-process-with-flex-cli/",
+    "destination": "/docs/how-to/edit-transaction-process-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/manage-search-schemas-with-flex-cli/",
+    "destination": "/docs/how-to/manage-search-schemas-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/view-events-with-flex-cli/",
+    "destination": "/docs/how-to/view-events-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/edit-email-templates-with-flex-cli/",
+    "destination": "/docs/how-to/edit-email-templates-with-sharetribe-cli/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-change-ftw-ui-texts/",
+    "destination": "/docs/template/how-to-change-template-ui-texts/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-change-ftw-language/",
+    "destination": "/docs/template/how-to-change-template-language/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-add-static-pages-in-ftw/",
+    "destination": "/docs/template/how-to-add-static-pages/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-customize-ftw/",
+    "destination": "/docs/template/how-to-customize-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-customize-ftw-styles/",
+    "destination": "/docs/template/how-to-customize-template-styles/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/extend-listing-data-in-ftw/",
+    "destination": "/docs/how-to/extend-listing-data-in-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/ftw-env/",
+    "destination": "/docs/template/template-env/",
+    "permanent": true
+  },
+ {
+    "source": "/how-to/change-transaction-process-in-ftw/",
+    "destination": "/docs/how-to/change-transaction-process-in-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-set-up-analytics-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-analytics-for-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-set-up-currency-in-ftw/",
+    "destination": "/docs/template/how-to-set-up-currency-in-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-use-google-maps-in-ftw/",
+    "destination": "/docs/template/how-to-use-google-maps-in-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-set-up-mapbox-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-mapbox-for-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-set-up-csp-for-ftw/",
+    "destination": "/docs/template/how-to-set-up-csp-for-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-routing-works-in-ftw/",
+    "destination": "/docs/template/how-routing-works-in-template/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/ftw-redux/",
+    "destination": "/docs/template/redux/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-deploy-ftw-to-heroku/",
+    "destination": "/docs/template/how-to-deploy-template-to-heroku/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-deploy-ftw-to-production/",
+    "destination": "/docs/template/how-to-deploy-template-to-production/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/run-ftw-with-docker/",
+    "destination": "/docs/template/run-template-with-docker/",
+    "permanent": true
+  },
+ {
+    "source": "/ftw/how-to-test-ftw/",
+    "destination": "/docs/template/how-to-test-template/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw/how-code-splitting-works-in-ftw/",
+    "destination": "/docs/template/code-splitting-in-template/",
+    "permanent": true
+  },
+  {    
     "source": "/concepts/microcopy/",
     "destination": "/docs/concepts/marketplace-texts/",
     "permanent": true
   },
  {
     "source": "/ftw/hosted-microcopy/",
-    "destination": "/docs/ftw/hosted-marketplace-texts/",
+    "destination": "/docs/template/hosted-marketplace-texts/",
     "permanent": true
   },
  {
     "source": "/ftw/how-to-change-ftw-bundled-microcopy/",
-    "destination": "/docs/ftw/how-to-change-ftw-bundled-marketplace-texts/",
+    "destination": "/docs/template/how-to-change-bundled-marketplace-texts/",
     "permanent": true
   },
   {
     "source": "/tutorial/add-favorite-saunas/",
     "destination": "/docs/tutorial/add-favorite-bikes/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw/how-to-sanitize-user-generated-content-in-ftw/",
+    "destination": "/docs/template/how-to-sanitize-user-generated-content/",
+    "permanent": true
+  },
+  {
+    "source": "/how-to/change-search-filters-in-ftw/",
+    "destination": "/docs/how-to/change-search-filters-in-template/",
+    "permanent": true
+  },
+  {
+    "source": "/ftw/how-to-use-ci-with-ftw/",
+    "destination": "/docs/template/how-to-use-ci-with-template/",
+    "permanent": true
+  },
+  {    
+    "source": "/operator-guides/how-to-use-microcopy-editor/",
+    "destination": "/docs/operator-guides/how-to-edit-marketplace-texts/",
+    "permanent": true
+  },
+  {    
+    "source": "/ftw/hosted-marketplace-texts/",
+    "destination": "/docs/template/hosted-marketplace-texts/",
+    "permanent": true
+  },
+  {    
+    "source": "/ftw/how-to-change-ftw-bundled-marketplace-texts/",
+    "destination": "/docs/template/how-to-change-bundled-marketplace-texts/",
+    "permanent": true
+  },
+  {    
+    "source": "/introduction/how-to-build-and-launch-with-flex/",
+    "destination": "https://www.sharetribe.com/help/en/articles/8501769-how-to-build-a-marketplace-with-sharetribe/",
+    "permanent": true
+  },
+  {    
+    "source": "/introduction/is-flex-right-for-you/",
+    "destination": "https://www.sharetribe.com/help/en/articles/8501752-what-is-sharetribe/",
+    "permanent": true
+  },
+  {    
+    "source": "/introduction/introducing-sharetribe/",
+    "destination": "/docs/introduction/introducing-sharetribe-developer-platform/",
+    "permanent": true
+  },
+  {    
+    "source": "/ftw/page-builder/",
+    "destination": "/docs/template/page-builder/",
     "permanent": true
   }
 ]

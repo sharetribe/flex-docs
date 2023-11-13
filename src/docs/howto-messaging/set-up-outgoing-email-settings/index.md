@@ -1,7 +1,7 @@
 ---
 title: Set up outgoing email settings
 slug: set-up-outgoing-email-settings
-updated: 2020-12-21
+updated: 2023-10-24
 category: how-to-messaging
 ingress:
   This article describes how to set up a custom email sender address for
@@ -15,22 +15,24 @@ address to look professional and polished.
 
 We offer two ways of managing email sending from your marketplace. The
 default option is to rely on a managed service offered by default in
-Flex. If you wish to obtain more flexibility and control over your email
-sending, you can integrate Flex with your own SendGrid account.
+Sharetribe. If you wish to obtain more flexibility and control over your
+email sending, you can integrate Sharetribe with your own SendGrid
+account.
 
 The following sections offer an overview of the two methods and how to
 configure them.
 
 ## Managed setup
 
-Flex uses [SendGrid](https://sendgrid.com/) as an email service
+Sharetribe uses [SendGrid](https://sendgrid.com/) as an email service
 provider. By default, we manage your SendGrid account and settings
-automatically, and the costs are included in your Flex subscription.
+automatically, and the costs are included in your Sharetribe
+subscription.
 
-When you have your live environment created and you have bought your
-custom domain for it, you should set up and validate the outgoing email
-settings. Follow the steps below to enable email sending and increase
-the chances that your emails will be delivered reliably.
+When you have your live environment created, you can set up and validate
+the outgoing email settings if you use a custom domain. Follow the steps
+below to enable email sending with a custom domain, and increase the
+chances that your emails will be delivered reliably.
 
 ### 1. Add sender name and address
 
@@ -103,8 +105,8 @@ documentation.
 ## Using your own SendGrid account
 
 In addition to using the managed email sending, you have the option to
-choose to use your own SendGrid account by integrating it with Flex. You
-might want to do this because:
+choose to use your own SendGrid account by integrating it with
+Sharetribe. You might want to do this because:
 
 - You want to see exactly what emails are sent from your marketplace and
   fix problems (like bounces) with users' email addresses.
@@ -115,9 +117,9 @@ might want to do this because:
 - You want to use your own IP address for email sending and reputation.
 
 If you'd prefer to get access to such features and statistics, this is
-possible by connecting your own SendGrid account to Flex. Just remember
-that doing this means you'd be subject to SendGrid's standard pricing
-for all outgoing emails.
+possible by connecting your own SendGrid account to Sharetribe. Just
+remember that doing this means you'd be subject to SendGrid's standard
+pricing for all outgoing emails.
 
 Follow the steps below to set up your own SendGrid account for email
 sending:
@@ -129,15 +131,15 @@ Please, refer to the SendGrid instructions on
 
 You should create a key with `Restricted Access` with `Mail Send`
 configured with `Full Access` permission. Make sure that your key has
-the correct permission in place, otherwise email sending from Flex will
-not work. Make note of the key while creating it, it will be shown only
-once.
+the correct permission in place, otherwise email sending from Sharetribe
+will not work. Make note of the key while creating it, it will be shown
+only once.
 
 Also, you need to make sure that you have configured your domain in
 SendGrid by following their instructions on
 [how to configure domain authentication](https://sendgrid.com/docs/ui/account-and-settings/how-to-set-up-domain-authentication/).
 
-### 2. Enable using own SendGrid key in Flex Console
+### 2. Enable using own SendGrid key in Sharetribe Console
 
 Log in to your Console, and select your live environment. There are two
 options for integrating SendGrid. You can do it during the initial setup
@@ -175,5 +177,5 @@ address for your live marketplace. It is important to get all the steps
 done and validated to ensure that emails are working reliably.
 
 If you have any questions or need a more advanced setup, you can
-[contact Sharetribe support](mailto:flex-support@sharetribe.com) and we
-are happy to help you.
+[contact Sharetribe support](mailto:hello@sharetribe.com) and we are
+happy to help you.

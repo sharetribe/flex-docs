@@ -1,8 +1,8 @@
 ---
 title: Enable Google Maps
-slug: how-to-use-google-maps-in-ftw
-updated: 2023-01-01
-category: ftw-search
+slug: how-to-use-google-maps-in-template
+updated: 2023-10-24
+category: template-search
 ingress:
   The Sharetribe Web Template offers out of the box support for Google
   Maps API for showing a map and searching locations with search
@@ -19,7 +19,8 @@ available in their
 [pricing page](https://cloud.google.com/maps-platform/pricing/). The
 template's default map provider is Mapbox, which is often cheaper. To
 use Mapbox, see the
-[How to set up Mapbox](/ftw/how-to-set-up-mapbox-for-ftw/) guide.
+[How to set up Mapbox](/template/how-to-set-up-mapbox-for-template/)
+guide.
 
 </info>
 
@@ -82,5 +83,6 @@ Once you have enabled maps in your marketplace using your chosen map
 provider, you can change the map's configuration settings. These options
 allow you to change things like the default search locations and
 restrict location search to specific countries. Refer to the
-[map configurations article](/ftw/configure-maps/) to learn more about
-the specific configurations you can adjust for maps in your marketplace.
+[map configurations article](/template/configure-maps/) to learn more
+about the specific configurations you can adjust for maps in your
+marketplace.

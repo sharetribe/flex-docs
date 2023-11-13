@@ -1,7 +1,7 @@
 ---
 title: Introduction to extended data
 slug: extended-data-introduction
-updated: 2021-04-30
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   Extended data allows you to fully customize the information you want
@@ -16,8 +16,8 @@ technical instead, check out the
 
 ## Why extended data?
 
-Extended data is a Flex feature that allows you to customize your user,
-listing, and transaction data. Your marketplace has its own unique
+Extended data is a Sharetribe feature that allows you to customize your
+user, listing, and transaction data. Your marketplace has its own unique
 offering and requires specific data that other marketplaces do not.
 Maybe you’re building a marketplace for cooking classes and want to ask
 chefs how many years of experience they have. Or perhaps you’re building
@@ -27,15 +27,11 @@ determine exactly what information you want your users to provide on
 your marketplace and how. However, the possibilities of extended data do
 not end there!
 
-If you’ve used Sharetribe Go, you might be familiar with custom listing
-and user fields, which are fields with limited customizability. Extended
-data is the Flex-equivalent, but without the constraints of
-predetermined functionality: it’s listing and user fields on steroids.
 Extended data can be customized to different use-cases to fit your exact
 needs: in addition to collecting the information you need from your
 users in the form you choose, it allows you to display featured
-listings, have different user types, build custom search functionality…
-And the list goes on!
+listings, have different user types, build custom search functionality,
+and much more.
 
 With extended data, you can build integrations with third-party
 services, such as a subscription payment system or SMS notification
@@ -51,9 +47,9 @@ offer examples of what they can be used for.
 ## Types of extended data
 
 There are six possible types of extended data, defined by who can edit
-and view them. Four out of these are available in Flex at this time.
-They are _public data_, _protected data_, _private data_, and _public
-metadata_.
+and view them. Four out of these are available in Sharetribe at this
+time. They are _public data_, _protected data_, _private data_, and
+_public metadata_.
 
 In the following sections, “author” means the user who created the
 listing or profile in question. “Operator” refers to both the
@@ -106,8 +102,8 @@ as search filters and parameters and to sort search results. Public data
 allows you to customize your public listing and user information to fit
 your needs exactly!
 
-Let’s look at listing public data in action. Here is a listing from
-Biketribe, the Flex test marketplace.
+Let’s look at listing public data in action. Here is a listing from an
+imaginary bike rental marketplace, Biketribe.
 
 <publicextendeddatacarousel title="Examples of public extended data">
 
@@ -149,8 +145,7 @@ store an ID from an external service to user or listing private data and
 connect it to services such as SMS notifications with Twilio or sync the
 provider’s schedule with Google Calendar!
 
-I’ll present a few more examples of how private data can work in
-practice. For instance, though you may not want your customers and
+As a further example – even though you may not want your customers and
 providers to be able to contact each other outside of your platform, you
 might still want to be able to call them yourself. A user’s phone number
 can be saved in their private data for these situations.
@@ -165,12 +160,14 @@ portfolios could be included as private data.
 ### 4. Public metadata
 
 Public metadata is visible to all users, but only the operator and the
-Integration API can edit it. Typical use-cases for metadata are featured
-listings or premium users. You may want to curate listings that get this
-extra visibility yourself or offer it as a paid service, so using public
-data, which the users can edit themselves, is not an option. This is
-where metadata comes into play. Like public data, public metadata can be
-used as search filters and parameters and in sorting search results.
+Integration API can edit it.
+
+Typical use-cases for metadata are featured listings or premium users.
+You may want to curate listings that get this extra visibility yourself
+or offer it as a paid service, so using public data, which the users can
+edit themselves, is not an option. This is where metadata comes into
+play. Like public data, public metadata can be used as search filters
+and parameters and in sorting search results.
 
 In addition to featured listings, other ways to use public metadata
 could be to distinguish verified users from regular ones or highlight
@@ -204,7 +201,7 @@ you want to collect about your users and listings or what is important
 for users to know during transactions. Next, you should think about who
 has access to edit that information. Finally, you should consider
 whether you want to display this information to everyone, select users,
-or just to yourself. Through extended data, Flex can support a multitude
-of different kinds of listings, monetization models, user profiles, and
-so on. You can create the exact data structure you need for your
-marketplace.
+or just to yourself. Through extended data, Sharetribe can support a
+multitude of different kinds of listings, monetization models, user
+profiles, and so on. You can create the exact data structure you need
+for your marketplace.

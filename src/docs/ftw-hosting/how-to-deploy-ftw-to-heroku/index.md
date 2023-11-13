@@ -1,8 +1,8 @@
 ---
 title: Deploy to Heroku
-slug: how-to-deploy-ftw-to-heroku
-updated: 2023-01-01
-category: ftw-hosting
+slug: how-to-deploy-template-to-heroku
+updated: 2023-10-24
+category: template-hosting
 ingress:
   This guide describes how to deploy the Sharetribe Web Template to
   Heroku.
@@ -49,13 +49,13 @@ Then add the following environment variables as Config Vars:
 
 - `REACT_APP_SHARETRIBE_SDK_CLIENT_ID`
 
-  Flex client ID. Check this from
-  [Console](https://flex-console.sharetribe.com/applications).
+  Sharetribe client ID. Check this from
+  [Console](https://console.sharetribe.com/advanced/applications).
 
 - `SHARETRIBE_SDK_CLIENT_SECRET`
 
-  Flex client secret. Check this from
-  [Console](https://flex-console.sharetribe.com/applications).
+  Sharetribe client secret. Check this from
+  [Console](https://console.sharetribe.com/advanced/applications).
 
 - `REACT_APP_STRIPE_PUBLISHABLE_KEY`
 
@@ -96,8 +96,9 @@ Then add the following environment variables as Config Vars:
 - `REACT_APP_CSP`
 
   Content Security Policy (CSP). Read more from
-  [this article](/ftw/how-to-set-up-csp-for-ftw/).<br /> Accepts values:
-  _block_ and _report_. The recommended value is _block_.
+  [this article](/template/how-to-set-up-csp-for-template/).<br />
+  Accepts values: _block_ and _report_. The recommended value is
+  _block_.
 
 If you change these values later on, _you need to deploy the app again_.
 Environment variables are baked into the static build files of the web

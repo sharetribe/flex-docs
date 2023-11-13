@@ -1,7 +1,7 @@
 ---
 title: 'How to design your user journey'
 slug: your-user-journey-a-guide
-updated: 2023-04-19
+updated: 2023-10-24
 category: design-toolkit
 ingress:
   Learn how to design your marketplace's user journey. Understanding
@@ -82,7 +82,7 @@ completion. Consider these questions:
   When are they sent?
 
 Learn more about
-[the transaction process functionality in Flex](/concepts/transaction-process/).
+[the transaction process functionality in Sharetribe](/concepts/transaction-process/).
 
 ## 2. Create maps for listing creation journey, discovery journey and transaction process.
 
@@ -99,7 +99,7 @@ and help them move forward developing it.
 
 ## 3. Share the journey maps with developers
 
-If you would like to hire vetted Flex developers, start either by
-[booking a call](https://calendly.com/welcome-to-flex) with our team or
-connect directly with Flex Experts through the
-[Expert Directory](https://www.sharetribe.com/experts/).
+If you would like to hire vetted Sharetribe developers, start either by
+[booking a call](https://www.sharetribe.com/video-call) with our team or
+connect directly with Sharetribe Experts through the
+[Expert Directory](https://www.sharetribe.com/experts/). TODO

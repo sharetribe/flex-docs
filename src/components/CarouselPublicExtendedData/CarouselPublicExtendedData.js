@@ -28,9 +28,9 @@ const CarouselPublicExtendedData = props => {
         <h3>Listing creation: Bike details</h3>
         <p>
           You can define when in the listing creation process each extended data
-          attribute is collected. In Biketribe, the public data attributes shown
-          on the listing page are a part of the listing details. You can also
-          add separate tabs to add listing public data.
+          attribute is collected. In this marketplace, the public data
+          attributes shown on the listing page are a part of the listing
+          details. You can also add separate tabs to add listing public data.
           <br />
           In addition to the attributes visible on the listing page,{' '}
           <b>listing type</b> is also saved in listing public data.

@@ -1,7 +1,7 @@
 ---
 title: Add a favorite bikes button
 slug: add-favorite-bikes
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-listings
 ingress:
   Learn how to add a favorites functionality to Sharetribe Web Template
@@ -186,7 +186,7 @@ to show.
 ![Favorite bike button with marketplace text key](./biketribe-favorites-button-key.png)
 
 Let’s fix that by adding all the marketplace texts we need in this
-tutorial. You can add them in Flex Console > Build > Content >
+tutorial. You can add them in Sharetribe Console > Build > Content >
 Marketplace texts, or in src/translations/en.js.
 
 ```json
@@ -218,7 +218,7 @@ the user’s extended data. More specifically, if the listing is not in
 the user’s favorites list, we want to add it there, and otherwise we
 want to remove it.
 
-In Flex, user profiles have four types of extended data:
+In Sharetribe, user profiles have four types of extended data:
 
 - public data
 - public metadata
@@ -462,12 +462,12 @@ The flow of the data happens like this:
 
 </extrainfo>
 
-You can also verify this in Flex Console – navigate to Manage > Users
-and find the details card of the user with whom you favorited the
+You can also verify this in Sharetribe Console – navigate to Manage >
+Users and find the details card of the user with whom you favorited the
 listing. You can see in their Private data that the user now has a
 favorites list with this listing's id.
 
-![User's favorite listings in Flex Console](./biketribe-favorites-console.png)
+![User's favorite listings in Sharetribe Console](./biketribe-favorites-console.png)
 
 ## Create FavoriteListingsPage
 

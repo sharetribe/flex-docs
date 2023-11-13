@@ -1,7 +1,7 @@
 ---
 title: JavaScript SDKs
 slug: js-sdk
-updated: 2021-10-05
+updated: 2023-10-24
 category: concepts-api-sdk
 ingress: Information on our SDKs and where to find our SDK documentation
 published: true
@@ -11,13 +11,13 @@ published: true
 
 Find our SDK documentation here:
 
-- [Sharetribe Flex SDK for JavaScript Documentation](https://sharetribe.github.io/flex-sdk-js/)
-- [Sharetribe Flex Integration SDK for JavaScript Documentation](https://sharetribe.github.io/flex-integration-sdk-js/)
+- [Sharetribe SDK for JavaScript Documentation](https://sharetribe.github.io/flex-sdk-js/)
+- [Sharetribe Integration SDK for JavaScript Documentation](https://sharetribe.github.io/flex-integration-sdk-js/)
 
 ## Features
 
-The SDKs are the easiest way to interact with Sharetribe Flex
-Marketplace API and the Sharetribe Flex Integration API.
+The SDKs are the easiest way to interact with Sharetribe Marketplace API
+and the Sharetribe Integration API.
 
 They handle authentication, renewing authentication tokens and
 serializing and deserializing data to and from JavaScript data
@@ -35,7 +35,7 @@ The main SDK features are:
   serialization and deserialization.
 - Easy authentication.
 
-## Flex SDK for JavaScript
+## Sharetribe SDK for JavaScript
 
 The Marketplace API is meant to handle all the interactions the end
 users of your marketplace take part in e.g. signing up, managing
@@ -52,7 +52,7 @@ You can access all the JS SDK documentation at:
 
 https://sharetribe.github.io/flex-sdk-js/
 
-## Flex Integration SDK for JavaScript
+## Sharetribe Integration SDK for JavaScript
 
 In contrast to the Marketplace API, the Integration API reveals the
 entire marketplace data. The Integration API is meant for trusted secure

@@ -1,24 +1,24 @@
 ---
-title: Users and authentication in Flex
-slug: users-and-authentication-in-flex
-updated: 2022-05-16
+title: Users and authentication in Sharetribe
+slug: users-and-authentication-in-sharetribe
+updated: 2023-10-24
 category: concepts-users-and-authentication
 ingress:
   This article explains how users are managed and how authentication and
-  authorization works in Flex.
+  authorization works in Sharetribe.
 published: true
 ---
 
-Anyone who registers to your Flex marketplace is referred to as a user.
-In addition, the operator can take certain actions on the marketplace
-even though they are not technically a user there. Flex marketplaces
-only facilitate transactions between registered users – in other words,
-it is not possible for someone to purchase or book a listing without
-signing up as a user.
+Anyone who registers to your Sharetribe marketplace is referred to as a
+user. In addition, the operator can take certain actions on the
+marketplace even though they are not technically a user there.
+Sharetribe marketplaces only facilitate transactions between registered
+users – in other words, it is not possible for someone to purchase or
+book a listing without signing up as a user.
 
-## User roles in Flex
+## User roles in Sharetribe
 
-Flex has two possible roles for a registered user: customer and
+Sharetribe has two possible roles for a registered user: customer and
 provider. All users can be both customers and providers by default. This
 means that even if a person has created a listing, which means they can
 be a provider, they can also be a customer on someone else's listing.
@@ -35,13 +35,14 @@ group.
 In a transaction, a **customer** is the user who purchases or books the
 listing. In marketplaces with payments, the customer is the user who
 pays the listing price. Customers can save their payment details in
-Flex.
+Sharetribe.
 
-Customers need to enter a valid email address to sign up to Flex, but
-other than that customers are not required to enter further information
-to use the marketplace. When using the Stripe default payment
-integration, customers can save a payment method, however the payment
-method information is saved in Stripe and not directly in Flex.
+Customers need to enter a valid email address to sign up to Sharetribe,
+but other than that customers are not required to enter further
+information to use the marketplace. When using the Stripe default
+payment integration, customers can save a payment method, however the
+payment method information is saved in Stripe and not directly in
+Sharetribe.
 
 Within a transaction, customers can initiate or transition transactions
 specified for the customer.
@@ -65,19 +66,20 @@ specified for the provider.
 
 A **marketplace operator** is not a user in the marketplace – they
 cannot sign in to the marketplace with the same credentials they use to
-sign in to Flex Console. The operator can, however, take actions on the
-marketplace through Flex Console or Integration API, when those actions
-are defined for the operator. Operators cannot participate in the
-messaging between customer and provider within the transaction.
+sign in to Sharetribe Console. The operator can, however, take actions
+on the marketplace through Sharetribe Console or Integration API, when
+those actions are defined for the operator. Operators cannot participate
+in the messaging between customer and provider within the transaction.
 
 A transaction transition is performed by the **system** if it is
 scheduled to happen automatically.
 
 ## User access
 
-Flex marketplace listings can be viewed by anyone by default, whether
-they are registered users or not. If a user wants to start a transaction
-or create a listing, they need to be registered to Flex.
+Sharetribe marketplace listings can be viewed by anyone by default,
+whether they are registered users or not. If a user wants to start a
+transaction or create a listing, they need to be registered to
+Sharetribe.
 
 ### Registered marketplace users
 
@@ -85,43 +87,45 @@ Listings can only be updated by their author, i.e. the registered user
 who originally created the listing. Operators can create listings for a
 registered user, and update existing listings.
 
-Beyond that, Flex does not have different levels of user access within
-the marketplace. Operators who want to create more complex user
+Beyond that, Sharetribe does not have different levels of user access
+within the marketplace. Operators who want to create more complex user
 hierarchies will need to think about the levels of user access they want
 each custom role to have, and potentially use a custom backend solution
-to complement Flex default user management. If you are contemplating
-creating a user hierarchy in your Flex marketplace, contact
-[Flex Support](mailto:flex-support@sharetribe.com) and let us know your
-use case – we're happy to help you figure out a suitable solution!
+to complement Sharetribe default user management. If you are
+contemplating creating a user hierarchy in your Sharetribe marketplace,
+contact [Sharetribe Support](mailto:hello@sharetribe.com) and let us
+know your use case – we're happy to help you figure out a suitable
+solution!
 
 ### Login as user
 
-Flex has a feature through which operators can log in to their
+Sharetribe has a feature through which operators can log in to their
 marketplace as a registered user and take limited actions on their
 behalf. When using the Login as user feature, operators cannot initiate
 or transition transactions or modify the user's payout information.
 However, they can e.g. create and update listings on behalf of the user.
-The login as user feature can be accessed through the Flex Console, by
-navigating to a user profile and clicking on the three dots next to the
-profile image of the user.
+The login as user feature can be accessed through the Sharetribe
+Console, by navigating to a user profile and clicking on the three dots
+next to the profile image of the user.
 
 ### Integration API
 
-Flex Integration API allows trusted secure applications to access all
-data within a marketplace. It is not accessible for marketplace users
-with their own sign-in credentials. Instead, Integration API can be used
-to create server-side integrations to external systems, or to retrieve
-data for custom marketplace dashboards.
+Sharetribe Integration API allows trusted secure applications to access
+all data within a marketplace. It is not accessible for marketplace
+users with their own sign-in credentials. Instead, Integration API can
+be used to create server-side integrations to external systems, or to
+retrieve data for custom marketplace dashboards.
 
-### Authenticating to Flex APIs
+### Authenticating to Sharetribe APIs
 
-Flex marketplace users need to sign up with their email address to
+Sharetribe marketplace users need to sign up with their email address to
 create listings and participate in transactions. Alternatively, they can
 use [social logins](/concepts/social-logins-and-sso/) to sign up, or to
-login with an email address that already has a user within Flex.
+login with an email address that already has a user within Sharetribe.
 
-Flex has a separate [Authentication API](/concepts/authentication-api/)
-that handles authentication to other Flex APIs. Both Marketplace API and
+Sharetribe has a separate
+[Authentication API](/concepts/authentication-api/) that handles
+authentication to other Sharetribe APIs. Both Marketplace API and
 Integration API require valid access tokens to be passed in every API
 request. If you use the [Javascript SDKs](/concepts/js-sdk/) in your
 marketplace client application, they handle authenticating the user
@@ -140,9 +144,9 @@ a banned user registered to the marketplace can not be used to create
 new accounts. The user data is only visible when it is linked to, and
 even then only ID and banned status are shown.
 
-Operators can ban and unban users through Flex Console, but there is no
-endpoint in the Flex APIs to ban a user. Unbanning a user does not
-automatically reinstate the user's deleted listings.
+Operators can ban and unban users through Sharetribe Console, but there
+is no endpoint in the Sharetribe APIs to ban a user. Unbanning a user
+does not automatically reinstate the user's deleted listings.
 
 ### Deleted user
 
@@ -150,15 +154,15 @@ Deleting a user means completely and irreversibly removing all of the
 user's personal data. This includes all of the public-facing data like
 profile and listings as well as the user account information.
 
-Operators can delete users through Flex Console. In addition, there is
-an endpoint in Marketplace API so that operators can build a
+Operators can delete users through Sharetribe Console. In addition,
+there is an endpoint in Marketplace API so that operators can build a
 functionality for users to delete their own accounts. We have a how-to
 guide on
 [implementing a _Delete user_ feature](/how-to/implement-delete-user/).
 
-## Authentication in Flex
+## Authentication in Sharetribe
 
-The Flex APIs limit visibility to certain data based on the
+The Sharetribe APIs limit visibility to certain data based on the
 authentication level of the user. Marketplace API has three different
 levels of access, whereas Integration API only has full access or no
 access. This means that when using any Integration API endpoints, it is
@@ -166,19 +170,19 @@ crucial to only use them from a secure context i.e. from server code,
 never from browser code.
 
 Regardless of the level of access, each API endpoint requires an access
-token that can be acquired through Flex
+token that can be acquired through Sharetribe
 [Authentication API](https://www.sharetribe.com/api-reference/authentication.html).
-When using the [Flex Javascript SDKs](/concepts/js-sdk/), authentication
-is handled with
+When using the [Sharetribe Javascript SDKs](/concepts/js-sdk/),
+authentication is handled with
 [specific SDK methods for Marketplace API](https://sharetribe.github.io/flex-sdk-js/authentication.html)
 and
 [upon instantiation in Integration API](https://sharetribe.github.io/flex-integration-sdk-js/authentication.html).
 
 ### Anonymous access to Marketplace API
 
-Some endpoints can be accessed without signing in to Flex. These include
-viewing published listings, bookings and reviews, as well as public user
-data.
+Some endpoints can be accessed without signing in to Sharetribe. These
+include viewing published listings, bookings and reviews, as well as
+public user data.
 
 In addition, the user creation endpoints and password reset request
 endpoint can be called with an anonymous access token. Password reset
@@ -209,7 +213,7 @@ and
 [updating the transaction metadata](/references/transaction-process-actions/#actionprivileged-update-metadata).
 
 These transitions require a trusted token or a trusted SDK method, both
-of which are obtained using the Flex application client secret. In
+of which are obtained using the Sharetribe application client secret. In
 practice, the trusted context is a server environment. With the
 Sharetribe Web Template, the client application server has default
 implementations of trusted endpoints for
@@ -229,7 +233,7 @@ To access the Integration API you need a valid access token obtained
 through
 [the Authentication API](/concepts/authentication-api/#authentication-api)
 or the
-[Sharetribe Flex Integration SDK](https://sharetribe.github.io/flex-integration-sdk-js/authentication.html).
+[Sharetribe Integration SDK](https://sharetribe.github.io/flex-integration-sdk-js/authentication.html).
 You should only grant access to trusted applications, such as ones that
 run in your own backend systems, or applications that can only be
 executed by authorized marketplace operators.

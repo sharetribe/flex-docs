@@ -1,7 +1,7 @@
 ---
 title: Change transaction process in Sharetribe Web Template
-slug: change-transaction-process-in-ftw
-updated: 2022-11-22
+slug: change-transaction-process-in-template
+updated: 2023-10-24
 category: how-to-transaction-process
 ingress:
   This guide describes how to customize Sharetribe Web Template to use a
@@ -19,10 +19,11 @@ Sharetribe Web Template defines three transaction processes by default:
 The template is created to support states and transitions defined in
 those processes.
 
-How the transaction process works behind the Marketplace API depends on
-how your process is customised in our backend. To customise the
-transaction process in the backend, you should use Flex CLI. See the
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
+How the transaction process works underneath the Marketplace API depends
+on how your process is customised in our backend. To customise the
+transaction process in the backend, you should use Sharetribe CLI. See
+the
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/)
 tutorial to get familiar with the tool.
 
 If you have changed the transaction process in your marketplace, or
@@ -32,8 +33,8 @@ transaction process. You can read more about how these processes work
 from a background info article about the
 [transaction process](/concepts/transaction-process/).
 
-The following guide will help you to customise the process flow in FTW
-to match the process in our backend.
+The following guide will help you to customise the process flow in the
+template to match the process in our backend.
 
 ## 1. Add the new transaction process configuration
 
@@ -61,8 +62,8 @@ processes in the same application).
 
 Settings configured in local configurations files are overridden by any
 fetched via the Asset Delivery API. You can refer to
-[this article](/ftw/hosted-and-local-configurations/) to modify the way
-your template merges local and hosted configurations.
+[this article](/template/hosted-and-local-configurations/) to modify the
+way your template merges local and hosted configurations.
 
 </info>
 
@@ -70,7 +71,7 @@ The `alias` variable should point to the correct alias. You need to
 check from Console which process and process version your client app
 should support. All available transaction process aliases can be found
 in the
-[Build section](https://flex-console.sharetribe.com/transaction-processes)
+[Build section](https://console.sharetribe.com/advanced/transaction-processes)
 in Console.
 
 The `unitType` specifies what kind of units the web app is dealing with.
@@ -79,10 +80,10 @@ The client template recognises and handles four unit types by default:
 
 <info>
 
-The Flex engine can handle other unit types besides the four default
-ones. If you use a unit type outside the defaults, you need to add
-custom handling for it in e.g. line item calculation, order handling,
-and email templates.
+The Sharetribe engine can handle other unit types besides the four
+default ones. If you use a unit type outside the defaults, you need to
+add custom handling for it in e.g. line item calculation, order
+handling, and email templates.
 
 </info>
 
@@ -294,10 +295,11 @@ transaction process and state specific.
 ```
 
 This means that when you create a new transaction process, you will also
-need to add marketplace texts for the relevant keys and states in the
-new process. You can add the process specific keys either into the
-[bundled marketplace text files in the template](/ftw/how-to-change-ftw-bundled-marketplace-texts/)
-or through the [Flex Console Content tab](/concepts/marketplace-texts/).
+need to add microcopy for the relevant keys and states in the new
+process. You can add the process specific keys either into the
+[bundled marketplace text files in the template](/template/how-to-change-bundled-marketplace-texts/)
+or through the
+[Sharetribe Console Content tab](/concepts/marketplace-texts/).
 
 After making the necessary changes in these contexts, your new
 transaction process should work as expected in the template! Be sure to

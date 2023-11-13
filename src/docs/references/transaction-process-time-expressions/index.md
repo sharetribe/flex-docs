@@ -1,7 +1,7 @@
 ---
 title: Transaction process time expressions
 slug: transaction-process-time-expressions
-updated: 2022-02-09
+updated: 2023-10-24
 category: references
 ingress:
   This reference article describes the time expressions used in the
@@ -10,7 +10,7 @@ published: true
 ---
 
 Time expressions can be used both with transitions and notifications to
-delay the execution. The Flex transaction engine exposes a set of
+delay the execution. The Sharetribe transaction engine exposes a set of
 timepoints that you can tie delays to as well as a small set of
 functions to further control the exact timing. The basic structure of a
 time expression is a map from function name to a list (vector) of

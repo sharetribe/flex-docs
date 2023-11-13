@@ -1,8 +1,8 @@
 ---
 title: Enable analytics
-slug: how-to-set-up-analytics-for-ftw
-updated: 2023-01-10
-category: ftw-analytics
+slug: how-to-set-up-analytics-for-template
+updated: 2023-10-24
+category: template-analytics
 ingress:
   This guide describes how to enable analytics in the Sharetribe Web
   Template

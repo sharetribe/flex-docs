@@ -1,7 +1,7 @@
 ---
 title: Introduction to managing data in Console
 slug: console-manage-overview
-updated: 2022-04-09
+updated: 2023-10-24
 category: concepts-management
 ingress:
   Managing your data is a vital part of your marketplace’s day-to-day
@@ -40,4 +40,5 @@ You can also perform marketplace admin actions on the Manage pages.
 On each page, you can download the data in CSV format.
 
 If you’d like to learn more about operating a marketplace in Console, we
-recommend this [overview of Flex Console](/concepts/console-overview/).
+recommend this
+[overview of Sharetribe Console](/concepts/console-overview/).

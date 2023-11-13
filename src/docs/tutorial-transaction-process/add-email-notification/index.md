@@ -1,7 +1,7 @@
 ---
 title: Add a new email notification
 slug: add-new-email-notification
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-transaction-process
 ingress:
   Learn how to add a new email notification to the existing transaction
@@ -18,7 +18,7 @@ the earlier part of this tutorial.
 
 Before we modify our transaction process, it's better to ensure that we
 have most the up-to-date version of the process. You can fetch any
-process version with flex-cli:
+process version with Sharetribe CLI:
 
 ```shell
 flex-cli process pull --process=biketribe-instant-booking --alias=release-1 --path=./biketribe-instant-booking --marketplace=biketribe-dev
@@ -37,7 +37,7 @@ directory.
 
 When the latest version of the transaction process is pulled, we can
 navigate to the
-[_templates_ directory](/how-to/edit-email-templates-with-flex-cli/#templates-directory).
+[_templates_ directory](/how-to/edit-email-templates-with-sharetribe-cli/#templates-directory).
 We want to add a new directory for the new notification there.
 
 ```shell
@@ -75,9 +75,9 @@ details by using variables within `{{}}`.
 
 <extrainfo title="Add new text sections in the email template">
 
-You can modify the text content of the emails in Flex Console. However,
-if you want to add a completely new text section, you can add it using
-the same helper `{{t}}` that is used across the template.
+You can modify the text content of the emails in Sharetribe Console.
+However, if you want to add a completely new text section, you can add
+it using the same helper `{{t}}` that is used across the template.
 
 The structure of the helper is as follows:
 
@@ -127,7 +127,7 @@ following email texts into the email text editor:
 ## Preview your changes
 
 Once we have created the email notification, we can preview them with
-**flex-cli**. To preview the changes we just made, we can run the
+**Sharetribe CLI**. To preview the changes we just made, we can run the
 command:
 
 ```shell
@@ -197,7 +197,7 @@ Now that you have edited the email templates, you need to push a new
 version of your process. If you have done the earlier parts of the
 tutorial, this process should be already quite familiar to you. If you
 need more detailed information, take a look at the
-[Edit transaction process with Flex CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
+[Edit transaction process with Sharetribe CLI tutorial](/how-to/edit-transaction-process-with-sharetribe-cli/#validate-and-push-the-process).
 
 Push the updated process:
 

@@ -1,7 +1,7 @@
 ---
 title: Headless content management
 slug: headless-content-management
-updated: 2023-02-14
+updated: 2023-10-24
 category: concepts-content-management
 ingress:
   This article explains how data can be edited through Console and how
@@ -11,8 +11,8 @@ published: true
 
 Pages is a lightweight headless content management system that allows
 you to build content pages. Pages can be created and edited through the
-Flex Console, and the data can be queried via API, allowing you to edit
-content pages through a visual interface.
+Sharetribe Console, and the data can be queried via API, allowing you to
+edit content pages through a visual interface.
 
 ## How is Pages "headless"?
 
@@ -20,11 +20,11 @@ The Pages feature allows content editors to make changes to content
 pages without having to touch code. Pages is a “headless” feature, where
 the content is decoupled from the frontend, and can be accessed via API.
 
-In Flex, the presentational layer, or frontend, is usually the
+In Sharetribe, the presentational layer, or frontend, is usually the
 Sharetribe Web Template (if you are not using a custom client
 application), and the content is the data that is managed through Pages.
 The headless architecture allows you to render the content in any client
-you choose, as it can be retrieved by a call to the Flex API.
+you choose, as it can be retrieved by a call to the Sharetribe API.
 
 To illustrate further, here is an example of how data fetched from the
 API maps to visual elements in the default “About page” in the template:
@@ -36,7 +36,7 @@ API maps to visual elements in the default “About page” in the template:
 The content you edit through Console can be queried through the Asset
 Delivery API. The template queries this data automatically and renders
 the content on dynamic content pages using it. Learn more about how the
-template renders content pages [here](/ftw/page-builder/).
+template renders content pages [here](/template/page-builder/).
 
 A basic query to the Asset Delivery API to fetch the content of the
 landing page looks like this:
@@ -47,7 +47,7 @@ curl https://cdn.st-api.com/v1/assets/pub/client_id/content/pages/landing-page.j
 
 Remember to replace `client_id` with your client ID.
 
-Through the Flex SDK, this query is formatted as:
+Through the Sharetribe SDK, this query is formatted as:
 
 ```js
 sdk.assetByAlias({

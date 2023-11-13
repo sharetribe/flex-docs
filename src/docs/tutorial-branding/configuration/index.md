@@ -1,7 +1,7 @@
 ---
 title: Change currency and minimum price
 slug: configurations
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-branding
 ingress:
   In this tutorial section we change the marketplace currency and we set
@@ -20,7 +20,7 @@ You make a lot of adjustments to your marketplace via environment
 variables, configuration files and through Console. These configurations
 are specific to the runtime environment. For example, the
 `REACT_APP_SHARETRIBE_SDK_CLIENT_ID` environment variable might be
-pointing to the client ID of your Flex development environment on
+pointing to the client ID of your Sharetribe development environment on
 localhost and on your staging server (if you have one).
 
 You already have set up a couple of those environment variables, when
@@ -41,13 +41,14 @@ preferred text editor:
 ```
 
 A full list of environment variables can be found here:
-[template environment variables](/ftw/ftw-env/). You can change any of
-these variables _locally_ by just editing the **.env** file. Then you
-need to restart the server by running `yarn run dev` again.
+[template environment variables](/template/template-env/). You can
+change any of these variables _locally_ by just editing the **.env**
+file. Then you need to restart the server by running `yarn run dev`
+again.
 
 You can also find a full list of configuration variables that can be
 changed through the template codebase in the
-[Configuration variables](/ftw/configuration/) article.
+[Configuration variables](/template/configuration/) article.
 
 ## Change the currency
 
@@ -129,6 +130,6 @@ code to the desired value.
 
 ## Further reading
 
-- [Currency configurations](/ftw/how-to-set-up-currency-in-ftw/)
-- [Environment variables](/ftw/ftw-env/)
-- [Configuration variables](/ftw/configuration/)
+- [Currency configurations](/template/how-to-set-up-currency-in-template/)
+- [Environment variables](/template/template-env/)
+- [Configuration variables](/template/configuration/)

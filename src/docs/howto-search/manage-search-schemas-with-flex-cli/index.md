@@ -1,24 +1,24 @@
 ---
-title: Manage search schemas with Flex CLI
-slug: manage-search-schemas-with-flex-cli
-updated: 2021-11-30
+title: Manage search schemas with Sharetribe CLI
+slug: manage-search-schemas-with-sharetribe-cli
+updated: 2023-10-24
 category: how-to-search
 ingress:
   This tutorial shows you how to manage extended data search schemas
-  with Flex CLI. With search schemas in place, you can use custom
+  with Sharetribe CLI. With search schemas in place, you can use custom
   extended data fields as filters in your queries.
 skills: basic command line, text editing
 published: true
 ---
 
-Flex CLI (Command-line interface) is a tool for changing your
+Sharetribe CLI (Command-line interface) is a tool for changing your
 marketplace's advanced configurations such as transaction processes and
 email templates.
 
-This tutorial expects that you have already installed Flex CLI and are
-logged in with your API key. If not, it's recommended to first read the
-tutorial
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/).
+This tutorial expects that you have already installed Sharetribe CLI and
+are logged in with your API key. If not, it's recommended to first read
+the tutorial
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
 In this tutorial, we will add a data schema for the `listingType` public
 data field in listings. If your marketplace uses different listing
@@ -26,7 +26,8 @@ types, you may want to create pages that only show one type of listing.
 
 We will also see how to manage data schema for user profiles. Those
 schemas are not required for Sharetribe Web Template to work, but can be
-useful when building own integrations via the Flex Integration API.
+useful when building own integrations via the Sharetribe Integration
+API.
 
 ## Extended data types and schema scopes
 
@@ -115,12 +116,12 @@ For the full query reference, see the
 [/listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 endpoint API reference.
 
-## Listing fields and search settings in Flex Console
+## Listing fields and search settings in Sharetribe Console
 
-When you add listing fields in Flex Console, and select _Include this
-field in keyword search_ or _Add a filter to Search Page_, Flex
-generates a search schema for the field automatically. In the Console,
-the available field type options are
+When you add listing fields in Sharetribe Console, and select _Include
+this field in keyword search_ or _Add a filter to Search Page_,
+Sharetribe generates a search schema for the field automatically. In the
+Console, the available field type options are
 
 - free text (search schema: `text`)
 - select one (search schema: `enum`)
@@ -134,8 +135,8 @@ string in the search schema:
 A listing field defined in Console. Can not be edited with the CLI.
 ```
 
-If you then try to add a search schema through Flex CLI for a key and
-scope that already exists in a Console-originated listing field, you
+If you then try to add a search schema through Sharetribe CLI for a key
+and scope that already exists in a Console-originated listing field, you
 will see the following error:
 
 ```
@@ -185,8 +186,9 @@ If you wish to remove a schema, you can use the `search unset` command.
 
 <info>
 
-If you have already defined a search schema for a key through Flex CLI,
-you can not create a listing field in Flex Console with that same key.
+If you have already defined a search schema for a key through Sharetribe
+CLI, you can not create a listing field in Sharetribe Console with that
+same key.
 
 ![Console warning about conflicting keys](./conflictingSearchSchema.png)
 
@@ -196,8 +198,8 @@ you can not create a listing field in Flex Console with that same key.
 
 <info>
 
-Adding user search schemas is only supported in Flex CLI versions 1.10.0
-and above. Use yarn to update Flex CLI by running
+Adding user search schemas is only supported in Sharetribe CLI versions
+1.10.0 and above. Use yarn to update Sharetribe CLI by running
 `yarn global upgrade flex-cli` or `npm update -g flex-cli` if you are
 using npm.
 
@@ -241,13 +243,13 @@ marketplace, labelled with a metadata attribute `isPromoted: true`. If
 you only have a handful of promoted listings, you likely do not want to
 tag all other listings with `isPromoted: false`.
 
-Instead, Flex allows you to set a default value for the search schema –
-all listings that do not have the attribute get returned when querying
-the default value.
+Instead, Sharetribe allows you to set a default value for the search
+schema – all listings that do not have the attribute get returned when
+querying the default value.
 
 You can set the default value for a search schema simply by passing a
 `--default` flag with the desired default value. To create the search
-schema described above, the Flex CLI command is as follows:
+schema described above, the Sharetribe CLI command is as follows:
 
 ```
 $ flex-cli search set --key isPromoted --type boolean --scope metadata --default false -m my-marketplace-dev
@@ -269,12 +271,12 @@ userProfile  protected  age          long
 
 ## Summary
 
-In this guide, we used Flex CLI to define search schemas for our
-marketplace. We also saw how schemas defined through Flex Console and
-Flex CLI interact. We used the public data attributes `category` and
-`listingType` as examples. In addition, we looked at adding user search
-schemas for Integration API as well as adding a listing schema with a
-default value.
+In this guide, we used Sharetribe CLI to define search schemas for our
+marketplace. We also saw how schemas defined through Sharetribe Console
+and Sharetribe CLI interact. We used the public data attributes
+`category` and `listingType` as examples. In addition, we looked at
+adding user search schemas for Integration API as well as adding a
+listing schema with a default value.
 
 For more information, see the following resources:
 
@@ -290,5 +292,5 @@ For more information, see the following resources:
 - API reference for the
   [/users/query](https://www.sharetribe.com/api-reference/integration.html#query-users)
   endpoint in the Integration API
-- [Extend listing data in FTW](/how-to/extend-listing-data-in-ftw/)
-- [Change search filters in FTW](/how-to/change-search-filters-in-ftw/)
+- [Extend listing data in template](/how-to/extend-listing-data-in-template/)
+- [Change search filters in template](/how-to/change-search-filters-in-template/)

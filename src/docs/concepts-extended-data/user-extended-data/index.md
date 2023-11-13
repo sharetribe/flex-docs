@@ -1,7 +1,7 @@
 ---
 title: User extended data
 slug: user-extended-data
-updated: 2022-09-29
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   User extended data allows you to distinguish between different types
@@ -37,8 +37,8 @@ in Integration API.
 
 ## Types of users
 
-By default, Flex marketplace users have the capabilities to be both
-providers and customers. However, you may want to limit those
+By default, Sharetribe marketplace users have the capabilities to be
+both providers and customers. However, you may want to limit those
 capabilities, for instance by only allowing verified marketplace users
 to create listings. Or you may want to have a three-way marketplace
 where only one type of participant can be in several roles – yoga
@@ -79,5 +79,5 @@ To facilitate user querying, it is possible to filter users also by
 extended data when calling the endpoint. That way, you can segment your
 users by important attributes for more fine-grained processing. To
 filter users by extended data, you will need to
-[create a search schema](/how-to/manage-search-schemas-with-flex-cli/)
+[create a search schema](/how-to/manage-search-schemas-with-sharetribe-cli/)
 for the user profile.

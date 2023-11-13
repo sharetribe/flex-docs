@@ -1,27 +1,26 @@
 ---
-title: Content management in Flex
+title: Content management in Sharetribe
 slug: content-management
-updated: 2023-04-01
+updated: 2023-10-24
 category: concepts-content-management
 ingress:
-  This article introduces the Flex content management system and how
-  content pages can be managed in Flex Console
+  This article introduces the Sharetribe content management system and
+  how content pages can be managed in Sharetribe Console
 published: true
 ---
 
-In 2023-02, Flex introduced a lightweight headless CMS to create content
-pages in Flex. The feature allows operators to modify four default
-content pages without code, as well as create completely new pages.
+A Sharetribe marketplace allows you to manage content in Console without
+making code changes.
 
-## Flex Content management glossary
+## Sharetribe Content management glossary
 
-Before diving deeper into content management in Flex, here is a short
-glossary of the most central content related terms.
+Before diving deeper into content management in Sharetribe, here is a
+short glossary of the most central content related terms.
 
 ### Content management
 
-The way in which operator-created content is handled within Flex. Before
-Console-operated content management, operators could either
+The way in which operator-created content is handled within Sharetribe.
+Before Console-operated content management, operators could either
 
 - add the content directly in the client app codebase,
 - use the [marketplace text](/concepts/marketplace-texts/) files for
@@ -29,7 +28,7 @@ Console-operated content management, operators could either
 - integrate an external content management system.
 
 Currently, we recommend managing content using the assets-based Pages
-feature in Flex Console.
+feature in Sharetribe Console.
 
 ### Content modeling
 
@@ -42,23 +41,23 @@ a systematic way.
 
 The collection of different content elements under a specific URL. Pages
 can have fields, sections, or blocks within them. A page can be fetched
-as [an asset](/references/assets/) from the Flex Asset Delivery API.
-Example: `landing-page`.
+as [an asset](/references/assets/) from the Sharetribe Asset Delivery
+API. Example: `landing-page`.
 
 ### Page asset
 
-As the operator adds and edits the elements of the page in Flex Console,
-a page asset is created under the hood. The page asset uses a **page
-schema** to describe the different content elements in a way that the
-client application can then understand and render.
+As the operator adds and edits the elements of the page in Sharetribe
+Console, a page asset is created under the hood. The page asset uses a
+**page schema** to describe the different content elements in a way that
+the client application can then understand and render.
 
 ### Section
 
-The main element of a page. In Flex, each section has a specific content
-model that determines the information that the section must have to
-function properly. Sections can have fields and blocks within them. In
-Flex, sections are the main way to distinguish pages from each other.
-Example: article, feature, columns.
+The main element of a page. In Sharetribe, each section has a specific
+content model that determines the information that the section must have
+to function properly. Sections can have fields and blocks within them.
+In Sharetribe, sections are the main way to distinguish pages from each
+other. Example: article, feature, columns.
 
 ### Block
 
@@ -70,7 +69,7 @@ Example: default block.
 
 ### Field
 
-The simplest content element in Flex. Conveys a single piece of
+The simplest content element in Sharetribe. Conveys a single piece of
 information. Example: text field, button, image.
 
 ## Content models
@@ -95,7 +94,7 @@ A content model also facilitates using the same content in different
 channels – your mobile application can have one design and your website
 can have another, but they can both use the same content models.
 
-In Flex, the content modeling step is currently done for you. Each
+In Sharetribe, the content modeling step is currently done for you. Each
 **page** can have a selection of pre-determined **sections**, which in
 turn can have several **blocks**. Depending on which kinds of sections
 and blocks you choose for your page, you can create a wide range of
@@ -106,9 +105,9 @@ sections.
 
 ## Sections
 
-Flex has four default content sections that you can select for your
-page. All sections have a title, an ingress, and a button for a call to
-action.
+Sharetribe has four default content sections that you can select for
+your page. All sections have a title, an ingress, and a button for a
+call to action.
 
 ### Article
 
@@ -149,22 +148,21 @@ investigate in more depth.
 
 ## Blocks
 
-Currently, Flex has a single type of block that you can add to any
+Currently, Sharetribe has a single type of block that you can add to any
 section. The block contains a title, and you can determine the level of
 the title (page title, section title, section subtitle). A block can
 also have text content and a button.
 
-Block text content can be
-[modified with Markdown](/operator-guides/how-to-format-your-text-in-pages/).
-This allows the content creator to use even more fine-grained editing,
-including italics and bolding, subheadings, links, and code snippets.
+Block text content can be modified with Markdown. This allows the
+content creator to use even more fine-grained editing, including italics
+and bolding, subheadings, links, and code snippets.
 
 ## Content delivery
 
 Once the page has been created, it is fetched as an
 [asset](/references/assets/) to the client application using the
 [Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
-For the landing page, the asset being modified in Flex is
+For the landing page, the asset being modified in Sharetribe is
 `content/landing-page.js`. Assets can be fetched by the latest version,
 or a specific version. The client application then shows the page
 content it has fetched.
@@ -174,15 +172,11 @@ default.
 
 For legacy template versions that do not have asset-based content
 capabilities, you can refer to our
-[legacy template documentation](/ftw/legacy-templates/).
+[legacy template documentation](/template/legacy-templates/).
 
 To see your page changes in your client application, you need to save
-your changes in Flex Console and navigate to the corresponding page in
-your app.
-
-Alternatively, if you have an application running in the address set as
-your **Marketplace URL**, you can click the "View page" link next to the
-page title in Flex Console.
+your changes in Sharetribe Console. Then, you can click the "View page"
+link next to the page title.
 
 ![View page](./view-page.png)
 
@@ -216,17 +210,20 @@ changes in test environment before copying anything to Live!
 It can take up to five minutes for your changes to update from test to
 live environment.
 
+You can also copy your asset changes to the dev environment.
+
 ## Content layout
 
 Content modeling does not, by default, contain information how the
 content should be laid out in the client application. The Sharetribe web
 template does have components corresponding to the different content
-sections. However, the Flex content assets can be used in any client
-application, and even in the template you have full freedom as to how
-the different sections get displayed. This means that even with the
+sections. However, the Sharetribe content assets can be used in any
+client application, and even in the template you have full freedom as to
+how the different sections get displayed. This means that even with the
 pre-defined options, you can create a page setup that is entirely your
 own.
 
-Read more about how the template shows content created in Flex Console:
+Read more about how the template shows content created in Sharetribe
+Console:
 
-- [How the Sharetribe Web Template renders content pages using the PageBuilder](/ftw/page-builder/)
+- [How the Sharetribe Web Template renders content pages using the PageBuilder](/template/page-builder/)

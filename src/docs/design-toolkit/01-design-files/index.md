@@ -1,7 +1,7 @@
 ---
 title: Design files
 slug: design-files
-updated: 2023-27-04
+updated: 2023-10-24
 category: design-toolkit
 ingress:
   The complete design files in mobile and desktop layout for Sharetribe
@@ -37,9 +37,8 @@ interact with each other.
 
 If you do not want to do the design work yourself, you can always hire a
 designer to do it for you. If you don't know any designers, contact
-[Sharetribe support](mailto:flex-support@sharetribe.com), and we'll
-connect you to a designer who can help you. The design files are under
-the
+[Sharetribe support](mailto:hello@sharetribe.com), and we'll connect you
+to a designer who can help you. The design files are under the
 [Creative Commons licence](https://creativecommons.org/licenses/by/4.0/).
 
 ##### [> Download the Design Files from our GitHub Repository](https://github.com/sharetribe/design-resources)

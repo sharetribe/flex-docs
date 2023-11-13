@@ -1,34 +1,35 @@
 ---
-title: Introduction to integrations in Flex
+title: Introduction to integrations in Sharetribe
 slug: integrations-introduction
-updated: 2022-10-11
+updated: 2023-10-24
 category: concepts-integrations
 ingress:
-  Flex allows integrations with a vast range of third party tools and
-  solutions. These tools can be integrated with Flex by using Zapier,
-  the Flex Integration API, or the client application.
+  Sharetribe allows integrations with a vast range of third party tools
+  and solutions. These tools can be integrated with Sharetribe by using
+  Zapier, the Sharetribe Integration API, or the client application.
 published: true
 ---
 
-Integrations in Flex refer to third-party solutions and tools that
-communicate with the Flex marketplace to either retrieve information and
-take action outside Flex, or trigger actions within Flex. A lot of
-features that are not natively available in Flex can be integrated with
-your marketplace solution with varying degrees of complexity.
+Integrations in Sharetribe refer to third-party solutions and tools that
+communicate with the Sharetribe marketplace to either retrieve
+information and take action outside Sharetribe, or trigger actions
+within Sharetribe. A lot of features that are not natively available in
+Sharetribe can be integrated with your marketplace solution with varying
+degrees of complexity.
 
-## Flex integration tools
+## Sharetribe integration tools
 
 There are several ways to approach integrating third party tools with
-your Flex marketplace. Your integration options within Flex depend on
-the requirements of the third party tool you are integrating, and on the
-complexity of the integration you are looking to create.
+your Sharetribe marketplace. Your integration options within Sharetribe
+depend on the requirements of the third party tool you are integrating,
+and on the complexity of the integration you are looking to create.
 
 ### Client application
 
 The simplest integration tool is your client application. Since you have
 full control over your marketplace client app, you can add analytics and
 tracking tools such as [Hotjar](#hotjar-analytics) or
-[Goole Analytics](/ftw/how-to-set-up-analytics-for-ftw/#configure-google-analytics),
+[Goole Analytics](/template/how-to-set-up-analytics-for-template/#configure-google-analytics),
 or messaging tools such as [Sendbird](#sendbird-user-to-user-chat-app)
 or
 [Intercom](https://www.intercom.com/help/en/articles/168-install-intercom-on-your-website-to-support-and-onboard-logged-in-users),
@@ -44,8 +45,8 @@ other logic in a secure way.
 ### Integration API
 
 If you want to create an integration where the third party solution
-listens to – or takes action on – your Flex marketplace, you will likely
-need to use the
+listens to – or takes action on – your Sharetribe marketplace, you will
+likely need to use the
 [Integration API](/introduction/getting-started-with-integration-api/).
 Where the
 [Marketplace API](/concepts/marketplace-api-integration-api/#when-to-use-the-marketplace-api)
@@ -70,32 +71,33 @@ transitioned, and so forth. You can review
 [the full list of supported event types](/references/events/#supported-event-types).
 
 By listening to events, you can build flows where third party solutions
-take action either in Flex or within the solutions themselves. You can
-read more about
-[reacting to events in Flex](https://www.sharetribe.com/docs/how-to/reacting-to-events/).
+take action either in Sharetribe or within the solutions themselves. You
+can read more about
+[reacting to events in Sharetribe](https://www.sharetribe.com/docs/how-to/reacting-to-events/).
 
 ### Zapier
 
 Sharetribe has also built a
 [Zapier integration](/how-to/set-up-and-use-zapier/) to facilitate
-integrating third-party tools with Flex. The Zapier integration works by
-harnessing a subset of Flex events and allowing operators to connect any
-of the other [5000+ tools and solutions](https://zapier.com/apps/) in
-the Zapier ecosystem.
+integrating third-party tools with Sharetribe. The Zapier integration
+works by harnessing a subset of Sharetribe events and allowing operators
+to connect any of the other
+[5000+ tools and solutions](https://zapier.com/apps/) in the Zapier
+ecosystem.
 
-The Flex Zapier integration makes it easier to take action in your
+The Sharetribe Zapier integration makes it easier to take action in your
 favorite business tools, such as
 [Hubspot](https://zapier.com/apps/hubspot/integrations/),
 [MailChimp](https://zapier.com/apps/mailchimp/integrations/) and others,
-based on your Flex marketplace activity. However, Zapier cannot
-currently perform operations within Flex. In other words, if you need to
-take action in Flex based on activity in other solutions, you will need
-to use the Integration API directly.
+based on your Sharetribe marketplace activity. However, Zapier cannot
+currently perform operations within Sharetribe. In other words, if you
+need to take action in Sharetribe based on activity in other solutions,
+you will need to use the Integration API directly.
 
 ## Levels of integration
 
-The complexity of a Flex integration with a third party tool can range
-from very simple to highly complex. One aspect determining the
+The complexity of a Sharetribe integration with a third party tool can
+range from very simple to highly complex. One aspect determining the
 complexity is how intertwined the two tools need to be. On the simple
 end, adding a script to the client application for a tracking tool is a
 trivial change, and on the complex end a full third party payment
@@ -103,7 +105,7 @@ gateway integration will likely take several weeks to implement.
 
 The full complexity of the feature also depends on the different use
 cases you need to cover on each side of the integration. For instance,
-if you want to integrate your Flex marketplace with Shopify and
+if you want to integrate your Sharetribe marketplace with Shopify and
 synchronize listing stock between the two platforms, you will need to
 cover several use cases on both sides, such as adding, updating and
 removing listings, as well as handling purchases, returns and disputes.
@@ -123,25 +125,25 @@ different levels of complexity:
   - use cases: integrating analytics providers
 
 - Adding a custom endpoint in your client app server that calls a third
-  party API and then updates information in Flex using the Marketplace
-  API or the Integration API
+  party API and then updates information in Sharetribe using the
+  Marketplace API or the Integration API
 
   - use cases: enabling downloadable content in listings
 
-- Listening to Flex events using Zapier and taking action in another
-  Zapier-connected application
+- Listening to Sharetribe events using Zapier and taking action in
+  another Zapier-connected application
   - use cases: sending a text message of a new booking to providers
     using Twilio
 
 **More complex integrations**
 
-- Listening to Flex events using your own polling tool and taking action
-  within Flex
+- Listening to Sharetribe events using your own polling tool and taking
+  action within Sharetribe
 
   - use cases: partial or complete payment gateway integrations
 
-- Synchronizing Flex and a parallel system to update each other when any
-  changes happen in either solution
+- Synchronizing Sharetribe and a parallel system to update each other
+  when any changes happen in either solution
   - use cases: calendar integration, Shopify
 
 ## Examples of specific integrations
@@ -153,7 +155,7 @@ allows you to collect user activity heatmaps, feedback, and user
 behavior recordings, among other features.
 
 - Add a
-  [tracking script to the client application](/ftw/how-to-set-up-analytics-for-ftw/#custom-analytics-libraries).
+  [tracking script to the client application](/template/how-to-set-up-analytics-for-template/#custom-analytics-libraries).
 - Add custom CSP directives to
   [/server/csp.js](https://github.com/sharetribe/web-template/blob/main/server/csp.js).
 
@@ -161,8 +163,8 @@ behavior recordings, among other features.
 
 [Mailchimp](https://mailchimp.com/) is an email marketing and
 automations tool that you can use to communicate directly with your
-marketplace users. Since Mailchimp uses Zapier, integrating Flex and
-Mailchimp is straightforward:
+marketplace users. Since Mailchimp uses Zapier, integrating Sharetribe
+and Mailchimp is straightforward:
 
 - Use the
   [sample Zapier template](https://zapier.com/shared/add-a-new-user-in-your-marketplace-to-a-mailchimp-audience/412d7744a23855ce00941567a619c7ffb7652335)
@@ -177,14 +179,14 @@ Zapier integration, so you can use Zapier to trigger actions in Twilio
 tools with no coding.
 
 - Follow the
-  [Flex video guide](/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-flex-using-twilio-and-zapier)
+  [Sharetribe video guide](/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-using-twilio-and-zapier)
   to send providers a SMS message whenever their listing gets booked.
 
 ### Sendbird user-to-user chat app
 
-In Flex, messages between users are always related to transactions. If
-you want to allow more complex messaging flows between users, you can
-integrate a user-to-user chat tool such as
+In Sharetribe, messages between users are always related to
+transactions. If you want to allow more complex messaging flows between
+users, you can integrate a user-to-user chat tool such as
 [Sendbird](https://sendbird.com/). The initial integration is fairly
 straightforward to implement, and the eventual complexity depends on the
 use cases you want to cover.
@@ -194,9 +196,9 @@ use cases you want to cover.
   [UI kit](https://sendbird.com/docs/uikit/v3/react/overview) and
   [SDK](https://sendbird.com/docs/chat/v4/javascript/overview).
 - Implement and stylise a UI chat component.
-- Initialise a Sendbird user id for the user when they sign up to Flex,
-  and save it in the user's private data so it can be used whenever they
-  log in.
+- Initialise a Sendbird user id for the user when they sign up to
+  Sharetribe, and save it in the user's private data so it can be used
+  whenever they log in.
 
 ### Voucherify discount coupons
 
@@ -230,17 +232,17 @@ to cover.
 - Only redeem the code once i.e. when actually initiating or
   transitioning the transaction with Marketplace API.
 
-### Google Calendar synchronised with Flex availability calendar
+### Google Calendar synchronised with Sharetribe availability calendar
 
 If you run a booking marketplace, you may want to allow providers to
 synchronize their own
 [Google Calendar](https://developers.google.com/calendar) to their
-listing's Flex availability calendar. That way, providers do not need to
-add availability exceptions manually to Flex, and they will be able to
-see any bookings in their own calendar without needing to visit the
-marketplace. Like all two-way integrations, this is a complex one, and
-you will need to specify the use cases you want to cover to determine
-the full complexity of the integration.
+listing's Sharetribe availability calendar. That way, providers do not
+need to add availability exceptions manually to Sharetribe, and they
+will be able to see any bookings in their own calendar without needing
+to visit the marketplace. Like all two-way integrations, this is a
+complex one, and you will need to specify the use cases you want to
+cover to determine the full complexity of the integration.
 
 - Google provides
   [Calendar API](https://developers.google.com/calendar/api) to modify
@@ -248,21 +250,21 @@ the full complexity of the integration.
 - You can set up
   [push notifications](https://developers.google.com/calendar/api/guides/push)
   to track changes on the Google side.
-- Authenticate your Flex app to get information and make changes on
-  behalf of the user in Google Calendar.
-- Whenever a booking gets created or updated in Flex, update the
+- Authenticate your Sharetribe app to get information and make changes
+  on behalf of the user in Google Calendar.
+- Whenever a booking gets created or updated in Sharetribe, update the
   provider's Google Calendar accordingly. You can do this either by
   - creating custom endpoints in your client app server that call the
-    Flex APIs as well as the Calendar APIs,
-  - or you can listen to Flex events and call the Calendar APIs on
+    Sharetribe APIs as well as the Calendar APIs,
+  - or you can listen to Sharetribe events and call the Calendar APIs on
     relevant events.
 - You can
   [watch the provider's Google Calendar](https://developers.google.com/calendar/api/v3/reference/events/watch),
   and whenever a new event is created or an existing one is removed,
   create or remove an
   [availability exception](https://www.sharetribe.com/api-reference/integration.html#availability-exceptions)
-  in Flex to prevent other customers from booking that specific time
-  slot.
+  in Sharetribe to prevent other customers from booking that specific
+  time slot.
 
 ### Payment gateway integration
 
@@ -278,4 +280,4 @@ support team of the payment gateway provider you have chosen.
   use, and make sure you are eligible for their service. Some providers
   may have limitations regarding platform size or geography.
 - Get familiar with our how-to article on
-  [integrating a third-party payment gateway to Flex](/how-to/how-to-integrate-3rd-party-payment-gateway/).
+  [integrating a third-party payment gateway to Sharetribe](/how-to/how-to-integrate-3rd-party-payment-gateway/).

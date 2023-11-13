@@ -1,8 +1,8 @@
 ---
 title: How to add a static page
-slug: how-to-add-static-pages-in-ftw
-updated: 2023-02-14
-category: ftw-content
+slug: how-to-add-static-pages
+updated: 2023-10-24
+category: template-content
 ingress:
   This guide describes how to add a non-dynamic static page using the
   Sharetribe Web Template
@@ -26,8 +26,8 @@ You might want to do this, for instance, if
 If you do not have a specific reason to create a static page directly
 into the codebase, we recommend that you create your content pages using
 [Pages](/concepts/content-management/). With Pages, you can create
-multiple content pages in Flex Console and render them all using
-[the same components in Sharetribe Web Template](/ftw/page-builder/).
+multiple content pages in Sharetribe Console and render them all using
+[the same components in Sharetribe Web Template](/template/page-builder/).
 
 </info>
 

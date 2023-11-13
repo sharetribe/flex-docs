@@ -1,15 +1,13 @@
 ---
 title: How saving a payment card works in the Sharetribe Web Template
 slug: save-payment-card
-updated: 2023-09-04
+updated: 2023-10-24
 category: how-to-payments
 ingress:
   An overview of the Sharetribe Web Template functionality for storing
   payment cards.
 published: true
 ---
-
-## Introduction
 
 When a customer first comes to the marketplace and books a listing,
 there are several form fields the user needs to fill: expiration month,
@@ -73,7 +71,7 @@ steps:
 
 - Create Stripe
   [Setup Intent](https://www.sharetribe.com/api-reference/marketplace.html#stripe-setup-intents)
-  through Flex API to obtain the client secret.
+  through Sharetribe API to obtain the client secret.
 - Call `stripe.handleCardSetup` with the client secret
   - `stripe.handleCardSetup` will handle user actions like 3D Secure
     authentication
@@ -146,8 +144,8 @@ Read more about needed permissions from
 If the user has a default payment method and she chooses to use it to
 book a listing, there are couple of changes needed:
 
-- The id of Stripe's payment method needs to be sent to Flex API as
-  `paymentMethod`, when requesting payment.
+- The id of Stripe's payment method needs to be sent to Sharetribe API
+  as `paymentMethod`, when requesting payment.
 - `stripe.confirmCardPayment`: Stripe Elements (card) is not needed if
   the default payment method is used.
 
@@ -191,7 +189,7 @@ details for future bookings.
 ### Submit StripePaymentForm
 
 After submitting `StripePaymentForm`, there are up to 5 calls in
-sequence (to Flex and Stripe APIs):
+sequence (to Sharetribe and Stripe APIs):
 
 ###### Step 1.
 
@@ -231,8 +229,8 @@ sdk.transactions.initiate({
 ```
 
 **When you are using previously saved payment card**, the id of Stripe's
-payment method needs to be sent to Flex API as `paymentMethod`, when
-requesting payment.
+payment method needs to be sent to Sharetribe API as `paymentMethod`,
+when requesting payment.
 
 ```js
 sdk.transactions.initiate({
@@ -331,10 +329,10 @@ In the template, we call
 [savePaymentMethod function](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L192)
 that creates stripe customer and adds updates default payment method.
 
-There are 3 different scenarios, which require different calls to Flex
-API:
+There are 3 different scenarios, which require different calls to
+Sharetribe API:
 
-**1. No StripeCustomer entity connected to Flex API:**
+**1. No StripeCustomer entity connected to Sharetribe API:**
 
 ```js
 sdk.stripeCustomer.create(

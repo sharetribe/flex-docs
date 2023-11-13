@@ -1,8 +1,8 @@
 ---
 title: Change template texts
-slug: how-to-change-ftw-ui-texts
-updated: 2023-01-01
-category: ftw-content
+slug: how-to-change-template-ui-texts
+updated: 2023-10-24
+category: template-content
 ingress:
   This guide gives an overview how to change the user interface texts in
   the Sharetribe Web Template.
@@ -23,21 +23,21 @@ directly into the source code. Instead, the source code uses
 that defines keys for each meaningful piece of content, and a translator
 or a content creator can then define the message (i.e. the value) for
 each key in their language. Read more about how
-[Flex handles marketplace texts](/concepts/marketplace-texts/).
+[Sharetribe handles marketplace texts](/concepts/marketplace-texts/).
 
 By default, the template use built-in language-specific marketplace text
 files to show messages in the UI. However, starting in 2022-05,
-operators can also modify marketplace texts in Flex Console using hosted
-marketplace text assets. The built-in marketplace texts are merged with
-the hosted marketplace texts in the template, so you can use both ways
-of managing marketplace texts. Read more about how to
-[modify built-in marketplace texts in the template](/ftw/how-to-change-ftw-bundled-marketplace-texts/)
+operators can also modify marketplace texts in Sharetribe Console using
+hosted marketplace text assets. The built-in marketplace texts are
+merged with the hosted marketplace texts in the template, so you can use
+both ways of managing marketplace texts. Read more about how to
+[modify built-in marketplace texts in the template](/template/how-to-change-bundled-marketplace-texts/)
 and
-[how hosted marketplace texts work in the template](/ftw/hosted-marketplace-texts/).
+[how hosted marketplace texts work in the template](/template/hosted-marketplace-texts/).
 
 You may also want to change the language of the user interface entirely.
 Read more about
-[changing the language used in the template](/ftw/how-to-change-ftw-language/).
+[changing the language used in the template](/template/how-to-change-template-language/).
 
 In addition to marketplace texts, there are other forms of content in
 the client applications that operators may need to manage.
@@ -45,7 +45,7 @@ the client applications that operators may need to manage.
 ## Content pages
 
 Your marketplace also has some content pages that can be modified
-through Flex Console. The default content pages include
+through Sharetribe Console. The default content pages include
 
 - About
 - Landing page
@@ -53,9 +53,9 @@ through Flex Console. The default content pages include
 - Terms of Service
 
 These pages are rendered by the
-[PageBuilder component](/ftw/page-builder/) in the template. In addition
-to these default pages, you can create your own content pages through
-Flex Console, and
+[PageBuilder component](/template/page-builder/) in the template. In
+addition to these default pages, you can create your own content pages
+through Sharetribe Console, and
 [fully manage their content](/concepts/content-management/) without code
 changes. On the template side, you can modify
 [how that content is displayed](/how-to/options-prop/).
@@ -68,7 +68,7 @@ content pages for performance reasons.
 
 More information about adding static content to the application can be
 found in the
-[How to add static pages in the template](/ftw/how-to-add-static-pages-in-ftw/)
+[How to add static pages in the template](/template/how-to-add-static-pages/)
 guide.
 
 ## Labels and countries

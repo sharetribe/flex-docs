@@ -1,7 +1,7 @@
-# Sharetribe Flex documentation
+# Sharetribe Developer documentation
 
-This repository contains the source code for the Sharetribe Flex
-documentation site a.k.a. Flex Docs.
+This repository contains the source code for the Sharetribe Developer
+documentation site a.k.a. Dev Docs.
 
 The site is running at: https://www.sharetribe.com/docs/
 

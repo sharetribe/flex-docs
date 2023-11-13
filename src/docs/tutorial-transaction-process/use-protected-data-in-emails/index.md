@@ -1,7 +1,7 @@
 ---
 title: Use protected data in an email notification
 slug: use-protected-data-in-emails
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-transaction-process
 ingress:
   Learn how to use protected data in an email notification by modifying
@@ -120,11 +120,11 @@ Console > Build > Content > Marketplace texts.
 ```
 
 After those changes, you can create a new user account using the sign-up
-page. Then, if you open the user card in the Flex Console, you should be
-able to see the added phone number in the user entity's protected data
-section.
+page. Then, if you open the user card in the Sharetribe Console, you
+should be able to see the added phone number in the user entity's
+protected data section.
 
-![Phone number in Flex Console](./phone-number-in-protected-data.png)
+![Phone number in Sharetribe Console](./phone-number-in-protected-data.png)
 
 This is possible because all the extra fields that are added to
 SignupForm component are saved as protected data to the user entity.
@@ -148,7 +148,7 @@ process.
 
 Before we modify our transaction process, it's better to ensure that we
 have most the up-to-date version of the process. You can fetch any
-process version with Flex CLI:
+process version with Sharetribe CLI:
 
 ```shell
 flex-cli process pull --process=biketribe-instant-booking --alias=release-1 --path=./biketribe-instant-booking --marketplace=biketribe-dev
@@ -217,11 +217,11 @@ available: between `{{#with transaction}}` and `{{/with}}`.
 
 <extrainfo title="How to test the email template rendering locally?">
 
-To test the protected data using Flex CLI's built-in preview
+To test the protected data using Sharetribe CLI's built-in preview
 functionality, you need to use a custom sample-template-context.json.
 
-You can read more from the Flex CLI article:
-[Edit email templates with Flex CLI](/how-to/edit-email-templates-with-flex-cli/#sample-email-context)
+You can read more from the Sharetribe CLI article:
+[Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-sharetribe-cli/#sample-email-context)
 
 The short guide of the necessary steps:
 
@@ -230,7 +230,7 @@ The short guide of the necessary steps:
    ```json
    "protected-data" : { "providerPhoneNumber": "+358 12 3456789" },
    ```
-3. Use Flex CLI's preview with that context:
+3. Use Sharetribe CLI's preview with that context:
 
 ```shell
 
@@ -247,7 +247,7 @@ we need to push a new version of _biketribe-instant-booking_ process. If
 you have done the earlier parts of the tutorial this process should be
 already quite familiar to you. If you need more detailed information
 take a look at the
-[Edit transaction process with Flex CLI tutorial](/how-to/edit-transaction-process-with-flex-cli/#validate-and-push-the-process).
+[Edit transaction process with Sharetribe CLI tutorial](/how-to/edit-transaction-process-with-sharetribe-cli/#validate-and-push-the-process).
 
 Push the updated process:
 

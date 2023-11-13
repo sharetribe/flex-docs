@@ -1,8 +1,8 @@
 ---
 title: Template environment variables
-slug: ftw-env
-updated: 2023-01-10
-category: ftw-configuration
+slug: template-env
+updated: 2023-10-24
+category: template-configuration
 ingress:
   Reference documentation for environment variables in the Sharetribe
   Web Template.
@@ -19,30 +19,32 @@ of environment variables.
 
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
-  See the [How to set up Mapbox](/ftw/how-to-set-up-mapbox-for-ftw/)
+  See the
+  [How to set up Mapbox](/template/how-to-set-up-mapbox-for-template/)
   guide for more information.
 
 - **`REACT_APP_GOOGLE_MAPS_API_KEY`**
 
-  See the [How to use Google Maps](/ftw/how-to-use-google-maps-in-ftw/)
+  See the
+  [How to use Google Maps](/template/how-to-use-google-maps-in-template/)
   guide for more information.
 
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
   Your application's client ID. You can get this from
-  [Flex Console](https://flex-console.sharetribe.com/applications).
+  [Sharetribe Console](https://console.sharetribe.com/advanced/applications).
 
 - **`SHARETRIBE_SDK_CLIENT_SECRET`**
 
   Your application's client secret. It's related to client ID and used
   for privileged transitions from server side. You can get this from
-  [Flex Console](https://flex-console.sharetribe.com/applications).
+  [Sharetribe Console](https://console.sharetribe.com/advanced/applications).
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
   Stripe publishable API key for generating tokens with Stripe API. Use
   test key (prefix `pk_test_`) for development. The secret key needs to
-  be added to Flex Console.
+  be added to Sharetribe Console.
 
 - **`REACT_APP_MARKETPLACE_ROOT_URL`**
 
@@ -76,13 +78,13 @@ of environment variables.
 - **`REACT_APP_SENTRY_DSN`**
 
   See the
-  [How to set up Sentry to log errors](/ftw/how-to-set-up-sentry/) guide
-  for more information.
+  [How to set up Sentry to log errors](/template/how-to-set-up-sentry/)
+  guide for more information.
 
 - **`REACT_APP_CSP`**
 
   See the
-  [How to set up Content Security Policy (CSP)](/ftw/how-to-set-up-csp-for-ftw/)
+  [How to set up Content Security Policy (CSP)](/template/how-to-set-up-csp-for-template/)
   guide for more information.
 
 - **`BASIC_AUTH_USERNAME`**
@@ -96,18 +98,18 @@ of environment variables.
 - **`REACT_APP_GOOGLE_ANALYTICS_ID`**
 
   See the
-  [How to set up Analytics](/ftw/how-to-set-up-analytics-for-ftw/) guide
-  for more information.
+  [How to set up Analytics](/template/how-to-set-up-analytics-for-template/)
+  guide for more information.
 
 - **`REACT_APP_PLAUSIBLE_DOMAINS`**
 
   Used to configure Plausible Analytics. Read more in
-  [how to set up analytics](ftw-analytics/how-to-set-up-analytics-for-ftw/index.md).
+  [how to set up analytics](/template/how-to-set-up-analytics-for-template/).
 
 * **`REACT_APP_SHARETRIBE_SDK_BASE_URL`**
 
-  The base url to access the Sharetribe Flex Marketplace API. The
-  template uses the correct one by default so no need to set this.
+  The base url to access the Sharetribe Marketplace API. The template
+  uses the correct one by default so no need to set this.
 
 * **`REACT_APP_FACEBOOK_APP_ID`**
 
@@ -116,6 +118,12 @@ of environment variables.
 * **`FACEBOOK_APP_SECRET`**
 
   App secret of a Facebook App when Facebook login is used.
+
+* **`REACT_APP_SHARETRIBE_SDK_ASSET_CDN_BASE_URL`**
+
+Used to initialize the SDK with a custom base URL. Only use this if you
+want to proxy asset SDK calls through your server. The template uses the
+correct base URL by default if left empty.
 
 <info>
 

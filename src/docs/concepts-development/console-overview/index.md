@@ -1,21 +1,21 @@
 ---
 title: Understanding Console
 slug: console-overview
-updated: 2022-06-14
+updated: 2023-10-24
 category: concepts-development
 ingress: This article will help you understand how to navigate Console.
 published: true
 ---
 
-Console is the central control system of your Flex marketplace. In
+Console is the central control system of your Sharetribe marketplace. In
 Console, you can change a number of general settings and manage most of
 the data of your marketplace related to users, listings, transactions
 and reviews.
 
-When you create a Flex account, you also create an organization within
-Flex’s system. You can invite multiple people to your organization to
-help you manage or develop your marketplace. In fact, you can even have
-multiple marketplaces within the same organization.
+When you create a Sharetribe account, you also create an organization
+within Sharetribe’s system. You can invite multiple people to your
+organization to help you manage or develop your marketplace. In fact,
+you can even have multiple marketplaces within the same organization.
 
 ## Environments
 
@@ -36,19 +36,20 @@ are ready to launch your marketplace, you can request a live environment
 setup.
 
 When you interact and create new users, listings, and transactions with
-your [test application](https://flex-console.sharetribe.com), you will
-see the data in the test environment. While you cannot modify the code
-of the test environment, you can start playing around with it and see
-the changes you make reflected in the test environment’s Console. You
-can create users, new listings, and even transactions and reviews.
+your [test application](https://console.sharetribe.com), you will see
+the data in the test environment. While you cannot modify the code of
+the test environment, you can start playing around with it and see the
+changes you make reflected in the test environment’s Console. You can
+create users, new listings, and even transactions and reviews. You can
+also configure your marketplace without code.
 
 To interact and see data in your development environment’s Console, you
 first need to set up the frontend application for your development
 marketplace.
 
-It is easy to change environments from the topbar.
+It is easy to change environments in the top of the sidebar.
 
-![Change environments](./change-env.png)
+![Change environments](./env-change.png)
 
 ## Sections
 
@@ -56,20 +57,19 @@ Console is divided in three main sections: Home, Manage and Build.
 
 ### Home
 
-In the Home section, you find information about working with Flex. You
-can find links to various resources that will help you understand, test,
-and build your custom marketplace. These include:
+In the Home section, you find information about working with Sharetribe.
+You can find links to various resources that will help you understand,
+test, and build your custom marketplace. These include:
 
-- Links to your fully functional test marketplace, where you can get an
-  idea of how Flex works.
-- Instructions on how to set up your local Flex instance and links to
-  the Flex documentation and API reference, all of which you will need
-  when you want to start developing your marketplace.
-- Access to our developer Slack channel, where you can ask technical
-  questions and engage with our technical team and the community.
-- A calendar to book a call with one of our Flex representatives who are
-  happy to help you assess whether Flex is the right tool for your
-  project.
+- Your setup checklist for configuring your test environment marketplace
+  without code
+- Links to further resources to learn more about setting up your
+  marketplace
+- Instructions on how to set up your local Sharetribe instance and links
+  to the Sharetribe documentation and API reference, all of which you
+  will need when you want to start developing your marketplace.
+- Access to our Slack channel, where you can ask technical questions and
+  engage with our technical team and the community.
 
 ### Manage
 
@@ -124,23 +124,23 @@ code of your frontend application by your developer.
 
 **Advanced** has more technical configuration and development options.
 
-**Applications** compiles all applications that have access to the Flex
-APIs through your marketplace. At minimum, this tab includes your
-frontend application, but can also have applications for integrated
+**Applications** compiles all applications that have access to the
+Sharetribe APIs through your marketplace. At minimum, this tab includes
+your frontend application, but can also have applications for integrated
 services.
 
 **Built-in email templates** includes all emails that are sent from your
 marketplace as a part of the default user flow. They are essential to
-the operation of Flex and are designed to be sent at the crucial moments
-of the user onboarding flow and are not related to the transaction
-process. The structure visual style of these emails can be edited with
-HTML directly in this tab of the Build section. You can edit the content
-of the built in emails in Build > Content > Email texts.
+the operation of the marketplace and are designed to be sent at the
+crucial moments of the user onboarding flow and are not related to the
+transaction process. The structure visual style of these emails can be
+edited with HTML directly in this tab of the Build section. You can edit
+the content of the built in emails in Build > Content > Email texts.
 
 **Events** has a summary of what the Events feature is about as well as
 some quick links to the relevant documentation. It also mentions the
-Zapier integration and shows the main command to view events with Flex
-CLI.
+Zapier integration and shows the main command to view events with
+Sharetribe CLI.
 
 **Social logins & SSO** contains all identity provider clients, that is,
 the third-party solutions your users can sign up with on your
@@ -152,7 +152,7 @@ transaction processes your marketplace has. You can toggle between the
 different processes in the left-side selection and see how many
 transactions have used each process. You can also inspect the components
 of the transaction processes. Read more about
-[transaction processes in Flex](/concepts/transaction-process/).
+[transaction processes in Sharetribe](/concepts/transaction-process/).
 
 ## Side bar
 
@@ -164,7 +164,7 @@ your organization: Test, Development, and Live.
 
 On the bottom of the side bar, you can manage your account and
 organization by clicking your email address. You can change your
-password and generate personal API keys that you need for the Flex
+password and generate personal API keys that you need for the Sharetribe
 command-line interface (CLI). You can also log out of Console here.
 
 This is also where you add new admin users – the people who help you

@@ -146,7 +146,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: siteTitle,
-        short_name: 'Flex',
+        short_name: 'Sharetribe Developer Platform',
         start_url: '/',
         background_color: '#f9f9f9',
         theme_color: '#f9f9f9',

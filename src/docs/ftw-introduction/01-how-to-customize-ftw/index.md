@@ -1,8 +1,8 @@
 ---
 title: Customizing the template
-slug: how-to-customize-ftw
-updated: 2023-01-01
-category: ftw-introduction
+slug: how-to-customize-template
+updated: 2023-10-24
+category: template-introduction
 ingress:
   This article helps you set up the development environment and outlines
   the best practices you should follow while developing on the
@@ -21,36 +21,38 @@ upstream repository. See how to set up a remote repository in the
 ### Create a marketplace environment
 
 The Sharetribe Web Template is a React application built on top of the
-[Marketplace API](/operator-guides/concepts/#marketplace-api). While you
+[Marketplace API](/concepts/marketplace-api-integration-api/). While you
 can create a marketplace client application from scratch using just the
 API, it requires a lot of effort and we recommend that you use a
 template as a starting point for customizations.
 
 To use the Marketplace API, you will need a client ID. You can obtain
-one by creating a new Flex marketplace at
-[the Sharetribe website](https://www.sharetribe.com/#start-building-with-flex).
+one from your
+[Sharetribe Console > Advanced > Applications](https://console.sharetribe.com/advanced/applications).
+If you do not have a Sharetribe marketplace yet, you can create one at
+[the Sharetribe website](https://console.sharetribe.com/new).
 
 ### Check that you have the correct transaction processes in your environment
 
 If you have created your marketplace environment prior to the 25th of
 April 2023, and you are using the Sharetribe Web Template, it is good to
 note that there are two new transaction processes the template uses, and
-those processes may not be in your Flex marketplace by default. You can
-find the transaction processes in
+those processes may not be in your Sharetribe marketplace by default.
+You can find the transaction processes in
 [/ext/transaction-processes/](https://github.com/sharetribe/web-template/tree/main/ext/transaction-processes)
 in the repository.
 
 To use the template, you will need to have the transaction processes in
-your Flex environment.
+your Sharetribe environment.
 [Follow these steps](https://github.com/sharetribe/web-template#take-the-new-beta-processes-into-use)
-to create both processes in your environment through Flex CLI.
+to create both processes in your environment through Sharetribe CLI.
 
 ### Getting started with the template
 
-If you are new to Sharetribe Flex or the Sharetribe Web Template, we
+If you are new to Sharetribe or the Sharetribe Web Template, we
 recommend reading these articles before starting to work on development:
 
-- [Introducing Flex](/introduction/introducing-flex/)
+- [Introducing Sharetribe](/introduction/introducing-sharetribe-developer-platform/)
 - [What development skills are needed?](/introduction/development-skills/)
 - [Getting started](/introduction/getting-started-with-web-template/)
 
@@ -133,8 +135,8 @@ hosting platform. See our article on deploying the template to
 [Render](/tutorial/deploy-to-render/#deploy-to-render) for more
 information.
 
-See the full list of [environment variables](/ftw/ftw-env/) for more
-information.
+See the full list of [environment variables](/template/template-env/)
+for more information.
 
 For in-app configurations, see the
 [src/config directory](https://github.com/sharetribe/web-template/tree/main/src/config).
@@ -206,13 +208,13 @@ yarn test
 ```
 
 For more information on tests, see the documentation on
-[how to test the template](/ftw/how-to-test-ftw/).
+[how to test the template](/template/how-to-test-template/).
 
 ## Further reading
 
 There are many things that you should change in the default template and
 many more that you can change. For more information, check the
-[template customization checklist](/ftw/customization-checklist/)
+[template customization checklist](/template/customization-checklist/)
 documentation before publishing your site. Also see the
 [tutorial](/tutorial/introduction/) and other articles in the
-[Sharetribe Web Template](/ftw/) and [How-to](/how-to/) categories.
+[Sharetribe Web Template](/template/) and [How-to](/how-to/) categories.

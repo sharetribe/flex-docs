@@ -1,7 +1,7 @@
 ---
 title: Add buffer time to bookings in time-based listings
 slug: bookings-with-buffer
-updated: 2023-02-15
+updated: 2023-10-24
 category: how-to-listing
 ingress:
   This guide describes how to modify booking times in time-based

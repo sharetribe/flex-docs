@@ -1,22 +1,22 @@
 ---
 title: Payment methods overview
 slug: payment-methods-overview
-updated: 2021-02-01
+updated: 2023-10-24
 category: concepts-payments
 ingress:
   This article provides an overview of different payment methods in
-  Flex.
+  Sharetribe.
 published: true
 ---
 
-## Introduction to payments in Flex
+## Introduction to payments in Sharetribe
 
 Enabling customers to pay for their bookings and handle the transaction
-flow efficiently is one of the most valuable features of Flex. Flex
-leverages Stripe for payments and offers multiple different ways for
-customers to pay for transactions. The following are the currently
-supported payment methods, divided into two categories - pull and push
-payment methods:
+flow efficiently is one of the most valuable features of Sharetribe.
+Sharetribe leverages Stripe for payments and offers multiple different
+ways for customers to pay for transactions. The following are the
+currently supported payment methods, divided into two categories - pull
+and push payment methods:
 
 - Pull payment methods
   - card payments
@@ -29,8 +29,8 @@ payment methods:
   - iDEAL
   - Przelewy24
 
-In Stripe's terms, Flex supports payment methods that have _immediate
-payment confirmation_ (see the table
+In Stripe's terms, Sharetribe supports payment methods that have
+_immediate payment confirmation_ (see the table
 [in this section of Stripe's guide to payments](https://stripe.com/en-fi/payments/payment-methods-guide#choosing-the-right-payment-methods-for-your-business))
 and that are supported by Stripe's PaymentIntents API. Mostly, these
 payment methods fall under either Cards,
@@ -41,8 +41,8 @@ in Stripe's classification.
 
 <warning>
 
-Flex does not support payment methods that require the use of Stripe's
-older Sources API.
+Sharetribe does not support payment methods that require the use of
+Stripe's older Sources API.
 
 </warning>
 
@@ -55,7 +55,7 @@ designing the transaction process involving payments.
 
 Understanding how money flows when using card payments or push payments
 is crucial for understanding how to design the transaction process in
-Flex.
+Sharetribe.
 
 ### Card payment flow
 
@@ -64,7 +64,7 @@ money is reserved but not yet charged from the customer's credit card.
 After a charge, Stripe moves money to the provider's Connect Account
 Balance in Stripe and holds it there until a payout is issued.
 
-![Card payment flow](card-payment-flow.png 'Card payment flow in Flex.')
+![Card payment flow](card-payment-flow.png 'Card payment flow in Sharetribe.')
 
 The preauthorization is valid for seven days, after which Stripe
 automatically releases it. You can use the preauthorization to configure
@@ -86,7 +86,7 @@ confirms the payment, it gets captured automatically and a charge is
 made immediately. The charge moves money immediately to the provider's
 Stripe Connect account.
 
-![Push payment flow](push-payment-flow.png 'Push payment flow in Flex.')
+![Push payment flow](push-payment-flow.png 'Push payment flow in Sharetribe.')
 
 This means that refunds can be issued only at a point where money has
 already moved and the marketplace must cover Stripe fees. You should
@@ -103,8 +103,8 @@ same features and capabilities.
 ### Customizing the transaction process
 
 The
-[default processes](https://github.com/sharetribe/flex-example-processes/tree/master/)
-in Flex supports card payments. The general article on
+[default processes](https://github.com/sharetribe/example-processes/tree/master/)
+in Sharetribe supports card payments. The general article on
 [the transaction process](/concepts/transaction-process/) describes the
 process in more detail.
 
@@ -122,21 +122,22 @@ If you wish to enable push payments, you need to adapt your transaction
 process. For instance, you need to add a new transition that includes
 the
 [stripe-create-payment-intent-push](/references/transaction-process-actions/#actionstripe-create-payment-intent-push)
-action. Further, because push payments do not have a preauthorization
-phase, it is recommended to avoid that in the transaction process and
-use an _instant booking_ type of flow. The example below describes the
-minimum recommended changes in the two transitions:
-`request-push-payment` and `confirm-payment-instant-booking`. The
-example illustrates how you can still use the preauthorization step for
-card payments.
+action.
+
+Further, because push payments do not have a preauthorization phase, it
+is recommended to avoid that in the transaction process and use an
+_instant booking_ type of flow. The example below describes the minimum
+recommended changes in the two transitions: `request-push-payment` and
+`confirm-payment-instant-booking`. The example illustrates how you can
+still use the preauthorization step for card payments.
 
 ![Push payment process](push-payment-process.png 'Push payment process example.')
 
 You can find another example process with only an _instant booking_ flow
 and support for both card and push payments in the
-[Instant booking process](https://github.com/sharetribe/flex-example-processes#instant-booking)
+[Instant booking process](https://github.com/sharetribe/example-processes#instant-booking)
 in the
-[Flex example transaction processes repository](https://github.com/sharetribe/flex-example-processes).
+[Sharetribe example transaction processes repository](https://github.com/sharetribe/example-processes).
 
 ### Handling payment methods in the client app
 
@@ -151,5 +152,5 @@ describe how to edit the transaction process:
 - [How PaymentIntents work](/concepts/payment-intents/)
 - [Transaction process](/concepts/transaction-process/)
 - [Action reference for Stripe integration](/references/transaction-process-actions/#stripe-integration)
-- [Editing transaction process](/how-to/edit-transaction-process-with-flex-cli/)
-- [Changing transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-ftw/)
+- [Editing transaction process](/how-to/edit-transaction-process-with-sharetribe-cli/)
+- [Changing transaction process setup in Sharetribe Web Template](/how-to/change-transaction-process-in-template/)

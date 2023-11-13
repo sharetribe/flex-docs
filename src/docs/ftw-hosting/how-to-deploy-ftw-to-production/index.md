@@ -1,8 +1,8 @@
 ---
 title: Deploy to production
-slug: how-to-deploy-ftw-to-production
-updated: 2023-01-01
-category: ftw-hosting
+slug: how-to-deploy-template-to-production
+updated: 2023-10-24
+category: template-hosting
 ingress:
   This article describes what to take into account when you deploy the
   Sharetribe Web Template to production.
@@ -26,15 +26,15 @@ production-ready, i.e. fit for a live audience, they can deploy it to
 production. A workflow like this helps prevent bugs and unfinished code
 from being released to your users.
 
-Sharetribe Flex offers
-[three different environment types](https://www.sharetribe.com/docs/concepts/flex-environments/#environment-types)
+Sharetribe offers
+[three different environment types](https://www.sharetribe.com/docs/concepts/sharetribe-environments/#environment-types)
 – Live, Test, and Dev. You should connect your client application with
 the corresponding marketplace environment, i.e. your client environment
 intended for development should use environment variables that point to
-your dev environment in Flex.
+your dev environment in Sharetribe.
 
-More specifically, the workflow recommended with Flex is that you have
-three deployments of your client application:
+More specifically, the workflow recommended with Sharetribe is that you
+have three deployments of your client application:
 
 - production deployment, connected to your live environment and running
   real transactions
@@ -46,7 +46,7 @@ three deployments of your client application:
 We recommend that you keep your production and test deployments
 identical, so that operators can preview their no-code changes reliably.
 Read more:
-[Flex environments](/concepts/flex-environments//#workflow-between-the-three-environments).
+[Sharetribe environments](/concepts/sharetribe-environments//#workflow-between-the-three-environments).
 
 ## Where to host your application?
 
@@ -79,7 +79,7 @@ look into include [AWS](https://aws.amazon.com/),
 [Digital Ocean](https://www.digitalocean.com/) and
 [Microsoft Azure](https://azure.microsoft.com/). If your deployment
 solution requires using containers, you can refer to our guide on
-[running the template in a Docker container](/ftw/run-ftw-with-docker/).
+[running the template in a Docker container](/template/run-template-with-docker/).
 
 ## Deploying to production
 
@@ -87,7 +87,7 @@ solution requires using containers, you can refer to our guide on
 
 If you are looking to deploy your marketplace on either Heroku or
 Render, please read our detailed deployment guides for both
-[Heroku](/ftw/how-to-deploy-ftw-to-heroku/) and
+[Heroku](/template/how-to-deploy-template-to-heroku/) and
 [Render](/tutorial/deploy-to-render/#deploy-to-render).
 
 </info>
@@ -101,9 +101,9 @@ Deploying your marketplace to production is a three-step process:
 ### Environment variables
 
 For a full list of possible environment variables, see the
-[Environment configuration variables](/ftw/ftw-env/) reference for more
-information. To deploy your marketplace, you need to add at least the
-following variables:
+[Environment configuration variables](/template/template-env/) reference
+for more information. To deploy your marketplace, you need to add at
+least the following variables:
 
 - **`NODE_ENV`**
 
@@ -117,19 +117,19 @@ default. Heroku and Render define a port automatically.
 - **`REACT_APP_SHARETRIBE_SDK_CLIENT_ID`**
 
 Your client ID. You can find it in
-[Flex Console](https://flex-console.sharetribe.com/applications).
+[Sharetribe Console](https://console.sharetribe.com/advanced/applications).
 
 - **`SHARETRIBE_SDK_CLIENT_SECRET`**
 
 Your client secret. You can find it in
-[Flex Console](https://flex-console.sharetribe.com/applications).
+[Sharetribe Console](https://console.sharetribe.com/advanced/applications).
 
 - **`REACT_APP_STRIPE_PUBLISHABLE_KEY`**
 
 Stripe publishable API key for generating tokens with Stripe API. You
 find it on the Stripe
 [API keys](https://dashboard.stripe.com/account/apikeys) page. You will
-also need to add the secret key in Flex Console.
+also need to add the secret key in Sharetribe Console.
 
 - **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
 
@@ -137,7 +137,7 @@ If using Mapbox, you will need to define this environment variable. Sign
 up for Mapbox and go to the
 [account page](https://www.mapbox.com/account/access-tokens). Then click
 on `Create access token`. See the
-[How to set up Mapbox for Sharetribe Web Template](/ftw/how-to-set-up-mapbox-for-ftw/)
+[How to set up Mapbox for Sharetribe Web Template](/template/how-to-set-up-mapbox-for-template/)
 guide for more information.
 
 - **`REACT_APP_MARKETPLACE_ROOT_URL`**

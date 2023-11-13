@@ -1,15 +1,15 @@
 ---
 title: Events
 slug: events
-updated: 2021-01-12
+updated: 2023-10-24
 category: references
-ingress: Reference documentation for Flex marketplace events.
+ingress: Reference documentation for Sharetribe marketplace events.
 published: true
 ---
 
-In Flex, _events_ represent changes in marketplace data resources such
-as listings, users and transactions. An event captures a single change
-in marketplace data, e.g. a user being created or a listing being
+In Sharetribe, _events_ represent changes in marketplace data resources
+such as listings, users and transactions. An event captures a single
+change in marketplace data, e.g. a user being created or a listing being
 updated. Events can be further analyzed to interpret them as logical
 actions such as a listing being published, a message being sent or a
 user having changed their email address by looking into what were the
@@ -31,22 +31,24 @@ For example, setting a field in user metadata can trigger an integration
 to publish the user's listings. Using events makes it possible to cover
 many of the use cases where other applications use webhooks.
 
-Currently, Flex exposes events by allowing them to be queried via the
+Currently, Sharetribe exposes events by allowing them to be queried via
+the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
-or viewed via [Flex CLI](/how-to/view-events-with-flex-cli/).
-Integration API supports implementing efficient polling where only
-events that have happened since last poll query are returned. This makes
-it possible to keep the polling interval short enough to react to events
-shortly after they occur.
+or viewed via
+[Sharetribe CLI](/how-to/view-events-with-sharetribe-cli/). Integration
+API supports implementing efficient polling where only events that have
+happened since last poll query are returned. This makes it possible to
+keep the polling interval short enough to react to events shortly after
+they occur.
 
-Flex does not retain event data forever. Flex maintains a history of all
-marketplace events for 90 days in live marketplaces and for 7 days in
-dev and test marketplaces.
+Sharetribe does not retain event data forever. Sharetribe maintains a
+history of all marketplace events for 90 days in live marketplaces and
+for 7 days in dev and test marketplaces.
 
 ## Event data
 
 The event object contains data about the event itself, as well as about
-the Flex resource which the event is about (`listing`, `user`,
+the Sharetribe resource which the event is about (`listing`, `user`,
 `message`, etc), including how the resource changed.
 
 The exact shape of the event data differ, depending on which means it is
@@ -63,16 +65,16 @@ Each event has the following attributes:
 | sequenceId          | (integer) A numeric ID for the event that provides a strict total ordering of events, i.e. later events are guaranteed to have a sequence ID that is strictly larger than earlier events.                                                                                                                                                    |
 | marketplaceId       | (uuid) The ID of the marketplace in which the event happened.                                                                                                                                                                                                                                                                                |
 | eventType           | (string) The type of the event. See [supported event types](#supported-event-types). The event type has the form `RESOURCE_TYPE/EVENT_SUBTYPE`. E.g. `listing/created`.                                                                                                                                                                      |
-| source              | (string) The Flex service from which the event originated. See [event sources](#event-sources).                                                                                                                                                                                                                                              |
+| source              | (string) The Sharetribe service from which the event originated. See [event sources](#event-sources).                                                                                                                                                                                                                                        |
 | resourceId          | (uuid) The ID of the API resource that the event is about, e.g. a user or a listing ID.                                                                                                                                                                                                                                                      |
 | resourceType        | (string) The type of the API resource that the event is about. This is one of the API resource types supported in the Integration API (e.g. `user`, `listing`, etc).                                                                                                                                                                         |
 | resource            | (object) The value of the resource, for which the event is about, after the event occurred. For all event types except `*/deleted` events, the `resource` attribute is populated. For `*/deleted` events, `resource` is `null`. For details see the [reference for event data and previous values](#resource-data-and-previous-values).      |
 | previousValues      | (object) An object describing the previous values for the event's changed resource attributes and relationships. Note that for `*/deleted` events, some of the attributes may be `null`, due to stricter data deletion requirements. For details see the [reference for event data and previous values](#resource-data-and-previous-values). |
 | auditData           | (object) Data about the actor that caused the event.                                                                                                                                                                                                                                                                                         |
-| auditData.userId    | (uuid) The ID of the Flex marketplace user that caused the event, if any. This attribute is set for most events that occurr in the Marketplace API and is `null` otherwise.                                                                                                                                                                  |
-| auditData.adminId   | (uuid) The ID of the Flex Console admin user that caused the event. Typically set for events that occur in Console, but can be set in combination with `userId` when an admin has used the ["login as"](/how-to/enable-login-as-user/) Console feature and acted on behalf of a marketplace user though the Marketplace API.                 |
+| auditData.userId    | (uuid) The ID of the Sharetribe marketplace user that caused the event, if any. This attribute is set for most events that occurr in the Marketplace API and is `null` otherwise.                                                                                                                                                            |
+| auditData.adminId   | (uuid) The ID of the Sharetribe Console admin user that caused the event. Typically set for events that occur in Console, but can be set in combination with `userId` when an admin has used the ["login as"](/how-to/enable-login-as-user/) Console feature and acted on behalf of a marketplace user though the Marketplace API.           |
 | auditData.requestId | (uuid) The ID of the API request that caused the event. Can be `null`. Currently this information is meaningless but might have future uses.                                                                                                                                                                                                 |
-| auditData.clientId  | (uuid) The client ID of the Flex [Application](/concepts/applications/) that caused the event. This attribute is set if the event was caused by an API call from a Flex Marketplace API or Integration API application and is `null` otherwise.                                                                                              |
+| auditData.clientId  | (uuid) The client ID of the Sharetribe [Application](/concepts/applications/) that caused the event. This attribute is set if the event was caused by an API call from a Sharetribe Marketplace API or Integration API application and is `null` otherwise.                                                                                  |
 
 Note: these attributes are not necessarily top-level keys. Event object
 data structure depends on [event's data format](#event-data-formats).
@@ -91,8 +93,8 @@ happened after the given sequence ID, making the sequence ID a perfect
 tool for loading subsequent events in comparison to a known ID. When
 querying events synchronously (e.g. via the
 [Integration API](https://www.sharetribe.com/api-reference/integration.html#query-events)
-or [Flex CLI](/how-to/view-events-with-flex-cli/)), events are always
-returned in order of their sequence IDs.
+or [Sharetribe CLI](/how-to/view-events-with-sharetribe-cli/)), events
+are always returned in order of their sequence IDs.
 
 Note that, in contrast to sequence IDs, there can be multiple events
 that have the exact same `createdAt` timestamp, so applications should
@@ -108,7 +110,7 @@ When accessed via the Integration API, the event and associated resource
 data is formatted in the same way all Integration API resources are
 (with `id`, `type` top-level attributes and with `relationships` object
 containing the IDs of related resources). On the other hand, if the
-event is viewed via Flex CLI, the event and resource data is not
+event is viewed via Sharetribe CLI, the event and resource data is not
 normalized. Instead, it is inlined in a simplified form. We will refer
 to this as _native_ event data format.
 
@@ -121,7 +123,7 @@ follows:
   resource with `id`, `attributes` and optional `relationships` keys,
   each containing the corresponding portion of resource data
 - The value of relationships attributes follows the same format as
-  [relationships normally do in the Integration API](https://www.sharetribe.com/api-reference/index.html#including-related-resources)
+  [relationships normally do in the Integration API](https://www.sharetribe.com/api-reference/#including-related-resources)
 
 In both formats, the `previousValues` object always has the same shape
 as the `resource` object.
@@ -357,8 +359,8 @@ The following table lists all possible event sources:
 | source/marketplace-api | The event happened through the Marketplace API.                                                                                            |
 | source/integration-api | The event happened through the Integration API.                                                                                            |
 | source/transaction     | The event happened as part of a transaction transition, regardless of whether the transition was invoked via some API call or via Console. |
-| source/console         | The event happened through Flex Console.                                                                                                   |
-| source/admin           | The event happened as a result of a Sharetribe Flex team member action (product support).                                                  |
+| source/console         | The event happened through Sharetribe Console.                                                                                             |
+| source/admin           | The event happened as a result of a Sharetribe team member action (product support).                                                       |
 
 ## Supported event types
 
@@ -370,7 +372,7 @@ API resource types are:
 | listing/created               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | A new listing was created.                                                                                                                                                                |
 | listing/updated               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | An existing listing was updated, including when the set of listing images is updated.                                                                                                     |
 | listing/deleted               | [listing](https://www.sharetribe.com/api-reference/integration.html#listings)                              | A listing was deleted.                                                                                                                                                                    |
-| user/created                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | A new Flex marketplace user was created.                                                                                                                                                  |
+| user/created                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | A new Sharetribe marketplace user was created.                                                                                                                                            |
 | user/updated                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | An existing user was updated.                                                                                                                                                             |
 | user/deleted                  | [user](https://www.sharetribe.com/api-reference/integration.html#users)                                    | A user was deleted.                                                                                                                                                                       |
 | availabilityException/created | [availabilityException](https://www.sharetribe.com/api-reference/integration.html#availability-exceptions) | A new availability exception was created for a listing.                                                                                                                                   |
@@ -403,24 +405,24 @@ handles event types not given in this list gracefully (by ignoring them,
 for instance).
 
 Note that some event types can occur even though there is currently no
-support for the corresponding functionality in the Flex APIs or Flex
-Console. Typically this can happen when the event was caused internally
-by an administrative action of the Flex team, in which case the `source`
-of the event would be `source/admin`.
+support for the corresponding functionality in the Sharetribe APIs or
+Sharetribe Console. Typically this can happen when the event was caused
+internally by an administrative action of the Sharetribe team, in which
+case the `source` of the event would be `source/admin`.
 
 ## Transaction process actions and booking, stock reservation and review events
 
-In Flex, bookings, stock reservations and reviews are primarily managed
-through the transaction process using the
+In Sharetribe, bookings, stock reservations and reviews are primarily
+managed through the transaction process using the
 [booking-](/references/transaction-process-actions/#bookings),
 [stock reservations-](/references/transaction-process-actions/#stock-reservations)
 and [review-related](/references/transaction-process-actions/#reviews)
-actions. Flex emits events separately when each of these actions takes
-effect, even if multiple actions occur within the same transaction
+actions. Sharetribe emits events separately when each of these actions
+takes effect, even if multiple actions occur within the same transaction
 transition. For instance, if a transition includes both
-`:action/create-pending-booking` and `:action/accept-booking`, Flex
-generates at least three events as a result. First, there is a
-`:booking/created` event, followed by a `:booking/updated` event
+`:action/create-pending-booking` and `:action/accept-booking`,
+Sharetribe generates at least three events as a result. First, there is
+a `:booking/created` event, followed by a `:booking/updated` event
 reflecting the state change of the booking and finally a
 `:transaction/initialized` or a `:transaction/transitioned` event for
 the transaction itself.
@@ -435,10 +437,10 @@ reflect data before the transition.
 ## Further reading
 
 - [Integration API reference for events](https://www.sharetribe.com/api-reference/integration.html#events)
-- [Using Flex CLI to view event data](/how-to/view-events-with-flex-cli/)
+- [Using Sharetribe CLI to view event data](/how-to/view-events-with-sharetribe-cli/)
 - [Reacting to events](/how-to/reacting-to-events/) how-to guide
 - A
-  [full example](https://github.com/sharetribe/flex-integration-api-examples/blob/master/scripts/notify-new-listings.js)
+  [full example](https://github.com/sharetribe/integration-api-examples/blob/master/scripts/notify-new-listings.js)
   Integration API application is available
-  [in the Integration API examples](https://github.com/sharetribe/flex-integration-api-examples/)
+  [in the Integration API examples](https://github.com/sharetribe/integration-api-examples/)
   repository

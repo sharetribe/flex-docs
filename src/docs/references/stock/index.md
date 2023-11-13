@@ -1,14 +1,14 @@
 ---
 title: Listing stock management
 slug: stock
-updated: 2021-09-13
+updated: 2023-10-24
 category: references
 ingress: Reference documentation for listing stock management.
 published: true
 ---
 
-The listing stock management features of Flex allow providers to define
-the quantity of available stock for purchase. There are three key
+The listing stock management features of Sharetribe allow providers to
+define the quantity of available stock for purchase. There are three key
 concepts related to stock management:
 
 - **stock** represents the quantity of available units, associated with
@@ -101,5 +101,5 @@ actions of a transition**.
   - [stockAdjustments](https://www.sharetribe.com/api-reference/integration.html#stock-adjustments)
   - [stockReservations](https://www.sharetribe.com/api-reference/integration.html#stock-reservations)
 - [Transaction process actions for stock reservations](/references/transaction-process-actions/#stock-reservations)
-- [Example transaction process definition](https://github.com/sharetribe/flex-example-processes#default-purchase)
+- [Example transaction process definition](https://github.com/sharetribe/example-processes#default-purchase)
   for selling products using stock

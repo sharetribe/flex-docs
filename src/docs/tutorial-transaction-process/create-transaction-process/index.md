@@ -1,7 +1,7 @@
 ---
 title: Create a new transaction process
 slug: create-transaction-process
-updated: 2023-09-25
+updated: 2023-10-24
 category: tutorial-transaction-process
 ingress:
   This guide describes how to create a new transaction process and how
@@ -21,32 +21,32 @@ First, we will use an existing instant booking process to create a
 similar but separate transaction process. This will allow us to make
 changes to the transaction behavior.
 
-### Clone Flex example processes repository
+### Clone Sharetribe example processes repository
 
 Writing a _process.edn_ file and the email templates from scratch is a
 fairly tedious task. We'll make our life a bit easier by cloning the
-Flex example processes repository :
+Sharetribe example processes repository :
 
 ```shell
-git clone https://github.com/sharetribe/flex-example-processes.git
+git clone https://github.com/sharetribe/example-processes.git
 ```
 
 And then we move to that directory:
 
 ```shell
-cd flex-example-processes/
+cd example-processes/
 ```
 
 There are several processes listed in
-[that directory](https://github.com/sharetribe/flex-example-processes).
-The one we are going to use as a basis for our new process is
+[that directory](https://github.com/sharetribe/example-processes). The
+one we are going to use as a basis for our new process is
 _instant-booking_.
 
 ### Create a new process
 
-To get up and running with Flex CLI, see the
-[Getting started with Flex CLI](/introduction/getting-started-with-flex-cli/)
-guide in Flex Docs.
+To get up and running with Sharetribe CLI, see the
+[Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/)
+guide in Dev Docs.
 
 Let's see what the subcommand `help` gives us about `process create`:
 
@@ -67,8 +67,7 @@ So, if we would like to create a new process, we need to specify a path
 to the local directory. That directory should contain process definition
 (process.edn file) and templates subdirectory containing correct email
 templates for the email notifications defined in that process. We
-already have those since we cloned the _flex-example-processes_
-repository.
+already have those since we cloned the _example-processes_ repository.
 
 Then we just need to define a name to that process and specify the
 marketplace environment, where the new process should be created. We'll
@@ -82,12 +81,12 @@ flex-cli process create --path=./instant-booking --process=biketribe-instant-boo
 <info>
 
 You need to modify the command to use your own dev marketplace ID, which
-you can find in Flex Console.
+you can find in Sharetribe Console.
 
 </info>
 
-After executing that command, you can go to the Flex Console (Build ->
-Transaction processes tab) and see that the
+After executing that command, you can go to the Sharetribe Console
+(Build -> Transaction processes tab) and see that the
 _"biketribe-instant-booking"_ process is there.
 
 ![Biketribe instant booking process created.](./biketribe-instant-booking-process.png)
@@ -96,7 +95,7 @@ _"biketribe-instant-booking"_ process is there.
 
 The process is created, but we still can't reference that process from
 our client app, since it doesn't have process alias set. We can create
-an alias for our new process with Flex CLI command:
+an alias for our new process with Sharetribe CLI command:
 
 ```shell
 flex-cli process create-alias --process=biketribe-instant-booking --version=1 --alias=release-1 --marketplace=biketribe-dev
@@ -125,7 +124,7 @@ To make this change, we need to update the transaction process.
 
 Before we modify our transaction process, it's better to ensure that we
 have most the up-to-date version of the process. You can fetch any
-process version with flex-cli:
+process version with Sharetribe CLI:
 
 ```shell
 flex-cli process pull --process=biketribe-instant-booking --alias=release-1 --path=./biketribe-instant-booking --marketplace=biketribe-dev
@@ -184,8 +183,9 @@ is still pointing to the first version. We need to update the alias too:
 flex-cli process update-alias --alias=release-1 --process=biketribe-instant-booking --version=2 --marketplace=biketribe-dev
 ```
 
-Now, if you open the process graph from the Flex Console, you'll see
-that the push payment transitions have been removed from the process.
+Now, if you open the process graph from the Sharetribe Console, you'll
+see that the push payment transitions have been removed from the
+process.
 
 ![Updated process.](./updated-process.png)
 
@@ -248,9 +248,9 @@ booking process:
 
 ### Use built-in listing configuration alongside hosted
 
-If the template uses listing type configurations from Flex Console by
-default, it ignores the changes made in configListing.js. We will need
-to set the template to use the default listing type configurations
+If the template uses listing type configurations from Sharetribe Console
+by default, it ignores the changes made in configListing.js. We will
+need to set the template to use the default listing type configurations
 alongside the hosted ones next.
 
 ```shell
@@ -273,7 +273,7 @@ const mergeListingConfig = (hostedConfig, defaultConfigs) => {
 ...
 ```
 
-Now, both the built-in listing types and the Flex Console created
+Now, both the built-in listing types and the Sharetribe Console created
 listing types are in use. However, the app does not yet know how to
 handle the new process, so we need to update our transaction process
 handling to use the process when creating a listing.
@@ -534,8 +534,8 @@ export const isBookingProcess = processName => {
 ```
 
 Now if you start creating a new listing, you will see a dropdown of
-listing types. One of the listing types comes from Flex Console, and the
-other comes from our built-in configuration.
+listing types. One of the listing types comes from Sharetribe Console,
+and the other comes from our built-in configuration.
 
 ![Instant booking process available for selection](./biketribe-process-dropdown.png)
 
@@ -631,7 +631,7 @@ keys.
 
 We created a new process based on an existing example process, and
 removed unnecessary transitions from the new process. We then pushed our
-changes to the Flex backend using Flex CLI.
+changes to the Sharetribe backend using Sharetribe CLI.
 
 In addition, we modified our client app to work with the new process by
 updating

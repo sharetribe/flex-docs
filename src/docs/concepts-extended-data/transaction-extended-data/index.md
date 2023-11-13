@@ -1,7 +1,7 @@
 ---
 title: Transaction extended data
 slug: transaction-extended-data
-updated: 2022-09-29
+updated: 2023-10-24
 category: concepts-extended-data
 ingress:
   Transaction extended data allows you to keep sensitive information
@@ -15,8 +15,8 @@ data and metadata are visible for the transaction participants and
 operators. Protected data can only be updated using transaction process
 actions. Transaction metadata, on the other hand, can be updated through
 [a privileged transaction process action](/references/transaction-process-actions/#actionprivileged-update-metadata).
-In addition, operators can update metadata either through Flex Console
-or using an
+In addition, operators can update metadata either through Sharetribe
+Console or using an
 [Integration API endpoint for updating transaction metadata](https://www.sharetribe.com/api-reference/integration.html#update-transaction-metadata).
 
 ## Protected data is updated through the transaction process

@@ -1,8 +1,8 @@
 ---
 title: How to manage hosted and local configurations
 slug: hosted-and-local-configurations
-updated: 2023-09-04
-category: ftw-configuration
+updated: 2023-10-24
+category: template-configuration
 ingress:
   The Sharetribe Web Template has both local and asset-based
   configurations available. Learn how to combine both types of
@@ -13,11 +13,11 @@ published: true
 The Sharetribe Web Template has a number of configurations that can be
 used to customise the template with low code effort. Starting in version
 v2.0.0, the template can also use [asset-based](/references/assets/)
-configurations, if they are defined in Flex Console.
+configurations, if they are defined in Sharetribe Console.
 
-Some configurations are mandatory to define in Flex Console, such as
-logo, listing types, listing fields, and minimum transaction size. Those
-configurations are read from the hosted assets in the template by
+Some configurations are mandatory to define in Sharetribe Console, such
+as logo, listing types, listing fields, and minimum transaction size.
+Those configurations are read from the hosted assets in the template by
 default. This means that if you want to, for instance, add a listing
 type with a custom transaction process, or add a custom listing field in
 the template code, you will need to modify how configurations get merged
@@ -151,8 +151,8 @@ and hosted configurations.
 ## Example: use both hosted and local configs for listing types
 
 Let's say you want to use multiple listing types in your marketplace –
-one for regular bookings, defined in Flex Console, and one for
-[negotiated bookings](https://github.com/sharetribe/flex-example-processes/tree/master/negotiated-booking),
+one for regular bookings, defined in Sharetribe Console, and one for
+[negotiated bookings](https://github.com/sharetribe/example-processes/tree/master/negotiated-booking),
 defined in the template.
 
 First, follow the directions in the process README.md to configure the

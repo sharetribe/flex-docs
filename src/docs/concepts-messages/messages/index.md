@@ -1,12 +1,12 @@
 ---
 title: Messages
 slug: messages
-updated: 2022-07-21
+updated: 2023-10-24
 category: concepts-messages
 ingress:
-  Flex allows your users to communicate with each other using messages.
-  This article introduces the concept of messages and how to access
-  messages through Zapier.
+  Sharetribe allows your users to communicate with each other using
+  messages. This article introduces the concept of messages and how to
+  access messages through Zapier.
 published: true
 ---
 
@@ -18,12 +18,12 @@ provider once they have engaged in a transaction. Messages always need
 to be associated with a transaction and can not be sent outside of one.
 
 The default booking and purchase
-[transaction processes](https://github.com/sharetribe/flex-example-processes/blob/master/default-booking/process.edn)
+[transaction processes](https://github.com/sharetribe/example-processes/blob/master/default-booking/process.edn)
 include an inquiry transition, which initiates a transaction without
 running any [actions](/references/transaction-process-actions/#actions),
 allowing the provider and customer to send messages to each other. In
 addition, the
-[default-inquiry process](https://github.com/sharetribe/flex-example-processes/blob/master/default-inquiry/process.edn)
+[default-inquiry process](https://github.com/sharetribe/example-processes/blob/master/default-inquiry/process.edn)
 initiates a simple transaction that is only intended for messaging.
 
 Note that messages do not alter the transaction or transition it to a
@@ -50,13 +50,16 @@ included as a relationship when
 New messages trigger a
 [built-in email notification](/concepts/email-notifications/) sent to
 the receiving party of the message. You can edit built-in email
-notifications through
-[Console](https://flex-console.sharetribe.com/email-templates/new-message).
+notification content through
+[Console > Build > Content > Email texts](https://console.sharetribe.com/a/content/email-texts),
+and you can modify the structure and code of the notifications through
+[Console](https://console.sharetribe.com/email-templates/new-message).
 
 ## Zapier, events and messages
 
 Using [Zapier](/how-to/set-up-and-use-zapier/) you can connect your
 marketplace with other web applications and create automated workflows.
+
 Even though you can’t listen for new messages through Zapier, messages
 can easily be retrieved as a transaction relationship. For more complex
 customisations, you can use events to listen to new or deleted messages.
@@ -89,7 +92,7 @@ only react to transactions, listing and user events. Events allow you to
 listen to [created messages](/references/events/#supported-event-types)
 and react directly to them. See how to
 [react to events](/how-to/reacting-to-events/) and the
-[Integration API example script repository](https://github.com/sharetribe/flex-integration-api-examples)
+[Integration API example script repository](https://github.com/sharetribe/integration-api-examples)
 if you’re unsure where to start building your integration.
 
 ## Message notifications in Sharetribe Web Template
