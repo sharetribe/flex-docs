@@ -30,6 +30,7 @@ export { Carousel, CarouselSlide } from './Carousel';
 export { default as CookieConsent } from './CookieConsent';
 export { default as Banner } from './Banner'
 export { default as WarningIcon } from './WarningIcon';
+export { default as VersionBanner } from './VersionBanner/VersionBanner';
 // Components that import other components from this index. These
 // might create circular dependencies. Changing the order of these
 // exports solves those problems.
