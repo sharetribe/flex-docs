@@ -32,6 +32,20 @@ const plausibleHeadComponents = process.env.NODE_ENV === `production` ? [
     }}
   />,
 ] : [];
+
+const reoClientId = process.env.REO_CLIENT_ID;
+
+const reoComponent = reoClientId ? [
+  <script 
+  type="text/javascript" 
+  key="reo"
+  dangerouslySetInnerHTML={{
+    __html:`
+    !function(){var e,t,n;e="${reoClientId}",t=function(){Reo.init({clientID:"${reoClientId}"})},(n=document.createElement("script")).src="https://static.reo.dev/"+e+"/reo.js",n.async=!0,n.onload=t,document.head.appendChild(n)}();`
+  }}
+  />
+ ] : [];
+
  return setHeadComponents([
     <link 
       rel="preconnect" 
@@ -43,6 +57,7 @@ const plausibleHeadComponents = process.env.NODE_ENV === `production` ? [
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
     />,
-    ...plausibleHeadComponents
+    ...plausibleHeadComponents,
+    ...reoComponent
   ]);
 };
