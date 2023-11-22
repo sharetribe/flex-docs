@@ -84,6 +84,8 @@ configuration looks like this:
     { option: 'steel', label: 'Steel' },
     { option: 'titanium', label: 'Titanium' },
   ],
+  // If you have multiple listing types, you can define the types that should have this field
+  // includeForListingTypes: [...],
   filterConfig: {
     indexForSearch: false,
     filterType: 'SelectSingleFilter',
@@ -116,6 +118,8 @@ enumOptions: [
   { option: 'steel', label: 'Steel' },
   { option: 'titanium', label: 'Titanium' },
 ],
+// If you have multiple listing types, you can define the types that should have this field
+// includeForListingTypes: [...],
 ```
 
 This attribute is defined as **public**, so it will be saved into the
@@ -135,6 +139,11 @@ If the schema type is **enum** or **multi-enum**, you will need to
 define an array of **enumOptions** for the attribute. This allows the
 listing editing wizard to show the options when your user creates the
 listing, and it also provides the options for the search filters.
+
+If your marketplace uses multiple listing types, you can optionally
+define an attribute **includeForListingTypes**. This attribute is an
+array of the listing types that should have this field. If this
+attribute is not set, then the field is included in all listing types.
 
 ### Configuring the listing detail editing page
 
