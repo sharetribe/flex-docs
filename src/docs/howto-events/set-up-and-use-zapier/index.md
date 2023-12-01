@@ -228,5 +228,3 @@ publication become just Sharetribe.
 ### How to build a text message integration in Sharetribe using Twilio and Zapier
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w2Dmw1x0c3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Further video tutorials will be added.
