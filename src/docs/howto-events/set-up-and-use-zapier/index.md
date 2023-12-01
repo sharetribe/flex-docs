@@ -1,7 +1,7 @@
 ---
 title: Set up and use Zapier
 slug: set-up-and-use-zapier
-updated: 2023-10-24
+updated: 2023-12-01
 category: how-to-events
 ingress:
   This guide demonstrates how to connect Sharetribe to Zapier, gives a
@@ -202,11 +202,11 @@ mean in practice? Here are some ideas:
 Zap templates are ready-made Zaps with the starting trigger and the
 actions already defined, which you can then take into use. It does still
 require you to sign in to all the services involved in the Zap and test
-the different steps. More templates are coming.
+the different steps.
 
 - [Send a text message to the provider for each new booking in a Sharetribe marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
-- [Add a new user in your marketplace to a Mailchip audience](https://zapier.com/shared/412d7744a23855ce00941567a619c7ffb7652335)
-- [Send a tweet for each new listing with name & listing URL](https://zapier.com/shared/967732338e072db4edc8332e0de182deb0feef6b)
+- [Add a new user in your Sharetribe marketplace to a Mailchimp audience](https://zapier.com/shared/412d7744a23855ce00941567a619c7ffb7652335)
+- [Send a calendar invitation to the provider when a booking happens in a Sharetribe marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
 
 ## Video tutorials
 
@@ -228,5 +228,3 @@ publication become just Sharetribe.
 ### How to build a text message integration in Sharetribe using Twilio and Zapier
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w2Dmw1x0c3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Further video tutorials will be added.
