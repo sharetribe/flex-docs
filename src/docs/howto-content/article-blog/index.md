@@ -114,7 +114,7 @@ e.g. _features_ sections to highlight quotes or other key information.
 
 <info>
 
-Sharetribe currently has a limit of **100 content pages** across your
+Sharetribe currently has a limit of **1000 content pages** across your
 marketplace, including the pages included by default:
 
 - About

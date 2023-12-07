@@ -53,88 +53,88 @@ and install some basic development tooling:
 
 1. Open Terminal
 
-1. [Clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+2. [Clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
    the Sharetribe Web Template repository:
 
 ```bash
 git clone https://github.com/sharetribe/web-template.git
 ```
 
-1. Go to the cloned directory:
+3. Go to the cloned directory:
 
-   ```bash
-   cd web-template/
-   ```
+```bash
+cd web-template/
+```
 
-    <extrainfo title="Check how the directory structure should look like">
+<extrainfo title="Check how the directory structure should look like">
 
-   After these steps you should have a directory structure that looks
-   like this for Sharetribe Web Template:
+After these steps you should have a directory structure that looks like
+this for Sharetribe Web Template:
 
-   ````bash
-      ├── ext
-      │   └── transaction-processes
-      ├── node_modules
-      │   └── // dependencies
-      ├── public
-      │   ├── static
-      │   ├── index.html
-      │   ├── robots.txt
-      │   └── 500.html
-      ├── scripts
-      │   ├── audit.js
-      │   ├── config.js
-      │   └── translations.js
-      ├── server
-      │   ├── api
-      │   ├── api-util
-      │   ├── apiRouter.js
-      │   ├── apiServer.js
-      │   ├── auth.js
-      │   ├── csp.js
-      │   ├── dataLoader.js
-      │   ├── env.js
-      │   ├── importer.js
-      │   ├── index.js
-      │   ├── log.js
-      │   ├── renderer.js
-      │   ├── sitemap.js
-      │   └── wellKnownRouter.js
-      ├── src
-      │   ├── analytics
-      │   ├── app.js
-      │   ├── app.node.test.js
-      │   ├── app.test.js
-      │   ├── assets
-      │   ├── components
-      │   ├── config
-      │   ├── containers
-      │   ├── context
-      │   ├── ducks
-      │   ├── examples.js
-      │   ├── index.js
-      │   ├── reducers.js
-      │   ├── routing
-      │   ├── store.js
-      │   ├── styles
-      │   ├── transactions
-      │   ├── translations
-      │   └── util
-      ├── CHANGELOG.md
-      ├── LICENSE
-      ├── README.md
-      ├── package.json
-      └── yarn.lock
-         ```
+```bash
+   ├── ext
+   │   └── transaction-processes
+   ├── node_modules
+   │   └── // dependencies
+   ├── public
+   │   ├── static
+   │   ├── index.html
+   │   ├── robots.txt
+   │   └── 500.html
+   ├── scripts
+   │   ├── audit.js
+   │   ├── config.js
+   │   └── translations.js
+   ├── server
+   │   ├── api
+   │   ├── api-util
+   │   ├── apiRouter.js
+   │   ├── apiServer.js
+   │   ├── auth.js
+   │   ├── csp.js
+   │   ├── dataLoader.js
+   │   ├── env.js
+   │   ├── importer.js
+   │   ├── index.js
+   │   ├── log.js
+   │   ├── renderer.js
+   │   ├── sitemap.js
+   │   └── wellKnownRouter.js
+   ├── src
+   │   ├── analytics
+   │   ├── app.js
+   │   ├── app.node.test.js
+   │   ├── app.test.js
+   │   ├── assets
+   │   ├── components
+   │   ├── config
+   │   ├── containers
+   │   ├── context
+   │   ├── ducks
+   │   ├── examples.js
+   │   ├── index.js
+   │   ├── reducers.js
+   │   ├── routing
+   │   ├── store.js
+   │   ├── styles
+   │   ├── transactions
+   │   ├── translations
+   │   └── util
+   ├── CHANGELOG.md
+   ├── LICENSE
+   ├── README.md
+   ├── package.json
+   └── yarn.lock
 
-    </extrainfo>
-   ````
+```
 
-1) Install dependency libraries:
+</extrainfo>
 
-   ```bash
-   yarn install
-   ```
+4. Install dependency libraries:
+
+```bash
+yarn install
+```
 
 ### Check that you have the correct transaction processes in your environment
 
