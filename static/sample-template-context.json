@@ -114,7 +114,6 @@
       "amount" : 810,
       "currency" : "USD"
     },
-    "protected-data" : { },
     "customer" : {
       "id" : "ef7f40d5-da66-489a-957b-641313b68204",
       "first-name" : "Jane",
