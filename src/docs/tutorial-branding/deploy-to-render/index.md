@@ -186,7 +186,9 @@ You then need to add the following environment variables:
 
 - `REACT_APP_SHARETRIBE_USING_SSL`
 
-  Redirect HTTP to HTTPS?<br/> Use value: true
+  When using Render, this value should be set to false.
+
+  Redirect HTTP to HTTPS?<br/> Use value: false
 
 - `SERVER_SHARETRIBE_TRUST_PROXY`
 
