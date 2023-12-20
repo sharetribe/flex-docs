@@ -55,6 +55,37 @@ section of the Places library documentation to enable using the Google
 Places API Web Service. You will also need to enable the Maps Static API
 and Maps JavaScript API.
 
+### Update the API key in Console
+
+If you are using a version of the template
+[v3.4.0](https://github.com/sharetribe/web-template/releases/tag/v3.4.0)
+or newer, you can set the API key in the Sharetribe Console.
+
+1. In Sharetribe Console, navigate to Integrations > Map
+
+2. Select "Google Maps"
+
+3. Paste the token into the field
+
+4. Press "Save changes"
+
+Read more in our article on
+[how to set up Mapbox or Google Maps for location services](https://www.sharetribe.com/help/en/articles/8676185-how-to-set-up-mapbox-or-google-maps-for-location-services).
+
+You can also choose to assign the map key to an environment variable.
+However, if you enable the API key configuration through Console, the
+settings in Console will overwrite the keys stored in environment
+variables, assuming that you have not made changes to how the template
+handles loading configurations via [assets](/references/assets/).
+
+## Enabling Google Maps through environment variables
+
+If you are using a version of the template older than
+[v3.4.0](https://github.com/sharetribe/web-template/releases/tag/v3.4.0),
+you need to assign the API key to an environment variable and enable
+Google Maps by toggling an configuration variable in
+[configMaps.js](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js#L13).
+
 ### Assign the API key to an environment variable
 
 The template uses the `REACT_APP_GOOGLE_MAPS_API_KEY` environment
