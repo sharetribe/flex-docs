@@ -53,3 +53,7 @@ collection. After that, add your API credentials to the Collection
 variables via the variables tab in Postman. Remember not to persist any
 credentials stored in variables if you're publicly sharing your forked
 collection.
+
+Click here to import the Postman collection into your workspace:
+
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/19129702-bd56ce4d-6877-4664-87a0-2cfdeed9db4d)
