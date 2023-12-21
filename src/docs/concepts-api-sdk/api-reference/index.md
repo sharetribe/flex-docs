@@ -37,3 +37,23 @@ For more information on our Authentication API, refer to our article on
 the [Authentication API](/concepts/authentication-api/). For more
 information on the Asset Delivery API, refer to the
 [asset reference](/references/assets/) article.
+
+## Postman collection
+
+You can also explore and test our API endpoints with our
+[Postman Collection](https://www.postman.com/sharetribe-api/workspace/sharetribe-public-workspace/collection/19129702-bd56ce4d-6877-4664-87a0-2cfdeed9db4d).
+In this collection you can find all available API endpoints. The
+collection uses pre-request scripts to authenticate requests. Bearer
+tokens are stored in collection variables. Therefore, you don't have to
+worry about authentication requests in this collection after you store
+client credentials in the collection variables.
+
+To start using the collection, create a Postman account and fork the
+collection. After that, add your API credentials to the Collection
+variables via the variables tab in Postman. Remember not to persist any
+credentials stored in variables if you're publicly sharing your forked
+collection.
+
+Click here to import the Postman collection into your workspace:
+
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/19129702-bd56ce4d-6877-4664-87a0-2cfdeed9db4d)
