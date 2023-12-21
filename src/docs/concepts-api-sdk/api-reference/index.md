@@ -54,6 +54,6 @@ variables via the variables tab in Postman. Remember not to persist any
 credentials stored in variables if you're publicly sharing your forked
 collection.
 
-Click here to import the Postman collection into your workspace:
+Click here to fork the Postman collection into your workspace:
 
-[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/19129702-bd56ce4d-6877-4664-87a0-2cfdeed9db4d)
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/19129702-bd56ce4d-6877-4664-87a0-2cfdeed9db4d?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D19129702-bd56ce4d-6877-4664-87a0-2cfdeed9db4d%26entityType%3Dcollection%26workspaceId%3D6c2b02d7-1f11-4f86-b110-6af5845eb59c)
