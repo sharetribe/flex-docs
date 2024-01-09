@@ -206,7 +206,7 @@ the different steps.
 
 - [Send a text message to the provider for each new booking in a Sharetribe marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
 - [Add a new user in your Sharetribe marketplace to a Mailchimp audience](https://zapier.com/shared/412d7744a23855ce00941567a619c7ffb7652335)
-- [Send a calendar invitation to the provider when a booking happens in a Sharetribe marketplace](https://zapier.com/shared/10df518e77541354c78dd1c524cf28f59c774aaf)
+- [Send a calendar invitation to the provider when a booking happens in a Sharetribe marketplace](https://zapier.com/shared/96c5df4537d2641ccd6dee4cb488f569755ab0bc)
 
 ## Video tutorials
 
