@@ -806,6 +806,11 @@
     "permanent": true
   },
   {
+    "source": "/operator-guides/what-are-email-texts/",
+    "destination": "https://www.sharetribe.com/help/en/articles/8478365-what-are-email-texts",
+    "permanent": true
+  },
+  {
     "source": "/design-toolkit/user-journey/",
     "destination": "/docs/legacy/design-toolkit/user-journey-saunatime/",
     "permanent": true
