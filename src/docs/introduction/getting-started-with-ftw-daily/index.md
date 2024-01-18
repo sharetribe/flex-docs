@@ -164,7 +164,7 @@ The third default integration is to a map provider.
 [Mapbox](https://www.mapbox.com) provides location search (geocoding)
 and maps for the web app.
 
-![Mandatory integrations: Sharetribe Marketplace API, Stripe, Map provider](FTW-integrations@2x.png)
+![Mandatory integrations: Sharetribe Marketplace API, Stripe, Map provider](web-template-customizations.png)
 
 The Sharetribe Web Template just needs 4 environment variables to make
 these integrations work.
