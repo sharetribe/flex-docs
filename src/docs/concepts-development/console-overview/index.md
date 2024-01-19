@@ -1,7 +1,7 @@
 ---
 title: Understanding Console
 slug: console-overview
-updated: 2023-10-24
+updated: 2024-01-19
 category: concepts-development
 ingress: This article will help you understand how to navigate Console.
 published: true
@@ -109,7 +109,7 @@ marketplace.
 types, listing fields, and listing search conventions.
 
 **Transactions** related configurations include minimum transaction size
-and provider commission.
+as well as provider and customer commissions.
 
 ---
 

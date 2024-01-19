@@ -1,7 +1,7 @@
 ---
 title: Commissions and monetizing your platform
 slug: commissions-and-monetizing-your-platform
-updated: 2023-10-24
+updated: 2024-01-19
 category: concepts-pricing-and-commissions
 ingress:
   Sharetribe provides configurable options for monetizing your platform.
@@ -48,16 +48,19 @@ charged from the provider, the customer, or both.
 <info>
 
 If your application uses hosted configurations, you can define provider
-commissions in Sharetribe Console.
+and customer commission percentages in Sharetribe Console.
 
 ![Commission defined in Console](consoleCommission.png)
 
-To implement the other examples in this article, you will need a degree
+To implement the other use cases in this article, you will need a degree
 of custom development.
 
 </info>
 
 ### Example
+
+_This example illustrates how to use percentage-based commissions
+without Console-based hosted configurations._
 
 A marketplace that charges 10 % from the customer and 12 % from the
 provider would configure the commissions like this:
@@ -109,8 +112,11 @@ party.
 
 In addition to percentages, you can define commissions with fixed sums
 as the `unitPrice` of the line item using `quantity` instead of
-`percentage`. In the following example, both the provider and customer
-pay a fixed commission regardless of the listing price or quantity.
+`percentage`.
+
+In the following example, both the provider and customer pay a fixed
+commission regardless of the listing price or quantity, and
+Console-based commissions are ignored.
 
 ### Example
 
@@ -143,7 +149,12 @@ const customerCommission = {
   includeFor: ['customer'],
 };
 
-const lineItems = [order, providerCommission, customerCommission];
+const lineItems = [
+  order,
+  ...extraLineItems,
+  providerCommission,
+  customerCommission,
+];
 ```
 
 For a 100 EUR listing, this would result in a 110.5 EUR payin for the
@@ -156,25 +167,24 @@ You can also calculate the commissions with more complex logic. You can
 set the result of the calculation as either the `unitPrice` or the
 `percentage` of the line item.
 
-In this example, the customer's commission percentage gets reduced when
-they buy over 5 items. The provider's commission is percentage based,
+In this example, the customer's commission percentage gets reduced with
+three percentage points (e.g. from 10 per cent down to 7 per cent) when
+they buy 5 items or more. The provider's commission is percentage based,
 but always at least 10 dollars.
 
 ### Example
 
 ```js
-const PROVIDER_COMMISSION_PERCENTAGE = -12; // Provider commission is negative
+// Base provider and customer commissions are fetched from assets
 const MINIMUM_PROVIDER_COMMISSION = -1000; // Negative commission in minor units, i.e. in USD cents
+const CUSTOMER_COMMISSION_PERCENTAGE_REDUCTION = 3;
 
-const CUSTOMER_COMMISSION_PERCENTAGE = 10;
-const REDUCED_CUSTOMER_COMMISSION_PERCENTAGE = 7;
-
-const calculateProviderCommission = booking => {
+const calculateProviderCommission = (order, providerCommission) => {
   // Use existing helper functions to calculate totals and percentages
-  const price = calculateTotalFromLineItems([booking]);
+  const price = calculateTotalFromLineItems([order]);
   const commission = calculateTotalPriceFromPercentage(
     price,
-    PROVIDER_COMMISSION_PERCENTAGE
+    providerCommission
   );
 
   // Since provider commissions are negative, comparison must be negative as well
@@ -184,6 +194,15 @@ const calculateProviderCommission = booking => {
 
   return new Money(MINIMUM_PROVIDER_COMMISSION, price.currency);
 };
+
+const calculateCustomerCommissionPercentage = (
+  order,
+  customerCommission
+) =>
+  order.quantity > 4
+    ? customerCommission.percentage -
+      CUSTOMER_COMMISSION_PERCENTAGE_REDUCTION
+    : customerCommission.percentage;
 ```
 
 ```js
@@ -194,26 +213,61 @@ const order = {
   includeFor: ['customer', 'provider'],
 };
 
-const providerCommission = {
-  code: 'line-item/provider-commission',
-  unitPrice: calculateProviderCommission(order),
-  quantity: 1,
-  includeFor: ['provider'],
+// Provider commission reduces the amount of money that is paid out to provider.
+// Therefore, the provider commission line-item should have negative effect to the payout total.
+const getNegation = percentage => {
+  return -1 * percentage;
 };
 
-const customerPercentage =
-  booking.quantity > 5
-    ? REDUCED_CUSTOMER_COMMISSION_PERCENTAGE
-    : CUSTOMER_COMMISSION_PERCENTAGE;
+// Note: extraLineItems for product selling (aka shipping fee)
+// is not included in either customer or provider commission calculation.
 
-const customerCommission = {
-  code: 'line-item/customer-commission',
-  unitPrice: calculateTotalFromLineItems([order]),
-  percentage: customerPercentage,
-  includeFor: ['customer'],
-};
+// The provider commission is what the provider pays for the transaction, and
+// it is the subtracted from the order price to get the provider payout:
+// orderPrice - providerCommission = providerPayout
+const providerCommissionMaybe = hasCommissionPercentage(
+  providerCommission
+)
+  ? [
+      {
+        code: 'line-item/provider-commission',
+        unitPrice: calculateProviderCommission(
+          order,
+          getNegation(providerCommission.percentage)
+        ),
+        quantity: 1,
+        includeFor: ['provider'],
+      },
+    ]
+  : [];
 
-const lineItems = [order, providerCommission, customerCommission];
+// The customer commission is what the customer pays for the transaction, and
+// it is added on top of the order price to get the customer's payin price:
+// orderPrice + customerCommission = customerPayin
+const customerCommissionMaybe = hasCommissionPercentage(
+  customerCommission
+)
+  ? [
+      {
+        code: 'line-item/customer-commission',
+        unitPrice: calculateTotalFromLineItems([order]),
+        percentage: calculateCustomerCommissionPercentage(
+          order,
+          customerCommission
+        ),
+        includeFor: ['customer'],
+      },
+    ]
+  : [];
+
+// Let's keep the base price (order) as first line item and provider and customer commissions as last.
+// Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
+const lineItems = [
+  order,
+  ...extraLineItems,
+  ...providerCommissionMaybe,
+  ...customerCommissionMaybe,
+];
 ```
 
 ## Subscription-based model
