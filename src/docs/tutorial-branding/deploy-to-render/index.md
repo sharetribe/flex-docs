@@ -1,5 +1,5 @@
 ---
-title: Create a test environment
+title: Create a staging environment
 slug: deploy-to-render
 updated: 2023-10-24
 category: tutorial-branding
@@ -12,16 +12,11 @@ published: true
 Now that you have customised your marketplace's styling, it is time to
 deploy the web application to a public web server. After all, you want
 your marketplace to be accessed by your colleagues and friends over the
-Internet. This tutorial will provide an overview of how to deploy a test
-environment to a public server, such as [Render](https://www.render.com)
-or [Heroku](https://www.heroku.com/).
+Internet. This tutorial will provide an overview of how to deploy a
+staging environment to a public server, such as
+[Render](https://www.render.com) or [Heroku](https://www.heroku.com/).
 
-If you do not need to develop any advanced functionality for your
-marketplace and are ready to deploy, you should consider launching
-directly to production. Read our Marketplace Academy article on
-[why you should launch your marketplace early](https://www.sharetribe.com/academy/why-you-should-launch-your-marketplace-early/).
-
-## What is a test environment?
+## What is a staging environment?
 
 So far, you have been developing your marketplace in a development
 environment on your local machine. At some point during the development
@@ -34,9 +29,9 @@ URL.
 
 ## Prepare to publish your marketplace
 
-Before deploying your test environment, you want to make sure
+Before deploying your staging environment, you want to make sure
 Server-Side Rendering (SSR) works. In addition, password-protecting your
-test environment is a good idea to prevent it from being accessed by
+staging environment is a good idea to prevent it from being accessed by
 unauthorized users.
 
 ### Test server-side rendering locally
@@ -85,7 +80,7 @@ define the following environment variables:
 `BASIC_AUTH_USERNAME` and `BASIC_AUTH_PASSWORD`
 
 This will prevent anybody without the correct password and username from
-accessing your test marketplace.
+accessing your staging marketplace.
 
 ## Deploy to Render
 
@@ -143,9 +138,18 @@ You then need to add the following environment variables:
 - `REACT_APP_SHARETRIBE_SDK_CLIENT_ID`
 
   Sharetribe client ID. Check this from
-  [Console](https://console.sharetribe.com/advanced/applications). For a
-  dev environment that is meant for developing further features, use the
-  client ID from your _development environment_.
+  [Console](https://console.sharetribe.com/advanced/applications).
+
+<info>
+
+For a dev staging app meant for developing further features, use a
+client ID and secret from your _Dev environment_.
+
+For a test staging app meant to act as a custom-developed preview app
+for your no-code changes in the Test environment, use a client ID and
+secret from your _Test environment_.
+
+</info>
 
 - `SHARETRIBE_SDK_CLIENT_SECRET`
 
@@ -230,8 +234,8 @@ can enable a custom domain through the _Settings tab_. Read more through
 
 ## What next?
 
-Now that your marketplace is running in a test environment, you should
-test the app thoroughly using both desktop and mobile layouts. In
+Now that your marketplace is running in a staging environment, you
+should test the app thoroughly using both desktop and mobile layouts. In
 addition, you should try to:
 
 - Create new users

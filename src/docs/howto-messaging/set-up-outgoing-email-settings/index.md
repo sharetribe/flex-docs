@@ -108,40 +108,43 @@ Starting in February 2024,
 [Google](https://blog.google/products/gmail/gmail-security-authentication-spam-protection/)
 and
 [Yahoo](https://blog.postmaster.yahooinc.com/post/730172167494483968/more-secure-less-spam)
-are rolling out changes to bulk email sender requirements. Their aim is to
-guarantee a more secure experience and a less spammy inbox for email recipients.
+are rolling out changes to bulk email sender requirements. Their aim is
+to guarantee a more secure experience and a less spammy inbox for email
+recipients.
 
-When following the DNS configuration instructions in this article, your domain
-is already configured properly for SPF and DKIM authentication. However, setting
-up a DMARC policy is recommended, especially if there is significant amount of
-email sent daily for your domain. Without one, email deliverability to GMail and
-Yahoo addresses from your domain may be worse.
+When following the DNS configuration instructions in this article, your
+domain is already configured properly for SPF and DKIM authentication.
+However, setting up a DMARC policy is recommended, especially if there
+is significant amount of email sent daily for your domain. Without one,
+email deliverability to GMail and Yahoo addresses from your domain may
+be worse.
 
-Setting up a DMARC policy involves adding a DNS record for the name `_dmarc` in
-your domain. For example, if your domain is `example.com`, then the DNS record
-should be for the name `_dmarc.example.com`. The type of the record must be
-`TXT`. The value of the record can be different depending on your or your
-organization's requirements. If unsure, use the following value as your DMARC
-policy: `v=DMARC1; p=none`. This is a minimal neutral DMARC policy.
+Setting up a DMARC policy involves adding a DNS record for the name
+`_dmarc` in your domain. For example, if your domain is `example.com`,
+then the DNS record should be for the name `_dmarc.example.com`. The
+type of the record must be `TXT`. The value of the record can be
+different depending on your or your organization's requirements. If
+unsure, use the following value as your DMARC policy:
+`v=DMARC1; p=none`. This is a minimal neutral DMARC policy.
 
 For example, for `example.com` the record would be:
 
-| type | name               | value            |
-|------|--------------------|------------------|
-| TXT  | _dmarc.example.com | v=DMARC1; p=none |
+| type | name                | value            |
+| ---- | ------------------- | ---------------- |
+| TXT  | \_dmarc.example.com | v=DMARC1; p=none |
 
-Note that depending on your DNS hosting provider, the domain name may be added
-automatically to any records you create. In that case you need to use just
-`_dmarc` as the record name, without the domain name. You may also need to place
-the value in quotes: `"v=DMARC1; p=none"`.
+Note that depending on your DNS hosting provider, the domain name may be
+added automatically to any records you create. In that case you need to
+use just `_dmarc` as the record name, without the domain name. You may
+also need to place the value in quotes: `"v=DMARC1; p=none"`.
 
 #### Using a strict DMARC policy
 
-If you prefer to set a more strict DMARC policy, you can do so. Note, however,
-that Sharetribe's email integration requires that the DMARC policy specifies
-"relaxed alignment" for SPF and DKIM checks. This means you should NOT configure
-a policy with the values `aspf=s` (strict SPF alignment) or `adkim=s` (strict
-DKIM alignment).
+If you prefer to set a more strict DMARC policy, you can do so. Note,
+however, that Sharetribe's email integration requires that the DMARC
+policy specifies "relaxed alignment" for SPF and DKIM checks. This means
+you should NOT configure a policy with the values `aspf=s` (strict SPF
+alignment) or `adkim=s` (strict DKIM alignment).
 
 ## Using your own SendGrid account
 
