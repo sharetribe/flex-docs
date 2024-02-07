@@ -1,7 +1,7 @@
 ---
 title: How to customize pricing
 slug: how-to-customize-pricing
-updated: 2023-10-24
+updated: 2024-02-07
 category: how-to-payments
 ingress:
   Sharetribe allows lots of flexibility for your providers in terms of
@@ -143,23 +143,26 @@ const insuranceFeeLineItem = insuranceFeePrice
     ]
   : [];
 
-// Note: extraLineItems for product selling (aka shipping fee)
-// is not included to commission calculation.
-const providerCommission = {
-  code: 'line-item/provider-commission',
-  unitPrice: calculateTotalFromLineItems([order, ...insuranceFee]),
-  percentage: PROVIDER_COMMISSION_PERCENTAGE,
-  includeFor: ['provider'],
-};
+  // Provider commission reduces the amount of money that is paid out to provider.
+  // Therefore, the provider commission line-item should have negative effect to the payout total.
+  const getNegation = percentage => {
+    return -1 * percentage;
+  };
 
-// Let's keep the base price (order) as first line item and provider's commission as last one.
-// Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
-const lineItems = [
-  order,
-  ...extraLineItems,
-  ...insuranceFee,
-  providerCommission,
-];
+  // Note: extraLineItems for product selling (aka shipping fee)
+  // is not included in either customer or provider commission calculation.
+
+  ...
+
+  // Let's keep the base price (order) as first line item and provider and customer commissions as last.
+  // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
+  const lineItems = [
+    order,
+    ...extraLineItems,
+    ...insuranceFeeLineItem,
+    ...providerCommissionMaybe,
+    ...customerCommissionMaybe,
+  ];
 ```
 
 <info>
@@ -191,34 +194,46 @@ line item code (in our case `line-item/insurance-fee`) into the
 Now that we've updated the pricing logic based on listing extended data,
 let's next update the provider commission based on the booking length.
 
-The idea is to keep the 10% commission for bookings of 5 or less nights.
-For bookings of more than 5 nights, we'll set the provider commission to
-7%. Update the `transactionLineItems` function in `lineItems.js` as
-follows:
+The idea is to keep the 10% commission defined in Console for bookings
+of 5 or less nights. For bookings of more than 5 nights, we'll set the
+provider commission three percentage points lower, to 7%. Update the
+`transactionLineItems` function in `lineItems.js` as follows:
 
-```diff
- const PROVIDER_COMMISSION_PERCENTAGE = -10;
-+const PROVIDER_COMMISSION_PERCENTAGE_REDUCED = -7;
+```jsx
+// Base provider and customer commissions are fetched from assets
+const PROVIDER_COMMISSION_PERCENTAGE_REDUCTION = 3;
+
+const calculateProviderCommissionPercentage = (
+  order,
+  providerCommission
+) =>
+  order.quantity > 5
+    ? providerCommission.percentage -
+      PROVIDER_COMMISSION_PERCENTAGE_REDUCTION
+    : providerCommission.percentage;
 ```
 
-```js
-const commissionPercentage =
-  quantity > 5
-    ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED
-    : PROVIDER_COMMISSION_PERCENTAGE;
-const commissionPercentage =
-  quantity > 5
-    ? PROVIDER_COMMISSION_PERCENTAGE_REDUCED
-    : PROVIDER_COMMISSION_PERCENTAGE;
-
-// Note: extraLineItems for product selling (aka shipping fee)
-//       is not included to commission calculation.
-const providerCommission = {
-  code: 'line-item/provider-commission',
-  unitPrice: calculateTotalFromLineItems([order, ...insuranceFee]),
-  percentage: commissionPercentage,
-  includeFor: ['provider'],
-};
+```jsx
+// The provider commission is what the provider pays for the transaction, and
+// it is the subtracted from the order price to get the provider payout:
+// orderPrice - providerCommission = providerPayout
+const providerCommissionMaybe = hasCommissionPercentage(
+  providerCommission
+)
+  ? [
+      {
+        code: 'line-item/provider-commission',
+        unitPrice: calculateTotalFromLineItems([order]),
+        percentage: getNegation(
+          calculateProviderCommissionPercentage(
+            order,
+            providerCommission
+          )
+        ),
+        includeFor: ['provider'],
+      },
+    ]
+  : [];
 ```
 
 Now when the provider takes a look at a pricing breakdown of a booking

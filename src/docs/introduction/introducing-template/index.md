@@ -1,7 +1,7 @@
 ---
 title: Introducing Sharetribe Web Template
 slug: introducing-template
-updated: 2023-10-24
+updated: 2024-02-07
 category: introduction
 ingress:
   Learn about the out of the box functionalities available in the
@@ -173,9 +173,10 @@ information on the checkout page. Payments in the product default
 process are captured immediately, whereas payments with the booking
 default process are only captured after the provider accepts the booking
 request. In either case, funds are transferred to the marketplace’s
-Stripe account. The configured seller commission is paid out to the
-marketplace. The remaining funds (the seller’s earnings) are paid out to
-their bank account according to rules of the transaction process.
+Stripe account. The configured seller and customer commissions are paid
+out to the marketplace. The remaining funds (the seller’s earnings) are
+paid out to their bank account according to rules of the transaction
+process.
 
 ![checkout-page](./checkout-page.png)
 

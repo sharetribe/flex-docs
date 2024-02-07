@@ -1,7 +1,7 @@
 ---
 title: Introduction to integrations in Sharetribe
 slug: integrations-introduction
-updated: 2023-10-24
+updated: 2024-02-07
 category: concepts-integrations
 ingress:
   Sharetribe allows integrations with a vast range of third party tools
@@ -228,7 +228,7 @@ to cover.
     a decreased payout,
   - or only for the customer, in which case the marketplace receives a
     decreased commission – in this case, the discount cannot be greater
-    than the marketplace commission.
+    than the marketplace commission from customer and provider combined.
 - Only redeem the code once i.e. when actually initiating or
   transitioning the transaction with Marketplace API.
 
