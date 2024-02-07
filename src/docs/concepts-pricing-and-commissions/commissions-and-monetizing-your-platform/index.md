@@ -1,7 +1,7 @@
 ---
 title: Commissions and monetizing your platform
 slug: commissions-and-monetizing-your-platform
-updated: 2024-01-19
+updated: 2024-02-07
 category: concepts-pricing-and-commissions
 ingress:
   Sharetribe provides configurable options for monetizing your platform.
