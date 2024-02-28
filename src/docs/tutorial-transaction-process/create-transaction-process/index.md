@@ -571,6 +571,7 @@ function in the file to use the helper.
 import {
 - BOOKING_PROCESS_NAME,
 + isBookingProcess,
+  INQUIRY_PROCESS_NAME,
   PURCHASE_PROCESS_NAME,
   resolveLatestProcessName,
   getProcess,
@@ -582,6 +583,8 @@ if (processName === PURCHASE_PROCESS_NAME) {
   return getStateDataForPurchaseProcess(params, processInfo());
 } else if (isBookingProcess(processName)) {
   return getStateDataForBookingProcess(params, processInfo());
+} else if (processName === INQUIRY_PROCESS_NAME) {
+  return getStateDataForInquiryProcess(params, processInfo());
 } else {
   return {};
 }
