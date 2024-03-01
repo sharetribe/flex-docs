@@ -33,6 +33,29 @@ application is changed.
 
 </info>
 
+You may also need to update the mergeCurrency function in
+[configHelpers.js](https://github.com/sharetribe/web-template/blob/main/src/util/configHelpers.js#L51-L63)
+to use the default currency instead of the hosted one. At the moment,
+Sharetribe onboarding sets a default currency for your marketplace.
+
+```diff
+const mergeCurrency = (hostedCurrency, defaultCurrency) => {
+- const currency = hostedCurrency || defaultCurrency;
++ const currency = defaultCurrency;
+  const supportedCurrencies = Object.keys(subUnitDivisors);
+  if (supportedCurrencies.includes(currency)) {
+    return currency;
+  } else {
+    console.error(
+      `The given currency (${currency}) is not supported.
+      There's a missing entry on subUnitDivisors`
+    );
+    return null;
+  }
+};
+
+```
+
 ## Edit listing minimum price
 
 If you are using the newest version of The Sharetribe Web Template, you
