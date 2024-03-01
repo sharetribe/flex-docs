@@ -36,7 +36,8 @@ application is changed.
 You may also need to update the mergeCurrency function in
 [configHelpers.js](https://github.com/sharetribe/web-template/blob/main/src/util/configHelpers.js#L51-L63)
 to use the default currency instead of the hosted one. At the moment,
-Sharetribe onboarding sets a default currency for your marketplace.
+Sharetribe onboarding sets a default currency for your marketplace, even
+though the currency is not directly editable in Console.
 
 ```diff
 const mergeCurrency = (hostedCurrency, defaultCurrency) => {
