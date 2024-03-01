@@ -1,7 +1,7 @@
 ---
 title: Currency configurations
 slug: how-to-set-up-currency-in-template
-updated: 2023-10-24
+updated: 2024-03-01
 category: template-configuration
 ingress:
   The Sharetribe Web Template uses USD as the default currency. This
