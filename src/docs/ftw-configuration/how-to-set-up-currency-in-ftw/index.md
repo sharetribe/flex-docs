@@ -1,7 +1,7 @@
 ---
 title: Currency configurations
 slug: how-to-set-up-currency-in-template
-updated: 2023-10-24
+updated: 2024-03-01
 category: template-configuration
 ingress:
   The Sharetribe Web Template uses USD as the default currency. This
@@ -32,6 +32,30 @@ listing so the price cannot be edited after the currency used in the
 application is changed.
 
 </info>
+
+You may also need to update the mergeCurrency function in
+[configHelpers.js](https://github.com/sharetribe/web-template/blob/main/src/util/configHelpers.js#L51-L63)
+to use the default currency instead of the hosted one. At the moment,
+Sharetribe onboarding sets a default currency for your marketplace, even
+though the currency is not directly editable in Console.
+
+```diff
+const mergeCurrency = (hostedCurrency, defaultCurrency) => {
+- const currency = hostedCurrency || defaultCurrency;
++ const currency = defaultCurrency;
+  const supportedCurrencies = Object.keys(subUnitDivisors);
+  if (supportedCurrencies.includes(currency)) {
+    return currency;
+  } else {
+    console.error(
+      `The given currency (${currency}) is not supported.
+      There's a missing entry on subUnitDivisors`
+    );
+    return null;
+  }
+};
+
+```
 
 ## Edit listing minimum price
 

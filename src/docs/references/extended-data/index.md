@@ -1,7 +1,7 @@
 ---
 title: Extended data
 slug: extended-data
-updated: 2023-10-24
+updated: 2024-03-01
 category: references
 ingress:
   Reference documentation providing information on all the different
@@ -15,6 +15,9 @@ including a JSON object (hash). This provides API clients with the
 capability to store arbitrary structured data for the supported resource
 types. Via search schema we also support querying, filtering, and
 sorting by extended data for some value types.
+
+For all types of extended data across all resources, the total size of
+an extended data object as JSON string must not exceed 50KB.
 
 ## Types of extended data
 
