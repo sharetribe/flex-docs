@@ -17,7 +17,7 @@ types. Via search schema we also support querying, filtering, and
 sorting by extended data for some value types.
 
 For all types of extended data across all resources, the total size of
-the extended data object as JSON string must not exceed 50KB.
+an extended data object as JSON string must not exceed 50KB.
 
 ## Types of extended data
 
