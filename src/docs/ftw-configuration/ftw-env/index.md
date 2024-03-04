@@ -52,6 +52,12 @@ of environment variables.
   optimization, and social logins. Note that the value should not
   include a trailing slash.
 
+- **`REACT_APP_MARKETPLACE_NAME`**
+
+  Marketplace name in self-hosted marketplaces is set through
+  environment variables. If not set, this defaults to 'Biketribe' in
+  src/config/configDefault.js.
+
 - **`NODE_ENV`**
 
   Node env. Use 'development' for development and 'production' for
