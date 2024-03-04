@@ -113,7 +113,7 @@ This is how the default logic works:
 2.  The amount of sales transactions determines the
     [notification count](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L105)
     shown
-    [in the badge](https://github.com/sharetribe/web-template/blob/main/src/components/Topbar/TopbarDesktop/TopbarDesktop.js#L60).
+    [in the badge](https://github.com/sharetribe/web-template/blob/main/src/containers/TopbarContainer/Topbar/Topbar.js#L234).
 
 The variable
 [currentUserNotificationCount](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L64)
