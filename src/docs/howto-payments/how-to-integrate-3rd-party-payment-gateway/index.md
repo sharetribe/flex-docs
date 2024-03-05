@@ -679,7 +679,7 @@ marketplace payment flow and gave recommendations on how to integrate a
 - [MANGOPAY API Documentation][mangopay-api-docs]
 
 [academy-payment-service-providers]:
-  https://www.sharetribe.com/academy/payment-service-providers-1/
+  https://www.sharetribe.com/academy/marketplace-payments/
 [paypal-commerce-platform]:
   https://www.paypal.com/us/business/platforms-and-marketplaces
 [paypal-commerce-platform-docs]:
