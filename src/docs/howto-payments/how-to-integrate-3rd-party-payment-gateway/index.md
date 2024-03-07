@@ -39,9 +39,9 @@ steps. The following diagram illustrates a timeline of these steps:
 
 ![Marketplace payment flow](payment-flow.png)
 
-[comment]:
-  #
-  'Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS'
+<!--
+Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS
+-->
 
 ### Step 1: Provider onboarding
 
@@ -339,9 +339,9 @@ status.
 
 ![Redirect and return URL call sequence](redirect-url-sequence.png)
 
-[comment]:
-  #
-  'Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS'
+<!--
+Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS
+-->
 
 The payment gateway appends data about the onboarding or payment result
 to the return URL query parameters. When it redirects the user to your
@@ -454,9 +454,9 @@ Marketplace API is called again after the payment action is completed.
 
 ![Privileged transitions call sequence](privileged-transitions-sequence.png)
 
-[comment]:
-  #
-  'Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS'
+<!--
+Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS
+-->
 
 Error handling in this model is simple. Because all the calls to the
 Sharetribe Marketplace API and the payment gateway's API are triggered
@@ -474,9 +474,9 @@ the payment gateway API.
 
 ![Events call sequence](events-sequence.png)
 
-[comment]:
-  #
-  'Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS'
+<!--
+Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS
+-->
 
 Error handling in this model needs more attention than in the privileged
 transition model. If the payment action fails, the transaction is in a
@@ -579,9 +579,9 @@ The transaction process should look something like this:
 
 ![Customer checkout transaction process](checkout-transaction-process.png)
 
-[comment]:
-  #
-  'Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS'
+<!--
+Diagram source: https://whimsical.com/how-to-integrate-a-3rd-party-payment-gateway-PBY6qRjauyb7v5pEdXY4pS
+-->
 
 The steps to implement this stage are:
 
