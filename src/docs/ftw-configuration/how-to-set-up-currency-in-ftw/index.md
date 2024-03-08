@@ -17,6 +17,16 @@ the default payment integration, please confirm that
 [Stripe supports the currency](https://stripe.com/docs/currencies) you
 intend to use.
 
+<info>
+
+Starting from version 3.4.0, the Sharetribe Web Template supports
+updating the marketplace currency through assets in
+[Console > Build > General > Localization](https://console.sharetribe.com/general/localization).
+Console allows Stripe-supported currencies, so if you want some other
+currency, you will need to follow the steps in this guide.
+
+</info>
+
 You can find the currency configuration in the
 [configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L20)
 file. The currency configuration must be in the
