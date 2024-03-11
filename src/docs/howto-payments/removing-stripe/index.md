@@ -161,7 +161,7 @@ StripePaymentForm folder.
 To use _CheckoutPageWithoutPayment_, we need to make these changes to
 existing components:
 
-- Export a _processCheckoutWithPayment_ function from
+- Export a _processCheckoutWithoutPayment_ function from
   _src/containers/CheckoutPage/CheckoutPageTransactionHelpers.js_
 
 ```jsx
