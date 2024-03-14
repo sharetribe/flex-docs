@@ -147,7 +147,10 @@ client ID and secret from your _Dev environment_.
 
 For a test staging app meant to act as a custom-developed preview app
 for your no-code changes in the Test environment, use a client ID and
-secret from your _Test environment_.
+secret from your _Test environment_. Note that you need to enable
+[Hosting mode](https://www.sharetribe.com/help/en/articles/8944305) in
+your Test environment before you can connect it to your client
+application.
 
 </info>
 
