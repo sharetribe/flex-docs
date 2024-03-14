@@ -11,6 +11,10 @@ published: true
 
 ## What is a production environment?
 
+<info>
+Note that you need to enable <a href='https://www.sharetribe.com/help/en/articles/8944305'> Hosting mode</a> through the Sharetribe Console before you can connect your custom application to your Live environment.
+</info>
+
 A production environment hosts and executes the code that runs your live
 marketplace and serves it to the public internet. The version of your
 marketplace intended for real-life use with real money runs in the
