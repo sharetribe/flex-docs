@@ -198,7 +198,6 @@ Marketplace texts, or in src/translations/en.js.
   "FavoriteListingsPage.youHaveListings": "You have {count} favorite {count, plural, one {listing} other {listings}}",
   "OrderPanel.addFavoriteButton":"Add to favorites",
   "OrderPanel.unfavoriteButton":"Unfavorite",
-  "TopbarDesktop.favoriteListingsLink": "Favorite bikes",
   "UserNav.favoriteListings": "Favorite bikes"
 …
 ```
@@ -586,7 +585,7 @@ than one page of listings.
       <LayoutSingleColumn
         topbar={
           <>
-            <TopbarContainer currentPage="FavoriteListingsPage" />
+            <TopbarContainer />
             <UserNav currentPage="FavoriteListingsPage" />
           </>
         }
@@ -863,51 +862,27 @@ favorited listings.
 ## Add navigation
 
 As the final step, we will add our new favorite listings page into the
-navigation elements of the page – TopBar and UserNav.
+navigation elements of the page – Topbar and UserNav.
+
+You can add a link to
+[Topbar in Console > Build > Content > Top bar](https://console.sharetribe.com/a/content/top-bar).
+
+![Add topbar links in Console](./console-add-topbar-link.png)
 
 ```shell
 └── src
     └── components
-        ├── Topbar
-        │   └── TopbarDesktop
-        │       └── TopbarDesktop.js
         └── UserNav
             └── UserNav.js
 ```
 
-In the top bar, we will add Favorite Listings as a menu item to the
-profile menu that opens when a user clicks their avatar in the top right
-corner.
-
-![Default profile menu](./biketribe-default-profile-menu.png)
-
-To add the profile menu item, add the following code snippet in the
-profileMenu before the row `<MenuItem key="ProfileSettingsPage">`
-
-```
-    <MenuItem key="FavoriteListingsPage">
-      <NamedLink
-        className={classNames(css.yourListingsLink, currentPageClass('FavoriteListingsPage'))}
-        name="FavoriteListingsPage"
-      >
-        <span className={css.menuItemBorder} />
-        <FormattedMessage id="TopbarDesktop.favoriteListingsLink" />
-      </NamedLink>
-    </MenuItem>
-```
-
-Now, we can see a link to favorite listings page when we click the
-user’s profile image.
-
-![Profile menu with favorites page](./biketribe-favorites-profile-menu.png)
-
 The last addition comes to the UserNav component.
 
-When we click on the profile menu link for favorite listings, we get to
-the page. However, the user navigation bar does not show the favorite
-listings page.
+When we click on the the link for favorite listings, we get to the page.
+However, the user navigation bar does not show the favorite listings
+page.
 
-![Default UserNav bar](./biketribe-favorites-page.png)
+![Default UserNav bar](./biketribe-favorites-page-with-topbar.png)
 
 Let’s add the link next. Open the _UserNav.js_ file and replace the tabs
 array with the following code:
