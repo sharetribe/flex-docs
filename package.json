@@ -44,6 +44,7 @@
     "gatsby-transformer-sharp": "^4.6.0",
     "github-slugger": "^1.4.0",
     "no-scroll": "^2.1.1",
+    "polished": "^4.3.1",
     "prismjs": "^1.27.0",
     "prop-types": "^15.8.1",
     "react": "^16.12.0",

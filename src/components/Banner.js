@@ -61,18 +61,16 @@ const BannerContent = styled.div`
     // link specifity
     a {
       text-decoration: underline;
-
-  &:hover {
-    color: ${props => lighten(0.24, props.fontColour)};
-  }
-  &:visited {
-    color: ${props => props.fontColour};
-  }
-  &:visited:hover {
-    color: ${props => lighten(0.24, props.fontColour)};
-
-  }
+    &:hover {
+      color: ${props => lighten(0.24, props.fontColour)};
     }
+    &:visited {
+      color: ${props => props.fontColour};
+    }
+    &:visited:hover {
+      color: ${props => lighten(0.24, props.fontColour)};
+    }
+  }
 
   
 
