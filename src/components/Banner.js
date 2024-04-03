@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { lighten, adjustHue, darken, tint } from 'polished';
 
 import { baselineSmall, baselineSpacing } from '../config';
 import { P } from '.';
@@ -56,6 +57,25 @@ const BannerContent = styled.div`
     * {
       color: ${props => props.fontColour};
     }
+
+    // link specifity
+    a {
+      text-decoration: underline;
+
+  &:hover {
+    color: ${props => lighten(0.24, props.fontColour)};
+  }
+  &:visited {
+    color: ${props => props.fontColour};
+  }
+  &:visited:hover {
+    color: ${props => lighten(0.24, props.fontColour)};
+
+  }
+    }
+
+  
+
 
   }
 `;
