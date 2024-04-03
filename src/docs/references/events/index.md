@@ -240,7 +240,7 @@ For examples of the Integration API event data format, see the
         "state": "NY",
         "street": "230 Hamilton Ave"
       },
-      "category": "road",
+      "categoryLevel1": "road",
       "gears": 22,
       "rules": "This is a nice, bike! Please, be careful with it."
     },
