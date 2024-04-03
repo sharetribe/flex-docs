@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { lighten, adjustHue, darken, tint } from 'polished';
+import { lighten } from 'polished';
 
 import { baselineSmall, baselineSpacing } from '../config';
 import { P } from '.';
@@ -71,11 +71,7 @@ const BannerContent = styled.div`
       color: ${props => lighten(0.24, props.fontColour)};
     }
   }
-
-  
-
-
-  }
+}
 `;
 
 const TitleContainer = ({ title, icon: Icon, ...otherProps }) => {
