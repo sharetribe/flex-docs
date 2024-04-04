@@ -182,6 +182,7 @@ const ArticlePage = props => {
   const mainCategory = findMainCategory(category) || category;
   const [location, setLocation] = useState(null);
   const isBrowser = typeof window !== 'undefined';
+  const test = 'test';
 
   // fetch browser location
   useEffect(() => {
