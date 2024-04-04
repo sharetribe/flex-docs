@@ -78,8 +78,10 @@ const withTrailingSlash = path => {
 };
 
 module.exports = {
+  trailingSlash: `always`,
   // ================ Site metadata ================
   //
+
   siteMetadata: {
     title: siteTitle,
     siteUrl: SITE_URL,
