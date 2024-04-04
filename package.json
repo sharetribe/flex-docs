@@ -8,6 +8,9 @@
     "url": "https://github.com/sharetribe/flex-docs"
   },
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "clean": "rm -rf .cache public",
     "build": "gatsby build --prefix-paths",
