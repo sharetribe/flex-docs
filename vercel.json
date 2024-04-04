@@ -786,7 +786,7 @@
     "permanent": true
   },
   {
-    "source": "/operator-guides/inventory-management/",
+    "source": "/docs/operator-guides/inventory-management/",
     "destination": "/docs/concepts/inventory-management/",
     "permanent": true
   },
