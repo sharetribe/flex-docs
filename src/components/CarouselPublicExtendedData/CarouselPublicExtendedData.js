@@ -2,11 +2,7 @@ import React from 'react';
 import { Carousel, CarouselSlide as Slide } from '../../components';
 
 import IMG_EXTENDED_DATA_FRONTEND_VIEW from './extended-data-frontend-view.png';
-import IMG_EXTENDED_DATA_SAUNA_TYPE from './extended-data-sauna-type.png';
-import IMG_EXTENDED_DATA_AMENTIES from './extended-data-amenities.png';
-import IMG_EXTENDED_DATA_RULES from './extended-data-rules.png';
 import IMG_EXTENDED_DATA_DETAILS from './extended-data-details.png';
-
 import IMG_EXTENDED_DATA_CONSOLE from './extended-data-console-view.png';
 
 const CarouselPublicExtendedData = props => {

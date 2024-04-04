@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { baselineBreakpoint } from '../../config';
@@ -6,7 +6,6 @@ import { Link, UiText } from '../../components';
 import Logo from './Logo';
 import Search from './Search';
 import OffScreenToggle from './OffScreenToggle';
-import { categoryFromLocation } from '../../util/utils';
 
 const Wrapper = styled.header`
   display: flex;
@@ -58,15 +57,6 @@ const TopbarSearch = styled(Search)`
 
 const Topbar = props => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const [location, setLocation] = useState(null);
-  const isBrowser = typeof window !== 'undefined';
-  useEffect(() => {
-    if (isBrowser) {
-      setLocation(window.location);
-    }
-  }, [isBrowser]);
-
   const { activeCategory, manageSidebar, ...rest } = props;
   const { isOpen, setIsOpen } = manageSidebar;
 

@@ -107,6 +107,7 @@ const Breadcrumb = props => {
               ))}
             </Ol>
             <script
+              key="ldjson"
               type="application/ld+json"
               dangerouslySetInnerHTML={{ __html: ldJson }}
             />

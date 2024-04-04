@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Box from '../Box';
-
 import { P, Link, H4, A, UiText } from '../../components';
 
 const Paragraph = styled(P)`
@@ -18,12 +16,6 @@ const Heading = styled(H4)`
 
 const Container = styled.div`
   padding-bottom: 10px;
-`;
-
-const StyledBox = styled(Box)`
-  max-width: 720px;
-  margin-bottom: 50px;
-  margin-top: 20px;
 `;
 
 const RegularFooter = props => {
@@ -56,7 +48,7 @@ const AlternativeFooter = props => {
 };
 
 const Footer = props => {
-  const { altFooter, ...rest } = props;
+  const { altFooter } = props;
   return (
     <Container>
       <Heading>
