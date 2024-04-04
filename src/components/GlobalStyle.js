@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { baselineBreakpoint } from '../config';
-
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${props => props.theme.backgroundColor};

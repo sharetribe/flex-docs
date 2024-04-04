@@ -47,7 +47,7 @@ const Paragraph = styled(P).attrs({
 
 const GridItem = props => {
   // Note that this pathPrefix variable has nothing to do with what is defined in module.exports gatsby-config.js
-  const { pathPrefix, title, slug, category, ingress } = props;
+  const { pathPrefix, title, slug, ingress } = props;
   const path = `${slug}/`;
   return (
     <Box as="li">

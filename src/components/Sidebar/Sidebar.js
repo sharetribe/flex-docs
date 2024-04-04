@@ -13,12 +13,9 @@ const DESKTOP_LAYOUT_WIDTH = 768;
 const query = graphql`
   query SidebarIndexQuery {
     allMarkdownRemark(
-      sort: {
-        fields: [frontmatter___category, frontmatter___slug]
-        order: [ASC, ASC]
-      }
+      sort: [{ frontmatter: { category: ASC } }, { frontmatter: { slug: ASC } }]
     ) {
-      group(field: frontmatter___category) {
+      group(field: { frontmatter: { category: SELECT } }) {
         fieldValue
         totalCount
         edges {

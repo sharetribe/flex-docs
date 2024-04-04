@@ -160,40 +160,11 @@
 
   "Sidebar.background": "Background",
 
-  "Sidebar.operatorGuides": "Operator Guides",
-  "Sidebar.operatorGuidesConcepts": "Concepts",
-  "Sidebar.operatorGuidesUsefulInformation": "Useful Information",
-  "Sidebar.operatorGuidesStaticContent": "Static content",
-  "Sidebar.operatorGuidesLayout": "Layout",
-  "Sidebar.operatorGuidesTransactions": "Transactions",
-  "Sidebar.operatorGuidesListings": "Listings",
-  "Sidebar.operatorGuidesBranding": "Branding",
-
-  "Sidebar.pilotDayGuides": "The New Sharetribe Guides",
-  "Sidebar.pilotDayGuidesTutorials": "Tutorials",
-  "Sidebar.pilotDayGuidesConcepts": "Concepts",
-  "Sidebar.pilotDayGuidesUsefulInformation": "Useful Information",
-  "Sidebar.pilotDayGuidesStaticContent": "Static content",
-  "Sidebar.pilotDayGuidesLayout": "Layout",
-  "Sidebar.pilotDayGuidesTransactions": "Transactions",
-  "Sidebar.pilotDayGuidesListings": "Listings",
-  "Sidebar.pilotDayGuidesBranding": "Branding",
-
 
   "ArticlePage.pilot-day-guides.breadCrumbTitle": "Pilot Day Guides",
   "ArticleIndexPage.pilot-day-guides.title": "Pilot Day Guides",
   "ArticleIndexPage.pilot-day-guides.description": "All pilot day guides",
 
-  "Sidebar.theNewSharetribe": "The New Sharetribe Help Center",
-   "Sidebar.theNewSharetribeTutorial": "Tutorial",
-   "Sidebar.theNewSharetribeStaticContent": "Static Content",
-   "Sidebar.theNewSharetribeUsefulInformation": "Useful Information",
-   "Sidebar.theNewSharetribeBranding": "Branding",
-   "Sidebar.theNewSharetribeConcepts": "Concepts",
-   "Sidebar.theNewSharetribeLayout": "Layout",
-   "Sidebar.theNewSharetribeListings": "Listings",
-   "Sidebar.theNewSharetribeTransactions": "Transactions",
-   "Sidebar.theNewSharetribeAnalytics": "Analytics",
    "ArticleIndexPage.tutorial-service.title": "Service tutorial",
    "ArticleIndexPage.tutorial-service.description": "desc",
   

@@ -142,45 +142,6 @@ const sortingArrayHowToListings = [
   'bookings-with-buffer',
 ];
 
-const sortingArrayOperatorGuidesStaticContent = [
-  'introducing-pages',
-  'what-are-marketplace-texts',
-  'what-are-email-texts',
-];
-
-const sortingArrayOperatorGuidesConcepts = [
-  'concepts',
-  'features',
-  'flex-operator-resources',
-];
-
-const sortingArrayOperatorGuidesLayout = [];
-
-const sortingArrayOperatorGuidesBranding = [];
-
-const sortingArrayOperatorGuidesListings = [];
-
-const sortingArrayOperatorGuidesTransactions = [];
-const sortingArrayOperatorGuidesUsefulInformation = [];
-
-const sortingArrayPilotDayGuides = ['test-page'];
-
-const sortingArrayTheNewSharetribeUsefulInformation = [];
-
-/// Arrange The New Sharetribe tutorial
-const sortingArrayTheNewSharetribeTutorial = [
-  'tutorial-00-introduction',
-  'tutorial-01-marketplace-branding',
-  'tutorial-02-marketplace-layout',
-  'tutorial-03-landing-page',
-  'tutorial-04-listing-type',
-  'tutorial-05-listing-fields',
-  'tutorial-06-listing-search',
-  'tutorial-07-commission-tx-size',
-  'tutorial-08-microcopy',
-  'tutorial-09-footer',
-];
-
 exports.siteStructure = [
   {
     id: 'introduction',
@@ -321,45 +282,5 @@ exports.siteStructure = [
     sortingArray: [],
     isHidden: true,
     hideSidebar: true,
-  },
-  {
-    id: 'pilot-day-guides',
-    isOpen: true,
-    isHidden: true,
-    hideSidebar: true,
-    subcategories: [
-      {
-        id: 'pilot-day-guides-concepts',
-        sortingArray: sortingArrayPilotDayGuides,
-      },
-      {
-        id: 'pilot-day-guides-tutorials',
-        sortingArray: [],
-      },
-      {
-        id: 'pilot-day-guides-static-content',
-        sortingArray: [],
-      },
-      {
-        id: 'pilot-day-guides-transactions',
-        sortingArray: [],
-      },
-      {
-        id: 'pilot-day-guides-useful-information',
-        sortingArray: [],
-      },
-      {
-        id: 'pilot-day-guides-listings',
-        sortingArray: [],
-      },
-      {
-        id: 'pilot-day-guides-layout',
-        sortingArray: [],
-      },
-      {
-        id: 'pilot-day-guides-branding',
-        sortingArray: [],
-      },
-    ],
   },
 ];

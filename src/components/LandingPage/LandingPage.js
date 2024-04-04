@@ -61,14 +61,6 @@ const HeadingBr = styled.br`
   }
 `;
 
-const IntroBr = styled.br`
-  display: none;
-
-  @media (min-width: 1070px) {
-    display: block;
-  }
-`;
-
 // NOTE: custom font size
 const Paragraph = styled(P).attrs({
   small: true,
