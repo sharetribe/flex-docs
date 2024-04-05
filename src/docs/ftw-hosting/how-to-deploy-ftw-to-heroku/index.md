@@ -71,6 +71,10 @@ Then add the following environment variables as Config Vars:
   Canonical root URL of the marketplace. Remove trailing slash from the
   domain.<br />E.g. _`https://<the-name-of-your-app>.herokuapp.com`_
 
+- `REACT_APP_MARKETPLACE_NAME` Marketplace name in self-hosted
+  marketplaces is set through environment variables. If not set, this
+  defaults to 'Biketribe' in src/config/configDefault.js.
+
 - `NODE_ENV`
 
   Defines whether the application is run in production or development
