@@ -15,8 +15,8 @@ const CarouselPublicExtendedData = props => {
         <h3>Listing public data in the frontend</h3>
         <p>
           We’ll look at a few different extended data fields. We have
-          highlighted the fields in different colors: red is for bike category,
-          blue is for tire size, and green is for bike brand.
+          highlighted the fields in different colors: blue is for tire size, and
+          green is for bike brand.
         </p>
       </Slide>
 
@@ -38,9 +38,9 @@ const CarouselPublicExtendedData = props => {
       >
         <h3>Listing public data in Console</h3>
         <p>
-          This is the same listing in Console, your Flex marketplace management
-          tool. You can see the corresponding public data fields highlighted
-          with the same color as on the listing creation page.
+          This is the same listing in Console, your marketplace management tool.
+          You can see the corresponding public data fields highlighted with the
+          same color as on the listing creation page.
         </p>
       </Slide>
     </Carousel>
