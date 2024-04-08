@@ -1503,5 +1503,5 @@ In this guide, you made the following changes:
   - Add units and seats handling to _lineItems.js_
   - Add units and seats handling to _LineItemBasePriceMaybe.js_
 - Allow bookings with multiple seats
-  - Add seats handling to _ListingPage.shared.js_, _CheckoutPage.js_ and
-    _CheckoutPage.duck.js_
+  - Add seats handling to _ListingPage.shared.js_ and
+    _CheckoutPageWithPayment.js_
