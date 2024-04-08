@@ -9,11 +9,11 @@ published: true
 
 _Assets_ are a mechanism for defining client application configuration
 data and content for a marketplace. The assets are managed by a
-marketplace operator and changes relatively infrequently. Each _asset_
-is an object that defines a _path_ and _content_. The path gives the
-asset a name and allows organizing assets in a way similar to a file
-system, where assets can be organized in directory-like structure. The
-content of the asset is its data in one of the supported data types.
+marketplace operator and change relatively infrequently. Each _asset_ is
+an object that defines a _path_ and _content_. The path gives the asset
+a name and allows organizing assets in a way similar to a file system,
+where assets can be organized in directory-like structure. The content
+of the asset is its data in one of the supported data types.
 
 At present, Sharetribe supports only JSON data as assets. Support for
 images (JPEG, PNG, etc) is coming in the future.
@@ -35,10 +35,10 @@ without code changes:
   [marketplace text strings](/concepts/marketplace-texts/),
 - create content [pages](/concepts/content-management/) for your
   marketplace, and
-- configure your marketplace branding, layout, listings, search, footer,
-  and transactions
+- configure your marketplace branding, layout, users, listings, search,
+  footer, and transactions
 
-For example, a marketplace may have assets with the following assets:
+For example, a marketplace may have the following assets:
 
 ```shell
 ├── content

@@ -1,7 +1,7 @@
 ---
 title: Listing extended data
 slug: listing-extended-data
-updated: 2023-10-24
+updated: 2024-04-08
 category: concepts-extended-data
 ingress:
   Listing extended data allows you to use the powerful search engine in
@@ -12,6 +12,15 @@ published: true
 Listings can have three types of extended data: public, private, and
 metadata. This article gives an overview of using these different
 extended data types.
+
+<info>
+
+Listing public data fields can be configured in Console using
+[assets](/references/assets/). The Sharetribe Web Template has the
+capability to read the asset-based public data fields and display the
+necessary components when editing and viewing a listing.
+
+</info>
 
 ## Viewing and modifying listing extended data
 
