@@ -1,7 +1,7 @@
 ---
 title: Extend user data in Sharetribe Web Template
 slug: extend-user-data-in-template
-updated: 2024-04-08
+updated: 2024-04-24
 category: how-to-users-and-authentication
 ingress:
   This guide describes how to use extended data to expand the user data
@@ -15,8 +15,8 @@ the data gets added, and how it can then be presented.
 
 Adding new attributes to the data model relies on
 [extended data](/references/extended-data/). In Sharetribe Web Template,
-starting from release [XX.XX](link), top-level user extended data can be
-configured in the [configUser.js](link) file.
+starting from release [v5.0.0](https://github.com/sharetribe/web-template/releases/tag/v5.0.0), top-level user extended data can be
+configured in the [configUser.js](https://github.com/sharetribe/web-template/blob/main/src/config/configUser.js) file.
 
 ```shell
 └── src
