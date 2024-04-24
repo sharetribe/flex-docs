@@ -1,7 +1,7 @@
 ---
 title: User extended data
 slug: user-extended-data
-updated: 2023-10-24
+updated: 2024-04-24
 category: concepts-extended-data
 ingress:
   User extended data allows you to distinguish between different types
@@ -15,6 +15,16 @@ User profiles have all four extended data types – public data, protected
 data, private data, and public metadata. A user's extended data is
 nested in the user's _profile_ attribute, not a direct attribute of the
 user resource.
+
+<info>
+
+User public data fields can be configured in Console using
+[assets](/references/assets/). Starting from release [v5.0.0](https://github.com/sharetribe/web-template/releases/tag/v5.0.0), the
+Sharetribe Web Template has the capability to read the asset-based
+public data fields and display the necessary components when editing and
+viewing a user's profile.
+
+</info>
 
 ## Viewing and modifying user extended data
 

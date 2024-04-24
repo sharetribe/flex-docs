@@ -1,7 +1,7 @@
 ---
 title: Extend listing data in Sharetribe Web Template
 slug: extend-listing-data-in-template
-updated: 2023-10-24
+updated: 2024-04-24
 category: how-to-listing
 ingress:
   This guide describes how to use extended data to expand the listing
@@ -60,48 +60,36 @@ data.
 
 ## Add a new top-level attribute
 
-<info>
-
-If your marketplace is using hosted configurations defined in Sharetribe
-Console, you can make the changes described in this section by adding
-new listing fields.
-
-**[Skip to the next section](#add-a-new-complex-attribute)**
-
-</info>
-
 Let's extend the default bike related listing data by adding an
-attribute 'frame' to reflect the bike's frame type. The full
+attribute 'accessories' to show what accessories are included. The full
 configuration looks like this:
 
 ```js
-{
-  key: 'frame',
-  scope: 'public',
-  schemaType: 'enum',
-  enumOptions: [
-    { option: 'aluminium', label: 'Aluminium' },
-    { option: 'steel', label: 'Steel' },
-    { option: 'titanium', label: 'Titanium' },
-  ],
-  // If you have multiple listing types, you can define the types that should have this field
-  // includeForListingTypes: [...],
-  filterConfig: {
-    indexForSearch: false,
-    filterType: 'SelectSingleFilter',
-    label: 'Frame material',
-    group: 'primary',
+  {
+    key: 'accessories',
+    scope: 'public',
+    schemaType: 'multi-enum',
+    enumOptions: [
+      { option: 'bell', label: 'Bell' },
+      { option: 'lights', label: 'Lights' },
+      { option: 'lock', label: 'Lock' },
+      { option: 'mudguard', label: 'Mudguard' },
+    ],
+    saveConfig: {
+      label: 'Accessories',
+      placeholderMessage: 'Select an option…',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'Accessories',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'Accessories',
+    },
   },
-  showConfig: {
-    label: 'Frame material',
-    isDetail: true,
-  },
-  saveConfig: {
-    label: 'Frame material',
-    placeholderMessage: 'Select frame material',
-    isRequired: false,
-  },
-},
 ```
 
 ### Declaring the attribute and its possible values
@@ -110,21 +98,22 @@ Extended data attributes in the _configListing.js_ file need to be
 defined, at minimum, by **key**, by **scope**, and by **schemaType**.
 
 ```js
-key: 'frame',
+key: 'accessories',
 scope: 'public',
-schemaType: 'enum',
+schemaType: 'multi-enum',
 enumOptions: [
-  { option: 'aluminium', label: 'Aluminium' },
-  { option: 'steel', label: 'Steel' },
-  { option: 'titanium', label: 'Titanium' },
+  { option: 'bell', label: 'Bell' },
+  { option: 'lights', label: 'Lights' },
+  { option: 'lock', label: 'Lock' },
+  { option: 'mudguard', label: 'Mudguard' },
 ],
 // If you have multiple listing types, you can define the types that should have this field
 // includeForListingTypes: [...],
 ```
 
 This attribute is defined as **public**, so it will be saved into the
-listing as **publicData.frame**. The **schemaType** attribute determines
-the shape of the data being saved:
+listing as **publicData.accessories**. The **schemaType** attribute
+determines the shape of the data being saved:
 
 - **enum** attributes are saved as a single string value from a list of
   predefined options
@@ -158,8 +147,8 @@ attribute is missing.
 
 ```js
 saveConfig: {
-  label: 'Frame material',
-  placeholderMessage: 'Select frame material',
+  label: 'Accessories',
+  placeholderMessage: 'Select an option…',
   isRequired: false,
 },
 ```
@@ -177,29 +166,40 @@ attribute to your listing configuration. In addition, you will need to
 Make sure you define the search schema **type** according to the listing
 configuration **schemaType**.
 
+For multi-enum attributes, you can use **searchMode** to define whether
+you want to show
+
+- listings with all the query attributes (_has_all_), or
+- listings with any of the query attributes(_has_any_).
+
+If searchMode is not defined, or if you define a listing field in
+Console, the default is _has_all_. To define a multi-enum listing field
+with _has_any_ search logic, you will need to define the field in your
+local code.
+
 ```js
-  filterConfig: {
-    indexForSearch: false,
-    filterType: 'SelectSingleFilter',
-    label: 'Frame material',
-    group: 'primary',
-  },
+filterConfig: {
+  indexForSearch: true,
+  label: 'Accessories',
+  searchMode: 'has_any',
+  group: 'secondary',
+},
 ```
 
 ### Configuring the listing page
 
 The configuration for showing top-level extended data on the listing
 page is straightforward. In addition to the label, you can determine
-whether to show specific attribute values on the listing page. By
-default, all listing config attributes with a **showConfig.label** are
-shown on the listing page, but by setting **isDetail** to **false** on
-an attribute with schema type _enum_, _long_, or _boolean_, you can hide
-the attribute from the Details section on the listing page.
+whether to show specific attribute values on the listing page.
+
+By default, all listing config attributes with a **showConfig.label**
+are shown on the listing page, but by setting **isDetail** to **false**
+on an attribute with schema type _enum_, _long_, or _boolean_, you can
+hide the attribute from the Details section on the listing page.
 
 ```js
 showConfig: {
-  label: 'Frame material',
-  isDetail: true,
+  label: 'Accessories',
 },
 ```
 
