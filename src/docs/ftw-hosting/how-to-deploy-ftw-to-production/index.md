@@ -104,6 +104,20 @@ Deploying your marketplace to production is a three-step process:
 
 ### Environment variables
 
+<info>
+
+If you are transitioning from a Sharetribe hosted marketplace to a
+self-hosted marketplace and you are using Social Logins (e.g. Google or
+Facebook login), you will need to enable the logins through
+[environment variables](/template/template-env/). The configuration in
+Console only works for Sharetribe hosted marketplaces.
+
+See [here how to enable Google Login](/how-to/enable-google-login/) and
+[Facebook login](/how-to/enable-facebook-login/) for self-hosted
+marketplaces.
+
+</info>
+
 For a full list of possible environment variables, see the
 [Environment configuration variables](/template/template-env/) reference
 for more information. To deploy your marketplace, you need to add at
