@@ -1,7 +1,7 @@
 ---
 title: Currency configurations
 slug: how-to-set-up-currency-in-template
-updated: 2024-03-01
+updated: 2024-05-01
 category: template-configuration
 ingress:
   The Sharetribe Web Template uses USD as the default currency. This
@@ -21,7 +21,7 @@ intend to use.
 
 Starting from version 3.4.0, the Sharetribe Web Template supports
 updating the marketplace currency through assets in
-[Console > Build > General > Localization](https://console.sharetribe.com/general/localization).
+[Console > Build > General > Localization](https://console.sharetribe.com/a/general/localization).
 Console allows Stripe-supported currencies, so if you want some other
 currency, you will need to follow the steps in this guide.
 

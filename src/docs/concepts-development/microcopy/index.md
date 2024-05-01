@@ -1,7 +1,7 @@
 ---
 title: Marketplace texts in Sharetribe
 slug: marketplace-texts
-updated: 2023-10-24
+updated: 2024-05-01
 category: concepts-content-management
 ingress:
   This article introduces marketplace texts in Sharetribe and how they
@@ -14,7 +14,7 @@ marketplace's dynamic pages – button labels, error messages, and help
 texts, for example. Modifying marketplace texts to match your
 marketplace's theme and tone of voice is a key task in customizing any
 marketplace.
-[Read more about marketplace texts](https://www.sharetribe.com/help/en/collections/6265229-editing-other-text-content)
+[Read more about marketplace texts](https://www.sharetribe.com/help/en/collections/8975298-editing-text-content)
 
 ## Marketplace texts in the Sharetribe Web Template
 

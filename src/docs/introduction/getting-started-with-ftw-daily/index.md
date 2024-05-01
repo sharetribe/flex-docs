@@ -1,7 +1,7 @@
 ---
 title: Getting started with Sharetribe Web Template
 slug: getting-started-with-web-template
-updated: 2023-10-24
+updated: 2024-05-01
 category: introduction-getting-started
 ingress:
   Learn how to install Sharetribe Web Template to your local development
@@ -236,7 +236,7 @@ accounts on their Stripe dashboard.
 
 **United States**<br /> If you're based in The United States, Stripe
 will need to review your platform account before you get access. See
-[this article](https://help.sharetribe.com/en/articles/2815555-apply-for-stripe-connect-review)
+[this article](https://docs.google.com/document/d/1AdGRFAxQkc_g9UP-IUtwAwo5eOAvGGOw2md-LjybR60/edit#heading=h.iln8r84fkuja)
 to learn how to apply for Stripe Connect review.
 
 **Other countries**<br /> If you are in any other country, follow these

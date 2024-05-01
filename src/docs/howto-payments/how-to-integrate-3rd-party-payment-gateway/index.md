@@ -2,7 +2,7 @@
 title:
   How to integrate a 3rd-party payment gateway with your marketplace
 slug: how-to-integrate-3rd-party-payment-gateway
-updated: 2023-10-24
+updated: 2024-05-01
 category: how-to-payments
 ingress:
   This guide describes, on a high-level, how to integrate any 3rd-party
@@ -673,7 +673,7 @@ marketplace payment flow and gave recommendations on how to integrate a
 
 ## Further reading
 
-- [Platforms quick start by Adyen][adyen-platforms-quick-start]
+- [Get Started with Platforms start by Adyen][adyen-platforms-get-started]
 - [PayPal Commerce Platform for Marketplaces and Platforms developer
   documentation][paypal-commerce-platform-docs]
 - [MANGOPAY API Documentation][mangopay-api-docs]
@@ -694,8 +694,8 @@ marketplace payment flow and gave recommendations on how to integrate a
 [mangopay-api-docs]: https://docs.mangopay.com/
 [adyen-for-platforms]:
   https://www.adyen.com/our-solution/marketplaces-and-platforms
-[adyen-platforms-quick-start]:
-  https://docs.adyen.com/platforms/quick-start
+[adyen-platforms-get-started]:
+  https://docs.adyen.com/platforms/get-started/
 [adyen-pay-by-link]:
   https://docs.adyen.com/development-resources/pci-dss-compliance-guide?tab=pay_by_link_1#online-payments
 [adyen-drop-in-or-components]:
