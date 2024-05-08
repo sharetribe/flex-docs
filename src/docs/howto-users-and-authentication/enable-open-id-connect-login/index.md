@@ -123,10 +123,60 @@ from the dropdown when creating a new client.
 OpenID Connect login flow can be added to Sharetribe Web Template in
 multiple ways. One good starting point is to take a look at OpenID
 Connect implementations in
-[the Passport.js strategies](http://www.passportjs.org). Keep in mind
-that you should get a hold of the ID token that is returned from the
-identity provider so that you can pass it along to Sharetribe's
-[`/auth/auth_with_idp`](https://www.sharetribe.com/api-reference/authentication.html#issuing-tokens-with-an-identity-provider)
+[the Passport.js strategies](http://www.passportjs.org). We also
+recommend using the default
+[facebook.js](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js)
 and
-[`current_user/create_with_idp`](https://www.sharetribe.com/api-reference/marketplace.html#create-user-with-an-identity-provider)
-endpoints.
+[google.js](https://github.com/sharetribe/web-template/blob/main/server/api/auth/google.js)
+files as a basis for your modifications.
+
+On a high level, you can follow these steps to get started with your
+integration.
+
+1. Replicate either
+   [facebook.js](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js)
+   or
+   [google.js](https://github.com/sharetribe/web-template/blob/main/server/api/auth/google.js)
+   and rename to point to the identity provider you are working with.
+
+2. Replace the
+   [passport module](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js#L2)
+   in your new file with one that corresponds to your identity provider.
+   Update the
+   [strategy options](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js#L22-L28)
+   to correspond to the new passport module's documentation.
+
+3. Add your identity provider credentials and Sharetribe SSO client
+   credentials in your `.env` file, and then update the necessary
+   credentials
+   [in your new file](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js#L8-L9)
+   and in the
+   [createWithIdp.js file](https://github.com/sharetribe/web-template/blob/main/server/api/auth/createUserWithIdp.js#L12-L16).
+   Remember to update the
+   [identity provider selection logic](https://github.com/sharetribe/web-template/blob/main/server/api/auth/createUserWithIdp.js#L49-L50).
+
+4. Import your new file in
+   [server/apiRouter.js](https://github.com/sharetribe/web-template/blob/main/server/apiRouter.js#L21)
+   and create the
+   [callback endpoints](https://github.com/sharetribe/web-template/blob/main/server/apiRouter.js#L65-L71)
+   for the integration. Add the
+   `[your domain]/api/auth/[service]/callback` address to your identity
+   provider's allowed callback URLs.
+
+5. Add the
+   [login buttons](https://github.com/sharetribe/web-template/blob/main/src/containers/AuthenticationPage/AuthenticationPage.js#L60)
+   for your service.
+
+6. Update the
+   [verifyCallback function](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js#L45-L61)
+   in your new file to parse the details from the parameters coming into
+   the callback. This is easiest to do by logging each parameter that
+   comes into the callback, renaming them accordingly, and then parsing
+   the necessary details from the correct parameters. At this point, you
+   need to get a hold of the ID token that is returned from the identity
+   provider, so that you can pass it along to the `done` function, and
+   eventually to Sharetribe's
+   [`/auth/auth_with_idp`](https://www.sharetribe.com/api-reference/authentication.html#issuing-tokens-with-an-identity-provider)
+   and
+   [`current_user/create_with_idp`](https://www.sharetribe.com/api-reference/marketplace.html#create-user-with-an-identity-provider)
+   endpoints.
