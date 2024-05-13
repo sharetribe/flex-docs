@@ -64,7 +64,7 @@ e.g.
     signup: { url: '/signup' },
     login: { url: '/login' },
     search: { url: '/s' },
-+   searchMountainBikes: { url: '/s?pub_category=mountainBike' }
++   searchMountainBikes: { url: '/s?pub_categoryLevel1=mountainBike' }
   };
 ```
 

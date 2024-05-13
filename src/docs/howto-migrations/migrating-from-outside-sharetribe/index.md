@@ -307,7 +307,7 @@ Example syntax:
                       :location #im/location [23.12 21.21]
                       :price #im/money [12.12M "EUR"]
                       :currentStock 5
-                      :publicData {:category "rock"
+                      :publicData {:categoryLevel1 "rock"
                                    :amenities ["sauna" "pool"]}
                       :author #im/ref :user/john}]
 ```
@@ -609,7 +609,7 @@ ids and aliases.
                       :location #im/location [23.12 21.21]
                       :price #im/money [12.12M "EUR"]
                       :currentStock 5
-                      :publicData {:category "rock"
+                      :publicData {:categoryLevel1 "rock"
                                    :amenities ["sauna" "pool"]}
                       :author #im/ref :user/john}]
 

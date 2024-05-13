@@ -64,7 +64,7 @@ just skips those values.
 
 | Type       | Cardinality | Example data                                                                                     | Example query                                                                  |
 | ---------- | ----------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| enum       | one         | `category: "electric-bikes"`                                                                     | `pub_category=electric-bikes,city-bikes`                                       |
+| enum       | one         | `condition: "new"`                                                                               | `pub_condition=new,used`                                                       |
 | multi-enum | many        | `accessories: ["bell", "lights"]`                                                                | `pub_accessories=has_all:bell,lights` or `pub_accessories=has_any:bell,lights` |
 | boolean    | one         | `hasPannierRack: true`                                                                           | `pub_hasPannierRack=true`                                                      |
 | long       | one         | `manufactureYear: 2021`                                                                          | `pub_manufactureYear=2020,2023`                                                |
@@ -92,10 +92,10 @@ You can provide multiple values in the query parameter by separating
 those with a comma. The matching behavior is different for different
 schema types.
 
-With the `enum` type like the category above, when you query
-`pub_category=electric-bikes,city-bikes`, you will match listings with
-either "electric-bikes" OR "city-bikes" as the category. With the
-`multi-enum`, you can control the matching mode explicitly. The query
+With the `enum` type like the one above, when you query
+`pub_condition=used,new`, you will match listings with either "used" OR
+"new" as the condition. With the `multi-enum`, you can control the
+matching mode explicitly. The query
 `pub_accessories=has_all:bell,lights` will match listings with "bell"
 AND "lights" in the accessories whereas the query
 `pub_accessories=has_any:bell,lights` will match listings with either
@@ -151,14 +151,14 @@ want to only show one type of listing at a time on the search page. We
 will create a search schema for the public data attribute `listingType`
 to make this kind of filtering possible.
 
-Our marketplace has one Console-created listing field, `category`. Let's
-first see how that search schema looks:
+Our marketplace has one Console-created listing field, `condition`.
+Let's first see how that search schema looks:
 
 ```
 $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope   Key       Type   Default value   Doc
-listing      public  category  enum                   A listing field defined in Console. Can not be edited with the CLI.
+listing      public  condition  enum                   A listing field defined in Console. Can not be edited with the CLI.
 
 ```
 
@@ -175,7 +175,7 @@ created one:
 $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope   Key          Type   Default value   Doc
-listing      public  category     enum                   A listing field defined in Console. Can not be edited with the CLI.
+listing      public  condition     enum                   A listing field defined in Console. Can not be edited with the CLI.
 listing      public  listingType  enum
 ```
 
@@ -228,7 +228,7 @@ the previous step and the new user profile schema:
 $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key          Type   Default value   Doc
-listing      public     category     enum                   A listing field defined in Console. Can not be edited with the CLI.
+listing      public     condition     enum                   A listing field defined in Console. Can not be edited with the CLI.
 listing      public     listingType  enum
 userProfile  protected  age          long
 ```
@@ -264,7 +264,7 @@ $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key          Type     Default value   Doc
 listing      metadata   isPromoted   boolean  false
-listing      public     category     enum                     A listing field defined in Console. Can not be edited with the CLI.
+listing      public     condition     enum                     A listing field defined in Console. Can not be edited with the CLI.
 listing      public     listingType  enum
 userProfile  protected  age          long
 ```
@@ -274,7 +274,7 @@ userProfile  protected  age          long
 In this guide, we used Sharetribe CLI to define search schemas for our
 marketplace. We also saw how schemas defined through Sharetribe Console
 and Sharetribe CLI interact. We used the public data attributes
-`category` and `listingType` as examples. In addition, we looked at
+`condition` and `listingType` as examples. In addition, we looked at
 adding user search schemas for Integration API as well as adding a
 listing schema with a default value.
 

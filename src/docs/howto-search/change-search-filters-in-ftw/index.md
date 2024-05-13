@@ -35,8 +35,8 @@ _SelectSingleFilter_ and _SelectMultipleFilter_ can be used with
 extended data. The _SelectSingleFilter_ can be used to filter out
 listings with only one string value in a related public data field. For
 instance, a listing's publicData attribute could contain an attribute
-`category: 'city-bikes'`. The related Marketplace API listing query
-could then be made with the query parameter `pub_category=city-bikes`.
+`condition: 'new'`. The related Marketplace API listing query could then
+be made with the query parameter `pub_condition=new`.
 
 The _SelectMultipleFilter_, on the other hand, can take multiple values
 for a single search parameter. In this case, a listing entity could
