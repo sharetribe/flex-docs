@@ -19,8 +19,9 @@ user resource.
 <info>
 
 User public data fields can be configured in Console using
-[assets](/references/assets/). Starting from release [v5.0.0](https://github.com/sharetribe/web-template/releases/tag/v5.0.0), the
-Sharetribe Web Template has the capability to read the asset-based
+[assets](/references/assets/). Starting from release
+[v5.0.0](https://github.com/sharetribe/web-template/releases/tag/v5.0.0),
+the Sharetribe Web Template has the capability to read the asset-based
 public data fields and display the necessary components when editing and
 viewing a user's profile.
 

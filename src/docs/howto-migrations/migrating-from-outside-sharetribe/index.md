@@ -36,13 +36,13 @@ You should request a migration when:
 
 You will work with Sharetribe’s engineers to complete your migration. If
 you're planning to migrate your data to Sharetribe, you should always
-start the process with a test migration to your dev environment, and
-ensure everything looks correct there, before doing a live migration. If
-you want to initiate the (test or live) migration process, you should
-email hello@sharetribe.com with the subject “Migrating from outside
-Sharetribe”. Please include your Sharetribe organization (your
-organization is displayed in your
-[Console](https://console.sharetribe.com/) in the top right corner).
+start the process with a test migration to your Dev or Test environment,
+and ensure everything looks correct there, before doing a live
+migration. If you want to initiate the test migration process, you
+should email hello@sharetribe.com with the subject “Migrating from
+outside Sharetribe”. Please include your Sharetribe marketplace ID from
+your [Console](https://console.sharetribe.com/) > Build > General >
+Marketplace name.
 
 ## Intermediary data
 
