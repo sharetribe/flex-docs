@@ -21,19 +21,19 @@ option in your Sharetribe marketplace.
 <info>
 
 Apple Sign-in has several features that resemble the OpenID Connect
-specification. However, the Apple Sign-in implementation has some
-differences to the Open ID Connect spec that render it not fully
-compliant.
+specification. However, it is not explicitly stated to be OpenID Connect
+compliant. To the knowledge of our team, the
+[Apple Sign-in token](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api/authenticating_users_with_sign_in_with_apple#3383773)
+should be compliant with the Sharetribe back-end at the time of this
+writing (2024-05), but you will need to conduct your own testing to
+verify this.
 
-One feature that our Sharetribe developers have discovered is that the
-<i>email_verified</i> claim is returned as string from Apple, whereas
-the
-<a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">Open
-ID Connect spec</a> determines that it needs to be boolean. This means
-that simply integrating Apple Sign-in as an Open ID Connect IdP in
-Sharetribe is not possible. Instead, you will need to use the
-<a href="/docs/how-to/setup-open-id-connect-proxy/">OIDC proxy</a>
-approach to integrate Apple Sign-in into your marketplace.
+Apple Sign-in also requires developers to set up a
+[private email relay service](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/communicating_using_the_private_email_relay_service)
+for Apple users who do not want to share their email address with the
+service. If you do integrate Apple Sign-in, it is important that you
+provide Sharetribe with a valid email address even if the user requests
+to keep their own address private.
 
 </info>
 
