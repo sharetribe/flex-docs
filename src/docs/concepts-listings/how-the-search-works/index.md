@@ -23,8 +23,7 @@ find listings based on multiple criteria:
 - **Free text.** The search can be used to find listings that have a
   [certain keyword](#keyword-search) provided by the user. The search
   can find from listing title and description. You can also choose to
-  index some public data fields (like listing category) so the search
-  finds from them as well.
+  index some public data fields so the search finds from them as well.
 - **Price.** It's possible to filter out listings with too high or too
   low price.
   - e.g. show only listings between $20 and $100:
@@ -42,10 +41,9 @@ find listings based on multiple criteria:
     `sdk.listings.query({ minStock: 1 })`
 - **Custom filter: any value.** Any number of custom filters can be
   added. "Any value" filters out listings that don't have the given
-  value (or any of a set of given values) in their public data. A
-  typical use case is filtering by category or subcategory.
-  - e.g. show only listings from public data category 'used':
-    `sdk.listings.query({ pub_category: "used" })`
+  value (or any of a set of given values) in their public data.
+  - e.g. show only listings from public data with condition 'used':
+    `sdk.listings.query({ pub_condition: "used" })`
 - **Custom filter: all values**. Filters out listings that don't have
   all values in a given set. A typical use case is choosing among
   "amenities": an apartment must have both balcony and floor heating in
