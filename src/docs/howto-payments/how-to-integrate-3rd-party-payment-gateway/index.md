@@ -673,7 +673,8 @@ marketplace payment flow and gave recommendations on how to integrate a
 
 ## Further reading
 
-- [Get Started with Platforms start by Adyen][adyen-platforms-get-started]
+- [Get Started with Platforms start by
+  Adyen][adyen-platforms-get-started]
 - [PayPal Commerce Platform for Marketplaces and Platforms developer
   documentation][paypal-commerce-platform-docs]
 - [MANGOPAY API Documentation][mangopay-api-docs]

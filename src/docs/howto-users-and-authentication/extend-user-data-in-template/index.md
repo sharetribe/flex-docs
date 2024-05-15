@@ -15,8 +15,11 @@ the data gets added, and how it can then be presented.
 
 Adding new attributes to the data model relies on
 [extended data](/references/extended-data/). In Sharetribe Web Template,
-starting from release [v5.0.0](https://github.com/sharetribe/web-template/releases/tag/v5.0.0), top-level user extended data can be
-configured in the [configUser.js](https://github.com/sharetribe/web-template/blob/main/src/config/configUser.js) file.
+starting from release
+[v5.0.0](https://github.com/sharetribe/web-template/releases/tag/v5.0.0),
+top-level user extended data can be configured in the
+[configUser.js](https://github.com/sharetribe/web-template/blob/main/src/config/configUser.js)
+file.
 
 ```shell
 └── src
