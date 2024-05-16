@@ -18,25 +18,6 @@ another service. This how-to guide assumes that you already have an
 OpenID Connect solution available and intend to use that as a login
 option in your Sharetribe marketplace.
 
-<info>
-
-Apple Sign-in has several features that resemble the OpenID Connect
-specification. However, it is not explicitly stated to be OpenID Connect
-compliant. To the knowledge of our team, the
-[Apple Sign-in token](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api/authenticating_users_with_sign_in_with_apple#3383773)
-should be compliant with the Sharetribe back-end at the time of this
-writing (2024-05), but you will need to conduct your own testing to
-verify this.
-
-Apple Sign-in also requires developers to set up a
-[private email relay service](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/communicating_using_the_private_email_relay_service)
-for Apple users who do not want to share their email address with the
-service. If you do integrate Apple Sign-in, it is important that you
-provide Sharetribe with a valid email address even if the user requests
-to keep their own address private.
-
-</info>
-
 ## Identity provider requirements
 
 ### Discovery document and JSON Web keys
@@ -82,6 +63,7 @@ identity provider client in Sharetribe Console.
 4. Fill in information regarding your OpenID Connect identity provider.
    This is the service that your users authenticate to in order to log
    into Sharetribe.
+
    - **Identity provider name**: A descriptive name for the identity
      provider that helps you to distinguish it from other providers.
    - **Identity provider ID**: IdP ID that is passed as a parameter to
@@ -91,13 +73,6 @@ identity provider client in Sharetribe Console.
      _issuer location_ of the identity provider. It is used to resolve
      ID token signing keys used by the identity provider. See below
      _Discovery document and JSON Web keys_ for more details.
-
-<info>
-Auth0 requires identity provider URL with a trailing slash, but Sharetribe Console
-does not currently allow adding trailing slashes. If you are adding an Auth0 
-integration, add the URL without the trailing slash, and reach out to Sharetribe 
-Support so we can manually fix the formatting.
-</info>
 
 5. Fill in the Client ID. This is the identifier of your Sharetribe
    marketplace at you identity provider. It will be the _audience_ of
@@ -180,3 +155,47 @@ integration.
    and
    [`current_user/create_with_idp`](https://www.sharetribe.com/api-reference/marketplace.html#create-user-with-an-identity-provider)
    endpoints.
+
+## Identity provider specific information
+
+### Apple Sign-in
+
+Apple Sign-in has several features that resemble the OpenID Connect
+specification. However, it is not explicitly stated to be OpenID Connect
+compliant. To the knowledge of our team, the
+[Apple Sign-in token](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api/authenticating_users_with_sign_in_with_apple#3383773)
+should be compliant with the Sharetribe back-end at the time of this
+writing (2024-05), but you will need to conduct your own testing to
+verify this.
+
+Apple Sign-in also requires developers to set up a
+[private email relay service](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/communicating_using_the_private_email_relay_service)
+for Apple users who do not want to share their email address with the
+service. If you do integrate Apple Sign-in, it is important that you
+provide Sharetribe with a valid email address even if the user requests
+to keep their own address private.
+
+### Auth0
+
+Auth0 requires identity provider URL with a trailing slash, but
+Sharetribe Console does not currently allow adding trailing slashes. If
+you are adding an Auth0 integration, add the URL without the trailing
+slash, and reach out to Sharetribe Support so we can manually fix the
+formatting.
+
+### LinkedIn
+
+Sign In with LinkedIn was updated to support Open ID Connect in
+August 2023. The corresponding Passport strategy has been updated to
+version 3.0.0 support Open ID Connect in the
+[Github repository](https://github.com/auth0/passport-linkedin-oauth2).
+However, at the time of this writing, only version 2.0.0 seems to be
+available through _npm_ and _yarn_ package managers. This means that to
+use version 3.0.0 in your integration, you will need to install the
+package directly from the Github repository:
+
+```shell
+## yarn add <git remote url>#<branch/commit/tag>
+yarn add https://github.com/auth0/passport-linkedin-oauth2#v3.0.0
+
+```
