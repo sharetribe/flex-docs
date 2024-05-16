@@ -96,6 +96,15 @@ marketplace ID, URL and name. Here, you can also configure an outgoing
 email address, where all notifications to your marketplace’s users will
 be sent from.
 
+<info>
+
+Note that for marketplaces in custom code mode, marketplace name is not
+defined through Console. Instead, you need to define it in the correct
+[environment variable](/template/template-env/),
+`REACT_APP_MARKETPLACE_NAME`.
+
+</info>
+
 **Content** is where you can modify your marketplace content and
 configurations. You can
 [modify your marketplace and email texts](/concepts/marketplace-texts/),

@@ -73,7 +73,8 @@ Then add the following environment variables as Config Vars:
 
 - `REACT_APP_MARKETPLACE_NAME` Marketplace name in self-hosted
   marketplaces is set through environment variables. If not set, this
-  defaults to 'Biketribe' in src/config/configDefault.js.
+  defaults to 'Biketribe', or whatever value you have set in
+  src/config/configDefault.js.
 
 - `NODE_ENV`
 
