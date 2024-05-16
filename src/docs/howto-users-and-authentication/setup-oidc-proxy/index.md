@@ -248,7 +248,9 @@ Set these as the client ID and client secret of your Github app.
 The RSA key pair we created in the previous section
 
 The keys are multi-line strings but Heroku is fine with that so you can
-paste the keys in config vars as they are.
+paste the keys in config vars as they are. Make sure to include the
+`-----BEGIN ... KEY-----` and `-----END ... KEY-----` lines in your
+environment variables, as they are a part of the key.
 
 <info>
 
@@ -280,6 +282,7 @@ to Sharetribe when a user logs in with Github. It is also used as the
 endpoint. Even though using a _kid_ value in your keys is not
 compulsory, we heavily recommend using it with your token and the JWK.
 For example, key caching in the Sharetribe API relies heavily on it.
+This value can be a random string.
 
 ### Add Passport module dependency
 
@@ -449,3 +452,39 @@ their authentication flow using Passport.js or some other method and use
 the utility functions in `api-util/idToken.js` accordingly to wrap the
 login information into an OpenID Connect ID token that can be used to
 log in to a Sharetribe marketplace.
+
+## Troubleshooting your integration
+
+If your integration is not working as you would expect, we recommend
+that you check these things:
+
+### Inspect the id token
+
+You can log the `idpToken` created with the createIdToken function, and
+then paste it to [JWT.io](https://jwt.io/) to investigate what data is
+being included in the token. Make sure that any claims you are sending
+correspond to the
+[Open ID Connect standard claims](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims).
+
+If there are claims missing, make sure that you are passing valid
+parameters
+[when creating the token in idToken.js](https://github.com/sharetribe/web-template/blob/main/server/api-util/idToken.js#L58-L63).
+
+### Make sure your .well-known endpoints are available in the correct address
+
+Check that your deployed application exposes
+**[your-marketplace-url]/.well-known/openid-configuration** and
+**[your-marketplace-url]/.well-known/jwks.json** endpoints, and that
+**[your-marketplace-url]** exactly matches the IdP URL defined for your
+identity provider client in Console
+
+### Double check your RSA key formatting
+
+Your RSA keys need to be correctly formatted in your deployment:
+
+- Include the `-----BEGIN ... KEY-----` and `-----END ... KEY-----`
+  lines in your environment variables
+- If you are passing a secret file (such as with Render), format the key
+  into a single string and replace line breaks with `\n`
+- If you are passing a multi-line environment variable (such as with
+  Heroku), copy the key with line breaks as-is.
