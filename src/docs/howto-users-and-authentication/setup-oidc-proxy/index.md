@@ -1,14 +1,14 @@
 ---
 title: How to set up OpenID Connect proxy in Sharetribe Web Template
 slug: setup-open-id-connect-proxy
-updated: 2023-10-24
+updated: 2024-05-16
 category: how-to-users-and-authentication
 ingress:
   In this guide, we'll take a look at the process of setting up OpenID
   Connect (OIDC) proxy to Sharetribe Web Template. This allows you to
   add support for identity providers that Sharetribe doesn't natively
   support. In this example, we are building the proxy implementation for
-  LinkedIn.
+  Github.
 published: true
 ---
 
@@ -26,33 +26,17 @@ Sharetribe verifies the ID token by
 
 A consequence of this is that the JSON Web Key needs to be publicly
 available. This means that the proxy setup will not work directly in
-localhost. To test out the LinkedIn login, you should e.g.
+localhost. To test out the Github login, you should e.g.
 [deploy your template changes to Render](/tutorial/deploy-to-render/).
 
-In this guide, we'll integrate LinkedIn login to Sharetribe by using
+In this guide, we'll integrate Github login to Sharetribe by using
 Sharetribe Web Template as an OIDC proxy to Sharetribe.
-
-<warning>
-
-LinkedIn has
-[adopted the Open ID Connect framework](https://www.linkedin.com/developers/news/featured-updates/openid-connect-authentication)
-for their authentication flow. Our team is investigating the
-implications of this change as it relates to authenticating towards
-Sharetribe.
-
-At the moment, you can use the guide below as an illustrative guide to
-integrating other non-OIDC authentication flows with Sharetribe.
-However, we cannot guarantee that implementing this guide will result in
-a fully functional LinkedIn login flow. We will update the contents of
-this article as our investigation progresses.
-
-</warning>
 
 The main steps to take to achieve this are:
 
-1. Create a login app in Linkedin
+1. Create a OAuth app in Github
 1. Configure a new identity provider and client in Sharetribe Console
-1. Build LinkedIn auth flow in the template
+1. Build Github auth flow in the template
 
 **If you are working with one of our legacy templates and are not sure
 whether using Open ID Connect proxy is enabled, take a look at our
@@ -78,35 +62,26 @@ at tools like [Ngrok](https://ngrok.com/) or
 [Localtunnel](https://localtunnel.github.io/www/) that allow exposing
 your local ports publicly.
 
-## Create a login app in LinkedIn
+## Create an OAuth app in Github
 
 1. Head to
-   [LinkedIn apps management page](https://www.linkedin.com/developers/apps/new).
-   A LinkedIn account is required.
-1. Click "Create app"
-1. Add app name
-1. Search the LinkedIn page of your marketplace business. If you do not
-   have a LinkedIn page, you can create one by selecting "+ Create a new
-   LinkedIn Page".
-1. Fill in the URL to the privacy policy in your marketplace.
-1. Add a logo.
-1. Check the legal agreement and you are ready to click "Create app"
-1. Navigate to the _Auth_ tab in your new app view.
-1. Add a new redirect URL:
-   `<your marketplace URL>/api/auth/linkedin/callback`. So for example,
-   `https://www.mymarketplace.com/api/auth/linkedin/callback`
-1. Make a note of the client ID and client secret. You will need these
-   values later on.
-1. Move to the _Products_ tab and add _Sign In with LinkedIn_ by
-   clicking "Select" by the product.
-1. It takes a few moments for LinkedIn to validate your app for the
-   _Sign In_ product.
+   [Github develoepr settings](https://github.com/settings/developers).
+   A Github account is required.
+1. Select "OAuth apps" in the left sidebar, and click "Register a new
+   application".
+1. Add application name and homepage URL.
+1. Add the Authorization callback URL:
+   `<your marketplace URL>/api/auth/github/callback`. So for example,
+   `https://www.mymarketplace.com/api/auth/github/callback`
+1. Click "Register application".
+1. Generate a client secret, and make a note of the client ID and client
+   secret. You will need these values later on.
 
 ## Configure a new identity provider and client in Sharetribe Console
 
 With this proxy implementation, **your Sharetribe Web Template works as
 the identity provider towards Sharetribe.** Sharetribe uses your
-template application to validate the ID token that wraps the LinkedIn
+template application to validate the ID token that wraps the Github
 login information. To enable logins in Sharetribe using the OIDC proxy,
 a corresponding identity provider and identity provider client need to
 be configured for your marketplace in Sharetribe Console. See the
@@ -114,7 +89,7 @@ be configured for your marketplace in Sharetribe Console. See the
 information on how to add a new identity provider for your marketplace.
 
 Here's some guidance for configuring your template application as a new
-identity provider and a client to be used as a proxy for LinkedIn.
+identity provider and a client to be used as a proxy for Github.
 
 ### Identity provider name and ID
 
@@ -129,8 +104,8 @@ in the Sharetribe API.
 If the intention is to use the Sharetribe Web Template to proxy login to
 multiple services, it's advised to create a distinct identity provider
 for each, and name them so that the ID indicates what is the actual
-service providing the authentication. In LinkedIn's case the IdP name
-could be "Template LinkedIn" or "Template LinkedIn Proxy".
+service providing the authentication. In Github's case the IdP name
+could be "Template Github" or "Template Github Proxy".
 
 ### Identity provider URL
 
@@ -154,15 +129,15 @@ When using Sharetribe Web Template as on OpenID Connect proxy, you are
 in charge of generating a client ID. The value can be any randomly
 generated string.
 
-## Build LinkedIn auth flow in Sharetribe Web Template
+## Build Github auth flow in Sharetribe Web Template
 
 ### Sharetribe Web Template as an OpenID Connect identity provider
 
 The Sharetribe Web Template provides a few helper functions which you
 can use as a starting point in your customization. When following this
 guide, you will not need to pay too much attention to them as the
-crucial code is provided for you in the `linkedin.js` file below, but
-it's good to be aware of them. You can find these functions in the
+crucial code is provided for you in the `github.js` file below, but it's
+good to be aware of them. You can find these functions in the
 `api-util/idToken.js` file in your server:
 
 ```shell
@@ -175,7 +150,7 @@ it's good to be aware of them. You can find these functions in the
 **`createIdToken`**
 
 Turns information fetched from a 3rd party identity provider (e.g.
-LinkedIn) info a signed JSON Web Token (JWT).
+Github) info a signed JSON Web Token (JWT).
 
 This function expects three parameters: _idpClientId_, _user_ and
 _options_.
@@ -183,7 +158,8 @@ _options_.
 - _idpClientId_ is the client id of your custom identity provider you
   have set up in Console:
 - _user_ object should contain at least _firstName_, _lastName_, _email_
-  and _emailVerified_ fields.
+  and _emailVerified_ fields. If these fields are not provided in the
+  identity provider token, the user will need to enter them manually.
 - _options_ object contains information about how the id token should be
   signed and the keys required for that. Currently, Sharetribe supports
   only RS256 signing algorithm so the _options_ object should look like
@@ -205,7 +181,7 @@ JWT signing keys are configured.
 
 A RSA public and private key pair is used to sign and validate an ID
 token that is passed from the template application to Sharetribe during
-the login/signup flow. When a user successfully logs into LinkedIn, the
+the login/signup flow. When a user successfully logs into Github, the
 template wraps the user information to an ID token that is signed with a
 private key. The corresponding public key is served by the template in
 `/.well-known/jwks.json` and it is fetched by Sharetribe when an ID
@@ -263,9 +239,9 @@ section.
 
 Add the following environment variables:
 
-`REACT_APP_LINKEDIN_CLIENT_ID` and `LINKEDIN_CLIENT_SECRET`
+`REACT_APP_GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`
 
-Set these as the client ID and client secret of your LinkedIn app.
+Set these as the client ID and client secret of your Github app.
 
 `RSA_PRIVATE_KEY` and `RSA_PUBLIC_KEY`
 
@@ -283,14 +259,14 @@ quotation marks `"` and escape line breaks with the newline character
 
 </info>
 
-`LINKEDIN_PROXY_IDP_ID`
+`GITHUB_PROXY_IDP_ID`
 
 The identifier of your identity provider that you configure to
 Sharetribe. It declares that you are using your template OpenID Connect
 proxy as an identity provider. Use the "IdP ID" value of an identity
 provider client in Console for this variable.
 
-`LINKEDIN_PROXY_CLIENT_ID`
+`GITHUB_PROXY_CLIENT_ID`
 
 The client ID of your identity provider client that you configure to
 Sharetribe. Use the "Client ID" value of an identity provider client in
@@ -299,7 +275,7 @@ Console for this variable.
 `KEY_ID`
 
 The value will be used as the `kid` header in ID tokens that are passed
-to Sharetribe when a user logs in with LinkedIn. It is also used as the
+to Sharetribe when a user logs in with Github. It is also used as the
 `kid` attribute of the JSON Web key that the proxy serves in an
 endpoint. Even though using a _kid_ value in your keys is not
 compulsory, we heavily recommend using it with your token and the JWK.
@@ -310,22 +286,22 @@ For example, key caching in the Sharetribe API relies heavily on it.
 We are using [Passport.js](http://www.passportjs.org) library for
 handling the authentication with different identity providers like with
 Facebook and Google. The library offers multiple authentication
-strategies and there's also a strategy for Linkedin which we are going
-to use in this example.
+strategies and there's also
+[a strategy for Github](https://www.passportjs.org/packages/passport-github2/),
+which we are going to use in this example.
 
-Add the following entry to the `dependencies` map in `package.json` and
-run `yarn install`:
+Run the following command in your terminal to install the package:
 
-```js
-"passport-linkedin-oauth2": "^2.0.0",
+```shell
+yarn add passport-github2
 ```
 
-### Implement the LinkedIn login flow in Sharetribe Web Template backend
+### Implement the Github login flow in Sharetribe Web Template backend
 
 Next, let's add a new file to the template that handles authentication
-to LinkedIn. You can find the complete file here:
+to Github. You can find the complete file here:
 
-- [linkedin.js](/tutorial-assets/linkedin.js)
+- [github.js](/tutorial-assets/github.js)
 
 Place the file in `server/api/auth` folder inside the template:
 
@@ -333,13 +309,13 @@ Place the file in `server/api/auth` folder inside the template:
 └── server
     └── api
         └── auth
-            └── linkedin.js
+            └── github.js
 ```
 
-The biggest difference between LinkedIn login and e.g. Facebook login
-which has first-class support in Sharetribe is that we need to use
+The biggest difference between Github login and e.g. Facebook login,
+which has first-class support in Sharetribe, is that we need to use
 _createIdToken_ helper function to create the id token from the
-information we fetched from LinkedIn. This new id token is then passed
+information we fetched from Github. This new id token is then passed
 forward to Sharetribe as _idpToken_ parameter.
 
 ```js
@@ -361,27 +337,27 @@ forward to Sharetribe as _idpToken_ parameter.
 ```
 
 Now we'll need to expose login endpoints that invoke functions provided
-by the `linkedin.js` file.
+by the `github.js` file.
 
 In `server/apiRouter.js`, add the following import:
 
 ```js
 const {
-  authenticateLinkedin,
-  authenticateLinkedinCallback,
-} = require('./api/auth/linkedin');
+  authenticateGithub,
+  authenticateGithubCallback,
+} = require('./api/auth/github');
 ```
 
-And after all the `router.*` invocations, add LinkedIn login routes:
+And after all the `router.*` invocations, add Github login routes:
 
 ```js
-// This endpoint is called when the user wants to initiate authentication with Linkedin
-router.get('/auth/linkedin', authenticateLinkedin);
+// This endpoint is called when the user wants to initiate authentication with Github
+router.get('/auth/github', authenticateGithub);
 
 // This is the route for callback URL the user is redirected after authenticating
-// with Linkedin. In this route a Passport.js custom callback is used for calling
+// with Github. In this route a Passport.js custom callback is used for calling
 // loginWithIdp endpoint in Sharetribe API to authenticate user to Sharetribe
-router.get('/auth/linkedin/callback', authenticateLinkedinCallback);
+router.get('/auth/github/callback', authenticateGithubCallback);
 ```
 
 Finally, on the server side we need to update
@@ -390,8 +366,8 @@ is passed to the Sharetribe API. In the beginning of the file resolve
 the following environment variables:
 
 ```js
-const LINKEDIN_PROXY_CLIENT_ID = process.env.LINKEDIN_PROXY_CLIENT_ID;
-const LINKEDIN_PROXY_IDP_ID = process.env.LINKEDIN_PROXY_IDP_ID;
+const GITHUB_PROXY_CLIENT_ID = process.env.GITHUB_PROXY_CLIENT_ID;
+const GITHUB_PROXY_IDP_ID = process.env.GITHUB_PROXY_IDP_ID;
 ```
 
 And update the logic that resolves the `idpClientId` variable:
@@ -402,15 +378,15 @@ const idpClientId =
     ? FACBOOK_APP_ID
     : idpId === GOOGLE_IDP_ID
     ? GOOGLE_CLIENT_ID
-    : idpId === LINKEDIN_PROXY_IDP_ID
-    ? LINKEDIN_PROXY_CLIENT_ID
+    : idpId === GITHUB_PROXY_IDP_ID
+    ? GITHUB_PROXY_CLIENT_ID
     : null;
 ```
 
-### Add a LinkedIn login button to Sharetribe Web Template
+### Add a Github login button to Sharetribe Web Template
 
 Once we have added the authentication endpoints to the template server,
-we need to add a button for LinkedIn login to the AuthenticationPage.
+we need to add a button for Github login to the AuthenticationPage.
 
 ```shell
 └── src
@@ -419,12 +395,12 @@ we need to add a button for LinkedIn login to the AuthenticationPage.
 ```
 
 We can once more use the existing Google and Facebook login code as an
-example an create a similar _authWithLinkedin_ function, which adds the
+example an create a similar _authWithGithub_ function, which adds the
 default URL parameters to the API call and then redirects user to the
 authentication endpoint.
 
 ```js
-const authWithLinkedin = () => {
+const authWithGithub = () => {
   const defaultRoutes = getDefaultRoutes();
   const {
     baseUrl,
@@ -432,30 +408,30 @@ const authWithLinkedin = () => {
     defaultReturnParam,
     defaultConfirmParam,
   } = defaultRoutes;
-  window.location.href = `${baseUrl}/api/auth/linkedin?${fromParam}${defaultReturnParam}${defaultConfirmParam}`;
+  window.location.href = `${baseUrl}/api/auth/github?${fromParam}${defaultReturnParam}${defaultConfirmParam}`;
 };
 ```
 
 Then we can use the _SocialLoginButton_ component to show the option to
-log in with LinkedIn to the users. Remember to add the LinkedIn related
-marketplace text keys as well as LinkedIn logo too! Usually, different
+log in with Github to the users. Remember to add the Github related
+marketplace text keys as well as Github logo too! Usually, different
 identity providers have brand centers where you can find the logos and
-guidelines how to use them. You can download LinkedIn logo from
-[LinkedIn brand center](https://brand.linkedin.com/downloads).
+guidelines how to use them. You can download the Github logo from
+[Github's site](https://github.com/logos).
 
 ```js
-const linkedinButtonText = isLogin ? (
-  <FormattedMessage id="AuthenticationPage.loginWithLinkedIn" />
+const githubButtonText = isLogin ? (
+  <FormattedMessage id="AuthenticationPage.loginWithGithub" />
 ) : (
-  <FormattedMessage id="AuthenticationPage.signupWithLinkedIn" />
+  <FormattedMessage id="AuthenticationPage.signupWithGithub" />
 );
 ```
 
 ```js
 <div className={css.socialButtonWrapper}>
-  <SocialLoginButton onClick={() => authWithLinkedin()}>
-    <span className={css.buttonIcon}>{LinkedinLogo}</span>
-    {linkedinButtonText}
+  <SocialLoginButton onClick={() => authWithGithub()}>
+    <span className={css.buttonIcon}>{GithubLogo}</span>
+    {githubButtonText}
   </SocialLoginButton>
 </div>
 ```
