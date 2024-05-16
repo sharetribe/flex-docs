@@ -195,7 +195,9 @@ application.
   A more fine-grained env definition than `NODE_ENV`. For example, this
   sends environment info to the logging service Sentry. (If you have
   enabled it with `REACT_APP_SENTRY_DSN`).<br/> For this setup, use
-  value: 'development'
+  value: 'production' if you are using HTTP basic access authentication,
+  and value 'development' otherwise – using 'development' here disables
+  the HTTP basic access authentication.
 
 - `REACT_APP_SHARETRIBE_USING_SSL`
 
