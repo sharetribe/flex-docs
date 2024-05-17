@@ -1,7 +1,7 @@
 ---
 title: Styling and CSS
 slug: how-to-customize-template-styles
-updated: 2023-10-24
+updated: 2024-05-16
 category: template-styling
 ingress:
   This guide describes the CSS architecture used in the Sharetribe Web
@@ -103,42 +103,29 @@ variables:
 ```css
 /* ================ Colors ================ */
 
---marketplaceColor: #c0392b;
---marketplaceColorLight: #ff4c38;
---marketplaceColorDark: #8c291e;
-
-/* Used with inline CSS SVGs */
---marketplaceColorEncoded: %23c0392b;
-
 --colorSuccess: #2ecc71;
 --colorSuccessDark: #239954;
+--colorSuccessLight: #f0fff6;
 --colorFail: #ff0000;
+--colorFailLight: #fff0f0;
 --colorAttention: #ffaa00;
-
---matterColorDark: #000000;
---matterColor: #4a4a4a;
---matterColorAnti: #b2b2b2;
---matterColorNegative: #e7e7e7;
---matterColorBright: #fcfcfc;
---matterColorLight: #ffffff;
+--colorAttentionLight: #fff7f0;
+--colorBannedLight: var(--marketplaceColorLight);
+--colorBannedDark: var(--marketplaceColor);
 ```
 
-Changing `--marketplaceColor: #c0392b;` to `--marketplaceColor: tomato;`
-will change the default marketplace color to tomato color. (It's a
-certain kind of red color.)
-
-The `--marketplaceColorEncoded` variable holds the same value as
-`--marketplaceColor` but with the _#_ URL encoded. This value can be
-used to maintain a consistent color scheme with inline SVG icons.
-
 `--colorSuccess` (green) is used in form inputs for showing that the
-input value is valid. Sometimes, submit buttons (`<PrimaryButton>`) are
-also using that color to highlight the fact that user has entered valid
-information to the form at hand.
+input value is valid.
 
 Similarly `--colorFail` is used to style errors and `--colorAttention`
 is used to draw user's attention to certain UI components (e.g. required
-form inputs, or important info in Inbox)
+form inputs, or important info in Inbox).
+
+It is good to note that there are also colors that are defined in the
+Console, and fetched to the template in the hosted asset
+`/design/branding.json`. These include `--marketplaceColor` and
+`--colorPrimaryButton`. Any values set in Console override the values
+defined in the template by default.
 
 Our greyscale colors (for borders and background colors) are named with
 prefix _"matter"_.
