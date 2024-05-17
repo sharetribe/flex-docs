@@ -56,11 +56,12 @@ const sortingArrayReferences = [
 
 const sortingArrayPaymentCookbooks = [
   'how-to-customize-pricing',
-  'set-up-and-use-stripe',
   'provider-onboarding-and-identity-verification',
   'enable-payment-intents',
   'save-payment-card',
   'stripe-connect-platform-review',
+  'add-new-stripe-countries',
+  'how-to-integrate-3rd-party-payment-gateway',
   'removing-stripe',
 ];
 

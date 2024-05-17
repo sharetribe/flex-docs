@@ -1189,6 +1189,11 @@
     "source": "/docs/concepts/console-manage-overview/",
     "destination": "https://www.sharetribe.com/help/en/collections/8975376-manage",
     "permanent": true
+  },
+  {    
+    "source": "/docs/how-to/set-up-and-use-stripe/",
+    "destination": "/docs/how-to/add-new-stripe-countries",
+    "permanent": true
   }
 ]
 }
