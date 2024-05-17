@@ -184,33 +184,33 @@ This will open the page in your **Marketplace URL** address.
 
 ### Publishing pages from test to live
 
-When you first take your marketplace live, your live marketplace
-environment is created as a duplicate of your test marketplace. This
-includes all your page assets.
+When you first take your marketplace live, your Live marketplace
+environment is created as a duplicate of your Test (or Dev) marketplace.
+This includes all your page assets.
 
 You can also modify your marketplace content pages after going live. You
-will still need to make and test the changes in your test environment.
+will still need to make and test the changes in your Test environment.
 Then, after you are happy with all your page changes, you can click the
-"Copy to live" button.
+"Copy to..." button.
 
 After clicking the button, you will see a modal detailing which pages
 have been modified, created, and removed compared to your current live
 pages. You can check the boxes of the pages you want to copy to Live.
 This will override the current live content of those pages with the new
-content from the test environment.
+content from the Test environment.
 
 <warning>
 
 Once you have copied a page to Live, you cannot return to the previous
 live version of that page. Take extra good care to double check your
-changes in test environment before copying anything to Live!
+changes in Test environment before copying anything to Live!
 
 </warning>
 
-It can take up to five minutes for your changes to update from test to
-live environment.
+It can take up to five minutes for your changes to update from Test to
+Live environment.
 
-You can also copy your asset changes to the dev environment.
+You can also copy your asset changes to the Dev environment.
 
 ## Content layout
 

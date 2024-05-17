@@ -23,23 +23,24 @@ It is important to understand that Console is a way of viewing and
 manipulating the data on your marketplace. Each marketplace is
 specifically related to an environment. Each organization can have
 multiple environments. By default, there are three environments to
-consider: test, development (dev) and live. Each environment has its own
-data and therefore the information that you can view and manipulate
+consider: Test, Development (Dev) and Live. Each environment has its own
+data, and therefore the information that you can view and manipulate
 through Console will be exclusively related to the environment that you
-are working with. This means that the development environment’s data in
-Console is completely separate from the data in the live environment’s
+are working with. This means that the Development environment data in
+Console is completely separate from the data in the Live environment’s
 Console.
 
-When you open your account, you have immediate access to the test and
-development environments within the organization. Eventually, when you
-are ready to launch your marketplace, you can request a live environment
-setup.
+When you open your account, you have immediate access to the Test
+environment within the organization, and you can enable a Development
+environment when you want to start customizing your marketplace with
+code. Eventually, when you are ready to launch your marketplace, you can
+request a Live environment setup.
 
 When you interact and create new users, listings, and transactions with
 your [test application](https://console.sharetribe.com), you will see
-the data in the test environment. While you cannot modify the code of
-the test environment, you can start playing around with it and see the
-changes you make reflected in the test environment’s Console. You can
+the data in the Test environment. While you cannot modify the code of
+the Test environment, you can start playing around with it and see the
+changes you make reflected in the Test environment’s Console. You can
 create users, new listings, and even transactions and reviews. You can
 also configure your marketplace without code.
 
@@ -61,7 +62,7 @@ In the Home section, you find information about working with Sharetribe.
 You can find links to various resources that will help you understand,
 test, and build your custom marketplace. These include:
 
-- Your setup checklist for configuring your test environment marketplace
+- Your setup checklist for configuring your Test environment marketplace
   without code
 - Links to further resources to learn more about setting up your
   marketplace

@@ -146,7 +146,7 @@ correctly, you are good to go!
 ## Summary
 
 In this article, we went through the setup to configure a custom email
-address for your live marketplace. It is important to get all the steps
+address for your Live marketplace. It is important to get all the steps
 done and validated to ensure that emails are working reliably.
 
 If you have any questions or need a more advanced setup, you can

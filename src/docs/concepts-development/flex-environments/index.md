@@ -28,7 +28,7 @@ communicate which Sharetribe marketplace you are looking at in Console.
 **Organization**: An entity that is created when you first create an
 account. This is where you can invite other admin users to work with. An
 organization can include multiple environments for different purposes,
-but it can only include one live environment.
+but it can only include one Live environment.
 
 **Environment**: A marketplace instance within your organization which
 can be created for different purposes. There are three different types
@@ -57,15 +57,19 @@ up correctly when published to Live. Copying no-code assets to Dev makes
 it easy for developers to be working on the correct configurations in
 Dev.
 
-Note that you should not onboard real users or listings to Test, as they
-cannot be moved into Live.
+<warning>
+
+Do not onboard real users or listings to Test, as they cannot be moved
+into Live.
+
+</warning>
 
 ### Dev environment
 
 The dev environment is for development purposes. This is where building
 your marketplace happens and where you can explore the build
 functionalities in peace by using test users and
-[test credit cards with Stripe](/how-to/set-up-and-use-stripe/).
+[test credit cards with Stripe](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace).
 
 Whenever the development team wants to publish their code changes, they
 will fully test and review them in Dev first, and then copy them to Test
