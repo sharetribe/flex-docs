@@ -30,43 +30,14 @@ Enabling Google login consists of three main steps:
 
 ## Configure the Google Sign-In Project
 
-_Note, that Google's interface is subject to change. If you encounter
-any inconsistencies with this step-by-step guide, please contact
-Sharetribe's Support team and we will be happy to assist._
-
-First thing to do is to create a Google Sign-In project for your
-marketplace by following these steps:
-
-### Create and set up a Google Sign-In Project
-
-1. Go to https://console.developers.google.com/
-2. Log in with your Google account (you may have to register as a
-   developer if you don't have a Google developer account already).
-3. Click the "Select a project" button on the top bar.
-4. When the pop-up opens click the "New project" button on the top right
-   corner.
-5. Name your Project (for example your marketplace name) and click
-   "Create".
-6. Go to the "OAuth consent screen" page e.g. from the left side menu.
-7. Once there, select "External" as a User type and click "Create".
-8. Fill in at least the required fields in this next page. You need to
-   add e.g the name and user support email for your app.
-9. From the left sidebar go to the "Credentials" page.
-10. Click "+ Create credentials" from the top of the page.
-11. Select "OAuth Client ID"
-12. Application type is "Web application". You can give it any name.
-13. In "Authorized JavaScript origins", add your full marketplace's URL
-    with https and possibly www or the subdomain, without the trailing
-    slash, e.g. "https://www.example.com", "https://example.com", or
-    "https://something.example.com".
-14. In the "Authorized redirect URIs", add your marketplace address
-    followed by `/api/auth/google/callback`.
-15. Click "Create".
+The first thing to do is to create a Google Sign-In project for your
+marketplace by following
+[these steps in the Sharetribe help center](https://www.sharetribe.com/help/en/articles/9174430-how-to-enable-google-login#h_1e6314ef08).
 
 ## Configure an identity provider client in Console
 
-Now that your Google Sign-In project is all set up, a corresponding
-_identity provider client_ will need to be configured for your
+Now that your Google Sign-In project is all set up, you will need to
+configure a corresponding _identity provider client_ for your
 marketplace. This will tell Sharetribe that your users will be allowed
 to log into your marketplace using the Google Sign-In you just created.
 The information stored in an IdP client is used to verify a token
