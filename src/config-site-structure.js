@@ -87,14 +87,6 @@ const sortingArrayPayments = [
   'strong-customer-authentication',
 ];
 
-const sortingArrayManageConsole = [
-  'console-manage-overview',
-  'console-manage-users',
-  'console-manage-listings',
-  'console-manage-transactions',
-  'console-manage-reviews',
-];
-
 const sortingArrayDevelopment = [
   'applications',
   'sharetribe-environments',
@@ -200,7 +192,6 @@ exports.siteStructure = [
         id: 'concepts-content-management',
         sortingArray: sortingArrayContentManagement,
       },
-      { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },
       { id: 'concepts-messages' },

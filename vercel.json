@@ -1164,6 +1164,31 @@
     "source": "/docs/how-to/enable-login-as-user/",
     "destination": "/docs/concepts/login-as-user/",
     "permanent": true
+  },
+  {    
+    "source": "/docs/concepts/console-manage-users/",
+    "destination": "https://www.sharetribe.com/help/en/articles/9230296-manage-users",
+    "permanent": true
+  },
+  {    
+    "source": "/docs/concepts/console-manage-listings/",
+    "destination": "https://www.sharetribe.com/help/en/articles/9245040-manage-listings",
+    "permanent": true
+  },
+  {    
+    "source": "/docs/concepts/console-manage-transactions/",
+    "destination": "https://www.sharetribe.com/help/en/articles/9263620-manage-transactions",
+    "permanent": true
+  },
+  {    
+    "source": "/docs/concepts/console-manage-reviews/",
+    "destination": "https://www.sharetribe.com/help/en/articles/9250039-manage-reviews",
+    "permanent": true
+  },
+  {    
+    "source": "/docs/concepts/console-manage-overview/",
+    "destination": "https://www.sharetribe.com/help/en/collections/8975376-manage",
+    "permanent": true
   }
 ]
 }
