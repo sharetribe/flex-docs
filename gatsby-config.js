@@ -4,8 +4,7 @@ const {
   NODE_ENV,
   NODE_VERSION,
   PRODUCTION_SITE_URL,
-  GOOGLE_TAGMANAGER_ID,
-  GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW,
+  COOKIEBOT_ID,
   // Env vars set by Vercel
   // See: https://vercel.com/docs/concepts/projects/environment-variables
   GATSBY_VERCEL_ENV,
@@ -198,23 +197,17 @@ module.exports = {
   ],
 };
 
-// ================ Analytics ================
-//
-if (ENV === 'vercel-production' && GOOGLE_TAGMANAGER_ID) {
-  console.log('Enabling Google Tag Manager plugin for production');
+// Cookiebot
+// If you want to test cookiebot locally, add the cookiebotId directly here
+
+if (isVercel) {
   module.exports.plugins.push({
-    resolve: 'gatsby-plugin-google-tagmanager',
+    resolve: 'gatsby-plugin-cookiebot',
     options: {
-      id: GOOGLE_TAGMANAGER_ID,
-    },
-  });
-}
-if (ENV === 'vercel-preview' && GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW) {
-  console.log('Enabling Google Tag Manager plugin for deploy preview');
-  module.exports.plugins.push({
-    resolve: 'gatsby-plugin-google-tagmanager',
-    options: {
-      id: GOOGLE_TAGMANAGER_ID_DEPLOY_PREVIEW,
+      cookiebotId: COOKIEBOT_ID, // Required. Site's Cookiebot ID. Change this directly to the ID if on dev and you want to test cookiebot
+      blockGtm: false, //  Optional. Skip blocking of GTM. Defaults to true if manualMode is set to true.
+      includeInDevelopment: true, // Optional. Enables plugin in development. Will cause gatsby-plugin-google-tagmanager to thrown an error when pushing to dataLayer. Defaults to false.
+      // pluginDebug: true, // Optional. Debug mode for plugin development. Defaults to false.
     },
   });
 }
