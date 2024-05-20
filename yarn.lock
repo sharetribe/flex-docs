@@ -6054,6 +6054,13 @@ gatsby-plugin-catch-links@^5.13.1:
     "@babel/runtime" "^7.20.13"
     escape-string-regexp "^1.0.5"
 
+gatsby-plugin-cookiebot@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-cookiebot/-/gatsby-plugin-cookiebot-1.0.3.tgz#b5a73b99bd4a7cb8d8925f4aff6a546c953b4123"
+  integrity sha512-xgHHelcG43dPDPrIrGBZZGsc6QP1AUL0Sr8hsdYBYbsllb3xtO2k2AAfGgFQSdWtOte3L20NVvWYpPbmaxcjtQ==
+  dependencies:
+    react "^17.0.2"
+
 gatsby-plugin-google-tagmanager@^5.13.1:
   version "5.13.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-5.13.1.tgz#384cf689be04e320908c63c26e1936b71a7b4898"
@@ -10091,6 +10098,14 @@ react@18:
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
+
+react@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 read@^1.0.7:
   version "1.0.7"
