@@ -32,12 +32,14 @@ const useCookieConsent = () => {
 
   useEffect(() => {
     const initEventName = 'CookiebotOnConsentReady';
+    // Check if consent data is already available
+    updateConsent();
+    // Add event listener for future updates
     window.addEventListener(initEventName, updateConsent);
     return () => {
       window.removeEventListener(initEventName, updateConsent);
     };
-  });
-
+  }, []);
   return consent;
 };
 

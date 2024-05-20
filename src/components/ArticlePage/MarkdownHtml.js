@@ -317,12 +317,86 @@ const Html = styled.div`
   }
 `;
 
+const VideoPlaceholder = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+
+  .video-thumbnail {
+    width: 100%;
+    height: 320px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .play-icon-overlay {
+    font-size: 3em;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .cookie-message {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+`;
+
 const ConsentIframe = props => {
   const { title, ...rest } = props;
   const fallback = (
-    <p>
-      <a href={props.src}>{props.src}</a>
-    </p>
+    <VideoPlaceholder>
+      <a href={props.src} target="_blank">
+        <div className="video-thumbnail">
+          <div className="play-icon-overlay">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-play"
+            >
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </div>
+        </div>
+      </a>
+      <p className="cookie-message">
+        This video cannot be displayed because cookies are disabled.
+        <a href={props.src} target="_blank">
+          {' '}
+          Watch on YouTube{' '}
+        </a>{' '}
+        or
+        <a
+          href="javascript: Cookiebot.renew()"
+          className="update-cookie-settings"
+        >
+          {' '}
+          Update Cookie Settings
+        </a>
+        .
+      </p>
+    </VideoPlaceholder>
   );
   return (
     <CookieConsent category="statistics" fallback={fallback}>
