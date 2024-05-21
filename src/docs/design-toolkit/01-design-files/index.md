@@ -13,21 +13,18 @@ published: true
 
 ##### [> Download the design files here](https://github.com/sharetribe/design-resources)
 
-The Sharetribe Web Template designs are available as Sketch files. The
-files include the complete designs for the template in desktop and
-mobile views, allowing you to visualize and better understand how the
-various components fit together. These files are the starting point for
-your custom marketplace design and using them can dramatically speed up
-your design process.
+The Sharetribe Web Template designs are available as Sketch and Figma
+files. The files include the complete designs for the template, allowing
+you to visualize and better understand how the various components fit
+together. These files are the starting point for your custom marketplace
+design and using them can dramatically speed up your design process.
 
 ## Design files
 
-We created the design files in [Sketch](https://www.sketch.com/), which
-saves files in the .sketch file format. You can also open .sketch files
-in other digital design applications like Figma or Adobe XD. If you are
-using Sketch, you have everything you need to get started, but for other
-software, you might need to download the Inter font from
-[Google Fonts](https://fonts.google.com/specimen/Inter).
+We created the design files in [Sketch](https://www.sketch.com/) and
+[Figma](https://www.figma.com). You might need to download the Inter
+font from [Google Fonts](https://fonts.google.com/specimen/Inter) and
+the SF Pro font from [Apple](https://developer.apple.com/fonts/).
 
 Once you have the design files installed, you can start working on
 customizing the design to match the visual identity of your marketplace.
