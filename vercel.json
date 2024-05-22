@@ -1161,8 +1161,8 @@
     "permanent": true
   },
   {    
-    "source": "/docs/ftw/page-builder/",
-    "destination": "/docs/how-to/enable-login-as-user/",
+    "source": "/docs/how-to/enable-login-as-user/",
+    "destination": "/docs/concepts/login-as-user/",
     "permanent": true
   }
 ]
