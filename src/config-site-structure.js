@@ -74,6 +74,7 @@ const sortingArrayTransactionProcess = [
 const sortingArrayUsersAndAuthentication = [
   'users-and-authentication-in-sharetribe',
   'social-logins-and-sso',
+  'login-as-user',
 ];
 
 const sortingArrayPayments = [
@@ -111,7 +112,6 @@ const sortingArrayHowToUsers = [
   'enable-google-login',
   'enable-open-id-connect-login',
   'setup-open-id-connect-proxy',
-  'enable-login-as-user',
   'implement-delete-user',
 ];
 

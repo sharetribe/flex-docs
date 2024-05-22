@@ -1,12 +1,12 @@
 ---
-title: Enable Login as user
-slug: enable-login-as-user
-updated: 2023-10-24
-category: how-to-users-and-authentication
+title: Login as user
+slug: login-as-user
+updated: 2024-05-22
+category: concepts-users-and-authentication
 ingress:
-  This article guides you how to take into use the Login as user feature
-  that allows an operator to log into their marketplace as one of the
-  marketplace users
+  This article provides guidance on how to use the "Login as User"
+  feature. This functionality allows an operator to log into their
+  marketplace as one of the marketplace users.
 published: true
 ---
 
@@ -15,17 +15,38 @@ their marketplace as a specific user of the marketplace. This helps
 operators to experience their marketplace as their users do and to find
 out what is wrong when their users are reporting problems. The feature
 also comes in handy when a marketplace user asks for help with managing
-their data and listings. However, note that when logged in as another
-user **it is not possible to modify Stripe account details, send
-messages, or initiate or transition transactions**.
+their data and listings.
+
+In both Test and Dev environments, you get full access to user profiles
+and actions with this feature. However, when logged in as a user in a
+Live environment, it is not possible to modify Stripe account details,
+send messages, or initiate or transition transactions.
 
 <info>
 
-If you are using Sharetribe Web Template, this feature works out of the
-box. If you are using one of the legacy templates where this feature is
-not available by default, you can refer to our
-**[legacy documentation](/template/legacy-templates/)** for
-implementation instructions.
+Prior to May 22, 2024, using the "Log in as" feature, the operator would
+be logged in as a marketplace user with limited access rights,
+regardless of the environment. Now, when logging in as a user in Dev and
+Test environments, you have full access rights. Live environments remain
+unaffected, and the "Log in as" feature still only provides limited
+access rights.
+
+From the API perspective, this means that in Dev and Test environments,
+we grant an authentication token with the scope `user` instead of
+`user:limited` when using the "Log in as" feature. Consequently, in the
+marketplace front-end, you can't verify that the current authenticated
+session has been initiated using the "Log in as" feature by checking if
+the auth scope is user:limited. Instead, you should use the latest SDK
+(version 1.21.0) and check the `authInfo.isLoggedInAs` value, as
+demonstrated in the
+[LimitedAccessBanner.js file](https://github.com/sharetribe/web-template/blob/b1ab979e45a614005e90f42804d98577ca4675c2/src/components/LimitedAccessBanner/LimitedAccessBanner.js#L29).
+
+Versions
+[v5.1.0](https://github.com/sharetribe/web-template/releases/tag/v5.1.0)
+and forward support this feature natively. If you're using an older
+template, the banner saying "You are logged in as ..." will not be
+displayed when using the "Login as User" feature in either the Dev or
+Test environments.
 
 </info>
 

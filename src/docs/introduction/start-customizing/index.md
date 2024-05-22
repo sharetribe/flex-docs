@@ -174,4 +174,4 @@ Features requiring a server include:
 * [Read more about using SSOs with a Sharetribe marketplace](/concepts/social-logins-and-sso/)
 * [Read more about Integration API security](https://github.com/sharetribe/integration-api-examples#warning-usage-with-your-web-app--website)
 * [Read more about privileged transitions](/concepts/privileged-transitions/)
-* [Read more about Login as user](/how-to/enable-login-as-user/)
+* [Read more about Login as user](/concepts/login-as-user/)
