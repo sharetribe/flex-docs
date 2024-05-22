@@ -1,5 +1,5 @@
 ---
-title: 'How to design your user journey'
+title: How to design your user journey
 slug: your-user-journey-a-guide
 updated: 2023-10-24
 category: design-toolkit
@@ -11,10 +11,10 @@ published: true
 
 We learned about user journeys and how to use the Template to create
 them to save time and money in
-[a previous article](https://www.sharetribe.com/docs/design-toolkit/what-are-user-journeys/).
-Now it is time to define how your users will use your marketplace.
+[a previous article](/docs/design-toolkit/what-are-user-journeys/). Now
+it is time to define how your users will use your marketplace.
 
-## 1. Background work
+## Background work
 
 The 3 most important user journeys on any marketplace are how listings
 are created, how listings are found via search, and how supply and
@@ -84,7 +84,7 @@ completion. Consider these questions:
 Learn more about
 [the transaction process functionality in Sharetribe](/concepts/transaction-process/).
 
-## 2. Create maps for listing creation journey, discovery journey and transaction process.
+## Create maps for listing creation journey, discovery journey and transaction process.
 
 There are many ways to document your user journeys. You can draft using
 pen and paper, a mind map software like Whimsical or Miro, or by simply
@@ -97,9 +97,9 @@ any similar software like Google Slides or Key. Creating something like
 this will help developers quickly grasp what your marketplace is about
 and help them move forward developing it.
 
-## 3. Share the journey maps with developers
+## Share the journey maps with developers
 
 If you would like to hire vetted Sharetribe developers, start either by
 [booking a call](https://www.sharetribe.com/video-call) with our team or
 connect directly with Sharetribe Experts through the
-[Expert Directory](https://www.sharetribe.com/experts/). TODO
+[Expert Directory](https://www.sharetribe.com/experts/).
