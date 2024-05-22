@@ -132,7 +132,7 @@
   },
   {
     "source": "/docs/guides/how-to-enable-login-as-user/",
-    "destination": "/docs/how-to/enable-login-as-user/",
+    "destination": "/docs/concepts/login-as-user/",
     "permanent": true
   },
   {
@@ -542,7 +542,7 @@
   },
   {
     "source": "/docs/cookbook-manage/enable-login-as-user/",
-    "destination": "/docs/how-to/enable-login-as-user/",
+    "destination": "/docs/concepts/login-as-user/",
     "permanent": true
   },
   {
@@ -1158,6 +1158,11 @@
   {    
     "source": "/docs/ftw/page-builder/",
     "destination": "/docs/template/page-builder/",
+    "permanent": true
+  },
+  {    
+    "source": "/docs/ftw/page-builder/",
+    "destination": "/docs/how-to/enable-login-as-user/",
     "permanent": true
   }
 ]
