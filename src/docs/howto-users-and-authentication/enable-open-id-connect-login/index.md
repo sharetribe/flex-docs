@@ -1,7 +1,7 @@
 ---
 title: Enable OpenID Connect login
 slug: enable-open-id-connect-login
-updated: 2023-10-24
+updated: 2024-05-22
 category: how-to-users-and-authentication
 ingress:
   In this guide we'll take at how to use an OpenID Connect login
@@ -17,25 +17,6 @@ authenticated at an identity provider can be authorized to resources in
 another service. This how-to guide assumes that you already have an
 OpenID Connect solution available and intend to use that as a login
 option in your Sharetribe marketplace.
-
-<info>
-
-Apple Sign-in has several features that resemble the OpenID Connect
-specification. However, the Apple Sign-in implementation has some
-differences to the Open ID Connect spec that render it not fully
-compliant.
-
-One feature that our Sharetribe developers have discovered is that the
-<i>email_verified</i> claim is returned as string from Apple, whereas
-the
-<a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">Open
-ID Connect spec</a> determines that it needs to be boolean. This means
-that simply integrating Apple Sign-in as an Open ID Connect IdP in
-Sharetribe is not possible. Instead, you will need to use the
-<a href="/docs/how-to/setup-open-id-connect-proxy/">OIDC proxy</a>
-approach to integrate Apple Sign-in into your marketplace.
-
-</info>
 
 ## Identity provider requirements
 
@@ -82,6 +63,7 @@ identity provider client in Sharetribe Console.
 4. Fill in information regarding your OpenID Connect identity provider.
    This is the service that your users authenticate to in order to log
    into Sharetribe.
+
    - **Identity provider name**: A descriptive name for the identity
      provider that helps you to distinguish it from other providers.
    - **Identity provider ID**: IdP ID that is passed as a parameter to
@@ -91,13 +73,6 @@ identity provider client in Sharetribe Console.
      _issuer location_ of the identity provider. It is used to resolve
      ID token signing keys used by the identity provider. See below
      _Discovery document and JSON Web keys_ for more details.
-
-<info>
-Auth0 requires identity provider URL with a trailing slash, but Sharetribe Console
-does not currently allow adding trailing slashes. If you are adding an Auth0 
-integration, add the URL without the trailing slash, and reach out to Sharetribe 
-Support so we can manually fix the formatting.
-</info>
 
 5. Fill in the Client ID. This is the identifier of your Sharetribe
    marketplace at you identity provider. It will be the _audience_ of
@@ -123,10 +98,104 @@ from the dropdown when creating a new client.
 OpenID Connect login flow can be added to Sharetribe Web Template in
 multiple ways. One good starting point is to take a look at OpenID
 Connect implementations in
-[the Passport.js strategies](http://www.passportjs.org). Keep in mind
-that you should get a hold of the ID token that is returned from the
-identity provider so that you can pass it along to Sharetribe's
-[`/auth/auth_with_idp`](https://www.sharetribe.com/api-reference/authentication.html#issuing-tokens-with-an-identity-provider)
+[the Passport.js strategies](http://www.passportjs.org). We also
+recommend using the default
+[facebook.js](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js)
 and
-[`current_user/create_with_idp`](https://www.sharetribe.com/api-reference/marketplace.html#create-user-with-an-identity-provider)
-endpoints.
+[google.js](https://github.com/sharetribe/web-template/blob/main/server/api/auth/google.js)
+files as a basis for your modifications.
+
+On a high level, you can follow these steps to get started with your
+integration.
+
+1. Replicate either
+   [facebook.js](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js)
+   or
+   [google.js](https://github.com/sharetribe/web-template/blob/main/server/api/auth/google.js)
+   and rename to point to the identity provider you are working with.
+
+2. Replace the
+   [passport module](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js#L2)
+   in your new file with one that corresponds to your identity provider.
+   Update the
+   [strategy options](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js#L22-L28)
+   to correspond to the new passport module's documentation.
+
+3. Add your identity provider credentials and Sharetribe SSO client
+   credentials in your `.env` file, and then update the necessary
+   credentials
+   [in your new file](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js#L8-L9)
+   and in the
+   [createWithIdp.js file](https://github.com/sharetribe/web-template/blob/main/server/api/auth/createUserWithIdp.js#L12-L16).
+   Remember to update the
+   [identity provider selection logic](https://github.com/sharetribe/web-template/blob/main/server/api/auth/createUserWithIdp.js#L49-L50).
+
+4. Import your new file in
+   [server/apiRouter.js](https://github.com/sharetribe/web-template/blob/main/server/apiRouter.js#L21)
+   and create the
+   [callback endpoints](https://github.com/sharetribe/web-template/blob/main/server/apiRouter.js#L65-L71)
+   for the integration. Add the
+   `[your domain]/api/auth/[service]/callback` address to your identity
+   provider's allowed callback URLs.
+
+5. Add the
+   [login buttons](https://github.com/sharetribe/web-template/blob/main/src/containers/AuthenticationPage/AuthenticationPage.js#L60)
+   for your service.
+
+6. Update the
+   [verifyCallback function](https://github.com/sharetribe/web-template/blob/main/server/api/auth/facebook.js#L45-L61)
+   in your new file to parse the details from the parameters coming into
+   the callback. This is easiest to do by logging each parameter that
+   comes into the callback, renaming them accordingly, and then parsing
+   the necessary details from the correct parameters. At this point, you
+   need to get a hold of the ID token that is returned from the identity
+   provider, so that you can pass it along to the `done` function, and
+   eventually to Sharetribe's
+   [`/auth/auth_with_idp`](https://www.sharetribe.com/api-reference/authentication.html#issuing-tokens-with-an-identity-provider)
+   and
+   [`current_user/create_with_idp`](https://www.sharetribe.com/api-reference/marketplace.html#create-user-with-an-identity-provider)
+   endpoints.
+
+## Identity provider specific information
+
+### Apple Sign-in
+
+Apple Sign-in has several features that resemble the OpenID Connect
+specification. However, it is not explicitly stated to be OpenID Connect
+compliant. To the knowledge of our team, the
+[Apple Sign-in token](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api/authenticating_users_with_sign_in_with_apple#3383773)
+should be compliant with the Sharetribe back-end at the time of this
+writing (2024-05), but you will need to conduct your own testing to
+verify this.
+
+Apple Sign-in also requires developers to set up a
+[private email relay service](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/communicating_using_the_private_email_relay_service)
+for Apple users who do not want to share their email address with the
+service. If you do integrate Apple Sign-in, it is important that you
+provide Sharetribe with a valid email address even if the user requests
+to keep their own address private.
+
+### Auth0
+
+Auth0 requires identity provider URL with a trailing slash, but
+Sharetribe Console does not currently allow adding trailing slashes. If
+you are adding an Auth0 integration, add the URL without the trailing
+slash, and reach out to Sharetribe Support so we can manually fix the
+formatting.
+
+### LinkedIn
+
+Sign In with LinkedIn was updated to support Open ID Connect in
+August 2023. The corresponding Passport strategy has been updated to
+version 3.0.0 support Open ID Connect in the
+[Github repository](https://github.com/auth0/passport-linkedin-oauth2).
+However, at the time of this writing, only version 2.0.0 seems to be
+available through _npm_ and _yarn_ package managers. This means that to
+use version 3.0.0 in your integration, you will need to install the
+package directly from the Github repository:
+
+```shell
+## yarn add <git remote url>#<branch/commit/tag>
+yarn add https://github.com/auth0/passport-linkedin-oauth2#v3.0.0
+
+```
