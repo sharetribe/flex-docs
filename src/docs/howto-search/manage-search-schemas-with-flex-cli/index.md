@@ -120,10 +120,11 @@ endpoint API reference.
 
 When you add listing fields in Sharetribe Console, and select _Include
 this field in keyword search_ or _Add a filter to Search Page_,
-Sharetribe generates a search schema for the field automatically. In the
+Sharetribe generates a search schema for the field automatically. In
 Console, the available field type options are
 
 - free text (search schema: `text`)
+- number (search schema: `long`)
 - select one (search schema: `enum`)
 - select multiple (search schema: `multi-enum`)
 
