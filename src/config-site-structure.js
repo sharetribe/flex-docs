@@ -56,11 +56,12 @@ const sortingArrayReferences = [
 
 const sortingArrayPaymentCookbooks = [
   'how-to-customize-pricing',
-  'set-up-and-use-stripe',
   'provider-onboarding-and-identity-verification',
   'enable-payment-intents',
   'save-payment-card',
   'stripe-connect-platform-review',
+  'add-new-stripe-countries',
+  'how-to-integrate-3rd-party-payment-gateway',
   'removing-stripe',
 ];
 
@@ -85,14 +86,6 @@ const sortingArrayPayments = [
   'payment-intents',
   'solving-payout-problems',
   'strong-customer-authentication',
-];
-
-const sortingArrayManageConsole = [
-  'console-manage-overview',
-  'console-manage-users',
-  'console-manage-listings',
-  'console-manage-transactions',
-  'console-manage-reviews',
 ];
 
 const sortingArrayDevelopment = [
@@ -200,7 +193,6 @@ exports.siteStructure = [
         id: 'concepts-content-management',
         sortingArray: sortingArrayContentManagement,
       },
-      { id: 'concepts-management', sortingArray: sortingArrayManageConsole },
       { id: 'concepts-extended-data' },
       { id: 'concepts-api-sdk' },
       { id: 'concepts-messages' },

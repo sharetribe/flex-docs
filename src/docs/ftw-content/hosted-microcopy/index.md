@@ -87,10 +87,10 @@ recently updated version of the marketplace text file. The response also
 contains the version information for the most recent asset, so that
 subsequent fetches can be done based on asset version.
 
-When fetching by alias, the cache time is a few seconds for the dev
-environment and up to 5 minutes for the live environment. In other
+When fetching by alias, the cache time is a few seconds for the Dev and
+Test environments and up to 5 minutes for the Live environment. In other
 words, it can take up to 5 minutes for marketplace text updates to be
-visible in a live environment. These cache times are subject to change.
+visible in a Live environment. These cache times are subject to change.
 
 ```js
 sdk.assetByAlias({

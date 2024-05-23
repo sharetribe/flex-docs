@@ -1,7 +1,7 @@
 ---
 title: Transaction process actions
 slug: transaction-process-actions
-updated: 2023-10-24
+updated: 2024-05-22
 category: references
 ingress:
   This reference article lists all the available actions and their
@@ -1073,6 +1073,8 @@ Payment Intents are the main supported way to collect payments.
 Transaction processes need to use them especially if they want to be
 SCA-compatible.
 
+Only one PaymentIntent per transaction is supported.
+
 After the PaymentIntent is created, it's ID and client secret are
 temporarily accessible in the Sharetribe transaction protected data
 under the `stripePaymentIntents` key in the following form:
@@ -1143,6 +1145,8 @@ push payment methods. The following payment methods are supported:
 - giropay
 - iDEAL
 - Przelewy24
+
+Only one PaymentIntent per transaction is supported.
 
 After the PaymentIntent is created, it's ID and client secret are
 temporarily accessible in the Sharetribe transaction protected data

@@ -1,200 +1,24 @@
 ---
-title: Set up and use Stripe
-slug: set-up-and-use-stripe
-updated: 2023-10-24
+title: How to add a new Stripe country
+slug: add-new-stripe-countries
+updated: 2024-05-17
 category: how-to-payments
 ingress:
-  To enable payments and receive commissions in your marketplace, you
-  need a free Stripe account. This guide will help you in creating a
-  Stripe account and adding Stripe API keys to Console and Sharetribe
-  Web Template.
+  By default, the Sharetribe Web Template already supports most
+  countries supported by Stripe. This guide will help you in adding new
+  countries to the template.
 published: true
 ---
 
-## 1. Create and confirm your free Stripe account
-
-[Register to Stripe](https://dashboard.stripe.com/register). After
-filling the form you will be asked the question "How do you want to get
-started with Stripe?". You can click "Skip for now" link at the bottom
-of the page to get directly to Stripe dashboard. Remember to confirm
-your email address after the registration.
-
-As you will receive money from your users via your Stripe account, you
-have to provide some details such as your address and your bank account.
-In the Stripe dashboard, click the "Activate your account" link in the
-top bar and fill in all the fields according to the instructions. The
-activation form varies based on your country.
-
-![Activate Stripe account](./activate-account.png)
-
-Once activated, your dashboard should display the message "Your account
-is now active":
-
-![Active Stripe account](./account-active.png)
-
 <info>
 
-Stripe requires US accounts to add their EIN for their accounts to be
-fully activated. If you don't have an EIN, it's okay to use your
-personal name and SSN. Read more about signing up without a tax ID or
-employer ID number
-**[here](https://support.stripe.com/questions/signing-up-for-a-us-stripe-account-without-a-tax-id-or-employer-id-number)**.
+This article has been updated. You can find instructions for setting up
+your Stripe account
+[in our Help Center](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace).
 
 </info>
 
-## 2. Enable Stripe Connect in your platform
-
-Sharetribe uses the Stripe Connect features with
-[custom accounts](https://stripe.com/docs/connect/accounts#custom-accounts).
-
-<info>
-
-Stripe might need to review your platform account before you get access.
-<br /> Check **[this article](/how-to/stripe-connect-platform-review/)**
-to learn how to apply for Stripe Connect review.
-
-</info>
-
-If you're in any another country, follow these instructions to enable
-Stripe Connect:
-
-- Click the _Connect_ menu item, and the _Get started_ button.
-
-![Stripe connect](./stripe-connect.png)
-
-- This will open a popup. Click the _Continue_ button.
-
-![Get started](./get-started-with-connect.png)
-
-## 3. Account types and connect onboarding settings
-
-To enable
-[Stripe Connect Onboarding](/how-to/provider-onboarding-and-identity-verification/),
-you need to navigate to
-[Connect settings page](https://dashboard.stripe.com/account/applications/settings)
-in your Stripe Dashboard. For the Connect onboarding to work, you need
-to provide `name`, `color`, and `icon` for your marketplace.
-
-![Stripe dashboard](./stripe-dashboard.png)
-
-Great! You now have to get your API keys and input them into your
-marketplace.
-
-## 4. Get your API keys from Stripe and add them to your Sharetribe marketplace
-
-- Click the _Developers_ left menu item and go to _Developers_ → _API
-  Keys_.
-- In the section "Standard API keys" you will see two keys: publishable
-  key and secret key. The publishable key (with prefix **pk**) is one
-  used in frontend application (e.g. Sharetribe Web Template) and secret
-  key (with prefix **sk**) is the one you need to add to Console. If you
-  want to use test data make sure the value of the key is eg.
-  **pk_test**\<somethinghere\> and not **pk_live**\<somethinghere\>
-
-<info>
-
-If you want to use test data in development, make sure that "View test
-data" toggle is on. This way no real money will be used. In the live
-environment, make sure that the toggle is off.
-
-</info>
-
-![Get API keys from Stripe](./api-keys.png)
-
-## 5. Add your Stripe secret API key to Console
-
-- Log in to Console and go to _Build_ → _Payments_
-- In the section _Stripe configuration_ paste your secret key to "Stripe
-  secret key" field and save the changes.
-
-![Add Stripe secret key to Console](./add-stripe-to-console.png)
-
-## 6. Add you Stripe publishable key to your client application
-
-In your client application, you need to use Stripe publishable key, when
-you create accountTokens or call other Stripe API endpoints. If you are
-using Sharetribe Web Template, calls to Stripe API are already there,
-but you need to add the Stripe publishable key to your `.env` file. You
-can do this by running `yarn run config` or editing the file directly in
-a text editor.
-
-Read more about configurations in the template in
-[Getting started with Sharetribe Web Template](/introduction/getting-started-with-web-template/#add-environment-variables)
-
-## 7. Test the Stripe account in Sharetribe Web Template
-
-If you are using the Sharetribe Web Template, refer to these
-instructions on testing your Stripe account.
-
-<info>
-
-When testing Stripe, make sure you are using the test API keys. To
-ensure that make sure the keys have prefix **sk_test** and **pk_test**.
-When checking the Stripe dashboard, make sure "View test data" toggle is
-on!
-
-</info>
-
-### Test adding payout details
-
-Every provider needs to add payout details to their account before they
-are able to publish listings. Stripe provides test values for
-[identity verification](https://stripe.com/docs/connect/testing#identity-verification)
-and [bank numbers](https://stripe.com/docs/connect/testing#payouts). In
-Sharetribe Web Template, you can add payout details for the account in
-_Account Settings_ → _Payments_. After filling the form you should see a
-new account when you go to Stripe Dashboard and to _Connect_ →
-_Accounts_.
-
-<info>
-
-After payout details are saved, they can not be edited directly in the
-template, so you might need to create multiple accounts for testing
-purposes.
-
-</info>
-
-The form of the bank number and other required information depends on
-which country you have chosen. For example, most of the countries in
-Europe use IBAN form which is asked in one field. However, for example
-in Hong Kong clearing code, branch code and bank account number are all
-needed.
-
-![Hong Kong bank number](bank-number-hk.png)
-
-It is also good to know that in the template, these are all separate
-fields, but in Stripe, clearing code and branch code are mapped together
-as routing number.
-
-![Stripe bank numbers](stripe-bank-numbers.png)
-
-With company accounts, Stripe might require information of every person
-that owns at least 25% of the company or exercise significant control
-over your company. This requirement is country specific. For more
-information, see
-[Stripe support](https://support.stripe.com/questions/company-ownership-and-director-requirement).
-
-<info>
-
-If a company/provider doesn't include enough owners to cover most of the
-shares, you might need to manually state that there are no more persons
-that own 25% or more.
-
-</info>
-
-![Add more owners alert](stripe-add-more-owners-alert.png)
-
-### Test checkout
-
-Stripe provides various
-[test card numbers](https://stripe.com/docs/testing#cards) for testing
-the checkout. There are also test numbers for
-[specific responses and errors](https://stripe.com/docs/testing#cards-responses)
-so e.g. testing different error scenarios is possible.
-
-![Checkout](checkout.png)
-
-## 8. Advanced: Adding new country to supported Stripe countries
+## Adding new country to supported Stripe countries
 
 By default, the template already supports most of the countries that are
 available when using
@@ -222,7 +46,7 @@ to Stripe support before proceeding.
    `forms/PayoutDetailsForm/PayoutDetailsPersonalDetails.js` file where
    showing the ID number field is handled.
 
-<info>
+### Exceptions related to Brazil, India, and Hungary Stripe support
 
 The Sharetribe Web Template does not support Brazil (BR), India (IN) and
 Hungary (HU), even though all three countries are mentioned as available
@@ -237,5 +61,3 @@ Sharetribe setup.
   <li>India has restrictions on <a href="https://support.stripe.com/questions/stripe-india-support-for-marketplaces">cross-border payments</a>.</li>
   <li>Stripe treats the Hungarian currency HUF as a <a href="https://stripe.com/docs/currencies#special-cases">zero-decimal currency for payouts</a>. This means that even though the Sharetribe engine can create charges in two-decimal amounts (e.g. HUF 20.38), payouts can only be created in integer amounts evenly divisible by 100 (e.g. HUF 20.00). Additionally, if Stripe needs to do currency conversions from another currency to HUF, the resulting amount may have decimals which can cause the payout to fail.</li>
 </ul>
-
-</info>

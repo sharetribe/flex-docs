@@ -110,9 +110,9 @@ specific version can be cached for extended period of time. On the other
 hand, the `latest` alias is mutable and therefore asset data retrieved
 by alias cannot be cached indefinitely. The cache time for access by
 alias can differ depending on whether your marketplace environment is a
-development or live one. For live marketplaces the cache time can be up
-to 5 minutes, while for development marketplaces it is much lower. Refer
-to the
+development or live one. For Live marketplaces the cache time can be up
+to 5 minutes, while for Test and Development marketplaces it is much
+lower. Refer to the
 [Asset Delivery API reference](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
 for up-to-date-information. The `Cache-Control` HTTP header will always
 provide correct data and client applications should observe that if

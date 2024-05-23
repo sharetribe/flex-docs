@@ -40,11 +40,11 @@ your dev environment in Sharetribe.
 More specifically, the workflow recommended with Sharetribe is that you
 have three deployments of your client application:
 
-- production deployment, connected to your live environment and running
+- production deployment, connected to your Live environment and running
   real transactions
-- test deployment, connected to your test environment and intended for
+- test deployment, connected to your Test environment and intended for
   previewing no-code changes
-- dev deployment, connected to your dev environment and intended for
+- dev deployment, connected to your Dev environment and intended for
   testing and previewing code-level changes.
 
 We recommend that you keep your production and test deployments
