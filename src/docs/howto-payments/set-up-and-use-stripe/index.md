@@ -1,12 +1,12 @@
 ---
-title: How to add a new Stripe country
-slug: add-new-stripe-countries
+title: Set up Stripe for a custom developed marketplace
+slug: set-up-and-use-stripe
 updated: 2024-05-17
 category: how-to-payments
 ingress:
-  By default, the Sharetribe Web Template already supports most
-  countries supported by Stripe. This guide will help you in adding new
-  countries to the template.
+  To enable payments and receive commissions in your marketplace, you
+  need a free Stripe account. This guide will help you in adding Stripe
+  API keys to Console and the Sharetribe Web Template.
 published: true
 ---
 
@@ -17,6 +17,55 @@ your Stripe account
 [in our Help Center](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace).
 
 </info>
+
+## Setting up Stripe for your custom developed marketplace
+
+First,
+[follow these instructions](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace)
+to set up your Stripe account.
+
+When setting up your marketplace for a custom developed app, you will
+need to add the Stripe secret key in your Console, and your publishable
+key in your custom app.
+
+### Get your Stripe keys
+
+First, retrieve your Stripe API keys. Click "Developers" → "API Keys" in
+the top bar menu.
+
+For your Test and Dev environments, you need to use Test keys, and for
+your Live environment, you need to use Live keys.
+
+- When the Test mode toggle is switched on, you are viewing your Test
+  keys. The Test keys start with pk_test (publishable key) and sk_test
+  (secret key).
+- When the Test mode toggle is switched off, you are viewing your Live
+  keys. The Live keys start with pk_live (publishable key) and sk_live
+  (secret key).
+
+![Test API keys in Stripe Dashboard](./stripe-test-data.png)
+
+### Add your secret key to your Console
+
+Next, you need to add your secret key in your Console.
+
+- Log in to Console and go to Build > Integrations > Payments.
+- In the section "Stripe configuration", add your secret key to the
+  "Stripe secret key" field and save your changes.
+
+![Add Stripe secret key](./stripe_dev_key_console.png)
+
+### Add your publishable key to your application
+
+In your client application, you need to use Stripe publishable key when
+you are making API calls to Stripe. If you are using the Sharetribe Web
+Template, the default calls to Stripe API are already there, but you
+need to add the Stripe publishable key to your .env file. You can do
+this by running _yarn run config_ or editing the file directly in a text
+editor.
+
+Read more about configurations in the Sharetribe Web Template in
+[Template environment variables](/template/template-env/).
 
 ## Adding new country to supported Stripe countries
 

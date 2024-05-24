@@ -19,8 +19,8 @@ enable your Stripe Platform within one business day.
 ## How to apply for Connect review at Stripe
 
 You should first
-[follow the regular instructions](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace)
-to setup Stripe in your Sharetribe marketplace. When enabling Stripe
+[follow the regular instructions](/how-to/set-up-and-use-stripe/) to
+setup Stripe in your Sharetribe marketplace. When enabling Stripe
 Connect and registering your Platform, you may be prompted with some
 additional questions. The steps 1-4 show examples of what kind of
 questions you may be asked during the registration process.

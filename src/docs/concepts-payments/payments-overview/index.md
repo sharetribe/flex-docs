@@ -343,10 +343,9 @@ Sometimes it takes a while to get Stripe to work. Here are some ideas to
 troubleshoot the problem.
 
 - Double check that you have followed the
-  [Stripe setup instructions](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace).
-  Note that in your Dev and Test environments, you need to use the
-  Stripe keys starting with `sk_test` and `pk_test`, and you will also
-  need to use
+  [Stripe setup instructions](/how-to/set-up-and-use-stripe/). Note that
+  in your Dev and Test environments, you need to use the Stripe keys
+  starting with `sk_test` and `pk_test`, and you will also need to use
   [Stripe's test payout details](https://stripe.com/docs/connect/testing#payouts)
   and
   [test payment methods](https://stripe.com/docs/testing#payment-intents-api)
