@@ -1,5 +1,5 @@
 ---
-title: How to set up Stripe for a custom developed marketplace
+title: Set up Stripe for a custom developed marketplace
 slug: set-up-and-use-stripe
 updated: 2024-05-17
 category: how-to-payments
