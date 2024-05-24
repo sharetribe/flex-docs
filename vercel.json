@@ -1191,8 +1191,8 @@
     "permanent": true
   },
   {    
-    "source": "/docs/how-to/set-up-and-use-stripe/",
-    "destination": "/docs/how-to/add-new-stripe-countries",
+    "source": "/docs/how-to/add-new-stripe-countries",
+    "destination": "/docs/how-to/set-up-and-use-stripe/",
     "permanent": true
   }
 ]

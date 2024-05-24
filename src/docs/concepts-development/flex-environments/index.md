@@ -69,7 +69,7 @@ into Live.
 The dev environment is for development purposes. This is where building
 your marketplace happens and where you can explore the build
 functionalities in peace by using test users and
-[test credit cards with Stripe](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace).
+[test credit cards with Stripe](/how-to/set-up-and-use-stripe/).
 
 Whenever the development team wants to publish their code changes, they
 will fully test and review them in Dev first, and then copy them to Test
