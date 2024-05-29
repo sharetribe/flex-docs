@@ -1,7 +1,7 @@
 ---
 title: User extended data
 slug: user-extended-data
-updated: 2024-04-24
+updated: 2024-05-29
 category: concepts-extended-data
 ingress:
   User extended data allows you to distinguish between different types
@@ -18,12 +18,16 @@ user resource.
 
 <info>
 
-User public data fields can be configured in Console using
-[assets](/references/assets/). Starting from release
-[v5.0.0](https://github.com/sharetribe/web-template/releases/tag/v5.0.0),
-the Sharetribe Web Template has the capability to read the asset-based
-public data fields and display the necessary components when editing and
-viewing a user's profile.
+User public data fields and user types can be configured in Console
+using [assets](/references/assets/).
+
+Starting from release
+[v5.0.0](https://github.com/sharetribe/web-template/releases/tag/v5.0.0)
+for user fields and release
+[v5.2.0](https://github.com/sharetribe/web-template/releases/tag/v5.2.0)
+for user types, the Sharetribe Web Template has the capability to read
+the asset-based extended data configurations and display the necessary
+components when editing and viewing a user's profile.
 
 </info>
 

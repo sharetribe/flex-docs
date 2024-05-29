@@ -64,10 +64,10 @@ this:
     label: 'Do you offer other services besides bike rentals?',
     displayInProfile: true,
   },
-  // If you have defined user types in your custom code, you can limit
+  // If you have defined user types, you can limit
   // individual user fields to specific user types:
   // userTypeConfig: {
-  //   limitToUserTypeIds: false,
+  //   limitToUserTypeIds: true,
   //   userTypeIds: ['a', 'b', 'c'],
   // },
 },
