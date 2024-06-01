@@ -1,7 +1,7 @@
 ---
 title: How to design your user journey
 slug: your-user-journey-a-guide
-updated: 2023-10-24
+updated: 2024-06-01
 category: design-toolkit
 ingress:
   Learn how to design your marketplace's user journey. Understanding
@@ -11,7 +11,7 @@ published: true
 
 We learned about user journeys and how to use the Template to create
 them to save time and money in
-[a previous article](/docs/design-toolkit/what-are-user-journeys/). Now
+[a previous article](/design-toolkit/what-are-user-journeys/). Now
 it is time to define how your users will use your marketplace.
 
 ## Background work

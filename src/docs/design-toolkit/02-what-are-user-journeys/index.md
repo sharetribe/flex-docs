@@ -1,7 +1,7 @@
 ---
 title: What Are User Journeys?
 slug: what-are-user-journeys
-updated: 2023-10-24
+updated: 2024-06-01
 category: design-toolkit
 ingress:
   A user journey map illustrates the step by step process that users
@@ -44,7 +44,7 @@ the best way to see how the Template works. There you can access the
 Template and use it as a real user, creating accounts, making
 transactions, sending messages, and so on. If you're familiar with Figma
 or other design tools, you can also download, view, and modify the
-[design files](/docs/design-toolkit/design-files/) showing all the
+[design files](/design-toolkit/design-files/) showing all the
 screens in the Template.
 
 The workflows you pursue in the Template represent the out of the box
@@ -54,6 +54,6 @@ starting point. A great way then to describe the requirements of your
 marketplace are as modifications, tweaks, or sweeping changes to the
 existing functionality.
 
-In the [next article](/docs/design-toolkit/your-user-journey-a-guide/),
+In the [next article](/design-toolkit/your-user-journey-a-guide/),
 we will share more about how to organize, describe, and share your user
 journeys.
