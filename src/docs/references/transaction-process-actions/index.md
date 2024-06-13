@@ -56,6 +56,19 @@ calculates totals for each line item and for the entire transaction.
 
 Existing line items will be removed.
 
+<warning>
+
+If this action is run after a payment intent has already been created
+with `:action/stripe-create-payment-intent` or
+`:action/stripe-create-payment-intent-push`, the payin and payout
+information for the payment intent DO NOT get updated. This can result
+in payouts that do not correspond to the latest line item calculation.
+
+In other words, when used with the default Stripe integration, this
+action should only ever be used before creating the payment intent.
+
+</warning>
+
 **Preconditions**: -
 
 **Parameters**:
@@ -1270,8 +1283,14 @@ seven days, after which they are automatically canceled by Stripe.
 
 #### :action/stripe-create-payout
 
-Create pay out to external bank account. The managed account must have
+Create a pay out to external bank account. The managed account must have
 sufficient available balance.
+
+The timing of the payout depends on when the money is available in
+Stripe. If the money is already available when this action is triggered,
+the payout happens immediately. If the money is not yet available, the
+payout is scheduled based on the time when Stripe indicates that the
+balance will be available.
 
 **Preconditions**:
 
