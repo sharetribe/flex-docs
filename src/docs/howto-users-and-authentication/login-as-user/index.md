@@ -1,7 +1,7 @@
 ---
 title: Login as user
 slug: login-as-user
-updated: 2024-05-22
+updated: 2024-06-17
 category: concepts-users-and-authentication
 ingress:
   This article provides guidance on how to use the "Login as User"
@@ -87,6 +87,12 @@ Having trouble enabling the Login as user feature? Check that you have
 the following in order.
 
 ### Authentication fails with message: Failed to authorize as a user, error: <error message>
+
+Double check that the **REACT_APP_MARKETPLACE_ROOT_URL** environment
+variable of your marketplace website matches the Marketplace URL you
+have configured in Console.
+
+### Authentication fails with message: Mismatch between redirect_uri parameter value and Marketplace URL
 
 Double check that the **REACT_APP_MARKETPLACE_ROOT_URL** environment
 variable of your marketplace website matches the Marketplace URL you
