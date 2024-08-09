@@ -1,13 +1,12 @@
 ---
 title: Requiring approval for new listings
 slug: requiring-approval
-updated: 2023-10-24
+updated: 2024-08-09
 category: concepts-listings
 ingress:
   Sharetribe allows you to require operator approval for new listings
   before they are published. This article explains the feature and
-  describes how to take listing approval into use in both Sharetribe
-  Console and Sharetribe CLI.
+  describes how to take listing approval into use in Sharetribe Console.
 published: true
 ---
 
@@ -71,24 +70,6 @@ If, for instance, your marketplace allows non-premium users to post two
 listings and premium users to post five listings, you could create an
 Integration API script that automatically approves the listing if the
 user has unused listing quota.
-
-## Enabling and disabling listing approval in Sharetribe CLI
-
-In addition to the Sharetribe Console, you can also use
-[Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/) to
-enable and disable listing approval on your marketplace.
-
-```bash
-#To see whether your marketplace requires listings to be approved
-flex-cli listing-approval -m [your-marketplace]
-
-#To enable listing approval for your marketplace
-flex-cli listing-approval enable -m [your-marketplace]
-
-#To disable listing approval for your marketplace
-flex-cli listing-approval disable -m [your-marketplace]
-
-```
 
 ## Elements indicating listing approval in Sharetribe Web Template
 
