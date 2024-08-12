@@ -44,10 +44,9 @@ Now, you can check or uncheck the permissions checkbox for this user.
 
 ![User permissions checkbox](./user-publish-listings-checkbox.png)
 
-## Listing posting permissions in the currentUser resource
+## Permissions in the currentUser resource
 
-Listing posting permissions show up in the currentUser resource in two
-ways:
+Permissions show up in the _currentUser_ resource in two ways:
 
 - _currentUser_ has an attribute _permissions_, which contains the
   user-level permission setting
