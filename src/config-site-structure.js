@@ -74,6 +74,7 @@ const sortingArrayTransactionProcess = [
 
 const sortingArrayUsersAndAuthentication = [
   'users-and-authentication-in-sharetribe',
+  'user-access-control-in-sharetribe',
   'social-logins-and-sso',
   'login-as-user',
 ];
