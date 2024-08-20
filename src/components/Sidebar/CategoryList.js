@@ -8,6 +8,17 @@ import { UiText } from '../../components';
 
 import ArticleLinkList from './ArticleLinkList';
 
+const ExternalLink = ({ href, children, ariaLabel }) => (
+  <a
+    href={href}
+    rel="noopener noreferrer"
+    target="_blank"
+    aria-label={ariaLabel}
+  >
+    {children}
+  </a>
+);
+
 // Helper function.
 // Transforms kebab-case to camelCase
 // e.g. tutorial-branding => tutorialBranding
@@ -308,6 +319,14 @@ const CategoryList = props => {
           ) : null}
         </StyledCategory>
       )}
+      <ExternalLink
+        href="https://www.sharetribe.com/developer-blog/"
+        ariaLabel="Developer Blog"
+      >
+        <StyledMainCategoryTitle depth={1}>
+          Developer Blog
+        </StyledMainCategoryTitle>
+      </ExternalLink>
     </ul>
   );
 };
