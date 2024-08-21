@@ -31,7 +31,7 @@ and push payment methods:
 
 In Stripe's terms, Sharetribe supports payment methods that have
 _immediate payment confirmation_ (see the table
-[in this section of Stripe's guide to payments](https://stripe.com/en-fi/payments/payment-methods-guide#choosing-the-right-payment-methods-for-your-business))
+[in this section of Stripe's guide to payments](https://stripe.com/en-fi/payments/payment-methods-guide#2-choosing-the-right-payment-methods-for-your-business))
 and that are supported by Stripe's PaymentIntents API. Mostly, these
 payment methods fall under either Cards,
 [Bank redirects](https://stripe.com/docs/payments/payment-methods/overview#bank-redirects),
