@@ -1,7 +1,7 @@
 ---
 title: Enable OpenID Connect login
 slug: enable-open-id-connect-login
-updated: 2024-05-22
+updated: 2024-08-22
 category: how-to-users-and-authentication
 ingress:
   In this guide we'll take at how to use an OpenID Connect login
@@ -173,7 +173,10 @@ Apple Sign-in also requires developers to set up a
 for Apple users who do not want to share their email address with the
 service. If you do integrate Apple Sign-in, it is important that you
 provide Sharetribe with a valid email address even if the user requests
-to keep their own address private.
+to keep their own address private. At the moment, the Sharetribe managed
+Sendgrid setup cannot handle private relay addresses, so at the very
+least you will need to
+[use your own Sendgrid account](/how-to/set-up-outgoing-email-settings/#using-your-own-sendgrid-account).
 
 ### Auth0
 
