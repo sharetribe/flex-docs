@@ -149,20 +149,27 @@ find it on the Stripe
 [API keys](https://dashboard.stripe.com/account/apikeys) page. You will
 also need to add the secret key in Sharetribe Console.
 
-- **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
-
-If using Mapbox, you will need to define this environment variable. Sign
-up for Mapbox and go to the
-[account page](https://www.mapbox.com/account/access-tokens). Then click
-on `Create access token`. See the
-[How to set up Mapbox for Sharetribe Web Template](/template/how-to-set-up-mapbox-for-template/)
-guide for more information.
-
 - **`REACT_APP_MARKETPLACE_ROOT_URL`**
 
 This is the root URL of the marketplace. For example:
 `https://the-name-of-your-app.herokuapp.com`. The template uses the root
 URL for social media sharing and SEO optimization.
+
+- **`REACT_APP_MARKETPLACE_NAME`**
+
+The Marketplace name in self-hosted marketplaces is set through
+environment variables. If not set, this will default to 'Biketribe', or
+whatever hard-coded value you have set in
+[src/config/configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L36).
+
+- **`REACT_APP_MAPBOX_ACCESS_TOKEN`**
+
+The Mapbox access token is specified via Console, under
+**Integrations** > **Map**. The template fetches this access token via
+[assets](/references/assets/). This environment variable is used as a
+fallback, and therefore is not mandatory. See the
+[How to set up Mapbox for Sharetribe Web Template](/template/how-to-set-up-mapbox-for-template/)
+guide for more information.
 
 ### Building the app
 
