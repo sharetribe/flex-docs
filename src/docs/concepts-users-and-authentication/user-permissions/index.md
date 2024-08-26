@@ -1,7 +1,7 @@
 ---
 title: User access control
 slug: user-access-control-in-sharetribe
-updated: 2024-08-09
+updated: 2024-08-23
 category: concepts-users-and-authentication
 ingress:
   This article explains what types of user access control are available
@@ -14,35 +14,77 @@ permissions to join, post listings, and start transactions. However, you
 can modify some of these permissions in Console, under the "Access
 control" tab.
 
+![Access control options](./access_control_blank.png)
+
+## Make marketplace private
+
+By default, Sharetribe marketplaces are public. This means that listings
+and user profiles are visible to unauthenticated users. By making your
+marketplace private, you can allow only authenticated users to view
+listings and users on your marketplace.
+
+On a private marketplace, the only public Marketplace API endpoints are
+user creation related [[ TODO CHECK IF THIS IS TRUE ]]. All other
+marketplaces require an authenticated user access token.
+
+This setting only has options on the marketplace level.
+
+![Access control for private marketplace](./access_control_private_marketplace.png)
+
+## Approve users who want to join
+
+User approval means that when a user signs in, they need to be approved
+by an admin before they have full access to the marketplace.
+
+On public marketplaces, this means that users pending approval can view
+listings and public user profiles, but they cannot post listings or
+initiate transactions. On private marketplaces, users pending approval
+can only view their own profile – they cannot view any other marketplace
+data.
+
+You can enable this setting in the Access Control tab.
+
+![Access control for user approval](./access_control_user_approval.png)
+
+When this setting is enabled, you will see a badge next to the name of
+each user who is pending operator approval.
+
+![Multiple users pending approval](./access_control_pending_users.png)
+
+You can accept the user by opening their user detail card and clicking
+on the "Approve user" button in the bottom right corner of your screen.
+
+![Accept user pending approval](./access_control_pending_user.png)
+
 ## Manually grant permission to publish listings
 
-You might want to limit listing publishing rights to certain users only.
-For example, if you have user types "Buyer" and "Seller", you might want
-to grant listing publishing rights to sellers only. Or you might be
-monetizing your marketplace with subscriptions, and therefore you only
-want to grant publishing rights to users who have subscribed.
+You might also want to limit listing publishing rights to certain users
+only. For example, if you have user types "Buyer" and "Seller", you
+might want to grant listing publishing rights to sellers only. Or you
+might be monetizing your marketplace with subscriptions, and therefore
+you only want to grant publishing rights to users who have subscribed.
 
 On the marketplace level, you can toggle the selection in the Access
 control tab.
 
-![Publish listings permission checkbox](./publish-listings-permissions-toggle.png)
+![Publish listings permission checkbox](./access_control_publishing_permission.png)
 
 Once this checkbox is selected, you can see the permission status of
 each user in the Console's Manage > Users view. A checkmark indicates
 permission to post, a cross indicates that the user does not have
 permissions to post listings.
 
-![User permissions in Manage view](./users-view-permissions.png)
+![User permissions in Manage view](./users_view_permissions.png)
 
 You can grant or revoke publishing rights for an individual user in
 their user details. Click the "Edit" link next to the "Permissions"
 heading.
 
-![Edit a single user's permissions](./edit-user-permissions.png)
+![Edit a single user's permissions](./edit_user_permissions.png)
 
 Now, you can check or uncheck the permissions checkbox for this user.
 
-![User permissions checkbox](./user-publish-listings-checkbox.png)
+![User permissions checkbox](./user_publish_listings_checkbox.png)
 
 ## Permissions in the currentUser resource
 
