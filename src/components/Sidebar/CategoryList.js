@@ -319,14 +319,16 @@ const CategoryList = props => {
           ) : null}
         </StyledCategory>
       )}
-      <ExternalLink
-        href="https://www.sharetribe.com/developer-blog/"
-        ariaLabel="Developer Blog"
-      >
-        <StyledMainCategoryTitle depth={1}>
-          Developer Blog
-        </StyledMainCategoryTitle>
-      </ExternalLink>
+      {depth == 1 ? (
+        <ExternalLink
+          href="https://www.sharetribe.com/developer-blog/"
+          ariaLabel="Developer Blog"
+        >
+          <StyledMainCategoryTitle depth={1}>
+            Developer Blog
+          </StyledMainCategoryTitle>
+        </ExternalLink>
+      ) : null}
     </ul>
   );
 };
