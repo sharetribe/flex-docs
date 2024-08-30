@@ -83,7 +83,7 @@ not. If you set your marketplace to private, only registered users can
 view listings and user profiles.
 
 When a user wants to start a transaction or create a listing, they need
-to be registered to Sharetribe. You can also choose to limit additional
+to be a registered user on your marketplace. You can also choose to limit additional
 rights for individual registered users.
 
 ### Registered marketplace users
@@ -221,7 +221,7 @@ the email specified in the request.
 Only authenticated users can access endpoints that deal with updating
 user information, creating and updating listings, and initiating and
 transitioning transactions. On private marketplaces, all endpoints
-require an authenticated user, and operators can also further limit
+require an authenticated user access token, and operators can also further limit
 individual users from posting or editing listings, or from viewing
 marketplace data.
 

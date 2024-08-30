@@ -25,7 +25,7 @@ listings and users on your marketplace.
 
 On a private marketplace, the only public Marketplace API endpoints are
 user creation related [[ TODO CHECK IF THIS IS TRUE ]]. All other
-marketplaces require an authenticated user access token.
+endpoints require an authenticated user access token.
 
 This setting only has options on the marketplace level.
 
@@ -33,11 +33,11 @@ This setting only has options on the marketplace level.
 
 ## Approve users who want to join
 
-User approval means that when a user signs in, they need to be approved
+User approval means that when a user signs up, they need to be approved
 by an admin before they have full access to the marketplace.
 
 On public marketplaces, this means that users pending approval can view
-listings and public user profiles, but they cannot post listings or
+listings and other users' profiles, but they cannot post listings or
 initiate transactions. On private marketplaces, users pending approval
 can only view their own profile – they cannot view any other marketplace
 data.
