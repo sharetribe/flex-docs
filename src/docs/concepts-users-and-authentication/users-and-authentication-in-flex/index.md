@@ -28,8 +28,9 @@ you will need to create those limitations in your client application.
 You can use [extended data](/concepts/extended-data-introduction/) to
 determine that a user is in a certain group, and then allow a subset of
 your marketplace functionalities, e.g. listing creation, for a specified
-group. You can, for example, define user types in Console for this
-purpose.
+group. You can, for example,
+[define user types in Console](https://www.sharetribe.com/help/en/articles/9117175-what-are-user-types)
+for this purpose.
 
 ### Customer
 
@@ -83,8 +84,8 @@ not. If you set your marketplace to private, only registered users can
 view listings and user profiles.
 
 When a user wants to start a transaction or create a listing, they need
-to be a registered user on your marketplace. You can also choose to limit additional
-rights for individual registered users.
+to be a registered user on your marketplace. You can also choose to
+limit additional rights for individual registered users.
 
 ### Registered marketplace users
 
@@ -221,9 +222,9 @@ the email specified in the request.
 Only authenticated users can access endpoints that deal with updating
 user information, creating and updating listings, and initiating and
 transitioning transactions. On private marketplaces, all endpoints
-require an authenticated user access token, and operators can also further limit
-individual users from posting or editing listings, or from viewing
-marketplace data.
+require an authenticated user access token, and operators can also
+further limit individual users from posting or editing listings, or from
+viewing marketplace data.
 
 Through initiating and transitioning transactions, authenticated users
 have access to functionalities that do not have specific endpoints. For

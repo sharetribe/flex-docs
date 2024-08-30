@@ -16,6 +16,16 @@ control" tab.
 
 ![Access control options](./access_control_blank.png)
 
+Access control features can be toggled on or off on the marketplace
+level, and some permissions can also be modified per user. [[TODO add
+techncal description]]
+
+When an operator makes a user-level change to a single user's
+permissions, it triggers a _user/updated_ event that you can listen to
+with Integration API. However, when an operator toggles a feature on or
+off on the marketplace level, no event is triggered, even though the
+effective permissions may change for some users.
+
 ## Make marketplace private
 
 By default, Sharetribe marketplaces are public. This means that listings
@@ -27,7 +37,7 @@ On a private marketplace, the only public Marketplace API endpoints are
 user creation related [[ TODO CHECK IF THIS IS TRUE ]]. All other
 endpoints require an authenticated user access token.
 
-This setting only has options on the marketplace level.
+This setting can be turned on or off on the marketplace level.
 
 ![Access control for private marketplace](./access_control_private_marketplace.png)
 
