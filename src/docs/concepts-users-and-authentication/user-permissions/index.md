@@ -17,8 +17,9 @@ control" tab.
 ![Access control options](./access_control_blank.png)
 
 Access control features can be toggled on or off on the marketplace
-level, and some permissions can also be modified per user. [[TODO add
-techncal description]]
+level, and some permissions can also be modified per user. Certain
+access control settings may also enforce authorization in certain API
+endpoints.
 
 When an operator makes a user-level change to a single user's
 permissions, it triggers a _user/updated_ event that you can listen to
@@ -30,12 +31,12 @@ effective permissions may change for some users.
 
 By default, Sharetribe marketplaces are public. This means that listings
 and user profiles are visible to unauthenticated users. By making your
-marketplace private, you can allow only authenticated users to view
-listings and users on your marketplace.
+marketplace private, you allow only authenticated users to view listings
+and users on your marketplace.
 
 On a private marketplace, the only public Marketplace API endpoints are
-user creation related [[ TODO CHECK IF THIS IS TRUE ]]. All other
-endpoints require an authenticated user access token.
+user creation and password reset related. All other endpoints require an
+authenticated user access token.
 
 This setting can be turned on or off on the marketplace level.
 
@@ -46,11 +47,12 @@ This setting can be turned on or off on the marketplace level.
 User approval means that when a user signs up, they need to be approved
 by an admin before they have full access to the marketplace.
 
-On public marketplaces, this means that users pending approval can view
-listings and other users' profiles, but they cannot post listings or
-initiate transactions. On private marketplaces, users pending approval
-can only view their own profile – they cannot view any other marketplace
-data.
+On **public marketplaces**, this means that users pending approval can
+view listings and other users' profiles, but they cannot post listings
+or initiate transactions.
+
+On **private marketplaces**, users pending approval can only view their
+own profile – they cannot view any other marketplace data.
 
 You can enable this setting in the Access Control tab.
 
@@ -95,6 +97,13 @@ heading.
 Now, you can check or uncheck the permissions checkbox for this user.
 
 ![User permissions checkbox](./user_publish_listings_checkbox.png)
+
+## Permissions in the access-control.json asset
+
+On the marketplace level, the changes made in Console get recorded in
+the asset _/general/access-control.json_.
+
+![/general/access-control.json asset](./access-control-asset.png)
 
 ## Permissions in the currentUser resource
 
