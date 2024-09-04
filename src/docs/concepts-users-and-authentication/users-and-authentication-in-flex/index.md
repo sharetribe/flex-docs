@@ -1,7 +1,7 @@
 ---
 title: Users and authentication in Sharetribe
 slug: users-and-authentication-in-sharetribe
-updated: 2023-10-24
+updated: 2024-08-22
 category: concepts-users-and-authentication
 ingress:
   This article explains how users are managed and how authentication and
@@ -28,7 +28,9 @@ you will need to create those limitations in your client application.
 You can use [extended data](/concepts/extended-data-introduction/) to
 determine that a user is in a certain group, and then allow a subset of
 your marketplace functionalities, e.g. listing creation, for a specified
-group.
+group. You can, for example,
+[define user types in Console](https://www.sharetribe.com/help/en/articles/9117175-what-are-user-types)
+for this purpose.
 
 ### Customer
 
@@ -76,16 +78,25 @@ scheduled to happen automatically.
 
 ## User access
 
-Sharetribe marketplace listings can be viewed by anyone by default,
-whether they are registered users or not. If a user wants to start a
-transaction or create a listing, they need to be registered to
-Sharetribe.
+Sharetribe marketplace listings and user profiles on public marketplaces
+can be viewed by anyone by default, whether they are registered users or
+not. If you set your marketplace to private, only registered users can
+view listings and user profiles.
+
+When a user wants to start a transaction or create a listing, they need
+to be a registered user on your marketplace. You can also choose to
+limit additional rights for individual registered users.
 
 ### Registered marketplace users
 
 Listings can only be updated by their author, i.e. the registered user
 who originally created the listing. Operators can create listings for a
 registered user, and update existing listings.
+
+When user approval is required on the marketplace, operators can
+individually determine which users can post listings and start
+transactions. On private marketplaces, user approval affects viewing
+rights as well. Listing posting rights can also be determined per user.
 
 Beyond that, Sharetribe does not have different levels of user access
 within the marketplace. Operators who want to create more complex user
@@ -101,12 +112,12 @@ solution!
 
 Sharetribe has a feature through which operators can log in to their
 marketplace as a registered user and take limited actions on their
-behalf. When using the Login as user feature, operators cannot initiate
-or transition transactions or modify the user's payout information.
-However, they can e.g. create and update listings on behalf of the user.
-The login as user feature can be accessed through the Sharetribe
-Console, by navigating to a user profile and clicking on the three dots
-next to the profile image of the user.
+behalf. When using the Login as user feature in Live environments,
+operators cannot initiate or transition transactions or modify the
+user's payout information. However, they can e.g. create and update
+listings on behalf of the user. The login as user feature can be
+accessed through the Sharetribe Console, by navigating to a user profile
+and clicking on the three dots next to the profile image of the user.
 
 ### Integration API
 
@@ -131,10 +142,26 @@ request. If you use the [Javascript SDKs](/concepts/js-sdk/) in your
 marketplace client application, they handle authenticating the user
 automatically when they enter their credentials.
 
-## Banned and deleted users
+## Restricted user states in a Sharetribe marketplace
 
-When a user is banned or deleted, they can no longer take action on the
-marketplace.
+When a user is pending approval, banned, or deleted, they do not have
+full access to the marketplace functionalities. User state is exposed as
+a part of the `currentUser` resource.
+
+### User pending approval
+
+You can set your marketplace to require that users be approved before
+they can participate in the marketplace. You can approve users in
+Console.
+
+For public marketplaces, this means that users cannot post or modify
+listings or start transactions before they have been approved. For
+private marketplaces, users pending approval also cannot view listings
+or other user profiles.
+
+A user pending approval can edit their own profile, but it will only
+become visible to other marketplace users once the user has been
+approved.
 
 ### Banned user
 
@@ -163,11 +190,11 @@ guide on
 ## Authentication in Sharetribe
 
 The Sharetribe APIs limit visibility to certain data based on the
-authentication level of the user. Marketplace API has three different
-levels of access, whereas Integration API only has full access or no
-access. This means that when using any Integration API endpoints, it is
-crucial to only use them from a secure context i.e. from server code,
-never from browser code.
+authentication level of the user. Marketplace API has multiple levels of
+access, whereas Integration API only has full access or no access. This
+means that when using any Integration API endpoints, it is crucial to
+only use them from a secure context i.e. from server code, never from
+browser code.
 
 Regardless of the level of access, each API endpoint requires an access
 token that can be acquired through Sharetribe
@@ -180,9 +207,9 @@ and
 
 ### Anonymous access to Marketplace API
 
-Some endpoints can be accessed without signing in to Sharetribe. These
-include viewing published listings, bookings and reviews, as well as
-public user data.
+Some endpoints can be accessed without signing in to Sharetribe on
+public marketplaces. These include viewing published listings,
+availability and reviews, as well as public user data.
 
 In addition, the user creation endpoints and password reset request
 endpoint can be called with an anonymous access token. Password reset
@@ -194,7 +221,10 @@ the email specified in the request.
 
 Only authenticated users can access endpoints that deal with updating
 user information, creating and updating listings, and initiating and
-transitioning transactions.
+transitioning transactions. On private marketplaces, all endpoints
+require an authenticated user access token, and operators can also
+further limit individual users from posting or editing listings, or from
+viewing marketplace data.
 
 Through initiating and transitioning transactions, authenticated users
 have access to functionalities that do not have specific endpoints. For
