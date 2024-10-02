@@ -132,7 +132,7 @@ You can toggle the setting in the Access control tab.
 
 ![Restrict transaction rights checkbox](./users_restrict_transaction_rights.png)
 
-Once this checkbox is selected, similiarly to how publishing rights are
+Once this checkbox is selected, similarly to how publishing rights are
 granted, you can see the permission status of each user in the Console's
 Manage > Users view.
 
@@ -148,8 +148,17 @@ Toggling permissions under the "Access Control" tab in the Console
 directly impacts API behavior. When permissions are modified, endpoint
 access is adjusted accordingly, ensuring that users cannot bypass the
 restrictions imposed by these settings. This guarantees access control
-policies are strictly enforced. These restrictions only apply in the
-Marketplace API.
+policies are strictly enforced.
+
+These restrictions only apply in the Marketplace API. Marketplace
+end-users never access the Integration API directly, so Integration API
+endpoints don't need to be similarly restricted. However, if you create
+an integration where marketplace users indirectly utilize the
+Integration API (e.g. proxying calls via the server), you'll need to
+enforce restrictions based on the currentUser's effectivePermissionSet.
+This might also be relevant if you have more complex customizations in
+place that utilize the Integration API, e.g., you're allowing users to
+post listings on behalf of other users using the Integration API.
 
 ### Making marketplace private
 
@@ -210,6 +219,10 @@ When this setting is toggled, these endpoints will return a 403
 Forbidden response, indicating that access is denied because the user
 has not been approved.
 
+Note that if the marketplace has been set to private, unapproved users
+will be treated the same as non-registered users. See the endpoints that
+are restricted in this case [above](#approve-users-who-want-to-join-1).
+
 ### Restrict publishing rights
 
 Toggling this setting in the Console allows you to manually select which
@@ -234,8 +247,11 @@ following Marketplace API endpoint will be restricted:
 - `POST transactions/initiate`
 
 This endpoint will return a 403 Forbidden response if the user doesn't
-have permission to initiate transactions. Note that users can still
-transact any existing transactions they've initiated.
+have permission to initiate transactions. Note that users can still call
+the `transactions/transition` endpoint, allowing them to transition
+existing transactions. This can be restricted in the client application;
+for example, the web-template prevents users from transitioning existing
+transactions that are in the inquiry state.
 
 ## Permissions in the access-control.json asset
 
