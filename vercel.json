@@ -587,7 +587,12 @@
   },
   {
     "source": "/docs/cookbook-events/set-up-and-use-zapier/",
-    "destination": "/docs/how-to/set-up-and-use-zapier/",
+    "destination": "https://www.sharetribe.com/help/en/collections/8975364",
+    "permanent": true
+  },
+  {
+    "source": "/docs/how-to/set-up-and-use-zapier/",
+    "destination": "https://www.sharetribe.com/help/en/collections/8975364",
     "permanent": true
   },
   {

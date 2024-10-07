@@ -35,7 +35,7 @@ listing.
 
 Approving a listing does not trigger an automatic email notification.
 However, you can for instance
-[set up Zapier](/how-to/set-up-and-use-zapier/) to listen to events
+[set up Zapier](https://www.sharetribe.com/help/en/articles/8529941#h_e678e79410) to listen to events
 where a listing's state goes from `pendingApproval` to `published` and
 send a message.
 

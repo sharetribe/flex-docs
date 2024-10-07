@@ -57,7 +57,7 @@ and you can modify the structure and code of the notifications through
 
 ## Zapier, events and messages
 
-Using [Zapier](/how-to/set-up-and-use-zapier/) you can connect your
+Using [Zapier](https://www.sharetribe.com/help/en/collections/8975364) you can connect your
 marketplace with other web applications and create automated workflows.
 
 Even though you can’t listen for new messages through Zapier, messages
