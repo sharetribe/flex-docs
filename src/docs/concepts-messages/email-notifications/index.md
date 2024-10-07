@@ -132,7 +132,7 @@ app to Zapier. You can use Zapier to listen for events in your
 marketplace and react to them using different actions. Zapier also
 supports sending text messages instead of emails. Read more about Zapier
 in our
-[guide on how to set up and use Zapier](/how-to/set-up-and-use-zapier/).
+[Help Center](https://www.sharetribe.com/help/en/collections/8975364).
 
 If you are unsure how to approach a Zapier integration, do not hesitate
 to reach out to our support team through one of our

@@ -78,7 +78,7 @@ can read more about
 ### Zapier
 
 Sharetribe has also built a
-[Zapier integration](/how-to/set-up-and-use-zapier/) to facilitate
+[Zapier integration](https://www.sharetribe.com/help/en/collections/8975364) to facilitate
 integrating third-party tools with Sharetribe. The Zapier integration
 works by harnessing a subset of Sharetribe events and allowing operators
 to connect any of the other
@@ -179,7 +179,7 @@ Zapier integration, so you can use Zapier to trigger actions in Twilio
 tools with no coding.
 
 - Follow the
-  [Sharetribe video guide](/how-to/set-up-and-use-zapier/#how-to-build-a-text-message-integration-in-sharetribe-using-twilio-and-zapier)
+  [Sharetribe tutorial](https://www.sharetribe.com/help/en/articles/8788994)
   to send providers a SMS message whenever their listing gets booked.
 
 ### Sendbird user-to-user chat app
