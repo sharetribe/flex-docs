@@ -40,8 +40,6 @@ authenticated user access token.
 
 This setting can be turned on or off on the marketplace level.
 
-![Access control for private marketplace](./access_control_private_marketplace.png)
-
 See which endpoints are affected by this setting
 [here](#making-marketplace-private).
 
@@ -62,18 +60,6 @@ own profile – they cannot view any other marketplace data.
 
 You can enable this setting in the Access Control tab.
 
-![Access control for user approval](./access_control_user_approval.png)
-
-When this setting is enabled, you will see a badge next to the name of
-each user who is pending operator approval.
-
-![Multiple users pending approval](./access_control_pending_users.png)
-
-You can accept the user by opening their user detail card and clicking
-on the "Approve user" button in the bottom right corner of your screen.
-
-![Accept user pending approval](./access_control_pending_user.png)
-
 See which endpoints are affected by this setting
 [here](#approve-users-who-want-to-join-1).
 
@@ -90,25 +76,6 @@ you only want to grant publishing rights to users who have subscribed.
 
 On the marketplace level, you can toggle the selection in the Access
 control tab.
-
-![Publish listings permission checkbox](./access_control_publishing_permission.png)
-
-Once this checkbox is selected, you can see the permission status of
-each user in the Console's Manage > Users view. A checkmark indicates
-permission to post, a cross indicates that the user does not have
-permissions to post listings.
-
-![User permissions in Manage view](./users_view_permissions.png)
-
-You can grant or revoke publishing rights for an individual user in
-their user details. Click the "Edit" link next to the "Permissions"
-heading.
-
-![Edit a single user's permissions](./edit_user_permissions.png)
-
-Now, you can check or uncheck the permissions checkbox for this user.
-
-![User permissions checkbox](./user_publish_listings_checkbox.png)
 
 See which endpoints are affected by this setting
 [here](#restrict-publishing-rights).
@@ -129,8 +96,6 @@ showroom, where users can browse but cannot buy until the operator
 grants them permission.
 
 You can toggle the setting in the Access control tab.
-
-![Restrict transaction rights checkbox](./users_restrict_transaction_rights.png)
 
 Once this checkbox is selected, similarly to how publishing rights are
 granted, you can see the permission status of each user in the Console's
@@ -270,16 +235,43 @@ the asset _/general/access-control.json_.
       },
       "users": {
         "requireApprovalToJoin": false,
+        "requireApprovalToJoinOptions": {
+          "callToAction": {
+            "type": "internal",
+            "text": "Add a link to request approval to join",
+            "href": "/p/about/"
+          }
+        },
         "requirePermissionToPostListings": true,
-        "requirePermissionToInitiateTransactions": false
+        "requirePermissionToPostListingsOptions": {
+          "callToAction": {
+            "type": "none"
+          }
+        },
+        "requirePermissionToInitiateTransactions": false,
+        "requirePermissionToInitiateTransactionsOptions": {
+          "callToAction": {
+            "type": "none"
+          }
+        }
       },
       "listings": {
-        "requireApprovalToPublish": false
+        "requireApprovalToPublish": false,
+        "requireApprovalToPublishOptions": {
+          "callToAction": {
+            "type": "none"
+          }
+        }
       }
     }
   }
 }
 ```
+
+In addition to permission data, the asset contains an options object,
+which contains data on a Call To Action button. This feature is
+implemented in the template, see the relevant
+[PR here](https://github.com/sharetribe/web-template/releases/tag/v5.6.0).
 
 ## Permissions in the currentUser resource
 
