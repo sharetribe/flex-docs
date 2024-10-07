@@ -591,6 +591,11 @@
     "permanent": true
   },
   {
+    "source": "/docs/how-to/set-up-and-use-zapier/",
+    "destination": "https://www.sharetribe.com/help/en/collections/8975364",
+    "permanent": true
+  },
+  {
     "source": "/docs/ftw-testing-error-handling/how-to-use-ci-with-ftw/",
     "destination": "/docs/template/how-to-use-ci-with-template/",
     "permanent": true
