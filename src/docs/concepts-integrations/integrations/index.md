@@ -88,11 +88,8 @@ ecosystem.
 The Sharetribe Zapier integration makes it easier to take action in your
 favorite business tools, such as
 [Hubspot](https://zapier.com/apps/hubspot/integrations/),
-[MailChimp](https://zapier.com/apps/mailchimp/integrations/) and others,
-based on your Sharetribe marketplace activity. However, Zapier cannot
-currently perform operations within Sharetribe. In other words, if you
-need to take action in Sharetribe based on activity in other solutions,
-you will need to use the Integration API directly.
+[Mailchimp](https://zapier.com/apps/mailchimp/integrations/) and others,
+based on your Sharetribe marketplace activity. The Sharetribe Zapier integration even allows you to [perform actions within Sharetribe](https://www.sharetribe.com/help/en/articles/8529989#h_7ccc6de359).
 
 ## Levels of integration
 
