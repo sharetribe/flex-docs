@@ -11,8 +11,8 @@ published: true
 
 We learned about user journeys and how to use the Template to create
 them to save time and money in
-[a previous article](/design-toolkit/what-are-user-journeys/). Now
-it is time to define how your users will use your marketplace.
+[a previous article](/design-toolkit/what-are-user-journeys/). Now it is
+time to define how your users will use your marketplace.
 
 ## Background work
 

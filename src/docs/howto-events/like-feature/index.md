@@ -736,6 +736,6 @@ const SectionLikes = props => {
 
 Now while running the event listener script you should have a fully
 functional like button. If you're interested in reading more about
-events, you can read [our articles on
-reacting to events](/how-to/reacting-to-events/) and
+events, you can read
+[our articles on reacting to events](/how-to/reacting-to-events/) and
 [user Events as triggers in Zapier](https://www.sharetribe.com/help/en/articles/8529989#h_1197b66f66).
