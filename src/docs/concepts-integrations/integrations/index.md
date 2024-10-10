@@ -78,10 +78,10 @@ can read more about
 ### Zapier
 
 Sharetribe has also built a
-[Zapier integration](https://www.sharetribe.com/help/en/collections/8975364) to facilitate
-integrating third-party tools with Sharetribe. The Zapier integration
-works by harnessing a subset of Sharetribe events and allowing operators
-to connect any of the other
+[Zapier integration](https://www.sharetribe.com/help/en/collections/8975364)
+to facilitate integrating third-party tools with Sharetribe. The Zapier
+integration works by harnessing a subset of Sharetribe events and
+allowing operators to connect any of the other
 [5000+ tools and solutions](https://zapier.com/apps/) in the Zapier
 ecosystem.
 
@@ -89,7 +89,9 @@ The Sharetribe Zapier integration makes it easier to take action in your
 favorite business tools, such as
 [Hubspot](https://zapier.com/apps/hubspot/integrations/),
 [Mailchimp](https://zapier.com/apps/mailchimp/integrations/) and others,
-based on your Sharetribe marketplace activity. The Sharetribe Zapier integration even allows you to [perform actions within Sharetribe](https://www.sharetribe.com/help/en/articles/8529989#h_7ccc6de359).
+based on your Sharetribe marketplace activity. The Sharetribe Zapier
+integration even allows you to
+[perform actions within Sharetribe](https://www.sharetribe.com/help/en/articles/8529989#h_7ccc6de359).
 
 ## Levels of integration
 

@@ -44,8 +44,8 @@ the best way to see how the Template works. There you can access the
 Template and use it as a real user, creating accounts, making
 transactions, sending messages, and so on. If you're familiar with Figma
 or other design tools, you can also download, view, and modify the
-[design files](/design-toolkit/design-files/) showing all the
-screens in the Template.
+[design files](/design-toolkit/design-files/) showing all the screens in
+the Template.
 
 The workflows you pursue in the Template represent the out of the box
 features available in Sharetribe. Developers can use them as they are,
@@ -54,6 +54,6 @@ starting point. A great way then to describe the requirements of your
 marketplace are as modifications, tweaks, or sweeping changes to the
 existing functionality.
 
-In the [next article](/design-toolkit/your-user-journey-a-guide/),
-we will share more about how to organize, describe, and share your user
+In the [next article](/design-toolkit/your-user-journey-a-guide/), we
+will share more about how to organize, describe, and share your user
 journeys.

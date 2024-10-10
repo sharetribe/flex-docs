@@ -384,8 +384,8 @@ const ConsentIframe = props => {
         This video cannot be displayed because cookies are disabled.{' '}
         <a href={props.src} target="_blank">
           Watch on YouTube
-        </a>
-        {' '}or{' '}
+        </a>{' '}
+        or{' '}
         <a
           href="javascript: Cookiebot.renew()"
           className="update-cookie-settings"
