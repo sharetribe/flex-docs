@@ -1,7 +1,7 @@
 ---
 title: User access control
 slug: user-access-control-in-sharetribe
-updated: 2024-08-23
+updated: 2024-10-10
 category: concepts-users-and-authentication
 ingress:
   This article explains what types of user access control are available
@@ -106,6 +106,25 @@ See which endpoints are affected by this setting
 
 Read more about this feature in the
 [Help Center](https://www.sharetribe.com/help/en/articles/9790336).
+
+## Restrict viewing rights
+
+On private marketplaces, you can restrict viewing rights for individual
+users. If a user's viewing rights have been restricted, they will only
+see their own listings and profile even if they have previously been
+approved.
+
+You can toggle the setting in the Access control tab when the
+marketplace has been set to private.
+
+Once this checkbox is selected, you can see the permission status of
+each user in the Console's Manage > Users view.
+
+See which endpoints are affected by this setting
+[here](#restrict-viewing-rights-1).
+
+Read more about this feature in the
+[Help Center](https://www.sharetribe.com/help/en/articles/9790341).
 
 ## API level restrictions
 
@@ -218,6 +237,29 @@ existing transactions. This can be restricted in the client application;
 for example, the web-template prevents users from transitioning existing
 transactions that are in the inquiry state.
 
+### Restrict viewing rights
+
+Toggling this setting in Console allows you to manually select which
+users can view other users' listings and profiles on your private
+marketplace.
+
+When viewing rights have been revoked for a marketplace user, the
+following Marketplace API endpoints will be restricted:
+
+Listings:
+
+- `GET listings/query`
+- `GET listings/show`
+
+Reviews:
+
+- `GET reviews/query`
+- `GET reviews/show`
+
+Timeslots:
+
+- `GET timeslots/query`
+
 ## Permissions in the access-control.json asset
 
 On the marketplace level, the changes made in Console get recorded in
@@ -253,6 +295,12 @@ the asset _/general/access-control.json_.
           "callToAction": {
             "type": "none"
           }
+        },
+        "requirePermissionToRead": false,
+        "requirePermissionToReadOptions": {
+          "callToAction": {
+            "type": "none"
+          }
         }
       },
       "listings": {
@@ -280,7 +328,20 @@ Permissions show up in the _currentUser_ resource in two ways:
 - _currentUser_ has an attribute _permissions_, which contains the
   user-level permission setting
 
-![currentUser.attributes.permissions](./current_user_permissions_attribute.png)
+```json
+        "~:type": "~:currentUser",
+        "~:attributes": {
+            "~:deleted": false,
+            "~:banned": false,
+            "~:email": "pending-approval@example.com",
+            "~:permissions": {
+                "~:read": "~:permission/allow",
+                "~:initiateTransactions": "~:permission/deny",
+                "~:postListings": "~:permission/deny"
+            },
+            "~:stripeConnected": false,
+            "~:stripePayoutsEnabled": false,
+```
 
 - _currentUser_ also has a related resource _effectivePermissionSet_,
   which contains the user's permissions based on the user level and
@@ -288,7 +349,29 @@ Permissions show up in the _currentUser_ resource in two ways:
   [include this related resource](https://www.sharetribe.com/api-reference/#including-related-resources)
   in your _currentUser.show()_ API call to fetch it from the API.
 
-![currentUser.relationships.effectivePermissionsSet](./current_user_effectivePermissionSet.png)
+```json
+        "~:relationships": {
+            "~:effectivePermissionSet": {
+                "~:data": {
+                    "~:id": "~u6707a063-994a-4310-92c8-422831800720",
+                    "~:type": "~:permissionSet"
+                }
+            }
+        },
+      },
+    "~:included": [
+      {
+        "~:id": "~u6707a063-994a-4310-92c8-422831800720",
+        "~:type": "~:permissionSet",
+        "~:attributes": {
+            "~:postListings": "~:permission/deny",
+            "~:read": "~:permission/allow",
+            "~:initiateTransactions": "~:permission/deny"
+        }
+    }
+  ]
+
+```
 
 This is an important distinction, because the
 _currentUser.attributes.permissions_ value might be different from the
@@ -311,11 +394,46 @@ Consider this example:
 Now, the _attributes.permission_ value for _postListings_ is still
 _"permission/deny"_, because it persists on the user's profile.
 
-![currentUser.attributes.permissions](./current_user_permissions_attribute.png)
+```json
+        "~:type": "~:currentUser",
+        "~:attributes": {
+            "~:deleted": false,
+            "~:banned": false,
+            "~:email": "pending-approval@example.com",
+            "~:permissions": {
+                "~:read": "~:permission/allow",
+                "~:initiateTransactions": "~:permission/deny",
+                "~:postListings": "~:permission/deny"
+            },
+            "~:stripeConnected": false,
+            "~:stripePayoutsEnabled": false,
+```
 
 The _effectivePermissionSet_ value for _postListings_, however, is
 _"permission/allow"_, because now the marketplace level restriction has
 been lifted. The marketplace level setting overrides the user level
 setting.
 
-![currentUser.relationships.effectivePermissionsSet with marketplace level permission](./current_user_effectivePermissionSet_allow.png)
+```json
+        "~:relationships": {
+            "~:effectivePermissionSet": {
+                "~:data": {
+                    "~:id": "~u6707a063-994a-4310-92c8-422831800720",
+                    "~:type": "~:permissionSet"
+                }
+            }
+        },
+      },
+    "~:included": [
+      {
+        "~:id": "~u6707a063-994a-4310-92c8-422831800720",
+        "~:type": "~:permissionSet",
+        "~:attributes": {
+            "~:postListings": "~:permission/allow",
+            "~:read": "~:permission/allow",
+            "~:initiateTransactions": "~:permission/deny"
+        }
+    }
+  ]
+
+```
