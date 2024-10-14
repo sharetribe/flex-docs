@@ -387,6 +387,34 @@ Example usage:
 Encode the given string as application/x-www-form-urlencoded. Should be
 used for query string components.
 
+### `asset`
+
+> Params:
+>
+> - asset path
+> - (optional) JSON key or dot-separated nested keys
+> - (optional) default value
+
+The helper is used to retrieve data from assets. It can locate values
+within nested fields by providing a sequence of keys, separated by dots,
+to traverse the JSON structure. For example, the colour of a button in
+the email template can be assigned dynamically by accessing the
+`design/branding.json` asset. The use of this helper is not limited to
+the branding asset – any asset data can be used in the templates.
+
+```handlebars
+{{asset "design/branding.json" "marketplaceColors.notificationPrimaryButton" "#007DF2"}}
+```
+
+In addition, in the email templates, this helper is used to define the
+correct localization settings in the email templates without modifying
+the template structure itself:
+
+```handlebars
+{{set-translations (asset "content/email-texts.json")}}
+{{set-locale (asset "general/localization.json" "locale" "en_US")}}
+```
+
 ## Editing email content
 
 For both built-in emails and transaction process emails, you can edit
