@@ -210,6 +210,7 @@ subject to change.
     "meta": {
       "title": "SEO & Social",
       "type": "object",
+      "description": "Tell search engines and social media platforms how they should present your page in search results and posts.\n\n[Watch a video](https://www.youtube.com/watch?v=W7CocGvm7RI) | [Learn more about editing meta tags](https://www.sharetribe.com/help/en/articles/8411140-how-to-edit-seo-and-social-metadata-tags)",
       "properties": {
         "pageTitle": {
           "type": "object",
@@ -220,9 +221,9 @@ subject to change.
             },
             "content": {
               "type": "string",
-              "maxLength": 55,
+              "maxLength": 255,
               "title": "Page title",
-              "description": "Displayed in browser tab and search engines."
+              "description": "The page title in search engines and browser tabs. Recommended length: 50–60 characters."
             }
           }
         },
@@ -236,7 +237,7 @@ subject to change.
             "content": {
               "type": "string",
               "title": "Page description",
-              "description": "A summary of the content of the page, displayed in search engines."
+              "description": "A summary of the page content for search engines. Recommended length: 50-160 characters."
             }
           }
         },
@@ -250,23 +251,27 @@ subject to change.
             "title": {
               "type": "string",
               "title": "Page title for social media",
-              "description": "Displayed when someone shares the page in social media."
+              "description": "The page title in social media shares and links. Recommended length: 50–60 characters."
             },
             "description": {
               "type": "string",
               "title": "Page description for social media",
-              "description": "A summary of the content of the page, displayed when someone shares the page in social media."
+              "description": "A summary of the page content for social media shares and links. Recommended length: 50-160 characters."
             },
             "image": {
-              "title": "Social media image",
+              "title": "Page image for social media",
               "type": "object",
-              "description": "Displayed when someone shares the page in social media. The image should have a 1.91:1 aspect ratio and minimum dimensions of 1200x630 pixels. It should not exceed 20MB in size.",
+              "description": "The page image in social media shares and links. Recommended aspect ratio: 1.91:1. Recommended minimum size: 1200x630 pixels. Maximum image size: 20MB.",
               "properties": {
                 "_ref": {
                   "type": "object",
                   "properties": {
-                    "resolver": { "const": "image" },
-                    "target": { "type": "string" },
+                    "resolver": {
+                      "const": "image"
+                    },
+                    "target": {
+                      "type": "string"
+                    },
                     "params": {
                       "const": {
                         "variants": {
@@ -293,6 +298,7 @@ subject to change.
     },
     "sections": {
       "title": "Sections",
+      "description": "Build a content page out of sections and content blocks. Determine the section layout, color, and appearance. Add titles, descriptions, call-to-action buttons, block text, images, and video.\n\n[Watch a video](https://www.youtube.com/watch?v=nZ8YtfZ_5n0&t=124s) | [Learn more about editing content pages](https://www.sharetribe.com/help/en/articles/8387209-how-to-edit-a-content-page)",
       "type": "array",
       "maxItems": 20,
       "items": {
@@ -302,45 +308,56 @@ subject to change.
           "sectionName": {
             "type": "string",
             "title": "Section name",
-            "description": "Section name is not shown on the page. It just helps you remember what the section is about."
+            "description": "The section name is only shown in Console. It helps you remember what the section is about."
           },
           "sectionId": {
-            "description": "An anchor link allows you to link directly to this section, like this: www.yourdomain.com/p/page_id#anchor-link-id. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+            "_errors": {
+              "pattern": "You've added characters that are not allowed."
+            },
+            "description": "Use an anchor link ID to link directly to a section. Example: www.example.com/p/page_id#anchor-link-id. Use lowercase characters, numbers, dashes (-) or underscores (_), and no spaces.",
             "type": "string",
             "title": "Anchor link ID",
             "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
           },
           "sectionType": {
-            "description": "Determines the layout of the section content. [Learn more about section templates.](https://www.sharetribe.com/help/en/articles/8387253-what-are-section-templates)",
+            "description": "Determines the section layout. [Learn more about section templates.](https://www.sharetribe.com/help/en/articles/8387253-what-are-section-templates)",
             "type": "string",
             "title": "Section template",
             "oneOf": [
               {
+                "const": "hero",
+                "title": "Hero",
+                "description": "No content blocks. Consists of a title, description, and button."
+              },
+              {
                 "const": "article",
                 "title": "Article",
-                "description": "Content Blocks on top of each other in a narrow layout optimized for reading."
+                "description": "Content blocks stacked vertically, optimized for reading."
               },
               {
                 "const": "carousel",
                 "title": "Carousel",
-                "description": "Content Blocks side by side, 1-4 blocks visible at a time, the rest revealed by swiping or scrolling."
+                "description": "Content blocks placed horizontally. 1-4 blocks are visible at a time and the rest can be revealed by swiping or scrolling."
               },
               {
                 "const": "columns",
                 "title": "Columns",
-                "description": "Content Blocks in a grid of 1, 2, 3, or 4 columns."
+                "description": "Content blocks in a grid of 1, 2, 3, or 4 columns."
               },
               {
                 "const": "features",
                 "title": "Features",
-                "description": "Content Blocks on top of each other, text, and media side by side in an alternating order."
+                "description": "Content blocks stacked vertically, with text and media side by side in an alternating order."
               }
             ]
           },
           "title": {
             "type": "object",
             "properties": {
-              "content": { "title": "Section title", "type": "string" },
+              "content": {
+                "title": "Section title",
+                "type": "string"
+              },
               "fieldType": {
                 "title": "Section title size",
                 "type": "string",
@@ -380,7 +397,7 @@ subject to change.
                 "title": "Section call to action",
                 "type": "string",
                 "default": "none",
-                "description": "The action the user is prompted to take after viewing the section.",
+                "description": "The action you want a user to take after viewing the section.",
                 "oneOf": [
                   {
                     "$ref": "#/$defs/fieldType/none",
@@ -389,12 +406,12 @@ subject to change.
                   {
                     "$ref": "#/$defs/fieldType/internalButtonLink",
                     "title": "Internal link",
-                    "description": "Link to a page in your marketplace. Displayed as a button."
+                    "description": "A button link to a page in your marketplace."
                   },
                   {
                     "$ref": "#/$defs/fieldType/externalButtonLink",
                     "title": "External link",
-                    "description": "Link to a page outside your marketplace. Opens in a new tab. Displayed as a button."
+                    "description": "A button link to a page outside your marketplace. Opens in a new tab."
                   }
                 ]
               }
@@ -409,7 +426,9 @@ subject to change.
                   },
                   "required": ["fieldType"]
                 },
-                "then": { "$ref": "#/$defs/internalButtonLink" }
+                "then": {
+                  "$ref": "#/$defs/internalButtonLink"
+                }
               },
               {
                 "if": {
@@ -420,7 +439,9 @@ subject to change.
                   },
                   "required": ["fieldType"]
                 },
-                "then": { "$ref": "#/$defs/externalButtonLink" }
+                "then": {
+                  "$ref": "#/$defs/externalButtonLink"
+                }
               }
             ]
           },
@@ -446,27 +467,34 @@ subject to change.
             },
             "if": {
               "properties": {
-                "fieldType": { "const": "customAppearance" }
-              }
+                "fieldType": {
+                  "const": "customAppearance"
+                }
+              },
+              "required": ["fieldType"]
             },
             "then": {
               "properties": {
                 "backgroundColor": {
                   "title": "Background color",
-                  "description": "Only displayed if the section doesn't have a background image.",
+                  "description": "Displayed if the section doesn't have a background image.",
                   "type": "string",
                   "pattern": "^#[A-Fa-f0-9]{6}"
                 },
                 "backgroundImage": {
                   "title": "Background image",
                   "type": "object",
-                  "description": "For the best result, the image should have the minimum dimensions of 1600x1200 pixels. It should not exceed 20MB in size.",
+                  "description": "Minimum image dimensions for the best results: 1600x1200px. Maximum image size: 20MB.",
                   "properties": {
                     "_ref": {
                       "type": "object",
                       "properties": {
-                        "resolver": { "const": "image" },
-                        "target": { "type": "string" },
+                        "resolver": {
+                          "const": "image"
+                        },
+                        "target": {
+                          "type": "string"
+                        },
                         "params": {
                           "$ref": "#/$defs/imageParams/scaled"
                         }
@@ -474,16 +502,97 @@ subject to change.
                     }
                   }
                 },
+                "backgroundImageOverlay": {
+                  "type": "object",
+                  "properties": {
+                    "preset": {
+                      "title": "Background image overlay",
+                      "description": "You can make the image darker to make the text easier to read.",
+                      "type": "string",
+                      "default": "none",
+                      "oneOf": [
+                        {
+                          "const": "none",
+                          "title": "No overlay"
+                        },
+                        {
+                          "const": "dark",
+                          "title": "Dark overlay"
+                        },
+                        {
+                          "const": "darker",
+                          "title": "Darker overlay"
+                        }
+                      ]
+                    }
+                  },
+                  "allOf": [
+                    {
+                      "if": {
+                        "properties": {
+                          "preset": {
+                            "const": "dark"
+                          }
+                        },
+                        "required": ["preset"]
+                      },
+                      "then": {
+                        "properties": {
+                          "color": {
+                            "type": "string",
+                            "const": "#000000"
+                          },
+                          "opacity": {
+                            "type": "number",
+                            "const": 0.3
+                          }
+                        },
+                        "required": ["color", "opacity"]
+                      }
+                    },
+                    {
+                      "if": {
+                        "properties": {
+                          "preset": {
+                            "const": "darker"
+                          }
+                        },
+                        "required": ["preset"]
+                      },
+                      "then": {
+                        "properties": {
+                          "color": {
+                            "type": "string",
+                            "const": "#000000"
+                          },
+                          "opacity": {
+                            "type": "number",
+                            "const": 0.5
+                          }
+                        },
+                        "required": ["color", "opacity"]
+                      }
+                    }
+                  ],
+                  "required": ["preset"]
+                },
                 "textColor": {
                   "title": "Text color",
                   "type": "string",
                   "default": "black",
                   "oneOf": [
-                    { "const": "black", "title": "Black" },
-                    { "const": "white", "title": "White" }
+                    {
+                      "const": "black",
+                      "title": "Black"
+                    },
+                    {
+                      "const": "white",
+                      "title": "White"
+                    }
                   ]
                 }
-              }
+              },
+              "required": ["backgroundImageOverlay"]
             }
           }
         },
@@ -509,10 +618,13 @@ subject to change.
                       "blockName": {
                         "type": "string",
                         "title": "Block name",
-                        "description": "Block name is not shown on the page. It just helps you remember what the block is about."
+                        "description": "The block name is only shown in Console. It helps you remember what the block is about."
                       },
                       "blockId": {
-                        "description": "An anchor link allows you to link directly to this block, like this: www.yourdomain.com/p/page_id#anchor-link-id. Use only lowercase characters, numbers, dashes (-) and underscores (_), and no spaces.",
+                        "_errors": {
+                          "pattern": "You've added characters that are not allowed."
+                        },
+                        "description": "Use an anchor link ID to link directly to a block. Example: www.example.com/p/page_id#anchor-link-id. Use lowercase characters, numbers, dashes (-) or underscores (_), and no spaces.",
                         "type": "string",
                         "title": "Anchor link ID",
                         "pattern": "(^$)|^[a-z][a-z0-9_\\-]*$"
@@ -559,7 +671,7 @@ subject to change.
                                 "image": {
                                   "title": "Image file",
                                   "type": "object",
-                                  "description": "Most common image formats are supported. The file should not exceed 20MB in size.",
+                                  "description": "Sharetribe supports most common image formats. Maximum image size: 20MB.",
                                   "properties": {
                                     "_ref": {
                                       "type": "object",
@@ -567,7 +679,9 @@ subject to change.
                                         "resolver": {
                                           "const": "image"
                                         },
-                                        "target": { "type": "string" }
+                                        "target": {
+                                          "type": "string"
+                                        }
                                       },
                                       "required": ["resolver", "target"]
                                     }
@@ -578,10 +692,69 @@ subject to change.
                                   "$ref": "#/$defs/aspectRatio"
                                 },
                                 "alt": {
-                                  "description": "Short written description of an image is needed for accessibility and search engines.",
+                                  "description": "A short description of the image for accessibility and search engines.",
                                   "title": "Image alt text",
                                   "type": "string",
                                   "minLength": 1
+                                },
+                                "link": {
+                                  "__features": [
+                                    "clickable-block-image",
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "fieldType": {
+                                          "title": "Block image link",
+                                          "type": "string",
+                                          "default": "none",
+                                          "oneOf": [
+                                            {
+                                              "$ref": "#/$defs/fieldType/none",
+                                              "title": "No link"
+                                            },
+                                            {
+                                              "$ref": "#/$defs/fieldType/internalImageLink",
+                                              "title": "Internal link",
+                                              "description": "A link to a page in your marketplace."
+                                            },
+                                            {
+                                              "$ref": "#/$defs/fieldType/externalImageLink",
+                                              "title": "External link",
+                                              "description": "A link to a page outside your marketplace. Opens in a new tab."
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "allOf": [
+                                        {
+                                          "if": {
+                                            "properties": {
+                                              "fieldType": {
+                                                "$ref": "#/$defs/fieldType/internalImageLink"
+                                              }
+                                            },
+                                            "required": ["fieldType"]
+                                          },
+                                          "then": {
+                                            "$ref": "#/$defs/internalImageLink"
+                                          }
+                                        },
+                                        {
+                                          "if": {
+                                            "properties": {
+                                              "fieldType": {
+                                                "$ref": "#/$defs/fieldType/externalImageLink"
+                                              }
+                                            },
+                                            "required": ["fieldType"]
+                                          },
+                                          "then": {
+                                            "$ref": "#/$defs/externalImageLink"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
                                 }
                               },
                               "required": [
@@ -593,7 +766,9 @@ subject to change.
                                 {
                                   "if": {
                                     "properties": {
-                                      "aspectRatio": { "const": "1/1" }
+                                      "aspectRatio": {
+                                        "const": "1/1"
+                                      }
                                     },
                                     "required": ["aspectRatio"]
                                   },
@@ -617,7 +792,9 @@ subject to change.
                                 {
                                   "if": {
                                     "properties": {
-                                      "aspectRatio": { "const": "16/9" }
+                                      "aspectRatio": {
+                                        "const": "16/9"
+                                      }
                                     },
                                     "required": ["aspectRatio"]
                                   },
@@ -641,7 +818,9 @@ subject to change.
                                 {
                                   "if": {
                                     "properties": {
-                                      "aspectRatio": { "const": "2/3" }
+                                      "aspectRatio": {
+                                        "const": "2/3"
+                                      }
                                     },
                                     "required": ["aspectRatio"]
                                   },
@@ -665,7 +844,9 @@ subject to change.
                                 {
                                   "if": {
                                     "properties": {
-                                      "aspectRatio": { "const": "auto" }
+                                      "aspectRatio": {
+                                        "const": "auto"
+                                      }
                                     },
                                     "required": ["aspectRatio"]
                                   },
@@ -700,6 +881,9 @@ subject to change.
                             "then": {
                               "properties": {
                                 "youtubeVideoId": {
+                                  "_errors": {
+                                    "pattern": "YouTube video ID must contain only letters and numbers and _ or - characters."
+                                  },
                                   "description": "The part of a YouTube link after \"watch?v=\". For example, for the video youtube.com/watch?v=UffchBUUIoI, the ID is UffchBUUIoI.",
                                   "type": "string",
                                   "title": "YouTube video ID",
@@ -757,7 +941,7 @@ subject to change.
                           "content": {
                             "title": "Block text",
                             "type": "string",
-                            "description": "You can format text with markdown. [Learn more about markdown](https://www.sharetribe.com/help/en/articles/8404687-how-to-format-your-text-in-pages-with-markdown)."
+                            "description": "You can format text with markdown. [Learn more about markdown.](https://www.sharetribe.com/help/en/articles/8404687-how-to-format-your-text-in-pages-with-markdown)"
                           }
                         }
                       },
@@ -768,7 +952,7 @@ subject to change.
                             "title": "Block call to action",
                             "type": "string",
                             "default": "none",
-                            "description": "The action the user is prompted to take after viewing the block.",
+                            "description": "The action you want a user to take after viewing the block.",
                             "oneOf": [
                               {
                                 "$ref": "#/$defs/fieldType/none",
@@ -777,12 +961,12 @@ subject to change.
                               {
                                 "$ref": "#/$defs/fieldType/internalButtonLink",
                                 "title": "Internal link",
-                                "description": "Link to a page in your marketplace. Displayed as a button."
+                                "description": "A button link to a page in your marketplace."
                               },
                               {
                                 "$ref": "#/$defs/fieldType/externalButtonLink",
                                 "title": "External link",
-                                "description": "Link to a page outside your marketplace. Opens in a new tab. Displayed as a button."
+                                "description": "A button link to a page outside your marketplace. Opens in a new tab."
                               }
                             ]
                           }
@@ -815,6 +999,30 @@ subject to change.
                             }
                           }
                         ]
+                      },
+                      "alignment": {
+                        "__features": [
+                          "block-alignment",
+                          {
+                            "title": "Block content alignment",
+                            "type": "string",
+                            "default": "left",
+                            "oneOf": [
+                              {
+                                "const": "left",
+                                "title": "Align content left"
+                              },
+                              {
+                                "const": "center",
+                                "title": "Center content"
+                              },
+                              {
+                                "const": "right",
+                                "title": "Align content right"
+                              }
+                            ]
+                          }
+                        ]
                       }
                     },
                     "required": ["blockType"]
@@ -828,13 +1036,17 @@ subject to change.
               "anyOf": [
                 {
                   "properties": {
-                    "sectionType": { "const": "columns" }
+                    "sectionType": {
+                      "const": "columns"
+                    }
                   },
                   "required": ["sectionType"]
                 },
                 {
                   "properties": {
-                    "sectionType": { "const": "carousel" }
+                    "sectionType": {
+                      "const": "carousel"
+                    }
                   },
                   "required": ["sectionType"]
                 }
@@ -846,10 +1058,22 @@ subject to change.
                   "title": "Number of columns",
                   "type": "integer",
                   "oneOf": [
-                    { "const": 1, "title": "1" },
-                    { "const": 2, "title": "2" },
-                    { "const": 3, "title": "3" },
-                    { "const": 4, "title": "4" }
+                    {
+                      "const": 1,
+                      "title": "1"
+                    },
+                    {
+                      "const": 2,
+                      "title": "2"
+                    },
+                    {
+                      "const": 3,
+                      "title": "3"
+                    },
+                    {
+                      "const": 4,
+                      "title": "4"
+                    }
                   ]
                 }
               },
@@ -863,18 +1087,48 @@ subject to change.
   },
   "$defs": {
     "fieldType": {
-      "youtube": { "const": "youtube" },
-      "internalButtonLink": { "const": "internalButtonLink" },
-      "none": { "const": "none" },
-      "defaultAppearance": { "const": "defaultAppearance" },
-      "heading1": { "const": "heading1" },
-      "image": { "const": "image" },
-      "heading3": { "const": "heading3" },
-      "externalButtonLink": { "const": "externalButtonLink" },
-      "heading2": { "const": "heading2" },
-      "customAppearance": { "const": "customAppearance" },
-      "paragraph": { "const": "paragraph" },
-      "markdown": { "const": "markdown" }
+      "youtube": {
+        "const": "youtube"
+      },
+      "internalButtonLink": {
+        "const": "internalButtonLink"
+      },
+      "internalImageLink": {
+        "const": "internalImageLink"
+      },
+      "none": {
+        "const": "none"
+      },
+      "defaultAppearance": {
+        "const": "defaultAppearance"
+      },
+      "heading1": {
+        "const": "heading1"
+      },
+      "image": {
+        "const": "image"
+      },
+      "heading3": {
+        "const": "heading3"
+      },
+      "externalButtonLink": {
+        "const": "externalButtonLink"
+      },
+      "externalImageLink": {
+        "const": "externalImageLink"
+      },
+      "heading2": {
+        "const": "heading2"
+      },
+      "customAppearance": {
+        "const": "customAppearance"
+      },
+      "paragraph": {
+        "const": "paragraph"
+      },
+      "markdown": {
+        "const": "markdown"
+      }
     },
     "internalButtonLink": {
       "properties": {
@@ -884,7 +1138,10 @@ subject to change.
           "minLength": 1
         },
         "href": {
-          "description": "Include only the path after your domain. For example, if you want to link to your About page, use /p/about.",
+          "_errors": {
+            "pattern": "This field should not include protocol like https."
+          },
+          "description": "Include only the path after your domain. For example, if you want to link to your About page, use \"/p/about\", or if you want to link to your landing page, use \"/\".",
           "title": "Internal link address",
           "type": "string",
           "examples": [
@@ -905,7 +1162,10 @@ subject to change.
           "minLength": 1
         },
         "href": {
-          "description": "External link address should begin with http(s)://.",
+          "_errors": {
+            "pattern": "The address doesn't start with https://."
+          },
+          "description": "The external link address should begin with https://.",
           "title": "External link address",
           "type": "string",
           "examples": ["http:", "https:"],
@@ -914,6 +1174,41 @@ subject to change.
         }
       },
       "required": ["content", "href"]
+    },
+    "internalImageLink": {
+      "properties": {
+        "href": {
+          "_errors": {
+            "pattern": "This field should not include protocol like https."
+          },
+          "description": "Include only the path after your domain. For example, if you want to link to your About page, use \"/p/about\", or if you want to link to your landing page, use \"/\".",
+          "title": "Internal link address",
+          "type": "string",
+          "examples": [
+            "#section-id-as-anchor",
+            "/absolute/path/to/page"
+          ],
+          "pattern": "^(?![a-zA-Z][a-zA-Z+.-]*:)",
+          "minLength": 1
+        }
+      },
+      "required": ["href"]
+    },
+    "externalImageLink": {
+      "properties": {
+        "href": {
+          "_errors": {
+            "pattern": "The address doesn't start with https://."
+          },
+          "description": "The external link address should begin with https://.",
+          "title": "External link address",
+          "type": "string",
+          "examples": ["http:", "https:"],
+          "pattern": "^(http|https):",
+          "minLength": 1
+        }
+      },
+      "required": ["href"]
     },
     "imageParams": {
       "scaled": {
@@ -940,8 +1235,16 @@ subject to change.
       "square": {
         "const": {
           "variants": {
-            "square400": { "width": 400, "height": 400, "fit": "crop" },
-            "square800": { "width": 800, "height": 800, "fit": "crop" },
+            "square400": {
+              "width": 400,
+              "height": 400,
+              "fit": "crop"
+            },
+            "square800": {
+              "width": 800,
+              "height": 800,
+              "fit": "crop"
+            },
             "square1200": {
               "width": 1200,
               "height": 1200,
@@ -1039,10 +1342,22 @@ subject to change.
       "type": "string",
       "default": "auto",
       "oneOf": [
-        { "const": "1/1", "title": "Square (1:1)" },
-        { "const": "16/9", "title": "Landscape (16:9)" },
-        { "const": "2/3", "title": "Portrait (2:3)" },
-        { "const": "auto", "title": "Original" }
+        {
+          "const": "1/1",
+          "title": "Square (1:1)"
+        },
+        {
+          "const": "16/9",
+          "title": "Landscape (16:9)"
+        },
+        {
+          "const": "2/3",
+          "title": "Portrait (2:3)"
+        },
+        {
+          "const": "auto",
+          "title": "Original"
+        }
       ]
     }
   }
