@@ -108,8 +108,9 @@ const VersionBanner = props => {
         <div>
           <CloseBanner onClick={() => setIsOpen(!isOpen)}></CloseBanner>
           <span>
-            You are viewing the technical documentation for Sharetribe. If you
-            are looking for our no-code documentation, see our new help center.
+            You are viewing the technical documentation for the Sharetribe
+            Developer Platform. If you are looking for our no-code
+            documentation, see our new help center.
           </span>
           <div>
             <a href="https://www.sharetribe.com/help/">Help center</a>
