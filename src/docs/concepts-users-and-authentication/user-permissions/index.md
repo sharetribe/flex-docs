@@ -66,7 +66,7 @@ See which endpoints are affected by this setting
 Read more about this feature in the
 [Help Center](https://www.sharetribe.com/help/en/articles/9503152-approve-users-who-want-to-join).
 
-## Restrict listing post rights
+## Restrict listing posting rights
 
 You might also want to limit listing posting rights to certain users
 only. For example, if you have user types "Buyer" and "Seller", you
