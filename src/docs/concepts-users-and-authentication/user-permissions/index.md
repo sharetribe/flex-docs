@@ -1,7 +1,7 @@
 ---
 title: User access control
 slug: user-access-control-in-sharetribe
-updated: 2024-10-10
+updated: 2024-10-26
 category: concepts-users-and-authentication
 ingress:
   This article explains what types of user access control are available
@@ -66,19 +66,19 @@ See which endpoints are affected by this setting
 Read more about this feature in the
 [Help Center](https://www.sharetribe.com/help/en/articles/9503152-approve-users-who-want-to-join).
 
-## Restrict listing publishing rights
+## Restrict listing post rights
 
-You might also want to limit listing publishing rights to certain users
+You might also want to limit listing posting rights to certain users
 only. For example, if you have user types "Buyer" and "Seller", you
-might want to grant listing publishing rights to sellers only. Or you
+might want to grant listing posting rights to sellers only. Or you
 might be monetizing your marketplace with subscriptions, and therefore
-you only want to grant publishing rights to users who have subscribed.
+you only want to grant posting rights to users who have subscribed.
 
 On the marketplace level, you can toggle the selection in the Access
 control tab.
 
 See which endpoints are affected by this setting
-[here](#restrict-publishing-rights).
+[here](#restrict-posting-rights).
 
 Read more about this feature in the
 [Help Center](https://www.sharetribe.com/help/en/articles/9503118-restrict-listing-publishing-rights).
@@ -207,10 +207,10 @@ Note that if the marketplace has been set to private, unapproved users
 will be treated the same as non-registered users. See the endpoints that
 are restricted in this case [above](#approve-users-who-want-to-join-1).
 
-### Restrict publishing rights
+### Restrict posting rights
 
 Toggling this setting in the Console allows you to manually select which
-users can publish listings.
+users can post listings.
 
 - `POST /own_listings/create_draft`
 - `POST /own_listings/publish_draft`
@@ -218,7 +218,7 @@ users can publish listings.
 - `POST /own_listings/open`
 
 These endpoints will return a 403 Forbidden response if the user does
-not have publishing rights.
+not have post rights.
 
 ### Restrict transaction rights
 
