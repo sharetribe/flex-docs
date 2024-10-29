@@ -1,7 +1,7 @@
 ---
 title: Listings in Sharetribe
 slug: listings-overview
-updated: 2023-10-24
+updated: 2024-10-29
 category: concepts-listings
 ingress:
   Sharetribe powers online marketplaces, and listings are at the core of
@@ -34,12 +34,17 @@ listing state.
 
 ### Draft
 
-When a listing is first created, it is created in **state: draft**.
-Draft listings are not returned by the
+You may want to allow users to create listings as drafts first, and then
+publish them separately. To do that, you would create the listing in
+**state: draft**. Draft listings are not returned by the
 [listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 endpoint, but they are visible to the author and through Sharetribe
-Console. Draft listings can be published using the
+Console.
+
+Draft listings can be published using the
 [own_listings/publish_draft](https://www.sharetribe.com/api-reference/marketplace.html#publish-draft-listing)
+endpoint, and they can be discarded using the
+[own_listings/discard_draft](https://www.sharetribe.com/api-reference/marketplace.html#discard-draft-listing)
 endpoint.
 
 ### Pending approval
@@ -63,7 +68,13 @@ Published listings are returned by
 [listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-listings)
 and
 [listings/show](https://www.sharetribe.com/api-reference/marketplace.html#show-listing)
-endpoints.
+endpoints. To directly create a published listing instead of a draft,
+you would need to use the
+[own_listings/create](https://www.sharetribe.com/api-reference/marketplace.html#create-listing)
+endpoint. Creating a published listing will follow the pending approval
+rules of the marketplace – if listing approval is required, a listing
+created with **own_listings/create** will be in **state:
+pendingApproval** instead of **state: published**.
 
 After a listing has been published, it can still be modified by the
 author. Even if the marketplace has listing approval enabled, modifying
@@ -83,10 +94,15 @@ endpoints, but it is still returned by the
 [own_listings/query](https://www.sharetribe.com/api-reference/marketplace.html#query-own-listings)
 and
 [own_listings/show](https://www.sharetribe.com/api-reference/marketplace.html#show-own-listing)
-endpoints, i.e. it is visible to the author. Both author and marketplace
-operator can also
+endpoints, i.e. it is visible to the author.
+
+Both author and marketplace operator can also
 [open the listing](https://www.sharetribe.com/api-reference/marketplace.html#open-listing)
-after it has been closed i.e. set its state back to published.
+after it has been closed i.e. set its state back to published. However,
+if the marketplace
+[restricts listing posting rights](https://www.sharetribe.com/help/en/articles/9503118-restrict-listing-posting-rights)
+and the author's posting rights have been revoked, the author cannot
+open closed listings.
 
 ### Deleted
 
