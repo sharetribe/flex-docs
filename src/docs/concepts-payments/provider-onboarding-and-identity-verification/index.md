@@ -1,49 +1,48 @@
 ---
-title:
-  How to handle provider onboarding and identity verification in
-  Sharetribe Web Template
-slug: provider-onboarding-and-identity-verification
-updated: 2023-10-24
-category: how-to-payments
+title: Providers and customers on your Stripe Platform
+slug: providers-and-customers-on-stripe-platform
+updated: 2024-10-31
+category: concepts-payments
 ingress:
-  This article describes how to take Stripe Connect Onboarding into use
-  in your frontend application or how to implement your own flow.
+  This article describes how providers and customers show up on your
+  Stripe platform account.
 published: true
 ---
 
 ## Introduction
 
-Sharetribe offers two different mechanisms for creating a provider
-verification process where providers can enter all necessary and
-required information for them to receive payments.
+If your marketplace handles payments through the Sharetribe Stripe
+integration, your providers and customers will show up in different ways
+on your Stripe platform account. The main ways this happens is through
+Stripe Connect accounts and Stripe Customers.
 
-You can either choose to use ready-made tools provided by Stripe
-([Stripe Connect Onboarding](https://stripe.com/en-fi/connect/onboarding))
-or implement your own flow.
+The Sharetribe Stripe integration uses Stripe Custom Connect accounts
+for providers. When a provider first creates a listing, they need to
+onboard to Stripe Connect before they can receive payouts. For
+customers, on the other hand, a Stripe Customer is not created by
+default in the Sharetribe Web Template.
 
-This article describes these two approaches.
+## Stripe for providers: Stripe Connect Onboarding
 
-## Stripe Connect Onboarding with Sharetribe Web Template
+When your marketplace handles payments, it is important to have a
+provider verification process where providers can enter all necessary
+and required information for them to receive payments,
 
 Regulatory aspects of provider onboarding can be challenging and
 changing rapidly. Stripe Connect Onboarding provides ready tools for
 meeting the requirements and reducing the operational complexity of
-self-managing the onboarding flow and identity verification. Below are
-listed the changes required to implement Stripe Connect Onboarding. If
-you are using Sharetribe Web Template, you need to complete only the
-first step - if you are upgrading your own implementation, follow the
-rest of the instructions.
+self-managing the onboarding flow and identity verification.
 
-### 1. Enable Stripe Connect Onboarding in Stripe Dashboard
+For both Sharetribe Web Template and custom implementations, your
+marketplace will first need to set up Stripe for payments and enable
+Connect Onboarding. You can review the
+[instructions in our Help Center](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace)
+for more details.
 
-You need to navigate to
-[Connect settings page](https://dashboard.stripe.com/account/applications/settings)
-in your Stripe Dashboard. For the Connect onboarding to work, you need
-to provide `name`, `color`, and `icon` for your marketplace.
+Below, you can see the changes required to implement Stripe Connect
+Onboarding.
 
-![Stripe dashboard](stripeDashboard-updated.png)
-
-## Stripe Connect Onboarding for custom implementations
+### Stripe Connect Onboarding for custom implementations
 
 In the template, Connect Onboarding is mainly handled in the following
 files:
@@ -56,7 +55,7 @@ You can also check out
 [PR #1234](https://github.com/sharetribe/ftw-daily/pull/1234) where you
 can find all the code changes.
 
-### 2. Creating provider Stripe Account
+### 1. Creating a provider Stripe Account
 
 With Stripe Connect Onboarding, you need to collect minimum information
 from your providers when creating a
@@ -66,14 +65,23 @@ the create-stripe-account call:
 
 - `country`: A mandatory field determining the country of residence for
   the provider.
-- `bankAccountToken`: Stripe
-  [bank account token](https://stripe.com/docs/api#create_bank_account_token)
-  for the user. Recommended to pass in at this phase to minimize the
-  steps in the onboarding process.
 - `requestedCapabilities`: Required capabilities for payments to work in
   Sharetribe are `card_payments` and `transfers`.
 
 ![Creating Stripe account](stripePayoutForm.png)
+
+As of version vXX.XX, the Sharetribe Web Template does not collect the
+provider's bank account in the template. Instead, the provider enters
+their bank account information as a part of the Stripe Connect
+Onboarding flow. However, if you want to collect the bank account in
+your custom implementation, you can also pass an additional parameter:
+
+- `bankAccountToken`: Stripe
+  [bank account token](https://stripe.com/docs/api#create_bank_account_token)
+  for the user.
+
+You can see this PR for details on how the bank account token was
+previously handled in the template.
 
 <info>
 
@@ -87,15 +95,16 @@ listings.
 
 </info>
 
-### 3. Fetching information about a Stripe Account
+### 2. Fetching information about a Stripe Account
 
-If the user already has a Stripe Account you need to fetch the
+If the user already has a Stripe Account, you need to fetch the
 up-to-date account data from Stripe through Sharetribe API. This way we
 can warn the users if there is some required information missing from
 their Stripe Account.
 
 The account data is returned after each create and update Stripe Account
-API call so there is no need for separate fetch API call in these cases.
+API call, so there is no need for separate fetch API call in these
+cases.
 
 In Sharetribe Web Template, the Stripe Account is fetched in
 [`loadData`](https://github.com/sharetribe/web-template/blob/main/src/containers/StripePayoutPage/StripePayoutPage.duck.js#L73)
@@ -115,7 +124,7 @@ words, there are requirements missing. If there are no fields in
 completed for now. It is still possible that there might be new fields
 to be collected if the account reaches the next volume thresholds.
 
-### 4. Creating Stripe Account Link
+### 3. Creating Stripe Account Link
 
 Stripe Account Links are a mechanism for enabling your providers to
 access Stripe Connect Onboarding UI. You need to
@@ -172,18 +181,19 @@ automatically mean that the account has all the required information.
 
   ![fail view](verificationFailed.png)
 
-### 5. Updating provider Stripe account
+### 4. Updating provider Stripe account
 
 Most of the information related to Stripe Account like email or address
 can be updated from Stripe's Connect onboarding. For updating this
-information we need to
+information, you need to
 [create a new Account Link](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account-link)
 and redirect user back to Connect onboarding.
 
-Only thing we manage on the template side is updating the
+If you want to allow users to add their bank account without going
+through the Stripe Onboarding flow, you can enable updating the
 `bankAccountToken` of the Stripe Account. This means that if the
-provider want's to update their bank account number (e.g. IBAN), it's
-handled by passing a new bankAccountToken to
+provider want's to update their bank account number (e.g. IBAN), you
+would need to pass a new bankAccountToken to
 [update Stripe Account](https://www.sharetribe.com/api-reference/marketplace.html#update-stripe-account)
 API endpoint.
 
@@ -194,61 +204,71 @@ after the account has been created.
 
 </info>
 
-## Using custom flow
+### Using custom flow for Stripe provider onboarding
 
 It's also possible to implement the onboarding flow in your own
-application. This way the user will stay in your application throughout
-the whole onboarding. The downside with this approach is that you are
-responsible for collecting all the required information and keeping the
-UI up-to-date also with the possible future changes.
+application, if using Stripe Connect Onboarding is not an option. This
+way the user will stay in your application throughout the whole
+onboarding. The downside with this approach is that you are responsible
+for collecting all the required information and keeping the UI
+up-to-date also with the possible future changes. In general, we
+strongly recommend that you always use Stripe Connect Onboarding to
+onboard your providers, regardless of your front-end application.
 
 In our older
 [legacy templates](/how-to/provider-onboarding-and-identity-verification/#using-deprecated-payoutdetailsform-and-payoutdetailspage-as-a-starting-point),
-Stripe onboarding was implemented like this. There are some now
+Stripe onboarding was implemented with a custom flow. There are some now
 deprecated components you can use as a starting point if you want to
 implement your own flow. You should keep in mind that these components
 will not be updated by our team since Sharetribe Web Template uses
 Connect Onboarding by default.
-
-### Collecting required information
-
-When onboarding Custom accounts, you need to collect the required
-information for each account (which Stripe verifies). The information
-you need to collect depends on factors such as the capabilities and the
-country the account is based in. You can find the requirements from
-Stripe's
-[Required verification information](https://stripe.com/docs/connect/required-verification-information)
-documentation. You should keep in mind that depending on the situation,
-you might need to collect a scan of an ID document, an address document,
-or both to enable payouts so you may need to implement a way to upload
-these.
-
-After you have collected the information you need to obtain a new
-[account token](https://stripe.com/docs/connect/account-tokens) via
-Stripe API, through the same Stripe platform account as the one used by
-the marketplace. This account token should be passed to Sharetribe API
-when creating or updating the Stripe Account.
-
-### Updating the Stripe Account
-
-If you decide to use your own custom flow, you should concider
-implementing a way to check the status of a Stripe Account and collect
-more information about the user when it's required. Otherwise, the
-Stripe Account might get restricted and payouts to the provider will
-fail.
-
-### Using deprecated PayoutDetailsForm and PayoutDetailsPage as a starting point
-
-We have deprecated the old `PayoutDetailsForm` and
-`PayoutPreferencesPage` where the custom flow for onboarding was
-implemented. Also, functions related to the deprecated form have been
-removed from `stripe.duck.js`. If you want to keep using the custom form
-in your own application, you can take these deprecated components as a
-starting point but you should keep in mind that **they will not be
-updated** by our team.
 
 You can find the deprecated files still from v.3.7.0
 
 - [PayoutDetailsForm](https://github.com/sharetribe/ftw-daily/tree/v3.7.0/src/forms/PayoutDetailsForm)
 - [PayoutPreferencesPage](https://github.com/sharetribe/ftw-daily/tree/v3.7.0/src/containers/PayoutPreferencesPage)
 - [stripe.duck.js](https://github.com/sharetribe/ftw-daily/blob/v3.7.0/src/ducks/stripe.duck.js).
+
+## Stripe for customers: saved payment methods
+
+When a customer makes a payment in the template but does not save their
+payment method, a Stripe Customer does not get created. When the
+customer confirms the payment intent towards Stripe API, the template
+includes the user's email address as a part of the
+[billing details](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPageTransactionHelpers.js#L44-L69)
+of the card payment, and then
+[passes those billing details to the Stripe function](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPageTransactionHelpers.js#L254-L274)
+that confirms the card payment. This means that it is possible to
+identify, in Stripe Dashboard, the Sharetribe user who made the payment,
+even if they don't have an associated Stripe Customer.
+
+When a customer does save their payment method, the template calls the
+[**savePaymentMethod()** thunk](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L192)
+from **src/ducks/paymentMethods.duck.js**. The function creates a Stripe
+Customer for the user if one does not already exist, and either updates
+or adds the payment method. All of these SDK calls are made to the
+[Sharetribe API **stripe_customer** endpoints](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer),
+so that the Stripe Customer gets associated with the current user's
+profile.
+
+## Changing a marketplace's Stripe platform account
+
+Marketplaces sometimes need to change their Stripe platform account for
+one reason or another. Since Stripe Connect accounts and Stripe
+Customers are both associated with your Stripe platform account, it is
+not possible to change your Stripe keys if Connect accounts or Customers
+exist on your marketplace. You can reach out to Sharetribe support, and
+we can help you clear the Stripe Connect accounts and Customers from
+your marketplace.
+
+In practice, removing all Stripe Connect accounts and Stripe Customers
+means that all payout details (bank accounts) are lost from the
+marketplace users, and all providers will need to complete Stripe
+onboarding again before other users can start transactions against their
+listings. In addition, existing transactions that have an upcoming
+Stripe related action are not able to move forward. This means that if
+you need to change the Stripe keys for your Live marketplace, you will
+need to either cancel in Console all ongoing transactions that have
+upcoming Stripe actions, and then manage the necessary payouts and
+refunds manually on your old Stripe platform for transactions that
+cannot be canceled.

@@ -1204,6 +1204,11 @@
     "source": "/docs/how-to/add-new-stripe-countries",
     "destination": "/docs/how-to/set-up-and-use-stripe/",
     "permanent": true
+  },
+  {    
+    "source": "/docs/how-to/provider-onboarding-and-identity-verification",
+    "destination": "/docs/concepts/providers-and-customers-on-stripe-platform/",
+    "permanent": true
   }
 ]
 }
