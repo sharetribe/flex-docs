@@ -9,6 +9,15 @@ ingress:
 published: true
 ---
 
+<info>
+
+This guide applies exclusively to web template versions earlier than
+[v6.0.0](https://github.com/sharetribe/web-template/releases/tag/v6.0.0).
+Version 6.0.0 includes updates to the datepicker component, and this
+article is based on the previous version of the datepicker.
+
+</info>
+
 On our imaginary bike rental marketplace, some providers may have
 several similar bikes to rent. Instead of needing to create separate
 listings for each similar bike, we can add “seats” to a single listing.
