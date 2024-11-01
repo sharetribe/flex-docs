@@ -432,7 +432,12 @@
   },
   {
     "source": "/docs/background/solving-payout-problems/",
-    "destination": "/docs/concepts/solving-payout-problems/",
+    "destination": "https://www.sharetribe.com/help/en/articles/10006947",
+    "permanent": true
+  },
+  {
+    "source": "/docs/concepts/solving-payout-problems/",
+    "destination": "https://www.sharetribe.com/help/en/articles/10006947",
     "permanent": true
   },
   {
