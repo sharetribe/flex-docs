@@ -1,7 +1,7 @@
 ---
 title: Introduction to extended data
 slug: extended-data-introduction
-updated: 2023-10-24
+updated: 2024-11-14
 category: concepts-extended-data
 ingress:
   Extended data allows you to fully customize the information you want
@@ -47,9 +47,9 @@ offer examples of what they can be used for.
 ## Types of extended data
 
 There are six possible types of extended data, defined by who can edit
-and view them. Four out of these are available in Sharetribe at this
-time. They are _public data_, _protected data_, _private data_, and
-_public metadata_.
+and view them. Five out of these are available in Sharetribe at this
+time. They are _public data_, _protected data_, and _private data_, as
+well as _public metadata_ and _protected metadata_.
 
 In the following sections, “author” means the user who created the
 listing or profile in question. “Operator” refers to both the
@@ -65,18 +65,19 @@ edited only by marketplace operators.
 ### Access to view
 
 Public data and public metadata can be viewed by everyone with access to
-your marketplace. Protected data is private by default but can be viewed
-at a certain point during a transaction process by members of that
-transaction. Private data can only be viewed by the listing or user
+your marketplace. Protected data is private by default, but can be
+viewed at a certain point during a transaction process by members of
+that transaction. Protected metadata is visible to the participants of
+the transaction. Private data can only be viewed by the listing or user
 profile authors themselves.
 
 We can also organize the data types by placing them in a table.
 
-|           | Data                                                     | Metadata                               |
-| :-------- | :------------------------------------------------------- | :------------------------------------- |
-| Public    | editing: author, operator – viewing: all users           | editing: operator – viewing: all users |
-| Protected | editing: author, operator – viewing: transaction members | not available                          |
-| Private   | editing: author, operator – viewing: author, operator    | not available                          |
+|           | Data                                                     | Metadata                                         |
+| :-------- | :------------------------------------------------------- | :----------------------------------------------- |
+| Public    | editing: author, operator – viewing: all users           | editing: operator – viewing: all users           |
+| Protected | editing: author, operator – viewing: transaction members | editing: operator – viewing: transaction members |
+| Private   | editing: author, operator – viewing: author, operator    | not available                                    |
 
 In order to determine what type of extended data you want to collect on
 your marketplace, you need to answer the following questions:
@@ -180,12 +181,17 @@ listings on your landing page: data of such payments can be saved in
 public metadata. You can use this metadata to always display featured
 listings first in relevant search results, for example.
 
+### 5. Protected metadata
+
 Transactions can also have metadata. It can only be seen by the
-transaction members as it is tied to the transaction page. An example of
+transaction members as it is tied to the transaction. An example of
 transaction metadata could be a unique Zoom link to where an online
-service will take place. This metadata can be written into the
-transaction by the Integration API at a specific point of the
-transaction.
+service will take place.
+
+This metadata can be written into the transaction by the Integration API
+at a specific point of the transaction, or it can be added in Console by
+the operator. You can also configure the transaction process to update
+transaction metadata.
 
 ## Getting started with extended data
 
