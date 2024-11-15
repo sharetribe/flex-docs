@@ -231,25 +231,41 @@ You can find the deprecated files still from v.3.7.0
 
 ## Stripe for customers: saved payment methods
 
-When a customer makes a payment in the template but does not save their
-payment method, a Stripe Customer does not get created. When the
-customer confirms the payment intent towards Stripe API, the template
-includes the user's email address as a part of the
-[billing details](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPageTransactionHelpers.js#L44-L69)
-of the card payment, and then
-[passes those billing details to the Stripe function](https://github.com/sharetribe/web-template/blob/main/src/containers/CheckoutPage/CheckoutPageTransactionHelpers.js#L254-L274)
-that confirms the card payment. This means that it is possible to
-identify, in Stripe Dashboard, the Sharetribe user who made the payment,
-even if they don't have an associated Stripe Customer.
+Providers always need a Stripe Connect account to receive a payout from
+a transaction. For a customer, you can make a payment either with a
+Stripe Customer or without one.
 
-When a customer does save their payment method, the template calls the
-[**savePaymentMethod()** thunk](https://github.com/sharetribe/web-template/blob/main/src/ducks/paymentMethods.duck.js#L192)
-from **src/ducks/paymentMethods.duck.js**. The function creates a Stripe
-Customer for the user if one does not already exist, and either updates
-or adds the payment method. All of these SDK calls are made to the
-[Sharetribe API **stripe_customer** endpoints](https://www.sharetribe.com/api-reference/marketplace.html#stripe-customer),
-so that the Stripe Customer gets associated with the current user's
-profile.
+When you make a payment without a Stripe Customer, you create the
+PaymentIntent in the Sharetribe backend transaction process without
+passing payment method information to the transition. In that situation,
+you then need to attach the payment method to the PaymentIntent by
+making an API call to Stripe directly.
+
+If you want to create a Stripe Customer and save the payment card as you
+make the payment, you need to create the payment intent with a
+_setupPaymentMethodForSaving: true_ parameter. This sets up the
+PaymentIntent so that its PaymentMethod can later be attached to a
+Stripe Customer.
+
+In this flow, you
+
+1. Create the PaymentIntent as a part of the transaction process
+2. Pass the card information to Stripe API when you confirm the
+   PaymentIntent
+3. Use the Sharetribe API to
+   [create the Stripe Customer](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-customer)
+   and pass the PaymentIntent's _paymentMethodId_ as a parameter.
+
+You can also create a Stripe Customer without handling a payment at the
+same time. In that case, you need to create a
+[Stripe Setup Intent](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-setup-intents)
+with the Sharetribe API, and then use the setup intent to call Stripe
+handleCardSetup.
+
+Read more:
+
+- [Using stored payment cards](/concepts/using-stored-payment-cards/)
+- [How saving a payment card works in the Sharetribe Web Template](/how-to/save-payment-card/)
 
 ## Changing a marketplace's Stripe platform account
 
