@@ -27,8 +27,7 @@ const RegularFooter = props => {
       <Link to="https://www.sharetribe.com/dev-slack">
         Sharetribe Developers Slack Channel
       </Link>
-      . You can also contact our support team through the chat widget in Flex
-      Console.
+      . You can also contact our support team through the chat widget in Console.
     </Paragraph>
   );
 };
@@ -37,10 +36,10 @@ const AlternativeFooter = props => {
   return (
     <Paragraph>
       Reach out to our support team from the bottom-right-located support widget
-      in <Link to="https://flex-console.sharetribe.com/">Console</Link>, by{' '}
+      in <Link to="https://console.sharetribe.com/">Console</Link>, by{' '}
       <A href="mailto:hello@sharetribe.com">email</A> or by joining{' '}
-      <Link to="https://join.slack.com/t/thenewsharetribe/shared_invite/zt-1w56fgnau-qogsmJxAFU0mU9mRDLMXTg">
-        The New Sharetribe Slack Community
+      <Link to="https://www.sharetribe.com/dev-slack">
+        the Sharetribe Developer Community
       </Link>
       .
     </Paragraph>
