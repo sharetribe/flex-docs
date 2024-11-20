@@ -27,7 +27,8 @@ const RegularFooter = props => {
       <Link to="https://www.sharetribe.com/dev-slack">
         Sharetribe Developers Slack Channel
       </Link>
-      . You can also contact our support team through the chat widget in Console.
+      . You can also contact our support team through the chat widget in
+      Console.
     </Paragraph>
   );
 };
