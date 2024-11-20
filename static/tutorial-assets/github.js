@@ -110,7 +110,7 @@ exports.authenticateGithub = (req, res, next) => {
 };
 
 // Use custom callback for calling loginWithIdp enpoint
-// to log in the user to Flex with the data from Github
+// to log in the user to Sharetribe with the data from Github
 exports.authenticateGithubCallback = (req, res, next) => {
   passport.authenticate('github', function(err, user) {
     loginWithIdp(err, user, req, res, idpClientId, idpId);

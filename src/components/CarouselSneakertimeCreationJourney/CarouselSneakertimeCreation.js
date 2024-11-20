@@ -73,8 +73,8 @@ const CarouselSneakertimeCreation = props => {
         <h3>Listing creation wizard - Photos and payout details</h3>
         <p>
           Finally, providers can upload a few photos to display on the product
-          page. Stripe Connect, Flex’s default payment and payout system, asks
-          the provider for details related to their identity and bank
+          page. Stripe Connect, Sharetribe's default payment and payout system,
+          asks the provider for details related to their identity and bank
           information. Once approved, providers can process payment card
           payments and receive payouts automatically on the marketplace.
         </p>
