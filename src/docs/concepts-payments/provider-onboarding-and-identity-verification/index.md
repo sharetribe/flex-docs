@@ -45,11 +45,11 @@ for more details.
 
 ### Stripe Connect Custom Accounts
 
-Sharetribe uses Stripe Connect Custom Accounts as the default payment
-integration. These enable your sellers to process payments through your
-marketplace. Stripe Connect also has other types of accounts, such as
-Standard and Express, but those are not compatible with the Sharetribe
-Stripe integration.
+Sharetribe uses Stripe Connect with Custom Accounts as the default
+payment integration. These enable your sellers to process payments
+through your marketplace. Stripe Connect also has other types of
+accounts, such as Standard and Express, but those are not compatible
+with the Sharetribe Stripe integration.
 
 When you use the Sharetribe Stripe integration, you need to create
 Custom Connect accounts for your users through the Sharetribe
@@ -66,13 +66,13 @@ or directly through
 
 ### Fetching an existing Stripe Connect Account
 
-If the user already has a Stripe account, the
+If the provider already has a Stripe account, the
 [currentUser resource](https://www.sharetribe.com/api-reference/marketplace.html#currentuser-resource-format)
 has a _stripeConnected_ boolean flag set to _true._ To fetch the
 provider's existing Stripe Connect account details, we can use the
 Marketplace API
-[Stripe Account fetching](https://www.sharetribe.com/api-reference/marketplace.html#fetch-stripe-account)
-endpoint. This will allow you to alert the users if there is some
+[Stripe Account fetch](https://www.sharetribe.com/api-reference/marketplace.html#fetch-stripe-account)
+endpoint. This will allow you to alert the provider if there is some
 required information missing from their Stripe Account.
 
 Stripe account data is returned after each create and update Stripe
@@ -113,7 +113,7 @@ The only mandatory parameter to create a Stripe Connect account through
 the Marketplace API is the country of the account, and it cannot be
 modified after the account has been created.
 
-In addition to the country information, we recommend passing the -
+In addition to the country information, we recommend passing the
 _requestedCapabilities_ parameter – the required capabilities for
 payments to work in Sharetribe are _card_payments_ and _transfers_, so
 you will need to define these for the account for it to work with the
