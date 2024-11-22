@@ -1,7 +1,7 @@
 ---
 title: Providers and customers on your Stripe Platform
 slug: providers-and-customers-on-stripe-platform
-updated: 2024-10-31
+updated: 2024-11-27
 category: concepts-payments
 ingress:
   This article describes how providers and customers show up on your
