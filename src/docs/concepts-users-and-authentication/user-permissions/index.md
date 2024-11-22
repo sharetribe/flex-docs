@@ -70,9 +70,9 @@ Read more about this feature in the
 
 You might also want to limit listing posting rights to certain users
 only. For example, if you have user types "Buyer" and "Seller", you
-might want to grant listing posting rights to sellers only. Or you
-might be monetizing your marketplace with subscriptions, and therefore
-you only want to grant posting rights to users who have subscribed.
+might want to grant listing posting rights to sellers only. Or you might
+be monetizing your marketplace with subscriptions, and therefore you
+only want to grant posting rights to users who have subscribed.
 
 On the marketplace level, you can toggle the selection in the Access
 control tab.

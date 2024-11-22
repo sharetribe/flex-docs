@@ -61,9 +61,9 @@ const CarouselYogatimeCreation = props => {
         <p>
           Finally, providers can upload a few photos to display on their listing
           page. They must enter their bank account information to process online
-          payments and receive payouts. Stripe Connect, Flex’s payment system,
-          asks the provider for details related to their identity and bank
-          information. Once approved, providers can receive payouts.
+          payments and receive payouts. Stripe Connect, Sharetribe's payment
+          system, asks the provider for details related to their identity and
+          bank information. Once approved, providers can receive payouts.
         </p>
       </Slide>
       <Slide
