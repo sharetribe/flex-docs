@@ -144,7 +144,7 @@
       "title": "Sections",
       "description": "Build a content page out of sections and content blocks. Determine the section layout, color, and appearance. Add titles, descriptions, call-to-action buttons, block text, images, and video.\n\n[Watch a video](https://www.youtube.com/watch?v=nZ8YtfZ_5n0&t=124s) | [Learn more about editing content pages](https://www.sharetribe.com/help/en/articles/8387209-how-to-edit-a-content-page)",
       "type": "array",
-      "maxItems": 20,
+      "maxItems": 24,
       "items": {
         "_editor": {
           "order": [
@@ -562,7 +562,7 @@
                   },
                   "title": "Content Blocks",
                   "type": "array",
-                  "maxItems": 20,
+                  "maxItems": 24,
                   "items": {
                     "type": "object",
                     "_editor": {
