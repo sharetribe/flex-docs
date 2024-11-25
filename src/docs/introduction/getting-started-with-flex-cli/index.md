@@ -39,6 +39,12 @@ install Sharetribe CLI:
 yarn global add flex-cli
 ```
 
+**NOTE:** If you are working with Yarn Modern, use this command instead:
+
+```bash
+yarn dlx add flex-cli
+```
+
 To verify that Sharetribe CLI was successfully installed, run:
 
 ```bash
