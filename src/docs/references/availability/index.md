@@ -89,14 +89,6 @@ An exception with start `2018-11-26T00:30:00.000+01:00` and end
 `2018-11-27T15:15:00.000+01:00` is interpreted as if it were from
 `2018-11-25T00:00:00.000Z` to `2018-11-28T00:00:00.000Z`.
 
-###### **Example 4:**
-
-Given exception 1 from `2018-11-26T10:00:00.000Z` to
-`2018-11-26T12:00:00.000Z` with 1 seat and exception 2 from
-`2018-11-26T10:00:00.000Z` to `2018-11-26T12:00:00.000Z` with 0 seats,
-this is interpreted as if single exception existed from
-`2018-11-26T00:00:00.000Z` to `2018-11-27T00:00:00.000Z` with 0 seats.
-
 ## Time-based availability management
 
 Time-based availability can be used with time-based bookings. Time-based
