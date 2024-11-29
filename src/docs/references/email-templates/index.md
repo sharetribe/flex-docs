@@ -434,6 +434,12 @@ context that will be used with that particular email.
 The editor also let's you to see a **preview** of the email before and
 let's you **send test emails** to your own email address.
 
+Three of the built-in email templates can be disabled via Console:
+
+- New message
+- Verify email address
+- User joined
+
 ## Editing transaction emails
 
 To understand how to change the transaction emails, see the
