@@ -110,7 +110,7 @@ const VersionBanner = props => {
           <span>
             You are viewing the technical documentation for the Sharetribe
             Developer Platform. If you are looking for our no-code
-            documentation, see our new help center.
+            documentation, see our help center.
           </span>
           <div>
             <a href="https://www.sharetribe.com/help/">Help center</a>
