@@ -212,7 +212,7 @@
   },
   {
     "source": "/docs/guides/provider-onboarding-and-identity-verification/",
-    "destination": "/docs/how-to/provider-onboarding-and-identity-verification/",
+    "destination": "/docs/concepts/providers-and-customers-on-stripe-platform/",
     "permanent": true
   },
   {
@@ -522,7 +522,7 @@
   },
   {
     "source": "/docs/cookbook-payments/provider-onboarding-and-identity-verification/",
-    "destination": "/docs/how-to/provider-onboarding-and-identity-verification/",
+    "destination": "/docs/concepts/providers-and-customers-on-stripe-platform/",
     "permanent": true
   },
   {
@@ -1206,7 +1206,7 @@
     "permanent": true
   },
   {    
-    "source": "/docs/how-to/provider-onboarding-and-identity-verification",
+    "source": "/docs/how-to/provider-onboarding-and-identity-verification/",
     "destination": "/docs/concepts/providers-and-customers-on-stripe-platform/",
     "permanent": true
   }
