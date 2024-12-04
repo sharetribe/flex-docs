@@ -114,6 +114,27 @@ of the Integration API, visit the
 about
 [integrations in Sharetribe](/concepts/integrations-introduction/).
 
+### The Asset Delivery API
+
+The Asset Delivery API is how you can fetch your no-code content and
+configurations, defined in Console, to your client application. To read
+more about the capabilities of the Asset Delivery API, visit the
+[Asset Delivery API reference documentation](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
+You can also read more in our
+[asset reference article](/references/assets/).
+
+### The Authentication API
+
+The Authentication API is how you authenticate your API requests. All
+requests to Marketplace API and Integration API require a valid token,
+and tokens can provide different levels of access depending on their
+type. If you are using the Javascript SDKs, authentication is handled
+within the SDK tooling. To read more about the capabilities of
+Authentication API, visit the
+[API reference documentation](https://www.sharetribe.com/api-reference/authentication.html)
+or read more in our
+[Authentication API article](/concepts/authentication-api/).
+
 ### Sharetribe CLI
 
 Sharetribe CLI (Command-line interface) is a tool for changing your

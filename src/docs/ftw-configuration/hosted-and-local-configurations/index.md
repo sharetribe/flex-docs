@@ -15,6 +15,18 @@ used to customise the template with low code effort. Starting in version
 v2.0.0, the template can also use [asset-based](/references/assets/)
 configurations, if they are defined in Sharetribe Console.
 
+<info>
+
+The
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
+is used to fetch no-code content and configurations, defined in the
+Console, to your client application.
+[See all the available assets.](/references/assets/#available-default-asset-files)
+
+Sharetribe Web Template fetches mandatory assets by default.
+
+</info>
+
 Some configurations are mandatory to define in Sharetribe Console, such
 as logo, listing types, listing fields, and minimum transaction size.
 Those configurations are read from the hosted assets in the template by

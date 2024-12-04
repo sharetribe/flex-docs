@@ -86,16 +86,21 @@ section. You can
 
 ### Build
 
-In the build section you can modify some marketplace settings. The Build
-section will mostly be used by your developer, so you might not need to
-worry about this specific section of your marketplace. It’s good to know
-the basics, nonetheless, so here is a brief overview of what the Build
-section includes.
+In the build section you can modify some marketplace settings, content,
+and configurations without coding. When you have no-code content and
+configurations set up in Console, you can use the
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
+to fetch them to your custom marketplace application.
+
+- [Read more about retrieving asset data](/references/assets/#retrieving-asset-data)
 
 **General** contains basic information about your marketplace: your
 marketplace ID, URL and name. Here, you can also configure an outgoing
 email address, where all notifications to your marketplace’s users will
 be sent from.
+
+Here, you can also set up your localization and access control no-code
+configurations, which can be fetched as an asset.
 
 <info>
 
@@ -110,13 +115,17 @@ defined through Console. Instead, you need to define it in the correct
 configurations. You can
 [modify your marketplace and email texts](/concepts/marketplace-texts/),
 create [content pages](/concepts/headless-content-management/), and
-configure your marketplace footer.
+configure your marketplace footer and top bar.
 
 **Design** allows you to modify the branding and layout of your
 marketplace.
 
+**Users** contains configurations related to your marketplace user types
+and user fields.
+
 **Listings** contains configurations related to your marketplace listing
-types, listing fields, and listing search conventions.
+types, listing categories, listing fields, and listing search
+conventions.
 
 **Transactions** related configurations include minimum transaction size
 as well as provider and customer commissions.
