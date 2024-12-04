@@ -125,6 +125,53 @@ take up to 5 minutes before any changes are visible to all end users.
 
 </info>
 
+## Available default asset files
+
+Assets are fetched by file path. The asset files available to be fetched
+by default are the following:
+
+### General
+
+- Localization: `/general/localization.json`
+- Access control: `/general/access-control.json`
+
+### Content
+
+- Content pages: `/content/pages/{pageId}.json`
+- Top bar: `/content/top-bar.json`
+- Footer: `/content/footer.json`
+- Marketplace texts: `/content/translations.json`
+- Email texts: `/content/email-texts.json`
+
+### Design
+
+- Branding: `/design/branding.json`
+- Layout: `/design/layout.json`
+
+### Users
+
+- User types: `/users/user-types.json`
+- User fields: `/users/user-fields.json`
+
+### Listings
+
+- Listing types: `/listings/listing-types.json`
+- Listing categories: `/listings/listing-categories.json`
+- Listing fields: `/listings/listing-fields.json`
+- Listing search: `/listings/listing-search.json`
+
+### Transactions
+
+- Commission: `/transactions/commission.json`
+- Minimum transaction size:
+  `/transactions/minimum-transaction-size.json`
+
+### Integrations
+
+- Map: `/integrations/map.json`
+- Analytics: `/integrations/analytics.json`
+- Google Search Console: `/integrations/google-search-console.json`
+
 ## Further reading
 
 - [Editing client application marketplace texts](/concepts/marketplace-texts/)
