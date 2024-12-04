@@ -19,9 +19,9 @@ The platform sends two types of emails:
   process.
 
 The built-in emails can be customized using the
-[Built-in email template editor](https://console.sharetribe.com/advanced/email-templates)
-in the Sharetribe Console. You find the editor in the Console under
-Build section.
+[Built-in email notifications editor](https://console.sharetribe.com/advanced/email-notifications)
+in the Sharetribe Console. You find the editor in Console under
+Build > Advanced > Email notifications section.
 
 To change the transaction emails, follow the
 [Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-sharetribe-cli/)
@@ -423,9 +423,9 @@ content with the email text editor under Build > Content > Email texts.
 ## Editing built-in emails
 
 The built-in emails can be customized using the
-[Built-in email template editor](https://console.sharetribe.com/advanced/email-templates)
+[Built-in email notifications editor](https://console.sharetribe.com/advanced/email-notifications)
 in the Sharetribe Console. You find the editor in the Console under
-Build section.
+Build > Advanced > Email notifications section.
 
 In addition to the code editor that allows you to edit the template, the
 editor also contains a **context viewer** that shows you a sample of the
@@ -434,11 +434,14 @@ context that will be used with that particular email.
 The editor also let's you to see a **preview** of the email before and
 let's you **send test emails** to your own email address.
 
-Three of the built-in email templates can be disabled via Console:
+These built-in email notifications can be disabled through Console:
 
+- Listing approved
 - New message
-- Verify email address
+- User approved
 - User joined
+- User permissions changed
+- Verify email address
 
 ## Editing transaction emails
 
