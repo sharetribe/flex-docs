@@ -28,9 +28,9 @@ In this tutorial we make a change to an email template that is used in
 sending notifications to your marketplace users as part of your
 transaction process. These transaction email template changes are also a
 form of process change, and they create a new version of your process.
-For email templates not part of your transaction process, see the
-[Built-in email templates](https://console.sharetribe.com/advanced/email-templates)
-page in the Build section of Console.
+For email notifications not part of your transaction process, see the
+[Built-in email notifications](https://console.sharetribe.com/advanced/email-notifications)
+page in the Build > Advanced > Email notifications section of Console.
 
 <info>
 

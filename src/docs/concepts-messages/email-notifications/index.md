@@ -33,22 +33,31 @@ their email address. Sharetribe does not send emails to unconfirmed
 addresses to avoid people flagging those as spam emails, as that can
 hurt your marketplace's ability to send mail to legitimate users.
 
-Do note that built-in email notifications can not be disabled.
+You can disable some email notifications through Console.
 
 ## Built-in email notifications
 
-There are seven built-in email notifications, all of which are related
-to your users' account management. Use the
+There are ten built-in email notifications, related
+to end-users' account management, permissions, and listings approval. Use the
 [Console](https://console.sharetribe.com/) to manage the built-in email
 notifications.
 
 You can edit the built-in email content with the Email texts editor in
-Console > Build > Content.
+Console > Build > Content > Email texts.
 
 You can preview and customise built-in emails using the
-[Built-in email template editor](https://console.sharetribe.com/advanced/email-templates)
-in the Sharetribe Console. You can find the editor in the Console under
-the Build > Advanced section.
+[Built-in email notifications editor](https://console.sharetribe.com/advanced/email-notifications)
+in the Sharetribe Console. You can find the editor in Console under
+the Build > Advanced > Email notifications section.
+
+These built-in email notifications can be disabled through Console:
+
+- Listing approved
+- New message
+- User approved
+- User joined
+- User permissions changed
+- Verify email address
 
 The email templates use the
 [Handlebars template language](/references/email-templates/#handlebars).
