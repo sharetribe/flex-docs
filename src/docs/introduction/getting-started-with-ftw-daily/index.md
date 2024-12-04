@@ -366,6 +366,18 @@ This will automatically open `http://localhost:3000` in a browser:
 
 <info>
 
+The Sharetribe Web Template fetches no-code content and configurations
+from the Sharetribe backend using the
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html).
+
+Read more about how no-code assets are handled between the Sharetribe
+Console and the client application in our
+[asset reference documentation](/references/assets/).
+
+</info>
+
+<info>
+
 As you browse your marketplace and create listings, you may notice that
 the search filters do not work. You can activate the filters by creating
 a

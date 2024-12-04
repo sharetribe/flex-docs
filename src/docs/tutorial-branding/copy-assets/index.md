@@ -60,3 +60,11 @@ Biketribe marketplace.
 
 You can now continue to develop your marketplace with the same
 configurations you set up in Test!
+
+### Further reading
+
+The Sharetribe Web Template uses the
+[Asset Delivery API](https://www.sharetribe.com/api-reference/asset-delivery-api.html)
+to fetch your no-code content and configurations from the Sharetribe
+backend to your application. Read more about handling no-code assets in
+the [Assets reference](/references/assets/).
