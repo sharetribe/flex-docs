@@ -20,8 +20,8 @@ The platform sends two types of emails:
 
 The built-in emails can be customized using the
 [Built-in email notifications editor](https://console.sharetribe.com/advanced/email-notifications)
-in the Sharetribe Console. You find the editor in Console under
-Build > Advanced > Email notifications section.
+in the Sharetribe Console. You find the editor in Console under Build >
+Advanced > Email notifications section.
 
 To change the transaction emails, follow the
 [Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-sharetribe-cli/)
@@ -442,6 +442,428 @@ These built-in email notifications can be disabled through Console:
 - User joined
 - User permissions changed
 - Verify email address
+
+### Built-in email context variables
+
+Next to the built-in email editor in Console, you can see the different
+context variables and sample values that are available for the built-in
+email you are editing. Different email templates have different context
+variables available. The context variables available for each built-in
+template are under the following links.
+
+- [Email address changed](/references/email-templates/#email-address-changed)
+- [Listing approved](/references/email-templates/#listing-approved)
+- [New message](/references/email-templates/#new-message)
+- [Password changed](/references/email-templates/#password-changed)
+- [Reset password](/references/email-templates/#reset-password)
+- [User approved](/references/email-templates/#user-approved)
+- [User joined](/references/email-templates/#user-joined)
+- [User permissions changed](/references/email-templates#user-permissions-changed)
+- [Verify changed email address](/references/email-templates#verify-changed-email-address)
+- [Verify email address](/references/email-templates#verify-email-address)
+
+#### Email address changed
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+},
+marketplace: marketplace {
+  name: string
+  url: string
+}
+```
+
+#### Listing approved
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+listing: listing {
+  id: UUID
+  title: string
+  private-data: extended-data
+  public-data: extended-data 0 items
+  metadata: extended-data 0 items
+  availability-plan: availability-plan {
+    type: string
+    timezone: string
+  }
+  current-stock: stock {
+    quantity: int
+  }
+}
+```
+
+#### New message
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+message: message {
+  sender: user {
+    id: UUID 5a680a01-a281-4e7a-a276-786280fda2b8
+    first-name: string "Alice"
+    last-name: string "Smith"
+    display-name: string "Alice S"
+    private-data: extended-data 0 items
+    public-data: extended-data 0 items
+    protected-data: extended-data 0 items
+    metadata: extended-data 0 items
+  }
+  content: string
+  transaction: transaction {
+    booking: booking {
+      start: date {
+        year: int
+        month: int
+        day: int
+        hours: int
+        minutes: int
+        seconds: int
+        milliseconds: int
+      }
+      end: date {
+        year: int
+        month: int
+        day: int
+        hours: int
+        minutes: int
+        seconds: int
+        milliseconds: int
+      }
+      displayStart: date {
+        year: int
+        month: int
+        day: int
+        hours: int
+        minutes: int
+        seconds: int
+        milliseconds: int
+      }
+      displayEnd: date {
+        year: int
+        month: int
+        day: int
+        hours: int
+        minutes: int
+        seconds: int
+        milliseconds: int
+
+      }
+      state: string
+      seats: int
+    }
+    listing: listing {
+      id: UUID
+      title: string
+      private-data: extended-data
+      public-data: extended-data
+      metadata: extended-data
+      availability-plan: availability-plan {
+        timezone: string
+        type: string
+      }
+      current-stock: stock {
+        quantity: int 10
+      }
+    }
+    delayed-transition: delayed-transition {
+      run-at: date {
+        year: int 2018
+        month: int 9
+        day: int 27
+        hours: int 18
+        minutes: int 30
+        seconds: int 30
+        milliseconds: int 0
+      }
+    }
+    payout-total: money {
+      amount: decimal 32.13
+      currency: string "USD"
+    }
+    protected-data: extended-data
+    customer: user {
+      id: UUID
+      first-name: string
+      last-name: string
+      display-name: string
+      private-data: extended-data
+      public-data: extended-data
+      protected-data: extended-data
+      metadata: extended-data
+    }
+    payin-total: money {
+      amount: decimal
+      currency: string
+    }
+    id: UUID 3df61814-6b0c-4652-bbc6-869a1d911150
+    reviews: reviews [
+      0: review {
+        content: string "Sample review of customer"
+        subject: user {
+          id: UUID 5a680a01-a281-4e7a-a276-786280fda2b8
+          first-name: string "Alice"
+          last-name: string "Smith"
+          display-name: string "Alice S"
+          private-data: extended-data 0 items
+          public-data: extended-data 0 items
+          protected-data: extended-data 0 items
+          metadata: extended-data 0 items
+        }
+      }
+      1: review {
+        content: string "Sample review of provider"
+        subject: user {
+          id: UUID 2b44e4fd-ec24-4730-a3ff-9af3a07d6751
+          first-name: string "John"
+          last-name: string "Doe"
+          display-name: string "John D"
+          private-data: extended-data 0 items
+          public-data: extended-data 0 items
+          protected-data: extended-data 0 items
+          metadata: extended-data 0 items
+        }
+      }
+    ]
+    tx-line-items: tx-line-items [
+    0: tx-line-item {
+      code: string
+      unit-price: money {
+        amount: decimal
+        currency: string
+      }
+      line-total: money {
+        amount: decimal
+        currency: string
+      }
+      include-for: include-for [
+        0: transaction-role "customer"
+        1: transaction-role "provider"
+      ]
+      quantity: decimal
+      percentage: decimal
+      units: decimal
+      seats: int
+    }
+    1: tx-line-item {
+      code: string
+      unit-price: money {
+        amount: decimal
+        currency: string
+      }
+      line-total: money {
+        amount: decimal
+        currency: string
+      }
+      include-for: include-for [
+        0: transaction-role "provider"
+      ]
+      quantity: decimal
+      percentage: decimal
+      units: decimal
+      seats: int
+      }
+    ]
+    provider: user {
+      id: UUID
+      first-name: string
+      last-name: string
+      display-name: string
+      private-data: extended-data
+      public-data: extended-data
+      protected-data: extended-data
+      metadata: extended-data
+    }
+    stock-reservation: stock-reservation {
+      quantity: int
+    }
+    state: string
+    metadata: extended-data
+  }
+}
+recipient-role: transaction-role
+```
+
+#### Password changed
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+```
+
+#### Reset password
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+password-reset: password-reset {
+  token: string
+  email-address: string
+}
+```
+
+#### User approved
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+```
+
+#### User joined
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+```
+
+#### User permissions changed
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+changed-permissions: changed-permissions {
+  read: permission-value
+  postListings: permission-value
+  initiateTransactions: permission-value
+}
+```
+
+#### Verify changed email address
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+email-verification: email-verification {
+  token: string
+}
+```
+
+#### Verify email address
+
+```
+recipient: user {
+  id: UUID
+  first-name: string
+  last-name: string
+  display-name: string
+  private-data: extended-data
+  public-data: extended-data
+  protected-data: extended-data
+  metadata: extended-data
+}
+marketplace: marketplace {
+  name: string
+  url: string
+}
+email-verification: email-verification {
+  token: string
+}
+```
 
 ## Editing transaction emails
 
