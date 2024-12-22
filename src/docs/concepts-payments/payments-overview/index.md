@@ -407,8 +407,8 @@ causing payout issues for completely unrelated transactions; Stripe does
 not separate funds by PaymentIntent, so a miscalculated excessive refund
 on a transaction between provider A and customer B may cause payout to
 fail for customer C on a different transaction. You can read more on
-[payout issues on manual refunds](/concepts/solving-payout-problems/#why-payouts-fail)
-to figure out what you would need to consider to implement this option
+[payout issues on manual refunds](/concepts/solving-payout-problems/) to
+figure out what you would need to consider to implement this option
 successfully.
 
 #### Full third party payment integration
