@@ -109,7 +109,7 @@ account with a bank account set up before others can initiate
 transactions with them successfully. This is done by
 [creating a Stripe account](https://www.sharetribe.com/api-reference/marketplace.html#create-stripe-account)
 for the authenticated user. The
-[Sharetribe Web Template](/how-to/provider-onboarding-and-identity-verification/)
+[Sharetribe Web Template](/concepts/providers-and-customers-on-stripe-platform/)
 is configured to do this step out-of-the-box using
 [Stripe Connect Onboarding](https://stripe.com/en-fi/connect/onboarding).
 
@@ -314,7 +314,7 @@ The default Stripe integration in Sharetribe works with any client
 application. However, the Sharetribe Web Template is further configured
 to work hand in hand with Stripe:
 
-- [Provider onboarding](/how-to/provider-onboarding-and-identity-verification/)
+- [Provider onboarding](/concepts/providers-and-customers-on-stripe-platform/)
   is handled with Stripe Connect Onboarding. A provider cannot create
   listings (i.e. receive money from customers) unless they have verified
   their identity with Stripe &mdash; this ensures that the platform is
@@ -363,7 +363,7 @@ troubleshoot the problem.
   check if someone has already solved a similar problem.
 
 - In case of payout problem issues, you can check out our article about
-  [Stripe payout issues](/concepts/solving-payout-problems/) for advice
+  [Stripe payout issues](https://www.sharetribe.com/help/en/articles/10006947) for advice
   or ideas.
 
 If nothing seems to work, you can always contact Sharetribe technical
@@ -407,7 +407,7 @@ causing payout issues for completely unrelated transactions; Stripe does
 not separate funds by PaymentIntent, so a miscalculated excessive refund
 on a transaction between provider A and customer B may cause payout to
 fail for customer C on a different transaction. You can read more on
-[payout issues on manual refunds](/concepts/solving-payout-problems/) to
+[payout issues on manual refunds](https://www.sharetribe.com/help/en/articles/10006947) to
 figure out what you would need to consider to implement this option
 successfully.
 

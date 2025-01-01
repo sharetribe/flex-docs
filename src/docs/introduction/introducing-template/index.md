@@ -240,7 +240,7 @@ provide more information to be in compliance.
 ![seller-onboarding-stripe-2](./seller-onboarding-stripe-2.png)
 
 Learn more about
-[handing seller onboarding on your marketplace](https://www.sharetribe.com/docs/how-to/provider-onboarding-and-identity-verification/).
+[handing seller onboarding on your marketplace](/concepts/providers-and-customers-on-stripe-platform/).
 
 ### Email notifications
 
