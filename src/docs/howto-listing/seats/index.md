@@ -13,7 +13,7 @@ published: true
 
 Seats handling is included in the default functionality for bookable
 listings starting from version
-[vX.X.0](https://github.com/sharetribe/web-template/releases/tag) of the
+[v6.3.0](https://github.com/sharetribe/web-template/releases/tag/v6.3.0) of the
 Sharetribe Web Template
 
 This guide applies exclusively to Sharetribe Web Template versions
