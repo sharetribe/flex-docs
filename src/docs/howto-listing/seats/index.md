@@ -1,17 +1,23 @@
 ---
 title: Add listings with multiple seats
 slug: multiple-seats
-updated: 2023-10-24
+updated: 2024-12-04
 category: how-to-listing
 ingress:
   This guide describes how to handle multiple seats in listings and
-  bookings
+  bookings in earlier template versions
 published: true
 ---
 
 <info>
 
-This guide applies exclusively to web template versions earlier than
+Seats handling is included in the default functionality for bookable
+listings starting from version
+[v6.3.0](https://github.com/sharetribe/web-template/releases/tag/v6.3.0) of the
+Sharetribe Web Template
+
+This guide applies exclusively to Sharetribe Web Template versions
+earlier than
 [v6.0.0](https://github.com/sharetribe/web-template/releases/tag/v6.0.0).
 Version 6.0.0 includes updates to the datepicker component, and this
 article is based on the previous version of the datepicker.
