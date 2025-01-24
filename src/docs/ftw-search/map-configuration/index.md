@@ -58,7 +58,7 @@ countries. You can specify whether to use the limitation in
 [config/configMaps.js](https://github.com/sharetribe/web-template/blob/main/src/config/configMaps.js#L48).
 Search for variable `countryLimit` and uncomment the line to make it
 active. Provide the country or countries in an array using
-[ISO 3166 alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+[CLDR two-character region](https://developers.google.com/hotels/hotel-prices/dev-guide/country-codes)
 format (eg. GB, US, FI). If there are multiple values, separate them
 with commas.
 
