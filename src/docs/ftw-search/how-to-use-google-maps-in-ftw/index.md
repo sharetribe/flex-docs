@@ -26,51 +26,7 @@ guide.
 
 ## Enable Google Maps in your marketplace
 
-To enable Google Maps in your marketplace, you will need a Google
-Account. In addition, in order to enable the required Google APIs, you
-will need to enter your billing details.
-
-### Generate a Google Maps API key
-
-Go to the
-[Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference),
-and click on "Get started" button in the top bar, and follow the
-instructions. Save the key for later.
-
-<warning>
-
-Make sure to follow
-[API security best practices](https://developers.google.com/maps/api-security-best-practices)
-with your Google Maps API keys. For example, restricting your API key to
-your client app URL will prevent unauthorised use that would impact your
-billing.
-
-</warning>
-
-### Enable Google APIs
-
-Follow the instructions in the
-[Getting started](https://developers.google.com/maps/documentation/javascript/places#GetStarted)
-section of the Places library documentation to enable using the Google
-Places API Web Service. You will also need to enable the Maps Static API
-and Maps JavaScript API.
-
-### Update the API key in Console
-
-If you are using a version of the template
-[v3.4.0](https://github.com/sharetribe/web-template/releases/tag/v3.4.0)
-or newer, you can set the API key in the Sharetribe Console.
-
-1. In Sharetribe Console, navigate to Integrations > Map
-
-2. Select "Google Maps"
-
-3. Paste the token into the field
-
-4. Press "Save changes"
-
-Read more in our article on
-[how to set up Mapbox or Google Maps for location services](https://www.sharetribe.com/help/en/articles/8676185-how-to-set-up-mapbox-or-google-maps-for-location-services).
+To enable Google Maps in your marketplace, follow the instructions at [how to set up Mapbox or Google Maps for location services](https://www.sharetribe.com/help/en/articles/8676185-how-to-set-up-mapbox-or-google-maps-for-location-services#h_81fe29e50f).
 
 You can also choose to assign the map key to an environment variable.
 However, if you enable the API key configuration through Console, the
