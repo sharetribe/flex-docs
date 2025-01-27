@@ -78,8 +78,7 @@ flex-cli help login
 
 To log in you need to have a personal API key.
 
-To get an API key, log in to Console go to
-[Account > API keys](https://console.sharetribe.com/api-keys).
+To get an API key, log in to Console then click your email address in the bottom left of the sidebar and click [Manage API keys](https://console.sharetribe.com/api-keys).
 
 ## Log in
 
