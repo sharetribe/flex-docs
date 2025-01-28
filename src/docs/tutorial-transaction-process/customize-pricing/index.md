@@ -35,7 +35,8 @@ information about the helmet rental fee.
 We will not add new fields to listing configuration in Sharetribe
 Console, since we do not want to show the helmet rental fee in the
 Details panel. Instead, we start by making some changes to
-**EditListingPricingPanel** in _EditListingWizard_.
+**EditListingPricingPanel** located in the _EditListingWizard_
+directory:
 
 ```shell
 └── src
@@ -56,13 +57,13 @@ comparable changes to _EditListingPricingAndStockPanel.js_ instead.
 
 ### Save to public data
 
-In _EditListingPricingPanel_, we need to edit the _onSubmit_ function to
-save the new public data field called **helmetFee**. Because we are
+In _EditListingPricingPanel.js_, we need to edit the _onSubmit_ function
+to save the new public data field called **helmetFee**. Because we are
 using _FieldCurrencyInput_ component in this example as the input of
 choice, the _helmetFee_ variable will be a Money object when we get it
-from the submitted _values_. Money object can't be used directly as
-public data, so we need to create a JSON object with keys **amount** and
-**currency**, and use it in the underlying API call.
+from the submitted _values_. Money objects can't be stored directly into
+public data, so we need to create a JSON object with the keys **amount**
+and **currency**, and use it in the underlying API call.
 
 <info>
 
@@ -72,19 +73,25 @@ _helmetFee_, on the other hand, needs to be under the _publicData_ key.
 
 </info>
 
-```jsx
-onSubmit={values => {
-  const { price, helmetFee = null } = values;
+```diff
+<EditListingPricingForm
+  className={css.form}
+  initialValues={initialValues}
+  onSubmit={values => {
+    const {
+      price,
++     helmetFee = null
+    } = values;
 
-  const updatedValues = {
-    price,
-    publicData: {
-      helmetFee: helmetFee ? { amount: helmetFee.amount, currency: helmetFee.currency } : null,
-
-    },
-  };
-  onSubmit(updatedValues);
-}}
+    // New values for listing attributes
+    const updatedValues = {
+      price,
++     publicData: {
++       helmetFee: helmetFee ? { amount: helmetFee.amount, currency: helmetFee.currency } : null
++     },
+    };
+    onSubmit(updatedValues);
+  }}
 ```
 
 ### Initialize the form
@@ -95,32 +102,36 @@ _publicData_ key. Also, because _FieldCurrencyInput_ expects the value
 to be a Money object, we need to convert the value we get from
 Marketplace API back to an instance of Money.
 
-```jsx
+In the beginning of _EditListingPricingPanel.js_, you'll find the
+`getInitialValues` function:
+
+```diff
 const getInitialValues = params => {
   const { listing } = params;
   const { price, publicData } = listing?.attributes || {};
 
-  const helmetFee = publicData?.helmetFee || null;
++ const helmetFee = publicData?.helmetFee || null;
 
-  const helmetFeeAsMoney = helmetFee
-    ? new Money(helmetFee.amount, helmetFee.currency)
-    : null;
++ const helmetFeeAsMoney = helmetFee
++   ? new Money(helmetFee.amount, helmetFee.currency)
++   : null;
 
-  return { price, helmetFee: helmetFeeAsMoney };
+  return {
+    price,
++   helmetFee: helmetFeeAsMoney
+  };
 };
 ```
 
-Now pass the whole `initialValues` map in the corresponding prop to
-_EditListingPricingForm_.
-
-### Add input component
+### Add an input component
 
 We want to be able to save the listing's helmet rental fee amount, so we
-add a new _FieldCurrencyInput_ to the _EditListingPricingForm_. The id
+add a new _FieldCurrencyInput_ to _EditListingPricingForm.js_. The id
 and name of this field will be _helmetFee_.
 
 Adding this fee will be optional, so we don't want to add any _validate_
-param to the _FieldCurrencyInput_ like there is in the _price_ input.
+parameters to the _FieldCurrencyInput_ like there is in the _price_
+input.
 
 ```shell
 └── src
@@ -131,10 +142,8 @@ param to the _FieldCurrencyInput_ like there is in the _price_ input.
                     └── EditListingPricingForm.js
 ```
 
-```jsx
-...
-
-<FieldCurrencyInput
+```diff
+ <FieldCurrencyInput
   id={`${formId}price`}
   name="price"
   className={css.input}
@@ -147,26 +156,26 @@ param to the _FieldCurrencyInput_ like there is in the _price_ input.
   currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
   validate={priceValidators}
 />
-<FieldCurrencyInput
-  id={`${formId}helmetFee`}
-  name="helmetFee"
-  className={css.input}
-  autoFocus={autoFocus}
-  label={intl.formatMessage(
-    { id: 'EditListingPricingForm.helmetFee' },
-    { unitType }
-  )}
-  placeholder={intl.formatMessage({ id: 'EditListingPricingForm.helmetFeePlaceholder' })}
-  currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
-/>
-...
+// Additional currency input
++ <FieldCurrencyInput
++   id={`${formId}helmetFee`}
++   name="helmetFee"
++   className={css.input}
++   autoFocus={autoFocus}
++   label={intl.formatMessage(
++     { id: 'EditListingPricingForm.helmetFee' },
++     { unitType }
++   )}
++   placeholder={intl.formatMessage({ id: 'EditListingPricingForm.helmetFeePlaceholder' })}
++   currencyConfig={appSettings.getCurrencyFormatting(marketplaceCurrency)}
++ />
 ```
 
-You can use the following marketplace text keys:
+You can add the following marketplace translations to en.json:
 
 ```js
-  "EditListingPricingForm.helmetFee":"Helmet rental fee (optional)",
-  "EditListingPricingForm.helmetFeePlaceholder": "Add a helmet rental fee..."
+"EditListingPricingForm.helmetFee":"Helmet rental fee (optional)",
+"EditListingPricingForm.helmetFeePlaceholder": "Add a helmet rental fee..."
 ```
 
 After adding the new marketplace text keys, the EditListingPricingPanel
@@ -212,13 +221,13 @@ saved in the listing's public data, so we can find it under the
 _publicData_ key in the listing's attributes.
 
 Because adding a helmet rental fee to a listing is optional, we need to
-check whether or not the _helmetFee_ exists in public data.
+check whether or not the _helmetFee_ exists in public data:
 
 ```jsx
 const helmetFee = listing?.attributes?.publicData.helmetFee;
 ```
 
-Once we have saved the helmet rental fee information to the variable
+Once we have assigned the helmet rental fee information to the constant
 _helmetFee_, we need to pass it forward to _BookingDatesForm_. This form
 is used for collecting the order data (e.g. booking dates), and values
 from this form will be used when creating the transaction line items. We
@@ -289,15 +298,15 @@ import {
 
 When we have imported these files, we will add the checkbox component
 for selecting the helmet rental fee. For this, we need to extract the
-helmetFee from **fieldRenderProps**.
+helmetFee from **formRenderProps**.
 
 ```diff
     ...
-    lineItems,
-    fetchLineItemsError,
-    onFetchTimeSlots,
-+   helmetFee,
-  } = fieldRenderProps;
+   fetchLineItemsError,
+   onFetchTimeSlots,
+   form: formApi,
++  helmetFee
+} = formRenderProps;
 ```
 
 We want to show the amount of helmet rental fee to the user in the
@@ -327,9 +336,9 @@ variable to show the price.
 ```
 
 Because there might be listings without a helmet rental fee, we want to
-show the checkbox only when needed. This is why we will create the
-**helmetFeeMaybe** component which is rendered only if the listing has a
-helmet rental fee saved in its public data.
+show the checkbox only when needed. This is why we will render
+**helmetFeeMaybe** component only if the listing has a helmet rental fee
+saved in its public data.
 
 ```jsx
 const helmetFeeMaybe = helmetFee ? (
@@ -339,39 +348,69 @@ const helmetFeeMaybe = helmetFee ? (
     name="helmetFee"
     label={helmetFeeLabel}
     value="helmetFee"
+    onChange={event => {
+      onHandleFetchLineItems({
+        values: {
+          startDate: startDate,
+          endDate: endDate,
+          seats: seatsEnabled ? 1 : undefined,
+          helmetFee: event.target.checked,
+        },
+      });
+    }}
   />
 ) : null;
 ```
 
-Then we can add the **helmetFeeMaybe** to the returned `<Form>`
-component
+You'll also need to add the `helmetFee` value to all `onChange` handlers
+to both the `<FieldDateRangePicker>` and `<FieldSelect>` form fields. In
+addition, you'll need to add a direct call to the `form.api` which
+updates the checkbox value. For example, for the `<FieldSelect>` form
+field, the updated `onChange` handler would look like:
 
 ```diff
-...
-    isDayBlocked={isDayBlocked}
-    isOutsideRange={isOutsideRange}
-    isBlockedBetween={isBlockedBetween(monthlyTimeSlots, timeZone)}
-    disabled={fetchLineItemsInProgress}
-    onClose={event =>
-      setCurrentMonth(getStartOf(event?.startDate ?? startOfToday, 'month', timeZone))
-    }
-  />
+<FieldSelect
+  name="seats"
+  id="seats"
+  label={intl.formatMessage({ id: 'BookingDatesForm.seatsTitle' })}
+  disabled={!(startDate && endDate)}
+  className={css.fieldSeats}
+  onChange={values => {
++   if (helmetFeeMaybe) {
++     formApi.change('helmetFee', false);
++   }
+    onHandleFetchLineItems({
+      values: {
+        startDate: startDate,
+        endDate: endDate,
+        seats: values,
++       helmetFee: helmetFeeMaybe ? false : undefined,
+
+      },
+    });
+  }}
+>
+```
+
+If you don't do this, the booking breakdown will not reflect the toggled
+helmet fee when you change other parameters of the booking.
+
+Then we can add the **helmetFeeMaybe** to the `<Form>` component:
+
+```diff
+      {seatsOptions.map(s => (
+        <option value={s} key={s}>
+          {s}
+        </option>
+      ))}
+    </FieldSelect>
+  ) : null}
 
 + {helmetFeeMaybe}
 
   {showEstimatedBreakdown ? (
     <div className={css.priceBreakdownContainer}>
       <h3>
-...
-```
-
-As the final step for adding the checkbox, add the corresponding CSS
-class to _BookingDatesForm.module.css_.
-
-```css
-.helmetFeeContainer {
-  margin-top: 24px;
-}
 ```
 
 After this step, the BookingDatesForm should look like this. Note that
@@ -380,16 +419,16 @@ even though we added the new checkbox.
 
 ![Helmet rental fee checkbox](./helmetFeeCheckbox.png)
 
-### Update the orderData
+### Update the orderData object
 
 Next, we want to pass the value of the helmet rental fee checkbox as
-part of the **orderData**. This is needed so that we can show the
+part of the **orderData** object. This is needed so that we can show the
 selected helmet rental fee as a new row in the order breakdown. To
-achieve this, we need to edit the _handleOnChange_ function, which takes
-the values from the form and calls the _onFetchTransactionLineItems_
-function for constructing the transaction line items. These line items
-are then shown inside the _bookingInfoMaybe_ component under the form
-fields.
+achieve this, we need to edit the _calculateLineItems_ function in the
+_BookingDatesForm.js_ file, which takes the values from the form and
+calls the _onFetchTransactionLineItems_ function for constructing the
+transaction line items. These line items are then shown inside the
+_bookingInfoMaybe_ component under the form fields.
 
 <info>
 
@@ -428,27 +467,30 @@ _hasHelmetFee_ param is true, and otherwise it is false. If we had more
 than one item in the checkbox group, we should check which items were
 selected.
 
-```jsx
-const handleFormSpyChange = (
+```diff
+const calculateLineItems = (
   listingId,
   isOwnListing,
   fetchLineItemsInProgress,
-  onFetchTransactionLineItems
+  onFetchTransactionLineItems,
+  seatsEnabled
 ) => formValues => {
-  const { startDate, endDate } =
-    formValues.values && formValues.values.bookingDates
-      ? formValues.values.bookingDates
-      : {};
+  const { startDate, endDate, seats } = formValues?.values || {};
 
-  const hasHelmetFee = formValues.values?.helmetFee?.length > 0;
+  const seatCount = seats ? parseInt(seats, 10) : 1;
+
++ const hasHelmetFee = formValues.values?.helmetFee;
+
+  const orderData = {
+    bookingStart: startDate,
+    bookingEnd: endDate,
+    ...(seatsEnabled && { seats: seatCount }),
++   hasHelmetFee,
+  };
 
   if (startDate && endDate && !fetchLineItemsInProgress) {
     onFetchTransactionLineItems({
-      orderData: {
-        bookingStart: startDate,
-        bookingEnd: endDate,
-        hasHelmetFee,
-      },
+      orderData,
       listingId,
       isOwnListing,
     });
@@ -517,6 +559,8 @@ If you have several helper functions, you might want to export this
 function from the `lineItemHelpers.js` file instead, and import it in
 `lineItems.js`.
 
+In `lineItems.js`, add the following function:
+
 ```jsx
 const resolveHelmetFeePrice = listing => {
   const publicData = listing.attributes.publicData;
@@ -533,9 +577,9 @@ const resolveHelmetFeePrice = listing => {
 
 ### Add line-item
 
-Now the _transactionLineItems_ function can be updated to also provide
-the helmet rental fee line item when the listing has a helmet rental
-fee.
+Now the _transactionLineItems_ function in `lineItems.js` can be updated
+to also provide the helmet rental fee line item when the listing has a
+helmet rental fee.
 
 In this example, the provider commission is calculated from the total of
 booking and helmet rental fees. That's why we need to add the
