@@ -20,8 +20,8 @@ The platform sends two types of emails:
 
 The built-in emails can be customized using the
 [Built-in email notifications editor](https://console.sharetribe.com/advanced/email-notifications)
-in the Sharetribe Console. You find the editor in Console under
-Build > Advanced > Email notifications section.
+in the Sharetribe Console. You find the editor in Console under Build >
+Advanced > Email notifications section.
 
 To change the transaction emails, follow the
 [Edit email templates with Sharetribe CLI](/how-to/edit-email-templates-with-sharetribe-cli/)
