@@ -1,7 +1,7 @@
 ---
 title: Assets
 slug: assets
-updated: 2023-10-24
+updated: 2025-01-29
 category: references
 ingress: Reference documentation providing information on assets.
 published: true
@@ -162,9 +162,12 @@ by default are the following:
 
 ### Transactions
 
-- Commission: `/transactions/commission.json`
 - Minimum transaction size:
   `/transactions/minimum-transaction-size.json`
+
+### Monetization
+
+- Commission: `/transactions/commission.json`
 
 ### Integrations
 
