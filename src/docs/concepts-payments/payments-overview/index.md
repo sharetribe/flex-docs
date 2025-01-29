@@ -363,8 +363,8 @@ troubleshoot the problem.
   check if someone has already solved a similar problem.
 
 - In case of payout problem issues, you can check out our article about
-  [Stripe payout issues](https://www.sharetribe.com/help/en/articles/10006947) for advice
-  or ideas.
+  [Stripe payout issues](https://www.sharetribe.com/help/en/articles/10006947)
+  for advice or ideas.
 
 If nothing seems to work, you can always contact Sharetribe technical
 support through the chat widget in your
@@ -407,8 +407,8 @@ causing payout issues for completely unrelated transactions; Stripe does
 not separate funds by PaymentIntent, so a miscalculated excessive refund
 on a transaction between provider A and customer B may cause payout to
 fail for customer C on a different transaction. You can read more on
-[payout issues on manual refunds](https://www.sharetribe.com/help/en/articles/10006947) to
-figure out what you would need to consider to implement this option
+[payout issues on manual refunds](https://www.sharetribe.com/help/en/articles/10006947)
+to figure out what you would need to consider to implement this option
 successfully.
 
 #### Full third party payment integration

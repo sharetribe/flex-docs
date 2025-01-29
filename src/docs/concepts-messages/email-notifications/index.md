@@ -37,8 +37,8 @@ You can disable some email notifications through Console.
 
 ## Built-in email notifications
 
-There are ten built-in email notifications, related
-to end-users' account management, permissions, and listings approval. Use the
+There are ten built-in email notifications, related to end-users'
+account management, permissions, and listings approval. Use the
 [Console](https://console.sharetribe.com/) to manage the built-in email
 notifications.
 
@@ -47,8 +47,8 @@ Console > Build > Content > Email texts.
 
 You can preview and customise built-in emails using the
 [Built-in email notifications editor](https://console.sharetribe.com/advanced/email-notifications)
-in the Sharetribe Console. You can find the editor in Console under
-the Build > Advanced > Email notifications section.
+in the Sharetribe Console. You can find the editor in Console under the
+Build > Advanced > Email notifications section.
 
 These built-in email notifications can be disabled through Console:
 
