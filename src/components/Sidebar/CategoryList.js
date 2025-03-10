@@ -9,12 +9,7 @@ import { UiText } from '../../components';
 import ArticleLinkList from './ArticleLinkList';
 
 const ExternalLink = ({ href, children, ariaLabel }) => (
-  <a
-    href={href}
-    rel="noopener noreferrer"
-    target="_blank"
-    aria-label={ariaLabel}
-  >
+  <a href={href} target="_blank" aria-label={ariaLabel}>
     {children}
   </a>
 );
