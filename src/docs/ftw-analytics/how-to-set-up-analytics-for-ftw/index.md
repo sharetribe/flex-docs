@@ -128,6 +128,9 @@ file.
 We suggest including third-party scripts via the
 [src/util/includeScripts.js](https://github.com/sharetribe/web-template/blob/main/src/util/includeScripts.js)
 file. You cannot add inline scripts without adding a nonce attribute.
+See
+[this pull request](https://github.com/sharetribe/web-template/pull/485)
+for more information on why nonce needs to be used with inline scripts.
 Therefore, the recommended approach is to load external scripts
 dynamically using the script tag.
 
