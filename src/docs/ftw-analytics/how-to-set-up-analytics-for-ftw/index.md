@@ -123,6 +123,104 @@ file. You will also need to whitelist the corresponding URLs in the
 [server/csp.js](https://github.com/sharetribe/web-template/blob/main/server/csp.js)
 file.
 
+#### Example: Add Meta/Facebook Pixel tracking script
+
+We suggest including third-party scripts via the
+[src/util/includeScripts.js](https://github.com/sharetribe/web-template/blob/main/src/util/includeScripts.js)
+file. You cannot add inline scripts without adding a nonce attribute.
+Therefore, the recommended approach is to load external scripts
+dynamically using the script tag.
+
+As an example, we will use the Meta Pixel. You will first need to create
+a script file under `public/static/scripts/facebook/facebook.js` and add
+the Meta Pixel code. You can find the up to date base code under the
+[Meta Developer Documentation](https://developers.facebook.com/docs/meta-pixel/get-started/).
+Refactor the code so that it is structured for use as an external script
+file:
+
+```js
+(function() {
+  if (window.fbq) return;
+
+  (function(f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function() {
+      n.callMethod
+        ? n.callMethod.apply(n, arguments)
+        : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  })(
+    window,
+    document,
+    'script',
+    'https://connect.facebook.net/en_US/fbevents.js'
+  );
+
+  fbq('init', '{your-pixel-id-goes-here}');
+  fbq('track', 'PageView');
+
+  const img = document.createElement('img');
+  img.height = '1';
+  img.width = '1';
+  img.style.display = 'none';
+  img.src = `https://www.facebook.com/tr?id={your-pixel-id-goes-here}&ev=PageView&noscript=1`;
+  document.body.appendChild(img);
+})();
+```
+
+Add that code to the facebook.js file. You can then import the file in
+[src/util/includeScripts.js](https://github.com/sharetribe/web-template/blob/main/src/util/includeScripts.js):
+
+```js
+analyticsLibraries.push(
+  <script
+    key="fb"
+    src={`${rootURL}/static/scripts/facebook/facebook.js`}
+  ></script>
+);
+```
+
+Remember to also update the
+[csp.js](https://github.com/sharetribe/web-template/blob/main/server/csp.js)
+file:
+
+```js
+const { imgSrc = [self] } = defaultDirectives;
+const imgSrcOverride = imgSrc.concat('www.facebook.com');
+
+const { scriptSrc = [self] } = defaultDirectives;
+const scriptSrcOverride = scriptSrc.concat(
+  'connect.facebook.net',
+  'www.facebook.com'
+);
+
+const { frameSrc = [self] } = defaultDirectives;
+const frameSrcOverride = frameSrc.concat(
+  'connect.facebook.net',
+  'www.facebook.com'
+);
+
+const { connectSrc = [self] } = defaultDirectives;
+const connectSrcOverride = connectSrc.concat('www.facebook.com');
+
+const customDirectives = {
+  imgSrc: imgSrcOverride,
+  scriptSrc: scriptSrcOverride,
+  frameSrc: frameSrcOverride,
+  connectSrc: connectSrcOverride,
+};
+```
+
 ### Create a handler
 
 You can create a custom handler e.g. in
