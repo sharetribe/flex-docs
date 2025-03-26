@@ -1,7 +1,7 @@
 ---
 title: Listing availability management
 slug: availability
-updated: 2023-10-24
+updated: 2025-03-29
 category: references
 ingress: Reference documentation for listing availability management.
 published: true
@@ -120,6 +120,8 @@ returns timeslot 07-23 on that day if there are no bookings.
 For time-based plans, both availability exceptions and bookings are
 interpreted literally, i.e. covering the exact time intervals determined
 by their start and end times.
+
+## Fixed booking slots
 
 ## Booking states
 
