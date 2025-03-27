@@ -1,7 +1,7 @@
 ---
 title: How to set up OpenID Connect proxy in Sharetribe Web Template
 slug: setup-open-id-connect-proxy
-updated: 2024-05-16
+updated: 2025-03-24
 category: how-to-users-and-authentication
 ingress:
   In this guide, we'll take a look at the process of setting up OpenID
@@ -401,20 +401,19 @@ we need to add a button for Github login to the AuthenticationPage.
 ```
 
 We can once more use the existing Google and Facebook login code as an
-example an create a similar _authWithGithub_ function, which adds the
-default URL parameters to the API call and then redirects user to the
-authentication endpoint.
+example. You will need to add a _showGithubLogin_ prop and pass it down
+alongside _showFacebookLogin_ and _showGoogleLogin_, and add
+_showGithubLogin_ to the _showSocialLogins_ logic so that the button
+gets shown correctly.
+
+Then, create a function _authWithGithub_ similar to _authWithGoogle_ and
+_authWithFacebook_, which adds the default URL parameters to the API
+call and then redirects user to the authentication endpoint.
 
 ```js
 const authWithGithub = () => {
-  const defaultRoutes = getDefaultRoutes();
-  const {
-    baseUrl,
-    fromParam,
-    defaultReturnParam,
-    defaultConfirmParam,
-  } = defaultRoutes;
-  window.location.href = `${baseUrl}/api/auth/github?${fromParam}${defaultReturnParam}${defaultConfirmParam}`;
+  const { baseUrl, queryParams } = getDataForSSORoutes();
+  window.location.href = `${baseUrl}/api/auth/github?${queryParams}`;
 };
 ```
 
@@ -426,20 +425,20 @@ guidelines how to use them. You can download the Github logo from
 [Github's site](https://github.com/logos).
 
 ```js
-const githubButtonText = isLogin ? (
-  <FormattedMessage id="AuthenticationPage.loginWithGithub" />
-) : (
-  <FormattedMessage id="AuthenticationPage.signupWithGithub" />
-);
-```
-
-```js
-<div className={css.socialButtonWrapper}>
-  <SocialLoginButton onClick={() => authWithGithub()}>
-    <span className={css.buttonIcon}>{GithubLogo}</span>
-    {githubButtonText}
-  </SocialLoginButton>
-</div>
+{
+  showGithubLogin ? (
+    <div className={css.socialButtonWrapper}>
+      <SocialLoginButton onClick={() => authWithGithub()}>
+        <span className={css.buttonIcon}>{GithubLogo}</span>
+        {isLogin ? (
+          <FormattedMessage id="AuthenticationPage.loginWithGithub" />
+        ) : (
+          <FormattedMessage id="AuthenticationPage.signupWithGithub" />
+        )}
+      </SocialLoginButton>
+    </div>
+  ) : null;
+}
 ```
 
 In the `AuthenticationPage` component, the `idp` const defines what is
