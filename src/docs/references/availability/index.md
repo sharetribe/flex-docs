@@ -121,7 +121,87 @@ For time-based plans, both availability exceptions and bookings are
 interpreted literally, i.e. covering the exact time intervals determined
 by their start and end times.
 
-## Fixed booking slots
+### Interval based filtering
+
+Interval based filtering allows querying timeslots by partitioning the
+queried time frame (start to end) into smaller sub-intervals, and then
+matching and filtering timeslots based on whether timeslots are
+contained within the sub-intervals. This can be particularly useful for
+checking day-by-day availability over an extended period for
+fixed-duration bookings.
+
+Interval based filtering is supported by the
+[/timeslots/query](https://www.sharetribe.com/api-reference/marketplace.html#query-time-slots)
+endpoint. It is controlled via four query parameters:
+
+- `intervalDuration`: the length of each sub-interval (e.g. "PT30M",
+  "P1D")
+- `maxPerInterval`: the maximum number of timeslots to return per
+  sub-interval
+- `minDurationStartingInInterval`: minimum required duration of a
+  timeslot starting in an interval, in minutes
+- `intervalAlign`: optional timestamp to control where intervals start
+  (defaults to start time of the query)
+
+`intervalDuration` partitions the queried time frame into smaller
+sub-intervals, which is provided as an
+[ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations).
+`maxPerInterval` then limits the number of time slots matched within
+each sub-interval. Only a number of results up to the defined maximum
+are returned, with excess slots being excluded.
+
+`minDurationStartingInInterval` sets a threshold (in minutes) that
+determines whether a particular time slot counts toward the
+`maxPerInterval` limit. The threshold value is compared to the duration
+of the time slot, cut to the start of the current sub-interval.
+
+`intervalAlign` is a timestamp anchoring the starting point of these
+sub-intervals, giving control over how intervals align relative to the
+query start.
+
+Here are four examples of different scenarios illustrating how the
+filtering logic works. All examples use `intervalDuration: P1D`,
+`maxPerInterval: 1` and `minDurationStartingInInterval: 100`, i.e. 1
+hour and 40 minutes. Therefore, any timeslot that is at least a 100
+minutes long and starts within the interval should be returned
+
+###### **Example 1:**
+
+Only Timeslot 1 is returned by the query, as it is the first matching
+timeslot within "Day 1".
+
+![Example 1 of how the API returns timeslots using interval-based filtering](example1.png)
+
+###### **Example 2:**
+
+Both timeslots are returned by the query.
+
+![Example 2 of how the API returns timeslots using interval-based filtering](example2.png)
+
+###### **Example 3:**
+
+In this example, we have Timeslot 1 that spans both sub-intervals. The
+timeslot overlaps at least a 100 minutes within both sub-intervals, so
+it is the first matching timeslot in both "day 1" and "day 2". Timeslot
+2 is not returned, as we have specified `maxPerInterval: 1` in the query
+parameters.
+
+![Example 3 of how the API returns timeslots using interval-based filtering](example3.png)
+
+###### **Example 4:**
+
+Here, both Timeslot 1 and Timeslot 2 are returned by the query. Even
+though Timeslot 1 only overlaps within "Day 1" for 60 minutes, it's
+total length is 2 hours, i.e. 120 minutes. As long as a timeslot starts
+within an interval, it does not have to be fully contained to the
+interval. The whole duration of the timeslot is compared to the
+`minDurationStartingInInterval: 100` value. Timeslot 1 does not overlap
+with "Day 2" for 100 minutes or over (it overlaps for 60, as the slot
+ends at 01:00:00). The comparison is cut to the start of the current
+sub-interval. Therefore, the first timeslot that matches the conditions
+is Timeslot 2, and both timeslots are returned by the query.
+
+![Example 4 of how the API returns timeslots using interval-based filtering](example4.png)
 
 ## Booking states
 
