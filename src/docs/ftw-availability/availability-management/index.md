@@ -1,7 +1,7 @@
 ---
 title: Managing listing availability
 slug: availability-management
-updated: 2025-10-24
+updated: 2025-03-24
 category: template-availability
 ingress:
   Learn about timezones and availability management in the Template.
@@ -13,6 +13,8 @@ Sharetribe Web Template, with a focus on technical details and
 implementation. For a general overview of availability management, see
 our
 [Help Center](https://www.sharetribe.com/help/en/articles/8413212-how-availability-management-works).
+See also the
+[reference documentation for availability management](<(/references/availability)>).
 
 ## Availability plan types and timezone support
 
