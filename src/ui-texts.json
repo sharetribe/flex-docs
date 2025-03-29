@@ -139,6 +139,7 @@
   "Sidebar.templateIntroduction": "Introduction",
   "Sidebar.templateAnalytics": "Analytics",
   "Sidebar.templateConfiguration": "Configuration and Environment Variables",
+  "Sidebar.templateAvailability": "Availability management",
   "Sidebar.templateContent": "Content Management",
   "Sidebar.templateDataFlow": "Data flow and Redux",
   "Sidebar.templateHosting": "Hosting",

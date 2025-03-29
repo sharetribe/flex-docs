@@ -240,6 +240,7 @@ exports.siteStructure = [
         id: 'template-content',
         sortingArray: sortingArrayTemplateContent,
       },
+      { id: 'template-availability' },
       { id: 'template-styling' },
       { id: 'template-routing' },
       { id: 'template-data-flow' },

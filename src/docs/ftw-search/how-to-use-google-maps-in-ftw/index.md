@@ -26,7 +26,8 @@ guide.
 
 ## Enable Google Maps in your marketplace
 
-To enable Google Maps in your marketplace, follow [the instructions in our Help Center](https://www.sharetribe.com/help/en/articles/8676185-how-to-set-up-mapbox-or-google-maps-for-location-services#h_81fe29e50f).
+To enable Google Maps in your marketplace, follow
+[the instructions in our Help Center](https://www.sharetribe.com/help/en/articles/8676185-how-to-set-up-mapbox-or-google-maps-for-location-services#h_81fe29e50f).
 
 You can also choose to assign the map key to an environment variable.
 However, if you enable the API key configuration through Console, the
