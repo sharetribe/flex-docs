@@ -556,51 +556,6 @@ export class CheckoutPageComponent extends Component {
   }
 }
 
-CheckoutPageComponent.defaultProps = {
-  initiateOrderError: null,
-  listing: null,
-  bookingData: {},
-  bookingDates: null,
-  speculateTransactionError: null,
-  speculatedTransaction: null,
-  inquiredTransaction: null,
-  currentUser: null,
-};
-
-CheckoutPageComponent.propTypes = {
-  scrollingDisabled: bool.isRequired,
-  listing: propTypes.listing,
-  bookingData: object,
-  bookingDates: shape({
-    bookingStart: instanceOf(Date).isRequired,
-    bookingEnd: instanceOf(Date).isRequired,
-  }),
-  fetchSpeculatedTransaction: func.isRequired,
-  speculateTransactionInProgress: bool.isRequired,
-  speculateTransactionError: propTypes.error,
-  speculatedTransaction: propTypes.transaction,
-  inquiredTransaction: propTypes.transaction,
-  initiateOrderError: propTypes.error,
-  currentUser: propTypes.currentUser,
-  params: shape({
-    id: string,
-    slug: string,
-  }).isRequired,
-  sendOrderRequest: func.isRequired,
-  onCreateStripePaymentToken: func.isRequired,
-
-  // from connect
-  dispatch: func.isRequired,
-
-  // from injectIntl
-  intl: intlShape.isRequired,
-
-  // from withRouter
-  history: shape({
-    push: func.isRequired,
-  }).isRequired,
-};
-
 const mapStateToProps = state => {
   const {
     listing,

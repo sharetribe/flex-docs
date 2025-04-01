@@ -403,19 +403,7 @@ We need to initialise the props that are connected to the Redux store:
       location,
 ```
 
-###### Step 9: Update ListingPageComponent propTypes
-
-The template uses _propTypes_ to validate that the data we receive is
-valid:
-
-```diff
-  lineItems: array,
-  fetchLineItemsInProgress: bool.isRequired,
-+ updateLikesInProgress: bool.isRequired,
-  fetchLineItemsError: propTypes.error,
-```
-
-###### Step 10: Connect updateLikes to mapDispatchToProps function on ListingPage.js
+###### Step 9: Connect updateLikes to mapDispatchToProps function on ListingPage.js
 
 ```diff
 const mapDispatchToProps = dispatch => ({

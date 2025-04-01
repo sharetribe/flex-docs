@@ -218,43 +218,4 @@ class SimpleOrderForm extends Component {
   }
 }
 
-SimpleOrderForm.defaultProps = {
-  className: null,
-  rootClassName: null,
-  inProgress: false,
-  loadingData: false,
-  showInitialMessageInput: true,
-  initiateOrderError: null,
-  askShippingDetails: false,
-  showPickUplocation: false,
-  listingLocation: null,
-  totalPrice: null,
-  isFuzzyLocation: false,
-};
-
-SimpleOrderForm.propTypes = {
-  className: string,
-  rootClassName: string,
-  inProgress: bool,
-  loadingData: bool,
-  initiateOrderError: object,
-  formId: string.isRequired,
-  onSubmit: func.isRequired,
-  authorDisplayName: string.isRequired,
-  showInitialMessageInput: bool,
-  askShippingDetails: bool,
-  showPickUplocation: bool,
-  listingLocation: shape({
-    address: string.isRequired,
-    building: string,
-  }),
-  totalPrice: string,
-  locale: string.isRequired,
-  isBooking: bool.isRequired,
-  isFuzzyLocation: bool,
-
-  // from injectIntl
-  intl: intlShape.isRequired,
-};
-
 export default injectIntl(SimpleOrderForm);

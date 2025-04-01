@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import {
   FormattedMessage,
@@ -234,30 +233,6 @@ export const DeleteAccountFormComponent = props => {
       }}
     />
   );
-};
-
-DeleteAccountFormComponent.defaultProps = {
-  rootClassName: null,
-  className: null,
-  changePasswordError: null,
-  inProgress: false,
-  formId: null,
-  resetPasswordInProgress: false,
-  resetPasswordError: null,
-};
-
-const { bool, string } = PropTypes;
-
-DeleteAccountFormComponent.propTypes = {
-  rootClassName: string,
-  className: string,
-  changePasswordError: propTypes.error,
-  inProgress: bool,
-  intl: intlShape.isRequired,
-  ready: bool.isRequired,
-  formId: string,
-  resetPasswordInProgress: bool,
-  resetPasswordError: propTypes.error,
 };
 
 const DeleteAccountForm = compose(injectIntl)(DeleteAccountFormComponent);

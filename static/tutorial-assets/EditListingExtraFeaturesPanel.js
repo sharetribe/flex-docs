@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 // Import configs and util modules
@@ -79,30 +78,6 @@ const EditListingExtraFeaturesPanel = props => {
       />
     </div>
   );
-};
-
-const { func, object, string, bool } = PropTypes;
-
-EditListingExtraFeaturesPanel.defaultProps = {
-  className: null,
-  rootClassName: null,
-  listing: null,
-};
-
-EditListingExtraFeaturesPanel.propTypes = {
-  className: string,
-  rootClassName: string,
-
-  // We cannot use propTypes.listing since the listing might be a draft.
-  listing: object,
-
-  disabled: bool.isRequired,
-  ready: bool.isRequired,
-  onSubmit: func.isRequired,
-  submitButtonText: string.isRequired,
-  panelUpdated: bool.isRequired,
-  updateInProgress: bool.isRequired,
-  errors: object.isRequired,
 };
 
 export default EditListingExtraFeaturesPanel;

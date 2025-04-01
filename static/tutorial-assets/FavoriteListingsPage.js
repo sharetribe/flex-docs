@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
@@ -114,26 +113,6 @@ export const FavoriteListingsPageComponent = props => {
       </LayoutSingleColumn>
     </Page>
   );
-};
-
-FavoriteListingsPageComponent.defaultProps = {
-  listings: [],
-  pagination: null,
-  queryFavoritesError: null,
-  queryParams: null,
-};
-
-const { arrayOf, bool, object } = PropTypes;
-
-FavoriteListingsPageComponent.propTypes = {
-  listings: arrayOf(propTypes.listing),
-  pagination: propTypes.pagination,
-  queryInProgress: bool.isRequired,
-  queryFavoritesError: propTypes.error,
-  queryParams: object,
-
-  // from injectIntl
-  intl: intlShape.isRequired,
 };
 
 const mapStateToProps = state => {

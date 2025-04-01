@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
@@ -85,30 +84,6 @@ export const DeleteAccountPageComponent = props => {
       </LayoutSideNavigation>
     </Page>
   );
-};
-
-DeleteAccountPageComponent.defaultProps = {
-  deleteAccountError: null,
-  currentUser: null,
-  resetPasswordInProgress: false,
-  resetPasswordError: null,
-};
-
-const { bool, func } = PropTypes;
-
-DeleteAccountPageComponent.propTypes = {
-  deleteAccountError: propTypes.error,
-  deleteAccountInProgress: bool.isRequired,
-  currentUser: propTypes.currentUser,
-  onChange: func.isRequired,
-  onSubmitDeleteAccount: func.isRequired,
-  accountDeleted: bool.isRequired,
-  scrollingDisabled: bool.isRequired,
-  resetPasswordInProgress: bool,
-  resetPasswordError: propTypes.error,
-
-  // from injectIntl
-  intl: intlShape.isRequired,
 };
 
 const mapStateToProps = state => {
