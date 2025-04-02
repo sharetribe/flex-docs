@@ -19,6 +19,7 @@ const query = graphql`
               "template-templates"
               "template-configuration"
               "template-content"
+              "template-availability"
               "template-styling"
               "template-routing"
               "template-data-flow"
