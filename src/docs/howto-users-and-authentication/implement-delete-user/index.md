@@ -391,27 +391,6 @@ Replace `{deleteAccountForm}` with the following:
             </Modal>
 ```
 
-Then, add _onManageDisableScrolling_ to
-_DeleteAccountPageComponent.propTypes_:
-
-```js
-DeleteAccountPageComponent.propTypes = {
-  deleteAccountError: propTypes.error,
-  deleteAccountInProgress: bool.isRequired,
-  currentUser: propTypes.currentUser,
-  onChange: func.isRequired,
-  onManageDisableScrolling: func.isRequired,
-  onSubmitDeleteAccount: func.isRequired,
-  accountDeleted: bool.isRequired,
-  scrollingDisabled: bool.isRequired,
-  resetPasswordInProgress: bool,
-  resetPasswordError: propTypes.error,
-
-  // from injectIntl
-  intl: intlShape.isRequired,
-};
-```
-
 Also add _onManageDisableScrolling_ to _mapDispatchToProps_:
 
 ```js

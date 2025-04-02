@@ -166,13 +166,15 @@ environment or **_yarn run dev-server_** on your local machine.
 
    ```js
    // Render the app with given route, preloaded state, hosted microcopy.
-   const { head, body } = renderApp(
-     requestUrl,
-     context,
-     preloadedState,
-     translations,
-     collectWebChunks
-   );
+    // Render the app with given route, preloaded state, hosted translations.
+   return renderApp(
+    requestUrl,
+    context,
+    preloadedState,
+    translations,
+    hostedConfig,
+    collectWebChunks
+   ).then(({ head, body }) => {
    ```
 
    ```shell

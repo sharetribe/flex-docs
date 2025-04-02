@@ -78,24 +78,5 @@ export const EditListingExtraFeaturesFormComponent = props => (
   />
 );
 
-EditListingExtraFeaturesFormComponent.defaultProps = {
-  fetchErrors: null,
-  formId: 'EditListingExtraFeaturesForm',
-};
-
-EditListingExtraFeaturesFormComponent.propTypes = {
-  formId: string,
-  intl: intlShape.isRequired,
-  onSubmit: func.isRequired,
-  saveActionMsg: string.isRequired,
-  disabled: bool.isRequired,
-  ready: bool.isRequired,
-  updated: bool.isRequired,
-  updateInProgress: bool.isRequired,
-  fetchErrors: shape({
-    showListingsError: propTypes.error,
-    updateListingError: propTypes.error,
-  }),
-};
 
 export default compose(injectIntl)(EditListingExtraFeaturesFormComponent);

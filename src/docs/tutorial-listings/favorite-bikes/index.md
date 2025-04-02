@@ -79,23 +79,6 @@ some errors before we add them to the parent.
 …
 ```
 
-<extrainfo title="Add prop types for new props">
-
-Whenever we add new props to a component, it is good practice to also
-add their prop types to propTypes definition toward the end of the file.
-
-```js
-OrderPanel.propTypes = {
-  rootClassName: string,
-  className: string,
-  …
-  onToggleFavorites: func.isRequired,
-  currentUser: propTypes.currentUser.isRequired,
-…
-```
-
-</extrainfo>
-
 Then, let’s create a button. We will add the button into a constant,
 since we want to show a different button depending on whether the
 listing has already been favorited. Add this snippet before the

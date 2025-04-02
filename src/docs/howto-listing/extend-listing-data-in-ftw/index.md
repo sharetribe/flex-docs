@@ -453,7 +453,6 @@ import {
   injectIntl,
   FormattedMessage,
 } from '../../../../util/reactIntl';
-import { propTypes } from '../../../../util/types';
 import {
   Form,
   Button,
@@ -531,20 +530,6 @@ export const EditListingServiceHistoryFormComponent = props => (
   />
 );
 
-EditListingServiceHistoryFormComponent.defaultProps = {
-  selectedPlace: null,
-  updateError: null,
-};
-
-EditListingServiceHistoryFormComponent.propTypes = {
-  intl: intlShape.isRequired,
-  onSubmit: func.isRequired,
-  saveActionMsg: string.isRequired,
-  updated: bool.isRequired,
-  updateError: propTypes.error,
-  updateInProgress: bool.isRequired,
-};
-
 export default compose(injectIntl)(
   EditListingServiceHistoryFormComponent
 );
@@ -595,7 +580,6 @@ the wizard. This component we'll call
 
 ```jsx
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 // Import configs and util modules
@@ -683,30 +667,6 @@ const EditListingServiceHistoryPanel = props => {
       />
     </div>
   );
-};
-
-const { func, object, string, bool } = PropTypes;
-
-EditListingServiceHistoryPanel.defaultProps = {
-  className: null,
-  rootClassName: null,
-  listing: null,
-};
-
-EditListingServiceHistoryPanel.propTypes = {
-  className: string,
-  rootClassName: string,
-
-  // We cannot use propTypes.listing since the listing might be a draft.
-  listing: object,
-
-  disabled: bool.isRequired,
-  ready: bool.isRequired,
-  onSubmit: func.isRequired,
-  submitButtonText: string.isRequired,
-  panelUpdated: bool.isRequired,
-  updateInProgress: bool.isRequired,
-  errors: object.isRequired,
 };
 
 export default EditListingServiceHistoryPanel;

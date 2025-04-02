@@ -64,7 +64,7 @@ the `injectIntl` function which provides a render prop called `intl`.
 `formatMessage`:
 
 ```js
-import { intlShape, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 const SomeComponent = props => {
   const { intl } = props;
@@ -74,11 +74,6 @@ const SomeComponent = props => {
   });
 
   // ...
-};
-
-SomeComponent.propTypes = {
-  // from injectIntl
-  intl: intlShape.isRequired,
 };
 
 export default injectIntl(SomeComponent);

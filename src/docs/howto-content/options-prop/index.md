@@ -234,8 +234,6 @@ export const CustomH1 = React.forwardRef((props, ref) => {
   );
 });
 CustomH1.displayName = 'CustomH1';
-CustomH1.defaultProps = defaultPropsHeading;
-CustomH1.propTypes = propTypesHeading;
 ```
 
 And export it in the **PageBuilder/Primitives/Heading/index.js** file:
