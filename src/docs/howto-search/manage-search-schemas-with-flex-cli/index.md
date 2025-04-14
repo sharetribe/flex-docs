@@ -4,8 +4,8 @@ slug: manage-search-schemas-with-sharetribe-cli
 updated: 2023-10-24
 category: how-to-search
 ingress:
-  This tutorial shows you how to manage extended data search schemas
-  with Sharetribe CLI. With search schemas in place, you can use custom
+  This guide shows you how to manage extended data search schemas with
+  Sharetribe CLI. With search schemas in place, you can use custom
   extended data fields as filters in your queries.
 skills: basic command line, text editing
 published: true
@@ -15,19 +15,20 @@ Sharetribe CLI (Command-line interface) is a tool for changing your
 marketplace's advanced configurations such as transaction processes and
 email templates.
 
-This tutorial expects that you have already installed Sharetribe CLI and
+This guide expects that you have already installed Sharetribe CLI and
 are logged in with your API key. If not, it's recommended to first read
-the tutorial
+the guide
 [Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
-In this tutorial, we will add a data schema for the `listingType` public
-data field in listings. If your marketplace uses different listing
-types, you may want to create pages that only show one type of listing.
+In this guide, we will add a data schema for the `brand` public data
+field in listings. If your marketplace sells or rents products from
+well-known brands, you may want to create pages that only show listings
+from one specific brand.
 
-We will also see how to manage data schema for user profiles. Those
-schemas are not required for Sharetribe Web Template to work, but can be
-useful when building own integrations via the Sharetribe Integration
-API.
+We will also see how to manage data schema for user profiles and
+transactions. Those schemas are not required for Sharetribe Web Template
+to work, but can be useful when customizing your template, or when
+building own integrations via the Sharetribe Integration API.
 
 ## Extended data types and schema scopes
 
@@ -41,6 +42,7 @@ schema scopes.
 | ----------- | ------------------------------------ |
 | listing     | public, metadata                     |
 | userProfile | public, private, protected, metadata |
+| transaction | protected, metadata                  |
 
 <info>
 
@@ -50,10 +52,11 @@ There is no API endpoint for querying users in the Marketplace API, so
 
 </info>
 
-All types of extended data are editable in Console by the operator, but
-only public data and metadata can be seen by other marketplace users. To
-see more details about extended data, see the
-[Extended data](/references/extended-data/) reference.
+All types of extended data except transaction protected data are
+editable in Console by the operator. Only listing and user public data
+and metadata can be seen by other marketplace users. To see more details
+about extended data, see the [Extended data](/references/extended-data/)
+reference.
 
 You can store any JSON data in extended data, but only top-level keys of
 certain type can have search schemas. If there is a mismatch between the
@@ -166,7 +169,7 @@ listing      public  condition  enum                   A listing field defined i
 Let's add the search schema for listing type:
 
 ```
-$ flex-cli search set --key listingType --type enum --scope public -m my-marketplace-dev
+$ flex-cli search set --key brand --type enum --scope public -m my-marketplace-dev
 ```
 
 We should now see the details for this new schema alongside our Console
@@ -177,7 +180,7 @@ $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope   Key          Type   Default value   Doc
 listing      public  condition     enum                   A listing field defined in Console. Can not be edited with the CLI.
-listing      public  listingType  enum
+listing      public  brand         enum
 ```
 
 Note that `--schema-for` option is not needed when adding schema for
@@ -229,9 +232,49 @@ the previous step and the new user profile schema:
 $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key          Type   Default value   Doc
-listing      public     condition     enum                   A listing field defined in Console. Can not be edited with the CLI.
-listing      public     listingType  enum
+listing      public     condition    enum                   A listing field defined in Console. Can not be edited with the CLI.
+listing      public     brand        enum
 userProfile  protected  age          long
+```
+
+If you wish to remove a schema, you can use the `search unset` command.
+
+## Adding transaction search schema
+
+<info>
+
+Adding user search schemas is only supported in Sharetribe CLI versions
+1.14.0 and above. Use yarn to update Sharetribe CLI by running
+`yarn global upgrade flex-cli` or `npm update -g flex-cli` if you are
+using npm.
+
+</info>
+
+Transaction search schema can be useful, if you are building features
+where for example providers and customers can filter through different
+kinds of transactions. For example, you could have a separate views for
+shipping transactions and pickup transactions.
+
+Search schema for user profiles can be added as follows:
+
+```
+$ flex-cli search set --schema-for transaction --key deliveryMethod --type enum --scope protected -m my-marketplace-dev
+```
+
+The above adds a search schema for `transaction` with `enum` type for a
+`key` named "deliveryMethod".
+
+Querying the defined schemas now shows both the listing schemas added on
+the previous step and the new user profile schema:
+
+```
+$ flex-cli search -m my-marketplace-dev
+
+Schema for   Scope      Key            Type   Default value   Doc
+listing      public     condition      enum                   A listing field defined in Console. Can not be edited with the CLI.
+listing      public     brand          enum
+transaction  protected  deliveryMethod enum
+userProfile  protected  age            long
 ```
 
 If you wish to remove a schema, you can use the `search unset` command.
@@ -263,11 +306,12 @@ column.
 ```
 $ flex-cli search -m my-marketplace-dev
 
-Schema for   Scope      Key          Type     Default value   Doc
-listing      metadata   isPromoted   boolean  false
-listing      public     condition     enum                     A listing field defined in Console. Can not be edited with the CLI.
-listing      public     listingType  enum
-userProfile  protected  age          long
+Schema for   Scope      Key            Type     Default value   Doc
+listing      metadata   isPromoted     boolean  false
+listing      public     condition      enum                     A listing field defined in Console. Can not be edited with the CLI.
+listing      public     brand          enum
+transaction  protected  deliveryMethod enum
+userProfile  protected  age            long
 ```
 
 ## Summary
@@ -275,9 +319,9 @@ userProfile  protected  age          long
 In this guide, we used Sharetribe CLI to define search schemas for our
 marketplace. We also saw how schemas defined through Sharetribe Console
 and Sharetribe CLI interact. We used the public data attributes
-`condition` and `listingType` as examples. In addition, we looked at
-adding user search schemas for Integration API as well as adding a
-listing schema with a default value.
+`condition` and `brand` as examples. In addition, we looked at adding
+user search schemas for Integration API, adding a transaction schema, as
+well as adding a listing schema with a default value.
 
 For more information, see the following resources:
 

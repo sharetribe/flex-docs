@@ -1,7 +1,7 @@
 ---
 title: Extended data
 slug: extended-data
-updated: 2024-03-01
+updated: 2025-04-14
 category: references
 ingress:
   Reference documentation providing information on all the different
@@ -89,16 +89,20 @@ supports querying listings by public data or metadata.
 Search schemas can be managed with
 [Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
-With the CLI, you can list, set and unset search schemas for listing's
-public data and metadata as well as for user profile's metadata,
-private, protected and public data. The commands to manage search
-schemas are:
+With the CLI, you can list, set and unset search schemas for the
+following kinds of extended data:
+
+- listing's public data and metadata
+- user profile's metadata, private, protected and public data
+- transaction's protected data and metadata
+
+The commands to manage search schemas are:
 
 - `flex-cli search` List all defined data schemas
 - `flex-cli search set` Set (create or update) data schema
 - `flex-cli search unset` Unset data schema
 
-You can also check out our tutorial for
+You can also check out our guide for
 [managing search schemas with Sharetribe CLI](/how-to/manage-search-schemas-with-sharetribe-cli/).
 
 <info>
