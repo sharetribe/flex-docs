@@ -1,7 +1,7 @@
 ---
 title: Transaction extended data
 slug: transaction-extended-data
-updated: 2023-10-24
+updated: 2025-04-14
 category: concepts-extended-data
 ingress:
   Transaction extended data allows you to keep sensitive information
@@ -49,3 +49,19 @@ separate application to
 [listen to transaction events](/how-to/reacting-to-events/) and update
 transaction metadata through the Integration API as a reaction to those
 events.
+
+## Transaction filtering in Marketplace API and Integration API
+
+Both Marketplace API and Integration API have endpoints for querying
+transactions:
+
+- [Marketplace API /transactions/query](https://www.sharetribe.com/api-reference/marketplace.html#query-transactions)
+- [Integration API /transactions/query](https://www.sharetribe.com/api-reference/integration.html#query-transactions)
+
+To facilitate transaction querying, it is possible to filter
+transactions also by extended data when calling these endpoints. That
+way, you can segment your transactions by important attributes for more
+fine-grained processing. To filter transactions by extended data, you
+will need to
+[create a search schema](/how-to/manage-search-schemas-with-sharetribe-cli/)
+for the transaction.
