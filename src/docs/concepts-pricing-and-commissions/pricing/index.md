@@ -38,6 +38,9 @@ on top of the regular listing price.
 - **Quantity discount.** An example: booking a room for two people costs
   $100,
   and after that, each additional person costs $20 extra.
+- **Price variants.** With bookings, you can enable price variants. You
+  could add two variants of a single listing, e.g. standard and premium
+  versions, which have a price difference.
 
 All of these options can be achieved with the Sharetribe pricing
 functionality. In this article, we'll look a bit closer at how pricing

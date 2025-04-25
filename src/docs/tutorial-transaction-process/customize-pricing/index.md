@@ -83,14 +83,27 @@ _helmetFee_, on the other hand, needs to be under the _publicData_ key.
 +     helmetFee = null
     } = values;
 
+    if (unitType === FIXED) {
+      ...
+      updateValues = {
+        ...priceVariantChanges,
+        ...startTimeIntervalChanges,
+        publicData: {
+          ...startTimeIntervalChanges.publicData,
+          ...priceVariantChanges.publicData,
++          helmetFee: helmetFee ? { amount: helmetFee.amount, currency: helmetFee.currency } : null
+        },
+      };
+    }
+
     // New values for listing attributes
-    const updatedValues = {
+    const updateValues = {
       price,
 +     publicData: {
 +       helmetFee: helmetFee ? { amount: helmetFee.amount, currency: helmetFee.currency } : null
 +     },
     };
-    onSubmit(updatedValues);
+    onSubmit(updateValues);
   }}
 ```
 
@@ -106,20 +119,25 @@ In the beginning of _EditListingPricingPanel.js_, you'll find the
 `getInitialValues` function:
 
 ```diff
-const getInitialValues = params => {
-  const { listing } = params;
-  const { price, publicData } = listing?.attributes || {};
-
+const getInitialValues = props => {
+  const { listing } = props;
+  const { unitType } = listing?.attributes?.publicData || {};
++ const publicData = listing?.attributes?.publicData || {};
 + const helmetFee = publicData?.helmetFee || null;
-
 + const helmetFeeAsMoney = helmetFee
 +   ? new Money(helmetFee.amount, helmetFee.currency)
 +   : null;
 
-  return {
-    price,
-+   helmetFee: helmetFeeAsMoney
-  };
+  return unitType === FIXED
+    ? {
+        ...getInitialValuesForPriceVariants(props),
+        ...getInitialValuesForStartTimeInterval(props),
++       helmetFee: helmetFeeAsMoney
+      }
+    : {
+        price: listing?.attributes?.price,
++       helmetFee: helmetFeeAsMoney
+      };
 };
 ```
 
