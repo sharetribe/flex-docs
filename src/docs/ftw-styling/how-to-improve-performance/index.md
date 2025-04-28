@@ -1,7 +1,7 @@
 ---
 title: Performance and page speed
 slug: how-to-improve-performance
-updated: 2023-10-24
+updated: 2025-04-24
 category: template-styling
 ingress:
   This guide describes ways to improve and understand the load times and
