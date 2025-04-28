@@ -180,7 +180,8 @@ To use the Marketplace API, you will need a **client ID**. You can
 [sign up for your free Sharetribe account here](https://console.sharetribe.com/new).
 
 When you get access, you will be able to log into Sharetribe Console and
-check the client ID.<br /> Sharetribe Console: _Build > Applications_
+check the client ID.<br /> Sharetribe Console: _Build > Advanced >
+Applications_
 
 In addition, Sharetribe Web Template uses transaction processes that
 include privileged transitions. This makes it possible to customize
