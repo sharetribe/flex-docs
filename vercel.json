@@ -312,7 +312,7 @@
   },
   {
     "source": "/docs/tutorial-branding/configurations/",
-    "destination": "/docs/tutorial/configurations/",
+    "destination": "https://www.sharetribe.com/help/en/articles/9003440-how-currency-works",
     "permanent": true
   },
   {
@@ -1208,6 +1208,11 @@
   {    
     "source": "/docs/how-to/provider-onboarding-and-identity-verification/",
     "destination": "/docs/concepts/providers-and-customers-on-stripe-platform/",
+    "permanent": true
+  },
+  {    
+    "source": "/docs/tutorial/configurations/",
+    "destination": "https://www.sharetribe.com/help/en/articles/9003440-how-currency-works",
     "permanent": true
   }
 ]
