@@ -208,16 +208,9 @@ customer's credit card number is saved directly to Stripe.
 
 #### 1. Create and confirm your free Stripe account
 
-[Register to Stripe](https://dashboard.stripe.com/register). Remember to
-confirm your email address after the registration.
-
-As you will receive money from your users via your Stripe account, you
-have to provide some details such as your address and your bank account.
-In the Stripe dashboard, click the _"Activate your account"_ link in the
-top bar and fill in all the fields according to the instructions. The
-activation form varies based on your country.
-
-![Activate Stripe account](./stripe-activate-account.png)
+Follow the steps outlined in
+[this article](https://www.sharetribe.com/help/en/articles/8413086-how-to-set-up-stripe-for-payments-on-your-marketplace?location=conversation#h_7a65415eaa)
+to get started with Stripe and set up your account.
 
 #### 2. Enable Stripe Connect in your platform
 
