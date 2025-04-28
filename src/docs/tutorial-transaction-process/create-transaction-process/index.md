@@ -85,8 +85,8 @@ you can find in Sharetribe Console.
 
 </info>
 
-After executing that command, you can go to the Sharetribe Console
-(Build -> Transaction processes tab) and see that the
+After executing that command, you can go to the Sharetribe Console:
+_Build > Advanced > Transaction process visualizer_ and see that the
 _"biketribe-instant-booking"_ process is there.
 
 ![Biketribe instant booking process created.](./biketribe-instant-booking-process.png)
