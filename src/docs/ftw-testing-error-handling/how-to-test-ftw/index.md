@@ -1,13 +1,15 @@
 ---
-title: Running snapshot tests
+title: Testing and continuous integration
 slug: how-to-test-template
-updated: 2023-10-24
+updated: 2025-04-24
 category: template-testing-error-handling
 ingress:
   This guide describes how to use the test setup in the Sharetribe Web
-  Template
+  Template and how to enable Circle CI for continuous integration
 published: true
 ---
+
+## Testing and snapshot tests
 
 The Sharetribe Web Template uses the
 [Jest testing framework](https://jestjs.io/) as its test runner. The
@@ -15,7 +17,7 @@ setup the template uses is based on how testing is implemented in
 `create-react-app`. For reference, see the testing section in the
 [`create-react-app` documentation.](https://create-react-app.dev/docs/running-tests)
 
-## Running the tests
+### Running the tests
 
 To start the test watcher that automatically updates when files change,
 run
@@ -34,15 +36,15 @@ Note that this also runs the linter.
 
 <info>
 
-In some environments, alternative test watcher doesn't always work and
-it can die unexpectedly. If that happens to you, you might want to
+In some environments, the alternative test watcher doesn't always work
+and it can die unexpectedly. If that happens to you, you might want to
 install [Watchman](https://facebook.github.io/watchman/docs/install/).
 Read more about
 **[this issue](https://github.com/facebook/create-react-app/issues/871)**.
 
 </info>
 
-## Extending tests
+### Extending tests
 
 Most tests included in the template are
 [snapshot tests:](https://jestjs.io/docs/snapshot-testing)
@@ -80,7 +82,7 @@ intended to be extended and customized which quickly renders the default
 tests obsolete. The default tests are there to provide a good starting
 point for writing tests.
 
-## Jest
+### Jest
 
 [Jest](https://jestjs.io/) is a JavaScript test runner that runs tests
 in a Node environment. The test runner accesses the DOM using the
@@ -100,3 +102,60 @@ templated, the following guides can provide additional insight:
   blog post
 - [API Reference](https://jestjs.io/docs/en/api) lists the global
   environment with the available functions and the assertion matchers
+
+## Continuous integration
+
+The Sharetribe Web Template provides a configuration to use
+[CircleCI](https://circleci.com/) as a continuous integration server to
+run tests and other scripts. Continuous integration prevents deploying
+changes that break tests or fail audits.
+
+You can use the
+[.circleci/config.yml](https://github.com/sharetribe/web-template/blob/main/.circleci/config.yml)
+file to configure CircleCI.
+
+Follow the
+[Setting up Your Build on CircleCI](https://circleci.com/docs/2.0/getting-started/#setting-up-circleci)
+instructions in the CircleCI documentation to enable Circle CI.
+
+### Code formatting
+
+```bash
+yarn run format-ci
+```
+
+This command fails if there are changes in the formatting that are not
+committed. Run `yarn run format` to format the code and get rid of the
+error.
+
+### Build
+
+```bash
+yarn run build
+```
+
+This command ensures that the build passes.
+
+### Tests
+
+```bash
+yarn run test-ci
+```
+
+This command runs the tests.
+
+### Security audit
+
+```bash
+yarn run audit
+```
+
+This command runs the security audit using `yarn audit --json` and
+checks returned JSON against vulnerability exceptions defined in
+`.auditrc` file at the project root. The audit checks for installed
+packages with known vulnerabilities and warns about those.
+
+The script outputs information about the dependency path that added the
+package. If that information is not enough, `yarn why package-name` can
+be used to get more detailed information about why the package is
+installed.
