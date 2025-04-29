@@ -497,8 +497,8 @@ Content > Marketplace texts editor or _src/translations/en.json_ file:
   "EditListingExtraFeaturesForm.extraFeaturesInputPlaceholder": "Explain your bike extra features...",
   "EditListingExtraFeaturesForm.updateFailed": "Updating listing failed",
   "EditListingExtraFeaturesForm.showListingFailed": "Fetching listing failed",
-  "EditListingWizard.default-booking.new.savePricing": "Next: Extra features",
-  "EditListingWizard.default-booking.new.saveExtraFeatures": "Next: Availability",
+  "EditListingWizard.default-booking.new.savePricing": "Next",
+  "EditListingWizard.default-booking.new.saveExtraFeatures": "Next",
   "EditListingWizard.edit.saveExtraFeatures": "Save changes",
   "ListingPage.extraFeaturesTitle": "Extra features"
 ```
