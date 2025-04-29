@@ -25,7 +25,6 @@ const sortingArrayTutorial = ['introduction'];
 const sortingArrayTutorialBranding = [
   'copy-assets',
   'first-edit',
-  'configurations',
   'change-default-locations',
   'deploy-to-render',
 ];
