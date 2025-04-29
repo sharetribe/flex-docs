@@ -59,7 +59,6 @@ const sortingArrayPaymentCookbooks = [
   'provider-onboarding-and-identity-verification',
   'enable-payment-intents',
   'save-payment-card',
-  'stripe-connect-platform-review',
   'how-to-integrate-3rd-party-payment-gateway',
   'removing-stripe',
 ];

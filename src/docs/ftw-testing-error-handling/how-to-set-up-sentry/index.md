@@ -1,5 +1,5 @@
 ---
-title: Logging errors with Sentry
+title: Log errors with Sentry
 slug: how-to-set-up-sentry
 updated: 2023-10-24
 category: template-testing-error-handling
@@ -9,12 +9,14 @@ ingress:
 published: true
 ---
 
+## Error logging
+
 The Sharetribe Web Template supports error logging with
 [Sentry](https://sentry.io/) out of the box, provided that the required
 environment variables are set in place. Other logging solutions can also
 be used but the Sentry client comes already strapped into application.
 
-## Configure the Sentry DSN variable
+### Configure the Sentry DSN variable
 
 To enable the Sentry error logging a _Data Source Name_ (DSN), has to be
 provided as an environment variable. The browser and Node environments
@@ -34,7 +36,7 @@ the Sentry DNS key. You can find all code associated with error logging
 and Sentry in
 [src/util/log.js](https://github.com/sharetribe/web-template/blob/master/src/util/log.js)
 
-## Configure logging with basic access authentication
+### Configure logging with basic access authentication
 
 By default, Sentry fetches the source maps for minified javascript
 files. However, that might not work if authentication, such as

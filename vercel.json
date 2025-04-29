@@ -197,7 +197,7 @@
   },
   {
     "source": "/docs/guides/how-to-use-ci-with-ftw/",
-    "destination": "/docs/template/how-to-use-ci-with-template/",
+    "destination": "/docs/template/how-to-test-template/",
     "permanent": true
   },
   {
@@ -213,11 +213,6 @@
   {
     "source": "/docs/guides/provider-onboarding-and-identity-verification/",
     "destination": "/docs/concepts/providers-and-customers-on-stripe-platform/",
-    "permanent": true
-  },
-  {
-    "source": "/docs/guides/stripe-connect-platform-review/",
-    "destination": "/docs/how-to/stripe-connect-platform-review/",
     "permanent": true
   },
   {
@@ -536,11 +531,6 @@
     "permanent": true
   },
   {
-    "source": "/docs/cookbook-payments/stripe-connect-platform-review/",
-    "destination": "/docs/how-to/stripe-connect-platform-review/",
-    "permanent": true
-  },
-  {
     "source": "/docs/cookbook-payments/removing-stripe-and-payments/",
     "destination": "/docs/how-to/removing-stripe-and-payments/",
     "permanent": true
@@ -602,7 +592,7 @@
   },
   {
     "source": "/docs/ftw-testing-error-handling/how-to-use-ci-with-ftw/",
-    "destination": "/docs/template/how-to-use-ci-with-template/",
+    "destination": "/docs/template/how-to-test-template/",
     "permanent": true
   },
   {
@@ -1132,7 +1122,7 @@
   },
   {
     "source": "/docs/ftw/how-to-use-ci-with-ftw/",
-    "destination": "/docs/template/how-to-use-ci-with-template/",
+    "destination": "/docs/template/how-to-test-template/",
     "permanent": true
   },
   {    
@@ -1213,6 +1203,11 @@
   {    
     "source": "/docs/tutorial/configurations/",
     "destination": "https://www.sharetribe.com/help/en/articles/9003440-how-currency-works",
+    "permanent": true
+  },
+  {    
+    "source": "/docs/how-to/stripe-connect-platform-review/",
+    "destination": "/docs/",
     "permanent": true
   }
 ]

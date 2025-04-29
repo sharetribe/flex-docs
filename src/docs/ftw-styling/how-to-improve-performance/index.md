@@ -1,11 +1,11 @@
 ---
 title: Performance and page speed
 slug: how-to-improve-performance
-updated: 2023-10-24
+updated: 2025-04-24
 category: template-styling
 ingress:
-  This guide describes ways to improve the loading and rendering
-  performance of your marketplace.
+  This guide describes ways to improve and understand the load times and
+  rendering performance of your marketplace.
 published: true
 ---
 
@@ -37,21 +37,36 @@ search engine bots monitor, it might affect your page rank.
 Read more about
 [website performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters/).
 
-- [Check page performance](#check-page-performance)
+- [Measuring page performance](#measuring-page-performance)
 - [Optimize image sizes](#optimize-image-sizes)
 - [Lazy load off-screen images and other components](#lazy-load-off-screen-images-and-other-components)
 - [Use sparse attributes](#use-sparse-attributes)
 
-## Check page performance
+## Measuring page performance
 
-The first step is, of course, to start measuring performance.
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a
-good tool to check rendering performance. At least check those pages
-that are visible to unauthenticated users (e.g. landing page, search
-page, listing page, about page and other content pages).
+You can use different online tools measure page performance.
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) and
+[PageSpeed Insights](https://pagespeed.web.dev/) are both popular tools
+to check rendering performance.
 
-Lighthouse will give you some tips about how to improve performance and
-other aspects that website developers should think about.
+Note that as the template is a single page application, a lot of the
+data associated with the application is loaded on the initial page load.
+This initial page load is also what is used for the Performance metric
+in Lighthouse and PageSpeed Insights. However, a Single Page Application
+is very fast after the initial page load, as most of the data needed to
+access consequent pages are already cached in the browser. While
+performance metrics can be a valuable tool to debug performance issues,
+they rarely consider users' subsequent actions on a website, operating
+under the assumption that users will only visit a single page on the
+website.
+
+We recommend using
+[code-splitting](/template/code-splitting-in-template/) to improve
+initial page load times. You can further optimise performance by moving
+components only used on specific pages to page directories (with page
+directories being the directories you can find under `src/containers/`).
+Code located in the `src/components` directory is loaded into the
+`main.bundle.js` file served to the client on the initial page load.
 
 ## Optimize static image sizes
 
@@ -60,25 +75,8 @@ through Sharetribe), you should check that the image size is no bigger
 than the size it is rendered in. Adjusting image dimensions is the first
 step, but you should also consider image quality, advanced rendering
 options, and possibly serving those images from a CDN instead of from
-within your web app.
-
-**Optimization checklist**:
-
-- Make sure that the image's actual dimensions match the dimensions of
-  the DOM element.
-- Lighthouse suggests that image compression level should be 85% or
-  lower. [Read more](https://web.dev/uses-optimized-images/)
-- A good rule-of-thumb is that use JPEG for images and photos, where PNG
-  is better for graphics, such as logos, graphs and illustrations.
-- If you are using JPEG images, think about saving them as progressive
-  JPEGs.
-  [Read more](https://cloudinary.com/blog/progressive_jpegs_and_green_martians) +
-  [Photoshop guide](https://helpx.adobe.com/photoshop-elements/using/optimizing-images-jpeg-format.html)
-- If you are using PNG images, consider running them through PNG
-  optimizers to reduce file size. There are plenty of options available,
-  one example is [TinyPNG.com](https://tinypng.com)
-- Think about serving images and other static assets from a CDN.
-  [Read more.](https://www.smashingmagazine.com/2017/04/content-delivery-network-optimize-images/)
+within your web app. This doesn't apply to images uploaded using
+Console; these images are optimized by our image delivery service.
 
 ## Lazy load off-screen images and other components
 
@@ -108,3 +106,48 @@ on each page (when full page-load is requested).
 
 You can read more
 [in the code splitting article](/template/code-splitting-in-template/).
+
+## Caching
+
+In some cases, introducing a basic caching mechanism on the server can
+help improve performance by avoiding repeated API calls for every
+request. The Sharetribe Web Template includes a lightweight example of
+this kind of caching in the sitemap generation logic.
+
+This caching uses an in-memory store with a time-to-live (TTL) value to
+keep data fresh for a set amount of time (in this case, one day):
+
+```js
+const ttl = 86400; // 1 day in seconds
+
+const createCacheProxy = ttl => {
+  const cache = {};
+  return new Proxy(cache, {
+    get(target, property) {
+      const cachedData = target[property];
+      if (
+        cachedData &&
+        Date.now() - cachedData.timestamp < ttl * 1000
+      ) {
+        return cachedData;
+      }
+      return {
+        data: null,
+        timestamp: cachedData?.timestamp || Date.now(),
+      };
+    },
+    set(target, property, value) {
+      target[property] = { data: value, timestamp: Date.now() };
+    },
+  });
+};
+
+const cache = createCacheProxy(ttl);
+```
+
+This cache object can be used to temporarily store data like API
+responses or generated content. When a request is made, the server
+checks if the data is already cached and still valid and if so, it
+serves it instantly, skipping an call to the API. Keep in mind this
+approach works best for read-heavy, low-volatility data (such as content
+pages), and is not suitable for storing critical or user-specific data.

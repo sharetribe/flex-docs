@@ -1,7 +1,7 @@
 ---
-title: Headless content management
+title: Using Console and the API to manage Pages
 slug: headless-content-management
-updated: 2023-10-24
+updated: 2025-04-24
 category: concepts-content-management
 ingress:
   This article explains how data can be edited through Console and how
