@@ -1,7 +1,7 @@
 ---
 title: Extend listing data in Sharetribe Web Template
 slug: extend-listing-data-in-template
-updated: 2024-04-24
+updated: 2025-05-06
 category: how-to-listing
 ingress:
   This guide describes how to use extended data to expand the listing
@@ -108,7 +108,7 @@ enumOptions: [
   { option: 'mudguard', label: 'Mudguard' },
 ],
 // If you have multiple listing types, you can define the types that should have this field
-// includeForListingTypes: [...],
+// limitToListingTypeIds: [...],
 ```
 
 This attribute is defined as **public**, so it will be saved into the
@@ -130,9 +130,19 @@ listing editing wizard to show the options when your user creates the
 listing, and it also provides the options for the search filters.
 
 If your marketplace uses multiple listing types, you can optionally
-define an attribute **includeForListingTypes**. This attribute is an
+define an attribute **limitToListingTypeIds**. This attribute is an
 array of the listing types that should have this field. If this
 attribute is not set, then the field is included in all listing types.
+
+<info>
+
+Note that if you limit a listing field to specific listing types, the
+filters for that field will only show up on the search page if the
+listing type in question is selected as a filtering parameter. If you
+want a filter to always show up on the search page, don't limit it to
+listing types.
+
+</info>
 
 ### Configuring the listing detail editing page
 
