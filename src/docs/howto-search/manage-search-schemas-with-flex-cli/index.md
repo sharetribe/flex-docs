@@ -1,7 +1,7 @@
 ---
 title: Manage search schemas with Sharetribe CLI
 slug: manage-search-schemas-with-sharetribe-cli
-updated: 2023-10-24
+updated: 2025-05-06
 category: how-to-search
 ingress:
   This guide shows you how to manage extended data search schemas with
@@ -20,10 +20,9 @@ are logged in with your API key. If not, it's recommended to first read
 the guide
 [Getting started with Sharetribe CLI](/introduction/getting-started-with-sharetribe-cli/).
 
-In this guide, we will add a data schema for the `brand` public data
-field in listings. If your marketplace sells or rents products from
-well-known brands, you may want to create pages that only show listings
-from one specific brand.
+In this guide, we will add a data schema for the `accessories` public
+data field in listings. If you have a listing field defined in the
+template code, you need to define a search schema for the attribute.
 
 We will also see how to manage data schema for user profiles and
 transactions. Those schemas are not required for Sharetribe Web Template
@@ -149,11 +148,15 @@ will see the following error:
 
 ## Adding listing search schemas
 
-When creating a listing, the template saves the listing type in the
-listing's public data. If you are using multiple listing types, you may
-want to only show one type of listing at a time on the search page. We
-will create a search schema for the public data attribute `listingType`
-to make this kind of filtering possible.
+Through Console, you can create a multi-enum (select multiple) listing
+field with `has_all` search mode. If you want to have a multi-enum field
+with `has_any` logic, you need to define that listing field
+[in your local configurations](/how-to/extend-listing-data-in-template/).
+
+For a locally defined listing field, you need to add a listing search
+schema manually through the CLI. We will create a search schema for the
+public data attribute `accessories` to make this kind of filtering
+possible.
 
 Our marketplace has one Console-created listing field, `condition`.
 Let's first see how that search schema looks:
@@ -166,10 +169,10 @@ listing      public  condition  enum                   A listing field defined i
 
 ```
 
-Let's add the search schema for listing type:
+Let's add the search schema for `accessories`:
 
 ```
-$ flex-cli search set --key brand --type enum --scope public -m my-marketplace-dev
+$ flex-cli search set --key accessories --type multi-enum --scope public -m my-marketplace-dev
 ```
 
 We should now see the details for this new schema alongside our Console
@@ -180,7 +183,7 @@ $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope   Key          Type   Default value   Doc
 listing      public  condition     enum                   A listing field defined in Console. Can not be edited with the CLI.
-listing      public  brand         enum
+listing      public  accessories   multi-enum
 ```
 
 Note that `--schema-for` option is not needed when adding schema for
@@ -233,7 +236,7 @@ $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key          Type   Default value   Doc
 listing      public     condition    enum                   A listing field defined in Console. Can not be edited with the CLI.
-listing      public     brand        enum
+listing      public     accessories  multi-enum
 userProfile  protected  age          long
 ```
 
@@ -272,7 +275,7 @@ $ flex-cli search -m my-marketplace-dev
 
 Schema for   Scope      Key            Type   Default value   Doc
 listing      public     condition      enum                   A listing field defined in Console. Can not be edited with the CLI.
-listing      public     brand          enum
+listing      public     accessories    multi-enum
 transaction  protected  deliveryMethod enum
 userProfile  protected  age            long
 ```
@@ -309,7 +312,7 @@ $ flex-cli search -m my-marketplace-dev
 Schema for   Scope      Key            Type     Default value   Doc
 listing      metadata   isPromoted     boolean  false
 listing      public     condition      enum                     A listing field defined in Console. Can not be edited with the CLI.
-listing      public     brand          enum
+listing      public     accessories    multi-enum
 transaction  protected  deliveryMethod enum
 userProfile  protected  age            long
 ```
@@ -319,9 +322,9 @@ userProfile  protected  age            long
 In this guide, we used Sharetribe CLI to define search schemas for our
 marketplace. We also saw how schemas defined through Sharetribe Console
 and Sharetribe CLI interact. We used the public data attributes
-`condition` and `brand` as examples. In addition, we looked at adding
-user search schemas for Integration API, adding a transaction schema, as
-well as adding a listing schema with a default value.
+`condition` and `accessories` as examples. In addition, we looked at
+adding user search schemas for Integration API, adding a transaction
+schema, and adding a listing schema with a default value.
 
 For more information, see the following resources:
 
