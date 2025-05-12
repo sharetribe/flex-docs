@@ -54,9 +54,10 @@ for adding extended data directly to a listing. You will also need to
 make custom changes to your listing page, if you want to show the
 attribute there.
 
-In this article, we will first extend top-level data using
-**configListing.js**. Then, we will add a JSON attribute in extended
-data.
+In this article, we will <!-- first --> extend top-level data using
+**configListing.js**.
+<!-- Then, we will add a JSON attribute in extended
+data. -->
 
 ## Add a new top-level attribute
 
@@ -207,7 +208,7 @@ And that is it! With this configuration, the attribute can be added to
 the listing, used for search, and shown on the listing page. Next, we
 will add a complex JSON attribute that is not used for filtering.
 
-## Add a new complex attribute
+<!-- ## Add a new complex attribute
 
 You may want to add more complex attributes as well. We will add an
 attribute **lastServiced**, which will be included in a listing selling
@@ -815,6 +816,7 @@ And voilà, we have listing service history presented in the listing
 page!
 
 ![Show the service history on the listing page](./service_history_listing_page.png)
+ -->
 
 <info>
 
