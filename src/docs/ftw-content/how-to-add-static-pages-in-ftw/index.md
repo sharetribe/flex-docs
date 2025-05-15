@@ -91,7 +91,7 @@ const SocialMediaPage = () => {
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/FHk3pPfaZHA"
+                src="https://www.youtube-nocookie.com/embed/FHk3pPfaZHA"
                 title="YouTube video player"
               ></iframe>
               <NamedLink className={css.link} name="LandingPage">
@@ -246,7 +246,7 @@ the _css.content_ **div**.
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/FHk3pPfaZHA"
+          src="https://www.youtube-nocookie.com/embed/FHk3pPfaZHA"
           title="YouTube video player"
         ></iframe>
         <NamedLink className={css.link} name="LandingPage">
