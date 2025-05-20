@@ -27,7 +27,6 @@ export { default as BaselineDevGrid } from './BaselineDevGrid';
 export { default as ExtraInfo } from './ExtraInfo';
 export { default as Video } from './Video';
 export { Carousel, CarouselSlide } from './Carousel';
-export { default as CookieConsent } from './CookieConsent';
 export { default as Banner } from './Banner'
 export { default as WarningIcon } from './WarningIcon';
 export { default as VersionBanner } from './VersionBanner/VersionBanner';

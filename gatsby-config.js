@@ -4,7 +4,6 @@ const {
   NODE_ENV,
   NODE_VERSION,
   PRODUCTION_SITE_URL,
-  COOKIEBOT_ID,
   // Env vars set by Vercel
   // See: https://vercel.com/docs/concepts/projects/environment-variables
   GATSBY_VERCEL_ENV,
@@ -196,21 +195,6 @@ module.exports = {
     },
   ],
 };
-
-// Cookiebot
-// If you want to test cookiebot locally, add the cookiebotId directly here
-
-if (isVercel) {
-  module.exports.plugins.push({
-    resolve: 'gatsby-plugin-cookiebot',
-    options: {
-      cookiebotId: COOKIEBOT_ID, // Required. Site's Cookiebot ID. Change this directly to the ID if on dev and you want to test cookiebot
-      blockGtm: false, //  Optional. Skip blocking of GTM. Defaults to true if manualMode is set to true.
-      includeInDevelopment: true, // Optional. Enables plugin in development. Will cause gatsby-plugin-google-tagmanager to thrown an error when pushing to dataLayer. Defaults to false.
-      // pluginDebug: true, // Optional. Debug mode for plugin development. Defaults to false.
-    },
-  });
-}
 
 if (PATH_PREFIX) {
   module.exports.pathPrefix = PATH_PREFIX;
