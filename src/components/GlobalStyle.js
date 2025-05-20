@@ -123,11 +123,6 @@ const GlobalStyle = createGlobalStyle`
     }
 
   }
-
-  a#CybotCookiebotDialogPoweredbyCybot,
-  div#CybotCookiebotDialogPoweredByText {
-    display: none;
-  }
 `;
 
 export default GlobalStyle;

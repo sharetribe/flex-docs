@@ -59,21 +59,6 @@ const UnstyledButton = styled.button`
   color: inherit;
 `;
 
-const EditCookieConsent = props => {
-  const handleEditCookieConsent = () => {
-    if (window?.Cookiebot?.renew) {
-      window.Cookiebot.renew();
-    } else {
-      throw new Error('No Cookiebot enabled');
-    }
-  };
-  return (
-    <UnstyledButton onClick={handleEditCookieConsent}>
-      {props.children}
-    </UnstyledButton>
-  );
-};
-
 const Footer = props => {
   const currentYear = new Date().getFullYear();
   return (
@@ -85,7 +70,6 @@ const Footer = props => {
             Sharetribe
           </A>{' '}
           {currentYear}.{' '}
-          <EditCookieConsent>Edit cookie consent</EditCookieConsent>
         </Copyright>
       </Content>
     </Wrapper>
