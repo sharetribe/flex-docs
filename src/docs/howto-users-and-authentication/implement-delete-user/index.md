@@ -587,8 +587,8 @@ under the password input.
 
 Once you are happy with the user flow without the deletion SDK call, you
 can uncomment the code in `delete-account.js` that calls the SDK
-endpoint. After that, you can confirm the deletion of the user in your
-Sharetribe Console.
+endpoint and remove the dummy response. After that, you can confirm the
+deletion of the user in your Sharetribe Console.
 
 Once a user has been deleted, their listings are also removed. However,
 their transactions and messages will still show up in the inbox of the
