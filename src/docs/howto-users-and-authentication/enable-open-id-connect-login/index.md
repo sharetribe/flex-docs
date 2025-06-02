@@ -1,7 +1,7 @@
 ---
 title: Enable OpenID Connect login
 slug: enable-open-id-connect-login
-updated: 2024-08-22
+updated: 2025-06-02
 category: how-to-users-and-authentication
 ingress:
   In this guide we'll take at how to use an OpenID Connect login
@@ -163,13 +163,13 @@ integration.
 Apple Sign-in has several features that resemble the OpenID Connect
 specification. However, it is not explicitly stated to be OpenID Connect
 compliant. To the knowledge of our team, the
-[Apple Sign-in token](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api/authenticating_users_with_sign_in_with_apple#3383773)
+[Apple Sign-in token](https://developer.apple.com/documentation/signinwithapple/authenticating-users-with-sign-in-with-apple)
 should be compliant with the Sharetribe back-end at the time of this
 writing (2024-05), but you will need to conduct your own testing to
 verify this.
 
 Apple Sign-in also requires developers to set up a
-[private email relay service](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/communicating_using_the_private_email_relay_service)
+[private email relay service](https://developer.apple.com/documentation/signinwithapple/communicating-using-the-private-email-relay-service/)
 for Apple users who do not want to share their email address with the
 service. If you do integrate Apple Sign-in, it is important that you
 provide Sharetribe with a valid email address even if the user requests
