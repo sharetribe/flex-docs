@@ -904,6 +904,8 @@ Context for transaction emails:
   },
   "transaction": {
     "id": "uuid",
+    "state": "string",
+    "last-transition": "string",
     "tx-line-items": [
       {
         "code": "string",
