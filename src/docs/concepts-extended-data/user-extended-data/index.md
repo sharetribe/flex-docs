@@ -1,7 +1,7 @@
 ---
 title: User extended data
 slug: user-extended-data
-updated: 2025-05-27
+updated: 2025-06-11
 category: concepts-extended-data
 ingress:
   User extended data allows you to distinguish between different types
@@ -66,7 +66,7 @@ attributes.
 <info>
 
 Starting from release
-[TODO](https://github.com/sharetribe/web-template/), operators can
+[v8.5.0](https://github.com/sharetribe/web-template/releases/tag/v8.5.0), operators can
 differentiate users' experience based on user type in Console, and the
 Sharetribe Web Template will display selected user interface elements
 differently based on those configurations.
