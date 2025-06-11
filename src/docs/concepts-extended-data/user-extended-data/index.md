@@ -1,7 +1,7 @@
 ---
 title: User extended data
 slug: user-extended-data
-updated: 2024-05-29
+updated: 2025-06-11
 category: concepts-extended-data
 ingress:
   User extended data allows you to distinguish between different types
@@ -62,6 +62,16 @@ their events as providers. You can achieve these types of distinctions
 by setting specific attributes in your users' extended data and allowing
 them access to certain parts of the marketplace based on those
 attributes.
+
+<info>
+
+Starting from release
+[v8.5.0](https://github.com/sharetribe/web-template/releases/tag/v8.5.0), operators can
+differentiate users' experience based on user type in Console, and the
+Sharetribe Web Template will display selected user interface elements
+differently based on those configurations.
+
+</info>
 
 You can also implement different tiers of providers, where for example a
 regular (non-paid) provider is allowed to publish one listing and a
