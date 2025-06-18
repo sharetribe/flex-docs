@@ -9,7 +9,7 @@ ingress:
 published: true
 ---
 
-This guide shows you two different approaches to expanding the listing
+This guide shows you a code-based approach to expanding the listing
 data model in your marketplace. We'll have a look on how the listing can
 be configured so that the data gets added, and how it can then be
 presented and used to filter searches.
