@@ -12,8 +12,9 @@ published: true
 This guide shows you two different approaches to expanding the listing
 data model in your marketplace. We'll have a look on how the listing can
 be configured so that the data gets added, and how it can then be
-presented and used to filter searches. In addition, you will learn how
-to add complex JSON attributes directly in the Edit Listing Wizard.
+presented and used to filter searches.
+<!-- In addition, you will learn how
+to add complex JSON attributes directly in the Edit Listing Wizard. -->
 
 Adding new attributes to the data model relies on
 [extended data](/references/extended-data/). In Sharetribe Web Template,
@@ -56,6 +57,7 @@ attribute there.
 
 In this article, we will <!-- first --> extend top-level data using
 **configListing.js**.
+
 <!-- Then, we will add a JSON attribute in extended
 data. -->
 
@@ -205,8 +207,9 @@ showConfig: {
 ```
 
 And that is it! With this configuration, the attribute can be added to
-the listing, used for search, and shown on the listing page. Next, we
-will add a complex JSON attribute that is not used for filtering.
+the listing, used for search, and shown on the listing page.
+<!-- Next, we
+will add a complex JSON attribute that is not used for filtering. -->
 
 <!-- ## Add a new complex attribute
 
