@@ -352,17 +352,18 @@ export const DELIVERY = 'delivery';
 export const LOCATION = 'location';
 export const AVAILABILITY = 'availability';
 export const PHOTOS = 'photos';
+export const STYLE = 'style';
 
 // EditListingWizardTab component supports these tabs
 export const SUPPORTED_TABS = [
   DETAILS,
   PRICING,
   PRICING_AND_STOCK,
-  EXTRAFEATURES,
   DELIVERY,
   LOCATION,
   AVAILABILITY,
   PHOTOS,
+  STYLE,
 ];
 ```
 
@@ -373,14 +374,12 @@ return. Add the following code block to the switch statement, before the
 
 ```
 …
-    case PHOTOS: {
+    case STYLE: {
       return (
-        <EditListingPhotosPanel
-          {...panelProps(PHOTOS)}
+        <EditListingStylePanel
+          {...panelProps(STYLE)}
           listingImageConfig={config.layout.listingImage}
           images={images}
-          onImageUpload={onImageUpload}
-          onRemoveImage={onRemoveImage}
         />
       );
     }
@@ -424,6 +423,7 @@ import EditListingWizardTab, {
   LOCATION,
   AVAILABILITY,
   PHOTOS,
+  STYLE,
 } from './EditListingWizardTab';
 ```
 
@@ -431,7 +431,13 @@ Next, add the `EXTRAFEATURES` tab to the existing `TABS_BOOKING` array.
 
 ```js
 const TABS_DETAILS_ONLY = [DETAILS];
-const TABS_PRODUCT = [DETAILS, PRICING_AND_STOCK, DELIVERY, PHOTOS];
+const TABS_PRODUCT = [
+  DETAILS,
+  PRICING_AND_STOCK,
+  DELIVERY,
+  PHOTOS,
+  STYLE,
+];
 const TABS_BOOKING = [
   DETAILS,
   LOCATION,
@@ -439,8 +445,10 @@ const TABS_BOOKING = [
   EXTRAFEATURES,
   AVAILABILITY,
   PHOTOS,
+  STYLE,
 ];
-const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING];
+const TABS_INQUIRY = [DETAILS, LOCATION, PRICING, PHOTOS, STYLE];
+const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING, ...TABS_INQUIRY];
 ```
 
 The EditListingWizard component checks the tab value in two functions:
@@ -470,8 +478,8 @@ was a required feature, we would check whether
 
 ```
 …
-    case PHOTOS:
-      return images && images.length > 0;
+    case STYLE:
+      return !!cardStyle;
     case EXTRAFEATURES:
       return true;
       // /** For a required attribute: **/
