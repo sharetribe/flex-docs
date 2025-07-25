@@ -1,7 +1,7 @@
 ---
 title: How to customize pricing
 slug: how-to-customize-pricing
-updated: 2024-02-07
+updated: 2025-07-25
 category: how-to-payments
 ingress:
   Sharetribe allows lots of flexibility for your providers in terms of
@@ -60,25 +60,42 @@ On submit, save price and insuranceFee:
 ```diff
 + import { HOUR } from '../../../../transactions/transaction';
 ...
- const form = priceCurrencyValid ? (
-   <EditListingPricingForm
-     className={css.form}
-     initialValues={{ price }}
--    onSubmit={onSubmit}
-+    const insuranceFeeAmount = unitType === HOUR ? 500 : 2000;
-+    onSubmit={values => {
-+      const { price } = values;
-+      const updatedValues = {
-+         price,
-+         publicData: {
-+           insuranceFee: { amount: insuranceFeeAmount, currency: marketplaceCurrency },
-+         }
-+      };
-+      onSubmit(updatedValues);
-+    }}
-     onChange={onChange}
-     saveActionMsg={submitButtonText}
-     disabled={disabled}
+<EditListingPricingForm
+  ...
+  onSubmit={values => {
+    const { price } = values;
++   const insuranceFeeAmount = unitType === HOUR ? 500 : 2000;
++   const insuranceFee = { amount: insuranceFeeAmount, currency: marketplaceCurrency };
+            ...
+    if (unitType === FIXED || isPriceVariationsInUse) {
+      ...
+      updateValues = {
+        ...priceVariantChanges,
+        ...startTimeIntervalChanges,
+        publicData: {
+          priceVariationsEnabled: isPriceVariationsInUse,
+          ...startTimeIntervalChanges.publicData,
+          ...priceVariantChanges.publicData,
++          insuranceFee: insuranceFee,
+        },
+      };
+    } else {
+-   const priceVariationsEnabledMaybe = isBooking
+-       ? {
+-           publicData: {
+-             priceVariationsEnabled: false,
+-           },
+-         }
+-       : {};
+-      updateValues = { price, ...priceVariationsEnabledMaybe };
++   const priceVariationsEnabledMaybe = isBooking
++     ? {
++         priceVariationsEnabled: false,
++       }
++     : {};
++   updateValues = {price, publicData: { ...priceVariationsEnabledMaybe, insuranceFee: insuranceFee, } };
+    }
+/>
 ```
 
 ## 2. Transaction line item for insurance fee
@@ -143,12 +160,6 @@ const insuranceFeeLineItem = insuranceFeePrice
     ]
   : [];
 
-  // Provider commission reduces the amount of money that is paid out to provider.
-  // Therefore, the provider commission line-item should have negative effect to the payout total.
-  const getNegation = percentage => {
-    return -1 * percentage;
-  };
-
   // Note: extraLineItems for product selling (aka shipping fee)
   // is not included in either customer or provider commission calculation.
 
@@ -160,8 +171,8 @@ const insuranceFeeLineItem = insuranceFeePrice
     order,
     ...extraLineItems,
     ...insuranceFeeLineItem,
-    ...providerCommissionMaybe,
-    ...customerCommissionMaybe,
+    ...getProviderCommissionMaybe(providerCommission, order, priceAttribute),
+    ...getCustomerCommissionMaybe(customerCommission, order, priceAttribute),
   ];
 ```
 
@@ -196,44 +207,64 @@ let's next update the provider commission based on the booking length.
 
 The idea is to keep the 10% commission defined in Console for bookings
 of 5 or less nights. For bookings of more than 5 nights, we'll set the
-provider commission three percentage points lower, to 7%. Update the
-`transactionLineItems` function in `lineItems.js` as follows:
+Update `lineItemHelpers.js` to add the new
+`calculateProviderCommissionPercentage` function and to update the
+`getProviderCommissionMaybe`:
 
-```jsx
-// Base provider and customer commissions are fetched from assets
-const PROVIDER_COMMISSION_PERCENTAGE_REDUCTION = 3;
+```diff
+  // Base provider and customer commissions are fetched from assets
++ const PROVIDER_COMMISSION_PERCENTAGE_REDUCTION = 3;
 
-const calculateProviderCommissionPercentage = (
-  order,
-  providerCommission
-) =>
-  order.quantity > 5
-    ? providerCommission.percentage -
-      PROVIDER_COMMISSION_PERCENTAGE_REDUCTION
-    : providerCommission.percentage;
++ const calculateProviderCommissionPercentage = (order, providerCommission) =>
++   order.quantity > 5
++     ? providerCommission.percentage - PROVIDER_COMMISSION_PERCENTAGE_REDUCTION
++     : providerCommission.percentage;
+
+exports.getProviderCommissionMaybe = (providerCommission, order, priceAttribute) => {
+  ...
+  // The provider commission is what the provider pays for the transaction, and
+  // it is the subtracted from the order price to get the provider payout:
+  // orderPrice - providerCommission = providerPayout
+  return useMinimumCommission
+    ? [
+        {
+          code: 'line-item/provider-commission',
+          unitPrice: new Money(providerCommission?.minimum_amount, priceAttribute?.currency),
+          quantity: getNegation(1),
+          includeFor: ['provider'],
+        },
+      ]
+    : [
+        {
+          code: 'line-item/provider-commission',
+          unitPrice: totalMoneyIn,
+-          percentage: getNegation(providerCommission.percentage),
++          percentage: getNegation(calculateProviderCommissionPercentage(order, providerCommission)),
+          includeFor: ['provider'],
+        },
+      ];
+};
 ```
 
+Then update the `transactionLineItems` function in `lineItemHelpers.js`
+as follows:
+
 ```jsx
-// The provider commission is what the provider pays for the transaction, and
-// it is the subtracted from the order price to get the provider payout:
-// orderPrice - providerCommission = providerPayout
-const providerCommissionMaybe = hasCommissionPercentage(
-  providerCommission
-)
-  ? [
-      {
-        code: 'line-item/provider-commission',
-        unitPrice: calculateTotalFromLineItems([order]),
-        percentage: getNegation(
-          calculateProviderCommissionPercentage(
-            order,
-            providerCommission
-          )
-        ),
-        includeFor: ['provider'],
-      },
-    ]
-  : [];
+const lineItems = [
+  order,
+  ...extraLineItems,
+  ...getProviderCommissionMaybe(
+    providerCommission,
+    order,
+    priceAttribute,
+    true
+  ),
+  ...getCustomerCommissionMaybe(
+    customerCommission,
+    order,
+    priceAttribute
+  ),
+];
 ```
 
 Now when the provider takes a look at a pricing breakdown of a booking
