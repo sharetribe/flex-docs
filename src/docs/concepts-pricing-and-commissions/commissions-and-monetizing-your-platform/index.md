@@ -1,7 +1,7 @@
 ---
 title: Commissions and monetizing your platform
 slug: commissions-and-monetizing-your-platform
-updated: 2024-02-07
+updated: 2025-07-25
 category: concepts-pricing-and-commissions
 ingress:
   Sharetribe provides configurable options for monetizing your platform.
@@ -48,7 +48,8 @@ charged from the provider, the customer, or both.
 <info>
 
 If your application uses hosted configurations, you can define provider
-and customer commission percentages in Sharetribe Console.
+and customer commission percentages and minimum commission amounts in
+Sharetribe Console.
 
 ![Commission defined in Console](consoleCommission.png)
 
@@ -66,6 +67,8 @@ A marketplace that charges 10 % from the customer and 12 % from the
 provider would configure the commissions like this:
 
 ```js
+const { calculateTotalFromLineItems } = require('./lineItemHelpers');
+
 const PROVIDER_COMMISSION_PERCENTAGE = -12; // Provider commission is negative
 const CUSTOMER_COMMISSION_PERCENTAGE = 10; // Customer commission is positive
 
@@ -76,21 +79,25 @@ const order = {
   includeFor: ['customer', 'provider'],
 };
 
-const providerCommission = {
+const providerCommissionPercentage = {
   code: 'line-item/provider-commission',
   unitPrice: calculateTotalFromLineItems([order]),
   percentage: PROVIDER_COMMISSION_PERCENTAGE,
   includeFor: ['provider'],
 };
 
-const customerCommission = {
+const customerCommissionPercentage = {
   code: 'line-item/customer-commission',
   unitPrice: calculateTotalFromLineItems([order]),
   percentage: CUSTOMER_COMMISSION_PERCENTAGE,
   includeFor: ['customer'],
 };
 
-const lineItems = [order, providerCommission, customerCommission];
+const lineItems = [
+  order,
+  providerCommissionPercentage,
+  customerCommissionPercentage,
+];
 ```
 
 For a 100 EUR listing, this would result in a 110 EUR payin for the
@@ -135,14 +142,14 @@ const order = {
   includeFor: ['customer', 'provider'],
 };
 
-const providerCommission = {
+const providerCommissionFixed = {
   code: 'line-item/provider-commission',
   unitPrice: calculateCommission(unitPrice, FIXED_PROVIDER_COMMISSION),
   quantity: 1,
   includeFor: ['provider'],
 };
 
-const customerCommission = {
+const customerCommissionFixed = {
   code: 'line-item/customer-commission',
   unitPrice: calculateCommission(unitPrice, FIXED_CUSTOMER_COMMISSION),
   quantity: 1,
@@ -152,8 +159,8 @@ const customerCommission = {
 const lineItems = [
   order,
   ...extraLineItems,
-  providerCommission,
-  customerCommission,
+  providerCommissionFixed,
+  customerCommissionFixed,
 ];
 ```
 
@@ -174,6 +181,8 @@ but always at least 10 dollars.
 
 ### Example
 
+Add the following to _lineItemHelpers.js_:
+
 ```js
 // Base provider and customer commissions are fetched from assets
 const MINIMUM_PROVIDER_COMMISSION = -1000; // Negative commission in minor units, i.e. in USD cents
@@ -181,7 +190,7 @@ const CUSTOMER_COMMISSION_PERCENTAGE_REDUCTION = 3;
 
 const calculateProviderCommission = (order, providerCommission) => {
   // Use existing helper functions to calculate totals and percentages
-  const price = calculateTotalFromLineItems([order]);
+  const price = this.calculateTotalFromLineItems([order]);
   const commission = calculateTotalPriceFromPercentage(
     price,
     providerCommission
@@ -203,9 +212,52 @@ const calculateCustomerCommissionPercentage = (
     ? customerCommission.percentage -
       CUSTOMER_COMMISSION_PERCENTAGE_REDUCTION
     : customerCommission.percentage;
+
+exports.getDynamicProviderCommissionMaybe = (
+  order,
+  providerCommission
+) =>
+  this.hasCommissionPercentage(providerCommission)
+    ? [
+        {
+          code: 'line-item/provider-commission',
+          unitPrice: calculateProviderCommission(
+            order,
+            getNegation(providerCommission.percentage)
+          ),
+          quantity: 1,
+          includeFor: ['provider'],
+        },
+      ]
+    : [];
+
+exports.getDynamicCustomerCommissionMaybe = (
+  order,
+  customerCommission
+) =>
+  this.hasCommissionPercentage(customerCommission)
+    ? [
+        {
+          code: 'line-item/customer-commission',
+          unitPrice: this.calculateTotalFromLineItems([order]),
+          percentage: calculateCustomerCommissionPercentage(
+            order,
+            customerCommission
+          ),
+          includeFor: ['customer'],
+        },
+      ]
+    : [];
 ```
 
+Then you can use the function like this in _lineItems.js_:
+
 ```js
+const {
+  getDynamicProviderCommissionMaybe,
+  getDynamicCustomerCommissionMaybe,
+} = require('./lineItemHelpers');
+
 const order = {
   code,
   unitPrice,
@@ -213,60 +265,13 @@ const order = {
   includeFor: ['customer', 'provider'],
 };
 
-// Provider commission reduces the amount of money that is paid out to provider.
-// Therefore, the provider commission line-item should have negative effect to the payout total.
-const getNegation = percentage => {
-  return -1 * percentage;
-};
-
-// Note: extraLineItems for product selling (aka shipping fee)
-// is not included in either customer or provider commission calculation.
-
-// The provider commission is what the provider pays for the transaction, and
-// it is the subtracted from the order price to get the provider payout:
-// orderPrice - providerCommission = providerPayout
-const providerCommissionMaybe = hasCommissionPercentage(
-  providerCommission
-)
-  ? [
-      {
-        code: 'line-item/provider-commission',
-        unitPrice: calculateProviderCommission(
-          order,
-          getNegation(providerCommission.percentage)
-        ),
-        quantity: 1,
-        includeFor: ['provider'],
-      },
-    ]
-  : [];
-
-// The customer commission is what the customer pays for the transaction, and
-// it is added on top of the order price to get the customer's payin price:
-// orderPrice + customerCommission = customerPayin
-const customerCommissionMaybe = hasCommissionPercentage(
-  customerCommission
-)
-  ? [
-      {
-        code: 'line-item/customer-commission',
-        unitPrice: calculateTotalFromLineItems([order]),
-        percentage: calculateCustomerCommissionPercentage(
-          order,
-          customerCommission
-        ),
-        includeFor: ['customer'],
-      },
-    ]
-  : [];
-
 // Let's keep the base price (order) as first line item and provider and customer commissions as last.
 // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
 const lineItems = [
   order,
   ...extraLineItems,
-  ...providerCommissionMaybe,
-  ...customerCommissionMaybe,
+  ...getDynamicProviderCommissionMaybe(order, providerCommission),
+  ...getDynamicCustomerCommissionMaybe(order, customerCommission),
 ];
 ```
 
