@@ -1,7 +1,7 @@
 ---
 title: Customize pricing
 slug: customize-pricing-tutorial
-updated: 2023-10-24
+updated: 2025-07-25
 category: tutorial-transaction-process
 ingress:
   Learn how to customize pricing in your marketplace by adding an
@@ -80,31 +80,48 @@ _helmetFee_, on the other hand, needs to be under the _publicData_ key.
   onSubmit={values => {
     const {
       price,
-+     helmetFee = null
++     helmetFee = null,
     } = values;
 
-    if (unitType === FIXED) {
+    // New values for listing attributes
+    let updateValues = {};
+
++   const helmetFeeMaybe = helmetFee ? { amount: helmetFee.amount, currency: helmetFee.currency } : null;
+
+    if (unitType === FIXED || isPriceVariationsInUse) {
       ...
       updateValues = {
         ...priceVariantChanges,
         ...startTimeIntervalChanges,
         publicData: {
+          priceVariationsEnabled: isPriceVariationsInUse,
           ...startTimeIntervalChanges.publicData,
           ...priceVariantChanges.publicData,
-+          helmetFee: helmetFee ? { amount: helmetFee.amount, currency: helmetFee.currency } : null
++         helmetFee: helmetFeeMaybe,
         },
       };
+    } else {
+-   const priceVariationsEnabledMaybe = isBooking
+-       ? {
+-           publicData: {
+-             priceVariationsEnabled: false,
+-           },
+-         }
+-       : {};
+-      updateValues = { price, ...priceVariationsEnabledMaybe };
++   const priceVariationsEnabledMaybe = isBooking
++     ? {
++         priceVariationsEnabled: false,
++       }
++     : {};
++   updateValues = {price, publicData: { ...priceVariationsEnabledMaybe, helmetFee: helmetFeeMaybe, } };
     }
 
-    // New values for listing attributes
-    const updateValues = {
-      price,
-+     publicData: {
-+       helmetFee: helmetFee ? { amount: helmetFee.amount, currency: helmetFee.currency } : null
-+     },
-    };
+    ...
     onSubmit(updateValues);
   }}
+  ...
+/>
 ```
 
 ### Initialize the form
@@ -122,15 +139,15 @@ In the beginning of _EditListingPricingPanel.js_, you'll find the
 const getInitialValues = props => {
   const { listing } = props;
   const { unitType } = listing?.attributes?.publicData || {};
-+ const publicData = listing?.attributes?.publicData || {};
+  const { publicData } = listing?.attributes || {};
 + const helmetFee = publicData?.helmetFee || null;
 + const helmetFeeAsMoney = helmetFee
 +   ? new Money(helmetFee.amount, helmetFee.currency)
 +   : null;
 
-  return unitType === FIXED
+  return unitType === FIXED || isPriceVariationsInUse
     ? {
-        ...getInitialValuesForPriceVariants(props),
+        ...getInitialValuesForPriceVariants(props, isPriceVariationsInUse),
         ...getInitialValuesForStartTimeInterval(props),
 +       helmetFee: helmetFeeAsMoney
       }
@@ -253,23 +270,15 @@ will pass the _helmetFee_ to this form as a new prop.
 
 ```diff
   <BookingDatesForm
+    seatsEnabled={seatsEnabled}
     className={css.bookingForm}
     formId="OrderPanelBookingDatesForm"
-    lineItemUnitType={lineItemUnitType}
-    onSubmit={onSubmit}
-    price={price}
-    marketplaceCurrency={marketplaceCurrency}
     dayCountAvailableForBooking={dayCountAvailableForBooking}
-    listingId={listing.id}
-    isOwnListing={isOwnListing}
     monthlyTimeSlots={monthlyTimeSlots}
     onFetchTimeSlots={onFetchTimeSlots}
     timeZone={timeZone}
-    marketplaceName={marketplaceName}
-    onFetchTransactionLineItems={onFetchTransactionLineItems}
-    lineItems={lineItems}
-    fetchLineItemsInProgress={fetchLineItemsInProgress}
-    fetchLineItemsError={fetchLineItemsError}
+    {...priceVariantsMaybe}
+    {...sharedProps}
 +   helmetFee={helmetFee}
   />
 ```
@@ -495,6 +504,7 @@ const calculateLineItems = (
 ) => formValues => {
   const { startDate, endDate, seats } = formValues?.values || {};
 
+  const priceVariantMaybe = priceVariantName ? { priceVariantName } : {};
   const seatCount = seats ? parseInt(seats, 10) : 1;
 
 + const hasHelmetFee = formValues.values?.helmetFee;
@@ -502,6 +512,7 @@ const calculateLineItems = (
   const orderData = {
     bookingStart: startDate,
     bookingEnd: endDate,
+    ...priceVariantMaybe,
     ...(seatsEnabled && { seats: seatCount }),
 +   hasHelmetFee,
   };
@@ -606,6 +617,21 @@ the _providerCommission_ line item. If we don't add the helmet rental
 fee, the provider commission calculation is only based on the booking
 fee.
 
+First, let's modify the _getProviderCommissionMaybe_ function in
+_lineItemHelpers.js_:
+
+```diff
+- exports.getProviderCommissionMaybe = (providerCommission, order, priceAttribute)
++ exports.getProviderCommissionMaybe = (providerCommission, order, priceAttribute, helmetFee)
+ => {
+    ...
+    // Calculate the total money paid into the transaction
+-   const totalMoneyIn = this.calculateTotalFromLineItems([order]);
++   const totalMoneyIn = this.calculateTotalFromLineItems([order, ...helmetFee]);
+    ...
+};
+```
+
 Also remember to add the helmet rental fee to the _lineItems_ array that
 is returned in the end of the function.
 
@@ -631,33 +657,11 @@ exports.transactionLineItems = (listing, orderData) => {
 +       },
 +     ]
 +   : [];
-+
-
-  // Provider commission reduces the amount of money that is paid out to provider.
-  // Therefore, the provider commission line-item should have negative effect to the payout total.
-  const getNegation = percentage => {
-    return -1 * percentage;
-  };
-
-  // Note: extraLineItems for product selling (aka shipping fee)
-  //       is not included to commission calculation.
-  const providerCommissionMaybe = hasCommissionPercentage(providerCommission)
-    ? [
-        {
-          code: 'line-item/provider-commission',
--         unitPrice: calculateTotalFromLineItems([order]),
-+         unitPrice: calculateTotalFromLineItems([order, ...helmetFee]),
-          percentage: getNegation(providerCommission.percentage),
-          includeFor: ['provider'],
-        },
-      ]
-    : [];
 
   // Let's keep the base price (order) as first line item and provider's commission as last one.
   // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
-- const lineItems = [order, ...extraLineItems, ...providerCommissionMaybe];
-+ const lineItems = [order, ...extraLineItems, ...helmetFee, ...providerCommissionMaybe];
-
+- const lineItems = [order, ...extraLineItems, ...getProviderCommissionMaybe(providerCommission, order, priceAttribute, helmetFee, ...getCustomerCommissionMaybe(customerCommission, order, priceAttribute)];
++ const lineItems = [order, ...extraLineItems, ...helmetFee, ...getProviderCommissionMaybe(providerCommission, order, priceAttribute, helmetFee), ...getCustomerCommissionMaybe(customerCommission, order, priceAttribute)];
 
   return lineItems;
 };
@@ -701,6 +705,8 @@ fee handling to that function.
 const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config) => {
   const quantity = pageData.orderData?.quantity;
   const quantityMaybe = quantity ? { quantity } : {};
+  const seats = pageData.orderData?.seats;
+  const seatsMaybe = seats ? { seats } : {};
   const deliveryMethod = pageData.orderData?.deliveryMethod;
   const deliveryMethodMaybe = deliveryMethod ? { deliveryMethod } : {};
 + const hasHelmetFee = pageData.orderData?.helmetFee?.length > 0;
@@ -711,6 +717,7 @@ const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config
       ...getTransactionTypeData(listingType, unitType, config),
       ...deliveryMethodMaybe,
       ...shippingDetails,
+      ...priceVariantMaybe,
     },
   };
 
@@ -721,7 +728,9 @@ const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config
     ...deliveryMethodMaybe,
 +   hasHelmetFee,
     ...quantityMaybe,
+    ...seatsMaybe,
     ...bookingDatesMaybe(pageData.orderData?.bookingDates),
+    ...priceVariantNameMaybe,
     ...protectedDataMaybe,
     ...optionalPaymentParams,
   };
