@@ -1,7 +1,7 @@
 ---
 title: Modify booking time intervals in time-based listings
 slug: modify-time-intervals
-updated: 2023-10-24
+updated: 2025-07-31
 category: how-to-listing
 ingress:
   This guide describes how to modify booking time intervals in hourly
@@ -78,6 +78,9 @@ src/util/dates.js
   – day and hour.
 
 ```js
+/**
+ * This is the default behavior of the template
+ */
 export const findNextBoundary = (
   currentDate,
   unitCount,
@@ -143,6 +146,8 @@ moment.fn.startOfMinuteBasedInterval = function(unitCount) {
 It is added to _moment.js_ using the prototype exposed through
 _moment.fn_, so that we can chain it in the same place as the default
 _startOf(timeUnit)_ function.
+
+### Add a new block for handling customized time slots
 
 You will need to create a new _else if_ block for the hourly unit type,
 where you use the _startOfMinuteBasedInterval_ function instead of the
