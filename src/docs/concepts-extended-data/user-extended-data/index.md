@@ -66,10 +66,10 @@ attributes.
 <info>
 
 Starting from release
-[v8.5.0](https://github.com/sharetribe/web-template/releases/tag/v8.5.0), operators can
-differentiate users' experience based on user type in Console, and the
-Sharetribe Web Template will display selected user interface elements
-differently based on those configurations.
+[v8.5.0](https://github.com/sharetribe/web-template/releases/tag/v8.5.0),
+operators can differentiate users' experience based on user type in
+Console, and the Sharetribe Web Template will display selected user
+interface elements differently based on those configurations.
 
 </info>
 
