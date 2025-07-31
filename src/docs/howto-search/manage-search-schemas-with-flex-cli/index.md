@@ -1,7 +1,7 @@
 ---
 title: Manage search schemas with Sharetribe CLI
 slug: manage-search-schemas-with-sharetribe-cli
-updated: 2025-05-06
+updated: 2025-07-31
 category: how-to-search
 ingress:
   This guide shows you how to manage extended data search schemas with
@@ -75,6 +75,19 @@ just skips those values.
 <info>
 
 Data schema of type `text` is currently only supported for listings.
+
+</info>
+
+<info>
+
+Data schemas of type `enum` or `multi-enum` do not require defining an
+acceptable enum of values for search with the CLI. Here, `enum` denotes
+that the match has to be exact, unlike with type `text` which returns
+partial matches.
+
+In practice, creating a search functionality with `enum` or `multi-enum`
+fields often includes offering a pre-set enum of options for filtering
+in the client, instead of accepting user-entered values.
 
 </info>
 
