@@ -1,7 +1,7 @@
 ---
 title: Add a favorite bikes button
 slug: add-favorite-bikes
-updated: 2023-10-24
+updated: 2025-07-31
 category: tutorial-listings
 ingress:
   Learn how to add a favorites functionality to Sharetribe Web Template
@@ -735,9 +735,9 @@ export const queryFavoriteListings = queryParams => (
   const { favorites } =
     currentUser?.attributes.profile.privateData || {};
 
-  const favoritesMaybe = favorites ? { ids: favorites } : {};
+  const favoriteIds = favorites ? { ids: favorites } : { ids: [] };
   const { perPage, ...rest } = queryParams;
-  const params = { ...favoritesMaybe, ...rest, perPage };
+  const params = { ...favoriteIds, ...rest, perPage };
 
   return sdk.listings
     .query(params)
