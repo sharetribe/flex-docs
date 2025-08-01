@@ -694,7 +694,7 @@ marketplace payment flow and gave recommendations on how to integrate a
 [mangopay-marketplaces]: https://www.mangopay.com/marketplaces/
 [mangopay-api-docs]: https://docs.mangopay.com/
 [adyen-for-platforms]:
-  https://www.adyen.com/our-solution/marketplaces-and-platforms
+  https://www.adyen.com/platform-payments
 [adyen-platforms-get-started]:
   https://docs.adyen.com/platforms/get-started/
 [adyen-pay-by-link]:
