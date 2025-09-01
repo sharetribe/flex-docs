@@ -115,7 +115,7 @@ You can use the
 file to configure CircleCI.
 
 Follow the
-[Setting up Your Build on CircleCI](https://circleci.com/docs/2.0/getting-started/#setting-up-circleci)
+[Setting up Your Build on CircleCI](https://circleci.com/docs/guides/getting-started/getting-started/)
 instructions in the CircleCI documentation to enable Circle CI.
 
 ### Code formatting
