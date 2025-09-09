@@ -72,12 +72,17 @@ the transaction process to allow the provider to accept or decline the
 transaction. If the provider declines the transaction, Stripe collects
 no processing fees since money has not been transferred.
 
-Finally, the transaction process can hold money in Stripe until an
-explicit payout (The hold should not exceed three months). The mechanism
-allows you to build a transaction process where the money is in an
-escrow-like hold until an explicit payout. The hold ensures some safety
-for the customer as the marketplace controls the money until a payout.
-The process can issue the payout in a separate transition.
+In the default purchase and negotiation processes, a charge is made
+immediately after payment, so there is no preauthorization period. This
+means that refunds can be issued only at a point where money has already
+moved and the marketplace must cover Stripe fees.
+
+The transaction process can hold money in Stripe until an explicit
+payout (The hold should not exceed 90 days). The mechanism allows you to
+build a transaction process where the money is in an escrow-like hold
+until an explicit payout. The hold ensures some safety for the customer
+as the marketplace controls the money until a payout. The process can
+issue the payout in a separate transition.
 
 ### Push payment flow
 

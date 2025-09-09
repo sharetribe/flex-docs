@@ -170,8 +170,8 @@ saveConfig: {
 
 Top-level attributes can be set as searchable, but you might have
 listing attributes you do not want to use for filtering listings. For
-instance, you may have private data text fields that the provider can
-use for listing-specific notes.
+instance, you may have private data text fields that the listing author
+can use for listing-specific notes.
 
 For searchable attributes, you will need to include the **filterConfig**
 attribute to your listing configuration. In addition, you will need to
@@ -835,10 +835,10 @@ page!
 <info>
 
 If there are existing listings, they don't get an update before their
-extended data is updated by a provider. (Operator can also do this
-one-by-one through Console or through Integration API.) So, you should
-assume that there are listings without these new extended data fields
-and, therefore, there should be some safeguards against undefined
+extended data is updated by the listing author. (Operator can also do
+this one-by-one through Console or through Integration API.) So, you
+should assume that there are listings without these new extended data
+fields and, therefore, there should be some safeguards against undefined
 values.
 
 </info>

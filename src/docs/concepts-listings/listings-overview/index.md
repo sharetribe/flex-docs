@@ -180,8 +180,8 @@ behavior in the client app based on the extended data attribute.
 For instance, for a service marketplace, you could model the service
 provider listings as bookable profiles. You could also create a
 searchable storefront listing that cannot itself be booked, and instead
-it displays all the listings from that specific provider and allows
-users to contact the store.
+it displays all the listings from that specific listing author and
+allows users to contact the store.
 
 In Sharetribe, listings can be modeled and modified to cover a range of
 different use cases. If you are wondering about a use case for listings

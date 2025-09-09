@@ -9,27 +9,29 @@ ingress:
 published: true
 ---
 
-When a customer first comes to the marketplace and books a listing,
-there are several form fields the user needs to fill: expiration month,
-card verification code (CVC), card holder's name and possibly other
-billing details. To improve the user experience for returning customers,
-it is good to have an option to save payment card details for future
-bookings. If there is an existing payment card available, the user can
-just click the "Send request" button to complete checkout page.
+When a customer first comes to the marketplace and initiates a payment
+for a transaction, there are several form fields the user needs to fill:
+expiration month, card verification code (CVC), card holder's name and
+possibly other billing details. To improve the user experience for
+returning customers, it is good to have an option to save payment card
+details for future bookings. If there is an existing payment card
+available, the user can just click the "Send request" button to complete
+checkout page.
 
 From that point forward, the typical case is that customer pays upfront
 (aka makes an
 [on-session](https://stripe.com/docs/payments/cards/reusing-cards#charging-on-session)
-payment). In practice, a preauthorization is created: the money is
-reserved, but not yet moved to Stripe. When a provider accepts the
-request, the preauthorization is captured (i.e. the payment is charged
-from the card and money moved to Stripe and held on the connected
-account of the provider until payout). The actual payout happens when
-the transaction completes.
+payment). In the default-booking process, a preauthorization is created:
+the money is reserved, but not yet moved to Stripe. When a provider
+accepts the request, the preauthorization is captured (i.e. the payment
+is charged from the card and money moved to Stripe and held on the
+connected account of the provider until payout). In the default-purchase
+and default-negotiation processes, the payment is created and captured
+immediately. The actual payout happens when the transaction completes.
 
-Payment card needs also be saved for off-session payments if those are
-in use. They are automatic one-time payments that happen when the user
-is not interacting with your application. You can read more about
+A payment card also needs to be saved for off-session payments if those
+are in use. They are automatic one-time payments that happen when the
+user is not interacting with your application. You can read more about
 off-session payments from a separate
 [article](/concepts/off-session-payments-in-transaction-process/).
 
@@ -84,7 +86,7 @@ steps:
 
 ### Saving cards after a payment
 
-If the user doesn't have a default payment card saved, or if she is
+If the user doesn't have a default payment card saved, or if they are
 making a one-time payment with a different payment card, there's an
 option (checkbox) to save the new payment card as the default payment
 method.

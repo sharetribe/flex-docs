@@ -18,7 +18,7 @@ custom vision possible using its composable transaction process.
 
 Any time users connect with each other on a Sharetribe marketplace, they
 do it through a transaction. At its core, a Sharetribe transaction is
-the interaction between two users—the provider and the customer—from
+the interaction between two users — the provider and the customer — from
 beginning to end. A single transaction might include events such as
 messages between users, the payment sent from the customer to the
 provider, and the reviews users leave about their experience.
@@ -57,6 +57,19 @@ book
 - by seat, as when booking tickets to an event
 - by hour, as when booking a hairdresser
 - or not at all, as when booking is handled outside the marketplace.
+
+Another fundamental difference between transaction processes would be
+the direction of the transaction flow: does your marketplace use
+
+- a forward flow, where a provider creates a listing and a customer
+  makes a booking or purchase
+- or a reverse flow, where a customer creates a listing and a provider
+  makes an offer.
+
+Out of the default processes in a Sharetribe marketplace,
+`default-negotiation` supports both forward and reverse flows. The other
+default processes only support a forward flow. You can custom develop a
+process that supports either flow, or both of them.
 
 A smaller variation could be, for example, deciding if the provider has
 to always accept the booking before it can be confirmed or if the
@@ -99,9 +112,9 @@ The status at any given point in a transaction is called its state. The
 state describes where the users are in their transaction.
 
 The Sharetribe default booking process, for example, has a state called
-preauthorized. It signifies that a customer has requested to book a time
-from the provider’s calendar, and a charge on their credit card has been
-preauthorized.
+_preauthorized_. It signifies that a customer has requested to book a
+time from the provider’s calendar, and a charge on their credit card has
+been preauthorized.
 
 From the _preauthorized_ state the provider can reject or accept the
 request, in which case the transaction will transition to the _declined_

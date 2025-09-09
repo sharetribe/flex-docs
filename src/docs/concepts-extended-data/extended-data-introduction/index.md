@@ -151,8 +151,8 @@ providers to be able to contact each other outside of your platform, you
 might still want to be able to call them yourself. A user’s phone number
 can be saved in their private data for these situations.
 
-Private data can also be used if you want the provider to give specific
-information for your listing approval process. Maybe you run a
+Private data can also be used if you want the listing author to give
+specific information for your listing approval process. Maybe you run a
 marketplace for graphic designers and want to verify their experience
 with past employers or check their portfolio before publishing a
 listing. Contact details of previous employers and links to online

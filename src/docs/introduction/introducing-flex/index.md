@@ -38,12 +38,14 @@ terms of visual design.
 
 [Sharetribe Web Template](/introduction/getting-started-with-web-template/)
 is a web template that implements a full-feature marketplace experience
-powered by Sharetribe. The template can be configured to three types of
-marketplaces out of the box:
+powered by Sharetribe. The template can be configured to multiple types
+of marketplaces out of the box:
 
 - a rental marketplace with daily or nightly bookings
 - a service marketplace with time-based bookings
 - a product marketplace with stock management
+- a messaging marketplace with no payments
+- a reverse marketplace with price negotiation
 
 With a Sharetribe Web Template, you can get started developing your
 marketplace UI straight away: just download the latest version and start
@@ -52,10 +54,10 @@ can customize the template. You can freely design the user interactions
 and alter the look and feel of your marketplace. You can also integrate
 any web analytics or customer service solutions directly into your UI.
 
-Your users won't see Sharetribe mentioned anywhere. The web address is
-your own domain, the email notifications get sent from your email
-address, and the entire user experience is fully tailored to match your
-brand.
+Your users won't see Sharetribe mentioned anywhere. You can set the web
+address of your custom developed marketplace to your own domain, the
+email notifications get sent from your email address, and the entire
+user experience is fully tailored to match your brand.
 
 If you prefer to start from scratch, you can build your own UI on top of
 Sharetribe's Marketplace API yourself. For instance, if you want to

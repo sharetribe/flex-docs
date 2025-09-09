@@ -9,13 +9,13 @@ ingress:
 published: true
 ---
 
-For some services booked by the hour, the provider may want to reserve a
-buffer time between bookings. For instance a bike rental agency may want
-to check their bikes between rentals, or a massage therapist may need to
-clear up and restock their therapy space before the next customer
-arrives. You can set your marketplace to add these kinds of buffers by
-default, so providers do not need to add availability exceptions
-manually.
+For some services booked by the hour, the listing author may want to
+reserve a buffer time between bookings. For instance a bike rental
+agency may want to check their bikes between rentals, or a massage
+therapist may need to clear up and restock their therapy space before
+the next customer arrives. You can set your marketplace to add these
+kinds of buffers by default, so listing authors do not need to add
+availability exceptions manually.
 
 ## Add a 15 minute buffer between one hour bookings
 

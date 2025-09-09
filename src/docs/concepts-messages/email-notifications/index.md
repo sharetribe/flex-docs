@@ -131,10 +131,11 @@ Read more about transaction notifications in our
 Sometimes the built-in and transaction notifications are not enough, and
 you might need more control over what triggers an email. Examples
 include notifying your marketplace operators when a user submits a
-listing for review or sending a provider an email once their listing is
-published. As neither of these actions is transaction related, you can
-not trigger them as transaction notifications. Instead, you must listen
-to events and trigger an email to respond to the correct event.
+listing for review or sending a listing author an email once their
+listing is published. As neither of these actions is transaction
+related, you can not trigger them as transaction notifications. Instead,
+you must listen to events and trigger an email to respond to the correct
+event.
 
 For building custom email notifications, we recommend connecting your
 app to Zapier. You can use Zapier to listen for events in your

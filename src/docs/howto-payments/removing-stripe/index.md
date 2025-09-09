@@ -29,8 +29,8 @@ Stripe components from your project to clean up the code.
 The template supports the _default-inquiry_ process, which does not
 include bookings or stock reservations. This process is the easiest way
 to use a marketplace without Stripe. However, if you do want to use
-bookings or stock reservations without Stripe, you will need to follow
-the steps in this guide.
+bookings, stock reservations, or negotiation without Stripe, you will
+need to follow the steps in this guide.
 
 </info>
 
@@ -46,13 +46,16 @@ You need to remove at least the following actions:
 - :action/stripe-refund-payment
 
 If you are using the template default processes with strong customer
-authentication (e.g. `default-booking` or `default-purchase`) you need
-to remove confirming the payment. Otherwise, the transaction will get
-stuck. The simplest way to do this is to remove `pending-payment` and
-`expire-payment` states and point `request-payment` and
-`request-payment-after-inquiry` directly to the following state –
-`preauthorized` in `default-booking` and `purchased` in
-`default-purchase`.
+authentication (e.g. `default-booking`, `default-purchase`,
+`default-negotiation`) you need to remove confirming the payment.
+Otherwise, the transaction will get stuck. The simplest way to do this
+is to remove `pending-payment` and `expire-payment` states and point
+`request-payment` and `request-payment-after-inquiry`, or
+`request-payment-to-accept-offer`, directly to the following state:
+
+- `preauthorized` in `default-booking`
+- `purchased` in `default-purchase`
+- `offer-accepted` in `default-negotiation`
 
 However, when you are building the transaction process to your
 marketplace it might make sense to rename some of the states and
@@ -67,10 +70,11 @@ The
 has a number of helper functions that are used to determine which state
 the transaction is. Depending on the transaction process being used, the
 _transaction.js_ file refers to either
-_src/transactions/transactionProcessBooking.js_ or
-_src/transactions/transactionProcessPurchase.js_ for the correct states
-in each process. The transaction process file should be updated to match
-the new transaction process.
+_src/transactions/transactionProcessBooking.js_,
+_src/transactions/transactionProcessPurchase.js_ or
+_src/transactions/transactionProcessNegotiation.js_ for the correct
+states in each process. The transaction process file should be updated
+to match the new transaction process.
 [Read more about editing transaction related files](/how-to/change-transaction-process-in-template/#2-update-the-relevant-files-in-srctransactions-folder).
 
 Example:
@@ -104,14 +108,13 @@ Example:
 
 ```
 
-### 2. Remove Stripe checks from EditListingWizard
+### 2. Remove Stripe checks from EditListingWizard and MakeOfferForm
 
 In
 [`EditListingWizard.js`](https://github.com/sharetribe/web-template/blob/main/src/containers/EditListingPage/EditListingWizard/EditListingWizard.js)
-we are checking if the provider has a Stripe account with all the
-required information before we allow them to publish listings. This
-check is done in the `handlePublishListing` function and needs to be
-removed.
+we are checking if a provider has a Stripe account with all the required
+information before we allow them to publish listings. This check is done
+in the `handlePublishListing` function and needs to be removed.
 
 ```js
   handlePublishListing(id) {
@@ -122,6 +125,11 @@ removed.
 After changing the `handlePublishListing` you can remove unused code.
 You also might want to clean up `EditListingPage` and remove the Stripe
 related props we pass to `EditListingWizard`.
+
+In addition, the [MakeOfferForm.js](TODO) component has a limitation
+that providers cannot submit their offer if they don't have a Stripe
+account. You will need to remove the references to `stripeConnected` in
+the form to remove this restriction.
 
 ### 3. Edit CheckoutPage
 

@@ -121,8 +121,8 @@ If you are replacing one of the default processes (for instance the
 default booking process with a new booking process with different
 transitions and states), you can modify the existing
 **transactionProcessBooking.js** file to correspond to the new process.
-If you are creating a parallel booking process and want to allow
-providers to choose between two processes for their listings, you will
+If you are creating a parallel booking process and want to allow listing
+authors to choose between two processes for their listings, you will
 need to create a new transaction process file and import it in
 **transaction.js**.
 

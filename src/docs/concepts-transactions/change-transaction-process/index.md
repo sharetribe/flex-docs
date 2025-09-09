@@ -33,6 +33,27 @@ of how you want your users to interact between each other and with the
 platform. Most marketplace transactions contain at least some of the
 following elements.
 
+### Forward or reverse flow
+
+Consider whether you want your marketplace to follow a forward flow or a
+reverse flow.
+
+In a forward marketplace flow, a provider creates a listing and a
+customer responds to that listing by placing an order, such as making a
+booking or a purchase. The customer makes the payment, and the provider
+receives a payout.
+
+In a reverse marketplace flow, a customer creates a listing and a
+provider responds to that listing by making an offer, such as suggesting
+their service or product. The customer chooses between all provider
+offers they have received, and then places an order on the offer of
+their choice. The customer makes the payment, and the provider receives
+a payout.
+
+In the Sharetribe transaction engine, both providers and customers can
+initiate a transaction. This means that you can build both forward flows
+and reverse flows on a Sharetribe marketplace.
+
 ### Pricing
 
 Consider how the price of a transaction is calculated. Likely, the type
@@ -141,8 +162,8 @@ transaction processes to find the one most similar to your needs.
 Use the example to specify what will happen in your own marketplace.
 What steps will be the same? What will be different?
 
-Also, check out some of the template processes in Sharetribe that you
-can find in the Build tab of your
+Also, check out some of the default processes in Sharetribe that you can
+find in the Build tab of your
 [Console](https://console.sharetribe.com/). Using existing processes
 always saves development time on configuring your transaction process.
 
@@ -156,18 +177,8 @@ add elements to your transaction process, your developer will need to
 customize the required pieces in order for your transaction process to
 be possible.
 
-For example, if you want your customers and providers to have the
-ability to negotiate a price, a transaction process should start with a
-customer making an offer. Providers can then accept, reject, or counter
-offers. Your users will need an interface to complete these actions.
-
-Since the Sharetribe Web Template does not contain such an interface out
-of the box, a developer will need to customize it into the application.
-You can use the [design files](/design-toolkit/design-files/) to guide
-your developer on how you want this to work.
-
 You can review everything included in the Sharetribe Web Template by
-exploring the demo marketplace in your Console. You can refer to this
+exploring the test marketplace in your Console. You can refer to this
 article to
 [review the screens that are part of a transaction](/design-toolkit/your-user-journey-a-guide/#transaction-process).
 
@@ -197,7 +208,7 @@ We have a transaction process flowchart template that you can leverage
 to design your own transaction process or processes. It is quite simple
 to use and super intuitive.
 
-Follow this steps:
+Follow these steps:
 
 1. Go
    [to this address](https://whimsical.com/flex-default-transaction-process-GDRUyuF7M5nMSte6rfwNuc)

@@ -53,11 +53,11 @@ the identity verification and _Know Your Customer (KYC)_ requirements.
 
 ### Step 2: Customer checkout
 
-Customer checkout happens when the customer initiates a transaction. At
-this stage, they also provide the payment information, such as their
-credit card number. Also, the payment will be made at this point. The
-payment gateway will preauthorize the money, i.e. reserve the money on
-customer's credit card.
+Customer checkout happens when the customer initiates the payment for a
+transaction. At this stage, they also provide the payment information,
+such as their credit card number. Also, the payment will be made at this
+point. The payment gateway will preauthorize the money, i.e. reserve the
+money on customer's credit card.
 
 ### Step 3: Provider accept
 
@@ -511,14 +511,14 @@ marketplace.
 ### Step 1: Provider onboarding
 
 The provider onboarding step usually needs to happen before the customer
-starts the transaction. Onboarding can occur during or right after
-listing creation.
+starts the transaction. Onboarding can occur during listing creation or
+separately from it.
 
 If you choose white-label onboarding, you need to build the necessary
 forms in your marketplace to ask for the required customer details.
 Also, to comply with the _Know Your Customer_ (KYC) requirements, the
-customer may need to upload certain documents such as an identity
-document or a utility bill to prove their identity.
+user may need to upload certain documents such as an identity document
+or a utility bill to prove their identity.
 
 If you're using a payment gateway that provides hosted onboarding, you
 need to redirect the user to the onboarding page hosted by the payment
@@ -538,9 +538,9 @@ requirements.
 
 ### Step 2: Customer checkout
 
-Customer checkout happens during transaction initialization, and it's an
-essential part of your marketplace payment flow. It's also the step that
-requires the most integration work.
+Customer checkout happens when the customer decides to proceed with the
+payment, and it's an essential part of your marketplace payment flow.
+It's also the step that requires the most integration work.
 
 Before you start implementation, consider what payment methods you are
 about to integrate and where your customers are located. Does the
@@ -562,20 +562,23 @@ If using 3D Security is required, the checkout process may contain
 multiple steps where the customer may have to leave your marketplace app
 and go to their bank's website to confirm the payment. This process may
 take some time for the user to complete. Because of that, we recommend
-that you initiate the Sharetribe transition first, before initiating the
-payment. During the initialization of the transaction, you can already
-make a booking and ensure availability. It would be a bad experience for
-the user to pay first but then realize that the transaction
-initialization failed because someone else managed to book the selected
-timeslot a moment before they did.
+that you initiate the Sharetribe transition first if it does not alreay
+exist, and only after that you initiate the payment. During the
+initialization of the transaction, you can already make a booking and
+ensure availability. It would be a bad experience for the user to pay
+first but then realize that the transaction initialization failed
+because someone else managed to book the selected timeslot a moment
+before they did.
 
 The transaction should be in a "pending-payment" state at this point.
 After the payment is successfully made, transition the transaction
 forward to a "paid" state. The "pending-payment" state should have an
-automatic expiration, e.g., after 15 minutes. The user may not finalize
-the payment, and thus we need to expire the transaction.
+automatic expiration, e.g., after 15 minutes. The user might not
+finalize the payment, and thus we need to expire the payment in the
+transaction.
 
-The transaction process should look something like this:
+If the payment is made when the transaction is first initiated, the
+transaction process should look something like this:
 
 ![Customer checkout transaction process](checkout-transaction-process.png)
 
@@ -591,6 +594,10 @@ The steps to implement this stage are:
 3. Make the payment after the transaction is initiated.
 4. Ensure that the payment went through.
 5. Transition the transaction forward.
+
+If the transaction already exists, for example because of an earlier
+inquiry transition or a negotiation process, steps 1-2 would involve
+transitioning the transaction instead.
 
 ### Step 3: Provider accept
 
@@ -608,9 +615,10 @@ payment is authorized and captured in one go.
 If you're using a payment method where authorization and capturing
 happens in one step, you should skip the provider accept stage, and
 implement a so-called "instant booking" flow. In this flow, the provider
-is expected to be able to provide the service to the customer, thus, no
-separate accept stage is needed. For this to happen, the providers must
-keep their availability calendar up-to-date.
+is expected to be able to provide the service or product to the
+customer, thus, no separate accept stage is needed. For this to happen,
+the providers must keep their availability calendar and item stock
+up-to-date.
 
 Even if you're using payment method with separate authorization and
 capture steps, it's worth considering whether you could streamline the
@@ -693,8 +701,7 @@ marketplace payment flow and gave recommendations on how to integrate a
   https://developer.paypal.com/docs/platforms/seller-onboarding/before-payment/#5-track-seller-onboarding-status
 [mangopay-marketplaces]: https://www.mangopay.com/marketplaces/
 [mangopay-api-docs]: https://docs.mangopay.com/
-[adyen-for-platforms]:
-  https://www.adyen.com/platform-payments
+[adyen-for-platforms]: https://www.adyen.com/platform-payments
 [adyen-platforms-get-started]:
   https://docs.adyen.com/platforms/get-started/
 [adyen-pay-by-link]:

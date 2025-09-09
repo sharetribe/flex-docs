@@ -1,7 +1,7 @@
 ---
 title: Providers and customers on your Stripe Platform
 slug: providers-and-customers-on-stripe-platform
-updated: 2024-11-27
+updated: 2025-09-08
 category: concepts-payments
 ingress:
   This article describes how providers and customers show up on your
@@ -17,10 +17,10 @@ on your Stripe platform account. The main ways this happens is through
 Stripe Connect accounts and Stripe Customers.
 
 The Sharetribe Stripe integration uses Stripe Custom Connect accounts
-for providers. When a provider first creates a listing, they need to
-onboard to Stripe Connect before they can receive payouts. For
-customers, on the other hand, a Stripe Customer does not need to be
-created by default.
+for providers. A provider needs to onboard to Stripe Connect before they
+can receive payouts on their own listings or make offers on customer
+listings. For customers, on the other hand, a Stripe Customer does not
+need to be created by default.
 
 ## Stripe for providers: Stripe Connect Onboarding
 
@@ -66,7 +66,8 @@ or directly through
 
 ### Fetching an existing Stripe Connect Account
 
-If the provider already has a Stripe account, the
+If the provider already has a Stripe account associated with their
+Sharetribe account, the
 [currentUser resource](https://www.sharetribe.com/api-reference/marketplace.html#currentuser-resource-format)
 has a _stripeConnected_ boolean flag set to _true._ To fetch the
 provider's existing Stripe Connect account details, we can use the
@@ -94,7 +95,9 @@ to be collected if the account reaches the next volume thresholds.
 
 If the current user's _stripeConnected_ flag is false, the current user
 does not have a Stripe account, and you need to create a new Stripe
-Connect account for the user.
+Connect account for the user. You will need to create the Stripe Connect
+account through the Marketplace API, and it is not possible to associate
+an existing Stripe Connect account with a Sharetribe user account.
 
 If you collect bank account information in the client,
 [create a Stripe bank account token](https://docs.stripe.com/api/tokens/create_bank_account)

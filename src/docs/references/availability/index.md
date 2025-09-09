@@ -7,8 +7,8 @@ ingress: Reference documentation for listing availability management.
 published: true
 ---
 
-The listing availability management features of Sharetribe allow
-providers to define when (and when not) their listings are available for
+The listing availability management features of Sharetribe allow listing
+authors to define when (and when not) their listings are available for
 booking. There are three different concepts related to availability
 management that together define whether a certain time or day is
 available on not:
@@ -231,12 +231,12 @@ As `pending` bookings reserve availability, they are useful when your
 transaction process allows customers to immediately reserve their spot
 (often combined with a preauthorization of a payment).
 
-Using `proposed` bookings is useful in situations where multiple
-customers should be allowed to request to book certain time range
-independently of one another. The provider would be able to choose which
-request(s) to accept (it may be possible to accept more than one
-request, if there are enough available seats), as long as the listing
-has sufficient remaining availability.
+Using `proposed` bookings is useful in situations where multiple users
+should be allowed to request to book certain time range independently of
+one another. The listing author would be able to choose which request(s)
+to accept (it may be possible to accept more than one request, if there
+are enough available seats), as long as the listing has sufficient
+remaining availability.
 
 ## Booking display times
 
@@ -248,7 +248,7 @@ the booking that is related to the initiated transaction. The display
 times can be used alongside with the regular `start` and `end`
 attributes (defined by `bookingStart` and `bookingEnd` params) of a
 booking and they can be used to present different start and end times to
-the customer than actully is booked. See
+the customer than actually is booked. See
 [the booking resource format](https://www.sharetribe.com/api-reference/marketplace.html#booking-resource-format)
 for a full list of booking attributes.
 

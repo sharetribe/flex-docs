@@ -88,9 +88,9 @@ storage subscription.
 
 Right now, Sharetribe doesn't offer support for Stripe subscriptions.
 However, there is a workaround with custom development. Once the
-customer has made the initial booking and payment, you would send a
-request to your own backend component, for instance the server of your
-Sharetribe Web Template, which would then create a subscription with the
-stored credit card of the customer. The subsequent subscription payments
-would then not be visible in Sharetribe Console, but you could monitor
-them from Stripe dashboard.
+customer has made the initial payment, you would send a request to your
+own backend component, for instance the server of your Sharetribe Web
+Template, which would then create a subscription with the stored credit
+card of the customer. The subsequent subscription payments would then
+not be visible in Sharetribe Console, but you could monitor them from
+Stripe dashboard.

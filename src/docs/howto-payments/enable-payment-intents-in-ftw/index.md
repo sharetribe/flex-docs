@@ -64,7 +64,7 @@ current transaction. This client-secret is used for the call to
 `stripe.confirmCardPayment`. Then there is another transition made
 against Marketplace API, so that it can confirm the PaymentIntent and
 preauthorize the order. Transaction process continues normally after
-that - i.e. Provider has to accept or reject the order.
+that - i.e. the provider has to accept or reject the order.
 
 Concrete steps here are changing the transaction process, then updating
 `bookingProcessAlias` in `config.js` and making necessary changes to

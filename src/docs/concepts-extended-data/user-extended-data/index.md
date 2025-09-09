@@ -73,11 +73,11 @@ interface elements differently based on those configurations.
 
 </info>
 
-You can also implement different tiers of providers, where for example a
-regular (non-paid) provider is allowed to publish one listing and a
-premium (paid) provider is allowed to publish three. These types of
+You can also implement different tiers of listing authors, where for
+example a regular (non-paid) user is allowed to publish one listing and
+a premium (paid) user is allowed to publish three. These types of
 attributes will need to be set to the user's metadata, so that only
-operators can modify their provider tier.
+operators can modify their listing author tier.
 
 ## Revealing information within the transaction
 

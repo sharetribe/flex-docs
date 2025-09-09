@@ -99,19 +99,27 @@ if you’re unsure where to start building your integration.
 ## Message notifications in Sharetribe Web Template
 
 By default, Sharetribe Web Template renders a notification symbol when
-the provider has transactions that require action, i.e. transactions
-that require acceptance of a booking request.
+the user has transactions that require action from the user:
+
+- For bookings, when the user is a provider and needs to accept the
+  booking
+- For purchases, when the user is a provider and needs to deliver the
+  purchase
+- For negotiations, when the user needs to take action on the current
+  step of the negotiation
 
 ![Notification symbol](notification.png 'Notification symbol')
 
 This is how the default logic works:
 
-1.  A
-    [query is made](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L306)
-    that retrieves all sales transactions (i.e. transactions where the
-    current user is the provider) transactions that are in a state that
-    [requires provider attention](https://github.com/sharetribe/web-template/blob/main/src/transactions/transaction.js#L287)
-2.  The amount of sales transactions determines the
+1.  The template [makes two queries](TODO) that retrieve all sales
+    transactions (i.e. transactions where the current user is the
+    provider) that are in a state that
+    [requires provider attention](https://github.com/sharetribe/web-template/blob/main/src/transactions/transaction.js#L287),
+    and all order transactions (i.e. transactions where the current user
+    is the provider) that are in a state that
+    [requires customer attention](TODO)
+2.  The number of relevant sales and order transactions determines the
     [notification count](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L105)
     shown
     [in the badge](https://github.com/sharetribe/web-template/blob/main/src/containers/TopbarContainer/Topbar/Topbar.js#L234).
