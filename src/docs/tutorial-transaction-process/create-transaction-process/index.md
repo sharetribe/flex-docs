@@ -1,7 +1,7 @@
 ---
 title: Create a new transaction process
 slug: create-transaction-process
-updated: 2025-04-29
+updated: 2025-09-16
 category: tutorial-transaction-process
 ingress:
   This guide describes how to create a new transaction process and how
@@ -467,22 +467,27 @@ Let's first import the new process and export its name as a constant.
 
 ```diff
   import * as log from '../util/log';
-  import { ensureTransaction } from '../util/data';
   import * as purchaseProcess from './transactionProcessPurchase';
   import * as bookingProcess from './transactionProcessBooking';
   import * as inquiryProcess from './transactionProcessInquiry';
+  import * as negotiationProcess from './transactionProcessNegotiation';
 + import * as instantProcess from './transactionProcessInstantBooking';
 
   export const ITEM = 'item';
   export const DAY = 'day';
   export const NIGHT = 'night';
   export const HOUR = 'hour';
+  export const FIXED = 'fixed';
   export const INQUIRY = 'inquiry';
+  export const OFFER = 'offer'; // The unitType 'offer' means that provider created the listing on default-negotiation process
+  export const REQUEST = 'request'; // The unitType 'request' means that customer created the listing on default-negotiation process
+
 
   // Then names of supported processes
   export const PURCHASE_PROCESS_NAME = 'default-purchase';
   export const BOOKING_PROCESS_NAME = 'default-booking';
   export const INQUIRY_PROCESS_NAME = 'default-inquiry';
+  export const NEGOTIATION_PROCESS_NAME = 'default-negotiation';
 + export const INSTANT_PROCESS_NAME = 'biketribe-instant-booking';
 
 ```
@@ -509,6 +514,12 @@ const PROCESSES = [
     alias: `${INQUIRY_PROCESS_NAME}/release-1`,
     process: inquiryProcess,
     unitTypes: [INQUIRY],
+  },
+  {
+    name: NEGOTIATION_PROCESS_NAME,
+    alias: `${NEGOTIATION_PROCESS_NAME}/release-1`,
+    process: negotiationProcess,
+    unitTypes: [OFFER, REQUEST],
   },
   {
     name: INSTANT_PROCESS_NAME,
@@ -573,6 +584,7 @@ import {
 + isBookingProcess,
   INQUIRY_PROCESS_NAME,
   PURCHASE_PROCESS_NAME,
+  NEGOTIATION_PROCESS_NAME,
   resolveLatestProcessName,
   getProcess,
 } from '../../transactions/transaction';
@@ -585,6 +597,8 @@ if (processName === PURCHASE_PROCESS_NAME) {
   return getStateDataForBookingProcess(params, processInfo());
 } else if (processName === INQUIRY_PROCESS_NAME) {
   return getStateDataForInquiryProcess(params, processInfo());
+} else if (processName === NEGOTIATION_PROCESS_NAME) {
+  return getStateDataForNegotiationProcess(params, processInfo());
 } else {
   return {};
 }

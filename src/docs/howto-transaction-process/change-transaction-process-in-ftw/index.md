@@ -9,11 +9,12 @@ ingress:
 published: true
 ---
 
-Sharetribe Web Template defines three transaction processes by default:
+Sharetribe Web Template defines four transaction processes by default:
 
 - daily, nightly, and hourly bookings use the **default-booking**
   process,
-- product sales use the **default-purchase** process, and
+- product sales use the **default-purchase** process
+- price negotiations use the **default-negotiation** process, and
 - inquiries use the **default-inquiry** process.
 
 The template is created to support states and transitions defined in
@@ -105,8 +106,10 @@ Supported transaction processes are also defined in the files found in
 // Then names of supported processes
 export const PURCHASE_PROCESS_NAME = 'default-purchase';
 export const BOOKING_PROCESS_NAME = 'default-booking';
+export const INQUIRY_PROCESS_NAME = 'default-inquiry';
+export const NEGOTIATION_PROCESS_NAME = 'default-negotiation';
 // Add new processes with a descriptive name
-export const NEGOTIATION_PROCESS_NAME = 'negotiated-booking';
+export const NEGOTIATED_BOOKING_PROCESS_NAME = 'negotiated-booking';
 ```
 
 In addition to updating the process name to your **transaction.js**
@@ -227,10 +230,14 @@ to review.
           ├── InboxPage
               ├── InboxPage.stateData.js
               ├── InboxPage.stateDataBooking.js
+              └── InboxPage.stateDataInquiry.js
+              └── InboxPage.stateDataNegotiation.js
               └── InboxPage.stateDataPurchase.js
           └── TransactionPage
               ├── TransactionPage.stateData.js
               ├── TransactionPage.stateDataBooking.js
+              └── TransactionPage.stateDataInquiry.js
+              └── TransactionPage.stateDataNegotiation.js
               └── TransactionPage.stateDataPurchase.js
 
 ```
@@ -246,8 +253,9 @@ state and the user's role in the transaction, the button may be used to
 accept, mark received, or dispute the transaction.
 
 The **...stateData.js** file in turn imports functions from
-**...stateDataBooking.js** and **...stateDataPurchase.js** to retrieve
-the state data corresponding to the correct process.
+**...stateDataBooking.js**, **...stateDataPurchase.js**,
+**...stateDataInquiry.js** and **...stateDataNegotiation.js** to
+retrieve the state data corresponding to the correct process.
 
 ```js
 export const getStateData = params => {
@@ -256,6 +264,10 @@ export const getStateData = params => {
     return getStateDataForPurchaseProcess(params, processInfo());
   } else if (processName === BOOKING_PROCESS_NAME) {
     return getStateDataForBookingProcess(params, processInfo());
+  } else if (processName === INQUIRY_PROCESS_NAME) {
+    return getStateDataForInquiryProcess(params, processInfo());
+  } else if (processName === NEGOTIATION_PROCESS_NAME) {
+    return getStateDataForNegotiationProcess(params, processInfo());
   } else {
     return {};
   }
@@ -277,7 +289,7 @@ new states that require specific props to be returned to the page based
 on the state.
 
 If you have created a new **stateData** file (e.g.
-**InboxPage.stateDataNegotiation.js**), you will need to export a
+**InboxPage.stateDataNegotiatedBooking.js**), you will need to export a
 uniquely named _getStateDataFor..._ function from that file.
 
 ## 4. Add marketplace text strings
