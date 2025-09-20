@@ -295,7 +295,7 @@ transaction process and state specific.
 ```
 
 This means that when you create a new transaction process, you will also
-need to add microcopy for the relevant keys and states in the new
+need to add Marketplace texts for the relevant keys and states in the new
 process. You can add the process specific keys either into the
 [bundled marketplace text files in the template](/template/how-to-change-bundled-marketplace-texts/)
 or through the
