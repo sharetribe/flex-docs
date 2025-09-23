@@ -67,25 +67,26 @@ marketplaces in mind.
 ### Availability
 
 Listings can feature an availability calendar. You can configure the
-availability of your listings to be nightly, daily, or hourly. With code
-modifications, you can offer bookings using custom time increments (for
-instance, 15-minute intervals). You can also offer multiple different
-booking length options (for instance, hourly and daily booking options).
+availability of your listings to be nightly, daily, hourly, or use fixed
+time intervals. You can offer bookings using custom time increments (for
+instance, 15-minute intervals). You can also customize your marketplace
+to offer multiple different booking length options (for instance, hourly
+and daily booking options).
 
-Sellers add their availability when creating their listing. Daily and
-nightly availability lets them add a default weekly schedule and easily
-set any exceptions to that default schedule. Hourly availability lets
-providers set their exact schedule for every day up to one year in
-advance.
+Listing authors add their availability when creating their listing.
+Daily and nightly availability lets them add a default weekly schedule
+and easily set any exceptions to that default schedule. Hourly
+availability lets listing authors set their exact schedule for every day
+up to one year in advance.
 
-Customers book from the provider’s availability calendar on the listing
-page.
+Users book from the listing author's availability calendar on the
+listing page.
 
-The Sharetribe Web Template has time zone support. The seller’s location
-determines the timezone of the listing, and that timezone is saved into
-the listing’s availability plan. Bookings can be made for multiple spots
-or seats. This feature can be added easily by modifying the Template
-code.
+The Sharetribe Web Template has time zone support. The listing author's
+location determines the timezone of the listing, and that timezone is
+saved into the listing’s availability plan. Bookings can be made for
+multiple spots or seats. This feature can be added easily by modifying
+the Template code.
 
 ![create-listing-per-day-availability](./create-listing-per-day-availability.png)
 
@@ -166,17 +167,25 @@ items purchased.
 Units may be purchased from an available stock, which is set by the
 seller. Out of stock listings cannot be purchased.
 
+### Negotiation default process
+
+The Sharetribe Web Template supports a reverse marketplace flow where
+customers can create listings and providers can submit offers. Once the
+customer and provider have agreed on a price for the transaction, the
+customer then proceeds to make a payment. The default negotiation
+process does not include calendar bookings or stock.
+
 ### Payments
 
 Customers pay using credit card or debit card by entering their payment
-information on the checkout page. Payments in the product default
-process are captured immediately, whereas payments with the booking
-default process are only captured after the provider accepts the booking
-request. In either case, funds are transferred to the marketplace’s
-Stripe account. The configured seller and customer commissions are paid
-out to the marketplace. The remaining funds (the seller’s earnings) are
-paid out to their bank account according to rules of the transaction
-process.
+information on the checkout page. Payments in the purchase and
+negotiation default processes are captured immediately, whereas payments
+with the booking default process are only captured after the provider
+accepts the booking request. In either case, funds are transferred to
+the marketplace’s Stripe account. The configured seller and customer
+commissions are paid out to the marketplace. The remaining funds (the
+seller’s earnings) are paid out to their bank account according to rules
+of the transaction process.
 
 ![checkout-page](./checkout-page.png)
 
@@ -226,12 +235,12 @@ Learn more about how
 
 ### Seller onboarding
 
-Before they can publish their listings, any seller must complete an
-onboarding process where they add their payout details. The onboarding
-process happens through a Stripe-hosted modal, where sellers are taken
-through several steps to tell your marketplace where to send their
-earnings. Stripe also takes care of identity verification so that your
-marketplace complies with KYC/KYB regulations.
+Before they can publish their listings or submit offers, any seller must
+complete an onboarding process where they add their payout details. The
+onboarding process happens through a Stripe-hosted modal, where sellers
+are taken through several steps to tell your marketplace where to send
+their earnings. Stripe also takes care of identity verification so that
+your marketplace complies with KYC/KYB regulations.
 
 Sellers can revisit the modal from their account settings at any point
 if they need to edit their information (such as a change of address) or

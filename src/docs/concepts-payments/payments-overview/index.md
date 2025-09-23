@@ -35,15 +35,15 @@ depending on the user’s country of residence.
 
 ### Step 2: Customer checkout
 
-Customer checkout happens when the customer initiates a transaction. At
-this stage, they also provide the payment information, such as their
-credit card number. Also, the payment will be made at this point. The
-payment gateway will preauthorize the money, i.e. reserve the money on
-the customer's credit card.
+Customer checkout happens when the customer initiates or transitions a
+transaction to pay for their order. At this stage, they provide the
+payment information, such as their credit card number. Also, the payment
+will be made at this point. The payment gateway will preauthorize the
+money, i.e. reserve the money on the customer's credit card.
 
 ### Step 3: Provider acceptance
 
-After the customer has checked out, the provider has the ability to
+After the customer has checked out, the provider may have the ability to
 either accept or reject the request. If the request is accepted, the
 payment will be captured, and the reserved money will be transferred
 from the customer's credit card to the payment gateway.
@@ -121,8 +121,8 @@ your most likely marketplace provider demographics in
 
 #### 2. Customer checkout
 
-When the customer initiates a transaction in the Sharetribe default
-transaction processes, Sharetribe creates a
+When the customer triggers a payment related transition in the
+Sharetribe default transaction processes, Sharetribe creates a
 [PaymentIntent](/concepts/payment-intents/) for the total price of the
 transaction. Once the PaymentIntent is confirmed, Stripe preauthorizes
 the sum from the customer's payment method. In other words, even though
@@ -133,9 +133,9 @@ The preauthorization is valid for 7 days, after which the
 preauthorization is automatically released by Stripe, and the funds are
 again available to the customer.
 
-In the Sharetribe Web Template default purchase process, creating and
-confirming the PaymentIntent are both triggered at the same customer
-action.
+In the Sharetribe Web Template default purchase and negotiation
+processes, creating and confirming the PaymentIntent are both triggered
+by the same customer action.
 
 **Related Stripe actions:**
 
@@ -144,11 +144,11 @@ action.
 
 #### 3. Provider acceptance
 
-The default purchase process in the Sharetribe Web Template uses an
-instant checkout, which means customer checkout and purchase acceptance
-are all triggered on the same customer action. In other words, provider
-acceptance is not necessary. However, it is possible to add the provider
-acceptance step to the product buying process as well.
+The default purchase and negotiation processes in the Sharetribe Web
+Template uses an instant checkout, which means customer checkout and
+purchase acceptance are all triggered on the same customer action. In
+other words, provider acceptance is not necessary. However, it is
+possible to add the provider acceptance step to these processes as well.
 
 In the default booking process, on the other hand, a provider has 6 days
 to accept the booking until it expires automatically. This timeline
@@ -191,8 +191,8 @@ PaymentIntent has already been captured from the customer's account.
 
 #### 5. Provider payout
 
-Once the booking has completed successfully, the provider's payout is
-paid to the bank account that is linked to their Custom Connect account.
+Once the order has completed successfully, the provider's payout is paid
+to the bank account that is linked to their Custom Connect account.
 
 It is important to note that Stripe can
 [hold funds for up to 90 days (with some exceptions)](https://stripe.com/docs/connect/account-balances#holding-funds).
@@ -214,7 +214,7 @@ process is using the Stripe payout action.
 
 - [:action/stripe-create-payout](/references/transaction-process-actions/#actionstripe-create-payout)
 
-### Modifications to the default process
+### Modifications to the default processes
 
 One of the strengths of Sharetribe is that you have complete control
 over the transaction process. In terms of payments, you can make
@@ -243,10 +243,10 @@ customers and providers.
 
 #### Instant booking
 
-As mentioned, the default purchase process combines the customer
-checkout and provider acceptance steps into a single customer action. In
-other words, the purchase is automatically accepted and paid as soon as
-the customer clicks to pay for the listing. The
+As mentioned, the default purchase and negotiation processes combine the
+customer checkout and provider acceptance steps into a single customer
+action. In other words, the order is automatically accepted and paid as
+soon as the customer clicks to pay for the transaction. The
 [example-processes Github repository](https://github.com/sharetribe/example-processes)
 contains an example of a booking process called `instant-booking` that
 you can use to implement a similar flow for bookings in Sharetribe Web
@@ -263,6 +263,14 @@ takes place at a later date. That way, customers can, for instance, book
 listings or purchase preorder products further in the future than the 90
 day Stripe limitation, and they will be charged closer to the moment of
 receiving the product or service they purchased.
+
+### Negotiated payments
+
+One of the default processes in Sharetribe involves a negotiated
+payment. In this process, the listing price does not determine the price
+of the transaction, and instead the customer and provider negotiate the
+price between them. Once both the provider and customer have accepted an
+offer, the customer proceeds to make a payment based on that price.
 
 ### Payment methods and currencies
 
@@ -320,10 +328,12 @@ to work hand in hand with Stripe:
   their identity with Stripe &mdash; this ensures that the platform is
   always KYC compliant.
 - _CheckoutPage.js_ and its subcomponent _CheckoutPageWithPayment.js_
-  handle Stripe actions related to customer checkout, including creating
-  and confirming the payment intent, with a single button click.
+  handle Stripe actions related to customer checkout in default
+  processes. Creating and confirming the payment intent are handled with
+  a single button click.
 - The customer can save their payment method to Sharetribe either when
-  purchasing a listing, or on a separate Payment Methods page.
+  making a payment on a transaction, or on a separate Payment Methods
+  page.
 
 ## Frequently asked questions
 

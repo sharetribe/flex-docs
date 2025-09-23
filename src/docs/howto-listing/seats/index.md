@@ -24,7 +24,7 @@ article is based on the previous version of the datepicker.
 
 </info>
 
-On our imaginary bike rental marketplace, some providers may have
+On our imaginary bike rental marketplace, some listing authors may have
 several similar bikes to rent. Instead of needing to create separate
 listings for each similar bike, we can add “seats” to a single listing.
 This makes it possible for customers to book several similar bikes in
@@ -319,9 +319,9 @@ we have available.
 
 #### Save seats to default availability plan
 
-When the provider clicks “Save schedule” on the default availability
-plan modal, _EditListingAvailabilityPanel_ creates availability plan
-entries based on the submit values.
+When the listing author clicks “Save schedule” on the default
+availability plan modal, _EditListingAvailabilityPanel_ creates
+availability plan entries based on the submit values.
 
 ```shell
 └── src
@@ -586,8 +586,9 @@ Creating exceptions with multiple seats is a great way to manage
 event-based marketplaces.
 
 By removing all default plan entries, you can set the default plan to
-always be created with 0 seats. Providers can then add availability
-exceptions with a number of seats to open certain events to bookings.
+always be created with 0 seats. Listing authors can then add
+availability exceptions with a number of seats to open certain events to
+bookings.
 
 This way, a service provider can use a single listing to organize
 multiple rounds of a workshop, or a concert venue can host a series of
@@ -617,7 +618,7 @@ import {
 } from '../../../../../components';
 ```
 
-We only want to show the seat selection input if the provider has
+We only want to show the seat selection input if the listing author has
 selected that the exception does have availability. We can check that
 value from _formState_ in FinalForm’s _render_ function, and then show
 an input component if the value is available.

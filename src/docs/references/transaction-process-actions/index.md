@@ -1,7 +1,7 @@
 ---
 title: Transaction process actions
 slug: transaction-process-actions
-updated: 2024-05-22
+updated: 2025-09-15
 category: references
 ingress:
   This reference article lists all the available actions and their
@@ -32,7 +32,9 @@ reference article.
 **NOTE**: this action is implicit and must not be in the process
 description.
 
-Initialize a new transaction from a listing.
+Initialize a new transaction from a listing using a standard transaction
+flow: customer initializes the transaction and provider is the author of
+the transaction listing.
 
 **Preconditions**:
 
@@ -40,6 +42,28 @@ Initialize a new transaction from a listing.
 - Listing must have an author
 - Customer (actor of the transaction) must be a valid user
 - Author and customer must not be the same user
+
+**Parameters**:
+
+- `listingId`, UUID, mandatory
+
+**Configuration options**: -
+
+#### :action.initializer/init-reverse-listing-tx
+
+**NOTE**: this action is implicit and must not be in the process
+description.
+
+Initialize a new reverse transaction from a listing using a reverse
+transaction flow: provider initializes the transaction and customer is
+the author of the transaction listing.
+
+**Preconditions**:
+
+- Listing with the given ID must exist
+- Listing must have an author
+- Provider (actor of the transaction) must be a valid user
+- Author and provider must not be the same user
 
 **Parameters**:
 

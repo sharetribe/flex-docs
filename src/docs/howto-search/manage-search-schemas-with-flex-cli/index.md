@@ -271,7 +271,7 @@ where for example providers and customers can filter through different
 kinds of transactions. For example, you could have a separate views for
 shipping transactions and pickup transactions.
 
-Search schema for user profiles can be added as follows:
+Search schema for transactions can be added as follows:
 
 ```
 $ flex-cli search set --schema-for transaction --key deliveryMethod --type enum --scope protected -m my-marketplace-dev

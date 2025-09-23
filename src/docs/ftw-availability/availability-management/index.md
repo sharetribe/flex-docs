@@ -52,10 +52,10 @@ so you can allow displaying up to a 100 results.
 ### Availability plan
 
 For daily and nightly listings, the template simplifies availability
-management by allowing the provider to select their daily availability.
-Under the hood, availability is automatically set from `00:00` to
-`00:00` (i.e., midnight to midnight), enabling bookings to span for
-consecutive days.
+management by allowing the listing author to select their daily
+availability. Under the hood, availability is automatically set from
+`00:00` to `00:00` (i.e., midnight to midnight), enabling bookings to
+span for consecutive days.
 
 For hourly and fixed booking length listings, the template exposes full
 control over start and end times when adjusting availability entries.
@@ -67,8 +67,8 @@ for creating hourly bookings that span multiple calendar days.
 
 ### Availability exceptions
 
-Providers can set availability exceptions on listings to override the
-default plan for individual time ranges. Availability exceptions are
+Listing authors can set availability exceptions on listings to override
+the default plan for individual time ranges. Availability exceptions are
 created based on the unit type:
 
 - For daily bookings, exceptions are created per day, and the start and
@@ -82,14 +82,14 @@ created based on the unit type:
 Regardless of the unit type, all exceptions are made using the same
 [endpoint](https://www.sharetribe.com/api-reference/marketplace.html#create-availability-exceptions).
 
-Providers can also block availability by using seats. Setting 0 seats
-for the duration of the availability exception sets the listing as
+Listing authors can also block availability by using seats. Setting 0
+seats for the duration of the availability exception sets the listing as
 unavailable for that period. If the period has existing bookings, the
 availability exception will not affect them, so it only blocks future
 bookings.
 
 The availability plan, availability exceptions, and bookings are only
-visible to the provider of the listing. When other users view the
+visible to the author of the listing. When other users view the
 listing’s availability on the listing page, they only see whether the
 listing is available, but they cannot see whether the availability
 results from the availability plan, exceptions, or existing bookings.

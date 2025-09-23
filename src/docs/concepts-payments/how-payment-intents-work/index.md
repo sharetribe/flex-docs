@@ -45,7 +45,7 @@ checkout flow with PaymentIntents.
 On high level, the payment flow with PaymentIntents has the following
 steps:
 
-1. Customer initiates (or transitions) a transaction with a transition
+1. Customer initiates or transitions a transaction with a transition
    containing action that creates a PaymentIntent.
 2. Customer uses the PaymentIntent data to complete any steps necessary
    to authenticate and authorize the payment.
@@ -277,7 +277,7 @@ The value of `stripePaymentIntents` is an object in the form of:
 
 This data is only exposed to the customer in the transaction. The
 provider can not access neither the PaymentIntent ID nor the client
-secret.
+secret. // TODO CHECK IF THIS IS TRUE?
 
 #### Step 3: Transition the Sharetribe transaction further
 

@@ -4,8 +4,8 @@ slug: how-to-customize-pricing
 updated: 2025-07-25
 category: how-to-payments
 ingress:
-  Sharetribe allows lots of flexibility for your providers in terms of
-  how they can set their pricing. This guide walks you through
+  Sharetribe allows lots of flexibility for your listing authors in
+  terms of how they can set their pricing. This guide walks you through
   customizing listing pricing and commission.
 published: true
 ---

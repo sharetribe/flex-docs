@@ -36,20 +36,21 @@ of a listing. If the number of seats is set to 0, the listing will not
 be available at that time.
 
 In our Sharetribe Web Template, the default seat availability of any
-particular bookable listing is one. Providers set the availability plan
-and exceptions of their listing during listing creation. Users determine
-when their listing is available and when it’s not within the timeframes
-your marketplace offers: hourly, daily, or custom length. When modifying
-the template, you or your developers can enable more than one seat per
-time slot, either in general or for specific dates and times.
+particular bookable listing is one. Listing authors set the availability
+plan and exceptions of their listing during listing creation. Users
+determine when their listing is available and when it’s not within the
+timeframes your marketplace offers: hourly, daily, or custom length.
+When modifying the template, you or your developers can enable more than
+one seat per time slot, either in general or for specific dates and
+times.
 
 If your marketplace listings happen at a specific time or place instead
 of at a repeated interval (e.g. concerts or events), you can set the
-listing availability to be blocked by default. Providers can then create
-availability exceptions to open availability for the day(s) of their
-event and the desired number of seats. To set availability as blocked by
-default, you need to set an availability plan with 0 seats across the
-board.
+listing availability to be blocked by default. Listing authors can then
+create availability exceptions to open availability for the day(s) of
+their event and the desired number of seats. To set availability as
+blocked by default, you need to set an availability plan with 0 seats
+across the board.
 
 Some examples:
 
@@ -82,13 +83,10 @@ system, you can sync this information using the Integration API and
 adjust listing availability plans accordingly or override the plan with
 an exception.
 
-Finally, providers could manually reduce the number of seats or block
-their availability entirely for a specific time slot (date or hour)
-directly from the marketplace interface. Similar to how they would
+Finally, listing authors could manually reduce the number of seats or
+block their availability entirely for a specific time slot (date or
+hour) directly from the marketplace interface, similar to how they would
 determine their initial availability.
-
-Finally, providers could manually adjust their inventory directly from
-the marketplace interface. Similar to how they would add inventory.
 
 ## Can listings be searched by available spots?
 

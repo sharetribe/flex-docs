@@ -20,8 +20,9 @@ book a listing without signing up as a user.
 
 Sharetribe has two possible roles for a registered user: customer and
 provider. All users can be both customers and providers by default. This
-means that even if a person has created a listing, which means they can
-be a provider, they can also be a customer on someone else's listing.
+means that all users by default can be the party making a payment in a
+transaction, i.e. a customer, as well as the party receiving a payment
+in another transaction, i.e. a provider.
 
 If you want to limit certain users to only customers or only providers,
 you will need to create those limitations in your client application.
@@ -35,6 +36,9 @@ for this purpose.
 ### Customer
 
 In a transaction, a **customer** is the user who purchases or books the
+product or service. In a forward marketplace flow, the customer is the
+user who starts a transaction against a provider's listing, and in a
+reverse marketplace flow, the customer is the user who creates the
 listing. In marketplaces with payments, the customer is the user who
 pays the listing price. Customers can save their payment details in
 Sharetribe.
@@ -47,22 +51,25 @@ payment method information is saved in Stripe and not directly in
 Sharetribe.
 
 Within a transaction, customers can initiate or transition transactions
-specified for the customer.
+with transitions specified for the customer.
 
 ### Provider
 
-When a user creates a listing and someone else books or purchases that
-listing, the user becomes the **provider** of the transaction in
-question. In marketplaces with payments, the provider is the transaction
-party who receives the listing price.
+When a user providers a product or service and someone else books or
+purchases that offering, the user is considered the **provider** of the
+transaction in question. In a forward marketplace flow, the provider is
+the user who creates the listing, and in a reverse marketplace flow, the
+provider is the user who starts a transaction against a customer's
+listing.
 
-This means that if the payment happens within the marketplace, the
-provider will need to verify their identity to the payment gateway to
-adhere to the payment processor's
+In marketplaces with payments, the provider is the transaction party who
+receives the transaction payment. This means that if the payment happens
+within the marketplace, the provider will need to verify their identity
+to the payment gateway to adhere to the payment processor's
 [Know Your Customer requirements](https://en.wikipedia.org/wiki/Know_your_customer).
 
 Within a transaction, providers can initiate or transition transactions
-specified for the provider.
+with transitions specified for the provider.
 
 ### Transaction related roles: operator and system
 

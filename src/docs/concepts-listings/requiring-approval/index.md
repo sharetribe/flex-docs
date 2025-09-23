@@ -19,19 +19,20 @@ new listings only get published once an operator has reviewed and
 approved them.
 
 This feature can be used e.g. for checking that the listing is suitable
-for the marketplace. On marketplaces where providers have limitations to
-the number of listings they can post, this feature is useful for
-allowing certain providers to only post a certain number of listings.
+for the marketplace. On marketplaces where users have limitations to the
+number of listings they can post, this feature is useful for allowing
+certain users to only post a certain number of listings.
 
 Only new listings are queued for operator review. In other words, if a
-listing has already been approved and the provider edits the listing
-content, it will not require further approval. This is important to keep
-in mind if you use the feature to review content on the marketplace.
+listing has already been approved and the listing author edits the
+listing content, it will not require further approval. This is important
+to keep in mind if you use the feature to review content on the
+marketplace.
 
 At the moment, there is no way to "decline" listing approval. If the
 listing requires editing to adhere to your marketplace standards, you
-can contact the provider with your suggestions on how to improve the
-listing.
+can contact the listing author with your suggestions on how to improve
+the listing.
 
 Approving a listing does not trigger an automatic email notification.
 However, you can for instance
@@ -78,14 +79,14 @@ listings by default.
 
 When a user publishes a listing on a marketplace that requires operator
 approval, the listing state is set as `pendingApproval`. Listings in
-`pendingApproval` state are shown with a banner that lets the provider
-know that their listing is pending approval. The listing is not yet
-shown to other users.
+`pendingApproval` state are shown with a banner that lets the listing
+author know that their listing is pending approval. The listing is not
+yet shown to other users.
 
 ![Banner indicating that listing is pending approval](pending-approval-banner.png 'The template application shows a banner on the listing by default')
 
-When the provider navigates to their Manage Listings page, listings
-pending approval are shown with an overlay indicating the listing's
-state.
+When the listing author navigates to their Manage Listings page,
+listings pending approval are shown with an overlay indicating the
+listing's state.
 
 ![Listing card overlay](pending-approval-your-listings.png 'Listings pending approval are shown with an informative overlay')

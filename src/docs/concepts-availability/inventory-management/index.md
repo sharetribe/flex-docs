@@ -13,10 +13,10 @@ In Sharetribe, you can manage the available stock or inventory of a
 listing via the stock-related features in the Marketplace API and the
 Integration API. With those APIs, you can determine the available stock
 (quantity) of any given listing as well as add to and subtract from it.
-Additions to stock will mostly be determined by providers, as they
-restock the items they sell. Stock subtractions, on the other hand, will
-mostly happen as part of transactions, as buyers on your marketplace
-make purchases.
+Additions to stock will mostly be determined by the listing authors, as
+they restock the items they sell. Stock subtractions, on the other hand,
+will mostly happen as part of transactions, as buyers on your
+marketplace make purchases.
 
 This article describes the Sharetribe stock management features on a
 high level. We also have
@@ -52,8 +52,9 @@ systems to further manage stock. If units are bought through another
 site or system, you can sync this information with the Integration API
 and adjust your stock accordingly.
 
-Finally, providers could manually adjust their inventory directly from
-the marketplace interface. Similar to how they would add inventory.
+Finally, the listing author could manually adjust their inventory
+directly from the marketplace interface, similar to how they would add
+inventory.
 
 ## Can listings be closed automatically if there is no stock left?
 

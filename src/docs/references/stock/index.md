@@ -7,9 +7,9 @@ ingress: Reference documentation for listing stock management.
 published: true
 ---
 
-The listing stock management features of Sharetribe allow providers to
-define the quantity of available stock for purchase. There are three key
-concepts related to stock management:
+The listing stock management features of Sharetribe allow listing
+authors to define the quantity of available stock associated with the
+listing. There are three key concepts related to stock management:
 
 - **stock** represents the quantity of available units, associated with
   a listing. The units can be anything that makes sense for a given
@@ -20,13 +20,13 @@ concepts related to stock management:
 - A **stock adjustment** is a record of change in the quantity of stock
   for a listing. A positive adjustment represents an increase in
   available stock, while a negative adjustment represents a decrease.
-  For instance, providers add stock by recording a positive stock
+  For instance, listing authors add stock by recording a positive stock
   adjustment, while sales that happen through are transaction are
   recorded as negative adjustments. Stock adjustments are immutable.
 - A **stock reservation** represents a reservation or purchase of
   particular quantity of stock through a transaction.
 
-Providers and operators can manage stock for listings through the
+Listing authors and operators can manage stock for listings through the
 Marketplace API and the Integration API. Stock adjustments can be
 created either
 [directly](https://www.sharetribe.com/api-reference/marketplace.html#create-stock-adjustment),

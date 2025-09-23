@@ -502,7 +502,7 @@ const calculateLineItems = (
   onFetchTransactionLineItems,
   seatsEnabled
 ) => formValues => {
-  const { startDate, endDate, seats } = formValues?.values || {};
+  const { startDate, endDate, priceVariantName, seats } = formValues?.values || {};
 
   const priceVariantMaybe = priceVariantName ? { priceVariantName } : {};
   const seatCount = seats ? parseInt(seats, 10) : 1;
@@ -529,9 +529,9 @@ const calculateLineItems = (
 
 ## Add a new line-item for the helmet fee
 
-We are making progress! Next, we need to edit the the backend of our
-client app, and add a new line item for the helmet rental fee, so that
-it can be included in pricing.
+We are making progress! Next, we need to edit the backend of our client
+app, and add a new line item for the helmet rental fee, so that it can
+be included in pricing.
 
 Sharetribe uses privileged transitions to ensure that the pricing logic
 is handled in a secure environment. This means that constructing line
@@ -621,8 +621,8 @@ First, let's modify the _getProviderCommissionMaybe_ function in
 _lineItemHelpers.js_:
 
 ```diff
-- exports.getProviderCommissionMaybe = (providerCommission, order, priceAttribute)
-+ exports.getProviderCommissionMaybe = (providerCommission, order, priceAttribute, helmetFee)
+- exports.getProviderCommissionMaybe = (providerCommission, order, currency) => {
++ exports.getProviderCommissionMaybe = (providerCommission, order, currency, helmetFee)
  => {
     ...
     // Calculate the total money paid into the transaction
@@ -636,13 +636,13 @@ Also remember to add the helmet rental fee to the _lineItems_ array that
 is returned in the end of the function.
 
 ```diff
-exports.transactionLineItems = (listing, orderData) => {
+exports.transactionLineItems = (listing, orderData, providerCommission, customerCommission) => {
 ...
 
   const order = {
     code,
     unitPrice,
-    quantity,
+    ...quantityOrSeats,
     includeFor: ['customer', 'provider'],
   };
 
@@ -660,8 +660,14 @@ exports.transactionLineItems = (listing, orderData) => {
 
   // Let's keep the base price (order) as first line item and provider's commission as last one.
   // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
-- const lineItems = [order, ...extraLineItems, ...getProviderCommissionMaybe(providerCommission, order, priceAttribute, helmetFee, ...getCustomerCommissionMaybe(customerCommission, order, priceAttribute)];
-+ const lineItems = [order, ...extraLineItems, ...helmetFee, ...getProviderCommissionMaybe(providerCommission, order, priceAttribute, helmetFee), ...getCustomerCommissionMaybe(customerCommission, order, priceAttribute)];
+  const lineItems = [
+    order,
+    ...extraLineItems,
+    ...helmetFee,
+-   ...getProviderCommissionMaybe(providerCommission, order, currency),
++   ...getProviderCommissionMaybe(providerCommission, order, currency, helmetFee),
+    ...getCustomerCommissionMaybe(customerCommission, order, currency),
+  ];
 
   return lineItems;
 };
@@ -710,16 +716,9 @@ const getOrderParams = (pageData, shippingDetails, optionalPaymentParams, config
   const deliveryMethod = pageData.orderData?.deliveryMethod;
   const deliveryMethodMaybe = deliveryMethod ? { deliveryMethod } : {};
 + const hasHelmetFee = pageData.orderData?.helmetFee?.length > 0;
+  const { listingType, unitType, priceVariants } = pageData?.listing?.attributes?.publicData || {};
 
-  const { listingType, unitType } = pageData?.listing?.attributes?.publicData || {};
-  const protectedDataMaybe = {
-    protectedData: {
-      ...getTransactionTypeData(listingType, unitType, config),
-      ...deliveryMethodMaybe,
-      ...shippingDetails,
-      ...priceVariantMaybe,
-    },
-  };
+  ...
 
   // These are the order parameters for the first payment-related transition
   // which is either initiate-transition or initiate-transition-after-enquiry
@@ -751,7 +750,7 @@ checkout page.
 ![Helmet fee in booking breakdown on checkout page](./checkoutPageBreakdown.png)
 
 The same function builds order parameters that get passed to the final
-transaction initialisation.
+transaction initialization.
 
 <info>
 

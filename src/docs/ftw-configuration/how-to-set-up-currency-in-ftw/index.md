@@ -86,7 +86,7 @@ or if you prefer to use local configuration files you can adjust the
 `listingMinimumPriceSubUnits` variable in
 [configDefault.js](https://github.com/sharetribe/web-template/blob/main/src/config/configDefault.js#L25).
 The variable `listingMinimumPriceSubUnits` defines the minimum price a
-customer can give a listing.
+user can give a listing.
 
 If you want to allow listings with no price, you will need to
 [add a new transaction process](/how-to/change-transaction-process-in-template/)
