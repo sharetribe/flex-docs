@@ -14,7 +14,7 @@ implementation. For a general overview of availability management, see
 our
 [Help Center](https://www.sharetribe.com/help/en/articles/8413212-how-availability-management-works).
 See also the
-[reference documentation for availability management](<(/references/availability)>).
+[reference documentation for availability management](/references/availability).
 
 ## Availability plan types and timezone support
 
