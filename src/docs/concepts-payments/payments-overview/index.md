@@ -133,9 +133,9 @@ The preauthorization is valid for 7 days, after which the
 preauthorization is automatically released by Stripe, and the funds are
 again available to the customer.
 
-In the Sharetribe Web Template default purchase and negotiation
-processes, creating and confirming the PaymentIntent are both triggered
-by the same customer action.
+Creating and confirming the PaymentIntent happen in the same transition
+in both the default purchase process and the default negotiation
+process.
 
 **Related Stripe actions:**
 
@@ -243,10 +243,11 @@ customers and providers.
 
 #### Instant booking
 
-As mentioned, the default purchase and negotiation processes combine the
-customer checkout and provider acceptance steps into a single customer
-action. In other words, the order is automatically accepted and paid as
-soon as the customer clicks to pay for the transaction. The
+As mentioned, both the default purchase process and the default
+negotiation process combine the customer checkout and provider
+acceptance steps into a single customer action. In other words, the
+order is automatically accepted and paid as soon as the customer clicks
+to pay for the transaction. The
 [example-processes Github repository](https://github.com/sharetribe/example-processes)
 contains an example of a booking process called `instant-booking` that
 you can use to implement a similar flow for bookings in Sharetribe Web
@@ -266,11 +267,13 @@ receiving the product or service they purchased.
 
 ### Negotiated payments
 
-One of the default processes in Sharetribe involves a negotiated
-payment. In this process, the listing price does not determine the price
-of the transaction, and instead the customer and provider negotiate the
-price between them. Once both the provider and customer have accepted an
-offer, the customer proceeds to make a payment based on that price.
+The [negotiation transaction process](/concepts/negotiation-process/) is
+one of the default Sharetribe transaction processes, and it involves a
+negotiated payment. In this process, the listing price does not
+determine the price of the transaction, and instead the customer and
+provider negotiate the price between them. Once both the provider and
+customer have accepted an offer, the customer proceeds to make a payment
+based on that price.
 
 ### Payment methods and currencies
 

@@ -143,7 +143,7 @@ Read more about how to
 
 ## Transactions
 
-### Booking default process
+### Default booking process
 
 Sharetribe Web Template offers transactions with calendar bookings,
 where customers book time from a provider’s availability calendar. The
@@ -156,7 +156,7 @@ the customer can use during search and booking.
 
 ![accept-request-booking-seller](./accept-request-booking-seller.png)
 
-### Product default process
+### Default purchase process
 
 You can also configure the Sharetribe Web Template to become a
 marketplace for purchasing. The calendar booking is removed; purchasing
@@ -167,7 +167,7 @@ items purchased.
 Units may be purchased from an available stock, which is set by the
 seller. Out of stock listings cannot be purchased.
 
-### Negotiation default process
+### Default negotiation process
 
 The Sharetribe Web Template supports a reverse marketplace flow where
 customers can create listings and providers can submit offers. Once the

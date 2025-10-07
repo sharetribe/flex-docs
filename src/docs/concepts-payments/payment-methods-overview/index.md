@@ -78,7 +78,7 @@ means that refunds can be issued only at a point where money has already
 moved and the marketplace must cover Stripe fees.
 
 The transaction process can hold money in Stripe until an explicit
-payout (The hold should not exceed 90 days). The mechanism allows you to
+payout (the hold should not exceed 90 days). The mechanism allows you to
 build a transaction process where the money is in an escrow-like hold
 until an explicit payout. The hold ensures some safety for the customer
 as the marketplace controls the money until a payout. The process can
