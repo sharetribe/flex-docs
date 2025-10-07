@@ -276,8 +276,7 @@ The value of `stripePaymentIntents` is an object in the form of:
 ```
 
 This data is only exposed to the customer in the transaction. The
-provider can not access neither the PaymentIntent ID nor the client
-secret. // TODO CHECK IF THIS IS TRUE?
+provider can not access the PaymentIntent ID or the client secret.
 
 #### Step 3: Transition the Sharetribe transaction further
 

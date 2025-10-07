@@ -99,7 +99,7 @@ if you’re unsure where to start building your integration.
 ## Message notifications in Sharetribe Web Template
 
 By default, Sharetribe Web Template renders a notification symbol when
-the user has transactions that require action from the user:
+there are transactions that require action from the user:
 
 - For bookings, when the user is a provider and needs to accept the
   booking
@@ -120,9 +120,7 @@ This is how the default logic works:
     is the provider) that are in a state that
     [requires customer attention](TODO)
 2.  The number of relevant sales and order transactions determines the
-    [notification count](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L105)
-    shown
-    [in the badge](https://github.com/sharetribe/web-template/blob/main/src/containers/TopbarContainer/Topbar/Topbar.js#L234).
+    [notification count](TODO) shown [in the badge](TODO).
 
 The variable
 [currentUserNotificationCount](https://github.com/sharetribe/web-template/blob/main/src/ducks/user.duck.js#L64)

@@ -55,7 +55,7 @@ with transitions specified for the customer.
 
 ### Provider
 
-When a user providers a product or service and someone else books or
+When a user provides a product or service and someone else books or
 purchases that offering, the user is considered the **provider** of the
 transaction in question. In a forward marketplace flow, the provider is
 the user who creates the listing, and in a reverse marketplace flow, the

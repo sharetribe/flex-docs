@@ -562,7 +562,7 @@ If using 3D Security is required, the checkout process may contain
 multiple steps where the customer may have to leave your marketplace app
 and go to their bank's website to confirm the payment. This process may
 take some time for the user to complete. Because of that, we recommend
-that you initiate the Sharetribe transition first if it does not alreay
+that you initiate the Sharetribe transition first if it does not already
 exist, and only after that you initiate the payment. During the
 initialization of the transaction, you can already make a booking and
 ensure availability. It would be a bad experience for the user to pay
