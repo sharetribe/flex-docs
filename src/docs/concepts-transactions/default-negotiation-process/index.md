@@ -12,23 +12,24 @@ published: true
 
 # Negotiation process overview
 
-One of the default Sharetribe transaction processes includes price
-negotiation dynamics. The same process enables both forward and reverse
-transaction flows.
+Sharetribe has a _default-negotiation_ transaction process that includes
+price negotiation dynamics. The same process enables both regular and
+reverse transaction flows.
 
-### **Forward transaction flow**
+### **Regular transaction flow**
 
-A forward transaction flow is another name for a traditional marketplace
+A regular transaction flow refers to a traditional marketplace
 transaction flow. This happens on a marketplace when the provider posts
-a listing and customers can initiate a transaction against that listing.
+a listing and a customer can initiate a transaction against that
+listing.
 
-A transaction process supports the forward (or regular) flow when it has
-one or more initial transitions defined for the customer. When a
-transaction is initiated using a customer transition, it follows a
-forward transaction flow.
+A transaction process supports the regular flow when it has one or more
+initial transitions defined for the customer. When a transaction is
+initiated using a customer transition, it follows a regular transaction
+flow.
 
-The default negotiation process has one initial transition defined for a
-customer:
+The _default-negotiation_ process has one initial transition defined for
+a customer:
 
 ```clj
   {:name :transition/request-quote,
@@ -40,7 +41,7 @@ customer:
 ### **Reverse transaction flow**
 
 A reverse transaction flow on a marketplace happens when the customer
-posts a listing and providers can initiate a transaction against that
+posts a listing and a provider can initiate a transaction against that
 listing. This means that the initiating transition for the transaction
 is made by the provider.
 
@@ -49,8 +50,8 @@ initial transitions defined for the provider. When a transaction is
 initiated using a provider transition, it follows a reverse transaction
 flow.
 
-The default negotiation process has two initial transitions defined for
-a provider: _transition/make-offer_ and _transition/inquire_:
+The _default-negotiation_ process has two initial transitions defined
+for a provider: _transition/make-offer_ and _transition/inquire_:
 
 ```clj
   {:name :transition/make-offer,
@@ -74,15 +75,15 @@ negotiation flow starting in October 2025. The Sharetribe Web Template
 supports starting and processing transactions with those listing types
 starting with version [XX.XX.XX](TODO).
 
-Adding forward transaction negotiation flow to listing types, or
-processing transactions with the forward negotiation process flow, is
+Adding the regular transaction negotiation flow to listing types, or
+processing transactions with the regular negotiation process flow, is
 not supported in the template or Console as of October 2025.
 Implementing support for this part of the negotiation process in your
 client application will require custom development.
 
 </info>
 
-In both forward and reverse flows, the provider provides the product or
+In both regular and reverse flows, the provider provides the product or
 service in question, and the customer pays for the transaction.
 
 <extrainfo title="No bookings or stock by default">
@@ -104,25 +105,26 @@ transaction, such as a custom built item or a complex project.
 The negotiation process has four main phases:
 
 1. Transaction initiation
-2. Price negotiation loop
+2. Negotiation loop
 3. Change request loop
 4. Reviews
 
 ![Full negotiation process](./negotiation-full-process-highlight-phases.png)
 
 In addition to transitions that process in a linear manner, it is also
-possible to build loops in a process. A loop in a transaction process
-means that the same state may be entered multiple times. Loops make it
-possible for the participants to go back and forth in the process, or
-for either participant to take the same action multiple times.
+possible to build loops in a transaction process. A loop in a
+transaction process means that the same state may be entered multiple
+times. Loops make it possible for the participants to go back and forth
+in the process, or for either participant to take the same action
+multiple times.
 
 The default-negotiation process has two main loops: the
-[price negotiation loop](#price-negotiation-loop) and the
+[negotiation loop](#negotiation-loop) and the
 [change request loop](#change-request-loop).
 
-In addition, the price negotiation loop contains a sub-loop where a
-provider can update their offer multiple times before the customer has
-accepted it.
+In addition, the negotiation loop contains a sub-loop where a provider
+can update their offer multiple times before the customer has accepted
+it.
 
 <info>
 
@@ -136,8 +138,7 @@ transition quota left to finish the transaction.
 The Sharetribe Web Template default implementation for the reverse
 negotiation flow [takes this limitation into account](TODO). It prevents
 the customer from making counter offers after 50 transitions, and from
-requesting changes to the order after 90 transitions. You can change
-these thresholds with custom development.
+requesting changes to the order after 90 transitions.
 
 </info>
 
@@ -146,9 +147,9 @@ these thresholds with custom development.
 First, either the customer or the provider initiates the transaction.
 Transaction initiation does not have looping logic.
 
-In a forward flow, a customer can start the transaction against the
-provider's listing by requesting a quote. The provider can then make an
-offer from the request, and making an offer
+In a regular flow, a customer can start the transaction against the
+provider's listing by requesting a quote. The provider can then submit
+an offer from the request, and submitting an offer
 [adds line items](/references/transaction-process-actions/#actionprivileged-set-line-items)
 to the transaction. Alternatively, the provider (or operator) can reject
 the quote request. The customer can also withdraw their own quote
@@ -170,20 +171,21 @@ customer's listing in two ways:
 
 - the provider can inquire, which does not add line items to the
   transaction
-- or the provider can make an offer, which does add line items to the
+- or the provider can submit an offer, which does add line items to the
   transaction.
 
-![Provider makes offer](./make-offer-details.png)
+![Provider submits offer](./make-offer-details.png)
 
-## Price negotiation loop
+## Negotiation loop
 
-After the transaction has been initiated and the provider has made an
-offer, the negotiation phase loops between two states:
+After the transaction has been initiated and the provider has submitted
+an offer, both regular and reverse transactions proceed in the same way.
+The negotiation phase loops between two states:
 
 - _state/offer-pending_
 - _state/customer-offer-pending_
 
-![Price negotiation loop states](./customer-provider-offers-transitions-highlight-states.png)
+![Negotiation loop states](./customer-provider-offers-transitions-highlight-states.png)
 
 From _state/offer-pending_, there are multiple paths for both the
 customer and the provider.
@@ -192,8 +194,9 @@ customer and the provider.
 
 Even though technically the parties can use the looping transitions to
 negotiate the price, in practice we recommend that the participants
-exchange messages to land on the offer details. That way, they don't use
-up the allowed transaction quota during the price negotiation
+exchange messages to land on the quote and other offer details. That
+way, they don't use up the allowed transaction quota during the
+negotiation phase.
 
 </info>
 
@@ -219,7 +222,7 @@ provider can re-update their offer or withdraw it.
 The customer can either accept the update or reject the new offer from
 _state/update-pending_. The operator can also accept an update to the
 offer. Accepting the offer transitions the transaction back to
-_state/offer-pending_ and the main price negotiation loop.
+_state/offer-pending_ and the main negotiation loop.
 
 ![Customer transitions around update offer](./update-offer-transitions-highlight-customer-path.png)
 
@@ -242,20 +245,20 @@ transition _operator-reject-from-customer-counter-offer_
 ![Customer paths from customer counter offer](./customer-provider-offers-transitions-highlight-customer-path-from-customer-offer.png)
 
 When the customer and provider are both happy with the offer, the
-customer can initiate payment with the current line items set for the
-transaction. Once the payment has been confirmed, the transaction moves
-to the second main loop, which is the change request loop.
+customer can initiate payment with the current quote, i.e. the line
+items set for the transaction. Once the payment has been confirmed, the
+transaction moves to the second main loop, which is the change request
+loop.
 
 ## Change request loop
 
-After the payment step, the transaction now moves forward into the
-delivery and change request phase.
+After the payment step, the transaction now moves on into the delivery
+and change request phase.
 
 ![Change request loop](./change-request-loop-full.png)
 
-When the provider delivers the end result of the project, or the
-operator marks the end result delivered, the transaction transitions to
-_state/delivered_.
+When the provider delivers the order, or the operator marks the order as
+delivered, the transaction transitions to _state/delivered_.
 
 The transaction can now loop between two states:
 
@@ -266,8 +269,7 @@ The transaction can now loop between two states:
 
 The customer and operator can now
 
-- accept the deliverable, and transition the transaction to
-  _state/completed_
+- accept the order, and transition the transaction to _state/completed_
 - or they can request changes by transitioning the transaction to
   _state/changes-requested_
 
@@ -286,12 +288,12 @@ to _state/delivered_.
 In addition, there are multiple operator transitions and automatic
 transitions at play.
 
-- If the provider doesn't deliver the end result in 75 days from the
-  payment, the transaction is automatically canceled with _auto-cancel_.
-  The operator can also manually cancel the transaction before the end
-  result is delivered with _operator-cancel_. This ends the transaction.
-- Once the end result has been marked as delivered, the operator can
-  cancel the transition with _operator-cancel-from-delivered_.
+- If the provider doesn't deliver the order in 75 days from the payment,
+  the transaction is automatically canceled with _auto-cancel_. The
+  operator can also manually cancel the transaction before the order is
+  delivered with _operator-cancel_. This ends the transaction.
+- Once the order has been marked as delivered, the operator can cancel
+  the transition with _operator-cancel-from-delivered_.
 - Once a customer has requested changes, the operator can cancel the
   transaction with _operator-cancel-from-changes-requested_. If the
   change request is still pending in 75 days from the payment, the

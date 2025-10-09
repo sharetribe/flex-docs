@@ -33,12 +33,12 @@ of how you want your users to interact between each other and with the
 platform. Most marketplace transactions contain at least some of the
 following elements.
 
-### Forward or reverse flow
+### Regular or reverse flow
 
-Consider whether you want your marketplace to follow a forward flow or a
+Consider whether you want your marketplace to follow a regular flow or a
 reverse flow.
 
-In a forward marketplace flow, a provider creates a listing and a
+In a regular marketplace flow, a provider creates a listing and a
 customer responds to that listing by placing an order, such as making a
 booking or a purchase. The customer makes the payment, and the provider
 receives a payout. The transaction process needs to have one or more
@@ -47,18 +47,19 @@ initiate the transaction using one of those initial customer
 transitions.
 
 In a reverse marketplace flow, a customer creates a listing and a
-provider responds to that listing by making an offer, such as suggesting
-their service or product. The customer chooses between all provider
-offers they have received, and then places an order on the offer of
-their choice. The customer makes the payment, and the provider receives
-a payout. The transaction process needs to have one or more initial
-transitions defined for the provider, and the provider needs to initiate
-the transaction using one of those initial provider transitions.
+provider responds to that listing by submitting an offer, such as
+suggesting their service or product. The customer chooses between all
+provider offers they have received, and then places an order on the
+offer of their choice. The customer makes the payment, and the provider
+receives a payout. The transaction process needs to have one or more
+initial transitions defined for the provider, and the provider needs to
+initiate the transaction using one of those initial provider
+transitions.
 
 In the Sharetribe transaction engine, both providers and customers can
 initiate a transaction – in other words, initiating transitions can be
 defined for both providers and customers. This means that you can build
-both forward flows and reverse flows on a Sharetribe marketplace.
+both regular flows and reverse flows on a Sharetribe marketplace.
 
 ### Pricing
 

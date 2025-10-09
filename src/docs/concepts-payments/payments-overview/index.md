@@ -273,7 +273,7 @@ negotiated payment. In this process, the listing price does not
 determine the price of the transaction, and instead the customer and
 provider negotiate the price between them. Once both the provider and
 customer have accepted an offer, the customer proceeds to make a payment
-based on that price.
+based on the quote.
 
 ### Payment methods and currencies
 

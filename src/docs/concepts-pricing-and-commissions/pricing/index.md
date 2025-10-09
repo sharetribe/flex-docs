@@ -161,13 +161,12 @@ by Sharetribe at the moment.
 You may want to allow your users to negotiate a price for a transaction
 instead of setting a default listing price that determines the
 transaction payment. In a negotiation flow, the customer or provider
-starts the transaction with suggesting a price, and the other party can
-then either accept or reject the price, or make a counter offer. This
-price is set as the main line item of the transaction instead of the
-default listing price.
+starts the transaction with requesting or suggesting a quote, and the
+other party can then either accept or reject the quote, or make a
+counter offer. This quote is set as the main line item of the
+transaction instead of the default listing price.
 
-Once both parties have accepted a price, the negotiation completes with
-the customer making a payment for the agreed-upon price. Your potential
-customer and provider commissions will then be applied in addition to
-the negotiated price to form the payin and payout totals of the
-transaction.
+Once both parties have accepted a quote, the negotiation completes with
+the customer making a payment. Your potential customer and provider
+commissions will be applied in addition to the negotiated quote to form
+the payin and payout totals of the transaction.

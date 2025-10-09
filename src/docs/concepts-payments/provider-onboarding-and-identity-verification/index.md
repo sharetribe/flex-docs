@@ -18,7 +18,7 @@ Stripe Connect accounts and Stripe Customers.
 
 The Sharetribe Stripe integration uses Stripe Custom Connect accounts
 for providers. A provider needs to onboard to Stripe Connect before they
-can receive payouts on their own listings or make offers on customer
+can receive payouts on their own listings or submit offers on customer
 listings. For customers, on the other hand, a Stripe Customer does not
 need to be created by default.
 

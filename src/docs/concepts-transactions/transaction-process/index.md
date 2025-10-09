@@ -61,14 +61,14 @@ book
 Another fundamental difference between transaction processes would be
 the direction of the transaction flow: does your marketplace use
 
-- a forward flow, where a provider creates a listing and a customer
+- a regular flow, where a provider creates a listing and a customer
   makes a booking or purchase
 - or a reverse flow, where a customer creates a listing and a provider
-  makes an offer.
+  submits an offer.
 
 Out of the default processes in a Sharetribe marketplace,
-`default-negotiation` supports both forward and reverse flows. The other
-default processes only support a forward flow. You can custom develop a
+`default-negotiation` supports both regular and reverse flows. The other
+default processes only support a regular flow. You can custom develop a
 process that supports either flow, or both of them.
 
 A smaller variation could be, for example, deciding if the provider has

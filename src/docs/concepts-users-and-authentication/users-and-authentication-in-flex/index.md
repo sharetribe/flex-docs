@@ -36,7 +36,7 @@ for this purpose.
 ### Customer
 
 In a transaction, a **customer** is the user who purchases or books the
-product or service. In a forward marketplace flow, the customer is the
+product or service. In a regular marketplace flow, the customer is the
 user who starts a transaction against a provider's listing, and in a
 reverse marketplace flow, the customer is the user who creates the
 listing. In marketplaces with payments, the customer is the user who
@@ -57,7 +57,7 @@ with transitions specified for the customer.
 
 When a user provides a product or service and someone else books or
 purchases that offering, the user is considered the **provider** of the
-transaction in question. In a forward marketplace flow, the provider is
+transaction in question. In a regular marketplace flow, the provider is
 the user who creates the listing, and in a reverse marketplace flow, the
 provider is the user who starts a transaction against a customer's
 listing.
